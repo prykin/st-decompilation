@@ -17,16 +17,16 @@ bool __thiscall FUN_004fab10(void *this,Global_sub_004FAB10_param_1Enum param_1)
   case CASE_F:
     return *(short *)((int)this + 0x23f) == 1;
   case CASE_6:
-    if (DAT_008016e8 != 0) {
-      return *(short *)(DAT_008016e8 + 0x172) != 2;
+    if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+      return g_prodPanel_008016E8->field_0172 != 2;
     }
   case CASE_7:
-    if (DAT_0080167c != 0) {
-      return *(short *)(DAT_0080167c + 0x172) != 2;
+    if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+      return g_prodPanel_0080167C->field_0172 != 2;
     }
   case CASE_8:
-    if (DAT_00801684 != 0) {
-      return *(short *)(DAT_00801684 + 0x172) != 2;
+    if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+      return g_prodPanel_00801684->field_0172 != 2;
     }
   case CASE_9:
     if (DAT_00801698 != 0) {
@@ -41,8 +41,8 @@ bool __thiscall FUN_004fab10(void *this,Global_sub_004FAB10_param_1Enum param_1)
       return *(short *)(DAT_00801678 + 0x172) != 2;
     }
   case CASE_C:
-    if (DAT_00801680 != 0) {
-      return *(short *)(DAT_00801680 + 0x172) != 2;
+    if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+      return g_prodPanel_00801680->field_0172 != 2;
     }
   case CASE_10:
     if (DAT_00802a48 != 0) {

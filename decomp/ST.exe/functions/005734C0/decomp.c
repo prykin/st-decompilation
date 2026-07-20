@@ -1,7 +1,12 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 005734C0 -> EXTERNAL:000000C4 @ 00573652
+   
+   [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 005734C0 -> EXTERNAL:000000C5 @ 00573628 */
 
-void __thiscall FUN_005734c0(void *this,DWORD param_1,HKEY param_2)
+void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
 
 {
   char cVar1;
@@ -15,7 +20,7 @@ void __thiscall FUN_005734c0(void *this,DWORD param_1,HKEY param_2)
   void *local_8;
   
   local_8 = this;
-  if (((uint)param_2 & 1) != 0) {
+  if (((uint)phkResult & 1) != 0) {
     _DAT_008072f8 = 0;
     puVar7 = (undefined4 *)&DAT_008072f8;
     for (iVar4 = 0x20; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -63,20 +68,21 @@ void __thiscall FUN_005734c0(void *this,DWORD param_1,HKEY param_2)
     DAT_00807364 = 1;
     thunk_FUN_005739a0((int)this);
   }
-  if (((uint)param_2 & 2) != 0) {
+  if (((uint)phkResult & 2) != 0) {
     puVar7 = &DAT_008071f8;
     for (iVar4 = 0x40; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar7 = 0;
       puVar7 = puVar7 + 1;
     }
   }
-  if (param_1 == 0) goto LAB_005737e5;
-  LVar3 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Microsoft_Windows_Curre_007ca544,&param_2);
+  if (lpcbData == (LPDWORD)0x0) goto LAB_005737e5;
+  LVar3 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Microsoft_Windows_Curre_007ca544,(PHKEY)&phkResult
+                     );
   if (LVar3 == 0) {
-    param_1 = 0x40;
-    LVar3 = RegQueryValueExA(param_2,s_RegisteredOwner_007ca570,(LPDWORD)0x0,(LPDWORD)&local_8,
-                             (LPBYTE)((int)this + 0x785),&param_1);
-    RegCloseKey(param_2);
+    lpcbData = (LPDWORD)0x40;
+    LVar3 = RegQueryValueExA((HKEY)phkResult,s_RegisteredOwner_007ca570,(LPDWORD)0x0,
+                             (LPDWORD)&local_8,(LPBYTE)((int)this + 0x785),(LPDWORD)&lpcbData);
+    RegCloseKey((HKEY)phkResult);
     if (LVar3 != 0) goto LAB_0057366c;
   }
   else {

@@ -263,7 +263,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   }
   iVar4 = 0;
   do {
-    iVar6 = FUN_006bbe40(*(int **)(iVar1 + 0x44),&local_90,&local_94,0);
+    iVar6 = FUN_006bbe40(*(int **)(iVar1 + 0x44),(uint *)&local_90,&local_94,0);
     if (iVar6 == 0) goto LAB_006bed50;
     if (iVar6 != -0x7789fe3e) break;
     FUN_006cec40(iVar1);

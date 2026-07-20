@@ -43,7 +43,7 @@ int FUN_006c6ae0(int param_1)
           iVar2 = 0;
         }
         else {
-          FUN_006ab060((undefined4 *)(param_1 + 0x12));
+          FUN_006ab060((LPVOID *)(param_1 + 0x12));
           if (-1 < iVar2) {
             iVar2 = -5;
           }

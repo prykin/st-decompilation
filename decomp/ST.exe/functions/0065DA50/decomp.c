@@ -4,94 +4,93 @@ uint __thiscall FUN_0065da50(void *this,int param_1,char param_2)
 {
   ushort uVar1;
   undefined4 in_EAX;
-  STGroupC *this_00;
+  STGroupBoatC *this_00;
   uint uVar2;
-  uint *puVar3;
-  uint uVar4;
-  undefined2 *puVar5;
-  int *piVar6;
+  uint *groupContent;
+  uint uVar3;
+  undefined2 *puVar4;
+  int *piVar5;
   uint extraout_ECX;
   uint extraout_ECX_00;
   uint extraout_ECX_01;
   uint extraout_ECX_02;
   undefined4 extraout_EDX;
-  undefined4 uVar7;
+  undefined4 uVar6;
   undefined4 extraout_EDX_00;
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
-  char cVar8;
-  uint uVar9;
-  undefined8 uVar10;
+  char cVar7;
+  uint uVar8;
+  undefined8 uVar9;
   uint local_8;
   
   local_8 = 0;
   uVar2 = CONCAT22((short)((uint)in_EAX >> 0x10),*(short *)((int)this + 0x7d));
-  if ((((*(short *)((int)this + 0x7d) != -2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) &&
-      (this_00 = (STGroupC *)
-                 thunk_FUN_0042b760(CONCAT31((int3)(uVar2 >> 8),*(undefined1 *)((int)this + 0x24)),
-                                    uVar2), this_00 != (STGroupC *)0x0)) &&
-     (DAT_007fa174 != (STAllPlayersC *)0x0)) {
-    cVar8 = *(char *)((int)this + 0x81);
-    if ((cVar8 < '\0') || ('\a' < cVar8)) {
-      cVar8 = (char)*(undefined4 *)((int)this + 0x24);
+  if ((((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
+      && (this_00 = thunk_FUN_0042b760(CONCAT31((int3)(uVar2 >> 8),*(undefined1 *)((int)this + 0x24)
+                                               ),uVar2), this_00 != (STGroupBoatC *)0x0)) &&
+     (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    cVar7 = *(char *)((int)this + 0x81);
+    if ((cVar7 < '\0') || ('\a' < cVar7)) {
+      cVar7 = (char)*(undefined4 *)((int)this + 0x24);
     }
-    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar8 = param_2, '\b' < param_2)))) ||
-       (param_2 = cVar8, uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
+    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar7 = param_2, '\b' < param_2)))) ||
+       (param_2 = cVar7, uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
     {
       if (param_1 != 0) {
-        uVar2 = STGroupC::GetTOBJQty(this_00,param_1);
+        uVar2 = STGroupC::GetTOBJQty((STGroupC *)this_00,param_1);
         return uVar2 & 0xffff;
       }
       uVar1 = thunk_FUN_004233c0((int)this_00);
       return (uint)uVar1;
     }
     if (param_1 == 0) {
-      puVar3 = thunk_FUN_0065da10((int)this,uVar7);
+      groupContent = thunk_FUN_0065da10((int)this,uVar6);
       uVar2 = extraout_ECX;
-      uVar7 = extraout_EDX_00;
+      uVar6 = extraout_EDX_00;
     }
     else {
-      puVar3 = thunk_FUN_0065e360((int)this,uVar7,param_1);
+      groupContent = thunk_FUN_0065e360((int)this,uVar6,param_1);
       uVar2 = extraout_ECX_00;
-      uVar7 = extraout_EDX_01;
+      uVar6 = extraout_EDX_01;
     }
-    if (puVar3 != (uint *)0x0) {
-      uVar4 = puVar3[3];
-      uVar9 = 0;
-      if (0 < (int)uVar4) {
+    if (groupContent != (uint *)0x0) {
+      uVar3 = groupContent[3];
+      uVar8 = 0;
+      if (0 < (int)uVar3) {
         do {
-          if (uVar9 < uVar4) {
-            uVar2 = puVar3[7];
-            puVar5 = (undefined2 *)(puVar3[2] * uVar9 + uVar2);
+          if (uVar8 < uVar3) {
+            uVar2 = groupContent[7];
+            puVar4 = (undefined2 *)(groupContent[2] * uVar8 + uVar2);
           }
           else {
-            puVar5 = (undefined2 *)0x0;
+            puVar4 = (undefined2 *)0x0;
           }
-          piVar6 = (int *)STAllPlayersC::GetObjPtr
-                                    (DAT_007fa174,
-                                     CONCAT31((int3)((uint)uVar7 >> 8),
+          piVar5 = (int *)STAllPlayersC::GetObjPtr
+                                    (g_sTAllPlayers_007FA174,
+                                     CONCAT31((int3)((uint)uVar6 >> 8),
                                               *(undefined1 *)((int)this + 0x24)),
-                                     CONCAT22((short)(uVar2 >> 0x10),*puVar5),CASE_1);
+                                     CONCAT22((short)(uVar2 >> 0x10),*puVar4),CASE_1);
           uVar2 = extraout_ECX_01;
-          uVar7 = extraout_EDX_02;
-          if (piVar6 != (int *)0x0) {
-            uVar10 = (**(code **)(*piVar6 + 0xf8))();
-            uVar7 = (undefined4)((ulonglong)uVar10 >> 0x20);
+          uVar6 = extraout_EDX_02;
+          if (piVar5 != (int *)0x0) {
+            uVar9 = (**(code **)(*piVar5 + 0xf8))();
+            uVar6 = (undefined4)((ulonglong)uVar9 >> 0x20);
             uVar2 = extraout_ECX_02;
-            if ((int)uVar10 != 0) {
-              uVar10 = (**(code **)(*piVar6 + 0x6c))();
-              uVar7 = (undefined4)((ulonglong)uVar10 >> 0x20);
+            if ((int)uVar9 != 0) {
+              uVar9 = (**(code **)(*piVar5 + 0x6c))();
+              uVar6 = (undefined4)((ulonglong)uVar9 >> 0x20);
               uVar2 = (uint)param_2;
-              if (uVar2 == (uint)uVar10) {
+              if (uVar2 == (uint)uVar9) {
                 local_8 = local_8 + 1;
               }
             }
           }
-          uVar4 = puVar3[3];
-          uVar9 = uVar9 + 1;
-        } while ((int)uVar9 < (int)uVar4);
+          uVar3 = groupContent[3];
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar3);
       }
-      FUN_006ae110((byte *)puVar3);
+      FUN_006ae110((byte *)groupContent);
     }
   }
   return local_8;

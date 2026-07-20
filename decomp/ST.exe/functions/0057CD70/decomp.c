@@ -20,7 +20,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   undefined4 uVar6;
   char cVar7;
   int *unaff_EDI;
-  int local_8;
+  uint local_8;
   
   iVar3 = thunk_FUN_0041c710((int)this);
   this_00 = &this->field_01D5;
@@ -90,7 +90,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
         if ((uint)this->field_023F < 0xf) goto LAB_0057cfe0;
         uVar4 = 1;
       }
-      uVar6 = thunk_FUN_0057d5f0(this,uVar4);
+      uVar6 = sub_0057D5F0(this,uVar4);
       this->field_023B = uVar6;
       this->field_023F = 0;
     }
@@ -124,7 +124,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   }
   else if ((0xf < (uint)this->field_023F) && (iVar3 = (*this->vtable->slot_20)(), iVar3 == 1)) {
     this->field_023F = 0;
-    uVar6 = thunk_FUN_0057d5f0(this,1);
+    uVar6 = sub_0057D5F0(this,1);
     this->field_023B = uVar6;
   }
 LAB_0057cfe0:
@@ -133,22 +133,22 @@ LAB_0057cfe0:
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(uint *)(DAT_00802a38 + 0xe4) % 0x78 >> 1);
     break;
   case CASE_E8:
-    iVar3 = (0x18 - (int)*(short *)&this->field_0x6c / 0xf) % 0x18;
+    iVar3 = (0x18 - (int)(short)this->field_006C / 0xf) % 0x18;
     uVar4 = *(uint *)(DAT_00802a38 + 0xe4) % 0x30 >> 2;
     local_8 = uVar4 + (iVar3 / 3) * 0xc;
-    iVar3 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xc;
+    uVar4 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xc;
     goto LAB_0057d24b;
   case CASE_E9:
-    iVar3 = (0x18 - (int)*(short *)&this->field_0x6c / 0xf) % 0x18;
+    iVar3 = (0x18 - (int)(short)this->field_006C / 0xf) % 0x18;
     uVar4 = *(uint *)(DAT_00802a38 + 0xe4) % 0xc >> 1;
     local_8 = uVar4 + (iVar3 / 3) * 6;
-    iVar3 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 6;
+    uVar4 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 6;
 LAB_0057d24b:
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',iVar3);
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',uVar4);
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_8);
     break;
   case CASE_EA:
-    iVar3 = (0x18 - (int)*(short *)&this->field_0x6c / 0xf) % 0x18;
+    iVar3 = (0x18 - (int)(short)this->field_006C / 0xf) % 0x18;
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
                (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xf +
@@ -156,7 +156,7 @@ LAB_0057d24b:
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',iVar3 / 3);
     break;
   case CASE_EB:
-    iVar3 = (0x18 - (int)*(short *)&this->field_0x6c / 0xf) % 0x18;
+    iVar3 = (0x18 - (int)(short)this->field_006C / 0xf) % 0x18;
     uVar4 = *(uint *)(DAT_00802a38 + 0xe4) % 0x14;
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',

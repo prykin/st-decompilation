@@ -5,7 +5,7 @@
 
 void __thiscall
 CPanelTy::PaintDamageXY
-          (CPanelTy *this,int param_1,int param_2,undefined4 param_3,uint param_4,UINT param_5)
+          (CPanelTy *this,int param_1,int param_2,uint param_3,uint param_4,UINT param_5)
 
 {
   code *pcVar1;
@@ -15,7 +15,7 @@ CPanelTy::PaintDamageXY
   undefined4 unaff_ESI;
   void *unaff_EDI;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   int iVar8;
   InternalExceptionFrame local_4c;
@@ -33,7 +33,7 @@ CPanelTy::PaintDamageXY
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = 0;
-    puVar4 = (uint *)FUN_006b0140(param_5,DAT_00807618);
+    puVar4 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1890,param_4 & 0xff);
     ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
@@ -44,7 +44,7 @@ CPanelTy::PaintDamageXY
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)FUN_006b0140(0x36b2,DAT_00807618);
+    puVar4 = (uint *)FUN_006b0140(0x36b2,HINSTANCE_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;

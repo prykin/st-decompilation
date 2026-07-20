@@ -31,19 +31,20 @@ FUN_0061b340(void *this,int param_1,int param_2,int param_3,int param_4,int para
   *param_7 = param_6;
   if ((-1 < param_1) && (-1 < param_2)) {
     if (param_3 < 0) goto LAB_0061bb57;
-    if (((param_1 < DAT_007fb240) && (param_2 < DAT_007fb242)) && (param_3 < 5)) {
+    if (((param_1 < SHORT_007fb240) && (param_2 < SHORT_007fb242)) && (param_3 < 5)) {
       sVar12 = (short)param_1;
       sVar13 = (short)param_2;
       sVar14 = (short)param_3;
       bVar7 = thunk_FUN_004961b0(sVar12,sVar13,sVar14);
       if (CONCAT31(extraout_var,bVar7) == 0) {
         local_10 = *(int *)((int)this + 0xa7) - *(int *)((int)this + 0xe3);
-        if (((((sVar12 < 0) || (DAT_007fb240 <= sVar12)) || (sVar13 < 0)) ||
-            ((DAT_007fb242 <= sVar13 || (sVar14 < 0)))) ||
-           ((DAT_007fb244 <= sVar14 ||
+        if (((((sVar12 < 0) || (SHORT_007fb240 <= sVar12)) || (sVar13 < 0)) ||
+            ((SHORT_007fb242 <= sVar13 || (sVar14 < 0)))) ||
+           ((SHORT_007fb244 <= sVar14 ||
             (piVar4 = *(int **)(DAT_007fb248 +
-                               ((int)DAT_007fb246 * (int)sVar14 + (int)DAT_007fb240 * (int)sVar13 +
-                               (int)sVar12) * 8), piVar4 == (int *)0x0)))) {
+                               ((int)SHORT_007fb246 * (int)sVar14 +
+                                (int)SHORT_007fb240 * (int)sVar13 + (int)sVar12) * 8),
+            piVar4 == (int *)0x0)))) {
           FUN_006e3310(DAT_00807598,(*(int *)((int)DAT_00807598 + 0x380) * param_4) / 0xc9,
                        (int *)((*(int *)((int)DAT_00807598 + 0x380) * param_5) / 0xc9),param_3,
                        &local_14);
@@ -185,23 +186,23 @@ LAB_0061b627:
       if (sVar12 < 0) {
         return local_8;
       }
-      if (DAT_007fb240 <= sVar12) {
+      if (SHORT_007fb240 <= sVar12) {
         return local_8;
       }
       if (sVar13 < 0) {
         return local_8;
       }
-      if (DAT_007fb242 <= sVar13) {
+      if (SHORT_007fb242 <= sVar13) {
         return local_8;
       }
       if (sVar14 < 0) {
         return local_8;
       }
-      if (DAT_007fb244 <= sVar14) {
+      if (SHORT_007fb244 <= sVar14) {
         return local_8;
       }
       piVar4 = *(int **)(DAT_007fb248 +
-                        ((int)DAT_007fb246 * (int)sVar14 + (int)DAT_007fb240 * (int)sVar13 +
+                        ((int)SHORT_007fb246 * (int)sVar14 + (int)SHORT_007fb240 * (int)sVar13 +
                         (int)sVar12) * 8);
       if (piVar4 == (int *)0x0) {
         return local_8;

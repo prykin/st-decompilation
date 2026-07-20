@@ -32,7 +32,7 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
       iVar2 = Library::MSVCRT::__setjmp3(local_8c,0,unaff_ESI,pIVar6);
       if (iVar2 == 0) {
         pCVar3 = FUN_006f2c00(s_MM_FLC_007cc938,2,0);
-        iVar2 = cMf32::RecChk(DAT_00806780,0,pCVar3);
+        iVar2 = cMf32::RecChk(g_cMf32_00806780,0,pCVar3);
         g_currentExceptionFrame = pIVar6;
         this_00 = local_8;
         if (iVar2 != 0) {

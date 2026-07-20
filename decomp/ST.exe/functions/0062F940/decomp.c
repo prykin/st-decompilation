@@ -42,7 +42,7 @@ void __thiscall FUN_0062f940(void *this,uint *param_1)
     *(undefined4 *)((int)puVar1 + 0x39) = *(undefined4 *)((int)this + 0x1fa);
     if (local_8 != 0) {
       local_c = local_8 * 0x3e + 0x3d;
-      iVar6 = Library::DKW::LIB::FUN_006acf50(puVar1,local_c);
+      iVar6 = Library::DKW::LIB::FUN_006acf50((int)puVar1,local_c);
       if (iVar6 == 0) {
         return;
       }

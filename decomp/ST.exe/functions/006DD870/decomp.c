@@ -16,7 +16,7 @@ void __fastcall FUN_006dd870(int param_1)
   
   if (((*(int *)(param_1 + 0x148) < 1) || (*(int *)(param_1 + 0x154) == 0)) ||
      (*(double *)(param_1 + 0x164) <= *(double *)(param_1 + 0x15c))) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x158));
+    FUN_006ab060((LPVOID *)(param_1 + 0x158));
   }
   else {
     if (*(int *)(param_1 + 0x158) == 0) {
@@ -86,7 +86,7 @@ void __fastcall FUN_006dd870(int param_1)
     *(int *)(param_1 + 0x174) = iVar1;
     if (((*(int *)(param_1 + 0x144) != 0) && (0 < iVar1)) && (iVar1 < *(int *)(param_1 + 0x2c))) {
       iVar1 = Library::DKW::LIB::FUN_006acf50
-                        (*(undefined4 **)(param_1 + 0x1c),*(int *)(param_1 + 0x28) * iVar1);
+                        (*(int *)(param_1 + 0x1c),*(int *)(param_1 + 0x28) * iVar1);
       *(int *)(param_1 + 0x1c) = iVar1;
       return;
     }

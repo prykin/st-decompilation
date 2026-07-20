@@ -33,7 +33,7 @@ void __thiscall FUN_00424530(void *this,uint param_1)
       FUN_006acc70(*(int *)((int)this + 0x29),uVar4,&param_1);
       if ((short)param_1 != -1) {
         piVar3 = (int *)STAllPlayersC::GetObjPtr
-                                  (DAT_007fa174,
+                                  (g_sTAllPlayers_007FA174,
                                    CONCAT31((int3)((uint)extraout_EDX >> 8),
                                             *(undefined1 *)((int)this + 0x24)),param_1,CASE_1);
         (**(code **)(*piVar3 + 0x100))(uVar2);

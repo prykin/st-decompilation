@@ -119,8 +119,9 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5d0[2] = 0x15;
     local_5d0[3] = 0x14;
     local_5d0[1] = iVar10;
-    local_4ac = FUN_0070aa70(DAT_00806780,s_MASK_MAP_007cd1fc,0,1);
-    local_5d0[4] = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806780,0x12,s_MASK_MAP_007cd1fc,1);
+    local_4ac = FUN_0070aa70(g_cMf32_00806780,s_MASK_MAP_007cd1fc,0,1);
+    local_5d0[4] = Library::Ourlib::MFIMG::mfImgGetWidth
+                             (g_cMf32_00806780,0x12,s_MASK_MAP_007cd1fc,1);
     this_01 = local_1c;
     local_5b0 = local_1c->field_0008;
     local_5ac = 2;
@@ -305,8 +306,8 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     } while (iVar10 != 0);
   }
   else {
-    if ((undefined4 *)this_01->field_1F3F != (undefined4 *)0x0) {
-      cMf32::delete(this_00,(undefined4 *)this_01->field_1F3F);
+    if ((cMf32 *)this_01->field_1F3F != (cMf32 *)0x0) {
+      cMf32::delete(this_00,(cMf32 *)this_01->field_1F3F);
     }
     puVar7 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
     this_01->field_1F3F = puVar7;

@@ -114,12 +114,12 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *param_1,int param_2,int param
           }
           goto cf_common_exit_00434CBD;
         }
-        uVar6 = CONCAT22((short)((uint)(cVar11 * 0x29) >> 0x10),*(undefined2 *)((int)piVar2 + 0x32))
+        uVar7 = CONCAT22((short)((uint)(cVar11 * 0x29) >> 0x10),*(undefined2 *)((int)piVar2 + 0x32))
         ;
         cVar10 = (char)piVar2[9];
         iVar3 = 0x1ae;
 LAB_004345a2:
-        iVar3 = CheckTmps(param_1,0,iVar3,cVar10,(uint *)0x0,uVar6);
+        iVar3 = CheckTmps(param_1,0,iVar3,cVar10,(uint *)0x0,uVar7);
         uVar6 = extraout_EDX_00;
         uVar9 = extraout_var_02;
         if (0 < iVar3) {
@@ -145,7 +145,7 @@ LAB_004345b4:
         iVar5 = *(int *)((int)&DAT_007f4f83 + iVar3);
         uVar9 = (undefined2)((uint)iVar3 >> 0x10);
         if (iVar5 == 0) {
-          uVar6 = CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32));
+          uVar7 = CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32));
           cVar10 = (char)piVar2[9];
           iVar3 = piVar2[8];
           goto LAB_004345a2;
@@ -345,7 +345,8 @@ cf_common_exit_00434CB8:
               }
               iVar3 = PushTV(param_1,0,0,cVar11,*(short *)((int)piVar2 + 0x32));
               if (iVar3 == 1) {
-                thunk_FUN_0042c300(param_1,0,0,(uint)param_1,(uint)*(ushort *)((int)piVar2 + 0x32));
+                thunk_FUN_0042c300((uint)param_1,0,0,(uint)param_1,
+                                   (uint)*(ushort *)((int)piVar2 + 0x32));
                 SelfCheckObjControl(this);
                 return;
               }

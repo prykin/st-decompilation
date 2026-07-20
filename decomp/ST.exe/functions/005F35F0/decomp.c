@@ -41,15 +41,15 @@ undefined4 FUN_005f35f0(int param_1)
         FUN_006e8ba0(DAT_00807598,*puVar1);
       }
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,(byte *)s_expl_i13_007ce618,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,s_expl_i13_007ce618,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       FUN_006e8660(DAT_00807598,(int *)puVar1,3,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x5a,0x45,0);
       FUN_006e98e0(DAT_00807598,*puVar1,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(DAT_00807598,*puVar1,0,*(uint *)(local_8 + 0xab));
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,(byte *)s_expl_s0_007ce610,0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                         (DAT_00806764,CASE_1D,s_expl_s0_007ce610,0xffffffff,0,1,0,(undefined4 *)0x0
+                         );
       FUN_006e98e0(DAT_00807598,*puVar1,2,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(DAT_00807598,*puVar1,2,*(uint *)(local_8 + 0xc0));
       FUN_006e9d40(DAT_00807598,(uint *)*puVar1,2);

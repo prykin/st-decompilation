@@ -4,7 +4,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	AiBossClassTy	1561	0x619	4	field_0619	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00647DC0
 1	AiBossClassTy	1577	0x629	4	field_0629	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00648030
 1	AiBossClassTy	1624	0x658	4	field_0658	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00648030
-1	AiEventClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			101	0	high	consistent_this_relative_access	0064CD80 | 00652810
+1	AiEventClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			102	0	high	consistent_this_relative_access	0064CD80 | 00652810 | 0065BD70
 1	AiEventClassTy	132	0x84	4	field_0084	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00652810
 1	AiEventClassTy	136	0x88	4	field_0088	/undefined4	0			0	none	none			4	4	high	consistent_this_relative_access	0064CD80 | 0064D000 | 0064D270
 1	AiEventClassTy	140	0x8C	1	field_008C	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	0064CD80
@@ -20,15 +20,36 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	AiEventClassTy	1282	0x502	4	field_0502	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0064CD80
 1	AiEventClassTy	1286	0x506	4	field_0506	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0064CD80
 1	AiEventClassTy	1323	0x52B	4	field_052B	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00652810
-1	AiEventClassTy	1459	0x5B3	4	field_05B3	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0064CD80 | 00652810
+1	AiEventClassTy	1327	0x52F	4	field_052F	/undefined4	0			0	none	none			1	9	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1331	0x533	4	field_0533	/undefined4	0			0	none	none			0	8	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1335	0x537	4	field_0537	/undefined4	0			0	none	none			0	8	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1339	0x53B	4	field_053B	/undefined4	0			0	none	none			0	7	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1343	0x53F	4	field_053F	/undefined4	0			0	none	none			0	7	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1347	0x543	4	field_0543	/undefined4	0			0	none	none			0	6	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1351	0x547	4	field_0547	/undefined4	0			0	none	none			0	5	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1355	0x54B	4	field_054B	/undefined4	0			0	none	none			0	5	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1359	0x54F	4	field_054F	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1367	0x557	4	field_0557	/undefined4	0			0	none	none			0	5	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1371	0x55B	4	field_055B	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1375	0x55F	4	field_055F	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1379	0x563	4	field_0563	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1383	0x567	4	field_0567	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1387	0x56B	4	field_056B	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1391	0x56F	4	field_056F	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1395	0x573	4	field_0573	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1399	0x577	4	field_0577	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1447	0x5A7	4	field_05A7	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1451	0x5AB	4	field_05AB	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1455	0x5AF	4	field_05AF	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065BD70
+1	AiEventClassTy	1459	0x5B3	4	field_05B3	/undefined4	0			0	none	none			10	1	high	consistent_this_relative_access	0064CD80 | 00652810 | 0065BD70
 1	AiFltClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00667D90
 1	AiFltClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			8	7	high	consistent_this_relative_access	0065D4B0 | 0065F660 | 00667D90
 1	AiFltClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0065D2A0
-0	AiFltClassTy	36	0x24	1	field_0024	/undefined1	0			0	none	none			15	0	conflict	conflicting_access_widths=1x9|4x6	0065D760 | 006618E0 | 00662240 | 00667D90
+0	AiFltClassTy	36	0x24	1	field_0024	/undefined1	0			0	none	none			16	0	conflict	conflicting_access_widths=1x10|4x6	0065D760 | 0065D9C0 | 006618E0 | 00662240 | 00667D90
 1	AiFltClassTy	56	0x38	1	field_0038	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0065D2A0
 1	AiFltClassTy	57	0x39	2	field_0039	/short	0	/short		0	existing	none	/short <= 006634E0 MOVSX establishes /short; 006635E3 MOVSX establishes /short; 006636B2 MOVSX establishes /short		8	0	high	consistent_this_relative_access; concrete_type_already_present	006618E0 | 00662240
 1	AiFltClassTy	123	0x7B	2	field_007B	/undefined2	0			0	none	none			12	0	high	consistent_this_relative_access	0065D760 | 006618E0 | 00662240
-1	AiFltClassTy	125	0x7D	2	field_007D	/undefined2	0			0	none	none			3	1	high	consistent_this_relative_access	0065D760 | 00667D90
+1	AiFltClassTy	125	0x7D	2	field_007D	/undefined2	0			0	none	none			4	1	high	consistent_this_relative_access	0065D760 | 0065D9C0 | 00667D90
 1	AiFltClassTy	134	0x86	4	field_0086	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00667D90
 1	AiFltClassTy	139	0x8B	4	field_008B	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00667D90
 1	AiFltClassTy	147	0x93	4	field_0093	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00667D90
@@ -125,24 +146,23 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	AiTactClassTy	293	0x125	2	field_0125	/short	0	/short		0	existing	none	/short <= 0068DE16 MOVSX establishes /short		3	0	high	consistent_this_relative_access; concrete_type_already_present	0068DC80
 1	AiTactClassTy	300	0x12C	4	field_012C	/undefined4	0			0	none	none			13	1	high	consistent_this_relative_access	0068EB30 | 0068EC70 | 0068FB30 | 0068FD00 | 00690650 | 00690B90
 1	AiTactClassTy	304	0x130	4	field_0130	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0068E950 | 0068EA40
-1	AppClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/AppClassTyVTable	0			0	existing	none			5	1	high	owner_vtable_pointer; concrete_type_already_present	006E34C0 | 006E3DD0 | 006E4FC0
-1	AppClassTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	006E34C0 | 006E3810
-1	AppClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	006E34C0 | 006E3510 | 006E3810
-1	AppClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			12	3	high	consistent_this_relative_access	006E34C0 | 006E3510 | 006E36E0 | 006E3810 | 006E3970 | 006E3DD0
-1	AppClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			5	3	high	consistent_this_relative_access	006E34C0 | 006E3510 | 006E36E0 | 006E3DD0 | 006E4650 | 006E47E0
-1	AppClassTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			5	3	high	consistent_this_relative_access	006E34C0 | 006E36E0 | 006E41D0 | 006E4370
-1	AppClassTy	24	0x18	4	field_0018	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 006E3510 [this+0x18] assigned 006E3510 return from WINMM.DLL::timeGetTime		1	2	high	consistent_this_relative_access; concrete_type_already_present	006E3510 | 006E4FC0
-1	AppClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	006E34C0 | 006E4FC0
-1	AppClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	006E34C0 | 006E36E0 | 006E4FC0
+1	AppClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/AppClassTyVTable	0			0	existing	none			0	1	high	owner_vtable_pointer; concrete_type_already_present	006E34C0
+1	AppClassTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
 1	AppClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
-1	AppClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	006E34C0 | 006E3510 | 006E36E0 | 006E3AB0
-1	AppClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	006E34C0 | 006E3510 | 006E36E0 | 006E3B50 | 006E4FC0
-1	AppClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	006E34C0 | 006E3970
-1	AppClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	006E34C0 | 006E4FC0
+1	AppClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E34C0
 1	BaseSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/BaseSystemCVTable	0			0	existing	none			2	1	high	owner_vtable_pointer; concrete_type_already_present	00576AA0 | 00576AD0
 1	BehPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	004ED630
 1	BehPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004ED630
-1	BehPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	004ED630 | 004EDDF0
+1	BehPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 004EDDF0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		5	0	high	consistent_this_relative_access; concrete_type_already_present	004ED630 | 004EDDF0
 1	BehPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	6	high	consistent_this_relative_access	004EDF30 | 004EE0A0
 0	BehPanelTy	44	0x2C	4	field_002C	/undefined4	0			0	conflict	none			0	4	conflict	overlaps_field_002E	004EE0A0
 0	BehPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	conflict	none			0	1	conflict	overlaps_field_002C	004EDF30
@@ -220,57 +240,6 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	BldObjPanelTy	633	0x279	1	field_0279	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	004F0B60 | 004F1080
 1	BldObjPanelTy	634	0x27A	4	field_027A	pointer:/ushort	0	pointer:/ushort		0	existing	none	pointer:/ushort <= 004F05C0 [this+0x27A] assigned 004F05C0 return from cMf32::RecGet		0	1	high	consistent_this_relative_access; concrete_type_already_present	004F05C0
 1	BldObjPanelTy	638	0x27E	4	field_027E	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004F05C0
-1	ButtonClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	124	0x7C	4	field_007C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	136	0x88	4	field_0088	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	168	0xA8	4	field_00A8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	172	0xAC	4	field_00AC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	204	0xCC	4	field_00CC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	216	0xD8	4	field_00D8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	220	0xDC	1	field_00DC	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	0071CFD0
-0	ButtonClassTy	224	0xE0	4	field_00E0	/undefined4	0			0	none	none			2	0	conflict	conflicting_access_widths=1x1|4x1	0071CFD0
-1	ButtonClassTy	240	0xF0	4	field_00F0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	244	0xF4	4	field_00F4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	248	0xF8	4	field_00F8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	272	0x110	4	field_0110	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	276	0x114	4	field_0114	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	280	0x118	4	field_0118	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	296	0x128	4	field_0128	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	300	0x12C	4	field_012C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	304	0x130	4	field_0130	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	336	0x150	4	field_0150	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	368	0x170	4	field_0170	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	404	0x194	4	field_0194	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	408	0x198	4	field_0198	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	412	0x19C	4	field_019C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	420	0x1A4	4	field_01A4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	424	0x1A8	4	field_01A8	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	432	0x1B0	4	field_01B0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	436	0x1B4	4	field_01B4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	440	0x1B8	4	field_01B8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	444	0x1BC	4	field_01BC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	448	0x1C0	4	field_01C0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	452	0x1C4	4	field_01C4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	456	0x1C8	4	field_01C8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	460	0x1CC	4	field_01CC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	464	0x1D0	4	field_01D0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	472	0x1D8	4	field_01D8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	476	0x1DC	4	field_01DC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	480	0x1E0	4	field_01E0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	484	0x1E4	4	field_01E4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071CFD0
-1	ButtonClassTy	488	0x1E8	4	field_01E8	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0071CFD0
 1	CBaseRenderer	0	0x0	4	field_0000	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	0074A113 | 0074A143
 1	CBaseRenderer	20	0x14	4	field_0014	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0074A113 | 0074A143
 1	CBaseRenderer	92	0x5C	4	field_005C	/undefined4	1	/winnt.h/HANDLE	hEvent	0	high	high	/winnt.h/HANDLE <= 0074A113 [this+0x5C] passed to KERNEL32.DLL::SetEvent parameter hEvent; 0074A143 [this+0x5C] passed to KERNEL32.DLL::ResetEvent parameter hEvent	hEvent <= 0074A113 [this+0x5C] passed to KERNEL32.DLL::SetEvent parameter hEvent; 0074A143 [this+0x5C] passed to KERNEL32.DLL::ResetEvent parameter hEvent	2	0	high	consistent_this_relative_access; unique_semantic_type_evidence	0074A113 | 0074A143
@@ -299,7 +268,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CGenerate	22607	0x584F	4	field_584F	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00695A60
 1	CGenerate	22611	0x5853	4	field_5853	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00695A60
 1	CPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			7	0	high	consistent_this_relative_access	004F3130 | 004F5690 | 004F7800 | 00502360 | 00503450 | 005097E0 | 0050E7D0
-1	CPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			37	0	high	consistent_this_relative_access	004F3130 | 004F7800 | 00502360 | 00503450 | 005097E0 | 0050E7D0
+1	CPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 004F7800 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00502360 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00503450 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005097E0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 0050E7D0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		37	0	high	consistent_this_relative_access; concrete_type_already_present	004F3130 | 004F7800 | 00502360 | 00503450 | 005097E0 | 0050E7D0
 1	CPanelTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004FB060
 1	CPanelTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	004FB060
 1	CPanelTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	004FB060
@@ -577,12 +546,11 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CPanelTy	3149	0xC4D	4	field_0C4D	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	00504E60 | 00507F60 | 0050C620
 1	CPanelTy	3153	0xC51	1	field_0C51	/undefined1	0			0	none	none			8	0	high	consistent_this_relative_access	004FB060 | 004FEE10 | 004FFE90 | 005007A0
 1	CPanelTy	3154	0xC52	1	field_0C52	/undefined1	0			0	none	none			8	0	high	consistent_this_relative_access	004FB060 | 0050F430
-1	CPanelTy	3155	0xC53	1	field_0C53	/undefined1	0			0	none	none			3	0	high	consistent_this_relative_access	004FB060 | 004FE4F0
+1	CPanelTy	3155	0xC53	1	field_0C53	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	004FB060
 1	CPanelTy	3156	0xC54	4	field_0C54	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	004FE370 | 004FEE10
 1	CPanelTy	3160	0xC58	1	field_0C58	/undefined1	0			0	none	none			4	0	high	consistent_this_relative_access	004F2560 | 004FE370 | 004FEE10
 1	CPanelTy	3165	0xC5D	1	field_0C5D	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FE370
 1	CPanelTy	3180	0xC6C	1	field_0C6C	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FE4F0
-1	CPanelTy	3181	0xC6D	1	field_0C6D	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FE6C0
 1	CPanelTy	3182	0xC6E	1	field_0C6E	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	005007A0
 1	CPanelTy	3183	0xC6F	2	field_0C6F	/undefined2	0			0	none	none			8	0	high	consistent_this_relative_access	004F2560
 1	CPanelTy	3185	0xC71	2	field_0C71	/undefined2	0			0	none	none			4	0	high	consistent_this_relative_access	004F2560
@@ -644,7 +612,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CampaignTy	8188	0x1FFC	4	field_1FFC	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00590B40 | 00591940
 1	ChooseMapTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			11	0	high	consistent_this_relative_access	005B0BA0
 1	ChooseMapTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	005AB300 | 005AEAB0 | 005AF350
-1	ChooseMapTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			8	0	high	consistent_this_relative_access	005AEAB0 | 005AF350
+1	ChooseMapTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005AF350 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		8	0	high	consistent_this_relative_access; concrete_type_already_present	005AEAB0 | 005AF350
 1	ChooseMapTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005B0BA0
 1	ChooseMapTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	24	high	consistent_this_relative_access	005AB300 | 005AD390 | 005AE050 | 005AEAB0 | 005AF350 | 005AFD00 | 005B0BA0
 0	ChooseMapTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			7	15	conflict	conflicting_access_widths=2x4|4x18	005AB300 | 005AE050 | 005AEAB0 | 005AF350 | 005AFD00 | 005B0BA0
@@ -658,7 +626,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	ChooseMapTy	97	0x61	4	field_0061	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 005AD390 [this+0x61] assigned 005AD390 return from WINMM.DLL::timeGetTime		3	2	high	consistent_this_relative_access; concrete_type_already_present	005AD390 | 005AFD00 | 005B0BA0
 1	ChooseMapTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			4	3	high	consistent_this_relative_access	005AB300 | 005AD390 | 005ADF10 | 005B0BA0
 1	ChooseMapTy	6746	0x1A5A	1	field_1A5A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	005AD390
-1	ChooseMapTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005B0BA0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		34	0	high	consistent_this_relative_access; concrete_type_already_present	005AB300 | 005ACB30 | 005AD050 | 005AE050 | 005AEAB0 | 005AF350 | 005AFD00 | 005B0BA0
+1	ChooseMapTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005B0BA0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		34	0	high	consistent_this_relative_access; concrete_type_already_present	005AB300 | 005ACB30 | 005AD050 | 005AE050 | 005AEAB0 | 005AF350 | 005AFD00 | 005B0BA0
 1	ChooseMapTy	6751	0x1A5F	1	field_1A5F	/SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState	0			0	existing	none			43	13	high	consistent_this_relative_access; concrete_type_already_present	005AB300 | 005ACB30 | 005AD050 | 005AE050 | 005AEAB0 | 005AFD00 | 005B0BA0
 1	ChooseMapTy	6752	0x1A60	4	field_1A60	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	005B0BA0
 1	ChooseMapTy	6756	0x1A64	4	field_1A64	/undefined4	0			0	none	none			5	7	high	consistent_this_relative_access	005AD390 | 005AFD00 | 005B0BA0
@@ -715,7 +683,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	ChooseMapTy	8380	0x20BC	4	field_20BC	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005AB300 [this+0x20BC] used as receiver of HoloTy::Init; 005ACB30 [this+0x20BC] used as receiver of HoloTy::Done; 005AD390 [this+0x20BC] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20BC] used as receiver of HoloTy::Done; 005AF350 [this+0x20BC] used as receiver of HoloTy::Init; 005AF350 [this+0x20BC] used as receiver of HoloTy::NextFas		15	4	high	consistent_this_relative_access; concrete_type_already_present	005AB300 | 005ACB30 | 005AD050 | 005AD390 | 005AF350
 1	ChooseMapTy	8384	0x20C0	4	field_20C0	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005AB300 [this+0x20C0] used as receiver of HoloTy::Init; 005ACB30 [this+0x20C0] used as receiver of HoloTy::Done; 005AD390 [this+0x20C0] used as receiver of HoloTy::NextFas; 005AF350 [this+0x20C0] used as receiver of HoloTy::Done; 005AF350 [this+0x20C0] used as receiver of HoloTy::Init; 005AF350 [this+0x20C0] used as receiver of HoloTy::NextFas		15	4	high	consistent_this_relative_access; concrete_type_already_present	005AB300 | 005ACB30 | 005AD050 | 005AD390 | 005AF350
 1	ComboTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	00593B50 | 005941D0
-1	ComboTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00593B50 | 005941D0
+1	ComboTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005941D0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		2	0	high	consistent_this_relative_access; concrete_type_already_present	00593B50 | 005941D0
 1	ComboTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	10	high	consistent_this_relative_access	00593B50 | 005941D0
 1	ComboTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	5	high	consistent_this_relative_access	00593B50 | 005941D0
 1	ComboTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00593B50
@@ -746,35 +714,6 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	ComboTy	264	0x108	4	field_0108	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	00593B50 | 005941D0 | 00594440
 1	ComboTy	268	0x10C	4	field_010C	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00593B50 | 005941D0
 1	ComboTy	272	0x110	4	field_0110	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00593B50 | 00594440
-1	ControlClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			8	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			12	6	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			6	2	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			6	2	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	76	0x4C	4	field_004C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	112	0x70	4	field_0070	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	128	0x80	4	field_0080	/undefined4	0			0	none	none			3	4	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	132	0x84	4	field_0084	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 0072B780 [this+0x84] assigned 0072B780 return from WINMM.DLL::timeGetTime		3	3	high	consistent_this_relative_access; concrete_type_already_present	0072B780
-1	ControlClassTy	136	0x88	4	field_0088	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	156	0x9C	4	field_009C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	172	0xAC	4	field_00AC	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	192	0xC0	4	field_00C0	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	208	0xD0	4	field_00D0	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	212	0xD4	4	field_00D4	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 0072B780 [this+0xD4] assigned 0072B780 return from WINMM.DLL::timeGetTime		3	3	high	consistent_this_relative_access; concrete_type_already_present	0072B780
-1	ControlClassTy	216	0xD8	4	field_00D8	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0072B780
-0	ControlClassTy	220	0xDC	1	field_00DC	/undefined1	0			0	none	none			2	1	conflict	conflicting_access_widths=1x2|4x1	0072B780
-0	ControlClassTy	224	0xE0	4	field_00E0	/undefined4	0			0	none	none			4	1	conflict	conflicting_access_widths=1x2|4x3	0072B780
-1	ControlClassTy	296	0x128	4	field_0128	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	300	0x12C	4	field_012C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0072B780
-1	ControlClassTy	304	0x130	4	field_0130	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0072B780
 1	CursorClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	005441A0 | 00544460 | 005446C0 | 00544800
 1	CursorClassTy	16	0x10	4	field_0010	pointer:/AppClassTy	0	pointer:/AppClassTy	appClass	0	existing	medium	pointer:/AppClassTy <= 005449B0 [this+0x10] used as receiver of AppClassTy::PostNextMessage		3	0	high	consistent_this_relative_access; concrete_type_already_present	00543C90 | 005449B0
 1	CursorClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00543AD0
@@ -814,7 +753,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CursorClassTy	1171	0x493	1	field_0493	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	005449B0 | 0054BF40
 1	CursorClassTy	1172	0x494	2	field_0494	/undefined2	0			0	none	none			7	2	high	consistent_this_relative_access	00543990 | 00548C40 | 0054BF40
 1	CursorClassTy	1174	0x496	4	field_0496	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0054AEE0
-1	CursorClassTy	1178	0x49A	4	field_049A	/undefined4	0			0	none	none			23	1	high	consistent_this_relative_access	00548C40 | 0054AEE0
+1	CursorClassTy	1178	0x49A	4	field_049A	pointer:/STFishC	0	pointer:/STFishC	stFish	0	existing	medium	pointer:/STFishC <= 00548C40 [this+0x49A] used as receiver of STFishC::sub_004162B0		23	1	high	consistent_this_relative_access; concrete_type_already_present	00548C40 | 0054AEE0
 1	CursorClassTy	1182	0x49E	4	field_049E	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0054AEE0
 1	CursorClassTy	1186	0x4A2	4	field_04A2	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	00548C40 | 0054AEE0
 1	CursorClassTy	1190	0x4A6	4	field_04A6	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00548C40
@@ -830,57 +769,9 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	DebugSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/DebugSystemCVTable	0			0	existing	none			1	1	high	owner_vtable_pointer; concrete_type_already_present	005781C0 | 00578200
 1	DumpClassC	12	0xC	4	field_000C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00495980
 1	DumpClassC	16	0x10	4	field_0010	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00495980
-1	EditorClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			26	0	high	consistent_this_relative_access	00720A50 | 00722410
-1	EditorClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	00722410
-1	EditorClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	00722410
-1	EditorClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00722410
-1	EditorClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			11	2	high	consistent_this_relative_access	00722410
-0	EditorClassTy	32	0x20	1	field_0020	/undefined1	0			0	none	none			24	4	conflict	conflicting_access_widths=1x20|4x8	00720A50 | 00722410
-1	EditorClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	00720A50 | 00722410
-1	EditorClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00722410
-1	EditorClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	308	0x134	4	field_0134	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	312	0x138	4	field_0138	/undefined4	0			0	none	none			13	3	high	consistent_this_relative_access	00720A50 | 00722410
-1	EditorClassTy	316	0x13C	4	field_013C	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00722410
-1	EditorClassTy	320	0x140	4	field_0140	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00722410
-1	EditorClassTy	324	0x144	4	field_0144	/undefined4	0			0	none	none			6	10	high	consistent_this_relative_access	00720A50 | 00722410
-1	EditorClassTy	328	0x148	4	field_0148	/undefined4	0			0	none	none			9	8	high	consistent_this_relative_access	00720A50 | 00722410
-1	EditorClassTy	360	0x168	4	field_0168	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	380	0x17C	4	field_017C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00722410
-1	EditorClassTy	384	0x180	4	field_0180	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	392	0x188	4	field_0188	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	412	0x19C	4	field_019C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00722410
-1	EditorClassTy	424	0x1A8	4	field_01A8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	444	0x1BC	4	field_01BC	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00722410
-1	EditorClassTy	448	0x1C0	4	field_01C0	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00722410
-1	EditorClassTy	456	0x1C8	4	field_01C8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	460	0x1CC	4	field_01CC	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00722410
-1	EditorClassTy	464	0x1D0	4	field_01D0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	468	0x1D4	1	field_01D4	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	471	0x1D7	1	field_01D7	/char	0	/char		0	existing	none	/char <= 00722EEC MOVSX establishes /char		2	7	high	consistent_this_relative_access; concrete_type_already_present	00722410
-1	EditorClassTy	472	0x1D8	4	field_01D8	/undefined4	0			0	none	none			1	7	high	consistent_this_relative_access	00722410
-1	EditorClassTy	476	0x1DC	4	field_01DC	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	480	0x1E0	4	field_01E0	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	484	0x1E4	4	field_01E4	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	488	0x1E8	4	field_01E8	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	492	0x1EC	4	field_01EC	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	496	0x1F0	4	field_01F0	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00722410
-1	EditorClassTy	500	0x1F4	4	field_01F4	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	00722410
-1	EditorClassTy	504	0x1F8	4	field_01F8	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00722410
-1	EditorClassTy	508	0x1FC	4	field_01FC	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	00721BF0 | 00722410
-1	EditorClassTy	512	0x200	4	field_0200	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	00721BF0 | 00722410
-1	EditorClassTy	516	0x204	4	field_0204	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00722410
-1	EditorClassTy	520	0x208	4	field_0208	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00722410
-0	EditorClassTy	524	0x20C	4	field_020C	/undefined4	0			0	none	none			18	5	conflict	conflicting_access_widths=2x1|4x22	00722410
-0	EditorClassTy	528	0x210	4	field_0210	/undefined4	0			0	none	none			15	5	conflict	conflicting_access_widths=2x1|4x19	00722410
-1	EditorClassTy	532	0x214	4	field_0214	pointer:/ccFntTy	0	pointer:/ccFntTy	ccFnt	0	existing	medium	pointer:/ccFntTy <= 00720A50 [this+0x214] used as receiver of ccFntTy::GetFittingStr		3	1	high	consistent_this_relative_access; concrete_type_already_present	00720A50 | 00722410
 1	FSGSTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			16	0	high	consistent_this_relative_access	005A0FF0 | 005A32F0 | 005A4350
 1	FSGSTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			23	0	high	consistent_this_relative_access	00595E40 | 00597E70 | 0059C700 | 0059C9F0 | 0059CEE0 | 0059D240 | 0059D720 | 0059E7F0 | 0059EB00 | 0059F260 | 005A1160 | 005A1630 | 005A4350
-1	FSGSTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			27	0	high	consistent_this_relative_access	005967F0 | 00597120 | 0059C700 | 0059C9F0 | 0059CEE0 | 0059D240 | 0059D720 | 0059E7F0 | 0059EB00 | 0059F260 | 005A4350
+1	FSGSTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005967F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00597120 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		27	0	high	consistent_this_relative_access; concrete_type_already_present	005967F0 | 00597120 | 0059C700 | 0059C9F0 | 0059CEE0 | 0059D240 | 0059D720 | 0059E7F0 | 0059EB00 | 0059F260 | 005A4350
 1	FSGSTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005A4350
 1	FSGSTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	47	high	consistent_this_relative_access	0059C700 | 0059C9F0 | 0059CEE0 | 0059D240 | 0059D720 | 0059E7F0 | 0059EB00 | 0059F260 | 005A1F00 | 005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A3540 | 005A3AB0 | 005A4350
 0	FSGSTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			7	28	conflict	conflicting_access_widths=2x6|4x29	005A1F00 | 005A2380 | 005A26C0 | 005A2D70 | 005A2FF0 | 005A3540 | 005A3AB0 | 005A4350
@@ -895,7 +786,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	FSGSTy	97	0x61	4	field_0061	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 00597120 [this+0x61] assigned 00597120 return from WINMM.DLL::timeGetTime		0	2	high	consistent_this_relative_access; concrete_type_already_present	00597120 | 005A4350
 1	FSGSTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			3	3	high	consistent_this_relative_access	00597120 | 00597E70 | 0059B740 | 005A1920
 1	FSGSTy	6746	0x1A5A	1	field_1A5A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	00597120
-1	FSGSTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::GetIP; 005A4350 [this+0x1A5B] used as receiver of StartSystemTy::InitChat		60	0	high	consistent_this_relative_access; concrete_type_already_present	00595E40 | 005967F0 | 00597E70 | 005A0FF0 | 005A1160 | 005A1630 | 005A32F0 | 005A4350
+1	FSGSTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::GetIP; 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::sub_005DAF20; 005A4350 [this+0x1A5B] used as receiver of StartSystemTy::InitChat		60	0	high	consistent_this_relative_access; concrete_type_already_present	00595E40 | 005967F0 | 00597E70 | 005A0FF0 | 005A1160 | 005A1630 | 005A32F0 | 005A4350
 1	FSGSTy	6751	0x1A5F	1	field_1A5F	/undefined1	0			0	none	none			43	4	high	consistent_this_relative_access	00595E40 | 00596CC0 | 00597E70 | 0059B740 | 0059C520 | 0059F670 | 005A0DC0 | 005A1430 | 005A1630 | 005A1F00 | 005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A3540 | 005A3AB0 | 005A40F0 | 005A4350
 1	FSGSTy	6752	0x1A60	1	field_1A60	/undefined1	0			0	none	none			10	3	high	consistent_this_relative_access	005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A4350
 1	FSGSTy	6753	0x1A61	1	field_1A61	/undefined1	0			0	none	none			2	15	high	consistent_this_relative_access	00597120 | 005A0FF0 | 005A32F0 | 005A4350
@@ -1043,7 +934,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	FSGSTy	8379	0x20BB	4	field_20BB	/undefined4	0			0	none	none			0	13	high	consistent_this_relative_access	005A4350
 1	FSGSTy	8383	0x20BF	4	field_20BF	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005A4350
 1	FrmPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			12	0	high	consistent_this_relative_access	0050FD60
-1	FrmPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00510250
+1	FrmPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 00510250 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		2	0	high	consistent_this_relative_access; concrete_type_already_present	00510250
 1	FrmPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00510370 | 005104B0
 1	FrmPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00510370
 1	FrmPanelTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005105E0
@@ -1072,7 +963,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	GameSystemC	1073	0x431	4	field_0431	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00576EF0 | 005770D0
 1	HelpPanelTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable	0			0	existing	none			0	0	high	owner_vtable_pointer	
 1	HelpPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	005123A0 | 00512830
-1	HelpPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			10	0	high	consistent_this_relative_access	00511760 | 005123A0 | 00512830 | 00515310 | 00516300 | 00516480
+1	HelpPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 00511760 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005123A0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00512830 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00515310 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00516300 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00516480 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		10	0	high	consistent_this_relative_access; concrete_type_already_present	00511760 | 005123A0 | 00512830 | 00515310 | 00516300 | 00516480
 1	HelpPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	22	high	consistent_this_relative_access	00511C70 | 005123A0 | 00512830 | 00513030 | 005135F0 | 00513810 | 00513A40 | 00514F10 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
 0	HelpPanelTy	44	0x2C	2	field_002C	/undefined2	0			0	none	none			0	20	conflict	conflicting_access_widths=2x17|4x3	005123A0 | 00512830 | 00513030 | 005135F0 | 00513810 | 00513A40 | 00514F10 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
 1	HelpPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	16	high	consistent_this_relative_access	00511C70 | 005135F0 | 00513810 | 00513A40 | 00514F10 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
@@ -1157,7 +1048,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	HoloTy	43	0x2B	4	field_002B	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	005AACB0
 1	HoloTy	47	0x2F	4	field_002F	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005AACB0
 1	InfocPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0051FF50
-1	InfocPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0051FF50 | 005204D0
+1	InfocPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005204D0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		2	0	high	consistent_this_relative_access; concrete_type_already_present	0051FF50 | 005204D0
 1	InfocPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005205E0 | 005206F0
 1	InfocPanelTy	44	0x2C	2	field_002C	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	005206F0
 1	InfocPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	4	high	consistent_this_relative_access	005205E0 | 005206F0
@@ -1246,39 +1137,13 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	InfocPanelTy	976	0x3D0	4	field_03D0	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	005204D0 | 005205E0 | 005206F0
 1	InfocPanelTy	980	0x3D4	1	field_03D4	/undefined1	0			0	none	none			17	3	high	consistent_this_relative_access	005206F0 | 00520B50 | 00520D10
 1	InfocPanelTy	981	0x3D5	4	field_03D5	pointer:/ccFntTy	0	pointer:/ccFntTy		0	existing	none	pointer:/ccFntTy <= 00520D10 [this+0x3D5] used as receiver of ccFntTy::SetSurf; 00520D10 [this+0x3D5] used as receiver of ccFntTy::WrStr		7	2	high	consistent_this_relative_access; concrete_type_already_present	0051FF50 | 005204D0 | 00520D10
-1	InputClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0071B220 | 0071B520
-1	InputClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	0071B220 | 0071B520 | 0071B9C0 | 0071C8C0
-1	InputClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0071B220 | 0071B520
-1	InputClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			11	1	high	consistent_this_relative_access	0071B220 | 0071B520 | 0071B9C0 | 0071C1D0 | 0071C530 | 0071CA50
-1	InputClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			6	1	high	consistent_this_relative_access	0071B220 | 0071B520 | 0071CA50
-1	InputClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			20	3	high	consistent_this_relative_access	0071B520 | 0071B9C0 | 0071C1D0 | 0071C530 | 0071CA50
-1	InputClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			25	2	high	consistent_this_relative_access	0071B520 | 0071B9C0 | 0071C8C0 | 0071CA50
-0	InputClassTy	44	0x2C	2	field_002C	/undefined2	0			0	none	none			8	3	conflict	conflicting_access_widths=2x8|4x3	0071B220 | 0071B9C0 | 0071CA50
-0	InputClassTy	48	0x30	2	field_0030	/undefined2	0			0	none	none			8	3	conflict	conflicting_access_widths=2x8|4x3	0071B220 | 0071B9C0 | 0071CA50
-1	InputClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0071B220 | 0071CA50
-1	InputClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0071B220 | 0071CA50
-1	InputClassTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0071B220 | 0071CA50
-1	InputClassTy	64	0x40	4	field_0040	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0071B220 | 0071CA50
-1	InputClassTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071B220 | 0071B9C0
-1	InputClassTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0071B9C0
-1	InputClassTy	76	0x4C	4	field_004C	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0071B9C0
-1	InputClassTy	80	0x50	4	field_0050	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0071B9C0
-1	InputClassTy	84	0x54	4	field_0054	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0071B9C0 | 0071CA50
-1	InputClassTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071B9C0 | 0071C8C0
-1	InputClassTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071B220 | 0071B9C0
-1	InputClassTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			5	2	high	consistent_this_relative_access	0071B520 | 0071B9C0 | 0071C1D0 | 0071C530 | 0071CA50
-1	InputClassTy	100	0x64	4	field_0064	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0071B520 | 0071B9C0 | 0071C1D0 | 0071C530 | 0071CA50
-1	InputClassTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0071B220 | 0071B9C0
-1	InputClassTy	108	0x6C	4	field_006C	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0071B220 | 0071B9C0
-1	InputClassTy	112	0x70	4	field_0070	/undefined4	0			0	none	none			4	4	high	consistent_this_relative_access	0071B9C0 | 0071C1D0 | 0071C530
-1	InputClassTy	116	0x74	4	field_0074	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071B9C0
 1	InterSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/InterSystemCVTable	0			0	existing	none			26	1	high	owner_vtable_pointer; concrete_type_already_present	00542440 | 005424A0
 1	InterSystemC	20	0x14	4	field_0014	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005424A0
-1	InterSystemC	36	0x24	4	field_0024	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005424A0
-1	InterSystemC	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00542440 | 005424A0
-1	InterSystemC	44	0x2C	4	field_002C	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00542440 | 005424A0
-1	InterSystemC	48	0x30	4	field_0030	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00542440 | 005424A0
-1	IntercomPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00521B90
+1	InterSystemC	36	0x24	4	field_0024	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	005424A0 | 00542EC0
+1	InterSystemC	40	0x28	4	field_0028	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	00542440 | 005424A0 | 00542EC0
+1	InterSystemC	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	00542440 | 005424A0 | 00542EC0
+1	InterSystemC	48	0x30	4	field_0030	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	00542440 | 005424A0 | 00542EC0
+1	IntercomPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 00521B90 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		1	0	high	consistent_this_relative_access; concrete_type_already_present	00521B90
 1	IntercomPanelTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00521900
 1	IntercomPanelTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00521900
 1	IntercomPanelTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005219E0
@@ -1294,50 +1159,6 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	JumpManagC	94	0x5E	4	field_005E	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	00617640 | 006178C0
 1	JumpManagC	98	0x62	4	field_0062	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00617640
 1	JumpManagC	102	0x66	4	field_0066	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00617640
-1	ListClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			17	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			7	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			9	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			6	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			9	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	220	0xDC	1	field_00DC	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	0071F3A0
-0	ListClassTy	224	0xE0	4	field_00E0	/undefined4	0			0	none	none			4	0	conflict	conflicting_access_widths=1x2|4x2	0071F3A0
-1	ListClassTy	240	0xF0	4	field_00F0	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	244	0xF4	4	field_00F4	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	248	0xF8	4	field_00F8	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	272	0x110	4	field_0110	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	276	0x114	4	field_0114	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	280	0x118	4	field_0118	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	296	0x128	4	field_0128	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0071F3A0
-0	ListClassTy	308	0x134	1	field_0134	/undefined1	0			0	none	none			2	1	conflict	conflicting_access_widths=1x2|4x1	0071F3A0
-0	ListClassTy	312	0x138	4	field_0138	/undefined4	0			0	none	none			54	11	conflict	conflicting_access_widths=2x1|4x64	0071F3A0
-1	ListClassTy	316	0x13C	4	field_013C	/undefined4	0			0	none	none			20	18	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	348	0x15C	4	field_015C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	380	0x17C	4	field_017C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	404	0x194	4	field_0194	/undefined4	0			0	none	none			0	3	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	412	0x19C	4	field_019C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	432	0x1B0	4	field_01B0	/undefined4	0			0	none	none			9	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	436	0x1B4	4	field_01B4	/undefined4	0			0	none	none			0	9	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	444	0x1BC	4	field_01BC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	468	0x1D4	2	field_01D4	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	470	0x1D6	2	field_01D6	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	476	0x1DC	4	field_01DC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	480	0x1E0	4	field_01E0	/undefined4	0			0	none	none			12	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	484	0x1E4	4	field_01E4	/undefined4	0			0	none	none			12	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	488	0x1E8	4	field_01E8	/undefined4	0			0	none	none			12	0	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	492	0x1EC	4	field_01EC	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	496	0x1F0	4	field_01F0	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	500	0x1F4	4	field_01F4	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	504	0x1F8	4	field_01F8	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	508	0x1FC	4	field_01FC	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	512	0x200	4	field_0200	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	516	0x204	4	field_0204	/undefined4	0			0	none	none			24	2	high	consistent_this_relative_access	0071F3A0
-1	ListClassTy	520	0x208	4	field_0208	/undefined4	0			0	none	none			9	1	high	consistent_this_relative_access	0071F3A0
 1	MAdvTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	00590170 | 00590410
 1	MAdvTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005908B0
 1	MAdvTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00590170 | 00590410
@@ -1350,11 +1171,11 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	MAdvTy	94	0x5E	4	field_005E	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00590170 | 00590580
 1	MMObjTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/MMObjTyVTable	0			0	existing	none			0	0	high	owner_vtable_pointer	
 1	MMObjTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005B5510
-1	MMObjTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	005B5510 | 005B6220 | 005B6480
+1	MMObjTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005B6220 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005B6480 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		3	0	high	consistent_this_relative_access; concrete_type_already_present	005B5510 | 005B6220 | 005B6480
 1	MMObjTy	102	0x66	4	field_0066	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	005B6220 | 005B6480
 1	MMObjTy	226	0xE2	1	field_00E2	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	005B6220
 1	MMsgTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005B9330
-1	MMsgTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	005B6FF0 | 005B7EF0 | 005B87D0 | 005B8C70
+1	MMsgTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005B6FF0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005B8C70 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		5	0	high	consistent_this_relative_access; concrete_type_already_present	005B6FF0 | 005B7EF0 | 005B87D0 | 005B8C70
 1	MMsgTy	16	0x10	4	field_0010	/undefined4	0		message	0	none	medium		message <= 005B9330 unique get field in MMsgTy::GetMessage	1	0	high	consistent_this_relative_access	005B9330
 1	MMsgTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005B7EF0 | 005B9010
 1	MMsgTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	005B7EF0 | 005B9010
@@ -1414,7 +1235,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	MMsgTy	7592	0x1DA8	4	field_1DA8	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005B7340
 1	MMsgTy	7632	0x1DD0	4	field_1DD0	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	005B6FF0 | 005B7340 | 005B7EF0 | 005B8C70
 1	MReportTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	005BD7A0 | 005BE310 | 005C0980 | 005C1340
-1	MReportTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	005C0980 | 005C0E00 | 005C1A90
+1	MReportTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005C0E00 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		5	0	high	consistent_this_relative_access; concrete_type_already_present	005C0980 | 005C0E00 | 005C1A90
 1	MReportTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005C1A90
 1	MReportTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	8	high	consistent_this_relative_access	005BE310 | 005C0E00 | 005C1A90
 0	MReportTy	49	0x31	2	field_0031	/undefined2	0			0	none	none			0	5	conflict	conflicting_access_widths=2x3|4x2	005BE310 | 005C0E00 | 005C1A90
@@ -1474,7 +1295,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	MReportTy	1107	0x453	4	field_0453	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005BD7A0 [this+0x453] used as receiver of HoloTy::Init; 005BE310 [this+0x453] used as receiver of HoloTy::Done; 005BF860 [this+0x453] used as receiver of HoloTy::NextFas		9	2	high	consistent_this_relative_access; concrete_type_already_present	005BD7A0 | 005BE310 | 005BE5B0 | 005BF860
 1	MReportTy	1111	0x457	4	field_0457	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005BD7A0 [this+0x457] used as receiver of HoloTy::Init; 005BE310 [this+0x457] used as receiver of HoloTy::Done; 005BF860 [this+0x457] used as receiver of HoloTy::NextFas		9	2	high	consistent_this_relative_access; concrete_type_already_present	005BD7A0 | 005BE310 | 005BE5B0 | 005BF860
 1	MTaskTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	005DFA30 | 005E0470 | 005E4180
-1	MTaskTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			8	0	high	consistent_this_relative_access	005E0470 | 005E4180 | 005E4570
+1	MTaskTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005E0470 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005E4570 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		8	0	high	consistent_this_relative_access; concrete_type_already_present	005E0470 | 005E4180 | 005E4570
 1	MTaskTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005E4570
 1	MTaskTy	69	0x45	4	field_0045	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	005DFA30 | 005E4570
 1	MTaskTy	73	0x49	4	field_0049	/undefined4	0			0	none	none			0	11	high	consistent_this_relative_access	005DFA30 | 005E4570
@@ -1672,7 +1493,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	MoneyTy	165	0xA5	1	field_00A5	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	0052BF00
 1	OptPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00533D10
 1	OptPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0052EB50
-1	OptPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	0052E8F0 | 0052EB50
+1	OptPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 0052E8F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		3	0	high	consistent_this_relative_access; concrete_type_already_present	0052E8F0 | 0052EB50
 1	OptPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	18	high	consistent_this_relative_access	0052F900 | 005325B0 | 00532A80 | 00532D50 | 00533D10
 0	OptPanelTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	15	conflict	conflicting_access_widths=2x2|4x14	005325B0 | 00532A80 | 00532D50 | 00533D10
 1	OptPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	3	high	consistent_this_relative_access	0052F900 | 00532A80
@@ -1732,7 +1553,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PanelTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			8	1	high	consistent_this_relative_access	005381B0 | 00538390 | 005384A0 | 005389E0 | 00538BA0 | 00538DB0 | 00538FC0
 1	PanelTy	100	0x64	4	field_0064	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005381B0
 1	PanelTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			9	1	high	consistent_this_relative_access	005381B0 | 00538390 | 005389E0 | 00538BA0 | 00538DB0 | 00538FC0
-1	PausePanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00539490
+1	PausePanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 00539490 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		1	0	high	consistent_this_relative_access; concrete_type_already_present	00539490
 1	PausePanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005396E0
 1	PausePanelTy	44	0x2C	2	field_002C	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	005396E0
 1	PausePanelTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00539280
@@ -1745,7 +1566,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PausePanelTy	384	0x180	4	field_0180	pointer:/ushort	0	pointer:/ushort		0	existing	none	pointer:/ushort <= 00539280 [this+0x180] assigned 00539280 return from cMf32::RecGet		1	1	high	consistent_this_relative_access; concrete_type_already_present	00539280 | 00539490
 1	PausePanelTy	388	0x184	4	field_0184	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00539280 | 00539490 | 005396E0
 1	PlayPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00539B90
-1	PlayPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	00539B90 | 0053A380
+1	PlayPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 0053A380 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		6	0	high	consistent_this_relative_access; concrete_type_already_present	00539B90 | 0053A380
 1	PlayPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00539B90 | 0053AA50
 0	PlayPanelTy	44	0x2C	4	field_002C	/undefined4	0			0	conflict	none			0	1	conflict	overlaps_field_002E	00539B90
 0	PlayPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	conflict	none			0	1	conflict	overlaps_field_002C	0053AA50
@@ -1783,7 +1604,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PopUpTy	157	0x9D	4	field_009D	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0052DD20
 1	PrividerTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/PrividerTyVTable	0			0	existing	none			1	0	high	owner_vtable_pointer; concrete_type_already_present	005BC5E0
 1	PrividerTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	005B9B10 | 005BAAC0 | 005BBA90
-1	PrividerTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	005BBA90 | 005BC050
+1	PrividerTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005BC050 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		4	0	high	consistent_this_relative_access; concrete_type_already_present	005BBA90 | 005BC050
 1	PrividerTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005BC5E0
 1	PrividerTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	7	high	consistent_this_relative_access	005BBA90 | 005BC5E0
 1	PrividerTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			0	7	high	consistent_this_relative_access	005BBA90 | 005BC5E0
@@ -1796,7 +1617,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PrividerTy	97	0x61	4	field_0061	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 005BAE00 [this+0x61] assigned 005BAE00 return from WINMM.DLL::timeGetTime		1	2	high	consistent_this_relative_access; concrete_type_already_present	005BAE00 | 005BC5E0
 1	PrividerTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			3	5	high	consistent_this_relative_access	005BAAC0 | 005BAE00 | 005BB910 | 005BC5E0
 1	PrividerTy	6746	0x1A5A	1	field_1A5A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	005BAE00
-1	PrividerTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005BC5E0 [this+0x1A5B] used as receiver of StartSystemTy::InitChat		21	0	high	consistent_this_relative_access; concrete_type_already_present	005B9B10 | 005BA560 | 005BAAC0 | 005BBA90 | 005BC5E0
+1	PrividerTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005BC5E0 [this+0x1A5B] used as receiver of StartSystemTy::InitChat		21	0	high	consistent_this_relative_access; concrete_type_already_present	005B9B10 | 005BA560 | 005BAAC0 | 005BBA90 | 005BC5E0
 1	PrividerTy	6751	0x1A5F	1	field_1A5F	/undefined1	0			0	none	none			6	1	high	consistent_this_relative_access	005B9B10 | 005BA8B0 | 005BAAC0 | 005BBA90 | 005BC5E0
 1	PrividerTy	6752	0x1A60	1	field_1A60	/undefined1	0			0	none	none			0	3	high	consistent_this_relative_access	005B9B10 | 005BC5E0
 1	PrividerTy	6753	0x1A61	4	field_1A61	/undefined4	0			0	none	none			5	2	high	consistent_this_relative_access	005BC050 | 005BC5E0
@@ -1838,7 +1659,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PrividerTy	7322	0x1C9A	4	field_1C9A	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005B9B10 [this+0x1C9A] used as receiver of HoloTy::Init; 005BA560 [this+0x1C9A] used as receiver of HoloTy::Done; 005BAE00 [this+0x1C9A] used as receiver of HoloTy::NextFas; 005BC050 [this+0x1C9A] used as receiver of HoloTy::Done; 005BC050 [this+0x1C9A] used as receiver of HoloTy::Init; 005BC050 [this+0x1C9A] used as receiver of HoloTy::NextFas; 005BC5E0 [this+0x1C9A] used as receiver of HoloTy::Init		17	5	high	consistent_this_relative_access; concrete_type_already_present	005B9B10 | 005BA560 | 005BAE00 | 005BC050 | 005BC5E0
 1	ProdPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053F650
 1	ProdPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0053F940
-1	ProdPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	0053F220 | 0053F940
+1	ProdPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 0053F220 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		4	0	high	consistent_this_relative_access; concrete_type_already_present	0053F220 | 0053F940
 1	ProdPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	3	high	consistent_this_relative_access	0053F780 | 0053F940
 1	ProdPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0053F780
 1	ProdPanelTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	0053F940 | 0053FCD0 | 0053FEE0
@@ -1860,18 +1681,6 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	ProdPanelTy	405	0x195	4	field_0195	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053F650
 1	ProdPanelTy	413	0x19D	4	field_019D	/int	0	/int	slider	0	existing	medium	/int <= 0053EF20 [this+0x19D] assigned 0053EF20 return from ProdPanelTy::CreateSlider	slider <= 0053EF20 [this+0x19D] assigned 0053EF20 return from ProdPanelTy::CreateSlider	3	2	high	consistent_this_relative_access; concrete_type_already_present	0053EF20 | 0053F220 | 0053F780
 1	ProdPanelTy	417	0x1A1	4	field_01A1	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0053EF20 | 0053F220 | 0053F780
-1	RadioClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			14	1	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			11	1	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			7	4	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E0E0
-0	RadioClassTy	92	0x5C	4	field_005C	/undefined4	0			0	conflict	none			0	1	conflict	overlaps_field_005E	0071E0E0
-0	RadioClassTy	94	0x5E	2	field_005E	/undefined2	0			0	conflict	none			0	1	conflict	overlaps_field_005C	0071E0E0
-1	RadioClassTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E0E0
-1	RadioClassTy	100	0x64	4	field_0064	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E0E0
 1	ResearchPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053CA80
 1	ResearchPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053C120
 1	ResearchPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053C120
@@ -1889,7 +1698,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	ResearchPanelTy	633	0x279	1	field_0279	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	0053C500 | 0053CA80
 1	ResearchPanelTy	634	0x27A	4	field_027A	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0053C120
 1	SAMPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0053CEF0
-1	SAMPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053D1A0
+1	SAMPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 0053D1A0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		1	0	high	consistent_this_relative_access; concrete_type_already_present	0053D1A0
 1	SAMPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0053D290 | 0053D3B0
 1	SAMPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0053D290
 1	SAMPanelTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053D290
@@ -1904,7 +1713,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SAMPanelTy	461	0x1CD	4	field_01CD	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0053CEF0
 1	SIDTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005D9470
 1	SIDTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005D8450
-1	SIDTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	005D8450 | 005D8A90
+1	SIDTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005D8A90 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		3	0	high	consistent_this_relative_access; concrete_type_already_present	005D8450 | 005D8A90
 1	SIDTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005D9470
 1	SIDTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	17	high	consistent_this_relative_access	005D81F0 | 005D8BF0 | 005D9470
 1	SIDTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			0	10	high	consistent_this_relative_access	005D8BF0 | 005D9470
@@ -2141,32 +1950,43 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBHEShellC	260	0x104	4	field_0104	/undefined4	0			0	none	none			4	6	high	consistent_this_relative_access	005F27C0
 1	STBHEShellC	264	0x108	1	field_0108	/undefined1	0			0	none	none			2	1	high	consistent_this_relative_access	005F27C0
 1	STBHEShellC	365	0x16D	4	field_016D	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005F27C0
-1	STBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STBoatCVTable	0			0	existing	none			17	1	high	owner_vtable_pointer; concrete_type_already_present	0044E690 | 0044EE30 | 004608B0 | 0046C980 | 0046CF20 | 0046F5C0 | 00471AC0 | 00475530 | 00478640 | 0047D080 | 0047DA50 | 00482A00
+1	STBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STBoatCVTable	0			0	existing	none			20	1	high	owner_vtable_pointer; concrete_type_already_present	0044E690 | 0044EE30 | 004602B0 | 00460360 | 004608B0 | 0046C980 | 0046CF20 | 0046F5C0 | 00471AC0 | 00475530 | 00478640 | 0047D080 | 0047DA50 | 00482A00
 1	STBoatC	16	0x10	4	field_0010	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0044EE30
-1	STBoatC	24	0x18	4	field_0018	/undefined4	0			0	none	none			9	0	high	consistent_this_relative_access	0044EE30 | 004749C0 | 0047FAD0 | 0048D130
+1	STBoatC	24	0x18	4	field_0018	/undefined4	0			0	none	none			18	0	high	consistent_this_relative_access	0044EE30 | 004749C0 | 0047FAD0 | 0048D130 | 0048D930 | 0048DBA0 | 00492420
 1	STBoatC	28	0x1C	4	field_001C	/undefined4	0			0	none	none			10	10	high	consistent_this_relative_access	0044EE30
 1	STBoatC	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0048FAC0
-0	STBoatC	36	0x24	4	field_0024	/undefined4	0			0	none	none			41	0	conflict	conflicting_access_widths=1x10|2x2|4x29	0044EE30 | 0045EF00 | 0045FD30 | 0046F5C0 | 0047FAD0 | 0047FE10 | 00482A00 | 00488F30 | 004899A0 | 0048CEA0 | 0048FAC0 | 00493340
+0	STBoatC	36	0x24	4	field_0024	/undefined4	0			0	none	none			46	0	conflict	conflicting_access_widths=1x12|2x2|4x32	0044EE30 | 0045EF00 | 0045F6C0 | 0045FD30 | 0045FF50 | 0046F5C0 | 0047FAD0 | 0047FE10 | 00482A00 | 00488F30 | 004899A0 | 0048CEA0 | 0048FAC0 | 00493340
 1	STBoatC	40	0x28	4	field_0028	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0048FAC0
 1	STBoatC	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0048FAC0
-1	STBoatC	48	0x30	2	field_0030	/undefined2	0			0	none	none			5	0	high	consistent_this_relative_access	0044EE30 | 0045FD30 | 0047FE10
-1	STBoatC	50	0x32	2	field_0032	/undefined2	0			0	none	none			4	0	high	consistent_this_relative_access	0044EE30 | 0045EF00
-1	STBoatC	65	0x41	2	field_0041	/short	0	/short		0	existing	none	/short <= 00450111 MOVSX establishes /short; 0046F70C MOVSX establishes /short; 004825C3 MOVSX establishes /short; 0048CFA6 MOVSX establishes /short		8	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0046CF20 | 0046F5C0 | 0047D080 | 0047DA50 | 00482450 | 0048CEA0
-1	STBoatC	67	0x43	2	field_0043	/short	0	/short		0	existing	none	/short <= 00450104 MOVSX establishes /short; 0046F708 MOVSX establishes /short; 004825B3 MOVSX establishes /short; 0048CFAE MOVSX establishes /short		8	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0046CF20 | 0046F5C0 | 0047D080 | 0047DA50 | 00482450 | 0048CEA0
-1	STBoatC	69	0x45	2	field_0045	/short	0	/short		0	existing	none	/short <= 004500F9 MOVSX establishes /short; 0046F704 MOVSX establishes /short; 0048CFBE MOVSX establishes /short		7	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0046CF20 | 0046F5C0 | 0047D080 | 0047DA50 | 00482450 | 0048CEA0
-1	STBoatC	71	0x47	2	field_0047	/short	0	/short		0	existing	none	/short <= 00493427 MOVSX establishes /short		5	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004608B0 | 0046F5C0 | 00493340
-1	STBoatC	73	0x49	2	field_0049	/short	0	/short		0	existing	none	/short <= 00493421 MOVSX establishes /short		5	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004608B0 | 0046F5C0 | 00493340
-1	STBoatC	75	0x4B	2	field_004B	/short	0	/short		0	existing	none	/short <= 0049341D MOVSX establishes /short		5	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004608B0 | 0046F5C0 | 00493340
+1	STBoatC	48	0x30	2	field_0030	/undefined2	0			0	none	none			6	0	high	consistent_this_relative_access	0044EE30 | 0045FD30 | 0045FF50 | 0047FE10
+1	STBoatC	50	0x32	2	field_0032	/undefined2	0			0	none	none			6	0	high	consistent_this_relative_access	0044EE30 | 0045EF00 | 0045FF50
+1	STBoatC	65	0x41	2	field_0041	/short	0	/short		0	existing	none	/short <= 00450111 MOVSX establishes /short; 0045F75D MOVSX establishes /short; 0046F70C MOVSX establishes /short; 004825C3 MOVSX establishes /short; 0048CFA6 MOVSX establishes /short		10	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0045F6C0 | 0046CF20 | 0046F5C0 | 0047D080 | 0047DA50 | 00482450 | 0048CEA0
+1	STBoatC	67	0x43	2	field_0043	/short	0	/short		0	existing	none	/short <= 00450104 MOVSX establishes /short; 0045F792 MOVSX establishes /short; 0046F708 MOVSX establishes /short; 004825B3 MOVSX establishes /short; 0048CFAE MOVSX establishes /short		10	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0045F6C0 | 0046CF20 | 0046F5C0 | 0047D080 | 0047DA50 | 00482450 | 0048CEA0
+1	STBoatC	69	0x45	2	field_0045	/short	0	/short		0	existing	none	/short <= 004500F9 MOVSX establishes /short; 0045F7AB MOVSX establishes /short; 0046F704 MOVSX establishes /short; 0048CFBE MOVSX establishes /short		9	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0045F6C0 | 0046CF20 | 0046F5C0 | 0047D080 | 0047DA50 | 00482450 | 0048CEA0
+1	STBoatC	71	0x47	2	field_0047	/short	0	/short		0	existing	none	/short <= 00493427 MOVSX establishes /short; 00493A99 MOVSX establishes /short		7	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004608B0 | 0046F5C0 | 00490570 | 00493340 | 004939B0
+1	STBoatC	73	0x49	2	field_0049	/short	0	/short		0	existing	none	/short <= 00493421 MOVSX establishes /short; 00493A95 MOVSX establishes /short		7	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004608B0 | 0046F5C0 | 00490570 | 00493340 | 004939B0
+1	STBoatC	75	0x4B	2	field_004B	/short	0	/short		0	existing	none	/short <= 0049341D MOVSX establishes /short; 00493A8F MOVSX establishes /short		7	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004608B0 | 0046F5C0 | 00490570 | 00493340 | 004939B0
 1	STBoatC	77	0x4D	1	field_004D	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0044EE30
-1	STBoatC	91	0x5B	2	field_005B	/undefined2	0			0	none	none			5	0	high	consistent_this_relative_access	0044EE30 | 004732F0 | 004758E0 | 0047D080
-1	STBoatC	93	0x5D	2	field_005D	/undefined2	0			0	none	none			5	0	high	consistent_this_relative_access	0044EE30 | 004732F0 | 004758E0 | 0047D080
-1	STBoatC	95	0x5F	2	field_005F	/undefined2	0			0	none	none			6	0	high	consistent_this_relative_access	0044EE30 | 004732F0 | 004758E0 | 0047D080 | 00491240
-1	STBoatC	108	0x6C	2	field_006C	/short	0	/short		0	existing	none	/short <= 0044FF24 MOVSX establishes /short; 0044FF71 MOVSX establishes /short; 0044FFFE MOVSX establishes /short; 0045015E MOVSX establishes /short		5	1	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 00482450
+1	STBoatC	91	0x5B	2	field_005B	/short	0	/short		0	existing	none	/short <= 004939D5 MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004732F0 | 004758E0 | 0047D080 | 004939B0
+1	STBoatC	93	0x5D	2	field_005D	/short	0	/short		0	existing	none	/short <= 004939EC MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004732F0 | 004758E0 | 0047D080 | 004939B0
+1	STBoatC	95	0x5F	2	field_005F	/short	0	/short		0	existing	none	/short <= 004939FD MOVSX establishes /short		7	0	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004732F0 | 004758E0 | 0047D080 | 00491240 | 004939B0
+1	STBoatC	97	0x61	1	field_0061	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0045F6C0
+1	STBoatC	98	0x62	1	field_0062	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0045F6C0
+1	STBoatC	108	0x6C	2	field_006C	/short	0	/short		0	existing	none	/short <= 0044FF24 MOVSX establishes /short; 0044FF71 MOVSX establishes /short; 0044FFFE MOVSX establishes /short; 0045015E MOVSX establishes /short		9	4	high	consistent_this_relative_access; concrete_type_already_present	00417910 | 0044EE30 | 00482450
 1	STBoatC	110	0x6E	2	field_006E	/undefined2	0			0	none	none			0	3	high	consistent_this_relative_access	0044EE30
 1	STBoatC	118	0x76	4	field_0076	/undefined4	0			0	none	none			0	5	high	consistent_this_relative_access	0044EE30 | 00491070
+1	STBoatC	134	0x86	2	field_0086	/short	0	/short		0	existing	none	/short <= 0041791A MOVSX establishes /short		2	0	high	consistent_this_relative_access; concrete_type_already_present	004176C0 | 00417910
 1	STBoatC	142	0x8E	1	field_008E	/undefined1	0			0	none	none			3	0	high	consistent_this_relative_access	0044EE30
+1	STBoatC	151	0x97	4	field_0097	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0045F6C0
 1	STBoatC	183	0xB7	4	field_00B7	/undefined4	0			0	none	none			0	10	high	consistent_this_relative_access	0046AA50 | 0046EFD0 | 0046F5C0 | 004714D0 | 00479600 | 0047BF70 | 0047CF20 | 0047FAD0
-1	STBoatC	227	0xE3	1	field_00E3	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
+1	STBoatC	187	0xBB	4	field_00BB	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00481520
+1	STBoatC	191	0xBF	4	field_00BF	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00481520
+1	STBoatC	195	0xC3	4	field_00C3	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00481520
+1	STBoatC	211	0xD3	4	field_00D3	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0045F6C0
+1	STBoatC	227	0xE3	1	field_00E3	/undefined1	0			0	none	none			0	3	high	consistent_this_relative_access	0044EE30 | 0045F6C0
+1	STBoatC	244	0xF4	4	field_00F4	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00460260 | 004602B0
+1	STBoatC	250	0xFA	2	field_00FA	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0045FF50
+1	STBoatC	253	0xFD	4	field_00FD	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00481520
 1	STBoatC	465	0x1D1	4	field_01D1	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0044EE30
 1	STBoatC	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0044E690
 1	STBoatC	493	0x1ED	4	field_01ED	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	0044EE30
@@ -2209,12 +2029,12 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	958	0x3BE	2	field_03BE	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	004732F0
 1	STBoatC	960	0x3C0	4	field_03C0	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004732F0
 1	STBoatC	968	0x3C8	2	field_03C8	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	004749C0
-1	STBoatC	1059	0x423	2	field_0423	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0047D080
-1	STBoatC	1061	0x425	2	field_0425	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0047D080
-1	STBoatC	1063	0x427	2	field_0427	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0047D080
+1	STBoatC	1059	0x423	2	field_0423	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047D080 | 004952E0
+1	STBoatC	1061	0x425	2	field_0425	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047D080 | 004952E0
+1	STBoatC	1063	0x427	2	field_0427	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047D080 | 004952E0
 1	STBoatC	1109	0x455	4	field_0455	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0044E690 | 00482A00 | 0048FAC0 | 004900E0
-1	STBoatC	1113	0x459	4	field_0459	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
-1	STBoatC	1117	0x45D	4	field_045D	/undefined4	0			0	none	none			8	5	high	consistent_this_relative_access	0044E690 | 0044EE30 | 004608B0 | 0048FAC0 | 004900E0 | 00491070 | 00491FB0 | 00492080 | 00492280
+1	STBoatC	1113	0x459	4	field_0459	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	0044E690 | 0048D930 | 0048DBA0 | 0048FAC0 | 004900E0
+1	STBoatC	1117	0x45D	4	field_045D	/undefined4	0			0	none	none			12	5	high	consistent_this_relative_access	0044E690 | 0044EE30 | 004608B0 | 0048D930 | 0048DBA0 | 0048FAC0 | 004900E0 | 00491070 | 00491FB0 | 00492080 | 00492280 | 00492390
 1	STBoatC	1121	0x461	4	field_0461	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1125	0x465	4	field_0465	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0044E690
 1	STBoatC	1129	0x469	2	field_0469	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0048FAC0 | 004900E0
@@ -2232,10 +2052,14 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1167	0x48F	4	field_048F	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1171	0x493	4	field_0493	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1175	0x497	4	field_0497	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0044E690 | 00465BE0 | 0048FAC0 | 004900E0
-1	STBoatC	1179	0x49B	2	field_049B	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0048D130
-1	STBoatC	1181	0x49D	2	field_049D	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0048D130
-1	STBoatC	1183	0x49F	2	field_049F	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0048D130
-1	STBoatC	1185	0x4A1	4	field_04A1	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1179	0x49B	2	field_049B	/undefined2	0			0	none	none			2	1	high	consistent_this_relative_access	0048D130 | 0048D930
+1	STBoatC	1181	0x49D	2	field_049D	/undefined2	0			0	none	none			2	1	high	consistent_this_relative_access	0048D130 | 0048D930
+1	STBoatC	1183	0x49F	2	field_049F	/undefined2	0			0	none	none			2	1	high	consistent_this_relative_access	0048D130 | 0048D930
+1	STBoatC	1185	0x4A1	4	field_04A1	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	0048D130 | 0048D930
+1	STBoatC	1189	0x4A5	2	field_04A5	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
+1	STBoatC	1191	0x4A7	2	field_04A7	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
+1	STBoatC	1193	0x4A9	2	field_04A9	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
+1	STBoatC	1195	0x4AB	4	field_04AB	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
 1	STBoatC	1205	0x4B5	4	field_04B5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0048D130
 1	STBoatC	1213	0x4BD	4	field_04BD	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0048D130
 1	STBoatC	1229	0x4CD	4	field_04CD	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0046AA50
@@ -2254,22 +2078,27 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1314	0x522	2	field_0522	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0046CF20
 1	STBoatC	1316	0x524	4	field_0524	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
 1	STBoatC	1320	0x528	4	field_0528	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0044EE30 | 0046CF20
+1	STBoatC	1324	0x52C	2	field_052C	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
+1	STBoatC	1326	0x52E	2	field_052E	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
+1	STBoatC	1328	0x530	2	field_0530	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
+1	STBoatC	1330	0x532	4	field_0532	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0048D930
 1	STBoatC	1348	0x544	4	field_0544	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0046EFD0
 1	STBoatC	1356	0x54C	4	field_054C	/SubmarineTitans/Recovered/Enums/STBoatC_field_054CState	0			0	existing	none			2	0	high	consistent_this_relative_access; concrete_type_already_present	0046D450 | 0046EFD0
-1	STBoatC	1364	0x554	2	field_0554	/short	0	/short		0	existing	none	/short <= 0046F650 MOVSX establishes /short; 0046F7F2 MOVSX establishes /short		5	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0
-1	STBoatC	1366	0x556	2	field_0556	/short	0	/short		0	existing	none	/short <= 0046F649 MOVSX establishes /short; 0046F7EB MOVSX establishes /short		5	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0
-1	STBoatC	1368	0x558	2	field_0558	/short	0	/short		0	existing	none	/short <= 0046F642 MOVSX establishes /short; 0046F7E4 MOVSX establishes /short		5	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0
+1	STBoatC	1364	0x554	2	field_0554	/short	0	/short		0	existing	none	/short <= 0046F650 MOVSX establishes /short; 0046F7F2 MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0 | 0048DBA0
+1	STBoatC	1366	0x556	2	field_0556	/short	0	/short		0	existing	none	/short <= 0046F649 MOVSX establishes /short; 0046F7EB MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0 | 0048DBA0
+1	STBoatC	1368	0x558	2	field_0558	/short	0	/short		0	existing	none	/short <= 0046F642 MOVSX establishes /short; 0046F7E4 MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0 | 0048DBA0
+1	STBoatC	1370	0x55A	4	field_055A	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0048DBA0
 1	STBoatC	1374	0x55E	2	field_055E	/short	0	/short		0	existing	none	/short <= 0046F772 MOVSX establishes /short		1	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0
 1	STBoatC	1376	0x560	2	field_0560	/short	0	/short		0	existing	none	/short <= 0046F76F MOVSX establishes /short		1	0	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0
 0	STBoatC	1378	0x562	4	field_0562	/undefined4	0	/short		0	none	none	/short <= 0046F76C MOVSX establishes /short		2	0	conflict	conflicting_access_widths=2x1|4x1	0046F5C0
 1	STBoatC	1380	0x564	4	field_0564	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0046F5C0
-1	STBoatC	1384	0x568	4	field_0568	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1384	0x568	4	field_0568	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	0046F5C0 | 0048DBA0
 1	STBoatC	1408	0x580	4	field_0580	/SubmarineTitans/Recovered/Enums/STBoatC_field_0580State	0			0	existing	none			2	2	high	consistent_this_relative_access; concrete_type_already_present	0046F5C0 | 004714D0
 0	STBoatC	1414	0x586	4	field_0586	/undefined4	0			0	conflict	none			1	0	conflict	overlaps_field_0588	0046F5C0
 0	STBoatC	1416	0x588	2	field_0588	/undefined2	0			0	conflict	none			1	1	conflict	overlaps_field_0586	004732F0
 1	STBoatC	1418	0x58A	2	field_058A	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	004732F0
 1	STBoatC	1420	0x58C	2	field_058C	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	004732F0
-1	STBoatC	1422	0x58E	4	field_058E	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0044EE30 | 004732F0 | 00491FB0 | 00492080 | 00492280
+1	STBoatC	1422	0x58E	4	field_058E	/undefined4	0			0	none	none			7	1	high	consistent_this_relative_access	0044EE30 | 004732F0 | 00491FB0 | 00492080 | 00492280 | 00492390 | 00492420
 1	STBoatC	1426	0x592	4	field_0592	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00492080 | 00492280
 1	STBoatC	1430	0x596	4	field_0596	/undefined4	0			0	none	none			7	4	high	consistent_this_relative_access	0044EE30 | 004732F0 | 00474810 | 00491FB0 | 00492080 | 00492280
 1	STBoatC	1434	0x59A	4	field_059A	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	00491FB0 | 00492280
@@ -2300,19 +2129,20 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1504	0x5E0	4	field_05E0	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1508	0x5E4	4	field_05E4	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1512	0x5E8	4	field_05E8	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0044E690 | 004761B0 | 0048FAC0 | 004900E0
-1	STBoatC	1516	0x5EC	4	field_05EC	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
+0	STBoatC	1516	0x5EC	4	field_05EC	/undefined4	0			0	none	none			2	2	conflict	conflicting_access_widths=2x1|4x3	0044E690 | 0048FAC0 | 004900E0 | 004926C0
+1	STBoatC	1518	0x5EE	2	field_05EE	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	004926C0
 0	STBoatC	1520	0x5F0	4	field_05F0	/undefined4	0			0	conflict	none			1	2	conflict	overlaps_field_05F2	0044E690 | 0048FAC0 | 004900E0
-0	STBoatC	1522	0x5F2	2	field_05F2	/undefined2	0	/short		0	conflict	none	/short <= 00476A6B MOVSX establishes /short		1	0	conflict	overlaps_field_05F0	00476A10
-0	STBoatC	1524	0x5F4	4	field_05F4	/undefined4	0	/short		0	none	none	/short <= 00476A64 MOVSX establishes /short		2	2	conflict	conflicting_access_widths=2x1|4x3	0044E690 | 00476A10 | 0048FAC0 | 004900E0
-1	STBoatC	1526	0x5F6	2	field_05F6	/short	0	/short		0	existing	none	/short <= 00476A5D MOVSX establishes /short		1	0	high	consistent_this_relative_access; concrete_type_already_present	00476A10
+0	STBoatC	1522	0x5F2	2	field_05F2	/undefined2	0	/short		0	conflict	none	/short <= 00476A6B MOVSX establishes /short		1	2	conflict	overlaps_field_05F0	00476A10 | 004926C0
+0	STBoatC	1524	0x5F4	4	field_05F4	/undefined4	0	/short		0	none	none	/short <= 00476A64 MOVSX establishes /short		2	4	conflict	conflicting_access_widths=2x3|4x3	0044E690 | 00476A10 | 0048FAC0 | 004900E0 | 004926C0
+1	STBoatC	1526	0x5F6	2	field_05F6	/short	0	/short		0	existing	none	/short <= 00476A5D MOVSX establishes /short		1	2	high	consistent_this_relative_access; concrete_type_already_present	00476A10 | 004926C0
 1	STBoatC	1528	0x5F8	4	field_05F8	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	0044E690 | 0045EF00 | 00476A10 | 0048FAC0 | 004900E0
 1	STBoatC	1553	0x611	4	field_0611	/SubmarineTitans/Recovered/Enums/STBoatC_field_0611State	0			0	existing	none			2	0	high	consistent_this_relative_access; concrete_type_already_present	00476CE0 | 00478030
 1	STBoatC	1581	0x62D	4	field_062D	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00478640
 1	STBoatC	1585	0x631	4	field_0631	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00478640
 1	STBoatC	1589	0x635	4	field_0635	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00479600
-1	STBoatC	1593	0x639	2	field_0639	/short	0	/short		0	existing	none	/short <= 00479817 MOVSX establishes /short		3	0	high	consistent_this_relative_access; concrete_type_already_present	00479600
-1	STBoatC	1595	0x63B	2	field_063B	/short	0	/short		0	existing	none	/short <= 00479810 MOVSX establishes /short		3	0	high	consistent_this_relative_access; concrete_type_already_present	00479600
-1	STBoatC	1597	0x63D	2	field_063D	/short	0	/short		0	existing	none	/short <= 00479809 MOVSX establishes /short		3	0	high	consistent_this_relative_access; concrete_type_already_present	00479600
+1	STBoatC	1593	0x639	2	field_0639	/short	0	/short		0	existing	none	/short <= 00479817 MOVSX establishes /short		5	0	high	consistent_this_relative_access; concrete_type_already_present	00479600 | 004939B0
+1	STBoatC	1595	0x63B	2	field_063B	/short	0	/short		0	existing	none	/short <= 00479810 MOVSX establishes /short; 004939E5 MOVSX establishes /short; 00493A81 MOVSX establishes /short		7	0	high	consistent_this_relative_access; concrete_type_already_present	00479600 | 004939B0
+1	STBoatC	1597	0x63D	2	field_063D	/short	0	/short		0	existing	none	/short <= 00479809 MOVSX establishes /short; 004939F6 MOVSX establishes /short; 00493A7A MOVSX establishes /short		7	0	high	consistent_this_relative_access; concrete_type_already_present	00479600 | 004939B0
 1	STBoatC	1599	0x63F	4	field_063F	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00479600
 1	STBoatC	1603	0x643	2	field_0643	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	00479600
 1	STBoatC	1605	0x645	2	field_0645	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	00479600
@@ -2324,9 +2154,9 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 0	STBoatC	1635	0x663	4	field_0663	/undefined4	0			0	conflict	none			2	1	conflict	overlaps_field_0662	00479600 | 0047BF70
 1	STBoatC	1638	0x666	4	field_0666	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0045EF00
 1	STBoatC	1642	0x66A	1	field_066A	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0045EF00
-1	STBoatC	1647	0x66F	2	field_066F	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0047CF20
-1	STBoatC	1649	0x671	2	field_0671	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0047CF20
-1	STBoatC	1651	0x673	2	field_0673	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0047CF20
+1	STBoatC	1647	0x66F	2	field_066F	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047CF20 | 004952E0
+1	STBoatC	1649	0x671	2	field_0671	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047CF20 | 004952E0
+1	STBoatC	1651	0x673	2	field_0673	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047CF20 | 004952E0
 1	STBoatC	1653	0x675	4	field_0675	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0047CF20
 1	STBoatC	1657	0x679	4	field_0679	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0047CF20
 1	STBoatC	1671	0x687	4	field_0687	/SubmarineTitans/Recovered/Enums/STBoatC_field_0687State	0			0	existing	none			2	0	high	consistent_this_relative_access; concrete_type_already_present	0047C050 | 0047CF20
@@ -2349,7 +2179,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1771	0x6EB	4	field_06EB	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1775	0x6EF	4	field_06EF	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1779	0x6F3	4	field_06F3	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044EE30
-1	STBoatC	1783	0x6F7	4	field_06F7	/SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State	0			0	existing	none			24	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 004653B0 | 00482A00 | 00488F30 | 0048A670
+1	STBoatC	1783	0x6F7	4	field_06F7	/SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State	0			0	existing	none			25	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0045F6C0 | 004653B0 | 00482A00 | 00488F30 | 0048A670
 1	STBoatC	1787	0x6FB	4	field_06FB	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
 1	STBoatC	1791	0x6FF	4	field_06FF	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
 1	STBoatC	1795	0x703	4	field_0703	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
@@ -2374,7 +2204,8 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1958	0x7A6	4	field_07A6	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0044E690
 1	STBoatC	1962	0x7AA	4	field_07AA	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0044E690
 1	STBoatC	1986	0x7C2	4	field_07C2	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044EE30 | 00491070
-1	STBoatC	1994	0x7CA	4	field_07CA	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	0044EE30 | 004732F0
+1	STBoatC	1990	0x7C6	4	field_07C6	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00492390 | 00492420
+1	STBoatC	1994	0x7CA	4	field_07CA	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0044EE30 | 004732F0 | 00492420
 1	STBoatC	2006	0x7D6	4	field_07D6	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	0044EE30
 1	STBoatC	2010	0x7DA	4	field_07DA	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	0044EE30
 1	STBoatC	2034	0x7F2	2	field_07F2	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0044E690
@@ -2512,25 +2343,27 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STFieldC	597	0x255	4	field_0255	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00580B60
 1	STFishC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STFishCVTable	0			0	existing	none			2	1	high	owner_vtable_pointer; concrete_type_already_present	0057BD20 | 0057CD70
 1	STFishC	24	0x18	4	field_0018	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0057BF60
-1	STFishC	71	0x47	2	field_0047	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0057BF60
-1	STFishC	73	0x49	2	field_0049	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0057BF60
-1	STFishC	75	0x4B	2	field_004B	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0057BF60
+1	STFishC	28	0x1C	4	field_001C	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0057D700
+1	STFishC	71	0x47	2	field_0047	/undefined2	0			0	none	none			4	0	high	consistent_this_relative_access	004162B0 | 0057BF60 | 0057D5F0 | 0057D700
+1	STFishC	73	0x49	2	field_0049	/undefined2	0			0	none	none			4	0	high	consistent_this_relative_access	004162B0 | 0057BF60 | 0057D5F0 | 0057D700
+1	STFishC	75	0x4B	2	field_004B	/short	0	/short		0	existing	none	/short <= 0057D743 MOVSX establishes /short		4	0	high	consistent_this_relative_access; concrete_type_already_present	004162B0 | 0057BF60 | 0057D5F0 | 0057D700
 1	STFishC	91	0x5B	2	field_005B	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0057BF60
 1	STFishC	93	0x5D	2	field_005D	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0057BF60
 1	STFishC	95	0x5F	2	field_005F	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0057BF60
+1	STFishC	108	0x6C	2	field_006C	/undefined2	0			0	none	none			4	0	high	consistent_this_relative_access	0057D700
 1	STFishC	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0057BD20
 1	STFishC	529	0x211	4	field_0211	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	0057CD70
 1	STFishC	561	0x231	4	field_0231	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0057BF60
-1	STFishC	565	0x235	2	field_0235	/undefined2	0			0	none	none			1	2	high	consistent_this_relative_access	0057BF60 | 0057CD70
-1	STFishC	567	0x237	2	field_0237	/undefined2	0			0	none	none			1	2	high	consistent_this_relative_access	0057BF60 | 0057CD70
-1	STFishC	569	0x239	2	field_0239	/undefined2	0			0	none	none			1	2	high	consistent_this_relative_access	0057BF60 | 0057CD70
+1	STFishC	565	0x235	2	field_0235	/undefined2	0			0	none	none			2	3	high	consistent_this_relative_access	0057BF60 | 0057CD70 | 0057D5F0
+1	STFishC	567	0x237	2	field_0237	/undefined2	0			0	none	none			2	3	high	consistent_this_relative_access	0057BF60 | 0057CD70 | 0057D5F0
+1	STFishC	569	0x239	2	field_0239	/undefined2	0			0	none	none			2	3	high	consistent_this_relative_access	0057BF60 | 0057CD70 | 0057D5F0
 1	STFishC	571	0x23B	4	field_023B	/undefined4	0			0	none	none			3	10	high	consistent_this_relative_access	0057BD20 | 0057BF60 | 0057CD70
 1	STFishC	575	0x23F	4	field_023F	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	0057BF60 | 0057CD70
 0	STFishC	599	0x257	4	field_0257	/undefined4	0	/int		0	none	none	/int <= 0057C389 FILD establishes /int		2	1	conflict	conflicting_access_widths=2x1|4x2	0057BF60
 0	STFishC	603	0x25B	4	field_025B	/undefined4	0	/int		0	none	none	/int <= 0057C373 FILD establishes /int		2	1	conflict	conflicting_access_widths=2x1|4x2	0057BF60
 1	STFishC	607	0x25F	4	field_025F	/int	0	/int		0	existing	none	/int <= 0057C35D FILD establishes /int		1	1	high	consistent_this_relative_access; concrete_type_already_present	0057BF60
 1	STFishC	611	0x263	2	field_0263	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	0057BF60
-1	STFishC	615	0x267	4	field_0267	/SubmarineTitans/Recovered/Enums/STFishC_field_0267State	0			0	existing	none			2	0	high	consistent_this_relative_access; concrete_type_already_present	0057BF60 | 0057CD70
+1	STFishC	615	0x267	4	field_0267	/SubmarineTitans/Recovered/Enums/STFishC_field_0267State	0			0	existing	none			3	0	high	consistent_this_relative_access; concrete_type_already_present	0057BF60 | 0057CD70 | 0057D700
 1	STGameObjC	0	0x0	4	field_0000	/undefined4	0			0	none	none			7	0	high	consistent_this_relative_access	00419DF0 | 0041AF40
 1	STGameObjC	24	0x18	4	field_0018	/undefined4	0		message	0	none	medium		message <= 0041AF40 unique get field in STGameObjC::GetMessage	1	0	high	consistent_this_relative_access	0041AF40
 1	STGameObjC	28	0x1C	4	field_001C	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0041AF40
@@ -2586,13 +2419,22 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STGameObjC	457	0x1C9	4	field_01C9	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00419DF0
 1	STGameObjC	461	0x1CD	4	field_01CD	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00419DF0 | 0041A680
 1	STGenBombC	594	0x252	4	field_0252	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	006132F0
-1	STGroupBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STGroupBoatCVTable	0			0	existing	none			0	1	high	owner_vtable_pointer; concrete_type_already_present	00497AF0
+1	STGroupBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STGroupBoatCVTable	0			0	existing	none			0	4	high	owner_vtable_pointer; concrete_type_already_present	004232A0 | 00497AF0 | 006E5FB0 | 006E60E0
+1	STGroupBoatC	4	0x4	4	field_0004	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E5FB0
+1	STGroupBoatC	8	0x8	4	field_0008	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E5FB0
+1	STGroupBoatC	12	0xC	4	field_000C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E5FB0
+1	STGroupBoatC	16	0x10	4	field_0010	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E5FB0
+1	STGroupBoatC	20	0x14	4	field_0014	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E5FB0
+1	STGroupBoatC	24	0x18	4	field_0018	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E60E0
+1	STGroupBoatC	28	0x1C	4	field_001C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004232A0
+1	STGroupBoatC	32	0x20	4	field_0020	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004232A0
 1	STGroupBoatC	36	0x24	1	field_0024	/char	0	/char		0	existing	none	/char <= 0049AC5D MOVSX establishes /char; 0049AEFE MOVSX establishes /char; 0049B09D MOVSX establishes /char; 0049D4A3 MOVSX establishes /char; 0049F332 MOVSX establishes /char; 004A017C MOVSX establishes /char; 004A1CF5 MOVSX establishes /char		131	0	high	consistent_this_relative_access; concrete_type_already_present	00497CD0 | 00499DE0 | 0049A620 | 0049A940 | 0049AAF0 | 0049B4C0 | 0049C210 | 0049CD30 | 0049D230 | 0049D750 | 0049DB40 | 0049E510 | 0049EA00 | 0049ED40 | 0049F100 | 0049F640 | 0049F900 | 0049FBF0 | 004A0040 | 004A0FA0 | 004A3430 | 004A3CD0 | 004A4240 | 004A80A0 | 004A8340 | 004A85B0 | 004A8690 | 004A87A0
-1	STGroupBoatC	39	0x27	2	field_0027	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0049D750 | 004A7490
-1	STGroupBoatC	41	0x29	4	field_0029	/undefined4	0			0	none	none			74	0	high	consistent_this_relative_access	00499DE0 | 0049A620 | 0049A940 | 0049AAF0 | 0049B4C0 | 0049B7D0 | 0049C210 | 0049CD30 | 0049D230 | 0049D750 | 0049DB40 | 0049DFA0 | 0049E510 | 0049EA00 | 0049ED40 | 0049F100 | 0049F640 | 0049F900 | 0049FBF0 | 004A0040 | 004A0590 | 004A0990 | 004A0FA0 | 004A4240 | 004A4D60 | 004A85B0 | 004A8690 | 004A87A0
-1	STGroupBoatC	45	0x2D	4	field_002D	/undefined4	0			0	none	none			28	0	high	consistent_this_relative_access	004A0FA0
+1	STGroupBoatC	39	0x27	2	field_0027	/undefined2	0			0	none	none			2	1	high	consistent_this_relative_access	004232A0 | 0049D750 | 004A7490
+1	STGroupBoatC	41	0x29	4	field_0029	/undefined4	0			0	none	none			74	1	high	consistent_this_relative_access	004232A0 | 00499DE0 | 0049A620 | 0049A940 | 0049AAF0 | 0049B4C0 | 0049B7D0 | 0049C210 | 0049CD30 | 0049D230 | 0049D750 | 0049DB40 | 0049DFA0 | 0049E510 | 0049EA00 | 0049ED40 | 0049F100 | 0049F640 | 0049F900 | 0049FBF0 | 004A0040 | 004A0590 | 004A0990 | 004A0FA0 | 004A4240 | 004A4D60 | 004A85B0 | 004A8690 | 004A87A0
+1	STGroupBoatC	45	0x2D	4	field_002D	/undefined4	0			0	none	none			28	1	high	consistent_this_relative_access	004232A0 | 004A0FA0
 1	STGroupBoatC	49	0x31	4	field_0031	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00499DE0
-1	STGroupBoatC	57	0x39	4	field_0039	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	53	0x35	4	field_0035	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004232A0
+1	STGroupBoatC	57	0x39	4	field_0039	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	004232A0 | 00497AF0
 1	STGroupBoatC	61	0x3D	4	field_003D	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00497AF0 | 0049A620 | 004A0FA0 | 004A4F10 | 004A67A0
 1	STGroupBoatC	65	0x41	4	field_0041	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00497AF0 | 0049A620 | 004A0FA0 | 004A4F10 | 004A67A0
 1	STGroupBoatC	69	0x45	4	field_0045	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00497AF0 | 0049A620 | 004A0FA0 | 004A4F10 | 004A67A0
@@ -2703,14 +2545,14 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STGroupBoatC	542	0x21E	4	field_021E	/undefined4	0			0	none	none			11	3	high	consistent_this_relative_access	00499750 | 00499B80 | 00499DE0 | 004A4F10 | 004A67A0
 1	STGroupBoatC	546	0x222	4	field_0222	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	0049B4C0 | 004A0FA0 | 004A4F10 | 004A67A0
 1	STGroupBoatC	550	0x226	4	field_0226	/undefined4	0			0	none	none			10	2	high	consistent_this_relative_access	004A4F10 | 004A67A0 | 004A7490
-1	STGroupBoatC	554	0x22A	4	field_022A	/undefined4	0		patrolTask	0	none	medium		patrolTask <= 004A7AF0 unique get field in STGroupBoatC::GetPatrolTask	8	4	high	consistent_this_relative_access	004A0FA0 | 004A4F10 | 004A67A0 | 004A7490 | 004A7AF0 | 004A80A0
-1	STGroupBoatC	558	0x22E	4	field_022E	/undefined4	0			0	none	none			10	2	high	consistent_this_relative_access	004A0FA0 | 004A4F10 | 004A67A0 | 004A80A0
-1	STGroupBoatC	562	0x232	4	field_0232	/undefined4	0			0	none	none			9	8	high	consistent_this_relative_access	00497AF0 | 004A0FA0 | 004A4F10 | 004A67A0 | 004A7490 | 004A80A0
-1	STGroupBoatC	566	0x236	4	field_0236	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00497AF0 | 004A4F10 | 004A67A0 | 004A7490
-1	STGroupBoatC	570	0x23A	4	field_023A	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004A4F10 | 004A67A0
-1	STGroupBoatC	574	0x23E	4	field_023E	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0049B7D0 | 004A4F10 | 004A67A0
+1	STGroupBoatC	554	0x22A	4	field_022A	/undefined4	0		patrolTask	0	none	medium		patrolTask <= 004A7AF0 unique get field in STGroupBoatC::GetPatrolTask	9	4	high	consistent_this_relative_access	004A0FA0 | 004A4F10 | 004A67A0 | 004A7490 | 004A7AF0 | 004A7E30 | 004A80A0
+1	STGroupBoatC	558	0x22E	4	field_022E	/undefined4	0			0	none	none			11	2	high	consistent_this_relative_access	004A0FA0 | 004A4F10 | 004A67A0 | 004A7E30 | 004A80A0
+1	STGroupBoatC	562	0x232	4	field_0232	/undefined4	0			0	none	none			10	9	high	consistent_this_relative_access	00497AF0 | 004A0FA0 | 004A4F10 | 004A67A0 | 004A7490 | 004A7E30 | 004A80A0
+1	STGroupBoatC	566	0x236	4	field_0236	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00497AF0 | 004A4F10 | 004A67A0 | 004A7490 | 004A7E30
+1	STGroupBoatC	570	0x23A	4	field_023A	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	004A4F10 | 004A67A0 | 004A7E30
+1	STGroupBoatC	574	0x23E	4	field_023E	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	0049B7D0 | 004A4F10 | 004A67A0 | 004A7E30
 1	STGroupBoatC	578	0x242	4	field_0242	/undefined4	0			0	none	none			2	6	high	consistent_this_relative_access	004A4F10 | 004A67A0 | 004A7490
-1	STGroupBoatC	582	0x246	4	field_0246	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004A4F10 | 004A67A0
+1	STGroupBoatC	582	0x246	4	field_0246	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	004A4F10 | 004A67A0 | 004A7E30
 1	STGroupBoatC	586	0x24A	4	field_024A	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0049C210 | 004A4240 | 004A4F10 | 004A67A0
 1	STGroupBoatC	590	0x24E	4	field_024E	/undefined4	0			0	none	none			27	7	high	consistent_this_relative_access	0049C210 | 004A0FA0 | 004A4240 | 004A4F10 | 004A67A0
 1	STGroupBoatC	594	0x252	2	field_0252	/undefined2	0			0	none	none			4	1	high	consistent_this_relative_access	0049C210 | 004A4240 | 004A4F10 | 004A67A0
@@ -2808,42 +2650,61 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STGroupC	49	0x31	4	field_0031	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004240F0 | 00424360
 1	STGroupC	53	0x35	4	field_0035	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00423850 | 004240F0 | 00424360
 1	STGroupC	57	0x39	4	field_0039	/undefined4	0		avPar	0	none	medium		avPar <= 004247B0 unique set field in STGroupC::SetAVPar	3	2	high	consistent_this_relative_access	00423850 | 004240F0 | 00424360 | 004247B0
-1	STJellyGunC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STJellyGunCVTable	0			0	existing	none			1	1	high	owner_vtable_pointer; concrete_type_already_present	005823D0 | 005825C0
-1	STJellyGunC	8	0x8	4	field_0008	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00583270
+1	STJellyGunC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STJellyGunCVTable	0			0	existing	none			2	1	high	owner_vtable_pointer; concrete_type_already_present	005823D0 | 005825C0 | 00584380
+1	STJellyGunC	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	00582530 | 00582580 | 00583270 | 006E60A0
+1	STJellyGunC	12	0xC	4	field_000C	pointer:/SystemClassTy	0	pointer:/SystemClassTy	systemClass	0	existing	medium	pointer:/SystemClassTy <= 006E60A0 [this+0xC] used as receiver of SystemClassTy::PostMessage		1	0	high	consistent_this_relative_access; concrete_type_already_present	006E60A0
 1	STJellyGunC	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005825C0
-1	STJellyGunC	24	0x18	4	field_0018	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00583270
+1	STJellyGunC	24	0x18	4	field_0018	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00583270 | 005844E0
 0	STJellyGunC	36	0x24	4	field_0024	/undefined4	0			0	none	none			3	0	conflict	conflicting_access_widths=1x1|4x2	005825C0
-1	STJellyGunC	56	0x38	2	field_0038	/short	0	/short		0	existing	none	/short <= 005827F6 MOVSX establishes /short		1	0	high	consistent_this_relative_access; concrete_type_already_present	005825C0
-1	STJellyGunC	62	0x3E	2	field_003E	/short	0	/short		0	existing	none	/short <= 005827F2 MOVSX establishes /short		1	0	high	consistent_this_relative_access; concrete_type_already_present	005825C0
-1	STJellyGunC	65	0x41	2	field_0041	/short	0	/short		0	existing	none	/short <= 00582714 MOVSX establishes /short; 00582949 MOVSX establishes /short; 00582C50 MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	005825C0
-1	STJellyGunC	67	0x43	2	field_0043	/short	0	/short		0	existing	none	/short <= 00582710 MOVSX establishes /short; 00582945 MOVSX establishes /short; 00582C4C MOVSX establishes /short		6	0	high	consistent_this_relative_access; concrete_type_already_present	005825C0
-1	STJellyGunC	69	0x45	2	field_0045	/short	0	/short		0	existing	none	/short <= 00582941 MOVSX establishes /short		4	0	high	consistent_this_relative_access; concrete_type_already_present	005825C0
-1	STJellyGunC	71	0x47	2	field_0047	/short	0	/short		0	existing	none	/short <= 0058285A MOVSX establishes /short; 00582866 MOVSX establishes /short		4	1	high	consistent_this_relative_access; concrete_type_already_present	005825C0 | 00583270
-1	STJellyGunC	73	0x49	2	field_0049	/short	0	/short		0	existing	none	/short <= 00582851 MOVSX establishes /short; 00582871 MOVSX establishes /short; 00582887 MOVSX establishes /short		5	1	high	consistent_this_relative_access; concrete_type_already_present	005825C0 | 00583270
-1	STJellyGunC	75	0x4B	2	field_004B	/short	0	/short		0	existing	none	/short <= 0058284D MOVSX establishes /short; 0058287A MOVSX establishes /short		4	1	high	consistent_this_relative_access; concrete_type_already_present	005825C0 | 00583270
+1	STJellyGunC	52	0x34	2	field_0034	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	54	0x36	2	field_0036	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	56	0x38	2	field_0038	/short	0	/short		0	existing	none	/short <= 005827F6 MOVSX establishes /short		1	1	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0
+1	STJellyGunC	58	0x3A	2	field_003A	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	60	0x3C	2	field_003C	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	62	0x3E	2	field_003E	/short	0	/short		0	existing	none	/short <= 005827F2 MOVSX establishes /short		1	1	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0
+1	STJellyGunC	64	0x40	1	field_0040	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	65	0x41	2	field_0041	/short	0	/short		0	existing	none	/short <= 00582714 MOVSX establishes /short; 00582949 MOVSX establishes /short; 00582C50 MOVSX establishes /short		7	1	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0 | 00583E30
+1	STJellyGunC	67	0x43	2	field_0043	/short	0	/short		0	existing	none	/short <= 00582710 MOVSX establishes /short; 00582945 MOVSX establishes /short; 00582C4C MOVSX establishes /short		7	1	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0 | 00583E30
+1	STJellyGunC	69	0x45	2	field_0045	/short	0	/short		0	existing	none	/short <= 00582941 MOVSX establishes /short		5	1	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0 | 00583E30
+1	STJellyGunC	71	0x47	2	field_0047	/short	0	/short		0	existing	none	/short <= 0058285A MOVSX establishes /short; 00582866 MOVSX establishes /short; 00583E7D MOVSX establishes /short		5	2	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0 | 00583270 | 00583E30
+1	STJellyGunC	73	0x49	2	field_0049	/short	0	/short		0	existing	none	/short <= 00582851 MOVSX establishes /short; 00582871 MOVSX establishes /short; 00582887 MOVSX establishes /short; 00583E8E MOVSX establishes /short		6	2	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0 | 00583270 | 00583E30
+1	STJellyGunC	75	0x4B	2	field_004B	/short	0	/short		0	existing	none	/short <= 0058284D MOVSX establishes /short; 0058287A MOVSX establishes /short; 00583E9F MOVSX establishes /short		5	2	high	consistent_this_relative_access; concrete_type_already_present	00415B30 | 005825C0 | 00583270 | 00583E30
+1	STJellyGunC	77	0x4D	1	field_004D	/undefined1	0			0	none	none			2	2	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	78	0x4E	2	field_004E	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	80	0x50	2	field_0050	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	82	0x52	2	field_0052	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	84	0x54	2	field_0054	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	86	0x56	2	field_0056	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	88	0x58	2	field_0058	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	90	0x5A	1	field_005A	/undefined1	0			0	none	none			1	2	high	consistent_this_relative_access	00415B30
 1	STJellyGunC	91	0x5B	2	field_005B	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	00583270
 1	STJellyGunC	93	0x5D	2	field_005D	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	00583270
 1	STJellyGunC	95	0x5F	2	field_005F	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	00583270
+1	STJellyGunC	99	0x63	1	field_0063	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	100	0x64	4	field_0064	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00415B30 | 00415ED0
+1	STJellyGunC	104	0x68	4	field_0068	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00415B30 | 00415ED0
+1	STJellyGunC	122	0x7A	4	field_007A	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00415B30
+1	STJellyGunC	126	0x7E	4	field_007E	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00415B30
 1	STJellyGunC	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005823D0
 1	STJellyGunC	493	0x1ED	4	field_01ED	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005825C0
 1	STJellyGunC	529	0x211	4	field_0211	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	005825C0
 1	STJellyGunC	561	0x231	4	field_0231	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
-1	STJellyGunC	565	0x235	4	field_0235	/SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State	0			0	existing	none			3	9	high	consistent_this_relative_access; concrete_type_already_present	005823D0 | 005825C0 | 00583270
-1	STJellyGunC	569	0x239	4	field_0239	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
-1	STJellyGunC	573	0x23D	4	field_023D	/undefined4	0			0	none	none			1	5	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
-0	STJellyGunC	577	0x241	4	field_0241	/undefined4	0			0	none	none			4	6	conflict	conflicting_access_widths=1x2|4x8	005823D0 | 005825C0 | 00583270
-1	STJellyGunC	581	0x245	2	field_0245	/undefined2	0			0	none	none			3	4	high	consistent_this_relative_access	005825C0 | 00583270
+1	STJellyGunC	565	0x235	4	field_0235	/SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State	0			0	existing	none			4	9	high	consistent_this_relative_access; concrete_type_already_present	005823D0 | 005825C0 | 00583270 | 00583E30
+1	STJellyGunC	569	0x239	4	field_0239	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270 | 00584380
+1	STJellyGunC	573	0x23D	4	field_023D	/undefined4	0			0	none	none			3	5	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270 | 00583E30 | 00584060
+0	STJellyGunC	577	0x241	4	field_0241	/undefined4	0			0	none	none			5	6	conflict	conflicting_access_widths=1x3|4x8	005823D0 | 005825C0 | 00583270 | 00584060
+1	STJellyGunC	581	0x245	2	field_0245	/undefined2	0			0	none	none			4	4	high	consistent_this_relative_access	005825C0 | 00583270 | 00584060
 1	STJellyGunC	583	0x247	4	field_0247	/undefined4	0			0	none	none			1	5	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
 1	STJellyGunC	587	0x24B	4	field_024B	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
-1	STJellyGunC	591	0x24F	1	field_024F	/undefined1	0			0	none	none			3	2	high	consistent_this_relative_access	005825C0 | 00583270
-1	STJellyGunC	592	0x250	1	field_0250	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	005825C0 | 00583270
-1	STJellyGunC	593	0x251	1	field_0251	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00583270
+1	STJellyGunC	591	0x24F	1	field_024F	/undefined1	0			0	none	none			3	3	high	consistent_this_relative_access	005825C0 | 00583270 | 00584380
+1	STJellyGunC	592	0x250	1	field_0250	/undefined1	0			0	none	none			1	2	high	consistent_this_relative_access	005825C0 | 00583270 | 00584380
+1	STJellyGunC	593	0x251	1	field_0251	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	00583270 | 00584380
 1	STJellyGunC	594	0x252	4	field_0252	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
 1	STJellyGunC	602	0x25A	4	field_025A	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	005825C0 | 00583270
 0	STJellyGunC	618	0x26A	4	field_026A	/undefined4	0	/int		0	none	none	/int <= 0058375A FILD establishes /int		3	1	conflict	conflicting_access_widths=2x1|4x3	00583270
 0	STJellyGunC	622	0x26E	4	field_026E	/undefined4	0	/int		0	none	none	/int <= 00583744 FILD establishes /int		3	1	conflict	conflicting_access_widths=2x1|4x3	00583270
 0	STJellyGunC	626	0x272	4	field_0272	/undefined4	0	/int		0	none	none	/int <= 0058372E FILD establishes /int		2	1	conflict	conflicting_access_widths=2x1|4x2	00583270
-1	STJellyGunC	646	0x286	4	field_0286	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00583270
+1	STJellyGunC	646	0x286	4	field_0286	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00582530 | 00583270
 1	STJellyGunC	654	0x28E	2	field_028E	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005825C0
 1	STJellyGunC	658	0x292	2	field_0292	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005825C0
 1	STJellyManC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STJellyManCVTable	0			0	existing	none			0	1	high	owner_vtable_pointer; concrete_type_already_present	005810D0
@@ -3063,8 +2924,14 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STPlaySystemC	236	0xEC	4	field_00EC	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	0054CFC0 | 0054D640 | 0054F1D0
 1	STPlaySystemC	240	0xF0	4	field_00F0	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0054F1D0
 1	STPlaySystemC	244	0xF4	4	field_00F4	/undefined4	0		message	0	none	medium		message <= 0054E4F0 unique get field in STPlaySystemC::GetMessage	4	1	high	consistent_this_relative_access	0054D640 | 0054E4F0
+1	STResourceC	50	0x32	2	field_0032	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	00580D30
+1	STResourceC	581	0x245	2	field_0245	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005802A0
+1	STResourceC	585	0x249	2	field_0249	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005802A0
+1	STResourceC	589	0x24D	2	field_024D	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005802A0
 1	STResourceC	597	0x255	4	field_0255	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0057DFD0
-1	STResourceC	601	0x259	4	field_0259	/undefined4	0		resource	0	none	medium		resource <= 0057DFD0 unique set field in STResourceC::SetResource	0	1	high	consistent_this_relative_access	0057DFD0
+1	STResourceC	601	0x259	4	field_0259	/undefined4	0		resource	0	none	medium		resource <= 0057DFD0 unique set field in STResourceC::SetResource	1	1	high	consistent_this_relative_access	0057DFD0 | 00580D30
+1	STResourceC	605	0x25D	4	field_025D	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005802A0 | 00580D30
+1	STResourceC	617	0x269	4	field_0269	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005802A0
 1	STRubbishC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STRubbishCVTable	0			0	existing	none			0	1	high	owner_vtable_pointer; concrete_type_already_present	0062ED10
 1	STRubbishC	24	0x18	4	field_0018	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0062E740
 0	STRubbishC	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			4	3	conflict	conflicting_access_widths=2x2|4x5	0062E740 | 0062ED10
@@ -3087,24 +2954,24 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STSatC	581	0x245	4	field_0245	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0058BA30
 1	STSharkC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STSharkCVTable	0			0	existing	none			3	1	high	owner_vtable_pointer; concrete_type_already_present	0058D750 | 0058E570
 1	STSharkC	24	0x18	4	field_0018	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0058D7C0
-1	STSharkC	71	0x47	2	field_0047	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0058D7C0 | 0058E570
-1	STSharkC	73	0x49	2	field_0049	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0058D7C0 | 0058E570
-1	STSharkC	75	0x4B	2	field_004B	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0058D7C0 | 0058E570
+1	STSharkC	71	0x47	2	field_0047	/short	0	/short		0	existing	none	/short <= 0058F440 MOVSX establishes /short; 0058F538 MOVSX establishes /short; 0058F5D1 MOVSX establishes /short		5	0	high	consistent_this_relative_access; concrete_type_already_present	0058D7C0 | 0058E570 | 0058F430
+1	STSharkC	73	0x49	2	field_0049	/short	0	/short		0	existing	none	/short <= 0058F485 MOVSX establishes /short; 0058F546 MOVSX establishes /short; 0058F5C1 MOVSX establishes /short		5	0	high	consistent_this_relative_access; concrete_type_already_present	0058D7C0 | 0058E570 | 0058F430
+1	STSharkC	75	0x4B	2	field_004B	/short	0	/short		0	existing	none	/short <= 0058F555 MOVSX establishes /short		3	0	high	consistent_this_relative_access; concrete_type_already_present	0058D7C0 | 0058E570 | 0058F430
 1	STSharkC	91	0x5B	2	field_005B	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0058D7C0
 1	STSharkC	93	0x5D	2	field_005D	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0058D7C0
 1	STSharkC	95	0x5F	2	field_005F	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0058D7C0
 1	STSharkC	108	0x6C	2	field_006C	/short	0	/short		0	existing	none	/short <= 0058E93D MOVSX establishes /short		1	0	high	consistent_this_relative_access; concrete_type_already_present	0058E570
 1	STSharkC	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0058D750
 1	STSharkC	529	0x211	4	field_0211	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	0058E570
-1	STSharkC	561	0x231	2	field_0231	/undefined2	0			0	none	none			2	2	high	consistent_this_relative_access	0058D7C0 | 0058E570
-1	STSharkC	563	0x233	2	field_0233	/undefined2	0			0	none	none			2	2	high	consistent_this_relative_access	0058D7C0 | 0058E570
-1	STSharkC	565	0x235	2	field_0235	/undefined2	0			0	none	none			2	2	high	consistent_this_relative_access	0058D7C0 | 0058E570
+1	STSharkC	561	0x231	2	field_0231	/undefined2	0			0	none	none			2	3	high	consistent_this_relative_access	0058D7C0 | 0058E570 | 0058F430
+1	STSharkC	563	0x233	2	field_0233	/undefined2	0			0	none	none			2	3	high	consistent_this_relative_access	0058D7C0 | 0058E570 | 0058F430
+1	STSharkC	565	0x235	2	field_0235	/undefined2	0			0	none	none			2	3	high	consistent_this_relative_access	0058D7C0 | 0058E570 | 0058F430
 1	STSharkC	567	0x237	2	field_0237	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0058D7C0
-1	STSharkC	573	0x23D	4	field_023D	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	0058D750 | 0058D7C0 | 0058E570
+1	STSharkC	573	0x23D	4	field_023D	/undefined4	0			0	none	none			2	6	high	consistent_this_relative_access	0058D750 | 0058D7C0 | 0058E570 | 0058F430
 1	STSharkC	577	0x241	4	field_0241	/undefined4	0			0	none	none			3	4	high	consistent_this_relative_access	0058D7C0 | 0058E570
 1	STSharkC	581	0x245	4	field_0245	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0058D7C0
-0	STSharkC	585	0x249	4	field_0249	/undefined4	0			0	none	none			1	3	conflict	conflicting_access_widths=1x1|4x3	0058D750 | 0058D7C0 | 0058E570
-1	STSharkC	589	0x24D	2	field_024D	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0058D7C0 | 0058E570
+0	STSharkC	585	0x249	4	field_0249	/undefined4	0			0	none	none			1	5	conflict	conflicting_access_widths=1x1|4x5	0058D750 | 0058D7C0 | 0058E570 | 0058F430
+1	STSharkC	589	0x24D	2	field_024D	/undefined2	0			0	none	none			1	2	high	consistent_this_relative_access	0058D7C0 | 0058E570 | 0058F430
 1	STSharkC	591	0x24F	4	field_024F	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0058D7C0 | 0058E570
 1	STSharkC	595	0x253	4	field_0253	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0058D7C0
 1	STSharkC	599	0x257	4	field_0257	/SubmarineTitans/Recovered/Enums/STSharkC_field_0257State	0			0	existing	none			5	8	high	consistent_this_relative_access; concrete_type_already_present	0058D750 | 0058D7C0 | 0058E570
@@ -3214,7 +3081,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STVolcanoC	177	0xB1	4	field_00B1	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	006461E0
 1	SettMapMTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			19	0	high	consistent_this_relative_access	005CD430 | 005CE0E0 | 005D06C0 | 005D0850 | 005D0A20 | 005D0BB0 | 005D0ED0 | 005D1400 | 005D4850
 1	SettMapMTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			9	0	high	consistent_this_relative_access	005CC440 | 005CC840 | 005CE0E0 | 005D1400
-1	SettMapMTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			8	0	high	consistent_this_relative_access	005CC440 | 005CC840 | 005CCE10 | 005D1400
+1	SettMapMTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005CC840 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		8	0	high	consistent_this_relative_access; concrete_type_already_present	005CC440 | 005CC840 | 005CCE10 | 005D1400
 1	SettMapMTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005D1400
 1	SettMapMTy	37	0x25	4	field_0025	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005CCE10
 1	SettMapMTy	41	0x29	4	field_0029	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005CCE10
@@ -3224,7 +3091,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SettMapMTy	93	0x5D	4	field_005D	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005CBD00
 1	SettMapMTy	97	0x61	4	field_0061	/undefined4	0			0	none	none			14	1	high	consistent_this_relative_access	005CE0E0 | 005D1400
 1	SettMapMTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			9	0	high	consistent_this_relative_access	005CE0E0 | 005D1400
-1	SettMapMTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005CE0E0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat; 005D1400 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		36	0	high	consistent_this_relative_access; concrete_type_already_present	005CBD00 | 005CE0E0 | 005D1400 | 005D4850 | 005D4990
+1	SettMapMTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005CE0E0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat; 005D1400 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		36	0	high	consistent_this_relative_access; concrete_type_already_present	005CBD00 | 005CE0E0 | 005D1400 | 005D4850 | 005D4990
 1	SettMapMTy	7263	0x1C5F	4	field_1C5F	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005CE0E0
 1	SettMapMTy	7267	0x1C63	4	field_1C63	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005CE0E0
 1	SettMapMTy	7718	0x1E26	1	field_1E26	/undefined1	0			0	none	none			30	0	high	consistent_this_relative_access	005CCE10 | 005CD430 | 005CDF60 | 005CE0E0 | 005D0150 | 005D0ED0 | 005D1100 | 005D1400
@@ -3327,7 +3194,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SettMapSTy	8679	0x21E7	1	field_21E7	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	005D5560
 1	SettMapTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			14	0	high	consistent_this_relative_access	005C5B60 | 005C6030 | 005C8A40
 1	SettMapTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005C6030
-1	SettMapTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			12	0	high	consistent_this_relative_access	005C6030 | 005C6D40 | 005C8A40
+1	SettMapTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005C6D40 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		12	0	high	consistent_this_relative_access; concrete_type_already_present	005C6030 | 005C6D40 | 005C8A40
 1	SettMapTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005C8A40
 1	SettMapTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	24	high	consistent_this_relative_access	005C6030 | 005C6D40 | 005C8A40
 1	SettMapTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			0	7	high	consistent_this_relative_access	005C6030 | 005C6D40
@@ -3430,23 +3297,6 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SettMapTy	8688	0x21F0	4	field_21F0	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005C4930 [this+0x21F0] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F0] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F0] used as receiver of HoloTy::Init; 005C6D40 [this+0x21F0] used as receiver of HoloTy::NextFas		9	3	high	consistent_this_relative_access; concrete_type_already_present	005C4930 | 005C4E20 | 005C6D40
 1	SettMapTy	8692	0x21F4	4	field_21F4	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005C4930 [this+0x21F4] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F4] used as receiver of HoloTy::Done; 005C6D40 [this+0x21F4] used as receiver of HoloTy::Init; 005C6D40 [this+0x21F4] used as receiver of HoloTy::NextFas		9	3	high	consistent_this_relative_access; concrete_type_already_present	005C4930 | 005C4E20 | 005C6D40
 1	SettMapTy	8696	0x21F8	4	field_21F8	pointer:/HoloTy	0	pointer:/HoloTy		0	existing	none	pointer:/HoloTy <= 005C4930 [this+0x21F8] used as receiver of HoloTy::Done		3	1	high	consistent_this_relative_access; concrete_type_already_present	005C4930 | 005C4E20
-1	SliderClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			7	0	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			0	3	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	76	0x4C	4	field_004C	/undefined4	0			0	none	none			9	8	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	80	0x50	4	field_0050	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	84	0x54	4	field_0054	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	007244B0
-1	SliderClassTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	007244B0
 1	SndUnderAttMenegC	28	0x1C	4	field_001C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0061F660
 1	SndUnderAttMenegC	32	0x20	1	field_0020	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	0061F660
 1	SndUnderAttMenegC	33	0x21	4	field_0021	/int	0	/int		0	existing	none	/int <= 0061F78C FILD establishes /int		0	1	high	consistent_this_relative_access; concrete_type_already_present	0061F660
@@ -3478,7 +3328,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SoundManagerTy	56	0x38	1	field_0038	/undefined1	0			0	none	none			1	3	high	consistent_this_relative_access	00566C20
 1	SoundManagerTy	57	0x39	4	field_0039	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00566C20
 1	SpecPanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0053E3F0 | 0053E920
-1	SpecPanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0053E640
+1	SpecPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 0053E640 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		1	0	high	consistent_this_relative_access; concrete_type_already_present	0053E640
 1	SpecPanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0053EA50
 1	SpecPanelTy	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0053EA50
 1	SpecPanelTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0053E3F0
@@ -3496,42 +3346,45 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SpecPanelTy	389	0x185	4	field_0185	pointer:/ushort	0	pointer:/ushort		0	existing	none	pointer:/ushort <= 0053E3F0 [this+0x185] assigned 0053E3F0 return from cMf32::RecGet		2	1	high	consistent_this_relative_access; concrete_type_already_present	0053E3F0 | 0053E640
 1	SpecPanelTy	393	0x189	4	field_0189	pointer:/ccFntTy	0	pointer:/ccFntTy	ccFnt	0	existing	medium	pointer:/ccFntTy <= 0053E3F0 [this+0x189] used as receiver of ccFntTy::SetSurf; 0053E3F0 [this+0x189] used as receiver of ccFntTy::WrStr		3	2	high	consistent_this_relative_access; concrete_type_already_present	0053E3F0 | 0053E640
 1	SpriteClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/SpriteClassTyVTable	0			0	existing	none			0	1	high	owner_vtable_pointer; concrete_type_already_present	00715820
-1	SpriteClassTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			16	2	high	consistent_this_relative_access	00715820 | 00715AB0 | 00715C60 | 00716040 | 00716480
+1	SpriteClassTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
-1	SpriteClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			3	10	high	consistent_this_relative_access	00715820 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00715820 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00715820 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00715820 | 00715C60 | 00716040 | 00716480
+1	SpriteClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
-1	SpriteClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			1	12	high	consistent_this_relative_access	00715820 | 007158A0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			1	12	high	consistent_this_relative_access	00715820 | 007158A0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00715820 | 007158A0
-1	SpriteClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00715820 | 007158A0
-1	SpriteClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00715820 | 007158A0
-1	SpriteClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00715820 | 007158A0
-1	SpriteClassTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00715820 | 007158A0
+1	SpriteClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	64	0x40	4	field_0040	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
-1	SpriteClassTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			13	3	high	consistent_this_relative_access	00715820 | 007158A0 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	76	0x4C	1	field_004C	/undefined1	0			0	none	none			7	5	high	consistent_this_relative_access	00715820 | 007158A0 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	77	0x4D	4	field_004D	/undefined4	0			0	none	none			0	8	high	consistent_this_relative_access	00715820 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	81	0x51	4	field_0051	/undefined4	0			0	none	none			8	5	high	consistent_this_relative_access	00715820 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	85	0x55	4	field_0055	/undefined4	0			0	none	none			8	5	high	consistent_this_relative_access	00715820 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	89	0x59	4	field_0059	/undefined4	0			0	none	none			8	5	high	consistent_this_relative_access	00715820 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	93	0x5D	4	field_005D	/undefined4	0			0	none	none			0	5	high	consistent_this_relative_access	00715820 | 007158A0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	97	0x61	4	field_0061	/undefined4	0			0	none	none			4	5	high	consistent_this_relative_access	00715820 | 00715AB0 | 00715C60 | 00716040 | 00716480
-1	SpriteClassTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	00715820 | 00715AB0
+1	SpriteClassTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	76	0x4C	1	field_004C	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	77	0x4D	4	field_004D	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	81	0x51	4	field_0051	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	85	0x55	4	field_0055	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	89	0x59	4	field_0059	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	93	0x5D	4	field_005D	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	97	0x61	4	field_0061	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	133	0x85	4	field_0085	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	137	0x89	4	field_0089	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	141	0x8D	4	field_008D	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	StartSystemTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/StartSystemTyVTable	0			0	existing	none			18	1	high	owner_vtable_pointer; concrete_type_already_present	005DA610 | 005DCD90 | 005DCE90 | 005DDC70 | 005DE270
+1	StartSystemTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	006E56B0
+1	StartSystemTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	006E5360 | 006E56B0
 1	StartSystemTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005DDC70 | 005DE270
-1	StartSystemTy	32	0x20	4	field_0020	/undefined4	0		message	0	none	medium		message <= 005DCE90 unique get field in StartSystemTy::GetMessage	13	1	high	consistent_this_relative_access	005DA610 | 005DCE90
+1	StartSystemTy	24	0x18	4	field_0018	pointer:/AppClassTy	0	pointer:/AppClassTy	appClass	0	existing	medium	pointer:/AppClassTy <= 006E56B0 [this+0x18] used as receiver of AppClassTy::DeleteObject		1	0	high	consistent_this_relative_access; concrete_type_already_present	006E56B0
+1	StartSystemTy	32	0x20	4	field_0020	/undefined4	0		message	0	none	medium		message <= 005DCE90 unique get field in StartSystemTy::GetMessage	14	2	high	consistent_this_relative_access	005DA610 | 005DCDB0 | 005DCE90
 1	StartSystemTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	005DA610 | 005DCC10
-1	StartSystemTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
-1	StartSystemTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005DA610 | 005DB4F0
-1	StartSystemTy	52	0x34	4	field_0034	pointer:/ccFntTy	0	pointer:/ccFntTy	ccFnt	0	existing	medium	pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr		18	2	high	consistent_this_relative_access; concrete_type_already_present	005DA610 | 005DB4F0 | 005DC050 | 005DC730 | 005DD470 | 005DD850 | 005DDC70 | 005DE050 | 005DE270
+1	StartSystemTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005DA610 | 005DB2A0
+1	StartSystemTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0
+1	StartSystemTy	52	0x34	4	field_0034	pointer:/ccFntTy	0	pointer:/ccFntTy	ccFnt	0	existing	medium	pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr		19	3	high	consistent_this_relative_access; concrete_type_already_present	005DA610 | 005DB2A0 | 005DB4F0 | 005DC050 | 005DC730 | 005DD470 | 005DD850 | 005DDC70 | 005DE050 | 005DE270
 1	StartSystemTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
 1	StartSystemTy	604	0x25C	4	field_025C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
 1	StartSystemTy	608	0x260	4	field_0260	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
@@ -3566,14 +3419,14 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	StartSystemTy	742	0x2E6	4	field_02E6	pointer:/MMsgTy	0	pointer:/MMsgTy	mMsg	0	existing	medium	pointer:/MMsgTy <= 005DC050 [this+0x2E6] used as receiver of MMsgTy::StatePanel		1	1	high	consistent_this_relative_access; concrete_type_already_present	005DA610 | 005DC050
 1	StartSystemTy	746	0x2EA	1	field_02EA	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
 1	StartSystemTy	747	0x2EB	1	field_02EB	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
-1	StartSystemTy	748	0x2EC	4	field_02EC	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	005DA610 | 005DB4F0
-1	StartSystemTy	752	0x2F0	4	field_02F0	/undefined4	0			0	none	none			9	2	high	consistent_this_relative_access	005DA610 | 005DB4F0 | 005DC050
-1	StartSystemTy	756	0x2F4	4	field_02F4	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	005DA610 | 005DC050
+1	StartSystemTy	748	0x2EC	4	field_02EC	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0
+1	StartSystemTy	752	0x2F0	4	field_02F0	/undefined4	0			0	none	none			10	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0 | 005DC050
+1	StartSystemTy	756	0x2F4	4	field_02F4	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DC050
 1	StartSystemTy	760	0x2F8	4	field_02F8	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DB4F0
 1	StartSystemTy	768	0x300	4	field_0300	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
 1	StartSystemTy	788	0x314	4	field_0314	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
 1	StartSystemTy	792	0x318	4	field_0318	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
-1	StartSystemTy	905	0x389	4	field_0389	/undefined4	0			0	none	none			6	1	high	consistent_this_relative_access	005DA610 | 005DC050 | 005DC730
+1	StartSystemTy	905	0x389	4	field_0389	/undefined4	0			0	none	none			7	2	high	consistent_this_relative_access	005DA610 | 005DC050 | 005DC730 | 005DCDB0
 1	StartSystemTy	909	0x38D	4	field_038D	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DB4F0
 1	StartSystemTy	913	0x391	4	field_0391	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005DB4F0 | 005DDC70
 1	StartSystemTy	917	0x395	4	field_0395	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
@@ -3597,13 +3450,13 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	StartSystemTy	1231	0x4CF	4	field_04CF	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	005DB4F0 | 005DDC70
 1	StartSystemTy	1235	0x4D3	4	field_04D3	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DDC70
 1	StartSystemTy	1271	0x4F7	4	field_04F7	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005DB4F0 | 005DDC70
-1	StartSystemTy	1344	0x540	4	field_0540	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	005DA610 | 005DB4F0 | 005DDC70 | 005DE050
-1	StartSystemTy	1348	0x544	4	field_0544	/undefined4	0			0	none	none			6	2	high	consistent_this_relative_access	005DA610 | 005DB4F0 | 005DC050 | 005DC730 | 005DE050
-1	StartSystemTy	1352	0x548	4	field_0548	/undefined4	0		objectives	0	none	medium		objectives <= 005DC730 unique set field in StartSystemTy::SetObjectives	29	4	high	consistent_this_relative_access	005DA610 | 005DC050 | 005DC730 | 005DE050
-1	StartSystemTy	1356	0x54C	4	field_054C	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	005DA610 | 005DD470
-1	StartSystemTy	1360	0x550	4	field_0550	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	005DA610 | 005DD850
-1	StartSystemTy	1364	0x554	4	field_0554	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	005DA610 | 005DB4F0 | 005DD470
-1	StartSystemTy	1368	0x558	4	field_0558	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	005DA610 | 005DB4F0 | 005DD470 | 005DE270
+1	StartSystemTy	1344	0x540	4	field_0540	/undefined4	0			0	none	none			6	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0 | 005DDC70 | 005DE050
+1	StartSystemTy	1348	0x544	4	field_0544	/undefined4	0			0	none	none			7	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0 | 005DC050 | 005DC730 | 005DE050
+1	StartSystemTy	1352	0x548	4	field_0548	/undefined4	0		objectives	0	none	medium		objectives <= 005DC730 unique set field in StartSystemTy::SetObjectives	30	5	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DC050 | 005DC730 | 005DE050
+1	StartSystemTy	1356	0x54C	4	field_054C	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	005DA610 | 005DCDB0 | 005DD470
+1	StartSystemTy	1360	0x550	4	field_0550	/undefined4	0			0	none	none			5	2	high	consistent_this_relative_access	005DA610 | 005DCDB0 | 005DD850
+1	StartSystemTy	1364	0x554	4	field_0554	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0 | 005DD470
+1	StartSystemTy	1368	0x558	4	field_0558	/undefined4	0			0	none	none			5	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0 | 005DD470 | 005DE270
 1	StartSystemTy	1372	0x55C	4	field_055C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DB4F0
 1	StartSystemTy	1376	0x560	4	field_0560	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DE270
 1	StartSystemTy	1380	0x564	4	field_0564	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DB4F0
@@ -3620,26 +3473,26 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	StartSystemTy	1553	0x611	4	field_0611	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DE270
 1	StartSystemTy	1557	0x615	4	field_0615	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	005DB4F0 | 005DE270
 1	StartSystemTy	1589	0x635	4	field_0635	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005DE270
-1	StartSystemTy	1662	0x67E	4	field_067E	/undefined4	0			0	none	none			7	2	high	consistent_this_relative_access	005DA610 | 005DADF0 | 005DB4F0 | 005DD470 | 005DD850 | 005DE270
-1	StartSystemTy	1666	0x682	4	field_0682	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	005DA610 | 005DB4F0 | 005DD470
-1	StartSystemTy	1670	0x686	4	field_0686	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005DA610 | 005DB4F0
-1	StartSystemTy	1674	0x68A	4	field_068A	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
-1	StartSystemTy	1678	0x68E	4	field_068E	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
-1	StartSystemTy	1682	0x692	4	field_0692	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
-1	StartSystemTy	1686	0x696	4	field_0696	/undefined4	0		ip	0	none	medium		ip <= 005DAC80 unique get field in StartSystemTy::GetIP	2	2	high	consistent_this_relative_access	005DA610 | 005DAC80
-1	StartSystemTy	1690	0x69A	4	field_069A	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1662	0x67E	4	field_067E	/undefined4	0			0	none	none			8	2	high	consistent_this_relative_access	005DA610 | 005DADF0 | 005DB2A0 | 005DB4F0 | 005DD470 | 005DD850 | 005DE270
+1	StartSystemTy	1666	0x682	4	field_0682	/undefined4	0			0	none	none			5	2	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0 | 005DD470
+1	StartSystemTy	1670	0x686	4	field_0686	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	005DA610 | 005DB2A0 | 005DB4F0
+1	StartSystemTy	1674	0x68A	4	field_068A	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	005DA610 | 005DA910
+1	StartSystemTy	1678	0x68E	4	field_068E	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	005DA610 | 005DAB30
+1	StartSystemTy	1682	0x692	4	field_0692	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005DA610 | 005DAB30
+1	StartSystemTy	1686	0x696	4	field_0696	/undefined4	0		ip	0	none	medium		ip <= 005DAC80 unique get field in StartSystemTy::GetIP	3	3	high	consistent_this_relative_access	005DA610 | 005DAC80 | 005DAF20
+1	StartSystemTy	1690	0x69A	4	field_069A	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005DA610 | 005DCDB0
 1	StartSystemTy	1694	0x69E	4	field_069E	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
 1	StartSystemTy	1710	0x6AE	4	field_06AE	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
 1	StartSystemTy	1714	0x6B2	4	field_06B2	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005DA610
-1	SystemClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	006E51C0 | 006E51F0 | 006E5970 | 006E5D90
-1	SystemClassTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	006E51C0 | 006E51F0 | 006E5810 | 006E5D90
-1	SystemClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	006E51C0 | 006E51F0 | 006E58B0 | 006E5D90
+1	SystemClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
 1	SystemClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
-1	SystemClassTy	16	0x10	4	field_0010	/undefined4	0		toAllObjects	0	none	medium		toAllObjects <= 006E5C70 unique get field in SystemClassTy::GetToAllObjects	6	2	high	consistent_this_relative_access	006E51C0 | 006E51F0 | 006E53A0 | 006E54B0 | 006E5970 | 006E5C70
-1	SystemClassTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	006E51C0 | 006E5970
-1	SystemClassTy	24	0x18	4	field_0018	/undefined4	1	pointer:/AppClassTy	appClass	0	high	medium	pointer:/AppClassTy <= 006E54B0 [this+0x18] used as receiver of AppClassTy::CreateObject; 006E5970 [this+0x18] used as receiver of AppClassTy::SendMessageToAllChild		5	1	high	consistent_this_relative_access; unique_semantic_type_evidence	006E51C0 | 006E54B0 | 006E5970
+1	SystemClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	20	0x14	4	field_0014	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E51C0
 1	SystemWithNamedObjClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/SystemWithNamedObjClassTyVTable	0			0	existing	none			0	1	high	owner_vtable_pointer; concrete_type_already_present	006E6100
-1	SystemWithNamedObjClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	006E6100 | 006E6170
+1	SystemWithNamedObjClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006E6100
 1	TLOBaseTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable	0			0	existing	none			6	1	high	owner_vtable_pointer; concrete_type_already_present	004B7EF0 | 004BE500 | 004C3570 | 004C3C00 | 004D67B0
 1	TLOBaseTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	004B9FA0 | 004BE500 | 004C9770
 1	TLOBaseTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	004C3570
@@ -3753,46 +3606,9 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	TLOFakeTy	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004D0920
 1	TLOFakeTy	581	0x245	4	field_0245	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	004D0B90
 1	TLOFakeTy	589	0x24D	4	field_024D	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004D0920 | 004D0B90
-1	TabClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	00723420
-1	TabClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			8	0	high	consistent_this_relative_access	00723420
-1	TabClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00723420
-1	TabClassTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00723420
-1	TabClassTy	24	0x18	4	field_0018	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00723420
-1	TabClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	64	0x40	4	field_0040	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	100	0x64	4	field_0064	/undefined4	0			0	none	none			38	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	112	0x70	4	field_0070	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00723420
-1	TabClassTy	116	0x74	4	field_0074	/undefined4	0			0	none	none			10	7	high	consistent_this_relative_access	00723420
-1	TrackbarClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	308	0x134	4	field_0134	/undefined4	0			0	none	none			4	3	high	consistent_this_relative_access	00725020
-0	TrackbarClassTy	312	0x138	4	field_0138	/undefined4	0			0	none	none			1	1	conflict	conflicting_access_widths=2x1|4x1	00725020
-1	TrackbarClassTy	316	0x13C	4	field_013C	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	320	0x140	4	field_0140	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	324	0x144	4	field_0144	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	348	0x15C	4	field_015C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	356	0x164	4	field_0164	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	388	0x184	4	field_0184	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	392	0x188	4	field_0188	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	396	0x18C	4	field_018C	/undefined4	0			0	none	none			0	3	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	400	0x190	4	field_0190	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	404	0x194	4	field_0194	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00725020
-1	TrackbarClassTy	408	0x198	4	field_0198	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00725020
 1	TradePanelTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00551460
 1	TradePanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	00550DB0
-1	TradePanelTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			8	0	high	consistent_this_relative_access	00550DB0 | 005512F0 | 00551460
+1	TradePanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005512F0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00551460 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		8	0	high	consistent_this_relative_access; concrete_type_already_present	00550DB0 | 005512F0 | 00551460
 1	TradePanelTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	00550DB0 | 00551690
 0	TradePanelTy	44	0x2C	4	field_002C	/undefined4	0			0	conflict	none			0	3	conflict	overlaps_field_002E	00550DB0
 0	TradePanelTy	46	0x2E	2	field_002E	/undefined2	0			0	conflict	none			0	1	conflict	overlaps_field_002C	00551690
@@ -3843,43 +3659,6 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	UpgPanelTy	1003	0x3EB	4	field_03EB	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	005528B0 | 00552A30 | 00552BC0
 1	UpgPanelTy	1007	0x3EF	4	field_03EF	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	005528B0 | 00552A30 | 00552BC0
 1	UpgPanelTy	1011	0x3F3	4	field_03F3	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005528B0 | 00552A30
-1	ViewerClassTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	0071E730 | 0071E8B0
-1	ViewerClassTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	0071E8B0
-0	ViewerClassTy	28	0x1C	4	field_001C	/undefined4	0			0	none	none			8	2	conflict	conflicting_access_widths=1x5|4x5	0071E8B0
-0	ViewerClassTy	32	0x20	1	field_0020	/undefined1	0			0	none	none			2	1	conflict	conflicting_access_widths=1x2|4x1	0071E730 | 0071E8B0
-1	ViewerClassTy	36	0x24	4	field_0024	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	40	0x28	4	field_0028	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	48	0x30	4	field_0030	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	56	0x38	4	field_0038	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	336	0x150	4	field_0150	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	368	0x170	4	field_0170	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	388	0x184	4	field_0184	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	392	0x188	2	field_0188	/undefined2	0			0	none	none			0	5	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	394	0x18A	2	field_018A	/undefined2	0			0	none	none			0	5	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	400	0x190	4	field_0190	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	420	0x1A4	4	field_01A4	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	424	0x1A8	2	field_01A8	/undefined2	0			0	none	none			0	3	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	432	0x1B0	4	field_01B0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	436	0x1B4	4	field_01B4	/undefined4	0			0	none	none			6	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	440	0x1B8	4	field_01B8	/undefined4	0			0	none	none			6	1	high	consistent_this_relative_access	0071E8B0
-0	ViewerClassTy	444	0x1BC	4	field_01BC	/undefined4	0			0	none	none			1	1	conflict	conflicting_access_widths=2x1|4x1	0071E8B0
-1	ViewerClassTy	448	0x1C0	4	field_01C0	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	452	0x1C4	4	field_01C4	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 0071E8B0 [this+0x1C4] assigned 0071E8B0 return from WINMM.DLL::timeGetTime		1	1	high	consistent_this_relative_access; concrete_type_already_present	0071E8B0
-1	ViewerClassTy	456	0x1C8	4	field_01C8	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	460	0x1CC	4	field_01CC	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	464	0x1D0	4	field_01D0	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	468	0x1D4	4	field_01D4	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	472	0x1D8	4	field_01D8	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	476	0x1DC	4	field_01DC	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	480	0x1E0	4	field_01E0	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	484	0x1E4	4	field_01E4	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-1	ViewerClassTy	488	0x1E8	4	field_01E8	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0071E8B0
-0	ViewerClassTy	492	0x1EC	4	field_01EC	/undefined4	0			0	none	none			8	3	conflict	conflicting_access_widths=2x5|4x6	0071E730 | 0071E8B0
-0	ViewerClassTy	496	0x1F0	4	field_01F0	/undefined4	0			0	none	none			8	3	conflict	conflicting_access_widths=2x5|4x6	0071E730 | 0071E8B0
-1	ViewerClassTy	500	0x1F4	4	field_01F4	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0071E8B0
 1	Visible	28	0x1C	4	field_001C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005585F0
 1	Visible	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005585F0
 1	Visible	36	0x24	4	field_0024	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005585F0
@@ -3921,7 +3700,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	VisibleClassTy	472	0x1D8	4	field_01D8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00557C90
 1	WaitTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005EA680
 1	WaitTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	005E6770 | 005E9D70
-1	WaitTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	005E9B50 | 005E9D70
+1	WaitTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005E9D70 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		4	0	high	consistent_this_relative_access; concrete_type_already_present	005E9B50 | 005E9D70
 1	WaitTy	16	0x10	4	field_0010	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005EA680
 1	WaitTy	45	0x2D	4	field_002D	/undefined4	0			0	none	none			0	8	high	consistent_this_relative_access	005E6770 | 005E7FE0 | 005E9D70 | 005EA680
 0	WaitTy	49	0x31	4	field_0031	/undefined4	0			0	none	none			0	9	conflict	conflicting_access_widths=2x4|4x5	005E6770 | 005E7FE0 | 005E9D70 | 005EA680
@@ -3935,7 +3714,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	WaitTy	97	0x61	4	field_0061	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 005E84D0 [this+0x61] assigned 005E84D0 return from WINMM.DLL::timeGetTime		1	2	high	consistent_this_relative_access; concrete_type_already_present	005E84D0 | 005EA680
 1	WaitTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			1	3	high	consistent_this_relative_access	005E6770 | 005E84D0 | 005E9830
 1	WaitTy	6746	0x1A5A	1	field_1A5A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	005E84D0
-1	WaitTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 005EA680 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		24	0	high	consistent_this_relative_access; concrete_type_already_present	005E6770 | 005E7570 | 005E79B0 | 005E9D70 | 005EA680
+1	WaitTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005EA680 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		24	0	high	consistent_this_relative_access; concrete_type_already_present	005E6770 | 005E7570 | 005E79B0 | 005E9D70 | 005EA680
 1	WaitTy	6751	0x1A5F	1	field_1A5F	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	005E84D0 | 005E9D70
 1	WaitTy	6756	0x1A64	4	field_1A64	/undefined4	0			0	none	none			13	4	high	consistent_this_relative_access	005E6770 | 005E7570 | 005E79B0 | 005E84D0 | 005E9830 | 005E9B50 | 005E9D70 | 005EA680
 1	WaitTy	6760	0x1A68	4	field_1A68	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	005E6770 | 005E79B0
@@ -3969,60 +3748,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	cLoadingTy	60	0x3C	4	field_003C	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00554F20 | 00555040
 1	cLoadingTy	64	0x40	4	field_0040	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00554F20 | 00555040
 1	cLoadingTy	68	0x44	4	field_0044	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 00554F20 [this+0x44] assigned 00554F20 return from WINMM.DLL::timeGetTime		1	1	high	consistent_this_relative_access; concrete_type_already_present	00554F20 | 00555040
+1	cLoadingTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00555570
 1	cLoadingTy	80	0x50	4	field_0050	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00554F20 | 00555040
 1	cLoadingTy	84	0x54	4	field_0054	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	00554800 | 00554AD0 | 00554C80 | 00555040
 1	cLoadingTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	00554800 | 00554AD0 | 00554C80 | 00555040
-1	cMf32	0	0x0	4	field_0000	/undefined4	0			0	none	none			25	0	high	consistent_this_relative_access	006F1220 | 006F12B0 | 006F1350 | 006F13F0 | 006F1700 | 006F17C0 | 006F1910 | 006F1B70 | 006F1CE0 | 006F20E0 | 006F21C0 | 006F2310 | 006F24A0 | 006F2600 | 006F2790 | 006F2860 | 006F2940 | 006F2A10 | 006F2AF0
-1	cMf32	24	0x18	1	field_0018	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	006F2AF0
-1	cMf32	46	0x2E	2	field_002E	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	006F2AF0
-1	cTypingTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	12	0xC	4	field_000C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00713B00
-1	cTypingTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	100	0x64	4	field_0064	/undefined4	0			0	none	none			2	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	108	0x6C	4	field_006C	/undefined4	0			0	none	none			3	4	high	consistent_this_relative_access	00713B00
-1	cTypingTy	112	0x70	4	field_0070	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	00713B00
-1	cTypingTy	116	0x74	4	field_0074	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	120	0x78	4	field_0078	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	124	0x7C	4	field_007C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	128	0x80	4	field_0080	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	132	0x84	4	field_0084	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	136	0x88	4	field_0088	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00713B00
-1	cTypingTy	140	0x8C	4	field_008C	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00713B00
-1	cTypingTy	144	0x90	4	field_0090	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00713B00
-1	cTypingTy	148	0x94	4	field_0094	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	152	0x98	4	field_0098	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	156	0x9C	4	field_009C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-0	cTypingTy	160	0xA0	4	field_00A0	/undefined4	0			0	none	none			1	1	conflict	conflicting_access_widths=1x1|4x1	00713B00
-1	cTypingTy	164	0xA4	4	field_00A4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	168	0xA8	4	field_00A8	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00713B00
-1	cTypingTy	172	0xAC	4	field_00AC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	cTypingTy	176	0xB0	4	field_00B0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00713B00
-1	ccFntTy	4	0x4	4	field_0004	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00710BA0
-1	ccFntTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			10	7	high	consistent_this_relative_access	007108B0 | 007119C0 | 00711B70 | 00711DA0 | 00711F70
-1	ccFntTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	007108B0 | 007119C0 | 00711B70 | 00711DA0 | 00711F70
-1	ccFntTy	76	0x4C	4	field_004C	/undefined4	0			0	none	none			2	9	high	consistent_this_relative_access	007108B0 | 007119C0 | 00711B70 | 00711DA0 | 00711F70
-1	ccFntTy	80	0x50	4	field_0050	/undefined4	0			0	none	none			3	5	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 007116F0 | 00711880 | 007119C0
-1	ccFntTy	84	0x54	4	field_0054	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 007116F0 | 00711880 | 007119C0
-1	ccFntTy	88	0x58	4	field_0058	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	007108B0 | 007116F0 | 007121F0
-1	ccFntTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	007108B0 | 00711B70 | 00711DA0 | 00711F70 | 00712E60
-1	ccFntTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 007116F0
-1	ccFntTy	100	0x64	4	field_0064	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 007116F0
-1	ccFntTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			15	2	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 00711880 | 007119C0 | 00711B70 | 00711DA0 | 00711F70
-1	ccFntTy	108	0x6C	4	field_006C	/undefined4	0			0	none	none			11	2	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 00711880 | 007119C0 | 00711B70 | 00711DA0 | 00711F70 | 00712E60
-1	ccFntTy	112	0x70	2	field_0070	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	007108B0
-1	ccFntTy	114	0x72	4	field_0072	/undefined4	0			0	none	none			6	2	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 00710D80 | 00710F00 | 007116F0
-1	ccFntTy	118	0x76	4	field_0076	/undefined4	0			0	none	none			6	3	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 00710D80 | 00710F00 | 007116F0
-1	ccFntTy	122	0x7A	4	field_007A	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	007108B0 | 00710A90 | 00710BA0 | 00710F00
-1	ccFntTy	126	0x7E	4	field_007E	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	007108B0 | 007119C0 | 007121F0 | 007126E0 | 00713480
-1	ccFntTy	130	0x82	4	field_0082	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	007108B0 | 007119C0 | 00713480
-1	ccFntTy	150	0x96	4	field_0096	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	007108B0
-1	ccFntTy	154	0x9A	4	field_009A	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	007116F0 | 00711880
-0	ccFntTy	158	0x9E	2	field_009E	/undefined2	0			0	none	none			1	2	conflict	conflicting_access_widths=1x1|2x2	007108B0 | 00713480
-1	ccFntTy	160	0xA0	4	field_00A0	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00710BA0 | 007116F0
-1	ccFntTy	168	0xA8	4	field_00A8	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00710BA0 | 007116F0
-1	ccFntTy	172	0xAC	4	field_00AC	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00710BA0 | 007116F0

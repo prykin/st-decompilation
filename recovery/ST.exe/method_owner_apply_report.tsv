@@ -1,0 +1,78 @@
+address	status	proposed_name	detail
+004158E0	disabled		all apply flags are 0
+00415B30	disabled		all apply flags are 0
+00415ED0	disabled	STJellyGunC::sub_00415ED0	all apply flags are 0
+004162B0	disabled	STFishC::sub_004162B0	all apply flags are 0
+004176C0	disabled	STBoatC::sub_004176C0	all apply flags are 0
+00417830	disabled		all apply flags are 0
+00417910	disabled	STBoatC::sub_00417910	all apply flags are 0
+00417FF0	disabled		all apply flags are 0
+00418010	disabled		all apply flags are 0
+00418030	disabled		all apply flags are 0
+0041C710	disabled		all apply flags are 0
+0041CAF0	disabled		all apply flags are 0
+004232A0	disabled	STGroupBoatC::sub_004232A0	all apply flags are 0
+0042B5B0	disabled	STAllPlayersC::sub_0042B5B0	all apply flags are 0
+0042B760	disabled	STAllPlayersC::sub_0042B760	all apply flags are 0
+0043FC50	disabled	STAllPlayersC::sub_0043FC50	all apply flags are 0
+0045F6C0	disabled	STBoatC::sub_0045F6C0	all apply flags are 0
+0045FF50	disabled	STBoatC::sub_0045FF50	all apply flags are 0
+00460260	disabled	STBoatC::sub_00460260	all apply flags are 0
+004602B0	disabled	STBoatC::sub_004602B0	all apply flags are 0
+00460360	disabled	STBoatC::sub_00460360	all apply flags are 0
+00481520	disabled	STBoatC::sub_00481520	all apply flags are 0
+0048D930	disabled	STBoatC::sub_0048D930	all apply flags are 0
+0048DBA0	disabled	STBoatC::sub_0048DBA0	all apply flags are 0
+0048DFD0	disabled	STBoatC::sub_0048DFD0	all apply flags are 0
+00490570	disabled	STBoatC::sub_00490570	all apply flags are 0
+00490CD0	disabled	STBoatC::sub_00490CD0	all apply flags are 0
+00492390	disabled	STBoatC::sub_00492390	all apply flags are 0
+00492420	disabled	STBoatC::sub_00492420	all apply flags are 0
+004926C0	disabled	STBoatC::sub_004926C0	all apply flags are 0
+004939B0	disabled	STBoatC::sub_004939B0	all apply flags are 0
+004952E0	disabled	STBoatC::sub_004952E0	all apply flags are 0
+004A7E30	disabled	STGroupBoatC::sub_004A7E30	all apply flags are 0
+00526BA0	disabled	BldLabPanelTy::sub_00526BA0	all apply flags are 0
+00555570	disabled	cLoadingTy::sub_00555570	all apply flags are 0
+0055DB70	disabled	StartSystemTy::sub_0055DB70	all apply flags are 0
+0057BF20	disabled	STFishC::sub_0057BF20	all apply flags are 0
+0057D420	disabled	STFishC::sub_0057D420	all apply flags are 0
+0057D5F0	disabled	STFishC::sub_0057D5F0	all apply flags are 0
+0057D700	disabled	STFishC::sub_0057D700	all apply flags are 0
+005802A0	disabled	STResourceC::sub_005802A0	all apply flags are 0
+00580380	disabled	STResourceC::sub_00580380	all apply flags are 0
+00580D30	disabled	STResourceC::sub_00580D30	all apply flags are 0
+00580FA0	disabled	STResourceC::sub_00580FA0	all apply flags are 0
+00582530	disabled	STJellyGunC::sub_00582530	all apply flags are 0
+00582580	disabled	STJellyGunC::sub_00582580	all apply flags are 0
+00583E30	disabled	STJellyGunC::sub_00583E30	all apply flags are 0
+00584060	disabled	STJellyGunC::sub_00584060	all apply flags are 0
+00584380	disabled	STJellyGunC::sub_00584380	all apply flags are 0
+005844E0	disabled	STJellyGunC::sub_005844E0	all apply flags are 0
+0058EFE0	disabled	STSharkC::sub_0058EFE0	all apply flags are 0
+0058F430	disabled	STSharkC::sub_0058F430	all apply flags are 0
+005DA910	disabled	StartSystemTy::sub_005DA910	all apply flags are 0
+005DAA60	disabled	StartSystemTy::sub_005DAA60	all apply flags are 0
+005DAB30	applied	StartSystemTy::sub_005DAB30	owner=applied(StartSystemTy::sub_005DAB30); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005DAC60	disabled	StartSystemTy::sub_005DAC60	all apply flags are 0
+005DAF20	disabled	StartSystemTy::sub_005DAF20	all apply flags are 0
+005DB010	disabled	StartSystemTy::sub_005DB010	all apply flags are 0
+005DB2A0	disabled	StartSystemTy::sub_005DB2A0	all apply flags are 0
+0065BD70	disabled	AiEventClassTy::sub_0065BD70	all apply flags are 0
+0065D9C0	disabled	AiFltClassTy::sub_0065D9C0	all apply flags are 0
+00661800	disabled	AiFltClassTy::sub_00661800	all apply flags are 0
+0067B2E0	disabled	AiPlrClassTy::sub_0067B2E0	all apply flags are 0
+006AB060	disabled	STGameObjC::sub_006AB060	all apply flags are 0
+006B6110	disabled	StartSystemTy::sub_006B6110	all apply flags are 0
+006B6500	disabled	StartSystemTy::sub_006B6500	all apply flags are 0
+006E52D0	disabled		all apply flags are 0
+006E5360	applied	StartSystemTy::sub_006E5360	owner=applied(StartSystemTy::sub_006E5360); this_type=unchanged
+006E56B0	disabled	StartSystemTy::sub_006E56B0	all apply flags are 0
+006E5FB0	applied	STGroupBoatC::sub_006E5FB0	owner=applied(STGroupBoatC::sub_006E5FB0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+006E5FD0	disabled		all apply flags are 0
+006E6080	disabled		all apply flags are 0
+006E60A0	disabled	STJellyGunC::sub_006E60A0	all apply flags are 0
+006E60E0	disabled	STGroupBoatC::sub_006E60E0	all apply flags are 0
+0070B3A0	disabled	HelpPanelTy::sub_0070B3A0	all apply flags are 0
+00710790	disabled	StartSystemTy::sub_00710790	all apply flags are 0
+00749D5F	disabled	CBaseRenderer::sub_00749D5F	all apply flags are 0

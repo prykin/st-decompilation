@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_004ebab0(void *this,int param_1,int param_2)
   uint uVar2;
   
   iVar1 = thunk_FUN_004e1490((int)this);
-  if ((iVar1 != 0) && (*(int *)((int)this + 0x5b8) < DAT_007fb244 + -1)) {
+  if ((iVar1 != 0) && (*(int *)((int)this + 0x5b8) < SHORT_007fb244 + -1)) {
     if (param_1 == 0xdc) {
       iVar1 = thunk_FUN_004d8870(*(char *)((int)this + 0x24));
       if (iVar1 < param_2) {

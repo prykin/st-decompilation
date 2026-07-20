@@ -1,7 +1,10 @@
 
+/* [STPrototypeApplier] Propagated parameter 8.
+   Evidence: 0070CB20 -> EXTERNAL:000000B2 @ 0070CD54 */
+
 uint __cdecl
 FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte param_6,byte param_7
-            ,int param_8,HPALETTE param_9,uint param_10,int param_11)
+            ,int param_8,HPALETTE h,uint param_10,int param_11)
 
 {
   byte bVar1;
@@ -103,8 +106,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
       return (uint)bVar1;
     }
   }
-  UVar6 = GetNearestPaletteIndex
-                    (param_9,(uint)CONCAT11((char)uVar5,(char)uVar4) << 8 | uVar3 & 0xff);
+  UVar6 = GetNearestPaletteIndex(h,(uint)CONCAT11((char)uVar5,(char)uVar4) << 8 | uVar3 & 0xff);
   if (UVar6 != 0xffffffff) {
     param_1 = UVar6 & 0xff;
     if (param_11 != 0) {

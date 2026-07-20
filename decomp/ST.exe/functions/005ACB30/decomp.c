@@ -25,9 +25,9 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   pCVar3 = local_8;
   if (iVar4 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (((pCVar3->field_004D != 0x6121) && (DAT_00811764 != (undefined4 *)0x0)) &&
-       (DAT_0080877e != '\0')) {
-      FUN_00715360(DAT_00811764,0,'\x10',(char *)0x0,0,0,0xffffffff);
+    if (((pCVar3->field_004D != 0x6121) && (g_int_00811764 != (int *)0x0)) && (DAT_0080877e != '\0')
+       ) {
+      FUN_00715360(g_int_00811764,0,'\x10',(char *)0x0,0,0,0xffffffff);
       thunk_FUN_005dac60();
     }
     if (pCVar3->field_1C8F != (HANDLE)0x0) {
@@ -47,11 +47,11 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       DarkScreen(DAT_0080759c,10,2);
     }
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
     if (pCVar3->field_20B8 != (HoloTy *)0x0) {
       HoloTy::Done(pCVar3->field_20B8);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pCVar3->field_20B8);
+      Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20B8);
       pCVar3->field_20B8 = (HoloTy *)0x0;
     }
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1A70);
@@ -73,7 +73,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     pCVar3->field_1C87 = 0xffffffff;
     if (pCVar3->field_20BC != (HoloTy *)0x0) {
       HoloTy::Done(pCVar3->field_20BC);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pCVar3->field_20BC);
+      Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20BC);
       pCVar3->field_20BC = (HoloTy *)0x0;
     }
     if (pCVar3->field_20B4 != '\0') {
@@ -92,7 +92,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     }
     if (pCVar3->field_20C0 != (HoloTy *)0x0) {
       HoloTy::Done(pCVar3->field_20C0);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pCVar3->field_20C0);
+      Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20C0);
       pCVar3->field_20C0 = (HoloTy *)0x0;
     }
     if ((pCVar3->field_20B7 != '\0') &&
@@ -112,11 +112,11 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       }
     }
     if (pCVar3->field_1C7B != 0) {
-      FUN_006ab060(&pCVar3->field_1C7B);
+      FUN_006ab060((LPVOID *)&pCVar3->field_1C7B);
     }
     pCVar3->field_1C7F = 0;
     if (pCVar3->field_1C8B != 0) {
-      FUN_006ab060(&pCVar3->field_1C8B);
+      FUN_006ab060((LPVOID *)&pCVar3->field_1C8B);
     }
     if ((pCVar3->field_20B6 != '\0') &&
        (this_00 = pCVar3->field_1A5B->field_02E6, this_00 != (MMsgTy *)0x0)) {

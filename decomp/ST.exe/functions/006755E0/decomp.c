@@ -1,5 +1,14 @@
 
-undefined4 __cdecl FUN_006755e0(int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 006755E0 returns partial register write at 006755F0 @ 006755F5 | 006755E0 returns
+   partial register write at 00675662 @ 00675667 | 006755E0 returns partial register write at
+   00675668 @ 0067566D | 006755E0 returns partial register write at 0067566E @ 00675673 | 006755E0
+   returns partial register write at 00675674 @ 00675679 | 006755E0 returns partial register write
+   at 0067567A @ 0067567F | 006755E0 returns partial register write at 00675680 @ 00675685 |
+   006755E0 returns partial register write at 00675686 @ 0067568B | 006755E0 returns partial
+   register write at 0067568C @ 00675691 */
+
+uint __cdecl FUN_006755e0(int param_1)
 
 {
   undefined2 uVar1;

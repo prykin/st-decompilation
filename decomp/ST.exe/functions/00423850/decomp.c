@@ -51,13 +51,14 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
         local_14 = uVar6;
       }
       if (local_8 == (short)param_1) {
-        RaiseInternalException(-0x5001ffff,DAT_007ed77c,s_E____titans_wlad_tc_grp_cpp_007a50a4,0xb1)
-        ;
+        RaiseInternalException
+                  (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_tc_grp_cpp_007a50a4,
+                   0xb1);
       }
     }
     Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_0029,uVar7,&param_1);
     this_00 = (int *)STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,
+                               (g_sTAllPlayers_007FA174,
                                 CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),param_1
                                 ,CASE_1);
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);

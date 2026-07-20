@@ -1,6 +1,13 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005BAE00 -> 00725910 @ 005BB365 | 005BAE00 -> 00725910 @ 005BB3D4 | 005E7FE0 ->
+   00725910 @ 005E8148 | 005E84D0 -> 00725910 @ 005E8D28 | 005E84D0 -> 00725910 @ 005E8D96
+   
+   [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 00725910 -> EXTERNAL:00000072 @ 00725B18 | 00725910 -> EXTERNAL:00000072 @ 00725C0F */
+
 int __cdecl
-FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,undefined4 param_5,
+FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,undefined4 param_5,
             byte param_6)
 
 {
@@ -18,10 +25,10 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
   _WIN32_FIND_DATAA local_248;
   char local_108 [260];
   
-  iVar2 = (*(code *)param_4)(param_1,param_3,1,param_5);
+  iVar2 = (*(code *)param_4)(hFindFile,param_3,1,param_5);
   if (iVar2 == 0) {
     uVar5 = 0xffffffff;
-    pcVar7 = param_1;
+    pcVar7 = hFindFile;
     do {
       pcVar11 = pcVar7;
       if (uVar5 == 0) break;
@@ -45,7 +52,7 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
     }
     FUN_006b8280(local_108,local_108);
     uVar5 = 0xffffffff;
-    pcVar7 = param_2;
+    pcVar7 = text;
     do {
       pcVar11 = pcVar7;
       if (uVar5 == 0) break;
@@ -82,7 +89,7 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
       do {
         if (((byte)local_248.dwFileAttributes & 0x10) == 0) {
           uVar5 = 0xffffffff;
-          pcVar7 = param_1;
+          pcVar7 = hFindFile;
           do {
             pcVar11 = pcVar7;
             if (uVar5 == 0) break;
@@ -150,7 +157,7 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
     FindClose(pvVar3);
     if ((param_6 & 1) == 0) {
       uVar5 = 0xffffffff;
-      pcVar7 = param_1;
+      pcVar7 = hFindFile;
       do {
         pcVar11 = pcVar7;
         if (uVar5 == 0) break;
@@ -213,7 +220,7 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
       do {
         if ((((byte)local_248.dwFileAttributes & 0x10) != 0) && (local_248.cFileName[0] != '.')) {
           uVar5 = 0xffffffff;
-          pcVar7 = param_1;
+          pcVar7 = hFindFile;
           do {
             pcVar11 = pcVar7;
             if (uVar5 == 0) break;
@@ -269,7 +276,7 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
             pCVar8 = pCVar8 + 1;
             pcVar7 = pcVar7 + 1;
           }
-          iVar2 = FUN_00725910(local_108,param_2,&local_248,param_4,param_5,0);
+          iVar2 = FUN_00725910(local_108,text,&local_248,param_4,param_5,0);
           if (iVar2 != 0) {
             FindClose(pvVar3);
             return iVar2;
@@ -279,7 +286,7 @@ FUN_00725910(char *param_1,char *param_2,undefined4 param_3,undefined *param_4,u
       } while (BVar4 != 0);
       FindClose(pvVar3);
     }
-    iVar2 = (*(code *)param_4)(param_1,param_3,2,param_5);
+    iVar2 = (*(code *)param_4)(hFindFile,param_3,2,param_5);
   }
   return iVar2;
 }

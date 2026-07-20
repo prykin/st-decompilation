@@ -1,7 +1,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::OutSGlProc */
+   FSGSTy::OutSGlProc
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 005952B0 parameter used as this of MMMObjTy::OutRGlProc @ 00595314 */
 
 void __thiscall
 FSGSTy::OutSGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,undefined4 param_3,int param_4,
@@ -19,7 +22,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,undefined4 param_3
   void *unaff_EDI;
   uint uVar5;
   uint uVar6;
-  void *pvVar7;
+  ccFntTy *pcVar7;
   undefined4 uVar8;
   InternalExceptionFrame local_50;
   int local_c;
@@ -35,44 +38,44 @@ FSGSTy::OutSGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,undefined4 param_3
                  (undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
       iVar2 = param_4 + 10;
-      pvVar7 = *(void **)(DAT_0081176c + 0x34);
+      pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)FUN_006b0140(0x256f,DAT_00807618);
+      puVar3 = (uint *)FUN_006b0140(0x256f,HINSTANCE_00807618);
       StartServTy::WrTextDDX
-                (this_00,0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8);
+                (this_00,0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
       FUN_006c6850(param_1,iVar2,param_5 + 0x1e,param_6 + -0x14,0x8e,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
-      pvVar7 = *(void **)(DAT_0081176c + 0x34);
+      pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)FUN_006b0140(0x256b,DAT_00807618);
+      puVar3 = (uint *)FUN_006b0140(0x256b,HINSTANCE_00807618);
       StartServTy::WrTextDDX
-                (this_01,0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8
+                (this_01,0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
                 );
       FUN_006c6850(param_1,iVar2,param_5 + 200,param_6 + -0x14,0x19,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
-      pvVar7 = *(void **)(DAT_0081176c + 0x34);
+      pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)FUN_006b0140(0x256c,DAT_00807618);
+      puVar3 = (uint *)FUN_006b0140(0x256c,HINSTANCE_00807618);
       StartServTy::WrTextDDX
-                (this_02,0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8
+                (this_02,0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
                 );
       FUN_006c6850(param_1,iVar2,param_5 + 0xf5,param_6 + -0x14,0x19,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
       local_c = param_6 + -0x1e;
       local_8 = (undefined4 *)(local_c / 2);
-      pvVar7 = *(void **)(DAT_0081176c + 0x34);
+      pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)FUN_006b0140(0x256d,DAT_00807618);
+      puVar3 = (uint *)FUN_006b0140(0x256d,HINSTANCE_00807618);
       StartServTy::WrTextDDX
                 ((StartServTy *)(param_5 + 0x11a),0,iVar2,param_5 + 0x11a,(int)(local_8 + -10),0x14,
-                 puVar3,uVar5,uVar6,pvVar7,uVar8);
+                 puVar3,uVar5,uVar6,pcVar7,uVar8);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,(int)local_8 + param_4 + -0x14,param_5 + 0x11c,local_8 + 10,0x19,4,
                  *(undefined4 *)(DAT_0081176c + 0x140));

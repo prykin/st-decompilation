@@ -21,7 +21,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   CPanelTy *local_28;
   uint local_24;
   uint local_20;
-  int local_1c;
+  uint local_1c;
   char *local_18;
   int local_14;
   uint local_10;
@@ -94,37 +94,37 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         } while (iVar8 != 0);
       }
       wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,(uint)*(ushort *)(local_18 + 2));
-      iVar3 = local_1c;
+      uVar4 = local_1c;
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
       ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,5);
       if ((char)local_20 == '\0') {
-        if (iVar3 < 0x76) {
+        if ((int)uVar4 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505bca. Too many branches */
                     /* WARNING: Treating indirect jump as call */
           (*(code *)(&PTR_DAT_00505cec)[local_14])();
           return;
         }
       }
-      else if (iVar3 < 0x76) {
+      else if ((int)uVar4 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505b82. Too many branches */
                     /* WARNING: Treating indirect jump as call */
         (*(code *)(&PTR_DAT_00505cdc)[local_14])();
         return;
       }
       if (*local_18 == '\0') {
-        iVar8 = pCVar2->field_0292;
+        iVar3 = pCVar2->field_0292;
       }
       else {
-        iVar8 = pCVar2->field_028E;
+        iVar3 = pCVar2->field_028E;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(iVar8,(-(uint)(*local_18 != '\0') & 0x14) + 0xb + local_14 +
+      pbVar5 = (byte *)FUN_0070b3a0(iVar3,(-(uint)(*local_18 != '\0') & 0x14) + 0xb + local_14 +
                                           local_2c);
       if (pbVar5 != (byte *)0x0) {
         DibPut((undefined4 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
       }
       local_14 = local_14 + 1;
       local_18 = local_18 + 6;
-      local_1c = iVar3 + 0xb;
+      local_1c = uVar4 + 0xb;
       local_24 = local_24 - 1;
     } while (local_24 != 0);
   }

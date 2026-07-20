@@ -11,23 +11,22 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   int iVar2;
   LPSTR pCVar3;
   ushort *puVar4;
-  byte *pbVar5;
-  ccFntTy *pcVar6;
-  int iVar7;
+  ccFntTy *pcVar5;
+  int iVar6;
   ccFntTy *this_01;
-  int *piVar8;
-  int iVar9;
+  int *piVar7;
+  int iVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  undefined4 uVar9;
   undefined4 uVar10;
-  undefined4 uVar11;
-  uint uVar12;
-  byte bVar13;
-  int iVar14;
-  UINT UVar15;
+  uint uVar11;
+  byte bVar12;
+  int iVar13;
+  UINT UVar14;
+  undefined4 uVar15;
   undefined4 uVar16;
-  undefined4 uVar17;
-  undefined4 *puVar18;
+  undefined4 *puVar17;
   undefined4 local_430 [224];
   InternalExceptionFrame local_b0;
   undefined4 local_6c [4];
@@ -46,76 +45,76 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   int local_c;
   int local_8;
   
-  puVar18 = local_6c;
+  puVar17 = local_6c;
   local_10 = this;
-  for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar18 = 0;
-    puVar18 = puVar18 + 1;
+  for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar17 = 0;
+    puVar17 = puVar17 + 1;
   }
-  puVar18 = local_430;
-  for (iVar7 = 0xe0; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar18 = 0;
-    puVar18 = puVar18 + 1;
+  puVar17 = local_430;
+  for (iVar6 = 0xe0; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar17 = 0;
+    puVar17 = puVar17 + 1;
   }
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
-  iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
-  if (iVar7 == 0) {
-    uVar17 = 0x8b;
-    uVar16 = 0xd8;
-    UVar15 = 0x36bf;
-    iVar14 = 0xb;
-    iVar7 = 0xbf;
-    uVar11 = 3;
-    uVar10 = 0x40;
+  if (iVar6 == 0) {
+    uVar16 = 0x8b;
+    uVar15 = 0xd8;
+    UVar14 = 0x36bf;
+    iVar13 = 0xb;
+    iVar6 = 0xbf;
+    uVar10 = 3;
+    uVar9 = 0x40;
     DAT_00801698 = local_10;
     pCVar3 = thunk_FUN_00571240(s_BKG_INFOCENTERW_007c3f18,0);
     SpecPanelTy::InitPanel
-              ((SpecPanelTy *)this_00,pCVar3,uVar10,uVar11,iVar7,iVar14,UVar15,uVar16,uVar17);
+              ((SpecPanelTy *)this_00,pCVar3,uVar9,uVar10,iVar6,iVar13,UVar14,uVar15,uVar16);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,(byte *)s_BUT_CHPLAYER_007c3f08,0xffffffff,0,1,0,
+                       (DAT_00806794,CASE_B,s_BUT_CHPLAYER_007c3f08,0xffffffff,0,1,0,
                         (undefined4 *)0x0);
     this_00->field_03C4 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,(byte *)s_GAME_ALLY_007c3efc,0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+                       (DAT_00806794,CASE_B,s_GAME_ALLY_007c3efc,0xffffffff,0,1,0,(undefined4 *)0x0)
+    ;
     this_00->field_03C8 = puVar4;
-    puVar18 = (undefined4 *)0x0;
-    iVar14 = 0;
-    iVar7 = 1;
-    bVar13 = 0;
-    uVar12 = 0xffffffff;
-    pbVar5 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
+    puVar17 = (undefined4 *)0x0;
+    iVar13 = 0;
+    iVar6 = 1;
+    bVar12 = 0;
+    uVar11 = 0xffffffff;
+    pCVar3 = thunk_FUN_00571240(s_IND_PNT_007c2078,0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pbVar5,uVar12,bVar13,iVar7,iVar14,puVar18);
+                       (DAT_00806794,CASE_B,pCVar3,uVar11,bVar12,iVar6,iVar13,puVar17);
     this_00->field_03CC = puVar4;
-    pcVar6 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
-    this_00->field_03D5 = pcVar6;
-    pcVar6->field_0058 = 1;
-    pcVar6->field_005C = 0;
+    pcVar5 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+    this_00->field_03D5 = pcVar5;
+    pcVar5->field_0058 = 1;
+    pcVar5->field_005C = 0;
     local_c = this_00->field_005C;
     local_14 = this_00->field_003C + 0x1d;
-    iVar14 = 0;
-    iVar7 = 1;
-    puVar18 = local_430 + 1;
+    iVar13 = 0;
+    iVar6 = 1;
+    puVar17 = local_430 + 1;
     local_8 = 7;
     do {
-      iVar9 = local_14;
-      puVar18[-1] = iVar7;
-      *puVar18 = 2;
-      puVar18[2] = iVar9;
+      iVar8 = local_14;
+      puVar17[-1] = iVar6;
+      *puVar17 = 2;
+      puVar17[2] = iVar8;
       iVar2 = local_c;
-      puVar18[4] = 0x11;
-      iVar9 = DAT_00806734;
+      puVar17[4] = 0x11;
+      iVar8 = DAT_00806734;
       if (iVar2 != 0) {
-        iVar9 = this_00->field_0044;
+        iVar8 = this_00->field_0044;
       }
-      iVar7 = iVar7 + 1;
-      puVar18[3] = iVar14 + 0x23 + iVar9;
-      puVar18[5] = 0xc;
-      iVar14 = iVar14 + 0xd;
-      puVar18 = puVar18 + 0x1c;
+      iVar6 = iVar6 + 1;
+      puVar17[3] = iVar13 + 0x23 + iVar8;
+      puVar17[5] = 0xc;
+      iVar13 = iVar13 + 0xd;
+      puVar17 = puVar17 + 0x1c;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     local_5c = this_00->field_0008;
@@ -190,26 +189,26 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     this_00->field_03B4 = 0x65;
     this_00->field_03B8 = 0x53;
     this_00->field_03C0 = 0x2769;
-    iVar7 = 0xc;
-    piVar8 = &this_00->field_02D8;
+    iVar6 = 0xc;
+    piVar7 = &this_00->field_02D8;
     do {
-      piVar8[-1] = piVar8[-1] + this_00->field_003C;
-      iVar7 = iVar7 + -1;
-      *piVar8 = *piVar8 + (this_00->field_0058 - this_00->field_0048) + this_00->field_0050;
-      piVar8 = piVar8 + 5;
-    } while (iVar7 != 0);
+      piVar7[-1] = piVar7[-1] + this_00->field_003C;
+      iVar6 = iVar6 + -1;
+      *piVar7 = *piVar7 + (this_00->field_0058 - this_00->field_0048) + this_00->field_0050;
+      piVar7 = piVar7 + 5;
+    } while (iVar6 != 0);
     g_currentExceptionFrame = local_b0.previous;
     return;
   }
   g_currentExceptionFrame = local_b0.previous;
-  iVar14 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e,0,iVar7,&DAT_007a4ccc,
+  iVar13 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e,0,iVar6,&DAT_007a4ccc,
                               s_InfocPanelTy__InitInfocPanel_007c3ed8);
-  if (iVar14 != 0) {
+  if (iVar13 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  RaiseInternalException(iVar7,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e);
+  RaiseInternalException(iVar6,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e);
   return;
 }
 

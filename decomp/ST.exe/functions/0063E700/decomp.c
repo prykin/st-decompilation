@@ -29,14 +29,14 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
   if (local_1c < 0) {
     local_1c = 0;
   }
-  if (DAT_007fb242 < local_14) {
-    local_14 = (int)DAT_007fb242;
+  if (SHORT_007fb242 < local_14) {
+    local_14 = (int)SHORT_007fb242;
   }
-  if (DAT_007fb240 < local_10) {
-    local_10 = (int)DAT_007fb240;
+  if (SHORT_007fb240 < local_10) {
+    local_10 = (int)SHORT_007fb240;
   }
   iVar5 = local_1c;
-  sVar4 = DAT_007fb240;
+  sVar4 = SHORT_007fb240;
   local_8 = iVar3;
   if (iVar3 < local_14) {
     do {
@@ -51,10 +51,10 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
             if (-1 < (short)iVar5) {
               sVar6 = (short)iVar7;
               if (((((short)iVar5 < sVar4) && (sVar2 = (short)iVar3, -1 < sVar2)) &&
-                  (sVar2 < DAT_007fb242)) &&
-                 (((-1 < sVar6 && (sVar6 < DAT_007fb244)) &&
+                  (sVar2 < SHORT_007fb242)) &&
+                 (((-1 < sVar6 && (sVar6 < SHORT_007fb244)) &&
                   (iVar1 = *(int *)(DAT_007fb248 + 4 +
-                                   ((int)sVar2 * (int)sVar4 + (int)sVar6 * (int)DAT_007fb246 +
+                                   ((int)sVar2 * (int)sVar4 + (int)sVar6 * (int)SHORT_007fb246 +
                                    (int)(short)local_18) * 8), iVar3 = local_8, iVar5 = local_18,
                   iVar1 != 0)))) {
                 local_c = local_c + 1;
@@ -62,13 +62,13 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                                    (short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x128);
                 iVar3 = local_8;
-                sVar4 = DAT_007fb240;
+                sVar4 = SHORT_007fb240;
               }
               if (((-1 < (short)iVar5) && ((short)iVar5 < sVar4)) &&
                  (((sVar2 = (short)iVar3, -1 < sVar2 &&
-                   (((sVar2 < DAT_007fb242 && (-1 < sVar6)) && (sVar6 < DAT_007fb244)))) &&
+                   (((sVar2 < SHORT_007fb242 && (-1 < sVar6)) && (sVar6 < SHORT_007fb244)))) &&
                   (iVar1 = *(int *)(DAT_007fb248 +
-                                   ((int)sVar2 * (int)sVar4 + (int)sVar6 * (int)DAT_007fb246 +
+                                   ((int)sVar2 * (int)sVar4 + (int)sVar6 * (int)SHORT_007fb246 +
                                    (int)(short)local_18) * 8), iVar3 = local_8, iVar5 = local_18,
                   iVar1 != 0)))) {
                 local_c = local_c + 1;
@@ -76,7 +76,7 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                                    (short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x128);
                 iVar3 = local_8;
-                sVar4 = DAT_007fb240;
+                sVar4 = SHORT_007fb240;
               }
             }
             iVar7 = iVar7 + 1;

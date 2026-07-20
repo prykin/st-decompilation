@@ -1,4 +1,4 @@
-FUN_005db2a0:
+StartSystemTy::sub_005DB2A0:
 005DB2A0  A1 80 67 80 00            MOV EAX,[0x00806780]
 005DB2A5  56                        PUSH ESI
 005DB2A6  57                        PUSH EDI

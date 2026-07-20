@@ -92,8 +92,8 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
       local_30 = 0;
     }
     iVar7 = local_14[2] + local_14[1] + param_2;
-    if (DAT_007fb278 <= iVar7) {
-      local_c = local_c + -1 + (DAT_007fb278 - iVar7);
+    if (SHORT_007fb278 <= iVar7) {
+      local_c = local_c + -1 + (SHORT_007fb278 - iVar7);
     }
     iVar7 = local_14[3] + -1 + param_3;
     local_44 = iVar7;
@@ -104,8 +104,8 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
       local_28 = iVar4;
     }
     iVar7 = local_14[4] + local_14[3] + param_3;
-    if (DAT_007fb27a <= iVar7) {
-      iVar4 = iVar4 + -1 + (DAT_007fb27a - iVar7);
+    if (SHORT_007fb27a <= iVar7) {
+      iVar4 = iVar4 + -1 + (SHORT_007fb27a - iVar7);
       local_28 = iVar4;
     }
     local_34 = (uint *)((int)local_48 + (int)local_2c * iVar15 + (int)local_20 + iVar12);
@@ -115,9 +115,9 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
       do {
         local_18 = puVar6;
         local_54 = (short *)(DAT_007fb280 +
-                            ((int)DAT_007fb278 * (local_44 + local_10) + local_30) * 2);
+                            ((int)SHORT_007fb278 * (local_44 + local_10) + local_30) * 2);
         local_1c = (uint *)(DAT_007fb248 +
-                           ((int)DAT_007fb240 * (local_44 + local_10) + local_30) * 8);
+                           ((int)SHORT_007fb240 * (local_44 + local_10) + local_30) * 8);
         local_8 = 0;
         if (0 < local_c) {
           do {
@@ -267,8 +267,8 @@ LAB_00565c6c:
                 *pbVar13 = *pbVar13 | 1;
               }
               pbVar13 = pbVar13 + iVar12;
-              local_5c = local_5c + DAT_007fb27e;
-              local_50 = local_50 + DAT_007fb246 * 2;
+              local_5c = local_5c + SHORT_007fb27e;
+              local_50 = local_50 + SHORT_007fb246 * 2;
               local_38 = local_38 + -1;
             } while (local_38 != 0);
             local_8 = local_8 + 1;
@@ -456,7 +456,8 @@ cf_common_exit_0056623F:
     return local_24;
   }
   FUN_006ab060(&local_24);
-  RaiseInternalException(iVar4,DAT_007ed77c,s_E____titans_scoreai_cpp_007c96b0,0xf0f);
+  RaiseInternalException(iVar4,g_overwriteContext_007ED77C,s_E____titans_scoreai_cpp_007c96b0,0xf0f)
+  ;
   return (uint *)0x0;
 }
 

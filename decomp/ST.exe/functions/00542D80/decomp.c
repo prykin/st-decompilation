@@ -26,7 +26,7 @@ void CreateInterSystem(void)
       DAT_00802a28 = (InterSystemC *)0x0;
     }
     else {
-      DAT_00802a28 = (InterSystemC *)InterSystemC::InterSystemC(this,DAT_00806728);
+      DAT_00802a28 = InterSystemC::InterSystemC(this,g_appClass_00806728);
     }
     *(undefined4 *)&DAT_00802a28->field_0x20 = 0;
     (*DAT_00802a28->vtable->InitSystem)((SystemClassTy *)DAT_00802a28);

@@ -38,7 +38,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   byte *local_14;
   SettMapMTy *local_10;
   char *local_c;
-  int local_8;
+  cMf32 *local_8;
   
   this->field_211C = DAT_008087c4._2_1_;
   local_b8.previous = g_currentExceptionFrame;
@@ -60,10 +60,10 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   }
   cVar1 = local_10->field_1E26;
   if ((((cVar1 == '\x05') || (cVar1 == '\x0f')) || (cVar1 == '\f')) || (cVar1 == '\x10')) {
-    local_8 = local_10->field_1F3F;
+    local_8 = (cMf32 *)local_10->field_1F3F;
   }
   else {
-    local_8 = local_10->field_1F43;
+    local_8 = (cMf32 *)local_10->field_1F43;
   }
   iVar4 = local_10->field_1F84;
   if (iVar4 != 0) {
@@ -116,8 +116,9 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
         switch(pSVar10->field_1E26) {
         case 5:
         case 0xf:
-          local_24 = CreateStrategList(local_8,CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) &
-                                               0xff,0xffffffff);
+          local_24 = CreateStrategList((int)local_8,
+                                       CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) & 0xff,
+                                       0xffffffff);
           break;
         default:
           local_24 = CreateOpponentList(local_8,CONCAT12(uStack_6f,
@@ -127,8 +128,9 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
         case 0xc:
         case 0x10:
           local_24 = CreateSaveStrategList
-                               (local_8,CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) & 0xff,
-                                0xffffffff);
+                               ((int)local_8,
+                                CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) & 0xff,0xffffffff
+                               );
         }
         if (pcVar7[-0x21] == '\x01') {
           cVar1 = pSVar10->field_1E26;

@@ -96,14 +96,14 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     local_18 = iVar7;
     if (iVar7 <= *(int *)&this_00->field_0x5b4 + 8) {
       do {
-        if ((-1 < iVar7) && (iVar7 < DAT_007fb242)) {
+        if ((-1 < iVar7) && (iVar7 < SHORT_007fb242)) {
           iVar8 = *(int *)&this_00->field_0x5b0;
           iVar15 = iVar8 + -8;
           local_28 = iVar15;
           local_18 = iVar7;
           if (iVar15 <= iVar8 + 8) {
             do {
-              if (((-1 < iVar15) && (iVar15 < DAT_007fb240)) &&
+              if (((-1 < iVar15) && (iVar15 < SHORT_007fb240)) &&
                  (local_28 = iVar15,
                  iVar8 = FUN_006aced8(iVar15,iVar7,iVar8,*(int *)&this_00->field_0x5b4),
                  iVar8 <= local_58)) {
@@ -117,16 +117,16 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                     if ((-1 < local_3c) && (local_3c < 5)) {
                       sVar6 = (short)iVar15;
                       if (((sVar6 < 0) ||
-                          ((DAT_007fb240 <= sVar6 || (sVar13 = (short)iVar7, sVar13 < 0)))) ||
-                         ((DAT_007fb242 <= sVar13 ||
-                          ((sVar5 = (short)local_3c, sVar5 < 0 || (DAT_007fb244 <= sVar5)))))) {
+                          ((SHORT_007fb240 <= sVar6 || (sVar13 = (short)iVar7, sVar13 < 0)))) ||
+                         ((SHORT_007fb242 <= sVar13 ||
+                          ((sVar5 = (short)local_3c, sVar5 < 0 || (SHORT_007fb244 <= sVar5)))))) {
                         local_8 = (TLOBaseTy *)0x0;
                       }
                       else {
                         local_8 = *(TLOBaseTy **)
                                    (DAT_007fb248 +
-                                   ((int)sVar13 * (int)DAT_007fb240 + (int)sVar5 * (int)DAT_007fb246
-                                   + (int)sVar6) * 8);
+                                   ((int)sVar13 * (int)SHORT_007fb240 +
+                                    (int)sVar5 * (int)SHORT_007fb246 + (int)sVar6) * 8);
                         iVar7 = local_18;
                       }
                       if ((((local_8 != (TLOBaseTy *)0x0) && (local_8 != this_00)) &&
@@ -135,8 +135,8 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                          ((*(int *)&local_8->field_0x24 != 0xff &&
                           (iVar8 = (*local_8->vtable->slot_F4)(*(undefined4 *)&this_00->field_0x24),
                           iVar7 = local_18, iVar15 = local_28, iVar8 != 0)))) {
-                        thunk_FUN_004162b0(local_8,&local_12,&local_14,&local_a);
-                        thunk_FUN_00416270(local_8,local_40,local_38,local_1c);
+                        STFishC::sub_004162B0((STFishC *)local_8,&local_12,&local_14,&local_a);
+                        thunk_FUN_00416270(local_8,local_40,(int *)local_38,(int *)local_1c);
                         iVar7 = (int)(short)local_30;
                         iVar8 = FUN_006acf0d((int)local_40[0],(int)local_38[0],(int)local_1c[0],
                                              (int)(short)local_2c,(int)(short)local_34,iVar7);

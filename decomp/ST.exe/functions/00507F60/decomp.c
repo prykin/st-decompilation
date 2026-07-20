@@ -99,7 +99,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
     *puVar16 = 0;
     puVar16 = puVar16 + 1;
   }
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,4,puVar17);
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,4,puVar17);
   cVar9 = this_00->field_0BFA;
   if ((local_77 != cVar9) || (local_76 != this_00->field_0BFB)) {
 cf_common_exit_005091B9:
@@ -209,14 +209,14 @@ cf_common_exit_005091B9:
         uVar6 = (uint)local_10 & 0xff;
         Library::DKW::WGR::FUN_006b55f0
                   ((undefined4 *)this_00->field_0194,0,iVar5 + 0x37,0x7e - uVar6,
-                   (int)this_00->field_028A,0,iVar11,*(int *)(this_00->field_028A + 4) - uVar6,5,
+                   (byte *)this_00->field_028A,0,iVar11,*(int *)(this_00->field_028A + 4) - uVar6,5,
                    uVar6);
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x5c,(int)this_00->field_09ED,0,
-                   0x3f,0xc,0x75,0x11);
+                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x5c,(byte *)this_00->field_09ED
+                   ,0,0x3f,0xc,0x75,0x11);
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x6c,(int)this_00->field_09ED,0,
-                   0x3f,0x1c,0x44,0x13);
+                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x6c,(byte *)this_00->field_09ED
+                   ,0,0x3f,0x1c,0x44,0x13);
         PaintDamageXY(this_00,this_00->field_0194,iVar5 + 0x41,0x5d,
                       CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_0C24),0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar5 + 0x41,0x68,this_00->field_0C1C,
@@ -378,14 +378,14 @@ cf_common_exit_005091B9:
         uVar6 = local_c & 0xff;
         Library::DKW::WGR::FUN_006b55f0
                   ((undefined4 *)this_00->field_0194,0,iVar5 + 0x37,0x7e - uVar6,
-                   (int)this_00->field_028A,0,iVar11,*(int *)(this_00->field_028A + 4) - uVar6,5,
+                   (byte *)this_00->field_028A,0,iVar11,*(int *)(this_00->field_028A + 4) - uVar6,5,
                    uVar6);
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x5c,(int)this_00->field_09ED,0,
-                   0x3f,0xc,0x75,0x11);
+                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x5c,(byte *)this_00->field_09ED
+                   ,0,0x3f,0xc,0x75,0x11);
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x6c,(int)this_00->field_09ED,0,
-                   0x3f,0x1c,0x44,0x13);
+                  ((undefined4 *)this_00->field_0194,0,iVar5 + 0x3f,0x6c,(byte *)this_00->field_09ED
+                   ,0,0x3f,0x1c,0x44,0x13);
         PaintDamageXY(this_00,this_00->field_0194,iVar5 + 0x41,0x5d,
                       CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00->field_0C24),0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar5 + 0x41,0x68,this_00->field_0C1C,
@@ -402,7 +402,7 @@ cf_common_exit_005091B9:
              (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_0A01 + 2)) / 2,0x37,
              '\x01',(byte *)this_00->field_0A01);
       uVar6 = (uint)(ushort)this_00->field_0C34;
-      uVar8 = FUN_006b0140(0x2725,DAT_00807618);
+      uVar8 = FUN_006b0140(0x2725,HINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,s__1_s__0_d_007c286c,uVar8,uVar6);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
       ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
@@ -441,14 +441,14 @@ cf_common_exit_005091B9:
           uVar6 = local_20 & 0xff;
           Library::DKW::WGR::FUN_006b55f0
                     ((undefined4 *)this_00->field_0194,0,iVar11 + 0x37,(iVar5 - uVar6) + 0x21,
-                     (int)this_00->field_028A,0,local_14,*(int *)(this_00->field_028A + 4) - uVar6,5
-                     ,uVar6);
+                     (byte *)this_00->field_028A,0,local_14,
+                     *(int *)(this_00->field_028A + 4) - uVar6,5,uVar6);
           Library::DKW::WGR::FUN_006b55f0
                     ((undefined4 *)this_00->field_0194,0,iVar11 + 0x3f,iVar5 + -1,
-                     (int)this_00->field_09ED,0,0x3f,0xc,0x75,0x11);
+                     (byte *)this_00->field_09ED,0,0x3f,0xc,0x75,0x11);
           Library::DKW::WGR::FUN_006b55f0
                     ((undefined4 *)this_00->field_0194,0,iVar11 + 0x3f,iVar5 + 0xf,
-                     (int)this_00->field_09ED,0,0x3f,0x1c,0x44,0x13);
+                     (byte *)this_00->field_09ED,0,0x3f,0x1c,0x44,0x13);
           PaintDamageXY(this_00,this_00->field_0194,iVar11 + 0x41,iVar5,
                         CONCAT31((int3)((uint)extraout_ECX >> 8),'d' - *local_8),0x36b1);
           PaintCostsXY(this_00,this_00->field_0194,iVar11 + 0x41,iVar5 + 0xb,*local_18,local_18[2],4
@@ -526,8 +526,8 @@ cf_common_exit_005091B9:
       }
       if (this_00->field_0C33 == local_3e) goto cf_common_exit_00509192;
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0194,0,iVar5 + 0x39,0x65,(int)this_00->field_09ED,0,
-                 0x39,0x15,0x4c,0x1b);
+                ((undefined4 *)this_00->field_0194,0,iVar5 + 0x39,0x65,(byte *)this_00->field_09ED,0
+                 ,0x39,0x15,0x4c,0x1b);
       PaintPerRes(this_00,iVar5);
       uVar6 = this_00->field_015C;
       goto joined_r0x00508b00;
@@ -683,8 +683,8 @@ cf_common_exit_0050918D:
     puVar17 = (undefined4 *)this_00->field_0194;
     iVar5 = (puVar17[1] - *(int *)(puVar1 + 2)) / 2;
     if (cVar9 == '\x01') {
-      Library::DKW::WGR::FUN_006b55f0(puVar17,0,iVar5 + 0x39,0x65,(int)puVar1,0,0x39,0x15,0x4c,0x1b)
-      ;
+      Library::DKW::WGR::FUN_006b55f0
+                (puVar17,0,iVar5 + 0x39,0x65,(byte *)puVar1,0,0x39,0x15,0x4c,0x1b);
       PaintDamageXY(this_00,this_00->field_0194,iVar5 + 0x39,0x65,
                     CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00->field_0xc3d),0x2714);
       local_14 = 0;
@@ -713,7 +713,7 @@ cf_common_exit_0050918D:
     }
     else if (cVar9 == '\x02') {
       Library::DKW::WGR::FUN_006b55f0
-                (puVar17,0,iVar5,0x71,(int)puVar1,0,0,0x21,*(int *)(puVar1 + 2),
+                (puVar17,0,iVar5,0x71,(byte *)puVar1,0,0,0x21,*(int *)(puVar1 + 2),
                  *(int *)(puVar1 + 4) + -0x21);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,*(undefined4 *)&this_00->field_0xc3d);
       ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,iVar5,0x71,

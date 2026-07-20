@@ -19,7 +19,8 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   short sVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  char cVar11;
+  cMf32 *pcVar11;
+  char cVar12;
   InternalExceptionFrame local_7c;
   int local_38;
   TraksClassTy *local_34;
@@ -36,7 +37,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   int local_8;
   
   if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) || (this->field_0024 == 0))
-     || ((param_1 == (int *)0x0 || (DAT_00806770 == 0)))) {
+     || ((param_1 == (int *)0x0 || (DAT_00806770 == (cMf32 *)0x0)))) {
     return 0;
   }
   local_7c.previous = g_currentExceptionFrame;
@@ -149,14 +150,14 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
                   param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
     }
     else {
-      iVar3 = DAT_00806760;
+      pcVar11 = g_cMf32_00806760;
       if (*(int *)(&DAT_007c900c + *param_1 * 0x18) != 1) {
-        iVar3 = DAT_00806770;
+        pcVar11 = DAT_00806770;
       }
-      iVar4 = 1;
-      cVar11 = '\x1d';
+      iVar3 = 1;
+      cVar12 = '\x1d';
       pcVar6 = thunk_FUN_00555840(*param_1);
-      local_38 = Library::Ourlib::MFTSPR::mfTSprGetNumFas(iVar3,pcVar6,cVar11,iVar4);
+      local_38 = Library::Ourlib::MFTSPR::mfTSprGetNumFas(pcVar11,pcVar6,cVar12,iVar3);
       if (param_1[3] < 0) {
         iVar3 = FUN_006acf0d(0,0,0,(param_1[0x13] * local_38) / 10 +
                                    (param_1[0x16] * local_38 * local_38) / 0x14 + param_1[0x10],

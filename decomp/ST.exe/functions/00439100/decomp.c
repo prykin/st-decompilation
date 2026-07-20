@@ -90,8 +90,9 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
     return;
   }
   if ((param_1 < 0) || (9 < param_1)) {
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x170e)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x170e);
   }
   this_00 = local_2c;
   local_20 = (uint)(char)local_8;
@@ -305,13 +306,15 @@ LAB_00439cfb:
         return;
       }
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1999);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x1999);
       goto cf_common_exit_0043A47C;
     }
     if (iVar3 != 0x5a) {
       if (iVar3 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1713);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x1713);
       }
       else if (iVar3 != 0x3c) goto LAB_00439cfb;
       if (*(int *)((int)&DAT_007f5023 + iVar10) == 0) {

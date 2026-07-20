@@ -15,7 +15,7 @@ void __fastcall FUN_0074fbf6(int *param_1)
       sVar1 = *psVar2;
       if (sVar1 == 8) {
         if (*(int *)(psVar2 + 4) != 0) {
-          Library::MSVCRT::FUN_0072e2b0((undefined4 *)(*(int *)(psVar2 + 4) + -2));
+          Library::MSVCRT::FUN_0072e2b0((HoloTy *)(*(int *)(psVar2 + 4) + -2));
         }
       }
       else if ((sVar1 == 9) || (sVar1 == 0xd)) {
@@ -25,7 +25,7 @@ void __fastcall FUN_0074fbf6(int *param_1)
       iVar4 = iVar4 + 0x10;
     } while (uVar3 < (uint)param_1[2]);
   }
-  Library::MSVCRT::FUN_0072e2b0((undefined4 *)*param_1);
+  Library::MSVCRT::FUN_0072e2b0((HoloTy *)*param_1);
   return;
 }
 

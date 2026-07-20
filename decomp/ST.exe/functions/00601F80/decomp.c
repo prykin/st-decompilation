@@ -33,7 +33,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,int param_1)
       uVar1 = *(uint *)(param_1 + 0x10);
       if (uVar1 < 0x110) {
         if (uVar1 == 0x10f) {
-          local_10 = (byte *)thunk_FUN_006025d0(local_8,&local_c);
+          local_10 = thunk_FUN_006025d0(local_8,&local_c);
           STPlaySystemC::SaveObjData(DAT_00802a38,pSVar3->field_0018,local_10,local_c);
           FUN_006ab060(&local_10);
           g_currentExceptionFrame = local_54.previous;
@@ -66,11 +66,11 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,int param_1)
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
               }
-              if (DAT_007fa174 == (STAllPlayersC *)0x0) {
+              if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
               }
-              iVar4 = STAllPlayersC::RegisterBlot(DAT_007fa174,0xffff,pSVar3);
+              iVar4 = STAllPlayersC::RegisterBlot(g_sTAllPlayers_007FA174,0xffff,pSVar3);
               if (iVar4 == 0) {
                 pSVar3->field_03A5 = 1;
                 g_currentExceptionFrame = local_54.previous;
@@ -93,9 +93,10 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,int param_1)
             else if ((pSVar3->field_03A7 != 0) && (pSVar3->field_036E != 0)) {
               thunk_FUN_00602be0((int *)pSVar3);
             }
-            if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (pSVar3->field_03A5 != '\0')) &&
-               (iVar4 = STAllPlayersC::RegisterBlot(DAT_007fa174,pSVar3->field_0032,pSVar3),
-               iVar4 != 0)) {
+            if (((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) && (pSVar3->field_03A5 != '\0'))
+               && (iVar4 = STAllPlayersC::RegisterBlot
+                                     (g_sTAllPlayers_007FA174,pSVar3->field_0032,pSVar3), iVar4 != 0
+                  )) {
               thunk_FUN_00602440(pSVar3);
               g_currentExceptionFrame = local_54.previous;
               return 0;
@@ -104,9 +105,10 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,int param_1)
         }
         else if (((uVar1 == 3) &&
                  (thunk_FUN_004ad310((int)&local_8->field_01D5), pSVar3->field_03A5 != '\0')) &&
-                (DAT_007fa174 != (STAllPlayersC *)0x0)) {
+                (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
           STAllPlayersC::UnRegisterBlot
-                    (DAT_007fa174,CONCAT22(extraout_var,pSVar3->field_0032),(uint)pSVar3);
+                    (g_sTAllPlayers_007FA174,CONCAT22(extraout_var,pSVar3->field_0032),(uint)pSVar3)
+          ;
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }

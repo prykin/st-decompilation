@@ -21,24 +21,24 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;
   this->field_00B7 = 0;
-  if ((((((-1 < sVar1) && (sVar1 < DAT_007fb240)) && (-1 < sVar3)) &&
-       ((sVar3 < DAT_007fb242 && (-1 < sVar2)))) &&
-      ((sVar2 < DAT_007fb244 &&
+  if ((((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
+       ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) &&
+      ((sVar2 < SHORT_007fb244 &&
        ((this_00 = *(void **)(DAT_007fb248 +
-                             ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
+                             ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                              (int)sVar1) * 8), this_00 != (void *)0x0 &&
         (*(int *)((int)this_00 + 0x18) == this->field_0679)))))) && (this->field_0675 == 99)) {
-    thunk_FUN_004b7d50(this_00,(int)this);
+    thunk_FUN_004b7d50(this_00,this);
   }
   switch(this->field_0687) {
   case CASE_0:
   case CASE_1:
   case CASE_2:
   case CASE_4:
-    iVar5 = thunk_FUN_00460360((int *)this);
+    iVar5 = sub_00460360(this);
     return iVar5;
   case CASE_3:
-    iVar5 = UnLoadObj(this,(undefined4 *)0x2);
+    iVar5 = UnLoadObj(this,2);
     return iVar5;
   }
   iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3870,0,0,&DAT_007a4ccc,

@@ -2,14 +2,14 @@
 void __fastcall FUN_0074e2c1(int param_1)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  HoloTy *pHVar1;
+  HoloTy *pHVar2;
   
-  puVar2 = *(undefined4 **)(param_1 + 8);
-  while (puVar2 != (undefined4 *)0x0) {
-    puVar1 = (undefined4 *)puVar2[1];
-    Library::MSVCRT::FUN_0072e2b0(puVar2);
-    puVar2 = puVar1;
+  pHVar2 = *(HoloTy **)(param_1 + 8);
+  while (pHVar2 != (HoloTy *)0x0) {
+    pHVar1 = *(HoloTy **)((int)&pHVar2->field_0003 + 1);
+    Library::MSVCRT::FUN_0072e2b0(pHVar2);
+    pHVar2 = pHVar1;
   }
   return;
 }

@@ -408,11 +408,11 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
                 pcVar9 = pcVar9 + 1;
               } while (cVar2 != '\0');
               pcVar9 = FUN_006b8240((char *)local_2f8,~uVar13 - 1);
-              Library::DKW::TBL::FUN_006b5aa0(this_02->field_01E9,pcVar9);
+              Library::DKW::TBL::FUN_006b5aa0((uint *)this_02->field_01E9,pcVar9);
               this_01 = extraout_ECX_00;
             }
           }
-          cMf32::delete(this_01,(undefined4 *)this_00);
+          cMf32::delete(this_01,this_00);
           hFindFile = local_18;
           pIVar5 = local_b4.previous;
         }
@@ -428,7 +428,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_8 = uVar13;
   if (uVar13 == 0) {
     if (this_02->field_01A4 != '\x03') goto LAB_0053325d;
-    Library::DKW::TBL::FUN_006b6020(this_02->field_01F1,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020((uint *)this_02->field_01F1,0,&DAT_008016a0);
     uVar21 = this_02->field_01B9;
     this_02->field_0028 = 0x33;
     *(undefined4 *)&this_02->field_0x2c = this_02->field_01F1;

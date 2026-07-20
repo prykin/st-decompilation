@@ -7,13 +7,14 @@
 void FUN_00512be0(int param_1)
 
 {
-  code *pcVar1;
-  int iVar2;
+  uint *puVar1;
+  code *pcVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  int *piVar4;
-  void *unaff_EDI;
   int *piVar5;
+  void *unaff_EDI;
+  int *piVar6;
   int local_8c4 [4];
   undefined4 local_8b4;
   int local_8b0;
@@ -62,10 +63,10 @@ void FUN_00512be0(int param_1)
   InternalExceptionFrame local_4c;
   void *local_8;
   
-  piVar4 = local_8c4;
-  for (iVar2 = 0x21e; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *piVar4 = 0;
-    piVar4 = piVar4 + 1;
+  piVar5 = local_8c4;
+  for (iVar3 = 0x21e; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *piVar5 = 0;
+    piVar5 = piVar5 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -79,15 +80,15 @@ void FUN_00512be0(int param_1)
     else {
       local_8a0 = *(int *)((int)local_8 + 0x44);
     }
-    iVar2 = *(int *)((int)local_8 + 0x1e4);
+    puVar1 = *(uint **)((int)local_8 + 0x1e4);
     local_8a0 = local_8a0 + 0x16;
     local_8c4[2] = 1;
     local_8c4[3] = *(undefined4 *)(param_1 + 8);
     local_8b4 = 0x19c;
-    if (*(int *)(iVar2 + 0xa0) != 0) {
-      FUN_00710790(iVar2);
+    if (puVar1[0x28] != 0) {
+      FUN_00710790(puVar1);
     }
-    local_8b0 = *(int *)(iVar2 + 0x8a);
+    local_8b0 = *(int *)((int)puVar1 + 0x8a);
     local_8a8 = (undefined4)(0x118 / (longlong)local_8b0);
     local_808[2] = *(int *)((int)local_8 + 0x3c) + 0x1c3;
     local_8ac = 1;
@@ -115,18 +116,18 @@ void FUN_00512be0(int param_1)
     local_7a8 = local_88c;
     local_6e4 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
     local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
-    iVar2 = *(int *)((int)local_8 + 0x5c);
+    iVar3 = *(int *)((int)local_8 + 0x5c);
     local_700 = 1;
     local_6fc = 1;
     local_68c = 2;
-    piVar4 = local_808;
-    piVar5 = local_688;
-    for (iVar3 = 0x5f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar5 = *piVar4;
-      piVar4 = piVar4 + 1;
+    piVar5 = local_808;
+    piVar6 = local_688;
+    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *piVar6 = *piVar5;
       piVar5 = piVar5 + 1;
+      piVar6 = piVar6 + 1;
     }
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       local_688[3] = -*(int *)((int)local_8 + 0x48);
     }
     else {
@@ -159,21 +160,21 @@ void FUN_00512be0(int param_1)
     local_5c = 1;
     (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(8,(int *)((int)local_8 + 0x19c),0,local_8c4,0)
     ;
-    iVar2 = *(int *)((int)local_8 + 0x19c);
-    if (iVar2 != 0) {
+    iVar3 = *(int *)((int)local_8 + 0x19c);
+    if (iVar3 != 0) {
       *(undefined4 *)((int)local_8 + 0x28) = 0x20;
       *(undefined4 *)((int)local_8 + 0x2c) = 1;
-      FUN_006e6080(local_8,2,iVar2,(undefined4 *)((int)local_8 + 0x18));
+      FUN_006e6080(local_8,2,iVar3,(undefined4 *)((int)local_8 + 0x18));
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x220,0,local_8c4[0],
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x220,0,local_8c4[0],
                              &DAT_007a4ccc,s_HelpPanelTy___CreateVText_007c3a0c);
-  if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  if (iVar3 != 0) {
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
   RaiseInternalException(local_8c4[0],0,s_E____titans_Andrey_helppan_cpp_007c383c,0x220);

@@ -177,10 +177,11 @@ LAB_005d8dbf:
                   iVar4 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   this_01 = extraout_ECX;
                   if (iVar4 == 0) {
-                    Library::DKW::TBL::FUN_006b5aa0(this_02->field_1CCC,local_21c.cFileName);
+                    Library::DKW::TBL::FUN_006b5aa0((uint *)this_02->field_1CCC,local_21c.cFileName)
+                    ;
                     this_01 = extraout_ECX_00;
                   }
-                  cMf32::delete(this_01,(undefined4 *)this_00);
+                  cMf32::delete(this_01,this_00);
                 }
                 g_currentExceptionFrame = local_9c.previous;
               }

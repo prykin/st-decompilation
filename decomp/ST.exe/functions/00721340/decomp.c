@@ -54,7 +54,7 @@ uint __fastcall FUN_00721340(int param_1)
       FUN_006ab060(&local_8);
       if (*(int *)(param_1 + 0x210) + *(int *)(param_1 + 0x148) == 0) {
         uVar4 = Library::DKW::TBL::FUN_006b6020
-                          (*(int *)(param_1 + 0x138),
+                          (*(uint **)(param_1 + 0x138),
                            *(int *)(param_1 + 0x144) + *(int *)(param_1 + 0x20c),PTR_DAT_007f0b04);
         if (-1 < (int)uVar4) {
           return 0;
@@ -76,7 +76,7 @@ uint __fastcall FUN_00721340(int param_1)
         Library::MSVCRT::_strncpy
                   (local_8,local_c,*(int *)(param_1 + 0x210) + *(int *)(param_1 + 0x148));
         uVar4 = Library::DKW::TBL::FUN_006b6020
-                          (*(int *)(param_1 + 0x138),
+                          (*(uint **)(param_1 + 0x138),
                            *(int *)(param_1 + 0x144) + *(int *)(param_1 + 0x20c),local_8);
         if (-1 < (int)uVar4) {
           FUN_006ab060(&local_8);

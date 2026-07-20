@@ -108,7 +108,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    local_10 = (byte *)thunk_FUN_00622990(local_8,&local_c);
+    local_10 = thunk_FUN_00622990(local_8,&local_c);
     STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_10,local_c);
     FUN_006ab060(&local_10);
     g_currentExceptionFrame = local_60.previous;
@@ -121,7 +121,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       return 0;
     }
     thunk_FUN_006366d0(this_00->field_0363);
-    Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_0363);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_0363);
     this_00->field_0363 = 0;
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -194,7 +194,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     if (((int *)this_00->field_0363 != (int *)0x0) &&
        (iVar7 = thunk_FUN_006372e0((int *)this_00->field_0363), iVar7 != 0)) {
       thunk_FUN_006366d0(this_00->field_0363);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_0363);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_0363);
       this_00->field_0363 = 0;
     }
     if (this_00->field_0359 == '\0') {
@@ -221,14 +221,14 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       sVar3 = this_00->field_004B;
       sVar4 = this_00->field_0049;
       local_18 = (int)sVar4;
-      if ((((sVar2 < 0) || (DAT_007fb240 <= sVar2)) || (sVar4 < 0)) ||
-         (((DAT_007fb242 <= sVar4 || (sVar3 < 0)) || (DAT_007fb244 <= sVar3)))) {
+      if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar4 < 0)) ||
+         (((SHORT_007fb242 <= sVar4 || (sVar3 < 0)) || (SHORT_007fb244 <= sVar3)))) {
         iVar7 = 0;
       }
       else {
         iVar7 = *(int *)(DAT_007fb248 +
                         (local_14 +
-                        ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar4 +
+                        ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 +
                         (int)sVar2) * 2) * 4);
       }
       if ((iVar7 == 0) &&
@@ -254,7 +254,8 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       this_00->field_02BA = uVar8;
     }
     this_00->field_0363 = 0;
-    iVar7 = STAllPlayersC::RegisterMine(DAT_007fa174,*(ushort *)&this_00->field_0x32,this_00);
+    iVar7 = STAllPlayersC::RegisterMine
+                      (g_sTAllPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00);
     if (iVar7 == 0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -310,7 +311,7 @@ cf_common_exit_00621D24:
     this_00->field_02AE = 1;
     this_00->field_0353 = 1;
     LoadImagMineSet(this_00,0);
-    iVar7 = STAllPlayersC::RegisterMine(DAT_007fa174,0xffff,this_00);
+    iVar7 = STAllPlayersC::RegisterMine(g_sTAllPlayers_007FA174,0xffff,this_00);
     if (iVar7 != 0) {
       thunk_FUN_00622670(this_00);
     }

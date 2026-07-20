@@ -37,19 +37,23 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
     return 0xffffffff;
   }
   if (local_8->field_0018 == -1) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xce);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xce);
   }
   if (((char)param_1 < '\0') || (pSVar2->field_0014 + -1 < (int)(char)param_1)) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xcf);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xcf);
   }
   uVar7 = (uint)(char)param_1;
   iVar3 = uVar7 * 0x24;
   if (*(int *)(pSVar2->field_0020 + iVar3) == 0) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd0);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd0);
   }
   local_c = 1 << (param_1 & 0x1f);
   if ((pSVar2->field_001C & local_c) != 0) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd1);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd1);
   }
   FUN_006e9cb0((void *)pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
   pSVar2->field_001C = pSVar2->field_001C | local_c;

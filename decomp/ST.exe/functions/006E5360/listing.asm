@@ -1,4 +1,4 @@
-FUN_006e5360:
+StartSystemTy::sub_006E5360:
 006E5360  55                        PUSH EBP
 006E5361  8B EC                     MOV EBP,ESP
 006E5363  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

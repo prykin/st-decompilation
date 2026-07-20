@@ -89,7 +89,7 @@ LAB_006a8234:
     else {
       iVar7 = FUN_006a6100(local_30,local_c,local_10,param_8,param_9,param_10,(int *)&local_4c);
       if (iVar7 < 0x1a) {
-        local_34 = (uint)(short)(&DAT_007ed576)[iVar7 * 4];
+        local_34 = (uint)(&SHORT_007ed576)[iVar7 * 4];
         local_14 = local_34;
       }
       else {
@@ -97,7 +97,7 @@ LAB_006a8234:
       }
     }
     local_24 = 0;
-    local_1c = &DAT_007ed576;
+    local_1c = (ushort *)&SHORT_007ed576;
     local_3c = &DAT_007ed640;
     do {
       iVar7 = (int)(short)local_1c[-3];
@@ -172,7 +172,7 @@ joined_r0x006a8098:
       local_24 = local_24 + 1;
       local_1c = local_1c + 4;
     } while ((int)local_3c < 0x7ed6a8);
-    sVar5 = (&DAT_007ed576)[local_2c * 4];
+    sVar5 = (&SHORT_007ed576)[local_2c * 4];
     if (((int)sVar5 != local_14) && (local_8 != param_12 + -1)) {
       local_8 = local_8 + -1;
       *(undefined2 *)(local_28 + -0x12) = (undefined2)local_30;

@@ -1,33 +1,39 @@
 
-void __fastcall FUN_005dcdb0(void *param_1)
+/* [STDestructorApplier] Recovered destructor for StartSystemTy.
+   Evidence: cleanup_only_vtable_method; zeroed_this_fields=4; same_this_calls=6;
+   field_cleanup_calls=1; 005DCDBE FUN_006e56b0; 005DCDD3 FUN_006e56b0; 005DCDEB FUN_006e56b0;
+   005DCE03 FUN_006e56b0; 005DCE2B FUN_005db2a0; 005DCE3C FUN_005daf20; 005DCE43 FUN_005db010;
+   005DCE4A FUN_005da910; 005DCE51 FUN_006e52d0 */
+
+void __thiscall StartSystemTy::~StartSystemTy(StartSystemTy *this)
 
 {
-  if (*(uint *)((int)param_1 + 0x20) != 0) {
-    FUN_006e56b0(param_1,*(uint *)((int)param_1 + 0x20));
+  if (this->field_0020 != 0) {
+    sub_006E56B0(this,this->field_0020);
   }
-  *(undefined4 *)((int)param_1 + 0x20) = 0;
-  if (*(uint *)((int)param_1 + 0x389) != 0) {
-    FUN_006e56b0(param_1,*(uint *)((int)param_1 + 0x389));
+  this->field_0020 = 0;
+  if (this->field_0389 != 0) {
+    sub_006E56B0(this,this->field_0389);
   }
-  *(undefined4 *)((int)param_1 + 0x389) = 0;
-  if (*(uint *)((int)param_1 + 0x54c) != 0) {
-    FUN_006e56b0(param_1,*(uint *)((int)param_1 + 0x54c));
+  this->field_0389 = 0;
+  if (this->field_054C != 0) {
+    sub_006E56B0(this,this->field_054C);
   }
-  *(undefined4 *)((int)param_1 + 0x54c) = 0;
-  if (*(uint *)((int)param_1 + 0x550) != 0) {
-    FUN_006e56b0(param_1,*(uint *)((int)param_1 + 0x550));
+  this->field_054C = 0;
+  if (this->field_0550 != 0) {
+    sub_006E56B0(this,this->field_0550);
   }
-  *(undefined4 *)((int)param_1 + 0x550) = 0;
-  if (*(int *)((int)param_1 + 0x69a) != 0) {
-    FUN_006ab060((undefined4 *)((int)param_1 + 0x69a));
+  this->field_0550 = 0;
+  if (this->field_069A != 0) {
+    FUN_006ab060((LPVOID *)&this->field_069A);
   }
   DelAllAccelerators();
-  thunk_FUN_005db2a0((int)param_1);
+  sub_005DB2A0(this);
   DAT_0080c50a = 1;
-  thunk_FUN_005daf20((int)param_1);
+  sub_005DAF20(this);
   thunk_FUN_005db010();
-  thunk_FUN_005da910((int)param_1);
-  FUN_006e52d0((int)param_1);
+  sub_005DA910(this);
+  FUN_006e52d0((int)this);
   return;
 }
 

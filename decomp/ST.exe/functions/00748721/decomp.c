@@ -60,7 +60,7 @@ int FUN_00748721(int param_1,int *param_2)
       else {
         *(undefined4 *)(param_1 + -0x2c) = 1;
         (**(code **)(*(int *)(param_1 + -0x8c) + 0x38))((int *)(param_1 + -0x8c));
-        FUN_00747406(*(void **)(param_1 + -0x28),3,0x8004022a,0);
+        FUN_00747406(*(void **)(param_1 + -0x28),3,(int *)0x8004022a,0);
         iVar2 = -0x7ffbfe00;
       }
     }

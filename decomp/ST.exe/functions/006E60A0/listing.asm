@@ -1,4 +1,4 @@
-FUN_006e60a0:
+STJellyGunC::sub_006E60A0:
 006E60A0  55                        PUSH EBP
 006E60A1  8B EC                     MOV EBP,ESP
 006E60A3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

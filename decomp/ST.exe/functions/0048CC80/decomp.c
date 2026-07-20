@@ -59,7 +59,8 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
         local_16 = local_8;
         Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_047B,uVar1,&local_20);
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b76);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                   0x4b76);
         uVar4 = local_c;
       }
     }

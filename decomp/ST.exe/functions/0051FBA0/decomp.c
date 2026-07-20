@@ -12,10 +12,11 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   ccFntTy *pcVar3;
   uint uVar4;
   undefined4 *puVar5;
-  undefined4 uVar6;
-  int iVar7;
+  DWORD DVar6;
+  undefined4 uVar7;
+  int iVar8;
   ccFntTy *this_01;
-  uint uVar8;
+  uint uVar9;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
@@ -30,8 +31,8 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
     switch(*(undefined4 *)(param_1 + 0x10)) {
     case 0:
       if ((local_8->field_012E != 0) &&
-         (iVar2 = FUN_006e51b0(local_8->field_0010),
-         (uint)this_00->field_0126 <= (uint)(iVar2 - this_00->field_0122))) {
+         (DVar6 = FUN_006e51b0(local_8->field_0010),
+         (uint)this_00->field_0126 <= DVar6 - this_00->field_0122)) {
         puVar5 = (undefined4 *)&this_00->field_0018;
         for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
           *puVar5 = 0;
@@ -50,8 +51,9 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
       puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar2 = 1;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
-      iVar2 = FUN_006b50c0((DAT_00806730 - ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e))
-                           + -0x87,0x12,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar5,iVar2);
+      iVar2 = FUN_006b50c0((g_nWidth_00806730 -
+                           ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
+                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar5,iVar2);
       this_00->field_012A = iVar2;
       uVar4 = *(uint *)(iVar2 + 0x14);
       if (uVar4 == 0) {
@@ -59,7 +61,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
                 *(int *)(iVar2 + 8);
       }
       puVar5 = (undefined4 *)FUN_006b4fa0(iVar2);
-      for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar5 = 0;
         puVar5 = puVar5 + 1;
       }
@@ -76,23 +78,23 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
         this_00->field_011E = (ccFntTy *)0x0;
       }
       if (this_00->field_012A != 0) {
-        FUN_006ab060(&this_00->field_012A);
+        FUN_006ab060((LPVOID *)&this_00->field_012A);
       }
       break;
     case 5:
       OutStr(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
-    uVar6 = FUN_006e5fd0();
-    return uVar6;
+    uVar7 = FUN_006e5fd0();
+    return uVar7;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
+  iVar8 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
                              s_HelpStringTy__GetMessage_007c3e90);
-  if (iVar7 != 0) {
+  if (iVar8 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    uVar7 = (*pcVar1)();
+    return uVar7;
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d);
   return 0xffff;

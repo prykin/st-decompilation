@@ -59,7 +59,8 @@ STAllPlayersC::GetTOBJListFromDArr
         piVar5 = (int *)GetObjPtr(this_00,param_1,local_8,CASE_1);
         if (piVar5 == (int *)0x0) {
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2040);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,
+                     s_E____titans_wlad_to_allpl_cpp_007a6004,0x2040);
 switchD_0043efb1_caseD_3a:
           bVar3 = false;
         }

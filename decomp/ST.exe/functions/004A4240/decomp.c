@@ -9,7 +9,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   code *pcVar1;
   STGroupBoatC *this_00;
   int iVar2;
-  int *this_01;
+  STFishC *this_01;
   int iVar3;
   int iVar4;
   undefined4 extraout_ECX;
@@ -24,7 +24,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   STGroupBoatC *local_24;
   int *local_20;
   int local_1c;
-  int *local_18;
+  STFishC *local_18;
   undefined1 local_14 [4];
   undefined4 local_10;
   short local_a;
@@ -55,18 +55,20 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     return;
   }
-  this_01 = (int *)STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,
-                              CONCAT31((int3)((uint)extraout_ECX >> 8),local_24->field_0024),param_2
-                              ,CASE_1);
+  this_01 = (STFishC *)
+            STAllPlayersC::GetObjPtr
+                      (g_sTAllPlayers_007FA174,
+                       CONCAT31((int3)((uint)extraout_ECX >> 8),local_24->field_0024),param_2,CASE_1
+                      );
   local_18 = this_01;
   if (param_1 == 1) {
-    iVar2 = (**(code **)(*this_01 + 0x2c))();
-    if ((iVar2 == 0x3b) || (iVar2 = (**(code **)(*this_01 + 0x2c))(), iVar2 == 0x60)) {
+    iVar2 = (*this_01->vtable->slot_2C)();
+    if ((iVar2 == 0x3b) || (iVar2 = (*this_01->vtable->slot_2C)(), iVar2 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == 0) {
           RaiseInternalException
-                    (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11f2);
+                    (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                     ,0x11f2);
         }
         uVar7 = 0;
         iVar2 = *(int *)(this_00->field_0266 + 0xc);
@@ -85,7 +87,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      thunk_FUN_004162b0(this_01,&local_a,&local_8,&local_6);
+      STFishC::sub_004162B0(this_01,&local_a,&local_8,&local_6);
       if (local_a < (short)this_00->field_026A) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -112,7 +114,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       if (this_00->field_0266 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11fe);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x11fe);
       }
       uVar7 = 0;
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
@@ -130,7 +133,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       if (0 < local_1c) {
         piVar6 = local_34;
         do {
-          iVar3 = (**(code **)(*local_18 + 0x2c))();
+          iVar3 = (*local_18->vtable->slot_2C)();
           this_01 = local_18;
           if (iVar3 == *piVar6) break;
           iVar2 = iVar2 + 1;
@@ -146,23 +149,24 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           return;
         }
         RaiseInternalException
-                  (-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x120b);
+                  (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x120b);
       }
       if (this_00->field_024A != 2) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar2 = (**(code **)(*this_01 + 0x2c))();
+      iVar2 = (*this_01->vtable->slot_2C)();
       if (iVar2 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar2 = (**(code **)(*this_01 + 0x88))(local_14);
+      iVar2 = (*this_01->vtable->slot_88)(local_14);
       if (iVar2 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      thunk_FUN_004162b0(this_01,&local_a,&local_8,&local_6);
+      STFishC::sub_004162B0(this_01,&local_a,&local_8,&local_6);
       if (local_a < (short)this_00->field_0252) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -189,7 +193,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       if (this_00->field_024E == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1215);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x1215);
       }
       uVar7 = 0;
       iVar2 = *(int *)(this_00->field_024E + 0xc);
@@ -208,13 +213,13 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     iVar4 = this_00->field_024E;
     goto LAB_004a4aab;
   }
-  iVar2 = (**(code **)(*this_01 + 0x2c))();
-  if ((iVar2 == 0x3b) || (iVar3 = (**(code **)(*this_01 + 0x2c))(), iVar2 = local_1c, iVar3 == 0x60)
-     ) {
+  iVar2 = (*this_01->vtable->slot_2C)();
+  if ((iVar2 == 0x3b) || (iVar3 = (*this_01->vtable->slot_2C)(), iVar2 = local_1c, iVar3 == 0x60)) {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1226);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x1226);
       }
       uVar7 = 0;
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
@@ -236,7 +241,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    thunk_FUN_004162b0(this_01,&local_a,&local_8,&local_6);
+    STFishC::sub_004162B0(this_01,&local_a,&local_8,&local_6);
     if (local_a < (short)this_00->field_026A) {
       g_currentExceptionFrame = local_78.previous;
       return;
@@ -263,7 +268,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     if (this_00->field_0266 == 0) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1234);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x1234);
     }
     uVar8 = 0;
     uVar7 = *(uint *)(this_00->field_0266 + 0xc);
@@ -295,7 +301,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     if (0 < local_1c) {
       local_20 = local_34;
       do {
-        iVar4 = (**(code **)(*local_18 + 0x2c))();
+        iVar4 = (*local_18->vtable->slot_2C)();
         if (iVar4 == *local_20) break;
         iVar3 = iVar3 + 1;
         local_20 = local_20 + 1;
@@ -310,12 +316,14 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         return;
       }
       RaiseInternalException
-                (-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1247);
+                (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x1247);
     }
     if (this_00->field_024A == 0) {
       if (this_00->field_024E == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x124b);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x124b);
       }
       uVar7 = 0;
       iVar2 = *(int *)(this_00->field_024E + 0xc);
@@ -336,7 +344,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    thunk_FUN_004162b0(local_18,&local_a,&local_8,&local_6);
+    STFishC::sub_004162B0(local_18,&local_a,&local_8,&local_6);
     if (local_a < (short)this_00->field_0252) {
       g_currentExceptionFrame = local_78.previous;
       return;
@@ -363,7 +371,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     if (this_00->field_024E == 0) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1259);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x1259);
     }
     uVar8 = 0;
     uVar7 = *(uint *)(this_00->field_024E + 0xc);
@@ -388,8 +397,9 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       iVar2 = 0x1261;
 LAB_004a4a83:
-      RaiseInternalException(-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,iVar2)
-      ;
+      RaiseInternalException
+                (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 iVar2);
     }
   }
   iVar2 = this_00->field_0029;

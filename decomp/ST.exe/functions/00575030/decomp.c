@@ -26,10 +26,10 @@ void __cdecl FUN_00575030(int *param_1,int param_2,int param_3)
         iVar6 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
         *(uint *)(iVar1 + 4) = uVar2 + 1;
         if (iVar6 == 0) goto LAB_005750c2;
-      } while (*(int *)(iVar5 + 0xc) != *(int *)(iVar6 + 8));
+      } while (*(LPVOID *)(iVar5 + 0xc) != *(LPVOID *)(iVar6 + 8));
       if (iVar6 == 0) {
 LAB_005750c2:
-        FUN_006ab060((int *)(iVar5 + 0xc));
+        FUN_006ab060((LPVOID *)(iVar5 + 0xc));
       }
     }
     param_1 = param_1 + -iVar4;

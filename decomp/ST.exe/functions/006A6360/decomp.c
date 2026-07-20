@@ -17,7 +17,7 @@ switchD_006a63e5_caseD_1:
          0x19 < (int)local_8)) {
         return local_8;
       }
-      uVar1 = (&DAT_007ed576)[local_8 * 4];
+      uVar1 = (&SHORT_007ed576)[local_8 * 4];
       local_8 = (uint)(short)uVar1;
       if ((local_8 & 0x4000) == 0) {
         if ((uVar1 & 0x2000) != 0) {

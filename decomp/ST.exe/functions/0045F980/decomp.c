@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_0045f980(int *param_1)
   ushort uVar1;
   int iVar2;
   undefined4 uVar3;
-  void *this;
+  STGroupBoatC *this;
   undefined4 extraout_EDX;
   undefined2 extraout_var;
   undefined4 local_10;
@@ -71,9 +71,9 @@ undefined4 __fastcall FUN_0045f980(int *param_1)
     }
     if (iVar2 == 0) {
       uVar3 = thunk_FUN_004167a0((int)param_1);
-      this = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar3 >> 8),(char)param_1[9]),
-                                        CONCAT22(extraout_var,(short)param_1[0xc]));
-      if (this != (void *)0x0) {
+      this = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar3 >> 8),(char)param_1[9]),
+                                CONCAT22(extraout_var,(short)param_1[0xc]));
+      if (this != (STGroupBoatC *)0x0) {
         iVar2 = thunk_FUN_0040d540(this,(uint)*(ushort *)((int)param_1 + 0x32));
         switch(iVar2) {
         case 0:
@@ -85,7 +85,7 @@ undefined4 __fastcall FUN_0045f980(int *param_1)
           return 1;
         case 1:
           *(undefined2 *)((int)param_1 + 0xfa) = 0;
-          thunk_FUN_0045f6c0(param_1);
+          STBoatC::sub_0045F6C0((STBoatC *)param_1);
           break;
         case -6:
         case 2:

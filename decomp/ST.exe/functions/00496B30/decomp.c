@@ -33,18 +33,18 @@ void FUN_00496b30(uint param_1,int param_2,int param_3)
       param_1 = uVar1;
     }
     local_8 = piVar2[1] + 8;
-    if (DAT_007fb242 < local_8) {
-      local_8 = (int)DAT_007fb242;
+    if (SHORT_007fb242 < local_8) {
+      local_8 = (int)SHORT_007fb242;
     }
     local_c = *piVar2 + 8;
-    if (DAT_007fb240 < local_c) {
-      local_c = (int)DAT_007fb240;
+    if (SHORT_007fb240 < local_c) {
+      local_c = (int)SHORT_007fb240;
     }
     if (iVar3 < local_8) {
       local_10 = &DAT_007abc64 + iVar5 + iVar6 * 0xf;
       do {
         if ((int)param_1 < local_c) {
-          iVar6 = DAT_007fb240 * iVar3 + param_1;
+          iVar6 = SHORT_007fb240 * iVar3 + param_1;
           iVar5 = local_c - param_1;
           pcVar4 = local_10;
           do {

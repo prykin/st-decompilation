@@ -55,7 +55,7 @@ undefined4 * __cdecl EventDataPack(undefined4 *param_1,uint *param_2)
             *(int *)(*(int *)((int)param_1 + 0x462) + 8) + 0x1c;
     local_c = local_c + iVar2;
     *(int *)((int)param_1 + 0x46a) = iVar2;
-    iVar2 = FUN_006c87f0(*(int *)((int)param_1 + 0x456));
+    iVar2 = FUN_006c87f0(*(uint **)((int)param_1 + 0x456));
     *(int *)((int)param_1 + 0x45e) = iVar2;
     if ((int *)((int)param_1 + 0x46e) == (int *)0x0) {
       iVar6 = 0;

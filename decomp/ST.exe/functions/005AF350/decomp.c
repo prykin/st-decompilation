@@ -48,21 +48,21 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   this_00 = local_c;
   SetAccelerator(0,local_c->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   if (this_00->field_1C83 != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_1C83);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1C83);
   }
   this_00->field_1C83 = 0;
   FUN_006b3af0(DAT_008075a8,this_00->field_1C87);
   FUN_006b5f80(DAT_008075a8,0x112,0x38,0x204,0x19d);
   MMMObjTy::OutBSlProc
-            (DAT_0080759c,(int)DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,
+            (DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x112,0x38,0x204,0x19d,
              (undefined4 *)&this_00->field_1A5B->field_0x140);
   if (this_00->field_1A6C != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_1A6C);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1A6C);
   }
   this_00->field_1A6C = 0;
   if (this_00->field_20B8 != (HoloTy *)0x0) {
     HoloTy::Done(this_00->field_20B8);
-    Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20B8);
+    Library::MSVCRT::FUN_0072e2b0(this_00->field_20B8);
     this_00->field_20B8 = (HoloTy *)0x0;
   }
   pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -130,7 +130,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   }
   else {
     if (*(uint *)(DAT_0081176c + 0x389) != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*(uint *)(DAT_0081176c + 0x389));
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)(DAT_0081176c + 0x389));
     }
     *(undefined4 *)(DAT_0081176c + 0x389) = 0;
     iVar2 = *(int *)(DAT_0081176c + 0x544);
@@ -142,7 +142,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     *(uint **)(DAT_0081176c + 0x548) = puVar4;
     if (this_00->field_20BC != (HoloTy *)0x0) {
       HoloTy::Done(this_00->field_20BC);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20BC);
+      Library::MSVCRT::FUN_0072e2b0(this_00->field_20BC);
       this_00->field_20BC = (HoloTy *)0x0;
     }
     pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -210,16 +210,16 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   }
   else {
     if (*(uint *)(DAT_0081176c + 0x54c) != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*(uint *)(DAT_0081176c + 0x54c));
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)(DAT_0081176c + 0x54c));
       *(undefined4 *)(DAT_0081176c + 0x54c) = 0;
     }
     if (*(uint *)(DAT_0081176c + 0x550) != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*(uint *)(DAT_0081176c + 0x550));
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)(DAT_0081176c + 0x550));
       *(undefined4 *)(DAT_0081176c + 0x550) = 0;
     }
     if (this_00->field_20C0 != (HoloTy *)0x0) {
       HoloTy::Done(this_00->field_20C0);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20C0);
+      Library::MSVCRT::FUN_0072e2b0(this_00->field_20C0);
       this_00->field_20C0 = (HoloTy *)0x0;
     }
     pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);

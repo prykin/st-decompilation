@@ -4,7 +4,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
 {
   STT3DSprC *this_00;
   short sVar1;
-  void *pvVar2;
+  VisibleClassTy *pVVar2;
   int iVar3;
   int iVar4;
   int local_10;
@@ -43,8 +43,8 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
       (**(code **)(*(int *)this + 0xd8))();
-      pvVar2 = DAT_00802a88;
-      if (DAT_00802a88 != (void *)0x0) {
+      pVVar2 = g_visibleClass_00802A88;
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar4 = *(int *)((int)this + 0x26e);
         sVar1 = (short)(iVar4 >> 0x1f);
         if (iVar4 < 0) {
@@ -75,17 +75,15 @@ int __thiscall FUN_0063c510(void *this,int param_1)
           iVar3 = (int)(short)(((short)(iVar3 / 0xc9) + sVar1) -
                               (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
         }
-        if ((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-              (thunk_FUN_00558c00(DAT_00802a88,
-                                  *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                  iVar3,iVar4,&local_c,&local_10), local_8 < 0)) ||
+        if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+              (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,
+                                  iVar4,&local_c,&local_10), local_8 < 0)) ||
              ((4 < local_8 || (local_c < 0)))) ||
-            ((*(int *)((int)pvVar2 + 0x30) <= local_c ||
+            (((int)pVVar2->field_0030 <= local_c ||
              ((local_10 = (&DAT_0079aed0)[local_8] + local_10, local_10 < 0 ||
-              (*(int *)((int)pvVar2 + 0x34) <= local_10)))))) ||
-           ((*(int *)((int)pvVar2 + 0x4c) == 0 ||
-            (*(char *)(local_10 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) +
-                      local_c) != '\0')))) {
+              ((int)pVVar2->field_0034 <= local_10)))))) ||
+           ((pVVar2->field_004C == 0 ||
+            (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_c) != '\0')))) {
           if (*(char *)((int)this + 0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
             *(undefined1 *)((int)this + 0x29f) = 1;

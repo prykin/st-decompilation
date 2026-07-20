@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B78C (store 005823F9)
    Evidence: final_vptr=0079B78C; returns_this=true; calls_before=2; field_writes_after=8;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 005823D0 returns STJellyGunC::STJellyGunC this @ 0058243D */
 
-undefined4 * __thiscall STJellyGunC::STJellyGunC(STJellyGunC *this,undefined4 *param_1)
+STJellyGunC * __thiscall STJellyGunC::STJellyGunC(STJellyGunC *this)
 
 {
   int iVar1;
@@ -28,6 +31,6 @@ undefined4 * __thiscall STJellyGunC::STJellyGunC(STJellyGunC *this,undefined4 *p
   this->field_0247 = 0;
   this->field_024B = 0;
   this->field_0252 = 0;
-  return &this->vtable;
+  return this;
 }
 

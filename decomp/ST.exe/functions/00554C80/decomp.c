@@ -16,7 +16,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *param_1)
   cLoadingTy *local_8;
   
   local_8 = this;
-  thunk_FUN_00555570((int)this);
+  sub_00555570(this);
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -45,7 +45,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *param_1)
     else {
       Library::DKW::WGR::FUN_006b55f0
                 ((undefined4 *)pcVar2->field_0004,0,pcVar2->field_0014,pcVar2->field_0018,
-                 (int)pcVar2->field_0004,0,pcVar2->field_0014,
+                 (byte *)pcVar2->field_0004,0,pcVar2->field_0014,
                  pcVar2->field_0034 + pcVar2->field_0018,pcVar2->field_001C,
                  pcVar2->field_0020 - pcVar2->field_0034);
       FUN_006b4170(pcVar2->field_0004,0,pcVar2->field_0014 + pcVar2->field_000C,

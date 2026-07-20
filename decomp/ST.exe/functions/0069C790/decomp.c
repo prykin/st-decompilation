@@ -1,5 +1,8 @@
 
-int FUN_0069c790(int param_1,int param_2,uint param_3,uint param_4)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0069C8B0 -> 0069C790 @ 0069C9FA */
+
+int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
 
 {
   int *piVar1;
@@ -11,14 +14,14 @@ int FUN_0069c790(int param_1,int param_2,uint param_3,uint param_4)
   int local_8;
   
   local_c = 0;
-  if (param_3 < *(uint *)(param_1 + 0xc)) {
-    local_8 = *(int *)(param_1 + 8) * param_3 + *(int *)(param_1 + 0x1c);
+  if (param_3 < param_1[3]) {
+    local_8 = param_1[2] * param_3 + param_1[7];
   }
   else {
     local_8 = 0;
   }
-  if (param_4 < *(uint *)(param_1 + 0xc)) {
-    iVar5 = *(int *)(param_1 + 8) * param_4 + *(int *)(param_1 + 0x1c);
+  if (param_4 < param_1[3]) {
+    iVar5 = param_1[2] * param_4 + param_1[7];
   }
   else {
     iVar5 = 0;
@@ -48,7 +51,7 @@ int FUN_0069c790(int param_1,int param_2,uint param_3,uint param_4)
       } while ((int)uVar4 < (int)uVar2);
     }
     FUN_006ae110(*(byte **)(iVar5 + 0xc));
-    thunk_FUN_0069c670(param_1,param_2,param_4);
+    thunk_FUN_0069c670((int)param_1,param_2,param_4);
     iVar3 = local_c;
   }
   return iVar3;

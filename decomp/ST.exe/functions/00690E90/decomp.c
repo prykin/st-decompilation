@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
    Diagnostic line evidence: 33 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00690E90 -> 0072E340 @ 00690EF8 */
 
-undefined4 * __cdecl FUN_00690e90(char *param_1,undefined2 param_2,undefined2 param_3)
+undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 param_3)
 
 {
   int exceptionCode;
@@ -23,7 +26,7 @@ undefined4 * __cdecl FUN_00690e90(char *param_1,undefined2 param_2,undefined2 pa
     *local_8 = 0x38e;
     local_8[5] = 0x10c;
     *(undefined1 *)(local_8 + 6) = 2;
-    Library::MSVCRT::_strncpy((char *)((int)local_8 + 0x1b),param_1,0x3f);
+    Library::MSVCRT::_strncpy((char *)((int)local_8 + 0x1b),source,0x3f);
     *(undefined2 *)((int)local_8 + 0x19) = param_2;
     *(undefined2 *)(local_8 + 0x17) = param_3;
     if (*(int *)((int)local_8 + 0x85) == 0) {

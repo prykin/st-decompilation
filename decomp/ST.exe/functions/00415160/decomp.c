@@ -87,7 +87,8 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
       iVar8 = 0;
       if (0 < DAT_007f4cf8) {
         do {
-          uVar9 = DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 7 + -1];
+          uVar9 = *(uint *)(DAT_007f4d04 +
+                           ((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 0xe + -2);
           if (uVar9 < *(uint *)(param_2 + 0xc)) {
             puVar5 = (undefined2 *)(*(int *)(param_2 + 8) * uVar9 + *(int *)(param_2 + 0x1c));
           }
@@ -96,13 +97,16 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
           }
           iVar6 = thunk_FUN_00423e70(param_1,CONCAT22((short)(uVar9 >> 0x10),*puVar5));
           if (iVar6 != 0) {
-            uVar7 = DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 7 + -4];
+            uVar7 = *(undefined4 *)
+                     (DAT_007f4d04 + ((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 0xe + -8);
             *(undefined4 *)(iVar6 + 0xbb) = uVar7;
             *(undefined4 *)(iVar6 + 199) = uVar7;
-            uVar7 = DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 7 + -3];
+            uVar7 = *(undefined4 *)
+                     (DAT_007f4d04 + ((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 0xe + -6);
             *(undefined4 *)(iVar6 + 0xbf) = uVar7;
             *(undefined4 *)(iVar6 + 0xcb) = uVar7;
-            uVar7 = DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 7 + -2];
+            uVar7 = *(undefined4 *)
+                     (DAT_007f4d04 + ((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 0xe + -4);
             *(undefined4 *)(iVar6 + 0xc3) = uVar7;
             *(undefined4 *)(iVar6 + 0xcf) = uVar7;
           }
@@ -155,7 +159,8 @@ LAB_00415472:
   if (iVar8 == 0) {
     return 0;
   }
-  RaiseInternalException(iVar8,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe6d);
+  RaiseInternalException
+            (iVar8,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe6d);
   return iVar8;
 }
 

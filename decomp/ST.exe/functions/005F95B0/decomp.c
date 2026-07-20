@@ -31,7 +31,7 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
   int local_20;
   undefined4 local_1c;
   uint local_18;
-  undefined2 *local_14;
+  LPVOID local_14;
   int local_10;
   int local_c;
   short local_8;
@@ -52,7 +52,7 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
   *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x50) = (int)lVar10;
   lVar10 = Library::MSVCRT::__ftol();
   *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x54) = (int)lVar10;
-  thunk_FUN_00416270(param_1,&local_8,&local_6,(undefined2 *)&local_c);
+  thunk_FUN_00416270(param_1,&local_8,(int *)&local_6,&local_c);
   *(int *)((int)param_1 + 0x2c5) = (int)local_6;
   *(int *)((int)param_1 + 0x2c1) = (int)local_8;
   *(int *)((int)param_1 + 0x2c9) = (int)(short)local_c;
@@ -210,17 +210,17 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
   }
   local_40 = 0;
   local_44 = 0;
-  local_14 = *(undefined2 **)(iVar7 + 0x58);
-  if (local_14 == (undefined2 *)0x0) {
-    local_14 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(200);
+  local_14 = *(LPVOID *)(iVar7 + 0x58);
+  if (local_14 == (LPVOID)0x0) {
+    local_14 = (LPVOID)Library::DKW::LIB::FUN_006aac70(200);
   }
   iVar7 = local_10;
-  iVar9 = thunk_FUN_0060e210(&local_64,&local_44,local_18,local_14,local_10);
+  iVar9 = thunk_FUN_0060e210(&local_64,&local_44,local_18,(int)local_14,local_10);
   if (iVar9 != 0) {
     FUN_006ab060(&local_14);
     return local_1c;
   }
-  *(undefined2 **)(*(int *)((int)param_1 + 0x2e6) + 0x58) = local_14;
+  *(LPVOID *)(*(int *)((int)param_1 + 0x2e6) + 0x58) = local_14;
   *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x5c) = iVar7;
   return 1;
 }

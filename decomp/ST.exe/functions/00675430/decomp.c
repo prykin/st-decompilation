@@ -1,9 +1,19 @@
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00675430_param_1Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8;CASE_10=16;CASE_20=32;CASE_40=64;CASE_80=128 */
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8;CASE_10=16;CASE_20=32;CASE_40=64;CASE_80=128
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00675430 returns partial register write at 00675458 @ 0067545D | 00675430 returns
+   partial register write at 0067545E @ 00675463 | 00675430 returns partial register write at
+   00675464 @ 00675469 | 00675430 returns partial register write at 0067546A @ 0067546F | 00675430
+   returns partial register write at 00675470 @ 00675475 | 00675430 returns partial register write
+   at 00675476 @ 0067547B | 00675430 returns partial register write at 0067547C @ 00675481 |
+   00675430 returns partial register write at 00675482 @ 00675487 | 00675430 returns partial
+   register write at 006754A8 @ 006754AD | 00675430 returns partial register write at 006754AE @
+   006754B3 | 00675430 returns partial register write at 006754BB @ 006754C0 */
 
-Global_sub_00675430_param_1Enum __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
+uint __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
 
 {
   undefined2 uVar2;

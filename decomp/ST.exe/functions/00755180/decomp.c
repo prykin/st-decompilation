@@ -5,7 +5,7 @@ int FUN_00755180(int param_1,LPCSTR param_2,undefined4 *param_3,int param_4)
   undefined4 *puVar1;
   int iVar2;
   undefined4 unaff_ESI;
-  int *piVar3;
+  LPVOID *ppvVar3;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   int local_8;
@@ -29,20 +29,20 @@ int FUN_00755180(int param_1,LPCSTR param_2,undefined4 *param_3,int param_4)
     else {
       Library::DKW::FMM::FUN_006d4510(*(undefined4 **)(param_1 + 8),param_2,0x100000);
     }
-    piVar3 = (int *)(param_1 + 8);
+    ppvVar3 = (LPVOID *)(param_1 + 8);
     g_currentExceptionFrame = local_4c.previous;
-    if ((uint)((undefined4 *)*piVar3)[0xe] < 0x20) {
-      FUN_006d46a0((undefined4 *)*piVar3,0);
-      FUN_006ab060(piVar3);
+    if (*(uint *)((int)*ppvVar3 + 0x38) < 0x20) {
+      FUN_006d46a0(*ppvVar3,0);
+      FUN_006ab060(ppvVar3);
       return -5;
     }
     puVar1 = FUN_006b04d0(0x80);
-    *(undefined4 **)(*piVar3 + 0x4c) = puVar1;
-    *(undefined4 *)(*piVar3 + 0x50) = *(undefined4 *)(*piVar3 + 0x4c);
-    puVar1 = (undefined4 *)*piVar3;
+    *(undefined4 **)((int)*ppvVar3 + 0x4c) = puVar1;
+    *(undefined4 *)((int)*ppvVar3 + 0x50) = *(undefined4 *)((int)*ppvVar3 + 0x4c);
+    puVar1 = *ppvVar3;
     if (puVar1[0x14] == 0) {
       FUN_006d46a0(puVar1,0);
-      FUN_006ab060(piVar3);
+      FUN_006ab060(ppvVar3);
       return -2;
     }
     FUN_007550c0(puVar1[0x13],param_3);
@@ -50,7 +50,7 @@ int FUN_00755180(int param_1,LPCSTR param_2,undefined4 *param_3,int param_4)
     return local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
-  FUN_006ab060((undefined4 *)(param_1 + 8));
+  FUN_006ab060((LPVOID *)(param_1 + 8));
   return iVar2;
 }
 

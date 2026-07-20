@@ -19,7 +19,8 @@ STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,undefined4 
   
   if ((param_1 != CASE_21) && (param_1 != CASE_5)) {
     STAllPlayersC::DeleteGuardBoat
-              (DAT_007fa174,CONCAT31((int3)((uint)this >> 8),this->field_0x24),this->field_0032,1);
+              (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)this >> 8),this->field_0x24),
+               this->field_0032,1);
   }
   this->field_02C4 = 1;
   switch(param_1) {

@@ -14,10 +14,10 @@ void __thiscall FUN_005504f0(void *this,int param_1,UINT param_2,int param_3)
     pcVar3 = &DAT_00808af6;
     do {
       if (((*(int *)(pcVar3 + -6) == param_1) && (*pcVar3 != '\0')) && (param_2 != 0)) {
-        uVar1 = FUN_006b0140(param_2,DAT_00807618);
+        uVar1 = FUN_006b0140(param_2,HINSTANCE_00807618);
         wsprintfA(local_10c,s__s__s_007c411c,pcVar3 + -0x46,uVar1);
-        if (DAT_008016d8 != (void *)0x0) {
-          thunk_FUN_0052d320(DAT_008016d8,local_10c,8);
+        if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+          thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);
         }
       }
       uVar2 = uVar2 + 1;

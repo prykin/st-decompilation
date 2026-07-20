@@ -73,8 +73,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if ((((param_2 == (uint *)0x0) || (param_3 == (uint *)0x0)) ||
       (uVar8 = param_2[3], local_10 = uVar8, uVar8 == 0)) || (local_c = param_3[3], local_c == 0)) {
     uVar8 = local_10;
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2837)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x2837);
   }
   Library::DKW::TBL::FUN_006afe40((int *)&local_18,param_2);
   Library::DKW::TBL::FUN_006afe40((int *)&local_14,param_3);
@@ -95,8 +96,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     } while ((int)uVar9 < (int)uVar8);
   }
   if (uVar8 == 0) {
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2842)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x2842);
   }
   uVar8 = 0;
   if (0 < (int)local_c) {
@@ -113,8 +115,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     } while ((int)uVar8 < (int)local_c);
   }
   if (local_c == 0) {
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x284d)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x284d);
   }
   uVar8 = 0;
   puVar5 = local_28;
@@ -171,8 +174,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       OptimizeGuardBoats(this_01,cVar7);
       DistributeGuardBoats(this_01,param_1);
     }
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2872)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x2872);
   }
   if (local_10 == 0) {
     bVar10 = local_c == 0;

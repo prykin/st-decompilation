@@ -11,15 +11,14 @@ undefined4 * __thiscall FUN_0057f2e0(void *this,int param_1,int param_2)
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
-  LPCSTR pCVar9;
   
-  pCVar9 = PTR_s_rc276__d_007cb090;
+  pcVar6 = PTR_s_rc276__d_007cb090;
   if (param_1 == -1) {
     uVar2 = thunk_FUN_0057f240(0xdd,*(int *)((int)this + 0x259));
     param_1 = CONCAT31(extraout_var,uVar2);
-    pCVar9 = PTR_s_rc276_c_d_007cb08c;
+    pcVar6 = PTR_s_rc276_c_d_007cb08c;
   }
-  wsprintfA((LPSTR)&DAT_00811670,pCVar9,param_1);
+  wsprintfA((LPSTR)&DAT_00811670,pcVar6,param_1);
   if (param_2 == 0) {
     return &DAT_00811670;
   }

@@ -2,7 +2,7 @@
 undefined4 * __thiscall FUN_0056a5f0(void *this,undefined4 param_1)
 
 {
-  undefined4 uVar1;
+  DWORD DVar1;
   int iVar2;
   undefined4 *puVar3;
   
@@ -24,7 +24,7 @@ undefined4 * __thiscall FUN_0056a5f0(void *this,undefined4 param_1)
   *(undefined4 *)((int)this + 0xe3f) = 0xffffffff;
   *(undefined4 *)((int)this + 0xe3b) = 0xffffffff;
   *(STAppCVTable **)this = &STAppCVTable;
-  DAT_00806728 = this;
+  g_appClass_00806728 = this;
   *(undefined4 *)((int)this + 0x115a) = 0;
   DAT_0080673c = 0;
   *(undefined1 *)((int)this + 0x115e) = 1;
@@ -56,8 +56,8 @@ undefined4 * __thiscall FUN_0056a5f0(void *this,undefined4 param_1)
   *(undefined4 *)((int)this + 0x4efa) = 0;
   *(undefined2 *)((int)this + 0x1138) = 0;
   *(undefined4 *)((int)this + 0x7d0e) = 0;
-  uVar1 = FUN_006e51b0((int)this);
-  *(undefined4 *)((int)this + 0x1134) = uVar1;
+  DVar1 = FUN_006e51b0((int)this);
+  *(DWORD *)((int)this + 0x1134) = DVar1;
   *(undefined4 *)((int)this + 0x76f2) = 0;
   *(undefined4 *)((int)this + 0x854e) = 0;
   *(undefined4 *)((int)this + 0x8552) = 0;

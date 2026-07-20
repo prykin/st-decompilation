@@ -19,12 +19,12 @@ void __thiscall cLoadingTy::delete(cLoadingTy *this,uint *param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     if (param_1 != (uint *)0x0) {
-      cMf32::RecMemFree(DAT_00806780,param_1);
+      cMf32::RecMemFree(g_cMf32_00806780,param_1);
       if ((uint *)param_1[2] != (uint *)0x0) {
         ccFntTy::operator(this_00,(uint *)param_1[2]);
       }
       thunk_FUN_00555650((int)param_1);
-      FUN_006a5e90(param_1);
+      FUN_006a5e90((short *)param_1);
     }
     g_currentExceptionFrame = pIVar3;
     return;

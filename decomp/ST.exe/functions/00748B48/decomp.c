@@ -1,5 +1,8 @@
 
-int FUN_00748b48(int *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00748B48 returns return of KERNEL32.DLL::InterlockedDecrement @ 00748B95 */
+
+LONG FUN_00748b48(int *param_1)
 
 {
   LONG LVar1;

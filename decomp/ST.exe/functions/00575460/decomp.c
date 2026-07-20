@@ -2,36 +2,36 @@
 void __cdecl FUN_00575460(int *param_1)
 
 {
-  undefined4 *puVar1;
-  int *piVar2;
-  int iVar3;
-  uint uVar4;
+  LPVOID *ppvVar1;
+  int iVar2;
+  uint uVar3;
+  HoloTy *pHVar4;
   int *piVar5;
-  uint *puVar6;
-  int iVar7;
-  int *piVar8;
+  uint *groupContent;
+  int iVar6;
+  undefined4 *puVar7;
   int local_8;
   
   piVar5 = param_1;
-  piVar2 = DAT_0080760c;
-  if (DAT_0080760c != (int *)0x0) {
-    FUN_006dbcf0(DAT_0080760c);
-    Library::MSVCRT::FUN_0072e2b0(piVar2);
-    DAT_0080760c = (int *)0x0;
+  pHVar4 = DAT_0080760c;
+  if (DAT_0080760c != (HoloTy *)0x0) {
+    FUN_006dbcf0((int *)DAT_0080760c);
+    Library::MSVCRT::FUN_0072e2b0(pHVar4);
+    DAT_0080760c = (HoloTy *)0x0;
   }
   if (param_1 != (int *)0x0) {
-    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,4,0x14);
+    groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,4,0x14);
     *(undefined4 *)(*(int *)((int)param_1 + 0x451) + 4) = 0;
     while( true ) {
-      iVar3 = *(int *)((int)param_1 + 0x451);
-      uVar4 = *(uint *)(iVar3 + 4);
-      if (*(uint *)(iVar3 + 0xc) <= uVar4) break;
-      iVar7 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c);
-      *(uint *)(iVar3 + 4) = uVar4 + 1;
-      if (iVar7 == 0) break;
-      puVar1 = (undefined4 *)(iVar7 + 8);
-      Library::DKW::TBL::FUN_006ae1c0(puVar6,puVar1);
-      FUN_006a5e90((undefined4 *)*puVar1);
+      iVar2 = *(int *)((int)param_1 + 0x451);
+      uVar3 = *(uint *)(iVar2 + 4);
+      if (*(uint *)(iVar2 + 0xc) <= uVar3) break;
+      iVar6 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c);
+      *(uint *)(iVar2 + 4) = uVar3 + 1;
+      if (iVar6 == 0) break;
+      puVar7 = (undefined4 *)(iVar6 + 8);
+      Library::DKW::TBL::FUN_006ae1c0(groupContent,puVar7);
+      FUN_006a5e90((short *)*puVar7);
     }
     FUN_006ae110(*(byte **)((int)param_1 + 0x451));
     *(undefined4 *)((int)param_1 + 0x451) = 0;
@@ -39,38 +39,38 @@ void __cdecl FUN_00575460(int *param_1)
     if (0 < *(int *)((int)param_1 + 0x455)) {
       param_1 = (int *)((int)param_1 + 0x459);
       do {
-        iVar3 = *param_1;
-        if ((iVar3 != 0) && (piVar2 = (int *)(iVar3 + 0xc), *(int *)(iVar3 + 0xc) != 0)) {
-          puVar6[1] = 0;
+        iVar2 = *param_1;
+        if ((iVar2 != 0) && (ppvVar1 = (LPVOID *)(iVar2 + 0xc), *(int *)(iVar2 + 0xc) != 0)) {
+          groupContent[1] = 0;
           do {
-            uVar4 = puVar6[1];
-            if (puVar6[3] <= uVar4) goto LAB_0057554f;
-            piVar8 = (int *)(puVar6[2] * uVar4 + puVar6[7]);
-            puVar6[1] = uVar4 + 1;
-            if (piVar8 == (int *)0x0) goto LAB_0057554f;
-          } while (*piVar2 != *piVar8);
-          if (piVar8 == (int *)0x0) {
+            uVar3 = groupContent[1];
+            if (groupContent[3] <= uVar3) goto LAB_0057554f;
+            puVar7 = (undefined4 *)(groupContent[2] * uVar3 + groupContent[7]);
+            groupContent[1] = uVar3 + 1;
+            if (puVar7 == (undefined4 *)0x0) goto LAB_0057554f;
+          } while (*ppvVar1 != (LPVOID)*puVar7);
+          if (puVar7 == (undefined4 *)0x0) {
 LAB_0057554f:
-            Library::DKW::TBL::FUN_006ae1c0(puVar6,piVar2);
-            FUN_006ab060(piVar2);
+            Library::DKW::TBL::FUN_006ae1c0(groupContent,ppvVar1);
+            FUN_006ab060(ppvVar1);
           }
-          *piVar2 = 0;
+          *ppvVar1 = (LPVOID)0x0;
         }
         local_8 = local_8 + 1;
         param_1 = param_1 + 1;
       } while (local_8 < *(int *)((int)piVar5 + 0x455));
     }
-    FUN_006ae110((byte *)puVar6);
+    FUN_006ae110((byte *)groupContent);
   }
   *(undefined4 *)(*(int *)((int)piVar5 + 0x44d) + 4) = 0;
   while( true ) {
-    iVar3 = *(int *)((int)piVar5 + 0x44d);
-    uVar4 = *(uint *)(iVar3 + 4);
-    if (*(uint *)(iVar3 + 0xc) <= uVar4) break;
-    iVar7 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c);
-    *(uint *)(iVar3 + 4) = uVar4 + 1;
-    if (iVar7 == 0) break;
-    FUN_006a5e90(*(undefined4 **)(iVar7 + 4));
+    iVar2 = *(int *)((int)piVar5 + 0x44d);
+    uVar3 = *(uint *)(iVar2 + 4);
+    if (*(uint *)(iVar2 + 0xc) <= uVar3) break;
+    iVar6 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c);
+    *(uint *)(iVar2 + 4) = uVar3 + 1;
+    if (iVar6 == 0) break;
+    FUN_006a5e90(*(short **)(iVar6 + 4));
   }
   FUN_006ae110(*(byte **)((int)piVar5 + 0x44d));
   *(undefined4 *)((int)piVar5 + 0x44d) = 0;

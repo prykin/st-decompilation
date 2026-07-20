@@ -119,10 +119,10 @@ uint FUN_00755560(uint param_1,ushort *param_2,undefined4 param_3,undefined4 par
     *(short *)(iVar14 + 8) = (short)iVar6;
     **(uint **)(uVar4 + 0x18) = *puVar8;
     if (iVar5 < iVar6) {
-      FUN_007574c0(uVar4,iVar14,*(undefined4 **)(uVar4 + 0x1c),iVar5);
+      FUN_007574c0(uVar4,iVar14,*(uint **)(uVar4 + 0x1c),iVar5);
     }
     else if (iVar6 < iVar5) {
-      FUN_007574c0(uVar4,(int)puVar8,*(undefined4 **)(uVar4 + 0x1c),(iVar5 - param_1) - iVar6);
+      FUN_007574c0(uVar4,(int)puVar8,*(uint **)(uVar4 + 0x1c),(iVar5 - param_1) - iVar6);
       *(undefined4 *)(*(int *)(uVar4 + 0xc) + 0x40 + *(int *)(*(int *)(uVar4 + 0xc) + 0x1c) * 8) =
            **(undefined4 **)(uVar4 + 0x18);
       iVar5 = *(int *)(uVar4 + 0xc);

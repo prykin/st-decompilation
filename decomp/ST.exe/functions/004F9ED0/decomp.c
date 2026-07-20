@@ -10,7 +10,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   bool bVar2;
   CPanelTy *this_00;
   int iVar3;
-  byte *pbVar4;
+  char *pcVar4;
   ushort *puVar5;
   int iVar6;
   undefined4 unaff_ESI;
@@ -44,17 +44,17 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           thunk_FUN_004a9b60(local_10->field_011C,local_10->field_0120,local_10->field_0124,
                              local_10->field_0128);
           this_00->field_023F = 6;
-          if (DAT_008016e8 != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_008016e8,'\0');
+          if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
           }
-          if (DAT_0080167c != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_0080167c,'\0');
+          if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
           }
-          if (DAT_00801684 != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_00801684,'\0');
+          if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
           }
-          if (DAT_00801680 != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_00801680,'\0');
+          if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
           }
           if (DAT_00801698 != (int *)0x0) {
             (**(code **)(*DAT_00801698 + 0x1c))(0);
@@ -77,8 +77,8 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           if (DAT_00801690 != (int *)0x0) {
             (**(code **)(*DAT_00801690 + 0x18))(0);
           }
-          if (DAT_008016dc != (OptPanelTy *)0x0) {
-            OptPanelTy::SwitchOptPanelOff(DAT_008016dc);
+          if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+            OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
           }
           ShiftControls(this_00,0);
           if (DAT_0080731a != 0) {
@@ -91,9 +91,9 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
               iVar3 = 1;
               bVar10 = 0;
               uVar9 = 6;
-              pbVar4 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
+              pcVar4 = thunk_FUN_00526100((undefined1 *)0x0,0);
               puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                                 (DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+                                 (DAT_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
               puVar8[-3] = puVar5;
               puVar7[-2] = 0;
               *puVar7 = 4;
@@ -113,9 +113,9 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
                 iVar3 = 1;
                 bVar10 = 0;
                 uVar9 = 6;
-                pbVar4 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
+                pcVar4 = thunk_FUN_00526100((undefined1 *)0x0,0);
                 puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                                   (DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+                                   (DAT_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
                 puVar8[-0x12] = puVar5;
                 puVar7[-0xc] = 0;
                 *puVar7 = 4;
@@ -138,17 +138,17 @@ switchD_004f9f52_caseD_3:
         case 4:
           local_10->field_023F = 3;
           thunk_FUN_005252c0(CASE_AF);
-          if (DAT_008016e8 != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_008016e8,'\0');
+          if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
           }
-          if (DAT_0080167c != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_0080167c,'\0');
+          if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
           }
-          if (DAT_00801684 != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_00801684,'\0');
+          if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
           }
-          if (DAT_00801680 != (ProdPanelTy *)0x0) {
-            ProdPanelTy::SetPanel(DAT_00801680,'\0');
+          if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+            ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
           }
           if (DAT_00801698 != (int *)0x0) {
             (**(code **)(*DAT_00801698 + 0x1c))(0);
@@ -171,8 +171,8 @@ switchD_004f9f52_caseD_3:
           if (DAT_00801690 != (int *)0x0) {
             (**(code **)(*DAT_00801690 + 0x18))(0);
           }
-          if (DAT_008016dc != (OptPanelTy *)0x0) {
-            OptPanelTy::SwitchOptPanelOff(DAT_008016dc);
+          if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+            OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
           }
         default:
           g_currentExceptionFrame = local_54.previous;

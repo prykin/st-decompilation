@@ -11,13 +11,13 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
   CursorClassTy *this_00;
   MAdvTy *this_01;
   int iVar3;
-  LPSTR pCVar4;
-  undefined4 uVar5;
-  int iVar6;
+  LPSTR text;
+  undefined4 uVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar7;
-  byte bVar8;
+  undefined4 *puVar6;
+  byte bVar7;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
   
@@ -36,14 +36,14 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     }
     this_01 = local_8;
     iVar3 = 1;
-    bVar8 = 0;
-    pCVar4 = FUN_006f2c00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
-    uVar5 = FUN_0070a9f0(DAT_00806780,pCVar4,bVar8,iVar3);
-    this_01->field_005E = uVar5;
-    puVar7 = (undefined4 *)&this_01->field_0x18;
+    bVar7 = 0;
+    text = FUN_006f2c00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
+    uVar4 = FUN_0070a9f0(g_cMf32_00806780,text,bVar7,iVar3);
+    this_01->field_005E = uVar4;
+    puVar6 = (undefined4 *)&this_01->field_0x18;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
     }
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
@@ -57,11 +57,11 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_01->field_005E,10,2);
     this_00 = DAT_00802a30;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar5 = DAT_00802a30->field_00C9;
+      uVar4 = DAT_00802a30->field_00C9;
       uVar1 = DAT_00802a30->field_00C5;
       DAT_00802a30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_00,CASE_0,uVar1,uVar5);
+      CursorClassTy::SetGCType(this_00,CASE_0,uVar1,uVar4);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_0xd2 = 0;
       *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
@@ -72,9 +72,9 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x1f,0,iVar3,&DAT_007a4ccc,
+  iVar5 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x1f,0,iVar3,&DAT_007a4ccc,
                              s_MAdvTy__InitMAdv_007cbc48);
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;

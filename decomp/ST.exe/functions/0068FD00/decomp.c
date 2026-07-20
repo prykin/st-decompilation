@@ -144,12 +144,12 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
     case 0x72:
       uVar5 = param_1[2];
       if (uVar5 == 0) {
-        GiveObjByClaim(local_8,param_1[3]);
+        GiveObjByClaim(local_8,(uint *)param_1[3]);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       if (uVar5 == 1) {
-        GiveObjByFltType(local_8,param_1[3]);
+        GiveObjByFltType(local_8,(uint *)param_1[3]);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }

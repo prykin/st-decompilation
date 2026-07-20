@@ -1,5 +1,8 @@
 
-void __cdecl FUN_00726260(undefined4 *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00709A10 -> 00726260 @ 00709A5F */
+
+void __cdecl FUN_00726260(uint *param_1)
 
 {
   short *psVar1;
@@ -18,7 +21,7 @@ void __cdecl FUN_00726260(undefined4 *param_1)
         iVar3 = iVar3 + 10;
       } while (iVar2 < (int)psVar1[1] * (int)*psVar1);
     }
-    FUN_006ab060(param_1);
+    FUN_006ab060((LPVOID *)param_1);
   }
   return;
 }

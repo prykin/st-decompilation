@@ -75,7 +75,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     local_8c4[3] = 0;
     local_8c4[4] = 0xd5;
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((int)pcVar1);
+      FUN_00710790((uint *)pcVar1);
     }
     local_8c4[5] = *(int *)&pcVar1->field_0x8a;
     local_8a8 = (undefined4)(0x119 / (longlong)local_8c4[5]);

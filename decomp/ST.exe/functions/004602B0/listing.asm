@@ -1,4 +1,4 @@
-FUN_004602b0:
+STBoatC::sub_004602B0:
 004602B0  56                        PUSH ESI
 004602B1  8B F1                     MOV ESI,ECX
 004602B3  8B 06                     MOV EAX,dword ptr [ESI]

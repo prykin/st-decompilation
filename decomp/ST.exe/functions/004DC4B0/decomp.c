@@ -1,47 +1,50 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004CAFC0 -> 004DC4B0 @ 004CB15D
+   
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 004CAFC0 -> 004DC4B0 @ 004CB15D
+   
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004CAFC0 -> 004DC4B0 @ 004CB15D */
+
 void __thiscall
-FUN_004dc4b0(void *this,int param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
+FUN_004dc4b0(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint *param_3,
+            uint *param_4)
 
 {
   int iVar1;
-  undefined4 uVar2;
-  uint uVar3;
-  int iVar4;
+  uint uVar2;
+  int iVar3;
   
-  uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
-  iVar4 = (uVar3 & 0xff) - 1;
-  if ((0xc < param_1) && (param_1 < 0xf)) {
+  iVar3 = (uVar2 & 0xff) - 1;
+  if ((0xc < (int)param_1) && ((int)param_1 < 0xf)) {
     switch(*(undefined4 *)((int)this + 0x4d0)) {
     case 0:
-      uVar2 = *(undefined4 *)
-               ((&PTR_DAT_007b5170)[iVar1] +
-               (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+      uVar2 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                       (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
       *param_4 = uVar2;
       *param_3 = uVar2;
       return;
     case 1:
-      uVar2 = *(undefined4 *)
-               ((&PTR_DAT_007b5170)[iVar1] +
-               (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+      uVar2 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                       (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
       *param_4 = uVar2;
       *param_3 = uVar2;
       return;
     case 2:
-      *param_3 = *(undefined4 *)
-                  ((&PTR_DAT_007b5170)[iVar1] +
-                  (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
-      *param_4 = *(undefined4 *)
-                  ((&PTR_DAT_007b5170)[iVar1] +
-                  (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+      *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                          (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+      *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                          (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
       return;
     case 3:
-      *param_3 = *(undefined4 *)
-                  ((&PTR_DAT_007b5170)[iVar1] +
-                  (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
-      *param_4 = *(undefined4 *)
-                  ((&PTR_DAT_007b5170)[iVar1] +
-                  (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+      *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                          (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+      *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                          (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
     }
   }
   return;

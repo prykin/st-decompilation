@@ -30,7 +30,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   int local_18;
   SettMapMTy *local_14;
   int local_10;
-  int local_c;
+  cMf32 *local_c;
   uint local_8;
   
   local_1c = 0;
@@ -65,10 +65,10 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
     local_1c = local_28;
   }
   if ((pSVar3->field_1E26 == '\x05') || (pSVar3->field_1E26 == '\x0f')) {
-    local_c = pSVar3->field_1F3F;
+    local_c = (cMf32 *)pSVar3->field_1F3F;
   }
   else {
-    local_c = pSVar3->field_1F43;
+    local_c = (cMf32 *)pSVar3->field_1F43;
   }
   g_currentExceptionFrame = local_c4.previous;
   pSVar3->field_0029 = 2;
@@ -104,14 +104,14 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
             switch(pSVar3->field_1E26) {
             case 5:
             case 0xf:
-              puVar5 = CreateStrategList(local_c,(uint)(byte)pcVar9[2],0xffffffff);
+              puVar5 = CreateStrategList((int)local_c,(uint)(byte)pcVar9[2],0xffffffff);
               break;
             default:
               puVar5 = CreateOpponentList(local_c,(uint)(byte)pcVar9[3],DAT_0080995c);
               break;
             case 0xc:
             case 0x10:
-              puVar5 = CreateSaveStrategList(local_c,(uint)(byte)pcVar9[2],0xffffffff);
+              puVar5 = CreateSaveStrategList((int)local_c,(uint)(byte)pcVar9[2],0xffffffff);
             }
             *(uint **)(pcVar9 + 0x50) = puVar5;
             if (puVar5[3] <= (uint)(byte)pcVar9[5]) {

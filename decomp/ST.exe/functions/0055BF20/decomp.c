@@ -37,7 +37,7 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
     if (iVar3 == 0) {
       pCVar1 = local_c + 0x40;
       if (*(int *)(local_c + 0x40) != 0) {
-        FUN_006ab060((undefined4 *)pCVar1);
+        FUN_006ab060((LPVOID *)pCVar1);
       }
       pBVar5 = Library::DKW::WGR::FUN_006bbfa0
                          (local_8,(undefined4 *)0x0,*(HPALETTE *)(pCVar2 + 0x3c));

@@ -242,7 +242,8 @@ LAB_00561bff:
   if (local_2c == 0) {
     return puVar5;
   }
-  RaiseInternalException(local_2c,DAT_007ed77c,s_E____titans_scoreai_cpp_007c96b0,600);
+  RaiseInternalException
+            (local_2c,g_overwriteContext_007ED77C,s_E____titans_scoreai_cpp_007c96b0,600);
   return (undefined4 *)0x0;
 }
 

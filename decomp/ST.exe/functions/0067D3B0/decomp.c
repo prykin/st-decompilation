@@ -19,7 +19,7 @@ undefined4 * __cdecl PlrDataPack(undefined4 *param_1,undefined4 *param_2,int par
   uint *puVar10;
   undefined4 unaff_ESI;
   uint *puVar11;
-  int *piVar12;
+  LPVOID *ppvVar12;
   void *unaff_EDI;
   uint uVar13;
   undefined4 *puVar14;
@@ -187,15 +187,15 @@ undefined4 * __cdecl PlrDataPack(undefined4 *param_1,undefined4 *param_2,int par
         bVar16 = iVar9 != 0;
         do {
           if (bVar16) {
-            piVar12 = (int *)(*(int *)(iVar7 + 8) * uVar13 + *(int *)(iVar7 + 0x1c));
+            ppvVar12 = (LPVOID *)(*(int *)(iVar7 + 8) * uVar13 + *(int *)(iVar7 + 0x1c));
           }
           else {
-            piVar12 = (int *)0x0;
+            ppvVar12 = (LPVOID *)0x0;
           }
-          if (((*piVar12 != 0) && (*(char *)(*piVar12 + 0x18) == '\0')) &&
+          if (((*ppvVar12 != (LPVOID)0x0) && (*(char *)((int)*ppvVar12 + 0x18) == '\0')) &&
              ((local_c[uVar13] != 0 && (*(char *)(local_c[uVar13] + 0x18) == '\x02')))) {
-            FUN_006ab060(piVar12);
-            *piVar12 = local_c[uVar13];
+            FUN_006ab060(ppvVar12);
+            *ppvVar12 = (LPVOID)local_c[uVar13];
           }
           iVar7 = *piVar3;
           uVar13 = uVar13 + 1;
@@ -215,15 +215,15 @@ undefined4 * __cdecl PlrDataPack(undefined4 *param_1,undefined4 *param_2,int par
       bVar16 = iVar9 != 0;
       do {
         if (bVar16) {
-          piVar3 = (int *)(*(int *)(iVar7 + 8) * uVar13 + *(int *)(iVar7 + 0x1c));
+          ppvVar12 = (LPVOID *)(*(int *)(iVar7 + 8) * uVar13 + *(int *)(iVar7 + 0x1c));
         }
         else {
-          piVar3 = (int *)0x0;
+          ppvVar12 = (LPVOID *)0x0;
         }
-        if ((((*piVar3 != 0) && (*(char *)(*piVar3 + 0x18) == '\0')) && (local_c[uVar13] != 0)) &&
-           (*(char *)(local_c[uVar13] + 0x18) == '\x02')) {
-          FUN_006ab060(piVar3);
-          *piVar3 = local_c[uVar13];
+        if ((((*ppvVar12 != (LPVOID)0x0) && (*(char *)((int)*ppvVar12 + 0x18) == '\0')) &&
+            (local_c[uVar13] != 0)) && (*(char *)(local_c[uVar13] + 0x18) == '\x02')) {
+          FUN_006ab060(ppvVar12);
+          *ppvVar12 = (LPVOID)local_c[uVar13];
         }
         iVar7 = *(int *)((int)param_1 + 0xc2);
         uVar13 = uVar13 + 1;

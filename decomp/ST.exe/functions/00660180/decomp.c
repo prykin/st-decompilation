@@ -9,11 +9,11 @@ undefined4 __thiscall FUN_00660180(void *this,short *param_1,char param_2)
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
-  int *piVar4;
+  uint *groupContent;
+  STGroupBoatC *pSVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
   InternalExceptionFrame local_78;
   undefined4 local_34 [3];
   short local_28;
@@ -40,10 +40,10 @@ undefined4 __thiscall FUN_00660180(void *this,short *param_1,char param_2)
       iVar2 = (uVar1 >> 0x10 & 1) + 1;
     }
     if (iVar2 != 2) {
-      puVar5 = local_34;
+      puVar4 = local_34;
       for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
+        *puVar4 = 0;
+        puVar4 = puVar4 + 1;
       }
       local_34[0] = 1;
       local_28 = *param_1;
@@ -52,19 +52,20 @@ undefined4 __thiscall FUN_00660180(void *this,short *param_1,char param_2)
       local_22 = param_1[3];
       local_20 = param_1[4];
       local_1e = param_1[5];
-      if ((*(short *)((int)this + 0x7d) == -2) || (DAT_007fa174 == 0)) {
-        piVar4 = (int *)0x0;
+      if ((*(short *)((int)this + 0x7d) == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0))
+      {
+        pSVar3 = (STGroupBoatC *)0x0;
       }
       else {
-        piVar4 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),
-                                                    *(undefined1 *)((int)this + 0x24)),
-                                           CONCAT22((short)((uint)param_1 >> 0x10),
-                                                    *(short *)((int)this + 0x7d)));
+        pSVar3 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),
+                                             *(undefined1 *)((int)this + 0x24)),
+                                    CONCAT22((short)((uint)param_1 >> 0x10),
+                                             *(short *)((int)this + 0x7d)));
       }
-      if (piVar4 == (int *)0x0) {
+      if (pSVar3 == (STGroupBoatC *)0x0) {
         return 0xffffffff;
       }
-      (**(code **)(*piVar4 + 8))(2,local_34);
+      (*pSVar3->vtable->vfunc_08)(2,local_34);
       return 0;
     }
   }
@@ -81,32 +82,34 @@ undefined4 __thiscall FUN_00660180(void *this,short *param_1,char param_2)
     }
     return 0xffffffff;
   }
-  puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,10);
+  groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,10);
   local_14 = param_1[3] / 2 + *param_1;
   sStack_12 = param_1[4] / 2 + param_1[1];
   asStack_10[0] = param_1[5] / 2 + param_1[2];
-  local_8 = puVar3;
+  local_8 = groupContent;
   thunk_FUN_00675950(CONCAT22(sStack_12,local_14),CONCAT22(asStack_10[0],sStack_12),asStack_10[0],
                      &local_14,&sStack_12,asStack_10,0);
-  uVar1 = Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&local_14);
+  uVar1 = Library::DKW::TBL::FUN_006ae1c0(groupContent,(undefined4 *)&local_14);
   local_18 = 1;
   uVar1 = CONCAT22((short)(uVar1 >> 0x10),*(short *)((int)local_c + 0x7d));
-  local_1c = puVar3;
-  if ((*(short *)((int)local_c + 0x7d) == -2) || (DAT_007fa174 == 0)) {
-    piVar4 = (int *)0x0;
+  local_1c = groupContent;
+  if ((*(short *)((int)local_c + 0x7d) == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0))
+  {
+    pSVar3 = (STGroupBoatC *)0x0;
   }
   else {
-    piVar4 = (int *)thunk_FUN_0042b760(CONCAT31((int3)(uVar1 >> 8),
-                                                *(undefined1 *)((int)local_c + 0x24)),uVar1);
+    pSVar3 = thunk_FUN_0042b760(CONCAT31((int3)(uVar1 >> 8),*(undefined1 *)((int)local_c + 0x24)),
+                                uVar1);
   }
-  if (piVar4 == (int *)0x0) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0x467);
+  if (pSVar3 == (STGroupBoatC *)0x0) {
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_ai_ai_flt_cpp_007d2b80,0x467);
   }
   else {
-    (**(code **)(*piVar4 + 8))(6,&local_1c);
+    (*pSVar3->vtable->vfunc_08)(6,&local_1c);
   }
-  if (puVar3 != (uint *)0x0) {
-    FUN_006ae110((byte *)puVar3);
+  if (groupContent != (uint *)0x0) {
+    FUN_006ae110((byte *)groupContent);
   }
   g_currentExceptionFrame = local_78.previous;
   return 0;

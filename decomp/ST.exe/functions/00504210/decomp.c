@@ -10,18 +10,18 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
   CPanelTy *this_00;
   byte bVar2;
   int iVar3;
-  byte *pbVar4;
-  ushort *puVar5;
-  byte bVar6;
+  char *text;
+  ushort *puVar4;
+  byte bVar5;
   undefined4 unaff_ESI;
+  int *piVar6;
   int *piVar7;
-  int *piVar8;
   void *unaff_EDI;
-  int *piVar9;
-  bool bVar10;
-  uint uVar11;
-  int iVar12;
-  undefined4 *puVar13;
+  int *piVar8;
+  bool bVar9;
+  uint uVar10;
+  int iVar11;
+  undefined4 *puVar12;
   int local_ac [17];
   InternalExceptionFrame local_68;
   CPanelTy *local_24;
@@ -33,7 +33,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
   int *local_c;
   byte local_5;
   
-  if (0x3ff < DAT_00806730) {
+  if (0x3ff < g_nWidth_00806730) {
     local_68.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_68;
     local_24 = this;
@@ -41,81 +41,82 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
     this_00 = local_24;
     if (iVar3 == 0) {
       local_c = (int *)(param_1 & 0xff);
-      piVar8 = (int *)(&local_24->field_0xc87 + (int)local_c * 0x42);
-      piVar7 = piVar8;
-      piVar9 = local_ac;
+      piVar7 = (int *)(&local_24->field_0xc87 + (int)local_c * 0x42);
+      piVar6 = piVar7;
+      piVar8 = local_ac;
       for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar9 = *piVar7;
-        piVar7 = piVar7 + 1;
-        piVar9 = piVar9 + 1;
+        *piVar8 = *piVar6;
+        piVar6 = piVar6 + 1;
+        piVar8 = piVar8 + 1;
       }
-      local_18 = piVar8;
-      *(short *)piVar9 = (short)*piVar7;
+      local_18 = piVar7;
+      *(short *)piVar8 = (short)*piVar6;
       STAllPlayersC::GetPanelInfo
-                (DAT_007fa174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),piVar8);
-      piVar8 = local_c;
+                (g_sTAllPlayers_007FA174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),
+                 piVar7);
+      piVar7 = local_c;
       local_1c = local_1c & 0xffffff00;
-      bVar2 = ((DAT_00806730 != 0x400) - 1U & 0xfc) + 6;
+      bVar2 = ((g_nWidth_00806730 != 0x400) - 1U & 0xfc) + 6;
       local_5 = bVar2;
       if (bVar2 != 0) {
         local_20 = local_ac;
         local_c = local_18;
-        local_10 = &this_00->field_0D3B + (int)piVar8 * 6;
-        local_14 = &this_00->field_0D53 + (int)piVar8 * 6;
+        local_10 = &this_00->field_0D3B + (int)piVar7 * 6;
+        local_14 = &this_00->field_0D53 + (int)piVar7 * 6;
         do {
           iVar3 = 0xb;
-          bVar10 = true;
-          piVar8 = local_20;
-          piVar7 = local_c;
+          bVar9 = true;
+          piVar7 = local_20;
+          piVar6 = local_c;
           do {
             if (iVar3 == 0) break;
             iVar3 = iVar3 + -1;
-            bVar10 = (char)*piVar8 == (char)*piVar7;
-            piVar8 = (int *)((int)piVar8 + 1);
+            bVar9 = (char)*piVar7 == (char)*piVar6;
             piVar7 = (int *)((int)piVar7 + 1);
-          } while (bVar10);
-          if ((!bVar10) && (local_10[0xc] == '\x01')) {
-            puVar13 = (undefined4 *)0x0;
-            iVar12 = 0;
+            piVar6 = (int *)((int)piVar6 + 1);
+          } while (bVar9);
+          if ((!bVar9) && (local_10[0xc] == '\x01')) {
+            puVar12 = (undefined4 *)0x0;
+            iVar11 = 0;
             iVar3 = 1;
             bVar2 = 0;
-            uVar11 = 6;
-            pbVar4 = (byte *)thunk_FUN_004f1d20((undefined1 *)local_c);
-            puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                               (DAT_00806794,CASE_1F,pbVar4,uVar11,bVar2,iVar3,iVar12,puVar13);
-            local_14[-0x12] = puVar5;
+            uVar10 = 6;
+            text = (char *)thunk_FUN_004f1d20((undefined1 *)local_c);
+            puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                               (DAT_00806794,CASE_1F,text,uVar10,bVar2,iVar3,iVar11,puVar12);
+            local_14[-0x12] = puVar4;
             *local_10 = 0;
             *local_14 = this_00->field_0038;
             thunk_FUN_004f1c80(this_00,param_1,local_1c);
-            bVar6 = ((char)param_1 == '\0') + 9;
-            local_18 = (int *)CONCAT31(local_18._1_3_,bVar6);
+            bVar5 = ((char)param_1 == '\0') + 9;
+            local_18 = (int *)CONCAT31(local_18._1_3_,bVar5);
             bVar2 = local_5;
-            if (bVar6 < 0xb) {
-              uVar11 = (uint)bVar6;
-              if (-1 < (int)(&this_00->field_0148)[uVar11]) {
+            if (bVar5 < 0xb) {
+              uVar10 = (uint)bVar5;
+              if (-1 < (int)(&this_00->field_0148)[uVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,(&this_00->field_0148)[uVar11],0xffffffff,
-                           (&this_00->field_003C)[uVar11],
-                           *(uint *)(&this_00->field_0x94 + uVar11 * 4));
+                          (DAT_008075a8,(&this_00->field_0148)[uVar10],0xffffffff,
+                           (&this_00->field_003C)[uVar10],
+                           *(uint *)(&this_00->field_0x94 + uVar10 * 4));
                 bVar2 = local_5;
               }
             }
           }
-          bVar6 = (char)local_1c + 1;
+          bVar5 = (char)local_1c + 1;
           local_14 = local_14 + 1;
           local_20 = (int *)((int)local_20 + 0xb);
           local_c = (int *)((int)local_c + 0xb);
-          local_1c = CONCAT31(local_1c._1_3_,bVar6);
+          local_1c = CONCAT31(local_1c._1_3_,bVar5);
           local_10 = local_10 + 1;
-        } while (bVar6 < bVar2);
+        } while (bVar5 < bVar2);
       }
       g_currentExceptionFrame = local_68.previous;
       return;
     }
     g_currentExceptionFrame = local_68.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x2a,0,iVar3,&DAT_007a4ccc
+    iVar11 = ReportDebugMessage(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x2a,0,iVar3,&DAT_007a4ccc
                                 ,s_CPanelTy__UpdateStackPanel_007c26e0);
-    if (iVar12 != 0) {
+    if (iVar11 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;

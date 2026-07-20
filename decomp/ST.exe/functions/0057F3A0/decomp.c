@@ -9,18 +9,17 @@ undefined4 * __thiscall FUN_0057f3a0(void *this,int param_1,int param_2)
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  LPCSTR pCVar8;
   
-  pCVar8 = PTR_s_rgold__d_007cb098;
+  pcVar5 = PTR_s_rgold__d_007cb098;
   if (param_1 == -1) {
     iVar4 = *(int *)((int)this + 0x259) / 999999;
     if (0 < iVar4) {
       iVar4 = 0;
     }
     param_1 = -iVar4;
-    pCVar8 = PTR_s_rgold_c0_007cb094;
+    pcVar5 = PTR_s_rgold_c0_007cb094;
   }
-  wsprintfA((LPSTR)&DAT_00811650,pCVar8,param_1);
+  wsprintfA((LPSTR)&DAT_00811650,pcVar5,param_1);
   if (param_2 == 0) {
     return &DAT_00811650;
   }

@@ -1,5 +1,8 @@
 
-void __thiscall FUN_0067a240(void *this,undefined *param_1,undefined4 param_2)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0067C180 -> 0067A240 @ 0067C248 | 0067C180 -> 0067A240 @ 0067C4CC */
+
+void __thiscall FUN_0067a240(void *this,undefined *param_1,uint *param_2)
 
 {
   uint uVar1;

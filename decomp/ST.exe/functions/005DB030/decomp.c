@@ -109,7 +109,7 @@ joined_r0x005db18e:
     }
   }
 cf_common_exit_005DB1E1:
-  cMf32::delete(this_00,(undefined4 *)this);
+  cMf32::delete(this_00,this);
   g_currentExceptionFrame = local_6c;
   return uVar12;
 }

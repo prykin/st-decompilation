@@ -1,4 +1,4 @@
-FUN_0048d930:
+STBoatC::sub_0048D930:
 0048D930  53                        PUSH EBX
 0048D931  56                        PUSH ESI
 0048D932  8B F1                     MOV ESI,ECX

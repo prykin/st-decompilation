@@ -1,5 +1,10 @@
 
-int __thiscall FUN_004603b0(void *this,void *param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004603B0 parameter used as this of STTorpC::ClearDangerous @ 004604BD | 004603B0
+   parameter used as this of STTorpC::ClearDangerous @ 00460546 | 004603B0 parameter used as this of
+   STTorpC::SetDangerous @ 004604AB */
+
+int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
 
 {
   short sVar1;
@@ -19,7 +24,7 @@ int __thiscall FUN_004603b0(void *this,void *param_1)
   undefined4 uVar11;
   uint local_8;
   
-  if ((param_1 == (void *)0x0) || (param_1 == (void *)0x1)) {
+  if ((param_1 == (STTorpC *)0x0) || (param_1 == (STTorpC *)0x1)) {
     puVar8 = (undefined4 *)((int)this + 0x2cc);
     for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar8 = 0;
@@ -43,7 +48,7 @@ int __thiscall FUN_004603b0(void *this,void *param_1)
        && (uVar9 = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
       do {
         FUN_006acc70(DAT_007fa130,uVar9,&param_1);
-        if (param_1 != (void *)0x0) {
+        if (param_1 != (STTorpC *)0x0) {
           iVar6 = iVar6 + -1;
           iVar3 = STTorpC::IsDangerous(param_1,*(int *)((int)this + 0x18),&local_8);
           if (iVar3 != 2) {
@@ -55,9 +60,9 @@ LAB_004604c9:
                 iVar3 = thunk_FUN_00483e30(this,(int)param_1);
                 if (iVar3 == 1) {
                   STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
-                  *(void **)((int)this + 0x46b) = param_1;
-                  *(undefined2 *)((int)this + 0x46f) = *(undefined2 *)((int)param_1 + 0x26e);
-                  uVar4 = *(undefined4 *)((int)param_1 + 0x18);
+                  *(STTorpC **)((int)this + 0x46b) = param_1;
+                  *(undefined2 *)((int)this + 0x46f) = param_1->field_026E;
+                  uVar4 = *(undefined4 *)&param_1->field_0x18;
                   *(undefined4 *)((int)this + 0x471) = uVar4;
                   sVar1 = *(short *)((int)this + 0x4b);
                   uVar4 = CONCAT22((short)((uint)uVar4 >> 0x10),sVar1);
@@ -117,8 +122,8 @@ LAB_00460581:
                     iVar7 = (int)*(short *)((int)this + 0x49);
                     iVar3 = (int)*(short *)((int)this + 0x47);
                   }
-                  thunk_FUN_00481520(this,iVar3,iVar7,iVar6);
-                  iVar6 = thunk_FUN_0045ff50(this,0);
+                  STBoatC::sub_00481520(this,iVar3,iVar7,iVar6);
+                  iVar6 = STBoatC::sub_0045FF50(this,0);
                   if (iVar6 == -1) {
                     return -1;
                   }
@@ -140,7 +145,7 @@ LAB_00460581:
   }
   if (*(int *)((int)this + 0x82e) == 1) {
     *(int *)((int)this + 0x836) = *(int *)((int)this + 0x836) + 1;
-    iVar6 = thunk_FUN_0045ff50(this,2);
+    iVar6 = STBoatC::sub_0045FF50(this,2);
     if (iVar6 == -1) {
       return -1;
     }
@@ -159,9 +164,10 @@ LAB_00460581:
                        *(undefined2 *)((int)this + 0x49),-sVar1 + *(short *)((int)this + 0x4b));
     if (iVar6 == 1) {
       *(undefined4 *)((int)this + 0x82e) = 3;
-      thunk_FUN_00481520(this,(int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
-                         (int)*(short *)((int)this + 0x469) + (int)*(short *)((int)this + 0x4b));
-      iVar6 = thunk_FUN_0045ff50(this,0);
+      STBoatC::sub_00481520
+                (this,(int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
+                 (int)*(short *)((int)this + 0x469) + (int)*(short *)((int)this + 0x4b));
+      iVar6 = STBoatC::sub_0045FF50(this,0);
       if (iVar6 == -1) {
         return -1;
       }
@@ -172,7 +178,7 @@ LAB_00460581:
   }
   if (*(int *)((int)this + 0x82e) == 3) {
     *(int *)((int)this + 0x836) = *(int *)((int)this + 0x836) + 1;
-    iVar6 = thunk_FUN_0045ff50(this,2);
+    iVar6 = STBoatC::sub_0045FF50(this,2);
     if (iVar6 == -1) {
       return -1;
     }

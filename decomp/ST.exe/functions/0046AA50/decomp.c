@@ -6,9 +6,11 @@
    [STSwitchEnumApplier] Switch target field_04D5 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_04D5State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14
-    */
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0046AA50 -> 00415ED0 @ 0046AC9F | 0046AA50 -> 00415ED0 @ 0046AEAB */
 
-int __thiscall STBoatC::BackLoadRC(STBoatC *this,undefined4 param_1)
+int __thiscall STBoatC::BackLoadRC(STBoatC *this,int *param_1)
 
 {
   code *pcVar1;
@@ -36,14 +38,14 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,undefined4 param_1)
       iVar5 = thunk_FUN_004620f0((int *)this);
       return iVar5;
     }
-    iVar5 = thunk_FUN_00460360((int *)this);
+    iVar5 = sub_00460360(this);
     break;
   case CASE_3:
   case CASE_9:
     iVar5 = thunk_FUN_004620f0((int *)this);
     break;
   case CASE_5:
-    thunk_FUN_0048d930((int)this);
+    sub_0048D930(this);
     iVar5 = *(int *)&this->field_0x4d1 + 1;
     *(int *)&this->field_0x4d1 = iVar5;
     if (iVar5 < 0x47) {
@@ -55,12 +57,12 @@ LAB_0046acad:
     goto LAB_0046aaed;
   case CASE_6:
   case CASE_E:
-    iVar5 = thunk_FUN_00460360((int *)this);
+    iVar5 = sub_00460360(this);
     return iVar5;
   case CASE_B:
     iVar5 = *(int *)&this->field_0x4d9;
     if (((iVar5 == 0) || (iVar5 == 1)) || (iVar5 == 2)) {
-      thunk_FUN_0048d930((int)this);
+      sub_0048D930(this);
       iVar5 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar5 != 0);
     }
@@ -77,8 +79,8 @@ LAB_0046acad:
       *(undefined4 *)&this->field_0x4d9 = 4;
     }
     if (*(int *)&this->field_0x4d9 == 4) {
-      uVar4 = thunk_FUN_004176c0(this,*(short *)&this->field_0x4cb);
-      uVar4 = thunk_FUN_00417910(this,(short)uVar4);
+      uVar4 = sub_004176C0(this,*(short *)&this->field_0x4cb);
+      uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
           *(undefined4 *)&this->field_0x4d9 = 5;
@@ -96,19 +98,20 @@ LAB_0046acad:
     }
     else {
       if (*(int *)&this->field_0x4d9 == 5) {
-        thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                           *(short *)&this->field_0x4c5 * 0xc9 + 100,
-                           *(short *)&this->field_0x4c7 * 0xc9 + 100,
-                           *(short *)&this->field_0x4c9 * 200 + 100,this->field_0x61);
+        STJellyGunC::sub_00415B30
+                  ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                   *(short *)&this->field_0x4c5 * 0xc9 + 100,
+                   *(short *)&this->field_0x4c7 * 0xc9 + 100,
+                   *(short *)&this->field_0x4c9 * 200 + 100,this->field_0061);
         *(undefined4 *)&this->field_0x4d9 = 6;
       }
       if (*(int *)&this->field_0x4d9 != 6) {
         return 2;
       }
-      iVar5 = thunk_FUN_00415ed0(this,&local_8,&param_1);
+      iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 != -1) {
         if (iVar5 == 0) {
-          thunk_FUN_0048d930((int)this);
+          sub_0048D930(this);
           iVar5 = (*this->vtable->vfunc_D8)();
           return -(uint)(iVar5 != 0);
         }
@@ -125,7 +128,7 @@ LAB_0046acad:
     }
     goto LAB_0046ac10;
   case CASE_C:
-    thunk_FUN_0048d930((int)this);
+    sub_0048D930(this);
     pSVar6 = (STBoatC *)(*(int *)&this->field_0x4d1 + 1);
     *(STBoatC **)&this->field_0x4d1 = pSVar6;
     if ((int)pSVar6 < 0x47) goto cf_common_exit_0046ABCB;
@@ -145,8 +148,8 @@ LAB_0046acad:
       *(undefined4 *)&this->field_0x4d9 = 1;
     }
     if (*(int *)&this->field_0x4d9 == 1) {
-      uVar4 = thunk_FUN_004176c0(this,*(short *)&this->field_0x4cb);
-      uVar4 = thunk_FUN_00417910(this,(short)uVar4);
+      uVar4 = sub_004176C0(this,*(short *)&this->field_0x4cb);
+      uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
           *(undefined4 *)&this->field_0x4d9 = 2;
@@ -166,10 +169,11 @@ cf_common_exit_0046ABCB:
     }
     else {
       if (*(int *)&this->field_0x4d9 == 2) {
-        thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                           *(short *)&this->field_0x4c5 * 0xc9 + 100,
-                           *(short *)&this->field_0x4c7 * 0xc9 + 100,
-                           *(short *)&this->field_0x4c9 * 200 + 100,this->field_0x61);
+        STJellyGunC::sub_00415B30
+                  ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                   *(short *)&this->field_0x4c5 * 0xc9 + 100,
+                   *(short *)&this->field_0x4c7 * 0xc9 + 100,
+                   *(short *)&this->field_0x4c9 * 200 + 100,this->field_0061);
         *(undefined4 *)&this->field_0x4d9 = 3;
       }
       if (*(int *)&this->field_0x4d9 != 3) {
@@ -181,7 +185,7 @@ switchD_0046aa71_caseD_0:
         }
         return iVar5;
       }
-      iVar5 = thunk_FUN_00415ed0(this,&local_8,&param_1);
+      iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 != -1) {
         if (iVar5 != 0) {
           iVar5 = (*this->vtable->vfunc_D8)();
@@ -201,7 +205,8 @@ LAB_0046aaed:
       iVar5 = 0x2351;
     }
 LAB_0046ac10:
-    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5);
+    RaiseInternalException
+              (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5);
     return 0xffff;
   default:
     iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2367,0,0,&DAT_007a4ccc,
@@ -214,7 +219,7 @@ LAB_0046ac10:
     return iVar5;
   }
   if (iVar5 == 0) {
-    thunk_FUN_0048d930((int)this);
+    sub_0048D930(this);
   }
   return iVar5;
 }

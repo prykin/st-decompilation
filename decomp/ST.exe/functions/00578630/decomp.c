@@ -25,7 +25,10 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_80;
-  int local_3c [4];
+  LPVOID local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
+  undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -264,11 +267,11 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
     }
     Bad((STCrabC *)this_00,(int)unaff_EDI);
     if (((((*(int *)&this_00->field_0x26d < 0) ||
-          ((int)DAT_007fb240 <= *(int *)&this_00->field_0x26d)) ||
+          ((int)SHORT_007fb240 <= *(int *)&this_00->field_0x26d)) ||
          (*(int *)&this_00->field_0x271 < 0)) ||
-        (((int)DAT_007fb242 <= *(int *)&this_00->field_0x271 ||
+        (((int)SHORT_007fb242 <= *(int *)&this_00->field_0x271 ||
          (iVar7 = *(int *)&this_00->field_0x275, iVar7 < 0)))) ||
-       ((DAT_007fb244 <= iVar7 ||
+       ((SHORT_007fb244 <= iVar7 ||
         (bVar5 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
                                     (short)iVar7), CONCAT31(extraout_var,bVar5) == 0)))) {
       thunk_FUN_005783f0(this_00);
@@ -278,30 +281,33 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
       switch(*(undefined4 *)&this_00->field_0x279) {
       case 0xf2:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                           (byte *)s_crab1l_007cacb0,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab1l_007cacb0,0x1d
+                          );
         if (iVar7 != 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,0xd2);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xd2);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,
-                           (byte *)s_crab1l_m_007cacb8,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab1l_m_007cacb8,
+                           0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xd5;
 cf_error_exit_00578B5D:
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,iVar7);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,iVar7);
         }
         break;
       case 0xf3:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                           (byte *)s_crab2l_007cacc4,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab2l_007cacc4,0x1d
+                          );
         if (iVar7 != 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,0xda);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xda);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,
-                           (byte *)s_crab2l_m_007caccc,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab2l_m_007caccc,
+                           0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xdd;
           goto cf_error_exit_00578B5D;
@@ -309,14 +315,15 @@ cf_error_exit_00578B5D:
         break;
       case 0xf4:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                           (byte *)s_crab1b_007cacd8,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab1b_007cacd8,0x1d
+                          );
         if (iVar7 != 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,0xe2);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xe2);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,
-                           (byte *)s_crab1b_m_007cace0,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab1b_m_007cace0,
+                           0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xe5;
           goto cf_error_exit_00578B5D;
@@ -324,14 +331,15 @@ cf_error_exit_00578B5D:
         break;
       case 0xf5:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                           (byte *)s_crab2b_007cacec,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab2b_007cacec,0x1d
+                          );
         if (iVar7 != 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,0xea);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xea);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,
-                           (byte *)s_crab2b_m_007cacf4,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab2b_m_007cacf4,
+                           0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xed;
           goto cf_error_exit_00578B5D;
@@ -339,14 +347,15 @@ cf_error_exit_00578B5D:
         break;
       case 0xf6:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                           (byte *)s_langus2_007cad14,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_langus2_007cad14,
+                           0x1d);
         if (iVar7 != 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,0xfa);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xfa);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,
-                           (byte *)s_langus2m_007cad1c,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_langus2m_007cad1c,
+                           0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xfd;
           goto cf_error_exit_00578B5D;
@@ -354,14 +363,15 @@ cf_error_exit_00578B5D:
         break;
       case 0xf7:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                           (byte *)s_langus1_007cad00,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_langus1_007cad00,
+                           0x1d);
         if (iVar7 != 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,0xf2);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xf2);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,
-                           (byte *)s_langus1m_007cad08,0x1d);
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_langus1m_007cad08,
+                           0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xf5;
           goto cf_error_exit_00578B5D;
@@ -421,21 +431,21 @@ cf_error_exit_00578B5D:
     *(undefined2 *)&this_00->field_0x50 = *(undefined2 *)(local_20 + 0x16);
     *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)((int)local_20 + 0x5a);
     *(undefined4 *)&this_00->field_0x23d = local_20[0xc];
-    local_3c[0] = Library::DKW::LIB::FUN_006aac70(0x44);
-    if (local_3c[0] != 0) {
+    local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+    if (local_3c != (LPVOID)0x0) {
       iVar7 = 0;
       do {
-        *(int **)(iVar7 + local_3c[0]) = DAT_0080676c;
+        *(int **)(iVar7 + (int)local_3c) = DAT_0080676c;
         iVar7 = iVar7 + 4;
       } while (iVar7 < 0x44);
-      local_3c[1] = 0;
-      local_3c[2] = 0;
-      local_3c[3] = DAT_008073cc;
+      local_38 = 0;
+      local_34 = 0;
+      local_30 = DAT_008073cc;
       local_2c = 0;
       local_28 = 0;
       local_24 = 0;
-      STT3DSprC::RestoreSpr((STT3DSprC *)&this_00->field_01D5,local_3c,puVar11 + 0x19);
-      FUN_006ab060(local_3c);
+      STT3DSprC::RestoreSpr((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,puVar11 + 0x19);
+      FUN_006ab060(&local_3c);
     }
   }
   if (*(int *)&this_00->field_0x239 == 3) {

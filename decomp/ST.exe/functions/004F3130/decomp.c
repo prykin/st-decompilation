@@ -1,11 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::CreateBut */
+   CPanelTy::CreateBut
+   
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 0050E7D0 -> 004F3130 @ 0050EC8C | 0050E7D0 -> 004F3130 @ 0050ECDA | 0050E7D0 ->
+   004F3130 @ 0050EF83 | 0050E7D0 -> 004F3130 @ 0050EFC5 | 0050E7D0 -> 004F3130 @ 0050F00A |
+   0050E7D0 -> 004F3130 @ 0050F04F */
 
 undefined4 __thiscall
 CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int param_4,
-                   int param_5,byte param_6,int param_7,undefined4 param_8,undefined4 param_9,
+                   int param_5,byte param_6,char *text,undefined4 param_8,undefined4 param_9,
                    short param_10,undefined2 param_11,int param_12,char *param_13,int param_14,
                    undefined4 param_15,undefined4 param_16)
 
@@ -71,8 +76,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     }
     local_18c[1] = param_2;
     local_18c[0] = param_3;
-    if (param_7 != 0) {
-      wsprintfA(&pCVar3->field_0x1e1,&DAT_007c181c,param_7);
+    if (text != (char *)0x0) {
+      wsprintfA(&pCVar3->field_0x1e1,&DAT_007c181c,text);
       local_8 = cMf32::RecGet(DAT_00806790,param_6,&pCVar3->field_0x1e1,(int *)0x0,1);
     }
     if (param_6 == 1) {

@@ -4,8 +4,7 @@
    STAllPlayersC::DelObjsFromTmp */
 
 undefined4 __thiscall
-STAllPlayersC::DelObjsFromTmp
-          (STAllPlayersC *this,undefined4 param_1,uint param_2,int param_3,int param_4)
+STAllPlayersC::DelObjsFromTmp(STAllPlayersC *this,uint param_1,uint param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
@@ -27,7 +26,8 @@ STAllPlayersC::DelObjsFromTmp
   if (errorCode == 0) {
     if (param_4 == 0) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2b4);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x2b4);
     }
     local_10 = *(int *)(param_4 + 0xc);
     uVar4 = 0;

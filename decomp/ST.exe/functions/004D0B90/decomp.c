@@ -85,8 +85,8 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
                             ,(int)pSVar3);
             if (exceptionCode != 0) {
               RaiseInternalException
-                        (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x326)
-              ;
+                        (exceptionCode,g_overwriteContext_007ED77C,
+                         s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x326);
             }
             iVar4 = iVar4 + 1;
             iVar7 = iVar7 + 0xc;
@@ -99,7 +99,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
     DAT_00800bcc = (STSprGameObjC *)0x0;
     thunk_FUN_004ad310((int)&pSVar3->field_01D5);
     if (*(int *)&pSVar3->field_0x24d != 0) {
-      FUN_006ab060((undefined4 *)&pSVar3->field_0x24d);
+      FUN_006ab060((LPVOID *)&pSVar3->field_0x24d);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

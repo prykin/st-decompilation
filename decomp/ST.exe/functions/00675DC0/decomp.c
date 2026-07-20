@@ -1,37 +1,42 @@
 
-void __cdecl FUN_00675dc0(uint param_1,int param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00652810 -> 00675DC0 @ 00656B05 | 00652810 -> 00675DC0 @ 00656BF9 | 00652810 ->
+   00675DC0 @ 00656CED | 0065E6C0 -> 00675DC0 @ 0065E6DB | 00675EA0 -> 00675DC0 @ 00675F34 */
+
+void __cdecl FUN_00675dc0(uint param_1,uint *param_2)
 
 {
-  undefined2 *puVar1;
-  int *piVar2;
-  int iVar3;
-  uint uVar4;
+  uint uVar1;
+  undefined2 *puVar2;
+  int *piVar3;
+  int iVar4;
   uint uVar5;
+  uint uVar6;
   
-  if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (param_2 != 0)) &&
-     (iVar3 = *(int *)(param_2 + 0xc), iVar3 != 0)) {
-    uVar5 = 0;
-    if (iVar3 != 0) {
-      uVar4 = 0;
-      if (iVar3 == 0) {
-        puVar1 = (undefined2 *)0x0;
+  if (((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) && (param_2 != (uint *)0x0)) &&
+     (uVar1 = param_2[3], uVar1 != 0)) {
+    uVar6 = 0;
+    if (uVar1 != 0) {
+      uVar5 = 0;
+      if (uVar1 == 0) {
+        puVar2 = (undefined2 *)0x0;
         goto LAB_00675dfe;
       }
       do {
-        puVar1 = (undefined2 *)(*(int *)(param_2 + 8) * uVar4 + *(int *)(param_2 + 0x1c));
+        puVar2 = (undefined2 *)(param_2[2] * uVar5 + param_2[7]);
 LAB_00675dfe:
-        piVar2 = (int *)STAllPlayersC::GetObjPtr
-                                  (DAT_007fa174,param_1,
-                                   CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
-        if (((piVar2 != (int *)0x0) && (iVar3 = (**(code **)(*piVar2 + 0x2c))(), iVar3 == 0x78)) &&
-           (iVar3 = (**(code **)(*piVar2 + 0x2c))(), iVar3 == 0x78)) {
-          *(undefined4 *)((int)piVar2 + 0x269) = 0xffffffff;
+        piVar3 = (int *)STAllPlayersC::GetObjPtr
+                                  (g_sTAllPlayers_007FA174,param_1,
+                                   CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),CASE_1);
+        if (((piVar3 != (int *)0x0) && (iVar4 = (**(code **)(*piVar3 + 0x2c))(), iVar4 == 0x78)) &&
+           (iVar4 = (**(code **)(*piVar3 + 0x2c))(), iVar4 == 0x78)) {
+          *(undefined4 *)((int)piVar3 + 0x269) = 0xffffffff;
         }
-        uVar5 = uVar5 + 1;
-        uVar4 = uVar5 & 0xffff;
-      } while (uVar4 < *(uint *)(param_2 + 0xc));
+        uVar6 = uVar6 + 1;
+        uVar5 = uVar6 & 0xffff;
+      } while (uVar5 < param_2[3]);
     }
-    STAllPlayersC::AddObjsToGroup(DAT_007fa174,param_1,0,param_2,(undefined2 *)0x0);
+    STAllPlayersC::AddObjsToGroup(g_sTAllPlayers_007FA174,param_1,0,param_2,(undefined2 *)0x0);
   }
   return;
 }

@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004eaa20(int *param_1)
   int iVar2;
   uint uVar3;
   uint uVar4;
-  byte local_108 [256];
+  CHAR local_108 [256];
   int local_8;
   
   if (*(int *)((int)param_1 + 0x5ff) == 0) {
@@ -27,7 +27,8 @@ undefined4 __fastcall FUN_004eaa20(int *param_1)
     *(STT3DSprC **)((int)param_1 + 0x5ff) = this;
     iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
-      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_Artem_TLO_tls_cpp_007c159c,0x56);
+      RaiseInternalException
+                (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_tls_cpp_007c159c,0x56);
     }
   }
   switch(*(undefined4 *)((int)param_1 + 0x245)) {
@@ -54,11 +55,12 @@ undefined4 __fastcall FUN_004eaa20(int *param_1)
     thunk_FUN_004ad430(*(int *)((int)param_1 + 0x5ff));
     return 0;
   }
-  wsprintfA((LPSTR)local_108,&DAT_007a4ccc,s_trmmine_007c1590);
+  wsprintfA(local_108,&DAT_007a4ccc,s_trmmine_007c1590);
   iVar2 = STT3DSprC::LoadSequence
                     (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,DAT_00806774,local_108,0x1d);
   if (iVar2 != 0) {
-    RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_Artem_TLO_tls_cpp_007c159c,99);
+    RaiseInternalException
+              (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_tls_cpp_007c159c,99);
   }
   uVar4 = 10;
   iVar2 = thunk_FUN_004ad650((int)param_1 + 0x1d5);

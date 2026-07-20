@@ -50,11 +50,11 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
     local_8 = 0;
   }
   local_18 = iVar6 + 1;
-  if ((int)DAT_007fb240 <= iVar6 + 1) {
+  if ((int)SHORT_007fb240 <= iVar6 + 1) {
     local_18 = iVar6;
   }
   local_14 = iVar8 + 1;
-  if ((int)DAT_007fb242 <= iVar8 + 1) {
+  if ((int)SHORT_007fb242 <= iVar8 + 1) {
     local_14 = iVar8;
   }
   switch(*(undefined2 *)((int)this + 0x6c)) {
@@ -211,14 +211,14 @@ LAB_00579bdd:
     iVar3 = 0;
   }
 switchD_0057988b_default:
-  if (DAT_007fb240 <= iVar3) {
-    iVar3 = DAT_007fb240 + -1;
+  if (SHORT_007fb240 <= iVar3) {
+    iVar3 = SHORT_007fb240 + -1;
   }
   if (iVar9 < 0) {
     iVar9 = 0;
   }
-  if (DAT_007fb242 <= iVar9) {
-    iVar9 = DAT_007fb242 + -1;
+  if (SHORT_007fb242 <= iVar9) {
+    iVar9 = SHORT_007fb242 + -1;
   }
   sVar4 = *(short *)((int)this + 0x45);
   if (sVar4 < 0) {
@@ -240,12 +240,12 @@ switchD_0057988b_default:
           if ((int)uVar1 < 0) {
             pvVar2 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
             if ((pvVar2 == (void *)0x0) &&
-               (((((sVar4 < 0 || (DAT_007fb240 <= sVar4)) || ((short)local_8 < 0)) ||
-                 ((DAT_007fb242 <= (short)local_8 || (local_10 < 0)))) ||
-                ((DAT_007fb244 <= local_10 ||
+               (((((sVar4 < 0 || (SHORT_007fb240 <= sVar4)) || ((short)local_8 < 0)) ||
+                 ((SHORT_007fb242 <= (short)local_8 || (local_10 < 0)))) ||
+                ((SHORT_007fb244 <= local_10 ||
                  (*(int *)(DAT_007fb248 +
-                          ((int)DAT_007fb240 * (int)(short)local_8 +
-                          (int)sVar4 + (int)DAT_007fb246 * (int)local_10) * 8) == 0)))))) {
+                          ((int)SHORT_007fb240 * (int)(short)local_8 +
+                          (int)sVar4 + (int)SHORT_007fb246 * (int)local_10) * 8) == 0)))))) {
               if ((*(short *)((int)this + 0x47) != iVar3) ||
                  (*(short *)((int)this + 0x49) != local_8)) {
                 *param_1 = (short)local_14;

@@ -53,16 +53,16 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
   }
   iVar5 = local_10;
   local_8 = *(int *)((int)this + 0x286) + 1 + param_1;
-  if (DAT_007fb240 <= local_8) {
-    local_8 = DAT_007fb240 + -1;
+  if (SHORT_007fb240 <= local_8) {
+    local_8 = SHORT_007fb240 + -1;
   }
   local_c = *(int *)((int)this + 0x28a) - param_1;
   if (local_c < 0) {
     local_c = 0;
   }
   local_14 = *(int *)((int)this + 0x28a) + 1 + param_1;
-  if (DAT_007fb240 <= local_14) {
-    local_14 = DAT_007fb242 + -1;
+  if (SHORT_007fb240 <= local_14) {
+    local_14 = SHORT_007fb242 + -1;
   }
   local_2a = 0;
   (**(code **)(*DAT_00802a38 + 8))(0x10c,0,0,local_48,0);

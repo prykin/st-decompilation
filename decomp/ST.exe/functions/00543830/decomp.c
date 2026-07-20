@@ -26,13 +26,13 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     }
     pCVar2->field_04D6 = 0xffffffff;
     if (pCVar2->field_04D2 != 0) {
-      FUN_006ab060(&pCVar2->field_04D2);
+      FUN_006ab060((LPVOID *)&pCVar2->field_04D2);
     }
     pCVar2->field_04E3 = 0;
     pCVar2->field_04E7 = 0;
     if (pCVar2->field_04EB != (SpriteClassTy *)0x0) {
       SpriteClassTy::CloseSprite(pCVar2->field_04EB);
-      Library::MSVCRT::FUN_0072e2b0(&pCVar2->field_04EB->vtable);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar2->field_04EB);
       pCVar2->field_04EB = (SpriteClassTy *)0x0;
     }
     if ((int *)pCVar2->field_00AD != (int *)0x0) {

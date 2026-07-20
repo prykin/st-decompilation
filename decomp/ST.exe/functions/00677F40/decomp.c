@@ -46,7 +46,8 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
     return iVar3;
   }
   if (DAT_007fa154 == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x3e1);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x3e1);
   }
   local_10 = *(int *)(DAT_007fa154 + 0xc) - 1;
   if ((int)local_10 < 0) {

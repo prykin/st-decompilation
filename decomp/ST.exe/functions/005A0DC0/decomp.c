@@ -47,11 +47,11 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
       ccFntTy::SetSurf(pFVar3->field_1A73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
       if (param_1 < param_2) {
         iVar4 = (param_1 * 100) / param_2;
-        uVar6 = FUN_006b0140(0x2571,DAT_00807618);
+        uVar6 = FUN_006b0140(0x2571,HINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s_d___007cc3ec,uVar6,iVar4);
       }
       else {
-        pcVar7 = (char *)FUN_006b0140(0x2570,DAT_00807618);
+        pcVar7 = (char *)FUN_006b0140(0x2570,HINSTANCE_00807618);
         uVar10 = 0xffffffff;
         do {
           pcVar11 = pcVar7;

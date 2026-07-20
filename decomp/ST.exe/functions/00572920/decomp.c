@@ -53,7 +53,7 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
                       (undefined4 *)0x0,'\0',(uint *)0x0);
         cMf32::RecPut(this_00,0xc,PTR_s_LASTPSW_0079b0ec,(byte *)((int)pvVar1 + 0x805),9,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
-        cMf32::delete(this_01,(undefined4 *)this_00);
+        cMf32::delete(this_01,this_00);
       }
       g_currentExceptionFrame = local_54.previous;
     }

@@ -2,88 +2,89 @@
 undefined4 * FUN_005b2790(void)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
+  STGroupBoatC *this;
+  int iVar1;
+  undefined4 *puVar2;
+  SpriteClassTy *this_00;
   undefined4 *puVar3;
-  undefined4 *unaff_EDI;
-  SpriteClassTy *this;
-  undefined4 *puVar4;
   int local_8;
   
-  puVar1 = FUN_006b04d0(0x20c4);
-  if (puVar1 != (undefined4 *)0x0) {
-    FUN_006e5fb0(puVar1);
-    *puVar1 = &PTR_FUN_0079c018;
-    puVar1[6] = 0;
-    *(undefined4 *)((int)puVar1 + 0x5d) = 0;
-    puVar3 = (undefined4 *)((int)puVar1 + 0x1d);
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0;
-      puVar3 = puVar3 + 1;
+  this = (STGroupBoatC *)FUN_006b04d0(0x20c4);
+  if (this != (STGroupBoatC *)0x0) {
+    STGroupBoatC::sub_006E5FB0(this);
+    this->vtable = (STGroupBoatCVTable *)&PTR_FUN_0079c018;
+    this->field_0018 = 0;
+    this->field_005D = 0;
+    puVar2 = (undefined4 *)((int)&this->field_001C + 1);
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *puVar2 = 0;
+      puVar2 = puVar2 + 1;
     }
-    puVar3 = (undefined4 *)((int)puVar1 + 0x3d);
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0;
-      puVar3 = puVar3 + 1;
+    puVar2 = &this->field_003D;
+    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *puVar2 = 0;
+      puVar2 = puVar2 + 1;
     }
     DAT_0080879c = 0;
-    this = (SpriteClassTy *)(puVar1 + 0x5d);
+    this_00 = (SpriteClassTy *)&this->field_0174;
     local_8 = 0xd;
     do {
-      SpriteClassTy::SpriteClassTy(this + -1,unaff_EDI);
-      SpriteClassTy::SpriteClassTy(this,unaff_EDI);
-      SpriteClassTy::SpriteClassTy(this + 1,unaff_EDI);
-      this = (SpriteClassTy *)&this[3].field_0048;
+      SpriteClassTy::SpriteClassTy(this_00 + -1);
+      SpriteClassTy::SpriteClassTy(this_00);
+      SpriteClassTy::SpriteClassTy(this_00 + 1);
+      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    *puVar1 = &MMObjTyVTable;
-    *(undefined1 *)((int)puVar1 + 0x65) = 2;
-    *(undefined1 *)((int)puVar1 + 0x9a) = 0;
-    puVar3 = (undefined4 *)((int)puVar1 + 0x66);
-    for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0;
-      puVar3 = puVar3 + 1;
+    this->vtable = (STGroupBoatCVTable *)&MMObjTyVTable;
+    *(undefined1 *)&this->field_0065 = 2;
+    this->field_0x9a = 0;
+    puVar2 = (undefined4 *)((int)&this->field_0065 + 1);
+    for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *puVar2 = 0;
+      puVar2 = puVar2 + 1;
     }
     local_8 = 0xd;
-    puVar3 = puVar1 + 0x2f;
+    puVar2 = (undefined4 *)&this->field_0xbc;
     do {
-      puVar4 = puVar3;
-      for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar4 = 0;
-        puVar4 = puVar4 + 1;
+      puVar3 = puVar2;
+      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *puVar3 = 0;
+        puVar3 = puVar3 + 1;
       }
-      *(undefined2 *)puVar4 = 0;
-      *(undefined1 *)((int)puVar4 + 2) = 0;
+      *(undefined2 *)puVar3 = 0;
+      *(undefined1 *)((int)puVar3 + 2) = 0;
       local_8 = local_8 + -1;
-      puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
+      puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
     } while (local_8 != 0);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)(puVar1 + 0x69c),unaff_EDI);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)puVar1 + 0x1b01),unaff_EDI);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)puVar1 + 0x1b92),unaff_EDI);
-    *puVar1 = &PTR_LAB_0079c088;
-    puVar1[0x698] = 1;
-    puVar1[0x69b] = 0;
-    puVar3 = (undefined4 *)((int)puVar1 + 0x1c23);
-    for (iVar2 = 0x16; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0xffffffff;
-      puVar3 = puVar3 + 1;
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)&this[8].field_01DE + 2));
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)&this[8].field_0270 + 1));
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this[8].field_0302);
+    this->vtable = (STGroupBoatCVTable *)&PTR_LAB_0079c088;
+    *(undefined4 *)((int)&this[8].field_01CE + 2) = 1;
+    *(undefined4 *)((int)&this[8].field_01DA + 2) = 0;
+    puVar2 = (undefined4 *)&this[9].field_0x81;
+    for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *puVar2 = 0xffffffff;
+      puVar2 = puVar2 + 1;
     }
-    *(undefined4 *)((int)puVar1 + 0x1c87) = 0xffffffff;
-    *(undefined4 *)((int)puVar1 + 0x1c7b) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c7f) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c97) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c9b) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c9f) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c8f) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c93) = 0;
-    puVar1[0x830] = 0;
-    puVar1[0x82f] = 0;
-    puVar1[0x82e] = 0;
-    puVar1[0x699] = 0;
-    puVar1[0x69a] = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c83) = 0;
-    *(undefined4 *)((int)puVar1 + 0x1c8b) = 0;
-    return puVar1;
+    *(undefined4 *)&this[9].field_0xe5 = 0xffffffff;
+    *(undefined4 *)&this[9].field_0xd9 = 0;
+    *(undefined4 *)&this[9].field_0xdd = 0;
+    this[9].field_00F5 = 0;
+    this[9].field_00F7 = 0;
+    this[9].field_00F9 = 0;
+    this[9].field_00FB = 0;
+    *(undefined4 *)&this[9].field_00FD = 0;
+    *(undefined4 *)((int)&this[9].field_00EB + 2) = 0;
+    *(undefined4 *)((int)&this[9].field_00EF + 2) = 0;
+    *(undefined4 *)((int)&this[10].field_020A + 2) = 0;
+    *(undefined4 *)&this[10].field_0x208 = 0;
+    *(undefined4 *)&this[10].field_0x204 = 0;
+    *(undefined4 *)((int)&this[8].field_01D2 + 2) = 0;
+    *(undefined4 *)((int)&this[8].field_01D6 + 2) = 0;
+    *(undefined4 *)&this[9].field_0xe1 = 0;
+    *(undefined4 *)((int)&this[9].field_00E7 + 2) = 0;
+    return &this->vtable;
   }
   return (undefined4 *)0x0;
 }

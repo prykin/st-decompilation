@@ -41,8 +41,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     (*pcVar2)();
     return;
   }
-  if (DAT_00806754 != (cMf32 *)0x0) {
-    local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,s_opticsave_007ac5d4,0,0);
+  if (g_cMf32_00806754 != (cMf32 *)0x0) {
+    local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,s_opticsave_007ac5d4,0,0);
   }
   if (local_c == (ushort *)0x0) {
     DAT_00807400 = DAT_00807568;
@@ -136,7 +136,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
+  cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
   g_currentExceptionFrame = local_5c.previous;
   return;
 }

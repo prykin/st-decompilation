@@ -65,7 +65,9 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
     while( true ) {
       if ((*(char *)((int)psVar7 + -1) == '\a') && (*psVar7 == 0x1d)) {
         if (local_c[1] != 1) {
-          RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x570);
+          RaiseInternalException
+                    (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x570
+                    );
         }
         if (param_3 != (int *)0x0) {
           *param_3 = (int)local_20 + 1;
@@ -95,8 +97,9 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         case 6:
           fVar6 = (float)(**(code **)(*local_24 + 8))(puVar2);
           if (fVar6 == 0.0) {
-            RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x585)
-            ;
+            RaiseInternalException
+                      (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,
+                       0x585);
           }
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *local_18 = fVar6;
@@ -105,7 +108,9 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           }
           break;
         default:
-          RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x58b);
+          RaiseInternalException
+                    (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x58b
+                    );
         }
         thunk_FUN_0064a800(&local_c);
         g_currentExceptionFrame = local_70.previous;
@@ -119,7 +124,8 @@ cf_continue_loop_006721A4:
     }
     iVar3 = (local_c[1] - (int)psVar7[1]) + -1;
     if (iVar3 < 0) {
-      RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x53e);
+      RaiseInternalException
+                (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x53e);
     }
     if ((local_10 == 0) && (local_14 == 0)) {
       iVar4 = thunk_FUN_006686f0((int)*psVar7);
@@ -142,12 +148,15 @@ cf_continue_loop_006721A4:
       *local_8 = (float)(uint)(local_10 == 0);
     }
     if (local_8 == (float *)0x0) {
-      RaiseInternalException(local_1c,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x56c);
+      RaiseInternalException
+                (local_1c,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x56c)
+      ;
       goto cf_continue_loop_006721A4;
     }
     iVar3 = thunk_FUN_0064a940((int)local_c,iVar3);
     if (iVar3 == 0) {
-      RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x54c);
+      RaiseInternalException
+                (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x54c);
     }
     if (local_1c == 1) {
       local_2c = 1;
@@ -160,13 +169,15 @@ cf_continue_loop_006721A4:
     else if (local_1c == 3) {
       iVar3 = (**(code **)(*local_24 + 0xc))(local_8);
       if (iVar3 < 0) {
-        RaiseInternalException(-2,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x559);
+        RaiseInternalException
+                  (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x559);
       }
       local_2c = 3;
       local_2b = (float)CONCAT22(local_2b._2_2_,(short)iVar3);
     }
     else {
-      RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x55e);
+      RaiseInternalException
+                (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x55e);
     }
     thunk_FUN_0064a830(local_c,(undefined4 *)&local_2c);
     FUN_006ab060(&local_8);

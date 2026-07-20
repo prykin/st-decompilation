@@ -1,9 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::ReMakePVecAndTgtList */
+   STGroupBoatC::ReMakePVecAndTgtList
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004999C0 -> 00499750 @ 00499AA8 */
 
-undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int param_1)
+undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -16,7 +19,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
   void *unaff_EDI;
   uint uVar7;
   InternalExceptionFrame local_58;
-  int local_14;
+  uint local_14;
   STGroupBoatC *local_10;
   undefined4 local_c;
   undefined4 local_8;
@@ -28,14 +31,15 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
   pSVar2 = local_10;
   if (iVar3 == 0) {
     if (local_10->field_0212 == 0) {
-      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4d7)
-      ;
+      RaiseInternalException
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x4d7);
     }
     uVar7 = 0;
-    local_14 = *(int *)(param_1 + 0xc);
-    if (0 < local_14) {
+    local_14 = param_1[3];
+    if (0 < (int)local_14) {
       do {
-        FUN_006acc70(param_1,uVar7,&local_c);
+        FUN_006acc70((int)param_1,uVar7,&local_c);
         FUN_006acc70(pSVar2->field_020E,(int)local_c._2_2_,&local_8);
         if (local_8._2_2_ != -1) {
           local_8._2_2_ = -1;
@@ -44,14 +48,15 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
           *(undefined4 *)(pSVar2->field_021E + local_c._2_2_ * 8) = 0xffffffff;
         }
         uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < local_14);
+      } while ((int)uVar7 < (int)local_14);
     }
     if (pSVar2->field_0212 == 0) {
       FUN_006ae110((byte *)pSVar2->field_020E);
       pSVar2->field_020E = 0;
-      FUN_006ab060(&pSVar2->field_021E);
-      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4e5)
-      ;
+      FUN_006ab060((LPVOID *)&pSVar2->field_021E);
+      RaiseInternalException
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x4e5);
     }
     iVar6 = -1;
     iVar3 = 0;

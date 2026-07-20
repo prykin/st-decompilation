@@ -22,8 +22,8 @@ undefined4 FUN_0074736a(int param_1,undefined4 *param_2,short *param_3)
       (**(code **)(*piVar1 + 8))(piVar1);
     }
   }
-  if (*(undefined4 **)(param_1 + 0x30) != (undefined4 *)0x0) {
-    Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(param_1 + 0x30));
+  if (*(HoloTy **)(param_1 + 0x30) != (HoloTy *)0x0) {
+    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x30));
     *(undefined4 *)(param_1 + 0x30) = 0;
   }
   if (param_3 != (short *)0x0) {

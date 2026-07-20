@@ -69,7 +69,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
     FUN_006e6710(*(void **)((int)this + 0x211),
                  (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
                  (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)((int)this + 0x105) * _DAT_007904f8 + _DAT_007904f4,0x16,
+                 (uint)((float)*(int *)((int)this + 0x105) * _DAT_007904f8 + _DAT_007904f4),0x16,
                  (*(uint *)((int)this + 0x18) >> 0x10 & 0xff) << 0x10 |
                  (uint)*(ushort *)((int)this + 0x18));
   }
@@ -77,7 +77,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
     FUN_006e6710(*(void **)((int)this + 0x211),
                  (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
                  (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)((int)this + 0x109) * _DAT_007904f8 + _DAT_007904f4,0x10,
+                 (uint)((float)*(int *)((int)this + 0x109) * _DAT_007904f8 + _DAT_007904f4),0x10,
                  CONCAT22(CONCAT11(1,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
                           *(undefined2 *)((int)this + 0x18)));
   }
@@ -85,7 +85,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
     FUN_006e6710(*(void **)((int)this + 0x211),
                  (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
                  (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)((int)this + 0x10d) * _DAT_007904f8 + _DAT_007904f4,0x28,
+                 (uint)((float)*(int *)((int)this + 0x10d) * _DAT_007904f8 + _DAT_007904f4),0x28,
                  CONCAT22(CONCAT11(2,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
                           *(undefined2 *)((int)this + 0x18)));
   }
@@ -93,7 +93,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
     FUN_006e6710(*(void **)((int)this + 0x211),
                  (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
                  (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)((int)this + 0x111) * _DAT_007904f8 + _DAT_007904f4,0x22,
+                 (uint)((float)*(int *)((int)this + 0x111) * _DAT_007904f8 + _DAT_007904f4),0x22,
                  CONCAT22(CONCAT11(3,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
                           *(undefined2 *)((int)this + 0x18)));
   }
@@ -127,8 +127,8 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
     fVar4 = (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0;
     fVar1 = (float)(int)*(short *)((int)this + 0x41);
   }
-  FUN_006e6710(*(void **)((int)this + 0x211),fVar1 * _DAT_007904f8 * _DAT_007904f0,fVar4,fVar5,0x2e,
-               iVar3);
+  FUN_006e6710(*(void **)((int)this + 0x211),fVar1 * _DAT_007904f8 * _DAT_007904f0,fVar4,(uint)fVar5
+               ,0x2e,iVar3);
   return;
 }
 

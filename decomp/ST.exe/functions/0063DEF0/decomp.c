@@ -29,7 +29,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,s_expl_nb0_007d1f50,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       FUN_006e8660((void *)pSVar2->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
@@ -48,7 +48,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
     }
     if ((pSVar2->field_0353 == -1) && (param_1 != 0)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,s_expl_fla_007d1f5c,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       pSVar2->field_034B = puVar3;
       pSVar2->field_034F = 0;

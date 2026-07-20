@@ -19,9 +19,9 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
       param_5 = thunk_FUN_004969f0(param_1,param_2,uVar1,param_4,param_5,pvVar2,0xffffffff);
       if ((&DAT_007fb24c)[uVar1] == 0) {
         puVar5 = (undefined4 *)
-                 Library::DKW::LIB::FUN_006aac70((int)DAT_007fb232 * (int)DAT_007fb230);
-        iVar4 = (int)DAT_007fb232;
-        iVar6 = (int)DAT_007fb230;
+                 Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb232 * (int)SHORT_007fb230);
+        iVar4 = (int)SHORT_007fb232;
+        iVar6 = (int)SHORT_007fb230;
         (&DAT_007fb24c)[uVar1] = puVar5;
         for (uVar3 = (uint)(iVar4 * iVar6) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *puVar5 = 0;

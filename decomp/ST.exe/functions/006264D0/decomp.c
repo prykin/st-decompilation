@@ -45,12 +45,12 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   undefined3 uStack_43;
   undefined4 local_40;
   int local_3c;
-  undefined4 local_38;
+  int local_38;
   int local_34;
   int local_30;
   int local_2c;
   undefined4 local_28;
-  undefined4 local_24;
+  int local_24;
   undefined4 local_20;
   int local_1c;
   int *local_18;
@@ -75,8 +75,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   if (param_1 == (int *)0x0) {
     return 0;
   }
-  thunk_FUN_00416270(param_1,(undefined2 *)&local_28,(undefined2 *)&local_24,(undefined2 *)&local_38
-                    );
+  thunk_FUN_00416270(param_1,(undefined2 *)&local_28,&local_24,&local_38);
   iVar13 = (int)sVar12;
   iVar16 = (int)sVar14;
   iVar7 = FUN_006acf0d((int)sVar9,iVar16,iVar13,(int)(short)local_28,(int)(short)local_24,
@@ -148,16 +147,16 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
                                 (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
           }
           sVar9 = (short)iVar7;
-          if (((((sVar9 < 0) || (DAT_007fb240 <= sVar9)) || (sVar12 = (short)iVar16, sVar12 < 0)) ||
-              ((DAT_007fb242 <= sVar12 || (sVar14 = (short)iVar8, sVar14 < 0)))) ||
-             ((DAT_007fb244 <= sVar14 ||
+          if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar12 = (short)iVar16, sVar12 < 0))
+              || ((SHORT_007fb242 <= sVar12 || (sVar14 = (short)iVar8, sVar14 < 0)))) ||
+             ((SHORT_007fb244 <= sVar14 ||
               (piVar3 = *(int **)(DAT_007fb248 +
-                                 ((int)DAT_007fb246 * (int)sVar14 + (int)DAT_007fb240 * (int)sVar12
-                                 + (int)sVar9) * 8), piVar11 = local_18, iVar13 = local_c,
-              piVar3 == (int *)0x0)))) {
+                                 ((int)SHORT_007fb246 * (int)sVar14 +
+                                  (int)SHORT_007fb240 * (int)sVar12 + (int)sVar9) * 8),
+              piVar11 = local_18, iVar13 = local_c, piVar3 == (int *)0x0)))) {
             piVar10 = piVar11;
-            if (*(short *)(DAT_007fb280 + (DAT_007fb278 * iVar16 + iVar7 + DAT_007fb27e * iVar8) * 2
-                          ) < 0) {
+            if (*(short *)(DAT_007fb280 +
+                          (SHORT_007fb278 * iVar16 + iVar7 + SHORT_007fb27e * iVar8) * 2) < 0) {
               return 0;
             }
           }

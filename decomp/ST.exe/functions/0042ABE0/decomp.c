@@ -21,7 +21,7 @@ STAllPlayersC::GetGObjFromZone2
   void *unaff_EDI;
   InternalExceptionFrame local_54;
   int local_10;
-  undefined4 *local_c;
+  short *local_c;
   int local_8;
   
   local_54.previous = g_currentExceptionFrame;
@@ -46,7 +46,9 @@ STAllPlayersC::GetGObjFromZone2
         ((param_11 == (int *)0x0 && ((param_12 == (int *)0x0 && (param_13 == (int *)0x0)))))) &&
        (param_14 == (int *)0x0)))) &&
      (((param_15 == (int *)0x0 && (param_16 == (int *)0x0)) && (param_17 == (int *)0x0)))) {
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xb7);
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0xb7
+              );
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);

@@ -9,10 +9,10 @@ void __cdecl FUN_006756d0(short *param_1,short *param_2,short *param_3,short *pa
   int iVar5;
   int iVar6;
   
-  sVar1 = DAT_007fb242;
-  sVar3 = DAT_007fb240;
-  iVar4 = (int)DAT_007fb242;
-  iVar6 = (int)DAT_007fb240;
+  sVar1 = SHORT_007fb242;
+  sVar3 = SHORT_007fb240;
+  iVar4 = (int)SHORT_007fb242;
+  iVar6 = (int)SHORT_007fb240;
   if (*param_1 < 0) {
     *param_1 = 0;
   }

@@ -12,8 +12,8 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
   uint *puVar4;
   hostent *phVar5;
   _union_1226 *p_Var6;
-  char *pcVar7;
-  int iVar8;
+  char *text;
+  int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char local_3dc [512];
@@ -41,8 +41,8 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
            (p_Var6 = (_union_1226 *)*phVar5->h_addr_list, p_Var6 != (_union_1226 *)0x0)) {
           iVar3 = 0;
           do {
-            pcVar7 = inet_ntoa((in_addr)p_Var6->S_un_b);
-            Library::DKW::TBL::FUN_006b5aa0(pSVar2->field_0696,pcVar7);
+            text = inet_ntoa((in_addr)p_Var6->S_un_b);
+            Library::DKW::TBL::FUN_006b5aa0((uint *)pSVar2->field_0696,text);
             iVar3 = iVar3 + 4;
             p_Var6 = *(_union_1226 **)((int)phVar5->h_addr_list + iVar3);
           } while (p_Var6 != (_union_1226 *)0x0);
@@ -54,9 +54,9 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0xce,0,iVar3,&DAT_007a4ccc,
+  iVar7 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0xce,0,iVar3,&DAT_007a4ccc,
                              s_StartSystemTy__GetIP_007cd740);
-  if (iVar8 != 0) {
+  if (iVar7 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

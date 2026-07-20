@@ -153,7 +153,7 @@ LAB_0061d434:
     }
   }
   else if (uVar2 == 0x10f) {
-    local_10 = (byte *)thunk_FUN_0061d710(local_8,(int *)&local_c);
+    local_10 = thunk_FUN_0061d710(local_8,(int *)&local_c);
     STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_10,local_c);
     FUN_006ab060(&local_10);
   }

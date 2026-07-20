@@ -12,17 +12,16 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
   uint uVar3;
   LPSTR pCVar4;
   undefined4 uVar5;
-  byte *pbVar6;
-  BITMAPINFO *pBVar7;
-  char *pcVar8;
+  BITMAPINFO *pBVar6;
+  char *text;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  char cVar9;
-  byte bVar10;
-  int *piVar11;
-  int iVar12;
-  int iVar13;
-  undefined4 *puVar14;
+  char cVar7;
+  byte bVar8;
+  int *piVar9;
+  int iVar10;
+  int iVar11;
+  undefined4 *puVar12;
   InternalExceptionFrame local_50;
   BITMAPINFO *local_c;
   InterSystemC *local_8;
@@ -33,9 +32,9 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar13 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f,0,iVar2,
+    iVar11 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f,0,iVar2,
                                 &DAT_007a4ccc,s_InterSystemC__GetMessage_007c7c70);
-    if (iVar13 != 0) {
+    if (iVar11 != 0) {
       pcVar1 = (code *)swi(3);
       uVar5 = (*pcVar1)();
       return uVar5;
@@ -65,13 +64,13 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
             g_currentExceptionFrame = local_50.previous;
             return 0;
           }
-          iVar13 = 1;
+          iVar11 = 1;
           uVar3 = _DAT_00807348 & 0xff;
-          piVar11 = (int *)0x0;
+          piVar9 = (int *)0x0;
           iVar2 = 1;
           pCVar4 = thunk_FUN_00571240(s_PANEL_BKGND_007c7cc8,0);
           pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar3);
-          local_c = (BITMAPINFO *)cMf32::RecGet(DAT_00806790,1,pCVar4,piVar11,iVar13);
+          local_c = (BITMAPINFO *)cMf32::RecGet(DAT_00806790,1,pCVar4,piVar9,iVar11);
           PutDDX(0,0,'\x01',local_c);
           cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
@@ -84,11 +83,11 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
         if (DAT_00802a30 != (void *)0x0) {
           thunk_FUN_0054b540(DAT_00802a30);
         }
-        if (DAT_008016dc == (OptPanelTy *)0x0) {
+        if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        OptPanelTy::SwitchOptPanel(DAT_008016dc,'\x01');
+        OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x01');
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
@@ -98,11 +97,11 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
         if (DAT_00802a30 != (void *)0x0) {
           thunk_FUN_0054b540(DAT_00802a30);
         }
-        if (DAT_008016e4 == (PlayPanelTy *)0x0) {
+        if (g_playPanel_008016E4 == (PlayPanelTy *)0x0) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        PlayPanelTy::SetPanel(DAT_008016e4,'\x01');
+        PlayPanelTy::SetPanel(g_playPanel_008016E4,'\x01');
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
@@ -116,38 +115,38 @@ switchD_00543107_caseD_b904:
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    piVar11 = *(int **)(param_1 + 0x18);
-    FUN_006b5f80(DAT_008075a8,*piVar11,piVar11[1],piVar11[2],piVar11[3]);
+    piVar9 = *(int **)(param_1 + 0x18);
+    FUN_006b5f80(DAT_008075a8,*piVar9,piVar9[1],piVar9[2],piVar9[3]);
     iVar2 = *(int *)(param_1 + 0x10);
     if (iVar2 == 0xb900) {
-      pcVar8 = s_BUT_FILEOPT_007c7c48;
+      text = s_BUT_FILEOPT_007c7c48;
     }
     else if (iVar2 == 0xb902) {
-      pcVar8 = s_BUT_SETOPT_007c7c9c;
+      text = s_BUT_SETOPT_007c7c9c;
     }
     else if (iVar2 == 0xb904) {
-      pcVar8 = s_BUT_HELPOPT_007c7cac;
+      text = s_BUT_HELPOPT_007c7cac;
     }
     else {
-      pcVar8 = s_BUT_AIOPT_007c7cbc;
+      text = s_BUT_AIOPT_007c7cbc;
     }
-    puVar14 = (undefined4 *)0x0;
-    iVar12 = 0;
-    iVar13 = 1;
-    bVar10 = 0;
+    puVar12 = (undefined4 *)0x0;
+    iVar10 = 0;
+    iVar11 = 1;
+    bVar8 = 0;
     uVar3 = 0xffffffff;
     uVar5 = thunk_FUN_00529f90(param_1);
     iVar2 = 1;
-    pCVar4 = thunk_FUN_00571240(pcVar8,0);
-    pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-    pBVar7 = (BITMAPINFO *)
+    pCVar4 = thunk_FUN_00571240(text,0);
+    pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar5);
+    pBVar6 = (BITMAPINFO *)
              Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
-    iVar2 = piVar11[1];
-    iVar13 = *piVar11;
-    cVar9 = '\x01';
+                       (DAT_00806794,CASE_1,pCVar4,uVar3,bVar8,iVar11,iVar10,puVar12);
+    iVar2 = piVar9[1];
+    iVar11 = *piVar9;
+    cVar7 = '\x01';
 LAB_00543291:
-    PutDDX(iVar13,iVar2,cVar9,pBVar7);
+    PutDDX(iVar11,iVar2,cVar7,pBVar6);
   }
   else {
     switch(uVar3) {
@@ -158,8 +157,8 @@ LAB_00543291:
       if (DAT_00802a30 != (void *)0x0) {
         thunk_FUN_0054b540(DAT_00802a30);
       }
-      if (DAT_008016dc != (OptPanelTy *)0x0) {
-        OptPanelTy::SwitchOptPanel(DAT_008016dc,'\x0e');
+      if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+        OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x0e');
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
@@ -178,23 +177,23 @@ LAB_00543291:
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      piVar11 = *(int **)(param_1 + 0x18);
-      FUN_006b5f80(DAT_008075a8,*piVar11,piVar11[1],piVar11[2],piVar11[3]);
-      puVar14 = (undefined4 *)0x0;
-      iVar12 = 0;
-      iVar13 = 1;
-      bVar10 = 0;
+      piVar9 = *(int **)(param_1 + 0x18);
+      FUN_006b5f80(DAT_008075a8,*piVar9,piVar9[1],piVar9[2],piVar9[3]);
+      puVar12 = (undefined4 *)0x0;
+      iVar10 = 0;
+      iVar11 = 1;
+      bVar8 = 0;
       uVar3 = 0xffffffff;
       uVar5 = thunk_FUN_00529f90(param_1);
       iVar2 = 1;
       pCVar4 = thunk_FUN_00571240(s_BUT_OHELP_007c7c90,0);
-      pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-      pBVar7 = (BITMAPINFO *)
+      pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar5);
+      pBVar6 = (BITMAPINFO *)
                Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
-      iVar13 = *piVar11;
-      iVar2 = piVar11[1];
-      cVar9 = '\x06';
+                         (DAT_00806794,CASE_6,pCVar4,uVar3,bVar8,iVar11,iVar10,puVar12);
+      iVar11 = *piVar9;
+      iVar2 = piVar9[1];
+      cVar7 = '\x06';
       goto LAB_00543291;
     }
   }

@@ -26,7 +26,7 @@ void __thiscall InfocPanelTy::DoneInfocPanel(InfocPanelTy *this)
   if (errorCode == 0) {
     this_00 = extraout_ECX;
     if (local_8->field_03D0 != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_03D0);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_03D0);
       this_00 = extraout_ECX_00;
     }
     pIVar2->field_03D0 = 0;

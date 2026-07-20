@@ -54,7 +54,7 @@ FUN_006e9ef0(void *this,uint param_1,uint param_2,int param_3,int param_4,uint p
         } while (iVar6 < (int)puVar1[0x25]);
       }
       if ((*puVar1 & 0x100) != 0) {
-        FUN_006ab060(puVar1 + 0x2a);
+        FUN_006ab060((LPVOID *)(puVar1 + 0x2a));
       }
       if (iVar6 < (int)puVar1[0x25]) {
         return;

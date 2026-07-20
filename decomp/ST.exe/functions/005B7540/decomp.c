@@ -289,7 +289,7 @@ LAB_005b7655:
                 cVar16 = CASE_FFFFFFFE;
                 iVar8 = 0x1e;
                 iVar5 = 0x7d;
-                puVar11 = (uint *)FUN_006b0140(*local_8,DAT_00807618);
+                puVar11 = (uint *)FUN_006b0140(*local_8,HINSTANCE_00807618);
                 puVar7 = ccFntTy::CreateTypeSSpr
                                    (*(ccFntTy **)(DAT_0081176c + 0x30),puVar11,iVar5,iVar8,cVar16,
                                     uVar6,iVar17,iVar18,iVar19);

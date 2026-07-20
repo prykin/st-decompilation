@@ -1,16 +1,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::UnRegisterDeposit */
+   STAllPlayersC::UnRegisterDeposit
+   
+   [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 00580D30 -> 0044A440 @ 00580D69 */
 
 undefined4 __thiscall
-STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,uint param_2)
+STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *param_2)
 
 {
   code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
-  uint uVar2;
+  STResourceC *pSVar2;
   int iVar3;
   undefined4 uVar4;
   undefined4 extraout_ECX;
@@ -28,16 +31,17 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,uint param_2)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (errorCode == 0) {
-    uVar2 = GetObjPtr(local_c,0xffffffff,param_1,CASE_4);
+    pSVar2 = (STResourceC *)GetObjPtr(local_c,0xffffffff,param_1,CASE_4);
     uVar4 = extraout_ECX;
-    if (uVar2 != param_2) {
+    if (pSVar2 != param_2) {
       RaiseInternalException
-                (-0x5001fff9,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f4e);
+                (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x2f4e);
       uVar4 = extraout_ECX_00;
     }
-    DelObjFromTmps(this_00,DAT_0080874d,*(int *)(param_2 + 0x20),
-                   CONCAT31((int3)((uint)uVar4 >> 8),*(undefined1 *)(param_2 + 0x24)),param_1);
-    DelObjFromSaveTmps(this_00,*(int *)(param_2 + 0x20),*(char *)(param_2 + 0x24),(short)param_1);
+    DelObjFromTmps(this_00,DAT_0080874d,*(int *)&param_2->field_0x20,
+                   CONCAT31((int3)((uint)uVar4 >> 8),param_2->field_0x24),param_1);
+    DelObjFromSaveTmps(this_00,*(int *)&param_2->field_0x20,param_2->field_0x24,(short)param_1);
     Library::DKW::TBL::FUN_006ae140(DAT_007fa15c,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }

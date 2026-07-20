@@ -11,7 +11,7 @@ undefined4 __cdecl FUN_0064e290(undefined4 param_1,undefined4 param_2,void *para
     thunk_FUN_005801c0(param_3,uVar1);
   }
   if (sVar2 == 0) {
-    thunk_FUN_005802a0(param_3,uVar1,1);
+    STResourceC::sub_005802A0(param_3,uVar1,1);
     return 0;
   }
   if (0 < sVar2) {

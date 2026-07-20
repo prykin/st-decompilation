@@ -32,20 +32,20 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
               );
     SetImages(this_00,param_1,s_CUR_MENU_007c7dd4,0x32,(BITMAPINFO *)0x0,0,-1,-1);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806784,CASE_B,(byte *)s_INF_DEEPS_007c7dc8,0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+                       (DAT_00806784,CASE_B,s_INF_DEEPS_007c7dc8,0xffffffff,0,1,0,(undefined4 *)0x0)
+    ;
     this_00->field_04E3 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806784,CASE_13,(byte *)s_CUR_CONFIRM_007c7db8,0xffffffff,0,1,0,
+                       (DAT_00806784,CASE_13,s_CUR_CONFIRM_007c7db8,0xffffffff,0,1,0,
                         (undefined4 *)0x0);
     this_00->field_04E7 = puVar4;
-    local_8 = cMf32::RecGet(DAT_00806780,1,s_CURSOR_PAL_007c7da8,(int *)0x0,1);
+    local_8 = cMf32::RecGet(g_cMf32_00806780,1,s_CURSOR_PAL_007c7da8,(int *)0x0,1);
     puVar4 = local_8 + 0x14;
     iVar3 = 1;
     uVar5 = FUN_006b4fe0((int)local_8);
     uVar6 = FUN_006b50c0(800,0x96,(uint)local_8[7],uVar5,(undefined4 *)puVar4,iVar3);
     this_00->field_04D2 = uVar6;
-    cMf32::RecMemFree(DAT_00806780,(uint *)&local_8);
+    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&local_8);
     puVar1 = &this_00->field_04D6;
     FUN_006b2330((uint)DAT_008075a8,puVar1,1,0x4047ff,0,0,this_00->field_04D2);
     FUN_006b28c0((int)DAT_008075a8,*puVar1,1);

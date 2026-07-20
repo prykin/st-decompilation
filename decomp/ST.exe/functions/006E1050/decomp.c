@@ -38,7 +38,7 @@ void __fastcall FUN_006e1050(void *param_1)
   iVar3 = iVar3 * iVar4;
   if (iVar3 - *(int *)((int)param_1 + 0x2b4) != 0 && *(int *)((int)param_1 + 0x2b4) <= iVar3) {
     *(int *)((int)param_1 + 0x2b4) = iVar3;
-    iVar4 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 0x2b0),iVar3 * 2);
+    iVar4 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)param_1 + 0x2b0),iVar3 * 2);
     *(int *)((int)param_1 + 0x2b0) = iVar4;
   }
   dVar1 = *(double *)((int)param_1 + 0x98) / *(double *)((int)param_1 + 200);
@@ -63,7 +63,7 @@ void __fastcall FUN_006e1050(void *param_1)
   if (iVar4 != 0) {
     *(int *)((int)param_1 + 0x2cc) = iVar4 - *(int *)((int)param_1 + 0x2c4);
   }
-  FUN_006ce6c0(*(undefined4 **)((int)param_1 + 0x2b0),*(uint *)((int)param_1 + 0x2b4),30000);
+  FUN_006ce6c0(*(ushort **)((int)param_1 + 0x2b0),*(uint *)((int)param_1 + 0x2b4),30000);
   FUN_006de9c0(param_1);
   if (*(int *)((int)param_1 + 0x358) != 0) {
     *(undefined4 *)(*(int *)((int)param_1 + 0x358) + 0x280) = *(undefined4 *)((int)param_1 + 0x280);

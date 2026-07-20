@@ -33,12 +33,12 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
   short local_20;
   int local_1c;
   undefined4 local_18;
-  undefined4 local_14;
+  int local_14;
   int local_10;
   int local_c;
   undefined4 *local_8;
   
-  thunk_FUN_004952e0((int)this);
+  sub_004952E0(this);
   if ((this->field_06A1 == 1) || (this->field_06A1 == 2)) {
     iVar7 = Annih(this,(undefined4 *)0x2);
     return iVar7;
@@ -60,8 +60,8 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
     this->field_06A5 = 4;
   }
   if (this->field_06A5 == 4) {
-    uVar5 = thunk_FUN_004176c0(this,this->field_069B);
-    uVar5 = thunk_FUN_00417910(this,(short)uVar5);
+    uVar5 = sub_004176C0(this,this->field_069B);
+    uVar5 = sub_00417910(this,(short)uVar5);
     if (uVar5 == 0xffffffff) {
       iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3925,0,0,&DAT_007a4ccc,
                                  s_STBoatC__BackAnnih_1_007ab6bc);
@@ -72,7 +72,8 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
       }
       iVar7 = 0x3925;
 LAB_0047ddc3:
-      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar7);
+      RaiseInternalException
+                (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar7);
       return 0xffff;
     }
     if (uVar5 == 0) {
@@ -81,13 +82,14 @@ LAB_0047ddc3:
   }
   else {
     if (this->field_06A5 == 5) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         this->field_0691 * 0xc9 + 100,this->field_0693 * 0xc9 + 100,
-                         this->field_0695 * 200 + 100,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 this->field_0691 * 0xc9 + 100,this->field_0693 * 0xc9 + 100,
+                 this->field_0695 * 200 + 100,this->field_0061);
       this->field_06A5 = 6;
     }
     if (this->field_06A5 == 6) {
-      local_1c = thunk_FUN_00415ed0(this,&local_18,&local_14);
+      local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
       uVar5 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar5;
       iVar7 = (uVar5 >> 0x10) % 7 - 3;
@@ -137,8 +139,8 @@ LAB_0047ddc3:
             iVar11 = (int)(short)local_24 + iVar7 + this->field_0041;
           }
           TraksClassTy::TraksCreate
-                    (DAT_00802a7c,1,2,7,iVar11,iVar10 + ((uVar5 >> 0x10) % 7 - 3),iVar9,sVar13,
-                     sVar14,sVar15,sVar16,sVar17,sVar18,iVar8,sVar19,bVar20);
+                    (g_traksClass_00802A7C,1,2,7,iVar11,iVar10 + ((uVar5 >> 0x10) % 7 - 3),iVar9,
+                     sVar13,sVar14,sVar15,sVar16,sVar17,sVar18,iVar8,sVar19,bVar20);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
         } while (local_10 < (int)(uint)(byte)this->field_0x2bf);

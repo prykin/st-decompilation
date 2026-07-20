@@ -21,7 +21,7 @@ void __cdecl DibPut(undefined4 *param_1,int param_2,int param_3,char param_4,byt
     if (errorCode == 0) {
       if (param_4 == '\x01') {
         Library::DKW::WGR::FUN_006b55f0
-                  (param_1,0,param_2,param_3,(int)param_5,0,0,0,*(int *)(param_5 + 4),
+                  (param_1,0,param_2,param_3,param_5,0,0,0,*(int *)(param_5 + 4),
                    *(int *)(param_5 + 8));
       }
       else if (param_4 == '\x06') {

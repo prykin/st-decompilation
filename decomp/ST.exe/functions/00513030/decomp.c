@@ -180,8 +180,8 @@ LAB_00513233:
   *(bool *)((int)piVar10 + 0x12) = *(char *)((int)piVar10 + 0x12) == '\0';
   if ((this_00->field_019C != 0) && (this_00->field_01A1 == '\0')) {
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,0x16,
-               0x19c,0x118);
+              ((undefined4 *)this_00->field_0068,0,0x21,0x16,(byte *)this_00->field_01DC,0,0x21,0x16
+               ,0x19c,0x118);
     puVar1 = &this_00->field_0x18;
     puVar13 = (undefined4 *)puVar1;
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {

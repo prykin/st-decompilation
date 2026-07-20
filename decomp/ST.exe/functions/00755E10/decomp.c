@@ -43,7 +43,7 @@ int FUN_00755e10(uint param_1,int param_2,undefined4 param_3)
         return 0;
       }
       **(undefined4 **)(param_1 + 0x1c) = *(undefined4 *)(iVar1 + 4);
-      FUN_007574c0(param_1,iVar5,*(undefined4 **)(param_1 + 0x1c),(int)*(short *)(iVar5 + 8));
+      FUN_007574c0(param_1,iVar5,*(uint **)(param_1 + 0x1c),(int)*(short *)(iVar5 + 8));
       if ((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) < iVar6) {
         Library::MSVCRT::FUN_0072da70
                   ((undefined4 *)(*(short *)(iVar5 + 8) + 0x10 + iVar5),(undefined4 *)(iVar1 + 0x10)
@@ -106,7 +106,7 @@ int FUN_00755e10(uint param_1,int param_2,undefined4 param_3)
       *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x44 + *(int *)(*(int *)(param_1 + 0xc) + 0x1c) * 8)
            = 0;
       **(undefined4 **)(param_1 + 0x1c) = *(undefined4 *)(iVar2 + 4);
-      FUN_007574c0(param_1,iVar2,*(undefined4 **)(param_1 + 0x1c),0);
+      FUN_007574c0(param_1,iVar2,*(uint **)(param_1 + 0x1c),0);
       if ((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) < iVar6) {
         Library::MSVCRT::FUN_0072da70
                   ((undefined4 *)(*(short *)(iVar3 + 8) + 0x10 + iVar3),(undefined4 *)(iVar2 + 0x10)

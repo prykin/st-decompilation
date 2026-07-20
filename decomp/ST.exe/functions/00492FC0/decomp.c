@@ -8,7 +8,7 @@ void __fastcall FUN_00492fc0(int param_1)
   
   if ((*(int *)(param_1 + 0x45d) == 9) && (*(int *)(param_1 + 0x611) == 3)) {
     piVar1 = (int *)STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,
+                              (g_sTAllPlayers_007FA174,
                                CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x5fc))
                                ,CONCAT22((short)((uint)in_EAX >> 0x10),
                                          *(undefined2 *)(param_1 + 0x5fd)),CASE_1);

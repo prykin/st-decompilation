@@ -55,7 +55,7 @@ undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
         FUN_006ae110((byte *)this_00->field_027A);
       }
       this_00->field_027A = 0;
-      DAT_00801680 = 0;
+      g_prodPanel_00801680 = (ProdPanelTy *)0x0;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

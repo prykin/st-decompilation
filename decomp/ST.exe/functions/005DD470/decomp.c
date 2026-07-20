@@ -55,7 +55,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,int param_1)
       pcVar2 = local_8->field_0034;
       local_10 = iVar6;
       if (pcVar2->field_00A0 != 0) {
-        FUN_00710790((int)pcVar2);
+        FUN_00710790((uint *)pcVar2);
       }
       iVar5 = this_00->field_067E;
       local_c = *(int *)&pcVar2->field_0x8a;

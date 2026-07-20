@@ -1,4 +1,4 @@
-FUN_004952e0:
+STBoatC::sub_004952E0:
 004952E0  53                        PUSH EBX
 004952E1  56                        PUSH ESI
 004952E2  8B F1                     MOV ESI,ECX

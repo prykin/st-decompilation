@@ -26,11 +26,11 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
   if (errorCode == 0) {
     this_00 = extraout_ECX;
     if (local_8->field_0184 != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_0184);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_0184);
       this_00 = extraout_ECX_00;
     }
     pPVar2->field_0184 = 0;
-    DAT_008016e0 = 0;
+    g_pausePanel_008016E0 = (PausePanelTy *)0x0;
     if (pPVar2->field_017C != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pPVar2->field_017C);
       pPVar2->field_017C = (ccFntTy *)0x0;

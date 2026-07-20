@@ -53,8 +53,8 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
       }
       puVar5 = local_10;
       if (puVar4 != (uint *)0x0) {
-        puVar5 = ccFntTy::FormSarr(this_00->field_0094,(int)puVar4,(uint *)s________________007c21d8
-                                   ,(&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
+        puVar5 = ccFntTy::FormSarr(this_00->field_0094,puVar4,s________________007c21d8,
+                                   (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
         local_10 = puVar5;
         ccFntTy::SepColorStrInSarr(this_00->field_0094,puVar5,puVar5);
         FUN_006b5570((byte *)puVar4);
@@ -69,7 +69,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
           do {
             pcVar6 = *(char **)(puVar5[5] + iVar3 * 4);
 LAB_0052d48d:
-            iVar7 = Library::DKW::TBL::FUN_006b5aa0(this_00->field_0098,pcVar6);
+            iVar7 = Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0098,pcVar6);
             if ((byte)this_00->field_009C < DAT_00807346) {
               this_00->field_009C = this_00->field_009C + 1;
             }

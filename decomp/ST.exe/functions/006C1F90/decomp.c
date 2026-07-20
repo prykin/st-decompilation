@@ -20,7 +20,7 @@ undefined4 FUN_006c1f90(int param_1)
       if (piVar1[0xe] < 0) {
         piVar2 = (int *)*piVar1;
         FUN_006b98c0((int *)&DAT_00854ff4,piVar1);
-        FUN_006a5e90(piVar1);
+        FUN_006a5e90((short *)piVar1);
       }
       else {
         if ((piVar1[0xd] <= param_1) && (param_1 <= piVar1[0xe])) {

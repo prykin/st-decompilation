@@ -1,15 +1,20 @@
 
-undefined2 __fastcall FUN_0065d9c0(int param_1,undefined4 param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
+   Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0 */
+
+undefined2 __thiscall AiFltClassTy::sub_0065D9C0(AiFltClassTy *this)
 
 {
   undefined2 uVar1;
-  int iVar2;
+  STGroupBoatC *pSVar2;
+  undefined4 in_EDX;
   
-  if ((*(short *)(param_1 + 0x7d) != -2) && (DAT_007fa174 != 0)) {
-    iVar2 = thunk_FUN_0042b760(CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x24)),
-                               CONCAT22((short)((uint)param_2 >> 0x10),*(short *)(param_1 + 0x7d)));
-    if (iVar2 != 0) {
-      uVar1 = thunk_FUN_004233c0(iVar2);
+  if ((this->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    pSVar2 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
+                                CONCAT22((short)((uint)in_EDX >> 0x10),this->field_007D));
+    if (pSVar2 != (STGroupBoatC *)0x0) {
+      uVar1 = thunk_FUN_004233c0((int)pSVar2);
       return uVar1;
     }
   }

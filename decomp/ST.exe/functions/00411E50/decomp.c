@@ -8,7 +8,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
                 int param_7)
 
 {
-  char *pcVar1;
+  short *psVar1;
   int iVar2;
   uint uVar3;
   bool bVar4;
@@ -24,7 +24,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
   int local_64;
   int local_60;
   int local_5c;
-  char *local_58;
+  short *local_58;
   int local_54;
   int local_50;
   int local_48;
@@ -72,8 +72,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     }
     local_68 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &local_14;
-    local_58 = (char *)Library::DKW::LIB::FUN_006aac70(local_68 << 5);
-    local_34 = FUN_00411cf0(local_58,local_68);
+    local_58 = (short *)Library::DKW::LIB::FUN_006aac70(local_68 << 5);
+    local_34 = FUN_00411cf0((char *)local_58,local_68);
     local_40 = (int)(local_34 * param_6 + 0xb4) / 0x168;
     if (local_40 == local_34) {
       local_40 = 0;
@@ -116,8 +116,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         iVar5 = local_40;
         if (0 < (int)local_24) {
           do {
-            local_54 = local_58[iVar5 * 4] + param_1;
-            local_5c = local_58[iVar5 * 4 + 1] + param_2;
+            local_54 = (char)local_58[iVar5 * 2] + param_1;
+            local_5c = *(char *)((int)local_58 + iVar5 * 4 + 1) + param_2;
             if ((((-1 < local_54) && (local_54 < iVar2)) && (-1 < local_5c)) &&
                ((local_5c < DAT_007f4d30 &&
                 (uVar3 = local_64 * local_3c + local_54 + iVar2 * local_5c ^ 7, iVar2 = DAT_007f4d2c
@@ -151,8 +151,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
                   iVar5 = iVar5 + local_34 * -0x10000;
                   iVar2 = iVar5 >> 0x10;
                 }
-                local_54 = local_58[iVar2 * 4] + param_1;
-                local_5c = local_58[iVar2 * 4 + 1] + param_2;
+                local_54 = (char)local_58[iVar2 * 2] + param_1;
+                local_5c = *(char *)((int)local_58 + iVar2 * 4 + 1) + param_2;
                 *(int *)(iVar8 + DAT_007f4d3c) = local_54;
                 *(int *)(iVar8 + 4 + DAT_007f4d3c) = local_5c;
                 *(int *)(iVar8 + 8 + DAT_007f4d3c) = local_64;
@@ -171,7 +171,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           }
           else {
             FUN_0040f4d0((undefined4 *)local_28,local_24,local_50,0);
-            pcVar1 = local_58;
+            psVar1 = local_58;
             iVar2 = DAT_007f4d2c;
             iVar6 = local_64;
             if (0 < local_b0) {
@@ -180,8 +180,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
               do {
                 iVar2 = FUN_0040f840(local_28,local_24,local_50,0);
                 iVar2 = (iVar2 + local_40) % local_34;
-                local_54 = pcVar1[iVar2 * 4] + param_1;
-                local_5c = pcVar1[iVar2 * 4 + 1] + param_2;
+                local_54 = (char)psVar1[iVar2 * 2] + param_1;
+                local_5c = *(char *)((int)psVar1 + iVar2 * 4 + 1) + param_2;
                 *(int *)(iVar5 + DAT_007f4d3c) = local_54;
                 *(int *)(iVar5 + 4 + DAT_007f4d3c) = local_5c;
                 *(int *)(iVar5 + 8 + DAT_007f4d3c) = local_64;
@@ -204,8 +204,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           iVar5 = local_30 * 0x14;
           local_ac = local_24;
           do {
-            local_54 = local_58[local_44 * 4] + param_1;
-            local_5c = local_58[local_44 * 4 + 1] + param_2;
+            local_54 = (char)local_58[local_44 * 2] + param_1;
+            local_5c = *(char *)((int)local_58 + local_44 * 4 + 1) + param_2;
             if (((local_54 < 0) || (iVar2 <= local_54)) ||
                ((local_5c < 0 || (DAT_007f4d30 <= local_5c)))) {
               bVar4 = false;
@@ -247,8 +247,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           local_64 = param_3;
           local_68 = local_68 + 1;
           uVar3 = uVar3 + 0x20;
-          local_58 = (char *)Library::DKW::LIB::FUN_006acf50((undefined4 *)local_58,uVar3);
-          local_34 = FUN_00411cf0(local_58,local_68);
+          local_58 = (short *)Library::DKW::LIB::FUN_006acf50((int)local_58,uVar3);
+          local_34 = FUN_00411cf0((char *)local_58,local_68);
           local_40 = (int)(local_34 * param_6 + 0xb4) / 0x168;
           if (local_40 == local_34) {
             local_40 = 0;
@@ -327,13 +327,14 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     FUN_0040eb90();
     iVar2 = local_48;
 LAB_004125c1:
-    FUN_006a5e90((undefined4 *)local_58);
+    FUN_006a5e90(local_58);
     if (iVar2 == 0) {
       ExceptionList = local_14;
       return 0;
     }
     if (iVar2 != -4) {
-      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xc3a);
+      RaiseInternalException
+                (iVar2,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xc3a);
       ExceptionList = local_14;
       return iVar2;
     }

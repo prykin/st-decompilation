@@ -1,5 +1,8 @@
 
-void __thiscall FUN_00571320(void *this,undefined4 param_1)
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 00533D10 -> 00571320 @ 00534053 | 00533D10 -> 00571320 @ 0053515A */
+
+void __thiscall FUN_00571320(void *this,HWND param_1)
 
 {
   char cVar1;

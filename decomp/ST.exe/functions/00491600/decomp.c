@@ -30,7 +30,8 @@ void __fastcall FUN_00491600(int *param_1)
       iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)((int)param_1 + 0x5a2),(int *)((int)param_1 + 0x5a6)
                           );
       if (iVar2 == -4) {
-        RaiseInternalException(-4,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5008);
+        RaiseInternalException
+                  (-4,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5008);
       }
     }
     iVar2 = *(int *)((int)param_1 + 0x5a6);

@@ -30,12 +30,12 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_c;
   if (iVar3 == 0) {
-    thunk_FUN_005db2a0((int)local_c);
+    sub_005DB2A0(local_c);
     iVar3 = 0;
     do {
       wsprintfA(&pSVar2->field_0x3c,s_MM_ACC_02d_007cd7a0,iVar3);
       pcVar4 = Library::Ourlib::MFIMG::mfImtLoad
-                         (DAT_00806780,&pSVar2->field_0x3c,0,0,(undefined4 *)0x0,1);
+                         (g_cMf32_00806780,&pSVar2->field_0x3c,0,0,(undefined4 *)0x0,1);
       *(char **)(&pSVar2->field_0x244 + iVar3 * 4) = pcVar4;
       switch(iVar3) {
       case 0:
@@ -86,10 +86,10 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       }
       iVar3 = iVar3 + 1;
     } while (iVar3 < 6);
-    LoadStartPlt(DAT_00806780,0);
-    puVar5 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,2,1);
+    LoadStartPlt(g_cMf32_00806780,0);
+    puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,2,1);
     pSVar2->field_02F0 = puVar5;
-    iVar3 = thunk_FUN_005da130((int)puVar5,(undefined *)0x0,DAT_00807dd9);
+    iVar3 = thunk_FUN_005da130(puVar5,(undefined *)0x0,DAT_00807dd9);
     pSVar2->field_0030 = iVar3;
     *(undefined4 *)(iVar3 + 0x58) = 1;
     *(undefined4 *)(iVar3 + 0x5c) = 0;
@@ -186,7 +186,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     FUN_006b3af0(DAT_008075a8,*puVar8);
     puVar9 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     pSVar2->field_0686 = puVar9;
-    Library::DKW::TBL::FUN_006b6020((int)puVar9,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(puVar9,0,&DAT_008016a0);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_055C,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     (**(code **)(pSVar2->field_055C + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
@@ -226,7 +226,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  thunk_FUN_005db2a0((int)local_c);
+  sub_005DB2A0(local_c);
   iVar10 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x1ac,0,iVar3,&DAT_007a4ccc,
                               s_StartSystemTy__LoadGraph_007cd778);
   if (iVar10 == 0) {

@@ -70,8 +70,8 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
               }
               if (*pcVar4 == '\0') {
                 thunk_FUN_00558dc0(this_00,(int)*(short *)(pcVar4 + 2),(int)*(short *)(pcVar4 + 4),
-                                   (undefined *)(int)pcVar4[6],(uint)(byte)pcVar4[1],
-                                   (undefined *)(uint)(byte)pcVar4[7],*(int *)(pcVar4 + 8),0x4000);
+                                   (undefined *)(int)pcVar4[6],(int *)(uint)(byte)pcVar4[1],
+                                   (uint)(byte)pcVar4[7],*(int **)(pcVar4 + 8),0x4000);
               }
               iVar2 = this_00->field_0110;
               uVar6 = uVar6 + 1;
@@ -87,18 +87,19 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
       }
       else if (uVar6 == 2) {
         local_8 = (ushort *)0x0;
-        if (DAT_00806754 != (cMf32 *)0x0) {
-          local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
+        if (g_cMf32_00806754 != (cMf32 *)0x0) {
+          local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
+                              (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
         }
         if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
           InitData(this_00);
         }
         else {
-          Visible::PrepareAfterSave((Visible *)this_00,(int)local_8);
+          Visible::PrepareAfterSave((Visible *)this_00,local_8);
         }
         Init(this_00);
-        if ((DAT_00806754 != (cMf32 *)0x0) && (local_8 != (ushort *)0x0)) {
-          cMf32::RecMemFree(DAT_00806754,(uint *)&local_8);
+        if ((g_cMf32_00806754 != (cMf32 *)0x0) && (local_8 != (ushort *)0x0)) {
+          cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
         }
       }
       else if (uVar6 == 3) {
@@ -107,7 +108,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
           FUN_00717870(DAT_00807598);
         }
         thunk_FUN_00553270();
-        DAT_00802a88 = 0;
+        g_visibleClass_00802A88 = (VisibleClassTy *)0x0;
       }
     }
     else if (uVar6 == 0x10f) {

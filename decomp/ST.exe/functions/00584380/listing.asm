@@ -1,4 +1,4 @@
-FUN_00584380:
+STJellyGunC::sub_00584380:
 00584380  A1 74 67 80 00            MOV EAX,[0x00806774]
 00584385  53                        PUSH EBX
 00584386  56                        PUSH ESI

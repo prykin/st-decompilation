@@ -1,19 +1,25 @@
 
-undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
+/* [STPrototypeRepairApplier] Propagated return.
+   Evidence: 005F66F0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F62C9 */
+
+byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
 
 {
   uint uVar1;
   STAllPlayersC *pSVar2;
   undefined4 *puVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
+  byte *pbVar4;
+  byte *pbVar5;
   int iVar6;
   uint uVar7;
-  uint *puVar8;
-  undefined4 *puVar9;
-  uint *puVar10;
+  uint uVar8;
+  uint *puVar9;
+  undefined4 *puVar10;
+  uint *puVar11;
+  byte *pbVar12;
+  undefined4 *puVar13;
   uint *local_1c;
-  undefined4 *local_18;
+  byte *local_18;
   STAllPlayersC *local_14;
   uint local_10;
   uint local_c;
@@ -23,48 +29,48 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
   puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xc2);
   pSVar2 = local_14;
   if (this == (void *)0x0) {
-    puVar9 = (undefined4 *)0x0;
+    puVar10 = (undefined4 *)0x0;
   }
   else {
-    puVar9 = (undefined4 *)((int)this + 0x231);
+    puVar10 = (undefined4 *)((int)this + 0x231);
   }
-  puVar4 = puVar3;
+  puVar13 = puVar3;
   for (iVar6 = 0x30; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar4 = *puVar9;
-    puVar9 = puVar9 + 1;
-    puVar4 = puVar4 + 1;
+    *puVar13 = *puVar10;
+    puVar10 = puVar10 + 1;
+    puVar13 = puVar13 + 1;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar9;
+  *(undefined2 *)puVar13 = *(undefined2 *)puVar10;
   puVar3[3] = 2;
-  local_18 = STT3DSprC::SaveSpr((STT3DSprC *)&local_14->field_0x1d5,&local_c);
+  local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&local_14->field_0x1d5,&local_c);
   local_1c = STAllPlayersC::SaveGObjData(pSVar2,(int *)&local_10);
   local_8 = local_10 + 0xca + local_c;
-  puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar3,local_8);
-  *(uint *)((int)puVar4 + 0xc2) = local_c;
-  puVar3 = local_18;
-  puVar9 = (undefined4 *)((int)puVar4 + 0xc6);
+  pbVar4 = (byte *)Library::DKW::LIB::FUN_006acf50((int)puVar3,local_8);
+  *(uint *)(pbVar4 + 0xc2) = local_c;
+  pbVar12 = local_18;
+  pbVar5 = pbVar4 + 0xc6;
   for (uVar7 = local_c >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *puVar9 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar9 = puVar9 + 1;
+    *(undefined4 *)pbVar5 = *(undefined4 *)pbVar12;
+    pbVar12 = pbVar12 + 4;
+    pbVar5 = pbVar5 + 4;
   }
   for (uVar7 = local_c & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined1 *)puVar9 = *(undefined1 *)puVar3;
-    puVar3 = (undefined4 *)((int)puVar3 + 1);
-    puVar9 = (undefined4 *)((int)puVar9 + 1);
+    *pbVar5 = *pbVar12;
+    pbVar12 = pbVar12 + 1;
+    pbVar5 = pbVar5 + 1;
   }
   FUN_006ab060(&local_18);
-  puVar8 = (uint *)((int)puVar4 + 0xc6 + local_c);
-  *puVar8 = local_10;
-  puVar10 = local_1c;
-  for (uVar7 = local_10 >> 2; puVar8 = puVar8 + 1, uVar7 != 0; uVar7 = uVar7 - 1) {
-    *puVar8 = *puVar10;
-    puVar10 = puVar10 + 1;
+  puVar9 = (uint *)(pbVar4 + 0xc6 + local_c);
+  *puVar9 = local_10;
+  puVar11 = local_1c;
+  for (uVar7 = local_10 >> 2; puVar9 = puVar9 + 1, uVar7 != 0; uVar7 = uVar7 - 1) {
+    *puVar9 = *puVar11;
+    puVar11 = puVar11 + 1;
   }
   for (local_10 = local_10 & 3; local_10 != 0; local_10 = local_10 - 1) {
-    *(char *)puVar8 = (char)*puVar10;
-    puVar10 = (uint *)((int)puVar10 + 1);
-    puVar8 = (uint *)((int)puVar8 + 1);
+    *(byte *)puVar9 = (byte)*puVar11;
+    puVar11 = (uint *)((int)puVar11 + 1);
+    puVar9 = (uint *)((int)puVar9 + 1);
   }
   FUN_006ab060(&local_1c);
   pSVar2 = local_14;
@@ -78,33 +84,32 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
     }
     uVar1 = local_8 + 0x6c + uVar7;
     local_8 = uVar1;
-    puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar4,uVar1);
-    puVar3 = (undefined4 *)((uVar1 - uVar7) + -0x6c + (int)puVar5);
-    puVar9 = *(undefined4 **)&pSVar2[1].field_0xb9;
-    puVar4 = puVar3;
+    pbVar5 = (byte *)Library::DKW::LIB::FUN_006acf50((int)pbVar4,uVar1);
+    puVar3 = *(undefined4 **)&pSVar2[1].field_0xb9;
+    pbVar12 = pbVar5 + (uVar1 - uVar7) + -0x6c;
     for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar4 = *puVar9;
-      puVar9 = puVar9 + 1;
-      puVar4 = puVar4 + 1;
+      *(undefined4 *)pbVar12 = *puVar3;
+      puVar3 = puVar3 + 1;
+      pbVar12 = pbVar12 + 4;
     }
     if (uVar7 != 0) {
-      puVar9 = *(undefined4 **)(*(int *)&local_14[1].field_0xb9 + 0x58);
-      puVar3 = puVar3 + 0x1b;
-      for (uVar7 = uVar7 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *puVar3 = *puVar9;
-        puVar9 = puVar9 + 1;
-        puVar3 = puVar3 + 1;
+      pbVar12 = *(byte **)(*(int *)&local_14[1].field_0xb9 + 0x58);
+      pbVar4 = pbVar5 + (uVar1 - uVar7) + -0x6c + 0x6c;
+      for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+        *(undefined4 *)pbVar4 = *(undefined4 *)pbVar12;
+        pbVar12 = pbVar12 + 4;
+        pbVar4 = pbVar4 + 4;
       }
       for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *(undefined1 *)puVar3 = *(undefined1 *)puVar9;
-        puVar9 = (undefined4 *)((int)puVar9 + 1);
-        puVar3 = (undefined4 *)((int)puVar3 + 1);
+        *pbVar4 = *pbVar12;
+        pbVar12 = pbVar12 + 1;
+        pbVar4 = pbVar4 + 1;
       }
     }
     *param_1 = local_8;
-    return puVar5;
+    return pbVar5;
   }
   *param_1 = local_8;
-  return puVar4;
+  return pbVar4;
 }
 

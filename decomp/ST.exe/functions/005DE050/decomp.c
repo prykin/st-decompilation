@@ -26,7 +26,7 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
     pcVar1 = this->field_0034;
     local_10 = this;
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((int)pcVar1);
+      FUN_00710790((uint *)pcVar1);
     }
     local_8 = *(int *)&pcVar1->field_0x8a;
     local_54.previous = g_currentExceptionFrame;

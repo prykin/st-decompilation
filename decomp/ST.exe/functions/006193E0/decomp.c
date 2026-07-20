@@ -43,7 +43,7 @@ undefined4 __fastcall FUN_006193e0(int param_1)
   }
   *(short *)(param_1 + 0xcd) = sVar6;
   if ((((-1 < sVar4) && (-1 < sVar5)) && (-1 < sVar6)) &&
-     (((sVar4 < DAT_007fb240 && (sVar5 < DAT_007fb242)) && (sVar6 < 5)))) {
+     (((sVar4 < SHORT_007fb240 && (sVar5 < SHORT_007fb242)) && (sVar6 < 5)))) {
     *(undefined4 *)(param_1 + 0xe7) = *(undefined4 *)(param_1 + 0x6d);
     *(undefined4 *)(param_1 + 0xeb) = *(undefined4 *)(param_1 + 0x71);
     *(undefined4 *)(param_1 + 0xef) = *(undefined4 *)(param_1 + 0x75);

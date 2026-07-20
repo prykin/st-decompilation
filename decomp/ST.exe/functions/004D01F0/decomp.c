@@ -27,7 +27,8 @@ undefined4 __fastcall FUN_004d01f0(void *param_1)
     exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       RaiseInternalException
-                (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x28b);
+                (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c
+                 ,0x28b);
     }
     thunk_FUN_004ce9e0(param_1,&local_10,&local_c,&local_8);
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x5ff),

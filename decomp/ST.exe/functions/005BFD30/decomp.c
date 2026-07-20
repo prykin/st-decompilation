@@ -35,10 +35,10 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
       } while (local_8 != 0);
     }
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd004,param_1);
-    iVar3 = param_3 * 0x26 + 0x30;
-    FUN_006b4170(pMVar2->field_0073,0,0x280,iVar3,0x50,0x1c,0);
-    FUN_006b5ee0(pMVar2->field_0073,0,0x280,iVar3,0x50,0x1c,0x18,0xd);
-    ccFntTy::SetSurf(pMVar2->field_008B,pMVar2->field_0073,0,0x280,iVar3,0x50,0x1c);
+    uVar4 = param_3 * 0x26 + 0x30;
+    FUN_006b4170(pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0);
+    FUN_006b5ee0(pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0x18,0xd);
+    ccFntTy::SetSurf(pMVar2->field_008B,pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c);
     ccFntTy::WrStr(pMVar2->field_008B,&DAT_0080f33a,-1,-1,8);
     g_currentExceptionFrame = local_54.previous;
     return;

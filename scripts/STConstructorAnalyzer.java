@@ -25,12 +25,12 @@ import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
-import ghidra.program.model.data.DataType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Listing;
+import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
 import ghidra.program.model.symbol.SourceType;
@@ -98,10 +98,12 @@ public class STConstructorAnalyzer extends GhidraScript {
 
         long names = constructors.stream().filter(p -> p.nameApply).count();
         long conventions = constructors.stream().filter(p -> p.conventionApply).count();
+        long parameters = constructors.stream().filter(p -> p.parameterApply).count();
         println("Constructor analysis complete: " + directory.toAbsolutePath().normalize());
         println("Vptr writers: " + storesByFunction.size() + ", constructor candidates: " +
             constructors.size() + ", name_apply: " + names + ", convention_apply: " +
-            conventions + ", hierarchy: " + hierarchy.size() + ", class sizes: " + sizes.size());
+            conventions + ", parameter_apply: " + parameters + ", hierarchy: " +
+            hierarchy.size() + ", class sizes: " + sizes.size());
     }
 
     private Map<Address, List<RawStore>> findStores(Map<Address, TableInfo> tables) {
@@ -220,13 +222,16 @@ public class STConstructorAnalyzer extends GhidraScript {
         if (operands.length == 0) return;
         String destination = cleanRegister(operands[0]);
         if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
+            if (!isFullRegister(operands[0])) { aliases.remove(destination); return; }
             String sourceRegister = cleanRegister(operands[1]);
-            Origin source = sourceRegister == null ? null : aliases.get(sourceRegister);
+            Origin source = sourceRegister == null || !isFullRegister(operands[1]) ? null :
+                aliases.get(sourceRegister);
             if (source == null) aliases.remove(destination);
             else aliases.put(destination, source);
             return;
         }
         if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
+            if (!isFullRegister(operands[0])) { aliases.remove(destination); return; }
             MemoryExpr sourceMemory = memoryExpr(operands[1]);
             Origin source = sourceMemory == null ? null : aliases.get(sourceMemory.register);
             if (source == null) aliases.remove(destination);
@@ -274,20 +279,91 @@ public class STConstructorAnalyzer extends GhidraScript {
         boolean signatureManual = function.getSignatureSource() == SourceType.USER_DEFINED &&
             !hasTag(function, TAG);
         boolean nameApply = high && synthetic;
+        int edxUses = incomingEdxUses(function);
+        int stackParameterUses = incomingStackParameterUses(function);
+        boolean receiverOnlyFastcall = receiverOnlyFastcallSignature(function);
+        boolean staleAppliedReceiver = alreadyApplied &&
+            "__thiscall".equals(function.getCallingConventionName()) &&
+            !explicitParameters(function).isEmpty();
+        boolean parameterApply = (high || alreadyApplied) && !signatureManual &&
+            edxUses == 0 && stackParameterUses == 0 &&
+            (receiverOnlyFastcall || staleAppliedReceiver);
         boolean conventionApply = high && !signatureManual &&
-            !"__thiscall".equals(function.getCallingConventionName());
+            !"__thiscall".equals(function.getCallingConventionName()) && parameterApply;
         String reason = "final_vptr=" + addr(finalStore.raw.table.address) +
             "; returns_this=" + returnsThis + "; calls_before=" + finalStore.callsBefore +
             "; field_writes_after=" + finalStore.postFieldWrites +
+            "; incoming_edx_uses=" + edxUses +
+            "; incoming_stack_parameter_uses=" + stackParameterUses +
             "; table_confidence=" + finalStore.raw.table.confidence;
         result.add(new ConstructorProposal(function.getEntryPoint(), expectedName,
             function.getSymbol().getSource().toString(),
             function.getSignature().getPrototypeString(true),
             function.getSignatureSource().toString(), owner, owner + "::" + leafOwner(owner),
             finalStore.raw.table.address, finalStore.raw.address, returnsThis,
-            nameApply, conventionApply, alreadyApplied ? "high" : high ? "high" : "medium",
+            nameApply, conventionApply, parameterApply, edxUses, stackParameterUses,
+            alreadyApplied ? "high" : high ? "high" : "medium",
             alreadyApplied ? reason + "; previously_applied" : reason));
         return result;
+    }
+
+    private boolean receiverOnlyFastcallSignature(Function function) {
+        if (!"__fastcall".equals(function.getCallingConventionName())) return false;
+        List<Parameter> parameters = explicitParameters(function);
+        if (parameters.size() != 1) return false;
+        Parameter parameter = parameters.get(0);
+        return parameter.isRegisterVariable() && parameter.getRegister() != null &&
+            "ECX".equals(canonicalRegister(parameter.getRegister().getName()));
+    }
+
+    private List<Parameter> explicitParameters(Function function) {
+        List<Parameter> result = new ArrayList<>();
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter()) result.add(parameter);
+        return result;
+    }
+
+    private int incomingEdxUses(Function function) {
+        boolean live = true;
+        int uses = 0, seen = 0;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext() && seen++ < 64 && live) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            for (int index = 0; index < operands.length; index++) {
+                String register = cleanRegister(operands[index]);
+                MemoryExpr memory = memoryExpr(operands[index]);
+                boolean mentionsEdx = "EDX".equals(register) ||
+                    memory != null && "EDX".equals(memory.register);
+                if (!mentionsEdx) continue;
+                boolean pureOverwrite = index == 0 && "EDX".equals(register) &&
+                    Set.of("MOV", "LEA", "POP").contains(mnemonic);
+                if (pureOverwrite) live = false;
+                else uses++;
+            }
+            if ("XOR".equals(mnemonic) && operands.length >= 2 &&
+                    "EDX".equals(cleanRegister(operands[0])) &&
+                    "EDX".equals(cleanRegister(operands[1]))) live = false;
+            if ("CALL".equals(mnemonic)) live = false;
+        }
+        return uses;
+    }
+
+    private int incomingStackParameterUses(Function function) {
+        int uses = 0;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            for (String operand : operands) {
+                MemoryExpr memory = memoryExpr(operand);
+                if (memory == null) continue;
+                if ("EBP".equals(memory.register) && memory.displacement >= 8 ||
+                        "ESP".equals(memory.register) && memory.displacement >= 4) uses++;
+            }
+        }
+        return uses;
     }
 
     private List<HierarchyProposal> hierarchyProposals(Function function, FlowResult flow) {
@@ -377,15 +453,18 @@ public class STConstructorAnalyzer extends GhidraScript {
 
     private void writeConstructors(Path path, List<ConstructorProposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("name_apply\tconvention_apply\tfunction_address\texpected_name\t" +
+            out.write("name_apply\tconvention_apply\tparameter_apply\tfunction_address\texpected_name\t" +
                 "expected_name_source\texpected_signature\texpected_signature_source\towner\t" +
-                "proposed_name\ttable_address\tstore_address\treturns_this\tconfidence\treason\n");
+                "proposed_name\ttable_address\tstore_address\treturns_this\t" +
+                "incoming_edx_uses\tincoming_stack_parameter_uses\tconfidence\treason\n");
             for (ConstructorProposal p : rows) {
-                out.write(bit(p.nameApply) + "\t" + bit(p.conventionApply) + "\t" + addr(p.address) +
+                out.write(bit(p.nameApply) + "\t" + bit(p.conventionApply) + "\t" +
+                    bit(p.parameterApply) + "\t" + addr(p.address) +
                     "\t" + tsv(p.expectedName) + "\t" + p.expectedNameSource + "\t" +
                     tsv(p.expectedSignature) + "\t" + p.expectedSignatureSource + "\t" +
                     tsv(p.owner) + "\t" + tsv(p.proposedName) + "\t" + addr(p.tableAddress) +
                     "\t" + addr(p.storeAddress) + "\t" + p.returnsThis + "\t" +
+                    p.incomingEdxUses + "\t" + p.incomingStackParameterUses + "\t" +
                     p.confidence + "\t" + tsv(p.reason) + "\n");
             }
         }
@@ -395,7 +474,8 @@ public class STConstructorAnalyzer extends GhidraScript {
         List<String> output = new ArrayList<>();
         for (ConstructorProposal p : rows) output.add("{\"name_apply\":" + p.nameApply +
             ",\"convention_apply\":" + p.conventionApply + ",\"function_address\":" +
-            q(addr(p.address)) + ",\"expected_name\":" + q(p.expectedName) +
+            q(addr(p.address)) + ",\"parameter_apply\":" + p.parameterApply +
+            ",\"expected_name\":" + q(p.expectedName) +
             ",\"owner\":" + q(p.owner) + ",\"proposed_name\":" + q(p.proposedName) +
             ",\"table_address\":" + q(addr(p.tableAddress)) + ",\"store_address\":" +
             q(addr(p.storeAddress)) + ",\"returns_this\":" + p.returnsThis +
@@ -434,6 +514,8 @@ public class STConstructorAnalyzer extends GhidraScript {
             "constructor_name_auto_apply=" + constructors.stream().filter(p -> p.nameApply).count(),
             "constructor_convention_auto_apply=" + constructors.stream()
                 .filter(p -> p.conventionApply).count(),
+            "constructor_parameter_auto_apply=" + constructors.stream()
+                .filter(p -> p.parameterApply).count(),
             "direct_hierarchy_relations=" + hierarchy.size(),
             "high_class_sizes=" + sizes.stream().filter(p -> p.apply).count(),
             "note=Constructor naming requires an ECX-derived vptr store, returned this, and " +
@@ -496,12 +578,28 @@ public class STConstructorAnalyzer extends GhidraScript {
             if (parsed == null) return null;
             displacement = "-".equals(matcher.group(2)) ? -parsed : signed32(parsed);
         }
-        return new MemoryExpr(matcher.group(1), displacement);
+        return new MemoryExpr(canonicalRegister(matcher.group(1)), displacement);
     }
 
     private String cleanRegister(String operand) {
         String value = operand.trim().toUpperCase(Locale.ROOT);
-        return REGISTER.matcher(value).matches() ? value : null;
+        return REGISTER.matcher(value).matches() ? canonicalRegister(value) : null;
+    }
+    private String canonicalRegister(String register) {
+        return switch (register.toUpperCase(Locale.ROOT)) {
+            case "AL", "AH", "AX", "EAX", "RAX" -> "EAX";
+            case "BL", "BH", "BX", "EBX", "RBX" -> "EBX";
+            case "CL", "CH", "CX", "ECX", "RCX" -> "ECX";
+            case "DL", "DH", "DX", "EDX", "RDX" -> "EDX";
+            case "SI", "ESI", "RSI" -> "ESI"; case "DI", "EDI", "RDI" -> "EDI";
+            case "BP", "EBP", "RBP" -> "EBP"; case "SP", "ESP", "RSP" -> "ESP";
+            default -> register.toUpperCase(Locale.ROOT);
+        };
+    }
+    private boolean isFullRegister(String operand) {
+        return Set.of("EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP",
+            "RAX", "RBX", "RCX", "RDX", "RSI", "RDI", "RBP", "RSP")
+            .contains(operand.trim().toUpperCase(Locale.ROOT));
     }
 
     private Long immediate(String operand) {
@@ -649,11 +747,13 @@ public class STConstructorAnalyzer extends GhidraScript {
         final Address address, tableAddress, storeAddress;
         final String expectedName, expectedNameSource, expectedSignature,
             expectedSignatureSource, owner, proposedName, confidence, reason;
-        final boolean returnsThis, nameApply, conventionApply;
+        final boolean returnsThis, nameApply, conventionApply, parameterApply;
+        final int incomingEdxUses, incomingStackParameterUses;
         ConstructorProposal(Address address, String expectedName, String expectedNameSource,
                 String expectedSignature, String expectedSignatureSource, String owner,
                 String proposedName, Address tableAddress, Address storeAddress,
                 boolean returnsThis, boolean nameApply, boolean conventionApply,
+                boolean parameterApply, int incomingEdxUses, int incomingStackParameterUses,
                 String confidence, String reason) {
             this.address = address; this.expectedName = expectedName;
             this.expectedNameSource = expectedNameSource; this.expectedSignature = expectedSignature;
@@ -661,6 +761,8 @@ public class STConstructorAnalyzer extends GhidraScript {
             this.proposedName = proposedName; this.tableAddress = tableAddress;
             this.storeAddress = storeAddress; this.returnsThis = returnsThis;
             this.nameApply = nameApply; this.conventionApply = conventionApply;
+            this.parameterApply = parameterApply; this.incomingEdxUses = incomingEdxUses;
+            this.incomingStackParameterUses = incomingStackParameterUses;
             this.confidence = confidence; this.reason = reason;
         }
     }

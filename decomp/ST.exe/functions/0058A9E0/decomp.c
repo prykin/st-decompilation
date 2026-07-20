@@ -11,6 +11,7 @@ void __fastcall FUN_0058a9e0(int *param_1)
   undefined4 uVar5;
   short sVar6;
   int iVar7;
+  uint uVar8;
   int local_c;
   
   sVar6 = *(short *)((int)param_1 + 0x41);
@@ -154,19 +155,19 @@ void __fastcall FUN_0058a9e0(int *param_1)
   sVar6 = (short)param_1[0x1b] * 0x2d;
   *(short *)(param_1 + 0x1b) = sVar6;
   if (*(int *)((int)param_1 + 0x281) == 0) {
-    iVar2 = (0x18 - (int)sVar6 / 0xf) % 0x18;
-    iVar4 = (((iVar2 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * local_c +
+    iVar4 = (0x18 - (int)sVar6 / 0xf) % 0x18;
+    uVar3 = (((iVar4 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * local_c +
             *(int *)((int)param_1 + 0x231);
-    iVar2 = (iVar2 / 3) * local_c + *(int *)((int)param_1 + 0x231);
+    uVar8 = (iVar4 / 3) * local_c + *(int *)((int)param_1 + 0x231);
   }
   else {
-    iVar4 = *(int *)((int)param_1 + 0x231) + iVar2 * 8;
-    iVar2 = iVar4;
+    uVar3 = *(int *)((int)param_1 + 0x231) + iVar2 * 8;
+    uVar8 = uVar3;
   }
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   *(short *)(param_1 + 0x1b) = sVar6 / 0x2d - (short)((int)sVar6 / -0x4c000000);
-  STT3DSprC::SetCurFase(this,'\x0e',iVar4);
-  STT3DSprC::SetCurShad(this,'\x0e',iVar2);
+  STT3DSprC::SetCurFase(this,'\x0e',uVar3);
+  STT3DSprC::SetCurShad(this,'\x0e',uVar8);
   STT3DSprC::ShowCurFase(this,'\x0e');
   *(int *)((int)param_1 + 0x24d) = *(int *)((int)param_1 + 0x24d) + 1;
   (**(code **)(*param_1 + 0xd8))();

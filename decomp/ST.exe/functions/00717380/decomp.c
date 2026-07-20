@@ -40,7 +40,7 @@ void __fastcall FUN_00717380(int param_1)
       iVar9 = 0;
       *(undefined4 *)(param_1 + 0x4e6) = *(undefined4 *)(*(int *)(param_1 + 0x4da) + iVar8);
       do {
-        FUN_006ab060((undefined4 *)(iVar9 + *(int *)(param_1 + 0x472)));
+        FUN_006ab060((LPVOID *)(iVar9 + *(int *)(param_1 + 0x472)));
         iVar9 = iVar9 + 4;
       } while (iVar9 < 0x140);
       iVar9 = *(int *)(param_1 + 0x4d2);

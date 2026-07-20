@@ -2,14 +2,16 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00524FE0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_C0=192;CASE_C1=193;CASE_DD=221;CASE_DE=222
-    */
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00524FE0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 0051B6BE */
 
-undefined4 __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
+UINT __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
 
 {
-  undefined4 uVar1;
+  UINT UVar1;
   
-  uVar1 = 0;
+  UVar1 = 0;
   switch(param_1) {
   case CASE_96:
     return 0x3138;
@@ -58,7 +60,7 @@ undefined4 __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
   case CASE_B0:
     return 0x314e;
   case CASE_B2:
-    uVar1 = 0x315c;
+    UVar1 = 0x315c;
     break;
   case CASE_B3:
     return 0x3151;
@@ -89,6 +91,6 @@ undefined4 __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
   case CASE_DE:
     return 0x271e;
   }
-  return uVar1;
+  return UVar1;
 }
 

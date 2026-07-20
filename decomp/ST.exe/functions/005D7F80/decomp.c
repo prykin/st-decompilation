@@ -39,16 +39,16 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
     }
     pSVar2->field_1CB4 = 0xffffffff;
     if (pSVar2->field_1CB8 != 0) {
-      FUN_006ab060(&pSVar2->field_1CB8);
+      FUN_006ab060((LPVOID *)&pSVar2->field_1CB8);
     }
     if (pSVar2->field_1CC8 != 0) {
-      FUN_006ab060(&pSVar2->field_1CC8);
+      FUN_006ab060((LPVOID *)&pSVar2->field_1CC8);
     }
     if (pSVar2->field_1CBC != 0) {
-      FUN_006ab060(&pSVar2->field_1CBC);
+      FUN_006ab060((LPVOID *)&pSVar2->field_1CBC);
     }
     if (pSVar2->field_1CC0 != 0) {
-      FUN_006ab060(&pSVar2->field_1CC0);
+      FUN_006ab060((LPVOID *)&pSVar2->field_1CC0);
     }
     if (pSVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pSVar2->field_0x3d);

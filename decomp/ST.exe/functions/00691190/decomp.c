@@ -26,14 +26,14 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   uint local_20;
   undefined4 *local_1c;
   int local_18;
-  int local_14;
+  LPVOID local_14;
   uint local_10;
   int local_c;
   undefined4 *local_8;
   
   local_8 = (undefined4 *)0x0;
   local_c = 0;
-  local_14 = 0;
+  local_14 = (LPVOID)0x0;
   local_18 = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -103,7 +103,8 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
           }
           if (puVar5 != (undefined4 *)0x0) {
             local_1c = FltDataPack(puVar5,&local_10);
-            local_8 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_8,local_8[5] + local_10);
+            local_8 = (undefined4 *)
+                      Library::DKW::LIB::FUN_006acf50((int)local_8,local_8[5] + local_10);
             puVar5 = local_1c;
             puVar8 = (undefined4 *)(iVar4 + 0x10b + (int)local_8);
             for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -139,7 +140,7 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   if (local_8 != (undefined4 *)0x0) {
     FUN_006ab060(&local_8);
   }
-  if (local_14 != 0) {
+  if (local_14 != (LPVOID)0x0) {
     FUN_006ab060(&local_14);
   }
   iVar9 = ReportDebugMessage(s_E____titans_ai_ai_tact_d_cpp_007d58fc,0x8c,0,iVar4,&DAT_007a4ccc,

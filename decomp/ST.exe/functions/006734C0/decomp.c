@@ -45,7 +45,7 @@ int FUN_006734c0(void)
           uVar4 = (DAT_00857558 - iVar2) + uVar5;
           if (0x400 < (int)uVar4) {
             iVar6 = (int)puVar3 - (int)DAT_0085755c;
-            DAT_0085755c = (uint *)Library::DKW::LIB::FUN_006acf50(DAT_0085755c,uVar4);
+            DAT_0085755c = (uint *)Library::DKW::LIB::FUN_006acf50((int)DAT_0085755c,uVar4);
             puVar3 = (uint *)(iVar6 + (int)DAT_0085755c);
           }
           Library::MSVCRT::FUN_0072da70

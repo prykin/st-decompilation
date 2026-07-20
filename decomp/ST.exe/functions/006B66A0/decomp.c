@@ -30,7 +30,7 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
       puVar1[7] = unaff_EDI;
       puVar1[8] = unaff_ESI;
       puVar1[9] = unaff_EBX;
-      FUN_006a5e90((undefined4 *)puVar1[0xc]);
+      FUN_006a5e90((short *)puVar1[0xc]);
       pcVar3 = FUN_006c49b0(param_5);
       puVar1[0xc] = pcVar3;
     }

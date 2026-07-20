@@ -224,7 +224,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       if (DAT_007fa168 != (undefined4 *)0x0) {
         FUN_006ab060(&DAT_007fa168);
       }
-      DAT_007fa174 = 0;
+      g_sTAllPlayers_007FA174 = (STAllPlayersC *)0x0;
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -266,8 +266,8 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       DAT_007fa164 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa130 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa134 = 0;
-      if (DAT_00806754 != (cMf32 *)0x0) {
-        local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,s_allplsave_007a67d8,0,0);
+      if (g_cMf32_00806754 != (cMf32 *)0x0) {
+        local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,s_allplsave_007a67d8,0,0);
       }
       if (local_c == (ushort *)0x0) {
         piVar14 = (int *)0x0;
@@ -295,8 +295,8 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         } while ((int)puVar13 < 0x7fa135);
         thunk_FUN_004d8110(0);
         thunk_FUN_004d8760(DAT_00808a90 & 0xff);
-        DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70((int)DAT_007fb246);
-        uVar10 = (uint)DAT_007fb246;
+        DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb246);
+        uVar10 = (uint)SHORT_007fb246;
         puVar13 = DAT_007fa168;
         for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
           *puVar13 = 0x50505050;
@@ -321,7 +321,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         cVar15 = cVar15 + '\x01';
       } while ((int)puVar13 < 0x7fa135);
       thunk_FUN_00444e70(this_00,(undefined4 *)local_c);
-      cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
+      cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -332,7 +332,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
     FUN_006ab060(&local_c);
   }
   else if (uVar11 == 0x111) {
-    if (DAT_00806754 == (cMf32 *)0x0) {
+    if (g_cMf32_00806754 == (cMf32 *)0x0) {
       iVar4 = 0;
       do {
         _MakeMDPairs(this_00,(char)iVar4);
@@ -340,7 +340,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       } while (iVar4 < 8);
     }
     else {
-      local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,s_allplsave_007a67d8,0,0);
+      local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,s_allplsave_007a67d8,0,0);
       if (local_c == (ushort *)0x0) {
         iVar4 = 0;
         do {
@@ -349,7 +349,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         } while (iVar4 < 8);
       }
       else {
-        cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
+        cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
       }
     }
     thunk_FUN_004d8b70(*(char *)(*(int *)&this_00->field_0x10 + 0x112d));

@@ -5,11 +5,14 @@
    
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum. Cases:
-   CASE_5=5;CASE_F=15;CASE_10=16;CASE_1C=28 */
+   CASE_5=5;CASE_F=15;CASE_10=16;CASE_1C=28
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0056CBD0 -> EXTERNAL:00000090 @ 0056CF3D | 0056CBD0 -> EXTERNAL:00000094 @ 0056CC82 */
 
 LRESULT __thiscall
 STAppC::MainWindowProc
-          (STAppC *this,HWND param_1,STAppC_MainWindowProc_param_2Enum param_2,uint param_3,
+          (STAppC *this,HWND hWnd,STAppC_MainWindowProc_param_2Enum param_2,uint param_3,
           uint param_4)
 
 {
@@ -44,7 +47,7 @@ STAppC::MainWindowProc
     LVar3 = (*pcVar1)();
     return LVar3;
   }
-  iVar2 = AppClassTy::DecodeMessage(DAT_00806728,param_2,param_3,param_4);
+  iVar2 = AppClassTy::DecodeMessage(g_appClass_00806728,param_2,param_3,param_4);
   if ((iVar2 != 0) &&
      (iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x330,0,-0x5001fff8,&DAT_007a4ccc,
                                  s_STAppC__MainWindowProc_007ca0f8), iVar2 != 0)) {
@@ -54,7 +57,7 @@ STAppC::MainWindowProc
   }
   if (param_2 < 0x21) {
     if (param_2 == 0x20) {
-      pHVar5 = LoadCursorA(DAT_00856d70,(LPCSTR)0x66);
+      pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
       SetCursor(pHVar5);
       g_currentExceptionFrame = local_4c.previous;
       return 1;
@@ -67,13 +70,13 @@ STAppC::MainWindowProc
         puVar6 = puVar6 + 1;
       }
       local_5c = 0x66;
-      AppClassTy::SendMessage(DAT_00806728,3,1,(int)local_6c);
+      AppClassTy::SendMessage(g_appClass_00806728,3,1,(int)local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_F:
-      BeginPaint(param_1,&local_ac);
+      BeginPaint(hWnd,&local_ac);
       if (DAT_008075a8 != (int *)0x0) {
-        FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+        FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       }
       if ((DAT_0081163c != 0) && (DAT_00807598 != 0)) {
         DAT_0080674c = 2;
@@ -82,7 +85,7 @@ STAppC::MainWindowProc
       if (DAT_00802a58 != (undefined4 *)0x0) {
         thunk_FUN_00554a50(DAT_00802a58);
       }
-      EndPaint(param_1,&local_ac);
+      EndPaint(hWnd,&local_ac);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_10:
@@ -103,7 +106,7 @@ STAppC::MainWindowProc
         if (DAT_00802a30 != (undefined4 *)0x0) {
           thunk_FUN_0054b540(DAT_00802a30);
         }
-        pHVar5 = LoadCursorA(DAT_00856d70,(LPCSTR)0x7f00);
+        pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
         SetCursor(pHVar5);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
@@ -115,8 +118,8 @@ STAppC::MainWindowProc
         FUN_006dc300(DAT_00807598);
       }
       thunk_FUN_00573240();
-      thunk_FUN_00571320(&DAT_00807620,param_1);
-      pHVar5 = LoadCursorA(DAT_00856d70,(LPCSTR)0x66);
+      thunk_FUN_00571320(&DAT_00807620,hWnd);
+      pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
       SetCursor(pHVar5);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
@@ -129,11 +132,11 @@ STAppC::MainWindowProc
         return local_8;
       }
       if (param_4 >> 0x10 != 0x4453) {
-        thunk_FUN_00566f30(&g_sound,param_1);
+        thunk_FUN_00566f30(&g_sound,hWnd);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
-      thunk_FUN_00566f30(&g_sound,param_1);
+      thunk_FUN_00566f30(&g_sound,hWnd);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
@@ -168,20 +171,20 @@ STAppC::MainWindowProc
     if (DAT_00806738 != 8) {
       DAT_00806738 = 8;
       Library::DKW::DDX::FUN_006b9b40
-                (DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,8,DAT_00806730,DAT_00806734,0,0,0
-                );
+                (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730,
+                 DAT_00806734,0,0,0);
       Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
     }
-    FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+    FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0x1000000);
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
-    *(undefined4 *)((int)&DAT_00806728[0x169].vtable + 2) = 0;
-    thunk_FUN_00567180(DAT_00806728 + 1,param_1);
-    FUN_006e3db0((int)((int)&DAT_00806728[0x4e].field_0028 + 2));
+    *(undefined4 *)((int)&g_appClass_00806728[0x169].vtable + 2) = 0;
+    thunk_FUN_00567180(g_appClass_00806728 + 1,hWnd);
+    FUN_006e3db0((int)((int)&g_appClass_00806728[0x4e].field_0028 + 2));
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }
-  LVar3 = DefWindowProcA(param_1,param_2,param_3,param_4);
+  LVar3 = DefWindowProcA(hWnd,param_2,param_3,param_4);
   g_currentExceptionFrame = local_4c.previous;
   return LVar3;
 }

@@ -9,10 +9,10 @@ int __cdecl FUN_005530e0(int param_1)
   undefined2 local_10;
   undefined2 uStack_e;
   undefined2 local_c;
-  int local_8;
+  LPVOID local_8;
   
   pIVar2 = g_currentExceptionFrame;
-  local_8 = 0;
+  local_8 = (LPVOID)0x0;
   if (param_1 < 0) {
     return 0;
   }
@@ -22,23 +22,23 @@ int __cdecl FUN_005530e0(int param_1)
     if (DAT_00802a4c == (uint *)0x0) {
       thunk_FUN_005531f0();
     }
-    local_8 = thunk_FUN_00553060(param_1);
-    if (local_8 == 0) {
-      local_8 = thunk_FUN_00552f50(param_1);
-      if (local_8 != 0) {
-        uStack_e = (undefined2)local_8;
+    local_8 = (LPVOID)thunk_FUN_00553060(param_1);
+    if (local_8 == (LPVOID)0x0) {
+      local_8 = (LPVOID)thunk_FUN_00552f50(param_1);
+      if (local_8 != (LPVOID)0x0) {
+        uStack_e = SUB42(local_8,0);
         local_c = (undefined2)((uint)local_8 >> 0x10);
         local_10 = (undefined2)param_1;
         Library::DKW::TBL::FUN_006ae1c0(DAT_00802a4c,(undefined4 *)&local_10);
       }
     }
     g_currentExceptionFrame = pIVar2;
-    return local_8;
+    return (int)local_8;
   }
   g_currentExceptionFrame = pIVar2;
-  if (local_8 == 0) {
+  if (local_8 == (LPVOID)0x0) {
     FUN_006ab060(&local_8);
   }
-  return local_8;
+  return (int)local_8;
 }
 

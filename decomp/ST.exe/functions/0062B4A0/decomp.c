@@ -5,7 +5,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
   int iVar1;
   int iVar2;
   short sVar3;
-  void *pvVar4;
+  VisibleClassTy *pVVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
@@ -58,23 +58,22 @@ uint __fastcall FUN_0062b4a0(int param_1)
        ((int)uVar6 <= *(int *)(DAT_00807598 + 0x58))) && (*(int *)(DAT_00807598 + 0x44) <= iVar7))
      && (iVar7 <= *(int *)(DAT_00807598 + 0x54))) {
     uVar5 = FUN_006ddbd0();
-    pvVar4 = DAT_00802a88;
+    pVVar4 = g_visibleClass_00802A88;
     uVar6 = uVar5;
-    if (((uVar5 == 0) || (DAT_00802a88 == (void *)0x0)) ||
-       ((DAT_0080874d == -1 || (uVar6 = 0, *(int *)((int)DAT_00802a88 + 0xf8) == 0))))
+    if (((uVar5 == 0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) ||
+       ((DAT_0080874d == -1 || (uVar6 = 0, g_visibleClass_00802A88->field_00F8 == 0))))
     goto cf_common_exit_0062B616;
-    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                       local_c,local_8,&local_14,(int *)&local_c);
+    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_8,
+                       &local_14,(int *)&local_c);
     uVar6 = local_10;
     if ((((int)local_10 < 0) || (4 < (int)local_10)) ||
        ((local_14 < 0 ||
-        ((((*(int *)((int)pvVar4 + 0x30) <= local_14 ||
+        (((((int)pVVar4->field_0030 <= local_14 ||
            (uVar6 = (&DAT_0079aed0)[local_10] + local_c, (int)uVar6 < 0)) ||
-          (*(int *)((int)pvVar4 + 0x34) <= (int)uVar6)) ||
-         ((*(int *)((int)pvVar4 + 0x4c) == 0 ||
-          (uVar6 = (uint)*(byte *)(uVar6 * *(int *)((int)pvVar4 + 0x30) +
-                                   *(int *)((int)pvVar4 + 0x4c) + local_14), uVar6 != 0))))))))
-    goto cf_common_exit_0062B616;
+          ((int)pVVar4->field_0034 <= (int)uVar6)) ||
+         ((pVVar4->field_004C == 0 ||
+          (uVar6 = (uint)*(byte *)(uVar6 * pVVar4->field_0030 + pVVar4->field_004C + local_14),
+          uVar6 != 0)))))))) goto cf_common_exit_0062B616;
   }
   uVar5 = 0;
 cf_common_exit_0062B616:

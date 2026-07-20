@@ -2,13 +2,14 @@
 void __fastcall FUN_004efe20(void *param_1)
 
 {
-  undefined4 uVar1;
+  UINT UVar1;
   uint uVar2;
   int iVar3;
   Global_sub_00523410_param_1Enum *pGVar4;
   byte *pbVar5;
   undefined4 *puVar6;
   undefined4 *puVar7;
+  undefined4 uVar8;
   int local_14;
   undefined4 *local_c;
   int local_8;
@@ -29,15 +30,15 @@ void __fastcall FUN_004efe20(void *param_1)
         if (iVar3 != 0) goto LAB_004eff2c;
 LAB_004efe9c:
         *(undefined4 *)((int)param_1 + 0x28) = 5;
-        uVar1 = *puVar6;
+        uVar8 = *puVar6;
       }
       else {
         if (iVar3 != 0) goto LAB_004efe9c;
 LAB_004eff2c:
         *(undefined4 *)((int)param_1 + 0x28) = 0x20;
-        uVar1 = *puVar6;
+        uVar8 = *puVar6;
       }
-      FUN_006e6080(param_1,2,uVar1,(undefined4 *)((int)param_1 + 0x18));
+      FUN_006e6080(param_1,2,uVar8,(undefined4 *)((int)param_1 + 0x18));
       if ((((*(int *)((int)param_1 + 0x2c) != 0) &&
            (iVar3 = *(int *)((int)param_1 + 0x27a), iVar3 != 0)) &&
           (uVar2 = *(int *)((int)param_1 + 0x199) + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
@@ -45,8 +46,8 @@ LAB_004eff2c:
                    (*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c)),
          pGVar4 != (Global_sub_00523410_param_1Enum *)0x0)) {
         *(char *)((int)local_c + -9) = ((char)pGVar4[2] == 0) + '\x03';
-        uVar1 = thunk_FUN_00523410(*pGVar4,'\x03',0);
-        local_c[-2] = uVar1;
+        UVar1 = thunk_FUN_00523410(*pGVar4,'\x03',0);
+        local_c[-2] = UVar1;
         if ((char)pGVar4[2] == 0) {
           pbVar5 = (byte *)((int)pGVar4 + 0x12);
           puVar7 = local_c;

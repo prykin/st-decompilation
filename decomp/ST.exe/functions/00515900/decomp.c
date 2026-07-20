@@ -63,13 +63,13 @@ HelpPanelTy::DrawWeapon
       ccFntTy::SetSurf(local_8->field_01E0,local_8->field_0218,0,param_1,iVar7 + iVar2,
                        0x19c - param_1,0xf);
       if (param_4 == 0) {
-        pHVar9 = DAT_00807618;
+        pHVar9 = HINSTANCE_00807618;
         UVar5 = thunk_FUN_00524fe0(GVar8);
         uVar6 = FUN_006b0140(UVar5,pHVar9);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007a4ccc,uVar6);
       }
       else {
-        pHVar9 = DAT_00807618;
+        pHVar9 = HINSTANCE_00807618;
         UVar5 = thunk_FUN_00524fe0(GVar8);
         uVar6 = FUN_006b0140(UVar5,pHVar9);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___d__007c3bc0,uVar6,param_4);

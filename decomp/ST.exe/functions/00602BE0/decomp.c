@@ -2,7 +2,7 @@
 void __fastcall FUN_00602be0(int *param_1)
 
 {
-  void *pvVar1;
+  VisibleClassTy *pVVar1;
   int iVar2;
   undefined4 *puVar3;
   int local_c;
@@ -43,20 +43,18 @@ void __fastcall FUN_00602be0(int *param_1)
       *(undefined4 *)((int)param_1 + 0x36e) = 4;
     }
   }
-  pvVar1 = DAT_00802a88;
-  if ((DAT_00802a88 != (void *)0x0) && (-1 < *(int *)((int)param_1 + 0x39b))) {
+  pVVar1 = g_visibleClass_00802A88;
+  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) && (-1 < *(int *)((int)param_1 + 0x39b))) {
     iVar2 = (int)*(short *)((int)param_1 + 0x259);
     if (((DAT_0080874d != -1) &&
-        ((((*(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-           (thunk_FUN_00558c00(DAT_00802a88,
-                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+        ((((g_visibleClass_00802A88->field_00F8 != 0 &&
+           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                (int)*(short *)((int)param_1 + 0x255),
                                (int)*(short *)((int)param_1 + 599),&local_8,&local_c), -1 < iVar2))
-          && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < *(int *)((int)pvVar1 + 0x30))))))) &&
+          && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < (int)pVVar1->field_0030)))))) &&
        ((local_c = (&DAT_0079aed0)[iVar2] + local_c, -1 < local_c &&
-        (((local_c < *(int *)((int)pvVar1 + 0x34) && (*(int *)((int)pvVar1 + 0x4c) != 0)) &&
-         (*(char *)(local_c * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) + local_8)
-          == '\0')))))) {
+        (((local_c < (int)pVVar1->field_0034 && (pVVar1->field_004C != 0)) &&
+         (*(char *)(local_c * pVVar1->field_0030 + pVVar1->field_004C + local_8) == '\0')))))) {
       if (*(char *)((int)param_1 + 0x37a) == '\0') {
         return;
       }

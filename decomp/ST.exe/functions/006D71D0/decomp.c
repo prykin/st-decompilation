@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
       this_00 = (int *)0x0;
     }
     else {
-      FUN_0074cdc5(this_00,0,(int)this,&local_8,u_Input_007ee27c);
+      FUN_0074cdc5(this_00,0,(int)this,&local_8,(char *)u_Input_007ee27c);
       *this_00 = (int)&PTR_FUN_0079ded8;
       this_00[3] = (int)&PTR_FUN_0079de90;
       this_00[4] = (int)&PTR_FUN_0079de7c;
@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
         puVar1 = (undefined4 *)0x0;
       }
       else {
-        puVar1 = FUN_0074cfc0(this_01,0,(int)this,&local_8,u_Output_007ee288);
+        puVar1 = FUN_0074cfc0(this_01,0,(int)this,&local_8,(char *)u_Output_007ee288);
       }
       *(undefined4 **)((int)this + 0x90) = puVar1;
       if ((local_8 < 0) || (puVar1 == (undefined4 *)0x0)) {

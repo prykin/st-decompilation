@@ -1,5 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0054CA10 parameter used as this of cMf32::RecMemFree @ 0054CAC7 */
 
 int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int param_4)
 

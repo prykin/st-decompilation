@@ -218,7 +218,8 @@ undefined4 * CreatePlrDataForWS(void)
     g_currentExceptionFrame = local_78.previous;
     return local_c;
   }
-  RaiseInternalException(local_34[0],DAT_007ed77c,s_E____titans_ai_ai_creat_cpp_007d2880,0x133);
+  RaiseInternalException
+            (local_34[0],g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x133);
   g_currentExceptionFrame = local_78.previous;
   return local_c;
 }

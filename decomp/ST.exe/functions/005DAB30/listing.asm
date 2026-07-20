@@ -1,4 +1,4 @@
-FUN_005dab30:
+StartSystemTy::sub_005DAB30:
 005DAB30  56                        PUSH ESI
 005DAB31  8B F1                     MOV ESI,ECX
 005DAB33  8B 86 8E 06 00 00         MOV EAX,dword ptr [ESI + 0x68e]

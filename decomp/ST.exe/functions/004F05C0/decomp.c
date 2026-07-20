@@ -74,7 +74,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     return;
   }
   iVar7 = 5;
-  DAT_00801684 = local_1c;
+  g_prodPanel_00801684 = (ProdPanelTy *)local_1c;
   puVar10 = &local_1c->field_027E;
   do {
     puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
@@ -83,7 +83,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     iVar7 = iVar7 + -1;
   } while (iVar7 != 0);
   iVar7 = 1;
-  this_00->field_003C = this_00->field_003C + (DAT_00806730 + -800) / 2;
+  this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   piVar12 = (int *)0x0;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJW_007c19e0,0);
   puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar12,iVar7);
@@ -96,8 +96,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
                      (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar5;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,
-                      (undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,s_OBJSD_007c1908,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_018C = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
   ProdPanelTy::InitProdPanel

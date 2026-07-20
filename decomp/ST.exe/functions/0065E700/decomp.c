@@ -3,63 +3,64 @@ undefined4 __fastcall
 FUN_0065e700(int param_1,undefined4 param_2,int *param_3,int *param_4,int *param_5)
 
 {
-  uint *puVar1;
-  int *piVar2;
-  void *this;
+  uint *groupContent;
+  int *piVar1;
+  STFishC *this;
   int *extraout_ECX;
-  int *piVar3;
+  int *piVar2;
   int extraout_EDX;
   int extraout_EDX_00;
-  int iVar4;
-  uint uVar5;
-  bool bVar6;
+  int iVar3;
+  uint uVar4;
+  bool bVar5;
   short local_a;
   short local_8;
   short local_6;
   
-  puVar1 = thunk_FUN_0065da10(param_1,param_2);
-  if ((puVar1 == (uint *)0x0) || (puVar1[3] == 0)) {
+  groupContent = thunk_FUN_0065da10(param_1,param_2);
+  if ((groupContent == (uint *)0x0) || (groupContent[3] == 0)) {
     return 0xffffffff;
   }
-  uVar5 = 0;
+  uVar4 = 0;
   *param_5 = 0;
   *param_4 = 0;
   *param_3 = 0;
-  if (0 < (int)puVar1[3]) {
-    bVar6 = puVar1[3] != 0;
-    piVar3 = param_3;
-    iVar4 = extraout_EDX;
+  if (0 < (int)groupContent[3]) {
+    bVar5 = groupContent[3] != 0;
+    piVar2 = param_3;
+    iVar3 = extraout_EDX;
     do {
-      if (bVar6) {
-        piVar3 = (int *)puVar1[7];
-        piVar2 = (int *)(puVar1[2] * uVar5 + (int)piVar3);
+      if (bVar5) {
+        piVar2 = (int *)groupContent[7];
+        piVar1 = (int *)(groupContent[2] * uVar4 + (int)piVar2);
       }
       else {
-        piVar2 = (int *)0x0;
+        piVar1 = (int *)0x0;
       }
-      this = (void *)STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,
-                                CONCAT31((int3)((uint)piVar3 >> 8),*(undefined1 *)(param_1 + 0x24)),
-                                CONCAT22((short)((uint)iVar4 >> 0x10),(short)*piVar2),CASE_1);
-      piVar3 = extraout_ECX;
-      iVar4 = extraout_EDX_00;
-      if (this != (void *)0x0) {
-        thunk_FUN_004162b0(this,&local_6,&local_8,&local_a);
+      this = (STFishC *)
+             STAllPlayersC::GetObjPtr
+                       (g_sTAllPlayers_007FA174,
+                        CONCAT31((int3)((uint)piVar2 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                        CONCAT22((short)((uint)iVar3 >> 0x10),(short)*piVar1),CASE_1);
+      piVar2 = extraout_ECX;
+      iVar3 = extraout_EDX_00;
+      if (this != (STFishC *)0x0) {
+        STFishC::sub_004162B0(this,&local_6,&local_8,&local_a);
         *param_3 = *param_3 + (int)local_6;
-        iVar4 = (int)local_8;
-        *param_4 = *param_4 + iVar4;
-        piVar3 = (int *)(*param_5 + (int)local_a);
-        *param_5 = (int)piVar3;
+        iVar3 = (int)local_8;
+        *param_4 = *param_4 + iVar3;
+        piVar2 = (int *)(*param_5 + (int)local_a);
+        *param_5 = (int)piVar2;
       }
-      uVar5 = uVar5 + 1;
-      bVar6 = uVar5 < puVar1[3];
-    } while ((int)uVar5 < (int)puVar1[3]);
+      uVar4 = uVar4 + 1;
+      bVar5 = uVar4 < groupContent[3];
+    } while ((int)uVar4 < (int)groupContent[3]);
   }
-  FUN_006ae110((byte *)puVar1);
-  if (0 < (int)uVar5) {
-    *param_3 = *param_3 / (int)uVar5;
-    *param_4 = *param_4 / (int)uVar5;
-    *param_5 = *param_5 / (int)uVar5;
+  FUN_006ae110((byte *)groupContent);
+  if (0 < (int)uVar4) {
+    *param_3 = *param_3 / (int)uVar4;
+    *param_4 = *param_4 / (int)uVar4;
+    *param_5 = *param_5 / (int)uVar4;
     return 0;
   }
   return 0xffffffff;

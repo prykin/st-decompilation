@@ -1,0 +1,11 @@
+function_address	target	status	detail
+0068CEC0	parameter:0	applied	type=applied(/winnt.h/LPCSTR)
+0068FC70	parameter:1	disabled	apply flags are 0
+006BBE40	parameter:1	disabled	apply flags are 0
+006CEF60	parameter:2	applied	type=applied(/int)
+00725910	parameter:0	applied	type=applied(/winnt.h/HANDLE)
+0074868B	parameter:1	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
+00749106	parameter:1	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
+007494D1	parameter:2	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
+00749F88	parameter:0	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
+0074B5E6	parameter:2	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)

@@ -61,12 +61,13 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,
+                               (g_sTAllPlayers_007FA174,
                                 CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8
                                 ,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb1f);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb1f);
             }
             if (*(int *)&pSVar2->field_0x2b9 == -1) {
               if (*(int *)&pSVar4->field_0x7b6 == 0) goto LAB_0049eb44;
@@ -87,8 +88,9 @@ LAB_0049eb44:
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < local_c);
       }
-      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb3c)
-      ;
+      RaiseInternalException
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0xb3c);
     }
     if (*(uint *)(DAT_00802a38 + 0xe4) % 0x1e == 5) {
       uVar9 = 0;
@@ -98,11 +100,12 @@ LAB_0049eb44:
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,CONCAT31((int3)(local_8 >> 8),pSVar2->field_0024),
-                                local_8,CASE_1);
+                               (g_sTAllPlayers_007FA174,
+                                CONCAT31((int3)(local_8 >> 8),pSVar2->field_0024),local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb43);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb43);
             }
             iVar3 = thunk_FUN_0045ff10((int)pSVar4);
             if ((iVar3 == 7) || (uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_7), uVar5 == 1)) {

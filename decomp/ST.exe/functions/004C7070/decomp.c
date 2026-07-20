@@ -38,16 +38,17 @@ LAB_004c7175:
         }
         else {
           sVar4 = (short)iVar5;
-          if ((((DAT_007fb240 <= sVar2) || (sVar1 < 0)) || (DAT_007fb242 <= sVar1)) ||
-             (((sVar4 < 0 || (DAT_007fb244 <= sVar4)) ||
+          if ((((SHORT_007fb240 <= sVar2) || (sVar1 < 0)) || (SHORT_007fb242 <= sVar1)) ||
+             (((sVar4 < 0 || (SHORT_007fb244 <= sVar4)) ||
               (*(int *)(DAT_007fb248 +
-                       ((int)sVar4 * (int)DAT_007fb246 + (int)DAT_007fb240 * (int)sVar1 + (int)sVar2
-                       ) * 8) == 0)))) {
-            if (((sVar2 < 0) || (DAT_007fb240 <= sVar2)) ||
-               ((sVar1 < 0 || (((DAT_007fb242 <= sVar1 || (sVar4 < 0)) || (DAT_007fb244 <= sVar4))))
-               )) goto LAB_004c719b;
+                       ((int)sVar4 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar1 +
+                       (int)sVar2) * 8) == 0)))) {
+            if (((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
+               ((sVar1 < 0 ||
+                (((SHORT_007fb242 <= sVar1 || (sVar4 < 0)) || (SHORT_007fb244 <= sVar4))))))
+            goto LAB_004c719b;
             sVar4 = *(short *)(DAT_007fb280 +
-                              ((int)sVar4 * (int)DAT_007fb27e + (int)DAT_007fb278 * (int)sVar1 +
+                              ((int)sVar4 * (int)SHORT_007fb27e + (int)SHORT_007fb278 * (int)sVar1 +
                               (int)sVar2) * 2);
             if (sVar4 == -1) goto LAB_004c716e;
             goto LAB_004c7175;

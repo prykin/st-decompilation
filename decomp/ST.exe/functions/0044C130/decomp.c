@@ -20,7 +20,7 @@ STAllPlayersC::GetTOBJImage
   int iVar5;
   int *piVar6;
   Global_sub_004C2950_param_3Enum GVar7;
-  byte local_154 [256];
+  char local_154 [256];
   int local_54 [17];
   int *local_10;
   STBoatCVTable *local_c;
@@ -74,39 +74,39 @@ STAllPlayersC::GetTOBJImage
   case CASE_27:
   case CASE_28:
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     STBoatC::GetVisualInfo
-              ((STBoatC *)local_154,param_1,SVar2,0xe,&local_c,(char *)local_154,
-               (undefined1 *)&local_8,&param_2);
-    if (local_154[0] != 0) {
+              ((STBoatC *)local_154,param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,
+               &param_2);
+    if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,
                           1,0,(undefined4 *)0x0);
       local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     STBoatC::GetVisualInfo
-              ((STBoatC *)&local_8,param_1,SVar2,0xd,&local_c,(char *)local_154,
-               (undefined1 *)&local_8,&param_2);
-    if (local_154[0] != 0) {
+              ((STBoatC *)&local_8,param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,
+               &param_2);
+    if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,
                           1,0,(undefined4 *)0x0);
       local_54[0xd] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     STBoatC::GetVisualInfo
-              ((STBoatC *)&local_c,param_1,SVar2,0xc,(undefined4 *)&local_c,(char *)local_154,
+              ((STBoatC *)&local_c,param_1,SVar2,0xc,(undefined4 *)&local_c,local_154,
                (undefined1 *)&local_8,&param_2);
-    if (local_154[0] != 0) {
+    if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,
                           1,0,(undefined4 *)0x0);
@@ -194,12 +194,11 @@ STAllPlayersC::GetTOBJImage
     GVar7 = 0;
     do {
       local_c = (STBoatCVTable *)0x0;
-      local_154[0] = 0;
+      local_154[0] = '\0';
       local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
       param_2 = 0;
-      thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,(char *)local_154,(undefined1 *)&local_8,
-                         &param_2);
-      if (local_154[0] != 0) {
+      thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+      if (local_154[0] != '\0') {
         puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                            ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,
                             0,1,0,(undefined4 *)0x0);
@@ -219,11 +218,10 @@ STAllPlayersC::GetTOBJImage
   case CASE_E0:
   case CASE_E2:
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_00580910(param_1,SVar2,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
+    thunk_FUN_00580910(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
   case CASE_E6:
   case CASE_E7:
@@ -242,32 +240,29 @@ STAllPlayersC::GetTOBJImage
   case CASE_FA:
   case CASE_FB:
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
+    thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     goto joined_r0x0044c40d;
   case CASE_FD:
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
+    thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
   case CASE_FE:
     local_c = (STBoatCVTable *)0x0;
-    local_154[0] = 0;
+    local_154[0] = '\0';
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
+    thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
 joined_r0x0044c40d:
-    if (local_154[0] == 0) goto cf_common_exit_0044C477;
+    if (local_154[0] == '\0') goto cf_common_exit_0044C477;
     goto LAB_0044c44d;
   }
-  if (local_154[0] != 0) {
+  if (local_154[0] != '\0') {
 LAB_0044c44d:
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,

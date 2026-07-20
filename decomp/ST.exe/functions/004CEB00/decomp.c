@@ -90,11 +90,11 @@ switchD_004ceb68_caseD_32:
         local_8 = local_18;
         do {
           sVar2 = (short)local_8;
-          if ((((sVar2 < 0) || (DAT_007fb240 <= sVar2)) || (sVar5 = (short)local_c, sVar5 < 0)) ||
-             (((DAT_007fb242 <= sVar5 || (sVar8 < 0)) ||
-              ((DAT_007fb244 <= sVar8 ||
+          if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar5 = (short)local_c, sVar5 < 0)) ||
+             (((SHORT_007fb242 <= sVar5 || (sVar8 < 0)) ||
+              ((SHORT_007fb244 <= sVar8 ||
                (*(int *)(DAT_007fb248 +
-                        ((int)sVar8 * (int)DAT_007fb246 + (int)DAT_007fb240 * (int)sVar5 +
+                        ((int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar5 +
                         (int)sVar2) * 8) == 0)))))) {
             *(int *)((int)this + 0x4e0) = local_8;
             *(undefined4 *)((int)this + 0x4dc) = 1;

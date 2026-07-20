@@ -14,7 +14,7 @@ void __fastcall FUN_005b66e0(void *param_1)
   *(undefined4 *)((int)param_1 + 0x29) = 0;
   *(undefined4 *)((int)param_1 + 0x2d) = 10;
   *(undefined4 *)((int)param_1 + 0x31) = *(undefined4 *)((int)param_1 + 8);
-  FUN_006e60a0(param_1,(undefined4 *)((int)param_1 + 0x1d));
+  STJellyGunC::sub_006E60A0(param_1,(undefined4 *)((int)param_1 + 0x1d));
   return;
 }
 

@@ -50,8 +50,8 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
       this_00->field_01A1 = cVar1;
       this_00->field_01A3 = local_8;
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,0x16,
-                 0x1b8,0x118);
+                ((undefined4 *)this_00->field_0068,0,0x21,0x16,(byte *)this_00->field_01DC,0,0x21,
+                 0x16,0x1b8,0x118);
       CreateList(this_00);
       if (this_00->field_01A2 == '\0') {
         local_8 = this_00->field_01B7;

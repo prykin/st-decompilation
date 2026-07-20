@@ -10,11 +10,11 @@ bool FUN_00497920(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
   short sVar5;
   
   sVar5 = (short)param_2;
-  if ((((-1 < sVar5) && (sVar5 < DAT_007fb240)) && (sVar4 = (short)param_3, -1 < sVar4)) &&
-     (((sVar4 < DAT_007fb242 && (sVar3 = (short)param_4, -1 < sVar3)) &&
-      ((sVar3 < DAT_007fb244 &&
+  if ((((-1 < sVar5) && (sVar5 < SHORT_007fb240)) && (sVar4 = (short)param_3, -1 < sVar4)) &&
+     (((sVar4 < SHORT_007fb242 && (sVar3 = (short)param_4, -1 < sVar3)) &&
+      ((sVar3 < SHORT_007fb244 &&
        (this = *(void **)(DAT_007fb248 +
-                         ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar4 +
+                         ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 +
                          (int)sVar5) * 8), this != (void *)0x0)))))) {
     if (((*(int *)((int)this + 0x24) != *(int *)(param_1 + 0x24)) ||
         (*(short *)((int)this + 0x30) != *(short *)(param_1 + 0x30))) ||

@@ -106,8 +106,7 @@ LAB_004c7d8c:
             if (*(int *)((int)this + 0x3d8) <= *(int *)((int)this + 0x3d4) + 1) {
               iVar4 = *(int *)((int)this + 0x3d8) + 0x14;
               *(int *)((int)this + 0x3d8) = iVar4;
-              iVar4 = Library::DKW::LIB::FUN_006acf50
-                                (*(undefined4 **)((int)this + 0x607),iVar4 * 0x27);
+              iVar4 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)this + 0x607),iVar4 * 0x27);
               *(int *)((int)this + 0x607) = iVar4;
             }
             *(int *)(*(int *)((int)this + 0x3d4) * 0x27 + *(int *)((int)this + 0x607)) = param_1;

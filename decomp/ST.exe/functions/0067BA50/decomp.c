@@ -1,5 +1,8 @@
 
-undefined4 __cdecl FUN_0067ba50(int param_1,uint *param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0067BA50 parameter used as this of AiFltClassTy::GetAiMess @ 0067BA7A */
+
+undefined4 __cdecl FUN_0067ba50(AiFltClassTy *param_1,uint *param_2)
 
 {
   int iVar1;
@@ -22,10 +25,10 @@ undefined4 __cdecl FUN_0067ba50(int param_1,uint *param_2)
   }
   local_48[0] = 0x66;
   local_48[1] = 0xffffffff;
-  AiFltClassTy::GetAiMess((AiFltClassTy *)param_1,local_48);
+  AiFltClassTy::GetAiMess(param_1,local_48);
   if (('\0' < local_40) && (param_2 != (uint *)0x0)) {
     local_10 = local_3d;
-    _local_14 = CONCAT22(local_3f,*(undefined2 *)(param_1 + 0x7d));
+    _local_14 = CONCAT22(local_3f,param_1->field_007D);
     local_c = local_39;
     local_8 = 0xffffffff;
     Library::DKW::TBL::FUN_006ae1c0(param_2,(undefined4 *)&local_14);

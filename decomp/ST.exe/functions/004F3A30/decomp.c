@@ -13,7 +13,7 @@ CPanelTy::PaintTxtBut
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   uint *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -22,7 +22,7 @@ CPanelTy::PaintTxtBut
   int iVar9;
   InternalExceptionFrame local_5c;
   int *local_18;
-  int local_14;
+  uint local_14;
   CPanelTy *local_10;
   int local_c;
   ushort *local_8;
@@ -30,40 +30,40 @@ CPanelTy::PaintTxtBut
   uVar2 = (uint)param_1;
   local_18 = *(int **)(param_2 + 0x18);
   local_8 = (ushort *)0x0;
-  local_14 = local_18[1];
+  iVar4 = local_18[1];
   local_c = *local_18 - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
-    iVar4 = this->field_0134;
+    iVar7 = this->field_0134;
     goto LAB_004f3aaa;
   default:
     if (this->field_0130 != 0) {
-      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3AC3;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
-      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3AC3;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
-      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3AC3;
     }
     break;
   case 7:
-    iVar4 = this->field_0138;
+    iVar7 = this->field_0138;
 LAB_004f3aaa:
-    if (iVar4 != 0) {
-      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
+    if (iVar7 != 0) {
+      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3AC3;
     }
-    local_14 = local_14 - this->field_00C0;
+    iVar4 = iVar4 - this->field_00C0;
   }
-  local_14 = local_14 - DAT_00806734;
+  local_14 = iVar4 - DAT_00806734;
 cf_common_join_004F3AC3:
   if (param_6 != (undefined *)0x0) {
     local_5c.previous = g_currentExceptionFrame;
@@ -73,18 +73,18 @@ cf_common_join_004F3AC3:
     if (iVar4 == 0) {
       local_8 = cMf32::RecGet(DAT_00806790,param_3,param_4,(int *)0x0,1);
       pCVar3 = local_10;
-      iVar4 = local_14;
+      uVar5 = local_14;
       uVar2 = (uint)param_1;
       DibPut((undefined4 *)(&local_10->field_0180)[uVar2],local_c,local_14,param_3,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(pCVar3->field_01B8,(&pCVar3->field_0180)[uVar2],0,local_c,iVar4,local_18[2],
+      ccFntTy::SetSurf(pCVar3->field_01B8,(&pCVar3->field_0180)[uVar2],0,local_c,uVar5,local_18[2],
                        local_18[3]);
       iVar9 = -1;
       iVar8 = -1;
       uVar5 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar4 = -2;
-      puVar6 = (uint *)FUN_006b0140(param_5,DAT_00807618);
+      puVar6 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
       ccFntTy::WrTxt(pCVar3->field_01B8,puVar6,iVar4,iVar7,uVar5,iVar8,iVar9);
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640

@@ -69,7 +69,7 @@ undefined4 __thiscall STExplosion::GetMessage(STExplosion *this,int param_1)
                   (((int *)this_00->field_02BB != (int *)0x0 &&
                    (iVar4 = thunk_FUN_006372e0((int *)this_00->field_02BB), iVar4 != 0)))) {
             thunk_FUN_006366d0(this_00->field_02BB);
-            Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_02BB);
+            Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_02BB);
             this_00->field_02B7 = 0xffffffff;
             this_00->field_02BB = 0;
           }
@@ -267,7 +267,7 @@ undefined4 __thiscall STExplosion::GetMessage(STExplosion *this,int param_1)
       }
       if (this_00->field_02BB != 0) {
         thunk_FUN_006366d0(this_00->field_02BB);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_02BB);
+        Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_02BB);
         this_00->field_02BB = 0;
       }
       thunk_FUN_00604120((int)this_00);

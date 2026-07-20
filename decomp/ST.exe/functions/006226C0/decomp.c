@@ -2,7 +2,7 @@
 uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
 
 {
-  void *pvVar1;
+  VisibleClassTy *pVVar1;
   bool bVar2;
   uint3 extraout_var;
   undefined3 extraout_var_00;
@@ -39,25 +39,22 @@ uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
      ((uVar3 = param_2, *(int *)(iVar4 + 0x44) <= param_2 && (param_2 <= *(int *)(iVar4 + 0x54)))))
   {
     param_1 = FUN_006ddbd0();
-    pvVar1 = DAT_00802a88;
+    pVVar1 = g_visibleClass_00802A88;
     uVar3 = param_1;
-    if ((param_1 == 0) || (DAT_00802a88 == (void *)0x0)) goto cf_common_exit_006227F9;
+    if ((param_1 == 0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0))
+    goto cf_common_exit_006227F9;
     uVar3 = CONCAT31((int3)(param_1 >> 8),DAT_0080874d);
     iVar4 = (int)*(short *)((int)this + 0x4b);
     if ((DAT_0080874d == 0xff) ||
-       ((((((uVar3 = 0, *(int *)((int)DAT_00802a88 + 0xf8) == 0 ||
-            (uVar3 = thunk_FUN_00558c00(DAT_00802a88,
-                                        *(Global_sub_00558C00_param_1Enum *)
-                                         ((int)DAT_00802a88 + 0x10c),
+       ((((((uVar3 = 0, g_visibleClass_00802A88->field_00F8 == 0 ||
+            (uVar3 = thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                         (int)*(short *)((int)this + 0x47),
                                         (int)*(short *)((int)this + 0x49),&param_2,(int *)&local_8),
-            iVar4 < 0)) || (4 < iVar4)) ||
-          ((param_2 < 0 || (*(int *)((int)pvVar1 + 0x30) <= param_2)))) ||
-         ((uVar3 = (&DAT_0079aed0)[iVar4] + (int)local_8, (int)uVar3 < 0 ||
-          ((*(int *)((int)pvVar1 + 0x34) <= (int)uVar3 || (*(int *)((int)pvVar1 + 0x4c) == 0))))))
-        || (uVar3 = (uint)*(byte *)(uVar3 * *(int *)((int)pvVar1 + 0x30) +
-                                    *(int *)((int)pvVar1 + 0x4c) + param_2), uVar3 != 0))))
-    goto cf_common_exit_006227F9;
+            iVar4 < 0)) || (4 < iVar4)) || ((param_2 < 0 || ((int)pVVar1->field_0030 <= param_2))))
+         || ((uVar3 = (&DAT_0079aed0)[iVar4] + (int)local_8, (int)uVar3 < 0 ||
+             (((int)pVVar1->field_0034 <= (int)uVar3 || (pVVar1->field_004C == 0)))))) ||
+        (uVar3 = (uint)*(byte *)(uVar3 * pVVar1->field_0030 + pVVar1->field_004C + param_2),
+        uVar3 != 0)))) goto cf_common_exit_006227F9;
   }
   param_1 = 0;
 cf_common_exit_006227F9:

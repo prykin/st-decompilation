@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   UPanelTy::PaintTxtBut */
+   UPanelTy::PaintTxtBut
+   
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0053D920 parameter used as this of ccFntTy::SetSurf @ 0053D9F2 | 0053D920 parameter
+   used as this of ccFntTy::WrStr @ 0053DA19 */
 
 void __thiscall
 UPanelTy::PaintTxtBut
@@ -11,17 +15,18 @@ UPanelTy::PaintTxtBut
 {
   code *pcVar1;
   UPanelTy *pUVar2;
-  int iVar3;
-  undefined4 uVar4;
-  uint *puVar5;
+  uint uVar3;
+  int iVar4;
+  undefined4 uVar5;
+  uint *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int iVar6;
+  int iVar7;
   InternalExceptionFrame local_5c;
   int *local_18;
   int local_14;
   UPanelTy *local_10;
-  int local_c;
+  uint local_c;
   ushort *local_8;
   
   local_18 = *(int **)(param_1 + 0x18);
@@ -37,34 +42,34 @@ UPanelTy::PaintTxtBut
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_10 = this;
-    iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    if (iVar3 == 0) {
+    iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    if (iVar4 == 0) {
       local_8 = cMf32::RecGet(DAT_00806790,param_2,param_3,(int *)0x0,1);
-      iVar6 = local_c;
+      uVar3 = local_c;
       pUVar2 = local_10;
-      iVar3 = local_14;
+      iVar4 = local_14;
       DibPut((undefined4 *)local_10->field_0068,local_14,local_c,param_2,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar3,iVar6,local_18[2],local_18[3]);
-      uVar4 = (*(code *)param_6)(param_1);
-      iVar6 = -1;
-      iVar3 = -2;
-      puVar5 = (uint *)FUN_006b0140(param_5,DAT_00807618);
-      ccFntTy::WrStr(param_4,puVar5,iVar3,iVar6,uVar4);
+      ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar4,uVar3,local_18[2],local_18[3]);
+      uVar5 = (*(code *)param_6)(param_1);
+      iVar7 = -1;
+      iVar4 = -2;
+      puVar6 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
+      ccFntTy::WrStr(param_4,puVar6,iVar4,iVar7,uVar5);
       Library::DKW::DDX::FUN_006b3640
                 (DAT_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,pUVar2->field_0044);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x3e,0,iVar3,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x3e,0,iVar4,&DAT_007a4ccc,
                                s_UPanelTy__PaintTxtBut_007c78b0);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x3e);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x3e);
   }
   return;
 }

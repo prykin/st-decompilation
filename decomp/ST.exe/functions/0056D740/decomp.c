@@ -29,8 +29,9 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   
   local_8 = param_1;
   local_c = 0;
-  if ((((param_1 != 0) || (DAT_00806730 != 800)) && ((param_1 != 1 || (DAT_00806730 != 0x400)))) &&
-     ((param_1 != 2 || (DAT_00806730 != 0x500)))) {
+  if ((((param_1 != 0) || (g_nWidth_00806730 != 800)) &&
+      ((param_1 != 1 || (g_nWidth_00806730 != 0x400)))) &&
+     ((param_1 != 2 || (g_nWidth_00806730 != 0x500)))) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
@@ -41,15 +42,15 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       uVar8 = local_c;
       for (; (uVar8 == 0 && (-1 < local_8)); local_8 = local_8 + -1) {
         if (local_8 == 0) {
-          DAT_00806730 = 800;
+          g_nWidth_00806730 = 800;
           DAT_00806734 = 600;
         }
         else if (local_8 == 1) {
-          DAT_00806730 = 0x400;
+          g_nWidth_00806730 = 0x400;
           DAT_00806734 = 0x300;
         }
         else if (local_8 == 2) {
-          DAT_00806730 = 0x500;
+          g_nWidth_00806730 = 0x500;
           DAT_00806734 = 0x400;
         }
         iVar4 = 0;
@@ -58,7 +59,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
         piVar1 = piVar2 + 1;
         if (0 < *piVar1) {
           do {
-            if (((piVar2[2] == DAT_00806730) && (piVar2[3] == DAT_00806734)) &&
+            if (((piVar2[2] == g_nWidth_00806730) && (piVar2[3] == DAT_00806734)) &&
                (piVar2[4] == DAT_00806738)) {
               local_10 = 1;
               break;
@@ -84,10 +85,10 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
           uVar8 = local_c;
           if (iVar4 == 0) {
             DVar5 = Library::DKW::DDX::FUN_006b9b40
-                              (DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,DAT_00806738,
-                               DAT_00806730,DAT_00806734,(int)local_4bc,0,0x100);
+                              (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,DAT_00806738,
+                               g_nWidth_00806730,DAT_00806734,(int)local_4bc,0,0x100);
             local_c = (uint)(DVar5 == 0);
-            MoveWindow(DAT_00856d78,0,0,DAT_00806730,DAT_00806734,1);
+            MoveWindow(HWND_00856d78,0,0,g_nWidth_00806730,DAT_00806734,1);
             local_68 = 0x66;
             AppClassTy::SendMessage((AppClassTy *)local_14,3,1,(int)local_78);
             uVar8 = (uint)(DVar5 == 0);
@@ -99,7 +100,8 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       }
       iVar4 = local_8;
       if (local_8 < 0) {
-        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x442);
+        RaiseInternalException(-1,g_overwriteContext_007ED77C,s_E____titans_tapp_cpp_007ca0c8,0x442)
+        ;
       }
       Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
       Library::DKW::DDX::FUN_006b1680(DAT_008075a8,(int)DAT_0080759c);

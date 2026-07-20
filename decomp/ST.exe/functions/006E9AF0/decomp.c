@@ -16,7 +16,7 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
      (puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114),
      (*(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114) & 0x8000) != 0)) {
     if ((puVar1[1] & 1) != 0) {
-      FUN_006ab060(puVar1 + 0x28);
+      FUN_006ab060((LPVOID *)(puVar1 + 0x28));
     }
     puVar1[0xd] = param_4;
     puVar1[1] = puVar1[1] & 0xfffffffe;
@@ -26,11 +26,11 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
     puVar1[0x28] = param_3;
     if (((int)param_2 < 1) || (puVar1[0x25] == param_2)) {
       if ((int)param_2 < 0) {
-        FUN_006ab060(puVar1 + 0x29);
+        FUN_006ab060((LPVOID *)(puVar1 + 0x29));
       }
     }
     else {
-      uVar4 = Library::DKW::LIB::FUN_006acf50((undefined4 *)puVar1[0x29],param_2 * 4);
+      uVar4 = Library::DKW::LIB::FUN_006acf50(puVar1[0x29],param_2 * 4);
       puVar1[0x29] = uVar4;
       if (uVar4 == 0) {
         return 0xfffffffe;
@@ -47,8 +47,8 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
           puVar7 = (undefined4 *)((int)puVar7 + 1);
         }
       }
-      if (((*puVar1 & 0x100) != 0) && ((undefined4 *)puVar1[0x2a] != (undefined4 *)0x0)) {
-        uVar4 = Library::DKW::LIB::FUN_006acf50((undefined4 *)puVar1[0x2a],param_2 * 8);
+      if (((*puVar1 & 0x100) != 0) && (puVar1[0x2a] != 0)) {
+        uVar4 = Library::DKW::LIB::FUN_006acf50(puVar1[0x2a],param_2 * 8);
         puVar1[0x2a] = uVar4;
         if (uVar4 == 0) {
           return 0xfffffffe;

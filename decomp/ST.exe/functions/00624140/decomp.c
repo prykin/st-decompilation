@@ -23,7 +23,7 @@ FUN_00624140(void *this,int param_1,int param_2,int param_3,int param_4,int para
   *param_7 = param_6;
   if ((-1 < param_1) && (-1 < param_2)) {
     if (param_3 < 0) goto LAB_00624457;
-    if (((param_1 < DAT_007fb240) && (param_2 < DAT_007fb242)) && (param_3 < 5)) {
+    if (((param_1 < SHORT_007fb240) && (param_2 < SHORT_007fb242)) && (param_3 < 5)) {
       sVar7 = (short)param_1;
       sVar8 = (short)param_2;
       sVar9 = (short)param_3;
@@ -31,11 +31,11 @@ FUN_00624140(void *this,int param_1,int param_2,int param_3,int param_4,int para
       if (CONCAT31(extraout_var,bVar3) != 0) {
         return 0;
       }
-      if (((((-1 < sVar7) && (sVar7 < DAT_007fb240)) &&
-           ((-1 < sVar8 && ((sVar8 < DAT_007fb242 && (-1 < sVar9)))))) && (sVar9 < DAT_007fb244)) &&
-         (*(int *)(DAT_007fb248 +
-                  ((int)DAT_007fb246 * (int)sVar9 + (int)DAT_007fb240 * (int)sVar8 + (int)sVar7) * 8
-                  ) != 0)) {
+      if (((((-1 < sVar7) && (sVar7 < SHORT_007fb240)) &&
+           ((-1 < sVar8 && ((sVar8 < SHORT_007fb242 && (-1 < sVar9)))))) && (sVar9 < SHORT_007fb244)
+          ) && (*(int *)(DAT_007fb248 +
+                        ((int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 +
+                        (int)sVar7) * 8) != 0)) {
         if (param_8 < 1) {
           iVar1 = iVar1 * 0xc9 + 0x32;
           if (iVar1 < param_6) {

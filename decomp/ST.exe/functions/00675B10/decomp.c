@@ -47,12 +47,13 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
           sVar10 = (short)iVar6;
           bVar2 = thunk_FUN_004961b0(sVar9,sVar10,sVar7);
           if ((CONCAT31(extraout_var,bVar2) != 0) &&
-             (((((sVar9 < 0 || (DAT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
-               ((DAT_007fb242 <= sVar10 || (sVar7 < 0)))) ||
-              ((DAT_007fb244 <= sVar7 ||
+             (((((sVar9 < 0 || (SHORT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
+               ((SHORT_007fb242 <= sVar10 || (sVar7 < 0)))) ||
+              ((SHORT_007fb244 <= sVar7 ||
                ((piVar1 = *(int **)(DAT_007fb248 +
-                                   ((int)DAT_007fb246 * (int)sVar7 + (int)DAT_007fb240 * (int)sVar10
-                                   + (int)sVar9) * 8), piVar1 == (int *)0x0 ||
+                                   ((int)SHORT_007fb246 * (int)sVar7 +
+                                    (int)SHORT_007fb240 * (int)sVar10 + (int)sVar9) * 8),
+                piVar1 == (int *)0x0 ||
                 (iVar4 = (**(code **)(*piVar1 + 0x114))(param_7), iVar4 != 0)))))))) {
             *param_4 = sVar9;
             *param_5 = sVar10;

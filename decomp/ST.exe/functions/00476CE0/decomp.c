@@ -54,8 +54,8 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   undefined4 local_1c;
   short local_18;
   uint local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  int local_10;
+  int local_c;
   int local_8;
   
   if ((param_1 == 0) || (param_1 == 1)) {
@@ -80,7 +80,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   }
   SVar1 = this->field_0611;
   if (SVar1 == CASE_0) {
-    iVar6 = thunk_FUN_00460260(this,2);
+    iVar6 = sub_00460260(this,2);
     switch(iVar6) {
     case 0:
       iVar6 = thunk_FUN_00492b20((int)this);
@@ -95,21 +95,21 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
         iVar16 = (int)*(short *)&this->field_0x605;
         iVar6 = (int)*(short *)&this->field_0x603;
 cf_common_exit_00476DBA:
-        thunk_FUN_00481520(this,iVar6,iVar16,iVar8);
-        iVar6 = thunk_FUN_00460260(this,0);
+        sub_00481520(this,iVar6,iVar16,iVar8);
+        iVar6 = sub_00460260(this,0);
         return (-(uint)(iVar6 != -1) & 3) - 1;
       }
       break;
     case 1:
       piVar7 = (int *)STAllPlayersC::GetObjPtr
-                                (DAT_007fa174,
+                                (g_sTAllPlayers_007FA174,
                                  CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0x5fc),
                                  CONCAT22(extraout_var,*(undefined2 *)&this->field_0x5fd),CASE_1);
       if (((piVar7 != (int *)0x0) && (piVar7[6] == *(int *)&this->field_0x5ff)) &&
          (iVar6 = (**(code **)(*piVar7 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 != 0)) {
         return 2;
       }
-      thunk_FUN_004602b0((int *)this);
+      sub_004602B0(this);
       break;
     default:
       return 2;
@@ -140,7 +140,7 @@ cf_common_exit_00476DBA:
       return -1;
     }
     piVar7 = (int *)STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,
+                              (g_sTAllPlayers_007FA174,
                                CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x5fc),
                                (uint)*(ushort *)&this->field_0x5fd,CASE_1);
     if (piVar7 == (int *)0x0) {
@@ -182,11 +182,11 @@ cf_common_exit_00476DBA:
           for (; (int)sVar20 <= sVar19 + 1; sVar20 = sVar20 + 1) {
             if ((((((sVar17 != this->field_0047) || (sVar20 != this->field_0049)) &&
                   (sVar4 = *(short *)&this->field_0x60d + 1, -1 < sVar17)) &&
-                 ((sVar17 < DAT_007fb240 && (-1 < sVar20)))) && (sVar20 < DAT_007fb242)) &&
-               (((-1 < sVar4 && (sVar4 < DAT_007fb244)) &&
+                 ((sVar17 < SHORT_007fb240 && (-1 < sVar20)))) && (sVar20 < SHORT_007fb242)) &&
+               (((-1 < sVar4 && (sVar4 < SHORT_007fb244)) &&
                 ((iVar8 = *(int *)(DAT_007fb248 +
-                                  ((int)DAT_007fb240 * (int)sVar20 +
-                                  iVar16 + (int)sVar4 * (int)DAT_007fb246) * 8), iVar8 != 0 &&
+                                  ((int)SHORT_007fb240 * (int)sVar20 +
+                                  iVar16 + (int)sVar4 * (int)SHORT_007fb246) * 8), iVar8 != 0 &&
                  ((*(int *)(iVar8 + 0x20) == 0x14 && (*(int *)(iVar8 + 0x45d) == 9)))))))) {
               iVar8 = *(int *)(iVar8 + 0x611);
               if (iVar8 == 2) {
@@ -226,8 +226,8 @@ cf_common_exit_00476DBA:
       *(undefined4 *)&this->field_0x615 = 1;
     }
     if (*(int *)&this->field_0x615 == 1) {
-      uVar10 = thunk_FUN_004176c0(this,*(short *)&this->field_0x60f);
-      uVar10 = thunk_FUN_00417910(this,(short)uVar10);
+      uVar10 = sub_004176C0(this,*(short *)&this->field_0x60f);
+      uVar10 = sub_00417910(this,(short)uVar10);
       if (uVar10 == 0xffffffff) {
         iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3237,0,0,&DAT_007a4ccc,
                                    s_STBoatC__Capture__CAPTURE_PMOVE_007ab20c);
@@ -244,14 +244,14 @@ cf_common_exit_00476DBA:
       }
     }
     if (*(int *)&this->field_0x615 == 2) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         (*(short *)&this->field_0x609 + 1) * 0xc9,
-                         (*(short *)&this->field_0x60b + 1) * 0xc9,
-                         *(short *)&this->field_0x60d * 200 + 300,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 (*(short *)&this->field_0x609 + 1) * 0xc9,(*(short *)&this->field_0x60b + 1) * 0xc9
+                 ,*(short *)&this->field_0x60d * 200 + 300,this->field_0061);
       *(undefined4 *)&this->field_0x615 = 3;
     }
     if (*(int *)&this->field_0x615 == 3) {
-      local_8 = thunk_FUN_00415ed0(this,&local_10,&local_c);
+      local_8 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_c);
       uVar15 = (undefined3)((uint)extraout_EDX_00 >> 8);
       iVar6 = 0;
       param_1 = 0;
@@ -283,7 +283,7 @@ cf_common_exit_00476DBA:
             this->field_001C = local_14;
             lVar18 = Library::MSVCRT::__ftol();
             TraksClassTy::TraksCreate
-                      (DAT_00802a7c,1,2,7,
+                      (g_traksClass_00802A7C,1,2,7,
                        (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
                        (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_1c._2_2_) + -3,
                        (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
@@ -302,8 +302,9 @@ cf_common_exit_00476DBA:
             local_1c._0_2_ = (short)uVar25;
             iVar16 = (int)(short)local_1c;
             TraksClassTy::TraksCreate
-                      (DAT_00802a7c,1,2,7,(uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar16
-                       ,(((uVar14 >> 0x10) % 7 + (int)this->field_0043) - iVar6) + -3,
+                      (g_traksClass_00802A7C,1,2,7,
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar16,
+                       (((uVar14 >> 0x10) % 7 + (int)this->field_0043) - iVar6) + -3,
                        (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_18,0,0,0,0,0,0
                        ,-1,0,0);
             uVar15 = extraout_var_01;
@@ -324,7 +325,7 @@ cf_common_exit_00476DBA:
       }
       if (local_8 == 0) {
         piVar7 = (int *)STAllPlayersC::GetObjPtr
-                                  (DAT_007fa174,CONCAT31(uVar15,this->field_0x5fc),
+                                  (g_sTAllPlayers_007FA174,CONCAT31(uVar15,this->field_0x5fc),
                                    CONCAT22((short)((uint)iVar6 >> 0x10),
                                             *(undefined2 *)&this->field_0x5fd),CASE_1);
         if (((piVar7 == (int *)0x0) || (piVar7[6] != *(int *)&this->field_0x5ff)) ||
@@ -367,7 +368,7 @@ cf_common_exit_00476DBA:
           }
           return -1;
         }
-        iVar6 = thunk_FUN_0045ff50(this,2);
+        iVar6 = sub_0045FF50(this,2);
         if (iVar6 == -1) {
           iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32fc,0,0,
                                      &DAT_007a4ccc,s_STBoatC__Capture__CAPTURE_ESCMOV_007ab164);
@@ -384,9 +385,9 @@ cf_common_exit_00476DBA:
         }
         if (iVar6 == 3) {
           thunk_FUN_00492f30((int)this,extraout_EDX_04);
-          thunk_FUN_00481520(this,(int)*(short *)&this->field_0x609,
-                             (int)*(short *)&this->field_0x60b,(int)*(short *)&this->field_0x60d);
-          thunk_FUN_0045ff50(this,0);
+          sub_00481520(this,(int)*(short *)&this->field_0x609,(int)*(short *)&this->field_0x60b,
+                       (int)*(short *)&this->field_0x60d);
+          sub_0045FF50(this,0);
         }
 cf_common_exit_00477B2E:
         iVar6 = (*this->vtable->vfunc_D8)();
@@ -405,8 +406,8 @@ cf_common_exit_00477B2E:
         *(undefined4 *)&this->field_0x615 = 1;
       }
       if (*(int *)&this->field_0x615 == 1) {
-        uVar10 = thunk_FUN_004176c0(this,*(short *)&this->field_0x60f);
-        uVar10 = thunk_FUN_00417910(this,(short)uVar10);
+        uVar10 = sub_004176C0(this,*(short *)&this->field_0x60f);
+        uVar10 = sub_00417910(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
           iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32c1,0,0,
                                      &DAT_007a4ccc,s_STBoatC__Capture__CAPTURE_OMOVE_007ab1bc);
@@ -423,14 +424,15 @@ cf_common_exit_00477B2E:
         }
       }
       if (*(int *)&this->field_0x615 == 2) {
-        thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                           *(short *)&this->field_0x603 * 0xc9 + 100,
-                           *(short *)&this->field_0x605 * 0xc9 + 100,
-                           *(short *)&this->field_0x607 * 200 + 100,this->field_0x61);
+        STJellyGunC::sub_00415B30
+                  ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                   *(short *)&this->field_0x603 * 0xc9 + 100,
+                   *(short *)&this->field_0x605 * 0xc9 + 100,
+                   *(short *)&this->field_0x607 * 200 + 100,this->field_0061);
         *(undefined4 *)&this->field_0x615 = 3;
       }
       if (*(int *)&this->field_0x615 == 3) {
-        local_8 = thunk_FUN_00415ed0(this,&local_c,&local_10);
+        local_8 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_c,&local_10);
         uVar25 = CONCAT31((int3)((uint)extraout_EDX_01 >> 8),this->field_0x2bf);
         param_1 = 0;
         if (this->field_0x2bf != '\0') {
@@ -461,7 +463,7 @@ cf_common_exit_00477B2E:
               this->field_001C = local_14;
               lVar18 = Library::MSVCRT::__ftol();
               TraksClassTy::TraksCreate
-                        (DAT_00802a7c,1,2,7,
+                        (g_traksClass_00802A7C,1,2,7,
                          (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
                          (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_1c._2_2_) + -3
                          ,(int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
@@ -481,7 +483,7 @@ cf_common_exit_00477B2E:
               local_1c._0_2_ = (short)uVar25;
               iVar16 = (int)(short)local_1c;
               TraksClassTy::TraksCreate
-                        (DAT_00802a7c,1,2,7,
+                        (g_traksClass_00802A7C,1,2,7,
                          (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar16,
                          (((uVar14 >> 0x10) % 7 + (int)this->field_0043) - iVar6) + -3,
                          (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_18,0,0,0,0,0
@@ -504,9 +506,9 @@ cf_common_exit_00477B2E:
         if (local_8 == 0) {
           this->field_0611 = CASE_5;
           thunk_FUN_00492f30((int)this,uVar25);
-          thunk_FUN_00481520(this,(int)*(short *)&this->field_0x609,
-                             (int)*(short *)&this->field_0x60b,(int)*(short *)&this->field_0x60d);
-          iVar6 = thunk_FUN_0045ff50(this,0);
+          sub_00481520(this,(int)*(short *)&this->field_0x609,(int)*(short *)&this->field_0x60b,
+                       (int)*(short *)&this->field_0x60d);
+          iVar6 = sub_0045FF50(this,0);
           if (iVar6 == -1) {
             return -1;
           }
@@ -516,7 +518,8 @@ cf_common_exit_00477B2E:
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
     piVar7 = (int *)STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,CONCAT31((int3)((uint)this >> 8),this->field_0x5fc),
+                              (g_sTAllPlayers_007FA174,
+                               CONCAT31((int3)((uint)this >> 8),this->field_0x5fc),
                                (uint)*(ushort *)&this->field_0x5fd,CASE_1);
     if (((piVar7 == (int *)0x0) || (piVar7[6] != *(int *)&this->field_0x5ff)) ||
        (iVar6 = (**(code **)(*piVar7 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 == 0)) {
@@ -561,9 +564,9 @@ cf_common_exit_00477B2E:
     else {
       this->field_0611 = CASE_5;
       thunk_FUN_00492f30((int)this,iVar6);
-      thunk_FUN_00481520(this,(int)*(short *)&this->field_0x609,(int)*(short *)&this->field_0x60b,
-                         (int)*(short *)&this->field_0x60d);
-      iVar6 = thunk_FUN_0045ff50(this,0);
+      sub_00481520(this,(int)*(short *)&this->field_0x609,(int)*(short *)&this->field_0x60b,
+                   (int)*(short *)&this->field_0x60d);
+      iVar6 = sub_0045FF50(this,0);
       if (iVar6 == -1) {
         return -1;
       }

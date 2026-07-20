@@ -11,7 +11,7 @@ int __fastcall FUN_007295f0(void *param_1)
   int iVar7;
   int iVar8;
   uint *puVar9;
-  int local_2c;
+  uint local_2c;
   int local_28;
   int local_24;
   uint *local_20;

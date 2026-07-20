@@ -46,12 +46,12 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     }
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AE8 = puVar2;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(puVar2,&DAT_008016a0);
     if (this_00->field_1E8E != 0) {
-      FUN_006ab060(&this_00->field_1E8E);
+      FUN_006ab060((LPVOID *)&this_00->field_1E8E);
     }
     if (this_00->field_1E92 != 0) {
-      FUN_006ab060(&this_00->field_1E92);
+      FUN_006ab060((LPVOID *)&this_00->field_1E92);
     }
     iVar6 = 1;
     puVar9 = (undefined4 *)(this_00->field_005D + 0x28);

@@ -1,5 +1,14 @@
 
-undefined4 __thiscall FUN_00415ed0(void *this,undefined4 *param_1,undefined4 *param_2)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004653B0 -> 00415ED0 @ 00465529 | 004653B0 -> 00415ED0 @ 0046570D | 0046C980 ->
+   00415ED0 @ 0046CB8D | 0046C980 -> 00415ED0 @ 0046CD4F | 004714D0 -> 00415ED0 @ 004716C6 |
+   004714D0 -> 00415ED0 @ 004718EB
+   
+   [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
+   Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5 */
+
+undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *param_1,int *param_2)
 
 {
   short sVar1;
@@ -18,78 +27,75 @@ undefined4 __thiscall FUN_00415ed0(void *this,undefined4 *param_1,undefined4 *pa
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_8 = 0;
-  if ((*(int *)((int)this + 0x68) == *(int *)((int)this + 100)) && (0 < *(int *)((int)this + 0x68)))
-  {
+  if ((this->field_0068 == this->field_0064) && (0 < (int)this->field_0068)) {
     return 0;
   }
-  if (10 < *(int *)((int)this + 0x8f)) {
+  if (10 < *(int *)&this->field_0x8f) {
     ExceptionList = &local_14;
-    thunk_FUN_0041d8e0(this);
+    thunk_FUN_0041d8e0((int *)this);
   }
-  *(undefined4 *)((int)this + 0x8f) = 0xffffffff;
-  if (*(int *)((int)this + 0x7a) == 1) {
+  *(undefined4 *)&this->field_0x8f = 0xffffffff;
+  if (this->field_007A == 1) {
     *param_1 = 1;
-    *(undefined4 *)((int)this + 0x7a) = 0;
+    this->field_007A = 0;
     ExceptionList = local_14;
     return 1;
   }
-  *(undefined1 *)((int)this + 0x40) = *(undefined1 *)((int)this + 0x4d);
-  *(undefined2 *)((int)this + 0x41) = *(undefined2 *)((int)this + 0x4e);
-  *(undefined2 *)((int)this + 0x43) = *(undefined2 *)((int)this + 0x50);
-  *(undefined2 *)((int)this + 0x45) = *(undefined2 *)((int)this + 0x52);
-  *(undefined2 *)((int)this + 0x47) = *(undefined2 *)((int)this + 0x54);
-  *(undefined2 *)((int)this + 0x49) = *(undefined2 *)((int)this + 0x56);
-  *(undefined2 *)((int)this + 0x4b) = *(undefined2 *)((int)this + 0x58);
-  *(undefined1 *)((int)this + 0x4d) = *(undefined1 *)((int)this + 0x5a);
-  iVar4 = *(int *)((int)this + 0x68);
-  *(int *)((int)this + 0x68) = iVar4 + 1;
+  this->field_0040 = this->field_004D;
+  this->field_0041 = this->field_004E;
+  this->field_0043 = this->field_0050;
+  this->field_0045 = this->field_0052;
+  this->field_0047 = this->field_0054;
+  this->field_0049 = this->field_0056;
+  this->field_004B = this->field_0058;
+  this->field_004D = this->field_005A;
+  iVar4 = this->field_0068;
+  this->field_0068 = iVar4 + 1;
   iVar4 = iVar4 + 2;
-  iVar5 = *(int *)((int)this + 100);
-  sVar6 = *(short *)((int)this + 0x34) +
-          (short)((((int)*(short *)((int)this + 0x3a) - (int)*(short *)((int)this + 0x34)) * iVar4)
-                 / iVar5);
-  *(short *)((int)this + 0x4e) = sVar6;
-  sVar1 = (short)((((int)*(short *)((int)this + 0x3c) - (int)*(short *)((int)this + 0x36)) * iVar4)
-                 / iVar5) + *(short *)((int)this + 0x36);
-  *(short *)((int)this + 0x50) = sVar1;
-  sVar2 = (short)((((int)*(short *)((int)this + 0x3e) - (int)*(short *)((int)this + 0x38)) * iVar4)
-                 / iVar5) + *(short *)((int)this + 0x38);
-  *(short *)((int)this + 0x52) = sVar2;
+  iVar5 = this->field_0064;
+  sVar6 = this->field_0034 +
+          (short)((((int)(short)this->field_003A - (int)(short)this->field_0034) * iVar4) / iVar5);
+  this->field_004E = sVar6;
+  sVar1 = (short)((((int)(short)this->field_003C - (int)(short)this->field_0036) * iVar4) / iVar5) +
+          this->field_0036;
+  this->field_0050 = sVar1;
+  sVar2 = (short)((((int)this->field_003E - (int)this->field_0038) * iVar4) / iVar5) +
+          this->field_0038;
+  this->field_0052 = sVar2;
   iVar7 = (int)sVar6;
-  *(short *)((int)this + 0x54) = (short)(iVar7 / 0xc9);
+  this->field_0054 = (short)(iVar7 / 0xc9);
   iVar4 = (int)sVar1;
-  *(short *)((int)this + 0x56) = (short)(iVar4 / 0xc9);
+  this->field_0056 = (short)(iVar4 / 0xc9);
   iVar5 = (int)sVar2;
-  *(short *)((int)this + 0x58) = (short)(iVar5 / 200);
+  this->field_0058 = (short)(iVar5 / 200);
   uVar3 = (iVar7 / 0xc9) * 0xc9 + 100U & 0xffff;
   if (((int)(uVar3 - 0x1e) < iVar7) && (iVar7 < (int)(uVar3 + 0x1e))) {
     uVar3 = (iVar4 / 0xc9) * 0xc9 + 100U & 0xffff;
     if (((int)(uVar3 - 0x1e) < iVar4) && (iVar4 < (int)(uVar3 + 0x1e))) {
       uVar3 = (iVar5 / 200) * 200 + 100U & 0xffff;
       if (((int)(uVar3 - 0x1d) < iVar5) && (iVar5 < (int)(uVar3 + 0x1d))) {
-        *(undefined1 *)((int)this + 0x5a) = 0;
+        this->field_005A = 0;
         goto LAB_004160cd;
       }
     }
   }
-  *(undefined1 *)((int)this + 0x5a) = 1;
+  this->field_005A = 1;
 LAB_004160cd:
-  if ((*(char *)((int)this + 0x4d) == '\0') && (*(char *)((int)this + 0x5a) == '\x01')) {
+  if ((this->field_004D == '\0') && (this->field_005A == '\x01')) {
     *param_1 = 1;
   }
   else {
     *param_1 = 0;
   }
-  if (((*(short *)((int)this + 0x47) == *(short *)((int)this + 0x54)) &&
-      (*(short *)((int)this + 0x49) == *(short *)((int)this + 0x56))) &&
-     (*(short *)((int)this + 0x4b) == *(short *)((int)this + 0x58))) {
+  if (((this->field_0047 == this->field_0054) && (this->field_0049 == this->field_0056)) &&
+     (this->field_004B == this->field_0058)) {
     *param_2 = 0;
   }
   else {
     *param_2 = 1;
   }
-  if (*(int *)((int)this + 0x68) == *(int *)((int)this + 100)) {
-    *(int *)((int)this + 0x8f) = *(int *)((int)this + 0x8f) + 1;
+  if (this->field_0068 == this->field_0064) {
+    *(int *)&this->field_0x8f = *(int *)&this->field_0x8f + 1;
     ExceptionList = local_14;
     return 0;
   }

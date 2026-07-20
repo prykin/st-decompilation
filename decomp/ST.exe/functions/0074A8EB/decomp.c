@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_0074a8eb(int *param_1)
   LPCRITICAL_SECTION lpCriticalSection;
   int iVar1;
   undefined4 uVar2;
-  int iVar3;
+  int *piVar3;
   
   lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 0x25);
   EnterCriticalSection(lpCriticalSection);
@@ -16,13 +16,13 @@ undefined4 __fastcall FUN_0074a8eb(int *param_1)
   }
   else {
     if (iVar1 == 0) {
-      iVar3 = 0;
+      piVar3 = (int *)0x0;
     }
     else {
-      iVar3 = iVar1 + 0xc;
+      piVar3 = (int *)(iVar1 + 0xc);
     }
     (**(code **)(*(int *)(iVar1 + 0xc) + 4))(iVar1 + 0xc);
-    FUN_00747406(param_1,0x16,iVar3,0);
+    FUN_00747406(param_1,0x16,piVar3,0);
     uVar2 = 1;
     param_1[0x18] = 1;
     (**(code **)(*param_1 + 0x70))();

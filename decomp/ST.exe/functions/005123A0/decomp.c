@@ -77,11 +77,11 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     if (local_8->field_019C != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_019C);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_019C);
     }
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,0x16,
-               0x19c,0x118);
+              ((undefined4 *)this_00->field_0068,0,0x21,0x16,(byte *)this_00->field_01DC,0,0x21,0x16
+               ,0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = this_00->field_003C + 0x21;
     if (this_00->field_005C == 0) {
@@ -173,7 +173,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_98 = 0x8166;
     local_60 = 1;
     local_5c = 1;
-    (**(code **)(*(int *)this_00->field_000C + 8))(7,&this_00->field_019C,0,local_520,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,(int *)0x0,local_520,0);
     iVar2 = this_00->field_019C;
     if (iVar2 != 0) {
       this_00->field_0028 = 0x20;

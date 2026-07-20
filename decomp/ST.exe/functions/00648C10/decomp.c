@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 73 | 95 | 97 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00648FE0 -> 00648C10 @ 006492F0 */
 
-void __cdecl StartStrateg(int param_1,uint param_2)
+void __cdecl StartStrateg(ushort *strategData,uint param_2)
 
 {
   code *pcVar1;
@@ -14,32 +17,33 @@ void __cdecl StartStrateg(int param_1,uint param_2)
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
-  int local_8;
+  ushort *local_8;
   
-  local_8 = 0;
+  local_8 = (ushort *)0x0;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    if ((((DAT_00802a38 == (void *)0x0) || (param_1 == 0)) || (7 < param_2)) ||
+    if ((((DAT_00802a38 == (void *)0x0) || (strategData == (ushort *)0x0)) || (7 < param_2)) ||
        (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
-      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_creat_cpp_007d2880,0x49);
+      RaiseInternalException
+                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x49);
     }
     iVar2 = thunk_FUN_004357f0((char)param_2);
     if (iVar2 != 0) {
       thunk_FUN_00648dd0(param_2);
     }
-    local_8 = param_1;
-    *(uint *)(param_1 + 4) = param_2;
-    *(undefined2 *)(param_1 + 0x67) = *(undefined2 *)((int)&DAT_008087eb + param_2 * 0x51);
-    *(undefined2 *)(param_1 + 0x69) = *(undefined2 *)((int)&DAT_008087ef + param_2 * 0x51);
-    *(undefined2 *)(param_1 + 0x6b) = *(undefined2 *)((int)&DAT_008087f3 + param_2 * 0x51);
+    local_8 = strategData;
+    *(uint *)(strategData + 2) = param_2;
+    *(undefined2 *)((int)strategData + 0x67) = *(undefined2 *)((int)&DAT_008087eb + param_2 * 0x51);
+    *(undefined2 *)((int)strategData + 0x69) = *(undefined2 *)((int)&DAT_008087ef + param_2 * 0x51);
+    *(undefined2 *)((int)strategData + 0x6b) = *(undefined2 *)((int)&DAT_008087f3 + param_2 * 0x51);
     Library::Ourlib::SAPP::FUN_006e6200
               (DAT_00802a38,0x402,(undefined4 *)(param_2 + 0x29),(undefined4 *)0x0,(int *)0x0,
-               param_1,0);
+               strategData,0);
     if (local_c != 0) {
-      thunk_FUN_0067d160(&local_8);
+      thunk_FUN_0067d160((int *)&local_8);
     }
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -53,7 +57,7 @@ void __cdecl StartStrateg(int param_1,uint param_2)
     return;
   }
   if (local_c != 0) {
-    thunk_FUN_0067d160(&local_8);
+    thunk_FUN_0067d160((int *)&local_8);
   }
   RaiseInternalException(iVar2,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x61);
   return;

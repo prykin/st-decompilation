@@ -5,7 +5,7 @@ void __fastcall FUN_005f4680(int param_1)
 
 {
   short sVar1;
-  void *pvVar2;
+  VisibleClassTy *pVVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -16,8 +16,8 @@ void __fastcall FUN_005f4680(int param_1)
   if (*(int *)(param_1 + 0x8f) < 0) {
     thunk_FUN_005f35f0(*(int *)(param_1 + 0x87));
   }
-  pvVar2 = DAT_00802a88;
-  if (DAT_00802a88 != (void *)0x0) {
+  pVVar2 = g_visibleClass_00802A88;
+  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     iVar5 = *(int *)(param_1 + 0x9b);
     sVar1 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
@@ -48,17 +48,15 @@ void __fastcall FUN_005f4680(int param_1)
       iVar3 = (int)(short)(((short)(iVar3 / 0xc9) + sVar1) -
                           (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
     }
-    if ((((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-          (thunk_FUN_00558c00(DAT_00802a88,
-                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar3,
+    if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,
                               iVar5,&local_c,&local_10), -1 < local_8)) &&
          ((local_8 < 5 && (-1 < local_c)))) &&
-        ((local_c < *(int *)((int)pvVar2 + 0x30) &&
+        ((local_c < (int)pVVar2->field_0030 &&
          ((local_10 = (&DAT_0079aed0)[local_8] + local_10, -1 < local_10 &&
-          (local_10 < *(int *)((int)pvVar2 + 0x34))))))) &&
-       ((*(int *)((int)pvVar2 + 0x4c) != 0 &&
-        (*(char *)(local_10 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) + local_c)
-         == '\0')))) {
+          (local_10 < (int)pVVar2->field_0034)))))) &&
+       ((pVVar2->field_004C != 0 &&
+        (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_c) == '\0')))) {
       if (*(char *)(param_1 + 0xc4) == '\0') {
         return;
       }
@@ -92,7 +90,7 @@ void __fastcall FUN_005f4680(int param_1)
       iVar4 = ((*(int *)(param_1 + 0xa7) - *(int *)(param_1 + 0x9b)) * 0x28) / local_8 +
               *(int *)(param_1 + 0x9b);
     }
-    TraksClassTy::TraksCreate(DAT_00802a7c,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
+    TraksClassTy::TraksCreate(g_traksClass_00802A7C,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
     if (*(char *)(param_1 + 0xc4) == '\0') {
       FUN_006eaaa0(DAT_00807598,*(uint *)(param_1 + 0x8f),0);
       *(undefined1 *)(param_1 + 0xc4) = 1;

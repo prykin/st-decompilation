@@ -11,9 +11,9 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
   int iVar2;
   uint *puVar3;
   byte *pbVar4;
+  uint uVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int iVar5;
   int iVar6;
   int iVar7;
   byte bVar8;
@@ -30,15 +30,15 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
   this_00 = local_10;
   if (iVar2 == 0) {
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)local_10->field_0068,0,0x1f,0x31,local_10->field_0185,0,0x1f,0x31,0x44,
-               0x39);
+              ((undefined4 *)local_10->field_0068,0,0x1f,0x31,(byte *)local_10->field_0185,0,0x1f,
+               0x31,0x44,0x39);
     bVar8 = 0x3a;
     iVar6 = 0;
     iVar2 = FUN_0070b3a0(this_00->field_01D1,(uint)(byte)this_00->field_01D0);
     FUN_006b5440(this_00->field_0068,0,0x22,0x38,iVar2,iVar6,bVar8);
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0068,0,0xa6,0x31,this_00->field_0185,0,0xa6,0x31,0x77,
-               0x26);
+              ((undefined4 *)this_00->field_0068,0,0xa6,0x31,(byte *)this_00->field_0185,0,0xa6,0x31
+               ,0x77,0x26);
     if (this_00->field_01BB == '\0') {
       bVar8 = 0x3a;
       iVar6 = 0;
@@ -75,11 +75,11 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
       ccFntTy::SetSurf(this_00->field_0189,this_00->field_0068,0,0xa6,0x31,0x77,0x26);
       iVar9 = -1;
       iVar7 = -1;
-      iVar2 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
-      iVar5 = -1;
-      iVar6 = -2;
-      puVar3 = (uint *)FUN_006b0140(0x4e5b,DAT_00807618);
-      ccFntTy::WrTxt(this_00->field_0189,puVar3,iVar6,iVar5,iVar2,iVar7,iVar9);
+      uVar5 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
+      iVar6 = -1;
+      iVar2 = -2;
+      puVar3 = (uint *)FUN_006b0140(0x4e5b,HINSTANCE_00807618);
+      ccFntTy::WrTxt(this_00->field_0189,puVar3,iVar2,iVar6,uVar5,iVar7,iVar9);
     }
     PaintIndicators(this_00);
     g_currentExceptionFrame = local_54.previous;

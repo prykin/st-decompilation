@@ -12,7 +12,7 @@ FUN_004cf4e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   if (*(int *)((int)this + 0x3d8) <= *(int *)((int)this + 0x3d4) + 1) {
     iVar1 = *(int *)((int)this + 0x3d8) + 0x14;
     *(int *)((int)this + 0x3d8) = iVar1;
-    iVar1 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)this + 0x607),iVar1 * 0x27);
+    iVar1 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)this + 0x607),iVar1 * 0x27);
     *(int *)((int)this + 0x607) = iVar1;
   }
   Library::MSVCRT::FUN_0072da70

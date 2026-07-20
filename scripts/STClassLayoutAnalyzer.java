@@ -409,7 +409,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private PushEvidence pushEvidence(String[] operands, Map<String, RegisterValue> registers) {
         if (operands.length < 1) return PushEvidence.unknown();
         String register = cleanRegister(operands[0]);
-        if (register != null) return PushEvidence.from(registers.get(register));
+        if (register != null)
+            return PushEvidence.from(isFullRegister(operands[0]) ? registers.get(register) : null);
         MemoryExpr memory = memoryExpr(operands[0]);
         RegisterValue base = memory == null ? null : registers.get(memory.register);
         if (base != null && base.kind == ValueKind.THIS_ADDRESS) {
@@ -658,9 +659,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (operands.length == 0) return;
         String destination = cleanRegister(operands[0]);
         if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
+            if (!isFullRegister(operands[0])) { registers.remove(destination); return; }
             String sourceRegister = cleanRegister(operands[1]);
             if (sourceRegister != null) {
-                RegisterValue source = registers.get(sourceRegister);
+                RegisterValue source = isFullRegister(operands[1]) ?
+                    registers.get(sourceRegister) : null;
                 if (source == null) registers.remove(destination);
                 else registers.put(destination, source);
                 return;
@@ -684,7 +687,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             RegisterValue base = destinationMemory == null ? null :
                 registers.get(destinationMemory.register);
             String sourceRegister = cleanRegister(operands[1]);
-            RegisterValue source = sourceRegister == null ? null : registers.get(sourceRegister);
+            RegisterValue source = sourceRegister == null || !isFullRegister(operands[1]) ? null :
+                registers.get(sourceRegister);
             if (destinationMemory != null && "EBP".equals(destinationMemory.register)) {
                 if (source == null) stackValues.remove(destinationMemory.displacement);
                 else stackValues.put(destinationMemory.displacement, source);
@@ -702,6 +706,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             return;
         }
         if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
+            if (!isFullRegister(operands[0])) { registers.remove(destination); return; }
             MemoryExpr sourceMemory = memoryExpr(operands[1]);
             RegisterValue source = sourceMemory == null ? null : registers.get(sourceMemory.register);
             if (source == null || source.kind != ValueKind.THIS_ADDRESS)
@@ -748,11 +753,14 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (text.contains("WORD PTR")) return 2;
         if (text.contains("BYTE PTR")) return 1;
         for (String operand : operands) {
-            String register = cleanRegister(operand);
-            if (register == null) continue;
+            String register = operand.trim().toUpperCase(Locale.ROOT);
+            if (!REGISTER.matcher(register).matches()) continue;
+            if (Set.of("AL", "AH", "BL", "BH", "CL", "CH", "DL", "DH").contains(register))
+                return 1;
+            if (Set.of("AX", "BX", "CX", "DX", "SI", "DI", "BP", "SP").contains(register))
+                return 2;
             if (register.startsWith("E")) return 4;
-            if (register.endsWith("X") || register.endsWith("I") || register.endsWith("P")) return 2;
-            if (register.endsWith("L") || register.endsWith("H")) return 1;
+            if (register.startsWith("R")) return 8;
         }
         return 4;
     }
@@ -777,12 +785,28 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (parsed == null) return null;
             displacement = "-".equals(matcher.group(2)) ? -parsed : signed32(parsed);
         }
-        return new MemoryExpr(matcher.group(1), displacement);
+        return new MemoryExpr(canonicalRegister(matcher.group(1)), displacement);
     }
 
     private String cleanRegister(String operand) {
         String value = operand.trim().toUpperCase(Locale.ROOT);
-        return REGISTER.matcher(value).matches() ? value : null;
+        return REGISTER.matcher(value).matches() ? canonicalRegister(value) : null;
+    }
+    private String canonicalRegister(String register) {
+        return switch (register.toUpperCase(Locale.ROOT)) {
+            case "AL", "AH", "AX", "EAX", "RAX" -> "EAX";
+            case "BL", "BH", "BX", "EBX", "RBX" -> "EBX";
+            case "CL", "CH", "CX", "ECX", "RCX" -> "ECX";
+            case "DL", "DH", "DX", "EDX", "RDX" -> "EDX";
+            case "SI", "ESI", "RSI" -> "ESI"; case "DI", "EDI", "RDI" -> "EDI";
+            case "BP", "EBP", "RBP" -> "EBP"; case "SP", "ESP", "RSP" -> "ESP";
+            default -> register.toUpperCase(Locale.ROOT);
+        };
+    }
+    private boolean isFullRegister(String operand) {
+        return Set.of("EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP",
+            "RAX", "RBX", "RCX", "RDX", "RSI", "RDI", "RBP", "RSP")
+            .contains(operand.trim().toUpperCase(Locale.ROOT));
     }
 
     private Long immediate(String operand) {

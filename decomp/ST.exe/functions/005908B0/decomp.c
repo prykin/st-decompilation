@@ -8,17 +8,18 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
 {
   code *pcVar1;
   MAdvTy *pMVar2;
-  undefined4 uVar3;
+  DWORD DVar3;
   int errorCode;
-  int iVar4;
+  undefined4 uVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
   
   local_8 = this;
-  uVar3 = FUN_006e51b0(this->field_0010);
-  this->field_0058 = uVar3;
+  DVar3 = FUN_006e51b0(this->field_0010);
+  this->field_0058 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -52,16 +53,16 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
       }
     }
     g_currentExceptionFrame = local_4c.previous;
-    uVar3 = FUN_006e5fd0();
-    return uVar3;
+    uVar4 = FUN_006e5fd0();
+    return uVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x87,0,errorCode,&DAT_007a4ccc
+  iVar5 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x87,0,errorCode,&DAT_007a4ccc
                              ,s_MAdvTy__GetMessage_007cbca0);
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar3 = (*pcVar1)();
-    return uVar3;
+    uVar4 = (*pcVar1)();
+    return uVar4;
   }
   RaiseInternalException(errorCode,0,s_E____titans_Start_adv_obj_cpp_007cbc24,0x87);
   return 0xffff;

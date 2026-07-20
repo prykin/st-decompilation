@@ -1,9 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::WaitLoad */
+   STBoatC::WaitLoad
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004749C0 -> 006E62D0 @ 00474A98 | 004749C0 -> 006E62D0 @ 00474FD8 */
 
-int __thiscall STBoatC::WaitLoad(STBoatC *this,void *param_1)
+int __thiscall STBoatC::WaitLoad(STBoatC *this,int *param_1)
 
 {
   uint uVar1;
@@ -38,12 +41,12 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,void *param_1)
   short local_20;
   int local_1c;
   undefined4 local_18;
-  undefined4 local_14;
+  int local_14;
   int local_10;
   int local_c;
   undefined4 *local_8;
   
-  if ((param_1 == (void *)0x0) || (pSVar11 = this, param_1 == (void *)0x1)) {
+  if ((param_1 == (int *)0x0) || (pSVar11 = this, param_1 == (int *)0x1)) {
     puVar8 = &this->field_02CC;
     for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
       *puVar8 = 0;
@@ -82,7 +85,9 @@ LAB_00475068:
       }
       if ((this->field_05A6 == 0) &&
          (iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,&this->field_05A6), iVar10 == -4)) {
-        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fea);
+        RaiseInternalException
+                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fea
+                  );
       }
       if ((*(int *)(this->field_05A6 + 0x7ce) != 0) &&
          ((int)this->field_0716 < (int)this->field_0712)) {
@@ -122,22 +127,22 @@ switchD_00474a47_caseD_2:
       return 2;
     }
     if (this->field_05C4 == 0) {
-      iVar10 = thunk_FUN_00460260(this,2);
+      iVar10 = sub_00460260(this,2);
       switch(iVar10) {
       case 0:
       case 1:
-        thunk_FUN_004602b0((int *)this);
+        sub_004602B0(this);
         iVar10 = this->field_05BC;
         iVar6 = iVar10 + 1;
         this->field_05BC = iVar6;
         if ((&this->field_05B4)[iVar10] != -1) {
-          param_1 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                        this->field_0x24),
-                                               CONCAT22((short)((uint)iVar6 >> 0x10),
-                                                        this->field_0030));
-          thunk_FUN_00481520(this,(int)(short)this->field_005B,(int)(short)this->field_005D,
-                             (int)(short)(&this->field_05B2)[this->field_05BC]);
-          thunk_FUN_00460260(this,0);
+          param_1 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
+                                                       this->field_0x24),
+                                              CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0030
+                                                      ));
+          sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
+                       (int)(short)(&this->field_05B2)[this->field_05BC]);
+          sub_00460260(this,0);
           return 2;
         }
         if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
@@ -157,7 +162,7 @@ switchD_00474a47_caseD_2:
         this->field_05C0 = 0;
         iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&param_1);
         if (iVar10 != -4) {
-          NotReadyForLoading(param_1,this->field_0018);
+          NotReadyForLoading((STBoatC *)param_1,this->field_0018);
           return 2;
         }
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f68,0,0,&DAT_007a4ccc
@@ -194,8 +199,8 @@ switchD_00474a47_caseD_2:
       this->field_05C4 = 2;
     }
     if (this->field_05C4 == 2) {
-      uVar7 = thunk_FUN_004176c0(this,*(short *)&this->field_0x5c8);
-      uVar7 = thunk_FUN_00417910(this,(short)uVar7);
+      uVar7 = sub_004176C0(this,*(short *)&this->field_0x5c8);
+      uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 != 0xffffffff) {
         if (uVar7 == 0) {
           this->field_05C4 = 3;
@@ -213,14 +218,15 @@ switchD_00474a47_caseD_2:
       return iVar10;
     }
     if (this->field_05C4 == 3) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         this->field_05AA * 0xc9 + 100,this->field_05AC * 0xc9 + 100,
-                         this->field_05AE * 200 + 100,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 this->field_05AA * 0xc9 + 100,this->field_05AC * 0xc9 + 100,
+                 this->field_05AE * 200 + 100,this->field_0061);
       this->field_05C4 = 4;
     }
     iVar10 = this->field_05C4;
     if (iVar10 == 4) {
-      local_1c = thunk_FUN_00415ed0(this,&local_18,&local_14);
+      local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
       uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar7;
       iVar10 = (uVar7 >> 0x10) % 7 - 3;
@@ -270,8 +276,8 @@ switchD_00474a47_caseD_2:
             iVar9 = (int)(short)local_24 + iVar10 + this->field_0041;
           }
           TraksClassTy::TraksCreate
-                    (DAT_00802a7c,1,2,7,iVar9,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar13,sVar15,
-                     sVar16,sVar17,sVar18,sVar19,sVar20,iVar6,sVar21,bVar22);
+                    (g_traksClass_00802A7C,1,2,7,iVar9,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar13,
+                     sVar15,sVar16,sVar17,sVar18,sVar19,sVar20,iVar6,sVar21,bVar22);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
         } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
@@ -293,8 +299,8 @@ switchD_00474a47_caseD_2:
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
     }
     if (iVar10 == 5) {
-      uVar7 = thunk_FUN_004176c0(this,this->field_05B0);
-      uVar7 = thunk_FUN_00417910(this,(short)uVar7);
+      uVar7 = sub_004176C0(this,this->field_05B0);
+      uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fc5,0,0,&DAT_007a4ccc
                                     ,s_STBoatC__WaitLoad_swli_regime2_5_007aaf04);
@@ -324,7 +330,7 @@ switchD_00474a47_caseD_2:
             iVar10 = (*pcVar4)();
             return iVar10;
           }
-          ReadyForLoading(param_1,(void *)this->field_0018);
+          ReadyForLoading((STBoatC *)param_1,(void *)this->field_0018);
           this->field_05C4 = 7;
         }
         iVar10 = (*this->vtable->vfunc_D8)();

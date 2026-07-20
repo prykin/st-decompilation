@@ -41,7 +41,7 @@ void FUN_006c72f0(int *param_1)
   ExceptionList = &local_14;
   local_2c = iVar3;
   local_28 = iVar5;
-  FUN_006ab060((undefined4 *)((int)param_1 + 0x72));
+  FUN_006ab060((LPVOID *)((int)param_1 + 0x72));
   if ((iVar5 == *(int *)((int)param_1 + 0x6a)) && (iVar3 == *(int *)((int)param_1 + 0x6e))) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
@@ -50,7 +50,7 @@ void FUN_006c72f0(int *param_1)
     if (iVar5 == 0) {
       local_8 = 0;
       puVar4 = Library::DKW::WGR::FUN_006b55f0
-                         ((undefined4 *)0x0,0,0,0,*(int *)((int)param_1 + 0x3a),
+                         ((undefined4 *)0x0,0,0,0,*(byte **)((int)param_1 + 0x3a),
                           *(int *)((int)param_1 + 0x3e),local_20,local_24,local_28,local_2c);
       *(undefined4 **)((int)param_1 + 0x72) = puVar4;
       g_currentExceptionFrame = local_70.previous;

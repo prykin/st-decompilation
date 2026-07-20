@@ -57,7 +57,7 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     *puVar8 = 0;
     puVar8 = puVar8 + 1;
   }
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,puVar1);
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,puVar1);
   if (local_5f != this_00->field_0B9E) {
 cf_common_exit_00502155:
     PaintCtrlBoat(this_00);

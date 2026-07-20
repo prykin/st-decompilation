@@ -93,12 +93,12 @@ LAB_00690763:
     iVar7 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_01 = local_c;
     if (iVar7 == 0) {
-      if (DAT_007fa174 == (STAllPlayersC *)0x0) {
+      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
         uVar8 = 0;
       }
       else {
         uVar8 = STAllPlayersC::GetObjPtr
-                          (DAT_007fa174,(uint)(byte)local_c->field_0x24,local_10,CASE_1);
+                          (g_sTAllPlayers_007FA174,(uint)(byte)local_c->field_0x24,local_10,CASE_1);
       }
       if ((uVar8 != 0) && (iVar7 = thunk_FUN_0068e290(this_01,*(short *)(uVar8 + 0x30)), iVar7 != 0)
          ) {

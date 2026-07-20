@@ -35,7 +35,7 @@ FUN_0062cac0(int *param_1,int param_2,int param_3,int param_4,undefined4 param_5
       param_8[1] = (short)param_1[1] + (short)lVar4;
       param_8[2] = (short)lVar5 + (short)param_1[2];
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,3,0,0,(int)lVar3 + *param_1,param_1[1] + (int)lVar4,
+                (g_traksClass_00802A7C,3,0,0,(int)lVar3 + *param_1,param_1[1] + (int)lVar4,
                  (int)lVar5 + param_1[2],0,0,0,0,0,0,-1,0,1);
       if (fVar1 <= _DAT_0079d070) {
         return 1;

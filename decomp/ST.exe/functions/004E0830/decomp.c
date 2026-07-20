@@ -124,11 +124,11 @@ LAB_004e0a4f:
           iVar4 = iVar13;
           do {
             sVar1 = (short)iVar4;
-            if (((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
+            if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
                ((sVar6 = (short)iVar3, sVar6 < 0 ||
-                ((((DAT_007fb242 <= sVar6 || (sVar7 < 0)) || (DAT_007fb244 <= sVar7)) ||
+                ((((SHORT_007fb242 <= sVar6 || (sVar7 < 0)) || (SHORT_007fb244 <= sVar7)) ||
                  (*(int *)(DAT_007fb248 +
-                          ((int)sVar6 * (int)DAT_007fb240 + (int)DAT_007fb246 * (int)sVar7 +
+                          ((int)sVar6 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar7 +
                           (int)sVar1) * 8) == 0)))))) {
               param_1[0x13c] = iVar4;
               param_1[0x13b] = 1;

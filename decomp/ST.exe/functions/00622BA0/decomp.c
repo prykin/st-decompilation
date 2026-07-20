@@ -79,37 +79,36 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
     *(undefined1 *)((int)param_1 + 0x352) = 1;
   }
   if (bVar1 < 3) {
-    if (DAT_00802a88 != (void *)0x0) {
-      thunk_FUN_00558dc0(DAT_00802a88,(int)*(short *)((int)param_1 + 0x47),
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)param_1 + 0x47),
                          (int)*(short *)((int)param_1 + 0x49),
                          (undefined *)(int)*(short *)((int)param_1 + 0x4b),
-                         *(uint *)((int)param_1 + 0x24),
-                         *(undefined **)(&DAT_007d02b4 + (uint)bVar1 * 4),
-                         *(int *)((int)param_1 + 0x18),0xffffffff);
+                         *(int **)((int)param_1 + 0x24),*(uint *)(&DAT_007d02b4 + (uint)bVar1 * 4),
+                         *(int **)((int)param_1 + 0x18),0xffffffff);
     }
   }
-  else if ((bVar1 == 3) && (DAT_00802a88 != (void *)0x0)) {
-    thunk_FUN_00558dc0(DAT_00802a88,(int)*(short *)((int)param_1 + 0x47),
+  else if ((bVar1 == 3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+    thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)param_1 + 0x47),
                        (int)*(short *)((int)param_1 + 0x49),
                        (undefined *)(int)*(short *)((int)param_1 + 0x4b),
-                       *(uint *)((int)param_1 + 0x24),DAT_007d02c0,*(int *)((int)param_1 + 0x18),
+                       *(int **)((int)param_1 + 0x24),DAT_007d02c0,*(int **)((int)param_1 + 0x18),
                        0xffffffff);
     thunk_FUN_0041d1a0(param_1,*(int *)(&DAT_007d02b4 + (uint)*(byte *)((int)param_1 + 0x2ad) * 4));
   }
   sVar5 = *(short *)((int)param_1 + 0x47);
   if ((((-1 < sVar5) && (sVar6 = *(short *)((int)param_1 + 0x49), -1 < sVar6)) &&
       (sVar7 = *(short *)((int)param_1 + 0x4b), -1 < sVar7)) &&
-     (((sVar5 < DAT_007fb240 && (sVar6 < DAT_007fb242)) && (sVar7 < 5)))) {
+     (((sVar5 < SHORT_007fb240 && (sVar6 < SHORT_007fb242)) && (sVar7 < 5)))) {
     *(undefined2 *)((int)param_1 + 0x3a) = *(undefined2 *)((int)param_1 + 0x282);
     *(undefined2 *)((int)param_1 + 0x3c) = *(undefined2 *)((int)param_1 + 0x286);
     *(undefined2 *)((int)param_1 + 0x3e) = *(undefined2 *)((int)param_1 + 0x28a);
     if (*(char *)((int)param_1 + 0x313) != '\0') {
-      if (((-1 < sVar5) && (sVar5 < DAT_007fb240)) &&
-         (((-1 < sVar6 && (((sVar6 < DAT_007fb242 && (-1 < sVar7)) && (sVar7 < DAT_007fb244)))) &&
-          (*(int *)(DAT_007fb248 +
-                   ((uint)*(byte *)((int)param_1 + 0x8e) +
-                   ((int)DAT_007fb246 * (int)sVar7 + (int)DAT_007fb240 * (int)sVar6 + (int)sVar5) *
-                   2) * 4) != 0)))) {
+      if (((-1 < sVar5) && (sVar5 < SHORT_007fb240)) &&
+         (((-1 < sVar6 && (((sVar6 < SHORT_007fb242 && (-1 < sVar7)) && (sVar7 < SHORT_007fb244))))
+          && (*(int *)(DAT_007fb248 +
+                      ((uint)*(byte *)((int)param_1 + 0x8e) +
+                      ((int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)sVar6 +
+                      (int)sVar5) * 2) * 4) != 0)))) {
         return 0;
       }
       iVar4 = DumpClassC::WritePtr

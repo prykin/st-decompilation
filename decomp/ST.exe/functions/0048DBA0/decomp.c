@@ -1,24 +1,28 @@
 
-void __fastcall FUN_0048dba0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0 */
+
+void __thiscall STBoatC::sub_0048DBA0(STBoatC *this)
 
 {
   short sVar1;
   short sVar2;
   short sVar3;
-  void *this;
+  void *this_00;
   
-  if ((*(int *)(param_1 + 0x45d) == 4) || (*(int *)(param_1 + 0x459) == 0x68)) {
-    sVar1 = *(short *)(param_1 + 0x554);
-    sVar2 = *(short *)(param_1 + 0x558);
-    sVar3 = *(short *)(param_1 + 0x556);
-    if (((-1 < sVar1) && (((sVar1 < DAT_007fb240 && (-1 < sVar3)) && (sVar3 < DAT_007fb242)))) &&
-       ((-1 < sVar2 && (sVar2 < DAT_007fb244)))) {
-      this = *(void **)(DAT_007fb248 +
-                       ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar1
-                       ) * 8);
-      if ((this != (void *)0x0) && (*(int *)((int)this + 0x18) == *(int *)(param_1 + 0x55a))) {
-        thunk_FUN_004e22a0(this,*(int *)(param_1 + 0x568),*(int *)(param_1 + 0x18));
-        thunk_FUN_004e2000(this,*(int *)(param_1 + 0x568),*(int *)(param_1 + 0x18));
+  if ((this->field_045D == 4) || (this->field_0459 == 0x68)) {
+    sVar1 = this->field_0554;
+    sVar2 = this->field_0558;
+    sVar3 = this->field_0556;
+    if (((-1 < sVar1) && (((sVar1 < SHORT_007fb240 && (-1 < sVar3)) && (sVar3 < SHORT_007fb242))))
+       && ((-1 < sVar2 && (sVar2 < SHORT_007fb244)))) {
+      this_00 = *(void **)(DAT_007fb248 +
+                          ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                          (int)sVar1) * 8);
+      if ((this_00 != (void *)0x0) && (*(int *)((int)this_00 + 0x18) == this->field_055A)) {
+        thunk_FUN_004e22a0(this_00,this->field_0568,this->field_0018);
+        thunk_FUN_004e2000(this_00,this->field_0568,this->field_0018);
       }
     }
   }

@@ -23,7 +23,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
       FUN_006acc70(this->field_0029,uVar5,&local_8);
       if ((short)local_8 != -1) {
         piVar3 = (int *)STAllPlayersC::GetObjPtr
-                                  (DAT_007fa174,
+                                  (g_sTAllPlayers_007FA174,
                                    CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),
                                    local_8,CASE_1);
         if (piVar3 == (int *)0x0) {
@@ -35,7 +35,8 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
             return;
           }
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x172e);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                     ,0x172e);
         }
         thunk_FUN_00493d10(piVar3);
       }

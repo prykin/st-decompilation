@@ -10,7 +10,7 @@ int __fastcall FUN_00416400(void *param_1)
   short sVar6;
   uint uVar7;
   short sVar8;
-  undefined4 local_2c;
+  int local_2c;
   int local_28;
   short local_24 [2];
   short local_20 [2];
@@ -36,7 +36,7 @@ int __fastcall FUN_00416400(void *param_1)
   if (*(int *)((int)param_1 + 0xf4) == 1) {
     *(undefined4 *)((int)param_1 + 0xf4) = 0;
   }
-  iVar4 = thunk_FUN_00415ed0(param_1,&local_28,&local_2c);
+  iVar4 = STJellyGunC::sub_00415ED0(param_1,&local_28,&local_2c);
   if (iVar4 == -1) {
     *(undefined1 *)((int)param_1 + 0xe3) = 0xff;
     return -1;
@@ -48,7 +48,7 @@ int __fastcall FUN_00416400(void *param_1)
       *(undefined1 *)((int)param_1 + 0xe3) = 0;
       return 0;
     }
-    thunk_FUN_00416270(param_1,local_24,local_20,local_1c);
+    thunk_FUN_00416270(param_1,local_24,(int *)local_20,(int *)local_1c);
     iVar4 = *(int *)((int)param_1 + 0xd3) + 1;
     local_6 = 0;
     *(int *)((int)param_1 + 0xd3) = iVar4;
@@ -81,8 +81,9 @@ int __fastcall FUN_00416400(void *param_1)
       }
     }
     _local_10 = CONCAT31((int3)((uint)iVar4 >> 8),bVar2);
-    iVar4 = thunk_FUN_00415b30(param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,
-                               (short)local_c,bVar2);
+    iVar4 = STJellyGunC::sub_00415B30
+                      (param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,(short)local_c,bVar2)
+    ;
     if (iVar4 != 0) {
       *(undefined1 *)((int)param_1 + 0xe3) = 0xff;
       return -1;

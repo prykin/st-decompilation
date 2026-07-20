@@ -83,7 +83,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
           g_currentExceptionFrame = local_6c.previous;
           return 0;
         }
-        InitOptic(DAT_007fb2a0);
+        InitOptic(g_opticClass_007FB2A0);
         CursorClassTy::AddOpticAcc(DAT_00802a30);
         goto LAB_004a8b47;
       }

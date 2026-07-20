@@ -16,7 +16,7 @@ CPanelTy::PaintCostsXY
   undefined4 unaff_ESI;
   void *unaff_EDI;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   int iVar8;
   InternalExceptionFrame local_4c;
@@ -35,7 +35,7 @@ CPanelTy::PaintCostsXY
       uVar6 = 1;
       iVar5 = -1;
       iVar3 = 0;
-      puVar4 = (uint *)FUN_006b0140(0x36b3,DAT_00807618);
+      puVar4 = (uint *)FUN_006b0140(0x36b3,HINSTANCE_00807618);
       ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     }
     if (param_4 != 0xffff) {

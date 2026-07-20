@@ -1,5 +1,11 @@
 
-undefined4 __thiscall FUN_00572d30(void *this,int param_1,uint param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00572D30 -> EXTERNAL:000000C6 @ 00573032
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00572D30 -> EXTERNAL:000000C6 @ 00573001 */
+
+undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
 
 {
   char *pcVar1;
@@ -32,7 +38,7 @@ undefined4 __thiscall FUN_00572d30(void *this,int param_1,uint param_2)
         LVar3 == 0 &&
         (LVar3 = RegSetValueExA(local_8,s_LastPlayer_007ca510,0,1,(BYTE *)((int)this + 0x785),0x40),
         LVar3 == 0)))) {
-      if (param_1 != 0) {
+      if (param_1 != (BYTE *)0x0) {
         local_1c[0] = DAT_007ca690;
         local_1c[1] = 0;
         local_14 = 0;
@@ -100,7 +106,7 @@ undefined4 __thiscall FUN_00572d30(void *this,int param_1,uint param_2)
         RegCloseKey(local_8);
         return 0;
       }
-      if (((param_2 & 2) != 0) &&
+      if ((((uint)param_2 & 2) != 0) &&
          (iVar6 = (*pcVar10)(local_8,s_Editor_007ca51c,0,3,&DAT_008071f8,0x100), iVar6 != 0)) {
         RegCloseKey(local_8);
         return 0;

@@ -9,7 +9,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   ushort uVar1;
   uint *puVar2;
   code *pcVar3;
-  int *this;
+  STFishC *this;
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
@@ -25,7 +25,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   int local_2c [4];
   short local_1c;
   uint local_18;
-  int *local_14;
+  STFishC *local_14;
   int local_10;
   undefined4 local_c;
   short local_8;
@@ -35,12 +35,12 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_2c[1] = 0x39;
   local_2c[2] = 0x4f;
   local_2c[3] = 0x5e;
-  this = (int *)GetObjPtr(in_ECX,(uint)param_1,param_2,CASE_1);
+  this = (STFishC *)GetObjPtr(in_ECX,(uint)param_1,param_2,CASE_1);
   local_14 = this;
-  uVar4 = (**(code **)(*this + 0x2c))();
+  uVar4 = (*this->vtable->slot_2C)();
   local_c = 0;
   local_18 = uVar4;
-  if (this == (int *)0x0) {
+  if (this == (STFishC *)0x0) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x246d,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___SubMDObject_inva_007a80dc);
     if (iVar5 != 0) {
@@ -48,8 +48,9 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
       uVar6 = (*pcVar3)();
       return uVar6;
     }
-    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x246e)
-    ;
+    RaiseInternalException
+              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x246e);
   }
   if ((uVar4 != 0x3b) && (uVar4 != 0x60)) {
     local_10 = 0;
@@ -58,9 +59,9 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         puVar2 = *(uint **)((int)&DAT_007f4e2f + (char)param_1 * 0xa62 + local_10);
         uVar1 = (ushort)puVar2[3];
         if (uVar1 != 0) {
-          thunk_FUN_004162b0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
+          STFishC::sub_004162B0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
           uVar4 = 0;
-          local_1c = *(short *)((int)this + 0x32);
+          local_1c = *(short *)&this->field_0x32;
           this = local_14;
           if (uVar1 != 0) {
             do {
@@ -83,9 +84,9 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     } while (local_10 < 0x10);
     return local_c;
   }
-  thunk_FUN_004162b0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
-  local_1c = *(short *)((int)this + 0x32);
-  local_14 = (int *)0x4;
+  STFishC::sub_004162B0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
+  local_1c = *(short *)&this->field_0x32;
+  local_14 = (STFishC *)0x4;
   param_1 = (undefined4 *)((int)&DAT_007f4e2f + (char)param_1 * 0xa62);
   do {
     puVar2 = (uint *)*param_1;
@@ -107,8 +108,8 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
       }
     }
     param_1 = param_1 + 1;
-    local_14 = (int *)((int)local_14 + -1);
-  } while (local_14 != (int *)0x0);
+    local_14 = (STFishC *)((int)local_14 + -1);
+  } while (local_14 != (STFishC *)0x0);
   return local_c;
 }
 

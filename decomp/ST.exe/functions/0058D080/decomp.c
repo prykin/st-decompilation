@@ -40,9 +40,9 @@ undefined4 __cdecl FUN_0058d080(int param_1)
           }
         }
         if (DAT_00811720 == 0) {
-          FUN_006ab060(&DAT_00811718);
+          FUN_006ab060((LPVOID *)&DAT_00811718);
           DAT_00811718 = 0;
-          FUN_006ab060(&DAT_0081171c);
+          FUN_006ab060((LPVOID *)&DAT_0081171c);
           DAT_0081171c = 0;
         }
         return 1;

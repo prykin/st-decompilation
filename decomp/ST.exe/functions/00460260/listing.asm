@@ -1,4 +1,4 @@
-FUN_00460260:
+STBoatC::sub_00460260:
 00460260  55                        PUSH EBP
 00460261  8B EC                     MOV EBP,ESP
 00460263  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

@@ -44,7 +44,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
     if (((local_c->field_0067 != '\0') && (local_c->field_0069 == '\0')) &&
        (local_c->field_0068 != '\0')) {
       bVar3 = false;
-      FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+      FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar5 == 0) {
@@ -96,7 +96,7 @@ LAB_005bfb27:
       }
       if (bVar3) {
         thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
-        FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+        FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
         PutDDXClip(0x1a,0x46,0x1a,0x46,*(uint *)(this_00->field_0073 + 4),
                    *(byte **)(this_00->field_0073 + 8),'\x01',(BITMAPINFO *)this_00->field_005D);
         iVar4 = this_00->field_0073;
@@ -125,12 +125,12 @@ LAB_005bfb27:
     if (local_8 != 0) {
       if (this_00->field_0453 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_0453);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_0453);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_0453);
         this_00->field_0453 = (HoloTy *)0x0;
       }
       if (this_00->field_0457 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_0457);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_0457);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_0457);
         this_00->field_0457 = (HoloTy *)0x0;
       }
       this_00->field_0065 = 1;

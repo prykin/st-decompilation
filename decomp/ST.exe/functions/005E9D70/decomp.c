@@ -54,7 +54,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
             ((MMMObjTy *)this_01,DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,(undefined4 *)this_01);
   if (this_00->field_1AF8 != (HoloTy *)0x0) {
     HoloTy::Done(this_00->field_1AF8);
-    Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_1AF8);
+    Library::MSVCRT::FUN_0072e2b0(this_00->field_1AF8);
     this_00->field_1AF8 = (HoloTy *)0x0;
   }
   pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -107,7 +107,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   } while (local_8 != 0);
   if ((this_00->field_1A64 == 0) || (this_00->field_1A5F == '\x0e')) {
     if (*(uint *)(DAT_0081176c + 0x389) != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*(uint *)(DAT_0081176c + 0x389));
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)(DAT_0081176c + 0x389));
     }
     *(undefined4 *)(DAT_0081176c + 0x389) = 0;
     iVar2 = *(int *)(DAT_0081176c + 0x544);
@@ -119,7 +119,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     *(uint **)(DAT_0081176c + 0x548) = puVar4;
     if (this_00->field_1B00 != (HoloTy *)0x0) {
       HoloTy::Done(this_00->field_1B00);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_1B00);
+      Library::MSVCRT::FUN_0072e2b0(this_00->field_1B00);
       this_00->field_1B00 = (HoloTy *)0x0;
     }
     pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -182,16 +182,16 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   }
   if (this_00->field_1A64 == 0) {
     if (*(uint *)(DAT_0081176c + 0x54c) != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*(uint *)(DAT_0081176c + 0x54c));
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)(DAT_0081176c + 0x54c));
       *(undefined4 *)(DAT_0081176c + 0x54c) = 0;
     }
     if (*(uint *)(DAT_0081176c + 0x550) != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*(uint *)(DAT_0081176c + 0x550));
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)(DAT_0081176c + 0x550));
       *(undefined4 *)(DAT_0081176c + 0x550) = 0;
     }
     if (this_00->field_1AFC != (HoloTy *)0x0) {
       HoloTy::Done(this_00->field_1AFC);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_1AFC);
+      Library::MSVCRT::FUN_0072e2b0(this_00->field_1AFC);
       this_00->field_1AFC = (HoloTy *)0x0;
     }
     pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);

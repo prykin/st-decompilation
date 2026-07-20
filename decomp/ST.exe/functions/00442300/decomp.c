@@ -10,17 +10,18 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   STAllPlayersC *pSVar2;
   byte bVar3;
   int iVar4;
-  int *piVar5;
+  STFishC *pSVar5;
   int iVar6;
   undefined4 uVar7;
   uint uVar8;
   uint uVar9;
   undefined4 unaff_ESI;
-  undefined4 *puVar10;
-  void *unaff_EDI;
+  int *piVar10;
   undefined4 *puVar11;
-  STAllPlayersC_GetTOBJList_param_2Enum SVar12;
+  void *unaff_EDI;
+  undefined4 *puVar12;
   STAllPlayersC_GetTOBJList_param_2Enum SVar13;
+  STAllPlayersC_GetTOBJList_param_2Enum SVar14;
   InternalExceptionFrame local_d4;
   undefined4 local_90;
   short local_8a;
@@ -32,7 +33,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   uint local_50;
   int local_4c;
   uint local_48;
-  int *local_44;
+  STFishC *local_44;
   short local_40;
   short local_3e;
   short local_3c;
@@ -57,8 +58,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   local_6c[2] = 0x4f;
   local_6c[3] = 0x5e;
   local_5c = this;
-  local_44 = (int *)GetObjPtr(this,param_1,param_2,CASE_1);
-  local_58 = (**(code **)(*local_44 + 0x2c))();
+  local_44 = (STFishC *)GetObjPtr(this,param_1,param_2,CASE_1);
+  local_58 = (*local_44->vtable->slot_2C)();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
@@ -79,36 +80,37 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar5 = (int *)((int)&DAT_007f4e2f + (char)param_1 * 0xa62);
+    piVar10 = (int *)((int)&DAT_007f4e2f + (char)param_1 * 0xa62);
     iVar4 = local_4c;
     do {
-      if (*piVar5 == 0) {
+      if (*piVar10 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23dd);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x23dd);
       }
-      piVar5 = piVar5 + 1;
+      piVar10 = piVar10 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }
-  piVar5 = local_44;
+  pSVar5 = local_44;
   pSVar2 = local_5c;
   if ((local_58 == 0x3b) || (local_58 == 0x60)) {
-    thunk_FUN_004162b0(local_44,&local_38,&local_36,&local_34);
-    local_32 = *(undefined2 *)((int)piVar5 + 0x32);
-    uVar8 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
-    puVar10 = DAT_007fb280;
-    puVar11 = DAT_007fb238;
+    STFishC::sub_004162B0(local_44,&local_38,&local_36,&local_34);
+    local_32 = *(undefined2 *)&pSVar5->field_0x32;
+    uVar8 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
+    puVar11 = DAT_007fb280;
+    puVar12 = DAT_007fb238;
     for (uVar9 = (uVar8 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar11 = *puVar10;
-      puVar10 = puVar10 + 1;
+      *puVar12 = *puVar11;
       puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     for (uVar8 = uVar8 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined1 *)puVar11 = *(undefined1 *)puVar10;
-      puVar10 = (undefined4 *)((int)puVar10 + 1);
+      *(undefined1 *)puVar12 = *(undefined1 *)puVar11;
       puVar11 = (undefined4 *)((int)puVar11 + 1);
+      puVar12 = (undefined4 *)((int)puVar12 + 1);
     }
-    FUN_006ab090((int)DAT_007fb238,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
+    FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
                  (int)local_38,(int)local_36,(int)local_34,-1,-1,-1);
     pSVar2 = local_5c;
     local_14 = 0;
@@ -123,15 +125,16 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
           if (0 < (int)local_48) {
             do {
               FUN_006acc70((int)local_c,local_18,&local_1c);
-              piVar5 = (int *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
-              local_44 = piVar5;
-              iVar6 = (**(code **)(*piVar5 + 0x88))(local_54);
+              pSVar5 = (STFishC *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
+              local_44 = pSVar5;
+              iVar6 = (*pSVar5->vtable->slot_88)(local_54);
               if (0 < iVar6) {
-                thunk_FUN_004162b0(piVar5,&local_40,&local_3e,&local_3c);
-                local_3a = *(undefined2 *)((int)piVar5 + 0x32);
+                STFishC::sub_004162B0(pSVar5,&local_40,&local_3e,&local_3c);
+                local_3a = *(undefined2 *)&pSVar5->field_0x32;
                 local_30 = (int)*(short *)((int)DAT_007fb238 +
-                                          ((local_3c + 1) * (int)DAT_007fb27e +
-                                           (int)local_3e * (int)DAT_007fb278 + (int)local_40) * 2);
+                                          ((local_3c + 1) * (int)SHORT_007fb27e +
+                                           (int)local_3e * (int)SHORT_007fb278 + (int)local_40) * 2)
+                ;
                 if (local_30 == 0) {
                   local_30 = 1000000;
                   local_28 = 100;
@@ -172,53 +175,54 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   }
   else {
     local_14 = 0;
-    SVar12 = local_58;
+    SVar13 = local_58;
     if (0 < iVar6) {
       do {
         iVar6 = local_14;
-        if (SVar12 == local_6c[local_14]) {
+        if (SVar13 == local_6c[local_14]) {
           iVar4 = thunk_FUN_004406c0((char)param_1);
           if ((char)iVar4 == '\x03') {
-            SVar13 = 0x60;
+            SVar14 = 0x60;
           }
           else {
-            SVar13 = 0x3b;
+            SVar14 = 0x3b;
           }
-          local_c = GetTOBJList(pSVar2,(char)param_1,SVar13,0,-1);
-          piVar5 = local_44;
+          local_c = GetTOBJList(pSVar2,(char)param_1,SVar14,0,-1);
+          pSVar5 = local_44;
           local_48 = local_c[3];
           if (local_48 != 0) {
-            thunk_FUN_004162b0(local_44,&local_40,&local_3e,&local_3c);
-            local_3a = *(undefined2 *)((int)piVar5 + 0x32);
-            uVar8 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
-            puVar10 = DAT_007fb280;
-            puVar11 = DAT_007fb238;
+            STFishC::sub_004162B0(local_44,&local_40,&local_3e,&local_3c);
+            local_3a = *(undefined2 *)&pSVar5->field_0x32;
+            uVar8 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
+            puVar11 = DAT_007fb280;
+            puVar12 = DAT_007fb238;
             for (uVar9 = (uVar8 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *puVar11 = *puVar10;
-              puVar10 = puVar10 + 1;
+              *puVar12 = *puVar11;
               puVar11 = puVar11 + 1;
+              puVar12 = puVar12 + 1;
             }
             for (uVar8 = uVar8 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *(undefined1 *)puVar11 = *(undefined1 *)puVar10;
-              puVar10 = (undefined4 *)((int)puVar10 + 1);
+              *(undefined1 *)puVar12 = *(undefined1 *)puVar11;
               puVar11 = (undefined4 *)((int)puVar11 + 1);
+              puVar12 = (undefined4 *)((int)puVar12 + 1);
             }
-            FUN_006ab090((int)DAT_007fb238,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
-                         (int)local_40,(int)local_3e,(int)local_3c,-1,-1,-1);
+            FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,
+                         (int)SHORT_007fb27c,(int)local_40,(int)local_3e,(int)local_3c,-1,-1,-1);
             local_18 = 0;
             local_8 = *(uint **)((int)&DAT_007f4e2f + (char)param_1 * 0xa62 + local_14 * 4);
             iVar6 = local_14;
-            SVar12 = local_58;
+            SVar13 = local_58;
             if (0 < (int)local_48) {
               do {
                 FUN_006acc70((int)local_c,local_18,&local_1c);
-                piVar5 = (int *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
-                local_44 = piVar5;
-                thunk_FUN_004162b0(piVar5,&local_38,&local_36,&local_34);
-                local_32 = *(undefined2 *)((int)piVar5 + 0x32);
+                pSVar5 = (STFishC *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
+                local_44 = pSVar5;
+                STFishC::sub_004162B0(pSVar5,&local_38,&local_36,&local_34);
+                local_32 = *(undefined2 *)&pSVar5->field_0x32;
                 local_30 = (int)*(short *)((int)DAT_007fb238 +
-                                          ((local_34 + 1) * (int)DAT_007fb27e +
-                                           (int)DAT_007fb278 * (int)local_36 + (int)local_38) * 2);
+                                          ((local_34 + 1) * (int)SHORT_007fb27e +
+                                           (int)SHORT_007fb278 * (int)local_36 + (int)local_38) * 2)
+                ;
                 if (local_30 == 0) {
                   local_30 = 1000000;
                   local_28 = 100;
@@ -249,7 +253,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                 }
                 local_18 = local_18 + 1;
                 iVar6 = local_14;
-                SVar12 = local_58;
+                SVar13 = local_58;
               } while ((int)local_18 < (int)local_48);
             }
           }

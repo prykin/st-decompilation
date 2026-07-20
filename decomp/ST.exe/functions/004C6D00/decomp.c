@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004c6d00(int *param_1)
   int iVar3;
   undefined4 uVar4;
   undefined4 local_20;
-  undefined4 local_1c;
+  int local_1c;
   short local_18 [2];
   short local_14 [2];
   short local_10 [3];
@@ -63,11 +63,12 @@ undefined4 __fastcall FUN_004c6d00(int *param_1)
           uVar4 = (*pcVar1)();
           return uVar4;
         }
-        RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35);
+        RaiseInternalException
+                  (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35);
       }
       else if (iVar3 == 1) {
         param_1[0x100] = 1;
-        thunk_FUN_00416270(param_1,local_10,local_14,local_18);
+        thunk_FUN_00416270(param_1,local_10,(int *)local_14,(int *)local_18);
         sVar2 = (short)param_1[0x16c] * 0xc9 + 100;
         if (((local_10[0] == sVar2) && (local_14[0] == (short)((short)param_1[0x16d] * 0xc9 + 100)))
            && (local_18[0] == (short)((short)param_1[0x16e] * 200 + 100))) {
@@ -75,14 +76,15 @@ undefined4 __fastcall FUN_004c6d00(int *param_1)
           thunk_FUN_004167a0((int)param_1);
         }
         else {
-          thunk_FUN_00415b30(param_1,local_10[0],local_14[0],local_18[0],sVar2,
-                             (short)param_1[0x16d] * 0xc9 + 100,(short)param_1[0x16e] * 200 + 100,
-                             *(byte *)((int)param_1 + 0x62));
+          STJellyGunC::sub_00415B30
+                    ((STJellyGunC *)param_1,local_10[0],local_14[0],local_18[0],sVar2,
+                     (short)param_1[0x16d] * 0xc9 + 100,(short)param_1[0x16e] * 200 + 100,
+                     *(byte *)((int)param_1 + 0x62));
         }
       }
     }
     if ((param_1[0x100] == 0) || (param_1[0xf7] == 0)) goto cf_common_exit_004C6F47;
-    iVar3 = thunk_FUN_00415ed0(param_1,&local_20,&local_1c);
+    iVar3 = STJellyGunC::sub_00415ED0((STJellyGunC *)param_1,&local_20,&local_1c);
     if (iVar3 != -1) {
       if (iVar3 != 0) goto cf_common_exit_004C6F47;
 LAB_004c6e4d:
@@ -99,7 +101,8 @@ LAB_004c6e4d:
     }
     iVar3 = 0x47;
   }
-  RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_bmove_cpp_007ad368,iVar3);
+  RaiseInternalException
+            (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bmove_cpp_007ad368,iVar3);
 cf_common_exit_004C6F47:
   thunk_FUN_004162f0(param_1,&local_6,&local_8,&local_a);
   param_1[0x16c] = (int)local_6;

@@ -22,10 +22,10 @@ FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefi
   *(undefined2 *)((int)puVar1 + 0x12) = 0x7fff;
   *(undefined2 *)(puVar1 + 5) = 0x7fff;
   if (param_6 != 0) {
-    FUN_006b9910((undefined4 *)((int)this + 0x446),puVar1);
+    FUN_006b9910((undefined4 *)((int)this + 0x446),(int)puVar1);
     return puVar1;
   }
-  FUN_006b9910((undefined4 *)((int)this + 0x44a),puVar1);
+  FUN_006b9910((undefined4 *)((int)this + 0x44a),(int)puVar1);
   return puVar1;
 }
 

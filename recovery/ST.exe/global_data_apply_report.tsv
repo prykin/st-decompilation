@@ -1,0 +1,131 @@
+address	status	proposed_name	detail
+00792CA0	disabled		apply flags are 0
+00798FC8	disabled	g_int_00798FC8	apply flags are 0
+007C2B14	disabled	g_char_007C2B14	apply flags are 0
+007C2B20	disabled	g_text_007C2B20	apply flags are 0
+007C3B5C	disabled	g_text_007C3B5C	apply flags are 0
+007C3B60	disabled	g_text_007C3B60	apply flags are 0
+007C7078	disabled		apply flags are 0
+007C7080	disabled		apply flags are 0
+007C7274	disabled	g__Source_007C7274	apply flags are 0
+007C8FF4	disabled		apply flags are 0
+007CC8BC	disabled	g_text_007CC8BC	apply flags are 0
+007D03B8	disabled		apply flags are 0
+007D03BA	disabled		apply flags are 0
+007D03BC	disabled		apply flags are 0
+007D1DB8	disabled	g_text_007D1DB8	apply flags are 0
+007D8010	disabled		apply flags are 0
+007D8012	disabled		apply flags are 0
+007DF9E8	disabled		apply flags are 0
+007EDCA4	disabled		apply flags are 0
+007EDCA6	disabled		apply flags are 0
+007EDCA9	disabled		apply flags are 0
+007EDCAB	disabled		apply flags are 0
+007EE1AC	disabled		apply flags are 0
+007EE1B0	disabled		apply flags are 0
+007F4D04	disabled	g_short_007F4D04	apply flags are 0
+007F4D18	disabled		apply flags are 0
+007F4E33	disabled	g_uint_007F4E33	apply flags are 0
+007F5107	disabled	g_groupContent_007F5107	apply flags are 0
+007F5816	disabled	g_uint_007F5816	apply flags are 0
+007F5887	disabled	g_uint_007F5887	apply flags are 0
+007FA168	disabled		apply flags are 0
+007FA170	disabled	g_groupContent_007FA170	apply flags are 0
+007FB234	disabled		apply flags are 0
+007FB238	disabled		apply flags are 0
+007FB248	disabled		apply flags are 0
+007FB24C	disabled		apply flags are 0
+007FB280	disabled		apply flags are 0
+00802AD0	disabled		apply flags are 0
+008030D4	disabled		apply flags are 0
+00803144	disabled		apply flags are 0
+008032A4	disabled		apply flags are 0
+008032A8	disabled		apply flags are 0
+008032AC	disabled		apply flags are 0
+008032B0	disabled		apply flags are 0
+008032B4	disabled		apply flags are 0
+008032B8	disabled		apply flags are 0
+008032BC	disabled		apply flags are 0
+008032C0	disabled		apply flags are 0
+008032C4	disabled		apply flags are 0
+008032C8	disabled		apply flags are 0
+008032CC	disabled		apply flags are 0
+008032D0	disabled		apply flags are 0
+008032D4	disabled		apply flags are 0
+00803380	disabled		apply flags are 0
+008033B4	disabled		apply flags are 0
+00803408	disabled	g__Path_00803408	apply flags are 0
+00806724	disabled		apply flags are 0
+00806740	disabled	g_groupContent_00806740	apply flags are 0
+00806768	disabled	g_cMf32_00806768	apply flags are 0
+00806770	disabled	g_cMf32_00806770	apply flags are 0
+00806778	disabled	g_cMf32_00806778	apply flags are 0
+00806788	disabled	g_cMf32_00806788	apply flags are 0
+008071F8	disabled	g_lpData_008071F8	apply flags are 0
+008072F8	disabled		apply flags are 0
+008073D0	disabled		apply flags are 0
+00807598	disabled	g_holo_00807598	apply flags are 0
+0080760C	disabled	g_holo_0080760C	apply flags are 0
+00807DDD	disabled		apply flags are 0
+00807E1D	disabled		apply flags are 0
+00807E5D	disabled		apply flags are 0
+00808406	disabled		apply flags are 0
+0080874D	disabled		apply flags are 0
+00808AF4	disabled		apply flags are 0
+00809960	disabled		apply flags are 0
+0080C3C3	disabled	g__Source_0080C3C3	apply flags are 0
+0080C522	disabled		apply flags are 0
+0080C632	disabled	g__Path_0080C632	apply flags are 0
+0080E303	disabled	g__Dest_0080E303	apply flags are 0
+0080ED12	disabled		apply flags are 0
+0080ED16	disabled		apply flags are 0
+0080EF1E	disabled		apply flags are 0
+0080F22A	disabled		apply flags are 0
+00811718	disabled		apply flags are 0
+0081171C	disabled		apply flags are 0
+008117A4	disabled	g_sTManRub3_008117A4	apply flags are 0
+008117C0	disabled	g__Str1_008117C0	apply flags are 0
+00811908	disabled		apply flags are 0
+00811914	disabled		apply flags are 0
+00811970	disabled	g_int_00811970	apply flags are 0
+00811978	disabled	g_int_00811978	apply flags are 0
+00811984	applied	g_sTFish_00811984	type=applied(/STFishC *32); name=applied(g_sTFish_00811984)
+00811990	disabled		apply flags are 0
+00811AA0	disabled		apply flags are 0
+00811AF0	disabled	g__Source_00811AF0	apply flags are 0
+00811C80	disabled		apply flags are 0
+00847D0C	disabled	g__Dest_00847D0C	apply flags are 0
+008489B4	disabled		apply flags are 0
+008489B8	disabled		apply flags are 0
+008489BC	disabled		apply flags are 0
+008489C4	disabled		apply flags are 0
+008489C8	disabled		apply flags are 0
+008489D0	disabled	g_cMf32_008489D0	apply flags are 0
+008489D8	disabled	g_uint_008489D8	apply flags are 0
+008489E0	disabled	g_text_008489E0	apply flags are 0
+00848A04	disabled	g__Value_00848A04	apply flags are 0
+00848A14	disabled	g_int_00848A14	apply flags are 0
+00853DD4	disabled		apply flags are 0
+00853DE4	disabled		apply flags are 0
+00853FF8	disabled	g_cMf32_00853FF8	apply flags are 0
+00854EF0	disabled		apply flags are 0
+00854F00	disabled	g_uint_00854F00	apply flags are 0
+00854F08	disabled		apply flags are 0
+00854F3C	disabled		apply flags are 0
+00854F58	disabled	g_char_00854F58	apply flags are 0
+00854F68	disabled	g_uint_00854F68	apply flags are 0
+00854F90	disabled	g_int_00854F90	apply flags are 0
+00854FD0	disabled	g_uint_00854FD0	apply flags are 0
+00854FD8	disabled	g_int_00854FD8	apply flags are 0
+00854FDC	disabled	g_int_00854FDC	apply flags are 0
+00854FF8	disabled		apply flags are 0
+008568D0	disabled		apply flags are 0
+00856FE4	disabled	g_byte_00856FE4	apply flags are 0
+00857004	disabled	g_byte_00857004	apply flags are 0
+00857028	disabled	g_byte_00857028	apply flags are 0
+00857118	disabled	g_uint_00857118	apply flags are 0
+0085712C	disabled	g_dwMilliseconds_0085712C	apply flags are 0
+0085713C	disabled	g_hThread_0085713C	apply flags are 0
+00857500	disabled	g_hLibModule_00857500	apply flags are 0
+0085A5C4	disabled	g_hHeap_0085A5C4	apply flags are 0
+0085E000	disabled	g_lpAddend_0085E000	apply flags are 0

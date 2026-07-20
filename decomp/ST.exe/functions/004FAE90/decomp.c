@@ -26,7 +26,7 @@ void __thiscall FUN_004fae90(void *this,uint param_1,uint param_2)
         local_10 = local_8;
         local_14 = param_1;
         iVar3 = STAllPlayersC::GetActiveCenter
-                          (DAT_007fa174,(undefined2 *)0x0,(undefined2 *)0x0,
+                          (g_sTAllPlayers_007FA174,(undefined2 *)0x0,(undefined2 *)0x0,
                            (undefined2 *)((int)&param_2 + 2));
         if (-1 < iVar3) {
           local_c = (int)param_2._2_2_;

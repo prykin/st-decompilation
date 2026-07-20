@@ -36,8 +36,9 @@ FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 p
     local_1c = param_5;
   }
   else {
-    thunk_FUN_004162b0(param_2,(undefined2 *)&local_18,(undefined2 *)&local_14,
-                       (undefined2 *)&local_1c);
+    STFishC::sub_004162B0
+              ((STFishC *)param_2,(undefined2 *)&local_18,(undefined2 *)&local_14,
+               (undefined2 *)&local_1c);
   }
   if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) == 1) {
     if (this_00 == (int *)0x0) {
@@ -107,9 +108,9 @@ LAB_004c5515:
   if ((((iVar5 <= iVar6) || (uVar7 = local_c, param_6 == 0)) &&
       (uVar7 = 1, *(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) == 1))
      && (param_6 != 0)) {
-    thunk_FUN_00416270(this_00,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2));
-    thunk_FUN_00416270(this,(undefined2 *)((int)&param_5 + 2),(undefined2 *)((int)&param_4 + 2),
-                       (undefined2 *)((int)&param_2 + 2));
+    thunk_FUN_00416270(this_00,&local_8,(int *)&local_6,(int *)((int)&param_3 + 2));
+    thunk_FUN_00416270(this,(undefined2 *)((int)&param_5 + 2),(int *)((int)&param_4 + 2),
+                       (int *)((int)&param_2 + 2));
     iVar5 = FUN_006acf0d((int)local_8,(int)local_6,(int)param_3._2_2_,(int)param_5._2_2_,
                          (int)param_4._2_2_,(int)param_2._2_2_);
     uVar7 = (int)param_3._2_2_ - (int)param_2._2_2_ >> 0x1f;

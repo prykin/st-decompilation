@@ -1,7 +1,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
-   MMMObjTy::OutLstProc */
+   MMMObjTy::OutLstProc
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 005B9860 parameter used as this of MMMObjTy::OutBSlProc @ 005B98CD */
 
 void __thiscall
 MMMObjTy::OutLstProc
@@ -18,7 +21,7 @@ MMMObjTy::OutLstProc
   void *unaff_EDI;
   uint uVar4;
   uint uVar5;
-  void *pvVar6;
+  ccFntTy *pcVar6;
   undefined4 uVar7;
   InternalExceptionFrame local_4c;
   int local_8;
@@ -34,11 +37,12 @@ MMMObjTy::OutLstProc
       Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,0x15,DAT_0081176c + 0x144);
       FUN_006c6850(param_1,param_4,param_5,param_6,0x15,*(undefined4 *)(DAT_0081176c + 0x140));
       uVar7 = 0;
-      pvVar6 = *(void **)(DAT_0081176c + 0x34);
+      pcVar6 = *(ccFntTy **)(DAT_0081176c + 0x34);
       uVar5 = 0xffffffff;
       uVar4 = 0xfffffffe;
-      puVar2 = (uint *)FUN_006b0140(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),DAT_00807618);
-      StartServTy::WrTextDDX(this_00,0,param_4,param_5,param_6,0x15,puVar2,uVar4,uVar5,pvVar6,uVar7)
+      puVar2 = (uint *)FUN_006b0140(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),
+                                    HINSTANCE_00807618);
+      StartServTy::WrTextDDX(this_00,0,param_4,param_5,param_6,0x15,puVar2,uVar4,uVar5,pcVar6,uVar7)
       ;
       g_currentExceptionFrame = local_4c.previous;
       return;

@@ -1,4 +1,7 @@
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0071A250 parameter used as this of cMf32::RecRen @ 0071A264 */
+
 void __cdecl FUN_0071a250(cMf32 *param_1,char *param_2,char *param_3,int param_4)
 
 {

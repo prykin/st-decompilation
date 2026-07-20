@@ -4,7 +4,7 @@
 int __fastcall FUN_00619c70(void *param_1)
 
 {
-  void *pvVar1;
+  VisibleClassTy *pVVar1;
   short sVar2;
   short sVar3;
   undefined4 uVar4;
@@ -62,8 +62,9 @@ int __fastcall FUN_00619c70(void *param_1)
     case 2:
       iVar10 = (int)*(short *)((int)param_1 + 0xc9);
       iVar11 = (int)*(short *)((int)param_1 + 0xcb);
-      if ((((-1 < iVar10) && (-1 < iVar11)) && (iVar8 = (int)DAT_007fb240, iVar10 < iVar8)) &&
-         ((iVar11 < DAT_007fb242 && (*(char *)(iVar8 * iVar11 + DAT_007fb26c + iVar10) != '\0')))) {
+      if ((((-1 < iVar10) && (-1 < iVar11)) && (iVar8 = (int)SHORT_007fb240, iVar10 < iVar8)) &&
+         ((iVar11 < SHORT_007fb242 && (*(char *)(iVar8 * iVar11 + DAT_007fb26c + iVar10) != '\0'))))
+      {
         if ((((&DAT_007fb24c)[*(int *)((int)param_1 + 0x51)] == 0) ||
             (*(char *)(iVar8 * iVar11 + (&DAT_007fb24c)[*(int *)((int)param_1 + 0x51)] + iVar10) ==
              '\0')) &&
@@ -224,8 +225,8 @@ LAB_0061a4fd:
     case 2:
       iVar8 = (int)*(short *)((int)param_1 + 0xcb);
       if (((((*(short *)((int)param_1 + 0xc9) < 0) || (iVar8 < 0)) ||
-           (iVar6 = (int)DAT_007fb240, iVar6 <= *(short *)((int)param_1 + 0xc9))) ||
-          (((DAT_007fb242 <= iVar8 ||
+           (iVar6 = (int)SHORT_007fb240, iVar6 <= *(short *)((int)param_1 + 0xc9))) ||
+          (((SHORT_007fb242 <= iVar8 ||
             (iVar7 = (int)*(short *)((int)param_1 + 0xc9),
             *(char *)(iVar6 * iVar8 + DAT_007fb26c + iVar7) == '\0')) ||
            ((local_2c = (&DAT_007fb24c)[*(int *)((int)param_1 + 0x51)], local_2c != 0 &&
@@ -357,7 +358,8 @@ LAB_0061a4fd:
       }
       *(short *)((int)param_1 + 0xcd) = sVar2;
       if (*(int *)((int)param_1 + 0x93) == 3) {
-        TraksClassTy::TraksCreate(DAT_00802a7c,1,1,0,iVar11,local_8,uVar9,0,0,0,0,0,0,-1,0,0);
+        TraksClassTy::TraksCreate
+                  (g_traksClass_00802A7C,1,1,0,iVar11,local_8,uVar9,0,0,0,0,0,0,-1,0,0);
       }
       return 1;
     }
@@ -555,21 +557,19 @@ LAB_0061acc2:
       }
       *(undefined4 *)((int)param_1 + 0x93) = 6;
     }
-    pvVar1 = DAT_00802a88;
-    if (DAT_00802a88 != (void *)0x0) {
+    pVVar1 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar10 = (int)*(short *)((int)param_1 + 0xcd);
-      if ((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-            (thunk_FUN_00558c00(DAT_00802a88,
-                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+      if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                 (int)*(short *)((int)param_1 + 0xc9),
                                 (int)*(short *)((int)param_1 + 0xcb),&local_28,&local_24),
             iVar10 < 0)) || ((4 < iVar10 || (local_28 < 0)))) ||
-          (*(int *)((int)pvVar1 + 0x30) <= local_28)) ||
+          ((int)pVVar1->field_0030 <= local_28)) ||
          (((local_24 = (&DAT_0079aed0)[iVar10] + local_24, local_24 < 0 ||
-           (*(int *)((int)pvVar1 + 0x34) <= local_24)) ||
-          ((*(int *)((int)pvVar1 + 0x4c) == 0 ||
-           (*(char *)(local_24 * *(int *)((int)pvVar1 + 0x30) + local_28 +
-                     *(int *)((int)pvVar1 + 0x4c)) != '\0')))))) {
+           ((int)pVVar1->field_0034 <= local_24)) ||
+          ((pVVar1->field_004C == 0 ||
+           (*(char *)(local_24 * pVVar1->field_0030 + local_28 + pVVar1->field_004C) != '\0')))))) {
         if (*(char *)((int)param_1 + 0xc4) == '\0') {
           FUN_006eaaa0(DAT_00807598,*(uint *)((int)param_1 + 0x97),0);
           *(undefined1 *)((int)param_1 + 0xc4) = 1;

@@ -47,8 +47,8 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     if (pPVar4->field_004D == 0x6102) {
       DarkScreen(DAT_0080759c,10,2);
     }
-    if (*(int *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
+    if (DAT_0081176c->field_002C != 0) {
+      cMf32::RecMemFree(g_cMf32_00806780,&DAT_0081176c->field_002C);
     }
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar4->field_1A77);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar4->field_1B08);
@@ -68,19 +68,19 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     }
     pPVar4->field_1C8A = 0xffffffff;
     if (pPVar4->field_1C82 != 0) {
-      FUN_006ab060(&pPVar4->field_1C82);
+      FUN_006ab060((LPVOID *)&pPVar4->field_1C82);
     }
     if (pPVar4->field_1C8E != 0) {
-      FUN_006ab060(&pPVar4->field_1C8E);
+      FUN_006ab060((LPVOID *)&pPVar4->field_1C8E);
     }
     if (pPVar4->field_1C96 != (HoloTy *)0x0) {
       HoloTy::Done(pPVar4->field_1C96);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pPVar4->field_1C96);
+      Library::MSVCRT::FUN_0072e2b0(pPVar4->field_1C96);
       pPVar4->field_1C96 = (HoloTy *)0x0;
     }
     if (pPVar4->field_1C9A != (HoloTy *)0x0) {
       HoloTy::Done(pPVar4->field_1C9A);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pPVar4->field_1C9A);
+      Library::MSVCRT::FUN_0072e2b0(pPVar4->field_1C9A);
       pPVar4->field_1C9A = (HoloTy *)0x0;
     }
     if ((pPVar4->field_004D == 0x6102) &&
@@ -91,7 +91,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     if (pPVar4->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar4->field_0x3d);
     }
-    thunk_FUN_005dab30(DAT_0081176c);
+    StartSystemTy::sub_005DAB30(DAT_0081176c);
     if ((byte *)pPVar4->field_1C92 != (byte *)0x0) {
       FUN_006b5570((byte *)pPVar4->field_1C92);
     }

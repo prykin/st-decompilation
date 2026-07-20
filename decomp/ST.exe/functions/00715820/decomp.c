@@ -4,7 +4,7 @@
    Evidence: final_vptr=0079E21C; returns_this=true; calls_before=0; field_writes_after=29;
    table_confidence=high */
 
-void __thiscall SpriteClassTy::SpriteClassTy(SpriteClassTy *this,undefined4 *param_1)
+void __thiscall SpriteClassTy::SpriteClassTy(SpriteClassTy *this)
 
 {
   this->vtable = &SpriteClassTyVTable;

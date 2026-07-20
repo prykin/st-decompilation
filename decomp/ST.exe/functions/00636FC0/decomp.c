@@ -4,7 +4,7 @@ int __fastcall FUN_00636fc0(int param_1)
 {
   int iVar1;
   short sVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   int iVar4;
   int iVar5;
   int local_14;
@@ -45,21 +45,21 @@ int __fastcall FUN_00636fc0(int param_1)
   if ((((*(int *)(DAT_00807598 + 0x48) <= iVar4) && (iVar4 <= *(int *)(DAT_00807598 + 0x58))) &&
       (*(int *)(DAT_00807598 + 0x44) <= iVar5)) && (iVar5 <= *(int *)(DAT_00807598 + 0x54))) {
     local_8 = FUN_006ddbd0();
-    pvVar3 = DAT_00802a88;
+    pVVar3 = g_visibleClass_00802A88;
     if (local_8 == 0) {
       return 0;
     }
-    if (DAT_00802a88 == (void *)0x0) {
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return local_8;
     }
     if (DAT_0080874d == -1) {
       return local_8;
     }
-    if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
+    if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_8;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                       iVar4,iVar5,&local_10,&local_14);
+    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
+                       &local_10,&local_14);
     if (local_c < 0) {
       return local_8;
     }
@@ -69,21 +69,20 @@ int __fastcall FUN_00636fc0(int param_1)
     if (local_10 < 0) {
       return local_8;
     }
-    if (*(int *)((int)pvVar3 + 0x30) <= local_10) {
+    if ((int)pVVar3->field_0030 <= local_10) {
       return local_8;
     }
     local_14 = (&DAT_0079aed0)[local_c] + local_14;
     if (local_14 < 0) {
       return local_8;
     }
-    if (*(int *)((int)pvVar3 + 0x34) <= local_14) {
+    if ((int)pVVar3->field_0034 <= local_14) {
       return local_8;
     }
-    if (*(int *)((int)pvVar3 + 0x4c) == 0) {
+    if (pVVar3->field_004C == 0) {
       return local_8;
     }
-    if (*(char *)(local_14 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_10)
-        != '\0') {
+    if (*(char *)(local_14 * pVVar3->field_0030 + pVVar3->field_004C + local_10) != '\0') {
       return local_8;
     }
   }

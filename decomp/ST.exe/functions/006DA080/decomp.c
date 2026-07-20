@@ -1,11 +1,14 @@
 
-int FUN_006da080(int *param_1,int param_2,int param_3,int param_4,int param_5,byte *param_6,
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006CEF60 -> 006DA080 @ 006CF7E7 */
+
+int FUN_006da080(int *param_1,uint *param_2,int param_3,int param_4,int param_5,byte *param_6,
                 int param_7,int param_8,int param_9,byte *param_10,undefined1 *param_11)
 
 {
   int iVar1;
   int iVar2;
-  int local_2c [3];
+  uint local_2c [3];
   int local_20;
   undefined1 *local_1c;
   void *local_14;
@@ -34,7 +37,7 @@ int FUN_006da080(int *param_1,int param_2,int param_3,int param_4,int param_5,by
 LAB_006da0f3:
     local_2c[0] = local_2c[0] + local_20 * param_5 + param_4;
     local_8 = 0;
-    FUN_006da1a0(param_2,param_3,local_2c[0],local_20,param_6,param_7,param_8,param_9,param_10,
+    FUN_006da1a0((int)param_2,param_3,local_2c[0],local_20,param_6,param_7,param_8,param_9,param_10,
                  param_11);
     local_8 = 0xffffffff;
     (**(code **)(*(int *)param_1[0x73] + 0x80))((int *)param_1[0x73],0);

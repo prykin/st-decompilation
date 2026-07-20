@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\pal_tbl.CPP
    Diagnostic line evidence: 123 | 125 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005DB4F0 -> 0055DA40 @ 005DB6E8 */
 
-int __cdecl LoadStartPlt(int param_1,byte param_2)
+int __cdecl LoadStartPlt(cMf32 *param_1,byte param_2)
 
 {
   code *pcVar1;
@@ -18,12 +21,14 @@ int __cdecl LoadStartPlt(int param_1,byte param_2)
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    DAT_008032a4 = Library::Ourlib::MFPLT::mfPltPtrTy(param_1,PTR_s_PLT_MMGLASS_0079af6c,param_2,1);
-    DAT_008032a8 = Library::Ourlib::MFPLT::mfPltPtrTy(param_1,PTR_s_PLT_MMSHAD_0079af88,param_2,1);
+    DAT_008032a4 = Library::Ourlib::MFPLT::mfPltPtrTy
+                             ((int)param_1,PTR_s_PLT_MMGLASS_0079af6c,param_2,1);
+    DAT_008032a8 = Library::Ourlib::MFPLT::mfPltPtrTy
+                             ((int)param_1,PTR_s_PLT_MMSHAD_0079af88,param_2,1);
     DAT_008032ac = Library::Ourlib::MFPLT::mfPltPtrTy
-                             (param_1,PTR_s_PLT_FSGSGLASS_0079af98,param_2,1);
-    DAT_008032b0 = Library::Ourlib::MFPLT::mfPltPtrTy(param_1,PTR_s_PLT_FSGSSHAD_0079af9c,param_2,1)
-    ;
+                             ((int)param_1,PTR_s_PLT_FSGSGLASS_0079af98,param_2,1);
+    DAT_008032b0 = Library::Ourlib::MFPLT::mfPltPtrTy
+                             ((int)param_1,PTR_s_PLT_FSGSSHAD_0079af9c,param_2,1);
     g_currentExceptionFrame = local_48.previous;
     return 0;
   }

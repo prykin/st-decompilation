@@ -80,7 +80,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
       else {
         iVar3 = FUN_006cfeb0((int *)&local_20,local_c,piVar2 + piVar2[0x79] * 4 + 5);
         if (iVar3 != 0) {
-          FUN_006bcb30((int)piVar2,local_20,local_1c,local_18,local_14);
+          FUN_006bcb30(piVar2,local_20,local_1c,local_18,local_14);
         }
       }
       local_10 = local_10 + 1;

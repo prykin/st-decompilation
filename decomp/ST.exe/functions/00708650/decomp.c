@@ -46,7 +46,8 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   iVar7 = 0;
   ExceptionList = &local_14;
   do {
-    iVar4 = FUN_006bbe40(*(int **)(param_1[1] + 0x40),&DAT_00857004,&DAT_00857028,0x20);
+    iVar4 = FUN_006bbe40(*(int **)(param_1[1] + 0x40),(uint *)&DAT_00857004,(int *)&DAT_00857028,
+                         0x20);
     local_3c = iVar4;
     if ((iVar4 == 0) || (iVar4 != -0x7789fe3e)) break;
     FUN_006cec40(param_1[1]);

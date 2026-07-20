@@ -9,7 +9,7 @@ void __fastcall FUN_00640130(int param_1)
     if (-1 < (int)uVar1) {
       FUN_006e8ba0(*(void **)(param_1 + 0x211),uVar1);
     }
-    FUN_006ab060((undefined4 *)(param_1 + 0x37f));
+    FUN_006ab060((LPVOID *)(param_1 + 0x37f));
   }
   return;
 }

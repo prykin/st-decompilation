@@ -22,7 +22,7 @@ int __thiscall FUN_0074cce2(void *this,int *param_1)
           iVar1 = 0;
           *(undefined4 *)((int)this + 0x54) = 1;
           if (*(int *)((int)this + 0x58) == 0) {
-            FUN_00747406(this,0xb,0,0);
+            FUN_00747406(this,0xb,(int *)0x0,0);
             *(undefined4 *)((int)this + 0x58) = 1;
           }
         }

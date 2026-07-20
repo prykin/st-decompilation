@@ -66,16 +66,16 @@ LAB_0059d780:
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00 = local_c;
       local_c->field_1AF8 = puVar4;
-      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_008016a0);
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00->field_1AFC = puVar4;
-      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_008016a0);
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00->field_1B00 = puVar4;
-      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_008016a0);
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00->field_1B04 = puVar4;
-      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_008016a0);
       ppcVar8 = local_8dc;
       for (iVar6 = 0x223; iVar5 = local_8, iVar6 != 0; iVar6 = iVar6 + -1) {
         *ppcVar8 = (ccFntTy *)0x0;

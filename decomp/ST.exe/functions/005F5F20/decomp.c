@@ -76,7 +76,7 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,int param_1)
     }
   }
   if (uVar1 == 0x10f) {
-    local_1c = (byte *)thunk_FUN_005f66f0(local_8,&local_18);
+    local_1c = thunk_FUN_005f66f0(local_8,&local_18);
     STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_1c,local_18);
     FUN_006ab060(&local_1c);
     g_currentExceptionFrame = local_60.previous;
@@ -94,7 +94,7 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,int param_1)
   if (uVar1 == 3) {
     if (DAT_008117a4 != (void *)0x0) {
       thunk_FUN_005f9450((int)local_8);
-      thunk_FUN_0062e610(DAT_008117a4,this_00->field_0235,this_00->field_0018);
+      thunk_FUN_0062e610(DAT_008117a4,this_00->field_0235,(int *)this_00->field_0018);
     }
     thunk_FUN_005fa070((int *)this_00);
     thunk_FUN_004ad310((int)&this_00->field_01D5);
@@ -170,17 +170,17 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,int param_1)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  thunk_FUN_004162b0(this_00,local_14,local_10,local_c);
+  STFishC::sub_004162B0((STFishC *)this_00,local_14,local_10,local_c);
   bVar5 = thunk_FUN_004961b0(local_14[0],local_10[0],local_c[0]);
   if (CONCAT31(extraout_var,bVar5) != 0) {
-    if (((((local_14[0] < 0) || (DAT_007fb240 <= local_14[0])) || (local_10[0] < 0)) ||
-        ((DAT_007fb242 <= local_10[0] || (local_c[0] < 0)))) || (DAT_007fb244 <= local_c[0])) {
+    if (((((local_14[0] < 0) || (SHORT_007fb240 <= local_14[0])) || (local_10[0] < 0)) ||
+        ((SHORT_007fb242 <= local_10[0] || (local_c[0] < 0)))) || (SHORT_007fb244 <= local_c[0])) {
       iVar6 = 0;
     }
     else {
       iVar6 = *(int *)(DAT_007fb248 +
-                      ((int)DAT_007fb246 * (int)local_c[0] + (int)DAT_007fb240 * (int)local_10[0] +
-                      (int)local_14[0]) * 8);
+                      ((int)SHORT_007fb246 * (int)local_c[0] +
+                       (int)SHORT_007fb240 * (int)local_10[0] + (int)local_14[0]) * 8);
     }
     if ((iVar6 == 0) &&
        ((this_00->field_02DD == 1 ||

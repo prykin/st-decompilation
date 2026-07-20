@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 116 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006802A0 -> 006A5E40 @ 006802E7 | 006823E0 -> 006802A0 @ 006825E2 */
 
-void __cdecl FUN_006802a0(int param_1,char *param_2)
+void __cdecl FUN_006802a0(int exceptionCode,char *param_2)
 
 {
   char cVar1;
@@ -37,7 +40,9 @@ void __cdecl FUN_006802a0(int param_1,char *param_2)
       pcVar5 = pcVar5 + 1;
     }
   }
-  RaiseInternalException(param_1,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x74);
+  RaiseInternalException
+            (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x74)
+  ;
   return;
 }
 

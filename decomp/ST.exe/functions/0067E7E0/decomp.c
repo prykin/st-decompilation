@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 534 | 581 | 584 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0056ADC0 -> 0067E7E0 @ 0056B0F4 */
 
-uint * __cdecl CreateArbList(int param_1,int param_2)
+uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
 
 {
   char cVar1;
@@ -70,8 +73,9 @@ uint * __cdecl CreateArbList(int param_1,int param_2)
     puVar6 = (uint *)(*pcVar3)();
     return puVar6;
   }
-  if (param_1 == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x216);
+  if (param_1 == (cMf32 *)0x0) {
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x216);
   }
   local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   if (param_2 != 0) {
@@ -101,8 +105,8 @@ uint * __cdecl CreateArbList(int param_1,int param_2)
     pcVar5 = pcVar5 + 1;
     pcVar14 = pcVar14 + 1;
   }
-  cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,local_33c);
-  pcVar5 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
+  cMf32::ToBeg(param_1,FUN_006f2d10,local_33c);
+  pcVar5 = (char *)cMf32::RecNameGetNext(param_1);
   do {
     if (pcVar5 == (char *)0x0) {
       if (local_10 != (uint *)0x0) {
@@ -243,7 +247,7 @@ uint * __cdecl CreateArbList(int param_1,int param_2)
           pbVar11 = pbVar11 + 1;
           pbVar15 = pbVar15 + 1;
         }
-        wsprintfA(local_c8,(LPCSTR)local_5c,iVar7);
+        wsprintfA(local_c8,(char *)local_5c,iVar7);
       }
       uVar8 = 0;
       local_a8 = *(uint *)(local_c + 0x29);
@@ -292,9 +296,9 @@ uint * __cdecl CreateArbList(int param_1,int param_2)
       if (bVar4) {
         Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)local_138);
       }
-      cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
+      cMf32::RecMemFree(param_1,(uint *)&local_c);
     }
-    pcVar5 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
+    pcVar5 = (char *)cMf32::RecNameGetNext(param_1);
   } while( true );
 }
 

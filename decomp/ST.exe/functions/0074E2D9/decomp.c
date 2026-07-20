@@ -8,7 +8,7 @@ void __thiscall FUN_0074e2d9(void *this,undefined4 *param_1)
     *(undefined4 **)((int)this + 8) = param_1;
   }
   else {
-    Library::MSVCRT::FUN_0072e2b0(param_1);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1);
   }
   return;
 }

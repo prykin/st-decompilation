@@ -1,36 +1,49 @@
 
-void __fastcall FUN_004952e0(int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004952E0 returns return of FUN_004b7d50 @ 004953DE
+   
+   [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0 */
+
+bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
 
 {
   short sVar1;
   short sVar2;
   short sVar3;
-  void *pvVar4;
+  ushort uVar4;
+  void *pvVar5;
+  bool bVar6;
+  uint uVar7;
   
-  sVar1 = *(short *)(param_1 + 0x66f);
-  sVar2 = *(short *)(param_1 + 0x673);
-  sVar3 = *(short *)(param_1 + 0x671);
-  if (((((-1 < sVar1) && (sVar1 < DAT_007fb240)) && (-1 < sVar3)) &&
-      ((sVar3 < DAT_007fb242 && (-1 < sVar2)))) &&
-     ((sVar2 < DAT_007fb244 &&
-      ((pvVar4 = *(void **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
-                           (int)sVar1) * 8), pvVar4 != (void *)0x0 &&
-       (*(int *)((int)pvVar4 + 0x20) == 1000)))))) {
-    thunk_FUN_004b7d50(pvVar4,param_1);
+  sVar1 = this->field_066F;
+  sVar2 = this->field_0673;
+  sVar3 = this->field_0671;
+  if (((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
+      ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) &&
+     ((sVar2 < SHORT_007fb244 &&
+      ((pvVar5 = *(void **)(DAT_007fb248 +
+                           ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                           (int)sVar1) * 8), pvVar5 != (void *)0x0 &&
+       (*(int *)((int)pvVar5 + 0x20) == 1000)))))) {
+    thunk_FUN_004b7d50(pvVar5,this);
   }
-  sVar1 = *(short *)(param_1 + 0x423);
-  sVar2 = *(short *)(param_1 + 0x427);
-  sVar3 = *(short *)(param_1 + 0x425);
-  if ((((-1 < sVar1) && (sVar1 < DAT_007fb240)) && (-1 < sVar3)) &&
-     (((sVar3 < DAT_007fb242 && (-1 < sVar2)) &&
-      ((sVar2 < DAT_007fb244 &&
-       ((pvVar4 = *(void **)(DAT_007fb248 +
-                            ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
-                            (int)sVar1) * 8), pvVar4 != (void *)0x0 &&
-        (*(int *)((int)pvVar4 + 0x20) == 1000)))))))) {
-    thunk_FUN_004b7d50(pvVar4,param_1);
+  uVar4 = this->field_0423;
+  uVar7 = (uint)uVar4;
+  sVar1 = this->field_0427;
+  sVar2 = this->field_0425;
+  if ((((-1 < (short)uVar4) && ((short)uVar4 < SHORT_007fb240)) && (-1 < sVar2)) &&
+     (((sVar2 < SHORT_007fb242 && (-1 < sVar1)) && (sVar1 < SHORT_007fb244)))) {
+    uVar7 = (uint)(short)uVar4;
+    pvVar5 = *(void **)(DAT_007fb248 +
+                       ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + uVar7)
+                       * 8);
+    if ((pvVar5 != (void *)0x0) && (*(int *)((int)pvVar5 + 0x20) == 1000)) {
+      bVar6 = thunk_FUN_004b7d50(pvVar5,this);
+      uVar7 = (uint)bVar6;
+    }
   }
-  return;
+  return SUB41(uVar7,0);
 }
 

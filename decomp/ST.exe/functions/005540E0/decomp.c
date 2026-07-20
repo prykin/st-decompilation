@@ -1,27 +1,30 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
-   cLoadingTy::new */
+   cLoadingTy::new
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0056DB80 -> 005540E0 @ 0056DCEC */
 
-uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint param_3)
+uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint param_3)
 
 {
   char cVar1;
   code *pcVar2;
   cMf32 *this_00;
   int iVar3;
-  LPSTR pCVar4;
-  uint uVar5;
-  undefined4 *puVar6;
-  int iVar7;
-  uint *puVar8;
-  uint uVar9;
+  LPSTR text_00;
+  uint uVar4;
+  undefined4 *puVar5;
+  int iVar6;
+  uint *puVar7;
+  uint uVar8;
   ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  char *pcVar9;
   char *pcVar10;
-  char *pcVar11;
-  byte bVar12;
+  byte bVar11;
   undefined1 local_65c;
   char local_65b [515];
   undefined1 local_458;
@@ -38,11 +41,11 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc,
+    iVar6 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc,
                                s_cLoadingTy__new_007c8ed4);
-    if (iVar7 == 0) {
+    if (iVar6 == 0) {
       if (local_8 != (uint *)0x0) {
-        cMf32::RecMemFree(DAT_00806780,local_8);
+        cMf32::RecMemFree(g_cMf32_00806780,local_8);
         if ((uint *)local_8[2] != (uint *)0x0) {
           ccFntTy::operator(this_01,(uint *)local_8[2]);
           local_8[2] = 0;
@@ -53,147 +56,149 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
       return (uint *)0x0;
     }
     pcVar2 = (code *)swi(3);
-    puVar8 = (uint *)(*pcVar2)();
-    return puVar8;
+    puVar7 = (uint *)(*pcVar2)();
+    return puVar7;
   }
   local_8 = Library::DKW::LIB::FUN_006aac10(param_1);
-  this_00 = DAT_00806780;
+  this_00 = g_cMf32_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
-    uVar5 = 0xffffffff;
-    pcVar11 = s_LOADINGW_007c8ee8;
+    uVar4 = 0xffffffff;
+    pcVar10 = s_LOADINGW_007c8ee8;
     do {
-      pcVar10 = pcVar11;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar10 = pcVar11 + 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar10;
+      pcVar9 = pcVar10;
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
+      pcVar9 = pcVar10 + 1;
+      cVar1 = *pcVar10;
+      pcVar10 = pcVar9;
     } while (cVar1 != '\0');
-    uVar5 = ~uVar5;
+    uVar4 = ~uVar4;
     local_65c = 1;
-    pcVar11 = pcVar10 + -uVar5;
-    pcVar10 = local_65b;
-    for (uVar9 = uVar5 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
-      pcVar11 = pcVar11 + 4;
+    pcVar10 = pcVar9 + -uVar4;
+    pcVar9 = local_65b;
+    for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar10;
       pcVar10 = pcVar10 + 4;
+      pcVar9 = pcVar9 + 4;
     }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar11;
-      pcVar11 = pcVar11 + 1;
+    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *pcVar9 = *pcVar10;
       pcVar10 = pcVar10 + 1;
+      pcVar9 = pcVar9 + 1;
     }
-    cMf32::ToBeg(DAT_00806780,FUN_006f2d10,&local_65c);
-    puVar6 = cMf32::RecNameGetNext(this_00);
-    uVar5 = local_c;
-    while (puVar6 != (undefined4 *)0x0) {
-      local_c = uVar5 + 1;
-      puVar6 = cMf32::RecNameGetNext(this_00);
-      uVar5 = local_c;
+    cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_65c);
+    puVar5 = cMf32::RecNameGetNext(this_00);
+    uVar4 = local_c;
+    while (puVar5 != (undefined4 *)0x0) {
+      local_c = uVar4 + 1;
+      puVar5 = cMf32::RecNameGetNext(this_00);
+      uVar4 = local_c;
     }
-    local_c = uVar5;
-    if (uVar5 == 0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_grig_loading_cpp_007c8f0c,0x24);
+    local_c = uVar4;
+    if (uVar4 == 0) {
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_grig_loading_cpp_007c8f0c,0x24);
     }
     iVar3 = 1;
-    bVar12 = 0;
-    uVar9 = Library::MSVCRT::FUN_0072e6c0();
-    pCVar4 = FUN_006f2c00(s_LOADINGW_007c8ee8,1,uVar9 % uVar5 + 1);
+    bVar11 = 0;
+    uVar8 = Library::MSVCRT::FUN_0072e6c0();
+    text_00 = FUN_006f2c00(s_LOADINGW_007c8ee8,1,uVar8 % uVar4 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
       local_c = 0;
-      uVar5 = 0xffffffff;
-      pcVar11 = s_LOADINGB_007c8ef4;
+      uVar4 = 0xffffffff;
+      pcVar10 = s_LOADINGB_007c8ef4;
       do {
-        pcVar10 = pcVar11;
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        pcVar10 = pcVar11 + 1;
-        cVar1 = *pcVar11;
-        pcVar11 = pcVar10;
+        pcVar9 = pcVar10;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        pcVar9 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar9;
       } while (cVar1 != '\0');
-      uVar5 = ~uVar5;
+      uVar4 = ~uVar4;
       local_254 = 1;
-      pcVar11 = pcVar10 + -uVar5;
-      pcVar10 = local_253;
-      for (uVar9 = uVar5 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
-        pcVar11 = pcVar11 + 4;
+      pcVar10 = pcVar9 + -uVar4;
+      pcVar9 = local_253;
+      for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar10;
         pcVar10 = pcVar10 + 4;
+        pcVar9 = pcVar9 + 4;
       }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar10 = *pcVar11;
-        pcVar11 = pcVar11 + 1;
+      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *pcVar9 = *pcVar10;
         pcVar10 = pcVar10 + 1;
+        pcVar9 = pcVar9 + 1;
       }
-      cMf32::ToBeg(DAT_00806780,FUN_006f2d10,&local_254);
-      puVar6 = cMf32::RecNameGetNext(this_00);
-      while (puVar6 != (undefined4 *)0x0) {
+      cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_254);
+      puVar5 = cMf32::RecNameGetNext(this_00);
+      while (puVar5 != (undefined4 *)0x0) {
         local_c = local_c + 1;
-        puVar6 = cMf32::RecNameGetNext(this_00);
+        puVar5 = cMf32::RecNameGetNext(this_00);
       }
       iVar3 = 1;
-      bVar12 = 0;
-      uVar5 = Library::MSVCRT::FUN_0072e6c0();
-      uVar5 = uVar5 % local_c;
-      pcVar11 = s_LOADINGB_007c8ef4;
+      bVar11 = 0;
+      uVar4 = Library::MSVCRT::FUN_0072e6c0();
+      uVar4 = uVar4 % local_c;
+      pcVar10 = s_LOADINGB_007c8ef4;
     }
     else {
       if (DAT_0080874e != '\x03') {
-        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_grig_loading_cpp_007c8f0c,0x2f);
+        RaiseInternalException
+                  (-1,g_overwriteContext_007ED77C,s_E____titans_grig_loading_cpp_007c8f0c,0x2f);
         goto LAB_00554324;
       }
       local_c = 0;
-      uVar5 = 0xffffffff;
-      pcVar11 = s_LOADINGS_007c8f00;
+      uVar4 = 0xffffffff;
+      pcVar10 = s_LOADINGS_007c8f00;
       do {
-        pcVar10 = pcVar11;
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        pcVar10 = pcVar11 + 1;
-        cVar1 = *pcVar11;
-        pcVar11 = pcVar10;
+        pcVar9 = pcVar10;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        pcVar9 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar9;
       } while (cVar1 != '\0');
-      uVar5 = ~uVar5;
+      uVar4 = ~uVar4;
       local_458 = 1;
-      pcVar11 = pcVar10 + -uVar5;
-      pcVar10 = local_457;
-      for (uVar9 = uVar5 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
-        pcVar11 = pcVar11 + 4;
+      pcVar10 = pcVar9 + -uVar4;
+      pcVar9 = local_457;
+      for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar10;
         pcVar10 = pcVar10 + 4;
+        pcVar9 = pcVar9 + 4;
       }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar10 = *pcVar11;
-        pcVar11 = pcVar11 + 1;
+      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *pcVar9 = *pcVar10;
         pcVar10 = pcVar10 + 1;
+        pcVar9 = pcVar9 + 1;
       }
-      cMf32::ToBeg(DAT_00806780,FUN_006f2d10,&local_458);
-      puVar6 = cMf32::RecNameGetNext(this_00);
-      while (puVar6 != (undefined4 *)0x0) {
+      cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_458);
+      puVar5 = cMf32::RecNameGetNext(this_00);
+      while (puVar5 != (undefined4 *)0x0) {
         local_c = local_c + 1;
-        puVar6 = cMf32::RecNameGetNext(this_00);
+        puVar5 = cMf32::RecNameGetNext(this_00);
       }
       iVar3 = 1;
-      bVar12 = 0;
-      uVar5 = Library::MSVCRT::FUN_0072e6c0();
-      uVar5 = uVar5 % local_c;
-      pcVar11 = s_LOADINGS_007c8f00;
+      bVar11 = 0;
+      uVar4 = Library::MSVCRT::FUN_0072e6c0();
+      uVar4 = uVar4 % local_c;
+      pcVar10 = s_LOADINGS_007c8f00;
     }
-    pCVar4 = FUN_006f2c00(pcVar11,1,uVar5 + 1);
+    text_00 = FUN_006f2c00(pcVar10,1,uVar4 + 1);
   }
-  uVar5 = FUN_0070a9f0(DAT_00806780,pCVar4,bVar12,iVar3);
-  *local_8 = uVar5;
+  uVar4 = FUN_0070a9f0(g_cMf32_00806780,text_00,bVar11,iVar3);
+  *local_8 = uVar4;
 LAB_00554324:
-  uVar5 = thunk_FUN_00553e20(*local_8,(undefined *)0x0,DAT_00807dd9);
-  local_8[2] = uVar5;
-  puVar6 = ccFntTy::CreateSurf((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
-  local_8[1] = (uint)puVar6;
-  if (param_2 != 0) {
-    uVar5 = thunk_FUN_00555600(param_2);
-    local_8[0x13] = uVar5;
+  uVar4 = thunk_FUN_00553e20(*local_8,(undefined *)0x0,DAT_00807dd9);
+  local_8[2] = uVar4;
+  puVar5 = ccFntTy::CreateSurf((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
+  local_8[1] = (uint)puVar5;
+  if (text != (char *)0x0) {
+    uVar4 = thunk_FUN_00555600(text);
+    local_8[0x13] = uVar4;
   }
   local_8[0x12] = param_3;
   g_currentExceptionFrame = local_50.previous;

@@ -101,15 +101,15 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
       local_20 = iVar13;
       if (local_34 <= (int)puVar8 + 1) {
         do {
-          if ((local_34 <= DAT_007fb244 + -1) && (local_1c = iVar5 + -1, local_1c <= iVar5 + 1)) {
+          if ((local_34 <= SHORT_007fb244 + -1) && (local_1c = iVar5 + -1, local_1c <= iVar5 + 1)) {
             do {
               if ((-1 < local_1c) &&
-                 ((local_1c <= DAT_007fb242 + -1 && (iVar5 = local_24 + -1, iVar5 <= local_24 + 1)))
-                 ) {
+                 ((local_1c <= SHORT_007fb242 + -1 && (iVar5 = local_24 + -1, iVar5 <= local_24 + 1)
+                  ))) {
                 do {
                   pvVar1 = local_10;
                   iVar13 = local_34;
-                  if ((-1 < iVar5) && (iVar6 = (int)DAT_007fb240, iVar5 <= iVar6 + -1)) {
+                  if ((-1 < iVar5) && (iVar6 = (int)SHORT_007fb240, iVar5 <= iVar6 + -1)) {
                     if (local_34 < 0) {
                       if ((((undefined4 *)local_34 == local_30) && (local_1c == local_28)) &&
                          (iVar5 == local_24)) {
@@ -130,21 +130,22 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                       sVar9 = (short)iVar5;
                       sVar12 = (short)local_34;
                       sVar2 = (short)local_1c;
-                      if (((((sVar9 < 0) || (DAT_007fb240 <= sVar9)) || (sVar2 < 0)) ||
-                          ((DAT_007fb242 <= sVar2 || (sVar12 < 0)))) || (DAT_007fb244 <= sVar12)) {
+                      if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar2 < 0)) ||
+                          ((SHORT_007fb242 <= sVar2 || (sVar12 < 0)))) || (SHORT_007fb244 <= sVar12)
+                         ) {
                         piVar10 = (int *)0x0;
                       }
                       else {
                         piVar10 = *(int **)(DAT_007fb248 +
-                                           ((int)sVar12 * (int)DAT_007fb246 + sVar2 * iVar6 +
+                                           ((int)sVar12 * (int)SHORT_007fb246 + sVar2 * iVar6 +
                                            (int)sVar9) * 8);
                       }
                       if (((*(char *)((int)local_10 + 0x287) != '\0') && (piVar10 == (int *)0x0)) &&
                          ((((sVar9 < 0 ||
-                            (((DAT_007fb240 <= sVar9 || (sVar2 < 0)) || (DAT_007fb242 <= sVar2))))
-                           || ((sVar12 < 0 || (DAT_007fb244 <= sVar12)))) ||
+                            (((SHORT_007fb240 <= sVar9 || (sVar2 < 0)) || (SHORT_007fb242 <= sVar2))
+                            )) || ((sVar12 < 0 || (SHORT_007fb244 <= sVar12)))) ||
                           ((piVar10 = *(int **)(DAT_007fb248 + 4 +
-                                               ((int)sVar12 * (int)DAT_007fb246 + sVar2 * iVar6 +
+                                               ((int)sVar12 * (int)SHORT_007fb246 + sVar2 * iVar6 +
                                                (int)sVar9) * 8), piVar10 != (int *)0x0 &&
                            (((iVar6 = (**(code **)(*piVar10 + 0x2c))(), iVar6 != 0xa6 &&
                              (iVar6 != 0xa7)) && ((iVar6 != 0xbd && (iVar6 != 0xaf)))))))))) {
@@ -154,8 +155,8 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                       if (((((undefined4 *)iVar13 == local_30) && (local_1c == local_28)) &&
                           (iVar5 == local_24)) &&
                          ((*(short *)(DAT_007fb280 +
-                                     (DAT_007fb27e * iVar13 + iVar5 + DAT_007fb278 * local_1c) * 2)
-                           < 0 && (piVar10 == (int *)0x0)))) {
+                                     (SHORT_007fb27e * iVar13 + iVar5 + SHORT_007fb278 * local_1c) *
+                                     2) < 0 && (piVar10 == (int *)0x0)))) {
                         *param_1 = 1;
                         *(undefined4 *)((int)local_10 + 0x270) = 0;
                         *param_2 = local_20;
@@ -223,12 +224,12 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                               (short)((longlong)local_38 * 0x28c1979 >> 0x3f));
                         }
                         sVar2 = *(short *)(DAT_007fb280 +
-                                          (iVar7 * DAT_007fb27e + iVar4 + iVar11 * DAT_007fb278) * 2
-                                          );
+                                          (iVar7 * SHORT_007fb27e + iVar4 + iVar11 * SHORT_007fb278)
+                                          * 2);
                         if (-1 < sVar2) {
                           if (*(short *)(DAT_007fb280 +
-                                        (iVar13 * DAT_007fb27e + iVar3 + iVar5 * DAT_007fb278) * 2)
-                              == sVar2) {
+                                        (iVar13 * SHORT_007fb27e + iVar3 + iVar5 * SHORT_007fb278) *
+                                        2) == sVar2) {
                             return;
                           }
                           iVar5 = local_38 - local_20;
@@ -273,8 +274,8 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                             iVar7 = iVar6;
                             iVar11 = iVar13;
                             if (*(short *)(DAT_007fb280 +
-                                          (local_2c * DAT_007fb27e + iVar3 + iVar5 * DAT_007fb278) *
-                                          2) < 0) {
+                                          (local_2c * SHORT_007fb27e +
+                                          iVar3 + iVar5 * SHORT_007fb278) * 2) < 0) {
                               param_1 = local_18;
                               iVar7 = local_38;
                               iVar11 = local_34;
@@ -323,8 +324,8 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                                 (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
                           }
                           if (*(short *)(DAT_007fb280 +
-                                        ((int)param_1 * (int)DAT_007fb27e +
-                                        iVar3 + iVar5 * DAT_007fb278) * 2) < 0) {
+                                        ((int)param_1 * (int)SHORT_007fb27e +
+                                        iVar3 + iVar5 * SHORT_007fb278) * 2) < 0) {
                             iVar6 = local_38;
                             local_18 = local_30;
                             iVar13 = local_34;

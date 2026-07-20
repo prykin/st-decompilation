@@ -26,7 +26,7 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
   case CASE_0:
   case CASE_1:
   case CASE_7:
-    iVar5 = thunk_FUN_00460360((int *)this);
+    iVar5 = sub_00460360(this);
     return (int)(short)iVar5;
   case CASE_2:
   case CASE_3:
@@ -48,14 +48,15 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
       *(undefined4 *)&this->field_0x50c = 4;
     }
     if (*(int *)&this->field_0x50c == 4) {
-      uVar3 = thunk_FUN_004176c0(this,*(short *)&this->field_0x506);
-      uVar3 = thunk_FUN_00417910(this,(short)uVar3);
+      uVar3 = sub_004176C0(this,*(short *)&this->field_0x506);
+      uVar3 = sub_00417910(this,(short)uVar3);
       if ((short)uVar3 == -1) {
         iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x253e,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackBuild__BUILD_PMOVE_007aa7d4);
         if (iVar5 == 0) {
-          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x253f)
-          ;
+          RaiseInternalException
+                    (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                     0x253f);
           return 0xffff;
         }
         pcVar1 = (code *)swi(3);
@@ -69,14 +70,14 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
       }
     }
     if (*(int *)&this->field_0x50c == 5) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         *(short *)&this->field_0x4fc * 0xc9 + 100,
-                         *(short *)&this->field_0x4fe * 0xc9 + 100,
-                         *(short *)&this->field_0x500 * 200 + 100,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 *(short *)&this->field_0x4fc * 0xc9 + 100,*(short *)&this->field_0x4fe * 0xc9 + 100
+                 ,*(short *)&this->field_0x500 * 200 + 100,this->field_0061);
       *(undefined4 *)&this->field_0x50c = 6;
     }
     if (*(int *)&this->field_0x50c == 6) {
-      uVar4 = thunk_FUN_00415ed0(this,&local_8,&param_1);
+      uVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if ((short)uVar4 == -1) {
         iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2554,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackBuild__BUILD_PMOVE_2_007aa7ac);
@@ -87,7 +88,9 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
         }
         iVar5 = 0x2555;
 cf_error_exit_0046CBE2:
-        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5);
+        RaiseInternalException
+                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5)
+        ;
         return 0xffff;
       }
       if ((short)uVar4 == 0) {
@@ -117,8 +120,8 @@ cf_error_exit_0046CBE2:
       *(undefined4 *)&this->field_0x50c = 1;
     }
     if (*(int *)&this->field_0x50c == 1) {
-      uVar3 = thunk_FUN_004176c0(this,*(short *)&this->field_0x506);
-      uVar3 = thunk_FUN_00417910(this,(short)uVar3);
+      uVar3 = sub_004176C0(this,*(short *)&this->field_0x506);
+      uVar3 = sub_00417910(this,(short)uVar3);
       if ((short)uVar3 == -1) {
         iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x256d,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackBuild__BUILD_OMOVE_007aa784);
@@ -136,14 +139,14 @@ cf_error_exit_0046CBE2:
       }
     }
     if (*(int *)&this->field_0x50c == 2) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         *(short *)&this->field_0x4fc * 0xc9 + 100,
-                         *(short *)&this->field_0x4fe * 0xc9 + 100,
-                         *(short *)&this->field_0x500 * 200 + 100,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 *(short *)&this->field_0x4fc * 0xc9 + 100,*(short *)&this->field_0x4fe * 0xc9 + 100
+                 ,*(short *)&this->field_0x500 * 200 + 100,this->field_0061);
       *(undefined4 *)&this->field_0x50c = 3;
     }
     if (*(int *)&this->field_0x50c == 3) {
-      uVar4 = thunk_FUN_00415ed0(this,&local_8,&param_1);
+      uVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if ((short)uVar4 == -1) {
         iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2583,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackBuild__BUILD_OMOVE_2_007aa75c);

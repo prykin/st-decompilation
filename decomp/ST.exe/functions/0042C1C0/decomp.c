@@ -26,7 +26,8 @@ STAllPlayersC::AddObjsToTmp(STAllPlayersC *this,uint param_1,int param_2,int par
   if (errorCode == 0) {
     if (param_4 == 0) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x266);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x266);
     }
     local_10 = *(int *)(param_4 + 0xc);
     uVar4 = 0;

@@ -32,11 +32,11 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
       this_00 = extraout_ECX_00;
     }
     if (pIVar2->field_01A0 != 0) {
-      FUN_006e56b0((void *)pIVar2->field_000C,pIVar2->field_01A0);
+      StartSystemTy::sub_006E56B0(pIVar2->field_000C,pIVar2->field_01A0);
       this_00 = extraout_ECX_01;
     }
     pIVar2->field_01A0 = 0;
-    DAT_0080169c = 0;
+    g_intercomPanel_0080169C = (IntercomPanelTy *)0x0;
     if ((uint *)pIVar2->field_0180 != (uint *)0x0) {
       ccFntTy::operator(this_00,(uint *)pIVar2->field_0180);
       pIVar2->field_0180 = 0;

@@ -42,9 +42,9 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0x79);
     return;
   }
-  local_c->field_0020 = (int)DAT_007fb240;
+  local_c->field_0020 = (int)SHORT_007fb240;
   iVar4 = local_c->field_0020;
-  iVar5 = (int)DAT_007fb242;
+  iVar5 = (int)SHORT_007fb242;
   local_c->field_0024 = iVar5;
   local_c->field_0028 = (iVar4 + iVar5) * 0xb505 + 0x117878 >> 0x10;
   local_c->field_002C = (local_c->field_0024 + iVar4) * 0xb505 + 0x117878 >> 0x10;

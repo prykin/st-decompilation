@@ -20,7 +20,8 @@ int __cdecl FUN_006838b0(int *param_1,char param_2,byte *param_3,int param_4)
   uStack_9 = 0;
   local_8 = 0;
   if (((param_4 == 0) || (param_1 == (int *)0x0)) || (param_3 == (byte *)0x0)) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x3be);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x3be);
   }
   iVar1 = param_1[1];
   if (param_2 == '\x01') {
@@ -40,7 +41,8 @@ int __cdecl FUN_006838b0(int *param_1,char param_2,byte *param_3,int param_4)
     return iVar1;
   }
   if (param_2 != '\x03') {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x3d4);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x3d4);
     return iVar1;
   }
   uVar2 = *(undefined4 *)param_3;

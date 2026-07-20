@@ -24,8 +24,8 @@ void __fastcall FUN_00660d40(int param_1)
   uint local_c;
   int local_8;
   
-  if (((*(int *)(param_1 + 0x284) != 0) && (*(int *)(param_1 + 0x20b) != 0)) && (DAT_007fa174 != 0))
-  {
+  if (((*(int *)(param_1 + 0x284) != 0) && (*(int *)(param_1 + 0x20b) != 0)) &&
+     (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_8 = param_1;
     local_10 = thunk_FUN_004357f0(*(char *)(param_1 + 0x24));
     iVar6 = *(int *)(param_1 + 0x20b);

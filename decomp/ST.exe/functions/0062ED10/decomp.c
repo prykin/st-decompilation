@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D098 (store 0062ED37)
    Evidence: final_vptr=0079D098; returns_this=true; calls_before=1; field_writes_after=8;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0062ED10 returns STRubbishC::STRubbishC this @ 0062ED60 */
 
-undefined4 * __thiscall STRubbishC::STRubbishC(STRubbishC *this,undefined4 *param_1)
+STRubbishC * __thiscall STRubbishC::STRubbishC(STRubbishC *this)
 
 {
   thunk_FUN_004158e0(&this->vtable);
@@ -20,6 +23,6 @@ undefined4 * __thiscall STRubbishC::STRubbishC(STRubbishC *this,undefined4 *para
   this->field_01F5 = 0;
   this->field_01F9 = 0;
   this->field_01FA = 0;
-  return &this->vtable;
+  return this;
 }
 

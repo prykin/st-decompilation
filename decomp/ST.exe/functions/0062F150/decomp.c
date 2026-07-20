@@ -3,28 +3,29 @@ void __fastcall FUN_0062f150(void *param_1)
 
 {
   int iVar1;
-  void *pvVar2;
+  void *this;
+  VisibleClassTy *pVVar2;
   int *piVar3;
   int local_10;
   int local_c;
   int local_8;
   
-  pvVar2 = DAT_00802a88;
+  pVVar2 = g_visibleClass_00802A88;
   local_c = 0;
-  if ((*(char *)((int)param_1 + 0x1f9) != '\0') && (DAT_00802a88 != (void *)0x0)) {
+  if ((*(char *)((int)param_1 + 0x1f9) != '\0') &&
+     (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
     iVar1 = *(int *)((int)param_1 + 0x1dd);
-    if ((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) {
-      thunk_FUN_00558c00(DAT_00802a88,
-                         *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+    if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
+      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                          *(int *)((int)param_1 + 0x1d5),*(int *)((int)param_1 + 0x1d9),&local_8,
                          &local_10);
       if (((((-1 < iVar1) && (iVar1 < 5)) && (-1 < local_8)) &&
-          (((local_8 < *(int *)((int)pvVar2 + 0x30) &&
+          (((local_8 < (int)pVVar2->field_0030 &&
             (local_10 = (&DAT_0079aed0)[iVar1] + local_10, -1 < local_10)) &&
-           (local_10 < *(int *)((int)pvVar2 + 0x34))))) &&
-         ((*(int *)((int)pvVar2 + 0x4c) != 0 &&
-          (*(char *)(local_10 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) +
-                    local_8) == '\0')))) goto LAB_0062f208;
+           (local_10 < (int)pVVar2->field_0034)))) &&
+         ((pVVar2->field_004C != 0 &&
+          (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_8) == '\0'))))
+      goto LAB_0062f208;
     }
     local_c = 1;
   }
@@ -34,12 +35,12 @@ LAB_0062f208:
   do {
     iVar1 = *piVar3;
     if (iVar1 != 0) {
-      pvVar2 = *(void **)(iVar1 + 0x10);
+      this = *(void **)(iVar1 + 0x10);
       if (*(int *)(iVar1 + 0x18) == 2) {
         if (*(uint *)(DAT_00802a38 + 0xe4) % 5 == 0) {
-          if (pvVar2 != (void *)0x0) {
-            thunk_FUN_004ace30(pvVar2,*(uint *)(DAT_00806724 + 0x30 +
-                                               (uint)*(byte *)(iVar1 + 0x34) * 4),
+          if (this != (void *)0x0) {
+            thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 +
+                                             (uint)*(byte *)(iVar1 + 0x34) * 4),
                                (int)*(short *)(DAT_00806724 + 0x2c));
           }
           *(char *)(*piVar3 + 0x34) = *(char *)(*piVar3 + 0x34) + '\x01';
@@ -57,13 +58,13 @@ LAB_0062f208:
       }
       iVar1 = *piVar3;
       if (local_c == 0) {
-        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (pvVar2 != (void *)0x0)) {
-          thunk_FUN_004ad430((int)pvVar2);
+        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != (void *)0x0)) {
+          thunk_FUN_004ad430((int)this);
           *(undefined1 *)(*piVar3 + 0x3d) = 0;
         }
       }
-      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (pvVar2 != (void *)0x0)) {
-        thunk_FUN_004ad460(pvVar2,0);
+      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (this != (void *)0x0)) {
+        thunk_FUN_004ad460(this,0);
         *(undefined1 *)(*piVar3 + 0x3d) = 1;
       }
     }

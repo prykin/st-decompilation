@@ -8,7 +8,7 @@ FUN_004f19d0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 *pa
             undefined4 *param_4)
 
 {
-  if (DAT_00806730 == 0x400) {
+  if (g_nWidth_00806730 == 0x400) {
     if (CASE_1 < param_2) {
       return 0;
     }
@@ -21,7 +21,7 @@ FUN_004f19d0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 *pa
     *param_4 = 10;
     return 1;
   }
-  if (DAT_00806730 != 0x500) {
+  if (g_nWidth_00806730 != 0x500) {
     return 0;
   }
   if (param_1 == '\0') {

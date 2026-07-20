@@ -96,9 +96,9 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
   local_8c = 0;
   ExceptionList = &local_14;
   local_d4 = param_1 * param_2;
-  FUN_006ab060((undefined4 *)((int)this + 0x584b));
+  FUN_006ab060((LPVOID *)((int)this + 0x584b));
   puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1 * param_2);
-  *(undefined4 *)((int)this + 0x584b) = puVar8;
+  *(LPVOID *)((int)this + 0x584b) = puVar8;
   uVar14 = *(uint *)((int)this + 0x582f);
   for (uVar13 = uVar14 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
     *puVar8 = 0;

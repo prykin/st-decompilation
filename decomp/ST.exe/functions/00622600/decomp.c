@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CEFC (store 00622629)
    Evidence: final_vptr=0079CEFC; returns_this=true; calls_before=2; field_writes_after=1;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00622600 returns STMineSetC::STMineSetC this @ 00622640 */
 
-undefined4 * __thiscall STMineSetC::STMineSetC(STMineSetC *this,undefined4 *param_1)
+STMineSetC * __thiscall STMineSetC::STMineSetC(STMineSetC *this)
 
 {
   int iVar1;
@@ -21,6 +24,6 @@ undefined4 * __thiscall STMineSetC::STMineSetC(STMineSetC *this,undefined4 *para
   }
   *(undefined1 *)puVar2 = 0;
   this->field_02BA = 0xffffffff;
-  return &this->vtable;
+  return this;
 }
 

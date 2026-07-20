@@ -96,10 +96,10 @@ void __thiscall FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_
     } while (iVar5 < *(int *)(param_4 + 8));
   }
   if (*(int *)((int)this + 0x644) != 0) {
-    FUN_006ab060((undefined4 *)((int)this + 0x644));
+    FUN_006ab060((LPVOID *)((int)this + 0x644));
   }
   param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + *(int *)(param_4 + 8)));
-  *(undefined4 *)((int)this + 0x644) = param_1;
+  *(LPVOID *)((int)this + 0x644) = param_1;
   if (param_1 == (byte *)0x0) {
     *(undefined1 *)((int)this + 10) = 1;
     return;

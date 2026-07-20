@@ -10,7 +10,7 @@ int __fastcall FUN_004620f0(int *param_1)
   }
   iVar1 = *(int *)((int)param_1 + 0x82e);
   if (((iVar1 != -1) && (iVar1 != 0)) && (iVar1 != 2)) {
-    iVar1 = thunk_FUN_00460360(param_1);
+    iVar1 = STBoatC::sub_00460360((STBoatC *)param_1);
     return iVar1;
   }
   iVar1 = (**(code **)(*param_1 + 0xd8))();

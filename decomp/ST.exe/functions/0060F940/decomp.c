@@ -56,13 +56,13 @@ FUN_0060f940(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   if (param_1 == param_2) {
     return 0;
   }
-  psVar1 = &DAT_007ed574 + param_1 * 4;
-  psVar2 = &DAT_007ed572 + param_1 * 4;
-  psVar3 = &DAT_007ed570 + param_1 * 4;
+  psVar1 = &SHORT_007ed574 + param_1 * 4;
+  psVar2 = &SHORT_007ed572 + param_1 * 4;
+  psVar3 = &SHORT_007ed570 + param_1 * 4;
   iVar6 = *(int *)(&DAT_007cfe74 + param_1 * 4);
-  iVar4 = (((((int)*psVar1 * (int)(short)(&DAT_007ed574)[param_2 * 4] +
-              (int)*psVar2 * (int)(short)(&DAT_007ed572)[param_2 * 4] +
-             (int)*psVar3 * (int)(short)(&DAT_007ed570)[param_2 * 4]) * 1000000) / iVar6) * 10000) /
+  iVar4 = (((((int)*psVar1 * (int)(&SHORT_007ed574)[param_2 * 4] +
+              (int)*psVar2 * (int)(&SHORT_007ed572)[param_2 * 4] +
+             (int)*psVar3 * (int)(&SHORT_007ed570)[param_2 * 4]) * 1000000) / iVar6) * 10000) /
           *(int *)(&DAT_007cfe74 + param_2 * 4);
   if ((iVar4 < 0) && (iVar4 < -0xdac)) {
     return 0xffffffff;
@@ -81,14 +81,14 @@ FUN_0060f940(int param_1,int param_2,int param_3,int param_4,int param_5,int par
         iVar4 = (*(int *)(&DAT_007cfe74 + param_1 * 4) * 10000) / iVar4;
         *(int *)(param_3 + 0xc) =
              *psVar3 * 1000 -
-             ((short)(&DAT_007ed570)[param_2 * 4] * iVar4 * 1000) /
-             *(int *)(&DAT_007cfe74 + param_2 * 4);
+             ((&SHORT_007ed570)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4)
+        ;
         *(int *)(param_3 + 0x10) =
              *psVar2 * 1000 -
-             ((short)(&DAT_007ed572)[param_2 * 4] * iVar4 * 1000) /
-             *(int *)(&DAT_007cfe74 + param_2 * 4);
+             ((&SHORT_007ed572)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4)
+        ;
         iVar6 = *psVar1 * 1000 -
-                ((short)(&DAT_007ed574)[param_2 * 4] * iVar4 * 1000) /
+                ((&SHORT_007ed574)[param_2 * 4] * iVar4 * 1000) /
                 *(int *)(&DAT_007cfe74 + param_2 * 4);
         *(int *)(param_3 + 0x14) = iVar6;
         iVar4 = FUN_006acf0d(*(int *)(param_3 + 0xc),*(int *)(param_3 + 0x10),iVar6,0,0,0);
@@ -99,9 +99,9 @@ FUN_0060f940(int param_1,int param_2,int param_3,int param_4,int param_5,int par
       }
       if (iVar7 == iVar5) {
         *(int *)(param_3 + 8) = (iVar6 * 0xc9) / 1000;
-        *(int *)(param_3 + 0xc) = (short)(&DAT_007ed570)[param_2 * 4] * -10000;
-        *(int *)(param_3 + 0x10) = (short)(&DAT_007ed572)[param_2 * 4] * -10000;
-        iVar6 = (short)(&DAT_007ed574)[param_2 * 4] * -10000;
+        *(int *)(param_3 + 0xc) = (&SHORT_007ed570)[param_2 * 4] * -10000;
+        *(int *)(param_3 + 0x10) = (&SHORT_007ed572)[param_2 * 4] * -10000;
+        iVar6 = (&SHORT_007ed574)[param_2 * 4] * -10000;
         *(int *)(param_3 + 0x14) = iVar6;
         iVar6 = FUN_006acf0d(*(int *)(param_3 + 0xc),*(int *)(param_3 + 0x10),iVar6,0,0,0);
         *(int *)(param_3 + 0xc) = (*(int *)(param_3 + 0xc) * 10000) / iVar6;
@@ -131,13 +131,12 @@ FUN_0060f940(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   iVar4 = (*(int *)(&DAT_007cfe74 + param_1 * 4) * 10000) / iVar4;
   *(int *)(param_3 + 0xc) =
        *psVar3 * 1000 -
-       ((short)(&DAT_007ed570)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
+       ((&SHORT_007ed570)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
   *(int *)(param_3 + 0x10) =
        *psVar2 * 1000 -
-       ((short)(&DAT_007ed572)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
+       ((&SHORT_007ed572)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
   iVar6 = *psVar1 * 1000 -
-          ((short)(&DAT_007ed574)[param_2 * 4] * iVar4 * 1000) /
-          *(int *)(&DAT_007cfe74 + param_2 * 4);
+          ((&SHORT_007ed574)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
   *(int *)(param_3 + 0x14) = iVar6;
   iVar4 = FUN_006acf0d(*(int *)(param_3 + 0xc),*(int *)(param_3 + 0x10),iVar6,0,0,0);
   *(int *)(param_3 + 0xc) = (*(int *)(param_3 + 0xc) * 10000) / iVar4;

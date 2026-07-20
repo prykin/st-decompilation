@@ -1,5 +1,8 @@
 
-void __thiscall FUN_00567180(void *this,undefined4 param_1)
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0056FA60 -> 00567180 @ 0057083B */
+
+void __thiscall FUN_00567180(void *this,HWND param_1)
 
 {
   int iVar1;

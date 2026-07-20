@@ -64,7 +64,8 @@ undefined4 __fastcall FUN_004cc370(int *param_1)
     if (iVar2 != 0) {
       iVar4 = 0x381;
 cf_error_exit_004CC50A:
-      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,iVar4);
+      RaiseInternalException
+                (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,iVar4);
     }
   }
   uVar5 = 6;

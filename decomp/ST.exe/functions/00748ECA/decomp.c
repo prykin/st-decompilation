@@ -3,9 +3,9 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
 
 {
   uint uVar1;
-  undefined4 *local_8;
+  LPVOID local_8;
   
-  local_8 = (undefined4 *)0x0;
+  local_8 = (LPVOID)0x0;
   if (param_2 < 4) {
     return 0;
   }
@@ -32,7 +32,7 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
       return 0x80004003;
     }
     local_8 = FUN_0074bc6a((undefined4 *)param_3[9]);
-    if (local_8 == (undefined4 *)0x0) {
+    if (local_8 == (LPVOID)0x0) {
       return 0x8007000e;
     }
   }
@@ -62,7 +62,7 @@ LAB_00748fc9:
     if (*(LPVOID *)(param_1 + 0x3c) != (LPVOID)0x0) {
       FUN_0074bc50(*(LPVOID *)(param_1 + 0x3c));
     }
-    *(undefined4 **)(param_1 + 0x3c) = local_8;
+    *(LPVOID *)(param_1 + 0x3c) = local_8;
   }
   return 0;
 }

@@ -30,22 +30,21 @@ FUN_006dbd20(void *param_1,undefined4 param_2,uint param_3,undefined4 param_4,in
   *(int *)((int)param_1 + 0x28) = param_5;
   iVar4 = param_5 * param_6;
   *(int *)((int)param_1 + 0x2c) = param_6;
-  iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 8),iVar4 + 0x18);
+  iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)param_1 + 8),iVar4 + 0x18);
   *(int *)((int)param_1 + 8) = iVar3;
   *(uint *)((int)param_1 + 0xc) = (iVar3 - 1U ^ param_3) & 7 ^ iVar3 + 7U;
   if (*(int *)((int)param_1 + 0x124) == 1) {
-    iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 0x10),iVar4 + 0x10);
+    iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)param_1 + 0x10),iVar4 + 0x10);
     *(int *)((int)param_1 + 0x10) = iVar3;
   }
   else {
-    iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 0x10),iVar4 * 2 + 0x10);
+    iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)param_1 + 0x10),iVar4 * 2 + 0x10);
     *(int *)((int)param_1 + 0x10) = iVar3;
     if (((*(int *)((int)param_1 + 0x144) != 0) &&
         (iVar3 = *(int *)((int)param_1 + 0x174), 0 < iVar3)) &&
        (iVar3 < *(int *)((int)param_1 + 0x2c))) {
       iVar3 = Library::DKW::LIB::FUN_006acf50
-                        (*(undefined4 **)((int)param_1 + 0x1c),*(int *)((int)param_1 + 0x28) * iVar3
-                        );
+                        (*(int *)((int)param_1 + 0x1c),*(int *)((int)param_1 + 0x28) * iVar3);
       *(int *)((int)param_1 + 0x1c) = iVar3;
     }
   }

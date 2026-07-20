@@ -14,7 +14,7 @@ void FUN_006b7740(int *param_1)
       (**(code **)(*piVar1 + 8))(piVar1);
       *param_1 = 0;
     }
-    FUN_006a5e90(param_1);
+    FUN_006a5e90((short *)param_1);
   }
   return;
 }

@@ -84,7 +84,7 @@ LAB_0069ca03:
                     uVar3 = uVar4;
                     uVar4 = uVar6;
                   }
-                  thunk_FUN_0069c790((int)puVar2,iVar1,uVar3,uVar4);
+                  thunk_FUN_0069c790(puVar2,iVar1,uVar3,uVar4);
                   break;
                 }
               }

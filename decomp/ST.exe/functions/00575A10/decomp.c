@@ -17,12 +17,12 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   local_14 = ExceptionList;
   local_1c = &stack0xffffff8c;
   ExceptionList = &local_14;
-  DAT_00807618 = GetModuleHandleA(s_st_string_dll_007caafc);
-  if (DAT_00807618 == (HMODULE)0x0) {
+  HINSTANCE_00807618 = GetModuleHandleA(s_st_string_dll_007caafc);
+  if (HINSTANCE_00807618 == (HMODULE)0x0) {
     ExceptionList = local_14;
     return 0xffffffff;
   }
-  puVar1 = (uint *)FUN_006b0140(100,DAT_00807618);
+  puVar1 = (uint *)FUN_006b0140(100,HINSTANCE_00807618);
   Library::MSVCRT::FUN_0072f260(0,puVar1);
   FUN_006ad190(0x18,s_dbg_msg_rpt_007caaec,0);
   thunk_FUN_004e82b0();
@@ -46,7 +46,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
     if ((iVar2 != -0x5001fff6) &&
        ((iVar2 < -0x5001fff4 || (local_1c = &stack0xffffff8c, -0x5001fff3 < iVar2)))) {
       local_1c = &stack0xffffff8c;
-      MessageBoxA(DAT_00806748,s_Internal_error_007caad8,s_Internal_error_007caad8,0);
+      MessageBoxA(g_hWnd_00806748,s_Internal_error_007caad8,s_Internal_error_007caad8,0);
     }
   }
   local_8 = 0xffffffff;

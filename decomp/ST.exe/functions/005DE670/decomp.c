@@ -42,8 +42,8 @@ void __fastcall FUN_005de670(int param_1)
   local_14 = (HANDLE)0xffffffff;
   local_10 = (HANDLE)0xffffffff;
   local_1c = param_1;
-  if (*(int *)(param_1 + 0x69a) != 0) {
-    FUN_006ab060((int *)(param_1 + 0x69a));
+  if (*(LPVOID *)(param_1 + 0x69a) != (LPVOID)0x0) {
+    FUN_006ab060((LPVOID *)(param_1 + 0x69a));
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -79,51 +79,60 @@ void __fastcall FUN_005de670(int param_1)
   pvVar3 = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_14 = pvVar3;
   if (pvVar3 == (HANDLE)0xffffffff) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x413);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x413);
   }
   DVar4 = SetFilePointer(pvVar3,0,(PLONG)0x0,2);
   iVar2 = local_1c;
   *(DWORD *)(local_1c + 0x6ae) = DVar4;
   if (DVar4 == 0xffffffff) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x415);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x415);
   }
   Library::MSVCRT::__makepath
             (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
   hFile = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41a);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41a);
   }
   DVar4 = SetFilePointer(hFile,0,(PLONG)0x0,2);
   *(DWORD *)(iVar2 + 0x6b2) = DVar4;
   if (DVar4 == 0xffffffff) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
   local_c = (LPVOID)Library::DKW::LIB::FUN_006aac70
                               (*(int *)(iVar2 + 0x6ae) + local_18 + *(int *)(iVar2 + 0x6b2));
   if (local_c == (LPVOID)0x0) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
   }
   lpBuffer = (LPVOID)(*(int *)(iVar2 + 0x6ae) + (int)local_c);
   local_24 = (byte *)((int)lpBuffer + *(int *)(iVar2 + 0x6b2));
   local_20 = local_c;
   local_8 = SetFilePointer(pvVar3,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x421);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x421);
   }
   BVar5 = ReadFile(pvVar3,local_20,*(DWORD *)(iVar2 + 0x6ae),&local_8,(LPOVERLAPPED)0x0);
   if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != local_8)) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x422);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x422);
   }
   CloseHandle(pvVar3);
   pvVar3 = local_10;
   local_8 = SetFilePointer(local_10,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x425);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x425);
   }
   BVar5 = ReadFile(pvVar3,lpBuffer,*(DWORD *)(iVar2 + 0x6b2),&local_8,(LPOVERLAPPED)0x0);
   if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != local_8)) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x426);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x426);
   }
   CloseHandle(pvVar3);
   uVar6 = 0xffffffff;
@@ -148,7 +157,7 @@ void __fastcall FUN_005de670(int param_1)
   *(LPVOID *)(iVar2 + 0x69a) = local_c;
   uVar6 = *(int *)(iVar2 + 0x6b2) + *(int *)(iVar2 + 0x6ae) + local_18;
   *(uint *)(iVar2 + 0x69e) = uVar6;
-  if ((DAT_00811764 == 0) || (*(int *)(DAT_00811764 + 0x28) != 1)) {
+  if ((g_int_00811764 == (int *)0x0) || (g_int_00811764[10] != 1)) {
     *(undefined4 *)(iVar2 + 0x6a2) = 0x400;
     *(undefined4 *)(iVar2 + 0x6aa) = 5;
   }

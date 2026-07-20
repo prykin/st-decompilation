@@ -49,13 +49,13 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
     do {
       pcVar5 = *(char **)(*(int *)(DAT_0080c4cb + 0x14) + iVar3 * 4);
 LAB_00514f85:
-      thunk_FUN_005411a0((int)this_00->field_01D3,pcVar5,&DAT_007c3b60);
+      thunk_FUN_005411a0(this_00->field_01D3,pcVar5,&DAT_007c3b60);
       iVar3 = iVar3 + 1;
     } while (iVar3 < *(int *)(DAT_0080c4cb + 8));
   }
   puVar4 = ccFntTy::FormIndentSarr
-                     (this_00->field_01E4,(int)this_00->field_01D3,(uint *)s________________007c21d8
-                      ,(uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
+                     (this_00->field_01E4,this_00->field_01D3,s________________007c21d8,
+                      (uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
   if (this_00->field_01D3 != (uint *)0x0) {
     FUN_006b5570((byte *)this_00->field_01D3);
   }
@@ -63,7 +63,7 @@ LAB_00514f85:
   if (puVar4 == (uint *)0x0) {
     puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     this_00->field_01D3 = puVar4;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_007c3b5c);
   }
   puVar4 = this_00->field_01D3;
   if (puVar4[2] != 0) {

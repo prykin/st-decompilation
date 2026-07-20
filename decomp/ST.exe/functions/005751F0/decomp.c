@@ -34,7 +34,8 @@ void __cdecl LandInit(short *param_1)
       DAT_0080760c = (void *)FUN_006dbca0((int)puVar5);
     }
     if (DAT_0080760c == (void *)0x0) {
-      RaiseInternalException(-2,DAT_007ed77c,s_E____titans_tinittxt_cpp_007ca6d0,0x160);
+      RaiseInternalException
+                (-2,g_overwriteContext_007ED77C,s_E____titans_tinittxt_cpp_007ca6d0,0x160);
     }
     FUN_006dc050(DAT_0080760c,DAT_0080759c,0,0,(uint)*(byte *)(param_1 + 2) << 1,
                  (uint)*(byte *)(param_1 + 2) << 1,0,0xc0240000,0,0x40240000,0,0xc0240000,0,

@@ -1,4 +1,4 @@
-FUN_00580d30:
+STResourceC::sub_00580D30:
 00580D30  55                        PUSH EBP
 00580D31  8B EC                     MOV EBP,ESP
 00580D33  56                        PUSH ESI

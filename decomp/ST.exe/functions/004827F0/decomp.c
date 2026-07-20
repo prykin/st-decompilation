@@ -41,16 +41,22 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
     return;
   }
   if (((int)local_c < 0) || ((int)((byte)local_8->field_0281 - 1) < (int)local_c)) {
-    RaiseInternalException(-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d71);
+    RaiseInternalException
+              (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+               0x3d71);
   }
   puVar1 = (uint *)(&local_8->field_0282)[uVar6];
   if (puVar1 == (uint *)0x0) {
-    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d72);
+    RaiseInternalException
+              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+               0x3d72);
   }
   uVar6 = local_10;
   FUN_006acc70((int)puVar1,local_10,(undefined4 *)local_18);
   if (local_18[0] == 0x7fff) {
-    RaiseInternalException(-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d73);
+    RaiseInternalException
+              (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+               0x3d73);
   }
   local_18[0] = 0x7fff;
   Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,(undefined4 *)local_18);

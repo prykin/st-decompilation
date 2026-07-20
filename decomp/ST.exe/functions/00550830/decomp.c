@@ -7,14 +7,14 @@ void FUN_00550830(int param_1)
   
   if (param_1 != 0) {
     wsprintfA((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,param_1,param_1 + 0x40);
-    if (DAT_008016d8 != (void *)0x0) {
+    if (g_popUp_008016D8 != (PopUpTy *)0x0) {
       if (*(byte *)(param_1 + 0x450) == 0xff) {
         uVar1 = 8;
       }
       else {
         uVar1 = (uint)*(byte *)(param_1 + 0x450);
       }
-      thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,uVar1);
+      thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,uVar1);
     }
     if (DAT_0080874e == '\x01') {
       soundId = 0x38;

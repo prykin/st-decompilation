@@ -1,4 +1,4 @@
-FUN_004176c0:
+STBoatC::sub_004176C0:
 004176C0  55                        PUSH EBP
 004176C1  8B EC                     MOV EBP,ESP
 004176C3  53                        PUSH EBX

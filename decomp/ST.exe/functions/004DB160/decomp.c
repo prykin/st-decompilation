@@ -22,11 +22,11 @@ FUN_004db160(void *this,int param_1,undefined4 param_2,int *param_3,int *param_4
   *param_6 = -1;
   sVar2 = (short)*param_3;
   local_c = this;
-  if ((((((-1 < sVar2) && (sVar2 < DAT_007fb240)) && (sVar7 = (short)*param_4, -1 < sVar7)) &&
-       ((sVar7 < DAT_007fb242 && (sVar6 = (short)*param_5, -1 < sVar6)))) &&
-      ((sVar6 < DAT_007fb244 &&
+  if ((((((-1 < sVar2) && (sVar2 < SHORT_007fb240)) && (sVar7 = (short)*param_4, -1 < sVar7)) &&
+       ((sVar7 < SHORT_007fb242 && (sVar6 = (short)*param_5, -1 < sVar6)))) &&
+      ((sVar6 < SHORT_007fb244 &&
        ((piVar5 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar7 +
+                           ((int)SHORT_007fb246 * (int)sVar6 + (int)SHORT_007fb240 * (int)sVar7 +
                            (int)sVar2) * 8), piVar5 != (int *)0x0 && (piVar5[9] != param_1)))))) &&
      ((iVar3 = (**(code **)(*piVar5 + 0x2c))(), iVar3 == 0x3c ||
       (iVar3 = (**(code **)(*piVar5 + 0x2c))(), iVar3 == 0x53)))) {
@@ -113,13 +113,13 @@ cf_common_join_004DB690:
       if (iVar9 < 0) {
         return;
       }
-      if (DAT_007fb240 <= iVar9) {
+      if (SHORT_007fb240 <= iVar9) {
         return;
       }
       if (iVar3 < 0) {
         return;
       }
-      if (DAT_007fb242 <= iVar3) {
+      if (SHORT_007fb242 <= iVar3) {
         return;
       }
       *param_3 = iVar9;
@@ -129,7 +129,7 @@ cf_common_join_004DB690:
   }
 LAB_004db257:
   param_5 = (int *)0x1;
-  sVar2 = DAT_007fb244;
+  sVar2 = SHORT_007fb244;
   do {
     local_8 = 0;
     if (sVar2 != 1 && -1 < sVar2 + -1) {
@@ -137,17 +137,17 @@ LAB_004db257:
         iVar9 = *param_3 - (int)param_5;
         if (iVar9 <= *param_3 + (int)param_5) {
           do {
-            if ((-1 < iVar9) && (iVar9 < DAT_007fb240)) {
+            if ((-1 < iVar9) && (iVar9 < SHORT_007fb240)) {
               iVar10 = *param_4 - (int)param_5;
               sVar2 = (short)iVar9;
               if ((((-1 < iVar10) &&
-                   (((iVar10 < DAT_007fb242 && (-1 < sVar2)) && (sVar2 < DAT_007fb240)))) &&
-                  (((sVar7 = (short)iVar10, -1 < sVar7 && (sVar7 < DAT_007fb242)) &&
+                   (((iVar10 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb240)))) &&
+                  (((sVar7 = (short)iVar10, -1 < sVar7 && (sVar7 < SHORT_007fb242)) &&
                    (sVar6 = (short)local_8, -1 < sVar6)))) &&
-                 (((sVar6 < DAT_007fb244 &&
+                 (((sVar6 < SHORT_007fb244 &&
                    (piVar5 = *(int **)(DAT_007fb248 +
-                                      ((int)sVar6 * (int)DAT_007fb246 +
-                                       (int)sVar7 * (int)DAT_007fb240 + (int)sVar2) * 8),
+                                      ((int)sVar6 * (int)SHORT_007fb246 +
+                                       (int)sVar7 * (int)SHORT_007fb240 + (int)sVar2) * 8),
                    piVar5 != (int *)0x0)) &&
                   ((piVar5[9] != param_1 &&
                    ((iVar3 = (**(code **)(*piVar5 + 0x2c))(), iVar3 == 0x3c ||
@@ -176,7 +176,7 @@ LAB_004db257:
               }
 LAB_004db3e4:
               iVar10 = *param_4 + (int)param_5;
-              if ((((-1 < iVar10) && (iVar10 < DAT_007fb242)) &&
+              if ((((-1 < iVar10) && (iVar10 < SHORT_007fb242)) &&
                   (piVar5 = (int *)thunk_FUN_004db980(sVar2,(short)iVar10,(short)local_8,0),
                   piVar5 != (int *)0x0)) &&
                  ((piVar5[9] != param_1 &&
@@ -212,10 +212,10 @@ LAB_004db497:
         iVar10 = (*param_4 - (int)param_5) + 1;
         if (iVar10 <= *param_4 + -1 + (int)param_5) {
           do {
-            if ((-1 < iVar10) && (iVar10 < DAT_007fb242)) {
+            if ((-1 < iVar10) && (iVar10 < SHORT_007fb242)) {
               iVar9 = *param_3 - (int)param_5;
               if ((-1 < iVar9) &&
-                 ((((iVar9 < DAT_007fb240 &&
+                 ((((iVar9 < SHORT_007fb240 &&
                     (piVar5 = (int *)thunk_FUN_004db980((short)iVar9,(short)iVar10,(short)local_8,0)
                     , piVar5 != (int *)0x0)) && (piVar5[9] != param_1)) &&
                   ((iVar3 = (**(code **)(*piVar5 + 0x2c))(), iVar3 == 0x3c ||
@@ -244,7 +244,7 @@ LAB_004db497:
               }
 LAB_004db58d:
               iVar9 = *param_3 + (int)param_5;
-              if ((((-1 < iVar9) && (iVar9 < DAT_007fb240)) &&
+              if ((((-1 < iVar9) && (iVar9 < SHORT_007fb240)) &&
                   ((piVar5 = (int *)thunk_FUN_004db980((short)iVar9,(short)iVar10,(short)local_8,0),
                    piVar5 != (int *)0x0 && (piVar5[9] != param_1)))) &&
                  ((iVar3 = (**(code **)(*piVar5 + 0x2c))(), iVar3 == 0x3c ||
@@ -277,8 +277,8 @@ LAB_004db638:
           } while (iVar10 <= *param_4 + -1 + (int)param_5);
         }
         local_8 = local_8 + 1;
-        sVar2 = DAT_007fb244;
-      } while (local_8 < DAT_007fb244 + -1);
+        sVar2 = SHORT_007fb244;
+      } while (local_8 < SHORT_007fb244 + -1);
     }
     param_5 = (int *)((int)param_5 + 1);
     if (7 < (int)param_5) {

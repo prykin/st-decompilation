@@ -1,4 +1,4 @@
-FUN_00460360:
+STBoatC::sub_00460360:
 00460360  56                        PUSH ESI
 00460361  8B F1                     MOV ESI,ECX
 00460363  57                        PUSH EDI

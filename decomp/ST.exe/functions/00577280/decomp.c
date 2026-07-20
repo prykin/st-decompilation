@@ -27,10 +27,11 @@ void CreateGameSystem(void)
       DAT_0081163c = (int *)0x0;
     }
     else {
-      DAT_0081163c = thunk_FUN_00576dd0(this_00,DAT_00806728);
+      DAT_0081163c = thunk_FUN_00576dd0(this_00,g_appClass_00806728);
     }
     if (DAT_0081163c == (int *)0x0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tsystem_cpp_007cab5c,0xb1);
+      RaiseInternalException(-1,g_overwriteContext_007ED77C,s_E____titans_tsystem_cpp_007cab5c,0xb1)
+      ;
     }
     DAT_0081163c[0x10a] = 0;
     (**(code **)*DAT_0081163c)();

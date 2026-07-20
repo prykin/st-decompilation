@@ -33,10 +33,12 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
     return 0xffffffff;
   }
   if (local_8->field_0018 == -1) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xff);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xff);
   }
   if (((char)param_1 < '\0') || (pSVar2->field_0014 + -1 < (int)(char)param_1)) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x100);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x100);
   }
   uVar5 = 1 << (param_1 & 0x1f);
   if ((uVar5 & pSVar2->field_001C) == 0) {

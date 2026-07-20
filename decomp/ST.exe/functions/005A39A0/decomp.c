@@ -1,6 +1,16 @@
 
+/* [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 005A3AB0 -> 005A39A0 @ 005A3D10 | 005A3AB0 -> 005A39A0 @ 005A3D30 | 005A3AB0 ->
+   005A39A0 @ 005A3D53 | 005A3AB0 -> 005A39A0 @ 005A3D76 | 005A3AB0 -> 005A39A0 @ 005A3D96 |
+   005A3AB0 -> 005A39A0 @ 005A3DB6 | 005A3AB0 -> 005A39A0 @ 005A3ED2 | 005A3AB0 -> 005A39A0 @
+   005A3EF2 | 005A3AB0 -> 005A39A0 @ 005A3F15 | 005A3AB0 -> 005A39A0 @ 005A3F38
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005A39A0 parameter used as this of ccFntTy::SetSurf @ 005A3A50 | 005A39A0 parameter
+   used as this of ccFntTy::WrStr @ 005A3A61 */
+
 void __thiscall
-FUN_005a39a0(void *this,ccFntTy *param_1,byte *param_2,uint param_3,byte *param_4,int param_5,
+FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,int param_5,
             int param_6,int param_7,int param_8)
 
 {
@@ -18,7 +28,7 @@ FUN_005a39a0(void *this,ccFntTy *param_1,byte *param_2,uint param_3,byte *param_
   uint *puVar12;
   uint local_10 [3];
   
-  pbVar3 = thunk_FUN_0055d590(param_2,param_3,param_4);
+  pbVar3 = thunk_FUN_0055d590(text,param_3,param_4);
   if (pbVar3 != (byte *)0x0) {
     iVar5 = -1;
     pbVar9 = pbVar3;

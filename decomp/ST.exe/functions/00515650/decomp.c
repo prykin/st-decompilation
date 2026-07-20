@@ -27,15 +27,15 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pHVar2 = local_10;
   if (iVar3 == 0) {
-    if (DAT_007fa174 != (STAllPlayersC *)0x0) {
+    if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
       *param_1 = *param_1 + 2;
-      local_8 = (byte *)STAllPlayersC::GetTOBJImage(DAT_007fa174,(uint)param_3,param_2);
+      local_8 = (byte *)STAllPlayersC::GetTOBJImage(g_sTAllPlayers_007FA174,(uint)param_3,param_2);
       if (local_8 != (byte *)0x0) {
         local_14 = *(int *)(local_8 + 4);
         local_c = *(int *)(local_8 + 8);
         iVar3 = (0x19c - local_14) / 2;
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,(int)pHVar2->field_021C,0,
+                  ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,(byte *)pHVar2->field_021C,0,
                    (*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
                    (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
         FUN_006b5440(pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);

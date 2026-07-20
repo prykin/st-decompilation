@@ -8,8 +8,7 @@ void __cdecl FUN_006377b0(uint param_1,int param_2,int param_3,int param_4,int p
   uint local_8;
   
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,(byte *)s_bulb_tel_007d1c30,0xffffffff,0,1,0,
-                      (undefined4 *)0x0);
+                     (DAT_00806774,CASE_1D,s_bulb_tel_007d1c30,0xffffffff,0,1,0,(undefined4 *)0x0);
   if ((puVar1 != (ushort *)0x0) && (DAT_00807598 != (void *)0x0)) {
     FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
                  *(uint *)((int)puVar1 + 0xd),0x5a,0x33,0);

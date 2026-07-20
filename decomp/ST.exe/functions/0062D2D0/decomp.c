@@ -37,7 +37,7 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
     local_8 = 0xffffffff;
     local_24 = 0xffffffff;
     if (param_6 == 0) {
-      aiStack_44[3] = (int)DAT_007fb242 * (int)DAT_007fb240;
+      aiStack_44[3] = (int)SHORT_007fb242 * (int)SHORT_007fb240;
     }
     else {
       aiStack_44[3] = 4;

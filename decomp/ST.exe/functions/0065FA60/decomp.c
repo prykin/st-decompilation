@@ -7,7 +7,7 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
   uint uVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint *puVar4;
+  uint *groupContent;
   InternalExceptionFrame local_5c;
   uint local_18;
   int local_14;
@@ -30,47 +30,49 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
       if (*(void **)(local_14 + 0x284) != (void *)0x0) {
         local_10 = thunk_FUN_0068e4f0(*(void **)(local_14 + 0x284),param_1);
       }
-      if ((local_10 == (uint *)0x0) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
-        local_10 = STAllPlayersC::GetTOBJList(DAT_007fa174,*(char *)(local_14 + 0x24),param_1,0,-1);
+      if ((local_10 == (uint *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        local_10 = STAllPlayersC::GetTOBJList
+                             (g_sTAllPlayers_007FA174,*(char *)(local_14 + 0x24),param_1,0,-1);
       }
     }
-    else if ((param_2 == 2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
-      local_10 = STAllPlayersC::GetTOBJList(DAT_007fa174,*(char *)(local_14 + 0x24),param_1,0,-1);
+    else if ((param_2 == 2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      local_10 = STAllPlayersC::GetTOBJList
+                           (g_sTAllPlayers_007FA174,*(char *)(local_14 + 0x24),param_1,0,-1);
     }
   }
-  puVar4 = local_10;
+  groupContent = local_10;
   g_currentExceptionFrame = local_5c.previous;
   if (local_10 != (uint *)0x0) {
     if (local_10[3] == 0) {
       FUN_006ae110((byte *)local_10);
       local_10 = (uint *)0x0;
     }
-    puVar4 = local_10;
+    groupContent = local_10;
     if ((((local_10 != (uint *)0x0) && (param_3 != (short *)0x0)) && (0 < param_3[3])) &&
        ((0 < param_3[4] && (0 < param_3[5])))) {
       local_18 = local_10[3];
       while (uVar3 = local_18 - 1, -1 < (int)uVar3) {
-        if (uVar3 < puVar4[3]) {
-          puVar2 = (undefined4 *)(puVar4[2] * uVar3 + puVar4[7]);
+        if (uVar3 < groupContent[3]) {
+          puVar2 = (undefined4 *)(groupContent[2] * uVar3 + groupContent[7]);
         }
         else {
           puVar2 = (undefined4 *)0x0;
         }
         local_18 = uVar3;
-        if ((void *)*puVar2 != (void *)0x0) {
-          thunk_FUN_004162b0((void *)*puVar2,&local_6,&local_8,&local_a);
+        if ((STFishC *)*puVar2 != (STFishC *)0x0) {
+          STFishC::sub_004162B0((STFishC *)*puVar2,&local_6,&local_8,&local_a);
           if (((local_6 < *param_3) || (local_8 < param_3[1])) ||
              ((uVar3 = local_18, local_a < param_3[2] ||
               ((((int)*param_3 + (int)param_3[3] <= (int)local_6 ||
                 ((int)param_3[1] + (int)param_3[4] <= (int)local_8)) ||
                ((int)param_3[2] + (int)param_3[5] <= (int)local_a)))))) {
-            FUN_006b0c70((int)puVar4,uVar3);
+            FUN_006b0c70((int)groupContent,uVar3);
             local_18 = uVar3;
           }
         }
       }
     }
   }
-  return puVar4;
+  return groupContent;
 }
 

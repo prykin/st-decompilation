@@ -27,14 +27,16 @@ void CreatePlaySystem(void)
       DAT_00802a38 = (SystemClassTy *)0x0;
     }
     else {
-      DAT_00802a38 = (SystemClassTy *)thunk_FUN_0054cb40(this,DAT_00806728);
+      DAT_00802a38 = (SystemClassTy *)thunk_FUN_0054cb40(this,g_appClass_00806728);
     }
     if (DAT_00802a38 == (SystemClassTy *)0x0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x7d);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x7d);
     }
     DAT_00802a38[7].vtable = (SystemClassTyVTable *)0x0;
     (*DAT_00802a38->vtable->InitSystem)(DAT_00802a38);
-    (*DAT_00802a38->vtable->CreateObjectFull)(DAT_00802a38,0x1100,(void *)0x0,&DAT_007fa174,0,0);
+    (*DAT_00802a38->vtable->CreateObjectFull)
+              (DAT_00802a38,0x1100,(void *)0x0,&g_sTAllPlayers_007FA174,0,0);
     (*DAT_00802a38->vtable->CreateObjectFull)(DAT_00802a38,0x109,(void *)0x0,(void *)0x0,0,0);
     (*DAT_00802a38->vtable->CreateObjectFull)(DAT_00802a38,0x121,(void *)0x0,(void *)0x0,0,0);
     (*DAT_00802a38->vtable->CreateObjectFull)(DAT_00802a38,0x143,&DAT_00811794,(void *)0x0,0,0);
@@ -52,10 +54,10 @@ void CreatePlaySystem(void)
       } while (bVar3 < 8);
     }
     CreateAi();
-    if (DAT_00806754 != (cMf32 *)0x0) {
+    if (g_cMf32_00806754 != (cMf32 *)0x0) {
       local_c = &local_8;
       local_8 = (SystemClassTyVTable *)0x32;
-      cMf32::RecGet(DAT_00806754,0xc,PTR_s_LAST_NAME_0079ae2c,(int *)&local_c,0);
+      cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_LAST_NAME_0079ae2c,(int *)&local_c,0);
       if (DAT_00802a38[1].vtable < local_8) {
         DAT_00802a38[1].vtable = local_8;
       }

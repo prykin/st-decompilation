@@ -26,7 +26,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
   undefined4 uVar15;
   InternalExceptionFrame local_a4;
   undefined4 local_60;
-  int local_5c;
+  uint local_5c;
   undefined4 local_58;
   undefined4 local_54;
   undefined1 local_50;
@@ -35,7 +35,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
   int local_44;
   HelpPanelTy *local_40;
   undefined4 local_3c;
-  int local_38;
+  uint local_38;
   undefined4 local_34;
   undefined4 local_30;
   undefined1 local_2c;
@@ -47,11 +47,11 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
   uint local_14;
   char local_d;
   UINT local_c;
-  int local_8;
+  uint local_8;
   
   local_8 = 0;
   local_d = '\0';
-  if (DAT_007fa174 != 0) {
+  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
     local_40 = this;
@@ -88,12 +88,12 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       local_1c = local_1c & 0xff;
       UVar6 = thunk_FUN_00523410(param_1,cVar4,0);
       DrawTitle(this_00,0x55fb,local_1c,UVar6);
-      DrawObj(this_00,&local_8,param_1,(byte)local_20,this_00->field_023C);
+      DrawObj(this_00,(int *)&local_8,param_1,(byte)local_20,this_00->field_023C);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x19c,0xf);
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -1;
-      puVar7 = (uint *)FUN_006b0140(0x564a,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x564a,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       local_c = 0;
@@ -118,13 +118,13 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         uVar15 = 3;
         iVar13 = -1;
         iVar5 = -3;
-        puVar7 = (uint *)FUN_006b0140(0x5654,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x5654,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
         ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
         uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar5 = 1;
-        puVar7 = (uint *)FUN_006b0140(local_c,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(local_c,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
         local_8 = local_8 + 0xf;
       }
@@ -132,7 +132,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)FUN_006b0140(0x5656,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x5656,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
       if (local_1c == 1) {
@@ -147,7 +147,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(UVar6,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(UVar6,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       local_8 = local_8 + 0xf;
       local_14 = 0;
@@ -155,7 +155,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)FUN_006b0140(0x55f7,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x55f7,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       if (cVar4 == '\x03') {
         local_c = *(UINT *)(&DAT_007e09dc + param_1 * 4);
@@ -164,7 +164,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_c = *(UINT *)(&DAT_007e079c + param_1 * 4);
       }
       if (local_c != 0) {
-        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 + -3,0x106,0x14);
+        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
@@ -183,7 +183,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       }
       local_c = *(UINT *)(&DAT_007e055c + param_1 * 4);
       if (local_c != 0) {
-        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 + -3,0x106,0x14);
+        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         local_14 = FUN_0070b3a0(this_00->field_0238,0);
@@ -201,7 +201,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       }
       local_c = *(UINT *)(&DAT_00854428 + param_1 * 4);
       if (local_c != 0) {
-        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 + -3,0x106,0x14);
+        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
@@ -232,7 +232,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
           uVar15 = 3;
           iVar13 = -1;
           iVar5 = -3;
-          puVar7 = (uint *)FUN_006b0140(0x5657,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(0x5657,HINSTANCE_00807618);
           ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
           local_c = 0;
         }
@@ -241,7 +241,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar5 = 1;
-        pHVar12 = DAT_00807618;
+        pHVar12 = HINSTANCE_00807618;
         UVar6 = thunk_FUN_00528060(*local_18,'\0');
         puVar7 = (uint *)FUN_006b0140(UVar6,pHVar12);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
@@ -264,14 +264,14 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -1;
-      puVar7 = (uint *)FUN_006b0140(0x564b,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x564b,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(0x564c,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x564c,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1890,*(undefined4 *)(&DAT_007dfbac + param_1 * 4));
@@ -281,7 +281,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(0x5658,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x5658,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       piVar10 = &DAT_007dfc70;
       local_c = DAT_007dfc70;
@@ -308,14 +308,14 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 2;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)FUN_006b0140(local_c,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(local_c,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(0x564d,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x564d,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       piVar10 = &DAT_007e04a0;
       local_c = DAT_007e04a0;
@@ -343,16 +343,16 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 2;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)FUN_006b0140(local_c,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(local_c,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
-      iVar5 = DrawWeapon(this_00,0x96,&local_8,*(int *)(&DAT_007a8b18 + param_1 * 4),
+      iVar5 = DrawWeapon(this_00,0x96,(int *)&local_8,*(int *)(&DAT_007a8b18 + param_1 * 4),
                          *(int *)(&DAT_007a8bb8 + param_1 * 4),local_20);
       cVar3 = local_d;
       if ((iVar5 != 0) || (local_d = '\0', cVar3 != '\0')) {
         local_d = '\x01';
       }
-      iVar5 = DrawWeapon(this_00,0x96,&local_8,*(int *)(&DAT_007a8cf8 + param_1 * 4),
+      iVar5 = DrawWeapon(this_00,0x96,(int *)&local_8,*(int *)(&DAT_007a8cf8 + param_1 * 4),
                          *(int *)(&DAT_007a8d98 + param_1 * 4),local_20);
       cVar3 = local_d;
       if ((iVar5 != 0) || (local_d = '\0', cVar3 != '\0')) {
@@ -362,13 +362,13 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(0x5659,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x5659,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 2;
       iVar14 = -1;
       iVar13 = -3;
-      pHVar12 = DAT_00807618;
+      pHVar12 = HINSTANCE_00807618;
       iVar5 = FUN_006b0fd0(0x800f10);
       puVar7 = (uint *)FUN_006b0140(0x273f - (iVar5 != 0),pHVar12);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar13,iVar14,uVar15);
@@ -377,13 +377,13 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(0x564e,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x564e,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 2;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)FUN_006b0140((cVar4 != '\x03') + 0x273e,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140((cVar4 != '\x03') + 0x273e,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       if (local_d != '\0') {
@@ -400,13 +400,13 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar5 = 1;
-        puVar7 = (uint *)FUN_006b0140(0x564f,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x564f,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
         ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar15 = 2;
         iVar13 = -1;
         iVar5 = -3;
-        puVar7 = (uint *)FUN_006b0140(0x273f - bVar11,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x273f - bVar11,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
         local_8 = local_8 + 0xf;
       }
@@ -414,14 +414,14 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)FUN_006b0140(0x5650,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x5650,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
       local_c = *(UINT *)(&DAT_007e085c + param_1 * 4);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 2;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)FUN_006b0140(0x273f - (local_c != 0),DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x273f - (local_c != 0),HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       if (local_c != 0) {
@@ -429,9 +429,9 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         uVar9 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar5 = 1;
-        puVar7 = (uint *)FUN_006b0140(0x5651,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x5651,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar9);
-        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x5f,local_8 + -3,0x16,0x14);
+        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x5f,local_8 - 3,0x16,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
@@ -448,8 +448,8 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_8 = local_8 + 0x14;
       }
       UVar6 = thunk_FUN_00523410(param_1,(char)local_20,2);
-      DrawDescription(this_00,&local_8,UVar6);
-      AddLinks(this_00,&local_8,'\x03',param_1,0);
+      DrawDescription(this_00,(int *)&local_8,UVar6);
+      AddLinks(this_00,(int *)&local_8,'\x03',param_1,0);
       g_currentExceptionFrame = local_a4.previous;
       return;
     }

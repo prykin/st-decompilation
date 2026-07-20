@@ -24,7 +24,7 @@ FUN_0058f680(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
   
   uVar9 = 0;
   uVar7 = 0;
-  bVar2 = thunk_FUN_0058f430((int)this);
+  bVar2 = STSharkC::sub_0058F430(this);
   local_1c = CONCAT31(extraout_var,bVar2);
   if (*(int *)((int)this + 0x23d) != 0) {
     return local_1c;
@@ -241,19 +241,20 @@ LAB_0058fb0d:
                   sVar12 = (short)iVar4;
                   bVar2 = thunk_FUN_004961b0(sVar5,sVar11,sVar12);
                   if (((CONCAT31(extraout_var_00,bVar2) != 0) &&
-                      (((sVar5 < 0 || (DAT_007fb240 <= sVar5)) ||
+                      (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
                        ((sVar11 < 0 ||
-                        ((((DAT_007fb242 <= sVar11 || (sVar12 < 0)) || (DAT_007fb244 <= sVar12)) ||
-                         (*(int *)(DAT_007fb248 +
-                                  ((int)sVar12 * (int)DAT_007fb246 + (int)sVar11 * (int)DAT_007fb240
-                                  + (int)sVar5) * 8) == 0)))))))) &&
-                     (((sVar5 < 0 || (DAT_007fb240 <= sVar5)) ||
-                      ((sVar11 < 0 ||
-                       (((DAT_007fb242 <= sVar11 || (sVar12 < 0)) ||
-                        ((DAT_007fb244 <= sVar12 ||
-                         (*(int *)(DAT_007fb248 + 4 +
-                                  ((int)sVar12 * (int)DAT_007fb246 + (int)sVar11 * (int)DAT_007fb240
-                                  + (int)sVar5) * 8) == 0)))))))))) goto LAB_0058fd1a;
+                        ((((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) || (SHORT_007fb244 <= sVar12))
+                         || (*(int *)(DAT_007fb248 +
+                                     ((int)sVar12 * (int)SHORT_007fb246 +
+                                      (int)sVar11 * (int)SHORT_007fb240 + (int)sVar5) * 8) == 0)))))
+                       ))) && (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
+                               ((sVar11 < 0 ||
+                                (((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) ||
+                                 ((SHORT_007fb244 <= sVar12 ||
+                                  (*(int *)(DAT_007fb248 + 4 +
+                                           ((int)sVar12 * (int)SHORT_007fb246 +
+                                            (int)sVar11 * (int)SHORT_007fb240 + (int)sVar5) * 8) ==
+                                   0)))))))))) goto LAB_0058fd1a;
                   bVar2 = (int)(uVar10 - (int)*(short *)((int)this + 0x47)) < 0;
                   if (uVar10 == (int)*(short *)((int)this + 0x47) || bVar2) break;
                   uVar10 = uVar10 - 1;

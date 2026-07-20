@@ -3,27 +3,27 @@ void __fastcall FUN_005a0af0(int param_1)
 
 {
   if (*(uint *)(param_1 + 0x1ac4) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1ac4));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1ac4));
   }
   *(undefined4 *)(param_1 + 0x1ac4) = 0;
   if (*(uint *)(param_1 + 0x1ac8) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1ac8));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1ac8));
   }
   *(undefined4 *)(param_1 + 0x1ac8) = 0;
   if (*(uint *)(param_1 + 0x1b20) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b20));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b20));
   }
   *(undefined4 *)(param_1 + 0x1b20) = 0;
   if (*(uint *)(param_1 + 0x1eb6) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1eb6));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1eb6));
   }
   *(undefined4 *)(param_1 + 0x1eb6) = 0;
   if (*(uint *)(param_1 + 0x1eba) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1eba));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1eba));
   }
   *(undefined4 *)(param_1 + 0x1eba) = 0;
   if (*(uint *)(param_1 + 0x1b24) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b24));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b24));
   }
   *(undefined4 *)(param_1 + 0x1b24) = 0;
   if (*(byte **)(param_1 + 0x1ae8) != (byte *)0x0) {
@@ -43,13 +43,13 @@ void __fastcall FUN_005a0af0(int param_1)
   }
   *(undefined4 *)(param_1 + 0x1ebe) = 0;
   if (*(int *)(param_1 + 0x1e8e) != 0) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x1e8e));
+    FUN_006ab060((LPVOID *)(param_1 + 0x1e8e));
   }
   if (*(int *)(param_1 + 0x1e92) != 0) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x1e92));
+    FUN_006ab060((LPVOID *)(param_1 + 0x1e92));
   }
   if (*(int *)(param_1 + 0x1e9a) != 0) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x1e9a));
+    FUN_006ab060((LPVOID *)(param_1 + 0x1e9a));
   }
   return;
 }

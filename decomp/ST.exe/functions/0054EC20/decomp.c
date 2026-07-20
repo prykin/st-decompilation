@@ -45,7 +45,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
     }
     uVar4 = local_8;
     if ((uint)local_10->field_0053 < local_8) {
-      iVar5 = Library::DKW::LIB::FUN_006acf50((undefined4 *)local_10->field_004F,local_8);
+      iVar5 = Library::DKW::LIB::FUN_006acf50(local_10->field_004F,local_8);
       pPVar10->field_004F = iVar5;
       pPVar10->field_0053 = uVar4;
     }
@@ -78,7 +78,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
       FUN_006b9890(&pPVar10->field_0039);
     }
     if ((*(int *)pPVar10->field_004F != 0) && (DAT_0080c512 == 0)) {
-      iVar5 = FUN_00715360(DAT_00811764,1,'8',(char *)pPVar10->field_004F,local_14,1,0xffffffff);
+      iVar5 = FUN_00715360(g_int_00811764,1,'8',(char *)pPVar10->field_004F,local_14,1,0xffffffff);
       if (iVar5 != 0) {
         thunk_FUN_00550380(4);
       }

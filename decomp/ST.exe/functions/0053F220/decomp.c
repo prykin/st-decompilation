@@ -29,12 +29,12 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
   if (iVar3 == 0) {
     this_00 = extraout_ECX;
     if (local_8->field_0180 != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_0180);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_0180);
       this_00 = extraout_ECX_00;
     }
     pPVar2->field_0180 = 0;
     if (pPVar2->field_019D != 0) {
-      FUN_006e56b0((void *)pPVar2->field_000C,pPVar2->field_019D);
+      StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_019D);
       this_00 = extraout_ECX_01;
     }
     pPVar2->field_019D = 0;
@@ -42,7 +42,7 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
     iVar3 = 5;
     do {
       if (*puVar5 != 0) {
-        FUN_006e56b0((void *)pPVar2->field_000C,*puVar5);
+        StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar5);
         *puVar5 = 0;
         this_00 = extraout_ECX_02;
       }

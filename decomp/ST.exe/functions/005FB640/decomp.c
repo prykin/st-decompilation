@@ -73,7 +73,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           if (((local_8->field_024E != '\0') && (local_8->field_02AB != -1)) &&
              ((this_01 = (void *)local_8->field_02AD, this_01 != (void *)0x0 ||
               (this_01 = (void *)STAllPlayersC::GetObjPtr
-                                           (DAT_007fa174,
+                                           (g_sTAllPlayers_007FA174,
                                             CONCAT31((int3)((uint)param_1 >> 8),local_8->field_02A3)
                                             ,CONCAT22((short)(uVar7 - 0x112 >> 0x10),
                                                       local_8->field_02AB),CASE_1),
@@ -155,7 +155,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        local_14 = (byte *)thunk_FUN_005fcad0(local_8,&local_10);
+        local_14 = thunk_FUN_005fcad0(local_8,&local_10);
         STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_14,local_10);
         FUN_006ab060(&local_14);
         g_currentExceptionFrame = local_60.previous;
@@ -172,7 +172,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
+        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
@@ -182,7 +182,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           uVar11 = extraout_var_00;
         }
         STAllPlayersC::UnRegisterContainer
-                  (DAT_007fa174,CONCAT22(uVar11,this_00->field_0032),(uint)this_00);
+                  (g_sTAllPlayers_007FA174,CONCAT22(uVar11,this_00->field_0032),(uint)this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
@@ -249,8 +249,8 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
             )) && ((void *)this_00->field_0211 != (void *)0x0)) {
           FUN_006ea460((void *)this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));
         }
-        if (DAT_007fa174 != (STAllPlayersC *)0x0) {
-          iVar6 = STAllPlayersC::RegisterContainer(DAT_007fa174,0xffff,this_00);
+        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+          iVar6 = STAllPlayersC::RegisterContainer(g_sTAllPlayers_007FA174,0xffff,this_00);
           if (iVar6 != 0) {
             thunk_FUN_005fc3e0(this_00);
             g_currentExceptionFrame = local_60.previous;
@@ -286,13 +286,14 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         local_1c = (int)sVar2;
         sVar3 = this_00->field_0246;
         local_c = 1;
-        if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-            ((sVar2 < 0 || ((DAT_007fb242 <= sVar2 || (sVar3 < 0)))))) || (DAT_007fb244 <= sVar3)) {
+        if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+            ((sVar2 < 0 || ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))))) ||
+           (SHORT_007fb244 <= sVar3)) {
           iVar6 = 0;
         }
         else {
           iVar6 = *(int *)(DAT_007fb248 +
-                          ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar2 +
+                          ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 +
                           (int)sVar1) * 8);
         }
         bVar5 = true;
@@ -316,13 +317,13 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           local_c = (uint)sVar2;
           sVar3 = *(short *)&this_00->field_0x24c;
           local_1c = 1;
-          if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
-             (((DAT_007fb242 <= sVar2 || (sVar3 < 0)) || (DAT_007fb244 <= sVar3)))) {
+          if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
+             (((SHORT_007fb242 <= sVar2 || (sVar3 < 0)) || (SHORT_007fb244 <= sVar3)))) {
             iVar6 = 0;
           }
           else {
             iVar6 = *(int *)(DAT_007fb248 +
-                            ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar2 +
+                            ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 +
                             (int)sVar1) * 8);
           }
           bVar5 = true;
@@ -343,11 +344,11 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
       }
       thunk_FUN_005ef5f0((int)this_00);
       thunk_FUN_005eeff0(this_00,0);
-      if (DAT_007fa174 == (STAllPlayersC *)0x0) {
+      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      iVar6 = STAllPlayersC::RegisterContainer(DAT_007fa174,this_00->field_0032,this_00);
+      iVar6 = STAllPlayersC::RegisterContainer(g_sTAllPlayers_007FA174,this_00->field_0032,this_00);
       if (iVar6 == 0) {
         g_currentExceptionFrame = local_60.previous;
         return 0;
@@ -400,8 +401,8 @@ switchD_005fbd08_caseD_129:
   local_c = local_8->field_02AD;
   if (local_c == 0) {
     local_c = STAllPlayersC::GetObjPtr
-                        (DAT_007fa174,CONCAT31((int3)(uVar7 >> 8),local_8->field_02A3),uVar7,CASE_1)
-    ;
+                        (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar7 >> 8),local_8->field_02A3),
+                         uVar7,CASE_1);
   }
   if (local_c != 0) {
     this_00->field_0277 = (int)*(short *)(local_c + 0x41);

@@ -15,7 +15,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   bool bVar5;
   int iVar6;
   STT3DSprC *pSVar7;
-  byte *pbVar8;
+  char *pcVar8;
   undefined3 extraout_var;
   int iVar9;
   int iVar10;
@@ -57,8 +57,8 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
       iVar10 = *(int *)&this_00->field_0x245 + iVar6;
-      if (((((iVar10 < DAT_007fb240) && (-1 < iVar10)) &&
-           (iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < DAT_007fb242)) &&
+      if (((((iVar10 < SHORT_007fb240) && (-1 < iVar10)) &&
+           (iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < SHORT_007fb242)) &&
           ((-1 < iVar10 && (-1 < *(int *)&this_00->field_0x24d)))) &&
          (*(int *)&this_00->field_0x24d < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
@@ -71,12 +71,12 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
            (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 == (STT3DSprC *)0x0))
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
-        pbVar8 = (byte *)thunk_FUN_0057f3a0(this_00,local_c,0);
-        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
+        pcVar8 = (char *)thunk_FUN_0057f3a0(this_00,local_c,0);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pcVar8,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
-        pbVar8 = (byte *)thunk_FUN_0057f3a0(this_00,local_c,1);
-        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
+        pcVar8 = (char *)thunk_FUN_0057f3a0(this_00,local_c,1);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pcVar8,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
@@ -101,8 +101,8 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
       iVar10 = *(int *)&this_00->field_0x245 + iVar6;
-      if ((((iVar10 < DAT_007fb240) && (-1 < iVar10)) &&
-          (iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < DAT_007fb242)) &&
+      if ((((iVar10 < SHORT_007fb240) && (-1 < iVar10)) &&
+          (iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < SHORT_007fb242)) &&
          (((-1 < iVar10 && (-1 < *(int *)&this_00->field_0x24d)) &&
           (*(int *)&this_00->field_0x24d < 5)))) {
         if (this_00 == (STDcResourcC *)0x0) {
@@ -115,12 +115,12 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
            (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 == (STT3DSprC *)0x0))
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
-        pbVar8 = (byte *)thunk_FUN_0057f2e0(this_00,local_c,0);
-        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
+        pcVar8 = (char *)thunk_FUN_0057f2e0(this_00,local_c,0);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pcVar8,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
-        pbVar8 = (byte *)thunk_FUN_0057f2e0(this_00,local_c,1);
-        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
+        pcVar8 = (char *)thunk_FUN_0057f2e0(this_00,local_c,1);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pcVar8,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
@@ -147,8 +147,8 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       local_c = (&DAT_007cb0bc)[iVar6];
       local_10 = (&DAT_007cb0e0)[iVar6];
       iVar10 = local_c + *(int *)&this_00->field_0x245;
-      if ((((iVar10 < DAT_007fb240) && (-1 < iVar10)) &&
-          ((iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < DAT_007fb242 &&
+      if ((((iVar10 < SHORT_007fb240) && (-1 < iVar10)) &&
+          ((iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < SHORT_007fb242 &&
            ((-1 < iVar10 && (-1 < *(int *)&this_00->field_0x24d)))))) &&
          (*(int *)&this_00->field_0x24d < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
@@ -160,12 +160,12 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         if ((iVar6 < 0) ||
            (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 != (STT3DSprC *)0x0)) {
           bVar13 = 0x1d;
-          pbVar8 = (byte *)thunk_FUN_0057f470(this_00,iVar6,0);
-          iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
+          pcVar8 = (char *)thunk_FUN_0057f470(this_00,iVar6,0);
+          iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pcVar8,bVar13);
           if (iVar10 == 0) {
             bVar13 = 0x1d;
-            pbVar8 = (byte *)thunk_FUN_0057f470(this_00,iVar6,1);
-            iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
+            pcVar8 = (char *)thunk_FUN_0057f470(this_00,iVar6,1);
+            iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pcVar8,bVar13);
             if (iVar10 == 0) {
               STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
               thunk_FUN_004acef0(pSVar7,DAT_008073cc);
@@ -195,9 +195,9 @@ LAB_0057fc59:
   default:
     goto switchD_0057f734_caseD_df;
   case 0xe0:
-    if (((((*(int *)&local_18->field_0x245 < (int)DAT_007fb240) &&
+    if (((((*(int *)&local_18->field_0x245 < (int)SHORT_007fb240) &&
           (-1 < *(int *)&local_18->field_0x245)) &&
-         (*(int *)&local_18->field_0x249 < (int)DAT_007fb242)) &&
+         (*(int *)&local_18->field_0x249 < (int)SHORT_007fb242)) &&
         ((-1 < *(int *)&local_18->field_0x249 &&
          (iVar6 = *(int *)&local_18->field_0x24d, -1 < iVar6)))) &&
        ((iVar6 < 5 &&
@@ -207,13 +207,13 @@ LAB_0057fc59:
       sVar1 = *(short *)&this_00->field_0x245;
       sVar2 = *(short *)&this_00->field_0x24d;
       sVar3 = *(short *)&this_00->field_0x249;
-      if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
-         (((DAT_007fb242 <= sVar3 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))) {
+      if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
+         (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2)))) {
         iVar6 = 0;
       }
       else {
         iVar6 = *(int *)(DAT_007fb248 +
-                        ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
+                        ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                         (int)sVar1) * 8);
       }
       if (iVar6 == 0) {

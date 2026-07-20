@@ -20,11 +20,11 @@ undefined4 __fastcall FUN_005edc20(int *param_1)
     sVar2 = *(short *)((int)param_1 + 0x5d);
     sVar1 = *(short *)((int)param_1 + 0x5f) + -1;
     sVar3 = *(short *)((int)param_1 + 0x5b);
-    if (((((-1 < sVar3) && (sVar3 < DAT_007fb240)) && (-1 < sVar2)) &&
-        ((sVar2 < DAT_007fb242 && (-1 < sVar1)))) &&
-       ((sVar1 < DAT_007fb244 &&
+    if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
+        ((sVar2 < SHORT_007fb242 && (-1 < sVar1)))) &&
+       ((sVar1 < SHORT_007fb244 &&
         (this = *(int **)(DAT_007fb248 +
-                         ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar2 +
+                         ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
                          (int)sVar3) * 8), this != (int *)0x0)))) {
       iVar4 = (**(code **)(*this + 0x2c))();
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {

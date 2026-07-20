@@ -42,7 +42,7 @@ void FUN_006c7430(int *param_1)
                       (local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
-    if (*(int *)((int)param_1 + 0x72) == 0) {
+    if (*(byte **)((int)param_1 + 0x72) == (byte *)0x0) {
       FUN_006b4170(*(int *)((int)param_1 + 0x3a),*(int *)((int)param_1 + 0x3e),local_20,local_24,
                    local_28,local_2c,*(undefined1 *)((int)param_1 + 0x11));
     }
@@ -50,7 +50,7 @@ void FUN_006c7430(int *param_1)
       local_1c = &stack0xffffff7c;
       Library::DKW::WGR::FUN_006b55f0
                 (*(undefined4 **)((int)param_1 + 0x3a),*(int *)((int)param_1 + 0x3e),local_20,
-                 local_24,*(int *)((int)param_1 + 0x72),0,0,0,local_28,local_2c);
+                 local_24,*(byte **)((int)param_1 + 0x72),0,0,0,local_28,local_2c);
     }
     g_currentExceptionFrame = local_70.previous;
     ExceptionList = local_14;

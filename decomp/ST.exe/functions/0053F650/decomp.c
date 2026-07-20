@@ -27,8 +27,8 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
   if (iVar2 == 0) {
     local_8->field_0194 = param_1;
     if (param_1 == '\0') {
-      if ((DAT_00801688 != (CPanelTy *)0x0) && (DAT_00801688->field_023F == 1)) {
-        CPanelTy::ShiftControls(DAT_00801688,local_8->field_0195,1);
+      if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == 1)) {
+        CPanelTy::ShiftControls(g_cPanel_00801688,local_8->field_0195,1);
       }
       iVar2 = 0;
     }

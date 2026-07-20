@@ -32,7 +32,7 @@ undefined4 FUN_005ec9f0(int param_1)
       return local_c;
     }
     thunk_FUN_004ac610(this,'\x0e');
-    STT3DSprC::SetCurFase(this,'\x0e',*(undefined4 *)((int)local_8 + 0x2ca));
+    STT3DSprC::SetCurFase(this,'\x0e',*(uint *)((int)local_8 + 0x2ca));
     thunk_FUN_004ad3c0(this,(float)*(int *)((int)local_8 + 0x2be) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)local_8 + 0x2c2) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)local_8 + 0x2c6) * _DAT_007904f8 * _DAT_007904f0 +
@@ -44,7 +44,7 @@ undefined4 FUN_005ec9f0(int param_1)
     uVar2 = thunk_FUN_004ad650((int)this);
     *(undefined4 *)((int)local_8 + 0x2d6) = uVar2;
     if (*(char *)((int)local_8 + 0x235) == '\x01') {
-      STT3DSprC::LoadSequence(this,0xb,DAT_00806774,(byte *)s_forcef0_007aa008,0x1d);
+      STT3DSprC::LoadSequence(this,0xb,DAT_00806774,s_forcef0_007aa008,0x1d);
       thunk_FUN_004ad670(this,'\x0e');
       thunk_FUN_004ad150(this,'\v');
       thunk_FUN_004ac700(this,'\v');
@@ -56,13 +56,13 @@ undefined4 FUN_005ec9f0(int param_1)
   else {
     STT3DSprC::LoadSequence
               (this,8,DAT_00806774,
-               (byte *)(s_expl_bt0_007cdf30 + (uint)*(byte *)((int)local_8 + 0x2df) * 0x32),0x1d);
+               s_expl_bt0_007cdf30 + (uint)*(byte *)((int)local_8 + 0x2df) * 0x32,0x1d);
     STT3DSprC::LoadSequence
               (this,9,DAT_00806764,
-               (byte *)(s_expl_bbt0_007cdf3a + (uint)*(byte *)((int)local_8 + 0x2df) * 0x32),0x1d);
+               s_expl_bbt0_007cdf3a + (uint)*(byte *)((int)local_8 + 0x2df) * 0x32,0x1d);
     STT3DSprC::LoadSequence
               (this,10,DAT_00806774,
-               (byte *)(s_expmask3_007cdf44 + (uint)*(byte *)((int)local_8 + 0x2df) * 0x32),0x1d);
+               s_expmask3_007cdf44 + (uint)*(byte *)((int)local_8 + 0x2df) * 0x32,0x1d);
     thunk_FUN_004ac700(this,'\n');
     STT3DSprC::StartShow(this,10,*(undefined4 *)(DAT_00802a38 + 0xe4));
     thunk_FUN_004acf20(this,DAT_008032b8,0x10);

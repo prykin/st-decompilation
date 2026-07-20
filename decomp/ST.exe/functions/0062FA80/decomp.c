@@ -33,12 +33,12 @@ int __thiscall FUN_0062fa80(void *this,int param_1)
     sVar1 = *(short *)((int)this + 0x1d5);
     sVar2 = *(short *)((int)this + 0x1dd);
     sVar3 = *(short *)((int)this + 0x1d9);
-    if ((((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
-         ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))) ||
-        ((DAT_007fb244 <= sVar2 ||
+    if ((((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
+         ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) ||
+        ((SHORT_007fb244 <= sVar2 ||
          (*(int *)(DAT_007fb248 + 4 +
-                  ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar1) * 8
-                  ) == 0)))) &&
+                  ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1)
+                  * 8) == 0)))) &&
        (iVar7 = DumpClassC::WritePtr
                           ((short)*(undefined4 *)((int)this + 0x1d5),
                            (short)*(undefined4 *)((int)this + 0x1d9),

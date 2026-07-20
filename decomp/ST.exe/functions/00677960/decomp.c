@@ -9,7 +9,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
             short param_7,undefined *param_8,undefined4 param_9)
 
 {
-  int *this;
+  STFishC *this;
   code *pcVar1;
   int iVar2;
   undefined4 *puVar3;
@@ -42,7 +42,8 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
     return iVar2;
   }
   if (DAT_007fa15c == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x36b);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x36b);
   }
   uVar5 = *(int *)(DAT_007fa15c + 0xc) - 1;
   if (-1 < (int)uVar5) {
@@ -53,15 +54,15 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
       else {
         puVar3 = (undefined4 *)0x0;
       }
-      this = (int *)*puVar3;
-      if ((this != (int *)0x0) &&
-         ((local_10 = uVar5, param_1 == 0 ||
-          (iVar2 = (**(code **)(*this + 0x2c))(), param_1 == iVar2)))) {
+      this = (STFishC *)*puVar3;
+      if ((this != (STFishC *)0x0) &&
+         ((local_10 = uVar5, param_1 == 0 || (iVar2 = (*this->vtable->slot_2C)(), param_1 == iVar2))
+         )) {
         iVar2 = 1;
         local_18 = 1;
         if ((0 < param_5) &&
            (((0 < param_6 && (0 < param_7)) &&
-            ((thunk_FUN_004162b0(this,&local_6,&local_8,&local_a), local_6 < param_2 ||
+            ((STFishC::sub_004162B0(this,&local_6,&local_8,&local_a), local_6 < param_2 ||
              ((((local_8 < param_3 || (local_a < param_4)) ||
                ((int)param_2 + (int)param_5 <= (int)local_6)) ||
               (((int)param_3 + (int)param_6 <= (int)local_8 ||

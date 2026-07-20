@@ -14,7 +14,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
   undefined4 uVar6;
   uint uVar7;
   uint local_14;
-  void *local_10;
+  STFishC *local_10;
   short local_a;
   short local_8;
   short local_6;
@@ -30,7 +30,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
         FUN_006acc70(iVar1,uVar7,&local_14);
         if ((short)local_14 != -1) {
           FUN_006acc70(iVar4,local_14 & 0xffff,&local_10);
-          if (local_10 == (void *)0x0) {
+          if (local_10 == (STFishC *)0x0) {
             iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5221,0,0,
                                        &DAT_007a4ccc,s_STBoatC__CheckForReplenisher_NUL_007abbf4);
             if (iVar5 != 0) {
@@ -39,9 +39,10 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
               return uVar6;
             }
             RaiseInternalException
-                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5222);
+                      (-0x5001fffc,g_overwriteContext_007ED77C,
+                       s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5222);
           }
-          thunk_FUN_004162b0(local_10,&local_a,&local_8,&local_6);
+          STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
           iVar5 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                                (int)local_a,(int)local_8,(int)local_6);
           if (iVar5 < 7) {

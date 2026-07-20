@@ -11,14 +11,14 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
   short sVar3;
   code *pcVar4;
   undefined4 in_EAX;
-  void *this_00;
+  STGroupBoatC *this_00;
   int iVar5;
   undefined4 uVar6;
   STBoatC *pSVar7;
   
-  this_00 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
-                                       CONCAT22((short)((uint)in_EAX >> 0x10),this->field_0030));
-  if (this_00 == (void *)0x0) {
+  this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
+                               CONCAT22((short)((uint)in_EAX >> 0x10),this->field_0030));
+  if (this_00 == (STGroupBoatC *)0x0) {
     return 0xffffffff;
   }
   if (*(int *)&this->field_0xe8 == 1) {
@@ -33,7 +33,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
     }
     *(undefined4 *)&this->field_0xe8 = 0;
     thunk_FUN_004167a0((int)this);
-    *(undefined4 *)&this->field_0xfd = 1;
+    this->field_00FD = 1;
     thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
     return 1;
   }
@@ -41,20 +41,20 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
     sVar1 = this->field_0047;
     sVar2 = this->field_004B;
     sVar3 = this->field_0049;
-    if (((sVar1 < 0) || (((DAT_007fb240 <= sVar1 || (sVar3 < 0)) || (DAT_007fb242 <= sVar3)))) ||
-       ((sVar2 < 0 || (DAT_007fb244 <= sVar2)))) {
+    if (((sVar1 < 0) || (((SHORT_007fb240 <= sVar1 || (sVar3 < 0)) || (SHORT_007fb242 <= sVar3))))
+       || ((sVar2 < 0 || (SHORT_007fb244 <= sVar2)))) {
       pSVar7 = (STBoatC *)0x0;
     }
     else {
       pSVar7 = *(STBoatC **)
                 (DAT_007fb248 +
                 ((uint)(byte)this->field_008E +
-                ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar1) * 2)
-                * 4);
+                ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1) *
+                2) * 4);
     }
     if (pSVar7 == this) {
       thunk_FUN_004167a0((int)this);
-      *(undefined4 *)&this->field_0xfd = 1;
+      this->field_00FD = 1;
       thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
       return 1;
     }

@@ -392,7 +392,7 @@ LAB_005b0041:
                     FUN_006b5570((byte *)DAT_0080c4cb);
                   }
                   DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
-                                           ((int)pcVar8,PTR_s_OBJECTIVES_0079c074,0);
+                                           (pcVar8,PTR_s_OBJECTIVES_0079c074,0);
                   if (DAT_0080c4cb == (uint *)0x0) {
                     DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
                   }
@@ -406,7 +406,7 @@ LAB_005b0041:
                   if (puVar9 == (ushort *)0x0) {
                     local_10 = 0;
                   }
-                  cMf32::delete(this_00,(undefined4 *)pcVar8);
+                  cMf32::delete(this_00,pcVar8);
                 }
                 else {
                   local_10 = 0;
@@ -414,7 +414,7 @@ LAB_005b0041:
                 g_currentExceptionFrame = local_e8.previous;
                 if (local_10 == 0) goto LAB_005b01f3;
               }
-              Library::DKW::TBL::FUN_006b5aa0(this_01->field_1C9F,local_26c.cFileName);
+              Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_1C9F,local_26c.cFileName);
             }
           }
         }
@@ -662,9 +662,9 @@ LAB_005b01f3:
               } while (cVar1 != '\0');
               pbVar20 = (byte *)FUN_006b8240((char *)local_370,~uVar19 - 1);
 LAB_005b051b:
-              iVar6 = this_01->field_1C97;
+              puVar7 = (uint *)this_01->field_1C97;
 LAB_005b0523:
-              Library::DKW::TBL::FUN_006b5aa0(iVar6,(char *)pbVar20);
+              Library::DKW::TBL::FUN_006b5aa0(puVar7,(char *)pbVar20);
               pcVar15 = extraout_ECX_01;
             }
           }
@@ -691,13 +691,13 @@ LAB_005b0523:
                 iVar6 = iVar6 + -1;
               } while (iVar6 != 0);
               if ((byte)pcVar15 < 2) {
-                iVar6 = this_01->field_1C97;
+                puVar7 = (uint *)this_01->field_1C97;
                 pbVar20 = local_370;
                 goto LAB_005b0523;
               }
             }
           }
-          cMf32::delete(pcVar15,(undefined4 *)pcVar8);
+          cMf32::delete(pcVar15,pcVar8);
           g_currentExceptionFrame = local_12c.previous;
         }
         else {

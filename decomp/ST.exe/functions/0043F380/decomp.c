@@ -29,32 +29,32 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   if (local_8 < 0) {
     local_8 = 0;
   }
-  iVar6 = DAT_007fb240 + -1;
+  iVar6 = SHORT_007fb240 + -1;
   if (iVar6 < local_c) {
     local_c = iVar6;
   }
   if (_param_3 < 0) {
     _param_3 = 0;
   }
-  if (DAT_007fb242 + -1 < _param_4) {
-    _param_4 = DAT_007fb242 + -1;
+  if (SHORT_007fb242 + -1 < _param_4) {
+    _param_4 = SHORT_007fb242 + -1;
   }
   if (iVar3 < 0) {
     iVar3 = 0;
   }
-  if (DAT_007fb244 + -1 < _param_5) {
-    _param_5 = DAT_007fb244 + -1;
+  if (SHORT_007fb244 + -1 < _param_5) {
+    _param_5 = SHORT_007fb244 + -1;
   }
-  iVar6 = DAT_007fb240 * _param_3 + local_8 + (iVar3 + -1) * (int)DAT_007fb246;
+  iVar6 = SHORT_007fb240 * _param_3 + local_8 + (iVar3 + -1) * (int)SHORT_007fb246;
   if (iVar3 <= _param_5) {
     _param_5 = _param_5 - iVar3;
-    iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),DAT_007fb240);
+    iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),SHORT_007fb240);
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
     iVar5 = local_8;
     param_6 = 0;
     do {
-      iVar6 = iVar6 + DAT_007fb246;
+      iVar6 = iVar6 + SHORT_007fb246;
       local_10 = iVar6 - (short)iVar3;
       if (_param_3 <= _param_4) {
         iVar7 = (_param_4 - _param_3) + 1;
@@ -94,7 +94,7 @@ LAB_0043f4cd:
               }
               iVar8 = iVar8 + -1;
             } while (iVar8 != 0);
-            iVar3 = CONCAT22((short)((uint)iVar5 >> 0x10),DAT_007fb240);
+            iVar3 = CONCAT22((short)((uint)iVar5 >> 0x10),SHORT_007fb240);
             iVar8 = local_c;
             iVar5 = local_8;
           }

@@ -6,7 +6,7 @@ void __fastcall FUN_00604120(int param_1)
     FUN_006ae110(*(byte **)(param_1 + 0x215));
   }
   if (*(int *)(param_1 + 0x2b3) != 0) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x2b3));
+    FUN_006ab060((LPVOID *)(param_1 + 0x2b3));
   }
   return;
 }

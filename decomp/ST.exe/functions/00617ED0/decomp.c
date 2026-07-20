@@ -2,12 +2,12 @@
 void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
 
 {
-  void *pvVar1;
+  STFishC *pSVar1;
   uint *puVar2;
   int iVar3;
   undefined4 local_18;
   uint local_14;
-  void *local_10;
+  STFishC *local_10;
   undefined2 local_a;
   undefined2 local_8;
   undefined2 local_6;
@@ -24,11 +24,11 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
     if (0 < param_1) {
       do {
         iVar3 = FUN_006e62d0(DAT_00802a38,*param_2,(int *)&local_10);
-        pvVar1 = local_10;
+        pSVar1 = local_10;
         if (iVar3 != -4) {
-          thunk_FUN_004162b0(local_10,&local_a,&local_8,&local_6);
-          local_18 = *(undefined4 *)((int)pvVar1 + 0x18);
-          local_14 = (uint)*(ushort *)((int)pvVar1 + 0x32);
+          STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
+          local_18 = pSVar1->field_0018;
+          local_14 = (uint)*(ushort *)&pSVar1->field_0x32;
           Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x66),&local_18);
         }
         param_2 = param_2 + 1;

@@ -82,9 +82,9 @@ int __fastcall FUN_005f4fa0(void *param_1)
                 sVar6 = ((short)(iVar1 / 200) + sVar6) -
                         (short)((longlong)iVar1 * 0x51eb851f >> 0x3f);
               }
-              if ((((iVar5 < 0) || (DAT_007fb240 <= iVar5)) ||
+              if ((((iVar5 < 0) || (SHORT_007fb240 <= iVar5)) ||
                   ((*(int *)(pcVar9 + 6) < 0 ||
-                   (((int)DAT_007fb242 <= *(int *)(pcVar9 + 6) || (iVar1 < 0)))))) ||
+                   (((int)SHORT_007fb242 <= *(int *)(pcVar9 + 6) || (iVar1 < 0)))))) ||
                  (bVar4 = thunk_FUN_004961b0(local_18,local_14,sVar6), uVar7 = extraout_EDX,
                  CONCAT31(extraout_var,bVar4) == 0)) {
                 FUN_006e3210((int)DAT_00807598,

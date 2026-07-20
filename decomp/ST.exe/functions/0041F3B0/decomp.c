@@ -4,7 +4,8 @@ void __fastcall FUN_0041f3b0(int *param_1)
 {
   STT3DSprC *pSVar1;
   int iVar2;
-  int iVar3;
+  uint uVar3;
+  uint uVar4;
   int *unaff_EDI;
   
   iVar2 = *(int *)((int)param_1 + 0x221);
@@ -24,17 +25,17 @@ void __fastcall FUN_0041f3b0(int *param_1)
       iVar2 = thunk_FUN_004acd30((void *)((int)param_1 + 0x1d5),'\x01');
       *(int *)((int)param_1 + 0x225) = iVar2 + -1;
     }
-    iVar2 = (**(code **)(*param_1 + 0x7c))();
-    if (1 < iVar2) {
-      iVar2 = (iVar2 * *(int *)((int)param_1 + 0x225)) / 100;
+    uVar3 = (**(code **)(*param_1 + 0x7c))();
+    if (1 < (int)uVar3) {
+      uVar3 = (int)(uVar3 * *(int *)((int)param_1 + 0x225)) / 100;
     }
-    if (iVar2 == 0) {
-      iVar2 = 1;
+    if (uVar3 == 0) {
+      uVar3 = 1;
     }
     pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-    iVar3 = thunk_FUN_004ac910(pSVar1,'\x01');
-    if (iVar2 != iVar3) {
-      STT3DSprC::SetCurFase(pSVar1,'\x01',iVar2);
+    uVar4 = thunk_FUN_004ac910(pSVar1,'\x01');
+    if (uVar3 != uVar4) {
+      STT3DSprC::SetCurFase(pSVar1,'\x01',uVar3);
       STT3DSprC::ShowCurFase(pSVar1,'\x01');
     }
     iVar2 = param_1[8];
@@ -47,16 +48,16 @@ void __fastcall FUN_0041f3b0(int *param_1)
     }
     if (((iVar2 != -1) && (iVar2 = (**(code **)(*param_1 + 0xc))(), iVar2 == 3)) &&
        ((param_1[8] != 0x172 && (param_1[8] != 0x1a4)))) {
-      iVar2 = (**(code **)(*param_1 + 0xc4))();
-      if (1 < iVar2) {
-        iVar2 = (iVar2 * *(int *)((int)param_1 + 0x225)) / 100;
+      uVar3 = (**(code **)(*param_1 + 0xc4))();
+      if (1 < (int)uVar3) {
+        uVar3 = (int)(uVar3 * *(int *)((int)param_1 + 0x225)) / 100;
       }
-      if (iVar2 == 0) {
-        iVar2 = 1;
+      if (uVar3 == 0) {
+        uVar3 = 1;
       }
-      iVar3 = thunk_FUN_004ac910(pSVar1,'\x02');
-      if (iVar2 != iVar3) {
-        STT3DSprC::SetCurFase(pSVar1,'\x02',iVar2);
+      uVar4 = thunk_FUN_004ac910(pSVar1,'\x02');
+      if (uVar3 != uVar4) {
+        STT3DSprC::SetCurFase(pSVar1,'\x02',uVar3);
         STT3DSprC::ShowCurFase(pSVar1,'\x02');
       }
     }

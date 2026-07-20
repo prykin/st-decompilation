@@ -32,8 +32,9 @@ STGroupBoatC::InitWay(STGroupBoatC *this,int param_1,int param_2,int param_3,int
       do {
         FUN_006acc70(param_1,uVar6,&local_8);
         uVar3 = STAllPlayersC::GetObjPtr
-                          (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024)
-                           ,local_8,CASE_1);
+                          (g_sTAllPlayers_007FA174,
+                           CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8,
+                           CASE_1);
         *(undefined4 *)(uVar3 + 0xfd) = 0;
         uVar6 = uVar6 + 1;
       } while (uVar6 < *(uint *)(param_1 + 0xc));

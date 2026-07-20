@@ -9,7 +9,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
 {
   code *pcVar1;
   short sVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   STBHEShellC *this_00;
   int iVar4;
   int iVar5;
@@ -85,7 +85,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
     return 0;
   }
   if (uVar9 == 0x10f) {
-    local_20 = (byte *)thunk_FUN_005f5a90(local_14,(int *)&local_1c);
+    local_20 = thunk_FUN_005f5a90(local_14,(int *)&local_1c);
     STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_20,local_1c);
     FUN_006ab060(&local_20);
     g_currentExceptionFrame = local_6c.previous;
@@ -287,8 +287,8 @@ LAB_005f2d8b:
       }
       this_00->field_0104 = 4;
     }
-    pvVar3 = DAT_00802a88;
-    if (DAT_00802a88 != (void *)0x0) {
+    pVVar3 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar4 = this_00->field_009B;
       sVar2 = (short)(iVar4 >> 0x1f);
       if (iVar4 < 0) {
@@ -319,24 +319,23 @@ LAB_005f2d8b:
         iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
       }
-      if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-          (thunk_FUN_00558c00(DAT_00802a88,
-                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar5,
+      if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,
                               iVar4,&local_24,&local_28), local_18 < 0)) || (4 < local_18)) {
         bVar11 = true;
       }
       else {
-        if (((local_24 < 0) || (*(int *)((int)pvVar3 + 0x30) <= local_24)) ||
+        if (((local_24 < 0) || ((int)pVVar3->field_0030 <= local_24)) ||
            (((&DAT_0079aed0)[local_18] + local_28 < 0 ||
-            (*(int *)((int)pvVar3 + 0x34) <= (&DAT_0079aed0)[local_18] + local_28)))) {
+            ((int)pVVar3->field_0034 <= (&DAT_0079aed0)[local_18] + local_28)))) {
           bVar11 = false;
         }
         else {
           bVar11 = true;
         }
-        if ((bVar11) && (*(int *)((int)pvVar3 + 0x4c) != 0)) {
-          bVar11 = *(char *)(((&DAT_0079aed0)[local_18] + local_28) * *(int *)((int)pvVar3 + 0x30) +
-                             *(int *)((int)pvVar3 + 0x4c) + local_24) != '\0';
+        if ((bVar11) && (pVVar3->field_004C != 0)) {
+          bVar11 = *(char *)(((&DAT_0079aed0)[local_18] + local_28) * pVVar3->field_0030 +
+                             pVVar3->field_004C + local_24) != '\0';
         }
         else {
           bVar11 = true;

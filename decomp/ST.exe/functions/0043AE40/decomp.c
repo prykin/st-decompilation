@@ -1,10 +1,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::SetActivePanel */
+   STAllPlayersC::SetActivePanel
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0043AE40 -> 0043AAF0 @ 0043AFDF | 0043AE40 -> 0043AAF0 @ 0043B3A5 | 0043AE40 ->
+   0043AAF0 @ 0043B82D | 0043AE40 -> 0043AAF0 @ 0043BAA0 */
 
 void __thiscall
-STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int param_3)
+STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
 
 {
   int *piVar1;
@@ -13,7 +17,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
   byte bVar4;
   int iVar5;
   int iVar6;
-  void *pvVar7;
+  STFishC *pSVar7;
   undefined3 uVar8;
   undefined3 uVar11;
   uint uVar9;
@@ -27,7 +31,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
-  if (param_1 == 0) {
+  if (param_1 == (uint *)0x0) {
     iVar6 = (uint)DAT_0080874d * 0xa62;
     if (*(int *)((int)&DAT_007f5023 + iVar6) == 0) {
       if (param_2 == 0) {
@@ -42,11 +46,13 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       if (iVar6 != 0x3c) {
         if (iVar6 == 0x1ae) {
           if (param_3 == 1) {
-            pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
-                                       (uint)*(ushort *)(piVar1 + 2),CASE_3);
-            thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                               (undefined2 *)&local_8);
-            iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,
+            pSVar7 = (STFishC *)
+                     GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),
+                               CASE_3);
+            STFishC::sub_004162B0
+                      (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
+            ;
+            iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,
                                  DAT_00807414,DAT_00807418,DAT_0080741c);
             if (iVar5 != 1) {
               thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -73,8 +79,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       if (((param_3 == 1) &&
           (iVar6 = GetCamPoint(0x3c,CONCAT31(uVar11,(char)piVar1[1]),*(int *)((int)piVar1 + 10),
                                CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
-                               &local_c,&local_8,&param_1), iVar6 == 0)) &&
-         (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
+                               &local_c,&local_8,(uint *)&param_1), iVar6 == 0)) &&
+         (iVar6 = FUN_006eb230(DAT_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
@@ -108,8 +114,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
             iVar6 = GetCamPoint(0x3c,CONCAT31((int3)(uVar9 >> 8),
                                               *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)),
                                 *(int *)((int)&DAT_007f4f83 + iVar6 + 10),uVar9,&local_10,&local_c,
-                                &local_8,&param_1), iVar6 == 0)) &&
-           (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
+                                &local_8,(uint *)&param_1), iVar6 == 0)) &&
+           (iVar6 = FUN_006eb230(DAT_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                  DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
@@ -135,12 +141,13 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         return;
       }
       if (param_3 == 1) {
-        pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)iVar10 >> 8),
-                                                 *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)),
-                                   (uint)*(ushort *)((int)&DAT_007f4f83 + iVar6 + 8),CASE_3);
-        thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                           (undefined2 *)&local_8);
-        iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
+        pSVar7 = (STFishC *)
+                 GetObjPtr(this,CONCAT31((int3)((uint)iVar10 >> 8),
+                                         *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)),
+                           (uint)*(ushort *)((int)&DAT_007f4f83 + iVar6 + 8),CASE_3);
+        STFishC::sub_004162B0
+                  (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+        iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
                              DAT_00807418,DAT_0080741c);
         if (iVar5 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -159,7 +166,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
     iVar6 = 0;
     goto cf_common_exit_0043BB49;
   }
-  if (param_1 != 1) {
+  if (param_1 != (uint *)0x1) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1b2b,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__SetActivePanel_in_007a7b94);
     if (iVar5 == 0) {
@@ -195,8 +202,8 @@ LAB_0043aee4:
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
             iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar9 >> 8),(char)piVar1[1]),
                                 *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,
-                                &param_1), iVar6 == 0)) &&
-           (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
+                                (uint *)&param_1), iVar6 == 0)) &&
+           (iVar6 = FUN_006eb230(DAT_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                  DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
@@ -215,13 +222,13 @@ LAB_0043aee4:
         if (param_3 == 1) {
           SVar12 = CASE_4;
 LAB_0043b0f1:
-          pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
-                                     CONCAT22((short)((uint)param_3 >> 0x10),(short)piVar1[2]),
-                                     SVar12);
-          thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                             (undefined2 *)&local_8);
-          iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414
-                               ,DAT_00807418,DAT_0080741c);
+          pSVar7 = (STFishC *)
+                   GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
+                             CONCAT22((short)((uint)param_3 >> 0x10),(short)piVar1[2]),SVar12);
+          STFishC::sub_004162B0
+                    (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+          iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
+                               DAT_00807418,DAT_0080741c);
           if (iVar5 != 1) {
             thunk_FUN_004a8e00(local_10,local_c,local_8);
             thunk_FUN_004a8f20(1);
@@ -262,11 +269,12 @@ LAB_0043b0af:
       if (param_3 != 1) goto cf_common_exit_0043B294;
       SVar12 = CASE_5;
     }
-    pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
-                               (uint)*(ushort *)(piVar1 + 2),SVar12);
-    thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
-    ;
-    iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
+    pSVar7 = (STFishC *)
+             GetObjPtr(this,CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
+                       (uint)*(ushort *)(piVar1 + 2),SVar12);
+    STFishC::sub_004162B0
+              (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+    iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
                          DAT_00807418,DAT_0080741c);
     if (iVar5 != 1) {
       thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -288,9 +296,9 @@ cf_common_exit_0043B294:
       if (((param_3 == 1) &&
           (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
           iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar9 >> 8),(char)piVar1[1]),
-                              *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,&param_1)
-          , iVar6 == 0)) &&
-         (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
+                              *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,
+                              (uint *)&param_1), iVar6 == 0)) &&
+         (iVar6 = FUN_006eb230(DAT_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
@@ -312,11 +320,12 @@ cf_common_exit_0043B294:
       if (param_3 == 1) {
         SVar12 = CASE_4;
 LAB_0043b2fe:
-        pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),
-                                   (uint)*(ushort *)(piVar1 + 2),SVar12);
-        thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                           (undefined2 *)&local_8);
-        iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
+        pSVar7 = (STFishC *)
+                 GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),SVar12
+                          );
+        STFishC::sub_004162B0
+                  (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+        iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
                              DAT_00807418,DAT_0080741c);
 joined_r0x0043b5ec:
         if (iVar5 != 1) {
@@ -350,11 +359,11 @@ LAB_0043b4a2:
   }
   else if (iVar6 == 0x1a4) {
     if (param_3 == 1) {
-      pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),
-                                 CASE_5);
-      thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                         (undefined2 *)&local_8);
-      iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
+      pSVar7 = (STFishC *)
+               GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),CASE_5);
+      STFishC::sub_004162B0
+                (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+      iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
                            DAT_00807418,DAT_0080741c);
       goto joined_r0x0043b5ec;
     }
@@ -362,11 +371,12 @@ LAB_0043b4a2:
   else {
     if (iVar6 != 0x1b8) goto LAB_0043b4a2;
     if (param_3 == 1) {
-      pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2)
-                                 ,CASE_6);
-      thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                         (undefined2 *)&local_8);
-      iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
+      pSVar7 = (STFishC *)
+               GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),CASE_6)
+      ;
+      STFishC::sub_004162B0
+                (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+      iVar5 = FUN_006eb230(DAT_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
                            DAT_00807418,DAT_0080741c);
       if (iVar5 != 1) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);

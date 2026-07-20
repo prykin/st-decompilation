@@ -51,8 +51,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
   undefined4 local_38;
   short local_34;
   uint local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
+  int local_2c;
+  int local_28;
   int local_24;
   undefined4 *local_20;
   int local_1c;
@@ -84,13 +84,13 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
     *(short *)puVar1 = sVar16;
     this->field_058C = sVar18;
     this->field_058E = param_1;
-    if (((((sVar16 < 0) || (DAT_007fb240 <= sVar16)) || (sVar17 < 0)) ||
-        ((DAT_007fb242 <= sVar17 || (sVar18 < 0)))) || (DAT_007fb244 <= sVar18)) {
+    if (((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) || (sVar17 < 0)) ||
+        ((SHORT_007fb242 <= sVar17 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
       local_c = (int *)0x0;
     }
     else {
       local_c = *(int **)(DAT_007fb248 +
-                         ((int)sVar17 * (int)DAT_007fb240 + (int)DAT_007fb246 * (int)sVar18 +
+                         ((int)sVar17 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar18 +
                          (int)sVar16) * 8);
     }
     if ((local_c == (int *)0x0) || (local_c[6] != param_1)) {
@@ -115,7 +115,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
     if (iVar9 == -2) {
       return 0;
     }
-    thunk_FUN_00492390((int *)this);
+    sub_00492390(this);
     pSVar10 = (STBoatC *)CONCAT22(extraout_var_00,param_1._2_2_);
     if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
        (this->field_005F != param_1._2_2_)) {
@@ -126,8 +126,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
         local_8 = (short)local_14;
         sVar16 = (short)local_10;
       }
-      thunk_FUN_00481520(this,(int)local_6,(int)local_8,(int)sVar16);
-      thunk_FUN_00460260(this,0);
+      sub_00481520(this,(int)local_6,(int)local_8,(int)sVar16);
+      sub_00460260(this,0);
       goto cf_common_exit_0047405D;
     }
     this->field_0596 = 1;
@@ -135,25 +135,25 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
   }
   uVar13 = (undefined2)((uint)pSVar10 >> 0x10);
   if (this->field_0596 == 0) {
-    iVar9 = thunk_FUN_00460260(this,2);
+    iVar9 = sub_00460260(this,2);
     uVar3 = extraout_var_09;
     uVar13 = extraout_var_01;
     switch(iVar9) {
     case 0:
     case 1:
     case 3:
-      thunk_FUN_004602b0((int *)this);
+      sub_004602B0(this);
       sVar16 = *(short *)&this->field_0x588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
-      if ((((sVar16 < 0) || (DAT_007fb240 <= sVar16)) ||
-          ((sVar18 < 0 || ((DAT_007fb242 <= sVar18 || (sVar17 < 0)))))) || (DAT_007fb244 <= sVar17))
-      {
+      if ((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) ||
+          ((sVar18 < 0 || ((SHORT_007fb242 <= sVar18 || (sVar17 < 0)))))) ||
+         (SHORT_007fb244 <= sVar17)) {
         local_c = (int *)0x0;
       }
       else {
         local_c = *(int **)(DAT_007fb248 +
-                           ((int)sVar17 * (int)DAT_007fb246 + (int)sVar18 * (int)DAT_007fb240 +
+                           ((int)sVar17 * (int)SHORT_007fb246 + (int)sVar18 * (int)SHORT_007fb240 +
                            (int)sVar16) * 8);
       }
       if ((((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
@@ -196,7 +196,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
         iVar9 = (*pcVar2)();
         return iVar9;
       }
-      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2e03);
+      RaiseInternalException
+                (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2e03);
       return 0xffff;
     }
   }
@@ -212,13 +213,13 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       sVar16 = *(short *)&this->field_0x588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
-      if (((((sVar16 < 0) || (DAT_007fb240 <= sVar16)) || (sVar18 < 0)) ||
-          ((DAT_007fb242 <= sVar18 || (sVar17 < 0)))) || (DAT_007fb244 <= sVar17)) {
+      if (((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) || (sVar18 < 0)) ||
+          ((SHORT_007fb242 <= sVar18 || (sVar17 < 0)))) || (SHORT_007fb244 <= sVar17)) {
         local_c = (int *)0x0;
       }
       else {
         local_c = *(int **)(DAT_007fb248 +
-                           ((int)sVar17 * (int)DAT_007fb246 + (int)sVar18 * (int)DAT_007fb240 +
+                           ((int)sVar17 * (int)SHORT_007fb246 + (int)sVar18 * (int)SHORT_007fb240 +
                            (int)sVar16) * 8);
       }
       if (((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
@@ -228,7 +229,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       iVar9 = (**(code **)(*local_c + 0xa4))();
       if ((iVar9 == 1) || (iVar9 = (**(code **)(*local_c + 0xc0))(), iVar9 == 1)) {
 cf_common_exit_004743A5:
-        thunk_FUN_00492420((int *)this);
+        sub_00492420(this);
         return 0;
       }
       thunk_FUN_004162f0(local_c,(undefined2 *)&this->field_0x588,&this->field_058A,
@@ -252,8 +253,8 @@ cf_common_exit_004743A5:
           iVar11 = (int)local_6;
         }
 LAB_004736e2:
-        thunk_FUN_00481520(this,iVar11,iVar9,iVar5);
-        thunk_FUN_00460260(this,0);
+        sub_00481520(this,iVar11,iVar9,iVar5);
+        sub_00460260(this,0);
         return 2;
       }
       uVar14 = (**(code **)(*local_c + 0xa8))(this->field_0018);
@@ -284,13 +285,13 @@ LAB_004736e2:
     sVar16 = *(short *)&this->field_0x588;
     sVar17 = this->field_058C;
     sVar18 = this->field_058A;
-    if (((((sVar16 < 0) || (DAT_007fb240 <= sVar16)) || (sVar18 < 0)) ||
-        ((DAT_007fb242 <= sVar18 || (sVar17 < 0)))) || (DAT_007fb244 <= sVar17)) {
+    if (((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) || (sVar18 < 0)) ||
+        ((SHORT_007fb242 <= sVar18 || (sVar17 < 0)))) || (SHORT_007fb244 <= sVar17)) {
       local_c = (int *)0x0;
     }
     else {
       local_c = *(int **)(DAT_007fb248 +
-                         ((int)sVar17 * (int)DAT_007fb246 + (int)sVar18 * (int)DAT_007fb240 +
+                         ((int)sVar17 * (int)SHORT_007fb246 + (int)sVar18 * (int)SHORT_007fb240 +
                          (int)sVar16) * 8);
     }
     if (((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
@@ -299,7 +300,7 @@ LAB_004736e2:
     }
     iVar9 = (**(code **)(*local_c + 0xa4))();
     if ((iVar9 == 1) || (iVar9 = (**(code **)(*local_c + 0xc0))(), iVar9 == 1)) {
-      thunk_FUN_00492420((int *)this);
+      sub_00492420(this);
       iVar9 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar9 != 0);
     }
@@ -312,14 +313,14 @@ cf_common_exit_0047405D:
       sVar16 = *(short *)&this->field_0x588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
-      if ((((sVar16 < 0) || (DAT_007fb240 <= sVar16)) ||
-          ((sVar18 < 0 || ((DAT_007fb242 <= sVar18 || (sVar17 < 0)))))) || (DAT_007fb244 <= sVar17))
-      {
+      if ((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) ||
+          ((sVar18 < 0 || ((SHORT_007fb242 <= sVar18 || (sVar17 < 0)))))) ||
+         (SHORT_007fb244 <= sVar17)) {
         iVar9 = 0;
       }
       else {
         iVar9 = *(int *)(DAT_007fb248 +
-                        ((int)sVar17 * (int)DAT_007fb246 + (int)sVar18 * (int)DAT_007fb240 +
+                        ((int)sVar17 * (int)SHORT_007fb246 + (int)sVar18 * (int)SHORT_007fb240 +
                         (int)sVar16) * 8);
       }
       FUN_006ea3e0((void *)this->field_0211,this->field_01ED,*(int *)(iVar9 + 0x1ed));
@@ -337,8 +338,8 @@ cf_common_exit_0047405D:
       uVar13 = extraout_var_05;
     }
     if (this->field_059A == 1) {
-      uVar6 = thunk_FUN_004176c0(this,*(short *)&this->field_0x59e);
-      uVar6 = thunk_FUN_00417910(this,(short)uVar6);
+      uVar6 = sub_004176C0(this,*(short *)&this->field_0x59e);
+      uVar6 = sub_00417910(this,(short)uVar6);
       if (uVar6 == 0xffffffff) {
         iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2e7d,0,0,&DAT_007a4ccc,
                                    s_STBoatC__LoadObj_LOADOBJ_LOAD_sl_007aae10);
@@ -357,15 +358,16 @@ cf_common_exit_0047405D:
       }
     }
     if (this->field_059A == 2) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         *(short *)&this->field_0x588 * 0xc9 + 100,this->field_058A * 0xc9 + 100,
-                         this->field_058C * 200 + 100,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 *(short *)&this->field_0x588 * 0xc9 + 100,this->field_058A * 0xc9 + 100,
+                 this->field_058C * 200 + 100,this->field_0061);
       this->field_059A = 3;
       uVar3 = extraout_var_13;
       uVar13 = extraout_var_07;
     }
     if (this->field_059A == 3) {
-      local_24 = thunk_FUN_00415ed0(this,&local_2c,&local_28);
+      local_24 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_2c,&local_28);
       uVar6 = CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x2bf);
       local_1c = 0;
       uVar3 = extraout_var_14;
@@ -420,7 +422,7 @@ cf_common_exit_0047405D:
             iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
           }
           TraksClassTy::TraksCreate
-                    (DAT_00802a7c,1,2,7,
+                    (g_traksClass_00802A7C,1,2,7,
                      (uVar6 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
                      iVar5 + -3,iVar9,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar11,sVar22,bVar23
                     );
@@ -449,13 +451,14 @@ cf_common_exit_0047405D:
       sVar16 = *(short *)&this->field_0x588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
-      if (((sVar16 < 0) || (((DAT_007fb240 <= sVar16 || (sVar18 < 0)) || (DAT_007fb242 <= sVar18))))
-         || ((sVar17 < 0 || (DAT_007fb244 <= sVar17)))) {
+      if (((sVar16 < 0) ||
+          (((SHORT_007fb240 <= sVar16 || (sVar18 < 0)) || (SHORT_007fb242 <= sVar18)))) ||
+         ((sVar17 < 0 || (SHORT_007fb244 <= sVar17)))) {
         local_c = (int *)0x0;
       }
       else {
         local_c = *(int **)(DAT_007fb248 +
-                           ((int)sVar17 * (int)DAT_007fb246 + (int)sVar18 * (int)DAT_007fb240 +
+                           ((int)sVar17 * (int)SHORT_007fb246 + (int)sVar18 * (int)SHORT_007fb240 +
                            (int)sVar16) * 8);
       }
       if (((local_c != (int *)0x0) && (local_c[6] == this->field_058E)) &&
@@ -472,7 +475,7 @@ cf_common_exit_0047405D:
         iVar9 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar9 != 0);
       }
-      thunk_FUN_00492420((int *)this);
+      sub_00492420(this);
       local_30 = *(uint *)((int)DAT_00802a38 + 0xe4);
       CmdToObj(this,CASE_3,&local_30);
 switchD_004734db_caseD_2:
@@ -491,8 +494,8 @@ switchD_004734db_caseD_2:
       this->field_059A = 6;
     }
     if (this->field_059A == 6) {
-      uVar6 = thunk_FUN_004176c0(this,*(short *)&this->field_0x59e);
-      uVar6 = thunk_FUN_00417910(this,(short)uVar6);
+      uVar6 = sub_004176C0(this,*(short *)&this->field_0x59e);
+      uVar6 = sub_00417910(this,(short)uVar6);
       if (uVar6 == 0xffffffff) {
         iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2ed4,0,0,&DAT_007a4ccc,
                                    s_STBoatC__LoadObj_LOADOBJ_LOAD_sl_007aada0);
@@ -509,13 +512,14 @@ switchD_004734db_caseD_2:
       }
     }
     if (this->field_059A == 7) {
-      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                         this->field_005B * 0xc9 + 100,this->field_005D * 0xc9 + 100,
-                         this->field_005F * 200 + 100,this->field_0x61);
+      STJellyGunC::sub_00415B30
+                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                 this->field_005B * 0xc9 + 100,this->field_005D * 0xc9 + 100,
+                 this->field_005F * 200 + 100,this->field_0061);
       this->field_059A = 8;
     }
     if (this->field_059A == 8) {
-      local_24 = thunk_FUN_00415ed0(this,&local_28,&local_2c);
+      local_24 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_28,&local_2c);
       local_1c = 0;
       if (this->field_0x2bf != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
@@ -568,7 +572,7 @@ switchD_004734db_caseD_2:
             iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
           }
           TraksClassTy::TraksCreate
-                    (DAT_00802a7c,1,2,7,
+                    (g_traksClass_00802A7C,1,2,7,
                      (uVar6 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
                      iVar5 + -3,iVar9,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar11,sVar22,bVar23
                     );

@@ -60,17 +60,17 @@ void FUN_005c7800(void)
   Library::DKW::DDX::FUN_006c4630
             (DAT_0080759c,*(int **)(DAT_0080759c + 0x44),(undefined4 *)&stack0xffffffb8);
   DAT_00811758 = Library::DKW::DDX::FUN_006c4880
-                           (DAT_0080759c,0,0,DAT_00806730,DAT_00806734,DAT_00806738);
+                           (DAT_0080759c,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
   Library::DKW::DDX::FUN_006c44e0(DAT_0080759c,(undefined4 *)&stack0xffffffb8);
-  FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   FUN_006b4640(DAT_0080759c,0,0,DAT_00811758,(uint *)0x0);
   Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
-  if ((undefined4 *)this_01->field_1F3F != (undefined4 *)0x0) {
-    cMf32::delete(this,(undefined4 *)this_01->field_1F3F);
+  if ((cMf32 *)this_01->field_1F3F != (cMf32 *)0x0) {
+    cMf32::delete(this,(cMf32 *)this_01->field_1F3F);
   }
   if (DAT_0080877e == '\0') goto LAB_005c7ae0;
-  if ((DAT_008067a0 != '\0') && (DAT_00811764 != (undefined4 *)0x0)) {
-    FUN_006b6160(&this_01->field_0x1a5f,(int)(DAT_00811764 + 6));
+  if ((DAT_008067a0 != '\0') && (g_int_00811764 != (int *)0x0)) {
+    FUN_006b6160(&this_01->field_0x1a5f,(int)(g_int_00811764 + 6));
     this_01->field_1A7F = 0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01->field_0x1a5f);
   }
@@ -172,17 +172,17 @@ LAB_005c7ae0:
   }
   _DAT_0085400e = &LAB_00404c64;
   wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
-  DAT_00853ff8 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+  DAT_00853ff8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   DAT_00853ffc._1_3_ = SUB43(DAT_00853ff8,0);
   uRam00854000 = (undefined1)((uint)DAT_00853ff8 >> 0x18);
-  if (DAT_00853ff8 != (undefined4 *)0x0) {
+  if (DAT_00853ff8 != (cMf32 *)0x0) {
     thunk_FUN_0069ffb0(local_5a80);
     DAT_00811754 = timeGetTime();
     cVar2 = this_01->field_1E26;
     if ((((cVar2 != '\x06') && (cVar2 != '\x01')) && (cVar2 != '\x02')) && (DAT_0080877e != '\0')) {
-      FUN_00715360(DAT_00811764,0,'\x1e',(char *)&DAT_00853de0,0x232,1,0xffffffff);
+      FUN_00715360(g_int_00811764,0,'\x1e',(char *)&DAT_00853de0,0x232,1,0xffffffff);
       local_8c.jumpBuffer[0xf] = 0x5c7c09;
-      FUN_00715360(DAT_00811764,0,' ',(char *)&this_01->field_1F53,0xd,1,0xffffffff);
+      FUN_00715360(g_int_00811764,0,' ',(char *)&this_01->field_1F53,0xd,1,0xffffffff);
     }
     thunk_FUN_006952b0(local_5a80,(byte *)&DAT_00853de0,(byte *)&this_01->field_1F53);
     thunk_FUN_006a00b0((int)local_5a80);
@@ -194,14 +194,14 @@ LAB_005c7ae0:
   DAT_008087b6 = 0;
   if (this_01->field_1F3F != 0) {
     if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
-      FUN_006ab060((undefined4 *)(DAT_0081176c + 0x2f4));
+      FUN_006ab060((LPVOID *)(DAT_0081176c + 0x2f4));
     }
-    puVar6 = Library::Ourlib::MFIMG::mfImgLoad(this_01->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0)
-    ;
+    puVar6 = Library::Ourlib::MFIMG::mfImgLoad
+                       ((cMf32 *)this_01->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
     *(ushort **)(DAT_0081176c + 0x2f4) = puVar6;
-    if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
-      FUN_006c7f90(*(int *)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0)
-      ;
+    if (*(ushort **)(DAT_0081176c + 0x2f4) != (ushort *)0x0) {
+      FUN_006c7f90(*(ushort **)(DAT_0081176c + 0x2f4),(byte *)0x0,
+                   *(HPALETTE *)(DAT_0080759c + 0x4b4),0);
     }
     local_94 = DAT_0080995c;
     puVar5 = &DAT_00809960;
@@ -235,7 +235,7 @@ LAB_005c7ae0:
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
     DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad
-                             (this_01->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
+                             ((cMf32 *)this_01->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
@@ -243,7 +243,7 @@ LAB_005c7ae0:
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
     DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
-                             (this_01->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
+                             ((cMf32 *)this_01->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
@@ -281,8 +281,8 @@ LAB_005c7ae0:
       }
     }
     this_01->field_1F47 = 1;
-    if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (DAT_00811764 != (undefined4 *)0x0)) {
-      FUN_006b6160(&this_01->field_0x1a5f,(int)(DAT_00811764 + 6));
+    if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != (int *)0x0)) {
+      FUN_006b6160(&this_01->field_0x1a5f,(int)(g_int_00811764 + 6));
       this_01->field_1A7F = 1;
       this_01->field_1A80 = DAT_008087c4._2_1_;
       this_01->field_1A81 = (char)(DAT_008087c2 >> 1);

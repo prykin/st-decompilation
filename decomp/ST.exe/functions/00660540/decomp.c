@@ -5,7 +5,7 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
 
 {
   char *pcVar1;
-  int *piVar2;
+  STGroupBoatC *pSVar2;
   int iVar4;
   int extraout_EDX;
   undefined4 *puVar5;
@@ -38,12 +38,11 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
     uVar3 = (undefined2)((uint)pcVar1 >> 0x10);
     iVar4 = extraout_EDX;
   }
-  if ((*(short *)((int)this + 0x7d) != -2) && (DAT_007fa174 != 0)) {
-    piVar2 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar4 >> 8),
-                                                *(undefined1 *)((int)this + 0x24)),
-                                       CONCAT22(uVar3,*(short *)((int)this + 0x7d)));
-    if (piVar2 != (int *)0x0) {
-      (**(code **)(*piVar2 + 8))(9,&local_24);
+  if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    pSVar2 = thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar4 >> 8),*(undefined1 *)((int)this + 0x24))
+                                ,CONCAT22(uVar3,*(short *)((int)this + 0x7d)));
+    if (pSVar2 != (STGroupBoatC *)0x0) {
+      (*pSVar2->vtable->vfunc_08)(9,&local_24);
       return 0;
     }
   }

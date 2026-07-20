@@ -47,7 +47,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   local_30 = 0;
   DAT_007f4d84 = 0;
   DAT_007f4d78 = 0;
-  DAT_007f4d6c = (undefined4 *)0x0;
+  DAT_007f4d6c = (short *)0x0;
   ExceptionList = &local_14;
   puVar2 = &stack0xffffff3c;
   if (param_4 < 1) goto cf_common_join_004286D0;
@@ -339,12 +339,12 @@ cf_common_join_004286D0:
       if (0 < param_6[7]) {
         puVar11 = (undefined4 *)(param_6[8] + 8);
         do {
-          FUN_006a5e90((undefined4 *)*puVar11);
+          FUN_006a5e90((short *)*puVar11);
           puVar11 = puVar11 + 3;
           iVar4 = iVar4 + 1;
         } while (iVar4 < param_6[7]);
       }
-      FUN_006ab060(param_6 + 8);
+      FUN_006ab060((LPVOID *)(param_6 + 8));
     }
     *param_6 = DAT_007f4d7c;
     param_6[1] = DAT_007f4d80;
@@ -362,14 +362,15 @@ cf_common_join_004286D0:
     if (0 < DAT_007f4d78) {
       iVar3 = 0;
       do {
-        FUN_006a5e90(*(undefined4 **)(iVar3 + 8 + (int)DAT_007f4d6c));
+        FUN_006a5e90(*(short **)(iVar3 + 8 + (int)DAT_007f4d6c));
         iVar4 = iVar4 + 1;
         iVar3 = iVar3 + 0xc;
       } while (iVar4 < DAT_007f4d78);
     }
     FUN_006a5e90(DAT_007f4d6c);
     iVar4 = local_30;
-    RaiseInternalException(local_30,DAT_007ed77c,s_E____titans_wlad_Td3dshad_cpp_007a5208,0x78f);
+    RaiseInternalException
+              (local_30,g_overwriteContext_007ED77C,s_E____titans_wlad_Td3dshad_cpp_007a5208,0x78f);
   }
   ExceptionList = local_14;
   return iVar4;

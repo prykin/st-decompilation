@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_0060a4b0(int param_1)
 {
   int iVar1;
   short sVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -25,13 +25,13 @@ undefined4 __fastcall FUN_0060a4b0(int param_1)
     local_10 = param_1;
     if (0 < iVar1) {
       do {
-        pvVar3 = DAT_00802a88;
+        pVVar3 = g_visibleClass_00802A88;
         iVar6 = *(int *)(param_1 + 0x234);
         if ((((local_14 < *(uint *)(iVar6 + 0xc)) &&
              (iVar6 = *(int *)(iVar6 + 8) * local_14 + *(int *)(iVar6 + 0x1c), iVar6 != 0)) &&
             (-1 < *(int *)(iVar6 + 0x3c))) && (*(int *)(iVar6 + 4) != -1)) {
           local_c = 1;
-          if (DAT_00802a88 != (void *)0x0) {
+          if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
             iVar5 = *(int *)(iVar6 + 0x14);
             sVar2 = (short)(iVar5 >> 0x1f);
             if (iVar5 < 0) {
@@ -62,16 +62,15 @@ undefined4 __fastcall FUN_0060a4b0(int param_1)
               iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
                                   (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
             }
-            if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-                ((thunk_FUN_00558c00(DAT_00802a88,
-                                     *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c)
-                                     ,iVar4,iVar5,&local_1c,&local_20), local_8 < 0 ||
+            if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+                ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                     iVar4,iVar5,&local_1c,&local_20), local_8 < 0 ||
                  ((4 < local_8 || (local_1c < 0)))))) ||
-               ((*(int *)((int)pvVar3 + 0x30) <= local_1c ||
+               (((int)pVVar3->field_0030 <= local_1c ||
                 ((((iVar5 = (&DAT_0079aed0)[local_8] + local_20, iVar5 < 0 ||
-                   (*(int *)((int)pvVar3 + 0x34) <= iVar5)) || (*(int *)((int)pvVar3 + 0x4c) == 0))
-                 || (*(char *)(iVar5 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) +
-                              local_1c) != '\0')))))) {
+                   ((int)pVVar3->field_0034 <= iVar5)) || (pVVar3->field_004C == 0)) ||
+                 (*(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_1c) != '\0')))))
+               ) {
               if (*(int *)(iVar6 + 4) == 0) {
                 FUN_006eaaa0(DAT_00807598,*(uint *)(iVar6 + 0x3c),0);
                 *(undefined4 *)(iVar6 + 4) = 1;

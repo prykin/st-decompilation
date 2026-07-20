@@ -1,5 +1,8 @@
 
-undefined4 FUN_006b0520(int param_1,int param_2,int param_3,int param_4)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 006B0A20 -> 006B0520 @ 006B0B2C */
+
+undefined4 FUN_006b0520(int param_1,int param_2,UINT param_3,int param_4)
 
 {
   undefined4 *puVar1;

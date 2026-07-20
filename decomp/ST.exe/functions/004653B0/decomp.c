@@ -26,7 +26,7 @@ int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1,int param_2,int pa
     if (this->field_082E != 3) {
 LAB_00465581:
       this->field_00B7 = 0;
-      iVar3 = thunk_FUN_00460360((int *)this);
+      iVar3 = sub_00460360(this);
       return iVar3;
     }
     if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
@@ -44,13 +44,14 @@ LAB_00465581:
                          CONCAT22(uVar8,this->field_0045),*(undefined2 *)&this->field_0x34,
                          CONCAT22(uVar8,*(undefined2 *)&this->field_0x36),
                          *(undefined2 *)&this->field_0x38);
-      uVar4 = thunk_FUN_004176c0(this,sVar2);
-      uVar4 = thunk_FUN_00417910(this,(short)uVar4);
+      uVar4 = sub_004176C0(this,sVar2);
+      uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
-          thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                             *(short *)&this->field_0x34,*(short *)&this->field_0x36,
-                             *(short *)&this->field_0x38,this->field_0x61);
+          STJellyGunC::sub_00415B30
+                    ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                     *(short *)&this->field_0x34,*(short *)&this->field_0x36,
+                     *(short *)&this->field_0x38,this->field_0061);
           *(undefined4 *)&this->field_0x7a = 0;
           *(undefined4 *)&this->field_0x832 = 1;
         }
@@ -70,7 +71,7 @@ LAB_00465581:
     if (*(int *)&this->field_0x832 != 1) {
       return 2;
     }
-    iVar3 = thunk_FUN_00415ed0(this,&local_8,&param_1);
+    iVar3 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar3 == -1) {
       iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b9e,0,0,&DAT_007a4ccc,
                                  s_STBoatC__BackAttack_LLMoveStep_W_007aa1e4);
@@ -85,7 +86,7 @@ LAB_00465581:
   }
   else {
     if (this->field_06F7 != CASE_15) {
-      iVar3 = thunk_FUN_00460360((int *)this);
+      iVar3 = sub_00460360(this);
       if (iVar3 != 0) {
         return iVar3;
       }
@@ -111,13 +112,14 @@ LAB_00465581:
                         (CONCAT22(uVar8,this->field_0041),
                          CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
                          CONCAT22(uVar8,this->field_0045),iVar6,iVar7,iVar3);
-      uVar4 = thunk_FUN_004176c0(this,sVar2);
-      uVar4 = thunk_FUN_00417910(this,(short)uVar4);
+      uVar4 = sub_004176C0(this,sVar2);
+      uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
-          thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                             this->field_0047 * 0xc9 + 100,this->field_0049 * 0xc9 + 100,
-                             this->field_004B * 200 + 100,this->field_0x61);
+          STJellyGunC::sub_00415B30
+                    ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                     this->field_0047 * 0xc9 + 100,this->field_0049 * 0xc9 + 100,
+                     this->field_004B * 200 + 100,this->field_0061);
           *(undefined4 *)&this->field_0x7a = 0;
           *(undefined4 *)&this->field_0x832 = 1;
         }
@@ -133,13 +135,14 @@ LAB_00465581:
       }
       iVar3 = 0x1bc6;
 cf_error_exit_00465763:
-      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar3);
+      RaiseInternalException
+                (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar3);
       return 0xffff;
     }
     if (*(int *)&this->field_0x832 != 1) {
       return 2;
     }
-    iVar3 = thunk_FUN_00415ed0(this,&local_8,&param_1);
+    iVar3 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar3 == -1) {
       iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bd7,0,0,&DAT_007a4ccc,
                                  s_STBoatC__BackAttack_LLMoveStep_D_007aa180);

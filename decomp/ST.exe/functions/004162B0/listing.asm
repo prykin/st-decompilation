@@ -1,4 +1,4 @@
-FUN_004162b0:
+STFishC::sub_004162B0:
 004162B0  55                        PUSH EBP
 004162B1  8B EC                     MOV EBP,ESP
 004162B3  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

@@ -9,7 +9,7 @@ undefined4 __cdecl FUN_00648a30(int param_1,char *param_2)
   char *pcVar5;
   char *pcVar6;
   
-  if ((((DAT_007fa174 == 0) || (param_1 < 0)) || (7 < param_1)) ||
+  if ((((g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) || (param_1 < 0)) || (7 < param_1)) ||
      (iVar2 = thunk_FUN_004357f0((char)param_1), iVar2 == 0)) {
     return 0;
   }

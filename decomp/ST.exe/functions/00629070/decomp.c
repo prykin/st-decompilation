@@ -13,7 +13,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   code *pcVar4;
   short sVar5;
   float fVar6;
-  void *pvVar7;
+  VisibleClassTy *pVVar7;
   STParticleC *pSVar8;
   int iVar9;
   ushort *puVar10;
@@ -179,8 +179,8 @@ LAB_00629242:
       FUN_006ea460(DAT_00807598,*puVar1,*(int *)&pSVar8->field_0x18);
     }
   }
-  pvVar7 = DAT_00802a88;
-  if (DAT_00802a88 != (void *)0x0) {
+  pVVar7 = g_visibleClass_00802A88;
+  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     iVar9 = pSVar8->field_004E;
     sVar5 = (short)(iVar9 >> 0x1f);
     if (iVar9 < 0) {
@@ -211,26 +211,23 @@ LAB_00629242:
       iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar5) -
                            (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-        (thunk_FUN_00558c00(DAT_00802a88,
-                            *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar11,
-                            iVar9,&local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14))
-    {
+    if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9
+                            ,&local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {
       bVar14 = true;
     }
     else {
-      if (((local_28 < 0) || (*(int *)((int)pvVar7 + 0x30) <= local_28)) ||
+      if (((local_28 < 0) || ((int)pVVar7->field_0030 <= local_28)) ||
          (((&DAT_0079aed0)[(int)local_14] + local_2c < 0 ||
-          (*(int *)((int)pvVar7 + 0x34) <= (&DAT_0079aed0)[(int)local_14] + local_2c)))) {
+          ((int)pVVar7->field_0034 <= (&DAT_0079aed0)[(int)local_14] + local_2c)))) {
         bVar14 = false;
       }
       else {
         bVar14 = true;
       }
-      if ((bVar14) && (*(int *)((int)pvVar7 + 0x4c) != 0)) {
-        bVar14 = *(char *)(((&DAT_0079aed0)[(int)local_14] + local_2c) *
-                           *(int *)((int)pvVar7 + 0x30) + *(int *)((int)pvVar7 + 0x4c) + local_28)
-                 != '\0';
+      if ((bVar14) && (pVVar7->field_004C != 0)) {
+        bVar14 = *(char *)(((&DAT_0079aed0)[(int)local_14] + local_2c) * pVVar7->field_0030 +
+                           pVVar7->field_004C + local_28) != '\0';
       }
       else {
         bVar14 = true;

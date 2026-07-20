@@ -2,9 +2,13 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 319 | 342 | 344 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0067DC20 parameter used as this of cMf32::RecMemFree @ 0067DDB2 | 0067DC20 parameter
+   used as this of cMf32::RecNameGetNext @ 0067DDBA */
 
-uint * __cdecl _CreateStgListByRoot(int param_1,int param_2,char *param_3,uint param_4)
+uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uint param_4)
 
 {
   char cVar1;
@@ -57,8 +61,9 @@ uint * __cdecl _CreateStgListByRoot(int param_1,int param_2,char *param_3,uint p
     RaiseInternalException(iVar6,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x158);
     return (uint *)0x0;
   }
-  if (param_1 == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x13f);
+  if (param_1 == (cMf32 *)0x0) {
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x13f);
   }
   local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   uVar7 = 0xffffffff;
@@ -84,8 +89,8 @@ uint * __cdecl _CreateStgListByRoot(int param_1,int param_2,char *param_3,uint p
     pcVar3 = pcVar3 + 1;
     pcVar10 = pcVar10 + 1;
   }
-  cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,local_2ec);
-  pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
+  cMf32::ToBeg(param_1,FUN_006f2d10,local_2ec);
+  pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
   while (pcVar3 != (char *)0x0) {
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar3,0,1);
     uVar7 = *(uint *)(local_8 + 0x85);
@@ -112,9 +117,9 @@ uint * __cdecl _CreateStgListByRoot(int param_1,int param_2,char *param_3,uint p
         local_58 = uVar7;
         Library::DKW::TBL::FUN_006ae1c0(local_c,(undefined4 *)local_e8);
       }
-      cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_8);
+      cMf32::RecMemFree(param_1,(uint *)&local_8);
     }
-    pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
+    pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
   }
   g_currentExceptionFrame = local_50.previous;
   return local_c;

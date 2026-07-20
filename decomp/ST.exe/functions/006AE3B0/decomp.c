@@ -53,7 +53,7 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
       uVar5 = FUN_006a6360(param_5,param_6,param_7,local_30,param_9,param_10);
       uVar5 = FUN_006a6320(uVar5);
       param_8 = 0;
-      local_18 = &DAT_007ed576;
+      local_18 = (ushort *)&SHORT_007ed576;
       local_14 = &DAT_007ed640;
       do {
         iVar11 = (int)(short)local_18[-3];
@@ -128,7 +128,7 @@ joined_r0x006ae66d:
         local_18 = local_18 + 4;
       } while ((int)local_14 < 0x7ed6a8);
       local_8 = local_8 + -1;
-      local_3c = (uint)(short)(&DAT_007ed576)[local_28 * 4];
+      local_3c = (uint)(&SHORT_007ed576)[local_28 * 4];
       puVar10 = local_2c + -2;
       *(short *)(local_2c + -3) = (short)local_1c;
       *(short *)((int)local_2c + -10) = (short)local_20;

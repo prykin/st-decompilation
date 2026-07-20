@@ -31,7 +31,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   undefined4 uVar20;
   InternalExceptionFrame local_a4;
   undefined4 local_60;
-  int local_5c;
+  uint local_5c;
   undefined4 local_58;
   undefined4 local_54;
   undefined1 local_50;
@@ -42,7 +42,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   int local_3c;
   byte *local_38;
   undefined4 local_34;
-  int local_30;
+  uint local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined1 local_24;
@@ -52,12 +52,12 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   int *local_14;
   char local_d;
   Global_sub_00526BA0_param_1Enum local_c;
-  int local_8;
+  uint local_8;
   
   local_8 = 0;
   local_44 = this;
   local_38 = (byte *)FUN_0070b3a0(this->field_0248,4);
-  if (DAT_007fa174 != 0) {
+  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
     iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -101,7 +101,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar20 = 3;
       iVar17 = -1;
       iVar3 = -3;
-      puVar7 = (uint *)FUN_006b0140(0x55f8,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x55f8,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar20);
       iVar17 = 0;
       iVar3 = thunk_FUN_006460c0(param_1);
@@ -112,33 +112,33 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
             ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
             if ((local_14 == (int *)0x0) || (local_18 == 0)) {
               if (iVar17 == 0) {
-                uVar20 = FUN_006b0140(0x565c,DAT_00807618);
+                uVar20 = FUN_006b0140(0x565c,HINSTANCE_00807618);
                 uVar16 = 2;
-                uVar8 = FUN_006b0140(0x564c,DAT_00807618);
+                uVar8 = FUN_006b0140(0x564c,HINSTANCE_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,s___d_d___d_s___d__s__007c3cdc,2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,uVar8,uVar16,uVar20);
               }
               else {
-                uVar20 = FUN_006b0140(0x565d,DAT_00807618);
+                uVar20 = FUN_006b0140(0x565d,HINSTANCE_00807618);
                 uVar16 = 2;
                 iVar3 = iVar17;
-                uVar8 = FUN_006b0140(0x564c,DAT_00807618);
+                uVar8 = FUN_006b0140(0x564c,HINSTANCE_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,s___d_d___d_s___d__d__s__007c3cf4,2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,uVar8,uVar16,iVar3,uVar20);
               }
             }
             else if (iVar17 == 0) {
-              uVar20 = FUN_006b0140(0x565c,DAT_00807618);
+              uVar20 = FUN_006b0140(0x565c,HINSTANCE_00807618);
               uVar16 = 2;
-              uVar8 = FUN_006b0140(0x564c,DAT_00807618);
+              uVar8 = FUN_006b0140(0x564c,HINSTANCE_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,s___d_d__d__d___d_s___d__s__007c3d10,2,local_c,local_14
                         ,local_18,(DAT_0080874e != '\x03') - 1 & 5,uVar8,uVar16,uVar20);
             }
             else {
-              uVar20 = FUN_006b0140(0x565d,DAT_00807618);
+              uVar20 = FUN_006b0140(0x565d,HINSTANCE_00807618);
               uVar16 = 2;
               iVar3 = iVar17;
-              uVar8 = FUN_006b0140(0x564c,DAT_00807618);
+              uVar8 = FUN_006b0140(0x564c,HINSTANCE_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,s___d_d__d__d___d_s___d__d__s__007c3d30,2,local_c,
                         local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,uVar8,uVar16,iVar3,uVar20
                        );
@@ -157,14 +157,14 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar20 = 3;
         iVar17 = -1;
         iVar3 = -3;
-        puVar7 = (uint *)FUN_006b0140(0x5657,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x5657,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar20);
         ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
         piVar12 = local_14;
         uVar5 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar3 = 1;
-        pHVar14 = DAT_00807618;
+        pHVar14 = HINSTANCE_00807618;
         UVar4 = thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
                                     ((int)&DAT_007bf67c + (int)local_14),'\0');
         puVar7 = (uint *)FUN_006b0140(UVar4,pHVar14);
@@ -190,9 +190,9 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar20 = 3;
         iVar18 = -1;
         iVar17 = -3;
-        puVar7 = (uint *)FUN_006b0140(0x55f7,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x55f7,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar17,iVar18,uVar20);
-        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 + -3,0x106,0x14);
+        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,iVar3);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         iVar3 = FUN_0070b3a0(this_00->field_0238,0);
@@ -208,7 +208,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_8 = local_8 + 0x14;
       }
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
-      uVar20 = FUN_006b0140(0x5658,DAT_00807618);
+      uVar20 = FUN_006b0140(0x5658,HINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c3cd8,uVar20);
       ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,-3,-1,3);
       iVar3 = *(int *)(&DAT_007d1fdc + param_1 * 4);
@@ -252,21 +252,21 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar5 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar17 = -1;
       iVar3 = 1;
-      puVar7 = (uint *)FUN_006b0140(UVar4,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(UVar4,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar5);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar20 = 3;
       iVar17 = -1;
       iVar3 = -3;
-      puVar7 = (uint *)FUN_006b0140(0x565e,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x565e,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar20);
       ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar5 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar17 = -1;
       iVar3 = 1;
       puVar7 = (uint *)FUN_006b0140(0x273f - (*(int *)(s_blast_p_007d2090 + param_1 * 4) != 0),
-                                    DAT_00807618);
+                                    HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar5);
       piVar12 = local_14;
       local_8 = local_8 + 0xf;
@@ -277,7 +277,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar20 = 3;
         iVar17 = -1;
         iVar3 = -3;
-        puVar7 = (uint *)FUN_006b0140(0x565f,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(0x565f,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar20);
         ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
         switch(*(undefined4 *)((int)&DAT_007bf678 + (int)piVar12)) {
@@ -293,7 +293,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         case 4:
           local_c = CASE_4E;
         }
-        pHVar14 = DAT_00807618;
+        pHVar14 = HINSTANCE_00807618;
         UVar4 = thunk_FUN_00523410(local_c,cVar15,0);
         pcVar9 = (char *)FUN_006b0140(UVar4,pHVar14);
         uVar5 = 0xffffffff;
@@ -329,10 +329,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         pbVar6 = (byte *)FUN_0070b3a0(this_00->field_0240,uVar5);
         DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar6);
         pbVar6 = local_38;
-        DibPut((undefined4 *)this_00->field_0218,0x94,local_8 + -2,'\x06',local_38);
+        DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
         local_34 = 0x94;
         local_2c = *(undefined4 *)(pbVar6 + 4);
-        local_30 = local_8 + -2;
+        local_30 = local_8 - 2;
         local_28 = *(undefined4 *)(pbVar6 + 8);
         local_24 = 2;
         local_23 = GVar11;
@@ -345,7 +345,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar20 = 3;
       iVar17 = -1;
       iVar3 = -3;
-      puVar7 = (uint *)FUN_006b0140(0x5660,DAT_00807618);
+      puVar7 = (uint *)FUN_006b0140(0x5660,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar3,iVar17,uVar20);
       local_14 = &DAT_007a8b1c;
       local_c = CASE_1;
@@ -353,7 +353,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         GVar11 = local_c;
         if ((*local_14 == param_1) && (iVar3 = thunk_FUN_004e8030(local_c), iVar3 == param_2)) {
           ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = DAT_00807618;
+          pHVar14 = HINSTANCE_00807618;
           UVar4 = thunk_FUN_00523410(local_c,cVar15,0);
           pcVar9 = (char *)FUN_006b0140(UVar4,pHVar14);
           uVar5 = 0xffffffff;
@@ -389,10 +389,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           pbVar6 = (byte *)FUN_0070b3a0(this_00->field_023C,uVar5);
           DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar6);
           pbVar6 = local_38;
-          DibPut((undefined4 *)this_00->field_0218,0x94,local_8 + -2,'\x06',local_38);
+          DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
           local_34 = 0x94;
           local_2c = *(undefined4 *)(pbVar6 + 4);
-          local_30 = local_8 + -2;
+          local_30 = local_8 - 2;
           local_28 = *(undefined4 *)(pbVar6 + 8);
           local_24 = 3;
           local_23 = GVar11;
@@ -410,7 +410,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         GVar11 = local_c;
         if ((*local_14 == param_1) && (iVar3 = thunk_FUN_004e8030(local_c), iVar3 == param_2)) {
           ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = DAT_00807618;
+          pHVar14 = HINSTANCE_00807618;
           UVar4 = thunk_FUN_00523410(local_c,cVar15,0);
           pcVar9 = (char *)FUN_006b0140(UVar4,pHVar14);
           uVar5 = 0xffffffff;
@@ -446,10 +446,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           pbVar6 = (byte *)FUN_0070b3a0(this_00->field_023C,uVar5);
           DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar6);
           pbVar6 = local_38;
-          DibPut((undefined4 *)this_00->field_0218,0x94,local_8 + -2,'\x06',local_38);
+          DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
           local_34 = 0x94;
           local_2c = *(undefined4 *)(pbVar6 + 4);
-          local_30 = local_8 + -2;
+          local_30 = local_8 - 2;
           local_28 = *(undefined4 *)(pbVar6 + 8);
           local_24 = 3;
           local_23 = GVar11;
@@ -470,7 +470,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               if ((*piVar12 == param_1) &&
                  (local_14 = piVar12, iVar3 = thunk_FUN_004e8030(GVar11), iVar3 == param_2)) {
                 ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
-                pHVar14 = DAT_00807618;
+                pHVar14 = HINSTANCE_00807618;
                 UVar4 = thunk_FUN_00523410(local_c,cVar15,0);
                 pcVar9 = (char *)FUN_006b0140(UVar4,pHVar14);
                 uVar5 = 0xffffffff;
@@ -507,10 +507,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 pbVar6 = (byte *)FUN_0070b3a0(this_00->field_0240,uVar5);
                 DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar6);
                 pbVar6 = local_38;
-                DibPut((undefined4 *)this_00->field_0218,0x94,local_8 + -2,'\x06',local_38);
+                DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
                 local_34 = 0x94;
                 local_2c = *(undefined4 *)(pbVar6 + 4);
-                local_30 = local_8 + -2;
+                local_30 = local_8 - 2;
                 local_28 = *(undefined4 *)(pbVar6 + 8);
                 local_24 = 2;
                 local_23 = GVar11;
@@ -531,8 +531,8 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               }
               local_14 = piVar12;
               UVar4 = thunk_FUN_00525ca0(GVar19);
-              DrawDescription(this_00,&local_8,UVar4);
-              AddLinks(this_00,&local_8,'\x04',param_1,param_2);
+              DrawDescription(this_00,(int *)&local_8,UVar4);
+              AddLinks(this_00,(int *)&local_8,'\x04',param_1,param_2);
               g_currentExceptionFrame = local_a4.previous;
               return;
             }

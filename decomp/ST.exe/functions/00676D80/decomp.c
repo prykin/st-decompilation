@@ -2,27 +2,32 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 659 | 661 | 662 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 12.
+   Evidence: 00677290 -> 00676D80 @ 00677314 | 006773B0 -> 00676D80 @ 00677431 | 006774C0 ->
+   00676D80 @ 00677544 | 006775E0 -> 00676D80 @ 00677665 */
 
 int __cdecl
 _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param_5,short param_6,
           short param_7,short param_8,short param_9,short param_10,short param_11,
-          undefined *param_12,undefined4 param_13,undefined *param_14)
+          undefined *param_12,uint *param_13,undefined *param_14)
 
 {
   byte bVar1;
-  int *this;
+  STFishC *this;
   code *pcVar2;
   int iVar3;
   undefined4 *puVar4;
   uint uVar5;
-  byte *pbVar6;
-  int iVar7;
-  uint uVar8;
+  IMAGE_DOS_HEADER *pIVar6;
+  byte *pbVar7;
+  int iVar8;
+  uint uVar9;
   undefined4 unaff_ESI;
-  byte *pbVar9;
+  byte *pbVar10;
   void *unaff_EDI;
-  bool bVar10;
+  bool bVar11;
   InternalExceptionFrame local_70;
   byte local_2c [16];
   int local_1c;
@@ -46,9 +51,9 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x295,0,iVar3,&DAT_007a4ccc,
+    iVar8 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x295,0,iVar3,&DAT_007a4ccc,
                                s__EnumPlObj_007d2df4);
-    if (iVar7 != 0) {
+    if (iVar8 != 0) {
       pcVar2 = (code *)swi(3);
       iVar3 = (*pcVar2)();
       return iVar3;
@@ -58,30 +63,31 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   }
   local_1c = thunk_FUN_0042a990((char)param_1);
   if (local_1c == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x293);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x293);
   }
   else {
     local_14 = 0;
     if (*(int *)(local_1c + 0xc) != 0) {
-      uVar8 = 0;
+      uVar9 = 0;
       if (*(int *)(local_1c + 0xc) == 0) {
         puVar4 = (undefined4 *)0x0;
         goto LAB_00676e12;
       }
       do {
-        puVar4 = (undefined4 *)(*(int *)(local_1c + 8) * uVar8 + *(int *)(local_1c + 0x1c));
+        puVar4 = (undefined4 *)(*(int *)(local_1c + 8) * uVar9 + *(int *)(local_1c + 0x1c));
 LAB_00676e12:
-        this = (int *)*puVar4;
-        if ((this != (int *)0x0) && (iVar3 = (**(code **)(*this + 0xf8))(), iVar3 != 0)) {
+        this = (STFishC *)*puVar4;
+        if ((this != (STFishC *)0x0) && (iVar3 = (*this->vtable->slot_F8)(), iVar3 != 0)) {
           local_10 = 1;
-          uVar8 = (**(code **)(*this + 0x2c))();
+          uVar9 = (*this->vtable->slot_2C)();
           if (param_2 != 0) {
-            if (uVar8 == 0x78) {
+            if (uVar9 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
-                  iVar3 = (**(code **)(*this + 0x2c))();
+                  iVar3 = (*this->vtable->slot_2C)();
                   if (iVar3 == 0x78) {
-                    uVar5 = *(uint *)((int)this + 0x259);
+                    uVar5 = *(uint *)&this->field_0x259;
                   }
                   else {
                     uVar5 = 0;
@@ -95,7 +101,7 @@ LAB_00676e88:
               }
             }
             else if (((param_2 & 0x40000000) != 0) ||
-                    (((param_2 & 0x3fffffff) != 0 && ((param_2 & 0x3fffffff) != uVar8))))
+                    (((param_2 & 0x3fffffff) != 0 && ((param_2 & 0x3fffffff) != uVar9))))
             goto LAB_00676e88;
           }
           if (local_10 == 0) {
@@ -105,22 +111,22 @@ LAB_00677024:
           }
           else {
             if (param_3 != 0x3fffffff) {
-              if (uVar8 == 0x78) {
+              if (uVar9 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
-                  iVar3 = (**(code **)(*this + 0x2c))();
+                  iVar3 = (*this->vtable->slot_2C)();
                   if (iVar3 == 0x78) {
-                    iVar3 = *(int *)((int)this + 0x259);
+                    iVar3 = *(int *)&this->field_0x259;
                   }
                   else {
                     iVar3 = 0;
                   }
-                  uVar8 = thunk_FUN_00674fb0(iVar3);
+                  pIVar6 = thunk_FUN_00674fb0(iVar3);
 joined_r0x00676ef3:
-                  if ((uVar8 & param_3 & 0x3fffffff) != 0) goto LAB_00676efc;
+                  if (((uint)pIVar6 & param_3 & 0x3fffffff) != 0) goto LAB_00676efc;
                 }
               }
               else if ((param_3 & 0x40000000) == 0) {
-                uVar8 = thunk_FUN_00674fb0(uVar8);
+                pIVar6 = thunk_FUN_00674fb0(uVar9);
                 goto joined_r0x00676ef3;
               }
               local_10 = 0;
@@ -128,23 +134,23 @@ joined_r0x00676ef3:
 LAB_00676efc:
             if (local_10 == 0) goto LAB_00677024;
             if ((param_4 != (byte *)0x0) && (*param_4 != 0)) {
-              (**(code **)(*this + 0x74))(local_2c);
-              pbVar9 = local_2c;
-              pbVar6 = param_4;
+              (*this->vtable->slot_74)(local_2c);
+              pbVar10 = local_2c;
+              pbVar7 = param_4;
               do {
-                bVar1 = *pbVar6;
-                bVar10 = bVar1 < *pbVar9;
-                if (bVar1 != *pbVar9) {
+                bVar1 = *pbVar7;
+                bVar11 = bVar1 < *pbVar10;
+                if (bVar1 != *pbVar10) {
 LAB_00676f47:
-                  iVar3 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+                  iVar3 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
                   goto LAB_00676f4c;
                 }
                 if (bVar1 == 0) break;
-                bVar1 = pbVar6[1];
-                bVar10 = bVar1 < pbVar9[1];
-                if (bVar1 != pbVar9[1]) goto LAB_00676f47;
-                pbVar6 = pbVar6 + 2;
-                pbVar9 = pbVar9 + 2;
+                bVar1 = pbVar7[1];
+                bVar11 = bVar1 < pbVar10[1];
+                if (bVar1 != pbVar10[1]) goto LAB_00676f47;
+                pbVar7 = pbVar7 + 2;
+                pbVar10 = pbVar10 + 2;
               } while (bVar1 != 0);
               iVar3 = 0;
 LAB_00676f4c:
@@ -153,11 +159,11 @@ LAB_00676f4c:
               }
             }
             if ((local_10 == 0) ||
-               ((local_5 != -1 && (iVar3 = (**(code **)(*this + 0x6c))(), local_5 != iVar3))))
+               ((local_5 != -1 && (iVar3 = (*this->vtable->slot_6C)(), local_5 != iVar3))))
             goto LAB_00677024;
             if ((0 < param_9) &&
                (((0 < param_10 && (0 < param_11)) &&
-                ((thunk_FUN_004162b0(this,&local_8,&local_a,&local_c), local_8 < param_6 ||
+                ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_6 ||
                  ((((local_a < param_7 || (local_c < param_8)) ||
                    ((int)param_6 + (int)param_9 <= (int)local_8)) ||
                   (((int)param_7 + (int)param_10 <= (int)local_a ||
@@ -174,8 +180,8 @@ LAB_00676f4c:
         }
 LAB_00677041:
         local_14 = local_14 + 1;
-        uVar8 = local_14 & 0xffff;
-        if (*(uint *)(local_1c + 0xc) <= uVar8) {
+        uVar9 = local_14 & 0xffff;
+        if (*(uint *)(local_1c + 0xc) <= uVar9) {
           g_currentExceptionFrame = local_70.previous;
           return local_18;
         }

@@ -33,7 +33,8 @@ MTaskTy::CreateTextSSpr
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (((param_1 == (uint *)0x0) || ((char)*param_1 == '\0')) || (param_6 == (void *)0x0)) {
-      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_Start_task_obj_cpp_007cd994,0x46c);
+      RaiseInternalException
+                (-0x34,g_overwriteContext_007ED77C,s_E____titans_Start_task_obj_cpp_007cd994,0x46c);
     }
     if (param_8 < 0) {
       param_8 = param_7 + 1;

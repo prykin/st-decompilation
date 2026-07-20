@@ -56,25 +56,26 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,int param_1,char 
   if (param_1 != 0) {
     puVar12 = &local_1c->field_02F4;
     if (local_1c->field_02F4 != 0) {
-      FUN_006ab060(puVar12);
+      FUN_006ab060((LPVOID *)puVar12);
     }
-    puVar4 = Library::Ourlib::MFIMG::mfImgLoad(param_1,0xc,PTR_s_SMALL_MAP_0079c1dc,2,0);
+    puVar4 = Library::Ourlib::MFIMG::mfImgLoad((cMf32 *)param_1,0xc,PTR_s_SMALL_MAP_0079c1dc,2,0);
     *puVar12 = puVar4;
     if (puVar4 != (ushort *)0x0) {
-      FUN_006c7f90((int)puVar4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
+      FUN_006c7f90(puVar4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
       FUN_006b5440(this_01->field_02F0,0,0x14,0x14,*puVar12,0,0);
     }
     if (DAT_0080c4c7 != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
-    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
+    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad((cMf32 *)param_1,PTR_s_DESCRIPTION_0079c1d0,0)
+    ;
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
-    DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_OBJECTIVES_0079c1d4,0);
+    DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad((cMf32 *)param_1,PTR_s_OBJECTIVES_0079c1d4,0);
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
@@ -112,7 +113,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,int param_1,char 
         do {
           pcVar9 = *(char **)(DAT_0080c4cb[5] + iVar3 * 4);
 LAB_005dc22d:
-          thunk_FUN_005411a0(this_01->field_0548,pcVar9,s_____s_007c72b4);
+          thunk_FUN_005411a0((uint *)this_01->field_0548,pcVar9,s_____s_007c72b4);
           iVar3 = iVar3 + 1;
         } while (iVar3 < (int)DAT_0080c4cb[2]);
       }
@@ -122,8 +123,8 @@ LAB_005dc22d:
       *(undefined2 *)puVar5 = 0;
       *puVar5 = DAT_007cc854;
       local_14 = ccFntTy::FormIndentSarr
-                           (this_01->field_0034,this_01->field_0548,
-                            (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,
+                           (this_01->field_0034,(uint *)this_01->field_0548,
+                            s________________007c21d8,(uint *)&DAT_007c21ec,
                             *(int *)(this_01->field_0544 + 4) + -0x14,0,0xffffffff,(char *)0x0,1);
       if ((byte *)this_01->field_0548 != (byte *)0x0) {
         FUN_006b5570((byte *)this_01->field_0548);
@@ -131,22 +132,22 @@ LAB_005dc22d:
       puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
       this_01->field_0548 = puVar6;
       puVar5 = &this_01->field_0x3c;
-      uVar7 = FUN_006b0140(0x2347,DAT_00807618);
+      uVar7 = FUN_006b0140(0x2347,HINSTANCE_00807618);
       wsprintfA(puVar5,s__2__s__007cd800,uVar7);
-      Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar5);
       wsprintfA(puVar5,s__0__s_007cd7f8,&DAT_0080c3c3);
-      Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
-      Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar5);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       uVar8 = DAT_008087c4 & 0xffff;
       uVar11 = (uint)DAT_008087c2;
-      uVar7 = FUN_006b0140(0x2344,DAT_00807618);
+      uVar7 = FUN_006b0140(0x2344,HINSTANCE_00807618);
       wsprintfA(puVar5,s__2__s___0_d_2x_0_d_007cd7e0,uVar7,uVar11,uVar8);
-      Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar5);
       uVar8 = DAT_008087c4 >> 0x10 & 0xff;
-      uVar7 = FUN_006b0140(0x2345,DAT_00807618);
+      uVar7 = FUN_006b0140(0x2345,HINSTANCE_00807618);
       wsprintfA(puVar5,s__2__s___0_d_007cd7d0,uVar7,uVar8);
-      Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
-      Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar5);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       switch(param_2) {
       case '\x01':
       case '\x02':
@@ -161,10 +162,10 @@ LAB_005dc22d:
       case '\x0f':
       case '\x10':
       case '\x13':
-        uVar7 = FUN_006b0140(0x2346,DAT_00807618);
+        uVar7 = FUN_006b0140(0x2346,HINSTANCE_00807618);
         wsprintfA(puVar5,s__2__s__007cd800,uVar7);
-        Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
-        Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
+        Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar5);
+        Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       }
       puVar6 = local_14;
       if (local_14 != (uint *)0x0) {
@@ -180,7 +181,7 @@ LAB_005dc22d:
           do {
             pcVar9 = *(char **)(puVar6[5] + iVar3 * 4);
 LAB_005dc430:
-            Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,pcVar9);
+            Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,pcVar9);
             iVar3 = iVar3 + 1;
           } while (iVar3 < (int)puVar6[2]);
         }

@@ -119,23 +119,23 @@ cf_common_join_0063EACD:
               do {
                 if (-1 < (short)local_c) {
                   sVar3 = (short)local_10;
-                  if ((((((short)local_c < DAT_007fb240) && (-1 < sVar8)) && (sVar8 < DAT_007fb242))
-                      && ((-1 < sVar3 && (sVar3 < DAT_007fb244)))) &&
+                  if ((((((short)local_c < SHORT_007fb240) && (-1 < sVar8)) &&
+                       (sVar8 < SHORT_007fb242)) && ((-1 < sVar3 && (sVar3 < SHORT_007fb244)))) &&
                      (iVar4 = *(int *)(DAT_007fb248 +
-                                      ((int)sVar3 * (int)DAT_007fb246 +
-                                       (int)DAT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8),
+                                      ((int)sVar3 * (int)SHORT_007fb246 +
+                                       (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8),
                      iVar4 != 0)) {
                     thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,iVar4,
                                        (short)*(undefined4 *)((int)this + 0x25d),
                                        *(undefined2 *)((int)this + 0x261),0xa8,0x110);
                   }
-                  if ((((short)local_c < DAT_007fb240) && (-1 < sVar8)) &&
-                     ((sVar8 < DAT_007fb242 &&
-                      (((-1 < sVar3 && (sVar3 < DAT_007fb244)) &&
+                  if ((((short)local_c < SHORT_007fb240) && (-1 < sVar8)) &&
+                     ((sVar8 < SHORT_007fb242 &&
+                      (((-1 < sVar3 && (sVar3 < SHORT_007fb244)) &&
                        (iVar4 = *(int *)(DAT_007fb248 + 4 +
-                                        ((int)sVar3 * (int)DAT_007fb246 +
-                                         (int)DAT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8),
-                       iVar4 != 0)))))) {
+                                        ((int)sVar3 * (int)SHORT_007fb246 +
+                                         (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8
+                                        ), iVar4 != 0)))))) {
                     thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,iVar4,
                                        (short)*(undefined4 *)((int)this + 0x25d),
                                        *(undefined2 *)((int)this + 0x261),0xa8,0x110);
@@ -179,12 +179,13 @@ cf_common_join_0063EACD:
             }
             local_10 = 0;
             do {
-              if ((((-1 < (short)local_c) && ((short)local_c < DAT_007fb240)) && (-1 < sVar8)) &&
-                 (((sVar8 < DAT_007fb242 && (sVar3 = (short)local_10, -1 < sVar3)) &&
-                  ((sVar3 < DAT_007fb244 &&
+              if ((((-1 < (short)local_c) && ((short)local_c < SHORT_007fb240)) && (-1 < sVar8)) &&
+                 (((sVar8 < SHORT_007fb242 && (sVar3 = (short)local_10, -1 < sVar3)) &&
+                  ((sVar3 < SHORT_007fb244 &&
                    (iVar4 = *(int *)(DAT_007fb248 +
-                                    ((int)sVar3 * (int)DAT_007fb246 + (int)DAT_007fb240 * (int)sVar8
-                                    + (int)(short)local_c) * 8), iVar4 != 0)))))) {
+                                    ((int)sVar3 * (int)SHORT_007fb246 +
+                                     (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8),
+                   iVar4 != 0)))))) {
                 thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,iVar4,
                                    (short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x110);

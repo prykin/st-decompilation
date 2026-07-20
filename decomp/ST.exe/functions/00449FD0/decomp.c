@@ -22,7 +22,8 @@ undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort par
   if (errorCode == 0) {
     if (param_2 == (void *)0x0) {
       RaiseInternalException
-                (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f05);
+                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x2f05);
     }
     if (param_1 == 0xffff) {
       param_1 = (ushort)DAT_007fa158[3];
@@ -31,7 +32,8 @@ undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort par
       uVar2 = FUN_006acc70((int)DAT_007fa158,(uint)param_1,&local_8);
       if ((uVar2 != 0xfffffffc) && (local_8 != 0)) {
         RaiseInternalException
-                  (-0x5001fffa,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f07);
+                  (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x2f07);
       }
     }
     Library::DKW::TBL::FUN_006ae140(DAT_007fa158,(uint)param_1,&param_2);

@@ -1,5 +1,9 @@
 
-undefined4 * FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 006D10F0 returns return of Library::DKW::LIB::FUN_006aac70 @ 006D11BB | 006D10F0
+   returns return of Library::DKW::LIB::FUN_006aac70 @ 006D11E2 */
+
+int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
 
 {
   uint uVar1;
@@ -43,7 +47,7 @@ undefined4 * FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int p
         puVar2[0xb] = 0x7e0;
         puVar2[0xc] = 0x1f;
         puVar2[4] = 3;
-        return puVar2;
+        return (int)puVar2;
       }
       if (param_3 == 0x20) {
         puVar2[10] = 0xff0000;
@@ -53,6 +57,6 @@ undefined4 * FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int p
       }
     }
   }
-  return puVar2;
+  return (int)puVar2;
 }
 

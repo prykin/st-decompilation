@@ -19,7 +19,7 @@ void __cdecl FUN_0070a300(int *param_1)
       }
       FUN_006ae110(*(byte **)(*param_1 + 4));
     }
-    FUN_006ab060(param_1);
+    FUN_006ab060((LPVOID *)param_1);
   }
   return;
 }

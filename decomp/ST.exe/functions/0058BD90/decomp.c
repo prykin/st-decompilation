@@ -12,7 +12,7 @@ void __fastcall FUN_0058bd90(int *param_1)
   short sVar7;
   short sVar8;
   int iVar9;
-  int local_8;
+  uint local_8;
   
   local_8 = 0;
   if (*(int *)((int)param_1 + 0x231) == 1) {
@@ -80,9 +80,9 @@ void __fastcall FUN_0058bd90(int *param_1)
     goto switchD_0058bec9_caseD_2;
   case 4:
     pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-    local_8 = thunk_FUN_004ac910(pSVar1,'\x0e');
-    local_8 = local_8 + 1;
-    if (local_8 < 0x23) {
+    iVar5 = thunk_FUN_004ac910(pSVar1,'\x0e');
+    local_8 = iVar5 + 1;
+    if ((int)local_8 < 0x23) {
       STT3DSprC::SetCurFase(pSVar1,'\x0e',local_8);
     }
     else {
@@ -147,8 +147,8 @@ switchD_0058bec9_caseD_2:
             *(short *)((int)param_1 + 0x271);
     *(short *)((int)param_1 + 0x45) = sVar6;
     if ((((sVar6 < 0x4b0) && (*(uint *)(DAT_00802a38 + 0xe4) % 0x11 == 0)) &&
-        ((int)sVar7 < DAT_007fb240 * 0xc9)) &&
-       (((0 < sVar7 && ((int)sVar8 < DAT_007fb242 * 0xc9)) && (0 < sVar8)))) {
+        ((int)sVar7 < SHORT_007fb240 * 0xc9)) &&
+       (((0 < sVar7 && ((int)sVar8 < SHORT_007fb242 * 0xc9)) && (0 < sVar8)))) {
       *(undefined4 *)((int)param_1 + 0x231) = 4;
     }
     goto LAB_0058c38c;
@@ -187,12 +187,13 @@ switchD_0058bec9_caseD_0:
     iVar5 = (int)(short)((sVar8 / 200 + (sVar8 >> 0xf)) -
                         (short)((longlong)(int)sVar8 * 0x51eb851f >> 0x3f));
   }
-  if (((sVar6 < 0) || (DAT_007fb240 <= sVar6)) ||
+  if (((sVar6 < 0) || (SHORT_007fb240 <= sVar6)) ||
      ((sVar7 < 0 ||
-      ((((DAT_007fb242 <= sVar7 || (sVar8 = (short)iVar5, sVar8 < 0)) || (DAT_007fb244 <= sVar8)) ||
-       ((iVar3 = *(int *)(DAT_007fb248 +
-                         ((int)DAT_007fb246 * (int)sVar8 + (int)DAT_007fb240 * (int)sVar7 +
-                         (int)sVar6) * 8), iVar3 == 0 || (*(int *)(iVar3 + 0x20) == 400)))))))) {
+      ((((SHORT_007fb242 <= sVar7 || (sVar8 = (short)iVar5, sVar8 < 0)) || (SHORT_007fb244 <= sVar8)
+        ) || ((iVar3 = *(int *)(DAT_007fb248 +
+                               ((int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar7
+                               + (int)sVar6) * 8), iVar3 == 0 || (*(int *)(iVar3 + 0x20) == 400)))))
+      ))) {
     if ((5 < iVar5) && ((*(byte *)(DAT_00802a38 + 0xe4) & 3) == 0)) {
       iVar5 = *(int *)((int)param_1 + 0x239) + 1;
       *(int *)((int)param_1 + 0x239) = iVar5;
@@ -209,9 +210,9 @@ switchD_0058bec9_caseD_0:
                          (int)*(short *)(DAT_00806724 + 0x2c));
     }
     if ((*(byte *)(DAT_00802a38 + 0xe4) & 1) == 0) {
-      local_8 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
-      local_8 = local_8 + 1;
-      if (0x18 < local_8) {
+      iVar5 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
+      local_8 = iVar5 + 1;
+      if (0x18 < (int)local_8) {
         local_8 = 0x18;
       }
 LAB_0058c38c:
@@ -223,7 +224,7 @@ LAB_0058c38c:
     *(undefined4 *)((int)param_1 + 0x231) = 5;
     STT3DSprC::StopShow(pSVar1,0xe);
     thunk_FUN_004ad5e0((int)pSVar1);
-    STT3DSprC::LoadSequence(pSVar1,8,DAT_00806774,(byte *)s_explsna_007cbaac,0x1d);
+    STT3DSprC::LoadSequence(pSVar1,8,DAT_00806774,s_explsna_007cbaac,0x1d);
     STT3DSprC::StartShow(pSVar1,8,*(undefined4 *)(DAT_00802a38 + 0xe4));
     *(short *)((int)param_1 + 0x45) = *(short *)((int)param_1 + 0x45) + 0x12;
     *(undefined4 *)((int)param_1 + 0x231) = 6;

@@ -2,7 +2,7 @@
 bool __cdecl FUN_00719b40(MCIDEVICEID *param_1,undefined4 param_2)
 
 {
-  MCIERROR MVar1;
+  MCIERROR mcierr;
   undefined4 local_14;
   int local_10;
   undefined4 local_c;
@@ -15,9 +15,9 @@ bool __cdecl FUN_00719b40(MCIDEVICEID *param_1,undefined4 param_2)
   local_10 = 0;
   local_c = 0x4001;
   local_8 = param_2;
-  MVar1 = mciSendCommandA(*param_1,0x814,0x112,(DWORD_PTR)&local_14);
-  if (MVar1 != 0) {
-    FUN_00719c90(MVar1,param_1);
+  mcierr = mciSendCommandA(*param_1,0x814,0x112,(DWORD_PTR)&local_14);
+  if (mcierr != 0) {
+    FUN_00719c90(mcierr,param_1);
     return false;
   }
   return local_10 == 0x440;

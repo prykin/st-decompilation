@@ -29,13 +29,13 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
     if (param_1 == 0) {
       STT3DSprC::LoadSequence
                 ((STT3DSprC *)this_00,8,DAT_00806774,
-                 (byte *)(s_Expb12_007ce718 + *(int *)&local_8->field_0x2cd * 0x39),0x1d);
+                 s_Expb12_007ce718 + *(int *)&local_8->field_0x2cd * 0x39,0x1d);
       STT3DSprC::LoadSequence
                 ((STT3DSprC *)this_00,9,DAT_00806764,
-                 (byte *)(s_expl_bbt0_007ce723 + *(int *)&this_01->field_0x2cd * 0x39),0x1d);
+                 s_expl_bbt0_007ce723 + *(int *)&this_01->field_0x2cd * 0x39,0x1d);
       STT3DSprC::LoadSequence
                 ((STT3DSprC *)this_00,10,DAT_00806774,
-                 (byte *)(s_expmask3_007ce72e + *(int *)&this_01->field_0x2cd * 0x39),0x1d);
+                 s_expmask3_007ce72e + *(int *)&this_01->field_0x2cd * 0x39,0x1d);
       thunk_FUN_004ac700(this_00,'\n');
       STT3DSprC::StartShow((STT3DSprC *)this_00,10,*(undefined4 *)(DAT_00802a38 + 0xe4));
       thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
@@ -46,8 +46,7 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
       g_currentExceptionFrame = local_50.previous;
       return local_c;
     }
-    iVar2 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this_00,0xe,DAT_00806774,(byte *)s_coll3_007ce6d8,0x1d);
+    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xe,DAT_00806774,s_coll3_007ce6d8,0x1d);
     if (iVar2 == 0) {
       thunk_FUN_004ad380(this_00,DAT_007ce78c,DAT_007ce790);
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));

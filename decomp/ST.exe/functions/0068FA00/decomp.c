@@ -1,5 +1,8 @@
 
-void __thiscall FUN_0068fa00(void *this,undefined4 param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006618E0 -> 0068FA00 @ 00661B54 */
+
+void __thiscall FUN_0068fa00(void *this,uint *param_1)
 
 {
   AiFltClassTy *this_00;
@@ -10,7 +13,7 @@ void __thiscall FUN_0068fa00(void *this,undefined4 param_1)
   uint local_38 [2];
   char local_30;
   undefined1 local_2f;
-  undefined4 local_2e;
+  uint *local_2e;
   
   uVar2 = 0;
   iVar1 = *(int *)((int)this + 0xa5);

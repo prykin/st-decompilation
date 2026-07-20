@@ -22,12 +22,12 @@ void __fastcall FUN_006dcd60(int param_1)
     dVar3 = (double)iVar6 * *(double *)(param_1 + 0x368);
     if (*(int *)(iVar7 + 0x28) < iVar6) {
       iVar7 = Library::DKW::LIB::FUN_006acf50
-                        (*(undefined4 **)(*(int *)(param_1 + 0x358) + 8),iVar6 * iVar6 + 0x18);
+                        (*(int *)(*(int *)(param_1 + 0x358) + 8),iVar6 * iVar6 + 0x18);
       *(int *)(*(int *)(param_1 + 0x358) + 8) = iVar7;
       *(undefined4 *)(*(int *)(param_1 + 0x358) + 0xc) =
            *(undefined4 *)(*(int *)(param_1 + 0x358) + 8);
       iVar7 = Library::DKW::LIB::FUN_006acf50
-                        (*(undefined4 **)(*(int *)(param_1 + 0x358) + 0x10),iVar6 * iVar6 + 0x10);
+                        (*(int *)(*(int *)(param_1 + 0x358) + 0x10),iVar6 * iVar6 + 0x10);
       *(int *)(*(int *)(param_1 + 0x358) + 0x10) = iVar7;
       *(int *)(*(int *)(param_1 + 0x358) + 0x14) = *(int *)(*(int *)(param_1 + 0x358) + 0x10) + 8;
       iVar7 = *(int *)(param_1 + 0x358);

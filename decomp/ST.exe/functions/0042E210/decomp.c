@@ -40,7 +40,7 @@ STAllPlayersC::RegisterObject
   STAllPlayersC *local_18;
   uint local_14;
   undefined1 local_10 [4];
-  STGroupC *local_c;
+  STGroupBoatC *local_c;
   short local_6;
   
   iVar6 = (char)param_1 * 0xa62;
@@ -64,7 +64,9 @@ STAllPlayersC::RegisterObject
     return uVar9;
   }
   if (param_4 == (int *)0x0) {
-    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x5bd);
+    RaiseInternalException
+              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x5bd);
   }
   puVar4 = local_28;
   if ((short)param_3 == -1) {
@@ -74,7 +76,8 @@ STAllPlayersC::RegisterObject
     bVar5 = thunk_FUN_0042b5b0(param_1,param_3);
     if (CONCAT31(extraout_var,bVar5) == 1) {
       RaiseInternalException
-                (-0x5001fffa,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x5c0);
+                (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x5c0);
     }
     uVar12 = param_3 & 0xffff;
   }
@@ -340,7 +343,7 @@ LAB_0042eb3e:
     if (uVar12 != 0) {
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
         FUN_006acc70((int)local_1c,uVar2,&local_c);
-        if (local_c == (STGroupC *)0x0) {
+        if (local_c == (STGroupBoatC *)0x0) {
           uVar12 = uVar2;
           local_14 = uVar2;
         }
@@ -358,7 +361,7 @@ LAB_0042eb3e:
   }
   else {
     if ((((short)param_2 != -1) && (iVar6 == 0)) &&
-       (local_c = (STGroupC *)thunk_FUN_0042b760(param_1,param_2), local_c == (STGroupC *)0x0)) {
+       (local_c = thunk_FUN_0042b760(param_1,param_2), local_c == (STGroupBoatC *)0x0)) {
       param_2 = 0xfffe;
     }
     uVar12 = local_14;
@@ -371,7 +374,7 @@ LAB_0042ebe7:
     if (sVar10 != -1) goto LAB_0042ebf6;
   }
   else if (sVar10 != -1) {
-    local_c = (STGroupC *)thunk_FUN_0042b760(param_1,param_2);
+    local_c = thunk_FUN_0042b760(param_1,param_2);
     uVar12 = param_2 & 0xffff;
     local_14 = uVar12;
     goto LAB_0042ebe7;
@@ -381,7 +384,7 @@ LAB_0042ebe7:
 LAB_0042ebf6:
   thunk_FUN_00419c30(param_4,uVar11);
   if (((iVar6 == 0) || (param_6 == 1)) && (sVar10 != -1)) {
-    STGroupC::AddObj(local_c,local_20,(uint)(sVar10 != -2));
+    STGroupC::AddObj((STGroupC *)local_c,local_20,(uint)(sVar10 != -2));
   }
   iVar6 = (**(code **)(*param_4 + 0x2c))();
   if (iVar6 == 0x1d) {

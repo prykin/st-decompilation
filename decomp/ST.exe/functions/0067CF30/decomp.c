@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 40 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0067CF30 -> 0072E340 @ 0067CF98 */
 
-undefined4 * __cdecl FUN_0067cf30(char *param_1,undefined2 param_2,char *param_3,undefined4 param_4)
+undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,undefined4 param_4)
 
 {
   int exceptionCode;
@@ -30,8 +33,8 @@ undefined4 * __cdecl FUN_0067cf30(char *param_1,undefined2 param_2,char *param_3
   *local_8 = 0x38e;
   local_8[5] = 299;
   *(undefined1 *)(local_8 + 6) = 2;
-  Library::MSVCRT::_strncpy((char *)((int)local_8 + 0x1b),param_1,0x3f);
-  _Source = param_1;
+  Library::MSVCRT::_strncpy((char *)((int)local_8 + 0x1b),source,0x3f);
+  _Source = source;
   if (param_3 != (char *)0x0) {
     _Source = param_3;
   }
@@ -40,7 +43,7 @@ undefined4 * __cdecl FUN_0067cf30(char *param_1,undefined2 param_2,char *param_3
   *(undefined4 *)((int)local_8 + 0x6d) = 0xff;
   puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
   *(uint **)((int)local_8 + 0xc2) = puVar1;
-  puVar2 = thunk_FUN_0065c9e0(param_1);
+  puVar2 = thunk_FUN_0065c9e0(source);
   *(undefined4 **)((int)local_8 + 0x106) = puVar2;
   *(undefined4 *)((int)local_8 + 0x10a) = param_4;
   g_currentExceptionFrame = pIVar3;

@@ -107,7 +107,8 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
       nNumberOfBytesToRead = iVar3 + 0x1b;
       if ((uint)pSVar2->field_118D < nNumberOfBytesToRead) {
         pSVar2->field_118D = nNumberOfBytesToRead;
-        pvVar6 = (LPVOID)Library::DKW::LIB::FUN_006acf50(pSVar2->field_1189,nNumberOfBytesToRead);
+        pvVar6 = (LPVOID)Library::DKW::LIB::FUN_006acf50
+                                   ((int)pSVar2->field_1189,nNumberOfBytesToRead);
         pSVar2->field_1189 = pvVar6;
       }
       DVar4 = SetFilePointer(hFile,pSVar2->field_1191,(PLONG)0x0,0);
@@ -124,8 +125,8 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
       goto cf_common_exit_00571620;
     }
     pSVar2->field_1185 = 0;
-    if (DAT_008016d8 != (void *)0x0) {
-      thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_commands_has_finished_007ca2bc,8);
+    if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+      thunk_FUN_0052d320(g_popUp_008016D8,s_Playing_of_commands_has_finished_007ca2bc,8);
       CloseHandle(hFile);
       goto cf_common_exit_00571620;
     }
@@ -135,9 +136,9 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   }
   CloseHandle(hFile);
 cf_common_exit_00571620:
-  if ((local_8 != 0) && (pSVar2->field_1185 = 0, DAT_008016d8 != (void *)0x0)) {
-    thunk_FUN_0052d320(DAT_008016d8,s_Error_playing_command__007ca2a0,9);
-    thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_command_has_turned_of_007ca274,8);
+  if ((local_8 != 0) && (pSVar2->field_1185 = 0, g_popUp_008016D8 != (PopUpTy *)0x0)) {
+    thunk_FUN_0052d320(g_popUp_008016D8,s_Error_playing_command__007ca2a0,9);
+    thunk_FUN_0052d320(g_popUp_008016D8,s_Playing_of_command_has_turned_of_007ca274,8);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

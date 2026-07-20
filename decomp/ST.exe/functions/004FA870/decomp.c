@@ -12,20 +12,20 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
   }
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
     if (param_1 == (CASE_4|CASE_2)) {
-      if (DAT_008016e8 != (int *)0x0) {
-        (**(code **)(*DAT_008016e8 + 0x1c))();
+      if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+        (**(code **)(g_prodPanel_008016E8->field_0000 + 0x1c))();
         return;
       }
     }
     else if (param_1 == (CASE_4|CASE_2|CASE_1)) {
-      if (DAT_0080167c != (int *)0x0) {
-        (**(code **)(*DAT_0080167c + 0x1c))();
+      if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+        (**(code **)(g_prodPanel_0080167C->field_0000 + 0x1c))();
         return;
       }
     }
     else if (param_1 == 8) {
-      if (DAT_00801684 != (int *)0x0) {
-        (**(code **)(*DAT_00801684 + 0x1c))();
+      if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+        (**(code **)(g_prodPanel_00801684->field_0000 + 0x1c))();
         return;
       }
     }
@@ -48,8 +48,8 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
       }
     }
     else if (param_1 == 0xc) {
-      if (DAT_00801680 != (int *)0x0) {
-        (**(code **)(*DAT_00801680 + 0x1c))();
+      if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+        (**(code **)(g_prodPanel_00801680->field_0000 + 0x1c))();
         return;
       }
     }

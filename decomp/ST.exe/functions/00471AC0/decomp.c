@@ -47,7 +47,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   short local_52;
   short local_50;
   short local_4e;
-  short local_4c;
+  undefined2 local_4c;
   short local_4a;
   undefined4 local_48;
   undefined2 local_44;
@@ -59,8 +59,8 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   int local_2c [2];
   uint local_24;
   STTorpC *local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  int local_1c;
+  int local_18;
   undefined4 local_14;
   undefined4 local_10;
   short local_c;
@@ -99,7 +99,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
     if (iVar8 == 1) {
       uVar4 = this->field_00B7;
       this->field_00B7 = 0;
-      iVar8 = thunk_FUN_0045ff50(this,2);
+      iVar8 = sub_0045FF50(this,2);
       this->field_00B7 = uVar4;
       if (iVar8 == -1) {
         return -1;
@@ -114,7 +114,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
       if ((this->field_082E != 1) || (iVar8 = GetDefenceTarget(this,CASE_1), iVar8 != 0))
       goto cf_common_exit_00472CB0;
       pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                                 (DAT_007fa174,
+                                 (g_sTAllPlayers_007FA174,
                                   CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this->field_0x487),
                                   CONCAT22(extraout_var_05,*(undefined2 *)&this->field_048B),
                                   this->field_0483);
@@ -123,8 +123,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
       switch(iVar8) {
       case 0:
       case 10:
-        thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                           (undefined2 *)&local_1c);
+        thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,&local_18,&local_1c);
         local_5a = this->field_0043;
         local_5c = this->field_0041;
         local_58 = this->field_0045;
@@ -184,13 +183,12 @@ cf_common_exit_00472A1F:
         break;
       case 9:
 LAB_00472a3a:
-        thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                           (undefined2 *)&local_1c);
+        thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,&local_18,&local_1c);
         sVar3 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,this->field_0045,local_14,local_18,
                            local_1c);
-        uVar10 = thunk_FUN_004176c0(this,sVar3);
-        thunk_FUN_00417910(this,(short)uVar10);
+        uVar10 = sub_004176C0(this,sVar3);
+        sub_00417910(this,(short)uVar10);
       }
     }
     else {
@@ -231,8 +229,8 @@ LAB_00472a3a:
                                      (int)this->field_004B,(int)(short)this->field_0475,
                                      (int)(short)this->field_0477,(int)(short)this->field_0479);
                 if (0 < iVar8) {
-                  thunk_FUN_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
-                                     (int)(short)this->field_0479);
+                  sub_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
+                               (int)(short)this->field_0479);
                   uVar4 = this->field_00B7;
                   this->field_00B7 = 0;
                   iVar8 = thunk_FUN_004601f0(this,0);
@@ -253,7 +251,7 @@ LAB_00472a3a:
         }
         uVar4 = this->field_00B7;
         this->field_00B7 = 0;
-        iVar8 = thunk_FUN_0045ff50(this,2);
+        iVar8 = sub_0045FF50(this,2);
         this->field_00B7 = uVar4;
         if (iVar8 == -1) {
           return -1;
@@ -264,7 +262,7 @@ LAB_00472a3a:
         if ((this->field_082E != 1) || (iVar8 = GetDefenceTarget(this,CASE_1), iVar8 != 0))
         goto cf_common_exit_00472CB0;
         pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                                   (DAT_007fa174,(uint)(byte)this->field_0x487,
+                                   (g_sTAllPlayers_007FA174,(uint)(byte)this->field_0x487,
                                     CONCAT22(extraout_var_09,*(undefined2 *)&this->field_048B),
                                     this->field_0483);
         bVar2 = thunk_FUN_00483300((int *)this,extraout_EDX_03);
@@ -272,8 +270,7 @@ LAB_00472a3a:
         switch(iVar8) {
         case 0:
         case 10:
-          thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                             (undefined2 *)&local_1c);
+          thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,&local_18,&local_1c);
           local_5a = this->field_0043;
           local_5c = this->field_0041;
           local_58 = this->field_0045;
@@ -343,11 +340,11 @@ LAB_00472a3a:
                            -sVar3 + this->field_004B);
         if (iVar8 == 1) {
           this->field_082E = 3;
-          thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
-                             (int)(short)this->field_0469 + (int)this->field_004B);
+          sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                       (int)(short)this->field_0469 + (int)this->field_004B);
           uVar4 = this->field_00B7;
           this->field_00B7 = 0;
-          iVar8 = thunk_FUN_0045ff50(this,0);
+          iVar8 = sub_0045FF50(this,0);
           this->field_00B7 = uVar4;
           if (iVar8 == -1) {
             return -1;
@@ -364,7 +361,7 @@ LAB_00472a3a:
       if ((this->field_082E != 2) || (iVar8 = GetDefenceTarget(this,CASE_2), iVar8 != 0))
       goto cf_common_exit_00472CB0;
       pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                                 (DAT_007fa174,(uint)(byte)this->field_0x487,
+                                 (g_sTAllPlayers_007FA174,(uint)(byte)this->field_0x487,
                                   CONCAT22(extraout_var_08,*(undefined2 *)&this->field_048B),
                                   this->field_0483);
       bVar2 = thunk_FUN_00483300((int *)this,extraout_EDX_02);
@@ -372,8 +369,7 @@ LAB_00472a3a:
       switch(iVar8) {
       case 0:
       case 10:
-        thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                           (undefined2 *)&local_1c);
+        thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,&local_18,&local_1c);
         local_5a = this->field_0043;
         local_5c = this->field_0041;
         local_58 = this->field_0045;
@@ -452,7 +448,8 @@ cf_common_exit_00472CB0:
         FUN_006acc70(DAT_007fa130,uVar10,&local_20);
         if (local_20 != (STTorpC *)0x0) {
           iVar11 = iVar11 + -1;
-          thunk_FUN_004162b0(local_20,(undefined2 *)((int)&local_10 + 2),&local_c,&local_a);
+          STFishC::sub_004162B0
+                    ((STFishC *)local_20,(undefined2 *)((int)&local_10 + 2),&local_c,&local_a);
           local_2c[0] = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,
                                      (int)this->field_004B,(int)local_10._2_2_,(int)local_c,
                                      (int)local_a);
@@ -483,11 +480,11 @@ LAB_00471ec9:
                                                          this->field_0049),uVar14);
                     if (iVar8 != 1) break;
                     this->field_082E = 1;
-                    thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
-                                       (int)(short)this->field_0469 + (int)this->field_004B);
+                    sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                                 (int)(short)this->field_0469 + (int)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
-                    iVar8 = thunk_FUN_0045ff50(this,0);
+                    iVar8 = sub_0045FF50(this,0);
                     this->field_00B7 = uVar4;
                   }
                   else if (sVar3 == 4) {
@@ -497,11 +494,11 @@ LAB_00471ec9:
                                        CONCAT22(extraout_var_03,this->field_0049),3);
                     if (iVar8 != 1) break;
                     this->field_082E = 1;
-                    thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
-                                       (int)(short)this->field_0469 + (int)this->field_004B);
+                    sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                                 (int)(short)this->field_0469 + (int)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
-                    iVar8 = thunk_FUN_0045ff50(this,0);
+                    iVar8 = sub_0045FF50(this,0);
                     this->field_00B7 = uVar4;
                   }
                   else {
@@ -527,11 +524,11 @@ LAB_00471ec9:
                       goto LAB_00471ec9;
                     }
                     this->field_082E = 1;
-                    thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
-                                       (int)(short)this->field_0469 + (int)this->field_004B);
+                    sub_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                                 (int)(short)this->field_0469 + (int)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
-                    iVar8 = thunk_FUN_0045ff50(this,0);
+                    iVar8 = sub_0045FF50(this,0);
                     this->field_00B7 = uVar4;
                   }
                   if (iVar8 == -1) {
@@ -573,8 +570,8 @@ LAB_00471ec9:
   if (iVar8 != 0) {
     if (iVar11 < 1) goto switchD_00471fe0_caseD_2;
     this->field_082E = 5;
-    thunk_FUN_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
-                       (int)(short)this->field_0479);
+    sub_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
+                 (int)(short)this->field_0479);
     uVar4 = this->field_00B7;
     this->field_00B7 = 0;
     iVar8 = thunk_FUN_004601f0(this,0);
@@ -585,14 +582,14 @@ LAB_00471ec9:
   }
   if (5 < iVar11) {
     this->field_082E = 5;
-    thunk_FUN_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
-                       (int)(short)this->field_0479);
+    sub_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
+                 (int)(short)this->field_0479);
     uVar4 = this->field_00B7;
     this->field_00B7 = 0;
     goto LAB_004720a6;
   }
   pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,
+                             (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x487),
                               CONCAT22((short)((uint)iVar11 >> 0x10),
                                        *(undefined2 *)&this->field_048B),this->field_0483);
@@ -601,8 +598,7 @@ LAB_00471ec9:
   switch(iVar8) {
   case 0:
   case 10:
-    thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                       (undefined2 *)&local_1c);
+    thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,&local_18,&local_1c);
     local_5a = this->field_0043;
     local_5c = this->field_0041;
     local_58 = this->field_0045;
@@ -656,7 +652,8 @@ LAB_00471ec9:
     iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2c5e,0,-1,&DAT_007a4ccc,
                                s_STBoatC__Guard_NOT_ZONE_A_007aad48);
     if (iVar8 == 0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2c5f);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2c5f);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);
@@ -683,7 +680,7 @@ LAB_00471ec9:
     }
     this->field_082E = 4;
 LAB_0047207e:
-    thunk_FUN_00481520(this,(int)(short)local_14,(int)(short)local_18,(int)(short)local_1c);
+    sub_00481520(this,(int)(short)local_14,(int)(short)local_18,(int)(short)local_1c);
     uVar4 = this->field_00B7;
     this->field_00B7 = 0;
 LAB_004720a6:
@@ -695,13 +692,12 @@ LAB_0047233a:
     this->field_00B7 = uVar4;
     break;
   case 9:
-    thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                       (undefined2 *)&local_1c);
+    thunk_FUN_00416270(pvVar5,(undefined2 *)&local_14,&local_18,&local_1c);
     sVar3 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,this->field_0045,local_14,local_18,local_1c
                       );
-    uVar10 = thunk_FUN_004176c0(this,sVar3);
-    thunk_FUN_00417910(this,(short)uVar10);
+    uVar10 = sub_004176C0(this,sVar3);
+    sub_00417910(this,(short)uVar10);
   }
 switchD_00471fe0_caseD_2:
   if ((this->field_082E == 0) && (this->field_048B == 0xffff)) {
@@ -712,8 +708,8 @@ switchD_00471fe0_caseD_2:
                            (int)(short)this->field_0479);
       if ((iVar8 != -4) && (iVar8 < 8)) {
         this->field_082E = 4;
-        thunk_FUN_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
-                           (int)(short)this->field_0479);
+        sub_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
+                     (int)(short)this->field_0479);
         uVar4 = this->field_00B7;
         this->field_00B7 = 0;
         iVar8 = thunk_FUN_004601f0(this,0);

@@ -1,4 +1,4 @@
-FUN_005da910:
+StartSystemTy::sub_005DA910:
 005DA910  56                        PUSH ESI
 005DA911  8B F1                     MOV ESI,ECX
 005DA913  8B 86 8A 06 00 00         MOV EAX,dword ptr [ESI + 0x68a]

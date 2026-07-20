@@ -29,7 +29,7 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
   int local_24;
   undefined4 local_20;
   void *local_1c;
-  undefined4 local_18;
+  int local_18;
   undefined4 local_14;
   void *local_10;
   undefined *local_c;
@@ -56,47 +56,46 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
   sVar4 = *(short *)((int)this + 0x802);
   param_1 = CONCAT22((short)((uint)this >> 0x10),sVar4);
   sVar1 = *(short *)((int)this + 0x804);
-  if (((((((sVar3 < 0) || (DAT_007fb240 <= sVar3)) || (sVar4 < 0)) ||
-        ((DAT_007fb242 <= sVar4 || (sVar1 < 0)))) || (DAT_007fb244 <= sVar1)) ||
+  if (((((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar4 < 0)) ||
+        ((SHORT_007fb242 <= sVar4 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) ||
       (local_10 = *(void **)(DAT_007fb248 +
-                            ((int)sVar1 * (int)DAT_007fb246 + (int)sVar4 * (int)DAT_007fb240 +
+                            ((int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 +
                             (int)sVar3) * 8), local_10 == (void *)0x0)) &&
-     ((((sVar3 < 0 || (DAT_007fb240 <= sVar3)) ||
-       ((sVar4 < 0 || (((DAT_007fb242 <= sVar4 || (sVar1 < 0)) || (DAT_007fb244 <= sVar1)))))) ||
-      (local_10 = *(void **)(DAT_007fb248 + 4 +
-                            ((int)sVar1 * (int)DAT_007fb246 + (int)sVar4 * (int)DAT_007fb240 +
-                            (int)sVar3) * 8), local_10 == (void *)0x0)))) {
+     ((((sVar3 < 0 || (SHORT_007fb240 <= sVar3)) ||
+       ((sVar4 < 0 || (((SHORT_007fb242 <= sVar4 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
+      || (local_10 = *(void **)(DAT_007fb248 + 4 +
+                               ((int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240
+                               + (int)sVar3) * 8), local_10 == (void *)0x0)))) {
     return 0;
   }
-  thunk_FUN_00416270(local_10,(undefined2 *)&local_14,(undefined2 *)&local_18,(undefined2 *)&param_1
-                    );
+  thunk_FUN_00416270(local_10,(undefined2 *)&local_14,&local_18,&param_1);
   local_30 = 0;
   if (0 < local_8) {
     local_34 = (short *)(local_c + 2);
     do {
       sVar3 = local_34[1] + *(short *)((int)this + 0x4b);
       *param_4 = sVar3;
-      if ((-1 < sVar3) && ((int)sVar3 <= DAT_007fb244 + -1)) {
+      if ((-1 < sVar3) && ((int)sVar3 <= SHORT_007fb244 + -1)) {
         sVar3 = *(short *)((int)this + 0x49) + *local_34;
         *param_3 = sVar3;
-        if ((-1 < sVar3) && ((int)sVar3 <= DAT_007fb242 + -1)) {
+        if ((-1 < sVar3) && ((int)sVar3 <= SHORT_007fb242 + -1)) {
           sVar4 = local_34[-1] + *(short *)((int)this + 0x47);
           *param_2 = sVar4;
           if (-1 < sVar4) {
-            local_28 = (int)DAT_007fb240;
+            local_28 = (int)SHORT_007fb240;
             local_2c = (int)sVar4;
             if (local_2c <= local_28 + -1) {
               sVar1 = *param_3;
               sVar2 = *param_4;
               if ((-1 < *(short *)(DAT_007fb280 +
-                                  ((int)sVar2 * (int)DAT_007fb27e +
-                                  local_2c + (int)sVar1 * (int)DAT_007fb278) * 2)) &&
-                 ((((sVar4 < 0 || (DAT_007fb240 <= sVar4)) ||
+                                  ((int)sVar2 * (int)SHORT_007fb27e +
+                                  local_2c + (int)sVar1 * (int)SHORT_007fb278) * 2)) &&
+                 ((((sVar4 < 0 || (SHORT_007fb240 <= sVar4)) ||
                    ((sVar1 < 0 ||
-                    (((DAT_007fb242 <= sVar1 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))))) ||
+                    (((SHORT_007fb242 <= sVar1 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2)))))) ||
                   (*(int *)(DAT_007fb248 +
-                           ((int)sVar2 * (int)DAT_007fb246 + sVar1 * local_28 + (int)sVar4) * 8) ==
-                   0)))) {
+                           ((int)sVar2 * (int)SHORT_007fb246 + sVar1 * local_28 + (int)sVar4) * 8)
+                   == 0)))) {
                 iVar12 = CONCAT22(sVar3 >> 0xf,sVar4) * 0xc9 + 100;
                 local_c = (undefined *)
                           (CONCAT22((short)((uint)(local_28 + -1) >> 0x10),sVar1) * 0xc9 + 100);

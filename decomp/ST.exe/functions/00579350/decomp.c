@@ -137,10 +137,10 @@ LAB_005795a9:
      (uVar3 = uVar3 + 4 & 0x80000007, (int)uVar3 < 0)) {
     uVar3 = (uVar3 - 1 | 0xfffffff8) + 1;
   }
-  iVar2 = (((0x18 - (int)(uVar3 * 0x2d) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
-  STT3DSprC::SetCurFase(this,'\r',iVar2);
+  uVar3 = (((0x18 - (int)(uVar3 * 0x2d) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
+  STT3DSprC::SetCurFase(this,'\r',uVar3);
   STT3DSprC::ShowCurFase(this,'\r');
-  STT3DSprC::SetCurFase(this,'\x0e',*(int *)((int)param_1 + 0x231) + iVar2 * 6);
+  STT3DSprC::SetCurFase(this,'\x0e',*(int *)((int)param_1 + 0x231) + uVar3 * 6);
   STT3DSprC::ShowCurFase(this,'\x0e');
   *(int *)((int)param_1 + 0x23d) = *(int *)((int)param_1 + 0x23d) + 1;
   (**(code **)(*param_1 + 0xd8))();

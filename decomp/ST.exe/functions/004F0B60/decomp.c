@@ -23,7 +23,7 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (errorCode == 0) {
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,8,&local_8->field_027E);
+    STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,8,&local_8->field_027E);
     if ((&this_00->field_027E)[(byte)this_00->field_0279] == 0) {
       uVar4 = 0;
     }

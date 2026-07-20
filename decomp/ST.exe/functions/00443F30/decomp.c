@@ -135,7 +135,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       }
       local_14 = (uint *)((int)local_14 + 0xa62);
     } while ((int)local_14 < 0x7fa2ed);
-    local_28 = iVar2 + DAT_007fb246;
+    local_28 = iVar2 + SHORT_007fb246;
     puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_28);
     puVar4 = puVar3 + 2;
     *puVar3 = local_44->field_001C;
@@ -617,7 +617,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       local_10 = (uint *)((int)local_10 + 0xaab);
       puVar4 = puVar3;
     } while ((int)local_30 < 0x7fab26);
-    uVar11 = (uint)DAT_007fb246;
+    uVar11 = (uint)SHORT_007fb246;
     puVar4 = DAT_007fa168;
     for (uVar7 = uVar11 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar3 = *puVar4;

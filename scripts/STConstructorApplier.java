@@ -25,9 +25,12 @@ import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.ReturnParameterImpl;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.SymbolTable;
@@ -47,7 +50,7 @@ public class STConstructorApplier extends GhidraScript {
         File proposalFile = inputFile();
         if (proposalFile == null) return;
         Tsv tsv = readTsv(proposalFile.toPath());
-        requireColumns(tsv, "name_apply", "convention_apply", "function_address",
+        requireColumns(tsv, "name_apply", "convention_apply", "parameter_apply", "function_address",
             "expected_name", "expected_name_source", "expected_signature",
             "expected_signature_source", "owner", "proposed_name", "table_address",
             "store_address", "confidence", "reason");
@@ -86,10 +89,11 @@ public class STConstructorApplier extends GhidraScript {
     private void applyRow(Map<String, String> row) throws Exception {
         boolean nameApply = enabled(row.get("name_apply"));
         boolean conventionApply = enabled(row.get("convention_apply"));
+        boolean parameterApply = enabled(row.get("parameter_apply"));
         Address address = address(row.get("function_address"));
-        if (!nameApply && !conventionApply) {
+        if (!nameApply && !conventionApply && !parameterApply) {
             report.add(new ReportRow(addr(address), "disabled", unt(row.get("proposed_name")),
-                "name_apply=0; convention_apply=0"));
+                "name_apply=0; convention_apply=0; parameter_apply=0"));
             return;
         }
         Function function = currentProgram.getFunctionManager().getFunctionAt(address);
@@ -138,10 +142,12 @@ public class STConstructorApplier extends GhidraScript {
             initialSignatureSource.toString().equals(expectedSignatureSource);
         boolean manualSignature = initialSignatureSource == SourceType.USER_DEFINED &&
             !hasTag(function, TAG);
-        if (conventionApply) {
-            if ("__thiscall".equals(function.getCallingConventionName()) &&
-                    thisTypeMatches(function, owner)) {
-                details.add("convention=unchanged");
+        if (conventionApply || parameterApply) {
+            boolean conventionMatches = "__thiscall".equals(function.getCallingConventionName());
+            boolean parametersMatch = !parameterApply || explicitParameters(function).isEmpty();
+            if (conventionMatches && parametersMatch) {
+                if (conventionApply) details.add("convention=unchanged");
+                if (parameterApply) details.add("parameters=unchanged");
             }
             else if (manualSignature) {
                 details.add("convention=preserved(USER_DEFINED signature)");
@@ -152,10 +158,17 @@ public class STConstructorApplier extends GhidraScript {
                 preserved = true;
             }
             else {
-                function.setCallingConvention("__thiscall");
-                function.setSignatureSource(SourceType.ANALYSIS);
+                if (parameterApply) {
+                    normalizeReceiverOnlyConstructor(function);
+                    details.add("parameters=applied(no explicit parameters)");
+                }
+                else {
+                    function.setCallingConvention("__thiscall");
+                    function.setSignatureSource(SourceType.ANALYSIS);
+                }
                 setThisType(function, owner);
-                details.add("convention=applied(__thiscall, " + owner + " *this)");
+                if (conventionApply)
+                    details.add("convention=applied(__thiscall, " + owner + " *this)");
                 changed = true;
             }
         }
@@ -245,6 +258,23 @@ public class STConstructorApplier extends GhidraScript {
                     parameter.getAutoParameterType() == AutoParameterType.THIS) return parameter;
         }
         return null;
+    }
+
+    private List<Parameter> explicitParameters(Function function) {
+        List<Parameter> result = new ArrayList<>();
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter()) result.add(parameter);
+        return result;
+    }
+
+    private void normalizeReceiverOnlyConstructor(Function function) throws Exception {
+        boolean varargs = function.hasVarArgs();
+        function.updateFunction("__thiscall",
+            new ReturnParameterImpl(function.getReturnType(), currentProgram),
+            List.<Variable>of(), FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,
+            true, SourceType.ANALYSIS);
+        function.setVarArgs(varargs);
+        function.setSignatureSource(SourceType.ANALYSIS);
     }
 
     private void addRecoveryComment(Function function, Map<String, String> row) {

@@ -8,14 +8,14 @@ FUN_005ff3a0(void *this,undefined2 *param_1,undefined2 *param_2,short *param_3)
   int iVar1;
   
   this_00 = (int *)STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,
+                             (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)this >> 8),*(undefined1 *)((int)this + 0x20a)),
                               CONCAT22((short)((uint)in_EAX >> 0x10),
                                        *(undefined2 *)((int)this + 0x224)),CASE_1);
   if (this_00 != (int *)0x0) {
     iVar1 = (**(code **)(*this_00 + 0xf8))();
     if (iVar1 != 0) {
-      thunk_FUN_00416270(this_00,param_1,param_2,param_3);
+      thunk_FUN_00416270(this_00,param_1,(int *)param_2,(int *)param_3);
       *param_3 = *param_3 + -0x1e;
       return 1;
     }

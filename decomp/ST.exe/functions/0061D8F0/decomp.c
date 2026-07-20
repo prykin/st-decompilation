@@ -25,7 +25,7 @@ int __thiscall FUN_0061d8f0(void *this,undefined4 *param_1)
     puVar5 = puVar5 + 1;
     puVar7 = puVar7 + 1;
   }
-  local_c = thunk_FUN_0061d9c0(this,param_1 + 0x24,&local_10,1);
+  local_c = thunk_FUN_0061d9c0(this,(ushort *)(param_1 + 0x24),&local_10,1);
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;
   local_8 = piVar6;

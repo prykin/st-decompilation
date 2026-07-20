@@ -26,8 +26,8 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
      (iVar3 = *(int *)((int)this + 0x233) + iVar5,
      0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
     TraksClassTy::TraksCreate
-              (DAT_00802a7c,1,1,0,(int)*(short *)(iVar3 + 0x12),(int)*(short *)(iVar3 + 0x14),
-               (int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,0);
+              (g_traksClass_00802A7C,1,1,0,(int)*(short *)(iVar3 + 0x12),
+               (int)*(short *)(iVar3 + 0x14),(int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,0);
   }
   iVar3 = *(int *)((int)this + 0x233);
   psVar1 = (short *)(iVar5 + iVar3);

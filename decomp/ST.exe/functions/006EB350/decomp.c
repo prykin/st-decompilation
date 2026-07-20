@@ -13,7 +13,7 @@ int __thiscall FUN_006eb350(void *this,int param_1,int param_2,int param_3,int p
   int local_18;
   int local_14;
   int local_10;
-  undefined4 *local_c;
+  short *local_c;
   int local_8;
   
   local_1c = 0;
@@ -40,7 +40,7 @@ int __thiscall FUN_006eb350(void *this,int param_1,int param_2,int param_3,int p
               (iVar4 = FUN_006cfd90(pbVar1,iVar4 - iVar6,iVar2 - iVar5), iVar4 != 0)))) {
             iVar4 = local_8;
             if (local_10 < local_14) {
-              local_1c = local_c[local_10 * 5 + 1];
+              local_1c = *(int *)(local_c + local_10 * 10 + 2);
             }
             break;
           }

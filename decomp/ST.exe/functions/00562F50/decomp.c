@@ -141,12 +141,12 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
       DAT_008033c0 = 0;
     }
     iVar14 = param_2 + 0x2c;
-    if (DAT_007fb278 <= iVar14) {
-      iVar14 = DAT_007fb278 + -1;
+    if (SHORT_007fb278 <= iVar14) {
+      iVar14 = SHORT_007fb278 + -1;
     }
     iVar15 = param_3 + 0x2c;
-    if (DAT_007fb27a <= iVar15) {
-      iVar15 = DAT_007fb27a + -1;
+    if (SHORT_007fb27a <= iVar15) {
+      iVar15 = SHORT_007fb27a + -1;
     }
     DAT_008033a4 = (iVar14 - DAT_008033bc) + 1;
     DAT_008033a8 = (iVar15 - DAT_008033c0) + 1;
@@ -292,7 +292,7 @@ LAB_00563368:
           local_30 = (int)DAT_00803380 + local_cc;
           local_cc = local_cc + (int)local_60[0];
           local_90 = (short *)(DAT_007fb280 +
-                              ((DAT_008033c0 + local_ac) * (int)DAT_007fb278 + DAT_008033bc) * 2);
+                              ((DAT_008033c0 + local_ac) * (int)SHORT_007fb278 + DAT_008033bc) * 2);
           iVar18 = 0;
           if (0 < iVar14) {
             do {
@@ -304,7 +304,7 @@ LAB_00563368:
                   iVar14 = iVar14 + 1;
                 }
                 iVar11 = iVar11 + 1;
-                psVar8 = psVar8 + DAT_007fb27e;
+                psVar8 = psVar8 + SHORT_007fb27e;
               } while (iVar11 < 5);
               *(char *)(local_30 + iVar18 * 2) = (char)iVar14;
               if (iVar14 < 1) {
@@ -329,7 +329,7 @@ LAB_00563368:
         local_30 = (int)DAT_00803380 + local_cc;
         local_cc = local_cc + (int)local_60[0];
         psVar8 = (short *)(DAT_007fb280 +
-                          ((iVar15 + DAT_008033c0) * (int)DAT_007fb278 + DAT_008033bc) * 2);
+                          ((iVar15 + DAT_008033c0) * (int)SHORT_007fb278 + DAT_008033bc) * 2);
         iVar18 = 0;
         if (0 < local_9c) {
           do {
@@ -341,7 +341,7 @@ LAB_00563368:
                 iVar11 = iVar11 + 1;
               }
               iVar14 = iVar14 + 1;
-              psVar7 = psVar7 + DAT_007fb27e;
+              psVar7 = psVar7 + SHORT_007fb27e;
             } while (iVar14 < 5);
             *(char *)(local_30 + iVar18 * 2) = (char)iVar11;
             if (iVar11 < 1) {
@@ -359,11 +359,11 @@ LAB_00563368:
           } while (iVar18 < local_9c);
         }
         psVar8 = (short *)(DAT_007fb280 +
-                          ((int)DAT_007fb278 * (DAT_008033c0 + iVar15) + local_9c + DAT_008033bc) *
-                          2);
+                          ((int)SHORT_007fb278 * (DAT_008033c0 + iVar15) + local_9c + DAT_008033bc)
+                          * 2);
         local_164 = (int *)(DAT_007fb248 +
-                           ((int)DAT_007fb240 * (DAT_008033c0 + iVar15) + local_9c + DAT_008033bc) *
-                           8);
+                           ((int)SHORT_007fb240 * (DAT_008033c0 + iVar15) + local_9c + DAT_008033bc)
+                           * 8);
         local_94 = local_9c;
         while (local_94 <= local_c4) {
           local_d4 = 0;
@@ -423,8 +423,8 @@ LAB_005637a4:
             }
 LAB_005637bc:
             local_34 = local_34 + 1;
-            psVar7 = psVar7 + DAT_007fb27e;
-            piVar9 = piVar9 + DAT_007fb246 * 2;
+            psVar7 = psVar7 + SHORT_007fb27e;
+            piVar9 = piVar9 + SHORT_007fb246 * 2;
           } while (local_34 < 5);
           *(byte *)(local_30 + local_94 * 2) = (char)local_64 << 4 | (byte)local_d4;
           if (local_d4 < 1) {
@@ -442,8 +442,8 @@ LAB_005637bc:
           iVar14 = DAT_008033a4;
         }
         local_90 = (short *)(DAT_007fb280 + 2 +
-                            ((iVar15 + DAT_008033c0) * (int)DAT_007fb278 + local_c4 + DAT_008033bc)
-                            * 2);
+                            ((iVar15 + DAT_008033c0) * (int)SHORT_007fb278 + local_c4 + DAT_008033bc
+                            ) * 2);
         iVar18 = local_c4 + 1;
         if (iVar18 < iVar14) {
           do {
@@ -455,7 +455,7 @@ LAB_005637bc:
                 iVar14 = iVar14 + 1;
               }
               iVar11 = iVar11 + 1;
-              psVar8 = psVar8 + DAT_007fb27e;
+              psVar8 = psVar8 + SHORT_007fb27e;
             } while (iVar11 < 5);
             *(char *)(local_30 + iVar18 * 2) = (char)iVar14;
             if (iVar14 < 1) {
@@ -480,7 +480,7 @@ LAB_005637bc:
           local_30 = (int)DAT_00803380 + local_cc;
           local_cc = local_cc + (int)local_60[0];
           local_90 = (short *)(DAT_007fb280 +
-                              ((DAT_008033c0 + local_ac) * (int)DAT_007fb278 + DAT_008033bc) * 2);
+                              ((DAT_008033c0 + local_ac) * (int)SHORT_007fb278 + DAT_008033bc) * 2);
           iVar15 = 0;
           if (0 < iVar14) {
             do {
@@ -492,7 +492,7 @@ LAB_005637bc:
                   iVar14 = iVar14 + 1;
                 }
                 iVar18 = iVar18 + 1;
-                psVar8 = psVar8 + DAT_007fb27e;
+                psVar8 = psVar8 + SHORT_007fb27e;
               } while (iVar18 < 5);
               *(char *)(local_30 + iVar15 * 2) = (char)iVar14;
               if (iVar14 < 1) {
@@ -988,16 +988,17 @@ LAB_005637bc:
     FUN_006ab060(&DAT_00803380);
     iVar15 = 0;
     do {
-      FUN_006ab060((undefined4 *)(DAT_008032fc + iVar15));
+      FUN_006ab060((LPVOID *)(DAT_008032fc + iVar15));
       iVar15 = iVar15 + 4;
     } while (iVar15 < 0x80);
     iVar15 = 0;
     do {
-      FUN_006ab060((undefined4 *)(iVar15 + (int)DAT_008033b0));
+      FUN_006ab060((LPVOID *)(iVar15 + (int)DAT_008033b0));
       iVar15 = iVar15 + 4;
     } while (iVar15 < 0x40);
     if (iVar14 != 0) {
-      RaiseInternalException(iVar14,DAT_007ed77c,s_E____titans_scoreai_cpp_007c96b0,0xdd4);
+      RaiseInternalException
+                (iVar14,g_overwriteContext_007ED77C,s_E____titans_scoreai_cpp_007c96b0,0xdd4);
     }
   }
   ExceptionList = local_14;

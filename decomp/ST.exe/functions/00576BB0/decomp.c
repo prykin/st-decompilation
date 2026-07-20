@@ -21,18 +21,19 @@ void CreateBaseSystem(void)
   if (errorCode == 0) {
     this = (BaseSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
     if (this == (BaseSystemC *)0x0) {
-      DAT_00811638 = (int *)0x0;
+      DAT_00811638 = (BaseSystemC *)0x0;
     }
     else {
-      DAT_00811638 = BaseSystemC::BaseSystemC(this,DAT_00806728);
+      DAT_00811638 = BaseSystemC::BaseSystemC(this,g_appClass_00806728);
     }
-    if (DAT_00811638 == (int *)0x0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tsystem_cpp_007cab5c,0x38);
+    if (DAT_00811638 == (BaseSystemC *)0x0) {
+      RaiseInternalException(-1,g_overwriteContext_007ED77C,s_E____titans_tsystem_cpp_007cab5c,0x38)
+      ;
     }
-    DAT_00811638[8] = 0;
-    (**(code **)*DAT_00811638)();
-    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,DAT_00811638,0);
-    DAT_00811638[8] = 1;
+    DAT_00811638[8].vtable = (BaseSystemCVTable *)0x0;
+    (*DAT_00811638->vtable->InitSystem)((SystemClassTy *)DAT_00811638);
+    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)DAT_00811638,0);
+    DAT_00811638[8].vtable = (BaseSystemCVTable *)0x1;
     g_currentExceptionFrame = pIVar3;
     return;
   }

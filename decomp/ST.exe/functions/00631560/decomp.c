@@ -3,7 +3,7 @@ void __fastcall FUN_00631560(int param_1)
 
 {
   if (*(int *)(param_1 + 0x34) != 0) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x34));
+    FUN_006ab060((LPVOID *)(param_1 + 0x34));
   }
   if (*(byte **)(param_1 + 0x38) != (byte *)0x0) {
     FUN_006ae110(*(byte **)(param_1 + 0x38));

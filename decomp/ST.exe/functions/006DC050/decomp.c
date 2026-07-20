@@ -15,14 +15,12 @@ FUN_006dc050(void *param_1,undefined4 param_2,uint param_3,undefined4 param_4,in
   float10 extraout_ST0;
   longlong lVar5;
   
-  puVar3 = (undefined4 *)
-           Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 0x350),0x658);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(*(int *)((int)param_1 + 0x350),0x658);
   iVar4 = 0;
   *(undefined4 **)((int)param_1 + 0x350) = puVar3;
   *puVar3 = 0;
   *(undefined4 *)(*(int *)((int)param_1 + 0x350) + 4) = 0;
-  puVar3 = (undefined4 *)
-           Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 0x354),0x658);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(*(int *)((int)param_1 + 0x354),0x658);
   *(undefined4 **)((int)param_1 + 0x354) = puVar3;
   *puVar3 = 0;
   *(undefined4 *)(*(int *)((int)param_1 + 0x354) + 4) = 0;

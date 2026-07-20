@@ -54,11 +54,12 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
   sVar9 = *(short *)((int)param_1 + 0x242);
   sVar2 = *(short *)((int)param_1 + 0x244);
   sVar3 = *(short *)((int)param_1 + 0x246);
-  if ((((((sVar9 < 0) || (DAT_007fb240 <= sVar9)) ||
-        ((sVar2 < 0 || ((DAT_007fb242 <= sVar2 || (sVar3 < 0)))))) || (DAT_007fb244 <= sVar3)) ||
-      (*(int *)(DAT_007fb248 +
-               ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar2 + (int)sVar9) * 8)
-       == 0)) && (iVar7 = DumpClassC::WritePtr(sVar9,sVar2,sVar3,0,(int)param_1), iVar7 == 0)) {
+  if ((((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) ||
+        ((sVar2 < 0 || ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))))) || (SHORT_007fb244 <= sVar3))
+      || (*(int *)(DAT_007fb248 +
+                  ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar9)
+                  * 8) == 0)) &&
+     (iVar7 = DumpClassC::WritePtr(sVar9,sVar2,sVar3,0,(int)param_1), iVar7 == 0)) {
     *(char *)((int)param_1 + 0x252) = *(char *)((int)param_1 + 0x252) + '\x01';
     bVar5 = true;
   }
@@ -69,24 +70,24 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
     if (sVar9 < 0) {
       return 0;
     }
-    if (DAT_007fb240 <= sVar9) {
+    if (SHORT_007fb240 <= sVar9) {
       return 0;
     }
     if (sVar3 < 0) {
       return 0;
     }
-    if (DAT_007fb242 <= sVar3) {
+    if (SHORT_007fb242 <= sVar3) {
       return 0;
     }
     if (sVar2 < 0) {
       return 0;
     }
-    if (DAT_007fb244 <= sVar2) {
+    if (SHORT_007fb244 <= sVar2) {
       return 0;
     }
     piVar4 = *(int **)(DAT_007fb248 +
-                      ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar9)
-                      * 8);
+                      ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                      (int)sVar9) * 8);
     if (piVar4 == (int *)0x0) {
       return 0;
     }

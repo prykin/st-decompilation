@@ -172,13 +172,13 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
       return 0;
     }
     if (pSVar2->field_0207 != 0) {
-      FUN_006ab060(&pSVar2->field_0207);
+      FUN_006ab060((LPVOID *)&pSVar2->field_0207);
     }
     if (pSVar2->field_020B == 0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    FUN_006ab060(&pSVar2->field_020B);
+    FUN_006ab060((LPVOID *)&pSVar2->field_020B);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -198,8 +198,8 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     }
     *(undefined2 *)puVar8 = *(undefined2 *)puVar9;
     if ((((*(int *)&pSVar2->field_0x1ed < 0) || (*(int *)&pSVar2->field_0x1f1 < 0)) ||
-        ((int)DAT_007fb240 < *(int *)&pSVar2->field_0x1f5)) ||
-       ((int)DAT_007fb242 < *(int *)&pSVar2->field_0x1f9)) {
+        ((int)SHORT_007fb240 < *(int *)&pSVar2->field_0x1f5)) ||
+       ((int)SHORT_007fb242 < *(int *)&pSVar2->field_0x1f9)) {
       iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13d,0,0,&DAT_007a4ccc,
                                  s_Bad_init_coordinates_007cb3ac);
       if (iVar3 != 0) {
@@ -207,7 +207,8 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
         uVar4 = (*pcVar1)();
         return uVar4;
       }
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13e);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13e);
     }
     iVar3 = Library::DKW::LIB::FUN_006aac70(pSVar2->field_01FD << 2);
     pSVar2->field_0207 = iVar3;
@@ -253,7 +254,8 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     }
     iVar3 = 0x15b;
   }
-  RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,iVar3);
+  RaiseInternalException
+            (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,iVar3);
 cf_common_exit_00581D62:
   puVar9 = (undefined4 *)pSVar2->field_0207;
   for (uVar7 = pSVar2->field_01FD & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {

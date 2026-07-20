@@ -1,5 +1,10 @@
 
-void __thiscall FUN_004cfff0(void *this,int param_1,int param_2,int *param_3,int *param_4)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004CAFC0 -> 004CFFF0 @ 004CB045 */
+
+void __thiscall
+FUN_004cfff0(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,int *param_3,
+            int *param_4)
 
 {
   int iVar1;
@@ -10,16 +15,16 @@ void __thiscall FUN_004cfff0(void *this,int param_1,int param_2,int *param_3,int
   uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar4 = (uVar3 & 0xff) - 1;
-  if (param_1 == 9) {
+  if (param_1 == CASE_9) {
     iVar2 = *(int *)((int)this + 0x4d0);
   }
   else {
-    if (param_1 == 0xd) {
+    if (param_1 == CASE_D) {
       *param_4 = 0;
       *param_3 = 0;
       return;
     }
-    if (param_1 != 0xe) {
+    if (param_1 != CASE_E) {
       return;
     }
     iVar2 = *(int *)((int)this + 0x4d0);

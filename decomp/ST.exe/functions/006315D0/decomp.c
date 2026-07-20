@@ -25,7 +25,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   
   local_8 = *(int *)((int)this + 0x38);
   if ((local_8 != 0) && (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {
-    iVar2 = (DAT_007fb240 * param_3 + param_2) * (int)DAT_007fb242 + param_1;
+    iVar2 = (SHORT_007fb240 * param_3 + param_2) * (int)SHORT_007fb242 + param_1;
     if (param_4 == 1) {
       if (*(char *)(iVar7 + iVar2) != '\0') {
         return;
@@ -35,7 +35,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
       if (param_4 != 4) {
         return;
       }
-      iVar8 = DAT_007fb242 + iVar2;
+      iVar8 = SHORT_007fb242 + iVar2;
       if ((((*(char *)(iVar7 + iVar2) == '\0') && (*(char *)(iVar7 + 1 + iVar2) == '\0')) &&
           (*(char *)(iVar7 + iVar8) == '\0')) && (*(char *)(iVar7 + 1 + iVar8) == '\0')) {
         return;

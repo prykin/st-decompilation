@@ -11,7 +11,7 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
 
 {
   byte bVar1;
-  int *this;
+  STFishC *this;
   code *pcVar2;
   int iVar3;
   undefined4 *puVar4;
@@ -56,7 +56,8 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
     return iVar3;
   }
   if (DAT_007fa158 == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x41f);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x41f);
   }
   uVar8 = *(int *)(DAT_007fa158 + 0xc) - 1;
   iVar3 = DAT_007fa158;
@@ -71,14 +72,14 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
     else {
       puVar4 = (undefined4 *)0x0;
     }
-    this = (int *)*puVar4;
-    if (((this != (int *)0x0) && (this[9] == param_1)) &&
-       ((local_10 = uVar8, iVar5 = (**(code **)(*this + 0x2c))(), param_2 == 0 ||
+    this = (STFishC *)*puVar4;
+    if (((this != (STFishC *)0x0) && (*(int *)&this->field_0x24 == param_1)) &&
+       ((local_10 = uVar8, iVar5 = (*this->vtable->slot_2C)(), param_2 == 0 ||
         (iVar3 = DAT_007fa158, param_2 == iVar5)))) {
       iVar5 = 1;
       local_14 = 1;
       if ((param_4 != (byte *)0x0) && (*param_4 != 0)) {
-        (**(code **)(*this + 0x74))(local_28);
+        (*this->vtable->slot_74)(local_28);
         pbVar9 = local_28;
         pbVar6 = param_4;
         do {
@@ -107,11 +108,11 @@ LAB_00678362:
       uVar8 = local_10;
       if ((iVar5 != 0) &&
          ((local_5 == -1 ||
-          (iVar7 = (**(code **)(*this + 0x6c))(), iVar3 = DAT_007fa158, uVar8 = local_10,
+          (iVar7 = (*this->vtable->slot_6C)(), iVar3 = DAT_007fa158, uVar8 = local_10,
           local_5 == iVar7)))) {
         if ((0 < param_8) &&
            (((0 < param_9 && (0 < param_10)) &&
-            ((thunk_FUN_004162b0(this,&local_8,&local_a,&local_c), local_8 < param_5 ||
+            ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_5 ||
              ((((local_a < param_6 || (local_c < param_7)) ||
                ((int)param_5 + (int)param_8 <= (int)local_8)) ||
               (((int)param_6 + (int)param_9 <= (int)local_a ||

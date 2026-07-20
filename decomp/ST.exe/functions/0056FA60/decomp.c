@@ -232,8 +232,8 @@ switchD_0056fad2_caseD_6105:
         }
       }
       thunk_FUN_005713b0((int)pSVar7);
-      uVar15 = FUN_006e51b0((int)pSVar7);
-      pSVar7->field_1134 = uVar15;
+      DVar10 = FUN_006e51b0((int)pSVar7);
+      pSVar7->field_1134 = DVar10;
       pvVar6 = DAT_00802a30;
       *(undefined1 *)((int)DAT_00802a30 + 0x493) = 0;
       thunk_FUN_0054b540(pvVar6);
@@ -350,7 +350,7 @@ switchD_0056fad2_caseD_6102:
         thunk_FUN_005711d0(pSVar7,&DAT_00802a28);
       }
       CreateInterSystem();
-      if (DAT_007fa174 != 0) {
+      if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
         thunk_FUN_0042a9f0(bVar3);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
@@ -368,14 +368,13 @@ switchD_0056fad2_caseD_6102:
       *(undefined4 *)((int)pvVar6 + 0x4b6) = (&DAT_0080756c)[uVar22 * 4];
       *(undefined4 *)((int)pvVar6 + 0x4ba) = (&DAT_00807570)[uVar22 * 4];
       *(undefined4 *)((int)pvVar6 + 0x4be) = (&DAT_00807574)[uVar22 * 4];
-      if (DAT_007fb2a0 != (OpticClassC *)0x0) {
-        OpticClassC::ReInitOptic(DAT_007fb2a0,_DAT_00807348 & 0xff);
+      if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
+        OpticClassC::ReInitOptic(g_opticClass_007FB2A0,_DAT_00807348 & 0xff);
         FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,&local_60);
-        if (DAT_00801688 != 0) {
+        if (g_cPanel_00801688 != (CPanelTy *)0x0) {
           thunk_FUN_004a9b60(local_60,local_5c,local_58,
                              local_54 -
-                             ((-(uint)(*(short *)(DAT_00801688 + 0x23f) != 1) & 0xffffff65) + 0x9b))
-          ;
+                             ((-(uint)(g_cPanel_00801688->field_023F != 1) & 0xffffff65) + 0x9b));
         }
       }
       CreateInterSystem();
@@ -503,8 +502,8 @@ switchD_0056fad2_caseD_6102:
       if ((*(uint *)((int)DAT_008075a0 + 4) & 0x40000000) != 0) {
         FUN_006c3f00((int)DAT_008075a0);
       }
-      local_10 = FUN_006c2a00((LPCSTR)&DAT_00803408);
-      if ((local_10 != 0) && (DAT_008075a4 == (int *)0x0)) {
+      local_10 = FUN_006c2a00(&DAT_00803408);
+      if ((local_10 != 0) && (g_int_008075A4 == (int *)0x0)) {
         FUN_006e3db0((int)&pSVar7->field_0x113a);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
@@ -531,7 +530,7 @@ switchD_0056fad2_caseD_6102:
       else if (*(uint *)((int)DAT_00802a30 + 0x1c) != 0xffffffff) {
         FUN_006b3af0(*(int **)((int)DAT_00802a30 + 0x60),*(uint *)((int)DAT_00802a30 + 0x1c));
       }
-      FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+      FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0);
       Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
       local_14c.previous = g_currentExceptionFrame;
@@ -540,20 +539,20 @@ switchD_0056fad2_caseD_6102:
       if (local_4c != 0) {
         g_currentExceptionFrame = local_14c.previous;
         if (local_10 != 0) {
-          FUN_006c2c80(DAT_008075a4);
+          FUN_006c2c80(g_int_008075A4);
         }
         if (DAT_00806738 != 8) {
           DAT_00806738 = 8;
           Library::DKW::DDX::FUN_006b9b40
-                    (DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,8,DAT_00806730,DAT_00806734,0
-                     ,0,0x100);
+                    (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730,
+                     DAT_00806734,0,0,0x100);
           Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
         }
         pSVar7 = local_18;
         puVar12 = &local_18->field_0038;
         local_18->field_4EFA = 0;
         thunk_FUN_00567220((int)puVar12);
-        thunk_FUN_00567180(puVar12,DAT_00856d78);
+        thunk_FUN_00567180(puVar12,HWND_00856d78);
         FUN_006e3db0((int)&pSVar7->field_0x113a);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
@@ -623,7 +622,8 @@ switchD_0056fad2_caseD_6102:
       if (iVar8 == 8) {
 LAB_00570645:
         if (uVar22 == 0) {
-          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x792);
+          RaiseInternalException
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_tapp_cpp_007ca0c8,0x792);
         }
       }
       iVar8 = local_10;
@@ -635,7 +635,7 @@ LAB_00570645:
         Library::DKW::DV::FUN_006c3b00(DAT_008075a0,(LPCSTR)&DAT_00803408,(uint)local_8);
       }
       else {
-        Library::DKW::DV::FUN_006c2ae0(DAT_008075a4,&DAT_00803408,(uint)local_8);
+        Library::DKW::DV::FUN_006c2ae0(g_int_008075A4,&DAT_00803408,(uint)local_8);
       }
       if (DAT_0080350c._2_1_ == '\x01') {
         iVar17 = 0;
@@ -643,7 +643,7 @@ LAB_00570645:
         iVar27 = DAT_0080759c[6];
         iVar28 = DAT_0080759c[7];
         if (iVar8 != 0) {
-          Library::DKW::DV::FUN_006c2d30(DAT_008075a4,0,0,DAT_0080759c[6],DAT_0080759c[7]);
+          Library::DKW::DV::FUN_006c2d30(g_int_008075A4,0,0,DAT_0080759c[6],DAT_0080759c[7]);
           goto cf_common_exit_0057073B;
         }
       }
@@ -655,7 +655,7 @@ LAB_00570645:
         iVar28 = DAT_0080351b;
         if (iVar8 != 0) {
           Library::DKW::DV::FUN_006c2d30
-                    (DAT_008075a4,ram0x0080350f,DAT_00803513,DAT_00803517,DAT_0080351b);
+                    (g_int_008075A4,ram0x0080350f,DAT_00803513,DAT_00803517,DAT_0080351b);
           goto cf_common_exit_0057073B;
         }
       }
@@ -669,8 +669,9 @@ cf_common_exit_0057073B:
         g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
-      Library::DKW::DV::FUN_006c2d90(DAT_008075a4);
-      RaiseInternalException(local_4c,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x7bc);
+      Library::DKW::DV::FUN_006c2d90(g_int_008075A4);
+      RaiseInternalException
+                (local_4c,g_overwriteContext_007ED77C,s_E____titans_tapp_cpp_007ca0c8,0x7bc);
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     }

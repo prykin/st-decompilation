@@ -5,11 +5,14 @@
    
    [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/STAllPlayersC_DestroyObjectMsg_param_3Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00652810 -> 00449B60 @ 00655AAC | 00652810 -> 00449B60 @ 00655BDB */
 
 undefined4 __thiscall
 STAllPlayersC::DestroyObjectMsg
-          (STAllPlayersC *this,undefined4 *param_1,uint param_2,
+          (STAllPlayersC *this,uint param_1,uint param_2,
           STAllPlayersC_DestroyObjectMsg_param_3Enum param_3,undefined4 param_4)
 
 {
@@ -61,18 +64,18 @@ STAllPlayersC::DestroyObjectMsg
     return uVar5;
   }
   if (((iVar4 != 0) && (uVar3 = FUN_006acc70(iVar4,param_2 & 0xffff,&param_1), uVar3 != 0xfffffffc))
-     && (param_1 != (undefined4 *)0x0)) {
+     && (param_1 != 0)) {
     local_20 = 10000;
     local_1c = 0;
     local_18 = 0xfe;
     local_14 = (undefined2)uVar2;
-    local_12 = *(undefined2 *)(param_1 + 6);
+    local_12 = *(undefined2 *)(param_1 + 0x18);
     local_2c = &local_20;
     local_10 = 0;
     local_c = 1;
     local_8 = param_4;
     local_30 = 0x128;
-    (**(code **)*param_1)(local_40);
+    (*(code *)**(undefined4 **)param_1)(local_40);
     return 1;
   }
   return 0;

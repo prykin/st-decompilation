@@ -20,12 +20,12 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,undefined4 param_4,
     iVar6 = 0;
   }
   iVar5 = param_1 + param_3;
-  if (DAT_007fb240 <= iVar5) {
-    iVar5 = DAT_007fb240 + -1;
+  if (SHORT_007fb240 <= iVar5) {
+    iVar5 = SHORT_007fb240 + -1;
   }
   iVar3 = param_3 + param_2;
-  if (DAT_007fb242 <= iVar3) {
-    iVar3 = DAT_007fb242 + -1;
+  if (SHORT_007fb242 <= iVar3) {
+    iVar3 = SHORT_007fb242 + -1;
   }
   iVar2 = DAT_00811720;
   while( true ) {

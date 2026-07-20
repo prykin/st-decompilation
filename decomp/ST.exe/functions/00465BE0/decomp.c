@@ -10,7 +10,7 @@ int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
   int iVar2;
   
   if (this->field_0497 == 0) {
-    iVar2 = thunk_FUN_00460360((int *)this);
+    iVar2 = sub_00460360(this);
     return iVar2;
   }
   if (this->field_0497 == 1) {

@@ -4,7 +4,7 @@
 undefined4 __fastcall FUN_006239a0(int *param_1)
 
 {
-  void *this;
+  VisibleClassTy *this;
   uint uVar1;
   undefined4 *this_00;
   int iVar2;
@@ -75,8 +75,9 @@ undefined4 __fastcall FUN_006239a0(int *param_1)
     uVar3 = thunk_FUN_00627db0(param_1,*(int *)((int)param_1 + 0x2c2),*(int *)((int)param_1 + 0x2c6)
                                ,iVar2);
     STAllPlayersC::UnRegisterMine
-              (DAT_007fa174,CONCAT31((int3)((uint)uVar3 >> 8),*(undefined1 *)((int)param_1 + 0x262))
-               ,CONCAT22(extraout_var,*(undefined2 *)((int)param_1 + 0x32)),(uint)param_1);
+              (g_sTAllPlayers_007FA174,
+               CONCAT31((int3)((uint)uVar3 >> 8),*(undefined1 *)((int)param_1 + 0x262)),
+               CONCAT22(extraout_var,*(undefined2 *)((int)param_1 + 0x32)),(uint)param_1);
     thunk_FUN_0041d2b0(param_1);
     iVar2 = thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x47),*(short *)((int)param_1 + 0x49),
                                *(short *)((int)param_1 + 0x4b),(uint)*(byte *)((int)param_1 + 0x8e),
@@ -110,7 +111,7 @@ switchD_006239c1_caseD_4:
         thunk_FUN_004ad0e0((void *)((int)param_1 + 0x1d5),9);
       }
       STT3DSprC::SetCurFase
-                ((STT3DSprC *)((int)param_1 + 0x1d5),'\t',*(undefined4 *)((int)param_1 + 0x2db));
+                ((STT3DSprC *)((int)param_1 + 0x1d5),'\t',*(uint *)((int)param_1 + 0x2db));
       STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\t');
     }
     if (*(int *)((int)param_1 + 0x2db) < *(int *)((int)param_1 + 0x2d7)) {
@@ -118,25 +119,25 @@ switchD_006239c1_caseD_4:
     }
   }
   if ((char)param_1[0xb8] != '\0') {
-    if (*(int *)((int)param_1 + 0x2e1) == *(int *)((int)param_1 + 0x2e5)) {
+    if (*(uint *)((int)param_1 + 0x2e1) == *(uint *)((int)param_1 + 0x2e5)) {
       *(undefined1 *)(param_1 + 0xb8) = 0;
       thunk_FUN_004ad070((void *)((int)param_1 + 0x1d5),10);
     }
     else {
-      STT3DSprC::SetCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\n',*(int *)((int)param_1 + 0x2e1))
-      ;
+      STT3DSprC::SetCurFase
+                ((STT3DSprC *)((int)param_1 + 0x1d5),'\n',*(uint *)((int)param_1 + 0x2e1));
       STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\n');
       *(int *)((int)param_1 + 0x2e1) = *(int *)((int)param_1 + 0x2e1) + 1;
     }
   }
-  iVar2 = *(int *)((int)param_1 + 0x2ce);
-  if (iVar2 < *(int *)((int)param_1 + 0x2d2)) {
-    STT3DSprC::SetCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e',iVar2);
+  uVar1 = *(uint *)((int)param_1 + 0x2ce);
+  if ((int)uVar1 < (int)*(uint *)((int)param_1 + 0x2d2)) {
+    STT3DSprC::SetCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e',uVar1);
     STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e');
 LAB_00623d08:
     *(int *)((int)param_1 + 0x2ce) = *(int *)((int)param_1 + 0x2ce) + 1;
   }
-  else if (iVar2 == *(int *)((int)param_1 + 0x2d2)) {
+  else if (uVar1 == *(uint *)((int)param_1 + 0x2d2)) {
     if (-1 < *(int *)((int)param_1 + 0x2ba)) {
       thunk_FUN_004ad070((void *)((int)param_1 + 0x1d5),0xe);
     }
@@ -147,28 +148,25 @@ LAB_00623d08:
                      (float)*(int *)((int)param_1 + 0x2c6) * _DAT_007904f8 * _DAT_007904f0,
                      (float)*(int *)((int)param_1 + 0x2ca) * _DAT_007904f8 * _DAT_007904f0 +
                      _DAT_007904fc);
-  this = DAT_00802a88;
+  this = g_visibleClass_00802A88;
   if (*(int *)((int)param_1 + 0x2db) == *(int *)((int)param_1 + 0x2d7)) {
     thunk_FUN_00622670(param_1);
     return local_8;
   }
-  if (DAT_00802a88 != (void *)0x0) {
+  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     lVar5 = Library::MSVCRT::__ftol();
     iVar2 = (int)lVar5;
-    if ((DAT_0080874d != -1) && (*(int *)((int)this + 0xf8) != 0)) {
+    if ((DAT_0080874d != -1) && (this->field_00F8 != 0)) {
       piVar7 = &local_1c;
       piVar6 = &local_18;
       lVar5 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar5;
       lVar5 = Library::MSVCRT::__ftol();
-      thunk_FUN_00558c00(this,*(Global_sub_00558C00_param_1Enum *)((int)this + 0x10c),(int)lVar5,
-                         iVar4,piVar6,piVar7);
-      if ((((-1 < iVar2) &&
-           (((iVar2 < 5 && (-1 < local_18)) && (local_18 < *(int *)((int)this + 0x30))))) &&
-          (((local_1c = (&DAT_0079aed0)[iVar2] + local_1c, -1 < local_1c &&
-            (local_1c < *(int *)((int)this + 0x34))) && (*(int *)((int)this + 0x4c) != 0)))) &&
-         (*(char *)(local_1c * *(int *)((int)this + 0x30) + *(int *)((int)this + 0x4c) + local_18)
-          == '\0')) {
+      thunk_FUN_00558c00(this,this->field_010C,(int)lVar5,iVar4,piVar6,piVar7);
+      if ((((-1 < iVar2) && (((iVar2 < 5 && (-1 < local_18)) && (local_18 < (int)this->field_0030)))
+           ) && (((local_1c = (&DAT_0079aed0)[iVar2] + local_1c, -1 < local_1c &&
+                  (local_1c < (int)this->field_0034)) && (this->field_004C != 0)))) &&
+         (*(char *)(local_1c * this->field_0030 + this->field_004C + local_18) == '\0')) {
         if (*(char *)((int)param_1 + 0x2e9) == '\0') {
           return local_8;
         }

@@ -61,13 +61,13 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
     this->field_066F = sVar3;
     this->field_0671 = sVar1;
     this->field_0673 = sVar2;
-    if ((((sVar3 < 0) || (DAT_007fb240 <= sVar3)) ||
-        ((sVar1 < 0 || ((DAT_007fb242 <= sVar1 || (sVar2 < 0)))))) || (DAT_007fb244 <= sVar2)) {
+    if ((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
+        ((sVar1 < 0 || ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))))) || (SHORT_007fb244 <= sVar2)) {
       param_1 = (int *)0x0;
     }
     else {
       param_1 = *(int **)(DAT_007fb248 +
-                         ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar1 +
+                         ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar1 +
                          (int)sVar3) * 8);
     }
     if (param_1 == (int *)0x0) {
@@ -89,7 +89,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
   }
   SVar4 = this->field_0687;
   if (SVar4 == CASE_0) {
-    iVar8 = thunk_FUN_00460260(this,2);
+    iVar8 = sub_00460260(this,2);
     switch(iVar8) {
     case 0:
       goto switchD_0047c090_caseD_0;
@@ -97,34 +97,37 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
       sVar1 = this->field_066F;
       sVar2 = this->field_0673;
       sVar3 = this->field_0671;
-      if (((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-         (((sVar3 < 0 || ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)))) {
+      if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+         (((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2))))
+      {
         param_1 = (int *)0x0;
       }
       else {
         param_1 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
+                           ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                            (int)sVar1) * 8);
       }
       if (((param_1 != (int *)0x0) && (param_1[6] == this->field_0679)) &&
          (iVar8 = (**(code **)(*param_1 + 0xf8))(), iVar8 != 0)) {
         return 2;
       }
-      thunk_FUN_004602b0((int *)this);
+      sub_004602B0(this);
       this->field_00B7 = 0;
       return 0;
     default:
       return 2;
     case 3:
-      thunk_FUN_00481520(this,(int)(short)this->field_066F,(int)(short)this->field_0671,
-                         (short)this->field_0673 + 1);
-      thunk_FUN_00460260(this,0);
+      sub_00481520(this,(int)(short)this->field_066F,(int)(short)this->field_0671,
+                   (short)this->field_0673 + 1);
+      sub_00460260(this,0);
       return 2;
     case -1:
       iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x379a,0,0,&DAT_007a4ccc,
                                  s_STBoatC__Bring__BRING_MOVE_error_007ab5dc);
       if (iVar8 == 0) {
-        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x379a);
+        RaiseInternalException
+                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x379a
+                  );
         return 0xffff;
       }
       pcVar6 = (code *)swi(3);
@@ -134,19 +137,20 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
   }
   if (SVar4 != CASE_1) {
     if (SVar4 == CASE_2) {
-      iVar8 = thunk_FUN_00460260(this,2);
+      iVar8 = sub_00460260(this,2);
       switch(iVar8) {
       case 0:
         sVar1 = this->field_066F;
         sVar2 = this->field_0673;
         sVar3 = this->field_0671;
-        if (((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-           ((sVar3 < 0 || (((DAT_007fb242 <= sVar3 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))))) {
+        if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+           ((sVar3 < 0 || (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2))))
+           )) {
           param_1 = (int *)0x0;
         }
         else {
           param_1 = *(int **)(DAT_007fb248 +
-                             ((int)sVar2 * (int)DAT_007fb246 + (int)sVar3 * (int)DAT_007fb240 +
+                             ((int)sVar2 * (int)SHORT_007fb246 + (int)sVar3 * (int)SHORT_007fb240 +
                              (int)sVar1) * 8);
         }
         if (((param_1 != (int *)0x0) && (param_1[6] == this->field_0679)) &&
@@ -162,13 +166,14 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
         sVar1 = this->field_066F;
         sVar2 = this->field_0673;
         sVar3 = this->field_0671;
-        if (((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-           ((sVar3 < 0 || (((DAT_007fb242 <= sVar3 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))))) {
+        if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+           ((sVar3 < 0 || (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2))))
+           )) {
           param_1 = (int *)0x0;
         }
         else {
           param_1 = *(int **)(DAT_007fb248 +
-                             ((int)sVar2 * (int)DAT_007fb246 + (int)sVar3 * (int)DAT_007fb240 +
+                             ((int)sVar2 * (int)SHORT_007fb246 + (int)sVar3 * (int)SHORT_007fb240 +
                              (int)sVar1) * 8);
         }
         if (((param_1 != (int *)0x0) && (param_1[6] == this->field_0679)) &&
@@ -190,19 +195,20 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
         sVar1 = this->field_066F;
         sVar2 = this->field_0673;
         sVar3 = this->field_0671;
-        if (((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-           ((sVar3 < 0 || (((DAT_007fb242 <= sVar3 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))))) {
+        if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+           ((sVar3 < 0 || (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2))))
+           )) {
           param_1 = (int *)0x0;
         }
         else {
           param_1 = *(int **)(DAT_007fb248 +
-                             ((int)sVar2 * (int)DAT_007fb246 + (int)sVar3 * (int)DAT_007fb240 +
+                             ((int)sVar2 * (int)SHORT_007fb246 + (int)sVar3 * (int)SHORT_007fb240 +
                              (int)sVar1) * 8);
         }
         if (((param_1 != (int *)0x0) && (param_1[6] == this->field_0679)) &&
            (iVar8 = (**(code **)(*param_1 + 0xf8))(), iVar8 != 0)) {
           if (this->field_0675 == 99) {
-            thunk_FUN_004b7d50(param_1,(int)this);
+            thunk_FUN_004b7d50(param_1,this);
           }
           goto cf_common_exit_0047C68C;
         }
@@ -211,8 +217,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
         iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x37e9,0,0,&DAT_007a4ccc,
                                    s_STBoatC__Bring__BRING_MOVEOBJ_er_007ab5b0);
         if (iVar8 == 0) {
-          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x37e9)
-          ;
+          RaiseInternalException
+                    (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                     0x37e9);
           return 0xffff;
         }
         pcVar6 = (code *)swi(3);
@@ -222,8 +229,8 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
       goto cf_common_exit_0047C74D;
     }
     if (SVar4 == CASE_3) {
-      iVar8 = UnLoadObj(this,(undefined4 *)0x2);
-      if (((this->field_07CA != 0) && (*(int *)&this->field_0x7c6 != 0)) && (iVar8 == 0)) {
+      iVar8 = UnLoadObj(this,2);
+      if (((this->field_07CA != 0) && (this->field_07C6 != 0)) && (iVar8 == 0)) {
         this->field_05D6 = 0;
         return 2;
       }
@@ -231,32 +238,33 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
         sVar1 = this->field_066F;
         sVar2 = this->field_0673;
         sVar3 = this->field_0671;
-        if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-            ((sVar3 < 0 || ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (DAT_007fb244 <= sVar2)) {
+        if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+            ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) ||
+           (SHORT_007fb244 <= sVar2)) {
           param_1 = (int *)0x0;
         }
         else {
           param_1 = *(int **)(DAT_007fb248 +
-                             ((int)sVar2 * (int)DAT_007fb246 + (int)sVar3 * (int)DAT_007fb240 +
+                             ((int)sVar2 * (int)SHORT_007fb246 + (int)sVar3 * (int)SHORT_007fb240 +
                              (int)sVar1) * 8);
         }
         if (((param_1 != (int *)0x0) && (param_1[6] == this->field_0679)) &&
            (iVar8 = (**(code **)(*param_1 + 0xf8))(), iVar8 != 0)) {
           if (this->field_0675 == 99) {
-            thunk_FUN_004b7d50(param_1,(int)this);
+            thunk_FUN_004b7d50(param_1,this);
           }
           sVar1 = this->field_0047;
           sVar2 = this->field_004B;
           sVar3 = this->field_0049;
-          if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-              ((sVar3 < 0 || ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (DAT_007fb244 <= sVar2))
-          {
+          if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+              ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) ||
+             (SHORT_007fb244 <= sVar2)) {
             param_1 = (int *)0x0;
           }
           else {
             param_1 = *(int **)(DAT_007fb248 +
-                               ((int)sVar2 * (int)DAT_007fb246 + (int)sVar3 * (int)DAT_007fb240 +
-                               (int)sVar1) * 8);
+                               ((int)sVar2 * (int)SHORT_007fb246 + (int)sVar3 * (int)SHORT_007fb240
+                               + (int)sVar1) * 8);
           }
           if ((STBoatC *)param_1 != (STBoatC *)0x0) {
             if (*(int *)&this->field_0x66b == 0x14) {
@@ -264,19 +272,20 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
                 local_c = this->field_0673;
                 local_e = this->field_0671;
                 local_10 = this->field_066F;
-                if (((((local_10 < 0) || (DAT_007fb240 <= local_10)) || (local_e < 0)) ||
-                    ((DAT_007fb242 <= local_e || (local_c < 0)))) || (DAT_007fb244 <= local_c)) {
+                if (((((local_10 < 0) || (SHORT_007fb240 <= local_10)) || (local_e < 0)) ||
+                    ((SHORT_007fb242 <= local_e || (local_c < 0)))) || (SHORT_007fb244 <= local_c))
+                {
                   this_00 = (void *)0x0;
                 }
                 else {
                   this_00 = *(void **)(DAT_007fb248 +
-                                      ((int)local_c * (int)DAT_007fb246 +
-                                       (int)local_e * (int)DAT_007fb240 + (int)local_10) * 8);
+                                      ((int)local_c * (int)SHORT_007fb246 +
+                                       (int)local_e * (int)SHORT_007fb240 + (int)local_10) * 8);
                 }
                 local_14 = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
                 local_8 = (STBoatC *)param_1;
                 CmdToObj((STBoatC *)param_1,CASE_B,&local_14);
-                thunk_FUN_004b7d00(this_00,(int)param_1);
+                thunk_FUN_004b7d00(this_00,param_1);
                 return 2;
               }
             }
@@ -291,7 +300,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
       if (this->field_07CA != 0) {
         return 2;
       }
-      if (*(int *)&this->field_0x7c6 != 0) {
+      if (this->field_07C6 != 0) {
         return 2;
       }
       if (iVar8 != 0) {
@@ -311,7 +320,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
         uVar10 = (*pcVar6)();
         return uVar10;
       }
-      iVar8 = thunk_FUN_00460260(this,2);
+      iVar8 = sub_00460260(this,2);
       if (iVar8 == -1) {
         return 0xffffffff;
       }
@@ -350,19 +359,19 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,int *param_1)
   sVar1 = this->field_066F;
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;
-  if (((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-     ((sVar3 < 0 || (((DAT_007fb242 <= sVar3 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))))) {
+  if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+     ((sVar3 < 0 || (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2)))))) {
     param_1 = (int *)0x0;
   }
   else {
     param_1 = *(int **)(DAT_007fb248 +
-                       ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar1
-                       ) * 8);
+                       ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                       (int)sVar1) * 8);
   }
   if (((param_1 == (int *)0x0) || (param_1[6] != this->field_0679)) ||
      (iVar8 = (**(code **)(*param_1 + 0xf8))(), iVar8 == 0)) {
 cf_common_exit_0047C74D:
-    thunk_FUN_004602b0((int *)this);
+    sub_004602B0(this);
     return 0;
   }
   bVar7 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
@@ -371,7 +380,7 @@ cf_common_exit_0047C74D:
     return 2;
   }
   if (this->field_0675 == 99) {
-    iVar8 = thunk_FUN_004b7d00(param_1,(int)this);
+    iVar8 = thunk_FUN_004b7d00(param_1,(int *)this);
     if (iVar8 == 1) goto cf_common_exit_0047C43E;
     if (this->field_0675 == 99) {
       return 2;
@@ -391,14 +400,14 @@ switchD_0047c090_caseD_0:
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;
   this->field_00B7 = 0;
-  if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-      ((sVar3 < 0 || ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (DAT_007fb244 <= sVar2)) {
+  if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+      ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (SHORT_007fb244 <= sVar2)) {
     param_1 = (int *)0x0;
   }
   else {
     param_1 = *(int **)(DAT_007fb248 +
-                       ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar1
-                       ) * 8);
+                       ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                       (int)sVar1) * 8);
   }
   if (((param_1 == (int *)0x0) || (param_1[6] != this->field_0679)) ||
      (iVar8 = (**(code **)(*param_1 + 0xf8))(), iVar8 == 0)) goto cf_common_exit_0047C74D;
@@ -406,7 +415,7 @@ switchD_0047c090_caseD_0:
                              (short *)&this->field_0x681);
   if (CONCAT31(extraout_var,bVar7) != 1) goto cf_common_exit_0047C68C;
   if (this->field_0675 == 99) {
-    iVar8 = thunk_FUN_004b7d00(param_1,(int)this);
+    iVar8 = thunk_FUN_004b7d00(param_1,(int *)this);
     if (iVar8 == 1) goto cf_common_exit_0047C43E;
     if (this->field_0675 == 99) goto cf_common_exit_0047C68C;
   }
@@ -428,8 +437,8 @@ cf_common_exit_0047C43E:
   iVar11 = (int)*(short *)&this->field_0x67d;
   this->field_0687 = CASE_2;
 cf_common_exit_0047C9FE:
-  thunk_FUN_00481520(this,iVar11,iVar8,iVar13);
-  thunk_FUN_00460260(this,0);
+  sub_00481520(this,iVar11,iVar8,iVar13);
+  sub_00460260(this,0);
   return 2;
 }
 

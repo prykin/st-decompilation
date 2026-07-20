@@ -64,7 +64,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   this_00 = local_8;
   if (iVar2 == 0) {
     if (local_8->field_019C != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_019C);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_019C);
     }
     local_7c = this_00->field_0008;
     local_64 = param_1;
@@ -133,7 +133,8 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_c4 = 0x8166;
     local_8c = 1;
     local_88 = 1;
-    (**(code **)(*(int *)this_00->field_000C + 8))(4,&this_00->field_019C,0,local_424,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,4,&this_00->field_019C,(int *)0x0,local_424,0);
     iVar2 = this_00->field_019C;
     if ((iVar2 != 0) && (param_1 != 0)) {
       this_00->field_0028 = 0x20;

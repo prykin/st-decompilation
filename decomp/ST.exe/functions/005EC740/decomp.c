@@ -1,7 +1,10 @@
 
+/* [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0044C130 -> 005EC740 @ 0044C3BB */
+
 void __cdecl
 FUN_005ec740(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char *param_5,
-            undefined1 *param_6,undefined4 *param_7)
+            undefined1 *param_6,STAllPlayersC_GetTOBJImage_param_2Enum *param_7)
 
 {
   char cVar1;

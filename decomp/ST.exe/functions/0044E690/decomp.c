@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 007905A0 (store 0044E6B9)
    Evidence: final_vptr=007905A0; returns_this=true; calls_before=2; field_writes_after=40;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0044E690 returns STBoatC::STBoatC this @ 0044E8C3 */
 
-undefined4 * __thiscall STBoatC::STBoatC(STBoatC *this,undefined4 *param_1)
+STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
 
 {
   int iVar1;
@@ -59,7 +62,7 @@ undefined4 * __thiscall STBoatC::STBoatC(STBoatC *this,undefined4 *param_1)
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  puVar2 = (undefined4 *)&this->field_0x52c;
+  puVar2 = (undefined4 *)&this->field_052C;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
@@ -84,7 +87,7 @@ undefined4 * __thiscall STBoatC::STBoatC(STBoatC *this,undefined4 *param_1)
   this->field_05E0 = 0;
   this->field_05E4 = 0;
   this->field_05E8 = 0;
-  this->field_05EC = 0;
+  *(undefined4 *)&this->field_0x5ec = 0;
   *(undefined4 *)&this->field_0x5f0 = 0;
   *(undefined4 *)&this->field_0x5f4 = 0;
   this->field_05F8 = 0;
@@ -153,6 +156,6 @@ undefined4 * __thiscall STBoatC::STBoatC(STBoatC *this,undefined4 *param_1)
   this->field_0814 = 0x3ed;
   this->field_081C = 0xffff;
   this->field_0826 = 0xfe;
-  return &this->vtable;
+  return this;
 }
 

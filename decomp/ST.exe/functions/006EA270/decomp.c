@@ -1,4 +1,8 @@
 
+/* [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 00556760 -> 006EA270 @ 00556B06 | 006377B0 -> 006EA270 @ 00637831 | 00637930 ->
+   006EA270 @ 006379CD */
+
 void __thiscall FUN_006ea270(void *this,uint param_1,uint param_2,uint param_3)
 
 {

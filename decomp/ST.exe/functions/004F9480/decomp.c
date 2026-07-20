@@ -33,7 +33,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
       else {
         pcVar3 = (char *)0x0;
       }
-      thunk_FUN_005411a0((int)local_8,pcVar3,s____s__007c221c);
+      thunk_FUN_005411a0(local_8,pcVar3,s____s__007c221c);
     }
     OutText(local_c,(int *)&local_8,param_3);
     g_currentExceptionFrame = local_50.previous;

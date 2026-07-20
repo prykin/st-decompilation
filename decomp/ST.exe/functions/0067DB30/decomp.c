@@ -19,7 +19,8 @@ int __cdecl DelPlrEdit(int param_1,char *param_2)
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
-      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x123);
+      RaiseInternalException
+                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x123);
     }
     cMf32::RecDel((cMf32 *)param_1,0xc,param_2);
     g_currentExceptionFrame = local_48.previous;

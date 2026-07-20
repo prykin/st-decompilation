@@ -1,5 +1,8 @@
 
-void __thiscall FUN_005f5c40(void *this,int param_1,int param_2,int param_3)
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 005F5C40 -> 00568DD0 @ 005F5CC6 */
+
+void __thiscall FUN_005f5c40(void *this,int param_1,int param_2,int soundId)
 
 {
   short sVar1;
@@ -25,7 +28,7 @@ void __thiscall FUN_005f5c40(void *this,int param_1,int param_2,int param_3)
   }
   local_10.unknown = *(int *)((int)this + 0x18);
   SoundClassTy::PlaySound_thunk
-            ((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,param_3,&local_10,0);
+            ((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,soundId,&local_10,0);
   return;
 }
 

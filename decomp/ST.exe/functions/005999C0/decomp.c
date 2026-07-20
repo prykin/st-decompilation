@@ -29,7 +29,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   if (iVar4 == 0) {
     puVar1 = &local_10->field_1AC0;
     if (local_10->field_1AC0 != 0) {
-      FUN_006ab060(puVar1);
+      FUN_006ab060((LPVOID *)puVar1);
     }
     if (param_1 == '\0') {
       local_8 = 0x106;

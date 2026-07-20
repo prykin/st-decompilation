@@ -59,7 +59,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,puVar1);
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,puVar1);
   if (local_63 == this_00->field_0B9E) {
     switch(this_00->field_0B9E) {
     case 1:

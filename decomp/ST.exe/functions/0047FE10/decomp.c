@@ -11,7 +11,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   short sVar3;
   code *pcVar4;
   int iVar5;
-  void *pvVar6;
+  STGroupBoatC *pSVar6;
   undefined4 extraout_ECX;
   undefined2 extraout_var;
   undefined4 extraout_EDX;
@@ -33,9 +33,9 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     *(short *)&this->field_0x6cb = *(short *)&this->field_0x43b;
     *(undefined2 *)&this->field_0x6d5 = *(undefined2 *)&this->field_0x445;
     this->field_06E7 = 0;
-    thunk_FUN_00481520(this,(int)*(short *)&this->field_0x43b,(int)*(short *)&this->field_0x43d,
-                       (int)*(short *)&this->field_0x43f);
-    iVar5 = thunk_FUN_0045ff50(this,0);
+    sub_00481520(this,(int)*(short *)&this->field_0x43b,(int)*(short *)&this->field_0x43d,
+                 (int)*(short *)&this->field_0x43f);
+    iVar5 = sub_0045FF50(this,0);
     return (-(uint)(iVar5 != -1) & 3) - 1;
   }
   iVar5 = this->field_06E7;
@@ -48,9 +48,9 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       if (iVar5 == 1) {
         this->field_06E7 = 2;
         *(undefined4 *)&this->field_0x6e3 = 0;
-        thunk_FUN_00481520(this,(int)*(short *)&this->field_0x6d1,(int)*(short *)&this->field_0x6d3,
-                           (int)*(short *)&this->field_0x6d5);
-        iVar5 = thunk_FUN_0045ff50(this,0);
+        sub_00481520(this,(int)*(short *)&this->field_0x6d1,(int)*(short *)&this->field_0x6d3,
+                     (int)*(short *)&this->field_0x6d5);
+        iVar5 = sub_0045FF50(this,0);
         if (iVar5 == -1) {
           return -1;
         }
@@ -68,7 +68,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       iVar5 = (*pcVar4)();
       return iVar5;
     }
-    iVar5 = thunk_FUN_0045ff50(this,2);
+    iVar5 = sub_0045FF50(this,2);
     if (iVar5 == -1) {
       return -1;
     }
@@ -78,9 +78,9 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     if (iVar5 != 3) {
       return 2;
     }
-    pvVar6 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0x24),
-                                        CONCAT22(extraout_var,this->field_0030));
-    if (pvVar6 == (void *)0x0) {
+    pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0x24),
+                                CONCAT22(extraout_var,this->field_0030));
+    if (pSVar6 == (STGroupBoatC *)0x0) {
       iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b9b,0,0,&DAT_007a4ccc,
                                  s_STBoatC__Scout_ptr__NULL_007ab8d8);
       if (iVar5 == 0) {
@@ -90,7 +90,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       iVar5 = (*pcVar4)();
       return iVar5;
     }
-    iVar5 = thunk_FUN_0040bc90(pvVar6,(uint)(ushort)this->field_0032,
+    iVar5 = thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,
                                (short *)(int)*(short *)&this->field_0x6d1,
                                (short *)(int)*(short *)&this->field_0x6d3,
                                (short *)(int)*(short *)&this->field_0x6d5,'\0');
@@ -129,15 +129,15 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     *(int *)&this->field_0x6d7 = iVar5;
     *(undefined4 *)&this->field_0x6e3 = 1;
 cf_common_exit_004800EC:
-    thunk_FUN_00481520(this,(int)*(short *)&this->field_0x6d1,(int)*(short *)&this->field_0x6d3,
-                       (int)*(short *)&this->field_0x6d5);
-    iVar5 = thunk_FUN_0045ff50(this,0);
+    sub_00481520(this,(int)*(short *)&this->field_0x6d1,(int)*(short *)&this->field_0x6d3,
+                 (int)*(short *)&this->field_0x6d5);
+    iVar5 = sub_0045FF50(this,0);
     if (iVar5 != -1) {
       return 2;
     }
     return -1;
   }
-  iVar5 = thunk_FUN_0045ff50(this,2);
+  iVar5 = sub_0045FF50(this,2);
   if (iVar5 == -1) {
     return -1;
   }
@@ -152,9 +152,9 @@ LAB_0047ff46:
   if (iVar5 != 3) {
     return 2;
   }
-  pvVar6 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x24),
-                                      (uint)(ushort)this->field_0030);
-  if (pvVar6 == (void *)0x0) {
+  pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x24),
+                              (uint)(ushort)this->field_0030);
+  if (pSVar6 == (STGroupBoatC *)0x0) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b57,0,0,&DAT_007a4ccc,
                                s_STBoatC__Scout_ptr__NULL_007ab8d8);
     if (iVar5 == 0) {
@@ -164,7 +164,7 @@ LAB_0047ff46:
     iVar5 = (*pcVar4)();
     return iVar5;
   }
-  iVar5 = thunk_FUN_0040bc90(pvVar6,(uint)(ushort)this->field_0032,
+  iVar5 = thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,
                              (short *)(int)*(short *)&this->field_0x6cb,
                              (short *)(int)*(short *)&this->field_0x6cd,
                              (short *)(int)*(short *)&this->field_0x6cf,'\0');
@@ -206,8 +206,8 @@ cf_common_exit_0047FEEB:
   sVar2 = *(short *)&this->field_0x6cd;
   sVar3 = *(short *)&this->field_0x6cb;
 LAB_0047ff67:
-  thunk_FUN_00481520(this,(int)sVar3,(int)sVar2,(int)sVar1);
-  iVar5 = thunk_FUN_0045ff50(this,0);
+  sub_00481520(this,(int)sVar3,(int)sVar2,(int)sVar1);
+  iVar5 = sub_0045FF50(this,0);
   if (iVar5 != -1) {
     return 2;
   }

@@ -23,10 +23,11 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
-      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x197);
+      RaiseInternalException
+                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x197);
     }
     pCVar2 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_2);
-    puVar3 = _CreateStgListByRoot(param_1,0,pCVar2,param_3);
+    puVar3 = _CreateStgListByRoot((cMf32 *)param_1,0,pCVar2,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar3;
   }

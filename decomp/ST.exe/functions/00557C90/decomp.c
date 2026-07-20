@@ -23,6 +23,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   bool bVar12;
   byte bVar13;
   byte bVar14;
+  short *psVar15;
   InternalExceptionFrame local_54;
   VisibleClassTy *local_10;
   int local_c;
@@ -52,11 +53,11 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   if (local_10->field_0114 != 0) {
     puVar9 = &local_10->field_01D8;
     do {
-      iVar4 = 1;
+      psVar15 = (short *)0x1;
       bVar14 = 0;
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar10);
-      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,psVar15);
       (&DAT_007c9290)[iVar10] = (int)*(short *)((int)local_8 + 9);
       puVar7 = puVar9 + -0x30;
       (&DAT_007c929c)[iVar10] = (int)*(short *)((int)local_8 + 0xb);
@@ -70,11 +71,11 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
         local_c = local_c + -1;
       } while (local_c != 0);
       FUN_0070b600((int *)&local_8);
-      iVar4 = 1;
+      psVar15 = (short *)0x1;
       bVar14 = 0;
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar10);
-      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,psVar15);
       puVar7 = (undefined4 *)((int)local_8 + 0x11);
       iVar4 = 0x10;
       do {
@@ -105,8 +106,8 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
         switch(*puVar8) {
         case 0:
           thunk_FUN_00558dc0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             (undefined *)(int)(char)puVar8[6],(uint)(byte)puVar8[1],
-                             (undefined *)(uint)(byte)puVar8[7],*(int *)(puVar8 + 8),0x4001);
+                             (undefined *)(int)(char)puVar8[6],(int *)(uint)(byte)puVar8[1],
+                             (uint)(byte)puVar8[7],*(int **)(puVar8 + 8),0x4001);
           break;
         case 1:
           thunk_FUN_005594a0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),

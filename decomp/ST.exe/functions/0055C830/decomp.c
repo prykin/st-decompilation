@@ -36,13 +36,13 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
     switch(param_1) {
     case CASE_1:
     case CASE_2:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         Library::MSVCRT::FUN_0072ee80(param_5,(byte *)s__4s_d_d_d_d_007c94d0);
         local_f = param_2;
         local_b = param_3;
-        FSGSTy::AddPlayer(DAT_0081174c,(undefined4 *)local_34);
+        FSGSTy::AddPlayer(g_fSGS_0081174C,(undefined4 *)local_34);
         uVar7 = 0xffffffff;
         pbVar10 = pbVar9;
         do {
@@ -52,19 +52,19 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
           pbVar10 = pbVar10 + 1;
         } while (bVar1 != 0);
         if (((~uVar7 < 100) && (DAT_00807360 != '\0')) && (param_1 == CASE_2)) {
-          uVar5 = FUN_006b0140(0x259a,DAT_00807618);
+          uVar5 = FUN_006b0140(0x259a,HINSTANCE_00807618);
           wsprintfA(local_688,s__s__s_007c411c,pbVar9,uVar5);
 LAB_0055cf74:
-          FSGSTy::AddMessage(DAT_0081174c,1,&DAT_008016a0,local_688,5);
+          FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,local_688,5);
           return;
         }
       }
       break;
     case CASE_3:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
-        FSGSTy::DelPlayer(DAT_0081174c,local_34);
+        FSGSTy::DelPlayer(g_fSGS_0081174C,local_34);
         uVar7 = 0xffffffff;
         pbVar10 = pbVar9;
         do {
@@ -74,7 +74,7 @@ LAB_0055cf74:
           pbVar10 = pbVar10 + 1;
         } while (bVar1 != 0);
         if ((~uVar7 < 100) && (DAT_00807360 != '\0')) {
-          uVar5 = FUN_006b0140(0x259b,DAT_00807618);
+          uVar5 = FUN_006b0140(0x259b,HINSTANCE_00807618);
           wsprintfA(local_688,s__s__s_007c411c,pbVar9,uVar5);
           goto LAB_0055cf74;
         }
@@ -82,7 +82,7 @@ LAB_0055cf74:
       break;
     case CASE_4:
     case CASE_A:
-      pcVar3 = (char *)FUN_006b0140((-(uint)(param_1 != CASE_4) & 2) + 0x2575,DAT_00807618);
+      pcVar3 = (char *)FUN_006b0140((-(uint)(param_1 != CASE_4) & 2) + 0x2575,HINSTANCE_00807618);
       uVar7 = 0xffffffff;
       pcVar4 = pcVar3;
       do {
@@ -107,8 +107,8 @@ LAB_0055cf74:
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081174c != (FSGSTy *)0x0) {
-          FSGSTy::AddMessage(DAT_0081174c,9,param_2,param_5,0);
+        if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+          FSGSTy::AddMessage(g_fSGS_0081174C,9,param_2,param_5,0);
           FUN_006ab060(&param_2);
           return;
         }
@@ -157,15 +157,15 @@ LAB_0055c9c5:
         *(undefined1 *)((int)this + 0x3b) = 0;
         *(char *)((int)this + 0x2b) = (*(char *)((int)this + 0x2b) == '\a') + '\a';
       }
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        FSGSTy::AddMessage(DAT_0081174c,
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,
                            CONCAT31((int3)((uint)param_5 >> 8),*(undefined1 *)((int)this + 0x2b)),
                            param_4,param_5,5);
         return;
       }
       break;
     case CASE_6:
-      pcVar4 = (char *)FUN_006b0140(0x2576,DAT_00807618);
+      pcVar4 = (char *)FUN_006b0140(0x2576,HINSTANCE_00807618);
       pbVar9 = param_4;
       uVar7 = 0xffffffff;
       do {
@@ -184,15 +184,15 @@ LAB_0055c9c5:
       } while (bVar1 != 0);
       param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar7 + ~uVar8 + 4);
       if (param_2 != (byte *)0x0) {
-        uVar5 = FUN_006b0140(0x2576,DAT_00807618);
+        uVar5 = FUN_006b0140(0x2576,HINSTANCE_00807618);
         wsprintfA((LPSTR)param_2,s__s__s_007c411c,uVar5,pbVar9);
         if (*(char *)((int)this + 9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081174c != (FSGSTy *)0x0) {
-          FSGSTy::AddMessage(DAT_0081174c,4,param_2,param_5,5);
+        if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+          FSGSTy::AddMessage(g_fSGS_0081174C,4,param_2,param_5,5);
           FUN_006ab060(&param_2);
           return;
         }
@@ -217,28 +217,28 @@ LAB_0055c9c5:
       }
       break;
     case CASE_7:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        FSGSTy::AddMessage(DAT_0081174c,1,&DAT_008016a0,param_5,5);
-        FSGSTy::JoinChannel(DAT_0081174c,unaff_EDI);
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,param_5,5);
+        FSGSTy::JoinChannel(g_fSGS_0081174C,unaff_EDI);
         return;
       }
       break;
     case CASE_9:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         local_f = param_2;
         local_b = param_3;
-        FSGSTy::ChangePlayer(DAT_0081174c,local_34);
+        FSGSTy::ChangePlayer(g_fSGS_0081174C,local_34);
         return;
       }
       break;
     case CASE_D:
     case CASE_F:
-      if (DAT_0081174c != (FSGSTy *)0x0) {
+      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
         *(undefined4 *)((int)this + 0x1b) = 0x6156;
         *(Global_sub_0055C830_param_1Enum *)((int)this + 0x1f) = param_1;
-        (**(code **)DAT_0081174c->field_0000)((int)this + 0xb);
+        (**(code **)g_fSGS_0081174C->field_0000)((int)this + 0xb);
       }
       break;
     case CASE_10:
@@ -246,8 +246,8 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
-      if (DAT_0081174c != (FSGSTy *)0x0) {
-        FSGSTy::AddMessage(DAT_0081174c,6,param_4,param_5,5);
+      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,6,param_4,param_5,5);
         return;
       }
       if (DAT_0081176c != (StartSystemTy *)0x0) {
@@ -273,8 +273,8 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
-      if (DAT_0081174c != (FSGSTy *)0x0) {
-        FSGSTy::AddMessage(DAT_0081174c,2,param_4,param_5,5);
+      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,2,param_4,param_5,5);
         return;
       }
       if (DAT_0081176c != (StartSystemTy *)0x0) {
@@ -300,8 +300,8 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)0x0,param_5);
         return;
       }
-      if (DAT_0081174c != (FSGSTy *)0x0) {
-        FSGSTy::AddMessage(DAT_0081174c,3,&DAT_008016a0,param_5,5);
+      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,3,&DAT_008016a0,param_5,5);
         return;
       }
       if (DAT_0081176c != (StartSystemTy *)0x0) {
@@ -344,14 +344,14 @@ LAB_0055c9c5:
       }
       break;
     case CASE_17:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        FSGSTy::AddMessage(DAT_0081174c,7,param_4,param_5,5);
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,7,param_4,param_5,5);
         return;
       }
       break;
     case CASE_FF:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        FSGSTy::AddMessage(DAT_0081174c,4,param_4,param_5,5);
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,4,param_4,param_5,5);
         return;
       }
     }

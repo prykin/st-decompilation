@@ -1,4 +1,8 @@
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00692920 parameter used as this of cMf32::RecGet @ 00692946 | 00692920 parameter used
+   as this of cMf32::RecMemFree @ 00692A69 */
+
 int FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,int param_5)
 
 {

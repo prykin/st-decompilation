@@ -20,7 +20,7 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
   undefined4 *puVar9;
   void *unaff_EDI;
   STParticleC *pSVar10;
-  void *pvVar11;
+  VisibleClassTy *pVVar11;
   bool bVar12;
   InternalExceptionFrame local_7c;
   int local_38;
@@ -32,7 +32,7 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
   int local_20;
   int local_1c;
   undefined4 local_18;
-  undefined4 local_14;
+  LPVOID local_14;
   STParticleC *local_10;
   float local_c;
   float local_8;
@@ -60,7 +60,7 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
     return 0;
   }
   if (uVar6 == 0x10f) {
-    local_14 = thunk_FUN_0062af40(local_10,&local_18);
+    local_14 = (LPVOID)thunk_FUN_0062af40(local_10,&local_18);
     FUN_006ab060(&local_14);
     g_currentExceptionFrame = local_7c.previous;
     return 0;
@@ -174,8 +174,8 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
     fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar4;
     FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -209,23 +209,22 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
       iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar3) -
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
-    if (((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-       ((thunk_FUN_00558c00(DAT_00802a88,
-                            *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar7,
-                            iVar5,&local_1c,&local_20), (int)local_c < 0 ||
+    if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+       ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                            &local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
-    if (((local_24 < 0) || (*(int *)((int)pvVar11 + 0x30) <= local_24)) ||
+    if (((local_24 < 0) || ((int)pVVar11->field_0030 <= local_24)) ||
        (((&DAT_0079aed0)[(int)local_c] + local_28 < 0 ||
-        (*(int *)((int)pvVar11 + 0x34) <= (&DAT_0079aed0)[(int)local_c] + local_28)))) {
+        ((int)pVVar11->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_28)))) {
       bVar12 = false;
     }
     else {
       bVar12 = true;
     }
-    if ((bVar12) && (*(int *)((int)pvVar11 + 0x4c) != 0)) {
-      bVar12 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_28) * *(int *)((int)pvVar11 + 0x30)
-                         + *(int *)((int)pvVar11 + 0x4c) + local_24) != '\0';
+    if ((bVar12) && (pVVar11->field_004C != 0)) {
+      bVar12 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_28) * pVVar11->field_0030 +
+                         pVVar11->field_004C + local_24) != '\0';
     }
     else {
       bVar12 = true;
@@ -266,8 +265,8 @@ LAB_00628286:
         iVar5 = this_00->field_004E;
       }
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,0,0,this_00->field_0046,this_00->field_004A,iVar5,0,0,0,0,0,0,-1,0,0
-                );
+                (g_traksClass_00802A7C,1,0,0,this_00->field_0046,this_00->field_004A,iVar5,0,0,0,0,0
+                 ,0,-1,0,0);
     }
 LAB_0062838a:
     if (uVar6 < 0x19) {
@@ -293,8 +292,8 @@ LAB_006283bd:
     fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar4;
     FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -328,10 +327,9 @@ LAB_006283bd:
       iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar3) -
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,
-                            *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar7,
-                            iVar5,&local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
+    if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                            &local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
     goto LAB_00628286;
 LAB_006282e0:
     bVar12 = true;
@@ -371,8 +369,8 @@ LAB_006282e0:
       fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_0072 = fVar4;
       FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
-      pvVar11 = DAT_00802a88;
-      if (DAT_00802a88 != (void *)0x0) {
+      pVVar11 = g_visibleClass_00802A88;
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar5 = this_00->field_004E;
         sVar3 = (short)(iVar5 >> 0x1f);
         if (iVar5 < 0) {
@@ -400,26 +398,24 @@ LAB_006282e0:
         else {
           iVar7 = (int)(short)(iVar7 / 0xc9);
         }
-        if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-            (thunk_FUN_00558c00(DAT_00802a88,
-                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                iVar7,iVar5,&local_2c,&local_30), (int)local_c < 0)) ||
-           (4 < (int)local_c)) {
+        if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,
+                                iVar5,&local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)
+           ) {
           bVar12 = true;
         }
         else {
-          if (((local_2c < 0) || (*(int *)((int)pvVar11 + 0x30) <= local_2c)) ||
+          if (((local_2c < 0) || ((int)pVVar11->field_0030 <= local_2c)) ||
              (((&DAT_0079aed0)[(int)local_c] + local_30 < 0 ||
-              (*(int *)((int)pvVar11 + 0x34) <= (&DAT_0079aed0)[(int)local_c] + local_30)))) {
+              ((int)pVVar11->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_30)))) {
             bVar12 = false;
           }
           else {
             bVar12 = true;
           }
-          if ((bVar12) && (*(int *)((int)pvVar11 + 0x4c) != 0)) {
-            bVar12 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_30) *
-                               *(int *)((int)pvVar11 + 0x30) + *(int *)((int)pvVar11 + 0x4c) +
-                              local_2c) != '\0';
+          if ((bVar12) && (pVVar11->field_004C != 0)) {
+            bVar12 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_30) * pVVar11->field_0030 +
+                               pVVar11->field_004C + local_2c) != '\0';
           }
           else {
             bVar12 = true;
@@ -469,8 +465,8 @@ LAB_006282e0:
     fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar4;
     FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -504,25 +500,23 @@ LAB_006282e0:
       iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar3) -
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-        (thunk_FUN_00558c00(DAT_00802a88,
-                            *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar7,
-                            iVar5,&local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
+    if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                            &local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
       bVar12 = true;
     }
     else {
-      if (((local_34 < 0) || (*(int *)((int)pvVar11 + 0x30) <= local_34)) ||
+      if (((local_34 < 0) || ((int)pVVar11->field_0030 <= local_34)) ||
          (((&DAT_0079aed0)[(int)local_c] + local_38 < 0 ||
-          (*(int *)((int)pvVar11 + 0x34) <= (&DAT_0079aed0)[(int)local_c] + local_38)))) {
+          ((int)pVVar11->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_38)))) {
         bVar12 = false;
       }
       else {
         bVar12 = true;
       }
-      if ((bVar12) && (*(int *)((int)pvVar11 + 0x4c) != 0)) {
-        bVar12 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_38) *
-                           *(int *)((int)pvVar11 + 0x30) + local_34 + *(int *)((int)pvVar11 + 0x4c))
-                 != '\0';
+      if ((bVar12) && (pVVar11->field_004C != 0)) {
+        bVar12 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_38) * pVVar11->field_0030 +
+                           local_34 + pVVar11->field_004C) != '\0';
       }
       else {
         bVar12 = true;

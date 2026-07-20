@@ -40,7 +40,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     (*pcVar1)();
     return;
   }
-  thunk_FUN_005daf20(DAT_0081176c);
+  StartSystemTy::sub_005DAF20(DAT_0081176c);
   DAT_0080877e = 1;
   DAT_0080877f = 0;
   if (DAT_008067a0 != '\0') {
@@ -58,13 +58,13 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     }
   }
   this_02 = local_8;
-  if (*(int *)(DAT_0081176c + 0x28) != 0) {
+  if (DAT_0081176c->field_0028 != 0) {
     puVar5 = &local_8->field_1A7F;
     do {
       iVar2 = 0;
       bVar8 = 0;
       pCVar3 = FUN_006f2c00(s_MM_FLC_007cc938,2,iVar7);
-      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806780,pCVar3,bVar8,iVar2);
+      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar8,iVar2);
       *puVar5 = puVar4;
       iVar7 = iVar7 + 1;
       puVar5 = puVar5 + 1;
@@ -127,21 +127,22 @@ switchD_005b2a8d_default:
     iVar2 = iVar2 + 1;
     if (9 < iVar2) {
       MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x9b,s_MM_MBUT00_007cbd98
-                          ,0xf2,0x13a,7,8,0,0,0x9d,0x38,0x33,0x7cbda4,6,8,9,6,0x28,0,0,0,0,0,-1,-1);
+                          ,0xf2,0x13a,7,8,0,0,0x9d,0x38,0x33,s_MM_MABUT00_007cbda4,6,8,9,6,0x28,0,
+                          (ccFntTy *)0x0,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x296,
-                          s_MM_MBUT01_007cbd7c,0x191,0x13a,9,8,0,0,0x9d,0x38,0x33,0x7cbd88,8,8,8,6,
-                          0x32,0,0,0,0,0,-1,-1);
+                          s_MM_MBUT01_007cbd7c,0x191,0x13a,9,8,0,0,0x9d,0x38,0x33,
+                          s_MM_MABUT01_007cbd88,8,8,8,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x491,
-                          s_MM_MBUT02_007cbd60,0xf2,0x173,8,6,0,0,0x9d,0x38,0x33,0x7cbd6c,8,7,10,5,
-                          0x28,0,0,0,0,0,-1,-1);
+                          s_MM_MBUT02_007cbd60,0xf2,0x173,8,6,0,0,0x9d,0x38,0x33,
+                          s_MM_MABUT02_007cbd6c,8,7,10,5,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x68c,
-                          s_MM_MBUT03_007cbd44,0x191,0x173,8,6,0,0,0x9d,0x38,0x33,0x7cbd50,8,7,8,5,
-                          0x32,0,0,0,0,0,-1,-1);
+                          s_MM_MBUT03_007cbd44,0x191,0x173,8,6,0,0,0x9d,0x38,0x33,
+                          s_MM_MABUT03_007cbd50,8,7,8,5,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x887,
-                          s_MM_MBUT04_007cbd28,0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,0x7cbd34,8,9,9,6,
-                          0x32,0,0,0,0,0,-1,-1);
-      uVar6 = FUN_0070a9f0(DAT_00806780,s_MM_BKG_007cc930,0,1);
-      *(undefined4 *)(DAT_0081176c + 0x2c) = uVar6;
+                          s_MM_MBUT04_007cbd28,0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,
+                          s_MM_MABUT04_007cbd34,8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
+      uVar6 = FUN_0070a9f0(g_cMf32_00806780,s_MM_BKG_007cc930,0,1);
+      DAT_0081176c->field_002C = uVar6;
       DarkScreen(DAT_0080759c,1,0);
       this_00 = *(MMsgTy **)(this_02->field_1A5B + 0x2e6);
       if (this_00 != (MMsgTy *)0x0) {
@@ -149,7 +150,8 @@ switchD_005b2a8d_default:
         MMsgTy::ShowSprites(*(MMsgTy **)(this_02->field_1A5B + 0x2e6));
         *(undefined4 *)(*(int *)(this_02->field_1A5B + 0x2e6) + 0x1cab) = this_02->field_0008;
       }
-      FUN_006bc360(*(int *)(DAT_0081176c + 0x2c),(undefined4 *)&this_02->field_0x1adf,(int *)0x0);
+      FUN_006bc360((ushort *)DAT_0081176c->field_002C,(undefined4 *)&this_02->field_0x1adf,
+                   (int *)0x0);
       this_01 = DAT_00802a30;
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
         uVar6 = DAT_00802a30->field_00C9;

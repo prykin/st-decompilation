@@ -10,15 +10,15 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
                    undefined4 param_14)
 
 {
-  UPanelTy *pUVar1;
-  code *pcVar2;
-  UPanelTy *pUVar3;
+  UPanelTy *text;
+  code *pcVar1;
+  UPanelTy *pUVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
-  undefined4 uVar6;
+  undefined4 uVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar7;
+  int *piVar6;
   int local_1d0 [4];
   undefined4 local_1c0;
   undefined4 local_1bc;
@@ -56,19 +56,19 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar4 == 0) {
-    piVar7 = local_1d0;
-    for (iVar4 = 0x5f; pUVar3 = local_10, iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar7 = 0;
-      piVar7 = piVar7 + 1;
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar3 == 0) {
+    piVar6 = local_1d0;
+    for (iVar3 = 0x5f; pUVar2 = local_10, iVar3 != 0; iVar3 = iVar3 + -1) {
+      *piVar6 = 0;
+      piVar6 = piVar6 + 1;
     }
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
     if (param_6 != 0) {
-      pUVar1 = local_10 + 1;
-      wsprintfA((LPSTR)pUVar1,&DAT_007c181c,param_6);
-      local_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)pUVar1,(int *)0x0,1);
+      text = local_10 + 1;
+      wsprintfA((LPSTR)text,&DAT_007c181c,param_6);
+      local_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)text,(int *)0x0,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
       local_1c0 = *(undefined4 *)(local_8 + 2);
@@ -77,19 +77,19 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     else {
       local_1c0 = param_13;
     }
-    local_1d0[2] = pUVar3->field_003C + param_3;
-    if (pUVar3->field_005C == 0) {
-      local_1d0[3] = -pUVar3->field_0048;
+    local_1d0[2] = pUVar2->field_003C + param_3;
+    if (pUVar2->field_005C == 0) {
+      local_1d0[3] = -pUVar2->field_0048;
     }
     else {
-      local_1d0[3] = pUVar3->field_0044;
+      local_1d0[3] = pUVar2->field_0044;
     }
     local_1d0[3] = local_1d0[3] + param_4;
     local_1bc = param_14;
     if (local_8 != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
     }
-    local_1b0 = pUVar3->field_0008;
+    local_1b0 = pUVar2->field_0008;
     local_168 = param_8;
     local_c8 = 1;
     local_c4 = 1;
@@ -117,19 +117,19 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
       local_ac = FUN_0070aa70(DAT_00806790,param_12,0,1);
       local_a8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_12,1);
     }
-    (**(code **)(*(int *)pUVar3->field_000C + 8))(2,&local_c,0,local_1d0,0);
+    (**(code **)(*(int *)pUVar2->field_000C + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0xb1,0,iVar4,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0xb1,0,iVar3,&DAT_007a4ccc,
                              s_UPanelTy__CreateBut_007c78fc);
-  if (iVar5 == 0) {
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xb1);
+  if (iVar4 == 0) {
+    RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xb1);
     return 0;
   }
-  pcVar2 = (code *)swi(3);
-  uVar6 = (*pcVar2)();
-  return uVar6;
+  pcVar1 = (code *)swi(3);
+  uVar5 = (*pcVar1)();
+  return uVar5;
 }
 

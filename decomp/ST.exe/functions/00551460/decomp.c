@@ -33,14 +33,14 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
     pTVar2 = local_8;
     if (iVar3 == 0) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)local_8->field_0068,0,0xa6,0x31,local_8->field_0185,0,0xa6,0x31,0x77,
-                 0x39);
+                ((undefined4 *)local_8->field_0068,0,0xa6,0x31,(byte *)local_8->field_0185,0,0xa6,
+                 0x31,0x77,0x39);
       if (pTVar2->field_01C8 != 0) {
-        FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01C8);
+        StartSystemTy::sub_006E56B0(pTVar2->field_000C,pTVar2->field_01C8);
       }
       pTVar2->field_01C8 = 0;
       if (pTVar2->field_01CC != 0) {
-        FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01CC);
+        StartSystemTy::sub_006E56B0(pTVar2->field_000C,pTVar2->field_01CC);
       }
       iVar3 = pTVar2->field_0000;
       uVar13 = 1;

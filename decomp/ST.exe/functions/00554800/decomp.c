@@ -75,18 +75,19 @@ cLoadingTy::InitParam
     pcVar6->field_002C = param_7;
     pcVar1->field_0058 = param_6;
     pcVar1->field_005C = param_7;
-    puVar9 = (uint *)FUN_006b0140(0x267a,DAT_00807618);
+    puVar9 = (uint *)FUN_006b0140(0x267a,HINSTANCE_00807618);
     iVar7 = FUN_007111c0(pcVar6->field_0008,puVar9);
     iVar7 = pcVar6->field_002C + iVar7;
     iVar10 = (int)pcVar6->field_0020 / iVar7;
     pcVar6->field_0034 = iVar7;
     pcVar6->field_0030 = iVar10;
     if (iVar10 < 1) {
-      RaiseInternalException(-6,DAT_007ed77c,s_E____titans_grig_loading_cpp_007c8f0c,0xa3);
+      RaiseInternalException
+                (-6,g_overwriteContext_007ED77C,s_E____titans_grig_loading_cpp_007c8f0c,0xa3);
     }
     pcVar6->field_0058 = param_8;
     pcVar6->field_0054 = param_9;
-    FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+    FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     FUN_006b4640(DAT_0080759c,0,0,(BITMAPINFO *)pcVar6->field_0000,(uint *)0x0);
     Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
     g_currentExceptionFrame = local_4c.previous;

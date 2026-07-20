@@ -85,7 +85,7 @@ LAB_006737e7:
           piVar5[1] = (int)pcVar6;
           if (pcVar6 != (char *)0x0) {
             piVar5[2] = 0;
-            FUN_006b9910(&DAT_00811908,piVar5);
+            FUN_006b9910(&DAT_00811908,(int)piVar5);
             goto LAB_0067383b;
           }
         }
@@ -134,9 +134,9 @@ LAB_006738e9:
 LAB_006738ee:
         if (iVar3 == 0) {
           FUN_006b98c0((int *)&DAT_00811908,local_8);
-          FUN_006a5e90((undefined4 *)piVar5[1]);
-          FUN_006a5e90((undefined4 *)piVar5[2]);
-          FUN_006a5e90(piVar5);
+          FUN_006a5e90((short *)piVar5[1]);
+          FUN_006a5e90((short *)piVar5[2]);
+          FUN_006a5e90((short *)piVar5);
         }
       }
       while (DAT_007d2d18 != 0x1d) {

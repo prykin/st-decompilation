@@ -5,8 +5,8 @@ void __fastcall FUN_0058eeb0(int param_1)
   int iVar1;
   int iVar2;
   
-  iVar1 = DAT_007fb240 + -1;
-  iVar2 = DAT_007fb242 + -1;
+  iVar1 = SHORT_007fb240 + -1;
+  iVar2 = SHORT_007fb242 + -1;
   if ((((*(int *)(param_1 + 0x27f) < 0) || (*(int *)(param_1 + 0x287) < 0)) ||
       (*(int *)(param_1 + 0x283) < 0)) ||
      (((*(int *)(param_1 + 0x28b) < 0 || (iVar1 < *(int *)(param_1 + 0x27f))) ||

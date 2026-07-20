@@ -124,7 +124,7 @@ void __fastcall FUN_00572510(void *param_1)
             uVar7 = uVar7 + 1;
           } while (uVar7 < 0x82);
           if (iVar11 != iVar4) {
-            thunk_FUN_005734c0(this,0,(HKEY)0x1);
+            thunk_FUN_005734c0(this,(LPDWORD)0x0,(PHKEY)0x1);
           }
           pbVar6 = &DAT_007ca694;
           pbVar12 = (byte *)((int)this + 0x640);
@@ -149,7 +149,7 @@ LAB_005727f1:
             DAT_00807300._0_1_ = '\x01';
           }
           thunk_FUN_00573240();
-          cMf32::delete(this_01,&this_00->field_0000);
+          cMf32::delete(this_01,this_00);
         }
         g_currentExceptionFrame = local_58.previous;
         local_10 = this;

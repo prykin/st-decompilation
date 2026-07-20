@@ -1,12 +1,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\support.cpp
-   StartServTy::WrTextDDX */
+   StartServTy::WrTextDDX
+   
+   [STPrototypeApplier] Propagated parameter 9.
+   Evidence: 00540890 parameter used as this of ccFntTy::EraseSufr @ 005409EC */
 
 void __thiscall
 StartServTy::WrTextDDX
           (StartServTy *this,int param_1,int param_2,int param_3,int param_4,int param_5,
-          uint *param_6,uint param_7,uint param_8,void *param_9,undefined4 param_10)
+          uint *param_6,uint param_7,uint param_8,ccFntTy *param_9,uint param_10)
 
 {
   code *pcVar1;
@@ -36,7 +39,8 @@ StartServTy::WrTextDDX
     else {
       local_c = (BITMAPINFO *)
                 Library::DKW::WGR::FUN_006b55f0
-                          ((undefined4 *)0x0,0,0,0,param_1,0,param_2,param_3,local_8,param_5);
+                          ((undefined4 *)0x0,0,0,0,(byte *)param_1,0,param_2,param_3,local_8,param_5
+                          );
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }
     ccFntTy::WrTxt(param_9,param_6,param_7,param_8,param_10,-1,-1);

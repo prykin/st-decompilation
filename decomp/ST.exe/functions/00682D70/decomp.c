@@ -17,7 +17,8 @@ void FUN_00682d70(void)
   pbVar1 = thunk_FUN_0067eca0();
   iVar2 = thunk_FUN_0067f180(pbVar1,pcVar3);
   if (iVar2 < 0) {
-    RaiseInternalException(-2,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x252);
+    RaiseInternalException
+              (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x252);
   }
   local_c = 3;
   local_b = (undefined2)iVar2;

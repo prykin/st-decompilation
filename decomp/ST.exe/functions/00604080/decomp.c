@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CB14 (store 00604098)
    Evidence: final_vptr=0079CB14; returns_this=true; calls_before=1; field_writes_after=8;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00604080 returns STExplosion::STExplosion this @ 006040F3 */
 
-undefined4 * __thiscall STExplosion::STExplosion(STExplosion *this,undefined4 *param_1)
+STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
 
 {
   int iVar1;
@@ -31,6 +34,6 @@ undefined4 * __thiscall STExplosion::STExplosion(STExplosion *this,undefined4 *p
   this->field_02B3 = 0;
   this->field_02BB = 0;
   this->field_02B7 = 0xffffffff;
-  return &this->vtable;
+  return this;
 }
 

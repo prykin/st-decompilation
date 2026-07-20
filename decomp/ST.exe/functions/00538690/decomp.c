@@ -1,12 +1,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
-   PanelTy::CreateBut */
+   PanelTy::CreateBut
+   
+   [STPrototypeApplier] Propagated parameter 8.
+   Evidence: 00539280 -> 00538690 @ 005393BB | 0053EF20 -> 00538690 @ 0053F07B */
 
 undefined4 __thiscall
 PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5,
-                  int param_6,byte param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10
-                  ,short param_11,undefined2 param_12,undefined4 param_13,char *param_14,
+                  int param_6,byte param_7,LPSTR param_8,undefined4 param_9,undefined4 param_10,
+                  short param_11,undefined2 param_12,undefined4 param_13,char *param_14,
                   undefined4 param_15)
 
 {
@@ -74,7 +77,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     local_c = cMf32::RecGet(DAT_00806790,param_7,(char *)(pPVar2 + 1),(int *)0x0,1);
     local_17c = *(undefined4 *)(local_c + 2);
     local_178 = *(undefined4 *)(local_c + 4);
-    if ((param_5 == 0) || (local_18c[2] = DAT_00806730, pPVar2->field_005C != 0)) {
+    if ((param_5 == 0) || (local_18c[2] = g_nWidth_00806730, pPVar2->field_005C != 0)) {
       local_18c[2] = pPVar2->field_003C;
     }
     local_18c[2] = local_18c[2] + param_3;

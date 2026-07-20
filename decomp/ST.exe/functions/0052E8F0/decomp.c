@@ -45,7 +45,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     }
     this_00 = (ccFntTy *)0x0;
     if (pOVar2->field_01E5 != 0) {
-      FUN_006ab060(&pOVar2->field_01E5);
+      FUN_006ab060((LPVOID *)&pOVar2->field_01E5);
       this_00 = extraout_ECX;
     }
     if (pOVar2->field_02F9 != (uint *)0x0) {
@@ -67,7 +67,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     iVar3 = 10;
     do {
       if (*puVar6 != 0) {
-        FUN_006e56b0((void *)pOVar2->field_000C,*puVar6);
+        StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
         this_00 = extraout_ECX_03;
       }
       *puVar6 = 0;
@@ -78,14 +78,14 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     iVar3 = 2;
     do {
       if (*puVar6 != 0) {
-        FUN_006e56b0((void *)pOVar2->field_000C,*puVar6);
+        StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
         this_00 = extraout_ECX_04;
       }
       *puVar6 = 0;
       puVar6 = puVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    DAT_008016dc = 0;
+    g_optPanel_008016DC = (OptPanelTy *)0x0;
     if (pOVar2->field_017C != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pOVar2->field_017C);
       pOVar2->field_017C = (ccFntTy *)0x0;

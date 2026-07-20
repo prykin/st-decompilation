@@ -15,7 +15,7 @@ FUN_006777d0(Global_sub_006777D0_param_1Enum param_1,int param_2,int param_3,und
   int local_8;
   
   local_8 = 0;
-  if (DAT_007fa174 == 0) {
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return 0;
   }
   iVar3 = param_2;
@@ -28,11 +28,11 @@ FUN_006777d0(Global_sub_006777D0_param_1Enum param_1,int param_2,int param_3,und
   }
   iVar4 = param_5;
   if (param_5 < 1) {
-    iVar4 = (int)DAT_007fb240;
+    iVar4 = (int)SHORT_007fb240;
   }
   iVar2 = param_6;
   if (param_6 < 1) {
-    iVar2 = (int)DAT_007fb242;
+    iVar2 = (int)SHORT_007fb242;
   }
   switch(param_1) {
   case CASE_DD:

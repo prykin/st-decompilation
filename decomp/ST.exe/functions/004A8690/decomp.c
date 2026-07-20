@@ -23,7 +23,7 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
       FUN_006acc70(this->field_0029,uVar4,&local_8);
       if ((short)local_8 != -1) {
         this_00 = (int *)STAllPlayersC::GetObjPtr
-                                   (DAT_007fa174,
+                                   (g_sTAllPlayers_007FA174,
                                     CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),
                                     local_8,CASE_1);
         if (this_00 == (int *)0x0) {
@@ -35,7 +35,8 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
             return;
           }
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1743);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                     ,0x1743);
         }
         iVar3 = (**(code **)(*this_00 + 0x2c))();
         if ((iVar3 == 0x16) || (iVar3 = (**(code **)(*this_00 + 0x2c))(), iVar3 == 0x25)) {

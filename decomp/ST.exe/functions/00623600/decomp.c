@@ -6,28 +6,26 @@ void __fastcall FUN_00623600(int *param_1)
   char cVar2;
   byte bVar3;
   bool bVar4;
-  void *pvVar5;
+  VisibleClassTy *pVVar5;
   int iVar6;
   int local_c;
   int local_8;
   
-  pvVar5 = DAT_00802a88;
-  if (DAT_00802a88 == (void *)0x0) {
+  pVVar5 = g_visibleClass_00802A88;
+  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
     cVar2 = *(char *)((int)param_1 + 0x2e9);
   }
   else {
     iVar6 = (int)*(short *)((int)param_1 + 0x4b);
-    if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-         (thunk_FUN_00558c00(DAT_00802a88,
-                             *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+    if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                              (int)*(short *)((int)param_1 + 0x47),
                              (int)*(short *)((int)param_1 + 0x49),&local_8,&local_c), iVar6 < 0)) ||
         ((((4 < iVar6 || (local_8 < 0)) ||
-          ((*(int *)((int)pvVar5 + 0x30) <= local_8 ||
+          (((int)pVVar5->field_0030 <= local_8 ||
            ((local_c = (&DAT_0079aed0)[iVar6] + local_c, local_c < 0 ||
-            (*(int *)((int)pvVar5 + 0x34) <= local_c)))))) || (*(int *)((int)pvVar5 + 0x4c) == 0))))
-       || (*(char *)(local_c * *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) + local_8
-                    ) != '\0')) {
+            ((int)pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == 0)))) ||
+       (*(char *)(local_c * pVVar5->field_0030 + pVVar5->field_004C + local_8) != '\0')) {
       bVar4 = false;
       if (*(int *)((int)param_1 + 0x2ae) == 0) {
         cVar2 = *(char *)((int)param_1 + 0x2ad);
@@ -58,10 +56,10 @@ LAB_0062371f:
             *(undefined4 *)((int)param_1 + 0x2ce) = 0;
           }
           pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-          STT3DSprC::SetCurFase(pSVar1,'\x0e',*(undefined4 *)((int)param_1 + 0x2ce));
+          STT3DSprC::SetCurFase(pSVar1,'\x0e',*(uint *)((int)param_1 + 0x2ce));
           STT3DSprC::ShowCurFase(pSVar1,'\x0e');
           if (*(char *)((int)param_1 + 0x352) != '\0') {
-            STT3DSprC::SetCurFase(pSVar1,'\f',*(undefined4 *)((int)param_1 + 0x2ce));
+            STT3DSprC::SetCurFase(pSVar1,'\f',*(uint *)((int)param_1 + 0x2ce));
             STT3DSprC::ShowCurFase(pSVar1,'\f');
           }
           if (DAT_00807326 != '\0') {
@@ -80,10 +78,10 @@ LAB_0062371f:
           *(undefined4 *)((int)param_1 + 0x2ce) = 0;
         }
         pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-        STT3DSprC::SetCurFase(pSVar1,'\x0e',*(undefined4 *)((int)param_1 + 0x2ce));
+        STT3DSprC::SetCurFase(pSVar1,'\x0e',*(uint *)((int)param_1 + 0x2ce));
         STT3DSprC::ShowCurFase(pSVar1,'\x0e');
         if (*(char *)((int)param_1 + 0x352) != '\0') {
-          STT3DSprC::SetCurFase(pSVar1,'\f',*(undefined4 *)((int)param_1 + 0x2ce));
+          STT3DSprC::SetCurFase(pSVar1,'\f',*(uint *)((int)param_1 + 0x2ce));
           STT3DSprC::ShowCurFase(pSVar1,'\f');
         }
         if (DAT_00807326 != '\0') {

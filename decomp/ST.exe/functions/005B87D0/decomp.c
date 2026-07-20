@@ -64,7 +64,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           cVar16 = CASE_FFFFFFFE;
           iVar9 = 0x39;
           iVar4 = 0x158;
-          puVar8 = (uint *)FUN_006b0140(param_1,DAT_00807618);
+          puVar8 = (uint *)FUN_006b0140(param_1,HINSTANCE_00807618);
           puVar7 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar8,iVar4,iVar9,cVar16,uVar10,
                               iVar14,iVar15,iVar18);
@@ -72,8 +72,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           this_00->field_1D90 = 0;
         }
         else {
-          uVar5 = FUN_006b0140(param_4,DAT_00807618);
-          uVar6 = FUN_006b0140(param_1,DAT_00807618);
+          uVar5 = FUN_006b0140(param_4,HINSTANCE_00807618);
+          uVar6 = FUN_006b0140(param_1,HINSTANCE_00807618);
           wsprintfA((LPSTR)local_478,s__s___s__li__007ccca4,uVar6,uVar5,param_3);
           iVar4 = this_00->field_1D88;
           uVar6 = 0xffffffff;
@@ -111,7 +111,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             iVar14 = 0x7d;
             iVar4 = *(int *)(&this_00->field_0x174 + uVar10 * 0x1fb);
             iVar9 = uVar10 * 0x1fb;
-            puVar8 = (uint *)FUN_006b0140(*local_10,DAT_00807618);
+            puVar8 = (uint *)FUN_006b0140(*local_10,HINSTANCE_00807618);
             puVar7 = ccFntTy::CreateTypeSSpr
                                (*(ccFntTy **)(DAT_0081176c + 0x30),puVar8,iVar14,iVar15,cVar16,
                                 uVar17,iVar18,iVar19,iVar20);

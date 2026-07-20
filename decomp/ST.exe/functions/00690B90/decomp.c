@@ -55,7 +55,8 @@ undefined4 __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,int param_1)
       else if (uVar1 == 2) {
         puVar2 = *(undefined4 **)(param_1 + 0x14);
         if (puVar2 == (undefined4 *)0x0) {
-          RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_tact_cpp_007d56e0,0x45e);
+          RaiseInternalException
+                    (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_tact_cpp_007d56e0,0x45e);
         }
         InitData(this_00,puVar2);
         if (puVar2[3] == 0) {

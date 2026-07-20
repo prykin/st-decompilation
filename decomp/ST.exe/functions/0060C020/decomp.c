@@ -1,5 +1,8 @@
 
-undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0060C020 returns return of Library::DKW::LIB::FUN_006acf50 @ 0060C147 */
+
+int __thiscall FUN_0060c020(void *this,uint *param_1)
 
 {
   undefined4 *puVar1;
@@ -38,7 +41,7 @@ undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
     local_14 = (undefined4 *)FUN_006b0020(*(uint **)((int)local_18 + 0x234),(int *)&local_c);
     uVar3 = local_c + 0x87;
     local_8 = uVar3;
-    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar1,uVar3);
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)puVar1,uVar3);
     *(uint *)((int)puVar1 + uVar3 + (-4 - local_c)) = local_c;
     puVar4 = local_14;
     puVar6 = (undefined4 *)((int)puVar1 + (local_8 - local_c));
@@ -58,7 +61,7 @@ undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
       if (local_1c != (uint *)0x0) {
         uVar3 = local_8 + 4 + local_10;
         local_8 = uVar3;
-        puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar1,uVar3);
+        puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)puVar1,uVar3);
         puVar7 = (uint *)((int)puVar1 + uVar3 + (-4 - local_10));
         *puVar7 = local_10;
         puVar5 = local_1c;
@@ -78,6 +81,6 @@ undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
   if (param_1 != (uint *)0x0) {
     *param_1 = local_8;
   }
-  return puVar1;
+  return (int)puVar1;
 }
 

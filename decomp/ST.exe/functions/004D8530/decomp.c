@@ -1,9 +1,12 @@
 
-void FUN_004d8530(int param_1)
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 00580D30 -> 004D8530 @ 00580D75 */
+
+void FUN_004d8530(STResourceC *param_1)
 
 {
   int iVar1;
-  int local_8;
+  STResourceC *local_8;
   
   if (DAT_007fa150 != 0) {
     *(undefined4 *)(DAT_007fa150 + 4) = 0;

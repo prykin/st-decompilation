@@ -95,10 +95,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   this_00 = local_8;
   if (iVar7 == 0) {
     if (local_8->field_1E8E != 0) {
-      FUN_006ab060(&local_8->field_1E8E);
+      FUN_006ab060((LPVOID *)&local_8->field_1E8E);
     }
     if (this_00->field_1E92 != 0) {
-      FUN_006ab060(&this_00->field_1E92);
+      FUN_006ab060((LPVOID *)&this_00->field_1E92);
     }
     iVar7 = 1;
     puVar8 = (undefined4 *)(this_00->field_005D + 0x28);
@@ -112,10 +112,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     this_00->field_1E9A = ptVar4;
     puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AE8 = puVar5;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(puVar5,&DAT_008016a0);
     puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AEC = puVar5;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(puVar5,&DAT_008016a0);
     puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0x25c,10);
     this_00->field_1EBE = puVar5;
     local_520[4] = 0x15b - this_00->field_1CFF;

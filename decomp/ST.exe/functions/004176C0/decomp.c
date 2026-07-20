@@ -1,5 +1,9 @@
 
-uint __thiscall FUN_004176c0(void *this,short param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=3; incoming_this_accesses=1;
+   incoming_edx_uses=8 */
+
+uint __thiscall STBoatC::sub_004176C0(STBoatC *this,short param_1)
 
 {
   uint uVar1;
@@ -12,9 +16,9 @@ uint __thiscall FUN_004176c0(void *this,short param_1)
   uint uVar7;
   int iVar8;
   
-  iVar6 = CONCAT22((short)((uint)unaff_ESI >> 0x10),*(short *)((int)this + 0x86));
+  iVar6 = CONCAT22((short)((uint)unaff_ESI >> 0x10),this->field_0086);
   iVar8 = (int)param_1;
-  uVar3 = (iVar8 / (int)*(short *)((int)this + 0x86)) * iVar6;
+  uVar3 = (iVar8 / (int)this->field_0086) * iVar6;
   uVar7 = iVar6 + uVar3;
   uVar1 = iVar8 - (short)uVar7;
   uVar4 = (int)uVar1 >> 0x1f;

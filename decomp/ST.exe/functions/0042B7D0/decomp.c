@@ -1,22 +1,26 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::AddObjsToGroup */
+   STAllPlayersC::AddObjsToGroup
+   
+   [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 00436F20 -> 0042B7D0 @ 0043756E | 0044EE30 -> 0042B7D0 @ 004505CF | 0044EE30 ->
+   0042B7D0 @ 00450662 | 00490F60 -> 0042B7D0 @ 00491001 */
 
 undefined4 __thiscall
 STAllPlayersC::AddObjsToGroup
-          (STAllPlayersC *this,int param_1,ushort param_2,int param_3,undefined2 *param_4)
+          (STAllPlayersC *this,int param_1,ushort param_2,uint *groupContent,undefined2 *param_4)
 
 {
-  code *pcVar1;
-  uint *puVar2;
-  bool bVar3;
+  uint uVar1;
+  code *pcVar2;
+  uint *puVar3;
+  bool bVar4;
   undefined3 extraout_var;
-  int iVar4;
   int iVar5;
-  undefined4 uVar6;
+  int iVar6;
+  undefined4 uVar7;
   undefined4 unaff_ESI;
-  uint uVar7;
   uint uVar8;
   void *unaff_EDI;
   InternalExceptionFrame local_90;
@@ -36,29 +40,29 @@ STAllPlayersC::AddObjsToGroup
   STGroupC *local_c;
   undefined1 local_5;
   
-  iVar4 = *(int *)(param_3 + 0xc);
-  uVar7 = 0;
+  uVar1 = groupContent[3];
+  uVar8 = 0;
   local_20 = 0;
   local_14 = *(uint **)((int)&DAT_007f4e24 + (char)param_1 * 0xa62 + 1);
-  if (0 < iVar4) {
+  if (0 < (int)uVar1) {
     do {
-      FUN_006acc70(param_3,uVar7,&local_18);
-      bVar3 = thunk_FUN_0042b5b0(param_1,local_18);
-      if (CONCAT31(extraout_var,bVar3) == 0) {
+      FUN_006acc70((int)groupContent,uVar8,&local_18);
+      bVar4 = thunk_FUN_0042b5b0(param_1,local_18);
+      if (CONCAT31(extraout_var,bVar4) == 0) {
         return 0xaffe0002;
       }
-      uVar7 = uVar7 + 1;
-    } while ((int)uVar7 < iVar4);
+      uVar8 = uVar8 + 1;
+    } while ((int)uVar8 < (int)uVar1);
   }
   uVar8 = 0;
-  uVar7 = local_14[3];
-  local_24 = uVar7;
-  if (0 < (int)uVar7) {
+  uVar1 = local_14[3];
+  local_24 = uVar1;
+  if (0 < (int)uVar1) {
     do {
       FUN_006acc70((int)local_14,uVar8,&local_c);
       if (local_c != (STGroupC *)0x0) {
-        iVar4 = thunk_FUN_00423d80(local_c,param_3);
-        if (iVar4 == 1) {
+        iVar5 = thunk_FUN_00423d80(local_c,groupContent);
+        if (iVar5 == 1) {
           local_5 = 0;
           (**(code **)(local_c->field_0000 + 8))(0x65,&local_5);
         }
@@ -67,20 +71,20 @@ STAllPlayersC::AddObjsToGroup
         }
       }
       uVar8 = uVar8 + 1;
-    } while ((int)uVar8 < (int)uVar7);
+    } while ((int)uVar8 < (int)uVar1);
   }
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
-  iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  puVar2 = local_14;
-  if (iVar4 == 0) {
+  iVar5 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  puVar3 = local_14;
+  if (iVar5 == 0) {
     uVar8 = local_24;
-    uVar7 = local_24;
+    uVar1 = local_24;
     if ((param_2 == 0xfffe) || (local_20 == 0)) {
-      while (uVar7 = uVar7 - 1, -1 < (int)uVar7) {
-        FUN_006acc70((int)puVar2,uVar7,&local_c);
+      while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
+        FUN_006acc70((int)puVar3,uVar1,&local_c);
         if (local_c == (STGroupC *)0x0) {
-          uVar8 = uVar7;
+          uVar8 = uVar1;
         }
       }
       local_48 = (int)(char)param_1;
@@ -90,8 +94,8 @@ STAllPlayersC::AddObjsToGroup
       local_40 = 1;
       local_38 = uVar8 & 0xffff;
       (**(code **)(*DAT_00802a38 + 8))(0x10ff,local_1c,&local_10,local_4c,0);
-      Library::DKW::TBL::FUN_006ae140(puVar2,uVar8 & 0xffff,&local_10);
-      STGroupC::AddObjs(local_10,param_3,0);
+      Library::DKW::TBL::FUN_006ae140(puVar3,uVar8 & 0xffff,&local_10);
+      STGroupC::AddObjs(local_10,(int)groupContent,0);
       local_5 = 2;
       (**(code **)(local_10->field_0000 + 8))(0x65,&local_5);
       if (param_4 != (undefined2 *)0x0) {
@@ -100,37 +104,37 @@ STAllPlayersC::AddObjsToGroup
     }
     else {
       FUN_006acc70((int)local_14,(uint)param_2,&local_c);
-      STGroupC::AddObjs(local_c,param_3,1);
+      STGroupC::AddObjs(local_c,(int)groupContent,1);
       local_5 = 1;
       (**(code **)(local_c->field_0000 + 8))(0x65,&local_5);
     }
-    uVar7 = puVar2[3];
+    uVar1 = puVar3[3];
     uVar8 = 0;
-    local_24 = uVar7;
-    if (0 < (int)uVar7) {
+    local_24 = uVar1;
+    if (0 < (int)uVar1) {
       do {
-        FUN_006acc70((int)puVar2,uVar8,&local_c);
+        FUN_006acc70((int)puVar3,uVar8,&local_c);
         if (((local_c != (STGroupC *)0x0) && (local_c->field_0027 == 0)) &&
-           (iVar4 = thunk_FUN_004233a0((int)local_c), iVar4 == 0)) {
+           (iVar5 = thunk_FUN_004233a0((int)local_c), iVar5 == 0)) {
           thunk_FUN_0054cf70(DAT_00802a38,*(uint *)&local_c->field_0x8);
           local_c = (STGroupC *)0x0;
-          Library::DKW::TBL::FUN_006ae140(puVar2,uVar8,&local_c);
+          Library::DKW::TBL::FUN_006ae140(puVar3,uVar8,&local_c);
         }
         uVar8 = uVar8 + 1;
-      } while ((int)uVar8 < (int)uVar7);
+      } while ((int)uVar8 < (int)uVar1);
     }
     g_currentExceptionFrame = local_90.previous;
     return 0;
   }
   g_currentExceptionFrame = local_90.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d8,0,iVar4,&DAT_007a4ccc,
+  iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d8,0,iVar5,&DAT_007a4ccc,
                              s_STAllPlayersC__AddObjsToGroup_007a60d0);
-  if (iVar5 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+  if (iVar6 != 0) {
+    pcVar2 = (code *)swi(3);
+    uVar7 = (*pcVar2)();
+    return uVar7;
   }
-  RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d9);
+  RaiseInternalException(iVar5,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d9);
   return 0xffffffff;
 }
 

@@ -8,7 +8,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
 {
   undefined1 *puVar1;
   code *pcVar2;
-  undefined4 *puVar3;
+  cMf32 *pcVar3;
   int iVar4;
   ushort *puVar5;
   uint *puVar6;
@@ -25,7 +25,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   InternalExceptionFrame local_60;
   undefined1 local_1c;
   undefined4 local_1b;
-  undefined4 *local_10;
+  cMf32 *local_10;
   int local_c;
   WaitTy *local_8;
   
@@ -46,7 +46,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     (*pcVar2)();
     return;
   }
-  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
+  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
   DibPut((undefined4 *)DAT_0081176c->field_02F0,0,0,'\x01',(byte *)puVar5);
   iVar4 = DAT_0081176c->field_0544;
   FUN_006b4170(iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8),0xff);
@@ -57,8 +57,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   this_01 = local_8;
   DAT_0081176c->field_0548 = puVar6;
   if (local_8->field_1A8F == -1) {
-    uVar7 = FUN_006b0140(0x252c,DAT_00807618);
-    uVar8 = FUN_006b0140(0x252a,DAT_00807618);
+    uVar7 = FUN_006b0140(0x252c,HINSTANCE_00807618);
+    uVar8 = FUN_006b0140(0x252a,HINSTANCE_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar8,uVar7);
     iVar4 = 0;
     puVar6 = &DAT_0080f33a;
@@ -68,36 +68,36 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,PTR_s_CUSTOM__0079c244);
     local_1c = this_01->field_1A93;
     local_1b = this_01->field_1A8F;
-    iVar4 = FUN_00725910((char *)&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&local_1c,0);
+    iVar4 = FUN_00725910(&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&local_1c,0);
     if (iVar4 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_a4;
       iVar4 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
-        local_10 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+        local_10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
       }
       this_01 = local_8;
-      puVar3 = local_10;
+      pcVar3 = local_10;
       g_currentExceptionFrame = local_a4.previous;
-      if (local_10 != (undefined4 *)0x0) {
+      if (local_10 != (cMf32 *)0x0) {
         StartSystemTy::LoadMapData
                   (DAT_0081176c,(int)local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
         Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
         pbVar10 = local_1a8;
-        uVar7 = FUN_006b0140(0x252a,DAT_00807618);
+        uVar7 = FUN_006b0140(0x252a,HINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar7,pbVar10);
         AddStr(this_01,&DAT_0080f33a,0);
-        cMf32::delete(this_00,puVar3);
+        cMf32::delete(this_00,pcVar3);
       }
       goto LAB_005e829d;
     }
-    uVar7 = FUN_006b0140(0x252b,DAT_00807618);
-    uVar8 = FUN_006b0140(0x252a,DAT_00807618);
+    uVar7 = FUN_006b0140(0x252b,HINSTANCE_00807618);
+    uVar8 = FUN_006b0140(0x252a,HINSTANCE_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar8,uVar7);
     AddStr(this_01,&DAT_0080f33a,0);
     iVar4 = 0;
-    puVar6 = (uint *)FUN_006b0140(0x252d,DAT_00807618);
+    puVar6 = (uint *)FUN_006b0140(0x252d,HINSTANCE_00807618);
   }
   AddStr(this_01,puVar6,iVar4);
 LAB_005e829d:

@@ -11,7 +11,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint *puVar4;
+  LPVOID *ppvVar4;
   InternalExceptionFrame local_48;
   
   local_48.previous = g_currentExceptionFrame;
@@ -24,21 +24,21 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
       }
       *param_1 = 0xffffffff;
       iVar2 = 3;
-      puVar4 = param_1;
+      ppvVar4 = (LPVOID *)param_1;
       do {
-        puVar4 = puVar4 + 1;
-        if (*puVar4 != 0) {
-          FUN_006ab060(puVar4);
+        ppvVar4 = ppvVar4 + 1;
+        if (*ppvVar4 != (LPVOID)0x0) {
+          FUN_006ab060(ppvVar4);
         }
         iVar2 = iVar2 + -1;
       } while (iVar2 != 0);
       if (*(int **)((int)param_1 + 0x31) != (int *)0x0) {
         FUN_00714060(*(int **)((int)param_1 + 0x31));
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)((int)param_1 + 0x31));
+        Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)((int)param_1 + 0x31));
         *(undefined4 *)((int)param_1 + 0x31) = 0;
       }
       if (*(int *)((int)param_1 + 0x3a) != 0) {
-        FUN_006ab060((undefined4 *)((int)param_1 + 0x3a));
+        FUN_006ab060((LPVOID *)((int)param_1 + 0x3a));
       }
     }
     g_currentExceptionFrame = local_48.previous;

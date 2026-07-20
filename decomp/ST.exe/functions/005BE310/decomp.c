@@ -50,25 +50,25 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     } while (iVar3 != 0);
     if (pMVar2->field_0453 != (HoloTy *)0x0) {
       HoloTy::Done(pMVar2->field_0453);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pMVar2->field_0453);
+      Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0453);
       pMVar2->field_0453 = (HoloTy *)0x0;
     }
     if (pMVar2->field_0457 != (HoloTy *)0x0) {
       HoloTy::Done(pMVar2->field_0457);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pMVar2->field_0457);
+      Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0457);
       pMVar2->field_0457 = (HoloTy *)0x0;
     }
-    cMf32::RecMemFree(DAT_00806780,&pMVar2->field_005D);
-    cMf32::RecMemFree(DAT_00806780,&pMVar2->field_006F);
+    cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_005D);
+    cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_006F);
     if (pMVar2->field_0077 != 0) {
-      FUN_006ab060(&pMVar2->field_0077);
+      FUN_006ab060((LPVOID *)&pMVar2->field_0077);
     }
     if (pMVar2->field_007B != 0) {
-      FUN_006ab060(&pMVar2->field_007B);
+      FUN_006ab060((LPVOID *)&pMVar2->field_007B);
     }
     this_00 = (ccFntTy *)0x0;
     if (pMVar2->field_0073 != 0) {
-      FUN_006ab060(&pMVar2->field_0073);
+      FUN_006ab060((LPVOID *)&pMVar2->field_0073);
       this_00 = extraout_ECX;
     }
     if (pMVar2->field_0083 != (ccFntTy *)0x0) {

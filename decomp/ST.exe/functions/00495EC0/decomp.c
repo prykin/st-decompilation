@@ -11,8 +11,8 @@ undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint p
   int iVar3;
   undefined4 uVar4;
   
-  if ((((param_1 < 0) || (DAT_007fb240 <= param_1)) || (param_2 < 0)) ||
-     (((DAT_007fb242 <= param_2 || (param_3 < 0)) || (DAT_007fb244 <= param_3)))) {
+  if ((((param_1 < 0) || (SHORT_007fb240 <= param_1)) || (param_2 < 0)) ||
+     (((SHORT_007fb242 <= param_2 || (param_3 < 0)) || (SHORT_007fb244 <= param_3)))) {
     iVar3 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x7f,0,0,&DAT_007a4ccc,
                                s_DumpClassC__WritePtr_007abdf8);
     if (iVar3 != 0) {
@@ -24,7 +24,7 @@ undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint p
   }
   piVar1 = (int *)(DAT_007fb248 +
                   ((param_4 & 0xff) +
-                  ((int)DAT_007fb240 * (int)param_2 + (int)DAT_007fb246 * (int)param_3 +
+                  ((int)SHORT_007fb240 * (int)param_2 + (int)SHORT_007fb246 * (int)param_3 +
                   (int)param_1) * 2) * 4);
   if (*piVar1 == 0) {
     *piVar1 = param_5;

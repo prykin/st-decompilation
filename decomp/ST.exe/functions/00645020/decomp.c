@@ -27,8 +27,9 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   iVar2 = local_c;
   if (errorCode == 0) {
     if (local_c == 0) {
-      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_nick_to_torp_cpp_007d25c0,0x466)
-      ;
+      RaiseInternalException
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_nick_to_torp_cpp_007d25c0,
+                 0x466);
     }
     uVar3 = 0;
     local_8 = 0;

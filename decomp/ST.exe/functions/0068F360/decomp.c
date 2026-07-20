@@ -1,9 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
-   AiTactClassTy::GiveObjByFltType */
+   AiTactClassTy::GiveObjByFltType
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0068F7E0 -> 0068F360 @ 0068F836 */
 
-void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
+void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_1)
 
 {
   ushort uVar1;
@@ -15,10 +18,10 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
   int iVar7;
   undefined2 *puVar8;
   uint uVar9;
-  int *piVar10;
-  AiFltClassTy *pAVar11;
-  int iVar12;
-  uint uVar13;
+  int *objPtr;
+  AiFltClassTy *pAVar10;
+  int iVar11;
+  uint uVar12;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_5c;
@@ -35,9 +38,9 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
   pAVar6 = local_8;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x276,0,iVar7,&DAT_007a4ccc,
+    iVar11 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x276,0,iVar7,&DAT_007a4ccc,
                                 s_AiTactClassTy__GiveObjByFltType_007d57dc);
-    if (iVar12 != 0) {
+    if (iVar11 != 0) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
@@ -45,7 +48,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
     RaiseInternalException(iVar7,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x277);
     return;
   }
-  if ((param_1 == 0) || (*(int *)(param_1 + 0xc) == 0)) {
+  if ((param_1 == (uint *)0x0) || (param_1[3] == 0)) {
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -53,7 +56,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
   local_10 = thunk_FUN_0068e480(pAVar6,2);
   local_14 = thunk_FUN_0068e480(pAVar6,4);
   local_18 = thunk_FUN_0068e480(pAVar6,0x10);
-  uVar3 = *(uint *)(param_1 + 0xc);
+  uVar3 = param_1[3];
 joined_r0x0068f3e2:
   do {
     while( true ) {
@@ -63,41 +66,41 @@ joined_r0x0068f3e2:
           g_currentExceptionFrame = local_5c.previous;
           return;
         }
-        if (uVar3 < *(uint *)(param_1 + 0xc)) {
-          puVar8 = (undefined2 *)(*(int *)(param_1 + 8) * uVar3 + *(int *)(param_1 + 0x1c));
+        if (uVar3 < param_1[3]) {
+          puVar8 = (undefined2 *)(param_1[2] * uVar3 + param_1[7]);
         }
         else {
           puVar8 = (undefined2 *)0x0;
         }
         uVar9 = CONCAT22((short)((uint)puVar8 >> 0x10),*puVar8);
-        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
-          piVar10 = (int *)0x0;
+        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+          objPtr = (int *)0x0;
         }
         else {
-          piVar10 = (int *)STAllPlayersC::GetObjPtr
-                                     (DAT_007fa174,CONCAT31((int3)(uVar9 >> 8),pAVar6->field_0x24),
-                                      uVar9,CASE_1);
+          objPtr = (int *)STAllPlayersC::GetObjPtr
+                                    (g_sTAllPlayers_007FA174,
+                                     CONCAT31((int3)(uVar9 >> 8),pAVar6->field_0x24),uVar9,CASE_1);
         }
         pAVar6 = local_8;
-      } while (piVar10 == (int *)0x0);
-      iVar7 = (**(code **)(*piVar10 + 0x2c))();
+      } while (objPtr == (int *)0x0);
+      iVar7 = (**(code **)(*objPtr + 0x2c))();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       iVar7 = local_8->field_00A5;
       if ((iVar7 == 0) || ((int)*(uint *)(iVar7 + 0xc) <= (int)local_c)) {
-        pAVar11 = (AiFltClassTy *)0x0;
+        pAVar10 = (AiFltClassTy *)0x0;
       }
       else {
-        pAVar11 = pARam00000004;
+        pAVar10 = pARam00000004;
         if (local_c < *(uint *)(iVar7 + 0xc)) {
-          pAVar11 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * local_c + *(int *)(iVar7 + 0x1c) + 4);
+          pAVar10 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * local_c + *(int *)(iVar7 + 0x1c) + 4);
         }
       }
-      uVar1 = pAVar11->field_007D;
-      iVar7 = (**(code **)(*piVar10 + 0x2c))();
+      uVar1 = pAVar10->field_007D;
+      iVar7 = (**(code **)(*objPtr + 0x2c))();
       if (iVar7 == 0x78) {
-        *(uint *)((int)piVar10 + 0x269) = (uint)uVar1;
+        *(uint *)((int)objPtr + 0x269) = (uint)uVar1;
       }
-      FUN_006b0c70(param_1,uVar3);
+      FUN_006b0c70((int)param_1,uVar3);
       pAVar6 = local_8;
     }
     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
@@ -111,54 +114,54 @@ joined_r0x0068f3e2:
     if ((bVar5) || (iVar7 == 0x78)) goto LAB_0068f509;
     sVar2 = local_8->field_0039;
     if (sVar2 == 1) {
-      iVar12 = 8;
+      iVar11 = 8;
     }
     else if (sVar2 == 2) {
-      iVar12 = 0x14;
+      iVar11 = 0x14;
     }
     else if (sVar2 == 3) {
-      iVar12 = 0x1a;
+      iVar11 = 0x1a;
     }
     else {
-      iVar12 = 0;
+      iVar11 = 0;
     }
-    uVar13 = local_10;
-    if (iVar7 != iVar12) {
+    uVar12 = local_10;
+    if (iVar7 != iVar11) {
       if (sVar2 == 1) {
-        iVar12 = 0xc;
+        iVar11 = 0xc;
       }
       else if (sVar2 == 2) {
-        iVar12 = 0x18;
+        iVar11 = 0x18;
       }
       else if (sVar2 == 3) {
-        iVar12 = 0x19;
+        iVar11 = 0x19;
       }
       else {
-        iVar12 = 0;
+        iVar11 = 0;
       }
-      uVar13 = local_18;
+      uVar12 = local_18;
       uVar9 = local_14;
-      if (iVar7 == iVar12) goto LAB_0068f509;
+      if (iVar7 == iVar11) goto LAB_0068f509;
     }
-  } while ((int)uVar13 < 0);
+  } while ((int)uVar12 < 0);
   iVar7 = local_8->field_00A5;
-  uVar9 = uVar13;
+  uVar9 = uVar12;
   goto LAB_0068f516;
 LAB_0068f509:
   if (-1 < (int)uVar9) {
     iVar7 = local_8->field_00A5;
 LAB_0068f516:
     if ((iVar7 == 0) || ((int)*(uint *)(iVar7 + 0xc) <= (int)uVar9)) {
-      pAVar11 = (AiFltClassTy *)0x0;
+      pAVar10 = (AiFltClassTy *)0x0;
     }
     else {
-      pAVar11 = pARam00000004;
+      pAVar10 = pARam00000004;
       if (uVar9 < *(uint *)(iVar7 + 0xc)) {
-        pAVar11 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * uVar9 + *(int *)(iVar7 + 0x1c) + 4);
+        pAVar10 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * uVar9 + *(int *)(iVar7 + 0x1c) + 4);
       }
     }
-    AiFltClassTy::_AddObjFlt(pAVar11,piVar10,0);
-    FUN_006b0c70(param_1,uVar3);
+    AiFltClassTy::_AddObjFlt(pAVar10,(uint)objPtr,0);
+    FUN_006b0c70((int)param_1,uVar3);
     pAVar6 = local_8;
   }
   goto joined_r0x0068f3e2;

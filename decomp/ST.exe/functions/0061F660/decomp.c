@@ -53,7 +53,8 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
         }
         else {
           FUN_006e6710(DAT_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
-                       (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,local_c,piVar6[-2],iVar3);
+                       (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar6[-2],
+                       iVar3);
         }
       }
       iVar3 = iVar3 + 0xffffff;
@@ -62,7 +63,7 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   }
   else if (iVar3 == 2) {
     if (DAT_007fb284 != 0) {
-      local_8->field_001C = (int)DAT_007fb240 / 2;
+      local_8->field_001C = (int)SHORT_007fb240 / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

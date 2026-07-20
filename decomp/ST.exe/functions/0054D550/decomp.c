@@ -1,11 +1,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
-   STPlaySystemC::SaveObjData */
+   STPlaySystemC::SaveObjData
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00430A90 -> 0054D550 @ 00431261 | 004A8920 -> 0054D550 @ 004A8B9F */
 
 int __thiscall
-STPlaySystemC::SaveObjData
-          (STPlaySystemC *this,char *param_1,byte *param_2,uint param_3,byte param_4)
+STPlaySystemC::SaveObjData(STPlaySystemC *this,char *text,byte *param_2,uint param_3,byte param_4)
 
 {
   code *pcVar1;
@@ -24,7 +26,7 @@ STPlaySystemC::SaveObjData
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    cMf32::RecPut(local_8->field_0024,param_4,param_1,param_2,param_3,(undefined4 *)0x0,'\x02',
+    cMf32::RecPut(local_8->field_0024,param_4,text,param_2,param_3,(undefined4 *)0x0,'\x02',
                   (uint *)0x0);
     g_currentExceptionFrame = pIVar4;
     return 0;

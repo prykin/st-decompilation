@@ -18,7 +18,7 @@ void __thiscall SettMapMTy::SendDesc(SettMapMTy *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_ESI,in_stack_ffffff24);
   if (errorCode == 0) {
     thunk_FUN_00571a30(&DAT_008087b6,(undefined4 *)&stack0xffffff24,'\0');
-    FUN_00715360(DAT_00811764,param_1,'\x1c',&stack0xffffff24,0x94,1,0xffffffff);
+    FUN_00715360(g_int_00811764,param_1,'\x1c',&stack0xffffff24,0x94,1,0xffffffff);
     g_currentExceptionFrame = local_48.previous;
     return;
   }

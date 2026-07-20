@@ -21,7 +21,7 @@ undefined4 FUN_006c7240(int *param_1,int param_2,int param_3)
     }
     if ((*(byte *)((int)param_1 + 0x5e) & 1) == 0) {
       Library::DKW::WGR::FUN_006b55f0
-                (puVar1,*(int *)((int)param_1 + 0x3e),iVar3,iVar4,*(int *)((int)param_1 + 0x2e),
+                (puVar1,*(int *)((int)param_1 + 0x3e),iVar3,iVar4,*(byte **)((int)param_1 + 0x2e),
                  param_2,0,0,iVar2,1);
       return 0;
     }

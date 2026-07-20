@@ -7,7 +7,7 @@ undefined4 __cdecl
 FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefined4 param_3)
 
 {
-  MCIERROR MVar1;
+  MCIERROR mcierr;
   DWORD_PTR dwParam1;
   undefined4 local_18;
   MCIDEVICEID local_14;
@@ -42,11 +42,11 @@ FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefine
   else if (param_2 == CASE_3) {
     dwParam1 = 0x2300;
   }
-  MVar1 = mciSendCommandA(0,0x803,dwParam1,(DWORD_PTR)&local_18);
-  if (MVar1 == 0) {
+  mcierr = mciSendCommandA(0,0x803,dwParam1,(DWORD_PTR)&local_18);
+  if (mcierr == 0) {
     return local_14;
   }
-  FUN_00719c90(MVar1,&local_14);
+  FUN_00719c90(mcierr,&local_14);
   return 0;
 }
 
