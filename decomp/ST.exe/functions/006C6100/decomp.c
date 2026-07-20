@@ -1,13 +1,13 @@
 
-void FUN_006c6100(int param_1,ushort *param_2,int param_3,int param_4,int param_5,int param_6,
-                 int param_7,int param_8,int param_9,int param_10,uint param_11,uint param_12,
-                 ushort param_13,uint param_14)
+void FUN_006c6100(AnonShape_006C6100_D1CCA835 *param_1,ushort *param_2,int param_3,int param_4,
+                 int param_5,int param_6,int param_7,int param_8,int param_9,int param_10,
+                 uint param_11,uint param_12,ushort param_13,uint param_14)
 
 {
   uint uVar1;
   
-  if ((*(byte *)(param_1 + 0x49c) & 1) == 0) {
-    if (*(int *)(param_1 + 0x498) == 7) {
+  if ((param_1->field_049C & 1) == 0) {
+    if (param_1->field_0498 == 7) {
       if (param_4 <= param_6) {
         while (param_5 <= param_7) {
           *param_2 = *param_2 ^ param_13;
@@ -42,7 +42,7 @@ void FUN_006c6100(int param_1,ushort *param_2,int param_3,int param_4,int param_
       }
     }
   }
-  else if (*(int *)(param_1 + 0x498) == 7) {
+  else if (param_1->field_0498 == 7) {
     if (param_4 <= param_6) {
       while (param_5 <= param_7) {
         if ((param_11 & param_12) == 0) {

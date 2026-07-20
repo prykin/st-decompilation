@@ -1,5 +1,5 @@
 
-uint __thiscall FUN_0055b9f0(void *this,char *param_1)
+uint __thiscall FUN_0055b9f0(void *this,AnonShape_0055B9F0_A6E61FFF *param_1)
 
 {
   int iVar1;
@@ -20,11 +20,11 @@ uint __thiscall FUN_0055b9f0(void *this,char *param_1)
       else {
         pcVar3 = (char *)0x0;
       }
-      if ((((*(int *)(pcVar3 + 8) == *(int *)(param_1 + 8)) && (*pcVar3 == *param_1)) &&
-          (pcVar3[1] == param_1[1])) &&
-         (((*(short *)(pcVar3 + 2) == *(short *)(param_1 + 2) &&
-           (*(short *)(pcVar3 + 4) == *(short *)(param_1 + 4))) &&
-          ((pcVar3[6] == param_1[6] && (pcVar3[7] == param_1[7])))))) {
+      if ((((*(int *)(pcVar3 + 8) == param_1->field_0008) && (*pcVar3 == *(char *)param_1)) &&
+          (pcVar3[1] == param_1->field_0x1)) &&
+         (((*(short *)(pcVar3 + 2) == param_1->field_0002 &&
+           (*(short *)(pcVar3 + 4) == param_1->field_0004)) &&
+          ((pcVar3[6] == param_1->field_0x6 && (pcVar3[7] == param_1->field_0x7)))))) {
         return uVar4;
       }
       uVar4 = uVar4 + 1;

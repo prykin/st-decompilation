@@ -15,7 +15,7 @@ FUN_005ecd70(void *this,int param_1,int param_2,undefined4 param_3,int param_4,c
   *(int *)((int)this + 0x26b) = param_2;
   *(undefined4 *)((int)this + 0x26f) = param_3;
   *(undefined4 *)((int)this + 0x283) = 1;
-  uVar2 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  uVar2 = PTR_00802a38->field_00E4;
   *(int *)((int)this + 0x273) = param_4;
   *(undefined4 *)((int)this + 0x28f) = uVar2;
   thunk_FUN_005eff00((int)this);

@@ -3,7 +3,8 @@
    E:\__titans\Andrey\research.cpp
    ResearchPanelTy::PaintUpdBut */
 
-void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
+void __thiscall
+ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_0053C820_7DA0C7AE *param_1)
 
 {
   uint uVar1;
@@ -22,7 +23,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
   uint local_c;
   Global_sub_005276E0_param_1Enum *local_8;
   
-  piVar2 = *(int **)(param_1 + 0x18);
+  piVar2 = param_1->field_0018;
   local_18 = *piVar2 - this->field_003C;
   if (this->field_005C == 0) {
     local_14 = piVar2[1] - DAT_00806734;
@@ -30,7 +31,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
   else {
     local_14 = piVar2[1] - this->field_0044;
   }
-  uVar1 = this->field_0199 + -0xc0af + *(int *)(param_1 + 0x10);
+  uVar1 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar5 = (&this->field_027A)[(byte)this->field_0278];
   if ((iVar5 == 0) || (*(uint *)(iVar5 + 0xc) <= uVar1)) {
     local_8 = (Global_sub_005276E0_param_1Enum *)0x0;
@@ -40,7 +41,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
               (*(int *)(iVar5 + 8) * uVar1 + *(int *)(iVar5 + 0x1c));
   }
   local_10 = this;
-  if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_005276E0_param_1Enum *)0x0)) {
+  if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_005276E0_param_1Enum *)0x0)) {
     local_c = (int)*(short *)(this->field_0188 + 0x23) - ((DAT_0080874e != '\x03') + 1);
   }
   else {
@@ -61,7 +62,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
     iVar7 = local_14;
     iVar5 = local_18;
     DibPut((undefined4 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
-    if ((*(short *)(param_1 + 0x14) == 3) && (local_8 != (Global_sub_005276E0_param_1Enum *)0x0)) {
+    if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_005276E0_param_1Enum *)0x0)) {
       pbVar6 = (byte *)FUN_0070b3a0(pRVar4->field_0190,7 - (uint)(local_8[8] != ~(CASE_80|CASE_7F)))
       ;
       DibPut((undefined4 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);

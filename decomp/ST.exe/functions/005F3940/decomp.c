@@ -36,8 +36,8 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     param_2 = (int)(short)(((short)(param_3 / 200) + sVar1) -
                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((*(int *)(DAT_00807598 + 0x48) <= iVar4) && (iVar4 <= *(int *)(DAT_00807598 + 0x58))) &&
-      (*(int *)(DAT_00807598 + 0x44) <= iVar5)) && (iVar5 <= *(int *)(DAT_00807598 + 0x54))) {
+  if ((((PTR_00807598->field_0048 <= iVar4) && (iVar4 <= PTR_00807598->field_0058)) &&
+      (PTR_00807598->field_0044 <= iVar5)) && (iVar5 <= PTR_00807598->field_0054)) {
     iVar3 = FUN_006ddbd0();
     pVVar2 = g_visibleClass_00802A88;
     if (iVar3 == 0) {

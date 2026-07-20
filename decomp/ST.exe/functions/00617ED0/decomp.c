@@ -23,7 +23,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
     }
     if (0 < param_1) {
       do {
-        iVar3 = FUN_006e62d0(DAT_00802a38,*param_2,(int *)&local_10);
+        iVar3 = FUN_006e62d0(PTR_00802a38,*param_2,(int *)&local_10);
         pSVar1 = local_10;
         if (iVar3 != -4) {
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);

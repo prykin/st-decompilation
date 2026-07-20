@@ -21,7 +21,7 @@ int __fastcall FUN_006048e0(void *param_1)
          (iVar2 = thunk_FUN_00604a00(param_1,*(int *)(iVar2 + 0x14)), iVar2 != 0)) {
         iVar3 = iVar3 + 1;
       }
-      FUN_006b0c70(*(int *)((int)param_1 + 0x215),uVar1);
+      FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)param_1 + 0x215),uVar1);
     }
   }
   return iVar3;

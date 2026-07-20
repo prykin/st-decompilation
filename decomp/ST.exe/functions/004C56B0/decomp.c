@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_004c56b0(void *this,void *param_1)
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
       param_1 = (void *)0x0;
       if ((*(int *)((int)this + 0x4ec) != 0) &&
-         (iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_1), iVar2 == 0
+         (iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_1), iVar2 == 0
          )) {
         uVar3 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar3;

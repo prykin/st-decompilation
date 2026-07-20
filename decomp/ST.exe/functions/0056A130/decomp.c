@@ -15,7 +15,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
   iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar3,in_stack_ffffffb8);
   if (iVar1 == 0) {
     if (param_4 == (uint *)0x0) {
-      param_4 = (uint *)FUN_0071a990(*(int *)((int)this + 0xdf3),
+      param_4 = (uint *)FUN_0071a990(*(AnonShape_0071A990_7656000F **)((int)this + 0xdf3),
                                      (param_1 ^ (int)param_1 >> 0x1f) - ((int)param_1 >> 0x1f),-1,
                                      (undefined1 *)0x0);
     }

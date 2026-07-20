@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004de820(int *param_1)
   int iVar3;
   undefined2 extraout_var_01;
   STGroupBoatC *this;
-  uint *groupContent;
+  AnonShape_006B1190_EDB2B5FD *groupContent;
   TLOBaseTy *this_00;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
@@ -24,16 +24,17 @@ undefined4 __fastcall FUN_004de820(int *param_1)
   this = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),(char)param_1[9]),
                             CONCAT22(extraout_var_01,(short)param_1[0xc]));
   if (((this != (STGroupBoatC *)0x0) &&
-      (groupContent = STGroupC::GetGroupContent((STGroupC *)this,iVar3), groupContent != (uint *)0x0
-      )) && (groupContent[3] != 0)) {
-    groupContent[1] = 0;
-    iVar3 = FUN_006b1190((int)groupContent,&local_8);
+      (groupContent = (AnonShape_006B1190_EDB2B5FD *)
+                      STGroupC::GetGroupContent((STGroupC *)this,iVar3),
+      groupContent != (AnonShape_006B1190_EDB2B5FD *)0x0)) && (groupContent->field_000C != 0)) {
+    groupContent->field_0004 = 0;
+    iVar3 = FUN_006b1190(groupContent,&local_8);
     while (-1 < iVar3) {
       this_00 = (TLOBaseTy *)
                 STAllPlayersC::GetObjPtr
                           (g_sTAllPlayers_007FA174,
                            CONCAT31((int3)((uint)iVar3 >> 8),(char)param_1[9]),local_8,CASE_1);
-      if (((this_00 != (TLOBaseTy *)0x0) && (iVar3 = (*this_00->vtable->slot_2C)(), iVar3 == 0x45))
+      if (((this_00 != (TLOBaseTy *)0x0) && (iVar3 = (*this_00->vtable->vfunc_2C)(), iVar3 == 0x45))
          && ((this_00->field_04D0 == 0 &&
              ((iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar3 != 0 &&
               (bVar1 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var,bVar1) != 0)))))) {
@@ -46,7 +47,7 @@ undefined4 __fastcall FUN_004de820(int *param_1)
         }
         bVar2 = true;
       }
-      iVar3 = FUN_006b1190((int)groupContent,&local_8);
+      iVar3 = FUN_006b1190(groupContent,&local_8);
     }
     FUN_006ae110((byte *)groupContent);
     if (bVar2) {
@@ -54,8 +55,7 @@ undefined4 __fastcall FUN_004de820(int *param_1)
     }
   }
   param_1[0x134] = param_1[0x134] + 1;
-  *(int *)((int)&DAT_007f55f6 + param_1[9] * 0xa62) =
-       *(int *)((int)&DAT_007f55f6 + param_1[9] * 0xa62) + 1;
+  g_playerRuntime[param_1[9]].field1823_0x7d6 = g_playerRuntime[param_1[9]].field1823_0x7d6 + 1;
   return 1;
 }
 

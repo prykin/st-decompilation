@@ -23,19 +23,20 @@ void CreateInterSystem(void)
   if (errorCode == 0) {
     this = (InterSystemC *)Library::MSVCRT::FUN_0072e530(0x34);
     if (this == (InterSystemC *)0x0) {
-      DAT_00802a28 = (InterSystemC *)0x0;
+      PTR_00802a28 = (ccFntTy *)0x0;
     }
     else {
-      DAT_00802a28 = InterSystemC::InterSystemC(this,g_appClass_00806728);
+      PTR_00802a28 = (ccFntTy *)InterSystemC::InterSystemC(this,g_appClass_00806728);
     }
-    *(undefined4 *)&DAT_00802a28->field_0x20 = 0;
-    (*DAT_00802a28->vtable->InitSystem)((SystemClassTy *)DAT_00802a28);
+    *(undefined4 *)&PTR_00802a28->field_0x20 = 0;
+    (*(code *)**(undefined4 **)PTR_00802a28)();
     AppClassTy::AddChildSystem
-              ((AppClassTy *)&DAT_00807620,DAT_0081163c,(SystemClassTy *)DAT_00802a28,0);
-    InterSystemC::CreateInterfObjects(DAT_00802a28);
+              ((AppClassTy *)&DAT_00807620,(SystemClassTy *)PTR_0081163c,
+               (SystemClassTy *)PTR_00802a28,0);
+    InterSystemC::CreateInterfObjects((InterSystemC *)PTR_00802a28);
     local_14 = 5;
-    (*DAT_00802a28->vtable->GetMessage)(DAT_00802a28,(int)local_24);
-    *(undefined4 *)&DAT_00802a28->field_0x20 = 1;
+    (**(code **)(*(int *)PTR_00802a28 + 0x20))(local_24);
+    *(undefined4 *)&PTR_00802a28->field_0x20 = 1;
     g_currentExceptionFrame = pIVar3;
     return;
   }

@@ -2,14 +2,12 @@
 undefined4 FUN_004db0f0(int param_1)
 
 {
-  int iVar1;
-  int iVar2;
+  STPlaySystemC *pSVar1;
   
-  iVar1 = DAT_00802a38;
-  iVar2 = param_1 * 0xa62;
-  if (*(int *)((int)&DAT_007f582e + iVar2) == 2) {
-    *(undefined4 *)((int)&DAT_007f582e + iVar2) = 3;
-    *(undefined4 *)((int)&DAT_007f583a + iVar2) = *(undefined4 *)(iVar1 + 0xe4);
+  pSVar1 = PTR_00802a38;
+  if (g_playerRuntime[param_1].field2298_0xa0e == 2) {
+    g_playerRuntime[param_1].field2298_0xa0e = 3;
+    g_playerRuntime[param_1].field2301_0xa1a = pSVar1->field_00E4;
   }
   return 0;
 }

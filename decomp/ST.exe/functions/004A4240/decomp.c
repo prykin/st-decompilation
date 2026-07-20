@@ -19,6 +19,9 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   void *unaff_EDI;
   uint uVar7;
   uint uVar8;
+  DArrayTy *pDVar9;
+  DArrayTy *pDVar10;
+  DArrayTy *pDVar11;
   InternalExceptionFrame local_78;
   int local_34 [4];
   STGroupBoatC *local_24;
@@ -62,8 +65,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                       );
   local_18 = this_01;
   if (param_1 == 1) {
-    iVar2 = (*this_01->vtable->slot_2C)();
-    if ((iVar2 == 0x3b) || (iVar2 = (*this_01->vtable->slot_2C)(), iVar2 == 0x60)) {
+    iVar2 = (*this_01->vtable->vfunc_2C)();
+    if ((iVar2 == 0x3b) || (iVar2 = (*this_01->vtable->vfunc_2C)(), iVar2 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == 0) {
           RaiseInternalException
@@ -74,13 +77,14 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         iVar2 = *(int *)(this_00->field_0266 + 0xc);
         if (0 < iVar2) {
           do {
-            FUN_006acc70(this_00->field_0266,uVar7,&local_10);
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar7,&local_10);
             if ((short)local_10 == -1) break;
             uVar7 = uVar7 + 1;
           } while ((int)uVar7 < iVar2);
         }
         Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar7,&param_2);
-        DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,this_00->field_0029);
+        DistributeMD(this_00,0,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
+                     (DArrayTy *)this_00->field_0029);
         this_01 = local_18;
       }
       if (this_00->field_0262 != 2) {
@@ -121,7 +125,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(this_00->field_0266,uVar7,&local_10);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar7,&local_10);
           if ((short)local_10 == -1) break;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
@@ -133,7 +137,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       if (0 < local_1c) {
         piVar6 = local_34;
         do {
-          iVar3 = (*local_18->vtable->slot_2C)();
+          iVar3 = (*local_18->vtable->vfunc_2C)();
           this_01 = local_18;
           if (iVar3 == *piVar6) break;
           iVar2 = iVar2 + 1;
@@ -156,12 +160,12 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar2 = (*this_01->vtable->slot_2C)();
+      iVar2 = (*this_01->vtable->vfunc_2C)();
       if (iVar2 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar2 = (*this_01->vtable->slot_88)(local_14);
+      iVar2 = (*this_01->vtable->vfunc_88)(local_14);
       if (iVar2 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -200,7 +204,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_024E + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(this_00->field_024E,uVar7,&local_10);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_024E,uVar7,&local_10);
           if ((short)local_10 == -1) break;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
@@ -208,13 +212,14 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       puVar5 = (uint *)this_00->field_024E;
     }
     Library::DKW::TBL::FUN_006ae140(puVar5,uVar7,&param_2);
-    iVar2 = this_00->field_0029;
-    iVar3 = this_00->field_0266;
-    iVar4 = this_00->field_024E;
+    pDVar11 = (DArrayTy *)this_00->field_0029;
+    pDVar10 = (DArrayTy *)this_00->field_0266;
+    pDVar9 = (DArrayTy *)this_00->field_024E;
     goto LAB_004a4aab;
   }
-  iVar2 = (*this_01->vtable->slot_2C)();
-  if ((iVar2 == 0x3b) || (iVar3 = (*this_01->vtable->slot_2C)(), iVar2 = local_1c, iVar3 == 0x60)) {
+  iVar2 = (*this_01->vtable->vfunc_2C)();
+  if ((iVar2 == 0x3b) || (iVar3 = (*this_01->vtable->vfunc_2C)(), iVar2 = local_1c, iVar3 == 0x60))
+  {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == 0) {
         RaiseInternalException
@@ -225,7 +230,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(this_00->field_0266,uVar7,&local_10);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
             Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar7,&local_10);
@@ -234,7 +239,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
       }
-      DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,this_00->field_0029);
+      DistributeMD(this_00,0,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
+                   (DArrayTy *)this_00->field_0029);
       this_01 = local_18;
     }
     if (this_00->field_0262 != 2) {
@@ -275,7 +281,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     uVar7 = *(uint *)(this_00->field_0266 + 0xc);
     if (0 < (int)uVar7) {
       do {
-        FUN_006acc70(this_00->field_0266,uVar8,&local_10);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
           Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar8,&local_10);
@@ -301,7 +307,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     if (0 < local_1c) {
       local_20 = local_34;
       do {
-        iVar4 = (*local_18->vtable->slot_2C)();
+        iVar4 = (*local_18->vtable->vfunc_2C)();
         if (iVar4 == *local_20) break;
         iVar3 = iVar3 + 1;
         local_20 = local_20 + 1;
@@ -329,7 +335,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_024E + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(this_00->field_024E,uVar7,&local_10);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_024E,uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
             Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_024E,uVar7,&local_10);
@@ -338,7 +344,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
       }
-      DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,this_00->field_0029);
+      DistributeMD(this_00,0,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
+                   (DArrayTy *)this_00->field_0029);
     }
     if (this_00->field_024A != 2) {
       g_currentExceptionFrame = local_78.previous;
@@ -378,7 +385,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     uVar7 = *(uint *)(this_00->field_024E + 0xc);
     if (0 < (int)uVar7) {
       do {
-        FUN_006acc70(this_00->field_024E,uVar8,&local_10);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_024E,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
           Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_024E,uVar8,&local_10);
@@ -402,11 +409,11 @@ LAB_004a4a83:
                  iVar2);
     }
   }
-  iVar2 = this_00->field_0029;
-  iVar3 = this_00->field_0266;
-  iVar4 = this_00->field_024E;
+  pDVar11 = (DArrayTy *)this_00->field_0029;
+  pDVar10 = (DArrayTy *)this_00->field_0266;
+  pDVar9 = (DArrayTy *)this_00->field_024E;
 LAB_004a4aab:
-  DistributeMD(this_00,0,iVar4,iVar3,iVar2);
+  DistributeMD(this_00,0,pDVar9,pDVar10,pDVar11);
   g_currentExceptionFrame = local_78.previous;
   return;
 }

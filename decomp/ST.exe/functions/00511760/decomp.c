@@ -78,8 +78,8 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       this_00 = extraout_ECX_06;
     }
     pHVar2->field_01D7 = 0;
-    if (pHVar2->field_01D3 != (uint *)0x0) {
-      FUN_006b5570((byte *)pHVar2->field_01D3);
+    if ((AnonShape_006B5570_4D68B99C *)pHVar2->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pHVar2->field_01D3);
       this_00 = extraout_ECX_07;
     }
     pHVar2->field_01D3 = (uint *)0x0;

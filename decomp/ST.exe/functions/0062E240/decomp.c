@@ -22,7 +22,7 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
                             ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar6 +
                             (int)sVar5) * 8), piVar2 != (int *)0x0 && (piVar2[6] == param_5)))))) &&
       ((piVar2[8] == 1000 && (iVar4 = (**(code **)(*piVar2 + 0x2c))(), iVar4 == 0x6e)))) ||
-     ((param_5 != 0 && (iVar4 = FUN_006e62d0(DAT_00802a38,param_5,(int *)&local_8), iVar4 != -4))))
+     ((param_5 != 0 && (iVar4 = FUN_006e62d0(PTR_00802a38,param_5,(int *)&local_8), iVar4 != -4))))
   {
     uVar7 = param_6;
     if (param_6 == 0) {

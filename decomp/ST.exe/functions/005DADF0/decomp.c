@@ -22,10 +22,11 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    if (DAT_0080c4fa != (uint *)0x0) {
-      FUN_006b5570((byte *)DAT_0080c4fa);
+    if (DAT_0080c4fa != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570(DAT_0080c4fa);
     }
-    DAT_0080c4fa = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,100,0x14);
+    DAT_0080c4fa = (AnonShape_006B5570_4D68B99C *)
+                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,100,0x14);
     iVar2 = local_8->field_067E;
     if (iVar2 != 0) {
       uVar6 = *(uint *)(iVar2 + 0x14);

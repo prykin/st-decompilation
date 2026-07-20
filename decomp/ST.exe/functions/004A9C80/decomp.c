@@ -45,7 +45,7 @@ LAB_004a9cfb:
   local_18 = 0xf;
   local_14 = 0x109;
   local_10 = 0;
-  (**(code **)(*DAT_00802a38 + 0x18))(local_24);
+  (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_24);
   return;
 }
 

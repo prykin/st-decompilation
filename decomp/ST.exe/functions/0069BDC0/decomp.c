@@ -1,7 +1,7 @@
 
 int __thiscall
 FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-            int param_7)
+            AnonShape_0069BDC0_B656F442 *param_7)
 
 {
   undefined1 *puVar1;
@@ -153,8 +153,8 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       }
       iVar4 = local_40;
       if (local_40 != 0) {
-        *(int *)(param_7 + 0x10) = local_68;
-        *(int *)(param_7 + 0x14) = local_7c;
+        param_7->field_0010 = local_68;
+        param_7->field_0014 = local_7c;
         iVar3 = 0;
         iVar4 = param_1;
         if (0 < param_1) {
@@ -174,7 +174,7 @@ LAB_0069c0f3:
               if (iVar3 <= local_70) {
                 local_78[local_58[iVar3] * 0x10] = iVar4 << 0x10 | uVar5 & 0xffff;
                 Library::DKW::TBL::FUN_006ae1c0
-                          (*(uint **)(param_7 + 0x18),local_78 + local_58[iVar3] * 0x10);
+                          (param_7->field_0018,local_78 + local_58[iVar3] * 0x10);
                 iVar4 = piVar7[iVar3];
                 *(short *)(param_6 + iVar3 * 4) =
                      (short)((int)(local_78[iVar4 * 0x10 + 0xe] - local_78[iVar4 * 0x10 + 0xc]) / 2)

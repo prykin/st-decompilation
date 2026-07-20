@@ -33,7 +33,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
           }
           else if (iVar3 != 2) {
             if ((int)local_8 < 0x3c) {
-              *(undefined4 *)(iVar4 + 0x30) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+              *(undefined4 *)(iVar4 + 0x30) = PTR_00802a38->field_00E4;
               iVar3 = *(int *)(iVar4 + 0x24) + -1;
               if (*(int *)(iVar4 + 0x20) < iVar3) {
                 *(int *)(iVar4 + 0x20) = *(int *)(iVar4 + 0x20) + 1;
@@ -48,7 +48,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
                            *(float *)(iVar4 + 0x10) + _DAT_007904fc);
             }
             else {
-              iVar3 = *(int *)(DAT_00802a38 + 0xe4);
+              iVar3 = PTR_00802a38->field_00E4;
               if ((1 < (uint)(iVar3 - *(int *)(iVar4 + 0x30))) || (iVar3 == *(int *)(iVar4 + 0x30)))
               {
                 *(int *)(iVar4 + 0x30) = iVar3;

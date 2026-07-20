@@ -16,8 +16,8 @@ undefined4 __thiscall FUN_005ede30(void *this,undefined4 *param_1,undefined4 *pa
     iVar5 = 1;
   }
   iVar4 = (int)(short)(*(short *)((int)this + 0x246) * 200 + 100);
-  iVar1 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x28f)) *
-          *(int *)((int)this + 0x287) * iVar5;
+  iVar1 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) * *(int *)((int)this + 0x287) *
+          iVar5;
   iVar2 = ((int)(iVar1 + (iVar1 >> 0x1f & 0xfU)) >> 4) + iVar2;
   if (iVar5 < 1) {
     if (iVar2 < iVar4 + -0x1e) {

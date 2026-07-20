@@ -9,21 +9,21 @@
    
    [STVTableApplier] Virtual slot 007A1908+0x14 */
 
-int FUN_007486dd(int param_1)
+int FUN_007486dd(AnonShape_007480A5_22FE1AF9 *param_1)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
   int *piVar1;
   int iVar2;
   
-  lpCriticalSection = *(LPCRITICAL_SECTION *)(param_1 + 0x5c);
+  lpCriticalSection = param_1->field_005C;
   EnterCriticalSection(lpCriticalSection);
   iVar2 = FUN_007480a5(param_1);
   if (iVar2 == 0) {
-    piVar1 = *(int **)(param_1 + 0x90);
+    piVar1 = *(int **)&param_1[1].field_0x28;
     if (piVar1 != (int *)0x0) {
       (**(code **)(*piVar1 + 8))(piVar1);
-      *(undefined4 *)(param_1 + 0x90) = 0;
+      *(undefined4 *)&param_1[1].field_0x28 = 0;
     }
   }
   LeaveCriticalSection(lpCriticalSection);

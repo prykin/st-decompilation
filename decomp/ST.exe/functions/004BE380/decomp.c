@@ -1,11 +1,11 @@
 
-int __fastcall FUN_004be380(int param_1)
+int __fastcall FUN_004be380(AnonShape_004BE380_4A62E49E *param_1)
 
 {
   uint uVar1;
   
-  uVar1 = thunk_FUN_004406c0(*(char *)(param_1 + 0x23d));
-  return (*(int *)(param_1 + 0x241) * 100) /
-         *(int *)(&DAT_007e417c + (((uVar1 & 0xff) - 1) + *(int *)(param_1 + 0x235) * 3) * 4);
+  uVar1 = thunk_FUN_004406c0(param_1->field_023D);
+  return (param_1->field_0241 * 100) /
+         *(int *)(&DAT_007e417c + (((uVar1 & 0xff) - 1) + param_1->field_0235 * 3) * 4);
 }
 

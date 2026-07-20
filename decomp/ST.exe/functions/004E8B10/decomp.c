@@ -8,7 +8,8 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   bool bVar4;
   
   uVar3 = param_1;
-  if ((7 < param_1) || ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51])))) {
+  if ((7 < param_1) ||
+     ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51])))) {
     return 0;
   }
   iVar2 = (**(code **)(*(int *)this + 0x2c))();

@@ -22,7 +22,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
-  if (((this->field_1A5F == '\x01') && (this->field_1AC0 != 0)) && (-1 < (int)this->field_1ABC)) {
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != 0)) && (-1 < (int)this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;

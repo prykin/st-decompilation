@@ -1,5 +1,6 @@
 
-bool FUN_00497920(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+bool FUN_00497920(AnonShape_00497920_894F87D6 *param_1,undefined4 param_2,undefined4 param_3,
+                 undefined4 param_4)
 
 {
   int iVar1;
@@ -16,9 +17,9 @@ bool FUN_00497920(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
        (this = *(void **)(DAT_007fb248 +
                          ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 +
                          (int)sVar5) * 8), this != (void *)0x0)))))) {
-    if (((*(int *)((int)this + 0x24) != *(int *)(param_1 + 0x24)) ||
-        (*(short *)((int)this + 0x30) != *(short *)(param_1 + 0x30))) ||
-       (*(int *)((int)this + 0xfd) == 1)) {
+    if (((*(int *)((int)this + 0x24) != param_1->field_0024) ||
+        (*(short *)((int)this + 0x30) != param_1->field_0030)) || (*(int *)((int)this + 0xfd) == 1))
+    {
       if (*(char *)((int)this + 0xe3) == '\x01') {
         return true;
       }
@@ -33,9 +34,8 @@ bool FUN_00497920(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
       }
       thunk_FUN_00416840(this,(undefined2 *)((int)&param_2 + 2),(undefined2 *)((int)&param_3 + 2),
                          (undefined2 *)((int)&param_4 + 2));
-      if (((*(short *)(param_1 + 0x5b) == param_2._2_2_) &&
-          (*(short *)(param_1 + 0x5d) == param_3._2_2_)) &&
-         (*(short *)(param_1 + 0x5f) == param_4._2_2_)) {
+      if (((param_1->field_005B == param_2._2_2_) && (param_1->field_005D == param_3._2_2_)) &&
+         (param_1->field_005F == param_4._2_2_)) {
         return false;
       }
       return *(short *)((int)this + 0xfa) < 0x1e;
@@ -45,9 +45,9 @@ bool FUN_00497920(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
       return true;
     }
     iVar1 = iVar2 + *(int *)((int)this + 0xd3) * 8;
-    if (((*(short *)(iVar2 + *(int *)((int)this + 0xd3) * 8) == *(short *)(param_1 + 0x47)) &&
-        (*(short *)(iVar1 + 2) == *(short *)(param_1 + 0x49))) &&
-       (*(short *)(iVar1 + 4) == *(short *)(param_1 + 0x4b))) {
+    if (((*(short *)(iVar2 + *(int *)((int)this + 0xd3) * 8) == param_1->field_0047) &&
+        (*(short *)(iVar1 + 2) == param_1->field_0049)) &&
+       (*(short *)(iVar1 + 4) == param_1->field_004B)) {
       return false;
     }
   }

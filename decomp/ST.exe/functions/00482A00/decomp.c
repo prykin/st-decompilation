@@ -1,7 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::ChangeActivity */
+   STBoatC::ChangeActivity
+   
+   [STSwitchEnumApplier] Switch target field_06F7 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40
+    */
 
 void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
 
@@ -148,7 +153,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
         default:
           uVar4 = 0;
         }
-        iVar2 = thunk_FUN_00493cd0((int)local_8);
+        iVar2 = thunk_FUN_00493cd0((AnonShape_00493CD0_11D91B87 *)local_8);
         if (iVar2 == 0) {
           (*this_00->vtable->vfunc_90)(4,uVar4);
         }

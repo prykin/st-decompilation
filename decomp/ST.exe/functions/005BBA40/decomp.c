@@ -1,14 +1,14 @@
 
-void __fastcall FUN_005bba40(int param_1)
+void __fastcall FUN_005bba40(AnonShape_005BBA40_15493F88 *param_1)
 
 {
-  *(undefined4 *)(param_1 + 0x1a65) = 0;
-  *(undefined4 *)(param_1 + 0x29) = 2;
-  *(undefined4 *)(param_1 + 0x2d) = 0x20;
-  if (*(int *)(param_1 + 0x1a73) != 0) {
-    *(int *)(param_1 + 0x25) = *(int *)(param_1 + 0x1a73);
-    *(undefined4 *)(param_1 + 0x31) = 0;
-    (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+  param_1->field_1A65 = 0;
+  param_1->field_0029 = 2;
+  param_1->field_002D = 0x20;
+  if (param_1->field_1A73 != 0) {
+    param_1->field_0025 = param_1->field_1A73;
+    param_1->field_0031 = 0;
+    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
   return;
 }

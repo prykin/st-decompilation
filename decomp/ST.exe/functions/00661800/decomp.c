@@ -1,5 +1,5 @@
 
-int __fastcall FUN_00661800(int param_1,undefined4 param_2)
+int __fastcall FUN_00661800(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
 
 {
   uint *groupContent;
@@ -32,15 +32,15 @@ int __fastcall FUN_00661800(int param_1,undefined4 param_2)
         }
         this = (int *)STAllPlayersC::GetObjPtr
                                 (g_sTAllPlayers_007FA174,
-                                 CONCAT31((int3)((uint)uVar3 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                                 CONCAT31((int3)((uint)uVar3 >> 8),param_1->field_0024),
                                  CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
         uVar3 = extraout_EDX_00;
         if (this != (int *)0x0) {
           uVar6 = (**(code **)(*this + 0x2c))();
           uVar3 = (undefined4)((ulonglong)uVar6 >> 0x20);
-          if ((((0x31 < (int)uVar6) && ((int)uVar6 < 0x74)) && (*(short *)(param_1 + 0x39) != 3)) &&
-             ((*(int *)((int)this + 0x361) == 5 ||
-              (iVar2 = thunk_FUN_004c93e0(this,5), uVar3 = extraout_EDX_01, 0 < iVar2)))) {
+          if ((((0x31 < (int)uVar6) && ((int)uVar6 < 0x74)) && (*(short *)&param_1->field_0x39 != 3)
+              ) && ((*(int *)((int)this + 0x361) == 5 ||
+                    (iVar2 = thunk_FUN_004c93e0(this,5), uVar3 = extraout_EDX_01, 0 < iVar2)))) {
             local_8 = local_8 + 1;
           }
         }

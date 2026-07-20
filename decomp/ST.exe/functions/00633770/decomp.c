@@ -54,7 +54,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     uVar14 = 0;
     if (*(int *)this != 0) {
       iVar15 = *(int *)(*(int *)this + 0xc);
-      fVar24 = (float10)(uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5));
+      fVar24 = (float10)(uint)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5));
       fVar20 = (float10)fsin(fVar24 * (float10)*(float *)((int)this + 0x5d));
       fVar25 = (float10)_DAT_0079cd88;
       fVar8 = (float10)_DAT_007901c0;
@@ -288,7 +288,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       iVar15 = *(int *)this;
       if (iVar15 != 0) {
         uVar14 = *(uint *)(iVar15 + 0xc);
-        fVar1 = (float)(uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5)) *
+        fVar1 = (float)(uint)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5)) *
                 *(float *)((int)this + 0x81);
         if (fVar1 < *(float *)((int)this + 0x71)) {
           if (_DAT_0079034c < fVar1) {
@@ -477,7 +477,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         }
         if (bVar10) {
           *(undefined4 *)((int)this + 0x2d) = 1;
-          uVar7 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          uVar7 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 9) = 0xf;
           *(undefined4 *)((int)this + 5) = uVar7;
           return;
@@ -487,7 +487,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 1:
       if (*(int *)this != 0) {
         iVar15 = *(int *)(*(int *)this + 0xc);
-        uVar14 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5);
+        uVar14 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
         fVar1 = (float)uVar14 * *(float *)((int)this + 0x61) + *(float *)((int)this + 0x79);
         if (*(uint *)((int)this + 9) <= uVar14) {
           iVar19 = *(int *)((int)this + 0x1d);
@@ -553,7 +553,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           *(undefined4 *)((int)this + 0x2d) = 2;
           *(float *)((int)this + 0x81) = (float)(extraout_ST0_02 / (float10)(int)lVar26);
           fVar6 = _DAT_0079c5a4;
-          *(undefined4 *)((int)this + 5) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          *(undefined4 *)((int)this + 5) = PTR_00802a38->field_00E4;
           if (fVar1 <= fVar6) {
             *(float *)((int)this + 0x79) = fVar1;
           }
@@ -591,7 +591,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 2:
       if (*(int *)this != 0) {
         iVar15 = *(int *)(*(int *)this + 0xc);
-        fVar6 = (float)(uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5));
+        fVar6 = (float)(uint)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5));
         fVar1 = fVar6 * *(float *)((int)this + 0x61) + *(float *)((int)this + 0x79);
         fVar6 = fVar6 * *(float *)((int)this + 0x81);
         if ((*(float *)((int)this + 0x7d) <= fVar6) ||
@@ -730,7 +730,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             }
             *(float *)((int)this + 0x59) = (float)((float10)*(float *)((int)this + 0x49) / fVar25);
             *(float *)((int)this + 0x5d) = (float)((float10)*(float *)((int)this + 0x4d) / fVar25);
-            *(undefined4 *)((int)this + 5) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+            *(undefined4 *)((int)this + 5) = PTR_00802a38->field_00E4;
             return;
           }
         }
@@ -739,7 +739,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 3:
       if (*(int *)this != 0) {
         iVar15 = *(int *)(*(int *)this + 0xc);
-        fVar2 = (float)(uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5));
+        fVar2 = (float)(uint)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5));
         fVar6 = fVar2 * *(float *)((int)this + 0x61) + *(float *)((int)this + 0x79);
         fVar3 = fVar2 * *(float *)((int)this + 0x51);
         fVar1 = *(float *)((int)this + 0x55);
@@ -917,7 +917,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = fVar6 - (float)((int)lVar26 << 1) * _DAT_0079d1a4;
           }
           *(undefined4 *)((int)this + 0x2d) = 4;
-          uVar7 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          uVar7 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 9) = 0x14;
           *(undefined4 *)((int)this + 5) = uVar7;
           return;
@@ -927,7 +927,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 4:
       if (*(int *)this != 0) {
         uVar11 = 0;
-        uVar14 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5);
+        uVar14 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
         iVar15 = *(int *)(*(int *)this + 0xc);
         fVar25 = (float10)uVar14 * (float10)*(float *)((int)this + 0x61) +
                  (float10)*(float *)((int)this + 0x79);
@@ -962,7 +962,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           *(float *)((int)this + 0x55) = (float)-(extraout_ST0_06 / (float10)iVar15);
           *(float *)((int)this + 0x5d) = -(*(float *)((int)this + 0x89) / (float)iVar15);
           fVar25 = (float10)_DAT_0079c5a4;
-          uVar7 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          uVar7 = PTR_00802a38->field_00E4;
           *(int *)((int)this + 9) = iVar15;
           *(undefined4 *)((int)this + 5) = uVar7;
           if (extraout_ST1_02 <= fVar25) {
@@ -978,7 +978,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 5:
       if (*(int *)this != 0) {
         iVar15 = *(int *)(*(int *)this + 0xc);
-        uVar11 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5);
+        uVar11 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
         fVar24 = (float10)uVar11;
         iVar19 = *(int *)((int)this + 0x1d);
         fVar1 = *(float *)((int)this + 0x55);
@@ -1082,7 +1082,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                  (float)(extraout_ST0_09 - (float10)((int)lVar26 << 1) * (float10)_DAT_0079d1a4);
           }
           *(undefined4 *)((int)this + 0x2d) = 6;
-          uVar7 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          uVar7 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 9) = 0x14f;
           *(undefined4 *)((int)this + 5) = uVar7;
           return;
@@ -1092,7 +1092,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 6:
       if (*(int *)this != 0) {
         uVar11 = 0;
-        uVar14 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 5);
+        uVar14 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
         iVar15 = *(int *)(*(int *)this + 0xc);
         fVar1 = *(float *)((int)this + 0x61);
         fVar6 = *(float *)((int)this + 0x79);
@@ -1164,7 +1164,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         iVar19 = *(int *)this;
         if ((uVar14 < *(uint *)(iVar19 + 0xc)) &&
            (iVar19 = *(int *)(iVar19 + 8) * uVar14 + *(int *)(iVar19 + 0x1c), iVar19 != 0)) {
-          uVar11 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)(iVar19 + 0x35);
+          uVar11 = PTR_00802a38->field_00E4 - *(int *)(iVar19 + 0x35);
           fVar25 = (float10)*(float *)(iVar19 + 0x21) + (float10)*(float *)((int)this + 0x8d);
           fVar1 = (float)uVar11 * *(float *)((int)this + 0x85) +
                   (float)(uVar11 * uVar11) * *(float *)((int)this + 0x89) * _DAT_0079d1ac +
@@ -1177,7 +1177,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           }
           if (*(float *)((int)this + 0x79) < fVar1) {
             *(undefined4 *)(iVar19 + 0x25) = *(undefined4 *)((int)this + 0x65);
-            *(undefined4 *)(iVar19 + 0x35) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+            *(undefined4 *)(iVar19 + 0x35) = PTR_00802a38->field_00E4;
           }
           fsin((float10)fVar1);
           fcos(fVar25);

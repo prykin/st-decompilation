@@ -1,5 +1,6 @@
 
-void __thiscall FUN_006e2b60(void *this,int param_1,int param_2,int param_3,int *param_4)
+void __thiscall
+FUN_006e2b60(void *this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int param_3,int *param_4)
 
 {
   int iVar1;
@@ -7,11 +8,11 @@ void __thiscall FUN_006e2b60(void *this,int param_1,int param_2,int param_3,int 
   int local_c;
   int local_8;
   
-  pbVar2 = *(byte **)(param_1 + 0x28);
+  pbVar2 = param_1->field_0028;
   iVar1 = 0;
   local_8 = 0;
   local_c = 0;
-  if (0 < *(int *)(param_1 + 0x24)) {
+  if (0 < param_1->field_0024) {
     do {
       if ((*(byte *)((int)this + 0xac) & *pbVar2) != 0) {
         FUN_006e2c30(this,(int *)((uint)pbVar2[1] * 0x10 + param_2));
@@ -23,7 +24,7 @@ void __thiscall FUN_006e2b60(void *this,int param_1,int param_2,int param_3,int 
       }
       pbVar2 = pbVar2 + 0x1c;
       local_c = local_c + 1;
-    } while (local_c < *(int *)(param_1 + 0x24));
+    } while (local_c < param_1->field_0024);
     *param_4 = iVar1;
     return;
   }

@@ -240,9 +240,9 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14b,(undefined4 *)0x0,(int *)0x0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->slot_10)(0x201,0);
+    (*this_00->vtable->vfunc_10)(0x201,0);
     thunk_FUN_0056a500();
-    if (DAT_00801690 != (int *)0x0) {
+    if (DAT_00801690 != (HelpPanelTy *)0x0) {
       thunk_FUN_0051da70(DAT_00801690);
     }
     thunk_FUN_0056a500();

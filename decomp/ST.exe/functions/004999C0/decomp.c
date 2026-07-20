@@ -43,7 +43,8 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
     iVar2 = *(int *)(this_00->field_020E + 0xc);
     if (0 < iVar2) {
       do {
-        FUN_006acc70(this_00->field_020E,uVar5,(undefined4 *)local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_020E,uVar5,(undefined4 *)local_8)
+        ;
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
           groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           local_c = 0xffff;

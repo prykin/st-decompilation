@@ -32,6 +32,7 @@ import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
@@ -46,8 +47,12 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
     private static final Pattern CASE = Pattern.compile(
         "\\bcase\\s+(-?(?:0[xX][0-9a-fA-F]+|[0-9]+)|" +
         "[A-Za-z_][A-Za-z0-9_:]*)\\s*:");
-    private static final Pattern THIS_FIELD = Pattern.compile(
-        "^this->([A-Za-z_][A-Za-z0-9_]*)$");
+    private static final Pattern POINTER_FIELD = Pattern.compile(
+        "^([A-Za-z_][A-Za-z0-9_]*)->([A-Za-z_][A-Za-z0-9_]*)$");
+    private static final Pattern POINTER_DECLARATION = Pattern.compile(
+        "(?m)^\\s*(?:const\\s+)?(?:struct\\s+|class\\s+)?" +
+        "([A-Za-z_][A-Za-z0-9_:]*)\\s*\\*+\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*;");
+    private static final Pattern SIMPLE_LOCAL = Pattern.compile("^[A-Za-z_][A-Za-z0-9_]*$");
     private static final Pattern THIS_OFFSET = Pattern.compile(
         "\\bthis\\s*\\+\\s*(0[xX][0-9a-fA-F]+|[0-9]+)");
     private static final Pattern GLOBAL = Pattern.compile("^(?:_)?DAT_([0-9A-Fa-f]+)$");
@@ -100,11 +105,13 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                     }
                     retries.add(new DecompileRetry(function, initialReason, "recovered"));
                 }
-                List<SwitchBlock> switches = switches(results.getDecompiledFunction().getC());
+                String decompiled = results.getDecompiledFunction().getC();
+                Map<String, String> pointerOwners = pointerOwners(function, decompiled);
+                List<SwitchBlock> switches = switches(decompiled);
                 rawSwitches += switches.size();
                 for (int index = 0; index < switches.size(); index++) {
                     SwitchBlock block = switches.get(index);
-                    Target target = target(function, block.expression, index);
+                    Target target = target(function, block.expression, index, pointerOwners);
                     Set<Long> values = block.values(target.type);
                     if (values.size() < 3) continue;
                     String key = target.groupKey(function, index);
@@ -184,7 +191,8 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         return result;
     }
 
-    private Target target(Function function, String expression, int switchIndex) {
+    private Target target(Function function, String expression, int switchIndex,
+            Map<String, String> pointerOwners) {
         String normalized = normalize(expression);
         for (Parameter parameter : function.getParameters()) {
             if (parameter.isAutoParameter()) continue;
@@ -197,14 +205,18 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
 
         String owner = functionOwner(function);
         Structure ownerType = ownerStructure(owner);
-        Matcher fieldMatcher = THIS_FIELD.matcher(normalized);
-        if (ownerType != null && fieldMatcher.matches()) {
-            String fieldName = fieldMatcher.group(1);
-            for (DataTypeComponent component : ownerType.getDefinedComponents()) {
+        Matcher fieldMatcher = POINTER_FIELD.matcher(normalized);
+        if (fieldMatcher.matches()) {
+            String pointerName = fieldMatcher.group(1);
+            String fieldOwner = pointerOwners.get(pointerName);
+            Structure fieldOwnerType = ownerStructure(fieldOwner);
+            String fieldName = fieldMatcher.group(2);
+            if (fieldOwnerType != null) for (DataTypeComponent component :
+                    fieldOwnerType.getDefinedComponents()) {
                 if (!fieldName.equals(component.getFieldName())) continue;
                 return new Target("class_field", fieldName, -1, component.getOffset(),
-                    ownerType.getPathName(), component.getDataType(), SourceType.ANALYSIS, owner,
-                    "exact_generated_class_field_switch_expression");
+                    fieldOwnerType.getPathName(), component.getDataType(), SourceType.ANALYSIS,
+                    fieldOwner, "typed_pointer_field_switch_expression:" + pointerName);
             }
         }
         Matcher offsetMatcher = THIS_OFFSET.matcher(expression);
@@ -231,8 +243,39 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 data == null ? null : data.getDataType(), SourceType.DEFAULT, owner,
                 "global_switch_expression_review_required");
         }
-        return new Target("local", "switch_" + switchIndex, -1, -1, "", null,
-            SourceType.DEFAULT, owner, "local_or_complex_switch_expression_review_required");
+        String localName = SIMPLE_LOCAL.matcher(normalized).matches() ? normalized :
+            "switch_" + switchIndex;
+        String localReason = SIMPLE_LOCAL.matcher(normalized).matches() ?
+            "decompiler_local_switch_expression_review_required" :
+            "local_or_complex_switch_expression_review_required";
+        return new Target("local", localName, -1, -1, "", null,
+            SourceType.DEFAULT, owner, localReason);
+    }
+
+    private Map<String, String> pointerOwners(Function function, String decompiled) {
+        Map<String, String> result = new LinkedHashMap<>();
+        String owner = functionOwner(function);
+        if (!owner.isBlank()) result.put("this", owner);
+        for (Parameter parameter : function.getParameters()) {
+            String pointed = pointedOwner(parameter.getDataType());
+            if (pointed != null) result.put(parameter.getName(), pointed);
+        }
+        Matcher declaration = POINTER_DECLARATION.matcher(decompiled);
+        while (declaration.find()) {
+            String declaredType = declaration.group(1);
+            if (ownerStructure(declaredType) != null)
+                result.put(declaration.group(2), declaredType);
+        }
+        return result;
+    }
+
+    private String pointedOwner(DataType type) {
+        while (type instanceof TypeDef value) type = value.getBaseDataType();
+        if (!(type instanceof Pointer pointer)) return null;
+        DataType pointed = pointer.getDataType();
+        while (pointed instanceof TypeDef value) pointed = value.getBaseDataType();
+        if (!(pointed instanceof Structure)) return null;
+        return pointed.getName();
     }
 
     private Proposal proposal(Function function, Target target) {
@@ -431,6 +474,8 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             "target_kinds=" + kinds,
             "note=At least three numeric case values are required.",
             "note_grouping=Switches over the same generated class field are merged across functions.",
+            "note_aliases=Typed pointer aliases from decompiled declarations are resolved before field grouping.",
+            "note_local_grouping=Repeated simple local expressions are merged only within one function and remain review-only.",
             "note_apply=Only non-manual integral parameters and fields owned by " +
                 "STClassLayoutApplier are enabled automatically."), StandardCharsets.UTF_8);
     }
@@ -568,6 +613,8 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 case "parameter" -> Integer.toString(ordinal);
                 case "class_field" -> containerPath + ":" + offset;
                 case "global" -> containerPath;
+                case "local" -> targetName.startsWith("switch_") ?
+                    Integer.toString(index) : targetName;
                 default -> Integer.toString(index);
             };
             String scope = "class_field".equals(kind) || "global".equals(kind) ?

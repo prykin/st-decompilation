@@ -10,8 +10,8 @@
 TLOBaseTy * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this)
 
 {
-  thunk_FUN_004158e0(&this->vtable);
-  thunk_FUN_004ab810(&this->field_01D5);
+  thunk_FUN_004158e0((STGroupBoatC *)this);
+  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &PTR_LAB_00790c00;
   this->field_05EF = 0;
   this->field_05F3 = 0;
@@ -23,7 +23,7 @@ TLOBaseTy * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this)
   this->field_061B = 0;
   this->field_061F = 0;
   this->vtable = &TLOBaseTyVTable;
-  this->field_0245 = 0xffffffff;
+  this->field_0245 = ~CASE_0;
   this->field_0249 = 0xffffffff;
   this->field_024D = 0xffffffff;
   return this;

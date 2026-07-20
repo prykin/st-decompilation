@@ -53,11 +53,11 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
       *(undefined2 *)&local_1c->field_0x2bb = local_1c->field_018A;
       local_24 = *(undefined2 *)&local_1c->field_0x2b3;
       local_22 = local_1c->field_02B5;
-      local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      local_28 = PTR_00802a38->field_00E4;
       local_10 = local_28;
       if (0 < local_c) {
         do {
-          FUN_006acc70(pSVar2->field_0029,uVar9,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar9,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -92,11 +92,11 @@ LAB_0049eb44:
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
                  0xb3c);
     }
-    if (*(uint *)(DAT_00802a38 + 0xe4) % 0x1e == 5) {
+    if ((uint)PTR_00802a38->field_00E4 % 0x1e == 5) {
       uVar9 = 0;
       if (0 < local_c) {
         do {
-          FUN_006acc70(pSVar2->field_0029,uVar9,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar9,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr

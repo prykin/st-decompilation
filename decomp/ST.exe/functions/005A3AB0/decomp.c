@@ -26,17 +26,17 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
   uint *local_10;
   FILETIME local_c;
   
-  this_00 = DAT_00802a30;
+  this_00 = PTR_00802a30;
   local_14 = this;
-  if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    DAT_00802a30->field_0493 = 1;
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    PTR_00802a30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_0xd2 = 0;
     *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
   }
-  if ((this->field_1A5F == '\n') && (pbVar3 = (byte *)this->field_1B0C, pbVar3 != (byte *)0x0)) {
+  if ((this->field_1A5F == CASE_A) && (pbVar3 = (byte *)this->field_1B0C, pbVar3 != (byte *)0x0)) {
     do {
       bVar1 = *pbVar3;
       bVar9 = bVar1 < *param_1;
@@ -83,8 +83,9 @@ LAB_005a3b63:
         }
         local_10 = (uint *)thunk_FUN_0055d590(s_Profile_Description_007cc16c,param_2,param_3);
         if (local_10 != (uint *)0x0) {
-          if (this_01->field_1B04 != (uint *)0x0) {
-            FUN_006b5570((byte *)this_01->field_1B04);
+          if ((AnonShape_006B5570_4D68B99C *)this_01->field_1B04 !=
+              (AnonShape_006B5570_4D68B99C *)0x0) {
+            FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_01->field_1B04);
           }
           puVar5 = ccFntTy::_TxtToSarr(this_01->field_1A73,local_10);
           this_01->field_1B04 = puVar5;

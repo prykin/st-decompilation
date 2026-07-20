@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::SwitchOptPanel */
+   OptPanelTy::SwitchOptPanel
+   
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/OptPanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
 
@@ -52,8 +56,8 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     return;
   }
   switch(local_c->field_0172) {
-  case 1:
-  case 3:
+  case CASE_1:
+  case CASE_3:
     switch(param_1) {
     case '\x02':
     case '\f':
@@ -82,18 +86,18 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     case '\v':
     case '\r':
     default:
-      if (local_c->field_0172 == 1) {
+      if (local_c->field_0172 == CASE_1) {
         ShiftControls(local_c,0);
       }
-      this_00->field_0172 = 4;
+      this_00->field_0172 = CASE_4;
       DAT_00808788 = 0;
-      if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == 1)) {
+      if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == CASE_1)) {
         CPanelTy::ShiftControls(g_cPanel_00801688,1);
       }
       GVar14 = CASE_B0;
     }
     goto LAB_0052f60b;
-  case 2:
+  case CASE_2:
     if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
     }
@@ -178,7 +182,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       goto switchD_0052f30f_caseD_4;
     }
     break;
-  case 4:
+  case CASE_4:
 switchD_0052f30f_caseD_4:
     break;
   default:
@@ -199,7 +203,7 @@ switchD_0052f589_caseD_3:
       SetOptControls(this_00);
     }
   default:
-    this_00->field_0172 = 3;
+    this_00->field_0172 = CASE_3;
     GVar14 = CASE_AF;
   }
 LAB_0052f60b:

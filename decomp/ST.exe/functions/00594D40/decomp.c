@@ -34,12 +34,12 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
     if (errorCode == 0) {
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 (undefined4 *)(DAT_0081176c + 0x140));
+                 (undefined4 *)&PTR_0081176c->field_0x140);
       MMMObjTy::OutRGlProc
                 (param_3,param_1,param_2,param_3,param_4,param_5,param_6,0x15,
-                 (undefined4 *)(DAT_0081176c + 0x140));
+                 (undefined4 *)&PTR_0081176c->field_0x140);
       uVar7 = 0;
-      pcVar6 = *(ccFntTy **)(DAT_0081176c + 0x34);
+      pcVar6 = PTR_0081176c->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xfffffffe;
       puVar2 = (uint *)FUN_006b0140(param_8,HINSTANCE_00807618);

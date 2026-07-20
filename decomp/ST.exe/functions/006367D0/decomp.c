@@ -21,7 +21,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
   
   bVar1 = false;
   if (param_1[0xb] != 0) {
-    uVar10 = *(int *)(DAT_00802a38 + 0xe4) - param_1[0xc];
+    uVar10 = PTR_00802a38->field_00E4 - param_1[0xc];
     iVar2 = param_1[1];
     if (iVar2 != 0) {
       if (iVar2 == 1) {

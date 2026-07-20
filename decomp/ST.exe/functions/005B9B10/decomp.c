@@ -44,17 +44,17 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02 = local_10;
     local_10->field_1C92 = puVar5;
     Library::DKW::TBL::FUN_006b5aa0(puVar5,(char *)&DAT_00807ddd);
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      if (DAT_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)DAT_00802a30->field_00AD);
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (PTR_00802a30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (DAT_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
       }
     }
     uVar6 = FUN_0070a9f0(g_cMf32_00806780,s_LOADSINGLE_007cc79c,0,1);
-    *(undefined4 *)(DAT_0081176c + 0x2c) = uVar6;
-    puVar1 = *(ushort **)(DAT_0081176c + 0x2c);
+    PTR_0081176c->field_002C = uVar6;
+    puVar1 = (ushort *)PTR_0081176c->field_002C;
     this_02->field_005D = puVar1;
     FUN_006bc360(puVar1,local_454,(int *)0x0);
     *(undefined4 *)&this_02->field_1A5B->field_0x140 = 0x1f;
@@ -142,12 +142,12 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       *(undefined1 *)puVar8 = 0xff;
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),this_02->field_1C8E,0,3,1,0x22c,0x14);
+    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_02->field_1C8E,0,3,1,0x22c,0x14);
     uVar6 = 2;
     iVar12 = -1;
     iVar4 = -2;
     puVar5 = (uint *)FUN_006b0140(0x26b5,HINSTANCE_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar5,iVar4,iVar12,uVar6);
+    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar5,iVar4,iVar12,uVar6);
     uVar7 = this_02->field_1C8E;
     puVar8 = &this_02->field_1C8A;
     FUN_006b2330((uint)DAT_008075a8,puVar8,0x31,0x4023f6,*(uint *)(uVar7 + 4),*(uint *)(uVar7 + 8),
@@ -164,7 +164,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       pHVar9->field_0002 = 1;
       pHVar9->field_0000 = 0;
       pHVar9->field_0003 = 0xffffffff;
-      pHVar9->field_0001 = 2;
+      pHVar9->field_0001 = CASE_2;
       pHVar9->field_0007 = 0;
       pHVar9->field_000B = 0;
       *(undefined4 *)&pHVar9->field_0xf = 0;
@@ -227,7 +227,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
         pHVar9->field_0002 = 1;
         pHVar9->field_0000 = 0;
         pHVar9->field_0003 = 0xffffffff;
-        pHVar9->field_0001 = 2;
+        pHVar9->field_0001 = CASE_2;
         pHVar9->field_0007 = 0;
         pHVar9->field_000B = 0;
         *(undefined4 *)&pHVar9->field_0xf = 0;
@@ -267,11 +267,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     else {
       FUN_006b3af0(DAT_008075a8,*puVar8);
     }
-    this_01 = DAT_00802a30;
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar6 = DAT_00802a30->field_00C9;
-      uVar2 = DAT_00802a30->field_00C5;
-      DAT_00802a30->field_0493 = 1;
+    this_01 = PTR_00802a30;
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      uVar6 = PTR_00802a30->field_00C9;
+      uVar2 = PTR_00802a30->field_00C5;
+      PTR_00802a30->field_0493 = 1;
       this_01->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_01,CASE_0,uVar2,uVar6);
       CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);

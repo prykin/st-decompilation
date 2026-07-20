@@ -1,38 +1,38 @@
 
-void __fastcall FUN_0061fcc0(int param_1)
+void __fastcall FUN_0061fcc0(AnonShape_0061FCC0_94F6689F *param_1)
 
 {
-  if (*(byte **)(param_1 + 0xb9) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0xb9));
-    *(undefined4 *)(param_1 + 0xb9) = 0;
+  if ((byte *)param_1->field_00B9 != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_00B9);
+    param_1->field_00B9 = 0;
   }
-  if (*(byte **)(param_1 + 0xc5) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0xc5));
-    *(undefined4 *)(param_1 + 0xc5) = 0;
+  if ((byte *)param_1->field_00C5 != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_00C5);
+    param_1->field_00C5 = 0;
   }
-  if (*(byte **)(param_1 + 0xd1) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0xd1));
-    *(undefined4 *)(param_1 + 0xd1) = 0;
+  if ((byte *)param_1->field_00D1 != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_00D1);
+    param_1->field_00D1 = 0;
   }
-  if (*(byte **)(param_1 + 0xdd) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0xdd));
-    *(undefined4 *)(param_1 + 0xdd) = 0;
+  if ((byte *)param_1->field_00DD != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_00DD);
+    param_1->field_00DD = 0;
   }
-  if (*(byte **)(param_1 + 0xe9) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0xe9));
-    *(undefined4 *)(param_1 + 0xe9) = 0;
+  if ((byte *)param_1->field_00E9 != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_00E9);
+    param_1->field_00E9 = 0;
   }
-  if (*(byte **)(param_1 + 0xf5) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0xf5));
-    *(undefined4 *)(param_1 + 0xf5) = 0;
+  if ((byte *)param_1->field_00F5 != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_00F5);
+    param_1->field_00F5 = 0;
   }
-  if (*(byte **)(param_1 + 0x101) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0x101));
-    *(undefined4 *)(param_1 + 0x101) = 0;
+  if ((byte *)param_1->field_0101 != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_0101);
+    param_1->field_0101 = 0;
   }
-  if (*(byte **)(param_1 + 0x10a) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0x10a));
-    *(undefined4 *)(param_1 + 0x10a) = 0;
+  if ((byte *)param_1->field_010A != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_010A);
+    param_1->field_010A = 0;
   }
   return;
 }

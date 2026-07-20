@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::CreateCtrls */
+   FSGSTy::CreateCtrls
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
 
 void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
 
@@ -22,39 +26,39 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
   pFVar2 = local_8;
   if (errorCode == 0) {
     switch(local_8->field_1A5F) {
-    case 2:
+    case CASE_2:
       LoginCtrls(local_8);
       pFVar2->field_1A62 = 1;
       g_currentExceptionFrame = pIVar4;
       return;
-    case 3:
+    case CASE_3:
       LicCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case 4:
+    case CASE_4:
       NewIDCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case 5:
+    case CASE_5:
       PswCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case 6:
+    case CASE_6:
       ChatCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case 7:
+    case CASE_7:
       NewGameCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case 8:
+    case CASE_8:
       JoinGameCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case 9:
+    case CASE_9:
       LadderCtrls(local_8);
       break;
-    case 10:
+    case CASE_A:
       InfoCtrls(local_8,unaff_ESI);
       g_currentExceptionFrame = pIVar4;
       return;

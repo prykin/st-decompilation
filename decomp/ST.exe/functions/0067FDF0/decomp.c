@@ -24,8 +24,8 @@ uint __cdecl FUN_0067fdf0(undefined4 param_1,byte *param_2)
     g_currentExceptionFrame = local_48.previous;
     return uVar1;
   }
-  if (uVar1 < *(uint *)(DAT_00848a38 + 0xc)) {
-    puVar2 = (undefined4 *)(*(int *)(DAT_00848a38 + 8) * uVar1 + *(int *)(DAT_00848a38 + 0x1c));
+  if (uVar1 < (uint)PTR_00848a38->field_000C) {
+    puVar2 = (undefined4 *)(PTR_00848a38->field_0008 * uVar1 + PTR_00848a38->field_001C);
   }
   else {
     puVar2 = (undefined4 *)0x0;

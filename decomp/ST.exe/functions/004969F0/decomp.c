@@ -21,8 +21,8 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
   undefined4 local_8;
   
   if (-1 < (int)param_7) {
-    if (param_7 < DAT_007fb270[3]) {
-      piVar1 = (int *)(DAT_007fb270[2] * param_7 + DAT_007fb270[7]);
+    if (param_7 < PTR_007fb270->count) {
+      piVar1 = (int *)(PTR_007fb270->elementSize * param_7 + (int)PTR_007fb270->data);
     }
     else {
       piVar1 = (int *)0x0;
@@ -39,7 +39,7 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
   local_8 = param_6;
   local_1c = param_1;
   local_18 = param_2;
-  Library::DKW::TBL::FUN_006ae1c0(DAT_007fb270,&local_1c);
+  Library::DKW::TBL::FUN_006ae1c0(&PTR_007fb270->flags,&local_1c);
   return;
 }
 

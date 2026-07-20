@@ -147,7 +147,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
       }
     } while (iVar2 < 0xc);
   }
-  STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
+  STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
   FUN_006ab060(&local_8);
   FUN_006ab060(&local_20);
   FUN_006ab060(&local_10);

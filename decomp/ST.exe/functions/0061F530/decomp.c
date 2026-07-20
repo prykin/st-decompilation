@@ -19,7 +19,7 @@ void __fastcall FUN_0061f530(int param_1)
           iVar1 = 0;
         }
         if (-1 < (int)*(uint *)(iVar1 + 0x26)) {
-          FUN_006e8ba0(DAT_00807598,*(uint *)(iVar1 + 0x26));
+          FUN_006e8ba0(PTR_00807598,*(uint *)(iVar1 + 0x26));
           *(undefined4 *)(iVar1 + 0x26) = 0xffffffff;
         }
         iVar1 = *(int *)(param_1 + 0xa3);

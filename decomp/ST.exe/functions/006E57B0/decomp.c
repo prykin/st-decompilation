@@ -23,7 +23,7 @@ void __thiscall FUN_006e57b0(void *this,int param_1)
         }
         if ((*(undefined4 **)(iVar1 + 4))[1] == param_1) {
           (**(code **)**(undefined4 **)(iVar1 + 4))(local_24);
-          FUN_006b0c70(*(int *)((int)this + 0x10),uVar3);
+          FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x10),uVar3);
         }
         else {
           uVar3 = uVar3 + 1;

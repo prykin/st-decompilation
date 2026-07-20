@@ -140,7 +140,8 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                     (local_80 = iVar14, iVar13 = (**(code **)(*piVar18 + 0xf0))(), iVar6 = local_38,
                     iVar11 = local_34, iVar13 != 0)) &&
                    (((uint)piVar18[9] < 8 &&
-                    ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar18[9] * 0x51] < 8)))))) {
+                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                     ((byte)(&DAT_008087e9)[piVar18[9] * 0x51] < 8)))))) {
                   bVar2 = *(byte *)(piVar18 + 9);
                   bVar3 = *(byte *)((int)this + 0x20);
                   if (DAT_00808a8f == '\0') {

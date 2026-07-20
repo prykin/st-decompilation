@@ -3,7 +3,7 @@
    E:\__titans\Start\task_obj.cpp
    MTaskTy::TTaskItemClose */
 
-void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
+void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783CC *param_1)
 
 {
   code *pcVar1;
@@ -11,34 +11,34 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  LPVOID *ppvVar4;
+  AnonShape_005E10A0_819783CC *pAVar4;
   InternalExceptionFrame local_48;
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    if (param_1 != (uint *)0x0) {
-      if (-1 < (int)*param_1) {
-        FUN_006b3bb0(DAT_008075a8,*param_1);
+    if (param_1 != (AnonShape_005E10A0_819783CC *)0x0) {
+      if (-1 < (int)*(uint *)param_1) {
+        FUN_006b3bb0(DAT_008075a8,*(uint *)param_1);
       }
-      *param_1 = 0xffffffff;
+      *(undefined4 *)param_1 = 0xffffffff;
       iVar2 = 3;
-      ppvVar4 = (LPVOID *)param_1;
+      pAVar4 = param_1;
       do {
-        ppvVar4 = ppvVar4 + 1;
-        if (*ppvVar4 != (LPVOID)0x0) {
-          FUN_006ab060(ppvVar4);
+        pAVar4 = (AnonShape_005E10A0_819783CC *)&pAVar4->field_0x4;
+        if (*(int *)pAVar4 != 0) {
+          FUN_006ab060((LPVOID *)pAVar4);
         }
         iVar2 = iVar2 + -1;
       } while (iVar2 != 0);
-      if (*(int **)((int)param_1 + 0x31) != (int *)0x0) {
-        FUN_00714060(*(int **)((int)param_1 + 0x31));
-        Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)((int)param_1 + 0x31));
-        *(undefined4 *)((int)param_1 + 0x31) = 0;
+      if ((int *)param_1->field_0031 != (int *)0x0) {
+        FUN_00714060((int *)param_1->field_0031);
+        Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0031);
+        param_1->field_0031 = 0;
       }
-      if (*(int *)((int)param_1 + 0x3a) != 0) {
-        FUN_006ab060((LPVOID *)((int)param_1 + 0x3a));
+      if (param_1->field_003A != 0) {
+        FUN_006ab060((LPVOID *)&param_1->field_003A);
       }
     }
     g_currentExceptionFrame = local_48.previous;

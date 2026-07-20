@@ -6,7 +6,7 @@
 void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
 
 {
-  char cVar1;
+  HelpPanelTy_field_01A1State HVar1;
   code *pcVar2;
   HelpPanelTy *this_00;
   int errorCode;
@@ -22,16 +22,16 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   this_00 = local_8;
   if (errorCode == 0) {
-    cVar1 = local_8->field_01A1;
-    if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
-      local_8->field_01A2 = cVar1;
+    HVar1 = local_8->field_01A1;
+    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+      local_8->field_01A2 = HVar1;
       local_8->field_01AB = local_8->field_01A3;
     }
     else {
       local_8->field_01A2 = 0;
       local_8->field_01AB = 0;
     }
-    local_8->field_01A1 = 10;
+    local_8->field_01A1 = CASE_8|CASE_2;
     local_8->field_01A3 = 0;
     Library::DKW::WGR::FUN_006b55f0
               ((undefined4 *)local_8->field_0068,0,0x21,0x16,(byte *)local_8->field_01DC,0,0x21,0x16
@@ -41,8 +41,8 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
       *(undefined2 *)&this_00->field_0x2c = 0;
       this_00->field_002E = 2;
       *(undefined4 *)&this_00->field_0x30 = this_00->field_0178;
-      if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)(&this_00->field_0x18);
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
       }
     }
     CreateList(this_00);

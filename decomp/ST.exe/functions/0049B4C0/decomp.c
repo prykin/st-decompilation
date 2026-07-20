@@ -62,7 +62,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     if (local_18 != 0) {
       uVar6 = 0;
       do {
-        FUN_006acc70(pSVar2->field_0029,uVar6,&local_14);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,&local_14);
         if ((short)local_14 != -1) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
@@ -76,7 +76,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
           }
           STFishC::sub_004162B0((STFishC *)this_00,&local_8,&local_6,&local_a);
           STBoatC::sub_00481520(this_00,(int)local_8,(int)local_6,pSVar2->field_0222);
-          local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          local_28 = PTR_00802a38->field_00E4;
           local_24 = 0xffff;
           local_22 = 0xffff;
           local_20 = 0xffff;
@@ -90,14 +90,14 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   }
   uVar5 = local_10;
   if (param_1 == 2) {
-    if (*(uint *)(DAT_00802a38 + 0xe4) % 3 == 0) {
+    if ((uint)PTR_00802a38->field_00E4 % 3 == 0) {
       uVar6 = 0;
       uVar8 = 0;
       local_10 = 0;
       uVar5 = 0;
       if (local_18 != 0) {
         do {
-          FUN_006acc70(pSVar2->field_0029,uVar8,&local_14);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar8,&local_14);
           if ((short)local_14 != -1) {
             uVar8 = STAllPlayersC::GetObjPtr
                               (g_sTAllPlayers_007FA174,

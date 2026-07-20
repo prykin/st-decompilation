@@ -9,8 +9,8 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
   bool bVar5;
   
   if ((((*(int *)((int)this + 0x114) != 0) && (param_2 < (undefined *)0x8)) &&
-      ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(int)param_2 * 0x51] < 8)))) &&
-     (param_2 != (undefined *)(uint)DAT_0080874d)) {
+      ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(int)param_2 * 0x51] < 8))))
+     && (param_2 != (undefined *)(uint)DAT_0080874d)) {
     if (param_1 == 0) {
       if ((param_2 + 0xfc)[(int)this] == '\0') {
         return;

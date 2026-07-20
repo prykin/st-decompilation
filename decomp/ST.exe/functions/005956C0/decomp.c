@@ -42,12 +42,12 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
     iVar2 = param_5 + 0x55;
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4,iVar2,param_4 + -1 + (int)param_6,iVar2,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4,param_5 + 0x78,param_4 + -1 + (int)param_6,param_5 + 0x78,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25a7,HINSTANCE_00807618);
@@ -55,9 +55,9 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
     local_8 = param_5 + -1 + param_7;
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x2d,param_5 + 0x78,param_4 + 0x2d,local_8,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25a8,HINSTANCE_00807618);
@@ -65,9 +65,9 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
     ;
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x118,param_5 + 0x78,param_4 + 0x118,local_8,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25a9,HINSTANCE_00807618);
@@ -75,9 +75,9 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
               (this_02,0,param_4 + 0x118,iVar2,0x46,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x15e,param_5 + 0x78,param_4 + 0x15e,local_8,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25aa,HINSTANCE_00807618);
@@ -85,9 +85,9 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
               (this_03,0,param_4 + 0x15e,iVar2,0x91,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x1ef,param_5 + 0x78,param_4 + 0x1ef,local_8,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25ab,HINSTANCE_00807618);
@@ -95,9 +95,9 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
               (this_04,0,param_4 + 0x1ef,iVar2,0x46,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x235,param_5 + 0x78,param_4 + 0x235,local_8,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25ac,HINSTANCE_00807618);
@@ -105,16 +105,16 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
               (this_05,0,param_4 + 0x235,iVar2,0x32,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x267,param_5 + 0x78,param_4 + 0x267,local_8,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25ad,HINSTANCE_00807618);
     StartServTy::WrTextDDX
               (this_06,0,param_4 + 0x267,iVar2,(int)&param_6[-1].field_0x1e5c,0x23,puVar3,uVar5,
                uVar6,pcVar7,uVar8);
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     local_c = (StartServTy *)(param_5 + 0x19);
     uVar8 = 2;
     uVar6 = 0xffffffff;
@@ -125,13 +125,13 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
     iVar2 = param_5 + 0x32;
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 10,iVar2,(undefined4 *)0x96,0x19,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     local_8 = param_5 + 0x34;
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0xc,local_8,(undefined4 *)0x92,0x15,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25af,HINSTANCE_00807618);
@@ -139,33 +139,33 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
               (local_c,0,param_4 + 0xa5,(int)local_c,0x96,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0xa5,iVar2,(undefined4 *)0x96,0x19,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0xa7,local_8,(undefined4 *)0x92,0x15,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0x14a,iVar2,(undefined4 *)0x19,0x19,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0x14c,local_8,(undefined4 *)0x15,0x15,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
-    FUN_006c6850(param_1,param_4 + 0x168,iVar2,100,0x19,*(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
+    FUN_006c6850(param_1,param_4 + 0x168,iVar2,100,0x19,*(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0x1d1,iVar2,(undefined4 *)0x19,0x19,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0x1d3,local_8,(undefined4 *)0x15,0x15,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25b0,HINSTANCE_00807618);
     StartServTy::WrTextDDX
               (local_c,0,param_4 + 0x1f9,(int)local_c,0x96,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
-    FUN_006c6850(param_1,param_4 + 0x1f9,iVar2,0x96,0x19,*(undefined4 *)(DAT_0081176c + 0x140));
+    FUN_006c6850(param_1,param_4 + 0x1f9,iVar2,0x96,0x19,*(undefined4 *)&PTR_0081176c->field_0x140);
     uVar8 = 2;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x34);
+    pcVar7 = PTR_0081176c->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)FUN_006b0140(0x25b1,HINSTANCE_00807618);
@@ -173,10 +173,10 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
               (this_08,0,param_4 + 0x294,iVar2,0x41,0x19,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0x294,iVar2,(undefined4 *)0x41,0x19,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     Library::DKW::DDX::FUN_006c6470
               (param_1,param_4 + 0x296,local_8,(undefined4 *)0x3d,0x15,4,
-               *(undefined4 *)(DAT_0081176c + 0x140));
+               *(undefined4 *)&PTR_0081176c->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

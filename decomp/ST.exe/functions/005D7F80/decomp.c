@@ -22,12 +22,12 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
   pSVar2 = local_8;
   if (errorCode == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if ((byte *)pSVar2->field_1CD0 != (byte *)0x0) {
-      FUN_006b5570((byte *)pSVar2->field_1CD0);
+    if ((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CD0 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CD0);
     }
     pSVar2->field_1CD0 = 0;
-    if ((byte *)pSVar2->field_1CCC != (byte *)0x0) {
-      FUN_006b5570((byte *)pSVar2->field_1CCC);
+    if ((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CCC != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CCC);
     }
     pSVar2->field_1CCC = 0;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1A60);

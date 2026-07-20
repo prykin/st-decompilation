@@ -2,12 +2,12 @@
 /* WARNING: Removing unreachable block (ram,0x00572660) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __fastcall FUN_00572510(void *param_1)
+void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
 
 {
   char cVar1;
   byte bVar2;
-  void *this;
+  AnonShape_00572510_F06DC155 *this;
   HANDLE hFindFile;
   BOOL BVar3;
   int iVar4;
@@ -27,16 +27,16 @@ void __fastcall FUN_00572510(void *param_1)
   byte local_15c [260];
   InternalExceptionFrame local_58;
   cMf32 *local_14;
-  void *local_10;
+  AnonShape_00572510_F06DC155 *local_10;
   int local_c;
-  undefined4 *local_8;
+  char *local_8;
   
-  local_8 = (undefined4 *)((int)param_1 + 0x785);
+  local_8 = &param_1->field_0785;
   local_c = 0;
-  *(undefined1 *)((int)param_1 + 0xdee) = 0;
-  if (*(char *)((int)param_1 + 0x785) != '\0') {
+  param_1->field_0DEE = 0;
+  if (param_1->field_0785 != '\0') {
     local_10 = param_1;
-    wsprintfA((LPSTR)local_15c,s__s_s_s_007c6edc,(int)param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
+    wsprintfA((LPSTR)local_15c,s__s_s_s_007c6edc,&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
               local_8);
     hFindFile = FindFirstFileA((LPCSTR)local_15c,&local_29c);
     if (hFindFile != (HANDLE)0xffffffff) {
@@ -54,7 +54,7 @@ void __fastcall FUN_00572510(void *param_1)
     if (local_c != 0) {
       pbVar12 = local_15c;
       pcVar14 = s__s_s_s__s_007ca1ec;
-      wsprintfA((LPSTR)pbVar12,s__s_s_s__s_007ca1ec,(int)param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
+      wsprintfA((LPSTR)pbVar12,s__s_s_s__s_007ca1ec,&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
                 local_8,PTR_s_PL_LOG_0079b0d0);
       local_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_58;
@@ -63,33 +63,33 @@ void __fastcall FUN_00572510(void *param_1)
         this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_15c,0,0,0);
         this = local_10;
         if (this_00 != (cMf32 *)0x0) {
-          local_8 = (undefined4 *)&DAT_008072f8;
+          local_8 = &DAT_008072f8;
           local_14 = this_00;
           cMf32::RecGet(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,(int *)&local_8,1);
-          thunk_FUN_005739a0((int)this);
-          local_8 = (undefined4 *)((int)this + 0x80e);
+          thunk_FUN_005739a0((AnonShape_005739A0_A4724D00 *)this);
+          local_8 = &this->field_0x80e;
           cMf32::RecGet(this_00,0xc,PTR_s_ACCKEYS_PLAYER_0079b0d8,(int *)&local_8,1);
-          local_8 = (undefined4 *)((int)this + 0xd86);
+          local_8 = &this->field_0xd86;
           cMf32::RecGet(this_00,0xc,PTR_s_AIKEYS_PLAYER_0079b0dc,(int *)&local_8,1);
-          local_8 = (undefined4 *)((int)this + 0x99e);
+          local_8 = &this->field_0x99e;
           cMf32::RecGet(this_00,0xc,PTR_s_SYSKEYS_PLAYER_0079b0e0,(int *)&local_8,1);
-          local_8 = (undefined4 *)((int)this + 0xc1e);
+          local_8 = &this->field_0xc1e;
           cMf32::RecGet(this_00,0xc,PTR_s_MOUKEYS_PLAYER_0079b0e4,(int *)&local_8,1);
-          local_8 = (undefined4 *)((int)this + 0x7c5);
-          *(undefined1 *)((int)this + 0xdee) = 1;
-          puVar9 = local_8;
+          local_8 = &this->field_0x7c5;
+          this->field_0DEE = 1;
+          puVar9 = (undefined4 *)local_8;
           for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
             *puVar9 = 0;
             puVar9 = puVar9 + 1;
           }
-          *(undefined4 *)((int)this + 0x805) = 0;
-          *(undefined4 *)((int)this + 0x809) = 0;
-          *(undefined1 *)((int)this + 0x80d) = 0;
+          *(undefined4 *)&this->field_0x805 = 0;
+          *(undefined4 *)&this->field_0x809 = 0;
+          this->field_0x80d = 0;
           puVar5 = cMf32::RecGet(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(int *)&local_8,0);
-          if (((puVar5 == (ushort *)0x0) && (this != (void *)0xfffff83b)) &&
-             ((char *)((int)this + 0x785) != (char *)0x0)) {
+          if (((puVar5 == (ushort *)0x0) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
+             (&this->field_0785 != (char *)0x0)) {
             uVar7 = 0xffffffff;
-            pcVar14 = (char *)((int)this + 0x785);
+            pcVar14 = &this->field_0785;
             do {
               pcVar10 = pcVar14;
               if (uVar7 == 0) break;
@@ -100,7 +100,7 @@ void __fastcall FUN_00572510(void *param_1)
             } while (cVar1 != '\0');
             uVar7 = ~uVar7;
             pcVar14 = pcVar10 + -uVar7;
-            pcVar10 = (char *)((int)this + 0x7c5);
+            pcVar10 = &this->field_0x7c5;
             for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
               *(undefined4 *)pcVar10 = *(undefined4 *)pcVar14;
               pcVar14 = pcVar14 + 4;
@@ -113,7 +113,7 @@ void __fastcall FUN_00572510(void *param_1)
             }
           }
           iVar11 = 0;
-          local_8 = (undefined4 *)((int)this + 0x805);
+          local_8 = &this->field_0x805;
           cMf32::RecGet(this_00,0xc,PTR_s_LASTPSW_0079b0ec,(int *)&local_8,0);
           iVar4 = _DAT_008072f8;
           _DAT_008072f8 = 0;
@@ -127,7 +127,7 @@ void __fastcall FUN_00572510(void *param_1)
             thunk_FUN_005734c0(this,(LPDWORD)0x0,(PHKEY)0x1);
           }
           pbVar6 = &DAT_007ca694;
-          pbVar12 = (byte *)((int)this + 0x640);
+          pbVar12 = &this->field_0x640;
           do {
             bVar2 = *pbVar12;
             bVar13 = bVar2 < *pbVar6;
@@ -163,7 +163,7 @@ LAB_005727f1:
         return;
       }
     }
-    *(undefined1 *)((int)param_1 + 0xdee) = 0;
+    param_1->field_0DEE = 0;
   }
   return;
 }

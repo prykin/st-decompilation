@@ -3,7 +3,8 @@
    E:\__titans\Start\startsys.cpp
    StartSystemTy::PaintBinDesc */
 
-void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
+void __thiscall
+StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *param_1)
 
 {
   ccFntTy *pcVar1;
@@ -22,7 +23,8 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
   int local_8;
   
   if ((((this->field_0544 != 0) && (this->field_0548 != 0)) && (-1 < (int)this->field_0540)) &&
-     ((param_1 != 0 && (local_c = *(int *)(param_1 + 0x1c), local_c != 0)))) {
+     ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 &&
+      (local_c = param_1->field_001C, local_c != 0)))) {
     pcVar1 = this->field_0034;
     local_10 = this;
     if (pcVar1->field_00A0 != 0) {
@@ -36,7 +38,7 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
     if (iVar4 == 0) {
       iVar4 = local_10->field_0544;
       FUN_006b4170(iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8),0xff);
-      uVar5 = (uint)*(ushort *)(param_1 + 0x16);
+      uVar5 = (uint)param_1->field_0016;
       uVar8 = uVar5;
       if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {
         do {
@@ -52,7 +54,7 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
             ccFntTy::WrStr(pSVar3->field_0034,puVar7,0,-1,0);
           }
           uVar8 = uVar8 + 1;
-          uVar5 = (uint)*(ushort *)(param_1 + 0x16);
+          uVar5 = (uint)param_1->field_0016;
         } while ((int)uVar8 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
       }
       FUN_006b35d0(DAT_008075a8,pSVar3->field_0540);

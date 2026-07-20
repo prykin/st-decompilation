@@ -46,7 +46,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
                                s_MTaskTy__InitMTask_007cda1c);
     pMVar3 = local_10;
     if (iVar4 == 0) {
-      thunk_FUN_005b66e0(local_10);
+      thunk_FUN_005b66e0((STJellyGunC *)local_10);
       pMVar3->field_0045 = 0x200;
       pMVar3->field_0049 = 0;
       pMVar3->field_004D = 0x6102;
@@ -64,7 +64,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     local_10->field_006F = 0;
   }
   if (local_10->field_006E == '\x01') {
-    StartSystemTy::sub_005DAF20(DAT_0081176c);
+    StartSystemTy::sub_005DAF20(PTR_0081176c);
     DAT_0080877e = 1;
     DAT_0080877f = 0;
   }
@@ -77,21 +77,25 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   }
   pMVar3->field_0070 = pcVar5;
   if (DAT_0080fb6e != 0) {
-    if (DAT_0080c4c7 != (uint *)0x0) {
-      FUN_006b5570((byte *)DAT_0080c4c7);
+    if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
     }
-    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad
+    PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
+                   Library::Ourlib::MFSARR::mfSarLoad
                              (pMVar3->field_0070,PTR_s_DESCRIPTION_0079c21c,0);
-    if (DAT_0080c4c7 == (uint *)0x0) {
-      DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+    if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
+      PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
+                     Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
-    if (DAT_0080c4cb != (uint *)0x0) {
-      FUN_006b5570((byte *)DAT_0080c4cb);
+    if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
     }
-    DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
+    PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                   Library::Ourlib::MFSARR::mfSarLoad
                              (pMVar3->field_0070,PTR_s_OBJECTIVES_0079c220,0);
-    if (DAT_0080c4cb == (uint *)0x0) {
-      DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+    if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+      PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                     Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     puVar13 = &DAT_0080c3c3;
     for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -149,12 +153,12 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     Library::DKW::TBL::FUN_006ae1c0(puVar7,local_a4);
   }
   Library::DKW::TBL::FUN_006afe40(&pMVar3->field_0078,(uint *)pMVar3->field_0074);
-  if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    if (DAT_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)DAT_00802a30->field_00AD);
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (DAT_00802a30->field_001C != 0xffffffff) {
-      FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
     }
   }
   iVar4 = 1;
@@ -268,15 +272,15 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   pMVar3->field_0647 = puVar7;
   puVar7 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
   pMVar3->field_064F = puVar7;
-  if (DAT_0081176c->field_02E6 != (MMsgTy *)0x0) {
-    MMsgTy::HidePanel(DAT_0081176c->field_02E6,0,0,1);
+  if (PTR_0081176c->field_02E6 != (MMsgTy *)0x0) {
+    MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
   }
   DarkScreen(DAT_0080759c,1,0);
-  this_00 = DAT_00802a30;
-  if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    uVar8 = DAT_00802a30->field_00C9;
-    uVar1 = DAT_00802a30->field_00C5;
-    DAT_00802a30->field_0493 = 3;
+  this_00 = PTR_00802a30;
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    uVar8 = PTR_00802a30->field_00C9;
+    uVar1 = PTR_00802a30->field_00C5;
+    PTR_00802a30->field_0493 = 3;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,uVar1,uVar8);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

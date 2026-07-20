@@ -8,14 +8,14 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
   int *piVar4;
   uint uVar5;
   
-  uVar1 = *(uint *)(DAT_007fb270 + 0xc);
+  uVar1 = PTR_007fb270->count;
   uVar5 = 0;
   if ((int)uVar1 < 1) {
     return 0xffffffff;
   }
   do {
     if (uVar5 < uVar1) {
-      piVar4 = (int *)(*(int *)(DAT_007fb270 + 8) * uVar5 + *(int *)(DAT_007fb270 + 0x1c));
+      piVar4 = (int *)(PTR_007fb270->elementSize * uVar5 + (int)PTR_007fb270->data);
     }
     else {
       piVar4 = (int *)0x0;

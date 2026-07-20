@@ -5,19 +5,20 @@
    (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-void __fastcall FUN_005de670(int param_1)
+void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
 
 {
   byte bVar1;
-  int iVar2;
-  HANDLE pvVar3;
-  DWORD DVar4;
+  AnonShape_005DE670_7D81EFA7 *pAVar2;
+  int iVar3;
+  HANDLE pvVar4;
+  DWORD DVar5;
   HANDLE hFile;
-  BOOL BVar5;
-  uint uVar6;
+  BOOL BVar6;
   uint uVar7;
+  uint uVar8;
   undefined4 unaff_ESI;
-  byte *pbVar8;
+  byte *pbVar9;
   void *unaff_EDI;
   LPVOID lpBuffer;
   byte local_478 [260];
@@ -27,28 +28,28 @@ void __fastcall FUN_005de670(int param_1)
   InternalExceptionFrame local_68;
   byte *local_24;
   LPVOID local_20;
-  int local_1c;
+  AnonShape_005DE670_7D81EFA7 *local_1c;
   uint local_18;
   HANDLE local_14;
   HANDLE local_10;
   LPVOID local_c;
   DWORD local_8;
   
-  *(undefined4 *)(param_1 + 0x6b2) = 0;
-  *(undefined4 *)(param_1 + 0x6ae) = 0;
-  *(undefined4 *)(param_1 + 0x69e) = 0;
+  param_1->field_06B2 = 0;
+  param_1->field_06AE = 0;
+  param_1->field_069E = 0;
   local_8 = 0;
   local_c = (LPVOID)0x0;
   local_14 = (HANDLE)0xffffffff;
   local_10 = (HANDLE)0xffffffff;
-  local_1c = param_1;
-  if (*(LPVOID *)(param_1 + 0x69a) != (LPVOID)0x0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x69a));
+  local_1c = (AnonShape_005DE670_7D81EFA7 *)param_1;
+  if (param_1->field_069A != (LPVOID)0x0) {
+    FUN_006ab060(&param_1->field_069A);
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar2 != 0) {
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (local_14 != (HANDLE)0xffffffff) {
       CloseHandle(local_14);
@@ -59,33 +60,33 @@ void __fastcall FUN_005de670(int param_1)
     if (local_c != (LPVOID)0x0) {
       FUN_006ab060(&local_c);
     }
-    *(undefined4 *)(local_1c + 0x6b2) = 0;
-    *(undefined4 *)(local_1c + 0x6ae) = 0;
-    *(undefined4 *)(local_1c + 0x69e) = 0;
+    local_1c->field_06B2 = 0;
+    local_1c->field_06AE = 0;
+    local_1c->field_069E = 0;
     return;
   }
   Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_478,local_374,local_16c,(byte *)0x0);
   local_18 = 0xffffffff;
-  pbVar8 = local_16c;
+  pbVar9 = local_16c;
   do {
     if (local_18 == 0) break;
     local_18 = local_18 - 1;
-    bVar1 = *pbVar8;
-    pbVar8 = pbVar8 + 1;
+    bVar1 = *pbVar9;
+    pbVar9 = pbVar9 + 1;
   } while (bVar1 != 0);
   local_18 = ~local_18;
   Library::MSVCRT::__makepath
             (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c0);
-  pvVar3 = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
-  local_14 = pvVar3;
-  if (pvVar3 == (HANDLE)0xffffffff) {
+  pvVar4 = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
+  local_14 = pvVar4;
+  if (pvVar4 == (HANDLE)0xffffffff) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x413);
   }
-  DVar4 = SetFilePointer(pvVar3,0,(PLONG)0x0,2);
-  iVar2 = local_1c;
-  *(DWORD *)(local_1c + 0x6ae) = DVar4;
-  if (DVar4 == 0xffffffff) {
+  DVar5 = SetFilePointer(pvVar4,0,(PLONG)0x0,2);
+  pAVar2 = local_1c;
+  local_1c->field_06AE = DVar5;
+  if (DVar5 == 0xffffffff) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x415);
   }
@@ -97,76 +98,76 @@ void __fastcall FUN_005de670(int param_1)
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41a);
   }
-  DVar4 = SetFilePointer(hFile,0,(PLONG)0x0,2);
-  *(DWORD *)(iVar2 + 0x6b2) = DVar4;
-  if (DVar4 == 0xffffffff) {
+  DVar5 = SetFilePointer(hFile,0,(PLONG)0x0,2);
+  pAVar2->field_06B2 = DVar5;
+  if (DVar5 == 0xffffffff) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
   local_c = (LPVOID)Library::DKW::LIB::FUN_006aac70
-                              (*(int *)(iVar2 + 0x6ae) + local_18 + *(int *)(iVar2 + 0x6b2));
+                              (pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
   if (local_c == (LPVOID)0x0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
   }
-  lpBuffer = (LPVOID)(*(int *)(iVar2 + 0x6ae) + (int)local_c);
-  local_24 = (byte *)((int)lpBuffer + *(int *)(iVar2 + 0x6b2));
+  lpBuffer = (LPVOID)(pAVar2->field_06AE + (int)local_c);
+  local_24 = (byte *)((int)lpBuffer + pAVar2->field_06B2);
   local_20 = local_c;
-  local_8 = SetFilePointer(pvVar3,0,(PLONG)0x0,0);
+  local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x421);
   }
-  BVar5 = ReadFile(pvVar3,local_20,*(DWORD *)(iVar2 + 0x6ae),&local_8,(LPOVERLAPPED)0x0);
-  if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != local_8)) {
+  BVar6 = ReadFile(pvVar4,local_20,pAVar2->field_06AE,&local_8,(LPOVERLAPPED)0x0);
+  if ((BVar6 == 0) || (pAVar2->field_06AE != local_8)) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x422);
   }
-  CloseHandle(pvVar3);
-  pvVar3 = local_10;
+  CloseHandle(pvVar4);
+  pvVar4 = local_10;
   local_8 = SetFilePointer(local_10,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x425);
   }
-  BVar5 = ReadFile(pvVar3,lpBuffer,*(DWORD *)(iVar2 + 0x6b2),&local_8,(LPOVERLAPPED)0x0);
-  if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != local_8)) {
+  BVar6 = ReadFile(pvVar4,lpBuffer,pAVar2->field_06B2,&local_8,(LPOVERLAPPED)0x0);
+  if ((BVar6 == 0) || (pAVar2->field_06B2 != local_8)) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x426);
   }
-  CloseHandle(pvVar3);
-  uVar6 = 0xffffffff;
-  pbVar8 = local_16c;
+  CloseHandle(pvVar4);
+  uVar7 = 0xffffffff;
+  pbVar9 = local_16c;
   do {
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
-    bVar1 = *pbVar8;
-    pbVar8 = pbVar8 + 1;
+    if (uVar7 == 0) break;
+    uVar7 = uVar7 - 1;
+    bVar1 = *pbVar9;
+    pbVar9 = pbVar9 + 1;
   } while (bVar1 != 0);
-  pbVar8 = local_16c;
-  for (uVar7 = ~uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)local_24 = *(undefined4 *)pbVar8;
-    pbVar8 = pbVar8 + 4;
+  pbVar9 = local_16c;
+  for (uVar8 = ~uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+    *(undefined4 *)local_24 = *(undefined4 *)pbVar9;
+    pbVar9 = pbVar9 + 4;
     local_24 = local_24 + 4;
   }
-  for (uVar6 = ~uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *local_24 = *pbVar8;
-    pbVar8 = pbVar8 + 1;
+  for (uVar7 = ~uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *local_24 = *pbVar9;
+    pbVar9 = pbVar9 + 1;
     local_24 = local_24 + 1;
   }
-  *(LPVOID *)(iVar2 + 0x69a) = local_c;
-  uVar6 = *(int *)(iVar2 + 0x6b2) + *(int *)(iVar2 + 0x6ae) + local_18;
-  *(uint *)(iVar2 + 0x69e) = uVar6;
+  *(LPVOID *)&pAVar2->field_0x69a = local_c;
+  uVar7 = pAVar2->field_06B2 + pAVar2->field_06AE + local_18;
+  pAVar2->field_069E = uVar7;
   if ((g_int_00811764 == (int *)0x0) || (g_int_00811764[10] != 1)) {
-    *(undefined4 *)(iVar2 + 0x6a2) = 0x400;
-    *(undefined4 *)(iVar2 + 0x6aa) = 5;
+    *(undefined4 *)&pAVar2->field_0x6a2 = 0x400;
+    *(undefined4 *)&pAVar2->field_0x6aa = 5;
   }
   else {
-    *(undefined4 *)(iVar2 + 0x6a2) = 0x1000;
-    *(undefined4 *)(iVar2 + 0x6aa) = 0;
+    *(undefined4 *)&pAVar2->field_0x6a2 = 0x1000;
+    *(undefined4 *)&pAVar2->field_0x6aa = 0;
   }
-  *(uint *)(iVar2 + 0x6a6) =
-       (uint)(uVar6 % *(uint *)(iVar2 + 0x6a2) != 0) + uVar6 / *(uint *)(iVar2 + 0x6a2);
+  *(uint *)&pAVar2->field_0x6a6 =
+       (uint)(uVar7 % *(uint *)&pAVar2->field_0x6a2 != 0) + uVar7 / *(uint *)&pAVar2->field_0x6a2;
   g_currentExceptionFrame = local_68.previous;
   return;
 }

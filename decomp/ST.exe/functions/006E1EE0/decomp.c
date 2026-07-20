@@ -1,5 +1,7 @@
 
-bool __thiscall FUN_006e1ee0(void *this,int param_1,undefined4 *param_2,int param_3,int *param_4)
+bool __thiscall
+FUN_006e1ee0(void *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2,int param_3,
+            int *param_4)
 
 {
   byte bVar1;
@@ -32,16 +34,16 @@ bool __thiscall FUN_006e1ee0(void *this,int param_1,undefined4 *param_2,int para
   int local_14;
   int local_c;
   
-  pbVar12 = *(byte **)(param_1 + 0x28);
+  pbVar12 = (byte *)param_1->field_0028;
   local_3c = 0;
   if ((*(int *)((int)this + 0x124) == 0) || (*(int *)((int)this + 0x124) == 10)) {
-    local_50 = *(int *)(param_1 + 0x3c);
+    local_50 = param_1->field_003C;
   }
   else {
     local_50 = 0;
   }
   puVar14 = param_2;
-  for (iVar10 = (*(uint *)(param_1 + 0x1c) & 0xfffffff) << 2; iVar10 != 0; iVar10 = iVar10 + -1) {
+  for (iVar10 = (param_1->field_001C & 0xfffffff) << 2; iVar10 != 0; iVar10 = iVar10 + -1) {
     *puVar14 = 0xffffffff;
     puVar14 = puVar14 + 1;
   }
@@ -56,7 +58,7 @@ bool __thiscall FUN_006e1ee0(void *this,int param_1,undefined4 *param_2,int para
   local_1c = 0x7fffffff;
   local_c = 0x7fffffff;
   bVar1 = 0xff;
-  switch(*(int *)(param_1 + 0x24)) {
+  switch(param_1->field_0024) {
   case 4:
     bVar1 = pbVar12[0x54] & 0x20;
   case 3:
@@ -73,7 +75,7 @@ bool __thiscall FUN_006e1ee0(void *this,int param_1,undefined4 *param_2,int para
   local_28 = 0;
   local_48 = 0;
   iVar2 = 0x7fffffff;
-  if (0 < *(int *)(param_1 + 0x24)) {
+  if (0 < param_1->field_0024) {
     do {
       if (((*(byte *)((int)this + 0xac) & *pbVar12) != 0) &&
          ((local_50 == 0 ||
@@ -139,7 +141,7 @@ bool __thiscall FUN_006e1ee0(void *this,int param_1,undefined4 *param_2,int para
           iVar3 = 0;
           if (0 < local_28) {
             do {
-              iVar4 = *(int *)(param_1 + 0x28) + (uint)*(byte *)(iVar3 + param_3) * 0x1c;
+              iVar4 = param_1->field_0028 + (uint)*(byte *)(iVar3 + param_3) * 0x1c;
               if ((((int)param_2[(uint)*(byte *)(iVar4 + 1) * 4 + 2] < iVar2) ||
                   ((int)param_2[(uint)*(byte *)(iVar4 + 2) * 4 + 2] < iVar2)) ||
                  ((int)param_2[(uint)*(byte *)(iVar4 + 3) * 4 + 2] < iVar2)) {
@@ -190,7 +192,7 @@ LAB_006e22a2:
       local_48 = local_48 + 1;
       pbVar12 = pbVar12 + 0x1c;
       iVar2 = local_1c;
-    } while (local_48 < *(int *)(param_1 + 0x24));
+    } while (local_48 < param_1->field_0024);
   }
   iVar10 = local_c;
   if ((*(int *)((int)this + 0x2b0) != 0) && (0 < local_28)) {

@@ -7,6 +7,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
+  DArrayTy *groupContent;
   byte bVar2;
   int iVar3;
   short *psVar4;
@@ -17,16 +18,17 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   undefined4 extraout_ECX;
   int iVar8;
   uint uVar9;
-  uint uVar10;
-  undefined4 *puVar11;
+  AnonShape_006ACC70_C8641025 *pAVar10;
+  uint uVar11;
+  undefined4 *puVar12;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   undefined4 extraout_EDX_01;
-  undefined4 *puVar12;
-  Global_sub_006C8EC0_param_3Enum GVar13;
+  undefined4 *puVar13;
+  Global_sub_006C8EC0_param_3Enum GVar14;
   int unaff_EDI;
-  int iVar14;
-  undefined4 *puVar15;
+  int iVar15;
+  undefined4 *puVar16;
   undefined4 local_6c;
   uint local_68 [3];
   undefined4 local_5a;
@@ -38,8 +40,8 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   short local_3c;
   short local_3a;
   short local_38;
-  int local_34;
-  uint *local_30;
+  AnonShape_0049B7D0_41C6F9A6 *local_34;
+  DArrayTy *local_30;
   uint local_2c;
   uint local_28;
   undefined4 *local_24;
@@ -59,10 +61,10 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     iVar3 = sub_004A7E30(this,0);
     return -(uint)(iVar3 != 2) & 2;
   }
-  puVar11 = (undefined4 *)&this->field_0x89;
+  puVar12 = (undefined4 *)&this->field_0x89;
   for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
   this->field_0065 = 0;
   if ((byte *)this->field_0226 != (byte *)0x0) {
@@ -90,16 +92,16 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     this->field_0103 = 0;
     return 0;
   }
-  uVar10 = 0;
+  uVar11 = 0;
   iVar3 = -30000;
-  local_30 = (uint *)0x0;
+  local_30 = (DArrayTy *)0x0;
   local_c = 30000;
   local_8 = 30000;
   local_24 = (undefined4 *)0xffff8ad0;
   if (0 < (int)local_2c) {
     do {
-      if ((uVar10 < local_2c) &&
-         (psVar4 = (short *)(*(int *)(this->field_0103 + 8) * uVar10 +
+      if ((uVar11 < local_2c) &&
+         (psVar4 = (short *)(*(int *)(this->field_0103 + 8) * uVar11 +
                             *(int *)(this->field_0103 + 0x1c)), psVar4 != (short *)0x0)) {
         iVar7 = (int)*psVar4;
         if (iVar7 < local_c) {
@@ -116,13 +118,13 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
           iVar3 = iVar7;
         }
       }
-      uVar10 = uVar10 + 1;
-    } while ((int)uVar10 < (int)local_2c);
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < (int)local_2c);
   }
   local_20 = 0;
   if (0 < local_1c) {
     do {
-      FUN_006acc70(this->field_0029,local_20,&local_18);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
         pvVar5 = (void *)STAllPlayersC::GetObjPtr
                                    (g_sTAllPlayers_007FA174,
@@ -162,10 +164,10 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   if (local_8 < 0) {
     local_8 = 0;
   }
-  iVar14 = (int)SHORT_007fb278;
+  iVar15 = (int)SHORT_007fb278;
   iVar8 = (int)local_24 + 10;
-  if (iVar14 <= iVar8) {
-    iVar8 = iVar14 + -1;
+  if (iVar15 <= iVar8) {
+    iVar8 = iVar15 + -1;
   }
   iVar3 = iVar3 + 10;
   if (SHORT_007fb27a <= iVar3) {
@@ -173,32 +175,32 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   }
   local_2c = (iVar8 - local_c) + 1;
   local_20 = (iVar3 - local_8) + CASE_1;
-  local_34 = local_20 * local_2c;
+  local_34 = (AnonShape_0049B7D0_41C6F9A6 *)(local_20 * local_2c);
   local_14 = 0;
   do {
     local_10 = 0;
-    puVar11 = (undefined4 *)
+    puVar12 = (undefined4 *)
               ((int)DAT_007fb280 +
-              (iVar14 * local_8 + local_c + (int)SHORT_007fb27e * (int)(short)local_14) * 2);
-    local_24 = (undefined4 *)((int)DAT_007fb238 + (short)local_14 * local_34 * 2);
+              (iVar15 * local_8 + local_c + (int)SHORT_007fb27e * (int)(short)local_14) * 2);
+    local_24 = (undefined4 *)((int)DAT_007fb238 + (int)(short)local_14 * (int)local_34 * 2);
     if (0 < (int)local_20) {
       do {
-        puVar12 = puVar11;
-        puVar15 = local_24;
-        for (uVar10 = (local_2c & 0x7fffffff) >> 1; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *puVar15 = *puVar12;
-          puVar12 = puVar12 + 1;
-          puVar15 = puVar15 + 1;
+        puVar13 = puVar12;
+        puVar16 = local_24;
+        for (uVar11 = (local_2c & 0x7fffffff) >> 1; uVar11 != 0; uVar11 = uVar11 - 1) {
+          *puVar16 = *puVar13;
+          puVar13 = puVar13 + 1;
+          puVar16 = puVar16 + 1;
         }
-        for (uVar10 = local_2c * 2 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined1 *)puVar15 = *(undefined1 *)puVar12;
-          puVar12 = (undefined4 *)((int)puVar12 + 1);
-          puVar15 = (undefined4 *)((int)puVar15 + 1);
+        for (uVar11 = local_2c * 2 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+          *(undefined1 *)puVar16 = *(undefined1 *)puVar13;
+          puVar13 = (undefined4 *)((int)puVar13 + 1);
+          puVar16 = (undefined4 *)((int)puVar16 + 1);
         }
         local_10 = local_10 + 1;
-        iVar14 = (int)SHORT_007fb278;
+        iVar15 = (int)SHORT_007fb278;
         local_24 = (undefined4 *)((int)local_24 + local_2c * 2);
-        puVar11 = (undefined4 *)((int)puVar11 + iVar14 * 2);
+        puVar12 = (undefined4 *)((int)puVar12 + iVar15 * 2);
       } while ((int)(short)local_10 < (int)local_20);
     }
     local_14 = local_14 + 1;
@@ -211,13 +213,13 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   }
   FUN_006ab090((int)DAT_007fb238,local_2c,local_20,5,*psVar4 - local_c,psVar4[1] - local_8,
                (int)psVar4[2],-1,-1,-1);
-  uVar10 = 1;
+  uVar11 = 1;
   if (1 < (int)local_28) {
-    local_34 = this->field_0103;
-    local_2c = *(uint *)(local_34 + 0xc);
+    local_34 = (AnonShape_0049B7D0_41C6F9A6 *)this->field_0103;
+    local_2c = local_34->field_000C;
     do {
-      if (uVar10 < local_2c) {
-        psVar4 = (short *)(*(int *)(local_34 + 8) * uVar10 + *(int *)(local_34 + 0x1c));
+      if (uVar11 < local_2c) {
+        psVar4 = (short *)(local_34->field_0008 * uVar11 + local_34->field_001C);
       }
       else {
         psVar4 = (short *)0x0;
@@ -226,17 +228,17 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       if (*(short *)((int)DAT_007fb238 +
                     (((psVar4[1] - local_8) * (int)SHORT_007fb278 +
                       (int)psVar4[2] * (int)SHORT_007fb27e + (int)*psVar4) - local_c) * 2) < 1) {
-        local_30 = (uint *)0x1;
+        local_30 = (DArrayTy *)0x1;
         break;
       }
-      uVar10 = uVar10 + 1;
-    } while ((int)uVar10 < (int)local_28);
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < (int)local_28);
   }
   local_20 = 0;
   if (0 < local_1c) {
     do {
-      GVar13 = local_20;
-      FUN_006acc70(this->field_0029,local_20,&local_18);
+      GVar14 = local_20;
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
         pvVar5 = (void *)STAllPlayersC::GetObjPtr
                                    (g_sTAllPlayers_007FA174,
@@ -249,39 +251,40 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         }
         thunk_FUN_004162f0(pvVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                            (undefined2 *)&local_14);
-        GVar13 = local_20;
+        GVar14 = local_20;
         if (*(short *)((int)DAT_007fb238 +
                       ((((short)local_10 - local_8) * (int)SHORT_007fb278 +
                         (int)SHORT_007fb27e * (int)(short)local_14 + (int)param_1._2_2_) - iVar7) *
                       2) == 0) goto joined_r0x0049bc58;
       }
-      local_20 = GVar13 + 1;
+      local_20 = GVar14 + 1;
     } while ((int)local_20 < local_1c);
   }
-  if (local_30 != (uint *)0x0) {
+  if (local_30 != (DArrayTy *)0x0) {
 joined_r0x0049bc58:
     local_28 = local_28 - 1;
     if (-1 < (int)local_28) {
-      FUN_006acc70(this->field_0103,local_28,(undefined4 *)&local_3c);
-      uVar10 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
-      puVar11 = DAT_007fb280;
-      puVar12 = DAT_007fb238;
-      for (uVar9 = (uVar10 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *puVar12 = *puVar11;
-        puVar11 = puVar11 + 1;
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0103,local_28,(undefined4 *)&local_3c)
+      ;
+      uVar11 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
+      puVar12 = DAT_007fb280;
+      puVar13 = DAT_007fb238;
+      for (uVar9 = (uVar11 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
+        *puVar13 = *puVar12;
         puVar12 = puVar12 + 1;
+        puVar13 = puVar13 + 1;
       }
-      for (uVar10 = uVar10 * 2 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined1 *)puVar12 = *(undefined1 *)puVar11;
-        puVar11 = (undefined4 *)((int)puVar11 + 1);
+      for (uVar11 = uVar11 * 2 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+        *(undefined1 *)puVar13 = *(undefined1 *)puVar12;
         puVar12 = (undefined4 *)((int)puVar12 + 1);
+        puVar13 = (undefined4 *)((int)puVar13 + 1);
       }
       FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
                    (int)local_3c,(int)local_3a,(int)local_38,-1,-1,-1);
-      uVar10 = 0;
+      uVar11 = 0;
       if (0 < local_1c) {
         do {
-          FUN_006acc70(this->field_0029,uVar10,&local_18);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar11,&local_18);
           if ((short)local_18 != -1) {
             pvVar5 = (void *)STAllPlayersC::GetObjPtr
                                        (g_sTAllPlayers_007FA174,
@@ -298,12 +301,12 @@ joined_r0x0049bc58:
                           ((int)SHORT_007fb27e * (int)(short)local_14 +
                            (int)SHORT_007fb278 * (int)(short)local_10 + (int)param_1._2_2_) * 2) ==
                 0) {
-              FUN_006b0c70(this->field_0103,local_28);
+              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this->field_0103,local_28);
               break;
             }
           }
-          uVar10 = uVar10 + 1;
-        } while ((int)uVar10 < local_1c);
+          uVar11 = uVar11 + 1;
+        } while ((int)uVar11 < local_1c);
       }
       goto joined_r0x0049bc58;
     }
@@ -314,44 +317,44 @@ joined_r0x0049bc58:
     }
   }
   puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,*(uint *)(this->field_0103 + 0xc),6,1);
-  iVar3 = this->field_0103;
+  pAVar10 = (AnonShape_006ACC70_C8641025 *)this->field_0103;
   this->field_0226 = puVar6;
-  uVar10 = 0;
-  if (0 < *(int *)(iVar3 + 0xc)) {
+  uVar11 = 0;
+  if (0 < (int)pAVar10->field_000C) {
     do {
-      FUN_006acc70(iVar3,uVar10,(undefined4 *)&local_3c);
-      Library::DKW::TBL::FUN_006ae140((uint *)this->field_0226,uVar10,(undefined4 *)&local_3c);
-      iVar3 = this->field_0103;
-      uVar10 = uVar10 + 1;
-    } while ((int)uVar10 < *(int *)(iVar3 + 0xc));
+      FUN_006acc70(pAVar10,uVar11,(undefined4 *)&local_3c);
+      Library::DKW::TBL::FUN_006ae140((uint *)this->field_0226,uVar11,(undefined4 *)&local_3c);
+      pAVar10 = (AnonShape_006ACC70_C8641025 *)this->field_0103;
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < (int)pAVar10->field_000C);
   }
   FUN_006ae110((byte *)this->field_0103);
   this->field_0103 = 0;
   ReMakePatrolPoints(this,unaff_EDI);
   puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)(ushort)this->field_0027,0x16,1);
   this->field_022E = puVar6;
-  uVar10 = 0;
+  uVar11 = 0;
   local_6c = 0;
   local_5a = 0;
   if (0 < local_1c) {
     do {
-      FUN_006acc70(this->field_0029,uVar10,&local_18);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar11,&local_18);
       if ((short)local_18 != -1) {
         local_68[0] = CONCAT22(local_68[0]._2_2_,(short)local_18);
         Library::DKW::TBL::FUN_006ae1c0((uint *)this->field_022E,&local_6c);
       }
-      uVar10 = uVar10 + 1;
-    } while ((int)uVar10 < local_1c);
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < local_1c);
   }
   bVar2 = thunk_FUN_00430750(CASE_8);
   this->field_023A = ((this->field_0242 * 0xc9) / (int)(uint)bVar2) / 3;
-  local_30 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-  uVar10 = 0;
-  local_44 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-  iVar3 = this->field_022E;
-  if (0 < *(int *)(iVar3 + 0xc)) {
+  local_30 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  uVar11 = 0;
+  local_44 = PTR_00802a38->field_00E4;
+  pAVar10 = (AnonShape_006ACC70_C8641025 *)this->field_022E;
+  if (0 < (int)pAVar10->field_000C) {
     do {
-      FUN_006acc70(iVar3,uVar10,&local_6c);
+      FUN_006acc70(pAVar10,uVar11,&local_6c);
       if ((short)local_68[0] != -1) {
         this_00 = (STBoatC *)
                   STAllPlayersC::GetObjPtr
@@ -363,25 +366,26 @@ joined_r0x0049bc58:
                                      ,s_STGroupBoatC__GrpPatrol_NULL_val_007abf94);
           if (iVar3 != 0) {
             pcVar1 = (code *)swi(3);
-            uVar10 = (*pcVar1)();
-            return uVar10;
+            uVar11 = (*pcVar1)();
+            return uVar11;
           }
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0x7ee);
         }
-        Library::DKW::TBL::FUN_006ae1c0(local_30,local_68);
-        local_40 = uVar10;
+        Library::DKW::TBL::FUN_006ae1c0(&local_30->flags,local_68);
+        local_40 = uVar11;
         STBoatC::CmdToObj(this_00,CASE_6,&local_44);
       }
-      iVar3 = this->field_022E;
-      uVar10 = uVar10 + 1;
-    } while ((int)uVar10 < *(int *)(iVar3 + 0xc));
+      pAVar10 = (AnonShape_006ACC70_C8641025 *)this->field_022E;
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < (int)pAVar10->field_000C);
   }
-  puVar6 = local_30;
-  FUN_006acc70(this->field_022A,this->field_0232,(undefined4 *)&local_54);
-  InitWay(this,(int)puVar6,(int)local_54,(int)local_52,(int)local_50);
-  FUN_006ae110((byte *)puVar6);
+  groupContent = local_30;
+  FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022A,this->field_0232,
+               (undefined4 *)&local_54);
+  InitWay(this,groupContent,(int)local_54,(int)local_52,(int)local_50);
+  FUN_006ae110((byte *)groupContent);
   return 2;
 }
 

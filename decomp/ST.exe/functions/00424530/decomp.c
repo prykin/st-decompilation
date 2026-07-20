@@ -30,7 +30,7 @@ void __thiscall FUN_00424530(void *this,uint param_1)
   if (uVar1 != 0) {
     uVar4 = 0;
     do {
-      FUN_006acc70(*(int *)((int)this + 0x29),uVar4,&param_1);
+      FUN_006acc70(*(AnonShape_006ACC70_C8641025 **)((int)this + 0x29),uVar4,&param_1);
       if ((short)param_1 != -1) {
         piVar3 = (int *)STAllPlayersC::GetObjPtr
                                   (g_sTAllPlayers_007FA174,

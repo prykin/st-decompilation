@@ -7,7 +7,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
 
 {
   code *pcVar1;
-  HoloTy *pHVar2;
+  AnonShape_GLOBAL_00807598_0C6808FB *pAVar2;
   GameSystemC *pGVar3;
   int errorCode;
   int iVar4;
@@ -27,25 +27,25 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
       FUN_00725680(&local_8->field_0431);
     }
     FUN_0070b1d0(&DAT_00806724);
-    if (DAT_00802a28 != 0) {
-      thunk_FUN_005711d0(&DAT_00807620,&DAT_00802a28);
+    if (PTR_00802a28 != (ccFntTy *)0x0) {
+      thunk_FUN_005711d0(&DAT_00807620,(int *)&PTR_00802a28);
     }
-    if (DAT_00802a38 != 0) {
-      thunk_FUN_005711d0(&DAT_00807620,&DAT_00802a38);
+    if (PTR_00802a38 != (STPlaySystemC *)0x0) {
+      thunk_FUN_005711d0(&DAT_00807620,(int *)&PTR_00802a38);
     }
     thunk_FUN_0058d720();
-    pHVar2 = DAT_00807598;
+    pAVar2 = PTR_00807598;
     DAT_0080674c = 0;
-    if (DAT_00807598 != (HoloTy *)0x0) {
-      FUN_006dbcf0((int *)DAT_00807598);
-      Library::MSVCRT::FUN_0072e2b0(pHVar2);
-      DAT_00807598 = (HoloTy *)0x0;
+    if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+      FUN_006dbcf0((int *)PTR_00807598);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar2);
+      PTR_00807598 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
     }
     thunk_FUN_00578370();
     if (DAT_00806750 != 0) {
       thunk_FUN_0042a780(&DAT_00806750);
     }
-    FUN_006e52d0((int)pGVar3);
+    FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)pGVar3);
     ShowCursor(1);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -7,7 +7,7 @@ void __fastcall FUN_00627390(int param_1)
     *(int *)(param_1 + 0x30f) =
          ((int)(*(int *)(&DAT_007d02a4 + (uint)*(byte *)(param_1 + 0x2ad) * 4) +
                (*(int *)(&DAT_007d02a4 + (uint)*(byte *)(param_1 + 0x2ad) * 4) >> 0x1f & 3U)) >> 2)
-         + *(int *)(DAT_00802a38 + 0xe4);
+         + PTR_00802a38->field_00E4;
   }
   return;
 }

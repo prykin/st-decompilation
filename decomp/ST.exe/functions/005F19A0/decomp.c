@@ -99,7 +99,7 @@ LAB_005f1c4c:
                              *(short *)((int)psVar5 + 7));
   pVVar3 = g_visibleClass_00802A88;
   if (-1 < iVar6) {
-    FUN_006b0c70(*(int *)((int)local_14 + 0x3c),local_c);
+    FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)local_14 + 0x3c),local_c);
     pVVar3 = g_visibleClass_00802A88;
   }
   goto joined_r0x005f19be;

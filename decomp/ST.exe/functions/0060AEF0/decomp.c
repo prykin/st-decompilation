@@ -164,11 +164,11 @@ int __fastcall FUN_0060aef0(void *param_1)
                          ((int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar15 +
                          (int)sVar16) * 8);
             }
-            if ((pSVar18 != (STFishC *)0x0) && (iVar12 = (*pSVar18->vtable->slot_F0)(), iVar12 != 0)
-               ) {
+            if ((pSVar18 != (STFishC *)0x0) &&
+               (iVar12 = (*pSVar18->vtable->vfunc_F0)(), iVar12 != 0)) {
               if ((*(int *)&pSVar18->field_0x20 == 1000) &&
-                 (iVar12 = (*pSVar18->vtable->slot_2C)(), *(int *)(&DAT_00791d68 + iVar12 * 4) == 1)
-                 ) {
+                 (iVar12 = (*pSVar18->vtable->vfunc_2C)(), *(int *)(&DAT_00791d68 + iVar12 * 4) == 1
+                 )) {
                 bVar20 = false;
                 iVar12 = 0;
                 if (0 < local_a4) {
@@ -187,7 +187,8 @@ int __fastcall FUN_0060aef0(void *param_1)
               uVar14 = *(uint *)&pSVar18->field_0x24;
               if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
                 if ((uVar14 < 8) &&
-                   ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[uVar14 * 0x51] < 8)))) {
+                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                    ((byte)(&DAT_008087e9)[uVar14 * 0x51] < 8)))) {
                   bVar3 = pSVar18->field_0x24;
                   _local_b8 = CONCAT31(uStack_b7,bVar3);
                   bVar4 = *(byte *)((int)param_1 + 0x1d9);
@@ -226,10 +227,10 @@ LAB_0060b2ce:
                     bVar20 = (&DAT_008087ea)[(uint)bVar4 * 0x51] !=
                              (&DAT_008087ea)[(uint)bVar3 * 0x51];
                   }
-                  if ((bVar20) && (iVar12 = (*pSVar18->vtable->slot_F8)(), iVar12 != 0)) {
+                  if ((bVar20) && (iVar12 = (*pSVar18->vtable->vfunc_F8)(), iVar12 != 0)) {
                     puVar1 = (undefined4 *)(local_74 + local_88 * 0xc);
                     *puVar1 = pSVar18;
-                    uVar13 = (*pSVar18->vtable->slot_78)();
+                    uVar13 = (*pSVar18->vtable->vfunc_78)();
                     puVar1[1] = uVar13;
                     iVar12 = *(int *)((int)param_1 + 0x1ed);
                     sVar16 = (short)(iVar12 >> 0x1f);
@@ -253,7 +254,7 @@ LAB_0060b2ce:
                     }
                     iVar12 = FUN_006acf90(local_98,local_40,iVar17,iVar12);
                     puVar1[2] = iVar12;
-                    iVar12 = (*pSVar18->vtable->slot_2C)();
+                    iVar12 = (*pSVar18->vtable->vfunc_2C)();
                     if (iVar12 == 0x23) {
                       local_4c = local_4c + 1;
                     }
@@ -263,7 +264,8 @@ LAB_0060b2ce:
               }
               else {
                 if ((uVar14 < 8) &&
-                   ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[uVar14 * 0x51] < 8)))) {
+                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                    ((byte)(&DAT_008087e9)[uVar14 * 0x51] < 8)))) {
                   bVar3 = pSVar18->field_0x24;
                   _local_c8 = CONCAT31(uStack_c7,bVar3);
                   bVar4 = *(byte *)((int)param_1 + 0x1d9);
@@ -303,7 +305,7 @@ LAB_0060b48b:
                              (&DAT_008087ea)[(uint)bVar3 * 0x51];
                   }
                   if (bVar20) {
-                    iVar12 = (*pSVar18->vtable->slot_F8)();
+                    iVar12 = (*pSVar18->vtable->vfunc_F8)();
                     if ((iVar12 != 0) && (*(int *)((int)param_1 + 0x1f5) != 0x4c)) {
                       thunk_FUN_0060bdd0(param_1,&pSVar18->vtable);
                       goto LAB_0060b643;
@@ -346,7 +348,7 @@ LAB_0060b48b:
                       }
                     }
                     if (bVar20) {
-                      iVar17 = (*pSVar18->vtable->slot_2C)();
+                      iVar17 = (*pSVar18->vtable->vfunc_2C)();
                       uVar21 = (uint)(*(int *)(&DAT_00791d68 + iVar17 * 4) == 1);
                       uVar14 = thunk_FUN_004ad650((int)&pSVar18->field_01D5);
                       thunk_FUN_00637f40(uVar14,uVar21,iVar12);
@@ -434,7 +436,7 @@ cf_continue_loop_0060B649:
       do {
         pSVar18 = *(STFishC **)(local_74 + local_6c * 0xc);
         local_48 = 1;
-        iVar12 = (*pSVar18->vtable->slot_2C)();
+        iVar12 = (*pSVar18->vtable->vfunc_2C)();
         if (((iVar12 != 0x23) && (local_4c != 0)) && (iVar12 = 0, 0 < local_4c)) {
           do {
             this = *(void **)(local_ac + iVar12 * 0xc);
@@ -462,7 +464,7 @@ cf_continue_loop_0060B649:
           thunk_FUN_00637d80(uVar14,iVar12);
           thunk_FUN_0060bdd0(param_1,&pSVar18->vtable);
           if (DAT_00811798 != (void *)0x0) {
-            (*pSVar18->vtable->slot_2C)();
+            (*pSVar18->vtable->vfunc_2C)();
             thunk_FUN_006211e0(DAT_00811798,local_7c,local_8c,*(uint *)&pSVar18->field_0x24);
           }
           local_84 = local_84 + 1;

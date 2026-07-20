@@ -40,11 +40,11 @@ undefined4 __thiscall FUN_004ceb00(void *this,undefined4 param_1)
   int local_8;
   
   local_10 = 0;
-  if ((uint)DAT_00802a38->field_00E4 <
+  if ((uint)PTR_00802a38->field_00E4 <
       (uint)(*(int *)((int)this + 0x3cc) + *(int *)((int)this + 0x3d0))) {
     return 0;
   }
-  *(undefined4 *)((int)this + 0x3cc) = DAT_00802a38->field_00E4;
+  *(undefined4 *)((int)this + 0x3cc) = PTR_00802a38->field_00E4;
   switch(*(undefined4 *)((int)this + 0x4d0)) {
   case 1:
     switch(*(undefined4 *)((int)this + 0x5ac)) {
@@ -148,7 +148,7 @@ switchD_004ceb68_caseD_32:
     iVar3 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\t');
     if ((*(int *)(*(int *)((int)this + 0x1f5) + 0x154) + iVar4 <= iVar3) &&
        ((*(uint *)(*(int *)((int)this + 0x5ff) + 0x1c) & 0x4000) == 0)) {
-      thunk_FUN_004d0310((int)this);
+      thunk_FUN_004d0310(this);
     }
     iVar4 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x0e');
     if (iVar4 != *(int *)(*(int *)((int)this + 0x1f5) + 0x20c)) {
@@ -221,7 +221,7 @@ switchD_004ceb68_caseD_32:
       pcVar11 = pcVar11 + 1;
     }
     local_2b = *(undefined4 *)((int)this + 0x375);
-    STPlaySystemC::CreateGameObject(DAT_00802a38,0x14,0,&local_24,local_6c,0);
+    STPlaySystemC::CreateGameObject(PTR_00802a38,0x14,0,&local_24,local_6c,0);
     *(undefined4 *)((int)this + 0x4d4) = *(undefined4 *)(local_24 + 0x18);
     *(undefined4 *)((int)this + 0x4d8) = 0;
     if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))

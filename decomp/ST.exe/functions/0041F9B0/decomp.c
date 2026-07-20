@@ -188,8 +188,8 @@ STSprGameObjC::CheckRay
                              + (int)sVar9) * 8);
           }
           if (((iVar13 == 0) || (7 < *(uint *)(iVar13 + 0x24))) ||
-             ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51]))))
-          {
+             ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+              (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51])))) {
 LAB_0041fe0d:
             if (*(short *)(DAT_007fb280 +
                           (SHORT_007fb278 * iVar7 + local_c + SHORT_007fb27e * iVar11) * 2) < 0) {
@@ -208,8 +208,9 @@ LAB_0041fe0d:
                               + (int)sVar9) * 8);
             }
             if (((iVar7 != 0) && (*(uint *)(iVar7 + 0x24) < 8)) &&
-               (((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51] < 8))
-                && (local_1c->field_0018 != *(int *)(iVar7 + 0x18))))) {
+               (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 ((byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51] < 8)) &&
+                (local_1c->field_0018 != *(int *)(iVar7 + 0x18))))) {
               if ((*(byte *)(iVar7 + 0x1d1) & 0x10) != 0) {
                 if (param_8 != (int *)0x0) {
                   *param_8 = iVar7;
@@ -220,7 +221,7 @@ LAB_0041fe0d:
               }
               if (param_9 == 0) {
                 if ((7 < *(uint *)(iVar7 + 0x24)) ||
-                   ((DAT_00802a38 != 0 &&
+                   ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
                     (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51]))))
                 goto cf_continue_loop_0042004A;
                 bVar6 = *(byte *)(iVar7 + 0x24);
@@ -283,8 +284,9 @@ LAB_0041fffd:
             }
             if (param_9 == 0) {
               if ((7 < *(uint *)(iVar13 + 0x24)) ||
-                 ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51])
-                  ))) goto cf_continue_loop_0042004A;
+                 ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+                  (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51]))))
+              goto cf_continue_loop_0042004A;
               bVar6 = *(byte *)(iVar13 + 0x24);
               bVar1 = local_1c->field_0024;
               _local_40 = CONCAT31(uStack_3f,bVar6);

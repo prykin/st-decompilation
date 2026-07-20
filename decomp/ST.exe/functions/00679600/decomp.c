@@ -1,5 +1,5 @@
 
-void __fastcall FUN_00679600(void *param_1)
+void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
 
 {
   char cVar1;
@@ -19,19 +19,19 @@ void __fastcall FUN_00679600(void *param_1)
   byte *local_10;
   byte local_c;
   undefined3 uStack_b;
-  void *local_8;
+  AnonShape_00679600_B8E418A8 *local_8;
   
-  local_14 = *(uint *)((int)param_1 + 0x640);
+  local_14 = param_1->field_0640;
   if (8 < local_14) {
-    *(undefined4 *)((int)param_1 + 0x640) = 0xff;
+    param_1->field_0640 = 0xff;
   }
-  if (*(int *)((int)param_1 + 0x640) == 8) {
-    *(uint *)((int)param_1 + 0x640) = (uint)DAT_0080874d;
+  if (param_1->field_0640 == 8) {
+    param_1->field_0640 = (uint)DAT_0080874d;
   }
   local_8 = param_1;
-  if (*(char *)((int)param_1 + 0x644) != '\x01') goto cf_common_exit_0067989B;
-  uVar4 = *(uint *)((int)param_1 + 0x640);
-  uVar7 = *(uint *)((int)param_1 + 0x5d7);
+  if (param_1->field_0644 != '\x01') goto cf_common_exit_0067989B;
+  uVar4 = param_1->field_0640;
+  uVar7 = param_1->field_05D7;
   if ((uVar4 != uVar7) && (uVar4 != 0xff)) {
     cVar2 = (char)uVar4;
     local_10 = (byte *)CONCAT31(local_10._1_3_,cVar2);
@@ -74,7 +74,7 @@ LAB_0067971a:
   param_1 = local_8;
   do {
     uVar4 = (uint)*local_10;
-    if ((uVar4 != 0xff) && (uVar7 = *(uint *)((int)param_1 + 0x5d7), uVar4 != uVar7)) {
+    if ((uVar4 != 0xff) && (uVar7 = param_1->field_05D7, uVar4 != uVar7)) {
       _local_c = CONCAT31(uStack_b,(byte)uVar7);
       if (DAT_00808a8f == '\0') {
         if (*local_10 == (byte)uVar7) {
@@ -124,21 +124,21 @@ LAB_0067971a:
     local_10 = local_10 + 0x51;
   } while ((int)local_10 < 0x808a71);
   if (iVar6 < 1) {
-    *(undefined4 *)((int)param_1 + 0x640) = 0xff;
+    param_1->field_0640 = 0xff;
   }
   else {
-    iVar6 = thunk_FUN_00423220((void *)((int)param_1 + 0xa4),&local_1a8,iVar6);
-    *(undefined4 *)((int)param_1 + 0x640) = local_1a4[iVar6 * 0xb];
+    iVar6 = thunk_FUN_00423220(&param_1->field_0xa4,&local_1a8,iVar6);
+    param_1->field_0640 = local_1a4[iVar6 * 0xb];
   }
 cf_common_exit_0067989B:
-  uVar4 = *(uint *)((int)param_1 + 0x640);
+  uVar4 = param_1->field_0640;
   if (uVar4 != local_14) {
     puVar9 = local_48;
     for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar9 = 0;
       puVar9 = puVar9 + 1;
     }
-    local_48[1] = *(undefined4 *)((int)param_1 + 0x6fe);
+    local_48[1] = param_1->field_06FE;
     local_48[0] = 0x6a;
     local_48[2] = uVar4;
     thunk_FUN_0067a020(param_1,local_48,-1);

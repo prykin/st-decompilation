@@ -8,7 +8,8 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   int *piVar4;
   int iVar5;
   int iVar6;
-  int *piVar7;
+  DArrayTy *pDVar7;
+  int *piVar8;
   int local_fc [40];
   int local_5c [2];
   char local_54;
@@ -54,23 +55,23 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
       piVar4 = piVar4 + 1;
     }
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (iVar6 = *(int *)(&DAT_007f57fe + *(int *)((int)this + 0x24) * 0xa62), iVar6 != 0)) &&
-       (uVar3 = 0, 0 < *(int *)(iVar6 + 0xc))) {
+        (pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2286_0x9de,
+        pDVar7 != (DArrayTy *)0x0)) && (uVar3 = 0, 0 < (int)pDVar7->count)) {
       do {
-        FUN_006acc70(iVar6,uVar3,&local_28);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar7,uVar3,&local_28);
         piVar4 = local_fc;
-        piVar7 = (int *)(local_28 + 0x4e0);
+        piVar8 = (int *)(local_28 + 0x4e0);
         iVar6 = 0x28;
         do {
-          iVar5 = *piVar7;
-          piVar7 = piVar7 + 1;
+          iVar5 = *piVar8;
+          piVar8 = piVar8 + 1;
           *piVar4 = *piVar4 + iVar5;
           piVar4 = piVar4 + 1;
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         uVar3 = uVar3 + 1;
-        iVar6 = *(int *)(&DAT_007f57fe + *(int *)((int)this + 0x24) * 0xa62);
-      } while ((int)uVar3 < *(int *)(iVar6 + 0xc));
+        pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2286_0x9de;
+      } while ((int)uVar3 < (int)pDVar7->count);
     }
     local_2c = (int)local_10 << 4;
     local_8 = 0;

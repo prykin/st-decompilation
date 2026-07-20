@@ -24,7 +24,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
         }
       }
       else {
-        iVar2 = thunk_FUN_005fa180(param_1);
+        iVar2 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
         if (*(short *)(DAT_00806724 + 0x23) <= iVar2) {
           *(undefined4 *)((int)param_1 + 0x2dd) = 2;
           return 5;
@@ -34,9 +34,9 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     break;
   case 1:
     if (*(int *)((int)param_1 + 0x2ea) != 0) {
-      thunk_FUN_005f9450((int)param_1);
-      *(undefined4 *)((int)param_1 + 0x2d5) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-      iVar2 = *(int *)(DAT_00802a38 + 0xe4);
+      thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
+      *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+      iVar2 = PTR_00802a38->field_00E4;
       *(undefined4 *)((int)param_1 + 0x2ef) = 0;
       *(int *)((int)param_1 + 0x2d9) = iVar2 + 0x32;
       *(undefined1 *)((int)param_1 + 699) = 1;
@@ -51,8 +51,8 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     if (*(char *)((int)param_1 + 0x29f) == '\0') {
       if (*(char *)((int)param_1 + 0x29d) != '\x01') {
         if (*(char *)((int)param_1 + 0x29d) == '\x03') {
-          *(undefined4 *)((int)param_1 + 0x2d5) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-          iVar2 = *(int *)(DAT_00802a38 + 0xe4);
+          *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+          iVar2 = PTR_00802a38->field_00E4;
           *(undefined1 *)((int)param_1 + 699) = 1;
           *(undefined4 *)((int)param_1 + 0x76) = 1;
           *(int *)((int)param_1 + 0x2d9) = iVar2 + 0x32;
@@ -84,8 +84,8 @@ LAB_005f8ea2:
     }
     *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
     *(undefined4 *)((int)param_1 + 0x76) = 1;
-    *(undefined4 *)((int)param_1 + 0x2d5) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    *(int *)((int)param_1 + 0x2d9) = *(int *)(DAT_00802a38 + 0xe4) + 0x32;
+    *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+    *(int *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
     return 0;
   }
   return uVar1;

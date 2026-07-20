@@ -89,7 +89,7 @@ FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_118 = 0;
     }
   }
-  (**(code **)(*DAT_00802a38 + 8))(0x157,0,0,local_15c,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x157,0,0,local_15c,0);
   return;
 }
 

@@ -35,7 +35,7 @@ int __thiscall FUN_0063c8f0(void *this,int param_1)
       *(int *)((int)this + 0x26e) = *(int *)((int)this + 0x282);
     }
   }
-  iVar2 = thunk_FUN_0063cb30((int)this);
+  iVar2 = thunk_FUN_0063cb30(this);
   if (((iVar2 == 0) && (*(int *)((int)this + 0x26e) < (int)*(short *)((int)this + 599))) &&
      (*(char *)((int)this + 0x29e) == '\x01')) {
     iVar2 = 4;

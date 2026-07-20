@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0067be20(int param_1,undefined4 param_2,int param_3)
+void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
 
 {
   uint uVar1;
@@ -17,11 +17,11 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,int param_3)
   undefined2 local_a;
   int local_8;
   
-  uVar1 = *(uint *)(param_3 + 0xc);
+  uVar1 = param_3->count;
   local_8 = param_1;
   while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
-    if ((uVar1 < *(uint *)(param_3 + 0xc)) &&
-       (puVar2 = (undefined2 *)(*(int *)(param_3 + 8) * uVar1 + *(int *)(param_3 + 0x1c)),
+    if ((uVar1 < param_3->count) &&
+       (puVar2 = (undefined2 *)(param_3->elementSize * uVar1 + (int)param_3->data),
        puVar2 != (undefined2 *)0x0)) {
       objPtr = (STFishC *)
                STAllPlayersC::GetObjPtr
@@ -29,7 +29,7 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,int param_3)
                           CONCAT31((int3)((uint)param_2 >> 8),*(undefined1 *)(local_8 + 0x640)),
                           CONCAT22((short)((uint)in_EAX >> 0x10),*puVar2),CASE_1);
       if (objPtr == (STFishC *)0x0) {
-        in_EAX = FUN_006b0c70(param_3,uVar1);
+        in_EAX = FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_3,uVar1);
         param_2 = extraout_EDX;
       }
       else {

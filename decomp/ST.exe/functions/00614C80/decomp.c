@@ -33,7 +33,8 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
               (int)*(short *)(*(int *)((int)this + 0x2dd) + -0x1a + (int)param_1 * 0x1c);
   }
   iVar4 = (int)puVar5 * 0x1c;
-  uVar1 = thunk_FUN_0060f940(0,0,iVar4 + *(int *)((int)this + 0x2dd),0,uVar3,(int)param_1,iVar2,
+  uVar1 = thunk_FUN_0060f940(0,0,(AnonShape_0060F940_1CCED7C8 *)
+                                 (iVar4 + *(int *)((int)this + 0x2dd)),0,uVar3,(int)param_1,iVar2,
                              param_2,param_3,param_4,param_5,param_6,param_7,&param_10,
                              (int *)&param_8);
   *(undefined4 *)(iVar4 + 0x18 + *(int *)((int)this + 0x2dd)) = uVar1;

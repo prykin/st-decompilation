@@ -25,16 +25,15 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   int iVar12;
   uint uVar13;
   undefined2 extraout_var_01;
-  int *piVar14;
-  int *piVar15;
-  longlong lVar16;
+  undefined4 *puVar14;
+  longlong lVar15;
+  short sVar16;
   short sVar17;
   short sVar18;
   short sVar19;
   short sVar20;
   short sVar21;
-  short sVar22;
-  byte bVar23;
+  byte bVar22;
   undefined4 local_30 [2];
   undefined4 local_28;
   short local_24;
@@ -43,7 +42,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   undefined4 local_18;
   int local_14;
   int local_10;
-  int *local_c;
+  AnonShape_004758E0_51E65DA0 *local_c;
   undefined1 local_5;
   
   if ((param_1 == 0) || (param_1 == 1)) {
@@ -136,27 +135,29 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     if (uVar8 != 0xffffffff) {
       if (uVar8 == 0) {
         this->field_05D6 = 1;
-        FUN_006e62d0(DAT_00802a38,this->field_07CA,(int *)&local_c);
-        uVar1 = *(undefined1 *)((int)local_c + 0x62);
-        uVar2 = *(undefined1 *)((int)local_c + 0x61);
-        local_5 = *(undefined1 *)((int)local_c + 99);
-        piVar14 = (int *)&this->field_0x34;
-        piVar15 = local_c + 0xd;
+        FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_c);
+        uVar1 = local_c->field_0062;
+        uVar2 = local_c->field_0061;
+        local_5 = local_c->field_0063;
+        puVar9 = (undefined4 *)&this->field_0x34;
+        puVar14 = (undefined4 *)&local_c->field_0x34;
         for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *piVar15 = *piVar14;
-          piVar14 = piVar14 + 1;
-          piVar15 = piVar15 + 1;
+          *puVar14 = *puVar9;
+          puVar9 = puVar9 + 1;
+          puVar14 = puVar14 + 1;
         }
-        *(short *)piVar15 = (short)*piVar14;
-        *(undefined1 *)((int)piVar15 + 2) = *(undefined1 *)((int)piVar14 + 2);
-        *(undefined1 *)((int)local_c + 0x61) = uVar2;
-        *(undefined1 *)((int)local_c + 0x62) = uVar1;
-        *(undefined1 *)((int)local_c + 99) = local_5;
-        thunk_FUN_0041c5a0((int *)this);
-        thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,(int)this);
-        (**(code **)(*local_c + 0xb8))();
+        *(undefined2 *)puVar14 = *(undefined2 *)puVar9;
+        *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar9 + 2);
+        local_c->field_0061 = uVar2;
+        local_c->field_0062 = uVar1;
+        local_c->field_0063 = local_5;
+        thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this);
+        thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
+                           (AnonShape_00495FF0_59081BDD *)this);
+        (**(code **)(*(int *)local_c + 0xb8))();
         DumpClassC::WritePtr
-                  (this->field_05D0,*(short *)&this->field_0x5d2,this->field_05D4,0,(int)this);
+                  (this->field_05D0,*(short *)&this->field_0x5d2,this->field_05D4,0,
+                   (AnonShape_00495EC0_95A268C6 *)this);
         thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
         this->field_07CA = 0;
         this->field_07C6 = 0;
@@ -192,42 +193,42 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         local_28 = *puVar9;
         local_24 = *(short *)(puVar9 + 1);
         if (DAT_0080732c == 1) {
-          bVar23 = 0;
-          sVar22 = 0;
+          bVar22 = 0;
+          sVar21 = 0;
           iVar12 = -1;
           uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
-          sVar21 = 0;
-          this->field_001C = uVar8;
           sVar20 = 0;
+          this->field_001C = uVar8;
           sVar19 = 0;
-          uVar10 = uVar8 * 0x41c64e6d + 0x3039;
           sVar18 = 0;
+          uVar10 = uVar8 * 0x41c64e6d + 0x3039;
+          sVar17 = 0;
           this->field_001C = uVar10;
           local_1c = uVar10 * 0x41c64e6d + 0x3039;
-          sVar17 = 0;
+          sVar16 = 0;
           this->field_001C = local_1c;
           sVar5 = 0;
-          lVar16 = Library::MSVCRT::__ftol();
-          iVar6 = (int)(short)lVar16 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+          lVar15 = Library::MSVCRT::__ftol();
+          iVar6 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
           iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
           uVar8 = local_1c;
         }
         else {
           uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
-          bVar23 = 0;
+          bVar22 = 0;
           this->field_001C = uVar10;
           uVar13 = uVar10 * 0x41c64e6d + 0x3039;
-          sVar22 = 0;
+          sVar21 = 0;
           this->field_001C = uVar13;
           uVar8 = uVar13 * 0x41c64e6d + 0x3039;
           this->field_001C = uVar8;
           iVar12 = -1;
-          sVar21 = 0;
           sVar20 = 0;
           sVar19 = 0;
           sVar18 = 0;
           sVar17 = 0;
+          sVar16 = 0;
           sVar5 = 0;
           iVar6 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
           local_28._2_2_ = (short)((uint)local_28 >> 0x10);
@@ -236,7 +237,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,2,7,
                    (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
-                   iVar7 + -3,iVar6,sVar5,sVar17,sVar18,sVar19,sVar20,sVar21,iVar12,sVar22,bVar23);
+                   iVar7 + -3,iVar6,sVar5,sVar16,sVar17,sVar18,sVar19,sVar20,iVar12,sVar21,bVar22);
         local_10 = local_10 + 1;
         param_1 = param_1 + 6;
       } while (local_10 < (int)(uint)(byte)this->field_0x2bf);

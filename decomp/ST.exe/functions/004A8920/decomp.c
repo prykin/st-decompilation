@@ -42,7 +42,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
     if (uVar3 != 0x104) {
       if (uVar3 < 4) {
         if (uVar3 == 3) {
-          CursorClassTy::DelOpticAcc(DAT_00802a30);
+          CursorClassTy::DelOpticAcc(PTR_00802a30);
           g_currentExceptionFrame = local_6c.previous;
           return 0;
         }
@@ -59,16 +59,16 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
             return 0;
           }
           if (DAT_0080745d == 0) {
-            FUN_006ddbe0((int)DAT_00807598);
-            FUN_006e1050(DAT_00807598);
+            FUN_006ddbe0((AnonShape_006DDBE0_9835BAB9 *)PTR_00807598);
+            FUN_006e1050((AnonShape_006E1050_52F5A113 *)PTR_00807598);
           }
           else {
-            FUN_006e1460(DAT_00807598,SUB84((double)DAT_008073d0,0),
+            FUN_006e1460(PTR_00807598,SUB84((double)DAT_008073d0,0),
                          (int)((ulonglong)(double)DAT_008073d0 >> 0x20),
                          SUB84((double)_DAT_008073d4,0),
                          (int)((ulonglong)(double)_DAT_008073d4 >> 0x20));
-            DAT_008073d0 = (float)*(double *)((int)DAT_00807598 + 0x98);
-            _DAT_008073d4 = (float)*(double *)((int)DAT_00807598 + 0xa0);
+            DAT_008073d0 = (float)PTR_00807598->field_0098;
+            _DAT_008073d4 = (float)PTR_00807598->field_00A0;
             lVar5 = Library::MSVCRT::__ftol();
             DAT_008073d8 = (int)lVar5;
             lVar5 = Library::MSVCRT::__ftol();
@@ -84,7 +84,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
           return 0;
         }
         InitOptic(g_opticClass_007FB2A0);
-        CursorClassTy::AddOpticAcc(DAT_00802a30);
+        CursorClassTy::AddOpticAcc(PTR_00802a30);
         goto LAB_004a8b47;
       }
       if (uVar3 == 0x100) {
@@ -110,7 +110,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
-    (*DAT_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)DAT_00802a38,(int)local_28);
+    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_28);
 LAB_004a8b47:
     uVar3 = DAT_0080743c & 0xff;
   }
@@ -144,7 +144,7 @@ LAB_004a8b47:
     default:
       goto switchD_004a8b81_caseD_108;
     case 0x10f:
-      STPlaySystemC::SaveObjData(DAT_00802a38,s_opticsave_007ac5d4,(byte *)&DAT_008073d0,399,0xc);
+      STPlaySystemC::SaveObjData(PTR_00802a38,s_opticsave_007ac5d4,(byte *)&DAT_008073d0,399,0xc);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -155,7 +155,7 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar4;
-    (*DAT_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)DAT_00802a38,(int)local_28);
+    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_28);
 LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }

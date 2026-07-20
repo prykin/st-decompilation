@@ -106,7 +106,7 @@ LAB_00495c27:
       *(undefined1 *)puVar8 = 0;
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    DAT_007fb270 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x18,10);
+    PTR_007fb270 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x18,10);
     thunk_FUN_00495e50();
     g_currentExceptionFrame = local_4c.previous;
     FUN_006e4d40((void *)local_8->field_0010,local_8->field_000C);
@@ -139,8 +139,8 @@ LAB_00495c27:
     }
     pDVar2 = local_8;
     thunk_FUN_00497000();
-    if (DAT_007fb270 != (uint *)0x0) {
-      FUN_006ae110((byte *)DAT_007fb270);
+    if (PTR_007fb270 != (DArrayTy *)0x0) {
+      FUN_006ae110((byte *)PTR_007fb270);
     }
     iVar3 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);
     if (iVar3 == 1) {

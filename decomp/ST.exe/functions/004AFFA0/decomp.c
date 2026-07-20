@@ -21,27 +21,27 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
   uVar3 = 0;
   local_14 = -1;
   local_18 = 0;
-  if (DAT_007fa150 != 0) {
-    *(undefined4 *)(DAT_007fa150 + 4) = 0;
-    iVar1 = FUN_006b1190(DAT_007fa150,&local_10);
+  if (PTR_007fa150 != (DArrayTy *)0x0) {
+    PTR_007fa150->iteratorIndex = 0;
+    iVar1 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
     if (-1 < iVar1) {
       do {
         if (local_10 == (STFishC *)0x0) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
         case CASE_38:
-          iVar1 = (*local_10->vtable->slot_2C)();
+          iVar1 = (*local_10->vtable->vfunc_2C)();
           if (iVar1 != 0xdc) break;
           goto LAB_004b004a;
         case CASE_39:
         case CASE_5E:
-          iVar1 = (*local_10->vtable->slot_2C)();
+          iVar1 = (*local_10->vtable->vfunc_2C)();
           if (iVar1 == 0xdd) goto LAB_004b004a;
           break;
         case CASE_4F:
-          iVar1 = (*local_10->vtable->slot_2C)();
+          iVar1 = (*local_10->vtable->vfunc_2C)();
           goto joined_r0x004b0044;
         case CASE_61:
-          iVar1 = (*local_10->vtable->slot_2C)();
+          iVar1 = (*local_10->vtable->vfunc_2C)();
 joined_r0x004b0044:
           if (iVar1 == 0xde) {
 LAB_004b004a:
@@ -71,7 +71,7 @@ LAB_004b004a:
           }
         }
 switchD_004afffd_caseD_3a:
-        iVar1 = FUN_006b1190(DAT_007fa150,&local_10);
+        iVar1 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
         if (iVar1 < 0) {
           return uVar3;
         }

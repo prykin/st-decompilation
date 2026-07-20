@@ -62,7 +62,8 @@ STBoatC::GetExplosionInfo
               (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
                0x3d4f);
   }
-  uVar4 = FUN_006acc70((&pSVar2->field_0282)[iVar3],local_28,&local_34);
+  uVar4 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)(&pSVar2->field_0282)[iVar3],local_28,
+                       &local_34);
   if (uVar4 == 0xfffffffc) {
     RaiseInternalException
               (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,

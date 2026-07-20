@@ -1,5 +1,5 @@
 
-void FUN_0075a490(int param_1)
+void FUN_0075a490(AnonShape_0075A490_EF74CB12 *param_1)
 
 {
   int iVar1;
@@ -16,13 +16,13 @@ void FUN_0075a490(int param_1)
   int local_14;
   undefined4 *local_10;
   
-  iVar1 = *(int *)(param_1 + 0x12a);
-  iVar2 = *(int *)(param_1 + 0x196);
+  iVar1 = param_1->field_012A;
+  iVar2 = param_1->field_0196;
   local_18 = 0;
-  if (0 < *(int *)(param_1 + 0x1c)) {
-    piVar9 = (int *)(*(int *)(param_1 + 0xd0) + 0xc);
+  if (0 < param_1->field_001C) {
+    piVar9 = (int *)(param_1->field_00D0 + 0xc);
     do {
-      iVar6 = (piVar9[6] * *piVar9) / *(int *)(param_1 + 0x12a);
+      iVar6 = (piVar9[6] * *piVar9) / param_1->field_012A;
       iVar3 = *(int *)(*(int *)(iVar2 + 0x38) + local_18 * 4);
       iVar4 = *(int *)(*(int *)(iVar2 + 0x3c) + local_18 * 4);
       if (0 < iVar6) {
@@ -45,7 +45,7 @@ void FUN_0075a490(int param_1)
       }
       local_18 = local_18 + 1;
       piVar9 = piVar9 + 0x15;
-    } while (local_18 < *(int *)(param_1 + 0x1c));
+    } while (local_18 < param_1->field_001C);
   }
   return;
 }

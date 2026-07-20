@@ -41,7 +41,7 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
       break;
     case 0x62:
     case 100:
-      thunk_FUN_00590860(local_8);
+      thunk_FUN_00590860((STJellyGunC *)local_8);
       if (pMVar2->field_005D == '\0') {
         pMVar2->field_0040 = 0x200;
         pMVar2->field_0044 = 0;

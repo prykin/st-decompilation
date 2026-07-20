@@ -54,7 +54,7 @@ STAllPlayersC::AddObjToTmp2
     return 0xaffe0001;
   }
   if (param_2 == 0) {
-    local_14 = (int)&DAT_007f4f83 + param_1 * 0xa62;
+    local_14 = param_1 * 0xa62 + 0x7f4f83;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
       GVar5 = CASE_2;
@@ -63,7 +63,7 @@ LAB_0042bf8b:
     }
   }
   else if (param_2 == 1) {
-    local_14 = (int)&DAT_007f4fd3 + param_1 * 0xa62;
+    local_14 = param_1 * 0xa62 + 0x7f4fd3;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
       GVar5 = CASE_5;

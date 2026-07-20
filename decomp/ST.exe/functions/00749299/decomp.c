@@ -18,7 +18,7 @@ undefined4 FUN_00749299(int *param_1,int param_2)
     param_1[8] = param_1[8] + 1;
     param_1[7] = param_2;
     if (param_1[10] != 0) {
-      FUN_0074931d((int)(param_1 + -3));
+      FUN_0074931d((AnonShape_0074931D_CA8B6F7D *)(param_1 + -3));
     }
     if ((param_1[0x12] != 0) && (param_1[8] == param_1[0xc])) {
       (**(code **)(param_1[-3] + 0x10))();

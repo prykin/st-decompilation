@@ -26,12 +26,12 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      if (DAT_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)DAT_00802a30->field_00AD);
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (PTR_00802a30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (DAT_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
       }
     }
     this_01 = local_8;
@@ -48,18 +48,18 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x18);
-    if (*(MMsgTy **)(DAT_0081176c + 0x2e6) != (MMsgTy *)0x0) {
-      MMsgTy::HidePanel(*(MMsgTy **)(DAT_0081176c + 0x2e6),0,0,1);
-      MMsgTy::HideSprites(*(MMsgTy **)(DAT_0081176c + 0x2e6));
+    if (PTR_0081176c->field_02E6 != (MMsgTy *)0x0) {
+      MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
+      MMsgTy::HideSprites(PTR_0081176c->field_02E6);
     }
     DarkScreen(DAT_0080759c,1,0);
     PaintMAdv(this_01);
     thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_01->field_005E,10,2);
-    this_00 = DAT_00802a30;
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar4 = DAT_00802a30->field_00C9;
-      uVar1 = DAT_00802a30->field_00C5;
-      DAT_00802a30->field_0493 = 1;
+    this_00 = PTR_00802a30;
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      uVar4 = PTR_00802a30->field_00C9;
+      uVar1 = PTR_00802a30->field_00C5;
+      PTR_00802a30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,uVar1,uVar4);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

@@ -31,12 +31,12 @@ byte __cdecl FUN_006800a0(byte *param_1)
     return 1;
   }
   iVar6 = 0;
-  iVar2 = *(int *)(DAT_00848a2c + 8);
+  iVar2 = PTR_00848a2c->field_0008;
   if (0 < iVar2) {
     do {
       pbVar4 = param_1;
       if (iVar6 < iVar2) {
-        pbVar5 = *(byte **)(*(int *)(DAT_00848a2c + 0x14) + iVar6 * 4);
+        pbVar5 = *(byte **)(PTR_00848a2c->field_0014 + iVar6 * 4);
       }
       else {
         pbVar5 = (byte *)0x0;
@@ -68,12 +68,12 @@ LAB_00680166:
     } while (iVar6 < iVar2);
   }
   iVar6 = 0;
-  iVar2 = *(int *)(DAT_00848a34 + 8);
+  iVar2 = PTR_00848a34->field_0008;
   if (0 < iVar2) {
     do {
       pbVar4 = param_1;
       if (iVar6 < iVar2) {
-        pbVar5 = *(byte **)(*(int *)(DAT_00848a34 + 0x14) + iVar6 * 4);
+        pbVar5 = *(byte **)(PTR_00848a34->field_0014 + iVar6 * 4);
       }
       else {
         pbVar5 = (byte *)0x0;

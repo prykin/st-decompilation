@@ -20,7 +20,7 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
   if (uVar1 != 0) {
     uVar4 = 0;
     do {
-      FUN_006acc70(this->field_0029,uVar4,&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar4,&local_8);
       if ((short)local_8 != -1) {
         this_00 = (int *)STAllPlayersC::GetObjPtr
                                    (g_sTAllPlayers_007FA174,

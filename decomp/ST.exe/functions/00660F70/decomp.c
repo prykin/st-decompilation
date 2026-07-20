@@ -16,18 +16,8 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
   undefined4 uVar9;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  Global_sub_004E80F0_param_2Enum *pGVar10;
-  Global_sub_004E80F0_param_2Enum local_6c;
-  undefined2 local_68;
-  undefined2 local_66;
-  uint local_64;
-  undefined2 local_60;
-  undefined4 local_5e;
-  undefined2 local_56;
-  undefined2 local_54;
-  undefined2 local_52;
-  char local_50;
-  char local_4f [47];
+  AnonShape_0068EB30_4F4B480A *pAVar10;
+  AnonShape_0068EB30_4F4B480A local_6c;
   int local_20;
   int local_1c;
   int local_18;
@@ -116,8 +106,8 @@ switchD_0066104e_caseD_9:
                 iVar6 == 0)))) {
               local_10 = 0;
               if (((0x53 < *local_8) && (*local_8 < 0x5b)) &&
-                 (groupContent = thunk_FUN_0065e360((int)this,uVar9,0x53),
-                 groupContent != (uint *)0x0)) {
+                 (groupContent = thunk_FUN_0065e360(this,uVar9,0x53), groupContent != (uint *)0x0))
+              {
                 if (((groupContent[3] != 0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
                    (uVar7 = STAllPlayersC::GetObjPtr
                                       (g_sTAllPlayers_007FA174,
@@ -153,40 +143,41 @@ switchD_0066104e_caseD_9:
             }
           }
           pGVar4 = local_8;
-          pGVar10 = &local_6c;
+          pAVar10 = &local_6c;
           for (iVar6 = 0x12; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *pGVar10 = 0;
-            pGVar10 = pGVar10 + 1;
+            *(undefined4 *)pAVar10 = 0;
+            pAVar10 = (AnonShape_0068EB30_4F4B480A *)((int)&pAVar10->field_0003 + 1);
           }
           uVar7 = param_1[3];
-          *(undefined2 *)pGVar10 = 0;
-          local_6c = *pGVar4;
-          local_68 = param_2;
+          *(undefined2 *)pAVar10 = 0;
+          local_6c._0_4_ = *pGVar4;
+          local_6c._4_2_ = param_2;
           if (local_20 == 0) {
-            local_64 = 0;
+            local_6c._8_4_ = 0;
           }
           else {
-            local_64 = *(uint *)(local_20 + 0x65c);
-            *(uint *)(local_20 + 0x65c) = local_64 + 1;
+            local_6c._8_4_ = *(uint *)(local_20 + 0x65c);
+            *(uint *)(local_20 + 0x65c) = local_6c._8_4_ + 1;
           }
-          local_60 = *(undefined2 *)((int)this + 0x7d);
-          local_56 = *(undefined2 *)((int)param_1 + 0xe);
-          local_54 = (undefined2)param_1[4];
-          local_52 = *(undefined2 *)((int)param_1 + 0x12);
-          local_50 = (char)param_1[5];
-          local_5e = 0;
-          if (((local_50 < '\0') || ('\a' < local_50)) &&
-             ((local_50 = *(char *)((int)this + 0x81), local_50 < '\0' || ('\a' < local_50)))) {
-            local_50 = *(char *)((int)this + 0x24);
+          local_6c._12_2_ = *(undefined2 *)((int)this + 0x7d);
+          local_6c._22_2_ = *(undefined2 *)((int)param_1 + 0xe);
+          local_6c._24_2_ = *(undefined2 *)(param_1 + 4);
+          local_6c._26_2_ = *(undefined2 *)((int)param_1 + 0x12);
+          local_6c._28_1_ = SUB41(param_1[5],0);
+          local_6c._14_4_ = 0;
+          if ((((char)local_6c._28_1_ < '\0') || ('\a' < (char)local_6c._28_1_)) &&
+             ((local_6c._28_1_ = *(char *)((int)this + 0x81), (char)local_6c._28_1_ < '\0' ||
+              ('\a' < (char)local_6c._28_1_)))) {
+            local_6c._28_1_ = *(char *)((int)this + 0x24);
           }
-          local_66 = (short)uVar7;
-          Library::MSVCRT::_strncpy(local_4f,(char *)((int)param_1 + 0x15),0xe);
+          local_6c.field_0006 = (short)uVar7;
+          Library::MSVCRT::_strncpy(&local_6c.field_0x1d,(char *)((int)param_1 + 0x15),0xe);
           iVar6 = AiTactClassTy::PrepareToSave
                             (*(AiTactClassTy **)((int)this + 0x284),&local_6c,
                              *(short *)((int)this + 0x7f));
           pSVar5 = g_sTAllPlayers_007FA174;
           if (iVar6 == 0) {
-            param_1[9] = local_64;
+            param_1[9] = local_6c._8_4_;
             return;
           }
         }

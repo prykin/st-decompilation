@@ -11,7 +11,7 @@ undefined4 FUN_00693dc0(cMf32 *param_1,undefined4 param_2)
   undefined4 uStackY_1c;
   
   Library::MSVCRT::FUN_0072da40();
-  thunk_FUN_00693910(local_19a8);
+  thunk_FUN_00693910((AnonShape_00693910_1CC6632C *)local_19a8);
   puVar3 = this;
   puVar4 = local_19a8;
   for (iVar2 = 0x666; iVar2 != 0; iVar2 = iVar2 + -1) {

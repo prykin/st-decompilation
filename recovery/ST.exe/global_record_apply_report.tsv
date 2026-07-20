@@ -1,0 +1,2 @@
+record_id	base_address	status	typed_fields	named_fields	detail
+player_runtime	007F4E20	unchanged	18	4	record=/SubmarineTitans/Recovered/GlobalRecords/STPlayerRuntimeRecord; array=g_playerRuntime[8]; stride=0xA62; fields=113; updated unchanged script-owned structure; existing script-owned record array

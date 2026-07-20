@@ -7,30 +7,30 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
   int iVar1;
   undefined4 *puVar2;
   int iVar3;
-  uint *puVar4;
-  uint *puVar5;
+  AnonShape_006E8840_CF3FA5BA *pAVar4;
+  AnonShape_006E8840_CF3FA5BA *pAVar5;
   int local_8;
   
   *param_1 = -1;
-  puVar5 = *(uint **)((int)this + 0x2e8);
-  puVar4 = (uint *)0x0;
-  if (puVar5 == (uint *)0x0) {
+  pAVar5 = *(AnonShape_006E8840_CF3FA5BA **)((int)this + 0x2e8);
+  pAVar4 = (AnonShape_006E8840_CF3FA5BA *)0x0;
+  if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)0x0) {
     local_8 = *(int *)((int)this + 0x314);
   }
   else {
-    *(uint *)((int)this + 0x2e8) = puVar5[2];
-    if (puVar5 == *(uint **)((int)this + 0x2ec)) {
+    *(undefined4 *)((int)this + 0x2e8) = *(undefined4 *)&pAVar5->field_0x8;
+    if (pAVar5 == *(AnonShape_006E8840_CF3FA5BA **)((int)this + 0x2ec)) {
       *(undefined4 *)((int)this + 0x2ec) = 0;
       *(undefined4 *)((int)this + 0x2e8) = 0;
     }
-    local_8 = ((int)puVar5 - *(int *)((int)this + 0x31c)) / 0x114;
-    puVar4 = puVar5;
+    local_8 = ((int)pAVar5 - *(int *)((int)this + 0x31c)) / 0x114;
+    pAVar4 = pAVar5;
   }
   if (local_8 < *(int *)((int)this + 0x314)) {
-    puVar5 = puVar4;
+    pAVar5 = pAVar4;
     for (iVar1 = 0x45; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pAVar5 = 0;
+      pAVar5 = (AnonShape_006E8840_CF3FA5BA *)&pAVar5->field_0x4;
     }
   }
   else {
@@ -50,34 +50,34 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
     }
     local_8 = *(int *)((int)this + 0x314);
     *(int *)((int)this + 0x314) = local_8 + 1;
-    puVar4 = (uint *)(*(int *)((int)this + 0x31c) + local_8 * 0x114);
+    pAVar4 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)((int)this + 0x31c) + local_8 * 0x114);
   }
   if (*(int *)((int)this + 0x310) <= local_8) {
     *(int *)((int)this + 0x310) = local_8 + 1;
   }
-  puVar4[0x21] = param_6;
-  puVar4[0x22] = param_7;
-  *puVar4 = (uint)&DAT_00818000;
-  puVar4[2] = 1;
-  puVar4[0xd] = param_4;
-  puVar4[0xe] = param_5;
-  puVar4[0x25] = param_2;
-  puVar4[0x28] = param_3;
-  puVar4[6] = param_8;
-  puVar4[0x23] = 0xffffffff;
+  *(uint *)&pAVar4->field_0x84 = param_6;
+  *(uint *)&pAVar4->field_0x88 = param_7;
+  *(undefined **)pAVar4 = &DAT_00818000;
+  *(undefined4 *)&pAVar4->field_0x8 = 1;
+  pAVar4->field_0034 = param_4;
+  pAVar4->field_0038 = param_5;
+  pAVar4->field_0094 = param_2;
+  pAVar4->field_00A0 = (int *)param_3;
+  *(uint *)&pAVar4->field_0x18 = param_8;
+  *(undefined4 *)&pAVar4->field_0x8c = 0xffffffff;
   if (0 < (int)param_2) {
     puVar2 = Library::DKW::LIB::FUN_006aac10(param_2 << 2);
-    puVar4[0x29] = (uint)puVar2;
+    *(undefined4 **)(pAVar4 + 1) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {
       return 0xfffffffe;
     }
   }
   if ((0 < (int)param_4) && (0 < (int)param_5)) {
-    *puVar4 = *puVar4 | 0x1000;
+    *(uint *)pAVar4 = *(uint *)pAVar4 | 0x1000;
     *param_1 = local_8;
     return 0;
   }
-  FUN_006e8840((int)puVar4);
+  FUN_006e8840(pAVar4);
   *param_1 = local_8;
   return 0;
 }

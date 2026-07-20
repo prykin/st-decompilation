@@ -1,5 +1,5 @@
 
-void __fastcall FUN_005c05f0(int param_1)
+void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
 
 {
   undefined1 *puVar1;
@@ -12,37 +12,37 @@ void __fastcall FUN_005c05f0(int param_1)
   int local_8;
   
   local_8 = 4;
-  puVar3 = (uint *)(param_1 + 0x8f);
+  puVar3 = (uint *)&param_1->field_0x8f;
   do {
     if (*puVar3 != 0) {
-      StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*puVar3);
+      StartSystemTy::sub_006E56B0(param_1->field_000C,*puVar3);
       *puVar3 = 0;
     }
     puVar3 = puVar3 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if (*(uint *)(param_1 + 0x9f) != 0) {
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x9f));
-    *(undefined4 *)(param_1 + 0x9f) = 0;
+  if (param_1->field_009F != 0) {
+    StartSystemTy::sub_006E56B0(param_1->field_000C,param_1->field_009F);
+    param_1->field_009F = 0;
   }
-  if (DAT_00802a30 != 0) {
-    if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
     }
   }
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  if (*(HoloTy **)(param_1 + 0x453) != (HoloTy *)0x0) {
-    HoloTy::Done(*(HoloTy **)(param_1 + 0x453));
-    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x453));
-    *(undefined4 *)(param_1 + 0x453) = 0;
+  if ((HoloTy *)param_1->field_0453 != (HoloTy *)0x0) {
+    HoloTy::Done((HoloTy *)param_1->field_0453);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0453);
+    param_1->field_0453 = 0;
   }
-  if (*(HoloTy **)(param_1 + 0x457) != (HoloTy *)0x0) {
-    HoloTy::Done(*(HoloTy **)(param_1 + 0x457));
-    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x457));
-    *(undefined4 *)(param_1 + 0x457) = 0;
+  if ((HoloTy *)param_1->field_0457 != (HoloTy *)0x0) {
+    HoloTy::Done((HoloTy *)param_1->field_0457);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0457);
+    param_1->field_0457 = 0;
   }
   puVar1 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
   if (puVar1 == (undefined1 *)0x0) {
@@ -64,26 +64,26 @@ void __fastcall FUN_005c05f0(int param_1)
     *(undefined4 *)(puVar1 + 0x2f) = 1;
     *(undefined4 *)(puVar1 + 0x2b) = 1;
   }
-  *(undefined1 **)(param_1 + 0x453) = puVar1;
+  param_1->field_0453 = puVar1;
   if (puVar1 != (undefined1 *)0x0) {
     uVar7 = 0;
     cVar6 = '\x01';
     uVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x47,0x46,0x2bd,0x15e);
-    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x453),CASE_2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,
+    uVar5 = HoloTy::Init((HoloTy *)param_1->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,
                          uVar7);
     if (uVar5 != 0) {
-      iVar2 = *(int *)(param_1 + 0x453);
+      iVar2 = param_1->field_0453;
       *(undefined1 *)(iVar2 + 2) = 0;
       *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
-      uVar5 = *(uint *)(*(int *)(param_1 + 0x453) + 3);
+      uVar5 = *(uint *)(param_1->field_0453 + 3);
       if (-1 < (int)uVar5) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar5);
       }
-      HoloTy::NextFas(*(HoloTy **)(param_1 + 0x453));
+      HoloTy::NextFas((HoloTy *)param_1->field_0453);
     }
-    HoloTy::NextFas(*(HoloTy **)(param_1 + 0x453));
+    HoloTy::NextFas((HoloTy *)param_1->field_0453);
   }
   puVar1 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
   if (puVar1 == (undefined1 *)0x0) {
@@ -105,41 +105,41 @@ void __fastcall FUN_005c05f0(int param_1)
     *(undefined4 *)(puVar1 + 0x2f) = 1;
     *(undefined4 *)(puVar1 + 0x2b) = 1;
   }
-  *(undefined1 **)(param_1 + 0x457) = puVar1;
+  param_1->field_0457 = puVar1;
   if (puVar1 != (undefined1 *)0x0) {
     uVar7 = 0;
     cVar6 = '\x01';
     uVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x1a,10,0x2e9,0x32);
-    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x457),CASE_3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7)
+    uVar5 = HoloTy::Init((HoloTy *)param_1->field_0457,CASE_3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7)
     ;
     if (uVar5 != 0) {
-      iVar2 = *(int *)(param_1 + 0x457);
+      iVar2 = param_1->field_0457;
       *(undefined1 *)(iVar2 + 2) = 0;
       *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
-      uVar5 = *(uint *)(*(int *)(param_1 + 0x457) + 3);
+      uVar5 = *(uint *)(param_1->field_0457 + 3);
       if (-1 < (int)uVar5) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar5);
       }
-      HoloTy::NextFas(*(HoloTy **)(param_1 + 0x457));
+      HoloTy::NextFas((HoloTy *)param_1->field_0457);
     }
-    HoloTy::NextFas(*(HoloTy **)(param_1 + 0x457));
+    HoloTy::NextFas((HoloTy *)param_1->field_0457);
   }
-  PutDDX(0,0,'\x01',*(BITMAPINFO **)(param_1 + 0x5d));
-  if (DAT_00802a30 != 0) {
-    if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
+  PutDDX(0,0,'\x01',param_1->field_005D);
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
     }
-    else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                (*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
-                 *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
-      *(undefined1 *)(param_1 + 0x65) = 4;
+                ((uint *)PTR_00802a30->field_0060,PTR_00802a30->field_001C,0xfffffffe,
+                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
+      param_1->field_0065 = 4;
       return;
     }
   }
-  *(undefined1 *)(param_1 + 0x65) = 4;
+  param_1->field_0065 = 4;
   return;
 }
 

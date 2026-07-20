@@ -3,7 +3,8 @@
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::PrepareToSave */
 
-int __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,undefined4 *param_1,short param_2)
+int __thiscall
+AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short param_2)
 
 {
   short sVar1;
@@ -23,21 +24,20 @@ int __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,undefined4 *para
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = local_8;
   if (iVar4 == 0) {
-    param_1[0xb] = 0;
-    if (*(short *)(param_1 + 3) == -1) {
+    *(undefined4 *)&param_1->field_0x2c = 0;
+    if (*(short *)&param_1->field_0xc == -1) {
       uVar5 = 0xffffffff;
     }
     else {
-      uVar5 = thunk_FUN_0068e220(local_8,*(short *)(param_1 + 3));
+      uVar5 = thunk_FUN_0068e220(local_8,*(short *)&param_1->field_0xc);
     }
-    param_1[0xc] = uVar5;
+    *(uint *)&param_1->field_0x30 = uVar5;
     sVar1 = pAVar3->field_007C;
-    param_1[0xd] = 0xffffffff;
-    *(short *)((int)param_1 + 6) =
-         *(short *)((int)param_1 + 6) + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
-    *(undefined4 *)((int)param_1 + 0x3a) = pAVar3->field_012C;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar3->field_00BD,param_1);
-    thunk_FUN_00676c40(pAVar3->field_00BD,&LAB_0040242d);
+    *(undefined4 *)&param_1->field_0x34 = 0xffffffff;
+    param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
+    param_1->field_003A = pAVar3->field_012C;
+    Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar3->field_00BD,(undefined4 *)param_1);
+    thunk_FUN_00676c40((AnonShape_00676C40_253791B9 *)pAVar3->field_00BD,&LAB_0040242d);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

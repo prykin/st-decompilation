@@ -6,10 +6,10 @@
 void __cdecl FUN_0068cda0(int *param_1,Global_sub_0068CDA0_param_2Enum param_2)
 
 {
-  byte *groupContent;
+  AnonShape_006B5570_4D68B99C *groupContent;
   
-  groupContent = (byte *)*param_1;
-  if (groupContent != (byte *)0x0) {
+  groupContent = (AnonShape_006B5570_4D68B99C *)*param_1;
+  if (groupContent != (AnonShape_006B5570_4D68B99C *)0x0) {
     switch(param_2) {
     case CASE_1:
       thunk_FUN_006686c0(param_1);
@@ -32,7 +32,7 @@ void __cdecl FUN_0068cda0(int *param_1,Global_sub_0068CDA0_param_2Enum param_2)
       return;
     case CASE_A:
     case CASE_40:
-      FUN_006ae110(groupContent);
+      FUN_006ae110((byte *)groupContent);
       *param_1 = 0;
     }
   }

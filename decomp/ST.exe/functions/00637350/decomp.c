@@ -118,7 +118,8 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
                                       (int)sVar12) * 8), this != (int *)0x0 &&
                      (iVar11 = (**(code **)(*this + 0xf0))(), uVar8 = param_9, iVar11 != 0)))))) &&
                   ((uint)this[9] < 8)) &&
-                 ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[this[9] * 0x51] < 8)))) {
+                 ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                  ((byte)(&DAT_008087e9)[this[9] * 0x51] < 8)))) {
                 bVar1 = *(byte *)(this + 9);
                 param_8 = CONCAT31(param_8._1_3_,bVar1);
                 if (DAT_00808a8f == '\0') {

@@ -11,8 +11,8 @@ uint __thiscall FUN_006216e0(void *this,undefined4 param_1)
   
   local_14 = 0;
   local_8 = (undefined1)((uint)param_1 >> 0x18);
-  local_10 = *(int *)(DAT_00802a38 + 0xe4) << 8;
-  local_c._0_1_ = (undefined1)((uint)*(int *)(DAT_00802a38 + 0xe4) >> 0x18);
+  local_10 = PTR_00802a38->field_00E4 << 8;
+  local_c._0_1_ = (undefined1)((uint)PTR_00802a38->field_00E4 >> 0x18);
   local_c = CONCAT31((int3)param_1,(undefined1)local_c);
   if (*(int *)((int)this + 0x10a) == 0) {
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xd,10);

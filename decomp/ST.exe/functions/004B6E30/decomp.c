@@ -39,9 +39,9 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
   }
   iVar4 = iVar4 * 4;
   iVar3 = *(int *)((int)this + 0x24) * 0xa62;
-  if (*(int *)((int)&DAT_007f579a + iVar3 + iVar4) == 0) {
+  if (*(int *)(iVar4 + 0x7f579a + iVar3) == 0) {
     iVar2 = 0;
-    piVar5 = (int *)((int)&DAT_007f579a + iVar3);
+    piVar5 = &g_playerRuntime[*(int *)((int)this + 0x24)].field2228_0x97a;
     iVar1 = 6;
     do {
       if (iVar2 < *piVar5) {
@@ -52,21 +52,21 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
     } while (iVar1 != 0);
     if ((-1 < iVar2) && (iVar2 < 6)) {
       iVar2 = iVar2 + 1;
-      *(int *)((int)&DAT_007f579a + iVar3 + iVar4) = iVar2;
+      *(int *)(iVar4 + 0x7f579a + iVar3) = iVar2;
     }
   }
   else {
     iVar3 = 0;
     do {
       iVar1 = *(int *)((int)this + 0x24) * 0xa62;
-      iVar2 = *(int *)((int)&DAT_007f579a + iVar1 + iVar3);
-      if (*(int *)((int)&DAT_007f579a + iVar1 + iVar4) < iVar2) {
-        *(int *)((int)&DAT_007f579a + iVar1 + iVar3) = iVar2 + -1;
+      iVar2 = *(int *)(iVar3 + 0x7f579a + iVar1);
+      if (*(int *)(iVar4 + 0x7f579a + iVar1) < iVar2) {
+        *(int *)(iVar3 + 0x7f579a + iVar1) = iVar2 + -1;
       }
       iVar3 = iVar3 + 4;
     } while (iVar3 < 0x18);
     iVar2 = *(int *)((int)this + 0x24);
-    *(undefined4 *)((int)&DAT_007f579a + iVar2 * 0xa62 + iVar4) = 0;
+    *(undefined4 *)(iVar4 + 0x7f579a + iVar2 * 0xa62) = 0;
   }
   thunk_FUN_004b7750(CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)((int)this + 0x24)));
   return 0;

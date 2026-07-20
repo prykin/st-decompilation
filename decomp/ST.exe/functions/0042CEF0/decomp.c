@@ -10,43 +10,42 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
   code *pcVar1;
   int iVar2;
   short *psVar3;
-  int iVar4;
-  int *piVar5;
-  uint uVar6;
+  int *piVar4;
+  uint uVar5;
   int local_8;
   
-  iVar2 = (uint)DAT_0080874d * 0xa62;
+  uVar5 = (uint)DAT_0080874d;
   if (0x1a4 < param_1) {
     if (param_1 < 0x1b9) {
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {
-      piVar5 = (int *)((int)&DAT_007f5031 + iVar2);
+      piVar4 = &g_playerRuntime[uVar5].field446_0x211;
       local_8 = 10;
       do {
-        if ((*(int *)((int)piVar5 + -10) == 0x19a) && (*(int *)((int)piVar5 + -6) == (int)param_2))
+        if ((*(int *)((int)piVar4 + -10) == 0x19a) && (*(int *)((int)piVar4 + -6) == (int)param_2))
         {
-          uVar6 = 0;
-          iVar2 = *(int *)(*piVar5 + 0xc);
+          uVar5 = 0;
+          iVar2 = *(int *)(*piVar4 + 0xc);
           if (0 < iVar2) {
             do {
-              FUN_006acc70(*piVar5,uVar6,&param_1);
+              FUN_006acc70((AnonShape_006ACC70_C8641025 *)*piVar4,uVar5,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
-                Library::DKW::TBL::FUN_006ae140((uint *)*piVar5,uVar6,&param_1);
-                *(short *)(piVar5 + 1) = (short)piVar5[1] + -1;
-                if ((short)piVar5[1] == 0) {
-                  FUN_006ae110((byte *)*piVar5);
-                  *piVar5 = 0;
-                  *(undefined4 *)((int)piVar5 + -10) = 0;
+                Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&param_1);
+                *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
+                if ((short)piVar4[1] == 0) {
+                  FUN_006ae110((byte *)*piVar4);
+                  *piVar4 = 0;
+                  *(undefined4 *)((int)piVar4 + -10) = 0;
                 }
                 break;
               }
-              uVar6 = uVar6 + 1;
-            } while ((int)uVar6 < iVar2);
+              uVar5 = uVar5 + 1;
+            } while ((int)uVar5 < iVar2);
           }
         }
-        piVar5 = piVar5 + 4;
+        piVar4 = piVar4 + 4;
         local_8 = local_8 + -1;
         if (local_8 == 0) {
           return;
@@ -65,31 +64,31 @@ LAB_0042cf42:
   }
   if (param_1 != 0x1a4) {
     if (param_1 == 0x14) {
-      piVar5 = (int *)((int)&DAT_007f5031 + iVar2);
+      piVar4 = &g_playerRuntime[uVar5].field446_0x211;
       local_8 = 10;
       do {
-        if ((*(int *)((int)piVar5 + -10) == 0x3c) && (*(int *)((int)piVar5 + -6) == (int)param_2)) {
-          uVar6 = 0;
-          iVar2 = *(int *)(*piVar5 + 0xc);
+        if ((*(int *)((int)piVar4 + -10) == 0x3c) && (*(int *)((int)piVar4 + -6) == (int)param_2)) {
+          uVar5 = 0;
+          iVar2 = *(int *)(*piVar4 + 0xc);
           if (0 < iVar2) {
             do {
-              FUN_006acc70(*piVar5,uVar6,&param_1);
+              FUN_006acc70((AnonShape_006ACC70_C8641025 *)*piVar4,uVar5,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
-                Library::DKW::TBL::FUN_006ae140((uint *)*piVar5,uVar6,&param_1);
-                *(short *)(piVar5 + 1) = (short)piVar5[1] + -1;
-                if ((short)piVar5[1] == 0) {
-                  FUN_006ae110((byte *)*piVar5);
-                  *piVar5 = 0;
-                  *(undefined4 *)((int)piVar5 + -10) = 0;
+                Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&param_1);
+                *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
+                if ((short)piVar4[1] == 0) {
+                  FUN_006ae110((byte *)*piVar4);
+                  *piVar4 = 0;
+                  *(undefined4 *)((int)piVar4 + -10) = 0;
                 }
                 break;
               }
-              uVar6 = uVar6 + 1;
-            } while ((int)uVar6 < iVar2);
+              uVar5 = uVar5 + 1;
+            } while ((int)uVar5 < iVar2);
           }
         }
-        piVar5 = piVar5 + 4;
+        piVar4 = piVar4 + 4;
         local_8 = local_8 + -1;
         if (local_8 == 0) {
           return;
@@ -99,17 +98,17 @@ LAB_0042cf42:
     if ((param_1 != 0x5a) && (param_1 != 0x172)) goto LAB_0042cf42;
   }
 LAB_0042d011:
-  iVar4 = 0;
-  psVar3 = &DAT_007f502f + (uint)DAT_0080874d * 0x531;
+  iVar2 = 0;
+  psVar3 = &g_playerRuntime[uVar5].field445_0x20f;
   while (((*(int *)(psVar3 + -4) != param_1 || (*(int *)(psVar3 + -2) != (int)param_2)) ||
          (*psVar3 != param_3))) {
-    iVar4 = iVar4 + 1;
+    iVar2 = iVar2 + 1;
     psVar3 = psVar3 + 8;
-    if (9 < iVar4) {
+    if (9 < iVar2) {
       return;
     }
   }
-  *(undefined4 *)((int)&DAT_007f5027 + iVar4 * 0x10 + iVar2) = 0;
+  *(undefined4 *)(iVar2 * 0x10 + uVar5 * 0xa62 + 0x7f5027) = 0;
   return;
 }
 

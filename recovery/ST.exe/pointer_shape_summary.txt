@@ -1,0 +1,12 @@
+program=ST.exe
+functions_seen=5630
+functions_with_raw_access=1047
+raw_accesses=5711
+targets=1388
+target_apply=19
+existing_type_targets=14
+anonymous_type_targets=5
+anonymous_types=0
+decompile_failures=1
+policy=known structure from typed calls first; field-only existing-type matches require review; one anonymous type per persistent multi-field target
+manual_safety=USER_DEFINED/IMPORTED and concrete non-generic target types are never auto-replaced

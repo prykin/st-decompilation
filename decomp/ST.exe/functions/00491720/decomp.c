@@ -4,10 +4,10 @@
    Diagnostic line evidence: 20511 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-void __fastcall FUN_00491720(int *param_1,undefined4 param_2)
+void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
 
 {
-  int *piVar1;
+  undefined4 *puVar1;
   uint uVar2;
   int iVar3;
   undefined4 uVar4;
@@ -29,32 +29,31 @@ void __fastcall FUN_00491720(int *param_1,undefined4 param_2)
   uVar7 = 0;
   local_8 = 0;
   if (DAT_008117bc != (undefined4 *)0x0) {
-    local_18 = (undefined2)param_1[9];
-    local_16 = *(undefined2 *)((int)param_1 + 0x32);
-    piVar1 = (int *)((int)param_1 + 0x5a6);
+    local_18 = *(undefined2 *)&param_1->field_0x24;
+    local_16 = param_1->field_0032;
+    puVar1 = &param_1->field_05A6;
     local_1c = 0x5dd3;
-    if ((*piVar1 == 0) &&
-       (iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)param_1 + 0x5a2),piVar1), iVar3 == -4)) {
+    if ((*puVar1 == 0) &&
+       (iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_05A2,puVar1), iVar3 == -4)) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x501f);
     }
-    local_14 = *(undefined2 *)(*piVar1 + 0x24);
-    local_12 = *(undefined2 *)(*piVar1 + 0x32);
+    local_14 = *(undefined2 *)(*puVar1 + 0x24);
+    local_12 = *(undefined2 *)(*puVar1 + 0x32);
     (**(code **)*DAT_008117bc)(local_2c);
     param_2 = extraout_EDX;
   }
-  param_1[0x170] = 0;
-  *(undefined4 *)((int)param_1 + 0x7c2) = 0;
-  *(undefined4 *)((int)param_1 + 0x5a6) = 0;
+  param_1->field_05C0 = 0;
+  param_1->field_07C2 = 0;
+  param_1->field_05A6 = 0;
   uVar4 = DumpClassC::WritePtr
-                    (*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
-                     *(short *)((int)param_1 + 0x5f),
-                     CONCAT31((int3)((uint)param_2 >> 8),*(undefined1 *)((int)param_1 + 0x8e)),
-                     (int)param_1);
-  pSVar5 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),(char)param_1[9]),
-                              CONCAT22((short)((uint)uVar4 >> 0x10),(short)param_1[0xc]));
+                    (param_1->field_005B,param_1->field_005D,param_1->field_005F,
+                     CONCAT31((int3)((uint)param_2 >> 8),param_1->field_008E),
+                     (AnonShape_00495EC0_95A268C6 *)param_1);
+  pSVar5 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),param_1->field_0x24),
+                              CONCAT22((short)((uint)uVar4 >> 0x10),param_1->field_0030));
   uVar6 = thunk_FUN_00424790((int)pSVar5);
-  uVar2 = *(uint *)((int)param_1 + 0x1d1);
+  uVar2 = param_1->field_01D1;
   uVar8 = local_8;
   if ((uVar2 & 1) == 0) {
     if ((uVar6 & 1) != 0) {
@@ -97,13 +96,13 @@ void __fastcall FUN_00491720(int *param_1,undefined4 param_2)
     uVar8 = uVar8 | 0x10;
   }
   if (uVar7 != 0) {
-    (**(code **)(*param_1 + 0x100))(uVar7);
+    (*param_1->vtable->vfunc_100)(uVar7);
   }
   if (uVar8 != 0) {
-    (**(code **)(*param_1 + 0x104))(uVar8);
+    (*param_1->vtable->vfunc_104)(uVar8);
   }
-  local_c = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
-  STBoatC::CmdToObj((STBoatC *)param_1,CASE_3,&local_c);
+  local_c = PTR_00802a38->field_00E4;
+  STBoatC::CmdToObj(param_1,CASE_3,&local_c);
   return;
 }
 

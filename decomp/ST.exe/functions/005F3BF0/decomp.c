@@ -32,7 +32,7 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
     *(undefined4 *)((int)this + 0xdf) = 0x14;
     *(undefined4 *)((int)this + 0xe7) = 1;
     *(int *)((int)this + 0xef) = iVar5;
-    *(undefined4 *)((int)this + 0xfb) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0xfb) = PTR_00802a38->field_00E4;
     if (0 < iVar5) {
       *(undefined4 *)((int)this + 0xc9) = 0;
       return 1;
@@ -81,7 +81,7 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
                ((param_1 - *(short *)((int)this + 0xd1)) * (int)lVar10) / iVar5;
           *(int *)((int)this + 0xdb) =
                ((param_2 - *(short *)((int)this + 0xd3)) * (int)lVar10) / iVar5;
-          uVar3 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          uVar3 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 0xc9) = 1;
           *(undefined4 *)((int)this + 0xfb) = uVar3;
           *(int *)((int)this + 0xe7) = local_10;
@@ -120,7 +120,7 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
                ((param_1 - *(short *)((int)this + 0xd1)) * local_10) / (int)local_14;
           *(int *)((int)this + 0xdb) =
                ((param_2 - *(short *)((int)this + 0xd3)) * local_10) / (int)local_14;
-          uVar3 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          uVar3 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 0xc9) = 1;
           *(undefined4 *)((int)this + 0xfb) = uVar3;
           *(int *)((int)this + 0xe7) = local_10;
@@ -133,8 +133,8 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
   else if ((param_4 == '\x02') && (iVar5 = *(int *)((int)this + 0xef), iVar5 != 0)) {
     uVar2 = *(uint *)((int)this + 0xff);
     *(undefined4 *)((int)this + 0xc9) = 2;
-    if (uVar2 < *(uint *)(DAT_00802a38 + 0xe4)) {
-      *(uint *)((int)this + 0xfb) = *(uint *)(DAT_00802a38 + 0xe4) - uVar2;
+    if (uVar2 < (uint)PTR_00802a38->field_00E4) {
+      *(uint *)((int)this + 0xfb) = PTR_00802a38->field_00E4 - uVar2;
       if (0x1f6 < iVar5) {
         *(undefined2 *)((int)this + 0xd5) = 0x44c;
         iVar6 = *(int *)((int)this + 0xe3) * 0x1b9f;

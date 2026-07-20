@@ -53,15 +53,16 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           else {
             iVar4 = 0;
           }
-          if ((iVar4 != 0) && (*(int *)(iVar4 + 4) != 0)) {
-            thunk_FUN_00660d40(*(int *)(iVar4 + 4));
+          if ((iVar4 != 0) &&
+             (*(AnonShape_00660D40_E58DF1E6 **)(iVar4 + 4) != (AnonShape_00660D40_E58DF1E6 *)0x0)) {
+            thunk_FUN_00660d40(*(AnonShape_00660D40_E58DF1E6 **)(iVar4 + 4));
           }
           iVar4 = this_00->field_00A5;
           uVar8 = uVar8 + 1;
           bVar9 = uVar8 < *(uint *)(iVar4 + 0xc);
         } while ((int)uVar8 < (int)*(uint *)(iVar4 + 0xc));
       }
-      thunk_FUN_00676c40(this_00->field_00BD,&LAB_0040242d);
+      thunk_FUN_00676c40((AnonShape_00676C40_253791B9 *)this_00->field_00BD,&LAB_0040242d);
       local_c = param_1[3];
       uVar7 = extraout_EDX;
       while (local_c = local_c - 1, -1 < (int)local_c) {
@@ -108,9 +109,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                 if (iVar4 == 0x78) {
                   *(uint *)((int)objPtr + 0x269) = (uint)uVar1;
                 }
-                FUN_006b0c70((int)param_1,local_c);
+                FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,local_c);
               }
-              FUN_006b0c70(local_8->field_00BD,uVar8);
+              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_8->field_00BD,uVar8);
               uVar7 = extraout_EDX_02;
               this_00 = local_8;
             }
@@ -140,9 +141,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                   }
                 }
                 AiFltClassTy::_AddObjFlt(this_01,(uint)objPtr,0);
-                FUN_006b0c70((int)param_1,local_c);
+                FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,local_c);
               }
-              FUN_006b0c70(this_00->field_00BD,uVar8);
+              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this_00->field_00BD,uVar8);
               uVar7 = extraout_EDX_04;
             }
           }

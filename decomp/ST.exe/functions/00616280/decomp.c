@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
                               ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                               (int)sVar1) * 8), this_00 == (void *)0x0 ||
          (*(int *)((int)this_00 + 0x18) != *(int *)((int)this + 0x2d1))))))))) &&
-     (iVar4 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x2d1),(int *)&local_14),
+     (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2d1),(int *)&local_14),
      this_00 = local_14, iVar4 == -4)) {
     return 0xffffffff;
   }

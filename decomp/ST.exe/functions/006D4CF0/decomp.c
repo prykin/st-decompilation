@@ -1,5 +1,5 @@
 
-undefined4 __cdecl FUN_006d4cf0(int param_1,int *param_2)
+undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_2)
 
 {
   int iVar1;
@@ -49,22 +49,22 @@ undefined4 __cdecl FUN_006d4cf0(int param_1,int *param_2)
            ))) && ((piVar7[0x11] == 0 ||
                    (iVar5 = FUN_00749841((int)(piVar7 + 0xc)), piVar7[0x11] == iVar5)))) {
         uVar3 = *(ushort *)((int)piVar7 + 0x3e);
-        iVar5 = *(int *)(param_1 + 0x28);
+        iVar5 = param_1->field_0028;
         if ((int)(uint)uVar3 <= *(int *)(iVar5 + 0x20)) {
-          *(int *)(param_1 + 0x90) = piVar7[2] - *piVar7;
+          param_1->field_0090 = piVar7[2] - *piVar7;
           iVar1 = piVar7[3];
           iVar2 = piVar7[1];
-          *(int *)(param_1 + 0x94) = iVar1 - iVar2;
-          if ((*(int *)(param_1 + 0x90) == 0) || (iVar1 - iVar2 == 0)) {
-            *(int *)(param_1 + 0x90) = piVar7[0xd];
+          param_1->field_0094 = iVar1 - iVar2;
+          if ((param_1->field_0090 == 0) || (iVar1 - iVar2 == 0)) {
+            param_1->field_0090 = piVar7[0xd];
             uVar6 = piVar7[0xe] >> 0x1f;
-            *(uint *)(param_1 + 0x94) = (piVar7[0xe] ^ uVar6) - uVar6;
+            param_1->field_0094 = (piVar7[0xe] ^ uVar6) - uVar6;
           }
-          if ((*(uint *)(param_1 + 4) & 0x8000000) == 0) {
-            *(undefined4 *)(param_1 + 8) = 0;
-            *(undefined4 *)(param_1 + 0xc) = 0;
-            *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)(param_1 + 0x90);
-            *(undefined4 *)(param_1 + 0x14) = *(undefined4 *)(param_1 + 0x94);
+          if ((param_1->field_0004 & 0x8000000) == 0) {
+            param_1->field_0008 = 0;
+            param_1->field_000C = 0;
+            param_1->field_0010 = param_1->field_0090;
+            param_1->field_0014 = param_1->field_0094;
           }
           uVar3 = *(ushort *)((int)piVar7 + 0x3e);
           if (uVar3 == 8) {
@@ -74,7 +74,7 @@ undefined4 __cdecl FUN_006d4cf0(int param_1,int *param_2)
             }
             if (iVar5 * 4 + 0x58U <= (uint)param_2[0x10]) {
               piVar7 = piVar7 + 0x16;
-              piVar8 = (int *)(param_1 + 0x108);
+              piVar8 = (int *)&param_1[1].field_0x70;
               for (; iVar5 != 0; iVar5 = iVar5 + -1) {
                 *piVar8 = *piVar7;
                 piVar7 = piVar7 + 1;

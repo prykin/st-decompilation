@@ -1,10 +1,10 @@
 
-void __fastcall FUN_0041d860(int param_1,undefined4 param_2)
+void __fastcall FUN_0041d860(AnonShape_00495EC0_95A268C6 *param_1,undefined4 param_2)
 
 {
   DumpClassC::WritePtr
-            (*(short *)(param_1 + 0x5b),*(short *)(param_1 + 0x5d),*(short *)(param_1 + 0x5f),
-             CONCAT31((int3)((uint)param_2 >> 8),*(undefined1 *)(param_1 + 0x8e)),param_1);
+            (param_1->field_005B,param_1->field_005D,param_1->field_005F,
+             CONCAT31((int3)((uint)param_2 >> 8),param_1[1].field_0x2a),param_1);
   return;
 }
 

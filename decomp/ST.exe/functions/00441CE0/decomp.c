@@ -12,20 +12,23 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   uint *puVar4;
   int *piVar5;
   uint uVar6;
+  DArrayTy *pDVar7;
   undefined4 unaff_ESI;
-  int iVar7;
-  undefined4 *puVar8;
+  int iVar8;
+  undefined4 *puVar9;
+  AnonShape_006ACC70_C8641025 *pAVar10;
   void *unaff_EDI;
-  uint uVar9;
-  undefined4 *puVar10;
+  uint uVar11;
+  undefined4 *puVar12;
+  DArrayTy *pDVar13;
   InternalExceptionFrame local_e8;
   undefined4 local_a4;
   undefined2 local_9e;
   undefined2 local_96;
   int local_80 [5];
   uint local_6c;
-  int local_68;
-  uint local_64;
+  AnonShape_006ACC70_C8641025 *local_68;
+  dword local_64;
   int local_60 [4];
   STAllPlayersC *local_50;
   undefined1 local_4c [4];
@@ -40,16 +43,16 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   int local_38;
   undefined4 local_34;
   undefined4 local_30;
-  uint local_24;
+  DArrayTy *local_24;
   int local_20;
   int *local_1c;
-  uint local_18;
+  DArrayTy *local_18;
   undefined4 *local_14;
-  uint *local_10;
-  uint local_c;
+  DArrayTy *local_10;
+  DArrayTy *local_c;
   STFishC *local_8;
   
-  local_24 = 4;
+  local_24 = (DArrayTy *)0x4;
   local_80[0] = 0x38;
   local_80[1] = 0x39;
   local_80[2] = 0x4f;
@@ -58,12 +61,12 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   g_currentExceptionFrame = &local_e8;
   local_50 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  uVar6 = local_24;
+  pDVar7 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c5,0,iVar3,&DAT_007a4ccc
+    iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c5,0,iVar3,&DAT_007a4ccc
                                ,s_STAllPlayersC___MakeMDPairs_007a8098);
-    if (iVar7 == 0) {
+    if (iVar8 == 0) {
       RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c6);
       return;
     }
@@ -71,125 +74,128 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
     (*pcVar1)();
     return;
   }
+  iVar3 = (int)param_1;
   if (0 < (int)local_24) {
     local_c = local_24;
-    puVar8 = (undefined4 *)((int)&DAT_007f4e2f + param_1 * 0xa62);
+    puVar9 = &g_playerRuntime[iVar3].field9_0xf;
     do {
-      if ((byte *)*puVar8 != (byte *)0x0) {
-        FUN_006ae110((byte *)*puVar8);
-        *puVar8 = 0;
+      if ((byte *)*puVar9 != (byte *)0x0) {
+        FUN_006ae110((byte *)*puVar9);
+        *puVar9 = 0;
       }
-      puVar8 = puVar8 + 1;
-      local_c = local_c - 1;
-    } while (local_c != 0);
+      puVar9 = puVar9 + 1;
+      local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
+    } while (local_c != (DArrayTy *)0x0);
   }
   local_60[3] = 0;
   local_60[2] = 0;
   local_60[1] = 0;
   local_60[0] = 0;
-  local_10 = (uint *)0x0;
-  local_20 = param_1 * 0xa62;
-  if ((&DAT_007f4e20)[local_20] != '\0') {
-    if (0 < (int)uVar6) {
-      puVar8 = (undefined4 *)((int)&DAT_007f4e2f + local_20);
-      uVar9 = uVar6;
+  local_10 = (DArrayTy *)0x0;
+  local_20 = iVar3 * 0xa62;
+  if (g_playerRuntime[iVar3].raceId != 0) {
+    if (0 < (int)pDVar7) {
+      puVar9 = &g_playerRuntime[iVar3].field9_0xf;
+      pDVar13 = pDVar7;
       do {
         puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,0x24,1);
-        *puVar8 = puVar4;
-        puVar8 = puVar8 + 1;
-        uVar9 = uVar9 - 1;
-      } while (uVar9 != 0);
+        *puVar9 = puVar4;
+        puVar9 = puVar9 + 1;
+        pDVar13 = (DArrayTy *)((int)&pDVar13[-1].data + 3);
+      } while (pDVar13 != (DArrayTy *)0x0);
     }
-    local_18 = *(uint *)((int)&DAT_007f4e29 + local_20);
-    if ((local_18 != 0) && (local_c = *(uint *)(local_18 + 0xc), local_c != 0)) {
-      local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
-      if (0 < (int)uVar6) {
+    local_18 = *(DArrayTy **)((int)&g_playerRuntime[0].objects + local_20);
+    if ((local_18 != (DArrayTy *)0x0) &&
+       (local_c = (DArrayTy *)local_18->count, local_c != (DArrayTy *)0x0)) {
+      local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
+      if (0 < (int)pDVar7) {
         piVar5 = local_60;
-        uVar9 = uVar6;
+        pDVar13 = pDVar7;
         do {
           puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
           *piVar5 = (int)puVar4;
           piVar5 = piVar5 + 1;
-          uVar9 = uVar9 - 1;
-        } while (uVar9 != 0);
+          pDVar13 = (DArrayTy *)((int)&pDVar13[-1].data + 3);
+        } while (pDVar13 != (DArrayTy *)0x0);
       }
-      uVar9 = 0;
+      uVar11 = 0;
       if (0 < (int)local_c) {
         do {
-          FUN_006acc70(local_18,uVar9,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_18,uVar11,&local_8);
           if (local_8 != (STFishC *)0x0) {
-            iVar3 = (*local_8->vtable->slot_2C)();
-            puVar4 = local_10;
+            iVar3 = (*local_8->vtable->vfunc_2C)();
+            pDVar13 = local_10;
             if ((iVar3 == 0x3b) || (iVar3 == 0x60)) {
 LAB_00441e92:
-              Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(&pDVar13->flags,&local_8);
             }
             else {
-              iVar7 = 0;
-              if (0 < (int)uVar6) {
+              iVar8 = 0;
+              if (0 < (int)pDVar7) {
                 piVar5 = local_80;
                 do {
                   if (iVar3 == *piVar5) {
-                    iVar3 = (*local_8->vtable->slot_88)(local_4c);
+                    iVar3 = (*local_8->vtable->vfunc_88)(local_4c);
                     if (0 < iVar3) {
-                      puVar4 = (uint *)local_60[iVar7];
+                      pDVar13 = (DArrayTy *)local_60[iVar8];
                       goto LAB_00441e92;
                     }
                     break;
                   }
-                  iVar7 = iVar7 + 1;
+                  iVar8 = iVar8 + 1;
                   piVar5 = piVar5 + 1;
-                } while (iVar7 < (int)uVar6);
+                } while (iVar8 < (int)pDVar7);
               }
             }
           }
-          uVar9 = uVar9 + 1;
-        } while ((int)uVar9 < (int)local_c);
+          uVar11 = uVar11 + 1;
+        } while ((int)uVar11 < (int)local_c);
       }
     }
-    if ((local_10 == (uint *)0x0) || (local_64 = local_10[3], local_64 == 0)) {
+    if ((local_10 == (DArrayTy *)0x0) || (local_64 = local_10->count, local_64 == 0)) {
       local_3a = 0xffff;
       local_42 = 0xffff;
-      if (0 < (int)uVar6) {
-        puVar8 = (undefined4 *)((int)&DAT_007f4e2f + local_20);
-        uVar9 = uVar6;
+      if (0 < (int)pDVar7) {
+        puVar9 = (undefined4 *)((int)&g_playerRuntime[0].field9_0xf + local_20);
+        pDVar13 = pDVar7;
         do {
-          Library::DKW::TBL::FUN_006ae1c0((uint *)*puVar8,(undefined4 *)&local_48);
-          puVar8 = puVar8 + 1;
-          uVar9 = uVar9 - 1;
-        } while (uVar9 != 0);
+          Library::DKW::TBL::FUN_006ae1c0((uint *)*puVar9,(undefined4 *)&local_48);
+          puVar9 = puVar9 + 1;
+          pDVar13 = (DArrayTy *)((int)&pDVar13[-1].data + 3);
+        } while (pDVar13 != (DArrayTy *)0x0);
       }
     }
     else {
-      local_c = 0;
+      local_c = (DArrayTy *)0x0;
       if (0 < (int)local_64) {
         do {
-          FUN_006acc70((int)local_10,local_c,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10,(uint)local_c,&local_8);
           STFishC::sub_004162B0(local_8,&local_40,&local_3e,&local_3c);
           local_3a = *(undefined2 *)&local_8->field_0x32;
-          uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
-          puVar8 = DAT_007fb280;
-          puVar10 = DAT_007fb238;
-          for (uVar9 = (uVar6 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *puVar10 = *puVar8;
-            puVar8 = puVar8 + 1;
-            puVar10 = puVar10 + 1;
+          uVar11 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
+          puVar9 = DAT_007fb280;
+          puVar12 = DAT_007fb238;
+          for (uVar6 = (uVar11 & 0x7fffffff) >> 1; uVar6 != 0; uVar6 = uVar6 - 1) {
+            *puVar12 = *puVar9;
+            puVar9 = puVar9 + 1;
+            puVar12 = puVar12 + 1;
           }
-          for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(undefined1 *)puVar10 = *(undefined1 *)puVar8;
-            puVar8 = (undefined4 *)((int)puVar8 + 1);
-            puVar10 = (undefined4 *)((int)puVar10 + 1);
+          for (uVar11 = uVar11 * 2 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+            *(undefined1 *)puVar12 = *(undefined1 *)puVar9;
+            puVar9 = (undefined4 *)((int)puVar9 + 1);
+            puVar12 = (undefined4 *)((int)puVar12 + 1);
           }
           FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c
                        ,(int)local_40,(int)local_3e,(int)local_3c,-1,-1,-1);
           if (0 < (int)local_24) {
             local_1c = local_60;
             local_18 = local_24;
-            local_14 = (undefined4 *)((int)&DAT_007f4e2f + local_20);
+            local_14 = (undefined4 *)((int)&g_playerRuntime[0].field9_0xf + local_20);
             do {
-              iVar3 = *local_1c;
-              local_68 = iVar3;
-              if ((iVar3 == 0) || (local_80[4] = *(int *)(iVar3 + 0xc), local_80[4] == 0)) {
+              pAVar10 = (AnonShape_006ACC70_C8641025 *)*local_1c;
+              local_68 = pAVar10;
+              if ((pAVar10 == (AnonShape_006ACC70_C8641025 *)0x0) ||
+                 (local_80[4] = pAVar10->field_000C, local_80[4] == 0)) {
                 if (((uint *)*local_14)[3] == 0) {
                   local_96 = 0xffff;
                   local_9e = 0xffff;
@@ -197,10 +203,10 @@ LAB_00441e92:
                 }
               }
               else {
-                uVar6 = 0;
+                uVar11 = 0;
                 if (0 < local_80[4]) {
                   do {
-                    FUN_006acc70(iVar3,uVar6,&local_8);
+                    FUN_006acc70(pAVar10,uVar11,&local_8);
                     STFishC::sub_004162B0(local_8,&local_48,&local_46,&local_44);
                     local_42 = *(undefined2 *)&local_8->field_0x32;
                     local_38 = (int)*(short *)((int)DAT_007fb238 +
@@ -216,32 +222,32 @@ LAB_00441e92:
                       local_6c = (uint)bVar2;
                       local_38 = ((((local_38 * 0xc9) / 3) / (int)local_6c) * 0xc) / 10 + 800;
                       local_30 = (undefined4)(40000 / (longlong)local_38);
-                      iVar3 = local_68;
+                      pAVar10 = local_68;
                     }
                     local_34 = local_30;
                     Library::DKW::TBL::FUN_006ae1c0((uint *)*local_14,(undefined4 *)&local_48);
-                    uVar6 = uVar6 + 1;
-                  } while ((int)uVar6 < local_80[4]);
+                    uVar11 = uVar11 + 1;
+                  } while ((int)uVar11 < local_80[4]);
                 }
               }
               local_1c = local_1c + 1;
               local_14 = local_14 + 1;
-              local_18 = local_18 - 1;
-            } while (local_18 != 0);
+              local_18 = (DArrayTy *)((int)&local_18[-1].data + 3);
+            } while (local_18 != (DArrayTy *)0x0);
           }
-          local_c = local_c + 1;
-          uVar6 = local_24;
+          local_c = (DArrayTy *)((int)&local_c->flags + 1);
+          pDVar7 = local_24;
         } while ((int)local_c < (int)local_64);
       }
     }
     FUN_006ae110((byte *)local_10);
-    if (0 < (int)uVar6) {
+    if (0 < (int)pDVar7) {
       piVar5 = local_60;
       do {
         FUN_006ae110((byte *)*piVar5);
         piVar5 = piVar5 + 1;
-        uVar6 = uVar6 - 1;
-      } while (uVar6 != 0);
+        pDVar7 = (DArrayTy *)((int)&pDVar7[-1].data + 3);
+      } while (pDVar7 != (DArrayTy *)0x0);
     }
   }
   g_currentExceptionFrame = local_e8.previous;

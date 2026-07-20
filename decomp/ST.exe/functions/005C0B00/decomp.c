@@ -4,7 +4,8 @@
    MReportTy::PaintBut */
 
 void __thiscall
-MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char param_4,uint *param_5)
+MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT param_2,int param_3,
+                   char param_4,uint *param_5)
 
 {
   short sVar1;
@@ -29,13 +30,13 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
   MReportTy *local_c;
   undefined4 *local_8;
   
-  if (*(short *)(param_1 + 0x14) == 3) {
+  if (param_1->field_0014 == 3) {
     cVar8 = (-(param_4 != '\0') & 0xedU) + 0x2a;
   }
   else {
     cVar8 = (-(param_4 != '\0') & 0xecU) + 0x2c;
   }
-  local_20 = *(int **)(param_1 + 0x18);
+  local_20 = param_1->field_0018;
   _local_10 = CONCAT31(uStack_f,cVar8);
   if (param_4 == '\0') {
     local_14 = this->field_0077;
@@ -75,7 +76,7 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
       }
       local_18 = param_5;
       ccFntTy::SetSurf(local_c->field_0083,iVar7,0,0,0,0,0);
-      sVar1 = *(short *)(param_1 + 0x14);
+      sVar1 = param_1->field_0014;
       if ((sVar1 == 1) || (sVar1 == 2)) {
         iVar5 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
       }

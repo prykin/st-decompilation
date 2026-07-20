@@ -156,13 +156,13 @@ LAB_00629242:
   }
   *(ushort **)&local_1c->field_0xca = puVar10;
   puVar1 = &local_1c->field_00C6;
-  FUN_006e8660(DAT_00807598,puVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
+  FUN_006e8660(PTR_00807598,puVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
                local_10,local_c,0);
   if (DAT_00807326 != '\0') {
-    FUN_006e9520(DAT_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
+    FUN_006e9520(PTR_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
   }
-  FUN_006e98e0(DAT_00807598,*puVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
-  FUN_006ea270(DAT_00807598,*puVar1,0,0);
+  FUN_006e98e0(PTR_00807598,*puVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
+  FUN_006ea270(PTR_00807598,*puVar1,0,0);
   uVar3 = *puVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006A = local_20;
@@ -170,13 +170,13 @@ LAB_00629242:
   pSVar8->field_006E = local_14;
   fVar6 = (float)pSVar8->field_004E * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_0072 = fVar6;
-  FUN_006ea960(DAT_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
-  FUN_006eaaa0(DAT_00807598,*puVar1,0);
+  FUN_006ea960(PTR_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
+  FUN_006eaaa0(PTR_00807598,*puVar1,0);
   pSVar8->field_00C1 = 1;
   if (local_24 == 4) {
-    FUN_006ea4e0(DAT_00807598,*puVar1,1,0xffffffff,0xffffffff);
+    FUN_006ea4e0(PTR_00807598,*puVar1,1,0xffffffff,0xffffffff);
     if (*(int *)&pSVar8->field_0x18 != 0) {
-      FUN_006ea460(DAT_00807598,*puVar1,*(int *)&pSVar8->field_0x18);
+      FUN_006ea460(PTR_00807598,*puVar1,*(int *)&pSVar8->field_0x18);
     }
   }
   pVVar7 = g_visibleClass_00802A88;
@@ -235,14 +235,14 @@ LAB_00629242:
     }
     if (bVar14) {
       if (pSVar8->field_00C1 == '\0') {
-        FUN_006eaaa0(DAT_00807598,pSVar8->field_00C6,0);
+        FUN_006eaaa0(PTR_00807598,pSVar8->field_00C6,0);
         pSVar8->field_00C1 = 1;
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
     }
     else if (pSVar8->field_00C1 == '\x01') {
-      FUN_006eab60(DAT_00807598,pSVar8->field_00C6);
+      FUN_006eab60(PTR_00807598,pSVar8->field_00C6);
       pSVar8->field_00C1 = 0;
     }
   }

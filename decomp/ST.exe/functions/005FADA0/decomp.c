@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
     STColl3C::CreateAddSpr(this);
   }
   else {
-    thunk_FUN_005f9f70((int)this);
+    thunk_FUN_005f9f70(this);
   }
   if (*(int *)((int)this + 0x2e6) != 0) {
     puVar4 = (undefined4 *)(*(int *)((int)this + 0x2e6) + 8);

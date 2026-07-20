@@ -28,8 +28,8 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
     puVar4 = ccFntTy::FormIndentSarr
                        (local_c->field_01D0,(uint *)*param_1,s________________007c21d8,
                         (uint *)&DAT_007c21ec,local_c->field_0104,0,0xffffffff,(char *)0x0,1);
-    if ((byte *)*param_1 != (byte *)0x0) {
-      FUN_006b5570((byte *)*param_1);
+    if ((AnonShape_006B5570_4D68B99C *)*param_1 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)*param_1);
     }
     if (puVar4 == (uint *)0x0) {
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
@@ -54,7 +54,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     ccFntTy::WrSarr(pCVar2->field_01D0,*param_1,0,-1,0,0,0);
-    FUN_006b5570((byte *)*param_1);
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)*param_1);
     pCVar2->field_0243 = pCVar2->field_09A0;
     pCVar2->field_0247 = param_2;
     Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pCVar2->field_0178);

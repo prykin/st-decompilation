@@ -1,38 +1,38 @@
 
-void __fastcall FUN_006d6090(int param_1)
+void __fastcall FUN_006d6090(AnonShape_006D6090_8F63898D *param_1)
 
 {
   int iVar1;
   int *piVar2;
   LPCRITICAL_SECTION lpCriticalSection;
   
-  if (param_1 == 0) {
+  if (param_1 == (AnonShape_006D6090_8F63898D *)0x0) {
     lpCriticalSection = (LPCRITICAL_SECTION)0x0;
   }
   else {
-    lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 0x10);
+    lpCriticalSection = (LPCRITICAL_SECTION)&param_1->field_0x10;
   }
   EnterCriticalSection(lpCriticalSection);
-  iVar1 = *(int *)(param_1 + 0x2c);
+  iVar1 = param_1->field_002C;
   while (iVar1 != 0) {
-    if ((*(int *)(*(int *)(param_1 + 0x5c) + 0x310) == 0) &&
-       (piVar2 = *(int **)(param_1 + 100), piVar2 != (int *)0x0)) {
+    if ((*(int *)(param_1->field_005C + 0x310) == 0) &&
+       (piVar2 = (int *)param_1->field_0064, piVar2 != (int *)0x0)) {
       (**(code **)(*piVar2 + 8))(piVar2);
-      *(undefined4 *)(param_1 + 100) = 0;
+      param_1->field_0064 = 0;
     }
-    piVar2 = *(int **)(param_1 + 0x28);
+    piVar2 = (int *)param_1->field_0028;
     if (piVar2 != (int *)0x0) {
-      *(int *)(param_1 + 0x28) = piVar2[7];
-      *(int *)(param_1 + 0x2c) = *(int *)(param_1 + 0x2c) + -1;
+      param_1->field_0028 = piVar2[7];
+      param_1->field_002C = param_1->field_002C + -1;
       (**(code **)(*piVar2 + 0x54))(1);
     }
-    iVar1 = *(int *)(param_1 + 0x2c);
+    iVar1 = param_1->field_002C;
   }
-  *(undefined4 *)(param_1 + 0x3c) = 0;
-  *(undefined4 *)(param_1 + 100) = 0;
-  *(undefined4 *)(param_1 + 0x6c) = 0;
-  *(undefined4 *)(param_1 + 0x68) = 0;
-  *(undefined4 *)(param_1 + 0x70) = 0;
+  param_1->field_003C = 0;
+  param_1->field_0064 = 0;
+  param_1->field_006C = 0;
+  param_1->field_0068 = 0;
+  param_1->field_0070 = 0;
   LeaveCriticalSection(lpCriticalSection);
   return;
 }

@@ -10,7 +10,7 @@
 undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint param_5)
 
 {
-  uint *puVar1;
+  AnonShape_006ACC70_C8641025 *pAVar1;
   int iVar2;
   int *piVar3;
   STAllPlayersC *in_ECX;
@@ -22,7 +22,7 @@ undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint 
   iVar2 = param_3;
   iVar5 = 0;
   if (param_2 == 0) {
-    iVar5 = (int)&DAT_007f4f83 + (char)param_1 * 0xa62;
+    iVar5 = (char)param_1 * 0xa62 + 0x7f4f83;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
       GVar7 = CASE_2;
@@ -38,7 +38,7 @@ undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint 
                  0x28f);
       goto LAB_0042c3a0;
     }
-    iVar5 = (int)&DAT_007f4fd3 + (char)param_1 * 0xa62;
+    iVar5 = (char)param_1 * 0xa62 + 0x7f4fd3;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
       GVar7 = CASE_5;
@@ -51,17 +51,17 @@ undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint 
 LAB_0042c3a0:
   piVar4 = (int *)(iVar2 * 0x10 + iVar5);
   if (((*piVar4 == 0x3c) || (*piVar4 == 0x19a)) && (piVar4[1] == (int)(char)param_4)) {
-    puVar1 = *(uint **)((int)piVar4 + 10);
+    pAVar1 = *(AnonShape_006ACC70_C8641025 **)((int)piVar4 + 10);
     uVar6 = 0;
-    param_2 = puVar1[3];
+    param_2 = pAVar1->field_000C;
     if (0 < (int)param_2) {
       do {
-        FUN_006acc70((int)puVar1,uVar6,&param_1);
+        FUN_006acc70(pAVar1,uVar6,&param_1);
         if ((short)param_1 == (short)param_5) {
           piVar3 = (int *)STAllPlayersC::GetObjPtr(in_ECX,param_4,param_5,CASE_1);
           (**(code **)(*piVar3 + 0xe8))(0);
           param_1 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,&param_1);
+          Library::DKW::TBL::FUN_006ae140((uint *)pAVar1,uVar6,&param_1);
           *(short *)((int)piVar4 + 0xe) = *(short *)((int)piVar4 + 0xe) + -1;
           if (*(short *)((int)piVar4 + 0xe) == 0) {
             FUN_006ae110(*(byte **)((int)piVar4 + 10));

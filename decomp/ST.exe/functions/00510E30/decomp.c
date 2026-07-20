@@ -172,7 +172,7 @@ LAB_00510fa9:
           pcVar5 = (char *)FUN_006b0140(*pUVar15,HINSTANCE_00807618);
           iVar3 = Library::MSVCRT::__strcmpi(pcVar5,local_14);
           if (0 < iVar3) {
-            FUN_006b0cd0(this_00->field_01BB,uVar13,local_8);
+            FUN_006b0cd0((AnonShape_006B0CD0_C8D121FA *)this_00->field_01BB,uVar13,local_8);
             local_c = (undefined4 *)0x1;
           }
         }
@@ -195,12 +195,12 @@ LAB_00510fa9:
   puVar7 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar10,iVar3);
   this_00->field_024C = puVar7;
   pcVar8 = (ccFntTy *)
-           ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
-                             (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
+           ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
+                             (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
   this_00->field_01E0 = pcVar8;
   pcVar8->field_0058 = 0;
   pcVar8->field_005C = 0;
-  pcVar8 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,*(int *)(DAT_00802a28 + 0x2c));
+  pcVar8 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,*(int *)&PTR_00802a28->field_0x2c);
   this_00->field_01E4 = pcVar8;
   pcVar8->field_0058 = 1;
   pcVar8->field_005C = 0;

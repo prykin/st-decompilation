@@ -24,21 +24,21 @@ int STAllPlayersC::CheckTmps
   code *pcVar1;
   int iVar2;
   int *piVar3;
-  uint *groupContent;
+  AnonShape_006B0C70_7C4FE646 *groupContent;
   uint uVar4;
   uint uVar5;
   int iVar6;
-  byte *local_10;
-  uint *local_c;
-  byte *local_8;
+  AnonShape_006B0C70_7C4FE646 *local_10;
+  AnonShape_006B0C70_7C4FE646 *local_c;
+  AnonShape_006B0C70_7C4FE646 *local_8;
   
   iVar2 = param_3;
   uVar5 = 0;
-  local_c = (uint *)0x0;
-  local_10 = (byte *)0x0;
-  local_8 = (byte *)0x0;
+  local_c = (AnonShape_006B0C70_7C4FE646 *)0x0;
+  local_10 = (AnonShape_006B0C70_7C4FE646 *)0x0;
+  local_8 = (AnonShape_006B0C70_7C4FE646 *)0x0;
   if (param_2 == 0) {
-    iVar6 = (int)&DAT_007f4f83 + (char)param_1 * 0xa62;
+    iVar6 = (char)param_1 * 0xa62 + 0x7f4f83;
   }
   else {
     if (param_2 != 1) {
@@ -51,7 +51,7 @@ int STAllPlayersC::CheckTmps
       iVar2 = (*pcVar1)();
       return iVar2;
     }
-    iVar6 = (int)&DAT_007f4fd3 + (char)param_1 * 0xa62;
+    iVar6 = (char)param_1 * 0xa62 + 0x7f4fd3;
   }
   if (0x19a < param_3) {
     if (((param_3 == 0x1a4) || (param_3 == 0x1ae)) || (param_3 == 0x1b8)) goto LAB_0044ae50;
@@ -70,9 +70,10 @@ LAB_0044ac57:
     Library::DKW::TBL::FUN_006afe40((int *)&local_c,param_5);
     if (0 < (int)uVar4) {
       do {
-        FUN_006acc70((int)local_c,uVar5,(undefined4 *)((int)&param_6 + 2));
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar5,(undefined4 *)((int)&param_6 + 2))
+        ;
         if (param_6._2_2_ == -1) {
-          FUN_006b0c70((int)local_c,uVar5);
+          FUN_006b0c70(local_c,uVar5);
           uVar4 = uVar4 - 1;
           uVar5 = uVar5 - 1;
         }
@@ -87,14 +88,15 @@ LAB_0044ac57:
           if (((*(int *)((int)piVar3 + -10) == iVar2) &&
               (*(int *)((int)piVar3 + -6) == (int)param_4)) &&
              (iVar6 = *(int *)(*piVar3 + 0xc), iVar6 != 0)) {
-            Library::DKW::TBL::FUN_006afe40((int *)&local_10,groupContent);
+            Library::DKW::TBL::FUN_006afe40((int *)&local_10,(uint *)groupContent);
             Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)*piVar3);
             uVar5 = 0;
             if (0 < iVar6) {
               do {
-                FUN_006acc70((int)local_8,uVar5,(undefined4 *)((int)&param_1 + 2));
+                FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,uVar5,
+                             (undefined4 *)((int)&param_1 + 2));
                 if (param_1._2_2_ == -1) {
-                  FUN_006b0c70((int)local_8,uVar5);
+                  FUN_006b0c70(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   uVar5 = uVar5 - 1;
                 }
@@ -102,33 +104,35 @@ LAB_0044ac57:
               } while ((int)uVar5 < iVar6);
               if ((iVar6 != 0) && (0 < (int)param_2)) {
                 while( true ) {
-                  FUN_006acc70((int)local_10,0,(undefined4 *)((int)&param_6 + 2));
+                  FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10,0,
+                               (undefined4 *)((int)&param_6 + 2));
                   uVar5 = 0;
                   if (iVar6 < 1) break;
                   while( true ) {
-                    FUN_006acc70((int)local_8,uVar5,(undefined4 *)((int)&param_1 + 2));
+                    FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,uVar5,
+                                 (undefined4 *)((int)&param_1 + 2));
                     if (param_6._2_2_ == param_1._2_2_) break;
                     uVar5 = uVar5 + 1;
                     if (iVar6 <= (int)uVar5) goto LAB_0044ada0;
                   }
-                  FUN_006b0c70((int)local_10,0);
+                  FUN_006b0c70(local_10,0);
                   param_2 = param_2 - 1;
-                  FUN_006b0c70((int)local_8,uVar5);
+                  FUN_006b0c70(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   if ((int)param_2 < 1) break;
                 }
               }
             }
 LAB_0044ada0:
-            FUN_006ae110(local_10);
-            local_10 = (byte *)0x0;
-            FUN_006ae110(local_8);
-            local_8 = (byte *)0x0;
+            FUN_006ae110((byte *)local_10);
+            local_10 = (AnonShape_006B0C70_7C4FE646 *)0x0;
+            FUN_006ae110((byte *)local_8);
+            local_8 = (AnonShape_006B0C70_7C4FE646 *)0x0;
             if ((param_2 == 0) && (iVar6 == 0)) {
               FUN_006ae110((byte *)local_c);
               return (int)param_5;
             }
-            param_2 = local_c[3];
+            param_2 = local_c->field_000C;
             groupContent = local_c;
             iVar2 = param_3;
           }

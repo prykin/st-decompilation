@@ -1,5 +1,6 @@
 
-bool FUN_00695180(int param_1,int param_2,int param_3,int param_4)
+bool FUN_00695180(AnonShape_00695180_D714D58B *param_1,AnonShape_00695180_3C0E4B54 *param_2,
+                 int param_3,int param_4)
 
 {
   int iVar1;
@@ -15,15 +16,15 @@ bool FUN_00695180(int param_1,int param_2,int param_3,int param_4)
   uVar5 = 0;
   iVar6 = 0;
   iVar8 = 0;
-  if (*(int *)(param_1 + 0xc) != iVar1) {
+  if (param_1->field_000C != iVar1) {
     return false;
   }
   if (param_4 == 0) {
     return true;
   }
-  if ((*(int *)(param_1 + 0x14) == 0) && (0 < iVar1)) {
-    iVar2 = *(int *)(param_1 + 0x18);
-    iVar3 = *(int *)(param_2 + 0x18);
+  if ((param_1->field_0014 == 0) && (0 < iVar1)) {
+    iVar2 = param_1->field_0018;
+    iVar3 = param_2->field_0018;
     do {
       if (uVar5 < *(uint *)(iVar2 + 0xc)) {
         iVar7 = *(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c);
@@ -42,7 +43,7 @@ bool FUN_00695180(int param_1,int param_2,int param_3,int param_4)
       uVar5 = uVar5 + 1;
     } while ((int)uVar5 < iVar1);
   }
-  return *(int *)(param_2 + 0x14) + *(int *)(param_2 + 0x10) * 0x122 + iVar6 <
-         *(int *)(param_1 + 0x14) + *(int *)(param_1 + 0x10) * 0x122 + iVar8;
+  return param_2->field_0014 + param_2->field_0010 * 0x122 + iVar6 <
+         param_1->field_0014 + param_1->field_0010 * 0x122 + iVar8;
 }
 

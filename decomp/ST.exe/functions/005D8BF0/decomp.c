@@ -60,8 +60,8 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
     (*pcVar3)();
     return;
   }
-  if ((byte *)local_c->field_1CCC != (byte *)0x0) {
-    FUN_006b5570((byte *)local_c->field_1CCC);
+  if ((AnonShape_006B5570_4D68B99C *)local_c->field_1CCC != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_c->field_1CCC);
     this_02->field_1CCC = 0;
   }
   puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -257,7 +257,7 @@ LAB_005d8dbf:
             }
             iVar4 = Library::MSVCRT::__strcmpi(pcVar7,pcVar18);
             if (0 < iVar4) {
-              FUN_006b8200(this_02->field_1CCC,uVar9,uVar10);
+              FUN_006b8200((AnonShape_006B8200_800652FF *)this_02->field_1CCC,uVar9,uVar10);
               local_8 = 1;
             }
             iVar4 = this_02->field_1CCC;

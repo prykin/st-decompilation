@@ -60,13 +60,13 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
           )) && ((int)local_c->field_00F0 <= (int)(uint)*(ushort *)(param_1 + 0x1a))) {
         if ((int)(local_c->field_00F8 + local_c->field_00F0) <=
             (int)(uint)*(ushort *)(param_1 + 0x1a)) {
-          thunk_FUN_005943f0(local_c);
+          thunk_FUN_005943f0((STJellyGunC *)local_c);
         }
         break;
       }
     case 100:
 switchD_005944a8_caseD_64:
-      thunk_FUN_005943f0(local_c);
+      thunk_FUN_005943f0((STJellyGunC *)local_c);
     }
 cf_common_exit_00594615:
     g_currentExceptionFrame = local_50.previous;

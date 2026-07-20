@@ -3,7 +3,8 @@
    E:\__titans\Start\mmenuobj.cpp
    MMMObjTy::PaintSlBut */
 
-void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint param_3)
+void __thiscall
+MMMObjTy::PaintSlBut(MMMObjTy *this,AnonShape_005B6560_61F462DF *param_1,int param_2,uint param_3)
 
 {
   code *pcVar1;
@@ -33,7 +34,7 @@ void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint
   }
   switch(*(undefined2 *)(param_2 + 0x14)) {
   case 0:
-    *(uint *)(param_1 + 8) = (param_3 & 0xff) * 3 + 2;
+    param_1->field_0008 = (param_3 & 0xff) * 3 + 2;
     goto switchD_005b65a4_default;
   case 1:
   case 3:
@@ -45,12 +46,12 @@ void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint
   default:
     goto switchD_005b65a4_default;
   }
-  *(int *)(param_1 + 8) = iVar2;
+  param_1->field_0008 = iVar2;
 switchD_005b65a4_default:
-  if (*(uint *)(param_1 + 4) != 0xffffffff) {
+  if (param_1->field_0004 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b3730
-              (*(uint **)(param_1 + 0x48),*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),
-               *(uint *)(param_1 + 0x1c),*(uint *)(param_1 + 0x20));
+              (param_1->field_0048,param_1->field_0004,param_1->field_0008,param_1->field_001C,
+               param_1->field_0020);
   }
   if (*(short *)(param_2 + 0x14) == 2) {
     uVar4 = 10;

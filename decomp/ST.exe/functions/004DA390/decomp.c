@@ -97,19 +97,20 @@ LAB_004da4d3:
             ;
           }
           if ((bVar15) &&
-             ((*(int *)((int)&DAT_007f582e + param_1 * 0xa62) != 3 ||
+             ((g_playerRuntime[param_1].field2298_0xa0e != 3 ||
               (iVar7 = thunk_FUN_004e60d0((uint)bVar1,(int)param_2),
-              (uint)((&DAT_00798f74)[iVar7] + *(int *)((int)&DAT_007f583a + param_1 * 0xa62)) <=
-              *(uint *)(DAT_00802a38 + 0xe4))))) goto LAB_004da71f;
+              (uint)((&DAT_00798f74)[iVar7] + g_playerRuntime[param_1].field2301_0xa1a) <=
+              (uint)PTR_00802a38->field_00E4)))) goto LAB_004da71f;
         }
         bVar1 = *local_8;
+        uVar6 = (uint)bVar1;
         uVar8 = thunk_FUN_004d8870(bVar1);
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 9) = uVar8;
         uVar8 = thunk_FUN_004d89b0(bVar1);
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0xd) = uVar8;
         iVar7 = thunk_FUN_004406c0(bVar1);
         if ((char)iVar7 == '\x03') {
-          uVar8 = thunk_FUN_004e4410((uint)bVar1);
+          uVar8 = thunk_FUN_004e4410(uVar6);
         }
         else {
           uVar8 = thunk_FUN_004d8af0(bVar1);
@@ -125,9 +126,8 @@ LAB_004da4d3:
           }
         }
         else {
-          iVar7 = (uint)bVar1 * 0xa62;
-          iVar11 = *(int *)((int)&DAT_007f5792 + iVar7);
-          iVar9 = iVar11 - *(int *)((int)&DAT_007f5796 + iVar7);
+          iVar11 = g_playerRuntime[uVar6].field2226_0x972;
+          iVar9 = iVar11 - g_playerRuntime[uVar6].field2227_0x976;
           iVar7 = 0;
           if (iVar9 != 0) {
             if (iVar11 == 0) {
@@ -175,8 +175,8 @@ LAB_004da71f:
         uVar8 = thunk_FUN_004d8af0(bVar12);
       }
       *(undefined4 *)(pbVar3 + 0x81) = uVar8;
-      iVar7 = *(int *)((int)&DAT_007f5792 + param_1 * 0xa62);
-      iVar9 = iVar7 - *(int *)((int)&DAT_007f5796 + param_1 * 0xa62);
+      iVar7 = g_playerRuntime[param_1].field2226_0x972;
+      iVar9 = iVar7 - g_playerRuntime[param_1].field2227_0x976;
       iVar11 = 0;
       if (iVar9 != 0) {
         if (iVar7 == 0) {

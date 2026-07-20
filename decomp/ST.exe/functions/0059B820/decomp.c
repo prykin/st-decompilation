@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0059b820(void *param_1)
+void __fastcall FUN_0059b820(AnonShape_0059B820_F1E7AB4B *param_1)
 
 {
   byte bVar1;
@@ -8,137 +8,137 @@ void __fastcall FUN_0059b820(void *param_1)
   int iVar4;
   bool bVar5;
   
-  *(undefined4 *)((int)param_1 + 0x1a6b) = 1;
-  *(undefined4 *)((int)param_1 + 0x29) = 2;
-  switch(*(undefined1 *)((int)param_1 + 0x1a5f)) {
+  param_1->field_1A6B = 1;
+  param_1->field_0029 = 2;
+  switch(param_1->field_1A5F) {
   case 2:
   case 3:
   case 4:
   case 5:
   case 7:
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x29;
-    *(undefined4 *)((int)param_1 + 0x31) = 0x89;
-    if (*(int *)((int)param_1 + 0x1ac4) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ac4),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_002D = 0x29;
+    param_1->field_0031 = 0x89;
+    if (param_1->field_1AC4 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1ad8) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ad8),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1AD8 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AD8,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1adc) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1adc),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1ADC != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1ADC,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1ae0) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ae0),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1AE0 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AE0,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 0x29;
-    if (*(int *)((int)param_1 + 0x1ac8) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ac8),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 0x29;
+    if (param_1->field_1AC8 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1acc) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1acc),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1ACC != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1ACC,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1ad4) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ad4),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1AD4 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AD4,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 200;
-    if (*(int *)((int)param_1 + 0x1ae4) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ae4),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 200;
+    if (param_1->field_1AE4 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AE4,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x20;
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
-    if (*(int *)((int)param_1 + 0x1b14) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b14),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_002D = 0x20;
+    param_1->field_0031 = 1;
+    if (param_1->field_1B14 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1B14,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
-    if (*(int *)((int)param_1 + 0x1ad0) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ad0),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 1;
+    if (param_1->field_1AD0 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AD0,(undefined4 *)&param_1->field_0x1d);
     }
-    iVar4 = *(int *)((int)param_1 + 0x1eb6);
+    iVar4 = param_1->field_1EB6;
     break;
   case 6:
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x29;
-    *(undefined4 *)((int)param_1 + 0x31) = 9;
-    if (*(int *)((int)param_1 + 0x1b10) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b10),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_002D = 0x29;
+    param_1->field_0031 = 9;
+    if (param_1->field_1B10 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1B10,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 0x89;
-    if (*(int *)((int)param_1 + 0x1ac4) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ac4),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 0x89;
+    if (param_1->field_1AC4 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1ac8) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ac8),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1AC8 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x20;
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
-    if (*(int *)((int)param_1 + 0x1b14) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b14),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_002D = 0x20;
+    param_1->field_0031 = 1;
+    if (param_1->field_1B14 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1B14,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
-    if ((*(int *)((int)param_1 + 0x1b18) != 0) && (*(char *)((int)param_1 + 0x1a60) == '\0')) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b18),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 1;
+    if ((param_1->field_1B18 != 0) && (param_1->field_1A60 == '\0')) {
+      FUN_006e6080(param_1,2,param_1->field_1B18,(undefined4 *)&param_1->field_0x1d);
     }
-    if ((*(int *)((int)param_1 + 0x1b24) != 0) && (*(char *)((int)param_1 + 0x1a60) != '\0')) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b24),(undefined4 *)((int)param_1 + 0x1d));
+    if ((param_1->field_1B24 != 0) && (param_1->field_1A60 != '\0')) {
+      FUN_006e6080(param_1,2,param_1->field_1B24,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1b1c) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b1c),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1B1C != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1B1C,(undefined4 *)&param_1->field_0x1d);
     }
-    iVar4 = *(int *)((int)param_1 + 0x1b20);
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
+    iVar4 = param_1->field_1B20;
+    param_1->field_0031 = 1;
     goto joined_r0x0059bcb0;
   case 8:
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x29;
-    *(undefined4 *)((int)param_1 + 0x31) = 0x99;
-    if (*(int *)((int)param_1 + 0x1ac4) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ac4),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_002D = 0x29;
+    param_1->field_0031 = 0x99;
+    if (param_1->field_1AC4 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 0x89;
-    if (*(int *)((int)param_1 + 0x1ac8) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ac8),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 0x89;
+    if (param_1->field_1AC8 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x20;
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
-    if (*(int *)((int)param_1 + 0x1eb6) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1eb6),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_002D = 0x20;
+    param_1->field_0031 = 1;
+    if (param_1->field_1EB6 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1EB6,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1b24) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b24),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1B24 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1B24,(undefined4 *)&param_1->field_0x1d);
     }
-    *(uint *)((int)param_1 + 0x31) = (uint)(*(int *)((int)param_1 + 0x1ec2) == 0x100);
-    if (*(int *)((int)param_1 + 0x1eba) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1eba),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = (uint)(param_1->field_1EC2 == 0x100);
+    if (param_1->field_1EBA != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1EBA,(undefined4 *)&param_1->field_0x1d);
     }
-    iVar4 = *(int *)((int)param_1 + 0x1b20);
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
+    iVar4 = param_1->field_1B20;
+    param_1->field_0031 = 1;
     break;
   case 9:
-    *(uint *)((int)param_1 + 0x31) = (uint)(*(int *)((int)param_1 + 0x1edf) != 0);
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x20;
-    if (*(int *)((int)param_1 + 0x1ed3) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ed3),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = (uint)(param_1->field_1EDF != 0);
+    param_1->field_002D = 0x20;
+    if (param_1->field_1ED3 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1ED3,(undefined4 *)&param_1->field_0x1d);
     }
-    *(uint *)((int)param_1 + 0x31) = (uint)(*(uint *)((int)param_1 + 0x1edf) < 0xf4230);
-    if (*(int *)((int)param_1 + 0x1ed7) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ed7),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = (uint)((uint)param_1->field_1EDF < 0xf4230);
+    if (param_1->field_1ED7 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1ED7,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 1;
-    if (*(int *)((int)param_1 + 0x1eb6) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1eb6),(undefined4 *)((int)param_1 + 0x1d));
+    param_1->field_0031 = 1;
+    if (param_1->field_1EB6 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1EB6,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1eba) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1eba),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1EBA != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1EBA,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1b24) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1b24),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1B24 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1B24,(undefined4 *)&param_1->field_0x1d);
     }
-    iVar4 = *(int *)((int)param_1 + 0x1ac4);
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x29;
-    *(undefined4 *)((int)param_1 + 0x31) = 0x89;
+    iVar4 = param_1->field_1AC4;
+    param_1->field_002D = 0x29;
+    param_1->field_0031 = 0x89;
 joined_r0x0059bcb0:
     if (iVar4 == 0) goto switchD_0059b84b_default;
     goto LAB_0059bcb6;
   case 10:
-    pbVar2 = *(byte **)((int)param_1 + 0x1b0c);
+    pbVar2 = param_1->field_1B0C;
     pbVar3 = &DAT_00807e1d;
     do {
       bVar1 = *pbVar2;
@@ -157,37 +157,37 @@ LAB_0059bb67:
     } while (bVar1 != 0);
     iVar4 = 0;
 LAB_0059bb6c:
-    *(undefined4 *)((int)param_1 + 0x2d) = 0x29;
-    *(undefined4 *)((int)param_1 + 0x31) = 0x89;
+    param_1->field_002D = 0x29;
+    param_1->field_0031 = 0x89;
     if (iVar4 != 0) {
-      *(undefined4 *)((int)param_1 + 0x31) = 0x99;
+      param_1->field_0031 = 0x99;
     }
-    if (*(int *)((int)param_1 + 0x1ad8) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ad8),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1AD8 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AD8,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1adc) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1adc),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1ADC != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1ADC,(undefined4 *)&param_1->field_0x1d);
     }
-    if (*(int *)((int)param_1 + 0x1ae0) != 0) {
-      FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1ae0),(undefined4 *)((int)param_1 + 0x1d));
+    if (param_1->field_1AE0 != 0) {
+      FUN_006e6080(param_1,2,param_1->field_1AE0,(undefined4 *)&param_1->field_0x1d);
     }
-    *(undefined4 *)((int)param_1 + 0x31) = 200;
+    param_1->field_0031 = 200;
     if (iVar4 != 0) {
-      *(undefined4 *)((int)param_1 + 0x31) = 0xcc;
+      param_1->field_0031 = 0xcc;
     }
-    iVar4 = *(int *)((int)param_1 + 0x1ae4);
+    iVar4 = param_1->field_1AE4;
     break;
   default:
     goto switchD_0059b84b_default;
   }
   if (iVar4 != 0) {
 LAB_0059bcb6:
-    FUN_006e6080(param_1,2,iVar4,(undefined4 *)((int)param_1 + 0x1d));
+    FUN_006e6080(param_1,2,iVar4,(undefined4 *)&param_1->field_0x1d);
   }
 switchD_0059b84b_default:
-  *(undefined4 *)((int)param_1 + 0x2d) = 0x61;
-  *(undefined4 *)((int)param_1 + 0x35) = 0;
-  FUN_006e6080(param_1,0xf,0,(undefined4 *)((int)param_1 + 0x1d));
+  param_1->field_002D = 0x61;
+  param_1->field_0035 = 0;
+  FUN_006e6080(param_1,0xf,0,(undefined4 *)&param_1->field_0x1d);
   return;
 }
 

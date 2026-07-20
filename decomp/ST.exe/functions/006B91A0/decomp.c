@@ -46,7 +46,7 @@ int FUN_006b91a0(int *param_1,int *param_2)
       if (iVar2 == 0) break;
       if (iVar2 == -0x7789fe3e) {
         (**(code **)(*(int *)param_1[0xf] + 0x6c))((int *)param_1[0xf]);
-        FUN_006cec40(*param_1);
+        FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
       }
       else {
         if (((iVar2 != -0x7789ff60) && (iVar2 != -0x7789fe52)) || (iVar1 != 0)) break;

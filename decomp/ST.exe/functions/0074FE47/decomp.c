@@ -1,5 +1,5 @@
 
-int FUN_0074fe47(int param_1)
+int FUN_0074fe47(AnonShape_0074FE47_5517BCCF *param_1)
 
 {
   int iVar1;
@@ -8,13 +8,13 @@ int FUN_0074fe47(int param_1)
   
   lVar2 = Library::MSVCRT::__ftol();
   iStack0000000c = (int)((ulonglong)lVar2 >> 0x20);
-  iVar1 = FUN_0074fea4(*(void **)(param_1 + 4),(uint)lVar2,iStack0000000c,*(int *)(param_1 + 0x24));
+  iVar1 = FUN_0074fea4((void *)param_1->field_0004,(uint)lVar2,iStack0000000c,param_1->field_0024);
   if (iVar1 == 0) {
-    iVar1 = (**(code **)(**(int **)(param_1 + 4) + 0xc))(param_1 + -0xc);
+    iVar1 = (**(code **)(*(int *)param_1->field_0004 + 0xc))(&param_1[-1].field_0x1c);
     if (-1 < iVar1) {
-      *(uint *)(param_1 + 0xc) = (uint)lVar2;
-      *(int *)(param_1 + 0x10) = iStack0000000c;
-      iVar1 = (**(code **)(**(int **)(param_1 + 4) + 8))();
+      param_1->field_000C = (uint)lVar2;
+      param_1->field_0010 = iStack0000000c;
+      iVar1 = (**(code **)(*(int *)param_1->field_0004 + 8))();
     }
   }
   else {

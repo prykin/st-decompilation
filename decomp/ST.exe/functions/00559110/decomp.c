@@ -24,7 +24,7 @@ FUN_00559110(void *this,int param_1,undefined *param_2,int param_3,uint param_4,
   uVar7 = param_4;
   bVar8 = false;
   if ((((*(int *)((int)this + 0x114) != 0) && (-1 < param_5)) && (param_4 < 8)) &&
-     ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
+     ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
     if ((param_7 & 0x1000) != 0) {
       thunk_FUN_0055bbc0(this,0,(short)param_1,(short)param_2,(char)param_3,param_4,(char)param_5,
                          param_6);

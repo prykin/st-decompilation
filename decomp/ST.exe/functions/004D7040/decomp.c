@@ -51,9 +51,9 @@ undefined4 __fastcall FUN_004d7040(int *param_1)
       lVar5 = FUN_006b12cc(0x5dc);
       iVar1 = FUN_006b12a8((int)lVar5,iVar1);
       iVar1 = FUN_006b1280(iVar1);
-      if ((uint)(*(int *)((int)param_1 + 0x119) + iVar1) < *(uint *)(DAT_00802a38 + 0xe4)) {
+      if ((uint)(*(int *)((int)param_1 + 0x119) + iVar1) < (uint)PTR_00802a38->field_00E4) {
         iVar1 = *param_1;
-        *(uint *)((int)param_1 + 0x119) = *(uint *)(DAT_00802a38 + 0xe4);
+        *(undefined4 *)((int)param_1 + 0x119) = PTR_00802a38->field_00E4;
         iVar3 = (**(code **)(iVar1 + 0x78))();
         (**(code **)(iVar1 + 0x80))(iVar3 + local_8);
         (**(code **)(*param_1 + 200))(iVar2 + -1);

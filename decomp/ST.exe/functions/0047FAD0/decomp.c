@@ -43,10 +43,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
                          ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                          (int)sVar1) * 8);
     }
-    if (((param_1 == (int *)0x0) || (param_1[6] != this->field_06AF)) ||
-       ((param_1[9] != *(int *)&this->field_0x24 ||
-        (iVar5 = thunk_FUN_004b9d90((int)param_1), iVar5 == 0)))) {
-      FUN_006e62d0(DAT_00802a38,this->field_06AF,(int *)&param_1);
+    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+        (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+       ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != *(int *)&this->field_0x24
+        || (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
+      FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
     }
     if (param_1 != (int *)0x0) {
       thunk_FUN_004b9d20(param_1,(int)this);
@@ -61,7 +62,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     iVar5 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
   case CASE_5:
-    iVar5 = Dismant(this,(int *)0x2,unaff_EDI,unaff_ESI);
+    iVar5 = Dismant(this,(AnonShape_004B9D90_4F3151F9 *)0x2,unaff_EDI,unaff_ESI);
     return iVar5;
   default:
     iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b30,0,0,&DAT_007a4ccc,
@@ -87,10 +88,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
                          ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                          (int)sVar1) * 8);
     }
-    if (((param_1 == (int *)0x0) || (param_1[6] != this->field_06AF)) ||
-       ((param_1[9] != *(int *)&this->field_0x24 ||
-        (iVar5 = thunk_FUN_004b9d90((int)param_1), iVar5 == 0)))) {
-      FUN_006e62d0(DAT_00802a38,this->field_06AF,(int *)&param_1);
+    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+        (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+       ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != *(int *)&this->field_0x24
+        || (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
+      FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
     }
     if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
       param_1[300] = 0;

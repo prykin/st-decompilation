@@ -1,5 +1,7 @@
 
-void __thiscall FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,int param_4)
+void __thiscall
+FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
+            AnonShape_0055C320_953077EC *param_4)
 
 {
   byte bVar1;
@@ -81,10 +83,10 @@ void __thiscall FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_
     pcVar9 = pcVar9 + 1;
     pcVar8 = pcVar8 + 1;
   }
-  if (0 < *(int *)(param_4 + 8)) {
+  if (0 < param_4->field_0008) {
     do {
       uVar3 = 0xffffffff;
-      pcVar9 = *(char **)(*(int *)(param_4 + 0x14) + iVar5 * 4);
+      pcVar9 = *(char **)(param_4->field_0014 + iVar5 * 4);
       do {
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
@@ -93,18 +95,18 @@ void __thiscall FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_
       } while (cVar2 != '\0');
       iVar5 = iVar5 + 1;
       param_1 = param_1 + ~uVar3;
-    } while (iVar5 < *(int *)(param_4 + 8));
+    } while (iVar5 < param_4->field_0008);
   }
   if (*(int *)((int)this + 0x644) != 0) {
     FUN_006ab060((LPVOID *)((int)this + 0x644));
   }
-  param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + *(int *)(param_4 + 8)));
+  param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + param_4->field_0008));
   *(LPVOID *)((int)this + 0x644) = param_1;
   if (param_1 == (byte *)0x0) {
     *(undefined1 *)((int)this + 10) = 1;
     return;
   }
-  iVar5 = *(int *)(param_4 + 8);
+  iVar5 = param_4->field_0008;
   iVar6 = 0;
   if (iVar5 < 1) {
     *(undefined1 *)((int)this + 10) = 1;
@@ -115,7 +117,7 @@ void __thiscall FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_
     goto LAB_0055c414;
   }
   do {
-    pcVar9 = *(char **)(*(int *)(param_4 + 0x14) + iVar6 * 4);
+    pcVar9 = *(char **)(param_4->field_0014 + iVar6 * 4);
 LAB_0055c414:
     uVar3 = 0xffffffff;
     do {
@@ -126,7 +128,7 @@ LAB_0055c414:
     } while (cVar2 != '\0');
     uVar3 = ~uVar3;
     if (iVar6 < iVar5) {
-      pbVar7 = *(byte **)(*(int *)(param_4 + 0x14) + iVar6 * 4);
+      pbVar7 = *(byte **)(param_4->field_0014 + iVar6 * 4);
     }
     else {
       pbVar7 = (byte *)0x0;
@@ -142,9 +144,9 @@ LAB_0055c414:
       pbVar7 = pbVar7 + 1;
       pbVar10 = pbVar10 + 1;
     }
-    param_1[uVar3] = -(iVar6 != *(int *)(param_4 + 8) + -1) & 10;
+    param_1[uVar3] = -(iVar6 != param_4->field_0008 + -1) & 10;
     param_1 = param_1 + uVar3 + 1;
-    iVar5 = *(int *)(param_4 + 8);
+    iVar5 = param_4->field_0008;
     iVar6 = iVar6 + 1;
     if (iVar5 <= iVar6) {
       *(undefined1 *)((int)this + 10) = 1;

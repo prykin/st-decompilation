@@ -1,40 +1,42 @@
 
-void __fastcall FUN_0054b540(void *param_1)
+void __fastcall FUN_0054b540(CursorClassTy *param_1)
 
 {
   uint uVar1;
   
-  *(undefined4 *)((int)param_1 + 0xcd) = 0;
-  *(undefined4 *)((int)param_1 + 0xd3) = 0;
-  *(undefined4 *)((int)param_1 + 0xd7) = 0;
-  *(undefined2 *)((int)param_1 + 0xdb) = 0;
-  *(undefined1 *)((int)param_1 + 0xdd) = 0;
-  uVar1 = *(uint *)((int)param_1 + 0x10b);
+  *(undefined4 *)&param_1->field_0xcd = 0;
+  param_1->field_00D3 = 0;
+  param_1->field_00D4 = 0;
+  param_1->field_00D5 = 0;
+  param_1->field_0xd6 = 0;
+  *(undefined4 *)&param_1->field_0xd7 = 0;
+  *(undefined2 *)&param_1->field_0xdb = 0;
+  param_1->field_0xdd = 0;
+  uVar1 = *(uint *)&param_1->field_0x10b;
   if (-1 < (int)uVar1) {
-    if (*(char *)((int)param_1 + 0xde) == '\x05') {
-      if (DAT_00807598 != (void *)0x0) {
-        FUN_006e8ba0(DAT_00807598,uVar1);
+    if (param_1->field_00DE == CASE_5) {
+      if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+        FUN_006e8ba0(PTR_00807598,uVar1);
       }
-      if (*(int *)((int)param_1 + 0xa9) == 0) {
-        Library::DKW::DDX::FUN_006b8a60(*(byte **)((int)param_1 + 0xad));
+      if (param_1->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8a60((byte *)param_1->field_00AD);
       }
-      else if (*(uint *)((int)param_1 + 0x1c) != 0xffffffff) {
+      else if (param_1->field_001C != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)((int)param_1 + 0x60),*(uint *)((int)param_1 + 0x1c),0xfffffffe,
-                   *(uint *)((int)param_1 + 0x34),*(uint *)((int)param_1 + 0x38));
+                  ((uint *)param_1->field_0060,param_1->field_001C,0xfffffffe,param_1->field_0034,
+                   param_1->field_0038);
       }
-      CursorClassTy::DrawSprite(param_1,*(int *)((int)param_1 + 0xc5),*(int *)((int)param_1 + 0xc9))
-      ;
+      CursorClassTy::DrawSprite(param_1,param_1->field_00C5,param_1->field_00C9);
     }
     else {
       FUN_006b3bb0(DAT_008075a8,uVar1);
     }
-    *(undefined4 *)((int)param_1 + 0x10b) = 0xffffffff;
+    *(undefined4 *)&param_1->field_0x10b = 0xffffffff;
   }
-  *(undefined1 *)((int)param_1 + 0xde) = 0;
-  *(undefined4 *)((int)param_1 + 0x496) = 0;
-  *(undefined4 *)((int)param_1 + 0x49a) = 0;
-  *(undefined4 *)((int)param_1 + 0x4ae) = 0;
+  param_1->field_00DE = CASE_0;
+  param_1->field_0496 = 0;
+  param_1->field_049A = (STFishC *)0x0;
+  *(undefined4 *)&param_1->field_0x4ae = 0;
   return;
 }
 

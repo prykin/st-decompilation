@@ -1,15 +1,15 @@
 
-void __fastcall FUN_00694b90(int param_1)
+void __fastcall FUN_00694b90(AnonShape_00694B90_ACA70D4F *param_1)
 
 {
-  if (*(int *)(param_1 + 8) != 0) {
-    FUN_006f07e0((int *)(param_1 + 8));
+  if (param_1->field_0008 != 0) {
+    FUN_006f07e0(&param_1->field_0008);
   }
-  if (*(int *)(param_1 + 0xc) != 0) {
-    Library::Ourlib::MFSTMAP::mfTMapErase((int *)(param_1 + 0xc));
+  if (param_1->field_000C != 0) {
+    Library::Ourlib::MFSTMAP::mfTMapErase(&param_1->field_000C);
   }
-  *(int *)(param_1 + 8) = 0;
-  *(int *)(param_1 + 0xc) = 0;
+  param_1->field_0008 = 0;
+  param_1->field_000C = 0;
   return;
 }
 

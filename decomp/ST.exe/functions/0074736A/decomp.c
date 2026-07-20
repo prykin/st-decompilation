@@ -1,5 +1,5 @@
 
-undefined4 FUN_0074736a(int param_1,undefined4 *param_2,short *param_3)
+undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2,short *param_3)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
@@ -9,28 +9,28 @@ undefined4 FUN_0074736a(int param_1,undefined4 *param_2,short *param_3)
   uint uVar4;
   uint uVar5;
   
-  lpCriticalSection = *(LPCRITICAL_SECTION *)(param_1 + 0x2c);
+  lpCriticalSection = param_1->field_002C;
   EnterCriticalSection(lpCriticalSection);
-  *(undefined4 **)(param_1 + 0x34) = param_2;
+  param_1->field_0034 = param_2;
   if (param_2 == (undefined4 *)0x0) {
-    *(undefined4 *)(param_1 + 0x38) = 0;
+    param_1->field_0038 = 0;
   }
   else {
-    iVar2 = (**(code **)*param_2)(param_2,&DAT_007a1ae0,(undefined4 *)(param_1 + 0x38));
+    iVar2 = (**(code **)*param_2)(param_2,&DAT_007a1ae0,&param_1->field_0038);
     if (-1 < iVar2) {
-      piVar1 = *(int **)(param_1 + 0x38);
+      piVar1 = (int *)param_1->field_0038;
       (**(code **)(*piVar1 + 8))(piVar1);
     }
   }
-  if (*(HoloTy **)(param_1 + 0x30) != (HoloTy *)0x0) {
-    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x30));
-    *(undefined4 *)(param_1 + 0x30) = 0;
+  if ((HoloTy *)param_1->field_0030 != (HoloTy *)0x0) {
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0030);
+    param_1->field_0030 = 0;
   }
   if (param_3 != (short *)0x0) {
     iVar2 = FUN_0074d664(param_3);
     uVar5 = (iVar2 + 1U) * 2;
     puVar3 = (undefined4 *)Library::MSVCRT::FUN_0072e530(uVar5);
-    *(undefined4 **)(param_1 + 0x30) = puVar3;
+    param_1->field_0030 = puVar3;
     if (puVar3 != (undefined4 *)0x0) {
       for (uVar4 = (iVar2 + 1U & 0x7fffffff) >> 1; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar3 = *(undefined4 *)param_3;

@@ -283,19 +283,18 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 } while (iVar2 < (int)(uint)DAT_00808aaf);
               }
               uVar7 = 0;
-              uVar12 = *(uint *)(DAT_0080c4fe + 0xc);
+              uVar12 = PTR_0080c4fe->count;
               if (0 < (int)uVar12) {
                 bVar11 = uVar12 != 0;
                 do {
                   if (bVar11) {
-                    piVar9 = (int *)(*(int *)(DAT_0080c4fe + 8) * uVar7 +
-                                    *(int *)(DAT_0080c4fe + 0x1c));
+                    piVar9 = (int *)(PTR_0080c4fe->elementSize * uVar7 + (int)PTR_0080c4fe->data);
                   }
                   else {
                     piVar9 = (int *)0x0;
                   }
                   if ((piVar9 != (int *)0x0) && (*piVar9 == local_18)) {
-                    FUN_006b0c70(DAT_0080c4fe,uVar7);
+                    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_0080c4fe,uVar7);
                     break;
                   }
                   uVar7 = uVar7 + 1;
@@ -308,19 +307,18 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
               break;
             case 0x35:
               uVar7 = 0;
-              uVar12 = *(uint *)(DAT_0080c4fe + 0xc);
+              uVar12 = PTR_0080c4fe->count;
               if (0 < (int)uVar12) {
                 bVar11 = uVar12 != 0;
                 do {
                   if (bVar11) {
-                    piVar9 = (int *)(*(int *)(DAT_0080c4fe + 8) * uVar7 +
-                                    *(int *)(DAT_0080c4fe + 0x1c));
+                    piVar9 = (int *)(PTR_0080c4fe->elementSize * uVar7 + (int)PTR_0080c4fe->data);
                   }
                   else {
                     piVar9 = (int *)0x0;
                   }
                   if ((piVar9 != (int *)0x0) && (*piVar9 == local_18)) {
-                    FUN_006b0c70(DAT_0080c4fe,uVar7);
+                    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_0080c4fe,uVar7);
                     iVar2 = 0;
                     if (DAT_00808aaf != 0) {
                       pcVar3 = &DAT_00808af6;
@@ -368,7 +366,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         pcVar3 = (char *)FUN_006b0140(0x426a,HINSTANCE_00807618);
         thunk_FUN_0052d320(g_popUp_008016D8,pcVar3,uVar12);
       }
-      if ((*(int *)(DAT_0080c4fe + 0xc) == 0) || (59999 < (int)(DVar5 - this_00->field_00BC))) {
+      if ((PTR_0080c4fe->count == 0) || (59999 < (int)(DVar5 - this_00->field_00BC))) {
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           uVar12 = 8;
           pcVar3 = (char *)FUN_006b0140(0x4269,HINSTANCE_00807618);

@@ -39,11 +39,11 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
       }
       uVar8 = 0;
       local_14->field_0065 = 0;
-      local_8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      local_8 = PTR_00802a38->field_00E4;
       if (local_10 != 0) {
         uVar6 = 0;
         do {
-          FUN_006acc70(pSVar2->field_0029,uVar6,&local_c);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,&local_c);
           if ((short)local_c != -1) {
             this_00 = (STBoatC *)
                       STAllPlayersC::GetObjPtr

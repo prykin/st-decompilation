@@ -192,9 +192,9 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
                                      *(undefined2 *)((int)&message->data + 2)),CASE_1);
         iVar10 = extraout_EDX;
         if (pSVar5 != (STFishC *)0x0) {
-          uVar6 = (*pSVar5->vtable->slot_2C)();
+          uVar6 = (*pSVar5->vtable->vfunc_2C)();
           this->field_053B = uVar6;
-          uVar6 = (*pSVar5->vtable->slot_6C)();
+          uVar6 = (*pSVar5->vtable->vfunc_6C)();
           this->field_053F = uVar6;
           STFishC::sub_004162B0
                     (pSVar5,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
@@ -210,7 +210,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
           }
           this->field_054F = uVar15;
 LAB_0065c021:
-          (*pSVar5->vtable->slot_74)(local_1c);
+          (*pSVar5->vtable->vfunc_74)(local_1c);
           Library::DKW::TBL::FUN_006b6020((uint *)this->field_05B3,0,local_1c);
           iVar10 = extraout_EDX_00;
         }
@@ -300,7 +300,7 @@ LAB_0065c021:
       this->field_052F = 0;
       this->field_0533 = 0;
       this->field_0537 = 0;
-      uVar6 = (*pSVar5->vtable->slot_2C)();
+      uVar6 = (*pSVar5->vtable->vfunc_2C)();
       this->field_053B = uVar6;
       this->field_053F = 0;
       STFishC::sub_004162B0
@@ -330,9 +330,9 @@ LAB_0065c021:
                                      *(undefined2 *)((int)&message->data + 2)),CASE_3);
         iVar10 = extraout_EDX_01;
         if (pSVar5 != (STFishC *)0x0) {
-          uVar6 = (*pSVar5->vtable->slot_2C)();
+          uVar6 = (*pSVar5->vtable->vfunc_2C)();
           this->field_053B = uVar6;
-          uVar6 = (*pSVar5->vtable->slot_6C)();
+          uVar6 = (*pSVar5->vtable->vfunc_6C)();
           this->field_053F = uVar6;
           STFishC::sub_004162B0
                     (pSVar5,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
@@ -405,9 +405,9 @@ LAB_0065c4bb:
       this->field_0563 = 0;
       goto cf_common_exit_0065C65B;
     }
-    uVar6 = (*pSVar5->vtable->slot_2C)();
+    uVar6 = (*pSVar5->vtable->vfunc_2C)();
     this->field_0563 = uVar6;
-    uVar6 = (*pSVar5->vtable->slot_6C)();
+    uVar6 = (*pSVar5->vtable->vfunc_6C)();
     this->field_0567 = uVar6;
     STFishC::sub_004162B0
               (pSVar5,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),&local_6);
@@ -421,7 +421,7 @@ LAB_0065c4bb:
       uVar15 = (uint)*(ushort *)&pSVar5->field_0x30;
     }
     this->field_0577 = uVar15;
-    (*pSVar5->vtable->slot_74)(local_1c);
+    (*pSVar5->vtable->vfunc_74)(local_1c);
     puVar14 = (uint *)this->field_05B3;
     pcVar12 = local_1c;
     uVar15 = 1;
@@ -441,8 +441,8 @@ LAB_0065c4bb:
   }
   Library::DKW::TBL::FUN_006b6020(puVar14,uVar15,pcVar12);
 cf_common_exit_0065C65B:
-  this->field_05A7 = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
-  this->field_05AB = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  this->field_05A7 = (uint)PTR_00802a38->field_00E4 / 0x19;
+  this->field_05AB = PTR_00802a38->field_00E4;
   uVar6 = (**(code **)(this->field_0000 + 0x14))();
   this->field_05AF = uVar6;
   return local_c;

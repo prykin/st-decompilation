@@ -2,9 +2,15 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
-   ChooseMapTy::GetMessage */
+   ChooseMapTy::GetMessage
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
-undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
+undefined4 __thiscall
+ChooseMapTy::GetMessage(ChooseMapTy *this,AnonShape_005DE050_5BD86458 *param_1)
 
 {
   undefined1 *puVar1;
@@ -78,59 +84,68 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
     RaiseInternalException(iVar10,0,s_E____titans_Start_load_obj_cpp_007cc728,0x6f7);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_40,param_1);
-  StartSystemTy::ChatMessage(DAT_0081176c,param_1);
-  uVar15 = *(uint *)(param_1 + 0x10);
+  thunk_FUN_005b6450(local_40,(int)param_1);
+  StartSystemTy::ChatMessage(PTR_0081176c,(int)param_1);
+  uVar15 = *(uint *)&param_1->field_0x10;
   if (uVar15 < 0x6943) {
     if (uVar15 == 0x6942) {
       this_01->field_0045 = 0x200;
       this_01->field_0049 = 0;
       this_01->field_004D = 0x6102;
-      this_01->field_0051 = *(undefined4 *)(param_1 + 0x14);
-      thunk_FUN_005b66e0(this_01);
+      this_01->field_0051 = *(undefined4 *)&param_1->field_0x14;
+      thunk_FUN_005b66e0((STJellyGunC *)this_01);
       goto cf_common_exit_005B2053;
     }
     if (0x6327 < uVar15) {
       if (uVar15 < 0x6341) {
         if (uVar15 == 0x6340) {
-          MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&this_01->field_1A5B->field_055C,param_1,0);
+          MMMObjTy::PaintSlBut
+                    ((MMMObjTy *)this_01,
+                     (AnonShape_005B6560_61F462DF *)&this_01->field_1A5B->field_055C,(int)param_1,0)
+          ;
         }
         else {
           switch(uVar15) {
           case 0x6332:
-            StartSystemTy::PaintBinDesc(DAT_0081176c,param_1);
+            StartSystemTy::PaintBinDesc(PTR_0081176c,param_1);
             break;
           case 0x6333:
-            MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&DAT_0081176c->field_038D,param_1,0);
+            MMMObjTy::PaintSlBut
+                      ((MMMObjTy *)this_01,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_038D,
+                       (int)param_1,0);
             break;
           case 0x6334:
-            MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&DAT_0081176c->field_041E,param_1,0);
+            MMMObjTy::PaintSlBut
+                      ((MMMObjTy *)this_01,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_041E,
+                       (int)param_1,0);
             break;
           case 0x6335:
-            DAT_0081176c->field_04CF =
-                 *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
-            if (DAT_0081176c->field_04B3 != 0xffffffff) {
+            PTR_0081176c->field_04CF =
+                 *(int *)(*(int *)&param_1->field_0x18 + 4) + (uint)param_1->field_0016;
+            if (PTR_0081176c->field_04B3 != 0xffffffff) {
               Library::DKW::DDX::FUN_006b3730
-                        ((uint *)DAT_0081176c->field_04F7,DAT_0081176c->field_04B3,
-                         DAT_0081176c->field_04B7,DAT_0081176c->field_04CB,DAT_0081176c->field_04CF)
+                        ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,
+                         PTR_0081176c->field_04B7,PTR_0081176c->field_04CB,PTR_0081176c->field_04CF)
               ;
             }
           }
         }
       }
       else if (uVar15 == 0x6341) {
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&this_01->field_1A5B->field_05ED,param_1,0);
+        MMMObjTy::PaintSlBut
+                  ((MMMObjTy *)this_01,
+                   (AnonShape_005B6560_61F462DF *)&this_01->field_1A5B->field_05ED,(int)param_1,0);
       }
       else if (uVar15 == 0x693f) {
-        thunk_FUN_005ae840((int)this_01);
+        thunk_FUN_005ae840((AnonShape_005AE840_42F3E2A7 *)this_01);
       }
       else if (uVar15 == 0x6940) {
-        thunk_FUN_005ae950(this_01);
+        thunk_FUN_005ae950((AnonShape_005AE950_3AC49809 *)this_01);
       }
       goto cf_common_exit_005B2053;
     }
     if (uVar15 == 0x6327) {
-      piVar5 = *(int **)(param_1 + 0x14);
+      piVar5 = *(int **)&param_1->field_0x14;
       uID = 0x2342;
       thunk_FUN_005b5be0(this_01,this_01->field_1C8B,piVar5);
       switch(this_01->field_1A5F) {
@@ -156,14 +171,14 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
           uID = 0x233f;
         }
       }
-      ccFntTy::SetSurf(DAT_0081176c->field_0034,this_01->field_1C8B,0,*piVar5 * 0x7c + -0x7c,0,0x7a,
+      ccFntTy::SetSurf(PTR_0081176c->field_0034,this_01->field_1C8B,0,*piVar5 * 0x7c + -0x7c,0,0x7a,
                        *(int *)(this_01->field_1C8B + 8) -
                        ((-(uint)(piVar5[1] != 1) & 0xfffffffd) + 3));
       uVar13 = 2;
       iVar24 = -1;
       iVar10 = -1;
       puVar11 = (uint *)FUN_006b0140(uID,HINSTANCE_00807618);
-      ccFntTy::WrStr(DAT_0081176c->field_0034,puVar11,iVar10,iVar24,uVar13);
+      ccFntTy::WrStr(PTR_0081176c->field_0034,puVar11,iVar10,iVar24,uVar13);
       FUN_006b35d0(DAT_008075a8,this_01->field_1C87);
       goto cf_common_exit_005B2053;
     }
@@ -171,10 +186,10 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       if (uVar15 == 0x6105) {
         this_01->field_0045 = 0x200;
         this_01->field_0049 = 0;
-        this_01->field_004D = *(undefined4 *)(param_1 + 0x10);
+        this_01->field_004D = *(undefined4 *)&param_1->field_0x10;
         this_01->field_0051 = 0;
         this_01->field_0055 = 0;
-        thunk_FUN_005b66e0(this_01);
+        thunk_FUN_005b66e0((STJellyGunC *)this_01);
       }
       else {
         switch(uVar15) {
@@ -182,8 +197,8 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
           NoneChooseMap(this_01,unaff_EDI);
           break;
         case 2:
-          InitChooseMap(this_01,*(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14),
-                        *(byte *)(*(int *)(param_1 + 0x14) + 0x18));
+          InitChooseMap(this_01,*(undefined1 *)(*(int *)&param_1->field_0x14 + 0x14),
+                        *(byte *)(*(int *)&param_1->field_0x14 + 0x18));
           break;
         case 3:
           DoneChooseMap(this_01);
@@ -201,21 +216,21 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
           this_01->field_0049 = 0;
           this_01->field_004D = 0x610a;
           this_01->field_0051 = 7;
-          thunk_FUN_005b66e0(this_01);
+          thunk_FUN_005b66e0((STJellyGunC *)this_01);
         }
       }
       else {
         this_01->field_0045 = 0x200;
         this_01->field_0049 = 0;
-        this_01->field_004D = *(undefined4 *)(param_1 + 0x10);
-        this_01->field_0051 = *(undefined4 *)(param_1 + 0x14);
-        this_01->field_0055 = *(undefined4 *)(param_1 + 0x18);
-        thunk_FUN_005b66e0(this_01);
+        this_01->field_004D = *(undefined4 *)&param_1->field_0x10;
+        this_01->field_0051 = *(undefined4 *)&param_1->field_0x14;
+        this_01->field_0055 = *(undefined4 *)&param_1->field_0x18;
+        thunk_FUN_005b66e0((STJellyGunC *)this_01);
       }
       goto cf_common_exit_005B2053;
     }
     if (uVar15 != 0x6326) goto cf_common_exit_005B2053;
-    piVar5 = *(int **)(param_1 + 0x14);
+    piVar5 = *(int **)&param_1->field_0x14;
     switch(this_01->field_1A5F) {
     case CASE_1:
     case CASE_2:
@@ -225,7 +240,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       else {
         this_01->field_1A5F = CASE_2;
       }
-      DAT_0081176c->field_02EB = (char)*piVar5;
+      PTR_0081176c->field_02EB = (char)*piVar5;
       if (this_01->field_1A60 == 0) goto cf_common_exit_005B0DCE;
       goto LAB_005b0dc0;
     default:
@@ -238,7 +253,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       else {
         this_01->field_1A5F = CASE_5;
       }
-      DAT_0081176c->field_02EB = (char)*piVar5;
+      PTR_0081176c->field_02EB = (char)*piVar5;
       iVar10 = this_01->field_1A60;
       break;
     case CASE_9:
@@ -253,7 +268,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       else {
         this_01->field_1A5F = CASE_B;
       }
-      DAT_0081176c->field_02EA = (char)*piVar5;
+      PTR_0081176c->field_02EA = (char)*piVar5;
       iVar10 = this_01->field_1A60;
     }
     if (iVar10 != 0) {
@@ -269,10 +284,10 @@ cf_common_exit_005B0DCE:
     if (uVar15 != 0xc0a2) {
       switch(uVar15) {
       case 0x8160:
-        *(undefined4 *)(param_1 + 0x18) = 0x13;
+        *(undefined4 *)&param_1->field_0x18 = 0x13;
         break;
       case 0x8161:
-        uVar15 = (uint)*(ushort *)(param_1 + 0x14);
+        uVar15 = (uint)*(ushort *)&param_1->field_0x14;
         iVar10 = *(int *)(this_01->field_1C9F + 8);
         if ((int)uVar15 < iVar10) {
           local_8 = *(uint **)(*(int *)(this_01->field_1C9F + 0x14) + uVar15 * 4);
@@ -287,9 +302,9 @@ cf_common_exit_005B0DCE:
           }
         }
         local_c = (char *)0x0;
-        FUN_006b4170(this_01->field_1C7B,0,0,(uint)*(ushort *)(param_1 + 0x1a),
+        FUN_006b4170(this_01->field_1C7B,0,0,(uint)*(ushort *)&param_1->field_0x1a,
                      *(int *)(this_01->field_1C7B + 4),0x13,0);
-        if ((int)(uint)*(ushort *)(param_1 + 0x14) < *(int *)(this_01->field_1C9F + 8)) {
+        if ((int)(uint)*(ushort *)&param_1->field_0x14 < *(int *)(this_01->field_1C9F + 8)) {
           pbVar18 = &DAT_007cc8b4;
           puVar11 = local_8;
           do {
@@ -318,29 +333,29 @@ LAB_005b1da4:
           pbVar18 = (byte *)FUN_0070b3a0(this_01->field_1C7F,uVar15);
           pcVar17 = *(char **)(pbVar18 + 4);
           DibPut((undefined4 *)this_01->field_1C7B,2,
-                 (0x13 - *(int *)(pbVar18 + 8)) / 2 + (uint)*(ushort *)(param_1 + 0x1a),'\x06',
+                 (0x13 - *(int *)(pbVar18 + 8)) / 2 + (uint)*(ushort *)&param_1->field_0x1a,'\x06',
                  pbVar18);
         }
-        ccFntTy::SetSurf((ccFntTy *)DAT_0081176c->field_0030,this_01->field_1C7B,0,
-                         (int)(pcVar17 + 4),(uint)*(ushort *)(param_1 + 0x1a),
+        ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,this_01->field_1C7B,0,
+                         (int)(pcVar17 + 4),(uint)*(ushort *)&param_1->field_0x1a,
                          (*(int *)(this_01->field_1C7B + 4) - (int)pcVar17) + -4,0x13);
-        ccFntTy::WrStr((ccFntTy *)DAT_0081176c->field_0030,local_8,2,-1,
-                       (-(uint)(*(short *)(param_1 + 0x16) != 0) & 2) + 1);
+        ccFntTy::WrStr((ccFntTy *)PTR_0081176c->field_0030,local_8,2,-1,
+                       (-(uint)(param_1->field_0016 != 0) & 2) + 1);
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,(&this_01->field_1C23)[*(ushort *)(param_1 + 0x1a) / 0x13],
-                   0xfffffffe,0x114,*(ushort *)(param_1 + 0x1a) + 0x3f);
+                  (DAT_008075a8,(&this_01->field_1C23)[*(ushort *)&param_1->field_0x1a / 0x13],
+                   0xfffffffe,0x114,*(ushort *)&param_1->field_0x1a + 0x3f);
         break;
       case 0x8162:
         uVar15 = *(uint *)(this_01->field_1C9F + 8);
-        if (*(uint *)(param_1 + 0x14) < uVar15) {
-          if (this_01->field_1A5F == (CASE_2|CASE_1)) {
+        if (*(uint *)&param_1->field_0x14 < uVar15) {
+          if (this_01->field_1A5F == CASE_3) {
             this_01->field_002D = 0x6956;
             (**(code **)this_01->field_0000)(&this_01->field_0x1d);
           }
           else {
-            if ((int)(uint)*(ushort *)(param_1 + 0x14) < (int)uVar15) {
+            if ((int)(uint)*(ushort *)&param_1->field_0x14 < (int)uVar15) {
               pbVar18 = *(byte **)(*(int *)(this_01->field_1C9F + 0x14) +
-                                  (uint)*(ushort *)(param_1 + 0x14) * 4);
+                                  (uint)*(ushort *)&param_1->field_0x14 * 4);
             }
             else {
               pbVar18 = (byte *)0x0;
@@ -442,18 +457,22 @@ LAB_005b1b6c:
         }
         break;
       case 0x8163:
-        this_01->field_1C93 = *(undefined4 *)(param_1 + 0x14);
+        this_01->field_1C93 = *(undefined4 *)&param_1->field_0x14;
         this_01->field_1A64 = 1;
         this_01->field_1A68 = this_01->field_0061;
         break;
       case 0x8164:
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&this_01->field_1A70,param_1,0);
+        MMMObjTy::PaintSlBut
+                  ((MMMObjTy *)this_01,(AnonShape_005B6560_61F462DF *)&this_01->field_1A70,
+                   (int)param_1,0);
         break;
       case 0x8165:
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&this_01->field_1B01,param_1,0);
+        MMMObjTy::PaintSlBut
+                  ((MMMObjTy *)this_01,(AnonShape_005B6560_61F462DF *)&this_01->field_1B01,
+                   (int)param_1,0);
         break;
       case 0x8166:
-        uVar15 = *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
+        uVar15 = *(int *)(*(int *)&param_1->field_0x18 + 4) + (uint)param_1->field_0016;
         this_01->field_1BB2 = uVar15;
         if (this_01->field_1B96 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
@@ -611,7 +630,7 @@ LAB_005b2011:
       uVar13 = 0;
     }
     wsprintfA(&DAT_0080ed16,s__s_s__s_007cc8dc,&this_01->field_1DA7,uVar13,&DAT_0080f33a);
-    DAT_008087a0 = CASE_2|CASE_1;
+    DAT_008087a0 = CASE_3;
     iVar10 = thunk_FUN_0056e9e0(&DAT_00807620,1);
     if (iVar10 == 0) goto cf_common_exit_005B2053;
     uVar15 = 0xffffffff;
@@ -731,7 +750,7 @@ LAB_005b1644:
   }
   switch(uVar15) {
   case 0x6943:
-    thunk_FUN_005b6350(this_01,0x6942,*(undefined4 *)(param_1 + 0x14),0);
+    thunk_FUN_005b6350(this_01,0x6942,*(undefined4 *)&param_1->field_0x14,0);
     if (DAT_00811768 == '\x01') {
       DAT_00811768 = '\x02';
     }
@@ -758,32 +777,32 @@ LAB_005b1644:
     switch(this_01->field_1A5F) {
     case CASE_1:
     case CASE_2:
-    case CASE_4|CASE_2:
+    case CASE_6:
     case CASE_A:
       DAT_00808783 = 2;
       break;
-    case CASE_2|CASE_1:
+    case CASE_3:
     case CASE_9:
     case CASE_B:
       DAT_00808783 = 1;
       break;
     case CASE_4:
     case CASE_5:
-    case CASE_4|CASE_2|CASE_1:
+    case CASE_7:
     case CASE_C:
     case CASE_13:
       DAT_00808783 = 3;
     }
     this_01->field_0049 = 1;
-    if (this_01->field_1A5F == (CASE_2|CASE_1)) {
+    if (this_01->field_1A5F == CASE_3) {
       this_01->field_004D = 0x7101;
       this_01->field_0051 = 3;
       this_01->field_0055 = 0;
-      thunk_FUN_005b66e0(this_01);
+      thunk_FUN_005b66e0((STJellyGunC *)this_01);
     }
     else {
       this_01->field_004D = 0x60ff;
-      thunk_FUN_005b66e0(this_01);
+      thunk_FUN_005b66e0((STJellyGunC *)this_01);
     }
     break;
   case 0x6949:
@@ -953,9 +972,9 @@ LAB_005b1644:
       this_01->field_1A64 = 0;
     }
     DAT_008087a0 = this_01->field_1A5F;
-    if ((this_01->field_1A5F != 0) && (this_01->field_1A5F < (CASE_2|CASE_1))) {
-      thunk_FUN_0056ef50(0x807620);
-      thunk_FUN_0056f040(0x807620);
+    if ((this_01->field_1A5F != CASE_0) && (this_01->field_1A5F < CASE_3)) {
+      thunk_FUN_0056ef50((AnonShape_0056EF50_CAB83E9D *)&DAT_00807620);
+      thunk_FUN_0056f040((AnonShape_0056F040_86F75ABE *)&DAT_00807620);
     }
     if (this_01->field_1A5F == CASE_1) {
       thunk_FUN_0056ebe0(0x807620);
@@ -1074,7 +1093,7 @@ LAB_005b1644:
           this_01->field_1A64 = 0;
         }
         CVar3 = this_01->field_1A5F;
-        if ((CVar3 != 0) && (CVar3 < (CASE_2|CASE_1))) {
+        if ((CVar3 != CASE_0) && (CVar3 < CASE_3)) {
           thunk_FUN_005b6350(this_01,0x6120,(uint)CVar3,(uint)CVar3);
           this_01->field_0x20b3 = 1;
           this_01->field_20B7 = 0;
@@ -1327,7 +1346,7 @@ LAB_005b1108:
   }
 cf_common_exit_005B2053:
   g_currentExceptionFrame = local_84.previous;
-  uVar13 = MMObjTy::GetMessage((MMObjTy *)this_01,param_1);
+  uVar13 = MMObjTy::GetMessage((MMObjTy *)this_01,(int)param_1);
   return uVar13;
 }
 

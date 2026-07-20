@@ -13,7 +13,7 @@ void __fastcall FUN_006975f0(void *param_1)
   bool bVar9;
   int local_20;
   uint local_18;
-  int *local_10;
+  AnonShape_006975F0_6D562F4E *local_10;
   int local_8;
   
   iVar4 = *(int *)((int)param_1 + 0x5853);
@@ -55,19 +55,20 @@ void __fastcall FUN_006975f0(void *param_1)
                *(int *)((int)param_1 + 0x5843) < iVar4))) {
           iVar6 = *(int *)((int)param_1 + 0x5853);
           if (uVar8 < *(uint *)(iVar6 + 0xc)) {
-            local_10 = (int *)(*(int *)(iVar6 + 8) * uVar8 + *(int *)(iVar6 + 0x1c));
+            local_10 = (AnonShape_006975F0_6D562F4E *)
+                       (*(int *)(iVar6 + 8) * uVar8 + *(int *)(iVar6 + 0x1c));
           }
           else {
-            local_10 = (int *)0x0;
+            local_10 = (AnonShape_006975F0_6D562F4E *)0x0;
           }
-          if (((((char)local_10[1] == '\0') && (0 < *(int *)((int)local_10 + 5))) &&
-              (((*(int *)((int)local_10 + 0xd) == 1 && (*local_10 == 0)) ||
-               ((*(int *)((int)local_10 + 0xd) == 2 && (*local_10 == 1)))))) &&
-             ((local_10 != (int *)0x0 &&
-              (((*(int *)((int)local_10 + 0x11) <= local_20 &&
+          if ((((local_10->field_0x4 == '\0') && (0 < local_10->field_0005)) &&
+              (((local_10->field_000D == 1 && (*(int *)local_10 == 0)) ||
+               ((local_10->field_000D == 2 && (*(int *)local_10 == 1)))))) &&
+             ((local_10 != (AnonShape_006975F0_6D562F4E *)0x0 &&
+              (((local_10->field_0011 <= local_20 &&
                 (uVar5 = Library::MSVCRT::FUN_0072e6c0(),
                 (int)uVar5 % (int)(((iVar7 < 4) - 1 & 3) + 2) != 0)) &&
-               (iVar6 = *(int *)((int)local_10 + 0x15), iVar6 != 0)))))) {
+               (iVar6 = local_10->field_0015, iVar6 != 0)))))) {
             local_18 = 0;
             if (0 < *(int *)(iVar6 + 0xc)) {
               bVar9 = *(int *)(iVar6 + 0xc) != 0;
@@ -82,10 +83,10 @@ void __fastcall FUN_006975f0(void *param_1)
                   iVar2 = *(int *)((int)param_1 + 0x5833);
                   *(undefined1 *)(iVar6 + 1) = 1;
                   thunk_FUN_006a0e30(param_1,*(int *)(iVar6 + 2) % iVar2,*(int *)(iVar6 + 2) / iVar2
-                                     ,(uint)(*(int *)((int)local_10 + 0xd) != 1),-1);
+                                     ,(uint)(local_10->field_000D != 1),-1);
                   local_8 = local_8 + -1;
                 }
-                iVar6 = *(int *)((int)local_10 + 0x15);
+                iVar6 = local_10->field_0015;
                 local_18 = local_18 + 1;
                 bVar9 = local_18 < *(uint *)(iVar6 + 0xc);
               } while ((int)local_18 < (int)*(uint *)(iVar6 + 0xc));

@@ -30,7 +30,7 @@ int FUN_006da080(int *param_1,uint *param_2,int param_3,int param_4,int param_5,
     if (iVar1 == 0) goto LAB_006da0f3;
     if (iVar1 != -0x7789fe3e) break;
     (**(code **)(*(int *)param_1[0x73] + 0x6c))((int *)param_1[0x73]);
-    FUN_006cec40(*param_1);
+    FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
     iVar2 = iVar2 + 1;
   } while (iVar2 < 2);
   if (iVar1 == 0) {

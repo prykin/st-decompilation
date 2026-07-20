@@ -14,7 +14,7 @@ uint __cdecl FUN_0067fd20(undefined4 param_1,char *param_2)
   uVar1 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   if (uVar1 == 0) {
     local_8 = param_1;
-    uVar1 = Library::DKW::TBL::FUN_006ae1c0(DAT_00848a38,&local_8);
+    uVar1 = Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_00848a38,&local_8);
     uVar2 = Library::DKW::TBL::FUN_006b5aa0(DAT_00848a3c,param_2);
     if (uVar1 != uVar2) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,s___ai_ai_script_v_inl_007d55d8,0x203);

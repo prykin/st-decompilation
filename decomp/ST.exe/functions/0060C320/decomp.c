@@ -132,7 +132,8 @@ int __fastcall FUN_0060c320(void *param_1)
               if (((piVar19 != (int *)0x0) &&
                   (iVar12 = (**(code **)(*piVar19 + 0xf0))(), iVar18 = local_40, iVar12 != 0)) &&
                  (((uint)piVar19[9] < 8 &&
-                  ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar19[9] * 0x51] < 8)))))) {
+                  ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                   ((byte)(&DAT_008087e9)[piVar19[9] * 0x51] < 8)))))) {
                 bVar3 = *(byte *)(piVar19 + 9);
                 bVar4 = *(byte *)((int)param_1 + 0x1d9);
                 if (DAT_00808a8f == '\0') {

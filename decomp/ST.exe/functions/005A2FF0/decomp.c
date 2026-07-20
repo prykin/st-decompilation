@@ -24,17 +24,17 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
   FSGSTy *local_c;
   int local_8;
   
-  if ((this->field_1A5F == '\x06') && (this->field_1A60 != '\0')) {
+  if ((this->field_1A5F == CASE_6) && (this->field_1A60 != '\0')) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    this_00 = DAT_00802a30;
+    this_00 = PTR_00802a30;
     if (iVar4 == 0) {
-      if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar5 = DAT_00802a30->field_00C9;
-        uVar2 = DAT_00802a30->field_00C5;
-        DAT_00802a30->field_0493 = 1;
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        uVar5 = PTR_00802a30->field_00C9;
+        uVar2 = PTR_00802a30->field_00C5;
+        PTR_00802a30->field_0493 = 1;
         this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar5);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
@@ -69,7 +69,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
             }
             iVar4 = Library::MSVCRT::__strcmpi(_Str1,_Str2);
             if (0 < iVar4) {
-              FUN_006b0cd0(this_01->field_1EAA,uVar8,uVar1);
+              FUN_006b0cd0((AnonShape_006B0CD0_C8D121FA *)this_01->field_1EAA,uVar8,uVar1);
               local_8 = 1;
             }
             iVar4 = this_01->field_1EAA;

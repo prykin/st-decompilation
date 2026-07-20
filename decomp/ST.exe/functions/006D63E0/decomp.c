@@ -112,7 +112,7 @@ int __thiscall FUN_006d63e0(void *this,int *param_1)
             iVar7 = (**(code **)(*piVar3 + 100))(piVar3,&local_d0,local_98,0x21,0);
             if (iVar7 == 0) goto LAB_006d666f;
             if (iVar7 != -0x7789fe3e) break;
-            FUN_006cec40(*(int *)(*(int *)((int)this + 0x288) + 0x28));
+            FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
             iVar4 = iVar4 + 1;
           } while (iVar4 < 2);
           if (iVar7 == 0) {
@@ -173,7 +173,7 @@ LAB_006d666f:
           iVar4 = (**(code **)(*piVar3 + 0x44))(piVar3,local_b4);
           if (iVar4 == 0) goto LAB_006d68c8;
           if (iVar4 == -0x7789fe3e) {
-            FUN_006cec40(*(int *)(*(int *)((int)this + 0x288) + 0x28));
+            FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
           }
           else if (iVar4 != -0x7789fde4) break;
           local_b8 = local_b8 + 1;
@@ -197,7 +197,7 @@ LAB_006d68c8:
             iVar4 = (**(code **)(*piVar3 + 0x68))(piVar3,local_b4[0]);
             if (iVar4 == 0) break;
             if (iVar4 == -0x7789fe3e) {
-              FUN_006cec40(*(int *)(*(int *)((int)this + 0x288) + 0x28));
+              FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
             }
             else if (iVar4 != -0x7789fde4) break;
             iVar8 = iVar8 + 1;

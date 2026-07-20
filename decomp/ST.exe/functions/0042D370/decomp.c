@@ -5,7 +5,7 @@
 
 void __thiscall
 STAllPlayersC::SetActivityToObjs
-          (STAllPlayersC *this,uint param_1,int param_2,int param_3,uint param_4)
+          (STAllPlayersC *this,uint param_1,int param_2,DArrayTy *param_3,uint param_4)
 
 {
   code *pcVar1;
@@ -37,12 +37,12 @@ STAllPlayersC::SetActivityToObjs
   if (param_2 == 0x19a) {
 LAB_0042d3b2:
     uVar4 = 0;
-    param_4 = *(uint *)(param_3 + 0xc);
+    param_4 = param_3->count;
     if ((int)param_4 < 1) {
       return;
     }
     do {
-      FUN_006acc70(param_3,uVar4,&param_1);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,uVar4,&param_1);
       if (((short)param_1 != -1) &&
          (piVar2 = (int *)GetObjPtr(this,objPtr,param_1,CASE_1), piVar2 != (int *)0x0)) {
         (**(code **)(*piVar2 + 0xe8))(1);

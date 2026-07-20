@@ -8,50 +8,50 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
 {
   MMsgTy *this_00;
   code *pcVar1;
-  WaitTy *pWVar2;
+  MMObjTy *pMVar2;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint *puVar5;
   InternalExceptionFrame local_4c;
-  WaitTy *local_8;
+  MMObjTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = this;
+  local_8 = (MMObjTy *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pWVar2 = local_8;
+  pMVar2 = local_8;
   if (iVar3 == 0) {
-    MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (DAT_00802a30 != 0) {
-      if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+    MMObjTy::DoneMMObj(local_8);
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (PTR_00802a30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
+      else if (PTR_00802a30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
       }
     }
-    if (pWVar2->field_004D == 0x6105) {
+    if (*(int *)&pMVar2->field_0x4d == 0x6105) {
       if (DAT_00811768 == '\x02') {
-        pWVar2->field_004D = 0x6102;
+        *(undefined4 *)&pMVar2->field_0x4d = 0x6102;
         DarkScreen(DAT_0080759c,10,2);
       }
       thunk_FUN_005dac60();
     }
-    if (pWVar2->field_004D == 0x610a) {
+    if (*(int *)&pMVar2->field_0x4d == 0x610a) {
       DarkScreen(DAT_0080759c,10,2);
       thunk_FUN_005dac60();
     }
-    if (*(int *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
+    if (PTR_0081176c->field_002C != 0) {
+      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
     }
-    if (pWVar2->field_1AF8 != (HoloTy *)0x0) {
-      HoloTy::Done(pWVar2->field_1AF8);
-      Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AF8);
-      pWVar2->field_1AF8 = (HoloTy *)0x0;
+    if (*(HoloTy **)&pMVar2[0x1e].field_0x5e != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pMVar2[0x1e].field_0x5e);
+      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&pMVar2[0x1e].field_0x5e);
+      *(undefined4 *)&pMVar2[0x1e].field_0x5e = 0;
     }
-    puVar5 = &pWVar2->field_1A94;
+    puVar5 = (uint *)&pMVar2[0x1d].field_0xdd;
     iVar3 = 0x16;
     do {
       if (*puVar5 != 0xffffffff) {
@@ -61,61 +61,63 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pWVar2->field_1B00 != (HoloTy *)0x0) {
-      HoloTy::Done(pWVar2->field_1B00);
-      Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1B00);
-      pWVar2->field_1B00 = (HoloTy *)0x0;
+    if ((HoloTy *)pMVar2[0x1e].field_0066 != (HoloTy *)0x0) {
+      HoloTy::Done((HoloTy *)pMVar2[0x1e].field_0066);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pMVar2[0x1e].field_0066);
+      pMVar2[0x1e].field_0066 = 0;
     }
-    if (pWVar2->field_1A64 == 0) {
-      if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391));
+    if (*(int *)&pMVar2[0x1d].field_0xad == 0) {
+      if (PTR_0081176c->field_0391 != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391);
       }
-      if (*(uint *)(DAT_0081176c + 0x422) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_0081176c + 0x466),*(uint *)(DAT_0081176c + 0x422));
+      if (PTR_0081176c->field_0422 != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_0081176c->field_0466,PTR_0081176c->field_0422);
       }
-      if (*(uint *)(DAT_0081176c + 0x4b3) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3));
+      if (PTR_0081176c->field_04B3 != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
-      if (-1 < (int)*(uint *)(DAT_0081176c + 0x540)) {
-        FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
-      }
-    }
-    if (pWVar2->field_1AFC != (HoloTy *)0x0) {
-      HoloTy::Done(pWVar2->field_1AFC);
-      Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AFC);
-      pWVar2->field_1AFC = (HoloTy *)0x0;
-    }
-    if (pWVar2->field_1A64 == 0) {
-      if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560));
-      }
-      if (*(uint *)(DAT_0081176c + 0x5f1) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1));
-      }
-      if (-1 < (int)*(uint *)(DAT_0081176c + 0x558)) {
-        FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
-      }
-      if (-1 < (int)*(uint *)(DAT_0081176c + 0x554)) {
-        FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+      if (-1 < (int)PTR_0081176c->field_0540) {
+        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
       }
     }
-    if ((byte *)pWVar2->field_1AF0 != (byte *)0x0) {
-      FUN_006b5570((byte *)pWVar2->field_1AF0);
+    if (*(HoloTy **)&pMVar2[0x1e].field_0x62 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pMVar2[0x1e].field_0x62);
+      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&pMVar2[0x1e].field_0x62);
+      *(undefined4 *)&pMVar2[0x1e].field_0x62 = 0;
     }
-    pWVar2->field_1AF0 = 0;
-    if (pWVar2->field_1AEC != 0) {
-      FUN_006ab060((LPVOID *)&pWVar2->field_1AEC);
+    if (*(int *)&pMVar2[0x1d].field_0xad == 0) {
+      if (PTR_0081176c->field_0560 != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560);
+      }
+      if (PTR_0081176c->field_05F1 != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
+      }
+      if (-1 < (int)PTR_0081176c->field_0558) {
+        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0558);
+      }
+      if (-1 < (int)PTR_0081176c->field_0554) {
+        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0554);
+      }
     }
-    if (pWVar2->field_1A83 != 0) {
-      FUN_006ab060((LPVOID *)&pWVar2->field_1A83);
+    if (*(AnonShape_006B5570_4D68B99C **)&pMVar2[0x1e].field_0x56 !=
+        (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)&pMVar2[0x1e].field_0x56);
     }
-    if ((pWVar2->field_004D == 0x6102) &&
-       (this_00 = pWVar2->field_1A5B->field_02E6, this_00 != (MMsgTy *)0x0)) {
+    *(undefined4 *)&pMVar2[0x1e].field_0x56 = 0;
+    if (*(int *)&pMVar2[0x1e].field_0x52 != 0) {
+      FUN_006ab060((LPVOID *)&pMVar2[0x1e].field_0x52);
+    }
+    if (*(int *)&pMVar2[0x1d].field_0xcc != 0) {
+      FUN_006ab060((LPVOID *)&pMVar2[0x1d].field_0xcc);
+    }
+    if ((*(int *)&pMVar2->field_0x4d == 0x6102) &&
+       (this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6), this_00 != (MMsgTy *)0x0))
+    {
       MMsgTy::HideSprites(this_00);
-      pWVar2->field_1A5B->field_02E6->field_1CAB = 0;
+      *(undefined4 *)(*(int *)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6) + 0x1cab) = 0;
     }
-    if (pWVar2->field_004D != 0) {
-      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pWVar2->field_0x3d);
+    if (*(int *)&pMVar2->field_0x4d != 0) {
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

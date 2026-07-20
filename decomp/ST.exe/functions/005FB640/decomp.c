@@ -3,7 +3,8 @@
    E:\__titans\nick\to_cont.cpp
    STContainerC::GetMessage */
 
-undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
+undefined4 __thiscall
+STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1)
 
 {
   short sVar1;
@@ -38,14 +39,14 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
   STContainerC *local_8;
   
   local_8 = this;
-  iVar6 = STSprGameObjC::GetMessage((STSprGameObjC *)this,param_1);
+  iVar6 = STSprGameObjC::GetMessage((STSprGameObjC *)this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar6 != 0xffff) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     iVar6 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar6 == 0) {
-      uVar7 = *(uint *)(param_1 + 0x10);
+      uVar7 = param_1->field_0010;
       if (0x110 < uVar7) {
         switch(uVar7) {
         case 0x112:
@@ -68,7 +69,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         case 0x128:
-          iVar6 = *(int *)(param_1 + 0x14);
+          iVar6 = param_1->field_0014;
           local_8->field_0315 = *(undefined1 *)(iVar6 + 0x18);
           if (((local_8->field_024E != '\0') && (local_8->field_02AB != -1)) &&
              ((this_01 = (void *)local_8->field_02AD, this_01 != (void *)0x0 ||
@@ -93,7 +94,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
             this_00->field_030D = 1;
             this_00->field_023A = 5;
             iVar9 = this_00->field_02C2;
-            *(int *)&this_00->field_0x2e0 = DAT_00802a38->field_00E4 + 0x15;
+            *(int *)&this_00->field_0x2e0 = PTR_00802a38->field_00E4 + 0x15;
             iVar16 = this_00->field_02BE;
             iVar15 = 1;
             uVar7 = thunk_FUN_004ad650((int)&this_00->field_01D5);
@@ -113,7 +114,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
             if (-1 < (int)this_00->field_02D6) {
               FUN_006eab60((void *)this_00->field_0211,this_00->field_02D6);
             }
-            thunk_FUN_005fc3e0(this_00);
+            thunk_FUN_005fc3e0((STJellyGunC *)this_00);
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
@@ -122,7 +123,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         }
       }
       if (uVar7 == 0x110) {
-        puVar13 = *(undefined4 **)(param_1 + 0x14);
+        puVar13 = (undefined4 *)param_1->field_0014;
         if (local_8->field_023A == 5) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -156,18 +157,18 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           return 0;
         }
         local_14 = thunk_FUN_005fcad0(local_8,&local_10);
-        STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_14,local_10);
+        STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_14,local_10);
         FUN_006ab060(&local_14);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
       if (uVar7 == 3) {
         iVar6 = thunk_FUN_00495ff0(local_8->field_0242,local_8->field_0244,local_8->field_0246,0,
-                                   (int)local_8);
+                                   (AnonShape_00495FF0_59081BDD *)local_8);
         if (iVar6 == 0) {
           this_00->field_0252 = this_00->field_0252 + -1;
         }
-        thunk_FUN_004ad310((int)&this_00->field_01D5);
+        thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
         if (this_00->field_02E4 == '\0') {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -178,28 +179,29 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         }
         uVar11 = extraout_var;
         if (this_00->field_0250 != '\x03') {
-          thunk_FUN_005f0d90((int)this_00);
+          thunk_FUN_005f0d90((AnonShape_005F0D90_C3146DC2 *)this_00);
           uVar11 = extraout_var_00;
         }
         STAllPlayersC::UnRegisterContainer
-                  (g_sTAllPlayers_007FA174,CONCAT22(uVar11,this_00->field_0032),(uint)this_00);
+                  (g_sTAllPlayers_007FA174,CONCAT22(uVar11,this_00->field_0032),
+                   (AnonShape_0044A730_DBE673B2 *)this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
       if (uVar7 == 0) {
         if (local_8->field_023A == 6) {
-          thunk_FUN_005fc3e0(local_8);
+          thunk_FUN_005fc3e0((STJellyGunC *)local_8);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        uVar8 = thunk_FUN_005ee6e0((int *)local_8);
+        uVar8 = thunk_FUN_005ee6e0((AnonShape_005EE6E0_AB6798ED *)local_8);
         this_00->field_0x2de = (char)uVar8;
         if ((char)uVar8 == '\0') {
           if (this_00->field_023A != 6) {
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          thunk_FUN_005fc3e0(this_00);
+          thunk_FUN_005fc3e0((STJellyGunC *)this_00);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
@@ -208,7 +210,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         this_00->field_02C6 = this_00->field_027F;
         thunk_FUN_005eff00((int)this_00);
         if ((-1 < *(int *)&this_00->field_0x2d2) &&
-           (iVar6 = thunk_FUN_005f0ba0((int)this_00), iVar6 != 0)) {
+           (iVar6 = thunk_FUN_005f0ba0((AnonShape_005F0BA0_C8D654C5 *)this_00), iVar6 != 0)) {
           *(undefined4 *)&this_00->field_0x2d2 = 0xffffffff;
         }
         thunk_FUN_005eeff0(this_00,0);
@@ -219,7 +221,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      puVar13 = *(undefined4 **)(param_1 + 0x14);
+      puVar13 = (undefined4 *)param_1->field_0014;
       if (puVar13[3] != 2) {
         puVar12 = puVar13;
         puVar14 = (undefined4 *)&local_8->field_0x326;
@@ -239,25 +241,25 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         }
         iVar6 = thunk_FUN_005fc4a0(local_8);
         if (iVar6 == 0) {
-          thunk_FUN_005fc3e0(this_00);
+          thunk_FUN_005fc3e0((STJellyGunC *)this_00);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
         thunk_FUN_005ec9f0(0);
         if ((((*(int *)&this_00->field_0x358 != 0) && (*(short *)&this_00->field_0x342 == 1)) &&
-            (iVar6 = FUN_006e62d0(DAT_00802a38,*(int *)&this_00->field_0x358,&local_18), iVar6 != -4
+            (iVar6 = FUN_006e62d0(PTR_00802a38,*(int *)&this_00->field_0x358,&local_18), iVar6 != -4
             )) && ((void *)this_00->field_0211 != (void *)0x0)) {
           FUN_006ea460((void *)this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));
         }
         if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
           iVar6 = STAllPlayersC::RegisterContainer(g_sTAllPlayers_007FA174,0xffff,this_00);
           if (iVar6 != 0) {
-            thunk_FUN_005fc3e0(this_00);
+            thunk_FUN_005fc3e0((STJellyGunC *)this_00);
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
           this_00->field_02E4 = 1;
-          thunk_FUN_005fceb0((int)this_00);
+          thunk_FUN_005fceb0((AnonShape_005FCEB0_FA1F7938 *)this_00);
         }
         uVar7 = *(uint *)&this_00->field_0x342 >> 0x10;
         if (uVar7 != 3) {
@@ -298,14 +300,15 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         }
         bVar5 = true;
         if ((iVar6 == 0) &&
-           (iVar6 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(int)this_00), iVar6 == 0)) {
+           (iVar6 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)this_00)
+           , iVar6 == 0)) {
           this_00->field_0252 = this_00->field_0252 + '\x01';
         }
         else {
           bVar5 = false;
         }
         if (!bVar5) {
-          thunk_FUN_005fc3e0(this_00);
+          thunk_FUN_005fc3e0((STJellyGunC *)this_00);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
@@ -328,14 +331,16 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           }
           bVar5 = true;
           if ((iVar6 == 0) &&
-             (iVar6 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(int)this_00), iVar6 == 0)) {
+             (iVar6 = DumpClassC::WritePtr
+                                (sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)this_00),
+             iVar6 == 0)) {
             this_00->field_0252 = this_00->field_0252 + '\x01';
           }
           else {
             bVar5 = false;
           }
           if (!bVar5) {
-            thunk_FUN_005fc3e0(this_00);
+            thunk_FUN_005fc3e0((STJellyGunC *)this_00);
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
@@ -353,7 +358,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      thunk_FUN_005fc3e0(this_00);
+      thunk_FUN_005fc3e0((STJellyGunC *)this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }

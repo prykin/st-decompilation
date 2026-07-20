@@ -19,7 +19,7 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   int local_14;
   HelpPanelTy *local_10;
   int local_c;
-  byte *local_8;
+  AnonShape_00515650_BBDC7053 *local_8;
   
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -29,10 +29,11 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   if (iVar3 == 0) {
     if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
       *param_1 = *param_1 + 2;
-      local_8 = (byte *)STAllPlayersC::GetTOBJImage(g_sTAllPlayers_007FA174,(uint)param_3,param_2);
-      if (local_8 != (byte *)0x0) {
-        local_14 = *(int *)(local_8 + 4);
-        local_c = *(int *)(local_8 + 8);
+      local_8 = (AnonShape_00515650_BBDC7053 *)
+                STAllPlayersC::GetTOBJImage(g_sTAllPlayers_007FA174,(uint)param_3,param_2);
+      if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
+        local_14 = local_8->field_0004;
+        local_c = local_8->field_0008;
         iVar3 = (0x19c - local_14) / 2;
         Library::DKW::WGR::FUN_006b55f0
                   ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,(byte *)pHVar2->field_021C,0,
@@ -47,10 +48,10 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
     }
     if (param_4 != 0) {
       uVar4 = thunk_FUN_00526ba0(param_2,param_3);
-      local_8 = (byte *)FUN_0070b3a0(param_4,uVar4);
-      if (local_8 != (byte *)0x0) {
-        iVar3 = (0x19c - *(int *)(local_8 + 4)) / 2;
-        DibPut((undefined4 *)pHVar2->field_0218,iVar3,*param_1,'\x01',local_8);
+      local_8 = (AnonShape_00515650_BBDC7053 *)FUN_0070b3a0(param_4,uVar4);
+      if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
+        iVar3 = (0x19c - local_8->field_0004) / 2;
+        DibPut((undefined4 *)pHVar2->field_0218,iVar3,*param_1,'\x01',(byte *)local_8);
         pbVar5 = (byte *)FUN_0070b3a0(pHVar2->field_0248,4);
         DibPut((undefined4 *)pHVar2->field_0218,iVar3 + -2,*param_1 + -2,'\x06',pbVar5);
         iVar3 = FUN_0070b3a0(pHVar2->field_0248,4);

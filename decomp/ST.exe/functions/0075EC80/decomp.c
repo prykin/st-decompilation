@@ -1,5 +1,5 @@
 
-void FUN_0075ec80(int param_1,int param_2,int *param_3,byte *param_4)
+void FUN_0075ec80(AnonShape_0075EC80_53406127 *param_1,int param_2,int *param_3,byte *param_4)
 
 {
   int iVar1;
@@ -34,12 +34,12 @@ void FUN_0075ec80(int param_1,int param_2,int *param_3,byte *param_4)
   undefined1 *local_c;
   int local_8;
   
-  iVar1 = *(int *)(param_1 + 0x1ba);
-  iVar2 = *(int *)(param_1 + 0x132);
+  iVar1 = param_1->field_01BA;
+  iVar2 = param_1->field_0132;
   iVar3 = *(int *)(iVar1 + 0x18);
   iVar4 = *(int *)(iVar1 + 0x28);
-  iVar5 = *(int *)(param_1 + 0x68);
-  piVar6 = *(int **)(param_1 + 0x80);
+  iVar5 = param_1->field_0068;
+  piVar6 = param_1->field_0080;
   iVar7 = *piVar6;
   iVar8 = piVar6[1];
   iVar9 = piVar6[2];
@@ -88,7 +88,7 @@ void FUN_0075ec80(int param_1,int param_2,int *param_3,byte *param_4)
         iVar12 = iVar16 * 0x20 + iVar15;
         iVar18 = *(int *)(iVar3 + iVar19 * 4);
         if (*(short *)(iVar18 + iVar12 * 2) == 0) {
-          FUN_0075e890(param_1,iVar19,iVar16,iVar15);
+          FUN_0075e890((int)param_1,iVar19,iVar16,iVar15);
         }
         iVar18 = *(ushort *)(iVar18 + iVar12 * 2) - 1;
         *local_c = (char)iVar18;

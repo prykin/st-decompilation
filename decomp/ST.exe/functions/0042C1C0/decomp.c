@@ -4,7 +4,8 @@
    STAllPlayersC::AddObjsToTmp */
 
 undefined4 __thiscall
-STAllPlayersC::AddObjsToTmp(STAllPlayersC *this,uint param_1,int param_2,int param_3,int param_4)
+STAllPlayersC::AddObjsToTmp
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,DArrayTy *param_4)
 
 {
   code *pcVar1;
@@ -15,7 +16,7 @@ STAllPlayersC::AddObjsToTmp(STAllPlayersC *this,uint param_1,int param_2,int par
   void *unaff_EDI;
   uint uVar4;
   InternalExceptionFrame local_54;
-  int local_10;
+  dword local_10;
   STAllPlayersC *local_c;
   uint local_8;
   
@@ -24,21 +25,21 @@ STAllPlayersC::AddObjsToTmp(STAllPlayersC *this,uint param_1,int param_2,int par
   local_c = this;
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    if (param_4 == 0) {
+    if (param_4 == (DArrayTy *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0x266);
     }
-    local_10 = *(int *)(param_4 + 0xc);
+    local_10 = param_4->count;
     uVar4 = 0;
-    if (0 < local_10) {
+    if (0 < (int)local_10) {
       do {
-        FUN_006acc70(param_4,uVar4,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_4,uVar4,&local_8);
         if ((short)local_8 != -1) {
           AddObjToTmp(local_c,(char)param_1,param_2,param_3,param_1,local_8);
         }
         uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < local_10);
+      } while ((int)uVar4 < (int)local_10);
     }
     g_currentExceptionFrame = local_54.previous;
   }

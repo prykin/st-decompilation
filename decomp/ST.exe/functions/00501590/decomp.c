@@ -1,7 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
-   CPanelTy::PaintCtrlBoat */
+   CPanelTy::PaintCtrlBoat
+   
+   [STSwitchEnumApplier] Switch target field_0B99 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
+   CASE_8=8;CASE_14=20;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37
+   
+   [STSwitchEnumApplier] Switch target field_0B9E uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
+    */
 
 void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
 
@@ -35,14 +44,14 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
     return;
   }
   switch(local_8->field_0B9E) {
-  case 0:
-  case 4:
+  case CASE_0:
+  case CASE_4:
     puVar5 = local_8->field_0974;
     puVar4 = (undefined4 *)local_8->field_018C;
     iVar3 = 0;
     iVar2 = 0;
     goto LAB_00501758;
-  case 1:
+  case CASE_1:
     if ((local_8->field_0B99 == 9) || (local_8->field_0B99 == 0x15)) {
       puVar5 = local_8->field_0978;
       puVar4 = (undefined4 *)local_8->field_018C;
@@ -58,7 +67,7 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
            (((undefined4 *)this_00->field_018C)[1] - *(int *)(this_00->field_0988 + 2)) / 2,0x7c,
            '\x01',(byte *)this_00->field_0988);
     break;
-  case 2:
+  case CASE_2:
     if ((local_8->field_0B99 == 9) || (local_8->field_0B99 == 0x15)) {
       DibPut((undefined4 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0978);
     }
@@ -76,7 +85,7 @@ switchD_0050162e_caseD_a:
 LAB_00501758:
     DibPut(puVar4,iVar2,iVar3,'\x01',(byte *)puVar5);
     break;
-  case 3:
+  case CASE_3:
     DibPut((undefined4 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974);
     switch(this_00->field_0B99) {
     case 9:
@@ -90,20 +99,20 @@ LAB_00501758:
       goto switchD_0050162e_caseD_a;
     }
   }
-  if (this_00->field_0B9E == '\x01') {
+  if (this_00->field_0B9E == CASE_1) {
     switch(this_00->field_0B99) {
-    case 8:
-    case 0x14:
+    case CASE_8:
+    case CASE_14:
       PaintBCapacity(this_00);
       break;
-    case 0x16:
-    case 0x17:
-    case 0x25:
+    case CASE_16:
+    case CASE_17:
+    case CASE_25:
       goto switchD_0050179b_caseD_16;
     }
   }
   else {
-    if ((this_00->field_0B9E != '\x04') || (this_00->field_0B99 != 0xaf))
+    if ((this_00->field_0B9E != CASE_4) || (this_00->field_0B99 != 0xaf))
     goto switchD_0050179b_caseD_9;
 switchD_0050179b_caseD_16:
     PaintBEnergy(this_00);

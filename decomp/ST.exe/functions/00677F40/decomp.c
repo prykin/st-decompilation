@@ -45,19 +45,18 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x3fd);
     return iVar3;
   }
-  if (DAT_007fa154 == 0) {
+  if (PTR_007fa154 == (DArrayTy *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x3e1);
   }
-  local_10 = *(int *)(DAT_007fa154 + 0xc) - 1;
+  local_10 = PTR_007fa154->count - 1;
   if ((int)local_10 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
   }
   do {
-    if (local_10 < *(uint *)(DAT_007fa154 + 0xc)) {
-      puVar4 = (undefined4 *)(*(int *)(DAT_007fa154 + 8) * local_10 + *(int *)(DAT_007fa154 + 0x1c))
-      ;
+    if (local_10 < PTR_007fa154->count) {
+      puVar4 = (undefined4 *)(PTR_007fa154->elementSize * local_10 + (int)PTR_007fa154->data);
     }
     else {
       puVar4 = (undefined4 *)0x0;

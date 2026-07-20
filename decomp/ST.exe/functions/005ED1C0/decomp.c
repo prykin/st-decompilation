@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
       iVar10 = *(int *)((int)this + 0x293);
     }
     else {
-      iVar10 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x28f)) *
+      iVar10 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) *
                *(int *)((int)this + 0x287);
       iVar10 = (int)(iVar10 + (iVar10 >> 0x1f & 0xfU)) >> 4;
     }
@@ -69,8 +69,8 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
     iVar10 = *(int *)((int)this + 0x2c6);
   }
   else {
-    iVar6 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x28f)) *
-            *(int *)((int)this + 0x287) * local_8;
+    iVar6 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) * *(int *)((int)this + 0x287) *
+            local_8;
     iVar10 = ((int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3) + iVar10;
   }
   if (*(int *)((int)this + 0x28b) != 0) {
@@ -99,7 +99,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
   if (iVar7 != sVar1) {
     if ((1 < *(byte *)((int)this + 0x252)) && (*(short *)((int)this + 600) == iVar7)) {
       iVar6 = thunk_FUN_00495ff0(*(short *)((int)this + 0x242),*(short *)((int)this + 0x244),sVar1,0
-                                 ,(int)this);
+                                 ,this);
       if (iVar6 == 0) {
         *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + -1;
       }
@@ -203,7 +203,7 @@ joined_r0x005ed4b7:
       goto joined_r0x005ed4b7;
     }
   }
-  iVar7 = DumpClassC::WritePtr(sVar5,sVar9,sVar1 + sVar4,0,(int)this);
+  iVar7 = DumpClassC::WritePtr(sVar5,sVar9,sVar1 + sVar4,0,this);
   if (iVar7 == 0) {
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
     *(undefined2 *)((int)this + 0x254) = *(undefined2 *)((int)this + 0x242);

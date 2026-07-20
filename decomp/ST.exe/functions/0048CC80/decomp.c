@@ -52,7 +52,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   uVar4 = uVar1;
   if (uVar1 != 0) {
     while (local_c = uVar4, uVar1 = uVar1 - 1, -1 < (int)uVar1) {
-      FUN_006acc70(pSVar3->field_047B,uVar1,&local_20);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar3->field_047B,uVar1,&local_20);
       uVar4 = uVar1;
       if (((local_1c != -1) && (uVar4 = local_c, local_20 == param_1)) && (local_1c == param_2)) {
         local_1a = local_1a + param_3;

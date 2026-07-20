@@ -45,7 +45,7 @@ SpecPanelTy::InitPanel
     local_8->field_003C = local_8->field_003C + (g_nWidth_00806730 + -800) / 2;
     puVar4 = cMf32::RecGet(DAT_00806790,1,text,(int *)0x0,1);
     pSVar2->field_0185 = puVar4;
-    pcVar5 = (ccFntTy *)ccFntTy::operator(this_00,0x19d,*(int *)(DAT_00802a28 + 0x28));
+    pcVar5 = (ccFntTy *)ccFntTy::operator(this_00,0x19d,*(int *)&PTR_00802a28->field_0x28);
     pSVar2->field_0189 = pcVar5;
     pcVar5->field_0058 = 0;
     pcVar5->field_005C = 0;

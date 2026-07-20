@@ -1,5 +1,5 @@
 
-uint __cdecl FUN_006d7d9a(int param_1)
+uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
 
 {
   int iVar1;
@@ -30,12 +30,12 @@ uint __cdecl FUN_006d7d9a(int param_1)
   undefined4 *local_c;
   undefined4 *local_8;
   
-  pcVar3 = *(code **)(param_1 + 0x42);
-  pcVar4 = *(code **)(param_1 + 0x46);
-  iVar5 = *(int *)(param_1 + 0x22);
-  iVar6 = *(int *)(param_1 + 0x26);
-  cVar2 = *(char *)(param_1 + 0x18);
-  *(undefined1 *)(param_1 + 0x17) = 0;
+  pcVar3 = (code *)param_1->field_0042;
+  pcVar4 = (code *)param_1->field_0046;
+  iVar5 = param_1->field_0022;
+  iVar6 = param_1->field_0026;
+  cVar2 = param_1->field_0018;
+  param_1->field_0017 = 0;
   local_52 = 0;
   local_2a = 0;
   local_2b = 0;

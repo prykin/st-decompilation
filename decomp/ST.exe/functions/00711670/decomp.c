@@ -1,15 +1,15 @@
 
-int __thiscall FUN_00711670(void *this,int param_1,int param_2,int param_3)
+int __thiscall FUN_00711670(void *this,AnonShape_00711670_5F8DCCF2 *param_1,int param_2,int param_3)
 
 {
   int iVar1;
   uint *puVar2;
   int iVar3;
-  undefined4 local_8;
+  int local_8;
   
   local_8 = 0;
-  if (param_1 != 0) {
-    iVar1 = *(int *)(param_1 + 8);
+  if (param_1 != (AnonShape_00711670_5F8DCCF2 *)0x0) {
+    iVar1 = param_1->field_0008;
     if (param_3 == -1) {
       param_3 = iVar1;
     }
@@ -19,8 +19,8 @@ int __thiscall FUN_00711670(void *this,int param_1,int param_2,int param_3)
       }
       iVar1 = param_2 + param_3;
       for (; param_2 < iVar1; param_2 = param_2 + 1) {
-        if (param_2 < *(int *)(param_1 + 8)) {
-          puVar2 = *(uint **)(*(int *)(param_1 + 0x14) + param_2 * 4);
+        if (param_2 < param_1->field_0008) {
+          puVar2 = *(uint **)(param_1->field_0014 + param_2 * 4);
         }
         else {
           puVar2 = (uint *)0x0;

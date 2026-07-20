@@ -52,13 +52,13 @@ void __thiscall UPanelTy::PaintIBut(UPanelTy *this,int param_1,char *param_2,UIN
                        (DAT_00806794,CASE_1,text,uVar6,bVar7,iVar8,(int)puVar9,puVar11);
     uVar6 = local_8;
     DibPut((undefined4 *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4);
-    ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),pUVar2->field_0068,0,local_c,uVar6,
+    ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,pUVar2->field_0068,0,local_c,uVar6,
                      local_14[2],local_14[3]);
     uVar3 = thunk_FUN_00529fe0(param_1);
     iVar10 = -1;
     iVar8 = -2;
     puVar5 = (uint *)FUN_006b0140(param_3,HINSTANCE_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar5,iVar8,iVar10,uVar3);
+    ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,puVar5,iVar8,iVar10,uVar3);
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,pUVar2->field_0044);
     g_currentExceptionFrame = local_58.previous;

@@ -1,0 +1,10 @@
+program=ST.exe
+candidates=88
+candidates_with_direct_calls=67
+callsites=765
+suggested_thiscall=52
+suggested_cdecl_review_only=6
+classifications={possible_preserved_this=13, static_cdecl_candidate=6, stdcall_or_preserved_this_candidate=9, thiscall_supported=39, unreferenced=21}
+note=Direct references to the function and every thunk resolving to it are audited.
+note_limit=Indirect virtual calls cannot be attributed to one concrete target here.
+note_safety=The analyzer is read-only and never changes a calling convention.

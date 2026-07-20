@@ -19,25 +19,25 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   bool bVar9;
   InternalExceptionFrame local_54;
   uint local_10;
-  int local_c;
+  AnonShape_005A2A60_B397ABCA *local_c;
   FSGSTy *local_8;
   
-  if (((this->field_1A5F == '\x06') && (this->field_1A60 == '\0')) && (this->field_1EA6 != 0)) {
+  if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) && (this->field_1EA6 != 0)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
-      local_c = local_8->field_1EA6;
-      local_10 = *(uint *)(local_c + 0xc);
+      local_c = (AnonShape_005A2A60_B397ABCA *)local_8->field_1EA6;
+      local_10 = local_c->field_000C;
       if (local_10 != 0) {
         if (local_10 == 0) {
           pbVar8 = (byte *)0x0;
           goto LAB_005a2aea;
         }
         do {
-          pbVar8 = (byte *)(*(int *)(local_c + 8) * uVar6 + *(int *)(local_c + 0x1c));
+          pbVar8 = (byte *)(local_c->field_0008 * uVar6 + local_c->field_001C);
 LAB_005a2aea:
           pbVar4 = pbVar8;
           pbVar7 = param_1;

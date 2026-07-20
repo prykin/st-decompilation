@@ -144,6 +144,11 @@ appliers.
    - File: `<repo>/recovery/ST.exe/proposals.tsv`
 4. If present and reviewed, run `STCuratedRecoveryApplier`.
    - File: `<repo>/recovery/ST.exe/curated_recovery.tsv`
+5. Run `STCallsiteConventionAnalyzer` when
+   `debug_calling_convention_review.tsv` is non-empty.
+   - File: `<repo>/recovery/ST.exe/debug_calling_convention_review.tsv`
+   - Outputs: `callsite_convention_proposals.tsv/jsonl`,
+     `callsite_convention_calls.tsv`, and `callsite_convention_summary.txt`
 
 The debug analyzer uses embedded `ClassTy::Method`, source path, calling
 convention, and diagnostic-line evidence. The curated applier is reserved for
@@ -156,6 +161,19 @@ argument is not silently converted into a stack parameter. Older script runs
 may already have assigned `__thiscall` more aggressively. Such functions are
 listed in `debug_calling_convention_review.tsv`; they are never reverted
 automatically because an instance method is allowed to leave `this` unused.
+
+The callsite analyzer resolves every thunk leading to each review candidate and
+audits all direct callers. It records explicit `ECX` preparation, a live
+pre-existing `ECX`, caller-side stack cleanup, and the callee's `RET n` values.
+When every observed caller reclaims the stack, the callee uses a plain `RET`,
+and no caller explicitly loads an `ECX` pointer receiver, that unanimous stack
+discipline takes precedence over incidental scratch-register uses of `ECX`.
+Partial or mixed cleanup evidence remains review-only.
+This can confirm an unused-`this` method or identify a likely static `__cdecl`,
+but it is deliberately read-only: all `apply` flags are zero and there is no
+matching applier. Indirect virtual dispatch cannot be attributed to one
+concrete implementation and is reported as a coverage limit rather than
+treated as negative evidence.
 
 ### 2. Message IDs
 
@@ -273,6 +291,13 @@ The analyzer groups repeated numeric switch domains. Safe parameter and
 script-owned class-field targets may be enabled automatically. Locals, globals,
 and ambiguously owned fields stay review-only.
 
+Typed decompiler aliases such as `STBoatC *this_00` are resolved back to their
+actual structure before classifying `this_00->field_*`. This keeps large
+functions that save `this` in a local from producing dozens of false local
+enums. Repeated switches over the same simple decompiler local are merged only
+inside one function and remain review-only; a reused temporary is not stable
+enough for automatic type application.
+
 Each candidate first receives a 30-second decompilation attempt. A timeout gets
 one 120-second retry; `switch_enum_decompile_retries.tsv` records the address
 and whether the retry recovered it, while unrecoverable functions are retained
@@ -282,7 +307,7 @@ functions remain eligible: their state domains are part of the recovered game
 API even though their assembly and decompilation bodies are omitted from the
 final LLM corpus.
 
-### 7. Prototype and global-data propagation
+### 7. Prototype, global-record, global-data, and pointer-shape propagation
 
 1. Run `STPrototypeAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -296,10 +321,21 @@ final LLM corpus.
 5. Run `STPrototypeApplier`.
    - File: `<repo>/recovery/ST.exe/prototype_proposals.tsv`
    - Repair rows are deliberately ignored by this applier.
-6. Run `STGlobalDataAnalyzer`.
+6. Run `STGlobalRecordAnalyzer`.
    - Directory: `<repo>/recovery`
-7. Run `STGlobalDataApplier`.
+7. Run `STGlobalRecordApplier`.
+   - File: `<repo>/recovery/ST.exe/global_record_proposals.tsv`
+   - The sibling `global_record_field_proposals.tsv` is loaded automatically.
+8. Run `STGlobalDataAnalyzer`.
+   - Directory: `<repo>/recovery`
+9. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
+10. Run `STPointerShapeAnalyzer`.
+    - Directory: `<repo>/recovery`
+11. Run `STPointerShapeApplier`.
+    - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
+    - The program directory containing that file is also accepted. The sibling
+      type and field proposal TSVs are loaded automatically.
 
 Prototype propagation uses direct calls with an exact explicit argument count.
 Types and names are independent per parameter; conflicting evidence for one
@@ -327,6 +363,23 @@ are not a reason to repeat the automatic pass. Do not apply the pre-repair
 `prototype_proposals.tsv`;
 rerun the analyzer first. `STPrototypeApplier` refuses rows marked `repair=1`,
 so corrections cannot be mixed accidentally into an ordinary propagation pass.
+
+The global-record pair handles a layer that scalar global propagation cannot:
+one packed structure repeated at a fixed byte stride. For the player runtime
+block it verifies base `007F4E20`, stride `0xA62`, total extent `0x5310`, eight
+records, and exclusive end `007FA130` directly from the code. It creates the
+packed `STPlayerRuntimeRecord` and types the complete range as
+`g_playerRuntime[8]`. Proven fields include `raceId`, the `groups` and `objects`
+DArray pointers, `pgPairs`, and the contiguous tail block operated on by the
+recovered DArray helpers. Other observed offsets remain width-correct
+`undefinedN` fields until semantic evidence appears.
+
+Run global records before ordinary global data. The record applier intentionally
+refuses to clear concrete unowned data, so first applying a scalar type inside
+the same range would turn the record proposal into a preservation conflict.
+Both the generated structure and the complete address range have safety hashes;
+stale proposals or hand-edited layouts are reported and left untouched. A
+second analyzer/applier pass should report `unchanged`.
 An ordinary apply can expose a more specific type and thereby create a second
 small repair wave. After every analyzer run, service enabled repairs first,
 rerun the analyzer, then apply ordinary rows. Stop only when
@@ -337,6 +390,29 @@ symbols when the stored value is repeatedly used as a typed receiver or trusted
 argument. Automatic replacement is limited to small undefined or script-owned
 data. Address-of evidence, overlapping concrete data, and manual symbols remain
 review-only. Generated names are structural and retain the address suffix.
+
+Pointer-shape propagation handles the corresponding local/parameter layer. It
+collects expressions such as `*(uint *)(local_24 + 0xc)`, combines them with
+typed call arguments and receivers, and proposes a structure pointer for the
+stable Ghidra variable storage. A known type such as `DArrayTy` wins when helper
+calls prove it; this lets the decompiler render offset `0xc` as `->count`.
+Competing base/derived call evidence is accepted only when one compatible,
+larger structure has at least a three-to-one evidence lead.
+
+When no semantic type exists, the analyzer creates a separate address-stable
+`AnonShape_*` proposal for each persistent variable with at least two
+non-overlapping offsets and three observations. Fields initially retain
+structural names such as `field_000C`. A single repeated offset never causes
+unrelated variables to share a type, and a field-layout-only resemblance to an
+existing class remains `apply=0`. Transient register symbols, concrete types,
+and manual/imported variables also remain disabled. Script-owned anonymous
+types contain a layout hash; a later manual edit is detected and preserved.
+
+The analyzer writes `pointer_shape_type_proposals.tsv`,
+`pointer_shape_field_proposals.tsv`, `pointer_shape_target_proposals.tsv/jsonl`,
+`pointer_shape_decompile_failures.tsv`, and `pointer_shape_summary.txt`. Review
+the target TSV first. The ordinary automatic rows already have `apply=1`; do
+not bulk-enable the review/conflict rows merely to increase coverage.
 
 These passes form a bounded feedback loop. After applying them, rerun
 `STClassLayoutAnalyzer`/`STClassLayoutApplier`, then rerun the prototype and
@@ -430,7 +506,8 @@ every edit. Use the smallest affected loop:
 | New constructor or class owner | vtable → virtual methods → constructors → class layouts |
 | New vtable owner or slot function | virtual methods → constructors → destructors |
 | New method name, receiver type, or class field type | method owners → prototypes → globals → class layouts |
-| New prototype or typed global | prototypes → globals → class layouts, until enabled counts reach zero |
+| New prototype or typed global | prototypes → global records → globals → pointer shapes → class layouts, until enabled counts reach zero |
+| New repeated global stride/range | global records → globals → switch enums, then export affected functions |
 | New class field suitable for a switch domain | switch enums, then class layouts once more |
 | New source/debug name | source provenance; vtable too if the function writes a vptr |
 | Final library classification | no recovery loop; export the corpus |
@@ -446,6 +523,7 @@ a new conflict is what requires another iteration.
 | --- | --- |
 | `STRecoveredTypesApplier` | Install conservative known structures, enums, and selected signatures. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, and source evidence from diagnostics. |
+| `STCallsiteConventionAnalyzer` | Audit uncertain conventions through direct and thunk-mediated callers; never auto-apply. |
 | `STCuratedRecoveryApplier` | Apply reviewed address-specific facts that are not yet generic. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
 | `STVTableAnalyzer/Applier` | Find vtables, create missing targets, type table layouts, and record owner conflicts. |
@@ -457,7 +535,9 @@ a new conflict is what requires another iteration.
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
+| `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records and their proven fields from stride/range evidence. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and assign address-stable structural names. |
+| `STPointerShapeAnalyzer/Applier` | Recover known or anonymous pointer-backed structures from fixed-offset dereferences and typed calls. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |

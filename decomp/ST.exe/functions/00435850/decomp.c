@@ -2,7 +2,7 @@
 uint FUN_00435850(int param_1,int param_2,int *param_3)
 
 {
-  uint uVar1;
+  dword dVar1;
   uint uVar2;
   int iVar3;
   undefined1 local_38 [4];
@@ -14,16 +14,16 @@ uint FUN_00435850(int param_1,int param_2,int *param_3)
   undefined4 local_18;
   undefined1 local_10 [4];
   int local_c;
-  int local_8;
+  DArrayTy *local_8;
   
   iVar3 = (int)(char)param_1;
-  local_8 = *(int *)((int)&DAT_007f4e24 + iVar3 * 0xa62 + 1);
-  uVar1 = *(uint *)(local_8 + 0xc);
-  uVar2 = uVar1;
-  while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
-    FUN_006acc70(local_8,uVar1,&local_c);
+  local_8 = g_playerRuntime[iVar3].groups;
+  dVar1 = local_8->count;
+  uVar2 = dVar1;
+  while (dVar1 = dVar1 - 1, -1 < (int)dVar1) {
+    FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,dVar1,&local_c);
     if (local_c == 0) {
-      uVar2 = uVar1;
+      uVar2 = dVar1;
     }
   }
   local_20 = 0;
@@ -32,7 +32,7 @@ uint FUN_00435850(int param_1,int param_2,int *param_3)
   local_24 = uVar2 & 0xffff;
   local_2c = 1;
   local_34 = iVar3;
-  (**(code **)(*DAT_00802a38 + 8))(0x10ff,local_10,&param_1,local_38,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x10ff,local_10,&param_1,local_38,0);
   if (param_2 == 1) {
     thunk_FUN_00423360(param_1);
   }

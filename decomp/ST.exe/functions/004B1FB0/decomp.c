@@ -50,12 +50,12 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
       return 0;
     }
   }
-  else if (DAT_007fa150 != 0) {
-    *(undefined4 *)(DAT_007fa150 + 4) = 0;
-    iVar4 = FUN_006b1190(DAT_007fa150,&local_18);
+  else if (PTR_007fa150 != (DArrayTy *)0x0) {
+    PTR_007fa150->iteratorIndex = 0;
+    iVar4 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_18);
     while (-1 < iVar4) {
       if (((local_18 != (STFishC *)0x0) &&
-          (GVar2 = (*local_18->vtable->slot_2C)(), GVar2 == param_1)) &&
+          (GVar2 = (*local_18->vtable->vfunc_2C)(), GVar2 == param_1)) &&
          (((STFishC::sub_004162B0(local_18,&local_8,&local_6,&local_a), param_4 < 0 ||
            (((param_5 < 0 || (param_6 < 0)) || (param_7 < 0)))) ||
           ((((param_4 <= local_8 && ((int)local_8 < param_6 + param_4)) && (param_5 <= local_6)) &&
@@ -94,7 +94,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           local_14 = local_14 + iVar4;
         }
       }
-      iVar4 = FUN_006b1190(DAT_007fa150,&local_18);
+      iVar4 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_18);
     }
     if (param_2 != (int *)0x0) {
       *param_2 = local_1c;

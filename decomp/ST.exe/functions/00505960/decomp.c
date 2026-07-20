@@ -22,7 +22,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   uint local_24;
   uint local_20;
   uint local_1c;
-  char *local_18;
+  AnonShape_00505960_269BEFC9 *local_18;
   int local_14;
   uint local_10;
   int local_c;
@@ -61,14 +61,14 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     local_14 = 0;
     local_2c = local_20 & 0xff;
     local_1c = 0x54;
-    local_18 = &pCVar2->field_0C11 + local_2c * 6;
+    local_18 = (AnonShape_00505960_269BEFC9 *)(&pCVar2->field_0C11 + local_2c * 6);
     local_24 = (uint)bVar6;
     do {
-      if (*local_18 == '\0') {
+      if (*(char *)local_18 == '\0') {
         uVar4 = 0;
       }
       else {
-        uVar4 = ((uint)*(ushort *)(local_18 + 2) * 10) / (uint)*(ushort *)(local_18 + 4);
+        uVar4 = ((uint)local_18->field_0002 * 10) / (uint)local_18->field_0004;
       }
       pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,5);
       DibPut((undefined4 *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
@@ -93,7 +93,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
           iVar8 = iVar8 + -1;
         } while (iVar8 != 0);
       }
-      wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,(uint)*(ushort *)(local_18 + 2));
+      wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,(uint)local_18->field_0002);
       uVar4 = local_1c;
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
       ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,5);
@@ -111,19 +111,19 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         (*(code *)(&PTR_DAT_00505cdc)[local_14])();
         return;
       }
-      if (*local_18 == '\0') {
+      if (*(char *)local_18 == '\0') {
         iVar3 = pCVar2->field_0292;
       }
       else {
         iVar3 = pCVar2->field_028E;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(iVar3,(-(uint)(*local_18 != '\0') & 0x14) + 0xb + local_14 +
-                                          local_2c);
+      pbVar5 = (byte *)FUN_0070b3a0(iVar3,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb +
+                                          local_14 + local_2c);
       if (pbVar5 != (byte *)0x0) {
         DibPut((undefined4 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
       }
       local_14 = local_14 + 1;
-      local_18 = local_18 + 6;
+      local_18 = (AnonShape_00505960_269BEFC9 *)&local_18->field_0x6;
       local_1c = uVar4 + 0xb;
       local_24 = local_24 - 1;
     } while (local_24 != 0);

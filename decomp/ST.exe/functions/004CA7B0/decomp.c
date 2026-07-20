@@ -128,7 +128,7 @@ LAB_004ca835:
   uVar7 = 0;
 cf_common_exit_004CAAA4:
   STT3DSprC::SetCurFase(this_00,bVar5,uVar7);
-  STT3DSprC::StartShow(this_00,bVar5,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  STT3DSprC::StartShow(this_00,bVar5,PTR_00802a38->field_00E4);
   return 0;
 }
 

@@ -61,7 +61,7 @@ FUN_004b0f20(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
   local_25 = param_9;
   local_21 = param_10;
   local_1d = 100;
-  STPlaySystemC::CreateGameObject(DAT_00802a38,0x3e9,0,0,&local_74,0);
+  STPlaySystemC::CreateGameObject(PTR_00802a38,0x3e9,0,0,&local_74,0);
   return;
 }
 

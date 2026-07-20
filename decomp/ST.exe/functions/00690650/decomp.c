@@ -3,7 +3,8 @@
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::HelpOrganize */
 
-void __thiscall AiTactClassTy::HelpOrganize(AiTactClassTy *this,int param_1)
+void __thiscall
+AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
 
 {
   byte bVar1;
@@ -42,14 +43,14 @@ void __thiscall AiTactClassTy::HelpOrganize(AiTactClassTy *this,int param_1)
   AiTactClassTy *local_c;
   uint local_8;
   
-  local_10 = CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0x16));
-  local_20 = CONCAT22((short)((uint)unaff_EDI >> 0x10),*(short *)(param_1 + 0x1a));
-  bVar1 = *(byte *)(param_1 + 0x18);
+  local_10 = CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_0016);
+  local_20 = CONCAT22((short)((uint)unaff_EDI >> 0x10),param_1->field_001A);
+  bVar1 = param_1->field_0018;
   _local_14 = CONCAT31(uStack_13,bVar1);
   if (7 < bVar1) {
     return;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
+  if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
     return;
   }
   if ((int)(char)bVar1 == *(int *)&this->field_0x24) {
@@ -86,7 +87,7 @@ LAB_00690758:
   }
   bVar12 = iVar7 < 0;
 LAB_00690763:
-  if ((bVar12) && (*(short *)(param_1 + 0x1a) != -1)) {
+  if ((bVar12) && (param_1->field_001A != -1)) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     local_c = this;

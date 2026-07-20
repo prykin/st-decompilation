@@ -39,8 +39,8 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
     local_14 = param_1[3];
     if (0 < (int)local_14) {
       do {
-        FUN_006acc70((int)param_1,uVar7,&local_c);
-        FUN_006acc70(pSVar2->field_020E,(int)local_c._2_2_,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_1,uVar7,&local_c);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_020E,(int)local_c._2_2_,&local_8);
         if (local_8._2_2_ != -1) {
           local_8._2_2_ = -1;
           Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_020E,(int)local_c._2_2_,&local_8);

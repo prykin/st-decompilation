@@ -12,9 +12,10 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
 {
   int iVar1;
   undefined4 *puVar2;
+  STBoatC_field_06F3State *pSVar3;
   
-  thunk_FUN_004158e0(&this->vtable);
-  thunk_FUN_004ab810(&this->field_01D5);
+  thunk_FUN_004158e0((STGroupBoatC *)this);
+  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &PTR_LAB_00790700;
   this->vtable = &STBoatCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
@@ -132,14 +133,14 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   }
   this->field_06EB = 0;
   this->field_06EF = 0;
-  this->field_045D = 3;
-  puVar2 = &this->field_06F3;
+  this->field_045D = CASE_3;
+  pSVar3 = &this->field_06F3;
   for (iVar1 = 0x5a; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
+    *pSVar3 = CASE_0;
+    pSVar3 = pSVar3 + 1;
   }
-  *(undefined2 *)puVar2 = 0;
-  *(undefined1 *)((int)puVar2 + 2) = 0;
+  *(undefined2 *)pSVar3 = CASE_0;
+  *(byte *)((int)pSVar3 + 2) = 0;
   this->field_0716 = 100;
   this->field_0712 = 100;
   this->field_071A = 100;

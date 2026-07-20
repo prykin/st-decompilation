@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0041f630(int *param_1)
+void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
 
 {
   byte bVar1;
@@ -13,20 +13,21 @@ void __fastcall FUN_0041f630(int *param_1)
   undefined1 local_c;
   undefined1 local_8;
   
-  if (7 < (uint)param_1[9]) {
+  if (7 < *(uint *)&param_1->field_0x24) {
     return;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[param_1[9] * 0x51])) {
+  if ((PTR_00802a38 != (STPlaySystemC *)0x0) &&
+     (7 < (byte)(&DAT_008087e9)[*(uint *)&param_1->field_0x24 * 0x51])) {
     return;
   }
-  if (*(int *)((int)param_1 + 0x229) != 0) {
+  if (param_1->field_0229 != 0) {
     return;
   }
-  iVar5 = param_1[8];
+  iVar5 = *(int *)&param_1->field_0x20;
   if (((iVar5 != 0x14) && (iVar5 != 1000)) && (iVar5 != 0x3e9)) {
     return;
   }
-  bVar1 = *(byte *)(param_1 + 9);
+  bVar1 = param_1->field_0x24;
   if (DAT_00808a8f == '\0') {
     if (bVar1 == DAT_0080874d) {
 LAB_0041f738:
@@ -61,7 +62,7 @@ LAB_0041f738:
     goto LAB_0041f793;
   }
   if (iVar5 != 0x14) {
-    uVar4 = (**(code **)(*param_1 + 0x2c))();
+    uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
     switch(uVar4) {
     case 0x3e:
     case 0x3f:
@@ -92,7 +93,7 @@ switchD_0041f763_caseD_7:
       goto LAB_0041f793;
     }
   }
-  uVar4 = (**(code **)(*param_1 + 0x2c))();
+  uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
   switch(uVar4) {
   case 7:
   case 8:
@@ -111,8 +112,8 @@ switchD_0041f763_caseD_7:
 switchD_0041f763_caseD_9:
   local_c = 4;
 LAB_0041f793:
-  if (*(int *)((int)param_1 + 0x211) != 0) {
-    uVar4 = (**(code **)(*param_1 + 0x6c))();
+  if (param_1->field_0211 != 0) {
+    uVar4 = (**(code **)(*(int *)param_1 + 0x6c))();
     switch(uVar4) {
     case 0:
       local_8 = 10;
@@ -142,11 +143,11 @@ LAB_0041f793:
       local_8 = 0xff;
     }
     Library::Ourlib::ST3DSMAP::FUN_006e6630
-              (*(void **)((int)param_1 + 0x211),*(int *)((int)param_1 + 0x1ed),local_c,local_8,0);
+              ((void *)param_1->field_0211,param_1->field_01ED,local_c,local_8,0);
     iVar8 = 0;
-    iVar5 = thunk_FUN_004ad650((int)param_1 + 0x1d5);
-    FUN_006e6870(*(void **)((int)param_1 + 0x211),iVar5,iVar8);
-    *(undefined4 *)((int)param_1 + 0x229) = 1;
+    iVar5 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+    FUN_006e6870((void *)param_1->field_0211,iVar5,iVar8);
+    param_1->field_0229 = 1;
   }
   return;
 }

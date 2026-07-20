@@ -16,10 +16,11 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
   uint uVar7;
   uint uVar8;
   undefined4 unaff_ESI;
-  uint *puVar9;
+  AnonShape_005E10A0_819783CC *pAVar9;
   SpriteClassTy *this_01;
   void *unaff_EDI;
-  uint uVar10;
+  uint *puVar10;
+  uint uVar11;
   InternalExceptionFrame local_50;
   MTaskTy *local_c;
   uint local_8;
@@ -49,40 +50,45 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     uVar8 = 0;
     if (*(int *)(iVar4 + 0xc) != 0) {
       if (*(int *)(iVar4 + 0xc) == 0) {
-        puVar9 = (uint *)0x0;
+        pAVar9 = (AnonShape_005E10A0_819783CC *)0x0;
         goto LAB_005e0b38;
       }
       do {
-        puVar9 = (uint *)(*(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c));
+        pAVar9 = (AnonShape_005E10A0_819783CC *)
+                 (*(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c));
 LAB_005e0b38:
-        if (((-1 < (int)*puVar9) && (*(int *)((int)puVar9 + 0x3a) != 0)) &&
-           (*(int *)((int)puVar9 + 0x31) != 0)) {
-          if ((puVar9[7] - 3 < puVar9[4]) && (puVar9[10] < this_00->field_0069 - puVar9[9])) {
-            if (puVar9[4] < puVar9[7]) {
-              PrepareTSurf(this_00,puVar9[1],*(char *)((int)puVar9 + 0x35),(char)puVar9[0xe]);
-              FUN_00714b30(*(void **)((int)puVar9 + 0x31),puVar9[4] - 1);
-              iVar4 = FUN_007140e0(*(void **)((int)puVar9 + 0x31),1,'\0');
+        if (((-1 < *(int *)pAVar9) && (pAVar9->field_003A != 0)) && (pAVar9->field_0031 != 0)) {
+          if ((*(uint *)&pAVar9->field_0x1c - 3 < *(uint *)&pAVar9->field_0x10) &&
+             (*(uint *)&pAVar9->field_0x28 <
+              (uint)(this_00->field_0069 - *(int *)&pAVar9->field_0x24))) {
+            if (*(uint *)&pAVar9->field_0x10 < *(uint *)&pAVar9->field_0x1c) {
+              PrepareTSurf(this_00,*(int *)&pAVar9->field_0x4,pAVar9->field_0x35,pAVar9->field_0x38)
+              ;
+              FUN_00714b30((void *)pAVar9->field_0031,*(int *)&pAVar9->field_0x10 + -1);
+              iVar4 = FUN_007140e0((void *)pAVar9->field_0031,1,'\0');
               if (iVar4 != 0) {
-                FUN_006b5440(puVar9[1],0,puVar9[5],puVar9[6],iVar4,0,0xff);
+                FUN_006b5440(*(int *)&pAVar9->field_0x4,0,*(int *)&pAVar9->field_0x14,
+                             *(int *)&pAVar9->field_0x18,iVar4,0,0xff);
               }
-              FUN_006b35d0(DAT_008075a8,*puVar9);
-              puVar9[4] = puVar9[4] + 1;
-              puVar9[9] = this_00->field_0069;
+              FUN_006b35d0(DAT_008075a8,*(uint *)pAVar9);
+              *(int *)&pAVar9->field_0x10 = *(int *)&pAVar9->field_0x10 + 1;
+              *(undefined4 *)&pAVar9->field_0x24 = this_00->field_0069;
             }
             else {
-              TTaskItemClose(this_00,puVar9);
+              TTaskItemClose(this_00,pAVar9);
             }
           }
-          if (puVar9[4] < puVar9[7] - 3) {
-            PrepareTSurf(this_00,puVar9[1],*(char *)((int)puVar9 + 0x35),(char)puVar9[0xe]);
-            iVar4 = FUN_007140e0(*(void **)((int)puVar9 + 0x31),1,'\0');
+          if (*(uint *)&pAVar9->field_0x10 < *(int *)&pAVar9->field_0x1c - 3U) {
+            PrepareTSurf(this_00,*(int *)&pAVar9->field_0x4,pAVar9->field_0x35,pAVar9->field_0x38);
+            iVar4 = FUN_007140e0((void *)pAVar9->field_0031,1,'\0');
             if (iVar4 != 0) {
-              FUN_006b5440(puVar9[1],0,puVar9[5],puVar9[6],iVar4,0,0xff);
+              FUN_006b5440(*(int *)&pAVar9->field_0x4,0,*(int *)&pAVar9->field_0x14,
+                           *(int *)&pAVar9->field_0x18,iVar4,0,0xff);
             }
-            FUN_006b35d0(DAT_008075a8,*puVar9);
-            uVar7 = puVar9[4];
-            puVar9[4] = uVar7 + 1;
-            if (((char)puVar9[0xc] != '\0') && ((uVar7 + 1) % 3 != 0)) {
+            FUN_006b35d0(DAT_008075a8,*(uint *)pAVar9);
+            uVar7 = *(int *)&pAVar9->field_0x10 + 1;
+            *(uint *)&pAVar9->field_0x10 = uVar7;
+            if ((pAVar9->field_0x30 != '\0') && (uVar7 % 3 != 0)) {
               thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             }
           }
@@ -97,22 +103,24 @@ LAB_005e0b38:
     uVar8 = 0;
     if (*(int *)(iVar4 + 0xc) != 0) {
       if (*(int *)(iVar4 + 0xc) == 0) {
-        puVar9 = (uint *)0x0;
+        pAVar9 = (AnonShape_005E10A0_819783CC *)0x0;
         goto LAB_005e0ca3;
       }
       do {
-        puVar9 = (uint *)(*(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c));
+        pAVar9 = (AnonShape_005E10A0_819783CC *)
+                 (*(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c));
 LAB_005e0ca3:
-        if (((-1 < (int)*puVar9) && (puVar9[4] != 0)) &&
-           (puVar9[10] < this_00->field_0069 - puVar9[9])) {
-          uVar7 = puVar9[4] + 1;
-          puVar9[4] = uVar7;
-          puVar9[9] = this_00->field_0069;
+        if (((-1 < (int)*(uint *)pAVar9) && (*(int *)&pAVar9->field_0x10 != 0)) &&
+           (*(uint *)&pAVar9->field_0x28 < (uint)(this_00->field_0069 - *(int *)&pAVar9->field_0x24)
+           )) {
+          uVar7 = *(int *)&pAVar9->field_0x10 + 1;
+          *(uint *)&pAVar9->field_0x10 = uVar7;
+          *(undefined4 *)&pAVar9->field_0x24 = this_00->field_0069;
           if (uVar7 < 3) {
-            FUN_006b35d0(DAT_008075a8,*puVar9);
+            FUN_006b35d0(DAT_008075a8,*(uint *)pAVar9);
           }
           else {
-            TTaskItemClose(this_00,puVar9);
+            TTaskItemClose(this_00,pAVar9);
           }
         }
         iVar4 = this_00->field_064F;
@@ -182,8 +190,8 @@ LAB_005e0d20:
               }
               uVar7 = this_01->field_0020;
               uVar5 = this_01->field_001C;
-              uVar10 = this_01->field_0008;
-              puVar9 = (uint *)this_01->field_0048;
+              uVar11 = this_01->field_0008;
+              puVar10 = (uint *)this_01->field_0048;
               goto LAB_005e0edd;
             }
             SpriteClassTy::CloseSprite(this_01);
@@ -211,10 +219,10 @@ LAB_005e0d20:
             }
             uVar7 = this_01->field_0020;
             uVar5 = this_01->field_001C;
-            uVar10 = this_01->field_0008;
-            puVar9 = (uint *)this_01->field_0048;
+            uVar11 = this_01->field_0008;
+            puVar10 = (uint *)this_01->field_0048;
 LAB_005e0edd:
-            Library::DKW::DDX::FUN_006b3730(puVar9,uVar8,uVar10,uVar5,uVar7);
+            Library::DKW::DDX::FUN_006b3730(puVar10,uVar8,uVar11,uVar5,uVar7);
             uVar7 = local_8;
           }
         }

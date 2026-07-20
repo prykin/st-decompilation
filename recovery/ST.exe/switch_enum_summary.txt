@@ -1,11 +1,13 @@
 program=ST.exe
 candidate_functions=555
 switches_seen=889
-decompile_retries=1
+decompile_retries=2
 decompile_failures=0
-proposals=834
-auto_apply=131
-target_kinds={class_field=12, global=4, local=698, parameter=120}
+proposals=594
+auto_apply=162
+target_kinds={class_field=43, global=4, local=427, parameter=120}
 note=At least three numeric case values are required.
 note_grouping=Switches over the same generated class field are merged across functions.
+note_aliases=Typed pointer aliases from decompiled declarations are resolved before field grouping.
+note_local_grouping=Repeated simple local expressions are merged only within one function and remain review-only.
 note_apply=Only non-manual integral parameters and fields owned by STClassLayoutApplier are enabled automatically.

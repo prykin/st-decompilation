@@ -1,16 +1,16 @@
 
-void __fastcall FUN_005ee670(int *param_1)
+void __fastcall FUN_005ee670(AnonShape_005EE670_EFEE702F *param_1)
 
 {
   int iVar1;
   
-  iVar1 = (**(code **)(*param_1 + 0x124))(2000);
+  iVar1 = (**(code **)(*(int *)param_1 + 0x124))(2000);
   if (iVar1 != 0) {
     thunk_FUN_005ec9f0(1);
-    *(undefined1 *)((int)param_1 + 0x30e) = 0xff;
-    *(undefined2 *)((int)param_1 + 0x30f) = 0;
-    *(undefined1 *)((int)param_1 + 0x30d) = 1;
-    *(undefined4 *)((int)param_1 + 0x23a) = 5;
+    param_1->field_030E = 0xff;
+    param_1->field_030F = 0;
+    param_1->field_030D = 1;
+    param_1->field_023A = 5;
   }
   return;
 }

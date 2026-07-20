@@ -6,7 +6,7 @@
 uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *param_1,uint *param_2)
 
 {
-  int iVar1;
+  AnonShape_006ACC70_C8641025 *pAVar1;
   code *pcVar2;
   uint *puVar3;
   int iVar4;
@@ -15,15 +15,16 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   undefined4 *puVar7;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
-  undefined4 *puVar8;
+  uint uVar8;
+  undefined4 *puVar9;
   uint *local_10;
   int local_c;
-  byte *local_8;
+  DArrayTy *local_8;
   
   puVar3 = param_2;
   local_c = 0xffff;
   local_10 = (uint *)0xffff;
-  local_8 = (byte *)0x0;
+  local_8 = (DArrayTy *)0x0;
   if (param_1 != (undefined4 *)0x0) {
     *param_1 = 0;
   }
@@ -31,51 +32,50 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     *param_2 = 0;
   }
   uVar5 = (uint)DAT_0080874d;
-  iVar4 = uVar5 * 0xa62;
-  if (*(int *)((int)&DAT_007f5023 + iVar4) == 0) {
-    if (*(uint *)((int)&DAT_007f4f87 + iVar4) == uVar5) {
-      if (*(int *)((int)&DAT_007f4f83 + iVar4) == 0x3c) {
+  if (g_playerRuntime[uVar5].field442_0x203 == 0) {
+    if (g_playerRuntime[uVar5].field327_0x167 == uVar5) {
+      if (g_playerRuntime[uVar5].field326_0x163 == 0x3c) {
         local_10 = (uint *)thunk_FUN_0042d770(CONCAT31((int3)((uint)unaff_EBX >> 8),DAT_0080874d),
                                               (int *)&local_8);
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
-          uVar5 = *(int *)(local_8 + 0xc) * *(int *)(local_8 + 8);
+          uVar5 = local_8->count * local_8->elementSize;
           if (puVar3 != (uint *)0x0) {
             *puVar3 = uVar5;
           }
           if (param_1 != (undefined4 *)0x0) {
             puVar7 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5);
             *param_1 = puVar7;
-            puVar8 = *(undefined4 **)(local_8 + 0x1c);
-            for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-              *puVar7 = *puVar8;
-              puVar8 = puVar8 + 1;
+            puVar9 = local_8->data;
+            for (uVar8 = uVar5 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+              *puVar7 = *puVar9;
+              puVar9 = puVar9 + 1;
               puVar7 = puVar7 + 1;
             }
             for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-              *(undefined1 *)puVar7 = *(undefined1 *)puVar8;
-              puVar8 = (undefined4 *)((int)puVar8 + 1);
+              *(undefined1 *)puVar7 = *(undefined1 *)puVar9;
+              puVar9 = (undefined4 *)((int)puVar9 + 1);
               puVar7 = (undefined4 *)((int)puVar7 + 1);
             }
           }
         }
-        FUN_006ae110(local_8);
+        FUN_006ae110((byte *)local_8);
       }
-      else if (*(int *)((int)&DAT_007f4f83 + iVar4) == 0x1ae) {
+      else if (g_playerRuntime[uVar5].field326_0x163 == 0x1ae) {
         local_c = 2;
-        local_10 = (uint *)(uint)(ushort)(&DAT_007f4f8b)[uVar5 * 0x531];
+        local_10 = (uint *)(uint)(ushort)g_playerRuntime[uVar5].field328_0x16b;
       }
     }
   }
-  else if (*(int *)((int)&DAT_007f5023 + iVar4) == 1) {
-    if ((*(uint *)((int)&DAT_007f4fd7 + iVar4) == uVar5) &&
-       (*(int *)((int)&DAT_007f4fd3 + iVar4) == 0x19a)) {
-      iVar4 = *(int *)((int)&DAT_007f4fdd + iVar4);
-      uVar5 = 0;
-      iVar1 = *(int *)(iVar4 + 0xc);
-      if (0 < iVar1) {
+  else if (g_playerRuntime[uVar5].field442_0x203 == 1) {
+    if ((g_playerRuntime[uVar5].field385_0x1b7 == uVar5) &&
+       (g_playerRuntime[uVar5].field384_0x1b3 == 0x19a)) {
+      pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[uVar5].field387_0x1bd;
+      uVar8 = 0;
+      uVar5 = pAVar1->field_000C;
+      if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(iVar4,uVar5,&param_2);
+          FUN_006acc70(pAVar1,uVar8,&param_2);
           if (((short)param_2 != -1) &&
              (uVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
                                 (uint)param_2,CASE_1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {
@@ -83,8 +83,8 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
             local_10 = param_2;
             break;
           }
-          uVar5 = uVar5 + 1;
-        } while ((int)uVar5 < iVar1);
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar5);
       }
     }
   }

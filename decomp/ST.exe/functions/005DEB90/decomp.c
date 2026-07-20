@@ -5,11 +5,11 @@
    function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_005deb90(int param_1)
+undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
 
 {
   uint uVar1;
-  int iVar2;
+  AnonShape_005DEB90_FE6FE747 *pAVar2;
   int iVar3;
   HANDLE pvVar4;
   BOOL BVar5;
@@ -21,7 +21,7 @@ undefined4 __fastcall FUN_005deb90(int param_1)
   char local_268 [259];
   byte abStack_165 [261];
   InternalExceptionFrame local_60;
-  int local_1c;
+  AnonShape_005DEB90_FE6FE747 *local_1c;
   undefined4 local_18;
   uint local_14;
   int local_10;
@@ -33,21 +33,20 @@ undefined4 __fastcall FUN_005deb90(int param_1)
   local_14 = 1;
   local_10 = -1;
   local_18 = 0;
-  if (*(uint *)(param_1 + 0x69e) < (uint)(*(int *)(param_1 + 0x6b2) + *(int *)(param_1 + 0x6ae))) {
+  if (param_1->field_069E < (uint)(param_1->field_06B2 + param_1->field_06AE)) {
     return 0;
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  local_1c = param_1;
+  local_1c = (AnonShape_005DEB90_FE6FE747 *)param_1;
   iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  iVar2 = local_1c;
+  pAVar2 = local_1c;
   if (iVar3 == 0) {
-    local_8 = (*(int *)(local_1c + 0x69e) - *(int *)(local_1c + 0x6ae)) - *(int *)(local_1c + 0x6b2)
-    ;
+    local_8 = (local_1c->field_069E - local_1c->field_06AE) - local_1c->field_06B2;
     Library::MSVCRT::_strncpy
               ((char *)(abStack_165 + 1),
-               (char *)(*(int *)(local_1c + 0x6ae) + *(int *)(local_1c + 0x6b2) +
-                       *(int *)(local_1c + 0x69a)),local_8);
+               (char *)(local_1c->field_06AE + local_1c->field_06B2 + local_1c->field_069A),local_8)
+    ;
     uVar1 = local_14;
     abStack_165[local_8] = 0;
     iVar3 = local_10;
@@ -81,9 +80,9 @@ undefined4 __fastcall FUN_005deb90(int param_1)
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x459);
     }
-    BVar5 = WriteFile(pvVar4,*(LPCVOID *)(iVar2 + 0x69a),*(DWORD *)(iVar2 + 0x6ae),&local_8,
+    BVar5 = WriteFile(pvVar4,(LPCVOID)pAVar2->field_069A,pAVar2->field_06AE,&local_8,
                       (LPOVERLAPPED)0x0);
-    if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != local_8)) {
+    if ((BVar5 == 0) || (pAVar2->field_06AE != local_8)) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x45a);
     }
@@ -103,9 +102,9 @@ undefined4 __fastcall FUN_005deb90(int param_1)
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x460);
     }
-    BVar5 = WriteFile(pvVar4,(LPCVOID)(*(int *)(iVar2 + 0x6ae) + *(int *)(iVar2 + 0x69a)),
-                      *(DWORD *)(iVar2 + 0x6b2),&local_8,(LPOVERLAPPED)0x0);
-    if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != local_8)) {
+    BVar5 = WriteFile(pvVar4,(LPCVOID)(pAVar2->field_06AE + pAVar2->field_069A),pAVar2->field_06B2,
+                      &local_8,(LPOVERLAPPED)0x0);
+    if ((BVar5 == 0) || (pAVar2->field_06B2 != local_8)) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x461);
     }

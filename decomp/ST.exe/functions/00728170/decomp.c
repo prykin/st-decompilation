@@ -1,5 +1,5 @@
 
-void __cdecl FUN_00728170(int param_1,int param_2)
+void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_00728170_7560EBA7 *param_2)
 
 {
   undefined1 uVar1;
@@ -13,20 +13,19 @@ void __cdecl FUN_00728170(int param_1,int param_2)
   undefined1 *puVar8;
   uint local_c;
   
-  if ((((int)DAT_008570dc < *(int *)(param_2 + 0x24)) &&
-      (*(int *)(param_1 + 0x24) < (int)DAT_0085705c)) &&
-     (*(int *)(param_1 + 0x24) >> 0x10 < *(int *)(param_2 + 0x24) >> 0x10)) {
-    local_c = *(uint *)(param_1 + 0x1c);
-    iVar3 = *(int *)(param_2 + 0x1c) - local_c;
+  if ((((int)DAT_008570dc < (int)param_2->field_0024) &&
+      ((int)param_1->field_0024 < (int)DAT_0085705c)) &&
+     ((int)param_1->field_0024 >> 0x10 < (int)param_2->field_0024 >> 0x10)) {
+    local_c = param_1->field_001C;
+    iVar3 = param_2->field_001C - local_c;
     iVar3 = (int)(CONCAT44(iVar3 >> 0x10,iVar3 * 0x10000) /
                  (longlong)
-                 (int)((*(uint *)(param_2 + 0x24) & 0xffff0000) -
-                      (*(uint *)(param_1 + 0x24) & 0xffff0000)));
-    uVar2 = *(uint *)(param_2 + 0x24) & 0xffff0000;
+                 (int)((param_2->field_0024 & 0xffff0000) - (param_1->field_0024 & 0xffff0000)));
+    uVar2 = param_2->field_0024 & 0xffff0000;
     if ((int)DAT_0085705c <= (int)uVar2) {
       uVar2 = DAT_0085705c;
     }
-    uVar6 = *(uint *)(param_1 + 0x24) & 0xffff0000;
+    uVar6 = param_1->field_0024 & 0xffff0000;
     if ((int)uVar6 < (int)DAT_008570dc) {
       uVar2 = FUN_006db5f0(iVar3,DAT_008570dc - uVar6);
       local_c = local_c + uVar2;

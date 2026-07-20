@@ -42,7 +42,7 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *p
     DelObjFromTmps(this_00,DAT_0080874d,*(int *)&param_2->field_0x20,
                    CONCAT31((int3)((uint)uVar4 >> 8),param_2->field_0x24),param_1);
     DelObjFromSaveTmps(this_00,*(int *)&param_2->field_0x20,param_2->field_0x24,(short)param_1);
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa15c,param_1 & 0xffff,&local_8);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa15c->flags,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {

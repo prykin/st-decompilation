@@ -32,7 +32,7 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,int param_1)
   }
   iVar2 = *(int *)(param_1 + 0x10);
   if (iVar2 == 0) {
-    thunk_FUN_004c61e0((int)local_8);
+    thunk_FUN_004c61e0((AnonShape_004C61E0_B3B9F8FF *)local_8);
   }
   else {
     if (iVar2 == 2) {
@@ -41,7 +41,7 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,int param_1)
       return 0;
     }
     if (iVar2 == 3) {
-      thunk_FUN_004c61a0((int)local_8);
+      thunk_FUN_004c61a0((AnonShape_004C61A0_0E747D1B *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     }

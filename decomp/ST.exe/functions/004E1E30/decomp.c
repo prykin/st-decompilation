@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_004e1e30(int param_1)
     puVar2 = puVar2 + 1;
   }
   *(undefined4 *)(param_1 + 0x520) = 0;
-  *(undefined4 *)(param_1 + 0x524) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  *(undefined4 *)(param_1 + 0x524) = PTR_00802a38->field_00E4;
   return 0;
 }
 

@@ -36,7 +36,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   
   local_28 = 0;
   local_14 = 0;
-  local_1c = &DAT_007f582e;
+  local_1c = &g_playerRuntime[0].field2298_0xa0e;
   local_18 = param_1;
   do {
     uVar6 = local_14;
@@ -59,7 +59,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       }
       iVar5 = thunk_FUN_004e60d0(uVar6,iVar4);
       iVar4 = DAT_00798f74;
-      if ((uint)(*(int *)(&DAT_00798f6c + iVar5 * 4) + piVar12[3]) <= *(uint *)(DAT_00802a38 + 0xe4)
+      if ((uint)(*(int *)(&DAT_00798f6c + iVar5 * 4) + piVar12[3]) <= (uint)PTR_00802a38->field_00E4
          ) {
         if ((uint)piVar12[1] % 3 == 1) {
           *piVar12 = 0;
@@ -147,7 +147,7 @@ LAB_004dabff:
           if (bVar13) {
             iVar4 = thunk_FUN_004e60d0((int)local_8,iVar4);
             uVar3 = (&DAT_00798f74)[iVar4];
-            if ((*(uint *)(DAT_00802a38 + 0xe4) < piVar12[3] + uVar3) &&
+            if (((uint)PTR_00802a38->field_00E4 < piVar12[3] + uVar3) &&
                (local_10 = (int *)0x1, local_28 < uVar3)) {
               local_28 = uVar3;
             }
@@ -160,13 +160,13 @@ LAB_004dabff:
         *piVar12 = 0;
       }
       else {
-        piVar12[4] = (piVar12[3] - *(int *)(DAT_00802a38 + 0xe4)) + local_28;
+        piVar12[4] = (piVar12[3] - PTR_00802a38->field_00E4) + local_28;
       }
     }
     local_8 = piVar12 + 0xd;
     local_c = (byte *)0x0;
     do {
-      if (((local_c != (byte *)uVar6) && (*(int *)(DAT_00802a38 + 0xe4) == local_8[-8])) &&
+      if (((local_c != (byte *)uVar6) && (PTR_00802a38->field_00E4 == local_8[-8])) &&
          (*local_8 == 0)) {
         if (uVar6 == DAT_0080874d) {
           *local_8 = 1;
@@ -204,8 +204,8 @@ LAB_004dad15:
             do {
               if (((local_c != (byte *)uVar6) && (local_14 != uVar6)) &&
                  (((int)pbVar10 < 0x808a71 &&
-                  (((DAT_00802a38 == 0 || (*pbVar10 < 8)) &&
-                   (*(uint *)(DAT_00802a38 + 0xe4) <= *local_20)))))) {
+                  (((PTR_00802a38 == (STPlaySystemC *)0x0 || (*pbVar10 < 8)) &&
+                   ((uint)PTR_00802a38->field_00E4 <= *local_20)))))) {
                 local_30 = thunk_FUN_004e60d0(local_14,iVar4);
                 local_30 = local_30 + 1;
                 iVar5 = thunk_FUN_004e60d0(uVar6,iVar4);

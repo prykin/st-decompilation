@@ -10,7 +10,7 @@ void FUN_0042a9f0(char param_1)
   STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;
   _param_1 = 5;
-  puVar2 = (undefined4 *)((int)&DAT_007f4f8d + iVar1 * 0xa62);
+  puVar2 = &g_playerRuntime[iVar1].field329_0x16d;
   do {
     if ((byte *)*puVar2 != (byte *)0x0) {
       FUN_006ae110((byte *)*puVar2);
@@ -25,7 +25,7 @@ void FUN_0042a9f0(char param_1)
     puVar2 = puVar2 + 4;
     _param_1 = _param_1 + -1;
   } while (_param_1 != 0);
-  puVar2 = (undefined4 *)((int)&DAT_007f5031 + iVar1 * 0xa62);
+  puVar2 = &g_playerRuntime[iVar1].field446_0x211;
   iVar1 = 10;
   do {
     if ((byte *)*puVar2 != (byte *)0x0) {

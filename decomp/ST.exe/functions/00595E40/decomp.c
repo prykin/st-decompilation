@@ -56,12 +56,12 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   DAT_008067a0 = 0;
   StartSystemTy::GetIP(this_01->field_1A5B);
   DAT_00802a99 = 0;
-  if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    if (DAT_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)DAT_00802a30->field_00AD);
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (DAT_00802a30->field_001C != 0xffffffff) {
-      FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
     }
   }
   pMVar1 = this_01->field_1A5B->field_02E6;
@@ -70,8 +70,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     this_01->field_1A5B->field_02E6->field_1CAB = 0;
   }
   uVar5 = FUN_0070a9f0(g_cMf32_00806780,s_FSGS_BKG_007cc09c,0,1);
-  *(undefined4 *)(DAT_0081176c + 0x2c) = uVar5;
-  this_01->field_005D = *(undefined4 *)(DAT_0081176c + 0x2c);
+  PTR_0081176c->field_002C = uVar5;
+  this_01->field_005D = PTR_0081176c->field_002C;
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,s_SET_ACC_007cc090,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_01->field_1A83 = puVar6;
@@ -223,11 +223,11 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   this_01->field_1A62 = 0;
   if (param_1 == 6) {
-    this_01->field_1A5F = 6;
+    this_01->field_1A5F = CASE_6;
     uVar14 = 8;
   }
   else if (param_1 == 7) {
-    this_01->field_1A5F = 7;
+    this_01->field_1A5F = CASE_7;
     uVar14 = 7;
   }
   else {
@@ -236,16 +236,16 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
       this_01->field_1A62 = 1;
       goto LAB_00596510;
     }
-    this_01->field_1A5F = 8;
+    this_01->field_1A5F = CASE_8;
     uVar14 = 10;
   }
   SetState(this_01,uVar14);
 LAB_00596510:
-  this_00 = DAT_00802a30;
-  if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    uVar5 = DAT_00802a30->field_00C9;
-    uVar2 = DAT_00802a30->field_00C5;
-    DAT_00802a30->field_0493 = 1;
+  this_00 = PTR_00802a30;
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    uVar5 = PTR_00802a30->field_00C9;
+    uVar2 = PTR_00802a30->field_00C5;
+    PTR_00802a30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar5);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

@@ -26,21 +26,21 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      if (DAT_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)DAT_00802a30->field_00AD);
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (PTR_00802a30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (DAT_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
       }
     }
     puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,s_LOADSINGLE_007cc79c,0,1);
     this_01 = local_8;
     local_8->field_005D = puVar5;
     FUN_006bc360(puVar5,local_44c,(int *)0x0);
-    *(undefined4 *)(DAT_0081176c + 0x140) = 0x1f;
+    *(undefined4 *)&PTR_0081176c->field_0x140 = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
-              ((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)(DAT_0081176c + 0x144));
+              ((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)&PTR_0081176c->field_0x144);
     puVar7 = (undefined4 *)&this_01->field_0x61;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar7 = 0;
@@ -49,18 +49,18 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     this_01->field_0071 = 0x13;
     this_01->field_0075 = this_01->field_0008;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x61);
-    if (*(MMsgTy **)(DAT_0081176c + 0x2e6) != (MMsgTy *)0x0) {
-      MMsgTy::HidePanel(*(MMsgTy **)(DAT_0081176c + 0x2e6),0,0,1);
-      MMsgTy::HideSprites(*(MMsgTy **)(DAT_0081176c + 0x2e6));
+    if (PTR_0081176c->field_02E6 != (MMsgTy *)0x0) {
+      MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
+      MMsgTy::HideSprites(PTR_0081176c->field_02E6);
     }
     DarkScreen(DAT_0080759c,1,0);
     PaintMTest(this_01);
     thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_01->field_005D,10,2);
-    this_00 = DAT_00802a30;
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar1 = DAT_00802a30->field_00C9;
-      uVar2 = DAT_00802a30->field_00C5;
-      DAT_00802a30->field_0493 = 1;
+    this_00 = PTR_00802a30;
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      uVar1 = PTR_00802a30->field_00C9;
+      uVar2 = PTR_00802a30->field_00C5;
+      PTR_00802a30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar1);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

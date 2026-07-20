@@ -31,52 +31,52 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
                          );
       pSVar6 = local_8;
       puVar5 = &local_8->field_0097;
-      FUN_006e8660(DAT_00807598,(int *)puVar5,1,0,*(uint *)((int)puVar2 + 9),
+      FUN_006e8660(PTR_00807598,(int *)puVar5,1,0,*(uint *)((int)puVar2 + 9),
                    *(uint *)((int)puVar2 + 0xd),0x5a,0x45,0);
-      FUN_006e98e0(DAT_00807598,*puVar5,0,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
-      FUN_006ea270(DAT_00807598,*puVar5,0,pSVar6->field_00AB);
+      FUN_006e98e0(PTR_00807598,*puVar5,0,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
+      FUN_006ea270(PTR_00807598,*puVar5,0,pSVar6->field_00AB);
       uVar4 = *(undefined4 *)puVar2;
       pSVar6->field_009B = puVar2;
       pSVar6->field_00AF = uVar4;
       if (DAT_00807326 != '\0') {
-        FUN_006e9520(DAT_00807598,*puVar5,0,0x401109,(uint)&pSVar6->field_0x4d);
+        FUN_006e9520(PTR_00807598,*puVar5,0,0x401109,(uint)&pSVar6->field_0x4d);
       }
     }
     else {
       puVar5 = &local_8->field_0097;
       if (-1 < (int)local_8->field_0097) {
-        FUN_006e9520(DAT_00807598,local_8->field_0097,0,0,(uint)local_8);
-        FUN_006e8ba0(DAT_00807598,*puVar5);
+        FUN_006e9520(PTR_00807598,local_8->field_0097,0,0,(uint)local_8);
+        FUN_006e8ba0(PTR_00807598,*puVar5);
       }
       puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,s_exptme_007d00dc,0xffffffff,0,1,0,(undefined4 *)0x0)
       ;
-      FUN_006e8660(DAT_00807598,(int *)puVar5,3,0,*(uint *)((int)puVar2 + 9),
+      FUN_006e8660(PTR_00807598,(int *)puVar5,3,0,*(uint *)((int)puVar2 + 9),
                    *(uint *)((int)puVar2 + 0xd),0x5a,0x45,0);
-      FUN_006e98e0(DAT_00807598,*puVar5,0,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
-      FUN_006ea270(DAT_00807598,*puVar5,0,pSVar6->field_00AB);
+      FUN_006e98e0(PTR_00807598,*puVar5,0,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
+      FUN_006ea270(PTR_00807598,*puVar5,0,pSVar6->field_00AB);
       pSVar6->field_00AF = *(undefined4 *)puVar2;
       puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,s_expmask2_007d00e4,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
-      FUN_006e98e0(DAT_00807598,*puVar5,1,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
-      FUN_006ea270(DAT_00807598,*puVar5,1,pSVar6->field_00BC);
-      FUN_006ea800(DAT_00807598,*puVar5,1,1);
-      FUN_006ea790(DAT_00807598,*puVar5,DAT_008032b8,0x10);
+      FUN_006e98e0(PTR_00807598,*puVar5,1,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
+      FUN_006ea270(PTR_00807598,*puVar5,1,pSVar6->field_00BC);
+      FUN_006ea800(PTR_00807598,*puVar5,1,1);
+      FUN_006ea790(PTR_00807598,*puVar5,DAT_008032b8,0x10);
       pSVar6->field_00C0 = *(undefined4 *)puVar2;
       pSVar6->field_00BB = 1;
       puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,s_bulb_n4_007d00f0,0xffffffff,0,1,0,(undefined4 *)0x0
                          );
-      FUN_006e98e0(DAT_00807598,*puVar5,2,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
-      FUN_006ea270(DAT_00807598,*puVar5,2,pSVar6->field_00B7);
-      FUN_006e9d40(DAT_00807598,(uint *)*puVar5,2);
+      FUN_006e98e0(PTR_00807598,*puVar5,2,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
+      FUN_006ea270(PTR_00807598,*puVar5,2,pSVar6->field_00B7);
+      FUN_006e9d40(PTR_00807598,(uint *)*puVar5,2);
       pSVar6->field_00B3 = *(undefined4 *)puVar2;
     }
-    FUN_006ea960(DAT_00807598,*puVar5,(float)pSVar6->field_009F * _DAT_007904f8 * _DAT_007904f0,
+    FUN_006ea960(PTR_00807598,*puVar5,(float)pSVar6->field_009F * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar6->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar6->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    FUN_006eaaa0(DAT_00807598,*puVar5,0);
+    FUN_006eaaa0(PTR_00807598,*puVar5,0);
     pSVar6->field_00C4 = 1;
     g_currentExceptionFrame = local_4c.previous;
     return 1;

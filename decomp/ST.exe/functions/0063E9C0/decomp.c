@@ -35,7 +35,7 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
       goto cf_common_join_0063EACD;
     }
     if (cVar2 == '\0') goto cf_common_join_0063EACD;
-    uVar7 = *(uint *)(DAT_00802a38 + 0xe4);
+    uVar7 = PTR_00802a38->field_00E4;
   }
   else {
     if (*(uint *)((int)this + 0x245) == 2) {
@@ -50,7 +50,7 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
       goto cf_common_join_0063EACD;
     }
     if (cVar2 == '\0') goto cf_common_join_0063EACD;
-    uVar7 = *(uint *)(DAT_00802a38 + 0xe4);
+    uVar7 = PTR_00802a38->field_00E4;
   }
   local_18 = 10;
   if (uVar7 % 10 == 0) {
@@ -146,7 +146,7 @@ cf_common_join_0063EACD:
             }
           }
         }
-        else if (((*(byte *)(DAT_00802a38 + 0xe4) & 1) != 0) &&
+        else if (((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0) &&
                 ((int)local_14 % (int)(uint)*(byte *)((int)this + 0x328) == 0)) {
           iVar6 = (int)(local_14 - uVar9) / (int)(uint)*(byte *)((int)this + 0x328);
           if (iVar4 < 0) {
@@ -201,9 +201,9 @@ cf_common_join_0063EACD:
         *(uint *)((int)this + 0x1c) = uVar7;
         iVar5 = *(int *)(iVar10 + 0xc) + (uVar7 >> 0x10) % 6;
         *(int *)(iVar10 + 0xc) = iVar5;
-        iVar4 = *(int *)(*(int *)((int)this + 0x211) + 0x380);
-        fVar11 = FUN_006e3210(*(int *)((int)this + 0x211),(*(int *)(iVar10 + 8) * iVar4) / 0xc9,
-                              (iVar5 * iVar4) / 0xc9);
+        iVar4 = (*(AnonShape_006E3210_FE49985F **)((int)this + 0x211))->field_0380;
+        fVar11 = FUN_006e3210(*(AnonShape_006E3210_FE49985F **)((int)this + 0x211),
+                              (*(int *)(iVar10 + 8) * iVar4) / 0xc9,(iVar5 * iVar4) / 0xc9);
         fVar1 = (float)fVar11;
         if (*(float *)(iVar10 + 0x10) != fVar1) {
           if (fVar1 <= *(float *)(iVar10 + 0x10)) {
@@ -222,7 +222,7 @@ cf_common_join_0063EACD:
             *(undefined4 *)(iVar10 + 0x38) = 0xffffffff;
           }
         }
-        *(undefined4 *)(iVar10 + 0x30) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        *(undefined4 *)(iVar10 + 0x30) = PTR_00802a38->field_00E4;
         uVar7 = *(byte *)((int)this + 0x329) + 5;
         *(uint *)(iVar10 + 0x20) = uVar7;
         if (0xf < uVar7) {

@@ -1,5 +1,6 @@
 
-void FUN_0075db50(int param_1,int *param_2,int param_3,undefined4 *param_4,int param_5)
+void FUN_0075db50(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,undefined4 *param_4,
+                 int param_5)
 
 {
   int *piVar1;
@@ -19,9 +20,9 @@ void FUN_0075db50(int param_1,int *param_2,int param_3,undefined4 *param_4,int p
   int iVar15;
   int iVar16;
   
-  iVar5 = *(int *)(param_1 + 0x68);
-  iVar6 = *(int *)(param_1 + 0x1b6);
-  iVar7 = *(int *)(param_1 + 0x132);
+  iVar5 = param_1->field_0068;
+  iVar6 = param_1->field_01B6;
+  iVar7 = param_1->field_0132;
   iVar8 = *(int *)(iVar6 + 8);
   iVar9 = *(int *)(iVar6 + 0xc);
   iVar10 = *(int *)(iVar6 + 0x10);

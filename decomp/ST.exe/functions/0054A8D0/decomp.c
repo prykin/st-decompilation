@@ -1,29 +1,30 @@
 
-void __fastcall FUN_0054a8d0(void *param_1)
+void __fastcall FUN_0054a8d0(CursorClassTy *param_1)
 
 {
-  if ((DAT_007fb2ac != 0) && (*(int *)(DAT_007fb2ac + 0x18) == 0)) {
-    thunk_FUN_004c63f0(DAT_007fb2ac);
+  if ((PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) && (PTR_007fb2ac->field_0018 == 0)
+     ) {
+    thunk_FUN_004c63f0((AnonShape_004C63F0_0B060A14 *)PTR_007fb2ac);
   }
-  if ((*(char *)((int)param_1 + 0xde) == '\x05') && (-1 < (int)*(uint *)((int)param_1 + 0x10b))) {
-    if (DAT_00807598 != (void *)0x0) {
-      FUN_006e8ba0(DAT_00807598,*(uint *)((int)param_1 + 0x10b));
+  if ((param_1->field_00DE == CASE_5) && (-1 < (int)*(uint *)&param_1->field_0x10b)) {
+    if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+      FUN_006e8ba0(PTR_00807598,*(uint *)&param_1->field_0x10b);
     }
-    *(undefined4 *)((int)param_1 + 0x10b) = 0xffffffff;
-    if (*(int *)((int)param_1 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8a60(*(byte **)((int)param_1 + 0xad));
+    *(undefined4 *)&param_1->field_0x10b = 0xffffffff;
+    if (param_1->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)param_1->field_00AD);
     }
-    else if (*(uint *)((int)param_1 + 0x1c) != 0xffffffff) {
+    else if (param_1->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                (*(uint **)((int)param_1 + 0x60),*(uint *)((int)param_1 + 0x1c),0xfffffffe,
-                 *(uint *)((int)param_1 + 0x34),*(uint *)((int)param_1 + 0x38));
+                ((uint *)param_1->field_0060,param_1->field_001C,0xfffffffe,param_1->field_0034,
+                 param_1->field_0038);
     }
-    CursorClassTy::DrawSprite(param_1,*(int *)((int)param_1 + 0xc5),*(int *)((int)param_1 + 0xc9));
-    *(undefined1 *)((int)param_1 + 0xde) = 0;
+    CursorClassTy::DrawSprite(param_1,param_1->field_00C5,param_1->field_00C9);
+    param_1->field_00DE = CASE_0;
   }
-  *(undefined4 *)((int)param_1 + 0x4a2) = 0;
-  *(undefined4 *)((int)param_1 + 0x4aa) = 0;
-  *(undefined4 *)((int)param_1 + 0x4a6) = 0;
+  param_1->field_04A2 = 0;
+  *(undefined4 *)&param_1->field_0x4aa = 0;
+  param_1->field_04A6 = 0;
   return;
 }
 

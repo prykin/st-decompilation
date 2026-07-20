@@ -51,7 +51,7 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,undefined1 param_3)
           bVar2 = pbVar6[iVar8 + 1];
           iVar8 = iVar8 + 1;
         }
-        *(undefined4 *)((int)&DAT_007f53b3 + (uint)*pbVar6 * 4 + param_1 * 0xa62) = 0;
+        *(undefined4 *)(param_1 * 0xa62 + 0x7f53b3 + (uint)*pbVar6 * 4) = 0;
 LAB_004e77b8:
         pbVar6 = pbVar6 + 3;
       } while ((int)pbVar6 < 0x7c0e4c);
@@ -66,7 +66,7 @@ LAB_004e77b8:
           bVar2 = pbVar6[iVar7 + 1];
           iVar7 = iVar7 + 1;
         }
-        *(undefined4 *)((int)&DAT_007f53b3 + (uint)*pbVar6 * 4 + param_1 * 0xa62) = 0;
+        *(undefined4 *)(param_1 * 0xa62 + 0x7f53b3 + (uint)*pbVar6 * 4) = 0;
 LAB_004e7823:
         pbVar6 = pbVar6 + 3;
         iVar8 = iVar8 + -1;

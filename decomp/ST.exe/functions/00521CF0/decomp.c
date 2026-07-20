@@ -77,9 +77,9 @@ void __fastcall FUN_00521cf0(int param_1)
         FUN_006b7780(pcVar14,pcVar14);
         iVar4 = Library::MSVCRT::_strncmp(pcVar14,s__WAITING_007c4124,8);
         uVar9 = local_10;
-        if ((iVar4 == 0) && (uVar9 = 0, DAT_00802a38 != 0)) {
-          *(uint *)(DAT_00802a38 + 0xf0) = (uint)(*(int *)(DAT_00802a38 + 0xf0) == 0);
-          uVar5 = FUN_006b0140(0x2747 - (*(int *)(DAT_00802a38 + 0xf0) != 0),HINSTANCE_00807618);
+        if ((iVar4 == 0) && (uVar9 = 0, PTR_00802a38 != (STPlaySystemC *)0x0)) {
+          PTR_00802a38->field_00F0 = (uint)(PTR_00802a38->field_00F0 == 0);
+          uVar5 = FUN_006b0140(0x2747 - (PTR_00802a38->field_00F0 != 0),HINSTANCE_00807618);
           uVar6 = FUN_006b0140(0x42c3,HINSTANCE_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,uVar6,uVar5);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {

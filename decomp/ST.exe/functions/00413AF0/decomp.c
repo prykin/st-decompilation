@@ -1,5 +1,6 @@
 
-void FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int param_5)
+void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3,int param_4,
+                 int param_5)
 
 {
   short sVar1;
@@ -124,8 +125,8 @@ void FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int param_5)
     piVar14 = extraout_EDX;
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
-        if (local_28 < *(uint *)(param_2 + 0xc)) {
-          puVar10 = (undefined2 *)(*(int *)(param_2 + 8) * local_28 + *(int *)(param_2 + 0x1c));
+        if (local_28 < param_2->field_000C) {
+          puVar10 = (undefined2 *)(param_2->field_0008 * local_28 + param_2->field_001C);
         }
         else {
           puVar10 = (undefined2 *)0x0;
@@ -224,8 +225,8 @@ void FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int param_5)
     piVar14 = extraout_EDX;
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
-        if (local_28 < *(uint *)(param_2 + 0xc)) {
-          puVar10 = (undefined2 *)(*(int *)(param_2 + 8) * local_28 + *(int *)(param_2 + 0x1c));
+        if (local_28 < param_2->field_000C) {
+          puVar10 = (undefined2 *)(param_2->field_0008 * local_28 + param_2->field_001C);
         }
         else {
           puVar10 = (undefined2 *)0x0;
@@ -331,7 +332,8 @@ void FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int param_5)
     }
     else {
       iVar7 = thunk_FUN_00412960(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x55),
-                                 *(int *)((int)param_1 + 0x51),*(int *)((int)param_1 + 0x59),
+                                 *(int *)((int)param_1 + 0x51),
+                                 *(AnonShape_00412960_B35D15BC **)((int)param_1 + 0x59),
                                  (uint)(iVar7 == -2));
     }
     if ((iVar7 != 0) || (DAT_007f4cf8 < 1)) break;

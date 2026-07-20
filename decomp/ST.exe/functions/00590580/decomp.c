@@ -36,14 +36,14 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
     FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     pMVar2 = local_8;
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005E);
-    pcVar10 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
     uVar11 = 1;
     uVar9 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
       uVar8 = 0xfffffffe;
       puVar4 = (uint *)FUN_006b0140(0x25e4,HINSTANCE_00807618);
       StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      pcVar10 = *(ccFntTy **)(DAT_0081176c + 0x30);
+      pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0xffffffff;
@@ -58,13 +58,13 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       uVar8 = 0xffffffff;
       puVar4 = (uint *)FUN_006b0140(0x25e5,HINSTANCE_00807618);
       StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      pcVar10 = *(ccFntTy **)(DAT_0081176c + 0x30);
+      pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0;
       puVar4 = (uint *)FUN_006b0140(0x25e6,HINSTANCE_00807618);
       StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar8,pcVar10,uVar11);
-      pcVar10 = *(ccFntTy **)(DAT_0081176c + 0x30);
+      pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0;

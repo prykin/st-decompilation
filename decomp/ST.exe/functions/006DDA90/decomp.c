@@ -12,7 +12,7 @@ void __thiscall FUN_006dda90(void *this,float param_1,float param_2)
   }
   *(double *)((int)this + 0x15c) = (double)param_1;
   *(double *)((int)this + 0x164) = (double)param_2;
-  FUN_006dd870((int)this);
+  FUN_006dd870(this);
   return;
 }
 

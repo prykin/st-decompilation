@@ -44,7 +44,7 @@ undefined4 __thiscall FUN_005f8650(void *this,int param_1,int param_2,int param_
   *(short *)((int)this + 0x5b) = sVar3;
   *(short *)((int)this + 0x5d) = sVar4;
   *(short *)((int)this + 0x5f) = sVar5;
-  uVar1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  uVar1 = PTR_00802a38->field_00E4;
   *(undefined4 *)((int)this + 0x2d9) = 0;
   *(undefined4 *)((int)this + 0x2d5) = uVar1;
   iVar2 = thunk_FUN_005faf70(this,param_1,param_2,param_3,

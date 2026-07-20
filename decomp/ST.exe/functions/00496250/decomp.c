@@ -82,12 +82,12 @@ switchD_0049655f_caseD_0:
         if ((uVar2 & 0x4000) != 0) {
           return 0x7f;
         }
-        iVar4 = *(int *)(DAT_00807598 + 0x380);
+        iVar4 = PTR_00807598->field_0380;
         if (sVar1 == 0) {
           iVar8 = 0;
         }
         else {
-          iVar8 = *(int *)(DAT_00807598 + 900) * iVar8;
+          iVar8 = PTR_00807598->field_0384 * iVar8;
         }
         if ((int)(*(byte *)(*(int *)(iVar3 + 0x40) +
                             iVar4 * (((iVar4 * param_2) / 0xc9) % (iVar4 * 2)) * 2 +

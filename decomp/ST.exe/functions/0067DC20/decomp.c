@@ -19,7 +19,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   int iVar6;
   uint uVar7;
   uint uVar8;
-  char *_Source;
+  undefined1 *_Source;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar9;
@@ -32,8 +32,8 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   uint local_58;
   int local_54;
   InternalExceptionFrame local_50;
-  uint *local_c;
-  ushort *local_8;
+  DArrayTy *local_c;
+  AnonShape_0067DC20_B265FC02 *local_8;
   
   puVar9 = (undefined4 *)local_2ec;
   for (iVar6 = 0x80; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -41,8 +41,8 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
     puVar9 = puVar9 + 1;
   }
   *(undefined1 *)puVar9 = 0;
-  local_c = (uint *)0x0;
-  local_8 = (ushort *)0x0;
+  local_c = (DArrayTy *)0x0;
+  local_8 = (AnonShape_0067DC20_B265FC02 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -55,7 +55,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
       puVar5 = (uint *)(*pcVar2)();
       return puVar5;
     }
-    if (local_c != (uint *)0x0) {
+    if (local_c != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_c);
     }
     RaiseInternalException(iVar6,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x158);
@@ -65,7 +65,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x13f);
   }
-  local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
+  local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   uVar7 = 0xffffffff;
   do {
     pcVar3 = param_3;
@@ -92,15 +92,15 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   cMf32::ToBeg(param_1,FUN_006f2d10,local_2ec);
   pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
   while (pcVar3 != (char *)0x0) {
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar3,0,1);
-    uVar7 = *(uint *)(local_8 + 0x85);
+    local_8 = (AnonShape_0067DC20_B265FC02 *)Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar3,0,1)
+    ;
+    uVar7 = *(uint *)&local_8[1].field_0x7e;
     if (uVar7 == 0) {
       uVar7 = 1;
     }
-    if (local_8 != (ushort *)0x0) {
-      if (((param_2 == 0) || (param_2 == *(short *)((int)local_8 + 0x19))) &&
-         ((param_4 & uVar7) != 0)) {
-        _Source = (char *)((int)local_8 + 0x1b);
+    if (local_8 != (AnonShape_0067DC20_B265FC02 *)0x0) {
+      if (((param_2 == 0) || (param_2 == local_8->field_0019)) && ((param_4 & uVar7) != 0)) {
+        _Source = &local_8->field_0x1b;
         pcVar10 = local_e8;
         for (iVar6 = 0x26; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar10[0] = '\0';
@@ -110,18 +110,18 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
           pcVar10 = pcVar10 + 4;
         }
         Library::MSVCRT::_strncpy(local_e8,_Source,0x3f);
-        Library::MSVCRT::_strncpy(local_a8,(char *)((int)local_8 + 0x5b),0xb);
+        Library::MSVCRT::_strncpy(local_a8,&local_8->field_0x5b,0xb);
         Library::MSVCRT::_strncpy(local_9c,pcVar3,0x1f);
         Library::MSVCRT::_strncpy(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
-        local_54 = (int)*(short *)((int)local_8 + 0x19);
+        local_54 = (int)local_8->field_0019;
         local_58 = uVar7;
-        Library::DKW::TBL::FUN_006ae1c0(local_c,(undefined4 *)local_e8);
+        Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,(undefined4 *)local_e8);
       }
       cMf32::RecMemFree(param_1,(uint *)&local_8);
     }
     pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
   }
   g_currentExceptionFrame = local_50.previous;
-  return local_c;
+  return &local_c->flags;
 }
 

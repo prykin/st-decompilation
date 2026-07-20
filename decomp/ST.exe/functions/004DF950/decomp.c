@@ -2,17 +2,17 @@
 undefined4 __fastcall FUN_004df950(int param_1)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   int local_8;
   
-  if (*(int *)(&DAT_007f57f2 + *(int *)(param_1 + 0x24) * 0xa62) == 0) {
+  if (g_playerRuntime[*(int *)(param_1 + 0x24)].field2283_0x9d2 == (DArrayTy *)0x0) {
     local_8 = param_1;
-    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-    *(uint **)(&DAT_007f57f2 + *(int *)(param_1 + 0x24) * 0xa62) = puVar1;
+    pDVar1 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+    g_playerRuntime[*(int *)(param_1 + 0x24)].field2283_0x9d2 = pDVar1;
   }
   local_8 = param_1;
   Library::DKW::TBL::FUN_006ae1c0
-            (*(uint **)(&DAT_007f57f2 + *(int *)(param_1 + 0x24) * 0xa62),&local_8);
+            (&(g_playerRuntime[*(int *)(param_1 + 0x24)].field2283_0x9d2)->flags,&local_8);
   return 0;
 }
 

@@ -44,8 +44,8 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       *(undefined2 *)&local_8->field_0x2c = 0;
       local_8->field_002E = 2;
       *(undefined4 *)&local_8->field_0x30 = local_8->field_0178;
-      if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)(&local_8->field_0x18);
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        (*(code *)**(undefined4 **)PTR_00802a30)(&local_8->field_0x18);
       }
     }
     ShiftControls(this_00,0);

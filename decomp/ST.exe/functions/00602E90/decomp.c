@@ -10,7 +10,7 @@ undefined4 * FUN_00602e90(void)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
-  int local_c;
+  AnonShape_00602E90_7075769A *local_c;
   undefined4 *local_8;
   
   local_8 = (undefined4 *)0x0;
@@ -18,29 +18,27 @@ undefined4 * FUN_00602e90(void)
   g_currentExceptionFrame = &local_50;
   iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
-    if (*(int *)(local_c + 0x241) == 1) {
-      text = (&PTR_s_Dest4_0_007cec00)[*(int *)(local_c + 0x372)];
+    if (local_c->field_0241 == 1) {
+      text = (&PTR_s_Dest4_0_007cec00)[local_c->field_0372];
     }
     else {
-      text = (&PTR_s_Dest1_0_007cebec)[*(int *)(local_c + 0x372)];
+      text = (&PTR_s_Dest1_0_007cebec)[local_c->field_0372];
     }
     puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
     if (puVar2 != (ushort *)0x0) {
-      if (*(int *)(local_c + 0x241) == 0) {
-        local_8 = FUN_006e9000(*(void **)(local_c + 0x211),**(undefined4 **)((int)puVar2 + 0x21),
-                               0x5a,0x45,
-                               (float)*(int *)(local_c + 0x37b) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)*(int *)(local_c + 0x37f) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)*(int *)(local_c + 899) * _DAT_007904f8 * _DAT_007904f0 +
+      if (local_c->field_0241 == 0) {
+        local_8 = FUN_006e9000(local_c->field_0211,**(undefined4 **)((int)puVar2 + 0x21),0x5a,0x45,
+                               (float)local_c->field_037B * _DAT_007904f8 * _DAT_007904f0,
+                               (float)local_c->field_037F * _DAT_007904f8 * _DAT_007904f0,
+                               (float)local_c->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
                                _DAT_007904fc,0);
       }
-      if (*(int *)(local_c + 0x241) == 1) {
-        local_8 = FUN_006e9000(*(void **)(local_c + 0x211),**(undefined4 **)((int)puVar2 + 0x21),
-                               0x78,0x56,
-                               (float)*(int *)(local_c + 0x37b) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)*(int *)(local_c + 0x37f) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)*(int *)(local_c + 899) * _DAT_007904f8 * _DAT_007904f0 +
+      if (local_c->field_0241 == 1) {
+        local_8 = FUN_006e9000(local_c->field_0211,**(undefined4 **)((int)puVar2 + 0x21),0x78,0x56,
+                               (float)local_c->field_037B * _DAT_007904f8 * _DAT_007904f0,
+                               (float)local_c->field_037F * _DAT_007904f8 * _DAT_007904f0,
+                               (float)local_c->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
                                _DAT_007904fc,0);
       }
     }

@@ -45,12 +45,12 @@ uint __thiscall FUN_0065da50(void *this,int param_1,char param_2)
       return (uint)uVar1;
     }
     if (param_1 == 0) {
-      groupContent = thunk_FUN_0065da10((int)this,uVar6);
+      groupContent = thunk_FUN_0065da10(this,uVar6);
       uVar2 = extraout_ECX;
       uVar6 = extraout_EDX_00;
     }
     else {
-      groupContent = thunk_FUN_0065e360((int)this,uVar6,param_1);
+      groupContent = thunk_FUN_0065e360(this,uVar6,param_1);
       uVar2 = extraout_ECX_00;
       uVar6 = extraout_EDX_01;
     }

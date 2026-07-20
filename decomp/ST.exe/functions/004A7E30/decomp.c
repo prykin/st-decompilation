@@ -7,11 +7,12 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
 
 {
   int iVar1;
-  byte bVar2;
-  int *piVar3;
-  uint uVar4;
+  AnonShape_006ACC70_C8641025 *pAVar2;
+  byte bVar3;
+  int *piVar4;
+  uint uVar5;
   int unaff_EDI;
-  int iVar5;
+  int iVar6;
   undefined4 local_14;
   int local_e;
   int local_a;
@@ -20,43 +21,43 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
     if (param_1 != 1) {
       return 1;
     }
-    iVar5 = 0;
+    iVar6 = 0;
     iVar1 = *(int *)(this->field_022E + 0xc);
-    piVar3 = *(int **)(this->field_022E + 0x1c);
+    piVar4 = *(int **)(this->field_022E + 0x1c);
     if (0 < iVar1) {
       do {
-        if (((short)piVar3[1] != -1) && (*piVar3 == 0)) {
+        if (((short)piVar4[1] != -1) && (*piVar4 == 0)) {
           return 1;
         }
-        iVar5 = iVar5 + 1;
-        piVar3 = (int *)((int)piVar3 + 0x16);
-      } while (iVar5 < iVar1);
+        iVar6 = iVar6 + 1;
+        piVar4 = (int *)((int)piVar4 + 0x16);
+      } while (iVar6 < iVar1);
     }
   }
   if (this->field_0236 == 1) {
-    iVar1 = this->field_022A;
-    iVar5 = this->field_0232;
-    if (iVar5 == *(int *)(iVar1 + 0xc) + -1) {
+    pAVar2 = (AnonShape_006ACC70_C8641025 *)this->field_022A;
+    iVar1 = this->field_0232;
+    if (iVar1 == pAVar2->field_000C - 1) {
       if (this->field_0246 != 0) {
         return 2;
       }
-      if (iVar5 < 1) {
+      if (iVar1 < 1) {
         return 1;
       }
       this->field_0236 = 0;
       this->field_023E = 0;
-      this->field_0232 = iVar5 - 1U;
-      FUN_006acc70(iVar1,iVar5 - 1U,&local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
-      uVar4 = (uint)bVar2;
+      this->field_0232 = iVar1 - 1U;
+      FUN_006acc70(pAVar2,iVar1 - 1U,&local_14);
+      bVar3 = thunk_FUN_00430750(CASE_8);
+      uVar5 = (uint)bVar3;
       local_e = local_e * 0xc9;
     }
     else {
       this->field_023E = 0;
-      this->field_0232 = iVar5 + 1U;
-      FUN_006acc70(iVar1,iVar5 + 1U,&local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
-      uVar4 = (uint)bVar2;
+      this->field_0232 = iVar1 + 1U;
+      FUN_006acc70(pAVar2,iVar1 + 1U,&local_14);
+      bVar3 = thunk_FUN_00430750(CASE_8);
+      uVar5 = (uint)bVar3;
       local_e = local_a * 0xc9;
     }
   }
@@ -65,21 +66,21 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
       this->field_0232 = 1;
       this->field_0236 = 1;
       this->field_023E = 0;
-      FUN_006acc70(this->field_022A,1,&local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022A,1,&local_14);
+      bVar3 = thunk_FUN_00430750(CASE_8);
     }
     else {
-      uVar4 = this->field_0232 - 1;
-      this->field_0232 = uVar4;
+      uVar5 = this->field_0232 - 1;
+      this->field_0232 = uVar5;
       this->field_023E = 0;
-      FUN_006acc70(this->field_022A,uVar4,&local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022A,uVar5,&local_14);
+      bVar3 = thunk_FUN_00430750(CASE_8);
       local_a = local_e;
     }
-    uVar4 = (uint)bVar2;
+    uVar5 = (uint)bVar3;
     local_e = local_a * 0xc9;
   }
-  this->field_023A = (local_e / (int)uVar4) / 3;
+  this->field_023A = (local_e / (int)uVar5) / 3;
   SetPatrolCmdToBoat(this,unaff_EDI);
   return 0;
 }

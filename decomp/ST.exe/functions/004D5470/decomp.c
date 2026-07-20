@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_004d5470(int param_1)
       piVar4 = piVar4 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
-    bVar1 = thunk_FUN_0041caf0(param_1);
+    bVar1 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (CONCAT31(extraout_var,bVar1) == 0) {
       iVar2 = 0;
     }

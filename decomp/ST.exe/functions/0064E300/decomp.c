@@ -54,7 +54,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   *(uint *)((int)local_8 + 0x77) = uVar1;
   local_c = FltDataPack(local_8,local_20);
   thunk_FUN_006686c0((int *)&local_8);
-  STPlaySystemC::CreateGameObject(DAT_00802a38,900,local_20 + 1,&local_14,local_c,0);
+  STPlaySystemC::CreateGameObject(PTR_00802a38,900,local_20 + 1,&local_14,local_c,0);
   thunk_FUN_006686c0((int *)&local_c);
   if (local_14 == (void *)0x0) {
     RaiseInternalException

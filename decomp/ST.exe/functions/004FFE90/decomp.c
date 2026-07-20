@@ -76,7 +76,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     puVar8 = puVar8 + 1;
   }
   *(undefined2 *)puVar8 = 0;
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,5,(int *)puVar1);
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (local_44 != this_00->field_0C51) {
     if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');

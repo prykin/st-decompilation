@@ -38,7 +38,7 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_18 = *(undefined4 *)((int)this + 0x4c);
   local_28._0_2_ = (undefined2)param_1;
   local_28._2_2_ = (undefined2)param_2;
-  local_22 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  local_22 = PTR_00802a38->field_00E4;
   local_1e = (undefined2)local_28;
   local_1c = local_28._2_2_;
   local_1a = local_24;

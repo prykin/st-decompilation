@@ -41,7 +41,7 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   local_10[1] = local_8->field_01AF;
   *piVar4 = 0;
   local_8->field_01AF = 0;
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0x11,piVar4);
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0x11,(AnonShape_0043BEB0_1C00EC12 *)piVar4);
   iVar2 = 2;
   bVar6 = true;
   piVar5 = local_10;

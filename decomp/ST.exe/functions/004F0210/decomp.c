@@ -3,12 +3,13 @@
    E:\__titans\Andrey\bldlab.cpp
    BldLabPanelTy::GetMessage */
 
-undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
+undefined4 __thiscall
+BldLabPanelTy::GetMessage(BldLabPanelTy *this,AnonShape_004F0210_51A01EB3 *param_1)
 
 {
   uint uVar1;
   code *pcVar2;
-  BldLabPanelTy *this_00;
+  ProdPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 *puVar5;
@@ -16,11 +17,11 @@ undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
-  BldLabPanelTy *local_8;
+  ProdPanelTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = this;
+  local_8 = (ProdPanelTy *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
@@ -35,15 +36,15 @@ undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
     uVar6 = (*pcVar2)();
     return uVar6;
   }
-  if (*(int *)(param_1 + 0x10) == 2) {
-    ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
+  if (param_1->field_0010 == 2) {
+    ProdPanelTy::PreInitProdPanel(local_8);
   }
-  ProdPanelTy::GetMessage((ProdPanelTy *)this_00,param_1);
-  uVar1 = *(uint *)(param_1 + 0x10);
+  ProdPanelTy::GetMessage(this_00,(int)param_1);
+  uVar1 = param_1->field_0010;
   if (uVar1 < 0xc0a4) {
     if (uVar1 < 0xc09f) {
       if (uVar1 == 2) {
-        InitBldLabPanel(this_00);
+        InitBldLabPanel((BldLabPanelTy *)this_00);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
@@ -51,17 +52,17 @@ undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if ((byte *)this_00->field_027A != (byte *)0x0) {
-        FUN_006ae110((byte *)this_00->field_027A);
+      if (*(byte **)&this_00[1].field_0xd5 != (byte *)0x0) {
+        FUN_006ae110(*(byte **)&this_00[1].field_0xd5);
       }
-      this_00->field_027A = 0;
+      *(undefined4 *)&this_00[1].field_0xd5 = 0;
       g_prodPanel_00801680 = (ProdPanelTy *)0x0;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    iVar3 = this_00->field_027A;
+    iVar3 = *(int *)&this_00[1].field_0xd5;
     if ((iVar3 == 0) ||
-       (iVar4 = uVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
+       (iVar4 = uVar1 + *(int *)&this_00->field_0x199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
       puVar5 = (undefined4 *)0x0;
     }
     else {
@@ -75,8 +76,8 @@ undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    thunk_FUN_0054b630(DAT_00802a30,0xe,*puVar5);
-    ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
+    thunk_FUN_0054b630(PTR_00802a30,0xe,*puVar5);
+    ProdPanelTy::SetPanel(this_00,'\0');
   }
   else {
     if (uVar1 != 0xc0a4) {
@@ -88,12 +89,12 @@ undefined4 __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      PaintUpdBut(this_00,param_1);
+      PaintUpdBut((BldLabPanelTy *)this_00,(AnonShape_004EFFE0_E46DC6EE *)param_1);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    this_00->field_0199 = *(undefined4 *)(param_1 + 0x14);
-    thunk_FUN_004efe20(this_00);
+    *(undefined4 *)&this_00->field_0x199 = param_1->field_0014;
+    thunk_FUN_004efe20((AnonShape_004EFE20_20805E12 *)this_00);
   }
   thunk_FUN_005252c0(0xae);
   g_currentExceptionFrame = local_4c.previous;

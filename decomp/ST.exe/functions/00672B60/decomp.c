@@ -77,14 +77,14 @@ int FUN_00672b60(char *param_1,undefined4 *param_2)
   }
   piVar2 = local_1c;
   local_1c[1] = DAT_00857560;
-  local_1c[2] = (int)DAT_0081194c;
+  local_1c[2] = (int)PTR_0081194c;
   pcVar3 = FUN_006c49b0((char *)DAT_00857528);
   piVar2[6] = (int)pcVar3;
   pcVar3 = FUN_006c49b0((char *)DAT_00811948);
   piVar2[0xb] = (int)pcVar3;
   pcVar3 = FUN_006c49b0(DAT_0085753c);
   piVar2[7] = (int)pcVar3;
-  DAT_0081194c = param_2;
+  PTR_0081194c = (AnonShape_GLOBAL_0081194C_4D1525E6 *)param_2;
   local_18 = 0;
   if (param_1 != (char *)0x0) {
     local_18 = (*(code *)*param_2)(param_1);

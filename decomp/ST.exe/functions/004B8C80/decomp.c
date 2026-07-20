@@ -15,15 +15,15 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
   undefined4 local_20;
   undefined4 local_1c;
   int local_18;
-  int local_c;
+  AnonShape_0060D340_D77FEBE7 *local_c;
   int local_8;
   
   iVar2 = *(int *)((int)param_1 + 0x245);
   local_8 = 0;
   if (iVar2 == 1) {
     if (*(int *)((int)param_1 + 0x5df) == 5) {
-      if (param_1[0x133] + 2U <= *(uint *)((int)DAT_00802a38 + 0xe4)) {
-        param_1[0x133] = *(uint *)((int)DAT_00802a38 + 0xe4);
+      if (param_1[0x133] + 2U <= (uint)PTR_00802a38->field_00E4) {
+        param_1[0x133] = PTR_00802a38->field_00E4;
         iVar2 = param_1[0x132] + 1;
         param_1[0x132] = iVar2;
         if (*(short *)(DAT_00806724 + 0x23) + -1 <= iVar2) {
@@ -81,7 +81,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
         if (iVar2 != 0) {
           return 0xffff;
         }
-        STT3DSprC::StartShow(pSVar1,5,*(undefined4 *)((int)DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar1,5,PTR_00802a38->field_00E4);
       }
     }
     return 0;
@@ -99,7 +99,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
       iVar2 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
       if ((char)iVar2 == '\x03') {
         uVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
-        if (*(uint *)((int)DAT_00802a38 + 0xe4) <
+        if ((uint)PTR_00802a38->field_00E4 <
             (uint)(*(int *)(&DAT_007e3dc0 +
                            ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
                   param_1[0x12e])) goto cf_common_exit_004B9130;
@@ -118,7 +118,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
           uVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
           if ((uint)(*(int *)(&DAT_007e3dc0 +
                              ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
-                    param_1[0x12e]) <= *(uint *)((int)DAT_00802a38 + 0xe4)) {
+                    param_1[0x12e]) <= (uint)PTR_00802a38->field_00E4) {
             pvVar6 = (void *)0x3;
             (**(code **)(*param_1 + 0x90))(3,0x361);
             param_1[0x12f] = 3;
@@ -151,7 +151,7 @@ cf_common_exit_004B9130:
       if (*(int *)(&DAT_00791a10 + *(int *)((int)param_1 + 0x235) * 4) != 0) {
         thunk_FUN_004cbf70((int)param_1);
       }
-      thunk_FUN_004cc900((int)param_1);
+      thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)param_1);
       STT3DSprC::StopShow(pSVar1,5);
       iVar2 = (**(code **)(*param_1 + 8))();
       if (iVar2 != 0) {
@@ -238,7 +238,7 @@ cf_common_exit_004B8F5A:
           (local_8 = 1, param_1[0x16b] == 0x65)) &&
          ((param_1[0x102] != 0 &&
           ((param_1[0x103] != 0 &&
-           (iVar2 = FUN_006e62d0(DAT_00802a38,param_1[0x103],&local_c), iVar2 == 0)))))) {
+           (iVar2 = FUN_006e62d0(PTR_00802a38,param_1[0x103],(int *)&local_c), iVar2 == 0)))))) {
         thunk_FUN_0060d340(local_c);
         (**(code **)(*param_1 + 0x90))(3,0x3d9);
       }
@@ -250,10 +250,10 @@ cf_common_exit_004B8F5A:
     if (param_1[0xf7] != 0) goto cf_common_join_004B92EE;
   }
   else {
-    if (*(uint *)((int)DAT_00802a38 + 0xe4) <
+    if ((uint)PTR_00802a38->field_00E4 <
         (uint)(*(int *)(&DAT_00792040 + *(int *)((int)param_1 + 0x235) * 4) +
               *(int *)((int)param_1 + 0x285))) goto cf_common_join_004B92EE;
-    *(uint *)((int)param_1 + 0x285) = *(uint *)((int)DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)param_1 + 0x285) = PTR_00802a38->field_00E4;
     iVar2 = *(int *)((int)param_1 + 0x259) / 0xf;
     if (*(int *)(&DAT_007be8c8 + iVar2 * 0x60) != 0) {
       iVar2 = (((*(int *)(&DAT_007be8c8 + iVar2 * 0x60) < 1) - 1 & 2) - 1) + iVar2;
@@ -284,19 +284,21 @@ cf_common_join_004B92EE:
     else {
       iVar4 = iVar4 - *(int *)(iVar2 + 0x210);
     }
-    local_c = thunk_FUN_004acd30(pvVar6,'\x0e');
+    local_c = (AnonShape_0060D340_D77FEBE7 *)thunk_FUN_004acd30(pvVar6,'\x0e');
     iVar2 = thunk_FUN_004acd30(pvVar6,'\r');
-    if (((local_c - iVar2) + -1 <= iVar4) && ((*(uint *)((int)param_1 + 0x1f1) & 0x2000) == 0)) {
+    if (((int)local_c + (-1 - iVar2) <= iVar4) && ((*(uint *)((int)param_1 + 0x1f1) & 0x2000) == 0))
+    {
       thunk_FUN_004ca7b0(param_1,0xd,0);
     }
   }
   if ((local_8 != 0) &&
-     (iVar2 = thunk_FUN_004b8c00((int)param_1), iVar2 != *(int *)((int)param_1 + 0x245))) {
+     (iVar2 = thunk_FUN_004b8c00((AnonShape_004B8C00_93076312 *)param_1),
+     iVar2 != *(int *)((int)param_1 + 0x245))) {
     TLOBaseTy::SetState((TLOBaseTy *)param_1,iVar2,1);
   }
   if ((*(int *)((int)param_1 + 0x5df) != 0) &&
-     (param_1[0x133] + 2U <= *(uint *)((int)DAT_00802a38 + 0xe4))) {
-    param_1[0x133] = *(uint *)((int)DAT_00802a38 + 0xe4);
+     (param_1[0x133] + 2U <= (uint)PTR_00802a38->field_00E4)) {
+    param_1[0x133] = PTR_00802a38->field_00E4;
     iVar2 = param_1[0x132] + -1;
     param_1[0x132] = iVar2;
     if (iVar2 == 0) {

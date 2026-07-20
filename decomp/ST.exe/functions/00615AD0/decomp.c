@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_00615ad0(void *param_1)
+undefined4 __fastcall FUN_00615ad0(AnonShape_00615AD0_7BE8CE57 *param_1)
 
 {
   int iVar1;
@@ -7,19 +7,17 @@ undefined4 __fastcall FUN_00615ad0(void *param_1)
   int local_c;
   int local_8;
   
-  iVar1 = thunk_FUN_00615860((int)*(short *)((int)param_1 + 0x1f5),&local_10,&local_c,&local_8);
+  iVar1 = thunk_FUN_00615860((int)param_1->field_01F5,&local_10,&local_c,&local_8);
   if (iVar1 != 0) {
-    if (*(int *)((int)param_1 + 0x2dd) == 0) {
+    if (param_1->field_02DD == 0) {
       iVar1 = Library::DKW::LIB::FUN_006aac70(0x1c);
-      *(int *)((int)param_1 + 0x2dd) = iVar1;
+      param_1->field_02DD = iVar1;
     }
-    *(undefined4 *)((int)param_1 + 0x2d5) = 1;
-    iVar1 = thunk_FUN_00615430(param_1,0,(int)*(short *)((int)param_1 + 0x1e9),
-                               (int)*(short *)((int)param_1 + 0x1eb),
-                               (int)*(short *)((int)param_1 + 0x1ed),local_10,local_c,local_8,
-                               (int)*(short *)((int)param_1 + 0x1ef),
-                               (int)*(short *)((int)param_1 + 0x1f1),
-                               (undefined4 *)(int)*(short *)((int)param_1 + 499));
+    param_1->field_02D5 = 1;
+    iVar1 = thunk_FUN_00615430(param_1,0,(int)param_1->field_01E9,(int)param_1->field_01EB,
+                               (int)param_1->field_01ED,local_10,local_c,local_8,
+                               (int)param_1->field_01EF,(int)param_1->field_01F1,
+                               (undefined4 *)(int)param_1->field_01F3);
     if (iVar1 != 0) {
       return 1;
     }

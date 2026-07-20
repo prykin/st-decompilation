@@ -41,7 +41,7 @@ STGroupBoatC::GetDepotForAttack
   pSVar6 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
-    if ((local_14->field_01E6 != 2) || (iVar2 = local_14->field_020E, iVar2 == 0)) {
+    if ((local_14->field_01E6 != CASE_2) || (iVar2 = local_14->field_020E, iVar2 == 0)) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
                  0x1708);
@@ -57,16 +57,17 @@ STGroupBoatC::GetDepotForAttack
     iVar2 = local_18;
     if (0 < local_1c) {
       do {
-        FUN_006acc70(pSVar6->field_020E,uVar5,(undefined4 *)&local_24);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar6->field_020E,uVar5,(undefined4 *)&local_24
+                    );
         if (sStack_22 != -1) {
           pSVar3 = (STFishC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT22(sStack_22,CONCAT11(cStack_23,local_24)),
                               CONCAT22(uStack_20,sStack_22),(int)cStack_23);
-          iVar4 = (*pSVar3->vtable->slot_2C)();
+          iVar4 = (*pSVar3->vtable->vfunc_2C)();
           if ((iVar4 == 0x3b) ||
-             (iVar4 = (*pSVar3->vtable->slot_2C)(), pSVar6 = local_14, iVar4 == 0x60)) {
+             (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar6 = local_14, iVar4 == 0x60)) {
             STFishC::sub_004162B0(pSVar3,&local_8,&local_6,&local_a);
             iVar4 = FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,
                                  (int)local_a);

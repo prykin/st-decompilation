@@ -49,7 +49,7 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     pSVar2->field_006D = 0;
     pSVar2->field_0071 = 0;
     pSVar2->field_0075 = 0;
-    FUN_006e52d0((int)pSVar2);
+    FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)pSVar2);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

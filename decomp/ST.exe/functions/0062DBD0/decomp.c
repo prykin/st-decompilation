@@ -33,7 +33,7 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
           piVar2 = piVar2 + 1;
           local_c = local_c + -1;
         } while (local_c != 0);
-        FUN_006b0c70(*(int *)((int)this + param_1 * 4 + 0x50),uVar4);
+        FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + param_1 * 4 + 0x50),uVar4);
         local_8 = uVar4;
       }
       uVar4 = uVar4 + 1;

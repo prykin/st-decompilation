@@ -43,7 +43,7 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
           uVar4 = piVar6[3] - 1;
           piVar6[3] = uVar4;
           if ((int)uVar4 < 0) {
-            FUN_006b0c70(this_00->field_00F4,local_8);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this_00->field_00F4,local_8);
             local_8 = uVar2;
           }
           else {

@@ -7,47 +7,50 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
 
 {
   STBoatC_field_06F7State SVar1;
-  code *pcVar2;
+  dword dVar2;
+  code *pcVar3;
   STGroupBoatC *this_00;
-  int iVar3;
-  uint uVar4;
-  STBoatC *pSVar5;
+  int iVar4;
+  uint uVar5;
+  STBoatC *pSVar6;
   undefined4 extraout_EAX;
-  int *piVar6;
-  int iVar7;
-  uint *puVar8;
-  uint *puVar9;
+  int *piVar7;
+  DArrayTy *pDVar8;
+  DArrayTy *pDVar9;
+  AnonShape_006ACC70_C8641025 *groupContent;
+  int iVar10;
   undefined4 extraout_ECX;
-  int extraout_ECX_00;
-  int extraout_ECX_01;
-  int extraout_ECX_02;
-  int extraout_ECX_03;
-  int extraout_ECX_04;
+  STGroupBoatC_field_01E6State extraout_ECX_00;
+  STGroupBoatC_field_01E6State extraout_ECX_01;
+  STGroupBoatC_field_01E6State extraout_ECX_02;
+  STGroupBoatC_field_01E6State extraout_ECX_03;
+  STGroupBoatC_field_01E6State extraout_ECX_04;
   undefined4 extraout_ECX_05;
-  int extraout_ECX_06;
-  int extraout_ECX_07;
-  int extraout_ECX_08;
-  int extraout_ECX_09;
+  STGroupBoatC_field_01E6State extraout_ECX_06;
+  STGroupBoatC_field_01E6State extraout_ECX_07;
+  STGroupBoatC_field_01E6State extraout_ECX_08;
+  STGroupBoatC_field_01E6State extraout_ECX_09;
   undefined4 extraout_ECX_10;
   undefined4 extraout_ECX_11;
-  int extraout_ECX_12;
-  int extraout_ECX_13;
-  int extraout_ECX_14;
-  int extraout_ECX_15;
-  int extraout_ECX_16;
-  int extraout_ECX_17;
-  int extraout_ECX_18;
-  int extraout_ECX_19;
-  int extraout_ECX_20;
-  int extraout_ECX_21;
+  STGroupBoatC_field_01E6State extraout_ECX_12;
+  STGroupBoatC_field_01E6State extraout_ECX_13;
+  STGroupBoatC_field_01E6State extraout_ECX_14;
+  STGroupBoatC_field_01E6State extraout_ECX_15;
+  STGroupBoatC_field_01E6State extraout_ECX_16;
+  STGroupBoatC_field_01E6State extraout_ECX_17;
+  STGroupBoatC_field_01E6State extraout_ECX_18;
+  STGroupBoatC_field_01E6State extraout_ECX_19;
+  STGroupBoatC_field_01E6State extraout_ECX_20;
+  STGroupBoatC_field_01E6State extraout_ECX_21;
   undefined4 extraout_ECX_22;
-  int extraout_ECX_23;
-  int extraout_ECX_24;
-  int extraout_ECX_25;
-  int extraout_ECX_26;
-  int extraout_ECX_27;
-  int extraout_ECX_28;
-  int extraout_ECX_29;
+  STGroupBoatC_field_01E6State extraout_ECX_23;
+  STGroupBoatC_field_01E6State extraout_ECX_24;
+  STGroupBoatC_field_01E6State extraout_ECX_25;
+  STGroupBoatC_field_01E6State extraout_ECX_26;
+  STGroupBoatC_field_01E6State extraout_ECX_27;
+  STGroupBoatC_field_01E6State extraout_ECX_28;
+  STGroupBoatC_field_01E6State extraout_ECX_29;
+  STGroupBoatC_field_01E6State SVar11;
   undefined4 extraout_ECX_30;
   undefined4 extraout_ECX_31;
   undefined4 extraout_ECX_32;
@@ -67,12 +70,12 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
   undefined4 extraout_EDX_10;
   undefined4 extraout_EDX_11;
   undefined4 extraout_EDX_12;
-  uint uVar10;
-  uint uVar11;
+  uint uVar12;
+  uint uVar13;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STBoatC_CmdToObj_param_1Enum SVar12;
-  undefined4 *puVar13;
+  STBoatC_CmdToObj_param_1Enum SVar14;
+  undefined4 *puVar15;
   InternalExceptionFrame local_19c;
   STGroupBoatC *local_158;
   undefined4 local_154;
@@ -153,7 +156,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
   undefined2 local_50;
   undefined4 local_4c;
   uint local_48;
-  int local_44;
+  STGroupBoatC_field_01E6State local_44;
   undefined2 local_40;
   undefined2 local_3e;
   undefined2 local_3c;
@@ -163,273 +166,274 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
   undefined2 local_30;
   undefined2 local_2e;
   undefined2 local_2c;
-  uint *local_28;
+  DArrayTy *local_28;
   undefined2 local_22;
   short local_20;
   short local_1e;
   undefined4 local_1c;
   uint local_18;
   uint local_14;
-  uint *local_10;
-  uint *local_c;
+  DArrayTy *local_10;
+  DArrayTy *local_c;
   uint local_8;
   
   local_14 = *(uint *)(this->field_002D + 0xc);
   local_e8 = 0xffffffff;
-  local_c = (uint *)0x0;
-  local_10 = (uint *)0x0;
+  local_c = (DArrayTy *)0x0;
+  local_10 = (DArrayTy *)0x0;
   local_19c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_19c;
   local_158 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_19c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_19c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_158;
-  uVar10 = local_14;
-  uVar11 = local_14;
-  if (iVar3 != 0) {
+  uVar12 = local_14;
+  uVar13 = local_14;
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_19c.previous;
-    if (iVar3 == -0x5001fff7) {
+    if (iVar4 == -0x5001fff7) {
       return;
     }
-    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x10dc,0,iVar3,&DAT_007a4ccc,
-                               s_STGroupBoatC__RechargeNewCmd_007ac1ac);
-    if (iVar7 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x10dd);
+    iVar10 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x10dc,0,iVar4,&DAT_007a4ccc
+                                ,s_STGroupBoatC__RechargeNewCmd_007ac1ac);
+    if (iVar10 == 0) {
+      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x10dd);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  while (uVar11 = uVar11 - 1, -1 < (int)uVar11) {
-    FUN_006acc70(this_00->field_002D,uVar11,&local_8);
-    uVar4 = STAllPlayersC::GetObjPtr
+  while (uVar13 = uVar13 - 1, -1 < (int)uVar13) {
+    FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
+    uVar5 = STAllPlayersC::GetObjPtr
                       (g_sTAllPlayers_007FA174,
                        CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0024),local_8,CASE_1)
     ;
-    if ((uVar4 == 0) || (*(int *)(uVar4 + 0x20) != 0x14)) {
-      FUN_006b0c70(this_00->field_002D,uVar11);
-      uVar10 = uVar10 - 1;
+    if ((uVar5 == 0) || (*(int *)(uVar5 + 0x20) != 0x14)) {
+      FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this_00->field_002D,uVar13);
+      uVar12 = uVar12 - 1;
     }
   }
-  if (uVar10 == 0) {
+  if (uVar12 == 0) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xdf7
               );
   }
-  iVar3 = this_00->field_01E6;
-  uVar11 = *(uint *)(this_00->field_002D + 0xc);
-  local_14 = uVar11;
-  if (iVar3 == 1) {
-    InitWay(this_00,this_00->field_002D,this_00->field_003D,this_00->field_0041,this_00->field_0045)
-    ;
-    uVar10 = 0;
+  SVar11 = this_00->field_01E6;
+  uVar13 = ((DArrayTy *)this_00->field_002D)->count;
+  local_14 = uVar13;
+  if (SVar11 == CASE_1) {
+    InitWay(this_00,(DArrayTy *)this_00->field_002D,this_00->field_003D,this_00->field_0041,
+            this_00->field_0045);
+    uVar12 = 0;
     local_18 = 0;
-    iVar3 = *(int *)(DAT_00802a38 + 0xe4);
+    SVar11 = PTR_00802a38->field_00E4;
     local_40 = 0xffff;
     local_3e = 0xffff;
     local_3c = 0xffff;
-    local_44 = iVar3;
-    if (uVar11 != 0) {
+    local_44 = SVar11;
+    if (uVar13 != 0) {
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
-        pSVar5 = (STBoatC *)
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
+        pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,
                             CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_0024),local_8,
                             CASE_1);
-        if (pSVar5 == (STBoatC *)0x0) {
+        if (pSVar6 == (STBoatC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0xe03);
         }
-        STBoatC::CmdToObj(pSVar5,CASE_1,&local_44);
+        STBoatC::CmdToObj(pSVar6,CASE_1,&local_44);
         local_18 = local_18 + 1;
-        uVar10 = local_18 & 0xffff;
-        iVar3 = extraout_ECX_00;
-      } while (uVar10 < uVar11);
+        uVar12 = local_18 & 0xffff;
+        SVar11 = extraout_ECX_00;
+      } while (uVar12 < uVar13);
     }
   }
-  if (this_00->field_01E6 == 3) {
+  if (this_00->field_01E6 == CASE_3) {
     local_18 = 0;
-    local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    if (uVar11 != 0) {
-      uVar10 = 0;
+    local_1c = PTR_00802a38->field_00E4;
+    if (uVar13 != 0) {
+      uVar12 = 0;
       do {
-        uVar10 = FUN_006acc70(this_00->field_002D,uVar10,&local_8);
-        pSVar5 = (STBoatC *)
+        uVar12 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
+        pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,
-                            CONCAT31((int3)(uVar10 >> 8),this_00->field_0024),local_8,CASE_1);
-        if (pSVar5 == (STBoatC *)0x0) {
+                            CONCAT31((int3)(uVar12 >> 8),this_00->field_0024),local_8,CASE_1);
+        if (pSVar6 == (STBoatC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0xe46);
         }
-        STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
+        STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
         local_18 = local_18 + 1;
-        uVar10 = local_18 & 0xffff;
-        iVar3 = extraout_ECX_01;
-      } while (uVar10 < uVar11);
+        uVar12 = local_18 & 0xffff;
+        SVar11 = extraout_ECX_01;
+      } while (uVar12 < uVar13);
     }
   }
-  if (this_00->field_01E6 == 2) {
+  if (this_00->field_01E6 == CASE_2) {
     DistributeTargets(this_00,(uint *)this_00->field_002D);
-    iVar3 = extraout_ECX_02;
+    SVar11 = extraout_ECX_02;
   }
-  if (this_00->field_01E6 == 6) {
-    local_4c = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  if (this_00->field_01E6 == CASE_6) {
+    local_4c = PTR_00802a38->field_00E4;
     ReMakePatrolPoints(this_00,(int)unaff_EDI);
-    local_28 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    local_28 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     if (*(int *)(this_00->field_022E + 0xc) == 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       local_18 = 0;
-      if (uVar11 != 0) {
-        uVar11 = 0;
+      if (uVar13 != 0) {
+        uVar13 = 0;
         do {
-          FUN_006acc70(this_00->field_002D,uVar11,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
           local_110 = (short)local_8;
           local_114 = 0;
           local_102 = 0;
-          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_022E,uVar10,&local_114);
-          local_48 = uVar10;
-          pSVar5 = (STBoatC *)
+          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_022E,uVar12,&local_114);
+          local_48 = uVar12;
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EAX >> 8),this_00->field_0024),local_8,
                               CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
-            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe77,0,0,
+          if (pSVar6 == (STBoatC *)0x0) {
+            iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe77,0,0,
                                        &DAT_007a4ccc,s_STGroupBoatC__RechargeNewCmd_Pat_007ac1d0);
-            if (iVar3 != 0) {
-              pcVar2 = (code *)swi(3);
-              (*pcVar2)();
+            if (iVar4 != 0) {
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
               return;
             }
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe78);
           }
-          Library::DKW::TBL::FUN_006ae1c0(local_28,&local_8);
-          STBoatC::CmdToObj(pSVar5,CASE_6,&local_4c);
-          uVar10 = uVar10 + 1;
+          Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
+          STBoatC::CmdToObj(pSVar6,CASE_6,&local_4c);
+          uVar12 = uVar12 + 1;
           local_18 = local_18 + 1;
-          uVar11 = local_18 & 0xffff;
-        } while (uVar11 < local_14);
+          uVar13 = local_18 & 0xffff;
+        } while (uVar13 < local_14);
       }
     }
     else {
       local_18 = 0;
-      if (uVar11 != 0) {
+      if (uVar13 != 0) {
         do {
-          uVar11 = *(uint *)(this_00->field_022E + 0xc);
-          uVar10 = uVar11;
-          uVar4 = local_18;
-          while (uVar11 = uVar11 - 1, local_18 = uVar4, -1 < (int)uVar11) {
-            FUN_006acc70(this_00->field_022E,uVar11,&local_114);
-            uVar4 = local_18;
+          uVar13 = *(uint *)(this_00->field_022E + 0xc);
+          uVar12 = uVar13;
+          uVar5 = local_18;
+          while (uVar13 = uVar13 - 1, local_18 = uVar5, -1 < (int)uVar13) {
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_022E,uVar13,&local_114);
+            uVar5 = local_18;
             if (local_110 == -1) {
-              uVar10 = uVar11;
+              uVar12 = uVar13;
             }
           }
-          FUN_006acc70(this_00->field_002D,uVar4 & 0xffff,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar5 & 0xffff,&local_8);
           local_114 = 0;
           local_102 = 0;
           local_110 = (short)local_8;
-          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_022E,uVar10,&local_114);
-          local_48 = uVar10;
-          pSVar5 = (STBoatC *)
+          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_022E,uVar12,&local_114);
+          local_48 = uVar12;
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
-            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe64,0,0,
+          if (pSVar6 == (STBoatC *)0x0) {
+            iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe64,0,0,
                                        &DAT_007a4ccc,s_STGroupBoatC__RechargeNewCmd_Pat_007ac1d0);
-            if (iVar3 != 0) {
-              pcVar2 = (code *)swi(3);
-              (*pcVar2)();
+            if (iVar4 != 0) {
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
               return;
             }
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe65);
           }
-          Library::DKW::TBL::FUN_006ae1c0(local_28,&local_8);
-          STBoatC::CmdToObj(pSVar5,CASE_6,&local_4c);
-          local_18 = uVar4 + 1;
+          Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
+          STBoatC::CmdToObj(pSVar6,CASE_6,&local_4c);
+          local_18 = uVar5 + 1;
         } while ((local_18 & 0xffff) < local_14);
       }
     }
-    FUN_006acc70(this_00->field_022A,this_00->field_0232,(undefined4 *)&local_124);
-    puVar9 = local_28;
-    if (local_28[3] != 0) {
-      InitWay(this_00,(int)local_28,(int)local_124,(int)local_122,(int)local_120);
+    FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_022A,this_00->field_0232,
+                 (undefined4 *)&local_124);
+    pDVar9 = local_28;
+    if (local_28->count != 0) {
+      InitWay(this_00,local_28,(int)local_124,(int)local_122,(int)local_120);
     }
-    FUN_006ae110((byte *)puVar9);
-    iVar3 = extraout_ECX_03;
+    FUN_006ae110((byte *)pDVar9);
+    SVar11 = extraout_ECX_03;
   }
-  if (this_00->field_01E6 == 7) {
-    uVar11 = 0;
-    iVar3 = *(int *)(DAT_00802a38 + 0xe4);
+  if (this_00->field_01E6 == CASE_7) {
+    uVar13 = 0;
+    SVar11 = PTR_00802a38->field_00E4;
     local_40 = 0xffff;
     local_3e = 0xffff;
     local_3c = 0xffff;
-    local_44 = iVar3;
+    local_44 = SVar11;
     if (local_14 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
-        pSVar5 = (STBoatC *)
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
+        pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,
                             CONCAT31((int3)((uint)extraout_EDX_01 >> 8),this_00->field_0024),local_8
                             ,CASE_1);
-        if (pSVar5 == (STBoatC *)0x0) {
+        if (pSVar6 == (STBoatC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0xe8c);
         }
-        STFishC::sub_004162B0((STFishC *)pSVar5,&local_20,&local_1e,&local_22);
-        STBoatC::sub_00481520(pSVar5,(int)local_20,(int)local_1e,this_00->field_0222);
-        STBoatC::CmdToObj(pSVar5,CASE_1,&local_44);
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-        iVar3 = extraout_ECX_04;
-      } while (uVar10 < local_14);
+        STFishC::sub_004162B0((STFishC *)pSVar6,&local_20,&local_1e,&local_22);
+        STBoatC::sub_00481520(pSVar6,(int)local_20,(int)local_1e,this_00->field_0222);
+        STBoatC::CmdToObj(pSVar6,CASE_1,&local_44);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+        SVar11 = extraout_ECX_04;
+      } while (uVar12 < local_14);
     }
   }
-  if (this_00->field_01E6 == 8) {
+  if (this_00->field_01E6 == CASE_8) {
     local_18 = 0;
-    local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    local_1c = PTR_00802a38->field_00E4;
     if (local_14 != 0) {
       do {
-        uVar11 = local_18 & 0xffff;
-        FUN_006acc70(this_00->field_002D,uVar11,&local_8);
+        uVar13 = local_18 & 0xffff;
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_02 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe9a);
           }
-          iVar3 = (*pSVar5->vtable->vfunc_2C)();
-          if (((iVar3 != 8) && (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 != 0x14)) &&
-             (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 != 0x1a)) {
-            iVar3 = thunk_FUN_00490d90((int)pSVar5);
-            if (iVar3 == 0) {
-              STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
+          iVar4 = (*pSVar6->vtable->vfunc_2C)();
+          if (((iVar4 != 8) && (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 != 0x14)) &&
+             (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 != 0x1a)) {
+            iVar4 = thunk_FUN_00490d90((int)pSVar6);
+            if (iVar4 == 0) {
+              STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
             }
             else {
-              if (local_c == (uint *)0x0) {
-                local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+              if (local_c == (DArrayTy *)0x0) {
+                local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(local_c,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
             }
-            FUN_006b0c70(this_00->field_002D,uVar11);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this_00->field_002D,uVar13);
             local_18 = local_18 + 0xffff;
             local_14 = local_14 - 1;
           }
@@ -437,52 +441,53 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
         local_18 = local_18 + 1;
       } while ((local_18 & 0xffff) < local_14);
     }
-    uVar11 = 0;
+    uVar13 = 0;
     local_18 = *(uint *)(this_00->field_0029 + 0xc);
     if (local_18 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_0029,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          piVar6 = (int *)STAllPlayersC::GetObjPtr
+          piVar7 = (int *)STAllPlayersC::GetObjPtr
                                     (g_sTAllPlayers_007FA174,
                                      CONCAT31((int3)((uint)extraout_ECX_05 >> 8),this_00->field_0024
                                              ),local_8,CASE_1);
-          if (piVar6 == (int *)0x0) {
+          if (piVar7 == (int *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xeb0);
           }
-          iVar3 = (**(code **)(*piVar6 + 0x2c))();
-          if (((iVar3 == 8) || (iVar3 = (**(code **)(*piVar6 + 0x2c))(), iVar3 == 0x14)) ||
-             (iVar3 = (**(code **)(*piVar6 + 0x2c))(), iVar3 == 0x1a)) {
-            if (local_10 == (uint *)0x0) {
-              local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+          iVar4 = (**(code **)(*piVar7 + 0x2c))();
+          if (((iVar4 == 8) || (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 == 0x14)) ||
+             (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 == 0x1a)) {
+            if (local_10 == (DArrayTy *)0x0) {
+              local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(local_10,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
           }
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_18);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_18);
     }
-    puVar9 = local_c;
+    pDVar9 = local_c;
     STAllPlayersC::RegisterPGPair
-              (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),local_10,
-               local_c);
-    if (local_10 != (uint *)0x0) {
+              (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),
+               &local_10->flags,&local_c->flags);
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
     }
-    if (puVar9 != (uint *)0x0) {
-      FUN_006ae110((byte *)puVar9);
+    if (pDVar9 != (DArrayTy *)0x0) {
+      FUN_006ae110((byte *)pDVar9);
     }
-    DistributeMD(this_00,1,this_00->field_024E,this_00->field_0266,this_00->field_002D);
-    iVar3 = extraout_ECX_06;
+    DistributeMD(this_00,1,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
+                 (DArrayTy *)this_00->field_002D);
+    SVar11 = extraout_ECX_06;
   }
-  if (this_00->field_01E6 == 9) {
-    uVar11 = 0;
-    local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_154 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  if (this_00->field_01E6 == CASE_9) {
+    uVar13 = 0;
+    local_1c = PTR_00802a38->field_00E4;
+    local_154 = PTR_00802a38->field_00E4;
     local_150 = this_00->field_0276;
     local_14e = this_00->field_0278;
     local_14a = this_00->field_027C;
@@ -495,407 +500,409 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     local_136 = this_00->field_0290;
     local_134 = this_00->field_0292;
     if (local_14 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_03 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xecf);
           }
-          iVar3 = (*pSVar5->vtable->vfunc_2C)();
-          if (((iVar3 == 0xc) || (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x18)) ||
-             (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x19)) {
-            puVar13 = &local_154;
-            SVar12 = CASE_11;
+          iVar4 = (*pSVar6->vtable->vfunc_2C)();
+          if (((iVar4 == 0xc) || (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x18)) ||
+             (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x19)) {
+            puVar15 = &local_154;
+            SVar14 = CASE_11;
           }
           else {
-            iVar3 = thunk_FUN_00490d90((int)pSVar5);
-            if (iVar3 != 0) {
-              if (local_c == (uint *)0x0) {
-                local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+            iVar4 = thunk_FUN_00490d90((int)pSVar6);
+            if (iVar4 != 0) {
+              if (local_c == (DArrayTy *)0x0) {
+                local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(local_c,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
               goto LAB_004a1878;
             }
-            puVar13 = &local_1c;
-            SVar12 = CASE_3;
+            puVar15 = &local_1c;
+            SVar14 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar5,SVar12,puVar13);
+          STBoatC::CmdToObj(pSVar6,SVar14,puVar15);
         }
 LAB_004a1878:
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_14);
     }
-    uVar11 = 0;
+    uVar13 = 0;
     local_18 = *(uint *)(this_00->field_0029 + 0xc);
     if (local_18 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_0029,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          piVar6 = (int *)STAllPlayersC::GetObjPtr
+          piVar7 = (int *)STAllPlayersC::GetObjPtr
                                     (g_sTAllPlayers_007FA174,
                                      CONCAT31((int3)((uint)extraout_EDX_04 >> 8),this_00->field_0024
                                              ),local_8,CASE_1);
-          if (piVar6 == (int *)0x0) {
+          if (piVar7 == (int *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xee9);
           }
-          iVar3 = (**(code **)(*piVar6 + 0x2c))();
-          if (((iVar3 == 0xc) || (iVar3 = (**(code **)(*piVar6 + 0x2c))(), iVar3 == 0x18)) ||
-             (iVar3 = (**(code **)(*piVar6 + 0x2c))(), iVar3 == 0x19)) {
-            if (local_10 == (uint *)0x0) {
-              local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+          iVar4 = (**(code **)(*piVar7 + 0x2c))();
+          if (((iVar4 == 0xc) || (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 == 0x18)) ||
+             (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 == 0x19)) {
+            if (local_10 == (DArrayTy *)0x0) {
+              local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(local_10,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
           }
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_18);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_18);
     }
-    puVar9 = local_c;
+    pDVar9 = local_c;
     STAllPlayersC::RegisterPGPair
-              (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),local_10,
-               local_c);
-    iVar3 = extraout_ECX_07;
-    if (local_10 != (uint *)0x0) {
+              (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),
+               &local_10->flags,&local_c->flags);
+    SVar11 = extraout_ECX_07;
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
-      iVar3 = extraout_ECX_08;
+      SVar11 = extraout_ECX_08;
     }
-    if (puVar9 != (uint *)0x0) {
-      FUN_006ae110((byte *)puVar9);
-      iVar3 = extraout_ECX_09;
+    if (pDVar9 != (DArrayTy *)0x0) {
+      FUN_006ae110((byte *)pDVar9);
+      SVar11 = extraout_ECX_09;
     }
   }
-  if (this_00->field_01E6 == 10) {
-    uVar11 = 0;
-    local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_64 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  if (this_00->field_01E6 == CASE_A) {
+    uVar13 = 0;
+    local_1c = PTR_00802a38->field_00E4;
+    local_64 = PTR_00802a38->field_00E4;
     local_60 = *(undefined2 *)&this_00->field_0x295;
     local_5e = this_00->field_0297;
     local_5c = this_00->field_0299;
     if (local_14 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX_10 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xf02);
           }
-          iVar3 = (*pSVar5->vtable->vfunc_2C)();
-          if (((iVar3 == 8) || (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x14)) ||
-             (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x1a)) {
-            puVar13 = &local_64;
-            SVar12 = CASE_D;
+          iVar4 = (*pSVar6->vtable->vfunc_2C)();
+          if (((iVar4 == 8) || (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x14)) ||
+             (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x1a)) {
+            puVar15 = &local_64;
+            SVar14 = CASE_D;
           }
           else {
-            iVar3 = thunk_FUN_00490d90((int)pSVar5);
-            if (iVar3 != 0) {
-              if (local_c == (uint *)0x0) {
-                local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+            iVar4 = thunk_FUN_00490d90((int)pSVar6);
+            if (iVar4 != 0) {
+              if (local_c == (DArrayTy *)0x0) {
+                local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(local_c,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
               goto LAB_004a1a74;
             }
-            puVar13 = &local_1c;
-            SVar12 = CASE_3;
+            puVar15 = &local_1c;
+            SVar14 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar5,SVar12,puVar13);
+          STBoatC::CmdToObj(pSVar6,SVar14,puVar15);
         }
 LAB_004a1a74:
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_14);
     }
-    uVar11 = 0;
+    uVar13 = 0;
     local_18 = *(uint *)(this_00->field_0029 + 0xc);
     if (local_18 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_0029,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          piVar6 = (int *)STAllPlayersC::GetObjPtr
+          piVar7 = (int *)STAllPlayersC::GetObjPtr
                                     (g_sTAllPlayers_007FA174,
                                      CONCAT31((int3)((uint)extraout_ECX_11 >> 8),this_00->field_0024
                                              ),local_8,CASE_1);
-          if (piVar6 == (int *)0x0) {
+          if (piVar7 == (int *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xf1c);
           }
-          iVar3 = (**(code **)(*piVar6 + 0x2c))();
-          if (((iVar3 == 8) || (iVar3 = (**(code **)(*piVar6 + 0x2c))(), iVar3 == 0x14)) ||
-             (iVar3 = (**(code **)(*piVar6 + 0x2c))(), iVar3 == 0x1a)) {
-            if (local_10 == (uint *)0x0) {
-              local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+          iVar4 = (**(code **)(*piVar7 + 0x2c))();
+          if (((iVar4 == 8) || (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 == 0x14)) ||
+             (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 == 0x1a)) {
+            if (local_10 == (DArrayTy *)0x0) {
+              local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(local_10,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
           }
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_18);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_18);
     }
-    puVar9 = local_c;
+    pDVar9 = local_c;
     STAllPlayersC::RegisterPGPair
-              (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),local_10,
-               local_c);
-    iVar3 = extraout_ECX_12;
-    if (local_10 != (uint *)0x0) {
+              (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),
+               &local_10->flags,&local_c->flags);
+    SVar11 = extraout_ECX_12;
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
-      iVar3 = extraout_ECX_13;
+      SVar11 = extraout_ECX_13;
     }
-    if (puVar9 != (uint *)0x0) {
-      FUN_006ae110((byte *)puVar9);
-      iVar3 = extraout_ECX_14;
+    if (pDVar9 != (DArrayTy *)0x0) {
+      FUN_006ae110((byte *)pDVar9);
+      SVar11 = extraout_ECX_14;
     }
   }
-  if (this_00->field_01E6 == 4) {
-    DistributeDock(this_00,1,(int)this_00->field_029F,this_00->field_002D);
-    iVar3 = extraout_ECX_15;
+  if (this_00->field_01E6 == CASE_4) {
+    DistributeDock(this_00,1,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_002D);
+    SVar11 = extraout_ECX_15;
   }
-  if (this_00->field_01E6 == 5) {
-    uVar11 = 0;
+  if (this_00->field_01E6 == CASE_5) {
+    uVar13 = 0;
     if (local_14 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
-        iVar3 = extraout_ECX_16;
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
+        SVar11 = extraout_ECX_16;
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
-                              CONCAT31((int3)((uint)extraout_ECX_16 >> 8),this_00->field_0024),
-                              local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+                              CONCAT31((int3)(extraout_ECX_16 >> 8),this_00->field_0024),local_8,
+                              CASE_1);
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xf35);
           }
-          iVar3 = thunk_FUN_00490d90((int)pSVar5);
-          if (iVar3 == 0) {
-            local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-            STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
-            iVar3 = extraout_ECX_17;
+          iVar4 = thunk_FUN_00490d90((int)pSVar6);
+          if (iVar4 == 0) {
+            local_1c = PTR_00802a38->field_00E4;
+            STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
+            SVar11 = extraout_ECX_17;
           }
           else {
-            if (local_c == (uint *)0x0) {
-              local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+            if (local_c == (DArrayTy *)0x0) {
+              local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(local_c,&local_8);
-            iVar3 = extraout_ECX_18;
+            Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+            SVar11 = extraout_ECX_18;
           }
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_14);
     }
-    uVar11 = 0;
+    uVar13 = 0;
     local_18 = *(uint *)(this_00->field_0029 + 0xc);
     if (local_18 != 0) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_0029,uVar10,&local_8);
-        iVar3 = extraout_ECX_19;
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar12,&local_8);
+        SVar11 = extraout_ECX_19;
         if ((short)local_8 != -1) {
-          uVar10 = STAllPlayersC::GetObjPtr
+          uVar12 = STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
-                              CONCAT31((int3)((uint)extraout_ECX_19 >> 8),this_00->field_0024),
-                              local_8,CASE_1);
-          if (uVar10 == 0) {
+                              CONCAT31((int3)(extraout_ECX_19 >> 8),this_00->field_0024),local_8,
+                              CASE_1);
+          if (uVar12 == 0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xf47);
           }
-          iVar7 = thunk_FUN_00490d90(uVar10);
-          iVar3 = extraout_ECX_20;
-          if ((iVar7 == 1) &&
-             (local_e8 = thunk_FUN_00449a90(CONCAT31((int3)((uint)extraout_ECX_20 >> 8),
+          iVar4 = thunk_FUN_00490d90(uVar12);
+          SVar11 = extraout_ECX_20;
+          if ((iVar4 == 1) &&
+             (local_e8 = thunk_FUN_00449a90(CONCAT31((int3)(extraout_ECX_20 >> 8),
                                                      this_00->field_0024),(short)local_8),
-             iVar3 = extraout_ECX_21, local_e8 != 0xffffffff)) break;
+             SVar11 = extraout_ECX_21, local_e8 != 0xffffffff)) break;
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < local_18);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while (uVar12 < local_18);
     }
     if (local_e8 != 0xffffffff) {
-      FUN_006acc70(*(int *)((int)&DAT_007f5816 + this_00->field_0024 * 0xa62),local_e8,local_130);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)g_playerRuntime[this_00->field_0024].pgPairs,
+                   local_e8,local_130);
       Library::DKW::TBL::FUN_006afe40((int *)&local_10,local_130[0]);
       STAllPlayersC::RegisterPGPair
                 (g_sTAllPlayers_007FA174,
-                 CONCAT31((int3)((uint)extraout_ECX_22 >> 8),this_00->field_0024),local_10,local_c);
-      iVar3 = extraout_ECX_23;
+                 CONCAT31((int3)((uint)extraout_ECX_22 >> 8),this_00->field_0024),&local_10->flags,
+                 &local_c->flags);
+      SVar11 = extraout_ECX_23;
     }
-    if (local_10 != (uint *)0x0) {
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
-      iVar3 = extraout_ECX_24;
+      SVar11 = extraout_ECX_24;
     }
-    if (local_c != (uint *)0x0) {
+    if (local_c != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_c);
-      iVar3 = extraout_ECX_25;
+      SVar11 = extraout_ECX_25;
     }
   }
-  if (this_00->field_01E6 == 0xb) {
-    uVar11 = 0;
-    local_d8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  if (this_00->field_01E6 == CASE_B) {
+    uVar13 = 0;
+    local_d8 = PTR_00802a38->field_00E4;
     local_18 = 0;
-    puVar9 = local_c;
+    pDVar9 = local_c;
     local_1c = local_d8;
     if (0 < (int)local_14) {
       do {
-        FUN_006acc70(this_00->field_002D,uVar11,&local_8);
-        iVar3 = extraout_ECX_26;
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
+        SVar11 = extraout_ECX_26;
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_05 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xf5d);
           }
-          iVar7 = (*pSVar5->vtable->vfunc_F8)();
-          iVar3 = extraout_ECX_27;
-          if (iVar7 != 0) {
-            iVar3 = thunk_FUN_00490d90((int)pSVar5);
-            if (iVar3 == 0) {
-              iVar3 = (*pSVar5->vtable->vfunc_2C)();
-              if ((((iVar3 != 7) && (iVar3 != 0x13)) && (iVar3 != 0x1b)) ||
-                 (iVar3 = thunk_FUN_00492370((int)pSVar5), iVar3 != 0)) {
-                STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
-                iVar3 = extraout_ECX_28;
+          iVar4 = (*pSVar6->vtable->vfunc_F8)();
+          SVar11 = extraout_ECX_27;
+          if (iVar4 != 0) {
+            iVar4 = thunk_FUN_00490d90((int)pSVar6);
+            if (iVar4 == 0) {
+              iVar4 = (*pSVar6->vtable->vfunc_2C)();
+              if ((((iVar4 != 7) && (iVar4 != 0x13)) && (iVar4 != 0x1b)) ||
+                 (iVar4 = thunk_FUN_00492370((int)pSVar6), iVar4 != 0)) {
+                STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
+                SVar11 = extraout_ECX_28;
                 goto LAB_004a1ea4;
               }
               local_d4 = *(undefined2 *)&this_00->field_0x2a3;
               local_d2 = this_00->field_02A5;
               local_d0 = *(undefined2 *)&this_00->field_0x2a7;
               local_ce = *(undefined4 *)&this_00->field_0x2a9;
-              STBoatC::CmdToObj(pSVar5,CASE_F,&local_d8);
-              puVar8 = local_10;
-              if (local_10 == (uint *)0x0) {
-                puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                local_10 = puVar8;
+              STBoatC::CmdToObj(pSVar6,CASE_F,&local_d8);
+              pDVar8 = local_10;
+              if (local_10 == (DArrayTy *)0x0) {
+                pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                local_10 = pDVar8;
               }
             }
             else {
-              puVar8 = puVar9;
-              if (puVar9 == (uint *)0x0) {
-                puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                puVar8 = puVar9;
-                local_c = puVar9;
+              pDVar8 = pDVar9;
+              if (pDVar9 == (DArrayTy *)0x0) {
+                pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                pDVar8 = pDVar9;
+                local_c = pDVar9;
               }
             }
-            Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_8);
-            iVar3 = extraout_ECX_29;
+            Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_8);
+            SVar11 = extraout_ECX_29;
           }
         }
 LAB_004a1ea4:
         local_18 = local_18 + 1;
-        uVar11 = local_18 & 0xffff;
-      } while ((int)uVar11 < (int)local_14);
+        uVar13 = local_18 & 0xffff;
+      } while ((int)uVar13 < (int)local_14);
     }
-    if (local_10 == (uint *)0x0) {
+    if (local_10 == (DArrayTy *)0x0) {
 LAB_004a1ede:
-      if (local_c != (uint *)0x0) {
-        uVar10 = 0;
-        uVar11 = local_c[3];
-        if (0 < (int)uVar11) {
-          uVar4 = 0;
+      if (local_c != (DArrayTy *)0x0) {
+        uVar13 = 0;
+        dVar2 = local_c->count;
+        if (0 < (int)dVar2) {
+          uVar12 = 0;
           do {
-            FUN_006acc70((int)local_c,uVar4,&local_8);
-            pSVar5 = (STBoatC *)
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar12,&local_8);
+            pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_sTAllPlayers_007FA174,
                                 CONCAT31((int3)((uint)extraout_EDX_06 >> 8),this_00->field_0024),
                                 local_8,CASE_1);
-            STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
-            uVar10 = uVar10 + 1;
-            uVar4 = uVar10 & 0xffff;
-          } while ((int)uVar4 < (int)uVar11);
+            STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
+            uVar13 = uVar13 + 1;
+            uVar12 = uVar13 & 0xffff;
+          } while ((int)uVar12 < (int)dVar2);
         }
       }
     }
-    else if (puVar9 == (uint *)0x0) {
-      if (local_10 == (uint *)0x0) goto LAB_004a1ede;
+    else if (pDVar9 == (DArrayTy *)0x0) {
+      if (local_10 == (DArrayTy *)0x0) goto LAB_004a1ede;
     }
     else {
       STAllPlayersC::RegisterPGPair
-                (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)iVar3 >> 8),this_00->field_0024),
-                 local_10,puVar9);
+                (g_sTAllPlayers_007FA174,CONCAT31((int3)(SVar11 >> 8),this_00->field_0024),
+                 &local_10->flags,&pDVar9->flags);
     }
-    if (local_10 != (uint *)0x0) {
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
     }
-    if (local_c != (uint *)0x0) {
+    if (local_c != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_c);
     }
   }
-  if (this_00->field_01E6 == 0xc) {
-    local_e4[0] = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    uVar11 = 0;
+  if (this_00->field_01E6 == CASE_C) {
+    local_e4[0] = PTR_00802a38->field_00E4;
+    uVar13 = 0;
     local_18 = 0;
     local_1c = local_e4[0];
     if (0 < (int)local_14) {
       do {
-        FUN_006acc70(this_00->field_002D,uVar11,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX_30 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xf8e);
           }
-          iVar3 = (*pSVar5->vtable->vfunc_F8)();
-          if (iVar3 != 0) {
-            iVar3 = (*pSVar5->vtable->vfunc_2C)();
-            if ((((iVar3 == 7) || (iVar3 == 0x13)) || (iVar3 == 0x1b)) &&
-               (iVar3 = thunk_FUN_00492370((int)pSVar5), iVar3 != 0)) {
-              STBoatC::CmdToObj(pSVar5,CASE_10,local_e4);
+          iVar4 = (*pSVar6->vtable->vfunc_F8)();
+          if (iVar4 != 0) {
+            iVar4 = (*pSVar6->vtable->vfunc_2C)();
+            if ((((iVar4 == 7) || (iVar4 == 0x13)) || (iVar4 == 0x1b)) &&
+               (iVar4 = thunk_FUN_00492370((int)pSVar6), iVar4 != 0)) {
+              STBoatC::CmdToObj(pSVar6,CASE_10,local_e4);
               if (((*(short *)&this_00->field_0x2ad != -1) || (this_00->field_02AF != -1)) ||
                  (this_00->field_02B1 != -1)) {
-                puVar9 = local_10;
-                if (local_10 == (uint *)0x0) {
-                  puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                  local_10 = puVar9;
+                pDVar9 = local_10;
+                if (local_10 == (DArrayTy *)0x0) {
+                  pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                  local_10 = pDVar9;
                 }
 LAB_004a2089:
-                Library::DKW::TBL::FUN_006ae1c0(puVar9,&local_8);
+                Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,&local_8);
               }
             }
             else {
-              iVar3 = thunk_FUN_00490d90((int)pSVar5);
-              if (iVar3 == 0) {
-                STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
+              iVar4 = thunk_FUN_00490d90((int)pSVar6);
+              if (iVar4 == 0) {
+                STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
               }
               else if (((*(short *)&this_00->field_0x2ad != -1) || (this_00->field_02AF != -1)) ||
                       (this_00->field_02B1 != -1)) {
-                puVar9 = local_c;
-                if (local_c == (uint *)0x0) {
-                  puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                  local_c = puVar9;
+                pDVar9 = local_c;
+                if (local_c == (DArrayTy *)0x0) {
+                  pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                  local_c = pDVar9;
                 }
                 goto LAB_004a2089;
               }
@@ -903,198 +910,198 @@ LAB_004a2089:
           }
         }
         local_18 = local_18 + 1;
-        uVar11 = local_18 & 0xffff;
-      } while ((int)uVar11 < (int)local_14);
+        uVar13 = local_18 & 0xffff;
+      } while ((int)uVar13 < (int)local_14);
     }
-    if (local_10 == (uint *)0x0) {
+    if (local_10 == (DArrayTy *)0x0) {
 LAB_004a20d0:
-      if (local_c != (uint *)0x0) {
-        uVar11 = local_c[3];
-        uVar10 = 0;
-        if (0 < (int)uVar11) {
-          uVar4 = 0;
+      if (local_c != (DArrayTy *)0x0) {
+        dVar2 = local_c->count;
+        uVar13 = 0;
+        if (0 < (int)dVar2) {
+          uVar12 = 0;
           do {
-            uVar4 = FUN_006acc70((int)local_c,uVar4,&local_8);
-            pSVar5 = (STBoatC *)
+            uVar12 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar12,&local_8);
+            pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)(uVar4 >> 8),this_00->field_0024),local_8,CASE_1);
-            STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
-            uVar10 = uVar10 + 1;
-            uVar4 = uVar10 & 0xffff;
-          } while ((int)uVar4 < (int)uVar11);
+                                CONCAT31((int3)(uVar12 >> 8),this_00->field_0024),local_8,CASE_1);
+            STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
+            uVar13 = uVar13 + 1;
+            uVar12 = uVar13 & 0xffff;
+          } while ((int)uVar12 < (int)dVar2);
         }
       }
     }
-    else if (local_c == (uint *)0x0) {
-      if (local_10 == (uint *)0x0) goto LAB_004a20d0;
+    else if (local_c == (DArrayTy *)0x0) {
+      if (local_10 == (DArrayTy *)0x0) goto LAB_004a20d0;
     }
     else {
       STAllPlayersC::RegisterPGPair
-                (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar11 >> 8),this_00->field_0024),local_10,
-                 local_c);
+                (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar13 >> 8),this_00->field_0024),
+                 &local_10->flags,&local_c->flags);
     }
-    if (local_10 != (uint *)0x0) {
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
     }
-    if (local_c != (uint *)0x0) {
+    if (local_c != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_c);
     }
   }
-  if (this_00->field_01E6 == 0xd) {
+  if (this_00->field_01E6 == CASE_D) {
     local_52 = this_00->field_02B5;
-    uVar11 = 0;
-    local_58 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar13 = 0;
+    local_58 = PTR_00802a38->field_00E4;
     local_50 = *(undefined2 *)&this_00->field_0x2b7;
     local_54 = *(undefined2 *)&this_00->field_0x2b3;
     local_1c = local_58;
     if (0 < (int)local_14) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX_31 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xfc2);
           }
           if (*(int *)&this_00->field_0x2b9 == -1) {
-            if ((*(int *)&pSVar5->field_0x7b6 == 0) || (*(int *)&pSVar5->field_0x7be < 1)) {
+            if ((*(int *)&pSVar6->field_0x7b6 == 0) || (*(int *)&pSVar6->field_0x7be < 1)) {
 LAB_004a221d:
-              puVar13 = &local_1c;
-              SVar12 = CASE_3;
+              puVar15 = &local_1c;
+              SVar14 = CASE_3;
             }
             else {
-              puVar13 = &local_58;
-              SVar12 = CASE_7;
+              puVar15 = &local_58;
+              SVar14 = CASE_7;
             }
           }
           else {
-            if ((*(int *)&pSVar5->field_0x7b6 != *(int *)&this_00->field_0x2b9) ||
-               (*(int *)&pSVar5->field_0x7be < 1)) goto LAB_004a221d;
-            puVar13 = &local_58;
-            SVar12 = CASE_7;
+            if ((*(int *)&pSVar6->field_0x7b6 != *(int *)&this_00->field_0x2b9) ||
+               (*(int *)&pSVar6->field_0x7be < 1)) goto LAB_004a221d;
+            puVar15 = &local_58;
+            SVar14 = CASE_7;
           }
-          STBoatC::CmdToObj(pSVar5,SVar12,puVar13);
+          STBoatC::CmdToObj(pSVar6,SVar14,puVar15);
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while ((int)uVar10 < (int)local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while ((int)uVar12 < (int)local_14);
     }
   }
-  if (this_00->field_01E6 == 0xe) {
+  if (this_00->field_01E6 == CASE_E) {
     local_78 = *(undefined2 *)&this_00->field_0x2bd;
-    uVar11 = 0;
-    local_7c = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar13 = 0;
+    local_7c = PTR_00802a38->field_00E4;
     local_74 = this_00->field_02C1;
     local_76 = this_00->field_02BF;
     local_1c = local_7c;
     if (0 < (int)local_14) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX_32 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0xfea);
           }
-          if ((pSVar5->field_06F7 == CASE_4) && (0 < *(int *)&pSVar5->field_0x7a2)) {
-            puVar13 = &local_7c;
-            SVar12 = CASE_A;
+          if ((pSVar6->field_06F7 == CASE_4) && (0 < *(int *)&pSVar6->field_0x7a2)) {
+            puVar15 = &local_7c;
+            SVar14 = CASE_A;
           }
           else {
-            puVar13 = &local_1c;
-            SVar12 = CASE_3;
+            puVar15 = &local_1c;
+            SVar14 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar5,SVar12,puVar13);
+          STBoatC::CmdToObj(pSVar6,SVar14,puVar15);
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while ((int)uVar10 < (int)local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while ((int)uVar12 < (int)local_14);
     }
   }
-  if (this_00->field_01E6 == 0xf) {
+  if (this_00->field_01E6 == CASE_F) {
     local_83 = this_00->field_02C4;
-    uVar11 = 0;
-    local_88 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar13 = 0;
+    local_88 = PTR_00802a38->field_00E4;
     local_81 = *(undefined4 *)&this_00->field_0x2c6;
     local_84 = this_00->field_0x2c3;
     local_1c = local_88;
     if (0 < (int)local_14) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX_33 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1003);
           }
-          SVar1 = pSVar5->field_06F7;
+          SVar1 = pSVar6->field_06F7;
           if (((SVar1 == CASE_6) || (SVar1 == CASE_12)) || (SVar1 == CASE_22)) {
-            puVar13 = &local_88;
-            SVar12 = CASE_9;
+            puVar15 = &local_88;
+            SVar14 = CASE_9;
           }
           else {
-            puVar13 = &local_1c;
-            SVar12 = CASE_3;
+            puVar15 = &local_1c;
+            SVar14 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar5,SVar12,puVar13);
+          STBoatC::CmdToObj(pSVar6,SVar14,puVar15);
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while ((int)uVar10 < (int)local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while ((int)uVar12 < (int)local_14);
     }
   }
-  if (this_00->field_01E6 == 0x11) {
+  if (this_00->field_01E6 == CASE_11) {
     local_c4 = this_00->field_02CE;
-    uVar11 = 0;
-    local_c8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar13 = 0;
+    local_c8 = PTR_00802a38->field_00E4;
     local_c0 = *(undefined2 *)&this_00->field_0x2d2;
     local_be = this_00->field_02D4;
     local_bc = this_00->field_02D6;
     if (0 < (int)local_14) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX_34 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0x101e);
           }
-          STBoatC::CmdToObj(pSVar5,CASE_16,&local_c8);
+          STBoatC::CmdToObj(pSVar6,CASE_16,&local_c8);
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while ((int)uVar10 < (int)local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while ((int)uVar12 < (int)local_14);
     }
   }
-  if (this_00->field_01E6 == 0x10) {
+  if (this_00->field_01E6 == CASE_10) {
     local_f8 = this_00->field_02D8;
-    uVar11 = 0;
-    local_fc = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar13 = 0;
+    local_fc = PTR_00802a38->field_00E4;
     local_f4 = *(undefined2 *)&this_00->field_0x2dc;
     local_f0 = *(undefined2 *)&this_00->field_0x2e0;
     local_ea = this_00->field_02E6;
@@ -1102,211 +1109,213 @@ LAB_004a221d:
     local_ee = this_00->field_02E2;
     local_ec = *(undefined2 *)&this_00->field_0x2e4;
     if (0 < (int)local_14) {
-      uVar10 = 0;
+      uVar12 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_07 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1032);
           }
-          STBoatC::CmdToObj(pSVar5,CASE_15,&local_fc);
+          STBoatC::CmdToObj(pSVar6,CASE_15,&local_fc);
         }
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while ((int)uVar10 < (int)local_14);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while ((int)uVar12 < (int)local_14);
     }
   }
-  if (this_00->field_01E6 == 0x12) {
+  if (this_00->field_01E6 == CASE_12) {
     local_6c = *(undefined2 *)&this_00->field_0x2e8;
-    local_70 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    local_70 = PTR_00802a38->field_00E4;
     local_6a = this_00->field_02EA;
     local_68 = this_00->field_02EC;
-    uVar11 = 0;
+    uVar13 = 0;
     local_18 = 0;
-    puVar9 = local_c;
+    pDVar9 = local_c;
     if (0 < (int)local_14) {
       do {
-        FUN_006acc70(this_00->field_002D,uVar11,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_08 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1042);
           }
-          iVar3 = (*pSVar5->vtable->vfunc_2C)();
-          if (((iVar3 == 7) || (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x13)) ||
-             (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x1b)) {
-            STBoatC::CmdToObj(pSVar5,CASE_17,&local_70);
-            puVar8 = local_10;
-            if (local_10 == (uint *)0x0) {
-              local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-              puVar8 = local_10;
+          iVar4 = (*pSVar6->vtable->vfunc_2C)();
+          if (((iVar4 == 7) || (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x13)) ||
+             (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x1b)) {
+            STBoatC::CmdToObj(pSVar6,CASE_17,&local_70);
+            pDVar8 = local_10;
+            if (local_10 == (DArrayTy *)0x0) {
+              local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+              pDVar8 = local_10;
             }
           }
           else {
-            iVar3 = thunk_FUN_00490d90((int)pSVar5);
-            if (iVar3 == 0) {
-              STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
+            iVar4 = thunk_FUN_00490d90((int)pSVar6);
+            if (iVar4 == 0) {
+              STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
               goto LAB_004a26bb;
             }
-            puVar8 = puVar9;
-            if (puVar9 == (uint *)0x0) {
-              puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-              puVar8 = puVar9;
-              local_c = puVar9;
+            pDVar8 = pDVar9;
+            if (pDVar9 == (DArrayTy *)0x0) {
+              pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+              pDVar8 = pDVar9;
+              local_c = pDVar9;
             }
           }
-          Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_8);
+          Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_8);
         }
 LAB_004a26bb:
         local_18 = local_18 + 1;
-        uVar11 = local_18 & 0xffff;
-      } while ((int)uVar11 < (int)local_14);
+        uVar13 = local_18 & 0xffff;
+      } while ((int)uVar13 < (int)local_14);
     }
-    if (local_10 == (uint *)0x0) {
+    if (local_10 == (DArrayTy *)0x0) {
 LAB_004a26f5:
-      if (local_c != (uint *)0x0) {
-        uVar11 = local_c[3];
-        uVar10 = 0;
-        if (0 < (int)uVar11) {
-          uVar4 = 0;
+      if (local_c != (DArrayTy *)0x0) {
+        dVar2 = local_c->count;
+        uVar13 = 0;
+        if (0 < (int)dVar2) {
+          uVar12 = 0;
           do {
-            uVar4 = FUN_006acc70((int)local_c,uVar4,&local_8);
-            pSVar5 = (STBoatC *)
+            uVar12 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar12,&local_8);
+            pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)(uVar4 >> 8),this_00->field_0024),local_8,CASE_1);
-            STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
-            uVar10 = uVar10 + 1;
-            uVar4 = uVar10 & 0xffff;
-          } while ((int)uVar4 < (int)uVar11);
+                                CONCAT31((int3)(uVar12 >> 8),this_00->field_0024),local_8,CASE_1);
+            STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
+            uVar13 = uVar13 + 1;
+            uVar12 = uVar13 & 0xffff;
+          } while ((int)uVar12 < (int)dVar2);
         }
       }
     }
-    else if (puVar9 == (uint *)0x0) {
-      if (local_10 == (uint *)0x0) goto LAB_004a26f5;
+    else if (pDVar9 == (DArrayTy *)0x0) {
+      if (local_10 == (DArrayTy *)0x0) goto LAB_004a26f5;
     }
     else {
       STAllPlayersC::RegisterPGPair
-                (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar11 >> 8),this_00->field_0024),local_10,
-                 puVar9);
+                (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar13 >> 8),this_00->field_0024),
+                 &local_10->flags,&pDVar9->flags);
     }
-    if (local_10 != (uint *)0x0) {
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
     }
-    if (local_c != (uint *)0x0) {
+    if (local_c != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_c);
     }
   }
-  if (this_00->field_01E6 == 0x13) {
+  if (this_00->field_01E6 == CASE_13) {
     local_b2 = this_00->field_02F0;
-    uVar10 = 0;
-    local_b8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar12 = 0;
+    local_b8 = PTR_00802a38->field_00E4;
     local_b0 = *(undefined2 *)&this_00->field_0x2f2;
-    uVar11 = CONCAT22((short)((uint)DAT_00802a38 >> 0x10),local_b0);
+    uVar13 = CONCAT22((short)((uint)PTR_00802a38 >> 0x10),local_b0);
     local_b4 = *(undefined2 *)&this_00->field_0x2ee;
     local_ae = *(undefined4 *)&this_00->field_0x2f4;
     local_1c = local_b8;
     if (0 < (int)local_14) {
-      uVar11 = 0;
+      uVar13 = 0;
       do {
-        FUN_006acc70(this_00->field_002D,uVar11,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_09 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1071);
           }
-          iVar3 = (*pSVar5->vtable->vfunc_2C)();
-          if (((iVar3 == 0xc) || (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x18)) ||
-             (iVar3 = (*pSVar5->vtable->vfunc_2C)(), iVar3 == 0x1d)) {
-            if (local_10 == (uint *)0x0) {
-              local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+          iVar4 = (*pSVar6->vtable->vfunc_2C)();
+          if (((iVar4 == 0xc) || (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x18)) ||
+             (iVar4 = (*pSVar6->vtable->vfunc_2C)(), iVar4 == 0x1d)) {
+            if (local_10 == (DArrayTy *)0x0) {
+              local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(local_10,&local_8);
-            puVar13 = &local_b8;
-            SVar12 = CASE_12;
+            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
+            puVar15 = &local_b8;
+            SVar14 = CASE_12;
           }
           else {
-            iVar3 = thunk_FUN_00490d90((int)pSVar5);
-            if (iVar3 != 0) {
-              if (local_c == (uint *)0x0) {
-                local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+            iVar4 = thunk_FUN_00490d90((int)pSVar6);
+            if (iVar4 != 0) {
+              if (local_c == (DArrayTy *)0x0) {
+                local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(local_c,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
               goto LAB_004a2897;
             }
-            puVar13 = &local_1c;
-            SVar12 = CASE_3;
+            puVar15 = &local_1c;
+            SVar14 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar5,SVar12,puVar13);
+          STBoatC::CmdToObj(pSVar6,SVar14,puVar15);
         }
 LAB_004a2897:
-        uVar10 = uVar10 + 1;
-        uVar11 = uVar10 & 0xffff;
-      } while ((int)uVar11 < (int)local_14);
+        uVar12 = uVar12 + 1;
+        uVar13 = uVar12 & 0xffff;
+      } while ((int)uVar13 < (int)local_14);
     }
-    puVar9 = local_c;
+    pDVar9 = local_c;
     STAllPlayersC::RegisterPGPair
-              (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar11 >> 8),this_00->field_0024),local_10,
-               local_c);
-    if (local_10 != (uint *)0x0) {
+              (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar13 >> 8),this_00->field_0024),
+               &local_10->flags,&local_c->flags);
+    if (local_10 != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)local_10);
     }
-    if (puVar9 != (uint *)0x0) {
-      FUN_006ae110((byte *)puVar9);
+    if (pDVar9 != (DArrayTy *)0x0) {
+      FUN_006ae110((byte *)pDVar9);
     }
   }
-  if (this_00->field_01E6 == 0x14) {
-    local_28 = Way3DGrpGetDistrPoint
-                         (this_00,this_00->field_002D,(int)this_00->field_02FE,
-                          (int)*(short *)&this_00->field_0x300,(int)this_00->field_0302,
-                          (int)*(short *)&this_00->field_0x2f8,(int)this_00->field_02FA,
-                          (int)*(short *)&this_00->field_0x2fc);
-    if (local_28 == (uint *)0x0) {
+  if (this_00->field_01E6 == CASE_14) {
+    local_28 = (DArrayTy *)
+               Way3DGrpGetDistrPoint
+                         (this_00,(AnonShape_00413AF0_B6B4EE9A *)this_00->field_002D,
+                          (int)this_00->field_02FE,(int)*(short *)&this_00->field_0x300,
+                          (int)this_00->field_0302,(int)*(short *)&this_00->field_0x2f8,
+                          (int)this_00->field_02FA,(int)*(short *)&this_00->field_0x2fc);
+    if (local_28 == (DArrayTy *)0x0) {
       return;
     }
-    puVar9 = Way3DGrpGetDistrPoint
-                       (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2f8,
-                        (int)this_00->field_02FA,(int)*(short *)&this_00->field_0x2fc,
-                        (int)this_00->field_02FE,(int)*(short *)&this_00->field_0x300,
-                        (int)this_00->field_0302);
-    if (puVar9 == (uint *)0x0) {
+    groupContent = (AnonShape_006ACC70_C8641025 *)
+                   Way3DGrpGetDistrPoint
+                             (this_00,(AnonShape_00413AF0_B6B4EE9A *)this_00->field_002D,
+                              (int)*(short *)&this_00->field_0x2f8,(int)this_00->field_02FA,
+                              (int)*(short *)&this_00->field_0x2fc,(int)this_00->field_02FE,
+                              (int)*(short *)&this_00->field_0x300,(int)this_00->field_0302);
+    if (groupContent == (AnonShape_006ACC70_C8641025 *)0x0) {
       FUN_006ae110((byte *)local_28);
       return;
     }
     local_18 = 0;
-    local_98 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    local_98 = PTR_00802a38->field_00E4;
     if (0 < (int)local_14) {
-      uVar11 = 0;
+      uVar13 = 0;
       do {
-        FUN_006acc70((int)local_28,uVar11,(undefined4 *)&local_38);
-        FUN_006acc70((int)puVar9,uVar11,(undefined4 *)&local_30);
-        FUN_006acc70(this_00->field_002D,uVar11,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_28,uVar13,(undefined4 *)&local_38);
+        FUN_006acc70(groupContent,uVar13,(undefined4 *)&local_30);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar13,&local_8);
         if ((short)local_8 != -1) {
-          pSVar5 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_EDX_10 >> 8),this_00->field_0024),
                               local_8,CASE_1);
-          if (pSVar5 == (STBoatC *)0x0) {
+          if (pSVar6 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_to_grpb_cpp_007abe3c,0x109b);
@@ -1317,109 +1326,109 @@ LAB_004a2897:
           local_90 = local_34;
           local_8c = local_2e;
           local_8a = local_2c;
-          STBoatC::CmdToObj(pSVar5,CASE_8,&local_98);
+          STBoatC::CmdToObj(pSVar6,CASE_8,&local_98);
         }
         local_18 = local_18 + 1;
-        uVar11 = local_18 & 0xffff;
-      } while ((int)uVar11 < (int)local_14);
+        uVar13 = local_18 & 0xffff;
+      } while ((int)uVar13 < (int)local_14);
     }
     FUN_006ae110((byte *)local_28);
-    FUN_006ae110((byte *)puVar9);
+    FUN_006ae110((byte *)groupContent);
   }
-  if (this_00->field_01E6 != 0x15) {
+  if (this_00->field_01E6 != CASE_15) {
     g_currentExceptionFrame = local_19c.previous;
     return;
   }
-  uVar11 = 0;
-  local_a8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  uVar13 = 0;
+  local_a8 = PTR_00802a38->field_00E4;
   local_1c = local_a8;
   if (0 < (int)local_14) {
-    uVar10 = 0;
+    uVar12 = 0;
     do {
-      FUN_006acc70(this_00->field_002D,uVar10,&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_002D,uVar12,&local_8);
       if ((short)local_8 != -1) {
-        pSVar5 = (STBoatC *)
+        pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,
                             CONCAT31((int3)((uint)extraout_EDX_11 >> 8),this_00->field_0024),local_8
                             ,CASE_1);
-        if (pSVar5 == (STBoatC *)0x0) {
+        if (pSVar6 == (STBoatC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0x10b0);
         }
-        iVar3 = (*pSVar5->vtable->vfunc_F8)();
-        if (iVar3 != 0) {
-          iVar3 = thunk_FUN_00490d90((int)pSVar5);
-          if (iVar3 == 0) {
-            iVar3 = (*pSVar5->vtable->vfunc_2C)();
-            if ((iVar3 == 7) || (iVar3 == 0x13)) {
-              iVar3 = thunk_FUN_00492370((int)pSVar5);
-              if (iVar3 == 0) {
+        iVar4 = (*pSVar6->vtable->vfunc_F8)();
+        if (iVar4 != 0) {
+          iVar4 = thunk_FUN_00490d90((int)pSVar6);
+          if (iVar4 == 0) {
+            iVar4 = (*pSVar6->vtable->vfunc_2C)();
+            if ((iVar4 == 7) || (iVar4 == 0x13)) {
+              iVar4 = thunk_FUN_00492370((int)pSVar6);
+              if (iVar4 == 0) {
                 local_a2 = *(undefined2 *)((int)&this_00->field_0304 + 2);
                 local_a4 = *(undefined2 *)&this_00->field_0304;
                 local_a0 = *(undefined2 *)&this_00->field_0308;
                 local_9e = *(undefined4 *)((int)&this_00->field_0308 + 2);
-                STBoatC::CmdToObj(pSVar5,CASE_F,&local_a8);
-                puVar9 = local_10;
-                if (local_10 == (uint *)0x0) {
-                  puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                  local_10 = puVar9;
+                STBoatC::CmdToObj(pSVar6,CASE_F,&local_a8);
+                pDVar9 = local_10;
+                if (local_10 == (DArrayTy *)0x0) {
+                  pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                  local_10 = pDVar9;
                 }
                 goto LAB_004a2bcf;
               }
             }
             else {
-              STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
+              STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
             }
           }
           else {
-            puVar9 = local_c;
-            if (local_c == (uint *)0x0) {
-              puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-              local_c = puVar9;
+            pDVar9 = local_c;
+            if (local_c == (DArrayTy *)0x0) {
+              pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+              local_c = pDVar9;
             }
 LAB_004a2bcf:
-            Library::DKW::TBL::FUN_006ae1c0(puVar9,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,&local_8);
           }
         }
       }
-      uVar11 = uVar11 + 1;
-      uVar10 = uVar11 & 0xffff;
-    } while ((int)uVar10 < (int)local_14);
+      uVar13 = uVar13 + 1;
+      uVar12 = uVar13 & 0xffff;
+    } while ((int)uVar12 < (int)local_14);
   }
-  if (local_10 != (uint *)0x0) {
-    if (local_c != (uint *)0x0) {
+  if (local_10 != (DArrayTy *)0x0) {
+    if (local_c != (DArrayTy *)0x0) {
       STAllPlayersC::RegisterPGPair
                 (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)local_c >> 8),this_00->field_0024),
-                 local_10,local_c);
+                 &local_10->flags,&local_c->flags);
       goto cf_common_exit_004A2C5D;
     }
-    if (local_10 != (uint *)0x0) goto cf_common_exit_004A2C5D;
+    if (local_10 != (DArrayTy *)0x0) goto cf_common_exit_004A2C5D;
   }
-  if (local_c != (uint *)0x0) {
-    uVar10 = 0;
-    uVar11 = local_c[3];
-    if (0 < (int)uVar11) {
-      uVar4 = 0;
+  if (local_c != (DArrayTy *)0x0) {
+    uVar13 = 0;
+    dVar2 = local_c->count;
+    if (0 < (int)dVar2) {
+      uVar12 = 0;
       do {
-        FUN_006acc70((int)local_c,uVar4,&local_8);
-        pSVar5 = (STBoatC *)
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar12,&local_8);
+        pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,
                             CONCAT31((int3)((uint)extraout_EDX_12 >> 8),this_00->field_0024),local_8
                             ,CASE_1);
-        STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
-        uVar10 = uVar10 + 1;
-        uVar4 = uVar10 & 0xffff;
-      } while ((int)uVar4 < (int)uVar11);
+        STBoatC::CmdToObj(pSVar6,CASE_3,&local_1c);
+        uVar13 = uVar13 + 1;
+        uVar12 = uVar13 & 0xffff;
+      } while ((int)uVar12 < (int)dVar2);
     }
   }
 cf_common_exit_004A2C5D:
-  if (local_10 != (uint *)0x0) {
+  if (local_10 != (DArrayTy *)0x0) {
     FUN_006ae110((byte *)local_10);
   }
-  if (local_c != (uint *)0x0) {
+  if (local_c != (DArrayTy *)0x0) {
     FUN_006ae110((byte *)local_c);
   }
   g_currentExceptionFrame = local_19c.previous;

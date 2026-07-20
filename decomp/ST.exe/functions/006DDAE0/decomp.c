@@ -28,8 +28,8 @@ void __thiscall FUN_006ddae0(void *this,int param_1,int param_2,int param_3,unde
     param_4 = (undefined4 *)((int)param_4 + 1);
     puVar3 = (undefined4 *)((int)puVar3 + 1);
   }
-  FUN_006dd870((int)this);
-  FUN_006ddb70((int)this);
+  FUN_006dd870(this);
+  FUN_006ddb70(this);
   return;
 }
 

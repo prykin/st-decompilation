@@ -1,5 +1,5 @@
 
-DWORD FUN_006c7700(int *param_1,uint param_2)
+DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
 
 {
   bool bVar1;
@@ -30,7 +30,7 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
   char local_5;
   
   local_c = (undefined4 *)0x0;
-  DVar2 = (**(code **)((int)param_1 + 0x36))(param_1,&local_94,0x80);
+  DVar2 = (*(code *)param_1->field_0036)(param_1,&local_94,0x80);
   if (DVar2 != 0x80) {
     if (-1 < (int)DVar2) {
       return 0xfffffffb;
@@ -47,8 +47,8 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
     bVar1 = false;
   }
   iVar7 = local_10;
-  if (*(int *)((int)param_1 + 0x26) != 0) {
-    LVar3 = _llseek(*(int *)((int)param_1 + 0x26),0,1);
+  if (param_1->field_0026 != 0) {
+    LVar3 = _llseek(param_1->field_0026,0,1);
     if (LVar3 == -1) {
       DVar2 = GetLastError();
       return DVar2;
@@ -56,7 +56,7 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
     iVar7 = LVar3 + -0x80;
     local_10 = iVar7;
     if ((param_2 == 0) && (bVar1)) {
-      LVar3 = _llseek(*(HFILE *)((int)param_1 + 0x26),0,2);
+      LVar3 = _llseek(param_1->field_0026,0,2);
       if (LVar3 == -1) {
         DVar2 = GetLastError();
         return DVar2;
@@ -64,22 +64,22 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
       param_2 = LVar3 - iVar7;
     }
   }
-  local_14 = *(undefined4 *)((int)param_1 + 0x2a);
+  local_14 = param_1->field_002A;
   uVar5 = (-(uint)(local_93 != '\x03') & 0xe) + 2;
   if (bVar1) {
     local_c = (undefined4 *)FUN_006bfb70(0x300);
-    *(undefined4 **)((int)param_1 + 0x1e) = local_c;
+    param_1->field_001E = local_c;
     if (local_c == (undefined4 *)0x0) {
       return 0xfffffffe;
     }
     if (0x380 < param_2) {
-      if (*(int *)((int)param_1 + 0x26) == 0) {
-        *(uint *)((int)param_1 + 0x2a) = *(int *)((int)param_1 + 0x2a) + (param_2 - 0x381);
+      if (param_1->field_0026 == 0) {
+        param_1->field_002A = param_1->field_002A + (param_2 - 0x381);
       }
       else {
-        _llseek(*(int *)((int)param_1 + 0x26),iVar7 + -0x301 + param_2,0);
+        _llseek(param_1->field_0026,iVar7 + -0x301 + param_2,0);
       }
-      DVar2 = (**(code **)((int)param_1 + 0x36))(param_1,&local_5,1);
+      DVar2 = (*(code *)param_1->field_0036)(param_1,&local_5,1);
       if (DVar2 != 1) {
         if (-1 < (int)DVar2) {
           return 0xfffffff4;
@@ -88,7 +88,7 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
       }
       if (local_5 == '\f') {
         param_2 = 0x100;
-        DVar2 = (**(code **)((int)param_1 + 0x36))(param_1,local_c,0x300);
+        DVar2 = (*(code *)param_1->field_0036)(param_1,local_c,0x300);
         if (DVar2 != 0x300) {
           if (-1 < (int)DVar2) {
             return 0xfffffff4;
@@ -101,7 +101,7 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
   }
   else if (local_93 != '\x03') {
     local_c = (undefined4 *)FUN_006bfb70(0x30);
-    *(undefined4 **)((int)param_1 + 0x1e) = local_c;
+    param_1->field_001E = local_c;
     if (local_c == (undefined4 *)0x0) {
       return 0xfffffffe;
     }
@@ -117,19 +117,19 @@ DWORD FUN_006c7700(int *param_1,uint param_2)
     }
   }
 LAB_006c78ff:
-  *(uint *)((int)param_1 + 0x1a) = param_2;
-  *(undefined4 *)((int)param_1 + 0x2a) = local_14;
-  if (*(int *)((int)param_1 + 0x26) != 0) {
-    _llseek(*(int *)((int)param_1 + 0x26),iVar7 + 0x80,0);
+  param_1->field_001A = param_2;
+  param_1->field_002A = local_14;
+  if (param_1->field_0026 != 0) {
+    _llseek(param_1->field_0026,iVar7 + 0x80,0);
   }
-  *param_1 = (int)sStack_90;
-  param_1[1] = (int)CONCAT11(uStack_8d,uStack_8e);
-  *(byte *)(param_1 + 4) = local_91;
-  param_1[3] = ((int)local_8a - (int)CONCAT11(uStack_8d,uStack_8e)) + 1;
-  param_1[2] = ((int)local_8c - (int)sStack_90) + 1;
-  *(byte *)((int)param_1 + 0x11) = local_53;
-  *(int *)((int)param_1 + 0x12) = (int)sStack_52;
-  *(int *)((int)param_1 + 0x16) = (int)CONCAT11(uStack_4f,uStack_50);
+  *(int *)param_1 = (int)sStack_90;
+  *(int *)&param_1->field_0004 = (int)CONCAT11(uStack_8d,uStack_8e);
+  param_1->field_0x10 = local_91;
+  *(int *)&param_1->field_0xc = ((int)local_8a - (int)CONCAT11(uStack_8d,uStack_8e)) + 1;
+  *(int *)&param_1->field_0x8 = ((int)local_8c - (int)sStack_90) + 1;
+  param_1->field_0011 = local_53;
+  param_1->field_0012 = (int)sStack_52;
+  param_1->field_0016 = (int)CONCAT11(uStack_4f,uStack_50);
   return 0;
 }
 

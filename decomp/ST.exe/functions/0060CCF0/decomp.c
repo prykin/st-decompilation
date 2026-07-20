@@ -31,8 +31,7 @@ FUN_0060ccf0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     piVar2 = thunk_FUN_0062bbc0(param_2,param_3,param_4,param_5,param_6,param_7,0,0,7,0x1e0);
     *(int **)(iVar3 + 0x40 + *(int *)((int)this + 0x244)) = piVar2;
     bVar4 = *(int *)(iVar3 + 8 + *(int *)((int)this + 0x244)) != 0;
-    *(undefined4 *)(iVar3 + *(int *)((int)this + 0x244) + 0x3c) =
-         *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)(iVar3 + *(int *)((int)this + 0x244) + 0x3c) = PTR_00802a38->field_00E4;
     *(undefined4 *)(iVar3 + *(int *)((int)this + 0x244)) = 1;
   }
   return bVar4;

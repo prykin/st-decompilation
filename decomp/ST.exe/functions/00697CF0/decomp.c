@@ -15,7 +15,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   uint uVar11;
   int iVar12;
   byte *pbVar13;
-  int *piVar14;
+  AnonShape_00697CF0_36737CA3 *pAVar14;
   undefined4 *puVar15;
   int iVar16;
   bool bVar17;
@@ -26,7 +26,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   undefined1 *local_b4;
   uint local_ac;
   int local_a8;
-  int *local_a4;
+  AnonShape_00697CF0_36737CA3 *local_a4;
   uint local_a0;
   uint local_9c;
   int local_98;
@@ -86,20 +86,21 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
         if (param_1 < 1) break;
         iVar5 = *(int *)((int)this + 0x5853);
         if (local_88 < *(uint *)(iVar5 + 0xc)) {
-          piVar14 = (int *)(*(int *)(iVar5 + 8) * local_88 + *(int *)(iVar5 + 0x1c));
+          pAVar14 = (AnonShape_00697CF0_36737CA3 *)
+                    (*(int *)(iVar5 + 8) * local_88 + *(int *)(iVar5 + 0x1c));
         }
         else {
-          piVar14 = (int *)0x0;
+          pAVar14 = (AnonShape_00697CF0_36737CA3 *)0x0;
         }
-        local_a4 = piVar14;
-        if ((*piVar14 == 0) && (*(int *)((int)piVar14 + 5) < 1)) {
-          if (*(int *)((int)piVar14 + 0x15) != 0) {
+        local_a4 = pAVar14;
+        if ((*(int *)pAVar14 == 0) && (pAVar14->field_0005 < 1)) {
+          if (pAVar14->field_0015 != 0) {
             uVar4 = Library::MSVCRT::FUN_0072e6c0();
             local_a0 = (int)uVar4 % 6 + 1;
             local_74 = 0;
             local_90 = 0;
             local_94 = 0;
-            iVar5 = *(int *)((int)piVar14 + 0x15);
+            iVar5 = pAVar14->field_0015;
             uVar4 = *(uint *)(iVar5 + 0xc);
             if (0 < (int)uVar4) {
               do {
@@ -144,7 +145,7 @@ LAB_00697e8c:
                   }
                 }
                 local_94 = local_94 + 1;
-                iVar5 = *(int *)((int)local_a4 + 0x15);
+                iVar5 = local_a4->field_0015;
                 uVar4 = *(uint *)(iVar5 + 0xc);
                 iVar12 = local_6c;
               } while ((int)local_94 < (int)uVar4);
@@ -163,7 +164,7 @@ LAB_00697e8c:
             }
           }
         }
-        else if (0 < *piVar14) break;
+        else if (0 < *(int *)pAVar14) break;
         local_88 = local_88 + 1;
         puVar2 = local_28;
         puVar3 = local_1c;
@@ -189,10 +190,11 @@ LAB_00697e8c:
           psVar7 = (short *)(local_28 + local_80 * 0x10);
           iVar12 = *(int *)((int)this + 0x5853);
           if ((uint)(int)*psVar7 < *(uint *)(iVar12 + 0xc)) {
-            local_a4 = (int *)(*(int *)(iVar12 + 8) * (int)*psVar7 + *(int *)(iVar12 + 0x1c));
+            local_a4 = (AnonShape_00697CF0_36737CA3 *)
+                       (*(int *)(iVar12 + 8) * (int)*psVar7 + *(int *)(iVar12 + 0x1c));
           }
           else {
-            local_a4 = (int *)0x0;
+            local_a4 = (AnonShape_00697CF0_36737CA3 *)0x0;
           }
           local_38 = ((int)psVar7[5] - (int)psVar7[4]) + 1;
           local_44 = ((int)psVar7[7] - (int)psVar7[6]) + 1;
@@ -206,7 +208,7 @@ LAB_00697e8c:
             puVar15 = (undefined4 *)((int)puVar15 + 1);
           }
           local_94 = 0;
-          iVar12 = *(int *)((int)local_a4 + 0x15);
+          iVar12 = local_a4->field_0015;
           if (0 < *(int *)(iVar12 + 0xc)) {
             bVar17 = *(int *)(iVar12 + 0xc) != 0;
             do {
@@ -225,7 +227,7 @@ LAB_00697e8c:
                  *(int *)(pbVar13 + 2) % *(int *)((int)this + 0x5833)) * 2) = 0;
               }
               local_94 = local_94 + 1;
-              iVar12 = *(int *)((int)local_a4 + 0x15);
+              iVar12 = local_a4->field_0015;
               bVar17 = local_94 < *(uint *)(iVar12 + 0xc);
             } while ((int)local_94 < (int)*(uint *)(iVar12 + 0xc));
           }
@@ -243,7 +245,7 @@ LAB_00697e8c:
             local_58 = (local_58 - 1 | 0xfffffffc) + 1;
           }
           do {
-            iVar12 = *(int *)((int)local_a4 + 0x15);
+            iVar12 = local_a4->field_0015;
             uVar4 = *(uint *)(iVar12 + 0xc);
             uVar8 = Library::MSVCRT::FUN_0072e6c0();
             uVar8 = (int)uVar8 % (int)uVar4;
@@ -323,17 +325,17 @@ LAB_00697e8c:
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       iVar5 = *(int *)((int)this + 0x5853);
       if ((uint)(int)*(short *)(local_28 + ((int)uVar4 % iVar12) * 0x10) < *(uint *)(iVar5 + 0xc)) {
-        local_a4 = (int *)(*(int *)(iVar5 + 8) *
-                           (int)*(short *)(local_28 + ((int)uVar4 % iVar12) * 0x10) +
-                          *(int *)(iVar5 + 0x1c));
+        local_a4 = (AnonShape_00697CF0_36737CA3 *)
+                   (*(int *)(iVar5 + 8) * (int)*(short *)(local_28 + ((int)uVar4 % iVar12) * 0x10) +
+                   *(int *)(iVar5 + 0x1c));
       }
       else {
-        local_a4 = (int *)0x0;
+        local_a4 = (AnonShape_00697CF0_36737CA3 *)0x0;
       }
-      if ((((*local_a4 == 0) && (*(int *)((int)local_a4 + 5) < 2)) &&
-          (3 < *(int *)((int)local_a4 + 0x11))) && (*(int *)((int)local_a4 + 0x15) != 0)) {
-        local_50 = *(int *)((int)local_a4 + 0x11) / 10 + 1;
-        iVar12 = *(int *)((int)local_a4 + 0x15);
+      if ((((*(int *)local_a4 == 0) && (local_a4->field_0005 < 2)) && (3 < local_a4->field_0011)) &&
+         (local_a4->field_0015 != 0)) {
+        local_50 = local_a4->field_0011 / 10 + 1;
+        iVar12 = local_a4->field_0015;
         uVar4 = *(uint *)(iVar12 + 0xc);
         uVar8 = Library::MSVCRT::FUN_0072e6c0();
         local_2c = (int)uVar8 % (int)uVar4;
@@ -411,7 +413,7 @@ LAB_00697e8c:
               }
             }
             local_94 = local_94 + 1;
-            iVar12 = *(int *)((int)local_a4 + 0x15);
+            iVar12 = local_a4->field_0015;
             uVar4 = *(uint *)(iVar12 + 0xc);
           } while ((int)local_94 < (int)uVar4);
         }

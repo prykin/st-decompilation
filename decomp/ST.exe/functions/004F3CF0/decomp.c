@@ -82,15 +82,15 @@ cf_common_join_004F3D83:
       uVar2 = (uint)param_1;
       DibPut((undefined4 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),(&pCVar3->field_0180)[uVar2],0,local_10,
-                       local_c,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,(&pCVar3->field_0180)[uVar2],0,
+                       local_10,local_c,local_18[2],local_18[3]);
       iVar10 = -1;
       iVar8 = -1;
       uVar5 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar9 = -2;
       puVar6 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar7,uVar5,iVar8,iVar10);
+      ccFntTy::WrTxt(*(ccFntTy **)&PTR_00802a28->field_0x24,puVar6,iVar9,iVar7,uVar5,iVar8,iVar10);
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]

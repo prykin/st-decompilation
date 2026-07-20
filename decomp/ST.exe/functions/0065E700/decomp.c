@@ -1,6 +1,7 @@
 
 undefined4 __fastcall
-FUN_0065e700(int param_1,undefined4 param_2,int *param_3,int *param_4,int *param_5)
+FUN_0065e700(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2,int *param_3,int *param_4,
+            int *param_5)
 
 {
   uint *groupContent;
@@ -40,7 +41,7 @@ FUN_0065e700(int param_1,undefined4 param_2,int *param_3,int *param_4,int *param
       this = (STFishC *)
              STAllPlayersC::GetObjPtr
                        (g_sTAllPlayers_007FA174,
-                        CONCAT31((int3)((uint)piVar2 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                        CONCAT31((int3)((uint)piVar2 >> 8),param_1->field_0024),
                         CONCAT22((short)((uint)iVar3 >> 0x10),(short)*piVar1),CASE_1);
       piVar2 = extraout_ECX;
       iVar3 = extraout_EDX_00;

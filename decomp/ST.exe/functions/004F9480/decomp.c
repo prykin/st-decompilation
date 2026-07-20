@@ -24,11 +24,11 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
     local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     iVar2 = param_1 + param_2;
     if (param_2 < 1) {
-      iVar2 = *(int *)(DAT_0080c4c7 + 8);
+      iVar2 = PTR_0080c4c7->field_0008;
     }
     for (; param_1 < iVar2; param_1 = param_1 + 1) {
-      if (param_1 < *(int *)(DAT_0080c4c7 + 8)) {
-        pcVar3 = *(char **)(*(int *)(DAT_0080c4c7 + 0x14) + param_1 * 4);
+      if (param_1 < (int)PTR_0080c4c7->field_0008) {
+        pcVar3 = *(char **)(PTR_0080c4c7->field_0014 + param_1 * 4);
       }
       else {
         pcVar3 = (char *)0x0;

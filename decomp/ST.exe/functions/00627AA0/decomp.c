@@ -25,7 +25,7 @@ bool __thiscall FUN_00627aa0(void *this,uint param_1)
   if (7 < param_1) {
     return false;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51])) {
+  if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51])) {
     return false;
   }
   bVar1 = *(byte *)((int)this + 0x24);

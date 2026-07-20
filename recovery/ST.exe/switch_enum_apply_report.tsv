@@ -1,49 +1,28 @@
 function_address	enum_name	status	detail
-0040E0F0	Global_sub_0040E0F0_switch_0Enum	disabled	apply=0
-00411260	Global_sub_00411260_switch_0Enum	disabled	apply=0
-00411E50	Global_sub_00411E50_switch_0Enum	disabled	apply=0
+0040E0F0	Global_sub_0040E0F0_local_70Enum	disabled	apply=0
+00411260	Global_sub_00411260_local_20Enum	disabled	apply=0
+00411E50	Global_sub_00411E50_local_20Enum	disabled	apply=0
 00413170	Global_sub_00413170_DAT_007f4d08Enum	disabled	apply=0
-00413AF0	Global_sub_00413AF0_switch_0Enum	disabled	apply=0
-0041C3F0	Global_sub_0041C3F0_switch_0Enum	disabled	apply=0
-0041C5A0	Global_sub_0041C5A0_switch_0Enum	disabled	apply=0
-0041DD00	Global_sub_0041DD00_switch_0Enum	disabled	apply=0
-0041DD00	Global_sub_0041DD00_switch_1Enum	disabled	apply=0
-0041F630	Global_sub_0041F630_switch_0Enum	disabled	apply=0
-0041F630	Global_sub_0041F630_switch_1Enum	disabled	apply=0
-0041F630	Global_sub_0041F630_switch_2Enum	disabled	apply=0
+00413AF0	Global_sub_00413AF0_iVar7Enum	disabled	apply=0
+0041C3F0	Global_sub_0041C3F0_uVar2Enum	disabled	apply=0
+0041C5A0	Global_sub_0041C5A0_uVar1Enum	disabled	apply=0
+0041DD00	Global_sub_0041DD00_uVar2Enum	disabled	apply=0
+0041F630	Global_sub_0041F630_uVar4Enum	disabled	apply=0
 0041F9B0	STSprGameObjC_CheckRay_param_7Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSprGameObjC_CheckRay_param_7Enum; parameter already uses enum
-00420340	STSprGameObjC_LoadActFrame_switch_0Enum	disabled	apply=0
-00420340	STSprGameObjC_LoadActFrame_switch_1Enum	disabled	apply=0
-00420AE0	STSprGameObjC_LoadLifeFrame_switch_0Enum	disabled	apply=0
+00420340	STSprGameObjC_LoadActFrame_SVar4Enum	disabled	apply=0
+00420340	STSprGameObjC_LoadActFrame_uVar5Enum	disabled	apply=0
+00420AE0	STSprGameObjC_LoadLifeFrame_SVar4Enum	disabled	apply=0
 004248D0	Global_sub_004248D0_param_5Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_5Enum; parameter already uses enum
 004248D0	Global_sub_004248D0_param_6Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum; parameter already uses enum
-00424E10	Global_sub_00424E10_switch_0Enum	disabled	apply=0
+00424E10	Global_sub_00424E10_local_8cEnum	disabled	apply=0
 0042B620	STAllPlayersC_GetObjPtr_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum; parameter already uses enum
 00430750	Global_sub_00430750_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00430750_param_1Enum; parameter already uses enum
 00435B90	Global_sub_00435B90_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum; parameter already uses enum
 00436F20	STAllPlayersC_CmdToPlsObj_switch_0Enum	disabled	apply=0
 00436F20	STAllPlayersC_CmdToPlsObj_switch_1Enum	disabled	apply=0
 00436F20	STAllPlayersC_CmdToPlsObj_switch_2Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_0Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_1Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_10Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_11Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_12Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_13Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_14Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_15Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_16Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_17Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_18Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_19Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_2Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_3Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_4Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_5Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_6Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_7Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_8Enum	disabled	apply=0
-0043BEB0	STAllPlayersC_GetPanelInfo_switch_9Enum	disabled	apply=0
+0043BEB0	STAllPlayersC_GetPanelInfo_GVar4Enum	disabled	apply=0
+0043BEB0	STAllPlayersC_GetPanelInfo_uVar6Enum	disabled	apply=0
 0043E640	Global_sub_0043E640_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043E640_param_2Enum; parameter already uses enum
 0043E780	STAllPlayersC_GetTOBJList_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJList_param_2Enum; parameter already uses enum
 0043E9A0	Global_sub_0043E9A0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043E9A0_param_2Enum; parameter already uses enum
@@ -51,130 +30,71 @@ function_address	enum_name	status	detail
 0043EED0	STAllPlayersC_GetTOBJListFromDArr_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJListFromDArr_param_3Enum; parameter already uses enum
 0043FC50	Global_sub_0043FC50_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043FC50_param_1Enum; parameter already uses enum
 004458D0	STAllPlayersC_GetBoatWeaponInfo_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetBoatWeaponInfo_param_1Enum; parameter already uses enum
-00448120	STAllPlayersC_PutOnPlaceGuardBoats_switch_0Enum	disabled	apply=0
-00448120	STAllPlayersC_PutOnPlaceGuardBoats_switch_1Enum	disabled	apply=0
+00448120	STAllPlayersC_PutOnPlaceGuardBoats_iVar5Enum	disabled	apply=0
 00449B60	STAllPlayersC_DestroyObjectMsg_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_DestroyObjectMsg_param_3Enum; parameter already uses enum
 0044B5F0	STAllPlayersC_SelectObjects_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_SelectObjects_param_1Enum; parameter already uses enum
 0044C130	STAllPlayersC_GetTOBJImage_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJImage_param_2Enum; parameter already uses enum
-0044CE40	Global_sub_0044CE40_switch_0Enum	disabled	apply=0
-0044D320	Global_sub_0044D320_switch_1Enum	disabled	apply=0
-0044D320	Global_sub_0044D320_switch_2Enum	disabled	apply=0
+0044CE40	Global_sub_0044CE40_uVar3Enum	disabled	apply=0
+0044D320	Global_sub_0044D320_GVar2Enum	disabled	apply=0
+0044D320	Global_sub_0044D320_uVar6Enum	disabled	apply=0
 0044D320	Global_sub_0044D320_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_1Enum; parameter already uses enum
 0044E980	STBoatC_GetVisualInfo_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum; parameter already uses enum
-0044EE30	STBoatC_GetMessage_switch_0Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_1Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_10Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_11Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_12Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_13Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_14Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_15Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_16Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_17Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_18Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_19Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_2Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_20Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_21Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_22Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_23Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_24Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_25Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_26Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_27Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_28Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_29Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_3Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_30Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_31Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_32Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_33Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_34Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_4Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_5Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_6Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_7Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_8Enum	disabled	apply=0
-0044EE30	STBoatC_GetMessage_switch_9Enum	disabled	apply=0
+0044EE30	STBoatC_field_0459State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0459State; field already uses enum
+0044EE30	STBoatC_field_045DState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState; field already uses enum
+0044EE30	STBoatC_field_06F3State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06F3State; field already uses enum
+0044EE30	STBoatC_field_06F7State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State; field already uses enum
+0044EE30	STBoatC_GetMessage_iVar10Enum	disabled	apply=0
 0045EF00	STBoatC_CmdToObj_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_CmdToObj_param_1Enum; parameter already uses enum
 0045F400	STBoatC_CheckPBoxCmd_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_CheckPBoxCmd_param_1Enum; parameter already uses enum
-0045F980	Global_sub_0045F980_switch_0Enum	disabled	apply=0
-0045FF50	STBoatC_sub_0045FF50_switch_0Enum	disabled	apply=0
-0045FF50	STBoatC_sub_0045FF50_switch_1Enum	disabled	apply=0
-004608B0	STBoatC_Defence_switch_0Enum	disabled	apply=0
-004608B0	STBoatC_Defence_switch_1Enum	disabled	apply=0
-004608B0	STBoatC_Defence_switch_2Enum	disabled	apply=0
-004608B0	STBoatC_Defence_switch_3Enum	disabled	apply=0
+0045F980	Global_sub_0045F980_iVar2Enum	disabled	apply=0
+0045FF50	STBoatC_sub_0045FF50_iVar1Enum	disabled	apply=0
+0045FF50	STBoatC_sub_0045FF50_uVar2Enum	disabled	apply=0
+004608B0	STBoatC_Defence_iVar10Enum	disabled	apply=0
+00462180	Global_sub_00462180_iVar16Enum	disabled	apply=0
 00462180	Global_sub_00462180_switch_0Enum	disabled	apply=0
-00462180	Global_sub_00462180_switch_1Enum	disabled	apply=0
-00462180	Global_sub_00462180_switch_2Enum	disabled	apply=0
-00462180	Global_sub_00462180_switch_3Enum	disabled	apply=0
-00462180	Global_sub_00462180_switch_4Enum	disabled	apply=0
 00462180	Global_sub_00462180_switch_5Enum	disabled	apply=0
-00462180	Global_sub_00462180_switch_6Enum	disabled	apply=0
-004658D0	Global_sub_004658D0_switch_0Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_0Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_1Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_2Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_3Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_4Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_5Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_6Enum	disabled	apply=0
-00465C60	STBoatC_LoadRC_switch_7Enum	disabled	apply=0
+004658D0	Global_sub_004658D0_iVar1Enum	disabled	apply=0
+00465C60	STBoatC_LoadRC_iVar8Enum	disabled	apply=0
 0046AA50	STBoatC_field_04D5State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_04D5State; field already uses enum
-0046B100	STBoatC_Build_switch_0Enum	disabled	apply=0
+0046B100	STBoatC_Build_uVar7Enum	disabled	apply=0
 0046C980	STBoatC_field_0508State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0508State; field already uses enum
-0046D450	STBoatC_UnLoadRC_switch_0Enum	disabled	apply=0
-0046D450	STBoatC_UnLoadRC_switch_1Enum	disabled	apply=0
-0046D450	STBoatC_UnLoadRC_switch_2Enum	disabled	apply=0
+0046D450	STBoatC_UnLoadRC_iVar7Enum	disabled	apply=0
 0046EFD0	STBoatC_field_054CState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_054CState; field already uses enum
-0046F5C0	STBoatC_ToDok_switch_0Enum	disabled	apply=0
-0046F5C0	STBoatC_ToDok_switch_1Enum	disabled	apply=0
-0046F5C0	STBoatC_ToDok_switch_2Enum	disabled	apply=0
+0046F5C0	STBoatC_ToDok_iVar7Enum	disabled	apply=0
 004714D0	STBoatC_field_0580State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0580State; field already uses enum
-00471AC0	STBoatC_Guard_switch_0Enum	disabled	apply=0
-00471AC0	STBoatC_Guard_switch_1Enum	disabled	apply=0
-00471AC0	STBoatC_Guard_switch_2Enum	disabled	apply=0
-00471AC0	STBoatC_Guard_switch_3Enum	disabled	apply=0
-004732F0	STBoatC_LoadObj_switch_0Enum	disabled	apply=0
-004749C0	STBoatC_WaitLoad_switch_0Enum	disabled	apply=0
+00471AC0	STBoatC_Guard_iVar8Enum	disabled	apply=0
+004732F0	STBoatC_LoadObj_iVar9Enum	disabled	apply=0
+004749C0	STBoatC_WaitLoad_iVar10Enum	disabled	apply=0
 004761B0	STBoatC_SetMine_switch_0Enum	disabled	apply=0
-00476CE0	STBoatC_Capture_switch_0Enum	disabled	apply=0
+00476CE0	STBoatC_Capture_iVar6Enum	disabled	apply=0
 00478030	STBoatC_field_0611State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0611State; field already uses enum
-00478640	STBoatC_Recharge_switch_0Enum	disabled	apply=0
-00478640	STBoatC_Recharge_switch_1Enum	disabled	apply=0
-00479600	STBoatC_Teleport_switch_0Enum	disabled	apply=0
-00479600	STBoatC_Teleport_switch_1Enum	disabled	apply=0
+00478640	STBoatC_Recharge_iVar11Enum	disabled	apply=0
+00479600	STBoatC_Teleport_iVar9Enum	disabled	apply=0
 0047BF70	STBoatC_BackTeleport_switch_0Enum	disabled	apply=0
-0047C050	STBoatC_Bring_switch_0Enum	disabled	apply=0
-0047C050	STBoatC_Bring_switch_1Enum	disabled	apply=0
+0047C050	STBoatC_Bring_iVar8Enum	disabled	apply=0
 0047CF20	STBoatC_field_0687State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State; field already uses enum
-0047DF00	STBoatC_Dismant_switch_0Enum	disabled	apply=0
-0047DF00	STBoatC_Dismant_switch_1Enum	disabled	apply=0
+0047DF00	STBoatC_Dismant_iVar8Enum	disabled	apply=0
 0047FAD0	STBoatC_field_06C3State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State; field already uses enum
 0047FE10	STBoatC_Scout_switch_0Enum	disabled	apply=0
 0047FE10	STBoatC_Scout_switch_1Enum	disabled	apply=0
 00480600	Global_sub_00480600_switch_0Enum	disabled	apply=0
-00482A00	STBoatC_ChangeActivity_switch_0Enum	disabled	apply=0
 004845E0	Global_sub_004845E0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum; parameter already uses enum
 00486B60	Global_sub_00486B60_switch_0Enum	disabled	apply=0
 00486E20	Global_sub_00486E20_switch_0Enum	disabled	apply=0
 00486E20	Global_sub_00486E20_switch_1Enum	disabled	apply=0
-00488890	Global_sub_00488890_switch_0Enum	disabled	apply=0
+00488890	Global_sub_00488890_iVar10Enum	disabled	apply=0
 00488D10	Global_sub_00488D10_switch_0Enum	disabled	apply=0
-00488F30	STBoatC_field_06F7State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State; field already uses enum
 004899A0	STBoatC_GetDefenceTarget_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetDefenceTarget_param_1Enum; parameter already uses enum
 0048A910	Global_sub_0048A910_switch_0Enum	disabled	apply=0
 00491240	STBoatC_PrepareForLoading_switch_0Enum	disabled	apply=0
 004919C0	STBoatC_GetCellForLoading_param_6Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetCellForLoading_param_6Enum; parameter already uses enum
 00493D10	Global_sub_00493D10_switch_0Enum	disabled	apply=0
+00496250	Global_sub_00496250_iVar7Enum	disabled	apply=0
 00496250	Global_sub_00496250_switch_0Enum	disabled	apply=0
-00496250	Global_sub_00496250_switch_1Enum	disabled	apply=0
-00497E00	STGroupBoatC_GetMessage_switch_0Enum	disabled	apply=0
+00497E00	STGroupBoatC_field_01E6State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State; field already uses enum
 00498D20	Global_sub_00498D20_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum; parameter already uses enum
-00499DE0	STGroupBoatC_DistributeTargets_switch_0Enum	disabled	apply=0
-00499DE0	STGroupBoatC_DistributeTargets_switch_1Enum	disabled	apply=0
-004A8920	OpticClassC_GetMessage_switch_0Enum	disabled	apply=0
+00499DE0	STGroupBoatC_DistributeTargets_uVar4Enum	disabled	apply=0
+004A8920	OpticClassC_GetMessage_uVar3Enum	disabled	apply=0
 004A8E00	Global_sub_004A8E00_DAT_008073fcEnum	disabled	apply=0
 004AB070	Global_sub_004AB070_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum; parameter already uses enum
 004AB300	Global_sub_004AB300_switch_0Enum	disabled	apply=0
@@ -187,20 +107,19 @@ function_address	enum_name	status	detail
 004B7350	Global_sub_004B7350_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B7350_param_2Enum; parameter already uses enum
 004B7520	Global_sub_004B7520_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum; parameter already uses enum
 004B7F90	Global_sub_004B7F90_switch_0Enum	disabled	apply=0
-004B80D0	TLOBaseTy_SetState_switch_0Enum	disabled	apply=0
-004B80D0	TLOBaseTy_SetState_switch_1Enum	disabled	apply=0
+004B80D0	TLOBaseTy_field_0245State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State; field already uses enum
+004B80D0	TLOBaseTy_field_05ACState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState; field already uses enum
 004B8C00	Global_sub_004B8C00_switch_0Enum	disabled	apply=0
-004B9D90	Global_sub_004B9D90_switch_0Enum	disabled	apply=0
-004B9FA0	TLOBaseTy_GetMessage_switch_0Enum	disabled	apply=0
-004B9FA0	TLOBaseTy_GetMessage_switch_1Enum	disabled	apply=0
+004B9D90	Global_sub_004B9D90_iVar2Enum	disabled	apply=0
+004B9FA0	TLOBaseTy_GetMessage_TVar8Enum	disabled	apply=0
+004B9FA0	TLOBaseTy_GetMessage_bVar2Enum	disabled	apply=0
 004B9FA0	TLOBaseTy_GetMessage_switch_2Enum	disabled	apply=0
 004B9FA0	TLOBaseTy_GetMessage_switch_3Enum	disabled	apply=0
-004B9FA0	TLOBaseTy_GetMessage_switch_4Enum	disabled	apply=0
 004BE6C0	Global_sub_004BE6C0_switch_0Enum	disabled	apply=0
+004BEA70	Global_sub_004BEA70_iVar6Enum	disabled	apply=0
 004BEA70	Global_sub_004BEA70_switch_0Enum	disabled	apply=0
 004BEA70	Global_sub_004BEA70_switch_1Enum	disabled	apply=0
 004BEA70	Global_sub_004BEA70_switch_2Enum	disabled	apply=0
-004BEA70	Global_sub_004BEA70_switch_3Enum	disabled	apply=0
 004BEA70	Global_sub_004BEA70_switch_4Enum	disabled	apply=0
 004C21A0	Global_sub_004C21A0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004C21A0_param_1Enum; parameter already uses enum
 004C28B0	Global_sub_004C28B0_switch_0Enum	disabled	apply=0
@@ -214,23 +133,21 @@ function_address	enum_name	status	detail
 004C7CC0	Global_sub_004C7CC0_switch_0Enum	disabled	apply=0
 004C7CC0	Global_sub_004C7CC0_switch_1Enum	disabled	apply=0
 004C84C0	Global_sub_004C84C0_switch_0Enum	disabled	apply=0
-004C94B0	TLOBaseTy_procResult_switch_0Enum	disabled	apply=0
-004CABB0	TLOBaseTy_RotateSpr_switch_0Enum	disabled	apply=0
+004C94B0	TLOBaseTy_field_0361State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0361State; field already uses enum
 004CAFC0	Global_sub_004CAFC0_switch_1Enum	disabled	apply=0
 004CAFC0	Global_sub_004CAFC0_switch_2Enum	disabled	apply=0
 004CAFC0	Global_sub_004CAFC0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CAFC0_param_1Enum; parameter already uses enum
-004CBC10	TLOBaseTy_AddSprInit_switch_0Enum	disabled	apply=0
 004CBE10	Global_sub_004CBE10_switch_0Enum	disabled	apply=0
 004CBFB0	Global_sub_004CBFB0_switch_0Enum	disabled	apply=0
 004CC040	Global_sub_004CC040_switch_0Enum	disabled	apply=0
 004CC130	Global_sub_004CC130_switch_0Enum	disabled	apply=0
 004CE9E0	Global_sub_004CE9E0_switch_0Enum	disabled	apply=0
 004CEB00	Global_sub_004CEB00_switch_0Enum	disabled	apply=0
-004CF640	Global_sub_004CF640_switch_0Enum	disabled	apply=0
+004CF640	Global_sub_004CF640_local_8Enum	disabled	apply=0
 004CFA00	Global_sub_004CFA00_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CFA00_param_1Enum; parameter already uses enum
 004CFBE0	Global_sub_004CFBE0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CFBE0_param_1Enum; parameter already uses enum
-004D0310	Global_sub_004D0310_switch_0Enum	disabled	apply=0
-004D0670	Global_sub_004D0670_switch_0Enum	disabled	apply=0
+004D0310	Global_sub_004D0310_uVar3Enum	disabled	apply=0
+004D0670	Global_sub_004D0670_uVar3Enum	disabled	apply=0
 004D32C0	Global_sub_004D32C0_switch_0Enum	disabled	apply=0
 004D8DB0	Global_sub_004D8DB0_switch_0Enum	disabled	apply=0
 004D9000	Global_sub_004D9000_switch_0Enum	disabled	apply=0
@@ -246,7 +163,7 @@ function_address	enum_name	status	detail
 004DEEB0	Global_sub_004DEEB0_switch_0Enum	disabled	apply=0
 004E0040	Global_sub_004E0040_switch_0Enum	disabled	apply=0
 004E0250	Global_sub_004E0250_switch_0Enum	disabled	apply=0
-004E04A0	Global_sub_004E04A0_switch_0Enum	disabled	apply=0
+004E04A0	Global_sub_004E04A0_iVar1Enum	disabled	apply=0
 004E0830	Global_sub_004E0830_switch_0Enum	disabled	apply=0
 004E0830	Global_sub_004E0830_switch_1Enum	disabled	apply=0
 004E0830	Global_sub_004E0830_switch_2Enum	disabled	apply=0
@@ -259,8 +176,8 @@ function_address	enum_name	status	detail
 004E9CE0	TLOBaseTy_teleNone_switch_0Enum	disabled	apply=0
 004EAA20	Global_sub_004EAA20_switch_0Enum	disabled	apply=0
 004EAF90	Global_sub_004EAF90_switch_0Enum	disabled	apply=0
-004EC0F0	Global_sub_004EC0F0_switch_0Enum	disabled	apply=0
-004EC2A0	Global_sub_004EC2A0_switch_0Enum	disabled	apply=0
+004EC0F0	Global_sub_004EC0F0_uVar3Enum	disabled	apply=0
+004EC2A0	Global_sub_004EC2A0_uVar2Enum	disabled	apply=0
 004EC700	Global_sub_004EC700_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004EC700_param_1Enum; parameter already uses enum
 004EC900	Global_sub_004EC900_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004EC900_param_1Enum; parameter already uses enum
 004ECEA0	Global_sub_004ECEA0_switch_0Enum	disabled	apply=0
@@ -268,85 +185,59 @@ function_address	enum_name	status	detail
 004ED4B0	Global_sub_004ED4B0_switch_0Enum	disabled	apply=0
 004ED630	BehPanelTy_InitBehPanel_switch_0Enum	disabled	apply=0
 004ED630	BehPanelTy_InitBehPanel_switch_1Enum	disabled	apply=0
-004EE4D0	BehPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-004EEA40	BldBoatPanelTy_InitBldBoatPanel_switch_0Enum	disabled	apply=0
+004EE4D0	BehPanelTy_GetMessage_uVar6Enum	disabled	apply=0
+004EEA40	BldBoatPanelTy_InitBldBoatPanel_uVar9Enum	disabled	apply=0
 004EF5F0	Global_sub_004EF5F0_switch_0Enum	disabled	apply=0
 004EF5F0	Global_sub_004EF5F0_switch_1Enum	disabled	apply=0
-004EF6D0	BldBoatPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-004F05C0	BldObjPanelTy_InitBldObjPanel_switch_0Enum	disabled	apply=0
-004F1080	BldObjPanelTy_GetMessage_switch_0Enum	disabled	apply=0
+004EF6D0	BldBoatPanelTy_GetMessage_uVar1Enum	disabled	apply=0
+004F05C0	BldObjPanelTy_InitBldObjPanel_uVar8Enum	disabled	apply=0
+004F1080	BldObjPanelTy_GetMessage_uVar1Enum	disabled	apply=0
 004F19D0	Global_sub_004F19D0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum; parameter already uses enum
 004F2560	CPanelTy_PaintWeap_switch_0Enum	disabled	apply=0
 004F2560	CPanelTy_PaintWeap_switch_1Enum	disabled	apply=0
 004F2560	CPanelTy_PaintWeap_switch_2Enum	disabled	apply=0
-004F2E40	CPanelTy_SetButStruct_switch_0Enum	disabled	apply=0
-004F3130	CPanelTy_CreateBut_switch_0Enum	disabled	apply=0
-004F3540	CPanelTy_PaintBut_switch_0Enum	disabled	apply=0
-004F37C0	CPanelTy_PaintBBut_switch_0Enum	disabled	apply=0
-004F3A30	CPanelTy_PaintTxtBut_switch_0Enum_004F3A30	disabled	apply=0
-004F3CF0	CPanelTy_PaintTxtBut_switch_0Enum_004F3CF0	disabled	apply=0
-004F3FE0	CPanelTy_PaintLBut_switch_0Enum	disabled	apply=0
-004F42A0	CPanelTy_PaintTab_switch_0Enum	disabled	apply=0
+004F2E40	CPanelTy_SetButStruct_uVar2Enum	disabled	apply=0
+004F3130	CPanelTy_CreateBut_uVar2Enum	disabled	apply=0
+004F3540	CPanelTy_PaintBut_uVar2Enum	disabled	apply=0
+004F37C0	CPanelTy_PaintBBut_uVar2Enum	disabled	apply=0
+004F3A30	CPanelTy_PaintTxtBut_uVar2Enum_004F3A30	disabled	apply=0
+004F3CF0	CPanelTy_PaintTxtBut_uVar2Enum_004F3CF0	disabled	apply=0
+004F3FE0	CPanelTy_PaintLBut_uVar2Enum	disabled	apply=0
+004F42A0	CPanelTy_PaintTab_uVar2Enum	disabled	apply=0
+004F80A0	CPanelTy_field_0260State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CPanelTy_field_0260State; field already uses enum
 004F80A0	CPanelTy_PaintTV_switch_0Enum	disabled	apply=0
-004F80A0	CPanelTy_PaintTV_switch_1Enum	disabled	apply=0
 004F96A0	CPanelTy_PlayBrief_switch_0Enum	disabled	apply=0
-004F9ED0	CPanelTy_SwitchCPanel_switch_0Enum	disabled	apply=0
+004F9ED0	CPanelTy_field_023FState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState; field already uses enum
 004FA870	Global_sub_004FA870_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum; parameter already uses enum
 004FAB10	Global_sub_004FAB10_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004FAB10_param_1Enum; parameter already uses enum
-004FB060	CPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-004FB060	CPanelTy_GetMessage_switch_1Enum	disabled	apply=0
-004FB060	CPanelTy_GetMessage_switch_2Enum	disabled	apply=0
-004FB060	CPanelTy_GetMessage_switch_3Enum	disabled	apply=0
-004FB060	CPanelTy_GetMessage_switch_4Enum	disabled	apply=0
-004FB060	CPanelTy_GetMessage_switch_5Enum	disabled	apply=0
-004FB060	CPanelTy_GetMessage_switch_6Enum	disabled	apply=0
-00500BD0	CPanelTy_PaintNewDeep_switch_0Enum	disabled	apply=0
-00501590	CPanelTy_PaintCtrlBoat_switch_0Enum	disabled	apply=0
-00501590	CPanelTy_PaintCtrlBoat_switch_1Enum	disabled	apply=0
+004FB060	CPanelTy_GetMessage_iVar5Enum	disabled	apply=0
+004FB060	CPanelTy_GetMessage_local_18Enum	disabled	apply=0
+004FB060	CPanelTy_GetMessage_uVar7Enum	disabled	apply=0
+00500BD0	CPanelTy_PaintNewDeep_bVar10Enum	disabled	apply=0
+00501590	CPanelTy_field_0B99State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State; field already uses enum
+00501590	CPanelTy_field_0B9EState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState; field already uses enum
 00501A10	Global_sub_00501A10_switch_0Enum	disabled	apply=0
 00501A10	Global_sub_00501A10_switch_1Enum	disabled	apply=0
-00501FF0	CPanelTy_Update2PanelWB_switch_0Enum	disabled	apply=0
-00502990	CPanelTy_PaintCtrlBoatSI_switch_0Enum	disabled	apply=0
-00502990	CPanelTy_PaintCtrlBoatSI_switch_1Enum	disabled	apply=0
-00502FC0	CPanelTy_Update2PanelSI_switch_0Enum	disabled	apply=0
-00503450	CPanelTy_SetControlBoatSI_switch_0Enum	disabled	apply=0
-00503450	CPanelTy_SetControlBoatSI_switch_1Enum	disabled	apply=0
-00503BB0	CPanelTy_SetCmdBoat_switch_0Enum	disabled	apply=0
+00503450	CPanelTy_SetControlBoatSI_local_8Enum	disabled	apply=0
+00503450	CPanelTy_SetControlBoatSI_uVar13Enum	disabled	apply=0
+00503BB0	CPanelTy_SetCmdBoat_bVar1Enum	disabled	apply=0
 005050B0	Global_sub_005050B0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005050B0_param_1Enum; parameter already uses enum
-00505230	CPanelTy_PaintMunition_switch_0Enum	disabled	apply=0
-00505230	CPanelTy_PaintMunition_switch_1Enum	disabled	apply=0
-00505230	CPanelTy_PaintMunition_switch_2Enum	disabled	apply=0
-005061C0	CPanelTy_PaintCtrlObj_switch_0Enum	disabled	apply=0
-005061C0	CPanelTy_PaintCtrlObj_switch_1Enum	disabled	apply=0
-005061C0	CPanelTy_PaintCtrlObj_switch_2Enum	disabled	apply=0
-005061C0	CPanelTy_PaintCtrlObj_switch_3Enum	disabled	apply=0
-005061C0	CPanelTy_PaintCtrlObj_switch_4Enum	disabled	apply=0
-00507F60	CPanelTy_Update4PanelWB_switch_0Enum	disabled	apply=0
-00507F60	CPanelTy_Update4PanelWB_switch_1Enum	disabled	apply=0
-005097E0	CPanelTy_SetControlObj_switch_1Enum	disabled	apply=0
-0050A340	CPanelTy_PaintCtrlObjSI_switch_0Enum	disabled	apply=0
-0050A340	CPanelTy_PaintCtrlObjSI_switch_1Enum	disabled	apply=0
-0050A340	CPanelTy_PaintCtrlObjSI_switch_2Enum	disabled	apply=0
-0050C620	CPanelTy_Update4PanelSI_switch_0Enum	disabled	apply=0
-0050C620	CPanelTy_Update4PanelSI_switch_1Enum	disabled	apply=0
-0050E7D0	CPanelTy_SetControlObjSI_switch_0Enum	disabled	apply=0
-0050F430	CPanelTy_SetCmdObj_switch_0Enum	disabled	apply=0
+00505230	CPanelTy_PaintMunition_local_28Enum	disabled	apply=0
+005061C0	CPanelTy_field_0BF5State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State; field already uses enum
+005061C0	CPanelTy_field_0BFAState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BFAState; field already uses enum
+0050A340	CPanelTy_PaintCtrlObjSI_CVar3Enum	disabled	apply=0
+0050F430	CPanelTy_SetCmdObj_bVar1Enum	disabled	apply=0
 005105E0	FrmPanelTy_PaintBut_switch_0Enum	disabled	apply=0
-005107C0	FrmPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-005107C0	FrmPanelTy_GetMessage_switch_1Enum	disabled	apply=0
-005107C0	FrmPanelTy_GetMessage_switch_2Enum	disabled	apply=0
-005107C0	FrmPanelTy_GetMessage_switch_3Enum	disabled	apply=0
+005107C0	FrmPanelTy_GetMessage_uVar1Enum	disabled	apply=0
 005121F0	Global_sub_005121F0_switch_0Enum	disabled	apply=0
 00514330	HelpPanelTy_BwdBut_switch_0Enum	disabled	apply=0
 005145E0	HelpPanelTy_FwdBut_switch_0Enum	disabled	apply=0
-00514BC0	Global_sub_00514BC0_switch_0Enum	disabled	apply=0
+00514BC0	Global_sub_00514BC0_cVar1Enum	disabled	apply=0
 0051B5A0	HelpPanelTy_ArmProc_switch_0Enum	disabled	apply=0
-0051DDD0	HelpPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-0051DDD0	HelpPanelTy_GetMessage_switch_1Enum	disabled	apply=0
-0051DDD0	HelpPanelTy_GetMessage_switch_2Enum	disabled	apply=0
-0051DDD0	HelpPanelTy_GetMessage_switch_3Enum	disabled	apply=0
+0051DDD0	HelpPanelTy_field_01A1State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/HelpPanelTy_field_01A1State; field already uses enum
+0051DDD0	HelpPanelTy_GetMessage_uVar15Enum	disabled	apply=0
 0051FBA0	HelpStringTy_GetMessage_switch_0Enum	disabled	apply=0
-005206F0	InfocPanelTy_Update_switch_0Enum	disabled	apply=0
+005206F0	InfocPanelTy_Update_uVar14Enum	disabled	apply=0
 00523410	Global_sub_00523410_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00523410_param_1Enum; parameter already uses enum
 00524FE0	Global_sub_00524FE0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00524FE0_param_1Enum; parameter already uses enum
 005252C0	Global_sub_005252C0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005252C0_param_1Enum; parameter already uses enum
@@ -393,36 +284,28 @@ function_address	enum_name	status	detail
 0052B760	Global_sub_0052B760_switch_1Enum	disabled	apply=0
 0052BF00	MoneyTy_GetMessage_switch_0Enum	disabled	apply=0
 0052DD20	PopUpTy_GetMessage_switch_0Enum	disabled	apply=0
-0052F2B0	OptPanelTy_SwitchOptPanel_switch_0Enum	disabled	apply=0
-0052F900	OptPanelTy_ShiftControls_switch_0Enum	disabled	apply=0
-0052FB00	OptPanelTy_SetOptControls_switch_0Enum	disabled	apply=0
-0052FB00	OptPanelTy_SetOptControls_switch_1Enum	disabled	apply=0
+0052F2B0	OptPanelTy_field_0172State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/OptPanelTy_field_0172State; field already uses enum
+0052F900	OptPanelTy_field_01A4State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01A4State; field already uses enum
 005325B0	OptPanelTy_PrepAsses_switch_0Enum	disabled	apply=0
 00533D10	OptPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-00533D10	OptPanelTy_GetMessage_switch_1Enum	disabled	apply=0
-005395B0	PausePanelTy_SwitchPausePanel_switch_0Enum	disabled	apply=0
-0053AFB0	PlayPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-0053CA80	ResearchPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-00542F40	InterSystemC_GetMessage_switch_0Enum	disabled	apply=0
+00533D10	OptPanelTy_GetMessage_uVar9Enum	disabled	apply=0
+005395B0	PausePanelTy_field_0172State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/PausePanelTy_field_0172State; field already uses enum
+0053AFB0	PlayPanelTy_GetMessage_uVar6Enum	disabled	apply=0
+0053CA80	ResearchPanelTy_GetMessage_uVar1Enum	disabled	apply=0
+00542F40	InterSystemC_GetMessage_uVar3Enum	disabled	apply=0
+005449B0	CursorClassTy_field_00DEState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_field_00DEState; field already uses enum
 005449B0	CursorClassTy_GetMessage_switch_0Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_1Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_10Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_2Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_3Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_4Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_5Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_6Enum	disabled	apply=0
 005449B0	CursorClassTy_GetMessage_switch_7Enum	disabled	apply=0
 005449B0	CursorClassTy_GetMessage_switch_8Enum	disabled	apply=0
-005449B0	CursorClassTy_GetMessage_switch_9Enum	disabled	apply=0
+005449B0	CursorClassTy_GetMessage_uVar19Enum	disabled	apply=0
+005449B0	CursorClassTy_GetMessage_uVar9Enum	disabled	apply=0
 00548BC0	Global_sub_00548BC0_switch_0Enum	disabled	apply=0
-00548C40	CursorClassTy_TakeCmdToRun_switch_0Enum	disabled	apply=0
+00548C40	CursorClassTy_TakeCmdToRun_sVar1Enum	disabled	apply=0
 0054BF40	CursorClassTy_SetGCType_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum; parameter already uses enum
 0054CA10	Global_sub_0054CA10_switch_0Enum	disabled	apply=0
-0054D640	STPlaySystemC_Life_switch_0Enum	disabled	apply=0
+0054D640	STPlaySystemC_Life_local_14Enum	disabled	apply=0
 0054D640	STPlaySystemC_Life_switch_1Enum	disabled	apply=0
-0054F1D0	STPlaySystemC_PrepareMail_switch_0Enum	disabled	apply=0
-0054F1D0	STPlaySystemC_PrepareMail_switch_1Enum	disabled	apply=0
+0054F1D0	STPlaySystemC_PrepareMail_local_14Enum	disabled	apply=0
 005532F0	Global_sub_005532F0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005532F0_param_1Enum; parameter already uses enum
 00553480	Global_sub_00553480_switch_0Enum	disabled	apply=0
 00555040	cLoadingTy_SetState_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/cLoadingTy_SetState_param_1Enum; parameter already uses enum
@@ -436,155 +319,113 @@ function_address	enum_name	status	detail
 00568010	Global_sub_00568010_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum; parameter already uses enum
 00568940	Global_sub_00568940_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum; parameter already uses enum
 00568DD0	SoundClassTy_PlaySound_modeEnum	disabled	apply=0
-0056ADC0	STAppC_InitApp_switch_0Enum	disabled	apply=0
+0056ADC0	STAppC_InitApp_iVar8Enum	disabled	apply=0
 0056ADC0	STAppC_InitApp_switch_1Enum	disabled	apply=0
 0056CBD0	STAppC_MainWindowProc_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum; parameter already uses enum
 0056F040	Global_sub_0056F040_switch_0Enum	disabled	apply=0
-0056FA60	STAppC_GetMessage_switch_0Enum	disabled	apply=0
+0056FA60	STAppC_GetMessage_uVar22Enum	disabled	apply=0
 00571400	STAppC_ReadCmdPlay_switch_0Enum	disabled	apply=0
 005776D0	GameSystemC_GetMessage_switch_0Enum	disabled	apply=0
 00578630	STCrabC_GetMessage_switch_0Enum	disabled	apply=0
 005797B0	Global_sub_005797B0_switch_0Enum	disabled	apply=0
 0057A140	Global_sub_0057A140_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0057A140_param_2Enum; parameter already uses enum
 0057BD70	Global_sub_0057BD70_switch_0Enum	disabled	apply=0
-0057BF60	STFishC_GetMessage_switch_0Enum	disabled	apply=0
 0057BF60	STFishC_GetMessage_switch_1Enum	disabled	apply=0
+0057BF60	STFishC_GetMessage_uVar9Enum	disabled	apply=0
 0057CBF0	Global_sub_0057CBF0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0057CBF0_param_1Enum; parameter already uses enum
 0057CC90	Global_sub_0057CC90_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0057CC90_param_1Enum; parameter already uses enum
 0057CD70	STFishC_field_0267State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STFishC_field_0267State; field already uses enum
 0057D700	STFishC_sub_0057D700_switch_1Enum	disabled	apply=0
-0057F6E0	STDcResourcC_CreateRes_switch_0Enum	disabled	apply=0
-00580780	Global_sub_00580780_switch_0Enum	disabled	apply=0
+0057F6E0	STDcResourcC_field_0255State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STDcResourcC_field_0255State; field already uses enum
+00580780	Global_sub_00580780_uVar1Enum	disabled	apply=0
 00580910	Global_sub_00580910_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00580910_param_2Enum; parameter already uses enum
 005825C0	STJellyGunC_field_0235State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State; field already uses enum
-00586AF0	Global_sub_00586AF0_switch_0Enum	disabled	apply=0
-00586AF0	Global_sub_00586AF0_switch_1Enum	disabled	apply=0
+00586AF0	Global_sub_00586AF0_iVar7Enum	disabled	apply=0
+00586AF0	Global_sub_00586AF0_local_38Enum	disabled	apply=0
 00589C10	STOctopusC_GetMessage_switch_0Enum	disabled	apply=0
-0058B190	Global_sub_0058B190_switch_0Enum	disabled	apply=0
+0058B190	Global_sub_0058B190_iVar9Enum	disabled	apply=0
 0058BD90	Global_sub_0058BD90_switch_0Enum	disabled	apply=0
-0058D7C0	STSharkC_GetMessage_switch_0Enum	disabled	apply=0
+0058D7C0	STSharkC_GetMessage_uVar9Enum	disabled	apply=0
 0058E570	STSharkC_field_0257State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State; field already uses enum
-0058F1E0	Global_sub_0058F1E0_switch_0Enum	disabled	apply=0
+0058F1E0	Global_sub_0058F1E0_iVar2Enum	disabled	apply=0
 0058F680	Global_sub_0058F680_switch_0Enum	disabled	apply=0
 005908B0	MAdvTy_GetMessage_switch_0Enum	disabled	apply=0
-00590B40	CampaignTy_InitCampaign_switch_0Enum	disabled	apply=0
-00590B40	CampaignTy_InitCampaign_switch_1Enum	disabled	apply=0
-00590B40	CampaignTy_InitCampaign_switch_2Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_0Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_1Enum	disabled	apply=0
+00590B40	CampaignTy_InitCampaign_iVar2Enum	disabled	apply=0
+005926E0	CampaignTy_field_1BE8State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CampaignTy_field_1BE8State; field already uses enum
+005926E0	CampaignTy_AnimationCampaign_CVar5Enum	disabled	apply=0
 005926E0	CampaignTy_AnimationCampaign_switch_10Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_2Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_3Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_4Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_5Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_6Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_7Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_8Enum	disabled	apply=0
-005926E0	CampaignTy_AnimationCampaign_switch_9Enum	disabled	apply=0
-00593040	CampaignTy_GetMessage_switch_0Enum	disabled	apply=0
-00594440	ComboTy_GetMessage_switch_0Enum	disabled	apply=0
-00594440	ComboTy_GetMessage_switch_1Enum	disabled	apply=0
-00596CC0	FSGSTy_PaintFSGS_switch_0Enum	disabled	apply=0
-00597120	FSGSTy_NoneFSGS_switch_0Enum	disabled	apply=0
-00597E70	FSGSTy_SetState_switch_0Enum	disabled	apply=0
+00593040	CampaignTy_GetMessage_uVar14Enum	disabled	apply=0
+00594440	ComboTy_GetMessage_uVar8Enum	disabled	apply=0
+00596CC0	FSGSTy_field_1A5FState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState; field already uses enum
+00597120	FSGSTy_field_0065State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/FSGSTy_field_0065State; field already uses enum
 0059B820	Global_sub_0059B820_switch_0Enum	disabled	apply=0
 0059BE50	Global_sub_0059BE50_switch_0Enum	disabled	apply=0
-0059C520	FSGSTy_CreateCtrls_switch_0Enum	disabled	apply=0
-0059F670	FSGSTy_DeleteCtrls_switch_0Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_0Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_1Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_2Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_3Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_4Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_5Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_6Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_switch_7Enum	disabled	apply=0
-005AACB0	HoloTy_Init_switch_1Enum	disabled	apply=0
+005A4350	FSGSTy_GetMessage_uVar26Enum	disabled	apply=0
+005AACB0	HoloTy_field_0001State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/HoloTy_field_0001State; field already uses enum
 005AACB0	HoloTy_Init_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/HoloTy_Init_param_1Enum; parameter already uses enum
-005AB300	ChooseMapTy_InitChooseMap_switch_0Enum	disabled	apply=0
-005AB300	ChooseMapTy_InitChooseMap_switch_1Enum	disabled	apply=0
-005AD050	ChooseMapTy_PaintChooseMap_switch_0Enum	disabled	apply=0
-005AD390	ChooseMapTy_NoneChooseMap_switch_0Enum	disabled	apply=0
-005AEAB0	ChooseMapTy_CreateCtrls_switch_0Enum	disabled	apply=0
-005AFD00	ChooseMapTy_field_1A5FState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState; field already uses enum
-005AFD00	ChooseMapTy_PrepFiles_switch_1Enum	disabled	apply=0
-005B0BA0	ChooseMapTy_GetMessage_switch_0Enum	disabled	apply=0
-005B0BA0	ChooseMapTy_GetMessage_switch_1Enum	disabled	apply=0
-005B0BA0	ChooseMapTy_GetMessage_switch_2Enum	disabled	apply=0
-005B0BA0	ChooseMapTy_GetMessage_switch_3Enum	disabled	apply=0
-005B0BA0	ChooseMapTy_GetMessage_switch_4Enum	disabled	apply=0
-005B0BA0	ChooseMapTy_GetMessage_switch_5Enum	disabled	apply=0
-005B2970	MainMenuTy_InitMainMenu_switch_0Enum	disabled	apply=0
+005AB300	ChooseMapTy_field_1A5FState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState; field already uses enum
+005B0BA0	ChooseMapTy_GetMessage_uVar15Enum	disabled	apply=0
+005B2970	MainMenuTy_InitMainMenu_iVar2Enum	disabled	apply=0
 005B48E0	MainMenuTy_AnimationMainMenu_switch_0Enum	disabled	apply=0
 005B4BB0	MainMenuTy_GetMessage_switch_0Enum	disabled	apply=0
-005B4BB0	MainMenuTy_GetMessage_switch_1Enum	disabled	apply=0
+005B4BB0	MainMenuTy_GetMessage_uVar4Enum	disabled	apply=0
 005B5690	MMObjTy_PaintSprBut_switch_0Enum	disabled	apply=0
 005B5690	MMObjTy_PaintSprBut_switch_1Enum	disabled	apply=0
 005B5690	MMObjTy_PaintSprBut_switch_2Enum	disabled	apply=0
 005B6560	MMMObjTy_PaintSlBut_switch_0Enum	disabled	apply=0
-005B9330	MMsgTy_GetMessage_switch_0Enum	disabled	apply=0
 005B9330	MMsgTy_GetMessage_switch_1Enum	disabled	apply=0
-005BAE00	PrividerTy_NonePrivider_switch_0Enum	disabled	apply=0
-005BC5E0	PrividerTy_GetMessage_switch_0Enum	disabled	apply=0
-005BC5E0	PrividerTy_GetMessage_switch_1Enum	disabled	apply=0
+005B9330	MMsgTy_GetMessage_uVar7Enum	disabled	apply=0
+005BAE00	PrividerTy_field_0065State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/PrividerTy_field_0065State; field already uses enum
+005BC5E0	PrividerTy_GetMessage_uVar14Enum	disabled	apply=0
 005C1610	MReportTy_PaintTab_switch_0Enum	disabled	apply=0
-005C1A90	MReportTy_GetMessage_switch_0Enum	disabled	apply=0
-005C1A90	MReportTy_GetMessage_switch_1Enum	disabled	apply=0
+005C1A90	MReportTy_GetMessage_uVar12Enum	disabled	apply=0
 005C29B0	Global_sub_005C29B0_switch_0Enum	disabled	apply=0
-005C6030	SettMapTy_CreateCtrls_switch_0Enum	disabled	apply=0
-005C8A40	SettMapTy_GetMessage_switch_0Enum	disabled	apply=0
+005C6030	SettMapTy_CreateCtrls_local_14Enum	disabled	apply=0
 005C8A40	SettMapTy_GetMessage_switch_2Enum	disabled	apply=0
-005C8A40	SettMapTy_GetMessage_switch_3Enum	disabled	apply=0
-005C8A40	SettMapTy_GetMessage_switch_4Enum	disabled	apply=0
-005C8A40	SettMapTy_GetMessage_switch_5Enum	disabled	apply=0
-005C8A40	SettMapTy_GetMessage_switch_6Enum	disabled	apply=0
-005CCE10	SettMapMTy_SetListCtrls_switch_0Enum	disabled	apply=0
-005CD430	SettMapMTy_PrepPlList_switch_0Enum	disabled	apply=0
-005CE0E0	SettMapMTy_NoneSettMap_switch_0Enum	disabled	apply=0
-005CE0E0	SettMapMTy_NoneSettMap_switch_1Enum	disabled	apply=0
-005D0BB0	SettMapMTy_ChangePlayerTeam_switch_0Enum	disabled	apply=0
-005D1400	SettMapMTy_GetMessage_switch_0Enum	disabled	apply=0
-005D1400	SettMapMTy_GetMessage_switch_1Enum	disabled	apply=0
+005C8A40	SettMapTy_GetMessage_uVar15Enum	disabled	apply=0
+005CCE10	SettMapMTy_SetListCtrls_local_18Enum	disabled	apply=0
+005CD430	SettMapMTy_field_1E26State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SettMapMTy_field_1E26State; field already uses enum
+005CE0E0	SettMapMTy_NoneSettMap_local_28Enum	disabled	apply=0
+005D0BB0	SettMapMTy_ChangePlayerTeam_uVar7Enum	disabled	apply=0
+005D1400	SettMapMTy_GetMessage_local_30Enum	disabled	apply=0
 005D1400	SettMapMTy_GetMessage_switch_2Enum	disabled	apply=0
-005D1400	SettMapMTy_GetMessage_switch_3Enum	disabled	apply=0
-005D4E90	SettMapSTy_SetListCtrls_switch_0Enum	disabled	apply=0
+005D1400	SettMapMTy_GetMessage_uVar19Enum	disabled	apply=0
+005D4E90	SettMapSTy_SetListCtrls_iVar9Enum	disabled	apply=0
+005D5560	SettMapSTy_GetMessage_local_2cEnum	disabled	apply=0
 005D5560	SettMapSTy_GetMessage_switch_0Enum	disabled	apply=0
-005D5560	SettMapSTy_GetMessage_switch_1Enum	disabled	apply=0
-005DB4F0	StartSystemTy_LoadGraph_switch_0Enum	disabled	apply=0
-005DCE90	StartSystemTy_GetMessage_switch_0Enum	disabled	apply=0
+005DB4F0	StartSystemTy_LoadGraph_iVar3Enum	disabled	apply=0
+005DCE90	StartSystemTy_GetMessage_uVar1Enum	disabled	apply=0
 005E0AC0	MTaskTy_NoneMTask_switch_0Enum	disabled	apply=0
 005E1330	MTaskTy_PlayScript_switch_0Enum	disabled	apply=0
-005E4570	MTaskTy_GetMessage_switch_0Enum	disabled	apply=0
-005E4570	MTaskTy_GetMessage_switch_1Enum	disabled	apply=0
-005E4570	MTaskTy_GetMessage_switch_2Enum	disabled	apply=0
+005E4570	MTaskTy_GetMessage_uVar14Enum	disabled	apply=0
 005E5FB0	MTestTy_GetMessage_switch_0Enum	disabled	apply=0
-005E84D0	WaitTy_NoneWait_switch_0Enum	disabled	apply=0
-005EAF10	STArtiafactC_GetMessage_switch_0Enum	disabled	apply=0
+005E84D0	WaitTy_NoneWait_local_2cEnum	disabled	apply=0
+005EAF10	STArtiafactC_GetMessage_uVar8Enum	disabled	apply=0
 005EE6E0	Global_sub_005EE6E0_switch_0Enum	disabled	apply=0
 005F0380	Global_sub_005F0380_switch_0Enum	disabled	apply=0
 005F0620	Global_sub_005F0620_switch_0Enum	disabled	apply=0
 005F06E0	Global_sub_005F06E0_switch_0Enum	disabled	apply=0
-005F27C0	STBHEShellC_GetMessage_switch_0Enum	disabled	apply=0
-005F5F20	STColl3C_GetMessage_switch_0Enum	disabled	apply=0
+005F27C0	STBHEShellC_field_0104State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBHEShellC_field_0104State; field already uses enum
+005F5F20	STColl3C_GetMessage_uVar1Enum	disabled	apply=0
 005F6F60	Global_sub_005F6F60_switch_0Enum	disabled	apply=0
-005F8D10	Global_sub_005F8D10_switch_0Enum	disabled	apply=0
-005F95B0	Global_sub_005F95B0_switch_0Enum	disabled	apply=0
+005F8D10	Global_sub_005F8D10_uVar1Enum	disabled	apply=0
+005F95B0	Global_sub_005F95B0_local_18Enum	disabled	apply=0
 005FB030	Global_sub_005FB030_switch_0Enum	disabled	apply=0
 005FB170	Global_sub_005FB170_switch_0Enum	disabled	apply=0
-005FB640	STContainerC_GetMessage_switch_0Enum	disabled	apply=0
+005FB640	STContainerC_GetMessage_uVar7Enum	disabled	apply=0
 005FE990	Global_sub_005FE990_switch_0Enum	disabled	apply=0
-005FF430	Global_sub_005FF430_switch_0Enum	disabled	apply=0
+005FF430	Global_sub_005FF430_iVar4Enum	disabled	apply=0
 005FF430	Global_sub_005FF430_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005FF430_param_1Enum; parameter already uses enum
 00600750	Global_sub_00600750_switch_0Enum	disabled	apply=0
 00601DB0	Global_sub_00601DB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00601DB0_param_1Enum; parameter already uses enum
 00603740	STExplosion_GetMessage_switch_0Enum	disabled	apply=0
-00606050	Global_sub_00606050_switch_0Enum	disabled	apply=0
+00606050	Global_sub_00606050_local_74Enum	disabled	apply=0
 00606050	Global_sub_00606050_switch_1Enum	disabled	apply=0
 00606A50	Global_sub_00606A50_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00606A50_param_1Enum; parameter already uses enum
 00606CD0	Global_sub_00606CD0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00606CD0_param_1Enum; parameter already uses enum
 00606FD0	Global_sub_00606FD0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00606FD0_param_1Enum; parameter already uses enum
-00607200	Global_sub_00607200_switch_0Enum	disabled	apply=0
-00607A60	Global_sub_00607A60_switch_0Enum	disabled	apply=0
+00607200	Global_sub_00607200_local_54Enum	disabled	apply=0
+00607A60	Global_sub_00607A60_local_4cEnum	disabled	apply=0
 00607EE0	Global_sub_00607EE0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00607EE0_param_1Enum; parameter already uses enum
 00608E90	Global_sub_00608E90_switch_0Enum	disabled	apply=0
 00608E90	Global_sub_00608E90_switch_1Enum	disabled	apply=0
@@ -610,14 +451,14 @@ function_address	enum_name	status	detail
 00626F10	Global_sub_00626F10_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00626F10_param_1Enum; parameter already uses enum
 00627670	Global_sub_00627670_switch_0Enum	disabled	apply=0
 00627AA0	Global_sub_00627AA0_switch_0Enum	disabled	apply=0
-00627EB0	STParticleC_GetMessage_switch_0Enum	disabled	apply=0
-00629070	STParticleC_InitVisibelFlight_switch_0Enum	disabled	apply=0
+00627EB0	STParticleC_field_00C2State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STParticleC_field_00C2State; field already uses enum
+00629070	STParticleC_InitVisibelFlight_local_24Enum	disabled	apply=0
 00629E60	Global_sub_00629E60_switch_0Enum	disabled	apply=0
 00629F90	Global_sub_00629F90_switch_0Enum	disabled	apply=0
-0062A8B0	Global_sub_0062A8B0_switch_0Enum	disabled	apply=0
+0062A8B0	Global_sub_0062A8B0_uVar1Enum	disabled	apply=0
 0062AF90	Global_sub_0062AF90_switch_0Enum	disabled	apply=0
 0062B300	Global_sub_0062B300_switch_0Enum	disabled	apply=0
-0062D840	Global_sub_0062D840_switch_0Enum	disabled	apply=0
+0062D840	Global_sub_0062D840_iVar3Enum	disabled	apply=0
 0062F3B0	STRubbishC_LoadImagSpr_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum; parameter already uses enum
 00632030	Global_sub_00632030_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00632030_param_1Enum; parameter already uses enum
 006324C0	Global_sub_006324C0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006324C0_param_1Enum; parameter already uses enum
@@ -628,45 +469,28 @@ function_address	enum_name	status	detail
 006389F0	Global_sub_006389F0_switch_0Enum	disabled	apply=0
 00638CA0	Global_sub_00638CA0_switch_0Enum	disabled	apply=0
 00639C90	Global_sub_00639C90_switch_0Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_0Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_1Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_2Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_3Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_4Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_5Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_6Enum	disabled	apply=0
-006406D0	STTorpC_GetMessage_switch_7Enum	disabled	apply=0
-00645880	Global_sub_00645880_switch_0Enum	disabled	apply=0
+006406D0	STSprGameObjC_field_0259State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSprGameObjC_field_0259State; field already uses enum
+006406D0	STTorpC_GetMessage_SVar3Enum	disabled	apply=0
+00645880	Global_sub_00645880_iVar2Enum	disabled	apply=0
 00645D30	Global_sub_00645D30_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00645D30_param_2Enum; parameter already uses enum
-006461E0	STVolcanoC_GetMessage_switch_0Enum	disabled	apply=0
+006461E0	STVolcanoC_field_00A9State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STVolcanoC_field_00A9State; field already uses enum
 00648FE0	Global_CreateAi_switch_0Enum	disabled	apply=0
 00648FE0	Global_CreateAi_switch_1Enum	disabled	apply=0
+0064A970	Global_sub_0064A970_iVar5Enum	disabled	apply=0
 0064A970	Global_sub_0064A970_switch_0Enum	disabled	apply=0
-0064A970	Global_sub_0064A970_switch_1Enum	disabled	apply=0
-0064A970	Global_sub_0064A970_switch_2Enum	disabled	apply=0
-00652810	AiEventClassTy_GetMessage_switch_0Enum	disabled	apply=0
-00652810	AiEventClassTy_GetMessage_switch_1Enum	disabled	apply=0
-00652810	AiEventClassTy_GetMessage_switch_2Enum	disabled	apply=0
-00652810	AiEventClassTy_GetMessage_switch_3Enum	disabled	apply=0
-00652810	AiEventClassTy_GetMessage_switch_4Enum	disabled	apply=0
-00652810	AiEventClassTy_GetMessage_switch_5Enum	disabled	apply=0
-0065BD70	AiEventClassTy_sub_0065BD70_switch_0Enum	disabled	apply=0
-0065BD70	AiEventClassTy_sub_0065BD70_switch_1Enum	disabled	apply=0
-0065BD70	AiEventClassTy_sub_0065BD70_switch_2Enum	disabled	apply=0
-0065E450	Global_sub_0065E450_switch_1Enum	disabled	apply=0
+00652810	AiEventClassTy_GetMessage_iVar6Enum	disabled	apply=0
+00652810	AiEventClassTy_GetMessage_local_15cEnum	disabled	apply=0
+0065BD70	AiEventClassTy_sub_0065BD70_SVar2Enum	disabled	apply=0
+0065E450	Global_sub_0065E450_GVar2Enum	disabled	apply=0
 0065E450	Global_sub_0065E450_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum; parameter already uses enum
 00660F70	Global_sub_00660F70_switch_0Enum	disabled	apply=0
 00662240	AiFltClassTy_GetAiMess_switch_0Enum	disabled	apply=0
 00664960	Global_sub_00664960_switch_0Enum	disabled	apply=0
-00664960	Global_sub_00664960_switch_1Enum	disabled	apply=0
-00664960	Global_sub_00664960_switch_2Enum	disabled	apply=0
-00664960	Global_sub_00664960_switch_3Enum	disabled	apply=0
+00664960	Global_sub_00664960_uVar10Enum	disabled	apply=0
 006686F0	Global_sub_006686F0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum; parameter already uses enum
 00668AA0	Global_sub_00668AA0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_1Enum; parameter already uses enum
 00668AA0	Global_sub_00668AA0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_2Enum; parameter already uses enum
-0066ACC0	Global_sub_0066ACC0_switch_0Enum	disabled	apply=0
-0066ACC0	Global_sub_0066ACC0_switch_1Enum	disabled	apply=0
-0066ACC0	Global_sub_0066ACC0_switch_2Enum	disabled	apply=0
+0066ACC0	Global_sub_0066ACC0_iVar10Enum	disabled	apply=0
 00671F10	Global_sub_00671F10_switch_0Enum	disabled	apply=0
 00672440	Global_sub_00672440_switch_0Enum	disabled	apply=0
 00673D20	Global_sub_00673D20_DAT_00811954Enum	disabled	apply=0
@@ -676,26 +500,20 @@ function_address	enum_name	status	detail
 00677700	Global_sub_00677700_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00677700_param_2Enum; parameter already uses enum
 006777D0	Global_sub_006777D0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006777D0_param_1Enum; parameter already uses enum
 0067B520	AiPlrClassTy_ExecTech_switch_0Enum	disabled	apply=0
-0067C7E0	AiPlrClassTy_GetMessage_switch_0Enum	disabled	apply=0
-006829B0	Global_sub_006829B0_switch_0Enum	disabled	apply=0
+0067C7E0	AiPlrClassTy_GetMessage_uVar10Enum	disabled	apply=0
+006829B0	Global_sub_006829B0_iVar4Enum	disabled	apply=0
 00682DF0	Global_sub_00682DF0_DAT_007d2d18Enum	disabled	apply=0
+00683C70	Global_sub_00683C70_iVar11Enum	disabled	apply=0
 00683C70	Global_sub_00683C70_switch_0Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_1Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_2Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_3Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_4Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_5Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_6Enum	disabled	apply=0
-00683C70	Global_sub_00683C70_switch_7Enum	disabled	apply=0
 0068CDA0	Global_sub_0068CDA0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0068CDA0_param_2Enum; parameter already uses enum
 0068EC70	AiTactClassTy_ExecClaim_switch_0Enum	disabled	apply=0
 0068FD00	AiTactClassTy_GetAiMess_switch_0Enum	disabled	apply=0
 00692C10	Global_sub_00692C10_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum; parameter already uses enum
 00693560	Global_sub_00693560_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00693560_param_1Enum; parameter already uses enum
 00693710	Global_sub_00693710_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00693710_param_1Enum; parameter already uses enum
-0069ECE0	Global_sub_0069ECE0_switch_0Enum	disabled	apply=0
-006A5210	Global_sub_006A5210_switch_0Enum	disabled	apply=0
-006A6360	Global_sub_006A6360_switch_0Enum	disabled	apply=0
+0069ECE0	Global_sub_0069ECE0_uVar2Enum	disabled	apply=0
+006A5210	Global_sub_006A5210_iVar4Enum	disabled	apply=0
+006A6360	Global_sub_006A6360_uVar2Enum	disabled	apply=0
 006AAEF0	Global_sub_006AAEF0_switch_0Enum	disabled	apply=0
 006AD020	Global_sub_006AD020_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006AD020_param_3Enum; parameter already uses enum
 006BEA40	Global_sub_006BEA40_switch_0Enum	disabled	apply=0
@@ -715,8 +533,8 @@ function_address	enum_name	status	detail
 006DD530	Global_sub_006DD530_switch_0Enum	disabled	apply=0
 006E1C20	Global_sub_006E1C20_switch_0Enum	disabled	apply=0
 006E1EE0	Global_sub_006E1EE0_switch_0Enum	disabled	apply=0
-006E25D0	Global_sub_006E25D0_switch_0Enum	disabled	apply=0
 006E25D0	Global_sub_006E25D0_switch_1Enum	disabled	apply=0
+006E25D0	Global_sub_006E25D0_uVar1Enum	disabled	apply=0
 006E29D0	Global_sub_006E29D0_switch_0Enum	disabled	apply=0
 006E3DD0	AppClassTy_SendMessage_switch_0Enum	disabled	apply=0
 006E5970	SystemClassTy_SendMessage_switch_0Enum	disabled	apply=0
@@ -726,98 +544,40 @@ function_address	enum_name	status	detail
 006E6FB0	Global_sub_006E6FB0_switch_1Enum	disabled	apply=0
 006E6FB0	Global_sub_006E6FB0_switch_2Enum	disabled	apply=0
 006E6FB0	Global_sub_006E6FB0_switch_3Enum	disabled	apply=0
-006F94D0	Global_sub_006F94D0_switch_0Enum	disabled	apply=0
-006F94D0	Global_sub_006F94D0_switch_1Enum	disabled	apply=0
-006F94D0	Global_sub_006F94D0_switch_2Enum	disabled	apply=0
-006F94D0	Global_sub_006F94D0_switch_3Enum	disabled	apply=0
-006F9AD0	Global_sub_006F9AD0_switch_0Enum	disabled	apply=0
-006F9AD0	Global_sub_006F9AD0_switch_1Enum	disabled	apply=0
-006F9AD0	Global_sub_006F9AD0_switch_2Enum	disabled	apply=0
-006F9AD0	Global_sub_006F9AD0_switch_3Enum	disabled	apply=0
-006FADC0	Global_sub_006FADC0_switch_0Enum	disabled	apply=0
-006FADC0	Global_sub_006FADC0_switch_1Enum	disabled	apply=0
-006FADC0	Global_sub_006FADC0_switch_2Enum	disabled	apply=0
-006FADC0	Global_sub_006FADC0_switch_3Enum	disabled	apply=0
-006FB4A0	Global_sub_006FB4A0_switch_0Enum	disabled	apply=0
-006FB4A0	Global_sub_006FB4A0_switch_1Enum	disabled	apply=0
-006FB4A0	Global_sub_006FB4A0_switch_2Enum	disabled	apply=0
-006FB4A0	Global_sub_006FB4A0_switch_3Enum	disabled	apply=0
-006FCB30	Global_sub_006FCB30_switch_0Enum	disabled	apply=0
-006FCB30	Global_sub_006FCB30_switch_1Enum	disabled	apply=0
-006FCB30	Global_sub_006FCB30_switch_2Enum	disabled	apply=0
-006FCB30	Global_sub_006FCB30_switch_3Enum	disabled	apply=0
-006FD430	Global_sub_006FD430_switch_0Enum	disabled	apply=0
-006FD430	Global_sub_006FD430_switch_1Enum	disabled	apply=0
-006FD430	Global_sub_006FD430_switch_2Enum	disabled	apply=0
-006FD430	Global_sub_006FD430_switch_3Enum	disabled	apply=0
-006FED50	Global_sub_006FED50_switch_0Enum	disabled	apply=0
-006FED50	Global_sub_006FED50_switch_1Enum	disabled	apply=0
-006FED50	Global_sub_006FED50_switch_2Enum	disabled	apply=0
-006FED50	Global_sub_006FED50_switch_3Enum	disabled	apply=0
-006FF690	Global_sub_006FF690_switch_0Enum	disabled	apply=0
-006FF690	Global_sub_006FF690_switch_1Enum	disabled	apply=0
-006FF690	Global_sub_006FF690_switch_2Enum	disabled	apply=0
-006FF690	Global_sub_006FF690_switch_3Enum	disabled	apply=0
-00700920	Global_sub_00700920_switch_0Enum	disabled	apply=0
-00700920	Global_sub_00700920_switch_1Enum	disabled	apply=0
-00700920	Global_sub_00700920_switch_2Enum	disabled	apply=0
-00700920	Global_sub_00700920_switch_3Enum	disabled	apply=0
-00701AD0	Global_sub_00701AD0_switch_0Enum	disabled	apply=0
-00701AD0	Global_sub_00701AD0_switch_1Enum	disabled	apply=0
-00701AD0	Global_sub_00701AD0_switch_2Enum	disabled	apply=0
-00701AD0	Global_sub_00701AD0_switch_3Enum	disabled	apply=0
-00702A30	Global_sub_00702A30_switch_0Enum	disabled	apply=0
-00702A30	Global_sub_00702A30_switch_1Enum	disabled	apply=0
-00702A30	Global_sub_00702A30_switch_2Enum	disabled	apply=0
-00702A30	Global_sub_00702A30_switch_3Enum	disabled	apply=0
-00703650	Global_sub_00703650_switch_0Enum	disabled	apply=0
-00703650	Global_sub_00703650_switch_1Enum	disabled	apply=0
-00703650	Global_sub_00703650_switch_2Enum	disabled	apply=0
-00703650	Global_sub_00703650_switch_3Enum	disabled	apply=0
-00704460	Global_sub_00704460_switch_0Enum	disabled	apply=0
-00704460	Global_sub_00704460_switch_1Enum	disabled	apply=0
-00704460	Global_sub_00704460_switch_2Enum	disabled	apply=0
-00704460	Global_sub_00704460_switch_3Enum	disabled	apply=0
-00705180	Global_sub_00705180_switch_0Enum	disabled	apply=0
-00705180	Global_sub_00705180_switch_1Enum	disabled	apply=0
-00705180	Global_sub_00705180_switch_2Enum	disabled	apply=0
-00705180	Global_sub_00705180_switch_3Enum	disabled	apply=0
-007059A0	Global_sub_007059A0_switch_0Enum	disabled	apply=0
-007059A0	Global_sub_007059A0_switch_1Enum	disabled	apply=0
-007059A0	Global_sub_007059A0_switch_2Enum	disabled	apply=0
-007059A0	Global_sub_007059A0_switch_3Enum	disabled	apply=0
-00706340	Global_sub_00706340_switch_0Enum	disabled	apply=0
-00706340	Global_sub_00706340_switch_1Enum	disabled	apply=0
-00706340	Global_sub_00706340_switch_2Enum	disabled	apply=0
-00706340	Global_sub_00706340_switch_3Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_0Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_1Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_2Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_3Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_4Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_5Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_6Enum	disabled	apply=0
-00707810	Global_sub_00707810_switch_7Enum	disabled	apply=0
+006F94D0	Global_sub_006F94D0_iVar5Enum	disabled	apply=0
+006F9AD0	Global_sub_006F9AD0_iVar7Enum	disabled	apply=0
+006FADC0	Global_sub_006FADC0_iVar8Enum	disabled	apply=0
+006FB4A0	Global_sub_006FB4A0_iVar6Enum	disabled	apply=0
+006FCB30	Global_sub_006FCB30_iVar6Enum	disabled	apply=0
+006FD430	Global_sub_006FD430_iVar8Enum	disabled	apply=0
+006FED50	Global_sub_006FED50_iVar7Enum	disabled	apply=0
+006FF690	Global_sub_006FF690_iVar9Enum	disabled	apply=0
+00700920	Global_sub_00700920_iVar8Enum	disabled	apply=0
+00701AD0	Global_sub_00701AD0_iVar9Enum	disabled	apply=0
+00702A30	Global_sub_00702A30_iVar6Enum	disabled	apply=0
+00703650	Global_sub_00703650_iVar4Enum	disabled	apply=0
+00704460	Global_sub_00704460_iVar9Enum	disabled	apply=0
+00705180	Global_sub_00705180_iVar6Enum	disabled	apply=0
+007059A0	Global_sub_007059A0_iVar5Enum	disabled	apply=0
+00706340	Global_sub_00706340_iVar4Enum	disabled	apply=0
+00707810	Global_sub_00707810_iVar6Enum	disabled	apply=0
 00709A10	Global_sub_00709A10_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00709A10_param_2Enum; parameter already uses enum
 00709AF0	Global_mfRLoad_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum; parameter already uses enum
-0070B900	Global_imgGetDibFromFile_switch_0Enum	disabled	apply=0
+0070B900	Global_imgGetDibFromFile_iVar3Enum	disabled	apply=0
 00713480	ccFntTy_CreateTypeSSpr_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/ccFntTy_CreateTypeSSpr_param_4Enum; parameter already uses enum
 007140E0	Global_sub_007140E0_switch_0Enum	disabled	apply=0
 007140E0	Global_sub_007140E0_switch_1Enum	disabled	apply=0
-00715AB0	SpriteClassTy_CloseSprite_switch_0Enum	disabled	apply=0
-00715C60	SpriteClassTy_SetImagesReg_switch_0Enum	disabled	apply=0
+00715AB0	SpriteClassTy_field_004CState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_field_004CState; field already uses enum
 00715C60	SpriteClassTy_SetImagesReg_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesReg_param_2Enum; parameter already uses enum
-00716040	SpriteClassTy_SetImages_switch_0Enum	disabled	apply=0
 00716040	SpriteClassTy_SetImages_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImages_param_2Enum; parameter already uses enum
-00716480	SpriteClassTy_SetImagesPtr_switch_0Enum	disabled	apply=0
 00716480	SpriteClassTy_SetImagesPtr_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesPtr_param_2Enum; parameter already uses enum
 00717970	Global_sub_00717970_switch_0Enum	disabled	apply=0
 00719410	Global_sub_00719410_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00719410_param_2Enum; parameter already uses enum
 0071B760	Global_sub_0071B760_switch_0Enum	disabled	apply=0
 0071CA50	InputClassTy_GetMessage_switch_0Enum	disabled	apply=0
+0071CFD0	ButtonClassTy_field_0020State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/ButtonClassTy_field_0020State; field already uses enum
 0071CFD0	ButtonClassTy_GetMessage_switch_0Enum	disabled	apply=0
 0071CFD0	ButtonClassTy_GetMessage_switch_1Enum	disabled	apply=0
-0071CFD0	ButtonClassTy_GetMessage_switch_2Enum	disabled	apply=0
 0071E0E0	RadioClassTy_GetMessage_switch_0Enum	disabled	apply=0
 0071E8B0	ViewerClassTy_GetMessage_switch_0Enum	disabled	apply=0
 0071F3A0	ListClassTy_GetMessage_switch_0Enum	disabled	apply=0
@@ -830,6 +590,6 @@ function_address	enum_name	status	detail
 00725020	TrackbarClassTy_GetMessage_switch_0Enum	disabled	apply=0
 00725020	TrackbarClassTy_GetMessage_switch_1Enum	disabled	apply=0
 0072B780	ControlClassTy_GetMessage_switch_0Enum	disabled	apply=0
-0074FAA3	Global_sub_0074FAA3_switch_0Enum	disabled	apply=0
+0074FAA3	Global_sub_0074FAA3_iVar3Enum	disabled	apply=0
 007550C0	Global_sub_007550C0_switch_0Enum	disabled	apply=0
 007575B0	Global_sub_007575B0_switch_0Enum	disabled	apply=0

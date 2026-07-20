@@ -1,19 +1,19 @@
 
-void __fastcall FUN_00647370(int param_1)
+void __fastcall FUN_00647370(AnonShape_00647370_C4EFCC30 *param_1)
 
 {
   undefined4 uVar1;
   
-  *(undefined4 *)(param_1 + 0x65) = *(undefined4 *)(param_1 + 0x3c);
-  *(undefined4 *)(param_1 + 0x69) = *(undefined4 *)(param_1 + 0x40);
-  *(undefined4 *)(param_1 + 0x54) = 0;
-  *(undefined4 *)(param_1 + 0x58) = 1;
-  *(undefined4 *)(param_1 + 0x6d) = *(undefined4 *)(param_1 + 0x44);
-  *(undefined4 *)(param_1 + 0x71) = 0;
-  *(undefined4 *)(param_1 + 0x75) = 10;
-  uVar1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-  *(undefined4 *)(param_1 + 0x98) = 0;
-  *(undefined4 *)(param_1 + 0x94) = uVar1;
+  param_1->field_0065 = param_1->field_003C;
+  param_1->field_0069 = param_1->field_0040;
+  param_1->field_0054 = 0;
+  param_1->field_0058 = 1;
+  param_1->field_006D = param_1->field_0044;
+  param_1->field_0071 = 0;
+  param_1->field_0075 = 10;
+  uVar1 = PTR_00802a38->field_00E4;
+  param_1->field_0098 = 0;
+  param_1->field_0094 = uVar1;
   return;
 }
 

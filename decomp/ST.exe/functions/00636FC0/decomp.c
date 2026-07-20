@@ -1,5 +1,5 @@
 
-int __fastcall FUN_00636fc0(int param_1)
+int __fastcall FUN_00636fc0(AnonShape_00636FC0_24F8974B *param_1)
 
 {
   int iVar1;
@@ -12,7 +12,7 @@ int __fastcall FUN_00636fc0(int param_1)
   int local_c;
   int local_8;
   
-  iVar4 = *(int *)(param_1 + 0xc);
+  iVar4 = param_1->field_000C;
   sVar2 = (short)(iVar4 >> 0x1f);
   if (iVar4 < 0) {
     iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar2) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f))
@@ -22,7 +22,7 @@ int __fastcall FUN_00636fc0(int param_1)
     iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
                         (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
   }
-  iVar5 = *(int *)(param_1 + 0x10);
+  iVar5 = param_1->field_0010;
   sVar2 = (short)(iVar5 >> 0x1f);
   if (iVar5 < 0) {
     iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
@@ -32,7 +32,7 @@ int __fastcall FUN_00636fc0(int param_1)
     iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
                         (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
   }
-  iVar1 = *(int *)(param_1 + 0x14);
+  iVar1 = param_1->field_0014;
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     local_c = (short)(((short)(iVar1 / 200) + sVar2) - (short)((longlong)iVar1 * 0x51eb851f >> 0x3f)
@@ -42,8 +42,8 @@ int __fastcall FUN_00636fc0(int param_1)
     local_c = (int)(short)(((short)(iVar1 / 200) + sVar2) -
                           (short)((longlong)iVar1 * 0x51eb851f >> 0x3f));
   }
-  if ((((*(int *)(DAT_00807598 + 0x48) <= iVar4) && (iVar4 <= *(int *)(DAT_00807598 + 0x58))) &&
-      (*(int *)(DAT_00807598 + 0x44) <= iVar5)) && (iVar5 <= *(int *)(DAT_00807598 + 0x54))) {
+  if ((((PTR_00807598->field_0048 <= iVar4) && (iVar4 <= PTR_00807598->field_0058)) &&
+      (PTR_00807598->field_0044 <= iVar5)) && (iVar5 <= PTR_00807598->field_0054)) {
     local_8 = FUN_006ddbd0();
     pVVar3 = g_visibleClass_00802A88;
     if (local_8 == 0) {

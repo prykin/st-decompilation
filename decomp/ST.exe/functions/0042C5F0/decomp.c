@@ -9,15 +9,16 @@ STAllPlayersC::DelObjFromTmps
 
 {
   undefined4 *puVar1;
-  uint *puVar2;
+  AnonShape_006ACC70_C8641025 *pAVar2;
   uint uVar3;
   code *pcVar4;
   char cVar5;
   int *piVar6;
-  undefined4 uVar7;
-  int iVar8;
-  uint uVar9;
-  Global_sub_0043FC50_param_1Enum GVar10;
+  int iVar7;
+  undefined4 uVar8;
+  int iVar9;
+  uint uVar10;
+  Global_sub_0043FC50_param_1Enum GVar11;
   undefined4 local_c;
   undefined4 local_8;
   
@@ -25,47 +26,48 @@ STAllPlayersC::DelObjFromTmps
   cVar5 = (char)param_3;
   if (param_2 < 0x1a5) {
     if (param_2 == 0x1a4) {
-      iVar8 = 0;
+      iVar9 = 0;
+      iVar7 = param_1 * 0xa62 + 0x7f4fd3;
       do {
-        puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
-        if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1a4) &&
-            (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
+        puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
+        if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x1a4) && (puVar1[1] == (int)cVar5)) &&
+           (*(short *)(puVar1 + 2) == (short)param_4)) {
           piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_5);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
-          if (iVar8 == 0) {
+          if (iVar9 == 0) {
             thunk_FUN_0043fc50(CASE_4,0);
-            GVar10 = CASE_5;
+            GVar11 = CASE_5;
           }
           else {
-            GVar10 = CASE_F;
+            GVar11 = CASE_F;
           }
-          thunk_FUN_0043fc50(GVar10,0);
+          thunk_FUN_0043fc50(GVar11,0);
           local_c = 0;
         }
-        iVar8 = iVar8 + 1;
-      } while (iVar8 < 5);
+        iVar9 = iVar9 + 1;
+      } while (iVar9 < 5);
       return local_c;
     }
     if (param_2 == 0x14) {
       param_2 = 0;
+      iVar7 = param_1 * 0xa62 + 0x7f4f83;
       do {
-        puVar1 = (undefined4 *)((int)&DAT_007f4f83 + param_2 * 0x10 + param_1 * 0xa62);
-        if ((*(int *)((int)&DAT_007f4f83 + param_2 * 0x10 + param_1 * 0xa62) == 0x3c) &&
-           (puVar1[1] == (int)cVar5)) {
-          puVar2 = *(uint **)((int)puVar1 + 10);
-          uVar9 = 0;
-          uVar3 = puVar2[3];
+        puVar1 = (undefined4 *)(param_2 * 0x10 + iVar7);
+        if ((*(int *)(param_2 * 0x10 + iVar7) == 0x3c) && (puVar1[1] == (int)cVar5)) {
+          pAVar2 = *(AnonShape_006ACC70_C8641025 **)((int)puVar1 + 10);
+          uVar10 = 0;
+          uVar3 = pAVar2->field_000C;
           if (0 < (int)uVar3) {
             do {
-              FUN_006acc70((int)puVar2,uVar9,&local_8);
+              FUN_006acc70(pAVar2,uVar10,&local_8);
               if ((short)local_8 == (short)param_4) {
                 piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_1);
                 (**(code **)(*piVar6 + 0xe8))(0);
                 local_8 = 0xffff;
-                Library::DKW::TBL::FUN_006ae140(puVar2,uVar9,&local_8);
+                Library::DKW::TBL::FUN_006ae140((uint *)pAVar2,uVar10,&local_8);
                 *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
                 if (*(short *)((int)puVar1 + 0xe) == 0) {
                   FUN_006ae110(*(byte **)((int)puVar1 + 10));
@@ -74,17 +76,17 @@ STAllPlayersC::DelObjFromTmps
                 }
                 if (param_2 == 0) {
                   thunk_FUN_0043fc50(CASE_1,0);
-                  GVar10 = CASE_2;
+                  GVar11 = CASE_2;
                 }
                 else {
-                  GVar10 = CASE_E;
+                  GVar11 = CASE_E;
                 }
-                thunk_FUN_0043fc50(GVar10,0);
+                thunk_FUN_0043fc50(GVar11,0);
                 local_c = 0;
                 break;
               }
-              uVar9 = uVar9 + 1;
-            } while ((int)uVar9 < (int)uVar3);
+              uVar10 = uVar10 + 1;
+            } while ((int)uVar10 < (int)uVar3);
           }
         }
         param_2 = param_2 + 1;
@@ -94,125 +96,129 @@ STAllPlayersC::DelObjFromTmps
       } while( true );
     }
     if (param_2 == 0x5a) {
-      iVar8 = 0;
+      iVar9 = 0;
+      iVar7 = param_1 * 0xa62 + 0x7f4fd3;
       do {
-        puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
-        if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x5a) &&
-            (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
+        puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
+        if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x5a) && (puVar1[1] == (int)cVar5)) &&
+           (*(short *)(puVar1 + 2) == (short)param_4)) {
           piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_4);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
-          if (iVar8 == 0) {
+          if (iVar9 == 0) {
             thunk_FUN_0043fc50(CASE_4,0);
-            GVar10 = CASE_5;
+            GVar11 = CASE_5;
           }
           else {
-            GVar10 = CASE_F;
+            GVar11 = CASE_F;
           }
-          thunk_FUN_0043fc50(GVar10,0);
+          thunk_FUN_0043fc50(GVar11,0);
           local_c = 0;
         }
-        iVar8 = iVar8 + 1;
-      } while (iVar8 < 5);
+        iVar9 = iVar9 + 1;
+      } while (iVar9 < 5);
       return local_c;
     }
     if (param_2 == 0x172) {
-      iVar8 = 0;
+      iVar9 = 0;
+      iVar7 = param_1 * 0xa62 + 0x7f4fd3;
       do {
-        puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
-        if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x172) &&
-            (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
+        puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
+        if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x172) && (puVar1[1] == (int)cVar5)) &&
+           (*(short *)(puVar1 + 2) == (short)param_4)) {
           piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_2);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
-          if (iVar8 == 0) {
+          if (iVar9 == 0) {
             thunk_FUN_0043fc50(CASE_4,0);
-            GVar10 = CASE_5;
+            GVar11 = CASE_5;
           }
           else {
-            GVar10 = CASE_F;
+            GVar11 = CASE_F;
           }
-          thunk_FUN_0043fc50(GVar10,0);
+          thunk_FUN_0043fc50(GVar11,0);
           local_c = 0;
         }
-        iVar8 = iVar8 + 1;
-      } while (iVar8 < 5);
+        iVar9 = iVar9 + 1;
+      } while (iVar9 < 5);
       return local_c;
     }
   }
   else if (param_2 < 0x1b9) {
     if (param_2 == 0x1b8) {
-      iVar8 = 0;
+      iVar9 = 0;
+      iVar7 = param_1 * 0xa62 + 0x7f4fd3;
       do {
-        puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
-        if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1b8) &&
-            (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
+        puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
+        if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x1b8) && (puVar1[1] == (int)cVar5)) &&
+           (*(short *)(puVar1 + 2) == (short)param_4)) {
           piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_6);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
-          if (iVar8 == 0) {
+          if (iVar9 == 0) {
             thunk_FUN_0043fc50(CASE_4,0);
-            GVar10 = CASE_5;
+            GVar11 = CASE_5;
           }
           else {
-            GVar10 = CASE_F;
+            GVar11 = CASE_F;
           }
-          thunk_FUN_0043fc50(GVar10,0);
+          thunk_FUN_0043fc50(GVar11,0);
           local_c = 0;
         }
-        iVar8 = iVar8 + 1;
-      } while (iVar8 < 5);
+        iVar9 = iVar9 + 1;
+      } while (iVar9 < 5);
       return local_c;
     }
     if (param_2 == 0x1ae) {
-      iVar8 = 0;
+      iVar9 = 0;
+      iVar7 = param_1 * 0xa62 + 0x7f4f83;
       do {
-        puVar1 = (undefined4 *)((int)&DAT_007f4f83 + iVar8 * 0x10 + param_1 * 0xa62);
-        if (((*(int *)((int)&DAT_007f4f83 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1ae) &&
-            (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
+        puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
+        if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x1ae) && (puVar1[1] == (int)cVar5)) &&
+           (*(short *)(puVar1 + 2) == (short)param_4)) {
           piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_3);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
-          if (iVar8 == 0) {
+          if (iVar9 == 0) {
             thunk_FUN_0043fc50(CASE_1,0);
-            GVar10 = CASE_2;
+            GVar11 = CASE_2;
           }
           else {
-            GVar10 = CASE_E;
+            GVar11 = CASE_E;
           }
-          thunk_FUN_0043fc50(GVar10,0);
+          thunk_FUN_0043fc50(GVar11,0);
           local_c = 0;
         }
-        iVar8 = iVar8 + 1;
-      } while (iVar8 < 5);
+        iVar9 = iVar9 + 1;
+      } while (iVar9 < 5);
       return local_c;
     }
   }
   else if ((999 < param_2) && (param_2 < 0x3ea)) {
     param_2 = 0;
+    iVar7 = param_1 * 0xa62 + 0x7f4fd3;
     do {
-      puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + param_2 * 0x10 + param_1 * 0xa62);
-      if ((*(int *)((int)&DAT_007f4fd3 + param_2 * 0x10 + param_1 * 0xa62) == 0x19a) &&
-         (puVar1[1] == (int)cVar5)) {
-        puVar2 = *(uint **)((int)puVar1 + 10);
-        uVar9 = 0;
-        uVar3 = puVar2[3];
+      puVar1 = (undefined4 *)(param_2 * 0x10 + iVar7);
+      if ((*(int *)(param_2 * 0x10 + iVar7) == 0x19a) && (puVar1[1] == (int)cVar5)) {
+        pAVar2 = *(AnonShape_006ACC70_C8641025 **)((int)puVar1 + 10);
+        uVar10 = 0;
+        uVar3 = pAVar2->field_000C;
         if (0 < (int)uVar3) {
           do {
-            FUN_006acc70((int)puVar2,uVar9,&local_8);
+            FUN_006acc70(pAVar2,uVar10,&local_8);
             if ((short)local_8 == (short)param_4) {
               piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_1);
               (**(code **)(*piVar6 + 0xe8))(0);
               local_8 = 0xffff;
-              Library::DKW::TBL::FUN_006ae140(puVar2,uVar9,&local_8);
+              Library::DKW::TBL::FUN_006ae140((uint *)pAVar2,uVar10,&local_8);
               *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
               if (*(short *)((int)puVar1 + 0xe) == 0) {
                 FUN_006ae110(*(byte **)((int)puVar1 + 10));
@@ -221,17 +227,17 @@ STAllPlayersC::DelObjFromTmps
               }
               if (param_2 == 0) {
                 thunk_FUN_0043fc50(CASE_4,0);
-                GVar10 = CASE_5;
+                GVar11 = CASE_5;
               }
               else {
-                GVar10 = CASE_F;
+                GVar11 = CASE_F;
               }
-              thunk_FUN_0043fc50(GVar10,0);
+              thunk_FUN_0043fc50(GVar11,0);
               local_c = 0;
               break;
             }
-            uVar9 = uVar9 + 1;
-          } while ((int)uVar9 < (int)uVar3);
+            uVar10 = uVar10 + 1;
+          } while ((int)uVar10 < (int)uVar3);
         }
       }
       param_2 = param_2 + 1;
@@ -240,13 +246,13 @@ STAllPlayersC::DelObjFromTmps
       }
     } while( true );
   }
-  iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x352,0,0,&DAT_007a4ccc,
+  iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x352,0,0,&DAT_007a4ccc,
                              s_STAllPlayersC__DelObjFromTmps_in_007a62d0);
-  if (iVar8 == 0) {
+  if (iVar7 == 0) {
     return 0xffffffff;
   }
   pcVar4 = (code *)swi(3);
-  uVar7 = (*pcVar4)();
-  return uVar7;
+  uVar8 = (*pcVar4)();
+  return uVar8;
 }
 

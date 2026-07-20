@@ -10,9 +10,10 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   TraksClassTy *this_00;
   int iVar2;
   int iVar3;
+  AnonShape_00555910_7455F960 *pAVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar4;
+  uint uVar5;
   InternalExceptionFrame local_4c;
   TraksClassTy *local_8;
   
@@ -24,24 +25,24 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   if (iVar2 == 0) {
     iVar2 = *(int *)(local_8->field_0024 + 0xc);
     if (iVar2 == 0) {
-      iVar3 = 0;
+      pAVar4 = (AnonShape_00555910_7455F960 *)0x0;
     }
     else {
-      iVar3 = *(int *)(local_8->field_0024 + 0x1c);
+      pAVar4 = *(AnonShape_00555910_7455F960 **)(local_8->field_0024 + 0x1c);
     }
-    uVar4 = 0;
+    uVar5 = 0;
     if (0 < iVar2) {
       do {
-        if (-1 < (int)*(uint *)(iVar3 + 0x32)) {
-          if (*(short *)(iVar3 + 0x38) == 0) {
-            DrawTrakSprite(this_00,iVar3);
+        if (-1 < (int)pAVar4->field_0032) {
+          if (pAVar4->field_0038 == 0) {
+            DrawTrakSprite(this_00,pAVar4);
           }
           else {
-            FUN_006e8ba0(DAT_00807598,*(uint *)(iVar3 + 0x32));
-            *(undefined4 *)(iVar3 + 0x32) = 0xffffffff;
+            FUN_006e8ba0(PTR_00807598,pAVar4->field_0032);
+            pAVar4->field_0032 = 0xffffffff;
             iVar2 = this_00->field_0024;
-            if (uVar4 < *(uint *)(iVar2 + 0xc)) {
-              iVar2 = *(int *)(iVar2 + 8) * uVar4 + *(int *)(iVar2 + 0x1c);
+            if (uVar5 < *(uint *)(iVar2 + 0xc)) {
+              iVar2 = *(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c);
             }
             else {
               iVar2 = 0;
@@ -50,13 +51,13 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
             iVar2 = this_00->field_0828;
             if (iVar2 < 0x3ff) {
               this_00->field_0828 = iVar2 + 1;
-              *(short *)(&this_00->field_0x2a + iVar2 * 2) = (short)uVar4;
+              *(short *)(&this_00->field_0x2a + iVar2 * 2) = (short)uVar5;
             }
           }
         }
-        iVar3 = iVar3 + 0x3c;
-        uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < *(int *)(this_00->field_0024 + 0xc));
+        pAVar4 = pAVar4 + 1;
+        uVar5 = uVar5 + 1;
+      } while ((int)uVar5 < *(int *)(this_00->field_0024 + 0xc));
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

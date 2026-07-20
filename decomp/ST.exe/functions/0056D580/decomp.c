@@ -48,8 +48,8 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
       FUN_0070a300(&DAT_00806774);
       pcVar3 = extraout_ECX_04;
     }
-    cMf32::delete(pcVar3,DAT_00806770);
-    DAT_00806770 = (cMf32 *)0x0;
+    cMf32::delete(pcVar3,PTR_00806770);
+    PTR_00806770 = (cMf32 *)0x0;
     if (DAT_0080676c != 0) {
       FUN_0070a300(&DAT_0080676c);
     }

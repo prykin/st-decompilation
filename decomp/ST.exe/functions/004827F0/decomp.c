@@ -6,7 +6,7 @@
 void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
 
 {
-  uint *puVar1;
+  AnonShape_006ACC70_C8641025 *pAVar1;
   code *pcVar2;
   bool bVar3;
   STBoatC *pSVar4;
@@ -45,32 +45,32 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
               (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
                0x3d71);
   }
-  puVar1 = (uint *)(&local_8->field_0282)[uVar6];
-  if (puVar1 == (uint *)0x0) {
+  pAVar1 = (AnonShape_006ACC70_C8641025 *)(&local_8->field_0282)[uVar6];
+  if (pAVar1 == (AnonShape_006ACC70_C8641025 *)0x0) {
     RaiseInternalException
               (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
                0x3d72);
   }
   uVar6 = local_10;
-  FUN_006acc70((int)puVar1,local_10,(undefined4 *)local_18);
+  FUN_006acc70(pAVar1,local_10,(undefined4 *)local_18);
   if (local_18[0] == 0x7fff) {
     RaiseInternalException
               (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
                0x3d73);
   }
   local_18[0] = 0x7fff;
-  Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,(undefined4 *)local_18);
+  Library::DKW::TBL::FUN_006ae140((uint *)pAVar1,uVar6,(undefined4 *)local_18);
   uVar6 = 0;
   bVar3 = true;
-  if (0 < (int)puVar1[3]) {
+  if (0 < (int)pAVar1->field_000C) {
     do {
-      FUN_006acc70((int)puVar1,uVar6,(undefined4 *)local_18);
+      FUN_006acc70(pAVar1,uVar6,(undefined4 *)local_18);
       if (local_18[0] != 0x7fff) {
         bVar3 = false;
         break;
       }
       uVar6 = uVar6 + 1;
-    } while ((int)uVar6 < (int)puVar1[3]);
+    } while ((int)uVar6 < (int)pAVar1->field_000C);
   }
   pSVar4 = local_8;
   uVar6 = local_c;

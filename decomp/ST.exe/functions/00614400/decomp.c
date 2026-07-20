@@ -1,5 +1,5 @@
 
-void __thiscall FUN_00614400(void *this,int param_1)
+void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
 
 {
   byte bVar1;
@@ -19,15 +19,15 @@ void __thiscall FUN_00614400(void *this,int param_1)
   undefined3 uStack_b;
   int local_8;
   
-  *(undefined4 *)((int)this + 0x1fb) = *(undefined4 *)(param_1 + 0x2d);
-  *(undefined2 *)((int)this + 0x1ff) = *(undefined2 *)(param_1 + 0x31);
-  *(undefined2 *)((int)this + 0x1e9) = *(undefined2 *)(param_1 + 0x1a);
-  *(undefined2 *)((int)this + 0x1eb) = *(undefined2 *)(param_1 + 0x1c);
-  *(undefined2 *)((int)this + 0x1ed) = *(undefined2 *)(param_1 + 0x1e);
-  *(undefined2 *)((int)this + 0x1ef) = *(undefined2 *)(param_1 + 0x20);
-  *(undefined2 *)((int)this + 0x1f1) = *(undefined2 *)(param_1 + 0x22);
-  *(undefined2 *)((int)this + 499) = *(undefined2 *)(param_1 + 0x24);
-  *(undefined4 *)((int)this + 0x207) = *(undefined4 *)(param_1 + 0x43);
+  *(undefined4 *)((int)this + 0x1fb) = param_1->field_002D;
+  *(undefined2 *)((int)this + 0x1ff) = param_1->field_0031;
+  *(undefined2 *)((int)this + 0x1e9) = param_1->field_001A;
+  *(undefined2 *)((int)this + 0x1eb) = param_1->field_001C;
+  *(undefined2 *)((int)this + 0x1ed) = param_1->field_001E;
+  *(undefined2 *)((int)this + 0x1ef) = param_1->field_0020;
+  *(undefined2 *)((int)this + 0x1f1) = param_1->field_0022;
+  *(undefined2 *)((int)this + 499) = param_1->field_0024;
+  *(undefined4 *)((int)this + 0x207) = param_1->field_0043;
   sVar10 = *(short *)((int)this + 0x1e9);
   if (sVar10 < 0) {
     sVar10 = ((sVar10 / 0xc9 + (sVar10 >> 0xf)) - (short)((longlong)(int)sVar10 * 0x28c1979 >> 0x3f)
@@ -55,7 +55,7 @@ void __thiscall FUN_00614400(void *this,int param_1)
     sVar10 = (sVar10 / 200 + (sVar10 >> 0xf)) - (short)((longlong)(int)sVar10 * 0x51eb851f >> 0x3f);
   }
   *(short *)((int)this + 0x219) = sVar10;
-  sVar10 = *(short *)(param_1 + 0x26);
+  sVar10 = param_1->field_0026;
   sVar4 = *(short *)((int)this + 0x1ef);
   *(short *)((int)this + 0x1f5) =
        (sVar10 / 0xf + (sVar10 >> 0xf)) - (short)((longlong)(int)sVar10 * 0x88888889 >> 0x3f);
@@ -89,7 +89,7 @@ void __thiscall FUN_00614400(void *this,int param_1)
   *(short *)((int)this + 0x2c9) = sVar11;
   *(undefined2 *)((int)this + 0x2cb) = *(undefined2 *)((int)this + 0x1ef);
   *(short *)((int)this + 0x2cd) = sVar4;
-  iVar9 = *(int *)(param_1 + 0x43);
+  iVar9 = param_1->field_0043;
   *(int *)((int)this + 0x2d1) = iVar9;
   if (((((((-1 < sVar10) && (sVar10 < SHORT_007fb240)) && (-1 < (short)local_8)) &&
         (((short)local_8 < SHORT_007fb242 && (-1 < sVar11)))) &&
@@ -100,7 +100,7 @@ void __thiscall FUN_00614400(void *this,int param_1)
          piVar6 != (int *)0x0 && (piVar6[6] == iVar9)))))) &&
       (iVar9 = (**(code **)(*piVar6 + 0xf0))(), iVar9 != 0)) &&
      (((uint)piVar6[9] < 8 &&
-      ((DAT_00802a38 == (void *)0x0 || ((byte)(&DAT_008087e9)[piVar6[9] * 0x51] < 8)))))) {
+      ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar6[9] * 0x51] < 8)))))) {
     bVar1 = *(byte *)(piVar6 + 9);
     bVar2 = *(byte *)((int)this + 0x1d9);
     local_8 = CONCAT31(local_8._1_3_,bVar1);
@@ -139,7 +139,7 @@ LAB_0061478b:
       goto LAB_006147e6;
     }
   }
-  iVar9 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x2d1),&local_10);
+  iVar9 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2d1),&local_10);
   if (iVar9 == -4) {
     *(undefined4 *)((int)this + 0x2d1) = 0;
   }
@@ -147,10 +147,9 @@ LAB_0061478b:
     *(undefined4 *)((int)this + 0x2d1) = *(undefined4 *)(local_10 + 0x18);
   }
 LAB_006147e6:
-  *(undefined4 *)((int)this + 0x1f7) = *(undefined4 *)(param_1 + 0x28);
+  *(undefined4 *)((int)this + 0x1f7) = param_1->field_0028;
   iVar9 = DAT_007e6670;
-  if ((*(int *)(param_1 + 0x28) == 1) &&
-     (iVar9 = *(int *)(param_1 + 0x33), *(int *)(param_1 + 0x33) < 3)) {
+  if ((param_1->field_0028 == 1) && (iVar9 = param_1->field_0033, param_1->field_0033 < 3)) {
     *(undefined4 *)((int)this + 0x21b) = 0x14;
     *(undefined4 *)((int)this + 0x20c) = 6;
     return;

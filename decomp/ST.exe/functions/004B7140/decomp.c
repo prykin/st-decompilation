@@ -2,18 +2,16 @@
 int FUN_004b7140(undefined4 param_1,int param_2)
 
 {
-  int *piVar1;
-  char cVar2;
+  char cVar1;
   
-  cVar2 = (char)param_1;
-  piVar1 = (int *)((int)&DAT_007f5792 + cVar2 * 0xa62);
-  *piVar1 = param_2;
+  cVar1 = (char)param_1;
+  g_playerRuntime[cVar1].field2226_0x972 = param_2;
   if (param_2 != 0) {
     thunk_FUN_004b7750(param_1);
   }
-  if ((int)cVar2 == (uint)DAT_0080874d) {
-    thunk_FUN_004d8b70(cVar2);
+  if ((int)cVar1 == (uint)DAT_0080874d) {
+    thunk_FUN_004d8b70(cVar1);
   }
-  return *piVar1;
+  return g_playerRuntime[cVar1].field2226_0x972;
 }
 

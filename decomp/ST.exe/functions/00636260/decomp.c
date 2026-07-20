@@ -26,9 +26,9 @@ FUN_00636260(void *this,uint param_1,int param_2,int param_3,int param_4,int par
   *(int *)((int)this + 0x14) = param_3;
   *(int *)((int)this + 0x18) = param_4;
   *(int *)((int)this + 0x1c) = param_4;
-  *(undefined4 *)((int)this + 0x30) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  *(undefined4 *)((int)this + 0x30) = PTR_00802a38->field_00E4;
   local_8 = this;
-  iVar1 = thunk_FUN_00636fc0((int)this);
+  iVar1 = thunk_FUN_00636fc0(this);
   *(int *)((int)this + 0x28) = iVar1;
   *(int *)((int)this + 4) = param_7;
   if (param_7 != 0) {

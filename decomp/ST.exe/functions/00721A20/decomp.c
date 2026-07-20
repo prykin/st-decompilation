@@ -25,7 +25,7 @@ void __thiscall FUN_00721a20(void *this,int param_1)
           local_10 = *(int *)(*(int *)((int)this + 0x138) + 8);
         }
         else {
-          iVar1 = FUN_00720d30((int)this);
+          iVar1 = FUN_00720d30(this);
           local_10 = (*(int *)(*(int *)((int)this + 0x138) + 8) - iVar1) + 1;
         }
         FUN_006e6060(this,local_24);

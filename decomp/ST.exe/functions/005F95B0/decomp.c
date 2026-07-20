@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_005f95b0(void *param_1)
+undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
 
 {
   uint uVar1;
@@ -39,36 +39,33 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
   
   iVar7 = 0;
   local_1c = 0;
-  if (*(int *)((int)param_1 + 0x2e6) == 0) {
+  if (param_1->field_02E6 == 0) {
     return 0;
   }
-  uVar1 = *(int *)((int)param_1 + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)param_1 + 0x1c) = uVar1;
+  uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
+  param_1->field_001C = uVar1;
   local_18 = (uVar1 >> 0x10) % 0x169;
-  *(uint *)(*(int *)((int)param_1 + 0x2e6) + 0x4c) = local_18;
+  *(uint *)(param_1->field_02E6 + 0x4c) = local_18;
   fcos((float10)local_18 * (float10)_DAT_0079c70c);
   lVar10 = Library::MSVCRT::__ftol();
   fsin(extraout_ST0);
-  *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x50) = (int)lVar10;
+  *(int *)(param_1->field_02E6 + 0x50) = (int)lVar10;
   lVar10 = Library::MSVCRT::__ftol();
-  *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x54) = (int)lVar10;
+  *(int *)(param_1->field_02E6 + 0x54) = (int)lVar10;
   thunk_FUN_00416270(param_1,&local_8,(int *)&local_6,&local_c);
-  *(int *)((int)param_1 + 0x2c5) = (int)local_6;
-  *(int *)((int)param_1 + 0x2c1) = (int)local_8;
-  *(int *)((int)param_1 + 0x2c9) = (int)(short)local_c;
-  *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x34) = (int)local_8;
-  *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x38) = (int)local_6;
-  *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x40) =
-       *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x14);
-  *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x44) =
-       *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x18);
-  *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x48) =
-       *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x1c);
+  param_1->field_02C5 = (int)local_6;
+  param_1->field_02C1 = (int)local_8;
+  param_1->field_02C9 = (int)(short)local_c;
+  *(int *)(param_1->field_02E6 + 0x34) = (int)local_8;
+  *(int *)(param_1->field_02E6 + 0x38) = (int)local_6;
+  *(undefined4 *)(param_1->field_02E6 + 0x40) = *(undefined4 *)(param_1->field_02E6 + 0x14);
+  *(undefined4 *)(param_1->field_02E6 + 0x44) = *(undefined4 *)(param_1->field_02E6 + 0x18);
+  *(undefined4 *)(param_1->field_02E6 + 0x48) = *(undefined4 *)(param_1->field_02E6 + 0x1c);
   local_c = local_c + 0x14;
   sVar5 = (short)local_c;
-  *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x3c) = (int)sVar5;
-  iVar9 = *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x1c);
-  iVar8 = *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x3c) - iVar9;
+  *(int *)(param_1->field_02E6 + 0x3c) = (int)sVar5;
+  iVar9 = *(int *)(param_1->field_02E6 + 0x1c);
+  iVar8 = *(int *)(param_1->field_02E6 + 0x3c) - iVar9;
   if (iVar8 < 1) {
     return 0;
   }
@@ -88,10 +85,10 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
       local_10 = local_10 + -1;
       iVar9 = iVar4;
     } while (iVar4 < 0x28);
-    *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x50) = 0;
-    *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x54) = 0;
-    *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x58) = iVar2;
-    *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x5c) = 10;
+    *(undefined4 *)(param_1->field_02E6 + 0x50) = 0;
+    *(undefined4 *)(param_1->field_02E6 + 0x54) = 0;
+    *(int *)(param_1->field_02E6 + 0x58) = iVar2;
+    *(undefined4 *)(param_1->field_02E6 + 0x5c) = 10;
     return 1;
   }
   sVar6 = (short)(iVar9 >> 0x1f);
@@ -145,7 +142,7 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
     local_10 = 0x28;
   }
   if (iVar7 == 0) {
-    iVar7 = *(int *)((int)param_1 + 0x2e6);
+    iVar7 = param_1->field_02E6;
     local_18 = 4;
     local_64 = *(undefined4 *)(iVar7 + 0x1c);
     local_60 = *(int *)(iVar7 + 0x1c) + 0x32;
@@ -158,7 +155,7 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
     local_10 = local_10 + 8;
     sVar5 = (short)local_c >> 0xf;
     if (iVar7 == 1) {
-      iVar7 = *(int *)((int)param_1 + 0x2e6);
+      iVar7 = param_1->field_02E6;
       local_18 = 5;
       local_64 = *(undefined4 *)(iVar7 + 0x1c);
       local_60 = *(int *)(iVar7 + 0x1c) + 0x32;
@@ -178,7 +175,7 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
       local_34 = 0;
     }
     else {
-      iVar7 = *(int *)((int)param_1 + 0x2e6);
+      iVar7 = param_1->field_02E6;
       local_18 = 6;
       local_64 = *(undefined4 *)(iVar7 + 0x1c);
       local_60 = *(int *)(iVar7 + 0x1c) + 0x32;
@@ -220,8 +217,8 @@ undefined4 __fastcall FUN_005f95b0(void *param_1)
     FUN_006ab060(&local_14);
     return local_1c;
   }
-  *(LPVOID *)(*(int *)((int)param_1 + 0x2e6) + 0x58) = local_14;
-  *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x5c) = iVar7;
+  *(LPVOID *)(param_1->field_02E6 + 0x58) = local_14;
+  *(int *)(param_1->field_02E6 + 0x5c) = iVar7;
   return 1;
 }
 

@@ -9,11 +9,11 @@
 
 undefined4
 STAllPlayersC::GetCamPoint
-          (int param_1,uint param_2,int param_3,uint param_4,int *param_5,int *param_6,int *param_7,
-          uint *param_8)
+          (int param_1,uint param_2,DArrayTy *param_3,uint param_4,int *param_5,int *param_6,
+          int *param_7,uint *param_8)
 
 {
-  int iVar1;
+  dword dVar1;
   code *pcVar2;
   int iVar3;
   undefined4 uVar4;
@@ -38,14 +38,14 @@ STAllPlayersC::GetCamPoint
   }
   if (param_1 < 0x19b) {
     if ((param_1 == 0x19a) || (param_1 == 0x3c)) {
-      if (param_3 == 0) {
+      if (param_3 == (DArrayTy *)0x0) {
         return 0xffffffff;
       }
-      iVar1 = *(int *)(param_3 + 0xc);
+      dVar1 = param_3->count;
       local_c = 0;
-      if (0 < iVar1) {
+      if (0 < (int)dVar1) {
         do {
-          FUN_006acc70(param_3,local_c,&local_10);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,local_c,&local_10);
           if ((short)local_10 != -1) {
             uVar6 = uVar6 + 1;
             pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,local_10,CASE_1);
@@ -56,11 +56,11 @@ STAllPlayersC::GetCamPoint
             iVar8 = iVar8 + local_8;
           }
           local_c = local_c + 1;
-        } while ((int)local_c < iVar1);
+        } while ((int)local_c < (int)dVar1);
         if (uVar6 != 0) {
           local_c = 0;
           do {
-            FUN_006acc70(param_3,local_c,&local_10);
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,local_c,&local_10);
             if ((short)local_10 != -1) {
               pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,local_10,CASE_1);
               STFishC::sub_004162B0
@@ -87,7 +87,7 @@ STAllPlayersC::GetCamPoint
               }
             }
             local_c = local_c + 1;
-          } while ((int)local_c < iVar1);
+          } while ((int)local_c < (int)dVar1);
           return 0;
         }
       }

@@ -19,15 +19,15 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   undefined4 *puVar9;
   InternalExceptionFrame local_64;
   undefined4 local_20;
-  int local_1c;
+  AnonShape_0068DC80_4419198B *local_1c;
   AiTactClassTy *local_18;
   uint local_14;
   undefined4 *local_10;
-  int local_c;
+  AnonShape_0068DC80_4419198B *local_c;
   undefined4 *local_8;
   
   puVar9 = (undefined4 *)0x0;
-  local_c = 0;
+  local_c = (AnonShape_0068DC80_4419198B *)0x0;
   local_10 = (undefined4 *)0x0;
   local_8 = (undefined4 *)0x0;
   local_64.previous = g_currentExceptionFrame;
@@ -82,11 +82,11 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
           *(undefined4 *)(iVar4 + 4) = *(undefined4 *)&pAVar2->field_0x24;
           *(undefined4 *)(iVar4 + 0x77) = pAVar2->field_009D;
           *(undefined1 *)(iVar4 + 0x6a) = pAVar2->field_0088;
-          STPlaySystemC::CreateGameObject(DAT_00802a38,900,&local_14,&local_c,iVar4,0);
+          STPlaySystemC::CreateGameObject(PTR_00802a38,900,&local_14,&local_c,iVar4,0);
           local_1c = local_c;
-          local_20 = *(undefined4 *)(local_c + 0x18);
+          local_20 = local_c->field_0018;
           Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar2->field_00A5,&local_20);
-          *(AiTactClassTy **)(local_c + 0x284) = pAVar2;
+          local_c->field_0284 = pAVar2;
           iVar4 = iVar4 + *(int *)(iVar4 + 0x14);
           iVar3 = iVar3 + 1;
         } while (iVar3 < pAVar2->field_0125);
@@ -98,13 +98,13 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       local_8[1] = *(undefined4 *)&pAVar2->field_0x24;
       *(undefined4 *)((int)local_8 + 0x77) = pAVar2->field_009D;
       *(undefined1 *)((int)local_8 + 0x6a) = pAVar2->field_0088;
-      STPlaySystemC::CreateGameObject(DAT_00802a38,900,&local_14,&local_c,local_8,0);
+      STPlaySystemC::CreateGameObject(PTR_00802a38,900,&local_14,&local_c,local_8,0);
       thunk_FUN_006686c0((int *)&local_8);
       local_1c = local_c;
-      local_20 = *(undefined4 *)(local_c + 0x18);
+      local_20 = local_c->field_0018;
       uVar6 = Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar2->field_00A5,&local_20);
       pAVar2->field_00A1 = uVar6;
-      *(AiTactClassTy **)(local_c + 0x284) = pAVar2;
+      local_c->field_0284 = pAVar2;
     }
     g_currentExceptionFrame = local_64.previous;
     return 0;

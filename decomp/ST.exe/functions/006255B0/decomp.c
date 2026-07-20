@@ -36,7 +36,7 @@ FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,i
       *(undefined4 *)((int)this + 0x24d) = local_8;
       *(int *)((int)this + 0x2c2) = (int)param_1._2_2_;
       *(int *)((int)this + 0x2ca) = (int)param_7._2_2_;
-      thunk_FUN_00624000((int)this);
+      thunk_FUN_00624000(this);
       STMineSetC::LoadImagMineSet(this,1);
       return param_2;
     }

@@ -54,9 +54,8 @@ uint __fastcall FUN_0062b4a0(int param_1)
   if (local_14 < 0) {
     uVar6 = uVar6 - 1;
   }
-  if ((((*(int *)(DAT_00807598 + 0x48) <= (int)uVar6) &&
-       ((int)uVar6 <= *(int *)(DAT_00807598 + 0x58))) && (*(int *)(DAT_00807598 + 0x44) <= iVar7))
-     && (iVar7 <= *(int *)(DAT_00807598 + 0x54))) {
+  if ((((PTR_00807598->field_0048 <= (int)uVar6) && ((int)uVar6 <= PTR_00807598->field_0058)) &&
+      (PTR_00807598->field_0044 <= iVar7)) && (iVar7 <= PTR_00807598->field_0054)) {
     uVar5 = FUN_006ddbd0();
     pVVar4 = g_visibleClass_00802A88;
     uVar6 = uVar5;

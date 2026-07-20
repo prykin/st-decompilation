@@ -38,7 +38,8 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
       uVar5 = 0;
       uVar7 = local_14;
       do {
-        FUN_006acc70(local_10->field_0029,uVar5,(undefined4 *)&local_6);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10->field_0029,uVar5,
+                     (undefined4 *)&local_6);
         if (local_6 != -1) {
           Library::DKW::TBL::FUN_006ae140(local_c,uVar7 & 0xffff,(undefined4 *)&local_6);
           uVar7 = uVar7 + 1;

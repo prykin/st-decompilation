@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_00640170(void *this,int param_1,int param_2,undefined4
     *(undefined4 *)(*(int *)((int)this + 0x37f) + 0x10) = 3;
     *(undefined1 *)(*(int *)((int)this + 0x37f) + 0x15) = 0;
     *(undefined1 *)(*(int *)((int)this + 0x37f) + 0x14) = 0;
-    *(undefined4 *)(*(int *)((int)this + 0x37f) + 0x17) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)(*(int *)((int)this + 0x37f) + 0x17) = PTR_00802a38->field_00E4;
     uVar2 = 1;
   }
   return uVar2;

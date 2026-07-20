@@ -6,7 +6,7 @@
 void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
 
 {
-  char cVar1;
+  HelpPanelTy_field_01A1State HVar1;
   code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
@@ -32,9 +32,9 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 == 0) {
-    cVar1 = local_c->field_01A1;
-    if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
-      local_c->field_01A2 = cVar1;
+    HVar1 = local_c->field_01A1;
+    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+      local_c->field_01A2 = HVar1;
       local_c->field_01AB = local_c->field_01A3;
     }
     else {
@@ -48,8 +48,8 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
       *(undefined2 *)&local_c->field_0x2c = 0;
       local_c->field_002E = 2;
       *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
-      if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)(&local_c->field_0x18);
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        (*(code *)**(undefined4 **)PTR_00802a30)(&local_c->field_0x18);
       }
     }
     this_00->field_01CF = 0xffffffff;

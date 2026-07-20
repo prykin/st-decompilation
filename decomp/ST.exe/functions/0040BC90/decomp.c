@@ -9,7 +9,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
 
 {
   bool bVar1;
-  int iVar2;
+  AnonShape_00497920_894F87D6 *pAVar2;
   int iVar3;
   undefined3 extraout_var;
   short *psVar4;
@@ -32,8 +32,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
   short *local_8;
   
   local_28 = this;
-  iVar2 = thunk_FUN_00423e70(this,param_1);
-  if (iVar2 != 0) {
+  pAVar2 = (AnonShape_00497920_894F87D6 *)thunk_FUN_00423e70(this,param_1);
+  if (pAVar2 != (AnonShape_00497920_894F87D6 *)0x0) {
     local_8 = (short *)Library::DKW::LIB::FUN_006aac70
                                  ((int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278 *
                                   2);
@@ -50,28 +50,28 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
       puVar8 = (undefined4 *)((int)puVar8 + 1);
       psVar11 = (short *)((int)psVar11 + 1);
     }
-    local_24 = *(short *)(iVar2 + 0x47) + -2;
+    local_24 = pAVar2->field_0047 + -2;
     if (local_24 < 0) {
       local_24 = 0;
     }
-    local_20 = *(short *)(iVar2 + 0x49) + -2;
+    local_20 = pAVar2->field_0049 + -2;
     if (local_20 < 0) {
       local_20 = 0;
     }
-    param_1 = (int)*(short *)(iVar2 + 0x4b) - 2;
+    param_1 = (int)pAVar2->field_004B - 2;
     if ((int)param_1 < 0) {
       param_1 = 0;
     }
     iVar3 = (int)SHORT_007fb278;
-    local_10 = *(short *)(iVar2 + 0x47) + 2;
+    local_10 = pAVar2->field_0047 + 2;
     if (iVar3 <= local_10) {
       local_10 = iVar3 + -1;
     }
-    iVar10 = *(short *)(iVar2 + 0x49) + 2;
+    iVar10 = pAVar2->field_0049 + 2;
     if (SHORT_007fb27a <= iVar10) {
       iVar10 = SHORT_007fb27a + -1;
     }
-    local_c = *(short *)(iVar2 + 0x4b) + 2;
+    local_c = pAVar2->field_004B + 2;
     if (SHORT_007fb27c <= local_c) {
       local_c = SHORT_007fb27c + -1;
     }
@@ -88,7 +88,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
               iVar3 = local_24;
               do {
                 if ((*psVar11 == 0) &&
-                   (bVar1 = thunk_FUN_00497920(iVar2,iVar3,local_1c,param_1),
+                   (bVar1 = thunk_FUN_00497920(pAVar2,iVar3,local_1c,param_1),
                    CONCAT31(extraout_var,bVar1) == 0)) {
                   *psVar11 = -3;
                 }
@@ -106,9 +106,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
         param_1 = param_1 + 1;
       } while ((int)param_1 <= local_c);
     }
-    local_8[(int)*(short *)(iVar2 + 0x4b) * (int)SHORT_007fb27e +
-            (int)*(short *)(iVar2 + 0x49) * (int)SHORT_007fb278 + (int)*(short *)(iVar2 + 0x47)] = 0
-    ;
+    local_8[(int)pAVar2->field_004B * (int)SHORT_007fb27e +
+            (int)pAVar2->field_0049 * (int)SHORT_007fb278 + (int)pAVar2->field_0047] = 0;
     iVar3 = (int)param_2 + (int)SHORT_007fb278 * (int)param_3 + (int)SHORT_007fb27e * (int)param_4;
     if (local_8[iVar3] == -3) {
       local_8[iVar3] = 0;
@@ -119,24 +118,22 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
     }
     psVar4 = Library::DKW::WAY::FUN_006a9190
                        ((int)local_8,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
-                        (short *)(int)*(short *)(iVar2 + 0x47),
-                        (short *)(int)*(short *)(iVar2 + 0x49),
-                        (short *)(int)*(short *)(iVar2 + 0x4b),param_2,param_3,param_4,0,&local_2c,
+                        (short *)(int)pAVar2->field_0047,(short *)(int)pAVar2->field_0049,
+                        (short *)(int)pAVar2->field_004B,param_2,param_3,param_4,0,&local_2c,
                         (undefined4 *)0x0,(short *)0x0,uVar5);
     psVar11 = local_8;
     if (psVar4 == (short *)0x0) {
       iVar3 = FUN_006ab090((int)local_8,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
-                           (int)param_2,(int)param_3,(int)param_4,(int)*(short *)(iVar2 + 0x47),
-                           (int)*(short *)(iVar2 + 0x49),(int)*(short *)(iVar2 + 0x4b));
+                           (int)param_2,(int)param_3,(int)param_4,(int)pAVar2->field_0047,
+                           (int)pAVar2->field_0049,(int)pAVar2->field_004B);
       if (iVar3 != 0) {
         FUN_006a5e90(psVar11);
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0x173);
         return -2;
       }
-      sVar7 = psVar11[((int)*(short *)(iVar2 + 0x4b) * (int)SHORT_007fb27a +
-                      (int)*(short *)(iVar2 + 0x49)) * (int)SHORT_007fb278 +
-                      (int)*(short *)(iVar2 + 0x47)];
+      sVar7 = psVar11[((int)pAVar2->field_004B * (int)SHORT_007fb27a + (int)pAVar2->field_0049) *
+                      (int)SHORT_007fb278 + (int)pAVar2->field_0047];
     }
     else {
       sVar7 = psVar4[3] + 1;

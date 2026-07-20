@@ -1,15 +1,15 @@
 
-void FUN_006c3f80(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-                 undefined4 param_5)
+void FUN_006c3f80(AnonShape_006C3F80_1EACF9F3 *param_1,undefined4 param_2,undefined4 param_3,
+                 undefined4 param_4,undefined4 param_5)
 
 {
-  if ((*(uint *)(param_1 + 4) & 2) == 0) {
-    *(undefined4 *)(param_1 + 8) = param_2;
-    *(undefined4 *)(param_1 + 0xc) = param_3;
-    *(undefined4 *)(param_1 + 0x10) = param_4;
-    *(undefined4 *)(param_1 + 0x14) = param_5;
-    *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) | 0x8000000;
-    FUN_006c3d80(param_1);
+  if ((param_1->field_0004 & 2) == 0) {
+    param_1->field_0008 = param_2;
+    param_1->field_000C = param_3;
+    param_1->field_0010 = param_4;
+    param_1->field_0014 = param_5;
+    param_1->field_0004 = param_1->field_0004 | 0x8000000;
+    FUN_006c3d80((AnonShape_006C3D80_5E5410BE *)param_1);
   }
   return;
 }

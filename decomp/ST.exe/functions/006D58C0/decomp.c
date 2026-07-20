@@ -5,26 +5,26 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
 
 {
   int iVar1;
-  int iVar2;
+  AnonShape_006BB8B0_D6DE56CA *pAVar2;
   int iVar3;
   undefined4 **ppuVar4;
   undefined4 *puVar5;
   undefined4 *puVar6;
   undefined4 *local_58 [18];
   void *local_10;
-  int local_c;
-  LPCRITICAL_SECTION local_8;
+  AnonShape_006BB8B0_D6DE56CA *local_c;
+  _RTL_CRITICAL_SECTION *local_8;
   
   local_58[1] = (undefined4 *)0x0;
   local_58[2] = (undefined4 *)0x0;
   local_58[3] = (undefined4 *)0x0;
   local_58[5] = (undefined4 *)0x0;
   iVar1 = *(int *)(*(int *)((int)this + 0xe0) + 0x288);
-  local_8 = *(LPCRITICAL_SECTION *)((int)this + 0xe4);
+  local_8 = *(_RTL_CRITICAL_SECTION **)((int)this + 0xe4);
   local_58[6] = (undefined4 *)0x0;
   local_58[0xc] = (undefined4 *)0x0;
   local_58[7] = (undefined4 *)0x0;
-  local_c = *(int *)(iVar1 + 0x28);
+  local_c = *(AnonShape_006BB8B0_D6DE56CA **)(iVar1 + 0x28);
   local_58[0xd] = (undefined4 *)0x0;
   local_58[0] = (undefined4 *)0x0;
   local_58[4] = (undefined4 *)0x0;
@@ -38,7 +38,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   local_58[0x11] = &DAT_00856900;
   local_10 = this;
   EnterCriticalSection(local_8);
-  iVar3 = local_c;
+  pAVar2 = local_c;
   if (((*(int *)(iVar1 + 0x90) == 0) || (*(int *)(iVar1 + 0x94) == 0)) ||
      (*(int *)(*(int *)((int)this + 0xe0) + 0x30c) == 0)) {
     LeaveCriticalSection(local_8);
@@ -54,7 +54,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   }
   ppuVar4 = local_58;
   puVar5 = param_2;
-  for (iVar2 = 0x12; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar3 = 0x12; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar5 = *ppuVar4;
     ppuVar4 = ppuVar4 + 1;
     puVar5 = puVar5 + 1;
@@ -69,7 +69,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   param_2[0xe] = DAT_007a1364;
   param_2[0x10] = 0x58;
   puVar5 = &DAT_00856900;
-  for (iVar2 = 0x11a; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar3 = 0x11a; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
   }
@@ -85,26 +85,26 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   _DAT_00856934 = *(int *)(iVar1 + 0x90);
   _DAT_00856938 = -*(int *)(iVar1 + 0x94);
   _DAT_0085693c = 1;
-  DAT_0085693e = *(short *)(local_c + 0x20);
+  DAT_0085693e = *(short *)&local_c->field_0x20;
   _DAT_00856940 = 0;
   _DAT_00856950 = 0;
   if (((byte)*(undefined4 *)(iVar1 + 4) & 0xf) == 2) {
-    iVar2 = FUN_006bb8b0(local_c);
-    if (iVar2 == 0) {
-      _DAT_00856934 = *(int *)(iVar3 + 0x478) / *(int *)(iVar3 + 0x28);
-      _DAT_00856938 = -*(int *)(iVar3 + 0x1c);
-      FUN_006bb980(iVar3);
+    iVar3 = FUN_006bb8b0(local_c);
+    if (iVar3 == 0) {
+      _DAT_00856934 = *(int *)(pAVar2 + 1) / *(int *)&pAVar2->field_0x28;
+      _DAT_00856938 = -*(int *)&pAVar2->field_0x1c;
+      FUN_006bb980((AnonShape_006BB980_E41494A1 *)pAVar2);
       *(undefined4 *)(*(int *)((int)local_10 + 0xe0) + 0x310) = 1;
     }
   }
   _DAT_00856944 = FUN_00749841(0x856930);
   if (DAT_0085693e == 0x10) {
-    if (((*(int *)(iVar3 + 0x4c4) != 0x7c00) && (*(int *)(iVar3 + 0x4c8) != 0x3e00)) &&
-       (*(int *)(iVar3 + 0x4cc) != 0x1f)) {
-      DAT_0085695c = *(undefined4 *)(iVar3 + 0x4c8);
-      _DAT_00856960 = *(undefined4 *)(iVar3 + 0x4cc);
+    if (((*(int *)&pAVar2[1].field_0x4c != 0x7c00) && (*(int *)&pAVar2[1].field_0x50 != 0x3e00)) &&
+       (*(int *)&pAVar2[1].field_0x54 != 0x1f)) {
+      DAT_0085695c = *(undefined4 *)&pAVar2[1].field_0x50;
+      _DAT_00856960 = *(undefined4 *)&pAVar2[1].field_0x54;
       _DAT_00856940 = 3;
-      DAT_00856958 = *(int *)(iVar3 + 0x4c4);
+      DAT_00856958 = *(int *)&pAVar2[1].field_0x4c;
       param_2[0x10] = param_2[0x10] + 0xc;
       param_2[4] = DAT_007a1700;
       param_2[5] = DAT_007a1704;

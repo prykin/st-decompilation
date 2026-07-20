@@ -1,5 +1,5 @@
 
-int __fastcall FUN_0065e3b0(int param_1,undefined4 param_2)
+int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
 
 {
   uint *groupContent;
@@ -31,7 +31,7 @@ int __fastcall FUN_0065e3b0(int param_1,undefined4 param_2)
         }
         piVar2 = (int *)STAllPlayersC::GetObjPtr
                                   (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)(uVar4 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                                   CONCAT31((int3)(uVar4 >> 8),param_1->field_0024),
                                    CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
         uVar4 = extraout_ECX_00;
         if (piVar2 != (int *)0x0) {

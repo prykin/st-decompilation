@@ -62,7 +62,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   int *piVar7;
   
   if (param_2 == 0) {
-    piVar8 = (int *)((int)&DAT_007f4f83 + param_1 * 0xa62);
+    piVar8 = &g_playerRuntime[param_1].field326_0x163;
   }
   else {
     if (param_2 != 1) {
@@ -75,7 +75,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       (*pcVar4)();
       return;
     }
-    piVar8 = (int *)((int)&DAT_007f4fd3 + param_1 * 0xa62);
+    piVar8 = &g_playerRuntime[param_1].field384_0x1b3;
   }
   piVar7 = (int *)(int)param_1;
   if (0 < objPtr) {
@@ -107,7 +107,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   }
   uVar6 = CONCAT22((short)((uint)piVar7 >> 0x10),(short)piVar8[2]);
   SetActivityToObjs(this,CONCAT31((int3)(uVar6 >> 8),(char)piVar8[1]),*piVar8,
-                    *(int *)((int)piVar8 + 10),uVar6);
+                    *(DArrayTy **)((int)piVar8 + 10),uVar6);
   SelfCheckObjControl(this);
   if (param_2 == 0) {
     thunk_FUN_0043fc50(CASE_1,0);

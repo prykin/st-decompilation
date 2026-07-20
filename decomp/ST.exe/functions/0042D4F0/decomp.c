@@ -11,11 +11,11 @@ STAllPlayersC::ResetActivityFromTmp
   code *pcVar1;
   int iVar2;
   int *piVar3;
-  int iVar4;
+  DArrayTy *pDVar4;
   uint uVar5;
   
   if (param_2 == 0) {
-    iVar2 = (int)&DAT_007f4f83 + param_1 * 0xa62;
+    iVar2 = param_1 * 0xa62 + 0x7f4f83;
   }
   else {
     if (param_2 != 1) {
@@ -28,7 +28,7 @@ STAllPlayersC::ResetActivityFromTmp
       (*pcVar1)();
       return;
     }
-    iVar2 = (int)&DAT_007f4fd3 + param_1 * 0xa62;
+    iVar2 = param_1 * 0xa62 + 0x7f4fd3;
   }
   piVar3 = (int *)(param_3 * 0x10 + iVar2);
   iVar2 = *piVar3;
@@ -45,7 +45,7 @@ STAllPlayersC::ResetActivityFromTmp
       goto LAB_0042d5e8;
     }
 LAB_0042d599:
-    iVar4 = *(int *)((int)piVar3 + 10);
+    pDVar4 = *(DArrayTy **)((int)piVar3 + 10);
     uVar5 = 0xffff;
   }
   else {
@@ -62,10 +62,10 @@ cf_common_exit_0042D5BC:
     }
 LAB_0042d5e8:
     uVar5 = CONCAT22((short)((uint)param_4 >> 0x10),(short)piVar3[2]);
-    iVar4 = 0;
+    pDVar4 = (DArrayTy *)0x0;
   }
   ResetActivityFromObjs
-            (this,CONCAT31((int3)((uint)iVar2 >> 8),(char)piVar3[1]),iVar2,iVar4,uVar5,param_4);
+            (this,CONCAT31((int3)((uint)iVar2 >> 8),(char)piVar3[1]),iVar2,pDVar4,uVar5,param_4);
 LAB_0042d5ff:
   if (param_3 == 0) {
     if (param_2 == 0) {

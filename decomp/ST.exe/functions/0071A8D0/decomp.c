@@ -38,8 +38,8 @@ void __cdecl FUN_0071a8d0(int *param_1)
       }
       FUN_006ab060((LPVOID *)(puVar1 + 3));
     }
-    if ((byte *)puVar1[1] != (byte *)0x0) {
-      FUN_006b5570((byte *)puVar1[1]);
+    if ((AnonShape_006B5570_4D68B99C *)puVar1[1] != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)puVar1[1]);
     }
     FUN_006ab060((LPVOID *)param_1);
   }

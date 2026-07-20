@@ -44,10 +44,10 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
     if ((int)uVar2 < 0) {
       bVar10 = (uVar2 - 1 | 0xfffffffe) == 0xffffffff;
     }
-    if ((((bVar10) && (DAT_007fa134 != 0)) && (uVar2 = *(uint *)(DAT_007fa130 + 0xc), uVar2 != 0))
-       && (uVar9 = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
+    if ((((bVar10) && (DAT_007fa134 != 0)) && (uVar2 = PTR_007fa130->count, uVar2 != 0)) &&
+       (uVar9 = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
       do {
-        FUN_006acc70(DAT_007fa130,uVar9,&param_1);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,uVar9,&param_1);
         if (param_1 != (STTorpC *)0x0) {
           iVar6 = iVar6 + -1;
           iVar3 = STTorpC::IsDangerous(param_1,*(int *)((int)this + 0x18),&local_8);
@@ -57,7 +57,7 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
               if (iVar3 == 1) {
                 STTorpC::SetDangerous(param_1,*(undefined4 *)((int)this + 0x18),&local_8);
 LAB_004604c9:
-                iVar3 = thunk_FUN_00483e30(this,(int)param_1);
+                iVar3 = thunk_FUN_00483e30(this,(AnonShape_00483E30_F0F8D504 *)param_1);
                 if (iVar3 == 1) {
                   STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
                   *(STTorpC **)((int)this + 0x46b) = param_1;

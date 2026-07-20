@@ -27,17 +27,17 @@ STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_
                  0x2f67);
     }
     if (param_1 == 0xffff) {
-      param_1 = (ushort)DAT_007fa160[3];
+      param_1 = (ushort)PTR_007fa160->count;
     }
     else {
-      uVar2 = FUN_006acc70((int)DAT_007fa160,(uint)param_1,&local_8);
+      uVar2 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa160,(uint)param_1,&local_8);
       if ((uVar2 != 0xfffffffc) && (local_8 != 0)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x2f69);
       }
     }
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa160,(uint)param_1,&param_2);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa160->flags,(uint)param_1,&param_2);
     thunk_FUN_00419c50(param_2,param_1);
     g_currentExceptionFrame = pIVar5;
     return 0;

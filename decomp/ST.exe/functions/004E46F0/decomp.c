@@ -15,9 +15,9 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
   int local_10;
   int local_8;
   
-  if (param_1[0x135] + 0x19U <= *(uint *)(DAT_00802a38 + 0xe4)) {
+  if (param_1[0x135] + 0x19U <= (uint)PTR_00802a38->field_00E4) {
     iVar6 = param_1[0x136];
-    param_1[0x135] = *(uint *)(DAT_00802a38 + 0xe4);
+    param_1[0x135] = PTR_00802a38->field_00E4;
     local_8 = 0;
     do {
       iVar1 = iVar6 % 0x1d + -0xf + param_1[0x16c];

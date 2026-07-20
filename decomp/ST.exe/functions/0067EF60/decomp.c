@@ -14,8 +14,8 @@ int __cdecl FUN_0067ef60(byte *param_1,int *param_2)
   if (iVar1 == 0) {
     iVar1 = thunk_FUN_0067eea0(param_1);
     if (iVar1 == 0) {
-      Library::DKW::TBL::FUN_006b5aa0(DAT_00848a1c,(char *)param_1);
-      iVar2 = Library::DKW::TBL::FUN_006b5aa0(DAT_00848a18,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)PTR_00848a1c,(char *)param_1);
+      iVar2 = Library::DKW::TBL::FUN_006b5aa0((uint *)PTR_00848a18,&DAT_008016a0);
       iVar1 = thunk_FUN_0067ee40(iVar2);
     }
     else {

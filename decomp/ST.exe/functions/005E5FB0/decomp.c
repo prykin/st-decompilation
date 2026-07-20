@@ -55,7 +55,8 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
           g_holo_00811778 = (HoloTy *)0x0;
         }
-        FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403099,0xf9,0x123,DAT_0081176c + 0x140);
+        FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403099,0xf9,0x123,
+                     (uint)&PTR_0081176c->field_0x140);
         Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,10,0xb4);
         g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (g_holo_00811778 == (HoloTy *)0x0) {
@@ -65,7 +66,7 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           g_holo_00811778->field_0002 = 1;
           g_holo_00811778->field_0000 = 0;
           g_holo_00811778->field_0003 = 0xffffffff;
-          g_holo_00811778->field_0001 = 2;
+          g_holo_00811778->field_0001 = CASE_2;
           g_holo_00811778->field_0007 = 0;
           g_holo_00811778->field_000B = 0;
           *(undefined4 *)&g_holo_00811778->field_0xf = 0;
@@ -113,7 +114,7 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           g_holo_00811778->field_0002 = 1;
           g_holo_00811778->field_0000 = 0;
           g_holo_00811778->field_0003 = 0xffffffff;
-          g_holo_00811778->field_0001 = 2;
+          g_holo_00811778->field_0001 = CASE_2;
           g_holo_00811778->field_0007 = 0;
           g_holo_00811778->field_000B = 0;
           *(undefined4 *)&g_holo_00811778->field_0xf = 0;
@@ -128,8 +129,8 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
         if (g_holo_00811778 != (HoloTy *)0x0) {
           FUN_006b5f80(DAT_008075a8,10,0xb4,0xf9,0x121);
           MMMObjTy::OutRGlProc
-                    ((MMMObjTy *)(DAT_0081176c + 0x140),DAT_0080759c,0,0,10,0xb4,0xf9,0x123,
-                     (undefined4 *)(DAT_0081176c + 0x140));
+                    ((MMMObjTy *)&PTR_0081176c->field_0x140,DAT_0080759c,0,0,10,0xb4,0xf9,0x123,
+                     (undefined4 *)&PTR_0081176c->field_0x140);
           uVar11 = 0;
           cVar10 = '\x01';
           uVar9 = 0x10;
@@ -148,7 +149,7 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
       }
       break;
     case 100:
-      thunk_FUN_005e5f60(local_c);
+      thunk_FUN_005e5f60((STJellyGunC *)local_c);
       pMVar4->field_008D = 1;
       pMVar4->field_0091 = 0x7102;
     }

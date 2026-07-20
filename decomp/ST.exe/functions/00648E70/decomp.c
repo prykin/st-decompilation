@@ -20,7 +20,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    if ((DAT_00802a38 == (void *)0x0) || (param_1 == 0)) {
+    if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (param_1 == 0)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x82);
     }
@@ -32,7 +32,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
       local_8 = (ushort *)CreateDefaultBossData();
     }
     Library::Ourlib::SAPP::FUN_006e6200
-              (DAT_00802a38,0x403,(undefined4 *)0x28,(undefined4 *)0x0,(int *)0x0,local_8,0);
+              (PTR_00802a38,0x403,(undefined4 *)0x28,(undefined4 *)0x0,(int *)0x0,local_8,0);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = pIVar4;
     return 0;

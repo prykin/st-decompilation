@@ -253,7 +253,7 @@ cf_error_exit_00470C46:
                         (DAT_007fb248 +
                         ((int)sVar22 * (int)SHORT_007fb246 + (int)sVar23 * (int)SHORT_007fb240 +
                         (int)sVar21) * 8), pSVar19 != (STFishC *)0x0 &&
-            (iVar7 = (*pSVar19->vtable->slot_2C)(), iVar7 == 0x33)) &&
+            (iVar7 = (*pSVar19->vtable->vfunc_2C)(), iVar7 == 0x33)) &&
            (*(int *)&pSVar19->field_0x24 == *(int *)&this->field_0x24)))))) {
         iVar7 = thunk_FUN_004e1eb0(pSVar19,(int)this->field_0041,(int)this->field_0043,
                                    (int)this->field_0045);
@@ -328,7 +328,7 @@ LAB_0046fd3e:
                              (DAT_007fb248 +
                              ((int)sVar22 * (int)SHORT_007fb246 + (int)sVar23 * (int)SHORT_007fb240
                              + (int)sVar21) * 8), pSVar19 == (STFishC *)0x0 ||
-                 (iVar7 = (*pSVar19->vtable->slot_2C)(), iVar7 != 0x33)) ||
+                 (iVar7 = (*pSVar19->vtable->vfunc_2C)(), iVar7 != 0x33)) ||
                 (*(int *)&pSVar19->field_0x24 != *(int *)&this->field_0x24))))))))
           goto LAB_004700a6;
           goto LAB_00470071;
@@ -348,7 +348,7 @@ LAB_0046fd3e:
                          (DAT_007fb248 +
                          ((int)sVar22 * (int)SHORT_007fb246 + (int)sVar23 * (int)SHORT_007fb240 +
                          (int)sVar21) * 8), pSVar19 == (STFishC *)0x0 ||
-             (iVar7 = (*pSVar19->vtable->slot_2C)(), iVar7 != 0x33)) ||
+             (iVar7 = (*pSVar19->vtable->vfunc_2C)(), iVar7 != 0x33)) ||
             (*(int *)&pSVar19->field_0x24 != *(int *)&this->field_0x24)))) {
 LAB_004700a6:
           iVar7 = (*this->vtable->vfunc_D8)();
@@ -494,7 +494,7 @@ LAB_004707ad:
         }
         if (local_c == 0) {
           this->field_0580 = CASE_5;
-          *(undefined4 *)&this->field_0x574 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          *(undefined4 *)&this->field_0x574 = PTR_00802a38->field_00E4;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
           *(undefined4 *)&this->field_0x584 = 0;
@@ -514,8 +514,7 @@ LAB_004707ad:
                                  ((int)sVar22 * (int)SHORT_007fb246 +
                                   (int)sVar23 * (int)SHORT_007fb240 + (int)sVar21) * 8),
             this_00 != (void *)0x0 && (*(int *)((int)this_00 + 0x18) == this->field_055A)))))))) {
-        if (*(int *)(DAT_00802a38 + 0xe4) == *(int *)&this->field_0x574 + *(int *)&this->field_0x578
-           ) {
+        if (PTR_00802a38->field_00E4 == *(int *)&this->field_0x574 + *(int *)&this->field_0x578) {
           (*this->vtable->vfunc_90)(3,0x363);
           iVar7 = (*(short *)&this->field_0x237 * -7) / 10;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -539,7 +538,7 @@ LAB_004707ad:
           local_20 = uVar3;
           thunk_FUN_00637930(this->field_01ED,0,this->field_0041 + iVar7,this->field_0043 + iVar27,
                              this->field_0045 + -0x28,0,0);
-          *(undefined4 *)&this->field_0x574 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+          *(undefined4 *)&this->field_0x574 = PTR_00802a38->field_00E4;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
           *(uint *)&this->field_0x578 = (uVar9 >> 0x10) % 0x33 + 0x28;
@@ -812,7 +811,7 @@ cf_common_exit_00470B14:
                      (DAT_007fb248 +
                      ((int)sVar22 * (int)SHORT_007fb246 + (int)sVar23 * (int)SHORT_007fb240 +
                      (int)sVar21) * 8), pSVar19 == (STFishC *)0x0 ||
-         (iVar7 = (*pSVar19->vtable->slot_2C)(), iVar7 != 0x33)))) ||
+         (iVar7 = (*pSVar19->vtable->vfunc_2C)(), iVar7 != 0x33)))) ||
        (*(int *)&pSVar19->field_0x24 != *(int *)&this->field_0x24)) goto LAB_0046fd37;
     iVar7 = thunk_FUN_004e1eb0(pSVar19,(int)this->field_0041,(int)this->field_0043,
                                (int)this->field_0045);

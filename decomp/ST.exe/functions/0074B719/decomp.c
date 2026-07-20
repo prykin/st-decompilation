@@ -10,7 +10,7 @@ void FUN_0074b719(int *param_1,undefined4 *param_2,short *param_3)
     FUN_00747406(piVar1 + -3,0x15,param_1,0);
     (**(code **)(*param_1 + 8))(param_1);
   }
-  FUN_0074736a((int)piVar1,param_2,param_3);
+  FUN_0074736a((AnonShape_0074736A_AA1936BB *)piVar1,param_2,param_3);
   return;
 }
 

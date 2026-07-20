@@ -63,7 +63,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
   uVar14 = *(uint *)(param_1 + 0x10);
   if (uVar14 < 0x6941) {
     if (uVar14 == 0x6940) {
-      thunk_FUN_005bba40((int)this_00);
+      thunk_FUN_005bba40((AnonShape_005BBA40_15493F88 *)this_00);
       goto cf_common_exit_005BCF7F;
     }
     if (uVar14 < 0x6120) {
@@ -89,7 +89,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
             this_00->field_0045 = 0x200;
             this_00->field_0049 = 0;
             this_00->field_004D = 0x610a;
-            thunk_FUN_005b66e0(this_00);
+            thunk_FUN_005b66e0((STJellyGunC *)this_00);
           }
           goto cf_common_exit_005BCF7F;
         }
@@ -99,11 +99,11 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
       if (0x6501 < uVar14) {
         if (uVar14 != 0x6502) {
           if (uVar14 == 0x693f) {
-            thunk_FUN_005bb9f0((int)this_00);
+            thunk_FUN_005bb9f0((AnonShape_005BB9F0_E38C41BB *)this_00);
           }
           goto cf_common_exit_005BCF7F;
         }
-        uVar6 = thunk_FUN_005da940(DAT_0081176c,this_00->field_1A61);
+        uVar6 = thunk_FUN_005da940(PTR_0081176c,this_00->field_1A61);
         if (CONCAT31(extraout_var,uVar6) == 0) {
           this_00->field_1A71 = uVar6;
           iVar8 = thunk_FUN_005da980(this_00->field_1A61);
@@ -117,7 +117,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
               local_1c = 0x10101;
               thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_1c);
             }
-            this_00->field_0065 = 5;
+            this_00->field_0065 = CASE_5;
             this_00->field_1A60 = 1;
           }
           goto cf_common_exit_005BCF7F;
@@ -131,9 +131,9 @@ LAB_005bccb9:
       if (uVar14 != 0x6121) {
         if (uVar14 == 0x631f) {
           FUN_006b4170(this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff);
-          ccFntTy::SetSurf(*(ccFntTy **)((int)DAT_0081176c + 0x30),this_00->field_1C8E,0,5,0x16,
-                           0x226,0x16);
-          ccFntTy::WrStr(*(ccFntTy **)((int)DAT_0081176c + 0x30),
+          ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,this_00->field_1C8E,0,5,0x16,0x226,
+                           0x16);
+          ccFntTy::WrStr((ccFntTy *)PTR_0081176c->field_0030,
                          (uint *)**(undefined4 **)(param_1 + 0x14),0,-1,3);
           if ((*(ushort *)(param_1 + 0x18) != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {
             iVar8 = *(ushort *)(param_1 + 0x18) + 5;
@@ -151,10 +151,10 @@ LAB_005bccb9:
             this_00->field_002D = 0x20;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
-            uVar14 = *(uint *)(*(int *)((int)DAT_0081176c + 0x68e) + 4);
+            uVar14 = *(uint *)(PTR_0081176c->field_068E + 4);
             this_00->field_0031 = uVar14 & ((int)uVar14 < 0) - 1;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
-            if (0 < *(int *)(*(int *)((int)DAT_0081176c + 0x68e) + 4)) {
+            if (0 < *(int *)(PTR_0081176c->field_068E + 4)) {
               this_00->field_002D = 0x20;
               this_00->field_0031 = 1;
               FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
@@ -167,8 +167,7 @@ LAB_005bccb9:
                 puVar13 = puVar13 + 1;
               }
               *(undefined2 *)puVar13 = 0;
-              local_48._2_2_ = ((*(int *)(*(int *)((int)DAT_0081176c + 0x68e) + 4) < 1) - 1 & 2) - 1
-              ;
+              local_48._2_2_ = ((*(int *)(PTR_0081176c->field_068E + 4) < 1) - 1 & 2) - 1;
               MMsgTy::StatePanel(pSVar2->field_02E6,(int)&local_48);
             }
           }
@@ -182,7 +181,7 @@ LAB_005bccb9:
     this_00->field_004D = *(undefined4 *)(param_1 + 0x10);
     this_00->field_0051 = *(undefined4 *)(param_1 + 0x14);
     this_00->field_0055 = *(undefined4 *)(param_1 + 0x18);
-    thunk_FUN_005b66e0(this_00);
+    thunk_FUN_005b66e0((STJellyGunC *)this_00);
     goto cf_common_exit_005BCF7F;
   }
   if (0x8160 < uVar14) {
@@ -190,17 +189,17 @@ LAB_005bccb9:
     case 0x8161:
       FUN_006b4170(this_00->field_1C82,0,0,(uint)*(ushort *)(param_1 + 0x1a),
                    *(int *)(this_00->field_1C82 + 4),0x13,0);
-      ccFntTy::SetSurf(*(ccFntTy **)((int)DAT_0081176c + 0x30),this_00->field_1C82,0,4,
+      ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,this_00->field_1C82,0,4,
                        (uint)*(ushort *)(param_1 + 0x1a),*(int *)(this_00->field_1C82 + 4) + -4,0x13
                       );
       if (this_00->field_1A5F == '\0') {
-        iVar8 = *(int *)((int)DAT_0081176c + 0x68a);
+        iVar8 = PTR_0081176c->field_068A;
       }
       else {
-        iVar8 = *(int *)((int)DAT_0081176c + 0x68e);
+        iVar8 = PTR_0081176c->field_068E;
       }
       if (iVar8 != 0) {
-        ccFntTy::WrStr(*(ccFntTy **)((int)DAT_0081176c + 0x30),
+        ccFntTy::WrStr((ccFntTy *)PTR_0081176c->field_0030,
                        *(uint **)(iVar8 + 8 + (uint)*(ushort *)(param_1 + 0x14) * 0x14),2,-1,
                        (-(uint)(*(short *)(param_1 + 0x16) != 0) & 2) + 1);
       }
@@ -214,10 +213,12 @@ LAB_005bccb9:
       this_00->field_1A61 = uVar10;
       break;
     case 0x8164:
-      MMMObjTy::PaintSlBut((MMMObjTy *)this_00,(int)&this_00->field_1A77,param_1,0);
+      MMMObjTy::PaintSlBut
+                ((MMMObjTy *)this_00,(AnonShape_005B6560_61F462DF *)&this_00->field_1A77,param_1,0);
       break;
     case 0x8165:
-      MMMObjTy::PaintSlBut((MMMObjTy *)this_00,(int)&this_00->field_1B08,param_1,0);
+      MMMObjTy::PaintSlBut
+                ((MMMObjTy *)this_00,(AnonShape_005B6560_61F462DF *)&this_00->field_1B08,param_1,0);
       break;
     case 0x8166:
       uVar14 = *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
@@ -240,7 +241,7 @@ LAB_005bccb9:
     this_00->field_0049 = 0;
     this_00->field_004D = 0x6102;
     this_00->field_0051 = *(undefined4 *)(param_1 + 0x14);
-    thunk_FUN_005b66e0(this_00);
+    thunk_FUN_005b66e0((STJellyGunC *)this_00);
     break;
   case 0x6943:
     DAT_0080877e = 1;
@@ -250,7 +251,7 @@ LAB_005bccb9:
     goto cf_common_exit_005BCD75;
   case 0x6949:
 switchD_005bc9da_caseD_6949:
-    uVar6 = thunk_FUN_005da940(DAT_0081176c,this_00->field_1A61);
+    uVar6 = thunk_FUN_005da940(PTR_0081176c,this_00->field_1A61);
     if (CONCAT31(extraout_var_00,uVar6) != 0) goto LAB_005bccb9;
     iVar8 = thunk_FUN_005da980(this_00->field_1A61);
     if (iVar8 != 0) break;
@@ -280,11 +281,11 @@ switchD_005bc9da_caseD_6949:
       this_00->field_1A71 = 1;
       this_00->field_1A69 = this_00->field_0061;
       this_00->field_1A6D = 0;
-      pCVar5 = DAT_00802a30;
-      if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar10 = DAT_00802a30->field_00C9;
-        uVar3 = DAT_00802a30->field_00C5;
-        DAT_00802a30->field_0493 = 5;
+      pCVar5 = PTR_00802a30;
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        uVar10 = PTR_00802a30->field_00C9;
+        uVar3 = PTR_00802a30->field_00C5;
+        PTR_00802a30->field_0493 = 5;
         pCVar5->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar5,CASE_0,uVar3,uVar10);
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
@@ -305,12 +306,12 @@ cf_common_exit_005BCD75:
     break;
   case 0x6952:
     this_00->field_1A71 = 0;
-    pCVar5 = DAT_00802a30;
+    pCVar5 = PTR_00802a30;
     DAT_0080877e = 1;
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar10 = DAT_00802a30->field_00C9;
-      uVar3 = DAT_00802a30->field_00C5;
-      DAT_00802a30->field_0493 = 1;
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      uVar10 = PTR_00802a30->field_00C9;
+      uVar3 = PTR_00802a30->field_00C5;
+      PTR_00802a30->field_0493 = 1;
       pCVar5->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar5,CASE_0,uVar3,uVar10);
       CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
@@ -334,7 +335,7 @@ cf_common_exit_005BCD75:
         local_20 = 0;
         thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_2c);
       }
-      this_00->field_0065 = 5;
+      this_00->field_0065 = CASE_5;
       this_00->field_1A60 = 0;
       local_8 = 0xffffffff;
       Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1C8A);
@@ -349,7 +350,7 @@ cf_common_exit_005BCD75:
         pHVar9->field_0002 = 1;
         pHVar9->field_0000 = 0;
         pHVar9->field_0003 = 0xffffffff;
-        pHVar9->field_0001 = 2;
+        pHVar9->field_0001 = CASE_2;
         pHVar9->field_0007 = 0;
         pHVar9->field_000B = 0;
         *(undefined4 *)&pHVar9->field_0xf = 0;

@@ -10,7 +10,7 @@
 STRubbishC * __thiscall STRubbishC::STRubbishC(STRubbishC *this)
 
 {
-  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004158e0((STGroupBoatC *)this);
   *(undefined4 *)&this->field_0x1d5 = 0xffffffff;
   *(undefined4 *)&this->field_0x1d9 = 0xffffffff;
   *(undefined4 *)&this->field_0x1dd = 0xffffffff;

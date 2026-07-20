@@ -171,7 +171,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar9 + 4),local_44);
               }
             }
-            FUN_006b0c70(pAVar6->field_00BD,local_8);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pAVar6->field_00BD,local_8);
             local_8 = local_8 - 1;
             cVar7 = cStack_3b;
           }

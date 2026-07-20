@@ -45,7 +45,7 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
   bool local_5;
   
   local_58 = this;
-  thunk_FUN_004167a0((int)this);
+  thunk_FUN_004167a0(this);
   if (((param_1 == *(short *)((int)this + 0x47)) && (param_2 == *(short *)((int)this + 0x49))) &&
      (param_3 == *(short *)((int)this + 0x4b))) {
     return 1;

@@ -7,7 +7,7 @@ void __thiscall FUN_005f04b0(void *this,int *param_1)
   int iVar3;
   
   piVar1 = param_1;
-  iVar3 = FUN_006e62d0(DAT_00802a38,(int)param_1,(int *)&param_1);
+  iVar3 = FUN_006e62d0(PTR_00802a38,(int)param_1,(int *)&param_1);
   piVar2 = param_1;
   if (iVar3 != -4) {
     iVar3 = (**(code **)(*param_1 + 0x2c))();
@@ -17,7 +17,7 @@ void __thiscall FUN_005f04b0(void *this,int *param_1)
       *(undefined2 *)((int)this + 0x2ab) = *(undefined2 *)((int)piVar2 + 0x32);
       *(int **)((int)this + 0x2a7) = piVar1;
       iVar3 = thunk_FUN_00495ff0(*(short *)((int)this + 0x242),*(short *)((int)this + 0x244),
-                                 *(short *)((int)this + 0x246),0,(int)this);
+                                 *(short *)((int)this + 0x246),0,this);
       if (iVar3 == 0) {
         *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + -1;
       }

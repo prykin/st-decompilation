@@ -1,50 +1,50 @@
 
-void __cdecl FUN_00691480(int param_1)
+void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
 
 {
-  int iVar1;
-  uint uVar2;
-  undefined4 *puVar3;
-  int iVar4;
+  AnonShape_00691480_E757992C *pAVar1;
+  int iVar2;
+  uint uVar3;
+  int *piVar4;
   bool bVar5;
   
-  iVar4 = param_1;
-  if (*(char *)(param_1 + 0x18) != '\0') {
-    if (*(char *)(param_1 + 0x18) == '\x02') {
-      iVar1 = *(int *)(param_1 + 0x85);
-      uVar2 = 0;
-      if (0 < *(int *)(iVar1 + 0xc)) {
-        bVar5 = *(int *)(iVar1 + 0xc) != 0;
+  pAVar1 = param_1;
+  if (param_1->field_0018 != '\0') {
+    if (param_1->field_0018 == '\x02') {
+      iVar2 = param_1->field_0085;
+      uVar3 = 0;
+      if (0 < *(int *)(iVar2 + 0xc)) {
+        bVar5 = *(int *)(iVar2 + 0xc) != 0;
         do {
           if (bVar5) {
-            iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
+            iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c);
           }
           else {
-            iVar1 = 0;
+            iVar2 = 0;
           }
-          if (*(int *)(iVar1 + 4) == 0) {
-            param_1 = 0;
+          if (*(int *)(iVar2 + 4) == 0) {
+            param_1 = (AnonShape_00691480_E757992C *)0x0;
           }
           else {
-            param_1 = *(int *)(iVar1 + 4) + 0x20;
+            param_1 = (AnonShape_00691480_E757992C *)(*(int *)(iVar2 + 4) + 0x20);
           }
-          thunk_FUN_006686c0(&param_1);
-          iVar1 = *(int *)(iVar4 + 0x85);
-          uVar2 = uVar2 + 1;
-          bVar5 = uVar2 < *(uint *)(iVar1 + 0xc);
-        } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+          thunk_FUN_006686c0((int *)&param_1);
+          iVar2 = pAVar1->field_0085;
+          uVar3 = uVar3 + 1;
+          bVar5 = uVar3 < *(uint *)(iVar2 + 0xc);
+        } while ((int)uVar3 < (int)*(uint *)(iVar2 + 0xc));
       }
     }
-    puVar3 = (undefined4 *)(iVar4 + 0x85);
-    iVar4 = 8;
+    piVar4 = &pAVar1->field_0085;
+    iVar2 = 8;
     do {
-      if ((byte *)*puVar3 != (byte *)0x0) {
-        FUN_006ae110((byte *)*puVar3);
-        *puVar3 = 0;
+      if ((byte *)*piVar4 != (byte *)0x0) {
+        FUN_006ae110((byte *)*piVar4);
+        *piVar4 = 0;
       }
-      puVar3 = puVar3 + 3;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
+      piVar4 = piVar4 + 3;
+      iVar2 = iVar2 + -1;
+    } while (iVar2 != 0);
   }
   return;
 }

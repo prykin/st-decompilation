@@ -96,7 +96,8 @@ undefined4 __thiscall FUN_00625730(void *this)
                piVar16 == (int *)0x0)) goto LAB_00625b06;
             if (in_stack_00000010 == 0) {
               if (((uint)piVar16[9] < 8) &&
-                 ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar16[9] * 0x51] < 8)))) {
+                 ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                  ((byte)(&DAT_008087e9)[piVar16[9] * 0x51] < 8)))) {
                 bVar1 = *(byte *)(piVar16 + 9);
                 bVar2 = *(byte *)((int)this + 0x262);
                 if (DAT_00808a8f == '\0') {
@@ -318,7 +319,8 @@ LAB_00625d60:
               goto LAB_00625d60;
             }
             if (((uint)piVar16[9] < 8) &&
-               ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar16[9] * 0x51] < 8)))) {
+               ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                ((byte)(&DAT_008087e9)[piVar16[9] * 0x51] < 8)))) {
               bVar1 = *(byte *)(piVar16 + 9);
               bVar2 = *(byte *)((int)this + 0x262);
               if (DAT_00808a8f == '\0') {
@@ -374,7 +376,7 @@ cf_continue_loop_0062607F:
     } while ((int)local_24 < 0x7d046e);
     if (bVar6) {
       local_18 = 1;
-      *(undefined4 *)((int)this + 0x346) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      *(undefined4 *)((int)this + 0x346) = PTR_00802a38->field_00E4;
     }
   }
   return local_18;

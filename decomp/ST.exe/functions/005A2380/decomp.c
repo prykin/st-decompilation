@@ -27,7 +27,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   FSGSTy *local_c;
   undefined4 *local_8;
   
-  if ((this->field_1A5F == '\x06') && (this->field_1A60 == '\0')) {
+  if ((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_c = this;

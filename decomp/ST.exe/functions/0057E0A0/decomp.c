@@ -4,7 +4,8 @@
    E:\__titans\Igor\To_gold.cpp
    STDcResourcC::GetMessage */
 
-undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
+undefined4 __thiscall
+STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1)
 
 {
   short sVar1;
@@ -46,7 +47,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
   byte *local_c;
   uint local_8;
   
-  if (((this->field_0x261 & 4) != 0) && (*(int *)(param_1 + 0x10) != 3)) {
+  if (((this->field_0x261 & 4) != 0) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_68.previous = g_currentExceptionFrame;
@@ -66,14 +67,14 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
     uVar9 = (*pcVar3)();
     return uVar9;
   }
-  iVar8 = STSprGameObjC::GetMessage(local_24,param_1);
+  iVar8 = STSprGameObjC::GetMessage(local_24,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar14 = extraout_var_01;
   if (iVar8 == 0xffff) {
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,s_E____titans_Igor_To_gold_cpp_007cb19c,0x56);
     uVar14 = extraout_var_02;
   }
-  uVar10 = *(uint *)(param_1 + 0x10);
+  uVar10 = param_1->field_0010;
   if (0x108 < uVar10) {
     if (uVar10 == 0x10f) {
       if (*(int *)&this_00->field_0x25d == 2) {
@@ -111,7 +112,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         pbVar17 = pbVar17 + 1;
         pbVar20 = pbVar20 + 1;
       }
-      STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_c,local_8 + 0x46);
+      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_8 + 0x46);
       FUN_006ab060(&local_10);
       FUN_006ab060(&local_c);
       g_currentExceptionFrame = local_68.previous;
@@ -202,7 +203,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         iVar8 = *(int *)&this_00->field_0x265 + -1;
         *(int *)&this_00->field_0x265 = iVar8;
         while (-1 < iVar8) {
-          thunk_FUN_004ad310(*(int *)(*(int *)&this_00->field_0x26d + iVar8 * 4));
+          thunk_FUN_004ad310(*(STT3DSprC **)(*(int *)&this_00->field_0x26d + iVar8 * 4));
           Library::MSVCRT::FUN_0072e2b0
                     (*(HoloTy **)(*(int *)&this_00->field_0x26d + *(int *)&this_00->field_0x265 * 4)
                     );
@@ -217,7 +218,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
                   (g_sTAllPlayers_007FA174,CONCAT22(uVar14,*(short *)&this_00->field_0x32),
                    (STResourceC *)this_00);
       }
-      thunk_FUN_004ad310((int)&this_00->field_01D5);
+      thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
       if (*(int **)&this_00->field_0x273 == (int *)0x0) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
@@ -227,12 +228,12 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    local_18 = *(undefined4 **)(param_1 + 0x14);
+    local_18 = param_1->field_0014;
     if ((uint)local_18[3] < 2) {
       *(undefined4 *)&this_00->field_0x261 = 4;
       *(undefined4 *)&this_00->field_0x265 = 0;
       *(undefined4 *)&this_00->field_0x26d = 0;
-      puVar11 = *(undefined4 **)(param_1 + 0x14);
+      puVar11 = param_1->field_0014;
       puVar18 = (undefined4 *)&this_00->field_0x231;
       for (iVar8 = 10; iVar8 != 0; iVar8 = iVar8 + -1) {
         *puVar18 = *puVar11;
@@ -240,7 +241,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         puVar18 = puVar18 + 1;
       }
       if (*(int *)&this_00->field_0x251 < 1) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STJellyGunC *)this_00);
         goto cf_common_exit_0057E624;
       }
       iVar8 = *(int *)&this_00->field_0x255;
@@ -284,14 +285,14 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
             (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x4f)) &&
            ((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x5e &&
             (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STJellyGunC *)this_00);
       }
       iVar8 = STAllPlayersC::RegisterDeposit(g_sTAllPlayers_007FA174,0xffff,this_00);
       if (iVar8 != 0) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STJellyGunC *)this_00);
       }
       *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 | 1;
-      this_00->field_0259 = *(undefined4 *)&this_00->field_0x251;
+      this_00->field_0259 = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
       thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x245,*(short *)&this_00->field_0x249,
                          *(short *)&this_00->field_0x24d,0);
       iVar8 = CreateRes((STDcResourcC *)this_00);
@@ -344,18 +345,18 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
             (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x4f)) &&
            ((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x5e &&
             (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STJellyGunC *)this_00);
       }
       iVar8 = STAllPlayersC::RegisterDeposit
                         (g_sTAllPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00);
       if (iVar8 != 0) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STJellyGunC *)this_00);
       }
       if (local_18[3] == 1) {
         thunk_FUN_00580f50();
       }
       *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 | 1;
-      this_00->field_0259 = *(undefined4 *)&this_00->field_0x251;
+      this_00->field_0259 = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
       thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x245,*(short *)&this_00->field_0x249,
                          *(short *)&this_00->field_0x24d,0);
       iVar8 = CreateRes((STDcResourcC *)this_00);
@@ -531,16 +532,16 @@ LAB_0057e6f0:
   FUN_006e6580((void *)this_00->field_0211,piVar15);
   *(undefined4 *)&this_00->field_0x273 = 0;
 cf_common_join_0057E9C2:
-  (*this_00->vtable->slot_D8)();
+  (*this_00->vtable->vfunc_D8)();
   if ((*(int *)&this_00->field_0x255 != 0xe0) && (iVar8 = 0, 0 < *(int *)&this_00->field_0x265)) {
     do {
       thunk_FUN_004ac9e0(*(void **)(*(int *)&this_00->field_0x26d + iVar8 * 4),
-                         DAT_00802a38->field_00E4);
+                         PTR_00802a38->field_00E4);
       iVar8 = iVar8 + 1;
     } while (iVar8 < *(int *)&this_00->field_0x265);
   }
   if (*(int *)&this_00->field_0x25d == 2) {
-    if ((this_00->field_0211 != 0) && ((uint)DAT_00802a38->field_00E4 % 0xf == 0)) {
+    if ((this_00->field_0211 != 0) && ((uint)PTR_00802a38->field_00E4 % 0xf == 0)) {
       bVar6 = this_00->field_0x272 + 1;
       this_00->field_0x272 = bVar6;
       if ((short)(ushort)bVar6 < *(short *)(DAT_00806724 + 0x23)) {
@@ -557,10 +558,11 @@ cf_common_join_0057E9C2:
         }
       }
       else {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STJellyGunC *)this_00);
       }
     }
-    if ((((this_00->field_0259 != 0) && (iVar8 = thunk_FUN_00580dc0(this_00), iVar8 != 0)) &&
+    if ((((this_00->field_0259 != 0) &&
+         (iVar8 = thunk_FUN_00580dc0((STJellyGunC *)this_00), iVar8 != 0)) &&
         (thunk_FUN_004ace30(&this_00->field_01D5,0,(int)*(short *)(DAT_00806724 + 0x2c)),
         *(int *)&this_00->field_0x255 != 0xe0)) && (iVar8 = 0, 0 < *(int *)&this_00->field_0x265)) {
       do {

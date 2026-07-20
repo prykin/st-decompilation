@@ -29,8 +29,8 @@ LAB_005dafab:
   sub_005DAB30(this);
   thunk_FUN_005dac60();
   thunk_FUN_005daa60();
-  if ((byte *)this->field_0696 != (byte *)0x0) {
-    FUN_006b5570((byte *)this->field_0696);
+  if ((AnonShape_006B5570_4D68B99C *)this->field_0696 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0696);
   }
   this->field_0696 = 0;
   return;

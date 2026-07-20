@@ -1,5 +1,5 @@
 
-int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,undefined4 param_4,int param_5)
+int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -42,17 +42,17 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,undefined4 param_4,
     if (param_5 == 1) break;
     if (param_5 != 0) goto LAB_0058d54d;
     if ((*(int *)(iVar1 + 0x20) == 0x32) || (*(int *)(iVar1 + 0x20) == 0x8c)) {
-      (**(code **)(*DAT_00802a38 + 0x18))(param_4);
+      (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,param_4);
 LAB_0058d559:
       local_8 = local_8 + 1;
     }
   }
   if ((*(int *)(iVar1 + 0x20) == 0x10e) || (*(int *)(iVar1 + 0x20) == 0x118)) {
-    (**(code **)(*DAT_00802a38 + 0x18))(param_4);
+    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,param_4);
     local_8 = local_8 + 1;
   }
 LAB_0058d54d:
-  (**(code **)(*DAT_00802a38 + 0x18))(param_4);
+  (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,param_4);
   goto LAB_0058d559;
 }
 

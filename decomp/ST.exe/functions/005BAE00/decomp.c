@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
-   PrividerTy::NonePrivider */
+   PrividerTy::NonePrivider
+   
+   [STSwitchEnumApplier] Switch target field_0065 uses
+   /SubmarineTitans/Recovered/Enums/PrividerTy_field_0065State. Cases:
+   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
 
@@ -65,7 +69,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
     return;
   }
   switch(local_20->field_0065) {
-  case 1:
+  case CASE_1:
     if (local_20->field_1A71 == '\0') {
       g_currentExceptionFrame = local_a0.previous;
       return;
@@ -93,7 +97,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
     iVar10 = Library::Ourlib::CONNECT::FUN_00715630
                        (g_int_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
     psVar8 = local_10;
-    pCVar7 = DAT_00802a30;
+    pCVar7 = PTR_00802a30;
     if (iVar10 != -0x4d) {
       if (iVar10 != 0) {
         if (iVar10 != 1) {
@@ -134,7 +138,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
               }
             }
             else if ((char)*local_18 != '\x03') goto LAB_005bb532;
-            pCVar7 = DAT_00802a30;
+            pCVar7 = PTR_00802a30;
             if ((char)*local_18 == '\x03') {
               local_c = CONCAT31(local_c._1_3_,2);
             }
@@ -149,10 +153,10 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
               }
               if ((*(char *)((int)psVar8 + 0xd) == '\0') ||
                  (((char)*local_18 == '\x01' && (*(char *)((int)psVar8 + 0xb) == '\x05')))) {
-                if (DAT_00802a30 != (CursorClassTy *)0x0) {
-                  uVar3 = DAT_00802a30->field_00C9;
-                  uVar4 = DAT_00802a30->field_00C5;
-                  DAT_00802a30->field_0493 = 1;
+                if (PTR_00802a30 != (CursorClassTy *)0x0) {
+                  uVar3 = PTR_00802a30->field_00C9;
+                  uVar4 = PTR_00802a30->field_00C5;
+                  PTR_00802a30->field_0493 = 1;
                   pCVar7->field_0494 = 0xffff;
                   CursorClassTy::SetGCType(pCVar7,CASE_0,uVar4,uVar3);
                   CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
@@ -179,10 +183,10 @@ joined_r0x005bb4e0:
             }
           }
           else {
-            if (DAT_00802a30 != (CursorClassTy *)0x0) {
-              uVar3 = DAT_00802a30->field_00C9;
-              uVar4 = DAT_00802a30->field_00C5;
-              DAT_00802a30->field_0493 = 1;
+            if (PTR_00802a30 != (CursorClassTy *)0x0) {
+              uVar3 = PTR_00802a30->field_00C9;
+              uVar4 = PTR_00802a30->field_00C5;
+              PTR_00802a30->field_0493 = 1;
               pCVar7->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar7,CASE_0,uVar4,uVar3);
               CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
@@ -220,13 +224,13 @@ LAB_005bb532:
     }
     this_01->field_1A71 = 0;
     this_01->field_1A72 = 1;
-    pCVar7 = DAT_00802a30;
+    pCVar7 = PTR_00802a30;
     local_5c[4] = 0x6952;
     if (pSVar5->field_02E6 != (MMsgTy *)0x0) {
-      if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar3 = DAT_00802a30->field_00C9;
-        uVar4 = DAT_00802a30->field_00C5;
-        DAT_00802a30->field_0493 = 1;
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        uVar3 = PTR_00802a30->field_00C9;
+        uVar4 = PTR_00802a30->field_00C5;
+        PTR_00802a30->field_0493 = 1;
         pCVar7->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar7,CASE_0,uVar4,uVar3);
         CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
@@ -242,7 +246,7 @@ LAB_005bb532:
     }
     (*this_01->vtable->GetMessage)(this_01,(int)local_5c);
     break;
-  case 3:
+  case CASE_3:
     if ((local_20->field_1C96 != (HoloTy *)0x0) &&
        (iVar10 = HoloTy::NextFas(local_20->field_1C96), iVar10 != 0)) {
       local_8 = 0;
@@ -251,8 +255,8 @@ LAB_005bb532:
        (iVar10 = HoloTy::NextFas(this_01->field_1C9A), iVar10 != 0)) {
       local_8 = 0;
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x01')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -291,14 +295,14 @@ LAB_005bb532:
       if (this_01->field_1A5F == '\0') {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_01->field_1C8A);
       }
-      this_01->field_0065 = 1;
+      this_01->field_0065 = CASE_1;
       CreateCtrls(this_01,'\0');
       PaintPrivider(this_01,'\0');
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
     break;
-  case 4:
+  case CASE_4:
     if (local_20->field_1C96 != (HoloTy *)0x0) {
       iVar10 = HoloTy::NextFas(local_20->field_1C96);
       if (iVar10 == 0) {
@@ -323,8 +327,8 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x02')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -339,7 +343,7 @@ LAB_005bb532:
       }
     }
     break;
-  case 5:
+  case CASE_5:
     if (local_20->field_1C9A != (HoloTy *)0x0) {
       iVar10 = HoloTy::NextFas(local_20->field_1C9A);
       if (iVar10 == 0) {
@@ -352,8 +356,8 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x02')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

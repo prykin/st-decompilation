@@ -33,7 +33,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
     local_14 = *(int *)(local_10->field_0029 + 0xc);
     if (0 < local_14) {
       do {
-        FUN_006acc70(pSVar2->field_0029,uVar7,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar7,&local_8);
         if ((short)local_8 != -1) {
           piVar4 = (int *)STAllPlayersC::GetObjPtr
                                     (g_sTAllPlayers_007FA174,

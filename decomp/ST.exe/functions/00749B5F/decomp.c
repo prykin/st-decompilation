@@ -20,7 +20,7 @@ void __fastcall FUN_00749b5f(int *param_1)
   FUN_0074d204(param_1 + 0x17);
   FUN_0074d204(param_1 + 0x16);
   FUN_0074d204(param_1 + 0x15);
-  FUN_00746f77((int)param_1);
+  FUN_00746f77((AnonShape_00746F77_1F40C93D *)param_1);
   return;
 }
 

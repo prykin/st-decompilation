@@ -34,7 +34,7 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
   }
   switch(param_1) {
   case CASE_0:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 != 0) {
       if (this_00 == (int *)0x0) {
         return 0;
@@ -248,7 +248,7 @@ LAB_00485f6a:
         if (*(int *)((int)this + 0x7ca) != 0) {
           iVar5 = (**(code **)(*this_00 + 0x2c))();
           if ((iVar5 == 0x52) || (iVar5 == 0x5f)) {
-            FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x7ca),&local_c);
+            FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),&local_c);
             if ((local_c != 0) && (*(int *)(local_c + 0x20) == 0x1a4)) {
               return 0x1e;
             }
@@ -575,11 +575,11 @@ LAB_00485b29:
     }
     break;
   case CASE_2:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     return (-(ushort)(iVar5 != 0) & 0xfffa) + 6;
   case CASE_3:
   case CASE_2B:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 != 0) {
       return 0;
     }
@@ -794,7 +794,7 @@ LAB_004847df:
     }
     return 7;
   case CASE_4:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
@@ -821,7 +821,7 @@ LAB_004847df:
     }
     break;
   case CASE_5:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
@@ -843,10 +843,10 @@ LAB_004847df:
     }
     break;
   case CASE_6:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     return (-(ushort)(iVar5 != 0) & 0xfff1) + 0xf;
   case CASE_7:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
@@ -876,13 +876,13 @@ LAB_004847df:
     }
     break;
   case CASE_8:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     return (-(ushort)(iVar5 != 0) & 0xffef) + 0x11;
   case CASE_9:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     return (-(ushort)(iVar5 != 0) & 0xfff8) + 8;
   case CASE_A:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 != 0) {
       return 0;
     }
@@ -965,7 +965,7 @@ LAB_004853d2:
     }
     return 0xc;
   case CASE_D:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 != 0) {
       return 0;
     }
@@ -1027,16 +1027,17 @@ LAB_00485002:
     }
     return 0x17;
   case CASE_E:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
-      if ((DAT_007fb2ac != 0) && (*(int *)(DAT_007fb2ac + 0x24) != 0)) {
+      if ((PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) &&
+         (PTR_007fb2ac->field_0024 != 0)) {
         return 0x14;
       }
       return 0x15;
     }
     break;
   case CASE_10:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 != 0) {
       return 0;
     }
@@ -1052,7 +1053,7 @@ LAB_00485002:
     if (this_00[9] != *(int *)((int)this + 0x24)) {
       return 1;
     }
-    iVar5 = thunk_FUN_004b9d90((int)this_00);
+    iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)this_00);
     if (iVar5 == 0) {
       return 1;
     }
@@ -1060,7 +1061,7 @@ LAB_00485002:
                        (undefined2 *)((int)&param_2 + 2));
     return (((int)param_2._2_2_ <= SHORT_007fb244 + -2) - 1 & 0xffeb) + 0x16;
   case CASE_11:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
@@ -1085,7 +1086,7 @@ LAB_00485002:
     }
     break;
   case CASE_12:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
@@ -1111,7 +1112,7 @@ LAB_00485002:
     }
     break;
   case CASE_13:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 != 0) {
       return 0;
     }
@@ -1172,19 +1173,19 @@ LAB_00484ed2:
     }
     return 0x1a;
   case CASE_18:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       return -(ushort)(this_00 != this) & 0x1d;
     }
     break;
   case CASE_2C:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     return (ushort)(iVar5 == 0);
   case CASE_2D:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     return (-(ushort)(iVar5 != 0) & 0xfff0) + 0x10;
   case CASE_48:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
@@ -1210,7 +1211,7 @@ LAB_00484ed2:
     }
     break;
   case CASE_4D:
-    iVar5 = thunk_FUN_00493cd0((int)this);
+    iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;

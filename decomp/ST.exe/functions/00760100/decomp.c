@@ -1,5 +1,5 @@
 
-void FUN_00760100(int param_1,int param_2,int *param_3,int param_4)
+void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,int param_4)
 
 {
   byte bVar1;
@@ -24,10 +24,10 @@ void FUN_00760100(int param_1,int param_2,int *param_3,int param_4)
   int local_18;
   int local_c;
   
-  iVar2 = *(int *)(param_1 + 0x1ba);
-  iVar3 = *(int *)(param_1 + 0x70);
-  uVar4 = *(uint *)(param_1 + 0x68);
-  iVar5 = *(int *)(param_1 + 0x132);
+  iVar2 = param_1->field_01BA;
+  iVar3 = param_1->field_0070;
+  uVar4 = param_1->field_0068;
+  iVar5 = param_1->field_0132;
   if (0 < param_4) {
     local_28 = param_4;
     iVar11 = param_2 - (int)param_3;

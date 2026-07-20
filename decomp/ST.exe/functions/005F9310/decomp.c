@@ -46,7 +46,7 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
     }
   }
   if (*(char *)((int)this + 0x29e) != '\0') {
-    thunk_FUN_005f9450((int)this);
+    thunk_FUN_005f9450(this);
   }
   return *(undefined1 *)((int)this + 0x29e);
 }

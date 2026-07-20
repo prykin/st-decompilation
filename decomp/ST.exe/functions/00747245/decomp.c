@@ -15,7 +15,7 @@ int FUN_00747245(int param_1,undefined4 *param_2)
       puVar2 = (undefined4 *)0x0;
     }
     else {
-      puVar2 = FUN_0074756b(this,param_1 + -0xc);
+      puVar2 = FUN_0074756b(this,(AnonShape_0074756B_58F08DE7 *)(param_1 + -0xc));
     }
     *param_2 = puVar2;
     iVar1 = (-(uint)(puVar2 != (undefined4 *)0x0) & 0x7ff8fff2) + 0x8007000e;

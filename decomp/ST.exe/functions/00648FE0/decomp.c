@@ -53,7 +53,7 @@ void CreateAi(void)
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x10c);
     return;
   }
-  if (DAT_00802a38 == 0) {
+  if (PTR_00802a38 == (STPlaySystemC *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x9d);
   }
@@ -78,35 +78,35 @@ void CreateAi(void)
       else {
         DAT_0080c52a = *DAT_0080ed12;
         piVar9 = DAT_0080ed12 + 0x101;
-        piVar11 = (int *)((int)&DAT_007f510b + (uint)DAT_0080874d * 0xa62);
+        piVar11 = &g_playerRuntime[DAT_0080874d].field598_0x2eb;
         for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
           *piVar11 = *piVar9;
           piVar9 = piVar9 + 1;
           piVar11 = piVar11 + 1;
         }
         piVar9 = DAT_0080ed12 + 0x106;
-        piVar11 = (int *)((int)&DAT_007f511f + (uint)DAT_0080874d * 0xa62);
+        piVar11 = &g_playerRuntime[DAT_0080874d].field612_0x2ff;
         for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
           *piVar11 = *piVar9;
           piVar9 = piVar9 + 1;
           piVar11 = piVar11 + 1;
         }
         piVar9 = DAT_0080ed12 + 0x10b;
-        piVar11 = (int *)((int)&DAT_007f5147 + (uint)DAT_0080874d * 0xa62);
+        piVar11 = &g_playerRuntime[DAT_0080874d].field640_0x327;
         for (iVar3 = 0x9b; iVar3 != 0; iVar3 = iVar3 + -1) {
           *piVar11 = *piVar9;
           piVar9 = piVar9 + 1;
           piVar11 = piVar11 + 1;
         }
         piVar9 = DAT_0080ed12 + 0x1a6;
-        piVar11 = (int *)((int)&DAT_007f53b3 + (uint)DAT_0080874d * 0xa62);
+        piVar11 = &g_playerRuntime[DAT_0080874d].field1254_0x593;
         for (iVar3 = 0x6a; iVar3 != 0; iVar3 = iVar3 + -1) {
           *piVar11 = *piVar9;
           piVar9 = piVar9 + 1;
           piVar11 = piVar11 + 1;
         }
         piVar9 = DAT_0080ed12 + 0x210;
-        piVar11 = (int *)((int)&DAT_007f555b + (uint)DAT_0080874d * 0xa62);
+        piVar11 = &g_playerRuntime[DAT_0080874d].field1672_0x73b;
         for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
           *piVar11 = *piVar9;
           piVar9 = piVar9 + 1;

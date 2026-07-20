@@ -20,15 +20,15 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
-    if (DAT_007fa130 != (uint *)0x0) {
-      FUN_006acc70((int)DAT_007fa130,(int)param_1,&local_8);
+    if (PTR_007fa130 != (DArrayTy *)0x0) {
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         RaiseInternalException
                   (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x883);
       }
       local_8 = 0;
-      Library::DKW::TBL::FUN_006ae140(DAT_007fa130,(int)param_1,&local_8);
+      Library::DKW::TBL::FUN_006ae140(&PTR_007fa130->flags,(int)param_1,&local_8);
       DAT_007fa134 = DAT_007fa134 + -1;
     }
     g_currentExceptionFrame = pIVar4;

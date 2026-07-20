@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_004ead90(void *param_1)
+undefined4 __fastcall FUN_004ead90(AnonShape_004EAD90_30D2E515 *param_1)
 
 {
   int iVar1;
@@ -11,33 +11,32 @@ undefined4 __fastcall FUN_004ead90(void *param_1)
   int iVar5;
   int iVar6;
   
-  iVar1 = *(int *)((int)param_1 + 0x4d0);
+  iVar1 = param_1->field_04D0;
   if (((1 < *(int *)(&DAT_0079aa08 + iVar1 * 4)) &&
-      (*(int *)((int)param_1 + 0x4d4) < *(int *)(&DAT_0079aa08 + iVar1 * 4))) &&
-     ((uint)(*(int *)((int)param_1 + 0x4dc) + *(int *)((int)param_1 + 0x4d8)) <=
-      *(uint *)(DAT_00802a38 + 0xe4))) {
-    *(uint *)((int)param_1 + 0x4d8) = *(uint *)(DAT_00802a38 + 0xe4);
-    iVar6 = *(int *)((int)param_1 + 0x4d4) + 1;
+      (param_1->field_04D4 < *(int *)(&DAT_0079aa08 + iVar1 * 4))) &&
+     ((uint)(param_1->field_04DC + param_1->field_04D8) <= (uint)PTR_00802a38->field_00E4)) {
+    param_1->field_04D8 = PTR_00802a38->field_00E4;
+    iVar6 = param_1->field_04D4 + 1;
     iVar5 = iVar1 * 0x18;
-    *(int *)((int)param_1 + 0x4d4) = iVar6;
+    param_1->field_04D4 = iVar6;
     iVar1 = *(int *)(&DAT_0079aa08 + iVar1 * 4);
     iVar2 = *(int *)(&DAT_0079aa20 + iVar5);
     iVar3 = *(int *)(&DAT_0079aa2c + iVar5);
     iVar4 = ((*(int *)(&DAT_0079aa28 + iVar5) - *(int *)(&DAT_0079aa1c + iVar5)) * iVar6) / iVar1 +
-            *(int *)(&DAT_0079aa1c + iVar5) + (int)*(short *)((int)param_1 + 0x43);
-    *(int *)((int)param_1 + 0x4e0) =
-         (int)*(short *)((int)param_1 + 0x41) +
+            *(int *)(&DAT_0079aa1c + iVar5) + (int)param_1->field_0043;
+    param_1->field_04E0 =
+         (int)param_1->field_0041 +
          *(int *)(&DAT_0079aa18 + iVar5) +
          ((*(int *)(&DAT_0079aa24 + iVar5) - *(int *)(&DAT_0079aa18 + iVar5)) * iVar6) / iVar1;
-    *(int *)((int)param_1 + 0x4e4) = iVar4;
-    iVar1 = (int)*(short *)((int)param_1 + 0x45) + ((iVar3 - iVar2) * iVar6) / iVar1 + iVar2;
-    *(int *)((int)param_1 + 0x4e8) = iVar1;
-    thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x5ff),
-                       (float)*(int *)((int)param_1 + 0x4e0) * _DAT_007904f8 * _DAT_007904f0,
+    param_1->field_04E4 = iVar4;
+    iVar1 = (int)param_1->field_0045 + ((iVar3 - iVar2) * iVar6) / iVar1 + iVar2;
+    param_1->field_04E8 = iVar1;
+    thunk_FUN_004ad3c0(param_1->field_05FF,
+                       (float)param_1->field_04E0 * _DAT_007904f8 * _DAT_007904f0,
                        (float)iVar4 * _DAT_007904f8 * _DAT_007904f0,
                        (float)iVar1 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    if ((*(int *)(&DAT_0079aa08 + *(int *)((int)param_1 + 0x4d0) * 4) <=
-         *(int *)((int)param_1 + 0x4d4)) && (*(int *)((int)param_1 + 0x4d0) == 3)) {
+    if ((*(int *)(&DAT_0079aa08 + param_1->field_04D0 * 4) <= param_1->field_04D4) &&
+       (param_1->field_04D0 == 3)) {
       thunk_FUN_004c4550(param_1,(int *)0x0);
     }
   }

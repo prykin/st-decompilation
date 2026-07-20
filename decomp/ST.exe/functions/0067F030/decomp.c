@@ -23,7 +23,7 @@ undefined4 __cdecl FUN_0067f030(char *text,char *param_2,uint *param_3)
   if (((iVar2 == 0) &&
       (iVar2 = thunk_FUN_0067ef60((byte *)text,(int *)&local_8), pIVar1 = g_currentExceptionFrame,
       iVar2 != 0)) && (-1 < (int)local_8)) {
-    local_8 = Library::DKW::TBL::FUN_006b6020(DAT_00848a18,local_8,param_2);
+    local_8 = Library::DKW::TBL::FUN_006b6020((uint *)PTR_00848a18,local_8,param_2);
     g_currentExceptionFrame = pIVar4;
     if (param_3 != (uint *)0x0) {
       *param_3 = local_8;

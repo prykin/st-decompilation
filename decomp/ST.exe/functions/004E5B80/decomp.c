@@ -12,9 +12,8 @@ void FUN_004e5b80(int param_1,uint param_2,int param_3)
         thunk_FUN_004e5a80(param_1,param_2);
         thunk_FUN_004e5dc0(param_1,param_2);
       }
-      else if (param_3 + -1 < (int)(uint)*(byte *)((int)&DAT_007f555b + param_1 * 0xa62 + param_2))
-      {
-        *(char *)((int)&DAT_007f555b + param_1 * 0xa62 + param_2) = (char)param_3 + -1;
+      else if (param_3 + -1 < (int)(uint)*(byte *)(param_2 + 0x7f555b + param_1 * 0xa62)) {
+        *(char *)(param_2 + 0x7f555b + param_1 * 0xa62) = (char)param_3 + -1;
         return;
       }
     }

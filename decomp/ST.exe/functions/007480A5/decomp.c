@@ -1,21 +1,21 @@
 
-undefined4 FUN_007480a5(int param_1)
+undefined4 FUN_007480a5(AnonShape_007480A5_22FE1AF9 *param_1)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
   undefined4 uVar1;
   
-  lpCriticalSection = *(LPCRITICAL_SECTION *)(param_1 + 0x5c);
+  lpCriticalSection = param_1->field_005C;
   EnterCriticalSection(lpCriticalSection);
-  if (*(int *)(*(int *)(param_1 + 100) + 0x14) == 0) {
-    if (*(int *)(param_1 + 0xc) == 0) {
+  if (*(int *)(param_1->field_0064 + 0x14) == 0) {
+    if (param_1->field_000C == 0) {
       LeaveCriticalSection(lpCriticalSection);
       uVar1 = 1;
     }
     else {
-      (**(code **)(*(int *)(param_1 + -0xc) + 0x2c))();
-      (**(code **)(**(int **)(param_1 + 0xc) + 8))(*(int **)(param_1 + 0xc));
-      *(undefined4 *)(param_1 + 0xc) = 0;
+      (*(code *)param_1[-1].field_005C[1].SpinCount)();
+      (**(code **)(*(int *)param_1->field_000C + 8))((int *)param_1->field_000C);
+      param_1->field_000C = 0;
       LeaveCriticalSection(lpCriticalSection);
       uVar1 = 0;
     }

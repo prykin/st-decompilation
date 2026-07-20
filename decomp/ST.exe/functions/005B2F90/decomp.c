@@ -8,40 +8,40 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
 {
   MMsgTy *this_00;
   code *pcVar1;
-  MainMenuTy *pMVar2;
+  MMObjTy *pMVar2;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   undefined4 *puVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
-  MainMenuTy *local_8;
+  MMObjTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = this;
+  local_8 = (MMObjTy *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (DAT_00802a30 != 0) {
-      if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+    MMObjTy::DoneMMObj(local_8);
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (PTR_00802a30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
+      else if (PTR_00802a30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
       }
     }
     DarkScreen(DAT_0080759c,10,2);
-    if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
+    if (PTR_0081176c->field_002C != 0) {
+      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
     }
-    this_00 = *(MMsgTy **)(pMVar2->field_1A5B + 0x2e6);
+    this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HideSprites(this_00);
-      *(undefined4 *)(*(int *)(pMVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
+      *(undefined4 *)(*(int *)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6) + 0x1cab) = 0;
     }
-    puVar5 = &pMVar2->field_1AA7;
+    puVar5 = (undefined4 *)((int)&pMVar2[0x1e].field_000C + 1);
     iVar3 = 10;
     do {
       if ((undefined4 *)*puVar5 != (undefined4 *)0x0) {
@@ -54,7 +54,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pMVar2->field_004D != 0) {
+    if (*(int *)&pMVar2->field_0x4d != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;

@@ -40,7 +40,7 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_8 = param_7;
   local_30 = (uint)(*(int *)(&DAT_00791d68 + iVar1 * 4) == 1);
   local_c = param_6;
-  (**(code **)(*DAT_00802a38 + 8))(0x124,0,0,local_44,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x124,0,0,local_44,0);
   STFishC::sub_004162B0
             ((STFishC *)this,(undefined2 *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
              (undefined2 *)((int)&param_1 + 2));

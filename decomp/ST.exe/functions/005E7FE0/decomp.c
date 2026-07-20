@@ -47,15 +47,16 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     return;
   }
   puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
-  DibPut((undefined4 *)DAT_0081176c->field_02F0,0,0,'\x01',(byte *)puVar5);
-  iVar4 = DAT_0081176c->field_0544;
+  DibPut((undefined4 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar5);
+  iVar4 = PTR_0081176c->field_0544;
   FUN_006b4170(iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8),0xff);
-  if ((byte *)DAT_0081176c->field_0548 != (byte *)0x0) {
-    FUN_006b5570((byte *)DAT_0081176c->field_0548);
+  if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
+  {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
   }
   puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   this_01 = local_8;
-  DAT_0081176c->field_0548 = puVar6;
+  PTR_0081176c->field_0548 = puVar6;
   if (local_8->field_1A8F == -1) {
     uVar7 = FUN_006b0140(0x252c,HINSTANCE_00807618);
     uVar8 = FUN_006b0140(0x252a,HINSTANCE_00807618);
@@ -80,8 +81,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       pcVar3 = local_10;
       g_currentExceptionFrame = local_a4.previous;
       if (local_10 != (cMf32 *)0x0) {
-        StartSystemTy::LoadMapData
-                  (DAT_0081176c,(int)local_10,(local_8->field_1A93 != '\x02') + '\x04');
+        StartSystemTy::LoadMapData(PTR_0081176c,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
         Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
         pbVar10 = local_1a8;
@@ -106,21 +106,21 @@ LAB_005e829d:
     this_01->field_002D = 0x28;
     *(undefined2 *)&this_01->field_0x31 = 1;
     puVar1 = &this_01->field_0x1d;
-    this_01->field_0033 = *(undefined2 *)(DAT_0081176c->field_0548 + 8);
-    FUN_006e6080(this_01,2,DAT_0081176c->field_0389,(undefined4 *)puVar1);
+    this_01->field_0033 = *(undefined2 *)(PTR_0081176c->field_0548 + 8);
+    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)puVar1);
     this_01->field_002D = 0x22;
     this_01->field_0033 = 0;
     *(undefined2 *)&this_01->field_0x31 = 0;
-    FUN_006e6080(this_01,2,DAT_0081176c->field_0389,(undefined4 *)puVar1);
+    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)puVar1);
     this_01->field_002D = 0x20;
     *(undefined4 *)&this_01->field_0x31 = 0;
-    FUN_006e6080(this_01,2,DAT_0081176c->field_0389,(undefined4 *)puVar1);
+    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)puVar1);
   }
-  if (-1 < (int)DAT_0081176c->field_02EC) {
-    FUN_006b35d0(DAT_008075a8,DAT_0081176c->field_02EC);
+  if (-1 < (int)PTR_0081176c->field_02EC) {
+    FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_02EC);
   }
-  if (-1 < (int)DAT_0081176c->field_0540) {
-    FUN_006b35d0(DAT_008075a8,DAT_0081176c->field_0540);
+  if (-1 < (int)PTR_0081176c->field_0540) {
+    FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_0540);
   }
   g_currentExceptionFrame = local_60.previous;
   return;

@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0058bb90(int param_1)
+void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
 
 {
   undefined4 uVar1;
@@ -23,19 +23,19 @@ void __fastcall FUN_0058bb90(int param_1)
   undefined2 local_2f;
   int local_8;
   
-  uVar1 = *(undefined4 *)(param_1 + 0x279);
+  uVar1 = param_1->field_0279;
   puVar4 = local_60;
   for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
-  local_2f = *(undefined2 *)(param_1 + 0x299);
+  local_2f = param_1->field_0299;
   local_34 = 0;
-  local_33 = *(undefined4 *)(param_1 + 0x295);
-  local_44 = *(short *)(param_1 + 0x43);
-  local_46 = (short)((uint)(*(int *)(param_1 + 0x259) * 5) >> 8) + *(short *)(param_1 + 0x41);
-  local_42 = *(short *)(param_1 + 0x45) + -0x96;
-  local_3c = *(short *)(param_1 + 0x45) + -200;
+  local_33 = param_1->field_0295;
+  local_44 = param_1->field_0043;
+  local_46 = (short)((uint)(param_1->field_0259 * 5) >> 8) + param_1->field_0041;
+  local_42 = param_1->field_0045 + -0x96;
+  local_3c = param_1->field_0045 + -200;
   local_38 = 0xa5;
   local_60[0] = 0x28;
   local_60[3] = 1;
@@ -76,10 +76,10 @@ void __fastcall FUN_0058bb90(int param_1)
 LAB_0058bcd7:
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     VisibleClassTy::VisHoleCreate
-              (g_visibleClass_00802A88,local_8,iVar3,puVar5,*(uint *)(param_1 + 0x24),
-               (undefined *)0x2,0x19);
+              (g_visibleClass_00802A88,local_8,iVar3,puVar5,param_1->field_0024,(undefined *)0x2,
+               0x19);
   }
-  STPlaySystemC::CreateGameObject(DAT_00802a38,0x28,0,0,local_60,0);
+  STPlaySystemC::CreateGameObject(PTR_00802a38,0x28,0,0,local_60,0);
   return;
 }
 

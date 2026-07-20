@@ -128,7 +128,7 @@ LAB_00475545:
     }
   }
   if (iVar4 == 3) {
-    iVar4 = WaitLoad(this,(int *)0x2);
+    iVar4 = WaitLoad(this,(STBoatC *)0x2);
     return iVar4;
   }
   iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc,

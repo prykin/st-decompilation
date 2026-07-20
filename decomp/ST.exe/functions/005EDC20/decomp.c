@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_005edc20(int *param_1)
+undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
 
 {
   short sVar1;
@@ -16,10 +16,10 @@ undefined4 __fastcall FUN_005edc20(int *param_1)
   uint uVar11;
   undefined4 uVar12;
   
-  if (0 < *(short *)((int)param_1 + 0x5f)) {
-    sVar2 = *(short *)((int)param_1 + 0x5d);
-    sVar1 = *(short *)((int)param_1 + 0x5f) + -1;
-    sVar3 = *(short *)((int)param_1 + 0x5b);
+  if (0 < param_1->field_005F) {
+    sVar2 = param_1->field_005D;
+    sVar1 = param_1->field_005F + -1;
+    sVar3 = param_1->field_005B;
     if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
         ((sVar2 < SHORT_007fb242 && (-1 < sVar1)))) &&
        ((sVar1 < SHORT_007fb244 &&
@@ -28,16 +28,16 @@ undefined4 __fastcall FUN_005edc20(int *param_1)
                          (int)sVar3) * 8), this != (int *)0x0)))) {
       iVar4 = (**(code **)(*this + 0x2c))();
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
-        if ((this[0x142] == param_1[6]) &&
+        if ((this[0x142] == *(int *)&param_1->field_0x18) &&
            ((this[0x134] == 3 &&
             (iVar4 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x0e'),
             iVar4 == *(int *)(*(int *)((int)this + 0x1f5) + 0x20c))))) {
-          uVar12 = *(undefined4 *)((int)param_1 + 0x2c6);
-          uVar10 = *(undefined4 *)((int)param_1 + 0x2c2);
-          uVar8 = *(undefined4 *)((int)param_1 + 0x2be);
-          iVar4 = (**(code **)(*param_1 + 0x138))();
-          iVar6 = (**(code **)(*param_1 + 0x130))();
-          thunk_FUN_004ebda0(this,param_1[6],iVar6,iVar4,uVar8,uVar10,uVar12);
+          uVar12 = param_1->field_02C6;
+          uVar10 = param_1->field_02C2;
+          uVar8 = param_1->field_02BE;
+          iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
+          iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
+          thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
           thunk_FUN_005f05a0(param_1,(short)this[9],*(undefined2 *)((int)this + 0x32));
           return 1;
         }
@@ -50,7 +50,7 @@ undefined4 __fastcall FUN_005edc20(int *param_1)
         iVar7 = -100;
         iVar6 = -100;
         iVar4 = 1;
-        uVar5 = thunk_FUN_004ad650((int)param_1 + 0x1d5);
+        uVar5 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
         thunk_FUN_006377b0(uVar5,iVar4,iVar6,iVar7,iVar9,uVar11);
         return 2;
       }

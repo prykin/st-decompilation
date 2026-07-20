@@ -1,7 +1,7 @@
 
 int __thiscall
 FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,
-            int param_7,int param_8)
+            int param_7,AnonShape_006991C0_D95B9E4A *param_8)
 
 {
   short *psVar1;
@@ -267,14 +267,14 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
         uStack_12a = 0xde;
         local_128 = 0;
         local_126 = 0;
-        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)param_8->field_001C,&local_134);
         local_8c = local_8c + 1;
         local_134 = *(uint *)(puVar6 + local_58 * 10);
         local_130 = local_130 & 0xffff0000;
         uStack_12a = 0xdd;
         local_128 = 0;
         local_126 = 0;
-        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)param_8->field_001C,&local_134);
         local_118 = local_118 + 2;
         local_f4 = 0;
         iVar16 = 0;
@@ -322,7 +322,7 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
         local_dc = local_dc + 1;
       } while (local_dc < (int)param_5);
     }
-    *(int *)(param_8 + 8) = local_118;
+    param_8->field_0008 = local_118;
     if (0 < param_4) {
       local_8 = 1;
       Library::MSVCRT::FUN_0072da40();
@@ -565,7 +565,7 @@ LAB_00699f26:
                 uStack_12a = 0xdd;
                 local_128 = 0;
                 local_126 = 1;
-                Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+                Library::DKW::TBL::FUN_006ae1c0((uint *)param_8->field_001C,&local_134);
                 iVar9 = local_58;
                 local_118 = local_118 + 1;
                 iVar16 = *(int *)(local_108 + iVar16 * 4);
@@ -590,7 +590,7 @@ LAB_00699f26:
                   uStack_12a = 0xde;
                   local_128 = 0;
                   local_126 = 1;
-                  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+                  Library::DKW::TBL::FUN_006ae1c0((uint *)param_8->field_001C,&local_134);
                   iVar16 = *(int *)(local_108 + iVar9 * 4);
                   local_e4[local_114] = iVar16;
                   *(undefined4 *)(local_9c + iVar16 * 10 + 6) = 0;
@@ -630,7 +630,7 @@ LAB_00699f26:
         do {
           iVar9 = thunk_FUN_0069ac20((int)*(short *)(local_9c + uVar14 * 10),
                                      (int)*(short *)((int)(local_9c + uVar14 * 10) + 2),0xf,
-                                     *(int *)(param_8 + 0x1c));
+                                     (AnonShape_0069AC20_BA305C93 *)param_8->field_001C);
           if (0xf < iVar9) {
             *(uint *)(&stack0xfffffe98 + iVar16 * 4) = iVar9 << 0x10 | uVar14 & 0xffff;
             iVar16 = iVar16 + 1;
@@ -869,7 +869,7 @@ LAB_00699f26:
                                           (uint)*(ushort *)(local_120 + local_20[iVar16]) * 10) + 4)
                                   );
               local_126 = 2;
-              Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+              Library::DKW::TBL::FUN_006ae1c0((uint *)param_8->field_001C,&local_134);
               local_118 = local_118 + 1;
               iVar16 = iVar16 + 1;
             } while (iVar16 < (int)uVar14);

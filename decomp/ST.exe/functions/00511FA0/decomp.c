@@ -67,7 +67,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
       g_currentExceptionFrame = pIVar4;
       return 1;
     }
-    if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == 1)) {
+    if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == CASE_1)) {
       CPanelTy::ShiftControls(g_cPanel_00801688,1);
     }
     SwitchOptPanel(this_00,0);

@@ -47,8 +47,8 @@ int FUN_00673210(int param_1)
           }
           break;
         }
-        if (*(code **)(DAT_0081194c + 0x14) != (code *)0x0) {
-          (**(code **)(DAT_0081194c + 0x14))(DAT_0085753c,0);
+        if ((code *)PTR_0081194c->field_0014 != (code *)0x0) {
+          (*(code *)PTR_0081194c->field_0014)(DAT_0085753c,0);
         }
         thunk_FUN_00672f00();
         DAT_007d2d18 = 0x84e;

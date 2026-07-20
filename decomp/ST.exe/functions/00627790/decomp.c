@@ -1,5 +1,5 @@
 
-void __fastcall FUN_00627790(int param_1)
+void __fastcall FUN_00627790(AnonShape_00627790_BD208A1C *param_1)
 
 {
   int iVar1;
@@ -18,10 +18,10 @@ void __fastcall FUN_00627790(int param_1)
       *puVar2 = 0;
       puVar2 = puVar2 + 1;
     }
-    local_14 = *(undefined2 *)(param_1 + 0x24);
-    local_12 = *(undefined2 *)(param_1 + 0x32);
-    if (((*(int *)(param_1 + 0x241) == 0) ||
-        (iVar1 = FUN_006e62d0(DAT_00802a38,*(int *)(param_1 + 0x241),&local_8), iVar1 == -4)) ||
+    local_14 = param_1->field_0024;
+    local_12 = param_1->field_0032;
+    if (((param_1->field_0241 == 0) ||
+        (iVar1 = FUN_006e62d0(PTR_00802a38,param_1->field_0241,&local_8), iVar1 == -4)) ||
        (local_8 == 0)) {
       local_10 = 0xff;
       local_e = 0xffff;

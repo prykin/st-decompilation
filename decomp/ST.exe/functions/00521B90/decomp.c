@@ -26,8 +26,8 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (errorCode == 0) {
     this_00 = extraout_ECX;
-    if ((byte *)local_8->field_0198 != (byte *)0x0) {
-      FUN_006b5570((byte *)local_8->field_0198);
+    if ((AnonShape_006B5570_4D68B99C *)local_8->field_0198 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0198);
       pIVar2->field_0198 = 0;
       this_00 = extraout_ECX_00;
     }

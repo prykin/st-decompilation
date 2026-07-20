@@ -1,5 +1,5 @@
 
-void __fastcall FUN_004945c0(void *param_1)
+void __fastcall FUN_004945c0(AnonShape_004945C0_2B3B394D *param_1)
 
 {
   byte bVar1;
@@ -17,10 +17,10 @@ void __fastcall FUN_004945c0(void *param_1)
   
   local_c = 0;
   local_18 = &DAT_008087e9;
-  piVar6 = (int *)((int)param_1 + 0x74e);
+  piVar6 = (int *)&param_1[0x23].field_0032;
   do {
-    if ((DAT_00802a38 == 0) || (*local_18 < 8)) {
-      bVar1 = *(byte *)((int)param_1 + 0x24);
+    if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (*local_18 < 8)) {
+      bVar1 = param_1->field_0024;
       if (DAT_00808a8f == '\0') {
         if ((byte)local_c == bVar1) {
 LAB_004946a9:
@@ -94,9 +94,8 @@ LAB_00494766:
         *piVar6 = 0;
       }
       else if (*piVar6 == 0) {
-        thunk_FUN_004407a0(local_c,CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                            *(undefined1 *)((int)param_1 + 0x24)),
-                           CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x32)));
+        thunk_FUN_004407a0(local_c,CONCAT31((int3)((uint)extraout_EDX >> 8),param_1->field_0024),
+                           CONCAT22(extraout_var_00,param_1->field_0032));
         *piVar6 = 1;
       }
     }

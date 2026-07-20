@@ -1,5 +1,5 @@
 
-void __fastcall FUN_005f0d90(int param_1)
+void __fastcall FUN_005f0d90(AnonShape_005F0D90_C3146DC2 *param_1)
 
 {
   int iVar1;
@@ -16,13 +16,13 @@ void __fastcall FUN_005f0d90(int param_1)
       *puVar2 = 0;
       puVar2 = puVar2 + 1;
     }
-    local_e = *(undefined2 *)(param_1 + 0x32);
-    if ((*(char *)(param_1 + 0x30d) == '\0') || (*(byte *)(param_1 + 0x30e) == 0xff)) {
+    local_e = param_1->field_0032;
+    if ((param_1->field_030D == '\0') || (param_1->field_030E == 0xff)) {
       local_c = 0xff;
     }
     else {
-      local_a = *(undefined2 *)(param_1 + 0x30f);
-      local_c = (ushort)*(byte *)(param_1 + 0x30e);
+      local_a = param_1->field_030F;
+      local_c = (ushort)param_1->field_030E;
     }
     local_14 = 0x5dd7;
     (**(code **)*DAT_008117bc)(local_24);

@@ -1,5 +1,5 @@
 
-undefined4 __thiscall FUN_0060ea30(void *this,uint param_1)
+undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param_1)
 
 {
   uint uVar1;
@@ -9,11 +9,11 @@ undefined4 __thiscall FUN_0060ea30(void *this,uint param_1)
   undefined4 *puVar5;
   byte *local_8;
   
-  uVar1 = *(uint *)(param_1 + 0x10);
+  uVar1 = param_1->field_0010;
   local_8 = this;
   if (uVar1 < 4) {
     if (uVar1 == 3) {
-      thunk_FUN_00614bf0((int)this);
+      thunk_FUN_00614bf0(this);
       return 0;
     }
     if (uVar1 == 0) {
@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_0060ea30(void *this,uint param_1)
       }
     }
     else if (uVar1 == 2) {
-      puVar4 = *(undefined4 **)(param_1 + 0x14);
+      puVar4 = (undefined4 *)param_1->field_0014;
       if (puVar4[3] != 2) {
         puVar5 = (undefined4 *)((int)this + 0x1d5);
         for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -35,8 +35,8 @@ undefined4 __thiscall FUN_0060ea30(void *this,uint param_1)
         }
         *(undefined4 *)((int)this + 0x1d5) = 0x15e;
         *(undefined4 *)((int)this + 0x24) = *(undefined4 *)((int)this + 0x1d9);
-        thunk_FUN_00614400(this,*(int *)(param_1 + 0x14));
-        thunk_FUN_00615390((int)this);
+        thunk_FUN_00614400(this,(AnonShape_00614400_1B90EA7E *)param_1->field_0014);
+        thunk_FUN_00615390(this);
         uVar2 = thunk_FUN_0060ecc0();
         *(char *)((int)this + 0x2e9) = (char)uVar2;
         return 0;
@@ -59,7 +59,8 @@ undefined4 __thiscall FUN_0060ea30(void *this,uint param_1)
   }
   else if ((uVar1 == 0x10f) &&
           (local_8 = (byte *)thunk_FUN_00614950(this,(int *)&param_1), local_8 != (byte *)0x0)) {
-    STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_8,param_1);
+    STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,(uint)param_1)
+    ;
     FUN_006ab060(&local_8);
   }
   return 0;

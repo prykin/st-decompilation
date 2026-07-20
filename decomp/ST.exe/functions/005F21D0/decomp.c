@@ -1,5 +1,5 @@
 
-int __fastcall FUN_005f21d0(int param_1)
+int __fastcall FUN_005f21d0(AnonShape_005F21D0_FA76322E *param_1)
 
 {
   int iVar1;
@@ -8,12 +8,12 @@ int __fastcall FUN_005f21d0(int param_1)
   short *psVar4;
   uint uVar5;
   
-  if (*(int *)(param_1 + 0x38) != 0) {
-    iVar1 = *(int *)(*(int *)(param_1 + 0x38) + 0xc);
+  if (param_1->field_0038 != 0) {
+    iVar1 = *(int *)(param_1->field_0038 + 0xc);
     uVar5 = 0;
     if (0 < iVar1) {
       do {
-        iVar2 = *(int *)(param_1 + 0x38);
+        iVar2 = param_1->field_0038;
         if ((uVar5 < *(uint *)(iVar2 + 0xc)) &&
            (psVar4 = (short *)(*(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c)),
            psVar4 != (short *)0x0)) {
@@ -27,12 +27,12 @@ int __fastcall FUN_005f21d0(int param_1)
       } while ((int)uVar5 < iVar1);
     }
   }
-  if (*(int *)(param_1 + 0x3c) != 0) {
-    iVar1 = *(int *)(*(int *)(param_1 + 0x3c) + 0xc);
+  if (param_1->field_003C != 0) {
+    iVar1 = *(int *)(param_1->field_003C + 0xc);
     uVar5 = 0;
     if (0 < iVar1) {
       do {
-        iVar2 = *(int *)(param_1 + 0x3c);
+        iVar2 = param_1->field_003C;
         if (((uVar5 < *(uint *)(iVar2 + 0xc)) &&
             (psVar4 = (short *)(*(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c)),
             psVar4 != (short *)0x0)) && (*(int *)(psVar4 + 0xc) != -1)) {

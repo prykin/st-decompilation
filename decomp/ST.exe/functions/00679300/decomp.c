@@ -15,9 +15,9 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   undefined4 unaff_ESI;
   AiTactClassTy *this_00;
   void *unaff_EDI;
-  uint *puVar7;
+  AnonShape_0068FD00_A5257008 *pAVar7;
   InternalExceptionFrame local_80;
-  uint local_3c [13];
+  AnonShape_0068FD00_A5257008 local_3c [3];
   AiPlrClassTy *local_8;
   
   local_80.previous = g_currentExceptionFrame;
@@ -58,17 +58,17 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   this_00 = (AiTactClassTy *)0x0;
 LAB_00679378:
   if (this_00 != (AiTactClassTy *)0x0) {
-    puVar7 = local_3c;
+    pAVar7 = local_3c;
     for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+      *(undefined4 *)pAVar7 = 0;
+      pAVar7 = (AnonShape_0068FD00_A5257008 *)&pAVar7->field_0x4;
     }
-    local_3c[0] = 0x71;
+    local_3c[0]._0_4_ = 0x71;
     if (&stack0x00000000 != (undefined1 *)0x3c) {
       AiTactClassTy::GetAiMess(this_00,local_3c);
     }
-    thunk_FUN_0054cf70(DAT_00802a38,*(uint *)&this_00->field_0x8);
-    FUN_006b0c70(local_8->field_0695,uVar4);
+    thunk_FUN_0054cf70(PTR_00802a38,*(uint *)&this_00->field_0x8);
+    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_8->field_0695,uVar4);
   }
   g_currentExceptionFrame = local_80.previous;
   return 0;

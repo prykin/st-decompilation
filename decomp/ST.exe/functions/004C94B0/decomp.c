@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bproc.cpp
-   TLOBaseTy::procResult */
+   TLOBaseTy::procResult
+   
+   [STSwitchEnumApplier] Switch target field_0361 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0361State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_8=8 */
 
 undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
 
@@ -26,39 +30,39 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   pTVar2 = local_c;
   if (errorCode == 0) {
     switch(local_c->field_0361) {
-    case 1:
+    case CASE_1:
       uVar5 = thunk_FUN_004ceb00(local_c,local_c->field_0369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case 2:
+    case CASE_2:
       uVar5 = thunk_FUN_004e2c30(local_c,local_c->field_0369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case 3:
-      uVar5 = thunk_FUN_004ea830((int)local_c);
+    case CASE_3:
+      uVar5 = thunk_FUN_004ea830(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case 4:
-      uVar5 = thunk_FUN_004d9c20((int)local_c);
+    case CASE_4:
+      uVar5 = thunk_FUN_004d9c20(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case 5:
+    case CASE_5:
       local_8 = 1;
       uVar3 = thunk_FUN_004406c0(local_c->field_023D);
       *(undefined4 *)&pTVar2->field_0x241 =
            *(undefined4 *)(&DAT_007e4178 + ((uVar3 & 0xff) + pTVar2->field_0235 * 3) * 4);
-      thunk_FUN_004cc900((int)pTVar2);
+      thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)pTVar2);
       g_currentExceptionFrame = local_50.previous;
       return 1;
-    case 6:
+    case CASE_6:
       uVar5 = thunk_FUN_004de820((int *)local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     default:
       g_currentExceptionFrame = local_50.previous;
       return local_8;
-    case 8:
-      uVar5 = thunk_FUN_004ece40((int)local_c);
+    case CASE_8:
+      uVar5 = thunk_FUN_004ece40(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     }

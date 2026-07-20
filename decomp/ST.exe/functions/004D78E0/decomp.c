@@ -23,9 +23,8 @@ undefined4 FUN_004d78e0(char param_1)
   local_c = 0;
   local_8 = 0;
   _param_1 = 0;
-  iVar1 = iVar1 * 0xa62;
   iVar3 = 6;
-  piVar2 = (int *)((int)&DAT_007f55fa + iVar1);
+  piVar2 = &g_playerRuntime[iVar1].field1824_0x7da;
   do {
     if (piVar2[8] != 0) {
       iVar4 = iVar4 + *piVar2;
@@ -37,11 +36,11 @@ undefined4 FUN_004d78e0(char param_1)
     piVar2 = piVar2 + 0x11;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
-  local_10 = *(int *)((int)&DAT_007f4e47 + iVar1);
-  local_14 = *(int *)((int)&DAT_007f57be + iVar1);
-  iVar3 = *(int *)((int)&DAT_007f4e43 + iVar1);
-  iVar6 = *(int *)((int)&DAT_007f4e3f + iVar1);
-  piVar2 = (int *)(&DAT_007f562e + iVar1);
+  local_10 = g_playerRuntime[iVar1].field21_0x27;
+  local_14 = g_playerRuntime[iVar1].field2252_0x99e;
+  iVar3 = g_playerRuntime[iVar1].field20_0x23;
+  iVar6 = g_playerRuntime[iVar1].field19_0x1f;
+  piVar2 = (int *)&g_playerRuntime[iVar1].field_0x80e;
   local_1c = 6;
   do {
     if (piVar2[-5] != 0) {

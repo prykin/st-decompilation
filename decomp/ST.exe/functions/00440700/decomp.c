@@ -8,7 +8,7 @@ void FUN_00440700(int param_1)
   
   local_18 = 0xf;
   local_14 = (param_1 != 0) + 0x112;
-  (**(code **)(*DAT_00802a38 + 0x18))(local_24);
+  (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_24);
   return;
 }
 

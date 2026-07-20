@@ -20,7 +20,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
   if (uVar1 != 0) {
     uVar5 = 0;
     do {
-      FUN_006acc70(this->field_0029,uVar5,&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar5,&local_8);
       if ((short)local_8 != -1) {
         piVar3 = (int *)STAllPlayersC::GetObjPtr
                                   (g_sTAllPlayers_007FA174,

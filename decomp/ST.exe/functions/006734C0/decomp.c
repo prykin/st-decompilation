@@ -13,7 +13,7 @@ int FUN_006734c0(void)
   uint *puVar9;
   int *local_8;
   
-  iVar2 = (**(code **)(DAT_0081194c + 8))(DAT_00857560,DAT_0085755c,0x400);
+  iVar2 = (*(code *)PTR_0081194c->field_0008)(DAT_00857560,DAT_0085755c,0x400);
   if ((-1 < iVar2) || (iVar2 == -1)) {
     DAT_00857558 = iVar2;
   }

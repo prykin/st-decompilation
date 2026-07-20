@@ -20,7 +20,7 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
   if (uVar1 != 0) {
     uVar4 = 0;
     do {
-      FUN_006acc70(this->field_0029,uVar4,&param_1);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar4,&param_1);
       if ((short)param_1 != -1) {
         this_00 = (void *)STAllPlayersC::GetObjPtr
                                     (g_sTAllPlayers_007FA174,

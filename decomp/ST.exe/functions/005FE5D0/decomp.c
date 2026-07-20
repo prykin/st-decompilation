@@ -124,7 +124,7 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
     if (local_c == 0) {
 cf_common_exit_005FE866:
       *(undefined4 *)(param_1 * 0x52 + 0x35 + *(int *)((int)this + 0x233)) =
-           *(undefined4 *)(DAT_00802a38 + 0xe4);
+           PTR_00802a38->field_00E4;
       if (local_8 != 0) {
         *(int *)(psVar1 + 0x23) = local_8;
       }

@@ -24,23 +24,24 @@ void CreateGameSystem(void)
   if (errorCode == 0) {
     this_00 = (GameSystemC *)Library::MSVCRT::FUN_0072e530(0x435);
     if (this_00 == (GameSystemC *)0x0) {
-      DAT_0081163c = (GameSystemC *)0x0;
+      PTR_0081163c = (AnonShape_00577690_10255A81 *)0x0;
     }
     else {
-      DAT_0081163c = GameSystemC::GameSystemC(this_00,g_appClass_00806728);
+      PTR_0081163c = (AnonShape_00577690_10255A81 *)
+                     GameSystemC::GameSystemC(this_00,g_appClass_00806728);
     }
-    if (DAT_0081163c == (GameSystemC *)0x0) {
+    if ((GameSystemC *)PTR_0081163c == (GameSystemC *)0x0) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,s_E____titans_tsystem_cpp_007cab5c,0xb1)
       ;
     }
-    *(undefined4 *)&DAT_0081163c->field_0x428 = 0;
-    (*DAT_0081163c->vtable->InitSystem)(DAT_0081163c);
-    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)DAT_0081163c,0);
-    *(undefined4 *)&DAT_0081163c->field_0x428 = 1;
-    this = DAT_00802a30;
-    uVar1 = DAT_00802a30->field_00C9;
-    uVar2 = DAT_00802a30->field_00C5;
-    DAT_00802a30->field_0493 = 2;
+    *(undefined4 *)&PTR_0081163c->field_0x428 = 0;
+    (*(code *)**(undefined4 **)PTR_0081163c)();
+    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)PTR_0081163c,0);
+    *(undefined4 *)&PTR_0081163c->field_0x428 = 1;
+    this = PTR_00802a30;
+    uVar1 = PTR_00802a30->field_00C9;
+    uVar2 = PTR_00802a30->field_00C5;
+    PTR_00802a30->field_0493 = 2;
     this->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this,CASE_0,uVar2,uVar1);
     CursorClassTy::DrawSprite(this,this->field_00C5,this->field_00C9);

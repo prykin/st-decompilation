@@ -53,14 +53,14 @@ void FUN_005c8200(void)
             PTR_s_RANDOM_0079c0f4);
   puVar3 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   local_c->field_1F3F = puVar3;
-  if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
-    FUN_006ab060((LPVOID *)(DAT_0081176c + 0x2f4));
+  if (PTR_0081176c->field_02F4 != 0) {
+    FUN_006ab060((LPVOID *)&PTR_0081176c->field_02F4);
   }
   puVar4 = Library::Ourlib::MFIMG::mfImgLoad
                      ((cMf32 *)local_c->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
-  *(ushort **)(DAT_0081176c + 0x2f4) = puVar4;
-  if (*(ushort **)(DAT_0081176c + 0x2f4) != (ushort *)0x0) {
-    FUN_006c7f90(*(ushort **)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),
+  PTR_0081176c->field_02F4 = puVar4;
+  if ((ushort *)PTR_0081176c->field_02F4 != (ushort *)0x0) {
+    FUN_006c7f90((ushort *)PTR_0081176c->field_02F4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),
                  0);
   }
   local_84 = DAT_0080995c;
@@ -96,21 +96,25 @@ void FUN_005c8200(void)
     puVar3 = puVar3 + 1;
     puVar10 = puVar10 + 1;
   }
-  if (DAT_0080c4c7 != (uint *)0x0) {
-    FUN_006b5570((byte *)DAT_0080c4c7);
+  if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
   }
-  DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad
+  PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
+                 Library::Ourlib::MFSARR::mfSarLoad
                            ((cMf32 *)local_c->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
-  if (DAT_0080c4c7 == (uint *)0x0) {
-    DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+  if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
+    PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
+                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
-  if (DAT_0080c4cb != (uint *)0x0) {
-    FUN_006b5570((byte *)DAT_0080c4cb);
+  if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
   }
-  DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
+  PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                 Library::Ourlib::MFSARR::mfSarLoad
                            ((cMf32 *)local_c->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
-  if (DAT_0080c4cb == (uint *)0x0) {
-    DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+  if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+    PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
   puVar3 = &DAT_0080c3c3;
   for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {

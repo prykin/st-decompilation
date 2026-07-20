@@ -50,7 +50,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
                          0x20);
     local_3c = iVar4;
     if ((iVar4 == 0) || (iVar4 != -0x7789fe3e)) break;
-    FUN_006cec40(param_1[1]);
+    FUN_006cec40((AnonShape_006CEC40_BB23E716 *)param_1[1]);
     iVar7 = iVar7 + 1;
   } while (iVar7 < 2);
   if (iVar4 == 0) {

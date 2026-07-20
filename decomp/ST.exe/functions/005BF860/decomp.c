@@ -166,7 +166,7 @@ LAB_005bfb27:
     }
     if (local_8 != 0) {
       this_00->field_0065 = 2;
-      thunk_FUN_005b66e0(this_00);
+      thunk_FUN_005b66e0((STJellyGunC *)this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

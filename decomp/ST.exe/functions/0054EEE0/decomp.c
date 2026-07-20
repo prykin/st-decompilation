@@ -25,7 +25,7 @@ STPlaySystemC::SetCtrlCmd
   InternalExceptionFrame local_54;
   int local_10;
   uint local_c;
-  STPlaySystemC *local_8;
+  PlaySystemTy *local_8;
   
   if ((int)param_5 < 0) {
     param_5 = 0;
@@ -78,16 +78,16 @@ STPlaySystemC::SetCtrlCmd
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = param_5;
-  local_8 = this;
+  local_8 = (PlaySystemTy *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar7 = local_c;
   if (iVar3 == 0) {
     iVar3 = local_c + param_7;
     local_10 = iVar3;
     puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
-    puVar4[1] = local_8->field_00E4;
+    puVar4[1] = *(undefined4 *)&local_8[2].field_0x36;
     *(undefined1 *)(puVar4 + 2) = param_1;
-    *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)(DAT_00802a30 + 0x4ae);
+    *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)&PTR_00802a30->field_0x4ae;
     *(uint *)((int)puVar4 + 10) = param_2;
     *(char *)((int)puVar4 + 0xe) = param_3;
     *(uint *)((int)puVar4 + 0xf) = uVar7;
@@ -128,7 +128,7 @@ STPlaySystemC::SetCtrlCmd
       }
       if (bVar2) {
         FUN_006b9910(&local_8->field_0039,(int)puVar4);
-        PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,(int)unaff_EDI);
+        PlaySystemTy::SendClientMail(local_8,(int)unaff_EDI);
         g_currentExceptionFrame = local_54.previous;
         return;
       }

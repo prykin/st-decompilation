@@ -24,7 +24,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
   }
   *(undefined1 *)puVar2 = *(undefined1 *)puVar8;
   local_8 = 0;
-  if (((*(int *)((int)this + 0x233) != 0) && (iVar4 = thunk_FUN_005fd850((int)this), -1 < iVar4)) &&
+  if (((*(int *)((int)this + 0x233) != 0) && (iVar4 = thunk_FUN_005fd850(this), -1 < iVar4)) &&
      (local_10 = 0, 0 < *(int *)((int)this + 0x226))) {
     local_c = 0;
     do {

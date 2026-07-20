@@ -14,7 +14,7 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
   void *unaff_EDI;
   uint uVar5;
   InternalExceptionFrame local_58;
-  undefined1 local_14;
+  HelpPanelTy_field_01A1State local_14;
   undefined4 local_13;
   undefined4 local_f;
   HelpPanelTy *local_8;
@@ -31,9 +31,9 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
     if (iVar3 == 0) {
       iVar3 = local_8->field_01CF;
       while (-1 < iVar3) {
-        iVar4 = *(int *)(pHVar2->field_01CB + 0xc);
+        iVar4 = ((AnonShape_006B0C70_7C4FE646 *)pHVar2->field_01CB)->field_000C;
         if (iVar4 + -1 <= iVar3) break;
-        FUN_006b0c70(pHVar2->field_01CB,iVar4 - 1);
+        FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pHVar2->field_01CB,iVar4 - 1);
         iVar3 = pHVar2->field_01CF;
       }
       uVar5 = pHVar2->field_01CF + 1;

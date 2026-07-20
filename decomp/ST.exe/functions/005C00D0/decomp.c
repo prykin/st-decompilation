@@ -1,34 +1,32 @@
 
-void __fastcall FUN_005c00d0(int param_1)
+void __fastcall FUN_005c00d0(AnonShape_005C00D0_8BBBA4CC *param_1)
 
 {
-  int iVar1;
-  byte bVar2;
-  undefined4 local_8;
+  byte bVar1;
+  uint local_8;
   
-  bVar2 = 0;
+  bVar1 = 0;
   local_8 = 0;
-  *(undefined4 *)(param_1 + 0x29) = 2;
-  *(undefined4 *)(param_1 + 0x2d) = 0x20;
+  param_1->field_0029 = 2;
+  param_1->field_002D = 0x20;
   do {
-    iVar1 = *(int *)(param_1 + 0x8f + local_8 * 4);
-    if (iVar1 != 0) {
-      *(int *)(param_1 + 0x25) = iVar1;
-      if (bVar2 == 0) {
-        *(uint *)(param_1 + 0x31) = (uint)(*(char *)(param_1 + 0x67) != '\0');
+    if (*(int *)(&param_1->field_0x8f + local_8 * 4) != 0) {
+      param_1->field_0025 = *(int *)(&param_1->field_0x8f + local_8 * 4);
+      if (bVar1 == 0) {
+        param_1->field_0031 = (uint)(param_1->field_0067 != '\0');
       }
       else {
-        *(undefined4 *)(param_1 + 0x31) = 1;
+        param_1->field_0031 = 1;
       }
-      (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+      (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
     }
-    bVar2 = bVar2 + 1;
-    local_8 = (uint)bVar2;
-  } while (bVar2 < 4);
-  if ((*(int *)(param_1 + 0x9f) != 0) && (*(char *)(param_1 + 0x67) != '\0')) {
-    *(int *)(param_1 + 0x25) = *(int *)(param_1 + 0x9f);
-    *(undefined4 *)(param_1 + 0x31) = 1;
-    (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+    bVar1 = bVar1 + 1;
+    local_8 = (uint)bVar1;
+  } while (bVar1 < 4);
+  if ((param_1->field_009F != 0) && (param_1->field_0067 != '\0')) {
+    param_1->field_0025 = param_1->field_009F;
+    param_1->field_0031 = 1;
+    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
   return;
 }

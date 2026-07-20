@@ -30,7 +30,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     *param_2 = *(int *)((int)this + 0x2c2);
     *param_3 = *(int *)((int)this + 0x2c6);
     *param_4 = *(int *)((int)this + 0x2ca);
-    if (*(uint *)(DAT_00802a38 + 0xe4) < *(uint *)((int)this + 0x30f)) {
+    if ((uint)PTR_00802a38->field_00E4 < *(uint *)((int)this + 0x30f)) {
       return 1;
     }
     bVar1 = *(byte *)((int)this + 0x2ad);
@@ -63,7 +63,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     }
     else {
       iVar10 = *(int *)((int)this + 0x2f2);
-      iVar7 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x30f)) *
+      iVar7 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x30f)) *
               (uint)*(byte *)((int)this + 0x62) * *(int *)((int)this + 0x302);
       iVar7 = ((int)(iVar7 + (iVar7 >> 0x1f & 0xfU)) >> 4) + (int)*(short *)((int)this + 0x38);
       if (*(int *)((int)this + 0x302) < 1) {
@@ -99,7 +99,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     *param_4 = iVar7;
     return 1;
   case CASE_2:
-    iVar9 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x30f);
+    iVar9 = PTR_00802a38->field_00E4 - *(int *)((int)this + 0x30f);
     iVar11 = *(int *)((int)this + 0x306) * iVar9;
     iVar10 = (*(int *)((int)this + 0x2fa) * iVar11) / 10000 + (int)*(short *)((int)this + 0x34);
     iVar6 = (*(int *)((int)this + 0x2fe) * iVar11) / 10000 + (int)*(short *)((int)this + 0x36);
@@ -131,14 +131,13 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (iVar7 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 0;
         *(undefined4 *)((int)this + 0x2ae) = 1;
-        *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
         return 1;
       }
     }
     break;
   case CASE_3:
-    iVar7 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x30f)) *
-            *(int *)((int)this + 0x306);
+    iVar7 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x30f)) * *(int *)((int)this + 0x306);
     iVar10 = *(int *)((int)this + 0x302) * iVar7 + (int)*(short *)((int)this + 0x38);
     sVar13 = (short)(iVar10 >> 0x1f);
     if (iVar10 < 0) {
@@ -165,7 +164,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
                      ((int)SHORT_007fb240 * (int)sVar3 + (int)SHORT_007fb246 * (int)sVar13 +
                      (int)sVar2) * 2) * 4) == 0)))) {
           iVar6 = thunk_FUN_00495ff0(sVar2,sVar3,*(short *)((int)this + 0x4b),
-                                     (uint)*(byte *)((int)this + 0x8e),(int)this);
+                                     (uint)*(byte *)((int)this + 0x8e),this);
           if (iVar6 == 0) {
             *(char *)((int)this + 0x314) = *(char *)((int)this + 0x314) + -1;
           }
@@ -179,7 +178,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
                        ((int)sVar3 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 +
                        (int)sVar2) * 2) * 4) == 0)) &&
              (iVar6 = DumpClassC::WritePtr
-                                (sVar2,sVar3,sVar13,(uint)*(byte *)((int)this + 0x8e),(int)this),
+                                (sVar2,sVar3,sVar13,(uint)*(byte *)((int)this + 0x8e),this),
              iVar6 == 0)) {
             bVar1 = *(byte *)((int)this + 0x2ad);
             *(char *)((int)this + 0x314) = *(char *)((int)this + 0x314) + '\x01';
@@ -230,7 +229,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (iVar6 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 2;
         *(undefined4 *)((int)this + 0x2ae) = 1;
-        *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
         *param_2 = (int)*(short *)((int)this + 0x3a);
         *param_3 = (int)*(short *)((int)this + 0x3c);
         *param_4 = iVar10;
@@ -247,7 +246,7 @@ LAB_00625067:
                                    (int)*(short *)((int)this + 0x3c),iVar10), iVar7 != 0)) {
       *(undefined4 *)((int)this + 0x2ee) = 0;
       *(undefined4 *)((int)this + 0x2ae) = 1;
-      *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
     }
   }
   return local_8;

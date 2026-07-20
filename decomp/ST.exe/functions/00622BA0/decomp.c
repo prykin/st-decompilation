@@ -55,7 +55,7 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   *(short *)((int)param_1 + 0x5f) = sVar7;
   uVar3 = thunk_FUN_00626f10(*(Global_sub_00626F10_param_1Enum *)((int)param_1 + 0x272));
   *(char *)((int)param_1 + 0x2ad) = (char)uVar3;
-  *(undefined4 *)((int)param_1 + 0x35f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  *(undefined4 *)((int)param_1 + 0x35f) = PTR_00802a38->field_00E4;
   if ((char)uVar3 == '\x02') {
     *(undefined4 *)((int)param_1 + 0x342) = 0xffffffff;
   }
@@ -111,8 +111,7 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
                       (int)sVar5) * 2) * 4) != 0)))) {
         return 0;
       }
-      iVar4 = DumpClassC::WritePtr
-                        (sVar5,sVar6,sVar7,(uint)*(byte *)((int)param_1 + 0x8e),(int)param_1);
+      iVar4 = DumpClassC::WritePtr(sVar5,sVar6,sVar7,(uint)*(byte *)((int)param_1 + 0x8e),param_1);
       if (iVar4 != 0) {
         return 0;
       }

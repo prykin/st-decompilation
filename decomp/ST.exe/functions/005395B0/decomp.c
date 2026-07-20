@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
-   PausePanelTy::SwitchPausePanel */
+   PausePanelTy::SwitchPausePanel
+   
+   [STSwitchEnumApplier] Switch target field_0172 uses
+   /SubmarineTitans/Recovered/Enums/PausePanelTy_field_0172State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
 
@@ -34,7 +38,7 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
     return;
   }
   switch(local_8->field_0172) {
-  case 1:
+  case CASE_1:
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -42,7 +46,7 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
     ShiftControls(local_8,0);
 switchD_005395f3_caseD_3:
     if (param_1 == 0) {
-      pPVar2->field_0172 = 4;
+      pPVar2->field_0172 = CASE_4;
       GVar4 = CASE_B0;
 LAB_0053962f:
       thunk_FUN_005252c0(GVar4);
@@ -50,16 +54,16 @@ LAB_0053962f:
 switchD_005395f3_default:
     g_currentExceptionFrame = local_4c.previous;
     return;
-  case 2:
-  case 4:
+  case CASE_2:
+  case CASE_4:
     if (param_1 == 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    local_8->field_0172 = 3;
+    local_8->field_0172 = CASE_3;
     GVar4 = CASE_AF;
     goto LAB_0053962f;
-  case 3:
+  case CASE_3:
     goto switchD_005395f3_caseD_3;
   default:
     goto switchD_005395f3_default;

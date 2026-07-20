@@ -1,5 +1,5 @@
 
-undefined4 FUN_006b9aa0(int param_1,undefined4 *param_2)
+undefined4 FUN_006b9aa0(AnonShape_006B9AA0_FC1882B5 *param_1,undefined4 *param_2)
 
 {
   int iVar1;
@@ -14,9 +14,9 @@ undefined4 FUN_006b9aa0(int param_1,undefined4 *param_2)
     }
     *piVar2 = iVar1;
   }
-  piVar2[piVar2[1] * 3 + 2] = *(int *)(param_1 + 0xc);
-  piVar2[(piVar2[1] + 1) * 3] = *(int *)(param_1 + 8);
-  piVar2[piVar2[1] * 3 + 4] = *(int *)(param_1 + 0x54);
+  piVar2[piVar2[1] * 3 + 2] = param_1->field_000C;
+  piVar2[(piVar2[1] + 1) * 3] = param_1->field_0008;
+  piVar2[piVar2[1] * 3 + 4] = param_1->field_0054;
   piVar2[1] = piVar2[1] + 1;
   *param_2 = piVar2;
   return 1;

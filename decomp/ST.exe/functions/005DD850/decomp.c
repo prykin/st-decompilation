@@ -8,8 +8,8 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
 {
   code *pcVar1;
   StartSystemTy *this_00;
-  uint *puVar2;
-  uint *puVar3;
+  AnonShape_006B5570_4D68B99C *pAVar2;
+  AnonShape_006B5570_4D68B99C *pAVar3;
   char *text;
   int iVar4;
   int iVar5;
@@ -22,7 +22,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   undefined2 local_20;
   ushort uStack_1e;
   uint local_14;
-  uint *local_10;
+  AnonShape_006B5570_4D68B99C *local_10;
   StartSystemTy *local_c;
   char local_5;
   
@@ -37,43 +37,44 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 == 0) {
     if ((param_1 != 0) &&
-       (puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,2,1), this_00 = local_c,
-       puVar2 != (uint *)0x0)) {
+       (pAVar2 = (AnonShape_006B5570_4D68B99C *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,2,1),
+       this_00 = local_c, pAVar2 != (AnonShape_006B5570_4D68B99C *)0x0)) {
       local_5 = '\0';
       local_24 = 0x26;
-      local_10 = puVar2;
+      local_10 = pAVar2;
       SystemClassTy::SendMessage((SystemClassTy *)local_c,2,local_c->field_0550,(int)local_34);
       local_14 = (uint)uStack_1e;
       if ((int)(DAT_0080c4fa[2] - 5) <= (int)local_14) {
         local_5 = '\x01';
       }
       wsprintfA((LPSTR)&DAT_0080f33a,s__0_s__007cd8b4,param_1);
-      Library::DKW::TBL::FUN_006b5aa0(puVar2,(char *)&DAT_0080f33a);
+      Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd8ac,param_1 + 0x40);
-      Library::DKW::TBL::FUN_006b5aa0(puVar2,(char *)&DAT_0080f33a);
-      puVar3 = ccFntTy::FormSarr(this_00->field_0034,puVar2,s________________007c21d8,
+      Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
+      pAVar3 = (AnonShape_006B5570_4D68B99C *)
+               ccFntTy::FormSarr(this_00->field_0034,(uint *)pAVar2,s________________007c21d8,
                                  *(int *)(this_00->field_067E + 4),0,0xffffffff,1);
-      if (puVar3 != (uint *)0x0) {
-        if (puVar3[2] != 0) {
-          ccFntTy::SepColorStrInSarr(this_00->field_0034,puVar3,puVar3);
+      if (pAVar3 != (AnonShape_006B5570_4D68B99C *)0x0) {
+        if (pAVar3->field_0008 != 0) {
+          ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pAVar3,(uint *)pAVar3);
         }
         iVar5 = 0;
-        if (0 < (int)puVar3[2]) {
-          if ((int)puVar3[2] < 1) {
+        if (0 < (int)pAVar3->field_0008) {
+          if ((int)pAVar3->field_0008 < 1) {
             text = (char *)0x0;
             goto LAB_005dd982;
           }
           do {
-            text = *(char **)(puVar3[5] + iVar5 * 4);
+            text = *(char **)(pAVar3->field_0014 + iVar5 * 4);
 LAB_005dd982:
             Library::DKW::TBL::FUN_006b5aa0(DAT_0080c4fa,text);
             iVar5 = iVar5 + 1;
-          } while (iVar5 < (int)puVar3[2]);
+          } while (iVar5 < (int)pAVar3->field_0008);
         }
-        FUN_006b5570((byte *)puVar3);
-        puVar2 = local_10;
+        FUN_006b5570(pAVar3);
+        pAVar2 = local_10;
       }
-      FUN_006b5570((byte *)puVar2);
+      FUN_006b5570(pAVar2);
       local_24 = 0x28;
       local_20 = 1;
       uStack_1e = (ushort)DAT_0080c4fa[2];

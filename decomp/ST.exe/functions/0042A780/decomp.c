@@ -35,7 +35,7 @@ LAB_0042a7e7:
     } while (iVar4 < *(int *)(iVar2 + 0x455));
   }
   FUN_006ae110((byte *)groupContent);
-  thunk_FUN_00575460((int *)*param_1);
+  thunk_FUN_00575460((AnonShape_00575460_06C413C6 *)*param_1);
   Library::Ourlib::MFSTMAP::mfTMapErase(param_1);
   return;
 }

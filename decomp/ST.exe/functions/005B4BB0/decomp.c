@@ -84,7 +84,7 @@ switchD_005b4c27_default:
   if (uVar4 < 0x6903) {
     if (uVar4 == 0x6902) {
       if (this_00->field_1EE3 == '\0') {
-        thunk_FUN_005b4860((int)this_00);
+        thunk_FUN_005b4860((AnonShape_005B4860_900BE0CB *)this_00);
         (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
       }
@@ -116,7 +116,7 @@ switchD_005b4c27_default:
       }
       else if (uVar4 == 0x6900) {
         if ((this_00->field_1EE3 == '\0') &&
-           ((DAT_0081176c == 0 || (*(int *)(DAT_0081176c + 0x68a) == 0))))
+           ((PTR_0081176c == (StartSystemTy *)0x0 || (PTR_0081176c->field_068A == 0))))
         goto cf_common_exit_005B4EEC;
         this_00->field_1A5A = 1;
       }
@@ -170,14 +170,14 @@ LAB_005b4df8:
                                (undefined4 *)0x0,0,0);
     if (iVar3 == 0) break;
   case 0x6940:
-    thunk_FUN_005b4860((int)this_00);
+    thunk_FUN_005b4860((AnonShape_005B4860_900BE0CB *)this_00);
     break;
   case 0x693f:
-    thunk_FUN_005b47e0((int)this_00);
+    thunk_FUN_005b47e0((AnonShape_005B47E0_F4E5CF5A *)this_00);
     break;
   case 0x6941:
     if (this_00->field_1EE3 == '\0') {
-      thunk_FUN_005b47e0((int)this_00);
+      thunk_FUN_005b47e0((AnonShape_005B47E0_F4E5CF5A *)this_00);
       this_00->field_1A5A = 4;
       (**(code **)(this_00->field_0000 + 8))();
     }

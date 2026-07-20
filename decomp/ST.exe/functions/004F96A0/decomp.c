@@ -10,7 +10,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
   code *pcVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  uint *puVar5;
+  AnonShape_006B5570_4D68B99C *pAVar5;
   cTypingTy *this_00;
   byte *pbVar6;
   char *pcVar7;
@@ -28,7 +28,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   char *local_c;
-  uint *local_8;
+  AnonShape_006B5570_4D68B99C *local_8;
   
   if ((DAT_0080c4f7 == 1) && (this->field_024B != 0)) {
     local_54.previous = g_currentExceptionFrame;
@@ -65,9 +65,10 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
               pCVar3->field_01D8 = 0;
             }
             FUN_006b4170(pCVar3->field_01B4,0,100,5,0x226,0x55,0);
-            local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+            local_8 = (AnonShape_006B5570_4D68B99C *)
+                      Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
             if (*(int *)(puVar12 + 10) < 1) {
-              local_c = *(char **)(DAT_0080c4c7 + 8);
+              local_c = (char *)PTR_0080c4c7->field_0008;
             }
             else {
               local_c = (char *)(*(int *)(puVar12 + 6) + *(int *)(puVar12 + 10));
@@ -75,26 +76,28 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             iVar4 = *(int *)(puVar12 + 6);
             if (iVar4 < (int)local_c) {
               do {
-                if (iVar4 < *(int *)(DAT_0080c4c7 + 8)) {
-                  pcVar7 = *(char **)(*(int *)(DAT_0080c4c7 + 0x14) + iVar4 * 4);
+                if (iVar4 < (int)PTR_0080c4c7->field_0008) {
+                  pcVar7 = *(char **)(PTR_0080c4c7->field_0014 + iVar4 * 4);
                 }
                 else {
                   pcVar7 = (char *)0x0;
                 }
-                thunk_FUN_005411a0(local_8,pcVar7,&DAT_007c2260);
+                thunk_FUN_005411a0((uint *)local_8,pcVar7,&DAT_007c2260);
                 iVar4 = iVar4 + 1;
               } while (iVar4 < (int)local_c);
             }
-            puVar5 = ccFntTy::FormIndentSarr
-                               (pCVar3->field_01D4,local_8,s________________007c21d8,
+            pAVar5 = (AnonShape_006B5570_4D68B99C *)
+                     ccFntTy::FormIndentSarr
+                               (pCVar3->field_01D4,(uint *)local_8,s________________007c21d8,
                                 (uint *)&DAT_007c21ec,0x226,0,0xffffffff,(char *)0x0,1);
-            if (local_8 != (uint *)0x0) {
-              FUN_006b5570((byte *)local_8);
+            if (local_8 != (AnonShape_006B5570_4D68B99C *)0x0) {
+              FUN_006b5570(local_8);
             }
-            if (puVar5 == (uint *)0x0) {
-              puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+            if (pAVar5 == (AnonShape_006B5570_4D68B99C *)0x0) {
+              pAVar5 = (AnonShape_006B5570_4D68B99C *)
+                       Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
             }
-            local_8 = puVar5;
+            local_8 = pAVar5;
             if (puVar12[5] == '\0') {
               pbVar6 = (byte *)ccFntTy::CreateSurf(pCVar3->field_01D4,pCVar3->field_01B4,0,100,5,
                                                    0x226,0x55,0);
@@ -106,7 +109,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                   thunk_FUN_005252c0(0x1e);
                 }
               }
-              FUN_006b5570((byte *)local_8);
+              FUN_006b5570(local_8);
             }
             else {
               ccFntTy::SetSurf(pCVar3->field_01D4,pCVar3->field_01B4,0,100,5,0x226,0x55);
@@ -124,7 +127,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                                  0xff);
               pCVar3->field_01DC = iVar4;
               pCVar3->field_01E0 = puVar12[0xe];
-              FUN_006b5570((byte *)local_8);
+              FUN_006b5570(local_8);
             }
             break;
           case 3:
@@ -177,7 +180,7 @@ LAB_004f9a8a:
               psVar15 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar7,bVar13,bVar14,psVar15)
               ;
               *puVar1 = psVar15;
-              pCVar3->field_0260 = 5;
+              pCVar3->field_0260 = CASE_5;
               pCVar3->field_025F = 0;
               _Count = 0x1f;
               if (puVar12[10] == '\0') {
@@ -199,7 +202,7 @@ LAB_004f9a8a:
             if (DAT_008117bc != (undefined4 *)0x0) {
               (**(code **)*DAT_008117bc)(&pCVar3->field_0x18);
             }
-            pCVar3->field_0260 = 4;
+            pCVar3->field_0260 = CASE_4;
             DAT_0080c4f7 = 4;
           }
           iVar4 = pCVar3->field_024B;

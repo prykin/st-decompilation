@@ -41,7 +41,7 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
       *puVar3 = *(undefined4 *)((int)this + 0x119);
       iVar1 = iVar6 / *(int *)((int)this + 0x121);
       iVar6 = iVar6 + -0x96;
-      puVar3[4] = iVar1 + *(int *)(DAT_00802a38 + 0xe4) + param_6;
+      puVar3[4] = iVar1 + PTR_00802a38->field_00E4 + param_6;
       param_4 = param_4 + -1;
       puVar3 = puVar3 + 1;
     } while (param_4 != 0);

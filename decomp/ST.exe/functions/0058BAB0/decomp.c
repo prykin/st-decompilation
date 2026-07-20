@@ -28,7 +28,7 @@ FUN_0058bab0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_2c[2] = 0;
   local_2c[3] = 1;
   local_10 = param_3;
-  (**(code **)(*DAT_00802a38 + 8))(0x14d,0,&param_4,local_2c,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x14d,0,&param_4,local_2c,0);
   return param_4;
 }
 

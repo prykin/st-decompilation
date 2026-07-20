@@ -3,7 +3,8 @@
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::PrepareAFT */
 
-void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_2)
+void __thiscall
+SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -17,7 +18,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if ((param_1 != 0) && (param_2 != (uint *)0x0)) {
+  if ((param_1 != (AnonShape_005D4990_5F0525CF *)0x0) && (param_2 != (uint *)0x0)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -25,7 +26,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
         uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
-        puVar6 = *(undefined4 **)(param_1 + 8);
+        puVar6 = (undefined4 *)param_1->field_0008;
         for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
           *puVar6 = 0;
           puVar6 = puVar6 + 1;
@@ -35,9 +36,9 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
           puVar6 = (undefined4 *)((int)puVar6 + 1);
         }
         uVar5 = *param_2;
-        iVar2 = *(int *)(param_1 + 8);
+        iVar2 = param_1->field_0008;
         uVar4 = 0;
-        *(uint *)(param_1 + 4) = uVar5;
+        param_1->field_0004 = uVar5;
         if (uVar5 != 0) {
           do {
             param_2 = param_2 + 1;
@@ -45,13 +46,13 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
               *(undefined1 *)(*param_2 + iVar2) = 1;
             }
             uVar4 = uVar4 + 1;
-          } while (uVar4 < *(uint *)(param_1 + 4));
+          } while (uVar4 < (uint)param_1->field_0004);
         }
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
       uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
-      puVar6 = *(undefined4 **)(param_1 + 8);
+      puVar6 = (undefined4 *)param_1->field_0008;
       for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar6 = 0x1010101;
         puVar6 = puVar6 + 1;
@@ -60,7 +61,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
         *(undefined1 *)puVar6 = 1;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      *(undefined4 *)(param_1 + 4) = *(undefined4 *)&local_8->field_1A5B->field_0x6a6;
+      param_1->field_0004 = *(undefined4 *)&local_8->field_1A5B->field_0x6a6;
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

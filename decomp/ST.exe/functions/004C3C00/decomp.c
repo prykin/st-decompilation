@@ -49,17 +49,17 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   undefined4 local_2c;
   int local_28;
   int local_24;
-  TLOBaseTy *local_20;
+  STFishC *local_20;
   short local_1c [2];
   int local_18;
   short local_14;
   short local_12;
   TLOBaseTyVTable **local_10;
   short local_a;
-  TLOBaseTy *local_8;
+  STFishC *local_8;
   
-  local_8 = (TLOBaseTy *)0x0;
-  local_20 = (TLOBaseTy *)0x0;
+  local_8 = (STFishC *)0x0;
+  local_20 = (STFishC *)0x0;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_60 = this;
@@ -120,22 +120,23 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                           ((SHORT_007fb240 <= sVar6 || (sVar13 = (short)iVar7, sVar13 < 0)))) ||
                          ((SHORT_007fb242 <= sVar13 ||
                           ((sVar5 = (short)local_3c, sVar5 < 0 || (SHORT_007fb244 <= sVar5)))))) {
-                        local_8 = (TLOBaseTy *)0x0;
+                        local_8 = (STFishC *)0x0;
                       }
                       else {
-                        local_8 = *(TLOBaseTy **)
+                        local_8 = *(STFishC **)
                                    (DAT_007fb248 +
                                    ((int)sVar13 * (int)SHORT_007fb240 +
                                     (int)sVar5 * (int)SHORT_007fb246 + (int)sVar6) * 8);
                         iVar7 = local_18;
                       }
-                      if ((((local_8 != (TLOBaseTy *)0x0) && (local_8 != this_00)) &&
-                          (iVar8 = (*local_8->vtable->slot_F8)(), iVar7 = local_18,
+                      if (((((TLOBaseTy *)local_8 != (TLOBaseTy *)0x0) &&
+                           ((TLOBaseTy *)local_8 != this_00)) &&
+                          (iVar8 = (*((TLOBaseTy *)local_8)->vtable->vfunc_F8)(), iVar7 = local_18,
                           iVar15 = local_28, iVar8 != 0)) &&
                          ((*(int *)&local_8->field_0x24 != 0xff &&
-                          (iVar8 = (*local_8->vtable->slot_F4)(*(undefined4 *)&this_00->field_0x24),
-                          iVar7 = local_18, iVar15 = local_28, iVar8 != 0)))) {
-                        STFishC::sub_004162B0((STFishC *)local_8,&local_12,&local_14,&local_a);
+                          (iVar8 = (*local_8->vtable->vfunc_F4)(*(undefined4 *)&this_00->field_0x24)
+                          , iVar7 = local_18, iVar15 = local_28, iVar8 != 0)))) {
+                        STFishC::sub_004162B0(local_8,&local_12,&local_14,&local_a);
                         thunk_FUN_00416270(local_8,local_40,(int *)local_38,(int *)local_1c);
                         iVar7 = (int)(short)local_30;
                         iVar8 = FUN_006acf0d((int)local_40[0],(int)local_38[0],(int)local_1c[0],
@@ -146,12 +147,13 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                         iVar15 = local_28;
                         if ((int)(((uVar9 ^ uVar12) - uVar12) * 10) / iVar8 <=
                             *(int *)((int)local_10 + 0x281)) {
-                          *(undefined4 *)((int)local_10 + 0x295) =
-                               *(undefined4 *)((int)DAT_00802a38 + 0xe4);
+                          *(undefined4 *)((int)local_10 + 0x295) = PTR_00802a38->field_00E4;
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
-                          sVar6 = (*this_00->vtable->slot_10)
-                                            (local_8->field_0041,local_8->field_0043,
-                                             local_8->field_0045,local_2c,local_34,local_30);
+                          sVar6 = (*this_00->vtable->vfunc_10)
+                                            (*(undefined2 *)&local_8->field_0x41,
+                                             *(undefined2 *)&local_8->field_0x43,
+                                             *(undefined2 *)&local_8->field_0x45,local_2c,local_34,
+                                             local_30);
                           iVar8 = ((sVar6 + 0xb4) % 0x168) / 0xf;
                           uVar9 = (int)*(uint *)(&DAT_007be8c8 +
                                                 (*(int *)&this_00->field_0x259 / 0xf + iVar8 * 0x18)
@@ -167,8 +169,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                               if (iVar8 % 3 == 0) {
 LAB_004c4080:
                                 if (((*(uint *)((int)local_10 + 0x265) & 2) != 0) &&
-                                   (*(int *)&local_8->field_0x18 == *(int *)((int)local_10 + 0x26d))
-                                   ) {
+                                   (local_8->field_0018 == *(int *)((int)local_10 + 0x26d))) {
                                   *(int *)((int)local_10 + 0x2d5) = (int)local_12;
                                   *(int *)((int)local_10 + 0x2d9) = (int)local_14;
                                   local_20 = local_8;
@@ -181,7 +182,7 @@ LAB_004c4080:
                                 if ((*(uint *)((int)local_10 + 0x265) & 1) != 0) {
                                   if (this_00->field_0420 == 0) {
                                     if ((*(uint *)&local_8->field_0x24 < 8) &&
-                                       ((DAT_00802a38 == (void *)0x0 ||
+                                       ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                                         ((byte)(&DAT_008087e9)[*(uint *)&local_8->field_0x24 * 0x51]
                                          < 8)))) {
                                       bVar1 = local_8->field_0x24;
@@ -231,7 +232,7 @@ LAB_004c4192:
                                   }
                                   else {
 LAB_004c41a5:
-                                    iVar8 = (*local_8->vtable->slot_F0)();
+                                    iVar8 = (*local_8->vtable->vfunc_F0)();
                                     iVar7 = local_18;
                                     iVar15 = local_28;
                                     if (iVar8 != 0) {
@@ -244,11 +245,11 @@ LAB_004c41a5:
                                         iVar11 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
-                                        iVar11 = (*local_8->vtable->slot_7C)();
+                                        iVar11 = (*local_8->vtable->vfunc_7C)();
                                       }
                                       iVar7 = local_18;
                                       iVar15 = local_28;
-                                      if (((local_20 == (TLOBaseTy *)0x0) || (local_6c < iVar11)) ||
+                                      if (((local_20 == (STFishC *)0x0) || (local_6c < iVar11)) ||
                                          ((iVar11 == local_6c &&
                                           (ppTVar14 = local_10, iVar8 < local_5c)))) {
                                         local_20 = local_8;
@@ -327,12 +328,12 @@ LAB_004c41a5:
     }
   }
 LAB_004c42b5:
-  if (local_20 != (TLOBaseTy *)0x0) {
-    *(undefined4 *)((int)ppTVar14 + 0x28d) = *(undefined4 *)&local_20->field_0x18;
-    *(TLOBaseTy **)((int)ppTVar14 + 0x291) = local_20;
+  if (local_20 != (STFishC *)0x0) {
+    *(undefined4 *)((int)ppTVar14 + 0x28d) = local_20->field_0018;
+    *(STFishC **)((int)ppTVar14 + 0x291) = local_20;
     if ((((*(byte *)((int)ppTVar14 + 0x265) & 2) != 0) &&
         (*(int *)((int)ppTVar14 + 0x28d) != *(int *)((int)ppTVar14 + 0x26d))) &&
-       (iVar7 = FUN_006e62d0(DAT_00802a38,*(int *)((int)ppTVar14 + 0x26d),(int *)&local_8),
+       (iVar7 = FUN_006e62d0(PTR_00802a38,*(int *)((int)ppTVar14 + 0x26d),(int *)&local_8),
        iVar7 != 0)) {
       *(uint *)((int)ppTVar14 + 0x265) = *(uint *)((int)ppTVar14 + 0x265) & 0xfffffffd;
       *(undefined4 *)((int)ppTVar14 + 0x26d) = 0;

@@ -1,12 +1,12 @@
 
-void FUN_006c5b00(int param_1,byte *param_2,uint param_3,uint param_4,uint param_5,byte param_6,
-                 int param_7)
+void FUN_006c5b00(AnonShape_006C5B00_75F2A72F *param_1,byte *param_2,uint param_3,uint param_4,
+                 uint param_5,byte param_6,int param_7)
 
 {
   uint uVar1;
   
-  if ((*(byte *)(param_1 + 0x49c) & 1) == 0) {
-    if (*(int *)(param_1 + 0x498) != 7) {
+  if ((param_1->field_049C & 1) == 0) {
+    if (param_1->field_0498 != 7) {
       for (uVar1 = param_3 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
         *(uint *)param_2 = CONCAT22(CONCAT11(param_6,param_6),CONCAT11(param_6,param_6));
         param_2 = param_2 + 4;
@@ -26,7 +26,7 @@ void FUN_006c5b00(int param_1,byte *param_2,uint param_3,uint param_4,uint param
       return;
     }
   }
-  else if (*(int *)(param_1 + 0x498) == 7) {
+  else if (param_1->field_0498 == 7) {
     if (param_3 != 0) {
       do {
         if ((param_5 & param_4) == 0) {

@@ -1,11 +1,11 @@
 
-undefined4 __fastcall FUN_004cc810(int param_1)
+undefined4 __fastcall FUN_004cc810(AnonShape_004CC900_31EE9CAA *param_1)
 
 {
-  if (*(int *)(param_1 + 0x448) != 0) {
+  if (param_1->field_0448 != 0) {
     thunk_FUN_004cc900(param_1);
   }
-  *(undefined4 *)(param_1 + 0x444) = 0;
+  param_1->field_0444 = 0;
   return 0;
 }
 

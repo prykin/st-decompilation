@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_004d0a80(void *this,int param_1,int param_2,int param_
     }
     exceptionCode =
          thunk_FUN_00495ff0((short)piVar1[iVar4 * 3],(short)piVar1[iVar4 * 3 + 1],
-                            (short)piVar1[iVar4 * 3 + 2],0,(int)this);
+                            (short)piVar1[iVar4 * 3 + 2],0,this);
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c

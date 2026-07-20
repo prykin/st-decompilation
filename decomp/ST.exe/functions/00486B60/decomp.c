@@ -22,7 +22,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
     puVar1[1] = 0;
   }
   puVar1[2] = 1;
-  iVar3 = thunk_FUN_00493cd0((int)this);
+  iVar3 = thunk_FUN_00493cd0(this);
   if (iVar3 == 0) {
     puVar1[0x1d] = 1;
   }
@@ -48,7 +48,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   case 0x1b:
     if (*(int *)((int)this + 0x7ca) != 0) {
       local_c = (int *)0x0;
-      FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x7ca),(int *)&local_c);
+      FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),(int *)&local_c);
       if (local_c != (int *)0x0) {
         uVar5 = (**(code **)(*local_c + 0x2c))();
         *(undefined4 *)(puVar1 + 0x1e) = uVar5;

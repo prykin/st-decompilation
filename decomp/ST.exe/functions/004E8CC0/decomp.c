@@ -1,19 +1,19 @@
 
-undefined4 __fastcall FUN_004e8cc0(int *param_1)
+undefined4 __fastcall FUN_004e8cc0(AnonShape_004E8DC0_1D60A929 *param_1)
 
 {
-  int iVar1;
+  undefined4 uVar1;
   
-  param_1[0x134] = 0;
-  iVar1 = *(int *)(DAT_00802a38 + 0xe4);
-  param_1[0x138] = 0;
-  param_1[0x13d] = 0;
-  param_1[0x13e] = 0;
-  param_1[0x13f] = 0;
-  param_1[0x135] = iVar1;
-  param_1[0x136] = 0xffff;
-  if (((*(int *)((int)param_1 + 0x231) == 1) || (*(int *)((int)param_1 + 0x231) == 3)) &&
-     (param_1[0x16b] == 0x6c)) {
+  *(undefined4 *)&param_1->field_0x4d0 = 0;
+  uVar1 = PTR_00802a38->field_00E4;
+  *(undefined4 *)&param_1->field_0x4e0 = 0;
+  *(undefined4 *)&param_1->field_0x4f4 = 0;
+  *(undefined4 *)&param_1->field_0x4f8 = 0;
+  *(undefined4 *)&param_1->field_0x4fc = 0;
+  *(undefined4 *)&param_1->field_0x4d4 = uVar1;
+  *(undefined4 *)&param_1->field_0x4d8 = 0xffff;
+  if (((*(int *)&param_1->field_0x231 == 1) || (*(int *)&param_1->field_0x231 == 3)) &&
+     (*(int *)&param_1->field_0x5ac == 0x6c)) {
     thunk_FUN_004e8dc0(param_1);
   }
   return 0;

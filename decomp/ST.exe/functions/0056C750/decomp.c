@@ -37,12 +37,12 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006ab060(&local_8->field_1189);
     }
     pSVar3->field_118D = 0;
-    if (DAT_00806740 != (byte *)0x0) {
-      FUN_006ae110(DAT_00806740);
+    if (PTR_00806740 != (AnonShape_GLOBAL_00806740_0AFD1484 *)0x0) {
+      FUN_006ae110((byte *)PTR_00806740);
     }
-    DAT_00806740 = (byte *)0x0;
-    thunk_FUN_005711d0(pSVar3,&DAT_0081163c);
-    thunk_FUN_005711d0(pSVar3,&DAT_0081176c);
+    PTR_00806740 = (AnonShape_GLOBAL_00806740_0AFD1484 *)0x0;
+    thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081163c);
+    thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081176c);
     CloseGameDBs(pSVar3);
     DestroyBaseSystem();
     if ((byte *)pSVar3->field_4EE2 != (byte *)0x0) {
@@ -53,9 +53,9 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006ae110((byte *)pSVar3->field_4EE6);
     }
     pSVar3->field_4EE6 = 0;
-    if (DAT_008075a0 != (int *)0x0) {
-      FUN_006c3aa0(DAT_008075a0);
-      DAT_008075a0 = (int *)0x0;
+    if (PTR_008075a0 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
+      FUN_006c3aa0((int *)PTR_008075a0);
+      PTR_008075a0 = (AnonShape_006C3FC0_72DDFA27 *)0x0;
     }
     if (g_int_008075A4 != (int *)0x0) {
       FUN_006c2ac0(g_int_008075A4);
@@ -108,16 +108,16 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006ae110((byte *)pSVar3->field_4EDE);
     }
     pSVar3->field_4EDE = 0;
-    if ((byte *)pSVar3->field_4EA7 != (byte *)0x0) {
-      FUN_006b5570((byte *)pSVar3->field_4EA7);
+    if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7);
     }
     pSVar3->field_4EA7 = 0;
-    if ((byte *)pSVar3->field_4EAB != (byte *)0x0) {
-      FUN_006b5570((byte *)pSVar3->field_4EAB);
+    if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EAB != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EAB);
     }
     pSVar3->field_4EAB = 0;
-    if ((byte *)pSVar3->field_4EDA != (byte *)0x0) {
-      FUN_006b5570((byte *)pSVar3->field_4EDA);
+    if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EDA != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EDA);
     }
     pSVar3->field_4EDA = 0;
     if (pSVar3->field_7D12 != 0) {
@@ -129,7 +129,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     thunk_FUN_005713b0((int)pSVar3);
     this_01 = &pSVar3->field_0038;
     thunk_FUN_00572920(this_01,1);
-    thunk_FUN_005672e0((int)this_01);
+    thunk_FUN_005672e0((AnonShape_005672E0_9A0A2ED1 *)this_01);
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
     local_c = this_01;

@@ -20,7 +20,7 @@ undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this,int param_1)
   if (uVar1 != 0) {
     uVar5 = 0;
     do {
-      FUN_006acc70(this->field_0029,uVar5,&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar5,&local_8);
       if ((short)local_8 != -1) {
         uVar5 = STAllPlayersC::GetObjPtr
                           (g_sTAllPlayers_007FA174,

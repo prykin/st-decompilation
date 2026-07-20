@@ -20,7 +20,7 @@ void __thiscall FUN_004fae90(void *this,uint param_1,uint param_2)
          (iVar1 <= (int)uVar4)) &&
         (((int)uVar4 < *(int *)((int)this + 0xd0) + iVar1 && (DAT_00808784 == 0)))) &&
        ((DAT_00808788 == 0 && ((DAT_0080878c == 0 && (DAT_00808790 == 0)))))) {
-      iVar3 = FUN_006e68c0(DAT_00807598,(uVar2 - iVar3) + -5,(uVar4 - iVar1) + -7,(int *)&param_1,
+      iVar3 = FUN_006e68c0(PTR_00807598,(uVar2 - iVar3) + -5,(uVar4 - iVar1) + -7,(int *)&param_1,
                            &local_8);
       if (iVar3 != 0) {
         local_10 = local_8;

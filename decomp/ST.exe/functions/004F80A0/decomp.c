@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
-   CPanelTy::PaintTV */
+   CPanelTy::PaintTV
+   
+   [STSwitchEnumApplier] Switch target field_0260 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0260State. Cases:
+   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 void __thiscall CPanelTy::PaintTV(CPanelTy *this)
 
@@ -108,7 +112,7 @@ joined_r0x004f81d1:
           (&this_00->field_02E2)[uVar14] = puVar8;
           *local_10 = 1;
           *pcVar7 = '\0';
-          if (this_00->field_023F == 5) {
+          if (this_00->field_023F == (CASE_4|CASE_1)) {
             if ((char)local_c == '\0') {
               cVar12 = this_00->field_02ED;
             }
@@ -116,7 +120,7 @@ joined_r0x004f81d1:
               cVar12 = this_00->field_02EC;
             }
             if (cVar12 != '\0') {
-              this_00->field_023F = 1;
+              this_00->field_023F = CASE_1;
               ShiftControls(this_00,1);
             }
           }
@@ -152,7 +156,7 @@ joined_r0x004f81d1:
         if (*(short *)(&this_00->field_02E2)[uVar14] <= (short)(ushort)*pbVar15) {
           *pbVar15 = *pbVar15 - 1;
           *local_10 = 2;
-          if (this_00->field_023F == 6) {
+          if (this_00->field_023F == (CASE_4|CASE_2)) {
             if ((char)local_c == '\0') {
               cVar12 = this_00->field_02ED;
             }
@@ -160,7 +164,7 @@ joined_r0x004f81d1:
               cVar12 = this_00->field_02EC;
             }
             if (cVar12 != '\0') {
-              this_00->field_023F = 4;
+              this_00->field_023F = CASE_4;
               thunk_FUN_005252c0(CASE_B0);
             }
           }
@@ -311,7 +315,7 @@ joined_r0x004f861b:
     return;
   }
   switch(this_00->field_0260) {
-  case 1:
+  case CASE_1:
     if ((DAT_0080731a == 0) || ((uint)(this_00->field_0038 - this_00->field_0261) < 0x42))
     goto cf_switch_join_004F88ED;
     this_00->field_0261 = this_00->field_0038;
@@ -321,7 +325,7 @@ joined_r0x004f861b:
     break;
   default:
     goto cf_switch_join_004F88ED;
-  case 3:
+  case CASE_3:
     if (0x31 < (uint)(this_00->field_0038 - this_00->field_0261)) {
       this_00->field_0261 = this_00->field_0038;
       if (this_00->field_025F == '\0') {
@@ -334,7 +338,7 @@ joined_r0x004f861b:
         pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
         psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar7,bVar11,bVar2,psVar9);
         this_00->field_025B = psVar9;
-        this_00->field_0260 = 1;
+        this_00->field_0260 = CASE_1;
         this_00->field_025F = 0;
       }
       else {
@@ -346,7 +350,7 @@ joined_r0x004f861b:
       }
     }
     goto cf_switch_join_004F88ED;
-  case 4:
+  case CASE_4:
     if ((uint)(this_00->field_0038 - this_00->field_0261) < 0x32) goto cf_switch_join_004F88ED;
     this_00->field_0261 = this_00->field_0038;
     cVar12 = this_00->field_025F + '\x01';
@@ -359,7 +363,7 @@ joined_r0x004f861b:
       this_00->field_025F = this_00->field_025F - 1;
     }
     goto LAB_004f88e6;
-  case 5:
+  case CASE_5:
     if ((uint)(this_00->field_0038 - this_00->field_0261) < 0x42) goto cf_switch_join_004F88ED;
     puVar17 = &this_00->field_025B;
     bVar11 = this_00->field_025F + 1;
@@ -390,13 +394,13 @@ LAB_004f8860:
       psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar7,bVar11,bVar2,psVar9);
       *puVar17 = psVar9;
     }
-    this_00->field_0260 = 1;
+    this_00->field_0260 = CASE_1;
   }
   this_00->field_025F = 0;
 LAB_004f88e6:
   thunk_FUN_004f1950((int)this_00);
 cf_switch_join_004F88ED:
-  if (((this_00->field_01D8 != 0) && ((*(byte *)(DAT_00802a38 + 0xe4) & 1) != 0)) &&
+  if (((this_00->field_01D8 != 0) && ((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0)) &&
      (iVar4 = *(int *)(this_00->field_01D8 + 4), iVar4 < this_00->field_01DC + -2)) {
     FUN_006b4170(this_00->field_01B4,0,100,5,0x226,0x55,0);
     iVar10 = FUN_007140e0((void *)this_00->field_01D8,1,'\0');

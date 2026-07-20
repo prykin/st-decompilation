@@ -24,8 +24,7 @@ void __fastcall FUN_00533b80(void *param_1)
         uID = 0x3e84;
       }
       else {
-        uID = 0x3e96 - ((uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)(DAT_00802a38 + 0x34)) < 6000
-                       );
+        uID = 0x3e96 - ((uint)(PTR_00802a38->field_00E4 - PTR_00802a38->field_0034) < 6000);
       }
       *(UINT *)((int)param_1 + 0x1a5) = uID;
       if (DAT_0080874e == '\x03') {

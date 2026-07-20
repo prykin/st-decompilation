@@ -37,7 +37,7 @@ void __thiscall FUN_00566970(void *this,int param_1,int param_2)
     }
     puVar3 = (undefined4 *)0x0;
     pCVar1 = FUN_006f2c00(text,3,iVar2);
-    iVar2 = thunk_FUN_0056a2a0(&g_sound,*(uint **)((int)this + 0x18),pCVar1,param_2,puVar3);
+    iVar2 = thunk_FUN_0056a2a0(&g_sound,*(cMf32 **)((int)this + 0x18),pCVar1,param_2,puVar3);
     if (iVar2 == 0) {
       if (*(int *)((int)this + 0x39) == param_1) {
         *(int *)((int)this + 0x39) = param_1;

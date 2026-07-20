@@ -3,7 +3,10 @@
    E:\__titans\wlad\To_dump.cpp
    DumpClassC::WritePtr */
 
-undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint param_4,int param_5)
+undefined4
+DumpClassC::WritePtr
+          (short param_1,short param_2,short param_3,uint param_4,
+          AnonShape_00495EC0_95A268C6 *param_5)
 
 {
   int *piVar1;
@@ -27,10 +30,10 @@ undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint p
                   ((int)SHORT_007fb240 * (int)param_2 + (int)SHORT_007fb246 * (int)param_3 +
                   (int)param_1) * 2) * 4);
   if (*piVar1 == 0) {
-    *piVar1 = param_5;
-    *(short *)(param_5 + 0x5f) = param_3;
-    *(short *)(param_5 + 0x5d) = param_2;
-    *(short *)(param_5 + 0x5b) = param_1;
+    *piVar1 = (int)param_5;
+    param_5->field_005F = param_3;
+    param_5->field_005D = param_2;
+    param_5->field_005B = param_1;
     return 0;
   }
   iVar3 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x84,0,0,&DAT_007a4ccc,

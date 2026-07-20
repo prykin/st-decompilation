@@ -30,7 +30,7 @@ void FUN_004e6680(int param_1)
         iVar4 = iVar4 + 1;
       } while (pbVar8[iVar5] != 0);
       if (pbVar8[1] != 0) {
-        *(undefined4 *)((int)&DAT_007f53b3 + (uint)*pbVar8 * 4 + param_1 * 0xa62) = 1;
+        *(undefined4 *)(param_1 * 0xa62 + 0x7f53b3 + (uint)*pbVar8 * 4) = 1;
       }
     }
 LAB_004e6740:
@@ -55,8 +55,8 @@ LAB_004e6740:
           iVar5 = iVar5 + 1;
         } while ((&DAT_007c0e4d)[iVar1] != '\0');
         if ((&DAT_007c0e4d)[iVar4 * 3] != '\0') {
-          *(undefined4 *)
-           ((int)&DAT_007f53b3 + (uint)(byte)(&DAT_007c0e4c)[iVar4 * 3] * 4 + param_1 * 0xa62) = 1;
+          *(undefined4 *)(param_1 * 0xa62 + 0x7f53b3 + (uint)(byte)(&DAT_007c0e4c)[iVar4 * 3] * 4) =
+               1;
         }
       }
     }

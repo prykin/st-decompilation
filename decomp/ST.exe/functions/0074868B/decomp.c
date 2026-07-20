@@ -2,7 +2,9 @@
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0074868B -> EXTERNAL:00000019 @ 007486CE */
 
-undefined4 FUN_0074868b(int param_1,LPCRITICAL_SECTION lpCriticalSection,undefined1 param_3)
+undefined4
+FUN_0074868b(AnonShape_0074868B_7E9383CB *param_1,LPCRITICAL_SECTION lpCriticalSection,
+            undefined1 param_3)
 
 {
   LPCRITICAL_SECTION lpCriticalSection_00;
@@ -13,15 +15,15 @@ undefined4 FUN_0074868b(int param_1,LPCRITICAL_SECTION lpCriticalSection,undefin
     uVar2 = 0x80004003;
   }
   else {
-    lpCriticalSection_00 = *(LPCRITICAL_SECTION *)(param_1 + -0x30);
+    lpCriticalSection_00 = *(LPCRITICAL_SECTION *)(param_1 + -4);
     EnterCriticalSection(lpCriticalSection_00);
-    piVar1 = *(int **)(param_1 + 4);
+    piVar1 = (int *)param_1->field_0004;
     (*(code *)lpCriticalSection->DebugInfo->CriticalSection)(lpCriticalSection);
-    *(LPCRITICAL_SECTION *)(param_1 + 4) = lpCriticalSection;
+    param_1->field_0004 = lpCriticalSection;
     if (piVar1 != (int *)0x0) {
       (**(code **)(*piVar1 + 8))(piVar1);
     }
-    *(undefined1 *)(param_1 + 8) = param_3;
+    param_1->field_0008 = param_3;
     LeaveCriticalSection(lpCriticalSection_00);
     uVar2 = 0;
   }

@@ -153,8 +153,8 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
         uVar5 = (uint)(byte)this_00->field_009A;
       } while (iVar4 < (int)uVar5);
     }
-    if (((this_00->field_1EE3 != '\0') && (*(int *)(DAT_0081176c + 0x2e6) != 0)) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x01')) {
+    if (((this_00->field_1EE3 != '\0') && (PTR_0081176c->field_02E6 != (MMsgTy *)0x0)) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -221,8 +221,8 @@ LAB_005b353c:
       } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
     }
     iVar4 = 0;
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x02')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

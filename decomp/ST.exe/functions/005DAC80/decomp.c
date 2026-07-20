@@ -27,8 +27,8 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    if ((byte *)local_8->field_0696 != (byte *)0x0) {
-      FUN_006b5570((byte *)local_8->field_0696);
+    if ((AnonShape_006B5570_4D68B99C *)local_8->field_0696 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0696);
     }
     puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     pSVar2->field_0696 = puVar4;

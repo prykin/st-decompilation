@@ -24,9 +24,9 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
-    if ((DAT_008087b6 != 0) && (*(int *)(DAT_0081176c + 0x2f4) != 0)) {
-      FUN_006e83f0(*(int *)(DAT_0081176c + 0x2f0),0x14,0x14,0x8b,(uint)DAT_008087c2);
-      FUN_006b5440(*(int *)(DAT_0081176c + 0x2f0),0,0x14,0x14,*(int *)(DAT_0081176c + 0x2f4),0,0);
+    if ((DAT_008087b6 != 0) && (PTR_0081176c->field_02F4 != 0)) {
+      FUN_006e83f0(PTR_0081176c->field_02F0,0x14,0x14,0x8b,(uint)DAT_008087c2);
+      FUN_006b5440(PTR_0081176c->field_02F0,0,0x14,0x14,PTR_0081176c->field_02F4,0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
          ((iVar4 = local_8->field_1F84, iVar4 != 0 && (0 < *(int *)(iVar4 + 0xc))))) {
@@ -76,8 +76,8 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
           bVar8 = uVar7 < *(uint *)(iVar4 + 0xc);
         } while ((int)uVar7 < (int)*(uint *)(iVar4 + 0xc));
       }
-      if (-1 < (int)*(uint *)(DAT_0081176c + 0x2ec)) {
-        FUN_006b35d0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
+      if (-1 < (int)PTR_0081176c->field_02EC) {
+        FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_02EC);
       }
     }
     g_currentExceptionFrame = local_4c.previous;

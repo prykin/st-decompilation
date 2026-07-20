@@ -4,7 +4,8 @@
    E:\__titans\Igor\to_jelly.cpp
    STJellyGunC::GetMessage */
 
-undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
+undefined4 __thiscall
+STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
 
 {
   char cVar1;
@@ -19,19 +20,20 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
   uint uVar9;
   short sVar10;
   undefined4 unaff_ESI;
-  undefined4 *puVar11;
-  byte *pbVar12;
+  AnonShape_00583270_F758043B *pAVar11;
+  undefined4 *puVar12;
+  byte *pbVar13;
   int *unaff_EDI;
-  undefined4 *puVar13;
   int *piVar14;
-  char *pcVar15;
-  byte *pbVar16;
+  undefined4 *puVar15;
+  char *pcVar16;
+  byte *pbVar17;
   InternalExceptionFrame local_a0;
   undefined4 local_5c [4];
   undefined4 local_4c;
   undefined4 local_48;
   STSprGameObjC *local_3c;
-  undefined4 *local_38;
+  AnonShape_00583270_F758043B *local_38;
   LPVOID local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -45,7 +47,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
   byte *local_c;
   uint local_8;
   
-  if ((this->field_0235 == CASE_4) && (*(int *)(param_1 + 0x10) != 3)) {
+  if ((this->field_0235 == CASE_4) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_a0.previous = g_currentExceptionFrame;
@@ -65,20 +67,20 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
     uVar7 = (*pcVar2)();
     return uVar7;
   }
-  STSprGameObjC::GetMessage(local_3c,param_1);
-  uVar9 = *(uint *)(param_1 + 0x10);
+  STSprGameObjC::GetMessage(local_3c,(AnonShape_0041AF40_F59F8577 *)param_1);
+  uVar9 = param_1->field_0010;
   if (uVar9 < 0x111) {
     if (uVar9 == 0x110) {
       if ((*(int *)&this_00->field_0x235 != 2) && (*(int *)&this_00->field_0x235 != 4)) {
         sub_00582530((STJellyGunC *)this_00);
-        puVar11 = &this_00->field_01D5;
+        puVar12 = &this_00->field_01D5;
         *(undefined4 *)&this_00->field_0x241 = 0xff;
         *(undefined2 *)&this_00->field_0x245 = 0;
         *(undefined4 *)&this_00->field_0x252 = 0;
         *(undefined4 *)&this_00->field_0x235 = 2;
-        STT3DSprC::StopShow((STT3DSprC *)puVar11,0xe);
-        STT3DSprC::StopShow((STT3DSprC *)puVar11,0xc);
-        thunk_FUN_004ad5e0((int)puVar11);
+        STT3DSprC::StopShow((STT3DSprC *)puVar12,0xe);
+        STT3DSprC::StopShow((STT3DSprC *)puVar12,0xc);
+        thunk_FUN_004ad5e0((int)puVar12);
         iVar6 = sub_00584380((STJellyGunC *)this_00);
         if (iVar6 != 0) {
           sub_00582580((STJellyGunC *)this_00);
@@ -89,11 +91,12 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
     }
     else if (uVar9 < 4) {
       if (uVar9 == 3) {
-        uVar7 = thunk_FUN_004167a0((int)this_00);
+        uVar7 = thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this_00);
         thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                            *(short *)&this_00->field_0x5f,
-                           CONCAT31((int3)((uint)uVar7 >> 8),this_00->field_0x8e),(int)this_00);
-        thunk_FUN_004ad310((int)&this_00->field_01D5);
+                           CONCAT31((int3)((uint)uVar7 >> 8),this_00->field_0x8e),
+                           (AnonShape_00495FF0_59081BDD *)this_00);
+        thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
         g_currentExceptionFrame = local_a0.previous;
         return 0;
       }
@@ -103,20 +106,20 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
         return 0;
       }
       if (uVar9 == 2) {
-        local_38 = *(undefined4 **)(param_1 + 0x14);
-        if ((uint)local_38[3] < 2) {
+        local_38 = (AnonShape_00583270_F758043B *)param_1->field_0014;
+        if (*(uint *)&local_38->field_0xc < 2) {
           *(undefined4 *)&this_00->field_0x235 = 4;
           *(undefined4 *)&this_00->field_0x23d = 0;
           *(undefined4 *)&this_00->field_0x241 = 0xff;
           *(undefined4 *)&this_00->field_0x231 = 0;
-          puVar11 = *(undefined4 **)(param_1 + 0x14);
-          puVar13 = (undefined4 *)&this_00->field_0x256;
+          puVar12 = param_1->field_0014;
+          puVar15 = (undefined4 *)&this_00->field_0x256;
           for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar13 = *puVar11;
-            puVar11 = puVar11 + 1;
-            puVar13 = puVar13 + 1;
+            *puVar15 = *puVar12;
+            puVar12 = puVar12 + 1;
+            puVar15 = puVar15 + 1;
           }
-          *(undefined2 *)puVar13 = *(undefined2 *)puVar11;
+          *(undefined2 *)puVar15 = *(undefined2 *)puVar12;
           iVar6 = *(int *)&this_00->field_0x26a;
           sVar10 = (short)(iVar6 >> 0x1f);
           if (iVar6 < 0) {
@@ -162,9 +165,9 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
             if (iVar6 == 0) {
               iVar6 = thunk_FUN_00417ee0(this_00,0);
               if (iVar6 == 0) {
-                puVar11 = &this_00->field_01D5;
+                puVar12 = &this_00->field_01D5;
                 iVar6 = STT3DSprC::LoadSequence
-                                  ((STT3DSprC *)puVar11,0xe,DAT_0080676c,s_jellygun_007cb3e0,0x1d);
+                                  ((STT3DSprC *)puVar12,0xe,DAT_0080676c,s_jellygun_007cb3e0,0x1d);
                 if (iVar6 != 0) {
                   RaiseInternalException
                             (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jelly_cpp_007cb7b0
@@ -185,29 +188,29 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
                 }
                 piVar14 = DAT_0080676c;
                 uVar9 = 0xffffffff;
-                pcVar15 = s_jellygun0_007cb3ec;
+                pcVar16 = s_jellygun0_007cb3ec;
                 do {
                   if (uVar9 == 0) break;
                   uVar9 = uVar9 - 1;
-                  cVar1 = *pcVar15;
-                  pcVar15 = pcVar15 + 1;
+                  cVar1 = *pcVar16;
+                  pcVar16 = pcVar16 + 1;
                 } while (cVar1 != '\0');
                 (&DAT_007cb3ea)[~uVar9] = (char)iVar6 + '0';
                 iVar6 = STT3DSprC::LoadSequence
-                                  ((STT3DSprC *)puVar11,0xc,piVar14,s_jellygun0_007cb3ec,0x1d);
+                                  ((STT3DSprC *)puVar12,0xc,piVar14,s_jellygun0_007cb3ec,0x1d);
                 if (iVar6 != 0) {
                   RaiseInternalException
                             (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jelly_cpp_007cb7b0
                              ,0x204);
                 }
-                thunk_FUN_004ac610(puVar11,'\f');
-                STT3DSprC::StartShow((STT3DSprC *)puVar11,0xc,DAT_00802a38->field_00E4);
-                thunk_FUN_004ac610(puVar11,'\x0e');
-                STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,DAT_00802a38->field_00E4);
+                thunk_FUN_004ac610(puVar12,'\f');
+                STT3DSprC::StartShow((STT3DSprC *)puVar12,0xc,PTR_00802a38->field_00E4);
+                thunk_FUN_004ac610(puVar12,'\x0e');
+                STT3DSprC::StartShow((STT3DSprC *)puVar12,0xe,PTR_00802a38->field_00E4);
                 thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x26a,
                                    *(undefined2 *)&this_00->field_0x26e,
                                    *(undefined2 *)&this_00->field_0x272);
-                thunk_FUN_004ad3c0(puVar11,(float)*(int *)&this_00->field_0x26a * _DAT_007904f8 *
+                thunk_FUN_004ad3c0(puVar12,(float)*(int *)&this_00->field_0x26a * _DAT_007904f8 *
                                            _DAT_007904f0,
                                    (float)*(int *)&this_00->field_0x26e * _DAT_007904f8 *
                                    _DAT_007904f0,
@@ -250,31 +253,31 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
             sub_00582580((STJellyGunC *)this_00);
           }
         }
-        else if (local_38[3] == 2) {
-          puVar11 = local_38;
-          puVar13 = (undefined4 *)&this_00->field_0x256;
+        else if (*(uint *)&local_38->field_0xc == 2) {
+          pAVar11 = local_38;
+          puVar12 = (undefined4 *)&this_00->field_0x256;
           for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar13 = *puVar11;
-            puVar11 = puVar11 + 1;
-            puVar13 = puVar13 + 1;
+            *puVar12 = *(undefined4 *)pAVar11;
+            pAVar11 = (AnonShape_00583270_F758043B *)&pAVar11->field_0x4;
+            puVar12 = puVar12 + 1;
           }
-          *(undefined2 *)puVar13 = *(undefined2 *)puVar11;
-          local_8 = *(uint *)((int)local_38 + 0x67);
+          *(undefined2 *)puVar12 = *(undefined2 *)pAVar11;
+          local_8 = local_38->field_0067;
           STAllPlayersC::RestoreGObjData
-                    ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x6f + (int)local_38));
-          puVar11 = local_38;
-          *(undefined4 *)&this_00->field_0x247 = *(undefined4 *)((int)local_38 + 0x4a);
-          *(undefined4 *)&this_00->field_0x24b = *(undefined4 *)((int)local_38 + 0x4e);
-          *(undefined4 *)&this_00->field_0x235 = *(undefined4 *)((int)local_38 + 0x42);
-          *(undefined4 *)&this_00->field_0x23d = *(undefined4 *)((int)local_38 + 0x46);
-          *(undefined4 *)&this_00->field_0x241 = *(undefined4 *)((int)local_38 + 0x52);
-          *(undefined2 *)&this_00->field_0x245 = *(undefined2 *)((int)local_38 + 0x56);
-          *(undefined4 *)&this_00->field_0x239 = *(undefined4 *)((int)local_38 + 0x3e);
-          *(undefined4 *)&this_00->field_0x231 = local_38[0x16];
-          this_00->field_0x24f = *(undefined1 *)(local_38 + 0x18);
-          this_00->field_0x250 = *(undefined1 *)((int)local_38 + 0x61);
-          this_00->field_0x251 = *(undefined1 *)((int)local_38 + 0x62);
-          *(undefined4 *)&this_00->field_0x252 = *(undefined4 *)((int)local_38 + 99);
+                    ((STAllPlayersC *)this_00,(undefined4 *)(&local_38[1].field_0x3 + local_8));
+          pAVar11 = local_38;
+          *(undefined4 *)&this_00->field_0x247 = local_38->field_004A;
+          *(undefined4 *)&this_00->field_0x24b = local_38->field_004E;
+          *(undefined4 *)&this_00->field_0x235 = local_38->field_0042;
+          *(undefined4 *)&this_00->field_0x23d = local_38->field_0046;
+          *(undefined4 *)&this_00->field_0x241 = local_38->field_0052;
+          *(undefined2 *)&this_00->field_0x245 = local_38->field_0056;
+          *(undefined4 *)&this_00->field_0x239 = local_38->field_003E;
+          *(undefined4 *)&this_00->field_0x231 = *(undefined4 *)&local_38->field_0x58;
+          this_00->field_0x24f = local_38->field_0x60;
+          this_00->field_0x250 = local_38->field_0061;
+          this_00->field_0x251 = local_38->field_0062;
+          *(undefined4 *)&this_00->field_0x252 = local_38->field_0063;
           local_34 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
           if (local_34 != (LPVOID)0x0) {
             iVar6 = 0;
@@ -296,19 +299,19 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
             local_1c = 0;
             STT3DSprC::RestoreSpr
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
-                       (undefined4 *)((int)puVar11 + 0x6b));
+                       (AnonShape_004ADBA0_E7CEFF88 *)&pAVar11->field_0x6b);
             FUN_006ab060(&local_34);
             DumpClassC::WritePtr
                       (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
-                       *(short *)&this_00->field_0x5f,1,(int)this_00);
+                       *(short *)&this_00->field_0x5f,1,(AnonShape_00495EC0_95A268C6 *)this_00);
           }
         }
         if ((*(int *)&this_00->field_0x235 != 4) && (*(int *)&this_00->field_0x235 != 2)) {
           uVar7 = *(undefined4 *)&this_00->field_0x8;
-          puVar11 = local_5c;
+          puVar12 = local_5c;
           for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar11 = 0;
-            puVar11 = puVar11 + 1;
+            *puVar12 = 0;
+            puVar12 = puVar12 + 1;
           }
           local_4c = 0x125;
           local_48 = uVar7;
@@ -323,14 +326,14 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
       local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x6f + local_8);
       if (((local_14 != (byte *)0x0) && (local_18 != (byte *)0x0)) && (local_c != (byte *)0x0)) {
-        puVar11 = (undefined4 *)&this_00->field_0x256;
-        pbVar12 = local_c;
+        puVar12 = (undefined4 *)&this_00->field_0x256;
+        pbVar13 = local_c;
         for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *(undefined4 *)pbVar12 = *puVar11;
-          puVar11 = puVar11 + 1;
-          pbVar12 = pbVar12 + 4;
+          *(undefined4 *)pbVar13 = *puVar12;
+          puVar12 = puVar12 + 1;
+          pbVar13 = pbVar13 + 4;
         }
-        *(undefined2 *)pbVar12 = *(undefined2 *)puVar11;
+        *(undefined2 *)pbVar13 = *(undefined2 *)puVar12;
         local_c[0xc] = 2;
         local_c[0xd] = 0;
         local_c[0xe] = 0;
@@ -402,33 +405,33 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
         local_c[0x65] = uVar4;
         local_c[0x66] = uVar5;
         *(uint *)(local_c + 0x67) = local_8;
-        pbVar12 = local_14;
-        pbVar16 = local_c + 0x6b;
+        pbVar13 = local_14;
+        pbVar17 = local_c + 0x6b;
         for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar12;
-          pbVar12 = pbVar12 + 4;
-          pbVar16 = pbVar16 + 4;
+          *(undefined4 *)pbVar17 = *(undefined4 *)pbVar13;
+          pbVar13 = pbVar13 + 4;
+          pbVar17 = pbVar17 + 4;
         }
         for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *pbVar16 = *pbVar12;
-          pbVar12 = pbVar12 + 1;
-          pbVar16 = pbVar16 + 1;
+          *pbVar17 = *pbVar13;
+          pbVar13 = pbVar13 + 1;
+          pbVar17 = pbVar17 + 1;
         }
         *(uint *)(local_c + local_8 + 0x6b) = local_10;
-        pbVar12 = local_18;
-        pbVar16 = local_c + local_8 + 0x6f;
+        pbVar13 = local_18;
+        pbVar17 = local_c + local_8 + 0x6f;
         for (uVar9 = local_10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar12;
-          pbVar12 = pbVar12 + 4;
-          pbVar16 = pbVar16 + 4;
+          *(undefined4 *)pbVar17 = *(undefined4 *)pbVar13;
+          pbVar13 = pbVar13 + 4;
+          pbVar17 = pbVar17 + 4;
         }
         for (uVar9 = local_10 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *pbVar16 = *pbVar12;
-          pbVar12 = pbVar12 + 1;
-          pbVar16 = pbVar16 + 1;
+          *pbVar17 = *pbVar13;
+          pbVar13 = pbVar13 + 1;
+          pbVar17 = pbVar17 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (DAT_00802a38,this_00->field_0018,local_c,local_10 + 0x6f + local_8);
+                  (PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x6f + local_8);
         FUN_006ab060(&local_14);
         FUN_006ab060(&local_18);
         FUN_006ab060(&local_c);
@@ -449,15 +452,15 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
     if (((uVar9 == 0x128) && (*(int *)&this_00->field_0x235 != 2)) &&
        (*(int *)&this_00->field_0x235 != 4)) {
       sub_00582530((STJellyGunC *)this_00);
-      puVar11 = &this_00->field_01D5;
+      puVar12 = &this_00->field_01D5;
       *(undefined4 *)&this_00->field_0x241 = 0xff;
       *(undefined2 *)&this_00->field_0x245 = 0;
       *(undefined4 *)&this_00->field_0x252 = 0;
       *(undefined4 *)&this_00->field_0x235 = 4;
-      STT3DSprC::StopShow((STT3DSprC *)puVar11,0xe);
-      STT3DSprC::StopShow((STT3DSprC *)puVar11,0xc);
-      thunk_FUN_004ad5e0((int)puVar11);
-      thunk_FUN_004ad430((int)puVar11);
+      STT3DSprC::StopShow((STT3DSprC *)puVar12,0xe);
+      STT3DSprC::StopShow((STT3DSprC *)puVar12,0xc);
+      thunk_FUN_004ad5e0((int)puVar12);
+      thunk_FUN_004ad430((int)puVar12);
       sub_00582580((STJellyGunC *)this_00);
       g_currentExceptionFrame = local_a0.previous;
       return 0;

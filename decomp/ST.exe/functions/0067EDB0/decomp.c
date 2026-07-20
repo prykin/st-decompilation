@@ -10,7 +10,7 @@ int __cdecl FUN_0067edb0(byte *param_1)
   int iVar6;
   bool bVar7;
   
-  iVar2 = *(int *)(DAT_00848a18 + 8);
+  iVar2 = PTR_00848a18->field_0008;
   iVar6 = 0;
   if (0 < iVar2) {
     if (iVar2 < 1) {
@@ -19,7 +19,7 @@ int __cdecl FUN_0067edb0(byte *param_1)
       goto LAB_0067eddb;
     }
     do {
-      pbVar5 = *(byte **)(*(int *)(DAT_00848a18 + 0x14) + iVar6 * 4);
+      pbVar5 = *(byte **)(PTR_00848a18->field_0014 + iVar6 * 4);
       pbVar3 = param_1;
 LAB_0067eddb:
       do {

@@ -28,7 +28,7 @@ VisibleClassTy::SetZoneAst
   undefined *local_8;
   
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
-     ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
+     ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
     local_14 = this;
     if (*(int *)(&this->field_0x74 + param_4 * 4) == 0) {
       local_60.previous = g_currentExceptionFrame;

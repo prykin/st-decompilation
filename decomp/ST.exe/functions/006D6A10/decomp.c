@@ -108,7 +108,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
             if (iVar9 == 0) break;
             if (iVar9 == -0x7789fe3e) {
               (**(code **)(*piVar2 + 0x6c))(piVar2);
-              FUN_006cec40(*(int *)(*(int *)((int)this + 0x288) + 0x28));
+              FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
             }
             else {
               if (((iVar9 != -0x7789ff60) && (iVar9 != -0x7789fe52)) || (local_c != 0)) break;
@@ -193,7 +193,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         if (iVar9 == 0) break;
         if (iVar9 == -0x7789fe3e) {
           (**(code **)(*piVar2 + 0x6c))(piVar2);
-          FUN_006cec40(*(int *)(*(int *)((int)this + 0x288) + 0x28));
+          FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
         }
         else {
           if (((iVar9 != -0x7789ff60) && (iVar9 != -0x7789fe52)) || (local_c != 0)) break;

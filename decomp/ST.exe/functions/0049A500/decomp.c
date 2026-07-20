@@ -28,7 +28,7 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
     local_c = 0;
     if (uVar1 != 0) {
       do {
-        FUN_006acc70(*(int *)((int)this + 0x29),uVar2,&local_10);
+        FUN_006acc70(*(AnonShape_006ACC70_C8641025 **)((int)this + 0x29),uVar2,&local_10);
         if ((short)local_10 != -1) {
           this_00 = (STFishC *)
                     STAllPlayersC::GetObjPtr

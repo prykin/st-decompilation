@@ -75,7 +75,8 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
             piVar3 = *(int **)(DAT_007fb248 +
                               (SHORT_007fb240 * param_2 + iVar7 + SHORT_007fb246 * local_2c) * 8);
             if ((((piVar3 != (int *)0x0) && ((uint)piVar3[9] < 8)) &&
-                ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) &&
+                ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) &&
                (iVar6 = (**(code **)(*piVar3 + 0x2c))(), iVar6 == 0x73)) {
               bVar1 = *(byte *)(piVar3 + 9);
               if (*(char *)((int)&g_appClass_00806728[0x5d].field_0014 + 3) == '\0') {
@@ -122,7 +123,7 @@ LAB_004b2fd4:
                 if (iVar7 - local_24 < 0) {
                   piVar3[0x134] = 0;
                 }
-                piVar3[0x135] = *(int *)(DAT_00802a38 + 0xe4);
+                piVar3[0x135] = PTR_00802a38->field_00E4;
                 return 1;
               }
             }

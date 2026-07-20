@@ -13,7 +13,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
   char *pcVar5;
   int iVar6;
   undefined4 unaff_ESI;
-  char *pcVar7;
+  AnonShape_005D00B0_9E7CC102 *pAVar7;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
@@ -27,13 +27,14 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
     if (iVar4 == 0) {
       iVar4 = local_8->field_1F84;
       if (param_1 < *(uint *)(iVar4 + 0xc)) {
-        pcVar7 = (char *)(*(int *)(iVar4 + 8) * param_1 + *(int *)(iVar4 + 0x1c));
+        pAVar7 = (AnonShape_005D00B0_9E7CC102 *)
+                 (*(int *)(iVar4 + 8) * param_1 + *(int *)(iVar4 + 0x1c));
       }
       else {
-        pcVar7 = (char *)0x0;
+        pAVar7 = (AnonShape_005D00B0_9E7CC102 *)0x0;
       }
-      if (*pcVar7 != '\0') {
-        if (pcVar7[1] == '\0') {
+      if (*(char *)pAVar7 != '\0') {
+        if (pAVar7->field_0x1 == '\0') {
           uVar1 = param_1 + 1;
           while( true ) {
             iVar4 = pSVar3->field_1F84;
@@ -47,13 +48,13 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
             if (*(byte **)(pcVar5 + 0x50) != (byte *)0x0) {
               FUN_006ae110(*(byte **)(pcVar5 + 0x50));
             }
-            FUN_006b0c70(pSVar3->field_1F84,uVar1);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pSVar3->field_1F84,uVar1);
           }
-          pcVar7[1] = '\x01';
+          pAVar7->field_0x1 = 1;
         }
         else if (*(uint *)(iVar4 + 0xc) < 0x18) {
-          pcVar7[1] = '\0';
-          thunk_FUN_005d00b0(local_8,(int)pcVar7,param_1 + 1);
+          pAVar7->field_0x1 = 0;
+          thunk_FUN_005d00b0(local_8,pAVar7,param_1 + 1);
         }
         (**(code **)(pSVar3->field_0000 + 0x2c))();
         pSVar3->field_2121 = pSVar3->field_2121 + 1;

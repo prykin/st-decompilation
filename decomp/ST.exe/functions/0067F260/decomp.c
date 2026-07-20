@@ -2,14 +2,14 @@
 void FUN_0067f260(void)
 
 {
-  if (DAT_00848a1c != (byte *)0x0) {
-    FUN_006b5570(DAT_00848a1c);
+  if (PTR_00848a1c != (AnonShape_GLOBAL_00848A1C_B6E50991 *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_00848a1c);
   }
-  DAT_00848a1c = (byte *)0x0;
-  if (DAT_00848a18 != (byte *)0x0) {
-    FUN_006b5570(DAT_00848a18);
+  PTR_00848a1c = (AnonShape_GLOBAL_00848A1C_B6E50991 *)0x0;
+  if (PTR_00848a18 != (AnonShape_GLOBAL_00848A18_1B9B27FE *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_00848a18);
   }
-  DAT_00848a18 = (byte *)0x0;
+  PTR_00848a18 = (AnonShape_GLOBAL_00848A18_1B9B27FE *)0x0;
   return;
 }
 

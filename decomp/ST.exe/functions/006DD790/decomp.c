@@ -12,7 +12,7 @@ void __thiscall FUN_006dd790(void *this,float param_1)
          (double)((float)_DAT_0079df78 / ((float)*(double *)((int)this + 0x11c) - param_1));
     lVar1 = Library::MSVCRT::__ftol();
     *(int *)((int)this + 0x2e4) = (int)lVar1;
-    FUN_006dd870((int)this);
+    FUN_006dd870(this);
     return;
   }
   return;

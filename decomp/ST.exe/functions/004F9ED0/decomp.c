@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
-   CPanelTy::SwitchCPanel */
+   CPanelTy::SwitchCPanel
+   
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
 
@@ -40,10 +44,10 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
       this_00 = local_10;
       if (iVar3 == 0) {
         switch(local_10->field_023F) {
-        case 1:
+        case CASE_1:
           thunk_FUN_004a9b60(local_10->field_011C,local_10->field_0120,local_10->field_0124,
                              local_10->field_0128);
-          this_00->field_023F = 6;
+          this_00->field_023F = CASE_4|CASE_2;
           if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
             ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
           }
@@ -130,13 +134,13 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
             return;
           }
 switchD_004f9f52_caseD_3:
-          this_00->field_023F = 4;
+          this_00->field_023F = CASE_4;
           thunk_FUN_005252c0(CASE_B0);
           g_currentExceptionFrame = local_54.previous;
           return;
-        case 2:
-        case 4:
-          local_10->field_023F = 3;
+        case CASE_2:
+        case CASE_4:
+          local_10->field_023F = CASE_3;
           thunk_FUN_005252c0(CASE_AF);
           if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
             ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
@@ -177,7 +181,7 @@ switchD_004f9f52_caseD_3:
         default:
           g_currentExceptionFrame = local_54.previous;
           return;
-        case 3:
+        case CASE_3:
           goto switchD_004f9f52_caseD_3;
         }
       }

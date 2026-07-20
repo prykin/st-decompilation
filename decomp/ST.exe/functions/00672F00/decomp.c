@@ -12,7 +12,7 @@ bool FUN_00672f00(void)
   
   piVar3 = DAT_00811958;
   if (DAT_00857560 != 0) {
-    (**(code **)(DAT_0081194c + 4))(DAT_00857560);
+    (*(code *)PTR_0081194c->field_0004)(DAT_00857560);
     DAT_00857560 = 0;
   }
   FUN_006b98c0((int *)&DAT_00811958,piVar3);
@@ -101,7 +101,7 @@ bool FUN_00672f00(void)
     DAT_007d2d18 = piVar3[4];
     DAT_00811954 = piVar3[5];
     DAT_00857560 = piVar3[1];
-    DAT_0081194c = piVar3[2];
+    PTR_0081194c = (AnonShape_GLOBAL_0081194C_4D1525E6 *)piVar3[2];
     DAT_00857554 = piVar3[8];
   }
   if (DAT_00811958 == (int *)0x0) {

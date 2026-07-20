@@ -8,52 +8,54 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
 {
   code *pcVar1;
   STGroupC *pSVar2;
-  int iVar3;
-  uint *puVar4;
-  int iVar5;
+  AnonShape_00424360_8159BFF1 *pAVar3;
+  int iVar4;
+  uint *puVar5;
+  int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   STGroupC *local_c;
-  int local_8;
+  AnonShape_00424360_8159BFF1 *local_8;
   
-  local_8 = param_1;
+  local_8 = (AnonShape_00424360_8159BFF1 *)param_1;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  iVar5 = local_8;
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pAVar3 = local_8;
   pSVar2 = local_c;
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d5,0,iVar3,&DAT_007a4ccc,
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d5,0,iVar4,&DAT_007a4ccc,
                                s_STGroupC__RestoreGrpData_007a5184);
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    RaiseInternalException(iVar3,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d6);
+    RaiseInternalException(iVar4,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d6);
     return;
   }
-  local_c->field_0020 = *(undefined4 *)(local_8 + 0x14);
-  local_c->field_0024 = *(char *)(local_8 + 4);
-  local_c->field_0025 = *(undefined2 *)(local_8 + 0x18);
-  local_c->field_0027 = *(undefined2 *)(local_8 + 0x1a);
-  local_c->field_0031 = *(undefined4 *)(local_8 + 0x2c);
-  local_c->field_0035 = *(undefined4 *)(local_8 + 0x30);
-  local_c->field_0039 = *(undefined4 *)(local_8 + 0x34);
-  if (*(int *)(local_8 + 0x1c) == -1) {
+  local_c->field_0020 = local_8->field_0014;
+  local_c->field_0024 = local_8->field_0004;
+  local_c->field_0025 = local_8->field_0018;
+  local_c->field_0027 = local_8->field_001A;
+  local_c->field_0031 = local_8->field_002C;
+  local_c->field_0035 = local_8->field_0030;
+  local_c->field_0039 = local_8->field_0034;
+  if (local_8->field_001C == -1) {
     local_c->field_0029 = 0;
   }
   else {
-    puVar4 = FUN_006b00c0((uint *)0x0,(uint *)(*(int *)(local_8 + 0x1c) + local_8),&LAB_004045c5);
-    pSVar2->field_0029 = puVar4;
+    puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&local_8->field_0x0 + local_8->field_001C),
+                          &LAB_004045c5);
+    pSVar2->field_0029 = puVar5;
   }
-  iVar3 = *(int *)(iVar5 + 0x24);
-  if (iVar3 != -1) {
-    puVar4 = FUN_006b00c0((uint *)0x0,(uint *)(iVar3 + iVar5),&LAB_004045c5);
-    pSVar2->field_002D = puVar4;
+  iVar4 = *(int *)&pAVar3->field_0x24;
+  if (iVar4 != -1) {
+    puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&pAVar3->field_0x0 + iVar4),&LAB_004045c5);
+    pSVar2->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

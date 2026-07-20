@@ -26,8 +26,9 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   pPVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_009C != '\0') {
-      if ((byte *)local_8->field_0098 != (byte *)0x0) {
-        FUN_006b5570((byte *)local_8->field_0098);
+      if ((AnonShape_006B5570_4D68B99C *)local_8->field_0098 != (AnonShape_006B5570_4D68B99C *)0x0)
+      {
+        FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0098);
       }
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
       pPVar2->field_0098 = puVar4;

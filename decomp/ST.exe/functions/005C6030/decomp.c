@@ -128,7 +128,9 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5a8 = 0x654d;
     local_5bc = local_5d0[4];
     local_4a8 = local_5d0[4];
-    (**(code **)(*(int *)local_1c->field_000C + 8))(2,&local_1c->field_215D,0,local_5d0,0);
+    (*local_1c->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,(int *)0x0,local_5d0,0)
+    ;
     goto LAB_005c69ed;
   }
   if (local_1c->field_1C6F != 0xffffffff) {
@@ -273,7 +275,8 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   local_26c = local_3ec;
   local_fc = local_3ec;
   local_ac = local_3ec;
-  (**(code **)(*(int *)this_01->field_000C + 8))(4,&this_01->field_211D,0,local_454,0);
+  (*this_01->field_000C->vtable->CreateObject)
+            ((SystemClassTy *)this_01->field_000C,4,&this_01->field_211D,(int *)0x0,local_454,0);
   cVar2 = this_01->field_1E26;
   if (((cVar2 == '\x06') || (cVar2 == '\a')) || (cVar2 == '\x0e')) {
     local_10 = 0xcb;
@@ -312,11 +315,12 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     puVar7 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
     this_01->field_1F3F = puVar7;
     if (DAT_0080877e == '\0') {
-      if ((byte *)DAT_0081176c->field_0548 != (byte *)0x0) {
-        FUN_006b5570((byte *)DAT_0081176c->field_0548);
+      if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
+          (AnonShape_006B5570_4D68B99C *)0x0) {
+        FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
       }
       puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-      DAT_0081176c->field_0548 = puVar8;
+      PTR_0081176c->field_0548 = puVar8;
       cVar2 = this_01->field_1E26;
       local_5d8 = DAT_0080995c;
       puVar7 = &DAT_00809960;
@@ -326,7 +330,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
         puVar7 = puVar7 + 1;
         puVar13 = puVar13 + 1;
       }
-      StartSystemTy::LoadMapData(DAT_0081176c,this_01->field_1F3F,cVar2);
+      StartSystemTy::LoadMapData(PTR_0081176c,(cMf32 *)this_01->field_1F3F,cVar2);
       DAT_0080995c = local_5d8;
       puVar7 = local_61c;
       puVar13 = &DAT_00809960;
@@ -417,10 +421,10 @@ LAB_005c665d:
   if (((cVar2 != '\x06') && (cVar2 != '\a')) && (cVar2 != '\x0e')) {
     this_01->field_002D = 0x20;
     this_01->field_0031 = 1;
-    FUN_006e6080(this_01,2,DAT_0081176c->field_0389,(undefined4 *)&this_01->field_0x1d);
+    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)&this_01->field_0x1d);
   }
   if (this_01->field_0x21e2 != '\0') {
-    StartSystemTy::CreateBinDesc(DAT_0081176c);
+    StartSystemTy::CreateBinDesc(PTR_0081176c);
   }
 LAB_005c69ed:
   iVar10 = this_01->field_1A5B;

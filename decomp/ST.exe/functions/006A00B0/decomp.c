@@ -1,32 +1,34 @@
 
-void __fastcall FUN_006a00b0(int param_1)
+void __fastcall FUN_006a00b0(AnonShape_006A00B0_8C09D559 *param_1)
 
 {
+  LPVOID *ppvVar1;
   cMf32 *extraout_ECX;
   cMf32 *extraout_ECX_00;
   cMf32 *extraout_ECX_01;
   cMf32 *this;
   
   this = (cMf32 *)0x0;
-  if (*(int *)(param_1 + 8) != 0) {
-    FUN_006f07e0((int *)(param_1 + 8));
+  if (param_1->field_0008 != 0) {
+    FUN_006f07e0(&param_1->field_0008);
     this = extraout_ECX;
   }
-  if (*(int *)(param_1 + 0xc) != 0) {
-    Library::Ourlib::MFSTMAP::mfTMapErase((int *)(param_1 + 0xc));
+  if (param_1->field_000C != 0) {
+    Library::Ourlib::MFSTMAP::mfTMapErase(&param_1->field_000C);
     this = extraout_ECX_00;
   }
-  if (*(int *)(param_1 + 0x56ff) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x56ff));
+  ppvVar1 = (LPVOID *)((int)&param_1[0x31b].field_0008 + 3);
+  if (*(int *)((int)&param_1[0x31b].field_0008 + 3) != 0) {
+    FUN_006ab060(ppvVar1);
     this = extraout_ECX_01;
   }
-  if (*(cMf32 **)(param_1 + 0x18) != (cMf32 *)0x0) {
-    cMf32::delete(this,*(cMf32 **)(param_1 + 0x18));
+  if ((cMf32 *)param_1->field_0018 != (cMf32 *)0x0) {
+    cMf32::delete(this,(cMf32 *)param_1->field_0018);
   }
-  *(LPVOID *)(param_1 + 0x56ff) = (LPVOID)0x0;
-  *(undefined4 *)(param_1 + 0x18) = 0;
-  *(int *)(param_1 + 0xc) = 0;
-  *(int *)(param_1 + 8) = 0;
+  *ppvVar1 = (LPVOID)0x0;
+  param_1->field_0018 = 0;
+  param_1->field_000C = 0;
+  param_1->field_0008 = 0;
   return;
 }
 

@@ -422,7 +422,7 @@ LAB_0053b2ea:
             local_1c = uVar6 << 0x10 | uVar10;
             local_20 = 7;
           }
-          if (DAT_00802a38 != 0) {
+          if (PTR_00802a38 != (STPlaySystemC *)0x0) {
             thunk_FUN_0054edf0((undefined4 *)0x5,&local_20,1,0xffffffff);
             g_currentExceptionFrame = local_64.previous;
             return 0;

@@ -3,90 +3,97 @@ void FUN_006accd0(undefined4 *param_1,undefined4 *param_2,int param_3,undefined 
 
 {
   undefined4 *puVar1;
-  int iVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  AnonShape_006CE700_F21E5976 *pAVar2;
+  AnonShape_006CE700_6E2936C3 *pAVar3;
+  AnonShape_006CE700_6E2936C3 *pAVar4;
+  int iVar5;
+  AnonShape_006CE700_6E2936C3 *pAVar6;
+  AnonShape_006CE700_6E2936C3 *pAVar7;
+  AnonShape_006CE700_6E2936C3 *pAVar8;
+  AnonShape_006CE700_F21E5976 *pAVar9;
   undefined4 local_fc;
   undefined4 local_f8 [59];
   undefined4 *local_c;
-  undefined4 *local_8;
+  AnonShape_006CE700_6E2936C3 *local_8;
   
-  puVar6 = param_1;
+  pAVar3 = (AnonShape_006CE700_6E2936C3 *)param_1;
   if (1 < (int)param_2) {
-    puVar1 = (undefined4 *)((int)param_2 * param_3 + (int)param_1);
+    pAVar4 = (AnonShape_006CE700_6E2936C3 *)((int)param_2 * param_3 + (int)param_1);
     param_2 = &local_fc;
     local_c = local_f8;
     param_1 = (undefined4 *)0x0;
 cf_continue_loop_006ACD0D:
-    local_8 = puVar1;
-    puVar4 = puVar6;
-    puVar5 = local_8;
-    iVar2 = ((int)local_8 - (int)puVar4) / param_3;
-    if (7 < iVar2) {
-      FUN_006ce700(puVar4,(undefined4 *)((iVar2 / 2) * param_3 + (int)puVar4),param_3);
-      puVar3 = puVar4;
+    local_8 = pAVar4;
+    pAVar7 = pAVar3;
+    pAVar8 = local_8;
+    iVar5 = ((int)local_8 - (int)pAVar7) / param_3;
+    if (7 < iVar5) {
+      FUN_006ce700(pAVar7,(AnonShape_006CE700_F21E5976 *)
+                          (&pAVar7->field_0x0 + (iVar5 / 2) * param_3),param_3);
+      pAVar6 = pAVar7;
 cf_continue_loop_006ACD37:
-      puVar3 = (undefined4 *)((int)puVar3 + param_3);
-      if (puVar3 < local_8) goto code_r0x006acd43;
+      pAVar6 = (AnonShape_006CE700_6E2936C3 *)(&pAVar6->field_0x0 + param_3);
+      if (pAVar6 < local_8) goto code_r0x006acd43;
       goto LAB_006acd4f;
     }
-    for (puVar6 = (undefined4 *)((int)local_8 - param_3); local_8 = puVar4, puVar1 = puVar4,
-        puVar4 < puVar6; puVar6 = (undefined4 *)((int)puVar6 - param_3)) {
-      while (puVar1 = (undefined4 *)((int)puVar1 + param_3), puVar1 <= puVar6) {
-        iVar2 = (*(code *)param_4)(puVar1,local_8);
-        if (0 < iVar2) {
-          local_8 = puVar1;
+    for (pAVar9 = (AnonShape_006CE700_F21E5976 *)((int)local_8 - param_3); local_8 = pAVar7,
+        pAVar2 = (AnonShape_006CE700_F21E5976 *)pAVar7, pAVar7 < pAVar9;
+        pAVar9 = (AnonShape_006CE700_F21E5976 *)((int)pAVar9 - param_3)) {
+      while (pAVar2 = (AnonShape_006CE700_F21E5976 *)(&pAVar2->field_0x0 + param_3),
+            pAVar2 <= pAVar9) {
+        iVar5 = (*(code *)param_4)(pAVar2,local_8);
+        if (0 < iVar5) {
+          local_8 = (AnonShape_006CE700_6E2936C3 *)pAVar2;
         }
       }
-      FUN_006ce700(local_8,puVar6,param_3);
+      FUN_006ce700(local_8,pAVar9,param_3);
     }
     if (0 < (int)param_1) {
       param_1 = (undefined4 *)((int)param_1 + -1);
       puVar1 = local_c + -2;
       param_2 = param_2 + -2;
       local_c = local_c + -2;
-      puVar6 = (undefined4 *)*param_2;
-      puVar1 = (undefined4 *)*puVar1;
+      pAVar3 = (AnonShape_006CE700_6E2936C3 *)*param_2;
+      pAVar4 = (AnonShape_006CE700_6E2936C3 *)*puVar1;
       goto cf_continue_loop_006ACD0D;
     }
   }
   return;
 code_r0x006acd43:
-  iVar2 = (*(code *)param_4)(puVar3,puVar4);
-  if (iVar2 < 1) goto cf_continue_loop_006ACD37;
+  iVar5 = (*(code *)param_4)(pAVar6,pAVar7);
+  if (iVar5 < 1) goto cf_continue_loop_006ACD37;
 LAB_006acd4f:
   do {
-    puVar5 = (undefined4 *)((int)puVar5 - param_3);
-    if (puVar5 <= puVar4) break;
-    iVar2 = (*(code *)param_4)(puVar5,puVar4);
-  } while (-1 < iVar2);
-  if (puVar3 <= puVar5) {
-    FUN_006ce700(puVar3,puVar5,param_3);
+    pAVar8 = (AnonShape_006CE700_6E2936C3 *)((int)pAVar8 - param_3);
+    if (pAVar8 <= pAVar7) break;
+    iVar5 = (*(code *)param_4)(pAVar8,pAVar7);
+  } while (-1 < iVar5);
+  if (pAVar6 <= pAVar8) {
+    FUN_006ce700(pAVar6,(AnonShape_006CE700_F21E5976 *)pAVar8,param_3);
     goto cf_continue_loop_006ACD37;
   }
-  FUN_006ce700(puVar4,puVar5,param_3);
-  puVar6 = puVar4;
-  puVar1 = puVar5;
-  if (((undefined4 *)((int)puVar3 + param_3) < local_8) &&
-     (puVar6 = puVar3, puVar1 = local_8, (undefined4 *)(param_3 + (int)puVar4) < puVar5)) {
-    if ((int)puVar5 - (int)puVar4 < (int)local_8 - (int)puVar3) {
-      *param_2 = puVar3;
+  FUN_006ce700(pAVar7,(AnonShape_006CE700_F21E5976 *)pAVar8,param_3);
+  pAVar3 = pAVar7;
+  pAVar4 = pAVar8;
+  if (((AnonShape_006CE700_6E2936C3 *)(&pAVar6->field_0x0 + param_3) < local_8) &&
+     (pAVar3 = pAVar6, pAVar4 = local_8,
+     (AnonShape_006CE700_F21E5976 *)(&pAVar7->field_0x0 + param_3) < pAVar8)) {
+    if ((int)pAVar8 - (int)pAVar7 < (int)local_8 - (int)pAVar6) {
+      *param_2 = pAVar6;
       param_2 = param_2 + 2;
       *local_c = local_8;
       param_1 = (undefined4 *)((int)param_1 + 1);
       local_c = local_c + 2;
-      puVar6 = puVar4;
-      puVar1 = puVar5;
+      pAVar3 = pAVar7;
+      pAVar4 = pAVar8;
     }
     else {
-      *param_2 = puVar4;
+      *param_2 = pAVar7;
       param_2 = param_2 + 2;
-      *local_c = puVar5;
+      *local_c = pAVar8;
       param_1 = (undefined4 *)((int)param_1 + 1);
       local_c = local_c + 2;
-      puVar1 = local_8;
+      pAVar4 = local_8;
     }
   }
   goto cf_continue_loop_006ACD0D;

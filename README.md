@@ -119,14 +119,16 @@ The current work focuses on recovering what the binary can prove:
 
 - original C++ class and method names embedded in diagnostics;
 - source-file provenance and compilation-unit boundaries;
-- calling conventions, parameters, and selected free-function names;
+- calling conventions, callsite/thunk evidence, parameters, and selected free-function names;
 - message IDs and anonymous state/switch domains;
 - vtables, virtual slots, constructors, thunks, and class relationships;
 - non-virtual method ownership, cleanup/destructor shapes, and direct-call prototype propagation;
 - reverse return-type recovery from typed arguments, class receivers, and field/global stores;
 - one-shot audited repair of stale automatically propagated prototypes;
 - conservative class layouts and field types;
+- packed global record arrays recovered from x86 stride, range, and field-access evidence;
 - typed global data recovered from class-receiver and trusted-argument use;
+- pointer-backed structures recovered from fixed-offset dereferences and typed helper calls;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
 

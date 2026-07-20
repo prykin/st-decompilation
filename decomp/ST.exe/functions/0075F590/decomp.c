@@ -1,5 +1,5 @@
 
-void FUN_0075f590(int param_1,int *param_2,int param_3)
+void FUN_0075f590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3)
 
 {
   int *piVar1;
@@ -33,7 +33,7 @@ void FUN_0075f590(int param_1,int *param_2,int param_3)
   if (iVar7 <= param_2[1]) {
     local_c = iVar7 * 8 + 4;
     local_28 = (param_2[1] - iVar7) + 1;
-    param_2 = (int *)(*(int *)(*(int *)(param_1 + 0x1ba) + 0x18) + iVar7 * 4);
+    param_2 = (int *)(*(int *)(param_1->field_01BA + 0x18) + iVar7 * 4);
     do {
       if (iVar6 <= *piVar1) {
         iVar7 = iVar6 * 4 + 2;
@@ -69,9 +69,9 @@ void FUN_0075f590(int param_1,int *param_2,int param_3)
     } while (local_28 != 0);
   }
   iVar6 = iVar9 >> 1;
-  *(char *)(**(int **)(param_1 + 0x80) + param_3) = (char)((iVar6 + local_10) / iVar9);
-  *(char *)(*(int *)(*(int *)(param_1 + 0x80) + 4) + param_3) = (char)((local_14 + iVar6) / iVar9);
-  *(char *)(*(int *)(*(int *)(param_1 + 0x80) + 8) + param_3) = (char)((local_18 + iVar6) / iVar9);
+  *(char *)(*(int *)param_1->field_0080 + param_3) = (char)((iVar6 + local_10) / iVar9);
+  *(char *)(*(int *)(param_1->field_0080 + 4) + param_3) = (char)((local_14 + iVar6) / iVar9);
+  *(char *)(*(int *)(param_1->field_0080 + 8) + param_3) = (char)((local_18 + iVar6) / iVar9);
   return;
 }
 

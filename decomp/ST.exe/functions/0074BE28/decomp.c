@@ -1,16 +1,16 @@
 
-void __fastcall FUN_0074be28(int param_1)
+void __fastcall FUN_0074be28(AnonShape_0074BE28_A72B0079 *param_1)
 
 {
-  if (*(int **)(param_1 + 0x8c) != (int *)0x0) {
-    (**(code **)(**(int **)(param_1 + 0x8c) + 0xc))(1);
+  if (param_1->field_008C != (int *)0x0) {
+    (**(code **)(*param_1->field_008C + 0xc))(1);
   }
-  if (*(int **)(param_1 + 0x90) != (int *)0x0) {
-    (**(code **)(**(int **)(param_1 + 0x90) + 0xc))(1);
+  if (param_1->field_0090 != (int *)0x0) {
+    (**(code **)(*param_1->field_0090 + 0xc))(1);
   }
-  DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x74));
-  DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x5c));
-  FUN_00746f77(param_1);
+  DeleteCriticalSection((LPCRITICAL_SECTION)&param_1->field_0x74);
+  DeleteCriticalSection((LPCRITICAL_SECTION)&param_1->field_0x5c);
+  FUN_00746f77((AnonShape_00746F77_1F40C93D *)param_1);
   return;
 }
 

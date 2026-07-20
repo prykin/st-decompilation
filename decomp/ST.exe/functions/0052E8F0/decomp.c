@@ -31,16 +31,16 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pOVar2 = local_8;
   if (iVar3 == 0) {
-    if ((byte *)local_8->field_01E9 != (byte *)0x0) {
-      FUN_006b5570((byte *)local_8->field_01E9);
+    if ((AnonShape_006B5570_4D68B99C *)local_8->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_01E9);
       pOVar2->field_01E9 = 0;
     }
     if ((byte *)pOVar2->field_01ED != (byte *)0x0) {
       FUN_006ae110((byte *)pOVar2->field_01ED);
       pOVar2->field_01ED = 0;
     }
-    if ((byte *)pOVar2->field_01F1 != (byte *)0x0) {
-      FUN_006b5570((byte *)pOVar2->field_01F1);
+    if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1);
       pOVar2->field_01F1 = 0;
     }
     this_00 = (ccFntTy *)0x0;
@@ -48,8 +48,8 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       FUN_006ab060((LPVOID *)&pOVar2->field_01E5);
       this_00 = extraout_ECX;
     }
-    if (pOVar2->field_02F9 != (uint *)0x0) {
-      FUN_006b5570((byte *)pOVar2->field_02F9);
+    if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9);
       this_00 = extraout_ECX_00;
     }
     pOVar2->field_02F9 = (uint *)0x0;

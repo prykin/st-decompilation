@@ -21,13 +21,13 @@ STAllPlayersC::CalibrateTmp
   InternalExceptionFrame local_5c;
   uint *local_18;
   uint local_14;
-  uint *local_10;
-  uint *local_c;
+  AnonShape_006B0C70_7C4FE646 *local_10;
+  AnonShape_006B0C70_7C4FE646 *local_c;
   short local_8;
   short local_6;
   
-  local_10 = (uint *)0x0;
-  local_c = (uint *)0x0;
+  local_10 = (AnonShape_006B0C70_7C4FE646 *)0x0;
+  local_c = (AnonShape_006B0C70_7C4FE646 *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -51,10 +51,10 @@ STAllPlayersC::CalibrateTmp
                0x3075);
   }
   if (param_2 == 0) {
-    local_18 = *(uint **)((int)&DAT_007f4f8d + param_1 * 0xa62 + param_3 * 0x10);
+    local_18 = *(uint **)(param_3 * 0x10 + 0x7f4f8d + param_1 * 0xa62);
   }
   else if (param_2 == 1) {
-    local_18 = *(uint **)((int)&DAT_007f4fdd + param_1 * 0xa62 + param_3 * 0x10);
+    local_18 = *(uint **)(param_3 * 0x10 + 0x7f4fdd + param_1 * 0xa62);
   }
   else {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3079,0,0,&DAT_007a4ccc,
@@ -96,18 +96,18 @@ STAllPlayersC::CalibrateTmp
   uVar7 = 0;
   if (0 < (int)uVar5) {
     do {
-      FUN_006acc70((int)local_10,uVar7,(undefined4 *)&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10,uVar7,(undefined4 *)&local_8);
       if ((local_8 != -1) && (uVar6 = 0, 0 < (int)local_14)) {
         do {
-          FUN_006acc70((int)local_c,uVar6,(undefined4 *)&local_6);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar6,(undefined4 *)&local_6);
           if (local_8 == local_6) {
             if (param_6 != (int *)0x0) {
               Library::DKW::TBL::FUN_006ae1c0((uint *)*param_6,(undefined4 *)&local_6);
             }
-            FUN_006b0c70((int)local_10,uVar7);
+            FUN_006b0c70(local_10,uVar7);
             uVar5 = uVar5 - 1;
             uVar7 = uVar7 - 1;
-            FUN_006b0c70((int)local_c,uVar6);
+            FUN_006b0c70(local_c,uVar6);
             local_14 = local_14 - 1;
             uVar6 = uVar6 - 1;
           }
@@ -118,10 +118,10 @@ STAllPlayersC::CalibrateTmp
     } while ((int)uVar7 < (int)uVar5);
   }
   if (param_5 != (int *)0x0) {
-    Library::DKW::TBL::FUN_006afe40(param_5,local_10);
+    Library::DKW::TBL::FUN_006afe40(param_5,(uint *)local_10);
   }
   if (param_7 != (int *)0x0) {
-    Library::DKW::TBL::FUN_006afe40(param_7,local_c);
+    Library::DKW::TBL::FUN_006afe40(param_7,(uint *)local_c);
   }
   FUN_006ae110((byte *)local_10);
   FUN_006ae110((byte *)local_c);

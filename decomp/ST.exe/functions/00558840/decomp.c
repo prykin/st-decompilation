@@ -30,7 +30,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 == 0) {
-    local_14->field_0108 = DAT_00802a38->field_00E4;
+    local_14->field_0108 = PTR_00802a38->field_00E4;
     uVar6 = *(uint *)(param_1 + 0x10);
     if (uVar6 < 0x109) {
       if (uVar6 == 0x108) {
@@ -103,9 +103,9 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
         }
       }
       else if (uVar6 == 3) {
-        thunk_FUN_00558140((int)local_14);
+        thunk_FUN_00558140((AnonShape_00558140_7CF35A3F *)local_14);
         if (this_00->field_0114 != 0) {
-          FUN_00717870(DAT_00807598);
+          FUN_00717870((AnonShape_00717870_6CEBD31A *)PTR_00807598);
         }
         thunk_FUN_00553270();
         g_visibleClass_00802A88 = (VisibleClassTy *)0x0;
@@ -114,7 +114,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
     else if (uVar6 == 0x10f) {
       local_c = 0;
       local_10 = (byte *)PrepareToSave(local_14,&local_c);
-      STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
+      STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
       if (local_10 != (byte *)0x0) {
         FUN_006ab060(&local_10);
       }

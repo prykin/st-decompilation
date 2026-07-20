@@ -27,17 +27,17 @@ OptPanelTy::PaintDblBut
   int local_18;
   uint local_14;
   int *local_10;
-  int local_c;
+  AnonShape_0052EFB0_8161B92D *local_c;
   ushort *local_8;
   
   local_10 = *(int **)(param_1 + 0x18);
-  local_c = *(int *)(param_1 + 0x14);
+  local_c = *(AnonShape_0052EFB0_8161B92D **)(param_1 + 0x14);
   local_8 = (ushort *)0x0;
   if (param_6 == 0) {
     local_18 = *local_10;
   }
   else {
-    local_18 = *(int *)(local_c + 0xc);
+    local_18 = local_c->field_000C;
   }
   local_18 = local_18 - this->field_003C;
   if (this->field_005C == 0) {
@@ -45,7 +45,7 @@ OptPanelTy::PaintDblBut
       local_14 = this->field_0048 + local_10[1];
     }
     else {
-      local_14 = this->field_0048 + *(int *)(local_c + 0x10);
+      local_14 = this->field_0048 + local_c->field_0010;
     }
   }
   else {
@@ -53,7 +53,7 @@ OptPanelTy::PaintDblBut
       iVar3 = local_10[1];
     }
     else {
-      iVar3 = *(int *)(local_c + 0x10);
+      iVar3 = local_c->field_0010;
     }
     local_14 = iVar3 - this->field_0044;
   }
@@ -80,7 +80,7 @@ OptPanelTy::PaintDblBut
         iVar8 = local_10[3];
       }
       else {
-        iVar8 = *(int *)(local_c + 0x18);
+        iVar8 = local_c->field_0018;
       }
       DibPut((undefined4 *)pOVar2->field_0068,iVar3 + 5,
              (iVar8 - *(int *)(local_8 + 4)) / 2 + 1 + uVar6,'\x01',(byte *)local_8);
@@ -91,8 +91,8 @@ OptPanelTy::PaintDblBut
         iVar10 = local_10[2];
       }
       else {
-        iVar8 = *(int *)(local_c + 0x18);
-        iVar10 = *(int *)(local_c + 0x14);
+        iVar8 = local_c->field_0018;
+        iVar10 = local_c->field_0014;
       }
       ccFntTy::SetSurf(pOVar2->field_0180,pOVar2->field_0068,0,iVar3 + 10 + local_18,uVar6,
                        (iVar10 - iVar3) + -10,iVar8);

@@ -30,7 +30,8 @@ undefined4 __thiscall SIDTy::GetMessage(SIDTy *this,int param_1)
   byte *pbVar18;
   bool bVar19;
   int iVar20;
-  int iVar21;
+  AnonShape_005B6560_61F462DF *pAVar21;
+  int iVar22;
   InternalExceptionFrame local_64;
   int local_20;
   uint local_1c;
@@ -166,7 +167,7 @@ LAB_005d97ca:
               thunk_FUN_005738d0(&g_sound);
             }
             else {
-              thunk_FUN_00572510(&g_sound);
+              thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&g_sound);
             }
             if (DAT_00808446 != '\0') {
               DeleteCtrls(this_00);
@@ -259,9 +260,8 @@ LAB_005d97ca:
       *(undefined1 *)puVar9 = 0xff;
       puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),this_00->field_1CC8,0,0,0,0,0);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),(uint *)**(undefined4 **)(param_1 + 0x14),0,-1
-                   ,2);
+    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1CC8,0,0,0,0,0);
+    ccFntTy::WrStr(PTR_0081176c->field_0034,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,2);
     uVar4 = *(ushort *)(param_1 + 0x18);
     if ((uVar4 != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {
       FUN_006b5b10(this_00->field_1CC8,0,(uint)uVar4,(uint)*(ushort *)(param_1 + 0x1a),(uint)uVar4,
@@ -275,7 +275,7 @@ LAB_005d97ca:
   else {
     if (0x8163 < uVar12) {
       if (uVar12 == 0x8164) {
-        puVar9 = &this_00->field_1B01;
+        pAVar21 = (AnonShape_005B6560_61F462DF *)&this_00->field_1B01;
       }
       else {
         if (uVar12 != 0x8165) {
@@ -290,9 +290,9 @@ LAB_005d97ca:
           }
           goto cf_common_exit_005D9CCB;
         }
-        puVar9 = &this_00->field_1B92;
+        pAVar21 = (AnonShape_005B6560_61F462DF *)&this_00->field_1B92;
       }
-      MMMObjTy::PaintSlBut((MMMObjTy *)this_00,(int)puVar9,param_1,0);
+      MMMObjTy::PaintSlBut((MMMObjTy *)this_00,pAVar21,param_1,0);
       goto cf_common_exit_005D9CCB;
     }
     if (uVar12 == 0x8163) {
@@ -354,8 +354,8 @@ LAB_005d97ca:
           FUN_006b5ee0(this_00->field_1CB8,0,*(ushort *)(param_1 + 0x18) + 3,
                        *(ushort *)(param_1 + 0x1a) + 0x15,0x142,0xe,0x87,0xd);
         }
-        ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),this_00->field_1CBC,0,0,0,0,0);
-        ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),local_8,0,-1,2);
+        ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1CBC,0,0,0,0,0);
+        ccFntTy::WrStr(PTR_0081176c->field_0034,local_8,0,-1,2);
         FUN_006b5440(this_00->field_1CB8,0,*(ushort *)(param_1 + 0x18) + 6,
                      *(ushort *)(param_1 + 0x1a) + 0x15,this_00->field_1CBC,0,0xff);
         FUN_006b35d0(DAT_008075a8,this_00->field_1CB4);
@@ -381,13 +381,13 @@ LAB_005d97ca:
     else {
       uID = (-(uint)(this_00->field_1A5F != '\0') & 0xfffffffd) + 0x24bd;
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),this_00->field_1CB8,0,local_20,local_1c,
-                     local_18,local_14);
+    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1CB8,0,local_20,local_1c,local_18,
+                     local_14);
     iVar7 = (*(short *)(param_1 + 0x14) != 1) + 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar20 = -1;
     puVar10 = (uint *)FUN_006b0140(uID,HINSTANCE_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar10,iVar20,iVar21,iVar7);
+    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar10,iVar20,iVar22,iVar7);
   }
   FUN_006b35d0(DAT_008075a8,this_00->field_1CB4);
 cf_common_exit_005D9CCB:

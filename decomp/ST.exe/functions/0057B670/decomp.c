@@ -51,7 +51,8 @@ LAB_0057b6da:
     iVar3 = 0xfa;
     param_1 = (int *)0x3f000000;
   }
-  thunk_FUN_0057a2c0(this,param_3,(int *)&local_8,param_4,iVar3,param_1,param_5);
+  thunk_FUN_0057a2c0((AnonShape_0057A2C0_A829D396 *)this,param_3,(int *)&local_8,param_4,iVar3,
+                     param_1,param_5);
 LAB_0057b6ff:
   if (local_8 != (LPVOID)0x0) {
     thunk_FUN_00416270(this,(undefined2 *)&param_2,&param_5,&param_4);
@@ -111,7 +112,7 @@ LAB_0057b6ff:
         }
         local_38 = param_1;
         local_3a = *(undefined2 *)((int)local_8 + uVar4 * 8 + 6);
-        (**(code **)(*DAT_00802a38 + 8))(0x106,0,0,local_60,0);
+        (*PTR_00802a38->vtable->vfunc_08)(0x106,0,0,local_60,0);
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)(uVar2 + 1));
     }

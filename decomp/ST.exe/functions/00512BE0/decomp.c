@@ -61,7 +61,7 @@ void FUN_00512be0(int param_1)
   undefined4 local_5c;
   undefined4 local_58;
   InternalExceptionFrame local_4c;
-  void *local_8;
+  AnonShape_00512BE0_C9F23DAB *local_8;
   
   piVar5 = local_8c4;
   for (iVar3 = 0x21e; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -73,14 +73,14 @@ void FUN_00512be0(int param_1)
   local_8c4[0] = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (local_8c4[0] == 0) {
     local_8c4[1] = 2;
-    local_8a4 = *(int *)((int)local_8 + 0x3c) + 0x21;
-    if (*(int *)((int)local_8 + 0x5c) == 0) {
-      local_8a0 = -*(int *)((int)local_8 + 0x48);
+    local_8a4 = local_8->field_003C + 0x21;
+    if (local_8->field_005C == 0) {
+      local_8a0 = -local_8->field_0048;
     }
     else {
-      local_8a0 = *(int *)((int)local_8 + 0x44);
+      local_8a0 = local_8->field_0044;
     }
-    puVar1 = *(uint **)((int)local_8 + 0x1e4);
+    puVar1 = local_8->field_01E4;
     local_8a0 = local_8a0 + 0x16;
     local_8c4[2] = 1;
     local_8c4[3] = *(undefined4 *)(param_1 + 8);
@@ -90,7 +90,7 @@ void FUN_00512be0(int param_1)
     }
     local_8b0 = *(int *)((int)puVar1 + 0x8a);
     local_8a8 = (undefined4)(0x118 / (longlong)local_8b0);
-    local_808[2] = *(int *)((int)local_8 + 0x3c) + 0x1c3;
+    local_808[2] = local_8->field_003C + 0x1c3;
     local_8ac = 1;
     local_888 = 2;
     local_884 = 0x6332;
@@ -99,12 +99,12 @@ void FUN_00512be0(int param_1)
     local_80c = 2;
     local_808[0] = 0;
     local_808[1] = 2;
-    local_88c = *(undefined4 *)((int)local_8 + 8);
-    if (*(int *)((int)local_8 + 0x5c) == 0) {
-      local_808[3] = -*(int *)((int)local_8 + 0x48);
+    local_88c = local_8->field_0008;
+    if (local_8->field_005C == 0) {
+      local_808[3] = -local_8->field_0048;
     }
     else {
-      local_808[3] = *(int *)((int)local_8 + 0x44);
+      local_808[3] = local_8->field_0044;
     }
     local_808[3] = local_808[3] + 0x109;
     local_7f8 = 0x11;
@@ -116,7 +116,7 @@ void FUN_00512be0(int param_1)
     local_7a8 = local_88c;
     local_6e4 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
     local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
-    iVar3 = *(int *)((int)local_8 + 0x5c);
+    iVar3 = local_8->field_005C;
     local_700 = 1;
     local_6fc = 1;
     local_68c = 2;
@@ -128,26 +128,26 @@ void FUN_00512be0(int param_1)
       piVar6 = piVar6 + 1;
     }
     if (iVar3 == 0) {
-      local_688[3] = -*(int *)((int)local_8 + 0x48);
+      local_688[3] = -local_8->field_0048;
     }
     else {
-      local_688[3] = *(int *)((int)local_8 + 0x44);
+      local_688[3] = local_8->field_0044;
     }
     local_688[3] = local_688[3] + 0x16;
     local_620 = 0x8164;
     local_564 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
     local_560 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
-    local_4fc = *(int *)((int)local_8 + 0x3c) + 0x1c3;
+    local_4fc = local_8->field_003C + 0x1c3;
     local_50c = 3;
     local_508 = 1;
     local_500 = 0;
-    if (*(int *)((int)local_8 + 0x5c) == 0) {
-      local_4f8 = -*(int *)((int)local_8 + 0x48);
+    if (local_8->field_005C == 0) {
+      local_4f8 = -local_8->field_0048;
     }
     else {
-      local_4f8 = *(int *)((int)local_8 + 0x44);
+      local_4f8 = local_8->field_0044;
     }
-    local_4b8 = *(undefined4 *)((int)local_8 + 8);
+    local_4b8 = local_8->field_0008;
     local_4f8 = local_4f8 + 0x3d;
     local_4f4 = 0x11;
     local_4f0 = 0xc9;
@@ -158,13 +158,12 @@ void FUN_00512be0(int param_1)
     local_474 = 1;
     local_58 = 1;
     local_5c = 1;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(8,(int *)((int)local_8 + 0x19c),0,local_8c4,0)
-    ;
-    iVar3 = *(int *)((int)local_8 + 0x19c);
+    (**(code **)(*local_8->field_000C + 8))(8,&local_8->field_019C,0,local_8c4,0);
+    iVar3 = local_8->field_019C;
     if (iVar3 != 0) {
-      *(undefined4 *)((int)local_8 + 0x28) = 0x20;
-      *(undefined4 *)((int)local_8 + 0x2c) = 1;
-      FUN_006e6080(local_8,2,iVar3,(undefined4 *)((int)local_8 + 0x18));
+      local_8->field_0028 = 0x20;
+      local_8->field_002C = 1;
+      FUN_006e6080(local_8,2,iVar3,(undefined4 *)&local_8->field_0x18);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

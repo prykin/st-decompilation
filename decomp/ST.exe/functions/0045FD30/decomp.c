@@ -32,7 +32,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
       }
     }
     *(undefined4 *)&this->field_0xe8 = 0;
-    thunk_FUN_004167a0((int)this);
+    thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);
     this->field_00FD = 1;
     thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
     return 1;
@@ -53,13 +53,13 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
                 2) * 4);
     }
     if (pSVar7 == this) {
-      thunk_FUN_004167a0((int)this);
+      thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);
       this->field_00FD = 1;
       thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
       return 1;
     }
   }
-  iVar5 = thunk_FUN_00416400(this);
+  iVar5 = thunk_FUN_00416400((STJellyGunC *)this);
   if (iVar5 == -1) {
     return 0xffffffff;
   }

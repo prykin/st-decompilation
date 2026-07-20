@@ -10,7 +10,8 @@
    [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 0068CEC0 -> EXTERNAL:0000001F @ 0068D116 */
 
-uint * __cdecl FUN_0068cec0(LPCSTR lpFileName,char *param_2,int *param_3,undefined *param_4)
+uint * __cdecl
+FUN_0068cec0(LPCSTR lpFileName,AnonShape_0068CEC0_66639411 *param_2,int *param_3,undefined *param_4)
 
 {
   char cVar1;
@@ -92,36 +93,36 @@ uint * __cdecl FUN_0068cec0(LPCSTR lpFileName,char *param_2,int *param_3,undefin
       thunk_FUN_00672970(this_03,1);
       thunk_FUN_006728f0((undefined4 *)&DAT_007d3f78);
       thunk_FUN_00680040();
-      if (param_2 == (char *)0x0) {
+      if (param_2 == (AnonShape_0068CEC0_66639411 *)0x0) {
         RaiseInternalException
                   (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa55);
       }
-      iVar4 = thunk_FUN_0067f030(s__main_path_007d5674,param_2,(uint *)0x0);
+      iVar4 = thunk_FUN_0067f030(s__main_path_007d5674,(char *)param_2,(uint *)0x0);
       if (iVar4 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa56);
       }
-      iVar4 = thunk_FUN_0067f030(s__inc_path_007d5668,param_2 + 0x104,(uint *)0x0);
+      iVar4 = thunk_FUN_0067f030(s__inc_path_007d5668,&param_2->field_0x104,(uint *)0x0);
       if (iVar4 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa57);
       }
-      iVar4 = thunk_FUN_0067f030(s__maps_path_007d5658,param_2 + 0x208,(uint *)0x0);
+      iVar4 = thunk_FUN_0067f030(s__maps_path_007d5658,&param_2->field_0x208,(uint *)0x0);
       if (iVar4 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa58);
       }
-      uVar6 = thunk_FUN_0067f740(s__env_var0_007d564c,*(undefined4 *)(param_2 + 0x30c));
+      uVar6 = thunk_FUN_0067f740(s__env_var0_007d564c,param_2->field_030C);
       if ((int)uVar6 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa59);
       }
-      uVar6 = thunk_FUN_0067f740(s__env_var1_007d5640,*(undefined4 *)(param_2 + 0x310));
+      uVar6 = thunk_FUN_0067f740(s__env_var1_007d5640,param_2->field_0310);
       if ((int)uVar6 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa5a);
       }
-      uVar6 = thunk_FUN_0067f740(s__env_var2_007d5634,*(undefined4 *)(param_2 + 0x314));
+      uVar6 = thunk_FUN_0067f740(s__env_var2_007d5634,param_2->field_0314);
       if ((int)uVar6 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa5b);

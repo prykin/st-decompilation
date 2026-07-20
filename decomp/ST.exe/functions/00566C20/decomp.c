@@ -16,9 +16,9 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
-  SoundManagerTy *local_8;
+  AnonShape_00566AA0_2703DA85 *local_8;
   
-  local_8 = this;
+  local_8 = (AnonShape_00566AA0_2703DA85 *)this;
   DVar3 = FUN_006e51b0(this->field_0010);
   this->field_001C = DVar3;
   local_4c.previous = g_currentExceptionFrame;
@@ -40,11 +40,11 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
   if (iVar4 != 0) {
     if (iVar4 == 2) {
       DAT_008033f0 = local_8;
-      local_8->field_0028 = *(undefined4 *)(param_1 + 0x14);
+      local_8->field_0028 = *(int *)(param_1 + 0x14);
     }
     else if (iVar4 == 3) {
-      DAT_008033f0 = (SoundManagerTy *)0x0;
-      thunk_FUN_00566900((int)local_8);
+      DAT_008033f0 = (AnonShape_00566AA0_2703DA85 *)0x0;
+      thunk_FUN_00566900((AnonShape_00566900_A2478973 *)local_8);
     }
     goto LAB_00566d75;
   }
@@ -55,15 +55,15 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
       local_8->field_0038 = 1;
       local_8->field_0039 = 0xffffffff;
     }
-    local_8->field_0024 = local_8->field_001C;
-    local_8->field_0020 = local_8->field_001C;
+    *(undefined4 *)&local_8->field_0x24 = *(undefined4 *)&local_8->field_0x1c;
+    *(undefined4 *)&local_8->field_0x20 = *(undefined4 *)&local_8->field_0x1c;
     break;
   case '\x01':
-    iVar4 = local_8->field_001C;
-    if ((4999 < (uint)(iVar4 - local_8->field_0020)) &&
-       ((uint)(iVar4 - local_8->field_0024) < 0x3e9)) {
-      local_8->field_0024 = iVar4;
-      local_8->field_0020 = iVar4;
+    iVar4 = *(int *)&local_8->field_0x1c;
+    if ((4999 < (uint)(iVar4 - *(int *)&local_8->field_0x20)) &&
+       ((uint)(iVar4 - *(int *)&local_8->field_0x24) < 0x3e9)) {
+      *(int *)&local_8->field_0x24 = iVar4;
+      *(int *)&local_8->field_0x20 = iVar4;
 joined_r0x00566d57:
       if (cVar1 != '\x03') {
         local_8->field_0038 = 3;
@@ -73,23 +73,23 @@ LAB_00566d5d:
     }
     break;
   case '\x02':
-    iVar4 = local_8->field_001C;
-    if (4999 < (uint)(iVar4 - local_8->field_0020)) {
-      uVar7 = iVar4 - local_8->field_0024;
+    iVar4 = *(int *)&local_8->field_0x1c;
+    if (4999 < (uint)(iVar4 - *(int *)&local_8->field_0x20)) {
+      uVar7 = iVar4 - *(int *)&local_8->field_0x24;
       if (19999 < uVar7) goto LAB_00566d35;
       if (uVar7 < 0x3e9) {
-        local_8->field_0024 = iVar4;
-        local_8->field_0020 = iVar4;
+        *(int *)&local_8->field_0x24 = iVar4;
+        *(int *)&local_8->field_0x20 = iVar4;
         goto joined_r0x00566d57;
       }
     }
     break;
   case '\x03':
-    iVar4 = local_8->field_001C;
-    if (14999 < (uint)(iVar4 - local_8->field_0024)) {
+    iVar4 = *(int *)&local_8->field_0x1c;
+    if (14999 < (uint)(iVar4 - *(int *)&local_8->field_0x24)) {
 LAB_00566d35:
-      local_8->field_0024 = iVar4;
-      local_8->field_0020 = iVar4;
+      *(int *)&local_8->field_0x24 = iVar4;
+      *(int *)&local_8->field_0x20 = iVar4;
       if (cVar1 != '\x01') {
         local_8->field_0038 = 1;
         goto LAB_00566d5d;

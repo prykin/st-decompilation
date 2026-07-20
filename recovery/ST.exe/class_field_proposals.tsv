@@ -379,7 +379,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CPanelTy	536	0x218	4	field_0218	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004FB060
 1	CPanelTy	540	0x21C	4	field_021C	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	004FB060
 1	CPanelTy	551	0x227	4	field_0227	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004F7800
-1	CPanelTy	575	0x23F	2	field_023F	/undefined2	0			0	none	none			9	6	high	consistent_this_relative_access	004F80A0 | 004F8C80 | 004F9ED0 | 004FB060
+1	CPanelTy	575	0x23F	2	field_023F	/SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState	0			0	existing	none			9	6	high	consistent_this_relative_access; concrete_type_already_present	004F80A0 | 004F8C80 | 004F9ED0 | 004FB060
 1	CPanelTy	577	0x241	2	field_0241	/undefined2	0			0	none	none			2	1	high	consistent_this_relative_access	004F5690 | 004FA570
 1	CPanelTy	579	0x243	4	field_0243	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004F92B0 | 004FB060
 1	CPanelTy	583	0x247	4	field_0247	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004F92B0 | 004FB060
@@ -389,7 +389,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CPanelTy	599	0x257	4	field_0257	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004F96A0 | 004F9CD0
 1	CPanelTy	603	0x25B	4	field_025B	/undefined4	0			0	none	none			9	10	high	consistent_this_relative_access	004F5690 | 004F7800 | 004F80A0 | 004F96A0 | 004F9CD0
 1	CPanelTy	607	0x25F	1	field_025F	/undefined1	0			0	none	none			6	11	high	consistent_this_relative_access	004F5690 | 004F80A0 | 004F96A0 | 004F9CD0
-1	CPanelTy	608	0x260	1	field_0260	/undefined1	0			0	none	none			1	8	high	consistent_this_relative_access	004F5690 | 004F80A0 | 004F96A0 | 004F9CD0
+1	CPanelTy	608	0x260	1	field_0260	/SubmarineTitans/Recovered/Enums/CPanelTy_field_0260State	0			0	existing	none			1	8	high	consistent_this_relative_access; concrete_type_already_present	004F5690 | 004F80A0 | 004F96A0 | 004F9CD0
 1	CPanelTy	609	0x261	4	field_0261	/undefined4	0			0	none	none			4	5	high	consistent_this_relative_access	004F5690 | 004F80A0
 1	CPanelTy	644	0x284	1	field_0284	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	004F96A0
 1	CPanelTy	645	0x285	1	field_0285	/undefined1	0			0	none	none			1	2	high	consistent_this_relative_access	004F80A0 | 004F96A0
@@ -495,9 +495,9 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CPanelTy	2949	0xB85	1	field_0B85	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FE960
 1	CPanelTy	2950	0xB86	1	field_0B86	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FE960
 1	CPanelTy	2965	0xB95	4	field_0B95	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	004F5690 | 004F7800 | 004FE960 | 004FF380
-1	CPanelTy	2969	0xB99	4	field_0B99	/undefined4	0			0	none	none			22	0	high	consistent_this_relative_access	004FB060 | 00501590 | 00501FF0 | 00502360 | 00502990 | 00502FC0 | 00503450
+1	CPanelTy	2969	0xB99	4	field_0B99	/SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State	0			0	existing	none			22	0	high	consistent_this_relative_access; concrete_type_already_present	004FB060 | 00501590 | 00501FF0 | 00502360 | 00502990 | 00502FC0 | 00503450
 1	CPanelTy	2973	0xB9D	1	field_0B9D	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	00501FF0 | 00502FC0
-1	CPanelTy	2974	0xB9E	1	field_0B9E	/undefined1	0			0	none	none			14	0	high	consistent_this_relative_access	00501590 | 00501FF0 | 00502360 | 00502990 | 00502FC0 | 00503450
+1	CPanelTy	2974	0xB9E	1	field_0B9E	/SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState	0			0	existing	none			14	0	high	consistent_this_relative_access; concrete_type_already_present	00501590 | 00501FF0 | 00502360 | 00502990 | 00502FC0 | 00503450
 1	CPanelTy	2976	0xBA0	1	field_0BA0	/undefined1	0			0	none	none			10	0	high	consistent_this_relative_access	00502360 | 00503450
 1	CPanelTy	2978	0xBA2	1	field_0BA2	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	00502360
 1	CPanelTy	2984	0xBA8	1	field_0BA8	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	00502360
@@ -511,9 +511,9 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CPanelTy	3024	0xBD0	1	field_0BD0	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FB060
 1	CPanelTy	3025	0xBD1	1	field_0BD1	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FB060
 1	CPanelTy	3026	0xBD2	1	field_0BD2	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	004FB060
-1	CPanelTy	3061	0xBF5	4	field_0BF5	/undefined4	0			0	none	none			23	0	high	consistent_this_relative_access	004FB060 | 005044B0 | 005061C0 | 005097E0 | 0050A340 | 0050E7D0
+1	CPanelTy	3061	0xBF5	4	field_0BF5	/SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State	0			0	existing	none			23	0	high	consistent_this_relative_access; concrete_type_already_present	004FB060 | 005044B0 | 005061C0 | 005097E0 | 0050A340 | 0050E7D0
 1	CPanelTy	3065	0xBF9	1	field_0BF9	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	005061C0
-1	CPanelTy	3066	0xBFA	1	field_0BFA	/undefined1	0			0	none	none			8	0	high	consistent_this_relative_access	005061C0 | 00507F60 | 005097E0 | 0050A340 | 0050C620 | 0050E7D0
+1	CPanelTy	3066	0xBFA	1	field_0BFA	/SubmarineTitans/Recovered/Enums/CPanelTy_field_0BFAState	0			0	existing	none			8	0	high	consistent_this_relative_access; concrete_type_already_present	005061C0 | 00507F60 | 005097E0 | 0050A340 | 0050C620 | 0050E7D0
 1	CPanelTy	3067	0xBFB	1	field_0BFB	/undefined1	0			0	none	none			8	0	high	consistent_this_relative_access	005061C0 | 00507F60 | 005097E0 | 0050A340 | 0050C620 | 0050E7D0
 1	CPanelTy	3068	0xBFC	1	field_0BFC	/undefined1	0			0	none	none			13	0	high	consistent_this_relative_access	004FB060 | 00507F60 | 005097E0 | 0050C620 | 0050E7D0
 1	CPanelTy	3069	0xBFD	1	field_0BFD	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	00507F60 | 0050C620
@@ -605,7 +605,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CampaignTy	7111	0x1BC7	4	field_1BC7	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00590B40 | 005916F0
 1	CampaignTy	7127	0x1BD7	4	field_1BD7	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	005916F0 | 00591940 | 005926E0
 1	CampaignTy	7143	0x1BE7	1	field_1BE7	/undefined1	0			0	none	none			1	3	high	consistent_this_relative_access	005926E0
-1	CampaignTy	7144	0x1BE8	4	field_1BE8	/undefined4	0			0	none	none			8	4	high	consistent_this_relative_access	00590B40 | 005926E0
+1	CampaignTy	7144	0x1BE8	4	field_1BE8	/SubmarineTitans/Recovered/Enums/CampaignTy_field_1BE8State	0			0	existing	none			8	4	high	consistent_this_relative_access; concrete_type_already_present	00590B40 | 005926E0
 1	CampaignTy	7148	0x1BEC	4	field_1BEC	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00590B40 | 00592340
 1	CampaignTy	7152	0x1BF0	4	field_1BF0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00590B40
 1	CampaignTy	7156	0x1BF4	4	field_1BF4	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00590B40
@@ -738,7 +738,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	CursorClassTy	211	0xD3	1	field_00D3	/undefined1	0			0	none	none			1	2	high	consistent_this_relative_access	005449B0 | 00548C40
 1	CursorClassTy	212	0xD4	1	field_00D4	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	005449B0
 1	CursorClassTy	213	0xD5	1	field_00D5	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	005449B0
-1	CursorClassTy	222	0xDE	1	field_00DE	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	0054AEE0
+1	CursorClassTy	222	0xDE	1	field_00DE	/SubmarineTitans/Recovered/Enums/CursorClassTy_field_00DEState	0			0	existing	none			1	0	high	consistent_this_relative_access; concrete_type_already_present	0054AEE0
 1	CursorClassTy	223	0xDF	4	field_00DF	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	00548C40
 1	CursorClassTy	227	0xE3	4	field_00E3	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	00548C40
 1	CursorClassTy	231	0xE7	4	field_00E7	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	00548C40
@@ -784,10 +784,10 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	FSGSTy	85	0x55	4	field_0055	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	005A4350
 1	FSGSTy	93	0x5D	4	field_005D	/undefined4	0			0	none	none			26	1	high	consistent_this_relative_access	00595E40 | 00596CC0 | 005999C0 | 0059D240 | 0059EB00 | 0059F260 | 0059F670
 1	FSGSTy	97	0x61	4	field_0061	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 00597120 [this+0x61] assigned 00597120 return from WINMM.DLL::timeGetTime		0	2	high	consistent_this_relative_access; concrete_type_already_present	00597120 | 005A4350
-1	FSGSTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			3	3	high	consistent_this_relative_access	00597120 | 00597E70 | 0059B740 | 005A1920
+1	FSGSTy	101	0x65	1	field_0065	/SubmarineTitans/Recovered/Enums/FSGSTy_field_0065State	0			0	existing	none			3	3	high	consistent_this_relative_access; concrete_type_already_present	00597120 | 00597E70 | 0059B740 | 005A1920
 1	FSGSTy	6746	0x1A5A	1	field_1A5A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	00597120
 1	FSGSTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::GetIP; 00595E40 [this+0x1A5B] used as receiver of StartSystemTy::sub_005DAF20; 005A4350 [this+0x1A5B] used as receiver of StartSystemTy::InitChat		60	0	high	consistent_this_relative_access; concrete_type_already_present	00595E40 | 005967F0 | 00597E70 | 005A0FF0 | 005A1160 | 005A1630 | 005A32F0 | 005A4350
-1	FSGSTy	6751	0x1A5F	1	field_1A5F	/undefined1	0			0	none	none			43	4	high	consistent_this_relative_access	00595E40 | 00596CC0 | 00597E70 | 0059B740 | 0059C520 | 0059F670 | 005A0DC0 | 005A1430 | 005A1630 | 005A1F00 | 005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A3540 | 005A3AB0 | 005A40F0 | 005A4350
+1	FSGSTy	6751	0x1A5F	1	field_1A5F	/SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState	0			0	existing	none			43	4	high	consistent_this_relative_access; concrete_type_already_present	00595E40 | 00596CC0 | 00597E70 | 0059B740 | 0059C520 | 0059F670 | 005A0DC0 | 005A1430 | 005A1630 | 005A1F00 | 005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A3540 | 005A3AB0 | 005A40F0 | 005A4350
 1	FSGSTy	6752	0x1A60	1	field_1A60	/undefined1	0			0	none	none			10	3	high	consistent_this_relative_access	005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A4350
 1	FSGSTy	6753	0x1A61	1	field_1A61	/undefined1	0			0	none	none			2	15	high	consistent_this_relative_access	00597120 | 005A0FF0 | 005A32F0 | 005A4350
 1	FSGSTy	6754	0x1A62	1	field_1A62	/undefined1	0			0	none	none			0	3	high	consistent_this_relative_access	00595E40 | 0059C520
@@ -984,7 +984,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	HelpPanelTy	384	0x180	4	field_0180	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00510E30 | 00511760 | 00511C70
 1	HelpPanelTy	412	0x19C	4	field_019C	/undefined4	0			0	none	none			16	1	high	consistent_this_relative_access	00511760 | 00511C70 | 005123A0 | 00512830 | 00513030 | 00514F10 | 00515310 | 00516300 | 00516480
 1	HelpPanelTy	416	0x1A0	1	field_01A0	/undefined1	0		panel	0	none	medium		panel <= 00511FA0 unique set field in HelpPanelTy::SetPanel	1	1	high	consistent_this_relative_access	00511FA0
-1	HelpPanelTy	417	0x1A1	1	field_01A1	/undefined1	0			0	none	none			17	16	high	consistent_this_relative_access	005123A0 | 00513030 | 005134B0 | 005135F0 | 00513810 | 00513A40 | 00513BC0 | 00513FA0 | 00514330 | 005145E0 | 00514F10 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
+1	HelpPanelTy	417	0x1A1	1	field_01A1	/SubmarineTitans/Recovered/Enums/HelpPanelTy_field_01A1State	0			0	existing	none			17	16	high	consistent_this_relative_access; concrete_type_already_present	005123A0 | 00513030 | 005134B0 | 005135F0 | 00513810 | 00513A40 | 00513BC0 | 00513FA0 | 00514330 | 005145E0 | 00514F10 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
 1	HelpPanelTy	418	0x1A2	1	field_01A2	/undefined1	0			0	none	none			2	24	high	consistent_this_relative_access	005135F0 | 00513810 | 00513A40 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
 1	HelpPanelTy	419	0x1A3	4	field_01A3	/undefined4	0			0	none	none			13	16	high	consistent_this_relative_access	005134B0 | 005135F0 | 00513A40 | 00513BC0 | 00513FA0 | 00514330 | 005145E0 | 00516300 | 00516480 | 00516A40 | 00517A50 | 00518C20 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
 1	HelpPanelTy	423	0x1A7	4	field_01A7	/undefined4	0			0	none	none			1	12	high	consistent_this_relative_access	005134B0 | 00513BC0 | 00513FA0 | 00514330 | 005145E0 | 00516300 | 00516A40 | 00517A50 | 0051A100 | 0051B5A0 | 0051C980 | 0051D360 | 0051D540
@@ -1035,7 +1035,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	HelpStringTy	298	0x12A	4	field_012A	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	0051F8F0 | 0051FBA0
 1	HelpStringTy	302	0x12E	4	field_012E	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0051FBA0
 1	HoloTy	0	0x0	1	field_0000	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	005AACB0
-1	HoloTy	1	0x1	1	field_0001	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	005AACB0
+1	HoloTy	1	0x1	1	field_0001	/SubmarineTitans/Recovered/Enums/HoloTy_field_0001State	0			0	existing	none			1	1	high	consistent_this_relative_access; concrete_type_already_present	005AACB0
 1	HoloTy	2	0x2	1	field_0002	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	005AACB0 | 005AB0A0
 1	HoloTy	3	0x3	4	field_0003	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	005AACB0 | 005AAFB0 | 005AB0A0
 1	HoloTy	7	0x7	4	field_0007	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005AACB0 | 005AAFB0
@@ -1506,7 +1506,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	OptPanelTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0052EB50 | 0052EFB0 | 0052F900
 1	OptPanelTy	96	0x60	4	field_0060	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0052EFB0
 1	OptPanelTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			5	0	high	consistent_this_relative_access	0052EDF0 | 0052EFB0
-1	OptPanelTy	370	0x172	2	field_0172	/undefined2	0			0	none	none			5	1	high	consistent_this_relative_access	0052F2B0 | 0052F7E0 | 00533880 | 00533A10
+1	OptPanelTy	370	0x172	2	field_0172	/SubmarineTitans/Recovered/Enums/OptPanelTy_field_0172State	0			0	existing	none			5	1	high	consistent_this_relative_access; concrete_type_already_present	0052F2B0 | 0052F7E0 | 00533880 | 00533A10
 1	OptPanelTy	372	0x174	4	field_0174	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0052E500 | 0052F900
 1	OptPanelTy	380	0x17C	4	field_017C	pointer:/ccFntTy	0	pointer:/ccFntTy		0	existing	none	pointer:/ccFntTy <= 00532A80 [this+0x17C] used as receiver of ccFntTy::FormIndentSarr; 00532A80 [this+0x17C] used as receiver of ccFntTy::SepColorStrInSarr		3	2	high	consistent_this_relative_access; concrete_type_already_present	0052E5E0 | 0052E8F0 | 00532A80
 1	OptPanelTy	384	0x180	4	field_0180	pointer:/ccFntTy	0	pointer:/ccFntTy		0	existing	none	pointer:/ccFntTy <= 0052EFB0 [this+0x180] used as receiver of ccFntTy::SetSurf; 0052EFB0 [this+0x180] used as receiver of ccFntTy::WrTxt		3	2	high	consistent_this_relative_access; concrete_type_already_present	0052E5E0 | 0052E8F0 | 0052EFB0
@@ -1518,7 +1518,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	OptPanelTy	408	0x198	4	field_0198	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0052E5E0 | 0052E8F0 | 0052EDF0
 1	OptPanelTy	412	0x19C	4	field_019C	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0052F2B0
 1	OptPanelTy	416	0x1A0	4	field_01A0	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	00533880 | 00533A10
-1	OptPanelTy	420	0x1A4	1	field_01A4	/undefined1	0			0	none	none			6	4	high	consistent_this_relative_access	0052F2B0 | 0052F7E0 | 0052F900 | 00532A80 | 00532D50 | 00533880 | 00533A10
+1	OptPanelTy	420	0x1A4	1	field_01A4	/SubmarineTitans/Recovered/Enums/OptPanelTy_field_01A4State	0			0	existing	none			6	4	high	consistent_this_relative_access; concrete_type_already_present	0052F2B0 | 0052F7E0 | 0052F900 | 00532A80 | 00532D50 | 00533880 | 00533A10
 1	OptPanelTy	421	0x1A5	4	field_01A5	/undefined4	0			0	none	none			0	6	high	consistent_this_relative_access	00533880 | 00533A10
 1	OptPanelTy	425	0x1A9	1	field_01A9	/undefined1	0			0	none	none			0	5	high	consistent_this_relative_access	0052F2B0 | 0052F7E0 | 00533880 | 00533A10
 1	OptPanelTy	426	0x1AA	1	field_01AA	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0052F7E0
@@ -1560,7 +1560,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PausePanelTy	64	0x40	4	field_0040	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	00539280
 1	PausePanelTy	92	0x5C	4	field_005C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	005396E0
 1	PausePanelTy	104	0x68	4	field_0068	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00539280
-1	PausePanelTy	370	0x172	2	field_0172	/undefined2	0			0	none	none			1	2	high	consistent_this_relative_access	005395B0
+1	PausePanelTy	370	0x172	2	field_0172	/SubmarineTitans/Recovered/Enums/PausePanelTy_field_0172State	0			0	existing	none			1	2	high	consistent_this_relative_access; concrete_type_already_present	005395B0
 1	PausePanelTy	372	0x174	4	field_0174	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00539280 | 005396E0
 1	PausePanelTy	380	0x17C	4	field_017C	pointer:/ccFntTy	0	pointer:/ccFntTy	ccFnt	0	existing	medium	pointer:/ccFntTy <= 00539280 [this+0x17C] used as receiver of ccFntTy::SetSurf; 00539280 [this+0x17C] used as receiver of ccFntTy::WrTxt		3	2	high	consistent_this_relative_access; concrete_type_already_present	00539280 | 00539490
 1	PausePanelTy	384	0x180	4	field_0180	pointer:/ushort	0	pointer:/ushort		0	existing	none	pointer:/ushort <= 00539280 [this+0x180] assigned 00539280 return from cMf32::RecGet		1	1	high	consistent_this_relative_access; concrete_type_already_present	00539280 | 00539490
@@ -1615,7 +1615,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	PrividerTy	85	0x55	4	field_0055	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005BC5E0
 1	PrividerTy	93	0x5D	4	field_005D	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	005B9B10
 1	PrividerTy	97	0x61	4	field_0061	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 005BAE00 [this+0x61] assigned 005BAE00 return from WINMM.DLL::timeGetTime		1	2	high	consistent_this_relative_access; concrete_type_already_present	005BAE00 | 005BC5E0
-1	PrividerTy	101	0x65	1	field_0065	/undefined1	0			0	none	none			3	5	high	consistent_this_relative_access	005BAAC0 | 005BAE00 | 005BB910 | 005BC5E0
+1	PrividerTy	101	0x65	1	field_0065	/SubmarineTitans/Recovered/Enums/PrividerTy_field_0065State	0			0	existing	none			3	5	high	consistent_this_relative_access; concrete_type_already_present	005BAAC0 | 005BAE00 | 005BB910 | 005BC5E0
 1	PrividerTy	6746	0x1A5A	1	field_1A5A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	005BAE00
 1	PrividerTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005BC5E0 [this+0x1A5B] used as receiver of StartSystemTy::InitChat		21	0	high	consistent_this_relative_access; concrete_type_already_present	005B9B10 | 005BA560 | 005BAAC0 | 005BBA90 | 005BC5E0
 1	PrividerTy	6751	0x1A5F	1	field_1A5F	/undefined1	0			0	none	none			6	1	high	consistent_this_relative_access	005B9B10 | 005BA8B0 | 005BAAC0 | 005BBA90 | 005BC5E0
@@ -1968,7 +1968,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBHEShellC	192	0xC0	4	field_00C0	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	005F27C0
 1	STBHEShellC	196	0xC4	1	field_00C4	/undefined1	0			0	none	none			1	2	high	consistent_this_relative_access	005F27C0
 1	STBHEShellC	259	0x103	1	field_0103	/undefined1	0			0	none	none			2	1	high	consistent_this_relative_access	005F27C0
-1	STBHEShellC	260	0x104	4	field_0104	/undefined4	0			0	none	none			4	6	high	consistent_this_relative_access	005F27C0
+1	STBHEShellC	260	0x104	4	field_0104	/SubmarineTitans/Recovered/Enums/STBHEShellC_field_0104State	0			0	existing	none			4	6	high	consistent_this_relative_access; concrete_type_already_present	005F27C0
 1	STBHEShellC	264	0x108	1	field_0108	/undefined1	0			0	none	none			2	1	high	consistent_this_relative_access	005F27C0
 1	STBHEShellC	365	0x16D	4	field_016D	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005F27C0
 1	STBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STBoatCVTable	0			0	existing	none			20	1	high	owner_vtable_pointer; concrete_type_already_present	0044E690 | 0044EE30 | 004602B0 | 00460360 | 004608B0 | 0046C980 | 0046CF20 | 0046F5C0 | 00471AC0 | 00475530 | 00478640 | 0047D080 | 0047DA50 | 00482A00
@@ -2054,8 +2054,8 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1061	0x425	2	field_0425	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047D080 | 004952E0
 1	STBoatC	1063	0x427	2	field_0427	/undefined2	0			0	none	none			2	0	high	consistent_this_relative_access	0047D080 | 004952E0
 1	STBoatC	1109	0x455	4	field_0455	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0044E690 | 00482A00 | 0048FAC0 | 004900E0
-1	STBoatC	1113	0x459	4	field_0459	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	0044E690 | 0048D930 | 0048DBA0 | 0048FAC0 | 004900E0
-1	STBoatC	1117	0x45D	4	field_045D	/undefined4	0			0	none	none			12	5	high	consistent_this_relative_access	0044E690 | 0044EE30 | 004608B0 | 0048D930 | 0048DBA0 | 0048FAC0 | 004900E0 | 00491070 | 00491FB0 | 00492080 | 00492280 | 00492390
+1	STBoatC	1113	0x459	4	field_0459	/SubmarineTitans/Recovered/Enums/STBoatC_field_0459State	0			0	existing	none			4	2	high	consistent_this_relative_access; concrete_type_already_present	0044E690 | 0048D930 | 0048DBA0 | 0048FAC0 | 004900E0
+1	STBoatC	1117	0x45D	4	field_045D	/SubmarineTitans/Recovered/Enums/STBoatC_field_045DState	0			0	existing	none			12	5	high	consistent_this_relative_access; concrete_type_already_present	0044E690 | 0044EE30 | 004608B0 | 0048D930 | 0048DBA0 | 0048FAC0 | 004900E0 | 00491070 | 00491FB0 | 00492080 | 00492280 | 00492390
 1	STBoatC	1121	0x461	4	field_0461	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1125	0x465	4	field_0465	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0044E690
 1	STBoatC	1129	0x469	2	field_0469	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	0048FAC0 | 004900E0
@@ -2199,7 +2199,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STBoatC	1767	0x6E7	4	field_06E7	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0047FE10
 1	STBoatC	1771	0x6EB	4	field_06EB	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
 1	STBoatC	1775	0x6EF	4	field_06EF	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044E690 | 0048FAC0 | 004900E0
-1	STBoatC	1779	0x6F3	4	field_06F3	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0044EE30
+1	STBoatC	1779	0x6F3	4	field_06F3	/SubmarineTitans/Recovered/Enums/STBoatC_field_06F3State	0			0	existing	none			1	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30
 1	STBoatC	1783	0x6F7	4	field_06F7	/SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State	0			0	existing	none			25	2	high	consistent_this_relative_access; concrete_type_already_present	0044EE30 | 0045F6C0 | 004653B0 | 00482A00 | 00488F30 | 0048A670
 1	STBoatC	1787	0x6FB	4	field_06FB	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
 1	STBoatC	1791	0x6FF	4	field_06FF	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0044EE30
@@ -2315,7 +2315,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 0	STDcResourcC	581	0x245	4	field_0245	/undefined4	0			0	none	none			10	0	conflict	conflicting_access_widths=2x2|4x8	0057F6E0
 0	STDcResourcC	585	0x249	4	field_0249	/undefined4	0			0	none	none			10	0	conflict	conflicting_access_widths=2x2|4x8	0057F6E0
 0	STDcResourcC	589	0x24D	4	field_024D	/undefined4	0	/int		0	none	none	/int <= 0057F861 FILD establishes /int; 0057FA17 FILD establishes /int; 0057FBE3 FILD establishes /int; 0057FDBD FILD establishes /int		5	4	conflict	conflicting_access_widths=2x1|4x8	0057F6E0
-1	STDcResourcC	597	0x255	4	field_0255	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	0057F6E0
+1	STDcResourcC	597	0x255	4	field_0255	/SubmarineTitans/Recovered/Enums/STDcResourcC_field_0255State	0			0	existing	none			2	0	high	consistent_this_relative_access; concrete_type_already_present	0057F6E0
 1	STDcResourcC	601	0x259	4	field_0259	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0057F1D0
 0	STDcResourcC	609	0x261	4	field_0261	/undefined4	0			0	none	none			1	1	conflict	conflicting_access_widths=1x1|4x1	0057E0A0 | 0057F1D0
 1	STDcResourcC	613	0x265	4	field_0265	/undefined4	0			0	none	none			5	2	high	consistent_this_relative_access	0057E0A0 | 0057F6E0
@@ -2557,7 +2557,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STGroupBoatC	470	0x1D6	4	field_01D6	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	004A4F10 | 004A67A0
 1	STGroupBoatC	474	0x1DA	4	field_01DA	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	004A4F10 | 004A67A0
 1	STGroupBoatC	478	0x1DE	4	field_01DE	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	004A4F10 | 004A67A0
-1	STGroupBoatC	486	0x1E6	4	field_01E6	/undefined4	0			0	none	none			21	1	high	consistent_this_relative_access	00497AF0 | 004A0FA0 | 004A8340
+1	STGroupBoatC	486	0x1E6	4	field_01E6	/SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State	0			0	existing	none			21	1	high	consistent_this_relative_access; concrete_type_already_present	00497AF0 | 004A0FA0 | 004A8340
 1	STGroupBoatC	522	0x20A	4	field_020A	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	00499DE0 | 0049AAF0
 1	STGroupBoatC	526	0x20E	4	field_020E	/undefined4	0			0	none	none			31	9	high	consistent_this_relative_access	00499750 | 004999C0 | 00499B80 | 00499DE0 | 0049AAF0 | 004A4F10 | 004A67A0 | 004A8340
 1	STGroupBoatC	530	0x212	4	field_0212	/undefined4	0			0	none	none			9	7	high	consistent_this_relative_access	00499750 | 004999C0 | 00499DE0 | 0049AAF0 | 004A4F10 | 004A67A0
@@ -2896,7 +2896,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STParticleC	178	0xB2	4	field_00B2	/undefined4	0			0	none	none			7	3	high	consistent_this_relative_access	00627EB0 | 006298A0
 1	STParticleC	182	0xB6	4	field_00B6	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	00627EB0 | 00629070 | 006298A0
 1	STParticleC	193	0xC1	1	field_00C1	/undefined1	0			0	none	none			2	4	high	consistent_this_relative_access	00627EB0 | 006298A0
-1	STParticleC	194	0xC2	4	field_00C2	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	00627EB0
+1	STParticleC	194	0xC2	4	field_00C2	/SubmarineTitans/Recovered/Enums/STParticleC_field_00C2State	0			0	existing	none			2	4	high	consistent_this_relative_access; concrete_type_already_present	00627EB0
 1	STParticleC	198	0xC6	4	field_00C6	/undefined4	0			0	none	none			25	2	high	consistent_this_relative_access	00627EB0 | 006298A0
 1	STParticleC	214	0xD6	1	field_00D6	/undefined1	0			0	none	none			5	2	high	consistent_this_relative_access	00627EB0
 1	STParticleC	235	0xEB	4	field_00EB	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	006298A0
@@ -3021,7 +3021,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STSprGameObjC	469	0x1D5	4	field_01D5	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005EC7E0
 1	STSprGameObjC	493	0x1ED	4	field_01ED	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	00420340 | 00420AE0
 1	STSprGameObjC	529	0x211	4	field_0211	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	00420340 | 00420AE0
-1	STSprGameObjC	601	0x259	4	field_0259	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	00420340 | 00420AE0
+1	STSprGameObjC	601	0x259	4	field_0259	/SubmarineTitans/Recovered/Enums/STSprGameObjC_field_0259State	0			0	existing	none			2	0	high	consistent_this_relative_access; concrete_type_already_present	00420340 | 00420AE0
 1	STSprGameObjC	776	0x308	4	field_0308	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005EC7E0
 1	STSprGameObjC	780	0x30C	1	field_030C	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	005EC7E0
 1	STSprGameObjC	782	0x30E	1	field_030E	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	005EC7E0
@@ -3097,7 +3097,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STVolcanoC	134	0x86	4	field_0086	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	006474E0
 1	STVolcanoC	138	0x8A	4	field_008A	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	006474E0
 1	STVolcanoC	168	0xA8	1	field_00A8	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	006461E0
-1	STVolcanoC	169	0xA9	4	field_00A9	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	006461E0
+1	STVolcanoC	169	0xA9	4	field_00A9	/SubmarineTitans/Recovered/Enums/STVolcanoC_field_00A9State	0			0	existing	none			1	1	high	consistent_this_relative_access; concrete_type_already_present	006461E0
 1	STVolcanoC	173	0xAD	4	field_00AD	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	006461E0
 1	STVolcanoC	177	0xB1	4	field_00B1	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	006461E0
 1	SettMapMTy	0	0x0	4	field_0000	/undefined4	0			0	none	none			19	0	high	consistent_this_relative_access	005CD430 | 005CE0E0 | 005D06C0 | 005D0850 | 005D0A20 | 005D0BB0 | 005D0ED0 | 005D1400 | 005D4850
@@ -3115,7 +3115,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SettMapMTy	6747	0x1A5B	4	field_1A5B	pointer:/StartSystemTy	0	pointer:/StartSystemTy		0	existing	none	pointer:/StartSystemTy <= 005CE0E0 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat; 005D1400 [this+0x1A5B] used as receiver of StartSystemTy::AddToChat		36	0	high	consistent_this_relative_access; concrete_type_already_present	005CBD00 | 005CE0E0 | 005D1400 | 005D4850 | 005D4990
 1	SettMapMTy	7263	0x1C5F	4	field_1C5F	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	005CE0E0
 1	SettMapMTy	7267	0x1C63	4	field_1C63	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005CE0E0
-1	SettMapMTy	7718	0x1E26	1	field_1E26	/undefined1	0			0	none	none			30	0	high	consistent_this_relative_access	005CCE10 | 005CD430 | 005CDF60 | 005CE0E0 | 005D0150 | 005D0ED0 | 005D1100 | 005D1400
+1	SettMapMTy	7718	0x1E26	1	field_1E26	/SubmarineTitans/Recovered/Enums/SettMapMTy_field_1E26State	0			0	existing	none			30	0	high	consistent_this_relative_access; concrete_type_already_present	005CCE10 | 005CD430 | 005CDF60 | 005CE0E0 | 005D0150 | 005D0ED0 | 005D1100 | 005D1400
 1	SettMapMTy	7719	0x1E27	4	field_1E27	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	005CBD00
 1	SettMapMTy	7727	0x1E2F	4	field_1E2F	/undefined4	0			0	none	none			25	0	high	consistent_this_relative_access	005D1400
 1	SettMapMTy	7991	0x1F37	4	field_1F37	/undefined4	0			0	none	none			0	13	high	consistent_this_relative_access	005D1400
@@ -3385,7 +3385,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	SpriteClassTy	64	0x40	4	field_0040	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	68	0x44	4	field_0044	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	72	0x48	4	field_0048	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
-1	SpriteClassTy	76	0x4C	1	field_004C	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	76	0x4C	1	field_004C	/SubmarineTitans/Recovered/Enums/SpriteClassTy_field_004CState	0			0	existing	none			0	1	high	consistent_this_relative_access; concrete_type_already_present	00715820
 1	SpriteClassTy	77	0x4D	4	field_004D	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	81	0x51	4	field_0051	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
 1	SpriteClassTy	85	0x55	4	field_0055	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00715820
@@ -3529,7 +3529,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	TLOBaseTy	565	0x235	4	field_0235	/undefined4	0			0	none	none			28	0	high	consistent_this_relative_access	004B80D0 | 004B9FA0 | 004BE500 | 004C3570 | 004C3C00 | 004C9770 | 004CA3C0 | 004CABB0
 1	TLOBaseTy	569	0x239	4	field_0239	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004C9770
 1	TLOBaseTy	573	0x23D	1	field_023D	/undefined1	0			0	none	none			3	0	high	consistent_this_relative_access	004BE500 | 004C9770
-1	TLOBaseTy	581	0x245	4	field_0245	/undefined4	0			0	none	none			5	1	high	consistent_this_relative_access	004B7EF0 | 004B80D0 | 004C9770 | 004CABB0
+1	TLOBaseTy	581	0x245	4	field_0245	/SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State	0			0	existing	none			5	1	high	consistent_this_relative_access; concrete_type_already_present	004B7EF0 | 004B80D0 | 004C9770 | 004CABB0
 1	TLOBaseTy	585	0x249	4	field_0249	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	004B7EF0 | 004B80D0
 1	TLOBaseTy	589	0x24D	4	field_024D	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	004B7EF0 | 004C9770
 1	TLOBaseTy	593	0x251	4	field_0251	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004B7EF0
@@ -3554,7 +3554,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	TLOBaseTy	701	0x2BD	4	field_02BD	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004C3570
 1	TLOBaseTy	709	0x2C5	4	field_02C5	/undefined4	0			0	none	none			4	2	high	consistent_this_relative_access	004C3570
 1	TLOBaseTy	713	0x2C9	4	field_02C9	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004C3570
-1	TLOBaseTy	865	0x361	4	field_0361	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004C94B0
+1	TLOBaseTy	865	0x361	4	field_0361	/SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0361State	0			0	existing	none			1	0	high	consistent_this_relative_access; concrete_type_already_present	004C94B0
 1	TLOBaseTy	873	0x369	4	field_0369	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	004C94B0
 1	TLOBaseTy	988	0x3DC	4	field_03DC	/undefined4	0			0	none	none			2	0	high	consistent_this_relative_access	004B80D0 | 004E9CE0
 1	TLOBaseTy	1020	0x3FC	4	field_03FC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004B80D0
@@ -3568,7 +3568,7 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	TLOBaseTy	1224	0x4C8	4	field_04C8	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004C9770
 1	TLOBaseTy	1228	0x4CC	4	field_04CC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	004C9770
 1	TLOBaseTy	1232	0x4D0	4	field_04D0	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	004CABB0
-1	TLOBaseTy	1452	0x5AC	4	field_05AC	/undefined4	0			0	none	none			11	0	high	consistent_this_relative_access	004C9770 | 004CA3C0 | 004CABB0 | 004CBC10
+1	TLOBaseTy	1452	0x5AC	4	field_05AC	/SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState	0			0	existing	none			11	0	high	consistent_this_relative_access; concrete_type_already_present	004C9770 | 004CA3C0 | 004CABB0 | 004CBC10
 0	TLOBaseTy	1456	0x5B0	4	field_05B0	/undefined4	0			0	none	none			5	0	conflict	conflicting_access_widths=2x1|4x4	004B9FA0 | 004C3C00 | 004E9CE0
 0	TLOBaseTy	1460	0x5B4	4	field_05B4	/undefined4	0			0	none	none			6	0	conflict	conflicting_access_widths=2x1|4x5	004B9FA0 | 004C3C00 | 004E9CE0
 0	TLOBaseTy	1464	0x5B8	4	field_05B8	/undefined4	0			0	none	none			5	0	conflict	conflicting_access_widths=2x1|4x4	004B9FA0 | 004C3C00 | 004E9CE0

@@ -1,5 +1,7 @@
 
-undefined4 FUN_00495ff0(short param_1,short param_2,short param_3,uint param_4,int param_5)
+undefined4
+FUN_00495ff0(short param_1,short param_2,short param_3,uint param_4,
+            AnonShape_00495FF0_59081BDD *param_5)
 
 {
   int iVar1;
@@ -9,13 +11,13 @@ undefined4 FUN_00495ff0(short param_1,short param_2,short param_3,uint param_4,i
     iVar1 = (param_4 & 0xff) +
             ((int)SHORT_007fb240 * (int)param_2 + (int)SHORT_007fb246 * (int)param_3 + (int)param_1)
             * 2;
-    if (*(int *)(DAT_007fb248 + iVar1 * 4) != param_5) {
+    if (*(AnonShape_00495FF0_59081BDD **)(DAT_007fb248 + iVar1 * 4) != param_5) {
       return 0xffffffff;
     }
     *(undefined4 *)(DAT_007fb248 + iVar1 * 4) = 0;
-    *(undefined2 *)(param_5 + 0x5b) = 0xffff;
-    *(undefined2 *)(param_5 + 0x5d) = 0xffff;
-    *(undefined2 *)(param_5 + 0x5f) = 0xffff;
+    param_5->field_005B = 0xffff;
+    param_5->field_005D = 0xffff;
+    param_5->field_005F = 0xffff;
   }
   return 0;
 }

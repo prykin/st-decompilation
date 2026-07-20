@@ -1,13 +1,13 @@
 
-void FUN_006bb980(int param_1)
+void FUN_006bb980(AnonShape_006BB980_E41494A1 *param_1)
 
 {
-  if (*(int *)(param_1 + 0x474) != 0) {
-    (**(code **)(**(int **)(param_1 + 0x40) + 0x80))(*(int **)(param_1 + 0x40),0);
-    *(undefined4 *)(param_1 + 0x474) = 0;
-    *(undefined4 *)(param_1 + 0x478) = 0;
-    if ((*(uint *)(param_1 + 8) & 0x4000000) != 0) {
-      LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x4f0));
+  if (param_1->field_0474 != 0) {
+    (**(code **)(*param_1->field_0040 + 0x80))(param_1->field_0040,0);
+    param_1->field_0474 = 0;
+    param_1->field_0478 = 0;
+    if ((param_1->field_0008 & 0x4000000) != 0) {
+      LeaveCriticalSection((LPCRITICAL_SECTION)&param_1[1].field_0x74);
     }
   }
   return;

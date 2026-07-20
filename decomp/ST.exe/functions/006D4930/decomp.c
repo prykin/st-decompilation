@@ -5,8 +5,8 @@
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E */
 
-DWORD FUN_006d4930(int param_1,LPDWORD lpNumberOfBytesRead,undefined4 *param_3,
-                  DWORD nNumberOfBytesToRead)
+DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesRead,
+                  undefined4 *param_3,DWORD nNumberOfBytesToRead)
 
 {
   DWORD DVar1;
@@ -15,13 +15,13 @@ DWORD FUN_006d4930(int param_1,LPDWORD lpNumberOfBytesRead,undefined4 *param_3,
   undefined4 *puVar4;
   
   puVar4 = param_3;
-  if ((*(uint *)(param_1 + 8) & 0x100000) == 0) {
-    if (*(int *)(param_1 + 0x34) == 0) {
+  if ((param_1->field_0008 & 0x100000) == 0) {
+    if (param_1->field_0034 == 0) {
       return 0xffffffaf;
     }
-    if ((int)lpNumberOfBytesRead + nNumberOfBytesToRead <= *(uint *)(param_1 + 0x38)) {
+    if ((int)lpNumberOfBytesRead + nNumberOfBytesToRead <= param_1->field_0038) {
       if (param_3 != (undefined4 *)0x0) {
-        puVar4 = (undefined4 *)(*(int *)(param_1 + 0x34) + (int)lpNumberOfBytesRead);
+        puVar4 = (undefined4 *)(param_1->field_0034 + (int)lpNumberOfBytesRead);
         for (uVar3 = nNumberOfBytesToRead >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *param_3 = *puVar4;
           puVar4 = puVar4 + 1;
@@ -40,9 +40,9 @@ DWORD FUN_006d4930(int param_1,LPDWORD lpNumberOfBytesRead,undefined4 *param_3,
     if (param_3 == (undefined4 *)0x0) {
       return 0;
     }
-    DVar1 = SetFilePointer(*(HANDLE *)(param_1 + 0xc),(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);
+    DVar1 = SetFilePointer(param_1->field_000C,(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);
     if ((DVar1 == 0xffffffff) ||
-       (BVar2 = ReadFile(*(HANDLE *)(param_1 + 0xc),puVar4,nNumberOfBytesToRead,
+       (BVar2 = ReadFile(param_1->field_000C,puVar4,nNumberOfBytesToRead,
                          (LPDWORD)&lpNumberOfBytesRead,(LPOVERLAPPED)0x0), BVar2 == 0)) {
       DVar1 = GetLastError();
       if (DVar1 != 0) {

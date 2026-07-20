@@ -33,7 +33,7 @@ FUN_0062b680(int param_1,int param_2,int param_3,uint param_4,uint param_5,uint 
   local_44[3] = 0;
   local_2c = 3;
   local_10 = 0;
-  (**(code **)(*DAT_00802a38 + 8))(0x124,0,0,local_44,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x124,0,0,local_44,0);
   return;
 }
 

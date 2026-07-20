@@ -76,7 +76,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
         uVar7 = (**(code **)(iVar3 + 4))(0,1,0xca,0x57,0,1,1,pCVar4);
         pTVar2->field_01C8 = uVar7;
       }
-      thunk_FUN_00551b10(pTVar2);
+      thunk_FUN_00551b10((AnonShape_00551B10_03263458 *)pTVar2);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

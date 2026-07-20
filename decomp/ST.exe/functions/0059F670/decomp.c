@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::DeleteCtrls */
+   FSGSTy::DeleteCtrls
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
 
 void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
 
@@ -36,27 +40,27 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     (*pcVar1)();
     return;
   }
-  if (DAT_00802a30 != 0) {
-    if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
     }
   }
   pFVar2 = local_8;
   switch(local_8->field_1A5F) {
-  case 2:
-  case 4:
-  case 5:
-  case 7:
-    if (local_8->field_1A5F == '\a') {
+  case CASE_2:
+  case CASE_4:
+  case CASE_5:
+  case CASE_7:
+    if (local_8->field_1A5F == CASE_7) {
       thunk_FUN_005a0a50((int)local_8);
     }
     else {
       thunk_FUN_005a0590((int)local_8);
     }
-  case 1:
+  case CASE_1:
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
@@ -70,7 +74,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -106,7 +110,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
-  case 3:
+  case CASE_3:
     thunk_FUN_005a0590((int)local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
@@ -121,7 +125,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -163,8 +167,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
     piVar8 = (int *)pFVar2->field_1C92;
     break;
-  case 6:
-    thunk_FUN_005a07f0((int)local_8);
+  case CASE_6:
+    thunk_FUN_005a07f0((AnonShape_005A07F0_323FD806 *)local_8);
     if (pFVar2->field_1F27 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F27);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F27);
@@ -178,7 +182,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -233,7 +237,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -275,7 +279,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
     piVar8 = (int *)pFVar2->field_1E45;
     break;
-  case 8:
+  case CASE_8:
     thunk_FUN_005a0af0((int)local_8);
     if (pFVar2->field_1F2F != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F2F);
@@ -290,7 +294,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -336,7 +340,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -378,7 +382,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
     piVar8 = (int *)pFVar2->field_1E45;
     break;
-  case 9:
+  case CASE_9:
     thunk_FUN_005a0c80((int)local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
@@ -393,7 +397,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -429,7 +433,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
-  case 10:
+  case CASE_A:
     thunk_FUN_005a0590((int)local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
@@ -444,7 +448,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       pHVar4->field_0003 = 0xffffffff;
-      pHVar4->field_0001 = 2;
+      pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
@@ -485,14 +489,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   }
   FUN_006b3af0(piVar8,uVar6);
 switchD_0059f6f7_default:
-  if (DAT_00802a30 != 0) {
-    if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
     }
-    else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                (*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
-                 *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
+                ((uint *)PTR_00802a30->field_0060,PTR_00802a30->field_001C,0xfffffffe,
+                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
