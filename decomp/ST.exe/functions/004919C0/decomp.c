@@ -50,7 +50,7 @@ STBoatC::GetCellForLoading
   local_48[2] = 0;
   local_48[3] = 0;
   local_48[4] = 0;
-  uVar7 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
+  uVar7 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
   local_4c = iVar11 + 1;
   puVar14 = DAT_007fb280;
   puVar15 = DAT_007fb238;
@@ -73,12 +73,12 @@ STBoatC::GetCellForLoading
   local_54 = iVar11;
   local_50 = local_68;
   local_c = this;
-  FUN_006ab090((int)DAT_007fb238,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,(int)param_1,
-               (int)param_2,(int)param_3,-1,-1,-1);
-  iVar11 = DAT_007fb278 * iVar11;
+  FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
+               (int)param_1,(int)param_2,(int)param_3,-1,-1,-1);
+  iVar11 = SHORT_007fb278 * iVar11;
   iVar10 = 0;
   if (*(short *)((int)DAT_007fb238 +
-                ((int)(short)param_6 * (int)DAT_007fb27e + iVar11 + (int)param_4) * 2) < 1) {
+                ((int)(short)param_6 * (int)SHORT_007fb27e + iVar11 + (int)param_4) * 2) < 1) {
     return 0xfffffffe;
   }
   switch((int)(short)param_6) {
@@ -126,16 +126,16 @@ LAB_00491b42:
     return uVar6;
   }
   do {
-    local_8 = *(int *)((int)local_20 + iVar10) * (int)DAT_007fb27e;
+    local_8 = *(int *)((int)local_20 + iVar10) * (int)SHORT_007fb27e;
     if (0 < *(short *)((int)DAT_007fb238 + (local_8 + iVar11 + (int)param_4) * 2)) {
       piVar4 = &local_68;
       _param_3 = 1000000000;
       iVar12 = 0;
       do {
         iVar5 = *piVar4;
-        if ((((-1 < iVar5) && (iVar5 <= DAT_007fb278 + -1)) && (iVar9 = piVar4[1], -1 < iVar9)) &&
-           (iVar9 <= DAT_007fb27a + -1)) {
-          iVar5 = iVar9 * DAT_007fb278 + local_8 + iVar5;
+        if ((((-1 < iVar5) && (iVar5 <= SHORT_007fb278 + -1)) && (iVar9 = piVar4[1], -1 < iVar9)) &&
+           (iVar9 <= SHORT_007fb27a + -1)) {
+          iVar5 = iVar9 * SHORT_007fb278 + local_8 + iVar5;
           iVar9 = (int)*(short *)((int)DAT_007fb238 + iVar5 * 2);
           if (0 < iVar9) {
             pSVar2 = *(STBoatC **)(DAT_007fb248 + iVar5 * 8);
@@ -173,8 +173,8 @@ cf_continue_loop_00491C1C:
       iVar10 = (short)param_6 + 1;
       if (iVar10 < 5) {
         iVar12 = (short)param_6 + 2;
-        psVar13 = (short *)((int)DAT_007fb238 + (DAT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2)
-        ;
+        psVar13 = (short *)((int)DAT_007fb238 +
+                           (SHORT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2);
         do {
           iVar10 = iVar12;
           if (*psVar13 < 1) {
@@ -191,14 +191,14 @@ cf_continue_loop_00491C1C:
               } while (iVar5 < 5);
             }
           }
-          psVar13 = psVar13 + DAT_007fb27e;
+          psVar13 = psVar13 + SHORT_007fb27e;
           iVar12 = iVar12 + 1;
         } while (iVar12 < 6);
       }
       iVar10 = (short)param_6 + -1;
       if (-1 < iVar10) {
-        psVar13 = (short *)((int)DAT_007fb238 + (DAT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2)
-        ;
+        psVar13 = (short *)((int)DAT_007fb238 +
+                           (SHORT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2);
         do {
           if ((*psVar13 < 1) && (iVar11 = iVar10 + -1, 0 < iVar10)) {
             do {
@@ -216,7 +216,7 @@ cf_continue_loop_00491C1C:
             } while (-1 < iVar11);
           }
           iVar10 = iVar10 + -1;
-          psVar13 = psVar13 + -(int)DAT_007fb27e;
+          psVar13 = psVar13 + -(int)SHORT_007fb27e;
         } while (-1 < iVar10);
       }
       iVar11 = -1;
@@ -229,15 +229,16 @@ cf_continue_loop_00491C1C:
           if ((iVar11 == -1) || ((*(int *)((int)local_48 + iVar10) == 1 && (local_48[iVar11] == 0)))
              ) {
             _param_3 = (int)*(short *)((int)DAT_007fb238 +
-                                      (*(int *)((int)local_64 + iVar12 * 8) * (int)DAT_007fb278 +
-                                       *(int *)((int)local_20 + iVar10) * (int)DAT_007fb27e +
+                                      (*(int *)((int)local_64 + iVar12 * 8) * (int)SHORT_007fb278 +
+                                       *(int *)((int)local_20 + iVar10) * (int)SHORT_007fb27e +
                                       (&local_68)[iVar12 * 2]) * 2);
             iVar11 = _param_6;
           }
           else if (((*(int *)((int)local_48 + iVar10) != 0) || (local_48[iVar11] != 1)) &&
                   (iVar12 = (int)*(short *)((int)DAT_007fb238 +
-                                           (*(int *)((int)local_64 + iVar12 * 8) * (int)DAT_007fb278
-                                            + *(int *)((int)local_20 + iVar10) * (int)DAT_007fb27e +
+                                           (*(int *)((int)local_64 + iVar12 * 8) *
+                                            (int)SHORT_007fb278 +
+                                            *(int *)((int)local_20 + iVar10) * (int)SHORT_007fb27e +
                                            (&local_68)[iVar12 * 2]) * 2), iVar12 < _param_3)) {
             iVar11 = _param_6;
             _param_3 = iVar12;

@@ -80,21 +80,21 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   thunk_FUN_0054a8d0(DAT_00802a30);
   this_00 = local_1c;
   if (local_1c->field_02FE != 0) {
-    FUN_006e56b0((void *)local_1c->field_000C,local_1c->field_02FE);
+    StartSystemTy::sub_006E56B0(local_1c->field_000C,local_1c->field_02FE);
   }
   this_00->field_02FE = 0;
   puVar9 = &this_00->field_0960;
   iVar6 = 4;
   do {
     if (*puVar9 != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*puVar9);
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar9);
       *puVar9 = 0;
     }
     puVar9 = puVar9 + 1;
     iVar6 = iVar6 + -1;
   } while (iVar6 != 0);
   if (this_00->field_0970 != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_0970);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0970);
   }
   cVar1 = this_00->field_0B9E;
   this_00->field_0970 = 0;
@@ -171,7 +171,8 @@ LAB_0050254c:
     local_38 = 2;
     local_34 = 0xb200;
     local_3c = local_5c;
-    (**(code **)(*(int *)this_00->field_000C + 8))(9,&this_00->field_02FE,0,local_6c,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,(int *)0x0,local_6c,0);
     thunk_FUN_004f1610(this_00,'\x01');
     iVar6 = this_00->field_09C0;
     if (iVar6 == 0) goto LAB_00502622;
@@ -198,8 +199,8 @@ LAB_00502622:
     uVar13 = 0xb118;
     uVar12 = 0xb117;
     pCVar4 = thunk_FUN_00571240(s_BUT_SHOWUPD_007c23a4,0);
-    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,(int)pCVar4,uVar12
-                       ,uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
+    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar4,uVar12,
+                       uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
     this_00->field_0970 = uVar12;
   }
   if (this_00->field_0B9E == '\x02') {
@@ -213,8 +214,8 @@ LAB_00502622:
     uVar13 = 0xb11a;
     uVar12 = 0xb119;
     pCVar4 = thunk_FUN_00571240(s_BUT_SHOWFRM_007c2394,0);
-    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,(int)pCVar4,uVar12
-                       ,uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
+    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar4,uVar12,
+                       uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
     this_00->field_0970 = uVar12;
   }
   if ((((this_00->field_0B9E == '\x01') && (this_00->field_0B99 != 9)) &&
@@ -242,8 +243,8 @@ LAB_00502622:
       iVar8 = iVar6 + -0x10;
       iVar11 = iVar6;
       pCVar4 = thunk_FUN_00571240(s_BUT_BEHREPAIR0_007c2350,0);
-      uVar12 = CreateBut(this_00,3,0,local_10,(int)local_8,0x80,1,(int)pCVar4,iVar8,iVar11,sVar14,
-                         uVar15,iVar5,pcVar3,iVar17,uVar12,uVar13);
+      uVar12 = CreateBut(this_00,3,0,local_10,(int)local_8,0x80,1,pCVar4,iVar8,iVar11,sVar14,uVar15,
+                         iVar5,pcVar3,iVar17,uVar12,uVar13);
       bVar7 = bVar7 + 1;
       *local_c = uVar12;
       local_c = local_c + 1;

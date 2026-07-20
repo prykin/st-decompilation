@@ -20,7 +20,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   cMf32 *extraout_ECX_04;
   cMf32 *pcVar5;
   uint uVar6;
-  int *piVar7;
+  LPVOID *ppvVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   SpriteClassTy *this_02;
@@ -49,7 +49,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SetAccelerator(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
   SetAccelerator(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
   if (this_00->field_0488 != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_0488);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0488);
     this_00->field_0488 = 0;
   }
   if (-1 < (int)this_00->field_063F) {
@@ -64,7 +64,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   }
   this_00->field_0643 = 0;
   if (this_00->field_02CD != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_02CD);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02CD);
     this_00->field_02CD = 0;
   }
   if (-1 < (int)this_00->field_0484) {
@@ -85,7 +85,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (this_00->field_02B9 != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_02B9);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02B9);
     this_00->field_02B9 = 0;
   }
   puVar3 = &this_00->field_02A5;
@@ -102,7 +102,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   iVar2 = 5;
   do {
     if (*puVar3 != 0) {
-      FUN_006e56b0((void *)this_00->field_000C,*puVar3);
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar3);
       *puVar3 = 0;
     }
     puVar3 = puVar3 + 1;
@@ -121,7 +121,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
 LAB_005e0672:
         SpriteClassTy::CloseSprite(this_02);
         if (*(int *)((int)&this_02[1].field_0008 + 1) != 0) {
-          FUN_006ab060((undefined4 *)((int)&this_02[1].field_0008 + 1));
+          FUN_006ab060((LPVOID *)((int)&this_02[1].field_0008 + 1));
         }
         iVar2 = this_00->field_064B;
         uVar6 = uVar6 + 1;
@@ -170,14 +170,14 @@ LAB_005e072b:
     this_00->field_064F = 0;
     this_01 = extraout_ECX;
   }
-  piVar7 = &this_00->field_0653;
+  ppvVar7 = (LPVOID *)&this_00->field_0653;
   iVar2 = 0xb;
   do {
-    if (*piVar7 != 0) {
-      FUN_006ab060(piVar7);
+    if (*ppvVar7 != (LPVOID)0x0) {
+      FUN_006ab060(ppvVar7);
       this_01 = extraout_ECX_00;
     }
-    piVar7 = piVar7 + 3;
+    ppvVar7 = ppvVar7 + 3;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (this_00->field_0089 != (ccFntTy *)0x0) {
@@ -192,8 +192,9 @@ LAB_005e072b:
   this_00->field_0081 = 0;
   pcVar5 = (cMf32 *)0x0;
   if (this_00->field_005D != 0) {
-    pcVar5 = DAT_00806780;
-    if ((this_00->field_0080 != '\x01') && (pcVar5 = DAT_00806798, this_00->field_0080 != '\x02')) {
+    pcVar5 = g_cMf32_00806780;
+    if ((this_00->field_0080 != '\x01') &&
+       (pcVar5 = g_cMf32_00806798, this_00->field_0080 != '\x02')) {
       pcVar5 = this_00->field_0070;
     }
     cMf32::RecMemFree(pcVar5,&this_00->field_005D);
@@ -218,7 +219,7 @@ LAB_005e072b:
   }
   this_00->field_0078 = 0;
   if (this_00->field_0070 != (cMf32 *)0x0) {
-    cMf32::delete(pcVar5,&this_00->field_0070->field_0000);
+    cMf32::delete(pcVar5,this_00->field_0070);
   }
   this_00->field_0070 = (cMf32 *)0x0;
   if (this_00->field_004D != 0) {

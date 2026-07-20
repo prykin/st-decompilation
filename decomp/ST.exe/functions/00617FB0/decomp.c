@@ -1,16 +1,19 @@
 
-undefined4 * __thiscall FUN_00617fb0(void *this,int *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00617FB0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006176B2 */
+
+byte * __thiscall FUN_00617fb0(void *this,int *param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  byte *pbVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
   uint *puVar6;
   undefined4 *puVar7;
   uint *puVar8;
-  undefined4 *puVar9;
+  byte *pbVar9;
   uint *puVar10;
   uint *local_c;
   uint local_8;
@@ -37,33 +40,36 @@ undefined4 * __thiscall FUN_00617fb0(void *this,int *param_1)
     iVar1 = *(int *)(iVar1 + 0xc) * *(int *)(iVar1 + 8) + 0x1c;
   }
   iVar5 = iVar1 + iVar3 + 0x5e + iVar5;
-  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar5);
+  pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar5);
   puVar7 = (undefined4 *)((int)this + 0x1c);
-  puVar9 = puVar2;
+  pbVar9 = pbVar2;
   for (iVar3 = 0x14; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar9 = *puVar7;
+    *(undefined4 *)pbVar9 = *puVar7;
     puVar7 = puVar7 + 1;
-    puVar9 = puVar9 + 1;
+    pbVar9 = pbVar9 + 4;
   }
-  puVar6 = (uint *)((int)puVar2 + 0x52);
-  *(undefined2 *)puVar9 = *(undefined2 *)puVar7;
-  puVar2[3] = 2;
+  puVar6 = (uint *)(pbVar2 + 0x52);
+  *(undefined2 *)pbVar9 = *(undefined2 *)puVar7;
+  pbVar2[0xc] = 2;
+  pbVar2[0xd] = 0;
+  pbVar2[0xe] = 0;
+  pbVar2[0xf] = 0;
   if (*(uint **)((int)this + 0x5e) != (uint *)0x0) {
     local_c = (uint *)FUN_006b0020(*(uint **)((int)this + 0x5e),(int *)&local_8);
     *puVar6 = local_8;
     puVar6 = local_c;
-    puVar8 = (uint *)((int)puVar2 + 0x56);
+    puVar8 = (uint *)(pbVar2 + 0x56);
     for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
       *puVar8 = *puVar6;
       puVar6 = puVar6 + 1;
       puVar8 = puVar8 + 1;
     }
     for (uVar4 = local_8 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(char *)puVar8 = (char)*puVar6;
+      *(byte *)puVar8 = (byte)*puVar6;
       puVar6 = (uint *)((int)puVar6 + 1);
       puVar8 = (uint *)((int)puVar8 + 1);
     }
-    puVar6 = (uint *)((int)puVar2 + 0x56 + local_8);
+    puVar6 = (uint *)((int)(pbVar2 + 0x56) + local_8);
     FUN_006ab060(&local_c);
   }
   if (*(uint **)((int)this + 0x62) != (uint *)0x0) {
@@ -77,7 +83,7 @@ undefined4 * __thiscall FUN_00617fb0(void *this,int *param_1)
       puVar10 = puVar10 + 1;
     }
     for (uVar4 = local_8 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(char *)puVar10 = (char)*puVar8;
+      *(byte *)puVar10 = (byte)*puVar8;
       puVar8 = (uint *)((int)puVar8 + 1);
       puVar10 = (uint *)((int)puVar10 + 1);
     }
@@ -93,15 +99,15 @@ undefined4 * __thiscall FUN_00617fb0(void *this,int *param_1)
       puVar8 = puVar8 + 1;
     }
     for (local_8 = local_8 & 3; local_8 != 0; local_8 = local_8 - 1) {
-      *(char *)puVar6 = (char)*puVar8;
+      *(byte *)puVar6 = (byte)*puVar8;
       puVar8 = (uint *)((int)puVar8 + 1);
       puVar6 = (uint *)((int)puVar6 + 1);
     }
     FUN_006ab060(&local_c);
     *param_1 = iVar5;
-    return puVar2;
+    return pbVar2;
   }
   *param_1 = iVar5;
-  return puVar2;
+  return pbVar2;
 }
 

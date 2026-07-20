@@ -28,7 +28,7 @@ void __thiscall FUN_0067a020(void *this,uint *param_1,int param_2)
               AiTactClassTy::GetAiMess(this_00,param_1);
             }
             else {
-              thunk_FUN_0068fc70(this_00,param_1,(short)param_2);
+              thunk_FUN_0068fc70(this_00,(int)param_1,(short)param_2);
             }
           }
         }

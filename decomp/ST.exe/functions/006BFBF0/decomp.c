@@ -82,7 +82,7 @@ void FUN_006bfbf0(uint *param_1)
     iVar5 = (**(code **)(*(int *)*puVar7 + 0x2c))
                       ((int *)*puVar7,0,local_34[2],&local_8,&param_1,&local_10,&local_c,0);
     if (iVar5 == 0) {
-      FUN_006bfe70(local_8,(int)puVar2,(uint)param_1);
+      FUN_006bfe70(local_8,(int)puVar2,param_1);
       iVar5 = (**(code **)(*(int *)*puVar7 + 0x4c))((int *)*puVar7,local_8,param_1,local_10,local_c)
       ;
       if ((iVar5 == 0) &&

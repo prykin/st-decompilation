@@ -1,4 +1,4 @@
-FUN_006e60e0:
+STGroupBoatC::sub_006E60E0:
 006E60E0  56                        PUSH ESI
 006E60E1  8B F1                     MOV ESI,ECX
 006E60E3  E8 C8 FE FF FF            CALL 0x006e5fb0

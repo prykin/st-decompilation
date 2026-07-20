@@ -11,6 +11,7 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   uint uVar6;
   int iVar7;
   undefined4 *puVar8;
+  ushort *puVar9;
   uint local_dc;
   int local_d8;
   int local_d4;
@@ -276,20 +277,20 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
         *(undefined4 *)((int)this + 0x7c) = local_84._4_4_;
         if (0 < iVar7) {
           if (local_90 < local_68) {
-            puVar5 = (undefined4 *)
+            puVar9 = (ushort *)
                      (*(int *)((int)this + 0x2b0) +
                      (*(int *)((int)this + 700) - iVar7) * *(int *)((int)this + 0x2b8) * 2);
           }
           else {
-            puVar5 = *(undefined4 **)((int)this + 0x2b0);
+            puVar9 = *(ushort **)((int)this + 0x2b0);
           }
           if (0 < local_44) {
             uVar6 = *(uint *)((int)this + 0x2b8);
             iVar7 = local_44;
             do {
-              FUN_006ce6c0(puVar5,uVar6,30000);
+              FUN_006ce6c0(puVar9,uVar6,30000);
               uVar6 = *(uint *)((int)this + 0x2b8);
-              puVar5 = (undefined4 *)((int)puVar5 + uVar6 * 2);
+              puVar9 = puVar9 + uVar6;
               iVar7 = iVar7 + -1;
             } while (iVar7 != 0);
           }

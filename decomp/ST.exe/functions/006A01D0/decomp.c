@@ -104,7 +104,8 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   thunk_FUN_0069ff90((int)pCVar3);
   thunk_FUN_006945c0(&pCVar3->field_0x1bef,&local_20);
   thunk_FUN_0069ff90((int)pCVar3);
-  thunk_FUN_00691690(&pCVar3->field_0x1c03,pCVar3->field_0239,0,0,(undefined *)pCVar3->field_024A);
+  thunk_FUN_00691690(&pCVar3->field_0x1c03,(cMf32 *)pCVar3->field_0239,(cMf32 *)0x0,0,
+                     (undefined *)pCVar3->field_024A);
   thunk_FUN_0069ff90((int)pCVar3);
   g_currentExceptionFrame = local_64.previous;
   return local_c;

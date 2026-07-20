@@ -59,30 +59,29 @@ LAB_005a3b63:
       g_currentExceptionFrame = &local_68;
       iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
-        pbVar3 = thunk_FUN_0055d590((byte *)s_Profile_Age_007cc1a8,param_2,param_3);
+        pbVar3 = thunk_FUN_0055d590(s_Profile_Age_007cc1a8,param_2,param_3);
         this_01 = local_14;
         if (pbVar3 != (byte *)0x0) {
-          Library::DKW::TBL::FUN_006b6020(local_14->field_1AF8,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020((uint *)local_14->field_1AF8,0,(char *)pbVar3);
           *(undefined4 *)&this_01->field_0x31 = this_01->field_1AF8;
           this_01->field_002D = 0x33;
           FUN_006e6080(this_01,2,this_01->field_1AD8,(undefined4 *)&this_01->field_0x1d);
         }
-        pbVar3 = thunk_FUN_0055d590((byte *)s_Profile_Sex_007cc198,param_2,param_3);
+        pbVar3 = thunk_FUN_0055d590(s_Profile_Sex_007cc198,param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
-          Library::DKW::TBL::FUN_006b6020(this_01->field_1AFC,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020((uint *)this_01->field_1AFC,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
           *(undefined4 *)&this_01->field_0x31 = this_01->field_1AFC;
           FUN_006e6080(this_01,2,this_01->field_1ADC,(undefined4 *)&this_01->field_0x1d);
         }
-        pbVar3 = thunk_FUN_0055d590((byte *)s_Profile_Location_007cc184,param_2,param_3);
+        pbVar3 = thunk_FUN_0055d590(s_Profile_Location_007cc184,param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
-          Library::DKW::TBL::FUN_006b6020(this_01->field_1B00,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020((uint *)this_01->field_1B00,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
           *(undefined4 *)&this_01->field_0x31 = this_01->field_1B00;
           FUN_006e6080(this_01,2,this_01->field_1AE0,(undefined4 *)&this_01->field_0x1d);
         }
-        local_10 = (uint *)thunk_FUN_0055d590((byte *)s_Profile_Description_007cc16c,param_2,param_3
-                                             );
+        local_10 = (uint *)thunk_FUN_0055d590(s_Profile_Description_007cc16c,param_2,param_3);
         if (local_10 != (uint *)0x0) {
           if (this_01->field_1B04 != (uint *)0x0) {
             FUN_006b5570((byte *)this_01->field_1B04);
@@ -92,25 +91,25 @@ LAB_005a3b63:
           if (puVar5 == (uint *)0x0) {
             puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
             this_01->field_1B04 = puVar5;
-            Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
+            Library::DKW::TBL::FUN_006b5aa0(puVar5,&DAT_008016a0);
           }
           this_01->field_002D = 0x33;
           *(uint **)&this_01->field_0x31 = this_01->field_1B04;
           FUN_006e6080(this_01,2,this_01->field_1AE4,(undefined4 *)&this_01->field_0x1d);
         }
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_1_Wins_007cc134,param_2,param_3,
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_1_Wins_007cc134,param_2,param_3,
                            0x1a,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_1_Losses_007cc128,param_2,param_3,
-                           0x7e,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_1_Draws_007cc11c,param_2,param_3,
-                           0xe2,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_1_Disconnects_007cc10c,param_2,
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_1_Losses_007cc128,param_2,
+                           param_3,0x7e,0xf3,0x4e,0x12);
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_1_Draws_007cc11c,param_2,param_3
+                           ,0xe2,0xf3,0x4e,0x12);
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_1_Disconnects_007cc10c,param_2,
                            param_3,0x146,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7B,(byte *)s_1_Rating_007cc0f8,param_2,param_3,
-                           0x1a,0x11b,0x4e,0x17);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7B,(byte *)s_1_Rank_007cc104,param_2,param_3,
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7B,s_1_Rating_007cc0f8,param_2,
+                           param_3,0x1a,0x11b,0x4e,0x17);
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7B,s_1_Rank_007cc104,param_2,param_3,
                            0x7e,0x11b,0x4e,0x17);
-        pbVar3 = thunk_FUN_0055d590((byte *)s_1_Last_Game_007cc0e8,param_2,param_3);
+        pbVar3 = thunk_FUN_0055d590(s_1_Last_Game_007cc0e8,param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
           iVar4 = -1;
           pbVar8 = pbVar3;
@@ -136,13 +135,13 @@ LAB_005a3b63:
             }
           }
         }
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_0_Wins_007cc164,param_2,param_3,
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_0_Wins_007cc164,param_2,param_3,
                            0x1a,0x161,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_0_Losses_007cc158,param_2,param_3,
-                           0x7e,0x161,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_0_Draws_007cc14c,param_2,param_3,
-                           0xe2,0x161,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_0_Disconnects_007cc13c,param_2,
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_0_Losses_007cc158,param_2,
+                           param_3,0x7e,0x161,0x4e,0x12);
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_0_Draws_007cc14c,param_2,param_3
+                           ,0xe2,0x161,0x4e,0x12);
+        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,s_0_Disconnects_007cc13c,param_2,
                            param_3,0x146,0x161,0x4e,0x12);
         FUN_006b35d0(DAT_008075a8,this_01->field_1ABC);
         g_currentExceptionFrame = local_68.previous;

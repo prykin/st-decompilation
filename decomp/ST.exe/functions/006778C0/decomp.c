@@ -10,7 +10,7 @@ FUN_006778c0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,
   int iVar5;
   
   iVar3 = 0;
-  if (DAT_007fa174 == 0) {
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return 0;
   }
   iVar5 = param_2;
@@ -23,11 +23,11 @@ FUN_006778c0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,
   }
   iVar2 = param_5;
   if (param_5 < 1) {
-    iVar2 = (int)DAT_007fb240;
+    iVar2 = (int)SHORT_007fb240;
   }
   iVar1 = param_6;
   if (param_6 < 1) {
-    iVar1 = (int)DAT_007fb242;
+    iVar1 = (int)SHORT_007fb242;
   }
   if ((0xdc < param_1) && (param_1 < 0xdf)) {
     iVar5 = thunk_FUN_004b1fb0(param_1,&param_2,&param_3,iVar5,iVar4,iVar2,iVar1);

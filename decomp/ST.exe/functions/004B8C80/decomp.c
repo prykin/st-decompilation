@@ -31,7 +31,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
           local_24 = *(undefined4 *)(param_1[3] + 0x14);
           local_20 = 0;
           local_1c = 10;
-          FUN_006e60a0(param_1,local_2c);
+          STJellyGunC::sub_006E60A0((STJellyGunC *)param_1,local_2c);
           return 0;
         }
         thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),*(uint *)(DAT_00806724 + 0x30 + iVar2 * 4)
@@ -49,7 +49,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
         local_24 = *(undefined4 *)(param_1[3] + 0x14);
         local_20 = 0;
         local_1c = 10;
-        FUN_006e60a0(param_1,local_2c);
+        STJellyGunC::sub_006E60A0((STJellyGunC *)param_1,local_2c);
         return 0;
       }
       (**(code **)(*param_1 + 0xd8))();
@@ -77,8 +77,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
       iVar4 = thunk_FUN_004ac910(pSVar1,'\x04');
       if (iVar4 == *(int *)(&DAT_007cdf5a + iVar2 * 0x32)) {
         iVar2 = STT3DSprC::LoadSequence
-                          (pSVar1,5,DAT_00806764,(byte *)(s_expl_bbt0_007cdf3a + iVar2 * 0x32),0x1d)
-        ;
+                          (pSVar1,5,DAT_00806764,s_expl_bbt0_007cdf3a + iVar2 * 0x32,0x1d);
         if (iVar2 != 0) {
           return 0xffff;
         }
@@ -227,7 +226,7 @@ cf_common_exit_004B8F5A:
     local_24 = *(undefined4 *)(param_1[3] + 0x14);
     local_20 = 0;
     local_1c = 10;
-    FUN_006e60a0(param_1,local_2c);
+    STJellyGunC::sub_006E60A0((STJellyGunC *)param_1,local_2c);
     (**(code **)(*param_1 + 0xd8))();
     return 0;
   }

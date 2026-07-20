@@ -1,5 +1,8 @@
 
-undefined4 __thiscall FUN_0068fc70(void *this,uint *param_1,short param_2)
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 00679F00 -> 0068FC70 @ 00679F51 | 00679F90 -> 0068FC70 @ 00679FBC */
+
+undefined4 __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
 
 {
   AiFltClassTy *this_00;
@@ -15,7 +18,7 @@ undefined4 __thiscall FUN_0068fc70(void *this,uint *param_1,short param_2)
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
           && (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != (AiFltClassTy *)0x0)) &&
          ((uint)(ushort)this_00->field_007D == (int)param_2)) {
-        AiFltClassTy::GetAiMess(this_00,param_1);
+        AiFltClassTy::GetAiMess(this_00,(uint *)aiMess);
       }
       iVar1 = *(int *)((int)this + 0xa5);
       uVar2 = uVar2 + 1;

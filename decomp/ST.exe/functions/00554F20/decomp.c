@@ -1,10 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
-   cLoadingTy::SetProcess */
+   cLoadingTy::SetProcess
+   
+   [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 0052AB40 -> 00554F20 @ 0052ABA6 */
 
-void __thiscall
-cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int param_3)
+void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,char *text,int param_3)
 
 {
   code *pcVar1;
@@ -18,7 +20,7 @@ cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int par
   cLoadingTy *local_8;
   
   local_8 = this;
-  thunk_FUN_00555570((int)this);
+  sub_00555570(this);
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
@@ -35,7 +37,7 @@ cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int par
       this_00->field_0040 = 1;
     }
     this_00->field_0050 = 0xffffffff;
-    DrawLineCR(this_00,param_2);
+    DrawLineCR(this_00,(uint *)text);
     g_currentExceptionFrame = pIVar4;
     return;
   }

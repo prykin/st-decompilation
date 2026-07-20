@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\to_allpl.cpp
    Diagnostic line evidence: 655 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00422E20 -> 0042C300 @ 00422EAB | 00422E20 -> 0042C300 @ 00422ED1 */
 
-undefined4 FUN_0042c300(undefined4 param_1,uint param_2,int param_3,uint param_4,uint param_5)
+undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint param_5)
 
 {
   uint *puVar1;
@@ -31,7 +34,8 @@ undefined4 FUN_0042c300(undefined4 param_1,uint param_2,int param_3,uint param_4
   else {
     if (param_2 != 1) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x28f);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x28f);
       goto LAB_0042c3a0;
     }
     iVar5 = (int)&DAT_007f4fd3 + (char)param_1 * 0xa62;

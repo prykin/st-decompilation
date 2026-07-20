@@ -155,7 +155,8 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
     pcVar22 = pcVar22 + 5;
   }
   if (iVar10 != param_2) {
-    RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x152);
+    RaiseInternalException
+              (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x152);
   }
   iVar10 = (int)*(short *)(param_1 + param_2 * 5 + 1);
   if (iVar10 < 0x7f7) {
@@ -168,7 +169,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
       } while ((int)local_8 < 0xf);
@@ -178,7 +179,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_c = (char *)0x4;
       if (4 < param_2) {
@@ -190,7 +191,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -204,7 +205,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -258,7 +259,8 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
                 Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
               }
               local_64[0x21] = -1;
-              RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+              RaiseInternalException
+                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
             }
             local_c = (char *)((int)local_c + 1);
             local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -274,7 +276,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
         if (iVar10 != 1) {
@@ -283,7 +285,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_8 = local_50[0];
         iVar10 = thunk_FUN_00668f50(local_64,local_c,0,(uint *)local_50);
@@ -293,7 +295,7 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_14 = Library::DKW::LIB::FUN_006aac10(4);
         if (DAT_00808a8f != '\0') {
@@ -341,7 +343,8 @@ LAB_0066bdcc:
                   Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                 }
                 local_64[0x21] = -1;
-                RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                RaiseInternalException
+                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -360,7 +363,7 @@ LAB_0066bdcc:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           puVar20 = (uint *)FUN_006c49b0(local_c);
           if (param_3 == (int *)0x0) {
@@ -383,7 +386,8 @@ LAB_0066bdcc:
                     Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                   }
                   local_64[0x21] = -1;
-                  RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                  RaiseInternalException
+                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -414,7 +418,8 @@ LAB_0066bdcc:
                         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                       }
                       local_64[0x21] = -1;
-                      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                      RaiseInternalException
+                                (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
                     }
                     local_c = local_c + 1;
                     local_10 = local_10 + 5;
@@ -427,7 +432,8 @@ LAB_0066bdcc:
                     Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                   }
                   local_64[0x21] = -1;
-                  RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                  RaiseInternalException
+                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
                 }
                 pAVar12 = (AiFltClassTy *)(**(code **)(*local_64 + 0x28))(local_8);
                 goto LAB_0066d630;
@@ -444,7 +450,8 @@ LAB_0066bdcc:
                     Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                   }
                   local_64[0x21] = -1;
-                  RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                  RaiseInternalException
+                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -457,7 +464,8 @@ LAB_0066bdcc:
                 Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
               }
               local_64[0x21] = -1;
-              RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+              RaiseInternalException
+                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
             }
             local_14 = Library::DKW::LIB::FUN_006aac10(4);
             uVar11 = (**(code **)(*local_64 + 0x24))(local_8);
@@ -476,7 +484,8 @@ LAB_0066bdcc:
                   Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                 }
                 local_64[0x21] = -1;
-                RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                RaiseInternalException
+                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -489,7 +498,7 @@ LAB_0066bdcc:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (&DAT_0080e43b)[(int)local_8];
@@ -507,7 +516,8 @@ LAB_0066bdcc:
                     Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                   }
                   local_64[0x21] = -1;
-                  RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                  RaiseInternalException
+                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -526,7 +536,7 @@ LAB_0066bdcc:
             else {
               iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
               if (iVar10 == 1) {
-                if (DAT_007fa174 == 0) {
+                if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
                   iVar10 = 0;
                 }
                 else {
@@ -553,7 +563,8 @@ LAB_0066bdcc:
                 }
                 local_64[0x21] = -1;
               }
-              RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+              RaiseInternalException
+                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
               local_14 = Library::DKW::LIB::FUN_006aac10(4);
               *local_14 = (uint)local_c;
             }
@@ -570,7 +581,8 @@ LAB_0066bdcc:
                     Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                   }
                   local_64[0x21] = -1;
-                  RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                  RaiseInternalException
+                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -589,7 +601,7 @@ cf_common_exit_00670456:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x77,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x77,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           g_currentExceptionFrame = local_260.previous;
           return local_14;
         }
@@ -603,7 +615,8 @@ cf_common_exit_00670456:
                 Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
               }
               local_64[0x21] = -1;
-              RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+              RaiseInternalException
+                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
             }
             local_c = (char *)((int)local_c + 1);
             local_10 = local_10 + 5;
@@ -617,7 +630,7 @@ cf_common_exit_00670456:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)0x0;
         if ((local_8 == (AiFltClassTy *)0x9) &&
@@ -632,7 +645,7 @@ cf_common_exit_00670456:
           pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           goto joined_r0x0066b1d2;
         }
-        if (DAT_007fa174 == 0) {
+        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
           iVar10 = 0;
         }
         else {
@@ -652,7 +665,7 @@ cf_common_exit_00670456:
 LAB_0066b1ad:
         local_64[0x21] = (int)local_8;
 LAB_0066b1fb:
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         local_14 = Library::DKW::LIB::FUN_006aac10(4);
         *local_14 = (uint)local_c;
       }
@@ -687,7 +700,8 @@ LAB_0066b1fb:
                   Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                 }
                 local_64[0x21] = -1;
-                RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                RaiseInternalException
+                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -704,7 +718,7 @@ LAB_0066b1fb:
           }
           iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
           if (iVar10 == 1) {
-            if (DAT_007fa174 == 0) {
+            if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
               iVar10 = 0;
             }
             else {
@@ -741,7 +755,8 @@ joined_r0x0066b1d2:
                   Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                 }
                 local_64[0x21] = -1;
-                RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                RaiseInternalException
+                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -755,7 +770,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           iVar10 = thunk_FUN_00668f50(local_64,local_c,0,(uint *)local_50);
           if (iVar10 != 1) {
@@ -764,12 +779,12 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_1d = '\0';
           local_8 = (AiFltClassTy *)0x0;
-          if (DAT_00801688 != (void *)0x0) {
-            thunk_FUN_004f91a0(DAT_00801688,(byte)local_50[0],&local_1d,(int *)&local_8);
+          if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+            thunk_FUN_004f91a0(g_cPanel_00801688,(byte)local_50[0],&local_1d,(int *)&local_8);
           }
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = ~-(uint)(local_1d != '\x01') & (uint)local_8;
@@ -794,7 +809,8 @@ joined_r0x0066b1d2:
                   Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
                 }
                 local_64[0x21] = -1;
-                RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+                RaiseInternalException
+                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -809,7 +825,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
           if (iVar10 != 1) {
@@ -818,7 +834,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           if (DAT_00808a8f != '\0') {
@@ -842,7 +858,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -856,7 +872,7 @@ joined_r0x0066b1d2:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       if (local_c == (char *)0x8) {
         local_c = (char *)(uint)DAT_0080874d;
@@ -885,7 +901,7 @@ LAB_0066bb5e:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -926,7 +942,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -941,7 +957,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
       if (iVar10 != 1) {
@@ -950,7 +966,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)(byte)local_50[0][0x32cd].field_0x268;
@@ -970,7 +986,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -985,7 +1001,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
       if (iVar10 != 1) {
@@ -994,7 +1010,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)(byte)(&DAT_008087e8)[(int)local_50[0] * 0x51];
@@ -1014,7 +1030,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1028,7 +1044,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1046,7 +1062,7 @@ LAB_0066bff3:
         ppAVar24 = local_50;
         do {
           puVar28 = (undefined *)0x0;
-          uVar29 = 0;
+          puVar20 = (uint *)0x0;
           puVar27 = &LAB_00401e8d;
           pcVar22 = local_10;
           sVar3 = (**(code **)*local_64)();
@@ -1066,7 +1082,7 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           uVar11 = (**(code **)*local_64)(local_c,0x3fffffff,0,uVar19);
           _EnumPlObj(*ppAVar24,uVar11,(uint)pcVar22,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
-                     sVar9,puVar27,uVar29,puVar28);
+                     sVar9,puVar27,puVar20,puVar28);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1083,7 +1099,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1097,7 +1113,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1115,7 +1131,7 @@ LAB_0066bff3:
         ppAVar24 = local_50;
         do {
           puVar28 = (undefined *)0x0;
-          uVar29 = 0;
+          puVar20 = (uint *)0x0;
           puVar27 = &LAB_00401e8d;
           pcVar22 = local_10;
           sVar3 = (**(code **)*local_64)();
@@ -1134,7 +1150,7 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           uVar11 = (**(code **)*local_64)(local_c,0,uVar19);
           _EnumPlObj(*ppAVar24,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,puVar27,
-                     uVar29,puVar28);
+                     puVar20,puVar28);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1149,7 +1165,7 @@ LAB_0066bff3:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
       } while ((int)local_8 < 10);
@@ -1159,7 +1175,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_c = (char *)0x3;
       if (3 < param_2) {
@@ -1171,7 +1187,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1185,7 +1201,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1203,7 +1219,7 @@ LAB_0066bff3:
         ppAVar24 = local_50;
         do {
           puVar28 = (undefined *)0x0;
-          uVar29 = 0;
+          puVar20 = (uint *)0x0;
           puVar27 = &LAB_00401e8d;
           pcVar22 = local_10;
           sVar3 = (**(code **)*local_64)();
@@ -1222,7 +1238,7 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           pbVar15 = (byte *)(**(code **)(*local_64 + 8))(local_c,uVar19);
           _EnumPlObj(*ppAVar24,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
-                     puVar27,uVar29,puVar28);
+                     puVar27,puVar20,puVar28);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1242,7 +1258,7 @@ cf_common_exit_0066DF5E:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1256,7 +1272,7 @@ cf_common_exit_0066DF5E:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1354,7 +1370,7 @@ cf_continue_loop_0066CACD:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1368,7 +1384,7 @@ cf_continue_loop_0066CACD:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1466,7 +1482,7 @@ cf_continue_loop_0066CD4A:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1480,7 +1496,7 @@ cf_continue_loop_0066CD4A:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1578,7 +1594,7 @@ cf_continue_loop_0066CFCA:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1592,7 +1608,7 @@ cf_continue_loop_0066CFCA:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1623,7 +1639,7 @@ cf_continue_loop_0066CFCA:
               Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
             }
             local_64[0x21] = -1;
-            RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1658,7 +1674,7 @@ cf_continue_loop_0066CFCA:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0xf);
@@ -1668,7 +1684,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x4;
     if (4 < param_2) {
@@ -1680,7 +1696,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1694,7 +1710,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     puVar20 = (uint *)(param_1 + 5);
     uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1742,7 +1758,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -1750,7 +1766,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -1762,7 +1778,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1790,7 +1806,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -1798,7 +1814,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -1810,7 +1826,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1841,7 +1857,7 @@ cf_continue_loop_0066CFCA:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
@@ -1851,7 +1867,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x5;
     if (5 < param_2) {
@@ -1863,7 +1879,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1877,7 +1893,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     puVar20 = (uint *)(param_1 + 5);
     uVar11 = (**(code **)*local_64)(puVar20,local_50);
@@ -1931,7 +1947,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1964,7 +1980,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2080,7 +2096,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_c;
@@ -2094,7 +2110,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2102,7 +2118,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -2114,7 +2130,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2128,13 +2144,13 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_10 = (char *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 == 1) {
       puVar28 = (undefined *)0x0;
-      uVar19 = 0;
+      puVar20 = (uint *)0x0;
       puVar27 = &LAB_00402ba3;
       sVar9 = -1;
       sVar8 = -1;
@@ -2145,21 +2161,21 @@ cf_common_exit_0066DCED:
       cVar2 = -1;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
       iVar10 = _EnumPlObj(local_50[0],0,0x3fffffff,pbVar15,cVar2,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9
-                          ,puVar27,uVar19,puVar28);
-      if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
+                          ,puVar27,puVar20,puVar28);
+      if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
         local_10 = (char *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);
         local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1 + 0xf);
         local_c = (char *)(**(code **)*local_64)(param_1 + 0x14);
         iVar13 = (**(code **)*local_64)(param_1 + 0x19);
         if ((-1 < iVar10) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          thunk_FUN_004162b0(DAT_00811984,&local_5a,&local_52,&local_58);
+          STFishC::sub_004162B0(g_sTFish_00811984,&local_5a,&local_52,&local_58);
           (**(code **)(*local_64 + 0x20))(iVar10,(int)local_5a);
           (**(code **)(*local_64 + 0x20))(local_8,(int)local_52);
           (**(code **)(*local_64 + 0x20))(local_c,(int)local_58);
         }
         if (-1 < iVar13) {
-          uVar19 = (**(code **)(*DAT_00811984 + 0x11c))();
+          uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
           (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_10;
@@ -2173,7 +2189,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_10;
@@ -2185,7 +2201,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2193,7 +2209,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -2205,7 +2221,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2219,7 +2235,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_10 = (char *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
@@ -2235,20 +2251,20 @@ cf_common_exit_0066DCED:
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
       iVar10 = _EnumRCCont((short)local_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
                            uVar19);
-      if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
+      if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
         local_10 = (char *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);
         local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1 + 0xf);
         local_c = (char *)(**(code **)*local_64)(param_1 + 0x14);
         iVar13 = (**(code **)*local_64)(param_1 + 0x19);
         if ((-1 < iVar10) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          thunk_FUN_004162f0(DAT_00811984,&local_5c,&local_56,&local_54);
+          thunk_FUN_004162f0(g_sTFish_00811984,&local_5c,&local_56,&local_54);
           (**(code **)(*local_64 + 0x20))(iVar10,(int)local_5c);
           (**(code **)(*local_64 + 0x20))(local_8,(int)local_56);
           (**(code **)(*local_64 + 0x20))(local_c,(int)local_54);
         }
         if (-1 < iVar13) {
-          uVar19 = (**(code **)(*DAT_00811984 + 0x11c))();
+          uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
           (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_10;
@@ -2262,7 +2278,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_10;
@@ -2274,7 +2290,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x1;
     if (1 < param_2) {
@@ -2286,7 +2302,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2304,20 +2320,21 @@ cf_common_exit_0066DCED:
     pcVar22 = param_1;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
     iVar10 = _EnumArt(0,pbVar15,(short)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,puVar27,puVar30);
-    if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
+    if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
       local_10 = (char *)0x1;
       iVar10 = (**(code **)*local_64)(param_1 + 5,uVar19);
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1 + 10);
       local_c = (char *)(**(code **)*local_64)(param_1 + 0xf);
       iVar13 = (**(code **)*local_64)(param_1 + 0x14);
       if ((-1 < iVar10) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-        thunk_FUN_004162f0(DAT_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2));
+        thunk_FUN_004162f0(g_sTFish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2))
+        ;
         (**(code **)(*local_64 + 0x20))(iVar10,(int)local_60);
         (**(code **)(*local_64 + 0x20))(local_8,(int)local_5e);
         (**(code **)(*local_64 + 0x20))(local_c,(int)local_28._2_2_);
       }
       if (-1 < iVar13) {
-        uVar19 = (**(code **)(*DAT_00811984 + 0x11c))();
+        uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
         (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
       }
     }
@@ -2331,7 +2348,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x1;
     if (1 < param_2) {
@@ -2343,7 +2360,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2362,21 +2379,22 @@ cf_common_exit_0066DCED:
     pcVar22 = param_1;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
     iVar10 = _EnumDest(pbVar15,(char)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,puVar30);
-    if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
+    if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
       local_10 = (char *)0x1;
       iVar10 = (**(code **)*local_64)(param_1 + 5,uVar19);
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1 + 10);
       local_c = (char *)(**(code **)*local_64)(param_1 + 0xf);
       iVar13 = (**(code **)*local_64)(param_1 + 0x14);
       if ((-1 < iVar10) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-        thunk_FUN_004162b0(DAT_00811984,(undefined2 *)((int)&local_30 + 2),
-                           (undefined2 *)((int)&local_24 + 2),(undefined2 *)((int)&local_1c + 2));
+        STFishC::sub_004162B0
+                  (g_sTFish_00811984,(undefined2 *)((int)&local_30 + 2),
+                   (undefined2 *)((int)&local_24 + 2),(undefined2 *)((int)&local_1c + 2));
         (**(code **)(*local_64 + 0x20))(iVar10,(int)local_30._2_2_);
         (**(code **)(*local_64 + 0x20))(local_8,(int)local_24._2_2_);
         (**(code **)(*local_64 + 0x20))(local_c,(int)local_1c._2_2_);
       }
       if (-1 < iVar13) {
-        uVar19 = (**(code **)(*DAT_00811984 + 0x11c))();
+        uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
         (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
       }
     }
@@ -2390,7 +2408,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2398,7 +2416,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -2410,7 +2428,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2424,7 +2442,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_1c = (byte *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
@@ -2440,21 +2458,22 @@ cf_common_exit_0066DCED:
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
       iVar10 = _EnumMines((int)local_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
                           uVar19);
-      if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
+      if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
         local_1c = (byte *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);
         local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1 + 0xf);
         local_c = (char *)(**(code **)*local_64)(param_1 + 0x14);
         iVar13 = (**(code **)*local_64)(param_1 + 0x19);
         if ((-1 < iVar10) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          thunk_FUN_004162b0(DAT_00811984,(undefined2 *)((int)&local_2c + 2),
-                             (undefined2 *)((int)&local_18 + 2),(undefined2 *)((int)&local_10 + 2));
+          STFishC::sub_004162B0
+                    (g_sTFish_00811984,(undefined2 *)((int)&local_2c + 2),
+                     (undefined2 *)((int)&local_18 + 2),(undefined2 *)((int)&local_10 + 2));
           (**(code **)(*local_64 + 0x20))(iVar10,(int)local_2c._2_2_);
           (**(code **)(*local_64 + 0x20))(local_8,(int)local_18._2_2_);
           (**(code **)(*local_64 + 0x20))(local_c,(int)local_10._2_2_);
         }
         if (-1 < iVar13) {
-          uVar19 = (**(code **)(*DAT_00811984 + 0x11c))();
+          uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
           (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_1c;
@@ -2468,7 +2487,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_1c;
@@ -2485,7 +2504,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2498,7 +2517,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_8 = (AiFltClassTy *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,local_c,0,(uint *)local_50);
@@ -2521,7 +2540,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)local_8;
     }
@@ -2537,7 +2556,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2550,7 +2569,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)*(byte *)((int)&DAT_00798fd8 + (int)local_8);
@@ -2568,7 +2587,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2583,7 +2602,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((local_10 == (char *)0x9) && (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2591,7 +2610,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_18 = (char *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,local_10,0,(uint *)local_50);
@@ -2632,7 +2651,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     uVar11 = (uint)local_18;
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
@@ -2649,7 +2668,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2663,7 +2682,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
@@ -2672,7 +2691,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_10 = (char *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
@@ -2687,7 +2706,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       uVar11 = (uint)local_10;
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = uVar11;
@@ -2704,7 +2723,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2719,7 +2738,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if (((int)local_8 < 0) || (3 < (int)local_c)) {
       pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2727,7 +2746,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = *(uint *)(&DAT_007e481c + (int)(&local_8->field_0x0 + (int)local_c * 4) * 4);
@@ -2739,7 +2758,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x1;
     if (1 < param_2) {
@@ -2751,7 +2770,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2766,7 +2785,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -2775,7 +2794,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     uVar19 = (**(code **)(*local_64 + 8))(param_1 + 10);
     pbVar14 = (byte *)(param_1 + 5);
@@ -2798,7 +2817,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
@@ -2811,7 +2830,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -2820,7 +2839,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0xffffffff;
     uVar11 = (**(code **)*local_64)(param_1 + 5);
@@ -2845,7 +2864,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
@@ -2858,7 +2877,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -2867,7 +2886,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0xffffffff;
     uVar11 = (**(code **)*local_64)(param_1 + 5);
@@ -2893,7 +2912,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 10);
@@ -2906,7 +2925,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -2915,7 +2934,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     iVar10 = thunk_FUN_0066ac80(local_50[0],uVar11);
@@ -2933,7 +2952,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x19);
@@ -2943,7 +2962,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0x6;
     if (6 < param_2) {
@@ -2955,7 +2974,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2970,7 +2989,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -2979,7 +2998,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0xffffffff;
     uVar11 = (**(code **)*local_64)(param_1 + 5);
@@ -3018,7 +3037,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
         }
         local_64[0x21] = -1;
-        RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x23);
@@ -3028,7 +3047,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if (((local_8 == (AiFltClassTy *)0x9) &&
@@ -3039,7 +3058,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -3048,7 +3067,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_8 = (AiFltClassTy *)0x0;
     puVar20 = (uint *)(**(code **)*local_64)(param_1 + 0xf,local_280);
@@ -3097,7 +3116,7 @@ LAB_0066fbc1:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3112,7 +3131,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -3121,7 +3140,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     local_8 = (AiFltClassTy *)thunk_FUN_0066ac80(local_50[0],uVar11);
@@ -3162,7 +3181,7 @@ LAB_0066fbc1:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3177,7 +3196,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -3186,7 +3205,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0xffffffff;
     uVar11 = (**(code **)*local_64)(param_1 + 5);
@@ -3209,7 +3228,7 @@ joined_r0x006703e6:
       Library::MSVCRT::_strncpy((char *)(local_64 + 1),&DAT_008016a0,0x7f);
       local_64[0x21] = (int)pAVar12;
 LAB_0067041b:
-      RaiseInternalException(-0xaa,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0xaa,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
 cf_common_exit_00670425:
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
@@ -3226,7 +3245,7 @@ cf_common_exit_00670425:
             Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
           }
           local_64[0x21] = -1;
-          RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3241,7 +3260,7 @@ cf_common_exit_00670425:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
@@ -3250,7 +3269,7 @@ cf_common_exit_00670425:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = 0;
     local_10 = (char *)(uint)DAT_00808aaf;
@@ -3273,7 +3292,7 @@ cf_common_exit_00670425:
         Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
       }
       local_64[0x21] = -1;
-      RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       pAVar12 = local_8;
     }
 LAB_0066d630:

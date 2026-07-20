@@ -6,7 +6,7 @@ void __fastcall FUN_004f0a60(int param_1)
   int iVar2;
   
   if (*(uint *)(param_1 + 0x292) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x292));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x292));
   }
   *(undefined4 *)(param_1 + 0x292) = 0;
   if (*(int *)(param_1 + 0x27a) != 0) {
@@ -22,7 +22,7 @@ void __fastcall FUN_004f0a60(int param_1)
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  DAT_00801684 = 0;
+  g_prodPanel_00801684 = (ProdPanelTy *)0x0;
   return;
 }
 

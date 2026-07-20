@@ -49,13 +49,13 @@ void __thiscall OptPanelTy::PrepMissObj(OptPanelTy *this)
     do {
       pcVar5 = *(char **)(*(int *)(DAT_0080c4cb + 0x14) + iVar3 * 4);
 LAB_00532af5:
-      thunk_FUN_005411a0((int)this_00->field_02F9,pcVar5,s_____s_007c72b4);
+      thunk_FUN_005411a0(this_00->field_02F9,pcVar5,s_____s_007c72b4);
       iVar3 = iVar3 + 1;
     } while (iVar3 < *(int *)(DAT_0080c4cb + 8));
   }
   puVar4 = ccFntTy::FormIndentSarr
-                     (this_00->field_017C,(int)this_00->field_02F9,(uint *)s________________007c21d8
-                      ,(uint *)&DAT_007c21ec,200,0,0xffffffff,(char *)0x0,1);
+                     (this_00->field_017C,this_00->field_02F9,s________________007c21d8,
+                      (uint *)&DAT_007c21ec,200,0,0xffffffff,(char *)0x0,1);
   if (this_00->field_02F9 != (uint *)0x0) {
     FUN_006b5570((byte *)this_00->field_02F9);
   }

@@ -1,11 +1,15 @@
 
-void __fastcall FUN_005da910(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
+   Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
+
+void __thiscall StartSystemTy::sub_005DA910(StartSystemTy *this)
 
 {
-  if (*(undefined4 **)(param_1 + 0x68a) != (undefined4 *)0x0) {
-    FUN_006b6110(*(undefined4 **)(param_1 + 0x68a));
+  if ((undefined4 *)this->field_068A != (undefined4 *)0x0) {
+    FUN_006b6110((undefined4 *)this->field_068A);
   }
-  *(undefined4 *)(param_1 + 0x68a) = 0;
+  this->field_068A = 0;
   return;
 }
 

@@ -1,5 +1,9 @@
 
-uint __thiscall FUN_00417910(void *this,short param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=3; incoming_this_accesses=8;
+   incoming_edx_uses=5 */
+
+uint __thiscall STBoatC::sub_00417910(STBoatC *this,short param_1)
 
 {
   short sVar1;
@@ -7,12 +11,12 @@ uint __thiscall FUN_00417910(void *this,short param_1)
   uint uVar3;
   int iVar4;
   
-  uVar3 = (uint)*(short *)((int)this + 0x86);
+  uVar3 = (uint)this->field_0086;
   iVar4 = (int)param_1;
-  if ((int)(param_1 / *(short *)((int)this + 0x86)) * uVar3 - iVar4 != 0) {
+  if ((int)(param_1 / this->field_0086) * uVar3 - iVar4 != 0) {
     return 0xffffffff;
   }
-  sVar1 = *(short *)((int)this + 0x6c);
+  sVar1 = this->field_006C;
   if (sVar1 == param_1) {
     return 0;
   }
@@ -32,13 +36,13 @@ uint __thiscall FUN_00417910(void *this,short param_1)
   iVar4 = (uVar3 ^ uVar2) - uVar2;
   sVar1 = -(short)iVar4;
 cf_common_exit_00417989:
-  *(short *)((int)this + 0x6c) = *(short *)((int)this + 0x6c) + sVar1;
-  if (0x168 - iVar4 < (int)*(short *)((int)this + 0x6c)) {
-    *(undefined2 *)((int)this + 0x6c) = 0;
+  this->field_006C = this->field_006C + sVar1;
+  if (0x168 - iVar4 < (int)this->field_006C) {
+    this->field_006C = 0;
   }
-  if (*(short *)((int)this + 0x6c) < 0) {
-    *(short *)((int)this + 0x6c) = 0x168 - (short)iVar4;
+  if (this->field_006C < 0) {
+    this->field_006C = 0x168 - (short)iVar4;
   }
-  return -(uint)(*(short *)((int)this + 0x6c) != param_1) & 2;
+  return -(uint)(this->field_006C != param_1) & 2;
 }
 

@@ -15,14 +15,14 @@ void __fastcall FUN_005c05f0(int param_1)
   puVar3 = (uint *)(param_1 + 0x8f);
   do {
     if (*puVar3 != 0) {
-      FUN_006e56b0(*(void **)(param_1 + 0xc),*puVar3);
+      StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*puVar3);
       *puVar3 = 0;
     }
     puVar3 = puVar3 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   if (*(uint *)(param_1 + 0x9f) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x9f));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x9f));
     *(undefined4 *)(param_1 + 0x9f) = 0;
   }
   if (DAT_00802a30 != 0) {
@@ -33,15 +33,15 @@ void __fastcall FUN_005c05f0(int param_1)
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
     }
   }
-  FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   if (*(HoloTy **)(param_1 + 0x453) != (HoloTy *)0x0) {
     HoloTy::Done(*(HoloTy **)(param_1 + 0x453));
-    Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(param_1 + 0x453));
+    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x453));
     *(undefined4 *)(param_1 + 0x453) = 0;
   }
   if (*(HoloTy **)(param_1 + 0x457) != (HoloTy *)0x0) {
     HoloTy::Done(*(HoloTy **)(param_1 + 0x457));
-    Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(param_1 + 0x457));
+    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x457));
     *(undefined4 *)(param_1 + 0x457) = 0;
   }
   puVar1 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);

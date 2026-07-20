@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   uint uVar3;
   uint uVar4;
   byte *pbVar5;
-  byte **ppbVar6;
+  LPVOID *ppvVar6;
   undefined4 *puVar7;
   byte *pbVar8;
   undefined4 local_17c;
@@ -20,14 +20,16 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   uint local_4d;
   int local_49;
   uint local_45 [6];
-  byte *local_2c [5];
+  LPVOID local_2c [3];
+  byte *local_20;
+  undefined4 *local_1c;
   int local_18;
   byte *local_14;
   byte *local_10;
   uint local_c;
   byte *local_8;
   
-  local_2c[3] = (byte *)0x0;
+  local_20 = (byte *)0x0;
   local_10 = (byte *)0x0;
   local_14 = (byte *)0x0;
   if (param_1 == 0) {
@@ -57,7 +59,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     puVar1 = puVar1 + 1;
     puVar7 = puVar7 + 1;
   }
-  local_2c[3] = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
+  local_20 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
   local_59 = 0x14f;
   local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
   local_51 = local_5d + local_59;
@@ -67,15 +69,15 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   local_c = local_4d + local_49;
   local_18 = 0;
   if (*(int *)(param_1 + 0x370) == 0) {
-    local_2c[4] = (byte *)(param_1 + 0x350);
+    local_1c = (undefined4 *)(param_1 + 0x350);
     do {
-      puVar1 = STT3DSprC::SaveSpr(*(STT3DSprC **)local_2c[4],(uint *)((int)local_45 + iVar2));
+      puVar1 = STT3DSprC::SaveSpr((STT3DSprC *)*local_1c,(uint *)((int)local_45 + iVar2));
       *(undefined4 **)((int)local_2c + iVar2) = puVar1;
       *(uint *)((int)local_45 + iVar2 + 0xc) = local_c;
       uVar3 = *(uint *)((int)local_45 + iVar2);
       iVar2 = iVar2 + 4;
       local_c = local_c + uVar3;
-      local_2c[4] = (byte *)((int)local_2c[4] + 4);
+      local_1c = local_1c + 1;
       local_18 = local_18 + uVar3;
     } while (iVar2 < 0xc);
   }
@@ -90,7 +92,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   }
   *(undefined2 *)pbVar5 = *(undefined2 *)puVar1;
   pbVar5[2] = *(byte *)((int)puVar1 + 2);
-  pbVar5 = local_2c[3];
+  pbVar5 = local_20;
   pbVar8 = local_8 + local_59;
   for (uVar3 = local_5d >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
     *(undefined4 *)pbVar8 = *(undefined4 *)pbVar5;
@@ -147,15 +149,15 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   }
   STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
   FUN_006ab060(&local_8);
-  FUN_006ab060(local_2c + 3);
+  FUN_006ab060(&local_20);
   FUN_006ab060(&local_10);
   FUN_006ab060(&local_14);
   if (*(int *)(param_1 + 0x370) == 0) {
-    ppbVar6 = local_2c;
+    ppvVar6 = local_2c;
     iVar2 = 3;
     do {
-      FUN_006ab060(ppbVar6);
-      ppbVar6 = ppbVar6 + 1;
+      FUN_006ab060(ppvVar6);
+      ppvVar6 = ppvVar6 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
   }

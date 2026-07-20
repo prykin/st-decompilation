@@ -1,7 +1,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
-   MMMObjTy::OutBSlProc */
+   MMMObjTy::OutBSlProc
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 005B68B0 parameter used as this of MMMObjTy::OutRGlProc @ 005B690C */
 
 void __thiscall
 MMMObjTy::OutBSlProc

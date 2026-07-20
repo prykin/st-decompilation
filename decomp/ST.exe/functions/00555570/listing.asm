@@ -1,4 +1,4 @@
-FUN_00555570:
+cLoadingTy::sub_00555570:
 00555570  55                        PUSH EBP
 00555571  8B EC                     MOV EBP,ESP
 00555573  83 EC 1C                  SUB ESP,0x1c

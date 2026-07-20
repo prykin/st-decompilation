@@ -1,5 +1,11 @@
 
-LRESULT FUN_006c3480(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006C3480 -> EXTERNAL:00000090 @ 006C34EF
+   
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 006C3480 -> EXTERNAL:00000090 @ 006C34EF */
+
+LRESULT FUN_006c3480(HWND hWnd,uint param_2,uint param_3,LPARAM lParam)
 
 {
   LRESULT LVar1;
@@ -7,7 +13,7 @@ LRESULT FUN_006c3480(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
   if (param_2 < 0x86) {
     if ((param_2 == 0x85) || (param_2 == 0xf)) {
 LAB_006c34e5:
-      LVar1 = DefWindowProcA(param_1,param_2,param_3,param_4);
+      LVar1 = DefWindowProcA(hWnd,param_2,param_3,lParam);
       return LVar1;
     }
   }

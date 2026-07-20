@@ -1,30 +1,37 @@
 
-void __cdecl FUN_0064a5b0(char *param_1)
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 0064A5B0 -> EXTERNAL:00000059 @ 0064A60A */
+
+void __cdecl FUN_0064a5b0(LPDWORD lpNumberOfBytesWritten)
 
 {
   char cVar1;
-  uint uVar2;
-  char *pcVar3;
+  DWORD DVar2;
+  uint uVar3;
+  LPDWORD pDVar4;
+  char *pcVar5;
   
-  if ((DAT_008118f8 != (HANDLE)0x0) && (DAT_0080734a != '\0')) {
-    uVar2 = 0xffffffff;
-    pcVar3 = param_1;
+  if ((HANDLE_008118f8 != (HANDLE)0x0) && (DAT_0080734a != '\0')) {
+    uVar3 = 0xffffffff;
+    pDVar4 = lpNumberOfBytesWritten;
     do {
-      if (uVar2 == 0) break;
-      uVar2 = uVar2 - 1;
-      cVar1 = *pcVar3;
-      pcVar3 = pcVar3 + 1;
-    } while (cVar1 != '\0');
-    WriteFile(DAT_008118f8,param_1,~uVar2 - 1,(LPDWORD)&param_1,(LPOVERLAPPED)0x0);
-    uVar2 = 0xffffffff;
-    pcVar3 = &DAT_007d2a00;
+      if (uVar3 == 0) break;
+      uVar3 = uVar3 - 1;
+      DVar2 = *pDVar4;
+      pDVar4 = (LPDWORD)((int)pDVar4 + 1);
+    } while ((char)DVar2 != '\0');
+    WriteFile(HANDLE_008118f8,lpNumberOfBytesWritten,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
+              (LPOVERLAPPED)0x0);
+    uVar3 = 0xffffffff;
+    pcVar5 = &DAT_007d2a00;
     do {
-      if (uVar2 == 0) break;
-      uVar2 = uVar2 - 1;
-      cVar1 = *pcVar3;
-      pcVar3 = pcVar3 + 1;
+      if (uVar3 == 0) break;
+      uVar3 = uVar3 - 1;
+      cVar1 = *pcVar5;
+      pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
-    WriteFile(DAT_008118f8,&DAT_007d2a00,~uVar2 - 1,(LPDWORD)&param_1,(LPOVERLAPPED)0x0);
+    WriteFile(HANDLE_008118f8,&DAT_007d2a00,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
+              (LPOVERLAPPED)0x0);
   }
   return;
 }

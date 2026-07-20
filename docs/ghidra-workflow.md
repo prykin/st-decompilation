@@ -109,10 +109,13 @@ Different facts are intentionally independent:
 | `source_apply` | Add recovered source-file provenance to a function. |
 | `name_apply` | Apply a proposed function, constructor, or field name. |
 | `type_apply` | Apply a proposed field type. |
+| `repair` | The prototype target was changed by an older propagation pass and is eligible for evidence-backed correction. |
 | `create_apply` | Create a missing function boundary for a vtable target. |
 | `rename_apply` | Rename a reviewed vtable slot target. Never implied by creation. |
 | `convention_apply` | Apply a recovered calling convention. |
 | `signature_apply` | Apply a recovered function signature. |
+| `return_apply` | Apply a recovered return type independently of the rest of a signature. |
+| `parameter_apply` | Replace a proven receiver-only function's formal parameter list. |
 
 For class fields, semantic types can be enabled automatically while names stay
 review-only. Inspect `suggested_name`, `name_confidence`, and `name_evidence` in
@@ -179,6 +182,8 @@ and multi-owner targets are preserved.
    - File: `<repo>/recovery/ST.exe/vtable_proposals.tsv`
 2. Run `STConstructorApplier`.
    - File: `<repo>/recovery/ST.exe/constructor_proposals.tsv`
+   - Rerun the analyzer after applying. Stop when `name_apply`,
+     `convention_apply`, and `parameter_apply` are all zero.
 3. Run `STClassLayoutAnalyzer`.
    - Directory: `<repo>/recovery`
 4. Optionally review field-name suggestions in
@@ -194,11 +199,53 @@ applied only when width and evidence agree. Generated structures carry a safety
 hash; a manual change causes later automatic updates to be preserved rather
 than overwritten.
 
+Constructor convention recovery is deliberately conservative. A receiver-only
+`__fastcall` candidate is converted to `__thiscall` only when the body reads
+neither incoming `EDX` nor a stack argument. The same evidence lets the applier
+remove a stale explicit ECX parameter left by an older script version. Real
+stack parameters are retained; ambiguous rows stay disabled.
+
 Run this analyzer before applying the final `OURLIB_*` library classifications.
 Once those methods are tagged as library code, layout analysis intentionally
 skips their implementations.
 
-### 5. Switch/state enums
+### 5. Non-virtual method owners and destructors
+
+1. Run `STMethodOwnerAnalyzer`.
+   - Directory: `<repo>/recovery`
+2. Run `STMethodOwnerApplier`.
+   - File: `<repo>/recovery/ST.exe/method_owner_proposals.tsv`
+3. Run `STDestructorAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - It consumes the sibling `vtable_slots.tsv` when present.
+   - Diagnostic output: `destructor_lifetime_candidates.tsv`.
+4. Run `STDestructorApplier`.
+   - File: `<repo>/recovery/ST.exe/destructor_proposals.tsv`
+
+The method-owner pass follows only direct calls where a named caller's incoming
+`this` value still reaches `ECX`. It assigns structural names such as
+`STBoatC::sub_006EA2F0`; it does not invent semantic method names. Automatic
+ownership also requires a compatible existing class data type. Ambiguous owner
+sets stay disabled. A `__fastcall` candidate is not converted when its incoming
+`EDX` value behaves as a real second register argument. When the body has no
+incoming `EDX` or stack-argument reads, conversion also removes the old `ECX`
+formal so it does not survive as a bogus stack parameter. The same check repairs
+receiver-only signatures written by earlier versions of the applier.
+
+The destructor pass first discovers known deallocators and only accepts a small
+wrapper when that wrapper forwards its own pointer argument into the real
+deallocator. This prevents field-cleanup helpers from being mistaken for
+`operator delete`. It then recognizes both deallocation of the incoming `this`
+value and a narrow cleanup-only vtable shape: slot `0x0`/`0x4`, at least two
+zeroed fields, and multiple same-`this` or field-cleanup calls. The latter can
+recover ordinary destructors that do not free their own storage. All examined
+vtable methods and lifetime counters remain available in
+`destructor_lifetime_candidates.tsv`; shapes outside the conservative rule are
+diagnostic only. A receiver-only `__fastcall` candidate is rewritten as a
+zero-explicit-argument `__thiscall`; the former `ECX` receiver is not retained
+as a bogus stack parameter.
+
+### 6. Switch/state enums
 
 1. Run `STSwitchEnumAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -209,7 +256,71 @@ The analyzer groups repeated numeric switch domains. Safe parameter and
 script-owned class-field targets may be enabled automatically. Locals, globals,
 and ambiguously owned fields stay review-only.
 
-### 6. Source provenance and free-function names
+### 7. Prototype and global-data propagation
+
+1. Run `STPrototypeAnalyzer`.
+   - Directory: `<repo>/recovery`
+2. If `prototype_summary.txt` reports repair rows, run
+   `STPrototypeRepairAnalyzer`.
+   - File: `<repo>/recovery/ST.exe/prototype_proposals.tsv`
+3. Run `STPrototypeRepairApplier`.
+   - File: `<repo>/recovery/ST.exe/prototype_repair_proposals.tsv`
+4. After a repair pass, rerun `STPrototypeAnalyzer` so ordinary proposals have
+   current baselines.
+5. Run `STPrototypeApplier`.
+   - File: `<repo>/recovery/ST.exe/prototype_proposals.tsv`
+   - Repair rows are deliberately ignored by this applier.
+6. Run `STGlobalDataAnalyzer`.
+   - Directory: `<repo>/recovery`
+7. Run `STGlobalDataApplier`.
+   - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
+
+Prototype propagation uses direct calls with an exact explicit argument count.
+Types and names are independent per parameter; conflicting evidence for one
+parameter does not block another. Trusted `this` receivers, user/imported
+prototypes, semantic pointer/enum types, and short one-call wrappers provide the
+strongest evidence. `USER_DEFINED` and `IMPORTED` parameters and returns are preserved.
+
+The analyzer also follows the producer of `EAX` until its first local use. A
+returned value used as a typed call argument, as the receiver of a known
+`__thiscall`, or stored in a typed global/class field can recover the producer's
+return type. Register facts never cross an unmerged basic-block boundary, and a
+function's direct return is propagated from an argument only for a short
+one-call wrapper. Provisional switch enums are not accepted as reverse-return
+anchors. These restrictions avoid turning path-dependent integer temporaries
+into pointers merely because Ghidra reused a stack/register variable.
+
+The repair pair is normally needed only after upgrading from a prototype
+analyzer that did not distinguish x86 subregisters or absolute memory loads. It
+isolates only targets carrying an earlier `STPrototypeApplier` marker, verifies
+the exact old name/type/source baseline, and leaves later manual changes alone.
+It also removes explicit parameter names accidentally propagated as `this`.
+After a successful repair and analyzer rerun, `repair_auto_apply` should be
+zero. Weak review-only repair rows may remain and are reported separately; they
+are not a reason to repeat the automatic pass. Do not apply the pre-repair
+`prototype_proposals.tsv`;
+rerun the analyzer first. `STPrototypeApplier` refuses rows marked `repair=1`,
+so corrections cannot be mixed accidentally into an ordinary propagation pass.
+An ordinary apply can expose a more specific type and thereby create a second
+small repair wave. After every analyzer run, service enabled repairs first,
+rerun the analyzer, then apply ordinary rows. Stop only when
+`repair_auto_apply`, `type_auto_apply`, and `name_auto_apply` are all zero.
+
+Global-data propagation recognizes generic `DAT_*`, `UNK_*`, and `PTR_*`
+symbols when the stored value is repeatedly used as a typed receiver or trusted
+argument. Automatic replacement is limited to small undefined or script-owned
+data. Address-of evidence, overlapping concrete data, and manual symbols remain
+review-only. Generated names are structural and retain the address suffix.
+
+These passes form a bounded feedback loop. After applying them, rerun
+`STClassLayoutAnalyzer`/`STClassLayoutApplier`, then rerun the prototype and
+global-data pairs. Stop when the summaries report no new enabled rows; do not
+force conflicting rows merely to continue the loop.
+
+Run these passes before the final `OURLIB_*` library classification so relevant
+implementations remain available for data-flow analysis.
+
+### 8. Source provenance and free-function names
 
 1. Run `STSourceProvenanceAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -223,7 +334,7 @@ original function definition line.
 Run this before the final library applier. Source-provenance analysis skips
 functions already tagged as libraries.
 
-### 7. Structural control-flow labels
+### 9. Structural control-flow labels
 
 1. Run `STControlFlowLabelAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -234,7 +345,7 @@ Only labels that are actual decompiler `goto` targets are considered. Common
 exits, loop breaks/continues, and well-supported joins can be named; generic
 joins remain disabled.
 
-### 8. Library classification
+### 10. Library classification
 
 1. Run `STLibraryAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -254,7 +365,7 @@ noise from later analysis. In that early pass, keep all `OURLIB_*` rows disabled
 until source provenance and class-layout analysis have finished. Rerun the
 library analyzer at the end to regenerate current rows.
 
-### 9. Export the text corpus
+### 11. Export the text corpus
 
 Run `STDecompExport`.
 
@@ -266,9 +377,13 @@ callgraph indexes, and per-function directories. It reuses an existing function
 body when its dependency-scoped fingerprint is unchanged. If a function becomes
 a library or thunk, stale `decomp.c` and `listing.asm` files are deleted.
 
-The first export after broad type or namespace changes can still touch many
-functions because those definitions legitimately affect their decompiler
-output.
+Composite layouts are fingerprinted selectively: a function depends on the
+identity of its referenced structures and on the components it actually
+accesses, not on every field of every structure mentioned by its signature. A
+change to an unused field therefore does not invalidate all methods of that
+class, while a type/name/comment change at an accessed offset still does. The
+first export after this fingerprinting revision intentionally recalculates the
+corpus once; later exports can reuse unaffected function bodies.
 
 ## Script reference
 
@@ -280,9 +395,14 @@ output.
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
 | `STVTableAnalyzer/Applier` | Find vtables, create missing targets, type table layouts, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
-| `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, and direct hierarchy evidence. |
+| `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, and repair proven receiver-only signatures. |
 | `STClassLayoutAnalyzer/Applier` | Build conservative class layouts and semantic field-type/name proposals. |
+| `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods through proven `this` flows. |
+| `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums. |
+| `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
+| `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
+| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and assign address-stable structural names. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |

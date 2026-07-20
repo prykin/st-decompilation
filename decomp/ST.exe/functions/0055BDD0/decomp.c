@@ -1,5 +1,10 @@
 
-void FUN_0055bdd0(char *param_1,char *param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0055BDD0 -> 0072E340 @ 0055BE55 | 0055BDD0 -> 0072ED50 @ 0055BE34 | 0055C830 ->
+   0055BDD0 @ 0055C8DB | 0055C830 -> 0055BDD0 @ 0055CA31 | 0055C830 -> 0055BDD0 @ 0055CAE4 |
+   0055C830 -> 0055BDD0 @ 0055CC62 | 0055C830 -> 0055BDD0 @ 0055CD2A */
+
+void FUN_0055bdd0(char *param_1,char *source)
 
 {
   char cVar1;
@@ -11,7 +16,7 @@ void FUN_0055bdd0(char *param_1,char *param_2)
   char *pcVar7;
   
   if (param_1 == (char *)0x0) {
-    Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,param_2,0x834);
+    Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,source,0x834);
   }
   else {
     Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,param_1,0x20);
@@ -56,11 +61,11 @@ void FUN_0055bdd0(char *param_1,char *param_2)
       cVar1 = *pcVar5;
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
-    Library::MSVCRT::_strncat((char *)&DAT_0080f33a,param_2,0x814 - (~uVar2 - 1));
+    Library::MSVCRT::_strncat((char *)&DAT_0080f33a,source,0x814 - (~uVar2 - 1));
   }
   DAT_0080fb6d = 0;
-  if (DAT_008016d8 != (void *)0x0) {
-    thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,8);
+  if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+    thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
   }
   return;
 }

@@ -1,6 +1,8 @@
 
-undefined *
-FUN_00692390(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00692390 returns used as parameter 2 of cMf32::RecChk @ 00691857 */
+
+char * FUN_00692390(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined *puVar1;

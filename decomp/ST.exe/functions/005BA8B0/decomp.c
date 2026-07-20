@@ -18,7 +18,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   void *unaff_ESI;
   uint uVar5;
   uint uVar6;
-  void *pvVar7;
+  ccFntTy *pcVar7;
   undefined4 uVar8;
   InternalExceptionFrame local_4c;
   PrividerTy *local_8;
@@ -39,24 +39,25 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
     RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0xec);
     return;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   PutDDX(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
   pPVar2 = local_8;
   if ((local_8->field_1C96 == (HoloTy *)0x0) && (param_1 == '\0')) {
-    MMMObjTy::OutLstProc(this_00,(int)DAT_0080759c,0,0,0x79,0x51,0x22e,0x145,(int)local_8);
+    MMMObjTy::OutLstProc
+              (this_00,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x79,0x51,0x22e,0x145,(int)local_8);
   }
   uVar8 = 0;
-  pvVar7 = *(void **)(DAT_0081176c + 0x30);
+  pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x30);
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->field_1A5F == '\x01') {
-    puVar3 = (uint *)FUN_006b0140(0x26b4,DAT_00807618);
-    StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pvVar7,uVar8);
+    puVar3 = (uint *)FUN_006b0140(0x26b4,HINSTANCE_00807618);
+    StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  puVar3 = (uint *)FUN_006b0140(0x26b3,DAT_00807618);
-  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pvVar7,uVar8);
+  puVar3 = (uint *)FUN_006b0140(0x26b3,HINSTANCE_00807618);
+  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
   if ((pPVar2->field_1C9A == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutEdProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x79,0x197,0x22e,0x2e,
                         (undefined4 *)&pPVar2->field_1A5B->field_0x140);

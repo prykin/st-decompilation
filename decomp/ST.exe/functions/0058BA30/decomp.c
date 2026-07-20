@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079BD1C (store 0058BA59)
    Evidence: final_vptr=0079BD1C; returns_this=true; calls_before=2; field_writes_after=5;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0058BA30 returns STSatC::STSatC this @ 0058BA89 */
 
-undefined4 * __thiscall STSatC::STSatC(STSatC *this,undefined4 *param_1)
+STSatC * __thiscall STSatC::STSatC(STSatC *this)
 
 {
   int iVar1;
@@ -25,6 +28,6 @@ undefined4 * __thiscall STSatC::STSatC(STSatC *this,undefined4 *param_1)
     puVar2 = puVar2 + 1;
   }
   *(undefined2 *)puVar2 = 0;
-  return &this->vtable;
+  return this;
 }
 

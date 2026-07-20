@@ -1,4 +1,4 @@
-FUN_006e56b0:
+StartSystemTy::sub_006E56B0:
 006E56B0  55                        PUSH EBP
 006E56B1  8B EC                     MOV EBP,ESP
 006E56B3  83 EC 24                  SUB ESP,0x24

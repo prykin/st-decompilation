@@ -13,12 +13,12 @@ FUN_006757c0(short *param_1,short *param_2,short *param_3,short *param_4,short *
   int iVar7;
   int iVar8;
   
-  sVar2 = DAT_007fb244;
-  sVar1 = DAT_007fb242;
-  sVar4 = DAT_007fb240;
-  iVar7 = (int)DAT_007fb244;
-  iVar5 = (int)DAT_007fb242;
-  iVar8 = (int)DAT_007fb240;
+  sVar2 = SHORT_007fb244;
+  sVar1 = SHORT_007fb242;
+  sVar4 = SHORT_007fb240;
+  iVar7 = (int)SHORT_007fb244;
+  iVar5 = (int)SHORT_007fb242;
+  iVar8 = (int)SHORT_007fb240;
   if (*param_1 < 0) {
     *param_1 = 0;
   }

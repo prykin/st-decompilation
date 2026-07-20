@@ -20,8 +20,8 @@ void __fastcall FUN_00567490(int param_1)
     FUN_0071a8d0((int *)(param_1 + 0xdf3));
     this = extraout_ECX;
   }
-  if (*(undefined4 **)(param_1 + 0xdef) != (undefined4 *)0x0) {
-    cMf32::delete(this,*(undefined4 **)(param_1 + 0xdef));
+  if (*(cMf32 **)(param_1 + 0xdef) != (cMf32 *)0x0) {
+    cMf32::delete(this,*(cMf32 **)(param_1 + 0xdef));
     *(undefined4 *)(param_1 + 0xdef) = 0;
   }
   return;

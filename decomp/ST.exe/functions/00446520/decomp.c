@@ -1,7 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::DeleteGuardBoat */
+   STAllPlayersC::DeleteGuardBoat
+   
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0044EE30 -> 00446520 @ 0045A2BF | 0044EE30 -> 00446520 @ 0045A2D4 | 0044EE30 ->
+   00446520 @ 0045AAC8 | 0044EE30 -> 00446520 @ 0045AADD | 0045EF00 -> 00446520 @ 0045EF2A |
+   00490E00 -> 00446520 @ 00490E46 */
 
 void __thiscall
 STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,int param_3)
@@ -48,8 +53,9 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
     return;
   }
   if (local_18 == 0) {
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x291d)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x291d);
   }
   local_c = *(int *)(iVar4 + 0xc);
   if (param_3 == 1) {

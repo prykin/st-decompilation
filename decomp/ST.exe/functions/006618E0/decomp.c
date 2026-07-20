@@ -14,9 +14,9 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   int iVar5;
   undefined2 *puVar6;
   int *this_00;
-  uint uVar7;
-  uint *puVar8;
-  int iVar9;
+  IMAGE_DOS_HEADER *pIVar7;
+  uint *groupContent;
+  int iVar8;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   undefined4 unaff_ESI;
@@ -35,7 +35,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
      ((uint)(this->field_0207 + this->field_0203) <= (uint)this->field_0280)) {
     this->field_0207 = this->field_0280;
     local_1c = this;
-    uVar4 = thunk_FUN_0065d9c0((int)this,this->field_0280);
+    uVar4 = sub_0065D9C0(this);
     iVar5 = CONCAT22(extraout_var,uVar4);
     if ((0 < iVar5) &&
        (local_20 = iVar5, local_c = thunk_FUN_00661800((int)this,extraout_EDX),
@@ -51,7 +51,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
         local_8 = thunk_FUN_0065da10((int)local_1c,extraout_EDX_00);
         if (local_8 != (uint *)0x0) {
           local_14 = 0;
-          puVar8 = local_10;
+          groupContent = local_10;
           if (0 < (int)local_8[3]) {
             do {
               if (local_14 < local_8[3]) {
@@ -62,13 +62,13 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
               }
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
               this_00 = (int *)STAllPlayersC::GetObjPtr
-                                         (DAT_007fa174,
+                                         (g_sTAllPlayers_007FA174,
                                           CONCAT31((int3)(local_24 >> 8),pAVar3->field_0x24),
                                           local_24,CASE_1);
               if ((this_00 != (int *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c)) {
                 iVar5 = (**(code **)(*this_00 + 0x2c))();
-                uVar7 = thunk_FUN_00674fb0(iVar5);
-                if ((pAVar3->field_017F & uVar7) != 0) {
+                pIVar7 = thunk_FUN_00674fb0(iVar5);
+                if ((pAVar3->field_017F & (uint)pIVar7) != 0) {
                   if (pAVar3->field_0039 == 3) {
                     iVar5 = (**(code **)(*this_00 + 0xc4))();
                   }
@@ -116,11 +116,11 @@ LAB_00661a96:
                       bVar2 = true;
                     }
                     if ((bVar2) && (local_18 != 0)) {
-                      if (puVar8 == (uint *)0x0) {
-                        puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
-                        local_10 = puVar8;
+                      if (groupContent == (uint *)0x0) {
+                        groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
+                        local_10 = groupContent;
                       }
-                      Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_24);
+                      Library::DKW::TBL::FUN_006ae1c0(groupContent,&local_24);
                       local_c = local_c + 1;
                     }
                   }
@@ -131,12 +131,12 @@ LAB_00661a96:
           }
           FUN_006ae110((byte *)local_8);
           local_8 = (uint *)0x0;
-          if (puVar8 != (uint *)0x0) {
-            if (puVar8[3] != 0) {
-              thunk_FUN_0068fa00((void *)pAVar3->field_0284,puVar8);
+          if (groupContent != (uint *)0x0) {
+            if (groupContent[3] != 0) {
+              thunk_FUN_0068fa00((void *)pAVar3->field_0284,groupContent);
             }
-            if (puVar8 != (uint *)0x0) {
-              FUN_006ae110((byte *)puVar8);
+            if (groupContent != (uint *)0x0) {
+              FUN_006ae110((byte *)groupContent);
             }
           }
         }
@@ -152,9 +152,9 @@ LAB_00661a96:
         FUN_006ae110((byte *)local_10);
         local_10 = (uint *)0x0;
       }
-      iVar9 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x6e9,0,iVar5,&DAT_007a4ccc,
+      iVar8 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x6e9,0,iVar5,&DAT_007a4ccc,
                                  s_AiFltClassTy__GoToRepair_007d2c40);
-      if (iVar9 != 0) {
+      if (iVar8 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;

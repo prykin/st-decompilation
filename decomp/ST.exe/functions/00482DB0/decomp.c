@@ -19,7 +19,7 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   undefined2 local_28;
   undefined4 local_24;
   int local_20;
-  undefined4 local_1c;
+  int local_1c;
   undefined4 local_18;
   int *local_14;
   ushort *local_10;
@@ -33,13 +33,13 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   sVar3 = *(short *)((int)param_1 + 0x4b);
   sVar8 = *(short *)((int)param_1 + 0x49);
   iVar5 = CONCAT22((short)((uint)param_2 >> 0x10),sVar8);
-  if (((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar8 < 0)) ||
-      ((DAT_007fb242 <= sVar8 || (sVar3 < 0)))) || (DAT_007fb244 <= sVar3)) {
+  if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar8 < 0)) ||
+      ((SHORT_007fb242 <= sVar8 || (sVar3 < 0)))) || (SHORT_007fb244 <= sVar3)) {
     piVar4 = (int *)0x0;
   }
   else {
     iVar5 = (uint)*(byte *)((int)param_1 + 0x8e) +
-            ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar8 + (int)sVar1) * 2;
+            ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar1) * 2;
     piVar4 = *(int **)(DAT_007fb248 + iVar5 * 4);
   }
   if (piVar4 != param_1) {
@@ -50,10 +50,10 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   local_14 = (int *)CONCAT22((short)((uint)iVar5 >> 0x10),sVar3);
   if (param_1[0x1ff] == 3) {
     sVar8 = (short)param_1[0x200];
-    if ((((-1 < sVar8) && (sVar8 < DAT_007fb240)) &&
-        ((-1 < sVar3 && ((sVar3 < DAT_007fb242 && (-1 < sVar1)))))) && (sVar1 < DAT_007fb244)) {
+    if ((((-1 < sVar8) && (sVar8 < SHORT_007fb240)) &&
+        ((-1 < sVar3 && ((sVar3 < SHORT_007fb242 && (-1 < sVar1)))))) && (sVar1 < SHORT_007fb244)) {
       local_8 = *(int **)(DAT_007fb248 + 4 +
-                         ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar3 +
+                         ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
                          (int)sVar8) * 8);
 LAB_00482f52:
       if ((local_8 != (int *)0x0) && (local_8[6] == param_1[0x1fd])) goto LAB_00482fa9;
@@ -61,10 +61,10 @@ LAB_00482f52:
   }
   else {
     sVar8 = (short)param_1[0x200];
-    if (((-1 < sVar8) && (sVar8 < DAT_007fb240)) &&
-       ((-1 < sVar3 && (((sVar3 < DAT_007fb242 && (-1 < sVar1)) && (sVar1 < DAT_007fb244)))))) {
+    if (((-1 < sVar8) && (sVar8 < SHORT_007fb240)) &&
+       ((-1 < sVar3 && (((sVar3 < SHORT_007fb242 && (-1 < sVar1)) && (sVar1 < SHORT_007fb244)))))) {
       local_8 = *(int **)(DAT_007fb248 +
-                         ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar3 +
+                         ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
                          (int)sVar8) * 8);
       goto LAB_00482f52;
     }
@@ -85,7 +85,7 @@ LAB_00482fa9:
   if ((piVar4[8] == 0x1ae) && (iVar5 = (**(code **)(*piVar4 + 0xf4))(param_1[9]), iVar5 == 0)) {
     return 4;
   }
-  thunk_FUN_00416270(piVar4,(undefined2 *)&local_18,(undefined2 *)&local_1c,local_c);
+  thunk_FUN_00416270(piVar4,(undefined2 *)&local_18,&local_1c,(int *)local_c);
   iVar5 = FUN_006acf0d((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43),
                        (int)*(short *)((int)param_1 + 0x45),(int)(short)local_18,
                        (int)(short)local_1c,(int)local_c[0]);

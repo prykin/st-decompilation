@@ -1,9 +1,12 @@
 
+/* [STPrototypeRepairApplier] Propagated parameter 4.
+   Evidence: 0074BE76 -> 0074C658 @ 0074BED6 */
+
 undefined4 * __thiscall
-FUN_0074c658(void *this,undefined4 param_1,int param_2,undefined4 param_3,short *param_4)
+FUN_0074c658(void *this,undefined4 param_1,int param_2,undefined4 param_3,char *text)
 
 {
-  CBaseOutputPin(this,param_1,param_2,param_2 + 0x5c,param_3,param_4);
+  CBaseOutputPin(this,param_1,param_2,param_2 + 0x5c,param_3,(short *)text);
   *(undefined4 *)((int)this + 0xa4) = 0;
   *(int *)((int)this + 0xa0) = param_2;
   *(undefined ***)this = &PTR_FUN_007a1868;

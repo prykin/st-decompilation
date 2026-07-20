@@ -7,7 +7,7 @@ void __fastcall FUN_006ddbe0(int param_1)
   int iVar3;
   uint uVar4;
   undefined4 *puVar5;
-  undefined4 *local_2c;
+  ushort *local_2c;
   void *local_14;
   undefined1 *puStack_10;
   undefined *puStack_c;
@@ -43,14 +43,14 @@ void __fastcall FUN_006ddbe0(int param_1)
       }
     }
     else {
-      local_2c = (undefined4 *)
+      local_2c = (ushort *)
                  (*(int *)(param_1 + 0x14) +
                  (*(int *)(param_1 + 0x28) * *(int *)(param_1 + 0x34) + *(int *)(param_1 + 0x30)) *
                  2);
       local_8 = 1;
       while (iVar3 != 0) {
         FUN_006ce6c0(local_2c,uVar4,30000);
-        local_2c = (undefined4 *)((int)local_2c + *(int *)(param_1 + 0x28) * 2);
+        local_2c = local_2c + *(int *)(param_1 + 0x28);
         iVar3 = iVar3 + -1;
       }
     }

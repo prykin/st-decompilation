@@ -34,7 +34,8 @@ undefined4 * __cdecl CreatePlrData(int param_1)
   }
   if ((&DAT_008087e8)[param_1 * 0x51] != '\x01') {
     if ((&DAT_008087e8)[param_1 * 0x51] != '\x02') {
-      RaiseInternalException(-5,DAT_007ed77c,s_E____titans_ai_ai_creat_cpp_007d2880,0x175);
+      RaiseInternalException
+                (-5,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x175);
       g_currentExceptionFrame = pIVar4;
       return local_8;
     }

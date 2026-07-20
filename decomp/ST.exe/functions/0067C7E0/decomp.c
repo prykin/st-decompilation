@@ -146,10 +146,11 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
       else if (uVar10 == 2) {
         puVar2 = *(undefined4 **)(param_1 + 0x14);
         if (puVar2 == (undefined4 *)0x0) {
-          RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x586);
+          RaiseInternalException
+                    (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x586);
         }
         InitData(this_00,puVar2);
-        if (DAT_007fa174 != (STAllPlayersC *)0x0) {
+        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
           thunk_FUN_004357b0(this_00->field_0x5d7,this_00);
         }
         if (puVar2[3] == 0) {
@@ -175,7 +176,7 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
           (**(code **)*DAT_008117bc)(local_38);
         }
         thunk_FUN_0064a580();
-        if (DAT_007fa174 != (STAllPlayersC *)0x0) {
+        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
           thunk_FUN_004357b0(this_00->field_0x5d7,0);
         }
         thunk_FUN_00678ba0((int)this_00);
@@ -211,12 +212,12 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
       }
     }
     else if (uVar10 == 0x5d94) {
-      if (DAT_007fa174 == (STAllPlayersC *)0x0) {
+      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
         piVar7 = (int *)0x0;
       }
       else {
         piVar7 = (int *)STAllPlayersC::GetObjPtr
-                                  (DAT_007fa174,CONCAT31(0x5d,local_10->field_0x5d7),
+                                  (g_sTAllPlayers_007FA174,CONCAT31(0x5d,local_10->field_0x5d7),
                                    CONCAT22(extraout_var,*(undefined2 *)(param_1 + 0x16)),CASE_1);
       }
       if (piVar7 != (int *)0x0) {
@@ -230,7 +231,7 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
         if ((bVar15) &&
            (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,(short)piVar7[0x207]),
            this_01 != (AiFltClassTy *)0x0)) {
-          AiFltClassTy::_AddObjFlt(this_01,piVar7,0);
+          AiFltClassTy::_AddObjFlt(this_01,(uint)piVar7,0);
         }
       }
     }
@@ -239,7 +240,7 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
     switch(uVar10) {
     case 0x5d98:
       if (*(short *)(param_1 + 0x14) == 0) {
-        thunk_FUN_00675dc0(*(uint *)&local_10->field_0x5d7,*(int *)(param_1 + 0x18));
+        thunk_FUN_00675dc0(*(uint *)&local_10->field_0x5d7,*(uint **)(param_1 + 0x18));
       }
       else {
         local_8 = (byte *)0x0;

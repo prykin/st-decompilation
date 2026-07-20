@@ -33,7 +33,7 @@ cLoadingTy::SetState
   cLoadingTy *local_8;
   
   local_8 = this;
-  thunk_FUN_00555570((int)this);
+  sub_00555570(this);
   if ((int)this->field_003C < -1) {
     return;
   }
@@ -55,7 +55,7 @@ cLoadingTy::SetState
   }
   switch(param_1) {
   case CASE_0:
-    pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267a,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -78,7 +78,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = (char *)FUN_006b0140(0x267e,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267e,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -115,7 +115,7 @@ cLoadingTy::SetState
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_1:
-    pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267a,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -138,7 +138,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = (char *)FUN_006b0140(0x267b,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267b,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -244,7 +244,7 @@ cLoadingTy::SetState
     break;
   case CASE_2:
     local_8->field_003C = 0xffffffff;
-    pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267a,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -267,7 +267,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = (char *)FUN_006b0140(0x267c,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267c,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -303,7 +303,7 @@ cLoadingTy::SetState
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = 0xffffffff;
-    pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267a,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -326,7 +326,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = (char *)FUN_006b0140(0x267d,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(0x267d,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;

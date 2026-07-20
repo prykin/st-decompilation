@@ -28,12 +28,12 @@ int __thiscall FUN_00714ce0(void *this,uint param_1)
     }
     return iVar2;
   }
-  if ((undefined4 *)*local_8 == (undefined4 *)0x0) {
+  if (*local_8 == 0) {
     puVar3 = Library::DKW::LIB::FUN_006aac10(param_1);
     local_8 = piVar1;
   }
   else {
-    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((undefined4 *)*local_8,param_1);
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(*local_8,param_1);
     iVar2 = piVar1[1];
     uVar4 = param_1 - iVar2;
     puVar6 = (undefined4 *)(iVar2 + (int)puVar3);

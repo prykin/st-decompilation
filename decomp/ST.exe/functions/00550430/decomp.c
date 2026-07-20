@@ -3,7 +3,7 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  DWORD DVar2;
   undefined4 *puVar3;
   
   uVar1 = 0;
@@ -16,8 +16,8 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
         return;
       }
     }
-    uVar2 = FUN_006e51b0(0x807620);
-    puVar3[0x12] = uVar2;
+    DVar2 = FUN_006e51b0(0x807620);
+    puVar3[0x12] = DVar2;
     if (((param_2 != 0) && (DAT_00808788 != 0)) && (*(int *)((int)this + 0xf4) == param_1)) {
       *(undefined4 *)((int)this + 0xf4) = 0;
       DAT_00808788 = 0;

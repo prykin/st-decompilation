@@ -71,7 +71,7 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
     FUN_006c7570(iVar7,0,0,0,local_8,(int)pbVar4,param_3,(byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != (uint *)0x0)))) {
       if (param_4 == '\0') {
-        param_5 = (uint *)FUN_006b0140(param_2,DAT_00807618);
+        param_5 = (uint *)FUN_006b0140(param_2,HINSTANCE_00807618);
       }
       local_18 = param_5;
       ccFntTy::SetSurf(local_c->field_0083,iVar7,0,0,0,0,0);

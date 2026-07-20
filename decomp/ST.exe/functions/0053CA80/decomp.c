@@ -66,10 +66,11 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
           iVar3 = iVar3 + -1;
         } while (iVar3 != 0);
         if (*(uint *)&this_00[1].field_0x4 != 0) {
-          FUN_006e56b0((void *)this_00->field_000C,*(uint *)&this_00[1].field_0x4);
+          StartSystemTy::sub_006E56B0
+                    ((StartSystemTy *)this_00->field_000C,*(uint *)&this_00[1].field_0x4);
         }
         *(undefined4 *)&this_00[1].field_0x4 = 0;
-        DAT_008016e8 = 0;
+        g_prodPanel_008016E8 = (ProdPanelTy *)0x0;
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }

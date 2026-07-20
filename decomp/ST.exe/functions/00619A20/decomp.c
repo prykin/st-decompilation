@@ -4,7 +4,7 @@
 void __fastcall FUN_00619a20(int param_1)
 
 {
-  void *pvVar1;
+  VisibleClassTy *pVVar1;
   int iVar2;
   uint uVar3;
   int local_c;
@@ -13,8 +13,8 @@ void __fastcall FUN_00619a20(int param_1)
   if (*(int *)(param_1 + 0x97) < 0) {
     STJumpMineC::LoadImagJMine((STJumpMineC *)param_1,*(int *)(param_1 + 0x8f));
   }
-  pvVar1 = DAT_00802a88;
-  if (DAT_00802a88 == (void *)0x0) {
+  pVVar1 = g_visibleClass_00802A88;
+  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
     if (*(char *)(param_1 + 0xc4) == '\0') {
       return;
     }
@@ -22,17 +22,15 @@ void __fastcall FUN_00619a20(int param_1)
   }
   else {
     iVar2 = (int)*(short *)(param_1 + 0xcd);
-    if ((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-          (thunk_FUN_00558c00(DAT_00802a88,
-                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+    if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                               (int)*(short *)(param_1 + 0xc9),(int)*(short *)(param_1 + 0xcb),
                               &local_8,&local_c), iVar2 < 0)) || ((4 < iVar2 || (local_8 < 0)))) ||
-        ((*(int *)((int)pvVar1 + 0x30) <= local_8 ||
+        (((int)pVVar1->field_0030 <= local_8 ||
          ((local_c = (&DAT_0079aed0)[iVar2] + local_c, local_c < 0 ||
-          (*(int *)((int)pvVar1 + 0x34) <= local_c)))))) ||
-       ((*(int *)((int)pvVar1 + 0x4c) == 0 ||
-        (*(char *)(local_c * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) + local_8)
-         != '\0')))) {
+          ((int)pVVar1->field_0034 <= local_c)))))) ||
+       ((pVVar1->field_004C == 0 ||
+        (*(char *)(local_c * pVVar1->field_0030 + pVVar1->field_004C + local_8) != '\0')))) {
       iVar2 = *(int *)(param_1 + 0xab) + 1;
       *(int *)(param_1 + 0xab) = iVar2;
       if (*(int *)(param_1 + 0xaf) <= iVar2) {

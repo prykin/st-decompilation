@@ -13,7 +13,7 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
 {
   int iVar1;
   code *pcVar2;
-  void *this_00;
+  STGroupBoatC *this_00;
   uint *puVar3;
   uint uVar4;
   undefined4 *puVar5;
@@ -47,8 +47,8 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   undefined4 local_1c;
   uint local_18;
   undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  int local_10;
+  int local_c;
   int *local_8;
   
   local_34 = 0;
@@ -69,7 +69,8 @@ LAB_0048a37f:
     }
     else {
       local_8 = (int *)STAllPlayersC::GetObjPtr
-                                 (DAT_007fa174,CONCAT31((int3)((uint)iVar9 >> 8),this->field_0x487),
+                                 (g_sTAllPlayers_007FA174,
+                                  CONCAT31((int3)((uint)iVar9 >> 8),this->field_0x487),
                                   this->field_048B,this->field_0483);
       if ((((local_8 != (int *)0x0) && (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 == 1)) &&
           (iVar9 = (**(code **)(*local_8 + 0xf0))(), iVar9 == 1)) &&
@@ -86,15 +87,13 @@ LAB_0048a37f:
     switch(param_1) {
     case CASE_0:
       _CheckDefenceShots(this,0);
-      puVar3 = thunk_FUN_0043f7b0(this->field_0x24,(int *)this,(int)(short)this->field_0475,
+      puVar3 = thunk_FUN_0043f7b0(this->field_0x24,(int *)this,(uint *)(int)(short)this->field_0475,
                                   (int)(short)this->field_0477,2,(int *)0x6,6,2,
                                   (uint)(*(int *)&this->field_0x736 != 0));
       if (puVar3 != (uint *)0x0) {
-        this_00 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                      this->field_0x24),
-                                             CONCAT22((short)((uint)puVar3 >> 0x10),this->field_0030
-                                                     ));
-        local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(int)puVar3);
+        this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x24),
+                                     CONCAT22((short)((uint)puVar3 >> 0x10),this->field_0030));
+        local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,puVar3);
         local_18 = 0;
         if (0 < (int)puVar3[3]) {
           do {
@@ -123,8 +122,7 @@ LAB_0048a37f:
                   local_38 = local_38 + 200;
                 }
                 iVar9 = local_38;
-                thunk_FUN_00416270(local_8,(undefined2 *)&local_14,(undefined2 *)&local_10,
-                                   (undefined2 *)&local_c);
+                thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
                 iVar6 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
                                      (int)this->field_0045,(int)(short)local_14,(int)(short)local_10
                                      ,(int)(short)local_c);
@@ -226,11 +224,13 @@ LAB_00489eb0:
     case CASE_3:
       _CheckDefenceShots(this,0);
       if (*(int *)&this->field_0x736 == 0) {
-        puVar3 = thunk_FUN_0043f7b0(this->field_0x24,(int *)this,(int)(short)this->field_0475,
+        puVar3 = thunk_FUN_0043f7b0(this->field_0x24,(int *)this,
+                                    (uint *)(int)(short)this->field_0475,
                                     (int)(short)this->field_0477,2,(int *)0x6,6,2,0);
       }
       else {
-        puVar3 = thunk_FUN_0043f7b0(this->field_0x24,(int *)this,(int)(short)this->field_0475,
+        puVar3 = thunk_FUN_0043f7b0(this->field_0x24,(int *)this,
+                                    (uint *)(int)(short)this->field_0475,
                                     (int)(short)this->field_0477,2,(int *)0x6,6,2,1);
       }
       if (puVar3 != (uint *)0x0) {
@@ -242,8 +242,7 @@ LAB_00489eb0:
             if (((iVar9 != 0) && (iVar9 = (**(code **)(*local_8 + 0xf0))(), iVar9 != 0)) &&
                (iVar9 = (**(code **)(*local_8 + 0xf4))(*(undefined4 *)&this->field_0x24), iVar9 != 0
                )) {
-              thunk_FUN_00416270(local_8,(undefined2 *)&local_14,(undefined2 *)&local_10,
-                                 (undefined2 *)&local_c);
+              thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
               iVar9 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045
                                    ,(int)(short)local_14,(int)(short)local_10,(int)(short)local_c);
               local_38 = iVar9;
@@ -364,7 +363,8 @@ LAB_0048a2dd:
         uVar8 = (*pcVar2)();
         return uVar8;
       }
-      RaiseInternalException(0,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4678);
+      RaiseInternalException
+                (0,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4678);
       return 0xffffffff;
     }
   }

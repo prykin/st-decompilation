@@ -64,7 +64,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             local_1a = 3;
             local_2c = 1;
             Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
-            iVar2 = thunk_FUN_004a7e30(this,1);
+            iVar2 = sub_004A7E30(this,1);
             return (uint)(iVar2 != 0);
           }
         }
@@ -99,7 +99,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   }
   local_2c = 1;
   Library::DKW::TBL::FUN_006ae140(puVar4,param_3,&local_2c);
-  iVar2 = thunk_FUN_004a7e30(this,1);
+  iVar2 = sub_004A7E30(this,1);
   return (uint)(iVar2 != 0);
 }
 

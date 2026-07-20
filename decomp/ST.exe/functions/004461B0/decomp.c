@@ -50,8 +50,9 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,i
     return local_18;
   }
   if (local_10 == 0) {
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x28ba)
-    ;
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x28ba);
   }
   local_8 = *(int *)(iVar3 + 0xc);
   if (param_3 == 1) {

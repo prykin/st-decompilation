@@ -13,8 +13,8 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,int param_2,byte param_3,char *p
   CPanelTy *pCVar3;
   int iVar4;
   undefined4 uVar5;
-  LPSTR pCVar6;
-  int iVar7;
+  LPSTR text;
+  int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_58;
@@ -67,8 +67,8 @@ cf_common_join_004F4070:
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       uVar5 = (*(code *)param_6)(param_2);
-      pCVar6 = FUN_006f2c00(param_4,1,uVar5);
-      local_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar6,(int *)0x0,1);
+      text = FUN_006f2c00(param_4,1,uVar5);
+      local_8 = cMf32::RecGet(DAT_00806790,param_3,text,(int *)0x0,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
       DibPut((undefined4 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,(byte *)local_8);
@@ -87,9 +87,9 @@ cf_common_join_004F4070:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x235,0,iVar4,&DAT_007a4ccc,
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x235,0,iVar4,&DAT_007a4ccc,
                                s_CPanelTy__PaintLBut_007c1b84);
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;

@@ -6,7 +6,7 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
   int iVar2;
   
   iVar1 = thunk_FUN_004e1490((int)this);
-  if ((iVar1 != 0) && (*(int *)((int)this + 0x5b8) < DAT_007fb244 + -1)) {
+  if ((iVar1 != 0) && (*(int *)((int)this + 0x5b8) < SHORT_007fb244 + -1)) {
     *(int *)((int)this + 0x508) = param_1;
     *(undefined4 *)((int)this + 0x4d0) = 3;
     *(int *)((int)this + 0x50c) = param_2;

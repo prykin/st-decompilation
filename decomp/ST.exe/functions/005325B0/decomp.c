@@ -12,7 +12,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   byte bVar3;
   code *pcVar4;
   int iVar5;
-  undefined4 *puVar6;
+  cMf32 *pcVar6;
   uint *puVar7;
   char *pcVar8;
   int iVar9;
@@ -87,7 +87,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case 0xf:
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080ef1e);
   }
-  puVar6 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+  pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   pOVar12 = local_8;
   this_00 = (cMf32 *)(_DAT_008087a0 & 0xff);
   switch(this_00) {
@@ -98,7 +98,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case (cMf32 *)0xd:
   case (cMf32 *)0xe:
   case (cMf32 *)0x13:
-    puVar7 = CreateAssistantList((int)puVar6,(uint)DAT_0080874e,DAT_0080995c);
+    puVar7 = CreateAssistantList((int)pcVar6,(uint)DAT_0080874e,DAT_0080995c);
     this_00 = extraout_ECX;
     break;
   case (cMf32 *)0x2:
@@ -106,7 +106,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case (cMf32 *)0x5:
   case (cMf32 *)0x8:
   case (cMf32 *)0xf:
-    puVar7 = CreateStrategList((int)puVar6,(uint)DAT_0080874d,0xffffffff);
+    puVar7 = CreateStrategList((int)pcVar6,(uint)DAT_0080874d,0xffffffff);
     this_00 = extraout_ECX_00;
     break;
   default:
@@ -114,12 +114,12 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   }
   pOVar12->field_02FD = puVar7;
 switchD_005326e6_caseD_9:
-  cMf32::delete(this_00,puVar6);
+  cMf32::delete(this_00,pcVar6);
   g_currentExceptionFrame = local_94.previous;
 LAB_00532758:
   if ((&stack0x00000000 != (undefined1 *)0x12c) &&
-     (iVar5 = FUN_006b0140(0x2711,DAT_00807618), iVar5 != 0)) {
-    pcVar8 = (char *)FUN_006b0140(0x2711,DAT_00807618);
+     (iVar5 = FUN_006b0140(0x2711,HINSTANCE_00807618), iVar5 != 0)) {
+    pcVar8 = (char *)FUN_006b0140(0x2711,HINSTANCE_00807618);
     uVar10 = 0xffffffff;
     do {
       pcVar14 = pcVar8;

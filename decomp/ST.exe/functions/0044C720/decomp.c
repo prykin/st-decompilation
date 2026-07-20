@@ -35,7 +35,7 @@ STAllPlayersC::GetScrObjList
   undefined1 local_10;
   undefined1 local_f;
   undefined2 local_e;
-  undefined4 *local_c;
+  short *local_c;
   int local_8;
   
   iVar12 = 0;
@@ -75,7 +75,8 @@ LAB_0044cada:
                 (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3268);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x3268);
       }
       puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
       bVar5 = false;
@@ -152,7 +153,8 @@ LAB_0044c94c:
       FUN_006a5e90(local_c);
       if (!bVar5) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x327d);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x327d);
       }
       iVar6 = puVar7[3] * 4 + 3;
       *param_6 = iVar6;
@@ -168,7 +170,8 @@ LAB_0044c94c:
                 (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3291);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x3291);
       }
       puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
       bVar5 = false;
@@ -190,7 +193,8 @@ LAB_0044c94c:
       FUN_006ab060(&local_c);
       if (!bVar5) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x32a1);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x32a1);
       }
       iVar6 = puVar7[3] * 2 + 3;
       *param_6 = iVar6;

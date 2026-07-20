@@ -122,7 +122,11 @@ The current work focuses on recovering what the binary can prove:
 - calling conventions, parameters, and selected free-function names;
 - message IDs and anonymous state/switch domains;
 - vtables, virtual slots, constructors, thunks, and class relationships;
+- non-virtual method ownership, cleanup/destructor shapes, and direct-call prototype propagation;
+- reverse return-type recovery from typed arguments, class receivers, and field/global stores;
+- one-shot audited repair of stale automatically propagated prototypes;
 - conservative class layouts and field types;
+- typed global data recovered from class-receiver and trusted-argument use;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
 

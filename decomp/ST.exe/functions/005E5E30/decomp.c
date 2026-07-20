@@ -23,19 +23,19 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_00B3 == '\x01') {
-      if (DAT_00811778 != (HoloTy *)0x0) {
-        iVar3 = HoloTy::NextFas(DAT_00811778);
+      if (g_holo_00811778 != (HoloTy *)0x0) {
+        iVar3 = HoloTy::NextFas(g_holo_00811778);
         if (iVar3 == 0) {
           pMVar2->field_00B3 = 4;
         }
       }
     }
-    else if ((local_8->field_00B3 == '\x05') && (DAT_00811778 != (HoloTy *)0x0)) {
-      iVar3 = HoloTy::NextFas(DAT_00811778);
+    else if ((local_8->field_00B3 == '\x05') && (g_holo_00811778 != (HoloTy *)0x0)) {
+      iVar3 = HoloTy::NextFas(g_holo_00811778);
       if (iVar3 == 0) {
         pMVar2->field_00B3 = 0;
-        if (-1 < (int)DAT_00811778->field_0003) {
-          FUN_006b3af0(DAT_008075a8,DAT_00811778->field_0003);
+        if (-1 < (int)g_holo_00811778->field_0003) {
+          FUN_006b3af0(DAT_008075a8,g_holo_00811778->field_0003);
         }
       }
     }

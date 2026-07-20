@@ -35,7 +35,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   uint local_18;
   int local_14;
   int local_10;
-  int local_c;
+  LPVOID local_c;
   int local_8;
   
   local_8 = 1;
@@ -82,8 +82,8 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
       case CASE_5:
       case CASE_C:
       case CASE_13:
-        local_c = 0;
-        Library::DKW::DDX::FUN_006b7510(DAT_00811764,-1,&local_14,-1,0);
+        local_c = (LPVOID)0x0;
+        Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_14,-1,0);
         if (DAT_008067a0 != '\0') {
           CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
         }
@@ -91,7 +91,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
         if (0 < local_14) {
           do {
             iVar7 = Library::Ourlib::CONNECT::FUN_00715630
-                              (DAT_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
+                              (g_int_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
             if (iVar7 == -0x4d) {
               piVar10 = local_6c;
               for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -111,7 +111,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
             }
             else if (iVar7 == 1) {
               if (local_18 == 0x1a) {
-                if (*(char *)(local_c + 2) == '\x04') {
+                if (*(char *)((int)local_c + 2) == '\x04') {
                   local_46 = 3;
                   local_48 = (undefined2)((uint)DAT_00807dd5 >> 0x10);
                   local_45 = DAT_008087be;
@@ -146,15 +146,15 @@ switchD_005adb01_caseD_c:
                       local_3d = 4;
                     }
                   }
-                  local_26 = *(undefined4 *)(local_c + 0x22);
-                  local_2a = *(undefined4 *)(local_c + 0x1e);
-                  FUN_00715360(DAT_00811764,local_1c,'\x1a',(char *)&local_48,0x26,1,0xffffffff);
+                  local_26 = *(undefined4 *)((int)local_c + 0x22);
+                  local_2a = *(undefined4 *)((int)local_c + 0x1e);
+                  FUN_00715360(g_int_00811764,local_1c,'\x1a',(char *)&local_48,0x26,1,0xffffffff);
                 }
               }
               else if (local_18 == 0x1b) {
-                StartSystemTy::AddToChat(this_00->field_1A5B,local_c);
+                StartSystemTy::AddToChat(this_00->field_1A5B,(int)local_c);
               }
-              if (local_c != 0) {
+              if (local_c != (LPVOID)0x0) {
                 FUN_006ab060(&local_c);
               }
             }
@@ -195,17 +195,17 @@ switchD_005adb01_caseD_c:
     if (local_8 != 0) {
       if ((this_00->field_0x20b3 != '\0') && (this_00->field_20B8 != (HoloTy *)0x0)) {
         HoloTy::Done(this_00->field_20B8);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20B8);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_20B8);
         this_00->field_20B8 = (HoloTy *)0x0;
       }
       if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
         HoloTy::Done(this_00->field_20BC);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20BC);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_20BC);
         this_00->field_20BC = (HoloTy *)0x0;
       }
       if ((this_00->field_20B7 != '\0') && (this_00->field_20C0 != (HoloTy *)0x0)) {
         HoloTy::Done(this_00->field_20C0);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20C0);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_20C0);
         this_00->field_20C0 = (HoloTy *)0x0;
       }
       this_00->field_0065 = 1;

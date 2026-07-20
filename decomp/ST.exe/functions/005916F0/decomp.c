@@ -35,7 +35,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     DarkScreen(DAT_0080759c,10,2);
     thunk_FUN_00568bc0(&g_sound,1);
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
     this_00 = *(MMsgTy **)(pCVar2->field_1A5B + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
@@ -52,7 +52,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
           *puVar4 = 0;
         }
         if (puVar4[-0x2d] != 0) {
-          cMf32::RecMemFree(DAT_00806780,puVar4 + -0x2d);
+          cMf32::RecMemFree(g_cMf32_00806780,puVar4 + -0x2d);
         }
         pCVar2 = local_8;
         puVar4 = puVar4 + 1;
@@ -68,7 +68,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
         *puVar4 = 0;
       }
       if (puVar4[-4] != 0) {
-        cMf32::RecMemFree(DAT_00806780,puVar4 + -4);
+        cMf32::RecMemFree(g_cMf32_00806780,puVar4 + -4);
       }
       puVar4 = puVar4 + 1;
       iVar3 = iVar3 + -1;

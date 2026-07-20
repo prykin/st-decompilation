@@ -143,7 +143,7 @@ int FUN_00566600(int param_1)
   }
   local_c = uVar6;
   if (uVar6 == 0) {
-    RaiseInternalException(-4,DAT_007ed77c,s_E____titans_snd_mngr_cpp_007c9748,0x25);
+    RaiseInternalException(-4,g_overwriteContext_007ED77C,s_E____titans_snd_mngr_cpp_007c9748,0x25);
   }
   if ((param_1 == 0) || ((param_1 < 0 && (*(int *)(local_10 + 0x28) < 1)))) {
     uVar7 = Library::MSVCRT::FUN_0072e6c0();
@@ -155,8 +155,7 @@ int FUN_00566600(int param_1)
   iVar2 = 0;
   bVar12 = 0;
   pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,*(undefined4 *)(local_10 + 0x28));
-  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
-                      (*(undefined4 *)(local_10 + 0x18),pCVar5,bVar12,iVar2);
+  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(*(cMf32 **)(local_10 + 0x18),pCVar5,bVar12,iVar2);
   if (local_8 == (ushort *)0x0) {
     uVar7 = Library::MSVCRT::FUN_0072e6c0();
     iVar13 = 0;
@@ -164,10 +163,11 @@ int FUN_00566600(int param_1)
     iVar2 = uVar7 % uVar6 + 1;
     *(int *)(local_10 + 0x28) = iVar2;
     pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar2);
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
-                        (*(undefined4 *)(local_10 + 0x18),pCVar5,bVar12,iVar13);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(*(cMf32 **)(local_10 + 0x18),pCVar5,bVar12,iVar13)
+    ;
     if (local_8 == (ushort *)0x0) {
-      RaiseInternalException(-4,DAT_007ed77c,s_E____titans_snd_mngr_cpp_007c9748,0x32);
+      RaiseInternalException
+                (-4,g_overwriteContext_007ED77C,s_E____titans_snd_mngr_cpp_007c9748,0x32);
       goto LAB_0056681c;
     }
   }

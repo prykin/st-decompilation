@@ -1,4 +1,4 @@
-FUN_004926c0:
+STBoatC::sub_004926C0:
 004926C0  55                        PUSH EBP
 004926C1  8B EC                     MOV EBP,ESP
 004926C3  81 EC DC 00 00 00         SUB ESP,0xdc

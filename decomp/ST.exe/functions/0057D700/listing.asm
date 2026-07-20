@@ -1,4 +1,4 @@
-FUN_0057d700:
+STFishC::sub_0057D700:
 0057D700  55                        PUSH EBP
 0057D701  8B EC                     MOV EBP,ESP
 0057D703  83 EC 18                  SUB ESP,0x18
@@ -445,7 +445,7 @@ LAB_0057dbc9:
 0057DBE0  C2 10 00                  RET 0x10
 LAB_0057dbe3:
 0057DBE3  0F 88 23 01 00 00         JS 0x0057dd0c
-FUN_0057d700::cf_continue_loop_0057DBE9:
+STFishC::sub_0057D700::cf_continue_loop_0057DBE9:
 0057DBE9  8B 55 EC                  MOV EDX,dword ptr [EBP + -0x14]
 0057DBEC  8B 0D 84 B2 7F 00         MOV ECX,dword ptr [0x007fb284]
 0057DBF2  52                        PUSH EDX

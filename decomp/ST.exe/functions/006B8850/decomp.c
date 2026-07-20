@@ -27,7 +27,7 @@ void FUN_006b8850(int param_1)
             iVar2 = iVar2 + 1;
           } while (iVar2 < *(int *)(param_1 + 0x2c));
         }
-        FUN_006a5e90(*(undefined4 **)(param_1 + 0x38));
+        FUN_006a5e90(*(short **)(param_1 + 0x38));
         *(undefined4 *)(param_1 + 0x38) = 0;
       }
     }

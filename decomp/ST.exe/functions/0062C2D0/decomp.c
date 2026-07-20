@@ -56,7 +56,7 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
       param_1[9] = (int)lVar10;
       param_1[10] = (int)lVar11;
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,3,1,0,*param_1 + (int)lVar7,param_1[1] + (int)lVar8,
+                (g_traksClass_00802A7C,3,1,0,*param_1 + (int)lVar7,param_1[1] + (int)lVar8,
                  param_1[2] + (int)lVar9,(short)lVar10,(short)lVar11,(short)lVar12,0,0,0,-1,0,0);
       if ((float)iVar2 == _DAT_0079034c) {
         return true;
@@ -84,8 +84,8 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
       iVar3 = (int)lVar7 + param_1[1];
       lVar7 = Library::MSVCRT::__ftol();
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,3,1,3,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,sVar16,
-                 sVar17,sVar18,iVar19,sVar20,bVar21);
+                (g_traksClass_00802A7C,3,1,3,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,
+                 sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
       fVar6 = (((float10)*(float *)((int)param_1 + 0x45) - (float10)iVar4) * (float10)_DAT_00790784
               + (float10)iVar4) * (float10)_DAT_0079d078;
       fcos(fVar6);
@@ -108,8 +108,8 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
       iVar3 = (int)lVar7 + param_1[1];
       lVar7 = Library::MSVCRT::__ftol();
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,3,1,2,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,sVar16,
-                 sVar17,sVar18,iVar19,sVar20,bVar21);
+                (g_traksClass_00802A7C,3,1,2,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,
+                 sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
       bVar21 = 0;
       sVar20 = 0;
       iVar3 = -1;
@@ -132,8 +132,8 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
       iVar4 = (int)lVar7 + param_1[1];
       lVar7 = Library::MSVCRT::__ftol();
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,3,1,1,(int)lVar7 + *param_1,iVar4,iVar2,sVar13,sVar14,sVar15,sVar16,
-                 sVar17,sVar18,iVar3,sVar20,bVar21);
+                (g_traksClass_00802A7C,3,1,1,(int)lVar7 + *param_1,iVar4,iVar2,sVar13,sVar14,sVar15,
+                 sVar16,sVar17,sVar18,iVar3,sVar20,bVar21);
     }
   }
   return bVar5;

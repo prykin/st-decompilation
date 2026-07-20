@@ -16,7 +16,7 @@ void __thiscall FUN_00710fb0(void *this,byte *param_1)
   }
   if (((*(int *)((int)this + 0xa0) != 0) && (*(int *)((int)this + 0xa8) != 0)) &&
      (*(int *)((int)this + 0xac) != *(int *)(*(int *)((int)this + 0xa8) + 0xac))) {
-    FUN_00710790((int)this);
+    FUN_00710790(this);
   }
   uVar2 = *(ushort *)((int)this + 0x70);
   uVar3 = (uint)uVar2;
@@ -42,7 +42,7 @@ void __thiscall FUN_00710fb0(void *this,byte *param_1)
     }
     else if ((*(byte *)((int)*(int **)((int)this + 0xa8) + 0x18d) & 8) != 0) {
       uVar3 = Library::Ourlib::MFCFNT::FUN_0070e030(*(int **)((int)this + 0xa8),local_8,0);
-      FUN_00710790((int)this);
+      FUN_00710790(this);
       *(ushort *)((int)this + 0x70) = ((int)uVar3 < 1) - 1 & (ushort)uVar3;
       return;
     }

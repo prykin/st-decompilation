@@ -22,7 +22,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   SettMapSTy *local_14;
   int local_10;
   int local_c;
-  int local_8;
+  cMf32 *local_8;
   
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -42,10 +42,10 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
     return;
   }
   if (local_14->field_1E26 == '\x02') {
-    local_8 = local_14->field_1F3F;
+    local_8 = (cMf32 *)local_14->field_1F3F;
   }
   else {
-    local_8 = local_14->field_1F43;
+    local_8 = (cMf32 *)local_14->field_1F43;
   }
   local_14->field_0029 = 2;
   local_14->field_002D = 0x20;
@@ -74,7 +74,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
               FUN_006ae110(*(byte **)(pcVar10 + 0x50));
             }
             if (pSVar5->field_1E26 == '\x02') {
-              puVar7 = CreateStrategList(local_8,(uint)(byte)pcVar10[2],0xffffffff);
+              puVar7 = CreateStrategList((int)local_8,(uint)(byte)pcVar10[2],0xffffffff);
             }
             else {
               puVar7 = CreateOpponentList(local_8,(uint)(byte)pcVar10[3],DAT_0080995c);

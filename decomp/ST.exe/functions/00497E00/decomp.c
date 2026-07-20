@@ -160,7 +160,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
       } while ((uVar7 & 0xffff) < uVar6);
     }
     if (this_00->field_021E != 0) {
-      FUN_006ab060(&this_00->field_021E);
+      FUN_006ab060((LPVOID *)&this_00->field_021E);
     }
     if ((byte *)this_00->field_020E != (byte *)0x0) {
       FUN_006ae110((byte *)this_00->field_020E);
@@ -239,9 +239,9 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
       }
       if (this_00->field_01E6 == 6) {
         ReMakePatrolPoints(this_00,(int)unaff_EDI);
-        thunk_FUN_004a7e30(this_00,1);
+        sub_004A7E30(this_00,1);
       }
-      if ((this_00->field_0027 == 0) && (*(int *)&this_00->field_0x20 == 0)) {
+      if ((this_00->field_0027 == 0) && (this_00->field_0020 == 0)) {
         this_00->field_005D = 1;
       }
       FUN_006ae110((byte *)this_00->field_01DA);
@@ -260,7 +260,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     }
     if (*(int *)&this_00->field_0x75 == 1) {
       *(undefined4 *)&this_00->field_0x75 = 0;
-      ReMakePVecAndTgtList(this_00,this_00->field_01CE);
+      ReMakePVecAndTgtList(this_00,(uint *)this_00->field_01CE);
       DistributeTargets(this_00,(uint *)this_00->field_01CE);
       FUN_006ae110((byte *)this_00->field_01CE);
       this_00->field_01CE = 0;
@@ -346,7 +346,7 @@ LAB_004984e9:
       puVar3 = (uint *)GrpDismant(this_00,2);
       break;
     case 0x14:
-      puVar3 = (uint *)Scout(this_00,2);
+      puVar3 = Scout(this_00,2);
       break;
     case 0x15:
       puVar3 = (uint *)GrpRepSub(this_00,2);
@@ -547,11 +547,11 @@ switchD_004984e0_default:
               goto LAB_0049818d;
             }
             if (this_00->field_01E6 == 0x14) {
-              puVar3 = (uint *)Scout(this_00,1);
+              puVar3 = Scout(this_00,1);
             }
             else {
               this_00->field_01E6 = 0x14;
-              puVar3 = (uint *)Scout(this_00,0);
+              puVar3 = Scout(this_00,0);
             }
           }
           goto cf_common_exit_004984F2;

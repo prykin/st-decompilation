@@ -71,7 +71,8 @@ STAllPlayersC::AddObjToTmp
   else {
     if (param_2 != 1) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f8);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x1f8);
       goto LAB_0042bc00;
     }
     local_10 = (int)&DAT_007f4fd3 + param_1 * 0xa62;
@@ -115,7 +116,8 @@ LAB_0042bc00:
     }
     if (local_6 == (short)param_5) {
       RaiseInternalException
-                (-0x5001ffff,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x209);
+                (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x209);
     }
   }
   Library::DKW::TBL::FUN_006ae140(puVar4,local_14,&param_5);

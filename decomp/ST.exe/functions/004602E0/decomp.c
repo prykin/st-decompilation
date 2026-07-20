@@ -17,7 +17,7 @@ void __thiscall FUN_004602e0(void *this,int param_1)
     *(uint *)((int)this + 0x1c) = uVar1;
     *(short *)((int)this + 0xf8) = (short)((ulonglong)(uVar1 >> 0x10) % 0x1f) + 0x1e;
   }
-  thunk_FUN_0045ff50(this,param_1);
+  STBoatC::sub_0045FF50(this,param_1);
   return;
 }
 

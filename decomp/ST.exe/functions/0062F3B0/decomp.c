@@ -71,7 +71,8 @@ LAB_0062f450:
   if (iVar2 == 0) {
     iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_Rubb_cpp_007d1798,0x17b);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_nick_to_Rubb_cpp_007d1798,0x17b);
       return 0xffff;
     }
     iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,local_8[*param_2],0x1d);

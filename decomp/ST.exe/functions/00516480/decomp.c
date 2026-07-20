@@ -21,11 +21,11 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   byte *pbVar10;
   undefined3 extraout_var_01;
   uint uVar11;
-  UINT UVar12;
+  UINT uID;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  int iVar12;
   int iVar13;
-  int iVar14;
   InternalExceptionFrame local_58;
   HelpPanelTy *local_14;
   undefined4 *local_10;
@@ -39,9 +39,9 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   this_00 = local_14;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar13 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x4aa,0,iVar5,
+    iVar12 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x4aa,0,iVar5,
                                 &DAT_007a4ccc,s_HelpPanelTy__TTreeProc_007c3c28);
-    if (iVar13 != 0) {
+    if (iVar12 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
@@ -74,26 +74,26 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
     }
   }
   if (this_00->field_019C != 0) {
-    FUN_006e56b0((void *)this_00->field_000C,this_00->field_019C);
+    StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_019C);
   }
   Library::DKW::WGR::FUN_006b55f0
-            ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,0x16,
+            ((undefined4 *)this_00->field_0068,0,0x21,0x16,(byte *)this_00->field_01DC,0,0x21,0x16,
              0x1b8,0x118);
   if (param_1 == 1) {
     local_8 = (byte *)((uint)local_8._1_3_ << 8);
-    UVar12 = 0x5604;
+    uID = 0x5604;
     local_10 = (undefined4 *)&DAT_007c2b58;
     local_c = 0x33;
   }
   else if (param_1 == 2) {
     local_8 = (byte *)CONCAT31(local_8._1_3_,1);
-    UVar12 = 0x5605;
+    uID = 0x5605;
     local_10 = (undefined4 *)&DAT_007c2df0;
     local_c = 0x39;
   }
   else {
     local_8 = (byte *)CONCAT31(local_8._1_3_,2);
-    UVar12 = 0x5606;
+    uID = 0x5606;
     local_10 = &DAT_007c30d8;
     local_c = 0x46;
   }
@@ -104,16 +104,16 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   else {
     iVar5 = (-(uint)(DAT_0080874e != 1) & 6) + 1;
   }
-  iVar14 = -1;
   iVar13 = -1;
-  puVar6 = (uint *)FUN_006b0140(0x55f4,DAT_00807618);
-  ccFntTy::WrStr(this_00->field_01E4,puVar6,iVar13,iVar14,iVar5);
+  iVar12 = -1;
+  puVar6 = (uint *)FUN_006b0140(0x55f4,HINSTANCE_00807618);
+  ccFntTy::WrStr(this_00->field_01E4,puVar6,iVar12,iVar13,iVar5);
   ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0068,0,0x21,0x2a,0x19c,0xf);
   uVar7 = (DAT_0080874e != 3) - 1 & 5;
-  iVar13 = -1;
+  iVar12 = -1;
   iVar5 = -1;
-  puVar6 = (uint *)FUN_006b0140(UVar12,DAT_00807618);
-  ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar5,iVar13,uVar7);
+  puVar6 = (uint *)FUN_006b0140(uID,HINSTANCE_00807618);
+  ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar5,iVar12,uVar7);
   iVar5 = this_00->field_0218;
   uVar7 = *(uint *)(iVar5 + 0x14);
   if (uVar7 == 0) {

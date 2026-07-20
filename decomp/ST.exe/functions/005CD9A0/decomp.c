@@ -71,9 +71,9 @@ SettMapMTy::ChgPlList
     pcVar6 = pcVar6 + 1;
     pcVar7 = pcVar7 + 1;
   }
-  FUN_006b6500((int)DAT_00811764,1);
-  FUN_00715360(DAT_00811764,1,'$',(char *)&local_15c,0x114,1,0xffffffff);
-  FUN_006b6500((int)DAT_00811764,DAT_0080733c);
+  FUN_006b6500(g_int_00811764,1);
+  FUN_00715360(g_int_00811764,1,'$',(char *)&local_15c,0x114,1,0xffffffff);
+  FUN_006b6500(g_int_00811764,DAT_0080733c);
   g_currentExceptionFrame = local_48.previous;
   return;
 }

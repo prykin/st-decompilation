@@ -10,7 +10,14 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
   int *piVar6;
   undefined4 *puVar7;
   int iVar8;
-  int local_28 [8];
+  LPVOID local_28;
+  undefined4 local_24;
+  undefined4 local_20;
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  int local_c;
   undefined4 *local_8;
   
   if (this == (void *)0x0) {
@@ -27,23 +34,23 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
   }
   *(undefined2 *)puVar7 = *(undefined2 *)puVar1;
   *(undefined4 *)((int)this + 0x2b7) = 0xffffffff;
-  local_28[0] = Library::DKW::LIB::FUN_006aac70(0x44);
+  local_28 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
   iVar2 = 0;
   do {
-    *(undefined4 *)(iVar2 + local_28[0]) = DAT_00806774;
+    *(undefined4 *)(iVar2 + (int)local_28) = DAT_00806774;
     iVar2 = iVar2 + 4;
   } while (iVar2 < 0x44);
-  local_28[1] = 0;
-  local_28[2] = 0;
-  local_28[3] = 0;
-  local_28[4] = 0;
-  local_28[6] = 0;
-  local_28[5] = 0x10;
+  local_24 = 0;
+  local_20 = 0;
+  local_1c = 0;
+  local_18 = 0;
+  local_10 = 0;
+  local_14 = 0x10;
   STT3DSprC::RestoreSpr
-            ((STT3DSprC *)((int)this + 0x1d5),local_28,(undefined4 *)((int)param_1 + 0xc6));
+            ((STT3DSprC *)((int)this + 0x1d5),(int *)&local_28,(undefined4 *)((int)param_1 + 0xc6));
   thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x2c1),*(undefined2 *)((int)this + 0x2c5),
                      *(undefined2 *)((int)this + 0x2c9));
-  FUN_006ab060(local_28);
+  FUN_006ab060(&local_28);
   iVar3 = *(int *)((int)param_1 + 0xc2);
   piVar5 = (int *)((int)param_1 + 0xc6 + iVar3);
   piVar6 = piVar5 + 1;
@@ -68,7 +75,7 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
   if (*(int *)(*(int *)((int)this + 0x2e6) + 0x58) != 0) {
     uVar4 = *(uint *)(*(int *)((int)this + 0x2e6) + 0x5c);
     iVar8 = uVar4 * 4;
-    local_28[7] = iVar8;
+    local_c = iVar8;
     iVar3 = Library::DKW::LIB::FUN_006aac70(iVar8);
     *(int *)(*(int *)((int)this + 0x2e6) + 0x58) = iVar3;
     puVar7 = *(undefined4 **)(*(int *)((int)this + 0x2e6) + 0x58);

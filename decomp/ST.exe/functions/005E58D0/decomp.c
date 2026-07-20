@@ -12,10 +12,11 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   CursorClassTy *this_00;
   MTestTy *this_01;
   int iVar4;
-  int iVar5;
+  ushort *puVar5;
+  int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar6;
+  undefined4 *puVar7;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   MTestTy *local_8;
@@ -33,17 +34,17 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
         FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
       }
     }
-    iVar4 = FUN_0070a9f0(DAT_00806780,s_LOADSINGLE_007cc79c,0,1);
+    puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,s_LOADSINGLE_007cc79c,0,1);
     this_01 = local_8;
-    local_8->field_005D = iVar4;
-    FUN_006bc360(iVar4,local_44c,(int *)0x0);
+    local_8->field_005D = puVar5;
+    FUN_006bc360(puVar5,local_44c,(int *)0x0);
     *(undefined4 *)(DAT_0081176c + 0x140) = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)(DAT_0081176c + 0x144));
-    puVar6 = (undefined4 *)&this_01->field_0x61;
+    puVar7 = (undefined4 *)&this_01->field_0x61;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
     }
     this_01->field_0071 = 0x13;
     this_01->field_0075 = this_01->field_0008;
@@ -72,9 +73,9 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x31,0,iVar4,&DAT_007a4ccc,
+  iVar6 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x31,0,iVar4,&DAT_007a4ccc,
                              s_MTestTy__InitMTest_007cdce4);
-  if (iVar5 != 0) {
+  if (iVar6 != 0) {
     pcVar3 = (code *)swi(3);
     (*pcVar3)();
     return;

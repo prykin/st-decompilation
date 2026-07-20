@@ -21,7 +21,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,char *param_1,undefined4 param_
   errorCode = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    thunk_FUN_005411a0((int)local_8,param_1,s____s__007c221c);
+    thunk_FUN_005411a0(local_8,param_1,s____s__007c221c);
     OutText(local_c,(int *)&local_8,param_2);
     g_currentExceptionFrame = pIVar3;
     return;

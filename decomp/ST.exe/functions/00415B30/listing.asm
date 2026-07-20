@@ -1,4 +1,4 @@
-FUN_00415b30:
+STJellyGunC::sub_00415B30:
 00415B30  55                        PUSH EBP
 00415B31  8B EC                     MOV EBP,ESP
 00415B33  6A FF                     PUSH -0x1

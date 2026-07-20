@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_0065ef70(int param_1)
   undefined3 uStack_b;
   int local_8;
   
-  if (DAT_007fa174 != (STAllPlayersC *)0x0) {
+  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
     iVar5 = *(int *)(param_1 + 0x22f);
     local_1c = 0;
     if (0 < *(int *)(iVar5 + 0xc)) {
@@ -76,8 +76,8 @@ LAB_0065f095:
               local_10 = 0;
               local_14 = 0;
               STAllPlayersC::GetGObjFromBox
-                        (DAT_007fa174,bVar6,*psVar7,psVar7[1],psVar7[2],psVar7[3],psVar7[4],
-                         psVar7[5],(int *)0x0,(int *)0x0,&local_10,&local_14);
+                        (g_sTAllPlayers_007FA174,bVar6,*psVar7,psVar7[1],psVar7[2],psVar7[3],
+                         psVar7[4],psVar7[5],(int *)0x0,(int *)0x0,&local_10,&local_14);
               if ((0 < local_10) || (0 < local_14)) {
                 *(undefined4 *)(local_8 + 0x195) = *(undefined4 *)psVar7;
                 *(undefined4 *)(local_8 + 0x199) = *(undefined4 *)(psVar7 + 2);

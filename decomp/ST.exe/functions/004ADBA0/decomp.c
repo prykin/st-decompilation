@@ -108,7 +108,7 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
       } while ((char)uVar6 != '\0');
       if (iVar5 != -2) {
         *(char *)(local_18 + 0xc + this_00->field_0020) = (char)local_10[1];
-        LoadSequence(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),(byte *)local_1c,
+        LoadSequence(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),(char *)local_1c,
                      *(byte *)(local_18 + 0xc + this_00->field_0020));
         puVar9 = local_10;
         local_20 = *local_10 << 2;

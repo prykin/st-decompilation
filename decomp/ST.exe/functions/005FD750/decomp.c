@@ -30,7 +30,7 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_30[2] = 1;
   local_30[1] = param_1;
   local_30[0] = 0x82;
-  piVar1 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,param_1,param_5,CASE_1);
+  piVar1 = (int *)STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,param_1,param_5,CASE_1);
   if (piVar1 != (int *)0x0) {
     iVar2 = (**(code **)(*piVar1 + 0xf8))();
     if (iVar2 != 0) {

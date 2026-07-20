@@ -8,6 +8,6 @@ int FUN_006a62e0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   if (0x19 < iVar1) {
     return 0xffe;
   }
-  return (int)(short)(&DAT_007ed576)[iVar1 * 4];
+  return (int)(&SHORT_007ed576)[iVar1 * 4];
 }
 

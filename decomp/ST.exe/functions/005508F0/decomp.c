@@ -58,14 +58,14 @@ void __thiscall FUN_005508f0(void *this,int param_1)
     if (uVar4 != 0) {
       pcVar6 = &DAT_00808af6;
       do {
-        pHVar1 = DAT_00807618;
+        pHVar1 = HINSTANCE_00807618;
         if ((*(int *)(pcVar6 + -6) == param_1) && (*pcVar6 == '\x01')) {
           pcVar12 = pcVar6 + -0x46;
           *pcVar6 = '\0';
           uVar3 = FUN_006b0140(0x4273,pHVar1);
           wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,uVar3,pcVar12);
-          if (DAT_008016d8 != (void *)0x0) {
-            thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,8);
+          if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+            thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           }
         }
         uVar9 = uVar9 + 1;
@@ -109,8 +109,8 @@ void __thiscall FUN_005508f0(void *this,int param_1)
         puVar10 = puVar10 + 1;
       }
       DAT_00808aaf = DAT_00808aaf - 1;
-      if (DAT_008016e4 != (void *)0x0) {
-        thunk_FUN_0053a540(DAT_008016e4);
+      if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
+        thunk_FUN_0053a540(g_playPanel_008016E4);
       }
     }
   }

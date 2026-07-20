@@ -22,7 +22,7 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode == 0) {
     if (DAT_0080877e != '\0') {
-      FUN_006b7070(DAT_00811764);
+      FUN_006b7070(g_int_00811764);
     }
     pSVar2 = local_8;
     thunk_FUN_005b6350(local_8,0x6948,0,0);

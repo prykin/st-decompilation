@@ -87,12 +87,12 @@ int __fastcall FUN_0060c320(void *param_1)
     local_44 = 0;
   }
   local_6c = iVar15 + 1 + local_6c;
-  if (DAT_007fb242 < local_6c) {
-    local_6c = (int)DAT_007fb242;
+  if (SHORT_007fb242 < local_6c) {
+    local_6c = (int)SHORT_007fb242;
   }
   local_5c = iVar15 + 1 + local_5c;
-  if (DAT_007fb240 < local_5c) {
-    local_5c = (int)DAT_007fb240;
+  if (SHORT_007fb240 < local_5c) {
+    local_5c = (int)SHORT_007fb240;
   }
   local_8 = 0;
   ExceptionList = &local_14;
@@ -118,16 +118,16 @@ int __fastcall FUN_0060c320(void *param_1)
             iVar17 = local_3c;
             if ((&DAT_007abc64)[local_64 + local_58 * 0xf] != '\0') {
               sVar20 = (short)iVar15;
-              if (((((sVar20 < 0) || (DAT_007fb240 <= sVar20)) ||
+              if (((((sVar20 < 0) || (SHORT_007fb240 <= sVar20)) ||
                    (sVar14 = (short)iVar18, sVar14 < 0)) ||
-                  ((DAT_007fb242 <= sVar14 || (sVar16 = (short)local_3c, sVar16 < 0)))) ||
-                 (DAT_007fb244 <= sVar16)) {
+                  ((SHORT_007fb242 <= sVar14 || (sVar16 = (short)local_3c, sVar16 < 0)))) ||
+                 (SHORT_007fb244 <= sVar16)) {
                 piVar19 = (int *)0x0;
               }
               else {
                 piVar19 = *(int **)(DAT_007fb248 +
-                                   ((int)DAT_007fb246 * (int)sVar16 +
-                                    (int)DAT_007fb240 * (int)sVar14 + (int)sVar20) * 8);
+                                   ((int)SHORT_007fb246 * (int)sVar16 +
+                                    (int)SHORT_007fb240 * (int)sVar14 + (int)sVar20) * 8);
               }
               if (((piVar19 != (int *)0x0) &&
                   (iVar12 = (**(code **)(*piVar19 + 0xf0))(), iVar18 = local_40, iVar12 != 0)) &&
@@ -265,7 +265,7 @@ LAB_0060c5f5:
           iVar15 = iVar15 - iVar17;
         }
         puVar1 = *(undefined4 **)(local_68 + local_58 * 0xc);
-        thunk_FUN_00416270(puVar1,local_54,local_80,local_28);
+        thunk_FUN_00416270(puVar1,local_54,(int *)local_80,(int *)local_28);
         thunk_FUN_0061f5c0(*(undefined4 *)((int)param_1 + 0x1d9),
                            (short)*(undefined4 *)((int)param_1 + 0x1e9) + 100,
                            (short)*(undefined4 *)((int)param_1 + 0x1ed) + 100,

@@ -5,7 +5,7 @@ undefined4 * __fastcall FUN_00647ad0(undefined4 *param_1)
   int iVar1;
   undefined4 *puVar2;
   
-  FUN_006e60e0(param_1);
+  STGroupBoatC::sub_006E60E0((STGroupBoatC *)param_1);
   thunk_FUN_0064cc90(param_1 + 7);
   *param_1 = &PTR_LAB_0079d658;
   param_1[7] = &PTR_thunk_FUN_00647b60_0079d618;

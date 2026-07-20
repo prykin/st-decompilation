@@ -1,5 +1,8 @@
 
-undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD param_2)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 007503AA -> EXTERNAL:0000006D @ 00750436 */
+
+undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD dwMilliseconds)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
@@ -30,7 +33,7 @@ undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD param_2)
        (iVar1 = FUN_0074fea4(this,*(uint *)(iVar4 + 0x18),*(int *)(iVar4 + 0x1c),
                              *(int *)(iVar4 + 0x30)), iVar1 != 0)) break;
     LeaveCriticalSection(lpCriticalSection);
-    DVar2 = WaitForSingleObject(*(HANDLE *)((int)this + 0x50),param_2);
+    DVar2 = WaitForSingleObject(*(HANDLE *)((int)this + 0x50),dwMilliseconds);
     if (DVar2 != 0) {
       return 0x80004004;
     }

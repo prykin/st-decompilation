@@ -1,19 +1,23 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::GetCamPoint */
+   STAllPlayersC::GetCamPoint
+   
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 0043AE40 -> 0043AAF0 @ 0043AFDF | 0043AE40 -> 0043AAF0 @ 0043B3A5 | 0043AE40 ->
+   0043AAF0 @ 0043B82D | 0043AE40 -> 0043AAF0 @ 0043BAA0 */
 
 undefined4
 STAllPlayersC::GetCamPoint
           (int param_1,uint param_2,int param_3,uint param_4,int *param_5,int *param_6,int *param_7,
-          undefined4 *param_8)
+          uint *param_8)
 
 {
   int iVar1;
   code *pcVar2;
   int iVar3;
   undefined4 uVar4;
-  void *pvVar5;
+  STFishC *pSVar5;
   ushort uVar6;
   int iVar7;
   int iVar8;
@@ -29,7 +33,7 @@ STAllPlayersC::GetCamPoint
   iVar8 = 0;
   local_14 = 10000;
   if ((((param_5 == (int *)0x0) && (param_6 == (int *)0x0)) && (param_7 == (int *)0x0)) &&
-     (param_8 == (undefined4 *)0x0)) {
+     (param_8 == (uint *)0x0)) {
     return 0xffffffff;
   }
   if (param_1 < 0x19b) {
@@ -44,9 +48,10 @@ STAllPlayersC::GetCamPoint
           FUN_006acc70(param_3,local_c,&local_10);
           if ((short)local_10 != -1) {
             uVar6 = uVar6 + 1;
-            pvVar5 = (void *)GetObjPtr(DAT_007fa174,param_2,local_10,CASE_1);
-            thunk_FUN_004162b0(pvVar5,(undefined2 *)&param_1,(undefined2 *)&local_8,
-                               (undefined2 *)((int)&param_4 + 2));
+            pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,local_10,CASE_1);
+            STFishC::sub_004162B0
+                      (pSVar5,(undefined2 *)&param_1,(undefined2 *)&local_8,
+                       (undefined2 *)((int)&param_4 + 2));
             iVar7 = iVar7 + param_1;
             iVar8 = iVar8 + local_8;
           }
@@ -57,9 +62,10 @@ STAllPlayersC::GetCamPoint
           do {
             FUN_006acc70(param_3,local_c,&local_10);
             if ((short)local_10 != -1) {
-              pvVar5 = (void *)GetObjPtr(DAT_007fa174,param_2,local_10,CASE_1);
-              thunk_FUN_004162b0(pvVar5,(undefined2 *)&param_1,(undefined2 *)&local_8,
-                                 (undefined2 *)((int)&param_4 + 2));
+              pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,local_10,CASE_1);
+              STFishC::sub_004162B0
+                        (pSVar5,(undefined2 *)&param_1,(undefined2 *)&local_8,
+                         (undefined2 *)((int)&param_4 + 2));
               iVar3 = FUN_006acf90((int)(short)param_1,(int)(short)local_8,
                                    (int)(short)((int)(short)iVar7 / (int)(uint)uVar6),
                                    (int)(short)((int)(short)iVar8 / (int)(uint)uVar6));
@@ -75,8 +81,8 @@ STAllPlayersC::GetCamPoint
                   *param_7 = (int)param_4._2_2_;
                 }
                 local_14 = iVar3;
-                if (param_8 != (undefined4 *)0x0) {
-                  *param_8 = *(undefined4 *)((int)pvVar5 + 0x1ed);
+                if (param_8 != (uint *)0x0) {
+                  *param_8 = *(uint *)&pSVar5->field_0x1ed;
                 }
               }
             }
@@ -115,9 +121,10 @@ LAB_0043acdb:
     if (param_1 != 0x1b8) goto LAB_0043acdb;
     SVar10 = CASE_6;
   }
-  pvVar5 = (void *)GetObjPtr(DAT_007fa174,param_2,param_4,SVar10);
-  thunk_FUN_004162b0(pvVar5,(undefined2 *)&param_1,(undefined2 *)&local_8,
-                     (undefined2 *)((int)&param_4 + 2));
+  pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,param_4,SVar10);
+  STFishC::sub_004162B0
+            (pSVar5,(undefined2 *)&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2))
+  ;
   if (param_5 != (int *)0x0) {
     *param_5 = (int)(short)param_1;
   }
@@ -127,8 +134,8 @@ LAB_0043acdb:
   if (param_7 != (int *)0x0) {
     *param_7 = (int)param_4._2_2_;
   }
-  if (param_8 != (undefined4 *)0x0) {
-    *param_8 = *(undefined4 *)((int)pvVar5 + 0x1ed);
+  if (param_8 != (uint *)0x0) {
+    *param_8 = *(uint *)&pSVar5->field_0x1ed;
   }
   return 0;
 }

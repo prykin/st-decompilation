@@ -51,16 +51,16 @@ int * __fastcall FUN_00586320(int param_1)
   *(undefined4 *)(param_1 + 0x231) = 1;
   iVar9 = iVar13 + 5;
   local_40 = iVar13 + -5;
-  if (DAT_007fb240 <= iVar9) {
-    iVar9 = DAT_007fb240 + -1;
+  if (SHORT_007fb240 <= iVar9) {
+    iVar9 = SHORT_007fb240 + -1;
   }
   if (local_40 < 0) {
     local_40 = 0;
   }
   iVar10 = local_14 + 5;
   local_44 = local_14 + -5;
-  if (DAT_007fb242 <= iVar10) {
-    iVar10 = DAT_007fb242 + -1;
+  if (SHORT_007fb242 <= iVar10) {
+    iVar10 = SHORT_007fb242 + -1;
   }
   if (local_44 < 0) {
     local_44 = 0;
@@ -70,13 +70,13 @@ int * __fastcall FUN_00586320(int param_1)
     local_1c = 0;
     do {
       sVar12 = (short)iVar13;
-      if ((((((-1 < sVar12) && (sVar12 < DAT_007fb240)) &&
+      if ((((((-1 < sVar12) && (sVar12 < SHORT_007fb240)) &&
             ((-1 < (short)local_14 &&
-             (((short)local_14 < DAT_007fb242 && (sVar11 = (short)local_1c, -1 < sVar11)))))) &&
-           (sVar11 < DAT_007fb244)) &&
+             (((short)local_14 < SHORT_007fb242 && (sVar11 = (short)local_1c, -1 < sVar11)))))) &&
+           (sVar11 < SHORT_007fb244)) &&
           (((piVar4 = *(int **)(DAT_007fb248 +
-                               ((int)(short)local_14 * (int)DAT_007fb240 +
-                                (int)sVar11 * (int)DAT_007fb246 + (int)sVar12) * 8),
+                               ((int)(short)local_14 * (int)SHORT_007fb240 +
+                                (int)sVar11 * (int)SHORT_007fb246 + (int)sVar12) * 8),
             piVar4 != (int *)0x0 &&
             (((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
              (iVar7 = (**(code **)(*piVar4 + 0xf0))(), iVar7 != 0)))) && ((uint)piVar4[9] < 8)))) &&
@@ -169,13 +169,14 @@ LAB_005866e6:
 LAB_00586713:
         if ((((((local_18 <= iVar9) && (local_c <= iVar10)) && (local_40 <= local_18)) &&
              (((local_44 <= local_c && (sVar12 = (short)local_18, -1 < sVar12)) &&
-              ((sVar12 < DAT_007fb240 &&
-               ((sVar11 = (short)local_c, -1 < sVar11 && (sVar11 < DAT_007fb242)))))))) &&
+              ((sVar12 < SHORT_007fb240 &&
+               ((sVar11 = (short)local_c, -1 < sVar11 && (sVar11 < SHORT_007fb242)))))))) &&
             (((sVar8 = (short)local_1c, -1 < sVar8 &&
-              ((sVar8 < DAT_007fb244 &&
+              ((sVar8 < SHORT_007fb244 &&
                (piVar4 = *(int **)(DAT_007fb248 +
-                                  ((int)sVar8 * (int)DAT_007fb246 + (int)DAT_007fb240 * (int)sVar11
-                                  + (int)sVar12) * 8), piVar4 != (int *)0x0)))) &&
+                                  ((int)sVar8 * (int)SHORT_007fb246 +
+                                   (int)SHORT_007fb240 * (int)sVar11 + (int)sVar12) * 8),
+               piVar4 != (int *)0x0)))) &&
              (((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
               ((iVar7 = (**(code **)(*piVar4 + 0xf0))(), iVar7 != 0 && ((uint)piVar4[9] < 8))))))))
            && ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8)))) {

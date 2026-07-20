@@ -130,13 +130,13 @@ LAB_00613c8b:
     iVar6 = *(int *)((int)this + 0x2dd) + iVar8 * 0x1c;
     if (*(int *)(*(int *)((int)this + 0x2dd) + 0x18 + iVar8 * 0x1c) != 8) {
       *(int *)((int)this + 0x27c) =
-           ((short)(&DAT_007ed570)[*(short *)(iVar6 + 6) * 4] * 10000000) /
+           ((&SHORT_007ed570)[*(short *)(iVar6 + 6) * 4] * 10000000) /
            *(int *)(&DAT_007cfe74 + *(short *)(iVar6 + 6) * 4);
       *(int *)((int)this + 0x280) =
-           ((short)(&DAT_007ed572)[*(short *)(iVar6 + 6) * 4] * 10000000) /
+           ((&SHORT_007ed572)[*(short *)(iVar6 + 6) * 4] * 10000000) /
            *(int *)(&DAT_007cfe74 + *(short *)(iVar6 + 6) * 4);
       *(int *)((int)this + 0x284) =
-           ((short)(&DAT_007ed574)[*(short *)(iVar6 + 6) * 4] * 10000000) /
+           ((&SHORT_007ed574)[*(short *)(iVar6 + 6) * 4] * 10000000) /
            *(int *)(&DAT_007cfe74 + *(short *)(iVar6 + 6) * 4);
     }
   }

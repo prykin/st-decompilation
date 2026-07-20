@@ -61,7 +61,8 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
     else if (uVar7 == 2) {
       puVar3 = *(undefined4 **)(param_1 + 0x14);
       if (puVar3 == (undefined4 *)0x0) {
-        RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_boss_cpp_007d2750,0x61);
+        RaiseInternalException
+                  (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_boss_cpp_007d2750,0x61);
       }
       InitData(this_00,puVar3);
       DAT_008117bc = this_00;
@@ -80,7 +81,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
         local_10->field_0629 = uVar6;
       }
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_0x1c,(STMessage *)param_1);
-      if (DAT_007fa174 != 0) {
+      if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
         cVar9 = '\0';
         pcVar8 = &DAT_008087e9;
         do {

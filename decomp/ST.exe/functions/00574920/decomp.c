@@ -76,7 +76,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
                 ((*(int *)(iVar2 + 0x10) != *piVar10 || (*(int *)(iVar2 + 0x14) != piVar10[1]))));
         local_3c = 1;
         if (piVar10 == (int *)0x0) {
-          FUN_006a5e90(*(undefined4 **)(iVar2 + 0xc));
+          FUN_006a5e90(*(short **)(iVar2 + 0xc));
           puVar3 = (undefined4 *)
                    Library::DKW::LIB::FUN_006aac70
                              ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
@@ -104,7 +104,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
           local_8 = 0xffffffff;
         }
         else {
-          if (*(undefined4 **)(iVar2 + 0xc) != (undefined4 *)0x0) {
+          if (*(short **)(iVar2 + 0xc) != (short *)0x0) {
             *(undefined4 *)(*(int *)((int)param_1 + 0x451) + 4) = 0;
             do {
               iVar7 = *(int *)((int)param_1 + 0x451);
@@ -120,7 +120,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
             } while (*(int *)(iVar2 + 0xc) != piVar10[2]);
             if (piVar10 == (int *)0x0) {
 LAB_00574b14:
-              FUN_006a5e90(*(undefined4 **)(iVar2 + 0xc));
+              FUN_006a5e90(*(short **)(iVar2 + 0xc));
             }
           }
           *(int *)(iVar2 + 0xc) = piVar10[2];
@@ -151,7 +151,7 @@ LAB_00574b4a:
                 } while (*(int *)(iVar2 + 0xc) != *(int *)(iVar4 + 8));
                 if (iVar4 == 0) {
 LAB_00574bcc:
-                  FUN_006a5e90(*(undefined4 **)(iVar2 + 0xc));
+                  FUN_006a5e90(*(short **)(iVar2 + 0xc));
                 }
               }
               puVar5 = (undefined4 *)

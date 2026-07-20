@@ -15,7 +15,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   int local_18;
   int local_14;
   ushort *local_10;
-  byte *local_c;
+  char *local_c;
   uint local_8;
   
   local_10 = (ushort *)0x0;

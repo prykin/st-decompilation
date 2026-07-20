@@ -1,6 +1,16 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE
+   
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE
+   
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE */
+
 void __thiscall
-FUN_004dcaa0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
+FUN_004dcaa0(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint *param_3,
+            uint *param_4)
 
 {
   int iVar1;
@@ -22,12 +32,10 @@ FUN_004dcaa0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,undef
       return;
     }
   }
-  *param_3 = *(undefined4 *)
-              ((&PTR_DAT_007b5170)[iVar1] +
-              (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
-  *param_4 = *(undefined4 *)
-              ((&PTR_DAT_007b5170)[iVar1] +
-              (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+  *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+  *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
   return;
 }
 

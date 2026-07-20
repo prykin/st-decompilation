@@ -17,7 +17,8 @@ undefined4 __fastcall FUN_0074a6cb(void *param_1)
       FUN_0074f107(*(int **)((int)param_1 + 0x50));
     }
     *(undefined4 *)((int)param_1 + 0x74) = 1;
-    uVar1 = FUN_00747406(param_1,1,0,-(uint)(param_1 != (void *)0x0) & (int)param_1 + 0xcU);
+    uVar1 = FUN_00747406(param_1,1,(int *)0x0,-(uint)(param_1 != (void *)0x0) & (int)param_1 + 0xcU)
+    ;
     LeaveCriticalSection(lpCriticalSection);
   }
   return uVar1;

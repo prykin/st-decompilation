@@ -13,7 +13,7 @@ void __fastcall FUN_004ad310(int param_1)
   }
   FUN_006e8ba0(*(void **)(param_1 + 0x3c),*(uint *)(param_1 + 0x18));
   if (*(int *)(param_1 + 0x20) != 0) {
-    FUN_006ab060((undefined4 *)(param_1 + 0x20));
+    FUN_006ab060((LPVOID *)(param_1 + 0x20));
   }
   return;
 }

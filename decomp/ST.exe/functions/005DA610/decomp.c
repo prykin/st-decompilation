@@ -2,22 +2,24 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C1E8 (store 005DA668)
    Evidence: final_vptr=0079C1E8; returns_this=true; calls_before=7; field_writes_after=31;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 005DA610 returns StartSystemTy::StartSystemTy this @ 005DA74D */
 
-undefined4 * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefined4 param_1)
+StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefined4 param_1)
 
 {
   int iVar1;
-  undefined4 *unaff_EDI;
   undefined4 *puVar2;
   
   SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,0x200);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_02F8,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_038D,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_041E,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_04AF,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_055C,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_05ED,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_02F8);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_038D);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_041E);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_04AF);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_055C);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_05ED);
   this->vtable = &StartSystemTyVTable;
   DAT_0081176c = this;
   this->field_0028 = DAT_00807332;
@@ -62,6 +64,6 @@ undefined4 * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefin
   this->field_06B2 = 0;
   this->field_06AE = 0;
   this->field_069E = 0;
-  return &this->vtable;
+  return this;
 }
 

@@ -31,7 +31,8 @@ undefined4 __thiscall FUN_004d0a80(void *this,int param_1,int param_2,int param_
                             (short)piVar1[iVar4 * 3 + 2],0,(int)this);
     if (exceptionCode != 0) {
       RaiseInternalException
-                (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x305);
+                (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c
+                 ,0x305);
     }
     if (iVar4 < *(int *)((int)this + 0x245) + -1) {
       puVar5 = (undefined4 *)(*(int *)((int)this + 0x24d) + (iVar4 * 3 + 3) * 4);

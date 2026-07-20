@@ -25,7 +25,8 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,undefined4 *param_3,char param
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)(param_3 + 6) != '\x02')) {
-      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x10b);
+      RaiseInternalException
+                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x10b);
     }
     local_c = EventDataPack(*(undefined4 **)((int)param_3 + 0x106),&local_14);
     local_8 = (byte *)PlrDataPack(param_3,local_c,local_14,&local_10);

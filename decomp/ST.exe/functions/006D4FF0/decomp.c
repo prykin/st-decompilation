@@ -4,7 +4,8 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
 
 {
   FUN_0074abc4(this,(undefined4 *)&DAT_0079dad0,param_1,param_2);
-  FUN_006d5720((void *)((int)this + 0x150),0,(int)this,(int)this + 0x7c,param_3,u_Input_007ee27c);
+  FUN_006d5720((void *)((int)this + 0x150),0,(int)this,(int)this + 0x7c,param_3,
+               (char *)u_Input_007ee27c);
   FUN_0074b91d((undefined4 *)((int)this + 0x240));
   *(int *)((int)this + 0x288) = param_4;
   FUN_006d5cd0((void *)((int)this + 0x294),this,0,param_3);

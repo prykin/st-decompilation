@@ -46,7 +46,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
       }
     }
     if (pHVar3->field_019C != 0) {
-      FUN_006e56b0((void *)pHVar3->field_000C,pHVar3->field_019C);
+      StartSystemTy::sub_006E56B0(pHVar3->field_000C,pHVar3->field_019C);
     }
     thunk_FUN_00512be0((int)pHVar3->field_01D3);
     g_currentExceptionFrame = local_4c.previous;

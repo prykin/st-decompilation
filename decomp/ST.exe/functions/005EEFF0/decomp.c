@@ -6,13 +6,13 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
 {
   char cVar1;
   short sVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   int iVar4;
   int iVar5;
   int local_c;
   int local_8;
   
-  pvVar3 = DAT_00802a88;
+  pVVar3 = g_visibleClass_00802A88;
   if (param_1 == 0) {
     if (*(int *)((int)this + 0x2d6) < 0) {
       thunk_FUN_005ec9f0(0);
@@ -20,11 +20,11 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
     else {
       thunk_FUN_005ef5f0((int)this);
     }
-    pvVar3 = DAT_00802a88;
+    pVVar3 = g_visibleClass_00802A88;
     if (*(char *)((int)this + 0x2de) == '\0') {
       return;
     }
-    if (DAT_00802a88 == (void *)0x0) {
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return;
     }
     iVar5 = *(int *)((int)this + 0x27f);
@@ -57,17 +57,15 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
       iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
                           (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-         (thunk_FUN_00558c00(DAT_00802a88,
-                             *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar4,
-                             iVar5,&local_8,&local_c), param_1 < 0)) ||
+    if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5
+                             ,&local_8,&local_c), param_1 < 0)) ||
         (((4 < param_1 || (local_8 < 0)) ||
-         ((*(int *)((int)pvVar3 + 0x30) <= local_8 ||
+         (((int)pVVar3->field_0030 <= local_8 ||
           ((local_c = (&DAT_0079aed0)[param_1] + local_c, local_c < 0 ||
-           (*(int *)((int)pvVar3 + 0x34) <= local_c)))))))) ||
-       ((*(int *)((int)pvVar3 + 0x4c) == 0 ||
-        (*(char *)(local_c * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_8)
-         != '\0')))) {
+           ((int)pVVar3->field_0034 <= local_c)))))))) ||
+       ((pVVar3->field_004C == 0 ||
+        (*(char *)(local_c * pVVar3->field_0030 + pVVar3->field_004C + local_8) != '\0')))) {
       (**(code **)(*(int *)this + 0xd8))();
       thunk_FUN_004ad3c0((void *)((int)this + 0x1d5),
                          (float)*(int *)((int)this + 0x2be) * _DAT_007904f8 * _DAT_007904f0,
@@ -87,7 +85,7 @@ joined_r0x005ef316:
     cVar1 = *(char *)((int)this + 0x2b9);
   }
   else {
-    if (DAT_00802a88 == (void *)0x0) {
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return;
     }
     if (*(int *)((int)this + 0x2d6) < 0) {
@@ -123,16 +121,14 @@ joined_r0x005ef316:
       iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
                           (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
     }
-    if (((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-           (thunk_FUN_00558c00(DAT_00802a88,
-                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar4
-                               ,iVar5,&local_c,&local_8), param_1 < 0)) ||
+    if (((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,
+                               iVar5,&local_c,&local_8), param_1 < 0)) ||
           ((4 < param_1 || (local_c < 0)))) ||
-         ((*(int *)((int)pvVar3 + 0x30) <= local_c ||
+         (((int)pVVar3->field_0030 <= local_c ||
           ((local_8 = (&DAT_0079aed0)[param_1] + local_8, local_8 < 0 ||
-           (*(int *)((int)pvVar3 + 0x34) <= local_8)))))) || (*(int *)((int)pvVar3 + 0x4c) == 0)) ||
-       (*(char *)(local_8 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_c)
-        != '\0')) {
+           ((int)pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == 0)) ||
+       (*(char *)(local_8 * pVVar3->field_0030 + pVVar3->field_004C + local_c) != '\0')) {
       (**(code **)(*(int *)this + 0xd8))();
       cVar1 = *(char *)((int)this + 0x2b9);
       goto joined_r0x005ef316;

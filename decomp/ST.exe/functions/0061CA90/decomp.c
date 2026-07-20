@@ -77,8 +77,8 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
   if (((((-1 < iVar17) && (-1 < iVar13)) && (-1 < iVar10)) &&
-      ((iVar19 = (int)DAT_007fb240, iVar17 < iVar19 && (iVar15 = (int)DAT_007fb242, iVar13 < iVar15)
-       ))) && (iVar10 < 5)) {
+      ((iVar19 = (int)SHORT_007fb240, iVar17 < iVar19 &&
+       (iVar15 = (int)SHORT_007fb242, iVar13 < iVar15)))) && (iVar10 < 5)) {
     local_20 = iVar13 + -1;
     if (iVar13 + -1 < 0) {
       local_20 = 0;
@@ -102,7 +102,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
     local_14 = 0;
     iVar17 = local_18;
     iVar10 = local_2c;
-    sVar16 = DAT_007fb240;
+    sVar16 = SHORT_007fb240;
     do {
       local_10 = local_20;
       local_28 = iVar17;
@@ -116,14 +116,15 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
               sVar9 = (short)local_28;
               if ((((-1 < sVar9) && (sVar9 < sVar16)) &&
                   ((sVar12 = (short)local_10, -1 < sVar12 &&
-                   (((sVar12 < DAT_007fb242 && (sVar14 = (short)iVar19, -1 < sVar14)) &&
-                    (sVar14 < DAT_007fb244)))))) &&
+                   (((sVar12 < SHORT_007fb242 && (sVar14 = (short)iVar19, -1 < sVar14)) &&
+                    (sVar14 < SHORT_007fb244)))))) &&
                  (((this_00 = *(int **)(DAT_007fb248 +
-                                       ((int)sVar12 * (int)sVar16 + (int)sVar14 * (int)DAT_007fb246
-                                       + (int)sVar9) * 8), this_00 != (int *)0x0 &&
-                   (iVar17 = (**(code **)(*this_00 + 0xf0))(), iVar17 != 0)) &&
-                  (((uint)this_00[9] < 8 &&
-                   ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))))) {
+                                       ((int)sVar12 * (int)sVar16 +
+                                        (int)sVar14 * (int)SHORT_007fb246 + (int)sVar9) * 8),
+                   this_00 != (int *)0x0 && (iVar17 = (**(code **)(*this_00 + 0xf0))(), iVar17 != 0)
+                   ) && (((uint)this_00[9] < 8 &&
+                         ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))))
+                 ) {
                 bVar1 = *(byte *)(this_00 + 9);
                 bVar2 = *(byte *)((int)local_44 + 0x51);
                 _local_30 = CONCAT31(uStack_2f,bVar1);
@@ -163,7 +164,7 @@ LAB_0061cd61:
                            (&DAT_008087ea)[(uint)bVar1 * 0x51];
                 }
                 if ((bVar21) && (iVar17 = (**(code **)(*this_00 + 0xf8))(), iVar17 != 0)) {
-                  thunk_FUN_00416270(this_00,&local_6,(undefined2 *)((int)&param_3 + 2),&local_22);
+                  thunk_FUN_00416270(this_00,&local_6,(int *)((int)&param_3 + 2),(int *)&local_22);
                   uVar4 = *(undefined2 *)((int)this_00 + 0x32);
                   piVar20 = piVar18;
                   for (iVar17 = 0xb; iVar17 != 0; iVar17 = iVar17 + -1) {
@@ -207,7 +208,7 @@ LAB_0061cd61:
               iVar19 = local_14;
               iVar13 = local_c;
               iVar10 = local_2c;
-              sVar16 = DAT_007fb240;
+              sVar16 = SHORT_007fb240;
             } while (local_28 < local_1c);
           }
           local_10 = local_10 + 1;

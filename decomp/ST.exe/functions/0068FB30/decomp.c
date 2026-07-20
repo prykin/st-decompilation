@@ -40,7 +40,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
     thunk_FUN_006902b0(this_00,-0x8000,local_3c);
     this_01 = (void *)thunk_FUN_0068e290(this_00,param_1);
     if (this_01 != (void *)0x0) {
-      thunk_FUN_0065d940(this_01,(int)local_2b,0);
+      thunk_FUN_0065d940(this_01,local_2b,0);
     }
     g_currentExceptionFrame = local_80.previous;
     return;

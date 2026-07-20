@@ -78,12 +78,16 @@ LAB_0042bf8b:
       uVar3 = (*pcVar1)();
       return uVar3;
     }
-    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c);
+    RaiseInternalException
+              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x23c);
   }
   piVar4 = (int *)(param_3 * 0x10 + local_14);
   if (((*piVar4 == param_4) && (piVar4[1] == (int)(char)param_5)) &&
      ((short)piVar4[2] == (short)param_6)) {
-    RaiseInternalException(-0x5001ffff,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23f);
+    RaiseInternalException
+              (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x23f);
   }
   *piVar4 = param_4;
   piVar4[1] = (int)(char)param_5;
@@ -119,7 +123,9 @@ LAB_0042bf8b:
     uVar3 = (*pcVar1)();
     return uVar3;
   }
-  RaiseInternalException(-0x5001ffff,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a);
+  RaiseInternalException
+            (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a)
+  ;
 cf_common_exit_0042C072:
   piVar4 = (int *)GetObjPtr(local_c,param_5,param_6,local_8);
   (**(code **)(*piVar4 + 0xe8))(1);

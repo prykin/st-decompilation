@@ -44,10 +44,10 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
     uVar10 = 3;
     iVar9 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)FUN_006b0140(0x55f5,DAT_00807618);
+    puVar4 = (uint *)FUN_006b0140(0x55f5,HINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar9,uVar10);
     *param_1 = *param_1 + 0xf;
-    pcVar5 = (char *)FUN_006b0140(param_2,DAT_00807618);
+    pcVar5 = (char *)FUN_006b0140(param_2,HINSTANCE_00807618);
     uVar6 = 0xffffffff;
     do {
       pcVar8 = pcVar5;
@@ -71,8 +71,8 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
       pcVar8 = pcVar8 + 1;
     }
     ccFntTy::FormIndentText
-              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,
-               (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
+              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,s________________007c21d8,
+               (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
     uVar6 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     CheckBkView(this_00,*param_1,uVar6);
     ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,*param_1,0x19c,uVar6 + 2);

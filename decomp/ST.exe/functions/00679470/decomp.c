@@ -38,7 +38,8 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
     return iVar4;
   }
   if (local_8->field_0695 == 0) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_cpp_007d2e4c,0xfd);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_cpp_007d2e4c,0xfd);
   }
   puVar7 = local_3c;
   for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {

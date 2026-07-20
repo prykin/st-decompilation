@@ -107,7 +107,7 @@ switchD_005052d8_default:
     }
 LAB_0050530c:
     local_24 = pcVar9;
-    if (DAT_007fa174 != 0) {
+    if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
       switch(local_28) {
       case 0:
         local_10 = 0xf;

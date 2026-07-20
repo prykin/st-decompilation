@@ -16,14 +16,13 @@ int __thiscall FUN_005fd940(void *this,int param_1)
     do {
       if (iVar3 == param_1) {
         if (*(int *)(iVar4 + 0x4e + *(int *)((int)this + 0x233)) != 0) {
-          FUN_006ab060((undefined4 *)(iVar4 + 0x4e + *(int *)((int)this + 0x233)));
+          FUN_006ab060((LPVOID *)(iVar4 + 0x4e + *(int *)((int)this + 0x233)));
           iVar2 = local_8;
         }
         iVar1 = *(int *)(iVar4 + 0x42 + *(int *)((int)this + 0x233));
         if (iVar1 != 0) {
           thunk_FUN_004ad310(iVar1);
-          Library::MSVCRT::FUN_0072e2b0
-                    (*(undefined4 **)(iVar4 + 0x42 + *(int *)((int)this + 0x233)));
+          Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(iVar4 + 0x42 + *(int *)((int)this + 0x233)));
           *(undefined4 *)(iVar4 + 0x42 + *(int *)((int)this + 0x233)) = 0;
           iVar2 = local_8;
         }

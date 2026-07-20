@@ -23,7 +23,8 @@ undefined4 __fastcall FUN_004ec050(int param_1)
     exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       RaiseInternalException
-                (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_trade_cpp_007c1648,0x11b);
+                (exceptionCode,g_overwriteContext_007ED77C,
+                 s_E____titans_Artem_TLO_trade_cpp_007c1648,0x11b);
     }
     thunk_FUN_004ad5e0(*(int *)(param_1 + 0x5ff));
   }

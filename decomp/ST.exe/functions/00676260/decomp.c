@@ -8,65 +8,66 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
 
 {
   code *pcVar1;
-  uint *puVar2;
-  int iVar3;
-  STGroupC *this;
-  ushort *puVar4;
-  int *piVar5;
-  int iVar6;
+  uint *groupContent;
+  int iVar2;
+  STGroupBoatC *this;
+  ushort *puVar3;
+  int *piVar4;
+  int iVar5;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   uint *local_c;
   int local_8;
   
-  uVar8 = 0;
+  uVar7 = 0;
   local_c = (uint *)0x0;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
-    if (DAT_007fa174 == (STAllPlayersC *)0x0) {
-      this = (STGroupC *)0x0;
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar2 == 0) {
+    if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      this = (STGroupBoatC *)0x0;
     }
     else {
-      this = (STGroupC *)thunk_FUN_0042b760(param_1,0);
+      this = thunk_FUN_0042b760(param_1,0);
     }
-    if (this != (STGroupC *)0x0) {
-      local_c = STGroupC::GetGroupContent(this,(int)unaff_EDI);
+    if (this != (STGroupBoatC *)0x0) {
+      local_c = STGroupC::GetGroupContent((STGroupC *)this,(int)unaff_EDI);
     }
-    puVar2 = local_c;
+    groupContent = local_c;
     if (local_c[3] != 0) {
-      uVar7 = 0;
+      uVar6 = 0;
       if (local_c[3] == 0) {
-        puVar4 = (ushort *)0x0;
+        puVar3 = (ushort *)0x0;
         goto LAB_006762e0;
       }
       do {
-        puVar4 = (ushort *)(puVar2[2] * uVar7 + puVar2[7]);
+        puVar3 = (ushort *)(groupContent[2] * uVar6 + groupContent[7]);
 LAB_006762e0:
-        piVar5 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,param_1,(uint)*puVar4,CASE_1);
-        if (piVar5 != (int *)0x0) {
-          iVar3 = (**(code **)(*piVar5 + 0x2c))();
-          if (iVar3 == 0x78) {
-            iVar3 = *(int *)((int)piVar5 + 0x259);
+        piVar4 = (int *)STAllPlayersC::GetObjPtr
+                                  (g_sTAllPlayers_007FA174,param_1,(uint)*puVar3,CASE_1);
+        if (piVar4 != (int *)0x0) {
+          iVar2 = (**(code **)(*piVar4 + 0x2c))();
+          if (iVar2 == 0x78) {
+            iVar2 = *(int *)((int)piVar4 + 0x259);
           }
           else {
-            iVar3 = 0;
+            iVar2 = 0;
           }
-          if (param_2 == iVar3) {
+          if (param_2 == iVar2) {
             local_8 = local_8 + 1;
           }
         }
-        uVar8 = uVar8 + 1;
-        uVar7 = uVar8 & 0xffff;
-      } while (uVar7 < puVar2[3]);
+        uVar7 = uVar7 + 1;
+        uVar6 = uVar7 & 0xffff;
+      } while (uVar6 < groupContent[3]);
     }
-    if (puVar2 != (uint *)0x0) {
-      FUN_006ae110((byte *)puVar2);
+    if (groupContent != (uint *)0x0) {
+      FUN_006ae110((byte *)groupContent);
     }
     g_currentExceptionFrame = local_50.previous;
     return local_8;
@@ -75,14 +76,14 @@ LAB_006762e0:
   if (local_c != (uint *)0x0) {
     FUN_006ae110((byte *)local_c);
   }
-  iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x13a,0,iVar3,&DAT_007a4ccc,
+  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x13a,0,iVar2,&DAT_007a4ccc,
                              s__GetEmbrTobjGrpExch_007d2db4);
-  if (iVar6 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x13b);
-    return iVar3;
+  if (iVar5 == 0) {
+    RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x13b);
+    return iVar2;
   }
   pcVar1 = (code *)swi(3);
-  iVar3 = (*pcVar1)();
-  return iVar3;
+  iVar2 = (*pcVar1)();
+  return iVar2;
 }
 

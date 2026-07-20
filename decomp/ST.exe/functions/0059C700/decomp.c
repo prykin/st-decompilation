@@ -12,10 +12,10 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
   undefined4 uVar3;
   int iVar4;
   int iVar5;
-  char *pcVar6;
+  char *text;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  ccFntTy **ppcVar7;
+  ccFntTy **ppcVar6;
   ccFntTy *local_8d8 [11];
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -29,11 +29,11 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
-  ppcVar7 = local_8d8;
+  ppcVar6 = local_8d8;
   local_8 = this;
   for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *ppcVar7 = (ccFntTy *)0x0;
-    ppcVar7 = ppcVar7 + 1;
+    *ppcVar6 = (ccFntTy *)0x0;
+    ppcVar6 = ppcVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -42,18 +42,18 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = puVar2;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
+    Library::DKW::TBL::FUN_006b5aa0(puVar2,&DAT_00807e1d);
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AEC = puVar2;
-    pcVar6 = (char *)&DAT_00807e5d;
+    text = (char *)&DAT_00807e5d;
     if (DAT_0080735f == '\0') {
-      pcVar6 = &DAT_008016a0;
+      text = &DAT_008016a0;
     }
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar2,pcVar6);
-    ppcVar7 = local_8d8;
+    Library::DKW::TBL::FUN_006b5aa0(puVar2,text);
+    ppcVar6 = local_8d8;
     for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *ppcVar7 = (ccFntTy *)0x0;
-      ppcVar7 = ppcVar7 + 1;
+      *ppcVar6 = (ccFntTy *)0x0;
+      ppcVar6 = ppcVar6 + 1;
     }
     local_8d8[2] = this_00->field_1A73;
     local_8d8[8] = (ccFntTy *)this_00->field_1AE8;

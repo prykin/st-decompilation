@@ -65,7 +65,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_8c4[3] = 0;
     local_8c4[4] = *(undefined4 *)(local_8->field_067E + 4);
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((int)pcVar1);
+      FUN_00710790((uint *)pcVar1);
     }
     local_8b0 = *(int *)&pcVar1->field_0x8a;
     local_8a8 = (undefined4)(0x49 / (longlong)local_8b0);

@@ -110,7 +110,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             }
             iVar5 = thunk_FUN_004e6a80(*(int *)((int)this + 0x24),iVar6);
             if ((iVar5 == 0) ||
-               (local_54 = '\x01', DAT_007fb244 + -1 <= *(int *)((int)this + 0x5b8))) {
+               (local_54 = '\x01', SHORT_007fb244 + -1 <= *(int *)((int)this + 0x5b8))) {
               local_54 = '\0';
             }
             thunk_FUN_004c7260(this,CASE_1,iVar6,&local_20,&local_18,&local_1c,&local_24);

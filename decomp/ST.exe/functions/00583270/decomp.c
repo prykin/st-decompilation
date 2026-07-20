@@ -32,7 +32,10 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
   undefined4 local_48;
   STSprGameObjC *local_3c;
   undefined4 *local_38;
-  int local_34 [4];
+  LPVOID local_34;
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
   undefined4 local_24;
   undefined4 local_20;
   undefined4 local_1c;
@@ -67,7 +70,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
   if (uVar9 < 0x111) {
     if (uVar9 == 0x110) {
       if ((*(int *)&this_00->field_0x235 != 2) && (*(int *)&this_00->field_0x235 != 4)) {
-        thunk_FUN_00582530(this_00);
+        sub_00582530((STJellyGunC *)this_00);
         puVar11 = &this_00->field_01D5;
         *(undefined4 *)&this_00->field_0x241 = 0xff;
         *(undefined2 *)&this_00->field_0x245 = 0;
@@ -76,9 +79,9 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
         STT3DSprC::StopShow((STT3DSprC *)puVar11,0xe);
         STT3DSprC::StopShow((STT3DSprC *)puVar11,0xc);
         thunk_FUN_004ad5e0((int)puVar11);
-        iVar6 = thunk_FUN_00584380((int *)this_00);
+        iVar6 = sub_00584380((STJellyGunC *)this_00);
         if (iVar6 != 0) {
-          thunk_FUN_00582580(this_00);
+          sub_00582580((STJellyGunC *)this_00);
           g_currentExceptionFrame = local_a0.previous;
           return 0;
         }
@@ -161,11 +164,11 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
               if (iVar6 == 0) {
                 puVar11 = &this_00->field_01D5;
                 iVar6 = STT3DSprC::LoadSequence
-                                  ((STT3DSprC *)puVar11,0xe,DAT_0080676c,(byte *)s_jellygun_007cb3e0
-                                   ,0x1d);
+                                  ((STT3DSprC *)puVar11,0xe,DAT_0080676c,s_jellygun_007cb3e0,0x1d);
                 if (iVar6 != 0) {
                   RaiseInternalException
-                            (-1,DAT_007ed77c,s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x1f9);
+                            (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jelly_cpp_007cb7b0
+                             ,0x1f9);
                 }
                 iVar6 = *(int *)((int)&this_00->field_0259 + 1);
                 if (7 < iVar6) {
@@ -191,11 +194,11 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
                 } while (cVar1 != '\0');
                 (&DAT_007cb3ea)[~uVar9] = (char)iVar6 + '0';
                 iVar6 = STT3DSprC::LoadSequence
-                                  ((STT3DSprC *)puVar11,0xc,piVar14,(byte *)s_jellygun0_007cb3ec,
-                                   0x1d);
+                                  ((STT3DSprC *)puVar11,0xc,piVar14,s_jellygun0_007cb3ec,0x1d);
                 if (iVar6 != 0) {
                   RaiseInternalException
-                            (-1,DAT_007ed77c,s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x204);
+                            (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jelly_cpp_007cb7b0
+                             ,0x204);
                 }
                 thunk_FUN_004ac610(puVar11,'\f');
                 STT3DSprC::StartShow((STT3DSprC *)puVar11,0xc,DAT_00802a38->field_00E4);
@@ -211,8 +214,8 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
                                    (float)*(int *)&this_00->field_0x272 * _DAT_007904f8 *
                                    _DAT_007904f0);
                 *(undefined4 *)&this_00->field_0x235 = 0;
-                thunk_FUN_005844e0(this_00,*(int *)&this_00->field_0x26a,
-                                   *(int *)&this_00->field_0x26e,0x497);
+                sub_005844E0((STJellyGunC *)this_00,*(int *)&this_00->field_0x26a,
+                             *(int *)&this_00->field_0x26e,0x497);
               }
               else {
                 iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jelly_cpp_007cb7b0,499,0,0,
@@ -222,7 +225,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
                   uVar7 = (*pcVar2)();
                   return uVar7;
                 }
-                thunk_FUN_00582580(this_00);
+                sub_00582580((STJellyGunC *)this_00);
               }
             }
             else {
@@ -233,7 +236,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
                 uVar7 = (*pcVar2)();
                 return uVar7;
               }
-              thunk_FUN_00582580(this_00);
+              sub_00582580((STJellyGunC *)this_00);
             }
           }
           else {
@@ -244,7 +247,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
               uVar7 = (*pcVar2)();
               return uVar7;
             }
-            thunk_FUN_00582580(this_00);
+            sub_00582580((STJellyGunC *)this_00);
           }
         }
         else if (local_38[3] == 2) {
@@ -272,29 +275,29 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
           this_00->field_0x250 = *(undefined1 *)((int)local_38 + 0x61);
           this_00->field_0x251 = *(undefined1 *)((int)local_38 + 0x62);
           *(undefined4 *)&this_00->field_0x252 = *(undefined4 *)((int)local_38 + 99);
-          local_34[0] = Library::DKW::LIB::FUN_006aac70(0x44);
-          if (local_34[0] != 0) {
+          local_34 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+          if (local_34 != (LPVOID)0x0) {
             iVar6 = 0;
             do {
               piVar14 = DAT_00806774;
               if (((iVar6 == 8) || (iVar6 == 10)) || (piVar14 = DAT_0080676c, iVar6 != 9)) {
-                *(int **)(local_34[0] + iVar6 * 4) = piVar14;
+                *(int **)((int)local_34 + iVar6 * 4) = piVar14;
               }
               else {
-                *(undefined4 *)(local_34[0] + 0x24) = DAT_00806764;
+                *(undefined4 *)((int)local_34 + 0x24) = DAT_00806764;
               }
               iVar6 = iVar6 + 1;
             } while (iVar6 < 0x11);
-            local_34[1] = 0;
-            local_34[2] = 0;
-            local_34[3] = DAT_008073cc;
+            local_30 = 0;
+            local_2c = 0;
+            local_28 = DAT_008073cc;
             local_24 = 0;
             local_20 = 0;
             local_1c = 0;
             STT3DSprC::RestoreSpr
-                      ((STT3DSprC *)&this_00->field_01D5,local_34,
+                      ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
                        (undefined4 *)((int)puVar11 + 0x6b));
-            FUN_006ab060(local_34);
+            FUN_006ab060(&local_34);
             DumpClassC::WritePtr
                       (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                        *(short *)&this_00->field_0x5f,1,(int)this_00);
@@ -445,7 +448,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
     }
     if (((uVar9 == 0x128) && (*(int *)&this_00->field_0x235 != 2)) &&
        (*(int *)&this_00->field_0x235 != 4)) {
-      thunk_FUN_00582530(this_00);
+      sub_00582530((STJellyGunC *)this_00);
       puVar11 = &this_00->field_01D5;
       *(undefined4 *)&this_00->field_0x241 = 0xff;
       *(undefined2 *)&this_00->field_0x245 = 0;
@@ -455,7 +458,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
       STT3DSprC::StopShow((STT3DSprC *)puVar11,0xc);
       thunk_FUN_004ad5e0((int)puVar11);
       thunk_FUN_004ad430((int)puVar11);
-      thunk_FUN_00582580(this_00);
+      sub_00582580((STJellyGunC *)this_00);
       g_currentExceptionFrame = local_a0.previous;
       return 0;
     }

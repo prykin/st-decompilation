@@ -9,9 +9,9 @@ void FUN_006c2050(void)
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
     FUN_006b9890(&DAT_00854ff4);
-    if (DAT_008568c0 != (HANDLE)0x0) {
-      TerminateThread(DAT_008568c0,0);
-      DAT_008568c0 = (HANDLE)0x0;
+    if (g_hThread_008568C0 != (HANDLE)0x0) {
+      TerminateThread(g_hThread_008568C0,0);
+      g_hThread_008568C0 = (HANDLE)0x0;
     }
     DeleteCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     DeleteCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
@@ -40,7 +40,7 @@ void FUN_006c2050(void)
     (**(code **)(*DAT_008568b4 + 8))(DAT_008568b4);
     DAT_008568b4 = (int *)0x0;
     DAT_00856878 = 0;
-    FUN_006ab060(&DAT_008568b0);
+    FUN_006ab060(&LPVOID_008568b0);
   }
   return;
 }

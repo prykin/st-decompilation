@@ -17,14 +17,14 @@ FUN_00490cd0(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
   if (param_4 < 0) {
     param_4._2_2_ = 0;
   }
-  if ((short)_DAT_007fb240 + -1 < (int)param_3._2_2_) {
-    param_3._2_2_ = (short)_DAT_007fb240 + -1;
+  if ((short)_SHORT_007fb240 + -1 < (int)param_3._2_2_) {
+    param_3._2_2_ = (short)_SHORT_007fb240 + -1;
   }
-  if (DAT_007fb242 + -1 < (int)sVar1) {
-    sVar1 = DAT_007fb242 + -1;
+  if (SHORT_007fb242 + -1 < (int)sVar1) {
+    sVar1 = SHORT_007fb242 + -1;
   }
-  if ((short)_DAT_007fb244 + -1 < (int)param_4._2_2_) {
-    param_4._2_2_ = (short)_DAT_007fb244 + -1;
+  if ((short)_SHORT_007fb244 + -1 < (int)param_4._2_2_) {
+    param_4._2_2_ = (short)_SHORT_007fb244 + -1;
   }
   *(short *)((int)this + 0x475) = param_3._2_2_;
   *(short *)((int)this + 0x477) = sVar1;

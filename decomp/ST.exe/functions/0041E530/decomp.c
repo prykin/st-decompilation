@@ -1,9 +1,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
-   STSprGameObjC::GetMessage */
+   STSprGameObjC::GetMessage
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0044EE30 -> 0041E530 @ 0044EE8A | 004B9FA0 -> 0041E530 @ 004B9FEA | 004D0B90 ->
+   0041E530 @ 004D0BCF | 004D55B0 -> 0041E530 @ 004D55F2 | 00578630 -> 0041E530 @ 00578691 |
+   0057BF60 -> 0041E530 @ 0057BFBF | 0057E0A0 -> 0041E530 @ 0057E0FE | 00583270 -> 0041E530 @
+   005832DB | 005859A0 -> 0041E530 @ 00585A02 | 00588BC0 -> 0041E530 @ 00588C30 | 00589C10 ->
+   0041E530 @ 00589C58 | 0058C760 -> 0041E530 @ 0058C7C2 | 0058D7C0 -> 0041E530 @ 0058D81F |
+   006406D0 -> 0041E530 @ 00640720 */
 
-undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
+undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
 
 {
   char cVar1;
@@ -41,8 +49,8 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     uVar6 = (*pcVar3)();
     return uVar6;
   }
-  STGameObjC::GetMessage((STGameObjC *)local_10,param_1);
-  uVar2 = *(uint *)(param_1 + 0x10);
+  STGameObjC::GetMessage((STGameObjC *)local_10,message);
+  uVar2 = *(uint *)(message + 0x10);
   if (0x113 < uVar2) {
     if (0x4403 < uVar2) {
       if (uVar2 == 0x4404) {
@@ -95,7 +103,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      thunk_FUN_004ad4a0(&this_00->field_01D5,DAT_00806774,(byte *)s_simmsk_007a4f4c);
+      thunk_FUN_004ad4a0(&this_00->field_01D5,DAT_00806774,s_simmsk_007a4f4c);
       thunk_FUN_004ad4f0((int)&this_00->field_01D5);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -168,13 +176,16 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
           iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_01D5,DAT_008073cc,0x78,0x56,
                                   (uint)this_00,0xf0,0xbe,0x11);
           if (iVar4 != 0) {
-            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d2);
+            RaiseInternalException
+                      (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d2)
+            ;
           }
           FUN_006e9210((void *)this_00->field_0211,this_00->field_01ED);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d4);
+        RaiseInternalException
+                  (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d4);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -184,7 +195,8 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d1);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d1);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -193,17 +205,17 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
       return 0;
     }
     thunk_FUN_0041f970((int)this_00);
-    FUN_006ab060((undefined4 *)&this_00->field_0x11d);
-    FUN_006ab060((undefined4 *)&this_00->field_0x121);
-    FUN_006ab060((undefined4 *)&this_00->field_0x125);
-    FUN_006ab060((undefined4 *)&this_00->field_0x129);
+    FUN_006ab060((LPVOID *)&this_00->field_0x11d);
+    FUN_006ab060((LPVOID *)&this_00->field_0x121);
+    FUN_006ab060((LPVOID *)&this_00->field_0x125);
+    FUN_006ab060((LPVOID *)&this_00->field_0x129);
     iVar4 = this_00->field_0020;
     if (iVar4 != 0x14) {
       if (iVar4 == 0x1ae) {
-        FUN_006ab060((undefined4 *)&this_00->field_0x1ad);
-        FUN_006ab060((undefined4 *)&this_00->field_0x1b1);
-        FUN_006ab060((undefined4 *)&this_00->field_0x1c5);
-        FUN_006ab060((undefined4 *)&this_00->field_0x1c9);
+        FUN_006ab060((LPVOID *)&this_00->field_0x1ad);
+        FUN_006ab060((LPVOID *)&this_00->field_0x1b1);
+        FUN_006ab060((LPVOID *)&this_00->field_0x1c5);
+        FUN_006ab060((LPVOID *)&this_00->field_0x1c9);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -259,10 +271,10 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
       this_00->field_0141 = 0;
       this_00->field_0145 = 0;
       this_00->field_0149 = 0;
-      FUN_006ab060((undefined4 *)&this_00->field_0x185);
-      FUN_006ab060((undefined4 *)&this_00->field_0x189);
-      FUN_006ab060((undefined4 *)&this_00->field_0x18d);
-      FUN_006ab060((undefined4 *)&this_00->field_0x191);
+      FUN_006ab060((LPVOID *)&this_00->field_0x185);
+      FUN_006ab060((LPVOID *)&this_00->field_0x189);
+      FUN_006ab060((LPVOID *)&this_00->field_0x18d);
+      FUN_006ab060((LPVOID *)&this_00->field_0x191);
       if ((byte *)this_00->field_01A1 != (byte *)0x0) {
         FUN_006ae110((byte *)this_00->field_01A1);
         this_00->field_01A1 = 0;
@@ -271,10 +283,10 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
         FUN_006ae110((byte *)this_00->field_019D);
         this_00->field_019D = 0;
       }
-      FUN_006ab060((undefined4 *)&this_00->field_0x1a5);
-      FUN_006ab060((undefined4 *)&this_00->field_0x1a9);
-      FUN_006ab060((undefined4 *)&this_00->field_0x1b5);
-      FUN_006ab060((undefined4 *)&this_00->field_0x1b9);
+      FUN_006ab060((LPVOID *)&this_00->field_0x1a5);
+      FUN_006ab060((LPVOID *)&this_00->field_0x1a9);
+      FUN_006ab060((LPVOID *)&this_00->field_0x1b5);
+      FUN_006ab060((LPVOID *)&this_00->field_0x1b9);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -318,12 +330,12 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     *(undefined4 *)&this_00->field_0x165 = 0;
     *(undefined4 *)&this_00->field_0x169 = 0;
     *(undefined4 *)&this_00->field_0x16d = 0;
-    FUN_006ab060((undefined4 *)&this_00->field_0x195);
-    FUN_006ab060((undefined4 *)&this_00->field_0x199);
-    FUN_006ab060((undefined4 *)&this_00->field_0x1ad);
-    FUN_006ab060((undefined4 *)&this_00->field_0x1b1);
-    FUN_006ab060((undefined4 *)&this_00->field_0x1bd);
-    FUN_006ab060((undefined4 *)&this_00->field_0x1c1);
+    FUN_006ab060((LPVOID *)&this_00->field_0x195);
+    FUN_006ab060((LPVOID *)&this_00->field_0x199);
+    FUN_006ab060((LPVOID *)&this_00->field_0x1ad);
+    FUN_006ab060((LPVOID *)&this_00->field_0x1b1);
+    FUN_006ab060((LPVOID *)&this_00->field_0x1bd);
+    FUN_006ab060((LPVOID *)&this_00->field_0x1c1);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

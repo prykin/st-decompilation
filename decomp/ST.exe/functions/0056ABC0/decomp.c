@@ -13,13 +13,13 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
   
   if (param_1 == (char *)0x0) {
     if (*(char *)((int)this + 0x1474) != '\0') {
-      if (DAT_00802a88 != (void *)0x0) {
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         bVar5 = 0;
         puVar6 = (undefined *)0x0;
         pcVar7 = (char *)((int)this + 0x11c9);
         do {
           if ((*pcVar7 != -1) && (bVar5 != *(byte *)((int)this + 0x112d))) {
-            thunk_FUN_0055b7f0(DAT_00802a88,0,puVar6);
+            thunk_FUN_0055b7f0(g_visibleClass_00802A88,0,puVar6);
           }
           bVar5 = bVar5 + 1;
           puVar6 = puVar6 + 1;
@@ -30,7 +30,8 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
     }
   }
   else if ((*(char *)((int)this + 0x1474) == '\0') &&
-          (*(undefined1 *)((int)this + 0x1474) = 1, DAT_00802a88 != (void *)0x0)) {
+          (*(undefined1 *)((int)this + 0x1474) = 1, g_visibleClass_00802A88 != (VisibleClassTy *)0x0
+          )) {
     param_1 = (char *)((int)this + 0x11c9);
     bVar4 = 0;
     puVar6 = (undefined *)0x0;
@@ -72,7 +73,7 @@ LAB_0056acb1:
           bVar5 = DAT_0080874d;
         }
         if (!bVar8) {
-          thunk_FUN_0055b7f0(DAT_00802a88,1,puVar6);
+          thunk_FUN_0055b7f0(g_visibleClass_00802A88,1,puVar6);
           bVar5 = DAT_0080874d;
         }
       }

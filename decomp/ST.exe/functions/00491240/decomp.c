@@ -76,13 +76,14 @@ STBoatC::PrepareForLoading
         return;
       }
       RaiseInternalException
-                (-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fe6);
+                (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                 0x4fe6);
     }
     if (this->field_05B2 != -1) {
       this->field_05C4 = 0;
       this->field_05BC = 0;
-      thunk_FUN_00481520(this,(int)param_2,(int)param_3,(int)(short)this->field_05B2);
-      thunk_FUN_00460260(this,0);
+      sub_00481520(this,(int)param_2,(int)param_3,(int)(short)this->field_05B2);
+      sub_00460260(this,0);
       return;
     }
     if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&

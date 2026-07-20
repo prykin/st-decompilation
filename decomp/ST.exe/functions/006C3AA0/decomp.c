@@ -11,7 +11,7 @@ void FUN_006c3aa0(int *param_1)
   if (iVar1 == 0) {
     SetWindowLongA((HWND)param_1[0x1e],-4,param_1[0x22]);
   }
-  FUN_006a5e90(param_1);
+  FUN_006a5e90((short *)param_1);
   CoUninitialize();
   return;
 }

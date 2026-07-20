@@ -14,12 +14,12 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  byte local_15c [256];
+  CHAR local_15c [256];
   InternalExceptionFrame local_5c;
   TLOBaseTy *local_18;
   int local_14;
   int local_10;
-  undefined4 local_c;
+  uint local_c;
   undefined4 *local_8;
   
   local_5c.previous = g_currentExceptionFrame;
@@ -33,7 +33,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       puVar1 = &local_18->field_01D5;
       local_10 = *(int *)(iVar4 + 0x1e4);
       local_14 = *(int *)(iVar4 + 0x1e8);
-      local_c = *(undefined4 *)(iVar4 + 0x1ec);
+      local_c = *(uint *)(iVar4 + 0x1ec);
       iVar4 = thunk_FUN_004acd30(puVar1,'\r');
       if (iVar4 != 0) {
         iVar4 = thunk_FUN_004acd30(puVar1,'\r');
@@ -49,10 +49,12 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
           } while (iVar6 < iVar4);
         }
       }
-      wsprintfA((LPSTR)local_15c,s__s_1i_007ac908,pTVar3->field_05F3,pTVar3->field_05C0);
+      wsprintfA(local_15c,s__s_1i_007ac908,pTVar3->field_05F3,pTVar3->field_05C0);
       iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_0080678c,local_15c,0x1d);
       if (iVar4 != 0) {
-        RaiseInternalException(iVar4,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xd3);
+        RaiseInternalException
+                  (iVar4,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xd3)
+        ;
       }
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',local_c);
@@ -73,7 +75,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       puVar1 = &pTVar3->field_01D5;
       local_10 = *(int *)(iVar4 + 0x130);
       local_14 = *(int *)(iVar4 + 0x134);
-      local_c = *(undefined4 *)(iVar4 + 0x138);
+      local_c = *(uint *)(iVar4 + 0x138);
       iVar4 = thunk_FUN_004acd30(puVar1,'\b');
       if (iVar4 != 0) {
         iVar4 = thunk_FUN_004acd30(puVar1,'\b');
@@ -89,10 +91,12 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
           } while (iVar6 < iVar4);
         }
       }
-      wsprintfA((LPSTR)local_15c,s__s_cover_1i_007ac8ec,pTVar3->field_05F3,pTVar3->field_05C0);
+      wsprintfA(local_15c,s__s_cover_1i_007ac8ec,pTVar3->field_05F3,pTVar3->field_05C0);
       iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_0080678c,local_15c,0x1d);
       if (iVar4 != 0) {
-        RaiseInternalException(iVar4,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xea);
+        RaiseInternalException
+                  (iVar4,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xea)
+        ;
       }
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\b',local_c);

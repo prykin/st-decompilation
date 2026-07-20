@@ -1,43 +1,48 @@
 
-int FUN_00749f88(int *param_1,int param_2,int param_3)
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 00749F88 -> EXTERNAL:00000019 @ 00749FFB | 00749F88 -> EXTERNAL:00000019 @ 0074A048 */
+
+int FUN_00749f88(LPCRITICAL_SECTION lpCriticalSection,int param_2,int param_3)
 
 {
-  LPCRITICAL_SECTION lpCriticalSection;
-  int *this;
+  HANDLE *lpCriticalSection_00;
+  HANDLE *this;
   int *piVar1;
   int iVar2;
   int iVar3;
   
-  lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 0x1c);
-  EnterCriticalSection(lpCriticalSection);
-  iVar3 = param_1[2];
+  lpCriticalSection_00 = &lpCriticalSection[4].LockSemaphore;
+  EnterCriticalSection((LPCRITICAL_SECTION)lpCriticalSection_00);
+  iVar3 = lpCriticalSection->RecursionCount;
   if (iVar3 != 2) {
-    if (*(int *)(param_1[0x1b] + 0x18) != 0) {
-      SetEvent((HANDLE)param_1[0x14]);
-      iVar2 = FUN_00747161(param_1,param_2,param_3);
+    if (*(int *)((int)lpCriticalSection[4].OwningThread + 0x18) != 0) {
+      SetEvent((HANDLE)lpCriticalSection[3].RecursionCount);
+      iVar2 = FUN_00747161((int *)lpCriticalSection,param_2,param_3);
       if (iVar2 < 0) {
-        LeaveCriticalSection(lpCriticalSection);
+        LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection_00);
         return iVar2;
       }
-      this = param_1 + -3;
-      (**(code **)(param_1[-3] + 0x28))(1);
+      this = &lpCriticalSection[-1].OwningThread;
+      (**(code **)((int)lpCriticalSection[-1].OwningThread + 0x28))(1);
       FUN_0074a81d(this,0);
-      piVar1 = *(int **)(param_1[0x1b] + 0x9c);
+      piVar1 = *(int **)((int)lpCriticalSection[4].OwningThread + 0x9c);
       if (piVar1 != (int *)0x0) {
         (**(code **)(*piVar1 + 0x14))(piVar1);
       }
       if (iVar3 == 0) {
-        param_1[0x15] = 0;
-        (**(code **)(*this + 0x70))();
+        lpCriticalSection[3].OwningThread = (HANDLE)0x0;
+        (**(code **)((int)*this + 0x70))();
       }
-      iVar3 = (**(code **)(*this + 0x7c))();
-      LeaveCriticalSection(lpCriticalSection);
+      iVar3 = (**(code **)((int)*this + 0x7c))();
+      LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection_00);
       return iVar3;
     }
-    FUN_00747406(param_1 + -3,1,0,-(uint)(param_1 + -3 != (int *)0x0) & (uint)param_1);
-    param_1[2] = 2;
+    FUN_00747406(&lpCriticalSection[-1].OwningThread,1,(int *)0x0,
+                 -(uint)(&lpCriticalSection[-1].OwningThread != (HANDLE *)0x0) &
+                 (uint)lpCriticalSection);
+    lpCriticalSection->RecursionCount = 2;
   }
-  LeaveCriticalSection(lpCriticalSection);
+  LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection_00);
   return 0;
 }
 

@@ -1,5 +1,9 @@
 
-void __thiscall FUN_004ccc10(void *this,int *param_1,void *param_2)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004CCC10 -> 006E62D0 @ 004CD011 | 004CCC10 -> 006E62D0 @ 004CD062 | 004CCC10 ->
+   006E62D0 @ 004CD0A6 | 004CCC10 -> 006E62D0 @ 004CD0EC | 004CCC10 -> 006E62D0 @ 004CD124 */
+
+void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
 
 {
   uint uVar1;
@@ -101,7 +105,7 @@ LAB_004ccd43:
     }
   }
   *(int **)((int)this + 0x24) = piVar8;
-  *(void **)((int)this + 0x5c0) = param_2;
+  *(int **)((int)this + 0x5c0) = param_2;
   uVar1 = thunk_FUN_004406c0(cVar9);
   *(uint *)((int)this + 0x239) = (uVar1 & 0xff) - 1;
   thunk_FUN_004b9920((int)this);
@@ -158,7 +162,7 @@ LAB_004ccedc:
     }
   }
   if (*(int *)((int)this + 0x408) != 0) {
-    param_2 = (void *)0x0;
+    param_2 = (int *)0x0;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
       uVar1 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
       iVar2 = *(int *)((int)this + 0x235);
@@ -169,7 +173,7 @@ LAB_004ccedc:
       }
     }
     iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x40c),(int *)&param_2);
-    if ((iVar2 == 0) && (param_2 != (void *)0x0)) {
+    if ((iVar2 == 0) && (param_2 != (int *)0x0)) {
       thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),
                          (uint)*(ushort *)((int)this + 0x32));
     }

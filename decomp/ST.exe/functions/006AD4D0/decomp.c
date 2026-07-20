@@ -75,8 +75,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       pcVar9 = pcVar9 + 1;
     }
   }
-  if ((DAT_007ed79c != 0) && (DAT_00854eb4 != (int *)0x0)) {
-    Library::MSVCRT::FUN_00733f70(DAT_00854eb4,(byte *)s__d_______________________________007ed8ac);
+  if ((DAT_007ed79c != 0) && (g_int_00854EB4 != (int *)0x0)) {
+    Library::MSVCRT::FUN_00733f70(g_int_00854EB4,s__d_______________________________007ed8ac);
     DAT_007ed79c = 0;
   }
   puVar7 = &local_74c;
@@ -212,7 +212,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       iVar2 = 0x40;
     }
     pcVar9 = pcVar9 + iVar2;
-    if (DAT_00854eb4 == (int *)0x0) {
+    if (g_int_00854EB4 == (int *)0x0) {
       *pcVar9 = '\n';
     }
     else {
@@ -225,8 +225,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       iVar2 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed884);
       pcVar9 = pcVar9 + iVar2;
     }
-    if (((DAT_00854eb4 != (int *)0x0) && (BVar4 = IsBadReadPtr(&stack0xfffffffc,4), BVar4 == 0)) &&
-       (BVar4 = IsBadReadPtr(unaff_EBP,8), BVar4 == 0)) {
+    if (((g_int_00854EB4 != (int *)0x0) && (BVar4 = IsBadReadPtr(&stack0xfffffffc,4), BVar4 == 0))
+       && (BVar4 = IsBadReadPtr(unaff_EBP,8), BVar4 == 0)) {
       iVar2 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed87c);
       pcVar9 = pcVar9 + iVar2;
       BVar4 = IsBadReadPtr((void *)*unaff_EBP,8);
@@ -318,7 +318,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   *pcVar8 = '\n';
   pcVar9 = pcVar8 + 1;
   if (local_34c[0] != '\0') {
-    if (DAT_00854eb4 == (int *)0x0) {
+    if (g_int_00854EB4 == (int *)0x0) {
       *pcVar9 = '\n';
       pcVar9 = pcVar8 + 2;
     }
@@ -356,7 +356,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     pcVar9[~uVar5 - 1] = '\n';
     pcVar9 = pcVar9 + (~uVar5 - 1) + 1;
   }
-  if (DAT_00854eb4 == (int *)0x0) {
+  if (g_int_00854EB4 == (int *)0x0) {
     if (DAT_00854ebc != 0) {
       *pcVar9 = '\n';
       pcVar8 = s__Press_Retry_to_debug_the_applic_007ed818;
@@ -462,11 +462,11 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   else {
     *pcVar9 = '\0';
-    Library::MSVCRT::FUN_0072eb70((char *)&local_74c,DAT_00854eb4);
+    Library::MSVCRT::FUN_0072eb70((char *)&local_74c,g_int_00854EB4);
     uVar5 = 0;
     if (0 < DAT_00858ddc) {
       do {
-        Library::MSVCRT::FUN_00733f70(DAT_00854eb4,(byte *)s__08X_007ed840);
+        Library::MSVCRT::FUN_00733f70(g_int_00854EB4,s__08X_007ed840);
         uVar5 = uVar5 + 1;
         uVar6 = uVar5 & 0x80000007;
         bVar14 = uVar6 == 0;
@@ -474,7 +474,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
           bVar14 = (uVar6 - 1 | 0xfffffff8) == 0xffffffff;
         }
         if (bVar14) {
-          Library::MSVCRT::FUN_00733f70(DAT_00854eb4,&DAT_007c8ff4);
+          Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&DAT_007c8ff4);
         }
       } while ((int)uVar5 < DAT_00858ddc);
     }
@@ -484,9 +484,9 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       bVar14 = (uVar5 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar14) {
-      Library::MSVCRT::FUN_00733f70(DAT_00854eb4,&DAT_007c8ff4);
+      Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&DAT_007c8ff4);
     }
-    Library::MSVCRT::FUN_00733d60(DAT_00854eb4);
+    Library::MSVCRT::FUN_00733d60(g_int_00854EB4);
   }
   iVar2 = -(uint)(isFatal != 0);
 LAB_006ad9d3:

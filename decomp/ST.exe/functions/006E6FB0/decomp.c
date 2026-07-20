@@ -650,7 +650,7 @@ LAB_006e7ff9:
       else {
         pbVar5 = *(byte **)pbVar13;
         FUN_006b98c0((int *)((int)this + 0x442),(int *)pbVar13);
-        FUN_006a5e90((undefined4 *)pbVar13);
+        FUN_006a5e90((short *)pbVar13);
         pbVar13 = pbVar5;
       }
     }

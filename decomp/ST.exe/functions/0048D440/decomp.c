@@ -3,14 +3,13 @@ bool __fastcall FUN_0048d440(int param_1)
 
 {
   undefined4 in_EAX;
-  void *this;
+  STGroupBoatC *this;
   int iVar1;
   int iVar2;
   
-  this = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)param_1 >> 8),
-                                             *(undefined1 *)(param_1 + 0x24)),
-                                    CONCAT22((short)((uint)in_EAX >> 0x10),
-                                             *(undefined2 *)(param_1 + 0x30)));
+  this = thunk_FUN_0042b760(CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                            CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0x30)))
+  ;
   if (*(int *)(param_1 + 0x4a1) == -1) {
     if (*(int *)(param_1 + 0x4ab) != -1) {
       return (bool)((*(int *)(param_1 + 0x7da) + *(int *)(param_1 + 0x7d6) +

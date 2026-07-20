@@ -1,6 +1,12 @@
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 007297E0 -> 0072AA60 @ 0072A2CC | 007297E0 -> 0072AA60 @ 0072A4E3
+   
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 007297E0 -> 0072AA60 @ 0072A2CC | 007297E0 -> 0072AA60 @ 0072A4E3 */
+
 void __cdecl
-FUN_0072aa60(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,int param_6)
+FUN_0072aa60(byte *param_1,int param_2,ushort *param_3,uint *param_4,int *param_5,uint *param_6)
 
 {
   int iVar1;
@@ -14,7 +20,7 @@ FUN_0072aa60(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
       *param_5 = iVar1 + -1;
       if (iVar1 + -1 < 0) break;
       param_1 = param_1 + param_2;
-      param_3 = param_3 + param_4;
+      param_3 = param_3 + (int)param_4;
       uVar3 = param_5[8];
       param_5[8] = uVar3 >> 1;
       if (uVar3 >> 1 == 0) {
@@ -38,7 +44,7 @@ FUN_0072aa60(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
     *param_5 = iVar2;
     while (-1 < iVar2) {
       if (((param_5[9] & param_5[8]) != 0) && (param_5[6] >> 0x10 < (int)(uint)*param_3)) {
-        *param_1 = *(byte *)((uint)*param_1 + param_6);
+        *param_1 = *(byte *)((uint)*param_1 + (int)param_6);
       }
       uVar3 = param_5[8];
       param_5[8] = uVar3 >> 1;
@@ -47,7 +53,7 @@ FUN_0072aa60(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
       }
       param_1 = param_1 + param_2;
       uVar3 = param_5[4] + param_5[5];
-      param_3 = param_3 + param_4;
+      param_3 = param_3 + (int)param_4;
       param_5[4] = uVar3;
       if (uVar3 >> 0x10 != 0) {
         param_5[4] = uVar3 & 0xffff;

@@ -63,7 +63,7 @@ undefined4 __fastcall FUN_004b9d90(int param_1)
       if (*(int *)(iVar2 + 0x4d8) != 0xffff) {
         return 0;
       }
-      if (DAT_007fb244 + -1 <= *(int *)(iVar2 + 0x5b8)) {
+      if (SHORT_007fb244 + -1 <= *(int *)(iVar2 + 0x5b8)) {
         return 0;
       }
     }

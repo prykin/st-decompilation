@@ -166,11 +166,11 @@ LAB_005ed68c:
     sVar9 = *(short *)((int)this + 0x244);
     sVar8 = sVar1 + sVar4;
     sVar5 = *(short *)((int)this + 0x242);
-    if (((-1 < sVar5) && (sVar5 < DAT_007fb240)) &&
-       ((-1 < sVar9 && (((sVar9 < DAT_007fb242 && (-1 < sVar8)) && (sVar8 < DAT_007fb244)))))) {
+    if (((-1 < sVar5) && (sVar5 < SHORT_007fb240)) &&
+       ((-1 < sVar9 && (((sVar9 < SHORT_007fb242 && (-1 < sVar8)) && (sVar8 < SHORT_007fb244)))))) {
       iVar7 = *(int *)(DAT_007fb248 +
-                      ((int)DAT_007fb246 * (int)sVar8 + (int)DAT_007fb240 * (int)sVar9 + (int)sVar5)
-                      * 8);
+                      ((int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar9 +
+                      (int)sVar5) * 8);
 joined_r0x005ed4b7:
       if (iVar7 != 0) goto LAB_005ed643;
     }
@@ -195,11 +195,11 @@ joined_r0x005ed4b7:
     sVar9 = *(short *)((int)this + 0x244);
     sVar8 = sVar1 + sVar4;
     sVar5 = *(short *)((int)this + 0x242);
-    if ((((-1 < sVar5) && (sVar5 < DAT_007fb240)) && (-1 < sVar9)) &&
-       (((sVar9 < DAT_007fb242 && (-1 < sVar8)) && (sVar8 < DAT_007fb244)))) {
+    if ((((-1 < sVar5) && (sVar5 < SHORT_007fb240)) && (-1 < sVar9)) &&
+       (((sVar9 < SHORT_007fb242 && (-1 < sVar8)) && (sVar8 < SHORT_007fb244)))) {
       iVar7 = *(int *)(DAT_007fb248 +
-                      ((int)sVar8 * (int)DAT_007fb246 + (int)sVar9 * (int)DAT_007fb240 + (int)sVar5)
-                      * 8);
+                      ((int)sVar8 * (int)SHORT_007fb246 + (int)sVar9 * (int)SHORT_007fb240 +
+                      (int)sVar5) * 8);
       goto joined_r0x005ed4b7;
     }
   }

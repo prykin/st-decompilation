@@ -39,7 +39,8 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
   if (uVar2 != 0xfffffffc) {
     if (local_8 == 0) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x806);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x806);
     }
     if (*(int *)(local_8 + 0x18) == param_2) {
       g_currentExceptionFrame = pIVar5;

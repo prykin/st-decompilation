@@ -1,10 +1,16 @@
 
-UINT FUN_00752030(int param_1,LPVOID param_2,UINT param_3)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00752030 -> EXTERNAL:00000075 @ 00752042
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00752030 -> EXTERNAL:00000075 @ 00752042 */
+
+UINT FUN_00752030(int param_1,LPVOID lpBuffer,UINT uBytes)
 
 {
   UINT UVar1;
   
-  UVar1 = _lread(*(HFILE *)(param_1 + 0x32),param_2,param_3);
+  UVar1 = _lread(*(HFILE *)(param_1 + 0x32),lpBuffer,uBytes);
   if (UVar1 == 0xffffffff) {
     UVar1 = 0xfffffff4;
   }

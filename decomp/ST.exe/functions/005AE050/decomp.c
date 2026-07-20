@@ -56,7 +56,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     (*pcVar5)();
     return;
   }
-  puVar7 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
+  puVar7 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
   DibPut((undefined4 *)DAT_0081176c->field_02F0,0,0,'\x01',(byte *)puVar7);
   iVar6 = DAT_0081176c->field_0544;
   FUN_006b4170(iVar6,0,0,0,*(int *)(iVar6 + 4),*(int *)(iVar6 + 8),0xff);
@@ -180,7 +180,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     g_currentExceptionFrame = local_bc.previous;
     if (local_14 != (cMf32 *)0x0) {
       StartSystemTy::LoadMapData(DAT_0081176c,(int)local_14,pCVar15->field_1A5F);
-      cMf32::delete(this_00,&pcVar10->field_0000);
+      cMf32::delete(this_00,pcVar10);
     }
     goto LAB_005ae602;
   }
@@ -296,7 +296,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       if (DAT_0080c4cb != (uint *)0x0) {
         FUN_006b5570((byte *)DAT_0080c4cb);
       }
-      DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad((int)pcVar10,PTR_s_OBJECTIVES_0079c074,0);
+      DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad(pcVar10,PTR_s_OBJECTIVES_0079c074,0);
       puVar19 = (undefined4 *)&DAT_0080ed16;
       for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
         *puVar19 = 0;
@@ -311,7 +311,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       iVar6 = local_c;
       local_8 = &DAT_0080874e;
       cMf32::RecGet(local_14,0xc,PTR_DAT_0079c068,(int *)&local_8,0);
-      cMf32::delete(this_01,&pcVar10->field_0000);
+      cMf32::delete(this_01,pcVar10);
       if ((byte *)DAT_0081176c->field_0548 != (byte *)0x0) {
         FUN_006b5570((byte *)DAT_0081176c->field_0548);
       }
@@ -327,10 +327,9 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
         *(undefined2 *)puVar11 = 0;
         *puVar11 = DAT_007cc854;
         puVar8 = ccFntTy::FormIndentSarr
-                           (DAT_0081176c->field_0034,(int)DAT_0080c4cb,
-                            (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,
-                            *(int *)(DAT_0081176c->field_0544 + 4) + -0x14,0,0xffffffff,(char *)0x0,
-                            1);
+                           (DAT_0081176c->field_0034,DAT_0080c4cb,s________________007c21d8,
+                            (uint *)&DAT_007c21ec,*(int *)(DAT_0081176c->field_0544 + 4) + -0x14,0,
+                            0xffffffff,(char *)0x0,1);
         DAT_0081176c->field_0548 = puVar8;
         if (DAT_0081176c->field_0548 == 0) {
           puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);

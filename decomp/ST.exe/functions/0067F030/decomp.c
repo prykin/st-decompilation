@@ -1,5 +1,11 @@
 
-undefined4 __cdecl FUN_0067f030(byte *param_1,char *param_2,uint *param_3)
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 0067F2B0 -> 0067F030 @ 0067F316 | 00683C70 -> 0067F030 @ 00683E1A | 00683C70 ->
+   0067F030 @ 00683E4B | 00683C70 -> 0067F030 @ 00683E7C | 00683C70 -> 0067F030 @ 00683F96 |
+   0068CEC0 -> 0067F030 @ 0068CFF3 | 0068CEC0 -> 0067F030 @ 0068D023 | 0068CEC0 -> 0067F030 @
+   0068D054 | 0068CEC0 -> 0067F030 @ 0068D15B */
+
+undefined4 __cdecl FUN_0067f030(char *text,char *param_2,uint *param_3)
 
 {
   InternalExceptionFrame *pIVar1;
@@ -15,7 +21,7 @@ undefined4 __cdecl FUN_0067f030(byte *param_1,char *param_2,uint *param_3)
   iVar2 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar4,in_stack_ffffffb8);
   pIVar1 = pIVar4;
   if (((iVar2 == 0) &&
-      (iVar2 = thunk_FUN_0067ef60(param_1,(int *)&local_8), pIVar1 = g_currentExceptionFrame,
+      (iVar2 = thunk_FUN_0067ef60((byte *)text,(int *)&local_8), pIVar1 = g_currentExceptionFrame,
       iVar2 != 0)) && (-1 < (int)local_8)) {
     local_8 = Library::DKW::TBL::FUN_006b6020(DAT_00848a18,local_8,param_2);
     g_currentExceptionFrame = pIVar4;

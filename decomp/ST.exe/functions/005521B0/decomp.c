@@ -29,7 +29,7 @@ void __thiscall TradePanelTy::Update(TradePanelTy *this)
     local_14 = local_8->field_01AF;
     local_10 = local_8->field_01B3;
     local_c = local_8->field_01B7;
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,10,&local_8->field_01AB);
+    STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,10,&local_8->field_01AB);
     thunk_FUN_00551b10(this_00);
     PaintPanel(this_00);
     g_currentExceptionFrame = pIVar3;

@@ -50,25 +50,25 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
     if (pSVar2->field_1A5F == '\0') {
       iVar11 = -1;
       iVar10 = -1;
-      uVar5 = 0;
+      uVar8 = 0;
       iVar9 = -1;
       iVar3 = -2;
-      puVar6 = (uint *)FUN_006b0140(0x2521,DAT_00807618);
+      puVar6 = (uint *)FUN_006b0140(0x2521,HINSTANCE_00807618);
       this_00 = *(ccFntTy **)(DAT_0081176c + 0x34);
     }
     else {
       puVar4 = &DAT_00807ddd;
       puVar6 = (uint *)&pSVar2->field_1CD4;
-      uVar5 = FUN_006b0140(0x2520,DAT_00807618);
+      uVar5 = FUN_006b0140(0x2520,HINSTANCE_00807618);
       wsprintfA((LPSTR)puVar6,s__0_s__5_s_0__007cd6c4,uVar5,puVar4);
       this_00 = *(ccFntTy **)(DAT_0081176c + 0x34);
       iVar11 = -1;
       iVar10 = -1;
-      uVar5 = 0;
+      uVar8 = 0;
       iVar9 = -1;
       iVar3 = -2;
     }
-    ccFntTy::WrTxt(this_00,puVar6,iVar3,iVar9,uVar5,iVar10,iVar11);
+    ccFntTy::WrTxt(this_00,puVar6,iVar3,iVar9,uVar8,iVar10,iVar11);
     FUN_006b5440(pSVar2->field_1CB8,0,0,0x7d,pSVar2->field_1CC0,0,0xff);
     g_currentExceptionFrame = local_4c.previous;
     return;

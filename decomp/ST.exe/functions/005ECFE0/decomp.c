@@ -32,16 +32,16 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     sVar1 = *(short *)((int)this + 0x244);
     sVar5 = *(short *)((int)this + 0x246) + sVar5;
     sVar2 = *(short *)((int)this + 0x242);
-    if ((((sVar2 < 0) || (DAT_007fb240 <= sVar2)) ||
+    if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
         ((sVar1 < 0 ||
-         ((((DAT_007fb242 <= sVar1 || (sVar5 < 0)) || (DAT_007fb244 <= sVar5)) ||
+         ((((SHORT_007fb242 <= sVar1 || (sVar5 < 0)) || (SHORT_007fb244 <= sVar5)) ||
           ((pvVar3 = *(void **)(DAT_007fb248 +
-                               ((int)DAT_007fb246 * (int)sVar5 + (int)DAT_007fb240 * (int)sVar1 +
-                               (int)sVar2) * 8), pvVar3 == (void *)0x0 || (pvVar3 == this)))))))) &&
-       (iVar4 = thunk_FUN_005ecd70(this,(int)(short)(sVar2 * 0xc9 + 100),
-                                   (int)(short)(sVar1 * 0xc9 + 100),
-                                   (int)(short)((short)param_1 * 200 + 100),param_5,'\0',0x1e),
-       iVar4 != 0)) {
+                               ((int)SHORT_007fb246 * (int)sVar5 + (int)SHORT_007fb240 * (int)sVar1
+                               + (int)sVar2) * 8), pvVar3 == (void *)0x0 || (pvVar3 == this))))))))
+       && (iVar4 = thunk_FUN_005ecd70(this,(int)(short)(sVar2 * 0xc9 + 100),
+                                      (int)(short)(sVar1 * 0xc9 + 100),
+                                      (int)(short)((short)param_1 * 200 + 100),param_5,'\0',0x1e),
+          iVar4 != 0)) {
       *(undefined4 *)((int)this + 0x23a) = 2;
       return 1;
     }

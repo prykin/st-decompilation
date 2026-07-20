@@ -31,10 +31,10 @@ bool FUN_0040ce20(undefined4 param_1,int param_2,int *param_3,int *param_4,int *
   int local_1c;
   int local_14;
   
-  iVar5 = (int)DAT_007fb27a * (int)DAT_007fb278;
+  iVar5 = (int)SHORT_007fb27a * (int)SHORT_007fb278;
   iVar1 = DAT_007fb280 +
-          ((int)*(short *)(param_2 + 0x49) * (int)DAT_007fb278 + *(short *)(param_2 + 0x4b) * iVar5
-          + (int)*(short *)(param_2 + 0x47)) * 2;
+          ((int)*(short *)(param_2 + 0x49) * (int)SHORT_007fb278 +
+           *(short *)(param_2 + 0x4b) * iVar5 + (int)*(short *)(param_2 + 0x47)) * 2;
   sVar2 = 30000;
   local_14 = 1;
   do {
@@ -75,7 +75,7 @@ joined_r0x0040d327:
                 if (iVar6 != 0) goto LAB_0040d369;
               }
             }
-            else if ((*(ushort *)(iVar1 + DAT_007fb278 * iVar6 * 2) & 0xc000) != 0xc000) {
+            else if ((*(ushort *)(iVar1 + SHORT_007fb278 * iVar6 * 2) & 0xc000) != 0xc000) {
               bVar3 = thunk_FUN_00497920(param_2,(int)*(short *)(param_2 + 0x47),(int)psVar8[1],
                                          (int)*(short *)(param_2 + 0x4b));
               iVar6 = CONCAT31(extraout_var_15,bVar3);
@@ -84,7 +84,7 @@ joined_r0x0040d327:
           }
         }
         else if ((((*(ushort *)(iVar1 + iVar7 * 2) & 0xc000) != 0xc000) &&
-                 ((*(ushort *)(iVar1 + DAT_007fb278 * iVar6 * 2) & 0xc000) != 0xc000)) &&
+                 ((*(ushort *)(iVar1 + SHORT_007fb278 * iVar6 * 2) & 0xc000) != 0xc000)) &&
                 ((bVar3 = thunk_FUN_00497920(param_2,(int)*(short *)(param_2 + 0x47),(int)psVar8[1],
                                              (int)*(short *)(param_2 + 0x4b)),
                  CONCAT31(extraout_var,bVar3) != 0 &&
@@ -95,7 +95,7 @@ joined_r0x0040d327:
             if ((uVar4 & 0x2000) == 0) goto LAB_0040d369;
             if ((((((*(ushort *)(iVar1 + iVar5 * 2) & 0xc000) != 0xc000) &&
                   ((*(ushort *)(iVar1 + (iVar7 + iVar5) * 2) & 0xc000) != 0xc000)) &&
-                 (iVar6 = DAT_007fb278 * iVar6,
+                 (iVar6 = SHORT_007fb278 * iVar6,
                  (*(ushort *)(iVar1 + (iVar6 + iVar5) * 2) & 0xc000) != 0xc000)) &&
                 (((*(ushort *)(iVar1 + (iVar6 + iVar7) * 2) & 0xc000) != 0xc000 &&
                  ((*(ushort *)(iVar1 + iVar7 * 2) & 0xc000) != 0xc000)))) &&
@@ -124,7 +124,7 @@ joined_r0x0040d327:
           }
           else if ((((((*(ushort *)(iVar1 + iVar5 * -2) & 0xc000) != 0xc000) &&
                      ((*(ushort *)(iVar1 + (iVar7 - iVar5) * 2) & 0xc000) != 0xc000)) &&
-                    (iVar6 = DAT_007fb278 * iVar6,
+                    (iVar6 = SHORT_007fb278 * iVar6,
                     (*(ushort *)(iVar1 + (iVar6 - iVar5) * 2) & 0xc000) != 0xc000)) &&
                    ((((*(ushort *)(iVar1 + (iVar6 + iVar7) * 2) & 0xc000) != 0xc000 &&
                      ((*(ushort *)(iVar1 + iVar7 * 2) & 0xc000) != 0xc000)) &&

@@ -108,15 +108,15 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar8 = 0x39;
         iVar3 = 0x158;
-        puVar7 = (uint *)FUN_006b0140(param_1,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(param_1,HINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
                            (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar3,iVar8,cVar13,uVar10,
                             iVar12,iVar14,iVar15);
         (**(code **)(local_10 + 8))(puVar6,uVar4,uVar5);
       }
       else {
-        uVar4 = FUN_006b0140(param_7,DAT_00807618);
-        uVar5 = FUN_006b0140(param_1,DAT_00807618);
+        uVar4 = FUN_006b0140(param_7,HINSTANCE_00807618);
+        uVar5 = FUN_006b0140(param_1,HINSTANCE_00807618);
         wsprintfA((LPSTR)local_478,s__s___s__li__007ccca4,uVar5,uVar4,param_6);
         iVar3 = this_00->field_1D88;
         uVar5 = 0xffffffff;
@@ -167,7 +167,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,HINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
                            (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);
@@ -204,7 +204,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,HINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -244,7 +244,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)FUN_006b0140(this_00->field_06AD,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(this_00->field_06AD,HINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -278,7 +278,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,HINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -313,7 +313,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)FUN_006b0140(this_00->field_02B7,DAT_00807618);
+        puVar7 = (uint *)FUN_006b0140(this_00->field_02B7,HINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
                            (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);

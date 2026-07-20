@@ -39,8 +39,8 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   }
   iVar3 = *(int *)(param_1 + 0x10);
   if (iVar3 == 2) {
-    if (DAT_00806754 != (cMf32 *)0x0) {
-      local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
+    if (g_cMf32_00806754 != (cMf32 *)0x0) {
+      local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
     }
     if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 6) != 2)) {
       local_c->field_001C = 0;
@@ -52,8 +52,8 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
     else {
       thunk_FUN_0062d840(local_c,(undefined4 *)local_8);
     }
-    if ((local_8 != (ushort *)0x0) && (DAT_00806754 != (cMf32 *)0x0)) {
-      cMf32::RecMemFree(DAT_00806754,(uint *)&local_8);
+    if ((local_8 != (ushort *)0x0) && (g_cMf32_00806754 != (cMf32 *)0x0)) {
+      cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
     }
   }
   else {
@@ -66,7 +66,7 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
       return 0;
     }
     if (iVar3 == 0x10f) {
-      local_14 = (byte *)thunk_FUN_0062d670(local_c,&local_10);
+      local_14 = thunk_FUN_0062d670(local_c,&local_10);
       STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
       FUN_006ab060(&local_14);
       g_currentExceptionFrame = pIVar6;

@@ -1,4 +1,8 @@
 
+/* [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 005449B0 -> 0054B9A0 @ 005450D6 | 005449B0 -> 0054B9A0 @ 005450FB | 005449B0 ->
+   0054B9A0 @ 0054511E | 005449B0 -> 0054B9A0 @ 0054515B */
+
 undefined4 __thiscall
 FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
             int param_7)
@@ -18,7 +22,7 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
        ) {
       if (param_5 <= iVar4) {
         if (param_6 <= iVar1) {
-          iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_5,1.4013e-45,
+          iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_5,1.4013e-45,
                                      (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
@@ -29,7 +33,7 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
           return 1;
         }
         if (iVar3 <= param_6) {
-          iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_6,1.4013e-45,
+          iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_6,1.4013e-45,
                                      (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
@@ -42,7 +46,7 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       }
       if (iVar2 <= param_5) {
         if (param_6 <= iVar1) {
-          iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_7,1.4013e-45,
+          iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_7,1.4013e-45,
                                      (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
@@ -53,7 +57,7 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
           return 1;
         }
         if (iVar3 <= param_6) {
-          iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_8,1.4013e-45,
+          iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_8,1.4013e-45,
                                      (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
@@ -65,8 +69,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         }
       }
       if (param_5 <= iVar4) {
-        iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_1,1.4013e-45,(uint)*(byte *)((int)this + 0xd1),
-                                   0);
+        iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_1,1.4013e-45,
+                                   (uint)*(byte *)((int)this + 0xd1),0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
                     (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,
@@ -76,8 +80,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         return 1;
       }
       if (iVar2 <= param_5) {
-        iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_2,1.4013e-45,(uint)*(byte *)((int)this + 0xd1),
-                                   0);
+        iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_2,1.4013e-45,
+                                   (uint)*(byte *)((int)this + 0xd1),0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
                     (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,
@@ -87,8 +91,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         return 1;
       }
       if (param_6 <= iVar1) {
-        iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_3,1.4013e-45,(uint)*(byte *)((int)this + 0xd1),
-                                   0);
+        iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_3,1.4013e-45,
+                                   (uint)*(byte *)((int)this + 0xd1),0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
                     (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,
@@ -98,8 +102,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         return 1;
       }
       if (iVar3 <= param_6) {
-        iVar4 = thunk_FUN_004ab070(DAT_007fb2a0,CASE_4,1.4013e-45,(uint)*(byte *)((int)this + 0xd1),
-                                   0);
+        iVar4 = thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_4,1.4013e-45,
+                                   (uint)*(byte *)((int)this + 0xd1),0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
                     (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,

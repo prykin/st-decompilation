@@ -191,20 +191,20 @@ cf_common_exit_005EEDDF:
                              (int)(short)param_1[0x1b],uVar6,uVar7);
         }
         if (*(int *)((int)param_1 + 0x231) == 0xfd) {
-          if (DAT_007fa174 != (STAllPlayersC *)0x0) {
+          if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
             thunk_FUN_005f0d00((int)param_1);
             iVar5 = STAllPlayersC::UnRegisterArtefact
-                              (DAT_007fa174,
+                              (g_sTAllPlayers_007FA174,
                                CONCAT22(extraout_var_01,*(undefined2 *)((int)param_1 + 0x32)),
                                (uint)param_1);
             goto joined_r0x005eed0b;
           }
         }
-        else if ((*(int *)((int)param_1 + 0x231) == 0xfe) && (DAT_007fa174 != (STAllPlayersC *)0x0))
-        {
+        else if ((*(int *)((int)param_1 + 0x231) == 0xfe) &&
+                (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
           thunk_FUN_005f0d90((int)param_1);
           iVar5 = STAllPlayersC::UnRegisterContainer
-                            (DAT_007fa174,
+                            (g_sTAllPlayers_007FA174,
                              CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x32)),
                              (uint)param_1);
 joined_r0x005eed0b:

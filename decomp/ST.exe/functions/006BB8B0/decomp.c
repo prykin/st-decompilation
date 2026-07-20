@@ -18,8 +18,7 @@ int FUN_006bb8b0(int param_1)
   }
   param_1 = 0;
   while( true ) {
-    iVar2 = FUN_006bbe40(*(int **)(iVar1 + 0x40),(undefined4 *)(iVar1 + 0x474),
-                         (undefined4 *)(iVar1 + 0x478),0);
+    iVar2 = FUN_006bbe40(*(int **)(iVar1 + 0x40),(uint *)(iVar1 + 0x474),(int *)(iVar1 + 0x478),0);
     if (iVar2 == 0) {
       return 0;
     }
@@ -29,7 +28,7 @@ int FUN_006bb8b0(int param_1)
     if (1 < param_1) {
 LAB_006bb943:
       *(undefined4 *)(iVar1 + 0x474) = 0;
-      *(undefined4 *)(iVar1 + 0x478) = 0;
+      *(int *)(iVar1 + 0x478) = 0;
       if ((*(uint *)(iVar1 + 8) & 0x4000000) != 0) {
         LeaveCriticalSection((LPCRITICAL_SECTION)(iVar1 + 0x4f0));
       }

@@ -6,9 +6,9 @@ undefined4 * __fastcall FUN_005577c0(undefined4 *param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  FUN_006e60e0(param_1);
+  STGroupBoatC::sub_006E60E0((STGroupBoatC *)param_1);
   *param_1 = &PTR_LAB_0079aeec;
-  DAT_00802a88 = param_1;
+  g_visibleClass_00802A88 = (VisibleClassTy *)param_1;
   param_1[9] = 0;
   param_1[8] = 0;
   param_1[0xb] = 0;

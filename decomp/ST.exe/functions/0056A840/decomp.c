@@ -14,8 +14,9 @@ void __thiscall FUN_0056a840(void *this,byte param_1)
   do {
     *puVar2 = 0;
     *puVar3 = 0;
-    if ((DAT_00802a88 != (void *)0x0) && (param_1 == *(byte *)((int)this + 0x112d))) {
-      thunk_FUN_0055b7f0(DAT_00802a88,0,puVar1);
+    if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+       (param_1 == *(byte *)((int)this + 0x112d))) {
+      thunk_FUN_0055b7f0(g_visibleClass_00802A88,0,puVar1);
     }
     puVar1 = puVar1 + 1;
     puVar2 = puVar2 + 1;

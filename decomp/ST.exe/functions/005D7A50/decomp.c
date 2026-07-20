@@ -133,7 +133,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     }
     puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1CD0 = puVar5;
-    Library::DKW::TBL::FUN_006b6020((int)puVar5,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(puVar5,0,&DAT_008016a0);
     iVar2 = 1;
     puVar4 = (undefined4 *)(this_00->field_1CB8 + 0x28);
     uVar3 = FUN_006b4fe0(this_00->field_1CB8);

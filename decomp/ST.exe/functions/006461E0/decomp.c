@@ -94,7 +94,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
               return 0;
             }
             puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                               (DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
+                               (DAT_00806764,CASE_1D,s_expl_vol_007d26b0,0xffffffff,0,1,0,
                                 (undefined4 *)0x0);
             this_00->field_0061 = puVar4;
             if (puVar4 != (ushort *)0x0) {

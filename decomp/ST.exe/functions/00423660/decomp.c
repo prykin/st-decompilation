@@ -36,12 +36,13 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
         FUN_006acc70(pSVar2->field_0029,uVar7,&local_8);
         if ((short)local_8 != -1) {
           piVar4 = (int *)STAllPlayersC::GetObjPtr
-                                    (DAT_007fa174,
+                                    (g_sTAllPlayers_007FA174,
                                      CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),
                                      local_8,CASE_1);
           if (piVar4 == (int *)0x0) {
             RaiseInternalException
-                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x81);
+                      (-0x5001fffc,g_overwriteContext_007ED77C,
+                       s_E____titans_wlad_tc_grp_cpp_007a50a4,0x81);
           }
           iVar3 = (**(code **)(*piVar4 + 0x2c))();
           if (iVar3 == param_1) {

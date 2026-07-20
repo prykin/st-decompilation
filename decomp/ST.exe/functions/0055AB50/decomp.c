@@ -10,7 +10,7 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
   VisibleClassTy *this_00;
   uint uVar2;
   int iVar3;
-  undefined *puVar4;
+  uint uVar4;
   int iVar5;
   undefined4 unaff_ESI;
   int *piVar6;
@@ -40,15 +40,15 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
           thunk_FUN_00559110(this_00,*piVar6,(undefined *)piVar6[1],piVar6[2],piVar6[4],piVar6[3],-6
                              ,0xffffffff);
           uVar2 = local_8;
-          puVar4 = (undefined *)(piVar6[3] + -1);
-          piVar6[3] = (int)puVar4;
-          if ((int)puVar4 < 0) {
+          uVar4 = piVar6[3] - 1;
+          piVar6[3] = uVar4;
+          if ((int)uVar4 < 0) {
             FUN_006b0c70(this_00->field_00F4,local_8);
             local_8 = uVar2;
           }
           else {
-            thunk_FUN_00558dc0(this_00,*piVar6,piVar6[1],(undefined *)piVar6[2],piVar6[4],puVar4,-6,
-                               0xffffffff);
+            thunk_FUN_00558dc0(this_00,*piVar6,piVar6[1],(undefined *)piVar6[2],(int *)piVar6[4],
+                               uVar4,(int *)0xfffffffa,0xffffffff);
           }
         }
       }

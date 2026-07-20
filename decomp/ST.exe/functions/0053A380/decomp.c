@@ -31,17 +31,17 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
   if (iVar3 == 0) {
     this_00 = extraout_ECX;
     if (local_c->field_017C != 0) {
-      FUN_006e56b0((void *)local_c->field_000C,local_c->field_017C);
+      StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_017C);
       this_00 = extraout_ECX_00;
     }
     pPVar2->field_017C = 0;
     if (pPVar2->field_01C5 != 0) {
-      FUN_006e56b0((void *)pPVar2->field_000C,pPVar2->field_01C5);
+      StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_01C5);
       this_00 = extraout_ECX_01;
     }
     pPVar2->field_01C5 = 0;
     if (pPVar2->field_01C1 != 0) {
-      FUN_006e56b0((void *)pPVar2->field_000C,pPVar2->field_01C1);
+      StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_01C1);
       this_00 = extraout_ECX_02;
     }
     pPVar2->field_01C1 = 0;
@@ -51,7 +51,7 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
       iVar3 = 8;
       do {
         if (*puVar5 != 0) {
-          FUN_006e56b0((void *)pPVar2->field_000C,*puVar5);
+          StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar5);
           *puVar5 = 0;
           this_00 = extraout_ECX_03;
         }
@@ -70,7 +70,7 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
     pPVar2->field_01D9 = 0;
     pPVar2->field_01D5 = 0;
     pPVar2->field_01D1 = 0;
-    DAT_008016e4 = 0;
+    g_playPanel_008016E4 = (PlayPanelTy *)0x0;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

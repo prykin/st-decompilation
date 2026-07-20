@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
   char cVar1;
   short sVar2;
   STT3DSprC *this_00;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -47,10 +47,12 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
         if ((iVar5 == 1) || (iVar5 == 2)) {
           iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
-            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_DcBom_cpp_007cebc8,0x13d);
+            RaiseInternalException
+                      (-1,g_overwriteContext_007ED77C,s_E____titans_nick_to_DcBom_cpp_007cebc8,0x13d
+                      );
             return 0xffff;
           }
-          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,(byte *)s_adcbo_007ce924,0x1d);
+          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,s_adcbo_007ce924,0x1d);
           if (iVar5 != 0) {
             return 0xffff;
           }
@@ -63,8 +65,8 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
                              _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
           STT3DSprC::StartShow(this_00,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
           *(undefined1 *)(iVar8 + 0x41 + *(int *)((int)this + 0x233)) = 1;
-          pvVar3 = DAT_00802a88;
-          if (DAT_00802a88 != (void *)0x0) {
+          pVVar3 = g_visibleClass_00802A88;
+          if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
             iVar5 = iVar8 + *(int *)((int)this + 0x233);
             sVar2 = *(short *)(iVar8 + 10 + *(int *)((int)this + 0x233));
             if (sVar2 < 0) {
@@ -95,17 +97,14 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
             }
             iVar8 = local_8;
             this = local_c;
-            if ((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-                ((thunk_FUN_00558c00(DAT_00802a88,
-                                     *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c)
-                                     ,iVar5,iVar6,&local_24,&local_28), iVar8 = local_8,
+            if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+                ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                     iVar5,iVar6,&local_24,&local_28), iVar8 = local_8,
                  this = local_c, -1 < iVar7 &&
-                 ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < *(int *)((int)pvVar3 + 0x30))) &&
+                 ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < (int)pVVar3->field_0030)) &&
                   ((iVar5 = (&DAT_0079aed0)[iVar7] + local_28, -1 < iVar5 &&
-                   (iVar5 < *(int *)((int)pvVar3 + 0x34))))))))) &&
-               (*(int *)((int)pvVar3 + 0x4c) != 0)) {
-              cVar1 = *(char *)(iVar5 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c)
-                               + local_24);
+                   (iVar5 < (int)pVVar3->field_0034)))))))) && (pVVar3->field_004C != 0)) {
+              cVar1 = *(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_24);
 joined_r0x005fe09b:
               iVar8 = local_8;
               this = local_c;
@@ -136,13 +135,11 @@ joined_r0x005fe09b:
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = STT3DSprC::LoadSequence
-                              (this_00,0xf,DAT_00806764,(byte *)s_bulb_n3_007ce92c,0x1d);
+            iVar5 = STT3DSprC::LoadSequence(this_00,0xf,DAT_00806764,s_bulb_n3_007ce92c,0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = STT3DSprC::LoadSequence
-                              (this_00,0xe,DAT_00806774,(byte *)s_expmask2_007ce93c,0x1d);
+            iVar5 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,s_expmask2_007ce93c,0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
@@ -159,8 +156,8 @@ joined_r0x005fe09b:
                                (float)(int)*(short *)(iVar8 + 10 + *(int *)((int)this + 0x233)) *
                                _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
             *(undefined1 *)(iVar8 + 0x41 + *(int *)((int)this + 0x233)) = 1;
-            pvVar3 = DAT_00802a88;
-            if (DAT_00802a88 != (void *)0x0) {
+            pVVar3 = g_visibleClass_00802A88;
+            if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
               sVar2 = *(short *)(iVar8 + 10 + *(int *)((int)this + 0x233));
               iVar8 = iVar8 + *(int *)((int)this + 0x233);
               if (sVar2 < 0) {
@@ -191,17 +188,14 @@ joined_r0x005fe09b:
               }
               iVar8 = local_8;
               this = local_c;
-              if ((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-                  ((thunk_FUN_00558c00(DAT_00802a88,
-                                       *(Global_sub_00558C00_param_1Enum *)
-                                        ((int)DAT_00802a88 + 0x10c),iVar6,iVar7,&local_1c,&local_20)
-                   , iVar8 = local_8, this = local_c, -1 < iVar5 &&
-                   (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < *(int *)((int)pvVar3 + 0x30))))))
-                  ) && (((iVar5 = (&DAT_0079aed0)[iVar5] + local_20, -1 < iVar5 &&
-                         (iVar5 < *(int *)((int)pvVar3 + 0x34))) &&
-                        (*(int *)((int)pvVar3 + 0x4c) != 0)))) {
-                cVar1 = *(char *)(iVar5 * *(int *)((int)pvVar3 + 0x30) +
-                                  *(int *)((int)pvVar3 + 0x4c) + local_1c);
+              if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+                  ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                       iVar6,iVar7,&local_1c,&local_20), iVar8 = local_8,
+                   this = local_c, -1 < iVar5 &&
+                   (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < (int)pVVar3->field_0030)))))) &&
+                 (((iVar5 = (&DAT_0079aed0)[iVar5] + local_20, -1 < iVar5 &&
+                   (iVar5 < (int)pVVar3->field_0034)) && (pVVar3->field_004C != 0)))) {
+                cVar1 = *(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_1c);
                 goto joined_r0x005fe09b;
               }
             }

@@ -44,11 +44,11 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       thunk_FUN_005dac60();
     }
     if (*(int *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
     if (pWVar2->field_1AF8 != (HoloTy *)0x0) {
       HoloTy::Done(pWVar2->field_1AF8);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pWVar2->field_1AF8);
+      Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AF8);
       pWVar2->field_1AF8 = (HoloTy *)0x0;
     }
     puVar5 = &pWVar2->field_1A94;
@@ -63,7 +63,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     } while (iVar3 != 0);
     if (pWVar2->field_1B00 != (HoloTy *)0x0) {
       HoloTy::Done(pWVar2->field_1B00);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pWVar2->field_1B00);
+      Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1B00);
       pWVar2->field_1B00 = (HoloTy *)0x0;
     }
     if (pWVar2->field_1A64 == 0) {
@@ -82,7 +82,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     }
     if (pWVar2->field_1AFC != (HoloTy *)0x0) {
       HoloTy::Done(pWVar2->field_1AFC);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pWVar2->field_1AFC);
+      Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AFC);
       pWVar2->field_1AFC = (HoloTy *)0x0;
     }
     if (pWVar2->field_1A64 == 0) {
@@ -104,10 +104,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     }
     pWVar2->field_1AF0 = 0;
     if (pWVar2->field_1AEC != 0) {
-      FUN_006ab060(&pWVar2->field_1AEC);
+      FUN_006ab060((LPVOID *)&pWVar2->field_1AEC);
     }
     if (pWVar2->field_1A83 != 0) {
-      FUN_006ab060(&pWVar2->field_1A83);
+      FUN_006ab060((LPVOID *)&pWVar2->field_1A83);
     }
     if ((pWVar2->field_004D == 0x6102) &&
        (this_00 = pWVar2->field_1A5B->field_02E6, this_00 != (MMsgTy *)0x0)) {

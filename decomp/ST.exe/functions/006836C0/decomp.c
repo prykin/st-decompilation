@@ -16,7 +16,8 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
   bool bVar7;
   
   if ((param_1 == 0) || (param_2 == (byte *)0x0)) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x38a);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x38a);
   }
   iVar2 = *(int *)(param_1 + 8);
   iVar6 = 0;
@@ -52,7 +53,7 @@ LAB_0068372e:
       iVar6 = iVar6 + 1;
     } while (iVar6 < iVar2);
   }
-  iVar2 = Library::DKW::TBL::FUN_006b5aa0(param_1,(char *)param_2);
+  iVar2 = Library::DKW::TBL::FUN_006b5aa0((uint *)param_1,(char *)param_2);
   return iVar2;
 }
 

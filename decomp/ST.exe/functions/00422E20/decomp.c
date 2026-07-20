@@ -62,7 +62,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
         } while (iVar5 < 5);
       }
       STAllPlayersC::DelObjFromSaveTmps
-                (DAT_007fa174,*(int *)((int)this + 0x20),*(char *)((int)this + 0x24),
+                (g_sTAllPlayers_007FA174,*(int *)((int)this + 0x20),*(char *)((int)this + 0x24),
                  *(short *)((int)this + 0x32));
     }
     if ((((param_1 & 4) != 0) && ((*(uint *)((int)this + 0x1d1) & 4) == 0)) &&

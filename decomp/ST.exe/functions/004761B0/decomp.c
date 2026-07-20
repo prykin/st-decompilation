@@ -44,19 +44,19 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
     *(ushort *)((int)&this->field_05DC + 2) = uVar4;
     *(short *)((int)&this->field_05E4 + 2) = sVar5;
     *(short *)&this->field_05E0 = sVar5;
-    if (((((sVar3 < 0) || (DAT_007fb240 <= sVar3)) || ((short)uVar4 < 0)) ||
-        (((DAT_007fb242 <= (short)uVar4 || (sVar5 < 0)) ||
-         ((DAT_007fb244 <= sVar5 ||
+    if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || ((short)uVar4 < 0)) ||
+        (((SHORT_007fb242 <= (short)uVar4 || (sVar5 < 0)) ||
+         ((SHORT_007fb244 <= sVar5 ||
           (*(short *)(DAT_007fb280 +
-                     ((int)DAT_007fb278 * (int)(short)uVar4 + (int)DAT_007fb27e * (int)sVar5 +
+                     ((int)SHORT_007fb278 * (int)(short)uVar4 + (int)SHORT_007fb27e * (int)sVar5 +
                      (int)sVar3) * 2) != 0)))))) ||
-       (((-1 < sVar3 && (sVar3 < DAT_007fb240)) &&
+       (((-1 < sVar3 && (sVar3 < SHORT_007fb240)) &&
         ((-1 < (short)uVar4 &&
-         ((((((short)uVar4 < DAT_007fb242 && (-1 < sVar5)) && (sVar5 < DAT_007fb244)) &&
+         ((((((short)uVar4 < SHORT_007fb242 && (-1 < sVar5)) && (sVar5 < SHORT_007fb244)) &&
            (iVar7 = *(int *)(DAT_007fb248 + 4 +
-                            ((int)DAT_007fb246 * (int)sVar5 + (int)DAT_007fb240 * (int)(short)uVar4
-                            + (int)sVar3) * 8), iVar7 != 0)) &&
-          ((iVar7 = *(int *)(iVar7 + 0x20), iVar7 == 0x5a || (iVar7 == 0x1ae)))))))))) {
+                            ((int)SHORT_007fb246 * (int)sVar5 +
+                             (int)SHORT_007fb240 * (int)(short)uVar4 + (int)sVar3) * 8), iVar7 != 0)
+           ) && ((iVar7 = *(int *)(iVar7 + 0x20), iVar7 == 0x5a || (iVar7 == 0x1ae)))))))))) {
       psVar1 = (short *)((int)&this->field_05E0 + 2);
       uVar13 = (undefined2)((uint)psVar1 >> 0x10);
       iVar9 = thunk_FUN_0048dfd0(CONCAT22((short)((uint)iVar9 >> 0x10),sVar3),(uint)uVar4,
@@ -71,12 +71,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
     sVar3 = *(short *)((int)&this->field_05E4 + 2);
     sVar5 = *(short *)((int)&this->field_05E0 + 2);
     this->field_05E8 = 0;
-    thunk_FUN_00481520(this,(int)sVar5,(int)*(short *)&this->field_05E4,(int)sVar3);
-    iVar9 = thunk_FUN_00460260(this,0);
+    sub_00481520(this,(int)sVar5,(int)*(short *)&this->field_05E4,(int)sVar3);
+    iVar9 = sub_00460260(this,0);
     return (-(uint)(iVar9 != -1) & 3) - 1;
   }
   if (this->field_05E8 == 0) {
-    iVar9 = thunk_FUN_00460260(this,2);
+    iVar9 = sub_00460260(this,2);
     uVar13 = (undefined2)((uint)(iVar9 + 1) >> 0x10);
     switch(iVar9 + 1) {
     case 0:
@@ -98,17 +98,17 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
       *(short *)&this->field_05DC = sVar3;
       *(short *)((int)&this->field_05DC + 2) = sVar5;
       *(short *)&this->field_05E0 = sVar2;
-      if (((((((sVar3 < 0) || (DAT_007fb240 <= sVar3)) || (sVar5 < 0)) ||
-            ((DAT_007fb242 <= sVar5 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)) ||
+      if (((((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar5 < 0)) ||
+            ((SHORT_007fb242 <= sVar5 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) ||
           (*(short *)(DAT_007fb280 +
-                     ((int)DAT_007fb278 * (int)sVar5 + (int)DAT_007fb27e * (int)sVar2 + (int)sVar3)
-                     * 2) != 0)) ||
-         ((((-1 < sVar3 && (sVar3 < DAT_007fb240)) &&
-           ((-1 < sVar5 && (((sVar5 < DAT_007fb242 && (-1 < sVar2)) && (sVar2 < DAT_007fb244))))))
-          && ((iVar9 = *(int *)(DAT_007fb248 + 4 +
-                               ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar5 +
-                               (int)sVar3) * 8), iVar9 != 0 &&
-              ((iVar9 = *(int *)(iVar9 + 0x20), iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
+                     ((int)SHORT_007fb278 * (int)sVar5 + (int)SHORT_007fb27e * (int)sVar2 +
+                     (int)sVar3) * 2) != 0)) ||
+         ((((-1 < sVar3 && (sVar3 < SHORT_007fb240)) &&
+           ((-1 < sVar5 && (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244))))
+           )) && ((iVar9 = *(int *)(DAT_007fb248 + 4 +
+                                   ((int)SHORT_007fb246 * (int)sVar2 +
+                                    (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3) * 8), iVar9 != 0
+                  && ((iVar9 = *(int *)(iVar9 + 0x20), iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
         psVar1 = (short *)((int)&this->field_05E0 + 2);
         uVar12 = (undefined2)((uint)psVar1 >> 0x10);
         iVar9 = thunk_FUN_0048dfd0(CONCAT22(uVar13,sVar3),CONCAT22(extraout_var,sVar5),
@@ -121,7 +121,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
           return 0;
         }
       }
-      thunk_FUN_004602b0((int *)this);
+      sub_004602B0(this);
       break;
     default:
       goto switchD_004761eb_caseD_3;
@@ -132,23 +132,23 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
       *(short *)&this->field_05DC = sVar3;
       *(short *)((int)&this->field_05DC + 2) = sVar5;
       *(short *)&this->field_05E0 = sVar2;
-      if ((((((-1 < sVar3) && (sVar3 < DAT_007fb240)) &&
-            ((-1 < sVar5 && (((sVar5 < DAT_007fb242 && (-1 < sVar2)) && (sVar2 < DAT_007fb244))))))
-           && (*(int *)(DAT_007fb248 +
-                       ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar5 + (int)sVar3
-                       ) * 8) != 0)) || ((sVar3 < 0 || (DAT_007fb240 <= sVar3)))) ||
-         ((((sVar5 < 0 || ((DAT_007fb242 <= sVar5 || (sVar2 < 0)))) ||
-           ((DAT_007fb244 <= sVar2 ||
-            (*(short *)(DAT_007fb280 +
-                       ((int)DAT_007fb278 * (int)sVar5 + (int)DAT_007fb27e * (int)sVar2 + (int)sVar3
-                       ) * 2) != 0)))) ||
-          (((((-1 < sVar3 && (sVar3 < DAT_007fb240)) && (-1 < sVar5)) &&
-            (((sVar5 < DAT_007fb242 && (-1 < sVar2)) &&
-             ((sVar2 < DAT_007fb244 &&
-              (iVar9 = *(int *)(DAT_007fb248 + 4 +
-                               ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar5 +
-                               (int)sVar3) * 8), iVar9 != 0)))))) &&
-           ((iVar9 = *(int *)(iVar9 + 0x20), iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
+      if ((((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) &&
+            ((-1 < sVar5 && (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244)))
+             ))) && (*(int *)(DAT_007fb248 +
+                             ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 +
+                             (int)sVar3) * 8) != 0)) || ((sVar3 < 0 || (SHORT_007fb240 <= sVar3))))
+         || ((((sVar5 < 0 || ((SHORT_007fb242 <= sVar5 || (sVar2 < 0)))) ||
+              ((SHORT_007fb244 <= sVar2 ||
+               (*(short *)(DAT_007fb280 +
+                          ((int)SHORT_007fb278 * (int)sVar5 + (int)SHORT_007fb27e * (int)sVar2 +
+                          (int)sVar3) * 2) != 0)))) ||
+             (((((-1 < sVar3 && (sVar3 < SHORT_007fb240)) && (-1 < sVar5)) &&
+               (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) &&
+                ((sVar2 < SHORT_007fb244 &&
+                 (iVar9 = *(int *)(DAT_007fb248 + 4 +
+                                  ((int)SHORT_007fb246 * (int)sVar2 +
+                                   (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3) * 8), iVar9 != 0))
+                )))) && ((iVar9 = *(int *)(iVar9 + 0x20), iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
         psVar1 = (short *)((int)&this->field_05E0 + 2);
         uVar12 = (undefined2)((uint)psVar1 >> 0x10);
         iVar9 = thunk_FUN_0048dfd0(CONCAT22(uVar13,sVar3),CONCAT22(extraout_var,sVar5),
@@ -162,10 +162,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
         }
       }
     }
-    thunk_FUN_00481520(this,(int)*(short *)((int)&this->field_05E0 + 2),
-                       (int)*(short *)&this->field_05E4,(int)*(short *)((int)&this->field_05E4 + 2))
-    ;
-    thunk_FUN_00460260(this,0);
+    sub_00481520(this,(int)*(short *)((int)&this->field_05E0 + 2),(int)*(short *)&this->field_05E4,
+                 (int)*(short *)((int)&this->field_05E4 + 2));
+    sub_00460260(this,0);
 switchD_004761eb_caseD_3:
     return 2;
   }

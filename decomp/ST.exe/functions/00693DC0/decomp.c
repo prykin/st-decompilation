@@ -1,5 +1,5 @@
 
-undefined4 FUN_00693dc0(undefined4 param_1,undefined4 param_2)
+undefined4 FUN_00693dc0(cMf32 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;

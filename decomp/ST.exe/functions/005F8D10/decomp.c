@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     uVar1 = 5;
     if (*(char *)((int)param_1 + 0x29d) == '\x01') {
       if (*(char *)((int)param_1 + 699) == '\x01') {
-        thunk_FUN_004162b0(param_1,&local_a,&local_8,&local_6);
+        STFishC::sub_004162B0((STFishC *)param_1,&local_a,&local_8,&local_6);
         if ((((int)local_a == *(int *)((int)param_1 + 0x291)) &&
             ((int)local_8 == *(int *)((int)param_1 + 0x295))) &&
            ((int)local_6 == *(int *)((int)param_1 + 0x299))) {
@@ -64,7 +64,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     }
     else {
       if ((param_1[0xa8] != 0) && (*(char *)((int)param_1 + 0x29d) == '\0')) {
-        thunk_FUN_004162b0(param_1,&local_a,&local_8,&local_6);
+        STFishC::sub_004162B0((STFishC *)param_1,&local_a,&local_8,&local_6);
         return 10;
       }
       if (*(char *)((int)param_1 + 0x29d) != '\x01') {

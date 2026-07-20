@@ -117,8 +117,7 @@ LAB_0069fc43:
             local_38 = (undefined2 *)((int)local_38 + 0x400);
             local_24 = local_24 + 0x80;
             uVar5 = local_2c + 0x200;
-            psVar4 = (short *)Library::DKW::LIB::FUN_006acf50((undefined4 *)local_18,(uint)local_38)
-            ;
+            psVar4 = (short *)Library::DKW::LIB::FUN_006acf50((int)local_18,(uint)local_38);
             if (psVar4 == (short *)0x0) goto LAB_0069fc5a;
             local_1c = psVar4 + ((int)local_1c - (int)local_18 >> 2) * 2;
             local_10 = psVar4 + ((int)local_10 - (int)local_18 >> 2) * 2;
@@ -182,7 +181,7 @@ LAB_0069fc43:
     }
   }
 LAB_0069fc5a:
-  FUN_006a5e90((undefined4 *)local_18);
+  FUN_006a5e90(local_18);
   *param_8 = local_20;
   return local_28;
 }

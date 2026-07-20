@@ -25,7 +25,10 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_88;
-  int local_44 [4];
+  LPVOID local_44;
+  undefined4 local_40;
+  undefined4 local_3c;
+  undefined4 local_38;
   undefined4 local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -93,7 +96,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      iVar7 = thunk_FUN_0058d160(0,0,DAT_007fb240 + -1,DAT_007fb242 + -1,(int)this_00,
+      iVar7 = thunk_FUN_0058d160(0,0,SHORT_007fb240 + -1,SHORT_007fb242 + -1,(int)this_00,
                                  (int)(short)((short)*(undefined4 *)(param_1 + 0x14) * 0xc9 + 100),
                                  (int)(short)((short)*(undefined4 *)(param_1 + 0x18) * 0xc9 + 100),
                                  (int)(short)((short)((uint)*(undefined4 *)(param_1 + 0x14) >> 0x10)
@@ -399,29 +402,30 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
     }
     Bad((STOctopusC *)this_00,(int)unaff_EDI);
     if (((((*(int *)&this_00->field_0x299 < 0) ||
-          ((int)DAT_007fb240 <= *(int *)&this_00->field_0x299)) ||
+          ((int)SHORT_007fb240 <= *(int *)&this_00->field_0x299)) ||
          (*(int *)&this_00->field_0x29d < 0)) ||
-        (((int)DAT_007fb242 <= *(int *)&this_00->field_0x29d ||
+        (((int)SHORT_007fb242 <= *(int *)&this_00->field_0x29d ||
          (iVar7 = *(int *)&this_00->field_0x2a1, iVar7 < 0)))) ||
-       ((DAT_007fb244 <= iVar7 ||
+       ((SHORT_007fb244 <= iVar7 ||
         (bVar5 = thunk_FUN_004961b0(*(short *)&this_00->field_0x299,*(short *)&this_00->field_0x29d,
                                     (short)iVar7), CONCAT31(extraout_var,bVar5) == 0))))
     goto LAB_0058a0d0;
     switch(*(undefined4 *)&this_00->field_0x2a5) {
     case 0xf8:
       iVar7 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                         (byte *)s_octopus2_007cb9f0,0x1d);
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_octopus2_007cb9f0,0x1d
+                        );
       if (iVar7 != 0) {
         iVar7 = 0xe9;
 cf_error_exit_0058A005:
-        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_oct_cpp_007cba18,iVar7);
+        RaiseInternalException
+                  (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_oct_cpp_007cba18,iVar7);
       }
       break;
     case 0xf9:
       iVar7 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                         (byte *)s_octopus1_007cb9dc,0x1d);
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_octopus1_007cb9dc,0x1d
+                        );
       if (iVar7 != 0) {
         iVar7 = 0xe4;
         goto cf_error_exit_0058A005;
@@ -429,8 +433,8 @@ cf_error_exit_0058A005:
       break;
     case 0xfa:
       iVar7 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                         (byte *)s_medusa2_007cb9fc,0x1d);
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_medusa2_007cb9fc,0x1d)
+      ;
       if (iVar7 != 0) {
         iVar7 = 0xf3;
         goto cf_error_exit_0058A005;
@@ -438,8 +442,8 @@ cf_error_exit_0058A005:
       break;
     case 0xfb:
       iVar7 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,
-                         (byte *)s_medusa1_007cb9e8,0x1d);
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_medusa1_007cb9e8,0x1d)
+      ;
       if (iVar7 != 0) {
         iVar7 = 0xee;
         goto cf_error_exit_0058A005;
@@ -499,27 +503,28 @@ cf_error_exit_0058A005:
     *(undefined2 *)&this_00->field_0x52 = *(undefined2 *)((int)local_1c + 0x82);
     *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)(local_1c + 0x21);
     *(undefined4 *)&this_00->field_0x24d = local_1c[0xc];
-    local_44[0] = Library::DKW::LIB::FUN_006aac70(0x44);
-    if (local_44[0] != 0) {
+    local_44 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+    if (local_44 != (LPVOID)0x0) {
       iVar7 = 0;
       do {
         if (iVar7 == 8) {
-          *(undefined4 *)(local_44[0] + 0x20) = DAT_00806774;
+          *(undefined4 *)((int)local_44 + 0x20) = DAT_00806774;
         }
         else {
-          *(int **)(local_44[0] + iVar7 * 4) = DAT_0080676c;
+          *(int **)((int)local_44 + iVar7 * 4) = DAT_0080676c;
         }
         iVar7 = iVar7 + 1;
       } while (iVar7 < 0x11);
-      local_44[1] = 0;
-      local_44[2] = 0;
-      local_44[3] = DAT_008073cc;
+      local_40 = 0;
+      local_3c = 0;
+      local_38 = DAT_008073cc;
       local_34 = 0;
       local_30 = 0;
       local_2c = 0;
       STT3DSprC::RestoreSpr
-                ((STT3DSprC *)&this_00->field_01D5,local_44,(undefined4 *)((int)puVar11 + 0x92));
-      FUN_006ab060(local_44);
+                ((STT3DSprC *)&this_00->field_01D5,(int *)&local_44,
+                 (undefined4 *)((int)puVar11 + 0x92));
+      FUN_006ab060(&local_44);
     }
   }
   if ((*(int *)&this_00->field_0x249 == 3) || (iVar7 = thunk_FUN_0058cfe0((int)this_00), iVar7 != 0)

@@ -1,11 +1,14 @@
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004C2950_param_3Enum. Cases:
-   CASE_8=8;CASE_9=9;CASE_C=12;CASE_D=13;CASE_E=14 */
+   CASE_8=8;CASE_9=9;CASE_C=12;CASE_D=13;CASE_E=14
+   
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0044C130 -> 004C2950 @ 0044C2EA */
 
 void __cdecl
 FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,undefined4 *param_4,
-            char *param_5,undefined1 *param_6,undefined4 *param_7)
+            char *param_5,undefined1 *param_6,STAllPlayersC_GetTOBJImage_param_2Enum *param_7)
 
 {
   int iVar1;
@@ -43,7 +46,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
         wsprintfA(param_5,s__s_cover_007ac8fc,*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc));
         *param_4 = DAT_0080678c;
         *param_6 = 0x1d;
-        *param_7 = *(undefined4 *)(PTR_DAT_007b5170 + iVar1 * 0x20);
+        *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);
         return;
       }
     }
@@ -75,7 +78,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       }
       *param_4 = DAT_0080678c;
       *param_6 = 0x1d;
-      *param_7 = *(undefined4 *)(PTR_DAT_007b8310 + iVar1 * 0x20);
+      *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b8310 + iVar1 * 0x20);
       return;
     }
     break;
@@ -92,7 +95,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       return;
     }
 LAB_004c2b44:
-    *param_7 = *(undefined4 *)(PTR_DAT_007b5170 + iVar1 * 0x20);
+    *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);
     break;
   case CASE_E:
     iVar1 = param_1 + -0x97 + param_2 * 3;
@@ -121,7 +124,7 @@ LAB_004c2b44:
       }
       *param_4 = DAT_0080678c;
       *param_6 = 0x1d;
-      *param_7 = *(undefined4 *)(PTR_DAT_007b5170 + iVar1 * 0x20);
+      *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);
       return;
     }
   }

@@ -47,9 +47,9 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
     pSVar3->field_0028 = 0;
     pSVar3->field_002C = 0;
     *puVar1 = 0;
-    if (DAT_00806754 != (cMf32 *)0x0) {
+    if (g_cMf32_00806754 != (cMf32 *)0x0) {
       local_c = puVar1;
-      cMf32::RecGet(DAT_00806754,0xc,PTR_DAT_0079ae30,(int *)&local_c,0);
+      cMf32::RecGet(g_cMf32_00806754,0xc,PTR_DAT_0079ae30,(int *)&local_c,0);
     }
     pSVar3->field_0034 = *puVar1;
     pSVar3->field_0020 = local_10;

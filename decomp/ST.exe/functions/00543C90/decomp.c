@@ -8,7 +8,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
 {
   SpriteClassTy *pSVar1;
   code *pcVar2;
-  uint uVar3;
+  DWORD DVar3;
   CursorClassTy *pCVar4;
   bool bVar5;
   undefined3 extraout_var;
@@ -17,7 +17,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_54;
-  uint local_10;
+  DWORD local_10;
   CursorClassTy *local_c;
   int local_8;
   
@@ -36,7 +36,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
     g_currentExceptionFrame = &local_54;
     iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar4 = local_c;
-    uVar3 = local_10;
+    DVar3 = local_10;
     if (iVar6 == 0) {
       local_c->field_0020 = 0xfffffffe;
       if (param_1 != -1) {
@@ -68,13 +68,13 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
       if ((pSVar1 != (SpriteClassTy *)0x0) && (DAT_00807598 != (void *)0x0)) {
         if (pSVar1->field_000C + -1 <= (int)pSVar1->field_0008) {
           SpriteClassTy::CloseSprite(pSVar1);
-          Library::MSVCRT::FUN_0072e2b0(&pCVar4->field_04EB->vtable);
+          Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar4->field_04EB);
           pCVar4->field_04EB = (SpriteClassTy *)0x0;
           g_currentExceptionFrame = local_54.previous;
           return;
         }
-        if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= uVar3) {
-          pSVar1->field_0044 = uVar3;
+        if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= DVar3) {
+          pSVar1->field_0044 = DVar3;
           pSVar1->field_0008 = pSVar1->field_0008 + 1;
           FUN_006e2970(DAT_00807598,*(undefined4 *)(pCVar4 + 1),*(undefined4 *)&pCVar4[1].field_0x4,
                        pCVar4[1].field_0008,&pCVar4->field_04EB->field_001C,

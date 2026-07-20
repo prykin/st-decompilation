@@ -1,7 +1,10 @@
 
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 006C8EC0 -> 006AB090 @ 006C8F84 | 006C8EC0 -> 006AB090 @ 006CE697 */
+
 undefined4
-FUN_006ab090(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,
-            int param_8,int param_9,int param_10)
+FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int param_4,int param_5
+            ,int param_6,int param_7,int param_8,int param_9,int param_10)
 
 {
   byte bVar1;
@@ -68,7 +71,7 @@ FUN_006ab090(int param_1,int param_2,int param_3,int param_4,int param_5,int par
       if (((((param_8 < 1) || (local_48[-1] != 0)) &&
            ((param_2 + -1 <= param_8 || (local_48[1] != 0)))) &&
           ((param_9 < 1 || (local_48[-param_2] != 0)))) &&
-         (((param_3 + -1 <= param_9 || (local_48[param_2] != 0)) &&
+         ((((int)(param_3 - CASE_1) <= param_9 || (local_48[param_2] != 0)) &&
           (((param_10 < 1 || (local_48[-local_c] != 0)) &&
            ((param_4 + -1 <= param_10 || (local_48[local_c] != 0)))))))) {
         bVar8 = true;
@@ -135,7 +138,7 @@ LAB_006acc40:
         if (uVar21 != 0) {
           local_14 = local_14 & 0xffffffef;
         }
-        if ((int)uVar12 < param_3 + -1) {
+        if ((int)uVar12 < (int)(param_3 - CASE_1)) {
           local_14 = local_14 & 0xfffffffd;
         }
         if (uVar12 != 0) {

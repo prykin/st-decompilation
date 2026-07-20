@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790AA0 (store 004B7F47)
    Evidence: final_vptr=00790AA0; returns_this=true; calls_before=2; field_writes_after=3;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 004B7EF0 returns TLOBaseTy::TLOBaseTy this @ 004B7F63 */
 
-undefined4 * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this,undefined4 *param_1)
+TLOBaseTy * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this)
 
 {
   thunk_FUN_004158e0(&this->vtable);
@@ -23,6 +26,6 @@ undefined4 * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this,undefined4 *param_1
   this->field_0245 = 0xffffffff;
   this->field_0249 = 0xffffffff;
   this->field_024D = 0xffffffff;
-  return &this->vtable;
+  return this;
 }
 

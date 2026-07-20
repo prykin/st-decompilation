@@ -1,5 +1,8 @@
 
-bool __thiscall FUN_004908a0(void *this,void *param_1,int param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004908A0 parameter used as this of STFishC::sub_004162B0 @ 004908C1 */
+
+bool __thiscall FUN_004908a0(void *this,STFishC *param_1,int param_2)
 
 {
   short sVar1;
@@ -13,20 +16,20 @@ bool __thiscall FUN_004908a0(void *this,void *param_1,int param_2)
   undefined2 local_8 [2];
   
   local_10 = 1000000;
-  thunk_FUN_004162b0(param_1,(undefined2 *)&param_1,local_8,local_c);
+  STFishC::sub_004162B0(param_1,(undefined2 *)&param_1,local_8,local_c);
   iVar6 = 0;
   iVar5 = param_2;
   do {
     sVar4 = local_8[0] + (short)iVar6;
     sVar3 = local_c[0] + 1;
     sVar1 = (short)param_1 + (short)iVar5;
-    if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar4 < 0)) ||
-       (((DAT_007fb242 <= sVar4 || (sVar3 < 0)) ||
-        ((DAT_007fb244 <= sVar3 ||
+    if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar4 < 0)) ||
+       (((SHORT_007fb242 <= sVar4 || (sVar3 < 0)) ||
+        ((SHORT_007fb244 <= sVar3 ||
          (iVar5 = param_2,
          *(int *)(DAT_007fb248 +
-                 ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar4 + (int)sVar1) * 8)
-         == 0)))))) {
+                 ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 + (int)sVar1)
+                 * 8) == 0)))))) {
       iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                            (int)*(short *)((int)this + 0x4b),(short)param_1 + iVar5,
                            local_8[0] + iVar6,local_c[0] + 1);

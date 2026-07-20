@@ -19,7 +19,8 @@ FUN_004c6bb0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   *(undefined4 *)((int)this + 0x404) = 0;
   iVar1 = thunk_FUN_00418030(this,*(short *)((int)this + 0x3e0),(short)param_2,(short)param_3);
   if (iVar1 == -1) {
-    RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x1c);
+    RaiseInternalException
+              (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x1c);
   }
   else if (iVar1 == 2) {
     *(undefined4 *)((int)this + 0x3dc) = 0;

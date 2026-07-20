@@ -4,12 +4,12 @@
    Diagnostic line evidence: 293 | 294 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
+uint * __cdecl _GetStaffGrpExch(uint param_1)
 
 {
   code *pcVar1;
   int errorCode;
-  STGroupC *this;
+  STGroupBoatC *this;
   uint *puVar2;
   int iVar3;
   void *unaff_ESI;
@@ -33,14 +33,14 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
     RaiseInternalException(errorCode,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x126);
     return (uint *)0x0;
   }
-  if (DAT_007fa174 == 0) {
-    this = (STGroupC *)0x0;
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+    this = (STGroupBoatC *)0x0;
   }
   else {
-    this = (STGroupC *)thunk_FUN_0042b760(param_1,0);
+    this = thunk_FUN_0042b760(param_1,0);
   }
-  if (this != (STGroupC *)0x0) {
-    puVar2 = STGroupC::GetGroupContent(this,(int)unaff_ESI);
+  if (this != (STGroupBoatC *)0x0) {
+    puVar2 = STGroupC::GetGroupContent((STGroupC *)this,(int)unaff_ESI);
     g_currentExceptionFrame = pIVar4;
     return puVar2;
   }

@@ -548,7 +548,8 @@ LAB_005695ae:
     }
     break;
   case SOUND_MODE_11:
-    puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(local_8->field_0DEF,soundName,0,0);
+    puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
+                                ((cMf32 *)local_8->field_0DEF,soundName,0,(ushort *)0x0);
     if (puVar11 != (uint *)0x0) {
       pSVar14->field_0E03 = pSVar14->field_0E07;
       uVar5 = FUN_006c1390(puVar11,0,1,DAT_0080730a,0,0,1);
@@ -576,15 +577,18 @@ LAB_00569cc6:
       }
     }
     else {
-      if (DAT_00806758 != 0) {
-        puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(DAT_00806758,soundName,0,0);
+      if (g_cMf32_00806758 != (cMf32 *)0x0) {
+        puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
+                                    (g_cMf32_00806758,soundName,0,(ushort *)0x0);
       }
       if (puVar11 == (uint *)0x0) {
-        if (DAT_00806798 != 0) {
-          puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(DAT_00806798,soundName,0,0);
+        if (g_cMf32_00806798 != (cMf32 *)0x0) {
+          puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
+                                      (g_cMf32_00806798,soundName,0,(ushort *)0x0);
         }
         if (puVar11 == (uint *)0x0) {
-          puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(local_8->field_0DEF,soundName,0,0);
+          puVar11 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
+                                      ((cMf32 *)local_8->field_0DEF,soundName,0,(ushort *)0x0);
           goto LAB_00569cc6;
         }
       }

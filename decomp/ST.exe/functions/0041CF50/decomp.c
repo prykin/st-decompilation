@@ -4,8 +4,8 @@ void __fastcall FUN_0041cf50(int *param_1)
 {
   int iVar1;
   
-  if (DAT_00802a88 != (void *)0x0) {
-    thunk_FUN_00559620(DAT_00802a88,(int)*(short *)((int)param_1 + 0x5b),
+  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    thunk_FUN_00559620(g_visibleClass_00802A88,(int)*(short *)((int)param_1 + 0x5b),
                        (int)*(short *)((int)param_1 + 0x5d),
                        (char)*(undefined2 *)((int)param_1 + 0x5f),(undefined *)param_1[9],
                        *(int *)((int)param_1 + 0x105),param_1[6],0xffffffff);

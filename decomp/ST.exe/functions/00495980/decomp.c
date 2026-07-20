@@ -42,16 +42,17 @@ LAB_00495c27:
       RaiseInternalException(iVar3,0,s_E____titans_wlad_To_dump_cpp_007abdd4,iVar4);
       return 0xffff;
     }
-    DAT_007fb278 = *DAT_00806750;
-    DAT_007fb27a = DAT_00806750[1];
-    DAT_007fb27c = 5;
-    DAT_007fb27e = *DAT_00806750 * DAT_00806750[1];
+    SHORT_007fb278 = *DAT_00806750;
+    SHORT_007fb27a = DAT_00806750[1];
+    SHORT_007fb27c = 5;
+    SHORT_007fb27e = *DAT_00806750 * DAT_00806750[1];
     DAT_007fb280 = (undefined4 *)
-                   Library::DKW::LIB::FUN_006aac70((int)DAT_007fb27a * (int)DAT_007fb278 * 10);
+                   Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb27a * (int)SHORT_007fb278 * 10);
     if (DAT_007fb280 == (undefined4 *)0x0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_To_dump_cpp_007abdd4,0x2b);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x2b);
     }
-    uVar6 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
+    uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
     puVar8 = DAT_007fb280;
     for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar8 = 0;
@@ -61,28 +62,30 @@ LAB_00495c27:
       *(undefined1 *)puVar8 = 0;
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    DAT_007fb232 = DAT_007fb27a;
-    DAT_007fb234 = DAT_007fb27c;
-    DAT_007fb230 = DAT_007fb278;
-    _DAT_007fb236 = DAT_007fb27e;
+    SHORT_007fb232 = SHORT_007fb27a;
+    DAT_007fb234 = SHORT_007fb27c;
+    SHORT_007fb230 = SHORT_007fb278;
+    _DAT_007fb236 = SHORT_007fb27e;
     DAT_007fb238 = Library::DKW::LIB::FUN_006aac70
-                             ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
+                             ((int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278 * 2);
     if (DAT_007fb238 == 0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_To_dump_cpp_007abdd4,0x30);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x30);
     }
-    DAT_007fb242 = DAT_007fb27a;
-    DAT_007fb244 = DAT_007fb27c;
-    DAT_007fb240 = DAT_007fb278;
-    DAT_007fb246 = DAT_007fb27e;
+    SHORT_007fb242 = SHORT_007fb27a;
+    SHORT_007fb244 = SHORT_007fb27c;
+    SHORT_007fb240 = SHORT_007fb278;
+    SHORT_007fb246 = SHORT_007fb27e;
     DAT_007fb248 = (undefined4 *)
                    Library::DKW::LIB::FUN_006aac70
-                             ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 8);
+                             ((int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278 * 8);
     if (DAT_007fb248 == (undefined4 *)0x0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_To_dump_cpp_007abdd4,0x34);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x34);
     }
     puVar8 = DAT_007fb248;
-    for (iVar3 = ((int)DAT_007fb244 * (int)DAT_007fb242 * (int)DAT_007fb240 & 0x1fffffffU) << 1;
-        iVar3 != 0; iVar3 = iVar3 + -1) {
+    for (iVar3 = ((int)SHORT_007fb244 * (int)SHORT_007fb242 * (int)SHORT_007fb240 & 0x1fffffffU) <<
+                 1; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
     }
@@ -91,9 +94,9 @@ LAB_00495c27:
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
     DAT_007fb26c = (undefined4 *)
-                   Library::DKW::LIB::FUN_006aac70((int)DAT_007fb232 * (int)DAT_007fb230);
-    iVar3 = (int)DAT_007fb232;
-    iVar4 = (int)DAT_007fb230;
+                   Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb232 * (int)SHORT_007fb230);
+    iVar3 = (int)SHORT_007fb232;
+    iVar4 = (int)SHORT_007fb230;
     puVar8 = DAT_007fb26c;
     for (uVar6 = (uint)(iVar3 * iVar4) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar8 = 0;
@@ -129,7 +132,7 @@ LAB_00495c27:
       FUN_006ab060(&DAT_007fb280);
     }
     if (DAT_007fb238 != 0) {
-      FUN_006ab060(&DAT_007fb238);
+      FUN_006ab060((LPVOID *)&DAT_007fb238);
     }
     if (DAT_007fb248 != (undefined4 *)0x0) {
       FUN_006ab060(&DAT_007fb248);

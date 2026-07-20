@@ -47,7 +47,7 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
     puVar4 = &local_c->field_0219;
     iVar5 = local_8;
     do {
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)*puVar4);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)*puVar4);
       puVar4 = puVar4 + 1;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);

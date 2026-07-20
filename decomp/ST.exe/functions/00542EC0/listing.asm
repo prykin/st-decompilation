@@ -1,4 +1,4 @@
-FUN_00542ec0:
+InterSystemC::~InterSystemC:
 00542EC0  56                        PUSH ESI
 00542EC1  8B F1                     MOV ESI,ECX
 00542EC3  57                        PUSH EDI

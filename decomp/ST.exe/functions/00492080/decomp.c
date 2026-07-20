@@ -42,8 +42,8 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
         local_c = param_1._2_2_;
         local_a = local_8;
       }
-      thunk_FUN_00481520(this,(int)local_e,(int)local_c,(int)local_a);
-      thunk_FUN_00460260(this,0);
+      sub_00481520(this,(int)local_e,(int)local_c,(int)local_a);
+      sub_00460260(this,0);
       return;
     }
     this->field_0596 = 1;

@@ -86,7 +86,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
       if (uVar14 == 0x8160) {
         pcVar2 = this_00->field_01E4;
         if (pcVar2->field_00A0 != 0) {
-          FUN_00710790((int)pcVar2);
+          FUN_00710790((uint *)pcVar2);
         }
         *(int *)(param_1 + 0x18) = *(int *)&pcVar2->field_0x8a + 1;
         g_currentExceptionFrame = local_84.previous;
@@ -246,8 +246,8 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           this_00->field_01C3 = *(undefined4 *)(param_1 + 0x14);
           iVar5 = (ushort)this_00->field_01AF + 0x16;
           Library::DKW::WGR::FUN_006b55f0
-                    ((undefined4 *)this_00->field_0068,0,0x21,iVar5,(int)this_00->field_01DC,0,0x21,
-                     iVar5,0x19c,0x117 - (uint)(ushort)this_00->field_01AF);
+                    ((undefined4 *)this_00->field_0068,0,0x21,iVar5,(byte *)this_00->field_01DC,0,
+                     0x21,iVar5,0x19c,0x117 - (uint)(ushort)this_00->field_01AF);
           Library::DKW::WGR::FUN_006b5110
                     (this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
                      this_00->field_0218,0,0,(uint)(ushort)this_00->field_01B1 * this_00->field_01C3
@@ -273,7 +273,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         }
         pcVar2 = this_00->field_01E4;
         if (pcVar2->field_00A0 != 0) {
-          FUN_00710790((int)pcVar2);
+          FUN_00710790((uint *)pcVar2);
         }
         local_18 = *(uint *)&pcVar2->field_0x8a;
         if (DAT_0080874e == '\x03') {
@@ -283,7 +283,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           local_14 = (undefined4 *)CONCAT31(local_14._1_3_,(-(DAT_0080874e != '\x01') & 6U) + 1);
         }
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,
+                  ((undefined4 *)this_00->field_0068,0,0x21,0x16,(byte *)this_00->field_01DC,0,0x21,
                    0x16,0x19c,0x118);
         iVar5 = this_00->field_0218;
         local_1c = *(uint **)(iVar5 + 0x14);
@@ -515,8 +515,8 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         }
         iVar5 = *(ushort *)(param_1 + 0x1a) + 0x16;
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0068,0,0x21,iVar5,(int)this_00->field_01DC,0,0x21,
-                   iVar5,0x19c,*(int *)(this_00->field_01EC + 8));
+                  ((undefined4 *)this_00->field_0068,0,0x21,iVar5,(byte *)this_00->field_01DC,0,0x21
+                   ,iVar5,0x19c,*(int *)(this_00->field_01EC + 8));
         iVar5 = this_00->field_01EC;
         uVar14 = *(uint *)(iVar5 + 0x14);
         if (uVar14 == 0) {
@@ -533,7 +533,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           puVar7 = (undefined4 *)((int)puVar7 + 1);
         }
         ccFntTy::SetSurf(this_00->field_01E4,this_00->field_01EC,0,0,0,0,0);
-        pcVar9 = (char *)FUN_006b0140(local_18,DAT_00807618);
+        pcVar9 = (char *)FUN_006b0140(local_18,HINSTANCE_00807618);
         uVar14 = 0xffffffff;
         do {
           pcVar18 = pcVar9;
@@ -859,16 +859,16 @@ switchD_0051e4d9_caseD_6:
 LAB_0051e1b2:
   this_00->field_01DB = 0x46;
 switchD_0051dfcc_caseD_7:
-  iVar5 = this_00->field_0178;
-  if ((undefined4 *)iVar5 == local_10) {
+  UVar21 = this_00->field_0178;
+  if ((undefined4 *)UVar21 == local_10) {
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
-  if (iVar5 != 0) {
+  if (UVar21 != 0) {
     this_00->field_0028 = 0x4202;
     *(undefined2 *)&this_00->field_0x2c = 0;
     this_00->field_002E = 2;
-    *(int *)&this_00->field_0x30 = iVar5;
+    *(UINT *)&this_00->field_0x30 = UVar21;
     if (DAT_00802a30 != (undefined4 *)0x0) {
       (**(code **)*DAT_00802a30)(&this_00->field_0x18);
     }

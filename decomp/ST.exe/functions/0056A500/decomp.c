@@ -16,10 +16,10 @@ undefined4 FUN_0056a500(void)
       if (DAT_0080877e != '\0') {
         local_20 = DAT_0080733b;
         local_1e = DAT_00808754;
-        FUN_00715360(DAT_00811764,0,'\x1a',local_2c,0x26,0,0xffffffff);
+        FUN_00715360(g_int_00811764,0,'\x1a',local_2c,0x26,0,0xffffffff);
         return 0;
       }
-      FUN_00715360(DAT_00811764,1,'\x1a',local_2c,0x26,0,0xffffffff);
+      FUN_00715360(g_int_00811764,1,'\x1a',local_2c,0x26,0,0xffffffff);
     }
   }
   return 0;

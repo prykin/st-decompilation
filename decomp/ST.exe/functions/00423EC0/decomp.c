@@ -65,14 +65,15 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
         } while ((int)uVar7 < local_c);
       }
       STAllPlayersC::RegisterGroup
-                (DAT_007fa174,this_00->field_0024,CONCAT22(uVar6,this_00->field_0025),(int)this_00);
+                (g_sTAllPlayers_007FA174,this_00->field_0024,CONCAT22(uVar6,this_00->field_0025),
+                 (int)this_00);
       this_00->field_0031 = *(int *)&this_00->field_0x18 * DAT_00808754;
     }
     else if (*(uint *)(iVar2 + 0xc) == 2) {
       RestoreGrpData(this_00,iVar2);
       STAllPlayersC::RegisterGroup
-                (DAT_007fa174,this_00->field_0024,CONCAT22(extraout_var,this_00->field_0025),
-                 (int)this_00);
+                (g_sTAllPlayers_007FA174,this_00->field_0024,
+                 CONCAT22(extraout_var,this_00->field_0025),(int)this_00);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
@@ -82,8 +83,8 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
     FUN_006ae110((byte *)this_00->field_0029);
     this_00->field_0029 = 0;
     STAllPlayersC::UnRegisterGroup
-              (DAT_007fa174,this_00->field_0024,CONCAT22(extraout_var_00,this_00->field_0025),
-               (int)this_00);
+              (g_sTAllPlayers_007FA174,this_00->field_0024,
+               CONCAT22(extraout_var_00,this_00->field_0025),(int)this_00);
     if ((byte *)this_00->field_002D != (byte *)0x0) {
       FUN_006ae110((byte *)this_00->field_002D);
       this_00->field_002D = 0;

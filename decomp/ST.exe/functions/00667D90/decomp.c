@@ -11,7 +11,7 @@ undefined4 __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,int param_1)
   AiFltClassTy *this_00;
   int iVar3;
   uint uVar4;
-  STGroupC *this_01;
+  STGroupBoatC *this_01;
   int iVar5;
   undefined4 uVar6;
   undefined4 extraout_EDX;
@@ -67,7 +67,8 @@ undefined4 __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,int param_1)
       else if (uVar4 == 2) {
         puVar1 = *(undefined4 **)(param_1 + 0x14);
         if (puVar1 == (undefined4 *)0x0) {
-          RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0xe70);
+          RaiseInternalException
+                    (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_flt_cpp_007d2b80,0xe70);
         }
         InitData(this_00,puVar1);
         if (puVar1[3] == 0) {
@@ -98,16 +99,15 @@ undefined4 __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,int param_1)
           iVar3 = CONCAT22((short)((uint)this_00->field_022F >> 0x10),*(undefined2 *)(iVar5 + 0xc));
           this_00->field_0127 = *(undefined2 *)(iVar5 + 0xc);
         }
-        if ((this_00->field_007D == -2) || (DAT_007fa174 == 0)) {
-          this_01 = (STGroupC *)0x0;
+        if ((this_00->field_007D == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+          this_01 = (STGroupBoatC *)0x0;
         }
         else {
-          this_01 = (STGroupC *)
-                    thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar5 >> 8),this_00->field_0x24),
+          this_01 = thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar5 >> 8),this_00->field_0x24),
                                        CONCAT22((short)((uint)iVar3 >> 0x10),this_00->field_007D));
         }
-        if (this_01 != (STGroupC *)0x0) {
-          STGroupC::SetAVPar(this_01,1);
+        if (this_01 != (STGroupBoatC *)0x0) {
+          STGroupC::SetAVPar((STGroupC *)this_01,1);
         }
       }
     }

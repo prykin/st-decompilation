@@ -24,9 +24,9 @@ void FUN_006d46a0(undefined4 *param_1,DWORD param_2)
     if ((HANDLE)param_1[3] != (HANDLE)0xffffffff) {
       CloseHandle((HANDLE)param_1[3]);
     }
-    FUN_006a5e90((undefined4 *)param_1[1]);
+    FUN_006a5e90((short *)param_1[1]);
     if ((param_1[2] & 0x400000) != 0) {
-      FUN_006a5e90(param_1);
+      FUN_006a5e90((short *)param_1);
     }
     SetLastError(dwErrCode);
   }

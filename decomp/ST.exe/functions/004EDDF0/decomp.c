@@ -22,19 +22,19 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   pBVar2 = local_8;
   if (errorCode == 0) {
     if (local_8->field_01BE != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_01BE);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_01BE);
     }
     pBVar2->field_01BE = 0;
     if (pBVar2->field_01C2 != 0) {
-      FUN_006e56b0((void *)pBVar2->field_000C,pBVar2->field_01C2);
+      StartSystemTy::sub_006E56B0(pBVar2->field_000C,pBVar2->field_01C2);
     }
     pBVar2->field_01C2 = 0;
     if (pBVar2->field_01C6 != 0) {
-      FUN_006e56b0((void *)pBVar2->field_000C,pBVar2->field_01C6);
+      StartSystemTy::sub_006E56B0(pBVar2->field_000C,pBVar2->field_01C6);
     }
     pBVar2->field_01C6 = 0;
     if (pBVar2->field_01CA != 0) {
-      FUN_006e56b0((void *)pBVar2->field_000C,pBVar2->field_01CA);
+      StartSystemTy::sub_006E56B0(pBVar2->field_000C,pBVar2->field_01CA);
     }
     pBVar2->field_01CA = 0;
     pBVar2->field_02B8 = 0;

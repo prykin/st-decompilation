@@ -5,7 +5,7 @@ void FUN_006c5a10(int param_1,ushort *param_2,uint param_3,uint param_4,uint par
 {
   if ((*(byte *)(param_1 + 0x49c) & 1) == 0) {
     if (*(int *)(param_1 + 0x498) != 7) {
-      FUN_006ce6c0((undefined4 *)param_2,param_3,param_6);
+      FUN_006ce6c0(param_2,param_3,param_6);
       return;
     }
     if (param_3 != 0) {

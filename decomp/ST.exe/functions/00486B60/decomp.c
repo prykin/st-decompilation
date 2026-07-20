@@ -111,7 +111,7 @@ LAB_00486cfc:
   }
   *(undefined4 *)(puVar1 + 0x2a) = 0;
   puVar1[0x2e] = 0;
-  thunk_FUN_004162b0(this,&local_8,&local_6,(undefined2 *)((int)&param_1 + 2));
+  STFishC::sub_004162B0(this,&local_8,&local_6,(undefined2 *)((int)&param_1 + 2));
   puVar1[0x2e - param_1._2_2_] = 1;
   return;
 }

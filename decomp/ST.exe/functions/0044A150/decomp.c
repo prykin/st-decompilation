@@ -32,7 +32,8 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,uint
     uVar4 = extraout_EDX;
     if (uVar2 != param_3) {
       RaiseInternalException
-                (-0x5001fff9,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f1d);
+                (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x2f1d);
       uVar4 = extraout_EDX_00;
     }
     DelObjFromTmps(this_00,DAT_0080874d,*(int *)(param_3 + 0x20),

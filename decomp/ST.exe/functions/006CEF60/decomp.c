@@ -1,4 +1,7 @@
 
+/* [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 006CEF60 -> 006D3300 @ 006CF376 | 006CEF60 -> 006DA080 @ 006CF4D7 */
+
 int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,uint *param_5,char *param_6,
                 int param_7,int param_8,int *param_9,int param_10,int param_11,uint param_12,
                 undefined1 *param_13)
@@ -120,7 +123,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,uint *param_
       local_4c = 0;
       local_28 = 0;
       do {
-        iVar12 = FUN_006bbe40(*(int **)(*param_1 + 0x44),&param_2,&param_3,0x20);
+        iVar12 = FUN_006bbe40(*(int **)(*param_1 + 0x44),(uint *)&param_2,&param_3,0x20);
         local_28 = iVar12;
         if (iVar12 == 0) goto LAB_006cf209;
         if (iVar12 != -0x7789fe3e) break;
@@ -161,8 +164,8 @@ LAB_006cf209:
             local_8 = 1;
             if (*(int *)(*param_1 + 0x20) == 0x10) {
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
-              FUN_006d3300((undefined2 *)puVar13,param_3,*(byte **)((int)puVar8 + 6),iVar4,uVar7,
-                           local_58,local_54,local_24,*(byte **)(iVar11 + 0xb8),
+              FUN_006d3300(puVar13,param_3,*(byte **)((int)puVar8 + 6),iVar4,uVar7,local_58,local_54
+                           ,local_24,*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
                            ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
                            *(int *)(iVar11 + 0x28) + local_60,
@@ -194,7 +197,7 @@ LAB_006cf37b:
             if (iVar5 < 0) {
               iVar5 = 0;
             }
-            local_8c = FUN_006da080(param_1,(int)puVar13,param_3,local_90,iVar5,pbVar2,iVar4,uVar7,
+            local_8c = FUN_006da080(param_1,puVar13,param_3,local_90,iVar5,pbVar2,iVar4,uVar7,
                                     local_58,local_54,param_13);
           }
           else if (uVar10 == 1) {
@@ -245,7 +248,7 @@ LAB_006cf37b:
     local_4c = 0;
     local_28 = 0;
     do {
-      iVar12 = FUN_006bbe40(*(int **)(*param_1 + 0x44),&param_2,&param_3,0x20);
+      iVar12 = FUN_006bbe40(*(int **)(*param_1 + 0x44),(uint *)&param_2,&param_3,0x20);
       local_28 = iVar12;
       if (iVar12 == 0) goto LAB_006cf695;
       if (iVar12 != -0x7789fe3e) break;
@@ -268,7 +271,7 @@ LAB_006cf695:
     local_8 = 4;
     if (*(int *)(*param_1 + 0x20) == 0x10) {
       iVar6 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d3300((undefined2 *)param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar7,pbVar2,local_24,
+      FUN_006d3300(param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar7,pbVar2,local_24,
                    *(byte **)(iVar11 + 0xb8),(int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
                    (*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14);
@@ -285,8 +288,8 @@ LAB_006cf8ee:
     local_8 = 0xffffffff;
   }
   else if (uVar10 == 2) {
-    local_28 = FUN_006da080(param_1,(int)param_2,param_3,0,0,(byte *)param_5,iVar5,uVar14,uVar7,
-                            pbVar2,param_13);
+    local_28 = FUN_006da080(param_1,param_2,param_3,0,0,(byte *)param_5,iVar5,uVar14,uVar7,pbVar2,
+                            param_13);
   }
   else if (uVar10 == 1) {
     if ((param_1[0x74] == 0) || ((*(byte *)((int)param_5 + 0xd) & 3) != 1)) {

@@ -1,8 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0060CBE0 -> 0060E210 @ 0060CC81 | 00614C80 -> 0060E210 @ 00614DB0 | 00615430 ->
+   0060E210 @ 006156C1 */
 
-undefined4
-FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,undefined2 *param_4,int param_5)
+undefined4 FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -68,15 +70,15 @@ FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,undefined2 *param
           }
         }
         lVar8 = Library::MSVCRT::__ftol();
-        *param_4 = (short)lVar8;
+        *(short *)param_4 = (short)lVar8;
         lVar8 = Library::MSVCRT::__ftol();
-        param_4[1] = (short)lVar8;
-        param_4 = param_4 + 2;
+        *(short *)(param_4 + 2) = (short)lVar8;
+        param_4 = param_4 + 4;
         param_3 = param_3 + 1;
         fVar7 = extraout_ST1;
       } while (param_3 < param_5);
     }
-    FUN_006a5e90((undefined4 *)pdVar2);
+    FUN_006a5e90((short *)pdVar2);
     return 0;
   }
   return 0xfffffffe;

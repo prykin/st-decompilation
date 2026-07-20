@@ -59,7 +59,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
     g_currentExceptionFrame = pIVar8;
     return;
   }
-  DAT_0080877f = *(undefined4 *)(DAT_00811764 + 0x38);
+  DAT_0080877f = g_int_00811764[0xe];
   DAT_0080877e = 1;
   local_8->field_1A61 = 0;
   DAT_008067a0 = 1;

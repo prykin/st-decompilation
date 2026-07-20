@@ -22,7 +22,7 @@ VisibleClassTy::VisHoleCreate
   int local_28 [2];
   undefined *local_20;
   undefined *local_1c;
-  uint local_18;
+  int *local_18;
   undefined4 local_14;
   undefined4 local_10;
   VisibleClassTy *local_c;
@@ -45,14 +45,14 @@ VisibleClassTy::VisHoleCreate
         }
         local_28[1] = param_2;
         local_28[0] = param_1;
-        local_18 = param_4;
+        local_18 = (int *)param_4;
         local_20 = param_3;
         local_10 = param_6;
         local_1c = param_5;
         local_14 = this_00->field_0108;
         local_8 = Library::DKW::TBL::FUN_006ae1c0(puVar1,local_28);
-        thunk_FUN_00558dc0(this_00,local_28[0],local_28[1],local_20,local_18,local_1c,-6,0xffffffff)
-        ;
+        thunk_FUN_00558dc0(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
+                           (int *)0xfffffffa,0xffffffff);
       }
       g_currentExceptionFrame = local_6c.previous;
       return local_8;

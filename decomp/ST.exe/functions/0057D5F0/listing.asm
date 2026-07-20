@@ -1,4 +1,4 @@
-FUN_0057d5f0:
+STFishC::sub_0057D5F0:
 0057D5F0  55                        PUSH EBP
 0057D5F1  8B EC                     MOV EBP,ESP
 0057D5F3  83 EC 0C                  SUB ESP,0xc

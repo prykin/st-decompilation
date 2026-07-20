@@ -17,7 +17,7 @@ FUN_006e65c0(void *this,undefined4 param_1,undefined1 param_2,undefined4 param_3
   *(undefined2 *)((int)puVar1 + 0xe) = param_5;
   *(undefined2 *)(puVar1 + 4) = param_6;
   *(undefined2 *)((int)puVar1 + 0x12) = param_7;
-  FUN_006b9910((undefined4 *)((int)this + 0x442),puVar1);
+  FUN_006b9910((undefined4 *)((int)this + 0x442),(int)puVar1);
   return 0;
 }
 

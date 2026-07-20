@@ -40,7 +40,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   undefined4 local_1c;
   undefined4 local_18;
   byte *local_14;
-  int local_10;
+  cMf32 *local_10;
   char *local_c;
   SettMapTy *local_8;
   
@@ -63,10 +63,10 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     return;
   }
   if (local_8->field_1E26 == '\x02') {
-    local_10 = local_8->field_1F3F;
+    local_10 = (cMf32 *)local_8->field_1F3F;
   }
   else {
-    local_10 = local_8->field_1F43;
+    local_10 = (cMf32 *)local_8->field_1F43;
   }
   iVar4 = local_8->field_1F84;
   if (iVar4 != 0) {
@@ -107,8 +107,9 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
       }
       local_72 = cVar1;
       if (this_00->field_1E26 == '\x02') {
-        local_24 = CreateStrategList(local_10,CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,
-                                     0xffffffff);
+        local_24 = CreateStrategList((int)local_10,
+                                     CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,0xffffffff
+                                    );
       }
       else {
         local_24 = CreateOpponentList(local_10,CONCAT12(uStack_6f,CONCAT11(uStack_70,cStack_71)) &

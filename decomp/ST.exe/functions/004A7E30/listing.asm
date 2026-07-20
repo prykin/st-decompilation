@@ -1,4 +1,4 @@
-FUN_004a7e30:
+STGroupBoatC::sub_004A7E30:
 004A7E30  55                        PUSH EBP
 004A7E31  8B EC                     MOV EBP,ESP
 004A7E33  83 EC 10                  SUB ESP,0x10

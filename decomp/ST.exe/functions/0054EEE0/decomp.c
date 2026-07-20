@@ -1,12 +1,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
-   STPlaySystemC::SetCtrlCmd */
+   STPlaySystemC::SetCtrlCmd
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0054EDF0 -> 0054EEE0 @ 0054EE87 */
 
 void __thiscall
 STPlaySystemC::SetCtrlCmd
-          (STPlaySystemC *this,undefined1 param_1,undefined4 param_2,char param_3,
-          undefined4 *param_4,uint param_5,undefined4 *param_6,uint param_7)
+          (STPlaySystemC *this,undefined1 param_1,uint param_2,char param_3,undefined4 *param_4,
+          uint param_5,undefined4 *param_6,uint param_7)
 
 {
   code *pcVar1;
@@ -85,7 +88,7 @@ STPlaySystemC::SetCtrlCmd
     puVar4[1] = local_8->field_00E4;
     *(undefined1 *)(puVar4 + 2) = param_1;
     *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)(DAT_00802a30 + 0x4ae);
-    *(undefined4 *)((int)puVar4 + 10) = param_2;
+    *(uint *)((int)puVar4 + 10) = param_2;
     *(char *)((int)puVar4 + 0xe) = param_3;
     *(uint *)((int)puVar4 + 0xf) = uVar7;
     *(uint *)((int)puVar4 + 0x13) = param_7;
@@ -124,13 +127,13 @@ STPlaySystemC::SetCtrlCmd
         bVar2 = false;
       }
       if (bVar2) {
-        FUN_006b9910(&local_8->field_0039,puVar4);
+        FUN_006b9910(&local_8->field_0039,(int)puVar4);
         PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,(int)unaff_EDI);
         g_currentExceptionFrame = local_54.previous;
         return;
       }
     }
-    FUN_006b9910(&local_8->field_0039,puVar4);
+    FUN_006b9910(&local_8->field_0039,(int)puVar4);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

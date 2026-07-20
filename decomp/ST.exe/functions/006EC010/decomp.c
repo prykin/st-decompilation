@@ -36,7 +36,7 @@ int __fastcall FUN_006ec010(undefined4 *param_1)
   uint *local_54;
   int local_50;
   int local_4c;
-  int local_48;
+  uint local_48;
   int local_44;
   int local_40;
   int local_38;

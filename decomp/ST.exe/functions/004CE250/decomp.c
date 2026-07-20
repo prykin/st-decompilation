@@ -21,13 +21,13 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
         iVar4 = *(int *)((int)this + 0x5b4) + -1;
         sVar6 = (short)*(undefined4 *)((int)this + 0x5b0);
         if (((((-1 < iVar4) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
-             (sVar6 < DAT_007fb240)) &&
-            ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < DAT_007fb242)))) &&
+             (sVar6 < SHORT_007fb240)) &&
+            ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < SHORT_007fb242)))) &&
            ((-1 < sVar1 &&
-            ((sVar1 < DAT_007fb244 &&
+            ((sVar1 < SHORT_007fb244 &&
              (piVar2 = *(int **)(DAT_007fb248 +
-                                ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar3 +
-                                (int)sVar6) * 8), piVar2 != (int *)0x0)))))) {
+                                ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3
+                                + (int)sVar6) * 8), piVar2 != (int *)0x0)))))) {
           iVar4 = (**(code **)(*piVar2 + 0x2c))();
           if (0x53 < iVar4) {
             iVar4 = (**(code **)(*piVar2 + 0x2c))();
@@ -38,14 +38,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           }
         }
         iVar4 = *(int *)((int)this + 0x5b4) + 1;
-        if ((((iVar4 < DAT_007fb242) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
-            (sVar6 < DAT_007fb240)) &&
-           (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < DAT_007fb242)) &&
+        if ((((iVar4 < SHORT_007fb242) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
+            (sVar6 < SHORT_007fb240)) &&
+           (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < SHORT_007fb242)) &&
             ((-1 < sVar1 &&
-             ((sVar1 < DAT_007fb244 &&
+             ((sVar1 < SHORT_007fb244 &&
               (piVar2 = *(int **)(DAT_007fb248 +
-                                 ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar3 +
-                                 (int)sVar6) * 8), piVar2 != (int *)0x0)))))))) {
+                                 ((int)SHORT_007fb246 * (int)sVar1 +
+                                  (int)SHORT_007fb240 * (int)sVar3 + (int)sVar6) * 8),
+              piVar2 != (int *)0x0)))))))) {
           iVar4 = (**(code **)(*piVar2 + 0x2c))();
           if (0x53 < iVar4) {
             iVar4 = (**(code **)(*piVar2 + 0x2c))();
@@ -60,12 +61,13 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
         if (-1 < iVar4) {
           sVar1 = *(short *)((int)this + 0x5b8);
           sVar3 = (short)iVar4;
-          if ((((-1 < sVar3) && (sVar3 < DAT_007fb240)) && (-1 < sVar6)) &&
-             (((sVar6 < DAT_007fb242 && (-1 < sVar1)) &&
-              ((sVar1 < DAT_007fb244 &&
+          if ((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar6)) &&
+             (((sVar6 < SHORT_007fb242 && (-1 < sVar1)) &&
+              ((sVar1 < SHORT_007fb244 &&
                (piVar2 = *(int **)(DAT_007fb248 +
-                                  ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar6 +
-                                  (int)sVar3) * 8), piVar2 != (int *)0x0)))))) {
+                                  ((int)SHORT_007fb246 * (int)sVar1 +
+                                   (int)SHORT_007fb240 * (int)sVar6 + (int)sVar3) * 8),
+               piVar2 != (int *)0x0)))))) {
             iVar4 = (**(code **)(*piVar2 + 0x2c))();
             if (0x53 < iVar4) {
               iVar4 = (**(code **)(*piVar2 + 0x2c))();
@@ -77,15 +79,16 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           }
         }
         iVar4 = *(int *)((int)this + 0x5b0) + 1;
-        if (iVar4 < DAT_007fb240) {
+        if (iVar4 < SHORT_007fb240) {
           sVar1 = *(short *)((int)this + 0x5b8);
           sVar3 = (short)iVar4;
-          if (((((-1 < sVar3) && (sVar3 < DAT_007fb240)) && (-1 < sVar6)) &&
-              ((sVar6 < DAT_007fb242 && (-1 < sVar1)))) &&
-             ((sVar1 < DAT_007fb244 &&
+          if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar6)) &&
+              ((sVar6 < SHORT_007fb242 && (-1 < sVar1)))) &&
+             ((sVar1 < SHORT_007fb244 &&
               (piVar2 = *(int **)(DAT_007fb248 +
-                                 ((int)DAT_007fb246 * (int)sVar1 + (int)sVar6 * (int)DAT_007fb240 +
-                                 (int)sVar3) * 8), piVar2 != (int *)0x0)))) {
+                                 ((int)SHORT_007fb246 * (int)sVar1 +
+                                  (int)sVar6 * (int)SHORT_007fb240 + (int)sVar3) * 8),
+              piVar2 != (int *)0x0)))) {
             iVar4 = (**(code **)(*piVar2 + 0x2c))();
             if (0x53 < iVar4) {
               iVar4 = (**(code **)(*piVar2 + 0x2c))();

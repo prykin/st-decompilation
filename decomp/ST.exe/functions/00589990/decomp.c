@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079BBB8 (store 005899B9)
    Evidence: final_vptr=0079BBB8; returns_this=true; calls_before=2; field_writes_after=1;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00589990 returns STOctopusC::STOctopusC this @ 005899CF */
 
-undefined4 * __thiscall STOctopusC::STOctopusC(STOctopusC *this,undefined4 *param_1)
+STOctopusC * __thiscall STOctopusC::STOctopusC(STOctopusC *this)
 
 {
   int iVar1;
@@ -20,6 +23,6 @@ undefined4 * __thiscall STOctopusC::STOctopusC(STOctopusC *this,undefined4 *para
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  return &this->vtable;
+  return this;
 }
 

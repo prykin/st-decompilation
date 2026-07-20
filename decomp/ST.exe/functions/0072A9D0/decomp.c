@@ -1,6 +1,9 @@
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 007297E0 -> 0072A9D0 @ 0072A38D */
+
 void __cdecl
-FUN_0072a9d0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
+FUN_0072a9d0(undefined1 *param_1,int param_2,ushort *param_3,uint *param_4,int *param_5,
             undefined1 param_6)
 
 {
@@ -18,7 +21,7 @@ FUN_0072a9d0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,int *pa
     if (uVar2 >> 1 == 0) {
       param_5[8] = -0x80000000;
     }
-    param_3 = param_3 + param_4;
+    param_3 = param_3 + (int)param_4;
     uVar2 = param_5[4] + param_5[5];
     param_1 = param_1 + param_2;
     param_5[4] = uVar2;

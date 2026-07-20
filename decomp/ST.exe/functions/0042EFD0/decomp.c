@@ -26,13 +26,15 @@ STAllPlayersC::RegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int p
   if (errorCode == 0) {
     if (param_3 == 0) {
       RaiseInternalException
-                (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x690);
+                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x690);
     }
     puVar2 = local_c;
     uVar3 = FUN_006acc70((int)local_c,param_2 & 0xffff,&local_8);
     if ((uVar3 != 0xfffffffc) && (local_8 != 0)) {
       RaiseInternalException
-                (-0x5001fffa,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x692);
+                (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                 0x692);
     }
     Library::DKW::TBL::FUN_006ae140(puVar2,param_2 & 0xffff,&param_3);
     g_currentExceptionFrame = local_50.previous;

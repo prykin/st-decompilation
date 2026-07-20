@@ -4,15 +4,16 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
 {
   short *psVar1;
   bool bVar2;
-  int iVar3;
+  LPVOID pvVar3;
+  int iVar4;
   undefined3 extraout_var;
-  uint uVar4;
-  int *piVar5;
-  int iVar6;
+  uint uVar5;
+  int *piVar6;
   int iVar7;
-  short sVar8;
+  int iVar8;
   short sVar9;
   short sVar10;
+  short sVar11;
   int local_28;
   int local_24;
   int local_20;
@@ -29,10 +30,10 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
   }
   psVar1 = (short *)(param_1 * 0x52 + *(int *)((int)this + 0x233));
   if (*(int *)(psVar1 + 0x27) != 0) {
-    FUN_006ab060((undefined4 *)(psVar1 + 0x27));
+    FUN_006ab060((LPVOID *)(psVar1 + 0x27));
   }
-  iVar3 = Library::DKW::LIB::FUN_006aac70(600);
-  *(int *)(psVar1 + 0x27) = iVar3;
+  pvVar3 = (LPVOID)Library::DKW::LIB::FUN_006aac70(600);
+  *(LPVOID *)(psVar1 + 0x27) = pvVar3;
   psVar1[0x23] = 0;
   psVar1[0x24] = 0;
   psVar1[0x25] = 0;
@@ -48,40 +49,40 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
       *(undefined2 *)(*(int *)(psVar1 + 0x27) + 4) = param_2[2];
     }
     else {
-      iVar3 = thunk_FUN_005fe280(psVar1,local_8,&local_10,&local_14,&local_18);
-      if (iVar3 != 0) {
+      iVar4 = thunk_FUN_005fe280(psVar1,local_8,&local_10,&local_14,&local_18);
+      if (iVar4 != 0) {
         if (local_18 <= *(short *)(param_3 + 4)) {
           local_c = 0;
         }
-        sVar8 = (short)(local_10 >> 0x1f);
+        sVar9 = (short)(local_10 >> 0x1f);
         if (local_10 < 0) {
-          iVar3 = (short)(((short)(local_10 / 0xc9) + sVar8) -
+          iVar4 = (short)(((short)(local_10 / 0xc9) + sVar9) -
                          (short)((longlong)local_10 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          iVar3 = (int)(short)(((short)(local_10 / 0xc9) + sVar8) -
+          iVar4 = (int)(short)(((short)(local_10 / 0xc9) + sVar9) -
                               (short)((longlong)local_10 * 0x28c1979 >> 0x3f));
         }
-        sVar8 = (short)(local_14 >> 0x1f);
+        sVar9 = (short)(local_14 >> 0x1f);
         if (local_14 < 0) {
-          iVar7 = (short)(((short)(local_14 / 0xc9) + sVar8) -
+          iVar8 = (short)(((short)(local_14 / 0xc9) + sVar9) -
                          (short)((longlong)local_14 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          iVar7 = (int)(short)(((short)(local_14 / 0xc9) + sVar8) -
+          iVar8 = (int)(short)(((short)(local_14 / 0xc9) + sVar9) -
                               (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
         }
-        sVar8 = (short)(local_18 >> 0x1f);
+        sVar9 = (short)(local_18 >> 0x1f);
         if (local_18 < 0) {
-          iVar6 = (short)(((short)(local_18 / 200) + sVar8) -
+          iVar7 = (short)(((short)(local_18 / 200) + sVar9) -
                          (short)((longlong)local_18 * 0x51eb851f >> 0x3f)) + -1;
         }
         else {
-          iVar6 = (int)(short)(((short)(local_18 / 200) + sVar8) -
+          iVar7 = (int)(short)(((short)(local_18 / 200) + sVar9) -
                               (short)((longlong)local_18 * 0x51eb851f >> 0x3f));
         }
-        if ((((iVar3 < 0) || (DAT_007fb240 <= iVar3)) || (iVar7 < 0)) ||
-           (((DAT_007fb242 <= iVar7 || (iVar6 < 0)) || (DAT_007fb244 <= iVar6)))) {
+        if ((((iVar4 < 0) || (SHORT_007fb240 <= iVar4)) || (iVar8 < 0)) ||
+           (((SHORT_007fb242 <= iVar8 || (iVar7 < 0)) || (SHORT_007fb244 <= iVar7)))) {
           local_8 = local_8 + -1;
           if (local_8 < 1) {
             thunk_FUN_005fd6a0(this);
@@ -89,31 +90,31 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
           }
           goto cf_common_exit_005FE866;
         }
-        if (((iVar3 != local_20) || (iVar7 != local_24)) || (iVar6 != local_28)) {
-          sVar8 = (short)iVar3;
-          sVar9 = (short)iVar7;
-          sVar10 = (short)iVar6;
-          bVar2 = thunk_FUN_004961b0(sVar8,sVar9,sVar10);
-          local_28 = iVar6;
-          local_24 = iVar7;
-          local_20 = iVar3;
+        if (((iVar4 != local_20) || (iVar8 != local_24)) || (iVar7 != local_28)) {
+          sVar9 = (short)iVar4;
+          sVar10 = (short)iVar8;
+          sVar11 = (short)iVar7;
+          bVar2 = thunk_FUN_004961b0(sVar9,sVar10,sVar11);
+          local_28 = iVar7;
+          local_24 = iVar8;
+          local_20 = iVar4;
           if ((CONCAT31(extraout_var,bVar2) == 0) &&
-             ((((((-1 < sVar8 && (sVar8 < DAT_007fb240)) && (-1 < sVar9)) &&
-                ((sVar9 < DAT_007fb242 && (-1 < sVar10)))) &&
-               ((sVar10 < DAT_007fb244 &&
+             ((((((-1 < sVar9 && (sVar9 < SHORT_007fb240)) && (-1 < sVar10)) &&
+                ((sVar10 < SHORT_007fb242 && (-1 < sVar11)))) &&
+               ((sVar11 < SHORT_007fb244 &&
                 (*(int *)(DAT_007fb248 +
-                         ((int)DAT_007fb246 * (int)sVar10 + (int)DAT_007fb240 * (int)sVar9 +
-                         (int)sVar8) * 8) != 0)))) ||
-              (uVar4 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar4)))) {
+                         ((int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar10 +
+                         (int)sVar9) * 8) != 0)))) ||
+              (uVar5 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar5)))) {
             local_c = 0;
           }
         }
-        piVar5 = (int *)(psVar1 + 0x27);
-        iVar3 = local_8 * 6;
+        piVar6 = (int *)(psVar1 + 0x27);
+        iVar4 = local_8 * 6;
         local_8 = local_8 + 1;
-        *(undefined2 *)(*piVar5 + iVar3) = (undefined2)local_10;
-        *(undefined2 *)(*piVar5 + 2 + iVar3) = (undefined2)local_14;
-        *(undefined2 *)(*piVar5 + 4 + iVar3) = (undefined2)local_18;
+        *(undefined2 *)(*piVar6 + iVar4) = (undefined2)local_10;
+        *(undefined2 *)(*piVar6 + 2 + iVar4) = (undefined2)local_14;
+        *(undefined2 *)(*piVar6 + 4 + iVar4) = (undefined2)local_18;
         if (99 < local_8) {
           local_c = 0;
           goto cf_common_exit_005FE866;

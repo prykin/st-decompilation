@@ -1,5 +1,9 @@
 
-int FUN_004b70d0(undefined4 param_1,int param_2)
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 004B6D70 -> 004B70D0 @ 004B6DCF | 004CCAD0 -> 004B70D0 @ 004CCB19 | 00652810 ->
+   004B70D0 @ 00655571 */
+
+int FUN_004b70d0(uint param_1,int param_2)
 
 {
   int *piVar1;

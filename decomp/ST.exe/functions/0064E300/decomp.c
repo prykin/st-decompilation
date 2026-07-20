@@ -11,10 +11,10 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
+  uint *groupContent;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  bool bVar4;
+  bool bVar3;
   InternalExceptionFrame local_64;
   uint local_20 [3];
   void *local_14;
@@ -38,11 +38,11 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
     RaiseInternalException(uVar1,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b8);
     return uVar1;
   }
-  if (((int)local_10 < 0) || (bVar4 = local_10 == 8, 8 < (int)local_10)) {
+  if (((int)local_10 < 0) || (bVar3 = local_10 == 8, 8 < (int)local_10)) {
     local_10 = 0xff;
-    bVar4 = false;
+    bVar3 = false;
   }
-  if (bVar4) {
+  if (bVar3) {
     local_10 = (uint)DAT_0080874d;
   }
   uVar1 = local_10;
@@ -57,16 +57,17 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   STPlaySystemC::CreateGameObject(DAT_00802a38,900,local_20 + 1,&local_14,local_c,0);
   thunk_FUN_006686c0((int *)&local_c);
   if (local_14 == (void *)0x0) {
-    RaiseInternalException(-0xab,DAT_007ed77c,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b4);
+    RaiseInternalException
+              (-0xab,g_overwriteContext_007ED77C,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b4);
     uVar1 = local_20[2];
   }
   else {
     uVar1 = (uint)*(ushort *)((int)local_14 + 0x7d);
     local_20[2] = uVar1;
-    puVar3 = _GetStaffGrpExch(param_1);
-    if (puVar3 != (uint *)0x0) {
-      thunk_FUN_0065d940(local_14,(int)puVar3,0);
-      FUN_006ae110((byte *)puVar3);
+    groupContent = _GetStaffGrpExch(param_1);
+    if (groupContent != (uint *)0x0) {
+      thunk_FUN_0065d940(local_14,groupContent,0);
+      FUN_006ae110((byte *)groupContent);
       g_currentExceptionFrame = local_64.previous;
       return uVar1;
     }

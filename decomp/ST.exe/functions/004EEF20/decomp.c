@@ -10,7 +10,7 @@ void __fastcall FUN_004eef20(int param_1)
     *(undefined4 *)(param_1 + 0x28a) = 0;
   }
   if (*(uint *)(param_1 + 0x292) != 0) {
-    FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x292));
+    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x292));
   }
   *(undefined4 *)(param_1 + 0x292) = 0;
   puVar1 = (undefined4 *)(param_1 + 0x27a);
@@ -23,7 +23,7 @@ void __fastcall FUN_004eef20(int param_1)
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  DAT_0080167c = 0;
+  g_prodPanel_0080167C = (ProdPanelTy *)0x0;
   return;
 }
 

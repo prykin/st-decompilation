@@ -43,7 +43,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   if (*(byte **)((int)pvVar2 + 0x4ea7) != (byte *)0x0) {
     FUN_006b5570(*(byte **)((int)pvVar2 + 0x4ea7));
   }
-  puVar5 = Library::Ourlib::MFSARR::mfSarLoad((int)pcVar4,PTR_s_DESCRIPTION_0079b074,0);
+  puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_DESCRIPTION_0079b074,0);
   *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
   if (puVar5 == (uint *)0x0) {
     puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -52,7 +52,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   if (*(byte **)((int)pvVar2 + 0x4eab) != (byte *)0x0) {
     FUN_006b5570(*(byte **)((int)pvVar2 + 0x4eab));
   }
-  puVar5 = Library::Ourlib::MFSARR::mfSarLoad((int)pcVar4,PTR_s_OBJECTIVES_0079b078,0);
+  puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_OBJECTIVES_0079b078,0);
   *(uint **)((int)pvVar2 + 0x4eab) = puVar5;
   if (puVar5 == (uint *)0x0) {
     puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -94,7 +94,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
       pbVar11 = pbVar11 + 1;
     }
   }
-  cMf32::delete(local_8,&local_8->field_0000);
+  cMf32::delete(local_8,local_8);
   g_currentExceptionFrame = local_5c.previous;
   return local_10;
 }

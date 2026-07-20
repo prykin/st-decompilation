@@ -12,7 +12,7 @@ FUN_006e67c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 LAB_006e67ea:
       puVar1 = Library::DKW::LIB::FUN_006aac10(0x1c);
       if (puVar1 != (undefined4 *)0x0) {
-        FUN_006b9910((undefined4 *)((int)this + 0x452),puVar1);
+        FUN_006b9910((undefined4 *)((int)this + 0x452),(int)puVar1);
 LAB_006e67fe:
         puVar1[2] = param_1;
         puVar1[3] = param_2;

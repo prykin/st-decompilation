@@ -48,11 +48,11 @@ switchD_0049655f_caseD_0:
     iVar12 = (int)(short)(((short)(param_3 / 200) + sVar1) -
                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)DAT_007fb240)) && (-1 < (int)uVar10)) &&
-     ((((int)uVar10 <= (int)DAT_007fb242 && (-1 < iVar12)) &&
-      ((iVar12 <= DAT_007fb244 &&
+  if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)SHORT_007fb240)) && (-1 < (int)uVar10)) &&
+     ((((int)uVar10 <= (int)SHORT_007fb242 && (-1 < iVar12)) &&
+      ((iVar12 <= SHORT_007fb244 &&
        (sVar1 = *(short *)(DAT_007fb280 +
-                          ((int)DAT_007fb278 * uVar10 + uVar13 + DAT_007fb27e * iVar12) * 2),
+                          ((int)SHORT_007fb278 * uVar10 + uVar13 + SHORT_007fb27e * iVar12) * 2),
        sVar1 != 0)))))) {
     if (sVar1 == -1) {
       return 0x7f;

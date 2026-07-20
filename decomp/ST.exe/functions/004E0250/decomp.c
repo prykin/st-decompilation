@@ -47,7 +47,7 @@ cf_common_exit_004E02E4:
     }
     else {
       STAllPlayersC::_ChangeMD
-                (DAT_007fa174,1,*(int **)(param_1 + 0x24),
+                (g_sTAllPlayers_007FA174,1,*(int **)(param_1 + 0x24),
                  CONCAT22(extraout_var,*(undefined2 *)(param_1 + 0x32)));
     }
   }

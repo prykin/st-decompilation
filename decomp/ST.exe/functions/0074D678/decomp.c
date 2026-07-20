@@ -1,5 +1,8 @@
 
-int __cdecl FUN_0074d678(LPWSTR param_1,LPCWSTR param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0074D678 -> EXTERNAL:0000000F @ 0074D6D2 */
+
+int __cdecl FUN_0074d678(LPWSTR lpWideCharStr,LPCWSTR param_2)
 
 {
   UINT CodePage;
@@ -22,7 +25,7 @@ int __cdecl FUN_0074d678(LPWSTR param_1,LPCWSTR param_2)
   WideCharToMultiByte(CodePage,dwFlags,param_2,iVar1,lpMultiByteStr,cbMultiByte,lpDefaultChar,
                       lpUsedDefaultChar);
   iVar1 = wvsprintfA(local_204,local_104,&stack0x0000000c);
-  MultiByteToWideChar(0,0,local_204,-1,param_1,iVar1 + 1);
+  MultiByteToWideChar(0,0,local_204,-1,lpWideCharStr,iVar1 + 1);
   return iVar1;
 }
 

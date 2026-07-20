@@ -74,7 +74,7 @@ LAB_00515ee1:
             uVar11 = 3;
             iVar10 = -1;
             iVar3 = -1;
-            puVar4 = (uint *)FUN_006b0140(0x55f6,DAT_00807618);
+            puVar4 = (uint *)FUN_006b0140(0x55f6,HINSTANCE_00807618);
             ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar10,uVar11);
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
@@ -91,7 +91,7 @@ LAB_00515ee1:
                 ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,local_18 + 0x5f,*param_1,
                                  0x13d - local_18,0xf);
                 pcVar7 = (char *)FUN_006b0140(*(UINT *)(uVar8 * 0x11 + this_00->field_01C7),
-                                              DAT_00807618);
+                                              HINSTANCE_00807618);
                 uVar8 = 0xffffffff;
                 goto code_r0x00516013;
               }

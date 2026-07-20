@@ -10,11 +10,11 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
   int iVar2;
   
   if (param_1 == (int *)0x0) {
-    thunk_FUN_00492420((int *)this);
+    sub_00492420(this);
   }
   iVar2 = this->field_0596;
   if (iVar2 == 0) {
-    iVar2 = thunk_FUN_00460360((int *)this);
+    iVar2 = sub_00460360(this);
     return iVar2;
   }
   if (iVar2 == 1) {

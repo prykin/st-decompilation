@@ -84,7 +84,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
         }
         iVar11 = -1;
         iVar10 = -1;
-        puVar6 = (uint *)FUN_006b0140(param_2,DAT_00807618);
+        puVar6 = (uint *)FUN_006b0140(param_2,HINSTANCE_00807618);
         ccFntTy::WrStr(pMVar2->field_0089,puVar6,iVar10,iVar11,iVar4);
       }
       g_currentExceptionFrame = local_5c.previous;

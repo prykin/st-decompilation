@@ -24,8 +24,9 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
       (*pcVar2)();
       return;
     }
-    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x21ee)
-    ;
+    RaiseInternalException
+              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+               0x21ee);
   }
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((((iVar4 == 0x33) &&

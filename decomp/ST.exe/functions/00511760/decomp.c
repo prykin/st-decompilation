@@ -38,7 +38,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   if (errorCode == 0) {
     this_00 = extraout_ECX;
     if (local_c->field_017C != 0) {
-      FUN_006e56b0((void *)local_c->field_000C,local_c->field_017C);
+      StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_017C);
       this_00 = extraout_ECX_00;
     }
     pHVar2->field_017C = 0;
@@ -46,7 +46,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     local_8 = 7;
     do {
       if (*puVar4 != 0) {
-        FUN_006e56b0((void *)pHVar2->field_000C,*puVar4);
+        StartSystemTy::sub_006E56B0(pHVar2->field_000C,*puVar4);
         *puVar4 = 0;
         this_00 = extraout_ECX_01;
       }
@@ -54,7 +54,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (pHVar2->field_019C != 0) {
-      FUN_006e56b0((void *)pHVar2->field_000C,pHVar2->field_019C);
+      StartSystemTy::sub_006E56B0(pHVar2->field_000C,pHVar2->field_019C);
       this_00 = extraout_ECX_02;
     }
     pHVar2->field_019C = 0;
@@ -119,10 +119,10 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       pHVar2->field_01E8 = (ccFntTy *)0x0;
     }
     if (pHVar2->field_0218 != 0) {
-      FUN_006ab060(&pHVar2->field_0218);
+      FUN_006ab060((LPVOID *)&pHVar2->field_0218);
     }
     if (pHVar2->field_01EC != 0) {
-      FUN_006ab060(&pHVar2->field_01EC);
+      FUN_006ab060((LPVOID *)&pHVar2->field_01EC);
     }
     if (pHVar2->field_024C != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_024C);

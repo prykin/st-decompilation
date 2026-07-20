@@ -45,7 +45,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   if (iVar2 == 0) {
     local_8 = 0;
   }
-  pcVar3 = (char *)FUN_006b0140(0x232b,DAT_00807618);
+  pcVar3 = (char *)FUN_006b0140(0x232b,HINSTANCE_00807618);
   uVar4 = 0xffffffff;
   do {
     pcVar6 = pcVar3;

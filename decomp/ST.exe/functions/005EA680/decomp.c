@@ -256,10 +256,10 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     }
     local_8 = local_464;
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
-    FUN_00715360(DAT_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
+    FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  Library::DKW::TBL::FUN_006b6020(this_02->field_1A5B->field_0686,0,&DAT_008016a0);
+  Library::DKW::TBL::FUN_006b6020((uint *)this_02->field_1A5B->field_0686,0,&DAT_008016a0);
   this_02->field_002D = 0x33;
   *(undefined4 *)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
   FUN_006e6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);

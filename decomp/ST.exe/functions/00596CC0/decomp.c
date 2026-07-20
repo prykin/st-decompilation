@@ -37,7 +37,7 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
     RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1c8);
     return;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_c;
   PutDDX(0,0,'\x01',(BITMAPINFO *)local_c->field_005D);
   switch(this_00->field_1A5F) {
@@ -64,7 +64,7 @@ LAB_00596d58:
       return;
     }
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x72,0x2e1,0x14c,
+              ((MMMObjTy *)DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x22,0x72,0x2e1,0x14c,
                (undefined4 *)&this_00->field_1A5B->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -96,7 +96,8 @@ LAB_00596d7a:
       return;
     }
     this_02 = &this_00->field_1A5B->field_0x140;
-    OutTRGlProc((FSGSTy *)this_02,(int)DAT_0080759c,0,0,0x1e9,0x5e,0x124,0x175,(int)this_02);
+    OutTRGlProc((FSGSTy *)this_02,(int)DAT_0080759c,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
+                (StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
     return;
   case 7:
@@ -109,7 +110,7 @@ LAB_00596d8b:
   case 8:
     pFVar3 = this_01;
     if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
-      OutSGlProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x199,0x5e,0x174,0x175,
+      OutSGlProc(DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x199,0x5e,0x174,0x175,
                  (int)&this_00->field_1A5B->field_0x140);
       pFVar3 = extraout_ECX;
     }
@@ -122,7 +123,7 @@ LAB_00596d8b:
       return;
     }
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)pFVar3,(int)DAT_0080759c,0,0,0x13,0x5e,0x174,0x175,
+              ((MMMObjTy *)pFVar3,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x13,0x5e,0x174,0x175,
                (undefined4 *)&this_00->field_1A5B->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -135,7 +136,7 @@ LAB_00596d8b:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    OutLadProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x5e,0x2e1,0x175);
+    OutLadProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x5e,(FSGSTy *)0x2e1,0x175);
     PaintLadder(this_00,(int)unaff_ESI);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -150,7 +151,7 @@ LAB_00596d9c:
   }
   if ((this_00->field_1F23 == (HoloTy *)0x0) && (param_1 == '\0')) {
     pFVar3 = (FSGSTy *)((-(uint)(this_00->field_1ABB != '\0') & 0x74) + 0x106);
-    OutTRGlProc(pFVar3,(int)DAT_0080759c,0,0,0xb4,
+    OutTRGlProc(pFVar3,(int)DAT_0080759c,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0xb4,
                 (-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa,0x1b8,(int)pFVar3,local_8
                );
     g_currentExceptionFrame = local_50.previous;

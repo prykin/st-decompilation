@@ -278,7 +278,7 @@ LAB_005f79aa:
     break;
   case 8:
     if (*(int *)((int)param_1 + 0x2ea) == 0) {
-      thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
+      STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
       if ((int)local_8 != *(int *)((int)param_1 + 0x291)) {
         return;
       }
@@ -372,7 +372,7 @@ LAB_005f7efc:
       else {
         *(undefined1 *)((int)param_1 + 0x29e) = 1;
       }
-      thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
+      STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
       iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                  (int)local_a,&local_14,&local_18,&local_10);
       if (iVar5 != 0) {
@@ -459,7 +459,7 @@ LAB_005f7efc:
       else {
         iVar5 = thunk_FUN_005f89f0(param_1,2);
         if (iVar5 != 0) {
-          thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
+          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
           iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
           if ((iVar5 != 0) &&
@@ -504,7 +504,7 @@ LAB_005f7efc:
           iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
                                      (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
           if (iVar5 == 0) goto cf_common_exit_005F76D2;
-          thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
+          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
           iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
           if ((iVar5 != 0) &&
@@ -522,7 +522,7 @@ LAB_005f7efc:
         iVar5 = thunk_FUN_005f88d0(param_1,*(int *)((int)param_1 + 0x289),0,(int *)0x0,
                                    (undefined4 *)0x0,(undefined4 *)0x0);
         if ((iVar5 != 0) && (iVar5 = thunk_FUN_005f89f0(param_1,2), iVar5 != 0)) {
-          thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
+          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
           iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
           if ((iVar5 != 0) &&
@@ -569,7 +569,7 @@ LAB_005f7927:
         iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
                                    (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
         if (iVar5 != 0) {
-          thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
+          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
           iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
           if ((iVar5 != 0) &&

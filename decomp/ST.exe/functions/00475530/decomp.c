@@ -30,7 +30,7 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
   short local_20;
   int local_1c;
   undefined4 local_18;
-  undefined4 local_14;
+  int local_14;
   int local_10;
   int local_c;
   undefined4 *local_8;
@@ -44,7 +44,7 @@ LAB_00475545:
   if ((iVar4 == 1) || (iVar4 == 2)) {
     iVar17 = this->field_05C4;
     if (iVar17 == 0) {
-      iVar4 = thunk_FUN_00460360((int *)this);
+      iVar4 = sub_00460360(this);
       return iVar4;
     }
     if (((((iVar17 == 1) || (iVar17 == 2)) || (iVar17 == 3)) || ((iVar17 == 5 || (iVar17 == 6)))) ||
@@ -54,7 +54,7 @@ LAB_00475545:
       return -(uint)(iVar4 != 0);
     }
     if (iVar17 == 4) {
-      local_1c = thunk_FUN_00415ed0(this,&local_18,&local_14);
+      local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
       uVar5 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar5;
       iVar4 = (uVar5 >> 0x10) % 7 - 3;
@@ -104,8 +104,8 @@ LAB_00475545:
             iVar9 = (int)(short)local_24 + iVar4 + this->field_0041;
           }
           TraksClassTy::TraksCreate
-                    (DAT_00802a7c,1,2,7,iVar9,iVar8 + ((uVar5 >> 0x10) % 7 - 3),iVar7,sVar11,sVar12,
-                     sVar13,sVar14,sVar15,sVar16,iVar17,sVar18,bVar19);
+                    (g_traksClass_00802A7C,1,2,7,iVar9,iVar8 + ((uVar5 >> 0x10) % 7 - 3),iVar7,
+                     sVar11,sVar12,sVar13,sVar14,sVar15,sVar16,iVar17,sVar18,bVar19);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
         } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
@@ -128,7 +128,7 @@ LAB_00475545:
     }
   }
   if (iVar4 == 3) {
-    iVar4 = WaitLoad(this,(void *)0x2);
+    iVar4 = WaitLoad(this,(int *)0x2);
     return iVar4;
   }
   iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc,

@@ -2,15 +2,18 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790728 (store 00497B05)
    Evidence: final_vptr=00790728; returns_this=true; calls_before=1; field_writes_after=47;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00497AF0 returns STGroupBoatC::STGroupBoatC this @ 00497C6C */
 
-undefined4 * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this,undefined4 *param_1)
+STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
 
 {
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004232a0(&this->vtable);
+  sub_004232A0(this);
   this->vtable = &STGroupBoatCVTable;
   this->field_0045 = 0;
   this->field_0041 = 0;
@@ -92,6 +95,6 @@ undefined4 * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this,undefined4
   this->field_030E = 0;
   this->field_01E6 = 3;
   this->field_0039 = 0;
-  return &this->vtable;
+  return this;
 }
 

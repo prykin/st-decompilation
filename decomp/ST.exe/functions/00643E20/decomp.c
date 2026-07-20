@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_00643e20(int param_1,undefined4 param_2)
 {
   STT3DSprC *pSVar1;
   short sVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   undefined4 in_EAX;
   uint uVar4;
   undefined4 uVar5;
@@ -23,14 +23,14 @@ undefined4 __fastcall FUN_00643e20(int param_1,undefined4 param_2)
   uint local_c;
   int *local_8;
   
-  pvVar3 = DAT_00802a88;
+  pVVar3 = g_visibleClass_00802A88;
   uVar8 = (undefined2)((uint)param_2 >> 0x10);
   local_8 = (int *)0x0;
   local_c = 0;
   local_10 = 0;
   local_14 = 0;
   local_18 = 0;
-  if (DAT_00802a88 != (void *)0x0) {
+  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     sVar2 = *(short *)(param_1 + 0x45);
     if (sVar2 < 0) {
       iVar9 = (short)((sVar2 / 200 + (sVar2 >> 0xf)) -
@@ -57,29 +57,27 @@ undefined4 __fastcall FUN_00643e20(int param_1,undefined4 param_2)
       uVar4 = (uint)(sVar2 / 0xc9);
     }
     uVar11 = CONCAT44((int)sVar2 / 0xc9,uVar4);
-    if ((DAT_0080874d == -1) || (uVar11 = (ulonglong)uVar4, *(int *)((int)DAT_00802a88 + 0xf8) == 0)
-       ) {
+    if ((DAT_0080874d == -1) ||
+       (uVar11 = (ulonglong)uVar4, g_visibleClass_00802A88->field_00F8 == 0)) {
 LAB_00643f4a:
       if (*(char *)(param_1 + 0x1e7) == '\x01') {
         uVar11 = thunk_FUN_004ad460((void *)(param_1 + 0x1d5),0);
       }
     }
     else {
-      uVar10 = thunk_FUN_00558c00(DAT_00802a88,
-                                  *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                  uVar4,iVar7,(int *)&local_1c,&local_20);
+      uVar10 = thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,uVar4,
+                                  iVar7,(int *)&local_1c,&local_20);
       uVar11 = uVar10;
       if ((iVar9 < 0) ||
          (((4 < iVar9 || (uVar11 = CONCAT44(local_1c,(int)uVar10), (int)local_1c < 0)) ||
-          (uVar11 = CONCAT44(local_1c,(int)uVar10), *(int *)((int)pvVar3 + 0x30) <= (int)local_1c)))
-         ) goto LAB_00643f4a;
+          (uVar11 = CONCAT44(local_1c,(int)uVar10), (int)pVVar3->field_0030 <= (int)local_1c))))
+      goto LAB_00643f4a;
       local_20 = (&DAT_0079aed0)[iVar9] + local_20;
       uVar11 = CONCAT44(local_1c,local_20);
       if ((((local_20 < 0) ||
-           (uVar11 = CONCAT44(local_1c,local_20), *(int *)((int)pvVar3 + 0x34) <= local_20)) ||
-          (uVar11 = CONCAT44(local_1c,local_20), *(int *)((int)pvVar3 + 0x4c) == 0)) ||
-         (uVar4 = (uint)*(byte *)(local_20 * *(int *)((int)pvVar3 + 0x30) +
-                                  *(int *)((int)pvVar3 + 0x4c) + local_1c),
+           (uVar11 = CONCAT44(local_1c,local_20), (int)pVVar3->field_0034 <= local_20)) ||
+          (uVar11 = CONCAT44(local_1c,local_20), pVVar3->field_004C == 0)) ||
+         (uVar4 = (uint)*(byte *)(local_20 * pVVar3->field_0030 + pVVar3->field_004C + local_1c),
          uVar11 = CONCAT44(local_1c,uVar4), uVar4 != 0)) goto LAB_00643f4a;
       uVar11 = (ulonglong)local_1c << 0x20;
       if (*(char *)(param_1 + 0x1e7) == '\0') {
@@ -92,7 +90,7 @@ LAB_00643f4a:
   if (*(int *)(param_1 + 0x23d) == 1) {
     if (*(byte *)(param_1 + 0x27d) < 8) {
       local_c = STAllPlayersC::GetObjPtr
-                          (DAT_007fa174,
+                          (g_sTAllPlayers_007FA174,
                            CONCAT31((int3)((uint)in_EAX >> 8),*(undefined1 *)(param_1 + 0x24)),
                            CONCAT22(uVar8,*(undefined2 *)(param_1 + 0x262)),CASE_1);
     }

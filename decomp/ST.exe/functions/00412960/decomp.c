@@ -74,7 +74,8 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
       }
     }
     if (iVar2 != -4) {
-      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xc7a);
+      RaiseInternalException
+                (iVar2,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xc7a);
       return iVar2;
     }
   }

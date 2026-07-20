@@ -138,7 +138,7 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
   undefined4 local_68;
   undefined1 local_64;
   int local_60;
-  int local_5c;
+  uint local_5c;
   int local_58;
   int local_54;
   int local_50;
@@ -146,7 +146,7 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
   int local_48;
   int local_44;
   int local_40;
-  int local_3c;
+  uint local_3c;
   undefined4 *local_38;
   int local_34;
   undefined4 local_30;
@@ -191,19 +191,19 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
         local_60 = *(int *)(iVar12 + 0x24) + -0xb4;
         local_58 = *(int *)(iVar12 + 0x2c);
         local_54 = *(int *)(iVar12 + 0x30);
-        iVar35 = *(int *)(iVar12 + 0x28) -
+        uVar25 = *(int *)(iVar12 + 0x28) -
                  ((-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa);
-        local_5c = iVar35;
-        FUN_006b4170(this_00->field_1AC0,0,*(int *)(iVar12 + 0x24) + -0xb5,iVar35,local_58 + 2,
+        local_5c = uVar25;
+        FUN_006b4170(this_00->field_1AC0,0,*(int *)(iVar12 + 0x24) + -0xb5,uVar25,local_58 + 2,
                      local_54,0xff);
-        ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1AC0,0,local_60,iVar35,local_58,local_54
+        ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1AC0,0,local_60,uVar25,local_58,local_54
                         );
         if ((undefined4 *)param_1[5] != (undefined4 *)0x0) {
           ccFntTy::WrStr(this_00->field_1A73,*(uint **)param_1[5],0,-1,0);
         }
         if ((*(ushort *)(param_1 + 6) != 0xffff) || (*(short *)((int)param_1 + 0x1a) != -1)) {
           iVar12 = (uint)*(ushort *)(param_1 + 6) + local_60;
-          FUN_006b5b10(this_00->field_1AC0,0,iVar12,iVar35 + 1,iVar12,local_54 + -2 + iVar35,9,0xd);
+          FUN_006b5b10(this_00->field_1AC0,0,iVar12,uVar25 + 1,iVar12,local_54 + -2 + uVar25,9,0xd);
         }
         FUN_006b35d0(DAT_008075a8,this_00->field_1ABC);
         goto cf_common_exit_005A8CA7;
@@ -308,7 +308,7 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
         break;
       case 0x694c:
         if ((this_00->field_1AAB != (LPCSTR)0x0) &&
-           (pHVar20 = ShellExecuteA(DAT_00856d78,&DAT_007cc624,this_00->field_1AAB,(LPCSTR)0x0,
+           (pHVar20 = ShellExecuteA(HWND_00856d78,&DAT_007cc624,this_00->field_1AAB,(LPCSTR)0x0,
                                     (LPCSTR)0x0,1), 0x20 < (int)pHVar20)) {
           CFsgsConnection::BannerClick((CFsgsConnection *)&DAT_00802a90,this_00->field_1AAF);
         }
@@ -755,11 +755,11 @@ LAB_005a6d57:
         ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1AC0,0,0,0x16,0x1b8,0xf0);
         iVar38 = -1;
         iVar37 = -1;
-        uVar21 = 2;
+        uVar25 = 2;
         iVar35 = -1;
         iVar12 = -2;
-        puVar15 = (uint *)FUN_006b0140(0x25be,DAT_00807618);
-        ccFntTy::WrTxt(this_00->field_1A73,puVar15,iVar12,iVar35,uVar21,iVar37,iVar38);
+        puVar15 = (uint *)FUN_006b0140(0x25be,HINSTANCE_00807618);
+        ccFntTy::WrTxt(this_00->field_1A73,puVar15,iVar12,iVar35,uVar25,iVar37,iVar38);
         FUN_006b35d0(DAT_008075a8,this_00->field_1ABC);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_UPDATES__0079c020,
                   &DAT_0080f126);
@@ -817,7 +817,7 @@ LAB_005a6e50:
                   ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0x23,0,
                                    *(int *)(pbVar26 + 0x2c) + -0x46,0x11);
                   if (*(char *)((int)local_8 + 0x2d) == '\0') {
-                    local_c = (byte *)thunk_FUN_0055c050(&DAT_00802a90,(int)local_8);
+                    local_c = thunk_FUN_0055c050(&DAT_00802a90,(int)local_8);
                     DibPut((undefined4 *)this_00->field_1E8E,3,1,'\x01',local_c);
                     if (local_c != (byte *)0x0) {
                       FUN_006ab060(&local_c);
@@ -838,7 +838,7 @@ LAB_005a6e50:
                     iVar12 = (-(uint)(*(short *)((int)param_1 + 0x16) != 0) & 0xfffffffe) + 2;
                     iVar37 = -1;
                     iVar35 = 0;
-                    puVar15 = (uint *)FUN_006b0140(0x2567,DAT_00807618);
+                    puVar15 = (uint *)FUN_006b0140(0x2567,HINSTANCE_00807618);
                     ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,iVar12);
                   }
                 }
@@ -999,7 +999,7 @@ LAB_005a6e50:
           }
           if (pcVar29 == (char *)0x0) break;
           if (this_00->field_1B0C != 0) {
-            FUN_006ab060(&this_00->field_1B0C);
+            FUN_006ab060((LPVOID *)&this_00->field_1B0C);
           }
           uVar25 = 0xffffffff;
           pcVar16 = pcVar29;
@@ -1075,7 +1075,8 @@ LAB_005a6e50:
                (iVar12 = *(int *)(iVar12 + 8) * param_1[5] + *(int *)(iVar12 + 0x1c), iVar12 != 0))
             {
               bVar33 = false;
-              Library::DKW::TBL::FUN_006b6020(this_00->field_1AE8,0,(char *)(iVar12 + 0x2c));
+              Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_1AE8,0,(char *)(iVar12 + 0x2c))
+              ;
               this_00->field_002D = 0x33;
               *(undefined4 *)&this_00->field_0x31 = this_00->field_1AE8;
               FUN_006e6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
@@ -1087,7 +1088,7 @@ LAB_005a6e50:
               uVar21 = 2;
               iVar37 = -1;
               iVar35 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2572,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2572,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,uVar21);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x11,0x14a,0x11);
               ccFntTy::WrStr(this_00->field_1A73,(uint *)(iVar12 + 0x1c),0,-1,0);
@@ -1095,14 +1096,14 @@ LAB_005a6e50:
               uVar21 = 2;
               iVar37 = -1;
               iVar35 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2347,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2347,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,uVar21);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x33,0x14a,0x11);
               uVar21 = 0;
               iVar37 = -1;
               iVar35 = 0;
               if (*(char *)(iVar12 + 0x7c) == '\0') {
-                puVar15 = (uint *)FUN_006b0140(0x2573,DAT_00807618);
+                puVar15 = (uint *)FUN_006b0140(0x2573,HINSTANCE_00807618);
               }
               else {
                 puVar15 = (uint *)(iVar12 + 0x83);
@@ -1112,7 +1113,7 @@ LAB_005a6e50:
               uVar21 = 2;
               iVar37 = -1;
               iVar35 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2344,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2344,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,uVar21);
               if (*(char *)(iVar12 + 0x7c) != '\0') {
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x55,0x14a,0x11);
@@ -1124,11 +1125,11 @@ LAB_005a6e50:
               uVar21 = 2;
               iVar37 = -1;
               iVar35 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2345,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2345,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,uVar21);
               if (*(char *)(iVar12 + 0x7c) != '\0') {
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x77,0x14a,0x11);
-                uVar21 = FUN_006b0140(0x2574,DAT_00807618);
+                uVar21 = FUN_006b0140(0x2574,HINSTANCE_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,(int)*(char *)(iVar12 + 0x7d),uVar21
                          );
                 ccFntTy::WrStr(this_00->field_1A73,&DAT_0080f33a,0,-1,0);
@@ -1138,7 +1139,7 @@ LAB_005a6e50:
                          0x15e,0x8c,0x10000ff);
             }
             if (bVar33) {
-              Library::DKW::TBL::FUN_006b6020(this_00->field_1AE8,0,&DAT_008016a0);
+              Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_1AE8,0,&DAT_008016a0);
               this_00->field_002D = 0x33;
               *(undefined4 *)&this_00->field_0x31 = this_00->field_1AE8;
               FUN_006e6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
@@ -1150,25 +1151,25 @@ LAB_005a6e50:
               uVar21 = 2;
               iVar35 = -1;
               iVar12 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2572,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2572,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar12,iVar35,uVar21);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x22,0x15e,0x11);
               uVar21 = 2;
               iVar35 = -1;
               iVar12 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2347,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2347,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar12,iVar35,uVar21);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x44,0x15e,0x11);
               uVar21 = 2;
               iVar35 = -1;
               iVar12 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2344,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2344,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar12,iVar35,uVar21);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x66,0x15e,0x11);
               uVar21 = 2;
               iVar35 = -1;
               iVar12 = -1;
-              puVar15 = (uint *)FUN_006b0140(0x2345,DAT_00807618);
+              puVar15 = (uint *)FUN_006b0140(0x2345,HINSTANCE_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar12,iVar35,uVar21);
               Library::DKW::DDX::FUN_006b4680
                         (DAT_0080759c,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
@@ -1228,7 +1229,7 @@ LAB_005a8b12:
             } while (iVar35 < *(int *)(iVar12 + 8));
           }
         }
-        Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,&DAT_008016a0);
+        Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_1EA2,0,&DAT_008016a0);
         this_00->field_002D = 0x33;
         *(undefined4 *)&this_00->field_0x31 = this_00->field_1EA2;
         goto LAB_005a8c85;
@@ -1281,7 +1282,7 @@ joined_r0x005a8b8f:
           uVar21 = **(undefined4 **)(this_00->field_1EA2 + 0x14);
         }
         wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007cc5f0,uVar21,iVar12);
-        Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,(char *)&DAT_0080f33a);
+        Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_1EA2,0,(char *)&DAT_0080f33a);
         this_00->field_002D = 0x33;
         *(undefined4 *)&this_00->field_0x31 = this_00->field_1EA2;
 LAB_005a8c85:
@@ -1316,7 +1317,7 @@ LAB_005a8c85:
       pcVar4 = this_00->field_1A73;
       local_14 = (BITMAPINFO *)0x0;
       if (pcVar4->field_00A0 != 0) {
-        FUN_00710790((int)pcVar4);
+        FUN_00710790((uint *)pcVar4);
       }
       iVar12 = param_1[7];
       iVar35 = *(int *)&pcVar4->field_0x8a;
@@ -1378,11 +1379,11 @@ LAB_005a8c85:
             }
             if (local_10 != (uint *)0x0) {
               if (pcVar4->field_00A0 != 0) {
-                FUN_00710790((int)pcVar4);
+                FUN_00710790((uint *)pcVar4);
               }
               local_c = *(byte **)&pcVar4->field_0x8a;
               if (pcVar4->field_00A0 != 0) {
-                FUN_00710790((int)pcVar4);
+                FUN_00710790((uint *)pcVar4);
               }
               ccFntTy::SetSurf(pcVar4,this_00->field_1E8E,0,0,
                                ((int)local_14 - (uint)*(ushort *)((int)param_1 + 0x16)) *
@@ -1442,7 +1443,7 @@ LAB_005a8c85:
       }
       iVar37 = -1;
       iVar35 = -1;
-      puVar15 = (uint *)FUN_006b0140(0x2565,DAT_00807618);
+      puVar15 = (uint *)FUN_006b0140(0x2565,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,iVar12);
       goto LAB_005a754e;
     case 0x6985:
@@ -1518,7 +1519,7 @@ LAB_005a7656:
         break;
       case 5:
         if (this_00->field_1EC6 == -1) {
-          pcVar29 = (char *)FUN_006b0140(0x235c,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x235c,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -1625,7 +1626,7 @@ LAB_005a7656:
         puVar15 = &DAT_0080f33a;
       }
       else {
-        puVar15 = (uint *)FUN_006b0140((UINT)local_8,DAT_00807618);
+        puVar15 = (uint *)FUN_006b0140((UINT)local_8,HINSTANCE_00807618);
       }
       ccFntTy::WrStr(this_00->field_1A73,puVar15,-1,-1,local_c);
       if ((short)param_1[5] == 0) {
@@ -1709,7 +1710,7 @@ LAB_005a89f6:
       piVar9 = (int *)param_1[6];
       iVar12 = *piVar9;
       iVar35 = iVar12 + -0xb4;
-      local_3c = piVar9[1] + -0xaa;
+      local_3c = piVar9[1] - 0xaa;
       local_38 = (undefined4 *)piVar9[2];
       local_34 = piVar9[3];
       local_40 = iVar35;
@@ -1759,7 +1760,7 @@ LAB_005a7c26:
       }
       iVar37 = -1;
       iVar35 = -1;
-      puVar15 = (uint *)FUN_006b0140((UINT)local_8,DAT_00807618);
+      puVar15 = (uint *)FUN_006b0140((UINT)local_8,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_1A73,puVar15,iVar35,iVar37,iVar12);
 LAB_005a7c92:
       FUN_006b35d0(DAT_008075a8,this_00->field_1ABC);
@@ -1815,7 +1816,7 @@ cf_common_exit_005A7F3B:
         this_00->field_1F4B = uVar21;
         *(undefined4 *)(this_00->field_1FB3 + 0xc) = 0;
         this_00->field_20BB = 1;
-        pcVar29 = (char *)FUN_006b0140(0x25b4,DAT_00807618);
+        pcVar29 = (char *)FUN_006b0140(0x25b4,HINSTANCE_00807618);
         uVar25 = 0xffffffff;
         do {
           pcVar16 = pcVar29;
@@ -1841,7 +1842,7 @@ cf_common_exit_005A7F3B:
         Library::DKW::TBL::FUN_006ae1c0
                   ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
         this_00->field_20BB = 2;
-        pcVar29 = (char *)FUN_006b0140(0x25b5,DAT_00807618);
+        pcVar29 = (char *)FUN_006b0140(0x25b5,HINSTANCE_00807618);
         uVar25 = 0xffffffff;
         do {
           pcVar16 = pcVar29;
@@ -1912,11 +1913,11 @@ cf_common_exit_005A7F3B:
                   else {
                     uVar21 = **(undefined4 **)(iVar35 + 0x14);
                   }
-                  uVar17 = FUN_006b0140(0x2568,DAT_00807618);
+                  uVar17 = FUN_006b0140(0x2568,HINSTANCE_00807618);
                   wsprintfA((LPSTR)&DAT_0080f33a,s__s__s__s_007cc62c,uVar17,iVar12,uVar21);
                   CFsgsConnection::SendChatMessage
                             ((CFsgsConnection *)&DAT_00802a90,(char *)&DAT_0080f33a);
-                  Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,&DAT_008016a0);
+                  Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_1EA2,0,&DAT_008016a0);
                   this_00->field_002D = 0x33;
                   *(undefined4 *)&this_00->field_0x31 = this_00->field_1EA2;
                   FUN_006e6080(this_00,2,this_00->field_1B10,(undefined4 *)puVar1);
@@ -2065,7 +2066,7 @@ cf_common_exit_005A5634:
           *(undefined4 *)(this_00->field_1FB3 + 0xc) = 0;
           if (this_00->field_1A5F == '\b') {
             this_00->field_20BB = 0;
-            pcVar29 = (char *)FUN_006b0140(0x235c,DAT_00807618);
+            pcVar29 = (char *)FUN_006b0140(0x235c,HINSTANCE_00807618);
             uVar25 = 0xffffffff;
             do {
               pcVar16 = pcVar29;
@@ -2092,7 +2093,7 @@ cf_common_exit_005A5634:
                       ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
           }
           this_00->field_20BB = 0x100;
-          pcVar29 = (char *)FUN_006b0140(0x2341,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x2341,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -2118,7 +2119,7 @@ cf_common_exit_005A5634:
           Library::DKW::TBL::FUN_006ae1c0
                     ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x501;
-          pcVar29 = (char *)FUN_006b0140(0x2342,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x2342,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -2144,7 +2145,7 @@ cf_common_exit_005A5634:
           Library::DKW::TBL::FUN_006ae1c0
                     ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x200;
-          pcVar29 = (char *)FUN_006b0140(0x235a,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x235a,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -2170,7 +2171,7 @@ cf_common_exit_005A5634:
           Library::DKW::TBL::FUN_006ae1c0
                     ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x400;
-          pcVar29 = (char *)FUN_006b0140(0x235b,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x235b,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -2196,7 +2197,7 @@ cf_common_exit_005A5634:
           Library::DKW::TBL::FUN_006ae1c0
                     ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x502;
-          pcVar29 = (char *)FUN_006b0140(0x235d,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x235d,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -2245,7 +2246,7 @@ cf_common_exit_005A5634:
           this_00->field_1F4B = uVar21;
           *(undefined4 *)(this_00->field_1FB3 + 0xc) = 0;
           this_00->field_20BB = 0xffffffff;
-          pcVar29 = (char *)FUN_006b0140(0x235c,DAT_00807618);
+          pcVar29 = (char *)FUN_006b0140(0x235c,HINSTANCE_00807618);
           uVar25 = 0xffffffff;
           do {
             pcVar16 = pcVar29;
@@ -2337,7 +2338,7 @@ LAB_005a5859:
       iVar12 = pcVar4->field_00A0;
 joined_r0x005a5b89:
       if (iVar12 != 0) {
-        FUN_00710790((int)pcVar4);
+        FUN_00710790((uint *)pcVar4);
       }
       this_00->field_1F77 = *(undefined4 *)&pcVar4->field_0x8a;
       (**(code **)(*(int *)this_00->field_000C + 8))(0x100ef,0,0,&this_00->field_0x1f33,0);
@@ -2353,7 +2354,7 @@ joined_r0x005a5b89:
       this_00->field_1F4B = uVar21;
       *(undefined4 *)(this_00->field_1FB3 + 0xc) = 0;
       this_00->field_20BB = 0;
-      pcVar29 = (char *)FUN_006b0140(0x25bf,DAT_00807618);
+      pcVar29 = (char *)FUN_006b0140(0x25bf,HINSTANCE_00807618);
       uVar25 = 0xffffffff;
       do {
         pcVar16 = pcVar29;
@@ -2379,7 +2380,7 @@ joined_r0x005a5b89:
       Library::DKW::TBL::FUN_006ae1c0
                 ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
       this_00->field_20BB = 1;
-      pcVar29 = (char *)FUN_006b0140(0x25c0,DAT_00807618);
+      pcVar29 = (char *)FUN_006b0140(0x25c0,HINSTANCE_00807618);
       uVar25 = 0xffffffff;
       do {
         pcVar16 = pcVar29;
@@ -2405,7 +2406,7 @@ joined_r0x005a5b89:
       Library::DKW::TBL::FUN_006ae1c0
                 ((uint *)this_00->field_1FB3,(undefined4 *)&this_00->field_0x1fb7);
       this_00->field_20BB = 2;
-      pcVar29 = (char *)FUN_006b0140(0x25c1,DAT_00807618);
+      pcVar29 = (char *)FUN_006b0140(0x25c1,HINSTANCE_00807618);
       uVar25 = 0xffffffff;
       do {
         pcVar16 = pcVar29;
@@ -2545,7 +2546,7 @@ cf_common_exit_005A52AA:
       } while (cVar2 != '\0');
       if (iVar12 == -2) break;
       if (this_00->field_1B0C != 0) {
-        FUN_006ab060(&this_00->field_1B0C);
+        FUN_006ab060((LPVOID *)&this_00->field_1B0C);
       }
       uVar25 = 0xffffffff;
       pcVar29 = (char *)(iVar35 + 0x14 + this_00->field_1EDB);
@@ -2645,7 +2646,7 @@ cf_common_exit_005A52AA:
         else {
           uVar21 = **(undefined4 **)(this_00->field_1AE8 + 0x14);
         }
-        Library::DKW::DDX::FUN_006b69b0(&DAT_00811764,(int *)&DAT_007cd6f0,0,uVar21,0x20);
+        Library::DKW::DDX::FUN_006b69b0((int *)&g_int_00811764,(int *)&DAT_007cd6f0,0,uVar21,0x20);
         g_currentExceptionFrame = local_290.previous;
       }
       else {
@@ -2658,7 +2659,7 @@ cf_common_exit_005A52AA:
           return uVar21;
         }
       }
-      if (DAT_00811764 == 0) {
+      if (g_int_00811764 == (int *)0x0) {
         pMVar23 = this_00->field_1A5B->field_02E6;
         if (pMVar23 != (MMsgTy *)0x0) {
           MMsgTy::SetMessage(pMVar23,0x2594,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
@@ -2666,7 +2667,7 @@ cf_common_exit_005A52AA:
         }
         goto cf_common_exit_005A8CA7;
       }
-      FUN_006b6160(local_6b8,DAT_00811764 + 0x18);
+      FUN_006b6160(local_6b8,(int)(g_int_00811764 + 6));
       local_698 = 0;
       if (*(int *)(this_00->field_1AEC + 8) < 1) {
         pcVar29 = (char *)0x0;
@@ -2772,7 +2773,7 @@ LAB_005a4ecf:
     puVar15 = local_8;
     if (iVar12 == 0) {
       Library::DKW::DDX::FUN_006b6a50
-                (&DAT_00811764,(undefined4 *)&DAT_007cd6f0,
+                ((int *)&g_int_00811764,(undefined4 *)&DAT_007cd6f0,
                  (in_addr)((_union_1226 *)(local_8 + 4))->S_un_b,local_22c);
     }
     pCVar27 = DAT_00802a30;
@@ -2788,7 +2789,7 @@ LAB_005a4ecf:
       *(undefined4 *)&pCVar27->field_0x4df = 0xffffffff;
     }
     this_00 = local_20;
-    if (DAT_00811764 == 0) {
+    if (g_int_00811764 == (int *)0x0) {
       pMVar23 = local_20->field_1A5B->field_02E6;
       if (pMVar23 != (MMsgTy *)0x0) {
         MMsgTy::SetMessage(pMVar23,0x2595,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0
@@ -2798,7 +2799,7 @@ LAB_005a4ecf:
     }
     CFsgsConnection::JoinGame((CFsgsConnection *)&DAT_00802a90,puVar15[1]);
     this_00 = local_20;
-    DAT_0080877f = *(undefined4 *)(DAT_00811764 + 0x38);
+    DAT_0080877f = g_int_00811764[0xe];
     DAT_0080877e = 0;
     DAT_008087be = 0;
     local_20->field_1A61 = 0;
@@ -2970,11 +2971,11 @@ LAB_005a50be:
       ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1AC0,0,0,0x16,0x1b8,0xf0);
       iVar38 = -1;
       iVar37 = -1;
-      uVar21 = 2;
+      uVar25 = 2;
       iVar35 = -1;
       iVar12 = -1;
-      puVar15 = (uint *)FUN_006b0140(0x25b6,DAT_00807618);
-      ccFntTy::WrTxt(this_00->field_1A73,puVar15,iVar12,iVar35,uVar21,iVar37,iVar38);
+      puVar15 = (uint *)FUN_006b0140(0x25b6,HINSTANCE_00807618);
+      ccFntTy::WrTxt(this_00->field_1A73,puVar15,iVar12,iVar35,uVar25,iVar37,iVar38);
       FUN_006b35d0(DAT_008075a8,this_00->field_1ABC);
       CFsgsConnection::RequestDatafile((CFsgsConnection *)&DAT_00802a90,s_st_inf_007cc66c);
       goto cf_common_exit_005A8CA7;

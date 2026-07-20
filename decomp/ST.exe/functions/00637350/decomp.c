@@ -70,12 +70,12 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
     local_1c = 0;
   }
   local_18 = iVar5 + 1 + param_4;
-  if (DAT_007fb242 < local_18) {
-    local_18 = (int)DAT_007fb242;
+  if (SHORT_007fb242 < local_18) {
+    local_18 = (int)SHORT_007fb242;
   }
   local_14 = iVar11 + 1 + param_4;
-  if (DAT_007fb240 < local_14) {
-    local_14 = (int)DAT_007fb240;
+  if (SHORT_007fb240 < local_14) {
+    local_14 = (int)SHORT_007fb240;
   }
   local_10 = local_c + -1;
   if (local_10 < 0) {
@@ -97,7 +97,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
   local_38[1] = param_8;
   iVar11 = local_c;
   iVar5 = local_10;
-  sVar10 = DAT_007fb240;
+  sVar10 = SHORT_007fb240;
   if ((int)uVar8 < local_18) {
     do {
       iVar9 = iVar5;
@@ -111,10 +111,10 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
             do {
               sVar12 = (short)iVar15;
               if (((((((-1 < sVar12) && (sVar12 < sVar10)) && (sVar4 = (short)uVar8, -1 < sVar4)) &&
-                    ((sVar4 < DAT_007fb242 && (sVar7 = (short)iVar9, -1 < sVar7)))) &&
-                   ((sVar7 < DAT_007fb244 &&
+                    ((sVar4 < SHORT_007fb242 && (sVar7 = (short)iVar9, -1 < sVar7)))) &&
+                   ((sVar7 < SHORT_007fb244 &&
                     ((this = *(int **)(DAT_007fb248 +
-                                      ((int)sVar4 * (int)sVar10 + (int)sVar7 * (int)DAT_007fb246 +
+                                      ((int)sVar4 * (int)sVar10 + (int)sVar7 * (int)SHORT_007fb246 +
                                       (int)sVar12) * 8), this != (int *)0x0 &&
                      (iVar11 = (**(code **)(*this + 0xf0))(), uVar8 = param_9, iVar11 != 0)))))) &&
                   ((uint)this[9] < 8)) &&
@@ -159,8 +159,7 @@ LAB_006375fd:
                 if ((bVar16) &&
                    (iVar11 = (**(code **)(*this + 0xf8))(), uVar8 = param_9, iVar11 != 0)) {
                   thunk_FUN_00416270(this,(undefined2 *)((int)&param_4 + 2),
-                                     (undefined2 *)((int)&param_3 + 2),
-                                     (undefined2 *)&stack0x0000001e);
+                                     (int *)((int)&param_3 + 2),(int *)&stack0x0000001e);
                   iVar11 = FUN_006aced8((int)param_4._2_2_,(int)param_3._2_2_,param_1,param_2);
                   uVar8 = param_9;
                   if (iVar11 < 0x28b) {
@@ -183,7 +182,7 @@ LAB_006375fd:
               iVar9 = iVar9 + 1;
               iVar11 = local_c;
               iVar5 = local_10;
-              sVar10 = DAT_007fb240;
+              sVar10 = SHORT_007fb240;
             } while (iVar9 < local_c);
           }
           iVar15 = iVar15 + 1;

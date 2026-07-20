@@ -17,9 +17,9 @@ void __cdecl FUN_00726870(int *param_1)
           iVar2 = iVar2 + 1;
         } while (iVar2 < *piVar1);
       }
-      FUN_006ab060((undefined4 *)(*param_1 + 0x11));
+      FUN_006ab060((LPVOID *)(*param_1 + 0x11));
     }
-    FUN_006ab060(param_1);
+    FUN_006ab060((LPVOID *)param_1);
   }
   return;
 }

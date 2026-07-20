@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 32 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00649EB0 -> 00648400 @ 00649EF8 */
 
-undefined4 * __cdecl FUN_00648400(char *param_1,undefined4 param_2)
+undefined4 * __cdecl FUN_00648400(char *text,undefined4 param_2)
 
 {
   int exceptionCode;
@@ -22,8 +25,8 @@ undefined4 * __cdecl FUN_00648400(char *param_1,undefined4 param_2)
     local_8 = Library::DKW::LIB::FUN_006aac10(0x85);
     *(undefined4 *)((int)local_8 + 1) = 0x85;
     *(undefined1 *)((int)local_8 + 5) = 2;
-    Library::MSVCRT::_strncpy((char *)((int)local_8 + 6),param_1,0x3f);
-    puVar1 = thunk_FUN_0065c9e0(param_1);
+    Library::MSVCRT::_strncpy((char *)((int)local_8 + 6),text,0x3f);
+    puVar1 = thunk_FUN_0065c9e0(text);
     *(undefined4 **)((int)local_8 + 0x4e) = puVar1;
     *(undefined4 *)((int)local_8 + 0x52) = param_2;
     g_currentExceptionFrame = pIVar2;

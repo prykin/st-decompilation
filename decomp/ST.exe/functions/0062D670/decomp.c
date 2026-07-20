@@ -1,5 +1,8 @@
 
-undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0062D670 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0062CD19 */
+
+byte * __thiscall FUN_0062d670(void *this,uint *param_1)
 
 {
   uint *puVar1;
@@ -8,10 +11,10 @@ undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
   uint uVar4;
   undefined4 *puVar5;
   uint *puVar6;
-  undefined4 *puVar7;
+  byte *pbVar7;
   uint *puVar8;
   uint *local_14;
-  undefined4 *local_10;
+  byte *local_10;
   uint local_c;
   void *local_8;
   
@@ -19,7 +22,7 @@ undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
   local_c = 0;
   *(undefined4 *)((int)this + 0xb0) = *(undefined4 *)((int)this + 0xb4);
   local_8 = this;
-  local_10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x98);
+  local_10 = (byte *)Library::DKW::LIB::FUN_006aac70(0x98);
   *(undefined4 *)((int)this + 0x28) = 2;
   if (this == (void *)0x0) {
     puVar5 = (undefined4 *)0x0;
@@ -27,11 +30,11 @@ undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
   else {
     puVar5 = (undefined4 *)((int)this + 0x1c);
   }
-  puVar7 = local_10;
+  pbVar7 = local_10;
   for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar7 = *puVar5;
+    *(undefined4 *)pbVar7 = *puVar5;
     puVar5 = puVar5 + 1;
-    puVar7 = puVar7 + 1;
+    pbVar7 = pbVar7 + 4;
   }
   *param_1 = 0x98;
   param_1 = (uint *)0x0;
@@ -56,9 +59,9 @@ undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
        (local_14 = thunk_FUN_0062d550(piVar2,(int *)&local_c), local_c != 0)) {
       uVar4 = *puVar1;
       *puVar1 = uVar4 + local_c;
-      local_10 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_10,uVar4 + local_c);
+      local_10 = (byte *)Library::DKW::LIB::FUN_006acf50((int)local_10,uVar4 + local_c);
       puVar6 = local_14;
-      puVar8 = (uint *)((*puVar1 - local_c) + (int)local_10);
+      puVar8 = (uint *)(local_10 + (*puVar1 - local_c));
       for (uVar4 = local_c >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar8 = *puVar6;
         puVar6 = puVar6 + 1;

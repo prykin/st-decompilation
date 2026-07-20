@@ -27,10 +27,9 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   char *pcVar16;
   char *pcVar17;
   bool bVar18;
-  undefined4 uVar19;
-  UINT UVar20;
-  LPCSTR pCVar21;
-  int iVar22;
+  UINT UVar19;
+  int iVar20;
+  undefined4 uVar21;
   char local_898 [2100];
   InternalExceptionFrame local_64;
   MReportTy *local_20;
@@ -58,7 +57,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     (*pcVar15)();
     return;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_20;
   PutDDXClip(0,0,0,0,800,(byte *)0x3c,'\x01',(BITMAPINFO *)local_20->field_005D);
   if ((this_00->field_0457 == (HoloTy *)0x0) && (param_1 == '\0')) {
@@ -79,22 +78,22 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   if (this_00->field_0067 == '\0') {
     ccFntTy::SetSurf(this_00->field_0083,this_00->field_0073,0,0x37,10,
                      *(int *)(this_00->field_0073 + 4) + -0x41,0xf);
-    uVar19 = 0;
+    uVar21 = 0;
     iVar11 = -1;
     iVar4 = -1;
-    puVar7 = (uint *)FUN_006b0140(0x2440,DAT_00807618);
-    ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar19);
+    puVar7 = (uint *)FUN_006b0140(0x2440,HINSTANCE_00807618);
+    ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar21);
     goto LAB_005bf406;
   }
   bVar2 = this_00->field_0069;
   if (bVar2 == 0) {
     ccFntTy::SetSurf(this_00->field_0083,this_00->field_0073,0,0x37,10,
                      *(int *)(this_00->field_0073 + 4) + -0x41,0xf);
-    uVar19 = 0;
+    uVar21 = 0;
     iVar11 = -1;
     iVar4 = -1;
-    puVar7 = (uint *)FUN_006b0140(0x2440,DAT_00807618);
-    ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar19);
+    puVar7 = (uint *)FUN_006b0140(0x2440,HINSTANCE_00807618);
+    ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar21);
     local_18 = (byte *)ccFntTy::CreateSurf(this_00->field_0083,this_00->field_0073,0,0,0,0x136,0x22,
                                            0);
     if (local_18 != (byte *)0x0) {
@@ -109,12 +108,12 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
           local_8 = local_8 & 0xffffff00;
           if (DAT_00808aaf != 0) {
             do {
-              UVar20 = local_8;
+              UVar19 = local_8;
               iVar4 = (local_8 & 0xff) * 0x9c;
               if (((&DAT_00808af4)[iVar4] == bVar2) && ((&DAT_00808af5)[iVar4] != '\0')) {
                 FUN_006b4170((int)local_18,0,0,0,*(int *)(local_18 + 4),*(int *)(local_18 + 8),0x4c)
                 ;
-                ccFntTy::WrStr(this_00->field_0083,&DAT_00808ab0 + (UVar20 & 0xff) * 0x27,0,-1,0);
+                ccFntTy::WrStr(this_00->field_0083,&DAT_00808ab0 + (UVar19 & 0xff) * 0x27,0,-1,0);
                 DibPut((undefined4 *)this_00->field_0073,0x38,(uVar9 & 0xff) * 0x26 + 0x2c,'\x01',
                        local_18);
                 break;
@@ -135,15 +134,15 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
         do {
           if (iVar4 == 0) {
             uVar9 = this_00->field_02A3;
-            iVar22 = 0;
+            iVar20 = 0;
             iVar11 = DAT_0080c963;
           }
           else {
             uVar9 = this_00->field_02A3;
             iVar11 = (&DAT_0080c943)[iVar4];
-            iVar22 = iVar4;
+            iVar20 = iVar4;
           }
-          PaintMainScore(this_00,iVar11,uVar9,iVar22);
+          PaintMainScore(this_00,iVar11,uVar9,iVar20);
           iVar4 = iVar4 + 1;
         } while (iVar4 < (int)(DAT_0080c83e + 1));
       }
@@ -256,7 +255,7 @@ LAB_005bf156:
           pcVar6 = pcVar6 + 1;
         } while (cVar13 != '\0');
         if (pcVar1->field_00A0 != 0) {
-          FUN_00710790((int)pcVar1);
+          FUN_00710790((uint *)pcVar1);
         }
         _Count = (int)(0x2a8 / (longlong)
                                (this_00->field_0083->field_0058 + *(int *)&pcVar1->field_0x86)) - 1;
@@ -372,43 +371,43 @@ LAB_005bf156:
     PaintObjScore(this_00,uVar9,(uint)DAT_0080c943._2_2_,0x225,0xcb);
     bVar2 = this_00->field_0069;
     if ((char)local_10 == '\x03') {
-      uVar19 = DAT_0080c8bb;
+      uVar21 = DAT_0080c8bb;
       if (bVar2 != 1) {
-        uVar19 = *(undefined4 *)(&DAT_0080c82b + (uint)bVar2 * 0x10);
+        uVar21 = *(undefined4 *)(&DAT_0080c82b + (uint)bVar2 * 0x10);
       }
-      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar19);
+      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar21);
       ccFntTy::SetSurf(this_00->field_008B,this_00->field_0073,0,0x8c,0x11f,0x62,0x14);
       ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
-      uVar19 = DAT_0080c8bf;
+      uVar21 = DAT_0080c8bf;
       if (this_00->field_0069 != 1) {
-        uVar19 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
+        uVar21 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
       }
-      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar19);
-      uVar19 = 0x12a;
+      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar21);
+      iVar4 = 0x12a;
     }
     else {
-      uVar19 = DAT_0080c8b7;
+      uVar21 = DAT_0080c8b7;
       if (bVar2 != 1) {
-        uVar19 = *(undefined4 *)(&DAT_0080c827 + (uint)bVar2 * 0x10);
+        uVar21 = *(undefined4 *)(&DAT_0080c827 + (uint)bVar2 * 0x10);
       }
-      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb4,uVar19);
+      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb4,uVar21);
       ccFntTy::SetSurf(this_00->field_008B,this_00->field_0073,0,0x75,0x11f,0x3e,0x14);
       ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
-      uVar19 = DAT_0080c8bb;
+      uVar21 = DAT_0080c8bb;
       if (this_00->field_0069 != 1) {
-        uVar19 = *(undefined4 *)(&DAT_0080c82b + (uint)(byte)this_00->field_0069 * 0x10);
+        uVar21 = *(undefined4 *)(&DAT_0080c82b + (uint)(byte)this_00->field_0069 * 0x10);
       }
-      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar19);
+      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar21);
       ccFntTy::SetSurf(this_00->field_008B,this_00->field_0073,0,0xcc,0x11f,0x62,0x14);
       ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
-      uVar19 = DAT_0080c8bf;
+      uVar21 = DAT_0080c8bf;
       if (this_00->field_0069 != 1) {
-        uVar19 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
+        uVar21 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
       }
-      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar19);
-      uVar19 = 0x146;
+      (*pcVar15)(&DAT_0080f33a,&DAT_007ccfb8,uVar21);
+      iVar4 = 0x146;
     }
-    ccFntTy::SetSurf(this_00->field_008B,this_00->field_0073,0,uVar19,0x11f,0x62,0x14);
+    ccFntTy::SetSurf(this_00->field_008B,this_00->field_0073,0,iVar4,0x11f,0x62,0x14);
     ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
     iVar4 = DAT_0080c8c3;
     if (this_00->field_0069 != 1) {
@@ -439,7 +438,7 @@ LAB_005bf156:
       else if (uVar9 == 3) {
         local_8 = 0x23f2;
       }
-      pcVar6 = (char *)FUN_006b0140(local_8,DAT_00807618);
+      pcVar6 = (char *)FUN_006b0140(local_8,HINSTANCE_00807618);
       uVar9 = 0xffffffff;
       do {
         pcVar17 = pcVar6;
@@ -472,7 +471,7 @@ LAB_005bf156:
     ccFntTy::SetSurf(this_00->field_0083,this_00->field_0073,0,500,0x145,0xe6,0xf);
     bVar2 = this_00->field_0069;
     if (bVar2 == 1) {
-      UVar20 = 0x2441;
+      UVar19 = 0x2441;
     }
     else {
       if (DAT_0080cc40 == '\0') {
@@ -515,17 +514,17 @@ LAB_005bef47:
       else if ((&DAT_0080c99b)[(uint)DAT_0080c846 * 0x51] !=
                (&DAT_0080c99b)[(uint)*(byte *)((int)&DAT_0080c83a + bVar2 + 3) * 0x51]) {
 LAB_005bef67:
-        UVar20 = 0x2442;
+        UVar19 = 0x2442;
         goto LAB_005bef6c;
       }
-      UVar20 = 0x2443;
+      UVar19 = 0x2443;
     }
 LAB_005bef6c:
-    uVar19 = 2;
+    uVar21 = 2;
     iVar11 = -1;
     iVar4 = -3;
-    puVar7 = (uint *)FUN_006b0140(UVar20,DAT_00807618);
-    ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar19);
+    puVar7 = (uint *)FUN_006b0140(UVar19,HINSTANCE_00807618);
+    ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar21);
   }
   iVar4 = 1;
   puVar8 = (undefined4 *)(this_00->field_005D + 0x28);
@@ -549,11 +548,11 @@ LAB_005bef6c:
   FUN_006b5ee0((int)local_c,0,2,2,*(int *)(local_c + 4) + -4,*(int *)(local_c + 8) + -4,0x18,0xd);
   ccFntTy::SetSurf(this_00->field_0083,(int)local_c,0,5,5,*(int *)(local_c + 4) + -0x69,
                    *(int *)(local_c + 8) + -10);
-  uVar19 = 0;
+  uVar21 = 0;
   iVar11 = -1;
   iVar4 = -1;
-  puVar7 = (uint *)FUN_006b0140(0x2444,DAT_00807618);
-  ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar19);
+  puVar7 = (uint *)FUN_006b0140(0x2444,HINSTANCE_00807618);
+  ccFntTy::WrStr(this_00->field_0083,puVar7,iVar4,iVar11,uVar21);
   FUN_006b4170((int)local_c,0,*(int *)(local_c + 4) + -0x69,(*(int *)(local_c + 8) + -0x1c) / 2,0x50
                ,0x1c,0);
   FUN_006b5ee0((int)local_c,0,*(int *)(local_c + 4) + -0x69,(*(int *)(local_c + 8) + -0x1c) / 2,0x50
@@ -562,13 +561,13 @@ LAB_005bef6c:
   local_8 = CONCAT31(local_8._1_3_,cVar13);
   if (cVar13 == '\0') {
     puVar12 = &DAT_007c2198;
-    pCVar21 = &DAT_007c2194;
+    pcVar6 = &DAT_007c2194;
   }
   else {
     puVar12 = (undefined *)(DAT_0080c83a / 0xe10 & 0xff);
-    pCVar21 = &DAT_007c219c;
+    pcVar6 = &DAT_007c219c;
   }
-  wsprintfA((LPSTR)&DAT_0080f33a,pCVar21,puVar12);
+  wsprintfA((LPSTR)&DAT_0080f33a,pcVar6,puVar12);
   wsprintfA((LPSTR)&DAT_0080f33a,s__s_02d__02d_007c2184,&DAT_0080f33a,
             (int)(((ulonglong)DAT_0080c83a % 0xe10) / 0x3c),
             (int)(((ulonglong)DAT_0080c83a % 0xe10) % 0x3c));

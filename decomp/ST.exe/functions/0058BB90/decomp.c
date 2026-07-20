@@ -74,9 +74,10 @@ void __fastcall FUN_0058bb90(int param_1)
   }
   local_3c = (short)((int)puVar5 / 200);
 LAB_0058bcd7:
-  if (DAT_00802a88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     VisibleClassTy::VisHoleCreate
-              (DAT_00802a88,local_8,iVar3,puVar5,*(uint *)(param_1 + 0x24),(undefined *)0x2,0x19);
+              (g_visibleClass_00802A88,local_8,iVar3,puVar5,*(uint *)(param_1 + 0x24),
+               (undefined *)0x2,0x19);
   }
   STPlaySystemC::CreateGameObject(DAT_00802a38,0x28,0,0,local_60,0);
   return;

@@ -3,7 +3,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
 
 {
   char cVar1;
-  undefined4 uVar2;
+  DWORD DVar2;
   uint uVar3;
   uint uVar4;
   int iVar5;
@@ -41,8 +41,8 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
         *(undefined1 *)((int)this + 0x11d) = 0;
       }
       *(undefined4 *)((int)this + 0x126) = param_4;
-      uVar2 = FUN_006e51b0(*(int *)((int)this + 0x10));
-      *(undefined4 *)((int)this + 0x122) = uVar2;
+      DVar2 = FUN_006e51b0(*(int *)((int)this + 0x10));
+      *(DWORD *)((int)this + 0x122) = DVar2;
       *(undefined4 *)((int)this + 0x12e) = 1;
       HelpStringTy::OutStr(this);
       return;

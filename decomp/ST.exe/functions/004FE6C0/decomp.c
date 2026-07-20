@@ -25,7 +25,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
   
   if (param_1 == 0) {
     local_8 = this->field_0194;
-    bVar7 = this->field_0C6D;
+    bVar7 = this->field_0xc6d;
   }
   else {
     local_8 = this->field_018C;

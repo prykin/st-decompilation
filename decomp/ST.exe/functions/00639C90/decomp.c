@@ -45,7 +45,7 @@ undefined4 __thiscall FUN_00639c90(void *this,uint param_1)
       local_8 = (byte *)thunk_FUN_0063cff0(this,&local_10);
       local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),&param_1);
       if (param_1 != 0) {
-        local_8 = (byte *)Library::DKW::LIB::FUN_006acf50((undefined4 *)local_8,local_10 + param_1);
+        local_8 = (byte *)Library::DKW::LIB::FUN_006acf50((int)local_8,local_10 + param_1);
         pbVar13 = local_14;
         pbVar15 = local_8 + local_10;
         for (uVar9 = param_1 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -111,8 +111,7 @@ switchD_00639e3d_caseD_d:
     thunk_FUN_0063c030(this,DAT_00802a38->field_00E4);
     if (*(uint *)((int)this + 0x245) < 2) {
       iVar7 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,
-                         (byte *)s_trmmine_007d1f30,0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,s_trmmine_007d1f30,0x1d);
       if (iVar7 != 0) {
         return 0xffff;
       }
@@ -122,8 +121,7 @@ switchD_00639e3d_caseD_d:
     else {
       if (*(uint *)((int)this + 0x245) != 2) goto LAB_00639dab;
       iVar7 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,
-                         (byte *)s_vacmine_007d1f38,0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,s_vacmine_007d1f38,0x1d);
       if (iVar7 != 0) {
         return 0xffff;
       }
@@ -152,9 +150,9 @@ LAB_00639dab:
         return 0;
       }
       pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
-      iVar7 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_00806774,(byte *)s_exptme_007d1f40,0x1d);
+      iVar7 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_00806774,s_exptme_007d1f40,0x1d);
       if (iVar7 == 0) {
-        iVar7 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,(byte *)s_expl_s0_007d1f48,0x1d);
+        iVar7 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,s_expl_s0_007d1f48,0x1d);
         if (iVar7 == 0) {
           thunk_FUN_004ac700(pSVar1,'\x0f');
           STT3DSprC::StartShow(pSVar1,0xd,DAT_00802a38->field_00E4);
@@ -182,11 +180,11 @@ LAB_00639dab:
     uVar9 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar9;
     TraksClassTy::TraksCreate
-              (DAT_00802a7c,0,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+              (g_traksClass_00802A7C,0,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
                *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e) - iVar7,0,0,0,0,0,0,-1,0,0);
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -219,9 +217,9 @@ LAB_00639dab:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_18,&local_1c),
-        -1 < (int)local_c)) &&
+    if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7,
+                            &local_18,&local_1c), -1 < (int)local_c)) &&
        (((((int)local_c < 5 && (-1 < local_18)) &&
          ((local_18 < (int)pVVar11->field_0030 &&
           ((local_1c = local_1c + (&DAT_0079aed0)[local_c], -1 < local_1c &&
@@ -288,8 +286,8 @@ LAB_0063a27d:
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar11 = DAT_00802a88;
-    if (DAT_00802a88 != (VisibleClassTy *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar7 = *(int *)((int)this + 0x26e);
       sVar3 = (short)(iVar7 >> 0x1f);
       if (iVar7 < 0) {
@@ -320,9 +318,9 @@ LAB_0063a27d:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if (((((DAT_0080874d == -1) || (DAT_00802a88->field_00F8 == 0)) ||
-           (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18
-                              ), (int)local_c < 0)) ||
+      if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                               iVar7,&local_1c,&local_18), (int)local_c < 0)) ||
           (((4 < (int)local_c || (local_1c < 0)) ||
            (((int)pVVar11->field_0030 <= local_1c ||
             ((local_18 = local_18 + (&DAT_0079aed0)[local_c], local_18 < 0 ||
@@ -347,7 +345,7 @@ LAB_0063a27d:
     if (CONCAT31(extraout_var,bVar6) != 0 && -1 < extraout_var) {
       *(undefined4 *)((int)this + 0x28e) = DAT_00802a38->field_00E4;
       *(undefined1 *)((int)this + 0x265) = 4;
-      if (DAT_00802a88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar7 = *(int *)((int)this + 0x26a);
         sVar3 = (short)(iVar7 >> 0x1f);
         if (iVar7 < 0) {
@@ -369,8 +367,8 @@ LAB_0063a27d:
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
         VisibleClassTy::VisHoleCreate
-                  (DAT_00802a88,iVar8,iVar7,(undefined *)0x0,*(uint *)((int)this + 0x259),
-                   (undefined *)0x5,0x271);
+                  (g_visibleClass_00802A88,iVar8,iVar7,(undefined *)0x0,*(uint *)((int)this + 0x259)
+                   ,(undefined *)0x5,0x271);
       }
       if (*(short *)((int)this + 0x263) != -1) {
         thunk_FUN_006404b0(this,(int)*(short *)((int)this + 0x253),
@@ -393,15 +391,15 @@ LAB_0063a27d:
       uVar5 = (ushort)(uVar9 >> 0x10);
       *(uint *)((int)this + 0x1c) = uVar9;
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+                (g_traksClass_00802A7C,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
                  *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
                  ,-1,0,0);
     }
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -434,10 +432,11 @@ LAB_0063a27d:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18),
-         -1 < (int)local_c)) && (((int)local_c < 5 && (-1 < local_1c)))) &&
-       (iVar7 = pVVar11->field_0030, local_1c < iVar7)) {
+    if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7
+                             ,&local_1c,&local_18), -1 < (int)local_c)) &&
+        (((int)local_c < 5 && (-1 < local_1c)))) && (iVar7 = pVVar11->field_0030, local_1c < iVar7))
+    {
       iVar8 = (&DAT_0079aed0)[local_c];
 LAB_0063a728:
       iVar8 = iVar8 + local_18;
@@ -463,13 +462,13 @@ LAB_0063a728:
       uVar5 = (ushort)(uVar9 >> 0x10);
       *(uint *)((int)this + 0x1c) = uVar9;
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+                (g_traksClass_00802A7C,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
                  *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
                  ,-1,0,0);
     }
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -502,9 +501,9 @@ LAB_0063a728:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18),
-        -1 < (int)local_c)) &&
+    if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7,
+                            &local_1c,&local_18), -1 < (int)local_c)) &&
        ((((int)local_c < 5 && (-1 < local_1c)) && (iVar7 = pVVar11->field_0030, local_1c < iVar7))))
     {
       iVar8 = (&DAT_0079aed0)[local_c];
@@ -517,8 +516,8 @@ LAB_0063a728:
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
       (**(code **)(*(int *)this + 0xd8))();
-      pVVar11 = DAT_00802a88;
-      if (DAT_00802a88 != (VisibleClassTy *)0x0) {
+      pVVar11 = g_visibleClass_00802A88;
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar7 = *(int *)((int)this + 0x26e);
         sVar3 = (short)(iVar7 >> 0x1f);
         if (iVar7 < 0) {
@@ -549,9 +548,9 @@ LAB_0063a728:
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        if ((((DAT_0080874d == -1) || (DAT_00802a88->field_00F8 == 0)) ||
-            ((thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,
-                                 &local_18), (int)local_c < 0 ||
+        if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                                 iVar7,&local_1c,&local_18), (int)local_c < 0 ||
              (((4 < (int)local_c || (local_1c < 0)) || ((int)pVVar11->field_0030 <= local_1c))))))
            || (((local_18 = (&DAT_0079aed0)[local_c] + local_18, local_18 < 0 ||
                 ((int)pVVar11->field_0034 <= local_18)) ||
@@ -576,7 +575,7 @@ LAB_0063a728:
       uVar5 = (ushort)(uVar9 >> 0x10);
       *(uint *)((int)this + 0x1c) = uVar9;
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+                (g_traksClass_00802A7C,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
                  *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
                  ,-1,0,0);
       thunk_FUN_0063f340((int)this);
@@ -640,8 +639,8 @@ LAB_0063a728:
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
+    pVVar11 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -674,21 +673,22 @@ LAB_0063a728:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18),
-         -1 < (int)local_c)) && (((int)local_c < 5 && (-1 < local_1c)))) &&
-       (iVar7 = pVVar11->field_0030, local_1c < iVar7)) {
+    if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7
+                             ,&local_1c,&local_18), -1 < (int)local_c)) &&
+        (((int)local_c < 5 && (-1 < local_1c)))) && (iVar7 = pVVar11->field_0030, local_1c < iVar7))
+    {
       iVar8 = (&DAT_0079aed0)[local_c];
       goto LAB_0063a728;
     }
     break;
   case 7:
     pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
-    iVar7 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_00806774,(byte *)s_exptme_007d1f40,0x1d);
+    iVar7 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_00806774,s_exptme_007d1f40,0x1d);
     if (iVar7 != 0) {
       return 0xffff;
     }
-    iVar7 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,(byte *)s_expl_s0_007d1f48,0x1d);
+    iVar7 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,s_expl_s0_007d1f48,0x1d);
     if (iVar7 == 0) {
       thunk_FUN_004ac700(pSVar1,'\x0f');
       thunk_FUN_004ac700(pSVar1,'\r');

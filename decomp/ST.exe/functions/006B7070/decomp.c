@@ -1,5 +1,8 @@
 
-void FUN_006b7070(undefined4 *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005D4850 -> 006B7070 @ 005D488F */
+
+void FUN_006b7070(int *param_1)
 
 {
   int iVar1;

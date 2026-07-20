@@ -47,7 +47,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   undefined4 *local_14;
   uint *local_10;
   uint local_c;
-  int *local_8;
+  STFishC *local_8;
   
   local_24 = 4;
   local_80[0] = 0x38;
@@ -117,8 +117,8 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
       if (0 < (int)local_c) {
         do {
           FUN_006acc70(local_18,uVar9,&local_8);
-          if (local_8 != (int *)0x0) {
-            iVar3 = (**(code **)(*local_8 + 0x2c))();
+          if (local_8 != (STFishC *)0x0) {
+            iVar3 = (*local_8->vtable->slot_2C)();
             puVar4 = local_10;
             if ((iVar3 == 0x3b) || (iVar3 == 0x60)) {
 LAB_00441e92:
@@ -130,7 +130,7 @@ LAB_00441e92:
                 piVar5 = local_80;
                 do {
                   if (iVar3 == *piVar5) {
-                    iVar3 = (**(code **)(*local_8 + 0x88))(local_4c);
+                    iVar3 = (*local_8->vtable->slot_88)(local_4c);
                     if (0 < iVar3) {
                       puVar4 = (uint *)local_60[iVar7];
                       goto LAB_00441e92;
@@ -165,9 +165,9 @@ LAB_00441e92:
       if (0 < (int)local_64) {
         do {
           FUN_006acc70((int)local_10,local_c,&local_8);
-          thunk_FUN_004162b0(local_8,&local_40,&local_3e,&local_3c);
-          local_3a = *(undefined2 *)((int)local_8 + 0x32);
-          uVar6 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
+          STFishC::sub_004162B0(local_8,&local_40,&local_3e,&local_3c);
+          local_3a = *(undefined2 *)&local_8->field_0x32;
+          uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
           puVar8 = DAT_007fb280;
           puVar10 = DAT_007fb238;
           for (uVar9 = (uVar6 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -180,8 +180,8 @@ LAB_00441e92:
             puVar8 = (undefined4 *)((int)puVar8 + 1);
             puVar10 = (undefined4 *)((int)puVar10 + 1);
           }
-          FUN_006ab090((int)DAT_007fb238,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
-                       (int)local_40,(int)local_3e,(int)local_3c,-1,-1,-1);
+          FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c
+                       ,(int)local_40,(int)local_3e,(int)local_3c,-1,-1,-1);
           if (0 < (int)local_24) {
             local_1c = local_60;
             local_18 = local_24;
@@ -201,12 +201,12 @@ LAB_00441e92:
                 if (0 < local_80[4]) {
                   do {
                     FUN_006acc70(iVar3,uVar6,&local_8);
-                    thunk_FUN_004162b0(local_8,&local_48,&local_46,&local_44);
-                    local_42 = *(undefined2 *)((int)local_8 + 0x32);
+                    STFishC::sub_004162B0(local_8,&local_48,&local_46,&local_44);
+                    local_42 = *(undefined2 *)&local_8->field_0x32;
                     local_38 = (int)*(short *)((int)DAT_007fb238 +
-                                              ((local_44 + 1) * (int)DAT_007fb27e +
-                                               (int)local_46 * (int)DAT_007fb278 + (int)local_48) *
-                                              2);
+                                              ((local_44 + 1) * (int)SHORT_007fb27e +
+                                               (int)local_46 * (int)SHORT_007fb278 + (int)local_48)
+                                              * 2);
                     if (local_38 == 0) {
                       local_38 = 1000000;
                       local_30 = 100;

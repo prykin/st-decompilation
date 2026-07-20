@@ -33,7 +33,7 @@ void __fastcall FUN_0067a390(void *param_1)
   }
   *(undefined4 *)((int)param_1 + 0x654) = *(undefined4 *)((int)param_1 + 0x6fe);
   thunk_FUN_00679600(param_1);
-  if (DAT_007fa174 == (void *)0x0) {
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return;
   }
   if (*(short *)((int)param_1 + 0x5ec) != 3) {
@@ -100,7 +100,8 @@ void __fastcall FUN_0067a390(void *param_1)
     uVar10 = *(int *)((int)param_1 + 0xa4) * 0x41c64e6d + 0x3039;
     *(uint *)((int)param_1 + 0xa4) = uVar10;
     if (((uVar10 >> 0x10) % 0x5dd + 0x1d4c < *(uint *)((int)param_1 + 0x6fe)) &&
-       (local_10 = thunk_FUN_004de4f0(DAT_007fa174,*(int *)((int)param_1 + 0x5d7)), 0 < local_10)) {
+       (local_10 = thunk_FUN_004de4f0(g_sTAllPlayers_007FA174,*(int *)((int)param_1 + 0x5d7)),
+       0 < local_10)) {
       uVar3 = thunk_FUN_0043e640(*(char *)((int)param_1 + 0x5d7),0x34,0,-1);
       puVar9 = local_74;
       for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -161,8 +162,8 @@ void __fastcall FUN_0067a390(void *param_1)
     uVar10 = *(int *)((int)param_1 + 0xa4) * 0x41c64e6d + 0x3039;
     *(uint *)((int)param_1 + 0xa4) = uVar10;
     if (((uVar10 >> 0x10) % 0x5dd + 0x1d4c < *(uint *)((int)param_1 + 0x6fe)) &&
-       (local_10 = thunk_FUN_004dfc70(DAT_007fa174,*(int **)((int)param_1 + 0x5d7)), 0 < local_10))
-    {
+       (local_10 = thunk_FUN_004dfc70(g_sTAllPlayers_007FA174,*(int **)((int)param_1 + 0x5d7)),
+       0 < local_10)) {
       uVar3 = thunk_FUN_0043e640(*(char *)((int)param_1 + 0x5d7),0x48,0,-1);
       puVar9 = local_74;
       for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -221,7 +222,7 @@ void __fastcall FUN_0067a390(void *param_1)
       }
     }
   }
-  if (DAT_007fa174 == (void *)0x0) {
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return;
   }
   if (*(short *)((int)param_1 + 0x5ec) != 3) {
@@ -400,7 +401,7 @@ LAB_0067abe0:
       }
     }
   }
-  if (DAT_007fa174 == (void *)0x0) {
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return;
   }
   if (*(short *)((int)param_1 + 0x5ec) != 3) {

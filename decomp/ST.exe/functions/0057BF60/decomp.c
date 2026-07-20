@@ -26,7 +26,10 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_80;
-  int local_3c [4];
+  LPVOID local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
+  undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -97,7 +100,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
     *(undefined4 *)&this_00->field_0x23b = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar11,0xe);
     thunk_FUN_004ad5e0((int)puVar11);
-    STT3DSprC::LoadSequence((STT3DSprC *)puVar11,8,DAT_00806774,(byte *)s_explsna_007cb018,0x1d);
+    STT3DSprC::LoadSequence((STT3DSprC *)puVar11,8,DAT_00806774,s_explsna_007cb018,0x1d);
     STT3DSprC::StartShow((STT3DSprC *)puVar11,8,DAT_00802a38->field_00E4);
     g_currentExceptionFrame = local_80.previous;
     return 0;
@@ -239,27 +242,28 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_20 + 0xc);
       *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)((int)local_20 + 0x32);
       *(undefined2 *)&this_00->field_0x239 = *(undefined2 *)(local_20 + 0xd);
-      local_3c[0] = Library::DKW::LIB::FUN_006aac70(0x44);
-      if (local_3c[0] != 0) {
+      local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+      if (local_3c != (LPVOID)0x0) {
         iVar6 = 0;
         do {
           if (iVar6 == 8) {
-            *(int **)(local_3c[0] + 0x20) = DAT_00806774;
+            *(int **)((int)local_3c + 0x20) = DAT_00806774;
           }
           else {
-            *(int **)(local_3c[0] + iVar6 * 4) = DAT_0080676c;
+            *(int **)((int)local_3c + iVar6 * 4) = DAT_0080676c;
           }
           iVar6 = iVar6 + 1;
         } while (iVar6 < 0x11);
-        local_3c[1] = 0;
-        local_3c[2] = 0;
-        local_3c[3] = DAT_008073cc;
+        local_38 = 0;
+        local_34 = 0;
+        local_30 = DAT_008073cc;
         local_2c = 0;
         local_28 = 0;
         local_24 = 0;
         STT3DSprC::RestoreSpr
-                  ((STT3DSprC *)&this_00->field_01D5,local_3c,(undefined4 *)((int)puVar11 + 0x42));
-        FUN_006ab060(local_3c);
+                  ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
+                   (undefined4 *)((int)puVar11 + 0x42));
+        FUN_006ab060(&local_3c);
         DumpClassC::WritePtr
                   (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                    *(short *)&this_00->field_0x5f,1,(int)this_00);
@@ -284,10 +288,10 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
   *(undefined2 *)&this_00->field_0x5d = 0xffff;
   *(undefined2 *)&this_00->field_0x5b = 0xffff;
   if ((((((*(int *)&this_00->field_0x257 < 0) ||
-         ((int)DAT_007fb240 <= *(int *)&this_00->field_0x257)) ||
+         ((int)SHORT_007fb240 <= *(int *)&this_00->field_0x257)) ||
         (iVar6 = *(int *)((int)&this_00->field_0259 + 2), iVar6 < 0)) ||
-       ((DAT_007fb242 <= iVar6 || (iVar6 = *(int *)&this_00->field_0x25f, iVar6 < 0)))) ||
-      ((DAT_007fb244 <= iVar6 ||
+       ((SHORT_007fb242 <= iVar6 || (iVar6 = *(int *)&this_00->field_0x25f, iVar6 < 0)))) ||
+      ((SHORT_007fb244 <= iVar6 ||
        ((iVar6 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x257,
                                     *(short *)((int)&this_00->field_0259 + 2),(short)iVar6,1),
         iVar6 != 0 || (iVar6 = thunk_FUN_00417e70(this_00,8), iVar6 != 0)))))) ||
@@ -299,28 +303,27 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
   switch(*(undefined4 *)&this_00->field_0x267) {
   case 0xe7:
     puVar11 = &this_00->field_01D5;
-    iVar6 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)puVar11,0xe,DAT_0080676c,(byte *)s_fish1_007caff0,0x1d);
+    iVar6 = STT3DSprC::LoadSequence((STT3DSprC *)puVar11,0xe,DAT_0080676c,s_fish1_007caff0,0x1d);
     if (iVar6 != 0) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_To_fish_cpp_007cb044,0xf6);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_To_fish_cpp_007cb044,0xf6);
     }
     thunk_FUN_004ac610(puVar11,'\x0e');
     STT3DSprC::SetCurFase((STT3DSprC *)puVar11,'\x0e',0);
     goto switchD_0057c210_default;
   case 0xe8:
     iVar6 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,(byte *)s_fish_b_007caff8,
-                       0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_fish_b_007caff8,0x1d);
     if (iVar6 != 0) {
       iVar6 = 0xea;
 cf_error_exit_0057C332:
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_To_fish_cpp_007cb044,iVar6);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_To_fish_cpp_007cb044,iVar6);
     }
     break;
   case 0xe9:
     iVar6 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,(byte *)s_fish_gr_007cb000
-                       ,0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_fish_gr_007cb000,0x1d);
     if (iVar6 != 0) {
       iVar6 = 0xf0;
       goto cf_error_exit_0057C332;
@@ -369,7 +372,7 @@ cf_common_exit_0057C3E4:
 switchD_0057c669_caseD_127:
   puVar1 = &this_00->field_0x235;
   local_20 = (undefined4 *)(int)(short)((short)*(undefined4 *)(param_1 + 0x18) * 0xc9 + 100);
-  iVar6 = thunk_FUN_0058d160(0,0,DAT_007fb240 + -1,DAT_007fb242 + -1,(int)this_00,
+  iVar6 = thunk_FUN_0058d160(0,0,SHORT_007fb240 + -1,SHORT_007fb242 + -1,(int)this_00,
                              (int)(short)((short)*(undefined4 *)(param_1 + 0x14) * 0xc9 + 100),
                              (int)local_20,
                              (int)(short)((short)((uint)*(undefined4 *)(param_1 + 0x14) >> 0x10) *

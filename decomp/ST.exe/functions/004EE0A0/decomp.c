@@ -52,7 +52,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   local_1c = local_10->field_01B7;
   local_18 = *(undefined2 *)&local_10->field_0x1bb;
   local_16 = local_10->field_01BD;
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,0xb,&local_10->field_01AB);
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0xb,&local_10->field_01AB);
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
   local_14 = -0x1af - (int)this_00;
   pGVar6 = &this_00->field_0x1af;

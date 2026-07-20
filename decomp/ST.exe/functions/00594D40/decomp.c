@@ -1,7 +1,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::OutTRGlProc */
+   FSGSTy::OutTRGlProc
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00594D40 parameter used as this of MMMObjTy::OutRGlProc @ 00594DAA
+   
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00594D40 parameter used as this of MMMObjTy::OutRGlProc @ 00594DCB */
 
 void __thiscall
 FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int param_4,
@@ -17,7 +23,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
   void *unaff_EDI;
   uint uVar4;
   uint uVar5;
-  void *pvVar6;
+  ccFntTy *pcVar6;
   undefined4 uVar7;
   InternalExceptionFrame local_48;
   
@@ -33,11 +39,11 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
                 (param_3,param_1,param_2,param_3,param_4,param_5,param_6,0x15,
                  (undefined4 *)(DAT_0081176c + 0x140));
       uVar7 = 0;
-      pvVar6 = *(void **)(DAT_0081176c + 0x34);
+      pcVar6 = *(ccFntTy **)(DAT_0081176c + 0x34);
       uVar5 = 0xffffffff;
       uVar4 = 0xfffffffe;
-      puVar2 = (uint *)FUN_006b0140(param_8,DAT_00807618);
-      StartServTy::WrTextDDX(this_00,0,param_4,param_5,param_6,0x15,puVar2,uVar4,uVar5,pvVar6,uVar7)
+      puVar2 = (uint *)FUN_006b0140(param_8,HINSTANCE_00807618);
+      StartServTy::WrTextDDX(this_00,0,param_4,param_5,param_6,0x15,puVar2,uVar4,uVar5,pcVar6,uVar7)
       ;
       g_currentExceptionFrame = local_48.previous;
       return;

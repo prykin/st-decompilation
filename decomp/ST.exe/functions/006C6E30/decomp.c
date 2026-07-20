@@ -2,17 +2,18 @@
 int FUN_006c6e30(int param_1)
 
 {
-  int *piVar1;
+  LPVOID *ppvVar1;
   int iVar2;
-  int iVar3;
+  LPVOID pvVar3;
+  int iVar4;
   short local_10;
   short local_e;
   short local_c;
   short local_a;
   byte local_8;
   
-  piVar1 = (int *)(param_1 + 0x2a);
-  FUN_006ab060(piVar1);
+  ppvVar1 = (LPVOID *)(param_1 + 0x2a);
+  FUN_006ab060(ppvVar1);
   iVar2 = (**(code **)(param_1 + 0x42))(param_1,&local_10,9);
   if (iVar2 == 9) {
     *(int *)(param_1 + 0x1a) = (int)local_10;
@@ -25,16 +26,16 @@ int FUN_006c6e30(int param_1)
     else {
       *(byte *)(param_1 + 0x19) = local_8 & 7;
       iVar2 = (1 << (local_8 & 7) + 1) * 3;
-      iVar3 = FUN_006bfb70(iVar2);
-      *piVar1 = iVar3;
-      if (iVar3 == 0) {
+      pvVar3 = (LPVOID)FUN_006bfb70(iVar2);
+      *ppvVar1 = pvVar3;
+      if (pvVar3 == (LPVOID)0x0) {
         return -2;
       }
-      iVar3 = (**(code **)(param_1 + 0x42))(param_1,iVar3,iVar2);
-      if (iVar3 != iVar2) {
-        FUN_006ab060(piVar1);
-        param_1 = iVar3;
-        if (-1 < iVar3) {
+      iVar4 = (**(code **)(param_1 + 0x42))(param_1,pvVar3,iVar2);
+      if (iVar4 != iVar2) {
+        FUN_006ab060(ppvVar1);
+        param_1 = iVar4;
+        if (-1 < iVar4) {
           param_1 = -5;
         }
         return param_1;

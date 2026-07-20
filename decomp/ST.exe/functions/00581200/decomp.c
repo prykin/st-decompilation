@@ -26,7 +26,7 @@ void __fastcall FUN_00581200(int param_1)
   int local_38;
   int local_34;
   int local_30;
-  undefined4 local_2c;
+  int local_2c;
   undefined4 local_28;
   int local_24;
   int local_20;
@@ -48,15 +48,15 @@ void __fastcall FUN_00581200(int param_1)
   }
   iVar10 = *(int *)(param_1 + 0x1f5) + 3;
   local_40 = (int *)(*(int *)(param_1 + 0x1ed) + -3);
-  if (DAT_007fb240 <= iVar10) {
-    iVar10 = DAT_007fb240 + -1;
+  if (SHORT_007fb240 <= iVar10) {
+    iVar10 = SHORT_007fb240 + -1;
   }
   if ((int)local_40 < 0) {
     local_40 = (int *)0x0;
   }
   local_24 = *(int *)(param_1 + 0x1f9) + 3;
   local_20 = *(int *)(param_1 + 0x1f1) + -3;
-  iVar13 = (int)DAT_007fb242;
+  iVar13 = (int)SHORT_007fb242;
   if (iVar13 <= local_24) {
     iVar13 = iVar13 + -1;
     local_24 = iVar13;
@@ -75,13 +75,13 @@ void __fastcall FUN_00581200(int param_1)
     local_18 = 0;
     do {
       iVar9 = local_18;
-      if ((((-1 < sVar12) && (sVar12 < DAT_007fb240)) &&
+      if ((((-1 < sVar12) && (sVar12 < SHORT_007fb240)) &&
           ((-1 < (short)local_10 &&
-           (((short)local_10 < DAT_007fb242 && (sVar15 = (short)local_18, -1 < sVar15)))))) &&
-         ((sVar15 < DAT_007fb244 &&
+           (((short)local_10 < SHORT_007fb242 && (sVar15 = (short)local_18, -1 < sVar15)))))) &&
+         ((sVar15 < SHORT_007fb244 &&
           ((piVar4 = *(int **)(DAT_007fb248 +
-                              ((int)sVar15 * (int)DAT_007fb246 +
-                               (int)DAT_007fb240 * (int)(short)local_10 + (int)sVar12) * 8),
+                              ((int)sVar15 * (int)SHORT_007fb246 +
+                               (int)SHORT_007fb240 * (int)(short)local_10 + (int)sVar12) * 8),
            piVar4 != (int *)0x0 &&
            (((((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
               (iVar13 = (**(code **)(*piVar4 + 0xf0))(), iVar11 = local_c, iVar13 != 0)) &&
@@ -153,13 +153,13 @@ LAB_00581545:
       iVar9 = local_14;
       if (((((iVar10 < local_14) || (local_24 < local_10)) || (local_14 < (int)local_40)) ||
           (((((local_10 < local_20 || (sVar12 = (short)local_14, sVar12 < 0)) ||
-             ((DAT_007fb240 <= sVar12 ||
-              ((sVar15 = (short)local_10, sVar15 < 0 || (DAT_007fb242 <= sVar15)))))) ||
+             ((SHORT_007fb240 <= sVar12 ||
+              ((sVar15 = (short)local_10, sVar15 < 0 || (SHORT_007fb242 <= sVar15)))))) ||
             (sVar8 = (short)local_18, sVar8 < 0)) ||
-           ((DAT_007fb244 <= sVar8 ||
+           ((SHORT_007fb244 <= sVar8 ||
             (piVar4 = *(int **)(DAT_007fb248 +
-                               ((int)sVar8 * (int)DAT_007fb246 + (int)DAT_007fb240 * (int)sVar15 +
-                               (int)sVar12) * 8), piVar4 == (int *)0x0)))))) ||
+                               ((int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar15
+                               + (int)sVar12) * 8), piVar4 == (int *)0x0)))))) ||
          ((((piVar4[8] != 1000 && (piVar4[8] != 0x14)) ||
            ((iVar11 = (**(code **)(*piVar4 + 0xf0))(), iVar11 == 0 || (7 < (uint)piVar4[9])))) ||
           ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[piVar4[9] * 0x51]))))))
@@ -232,7 +232,7 @@ cf_break_loop_00581775:
           local_54 = -1;
           iVar14 = 0x1fffff;
           thunk_FUN_00416270(*(void **)(*(int *)(local_c + 0x20b) + local_24 * 4),
-                             (undefined2 *)&local_28,(undefined2 *)&local_2c,&local_8);
+                             (undefined2 *)&local_28,&local_2c,(int *)&local_8);
           iVar9 = *(int *)(local_c + 0x1fd) + -1;
           if (-1 < iVar9) {
             local_40 = (int *)(*(int *)(local_c + 0x207) + iVar9 * 4);

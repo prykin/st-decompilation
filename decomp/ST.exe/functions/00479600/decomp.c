@@ -42,7 +42,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   undefined4 local_28;
   short local_24;
   int local_20;
-  undefined4 local_1c;
+  int local_1c;
   int local_18;
   int local_14;
   undefined4 *local_10;
@@ -74,13 +74,13 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
       sVar18 = this->field_0639;
       sVar19 = this->field_063D;
       sVar15 = this->field_063B;
-      if (((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-          ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) || (DAT_007fb244 <= sVar19)) {
+      if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+          ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
         local_8 = (int *)0x0;
       }
       else {
         local_8 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
+                           ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240 +
                            (int)sVar18) * 8);
       }
       if (local_8 == (int *)0x0) {
@@ -136,14 +136,14 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
       sVar18 = this->field_0639;
       sVar19 = this->field_063D;
       sVar15 = this->field_063B;
-      if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-         ((sVar15 < 0 || (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19))))))
-      {
+      if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+         ((sVar15 < 0 ||
+          (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
         local_8 = (int *)0x0;
       }
       else {
         local_8 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
+                           ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240 +
                            (int)sVar18) * 8);
       }
       if (local_8 == (int *)0x0) {
@@ -157,14 +157,14 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
       sVar18 = this->field_0643;
       sVar19 = this->field_0647;
       sVar15 = this->field_0645;
-      if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-         (((sVar15 < 0 || ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) || (DAT_007fb244 <= sVar19))))
-      {
+      if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+         (((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
+          (SHORT_007fb244 <= sVar19)))) {
         local_8 = (int *)0x0;
       }
       else {
         local_8 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
+                           ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240 +
                            (int)sVar18) * 8);
       }
       if (local_8 == (int *)0x0) {
@@ -179,12 +179,12 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     *(undefined4 *)&this->field_0x663 = 0;
     *(undefined4 *)((int)&this->field_0666 + 1) = 0;
     this->field_00B7 = 3;
-    thunk_FUN_00481520(this,(int)this->field_0639,(int)this->field_063B,this->field_063D + 1);
+    sub_00481520(this,(int)this->field_0639,(int)this->field_063B,this->field_063D + 1);
   }
   else {
     iVar9 = *(int *)&this->field_0x663;
     if (iVar9 == 0) {
-      iVar9 = thunk_FUN_00460260(this,2);
+      iVar9 = sub_00460260(this,2);
       switch(iVar9) {
       case 0:
         this->field_00B7 = 0;
@@ -192,15 +192,15 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
           sVar18 = this->field_0643;
           sVar19 = this->field_0647;
           sVar15 = this->field_0645;
-          if ((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-              ((sVar15 < 0 || ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))))) ||
-             (DAT_007fb244 <= sVar19)) {
+          if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+              ((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))))) ||
+             (SHORT_007fb244 <= sVar19)) {
             local_8 = (int *)0x0;
           }
           else {
             local_8 = *(int **)(DAT_007fb248 +
-                               ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
-                               (int)sVar18) * 8);
+                               ((int)SHORT_007fb246 * (int)sVar19 +
+                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
           }
           if (local_8 == (int *)0x0) {
             return 0;
@@ -216,14 +216,14 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         sVar18 = this->field_0639;
         sVar19 = this->field_063D;
         sVar15 = this->field_063B;
-        if (((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-            ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) || (DAT_007fb244 <= sVar19)) {
+        if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+            ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
           local_8 = (int *)0x0;
         }
         else {
           local_8 = *(int **)(DAT_007fb248 +
-                             ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
-                             (int)sVar18) * 8);
+                             ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240
+                             + (int)sVar18) * 8);
         }
         if (local_8 == (int *)0x0) {
           return 0;
@@ -235,10 +235,10 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         if (iVar9 == 0) {
           return 0;
         }
-        bVar7 = thunk_FUN_004939b0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
-                                   (short *)&this->field_0x655);
+        bVar7 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
+                             (short *)&this->field_0x655);
         if ((CONCAT31(extraout_var,bVar7) != 1) ||
-           (iVar9 = thunk_FUN_004e91e0(local_8,(int *)this), iVar9 != 1)) {
+           (iVar9 = thunk_FUN_004e91e0(local_8,this), iVar9 != 1)) {
 LAB_00479e39:
           *(undefined4 *)&this->field_0x663 = 1;
           *(undefined4 *)((int)&this->field_065A + 3) = 0;
@@ -258,15 +258,15 @@ LAB_0047b2dc:
         sVar18 = this->field_0639;
         sVar19 = this->field_063D;
         sVar15 = this->field_063B;
-        if ((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-            ((sVar15 < 0 || ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))))) ||
-           (DAT_007fb244 <= sVar19)) {
+        if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+            ((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))))) ||
+           (SHORT_007fb244 <= sVar19)) {
           local_8 = (int *)0x0;
         }
         else {
           local_8 = *(int **)(DAT_007fb248 +
-                             ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
-                             (int)sVar18) * 8);
+                             ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240
+                             + (int)sVar18) * 8);
         }
         if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
            (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
@@ -276,22 +276,22 @@ LAB_0047b2dc:
           sVar18 = this->field_0643;
           sVar19 = this->field_0647;
           sVar15 = this->field_0645;
-          if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-             (((sVar15 < 0 || ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
-              (DAT_007fb244 <= sVar19)))) {
+          if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+             (((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
+              (SHORT_007fb244 <= sVar19)))) {
             local_8 = (int *)0x0;
           }
           else {
             local_8 = *(int **)(DAT_007fb248 +
-                               ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
-                               (int)sVar18) * 8);
+                               ((int)SHORT_007fb246 * (int)sVar19 +
+                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
           }
           if (((local_8 != (int *)0x0) && (local_8[6] == this->field_0649)) &&
              (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
             return 2;
           }
         }
-        thunk_FUN_004602b0((int *)this);
+        sub_004602B0(this);
         this->field_00B7 = 0;
         return 0;
       default:
@@ -311,7 +311,9 @@ LAB_0047b2dc:
         }
         iVar9 = 0x3525;
 LAB_00479ba6:
-        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar9);
+        RaiseInternalException
+                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar9)
+        ;
         return 0xffff;
       }
     }
@@ -335,14 +337,14 @@ LAB_00479ba6:
           sVar18 = this->field_0643;
           sVar19 = this->field_0647;
           sVar15 = this->field_0645;
-          if (((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-              ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) || (DAT_007fb244 <= sVar19)) {
+          if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+              ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
             local_8 = (int *)0x0;
           }
           else {
             local_8 = *(int **)(DAT_007fb248 +
-                               ((int)DAT_007fb246 * (int)sVar19 + (int)sVar15 * (int)DAT_007fb240 +
-                               (int)sVar18) * 8);
+                               ((int)SHORT_007fb246 * (int)sVar19 +
+                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
           }
           if (local_8 == (int *)0x0) {
             return 0;
@@ -358,15 +360,15 @@ LAB_00479ba6:
         sVar18 = this->field_0639;
         sVar19 = this->field_063D;
         sVar15 = this->field_063B;
-        if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-           ((sVar15 < 0 || (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19))))
-           )) {
+        if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+           ((sVar15 < 0 ||
+            (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
           local_8 = (int *)0x0;
         }
         else {
           local_8 = *(int **)(DAT_007fb248 +
-                             ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240 +
-                             (int)sVar18) * 8);
+                             ((int)sVar19 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240
+                             + (int)sVar18) * 8);
         }
         if (local_8 == (int *)0x0) {
           return 0;
@@ -378,12 +380,12 @@ LAB_00479ba6:
         if (iVar9 == 0) {
           return 0;
         }
-        bVar7 = thunk_FUN_004939b0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
-                                   (short *)&this->field_0x655);
+        bVar7 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
+                             (short *)&this->field_0x655);
         if (CONCAT31(extraout_var_00,bVar7) != 1) {
           return 2;
         }
-        iVar9 = thunk_FUN_004e91e0(local_8,(int *)this);
+        iVar9 = thunk_FUN_004e91e0(local_8,this);
         if (iVar9 != 1) {
           return 2;
         }
@@ -487,9 +489,10 @@ LAB_00479ba6:
                   FUN_006e6710((void *)this->field_0211,
                                (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
                                (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
-                               (float)*(int *)&this->field_0x10d * _DAT_007904f8 + _DAT_007904f4,
-                               0x28,CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
-                                             *(undefined2 *)&this->field_0018));
+                               (uint)((float)*(int *)&this->field_0x10d * _DAT_007904f8 +
+                                     _DAT_007904f4),0x28,
+                               CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
+                                        *(undefined2 *)&this->field_0018));
                 }
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 3) &&
@@ -599,14 +602,14 @@ LAB_00479ba6:
                 sVar15 = this->field_063B;
                 *(undefined4 *)&this->field_0x742 = 0;
                 if ((sVar18 < 0) ||
-                   ((((DAT_007fb240 <= sVar18 || (sVar15 < 0)) || (DAT_007fb242 <= sVar15)) ||
-                    ((sVar19 < 0 || (DAT_007fb244 <= sVar19)))))) {
+                   ((((SHORT_007fb240 <= sVar18 || (sVar15 < 0)) || (SHORT_007fb242 <= sVar15)) ||
+                    ((sVar19 < 0 || (SHORT_007fb244 <= sVar19)))))) {
                   local_8 = (int *)0x0;
                 }
                 else {
                   local_8 = *(int **)(DAT_007fb248 +
-                                     ((int)sVar19 * (int)DAT_007fb246 +
-                                      (int)sVar15 * (int)DAT_007fb240 + (int)sVar18) * 8);
+                                     ((int)sVar19 * (int)SHORT_007fb246 +
+                                      (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
                 }
                 if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
                    (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
@@ -618,8 +621,7 @@ LAB_00479ba6:
                 }
 LAB_0047acdc:
                 iVar9 = thunk_FUN_004b2d10((byte)*(undefined4 *)&this->field_0x24,this->field_06F7,
-                                           (int)(short)this->field_005B,(int)(short)this->field_005D
-                                          );
+                                           (int)this->field_005B,(int)this->field_005D);
                 if (iVar9 == 0) {
                   return 0;
                 }
@@ -640,7 +642,7 @@ LAB_0047acdc:
                 iVar9 = (*pcVar6)();
                 return iVar9;
               }
-              iVar9 = thunk_FUN_00460260(this,2);
+              iVar9 = sub_00460260(this,2);
               if (iVar9 == -1) {
                 return -1;
               }
@@ -673,8 +675,8 @@ LAB_0047acdc:
             }
             iVar9 = *(int *)((int)&this->field_0666 + 1);
             if (iVar9 == 1) {
-              uVar11 = thunk_FUN_004176c0(this,*(short *)((int)&this->field_065E + 3));
-              uVar11 = thunk_FUN_00417910(this,(short)uVar11);
+              uVar11 = sub_004176C0(this,*(short *)((int)&this->field_065E + 3));
+              uVar11 = sub_00417910(this,(short)uVar11);
               if (uVar11 == 0xffffffff) {
                 iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x36e3,0,0,
                                            &DAT_007a4ccc,s_STBoatC__Teleport_TELEPORT_OMOVE_007ab440
@@ -689,15 +691,15 @@ LAB_0047acdc:
               goto joined_r0x0047ada9;
             }
             if (iVar9 == 2) {
-              thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                                 *(short *)&this->field_0x657 * 0xc9 + 100,
-                                 *(short *)&this->field_0x659 * 0xc9 + 100,
-                                 *(short *)((int)&this->field_065A + 1) * 200 + 100,this->field_0x61
-                                );
+              STJellyGunC::sub_00415B30
+                        ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                         *(short *)&this->field_0x657 * 0xc9 + 100,
+                         *(short *)&this->field_0x659 * 0xc9 + 100,
+                         *(short *)((int)&this->field_065A + 1) * 200 + 100,this->field_0061);
               *(undefined4 *)((int)&this->field_0666 + 1) = 3;
             }
             if (*(int *)((int)&this->field_0666 + 1) != 3) goto cf_common_exit_0047ADB5;
-            local_14 = thunk_FUN_00415ed0(this,&local_18,&local_1c);
+            local_14 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_1c);
             uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
             this->field_001C = uVar11;
             iVar9 = (uVar11 >> 0x10) % 7 - 3;
@@ -747,8 +749,8 @@ LAB_0047acdc:
                   iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
                 }
                 TraksClassTy::TraksCreate
-                          (DAT_00802a7c,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),iVar16,
-                           sVar18,sVar19,sVar15,sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
+                          (g_traksClass_00802A7C,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),
+                           iVar16,sVar18,sVar19,sVar15,sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
                 local_10 = (undefined4 *)((int)local_10 + 6);
                 local_c = local_c + 1;
               } while (local_c < (int)(uint)(byte)this->field_0x2bf);
@@ -768,15 +770,15 @@ LAB_0047acdc:
             iVar9 = 0;
             sVar19 = this->field_063D;
             sVar15 = this->field_063B;
-            if ((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-               (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19)))) {
+            if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+               (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))) {
               local_8 = (int *)0x0;
             }
             else {
               iVar9 = (int)sVar18;
               local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + iVar9) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + iVar9) * 8);
             }
             if ((local_8 != (int *)0x0) && (iVar9 = local_8[6], iVar9 == this->field_063F)) {
               iVar23 = (**(code **)(*local_8 + 0xf8))();
@@ -789,15 +791,15 @@ LAB_0047acdc:
             iVar9 = CONCAT22((short)((uint)iVar9 >> 0x10),sVar18);
             sVar19 = this->field_0647;
             sVar15 = this->field_0645;
-            if (((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-                ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) || (DAT_007fb244 <= sVar19)) {
+            if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+                ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
               piVar14 = (int *)0x0;
             }
             else {
               iVar9 = (int)sVar18;
               piVar14 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + iVar9) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + iVar9) * 8);
             }
             local_8 = piVar14;
             if ((piVar14 == (int *)0x0) || (iVar9 = piVar14[6], iVar9 != this->field_0649)) {
@@ -843,9 +845,9 @@ joined_r0x0047b202:
                 goto joined_r0x0047b202;
               }
             }
-            thunk_FUN_00481520(this,(int)*(short *)&this->field_0x651,
-                               (int)*(short *)&this->field_0x653,(int)*(short *)&this->field_0x655);
-            thunk_FUN_00460260(this,0);
+            sub_00481520(this,(int)*(short *)&this->field_0x651,(int)*(short *)&this->field_0x653,
+                         (int)*(short *)&this->field_0x655);
+            sub_00460260(this,0);
             *(undefined4 *)&this->field_0x663 = 7;
 cf_common_exit_0047ADB5:
             iVar9 = (*this->vtable->vfunc_D8)();
@@ -866,8 +868,8 @@ cf_common_exit_0047ADB5:
           }
           iVar9 = *(int *)((int)&this->field_0666 + 1);
           if (iVar9 == 1) {
-            uVar11 = thunk_FUN_004176c0(this,*(short *)((int)&this->field_065E + 3));
-            uVar11 = thunk_FUN_00417910(this,(short)uVar11);
+            uVar11 = sub_004176C0(this,*(short *)((int)&this->field_065E + 3));
+            uVar11 = sub_00417910(this,(short)uVar11);
             if (uVar11 == 0xffffffff) {
               iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x35f4,0,0,
                                          &DAT_007a4ccc,s_STBoatC__Teleport_TELEPORT_PMOVE_007ab498);
@@ -885,13 +887,14 @@ joined_r0x0047ada9:
             goto cf_common_exit_0047ADB5;
           }
           if (iVar9 == 2) {
-            thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
-                               (this->field_0639 + 1) * 0xc9,(this->field_063B + 1) * 0xc9,
-                               this->field_063D * 200 + 300,this->field_0x61);
+            STJellyGunC::sub_00415B30
+                      ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
+                       (this->field_0639 + 1) * 0xc9,(this->field_063B + 1) * 0xc9,
+                       this->field_063D * 200 + 300,this->field_0061);
             *(undefined4 *)((int)&this->field_0666 + 1) = 3;
           }
           if (*(int *)((int)&this->field_0666 + 1) != 3) goto cf_common_exit_0047A369;
-          local_14 = thunk_FUN_00415ed0(this,&local_20,&local_1c);
+          local_14 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_20,&local_1c);
           uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar11;
           iVar9 = (uVar11 >> 0x10) % 7 - 3;
@@ -941,8 +944,8 @@ joined_r0x0047ada9:
                 iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
               }
               TraksClassTy::TraksCreate
-                        (DAT_00802a7c,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),iVar16,sVar18
-                         ,sVar19,sVar15,sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
+                        (g_traksClass_00802A7C,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),
+                         iVar16,sVar18,sVar19,sVar15,sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
               local_10 = (undefined4 *)((int)local_10 + 6);
               local_c = local_c + 1;
             } while (local_c < (int)(uint)(byte)this->field_0x2bf);
@@ -962,14 +965,14 @@ joined_r0x0047ada9:
             sVar18 = this->field_0643;
             sVar19 = this->field_0647;
             sVar15 = this->field_0645;
-            if ((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-               (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19)))) {
+            if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+               (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))) {
               local_8 = (int *)0x0;
             }
             else {
               local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + (int)sVar18) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
             }
             if (((local_8 != (int *)0x0) && (local_8[6] == this->field_0649)) &&
                ((iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0 &&
@@ -983,14 +986,14 @@ LAB_0047a385:
             sVar19 = this->field_063D;
             sVar15 = this->field_063B;
             if (((sVar18 < 0) ||
-                (((DAT_007fb240 <= sVar18 || (sVar15 < 0)) || (DAT_007fb242 <= sVar15)))) ||
-               ((sVar19 < 0 || (DAT_007fb244 <= sVar19)))) {
+                (((SHORT_007fb240 <= sVar18 || (sVar15 < 0)) || (SHORT_007fb242 <= sVar15)))) ||
+               ((sVar19 < 0 || (SHORT_007fb244 <= sVar19)))) {
               local_8 = (int *)0x0;
             }
             else {
               local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + (int)sVar18) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
             }
             if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
                ((iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0 &&
@@ -1013,22 +1016,22 @@ cf_common_exit_0047A369:
           iVar9 = (*this->vtable->vfunc_D8)();
           return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
         }
-        iVar9 = thunk_FUN_00460260(this,2);
+        iVar9 = sub_00460260(this,2);
         switch(iVar9) {
         case 0:
           if (this->field_0635 == 1) {
             sVar18 = this->field_0643;
             sVar19 = this->field_0647;
             sVar15 = this->field_0645;
-            if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
+            if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
                ((sVar15 < 0 ||
-                (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19)))))) {
+                (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
               local_8 = (int *)0x0;
             }
             else {
               local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + (int)sVar18) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
             }
             if (local_8 == (int *)0x0) {
               return 0;
@@ -1044,15 +1047,15 @@ cf_common_exit_0047A369:
           sVar18 = this->field_0639;
           sVar19 = this->field_063D;
           sVar15 = this->field_063B;
-          if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-             (((sVar15 < 0 || ((DAT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
-              (DAT_007fb244 <= sVar19)))) {
+          if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+             (((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
+              (SHORT_007fb244 <= sVar19)))) {
             local_8 = (int *)0x0;
           }
           else {
             local_8 = *(int **)(DAT_007fb248 +
-                               ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240 +
-                               (int)sVar18) * 8);
+                               ((int)sVar19 * (int)SHORT_007fb246 +
+                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
           }
           if (local_8 == (int *)0x0) {
             return 0;
@@ -1077,15 +1080,15 @@ cf_common_exit_0047A369:
           sVar18 = this->field_0639;
           sVar19 = this->field_063D;
           sVar15 = this->field_063B;
-          if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
+          if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
              ((sVar15 < 0 ||
-              (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19)))))) {
+              (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
             local_8 = (int *)0x0;
           }
           else {
             local_8 = *(int **)(DAT_007fb248 +
-                               ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240 +
-                               (int)sVar18) * 8);
+                               ((int)sVar19 * (int)SHORT_007fb246 +
+                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
           }
           if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
              (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
@@ -1095,40 +1098,40 @@ cf_common_exit_0047A369:
             sVar18 = this->field_0643;
             sVar19 = this->field_0647;
             sVar15 = this->field_0645;
-            if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
+            if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
                ((sVar15 < 0 ||
-                (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19)))))) {
+                (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
               local_8 = (int *)0x0;
             }
             else {
               local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + (int)sVar18) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
             }
             if (((local_8 != (int *)0x0) && (local_8[6] == this->field_0649)) &&
                (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
               return 2;
             }
           }
-          thunk_FUN_004602b0((int *)this);
+          sub_004602B0(this);
           return 0;
         default:
           return 2;
         case 3:
-          bVar7 = thunk_FUN_004939b0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
-                                     (short *)&this->field_0x655);
+          bVar7 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
+                               (short *)&this->field_0x655);
           if (CONCAT31(extraout_var_01,bVar7) != 1) {
             sVar18 = this->field_0639;
             sVar19 = this->field_063D;
             sVar15 = this->field_063B;
-            if ((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-               (((DAT_007fb242 <= sVar15 || (sVar19 < 0)) || (DAT_007fb244 <= sVar19)))) {
+            if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
+               (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))) {
               local_8 = (int *)0x0;
             }
             else {
               local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)DAT_007fb246 + (int)sVar15 * (int)DAT_007fb240
-                                 + (int)sVar18) * 8);
+                                 ((int)sVar19 * (int)SHORT_007fb246 +
+                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
             }
             if (local_8 == (int *)0x0) {
               return 0;
@@ -1160,9 +1163,9 @@ cf_common_exit_0047A369:
       sVar19 = *(short *)&this->field_0x653;
       sVar18 = *(short *)&this->field_0x651;
     }
-    thunk_FUN_00481520(this,(int)sVar18,(int)sVar19,iVar9);
+    sub_00481520(this,(int)sVar18,(int)sVar19,iVar9);
   }
-  thunk_FUN_00460260(this,0);
+  sub_00460260(this,0);
 switchD_00479647_caseD_2:
   return 2;
 }

@@ -110,8 +110,8 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
     return 0;
   }
   local_c->field_0071 = local_c->field_0018 * DAT_00808754;
-  if (DAT_00806754 != (cMf32 *)0x0) {
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_DAT_0079d198,0,0);
+  if (g_cMf32_00806754 != (cMf32 *)0x0) {
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_DAT_0079d198,0,0);
   }
   if (local_8 == (ushort *)0x0) {
 LAB_006304e7:
@@ -137,7 +137,7 @@ LAB_006304e7:
     }
   }
   if (this_00->field_0034 == 0) {
-    uVar1 = (int)DAT_007fb240 * (int)DAT_007fb242 * 5;
+    uVar1 = (int)SHORT_007fb240 * (int)SHORT_007fb242 * 5;
     puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar1);
     this_00->field_0034 = puVar4;
     if (puVar4 == (undefined4 *)0x0) {
@@ -156,8 +156,8 @@ LAB_006304e7:
     }
   }
 LAB_00630558:
-  if ((local_8 != (ushort *)0x0) && (DAT_00806754 != (cMf32 *)0x0)) {
-    cMf32::RecMemFree(DAT_00806754,(uint *)&local_8);
+  if ((local_8 != (ushort *)0x0) && (g_cMf32_00806754 != (cMf32 *)0x0)) {
+    cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }

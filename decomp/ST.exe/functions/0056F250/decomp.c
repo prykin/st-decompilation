@@ -166,7 +166,7 @@ LAB_0056f325:
                       ,(uint *)0x0);
         this_00 = extraout_ECX_01;
       }
-      cMf32::delete(this_00,&pcVar7->field_0000);
+      cMf32::delete(this_00,pcVar7);
       g_currentExceptionFrame = local_a4.previous;
       return;
     }
@@ -286,8 +286,8 @@ LAB_0056f325:
       pbVar11 = pbVar11 + 1;
     }
     DeleteFileA((LPCSTR)pbVar6);
-    if (DAT_008016dc != (OptPanelTy *)0x0) {
-      OptPanelTy::Notification(DAT_008016dc,'\f',0);
+    if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+      OptPanelTy::Notification(g_optPanel_008016DC,'\f',0);
     }
   }
   return;

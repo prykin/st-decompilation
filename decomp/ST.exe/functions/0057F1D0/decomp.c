@@ -2,9 +2,12 @@
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B528 (store 0057F1F9)
    Evidence: final_vptr=0079B528; returns_this=true; calls_before=2; field_writes_after=2;
-   table_confidence=high */
+   table_confidence=high
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0057F1D0 returns STDcResourcC::STDcResourcC this @ 0057F215 */
 
-undefined4 * __thiscall STDcResourcC::STDcResourcC(STDcResourcC *this,undefined4 *param_1)
+STDcResourcC * __thiscall STDcResourcC::STDcResourcC(STDcResourcC *this)
 
 {
   int iVar1;
@@ -21,6 +24,6 @@ undefined4 * __thiscall STDcResourcC::STDcResourcC(STDcResourcC *this,undefined4
   }
   *(undefined4 *)&this->field_0x261 = 0;
   this->field_0259 = 0xffffffff;
-  return &this->vtable;
+  return this;
 }
 

@@ -28,7 +28,7 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
     }
     for (; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
       if (((puVar1[0x1e] == param_1) && ((void *)puVar1[0x10] != (void *)0x0)) &&
-         (FUN_00747406((void *)puVar1[0x10],0x13,param_3,puVar1[0x12]),
+         (FUN_00747406((void *)puVar1[0x10],0x13,(int *)param_3,puVar1[0x12]),
          (*(byte *)(puVar1[10] + 8) & 1) != 0)) {
         if (param_3 == 0) {
           if ((puVar1[1] & 0x20000000) != 0) {

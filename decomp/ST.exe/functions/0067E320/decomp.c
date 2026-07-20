@@ -37,7 +37,8 @@ LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
     return (LPSTR)0x0;
   }
   if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
-    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c3);
+    RaiseInternalException
+              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c3);
   }
   pCVar4 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_2);
   uVar6 = 0xffffffff;

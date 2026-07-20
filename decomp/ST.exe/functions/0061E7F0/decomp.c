@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_0061e7f0(int param_1)
   float fVar2;
   float fVar3;
   float fVar4;
-  void *this;
+  VisibleClassTy *this;
   uint uVar5;
   float *pfVar6;
   int iVar7;
@@ -127,9 +127,9 @@ LAB_0061eb1a:
                      *(float *)(param_1 + 0x6b);
           if (((local_70 < _DAT_0079034c) || (local_6c < _DAT_0079034c)) ||
              ((local_68 < _DAT_0079034c ||
-              (((lVar16 = Library::MSVCRT::__ftol(), DAT_007fb240 <= (short)lVar16 ||
-                (lVar16 = Library::MSVCRT::__ftol(), DAT_007fb242 <= (short)lVar16)) ||
-               (lVar16 = Library::MSVCRT::__ftol(), DAT_007fb244 <= (short)lVar16)))))) {
+              (((lVar16 = Library::MSVCRT::__ftol(), SHORT_007fb240 <= (short)lVar16 ||
+                (lVar16 = Library::MSVCRT::__ftol(), SHORT_007fb242 <= (short)lVar16)) ||
+               (lVar16 = Library::MSVCRT::__ftol(), SHORT_007fb244 <= (short)lVar16)))))) {
             *(undefined4 *)(*(int *)(param_1 + 0x57) + local_c * 4) = 0xfffffffe;
             iVar15 = 0;
             if (*(int *)(param_1 + 0x53) < 1) goto LAB_0061f035;
@@ -182,7 +182,7 @@ LAB_0061eb1a:
           FUN_006e88c0(DAT_00807598,(int *)&local_5a,local_7c,local_78,local_74,local_70,local_6c,
                        local_68,local_64,0xac,uVar12,local_2c * 0x200 + DAT_008032d0,0xffffffff);
           FUN_006eaaa0(DAT_00807598,local_5a,0);
-          this = DAT_00802a88;
+          this = g_visibleClass_00802A88;
           if (*(char *)(param_1 + 0xa7) == '\0') {
 LAB_0061eefe:
             FUN_006eab60(DAT_00807598,local_5a);
@@ -190,7 +190,7 @@ LAB_0061eefe:
           }
           else {
             local_51 = 1;
-            if (DAT_00802a88 != (void *)0x0) {
+            if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
               if (local_74 < _DAT_0079034c) {
                 lVar16 = Library::MSVCRT::__ftol();
                 local_20 = (short)lVar16 + -1;
@@ -215,15 +215,14 @@ LAB_0061eefe:
                 lVar16 = Library::MSVCRT::__ftol();
                 iVar15 = (int)(short)lVar16;
               }
-              if (((((DAT_0080874d != -1) && (*(int *)((int)this + 0xf8) != 0)) &&
-                   ((thunk_FUN_00558c00(this,*(Global_sub_00558C00_param_1Enum *)((int)this + 0x10c)
-                                        ,iVar15,local_34,&local_38,&local_48), -1 < local_20 &&
-                    ((((local_20 < 5 && (-1 < local_38)) && (local_38 < *(int *)((int)this + 0x30)))
-                     && ((iVar15 = local_48 + (&DAT_0079aed0)[local_20], -1 < iVar15 &&
-                         (iVar15 < *(int *)((int)this + 0x34))))))))) &&
-                  (*(int *)((int)this + 0x4c) != 0)) &&
-                 (*(char *)(iVar15 * *(int *)((int)this + 0x30) + *(int *)((int)this + 0x4c) +
-                           local_38) == '\0')) goto LAB_0061eefe;
+              if (((((DAT_0080874d != -1) && (this->field_00F8 != 0)) &&
+                   ((thunk_FUN_00558c00(this,this->field_010C,iVar15,local_34,&local_38,&local_48),
+                    -1 < local_20 &&
+                    ((((local_20 < 5 && (-1 < local_38)) && (local_38 < (int)this->field_0030)) &&
+                     ((iVar15 = local_48 + (&DAT_0079aed0)[local_20], -1 < iVar15 &&
+                      (iVar15 < (int)this->field_0034)))))))) && (this->field_004C != 0)) &&
+                 (*(char *)(iVar15 * this->field_0030 + this->field_004C + local_38) == '\0'))
+              goto LAB_0061eefe;
             }
           }
           Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + 0xa3),&local_80);

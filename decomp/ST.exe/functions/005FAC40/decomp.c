@@ -14,7 +14,7 @@ FUN_005fac40(void *this,int param_1,int param_2,int param_3,int param_4,int para
       param_5 = param_6;
     }
     else {
-      thunk_FUN_00416270(this,(undefined2 *)&param_1,(undefined2 *)&param_4,(undefined2 *)&param_5);
+      thunk_FUN_00416270(this,(undefined2 *)&param_1,&param_4,&param_5);
     }
     if (param_2 == 1) {
       *(int *)(*(int *)((int)this + 0x2e6) + 0x14) = (int)(short)param_1;

@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
-   STPlaySystemC::Save */
+   STPlaySystemC::Save
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0054D2F0 parameter used as this of cMf32::RecPut @ 0054D347 | 0054D2F0 parameter used
+   as this of cMf32::RecPut @ 0054D363 */
 
 int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
 

@@ -135,9 +135,9 @@ LAB_005a1fc3:
     if (puVar6 != (uint *)0x0) {
       local_10 = 0;
       local_5 = '\0';
-      Library::DKW::TBL::FUN_006b5aa0((int)puVar6,(char *)local_c);
+      Library::DKW::TBL::FUN_006b5aa0(puVar6,(char *)local_c);
       this_00 = local_14;
-      puVar7 = ccFntTy::FormSarr(local_14->field_1A77,(int)puVar6,(uint *)s________________007c21d8,
+      puVar7 = ccFntTy::FormSarr(local_14->field_1A77,puVar6,s________________007c21d8,
                                  0x1a6 - local_14->field_1B4C,0,0xffffffff,1);
       if (this_00->field_1A5F == '\x06') {
         this_00->field_002D = 0x26;
@@ -165,7 +165,7 @@ LAB_005a1fc3:
           do {
             pcVar8 = *(char **)(puVar7[5] + iVar5 * 4);
 LAB_005a2188:
-            Library::DKW::TBL::FUN_006b5aa0(this_00->field_1E9E,pcVar8);
+            Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_1E9E,pcVar8);
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)puVar7[2]);
         }

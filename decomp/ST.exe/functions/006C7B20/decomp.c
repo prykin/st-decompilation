@@ -19,7 +19,7 @@ undefined4 FUN_006c7b20(int *param_1,int param_2,int param_3)
     }
     Library::DKW::WGR::FUN_006b55f0
               (puVar1,*(int *)((int)param_1 + 0x32),iVar2,param_3 + param_1[1],
-               *(int *)((int)param_1 + 0x22),param_2,0,0,iVar3,1);
+               *(byte **)((int)param_1 + 0x22),param_2,0,0,iVar3,1);
     return 0;
   }
   return 0xffffffff;

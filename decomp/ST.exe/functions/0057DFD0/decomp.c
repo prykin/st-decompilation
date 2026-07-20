@@ -34,7 +34,7 @@ cf_common_exit_0057E045:
   this->field_0259 = param_1;
   if (param_1 < 1) {
     if (param_2 != 0) {
-      thunk_FUN_00580d30(this,1);
+      sub_00580D30(this,1);
     }
     thunk_FUN_00580fa0();
   }

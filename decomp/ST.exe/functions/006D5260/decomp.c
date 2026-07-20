@@ -15,8 +15,8 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   undefined1 *puVar10;
   undefined1 *puVar11;
   undefined4 *iStart;
-  UINT UVar12;
-  bool bVar13;
+  UINT iStart_00;
+  bool bVar12;
   tagPALETTEENTRY local_414 [246];
   tagPALETTEENTRY local_3c [10];
   LPCRITICAL_SECTION local_14;
@@ -41,17 +41,17 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         pcVar3 = (char *)FUN_00749a79(iVar9);
         local_10 = iVar2 * 4;
         pcVar4 = (char *)FUN_00749a79(iVar5);
-        bVar13 = true;
+        bVar12 = true;
         iVar9 = local_10;
         do {
           if (iVar9 == 0) break;
           iVar9 = iVar9 + -1;
-          bVar13 = *pcVar4 == *pcVar3;
+          bVar12 = *pcVar4 == *pcVar3;
           pcVar4 = pcVar4 + 1;
           pcVar3 = pcVar3 + 1;
-        } while (bVar13);
+        } while (bVar12);
         this = local_c;
-        if (bVar13) {
+        if (bVar12) {
           local_8 = (undefined4 *)0x0;
         }
       }
@@ -88,13 +88,13 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         puVar10 = puVar11;
       } while (param_1 != (undefined4 *)0x0);
     }
-    UVar12 = 0;
+    iStart_00 = 0;
     ptVar6 = local_414;
     do {
       if (*ptVar6 != (tagPALETTEENTRY)0x0) break;
-      UVar12 = UVar12 + 1;
+      iStart_00 = iStart_00 + 1;
       ptVar6 = ptVar6 + 1;
-    } while ((int)UVar12 < 10);
+    } while ((int)iStart_00 < 10);
     iStart = local_8;
     if (0xf6 < (int)local_8) {
       piVar7 = (int *)(&stack0xfffffbe8 + (int)local_8 * 4);
@@ -105,9 +105,9 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
       } while (0xf6 < (int)iStart);
     }
     hdc = GetDC((HWND)0x0);
-    if (0 < (int)UVar12) {
-      UVar8 = UVar12;
-      if (10 < (int)UVar12) {
+    if (0 < (int)iStart_00) {
+      UVar8 = iStart_00;
+      if (10 < (int)iStart_00) {
         UVar8 = 10;
       }
       GetSystemPaletteEntries(hdc,0,UVar8,local_414);
@@ -123,9 +123,9 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     }
     ReleaseDC((HWND)0x0,hdc);
     this = local_c;
-    FUN_006b0a20(*(undefined4 **)(*(int *)((int)local_c + 0x288) + 0x28),(int)(local_414 + UVar12),
-                 UVar12,(int)iStart - UVar12,0);
-    FUN_00747406(this,9,0,0);
+    FUN_006b0a20(*(undefined4 **)(*(int *)((int)local_c + 0x288) + 0x28),
+                 (int)(local_414 + iStart_00),iStart_00,(int)iStart - iStart_00,0);
+    FUN_00747406(this,9,(int *)0x0,0);
   }
   FUN_006d6110((void *)((int)this + 0x294),(int)this + 0x240);
   LeaveCriticalSection(local_14);

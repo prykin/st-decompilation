@@ -91,12 +91,12 @@ void __thiscall FUN_00614400(void *this,int param_1)
   *(short *)((int)this + 0x2cd) = sVar4;
   iVar9 = *(int *)(param_1 + 0x43);
   *(int *)((int)this + 0x2d1) = iVar9;
-  if (((((((-1 < sVar10) && (sVar10 < DAT_007fb240)) && (-1 < (short)local_8)) &&
-        (((short)local_8 < DAT_007fb242 && (-1 < sVar11)))) &&
-       ((sVar11 < DAT_007fb244 &&
+  if (((((((-1 < sVar10) && (sVar10 < SHORT_007fb240)) && (-1 < (short)local_8)) &&
+        (((short)local_8 < SHORT_007fb242 && (-1 < sVar11)))) &&
+       ((sVar11 < SHORT_007fb244 &&
         ((piVar6 = *(int **)(DAT_007fb248 +
-                            ((int)DAT_007fb246 * (int)sVar11 +
-                             (int)DAT_007fb240 * (int)(short)local_8 + (int)sVar10) * 8),
+                            ((int)SHORT_007fb246 * (int)sVar11 +
+                             (int)SHORT_007fb240 * (int)(short)local_8 + (int)sVar10) * 8),
          piVar6 != (int *)0x0 && (piVar6[6] == iVar9)))))) &&
       (iVar9 = (**(code **)(*piVar6 + 0xf0))(), iVar9 != 0)) &&
      (((uint)piVar6[9] < 8 &&

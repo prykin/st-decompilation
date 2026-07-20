@@ -1,12 +1,21 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
-   AiEventClassTy::__CreateObjPl */
+   AiEventClassTy::__CreateObjPl
+   
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
+   
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
+   
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450 */
 
 int __thiscall
 AiEventClassTy::__CreateObjPl
-          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,
-          undefined4 param_5,undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,
+          (AiEventClassTy *this,uint param_1,short param_2,short *param_3,short *param_4,
+          short *param_5,undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,
           undefined4 param_10,int param_11,int param_12)
 
 {
@@ -76,7 +85,7 @@ AiEventClassTy::__CreateObjPl
     bVar2 = true;
   }
   uVar5 = param_7;
-  if ((bVar2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
+  if ((bVar2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     if (((short)param_3 < 0) || (((short)param_4 < 0 || ((short)param_5 < 0)))) {
       uVar5 = param_1 & 0xffff;
       local_28[0] = 7;
@@ -99,17 +108,17 @@ AiEventClassTy::__CreateObjPl
     else {
       bVar2 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
       if (CONCAT31(extraout_var,bVar2) == 0) {
-        local_2c = param_3 + -1;
-        local_24 = param_4 + -1;
+        local_2c = (int)param_3 + -1;
+        local_24 = (int)param_4 + -1;
         local_18 = 3;
         local_34[0] = 3;
         local_34[1] = 0;
         thunk_FUN_006756d0((short *)&local_2c,(short *)&local_24,(short *)&local_18,local_34);
-        param_3 = local_2c + 1;
-        param_4 = local_24 + 1;
+        param_3 = (short *)(local_2c + 1);
+        param_4 = (short *)(local_24 + 1);
       }
-      iVar3 = thunk_FUN_00675b10(param_3,param_4,(short)param_5,(short *)&param_3,(short *)&param_4,
-                                 (short *)&param_5,(int)param_2);
+      iVar3 = thunk_FUN_00675b10((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,
+                                 (short *)&param_4,(short *)&param_5,(int)param_2);
     }
     uVar5 = param_7;
     if (iVar3 != 0) {
@@ -163,7 +172,7 @@ AiEventClassTy::__CreateObjPl
         local_76 = 0;
       }
       local_5b = 1;
-      STAllPlayersC::CreateBoat(DAT_007fa174,local_a4);
+      STAllPlayersC::CreateBoat(g_sTAllPlayers_007FA174,local_a4);
       local_14 = 0;
     }
   }
@@ -173,7 +182,7 @@ AiEventClassTy::__CreateObjPl
   else {
     bVar2 = true;
   }
-  if ((bVar2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
+  if ((bVar2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_8 = (int)(short)param_3;
     local_c = (int)(short)param_4;
     local_10 = (int)(short)param_5;

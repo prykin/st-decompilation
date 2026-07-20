@@ -7,7 +7,7 @@ void FUN_006c1e20(void)
   int *piVar3;
   uint *puVar4;
   
-  if ((DAT_008568b4 != 0) && (DAT_008568c0 != (HANDLE)0x0)) {
+  if ((DAT_008568b4 != 0) && (g_hThread_008568C0 != (HANDLE)0x0)) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     if (DAT_008568c4 == 0) {
       EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
@@ -35,7 +35,7 @@ void FUN_006c1e20(void)
         piVar3 = piVar3 + 0x31;
       } while ((int)piVar3 < 0x856884);
       LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
-      SuspendThread(DAT_008568c0);
+      SuspendThread(g_hThread_008568C0);
       DAT_008568c4 = (uint)(DAT_008568c4 == 0);
     }
     LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);

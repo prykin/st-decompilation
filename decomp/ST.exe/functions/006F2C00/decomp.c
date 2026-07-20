@@ -1,5 +1,9 @@
 
-LPSTR __cdecl FUN_006f2c00(char *param_1,int param_2,undefined4 param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005540E0 -> 006F2C00 @ 00554257 | 005540E0 -> 006F2C00 @ 00554306 | 005DCC10 ->
+   006F2C00 @ 005DCC8B */
+
+LPSTR __cdecl FUN_006f2c00(char *text,int param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -17,12 +21,12 @@ LPSTR __cdecl FUN_006f2c00(char *param_1,int param_2,undefined4 param_3)
   if (param_2 < 1) {
     uVar3 = 0xffffffff;
     do {
-      pcVar7 = param_1;
+      pcVar7 = text;
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      pcVar7 = param_1 + 1;
-      cVar1 = *param_1;
-      param_1 = pcVar7;
+      pcVar7 = text + 1;
+      cVar1 = *text;
+      text = pcVar7;
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
     pCVar5 = &DAT_00856e40 + DAT_00856fc4 * 0x20;
@@ -43,7 +47,7 @@ LPSTR __cdecl FUN_006f2c00(char *param_1,int param_2,undefined4 param_3)
     Library::MSVCRT::__itoa(param_2,local_24,10);
     wsprintfA(local_44,s__s_s_s_007c6edc,&DAT_007d5628,local_24,&DAT_007d5630);
     pCVar5 = &DAT_00856e40 + iVar2 * 0x20;
-    wsprintfA(pCVar5,local_44,param_1,param_3);
+    wsprintfA(pCVar5,local_44,text,param_3);
   }
   DAT_00856fc4 = DAT_00856fc4 + 1;
   if (3 < DAT_00856fc4) {

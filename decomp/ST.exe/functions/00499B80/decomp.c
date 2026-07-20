@@ -32,11 +32,12 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   pSVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_020E == 0) {
-      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x52e)
-      ;
+      RaiseInternalException
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x52e);
     }
     if (pSVar3->field_021E != 0) {
-      FUN_006ab060(&pSVar3->field_021E);
+      FUN_006ab060((LPVOID *)&pSVar3->field_021E);
     }
     uVar9 = *(uint *)(pSVar3->field_020E + 0xc);
     pSVar3->field_021A = uVar9;
@@ -58,7 +59,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
       do {
         FUN_006acc70(pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
         uVar6 = STAllPlayersC::GetObjPtr
-                          (DAT_007fa174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14)),
+                          (g_sTAllPlayers_007FA174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14)),
                            CONCAT22(uStack_10,uStack_12),(int)cStack_13);
         if (uVar6 == 0) {
           uStack_12 = 0xffff;

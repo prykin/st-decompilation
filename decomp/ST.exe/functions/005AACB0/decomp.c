@@ -58,7 +58,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
       local_8 = DAT_00806734 - param_3;
       break;
     case CASE_2:
-      local_8 = DAT_00806730 - param_2;
+      local_8 = g_nWidth_00806730 - param_2;
       local_c = iVar2;
       break;
     case CASE_3:
@@ -88,7 +88,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
           break;
         case 2:
         case 4:
-          FUN_006b2800((int)DAT_008075a8,uVar4,DAT_00806730,this_00->field_002F);
+          FUN_006b2800((int)DAT_008075a8,uVar4,g_nWidth_00806730,this_00->field_002F);
           uVar5 = this_00->field_0027;
           uVar4 = 0;
           break;

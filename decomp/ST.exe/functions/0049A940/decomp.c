@@ -47,12 +47,13 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             this_00 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
-                                (DAT_007fa174,
+                                (g_sTAllPlayers_007FA174,
                                  CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),
                                  local_c,CASE_1);
             if (this_00 == (STBoatC *)0x0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x65e);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0x65e);
             }
             STBoatC::CmdToObj(this_00,CASE_3,&local_8);
           }

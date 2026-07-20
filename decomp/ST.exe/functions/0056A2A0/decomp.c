@@ -22,7 +22,8 @@ FUN_0056a2a0(void *this,uint *param_1,char *param_2,int param_3,undefined4 *para
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if ((*(uint *)(*(int *)(*param_1 + 4) + 8) & 0x100000) == 0) {
-        puVar4 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(param_1,param_2,0,0);
+        puVar4 = (uint *)Library::Ourlib::MFWAV::mfWavLoad((cMf32 *)param_1,param_2,0,(ushort *)0x0)
+        ;
       }
       else {
         puVar4 = (uint *)cMf32::vmAddrRecGet((cMf32 *)param_1,2,param_2,0);

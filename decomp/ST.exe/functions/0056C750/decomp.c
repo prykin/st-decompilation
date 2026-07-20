@@ -57,9 +57,9 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006c3aa0(DAT_008075a0);
       DAT_008075a0 = (int *)0x0;
     }
-    if (DAT_008075a4 != 0) {
-      FUN_006c2ac0(DAT_008075a4);
-      DAT_008075a4 = 0;
+    if (g_int_008075A4 != (int *)0x0) {
+      FUN_006c2ac0(g_int_008075A4);
+      g_int_008075A4 = (int *)0x0;
     }
     if (DAT_008075a8 != (int *)0x0) {
       Library::DKW::DDX::FUN_006b3cc0(DAT_008075a8);
@@ -70,40 +70,40 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DAT_0080759c = (undefined4 *)0x0;
     }
     thunk_FUN_0055d910();
-    if (DAT_00806758 != (undefined4 *)0x0) {
-      cMf32::delete(this_00,DAT_00806758);
+    if (g_cMf32_00806758 != (cMf32 *)0x0) {
+      cMf32::delete(this_00,g_cMf32_00806758);
     }
-    DAT_00806758 = (undefined4 *)0x0;
+    g_cMf32_00806758 = (cMf32 *)0x0;
     pcVar6 = (cMf32 *)0x0;
-    if (DAT_00806760 != (cMf32 *)0x0) {
-      cMf32::RecMemFree(DAT_00806760,&DAT_0080679c);
+    if (g_cMf32_00806760 != (cMf32 *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
       pcVar6 = extraout_ECX;
       if (DAT_00806764 != 0) {
         FUN_0070a300(&DAT_00806764);
         pcVar6 = extraout_ECX_00;
       }
-      cMf32::delete(pcVar6,&DAT_00806760->field_0000);
-      DAT_00806760 = (cMf32 *)0x0;
+      cMf32::delete(pcVar6,g_cMf32_00806760);
+      g_cMf32_00806760 = (cMf32 *)0x0;
       pcVar6 = extraout_ECX_01;
     }
     if (DAT_00806784 != 0) {
       FUN_0070a300(&DAT_00806784);
       pcVar6 = extraout_ECX_02;
     }
-    if (DAT_00806780 != (undefined4 *)0x0) {
-      cMf32::delete(pcVar6,DAT_00806780);
+    if (g_cMf32_00806780 != (cMf32 *)0x0) {
+      cMf32::delete(pcVar6,g_cMf32_00806780);
       pcVar6 = extraout_ECX_03;
     }
-    DAT_00806780 = (undefined4 *)0x0;
-    if (DAT_00806798 != (undefined4 *)0x0) {
-      cMf32::delete(pcVar6,DAT_00806798);
+    g_cMf32_00806780 = (cMf32 *)0x0;
+    if (g_cMf32_00806798 != (cMf32 *)0x0) {
+      cMf32::delete(pcVar6,g_cMf32_00806798);
       pcVar6 = extraout_ECX_04;
     }
-    DAT_00806798 = (undefined4 *)0x0;
-    if (DAT_0080675c != (undefined4 *)0x0) {
-      cMf32::delete(pcVar6,DAT_0080675c);
+    g_cMf32_00806798 = (cMf32 *)0x0;
+    if (g_cMf32_0080675C != (cMf32 *)0x0) {
+      cMf32::delete(pcVar6,g_cMf32_0080675C);
     }
-    DAT_0080675c = (undefined4 *)0x0;
+    g_cMf32_0080675C = (cMf32 *)0x0;
     if ((byte *)pSVar3->field_4EDE != (byte *)0x0) {
       FUN_006ae110((byte *)pSVar3->field_4EDE);
     }
@@ -121,10 +121,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     pSVar3->field_4EDA = 0;
     if (pSVar3->field_7D12 != 0) {
-      FUN_006ab060(&pSVar3->field_7D12);
+      FUN_006ab060((LPVOID *)&pSVar3->field_7D12);
     }
     if (pSVar3->field_76F2 != 0) {
-      FUN_006ab060(&pSVar3->field_76F2);
+      FUN_006ab060((LPVOID *)&pSVar3->field_76F2);
     }
     thunk_FUN_005713b0((int)pSVar3);
     this_01 = &pSVar3->field_0038;
@@ -140,19 +140,19 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       piVar2[1] = 0;
     }
     g_currentExceptionFrame = local_94.previous;
-    DestroyWindow(DAT_00806748);
-    DAT_00806748 = (HWND)0x0;
-    UnregisterClassA(s_STWindowClass_007c9e3c,DAT_00856d70);
+    DestroyWindow(g_hWnd_00806748);
+    g_hWnd_00806748 = (HWND)0x0;
+    UnregisterClassA(s_STWindowClass_007c9e3c,g_hInstance_00856D70);
     pSVar3 = local_8;
     if (local_8->field_115A != 0) {
-      FUN_006ab060(&local_8->field_115A);
+      FUN_006ab060((LPVOID *)&local_8->field_115A);
     }
     AppClassTy::DoneApp((AppClassTy *)pSVar3);
     if (DAT_008030d4 != 0) {
-      FUN_006ab060(&DAT_008030d4);
+      FUN_006ab060((LPVOID *)&DAT_008030d4);
     }
     if (DAT_00802ad0 != 0) {
-      FUN_006ab060(&DAT_00802ad0);
+      FUN_006ab060((LPVOID *)&DAT_00802ad0);
     }
     InterlockedDecrement(&DAT_0085e000);
     g_currentExceptionFrame = local_50.previous;

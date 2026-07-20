@@ -1,4 +1,4 @@
-FUN_00417910:
+STBoatC::sub_00417910:
 00417910  55                        PUSH EBP
 00417911  8B EC                     MOV EBP,ESP
 00417913  53                        PUSH EBX
@@ -58,7 +58,7 @@ LAB_00417981:
 00417983  2B C2                     SUB EAX,EDX
 00417985  8B D0                     MOV EDX,EAX
 00417987  F7 DA                     NEG EDX
-FUN_00417910::cf_common_exit_00417989:
+STBoatC::sub_00417910::cf_common_exit_00417989:
 00417989  66 01 51 6C               ADD word ptr [ECX + 0x6c],DX
 0041798D  66 8B 51 6C               MOV DX,word ptr [ECX + 0x6c]
 00417991  BE 68 01 00 00            MOV ESI,0x168

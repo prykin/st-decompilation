@@ -1,4 +1,7 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00693D00 parameter used as this of cMf32::RecPut @ 00693D63 */
+
 undefined4 __thiscall FUN_00693d00(void *this,cMf32 *param_1,undefined4 param_2)
 
 {

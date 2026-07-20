@@ -59,12 +59,13 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,
+                               (g_sTAllPlayers_007FA174,
                                 CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_c
                                 ,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc11);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc11);
             }
             STBoatC::CmdToObj(pSVar4,CASE_16,&local_24);
           }
@@ -80,11 +81,12 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,CONCAT31((int3)(local_c >> 8),pSVar2->field_0024),
-                                local_c,CASE_1);
+                               (g_sTAllPlayers_007FA174,
+                                CONCAT31((int3)(local_c >> 8),pSVar2->field_0024),local_c,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc1c);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc1c);
             }
             iVar3 = thunk_FUN_0045ff10((int)pSVar4);
             if (iVar3 == 0x16) break;

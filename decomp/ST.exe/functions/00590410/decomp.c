@@ -32,7 +32,7 @@ void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
     this_00->field_0028 = 0x14;
     this_00->field_002C = this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)&this_00->field_0x18);
-    cMf32::RecMemFree(DAT_00806780,&this_00->field_005E);
+    cMf32::RecMemFree(g_cMf32_00806780,&this_00->field_005E);
     DarkScreen(DAT_0080759c,10,2);
     if (this_00->field_0048 != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x38);

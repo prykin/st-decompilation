@@ -2,11 +2,13 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt_d.cpp
    Diagnostic line evidence: 42 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0068DC80 -> 00668180 @ 0068DE36 */
 
 undefined4 * __cdecl
-FUN_00668180(char *param_1,undefined2 param_2,undefined2 param_3,undefined2 param_4,
-            undefined1 param_5)
+FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4,undefined1 param_5)
 
 {
   int exceptionCode;
@@ -25,7 +27,7 @@ FUN_00668180(char *param_1,undefined2 param_2,undefined2 param_3,undefined2 para
     *local_8 = 900;
     local_8[5] = 0x260;
     *(undefined1 *)(local_8 + 6) = 2;
-    Library::MSVCRT::_strncpy((char *)((int)local_8 + 0x1b),param_1,0x3f);
+    Library::MSVCRT::_strncpy((char *)((int)local_8 + 0x1b),text,0x3f);
     *(undefined2 *)((int)local_8 + 0x19) = param_2;
     *(undefined2 *)((int)local_8 + 0x5b) = param_3;
     *(undefined2 *)((int)local_8 + 0x5f) = param_4;

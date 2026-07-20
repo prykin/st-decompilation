@@ -16,7 +16,7 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
   cLoadingTy *local_8;
   
   local_8 = this;
-  thunk_FUN_00555570((int)this);
+  sub_00555570(this);
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);

@@ -137,13 +137,13 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   if (iVar9 == 0) {
     this_00[0x1d].field_0xa9 = 0;
     if (*(int *)((int)&this_00[0x22].field_0066 + 2) != 0) {
-      FUN_006ab060((undefined4 *)((int)&this_00[0x22].field_0066 + 2));
+      FUN_006ab060((LPVOID *)((int)&this_00[0x22].field_0066 + 2));
     }
     if (*(int *)&this_00[0x22].field_0x6c != 0) {
-      FUN_006ab060((undefined4 *)&this_00[0x22].field_0x6c);
+      FUN_006ab060((LPVOID *)&this_00[0x22].field_0x6c);
     }
     if (*(int *)&this_00[0x22].field_0x74 != 0) {
-      FUN_006ab060((undefined4 *)&this_00[0x22].field_0x74);
+      FUN_006ab060((LPVOID *)&this_00[0x22].field_0x74);
     }
     iVar9 = 1;
     puVar10 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
@@ -163,25 +163,25 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     *(uint **)&this_00[0x22].field_0x84 = puVar7;
     puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)&this_00[0x1e].field_0x4e = puVar7;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar7,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(puVar7,&DAT_008016a0);
     puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)&this_00[0x1e].field_0x52 = puVar7;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar7,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(puVar7,&DAT_008016a0);
     puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)&this_00[0x22].field_0x7c = puVar7;
-    Library::DKW::TBL::FUN_006b5aa0((int)puVar7,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(puVar7,&DAT_008016a0);
     local_dc8[0] = 0;
     local_dc8[1] = 2;
     local_da8 = 0x19;
     local_da4 = 0x5f;
     local_dc8[2] = 1;
     local_dc8[3] = 0;
-    iVar9 = *(int *)&this_00[0x1d].field_0xc0;
+    puVar7 = *(uint **)&this_00[0x1d].field_0xc0;
     local_dc8[4] = 0x1a6 - *(int *)&this_00[0x1e].field_0xb2;
-    if (*(int *)(iVar9 + 0xa0) != 0) {
-      FUN_00710790(iVar9);
+    if (puVar7[0x28] != 0) {
+      FUN_00710790(puVar7);
     }
-    local_db4 = *(int *)(iVar9 + 0x8a);
+    local_db4 = *(int *)((int)puVar7 + 0x8a);
     local_dac = (undefined4)(0x15e / (longlong)local_db4);
     local_d14 = 0;
     local_d0c[0] = 0;

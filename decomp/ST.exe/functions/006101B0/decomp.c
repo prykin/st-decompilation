@@ -15,7 +15,7 @@ int __fastcall FUN_006101b0(int *param_1)
   int iVar9;
   short sVar10;
   short sVar11;
-  void *pvVar12;
+  VisibleClassTy *pVVar12;
   int iVar13;
   int local_68;
   int local_64;
@@ -32,7 +32,7 @@ int __fastcall FUN_006101b0(int *param_1)
   int local_30;
   int local_2c;
   int local_28;
-  int local_24;
+  uint local_24;
   int local_20;
   int local_1c;
   int local_18;
@@ -83,16 +83,14 @@ int __fastcall FUN_006101b0(int *param_1)
             iVar13 = (int)*(short *)(*(int *)((int)param_1 + 0x2dd) + 6 +
                                     *(int *)((int)param_1 + 0x2d9) * 0x1c);
             param_1[0x9f] =
-                 ((short)(&DAT_007ed570)[iVar13 * 4] * 10000000) /
-                 *(int *)(&DAT_007cfe74 + iVar13 * 4);
+                 ((&SHORT_007ed570)[iVar13 * 4] * 10000000) / *(int *)(&DAT_007cfe74 + iVar13 * 4);
             iVar13 = (int)*(short *)(*(int *)((int)param_1 + 0x2dd) + 6 +
                                     *(int *)((int)param_1 + 0x2d9) * 0x1c);
             param_1[0xa0] =
-                 ((short)(&DAT_007ed572)[iVar13 * 4] * 10000000) /
-                 *(int *)(&DAT_007cfe74 + iVar13 * 4);
+                 ((&SHORT_007ed572)[iVar13 * 4] * 10000000) / *(int *)(&DAT_007cfe74 + iVar13 * 4);
             iVar13 = (int)*(short *)(*(int *)((int)param_1 + 0x2dd) + 6 +
                                     *(int *)((int)param_1 + 0x2d9) * 0x1c);
-            iVar13 = ((short)(&DAT_007ed574)[iVar13 * 4] * 10000000) /
+            iVar13 = ((&SHORT_007ed574)[iVar13 * 4] * 10000000) /
                      *(int *)(&DAT_007cfe74 + iVar13 * 4);
           }
           else {
@@ -198,14 +196,14 @@ cf_common_exit_006121E1:
       iVar13 = (int)(short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
                            (short)((longlong)local_20 * 0x28c1979 >> 0x3f));
     }
-    local_24 = (int)sVar11;
+    local_24 = (uint)sVar11;
     if (sVar11 < 0) {
       iVar8 = (short)((sVar11 / 0xc9 + (sVar11 >> 0xf)) -
-                     (short)((longlong)local_24 * 0x28c1979 >> 0x3f)) + -1;
+                     (short)((longlong)(int)local_24 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
       iVar8 = (int)(short)((sVar11 / 0xc9 + (sVar11 >> 0xf)) -
-                          (short)((longlong)local_24 * 0x28c1979 >> 0x3f));
+                          (short)((longlong)(int)local_24 * 0x28c1979 >> 0x3f));
     }
     iVar9 = (int)sVar10;
     if (sVar10 < 0) {
@@ -220,8 +218,8 @@ cf_common_exit_006121E1:
          (*(short *)((int)param_1 + 0x217) == iVar8)) && (*(short *)((int)param_1 + 0x219) == iVar3)
         ) || (local_8 = (uint)(*(int *)((int)param_1 + 0x1f7) == 2),
              iVar13 = local_20 - (short)((short)iVar13 * 0xc9 + 100),
-             iVar8 = local_24 - (short)((short)iVar8 * 0xc9 + 100), iVar9 = iVar9 + iVar3 * -0xc9,
-             iVar9 = iVar9 * iVar9,
+             iVar8 = local_24 - (int)(short)((short)iVar8 * 0xc9 + 100),
+             iVar9 = iVar9 + iVar3 * -0xc9, iVar9 = iVar9 * iVar9,
              0x2773 < ((int)(iVar9 + (iVar9 >> 0x1f & 3U)) >> 2) + iVar8 * iVar8 + iVar13 * iVar13))
     {
       uVar6 = 0;
@@ -257,7 +255,7 @@ cf_common_exit_006121E1:
           uVar6 = 5;
         }
         TraksClassTy::TraksCreate
-                  (DAT_00802a7c,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
+                  (g_traksClass_00802A7C,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
                    (int)(short)param_1[0x97],(int)*(short *)((int)param_1 + 0x25e),0,0,0,0,0,0,-1,0,
                    0);
       }
@@ -271,15 +269,15 @@ LAB_00610911:
       iVar13 = *(int *)((int)param_1 + 0x1f7);
       if (iVar13 == 0) {
 LAB_00610969:
-        local_24 = (int)(short)param_1[0x99];
+        local_24 = (uint)(short)param_1[0x99];
         local_3c = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
         local_38 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
-        local_34 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+        local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         FUN_006e25d0(DAT_00807598,&local_68);
-        local_24 = (int)*(short *)((int)param_1 + 0x25e);
+        local_24 = (uint)*(short *)((int)param_1 + 0x25e);
         local_48 = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
         local_44 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
-        local_40 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+        local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         FUN_006e25d0(DAT_00807598,&local_58);
         sVar7 = (**(code **)(*param_1 + 0x14))
                           (local_68 >> 0x10,local_64 >> 0x10,local_60 >> 0x10,local_58 >> 0x10,
@@ -298,15 +296,15 @@ LAB_00610969:
         *(undefined4 *)((int)param_1 + 0x237) = 0;
       }
       STT3DSprC::SetCurFase
-                (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(undefined4 *)((int)param_1 + 0x237));
+                (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(uint *)((int)param_1 + 0x237));
       STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r');
       thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x252),
                          (float)*(int *)((int)param_1 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)param_1 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)param_1 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                          _DAT_007904fc);
-      pvVar12 = DAT_00802a88;
-      if (DAT_00802a88 != (void *)0x0) {
+      pVVar12 = g_visibleClass_00802A88;
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar13 = *(int *)((int)param_1 + 0x233);
         sVar7 = (short)(iVar13 >> 0x1f);
         if (iVar13 < 0) {
@@ -337,18 +335,17 @@ LAB_00610969:
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        if (((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-           ((thunk_FUN_00558c00(DAT_00802a88,
-                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                iVar8,iVar13,&local_24,&local_20), -1 < (int)local_c &&
-            ((((int)local_c < 5 && (-1 < local_24)) &&
-             (iVar13 = *(int *)((int)pvVar12 + 0x30), local_24 < iVar13)))))) {
+        if (((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+           ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                                iVar13,(int *)&local_24,&local_20), -1 < (int)local_c &&
+            ((((int)local_c < 5 && (-1 < (int)local_24)) &&
+             (iVar13 = pVVar12->field_0030, (int)local_24 < iVar13)))))) {
           iVar8 = (&DAT_0079aed0)[local_c];
 LAB_00611039:
           iVar8 = iVar8 + local_20;
-          if (((iVar8 < 0) || (*(int *)((int)pvVar12 + 0x34) <= iVar8)) ||
-             (*(int *)((int)pvVar12 + 0x4c) == 0)) goto cf_common_exit_00611C0F;
-          cVar2 = *(char *)(iVar8 * iVar13 + local_24 + *(int *)((int)pvVar12 + 0x4c));
+          if (((iVar8 < 0) || ((int)pVVar12->field_0034 <= iVar8)) || (pVVar12->field_004C == 0))
+          goto cf_common_exit_00611C0F;
+          cVar2 = *(char *)(iVar8 * iVar13 + local_24 + pVVar12->field_004C);
           goto joined_r0x00611c0d;
         }
         goto cf_common_exit_00611C0F;
@@ -398,7 +395,7 @@ LAB_00611039:
           uVar6 = 5;
         }
         TraksClassTy::TraksCreate
-                  (DAT_00802a7c,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
+                  (g_traksClass_00802A7C,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
                    (int)(short)param_1[0x97],(int)*(short *)((int)param_1 + 0x25e),0,0,0,0,0,0,-1,0,
                    0);
       }
@@ -412,15 +409,15 @@ LAB_00610d47:
       iVar13 = *(int *)((int)param_1 + 0x1f7);
       if (iVar13 == 0) {
 LAB_00610d9f:
-        local_24 = (int)(short)param_1[0x99];
+        local_24 = (uint)(short)param_1[0x99];
         local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
         local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
-        local_40 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+        local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         FUN_006e25d0(DAT_00807598,&local_58);
-        local_24 = (int)*(short *)((int)param_1 + 0x25e);
+        local_24 = (uint)*(short *)((int)param_1 + 0x25e);
         local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
         local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
-        local_34 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+        local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         FUN_006e25d0(DAT_00807598,&local_68);
         sVar7 = (**(code **)(*param_1 + 0x14))
                           (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -439,15 +436,15 @@ LAB_00610d9f:
         *(undefined4 *)((int)param_1 + 0x237) = 0;
       }
       STT3DSprC::SetCurFase
-                (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(undefined4 *)((int)param_1 + 0x237));
+                (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(uint *)((int)param_1 + 0x237));
       STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r');
       thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x252),
                          (float)*(int *)((int)param_1 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)param_1 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)param_1 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                          _DAT_007904fc);
-      pvVar12 = DAT_00802a88;
-      if (DAT_00802a88 != (void *)0x0) {
+      pVVar12 = g_visibleClass_00802A88;
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar13 = *(int *)((int)param_1 + 0x233);
         sVar7 = (short)(iVar13 >> 0x1f);
         if (iVar13 < 0) {
@@ -478,12 +475,11 @@ LAB_00610d9f:
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        if (((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-           ((thunk_FUN_00558c00(DAT_00802a88,
-                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                iVar8,iVar13,&local_24,&local_20), -1 < (int)local_c &&
-            ((((int)local_c < 5 && (-1 < local_24)) &&
-             (iVar13 = *(int *)((int)pvVar12 + 0x30), local_24 < iVar13)))))) {
+        if (((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+           ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                                iVar13,(int *)&local_24,&local_20), -1 < (int)local_c &&
+            ((((int)local_c < 5 && (-1 < (int)local_24)) &&
+             (iVar13 = pVVar12->field_0030, (int)local_24 < iVar13)))))) {
           iVar8 = (&DAT_0079aed0)[local_c];
           goto LAB_00611039;
         }
@@ -581,7 +577,7 @@ LAB_00611185:
         uVar6 = 5;
       }
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
+                (g_traksClass_00802A7C,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
                  (int)(short)param_1[0x97],(int)*(short *)((int)param_1 + 0x25e),0,0,0,0,0,0,-1,0,0)
       ;
     }
@@ -595,15 +591,15 @@ LAB_006112a8:
     iVar13 = *(int *)((int)param_1 + 0x1f7);
     if (iVar13 == 0) {
 LAB_00611304:
-      local_24 = (int)(short)param_1[0x99];
+      local_24 = (uint)(short)param_1[0x99];
       local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
-      local_40 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+      local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0(DAT_00807598,&local_58);
-      local_24 = (int)*(short *)((int)param_1 + 0x25e);
+      local_24 = (uint)*(short *)((int)param_1 + 0x25e);
       local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
-      local_34 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+      local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0(DAT_00807598,&local_68);
       sVar7 = (**(code **)(*param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -622,15 +618,15 @@ LAB_00611304:
       *(undefined4 *)((int)param_1 + 0x237) = 0;
     }
     STT3DSprC::SetCurFase
-              (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(undefined4 *)((int)param_1 + 0x237));
+              (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(uint *)((int)param_1 + 0x237));
     STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r');
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x252),
                        (float)*(int *)((int)param_1 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)param_1 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)param_1 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
-    pvVar12 = DAT_00802a88;
-    if (DAT_00802a88 != (void *)0x0) {
+    pVVar12 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar13 = *(int *)((int)param_1 + 0x233);
       sVar7 = (short)(iVar13 >> 0x1f);
       if (iVar13 < 0) {
@@ -661,17 +657,16 @@ LAB_00611304:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-           (thunk_FUN_00558c00(DAT_00802a88,
-                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar8
-                               ,iVar13,&local_24,&local_20), (int)local_c < 0)) ||
-          (((4 < (int)local_c || (local_24 < 0)) ||
-           ((*(int *)((int)pvVar12 + 0x30) <= local_24 ||
+      if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                               iVar13,(int *)&local_24,&local_20), (int)local_c < 0)) ||
+          (((4 < (int)local_c || ((int)local_24 < 0)) ||
+           (((int)pVVar12->field_0030 <= (int)local_24 ||
             ((iVar13 = (&DAT_0079aed0)[local_c] + local_20, iVar13 < 0 ||
-             (*(int *)((int)pvVar12 + 0x34) <= iVar13)))))))) ||
-         ((*(int *)((int)pvVar12 + 0x4c) == 0 ||
-          (*(char *)(iVar13 * *(int *)((int)pvVar12 + 0x30) + *(int *)((int)pvVar12 + 0x4c) +
-                    local_24) != '\0')))) goto cf_common_exit_00611C0F;
+             ((int)pVVar12->field_0034 <= iVar13)))))))) ||
+         ((pVVar12->field_004C == 0 ||
+          (*(char *)(iVar13 * pVVar12->field_0030 + pVVar12->field_004C + local_24) != '\0'))))
+      goto cf_common_exit_00611C0F;
       if ((char)param_1[0x94] == '\0') break;
 LAB_006115da:
       thunk_FUN_004ad430(*(int *)((int)param_1 + 0x252));
@@ -759,7 +754,7 @@ LAB_006117e5:
         uVar6 = 5;
       }
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
+                (g_traksClass_00802A7C,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
                  (int)(short)param_1[0x97],(int)*(short *)((int)param_1 + 0x25e),0,0,0,0,0,0,-1,0,0)
       ;
     }
@@ -773,15 +768,15 @@ LAB_0061190f:
     iVar13 = *(int *)((int)param_1 + 0x1f7);
     if (iVar13 == 0) {
 LAB_0061196b:
-      local_24 = (int)(short)param_1[0x99];
+      local_24 = (uint)(short)param_1[0x99];
       local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
-      local_40 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+      local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0(DAT_00807598,&local_58);
-      local_24 = (int)*(short *)((int)param_1 + 0x25e);
+      local_24 = (uint)*(short *)((int)param_1 + 0x25e);
       local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
-      local_34 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+      local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0(DAT_00807598,&local_68);
       sVar7 = (**(code **)(*param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -800,15 +795,15 @@ LAB_0061196b:
       *(undefined4 *)((int)param_1 + 0x237) = 0;
     }
     STT3DSprC::SetCurFase
-              (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(undefined4 *)((int)param_1 + 0x237));
+              (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(uint *)((int)param_1 + 0x237));
     STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r');
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x252),
                        (float)*(int *)((int)param_1 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)param_1 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)param_1 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
-    pvVar12 = DAT_00802a88;
-    if (DAT_00802a88 != (void *)0x0) {
+    pVVar12 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar13 = *(int *)((int)param_1 + 0x233);
       sVar7 = (short)(iVar13 >> 0x1f);
       if (iVar13 < 0) {
@@ -839,16 +834,15 @@ LAB_0061196b:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-          ((thunk_FUN_00558c00(DAT_00802a88,
-                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar8
-                               ,iVar13,&local_24,&local_20), (int)local_c < 0 ||
-           ((((4 < (int)local_c || (local_24 < 0)) || (*(int *)((int)pvVar12 + 0x30) <= local_24))
-            || ((iVar13 = (&DAT_0079aed0)[local_c] + local_20, iVar13 < 0 ||
-                (*(int *)((int)pvVar12 + 0x34) <= iVar13)))))))) ||
-         (*(int *)((int)pvVar12 + 0x4c) == 0)) goto cf_common_exit_00611C0F;
-      cVar2 = *(char *)(iVar13 * *(int *)((int)pvVar12 + 0x30) + *(int *)((int)pvVar12 + 0x4c) +
-                       local_24);
+      if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                               iVar13,(int *)&local_24,&local_20), (int)local_c < 0 ||
+           ((((4 < (int)local_c || ((int)local_24 < 0)) ||
+             ((int)pVVar12->field_0030 <= (int)local_24)) ||
+            ((iVar13 = (&DAT_0079aed0)[local_c] + local_20, iVar13 < 0 ||
+             ((int)pVVar12->field_0034 <= iVar13)))))))) || (pVVar12->field_004C == 0))
+      goto cf_common_exit_00611C0F;
+      cVar2 = *(char *)(iVar13 * pVVar12->field_0030 + pVVar12->field_004C + local_24);
 joined_r0x00611c0d:
       if (cVar2 == '\0') {
         if ((char)param_1[0x94] != '\0') goto LAB_006115da;
@@ -889,71 +883,71 @@ cf_common_exit_00611C0F:
   case 7:
     if ((*(char *)((int)param_1 + 0x2e9) != '\0') &&
        (*(void **)((int)param_1 + 0x252) != (void *)0x0)) {
-      iVar13 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\r');
+      uVar6 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\r');
       local_24 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0e');
-      if (0xe < iVar13) {
-        if (iVar13 == 0xf) {
+      if (0xe < (int)uVar6) {
+        if (uVar6 == 0xf) {
           STT3DSprC::StartShow
                     (*(STT3DSprC **)((int)param_1 + 0x252),0xf,*(undefined4 *)(DAT_00802a38 + 0xe4))
           ;
         }
-        iVar8 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0f');
+        uVar4 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0f');
         STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0f');
-        iVar9 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0f');
-        if (iVar8 < iVar9) {
-          iVar8 = iVar8 + 1;
+        iVar13 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0f');
+        if ((int)uVar4 < iVar13) {
+          uVar4 = uVar4 + 1;
         }
-        STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0f',iVar8);
+        STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0f',uVar4);
       }
       if (*(char *)((int)param_1 + 0x251) != '\0') {
-        iVar8 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0e');
-        iVar9 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0e');
-        if (iVar8 + -1 == iVar9) {
+        iVar13 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0e');
+        iVar8 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0e');
+        if (iVar13 + -1 == iVar8) {
           STT3DSprC::StopShow(*(STT3DSprC **)((int)param_1 + 0x252),0xe);
         }
       }
-      iVar8 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\r');
-      iVar9 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\r');
-      if (iVar8 + -1 == iVar9) {
+      iVar13 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\r');
+      iVar8 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\r');
+      if (iVar13 + -1 == iVar8) {
         STT3DSprC::StopShow(*(STT3DSprC **)((int)param_1 + 0x252),0xd);
       }
-      iVar8 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0f');
-      iVar9 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0f');
-      if (iVar8 + -1 == iVar9) {
+      iVar13 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0f');
+      iVar8 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0f');
+      if (iVar13 + -1 == iVar8) {
         param_1[0x83] = 9;
         return local_1c;
       }
-      iVar8 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\r');
-      if (iVar13 < iVar8) {
-        iVar13 = iVar13 + 1;
+      iVar13 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\r');
+      if ((int)uVar6 < iVar13) {
+        uVar6 = uVar6 + 1;
       }
-      iVar9 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0e');
-      iVar8 = local_24;
-      if (local_24 < iVar9) {
-        iVar8 = local_24 + 1;
+      iVar13 = thunk_FUN_004acd30(*(void **)((int)param_1 + 0x252),'\x0e');
+      uVar4 = local_24;
+      if ((int)local_24 < iVar13) {
+        uVar4 = local_24 + 1;
       }
-      STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0e',iVar8);
+      STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0e',uVar4);
       STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0e');
-      STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r',iVar13);
+      STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r',uVar6);
       STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r');
       thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x252),
                          (float)*(int *)((int)param_1 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)param_1 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)param_1 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                          _DAT_007904fc);
-      pvVar12 = DAT_00802a88;
-      if (DAT_00802a88 == (void *)0x0) {
+      pVVar12 = g_visibleClass_00802A88;
+      if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
         return local_1c;
       }
       iVar13 = *(int *)((int)param_1 + 0x233);
       sVar7 = (short)(iVar13 >> 0x1f);
       if (iVar13 < 0) {
-        local_24 = (short)(((short)(iVar13 / 200) + sVar7) -
-                          (short)((longlong)iVar13 * 0x51eb851f >> 0x3f)) + -1;
+        local_24 = (int)(short)(((short)(iVar13 / 200) + sVar7) -
+                               (short)((longlong)iVar13 * 0x51eb851f >> 0x3f)) - 1;
       }
       else {
-        local_24 = (int)(short)(((short)(iVar13 / 200) + sVar7) -
-                               (short)((longlong)iVar13 * 0x51eb851f >> 0x3f));
+        local_24 = (uint)(short)(((short)(iVar13 / 200) + sVar7) -
+                                (short)((longlong)iVar13 * 0x51eb851f >> 0x3f));
       }
       iVar13 = *(int *)((int)param_1 + 0x22f);
       sVar7 = (short)(iVar13 >> 0x1f);
@@ -975,16 +969,14 @@ cf_common_exit_00611C0F:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if ((((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-            (thunk_FUN_00558c00(DAT_00802a88,
-                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                iVar8,iVar13,&local_20,(int *)&local_c), -1 < local_24)) &&
-           ((local_24 < 5 && (-1 < local_20)))) &&
-          (((local_20 < *(int *)((int)pvVar12 + 0x30) &&
+      if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                                iVar13,&local_20,(int *)&local_c), -1 < (int)local_24)) &&
+           (((int)local_24 < 5 && (-1 < local_20)))) &&
+          (((local_20 < (int)pVVar12->field_0030 &&
             ((iVar13 = (&DAT_0079aed0)[local_24] + local_c, -1 < iVar13 &&
-             (iVar13 < *(int *)((int)pvVar12 + 0x34))))) && (*(int *)((int)pvVar12 + 0x4c) != 0))))
-         && (*(char *)(iVar13 * *(int *)((int)pvVar12 + 0x30) + *(int *)((int)pvVar12 + 0x4c) +
-                      local_20) == '\0')) {
+             (iVar13 < (int)pVVar12->field_0034)))) && (pVVar12->field_004C != 0)))) &&
+         (*(char *)(iVar13 * pVVar12->field_0030 + pVVar12->field_004C + local_20) == '\0')) {
         if ((char)param_1[0x94] == '\0') {
           return local_1c;
         }
@@ -1104,7 +1096,7 @@ LAB_006122dd:
         uVar6 = 5;
       }
       TraksClassTy::TraksCreate
-                (DAT_00802a7c,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
+                (g_traksClass_00802A7C,1,1,uVar6,(int)*(short *)((int)param_1 + 0x25a),
                  (int)(short)param_1[0x97],(int)*(short *)((int)param_1 + 0x25e),0,0,0,0,0,0,-1,0,0)
       ;
     }
@@ -1118,15 +1110,15 @@ LAB_006123fd:
     iVar13 = *(int *)((int)param_1 + 0x1f7);
     if (iVar13 == 0) {
 LAB_00612459:
-      local_24 = (int)(short)param_1[0x99];
+      local_24 = (uint)(short)param_1[0x99];
       local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
-      local_40 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+      local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0(DAT_00807598,&local_58);
-      local_24 = (int)*(short *)((int)param_1 + 0x25e);
+      local_24 = (uint)*(short *)((int)param_1 + 0x25e);
       local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
-      local_34 = (float)local_24 * _DAT_007904f8 * _DAT_007904f0;
+      local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0(DAT_00807598,&local_68);
       sVar7 = (**(code **)(*param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -1145,24 +1137,24 @@ LAB_00612459:
       *(undefined4 *)((int)param_1 + 0x237) = 0;
     }
     STT3DSprC::SetCurFase
-              (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(undefined4 *)((int)param_1 + 0x237));
+              (*(STT3DSprC **)((int)param_1 + 0x252),'\r',*(uint *)((int)param_1 + 0x237));
     STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\r');
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x252),
                        (float)*(int *)((int)param_1 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)param_1 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)param_1 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
-    pvVar12 = DAT_00802a88;
-    if (DAT_00802a88 != (void *)0x0) {
+    pVVar12 = g_visibleClass_00802A88;
+    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar13 = *(int *)((int)param_1 + 0x233);
       sVar7 = (short)(iVar13 >> 0x1f);
       if (iVar13 < 0) {
-        local_24 = (short)(((short)(iVar13 / 200) + sVar7) -
-                          (short)((longlong)iVar13 * 0x51eb851f >> 0x3f)) + -1;
+        local_24 = (int)(short)(((short)(iVar13 / 200) + sVar7) -
+                               (short)((longlong)iVar13 * 0x51eb851f >> 0x3f)) - 1;
       }
       else {
-        local_24 = (int)(short)(((short)(iVar13 / 200) + sVar7) -
-                               (short)((longlong)iVar13 * 0x51eb851f >> 0x3f));
+        local_24 = (uint)(short)(((short)(iVar13 / 200) + sVar7) -
+                                (short)((longlong)iVar13 * 0x51eb851f >> 0x3f));
       }
       iVar13 = *(int *)((int)param_1 + 0x22f);
       sVar7 = (short)(iVar13 >> 0x1f);
@@ -1184,16 +1176,14 @@ LAB_00612459:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if ((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-            (thunk_FUN_00558c00(DAT_00802a88,
-                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                                iVar8,iVar13,&local_20,(int *)&local_c), local_24 < 0)) ||
-           ((4 < local_24 || (local_20 < 0)))) || (*(int *)((int)pvVar12 + 0x30) <= local_20)) ||
+      if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
+                                iVar13,&local_20,(int *)&local_c), (int)local_24 < 0)) ||
+           ((4 < (int)local_24 || (local_20 < 0)))) || ((int)pVVar12->field_0030 <= local_20)) ||
          (((iVar13 = (&DAT_0079aed0)[local_24] + local_c, iVar13 < 0 ||
-           (*(int *)((int)pvVar12 + 0x34) <= iVar13)) || (*(int *)((int)pvVar12 + 0x4c) == 0))))
+           ((int)pVVar12->field_0034 <= iVar13)) || (pVVar12->field_004C == 0))))
       goto cf_common_exit_00611C0F;
-      cVar2 = *(char *)(iVar13 * *(int *)((int)pvVar12 + 0x30) + *(int *)((int)pvVar12 + 0x4c) +
-                       local_20);
+      cVar2 = *(char *)(iVar13 * pVVar12->field_0030 + pVVar12->field_004C + local_20);
       goto joined_r0x00611c0d;
     }
     break;

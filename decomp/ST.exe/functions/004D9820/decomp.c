@@ -21,8 +21,8 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
     iVar7 = param_1[0x16d] + -0xd;
     if (iVar7 < param_1[0x16d] + 0xd) {
       do {
-        if (((-1 < iVar7) && (iVar7 < DAT_007fb242)) &&
-           (iVar9 = param_1[0x16c] + -0xd, sVar4 = DAT_007fb240, sVar5 = DAT_007fb244,
+        if (((-1 < iVar7) && (iVar7 < SHORT_007fb242)) &&
+           (iVar9 = param_1[0x16c] + -0xd, sVar4 = SHORT_007fb240, sVar5 = SHORT_007fb244,
            iVar9 < param_1[0x16c] + 0xd)) {
           do {
             if (((-1 < iVar9) && (iVar9 < sVar4)) && (local_8 = 0, 0 < sVar5)) {
@@ -30,21 +30,21 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
                 sVar8 = (short)iVar9;
                 if ((((-1 < sVar8) && (sVar8 < sVar4)) &&
                     (((sVar6 = (short)iVar7, -1 < sVar6 &&
-                      ((((sVar6 < DAT_007fb242 && (sVar2 = (short)local_8, -1 < sVar2)) &&
+                      ((((sVar6 < SHORT_007fb242 && (sVar2 = (short)local_8, -1 < sVar2)) &&
                         (sVar2 < sVar5)) &&
                        ((piVar1 = *(int **)(DAT_007fb248 +
-                                           ((int)sVar6 * (int)sVar4 + (int)sVar2 * (int)DAT_007fb246
-                                           + (int)sVar8) * 8), piVar1 != (int *)0x0 &&
-                        (piVar1 != param_1)))))) &&
+                                           ((int)sVar6 * (int)sVar4 +
+                                            (int)sVar2 * (int)SHORT_007fb246 + (int)sVar8) * 8),
+                        piVar1 != (int *)0x0 && (piVar1 != param_1)))))) &&
                      (iVar3 = (**(code **)(*piVar1 + 0x2c))(), iVar3 == 0x3a)))) &&
                    (iVar3 = FUN_006aced8(iVar9,iVar7,param_1[0x16c],param_1[0x16d]), iVar3 < 0xe)) {
                   param_1[0x137] = param_1[0x137] + 1;
                   param_1[0x138] = param_1[0x138] + iVar3;
                 }
                 local_8 = local_8 + 1;
-                sVar4 = DAT_007fb240;
-                sVar5 = DAT_007fb244;
-              } while (local_8 < DAT_007fb244);
+                sVar4 = SHORT_007fb240;
+                sVar5 = SHORT_007fb244;
+              } while (local_8 < SHORT_007fb244);
             }
             iVar9 = iVar9 + 1;
           } while (iVar9 < param_1[0x16c] + 0xd);

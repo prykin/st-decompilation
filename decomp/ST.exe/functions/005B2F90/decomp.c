@@ -34,7 +34,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
     }
     DarkScreen(DAT_0080759c,10,2);
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
     this_00 = *(MMsgTy **)(pMVar2->field_1A5B + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
@@ -49,7 +49,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
         *puVar5 = 0;
       }
       if (puVar5[-10] != 0) {
-        cMf32::RecMemFree(DAT_00806780,puVar5 + -10);
+        cMf32::RecMemFree(g_cMf32_00806780,puVar5 + -10);
       }
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;

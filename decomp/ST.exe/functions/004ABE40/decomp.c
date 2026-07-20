@@ -1,9 +1,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
-   STT3DSprC::SetCurFase */
+   STT3DSprC::SetCurFase
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00643E20 -> 004ABE40 @ 00644070 | 00643E20 -> 004ABE40 @ 006440B4 | 00643E20 ->
+   004ABE40 @ 00644202 | 00643E20 -> 004ABE40 @ 00644246 */
 
-undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,undefined4 param_2)
+undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint param_2)
 
 {
   int *piVar1;
@@ -32,7 +36,7 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,undefin
         if ((-1 < iVar2) && (iVar2 < *piVar1)) {
           *(undefined4 *)(piVar6[1] + iVar2 * 4) = *(undefined4 *)((int)piVar1 + iVar2 * 4 + 0x31);
         }
-        *(undefined4 *)(iVar4 + 0x18 + this->field_0020) = param_2;
+        *(uint *)(iVar4 + 0x18 + this->field_0020) = param_2;
         return 0;
       }
     }

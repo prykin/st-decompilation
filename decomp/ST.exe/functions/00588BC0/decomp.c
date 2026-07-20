@@ -26,7 +26,10 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
   InternalExceptionFrame local_8c;
   undefined4 *local_48;
   STSprGameObjC *local_44;
-  int local_40 [4];
+  LPVOID local_40;
+  undefined4 local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
@@ -291,12 +294,12 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
       *(undefined4 *)&this_00->field_0x26b = 0;
       *(undefined4 *)&this_00->field_0x267 = 0;
       *(undefined4 *)&this_00->field_0x263 = 0;
-      if ((*(int *)&this_00->field_0x290 < (int)(short)((short)_DAT_007fb240 * 0xc9 + 100)) &&
+      if ((*(int *)&this_00->field_0x290 < (int)(short)((short)_SHORT_007fb240 * 0xc9 + 100)) &&
          (-1 < *(int *)&this_00->field_0x290)) {
-        if ((*(int *)&this_00->field_0x294 < (int)(short)(DAT_007fb242 * 0xc9 + 100)) &&
+        if ((*(int *)&this_00->field_0x294 < (int)(short)(SHORT_007fb242 * 0xc9 + 100)) &&
            (((-1 < *(int *)&this_00->field_0x294 &&
-             (iVar5 = *(int *)&this_00->field_0x298, iVar5 < (short)(_DAT_007fb244 * 200 + 100))) &&
-            (-1 < iVar5)))) {
+             (iVar5 = *(int *)&this_00->field_0x298, iVar5 < (short)(_SHORT_007fb244 * 200 + 100)))
+            && (-1 < iVar5)))) {
           thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x290,
                              *(undefined2 *)&this_00->field_0x294,(short)iVar5);
           iVar5 = *(int *)&this_00->field_0x290;
@@ -330,10 +333,12 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
           }
           *(short *)&this_00->field_0x4b = sVar9;
           iVar5 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,
-                             (byte *)s_mmine_007cb934,0x1d);
+                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,s_mmine_007cb934,
+                             0x1d);
           if (iVar5 != 0) {
-            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_mbomb_cpp_007cb9b8,0x2c3);
+            RaiseInternalException
+                      (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_mbomb_cpp_007cb9b8,0x2c3
+                      );
           }
           STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00802a38->field_00E4);
           if ((*(int *)&this_00->field_0x29c == 0) ||
@@ -348,7 +353,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
             *(undefined4 *)&this_00->field_0x231 = 0;
             *(undefined2 *)&this_00->field_0x273 = *(undefined2 *)((int)local_24 + 0x32);
             *(undefined4 *)&this_00->field_0x26f = *(undefined4 *)((int)local_24 + 0x24);
-            thunk_FUN_00416270(local_24,&local_6,&local_8,&local_a);
+            thunk_FUN_00416270(local_24,&local_6,(int *)&local_8,(int *)&local_a);
             local_a = local_a - *(short *)&this_00->field_0x45;
             local_8 = local_8 - *(short *)&this_00->field_0x43;
             local_6 = local_6 - *(short *)&this_00->field_0x41;
@@ -428,26 +433,27 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
     this_00->field_0x276 = *(undefined1 *)((int)local_48 + 0x79);
     this_00->field_0x277 = *(undefined1 *)((int)local_48 + 0x7a);
     *(undefined4 *)&this_00->field_0x278 = *(undefined4 *)((int)local_48 + 0x7b);
-    local_40[0] = Library::DKW::LIB::FUN_006aac70(0x44);
-    if (local_40[0] == 0) {
+    local_40 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+    if (local_40 == (LPVOID)0x0) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
     iVar5 = 0;
     do {
-      *(int **)(iVar5 + local_40[0]) = DAT_00806774;
+      *(int **)(iVar5 + (int)local_40) = DAT_00806774;
       iVar5 = iVar5 + 4;
     } while (iVar5 < 0x44);
-    *(undefined4 *)(local_40[0] + 0x24) = DAT_00806764;
-    local_40[1] = 0;
-    local_40[2] = 0;
-    local_40[3] = DAT_008073cc;
+    *(undefined4 *)((int)local_40 + 0x24) = DAT_00806764;
+    local_3c = 0;
+    local_38 = 0;
+    local_34 = DAT_008073cc;
     local_30 = 0;
     local_2c = 0;
     local_28 = 0;
     STT3DSprC::RestoreSpr
-              ((STT3DSprC *)&this_00->field_01D5,local_40,(undefined4 *)((int)puVar10 + 0x83));
-    FUN_006ab060(local_40);
+              ((STT3DSprC *)&this_00->field_01D5,(int *)&local_40,
+               (undefined4 *)((int)puVar10 + 0x83));
+    FUN_006ab060(&local_40);
     g_currentExceptionFrame = local_8c.previous;
     return 0;
   }

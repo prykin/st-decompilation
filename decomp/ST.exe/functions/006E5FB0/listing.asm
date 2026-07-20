@@ -1,4 +1,4 @@
-FUN_006e5fb0:
+STGroupBoatC::sub_006E5FB0:
 006E5FB0  8B C1                     MOV EAX,ECX
 006E5FB2  33 C9                     XOR ECX,ECX
 006E5FB4  C7 00 AC E1 79 00         MOV dword ptr [EAX],0x79e1ac

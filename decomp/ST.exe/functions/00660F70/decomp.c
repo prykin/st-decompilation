@@ -10,13 +10,13 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
   Global_sub_004E80F0_param_2Enum *pGVar4;
   STAllPlayersC *pSVar5;
   int iVar6;
-  uint *puVar7;
-  uint uVar8;
-  short sVar9;
-  undefined4 uVar10;
+  uint *groupContent;
+  uint uVar7;
+  short sVar8;
+  undefined4 uVar9;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  Global_sub_004E80F0_param_2Enum *pGVar11;
+  Global_sub_004E80F0_param_2Enum *pGVar10;
   Global_sub_004E80F0_param_2Enum local_6c;
   undefined2 local_68;
   undefined2 local_66;
@@ -37,23 +37,23 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
   Global_sub_004E80F0_param_2Enum *local_8;
   
   if (((*(int *)((int)this + 0x284) != 0) && (*(int *)((int)this + 0x20b) != 0)) &&
-     (DAT_007fa174 != (STAllPlayersC *)0x0)) {
+     (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_20 = thunk_FUN_004357f0(*(char *)((int)this + 0x24));
-    sVar9 = *(short *)((int)this + 0x7b);
+    sVar8 = *(short *)((int)this + 0x7b);
     local_c = 0;
-    if ((-(uint)(sVar9 != 1) & 2) != 0xffffffff) {
+    if ((-(uint)(sVar8 != 1) & 2) != 0xffffffff) {
       local_8 = param_1;
-      pSVar5 = DAT_007fa174;
+      pSVar5 = g_sTAllPlayers_007FA174;
       do {
         GVar1 = *local_8;
-        if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar9 != 1))))
+        if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar8 != 1))))
         goto cf_continue_loop_0066137E;
         if ((((int)GVar1 < 1) || (0x28 < (int)GVar1)) || (pSVar5 == (STAllPlayersC *)0x0)) {
           if ((((int)GVar1 < 0x32) || (0x73 < (int)GVar1)) || (pSVar5 == (STAllPlayersC *)0x0)) {
             if ((((GVar1 == CASE_A3) || (GVar1 == CASE_A8)) ||
                 ((GVar1 == CASE_B2 || (GVar1 == CASE_BE)))) && (pSVar5 != (STAllPlayersC *)0x0)) {
               pSVar5 = (STAllPlayersC *)thunk_FUN_004e80f0(*(int *)((int)this + 0x24),GVar1);
-              pSVar3 = DAT_007fa174;
+              pSVar3 = g_sTAllPlayers_007FA174;
             }
             else {
               pSVar3 = pSVar5;
@@ -63,12 +63,12 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
           }
           else {
             pSVar5 = (STAllPlayersC *)thunk_FUN_004e6c20(*(int *)((int)this + 0x24),GVar1);
-            pSVar3 = DAT_007fa174;
+            pSVar3 = g_sTAllPlayers_007FA174;
           }
         }
         else {
           pSVar5 = (STAllPlayersC *)thunk_FUN_004e6a80(*(int *)((int)this + 0x24),GVar1);
-          pSVar3 = DAT_007fa174;
+          pSVar3 = g_sTAllPlayers_007FA174;
         }
         bVar2 = pSVar5 == (STAllPlayersC *)0x0;
         pSVar5 = pSVar3;
@@ -105,28 +105,30 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
         if (iVar6 != 0) {
 switchD_0066104e_caseD_9:
           if ((0x31 < *local_8) && (*local_8 < 0x74)) {
-            sVar9 = *(short *)((int)param_1 + 0xe);
-            uVar10 = CONCAT22((short)((uint)local_8 >> 0x10),sVar9);
-            if ((sVar9 < 0) ||
+            sVar8 = *(short *)((int)param_1 + 0xe);
+            uVar9 = CONCAT22((short)((uint)local_8 >> 0x10),sVar8);
+            if ((sVar8 < 0) ||
                ((((short)param_1[4] < 0 || (*(short *)((int)param_1 + 0x12) < 0)) ||
-                (iVar6 = thunk_FUN_004ae0b0((int)sVar9,(int)(short)param_1[4],
+                (iVar6 = thunk_FUN_004ae0b0((int)sVar8,(int)(short)param_1[4],
                                             (int)*(short *)((int)param_1 + 0x12),*local_8,
                                             *(int *)((int)this + 0x24),(undefined4 *)0x0,(int *)0x0,
-                                            (int *)0x0,0,(int *)0x0), uVar10 = extraout_EDX,
+                                            (int *)0x0,0,(int *)0x0), uVar9 = extraout_EDX,
                 iVar6 == 0)))) {
               local_10 = 0;
               if (((0x53 < *local_8) && (*local_8 < 0x5b)) &&
-                 (puVar7 = thunk_FUN_0065e360((int)this,uVar10,0x53), puVar7 != (uint *)0x0)) {
-                if (((puVar7[3] != 0) && (DAT_007fa174 != (STAllPlayersC *)0x0)) &&
-                   (uVar8 = STAllPlayersC::GetObjPtr
-                                      (DAT_007fa174,
+                 (groupContent = thunk_FUN_0065e360((int)this,uVar9,0x53),
+                 groupContent != (uint *)0x0)) {
+                if (((groupContent[3] != 0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+                   (uVar7 = STAllPlayersC::GetObjPtr
+                                      (g_sTAllPlayers_007FA174,
                                        CONCAT31((int3)((uint)extraout_EDX_00 >> 8),
                                                 *(undefined1 *)((int)this + 0x24)),
-                                       CONCAT22((short)(puVar7[7] >> 0x10),*(undefined2 *)puVar7[7])
-                                       ,CASE_1), uVar8 != 0)) {
-                  local_10 = uVar8;
+                                       CONCAT22((short)(groupContent[7] >> 0x10),
+                                                *(undefined2 *)groupContent[7]),CASE_1), uVar7 != 0)
+                   ) {
+                  local_10 = uVar7;
                 }
-                FUN_006ae110((byte *)puVar7);
+                FUN_006ae110((byte *)groupContent);
               }
               local_14 = (int)*(short *)((int)param_1 + 0xe);
               iVar6 = *(int *)((int)this + 0x284);
@@ -151,13 +153,13 @@ switchD_0066104e_caseD_9:
             }
           }
           pGVar4 = local_8;
-          pGVar11 = &local_6c;
+          pGVar10 = &local_6c;
           for (iVar6 = 0x12; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *pGVar11 = 0;
-            pGVar11 = pGVar11 + 1;
+            *pGVar10 = 0;
+            pGVar10 = pGVar10 + 1;
           }
-          uVar8 = param_1[3];
-          *(undefined2 *)pGVar11 = 0;
+          uVar7 = param_1[3];
+          *(undefined2 *)pGVar10 = 0;
           local_6c = *pGVar4;
           local_68 = param_2;
           if (local_20 == 0) {
@@ -177,12 +179,12 @@ switchD_0066104e_caseD_9:
              ((local_50 = *(char *)((int)this + 0x81), local_50 < '\0' || ('\a' < local_50)))) {
             local_50 = *(char *)((int)this + 0x24);
           }
-          local_66 = (short)uVar8;
+          local_66 = (short)uVar7;
           Library::MSVCRT::_strncpy(local_4f,(char *)((int)param_1 + 0x15),0xe);
           iVar6 = AiTactClassTy::PrepareToSave
                             (*(AiTactClassTy **)((int)this + 0x284),&local_6c,
                              *(short *)((int)this + 0x7f));
-          pSVar5 = DAT_007fa174;
+          pSVar5 = g_sTAllPlayers_007FA174;
           if (iVar6 == 0) {
             param_1[9] = local_64;
             return;
@@ -191,8 +193,8 @@ switchD_0066104e_caseD_9:
 cf_continue_loop_0066137E:
         local_8 = local_8 + 1;
         local_c = local_c + 1;
-        sVar9 = *(short *)((int)this + 0x7b);
-        if ((int)((-(uint)(sVar9 != 1) & 2) + 1) <= local_c) {
+        sVar8 = *(short *)((int)this + 0x7b);
+        if ((int)((-(uint)(sVar8 != 1) & 2) + 1) <= local_c) {
           return;
         }
       } while( true );

@@ -1,7 +1,9 @@
 
 /* WARNING: Type propagation algorithm not settling */
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00571E40 -> EXTERNAL:000000C4 @ 0057229A */
 
-undefined4 __thiscall FUN_00571e40(void *this,uint param_1)
+undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
 
 {
   LPBYTE pBVar1;
@@ -167,7 +169,7 @@ LAB_005720f0:
     iVar8 = (*pcVar9)(local_8,s_Server_007ca53c,0,local_10,(undefined4 *)((int)this + 0xdae),
                       local_10 + 1);
     if (iVar8 == 0) {
-      if ((param_1 & 2) != 0) {
+      if (((uint)lpcbData & 2) != 0) {
         local_20 = 0x100;
         iVar8 = (*pcVar9)(local_8,s_Editor_007ca51c,0,local_10,&DAT_008071f8,&local_20);
         if (iVar8 != 0) {
@@ -175,9 +177,9 @@ LAB_005720f0:
           return 0;
         }
       }
-      if ((param_1 & 1) != 0) {
-        param_1 = 5;
-        iVar8 = (*pcVar9)(local_8,s_CDAudioDrive_007ca524,0,local_10,(int)this + 0x640,&param_1);
+      if (((uint)lpcbData & 1) != 0) {
+        lpcbData = (LPDWORD)0x5;
+        iVar8 = (*pcVar9)(local_8,s_CDAudioDrive_007ca524,0,local_10,(int)this + 0x640,&lpcbData);
         if (iVar8 != 0) {
           RegCloseKey(local_8);
           return 0;

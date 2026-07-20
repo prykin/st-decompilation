@@ -39,11 +39,11 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
   int local_14;
   int local_10;
   int local_c;
-  int local_8;
+  LPVOID local_8;
   
   local_c = 0;
   local_4c = this;
-  Library::MSVCRT::FUN_0072e6b0(*(undefined4 *)param_1);
+  Library::MSVCRT::FUN_0072e6b0(*(DWORD *)param_1);
   pbVar5 = param_1;
   puVar6 = (undefined4 *)((int)this + 0x1c);
   for (iVar4 = 0x8c; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -74,7 +74,7 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
     local_2c = 5;
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
-    local_8 = Library::DKW::LIB::FUN_006aac70(local_28 * 4);
+    local_8 = (LPVOID)Library::DKW::LIB::FUN_006aac70(local_28 * 4);
     puVar6 = local_90;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar6 = 0;
@@ -148,12 +148,12 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
                          local_34 + -1);
       thunk_FUN_0069ff90((int)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      local_6c[3] = thunk_FUN_0069bdc0(this,local_28,10,10,4,0x23,local_8,(int)local_6c);
+      local_6c[3] = thunk_FUN_0069bdc0(this,local_28,10,10,4,0x23,(int)local_8,(int)local_6c);
       thunk_FUN_0069ff90((int)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       local_6c[2] = thunk_FUN_006991c0(this,**(int **)((int)this + 8) << 1,
                                        (*(int **)((int)this + 8))[1] << 1,local_1c,local_18,local_28
-                                       ,local_8,local_34 + -1,(int)local_6c);
+                                       ,(int)local_8,local_34 + -1,(int)local_6c);
       thunk_FUN_0069ff90((int)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00695eb0(this);
@@ -213,7 +213,7 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
     else {
       local_40 = 0;
     }
-    if (local_8 != 0) {
+    if (local_8 != (LPVOID)0x0) {
       FUN_006ab060(&local_8);
     }
     FUN_006ae110((byte *)local_54);

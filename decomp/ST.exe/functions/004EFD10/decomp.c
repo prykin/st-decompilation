@@ -26,7 +26,7 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
     this_00 = local_8;
     if (errorCode == 0) {
       puVar1 = &local_8->field_027A;
-      STAllPlayersC::GetPanelInfo(DAT_007fa174,0xc,puVar1);
+      STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0xc,puVar1);
       thunk_FUN_0053f510(this_00,*(uint *)(*puVar1 + 0xc),local_c);
       thunk_FUN_004efe20(this_00);
       g_currentExceptionFrame = local_50.previous;

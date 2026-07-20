@@ -21,7 +21,7 @@ int __thiscall FUN_0074c115(void *this,int *param_1)
           (**(code **)(*local_8 + 8))(local_8);
           *(undefined4 *)((int)this + 0x54) = 1;
           if (*(int *)((int)this + 0x58) == 0) {
-            FUN_00747406(this,0xb,0,0);
+            FUN_00747406(this,0xb,(int *)0x0,0);
             *(undefined4 *)((int)this + 0x58) = 1;
           }
           return 0;

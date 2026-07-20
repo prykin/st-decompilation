@@ -34,10 +34,10 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
       FUN_006b9890(&pSVar2->field_0039);
     }
     if (pSVar2->field_004F != 0) {
-      FUN_006ab060(&pSVar2->field_004F);
+      FUN_006ab060((LPVOID *)&pSVar2->field_004F);
     }
     if (pSVar2->field_003D != 0) {
-      FUN_006ab060(&pSVar2->field_003D);
+      FUN_006ab060((LPVOID *)&pSVar2->field_003D);
     }
     pSVar2->field_0041 = 0;
     pSVar2->field_0045 = 0;

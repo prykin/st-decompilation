@@ -1,5 +1,8 @@
 
-undefined4 * __thiscall FUN_0054cb40(void *this,undefined4 param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0054C740 -> 0054CB40 @ 0054C78B */
+
+undefined4 * __thiscall FUN_0054cb40(void *this,AppClassTy *param_1)
 
 {
   SystemWithNamedObjClassTy::SystemWithNamedObjClassTy(this,param_1,4);

@@ -1,4 +1,4 @@
-FUN_005daf20:
+StartSystemTy::sub_005DAF20:
 005DAF20  A1 64 17 81 00            MOV EAX,[0x00811764]
 005DAF25  56                        PUSH ESI
 005DAF26  85 C0                     TEST EAX,EAX

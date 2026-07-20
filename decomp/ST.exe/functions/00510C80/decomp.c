@@ -6,7 +6,7 @@ undefined4 * __fastcall FUN_00510c80(undefined4 *param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  FUN_006e5fb0(param_1);
+  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)param_1);
   param_1[0x17] = 0;
   param_1[0x11] = 0;
   param_1[0xf] = 0;

@@ -36,14 +36,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
   this_01 = local_c;
   if (iVar4 == 0) {
     if (local_c->field_008F != 0) {
-      FUN_006e56b0((void *)local_c->field_000C,local_c->field_008F);
+      StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_008F);
       this_01->field_008F = 0;
       FUN_006b5f80(DAT_008075a8,0x262,0x226,0x91,0x28);
       PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_01->field_005D)
       ;
     }
     if (this_01->field_009B != 0) {
-      FUN_006e56b0((void *)this_01->field_000C,this_01->field_009B);
+      StartSystemTy::sub_006E56B0(this_01->field_000C,this_01->field_009B);
       this_01->field_009B = 0;
       FUN_006b5f80(DAT_008075a8,0x1e,0x1ea,300,0x1e);
       PutDDXClip(0x1e,0x1ea,0x1e,0x1ea,300,(byte *)0x1e,'\x01',(BITMAPINFO *)this_01->field_005D);
@@ -95,7 +95,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
           this_00 = (cMf32 *)0x0;
           this_02 = local_8;
         }
-        cMf32::delete(this_00,&this_02->field_0000);
+        cMf32::delete(this_00,this_02);
       }
     }
     puVar1 = &this_01->field_0x1d;

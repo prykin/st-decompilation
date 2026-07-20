@@ -96,7 +96,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
         local_c = (uint *)0x0;
         if ((*puVar4 & 0xa0001000) == 0) {
           do {
-            local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),&local_c,&local_10,0);
+            local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),(uint *)&local_c,&local_10,0);
             if (local_8 == 0) goto LAB_006b3351;
             if (local_8 != -0x7789fe3e) goto LAB_006b334d;
             FUN_006cec40(*puVar3);

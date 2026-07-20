@@ -104,11 +104,11 @@ void __fastcall FUN_00585020(int *param_1)
     if ((local_14 < 5) &&
        (bVar3 = thunk_FUN_004961b0(local_10,local_8,sVar7), CONCAT31(extraout_var_01,bVar3) == 0)) {
       if ((((-1 < local_10) &&
-           (((local_10 < DAT_007fb240 && (-1 < local_8)) && (local_8 < DAT_007fb242)))) &&
-          (((-1 < sVar7 && (sVar7 < DAT_007fb244)) &&
+           (((local_10 < SHORT_007fb240 && (-1 < local_8)) && (local_8 < SHORT_007fb242)))) &&
+          (((-1 < sVar7 && (sVar7 < SHORT_007fb244)) &&
            (puVar2 = *(undefined4 **)
                       (DAT_007fb248 +
-                      ((int)DAT_007fb246 * (int)sVar7 + (int)DAT_007fb240 * (int)local_8 +
+                      ((int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
                       (int)local_10) * 8), puVar2 != (undefined4 *)0x0)))) && (puVar2[8] != 0xaa)) {
         thunk_FUN_00584c50(param_1,puVar2);
         thunk_FUN_005860d0(param_1,(int)*(short *)((int)param_1 + 0x41),
@@ -143,7 +143,7 @@ void __fastcall FUN_00585020(int *param_1)
       *(undefined4 *)((int)param_1 + 0x23d) = *(undefined4 *)(DAT_00802a38 + 0xe4);
       iVar4 = (int)((ulonglong)((longlong)*(int *)((int)param_1 + 0x24d) * -0x2aaaaaab) >> 0x20);
       *(int *)((int)param_1 + 0x24d) = iVar4 - (iVar4 >> 0x1f);
-      if (DAT_00802a88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         sVar7 = *(short *)((int)param_1 + 0x43);
         if (sVar7 < 0) {
           iVar4 = (short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
@@ -163,7 +163,8 @@ void __fastcall FUN_00585020(int *param_1)
                               (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f));
         }
         VisibleClassTy::VisHoleCreate
-                  (DAT_00802a88,iVar6,iVar4,(undefined *)0x0,param_1[9],(undefined *)0x5,500);
+                  (g_visibleClass_00802A88,iVar6,iVar4,(undefined *)0x0,param_1[9],(undefined *)0x5,
+                   500);
       }
       *(undefined4 *)((int)param_1 + 0x231) = 1;
       (**(code **)(*param_1 + 0xd8))();
@@ -231,11 +232,11 @@ void __fastcall FUN_00585020(int *param_1)
     if ((local_14 < 5) &&
        (bVar3 = thunk_FUN_004961b0(local_10,local_8,sVar7), CONCAT31(extraout_var_00,bVar3) == 0)) {
       if (((-1 < local_10) &&
-          ((((local_10 < DAT_007fb240 && (-1 < local_8)) && (local_8 < DAT_007fb242)) &&
-           ((-1 < sVar7 && (sVar7 < DAT_007fb244)))))) &&
+          ((((local_10 < SHORT_007fb240 && (-1 < local_8)) && (local_8 < SHORT_007fb242)) &&
+           ((-1 < sVar7 && (sVar7 < SHORT_007fb244)))))) &&
          ((puVar2 = *(undefined4 **)
                      (DAT_007fb248 +
-                     ((int)DAT_007fb246 * (int)sVar7 + (int)DAT_007fb240 * (int)local_8 +
+                     ((int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
                      (int)local_10) * 8), puVar2 != (undefined4 *)0x0 && (puVar2[8] != 0xaa)))) {
         thunk_FUN_00584c50(param_1,puVar2);
       }

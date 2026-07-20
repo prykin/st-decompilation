@@ -1,5 +1,8 @@
 
-int __thiscall FUN_00714f00(void *this,char *param_1,size_t param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00714F00 -> 0072ED50 @ 00714F5B */
+
+int __thiscall FUN_00714f00(void *this,char *source,size_t param_2)
 
 {
   char cVar1;
@@ -8,11 +11,11 @@ int __thiscall FUN_00714f00(void *this,char *param_1,size_t param_2)
   size_t sVar4;
   char *pcVar5;
   
-  if (param_1 == (char *)0x0) {
+  if (source == (char *)0x0) {
     return -0x34;
   }
   uVar3 = 0xffffffff;
-  pcVar5 = param_1;
+  pcVar5 = source;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
@@ -39,7 +42,7 @@ int __thiscall FUN_00714f00(void *this,char *param_1,size_t param_2)
   }
   iVar2 = FUN_00714ce0(this,uVar3 + 1 + sVar4);
   if (iVar2 == 0) {
-    Library::MSVCRT::_strncat(*(char **)this,param_1,param_2);
+    Library::MSVCRT::_strncat(*(char **)this,source,param_2);
     iVar2 = 0;
   }
   return iVar2;

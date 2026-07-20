@@ -78,12 +78,12 @@ undefined4 __thiscall FUN_004c56b0(void *this,void *param_1)
       else {
         sVar7 = ((short)(iVar4 / 0xc9) + sVar7) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
       }
-      if (((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar6 < 0)) ||
-          ((DAT_007fb242 <= sVar6 || (sVar5 < 0)))) ||
-         ((DAT_007fb244 <= sVar5 ||
+      if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar6 < 0)) ||
+          ((SHORT_007fb242 <= sVar6 || (sVar5 < 0)))) ||
+         ((SHORT_007fb244 <= sVar5 ||
           (*(int *)(DAT_007fb248 + 4 +
-                   ((int)sVar6 * (int)DAT_007fb240 + (int)sVar5 * (int)DAT_007fb246 + (int)sVar7) *
-                   8) == 0)))) {
+                   ((int)sVar6 * (int)SHORT_007fb240 + (int)sVar5 * (int)SHORT_007fb246 + (int)sVar7
+                   ) * 8) == 0)))) {
         return 1;
       }
     }

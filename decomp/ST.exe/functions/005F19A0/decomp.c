@@ -2,9 +2,9 @@
 void __fastcall FUN_005f19a0(void *param_1)
 
 {
-  void *pvVar1;
-  void *pvVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar1;
+  VisibleClassTy *pVVar2;
+  VisibleClassTy *pVVar3;
   int iVar4;
   short *psVar5;
   int iVar6;
@@ -29,10 +29,10 @@ void __fastcall FUN_005f19a0(void *param_1)
   }
   local_c = *(uint *)(*(int *)((int)param_1 + 0x3c) + 0xc);
   local_14 = param_1;
-  pvVar3 = DAT_00802a88;
+  pVVar3 = g_visibleClass_00802A88;
 joined_r0x005f19be:
   do {
-    pvVar1 = pvVar3;
+    pVVar1 = pVVar3;
     local_c = local_c - 1;
     if ((int)local_c < 0) {
       return;
@@ -47,69 +47,65 @@ joined_r0x005f19be:
     iVar6 = (int)psVar5[2];
     local_18 = (int)psVar5[1];
     local_1c = (int)*psVar5;
-    pvVar3 = (void *)0x0;
-  } while (pvVar1 == (void *)0x0);
+    pVVar3 = (VisibleClassTy *)0x0;
+  } while (pVVar1 == (VisibleClassTy *)0x0);
   local_10 = iVar6;
   local_8 = psVar5;
   if ((char)psVar5[3] != '\x01') goto LAB_005f1c99;
-  if (((((DAT_0080874d != -1) && (*(int *)((int)pvVar1 + 0xf8) != 0)) &&
-       (thunk_FUN_00558c00(pvVar1,*(Global_sub_00558C00_param_1Enum *)((int)pvVar1 + 0x10c),local_1c
-                           ,local_18,&local_20,&local_24), pvVar3 = DAT_00802a88, -1 < iVar6)) &&
+  if (((((DAT_0080874d != -1) && (pVVar1->field_00F8 != 0)) &&
+       (thunk_FUN_00558c00(pVVar1,pVVar1->field_010C,local_1c,local_18,&local_20,&local_24),
+       pVVar3 = g_visibleClass_00802A88, -1 < iVar6)) &&
       (((iVar6 < 5 && (-1 < local_20)) &&
-       ((local_20 < *(int *)((int)pvVar1 + 0x30) &&
-        ((iVar6 = (&DAT_0079aed0)[iVar6] + local_24, -1 < iVar6 &&
-         (iVar6 < *(int *)((int)pvVar1 + 0x34))))))))) &&
-     ((*(int *)((int)pvVar1 + 0x4c) != 0 &&
-      (((*(char *)(iVar6 * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) + local_20)
-         == '\0' && (DAT_0080874d != -1)) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))))) {
+       ((local_20 < (int)pVVar1->field_0030 &&
+        ((iVar6 = (&DAT_0079aed0)[iVar6] + local_24, -1 < iVar6 && (iVar6 < (int)pVVar1->field_0034)
+         ))))))) &&
+     ((pVVar1->field_004C != 0 &&
+      (((*(char *)(iVar6 * pVVar1->field_0030 + pVVar1->field_004C + local_20) == '\0' &&
+        (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
     local_38 = local_1c + 1;
-    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                       local_38,local_18,&local_28,&local_2c);
-    pvVar1 = DAT_00802a88;
-    if ((((-1 < local_28) && (local_28 < *(int *)((int)pvVar3 + 0x30))) &&
+    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18
+                       ,&local_28,&local_2c);
+    pVVar1 = g_visibleClass_00802A88;
+    if ((((-1 < local_28) && (local_28 < (int)pVVar3->field_0030)) &&
         (((iVar6 = (&DAT_0079aed0)[local_10] + local_2c, -1 < iVar6 &&
-          ((iVar6 < *(int *)((int)pvVar3 + 0x34) && (*(int *)((int)pvVar3 + 0x4c) != 0)))) &&
-         (*(char *)(iVar6 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_28)
-          == '\0')))) && ((DAT_0080874d != -1 && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))) {
+          ((iVar6 < (int)pVVar3->field_0034 && (pVVar3->field_004C != 0)))) &&
+         (*(char *)(iVar6 * pVVar3->field_0030 + pVVar3->field_004C + local_28) == '\0')))) &&
+       ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))) {
       iVar6 = local_18 + 1;
-      thunk_FUN_00558c00(DAT_00802a88,
-                         *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),local_1c,
-                         iVar6,&local_30,&local_34);
-      pvVar2 = DAT_00802a88;
+      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar6,
+                         &local_30,&local_34);
+      pVVar2 = g_visibleClass_00802A88;
       if (((local_30 < 0) ||
-          ((((*(int *)((int)pvVar1 + 0x30) <= local_30 ||
+          (((((int)pVVar1->field_0030 <= local_30 ||
              (iVar4 = (&DAT_0079aed0)[local_10] + local_34, psVar5 = local_8, iVar4 < 0)) ||
-            (*(int *)((int)pvVar1 + 0x34) <= iVar4)) ||
-           ((*(int *)((int)pvVar1 + 0x4c) == 0 ||
-            (*(char *)(iVar4 * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) +
-                      local_30) != '\0')))))) ||
+            ((int)pVVar1->field_0034 <= iVar4)) ||
+           ((pVVar1->field_004C == 0 ||
+            (*(char *)(iVar4 * pVVar1->field_0030 + pVVar1->field_004C + local_30) != '\0')))))) ||
          ((DAT_0080874d == -1 ||
-          ((((*(int *)((int)DAT_00802a88 + 0xf8) == 0 ||
-             (thunk_FUN_00558c00(DAT_00802a88,
-                                 *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+          ((((g_visibleClass_00802A88->field_00F8 == 0 ||
+             (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                  local_38,iVar6,&local_3c,&local_40), psVar5 = local_8, local_3c < 0
-             )) || ((*(int *)((int)pvVar2 + 0x30) <= local_3c ||
+             )) || (((int)pVVar2->field_0030 <= local_3c ||
                     (((iVar6 = (&DAT_0079aed0)[local_10] + local_40, iVar6 < 0 ||
-                      (*(int *)((int)pvVar2 + 0x34) <= iVar6)) ||
-                     (*(int *)((int)pvVar2 + 0x4c) == 0)))))) ||
-           (pvVar3 = DAT_00802a88,
-           *(char *)(iVar6 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) + local_3c)
-           != '\0')))))) goto LAB_005f1c4c;
+                      ((int)pVVar2->field_0034 <= iVar6)) || (pVVar2->field_004C == 0)))))) ||
+           (pVVar3 = g_visibleClass_00802A88,
+           *(char *)(iVar6 * pVVar2->field_0030 + pVVar2->field_004C + local_3c) != '\0'))))))
+      goto LAB_005f1c4c;
       goto joined_r0x005f19be;
     }
   }
 LAB_005f1c4c:
   iVar6 = thunk_FUN_005f14b0(local_14,*psVar5,psVar5[1],psVar5[2],*(byte *)(psVar5 + 3),
                              *(short *)((int)psVar5 + 7));
-  pvVar3 = DAT_00802a88;
+  pVVar3 = g_visibleClass_00802A88;
   if (-1 < iVar6) {
     FUN_006b0c70(*(int *)((int)local_14 + 0x3c),local_c);
-    pvVar3 = DAT_00802a88;
+    pVVar3 = g_visibleClass_00802A88;
   }
   goto joined_r0x005f19be;
 LAB_005f1c99:
-  iVar6 = thunk_FUN_005f1d80(pvVar1,local_1c,local_18,iVar6);
-  pvVar3 = DAT_00802a88;
+  iVar6 = thunk_FUN_005f1d80(pVVar1,local_1c,local_18,iVar6);
+  pVVar3 = g_visibleClass_00802A88;
   if (iVar6 == 0) goto joined_r0x005f19be;
   goto LAB_005f1c4c;
 }

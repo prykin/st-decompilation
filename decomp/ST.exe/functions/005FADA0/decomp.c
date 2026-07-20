@@ -24,7 +24,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
       puVar4 = puVar4 + 1;
     }
     *(undefined2 *)puVar4 = 0;
-    thunk_FUN_00416270(this,&local_6,&local_8,&local_a);
+    thunk_FUN_00416270(this,&local_6,(int *)&local_8,(int *)&local_a);
     if (param_3 == 1) {
       thunk_FUN_005fac40(this,0,1,param_1,(int)local_6,(int)local_8,(int)local_a);
     }

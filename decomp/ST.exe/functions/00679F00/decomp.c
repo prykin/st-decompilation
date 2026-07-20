@@ -20,7 +20,7 @@ int __thiscall FUN_00679f00(void *this,uint param_1,uint *param_2,int param_3)
         iVar2 = AiTactClassTy::GetAiMess(this_00,param_2);
         return iVar2;
       }
-      iVar2 = thunk_FUN_0068fc70(this_00,param_2,(short)param_3);
+      iVar2 = thunk_FUN_0068fc70(this_00,(int)param_2,(short)param_3);
       return iVar2;
     }
   }

@@ -6,12 +6,12 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
 {
   uint uVar1;
   bool bVar2;
-  void *pvVar3;
+  VisibleClassTy *pVVar3;
   int iVar4;
   uint uVar5;
   SpriteClassTy *pSVar6;
   undefined4 unaff_ESI;
-  undefined4 *unaff_EDI;
+  void *unaff_EDI;
   int iVar7;
   longlong lVar8;
   InternalExceptionFrame local_58;
@@ -20,7 +20,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   int local_c;
   uint local_8;
   
-  if ((DAT_00807598 == (void *)0x0) || (DAT_00802a88 == (void *)0x0)) {
+  if ((DAT_00807598 == (void *)0x0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) {
     return;
   }
   local_58.previous = g_currentExceptionFrame;
@@ -54,46 +54,46 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
     lVar8 = Library::MSVCRT::__ftol();
     iVar7 = (int)(short)lVar8;
   }
-  pvVar3 = DAT_00802a88;
-  if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
+  pVVar3 = g_visibleClass_00802A88;
+  if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
     uVar5 = 0;
   }
   else {
-    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
-                       local_8,iVar4,&local_10,&local_14);
+    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar4,
+                       &local_10,&local_14);
     if ((iVar7 < 0) || (4 < iVar7)) {
       uVar5 = 0xffffffff;
     }
     else {
-      if ((((local_10 < 0) || (*(int *)((int)pvVar3 + 0x28) <= local_10)) ||
+      if ((((local_10 < 0) || ((int)pVVar3->field_0028 <= local_10)) ||
           ((&DAT_0079aed0)[iVar7] + local_14 < 0)) ||
-         (*(int *)((int)pvVar3 + 0x2c) <= (&DAT_0079aed0)[iVar7] + local_14)) {
+         ((int)pVVar3->field_002C <= (&DAT_0079aed0)[iVar7] + local_14)) {
         bVar2 = false;
       }
       else {
         bVar2 = true;
       }
-      if (((bVar2) && (*(int *)((int)pvVar3 + 0x10c) < 4)) &&
-         (iVar4 = *(int *)((int)pvVar3 + *(int *)((int)pvVar3 + 0x10c) * 4 + 0x3c), iVar4 != 0)) {
-        uVar5 = (uint)*(byte *)(((&DAT_0079aed0)[iVar7] + local_14) * *(int *)((int)pvVar3 + 0x28) +
-                                iVar4 + local_10);
+      if (((bVar2) && ((int)pVVar3->field_010C < 4)) &&
+         ((&pVVar3->field_003C)[pVVar3->field_010C] != 0)) {
+        uVar5 = (uint)*(byte *)(((&DAT_0079aed0)[iVar7] + local_14) * pVVar3->field_0028 +
+                                (&pVVar3->field_003C)[pVVar3->field_010C] + local_10);
       }
       else {
         uVar5 = 0xffffffff;
       }
       if ((int)uVar5 < 0) goto cf_common_exit_0054ACFD;
       if (uVar5 == 0xf) {
-        if (((local_10 < 0) || (*(int *)((int)pvVar3 + 0x30) <= local_10)) ||
+        if (((local_10 < 0) || ((int)pVVar3->field_0030 <= local_10)) ||
            (((&DAT_0079aed0)[iVar7] + local_14 < 0 ||
-            (*(int *)((int)pvVar3 + 0x34) <= (&DAT_0079aed0)[iVar7] + local_14)))) {
+            ((int)pVVar3->field_0034 <= (&DAT_0079aed0)[iVar7] + local_14)))) {
           bVar2 = false;
         }
         else {
           bVar2 = true;
         }
-        if ((bVar2) && (*(int *)((int)pvVar3 + 0x4c) != 0)) {
-          uVar5 = (uint)*(byte *)(((&DAT_0079aed0)[iVar7] + local_14) * *(int *)((int)pvVar3 + 0x30)
-                                  + *(int *)((int)pvVar3 + 0x4c) + local_10);
+        if ((bVar2) && (pVVar3->field_004C != 0)) {
+          uVar5 = (uint)*(byte *)(((&DAT_0079aed0)[iVar7] + local_14) * pVVar3->field_0030 +
+                                  pVVar3->field_004C + local_10);
         }
         else {
           uVar5 = 0xffffffff;
@@ -109,7 +109,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   if (0 < (int)uVar5) {
     if (*(SpriteClassTy **)(local_c + 0x4eb) != (SpriteClassTy *)0x0) {
       SpriteClassTy::CloseSprite(*(SpriteClassTy **)(local_c + 0x4eb));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(local_c + 0x4eb));
+      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(local_c + 0x4eb));
       *(undefined4 *)(local_c + 0x4eb) = 0;
     }
     pSVar6 = (SpriteClassTy *)Library::MSVCRT::FUN_0072e530(0x91);
@@ -117,7 +117,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
       pSVar6 = (SpriteClassTy *)0x0;
     }
     else {
-      pSVar6 = (SpriteClassTy *)SpriteClassTy::SpriteClassTy(pSVar6,unaff_EDI);
+      pSVar6 = (SpriteClassTy *)SpriteClassTy::SpriteClassTy(pSVar6);
     }
     *(SpriteClassTy **)(local_c + 0x4eb) = pSVar6;
     if (pSVar6 == (SpriteClassTy *)0x0) {

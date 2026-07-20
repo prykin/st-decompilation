@@ -33,7 +33,7 @@ void __fastcall FUN_00551800(void *param_1)
     *(undefined4 *)((int)param_1 + 0x2c) = 0;
     goto LAB_00551a54;
   }
-  if ((iVar2 == 0) || (DAT_007fa174 == 0)) goto LAB_005519bc;
+  if ((iVar2 == 0) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) goto LAB_005519bc;
   *(undefined4 *)((int)param_1 + 0x28) = 0x21;
   FUN_006e6080(param_1,2,iVar2,(undefined4 *)((int)param_1 + 0x18));
   iVar2 = *(int *)((int)param_1 + 0x2c);
@@ -86,7 +86,7 @@ LAB_005519bc:
   if (*(int *)((int)param_1 + 0x1cc) == 0) {
     return;
   }
-  if (DAT_007fa174 == 0) {
+  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return;
   }
   *(undefined4 *)((int)param_1 + 0x28) = 0x21;

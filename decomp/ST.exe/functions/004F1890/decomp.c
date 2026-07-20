@@ -11,8 +11,8 @@ void __thiscall FUN_004f1890(void *this,byte param_1)
   else {
     iVar1 = (param_1 != 0) + 2;
   }
-  pbVar2 = (byte *)FUN_0070b650(*(short **)((int)this + (uint)param_1 * 4 + 0x2e2),
-                                (uint)*(byte *)(param_1 + 0x2ea + (int)this));
+  pbVar2 = FUN_0070b650(*(short **)((int)this + (uint)param_1 * 4 + 0x2e2),
+                        (uint)*(byte *)(param_1 + 0x2ea + (int)this));
   DibPut(*(undefined4 **)((int)this + (-(uint)(param_1 != 0) & 8) * 4 + 0x180),iVar1,
          (DAT_0080874e == '\x03') + 6,'\x06',pbVar2);
   return;

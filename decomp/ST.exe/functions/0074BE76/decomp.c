@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_0074be76(void *this,int param_1)
       puVar2 = (undefined4 *)0x0;
     }
     else {
-      puVar2 = FUN_0074c38f(pvVar1,0,(int)this,&local_8,L"XForm In");
+      puVar2 = FUN_0074c38f(pvVar1,0,(int)this,&local_8,(char *)L"XForm In");
     }
     *(undefined4 **)((int)this + 0x8c) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {
@@ -24,7 +24,7 @@ undefined4 __thiscall FUN_0074be76(void *this,int param_1)
       puVar2 = (undefined4 *)0x0;
     }
     else {
-      puVar2 = FUN_0074c658(pvVar1,0,(int)this,&local_8,L"XForm Out");
+      puVar2 = FUN_0074c658(pvVar1,0,(int)this,&local_8,(char *)L"XForm Out");
     }
     *(undefined4 **)((int)this + 0x90) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {

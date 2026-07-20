@@ -1,5 +1,8 @@
 
-int FUN_006b7140(undefined4 *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0054D640 -> 006B7140 @ 0054DAF4 | 0054D640 -> 006B7140 @ 0054DB4D */
+
+int FUN_006b7140(int *param_1)
 
 {
   int *piVar1;

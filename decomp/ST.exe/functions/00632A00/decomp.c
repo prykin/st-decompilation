@@ -15,7 +15,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   undefined4 unaff_ESI;
   int *piVar6;
   void *unaff_EDI;
-  byte *pbVar7;
+  char *pcVar7;
   InternalExceptionFrame local_68;
   int local_24;
   int local_20;
@@ -35,15 +35,15 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
     if (local_18->field_0011 == 3) {
       iVar2 = local_18->field_0025;
       if (iVar2 < 4) {
-        pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
+        pcVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806764;
       }
       else {
-        pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
+        pcVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806774;
       }
       local_10 = Library::Ourlib::MFRLOAD::mfRLoad
-                           (piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
+                           (piVar6,CASE_1D,pcVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
       iVar2 = pSVar5->field_0029;
       if (iVar2 < 4) {
         local_14 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -61,15 +61,15 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
     else {
       iVar2 = local_18->field_000D;
       if (iVar2 < 4) {
-        pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
+        pcVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806764;
       }
       else {
-        pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
+        pcVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806774;
       }
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
+                         (piVar6,CASE_1D,pcVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
       local_8 = puVar3;
       if (pSVar5->field_0011 == 1) {
         local_10 = Library::Ourlib::MFRLOAD::mfRLoad

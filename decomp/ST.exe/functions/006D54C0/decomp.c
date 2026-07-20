@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_006d54c0(void *param_1)
   int iVar3;
   uint uVar4;
   int iVar5;
-  undefined4 local_1c;
+  uint local_1c;
   LPCRITICAL_SECTION local_18;
   uint local_14;
   int local_10;
@@ -49,7 +49,7 @@ undefined4 __fastcall FUN_006d54c0(void *param_1)
     local_10 = 0;
     local_c = 0;
     do {
-      local_10 = FUN_006bbe40(local_8,&local_1c,&local_14,0);
+      local_10 = FUN_006bbe40(local_8,&local_1c,(int *)&local_14,0);
       if (local_10 == 0) {
 LAB_006d5620:
         (**(code **)(*local_8 + 0x80))(local_8,0);

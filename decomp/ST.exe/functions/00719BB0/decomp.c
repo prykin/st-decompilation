@@ -27,8 +27,8 @@ undefined4 __cdecl FUN_00719bb0(MCIDEVICEID *param_1)
       local_10 = 0;
     }
     if (MVar1 != 0) {
-      FUN_00719560(param_1);
-      FUN_00719c60(param_1);
+      FUN_00719560((DWORD_PTR)param_1);
+      FUN_00719c60((DWORD_PTR)param_1);
     }
   }
   return 0;

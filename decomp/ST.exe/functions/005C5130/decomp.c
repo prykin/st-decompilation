@@ -93,7 +93,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     if (local_8 != 0) {
       if (this_00->field_21F0 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21F0);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_21F0);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_21F0);
         this_00->field_21F0 = (HoloTy *)0x0;
       }
       cVar1 = this_00->field_1E26;
@@ -103,7 +103,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       if (this_00->field_21E8 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21E8);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_21E8);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_21E8);
         this_00->field_21E8 = (HoloTy *)0x0;
       }
       if (this_00->field_0x21e1 != '\0') {
@@ -132,7 +132,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       if (this_00->field_21F4 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21F4);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_21F4);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_21F4);
         this_00->field_21F4 = (HoloTy *)0x0;
       }
       if (this_00->field_0x21e5 != '\0') {
@@ -140,7 +140,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       if (this_00->field_21EC != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21EC);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_21EC);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_21EC);
         this_00->field_21EC = (HoloTy *)0x0;
       }
       cVar1 = this_00->field_1E26;
@@ -170,7 +170,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       if (this_00->field_21F8 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21F8);
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_21F8);
+        Library::MSVCRT::FUN_0072e2b0(this_00->field_21F8);
         this_00->field_21F8 = (HoloTy *)0x0;
       }
       if (this_00->field_0x21e6 != '\0') {

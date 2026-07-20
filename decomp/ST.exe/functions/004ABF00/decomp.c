@@ -1,9 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
-   STT3DSprC::SetCurShad */
+   STT3DSprC::SetCurShad
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00623170 -> 004ABF00 @ 006232E4 | 00623600 -> 004ABF00 @ 00623867 */
 
-undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,undefined4 param_2)
+undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint param_2)
 
 {
   code *pcVar1;
@@ -35,7 +38,8 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,undefin
     return 0xffffffff;
   }
   if (local_8->field_0018 == -1) {
-    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xa5);
+    RaiseInternalException
+              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xa5);
   }
   if (*(int *)(*(int *)(pSVar2->field_0020 + param_1 * 0x24) + 0x29) != 0) {
     pSVar2->field_0013 = param_1;

@@ -14,7 +14,8 @@ CPanelTy::PaintTxtBut
   CPanelTy *pCVar3;
   int *errorCode;
   undefined4 uVar4;
-  LPSTR pCVar5;
+  LPSTR text;
+  uint uVar5;
   uint *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -26,46 +27,46 @@ CPanelTy::PaintTxtBut
   int *local_18;
   CPanelTy *local_14;
   int local_10;
-  int local_c;
+  uint local_c;
   ushort *local_8;
   
   uVar2 = (uint)param_1;
   local_18 = *(int **)(param_2 + 0x18);
   local_8 = (ushort *)0x0;
-  local_c = local_18[1];
+  iVar9 = local_18[1];
   local_10 = *local_18 - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
-    iVar9 = this->field_0134;
+    iVar7 = this->field_0134;
     goto LAB_004f3d6a;
   default:
     if (this->field_0130 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3D83;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3D83;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3D83;
     }
     break;
   case 7:
-    iVar9 = this->field_0138;
+    iVar7 = this->field_0138;
 LAB_004f3d6a:
-    if (iVar9 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+    if (iVar7 != 0) {
+      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3D83;
     }
-    local_c = local_c - this->field_00C0;
+    iVar9 = iVar9 - this->field_00C0;
   }
-  local_c = local_c - DAT_00806734;
+  local_c = iVar9 - DAT_00806734;
 cf_common_join_004F3D83:
   if (param_6 != (undefined *)0x0) {
     local_5c.previous = g_currentExceptionFrame;
@@ -75,8 +76,8 @@ cf_common_join_004F3D83:
     if (errorCode == (int *)0x0) {
       iVar9 = 1;
       uVar4 = (*(code *)param_6)(param_2);
-      pCVar5 = FUN_006f2c00(param_4,1,uVar4);
-      local_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar5,errorCode,iVar9);
+      text = FUN_006f2c00(param_4,1,uVar4);
+      local_8 = cMf32::RecGet(DAT_00806790,param_3,text,errorCode,iVar9);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
       DibPut((undefined4 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,(byte *)local_8);
@@ -85,11 +86,11 @@ cf_common_join_004F3D83:
                        local_c,local_18[2],local_18[3]);
       iVar10 = -1;
       iVar8 = -1;
-      uVar4 = (*(code *)param_6)(param_2);
+      uVar5 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar9 = -2;
-      puVar6 = (uint *)FUN_006b0140(param_5,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar7,uVar4,iVar8,iVar10);
+      puVar6 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
+      ccFntTy::WrTxt(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar7,uVar5,iVar8,iVar10);
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]

@@ -1,10 +1,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_jell_m.cpp
-   STJellyManC::Error */
+   STJellyManC::Error
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004C4550 -> 00581AC0 @ 004C4728 */
 
 undefined4 __thiscall
-STJellyManC::Error(STJellyManC *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+STJellyManC::Error(STJellyManC *this,undefined4 param_1,int *param_2,undefined4 param_3)
 
 {
   code *pcVar1;

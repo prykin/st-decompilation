@@ -27,11 +27,13 @@ STPlaySystemC::CreateGameObject
   if (iVar3 == 0) {
     iVar3 = thunk_FUN_0054cbb0(param_1,&local_8);
     if (iVar3 != 0) {
-      RaiseInternalException(-4,DAT_007ed77c,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xef);
+      RaiseInternalException
+                (-4,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xef);
     }
     iVar3 = (*pSVar2->vtable->slot_08)(local_8,param_2,param_3,param_4,param_5);
     if (iVar3 != 0) {
-      RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xf0);
+      RaiseInternalException
+                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xf0);
     }
     g_currentExceptionFrame = pIVar5;
     return iVar3;

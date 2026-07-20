@@ -13,9 +13,10 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
   uint uVar5;
   STBoatC *pSVar6;
   uint *puVar7;
-  void *pvVar8;
+  STFishC *pSVar8;
   undefined2 extraout_var;
   undefined4 uVar9;
+  void *this_00;
   int iVar10;
   undefined4 extraout_ECX;
   undefined4 extraout_EDX;
@@ -58,7 +59,8 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
   if (iVar3 == 0) {
     if ((param_3 == 0) || (local_24 = *(uint *)(param_3 + 0xc), local_24 == 0)) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1189);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x1189);
     }
     uVar12 = local_24;
     local_20 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
@@ -69,7 +71,7 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
         FUN_006acc70(param_3,uVar11,&local_8);
         if ((short)local_8 != -1) {
           piVar4 = (int *)STAllPlayersC::GetObjPtr
-                                    (DAT_007fa174,
+                                    (g_sTAllPlayers_007FA174,
                                      CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),
                                      local_8,CASE_1);
           if (piVar4 == (int *)0x0) {
@@ -81,7 +83,8 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
               return;
             }
             RaiseInternalException
-                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1192);
+                      (-0x5001fffc,g_overwriteContext_007ED77C,
+                       s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1192);
           }
           iVar3 = (**(code **)(*piVar4 + 0x2c))();
           puVar7 = local_c;
@@ -104,28 +107,32 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
           uVar5 = FUN_006acc70((int)local_c,uVar12,&local_8);
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,CONCAT31((int3)(uVar5 >> 8),pSVar2->field_0024),local_8,
-                              CASE_1);
+                             (g_sTAllPlayers_007FA174,
+                              CONCAT31((int3)(uVar5 >> 8),pSVar2->field_0024),local_8,CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
           uVar12 = uVar12 + 1;
         } while ((int)uVar12 < (int)uVar11);
       }
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11a3);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x11a3);
       puVar7 = extraout_EDX_00;
     }
     if ((param_2 == 0) || (*(int *)(param_2 + 0xc) == 0)) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11a6);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x11a6);
       puVar7 = extraout_EDX_01;
     }
     puVar7 = STAllPlayersC::_AssignDocks
-                       (DAT_007fa174,CONCAT31((int3)((uint)puVar7 >> 8),pSVar2->field_0024),param_2,
-                        (int)local_20);
+                       (g_sTAllPlayers_007FA174,
+                        CONCAT31((int3)((uint)puVar7 >> 8),pSVar2->field_0024),param_2,(int)local_20
+                       );
     local_28 = puVar7;
     if (puVar7 == (uint *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11a9);
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x11a9);
     }
     uVar11 = 0;
     local_44 = *(undefined4 *)(DAT_00802a38 + 0xe4);
@@ -138,37 +145,39 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
         if (sStack_36 == -1) {
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,
+                             (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),
                               CONCAT22(0xffff,local_38),CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
         }
         else if (param_1 == 1) {
-          pvVar8 = (void *)STAllPlayersC::GetObjPtr
-                                     (DAT_007fa174,CONCAT31((int3)(uVar12 >> 8),pSVar2->field_0024),
-                                      uVar12,CASE_1);
-          thunk_FUN_004162b0(pvVar8,local_1c,local_18,local_14);
+          pSVar8 = (STFishC *)
+                   STAllPlayersC::GetObjPtr
+                             (g_sTAllPlayers_007FA174,
+                              CONCAT31((int3)(uVar12 >> 8),pSVar2->field_0024),uVar12,CASE_1);
+          STFishC::sub_004162B0(pSVar8,local_1c,local_18,local_14);
           local_40 = local_1c[0];
           local_3e = local_18[0];
           local_3c = local_14[0];
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,
+                             (g_sTAllPlayers_007FA174,
                               CONCAT31((int3)(CONCAT22(extraout_var,local_18[0]) >> 8),
                                        pSVar2->field_0024),CONCAT22(sStack_36,local_38),CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_4,&local_44);
         }
         else {
-          pvVar8 = (void *)STAllPlayersC::GetObjPtr
-                                     (DAT_007fa174,
-                                      CONCAT31((int3)((uint)extraout_EDX_02 >> 8),pSVar2->field_0024
-                                              ),uVar12,CASE_1);
-          uVar9 = thunk_FUN_004162b0(pvVar8,local_1c,local_18,local_14);
-          pvVar8 = (void *)STAllPlayersC::GetObjPtr
-                                     (DAT_007fa174,
-                                      CONCAT31((int3)((uint)uVar9 >> 8),pSVar2->field_0024),
-                                      CONCAT22(sStack_36,local_38),CASE_1);
-          thunk_FUN_00490a00(pvVar8,local_1c[0],local_18[0],local_14[0]);
+          pSVar8 = (STFishC *)
+                   STAllPlayersC::GetObjPtr
+                             (g_sTAllPlayers_007FA174,
+                              CONCAT31((int3)((uint)extraout_EDX_02 >> 8),pSVar2->field_0024),uVar12
+                              ,CASE_1);
+          uVar9 = STFishC::sub_004162B0(pSVar8,local_1c,local_18,local_14);
+          this_00 = (void *)STAllPlayersC::GetObjPtr
+                                      (g_sTAllPlayers_007FA174,
+                                       CONCAT31((int3)((uint)uVar9 >> 8),pSVar2->field_0024),
+                                       CONCAT22(sStack_36,local_38),CASE_1);
+          thunk_FUN_00490a00(this_00,local_1c[0],local_18[0],local_14[0]);
         }
         uVar11 = uVar11 + 1;
       } while ((int)uVar11 < (int)local_30);
@@ -180,7 +189,7 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
         FUN_006acc70((int)local_c,uVar12,&local_8);
         pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (DAT_007fa174,
+                           (g_sTAllPlayers_007FA174,
                             CONCAT31((int3)((uint)extraout_EDX_03 >> 8),pSVar2->field_0024),local_8,
                             CASE_1);
         STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);

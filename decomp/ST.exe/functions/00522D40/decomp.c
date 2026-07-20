@@ -49,7 +49,7 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undef
   }
   local_8->field_0172 = 4;
   if (local_8->field_01A0 != 0) {
-    FUN_006e56b0((void *)local_8->field_000C,local_8->field_01A0);
+    StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_01A0);
   }
   pIVar3->field_01A0 = 0;
   GVar5 = CASE_B0;

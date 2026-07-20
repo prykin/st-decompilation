@@ -9,7 +9,7 @@ void __thiscall FUN_0054ebb0(void *this,char *param_1,uint param_2)
   STPlaySystemC::AddToRep(this,(undefined4 *)param_1,param_2);
   DVar1 = timeGetTime();
   *(DWORD *)((int)this + 0x7f) = DVar1;
-  FUN_00715360(DAT_00811764,0,'1',param_1,param_2,1,*(undefined4 *)param_1);
+  FUN_00715360(g_int_00811764,0,'1',param_1,param_2,1,*(undefined4 *)param_1);
   return;
 }
 

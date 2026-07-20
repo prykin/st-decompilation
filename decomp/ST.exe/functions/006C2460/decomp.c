@@ -16,7 +16,8 @@ void FUN_006c2460(int param_1,DWORD param_2,uint param_3,uint param_4,undefined4
   (&DAT_00855014)[param_7 * 0x31] = param_1;
   (&DAT_00855018)[param_7 * 0x31] = param_2;
   (&DAT_00854ffc)[param_7 * 0x31] = param_4 | 0x2000;
-  DVar2 = FUN_006d4930(*(int *)(param_1 + 4),param_2,(undefined4 *)(&DAT_00855044 + iVar3),0x3e);
+  DVar2 = FUN_006d4930(*(int *)(param_1 + 4),(LPDWORD)param_2,(undefined4 *)(&DAT_00855044 + iVar3),
+                       0x3e);
   if (DVar2 == 0) {
     *(uint *)(&DAT_00855020 + iVar3) =
          (-(uint)(*(short *)(&DAT_00855044 + iVar3) != 1) & 0x24) + 0x1a + param_2;

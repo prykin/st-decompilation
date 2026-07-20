@@ -44,7 +44,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
     if (uVar1 == 0x6120) {
       puVar6 = &local_8->field_0020;
       if (local_8->field_0020 != 0) {
-        FUN_006e56b0(local_8,local_8->field_0020);
+        sub_006E56B0(local_8,local_8->field_0020);
       }
       (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,0x306,puVar6,(int *)0x0,param_1,0);
     }
@@ -53,7 +53,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         if (uVar1 == 0x6105) {
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30a,puVar6,(int *)0x0,param_1,0);
@@ -63,7 +63,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
           if (uVar1 == 0x6104) {
             puVar6 = &local_8->field_0020;
             if (local_8->field_0020 != 0) {
-              FUN_006e56b0(local_8,local_8->field_0020);
+              sub_006E56B0(local_8,local_8->field_0020);
             }
             (*this_00->vtable->CreateObject)
                       ((SystemClassTy *)this_00,0x302,puVar6,(int *)0x0,param_1,0);
@@ -73,7 +73,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         if (uVar1 == 0x6103) {
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x304,puVar6,(int *)0x0,param_1,0);
@@ -82,10 +82,10 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         if (uVar1 == 8) {
           DAT_00807654 = 0x21;
           DAT_0080879c = 0;
-          if (DAT_00806758 != (undefined4 *)0x0) {
-            cMf32::delete(this_01,DAT_00806758);
+          if (g_cMf32_00806758 != (cMf32 *)0x0) {
+            cMf32::delete(this_01,g_cMf32_00806758);
           }
-          DAT_00806758 = (undefined4 *)0x0;
+          g_cMf32_00806758 = (cMf32 *)0x0;
           if (DAT_00802a30 != 0) {
             thunk_FUN_00544940(DAT_00802a30);
           }
@@ -96,7 +96,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         if (uVar1 != 0x6102) goto switchD_005dd1c0_default;
         puVar6 = &local_8->field_0020;
         if (local_8->field_0020 != 0) {
-          FUN_006e56b0(local_8,local_8->field_0020);
+          sub_006E56B0(local_8,local_8->field_0020);
         }
         if ((DAT_0080fb72 != 0) || (DAT_00811768 == '\x02')) {
           puVar6 = local_28;
@@ -114,12 +114,12 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
                     ((SystemClassTy *)this_00,0x301,puVar6,(int *)0x0,param_1[5],0);
           goto switchD_005dd1c0_default;
         }
-        if (DAT_00811764 == 0) {
+        if (g_int_00811764 == (int *)0x0) {
           DAT_00811768 = '\0';
           (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,0x301,puVar6,(int *)0x0,0,0);
           goto switchD_005dd1c0_default;
         }
-        if ((*(byte *)(DAT_00811764 + 4) & 1) == 0) {
+        if ((*(byte *)(g_int_00811764 + 1) & 1) == 0) {
           DAT_0080877e = 0;
           param_1[5] = 0;
           (*this_00->vtable->CreateObject)
@@ -133,7 +133,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         if (uVar1 == 0x6109) {
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30d,puVar6,(int *)0x0,param_1,0);
@@ -142,7 +142,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         if (uVar1 == 0x610a) {
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30e,puVar6,(int *)0x0,param_1,0);
@@ -150,7 +150,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         }
         if (uVar1 != 0x611f) goto switchD_005dd1c0_default;
         if (local_8->field_0020 != 0) {
-          FUN_006e56b0(local_8,local_8->field_0020);
+          sub_006E56B0(local_8,local_8->field_0020);
         }
       }
       (*this_00->vtable->CreateObject)
@@ -164,7 +164,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         case 0x6121:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30b,puVar6,(int *)0x0,param_1,0);
@@ -172,7 +172,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         case 0x6122:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x307,puVar6,(int *)0x0,param_1,0);
@@ -180,7 +180,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         case 0x6123:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x308,puVar6,(int *)0x0,param_1,0);
@@ -188,7 +188,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
         case 0x6124:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
-            FUN_006e56b0(local_8,local_8->field_0020);
+            sub_006E56B0(local_8,local_8->field_0020);
           }
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30c,puVar6,(int *)0x0,param_1,0);

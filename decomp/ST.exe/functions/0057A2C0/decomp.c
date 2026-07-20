@@ -2,11 +2,14 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_etorp.cpp
    Diagnostic line evidence: 76 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 0057B670 -> 0057A2C0 @ 0057B6F7 */
 
 undefined4 __cdecl
-FUN_0057a2c0(int *param_1,uint param_2,int *param_3,int param_4,int param_5,undefined4 param_6,
-            int param_7)
+FUN_0057a2c0(int *param_1,uint param_2,int *param_3,int param_4,int param_5,int *param_6,int param_7
+            )
 
 {
   int *piVar1;
@@ -97,7 +100,7 @@ FUN_0057a2c0(int *param_1,uint param_2,int *param_3,int param_4,int param_5,unde
       return uVar12;
     }
     if (*param_3 != 0) {
-      FUN_006ab060(param_3);
+      FUN_006ab060((LPVOID *)param_3);
     }
   }
   else {
@@ -278,8 +281,8 @@ LAB_0057ac02:
                      (short)((longlong)iVar19 * 0x28c1979 >> 0x3f);
         }
         local_24 = 5;
-        if (((((-1 < local_38[0]) && (local_38[0] < DAT_007fb240)) && (-1 < local_38[1])) &&
-            ((local_38[1] < DAT_007fb242 && (-1 < local_38[2])))) && (local_38[2] < 5)) {
+        if (((((-1 < local_38[0]) && (local_38[0] < SHORT_007fb240)) && (-1 < local_38[1])) &&
+            ((local_38[1] < SHORT_007fb242 && (-1 < local_38[2])))) && (local_38[2] < 5)) {
           iVar15 = (int)local_38[0];
           local_5c = iVar15;
           local_58 = (int)local_38[1];
@@ -312,12 +315,12 @@ LAB_0057ac02:
             local_58 = 0;
           }
           iVar19 = local_fc + 1;
-          if ((int)DAT_007fb240 < local_fc + 1) {
-            iVar19 = (int)DAT_007fb240;
+          if ((int)SHORT_007fb240 < local_fc + 1) {
+            iVar19 = (int)SHORT_007fb240;
           }
           iVar16 = local_84 + 1;
-          if ((int)DAT_007fb242 < local_84 + 1) {
-            iVar16 = (int)DAT_007fb242;
+          if ((int)SHORT_007fb242 < local_84 + 1) {
+            iVar16 = (int)SHORT_007fb242;
           }
           local_8 = 1;
           local_84 = iVar16;
@@ -336,16 +339,16 @@ LAB_0057ac02:
               do {
                 while (iVar15 = local_5c, local_5c = iVar15, iVar21 < iVar19) {
                   sVar13 = (short)iVar11;
-                  if (((sVar13 < 0) || (DAT_007fb240 <= sVar13)) ||
+                  if (((sVar13 < 0) || (SHORT_007fb240 <= sVar13)) ||
                      ((sVar8 = (short)local_80, sVar8 < 0 ||
-                      (((DAT_007fb242 <= sVar8 || (sVar18 = (short)local_74, sVar18 < 0)) ||
-                       (DAT_007fb244 <= sVar18)))))) {
+                      (((SHORT_007fb242 <= sVar8 || (sVar18 = (short)local_74, sVar18 < 0)) ||
+                       (SHORT_007fb244 <= sVar18)))))) {
                     this = (int *)0x0;
                   }
                   else {
                     this = *(int **)(DAT_007fb248 +
-                                    ((int)sVar18 * (int)DAT_007fb246 +
-                                     (int)sVar8 * (int)DAT_007fb240 + (int)sVar13) * 8);
+                                    ((int)sVar18 * (int)SHORT_007fb246 +
+                                     (int)sVar8 * (int)SHORT_007fb240 + (int)sVar13) * 8);
                   }
                   local_74 = iVar20;
                   if (((this != (int *)0x0) && (iVar15 = (**(code **)(*this + 0xf0))(), iVar15 != 0)
@@ -389,7 +392,7 @@ LAB_0057a96b:
                                (&DAT_008087ea)[(uint)bVar3 * 0x51];
                     }
                     if ((bVar24) && (iVar15 = (**(code **)(*this + 0xf8))(), iVar15 != 0)) {
-                      thunk_FUN_00416270(this,local_b4,local_e8,local_20);
+                      thunk_FUN_00416270(this,local_b4,(int *)local_e8,(int *)local_20);
                       iVar15 = thunk_FUN_0057bc50(iVar22,iVar10,local_40,local_8c,local_98,local_a8,
                                                   (int)local_b4[0],(int)local_e8[0],(int)local_20[0]
                                                  );

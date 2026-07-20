@@ -1,32 +1,35 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=4; incoming_this_accesses=5;
+   incoming_edx_uses=0 */
 
-undefined4 __thiscall FUN_0045ff50(void *this,int param_1)
+undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
 
 {
-  void *this_00;
+  STGroupBoatC *this_00;
   int iVar1;
   undefined4 uVar2;
+  void *unaff_EDI;
   
   if (param_1 == 0) {
-    this_00 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),
-                                                  *(undefined1 *)((int)this + 0x24)),
-                                         (uint)*(ushort *)((int)this + 0x30));
-    if (this_00 != (void *)0x0) {
-      thunk_FUN_0040ae40(this_00,(uint)*(ushort *)((int)this + 0x32),'\0');
-      iVar1 = thunk_FUN_0040d540(this_00,(uint)*(ushort *)((int)this + 0x32));
+    this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
+                                 (uint)(ushort)this->field_0030);
+    if (this_00 != (STGroupBoatC *)0x0) {
+      thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
+      iVar1 = thunk_FUN_0040d540(this_00,(uint)(ushort)this->field_0032);
       switch(iVar1) {
       case 0:
-        *(undefined4 *)((int)this + 0xfd) = 1;
-        thunk_FUN_0040cdb0(this_00,(uint)*(ushort *)((int)this + 0x32));
+        this->field_00FD = 1;
+        thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
         break;
       case 1:
-        *(undefined2 *)((int)this + 0xfa) = 0;
-        thunk_FUN_0045f6c0(this);
+        this->field_00FA = 0;
+        sub_0045F6C0(this);
         return 2;
       case -6:
       case 2:
-        *(short *)((int)this + 0xfa) = *(short *)((int)this + 0xfa) + 1;
+        this->field_00FA = this->field_00FA + 1;
         return 2;
       default:
         return 2;
@@ -36,34 +39,34 @@ switchD_00460024_caseD_1:
     }
   }
   else {
-    uVar2 = (**(code **)(*(int *)this + 0x1c))();
-    iVar1 = (**(code **)(*(int *)this + 0xd8))();
+    uVar2 = (*this->vtable->vfunc_1C)();
+    iVar1 = (*this->vtable->vfunc_D8)();
     if (iVar1 == 0) {
       switch(uVar2) {
       case 0:
-        if ((*(int *)((int)this + 0x6f7) != 0xb) && (*(int *)((int)this + 0x6f7) != 0x23)) {
+        if ((this->field_06F7 != CASE_B) && (this->field_06F7 != CASE_23)) {
           return 2;
         }
-        if (*(int *)((int)this + 0x21d) != 1) {
+        if (*(int *)&this->field_0x21d != 1) {
           return 2;
         }
-        if (*(uint *)((int)this + 0x24) != (uint)DAT_0080874d) {
+        if (*(uint *)&this->field_0x24 != (uint)DAT_0080874d) {
           return 2;
         }
-        FUN_006e6780(*(void **)((int)this + 0x211),
-                     CONCAT22(CONCAT11(2,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
-                              *(undefined2 *)((int)this + 0x18)));
-        FUN_006e6710(*(void **)((int)this + 0x211),
-                     (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
-                     (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                     (float)*(int *)((int)this + 0x10d) * _DAT_007904f8 + _DAT_007904f4,0x28,
-                     CONCAT22(CONCAT11(2,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
-                              *(undefined2 *)((int)this + 0x18)));
+        FUN_006e6780((void *)this->field_0211,
+                     CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
+                              *(undefined2 *)&this->field_0018));
+        FUN_006e6710((void *)this->field_0211,
+                     (float)(int)this->field_0041 * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
+                     (uint)((float)*(int *)&this->field_0x10d * _DAT_007904f8 + _DAT_007904f4),0x28,
+                     CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
+                              *(undefined2 *)&this->field_0018));
         return 2;
       case 1:
         goto switchD_00460024_caseD_1;
       case 2:
-        (**(code **)(*(int *)this + 0x20))();
+        (*this->vtable->StopMove)(this,unaff_EDI);
         return 3;
       }
     }

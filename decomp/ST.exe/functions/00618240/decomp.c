@@ -82,8 +82,8 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
     }
     if (((((-1 < iVar17) && (-1 < iVar11)) && (-1 < iVar6)) &&
-        ((iVar14 = (int)DAT_007fb240, iVar17 < iVar14 &&
-         (iVar13 = (int)DAT_007fb242, iVar11 < iVar13)))) && (iVar6 < 5)) {
+        ((iVar14 = (int)SHORT_007fb240, iVar17 < iVar14 &&
+         (iVar13 = (int)SHORT_007fb242, iVar11 < iVar13)))) && (iVar6 < 5)) {
       local_2c = iVar11 + -5;
       if (local_2c < 0) {
         local_2c = 0;
@@ -124,16 +124,16 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
             if (local_24 < local_5c) {
               do {
                 sVar15 = (short)iVar14;
-                if (((sVar15 < 0) || (DAT_007fb240 <= sVar15)) ||
+                if (((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) ||
                    ((sVar10 = (short)iVar6, sVar10 < 0 ||
-                    (((DAT_007fb242 <= sVar10 || (sVar12 = (short)iVar11, sVar12 < 0)) ||
-                     (DAT_007fb244 <= sVar12)))))) {
+                    (((SHORT_007fb242 <= sVar10 || (sVar12 = (short)iVar11, sVar12 < 0)) ||
+                     (SHORT_007fb244 <= sVar12)))))) {
                   piVar18 = (int *)0x0;
                 }
                 else {
                   piVar18 = *(int **)(DAT_007fb248 +
-                                     ((int)DAT_007fb246 * (int)sVar12 +
-                                      (int)DAT_007fb240 * (int)sVar10 + (int)sVar15) * 8);
+                                     ((int)SHORT_007fb246 * (int)sVar12 +
+                                      (int)SHORT_007fb240 * (int)sVar10 + (int)sVar15) * 8);
                   iVar11 = local_34;
                 }
                 if (((piVar18 != (int *)0x0) &&
@@ -181,7 +181,7 @@ LAB_0061856a:
                   if ((bVar19) &&
                      (iVar13 = (**(code **)(*piVar18 + 0xf8))(), iVar6 = local_38, iVar11 = local_34
                      , iVar13 != 0)) {
-                    thunk_FUN_00416270(piVar18,local_50,local_84,local_20);
+                    thunk_FUN_00416270(piVar18,local_50,(int *)local_84,(int *)local_20);
                     piVar1 = (int *)(local_60 + iVar17 * 0x2c);
                     *piVar1 = piVar18[9];
                     iVar11 = (**(code **)(*piVar18 + 0x2c))();

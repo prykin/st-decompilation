@@ -1,12 +1,18 @@
 
-void FUN_006bbe40(int *param_1,undefined4 *param_2,undefined4 *param_3,uint param_4)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006CEF60 -> 006BBE40 @ 006CF1D7 | 006CEF60 -> 006BBE40 @ 006CF663
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 006CEF60 -> 006BBE40 @ 006CF1D7 | 006CEF60 -> 006BBE40 @ 006CF663 */
+
+void FUN_006bbe40(int *param_1,uint *param_2,int *param_3,uint param_4)
 
 {
   bool bVar1;
   int iVar2;
   undefined4 local_80 [4];
-  undefined4 local_70;
-  undefined4 local_5c;
+  int local_70;
+  uint local_5c;
   
   bVar1 = false;
   local_5c = 0;

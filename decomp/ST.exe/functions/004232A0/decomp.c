@@ -1,16 +1,23 @@
 
-undefined4 * __fastcall FUN_004232a0(undefined4 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
+   Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=1; incoming_this_accesses=8;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9 */
+
+STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
 
 {
-  FUN_006e60e0(param_1);
-  *param_1 = &PTR_GetMessage_00790508;
-  param_1[7] = 0;
-  param_1[8] = 0;
-  *(undefined4 *)((int)param_1 + 0x29) = 0;
-  *(undefined4 *)((int)param_1 + 0x2d) = 0;
-  *(undefined2 *)((int)param_1 + 0x27) = 0;
-  *(undefined4 *)((int)param_1 + 0x35) = 0;
-  *(undefined4 *)((int)param_1 + 0x39) = 0;
-  return param_1;
+  sub_006E60E0(this);
+  this->vtable = (STGroupBoatCVTable *)&PTR_GetMessage_00790508;
+  this->field_001C = 0;
+  this->field_0020 = 0;
+  this->field_0029 = 0;
+  this->field_002D = 0;
+  this->field_0027 = 0;
+  this->field_0035 = 0;
+  this->field_0039 = 0;
+  return this;
 }
 

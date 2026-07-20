@@ -26,7 +26,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   if (errorCode == 0) {
     puVar1 = &local_8->field_0130;
     if (local_8->field_0130 != 0) {
-      FUN_006ab060(puVar1);
+      FUN_006ab060((LPVOID *)puVar1);
     }
     if ((uint *)pAVar3->field_00BD != (uint *)0x0) {
       uVar4 = FUN_006b0020((uint *)pAVar3->field_00BD,&local_c);

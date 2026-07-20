@@ -1058,7 +1058,7 @@ LAB_00485002:
     }
     thunk_FUN_004162f0(this_00,(undefined2 *)((int)&local_8 + 2),(undefined2 *)((int)&param_1 + 2),
                        (undefined2 *)((int)&param_2 + 2));
-    return (((int)param_2._2_2_ <= DAT_007fb244 + -2) - 1 & 0xffeb) + 0x16;
+    return (((int)param_2._2_2_ <= SHORT_007fb244 + -2) - 1 & 0xffeb) + 0x16;
   case CASE_11:
     iVar5 = thunk_FUN_00493cd0((int)this);
     if (iVar5 == 0) {

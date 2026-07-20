@@ -188,7 +188,7 @@ LAB_005e0d20:
             }
             SpriteClassTy::CloseSprite(this_01);
             if (*(int *)((int)&this_01[1].field_0008 + 1) != 0) {
-              FUN_006ab060((undefined4 *)((int)&this_01[1].field_0008 + 1));
+              FUN_006ab060((LPVOID *)((int)&this_01[1].field_0008 + 1));
             }
             break;
           case 4:

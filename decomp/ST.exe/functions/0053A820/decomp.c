@@ -27,20 +27,20 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
   if (iVar2 == 0) {
     local_8->field_0180 = param_1;
     if (param_1 == '\0') {
-      if ((DAT_00801688 != (CPanelTy *)0x0) && (DAT_00801688->field_023F == 1)) {
-        CPanelTy::ShiftControls(DAT_00801688,1);
+      if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == 1)) {
+        CPanelTy::ShiftControls(g_cPanel_00801688,1);
       }
       iVar2 = 0;
     }
     else {
-      if (DAT_008016e8 != (ProdPanelTy *)0x0) {
-        ProdPanelTy::SetPanel(DAT_008016e8,'\0');
+      if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
       }
-      if (DAT_0080167c != (ProdPanelTy *)0x0) {
-        ProdPanelTy::SetPanel(DAT_0080167c,'\0');
+      if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
       }
-      if (DAT_00801684 != (ProdPanelTy *)0x0) {
-        ProdPanelTy::SetPanel(DAT_00801684,'\0');
+      if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
       }
       if (DAT_00801698 != (int *)0x0) {
         (**(code **)(*DAT_00801698 + 0x1c))(0);
@@ -60,14 +60,14 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
       if (DAT_0080168c != (int *)0x0) {
         (**(code **)(*DAT_0080168c + 0x1c))(0);
       }
-      if (DAT_00801680 != (ProdPanelTy *)0x0) {
-        ProdPanelTy::SetPanel(DAT_00801680,'\0');
+      if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
       }
       if (DAT_00801690 != (int *)0x0) {
         (**(code **)(*DAT_00801690 + 0x18))(0);
       }
-      if (DAT_008016dc != (OptPanelTy *)0x0) {
-        OptPanelTy::SwitchOptPanelOff(DAT_008016dc);
+      if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+        OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
       }
       iVar2 = 1;
     }

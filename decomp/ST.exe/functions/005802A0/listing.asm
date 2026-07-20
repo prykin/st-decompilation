@@ -1,4 +1,4 @@
-FUN_005802a0:
+STResourceC::sub_005802A0:
 005802A0  55                        PUSH EBP
 005802A1  8B EC                     MOV EBP,ESP
 005802A3  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

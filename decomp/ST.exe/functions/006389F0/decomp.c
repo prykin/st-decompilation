@@ -12,12 +12,12 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
   
   local_8 = 0;
   bVar2 = thunk_FUN_004961b0(param_1,param_2,param_3);
-  if (((((CONCAT31(extraout_var,bVar2) == 0) && (-1 < param_1)) && (param_1 < DAT_007fb240)) &&
-      ((-1 < param_2 && (param_2 < DAT_007fb242)))) &&
+  if (((((CONCAT31(extraout_var,bVar2) == 0) && (-1 < param_1)) && (param_1 < SHORT_007fb240)) &&
+      ((-1 < param_2 && (param_2 < SHORT_007fb242)))) &&
      ((-1 < param_3 &&
-      ((param_3 < DAT_007fb244 &&
+      ((param_3 < SHORT_007fb244 &&
        (iVar1 = *(int *)(DAT_007fb248 + 4 +
-                        ((int)DAT_007fb246 * (int)param_3 + (int)DAT_007fb240 * (int)param_2 +
+                        ((int)SHORT_007fb246 * (int)param_3 + (int)SHORT_007fb240 * (int)param_2 +
                         (int)param_1) * 8), iVar1 != 0)))))) {
     iVar3 = *(int *)(iVar1 + 0x20);
     if ((iVar3 == 0xbe) || ((iVar3 == 0x1ae || (iVar3 == 0x8c)))) {

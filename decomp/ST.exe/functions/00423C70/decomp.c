@@ -29,7 +29,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
       }
     }
     this_00 = (void *)STAllPlayersC::GetObjPtr
-                                (DAT_007fa174,
+                                (g_sTAllPlayers_007FA174,
                                  CONCAT31((int3)((uint)extraout_EDX >> 8),
                                           *(undefined1 *)((int)this + 0x24)),local_8,CASE_1);
     thunk_FUN_00419c30(this_00,0xffff);

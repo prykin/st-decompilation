@@ -30,7 +30,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,(byte *)s_expl_vc0_007d201c,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,s_expl_vc0_007d201c,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       FUN_006e8660((void *)pSVar3->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar4 + 9),
                    *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,0xa9,0);
@@ -48,7 +48,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
     }
     if ((pSVar3->field_0353 == -1) && (param_1 != 0)) {
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,s_expl_fla_007d1f5c,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       pSVar3->field_034B = puVar4;
       pSVar3->field_034F = 0;
@@ -56,7 +56,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
     puVar1 = &pSVar3->field_0363;
     if ((pSVar3->field_0363 == -1) && (param_1 != 0)) {
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,(byte *)s_expl_vc1_007d2028,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,s_expl_vc1_007d2028,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       pSVar3->field_035F = puVar4;
       FUN_006e8660((void *)pSVar3->field_0211,puVar1,1,0,*(uint *)((int)puVar4 + 9),

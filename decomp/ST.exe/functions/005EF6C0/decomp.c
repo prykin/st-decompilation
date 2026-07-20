@@ -14,7 +14,7 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
   if (*(short *)((int)this + 0x2ab) != 0) {
     this_00 = (STBoatC *)
               STAllPlayersC::GetObjPtr
-                        (DAT_007fa174,
+                        (g_sTAllPlayers_007FA174,
                          CONCAT31((int3)(uVar1 >> 8),*(undefined1 *)((int)this + 0x2a3)),uVar1,
                          CASE_1);
     if ((this_00 != (STBoatC *)0x0) && (this_00->field_0018 == *(int *)((int)this + 0x2a7)))

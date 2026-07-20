@@ -66,7 +66,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
       wsprintfA((LPSTR)&DAT_008016a4,&DAT_007c6ee4,&DAT_008016a4,puVar2);
       return &DAT_008016a4;
     }
-    pcVar3 = (char *)FUN_006b0140(0x2732,DAT_00807618);
+    pcVar3 = (char *)FUN_006b0140(0x2732,HINSTANCE_00807618);
     uVar4 = 0xffffffff;
     do {
       pcVar7 = pcVar3;

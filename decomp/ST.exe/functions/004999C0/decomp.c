@@ -10,12 +10,12 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   code *pcVar1;
   STGroupBoatC *this_00;
   int iVar2;
-  uint *puVar3;
-  int iVar4;
-  undefined4 uVar5;
+  uint *groupContent;
+  int iVar3;
+  undefined4 uVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar6;
+  uint uVar5;
   InternalExceptionFrame local_54;
   STGroupBoatC *local_10;
   undefined2 local_c;
@@ -30,44 +30,46 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   this_00 = local_10;
   if (iVar2 == 0) {
     if (local_10->field_0212 == 0) {
-      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x509)
-      ;
+      RaiseInternalException
+                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x509);
     }
     if (this_00->field_020E == 0) {
-      RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x50b)
-      ;
+      RaiseInternalException
+                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                 0x50b);
     }
-    uVar6 = 0;
+    uVar5 = 0;
     iVar2 = *(int *)(this_00->field_020E + 0xc);
     if (0 < iVar2) {
       do {
-        FUN_006acc70(this_00->field_020E,uVar6,(undefined4 *)local_8);
+        FUN_006acc70(this_00->field_020E,uVar5,(undefined4 *)local_8);
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
-          puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+          groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           local_c = 0xffff;
-          local_a = (undefined2)uVar6;
-          Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&local_c);
-          ReMakePVecAndTgtList(this_00,(int)puVar3);
-          FUN_006ae110((byte *)puVar3);
+          local_a = (undefined2)uVar5;
+          Library::DKW::TBL::FUN_006ae1c0(groupContent,(undefined4 *)&local_c);
+          ReMakePVecAndTgtList(this_00,groupContent);
+          FUN_006ae110((byte *)groupContent);
           break;
         }
-        uVar6 = uVar6 + 1;
-      } while ((int)uVar6 < iVar2);
+        uVar5 = uVar5 + 1;
+      } while ((int)uVar5 < iVar2);
     }
     g_currentExceptionFrame = local_54.previous;
   }
   else {
     g_currentExceptionFrame = local_54.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51c,0,iVar2,&DAT_007a4ccc
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51c,0,iVar2,&DAT_007a4ccc
                                  ,s_STGroupBoatC__ReMakePVecAndTgtLi_007abec8);
-      if (iVar4 == 0) {
+      if (iVar3 == 0) {
         RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51d);
         return 0xffffffff;
       }
       pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      uVar4 = (*pcVar1)();
+      return uVar4;
     }
   }
   return this_00->field_0212;

@@ -71,7 +71,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     thunk_FUN_00544940((int)DAT_00802a30);
   }
   DarkScreen(DAT_0080759c,1,0);
-  thunk_FUN_005daf20(DAT_0081176c);
+  StartSystemTy::sub_005DAF20(DAT_0081176c);
   this_03 = local_18;
   DAT_0080877e = 1;
   DAT_0080877f = 0;
@@ -87,17 +87,16 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   wsprintfA((LPSTR)&DAT_0080f33a,s_REPORT__s__c_007ccf6c,puVar5,
             (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
-  iVar4 = FUN_0070a9f0(DAT_00806780,(char *)&DAT_0080f33a,0,1);
-  this_03->field_005D = iVar4;
-  FUN_006bc360(iVar4,local_6a4,(int *)0x0);
-  *(undefined4 *)(DAT_0081176c + 0x140) = 0x18;
+  puVar6 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
+  this_03->field_005D = puVar6;
+  FUN_006bc360(puVar6,local_6a4,(int *)0x0);
+  *(undefined4 *)&DAT_0081176c->field_0x140 = 0x18;
   Library::Ourlib::PALETTE::FUN_00718780
-            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)(DAT_0081176c + 0x144));
+            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&DAT_0081176c->field_0x144);
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,(byte *)s_STATS_007ccf64,0xffffffff,0,1,0,
-                      (undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,s_STATS_007ccf64,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_03->field_007F = puVar6;
-  uVar7 = FUN_0070aa50(DAT_00806780,s_RPT_IND_007ccf58,0,1);
+  uVar7 = FUN_0070aa50(g_cMf32_00806780,s_RPT_IND_007ccf58,0,1);
   this_03->field_006F = uVar7;
   pcVar8 = (ccFntTy *)thunk_FUN_005defe0(this_03->field_005D,(undefined *)0x0,DAT_00807dd9);
   this_03->field_0083 = pcVar8;
@@ -105,8 +104,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   pcVar8->field_005C = 0;
   pcVar8 = (ccFntTy *)thunk_FUN_005df290(this_03->field_005D,(undefined *)0x0,DAT_00807dd9);
   this_03->field_0087 = pcVar8;
-  *(ccFntTy **)(DAT_0081176c + 0x38) = pcVar8;
-  pcVar8 = (ccFntTy *)ccFntTy::operator(this_02,0x19d,DAT_00806780,s_RPT_FNTN_007ccf4c,0);
+  DAT_0081176c->field_0038 = pcVar8;
+  pcVar8 = (ccFntTy *)ccFntTy::operator(this_02,0x19d,g_cMf32_00806780,s_RPT_FNTN_007ccf4c,0);
   this_03->field_008B = pcVar8;
   pcVar8->field_0058 = 1;
   pcVar8->field_005C = 0;
@@ -147,7 +146,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   this_03->field_031B = 0x18;
   this_03->field_0317 = 0x4c;
   if (pcVar8->field_00A0 != 0) {
-    FUN_00710790((int)pcVar8);
+    FUN_00710790((uint *)pcVar8);
   }
   this_03->field_030B = *(undefined4 *)&pcVar8->field_0x8a;
   if (this_03->field_0066 == '\x01') {
@@ -221,7 +220,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
         pcVar18 = (char *)cMf32::RecNameGetNext(this_01);
         pcVar3 = extraout_ECX_00;
       }
-      cMf32::delete(pcVar3,&this_01->field_0000);
+      cMf32::delete(pcVar3,this_01);
     }
     do {
       local_c = &this_03->field_0347;
@@ -273,13 +272,14 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     }
     this_03->field_0067 = 1;
   }
-  if (*(MMsgTy **)(DAT_0081176c + 0x2e6) != (MMsgTy *)0x0) {
-    MMsgTy::HidePanel(*(MMsgTy **)(DAT_0081176c + 0x2e6),0,0,1);
+  if (DAT_0081176c->field_02E6 != (MMsgTy *)0x0) {
+    MMsgTy::HidePanel(DAT_0081176c->field_02E6,0,0,1);
   }
   SetCtrl(this_03,0);
   PutDDX(0,0,'\x01',(BITMAPINFO *)this_03->field_005D);
   local_8 = 0xffffffff;
-  FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403099,0x2bd,0x15e,DAT_0081176c + 0x140);
+  FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403099,0x2bd,0x15e,
+               (uint)&DAT_0081176c->field_0x140);
   Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x47,0x46);
   pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
   if (pHVar11 == (HoloTy *)0x0) {

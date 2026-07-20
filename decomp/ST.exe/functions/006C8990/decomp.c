@@ -221,7 +221,7 @@ LAB_006c8bc4:
     local_30 = -local_30;
   }
   if (local_14 != 0) {
-    RaiseInternalException(local_14,DAT_007ed77c,&DAT_007ee144,0xf0);
+    RaiseInternalException(local_14,g_overwriteContext_007ED77C,&DAT_007ee144,0xf0);
   }
   return (float10)local_30;
 }

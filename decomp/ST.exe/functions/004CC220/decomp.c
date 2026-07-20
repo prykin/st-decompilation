@@ -31,7 +31,8 @@ undefined4 __fastcall FUN_004cc220(int param_1)
                        *(uint *)(param_1 + 0x60b),*(uint *)(param_1 + 0x60f),0x11);
   if (exceptionCode != 0) {
     RaiseInternalException
-              (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x355);
+              (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,
+               0x355);
   }
   *(undefined4 *)(param_1 + 0x440) = 0;
   *(undefined4 *)(param_1 + 0x43c) = 0;

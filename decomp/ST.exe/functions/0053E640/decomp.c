@@ -26,7 +26,7 @@ void __thiscall SpecPanelTy::DonePanel(SpecPanelTy *this)
   if (errorCode == 0) {
     this_00 = extraout_ECX;
     if (local_8->field_017C != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_017C);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_017C);
       this_00 = extraout_ECX_00;
     }
     pSVar2->field_017C = 0;

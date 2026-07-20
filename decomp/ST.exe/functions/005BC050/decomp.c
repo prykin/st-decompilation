@@ -49,14 +49,14 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   pPVar2 = local_c;
   if (param_1 != '\0') {
     if (local_c->field_1A73 != 0) {
-      FUN_006e56b0((void *)local_c->field_000C,local_c->field_1A73);
+      StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_1A73);
     }
     pPVar2->field_1A73 = 0;
     pPVar2->field_1A61 = 0;
     FUN_006b5f80(DAT_008075a8,0x79,0x51,0x22e,0x145);
     if (pPVar2->field_1C96 != (HoloTy *)0x0) {
       HoloTy::Done(pPVar2->field_1C96);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pPVar2->field_1C96);
+      Library::MSVCRT::FUN_0072e2b0(pPVar2->field_1C96);
       pPVar2->field_1C96 = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -133,12 +133,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     puVar5 = (undefined4 *)((int)puVar5 + 1);
   }
   if (pPVar2->field_1C86 != 0) {
-    FUN_006e56b0((void *)pPVar2->field_000C,pPVar2->field_1C86);
+    StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_1C86);
     pPVar2->field_1C86 = 0;
     FUN_006b5f80(DAT_008075a8,0x79,0x197,0x22e,0x2e);
     if (pPVar2->field_1C9A != (HoloTy *)0x0) {
       HoloTy::Done(pPVar2->field_1C9A);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pPVar2->field_1C9A);
+      Library::MSVCRT::FUN_0072e2b0(pPVar2->field_1C9A);
       pPVar2->field_1C9A = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);

@@ -24,7 +24,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   this_00 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_010C != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_010C);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_010C);
     }
     puVar1 = &this_00->field_0x18;
     this_00->field_010C = 0;
@@ -63,13 +63,13 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     }
     this_00->field_0108 = 0xffffffff;
     if (this_00->field_00FC != 0) {
-      FUN_006ab060(&this_00->field_00FC);
+      FUN_006ab060((LPVOID *)&this_00->field_00FC);
     }
     if (this_00->field_0100 != 0) {
-      FUN_006ab060(&this_00->field_0100);
+      FUN_006ab060((LPVOID *)&this_00->field_0100);
     }
     if (this_00->field_0104 != 0) {
-      FUN_006ab060(&this_00->field_0104);
+      FUN_006ab060((LPVOID *)&this_00->field_0104);
     }
     if (this_00->field_0098 != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x88);

@@ -43,8 +43,8 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
       ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0,0x16,0x1b8,0xf0);
-      uVar5 = FUN_006b0140(0x25bb,DAT_00807618);
-      uVar6 = FUN_006b0140(0x25ba,DAT_00807618);
+      uVar5 = FUN_006b0140(0x25bb,HINSTANCE_00807618);
+      uVar6 = FUN_006b0140(0x25ba,HINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_____d__s__007cc434,uVar6,param_1,param_2,uVar5);
       ccFntTy::WrTxt(pFVar2->field_1A73,&DAT_0080f33a,-2,-1,2,-1,-1);
       FUN_006b35d0(DAT_008075a8,pFVar2->field_1ABC);

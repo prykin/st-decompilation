@@ -52,15 +52,15 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
     param_9 = uVar3;
     local_10 = local_20;
     param_1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar3 * 4);
-    iVar2 = thunk_FUN_0060e210(&local_24,&local_14,4,(undefined2 *)param_1,uVar3);
+    iVar2 = thunk_FUN_0060e210(&local_24,&local_14,4,(int)param_1,uVar3);
     if (iVar2 == 0) {
       if (*(undefined4 **)((int)this + 0x2e5) == (undefined4 *)0x0) {
         *(uint *)((int)this + 0x2e1) = uVar3;
-        *(undefined4 *)((int)this + 0x2e5) = param_1;
+        *(LPVOID *)((int)this + 0x2e5) = param_1;
         return param_8;
       }
       if (*(int *)((int)this + 0x2e1) < (int)uVar3) {
-        FUN_006ab060((undefined4 *)((int)this + 0x2e5));
+        FUN_006ab060((LPVOID *)((int)this + 0x2e5));
         *(uint *)((int)this + 0x2e1) = uVar3;
         *(undefined4 **)((int)this + 0x2e5) = param_1;
         return param_8;

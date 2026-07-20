@@ -20,9 +20,8 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   void *unaff_EDI;
   char *pcVar10;
   int iVar11;
-  undefined4 uVar12;
+  int iVar12;
   int iVar13;
-  int iVar14;
   InternalExceptionFrame local_90;
   undefined4 local_4c [8];
   undefined4 local_2c [8];
@@ -92,13 +91,13 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
   ccFntTy::SetSurf(pFVar3->field_1A73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
-  iVar14 = -1;
   iVar13 = -1;
-  uVar12 = 2;
+  iVar12 = -1;
+  uVar8 = 2;
   iVar11 = -1;
   iVar4 = -2;
-  puVar7 = (uint *)FUN_006b0140(0x25bd,DAT_00807618);
-  ccFntTy::WrTxt(pFVar3->field_1A73,puVar7,iVar4,iVar11,uVar12,iVar13,iVar14);
+  puVar7 = (uint *)FUN_006b0140(0x25bd,HINSTANCE_00807618);
+  ccFntTy::WrTxt(pFVar3->field_1A73,puVar7,iVar4,iVar11,uVar8,iVar12,iVar13);
   FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
   puVar6 = local_2c;
   for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {

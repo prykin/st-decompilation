@@ -21,10 +21,10 @@ byte __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   int local_20;
   undefined4 local_1c;
   int local_18;
-  undefined4 local_14;
+  int local_14;
   undefined4 local_10;
   ushort *local_c;
-  undefined4 local_8;
+  int local_8;
   
   if (*(int *)((int)param_1 + 0x7e2) == 0) {
     piVar2 = *(int **)((int)param_1 + 0x7a2);
@@ -35,14 +35,13 @@ byte __fastcall FUN_00483300(int *param_1,undefined4 param_2)
     if ((*(int *)((int)param_1 + 0x7a2) != 0) || (0x27 < *(int *)((int)param_1 + 0x72a))) {
 LAB_00483342:
       piVar2 = (int *)STAllPlayersC::GetObjPtr
-                                (DAT_007fa174,
+                                (g_sTAllPlayers_007FA174,
                                  CONCAT31((int3)((uint)param_2 >> 8),
                                           *(undefined1 *)((int)param_1 + 0x487)),
                                  CONCAT22((short)((uint)piVar2 >> 0x10),
                                           *(undefined2 *)((int)param_1 + 0x48b)),
                                  *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)param_1 + 0x483));
-      thunk_FUN_00416270(piVar2,(undefined2 *)&local_10,(undefined2 *)&local_14,
-                         (undefined2 *)&local_8);
+      thunk_FUN_00416270(piVar2,(undefined2 *)&local_10,&local_14,&local_8);
       iVar3 = FUN_006acf0d((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43)
                            ,(int)*(short *)((int)param_1 + 0x45),(int)(short)local_10,
                            (int)(short)local_14,(int)(short)local_8);

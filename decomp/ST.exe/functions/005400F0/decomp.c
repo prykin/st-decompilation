@@ -15,7 +15,7 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
   undefined4 uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  char *pcVar7;
+  char *text;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
   
@@ -94,16 +94,16 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
   }
   else {
     if (uVar1 == 0xc005) {
-      pcVar7 = s_BUT_SLRT_007c7b20;
+      text = s_BUT_SLRT_007c7b20;
     }
     else {
       if (uVar1 != 0xc006) {
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      pcVar7 = s_BUT_SLLT_007c7abc;
+      text = s_BUT_SLLT_007c7abc;
     }
-    pCVar4 = thunk_FUN_00571240(pcVar7,0);
+    pCVar4 = thunk_FUN_00571240(text,0);
     PanelTy::PaintBut((PanelTy *)this_00,param_1,1,pCVar4,thunk_FUN_00529fe0,0,1);
   }
   g_currentExceptionFrame = local_4c.previous;

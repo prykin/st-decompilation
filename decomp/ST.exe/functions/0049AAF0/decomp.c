@@ -65,7 +65,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     FUN_006ae110((byte *)local_8->field_020E);
     pSVar12->field_020E = 0;
     pSVar12->field_0212 = 0;
-    FUN_006ab060(&pSVar12->field_021E);
+    FUN_006ab060((LPVOID *)&pSVar12->field_021E);
     param_1 = 0;
   }
   pSVar15 = local_8;
@@ -80,7 +80,8 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       local_18 = *(int *)(local_8->field_00EF + 0xc);
       if (local_18 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x68f);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x68f);
       }
       if ((byte *)pSVar15->field_020E != (byte *)0x0) {
         FUN_006ae110((byte *)pSVar15->field_020E);
@@ -98,7 +99,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
           if ((local_2c < 8) &&
              ((((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)) &&
                (piVar8 = (int *)STAllPlayersC::GetObjPtr
-                                          (DAT_007fa174,
+                                          (g_sTAllPlayers_007FA174,
                                            CONCAT22(uStack_2a,CONCAT11(cStack_2b,local_2c)),
                                            CONCAT22(uStack_28,uStack_2a),(int)cStack_2b),
                pSVar12 = local_8, piVar8 != (int *)0x0)) &&
@@ -117,7 +118,8 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       pSVar12->field_00EF = 0;
       if (*(int *)(pSVar12->field_020E + 0xc) == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x69d);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x69d);
       }
     }
     pSVar12 = local_8;
@@ -144,32 +146,32 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
               if (iVar6 < pSVar12->field_00FD + iVar6) {
                 do {
                   sVar5 = (short)local_c;
-                  if (((sVar5 < 0) || (DAT_007fb240 <= sVar5)) ||
+                  if (((sVar5 < 0) || (SHORT_007fb240 <= sVar5)) ||
                      ((sVar4 = (short)local_14, sVar4 < 0 ||
-                      (((DAT_007fb242 <= sVar4 || ((short)local_10 < 0)) ||
-                       (DAT_007fb244 <= (short)local_10)))))) {
+                      (((SHORT_007fb242 <= sVar4 || ((short)local_10 < 0)) ||
+                       (SHORT_007fb244 <= (short)local_10)))))) {
                     piVar8 = (int *)0x0;
                   }
                   else {
                     piVar8 = *(int **)(DAT_007fb248 +
-                                      ((int)DAT_007fb240 * (int)sVar4 +
-                                      (int)sVar5 + DAT_007fb246 * iVar6) * 8);
+                                      ((int)SHORT_007fb240 * (int)sVar4 +
+                                      (int)sVar5 + SHORT_007fb246 * iVar6) * 8);
                   }
                   if ((piVar8 == (int *)0x0) ||
                      (((iVar9 = piVar8[8], iVar9 != 0x14 && (iVar9 != 1000)) && (iVar9 != 0x3e9))))
                   {
 LAB_0049af27:
                     pSVar12 = local_8;
-                    if ((((sVar5 < 0) || (DAT_007fb240 <= sVar5)) ||
+                    if ((((sVar5 < 0) || (SHORT_007fb240 <= sVar5)) ||
                         (sVar5 = (short)local_14, sVar5 < 0)) ||
-                       (((DAT_007fb242 <= sVar5 || ((short)local_10 < 0)) ||
-                        (DAT_007fb244 <= (short)local_10)))) {
+                       (((SHORT_007fb242 <= sVar5 || ((short)local_10 < 0)) ||
+                        (SHORT_007fb244 <= (short)local_10)))) {
                       piVar8 = (int *)0x0;
                     }
                     else {
                       piVar8 = *(int **)(DAT_007fb248 + 4 +
-                                        ((int)DAT_007fb240 * (int)sVar5 +
-                                        (int)(short)local_c + DAT_007fb246 * iVar6) * 8);
+                                        ((int)SHORT_007fb240 * (int)sVar5 +
+                                        (int)(short)local_c + SHORT_007fb246 * iVar6) * 8);
                     }
                     if (((piVar8 != (int *)0x0) && (piVar8[8] == 0x1ae)) &&
                        ((local_2c = *(byte *)(piVar8 + 9), local_2c < 8 &&
@@ -300,7 +302,8 @@ LAB_0049aec9:
         FUN_006ae110((byte *)pSVar12->field_020E);
         pSVar12->field_020E = 0;
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6ce);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x6ce);
       }
     }
     pSVar12->field_020A = pSVar12->field_00EB;
@@ -313,7 +316,7 @@ LAB_0049aec9:
           FUN_006acc70(local_8->field_020E,(int)sVar5,(undefined4 *)&local_2c);
           if ((cStack_2b != '\x01') ||
              (uVar14 = STAllPlayersC::GetObjPtr
-                                 (DAT_007fa174,CONCAT22(uStack_2a,CONCAT11(1,local_2c)),
+                                 (g_sTAllPlayers_007FA174,CONCAT22(uStack_2a,CONCAT11(1,local_2c)),
                                   CONCAT22(uStack_28,uStack_2a),CASE_1),
              *(int *)(uVar14 + 0x20) != 0x14)) {
             FUN_006b0c70(local_8->field_020E,(int)sVar5);
@@ -326,7 +329,8 @@ LAB_0049aec9:
       pSVar15 = local_8;
       if (*(int *)(local_8->field_020E + 0xc) == 0) {
         RaiseInternalException
-                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e3);
+                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                   0x6e3);
       }
     }
     MakePVec(pSVar15);

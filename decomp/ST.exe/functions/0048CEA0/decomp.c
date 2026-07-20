@@ -55,7 +55,8 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
         else {
-          this_00 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,local_24,local_20,CASE_1);
+          this_00 = (int *)STAllPlayersC::GetObjPtr
+                                     (g_sTAllPlayers_007FA174,local_24,local_20,CASE_1);
           if (this_00 != (int *)0x0) {
             iVar3 = (**(code **)(*this_00 + 0xf8))();
             if (iVar3 == 1) {
@@ -63,7 +64,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
               if (iVar3 == 1) {
                 iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)&pSVar2->field_0x24);
                 if (iVar3 == 1) {
-                  thunk_FUN_00416270(this_00,&local_a,&local_8,&local_6);
+                  thunk_FUN_00416270(this_00,&local_a,(int *)&local_8,(int *)&local_6);
                   iVar3 = (int)pSVar2->field_0041 - (int)local_a;
                   iVar4 = (int)pSVar2->field_0043 - (int)local_8;
                   iVar5 = (int)pSVar2->field_0045 - (int)local_6;

@@ -25,7 +25,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_80;
-  int local_3c;
+  LPVOID local_3c;
   undefined4 local_38;
   int local_34;
   undefined4 local_30;
@@ -72,7 +72,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
       *(undefined4 *)&this_00->field_0x23d = 0;
       STT3DSprC::StopShow((STT3DSprC *)puVar11,0xe);
       thunk_FUN_004ad5e0((int)puVar11);
-      STT3DSprC::LoadSequence((STT3DSprC *)puVar11,8,DAT_00806764,(byte *)s_expshark_007cbb28,0x1d);
+      STT3DSprC::LoadSequence((STT3DSprC *)puVar11,8,DAT_00806764,s_expshark_007cbb28,0x1d);
       STT3DSprC::StartShow((STT3DSprC *)puVar11,8,DAT_00802a38->field_00E4);
       *(undefined4 *)&this_00->field_0x257 = 4;
       g_currentExceptionFrame = local_80.previous;
@@ -253,9 +253,11 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
         if (iVar6 == 0) {
           puVar11 = &this_00->field_01D5;
           iVar6 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)puVar11,0xe,DAT_0080676c,(byte *)s_shark1_007cbb20,0x1d);
+                            ((STT3DSprC *)puVar11,0xe,DAT_0080676c,s_shark1_007cbb20,0x1d);
           if (iVar6 != 0) {
-            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_To_shark_cpp_007cbb7c,0x9f);
+            RaiseInternalException
+                      (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_To_shark_cpp_007cbb7c,0x9f)
+            ;
           }
           thunk_FUN_004ac610(puVar11,'\x0e');
           STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,DAT_00802a38->field_00E4);
@@ -295,10 +297,10 @@ LAB_0058dc72:
             else if (*(int *)&this_00->field_0x273 == 0) {
               *(undefined4 *)&this_00->field_0x27b = 0x10e;
             }
-            else if (local_1c == (undefined4 *)(DAT_007fb240 + -1)) {
+            else if (local_1c == (undefined4 *)(SHORT_007fb240 + -1)) {
               *(undefined4 *)&this_00->field_0x27b = 0xb4;
             }
-            else if (*(int *)&this_00->field_0x273 == DAT_007fb242 + -1) {
+            else if (*(int *)&this_00->field_0x273 == SHORT_007fb242 + -1) {
               *(undefined4 *)&this_00->field_0x27b = 0x5a;
             }
             thunk_FUN_004ad3c0(puVar11,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
@@ -356,11 +358,11 @@ LAB_0058dc72:
       *(undefined4 *)&this_00->field_0x257 = *(undefined4 *)((int)local_1c + 0x4e);
       *(undefined4 *)&this_00->field_0x241 = *(undefined4 *)((int)local_1c + 0x52);
       *(undefined4 *)&this_00->field_0x245 = *(undefined4 *)((int)local_1c + 0x56);
-      local_3c = Library::DKW::LIB::FUN_006aac70(0x44);
-      if (local_3c != 0) {
+      local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+      if (local_3c != (LPVOID)0x0) {
         iVar6 = 0;
         do {
-          *(int **)(iVar6 + local_3c) = DAT_0080676c;
+          *(int **)(iVar6 + (int)local_3c) = DAT_0080676c;
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0x44);
         if (((*(int *)&this_00->field_0x241 < 1) || (DAT_00806724 == 0)) || (DAT_00806724 == -0x30))
@@ -376,7 +378,8 @@ LAB_0058dc72:
         local_24 = 0;
         local_30 = DAT_008073cc;
         STT3DSprC::RestoreSpr
-                  ((STT3DSprC *)&this_00->field_01D5,&local_3c,(undefined4 *)((int)puVar11 + 0x62));
+                  ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
+                   (undefined4 *)((int)puVar11 + 0x62));
         FUN_006ab060(&local_3c);
         DumpClassC::WritePtr
                   (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,

@@ -48,7 +48,8 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_nick_to_torp_cpp_007d25c0,0x49e);
+  RaiseInternalException
+            (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_nick_to_torp_cpp_007d25c0,0x49e);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

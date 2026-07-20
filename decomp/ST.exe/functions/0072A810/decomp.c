@@ -1,6 +1,10 @@
 
+/* [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 007297E0 -> 0072A810 @ 00729A8E | 007297E0 -> 0072A810 @ 00729C9B | 007297E0 ->
+   0072A810 @ 00729DB2 | 007297E0 -> 0072A810 @ 0072A01D */
+
 void __cdecl
-FUN_0072a810(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,int param_6)
+FUN_0072a810(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,uint *param_6)
 
 {
   int iVar1;
@@ -10,7 +14,7 @@ FUN_0072a810(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
   *param_5 = iVar1;
   while (-1 < iVar1) {
     if (((param_5[9] & param_5[8]) != 0) && (param_5[6] >> 0x10 < (int)(uint)*param_3)) {
-      *param_1 = *(byte *)((uint)*param_1 + param_6);
+      *param_1 = *(byte *)((uint)*param_1 + (int)param_6);
     }
     uVar2 = param_5[8];
     param_5[8] = uVar2 >> 1;

@@ -118,9 +118,9 @@ cf_common_exit_00601B38:
     if (((iVar9 != iVar6) || (iVar5 != iVar2)) || (local_8 != iVar3)) {
       iVar6 = local_8;
       if (iVar9 < 0) goto LAB_006018c7;
-      if ((((-1 < iVar5) && (iVar9 < DAT_007fb240)) &&
-          ((iVar5 < DAT_007fb242 &&
-           (iVar6 = DAT_007fb240 * iVar5, *(char *)(DAT_007fb26c + iVar6 + iVar9) != '\0')))) &&
+      if ((((-1 < iVar5) && (iVar9 < SHORT_007fb240)) &&
+          ((iVar5 < SHORT_007fb242 &&
+           (iVar6 = SHORT_007fb240 * iVar5, *(char *)(DAT_007fb26c + iVar6 + iVar9) != '\0')))) &&
          (((&DAT_007fb24c)[param_7] == 0 ||
           (*(char *)((&DAT_007fb24c)[param_7] + iVar6 + iVar9) == '\0')))) {
         if ((*(char *)((int)this + 0x2c) == '\0') && (iVar3 < 5)) {
@@ -140,18 +140,19 @@ cf_common_exit_00601B38:
     }
   }
   iVar6 = local_8;
-  if (((((-1 < iVar9) && (iVar9 < DAT_007fb240)) && (-1 < iVar5)) &&
-      ((iVar5 < DAT_007fb242 && (-1 < local_8)))) && (local_8 < DAT_007fb244)) {
+  if (((((-1 < iVar9) && (iVar9 < SHORT_007fb240)) && (-1 < iVar5)) &&
+      ((iVar5 < SHORT_007fb242 && (-1 < local_8)))) && (local_8 < SHORT_007fb244)) {
     sVar4 = (short)iVar9;
     sVar8 = (short)iVar5;
     sVar12 = (short)local_8;
     bVar10 = thunk_FUN_004961b0(sVar4,sVar8,sVar12);
     if (CONCAT31(extraout_var,bVar10) == 0) {
-      if ((((sVar4 < 0) || (DAT_007fb240 <= sVar4)) ||
-          ((sVar8 < 0 || (((DAT_007fb242 <= sVar8 || (sVar12 < 0)) || (DAT_007fb244 <= sVar12))))))
-         || (piVar7 = *(int **)(DAT_007fb248 +
-                               ((int)DAT_007fb246 * (int)sVar12 + (int)DAT_007fb240 * (int)sVar8 +
-                               (int)sVar4) * 8), piVar7 == (int *)0x0)) {
+      if ((((sVar4 < 0) || (SHORT_007fb240 <= sVar4)) ||
+          ((sVar8 < 0 || (((SHORT_007fb242 <= sVar8 || (sVar12 < 0)) || (SHORT_007fb244 <= sVar12)))
+           ))) || (piVar7 = *(int **)(DAT_007fb248 +
+                                     ((int)SHORT_007fb246 * (int)sVar12 +
+                                      (int)SHORT_007fb240 * (int)sVar8 + (int)sVar4) * 8),
+                  piVar7 == (int *)0x0)) {
         local_c = 1;
         this = local_10;
         goto cf_common_exit_00601B38;
@@ -198,8 +199,8 @@ LAB_006018c7:
   else {
     local_28 = iVar9 + 1;
     local_14 = iVar9;
-    if ((int)DAT_007fb240 <= iVar9 + 1) {
-      local_28 = DAT_007fb240 + -1;
+    if ((int)SHORT_007fb240 <= iVar9 + 1) {
+      local_28 = SHORT_007fb240 + -1;
     }
   }
   if (param_2 < 0) {
@@ -220,8 +221,8 @@ LAB_006018c7:
   else {
     local_24 = iVar5 + 1;
     local_18 = iVar5;
-    if ((int)DAT_007fb242 <= iVar5 + 1) {
-      local_24 = DAT_007fb242 + -1;
+    if ((int)SHORT_007fb242 <= iVar5 + 1) {
+      local_24 = SHORT_007fb242 + -1;
     }
   }
   if (param_3 % 200 < 0x65) {
@@ -262,13 +263,13 @@ LAB_006018c7:
       }
     }
     for (; iVar9 <= local_20; iVar9 = iVar9 + 1) {
-      if ((((((-1 < (short)local_8) && ((short)local_8 < DAT_007fb240)) &&
+      if ((((((-1 < (short)local_8) && ((short)local_8 < SHORT_007fb240)) &&
             (sVar4 = (short)iVar5, -1 < sVar4)) &&
-           ((sVar4 < DAT_007fb242 && (sVar8 = (short)iVar9, -1 < sVar8)))) &&
-          (((sVar8 < DAT_007fb244 &&
+           ((sVar4 < SHORT_007fb242 && (sVar8 = (short)iVar9, -1 < sVar8)))) &&
+          (((sVar8 < SHORT_007fb244 &&
             ((piVar7 = *(int **)(DAT_007fb248 +
-                                ((int)sVar4 * (int)DAT_007fb240 + (int)sVar8 * (int)DAT_007fb246 +
-                                (int)(short)local_8) * 8), piVar7 != (int *)0x0 &&
+                                ((int)sVar4 * (int)SHORT_007fb240 + (int)sVar8 * (int)SHORT_007fb246
+                                + (int)(short)local_8) * 8), piVar7 != (int *)0x0 &&
              (param_9 != piVar7[6])))) &&
            (iVar2 = (**(code **)(*piVar7 + 0xdc))(param_1,param_2,param_3,param_4,param_5,param_6),
            iVar6 = local_1c, 0 < iVar2)))) && ((param_13 == 0 || (piVar7[9] != param_7)))) {

@@ -26,12 +26,12 @@ void FUN_006bc630(void)
       }
       if ((*DAT_00854fd0 & 0x24) != 0) {
         DAT_00854f9c = DAT_00854fd0[0x14];
-        DAT_00854f90 = (int *)(DAT_00854f9c * 0x10 + 0x14 + DAT_00854fd4);
-        DAT_00854f50 = *(int *)(DAT_00854fd4 + 0x174 + DAT_00854f9c * 4);
-        DAT_00854fd0[10] = DAT_00854fd0[10] + *(int *)(DAT_00854fd4 + 0x11c + DAT_00854f9c * 8);
-        DAT_00854fd0[0xb] = DAT_00854fd0[0xb] + *(int *)(DAT_00854fd4 + 0x120 + DAT_00854f9c * 8);
-        DAT_00854fd0[6] = DAT_00854fd0[6] + *(int *)(DAT_00854fd4 + 0x11c + DAT_00854f9c * 8);
-        DAT_00854fd0[7] = DAT_00854fd0[7] + *(int *)(DAT_00854fd4 + 0x120 + DAT_00854f9c * 8);
+        DAT_00854f90 = g_int_00854FD4 + DAT_00854f9c * 4 + 5;
+        DAT_00854f50 = g_int_00854FD4[DAT_00854f9c + 0x5d];
+        DAT_00854fd0[10] = DAT_00854fd0[10] + g_int_00854FD4[DAT_00854f9c * 2 + 0x47];
+        DAT_00854fd0[0xb] = DAT_00854fd0[0xb] + g_int_00854FD4[DAT_00854f9c * 2 + 0x48];
+        DAT_00854fd0[6] = DAT_00854fd0[6] + g_int_00854FD4[DAT_00854f9c * 2 + 0x47];
+        DAT_00854fd0[7] = DAT_00854fd0[7] + g_int_00854FD4[DAT_00854f9c * 2 + 0x48];
         uVar1 = *DAT_00854fd0;
         if ((uVar1 & 0x40000) == 0) {
           if ((uVar1 & 0x4000) == 0) {

@@ -18,7 +18,7 @@ FUN_006e9000(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
   *(undefined2 *)(puVar1 + 7) = param_2;
   puVar1[8] = param_1;
   puVar1[9] = param_7;
-  FUN_006b9910((undefined4 *)((int)this + 0x294),puVar1);
+  FUN_006b9910((undefined4 *)((int)this + 0x294),(int)puVar1);
   iVar2 = FUN_006e8ea0(this,(int)puVar1);
   if (iVar2 != 0) {
     *(undefined4 *)((int)this + 0x134) = 1;

@@ -1,12 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
-   CursorClassTy::SetImages */
+   CursorClassTy::SetImages
+   
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00543600 -> 00543AD0 @ 00543680 | 0054BF40 -> 00543AD0 @ 0054C073 | 0054BF40 ->
+   00543AD0 @ 0054C358 | 0054BF40 -> 00543AD0 @ 0054C397 | 0054BF40 -> 00543AD0 @ 0054C3D6 */
 
 void __thiscall
 CursorClassTy::SetImages
-          (CursorClassTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,
-          BITMAPINFO *param_4,uint param_5,int param_6,int param_7)
+          (CursorClassTy *this,undefined4 param_1,char *text,undefined4 param_3,BITMAPINFO *param_4,
+          uint param_5,int param_6,int param_7)
 
 {
   code *pcVar1;
@@ -37,7 +41,7 @@ CursorClassTy::SetImages
   local_8->field_00B9 = -(int)param_4;
   local_8->field_00A9 = param_1;
   local_8->field_00BD = -param_5;
-  (**(code **)(local_8->field_0018 + 4))(DAT_00806784,7,0,param_2,0xffffffff);
+  (**(code **)(local_8->field_0018 + 4))(DAT_00806784,7,0,text,0xffffffff);
   Library::DKW::DDX::FUN_006b85d0
             ((uint *)pCVar2->field_00AD,(int)*(short *)(pCVar2->field_0069 + 0x23),
              (BITMAPINFO *)(pCVar2->field_0069 + 0x2d),0x8000000,0,param_4,param_5);

@@ -66,15 +66,16 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
         if ((short)local_14 != -1) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,
+                              (g_sTAllPlayers_007FA174,
                                CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_14
                                ,CASE_1);
           if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
-                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x720);
+                      (-0x5001fffc,g_overwriteContext_007ED77C,
+                       s_E____titans_wlad_to_grpb_cpp_007abe3c,0x720);
           }
-          thunk_FUN_004162b0(this_00,&local_8,&local_6,&local_a);
-          thunk_FUN_00481520(this_00,(int)local_8,(int)local_6,pSVar2->field_0222);
+          STFishC::sub_004162B0((STFishC *)this_00,&local_8,&local_6,&local_a);
+          STBoatC::sub_00481520(this_00,(int)local_8,(int)local_6,pSVar2->field_0222);
           local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           local_24 = 0xffff;
           local_22 = 0xffff;
@@ -99,12 +100,13 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
           FUN_006acc70(pSVar2->field_0029,uVar8,&local_14);
           if ((short)local_14 != -1) {
             uVar8 = STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,
+                              (g_sTAllPlayers_007FA174,
                                CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),local_14
                                ,CASE_1);
             if (uVar8 == 0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x732);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0x732);
             }
             iVar3 = thunk_FUN_0045ff30(uVar8);
             if (((iVar3 != 0) || (iVar3 = thunk_FUN_0045ff10(uVar8), iVar3 == 1)) ||

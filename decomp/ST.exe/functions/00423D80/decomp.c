@@ -1,5 +1,8 @@
 
-undefined4 __thiscall FUN_00423d80(void *this,int param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00423E00 -> 00423D80 @ 00423E0E */
+
+undefined4 __thiscall FUN_00423d80(void *this,uint *groupContent)
 
 {
   uint uVar1;
@@ -10,13 +13,13 @@ undefined4 __thiscall FUN_00423d80(void *this,int param_1)
   undefined4 local_c;
   undefined4 local_8;
   
-  uVar1 = *(uint *)(param_1 + 0xc);
+  uVar1 = groupContent[3];
   local_8 = 0;
   uVar3 = 0;
   if ((uVar1 != 0) && (uVar5 = 0, uVar1 != 0)) {
     uVar4 = 0;
     do {
-      FUN_006acc70(param_1,uVar4,&local_c);
+      FUN_006acc70((int)groupContent,uVar4,&local_c);
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {
         local_8 = 1;

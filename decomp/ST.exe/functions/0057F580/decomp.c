@@ -19,7 +19,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
     if (this_00 != (STT3DSprC *)0x0) {
       puVar2 = (undefined4 *)Library::MSVCRT::FUN_0072e530(this->field_0265 * 4 + 4);
       if (puVar2 == (undefined4 *)0x0) {
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00);
+        Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
         return (undefined4 *)0x0;
       }
       iVar3 = this->field_0265;
@@ -31,7 +31,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
           puVar4 = puVar4 + 1;
           puVar5 = puVar5 + 1;
         }
-        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this->field_026D);
+        Library::MSVCRT::FUN_0072e2b0((HoloTy *)this->field_026D);
       }
       this->field_026D = puVar2;
       puVar2[this->field_0265] = this_00;

@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_00483f10(int param_1)
   longlong lVar9;
   
   iVar2 = STAllPlayersC::IsTorpLive
-                    (DAT_007fa174,*(short *)(param_1 + 0x46f),*(int *)(param_1 + 0x471));
+                    (g_sTAllPlayers_007FA174,*(short *)(param_1 + 0x46f),*(int *)(param_1 + 0x471));
   if (iVar2 != 0) {
     iVar2 = *(int *)(param_1 + 0x46b);
     uVar3 = (int)*(short *)(param_1 + 0x45) - (int)*(short *)(iVar2 + 0x45);

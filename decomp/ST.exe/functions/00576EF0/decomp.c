@@ -15,7 +15,8 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   int iVar7;
   undefined4 uVar8;
   void *unaff_ESI;
-  char *pcVar9;
+  cMf32 *pcVar9;
+  char *pcVar10;
   InternalExceptionFrame *in_stack_ffffff70;
   undefined4 local_8c [16];
   InternalExceptionFrame local_4c;
@@ -26,7 +27,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,in_stack_ffffff70);
   if (iVar4 == 0) {
-    DAT_00806750 = LoadLand(DAT_00806754,s_3D_MAP_007ca1e4);
+    DAT_00806750 = LoadLand(g_cMf32_00806754,s_3D_MAP_007ca1e4);
     puVar5 = FUN_006b04d0(0x4f2);
     if (puVar5 == (undefined4 *)0x0) {
       pvVar6 = (void *)0x0;
@@ -42,15 +43,15 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     *(int *)((int)pvVar6 + 0x288) = iVar4 * iVar4;
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     FUN_006e8580(DAT_00807598,DAT_008075a8);
-    pcVar9 = s_scmask_007cac10;
-    pvVar6 = DAT_00806770;
+    pcVar10 = s_scmask_007cac10;
+    pcVar9 = DAT_00806770;
     DAT_00806724 = Library::Ourlib::MFIMG::mfImtLoad
                              (DAT_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff70;
-    iVar4 = Library::MSVCRT::__setjmp3(local_8c,0,pvVar6,pcVar9);
+    iVar4 = Library::MSVCRT::__setjmp3(local_8c,0,pcVar9,pcVar10);
     pGVar3 = local_8;
     if (iVar4 == 0) {
-      puVar5 = Library::Ourlib::MFPLA::mfPlaPtrTy(DAT_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
+      puVar5 = Library::Ourlib::MFPLA::mfPlaPtrTy(g_cMf32_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
       pGVar3->field_0431 = puVar5;
     }
     pGVar3->field_042C = DAT_00808784;

@@ -1,0 +1,17 @@
+program=ST.exe
+functions_scanned=5630
+direct_calls_seen=37200
+proposals=126
+parameter_proposals=119
+return_proposals=7
+type_auto_apply=0
+name_auto_apply=0
+reverse_return_evidence=393
+repair_proposals=2
+repair_auto_apply=0
+repair_review_only=2
+conflicts=0
+note=Direct calls with an exact explicit argument count propagate parameters.
+note_returns=Unknown EAX producers are traced into trusted arguments, this receivers, typed stores, and return-forwarding wrappers.
+note_manual=USER_DEFINED targets are never auto-applied.
+note_iteration=Rerun after applying method owners, globals, or class fields to reach a conservative fixed point.

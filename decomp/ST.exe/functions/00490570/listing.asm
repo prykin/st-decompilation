@@ -1,4 +1,4 @@
-FUN_00490570:
+STBoatC::sub_00490570:
 00490570  55                        PUSH EBP
 00490571  8B EC                     MOV EBP,ESP
 00490573  51                        PUSH ECX

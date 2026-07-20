@@ -59,7 +59,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   case 1:
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
       pFVar2->field_1F23 = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -110,7 +110,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     thunk_FUN_005a0590((int)local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
       pFVar2->field_1F23 = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -167,7 +167,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     thunk_FUN_005a07f0((int)local_8);
     if (pFVar2->field_1F27 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F27);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F27);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F27);
       pFVar2->field_1F27 = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -222,7 +222,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
     if (pFVar2->field_1F2B != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F2B);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F2B);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F2B);
       pFVar2->field_1F2B = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -279,7 +279,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     thunk_FUN_005a0af0((int)local_8);
     if (pFVar2->field_1F2F != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F2F);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F2F);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F2F);
       pFVar2->field_1F2F = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -325,7 +325,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
     if (pFVar2->field_1F2B != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F2B);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F2B);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F2B);
       pFVar2->field_1F2B = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -382,7 +382,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     thunk_FUN_005a0c80((int)local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
       pFVar2->field_1F23 = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -433,7 +433,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     thunk_FUN_005a0590((int)local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
       pFVar2->field_1F23 = (HoloTy *)0x0;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);

@@ -41,8 +41,9 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_30 = (uint)(*(int *)(&DAT_00791d68 + iVar1 * 4) == 1);
   local_c = param_6;
   (**(code **)(*DAT_00802a38 + 8))(0x124,0,0,local_44,0);
-  thunk_FUN_004162b0(this,(undefined2 *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
-                     (undefined2 *)((int)&param_1 + 2));
+  STFishC::sub_004162B0
+            ((STFishC *)this,(undefined2 *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
+             (undefined2 *)((int)&param_1 + 2));
   iVar1 = param_8;
   if ((param_9 == 0) && (DAT_008117b0 != (void *)0x0)) {
     if (this[0xb] == 0) {

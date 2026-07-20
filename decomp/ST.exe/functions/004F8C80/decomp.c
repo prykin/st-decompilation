@@ -18,10 +18,9 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   char cVar8;
   undefined4 unaff_ESI;
   uint uVar9;
-  char *pcVar10;
   void *unaff_EDI;
+  char *pcVar10;
   char *pcVar11;
-  LPCSTR pCVar12;
   InternalExceptionFrame local_50;
   char local_c;
   undefined3 uStack_b;
@@ -83,13 +82,13 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       puVar1 = &pCVar4->field_0x1e1;
       if (cVar8 == '\0') {
         puVar7 = &DAT_007c2198;
-        pCVar12 = &DAT_007c2194;
+        pcVar11 = &DAT_007c2194;
       }
       else {
         puVar7 = (undefined *)(uVar5 & 0xff);
-        pCVar12 = &DAT_007c219c;
+        pcVar11 = &DAT_007c219c;
       }
-      wsprintfA(puVar1,pCVar12,puVar7);
+      wsprintfA(puVar1,pcVar11,puVar7);
       uVar2 = (ulonglong)uVar9 % 0xe10;
       wsprintfA(puVar1,s__s_02d__02d_007c2184,puVar1,(int)(uVar2 / 0x3c),(int)(uVar2 % 0x3c));
       uVar5 = ccFntTy::WrTxt(pCVar4->field_01BC,(uint *)puVar1,0,0,(uint)(DAT_0080874e == '\x03'),-1
@@ -104,40 +103,40 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         _local_c = CONCAT31(uStack_b,cVar8);
         if (cVar8 == '\0') {
           puVar7 = &DAT_007c2198;
-          pCVar12 = &DAT_007c2194;
+          pcVar11 = &DAT_007c2194;
         }
         else {
           puVar7 = (undefined *)(uVar5 & 0xff);
-          pCVar12 = &DAT_007c219c;
+          pcVar11 = &DAT_007c219c;
         }
-        wsprintfA(&pCVar4->field_0x1e1,pCVar12,puVar7);
+        wsprintfA(&pCVar4->field_0x1e1,pcVar11,puVar7);
         uVar2 = (ulonglong)uVar9 % 0xe10;
         wsprintfA(&pCVar4->field_0x1e1,s__s_02d__02d_007c2184,&pCVar4->field_0x1e1,
                   (int)(uVar2 / 0x3c),(int)(uVar2 % 0x3c));
       }
       else {
         uVar5 = 0xffffffff;
-        pcVar10 = &DAT_007c21a4;
+        pcVar11 = &DAT_007c21a4;
         do {
-          pcVar11 = pcVar10;
+          pcVar10 = pcVar11;
           if (uVar5 == 0) break;
           uVar5 = uVar5 - 1;
-          pcVar11 = pcVar10 + 1;
-          cVar8 = *pcVar10;
-          pcVar10 = pcVar11;
+          pcVar10 = pcVar11 + 1;
+          cVar8 = *pcVar11;
+          pcVar11 = pcVar10;
         } while (cVar8 != '\0');
         uVar5 = ~uVar5;
-        pcVar10 = pcVar11 + -uVar5;
-        pcVar11 = &pCVar4->field_0x1e1;
+        pcVar11 = pcVar10 + -uVar5;
+        pcVar10 = &pCVar4->field_0x1e1;
         for (uVar9 = uVar5 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-          pcVar10 = pcVar10 + 4;
+          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
           pcVar11 = pcVar11 + 4;
+          pcVar10 = pcVar10 + 4;
         }
         for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *pcVar11 = *pcVar10;
-          pcVar10 = pcVar10 + 1;
+          *pcVar10 = *pcVar11;
           pcVar11 = pcVar11 + 1;
+          pcVar10 = pcVar10 + 1;
         }
       }
       uVar5 = ccFntTy::WrTxt(pCVar4->field_01BC,(uint *)&pCVar4->field_0x1e1,0,0,

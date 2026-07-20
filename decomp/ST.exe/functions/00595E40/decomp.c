@@ -20,15 +20,15 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   undefined4 *puVar10;
   StartServTy *pSVar11;
   uint uVar12;
-  LPSTR pCVar13;
-  int iVar14;
+  LPSTR text;
+  int iVar13;
   undefined4 extraout_ECX;
   ccFntTy *this_02;
   ccFntTy *this_03;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined1 uVar15;
-  byte bVar16;
+  undefined1 uVar14;
+  byte bVar15;
   undefined4 local_450 [256];
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
@@ -41,9 +41,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar14 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d,0,iVar4,
+    iVar13 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d,0,iVar4,
                                 &DAT_007a4ccc,s_FSGSTy__InitFSGS_007cbff8);
-    if (iVar14 != 0) {
+    if (iVar13 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
@@ -51,8 +51,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d);
     return;
   }
-  thunk_FUN_005daf20((int)local_c->field_1A5B);
-  DAT_0081174c = this_01;
+  StartSystemTy::sub_005DAF20(local_c->field_1A5B);
+  g_fSGS_0081174C = this_01;
   DAT_008067a0 = 0;
   StartSystemTy::GetIP(this_01->field_1A5B);
   DAT_00802a99 = 0;
@@ -69,21 +69,19 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     MMsgTy::HideSprites(pMVar1);
     this_01->field_1A5B->field_02E6->field_1CAB = 0;
   }
-  uVar5 = FUN_0070a9f0(DAT_00806780,s_FSGS_BKG_007cc09c,0,1);
+  uVar5 = FUN_0070a9f0(g_cMf32_00806780,s_FSGS_BKG_007cc09c,0,1);
   *(undefined4 *)(DAT_0081176c + 0x2c) = uVar5;
   this_01->field_005D = *(undefined4 *)(DAT_0081176c + 0x2c);
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,(byte *)s_SET_ACC_007cc090,0xffffffff,0,1,0,
-                      (undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,s_SET_ACC_007cc090,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_01->field_1A83 = puVar6;
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,(byte *)s_FILE_LIST_007cc084,0xffffffff,0,1,0,
-                      (undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,s_FILE_LIST_007cc084,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_01->field_1A87 = puVar6;
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_01->field_1A8B = puVar6;
-  FUN_006bc360(this_01->field_005D,local_450,(int *)0x0);
+  FUN_006bc360((ushort *)this_01->field_005D,local_450,(int *)0x0);
   *(undefined4 *)&this_01->field_1A5B->field_0x140 = 0xf;
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_450,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
@@ -109,11 +107,11 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   *(undefined2 *)&pcVar9->field_0x9e = 0;
   this_02 = (ccFntTy *)CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_007c6ff0);
   pcVar9->field_0x9e = DAT_007c6ff0;
-  puVar10 = ccFntTy::operator(this_02,0x19d,DAT_00806780,s_FSGS_NB_007cc070,0);
+  puVar10 = ccFntTy::operator(this_02,0x19d,g_cMf32_00806780,s_FSGS_NB_007cc070,0);
   this_01->field_1A7B = puVar10;
   puVar10[0x16] = 1;
   puVar10[0x17] = 0;
-  pSVar11 = (StartServTy *)ccFntTy::operator(this_03,0x19d,DAT_00806780,s_FSGS_NS_007cc064,0);
+  pSVar11 = (StartServTy *)ccFntTy::operator(this_03,0x19d,g_cMf32_00806780,s_FSGS_NS_007cc064,0);
   this_01->field_1A7F = pSVar11;
   *(undefined4 *)(pSVar11 + 0x58) = 1;
   *(undefined4 *)(pSVar11 + 0x5c) = 0;
@@ -134,19 +132,19 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     puVar10 = puVar10 + 1;
   }
   iVar4 = 0;
-  bVar16 = 0;
+  bVar15 = 0;
   for (uVar12 = local_8 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
     *(undefined1 *)puVar10 = 0xff;
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
-  pCVar13 = FUN_006f2c00(s_MM_BAN__007cc058,2,this_01->field_1A93);
-  puVar6 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,6,pCVar13,bVar16,iVar4);
+  text = FUN_006f2c00(s_MM_BAN__007cc058,2,this_01->field_1A93);
+  puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar15,iVar4);
   DibPut((undefined4 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar6);
   uVar12 = this_01->field_1A97;
   FUN_006b2330((uint)DAT_008075a8,&this_01->field_1A8F,0x31,0x4023f6,*(uint *)(uVar12 + 4),
                *(uint *)(uVar12 + 8),uVar12);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,this_01->field_1A8F,0xffffffff,DAT_00806730 - 0x24d,0);
+            (DAT_008075a8,this_01->field_1A8F,0xffffffff,g_nWidth_00806730 - 0x24d,0);
   iVar4 = 1;
   puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
   uVar12 = FUN_006b4fe0(this_01->field_005D);
@@ -215,8 +213,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1C66 = 0;
   puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   this_01->field_1B08 = puVar8;
-  Library::DKW::TBL::FUN_006b5aa0((int)puVar8,s_License_agreement_007cc01c);
-  Library::DKW::TBL::FUN_006b5aa0(this_01->field_1B08,s_Nothing_to_do_007cc00c);
+  Library::DKW::TBL::FUN_006b5aa0(puVar8,s_License_agreement_007cc01c);
+  Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_1B08,s_Nothing_to_do_007cc00c);
   PaintFSGS(this_01,'\x01');
   thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
@@ -226,11 +224,11 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1A62 = 0;
   if (param_1 == 6) {
     this_01->field_1A5F = 6;
-    uVar15 = 8;
+    uVar14 = 8;
   }
   else if (param_1 == 7) {
     this_01->field_1A5F = 7;
-    uVar15 = 7;
+    uVar14 = 7;
   }
   else {
     if (param_1 != 8) {
@@ -239,9 +237,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
       goto LAB_00596510;
     }
     this_01->field_1A5F = 8;
-    uVar15 = 10;
+    uVar14 = 10;
   }
-  SetState(this_01,uVar15);
+  SetState(this_01,uVar14);
 LAB_00596510:
   this_00 = DAT_00802a30;
   if (DAT_00802a30 != (CursorClassTy *)0x0) {

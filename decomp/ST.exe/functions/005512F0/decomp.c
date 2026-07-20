@@ -29,22 +29,22 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
   if (errorCode == 0) {
     this_00 = extraout_ECX;
     if (local_8->field_01C0 != 0) {
-      FUN_006e56b0((void *)local_8->field_000C,local_8->field_01C0);
+      StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_01C0);
       this_00 = extraout_ECX_00;
     }
     pTVar2->field_01C0 = 0;
     if (pTVar2->field_01C4 != 0) {
-      FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01C4);
+      StartSystemTy::sub_006E56B0(pTVar2->field_000C,pTVar2->field_01C4);
       this_00 = extraout_ECX_01;
     }
     pTVar2->field_01C4 = 0;
     if (pTVar2->field_01C8 != 0) {
-      FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01C8);
+      StartSystemTy::sub_006E56B0(pTVar2->field_000C,pTVar2->field_01C8);
       this_00 = extraout_ECX_02;
     }
     pTVar2->field_01C8 = 0;
     if (pTVar2->field_01CC != 0) {
-      FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01CC);
+      StartSystemTy::sub_006E56B0(pTVar2->field_000C,pTVar2->field_01CC);
       this_00 = extraout_ECX_03;
     }
     pTVar2->field_01CC = 0;

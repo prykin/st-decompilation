@@ -34,7 +34,7 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
     return;
   }
   if (local_8->field_2204 != 0) {
-    FUN_006ab060(&local_8->field_2204);
+    FUN_006ab060((LPVOID *)&local_8->field_2204);
   }
   FUN_006b3bb0(DAT_008075a8,this_00->field_2200);
   iVar2 = this_00->field_2237;
@@ -50,7 +50,7 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
         iVar2 = *(int *)(iVar2 + 8) * uVar4 + *(int *)(iVar2 + 0x1c);
 LAB_005cc360:
         if ((iVar2 != 0) && (*(int *)(iVar2 + 8) != 0)) {
-          FUN_006ab060((undefined4 *)(iVar2 + 8));
+          FUN_006ab060((LPVOID *)(iVar2 + 8));
         }
         iVar2 = this_00->field_2237;
         uVar4 = uVar4 + 1;

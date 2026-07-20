@@ -1,12 +1,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   SpecPanelTy::InitPanel */
+   SpecPanelTy::InitPanel
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0053CEF0 -> 0053E3F0 @ 0053CF4C */
 
 void __thiscall
 SpecPanelTy::InitPanel
-          (SpecPanelTy *this,char *param_1,undefined4 param_2,undefined4 param_3,int param_4,
-          int param_5,UINT param_6,undefined4 param_7,undefined4 param_8)
+          (SpecPanelTy *this,char *text,int param_2,uint param_3,int param_4,int param_5,
+          UINT param_6,undefined4 param_7,undefined4 param_8)
 
 {
   code *pcVar1;
@@ -39,8 +42,8 @@ SpecPanelTy::InitPanel
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    local_8->field_003C = local_8->field_003C + (DAT_00806730 + -800) / 2;
-    puVar4 = cMf32::RecGet(DAT_00806790,1,param_1,(int *)0x0,1);
+    local_8->field_003C = local_8->field_003C + (g_nWidth_00806730 + -800) / 2;
+    puVar4 = cMf32::RecGet(DAT_00806790,1,text,(int *)0x0,1);
     pSVar2->field_0185 = puVar4;
     pcVar5 = (ccFntTy *)ccFntTy::operator(this_00,0x19d,*(int *)(DAT_00802a28 + 0x28));
     pSVar2->field_0189 = pcVar5;
@@ -66,7 +69,7 @@ SpecPanelTy::InitPanel
     uVar17 = 0;
     iVar15 = -1;
     iVar3 = -2;
-    puVar7 = (uint *)FUN_006b0140(param_6,DAT_00807618);
+    puVar7 = (uint *)FUN_006b0140(param_6,HINSTANCE_00807618);
     ccFntTy::WrStr(pSVar2->field_0189,puVar7,iVar3,iVar15,uVar17);
     uVar18 = 1;
     iVar3 = pSVar2->field_0000;

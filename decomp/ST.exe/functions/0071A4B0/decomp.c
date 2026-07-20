@@ -18,7 +18,7 @@ void __cdecl FUN_0071a4b0(int *param_1)
       FUN_006ae110(*(byte **)(*param_1 + 5));
       *(undefined4 *)(*param_1 + 5) = 0;
     }
-    FUN_006ab060(param_1);
+    FUN_006ab060((LPVOID *)param_1);
   }
   return;
 }

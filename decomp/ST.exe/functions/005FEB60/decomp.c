@@ -92,24 +92,24 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
         if (local_24 < 0) {
           local_24 = 0;
         }
-        if (DAT_007fb242 < local_60) {
-          local_60 = (int)DAT_007fb242;
+        if (SHORT_007fb242 < local_60) {
+          local_60 = (int)SHORT_007fb242;
         }
-        if (DAT_007fb240 < local_58) {
-          local_58 = (int)DAT_007fb240;
+        if (SHORT_007fb240 < local_58) {
+          local_58 = (int)SHORT_007fb240;
         }
         for (; iVar7 = local_24, iVar11 < local_60; iVar11 = iVar11 + 1) {
           for (; iVar7 < local_58; iVar7 = iVar7 + 1) {
             sVar13 = (short)iVar7;
-            if (((((sVar13 < 0) || (DAT_007fb240 <= sVar13)) || (sVar6 = (short)iVar11, sVar6 < 0))
-                || ((DAT_007fb242 <= sVar6 || (sVar10 = (short)local_44, sVar10 < 0)))) ||
-               (DAT_007fb244 <= sVar10)) {
+            if (((((sVar13 < 0) || (SHORT_007fb240 <= sVar13)) || (sVar6 = (short)iVar11, sVar6 < 0)
+                 ) || ((SHORT_007fb242 <= sVar6 || (sVar10 = (short)local_44, sVar10 < 0)))) ||
+               (SHORT_007fb244 <= sVar10)) {
               this_00 = (int *)0x0;
             }
             else {
               this_00 = *(int **)(DAT_007fb248 +
-                                 ((int)DAT_007fb246 * (int)sVar10 + (int)DAT_007fb240 * (int)sVar6 +
-                                 (int)sVar13) * 8);
+                                 ((int)SHORT_007fb246 * (int)sVar10 +
+                                  (int)SHORT_007fb240 * (int)sVar6 + (int)sVar13) * 8);
             }
             if (((this_00 != (int *)0x0) && (iVar8 = (**(code **)(*this_00 + 0xf0))(), iVar8 != 0))
                && (((uint)this_00[9] < 8 &&
@@ -150,7 +150,7 @@ LAB_005fee45:
                 bVar17 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
               }
               if ((bVar17) && (iVar8 = (**(code **)(*this_00 + 0xf8))(), iVar8 != 0)) {
-                thunk_FUN_00416270(this_00,local_20,local_30,local_2c);
+                thunk_FUN_00416270(this_00,local_20,(int *)local_30,(int *)local_2c);
                 iVar8 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
                 iVar8 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar8);
                 if (iVar8 != 0) {

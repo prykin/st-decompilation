@@ -1,5 +1,8 @@
 
-int FUN_0055ee70(undefined1 *param_1,int param_2,int param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0055DEE0 -> 0055EE70 @ 0055DF1B */
+
+int FUN_0055ee70(byte *param_1,int param_2,int param_3)
 
 {
   char *pcVar1;
@@ -9,10 +12,11 @@ int FUN_0055ee70(undefined1 *param_1,int param_2,int param_3)
   int iVar5;
   undefined1 *puVar6;
   int iVar7;
-  undefined1 *puVar8;
+  byte *pbVar8;
   char *pcVar9;
   char *pcVar10;
-  char *pcVar11;
+  byte *pbVar11;
+  byte *pbVar12;
   int local_34;
   int local_28;
   void *local_14;
@@ -23,10 +27,10 @@ int FUN_0055ee70(undefined1 *param_1,int param_2,int param_3)
   puStack_c = &DAT_0079afb0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  puVar8 = &stack0xffffffb0;
+  pbVar8 = &stack0xffffffb0;
   pcVar9 = &stack0xffffffb0;
   pcVar10 = &stack0xffffffb0;
-  pcVar11 = &stack0xffffffb0;
+  pbVar11 = &stack0xffffffb0;
   puVar6 = &stack0xffffffb0;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -71,60 +75,60 @@ int FUN_0055ee70(undefined1 *param_1,int param_2,int param_3)
   iVar2 = 0;
   iVar4 = 0;
   local_34 = 0;
-  puVar6 = param_1;
+  pbVar12 = param_1;
   do {
     if (iVar4 < 1) {
-      *puVar6 = *puVar8;
-      puVar6[1] = puVar8[1];
+      *pbVar12 = *pbVar8;
+      pbVar12[1] = pbVar8[1];
       iVar4 = iVar4 + param_3;
       iVar2 = iVar2 + 1;
-      puVar6 = puVar6 + 2;
+      pbVar12 = pbVar12 + 2;
     }
     iVar4 = iVar4 + -1;
     local_34 = local_34 + 1;
-    puVar8 = puVar8 + 2;
+    pbVar8 = pbVar8 + 2;
   } while (local_34 < local_28);
   iVar5 = 0;
-  pcVar1 = param_1 + iVar2 * 2;
+  pbVar8 = param_1 + iVar2 * 2;
   do {
     if (iVar4 < 1) {
-      *pcVar1 = pcVar9[1];
-      pcVar1[1] = -*pcVar9;
+      *pbVar8 = pcVar9[1];
+      pbVar8[1] = -*pcVar9;
       iVar4 = iVar4 + param_3;
       iVar2 = iVar2 + 1;
-      pcVar1 = pcVar1 + 2;
+      pbVar8 = pbVar8 + 2;
     }
     iVar4 = iVar4 + -1;
     iVar5 = iVar5 + 1;
     pcVar9 = pcVar9 + 2;
   } while (iVar5 < local_28);
   iVar5 = 0;
-  pcVar9 = param_1 + iVar2 * 2;
+  pbVar8 = param_1 + iVar2 * 2;
   do {
     if (iVar4 < 1) {
-      *pcVar9 = -*pcVar10;
-      pcVar9[1] = -pcVar10[1];
+      *pbVar8 = -*pcVar10;
+      pbVar8[1] = -pcVar10[1];
       iVar4 = iVar4 + param_3;
       iVar2 = iVar2 + 1;
-      pcVar9 = pcVar9 + 2;
+      pbVar8 = pbVar8 + 2;
     }
     iVar4 = iVar4 + -1;
     iVar5 = iVar5 + 1;
     pcVar10 = pcVar10 + 2;
   } while (iVar5 < local_28);
   iVar5 = 0;
-  pcVar9 = param_1 + iVar2 * 2;
+  pbVar8 = param_1 + iVar2 * 2;
   do {
     if (iVar4 < 1) {
-      *pcVar9 = -pcVar11[1];
-      pcVar9[1] = *pcVar11;
+      *pbVar8 = -pbVar11[1];
+      pbVar8[1] = *pbVar11;
       iVar4 = iVar4 + param_3;
       iVar2 = iVar2 + 1;
-      pcVar9 = pcVar9 + 2;
+      pbVar8 = pbVar8 + 2;
     }
     iVar4 = iVar4 + -1;
     iVar5 = iVar5 + 1;
-    pcVar11 = pcVar11 + 2;
+    pbVar11 = pbVar11 + 2;
   } while (iVar5 < local_28);
   ExceptionList = local_14;
   return iVar2;

@@ -23,7 +23,7 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
       FUN_006acc70(this->field_0029,uVar4,&param_1);
       if ((short)param_1 != -1) {
         this_00 = (void *)STAllPlayersC::GetObjPtr
-                                    (DAT_007fa174,
+                                    (g_sTAllPlayers_007FA174,
                                      CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0024),
                                      param_1,CASE_1);
         if (this_00 == (void *)0x0) {
@@ -35,7 +35,8 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
             return;
           }
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_tc_grp_cpp_007a50a4,599);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_tc_grp_cpp_007a50a4,
+                     599);
         }
         if (*(int *)((int)this_00 + 0x20) == 0x14) {
           thunk_FUN_004956c0(this_00,this->field_0039);

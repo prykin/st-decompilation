@@ -23,22 +23,22 @@ void __thiscall FUN_006e9520(void *this,uint param_1,uint param_2,uint param_3,u
         if (0 < (int)puVar3[0x38]) {
           puVar4 = (undefined4 *)(puVar3[0x39] + 8);
           do {
-            FUN_006a5e90((undefined4 *)*puVar4);
+            FUN_006a5e90((short *)*puVar4);
             puVar4 = puVar4 + 3;
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)puVar3[0x38]);
         }
-        FUN_006ab060(puVar3 + 0x39);
+        FUN_006ab060((LPVOID *)(puVar3 + 0x39));
         iVar5 = 0;
         if (0 < (int)puVar3[0x38]) {
           puVar4 = (undefined4 *)(puVar3[0x3c] + 0xc);
           do {
-            FUN_006a5e90((undefined4 *)*puVar4);
+            FUN_006a5e90((short *)*puVar4);
             puVar4 = puVar4 + 4;
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)puVar3[0x38]);
         }
-        FUN_006ab060(puVar3 + 0x3c);
+        FUN_006ab060((LPVOID *)(puVar3 + 0x3c));
         puVar3[0x38] = 0;
         if ((puVar3[1] & 0x40) == 0) {
           return;

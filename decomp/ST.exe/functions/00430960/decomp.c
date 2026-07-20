@@ -24,7 +24,8 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
       FUN_006acc70((int)DAT_007fa130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         RaiseInternalException
-                  (-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x883);
+                  (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                   0x883);
       }
       local_8 = 0;
       Library::DKW::TBL::FUN_006ae140(DAT_007fa130,(int)param_1,&local_8);

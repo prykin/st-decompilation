@@ -30,18 +30,18 @@ void __cdecl FUN_0071a8d0(int *param_1)
                 iVar2 = puVar1[3];
               } while (iVar3 < **(int **)(iVar4 + iVar2));
             }
-            FUN_006ab060((undefined4 *)(puVar1[3] + iVar4));
+            FUN_006ab060((LPVOID *)(puVar1[3] + iVar4));
           }
           local_c = local_c + 1;
           iVar4 = iVar4 + 4;
         } while (local_c < (int)puVar1[2]);
       }
-      FUN_006ab060(puVar1 + 3);
+      FUN_006ab060((LPVOID *)(puVar1 + 3));
     }
     if ((byte *)puVar1[1] != (byte *)0x0) {
       FUN_006b5570((byte *)puVar1[1]);
     }
-    FUN_006ab060(param_1);
+    FUN_006ab060((LPVOID *)param_1);
   }
   return;
 }

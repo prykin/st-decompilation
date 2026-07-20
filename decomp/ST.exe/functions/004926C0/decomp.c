@@ -1,5 +1,9 @@
 
-undefined4 __fastcall FUN_004926c0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=5;
+   incoming_edx_uses=0 */
+
+undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
 
 {
   ushort uVar1;
@@ -10,7 +14,7 @@ undefined4 __fastcall FUN_004926c0(int param_1)
   int iVar6;
   short local_dc [94];
   uint local_20;
-  int local_1c;
+  STBoatC *local_1c;
   int local_18;
   uint local_14;
   short *local_10;
@@ -33,7 +37,7 @@ undefined4 __fastcall FUN_004926c0(int param_1)
   local_dc[0x45] = 0;
   local_dc[0x52] = 0;
   local_dc[0x53] = 0;
-  uVar1 = *(ushort *)(param_1 + 0x5ec);
+  uVar1 = *(ushort *)&this->field_0x5ec;
   local_dc[0x2e] = 2;
   local_dc[0x2f] = 0;
   local_dc[0x3e] = 2;
@@ -54,7 +58,7 @@ undefined4 __fastcall FUN_004926c0(int param_1)
   local_dc[0x5b] = 0;
   local_dc[0x5c] = 2;
   local_dc[0x5d] = 0;
-  uVar2 = *(ushort *)(param_1 + 0x5ee);
+  uVar2 = this->field_05EE;
   local_dc[0x1e] = -2;
   local_dc[0x1f] = -1;
   local_dc[0x20] = -2;
@@ -75,7 +79,7 @@ undefined4 __fastcall FUN_004926c0(int param_1)
   local_dc[0x3b] = -1;
   local_dc[0x4a] = -2;
   local_dc[0x4b] = -1;
-  local_1c = param_1;
+  local_1c = this;
   local_dc[0] = -1;
   local_dc[1] = -1;
   local_dc[4] = -1;
@@ -116,26 +120,26 @@ undefined4 __fastcall FUN_004926c0(int param_1)
   local_dc[0x57] = 0;
   local_14 = (uint)uVar2;
   local_20 = (uint)uVar1;
-  if ((((((short)uVar1 < 0) || (DAT_007fb240 <= (short)uVar1)) || ((short)uVar2 < 0)) ||
-      (((DAT_007fb242 <= (short)uVar2 || (DAT_007fb244 < 5)) ||
-       (local_8 = (int)DAT_007fb246,
+  if ((((((short)uVar1 < 0) || (SHORT_007fb240 <= (short)uVar1)) || ((short)uVar2 < 0)) ||
+      (((SHORT_007fb242 <= (short)uVar2 || (SHORT_007fb244 < 5)) ||
+       (local_8 = (int)SHORT_007fb246,
        *(int *)(DAT_007fb248 +
-               ((int)(short)uVar2 * (int)DAT_007fb240 + DAT_007fb246 * 4 + (int)(short)uVar1) * 8)
-       == 0)))) &&
-     ((((short)uVar1 < 0 || (DAT_007fb240 <= (short)uVar1)) ||
+               ((int)(short)uVar2 * (int)SHORT_007fb240 + SHORT_007fb246 * 4 + (int)(short)uVar1) *
+               8) == 0)))) &&
+     ((((short)uVar1 < 0 || (SHORT_007fb240 <= (short)uVar1)) ||
       (((short)uVar2 < 0 ||
-       (((DAT_007fb242 <= (short)uVar2 || (DAT_007fb244 < 5)) ||
-        (local_8 = (int)DAT_007fb246,
+       (((SHORT_007fb242 <= (short)uVar2 || (SHORT_007fb244 < 5)) ||
+        (local_8 = (int)SHORT_007fb246,
         *(int *)(DAT_007fb248 + 4 +
-                ((int)(short)uVar2 * (int)DAT_007fb240 + DAT_007fb246 * 4 + (int)(short)uVar1) * 8)
-        == 0)))))))) {
-    *(ushort *)(param_1 + 0x5f2) = uVar1;
-    *(ushort *)(param_1 + 0x5f4) = uVar2;
-    *(undefined2 *)(param_1 + 0x5f6) = 4;
+                ((int)(short)uVar2 * (int)SHORT_007fb240 + SHORT_007fb246 * 4 + (int)(short)uVar1) *
+                8) == 0)))))))) {
+    *(ushort *)&this->field_0x5f2 = uVar1;
+    *(ushort *)&this->field_0x5f4 = uVar2;
+    this->field_05F6 = 4;
     return 1;
   }
   iVar6 = 4;
-  local_18 = *(short *)(param_1 + 0x5f0) + 1;
+  local_18 = *(short *)&this->field_0x5f0 + 1;
   if (local_18 < 5) {
     do {
       local_10 = local_dc;
@@ -143,20 +147,21 @@ undefined4 __fastcall FUN_004926c0(int param_1)
       do {
         sVar4 = *local_10 + uVar2;
         sVar3 = local_10[-2] + uVar1;
-        if ((((-1 < sVar3) && (sVar3 < DAT_007fb278)) && ((-1 < sVar4 && (sVar4 < DAT_007fb27a))))
-           && ((sVar5 = (short)iVar6, DAT_007fb240 <= sVar3 ||
-               ((((DAT_007fb242 <= sVar4 || (sVar5 < 0)) ||
-                 ((DAT_007fb244 <= sVar5 ||
-                  (*(int *)(DAT_007fb248 +
-                           ((int)sVar4 * (int)DAT_007fb240 + sVar5 * local_8 + (int)sVar3) * 8) == 0
-                  )))) && ((((DAT_007fb240 <= sVar3 || (DAT_007fb242 <= sVar4)) || (sVar5 < 0)) ||
-                           ((DAT_007fb244 <= sVar5 ||
-                            (*(int *)(DAT_007fb248 + 4 +
-                                     ((int)sVar4 * (int)DAT_007fb240 + sVar5 * local_8 + (int)sVar3)
-                                     * 8) == 0)))))))))) {
-          *(short *)(param_1 + 0x5f6) = sVar5;
-          *(short *)(param_1 + 0x5f4) = sVar4;
-          *(short *)(param_1 + 0x5f2) = sVar3;
+        if ((((-1 < sVar3) && (sVar3 < SHORT_007fb278)) &&
+            ((-1 < sVar4 && (sVar4 < SHORT_007fb27a)))) &&
+           ((sVar5 = (short)iVar6, SHORT_007fb240 <= sVar3 ||
+            ((((SHORT_007fb242 <= sVar4 || (sVar5 < 0)) ||
+              ((SHORT_007fb244 <= sVar5 ||
+               (*(int *)(DAT_007fb248 +
+                        ((int)sVar4 * (int)SHORT_007fb240 + sVar5 * local_8 + (int)sVar3) * 8) == 0)
+               ))) && ((((SHORT_007fb240 <= sVar3 || (SHORT_007fb242 <= sVar4)) || (sVar5 < 0)) ||
+                       ((SHORT_007fb244 <= sVar5 ||
+                        (*(int *)(DAT_007fb248 + 4 +
+                                 ((int)sVar4 * (int)SHORT_007fb240 + sVar5 * local_8 + (int)sVar3) *
+                                 8) == 0)))))))))) {
+          this->field_05F6 = sVar5;
+          *(short *)&this->field_0x5f4 = sVar4;
+          *(short *)&this->field_0x5f2 = sVar3;
           return 1;
         }
         local_10 = local_10 + 4;

@@ -11,7 +11,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
   short sVar2;
   code *pcVar3;
   bool bVar4;
-  void *pvVar5;
+  VisibleClassTy *pVVar5;
   STSprGameObjC *this_00;
   byte bVar6;
   short sVar7;
@@ -69,7 +69,8 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
   iVar8 = STSprGameObjC::GetMessage(local_24,param_1);
   uVar14 = extraout_var_01;
   if (iVar8 == 0xffff) {
-    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_Igor_To_gold_cpp_007cb19c,0x56);
+    RaiseInternalException
+              (0xffff,g_overwriteContext_007ED77C,s_E____titans_Igor_To_gold_cpp_007cb19c,0x56);
     uVar14 = extraout_var_02;
   }
   uVar10 = *(uint *)(param_1 + 0x10);
@@ -123,13 +124,13 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
     sVar7 = *(short *)&this_00->field_0x245;
     sVar1 = *(short *)&this_00->field_0x24d;
     sVar2 = *(short *)&this_00->field_0x249;
-    if ((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar2 < 0)) ||
-       (((DAT_007fb242 <= sVar2 || (sVar1 < 0)) || (DAT_007fb244 <= sVar1)))) {
+    if ((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar2 < 0)) ||
+       (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1)))) {
       piVar15 = (int *)0x0;
     }
     else {
       piVar15 = *(int **)(DAT_007fb248 +
-                         ((int)sVar1 * (int)DAT_007fb246 + (int)sVar2 * (int)DAT_007fb240 +
+                         ((int)sVar1 * (int)SHORT_007fb246 + (int)sVar2 * (int)SHORT_007fb240 +
                          (int)sVar7) * 8);
     }
     if (piVar15 == (int *)0x0) {
@@ -195,7 +196,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
-      thunk_FUN_004d8530((int)this_00);
+      thunk_FUN_004d8530((STResourceC *)this_00);
       uVar14 = extraout_var;
       if (*(int *)&this_00->field_0x26d != 0) {
         iVar8 = *(int *)&this_00->field_0x265 + -1;
@@ -203,17 +204,18 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         while (-1 < iVar8) {
           thunk_FUN_004ad310(*(int *)(*(int *)&this_00->field_0x26d + iVar8 * 4));
           Library::MSVCRT::FUN_0072e2b0
-                    (*(undefined4 **)
-                      (*(int *)&this_00->field_0x26d + *(int *)&this_00->field_0x265 * 4));
+                    (*(HoloTy **)(*(int *)&this_00->field_0x26d + *(int *)&this_00->field_0x265 * 4)
+                    );
           iVar8 = *(int *)&this_00->field_0x265 + -1;
           *(int *)&this_00->field_0x265 = iVar8;
         }
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_00->field_0x26d);
+        Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x26d);
         uVar14 = extraout_var_00;
       }
       if (*(short *)&this_00->field_0x32 != -1) {
         STAllPlayersC::UnRegisterDeposit
-                  (DAT_007fa174,CONCAT22(uVar14,*(short *)&this_00->field_0x32),(uint)this_00);
+                  (g_sTAllPlayers_007FA174,CONCAT22(uVar14,*(short *)&this_00->field_0x32),
+                   (STResourceC *)this_00);
       }
       thunk_FUN_004ad310((int)&this_00->field_01D5);
       if (*(int **)&this_00->field_0x273 == (int *)0x0) {
@@ -257,22 +259,23 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       sVar1 = *(short *)&this_00->field_0x249;
       local_14 = CONCAT22(uVar14,sVar1);
       sVar2 = *(short *)&this_00->field_0x24d;
-      if (((sVar7 < 0) || (DAT_007fb240 <= sVar7)) ||
-         (((sVar1 < 0 || ((DAT_007fb242 <= sVar1 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)))) {
+      if (((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) ||
+         (((sVar1 < 0 || ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2))))
+      {
         piVar15 = (int *)0x0;
       }
       else {
         piVar15 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar1 +
+                           ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar1 +
                            (int)sVar7) * 8);
       }
-      if (((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
-          ((DAT_007fb242 <= sVar1 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)) {
+      if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
+          ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
         sVar7 = -1;
       }
       else {
         sVar7 = *(short *)(DAT_007fb280 +
-                          ((int)DAT_007fb278 * (int)sVar1 + (int)DAT_007fb27e * (int)sVar2 +
+                          ((int)SHORT_007fb278 * (int)sVar1 + (int)SHORT_007fb27e * (int)sVar2 +
                           (int)sVar7) * 2);
       }
       if ((sVar7 != 0) &&
@@ -283,7 +286,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
             (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
-      iVar8 = STAllPlayersC::RegisterDeposit(DAT_007fa174,0xffff,this_00);
+      iVar8 = STAllPlayersC::RegisterDeposit(g_sTAllPlayers_007FA174,0xffff,this_00);
       if (iVar8 != 0) {
         thunk_FUN_00580380(this_00);
       }
@@ -316,22 +319,23 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       sVar1 = *(short *)&this_00->field_0x249;
       local_14 = CONCAT22(extraout_var_03,sVar1);
       sVar2 = *(short *)&this_00->field_0x24d;
-      if (((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
-          ((DAT_007fb242 <= sVar1 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)) {
+      if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
+          ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
         piVar15 = (int *)0x0;
       }
       else {
         piVar15 = *(int **)(DAT_007fb248 +
-                           ((int)sVar1 * (int)DAT_007fb240 + (int)DAT_007fb246 * (int)sVar2 +
+                           ((int)sVar1 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar2 +
                            (int)sVar7) * 8);
       }
-      if (((sVar7 < 0) || (DAT_007fb240 <= sVar7)) ||
-         ((sVar1 < 0 || (((DAT_007fb242 <= sVar1 || (sVar2 < 0)) || (DAT_007fb244 <= sVar2)))))) {
+      if (((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) ||
+         ((sVar1 < 0 || (((SHORT_007fb242 <= sVar1 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2))))))
+      {
         sVar7 = -1;
       }
       else {
         sVar7 = *(short *)(DAT_007fb280 +
-                          ((int)sVar1 * (int)DAT_007fb278 + (int)DAT_007fb27e * (int)sVar2 +
+                          ((int)sVar1 * (int)SHORT_007fb278 + (int)SHORT_007fb27e * (int)sVar2 +
                           (int)sVar7) * 2);
       }
       if ((sVar7 != 0) &&
@@ -342,7 +346,8 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
             (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
-      iVar8 = STAllPlayersC::RegisterDeposit(DAT_007fa174,*(ushort *)&this_00->field_0x32,this_00);
+      iVar8 = STAllPlayersC::RegisterDeposit
+                        (g_sTAllPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00);
       if (iVar8 != 0) {
         thunk_FUN_00580380(this_00);
       }
@@ -357,7 +362,9 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       if (iVar8 == 0xffff) {
         iVar8 = 0xb1;
 LAB_0057e60c:
-        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_Igor_To_gold_cpp_007cb19c,iVar8);
+        RaiseInternalException
+                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_Igor_To_gold_cpp_007cb19c,iVar8)
+        ;
       }
     }
     *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 & 0xfffffffb;
@@ -393,53 +400,50 @@ LAB_0057e6f0:
     uVar10 = *(uint *)&this_00->field_0x261 & 0xfffffffd;
     goto LAB_0057e6f0;
   }
-  pvVar5 = DAT_00802a88;
+  pVVar5 = g_visibleClass_00802A88;
   if (*(int *)&this_00->field_0x273 == 0) {
-    if (DAT_00802a88 == (void *)0x0) goto cf_common_join_0057E9C2;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto cf_common_join_0057E9C2;
     iVar8 = *(int *)&this_00->field_0x24d;
-    if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
+    if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
       uVar10 = 0;
     }
     else {
-      thunk_FUN_00558c00(DAT_00802a88,
-                         *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                          *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,
                          (int *)&local_18,&local_14);
       if ((iVar8 < 0) || (4 < iVar8)) {
         uVar10 = 0xffffffff;
       }
       else {
-        if (((((int)local_18 < 0) || (*(int *)((int)pvVar5 + 0x28) <= (int)local_18)) ||
+        if (((((int)local_18 < 0) || ((int)pVVar5->field_0028 <= (int)local_18)) ||
             ((&DAT_0079aed0)[iVar8] + local_14 < 0)) ||
-           (*(int *)((int)pvVar5 + 0x2c) <= (&DAT_0079aed0)[iVar8] + local_14)) {
+           ((int)pVVar5->field_002C <= (&DAT_0079aed0)[iVar8] + local_14)) {
           bVar4 = false;
         }
         else {
           bVar4 = true;
         }
-        if (((bVar4) && (*(int *)((int)pvVar5 + 0x10c) < 4)) &&
-           (iVar13 = *(int *)((int)pvVar5 + *(int *)((int)pvVar5 + 0x10c) * 4 + 0x3c), iVar13 != 0))
-        {
-          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) *
-                                   *(int *)((int)pvVar5 + 0x28) + iVar13 + (int)local_18);
+        if (((bVar4) && ((int)pVVar5->field_010C < 4)) &&
+           ((&pVVar5->field_003C)[pVVar5->field_010C] != 0)) {
+          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) * pVVar5->field_0028 +
+                                   (&pVVar5->field_003C)[pVVar5->field_010C] + (int)local_18);
         }
         else {
           uVar10 = 0xffffffff;
         }
         if (-1 < (int)uVar10) {
           if (uVar10 == 0xf) {
-            if ((((int)local_18 < 0) || (*(int *)((int)pvVar5 + 0x30) <= (int)local_18)) ||
+            if ((((int)local_18 < 0) || ((int)pVVar5->field_0030 <= (int)local_18)) ||
                (((&DAT_0079aed0)[iVar8] + local_14 < 0 ||
-                (*(int *)((int)pvVar5 + 0x34) <= (&DAT_0079aed0)[iVar8] + local_14)))) {
+                ((int)pVVar5->field_0034 <= (&DAT_0079aed0)[iVar8] + local_14)))) {
               bVar4 = false;
             }
             else {
               bVar4 = true;
             }
-            if ((bVar4) && (*(int *)((int)pvVar5 + 0x4c) != 0)) {
-              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) *
-                                       *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) +
-                                      (int)local_18);
+            if ((bVar4) && (pVVar5->field_004C != 0)) {
+              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) * pVVar5->field_0030 +
+                                       pVVar5->field_004C + (int)local_18);
             }
             else {
               uVar10 = 0xffffffff;
@@ -465,51 +469,48 @@ LAB_0057e6f0:
     if (piVar15 == (int *)0x0) goto cf_common_join_0057E9C2;
   }
   else {
-    if (DAT_00802a88 == (void *)0x0) goto cf_common_join_0057E9C2;
+    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto cf_common_join_0057E9C2;
     iVar8 = *(int *)&this_00->field_0x24d;
-    if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
+    if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
       uVar10 = 0;
     }
     else {
-      thunk_FUN_00558c00(DAT_00802a88,
-                         *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                          *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,&local_1c,
                          &local_20);
       if ((iVar8 < 0) || (4 < iVar8)) {
         uVar10 = 0xffffffff;
       }
       else {
-        if ((((local_1c < 0) || (*(int *)((int)pvVar5 + 0x28) <= local_1c)) ||
+        if ((((local_1c < 0) || ((int)pVVar5->field_0028 <= local_1c)) ||
             ((&DAT_0079aed0)[iVar8] + local_20 < 0)) ||
-           (*(int *)((int)pvVar5 + 0x2c) <= (&DAT_0079aed0)[iVar8] + local_20)) {
+           ((int)pVVar5->field_002C <= (&DAT_0079aed0)[iVar8] + local_20)) {
           bVar4 = false;
         }
         else {
           bVar4 = true;
         }
-        if (((bVar4) && (*(int *)((int)pvVar5 + 0x10c) < 4)) &&
-           (iVar13 = *(int *)((int)pvVar5 + *(int *)((int)pvVar5 + 0x10c) * 4 + 0x3c), iVar13 != 0))
-        {
-          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) *
-                                   *(int *)((int)pvVar5 + 0x28) + iVar13 + local_1c);
+        if (((bVar4) && ((int)pVVar5->field_010C < 4)) &&
+           ((&pVVar5->field_003C)[pVVar5->field_010C] != 0)) {
+          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) * pVVar5->field_0028 +
+                                   (&pVVar5->field_003C)[pVVar5->field_010C] + local_1c);
         }
         else {
           uVar10 = 0xffffffff;
         }
         if (-1 < (int)uVar10) {
           if (uVar10 == 0xf) {
-            if (((local_1c < 0) || (*(int *)((int)pvVar5 + 0x30) <= local_1c)) ||
+            if (((local_1c < 0) || ((int)pVVar5->field_0030 <= local_1c)) ||
                (((&DAT_0079aed0)[iVar8] + local_20 < 0 ||
-                (*(int *)((int)pvVar5 + 0x34) <= (&DAT_0079aed0)[iVar8] + local_20)))) {
+                ((int)pVVar5->field_0034 <= (&DAT_0079aed0)[iVar8] + local_20)))) {
               bVar4 = false;
             }
             else {
               bVar4 = true;
             }
-            if ((bVar4) && (*(int *)((int)pvVar5 + 0x4c) != 0)) {
-              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) *
-                                       *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) +
-                                      local_1c);
+            if ((bVar4) && (pVVar5->field_004C != 0)) {
+              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) * pVVar5->field_0030 +
+                                       pVVar5->field_004C + local_1c);
             }
             else {
               uVar10 = 0xffffffff;

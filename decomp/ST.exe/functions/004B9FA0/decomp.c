@@ -473,7 +473,9 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,int param_1)
                                     *(short *)&this_00->field_0x5b4,*(short *)&this_00->field_0x5b8,
                                     1);
         if (iVar19 != 0) {
-          RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x290);
+          RaiseInternalException
+                    (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_base_cpp_007ac820,0x290)
+          ;
         }
         thunk_FUN_0041d900(this_00,*(short *)&this_00->field_0x5b0,*(short *)&this_00->field_0x5b4,
                            *(short *)&this_00->field_0x5b8);
@@ -634,9 +636,9 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,int param_1)
             if (iVar26 < iVar19) {
               uVar20 = this_00->field_001C * 0x41c64e6d + 0x3039;
               this_00->field_001C = uVar20;
-              iVar26 = (uVar20 >> 0x10) % ((iVar19 - iVar26) + 1U) + iVar26;
-              STT3DSprC::SetCurFase((STT3DSprC *)&this_00->field_01D5,'\x0e',iVar26);
-              STT3DSprC::SetCurFase((STT3DSprC *)&this_00->field_01D5,'\r',iVar26);
+              uVar20 = (uVar20 >> 0x10) % ((iVar19 - iVar26) + 1U) + iVar26;
+              STT3DSprC::SetCurFase((STT3DSprC *)&this_00->field_01D5,'\x0e',uVar20);
+              STT3DSprC::SetCurFase((STT3DSprC *)&this_00->field_01D5,'\r',uVar20);
             }
           }
           if ((*(int *)(&DAT_00792778 + this_00->field_0235 * 4) == 0) ||
@@ -798,7 +800,8 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,int param_1)
             iVar19 = STT3DSprC::Init(pSVar22,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
             if (iVar19 != 0) {
               RaiseInternalException
-                        (iVar19,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x365);
+                        (iVar19,g_overwriteContext_007ED77C,
+                         s_E____titans_Artem_TLO_base_cpp_007ac820,0x365);
             }
             puVar31 = local_34;
             for (iVar19 = 0x11; iVar19 != 0; iVar19 = iVar19 + -1) {
@@ -849,7 +852,8 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,int param_1)
                                      ,*(uint *)&this_00->field_0x60f,0x11);
             if (iVar19 != 0) {
               RaiseInternalException
-                        (iVar19,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x386);
+                        (iVar19,g_overwriteContext_007ED77C,
+                         s_E____titans_Artem_TLO_base_cpp_007ac820,0x386);
             }
             puVar31 = local_34;
             for (iVar19 = 0x11; iVar19 != 0; iVar19 = iVar19 + -1) {
@@ -909,7 +913,8 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,int param_1)
                                                 *(short *)&this_00->field_0x5b8);
                     if (iVar24 != 0) {
                       RaiseInternalException
-                                (-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x3a5);
+                                (-5,g_overwriteContext_007ED77C,
+                                 s_E____titans_Artem_TLO_base_cpp_007ac820,0x3a5);
                     }
                     iVar26 = iVar26 + 1;
                   } while (iVar26 < *(int *)&this_00->field_0x5b0 + iVar19);
@@ -1335,7 +1340,7 @@ LAB_004bb5dd:
           local_74 = *(undefined4 *)(*(int *)&this_00->field_0xc + 0x14);
           local_70 = 0;
           local_6c = 10;
-          FUN_006e60a0(this_00,local_7c);
+          STJellyGunC::sub_006E60A0((STJellyGunC *)this_00,local_7c);
         }
       }
       if (DAT_008117bc == (undefined4 *)0x0) {
@@ -1528,7 +1533,7 @@ LAB_004bc117:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (DAT_007fb240 <= iVar24) {
+    if (SHORT_007fb240 <= iVar24) {
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1537,7 +1542,7 @@ LAB_004bc117:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (DAT_007fb242 <= iVar26) {
+    if (SHORT_007fb242 <= iVar26) {
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1567,7 +1572,7 @@ LAB_004bc117:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (DAT_007fb240 <= (short)(ushort)**(byte **)(iVar19 + 0x17)) {
+    if (SHORT_007fb240 <= (short)(ushort)**(byte **)(iVar19 + 0x17)) {
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1604,9 +1609,9 @@ LAB_004bc4c0:
           }
         }
         else if ((((*(int *)(&DAT_00792a90 + this_00->field_0235 * 8) == 2) &&
-                  (bVar2 = pcVar11[5], (short)(ushort)bVar2 < DAT_007fb240)) &&
-                 (bVar1 = pcVar11[6], (short)(ushort)bVar1 < DAT_007fb242)) &&
-                (bVar3 = pcVar11[7], (short)(ushort)bVar3 < DAT_007fb240)) {
+                  (bVar2 = pcVar11[5], (short)(ushort)bVar2 < SHORT_007fb240)) &&
+                 (bVar1 = pcVar11[6], (short)(ushort)bVar1 < SHORT_007fb242)) &&
+                (bVar3 = pcVar11[7], (short)(ushort)bVar3 < SHORT_007fb240)) {
           if (this_00->field_05AC == 0x70) {
             thunk_FUN_004d8e70(this_00,(uint)bVar2,(uint)bVar1,(uint)bVar3);
           }
@@ -1829,11 +1834,11 @@ LAB_004bc4c0:
             g_currentExceptionFrame = local_c4.previous;
             return 0;
           }
-          if ((&this_00->field_04D0)[*(uint *)(pcVar11 + 0x1d)] == 0) {
+          if ((int *)(&this_00->field_04D0)[*(uint *)(pcVar11 + 0x1d)] == (int *)0x0) {
             g_currentExceptionFrame = local_c4.previous;
             return 0;
           }
-          thunk_FUN_004dbe00(this_00,(&this_00->field_04D0)[*(uint *)(pcVar11 + 0x1d)]);
+          thunk_FUN_004dbe00(this_00,(int *)(&this_00->field_04D0)[*(uint *)(pcVar11 + 0x1d)]);
         }
         if (*(uint *)&this_00->field_0x24 != (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
           g_currentExceptionFrame = local_c4.previous;
@@ -1955,11 +1960,11 @@ LAB_004bbfe9:
   case 0x23:
     puVar8 = *(uint **)(iVar19 + 0x17);
     uVar20 = puVar8[1];
-    if (((((-1 < (int)uVar20) && ((int)uVar20 < (int)DAT_007fb240)) &&
+    if (((((-1 < (int)uVar20) && ((int)uVar20 < (int)SHORT_007fb240)) &&
          (uVar28 = puVar8[2], -1 < (int)uVar28)) &&
-        (((int)uVar28 < (int)DAT_007fb242 && (uVar9 = puVar8[3], -1 < (int)uVar9)))) &&
-       (((int)uVar9 < (int)DAT_007fb240 && ((uVar10 = *puVar8, 0x31 < uVar10 && (uVar10 < 0x74))))))
-    {
+        (((int)uVar28 < (int)SHORT_007fb242 && (uVar9 = puVar8[3], -1 < (int)uVar9)))) &&
+       (((int)uVar9 < (int)SHORT_007fb240 && ((uVar10 = *puVar8, 0x31 < uVar10 && (uVar10 < 0x74))))
+       )) {
       if (this_00->field_05AC == 0x53) {
         thunk_FUN_004cdfd0(this_00,uVar10,uVar20,uVar28,uVar9);
         g_currentExceptionFrame = local_c4.previous;
@@ -2014,25 +2019,25 @@ LAB_004bbfe9:
         sVar4 = *(short *)&this_00->field_0x5b4;
         do {
           sVar17 = (short)iVar19;
-          if (((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar4 < 0)) ||
-              ((DAT_007fb242 <= sVar4 || (sVar17 < 0)))) || (DAT_007fb244 <= sVar17)) {
+          if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar4 < 0)) ||
+              ((SHORT_007fb242 <= sVar4 || (sVar17 < 0)))) || (SHORT_007fb244 <= sVar17)) {
             iVar26 = 0;
           }
           else {
             iVar26 = *(int *)(DAT_007fb248 +
-                             ((int)DAT_007fb246 * (int)sVar17 + (int)DAT_007fb240 * (int)sVar4 +
+                             ((int)SHORT_007fb246 * (int)sVar17 + (int)SHORT_007fb240 * (int)sVar4 +
                              (int)sVar18) * 8);
           }
           if (iVar26 == 0) {
-            if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
+            if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
                ((sVar4 < 0 ||
-                (((DAT_007fb242 <= sVar4 || (sVar17 < 0)) || (DAT_007fb244 <= sVar17)))))) {
+                (((SHORT_007fb242 <= sVar4 || (sVar17 < 0)) || (SHORT_007fb244 <= sVar17)))))) {
               sVar17 = -1;
             }
             else {
               sVar17 = *(short *)(DAT_007fb280 +
-                                 ((int)DAT_007fb27e * (int)sVar17 + (int)DAT_007fb278 * (int)sVar4 +
-                                 (int)sVar18) * 2);
+                                 ((int)SHORT_007fb27e * (int)sVar17 +
+                                  (int)SHORT_007fb278 * (int)sVar4 + (int)sVar18) * 2);
             }
             if (sVar17 == -1) {
               local_8 = (byte *)0x1;
@@ -2047,21 +2052,22 @@ LAB_004bbfe9:
       if (local_8 == (byte *)0x0) {
         sVar18 = *(short *)&this_00->field_0x5b0;
         sVar4 = *(short *)&this_00->field_0x5b4;
-        if (((sVar18 < 0) || (DAT_007fb240 <= sVar18)) ||
-           ((sVar4 < 0 || ((DAT_007fb242 <= sVar4 || (DAT_007fb244 < 1)))))) {
+        if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+           ((sVar4 < 0 || ((SHORT_007fb242 <= sVar4 || (SHORT_007fb244 < 1)))))) {
           iVar19 = 0;
         }
         else {
-          iVar19 = *(int *)(DAT_007fb248 + ((int)DAT_007fb240 * (int)sVar4 + (int)sVar18) * 8);
+          iVar19 = *(int *)(DAT_007fb248 + ((int)SHORT_007fb240 * (int)sVar4 + (int)sVar18) * 8);
         }
         bVar34 = false;
         if (iVar19 == 0) {
-          if ((((sVar18 < 0) || (DAT_007fb240 <= sVar18)) || (sVar4 < 0)) ||
-             ((DAT_007fb242 <= sVar4 || (DAT_007fb244 < 1)))) {
+          if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar4 < 0)) ||
+             ((SHORT_007fb242 <= sVar4 || (SHORT_007fb244 < 1)))) {
             sVar18 = -1;
           }
           else {
-            sVar18 = *(short *)(DAT_007fb280 + ((int)DAT_007fb278 * (int)sVar4 + (int)sVar18) * 2);
+            sVar18 = *(short *)(DAT_007fb280 + ((int)SHORT_007fb278 * (int)sVar4 + (int)sVar18) * 2)
+            ;
           }
           if (sVar18 == 0) {
             thunk_FUN_004c6c70(this_00,*(undefined4 *)&this_00->field_0x5b0,
@@ -2087,39 +2093,39 @@ LAB_004bbfe9:
     switch(**(undefined1 **)(iVar19 + 0x17)) {
     case 0:
       if (this_00->field_04D0 != 0) {
-        thunk_FUN_004dbcc0(this_00,0,*(int *)&this_00->field_0x4e0 + -5);
+        thunk_FUN_004dbcc0(this_00,(int *)0x0,*(int *)&this_00->field_0x4e0 + -5);
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 1:
       if (this_00->field_04D0 != 0) {
-        thunk_FUN_004dbcc0(this_00,0,*(int *)&this_00->field_0x4e0 + 5);
+        thunk_FUN_004dbcc0(this_00,(int *)0x0,*(int *)&this_00->field_0x4e0 + 5);
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 2:
       if (*(int *)&this_00->field_0x4d4 != 0) {
-        thunk_FUN_004dbcc0(this_00,1,*(int *)&this_00->field_0x4e4 + -5);
+        thunk_FUN_004dbcc0(this_00,(int *)0x1,*(int *)&this_00->field_0x4e4 + -5);
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 3:
       if (*(int *)&this_00->field_0x4d4 != 0) {
-        thunk_FUN_004dbcc0(this_00,1,*(int *)&this_00->field_0x4e4 + 5);
+        thunk_FUN_004dbcc0(this_00,(int *)0x1,*(int *)&this_00->field_0x4e4 + 5);
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 4:
-      iVar19 = 0;
+      piVar27 = (int *)0x0;
       goto LAB_004bd06b;
     case 5:
-      iVar19 = 1;
+      piVar27 = (int *)0x1;
 LAB_004bd06b:
-      thunk_FUN_004dbf30(this_00,iVar19);
+      thunk_FUN_004dbf30(this_00,piVar27);
     }
   }
   g_currentExceptionFrame = local_c4.previous;

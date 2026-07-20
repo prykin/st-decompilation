@@ -30,7 +30,7 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
     uVar6 = uVar5 + 9;
     local_c = uVar6;
     if ((uint)local_8->field_222A < uVar6) {
-      iVar3 = Library::DKW::LIB::FUN_006acf50((undefined4 *)local_8->field_2226,uVar6);
+      iVar3 = Library::DKW::LIB::FUN_006acf50(local_8->field_2226,uVar6);
       pSVar2->field_2226 = iVar3;
       pSVar2->field_222A = uVar6;
     }
@@ -50,7 +50,7 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
       puVar7 = (undefined4 *)((int)puVar7 + 1);
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    FUN_00715360(DAT_00811764,param_1,'\"',(char *)pSVar2->field_2226,local_c,1,0xffffffff);
+    FUN_00715360(g_int_00811764,param_1,'\"',(char *)pSVar2->field_2226,local_c,1,0xffffffff);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

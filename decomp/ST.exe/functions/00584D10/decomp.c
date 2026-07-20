@@ -41,7 +41,7 @@ void __fastcall FUN_00584d10(void *param_1)
   local_64[1] = uVar2;
   do {
     local_3e = (undefined2)iVar5;
-    thunk_FUN_00416270(param_1,&local_4a,&sStack_48,&local_46);
+    thunk_FUN_00416270(param_1,&local_4a,(int *)&sStack_48,(int *)&local_46);
     if (local_c < 4) {
       iVar4 = FUN_006aff50(iVar5);
       iVar3 = FUN_006aff5b(local_8);
@@ -76,9 +76,9 @@ void __fastcall FUN_00584d10(void *param_1)
     }
     if ((((-1 < local_4a) && (-1 < sStack_48)) && (-1 < local_46)) &&
        (((short)((local_4a / 0xc9 + (local_4a >> 0xf)) -
-                (short)((longlong)(int)local_4a * 0x28c1979 >> 0x3f)) < DAT_007fb240 &&
+                (short)((longlong)(int)local_4a * 0x28c1979 >> 0x3f)) < SHORT_007fb240 &&
         ((short)((sStack_48 / 0xc9 + (sStack_48 >> 0xf)) -
-                (short)((longlong)(int)sStack_48 * 0x28c1979 >> 0x3f)) < DAT_007fb242)))) {
+                (short)((longlong)(int)sStack_48 * 0x28c1979 >> 0x3f)) < SHORT_007fb242)))) {
       STPlaySystemC::CreateGameObject(DAT_00802a38,0x28,0,0,local_64,0);
       if (0xc9 < local_46) {
         local_40 = local_46 + -0xc9;

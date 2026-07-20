@@ -1,5 +1,9 @@
 
-undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
+   Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=1; incoming_this_accesses=10;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1 */
+
+undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
 
 {
   int iVar1;
@@ -12,13 +16,13 @@ undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
   int local_e;
   int local_a;
   
-  if (*(int *)((int)this + 0x23e) < *(int *)((int)this + 0x23a)) {
+  if ((int)this->field_023E < (int)this->field_023A) {
     if (param_1 != 1) {
       return 1;
     }
     iVar5 = 0;
-    iVar1 = *(int *)(*(int *)((int)this + 0x22e) + 0xc);
-    piVar3 = *(int **)(*(int *)((int)this + 0x22e) + 0x1c);
+    iVar1 = *(int *)(this->field_022E + 0xc);
+    piVar3 = *(int **)(this->field_022E + 0x1c);
     if (0 < iVar1) {
       do {
         if (((short)piVar3[1] != -1) && (*piVar3 == 0)) {
@@ -29,27 +33,27 @@ undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
       } while (iVar5 < iVar1);
     }
   }
-  if (*(int *)((int)this + 0x236) == 1) {
-    iVar1 = *(int *)((int)this + 0x22a);
-    iVar5 = *(int *)((int)this + 0x232);
+  if (this->field_0236 == 1) {
+    iVar1 = this->field_022A;
+    iVar5 = this->field_0232;
     if (iVar5 == *(int *)(iVar1 + 0xc) + -1) {
-      if (*(int *)((int)this + 0x246) != 0) {
+      if (this->field_0246 != 0) {
         return 2;
       }
       if (iVar5 < 1) {
         return 1;
       }
-      *(undefined4 *)((int)this + 0x236) = 0;
-      *(undefined4 *)((int)this + 0x23e) = 0;
-      *(uint *)((int)this + 0x232) = iVar5 - 1U;
+      this->field_0236 = 0;
+      this->field_023E = 0;
+      this->field_0232 = iVar5 - 1U;
       FUN_006acc70(iVar1,iVar5 - 1U,&local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
       uVar4 = (uint)bVar2;
       local_e = local_e * 0xc9;
     }
     else {
-      *(undefined4 *)((int)this + 0x23e) = 0;
-      *(uint *)((int)this + 0x232) = iVar5 + 1U;
+      this->field_023E = 0;
+      this->field_0232 = iVar5 + 1U;
       FUN_006acc70(iVar1,iVar5 + 1U,&local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
       uVar4 = (uint)bVar2;
@@ -57,26 +61,26 @@ undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
     }
   }
   else {
-    if (*(int *)((int)this + 0x232) == 0) {
-      *(undefined4 *)((int)this + 0x232) = 1;
-      *(undefined4 *)((int)this + 0x236) = 1;
-      *(undefined4 *)((int)this + 0x23e) = 0;
-      FUN_006acc70(*(int *)((int)this + 0x22a),1,&local_14);
+    if (this->field_0232 == 0) {
+      this->field_0232 = 1;
+      this->field_0236 = 1;
+      this->field_023E = 0;
+      FUN_006acc70(this->field_022A,1,&local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
     }
     else {
-      uVar4 = *(int *)((int)this + 0x232) - 1;
-      *(uint *)((int)this + 0x232) = uVar4;
-      *(undefined4 *)((int)this + 0x23e) = 0;
-      FUN_006acc70(*(int *)((int)this + 0x22a),uVar4,&local_14);
+      uVar4 = this->field_0232 - 1;
+      this->field_0232 = uVar4;
+      this->field_023E = 0;
+      FUN_006acc70(this->field_022A,uVar4,&local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
       local_a = local_e;
     }
     uVar4 = (uint)bVar2;
     local_e = local_a * 0xc9;
   }
-  *(int *)((int)this + 0x23a) = (local_e / (int)uVar4) / 3;
-  STGroupBoatC::SetPatrolCmdToBoat(this,unaff_EDI);
+  this->field_023A = (local_e / (int)uVar4) / 3;
+  SetPatrolCmdToBoat(this,unaff_EDI);
   return 0;
 }
 

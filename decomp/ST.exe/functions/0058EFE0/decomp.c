@@ -14,7 +14,7 @@ void __fastcall FUN_0058efe0(void *param_1)
   local_24[3] = 0;
   local_24[5] = *(undefined4 *)((int)param_1 + 8);
   local_24[4] = 10;
-  FUN_006e60a0(param_1,local_24);
+  STJellyGunC::sub_006E60A0(param_1,local_24);
   return;
 }
 

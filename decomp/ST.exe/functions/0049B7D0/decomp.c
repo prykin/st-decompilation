@@ -23,9 +23,10 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   undefined4 extraout_EDX_00;
   undefined4 extraout_EDX_01;
   undefined4 *puVar12;
+  Global_sub_006C8EC0_param_3Enum GVar13;
   int unaff_EDI;
-  int iVar13;
-  undefined4 *puVar14;
+  int iVar14;
+  undefined4 *puVar15;
   undefined4 local_6c;
   uint local_68 [3];
   undefined4 local_5a;
@@ -42,7 +43,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   uint local_2c;
   uint local_28;
   undefined4 *local_24;
-  uint local_20;
+  Global_sub_006C8EC0_param_3Enum local_20;
   int local_1c;
   uint local_18;
   int local_14;
@@ -55,7 +56,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     if (0 < (int)this->field_023E) {
       this->field_023E = this->field_023E + 1;
     }
-    iVar3 = thunk_FUN_004a7e30(this,0);
+    iVar3 = sub_004A7E30(this,0);
     return -(uint)(iVar3 != 2) & 2;
   }
   puVar11 = (undefined4 *)&this->field_0x89;
@@ -124,12 +125,13 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       FUN_006acc70(this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
         pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                                   (DAT_007fa174,
+                                   (g_sTAllPlayers_007FA174,
                                     CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0024),
                                     local_18,CASE_1);
         if (pvVar5 == (void *)0x0) {
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x77d);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                     ,0x77d);
         }
         thunk_FUN_004162f0(pvVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                            (undefined2 *)&local_14);
@@ -160,43 +162,43 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   if (local_8 < 0) {
     local_8 = 0;
   }
-  iVar13 = (int)DAT_007fb278;
+  iVar14 = (int)SHORT_007fb278;
   iVar8 = (int)local_24 + 10;
-  if (iVar13 <= iVar8) {
-    iVar8 = iVar13 + -1;
+  if (iVar14 <= iVar8) {
+    iVar8 = iVar14 + -1;
   }
   iVar3 = iVar3 + 10;
-  if (DAT_007fb27a <= iVar3) {
-    iVar3 = DAT_007fb27a + -1;
+  if (SHORT_007fb27a <= iVar3) {
+    iVar3 = SHORT_007fb27a + -1;
   }
   local_2c = (iVar8 - local_c) + 1;
-  local_20 = (iVar3 - local_8) + 1;
+  local_20 = (iVar3 - local_8) + CASE_1;
   local_34 = local_20 * local_2c;
   local_14 = 0;
   do {
     local_10 = 0;
     puVar11 = (undefined4 *)
               ((int)DAT_007fb280 +
-              (iVar13 * local_8 + local_c + (int)DAT_007fb27e * (int)(short)local_14) * 2);
+              (iVar14 * local_8 + local_c + (int)SHORT_007fb27e * (int)(short)local_14) * 2);
     local_24 = (undefined4 *)((int)DAT_007fb238 + (short)local_14 * local_34 * 2);
     if (0 < (int)local_20) {
       do {
         puVar12 = puVar11;
-        puVar14 = local_24;
+        puVar15 = local_24;
         for (uVar10 = (local_2c & 0x7fffffff) >> 1; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *puVar14 = *puVar12;
+          *puVar15 = *puVar12;
           puVar12 = puVar12 + 1;
-          puVar14 = puVar14 + 1;
+          puVar15 = puVar15 + 1;
         }
         for (uVar10 = local_2c * 2 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined1 *)puVar14 = *(undefined1 *)puVar12;
+          *(undefined1 *)puVar15 = *(undefined1 *)puVar12;
           puVar12 = (undefined4 *)((int)puVar12 + 1);
-          puVar14 = (undefined4 *)((int)puVar14 + 1);
+          puVar15 = (undefined4 *)((int)puVar15 + 1);
         }
         local_10 = local_10 + 1;
-        iVar13 = (int)DAT_007fb278;
+        iVar14 = (int)SHORT_007fb278;
         local_24 = (undefined4 *)((int)local_24 + local_2c * 2);
-        puVar11 = (undefined4 *)((int)puVar11 + iVar13 * 2);
+        puVar11 = (undefined4 *)((int)puVar11 + iVar14 * 2);
       } while ((int)(short)local_10 < (int)local_20);
     }
     local_14 = local_14 + 1;
@@ -222,8 +224,8 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       }
       iVar7 = local_c;
       if (*(short *)((int)DAT_007fb238 +
-                    (((psVar4[1] - local_8) * (int)DAT_007fb278 + (int)psVar4[2] * (int)DAT_007fb27e
-                     + (int)*psVar4) - local_c) * 2) < 1) {
+                    (((psVar4[1] - local_8) * (int)SHORT_007fb278 +
+                      (int)psVar4[2] * (int)SHORT_007fb27e + (int)*psVar4) - local_c) * 2) < 1) {
         local_30 = (uint *)0x1;
         break;
       }
@@ -233,26 +235,27 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   local_20 = 0;
   if (0 < local_1c) {
     do {
-      uVar10 = local_20;
+      GVar13 = local_20;
       FUN_006acc70(this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
         pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                                   (DAT_007fa174,
+                                   (g_sTAllPlayers_007FA174,
                                     CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),
                                     local_18,CASE_1);
         if (pvVar5 == (void *)0x0) {
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x7a7);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                     ,0x7a7);
         }
         thunk_FUN_004162f0(pvVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                            (undefined2 *)&local_14);
-        uVar10 = local_20;
+        GVar13 = local_20;
         if (*(short *)((int)DAT_007fb238 +
-                      ((((short)local_10 - local_8) * (int)DAT_007fb278 +
-                        (int)DAT_007fb27e * (int)(short)local_14 + (int)param_1._2_2_) - iVar7) * 2)
-            == 0) goto joined_r0x0049bc58;
+                      ((((short)local_10 - local_8) * (int)SHORT_007fb278 +
+                        (int)SHORT_007fb27e * (int)(short)local_14 + (int)param_1._2_2_) - iVar7) *
+                      2) == 0) goto joined_r0x0049bc58;
       }
-      local_20 = uVar10 + 1;
+      local_20 = GVar13 + 1;
     } while ((int)local_20 < local_1c);
   }
   if (local_30 != (uint *)0x0) {
@@ -260,7 +263,7 @@ joined_r0x0049bc58:
     local_28 = local_28 - 1;
     if (-1 < (int)local_28) {
       FUN_006acc70(this->field_0103,local_28,(undefined4 *)&local_3c);
-      uVar10 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
+      uVar10 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
       puVar11 = DAT_007fb280;
       puVar12 = DAT_007fb238;
       for (uVar9 = (uVar10 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -273,7 +276,7 @@ joined_r0x0049bc58:
         puVar11 = (undefined4 *)((int)puVar11 + 1);
         puVar12 = (undefined4 *)((int)puVar12 + 1);
       }
-      FUN_006ab090((int)DAT_007fb238,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
+      FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
                    (int)local_3c,(int)local_3a,(int)local_38,-1,-1,-1);
       uVar10 = 0;
       if (0 < local_1c) {
@@ -281,19 +284,20 @@ joined_r0x0049bc58:
           FUN_006acc70(this->field_0029,uVar10,&local_18);
           if ((short)local_18 != -1) {
             pvVar5 = (void *)STAllPlayersC::GetObjPtr
-                                       (DAT_007fa174,
+                                       (g_sTAllPlayers_007FA174,
                                         CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this->field_0024
                                                 ),local_18,CASE_1);
             if (pvVar5 == (void *)0x0) {
               RaiseInternalException
-                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x7bd);
+                        (-0x5001fffc,g_overwriteContext_007ED77C,
+                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0x7bd);
             }
             thunk_FUN_004162f0(pvVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                                (undefined2 *)&local_14);
             if (*(short *)((int)DAT_007fb238 +
-                          ((int)DAT_007fb27e * (int)(short)local_14 +
-                           (int)DAT_007fb278 * (int)(short)local_10 + (int)param_1._2_2_) * 2) == 0)
-            {
+                          ((int)SHORT_007fb27e * (int)(short)local_14 +
+                           (int)SHORT_007fb278 * (int)(short)local_10 + (int)param_1._2_2_) * 2) ==
+                0) {
               FUN_006b0c70(this->field_0103,local_28);
               break;
             }
@@ -351,7 +355,7 @@ joined_r0x0049bc58:
       if ((short)local_68[0] != -1) {
         this_00 = (STBoatC *)
                   STAllPlayersC::GetObjPtr
-                            (DAT_007fa174,
+                            (g_sTAllPlayers_007FA174,
                              CONCAT31((int3)((uint)extraout_EDX_01 >> 8),this->field_0024),
                              local_68[0],CASE_1);
         if (this_00 == (STBoatC *)0x0) {
@@ -363,7 +367,8 @@ joined_r0x0049bc58:
             return uVar10;
           }
           RaiseInternalException
-                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x7ee);
+                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                     ,0x7ee);
         }
         Library::DKW::TBL::FUN_006ae1c0(local_30,local_68);
         local_40 = uVar10;

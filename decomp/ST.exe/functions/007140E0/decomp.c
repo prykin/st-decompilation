@@ -15,7 +15,6 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   undefined4 *puVar10;
   char *pcVar11;
   char *pcVar12;
-  undefined4 uVar13;
   undefined4 local_6c [18];
   char local_24 [12];
   int local_18;
@@ -49,17 +48,17 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       if (param_1 != 0) {
         if (*(int *)((int)this + 4) == iVar8) {
           ccFntTy::WrTxt(this_00,*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,-1);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x94),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -2) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x98);
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x98),-1,-1);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x98),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -1) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x9c);
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x9c),-1,-1);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x9c),-1,-1);
         }
         *(undefined4 *)(*(int *)this + 0x82) = 0xffffffff;
       }
@@ -240,7 +239,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     }
     if (param_1 == 0) goto cf_common_exit_00714ACB;
     iVar7 = *(int *)((int)this + 0x70);
-    uVar13 = *(undefined4 *)((int)this + 0x94);
+    uVar6 = *(uint *)((int)this + 0x94);
   }
   else {
     if (*(int *)((int)this + 8) + -3 <= *(int *)((int)this + 4)) {
@@ -249,17 +248,17 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
                      (char)*(undefined4 *)((int)this + 0xa0));
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -3) {
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,-1);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x94),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -2) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x98);
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x98),-1,-1);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x98),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -1) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x9c);
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x9c),-1,-1);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x9c),-1,-1);
         }
         *(undefined4 *)(*(int *)this + 0x82) = 0xffffffff;
       }
@@ -270,7 +269,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     }
     if (-1 < *(int *)((int)this + 0x7c)) {
       if (this_00->field_00A0 != 0) {
-        FUN_00710790((int)this_00);
+        FUN_00710790((uint *)this_00);
       }
       iVar9 = *(int *)(*(int *)this + 0x5c) + *(int *)&this_00->field_0x8a +
               *(int *)((int)this + 0xa4);
@@ -278,13 +277,13 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       *(undefined4 *)((int)this + 0x7c) = 0xffffffff;
       *(int *)((int)this + 0x80) = iVar8;
       *(int *)(*(int *)((int)this + 0xa8) + *(int *)((int)this + 0xb0) * 4) = iVar8;
-      iVar8 = *(int *)this;
+      puVar4 = *(uint **)this;
       *(int *)((int)this + 0xb0) = *(int *)((int)this + 0xb0) + 1;
       *(int *)((int)this + 0x8c) = *(int *)((int)this + 0x80) + *(int *)((int)this + 0x58);
-      if (*(int *)(iVar8 + 0xa0) != 0) {
-        FUN_00710790(iVar8);
+      if (puVar4[0x28] != 0) {
+        FUN_00710790(puVar4);
       }
-      if (*(int *)(iVar8 + 0x8a) + -1 + iVar9 < *(int *)((int)this + 0x60)) {
+      if (*(int *)((int)puVar4 + 0x8a) + -1 + iVar9 < *(int *)((int)this + 0x60)) {
         *(int *)((int)this + 0xa4) = iVar9;
       }
       else {
@@ -315,7 +314,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
             iVar8 = -1;
           }
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
-                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,iVar8);
+                         *(int *)((int)this + 0x70),*(uint *)((int)this + 0x94),-1,iVar8);
         }
       }
     }
@@ -507,23 +506,23 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       FUN_006b4170(local_c,local_10,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
                    (char)*(undefined4 *)((int)this + 0xa0));
       ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
-                     *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),iVar8,local_14);
+                     *(int *)((int)this + 0x70),*(uint *)((int)this + 0x94),iVar8,local_14);
       goto cf_common_exit_00714ACB;
     }
     if (local_18 != 0) {
-      iVar9 = *(int *)this;
-      if (*(int *)(iVar9 + 0xa0) != 0) {
-        FUN_00710790(iVar9);
+      puVar4 = *(uint **)this;
+      if (puVar4[0x28] != 0) {
+        FUN_00710790(puVar4);
       }
       FUN_006b4170(local_c,local_10,0,*(int *)((int)this + 0xa4),*(int *)((int)this + 0x5c),
-                   *(int *)(iVar9 + 0x8a),(char)*(undefined4 *)((int)this + 0xa0));
+                   *(int *)((int)puVar4 + 0x8a),(char)*(undefined4 *)((int)this + 0xa0));
     }
-    uVar13 = *(undefined4 *)((int)this + 0x94);
+    uVar6 = *(uint *)((int)this + 0x94);
     iVar7 = *(int *)((int)this + 0xa4);
     iVar9 = local_14;
   }
   ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),iVar7,
-                 uVar13,iVar8,iVar9);
+                 uVar6,iVar8,iVar9);
 cf_common_exit_00714ACB:
   *(int *)((int)this + 0xc) = *(int *)((int)this + 0xc) + 1;
   *(int *)((int)this + 4) = *(int *)((int)this + 4) + 1;

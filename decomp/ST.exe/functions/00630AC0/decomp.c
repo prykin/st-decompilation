@@ -15,8 +15,9 @@ undefined4 __thiscall FUN_00630ac0(void *this,uint param_1)
     return 0;
   }
   sVar2 = psVar3[3];
-  iVar5 = ((int)psVar3[2] * (int)DAT_007fb240 + (int)psVar3[1]) * (int)DAT_007fb242 + (int)*psVar3;
-  iVar1 = DAT_007fb242 + iVar5;
+  iVar5 = ((int)psVar3[2] * (int)SHORT_007fb240 + (int)psVar3[1]) * (int)SHORT_007fb242 +
+          (int)*psVar3;
+  iVar1 = SHORT_007fb242 + iVar5;
   iVar4 = FUN_006b0c70(iVar4,param_1);
   if (iVar4 != 0) {
     return 0;

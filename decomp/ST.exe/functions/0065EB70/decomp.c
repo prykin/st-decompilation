@@ -9,14 +9,15 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
   int iVar3;
   int iVar4;
   char cVar5;
-  int *local_c;
+  uint *local_c;
   int local_8;
   
   iVar4 = param_2;
   iVar2 = 0;
   local_8 = 0;
-  local_c = (int *)0x0;
-  if (((DAT_007fa174 != 0) && (param_3 != (uint *)0x0)) && (0 < param_2)) {
+  local_c = (uint *)0x0;
+  if (((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) && (param_3 != (uint *)0x0)) &&
+     (0 < param_2)) {
     if (((int)param_1 < 0) || (8 < (int)param_1)) {
       param_1 = *(uint *)((int)this + 0x97);
     }
@@ -46,7 +47,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
         else if (iVar4 < DAT_00811900) {
           if (0 < iVar4) {
             do {
-              iVar2 = thunk_FUN_00423220((void *)((int)this + 0x1c),local_c,DAT_00811900);
+              iVar2 = thunk_FUN_00423220((void *)((int)this + 0x1c),(int *)local_c,DAT_00811900);
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 param_2._0_2_ = CONCAT11(1,cVar5);
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
@@ -76,7 +77,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
           }
         }
       }
-      if (local_c != (int *)0x0) {
+      if (local_c != (uint *)0x0) {
         FUN_006ab060(&local_c);
       }
       return local_8;

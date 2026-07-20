@@ -8,7 +8,7 @@ void __fastcall FUN_00635fd0(int *param_1)
   uint uVar4;
   
   if ((*(int *)((int)param_1 + 0x11) == 3) && (*(int *)((int)param_1 + 0x39) != 0)) {
-    FUN_006ab060((undefined4 *)((int)param_1 + 0x39));
+    FUN_006ab060((LPVOID *)((int)param_1 + 0x39));
   }
   if (*param_1 != 0) {
     iVar1 = *(int *)(*param_1 + 0xc);

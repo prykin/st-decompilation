@@ -1,5 +1,8 @@
 
-undefined4 * __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0062CA20 returns return of Library::DKW::LIB::FUN_006aac70 @ 0062CA5B */
+
+int __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
 
 {
   undefined4 *puVar1;
@@ -27,6 +30,6 @@ undefined4 * __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
     }
     *param_2 = uVar3;
   }
-  return puVar1;
+  return (int)puVar1;
 }
 

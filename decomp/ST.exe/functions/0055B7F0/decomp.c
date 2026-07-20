@@ -4,7 +4,7 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
 {
   char *pcVar1;
   int iVar2;
-  undefined *puVar3;
+  int *piVar3;
   uint uVar4;
   bool bVar5;
   
@@ -33,30 +33,30 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
         else {
           pcVar1 = (char *)0x0;
         }
-        puVar3 = (undefined *)(uint)(byte)pcVar1[1];
-        if (puVar3 == param_2) {
+        piVar3 = (int *)(uint)(byte)pcVar1[1];
+        if (piVar3 == (int *)param_2) {
           if (*pcVar1 == '\0') {
             if (param_1 == 0) {
               thunk_FUN_00559110(this,(int)*(short *)(pcVar1 + 2),
                                  (undefined *)(int)*(short *)(pcVar1 + 4),(int)pcVar1[6],
-                                 (uint)puVar3,(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),0x4001);
+                                 (uint)piVar3,(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),0x4001);
             }
             else {
               thunk_FUN_00558dc0(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
-                                 (undefined *)(int)pcVar1[6],(uint)puVar3,
-                                 (undefined *)(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),0x6009);
+                                 (undefined *)(int)pcVar1[6],piVar3,(uint)(byte)pcVar1[7],
+                                 *(int **)(pcVar1 + 8),0x6009);
             }
           }
           else if (*pcVar1 == '\x01') {
             if (param_1 == 0) {
               thunk_FUN_00559620(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
-                                 pcVar1[6],puVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),
-                                 2);
+                                 pcVar1[6],(undefined *)piVar3,(uint)(byte)pcVar1[7],
+                                 *(undefined4 *)(pcVar1 + 8),2);
             }
             else {
               thunk_FUN_005594a0(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
-                                 pcVar1[6],puVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),
-                                 2);
+                                 pcVar1[6],(undefined *)piVar3,(uint)(byte)pcVar1[7],
+                                 *(undefined4 *)(pcVar1 + 8),2);
             }
           }
         }

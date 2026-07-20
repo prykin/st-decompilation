@@ -28,33 +28,33 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
     local_8 = 0;
   }
   iVar5 = local_8;
-  if (DAT_007fb240 + -1 < _param_3) {
-    _param_3 = DAT_007fb240 + -1;
+  if (SHORT_007fb240 + -1 < _param_3) {
+    _param_3 = SHORT_007fb240 + -1;
   }
   if (_param_6 < 0) {
     _param_6 = 0;
   }
-  if (DAT_007fb242 + -1 < _param_4) {
-    _param_4 = DAT_007fb242 + -1;
+  if (SHORT_007fb242 + -1 < _param_4) {
+    _param_4 = SHORT_007fb242 + -1;
   }
   if (iVar7 < 0) {
     iVar7 = 0;
   }
-  if (DAT_007fb244 + -1 < iVar3) {
-    iVar3 = DAT_007fb244 + -1;
+  if (SHORT_007fb244 + -1 < iVar3) {
+    iVar3 = SHORT_007fb244 + -1;
   }
   local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-  iVar6 = DAT_007fb240 * _param_6 + iVar5 + (iVar7 + -1) * (int)DAT_007fb246;
+  iVar6 = SHORT_007fb240 * _param_6 + iVar5 + (iVar7 + -1) * (int)SHORT_007fb246;
   if (iVar7 <= iVar3) {
     _param_8 = (iVar3 - iVar7) + 1;
     do {
-      iVar6 = iVar6 + DAT_007fb246;
+      iVar6 = iVar6 + SHORT_007fb246;
       local_14 = iVar6;
       if (_param_6 <= _param_4) {
         iVar3 = (_param_4 - _param_6) + 1;
-        local_10 = iVar6 - DAT_007fb240;
+        local_10 = iVar6 - SHORT_007fb240;
         do {
-          local_10 = local_10 + DAT_007fb240;
+          local_10 = local_10 + SHORT_007fb240;
           if (iVar5 <= _param_3) {
             iVar7 = local_10 * 8 + -8;
             _param_7 = (_param_3 - local_8) + 1;

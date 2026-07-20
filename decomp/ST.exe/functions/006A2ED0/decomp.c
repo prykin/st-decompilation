@@ -8,11 +8,11 @@
 int __cdecl FUN_006a2ed0(short *param_1)
 
 {
-  double dVar1;
+  int *piVar1;
   double dVar2;
   double dVar3;
   double dVar4;
-  int *piVar5;
+  double dVar5;
   undefined4 *puVar6;
   ushort *puVar7;
   int iVar8;
@@ -27,41 +27,43 @@ int __cdecl FUN_006a2ed0(short *param_1)
   int iVar17;
   cMf32 *in_stack_00000008;
   int local_18;
-  int *local_14;
+  HoloTy *local_14;
   short *local_8;
   
   local_8 = (short *)0x0;
   puVar6 = FUN_006b04d0(0x4f2);
   if (puVar6 == (undefined4 *)0x0) {
-    local_14 = (int *)0x0;
+    local_14 = (HoloTy *)0x0;
   }
   else {
-    local_14 = (int *)FUN_006dbca0((int)puVar6);
-    if (local_14 != (int *)0x0) goto LAB_006a2f2f;
+    local_14 = (HoloTy *)FUN_006dbca0((int)puVar6);
+    if (local_14 != (HoloTy *)0x0) goto LAB_006a2f2f;
   }
-  RaiseInternalException(-2,DAT_007ed77c,s_E____titans_Maps_prepare_cpp_007dfacc,0xcf);
+  RaiseInternalException
+            (-2,g_overwriteContext_007ED77C,s_E____titans_Maps_prepare_cpp_007dfacc,0xcf);
 LAB_006a2f2f:
-  dVar1 = (double)((float)(int)param_1[1] * _DAT_0079d84c);
-  dVar2 = (double)((float)-(int)param_1[1] * _DAT_0079d84c);
-  dVar3 = (double)((float)(int)*param_1 * _DAT_0079d84c);
-  dVar4 = (double)((float)-(int)*param_1 * _DAT_0079d84c);
-  FUN_006dc050(local_14,0,0,0,0x8c,0x8c,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
-               SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),
-               (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
+  dVar2 = (double)((float)(int)param_1[1] * _DAT_0079d84c);
+  dVar3 = (double)((float)-(int)param_1[1] * _DAT_0079d84c);
+  dVar4 = (double)((float)(int)*param_1 * _DAT_0079d84c);
+  dVar5 = (double)((float)-(int)*param_1 * _DAT_0079d84c);
+  FUN_006dc050(local_14,0,0,0,0x8c,0x8c,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20),
+               SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),
+               (int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),
                0x4024000000000000,0x4023ee97865e3540,0);
-  local_14[0x4a] = 0xe0;
-  local_14[0x49] = 2;
-  local_14[0x10e] = -0x191b1d20;
-  *(undefined2 *)(local_14 + 0x10f) = 0xeae8;
+  *(undefined4 *)((int)&local_14[5].field_0027 + 2) = 0xe0;
+  *(undefined4 *)((int)&local_14[5].field_0023 + 2) = 2;
+  *(undefined4 *)((int)&local_14[0x15].field_0007 + 2) = 0xe6e4e2e0;
+  *(undefined2 *)((int)&local_14[0x15].field_000B + 2) = 0xeae8;
   iVar9 = 0;
   if (0 < *(int *)((int)param_1 + 0x455)) {
     piVar12 = (int *)((int)param_1 + 0x459);
     do {
-      piVar5 = (int *)*piVar12;
-      if ((piVar5 != (int *)0x0) && ((short)piVar5[2] != 0)) {
-        *piVar5 = local_14[0x50];
-        local_14[0x50] = (int)piVar5;
-        local_14[0x4f] = local_14[0x4f] + 1;
+      puVar6 = (undefined4 *)*piVar12;
+      if ((puVar6 != (undefined4 *)0x0) && (*(short *)(puVar6 + 2) != 0)) {
+        *puVar6 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
+        *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar6;
+        piVar1 = (int *)((int)&local_14[6].field_0007 + 3);
+        *piVar1 = *piVar1 + 1;
       }
       iVar9 = iVar9 + 1;
       piVar12 = piVar12 + 1;
@@ -77,7 +79,9 @@ LAB_006a2f2f:
   iVar13 = 0;
   iVar9 = 0;
   do {
-    puVar6 = (undefined4 *)(local_14[10] * iVar13 + local_14[3]);
+    puVar6 = (undefined4 *)
+             (*(int *)((int)&local_14->field_0027 + 1) * iVar13 +
+             *(int *)((int)&local_14->field_000B + 1));
     puVar16 = (undefined4 *)((int)local_8 + iVar9);
     for (iVar10 = 0x22; iVar10 != 0; iVar10 = iVar10 + -1) {
       *puVar16 = *puVar6;
@@ -148,8 +152,8 @@ LAB_006a2f2f:
     param_1 = (short *)((int)param_1 + 0x8b);
     local_18 = local_18 + -1;
   } while (local_18 != 0);
-  if (local_14 != (int *)0x0) {
-    FUN_006dbcf0(local_14);
+  if (local_14 != (HoloTy *)0x0) {
+    FUN_006dbcf0((int *)local_14);
     Library::MSVCRT::FUN_0072e2b0(local_14);
   }
   if (local_8 != (short *)0x0) {

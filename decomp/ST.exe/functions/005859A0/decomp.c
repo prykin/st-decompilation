@@ -23,7 +23,7 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,int param_1)
   undefined4 *puVar12;
   byte *pbVar13;
   InternalExceptionFrame local_80;
-  int local_3c;
+  LPVOID local_3c;
   int local_38;
   int local_34;
   undefined4 local_30;
@@ -209,10 +209,12 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,int param_1)
           *(undefined4 *)&this_00->field_0x249 = 0x28;
           *(undefined4 *)&this_00->field_0x24d = 0xfffffe70;
           iVar5 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,
-                             (byte *)s_lasbom_007cb8b8,0x1d);
+                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,s_lasbom_007cb8b8,
+                             0x1d);
           if (iVar5 != 0) {
-            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_lbomb_cpp_007cb910,0x19f);
+            RaiseInternalException
+                      (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_lbomb_cpp_007cb910,0x19f
+                      );
           }
           STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00802a38->field_00E4);
           thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x26c,
@@ -251,14 +253,14 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,int param_1)
           *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)((int)local_20 + 0x52);
           *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)(local_20 + 0x15);
           *(undefined2 *)&this_00->field_0x45 = *(undefined2 *)((int)local_20 + 0x56);
-          local_3c = Library::DKW::LIB::FUN_006aac70(0x44);
-          if (local_3c != 0) {
+          local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+          if (local_3c != (LPVOID)0x0) {
             iVar5 = 0;
             do {
-              *(int **)(iVar5 + local_3c) = DAT_00806774;
+              *(int **)(iVar5 + (int)local_3c) = DAT_00806774;
               iVar5 = iVar5 + 4;
             } while (iVar5 < 0x44);
-            *(undefined4 *)(local_3c + 0x24) = DAT_00806764;
+            *(undefined4 *)((int)local_3c + 0x24) = DAT_00806764;
             if (((*(int *)&this_00->field_0x241 < 1) || (DAT_00806724 == 0)) ||
                (DAT_00806724 == -0x30)) {
               local_38 = 0;
@@ -272,8 +274,8 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,int param_1)
             local_28 = 0;
             local_24 = 0;
             STT3DSprC::RestoreSpr
-                      ((STT3DSprC *)&this_00->field_01D5,&local_3c,(undefined4 *)((int)puVar10 + 99)
-                      );
+                      ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
+                       (undefined4 *)((int)puVar10 + 99));
             FUN_006ab060(&local_3c);
           }
         }

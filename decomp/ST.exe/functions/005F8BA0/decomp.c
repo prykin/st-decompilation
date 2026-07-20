@@ -19,12 +19,12 @@ undefined4 __thiscall FUN_005f8ba0(void *this,undefined4 *param_1,undefined4 *pa
     if (CONCAT31(extraout_var,bVar3) != 0) {
       sVar1 = *(short *)((int)this + 0x27d);
       sVar2 = *(short *)((int)this + 0x281);
-      if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
-         (((DAT_007fb242 <= sVar2 || (sVar5 < 0)) ||
-          ((DAT_007fb244 <= sVar5 ||
+      if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
+         (((SHORT_007fb242 <= sVar2 || (sVar5 < 0)) ||
+          ((SHORT_007fb244 <= sVar5 ||
            (*(int *)(DAT_007fb248 +
-                    ((int)sVar5 * (int)DAT_007fb246 + (int)DAT_007fb240 * (int)sVar2 + (int)sVar1) *
-                    8) == 0)))))) {
+                    ((int)sVar5 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar2 +
+                    (int)sVar1) * 8) == 0)))))) {
         *param_1 = *(undefined4 *)((int)this + 0x27d);
         *param_2 = *(undefined4 *)((int)this + 0x281);
         *param_3 = iVar4;

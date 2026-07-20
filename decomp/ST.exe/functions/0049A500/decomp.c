@@ -3,7 +3,7 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
 
 {
   uint uVar1;
-  void *this_00;
+  STFishC *this_00;
   uint uVar2;
   undefined4 extraout_EDX;
   short sVar3;
@@ -30,12 +30,14 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
       do {
         FUN_006acc70(*(int *)((int)this + 0x29),uVar2,&local_10);
         if ((short)local_10 != -1) {
-          this_00 = (void *)STAllPlayersC::GetObjPtr
-                                      (DAT_007fa174,
-                                       CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                *(undefined1 *)((int)this + 0x24)),local_10,CASE_1);
-          thunk_FUN_004162b0(this_00,(undefined2 *)&local_14,(undefined2 *)&local_18,
-                             (undefined2 *)&local_1c);
+          this_00 = (STFishC *)
+                    STAllPlayersC::GetObjPtr
+                              (g_sTAllPlayers_007FA174,
+                               CONCAT31((int3)((uint)extraout_EDX >> 8),
+                                        *(undefined1 *)((int)this + 0x24)),local_10,CASE_1);
+          STFishC::sub_004162B0
+                    (this_00,(undefined2 *)&local_14,(undefined2 *)&local_18,(undefined2 *)&local_1c
+                    );
           iVar6 = iVar6 + local_14;
           iVar4 = iVar4 + local_18;
           local_8 = local_8 + local_1c;

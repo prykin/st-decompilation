@@ -7,7 +7,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
 
 {
   code *pcVar1;
-  int *piVar2;
+  HoloTy *pHVar2;
   GameSystemC *pGVar3;
   int errorCode;
   int iVar4;
@@ -34,12 +34,12 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
       thunk_FUN_005711d0(&DAT_00807620,&DAT_00802a38);
     }
     thunk_FUN_0058d720();
-    piVar2 = DAT_00807598;
+    pHVar2 = DAT_00807598;
     DAT_0080674c = 0;
-    if (DAT_00807598 != (int *)0x0) {
-      FUN_006dbcf0(DAT_00807598);
-      Library::MSVCRT::FUN_0072e2b0(piVar2);
-      DAT_00807598 = (int *)0x0;
+    if (DAT_00807598 != (HoloTy *)0x0) {
+      FUN_006dbcf0((int *)DAT_00807598);
+      Library::MSVCRT::FUN_0072e2b0(pHVar2);
+      DAT_00807598 = (HoloTy *)0x0;
     }
     thunk_FUN_00578370();
     if (DAT_00806750 != 0) {

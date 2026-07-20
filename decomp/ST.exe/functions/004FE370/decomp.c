@@ -11,12 +11,12 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   char cVar3;
   int iVar4;
   Global_sub_00523410_param_1Enum GVar5;
-  UINT UVar6;
-  uint *puVar7;
-  int iVar8;
+  UINT uID;
+  uint *puVar6;
+  int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  HINSTANCE pHVar9;
+  HINSTANCE pHVar8;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
@@ -48,24 +48,24 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
         cVar3 = pCVar2->field_0B6A;
         GVar5 = pCVar2->field_0B66;
       }
-      pHVar9 = DAT_00807618;
-      UVar6 = thunk_FUN_00523410(GVar5,cVar3,0);
-      puVar7 = (uint *)FUN_006b0140(UVar6,pHVar9);
+      pHVar8 = HINSTANCE_00807618;
+      uID = thunk_FUN_00523410(GVar5,cVar3,0);
+      puVar6 = (uint *)FUN_006b0140(uID,pHVar8);
     }
     else if (param_1 == 0) {
-      puVar7 = (uint *)&pCVar2->field_0C5D;
+      puVar6 = (uint *)&pCVar2->field_0C5D;
     }
     else {
-      puVar7 = (uint *)&pCVar2->field_0B6F;
+      puVar6 = (uint *)&pCVar2->field_0B6F;
     }
-    ccFntTy::WrTxt(pCVar2->field_01B8,puVar7,-2,-1,0,-1,-1);
+    ccFntTy::WrTxt(pCVar2->field_01B8,puVar6,-2,-1,0,-1,-1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1e,0,iVar4,&DAT_007a4ccc,
+  iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1e,0,iVar4,&DAT_007a4ccc,
                              s_CPanelTy__PaintName_007c23f4);
-  if (iVar8 == 0) {
+  if (iVar7 == 0) {
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1e);
     return;
   }

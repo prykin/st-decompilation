@@ -85,7 +85,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
         iVar17 = 0;
         bVar16 = 0;
         pCVar3 = FUN_006f2c00(s_CMPG_FLC_007cbdc4,3,iVar2);
-        puVar4 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806780,pCVar3,bVar16,iVar17);
+        puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar16,iVar17);
         *puVar5 = puVar4;
         puVar5 = puVar5 + 1;
         iVar2 = iVar2 + 1;
@@ -100,7 +100,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
       iVar17 = 0;
       bVar16 = 0;
       pCVar3 = FUN_006f2c00(s_CMPG_FONFLC_007cbdb4,2,iVar2);
-      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806780,pCVar3,bVar16,iVar17);
+      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar16,iVar17);
       *puVar5 = puVar4;
       iVar2 = iVar2 + 1;
       puVar5 = puVar5 + 1;
@@ -261,25 +261,25 @@ switchD_00590d73_default:
         local_8 = local_8 + 1;
         if (2 < local_8) {
           MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x9b,
-                              s_MM_MBUT00_007cbd98,0xf2,0x13a,7,8,0,0,0x9d,0x38,10,0x7cbda4,6,8,9,6,
-                              0x28,0,0,0,0,0,-1,-1);
+                              s_MM_MBUT00_007cbd98,0xf2,0x13a,7,8,0,0,0x9d,0x38,10,
+                              s_MM_MABUT00_007cbda4,6,8,9,6,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x296,
-                              s_MM_MBUT01_007cbd7c,0x191,0x13a,9,8,0,0,0x9d,0x38,10,0x7cbd88,8,8,8,6
-                              ,0x32,0,0,0,0,0,-1,-1);
+                              s_MM_MBUT01_007cbd7c,0x191,0x13a,9,8,0,0,0x9d,0x38,10,
+                              s_MM_MABUT01_007cbd88,8,8,8,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x491,
-                              s_MM_MBUT02_007cbd60,0xf2,0x173,8,6,0,0,0x9d,0x38,10,0x7cbd6c,8,7,10,5
-                              ,0x28,0,0,0,0,0,-1,-1);
+                              s_MM_MBUT02_007cbd60,0xf2,0x173,8,6,0,0,0x9d,0x38,10,
+                              s_MM_MABUT02_007cbd6c,8,7,10,5,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x68c,
-                              s_MM_MBUT03_007cbd44,0x191,0x173,8,6,0,0,0x9d,0x38,10,0x7cbd50,8,7,8,5
-                              ,0x32,0,0,0,0,0,-1,-1);
+                              s_MM_MBUT03_007cbd44,0x191,0x173,8,6,0,0,0x9d,0x38,10,
+                              s_MM_MABUT03_007cbd50,8,7,8,5,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x887,
-                              s_MM_MBUT04_007cbd28,0x143,0x1ac,7,8,0,0,0x9d,0x38,10,0x7cbd34,8,9,9,6
-                              ,0x32,0,0,0,0,0,-1,-1);
+                              s_MM_MBUT04_007cbd28,0x143,0x1ac,7,8,0,0,0x9d,0x38,10,
+                              s_MM_MABUT04_007cbd34,8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           if (DAT_0080874e == 0) {
             DAT_0080874e = 1;
           }
           this_02->field_1BE8 = (uint)DAT_0080874e * 3 + -3;
-          uVar6 = FUN_0070a9f0(DAT_00806780,s_CMPGN_BKG_007cbd1c,0,1);
+          uVar6 = FUN_0070a9f0(g_cMf32_00806780,s_CMPGN_BKG_007cbd1c,0,1);
           *(undefined4 *)(DAT_0081176c + 0x2c) = uVar6;
           DarkScreen(DAT_0080759c,1,0);
           this_00 = *(MMsgTy **)(this_02->field_1A5B + 0x2e6);
@@ -288,8 +288,8 @@ switchD_00590d73_default:
             MMsgTy::ShowSprites(*(MMsgTy **)(this_02->field_1A5B + 0x2e6));
             *(undefined4 *)(*(int *)(this_02->field_1A5B + 0x2e6) + 0x1cab) = this_02->field_0008;
           }
-          FUN_006bc360(*(int *)(DAT_0081176c + 0x2c),(undefined4 *)&this_02->field_0x1bf8,(int *)0x0
-                      );
+          FUN_006bc360(*(ushort **)(DAT_0081176c + 0x2c),(undefined4 *)&this_02->field_0x1bf8,
+                       (int *)0x0);
           this_01 = DAT_00802a30;
           if (DAT_00802a30 != (CursorClassTy *)0x0) {
             uVar6 = DAT_00802a30->field_00C9;
@@ -313,7 +313,7 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar10 = 0x28;
           iVar17 = 0x8c;
-          puVar7 = (uint *)FUN_006b0140(0x23f1,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(0x23f1,HINSTANCE_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar17,iVar10,cVar11,uVar12,
                               iVar13,iVar14,iVar15);
@@ -329,7 +329,7 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar10 = 0x28;
           iVar17 = 0x8c;
-          puVar7 = (uint *)FUN_006b0140(0x23f0,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(0x23f0,HINSTANCE_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar17,iVar10,cVar11,uVar12,
                               iVar13,iVar14,iVar15);
@@ -345,7 +345,7 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar10 = 0x28;
           iVar17 = 0x8c;
-          puVar7 = (uint *)FUN_006b0140(0x23f2,DAT_00807618);
+          puVar7 = (uint *)FUN_006b0140(0x23f2,HINSTANCE_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar17,iVar10,cVar11,uVar12,
                               iVar13,iVar14,iVar15);

@@ -9,13 +9,13 @@ void __fastcall FUN_00714060(int *param_1)
     FUN_007109f0((void *)*param_1,param_1 + 4);
     ccFntTy::EraseSufr((ccFntTy *)*param_1);
     if (param_1[0x22] != 0) {
-      FUN_006ab060(param_1 + 0x22);
+      FUN_006ab060((LPVOID *)(param_1 + 0x22));
     }
     if (param_1[0x2a] != 0) {
-      FUN_006ab060(param_1 + 0x2a);
+      FUN_006ab060((LPVOID *)(param_1 + 0x2a));
     }
-    if (param_1[0x16] != 0) {
-      FUN_006ab060(param_1 + 0x16);
+    if ((LPVOID)param_1[0x16] != (LPVOID)0x0) {
+      FUN_006ab060((LPVOID *)(param_1 + 0x16));
     }
     FUN_007109f0((void *)*param_1,local_4c);
   }

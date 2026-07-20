@@ -3,7 +3,7 @@ void __thiscall FUN_0055c290(void *this,char *param_1)
 
 {
   ulong uVar1;
-  DWORD DVar2;
+  DWORD lastError;
   
   if (param_1 != (char *)0x0) {
     uVar1 = CFsgsConnection::InitConnection(this,param_1);
@@ -12,8 +12,8 @@ void __thiscall FUN_0055c290(void *this,char *param_1)
       return;
     }
   }
-  DVar2 = GetLastError();
-  thunk_FUN_0055beb0(this,DVar2);
+  lastError = GetLastError();
+  thunk_FUN_0055beb0(this,lastError);
   return;
 }
 

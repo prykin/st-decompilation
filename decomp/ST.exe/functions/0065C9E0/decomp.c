@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event_d.cpp
    Diagnostic line evidence: 33 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0065C9E0 -> 0072E340 @ 0065CA3B */
 
-undefined4 * __cdecl FUN_0065c9e0(char *param_1)
+undefined4 * __cdecl FUN_0065c9e0(char *source)
 
 {
   int exceptionCode;
@@ -22,7 +25,7 @@ undefined4 * __cdecl FUN_0065c9e0(char *param_1)
     local_8 = Library::DKW::LIB::FUN_006aac10(0x49f);
     *(undefined4 *)((int)local_8 + 1) = 0x49f;
     *(undefined1 *)((int)local_8 + 5) = 2;
-    Library::MSVCRT::_strncpy((char *)((int)local_8 + 6),param_1,0x3f);
+    Library::MSVCRT::_strncpy((char *)((int)local_8 + 6),source,0x3f);
     puVar1 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,5,5);
     *(uint **)((int)local_8 + 0x456) = puVar1;
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x1b,5);

@@ -13,14 +13,13 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   byte bVar4;
   int iVar5;
   char *pcVar6;
-  byte *pbVar7;
-  ushort *puVar8;
+  ushort *puVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  uint uVar8;
   uint uVar9;
-  uint uVar10;
-  int iVar11;
-  undefined4 *puVar12;
+  int iVar10;
+  undefined4 *puVar11;
   InternalExceptionFrame local_58;
   byte local_14;
   undefined3 uStack_13;
@@ -43,31 +42,31 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   uVar2 = local_c;
   this_00 = local_10;
   if (iVar5 == 0) {
-    uVar9 = local_c & 0xff;
-    if ((&local_10->field_02EC)[uVar9] == '\x01') {
-      puVar12 = (undefined4 *)0x0;
-      iVar11 = 0;
+    uVar8 = local_c & 0xff;
+    if ((&local_10->field_02EC)[uVar8] == '\x01') {
+      puVar11 = (undefined4 *)0x0;
+      iVar10 = 0;
       iVar5 = 1;
       bVar4 = 0;
-      uVar10 = 6;
+      uVar9 = 6;
       if (DAT_0080731a != 0) {
-        pbVar7 = (byte *)thunk_FUN_00526100(local_8,1);
-        puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
-                           (DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
-        (&this_00->field_02E2)[uVar9] = puVar8;
-        (&this_00->field_02EC)[uVar9] = 5;
-        (&this_00->field_02EA)[uVar9] = 0;
+        pcVar6 = thunk_FUN_00526100(local_8,1);
+        puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806794,CASE_1F,pcVar6,uVar9,bVar4,iVar5,iVar10,puVar11);
+        (&this_00->field_02E2)[uVar8] = puVar7;
+        (&this_00->field_02EC)[uVar8] = 5;
+        (&this_00->field_02EA)[uVar8] = 0;
         pcVar6 = thunk_FUN_00526100(puVar3,0);
-        *(char **)(&this_00->field_0x2f6 + uVar9 * 4) = pcVar6;
+        *(char **)(&this_00->field_0x2f6 + uVar8 * 4) = pcVar6;
         thunk_FUN_005252c0(0xb3);
         g_currentExceptionFrame = local_58.previous;
         return;
       }
-      pbVar7 = (byte *)thunk_FUN_00526100(local_8,0);
-      puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
-      (&this_00->field_02E2)[uVar9] = puVar8;
-      (&this_00->field_02EA)[uVar9] = 0;
+      pcVar6 = thunk_FUN_00526100(local_8,0);
+      puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806794,CASE_1F,pcVar6,uVar9,bVar4,iVar5,iVar10,puVar11);
+      (&this_00->field_02E2)[uVar8] = puVar7;
+      (&this_00->field_02EA)[uVar8] = 0;
       thunk_FUN_004f1890(this_00,(byte)uVar2);
       bVar4 = (-(param_1 != 0) & 0xf8U) + 8;
       _local_14 = CONCAT31(uStack_13,bVar4);
@@ -80,9 +79,9 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
         }
       }
     }
-    else if ((&local_10->field_02EC)[uVar9] == '\x05') {
+    else if ((&local_10->field_02EC)[uVar8] == '\x05') {
       pcVar6 = thunk_FUN_00526100(local_8,0);
-      *(char **)(&this_00->field_0x2f6 + uVar9 * 4) = pcVar6;
+      *(char **)(&this_00->field_0x2f6 + uVar8 * 4) = pcVar6;
       g_currentExceptionFrame = local_58.previous;
       return;
     }
@@ -90,9 +89,9 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar11 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3,0,iVar5,&DAT_007a4ccc,
+  iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3,0,iVar5,&DAT_007a4ccc,
                               s_CPanelTy__SwitchTV_007c2484);
-  if (iVar11 != 0) {
+  if (iVar10 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

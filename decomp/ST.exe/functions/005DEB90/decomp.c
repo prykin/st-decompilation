@@ -73,16 +73,19 @@ undefined4 __fastcall FUN_005deb90(int param_1)
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x458);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x458);
     }
     local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
     if (local_8 == 0xffffffff) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x459);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x459);
     }
     BVar5 = WriteFile(pvVar4,*(LPCVOID *)(iVar2 + 0x69a),*(DWORD *)(iVar2 + 0x6ae),&local_8,
                       (LPOVERLAPPED)0x0);
     if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != local_8)) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x45a);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x45a);
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);
@@ -92,16 +95,19 @@ undefined4 __fastcall FUN_005deb90(int param_1)
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x45f);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x45f);
     }
     local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
     if (local_8 == 0xffffffff) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x460);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x460);
     }
     BVar5 = WriteFile(pvVar4,(LPCVOID)(*(int *)(iVar2 + 0x6ae) + *(int *)(iVar2 + 0x69a)),
                       *(DWORD *)(iVar2 + 0x6b2),&local_8,(LPOVERLAPPED)0x0);
     if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != local_8)) {
-      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x461);
+      RaiseInternalException
+                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x461);
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);

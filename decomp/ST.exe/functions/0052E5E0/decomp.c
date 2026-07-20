@@ -12,25 +12,24 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   ccFntTy *pcVar3;
   LPSTR pCVar4;
   ushort *puVar5;
-  byte *pbVar6;
-  undefined4 uVar7;
-  uint *puVar8;
+  undefined4 uVar6;
+  uint *puVar7;
   ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uVar9;
-  short sVar10;
-  undefined2 uVar11;
-  uint uVar12;
-  byte bVar13;
-  undefined4 uVar14;
-  char *pcVar15;
-  int *piVar16;
-  int iVar17;
-  undefined4 uVar18;
-  undefined4 *puVar19;
+  undefined4 uVar8;
+  short sVar9;
+  undefined2 uVar10;
+  uint uVar11;
+  byte bVar12;
+  undefined4 uVar13;
+  char *pcVar14;
+  int *piVar15;
+  int iVar16;
+  undefined4 uVar17;
+  undefined4 *puVar18;
+  undefined4 uVar19;
   undefined4 uVar20;
-  undefined4 uVar21;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
   
@@ -40,7 +39,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    DAT_008016dc = local_8;
+    g_optPanel_008016DC = local_8;
     pcVar3 = (ccFntTy *)
              ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
                                (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
@@ -52,77 +51,77 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     pcVar3->field_0058 = 1;
     pcVar3->field_005C = 0;
     iVar2 = 1;
-    piVar16 = (int *)0x0;
+    piVar15 = (int *)0x0;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPTIONS_007c713c,0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
-    piVar16 = (int *)0x0;
+    piVar15 = (int *)0x0;
     this_00->field_0184 = puVar5;
     this_00->field_0188 = 0;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPT_NUM_007c712c,0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
-    piVar16 = (int *)0x0;
+    piVar15 = (int *)0x0;
     this_00->field_018C = puVar5;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPT_SAVE_007c711c,0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
-    piVar16 = (int *)0x0;
+    piVar15 = (int *)0x0;
     this_00->field_0190 = puVar5;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPT_MOBJ_007c710c,0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
-    puVar19 = (undefined4 *)0x0;
-    iVar17 = 0;
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
+    puVar18 = (undefined4 *)0x0;
+    iVar16 = 0;
     iVar2 = 1;
-    bVar13 = 0;
-    uVar12 = 0xffffffff;
+    bVar12 = 0;
+    uVar11 = 0xffffffff;
     this_00->field_0194 = puVar5;
-    pbVar6 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
+    pCVar4 = thunk_FUN_00571240(s_IND_PNT_007c2078,0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pbVar6,uVar12,bVar13,iVar2,iVar17,puVar19);
+                       (DAT_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar2,iVar16,puVar18);
     this_00->field_0198 = puVar5;
     puVar5 = this_00->field_0184 + 0x14;
     iVar2 = 1;
-    uVar12 = FUN_006b4fe0((int)this_00->field_0184);
-    uVar7 = FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar12,(undefined4 *)puVar5,iVar2);
-    this_00->field_01E5 = uVar7;
-    puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    this_00->field_01F1 = puVar8;
-    Library::DKW::TBL::FUN_006b6020((int)puVar8,0,&DAT_008016a0);
+    uVar11 = FUN_006b4fe0((int)this_00->field_0184);
+    uVar6 = FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar5,iVar2);
+    this_00->field_01E5 = uVar6;
+    puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+    this_00->field_01F1 = puVar7;
+    Library::DKW::TBL::FUN_006b6020(puVar7,0,&DAT_008016a0);
     PrepMissObj(this_00);
     SetOptControls(this_00);
-    uVar20 = 0;
-    uVar18 = 0;
-    pcVar15 = (char *)0x0;
-    uVar14 = 0;
-    uVar11 = 0;
-    sVar10 = 0;
-    uVar9 = 0xc002;
-    uVar7 = 0xc001;
+    uVar19 = 0;
+    uVar17 = 0;
+    pcVar14 = (char *)0x0;
+    uVar13 = 0;
+    uVar10 = 0;
+    sVar9 = 0;
+    uVar8 = 0xc002;
+    uVar6 = 0xc001;
     pCVar4 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
-    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,(int)pCVar4,uVar7,uVar9,sVar10,
-                                uVar11,uVar14,pcVar15,uVar18,uVar20);
-    uVar21 = 0;
+    uVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,(int)pCVar4,uVar6,uVar8,sVar9,
+                                uVar10,uVar13,pcVar14,uVar17,uVar19);
     uVar20 = 0;
-    pcVar15 = (char *)0x0;
-    uVar18 = 0;
-    uVar11 = 0;
-    sVar10 = 0;
-    uVar14 = 0xc004;
-    uVar9 = 0xc003;
-    this_00->field_01AD = uVar7;
+    uVar19 = 0;
+    pcVar14 = (char *)0x0;
+    uVar17 = 0;
+    uVar10 = 0;
+    sVar9 = 0;
+    uVar13 = 0xc004;
+    uVar8 = 0xc003;
+    this_00->field_01AD = uVar6;
     pCVar4 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
-    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,(int)pCVar4,uVar9,uVar14,sVar10,
-                                uVar11,uVar18,pcVar15,uVar20,uVar21);
-    this_00->field_01B1 = uVar7;
+    uVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,(int)pCVar4,uVar8,uVar13,sVar9,
+                                uVar10,uVar17,pcVar14,uVar19,uVar20);
+    this_00->field_01B1 = uVar6;
     this_00->field_0301 = this_00->field_0038;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar17 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x5b,0,iVar2,&DAT_007a4ccc,
+  iVar16 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x5b,0,iVar2,&DAT_007a4ccc,
                               s_OptPanelTy__InitOptPanel_007c70ec);
-  if (iVar17 != 0) {
+  if (iVar16 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

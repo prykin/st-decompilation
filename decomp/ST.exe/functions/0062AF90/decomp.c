@@ -49,18 +49,18 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     iVar2 = (int)(short)(((short)(param_3 / 200) + sVar6) -
                         (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((-1 < iVar7) && (iVar7 < DAT_007fb240)) && (-1 < iVar4)) &&
-     (((iVar4 < DAT_007fb242 && (-1 < iVar2)) && (iVar2 < DAT_007fb244)))) {
+  if ((((-1 < iVar7) && (iVar7 < SHORT_007fb240)) && (-1 < iVar4)) &&
+     (((iVar4 < SHORT_007fb242 && (-1 < iVar2)) && (iVar2 < SHORT_007fb244)))) {
     sVar6 = (short)iVar7;
-    if (((sVar6 < 0) || (DAT_007fb240 <= sVar6)) ||
+    if (((sVar6 < 0) || (SHORT_007fb240 <= sVar6)) ||
        ((sVar3 = (short)iVar4, sVar3 < 0 ||
-        (((DAT_007fb242 <= sVar3 || (sVar1 = (short)iVar2, sVar1 < 0)) || (DAT_007fb244 <= sVar1))))
-       )) {
+        (((SHORT_007fb242 <= sVar3 || (sVar1 = (short)iVar2, sVar1 < 0)) ||
+         (SHORT_007fb244 <= sVar1)))))) {
       this_00 = (void *)0x0;
     }
     else {
       this_00 = *(void **)(DAT_007fb248 + 4 +
-                          ((int)DAT_007fb246 * (int)sVar1 + (int)sVar3 * (int)DAT_007fb240 +
+                          ((int)SHORT_007fb246 * (int)sVar1 + (int)sVar3 * (int)SHORT_007fb240 +
                           (int)sVar6) * 8);
     }
     puVar8 = local_38;

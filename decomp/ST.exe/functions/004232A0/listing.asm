@@ -1,4 +1,4 @@
-FUN_004232a0:
+STGroupBoatC::sub_004232A0:
 004232A0  56                        PUSH ESI
 004232A1  8B F1                     MOV ESI,ECX
 004232A3  E8 38 2E 2C 00            CALL 0x006e60e0

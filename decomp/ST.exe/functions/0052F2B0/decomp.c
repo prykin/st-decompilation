@@ -87,23 +87,23 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       }
       this_00->field_0172 = 4;
       DAT_00808788 = 0;
-      if ((DAT_00801688 != (CPanelTy *)0x0) && (DAT_00801688->field_023F == 1)) {
-        CPanelTy::ShiftControls(DAT_00801688,1);
+      if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == 1)) {
+        CPanelTy::ShiftControls(g_cPanel_00801688,1);
       }
       GVar14 = CASE_B0;
     }
     goto LAB_0052f60b;
   case 2:
-    if (DAT_008016e8 != (ProdPanelTy *)0x0) {
-      local_8 = ProdPanelTy::SetPanel(DAT_008016e8,'\0');
+    if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+      local_8 = ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
     }
     bVar3 = local_8 != 0;
-    if (DAT_0080167c != (ProdPanelTy *)0x0) {
-      local_8 = ProdPanelTy::SetPanel(DAT_0080167c,'\0');
+    if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+      local_8 = ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
     }
     bVar4 = local_8 != 0;
-    if (DAT_00801684 != (ProdPanelTy *)0x0) {
-      local_8 = ProdPanelTy::SetPanel(DAT_00801684,'\0');
+    if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+      local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
     }
     bVar5 = local_8 != 0;
     if (DAT_00801698 != (int *)0x0) {
@@ -130,16 +130,16 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       local_8 = (**(code **)(*DAT_0080168c + 0x1c))(0);
     }
     bVar11 = local_8 != 0;
-    if (DAT_00801680 != (ProdPanelTy *)0x0) {
-      local_8 = ProdPanelTy::SetPanel(DAT_00801680,'\0');
+    if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+      local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
     if (DAT_00801690 != (int *)0x0) {
       local_8 = (**(code **)(*DAT_00801690 + 0x18))(0);
     }
     bVar13 = local_8 != 0;
-    if (DAT_008016e4 != (PlayPanelTy *)0x0) {
-      local_8 = PlayPanelTy::SetPanel(DAT_008016e4,'\0');
+    if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
+      local_8 = PlayPanelTy::SetPanel(g_playPanel_008016E4,'\0');
     }
     if ((local_8 != 0 ||
          (bVar13 ||
@@ -155,8 +155,8 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     local_18 = 1;
     thunk_FUN_0054edf0((undefined4 *)0x5,&local_18,1,0xffffffff);
     DAT_0080878c = 1;
-    if (DAT_00801688 != (CPanelTy *)0x0) {
-      CPanelTy::ShiftControls(DAT_00801688,0);
+    if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+      CPanelTy::ShiftControls(g_cPanel_00801688,0);
     }
     switch(param_1) {
     case '\x01':

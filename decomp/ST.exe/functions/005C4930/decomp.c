@@ -17,7 +17,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar5;
-  int *piVar6;
+  LPVOID *ppvVar6;
   bool bVar7;
   InternalExceptionFrame local_4c;
   SettMapTy *local_8;
@@ -30,13 +30,13 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     this_02 = this_01;
-    if ((undefined4 *)pSVar2->field_1F3F != (undefined4 *)0x0) {
-      cMf32::delete(this_01,(undefined4 *)pSVar2->field_1F3F);
+    if ((cMf32 *)pSVar2->field_1F3F != (cMf32 *)0x0) {
+      cMf32::delete(this_01,(cMf32 *)pSVar2->field_1F3F);
       this_02 = extraout_ECX;
     }
     pSVar2->field_1F3F = 0;
-    if ((undefined4 *)pSVar2->field_1F43 != (undefined4 *)0x0) {
-      cMf32::delete(this_02,(undefined4 *)pSVar2->field_1F43);
+    if ((cMf32 *)pSVar2->field_1F43 != (cMf32 *)0x0) {
+      cMf32::delete(this_02,(cMf32 *)pSVar2->field_1F43);
     }
     pSVar2->field_1F43 = 0;
     if (DAT_00802a30 != 0) {
@@ -53,7 +53,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     if (pSVar2->field_21EC != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21EC);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pSVar2->field_21EC);
+      Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21EC);
       pSVar2->field_21EC = (HoloTy *)0x0;
     }
     if (pSVar2->field_0x21e2 != '\0') {
@@ -72,32 +72,32 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     if (pSVar2->field_21F4 != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21F4);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pSVar2->field_21F4);
+      Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F4);
       pSVar2->field_21F4 = (HoloTy *)0x0;
     }
     if (pSVar2->field_21E8 != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21E8);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pSVar2->field_21E8);
+      Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21E8);
       pSVar2->field_21E8 = (HoloTy *)0x0;
     }
     if (pSVar2->field_21F0 != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21F0);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pSVar2->field_21F0);
+      Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F0);
       pSVar2->field_21F0 = (HoloTy *)0x0;
     }
     if (pSVar2->field_21F8 != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21F8);
-      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pSVar2->field_21F8);
+      Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F8);
       pSVar2->field_21F8 = (HoloTy *)0x0;
     }
     if (*(int *)(DAT_0081176c + 0x2c) != 0) {
-      cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
     if (pSVar2->field_1E2B != 0) {
-      cMf32::RecMemFree(DAT_00806780,&pSVar2->field_1E2B);
+      cMf32::RecMemFree(g_cMf32_00806780,&pSVar2->field_1E2B);
     }
     if (pSVar2->field_1C67 != 0) {
-      FUN_006ab060(&pSVar2->field_1C67);
+      FUN_006ab060((LPVOID *)&pSVar2->field_1C67);
     }
     DAT_0081175c = 0;
     if ((byte *)pSVar2->field_1F7C != (byte *)0x0) {
@@ -134,18 +134,18 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1c6b);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1cfc);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1d8d);
-    piVar6 = &pSVar2->field_20F4;
+    ppvVar6 = (LPVOID *)&pSVar2->field_20F4;
     iVar3 = 10;
     do {
-      FUN_006b3bb0(DAT_008075a8,piVar6[-10]);
-      if (*piVar6 != 0) {
-        FUN_006ab060(piVar6);
+      FUN_006b3bb0(DAT_008075a8,(uint)ppvVar6[-10]);
+      if (*ppvVar6 != (LPVOID)0x0) {
+        FUN_006ab060(ppvVar6);
       }
-      piVar6 = piVar6 + 1;
+      ppvVar6 = ppvVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pSVar2->field_1E1E != 0) {
-      FUN_006ab060(&pSVar2->field_1E1E);
+      FUN_006ab060((LPVOID *)&pSVar2->field_1E1E);
     }
     FUN_006b3bb0(DAT_008075a8,pSVar2->field_1E22);
     if ((pSVar2->field_21E7 != '\0') &&

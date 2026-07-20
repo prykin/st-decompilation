@@ -1,5 +1,9 @@
 
-byte * FUN_0055d590(byte *param_1,uint param_2,byte *param_3)
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 005A3AB0 -> 0055D590 @ 005A3BA6 | 005A3AB0 -> 0055D590 @ 005A3BF1 | 005A3AB0 ->
+   0055D590 @ 005A3C39 | 005A3AB0 -> 0055D590 @ 005A3C81 | 005A3AB0 -> 0055D590 @ 005A3DC7 */
+
+byte * FUN_0055d590(char *text,uint param_2,byte *param_3)
 
 {
   byte bVar1;
@@ -11,7 +15,7 @@ byte * FUN_0055d590(byte *param_1,uint param_2,byte *param_3)
   bool bVar7;
   
   if ((param_3 == (byte *)0x0) ||
-     (uVar6 = 0, pbVar2 = param_1, pbVar5 = param_3, pbVar4 = param_3, param_2 == 0)) {
+     (uVar6 = 0, pbVar2 = (byte *)text, pbVar5 = param_3, pbVar4 = param_3, param_2 == 0)) {
     return (byte *)0x0;
   }
 LAB_0055d5ad:
@@ -38,7 +42,7 @@ LAB_0055d5d1:
     }
     uVar6 = uVar6 + 1;
     pbVar5 = pbVar4 + 0x240;
-    pbVar2 = param_1;
+    pbVar2 = (byte *)text;
     pbVar4 = pbVar5;
     if (param_2 <= uVar6) {
       return (byte *)0x0;

@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_00580dc0(void *param_1)
                              (short)*(undefined4 *)((int)param_1 + 0x249),
                              *(int *)((int)param_1 + 0x24d),*(int *)((int)param_1 + 0x255));
   if (iVar5 != 0) {
-    iVar5 = STAllPlayersC::RegisterDeposit(DAT_007fa174,0xffff,param_1);
+    iVar5 = STAllPlayersC::RegisterDeposit(g_sTAllPlayers_007FA174,0xffff,param_1);
     if (iVar5 != 0) {
       thunk_FUN_00580380(param_1);
       return 0;
@@ -25,11 +25,11 @@ undefined4 __fastcall FUN_00580dc0(void *param_1)
     sVar2 = *(short *)((int)param_1 + 0x249);
     sVar3 = *(short *)((int)param_1 + 0x245);
     uVar6 = 1;
-    if (((((-1 < sVar3) && (sVar3 < DAT_007fb240)) && (-1 < sVar2)) &&
-        ((sVar2 < DAT_007fb242 && (-1 < sVar1)))) &&
-       ((sVar1 < DAT_007fb244 &&
+    if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
+        ((sVar2 < SHORT_007fb242 && (-1 < sVar1)))) &&
+       ((sVar1 < SHORT_007fb244 &&
         (piVar4 = *(int **)(DAT_007fb248 +
-                           ((int)DAT_007fb246 * (int)sVar1 + (int)DAT_007fb240 * (int)sVar2 +
+                           ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
                            (int)sVar3) * 8), piVar4 != (int *)0x0)))) {
       iVar5 = (**(code **)(*piVar4 + 0x2c))();
       if (((iVar5 != 0x39) && (iVar5 = (**(code **)(*piVar4 + 0x2c))(), iVar5 != 0x4f)) &&

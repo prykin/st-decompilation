@@ -143,13 +143,14 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
       sVar1 = *(short *)&this_00->field_0x1d5;
       sVar2 = *(short *)&this_00->field_0x1dd;
       sVar3 = *(short *)&this_00->field_0x1d9;
-      if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
-          ((sVar3 < 0 || ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (DAT_007fb244 <= sVar2)) {
+      if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
+          ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (SHORT_007fb244 <= sVar2))
+      {
         iVar8 = 0;
       }
       else {
         iVar8 = *(int *)(DAT_007fb248 + 4 +
-                        ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
+                        ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
                         (int)sVar1) * 8);
         iVar7 = local_8;
       }

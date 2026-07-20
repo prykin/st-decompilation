@@ -24,8 +24,8 @@ FUN_0058b190(void *this,short *param_1,short *param_2,short *param_3,short *para
   uint local_8;
   
   *(undefined4 *)((int)this + 0x281) = 0;
-  iVar4 = DAT_007fb240 + -1;
-  iVar5 = DAT_007fb242 + -1;
+  iVar4 = SHORT_007fb240 + -1;
+  iVar5 = SHORT_007fb242 + -1;
   sVar11 = *(short *)((int)this + 0x41);
   if (sVar11 < 0) {
     local_14._0_2_ =
@@ -252,11 +252,11 @@ LAB_0058b5ac:
           sVar12 = (short)iVar6;
           bVar2 = thunk_FUN_004961b0(sVar11,sVar12,(short)iVar4);
           if ((CONCAT31(extraout_var,bVar2) != 0) &&
-             ((((sVar11 < 0 || (DAT_007fb240 <= sVar11)) || (sVar12 < 0)) ||
-              (((DAT_007fb242 <= sVar12 || (sVar3 = (short)local_8, sVar3 < 0)) ||
-               ((DAT_007fb244 <= sVar3 ||
+             ((((sVar11 < 0 || (SHORT_007fb240 <= sVar11)) || (sVar12 < 0)) ||
+              (((SHORT_007fb242 <= sVar12 || (sVar3 = (short)local_8, sVar3 < 0)) ||
+               ((SHORT_007fb244 <= sVar3 ||
                 (*(int *)(DAT_007fb248 +
-                         ((int)sVar12 * (int)DAT_007fb240 + (int)DAT_007fb246 * (int)sVar3 +
+                         ((int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar3 +
                          (int)sVar11) * 8) == 0)))))))) {
             if (iVar4 != local_8) {
               local_c = (int)(short)((short)iVar4 * 200 + 100);

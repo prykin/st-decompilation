@@ -32,7 +32,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       puVar6 = &local_c->field_0066;
       do {
         if (*puVar6 != 0) {
-          FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+          StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
         }
         *puVar6 = 0;
         puVar6 = puVar6 + 1;
@@ -56,7 +56,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
         local_2c[2] = iVar3;
-        (**(code **)(*(int *)this_00->field_000C + 0x18))(local_2c);
+        (*this_00->field_000C->vtable->slot_18)(local_2c);
       }
       if (param_1 == 0) {
         this_00->field_0065 = 2;

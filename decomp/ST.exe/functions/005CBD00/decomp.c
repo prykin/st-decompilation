@@ -42,7 +42,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     puVar6 = &local_c->field_1A5B->field_069A;
     DAT_00808aab = DAT_00809958;
     if (*puVar6 != 0) {
-      FUN_006ab060(puVar6);
+      FUN_006ab060((LPVOID *)puVar6);
     }
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x20,0xc,10);
     pSVar2->field_2237 = puVar4;
@@ -154,7 +154,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
       Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
     }
-    FUN_006b6500(DAT_00811764,DAT_0080733c);
+    FUN_006b6500(g_int_00811764,DAT_0080733c);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

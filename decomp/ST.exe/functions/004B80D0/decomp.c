@@ -85,13 +85,13 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       sVar5 = *(short *)&this_01->field_0x5b0;
       sVar1 = *(short *)&this_01->field_0x5b8;
       sVar10 = *(short *)&this_01->field_0x5b4;
-      if (((((sVar5 < 0) || (DAT_007fb240 <= sVar5)) || (sVar10 < 0)) ||
-          ((DAT_007fb242 <= sVar10 || (sVar1 < 0)))) || (DAT_007fb244 <= sVar1)) {
+      if (((((sVar5 < 0) || (SHORT_007fb240 <= sVar5)) || (sVar10 < 0)) ||
+          ((SHORT_007fb242 <= sVar10 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) {
         sVar5 = -1;
       }
       else {
         sVar5 = *(short *)(DAT_007fb280 +
-                          ((int)DAT_007fb278 * (int)sVar10 + (int)DAT_007fb27e * (int)sVar1 +
+                          ((int)SHORT_007fb278 * (int)sVar10 + (int)SHORT_007fb27e * (int)sVar1 +
                           (int)sVar5) * 2);
       }
       if (sVar5 == 0) {
@@ -106,7 +106,8 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
                                            *(short *)&this_01->field_0x5b8);
                 if (iVar8 != 0) {
                   RaiseInternalException
-                            (-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x6a);
+                            (-5,g_overwriteContext_007ED77C,
+                             s_E____titans_Artem_TLO_base_cpp_007ac820,0x6a);
                 }
                 iVar9 = iVar9 + 1;
               } while (iVar9 < iVar6 + *(int *)&this_01->field_0x5b0);
@@ -125,13 +126,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       sVar5 = *(short *)&this_01->field_0x5b0;
       sVar1 = *(short *)&this_01->field_0x5b8;
       sVar10 = *(short *)&this_01->field_0x5b4;
-      if (((sVar5 < 0) || (DAT_007fb240 <= sVar5)) ||
-         (((sVar10 < 0 || ((DAT_007fb242 <= sVar10 || (sVar1 < 0)))) || (DAT_007fb244 <= sVar1)))) {
+      if (((sVar5 < 0) || (SHORT_007fb240 <= sVar5)) ||
+         (((sVar10 < 0 || ((SHORT_007fb242 <= sVar10 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1))
+         )) {
         sVar5 = -1;
       }
       else {
         sVar5 = *(short *)(DAT_007fb280 +
-                          ((int)DAT_007fb278 * (int)sVar10 + (int)DAT_007fb27e * (int)sVar1 +
+                          ((int)SHORT_007fb278 * (int)sVar10 + (int)SHORT_007fb27e * (int)sVar1 +
                           (int)sVar5) * 2);
       }
       if (sVar5 != 0) {
@@ -146,7 +148,8 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
                                            *(short *)&this_01->field_0x5b8);
                 if (iVar8 != 0) {
                   RaiseInternalException
-                            (-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x87);
+                            (-5,g_overwriteContext_007ED77C,
+                             s_E____titans_Artem_TLO_base_cpp_007ac820,0x87);
                 }
                 iVar9 = iVar9 + 1;
               } while (iVar9 < iVar6 + *(int *)&this_01->field_0x5b0);
@@ -258,19 +261,21 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       sVar5 = *(short *)&this_01->field_0x5b0;
       sVar1 = *(short *)&this_01->field_0x5b8;
       sVar10 = *(short *)&this_01->field_0x5b4;
-      if (((sVar5 < 0) || (DAT_007fb240 <= sVar5)) ||
-         ((sVar10 < 0 || (((DAT_007fb242 <= sVar10 || (sVar1 < 0)) || (DAT_007fb244 <= sVar1)))))) {
+      if (((sVar5 < 0) || (SHORT_007fb240 <= sVar5)) ||
+         ((sVar10 < 0 || (((SHORT_007fb242 <= sVar10 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))
+         )) {
         sVar10 = -1;
       }
       else {
         sVar10 = *(short *)(DAT_007fb280 +
-                           ((int)DAT_007fb278 * (int)sVar10 + (int)DAT_007fb27e * (int)sVar1 +
+                           ((int)SHORT_007fb278 * (int)sVar10 + (int)SHORT_007fb27e * (int)sVar1 +
                            (int)sVar5) * 2);
       }
       if (sVar10 != 0) {
         iVar6 = thunk_FUN_00496140(sVar5,*(short *)&this_01->field_0x5b4,sVar1);
         if (iVar6 != 0) {
-          RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x73);
+          RaiseInternalException
+                    (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_base_cpp_007ac820,0x73);
         }
         this_01->field_0251 = 0;
       }

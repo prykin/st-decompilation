@@ -1,5 +1,5 @@
 
-undefined4 FUN_004b7750(undefined4 param_1)
+undefined4 FUN_004b7750(uint param_1)
 
 {
   int iVar1;
