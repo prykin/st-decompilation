@@ -96,7 +96,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   if ((((iVar6 != 0x1ae) && (iVar6 != 0x172)) && (iVar6 != 0x5a)) &&
      ((iVar6 != 0x1a4 && (iVar6 != 0x1b8)))) {
     if ((iVar6 == 0x14) || (iVar6 == 1000)) {
-      uVar4 = (*this->vtable->slot_2C)();
+      uVar4 = (*this->vtable->vfunc_2C)();
     }
     else {
       if (iVar6 != 0x3e9) {
@@ -492,7 +492,7 @@ LAB_00420678:
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
     return;
   }
-  uVar4 = (*this->vtable->slot_2C)();
+  uVar4 = (*this->vtable->vfunc_2C)();
   switch(uVar4) {
   case 0xa6:
   case 0xa7:

@@ -76,7 +76,10 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 decompiler.getLastMessage());
 
         Map<String, Proposal> grouped = new LinkedHashMap<>();
-        int candidateFunctions = 0, decompileFailures = 0, rawSwitches = 0;
+        int candidateFunctions = 0, decompileRetries = 0, decompileFailures = 0,
+            rawSwitches = 0;
+        List<DecompileRetry> retries = new ArrayList<>();
+        List<DecompileFailure> failures = new ArrayList<>();
         try {
             FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
             while (functions.hasNext()) {
@@ -86,8 +89,16 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 candidateFunctions++;
                 DecompileResults results = decompiler.decompileFunction(function, 30, monitor);
                 if (!results.decompileCompleted() || results.getDecompiledFunction() == null) {
-                    decompileFailures++;
-                    continue;
+                    decompileRetries++;
+                    String initialReason = decompiler.getLastMessage();
+                    results = decompiler.decompileFunction(function, 120, monitor);
+                    if (!results.decompileCompleted() || results.getDecompiledFunction() == null) {
+                        decompileFailures++;
+                        failures.add(new DecompileFailure(function, decompiler.getLastMessage()));
+                        retries.add(new DecompileRetry(function, initialReason, "failed"));
+                        continue;
+                    }
+                    retries.add(new DecompileRetry(function, initialReason, "recovered"));
                 }
                 List<SwitchBlock> switches = switches(results.getDecompiledFunction().getC());
                 rawSwitches += switches.size();
@@ -125,17 +136,20 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
 
         writeTsv(directory.resolve("switch_enum_proposals.tsv"), proposals);
         writeJson(directory.resolve("switch_enum_proposals.jsonl"), proposals);
+        writeRetries(directory.resolve("switch_enum_decompile_retries.tsv"), retries);
+        writeFailures(directory.resolve("switch_enum_decompile_failures.tsv"), failures);
         writeSummary(directory.resolve("switch_enum_summary.txt"), proposals,
-            candidateFunctions, rawSwitches, decompileFailures);
+            candidateFunctions, rawSwitches, decompileRetries, decompileFailures);
         long auto = proposals.stream().filter(proposal -> proposal.apply).count();
         println("Switch-enum analysis complete: " + directory.toAbsolutePath().normalize());
         println("Candidate functions: " + candidateFunctions + ", switches: " + rawSwitches +
             ", proposals: " + proposals.size() + ", auto_apply: " + auto +
-            ", decompile failures: " + decompileFailures);
+            ", decompile retries: " + decompileRetries +
+            ", failures: " + decompileFailures);
     }
 
     private boolean isCandidate(Function function) {
-        if (function.isThunk() || function.isExternal() || isLibrary(function)) return false;
+        if (function.isThunk() || function.isExternal() || isExcludedLibrary(function)) return false;
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
@@ -385,13 +399,34 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         Files.write(path, output, StandardCharsets.UTF_8);
     }
 
+    private void writeFailures(Path path, List<DecompileFailure> failures) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\tfunction\treason\n");
+            for (DecompileFailure failure : failures)
+                out.write(addr(failure.function.getEntryPoint()) + "\t" +
+                    tsv(failure.function.getName(true)) + "\t" +
+                    tsv(failure.reason) + "\n");
+        }
+    }
+
+    private void writeRetries(Path path, List<DecompileRetry> retries) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\tfunction\tinitial_reason\tstatus\n");
+            for (DecompileRetry retry : retries)
+                out.write(addr(retry.function.getEntryPoint()) + "\t" +
+                    tsv(retry.function.getName(true)) + "\t" +
+                    tsv(retry.initialReason) + "\t" + retry.status + "\n");
+        }
+    }
+
     private void writeSummary(Path path, List<Proposal> rows, int functions, int switches,
-            int failures) throws Exception {
+            int retries, int failures) throws Exception {
         Map<String, Long> kinds = new TreeMap<>();
         for (Proposal row : rows) kinds.merge(row.targetKind, 1L, Long::sum);
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "candidate_functions=" + functions, "switches_seen=" + switches,
-            "decompile_failures=" + failures, "proposals=" + rows.size(),
+            "decompile_retries=" + retries, "decompile_failures=" + failures,
+            "proposals=" + rows.size(),
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
             "target_kinds=" + kinds,
             "note=At least three numeric case values are required.",
@@ -400,12 +435,17 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 "STClassLayoutApplier are enabled automatically."), StandardCharsets.UTF_8);
     }
 
-    private boolean isLibrary(Function function) {
+    private boolean isExcludedLibrary(Function function) {
+        boolean library = false, ourlib = false;
         for (FunctionTag tag : function.getTags()) {
             String name = tag.getName();
-            if ("LIBRARY".equals(name) || name.startsWith("LIBRARY_")) return true;
+            if ("LIBRARY".equals(name) || name.startsWith("LIBRARY_")) library = true;
+            if (name.startsWith("LIBRARY_OURLIB_")) ourlib = true;
         }
-        return false;
+        // Internal Ourlib code is excluded from the final decompilation corpus, but its
+        // state domains are part of the recovered game API and must remain discoverable
+        // on later analyzer reruns.  Only third-party/runtime library switches are noise.
+        return library && !ourlib;
     }
 
     private Path programDirectory(File selected) {
@@ -450,6 +490,25 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
     private static String q(String value) {
         return "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"")
             .replace("\r", "\\r").replace("\n", "\\n") + "\"";
+    }
+
+    private static class DecompileRetry {
+        final Function function;
+        final String initialReason, status;
+        DecompileRetry(Function function, String initialReason, String status) {
+            this.function = function;
+            this.initialReason = initialReason == null ? "" : initialReason;
+            this.status = status;
+        }
+    }
+
+    private static class DecompileFailure {
+        final Function function;
+        final String reason;
+        DecompileFailure(Function function, String reason) {
+            this.function = function;
+            this.reason = reason == null ? "" : reason;
+        }
     }
 
     private static class SwitchBlock {

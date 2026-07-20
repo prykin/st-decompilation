@@ -7,12 +7,18 @@
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.GhidraClass;
+import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.ParameterImpl;
+import ghidra.program.model.listing.ReturnParameterImpl;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.SymbolTable;
@@ -38,6 +44,7 @@ public class STDebugSymbolApplier extends GhidraScript {
         int transaction = currentProgram.startTransaction("Apply recovered debug symbols");
         boolean commit = false;
         int applied = 0, skipped = 0, failed = 0, thiscalls = 0;
+        int conventionsPreserved = 0;
         try {
             for (int index = 1; index < lines.size(); index++) {
                 monitor.checkCancelled();
@@ -69,24 +76,29 @@ public class STDebugSymbolApplier extends GhidraScript {
                         failed++;
                         continue;
                     }
-                    if (!callingConvention.isBlank() &&
+                    boolean preserveConvention = !callingConvention.isBlank() &&
                             !callingConvention.equals(function.getCallingConventionName()) &&
-                            function.getSignatureSource() == SourceType.USER_DEFINED) {
-                        printerr("Skipping manually refined calling convention at " + columns[1] +
+                            function.getSignatureSource() == SourceType.USER_DEFINED;
+                    if (preserveConvention) {
+                        printerr("Preserving manually refined calling convention at " + columns[1] +
                             ": " + function.getCallingConventionName() + " (proposal: " +
                             callingConvention + ")");
-                        failed++;
-                        continue;
+                        conventionsPreserved++;
                     }
                     Namespace namespace = getOrCreateOwner(owner);
                     function.setParentNamespace(namespace);
                     function.setName(method, SourceType.USER_DEFINED);
                     function.addTag(TAG);
                     addRecoveryComment(function, qualified, source);
-                    if (!callingConvention.isBlank()) {
+                    if (!callingConvention.isBlank() && !preserveConvention) {
                         try {
-                            function.setCallingConvention(callingConvention);
-                            function.setSignatureSource(SourceType.USER_DEFINED);
+                            if ("__thiscall".equals(callingConvention) &&
+                                    explicitEcxParameter(function) != null)
+                                convertFastcallReceiver(function);
+                            else {
+                                function.setCallingConvention(callingConvention);
+                                function.setSignatureSource(SourceType.USER_DEFINED);
+                            }
                             if ("__thiscall".equals(callingConvention)) thiscalls++;
                         }
                         catch (Exception exception) {
@@ -107,7 +119,35 @@ public class STDebugSymbolApplier extends GhidraScript {
             currentProgram.endTransaction(transaction, commit);
         }
         println("Debug symbols applied: " + applied + ", __thiscall: " + thiscalls +
+            ", conventions preserved: " + conventionsPreserved +
             ", skipped: " + skipped + ", failed: " + failed);
+    }
+
+    private Parameter explicitEcxParameter(Function function) {
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter() || !parameter.isRegisterVariable() ||
+                    parameter.getRegister() == null) continue;
+            if ("ECX".equalsIgnoreCase(parameter.getRegister().getName())) return parameter;
+        }
+        return null;
+    }
+
+    private void convertFastcallReceiver(Function function) throws Exception {
+        List<Variable> arguments = new ArrayList<>();
+        Parameter receiver = explicitEcxParameter(function);
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter() || parameter.equals(receiver)) continue;
+            arguments.add(new ParameterImpl(parameter.getName(), parameter.getFormalDataType(),
+                currentProgram, SourceType.USER_DEFINED));
+        }
+        boolean varargs = function.hasVarArgs();
+        boolean noreturn = function.hasNoReturn();
+        function.updateFunction("__thiscall",
+            new ReturnParameterImpl(function.getReturnType(), currentProgram), arguments,
+            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, SourceType.USER_DEFINED);
+        function.setVarArgs(varargs);
+        function.setNoReturn(noreturn);
+        function.setSignatureSource(SourceType.USER_DEFINED);
     }
 
     private File proposalFile() throws Exception {

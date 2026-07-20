@@ -123,6 +123,7 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         writeTsv(dir.resolve("proposals.tsv"), proposals);
         writeJsonl(dir.resolve("proposals.jsonl"), proposals);
         writeLines(dir.resolve("conflicts.jsonl"), conflicts);
+        writeConventionReview(dir.resolve("debug_calling_convention_review.tsv"), proposals);
         writeSummary(dir.resolve("summary.txt"), proposals, conflicts.size());
         println("Debug-symbol analysis complete: " + dir);
         println("Proposals: " + proposals.size() + ", conflicts: " + conflicts.size());
@@ -174,19 +175,76 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         ghidra.program.model.listing.InstructionIterator instructions =
             listing.getInstructions(function.getBody(), true);
         int inspected = 0;
+        String ecxEvidence = "";
+        boolean ecxLive = true, edxLive = true;
         while (instructions.hasNext() && inspected++ < 24) {
             Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String text = instruction.toString().toUpperCase(Locale.ROOT);
-            String compact = text.replaceAll("\\s+", " ").trim();
-            boolean ecxAddressing = compact.contains("[ECX") || compact.contains("[ ECX");
-            boolean ecxAsSource = compact.matches("MOV .+, ?ECX$") ||
-                compact.matches("(?:PUSH|TEST|CMP|OR|AND) ECX(?:,.*)?$");
-            if (ecxAddressing || ecxAsSource) {
-                return new ThiscallEvidence("__thiscall",
-                    addr(instruction.getAddress()) + ": " + instruction.toString());
-            }
+            String[] operands = splitOperands(text);
+            if (edxLive && readsIncomingRegister(mnemonic, operands, "EDX"))
+                return new ThiscallEvidence("", "incoming EDX is used at " +
+                    addr(instruction.getAddress()) + ": " + instruction);
+            if (ecxLive && readsIncomingRegister(mnemonic, operands, "ECX") &&
+                    ecxEvidence.isBlank())
+                ecxEvidence = addr(instruction.getAddress()) + ": " + instruction;
+            if (pureRegisterOverwrite(mnemonic, operands, "ECX")) ecxLive = false;
+            if (pureRegisterOverwrite(mnemonic, operands, "EDX")) edxLive = false;
+            if ("CALL".equals(mnemonic)) break;
         }
-        return new ThiscallEvidence("", "no incoming ECX use found in first 24 instructions");
+        return ecxEvidence.isBlank() ?
+            new ThiscallEvidence("", "no live incoming ECX use found before clobber/call") :
+            new ThiscallEvidence("__thiscall", ecxEvidence);
+    }
+
+    private String[] splitOperands(String instruction) {
+        int space = instruction.indexOf(' ');
+        if (space < 0) return new String[0];
+        String operands = instruction.substring(space + 1).trim();
+        return operands.isEmpty() ? new String[0] : operands.split("\\s*,\\s*", -1);
+    }
+
+    private boolean readsIncomingRegister(String mnemonic, String[] operands, String register) {
+        boolean selfZero = operands.length >= 2 &&
+            ("XOR".equals(mnemonic) || "SUB".equals(mnemonic) || "SBB".equals(mnemonic)) &&
+            sameRegisterFamily(operands[0], register) && operands[0].equals(operands[1]);
+        if (selfZero) return false;
+        for (int index = 0; index < operands.length; index++) {
+            if (!mentionsRegister(operands[index], register)) continue;
+            boolean overwrite = index == 0 && sameRegisterFamily(operands[index], register) &&
+                isWriteOnlyDestination(mnemonic, operands);
+            if (!overwrite) return true;
+        }
+        return false;
+    }
+
+    private boolean pureRegisterOverwrite(String mnemonic, String[] operands, String register) {
+        if ("EDX".equals(register) && Set.of("CDQ", "CWD").contains(mnemonic)) return true;
+        if (operands.length == 0 || !sameRegisterFamily(operands[0], register)) return false;
+        return isWriteOnlyDestination(mnemonic, operands);
+    }
+
+    private boolean isWriteOnlyDestination(String mnemonic, String[] operands) {
+        if (Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP").contains(mnemonic) ||
+                mnemonic.startsWith("SET")) return true;
+        if (operands.length < 2) return false;
+        if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic) || "SBB".equals(mnemonic)) &&
+                operands[0].equals(operands[1])) return true;
+        String immediate = operands[1].replace("+", "");
+        if ("OR".equals(mnemonic) && immediate.matches("(?:-0X?1|0X?F+|F+H?)")) return true;
+        return "AND".equals(mnemonic) && immediate.matches("(?:0X?0+|0+H?)");
+    }
+
+    private boolean sameRegisterFamily(String operand, String register) {
+        if ("ECX".equals(register)) return operand.matches("(?:ECX|CX|CH|CL)");
+        if ("EDX".equals(register)) return operand.matches("(?:EDX|DX|DH|DL)");
+        return register.equals(operand);
+    }
+
+    private boolean mentionsRegister(String operand, String register) {
+        String aliases = "ECX".equals(register) ? "ECX|CX|CH|CL" :
+            "EDX".equals(register) ? "EDX|DX|DH|DL" : register;
+        return operand.matches(".*(?<![A-Z0-9])(?:" + aliases + ")(?![A-Z0-9]).*");
     }
 
     private static String stringValue(Data data) {
@@ -253,12 +311,42 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         writeLines(path, rows);
     }
 
+    private void writeConventionReview(Path path, List<Proposal> proposals) throws IOException {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("address\tfunction\tcurrent_calling_convention\tsignature_source\t" +
+                "evidence\taction\n");
+            for (Proposal proposal : proposals) {
+                Function function = proposal.function;
+                if (!proposal.callingConvention.isBlank() ||
+                        !"__thiscall".equals(function.getCallingConventionName()) ||
+                        function.getTags().stream().noneMatch(tag ->
+                            "RECOVERED_DEBUG_NAME".equals(tag.getName()))) continue;
+                out.write(addr(function.getEntryPoint()) + "\t" +
+                    tsv(function.getName(true)) + "\t__thiscall\t" +
+                    function.getSignatureSource() + "\t" +
+                    tsv(proposal.callingConventionEvidence) +
+                    "\treview_only; analyzer never reverts an existing signature\n");
+            }
+        }
+    }
+
     private void writeSummary(Path path, List<Proposal> proposals, int conflicts) throws IOException {
         long high = proposals.stream().filter(p -> p.confidence.equals("high")).count();
         long medium = proposals.stream().filter(p -> p.confidence.equals("medium")).count();
+        long thiscalls = proposals.stream()
+            .filter(proposal -> "__thiscall".equals(proposal.callingConvention)).count();
+        long conventionReview = proposals.stream().filter(proposal ->
+            proposal.callingConvention.isBlank() &&
+            "__thiscall".equals(proposal.function.getCallingConventionName()) &&
+            proposal.function.getTags().stream().anyMatch(tag ->
+                "RECOVERED_DEBUG_NAME".equals(tag.getName()))).count();
         writeLines(path, List.of("program=" + currentProgram.getName(),
             "proposals=" + proposals.size(), "high=" + high, "medium=" + medium,
             "conflicts=" + conflicts,
+            "thiscall_auto_apply=" + thiscalls,
+            "existing_thiscall_without_live_ecx_evidence=" + conventionReview,
+            "note_conventions=Review debug_calling_convention_review.tsv; existing signatures " +
+                "are never reverted automatically.",
             "note=Only rows with apply=1 are consumed by STDebugSymbolApplier."));
     }
 

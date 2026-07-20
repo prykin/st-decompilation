@@ -2175,7 +2175,7 @@ cf_common_exit_0066DCED:
           (**(code **)(*local_64 + 0x20))(local_c,(int)local_58);
         }
         if (-1 < iVar13) {
-          uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
+          uVar19 = (*g_sTFish_00811984->vtable->vfunc_11C)();
           (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_10;
@@ -2264,7 +2264,7 @@ cf_common_exit_0066DCED:
           (**(code **)(*local_64 + 0x20))(local_c,(int)local_54);
         }
         if (-1 < iVar13) {
-          uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
+          uVar19 = (*g_sTFish_00811984->vtable->vfunc_11C)();
           (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_10;
@@ -2334,7 +2334,7 @@ cf_common_exit_0066DCED:
         (**(code **)(*local_64 + 0x20))(local_c,(int)local_28._2_2_);
       }
       if (-1 < iVar13) {
-        uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
+        uVar19 = (*g_sTFish_00811984->vtable->vfunc_11C)();
         (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
       }
     }
@@ -2394,7 +2394,7 @@ cf_common_exit_0066DCED:
         (**(code **)(*local_64 + 0x20))(local_c,(int)local_1c._2_2_);
       }
       if (-1 < iVar13) {
-        uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
+        uVar19 = (*g_sTFish_00811984->vtable->vfunc_11C)();
         (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
       }
     }
@@ -2473,7 +2473,7 @@ cf_common_exit_0066DCED:
           (**(code **)(*local_64 + 0x20))(local_c,(int)local_10._2_2_);
         }
         if (-1 < iVar13) {
-          uVar19 = (*g_sTFish_00811984->vtable->slot_11C)();
+          uVar19 = (*g_sTFish_00811984->vtable->vfunc_11C)();
           (**(code **)(*local_64 + 0x20))(iVar13,uVar19);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_1c;

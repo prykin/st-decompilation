@@ -1,6 +1,6 @@
 apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	calling_convention_evidence	source_file	source_line	confidence	reason
-1	00415160	STGroupBoatC::Way3DGrpDistribTgt	STGroupBoatC::Way3DGrpDistribTgt	STGroupBoatC	Way3DGrpDistribTgt		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\Grpway3d.cpp	3686	high	previously_applied_debug_symbol
-1	00415590	STGroupBoatC::Way3DGrpGetDistrPoint	STGroupBoatC::Way3DGrpGetDistrPoint	STGroupBoatC	Way3DGrpGetDistrPoint		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\Grpway3d.cpp	3758	high	previously_applied_debug_symbol
+1	00415160	STGroupBoatC::Way3DGrpDistribTgt	STGroupBoatC::Way3DGrpDistribTgt	STGroupBoatC	Way3DGrpDistribTgt		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\Grpway3d.cpp	3686	high	previously_applied_debug_symbol
+1	00415590	STGroupBoatC::Way3DGrpGetDistrPoint	STGroupBoatC::Way3DGrpGetDistrPoint	STGroupBoatC	Way3DGrpGetDistrPoint		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\Grpway3d.cpp	3758	high	previously_applied_debug_symbol
 1	004189D0	STGameObjC::MoveStep	STGameObjC::MoveStep	STGameObjC	MoveStep	__thiscall	004189D7: MOV ESI,ECX	E:\\__titans\\wlad\\Tc_gobj.cpp	831	high	previously_applied_debug_symbol
 1	00419DF0	STGameObjC::SetSelfCheckFlag	STGameObjC::SetSelfCheckFlag	STGameObjC	SetSelfCheckFlag	__thiscall	00419DF1: MOV EBX,ECX	E:\\__titans\\wlad\\Tc_gobj.cpp	1445	high	previously_applied_debug_symbol
 1	0041A680	STGameObjC::ResetSelfCheckFlag	STGameObjC::ResetSelfCheckFlag	STGameObjC	ResetSelfCheckFlag	__thiscall	0041A681: MOV ESI,ECX	E:\\__titans\\wlad\\Tc_gobj.cpp	1525	high	previously_applied_debug_symbol
@@ -21,83 +21,83 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00424360	STGroupC::RestoreGrpData	STGroupC::RestoreGrpData	STGroupC	RestoreGrpData	__thiscall	0042436A: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\tc_grp.cpp	470	high	previously_applied_debug_symbol
 1	004247B0	STGroupC::SetAVPar	STGroupC::SetAVPar	STGroupC	SetAVPar	__thiscall	004247B3: PUSH ECX	E:\\__titans\\wlad\\tc_grp.cpp	599	high	previously_applied_debug_symbol
 1	0042AB00	STAllPlayersC::GetGObjFromZone	STAllPlayersC::GetGObjFromZone	STAllPlayersC	GetGObjFromZone	__thiscall	0042AB0B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\wlad\\to_allpl.cpp	107	high	previously_applied_debug_symbol
-1	0042ABE0	STAllPlayersC::GetGObjFromZone2	STAllPlayersC::GetGObjFromZone2	STAllPlayersC	GetGObjFromZone2	__thiscall	0042ABFA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	271	high	previously_applied_debug_symbol
-1	0042B1F0	STAllPlayersC::GetGObjFromBox	STAllPlayersC::GetGObjFromBox	STAllPlayersC	GetGObjFromBox	__thiscall	0042B202: LEA EDX,[ECX + EAX*0x1 + -0x1]	E:\\__titans\\wlad\\to_allpl.cpp	342	high	previously_applied_debug_symbol
-1	0042B620	STAllPlayersC::GetObjPtr	STAllPlayersC::GetObjPtr	STAllPlayersC	GetObjPtr	__thiscall	0042B649: MOV ECX,dword ptr [ECX*0x2 + 0x7f4e29]	E:\\__titans\\wlad\\to_allpl.cpp	378	high	previously_applied_debug_symbol
+1	0042ABE0	STAllPlayersC::GetGObjFromZone2	STAllPlayersC::GetGObjFromZone2	STAllPlayersC	GetGObjFromZone2		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	271	high	previously_applied_debug_symbol
+1	0042B1F0	STAllPlayersC::GetGObjFromBox	STAllPlayersC::GetGObjFromBox	STAllPlayersC	GetGObjFromBox		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	342	high	previously_applied_debug_symbol
+1	0042B620	STAllPlayersC::GetObjPtr	STAllPlayersC::GetObjPtr	STAllPlayersC	GetObjPtr		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	378	high	previously_applied_debug_symbol
 1	0042B7D0	STAllPlayersC::AddObjsToGroup	STAllPlayersC::AddObjsToGroup	STAllPlayersC	AddObjsToGroup	__thiscall	0042B7E2: MOV EBX,ECX	E:\\__titans\\wlad\\to_allpl.cpp	473	high	previously_applied_debug_symbol
 1	0042BB30	STAllPlayersC::AddObjToTmp	STAllPlayersC::AddObjToTmp	STAllPlayersC	AddObjToTmp	__thiscall	0042BB3D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	541	high	previously_applied_debug_symbol
 1	0042BEA0	STAllPlayersC::AddObjToTmp2	STAllPlayersC::AddObjToTmp2	STAllPlayersC	AddObjToTmp2	__thiscall	0042BEAD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	594	high	previously_applied_debug_symbol
 1	0042C1C0	STAllPlayersC::AddObjsToTmp	STAllPlayersC::AddObjsToTmp	STAllPlayersC	AddObjsToTmp	__thiscall	0042C1CD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	623	high	previously_applied_debug_symbol
 1	0042C4B0	STAllPlayersC::DelObjsFromTmp	STAllPlayersC::DelObjsFromTmp	STAllPlayersC	DelObjsFromTmp	__thiscall	0042C4BD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	701	high	previously_applied_debug_symbol
 1	0042C5F0	STAllPlayersC::DelObjFromTmps	STAllPlayersC::DelObjFromTmps	STAllPlayersC	DelObjFromTmps	__thiscall	0042C601: MOV ESI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	850	high	previously_applied_debug_symbol
-1	0042CDE0	STAllPlayersC::PushTV	STAllPlayersC::PushTV	STAllPlayersC	PushTV		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	874	high	previously_applied_debug_symbol
+1	0042CDE0	STAllPlayersC::PushTV	STAllPlayersC::PushTV	STAllPlayersC	PushTV		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	874	high	previously_applied_debug_symbol
 1	0042CEF0	STAllPlayersC::DelObjFromSaveTmps	STAllPlayersC::DelObjFromSaveTmps	STAllPlayersC	DelObjFromSaveTmps	__thiscall	0042CEF3: PUSH ECX	E:\\__titans\\wlad\\to_allpl.cpp	955	high	previously_applied_debug_symbol
 1	0042D190	STAllPlayersC::ResetActivityFromObjs	STAllPlayersC::ResetActivityFromObjs	STAllPlayersC	ResetActivityFromObjs	__thiscall	0042D19E: MOV EDI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	1030	high	previously_applied_debug_symbol
 1	0042D370	STAllPlayersC::SetActivityToObjs	STAllPlayersC::SetActivityToObjs	STAllPlayersC	SetActivityToObjs	__thiscall	0042D37D: MOV EDI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	1085	high	previously_applied_debug_symbol
 1	0042D4F0	STAllPlayersC::ResetActivityFromTmp	STAllPlayersC::ResetActivityFromTmp	STAllPlayersC	ResetActivityFromTmp	__thiscall	0042D4FE: MOV ESI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	1119	high	previously_applied_debug_symbol
-1	0042D6B0	STAllPlayersC::RemoveActiveTV	STAllPlayersC::RemoveActiveTV	STAllPlayersC	RemoveActiveTV		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	1136	high	previously_applied_debug_symbol
-1	0042D980	STAllPlayersC::GetActiveCenter	STAllPlayersC::GetActiveCenter	STAllPlayersC	GetActiveCenter	__thiscall	0042D991: LEA EAX,[ECX + ECX*0x4]	E:\\__titans\\wlad\\to_allpl.cpp	1253	high	previously_applied_debug_symbol
+1	0042D6B0	STAllPlayersC::RemoveActiveTV	STAllPlayersC::RemoveActiveTV	STAllPlayersC	RemoveActiveTV		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	1136	high	previously_applied_debug_symbol
+1	0042D980	STAllPlayersC::GetActiveCenter	STAllPlayersC::GetActiveCenter	STAllPlayersC	GetActiveCenter		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	1253	high	previously_applied_debug_symbol
 1	0042DFE0	STAllPlayersC::PrepareToCmd	STAllPlayersC::PrepareToCmd	STAllPlayersC	PrepareToCmd	__thiscall	0042DFF6: MOV ESI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	1423	high	previously_applied_debug_symbol
 1	0042E210	STAllPlayersC::RegisterObject	STAllPlayersC::RegisterObject	STAllPlayersC	RegisterObject	__thiscall	0042E219: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\wlad\\to_allpl.cpp	1663	high	previously_applied_debug_symbol
-1	0042EFD0	STAllPlayersC::RegisterGroup	STAllPlayersC::RegisterGroup	STAllPlayersC	RegisterGroup	__thiscall	0042EFF4: MOV EDX,dword ptr [ECX*0x2 + 0x7f4e25]	E:\\__titans\\wlad\\to_allpl.cpp	1686	high	previously_applied_debug_symbol
-1	0042F140	STAllPlayersC::UnRegisterGroup	STAllPlayersC::UnRegisterGroup	STAllPlayersC	UnRegisterGroup	__thiscall	0042F165: MOV EDX,dword ptr [ECX*0x2 + 0x7f4e25]	E:\\__titans\\wlad\\to_allpl.cpp	1710	high	previously_applied_debug_symbol
+1	0042EFD0	STAllPlayersC::RegisterGroup	STAllPlayersC::RegisterGroup	STAllPlayersC	RegisterGroup		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	1686	high	previously_applied_debug_symbol
+1	0042F140	STAllPlayersC::UnRegisterGroup	STAllPlayersC::UnRegisterGroup	STAllPlayersC	UnRegisterGroup		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	1710	high	previously_applied_debug_symbol
 1	0042F2B0	STAllPlayersC::UnRegisterObject	STAllPlayersC::UnRegisterObject	STAllPlayersC	UnRegisterObject	__thiscall	0042F2B6: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\wlad\\to_allpl.cpp	1998	high	previously_applied_debug_symbol
-1	00430470	STAllPlayersC::RegisterTorpedo	STAllPlayersC::RegisterTorpedo	STAllPlayersC	RegisterTorpedo	__thiscall	00430489: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	2039	high	previously_applied_debug_symbol
-1	00430620	STAllPlayersC::IsTorpLive	STAllPlayersC::IsTorpLive	STAllPlayersC	IsTorpLive	__thiscall	0043063F: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	2060	high	previously_applied_debug_symbol
-1	00430960	STAllPlayersC::UnRegisterTorpedo	STAllPlayersC::UnRegisterTorpedo	STAllPlayersC	UnRegisterTorpedo	__thiscall	00430978: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	2185	high	previously_applied_debug_symbol
+1	00430470	STAllPlayersC::RegisterTorpedo	STAllPlayersC::RegisterTorpedo	STAllPlayersC	RegisterTorpedo		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	2039	high	previously_applied_debug_symbol
+1	00430620	STAllPlayersC::IsTorpLive	STAllPlayersC::IsTorpLive	STAllPlayersC	IsTorpLive		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	2060	high	previously_applied_debug_symbol
+1	00430960	STAllPlayersC::UnRegisterTorpedo	STAllPlayersC::UnRegisterTorpedo	STAllPlayersC	UnRegisterTorpedo		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	2185	high	previously_applied_debug_symbol
 1	00430A90	STAllPlayersC::GetMessage	STAllPlayersC::GetMessage	STAllPlayersC	GetMessage	__thiscall	00430A9E: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\wlad\\to_allpl.cpp	2566	high	previously_applied_debug_symbol
 1	004314E0	STAllPlayersC::FramePick	STAllPlayersC::FramePick	STAllPlayersC	FramePick	__thiscall	004314F1: MOV dword ptr [EBP + 0xffffff70],ECX	E:\\__titans\\wlad\\to_allpl.cpp	3538	high	previously_applied_debug_symbol
 1	00433E90	STAllPlayersC::PointPick	STAllPlayersC::PointPick	STAllPlayersC	PointPick	__thiscall	00433E93: PUSH ECX	E:\\__titans\\wlad\\to_allpl.cpp	4049	high	previously_applied_debug_symbol
 1	00435060	STAllPlayersC::SelfCheckObjControl	STAllPlayersC::SelfCheckObjControl	STAllPlayersC	SelfCheckObjControl	__thiscall	0043506B: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\wlad\\to_allpl.cpp	4332	high	previously_applied_debug_symbol
-1	004354E0	STAllPlayersC::ReplaceObject	STAllPlayersC::ReplaceObject	STAllPlayersC	ReplaceObject	__thiscall	004354FA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	4477	high	previously_applied_debug_symbol
+1	004354E0	STAllPlayersC::ReplaceObject	STAllPlayersC::ReplaceObject	STAllPlayersC	ReplaceObject		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	4477	high	previously_applied_debug_symbol
 1	00435930	STAllPlayersC::GetCursorType	STAllPlayersC::GetCursorType	STAllPlayersC	GetCursorType	__thiscall	0043593C: MOV EBX,ECX	E:\\__titans\\wlad\\to_allpl.cpp	4586	high	previously_applied_debug_symbol
 1	00436F20	STAllPlayersC::CmdToPlsObj	STAllPlayersC::CmdToPlsObj	STAllPlayersC	CmdToPlsObj	__thiscall	00436F2F: MOV dword ptr [EBP + -0x1c],ECX	E:\\__titans\\wlad\\to_allpl.cpp	5322	high	previously_applied_debug_symbol
-1	00438E30	STAllPlayersC::SaveTmp	STAllPlayersC::SaveTmp	STAllPlayersC	SaveTmp	__thiscall	00438E4A: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	5886	high	previously_applied_debug_symbol
+1	00438E30	STAllPlayersC::SaveTmp	STAllPlayersC::SaveTmp	STAllPlayersC	SaveTmp		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	5886	high	previously_applied_debug_symbol
 1	00439100	STAllPlayersC::RestoreTmp	STAllPlayersC::RestoreTmp	STAllPlayersC	RestoreTmp	__thiscall	0043910D: MOV dword ptr [EBP + -0x28],ECX	E:\\__titans\\wlad\\to_allpl.cpp	6572	high	previously_applied_debug_symbol
-1	0043AAF0	STAllPlayersC::GetCamPoint	STAllPlayersC::GetCamPoint	STAllPlayersC	GetCamPoint		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	6651	high	previously_applied_debug_symbol
+1	0043AAF0	STAllPlayersC::GetCamPoint	STAllPlayersC::GetCamPoint	STAllPlayersC	GetCamPoint		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	6651	high	previously_applied_debug_symbol
 1	0043AE40	STAllPlayersC::SetActivePanel	STAllPlayersC::SetActivePanel	STAllPlayersC	SetActivePanel	__thiscall	0043AE50: MOV ESI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	6715	high	previously_applied_debug_symbol
 1	0043BEB0	STAllPlayersC::GetPanelInfo	STAllPlayersC::GetPanelInfo	STAllPlayersC	GetPanelInfo	__thiscall	0043BEBC: MOV EDX,ECX	E:\\__titans\\wlad\\to_allpl.cpp	8029	high	previously_applied_debug_symbol
-1	0043E4E0	STAllPlayersC::GetObjsList	STAllPlayersC::GetObjsList	STAllPlayersC	GetObjsList		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	8077	high	previously_applied_debug_symbol
-1	0043E780	STAllPlayersC::GetTOBJList	STAllPlayersC::GetTOBJList	STAllPlayersC	GetTOBJList	__thiscall	0043E79D: MOV EAX,dword ptr [ECX*0x2 + 0x7f4e29]	E:\\__titans\\wlad\\to_allpl.cpp	8128	high	previously_applied_debug_symbol
+1	0043E4E0	STAllPlayersC::GetObjsList	STAllPlayersC::GetObjsList	STAllPlayersC	GetObjsList		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	8077	high	previously_applied_debug_symbol
+1	0043E780	STAllPlayersC::GetTOBJList	STAllPlayersC::GetTOBJList	STAllPlayersC	GetTOBJList		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	8128	high	previously_applied_debug_symbol
 1	0043EED0	STAllPlayersC::GetTOBJListFromDArr	STAllPlayersC::GetTOBJListFromDArr	STAllPlayersC	GetTOBJListFromDArr	__thiscall	0043EEDF: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\wlad\\to_allpl.cpp	8266	high	previously_applied_debug_symbol
-1	0043F200	STAllPlayersC::GetTOBJList	STAllPlayersC::GetTOBJList	STAllPlayersC	GetTOBJList	__thiscall	0043F21D: MOV EAX,dword ptr [ECX*0x2 + 0x7f4e29]	E:\\__titans\\wlad\\to_allpl.cpp	8310	high	previously_applied_debug_symbol
-1	00440600	STAllPlayersC::GetNInTmp	STAllPlayersC::GetNInTmp	STAllPlayersC	GetNInTmp		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	8580	high	previously_applied_debug_symbol
+1	0043F200	STAllPlayersC::GetTOBJList	STAllPlayersC::GetTOBJList	STAllPlayersC	GetTOBJList		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	8310	high	previously_applied_debug_symbol
+1	00440600	STAllPlayersC::GetNInTmp	STAllPlayersC::GetNInTmp	STAllPlayersC	GetNInTmp		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	8580	high	previously_applied_debug_symbol
 1	00440860	STAllPlayersC::_ChangeMD	STAllPlayersC::_ChangeMD	STAllPlayersC	_ChangeMD	__thiscall	00440863: PUSH ECX	E:\\__titans\\wlad\\to_allpl.cpp	8657	high	previously_applied_debug_symbol
-1	00440990	STAllPlayersC::_ChangeDock	STAllPlayersC::_ChangeDock	STAllPlayersC	_ChangeDock		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	8686	high	previously_applied_debug_symbol
+1	00440990	STAllPlayersC::_ChangeDock	STAllPlayersC::_ChangeDock	STAllPlayersC	_ChangeDock		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	8686	high	previously_applied_debug_symbol
 1	00440AA0	STAllPlayersC::_AssignDocks	STAllPlayersC::_AssignDocks	STAllPlayersC	_AssignDocks	__thiscall	00440AAD: MOV dword ptr [EBP + -0x3c],ECX	E:\\__titans\\wlad\\to_allpl.cpp	9036	high	previously_applied_debug_symbol
 1	00441CE0	STAllPlayersC::_MakeMDPairs	STAllPlayersC::_MakeMDPairs	STAllPlayersC	_MakeMDPairs	__thiscall	00441CF0: MOV dword ptr [EBP + -0x4c],ECX	E:\\__titans\\wlad\\to_allpl.cpp	9158	high	previously_applied_debug_symbol
 1	00442300	STAllPlayersC::_AddMDPairs	STAllPlayersC::_AddMDPairs	STAllPlayersC	_AddMDPairs	__thiscall	00442316: MOV dword ptr [EBP + -0x58],ECX	E:\\__titans\\wlad\\to_allpl.cpp	9301	high	previously_applied_debug_symbol
-1	00442B40	STAllPlayersC::_SubMDObject	STAllPlayersC::_SubMDObject	STAllPlayersC	_SubMDObject		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	9326	high	previously_applied_debug_symbol
+1	00442B40	STAllPlayersC::_SubMDObject	STAllPlayersC::_SubMDObject	STAllPlayersC	_SubMDObject		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	9326	high	previously_applied_debug_symbol
 1	00442E50	STAllPlayersC::_AssignMDPairs	STAllPlayersC::_AssignMDPairs	STAllPlayersC	_AssignMDPairs	__thiscall	00442E60: MOV dword ptr [EBP + 0xffffff78],ECX	E:\\__titans\\wlad\\to_allpl.cpp	9710	high	previously_applied_debug_symbol
 1	00443F30	STAllPlayersC::SaveAllPlData	STAllPlayersC::SaveAllPlData	STAllPlayersC	SaveAllPlData	__thiscall	00443F40: MOV dword ptr [EBP + -0x40],ECX	E:\\__titans\\wlad\\to_allpl.cpp	9999	high	previously_applied_debug_symbol
 1	004455C0	STAllPlayersC::CreateBoat	STAllPlayersC::CreateBoat	STAllPlayersC	CreateBoat	__thiscall	004455CC: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\wlad\\to_allpl.cpp	10208	high	previously_applied_debug_symbol
-1	004458D0	STAllPlayersC::GetBoatWeaponInfo	STAllPlayersC::GetBoatWeaponInfo	STAllPlayersC	GetBoatWeaponInfo		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	10266	high	previously_applied_debug_symbol
+1	004458D0	STAllPlayersC::GetBoatWeaponInfo	STAllPlayersC::GetBoatWeaponInfo	STAllPlayersC	GetBoatWeaponInfo		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	10266	high	previously_applied_debug_symbol
 1	00445A40	STAllPlayersC::RegisterPGPair	STAllPlayersC::RegisterPGPair	STAllPlayersC	RegisterPGPair	__thiscall	00445A50: MOV dword ptr [EBP + -0x30],ECX	E:\\__titans\\wlad\\to_allpl.cpp	10403	high	previously_applied_debug_symbol
 1	004461B0	STAllPlayersC::_DeleteGuardBoat	STAllPlayersC::_DeleteGuardBoat	STAllPlayersC	_DeleteGuardBoat	__thiscall	004461BA: MOV dword ptr [EBP + -0x18],ECX	E:\\__titans\\wlad\\to_allpl.cpp	10503	high	previously_applied_debug_symbol
 1	00446520	STAllPlayersC::DeleteGuardBoat	STAllPlayersC::DeleteGuardBoat	STAllPlayersC	DeleteGuardBoat	__thiscall	0044652A: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\wlad\\to_allpl.cpp	10606	high	previously_applied_debug_symbol
-1	00446910	STAllPlayersC::DeletePGPairs	STAllPlayersC::DeletePGPairs	STAllPlayersC	DeletePGPairs	__thiscall	00446935: MOV EDX,dword ptr [ECX*0x2 + 0x7f5816]	E:\\__titans\\wlad\\to_allpl.cpp	10676	high	previously_applied_debug_symbol
-1	00446AA0	STAllPlayersC::OptimizeGuardBoats	STAllPlayersC::OptimizeGuardBoats	STAllPlayersC	OptimizeGuardBoats	__thiscall	00446AAF: LEA EAX,[ECX + ECX*0x4]	E:\\__titans\\wlad\\to_allpl.cpp	10790	high	previously_applied_debug_symbol
+1	00446910	STAllPlayersC::DeletePGPairs	STAllPlayersC::DeletePGPairs	STAllPlayersC	DeletePGPairs		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	10676	high	previously_applied_debug_symbol
+1	00446AA0	STAllPlayersC::OptimizeGuardBoats	STAllPlayersC::OptimizeGuardBoats	STAllPlayersC	OptimizeGuardBoats		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	10790	high	previously_applied_debug_symbol
 1	00446F80	STAllPlayersC::DistributeGuardBoats	STAllPlayersC::DistributeGuardBoats	STAllPlayersC	DistributeGuardBoats	__thiscall	00446F89: MOV dword ptr [EBP + -0x68],ECX	E:\\__titans\\wlad\\to_allpl.cpp	11153	high	previously_applied_debug_symbol
 1	00448120	STAllPlayersC::PutOnPlaceGuardBoats	STAllPlayersC::PutOnPlaceGuardBoats	STAllPlayersC	PutOnPlaceGuardBoats	__thiscall	0044812B: MOV dword ptr [EBP + -0x24],ECX	E:\\__titans\\wlad\\to_allpl.cpp	11675	high	previously_applied_debug_symbol
-1	00449B60	STAllPlayersC::DestroyObjectMsg	STAllPlayersC::DestroyObjectMsg	STAllPlayersC	DestroyObjectMsg	__thiscall	00449B8D: MOV ECX,dword ptr [ECX*0x2 + 0x7f4e29]	E:\\__titans\\wlad\\to_allpl.cpp	11953	high	previously_applied_debug_symbol
-1	00449CE0	STAllPlayersC::RegisterArtefact	STAllPlayersC::RegisterArtefact	STAllPlayersC	RegisterArtefact	__thiscall	00449CF8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	11989	high	previously_applied_debug_symbol
+1	00449B60	STAllPlayersC::DestroyObjectMsg	STAllPlayersC::DestroyObjectMsg	STAllPlayersC	DestroyObjectMsg		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	11953	high	previously_applied_debug_symbol
+1	00449CE0	STAllPlayersC::RegisterArtefact	STAllPlayersC::RegisterArtefact	STAllPlayersC	RegisterArtefact		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	11989	high	previously_applied_debug_symbol
 1	00449E60	STAllPlayersC::UnRegisterArtefact	STAllPlayersC::UnRegisterArtefact	STAllPlayersC	UnRegisterArtefact	__thiscall	00449E6D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12022	high	previously_applied_debug_symbol
-1	00449FD0	STAllPlayersC::RegisterMine	STAllPlayersC::RegisterMine	STAllPlayersC	RegisterMine	__thiscall	00449FE8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12046	high	previously_applied_debug_symbol
+1	00449FD0	STAllPlayersC::RegisterMine	STAllPlayersC::RegisterMine	STAllPlayersC	RegisterMine		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12046	high	previously_applied_debug_symbol
 1	0044A150	STAllPlayersC::UnRegisterMine	STAllPlayersC::UnRegisterMine	STAllPlayersC	UnRegisterMine	__thiscall	0044A15D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12071	high	previously_applied_debug_symbol
-1	0044A2C0	STAllPlayersC::RegisterDeposit	STAllPlayersC::RegisterDeposit	STAllPlayersC	RegisterDeposit	__thiscall	0044A2D8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12095	high	previously_applied_debug_symbol
+1	0044A2C0	STAllPlayersC::RegisterDeposit	STAllPlayersC::RegisterDeposit	STAllPlayersC	RegisterDeposit		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12095	high	previously_applied_debug_symbol
 1	0044A440	STAllPlayersC::UnRegisterDeposit	STAllPlayersC::UnRegisterDeposit	STAllPlayersC	UnRegisterDeposit	__thiscall	0044A44D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12120	high	previously_applied_debug_symbol
-1	0044A5B0	STAllPlayersC::RegisterContainer	STAllPlayersC::RegisterContainer	STAllPlayersC	RegisterContainer	__thiscall	0044A5C8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12144	high	previously_applied_debug_symbol
+1	0044A5B0	STAllPlayersC::RegisterContainer	STAllPlayersC::RegisterContainer	STAllPlayersC	RegisterContainer		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12144	high	previously_applied_debug_symbol
 1	0044A730	STAllPlayersC::UnRegisterContainer	STAllPlayersC::UnRegisterContainer	STAllPlayersC	UnRegisterContainer	__thiscall	0044A73D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12177	high	previously_applied_debug_symbol
-1	0044A8A0	STAllPlayersC::RegisterBlot	STAllPlayersC::RegisterBlot	STAllPlayersC	RegisterBlot	__thiscall	0044A8B8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12201	high	previously_applied_debug_symbol
+1	0044A8A0	STAllPlayersC::RegisterBlot	STAllPlayersC::RegisterBlot	STAllPlayersC	RegisterBlot		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12201	high	previously_applied_debug_symbol
 1	0044AA20	STAllPlayersC::UnRegisterBlot	STAllPlayersC::UnRegisterBlot	STAllPlayersC	UnRegisterBlot	__thiscall	0044AA2D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12226	high	previously_applied_debug_symbol
-1	0044AB90	STAllPlayersC::CheckTmps	STAllPlayersC::CheckTmps	STAllPlayersC	CheckTmps		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	12313	high	previously_applied_debug_symbol
-1	0044AF50	STAllPlayersC::PushTV	STAllPlayersC::PushTV	STAllPlayersC	PushTV		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\to_allpl.cpp	12328	high	previously_applied_debug_symbol
+1	0044AB90	STAllPlayersC::CheckTmps	STAllPlayersC::CheckTmps	STAllPlayersC	CheckTmps		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12313	high	previously_applied_debug_symbol
+1	0044AF50	STAllPlayersC::PushTV	STAllPlayersC::PushTV	STAllPlayersC	PushTV		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12328	high	previously_applied_debug_symbol
 1	0044B030	STAllPlayersC::ActivateTV	STAllPlayersC::ActivateTV	STAllPlayersC	ActivateTV	__thiscall	0044B041: MOV EDI,ECX	E:\\__titans\\wlad\\to_allpl.cpp	12354	high	previously_applied_debug_symbol
-1	0044B280	STAllPlayersC::CalibrateTmp	STAllPlayersC::CalibrateTmp	STAllPlayersC	CalibrateTmp	__thiscall	0044B2A1: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12438	high	previously_applied_debug_symbol
+1	0044B280	STAllPlayersC::CalibrateTmp	STAllPlayersC::CalibrateTmp	STAllPlayersC	CalibrateTmp		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12438	high	previously_applied_debug_symbol
 1	0044B5F0	STAllPlayersC::SelectObjects	STAllPlayersC::SelectObjects	STAllPlayersC	SelectObjects	__thiscall	0044B607: MOV EBX,ECX	E:\\__titans\\wlad\\to_allpl.cpp	12579	high	previously_applied_debug_symbol
-1	0044C130	STAllPlayersC::GetTOBJImage	STAllPlayersC::GetTOBJImage	STAllPlayersC	GetTOBJImage	__thiscall	0044C163: JMP dword ptr [ECX*0x4 + 0x44c4c8]	E:\\__titans\\wlad\\to_allpl.cpp	12878	high	previously_applied_debug_symbol
-1	0044C720	STAllPlayersC::GetScrObjList	STAllPlayersC::GetScrObjList	STAllPlayersC	GetScrObjList	__thiscall	0044C741: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12974	high	previously_applied_debug_symbol
-1	0044E980	STBoatC::GetVisualInfo	STBoatC::GetVisualInfo	STBoatC	GetVisualInfo	__thiscall	0044E993: MOV dword ptr [EAX],ECX	E:\\__titans\\wlad\\To_boat.cpp	302	high	previously_applied_debug_symbol
+1	0044C130	STAllPlayersC::GetTOBJImage	STAllPlayersC::GetTOBJImage	STAllPlayersC	GetTOBJImage		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12878	high	previously_applied_debug_symbol
+1	0044C720	STAllPlayersC::GetScrObjList	STAllPlayersC::GetScrObjList	STAllPlayersC	GetScrObjList		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\to_allpl.cpp	12974	high	previously_applied_debug_symbol
+1	0044E980	STBoatC::GetVisualInfo	STBoatC::GetVisualInfo	STBoatC	GetVisualInfo		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\To_boat.cpp	302	high	previously_applied_debug_symbol
 1	0044EE30	STBoatC::GetMessage	STBoatC::GetMessage	STBoatC	GetMessage	__thiscall	0044EE40: MOV dword ptr [EBP + 0xffffff18],ECX	E:\\__titans\\wlad\\To_boat.cpp	4993	high	previously_applied_debug_symbol
 1	0045EF00	STBoatC::CmdToObj	STBoatC::CmdToObj	STBoatC	CmdToObj	__thiscall	0045EF0C: MOV EDI,ECX	E:\\__titans\\wlad\\To_boat.cpp	5031	high	previously_applied_debug_symbol
 1	0045F400	STBoatC::CheckPBoxCmd	STBoatC::CheckPBoxCmd	STBoatC	CheckPBoxCmd	__thiscall	0045F417: MOV EDX,dword ptr [ECX + 0x2cc]	E:\\__titans\\wlad\\To_boat.cpp	5092	high	previously_applied_debug_symbol
@@ -154,7 +154,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00492280	STBoatC::CancelLoading	STBoatC::CancelLoading	STBoatC	CancelLoading	__thiscall	00492283: MOV EAX,dword ptr [ECX + 0x45d]	E:\\__titans\\wlad\\To_boat.cpp	20720	high	previously_applied_debug_symbol
 1	00493340	STBoatC::CheckForReplenisher	STBoatC::CheckForReplenisher	STBoatC	CheckForReplenisher	__thiscall	00493348: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	21026	high	previously_applied_debug_symbol
 1	00495980	DumpClassC::GetMessage	DumpClassC::GetMessage	DumpClassC	GetMessage	__thiscall	0049598F: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\wlad\\To_dump.cpp	61	high	previously_applied_debug_symbol
-1	00495EC0	DumpClassC::WritePtr	DumpClassC::WritePtr	DumpClassC	WritePtr		no incoming ECX use found in first 24 instructions	E:\\__titans\\wlad\\To_dump.cpp	127	high	previously_applied_debug_symbol
+1	00495EC0	DumpClassC::WritePtr	DumpClassC::WritePtr	DumpClassC	WritePtr		no live incoming ECX use found before clobber/call	E:\\__titans\\wlad\\To_dump.cpp	127	high	previously_applied_debug_symbol
 1	00497CD0	STGroupBoatC::InitWay	STGroupBoatC::InitWay	STGroupBoatC	InitWay	__thiscall	00497CDD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\wlad\\to_grpb.cpp	111	high	previously_applied_debug_symbol
 1	00497E00	STGroupBoatC::GetMessage	STGroupBoatC::GetMessage	STGroupBoatC	GetMessage	__thiscall	00497E11: MOV dword ptr [EBP + -0x1c],ECX	E:\\__titans\\wlad\\to_grpb.cpp	949	high	previously_applied_debug_symbol
 1	00499750	STGroupBoatC::ReMakePVecAndTgtList	STGroupBoatC::ReMakePVecAndTgtList	STGroupBoatC	ReMakePVecAndTgtList	__thiscall	0049975D: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\wlad\\to_grpb.cpp	1268	high	previously_applied_debug_symbol
@@ -244,9 +244,9 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	004F0B60	BldObjPanelTy::Update	BldObjPanelTy::Update	BldObjPanelTy	Update	__thiscall	004F0B6B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\bldobj.cpp	94	high	previously_applied_debug_symbol
 1	004F0E60	BldObjPanelTy::PaintBldBut	BldObjPanelTy::PaintBldBut	BldObjPanelTy	PaintBldBut	__thiscall	004F0E68: MOV ESI,dword ptr [ECX + 0x3c]	E:\\__titans\\Andrey\\bldobj.cpp	146	high	previously_applied_debug_symbol
 1	004F1080	BldObjPanelTy::GetMessage	BldObjPanelTy::GetMessage	BldObjPanelTy	GetMessage	__thiscall	004F108C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\bldobj.cpp	202	high	previously_applied_debug_symbol
-1	004F1390	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc	__thiscall	004F13A8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\cp_sup.cpp	15	high	previously_applied_debug_symbol
-1	004F1460	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc	__thiscall	004F1478: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\cp_sup.cpp	23	high	previously_applied_debug_symbol
-1	004F1530	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc	__thiscall	004F1548: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\cp_sup.cpp	31	high	previously_applied_debug_symbol
+1	004F1390	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\cp_sup.cpp	15	high	previously_applied_debug_symbol
+1	004F1460	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\cp_sup.cpp	23	high	previously_applied_debug_symbol
+1	004F1530	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\cp_sup.cpp	31	high	previously_applied_debug_symbol
 1	004F1D90	CPanelTy::PaintDamageXY	CPanelTy::PaintDamageXY	CPanelTy	PaintDamageXY	__thiscall	004F1D9D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\cp_sup.cpp	143	high	previously_applied_debug_symbol
 1	004F1F60	CPanelTy::PaintDamageXY	CPanelTy::PaintDamageXY	CPanelTy	PaintDamageXY	__thiscall	004F1F6D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\cp_sup.cpp	163	high	previously_applied_debug_symbol
 1	004F2130	CPanelTy::PaintCostsXY	CPanelTy::PaintCostsXY	CPanelTy	PaintCostsXY	__thiscall	004F213D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\cp_sup.cpp	190	high	previously_applied_debug_symbol
@@ -368,7 +368,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00522D40	IntercomPanelTy::SwitchIntercomPanel	IntercomPanelTy::SwitchIntercomPanel	IntercomPanelTy	SwitchIntercomPanel	__thiscall	00522D4B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\intercom.cpp	315	high	previously_applied_debug_symbol
 1	00522E80	IntercomPanelTy::GetMessage	IntercomPanelTy::GetMessage	IntercomPanelTy	GetMessage	__thiscall	00522E90: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Andrey\\intercom.cpp	407	high	previously_applied_debug_symbol
 1	0052BF00	MoneyTy::GetMessage	MoneyTy::GetMessage	MoneyTy	GetMessage	__thiscall	0052BF10: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Andrey\\money.cpp	298	high	previously_applied_debug_symbol
-1	0052D0A0	PopUpTy::OutProc	PopUpTy::OutProc	PopUpTy	OutProc	__thiscall	0052D0CB: MOV dword ptr [EBP + -0x50],ECX	E:\\__titans\\Andrey\\mpopup.cpp	34	high	previously_applied_debug_symbol
+1	0052D0A0	PopUpTy::OutProc	PopUpTy::OutProc	PopUpTy	OutProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\mpopup.cpp	34	high	previously_applied_debug_symbol
 1	0052D200	PopUpTy::OutStr	PopUpTy::OutStr	PopUpTy	OutStr	__thiscall	0052D20C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\mpopup.cpp	45	high	previously_applied_debug_symbol
 1	0052D370	PopUpTy::AddStr	PopUpTy::AddStr	PopUpTy	AddStr	__thiscall	0052D37E: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Andrey\\mpopup.cpp	97	high	previously_applied_debug_symbol
 1	0052D690	PopUpTy::ChangeNumStr	PopUpTy::ChangeNumStr	PopUpTy	ChangeNumStr	__thiscall	0052D69D: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\Andrey\\mpopup.cpp	126	high	previously_applied_debug_symbol
@@ -384,7 +384,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0052F2B0	OptPanelTy::SwitchOptPanel	OptPanelTy::SwitchOptPanel	OptPanelTy	SwitchOptPanel	__thiscall	0052F2B6: MOV EAX,dword ptr [ECX + 0x19c]	E:\\__titans\\Andrey\\optpanel.cpp	293	high	previously_applied_debug_symbol
 1	0052F7E0	OptPanelTy::SwitchOptPanelOff	OptPanelTy::SwitchOptPanelOff	OptPanelTy	SwitchOptPanelOff	__thiscall	0052F7EB: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\optpanel.cpp	313	high	previously_applied_debug_symbol
 1	0052F900	OptPanelTy::ShiftControls	OptPanelTy::ShiftControls	OptPanelTy	ShiftControls	__thiscall	0052F906: MOV EDX,ECX	E:\\__titans\\Andrey\\optpanel.cpp	342	high	previously_applied_debug_symbol
-1	0052FB00	OptPanelTy::SetOptControls	OptPanelTy::SetOptControls	OptPanelTy	SetOptControls	__thiscall	0052FB14: MOV dword ptr [EBP + -0x24],ECX	E:\\__titans\\Andrey\\optpanel.cpp	848	high	previously_applied_debug_symbol
+1	0052FB00	OptPanelTy::SetOptControls	OptPanelTy::SetOptControls	OptPanelTy	SetOptControls		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\optpanel.cpp	848	high	previously_applied_debug_symbol
 1	005325B0	OptPanelTy::PrepAsses	OptPanelTy::PrepAsses	OptPanelTy	PrepAsses	__thiscall	005325B9: MOV EDX,dword ptr [ECX + 0x1b5]	E:\\__titans\\Andrey\\optpanel.cpp	941	high	previously_applied_debug_symbol
 1	00532A80	OptPanelTy::PrepMissObj	OptPanelTy::PrepMissObj	OptPanelTy	PrepMissObj	__thiscall	00532A8C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\optpanel.cpp	977	high	previously_applied_debug_symbol
 1	00532D50	OptPanelTy::PrepFiles	OptPanelTy::PrepFiles	OptPanelTy	PrepFiles	__thiscall	00532D64: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Andrey\\optpanel.cpp	1103	high	previously_applied_debug_symbol
@@ -396,7 +396,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005381B0	PanelTy::InitPanel	PanelTy::InitPanel	PanelTy	InitPanel	__thiscall	005381BD: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\panel.cpp	42	high	previously_applied_debug_symbol
 1	00538390	PanelTy::DonePanel	PanelTy::DonePanel	PanelTy	DonePanel	__thiscall	0053839C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\panel.cpp	60	high	previously_applied_debug_symbol
 1	005384A0	PanelTy::GetMessage	PanelTy::GetMessage	PanelTy	GetMessage	__thiscall	005384A7: MOV ESI,ECX	E:\\__titans\\Andrey\\panel.cpp	82	high	previously_applied_debug_symbol
-1	005385C0	UPanelTy::OutProc	UPanelTy::OutProc	UPanelTy	OutProc	__thiscall	005385D8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\panel.cpp	92	high	previously_applied_debug_symbol
+1	005385C0	UPanelTy::OutProc	UPanelTy::OutProc	UPanelTy	OutProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\panel.cpp	92	high	previously_applied_debug_symbol
 1	00538690	PanelTy::CreateBut	PanelTy::CreateBut	PanelTy	CreateBut	__thiscall	005386A0: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Andrey\\panel.cpp	151	high	previously_applied_debug_symbol
 1	005389E0	PanelTy::PaintBut	PanelTy::PaintBut	PanelTy	PaintBut	__thiscall	005389F2: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Andrey\\panel.cpp	178	high	previously_applied_debug_symbol
 1	00538BA0	PanelTy::PaintTxtBut	PanelTy::PaintTxtBut	PanelTy	PaintTxtBut	__thiscall	00538BB4: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Andrey\\panel.cpp	204	high	previously_applied_debug_symbol
@@ -445,8 +445,8 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0053FCD0	ProdPanelTy::PaintTab	ProdPanelTy::PaintTab	ProdPanelTy	PaintTab	__thiscall	0053FCDB: MOV ESI,dword ptr [ECX + 0x3c]	E:\\__titans\\Andrey\\specpan.cpp	597	high	previously_applied_debug_symbol
 1	0053FEE0	ProdPanelTy::PaintTab	ProdPanelTy::PaintTab	ProdPanelTy	PaintTab	__thiscall	0053FEEB: MOV ESI,dword ptr [ECX + 0x3c]	E:\\__titans\\Andrey\\specpan.cpp	624	high	previously_applied_debug_symbol
 1	005400F0	ProdPanelTy::GetMessage	ProdPanelTy::GetMessage	ProdPanelTy	GetMessage	__thiscall	005400FC: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\specpan.cpp	675	high	previously_applied_debug_symbol
-1	00540890	StartServTy::WrTextDDX	StartServTy::WrTextDDX	StartServTy	WrTextDDX	__thiscall	005408AA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\support.cpp	117	high	previously_applied_debug_symbol
-1	00540A60	StartServTy::WrSarrDDX	StartServTy::WrSarrDDX	StartServTy	WrSarrDDX	__thiscall	00540A7A: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\support.cpp	149	high	previously_applied_debug_symbol
+1	00540890	StartServTy::WrTextDDX	StartServTy::WrTextDDX	StartServTy	WrTextDDX		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\support.cpp	117	high	previously_applied_debug_symbol
+1	00540A60	StartServTy::WrSarrDDX	StartServTy::WrSarrDDX	StartServTy	WrSarrDDX		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\support.cpp	149	high	previously_applied_debug_symbol
 1	005424A0	InterSystemC::CreateInterfObjects	InterSystemC::CreateInterfObjects	InterSystemC	CreateInterfObjects	__thiscall	005424B0: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\tintersys.cpp	179	high	previously_applied_debug_symbol
 1	00542F40	InterSystemC::GetMessage	InterSystemC::GetMessage	InterSystemC	GetMessage	__thiscall	00542F4D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\tintersys.cpp	287	high	previously_applied_debug_symbol
 1	00543600	CursorClassTy::InitCursor	CursorClassTy::InitCursor	CursorClassTy	InitCursor	__thiscall	0054360C: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Andrey\\to_cursor.cpp	102	high	previously_applied_debug_symbol
@@ -462,7 +462,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005449B0	CursorClassTy::GetMessage	CursorClassTy::GetMessage	CursorClassTy	GetMessage	__thiscall	005449BB: MOV dword ptr [EBP + -0x40],ECX	E:\\__titans\\Andrey\\to_cursor.cpp	1239	high	previously_applied_debug_symbol
 1	00548C40	CursorClassTy::TakeCmdToRun	CursorClassTy::TakeCmdToRun	CursorClassTy	TakeCmdToRun	__thiscall	00548C50: MOV dword ptr [EBP + 0xfffffee0],ECX	E:\\__titans\\Andrey\\to_cursor.cpp	1650	high	previously_applied_debug_symbol
 1	0054AEE0	CursorClassTy::GCGameState	CursorClassTy::GCGameState	CursorClassTy	GCGameState	__thiscall	0054AEF0: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\Andrey\\to_cursor.cpp	1790	high	previously_applied_debug_symbol
-1	0054BE70	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc	__thiscall	0054BE88: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Andrey\\to_cursor.cpp	1943	high	previously_applied_debug_symbol
+1	0054BE70	CPanelTy::OutProc	CPanelTy::OutProc	CPanelTy	OutProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Andrey\\to_cursor.cpp	1943	high	previously_applied_debug_symbol
 1	0054BF40	CursorClassTy::SetGCType	CursorClassTy::SetGCType	CursorClassTy	SetGCType	__thiscall	0054BF4B: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Andrey\\to_cursor.cpp	2288	high	previously_applied_debug_symbol
 1	0054CC20	STPlaySystemC::CreateGameObject	STPlaySystemC::CreateGameObject	STPlaySystemC	CreateGameObject	__thiscall	0054CC2B: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Andrey\\tplaysys.cpp	245	high	previously_applied_debug_symbol
 1	0054CFC0	STPlaySystemC::InitSystem	STPlaySystemC::InitSystem	STPlaySystemC	InitSystem	__thiscall	0054CFCB: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\tplaysys.cpp	398	high	previously_applied_debug_symbol
@@ -490,15 +490,15 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00552AF0	UpgPanelTy::ShiftControls	UpgPanelTy::ShiftControls	UpgPanelTy	ShiftControls	__thiscall	00552AF7: MOV ESI,ECX	E:\\__titans\\Andrey\\upginfo.cpp	54	high	previously_applied_debug_symbol
 1	00552BC0	UpgPanelTy::Update	UpgPanelTy::Update	UpgPanelTy	Update	__thiscall	00552BD0: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Andrey\\upginfo.cpp	84	high	previously_applied_debug_symbol
 1	00552E40	UpgPanelTy::GetMessage	UpgPanelTy::GetMessage	UpgPanelTy	GetMessage	__thiscall	00552E4C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Andrey\\upginfo.cpp	104	high	previously_applied_debug_symbol
-1	005540E0	cLoadingTy::new	cLoadingTy::new	cLoadingTy	new	__thiscall	00554101: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\grig\\loading.cpp	65	high	previously_applied_debug_symbol
-1	005544E0	cLoadingTy::delete	cLoadingTy::delete	cLoadingTy	delete	__thiscall	005544F8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\grig\\loading.cpp	83	high	previously_applied_debug_symbol
+1	005540E0	cLoadingTy::new	cLoadingTy::new	cLoadingTy	new		no live incoming ECX use found before clobber/call	E:\\__titans\\grig\\loading.cpp	65	high	previously_applied_debug_symbol
+1	005544E0	cLoadingTy::delete	cLoadingTy::delete	cLoadingTy	delete		no live incoming ECX use found before clobber/call	E:\\__titans\\grig\\loading.cpp	83	high	previously_applied_debug_symbol
 1	00554660	cLoadingTy::ShowScr	cLoadingTy::ShowScr	cLoadingTy	ShowScr	__thiscall	0055466A: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\loading.cpp	124	high	previously_applied_debug_symbol
 1	00554800	cLoadingTy::InitParam	cLoadingTy::InitParam	cLoadingTy	InitParam	__thiscall	0055480E: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\loading.cpp	173	high	previously_applied_debug_symbol
 1	00554AD0	cLoadingTy::DrawLine	cLoadingTy::DrawLine	cLoadingTy	DrawLine	__thiscall	00554AD7: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\loading.cpp	205	high	previously_applied_debug_symbol
 1	00554C80	cLoadingTy::DrawLineCR	cLoadingTy::DrawLineCR	cLoadingTy	DrawLineCR	__thiscall	00554C89: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\loading.cpp	243	high	previously_applied_debug_symbol
 1	00554F20	cLoadingTy::SetProcess	cLoadingTy::SetProcess	cLoadingTy	SetProcess	__thiscall	00554F27: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\loading.cpp	266	high	previously_applied_debug_symbol
 1	00555040	cLoadingTy::SetState	cLoadingTy::SetState	cLoadingTy	SetState	__thiscall	0055504B: MOV ESI,ECX	E:\\__titans\\grig\\loading.cpp	331	high	previously_applied_debug_symbol
-1	00555720	TraksClassTy::CreateDate	TraksClassTy::CreateDate	TraksClassTy	CreateDate	__thiscall	00555731: PUSH ECX	E:\\__titans\\grig\\traks.cpp	56	high	previously_applied_debug_symbol
+1	00555720	TraksClassTy::CreateDate	TraksClassTy::CreateDate	TraksClassTy	CreateDate		no live incoming ECX use found before clobber/call	E:\\__titans\\grig\\traks.cpp	56	high	previously_applied_debug_symbol
 1	00555910	TraksClassTy::DrawTrakSprite	TraksClassTy::DrawTrakSprite	TraksClassTy	DrawTrakSprite	__thiscall	0055591D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\traks.cpp	151	high	previously_applied_debug_symbol
 1	00555E80	TraksClassTy::TraksExec	TraksClassTy::TraksExec	TraksClassTy	TraksExec	__thiscall	00555E8D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\grig\\traks.cpp	201	high	previously_applied_debug_symbol
 1	00555FE0	TraksClassTy::PrepareToSave	TraksClassTy::PrepareToSave	TraksClassTy	PrepareToSave	__thiscall	00555FEC: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\grig\\traks.cpp	238	high	previously_applied_debug_symbol
@@ -522,10 +522,10 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00568C50	SoundClassTy::CheckFader	SoundClassTy::CheckFader	SoundClassTy	CheckFader	__thiscall	00568C5C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\sound.cpp	517	high	previously_applied_debug_symbol
 1	0056ADC0	STAppC::InitApp	STAppC::InitApp	STAppC	InitApp	__thiscall	0056ADD0: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\tapp.cpp	713	high	previously_applied_debug_symbol
 1	0056C750	STAppC::DoneApp	STAppC::DoneApp	STAppC	DoneApp	__thiscall	0056C760: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\tapp.cpp	797	high	previously_applied_debug_symbol
-1	0056CBD0	STAppC::MainWindowProc	STAppC::MainWindowProc	STAppC	MainWindowProc	__thiscall	0056CBF4: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\tapp.cpp	938	high	previously_applied_debug_symbol
+1	0056CBD0	STAppC::MainWindowProc	STAppC::MainWindowProc	STAppC	MainWindowProc		no live incoming ECX use found before clobber/call	E:\\__titans\\tapp.cpp	938	high	previously_applied_debug_symbol
 1	0056D1F0	STAppC::CommonFunction	STAppC::CommonFunction	STAppC	CommonFunction	__thiscall	0056D1F6: MOV EAX,dword ptr [ECX + 0x4efa]	E:\\__titans\\tapp.cpp	999	high	previously_applied_debug_symbol
 1	0056D370	STAppC::OpenGameDBs	STAppC::OpenGameDBs	STAppC	OpenGameDBs	__thiscall	0056D37D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\tapp.cpp	1024	high	previously_applied_debug_symbol
-1	0056D580	STAppC::CloseGameDBs	STAppC::CloseGameDBs	STAppC	CloseGameDBs	__thiscall	0056D59A: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\tapp.cpp	1047	high	previously_applied_debug_symbol
+1	0056D580	STAppC::CloseGameDBs	STAppC::CloseGameDBs	STAppC	CloseGameDBs		no live incoming ECX use found before clobber/call	E:\\__titans\\tapp.cpp	1047	high	previously_applied_debug_symbol
 1	0056D740	STAppC::ChangeResolution	STAppC::ChangeResolution	STAppC	ChangeResolution	__thiscall	0056D74D: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\tapp.cpp	1103	high	previously_applied_debug_symbol
 1	0056DB80	STAppC::StartGame	STAppC::StartGame	STAppC	StartGame	__thiscall	0056DB90: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\tapp.cpp	1357	high	previously_applied_debug_symbol
 1	0056FA60	STAppC::GetMessage	STAppC::GetMessage	STAppC	GetMessage	__thiscall	0056FA71: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\tapp.cpp	2193	high	previously_applied_debug_symbol
@@ -535,7 +535,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00576E10	GameSystemC::CreateSystemObjects	GameSystemC::CreateSystemObjects	GameSystemC	CreateSystemObjects	__thiscall	00576E1B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\tsystem.cpp	101	high	previously_applied_debug_symbol
 1	00576EF0	GameSystemC::InitSystem	GameSystemC::InitSystem	GameSystemC	InitSystem	__thiscall	00576EFE: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\tsystem.cpp	134	high	previously_applied_debug_symbol
 1	005770D0	GameSystemC::DoneSystem	GameSystemC::DoneSystem	GameSystemC	DoneSystem	__thiscall	005770D8: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\tsystem.cpp	167	high	previously_applied_debug_symbol
-1	005776D0	GameSystemC::GetMessage	GameSystemC::GetMessage	GameSystemC	GetMessage	__thiscall	005776E4: MOV dword ptr [EBP + -0x24],ECX	E:\\__titans\\tsystem.cpp	455	high	previously_applied_debug_symbol
+1	005776D0	GameSystemC::GetMessage	GameSystemC::GetMessage	GameSystemC	GetMessage		no live incoming ECX use found before clobber/call	E:\\__titans\\tsystem.cpp	455	high	previously_applied_debug_symbol
 1	00578200	DebugSystemC::CreateSystemObjects	DebugSystemC::CreateSystemObjects	DebugSystemC	CreateSystemObjects	__thiscall	0057820B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\tsystem.cpp	480	high	previously_applied_debug_symbol
 1	00578560	STCrabC::SetSprRange	STCrabC::SetSprRange	STCrabC	SetSprRange	__thiscall	0057856A: MOV ESI,ECX	E:\\__titans\\Igor\\to_crab.cpp	122	high	previously_applied_debug_symbol
 1	00578630	STCrabC::GetMessage	STCrabC::GetMessage	STCrabC	GetMessage	__thiscall	00578636: MOV EDX,dword ptr [ECX + 0x239]	E:\\__titans\\Igor\\to_crab.cpp	440	high	previously_applied_debug_symbol
@@ -558,11 +558,11 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0058C760	STSatC::GetMessage	STSatC::GetMessage	STSatC	GetMessage	__thiscall	0058C766: MOV EAX,dword ptr [ECX + 0x231]	E:\\__titans\\Igor\\to_sat.cpp	510	high	previously_applied_debug_symbol
 1	0058D7C0	STSharkC::GetMessage	STSharkC::GetMessage	STSharkC	GetMessage	__thiscall	0058D7C6: MOV EAX,dword ptr [ECX + 0x257]	E:\\__titans\\Igor\\To_shark.cpp	351	high	previously_applied_debug_symbol
 1	0058E570	STSharkC::LifeShark	STSharkC::LifeShark	STSharkC	LifeShark	__thiscall	0058E579: MOV ESI,ECX	E:\\__titans\\Igor\\To_shark.cpp	733	high	previously_applied_debug_symbol
-1	00590010	STSharkC::CreateShark	STSharkC::CreateShark	STSharkC	CreateShark	__thiscall	0059003F: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\Igor\\To_shark.cpp	1211	high	previously_applied_debug_symbol
+1	00590010	STSharkC::CreateShark	STSharkC::CreateShark	STSharkC	CreateShark		no live incoming ECX use found before clobber/call	E:\\__titans\\Igor\\To_shark.cpp	1211	high	previously_applied_debug_symbol
 1	00590170	MAdvTy::InitMAdv	MAdvTy::InitMAdv	MAdvTy	InitMAdv	__thiscall	0059017D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\adv_obj.cpp	31	high	previously_applied_debug_symbol
 1	00590410	MAdvTy::DoneMAdv	MAdvTy::DoneMAdv	MAdvTy	DoneMAdv	__thiscall	0059041C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\adv_obj.cpp	54	high	previously_applied_debug_symbol
 1	00590580	MAdvTy::PaintMAdv	MAdvTy::PaintMAdv	MAdvTy	PaintMAdv	__thiscall	0059058B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\adv_obj.cpp	77	high	previously_applied_debug_symbol
-1	005907D0	MAdvTy::NoneMAdv	MAdvTy::NoneMAdv	MAdvTy	NoneMAdv	__thiscall	005907E1: PUSH ECX	E:\\__titans\\Start\\adv_obj.cpp	87	high	previously_applied_debug_symbol
+1	005907D0	MAdvTy::NoneMAdv	MAdvTy::NoneMAdv	MAdvTy	NoneMAdv		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\adv_obj.cpp	87	high	previously_applied_debug_symbol
 1	005908B0	MAdvTy::GetMessage	MAdvTy::GetMessage	MAdvTy	GetMessage	__thiscall	005908B7: MOV ESI,ECX	E:\\__titans\\Start\\adv_obj.cpp	135	high	previously_applied_debug_symbol
 1	00590B40	CampaignTy::InitCampaign	CampaignTy::InitCampaign	CampaignTy	InitCampaign	__thiscall	00590B50: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\camp_obj.cpp	125	high	previously_applied_debug_symbol
 1	005916F0	CampaignTy::DoneCampaign	CampaignTy::DoneCampaign	CampaignTy	DoneCampaign	__thiscall	005916FD: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\camp_obj.cpp	157	high	previously_applied_debug_symbol
@@ -572,15 +572,15 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00592470	CampaignTy::CloseButtons	CampaignTy::CloseButtons	CampaignTy	CloseButtons	__thiscall	0059247D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\camp_obj.cpp	316	high	previously_applied_debug_symbol
 1	005926E0	CampaignTy::AnimationCampaign	CampaignTy::AnimationCampaign	CampaignTy	AnimationCampaign	__thiscall	005926ED: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\camp_obj.cpp	435	high	previously_applied_debug_symbol
 1	00593040	CampaignTy::GetMessage	CampaignTy::GetMessage	CampaignTy	GetMessage	__thiscall	00593048: MOV ESI,ECX	E:\\__titans\\Start\\camp_obj.cpp	591	high	previously_applied_debug_symbol
-1	005939E0	ComboTy::OutBmpProc	ComboTy::OutBmpProc	ComboTy	OutBmpProc	__thiscall	00593A08: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\combo.cpp	18	high	previously_applied_debug_symbol
+1	005939E0	ComboTy::OutBmpProc	ComboTy::OutBmpProc	ComboTy	OutBmpProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\combo.cpp	18	high	previously_applied_debug_symbol
 1	00593B50	ComboTy::InitCombo	ComboTy::InitCombo	ComboTy	InitCombo	__thiscall	00593B60: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\combo.cpp	99	high	previously_applied_debug_symbol
 1	005941D0	ComboTy::DoneCombo	ComboTy::DoneCombo	ComboTy	DoneCombo	__thiscall	005941DD: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\combo.cpp	127	high	previously_applied_debug_symbol
 1	00594440	ComboTy::GetMessage	ComboTy::GetMessage	ComboTy	GetMessage	__thiscall	0059444D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\combo.cpp	183	high	previously_applied_debug_symbol
-1	00594B90	FSGSTy::OutChSlProc	FSGSTy::OutChSlProc	FSGSTy	OutChSlProc	__thiscall	00594BB8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	102	high	previously_applied_debug_symbol
-1	00594D40	FSGSTy::OutTRGlProc	FSGSTy::OutTRGlProc	FSGSTy	OutTRGlProc	__thiscall	00594D65: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	115	high	previously_applied_debug_symbol
-1	00594EB0	FSGSTy::OutTRGlProc	FSGSTy::OutTRGlProc	FSGSTy	OutTRGlProc	__thiscall	00594ED5: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	140	high	previously_applied_debug_symbol
-1	005952B0	FSGSTy::OutSGlProc	FSGSTy::OutSGlProc	FSGSTy	OutSGlProc	__thiscall	005952D5: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	179	high	previously_applied_debug_symbol
-1	005956C0	FSGSTy::OutLadProc	FSGSTy::OutLadProc	FSGSTy	OutLadProc	__thiscall	005956DA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	235	high	previously_applied_debug_symbol
+1	00594B90	FSGSTy::OutChSlProc	FSGSTy::OutChSlProc	FSGSTy	OutChSlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\fsgs_obj.cpp	102	high	previously_applied_debug_symbol
+1	00594D40	FSGSTy::OutTRGlProc	FSGSTy::OutTRGlProc	FSGSTy	OutTRGlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\fsgs_obj.cpp	115	high	previously_applied_debug_symbol
+1	00594EB0	FSGSTy::OutTRGlProc	FSGSTy::OutTRGlProc	FSGSTy	OutTRGlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\fsgs_obj.cpp	140	high	previously_applied_debug_symbol
+1	005952B0	FSGSTy::OutSGlProc	FSGSTy::OutSGlProc	FSGSTy	OutSGlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\fsgs_obj.cpp	179	high	previously_applied_debug_symbol
+1	005956C0	FSGSTy::OutLadProc	FSGSTy::OutLadProc	FSGSTy	OutLadProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\fsgs_obj.cpp	235	high	previously_applied_debug_symbol
 1	00595E40	FSGSTy::InitFSGS	FSGSTy::InitFSGS	FSGSTy	InitFSGS	__thiscall	00595E50: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	349	high	previously_applied_debug_symbol
 1	005967F0	FSGSTy::DoneFSGS	FSGSTy::DoneFSGS	FSGSTy	DoneFSGS	__thiscall	005967FD: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	407	high	previously_applied_debug_symbol
 1	00596CC0	FSGSTy::PaintFSGS	FSGSTy::PaintFSGS	FSGSTy	PaintFSGS	__thiscall	00596CCC: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	456	high	previously_applied_debug_symbol
@@ -600,7 +600,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0059CEE0	FSGSTy::PswCtrls	FSGSTy::PswCtrls	FSGSTy	PswCtrls	__thiscall	0059CEEA: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	1572	high	previously_applied_debug_symbol
 1	0059D240	FSGSTy::LicCtrls	FSGSTy::LicCtrls	FSGSTy	LicCtrls	__thiscall	0059D24B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	1638	high	previously_applied_debug_symbol
 1	0059D720	FSGSTy::InfoCtrls	FSGSTy::InfoCtrls	FSGSTy	InfoCtrls	__thiscall	0059D729: MOV EDX,dword ptr [ECX + 0x1b0c]	E:\\__titans\\Start\\fsgs_obj.cpp	1692	high	previously_applied_debug_symbol
-1	0059DB20	FSGSTy::ChatCtrls	FSGSTy::ChatCtrls	FSGSTy	ChatCtrls	__thiscall	0059DB2F: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	1880	high	previously_applied_debug_symbol
+1	0059DB20	FSGSTy::ChatCtrls	FSGSTy::ChatCtrls	FSGSTy	ChatCtrls		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\fsgs_obj.cpp	1880	high	previously_applied_debug_symbol
 1	0059E7F0	FSGSTy::NewGameCtrls	FSGSTy::NewGameCtrls	FSGSTy	NewGameCtrls	__thiscall	0059E7FA: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	1922	high	previously_applied_debug_symbol
 1	0059EB00	FSGSTy::JoinGameCtrls	FSGSTy::JoinGameCtrls	FSGSTy	JoinGameCtrls	__thiscall	0059EB0B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	2032	high	previously_applied_debug_symbol
 1	0059F260	FSGSTy::LadderCtrls	FSGSTy::LadderCtrls	FSGSTy	LadderCtrls	__thiscall	0059F26B: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\fsgs_obj.cpp	2077	high	previously_applied_debug_symbol
@@ -623,12 +623,12 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005A3AB0	FSGSTy::SetInfo	FSGSTy::SetInfo	FSGSTy	SetInfo	__thiscall	005A3AC2: MOV EDI,ECX	E:\\__titans\\Start\\fsgs_obj.cpp	2894	high	previously_applied_debug_symbol
 1	005A40F0	FSGSTy::SetLadder	FSGSTy::SetLadder	FSGSTy	SetLadder	__thiscall	005A40FF: MOV EDI,ECX	E:\\__titans\\Start\\fsgs_obj.cpp	2917	high	previously_applied_debug_symbol
 1	005A4350	FSGSTy::GetMessage	FSGSTy::GetMessage	FSGSTy	GetMessage	__thiscall	005A435B: MOV ESI,ECX	E:\\__titans\\Start\\fsgs_obj.cpp	4168	high	previously_applied_debug_symbol
-1	005AA6A0	HoloTy::OutHoloProc	HoloTy::OutHoloProc	HoloTy	OutHoloProc	__thiscall	005AA6BA: TEST ECX,ECX	E:\\__titans\\Start\\hologram.cpp	30	high	previously_applied_debug_symbol
-1	005AA880	HoloTy::CalcHologram	HoloTy::CalcHologram	HoloTy	CalcHologram	__thiscall	005AA89A: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\hologram.cpp	99	high	previously_applied_debug_symbol
+1	005AA6A0	HoloTy::OutHoloProc	HoloTy::OutHoloProc	HoloTy	OutHoloProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\hologram.cpp	30	high	previously_applied_debug_symbol
+1	005AA880	HoloTy::CalcHologram	HoloTy::CalcHologram	HoloTy	CalcHologram		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\hologram.cpp	99	high	previously_applied_debug_symbol
 1	005AACB0	HoloTy::Init	HoloTy::Init	HoloTy	Init	__thiscall	005AACBD: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Start\\hologram.cpp	154	high	previously_applied_debug_symbol
 1	005AAFB0	HoloTy::Done	HoloTy::Done	HoloTy	Done	__thiscall	005AAFBB: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\hologram.cpp	170	high	previously_applied_debug_symbol
 1	005AB0A0	HoloTy::NextFas	HoloTy::NextFas	HoloTy	NextFas	__thiscall	005AB0AB: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\hologram.cpp	193	high	previously_applied_debug_symbol
-1	005AB1D0	ChooseMapTy::OutListProc	ChooseMapTy::OutListProc	ChooseMapTy	OutListProc	__thiscall	005AB1EE: MOV dword ptr [EBP + -0x4c],ECX	E:\\__titans\\Start\\load_obj.cpp	27	high	previously_applied_debug_symbol
+1	005AB1D0	ChooseMapTy::OutListProc	ChooseMapTy::OutListProc	ChooseMapTy	OutListProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\load_obj.cpp	27	high	previously_applied_debug_symbol
 1	005AB300	ChooseMapTy::InitChooseMap	ChooseMapTy::InitChooseMap	ChooseMapTy	InitChooseMap	__thiscall	005AB310: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\load_obj.cpp	346	high	previously_applied_debug_symbol
 1	005ACB30	ChooseMapTy::DoneChooseMap	ChooseMapTy::DoneChooseMap	ChooseMapTy	DoneChooseMap	__thiscall	005ACB3E: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\load_obj.cpp	401	high	previously_applied_debug_symbol
 1	005AD050	ChooseMapTy::PaintChooseMap	ChooseMapTy::PaintChooseMap	ChooseMapTy	PaintChooseMap	__thiscall	005AD05C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\load_obj.cpp	443	high	previously_applied_debug_symbol
@@ -648,16 +648,16 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005B3D60	MainMenuTy::SetMode	MainMenuTy::SetMode	MainMenuTy	SetMode	__thiscall	005B3D6C: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\main_obj.cpp	362	high	previously_applied_debug_symbol
 1	005B48E0	MainMenuTy::AnimationMainMenu	MainMenuTy::AnimationMainMenu	MainMenuTy	AnimationMainMenu	__thiscall	005B48ED: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\main_obj.cpp	442	high	previously_applied_debug_symbol
 1	005B4BB0	MainMenuTy::GetMessage	MainMenuTy::GetMessage	MainMenuTy	GetMessage	__thiscall	005B4BBB: MOV ESI,ECX	E:\\__titans\\Start\\main_obj.cpp	577	high	previously_applied_debug_symbol
-1	005B5240	MMObjTy::InitSprBut	MMObjTy::InitSprBut	MMObjTy	InitSprBut	__thiscall	005B525A: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\mmenuobj.cpp	45	high	previously_applied_debug_symbol
+1	005B5240	MMObjTy::InitSprBut	MMObjTy::InitSprBut	MMObjTy	InitSprBut		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\mmenuobj.cpp	45	high	previously_applied_debug_symbol
 1	005B5510	MMObjTy::CreateSprBut	MMObjTy::CreateSprBut	MMObjTy	CreateSprBut	__thiscall	005B551F: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\mmenuobj.cpp	71	high	previously_applied_debug_symbol
 1	005B5690	MMObjTy::PaintSprBut	MMObjTy::PaintSprBut	MMObjTy	PaintSprBut	__thiscall	005B569D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmenuobj.cpp	140	high	previously_applied_debug_symbol
-1	005B5A30	MMObjTy::PaintButDib	MMObjTy::PaintButDib	MMObjTy	PaintButDib	__thiscall	005B5A41: MOV EBX,dword ptr [ECX + 0x8]	E:\\__titans\\Start\\mmenuobj.cpp	160	high	previously_applied_debug_symbol
+1	005B5A30	MMObjTy::PaintButDib	MMObjTy::PaintButDib	MMObjTy	PaintButDib		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\mmenuobj.cpp	160	high	previously_applied_debug_symbol
 1	005B6220	MMObjTy::DoneMMObj	MMObjTy::DoneMMObj	MMObjTy	DoneMMObj	__thiscall	005B622D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmenuobj.cpp	229	high	previously_applied_debug_symbol
 1	005B6480	MMObjTy::CloseButtons	MMObjTy::CloseButtons	MMObjTy	CloseButtons	__thiscall	005B648D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmenuobj.cpp	260	high	previously_applied_debug_symbol
 1	005B6560	MMMObjTy::PaintSlBut	MMMObjTy::PaintSlBut	MMMObjTy	PaintSlBut	__thiscall	005B656B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmenuobj.cpp	289	high	previously_applied_debug_symbol
-1	005B67A0	MMMObjTy::OutRGlProc	MMMObjTy::OutRGlProc	MMMObjTy	OutRGlProc	__thiscall	005B67C8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\mmenuobj.cpp	315	high	previously_applied_debug_symbol
-1	005B68B0	MMMObjTy::OutBSlProc	MMMObjTy::OutBSlProc	MMMObjTy	OutBSlProc	__thiscall	005B68D8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\mmenuobj.cpp	327	high	previously_applied_debug_symbol
-1	005B69F0	ChatGlassTy::OutChGlProc	ChatGlassTy::OutChGlProc	ChatGlassTy	OutChGlProc	__thiscall	005B6A18: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\mmenuobj.cpp	339	high	previously_applied_debug_symbol
+1	005B67A0	MMMObjTy::OutRGlProc	MMMObjTy::OutRGlProc	MMMObjTy	OutRGlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\mmenuobj.cpp	315	high	previously_applied_debug_symbol
+1	005B68B0	MMMObjTy::OutBSlProc	MMMObjTy::OutBSlProc	MMMObjTy	OutBSlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\mmenuobj.cpp	327	high	previously_applied_debug_symbol
+1	005B69F0	ChatGlassTy::OutChGlProc	ChatGlassTy::OutChGlProc	ChatGlassTy	OutChGlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\mmenuobj.cpp	339	high	previously_applied_debug_symbol
 1	005B6B20	MMsgTy::InitMMsg	MMsgTy::InitMMsg	MMsgTy	InitMMsg	__thiscall	005B6B2B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmsg_obj.cpp	34	high	previously_applied_debug_symbol
 1	005B6F10	MMsgTy::DoneMMsg	MMsgTy::DoneMMsg	MMsgTy	DoneMMsg	__thiscall	005B6F1B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmsg_obj.cpp	49	high	previously_applied_debug_symbol
 1	005B6FF0	MMsgTy::HideSprites	MMsgTy::HideSprites	MMsgTy	HideSprites	__thiscall	005B6FFD: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\mmsg_obj.cpp	65	high	previously_applied_debug_symbol
@@ -670,9 +670,9 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005B9010	MMsgTy::StatePanel	MMsgTy::StatePanel	MMsgTy	StatePanel	__thiscall	005B9018: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\mmsg_obj.cpp	449	high	previously_applied_debug_symbol
 1	005B9170	MMsgTy::CloseSprBut	MMsgTy::CloseSprBut	MMsgTy	CloseSprBut	__thiscall	005B917C: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\mmsg_obj.cpp	467	high	previously_applied_debug_symbol
 1	005B9330	MMsgTy::GetMessage	MMsgTy::GetMessage	MMsgTy	GetMessage	__thiscall	005B9337: MOV ESI,ECX	E:\\__titans\\Start\\mmsg_obj.cpp	512	high	previously_applied_debug_symbol
-1	005B9730	PrividerTy::OutListProc	PrividerTy::OutListProc	PrividerTy	OutListProc	__thiscall	005B974E: MOV dword ptr [EBP + -0x4c],ECX	E:\\__titans\\Start\\prov_obj.cpp	44	high	previously_applied_debug_symbol
-1	005B9860	MMMObjTy::OutLstProc	MMMObjTy::OutLstProc	MMMObjTy	OutLstProc	__thiscall	005B9888: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\prov_obj.cpp	59	high	previously_applied_debug_symbol
-1	005B99F0	MMMObjTy::OutEdProc	MMMObjTy::OutEdProc	MMMObjTy	OutEdProc	__thiscall	005B9A18: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\prov_obj.cpp	71	high	previously_applied_debug_symbol
+1	005B9730	PrividerTy::OutListProc	PrividerTy::OutListProc	PrividerTy	OutListProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\prov_obj.cpp	44	high	previously_applied_debug_symbol
+1	005B9860	MMMObjTy::OutLstProc	MMMObjTy::OutLstProc	MMMObjTy	OutLstProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\prov_obj.cpp	59	high	previously_applied_debug_symbol
+1	005B99F0	MMMObjTy::OutEdProc	MMMObjTy::OutEdProc	MMMObjTy	OutEdProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\prov_obj.cpp	71	high	previously_applied_debug_symbol
 1	005B9B10	PrividerTy::InitPrivider	PrividerTy::InitPrivider	PrividerTy	InitPrivider	__thiscall	005B9B20: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\prov_obj.cpp	172	high	previously_applied_debug_symbol
 1	005BA560	PrividerTy::DonePrivider	PrividerTy::DonePrivider	PrividerTy	DonePrivider	__thiscall	005BA56D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\prov_obj.cpp	211	high	previously_applied_debug_symbol
 1	005BA8B0	PrividerTy::PaintPrivider	PrividerTy::PaintPrivider	PrividerTy	PaintPrivider	__thiscall	005BA8BC: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\prov_obj.cpp	236	high	previously_applied_debug_symbol
@@ -682,7 +682,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005BBA90	PrividerTy::CreateCtrls	PrividerTy::CreateCtrls	PrividerTy	CreateCtrls	__thiscall	005BBA9B: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Start\\prov_obj.cpp	589	high	previously_applied_debug_symbol
 1	005BC050	PrividerTy::DeleteCtrls	PrividerTy::DeleteCtrls	PrividerTy	DeleteCtrls	__thiscall	005BC05D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\prov_obj.cpp	633	high	previously_applied_debug_symbol
 1	005BC5E0	PrividerTy::GetMessage	PrividerTy::GetMessage	PrividerTy	GetMessage	__thiscall	005BC5EB: MOV ESI,ECX	E:\\__titans\\Start\\prov_obj.cpp	844	high	previously_applied_debug_symbol
-1	005BD4B0	MReportTy::OutTGlProc	MReportTy::OutTGlProc	MReportTy	OutTGlProc	__thiscall	005BD4D8: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\rpt_obj.cpp	68	high	previously_applied_debug_symbol
+1	005BD4B0	MReportTy::OutTGlProc	MReportTy::OutTGlProc	MReportTy	OutTGlProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\rpt_obj.cpp	68	high	previously_applied_debug_symbol
 1	005BD7A0	MReportTy::InitMReport	MReportTy::InitMReport	MReportTy	InitMReport	__thiscall	005BD7B1: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\Start\\rpt_obj.cpp	198	high	previously_applied_debug_symbol
 1	005BE310	MReportTy::DoneMReport	MReportTy::DoneMReport	MReportTy	DoneMReport	__thiscall	005BE31D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\rpt_obj.cpp	229	high	previously_applied_debug_symbol
 1	005BE5B0	MReportTy::PaintMReport	MReportTy::PaintMReport	MReportTy	PaintMReport	__thiscall	005BE5C0: MOV dword ptr [EBP + -0x1c],ECX	E:\\__titans\\Start\\rpt_obj.cpp	436	high	previously_applied_debug_symbol
@@ -695,7 +695,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005C1340	MReportTy::SetCtrl	MReportTy::SetCtrl	MReportTy	SetCtrl	__thiscall	005C1349: MOV AL,byte ptr [ECX + 0x66]	E:\\__titans\\Start\\rpt_obj.cpp	812	high	previously_applied_debug_symbol
 1	005C1610	MReportTy::PaintTab	MReportTy::PaintTab	MReportTy	PaintTab	__thiscall	005C161C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\rpt_obj.cpp	873	high	previously_applied_debug_symbol
 1	005C1A90	MReportTy::GetMessage	MReportTy::GetMessage	MReportTy	GetMessage	__thiscall	005C1A98: MOV ESI,ECX	E:\\__titans\\Start\\rpt_obj.cpp	1067	high	previously_applied_debug_symbol
-1	005C28C0	StartSystemTy::OutBmpProc	StartSystemTy::OutBmpProc	StartSystemTy	OutBmpProc	__thiscall	005C28E3: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\sett_obj.cpp	72	high	previously_applied_debug_symbol
+1	005C28C0	StartSystemTy::OutBmpProc	StartSystemTy::OutBmpProc	StartSystemTy	OutBmpProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\sett_obj.cpp	72	high	previously_applied_debug_symbol
 1	005C4930	SettMapTy::DoneSettMap	SettMapTy::DoneSettMap	SettMapTy	DoneSettMap	__thiscall	005C493D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\sett_obj.cpp	462	high	previously_applied_debug_symbol
 1	005C4E20	SettMapTy::PaintSettMap	SettMapTy::PaintSettMap	SettMapTy	PaintSettMap	__thiscall	005C4E2C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\sett_obj.cpp	494	high	previously_applied_debug_symbol
 1	005C5130	SettMapTy::NoneSettMap	SettMapTy::NoneSettMap	SettMapTy	NoneSettMap	__thiscall	005C5138: MOV ESI,ECX	E:\\__titans\\Start\\sett_obj.cpp	579	high	previously_applied_debug_symbol
@@ -710,12 +710,12 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005CC840	SettMapMTy::DeleteCtrls	SettMapMTy::DeleteCtrls	SettMapMTy	DeleteCtrls	__thiscall	005CC84C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\settmobj.cpp	192	high	previously_applied_debug_symbol
 1	005CCE10	SettMapMTy::SetListCtrls	SettMapMTy::SetListCtrls	SettMapMTy	SetListCtrls	__thiscall	005CCE20: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Start\\settmobj.cpp	356	high	previously_applied_debug_symbol
 1	005CD430	SettMapMTy::PrepPlList	SettMapMTy::PrepPlList	SettMapMTy	PrepPlList	__thiscall	005CD440: MOV byte ptr [ECX + 0x211c],AL	E:\\__titans\\Start\\settmobj.cpp	459	high	previously_applied_debug_symbol
-1	005CD9A0	SettMapMTy::ChgPlList	SettMapMTy::ChgPlList	SettMapMTy	ChgPlList	__thiscall	005CD9BC: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\settmobj.cpp	477	high	previously_applied_debug_symbol
+1	005CD9A0	SettMapMTy::ChgPlList	SettMapMTy::ChgPlList	SettMapMTy	ChgPlList		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\settmobj.cpp	477	high	previously_applied_debug_symbol
 1	005CDB20	SettMapMTy::AddPlList	SettMapMTy::AddPlList	SettMapMTy	AddPlList	__thiscall	005CDB30: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\settmobj.cpp	539	high	previously_applied_debug_symbol
 1	005CDF60	SettMapMTy::SendPlList	SettMapMTy::SendPlList	SettMapMTy	SendPlList	__thiscall	005CDF6D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\settmobj.cpp	560	high	previously_applied_debug_symbol
 1	005CE0E0	SettMapMTy::NoneSettMap	SettMapMTy::NoneSettMap	SettMapMTy	NoneSettMap	__thiscall	005CE0E9: MOV AL,byte ptr [ECX + 0x65]	E:\\__titans\\Start\\settmobj.cpp	1193	high	previously_applied_debug_symbol
 1	005CFCD0	SettMapMTy::UpdatePing	SettMapMTy::UpdatePing	SettMapMTy	UpdatePing	__thiscall	005CFCD6: MOV EAX,dword ptr [ECX + 0x1f84]	E:\\__titans\\Start\\settmobj.cpp	1215	high	previously_applied_debug_symbol
-1	005CFE50	SettMapMTy::SendDesc	SettMapMTy::SendDesc	SettMapMTy	SendDesc	__thiscall	005CFE6B: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\settmobj.cpp	1225	high	previously_applied_debug_symbol
+1	005CFE50	SettMapMTy::SendDesc	SettMapMTy::SendDesc	SettMapMTy	SendDesc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\settmobj.cpp	1225	high	previously_applied_debug_symbol
 1	005CFF40	SettMapMTy::DeletePlayer	SettMapMTy::DeletePlayer	SettMapMTy	DeletePlayer	__thiscall	005CFF46: MOV EAX,dword ptr [ECX + 0x1f84]	E:\\__titans\\Start\\settmobj.cpp	1244	high	previously_applied_debug_symbol
 1	005D0150	SettMapMTy::CheckPlList	SettMapMTy::CheckPlList	SettMapMTy	CheckPlList	__thiscall	005D0156: MOV EAX,dword ptr [ECX + 0x1f84]	E:\\__titans\\Start\\settmobj.cpp	1379	high	previously_applied_debug_symbol
 1	005D06C0	SettMapMTy::ChangePlayerCiv	SettMapMTy::ChangePlayerCiv	SettMapMTy	ChangePlayerCiv	__thiscall	005D06C6: MOV EAX,dword ptr [ECX + 0x1f84]	E:\\__titans\\Start\\settmobj.cpp	1405	high	previously_applied_debug_symbol
@@ -732,7 +732,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005D5560	SettMapSTy::GetMessage	SettMapSTy::GetMessage	SettMapSTy	GetMessage	__thiscall	005D556B: MOV ESI,ECX	E:\\__titans\\Start\\settsobj.cpp	637	high	previously_applied_debug_symbol
 1	005D7A50	SIDTy::InitSID	SIDTy::InitSID	SIDTy	InitSID	__thiscall	005D7A5D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\sid_obj.cpp	73	high	previously_applied_debug_symbol
 1	005D7F80	SIDTy::DoneSID	SIDTy::DoneSID	SIDTy	DoneSID	__thiscall	005D7F8B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\sid_obj.cpp	98	high	previously_applied_debug_symbol
-1	005D8160	SIDTy::PaintSID	SIDTy::PaintSID	SIDTy	PaintSID	__thiscall	005D8171: PUSH ECX	E:\\__titans\\Start\\sid_obj.cpp	107	high	previously_applied_debug_symbol
+1	005D8160	SIDTy::PaintSID	SIDTy::PaintSID	SIDTy	PaintSID		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\sid_obj.cpp	107	high	previously_applied_debug_symbol
 1	005D81F0	SIDTy::NoneSID	SIDTy::NoneSID	SIDTy	NoneSID	__thiscall	005D81F8: MOV ESI,ECX	E:\\__titans\\Start\\sid_obj.cpp	152	high	previously_applied_debug_symbol
 1	005D8450	SIDTy::CreateCtrls	SIDTy::CreateCtrls	SIDTy	CreateCtrls	__thiscall	005D8460: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\sid_obj.cpp	260	high	previously_applied_debug_symbol
 1	005D8A90	SIDTy::DeleteCtrls	SIDTy::DeleteCtrls	SIDTy	DeleteCtrls	__thiscall	005D8A9D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\sid_obj.cpp	272	high	previously_applied_debug_symbol
@@ -742,8 +742,8 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005DAC80	StartSystemTy::GetIP	StartSystemTy::GetIP	StartSystemTy	GetIP	__thiscall	005DAC90: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\startsys.cpp	206	high	previously_applied_debug_symbol
 1	005DADF0	StartSystemTy::InitChat	StartSystemTy::InitChat	StartSystemTy	InitChat	__thiscall	005DADFC: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\startsys.cpp	219	high	previously_applied_debug_symbol
 1	005DB4F0	StartSystemTy::LoadGraph	StartSystemTy::LoadGraph	StartSystemTy	LoadGraph	__thiscall	005DB4FD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\startsys.cpp	429	high	previously_applied_debug_symbol
-1	005DBE50	StartSystemTy::OutBmpProc	StartSystemTy::OutBmpProc	StartSystemTy	OutBmpProc	__thiscall	005DBE73: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\startsys.cpp	439	high	previously_applied_debug_symbol
-1	005DBF40	StartSystemTy::OutBmpProc	StartSystemTy::OutBmpProc	StartSystemTy	OutBmpProc	__thiscall	005DBF63: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\startsys.cpp	450	high	previously_applied_debug_symbol
+1	005DBE50	StartSystemTy::OutBmpProc	StartSystemTy::OutBmpProc	StartSystemTy	OutBmpProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\startsys.cpp	439	high	previously_applied_debug_symbol
+1	005DBF40	StartSystemTy::OutBmpProc	StartSystemTy::OutBmpProc	StartSystemTy	OutBmpProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\startsys.cpp	450	high	previously_applied_debug_symbol
 1	005DC050	StartSystemTy::LoadMapData	StartSystemTy::LoadMapData	StartSystemTy	LoadMapData	__thiscall	005DC060: MOV dword ptr [EBP + -0x18],ECX	E:\\__titans\\Start\\startsys.cpp	561	high	previously_applied_debug_symbol
 1	005DC730	StartSystemTy::SetObjectives	StartSystemTy::SetObjectives	StartSystemTy	SetObjectives	__thiscall	005DC73D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\startsys.cpp	619	high	previously_applied_debug_symbol
 1	005DCC10	StartSystemTy::InitSystem	StartSystemTy::InitSystem	StartSystemTy	InitSystem	__thiscall	005DCC1E: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\startsys.cpp	643	high	previously_applied_debug_symbol
@@ -753,17 +753,17 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005DDC70	StartSystemTy::CreateBinDesc	StartSystemTy::CreateBinDesc	StartSystemTy	CreateBinDesc	__thiscall	005DDC7B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\startsys.cpp	952	high	previously_applied_debug_symbol
 1	005DE050	StartSystemTy::PaintBinDesc	StartSystemTy::PaintBinDesc	StartSystemTy	PaintBinDesc	__thiscall	005DE056: MOV EAX,dword ptr [ECX + 0x544]	E:\\__titans\\Start\\startsys.cpp	971	high	previously_applied_debug_symbol
 1	005DE270	StartSystemTy::CreateChatView	StartSystemTy::CreateChatView	StartSystemTy	CreateChatView	__thiscall	005DE27B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\startsys.cpp	1017	high	previously_applied_debug_symbol
-1	005DF530	MTaskTy::OutGlassBmpProc	MTaskTy::OutGlassBmpProc	MTaskTy	OutGlassBmpProc	__thiscall	005DF547: TEST ECX,ECX	E:\\__titans\\Start\\task_obj.cpp	39	high	previously_applied_debug_symbol
-1	005DF640	MTaskTy::OutGlassTxtProc	MTaskTy::OutGlassTxtProc	MTaskTy	OutGlassTxtProc	__thiscall	005DF660: CMP ECX,ESI	E:\\__titans\\Start\\task_obj.cpp	58	high	previously_applied_debug_symbol
-1	005DF7C0	MTaskTy::OutGlassATxtProc	MTaskTy::OutGlassATxtProc	MTaskTy	OutGlassATxtProc	__thiscall	005DF7E0: CMP ECX,ESI	E:\\__titans\\Start\\task_obj.cpp	77	high	previously_applied_debug_symbol
+1	005DF530	MTaskTy::OutGlassBmpProc	MTaskTy::OutGlassBmpProc	MTaskTy	OutGlassBmpProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	39	high	previously_applied_debug_symbol
+1	005DF640	MTaskTy::OutGlassTxtProc	MTaskTy::OutGlassTxtProc	MTaskTy	OutGlassTxtProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	58	high	previously_applied_debug_symbol
+1	005DF7C0	MTaskTy::OutGlassATxtProc	MTaskTy::OutGlassATxtProc	MTaskTy	OutGlassATxtProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	77	high	previously_applied_debug_symbol
 1	005DFA30	MTaskTy::InitMTask	MTaskTy::InitMTask	MTaskTy	InitMTask	__thiscall	005DFA39: MOV EAX,dword ptr [ECX + 0x69]	E:\\__titans\\Start\\task_obj.cpp	221	high	previously_applied_debug_symbol
 1	005E0470	MTaskTy::DoneMTask	MTaskTy::DoneMTask	MTaskTy	DoneMTask	__thiscall	005E047E: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\task_obj.cpp	299	high	previously_applied_debug_symbol
 1	005E09E0	MTaskTy::PaintMTask	MTaskTy::PaintMTask	MTaskTy	PaintMTask	__thiscall	005E09EB: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\task_obj.cpp	310	high	previously_applied_debug_symbol
 1	005E0AC0	MTaskTy::NoneMTask	MTaskTy::NoneMTask	MTaskTy	NoneMTask	__thiscall	005E0ACD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\task_obj.cpp	412	high	previously_applied_debug_symbol
-1	005E10A0	MTaskTy::TTaskItemClose	MTaskTy::TTaskItemClose	MTaskTy	TTaskItemClose	__thiscall	005E10BA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\task_obj.cpp	427	high	previously_applied_debug_symbol
-1	005E11D0	MTaskTy::PrepareTSurf	MTaskTy::PrepareTSurf	MTaskTy	PrepareTSurf	__thiscall	005E11EA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\Start\\task_obj.cpp	441	high	previously_applied_debug_symbol
-1	005E1330	MTaskTy::PlayScript	MTaskTy::PlayScript	MTaskTy	PlayScript	__thiscall	005E1344: MOV dword ptr [EBP + 0xffffff78],ECX	E:\\__titans\\Start\\task_obj.cpp	1119	high	previously_applied_debug_symbol
-1	005E3E80	MTaskTy::CreateTextSSpr	MTaskTy::CreateTextSSpr	MTaskTy	CreateTextSSpr	__thiscall	005E3E9D: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\Start\\task_obj.cpp	1160	high	previously_applied_debug_symbol
+1	005E10A0	MTaskTy::TTaskItemClose	MTaskTy::TTaskItemClose	MTaskTy	TTaskItemClose		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	427	high	previously_applied_debug_symbol
+1	005E11D0	MTaskTy::PrepareTSurf	MTaskTy::PrepareTSurf	MTaskTy	PrepareTSurf		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	441	high	previously_applied_debug_symbol
+1	005E1330	MTaskTy::PlayScript	MTaskTy::PlayScript	MTaskTy	PlayScript		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	1119	high	previously_applied_debug_symbol
+1	005E3E80	MTaskTy::CreateTextSSpr	MTaskTy::CreateTextSSpr	MTaskTy	CreateTextSSpr		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\task_obj.cpp	1160	high	previously_applied_debug_symbol
 1	005E4180	MTaskTy::CreateBut	MTaskTy::CreateBut	MTaskTy	CreateBut	__thiscall	005E418A: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\task_obj.cpp	1184	high	previously_applied_debug_symbol
 1	005E4300	MTaskTy::PaintBut	MTaskTy::PaintBut	MTaskTy	PaintBut	__thiscall	005E430E: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\Start\\task_obj.cpp	1209	high	previously_applied_debug_symbol
 1	005E4570	MTaskTy::GetMessage	MTaskTy::GetMessage	MTaskTy	GetMessage	__thiscall	005E4578: MOV ESI,ECX	E:\\__titans\\Start\\task_obj.cpp	1461	high	previously_applied_debug_symbol
@@ -772,7 +772,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	005E5D50	MTestTy::PaintMTest	MTestTy::PaintMTest	MTestTy	PaintMTest	__thiscall	005E5D5B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\test_obj.cpp	87	high	previously_applied_debug_symbol
 1	005E5E30	MTestTy::NoneMTest	MTestTy::NoneMTest	MTestTy	NoneMTest	__thiscall	005E5E3B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\test_obj.cpp	108	high	previously_applied_debug_symbol
 1	005E5FB0	MTestTy::GetMessage	MTestTy::GetMessage	MTestTy	GetMessage	__thiscall	005E5FB8: MOV ESI,ECX	E:\\__titans\\Start\\test_obj.cpp	181	high	previously_applied_debug_symbol
-1	005E6640	ChooseMapTy::OutListProc	ChooseMapTy::OutListProc	ChooseMapTy	OutListProc	__thiscall	005E665E: MOV dword ptr [EBP + -0x4c],ECX	E:\\__titans\\Start\\wait_obj.cpp	28	high	previously_applied_debug_symbol
+1	005E6640	ChooseMapTy::OutListProc	ChooseMapTy::OutListProc	ChooseMapTy	OutListProc		no live incoming ECX use found before clobber/call	E:\\__titans\\Start\\wait_obj.cpp	28	high	previously_applied_debug_symbol
 1	005E6770	WaitTy::InitWait	WaitTy::InitWait	WaitTy	InitWait	__thiscall	005E6780: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Start\\wait_obj.cpp	163	high	previously_applied_debug_symbol
 1	005E7570	WaitTy::DoneWait	WaitTy::DoneWait	WaitTy	DoneWait	__thiscall	005E757D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\wait_obj.cpp	213	high	previously_applied_debug_symbol
 1	005E79B0	WaitTy::PaintWait	WaitTy::PaintWait	WaitTy	PaintWait	__thiscall	005E79BC: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Start\\wait_obj.cpp	235	high	previously_applied_debug_symbol
@@ -817,7 +817,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0062DD80	STManRub3C::AddNewColl3	STManRub3C::AddNewColl3	STManRub3C	AddNewColl3	__thiscall	0062DD8D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\nick\\to_rab3m.cpp	591	high	previously_applied_debug_symbol
 1	0062E740	STRubbishC::GetMessage	STRubbishC::GetMessage	STRubbishC	GetMessage	__thiscall	0062E74D: MOV dword ptr [EBP + -0x10],ECX	E:\\__titans\\nick\\to_Rubb.cpp	168	high	previously_applied_debug_symbol
 1	0062ED90	STRubbishC::RubbishCreatePart	STRubbishC::RubbishCreatePart	STRubbishC	RubbishCreatePart	__thiscall	0062ED9D: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\nick\\to_Rubb.cpp	219	high	previously_applied_debug_symbol
-1	0062F3B0	STRubbishC::LoadImagSpr	STRubbishC::LoadImagSpr	STRubbishC	LoadImagSpr	__thiscall	0062F3D2: MOV EAX,dword ptr [ECX]	E:\\__titans\\nick\\to_Rubb.cpp	395	high	previously_applied_debug_symbol
+1	0062F3B0	STRubbishC::LoadImagSpr	STRubbishC::LoadImagSpr	STRubbishC	LoadImagSpr		no live incoming ECX use found before clobber/call	E:\\__titans\\nick\\to_Rubb.cpp	395	high	previously_applied_debug_symbol
 1	00630430	STManRuinC::GetMessage	STManRuinC::GetMessage	STManRuinC	GetMessage	__thiscall	0063043E: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\nick\\to_ruinm.cpp	150	high	previously_applied_debug_symbol
 1	00632A00	STTeamLissagC::InitVisibelSystem	STTeamLissagC::InitVisibelSystem	STTeamLissagC	InitVisibelSystem	__thiscall	00632A0D: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\nick\\to_supp.cpp	447	high	previously_applied_debug_symbol
 1	0063D280	STTmMineC::CreatePart	STTmMineC::CreatePart	STTmMineC	CreatePart	__thiscall	0063D290: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\nick\\to_TmMin.cpp	1192	high	previously_applied_debug_symbol
@@ -838,10 +838,10 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0064CD80	AiEventClassTy::InitData	AiEventClassTy::InitData	AiEventClassTy	InitData	__thiscall	0064CD8D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\ai\\ai_event.cpp	81	high	previously_applied_debug_symbol
 1	0064D000	AiEventClassTy::PrepareToSave	AiEventClassTy::PrepareToSave	AiEventClassTy	PrepareToSave	__thiscall	0064D00B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\ai\\ai_event.cpp	103	high	previously_applied_debug_symbol
 1	0064D270	AiEventClassTy::__CreateObjPl	AiEventClassTy::__CreateObjPl	AiEventClassTy	__CreateObjPl	__thiscall	0064D280: MOV dword ptr [EBP + -0x34],ECX	E:\\__titans\\ai\\ai_event.cpp	204	high	previously_applied_debug_symbol
-1	0064D890	AiEventClassTy::_CreateRCCont	AiEventClassTy::_CreateRCCont	AiEventClassTy	_CreateRCCont	__thiscall	0064D8B1: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\ai\\ai_event.cpp	239	high	previously_applied_debug_symbol
-1	0064DB00	AiEventClassTy::_CreateArt	AiEventClassTy::_CreateArt	AiEventClassTy	_CreateArt	__thiscall	0064DB20: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\ai\\ai_event.cpp	280	high	previously_applied_debug_symbol
-1	0064DDA0	AiEventClassTy::_CreateDest	AiEventClassTy::_CreateDest	AiEventClassTy	_CreateDest	__thiscall	0064DDC1: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\ai\\ai_event.cpp	317	high	previously_applied_debug_symbol
-1	0064DFA0	AiEventClassTy::_CreateMine	AiEventClassTy::_CreateMine	AiEventClassTy	_CreateMine	__thiscall	0064DFDA: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\ai\\ai_event.cpp	362	high	previously_applied_debug_symbol
+1	0064D890	AiEventClassTy::_CreateRCCont	AiEventClassTy::_CreateRCCont	AiEventClassTy	_CreateRCCont		no live incoming ECX use found before clobber/call	E:\\__titans\\ai\\ai_event.cpp	239	high	previously_applied_debug_symbol
+1	0064DB00	AiEventClassTy::_CreateArt	AiEventClassTy::_CreateArt	AiEventClassTy	_CreateArt		no live incoming ECX use found before clobber/call	E:\\__titans\\ai\\ai_event.cpp	280	high	previously_applied_debug_symbol
+1	0064DDA0	AiEventClassTy::_CreateDest	AiEventClassTy::_CreateDest	AiEventClassTy	_CreateDest		no live incoming ECX use found before clobber/call	E:\\__titans\\ai\\ai_event.cpp	317	high	previously_applied_debug_symbol
+1	0064DFA0	AiEventClassTy::_CreateMine	AiEventClassTy::_CreateMine	AiEventClassTy	_CreateMine		no live incoming ECX use found before clobber/call	E:\\__titans\\ai\\ai_event.cpp	362	high	previously_applied_debug_symbol
 1	0065D2A0	AiFltClassTy::InitData	AiFltClassTy::InitData	AiFltClassTy	InitData	__thiscall	0065D2AD: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\ai\\ai_flt.cpp	50	high	previously_applied_debug_symbol
 1	0065D4B0	AiFltClassTy::PrepareToSave	AiFltClassTy::PrepareToSave	AiFltClassTy	PrepareToSave	__thiscall	0065D4BB: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\ai\\ai_flt.cpp	80	high	previously_applied_debug_symbol
 1	0065D760	AiFltClassTy::_AddObjFlt	AiFltClassTy::_AddObjFlt	AiFltClassTy	_AddObjFlt	__thiscall	0065D76D: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\ai\\ai_flt.cpp	166	high	previously_applied_debug_symbol
@@ -875,7 +875,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00695A60	CGenerate::CteateField	CGenerate::CteateField	CGenerate	CteateField	__thiscall	00695A6C: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Maps\\gen_map.cpp	818	high	previously_applied_debug_symbol
 1	006A01D0	CGenerate::CreateMap	CGenerate::CreateMap	CGenerate	CreateMap	__thiscall	006A01DD: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Maps\\generate.cpp	114	high	previously_applied_debug_symbol
 1	006A0740	CGenerate::SaveMap	CGenerate::SaveMap	CGenerate	SaveMap	__thiscall	006A074D: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Maps\\generate.cpp	205	high	previously_applied_debug_symbol
-1	006A0960	CGenerate::_saveObj	CGenerate::_saveObj	CGenerate	_saveObj	__thiscall	006A0970: PUSH ECX	E:\\__titans\\Maps\\generate.cpp	224	high	previously_applied_debug_symbol
+1	006A0960	CGenerate::_saveObj	CGenerate::_saveObj	CGenerate	_saveObj		no live incoming ECX use found before clobber/call	E:\\__titans\\Maps\\generate.cpp	224	high	previously_applied_debug_symbol
 1	006E3510	AppClassTy::InitApp	AppClassTy::InitApp	AppClassTy	InitApp	__thiscall	006E351D: MOV dword ptr [EBP + -0x8],ECX	E:\\Ourlib\\Sapp.cpp	69	high	previously_applied_debug_symbol
 1	006E36E0	AppClassTy::DoneApp	AppClassTy::DoneApp	AppClassTy	DoneApp	__thiscall	006E36ED: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Sapp.cpp	110	high	previously_applied_debug_symbol
 1	006E3810	AppClassTy::CreateObject	AppClassTy::CreateObject	AppClassTy	CreateObject	__thiscall	006E381D: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Sapp.cpp	141	high	previously_applied_debug_symbol
@@ -903,7 +903,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	006E5D90	SystemClassTy::Life	SystemClassTy::Life	SystemClassTy	Life	__thiscall	006E5D9D: MOV dword ptr [EBP + -0x8],ECX	E:\\Ourlib\\Sapp.cpp	1174	high	previously_applied_debug_symbol
 1	006E5F00	SystemClassTy::GetMessage	SystemClassTy::GetMessage	SystemClassTy	GetMessage	__thiscall	006E5F0B: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Sapp.cpp	1190	high	previously_applied_debug_symbol
 1	006E6330	SystemWithNamedObjClassTy::SendMessage	SystemWithNamedObjClassTy::SendMessage	SystemWithNamedObjClassTy	SendMessage	__thiscall	006E633B: MOV dword ptr [EBP + -0x8],ECX	E:\\Ourlib\\Sapp.cpp	1333	high	previously_applied_debug_symbol
-1	006F1170	cMf32::delete	cMf32::delete	cMf32	delete	__thiscall	006F1188: MOV dword ptr [0x00858df8],ECX	E:\\Ourlib\\Mf32int.cpp	141	high	previously_applied_debug_symbol
+1	006F1170	cMf32::delete	cMf32::delete	cMf32	delete		no live incoming ECX use found before clobber/call	E:\\Ourlib\\Mf32int.cpp	141	high	previously_applied_debug_symbol
 1	006F1220	cMf32::Flush	cMf32::Flush	cMf32	Flush	__thiscall	006F122B: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	156	high	previously_applied_debug_symbol
 1	006F12B0	cMf32::ToBeg	cMf32::ToBeg	cMf32	ToBeg	__thiscall	006F12BB: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	171	high	previously_applied_debug_symbol
 1	006F1350	cMf32::ToEnd	cMf32::ToEnd	cMf32	ToEnd	__thiscall	006F135B: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	184	high	previously_applied_debug_symbol
@@ -923,10 +923,10 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	006F2940	cMf32::RecNameGetPrev	cMf32::RecNameGetPrev	cMf32	RecNameGetPrev	__thiscall	006F294C: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	829	high	previously_applied_debug_symbol
 1	006F2A10	cMf32::RecKeyGetPrev	cMf32::RecKeyGetPrev	cMf32	RecKeyGetPrev	__thiscall	006F2A1C: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	860	high	previously_applied_debug_symbol
 1	006F2AF0	cMf32::KeyRecGet	cMf32::KeyRecGet	cMf32	KeyRecGet	__thiscall	006F2AFD: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	896	high	previously_applied_debug_symbol
-1	0070CEB0	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator	__thiscall	0070CECE: MOV dword ptr [0x00858df8],ECX	E:\\Ourlib\\mfcfnt.cpp	228	high	previously_applied_debug_symbol
-1	0070D1F0	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator	__thiscall	0070D211: MOV dword ptr [0x00858df8],ECX	E:\\Ourlib\\mfcfnt.cpp	460	high	previously_applied_debug_symbol
-1	0070DF00	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator	__thiscall	0070DF1E: MOV dword ptr [0x00858df8],ECX	E:\\Ourlib\\mfcfnt.cpp	499	high	previously_applied_debug_symbol
-1	00710560	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator	__thiscall	0071057F: MOV dword ptr [EBP + -0x48],ECX	E:\\Ourlib\\mfcfnt.cpp	1026	high	previously_applied_debug_symbol
+1	0070CEB0	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	228	high	previously_applied_debug_symbol
+1	0070D1F0	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	460	high	previously_applied_debug_symbol
+1	0070DF00	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	499	high	previously_applied_debug_symbol
+1	00710560	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	1026	high	previously_applied_debug_symbol
 1	007108B0	ccFntTy::Save	ccFntTy::Save	ccFntTy	Save	__thiscall	007108BC: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\mfcfnt.cpp	1080	high	previously_applied_debug_symbol
 1	00710A90	ccFntTy::SetSurf	ccFntTy::SetSurf	ccFntTy	SetSurf	__thiscall	00710A9C: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\mfcfnt.cpp	1144	high	previously_applied_debug_symbol
 1	00710BA0	ccFntTy::CreateSurf	ccFntTy::CreateSurf	ccFntTy	CreateSurf	__thiscall	00710BAD: MOV dword ptr [EBP + -0x10],ECX	E:\\Ourlib\\mfcfnt.cpp	1197	high	previously_applied_debug_symbol
@@ -944,8 +944,8 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00712C10	ccFntTy::FormText	ccFntTy::FormText	ccFntTy	FormText	__thiscall	00712C1D: MOV dword ptr [EBP + -0x10],ECX	E:\\Ourlib\\mfcfnt.cpp	2168	high	previously_applied_debug_symbol
 1	00712D30	ccFntTy::FormIndentText	ccFntTy::FormIndentText	ccFntTy	FormIndentText	__thiscall	00712D3D: MOV dword ptr [EBP + -0x10],ECX	E:\\Ourlib\\mfcfnt.cpp	2197	high	previously_applied_debug_symbol
 1	00712E60	ccFntTy::VisLineSarr	ccFntTy::VisLineSarr	ccFntTy	VisLineSarr	__thiscall	00712E6E: MOV dword ptr [EBP + -0x10],ECX	E:\\Ourlib\\mfcfnt.cpp	2229	high	previously_applied_debug_symbol
-1	00712F80	ccFntTy::_TxtToSarr	ccFntTy::_TxtToSarr	ccFntTy	_TxtToSarr	__thiscall	00712FAC: MOV dword ptr [0x00858df8],ECX	E:\\Ourlib\\mfcfnt.cpp	2260	high	previously_applied_debug_symbol
-1	00713080	ccFntTy::_SarrToTxt	ccFntTy::_SarrToTxt	ccFntTy	_SarrToTxt	__thiscall	007130AF: MOV dword ptr [0x00858df8],ECX	E:\\Ourlib\\mfcfnt.cpp	2307	high	previously_applied_debug_symbol
+1	00712F80	ccFntTy::_TxtToSarr	ccFntTy::_TxtToSarr	ccFntTy	_TxtToSarr		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	2260	high	previously_applied_debug_symbol
+1	00713080	ccFntTy::_SarrToTxt	ccFntTy::_SarrToTxt	ccFntTy	_SarrToTxt		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	2307	high	previously_applied_debug_symbol
 1	00713200	ccFntTy::GetFittingStr	ccFntTy::GetFittingStr	ccFntTy	GetFittingStr	__thiscall	0071320E: MOV dword ptr [EBP + -0x18],ECX	E:\\Ourlib\\mfcfnt.cpp	2372	high	previously_applied_debug_symbol
 1	00713480	ccFntTy::CreateTypeSSpr	ccFntTy::CreateTypeSSpr	ccFntTy	CreateTypeSSpr	__thiscall	0071348F: MOV dword ptr [EBP + -0x44],ECX	E:\\Ourlib\\mfcfnt.cpp	2517	high	previously_applied_debug_symbol
 1	00713B00	cTypingTy::TypingInit	cTypingTy::TypingInit	cTypingTy	TypingInit	__thiscall	00713B13: MOV dword ptr [EBP + -0x8],ECX	E:\\Ourlib\\mfcfnt.cpp	2602	high	previously_applied_debug_symbol

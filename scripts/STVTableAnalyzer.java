@@ -19,6 +19,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -44,11 +46,15 @@ public class STVTableAnalyzer extends GhidraScript {
     private static final Map<String, String> KNOWN_TABLE_OWNERS = Map.of(
         "0079E188", "SystemClassTy"
     );
+    private static final Pattern RECOVERED_CONSTRUCTOR_TABLE = Pattern.compile(
+        "(?m)^VTable:\\s*([0-9A-Fa-f]{6,16})(?:\\s|$)");
+    private static final String CONSTRUCTOR_TAG = "RECOVERED_CONSTRUCTOR";
 
     private Listing listing;
     private Memory memory;
     private int pointerSize;
     private AddressSpace addressSpace;
+    private final Map<Function, Address> finalStrongVptrStore = new LinkedHashMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -68,6 +74,7 @@ public class STVTableAnalyzer extends GhidraScript {
 
         Map<Address, StartEvidence> starts = findCandidateStarts();
         List<Candidate> candidates = buildCandidates(starts);
+        indexFinalStrongVptrStores(candidates);
         for (Candidate candidate : candidates) classify(candidate);
         candidates.sort(Comparator.comparing(candidate -> candidate.address));
         List<Relation> relations = analyzeRelations(candidates);
@@ -180,37 +187,45 @@ public class STVTableAnalyzer extends GhidraScript {
     private void classify(Candidate candidate) {
         Map<String, Integer> slotVotes = new TreeMap<>();
         Map<String, Integer> constructorVotes = new TreeMap<>();
+        Map<String, Integer> writerVotes = new TreeMap<>();
         for (Slot slot : candidate.slots) {
             if (!slot.owner.isEmpty()) slotVotes.merge(slot.owner, 1, Integer::sum);
         }
         for (CodeReference reference : candidate.evidence.references) {
-            if (reference.strong && !reference.owner.isEmpty())
-                constructorVotes.merge(reference.owner, 1, Integer::sum);
+            if (!reference.strong || reference.owner.isEmpty()) continue;
+            writerVotes.merge(reference.owner, 1, Integer::sum);
+            String constructorOwner = constructorOwner(reference, candidate.address);
+            if (!constructorOwner.isEmpty())
+                constructorVotes.merge(constructorOwner, 1, Integer::sum);
         }
 
         candidate.slotOwners.addAll(slotVotes.keySet());
         candidate.constructorOwners.addAll(constructorVotes.keySet());
+        candidate.vptrWriterOwners.addAll(writerVotes.keySet());
         String knownOwner = KNOWN_TABLE_OWNERS.get(addr(candidate.address));
         String constructorOwner = uniqueOwner(constructorVotes);
         if (knownOwner != null) {
             candidate.owner = knownOwner;
-            candidate.reason = "confirmed_recovery_anchor";
-            candidate.ownerConflict = slotVotes.keySet().stream()
-                .anyMatch(owner -> !owner.equals(knownOwner));
+            candidate.ownerConflict = !constructorVotes.isEmpty() &&
+                (constructorVotes.size() != 1 || !constructorVotes.containsKey(knownOwner));
+            candidate.reason = candidate.ownerConflict ?
+                "confirmed_anchor_conflicts_with_constructor" : "confirmed_recovery_anchor";
             candidate.confidence = candidate.ownerConflict ? "medium" : "high";
             candidate.apply = !candidate.ownerConflict;
         }
         else if (!constructorOwner.isEmpty()) {
             candidate.owner = constructorOwner;
-            candidate.reason = "unique_named_vptr_writer";
-            candidate.ownerConflict = slotVotes.keySet().stream()
-                .anyMatch(owner -> !owner.equals(constructorOwner));
-            candidate.confidence = candidate.ownerConflict ? "medium" : "high";
-            candidate.apply = !candidate.ownerConflict;
+            candidate.reason = "unique_constructor_vptr_anchor";
+            // A derived table normally contains inherited methods owned by base classes.
+            // Their namespaces support the hierarchy; they do not contradict the exact
+            // table installed by this constructor.
+            candidate.ownerConflict = false;
+            candidate.confidence = "high";
+            candidate.apply = true;
         }
         else if (constructorVotes.size() > 1) {
             candidate.owner = "";
-            candidate.reason = "multiple_named_vptr_writers";
+            candidate.reason = "multiple_constructor_vptr_anchors";
             candidate.ownerConflict = true;
             candidate.confidence = "low";
         }
@@ -229,8 +244,9 @@ public class STVTableAnalyzer extends GhidraScript {
             candidate.confidence = candidate.ownerConflict ? "low" : "medium";
         }
         else {
-            candidate.reason = candidate.evidence.hasStrongReference() ?
-                "unnamed_vptr_store" : "function_pointer_run_without_owner";
+            candidate.reason = !writerVotes.isEmpty() ? "named_nonconstructor_vptr_writer_review" :
+                candidate.evidence.hasStrongReference() ? "unnamed_vptr_store" :
+                "function_pointer_run_without_owner";
             candidate.confidence = candidate.evidence.hasStrongReference() ? "medium" : "low";
         }
 
@@ -243,6 +259,46 @@ public class STVTableAnalyzer extends GhidraScript {
             }
             else slot.proposedName = slot.targetName();
         }
+    }
+
+    private void indexFinalStrongVptrStores(List<Candidate> candidates) {
+        finalStrongVptrStore.clear();
+        for (Candidate candidate : candidates) {
+            for (CodeReference reference : candidate.evidence.references) {
+                if (!reference.strong) continue;
+                Address prior = finalStrongVptrStore.get(reference.function);
+                if (prior == null || reference.address.compareTo(prior) > 0)
+                    finalStrongVptrStore.put(reference.function, reference.address);
+            }
+        }
+    }
+
+    private String constructorOwner(CodeReference reference, Address tableAddress) {
+        Function function = reference.function;
+        String owner = reference.owner;
+        if (owner.isEmpty() || function == null) return "";
+
+        if (hasTag(function, CONSTRUCTOR_TAG)) {
+            String comment = function.getComment();
+            if (comment != null) {
+                Matcher matcher = RECOVERED_CONSTRUCTOR_TABLE.matcher(comment);
+                while (matcher.find())
+                    if (addr(tableAddress).equalsIgnoreCase(matcher.group(1))) return owner;
+            }
+        }
+
+        String ownerLeaf = owner;
+        int separator = ownerLeaf.lastIndexOf("::");
+        if (separator >= 0) ownerLeaf = ownerLeaf.substring(separator + 2);
+        Address finalStore = finalStrongVptrStore.get(function);
+        return function.getName().equals(ownerLeaf) && reference.address.equals(finalStore) ?
+            owner : "";
+    }
+
+    private boolean hasTag(Function function, String tagName) {
+        for (FunctionTag tag : function.getTags())
+            if (tagName.equals(tag.getName())) return true;
+        return false;
     }
 
     private List<Relation> analyzeRelations(List<Candidate> candidates) {
@@ -302,6 +358,7 @@ public class STVTableAnalyzer extends GhidraScript {
 
     private boolean isReliableBase(Candidate candidate) {
         return "confirmed_recovery_anchor".equals(candidate.reason) ||
+            "unique_constructor_vptr_anchor".equals(candidate.reason) ||
             (candidate.apply && "unique_slot_owner_and_vptr_store".equals(candidate.reason));
     }
 
@@ -497,7 +554,7 @@ public class STVTableAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\ttable_address\tproposed_name\towner\tslot_count\tnamed_slot_count\t" +
                 "confidence\treason\tstrong_vptr_refs\tall_code_refs\tslot_owners\t" +
-                "constructor_owners\trelated_tables\n");
+                "constructor_owners\tvptr_writer_owners\trelated_tables\n");
             for (Candidate candidate : candidates) {
                 out.write((candidate.apply ? "1" : "0") + "\t" + addr(candidate.address) + "\t" +
                     tsv(candidate.proposedName) + "\t" + tsv(candidate.owner) + "\t" +
@@ -507,6 +564,7 @@ public class STVTableAnalyzer extends GhidraScript {
                     tsv(candidate.evidence.referenceText(false)) + "\t" +
                     tsv(String.join(" | ", candidate.slotOwners)) + "\t" +
                     tsv(String.join(" | ", candidate.constructorOwners)) + "\t" +
+                    tsv(String.join(" | ", candidate.vptrWriterOwners)) + "\t" +
                     tsv(String.join(" | ", candidate.relatedTables)) + "\n");
             }
         }
@@ -523,7 +581,9 @@ public class STVTableAnalyzer extends GhidraScript {
                 q(candidate.reason) + ",\"strong_vptr_refs\":" +
                 q(candidate.evidence.referenceText(true)) + ",\"slot_owners\":" +
                 q(String.join(" | ", candidate.slotOwners)) + ",\"constructor_owners\":" +
-                q(String.join(" | ", candidate.constructorOwners)) + ",\"related_tables\":" +
+                q(String.join(" | ", candidate.constructorOwners)) +
+                ",\"vptr_writer_owners\":" +
+                q(String.join(" | ", candidate.vptrWriterOwners)) + ",\"related_tables\":" +
                 q(String.join(" | ", candidate.relatedTables)) + "}");
         }
         Files.write(path, rows, StandardCharsets.UTF_8);
@@ -603,7 +663,9 @@ public class STVTableAnalyzer extends GhidraScript {
             rows.add("{\"table_address\":" + q(addr(candidate.address)) +
                 ",\"selected_owner\":" + q(candidate.owner) + ",\"slot_owners\":" +
                 q(String.join(" | ", candidate.slotOwners)) + ",\"constructor_owners\":" +
-                q(String.join(" | ", candidate.constructorOwners)) + ",\"reason\":" +
+                q(String.join(" | ", candidate.constructorOwners)) +
+                ",\"vptr_writer_owners\":" +
+                q(String.join(" | ", candidate.vptrWriterOwners)) + ",\"reason\":" +
                 q(candidate.reason) + ",\"related_tables\":" +
                 q(String.join(" | ", candidate.relatedTables)) + "}");
         }
@@ -615,6 +677,11 @@ public class STVTableAnalyzer extends GhidraScript {
         long medium = candidates.stream().filter(candidate -> "medium".equals(candidate.confidence)).count();
         long low = candidates.stream().filter(candidate -> "low".equals(candidate.confidence)).count();
         long conflicts = candidates.stream().filter(candidate -> candidate.ownerConflict).count();
+        long constructorAnchors = candidates.stream()
+            .filter(candidate -> !candidate.constructorOwners.isEmpty()).count();
+        long reviewOnlyWriters = candidates.stream()
+            .filter(candidate -> candidate.constructorOwners.isEmpty() &&
+                !candidate.vptrWriterOwners.isEmpty()).count();
         long slots = candidates.stream().mapToLong(candidate -> candidate.slots.size()).sum();
         long interiorSlots = candidates.stream().flatMap(candidate -> candidate.slots.stream())
             .filter(Slot::isInterior).count();
@@ -632,12 +699,15 @@ public class STVTableAnalyzer extends GhidraScript {
             "medium=" + medium,
             "low=" + low,
             "owner_conflicts=" + conflicts,
+            "constructor_anchored_tables=" + constructorAnchors,
+            "review_only_named_vptr_writer_tables=" + reviewOnlyWriters,
             "minimum_slots=" + MIN_SLOTS,
             "note=Analyzer is read-only. Table apply is conservative; rename_apply is always 0.",
             "note_apply=create_apply=1 creates only missing function boundaries; it never renames them.",
             "note_rename=Set rename_apply=1 only after reviewing proposed_function.",
             "note_interior=interior_target=true usually denotes an adjustor thunk or a missing function boundary.",
-            "note_relations=Related layouts help distinguish inherited base slots from the actual table owner."),
+            "note_relations=Related layouts help distinguish inherited base slots from the actual table owner.",
+            "note_constructors=An exact recovered constructor-to-table marker outranks inherited slot namespaces; other named vptr writers remain review-only."),
             StandardCharsets.UTF_8);
     }
 
@@ -686,7 +756,8 @@ public class STVTableAnalyzer extends GhidraScript {
         final Address address;
         final StartEvidence evidence;
         final List<Slot> slots = new ArrayList<>();
-        final Set<String> slotOwners = new TreeSet<>(), constructorOwners = new TreeSet<>();
+        final Set<String> slotOwners = new TreeSet<>(), constructorOwners = new TreeSet<>(),
+            vptrWriterOwners = new TreeSet<>();
         final Set<String> relatedTables = new TreeSet<>();
         String owner = "", proposedName = "", confidence = "low", reason = "";
         boolean apply, ownerConflict;

@@ -68,7 +68,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
   if (*(uint *)(DAT_00802a38 + 0xe4) <= (uint)this->field_024F) goto cf_common_exit_0058E925;
   switch(this->field_0257) {
   case CASE_0:
-    iVar6 = (*this->vtable->slot_20)();
+    iVar6 = (*this->vtable->vfunc_20)();
     if (iVar6 == -1) {
       iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2dc,0,-5,&DAT_007a4ccc,
                                  s_stop_move_error_007ad3a0);
@@ -99,7 +99,7 @@ LAB_0058ea68:
           }
         }
         else {
-          iVar6 = (*this->vtable->slot_20)();
+          iVar6 = (*this->vtable->vfunc_20)();
           if (iVar6 == 1) {
             this->field_0253 = 0;
             SVar10 = thunk_FUN_0058f1e0(this,1);
@@ -227,7 +227,7 @@ LAB_0058e87e:
     }
     break;
   case CASE_5:
-    iVar6 = (*this->vtable->slot_20)();
+    iVar6 = (*this->vtable->vfunc_20)();
     if (iVar6 == -1) {
       iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x265,0,0,&DAT_007a4ccc,
                                  s_stop_move_error_007ad3a0);
@@ -274,7 +274,7 @@ cf_common_exit_0058E925:
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_10);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
   }
-  (*this->vtable->slot_D8)();
+  (*this->vtable->vfunc_D8)();
 switchD_0058e67d_default:
   return;
 }

@@ -957,10 +957,10 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	FrmPanelTy	471	0x1D7	4	field_01D7	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0050FD60
 1	FrmPanelTy	475	0x1DB	4	field_01DB	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0050FD60
 1	FrmPanelTy	479	0x1DF	4	field_01DF	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0050FD60
-1	GameSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/GameSystemCVTable	0			0	existing	none			2	0	high	owner_vtable_pointer; concrete_type_already_present	00576E10
+1	GameSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/GameSystemCVTable	0			0	existing	none			2	1	high	owner_vtable_pointer; concrete_type_already_present	00576DD0 | 00576E10
 1	GameSystemC	1068	0x42C	4	field_042C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00576EF0
-1	GameSystemC	1072	0x430	1	field_0430	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	005770D0
-1	GameSystemC	1073	0x431	4	field_0431	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	00576EF0 | 005770D0
+1	GameSystemC	1072	0x430	1	field_0430	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	00576DD0 | 005770D0
+1	GameSystemC	1073	0x431	4	field_0431	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	00576DD0 | 00576EF0 | 005770D0
 1	HelpPanelTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable	0			0	existing	none			0	0	high	owner_vtable_pointer	
 1	HelpPanelTy	8	0x8	4	field_0008	/undefined4	0			0	none	none			6	0	high	consistent_this_relative_access	005123A0 | 00512830
 1	HelpPanelTy	12	0xC	4	field_000C	pointer:/StartSystemTy	0	pointer:/StartSystemTy	startSystem	0	existing	medium	pointer:/StartSystemTy <= 00511760 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 005123A0 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00512830 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00515310 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00516300 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0; 00516480 [this+0xC] used as receiver of StartSystemTy::sub_006E56B0		10	0	high	consistent_this_relative_access; concrete_type_already_present	00511760 | 005123A0 | 00512830 | 00515310 | 00516300 | 00516480
@@ -1824,62 +1824,83 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STAllPlayersC	545	0x221	4	field_0221	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004210E0 | 00422210
 1	STAllPlayersC	549	0x225	4	field_0225	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	004210E0 | 00422210
 1	STAllPlayersC	553	0x229	4	field_0229	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00422210
-1	STAppC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STAppCVTable	0			0	existing	none			4	0	high	owner_vtable_pointer; concrete_type_already_present	0056ADC0 | 0056DB80
+1	STAppC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STAppCVTable	0			0	existing	none			4	1	high	owner_vtable_pointer; concrete_type_already_present	0056A5F0 | 0056ADC0 | 0056DB80
 1	STAppC	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
 1	STAppC	56	0x38	4	field_0038	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0056ADC0 | 0056C750
 1	STAppC	60	0x3C	4	field_003C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0056C750
 1	STAppC	3622	0xE26	1	field_0E26	/undefined1	0			0	none	none			2	0	high	consistent_this_relative_access	0056ADC0
+1	STAppC	3623	0xE27	4	field_0E27	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	3627	0xE2B	4	field_0E2B	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	3631	0xE2F	4	field_0E2F	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	3635	0xE33	4	field_0E33	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	3639	0xE37	4	field_0E37	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	3643	0xE3B	4	field_0E3B	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	3647	0xE3F	4	field_0E3F	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
 1	STAppC	4035	0xFC3	4	field_0FC3	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0056FA60
-1	STAppC	4397	0x112D	1	field_112D	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0056ADC0
-1	STAppC	4398	0x112E	1	field_112E	/undefined1	0			0	none	none			0	4	high	consistent_this_relative_access	0056ADC0
-1	STAppC	4404	0x1134	4	field_1134	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
-1	STAppC	4442	0x115A	4	field_115A	/undefined4	0			0	none	none			3	0	high	consistent_this_relative_access	0056C750 | 0056D740 | 0056FA60
-1	STAppC	4446	0x115E	1	field_115E	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	0056DB80
-1	STAppC	4447	0x115F	4	field_115F	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056ADC0
-1	STAppC	4451	0x1163	1	field_1163	/undefined1	0			0	none	none			2	7	high	consistent_this_relative_access	0056ADC0 | 0056DB80
-1	STAppC	4452	0x1164	4	field_1164	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
-1	STAppC	4456	0x1168	4	field_1168	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
-1	STAppC	4476	0x117C	4	field_117C	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0056ADC0 | 0056DB80
+1	STAppC	4039	0xFC7	4	field_0FC7	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4043	0xFCB	4	field_0FCB	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4369	0x1111	4	field_1111	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4373	0x1115	4	field_1115	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4377	0x1119	4	field_1119	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4381	0x111D	4	field_111D	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4385	0x1121	4	field_1121	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4389	0x1125	4	field_1125	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4397	0x112D	1	field_112D	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056ADC0
+1	STAppC	4398	0x112E	1	field_112E	/undefined1	0			0	none	none			0	5	high	consistent_this_relative_access	0056A5F0 | 0056ADC0
+1	STAppC	4404	0x1134	4	field_1134	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056DB80
+1	STAppC	4408	0x1138	2	field_1138	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4442	0x115A	4	field_115A	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0056A5F0 | 0056C750 | 0056D740 | 0056FA60
+1	STAppC	4446	0x115E	1	field_115E	/undefined1	0			0	none	none			1	1	high	consistent_this_relative_access	0056A5F0 | 0056DB80
+1	STAppC	4447	0x115F	4	field_115F	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056ADC0
+1	STAppC	4451	0x1163	1	field_1163	/undefined1	0			0	none	none			2	8	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056DB80
+1	STAppC	4452	0x1164	4	field_1164	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056DB80
+1	STAppC	4456	0x1168	4	field_1168	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056DB80
+1	STAppC	4460	0x116C	4	field_116C	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4464	0x1170	4	field_1170	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4468	0x1174	4	field_1174	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4472	0x1178	4	field_1178	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
+1	STAppC	4476	0x117C	4	field_117C	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056DB80
 1	STAppC	4480	0x1180	1	field_1180	/undefined1	0			0	none	none			5	5	high	consistent_this_relative_access	0056ADC0 | 0056DB80 | 0056FA60
-1	STAppC	4481	0x1181	4	field_1181	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056ADC0 | 0056DB80
-1	STAppC	4485	0x1185	4	field_1185	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0056ADC0 | 0056DB80 | 00571400
-1	STAppC	4489	0x1189	4	field_1189	/WinDef.h/LPVOID	0	/WinDef.h/LPVOID	lpBuffer	0	existing	medium	/WinDef.h/LPVOID <= 00571400 [this+0x1189] passed to KERNEL32.DLL::ReadFile parameter lpBuffer	lpBuffer <= 00571400 [this+0x1189] passed to KERNEL32.DLL::ReadFile parameter lpBuffer	3	1	high	consistent_this_relative_access; concrete_type_already_present	0056C750 | 00571400
-1	STAppC	4493	0x118D	4	field_118D	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056C750 | 00571400
-1	STAppC	4497	0x1191	4	field_1191	/winnt.h/LONG	0	/winnt.h/LONG	lDistanceToMove	0	existing	medium	/winnt.h/LONG <= 00571400 [this+0x1191] passed to KERNEL32.DLL::SetFilePointer parameter lDistanceToMove	lDistanceToMove <= 00571400 [this+0x1191] passed to KERNEL32.DLL::SetFilePointer parameter lDistanceToMove	3	1	high	consistent_this_relative_access; concrete_type_already_present	00571400
-1	STAppC	4501	0x1195	1	field_1195	/undefined1	0			0	none	none			1	3	high	consistent_this_relative_access	0056ADC0 | 0056DB80
+1	STAppC	4481	0x1181	4	field_1181	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056DB80
+1	STAppC	4485	0x1185	4	field_1185	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056DB80 | 00571400
+1	STAppC	4489	0x1189	4	field_1189	/WinDef.h/LPVOID	0	/WinDef.h/LPVOID	lpBuffer	0	existing	medium	/WinDef.h/LPVOID <= 00571400 [this+0x1189] passed to KERNEL32.DLL::ReadFile parameter lpBuffer	lpBuffer <= 00571400 [this+0x1189] passed to KERNEL32.DLL::ReadFile parameter lpBuffer	3	2	high	consistent_this_relative_access; concrete_type_already_present	0056A5F0 | 0056C750 | 00571400
+1	STAppC	4493	0x118D	4	field_118D	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0056A5F0 | 0056C750 | 00571400
+1	STAppC	4497	0x1191	4	field_1191	/winnt.h/LONG	0	/winnt.h/LONG	lDistanceToMove	0	existing	medium	/winnt.h/LONG <= 00571400 [this+0x1191] passed to KERNEL32.DLL::SetFilePointer parameter lDistanceToMove	lDistanceToMove <= 00571400 [this+0x1191] passed to KERNEL32.DLL::SetFilePointer parameter lDistanceToMove	3	2	high	consistent_this_relative_access; concrete_type_already_present	0056A5F0 | 00571400
+1	STAppC	4501	0x1195	1	field_1195	/undefined1	0			0	none	none			1	4	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056DB80
 1	STAppC	4506	0x119A	4	field_119A	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056ADC0
 1	STAppC	17608	0x44C8	4	field_44C8	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056FA60
 1	STAppC	19875	0x4DA3	1	field_4DA3	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	0056DB80
-1	STAppC	20135	0x4EA7	4	field_4EA7	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0056C750 | 0056DB80
-1	STAppC	20139	0x4EAB	4	field_4EAB	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0056C750 | 0056DB80
+1	STAppC	20135	0x4EA7	4	field_4EA7	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	0056A5F0 | 0056C750 | 0056DB80
+1	STAppC	20139	0x4EAB	4	field_4EAB	/undefined4	0			0	none	none			2	4	high	consistent_this_relative_access	0056A5F0 | 0056C750 | 0056DB80
 1	STAppC	20143	0x4EAF	4	field_4EAF	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
 1	STAppC	20147	0x4EB3	4	field_4EB3	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
 1	STAppC	20183	0x4ED7	2	field_4ED7	/undefined2	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
 1	STAppC	20185	0x4ED9	1	field_4ED9	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
 1	STAppC	20186	0x4EDA	4	field_4EDA	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056ADC0 | 0056C750
-1	STAppC	20190	0x4EDE	4	field_4EDE	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0056C750
-1	STAppC	20194	0x4EE2	4	field_4EE2	/undefined4	0			0	none	none			2	2	high	consistent_this_relative_access	0056ADC0 | 0056C750
-1	STAppC	20198	0x4EE6	4	field_4EE6	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056ADC0 | 0056C750
-1	STAppC	20202	0x4EEA	4	field_4EEA	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
+1	STAppC	20190	0x4EDE	4	field_4EDE	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056A5F0 | 0056C750
+1	STAppC	20194	0x4EE2	4	field_4EE2	/undefined4	0			0	none	none			2	3	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056C750
+1	STAppC	20198	0x4EE6	4	field_4EE6	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056C750
+1	STAppC	20202	0x4EEA	4	field_4EEA	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056DB80
 1	STAppC	20206	0x4EEE	4	field_4EEE	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
-1	STAppC	20210	0x4EF2	4	field_4EF2	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
-1	STAppC	20214	0x4EF6	4	field_4EF6	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0056D1F0
-1	STAppC	20218	0x4EFA	4	field_4EFA	/undefined4	0			0	none	none			1	2	high	consistent_this_relative_access	0056D1F0 | 0056FA60
-1	STAppC	20222	0x4EFE	4	field_4EFE	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
+1	STAppC	20210	0x4EF2	4	field_4EF2	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056DB80
+1	STAppC	20214	0x4EF6	4	field_4EF6	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0056A5F0 | 0056D1F0
+1	STAppC	20218	0x4EFA	4	field_4EFA	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0056A5F0 | 0056D1F0 | 0056FA60
+1	STAppC	20222	0x4EFE	4	field_4EFE	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056A5F0 | 0056DB80
 1	STAppC	20226	0x4F02	4	field_4F02	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
 1	STAppC	20234	0x4F0A	4	field_4F0A	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0056FA60
 1	STAppC	21018	0x521A	4	field_521A	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056DB80
 1	STAppC	27872	0x6CE0	1	field_6CE0	/undefined1	0			0	none	none			0	3	high	consistent_this_relative_access	0056DB80
 1	STAppC	27873	0x6CE1	1	field_6CE1	/undefined1	0			0	none	none			0	3	high	consistent_this_relative_access	0056DB80
 1	STAppC	27874	0x6CE2	1	field_6CE2	/undefined1	0			0	none	none			0	2	high	consistent_this_relative_access	0056DB80
-1	STAppC	30450	0x76F2	4	field_76F2	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0056C750
+1	STAppC	30450	0x76F2	4	field_76F2	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0056A5F0 | 0056C750
 1	STAppC	31233	0x7A01	1	field_7A01	/undefined1	0			0	none	none			0	1	high	consistent_this_relative_access	0056DB80
-1	STAppC	32014	0x7D0E	4	field_7D0E	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	0056ADC0 | 0056DB80
-1	STAppC	32018	0x7D12	4	field_7D12	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0056C750 | 0056DB80
-1	STAppC	32022	0x7D16	4	field_7D16	/int	0	/int		0	existing	none	/int <= 0056DB80 [this+0x7D16] assigned 0056DB80 return from cMf32::RecGetOrigLen		0	1	high	consistent_this_relative_access; concrete_type_already_present	0056DB80
+1	STAppC	32014	0x7D0E	4	field_7D0E	/undefined4	0			0	none	none			1	5	high	consistent_this_relative_access	0056A5F0 | 0056ADC0 | 0056DB80
+1	STAppC	32018	0x7D12	4	field_7D12	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	0056A5F0 | 0056C750 | 0056DB80
+1	STAppC	32022	0x7D16	4	field_7D16	/int	0	/int		0	existing	none	/int <= 0056DB80 [this+0x7D16] assigned 0056DB80 return from cMf32::RecGetOrigLen		0	2	high	consistent_this_relative_access; concrete_type_already_present	0056A5F0 | 0056DB80
 1	STAppC	32026	0x7D1A	1	field_7D1A	/undefined1	0			0	none	none			1	0	high	consistent_this_relative_access	0056DB80
-1	STAppC	34126	0x854E	4	field_854E	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0056ADC0
-1	STAppC	34130	0x8552	4	field_8552	/undefined4	0			0	none	none			0	3	high	consistent_this_relative_access	0056ADC0
+1	STAppC	34126	0x854E	4	field_854E	/undefined4	0			0	none	none			0	3	high	consistent_this_relative_access	0056A5F0 | 0056ADC0
+1	STAppC	34130	0x8552	4	field_8552	/undefined4	0			0	none	none			0	4	high	consistent_this_relative_access	0056A5F0 | 0056ADC0
+1	STAppC	34134	0x8556	4	field_8556	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0056A5F0
 1	STArtiafactC	0	0x0	4	field_0000	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	005EAF10
 1	STArtiafactC	24	0x18	4	field_0018	/undefined4	0			0	none	none			4	0	high	consistent_this_relative_access	005EAF10
 1	STArtiafactC	50	0x32	2	field_0032	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005EAF10
@@ -2881,13 +2902,13 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STParticleC	235	0xEB	4	field_00EB	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	006298A0
 1	STParticleC	243	0xF3	4	field_00F3	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	006298A0
 1	STParticleC	260	0x104	4	field_0104	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	00627EB0
-1	STPlaySystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STPlaySystemCVTable	0			0	existing	none			3	0	high	owner_vtable_pointer; concrete_type_already_present	0054CC20 | 0054D180 | 0054E4F0
+1	STPlaySystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STPlaySystemCVTable	0			0	existing	none			3	1	high	owner_vtable_pointer; concrete_type_already_present	0054CB40 | 0054CC20 | 0054D180 | 0054E4F0
 1	STPlaySystemC	32	0x20	4	field_0020	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0054CFC0 | 0054D2F0
-1	STPlaySystemC	36	0x24	4	field_0024	pointer:/cMf32	0	pointer:/cMf32	cMf32	0	existing	medium	pointer:/cMf32 <= 0054D430 [this+0x24] used as receiver of cMf32::RecPut; 0054D550 [this+0x24] used as receiver of cMf32::RecPut		4	2	high	consistent_this_relative_access; concrete_type_already_present	0054D2F0 | 0054D430 | 0054D550
-1	STPlaySystemC	40	0x28	4	field_0028	/undefined4	0			0	none	none			3	3	high	consistent_this_relative_access	0054CFC0 | 0054D640 | 0054F1D0
-1	STPlaySystemC	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	3	high	consistent_this_relative_access	0054CFC0 | 0054D640
+1	STPlaySystemC	36	0x24	4	field_0024	pointer:/cMf32	0	pointer:/cMf32	cMf32	0	existing	medium	pointer:/cMf32 <= 0054D430 [this+0x24] used as receiver of cMf32::RecPut; 0054D550 [this+0x24] used as receiver of cMf32::RecPut		4	3	high	consistent_this_relative_access; concrete_type_already_present	0054CB40 | 0054D2F0 | 0054D430 | 0054D550
+1	STPlaySystemC	40	0x28	4	field_0028	/undefined4	0			0	none	none			3	4	high	consistent_this_relative_access	0054CB40 | 0054CFC0 | 0054D640 | 0054F1D0
+1	STPlaySystemC	44	0x2C	4	field_002C	/undefined4	0			0	none	none			1	4	high	consistent_this_relative_access	0054CB40 | 0054CFC0 | 0054D640
 1	STPlaySystemC	48	0x30	4	field_0030	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 0054D640 [this+0x30] assigned 0054D640 return from WINMM.DLL::timeGetTime		2	4	high	consistent_this_relative_access; concrete_type_already_present	0054CFC0 | 0054D640
-1	STPlaySystemC	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0054CFC0
+1	STPlaySystemC	52	0x34	4	field_0034	/undefined4	0			0	none	none			0	2	high	consistent_this_relative_access	0054CB40 | 0054CFC0
 1	STPlaySystemC	56	0x38	1	field_0038	/undefined1	0			0	none	none			4	3	high	consistent_this_relative_access	0054CFC0 | 0054D640 | 0054E4F0
 1	STPlaySystemC	57	0x39	4	field_0039	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0054CFC0 | 0054D180 | 0054F1D0
 1	STPlaySystemC	61	0x3D	4	field_003D	/undefined4	0			0	none	none			13	1	high	consistent_this_relative_access	0054CFC0 | 0054D180 | 0054D640 | 0054F1D0 | 00550250
@@ -2919,11 +2940,11 @@ apply	owner	offset	offset_hex	size	proposed_name	proposed_type	type_apply	inferr
 1	STPlaySystemC	188	0xBC	4	field_00BC	/WinDef.h/DWORD	0	/WinDef.h/DWORD		0	existing	none	/WinDef.h/DWORD <= 0054E4F0 [this+0xBC] assigned 0054E4F0 return from WINMM.DLL::timeGetTime		1	1	high	consistent_this_relative_access; concrete_type_already_present	0054D640 | 0054E4F0
 1	STPlaySystemC	204	0xCC	4	field_00CC	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0054D180
 1	STPlaySystemC	208	0xD0	4	field_00D0	/undefined4	0			0	none	none			0	1	high	consistent_this_relative_access	0054D180
-1	STPlaySystemC	228	0xE4	4	field_00E4	/undefined4	0			0	none	none			3	1	high	consistent_this_relative_access	0054CFC0 | 0054D2F0 | 0054EEE0
+1	STPlaySystemC	228	0xE4	4	field_00E4	/undefined4	0			0	none	none			3	2	high	consistent_this_relative_access	0054CB40 | 0054CFC0 | 0054D2F0 | 0054EEE0
 1	STPlaySystemC	232	0xE8	4	field_00E8	/undefined4	0			0	none	none			5	5	high	consistent_this_relative_access	0054CFC0 | 0054D640 | 0054F1D0
 1	STPlaySystemC	236	0xEC	4	field_00EC	/undefined4	0			0	none	none			4	1	high	consistent_this_relative_access	0054CFC0 | 0054D640 | 0054F1D0
-1	STPlaySystemC	240	0xF0	4	field_00F0	/undefined4	0			0	none	none			1	0	high	consistent_this_relative_access	0054F1D0
-1	STPlaySystemC	244	0xF4	4	field_00F4	/undefined4	0		message	0	none	medium		message <= 0054E4F0 unique get field in STPlaySystemC::GetMessage	4	1	high	consistent_this_relative_access	0054D640 | 0054E4F0
+1	STPlaySystemC	240	0xF0	4	field_00F0	/undefined4	0			0	none	none			1	1	high	consistent_this_relative_access	0054CB40 | 0054F1D0
+1	STPlaySystemC	244	0xF4	4	field_00F4	/undefined4	0		message	0	none	medium		message <= 0054E4F0 unique get field in STPlaySystemC::GetMessage	4	2	high	consistent_this_relative_access	0054CB40 | 0054D640 | 0054E4F0
 1	STResourceC	50	0x32	2	field_0032	/undefined2	0			0	none	none			1	1	high	consistent_this_relative_access	00580D30
 1	STResourceC	581	0x245	2	field_0245	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005802A0
 1	STResourceC	585	0x249	2	field_0249	/undefined2	0			0	none	none			1	0	high	consistent_this_relative_access	005802A0

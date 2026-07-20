@@ -167,7 +167,7 @@ left_table	left_owner	right_table	right_owner	compared_slots	shared_slots	shared
 0079ADB8	InterSystemC	0079B20C	DebugSystemC	9	6	0.667	0x4 | 0x14 | 0x20
 0079ADB8	InterSystemC	0079C1E8	StartSystemTy	9	5	0.556	0x0 | 0x4 | 0x14 | 0x20
 0079ADB8	InterSystemC	0079E188	SystemClassTy	9	6	0.667	0x4 | 0x14 | 0x20
-0079ADF4	SpriteClassTy	0079E21C	SpriteClassTy	3	3	1.000	
+0079ADF4		0079E21C	SpriteClassTy	3	3	1.000	
 0079AE68	PanelTy	0079AE94	PanelTy	5	5	1.000	
 0079B1B4	BaseSystemC	0079B20C	DebugSystemC	9	8	0.889	0x14
 0079B1B4	BaseSystemC	0079C1E8	StartSystemTy	9	5	0.556	0x0 | 0x4 | 0x14 | 0x20
