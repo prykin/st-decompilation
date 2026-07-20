@@ -38,7 +38,8 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   FSGSTy *local_c;
   int *local_8;
   
-  if (((param_5 != (undefined4 *)0x0) && (this->field_1A97 != 0)) && (this->field_0065 == CASE_1)) {
+  if (((param_5 != (undefined4 *)0x0) && (this->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0)) &&
+     (this->field_0065 == 1)) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_c = this;
@@ -75,12 +76,12 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
             local_10 = 0x40;
             do {
               puVar1 = (undefined1 *)((int)&local_8e0 + iVar4 + 1);
-              *(undefined1 *)(iVar4 + 0x2a + pFVar13->field_1A97) =
-                   *(undefined1 *)((int)&local_8e0 + iVar4);
-              *(undefined1 *)(iVar4 + 0x29 + pFVar13->field_1A97) = *puVar1;
+              (&pFVar13->field_1A97[1].field_0x12)[iVar4] = *(undefined1 *)((int)&local_8e0 + iVar4)
+              ;
+              (&pFVar13->field_1A97[1].field_0x11)[iVar4] = *puVar1;
               iVar10 = iVar4 + 2;
               iVar4 = iVar4 + 4;
-              puVar1[pFVar13->field_1A97 + (0xa8 - (int)(local_860 + 1))] =
+              (puVar1 + (0xa8 - (int)(local_860 + 1)))[(int)pFVar13->field_1A97] =
                    *(undefined1 *)((int)&local_8e0 + iVar10);
               local_10 = local_10 + -1;
             } while (local_10 != 0);
@@ -136,12 +137,12 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
               local_8 = (int *)0x40;
               do {
                 puVar1 = (undefined1 *)((int)&local_4e0 + iVar4 + 1);
-                *(undefined1 *)(iVar4 + 0x2a + pFVar13->field_1A97) =
+                (&pFVar13->field_1A97[1].field_0x12)[iVar4] =
                      *(undefined1 *)((int)&local_4e0 + iVar4);
-                *(undefined1 *)(iVar4 + 0x29 + pFVar13->field_1A97) = *puVar1;
+                (&pFVar13->field_1A97[1].field_0x11)[iVar4] = *puVar1;
                 iVar10 = iVar4 + 2;
                 iVar4 = iVar4 + 4;
-                puVar1[pFVar13->field_1A97 + (0xa8 - (int)(local_460 + 1))] =
+                (puVar1 + (0xa8 - (int)(local_460 + 1)))[(int)pFVar13->field_1A97] =
                      *(undefined1 *)((int)&local_4e0 + iVar10);
                 local_8 = (int *)((int)local_8 + -1);
               } while (local_8 != (int *)0x0);

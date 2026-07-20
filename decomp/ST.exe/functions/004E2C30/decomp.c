@@ -37,14 +37,14 @@ undefined4 __thiscall FUN_004e2c30(void *this,uint param_1)
   }
   local_10 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),param_1);
   iVar2 = *(int *)((int)this + 0x24);
-  puVar6 = &g_playerRuntime[iVar2].field598_0x2eb;
+  puVar6 = &g_playerRuntime[iVar2].field480_0x2eb;
   puVar7 = local_2c;
   for (iVar5 = 5; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar7 = *puVar6;
     puVar6 = puVar6 + 1;
     puVar7 = puVar7 + 1;
   }
-  puVar6 = &g_playerRuntime[iVar2].field612_0x2ff;
+  puVar6 = &g_playerRuntime[iVar2].field494_0x2ff;
   pbVar8 = local_40;
   for (iVar5 = 5; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(undefined4 *)pbVar8 = *puVar6;
@@ -81,9 +81,9 @@ undefined4 __thiscall FUN_004e2c30(void *this,uint param_1)
       if (((((*(byte *)((int)local_14 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) !=
              0) && (local_18 = local_40,
                    (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) == 0)) &&
-          (local_18 = (byte *)&g_playerRuntime[*(int *)((int)this + 0x24)].field598_0x2eb,
+          (local_18 = (byte *)&g_playerRuntime[*(int *)((int)this + 0x24)].field480_0x2eb,
           (*(byte *)((int)local_18 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) != 0))
-         && (local_18 = (byte *)&g_playerRuntime[*(int *)((int)this + 0x24)].field612_0x2ff,
+         && (local_18 = (byte *)&g_playerRuntime[*(int *)((int)this + 0x24)].field494_0x2ff,
             (*(byte *)((int)local_18 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) != 0
             )) {
         uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),local_10);

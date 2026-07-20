@@ -172,7 +172,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       }
       pCVar9 = FUN_006f2c00(s_MM_BAN__007cc058,2,*(undefined4 *)&this_02[0x1d].field_0xdc);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar15,iVar6);
-      DibPut(*(undefined4 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar10);
+      DibPut(*(AnonShape_006B84D0_7C7D97C6 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0(DAT_008075a8,*(uint *)&this_02[0x1d].field_0xd8);
       local_8 = 0;
     }
@@ -392,7 +392,7 @@ joined_r0x00597872:
       }
       pCVar9 = FUN_006f2c00(s_MM_BAN__007cc058,2,*(undefined4 *)&this_02[0x1d].field_0xdc);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar15,iVar6);
-      DibPut(*(undefined4 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar10);
+      DibPut(*(AnonShape_006B84D0_7C7D97C6 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0(DAT_008075a8,*(uint *)&this_02[0x1d].field_0xd8);
       local_8 = 0;
     }

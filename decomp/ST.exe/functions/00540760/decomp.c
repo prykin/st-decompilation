@@ -4,7 +4,8 @@
    Diagnostic line evidence: 79 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-void __cdecl DibPut(undefined4 *param_1,int param_2,int param_3,char param_4,byte *param_5)
+void __cdecl
+DibPut(AnonShape_006B84D0_7C7D97C6 *param_1,int param_2,int param_3,char param_4,byte *param_5)
 
 {
   code *pcVar1;
@@ -15,17 +16,17 @@ void __cdecl DibPut(undefined4 *param_1,int param_2,int param_3,char param_4,byt
   undefined4 local_44 [16];
   
   pIVar3 = g_currentExceptionFrame;
-  if ((param_1 != (undefined4 *)0x0) && (param_5 != (byte *)0x0)) {
+  if ((param_1 != (AnonShape_006B84D0_7C7D97C6 *)0x0) && (param_5 != (byte *)0x0)) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
     errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
     if (errorCode == 0) {
       if (param_4 == '\x01') {
         Library::DKW::WGR::FUN_006b55f0
-                  (param_1,0,param_2,param_3,param_5,0,0,0,*(int *)(param_5 + 4),
+                  ((undefined4 *)param_1,0,param_2,param_3,param_5,0,0,0,*(int *)(param_5 + 4),
                    *(int *)(param_5 + 8));
       }
       else if (param_4 == '\x06') {
-        FUN_006b84d0((uint)param_1,0,param_2,param_3,param_5);
+        FUN_006b84d0(param_1,0,param_2,param_3,param_5);
         g_currentExceptionFrame = pIVar3;
         return;
       }

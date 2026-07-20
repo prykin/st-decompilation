@@ -1,9 +1,9 @@
 
-int __fastcall FUN_007219a0(int param_1)
+int __fastcall FUN_007219a0(AnonShape_007219A0_88F70163 *param_1)
 
 {
   char cVar1;
-  int iVar2;
+  AnonNested_007219A0_0138_7CAF6BF8 *pAVar2;
   uint uVar3;
   int iVar4;
   uint uVar5;
@@ -12,15 +12,16 @@ int __fastcall FUN_007219a0(int param_1)
   char *pcVar8;
   bool bVar9;
   
-  iVar2 = *(int *)(param_1 + 0x138);
-  if ((iVar2 == 0) || (uVar3 = *(uint *)(iVar2 + 8), uVar3 == 0)) {
+  pAVar2 = param_1->field_0138;
+  if ((pAVar2 == (AnonNested_007219A0_0138_7CAF6BF8 *)0x0) ||
+     (uVar3 = pAVar2->field_0008, uVar3 == 0)) {
     return 0;
   }
   if ((int)uVar3 < 1) {
     pcVar8 = (char *)0x0;
   }
   else {
-    pcVar8 = (char *)**(undefined4 **)(iVar2 + 0x14);
+    pcVar8 = *(char **)pAVar2->field_0014;
   }
   uVar5 = 0xffffffff;
   do {
@@ -39,7 +40,7 @@ int __fastcall FUN_007219a0(int param_1)
         pcVar8 = (char *)0x0;
       }
       else {
-        pcVar8 = *(char **)(*(int *)(iVar2 + 0x14) + uVar7 * 4);
+        pcVar8 = *(char **)(pAVar2->field_0014 + uVar7 * 4);
       }
       uVar5 = 0xffffffff;
       do {

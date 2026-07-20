@@ -29,20 +29,21 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_10;
   if (iVar3 == 0) {
-    DibPut((undefined4 *)local_10->field_0194,param_1,0x50,'\x01',(byte *)local_10->field_09ED);
-    if (pCVar2->field_0BF5 == 0x38) {
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)local_10->field_0194,param_1,0x50,'\x01',
+           (byte *)local_10->field_09ED);
+    if (pCVar2->field_0BF5 == CASE_38) {
       local_c = (undefined1 *)CONCAT31(local_c._1_3_,2);
     }
     else {
-      local_c = (undefined1 *)CONCAT31(local_c._1_3_,pCVar2->field_0BF5 == 0x4f);
+      local_c = (undefined1 *)CONCAT31(local_c._1_3_,pCVar2->field_0BF5 == CASE_4F);
     }
     pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02D2,(uint)local_c & 0xff);
-    DibPut((undefined4 *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',pbVar4);
-    if (pCVar2->field_0BF5 == 0x38) {
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',pbVar4);
+    if (pCVar2->field_0BF5 == CASE_38) {
       local_c = &DAT_007aa024;
       local_8 = 0x271c;
     }
-    else if (pCVar2->field_0BF5 == 0x4f) {
+    else if (pCVar2->field_0BF5 == CASE_4F) {
       local_c = &DAT_007aa020;
       local_8 = 0x271e;
     }
@@ -68,14 +69,14 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
                                          ,0);
     if (pbVar4 != (byte *)0x0) {
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c2744,(uint)(ushort)pCVar2->field_0C34);
-      if (pCVar2->field_0BF5 == 0x38) {
+      if (pCVar2->field_0BF5 == CASE_38) {
         iVar7 = 1;
       }
       else {
-        iVar7 = (-(uint)(pCVar2->field_0BF5 != 0x4f) & 0xfffffffe) + 2;
+        iVar7 = (-(uint)(pCVar2->field_0BF5 != CASE_4F) & 0xfffffffe) + 2;
       }
       ccFntTy::WrStr(pCVar2->field_01C4,&DAT_0080f33a,-1,-1,iVar7);
-      DibPut((undefined4 *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
       ccFntTy::EraseSufr(pCVar2->field_01C4);
     }
     g_currentExceptionFrame = local_54.previous;

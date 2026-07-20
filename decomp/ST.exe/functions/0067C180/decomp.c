@@ -41,7 +41,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   
   local_c = (AnonShape_00676C40_253791B9 *)0x0;
   if ((((this->field_0676 != '\0') && (*(int *)&this->field_0x640 != 0xff)) &&
-      (this->field_0695 != 0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      (this->field_0695 != (DArrayTy *)0x0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;

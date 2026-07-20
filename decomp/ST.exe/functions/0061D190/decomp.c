@@ -3,7 +3,7 @@
    E:\__titans\nick\to_light.Cpp
    STLightC::GetMessage */
 
-undefined4 __thiscall STLightC::GetMessage(STLightC *this,int param_1)
+undefined4 __thiscall STLightC::GetMessage(STLightC *this,AnonShape_0061D190_F4B28A60 *param_1)
 
 {
   short sVar1;
@@ -14,7 +14,7 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,int param_1)
   undefined4 uVar5;
   int iVar6;
   undefined4 unaff_ESI;
-  undefined4 *puVar7;
+  AnonNested_0061D190_0014_96ED958D *pAVar7;
   void *unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_60;
@@ -40,10 +40,10 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_light_Cpp_007d01b0,0x7c);
     return 0xffff;
   }
-  uVar4 = *(uint *)(param_1 + 0x10);
+  uVar4 = param_1->field_0010;
   if (uVar4 < 4) {
     if (uVar4 == 3) {
-      thunk_FUN_0061f530((int)local_8);
+      thunk_FUN_0061f530((AnonShape_0061F530_4582158C *)local_8);
       thunk_FUN_0061d650((AnonShape_0061D650_84237B09 *)this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -112,15 +112,15 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,int param_1)
       if (iVar3 == 0) goto LAB_0061d434;
     }
     else if (uVar4 == 2) {
-      puVar7 = *(undefined4 **)(param_1 + 0x14);
-      if (puVar7[3] == 2) {
-        thunk_FUN_0061d8f0(local_8,puVar7);
-        puVar7 = (undefined4 *)&this_00->field_0xb0;
+      pAVar7 = param_1->field_0014;
+      if (pAVar7->field_000C == 2) {
+        thunk_FUN_0061d8f0(local_8,&pAVar7->field_0000);
+        puVar8 = (undefined4 *)&this_00->field_0xb0;
         for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar7 = 0;
-          puVar7 = puVar7 + 1;
+          *puVar8 = 0;
+          puVar8 = puVar8 + 1;
         }
-        *(undefined1 *)puVar7 = 0;
+        *(undefined1 *)puVar8 = 0;
         *(undefined4 *)&this_00->field_0xac = *(undefined4 *)&this_00->field_0xa8;
         thunk_FUN_0061dfe0((int)this_00);
         g_currentExceptionFrame = local_60.previous;
@@ -128,11 +128,11 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,int param_1)
       }
       puVar8 = (undefined4 *)&local_8->field_0x1c;
       for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar8 = *puVar7;
-        puVar7 = puVar7 + 1;
+        *puVar8 = pAVar7->field_0000;
+        pAVar7 = (AnonNested_0061D190_0014_96ED958D *)&pAVar7->field_0x4;
         puVar8 = puVar8 + 1;
       }
-      *(undefined2 *)puVar8 = *(undefined2 *)puVar7;
+      *(undefined2 *)puVar8 = *(undefined2 *)&pAVar7->field_0000;
       iVar3 = DAT_00808754;
       *(int *)&local_8->field_0xac = DAT_00808754;
       uVar4 = iVar3 * 0x41c64e6d + 0x3039;

@@ -6,8 +6,8 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
   short sVar2;
   short sVar3;
   int iVar4;
-  void *this_00;
-  void *local_14;
+  STWorldObject *this_00;
+  STWorldObject *local_14;
   int local_10 [3];
   
   local_10[2] = 0;
@@ -19,10 +19,10 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
   if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
       (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) ||
        ((SHORT_007fb244 <= sVar2 ||
-        ((this_00 = *(void **)(DAT_007fb248 +
-                              ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                              (int)sVar1) * 8), this_00 == (void *)0x0 ||
-         (*(int *)((int)this_00 + 0x18) != *(int *)((int)this + 0x2d1))))))))) &&
+        ((this_00 = g_worldCells
+                    [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                     (int)sVar1].objects[0], this_00 == (STWorldObject *)0x0 ||
+         (*(int *)&this_00->field_0x18 != *(int *)((int)this + 0x2d1))))))))) &&
      (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2d1),(int *)&local_14),
      this_00 = local_14, iVar4 == -4)) {
     return 0xffffffff;

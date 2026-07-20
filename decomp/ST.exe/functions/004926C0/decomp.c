@@ -123,16 +123,16 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
   if ((((((short)uVar1 < 0) || (SHORT_007fb240 <= (short)uVar1)) || ((short)uVar2 < 0)) ||
       (((SHORT_007fb242 <= (short)uVar2 || (SHORT_007fb244 < 5)) ||
        (local_8 = (int)SHORT_007fb246,
-       *(int *)(DAT_007fb248 +
-               ((int)(short)uVar2 * (int)SHORT_007fb240 + SHORT_007fb246 * 4 + (int)(short)uVar1) *
-               8) == 0)))) &&
+       g_worldCells
+       [(int)(short)uVar2 * (int)SHORT_007fb240 + SHORT_007fb246 * 4 + (int)(short)uVar1].objects[0]
+       == (STWorldObject *)0x0)))) &&
      ((((short)uVar1 < 0 || (SHORT_007fb240 <= (short)uVar1)) ||
       (((short)uVar2 < 0 ||
        (((SHORT_007fb242 <= (short)uVar2 || (SHORT_007fb244 < 5)) ||
         (local_8 = (int)SHORT_007fb246,
-        *(int *)(DAT_007fb248 + 4 +
-                ((int)(short)uVar2 * (int)SHORT_007fb240 + SHORT_007fb246 * 4 + (int)(short)uVar1) *
-                8) == 0)))))))) {
+        g_worldCells
+        [(int)(short)uVar2 * (int)SHORT_007fb240 + SHORT_007fb246 * 4 + (int)(short)uVar1].objects
+        [1] == (STWorldObject *)0x0)))))))) {
     *(ushort *)&this->field_0x5f2 = uVar1;
     *(ushort *)&this->field_0x5f4 = uVar2;
     this->field_05F6 = 4;
@@ -152,13 +152,12 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
            ((sVar5 = (short)iVar6, SHORT_007fb240 <= sVar3 ||
             ((((SHORT_007fb242 <= sVar4 || (sVar5 < 0)) ||
               ((SHORT_007fb244 <= sVar5 ||
-               (*(int *)(DAT_007fb248 +
-                        ((int)sVar4 * (int)SHORT_007fb240 + sVar5 * local_8 + (int)sVar3) * 8) == 0)
-               ))) && ((((SHORT_007fb240 <= sVar3 || (SHORT_007fb242 <= sVar4)) || (sVar5 < 0)) ||
-                       ((SHORT_007fb244 <= sVar5 ||
-                        (*(int *)(DAT_007fb248 + 4 +
-                                 ((int)sVar4 * (int)SHORT_007fb240 + sVar5 * local_8 + (int)sVar3) *
-                                 8) == 0)))))))))) {
+               (g_worldCells[(int)sVar4 * (int)SHORT_007fb240 + sVar5 * local_8 + (int)sVar3].
+                objects[0] == (STWorldObject *)0x0)))) &&
+             ((((SHORT_007fb240 <= sVar3 || (SHORT_007fb242 <= sVar4)) || (sVar5 < 0)) ||
+              ((SHORT_007fb244 <= sVar5 ||
+               (g_worldCells[(int)sVar4 * (int)SHORT_007fb240 + sVar5 * local_8 + (int)sVar3].
+                objects[1] == (STWorldObject *)0x0)))))))))) {
           this->field_05F6 = sVar5;
           *(short *)&this->field_0x5f4 = sVar4;
           *(short *)&this->field_0x5f2 = sVar3;

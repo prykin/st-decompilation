@@ -80,8 +80,8 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
           if ((cVar2 != -1) && (local_8 = (uint)local_8._1_3_ << 8, cVar2 != '\0')) {
             do {
               pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,1);
-              DibPut((undefined4 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
-                     pbVar6);
+              DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,
+                     0x87,'\x01',pbVar6);
               bVar4 = (byte)local_8 + 1;
               local_8 = CONCAT31(local_8._1_3_,bVar4);
             } while (bVar4 < (byte)this_00->field_0BCD);
@@ -91,7 +91,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
             iVar5 = (local_8 & 0xff) * 4 + 0x3f;
             do {
               pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
-              DibPut((undefined4 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
+              DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
               iVar5 = iVar5 + 4;
               iVar7 = iVar7 + -1;
             } while (iVar7 != 0);
@@ -144,7 +144,8 @@ switchD_005030a2_caseD_1a:
   if ((this_00->field_0BB6 & 0xfe) != 0) {
     do {
       pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
-      DibPut((undefined4 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
+             '\x01',pbVar6);
       bVar4 = (byte)local_8 + 1;
       local_8 = CONCAT31(local_8._1_3_,bVar4);
     } while (bVar4 < (byte)this_00->field_0BB6 >> 1);
@@ -154,7 +155,7 @@ switchD_005030a2_caseD_1a:
     iVar5 = (local_8 & 0xff) * 4 + 0x3f;
     do {
       pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
-      DibPut((undefined4 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
       iVar5 = iVar5 + 4;
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);

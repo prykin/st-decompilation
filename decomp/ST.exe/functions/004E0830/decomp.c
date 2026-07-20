@@ -1,4 +1,12 @@
 
+/* [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_32=50;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_69=105;CASE_70=112;CASE_72=114
+   
+   [STSwitchEnumApplier] Switch target field_04D0 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
+
 undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
 
 {
@@ -26,8 +34,8 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   undefined4 uVar21;
   undefined4 uVar22;
   
-  if (param_1->field_04D0 == 1) {
-    if (*(int *)(param_1->field_01F5 + 0x1a4) == *(int *)(param_1->field_01F5 + 0x1a0)) {
+  if (param_1->field_04D0 == CASE_1) {
+    if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
       iVar4 = *(int *)&param_1->field_0x4e8;
       if (iVar4 == 1) {
         if (*(int *)&param_1->field_0x4e4 == 0) {
@@ -108,10 +116,10 @@ LAB_004e0a1f:
 LAB_004e0a4f:
         iVar5 = 0xc;
       }
-      if ((*(int *)(param_1->field_01F5 + 0x18 + iVar5 * 0x24) ==
-           *(int *)(param_1->field_01F5 + iVar5 * 0x24 + 0x14)) &&
+      if ((*(int *)(&param_1->field_01F5->field_0x18 + iVar5 * 0x24) ==
+           *(int *)(&param_1->field_01F5->field_0x14 + iVar5 * 0x24)) &&
          (*(int *)&param_1->field_0x4e8 == 0)) {
-        param_1->field_04D0 = 0;
+        param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,1);
       }
     }
@@ -119,7 +127,7 @@ LAB_004e0a4f:
   if ((param_1->field_05AC != CASE_52) && (param_1->field_05AC != CASE_5F))
   goto switchD_004e0aad_default;
   switch(param_1->field_04D0) {
-  case 2:
+  case CASE_2:
     iVar5 = *(int *)&param_1->field_0x5b4;
     iVar4 = iVar5 + 2;
     if (iVar5 < iVar4) {
@@ -133,9 +141,9 @@ LAB_004e0a4f:
             if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
                ((sVar9 = (short)iVar5, sVar9 < 0 ||
                 ((((SHORT_007fb242 <= sVar9 || (sVar10 < 0)) || (SHORT_007fb244 <= sVar10)) ||
-                 (*(int *)(DAT_007fb248 +
-                          ((int)sVar9 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 +
-                          (int)sVar3) * 8) == 0)))))) {
+                 (g_worldCells
+                  [(int)sVar9 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 + (int)sVar3
+                  ].objects[0] == (STWorldObject *)0x0)))))) {
               *(int *)&param_1->field_0x4f0 = iVar6;
               *(undefined4 *)&param_1->field_0x4ec = 1;
               *(int *)&param_1->field_0x4f4 = iVar5;
@@ -146,7 +154,7 @@ LAB_004e0a4f:
               thunk_FUN_004d0970(DAT_00800bcc,*(undefined4 *)&param_1->field_0x4f0,
                                  *(undefined4 *)&param_1->field_0x4f4,
                                  *(undefined4 *)&param_1->field_0x4f8);
-              param_1->field_04D0 = 3;
+              param_1->field_04D0 = CASE_3;
               *(int *)&param_1->field_0x4fc = *(int *)&param_1->field_0x5b0 * 0xc9 + 0xdc;
               *(int *)&param_1->field_0x500 = *(int *)&param_1->field_0x5b4 * 0xc9 + 100;
               *(int *)&param_1->field_0x504 = *(int *)&param_1->field_0x5b8 * 0xc9 + -0x28;
@@ -170,20 +178,20 @@ LAB_004e0a4f:
       } while (iVar5 < iVar4);
     }
     break;
-  case 3:
+  case CASE_3:
     iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-    if ((*(int *)(param_1->field_01F5 + 0x20c) <= iVar4) && (*(int *)&param_1->field_0x4dc != 0)) {
+    if (((int)param_1->field_01F5->field_020C <= iVar4) && (*(int *)&param_1->field_0x4dc != 0)) {
       *(undefined4 *)&param_1->field_0x508 = 0;
       if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
         thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
       }
-      param_1->field_04D0 = 4;
+      param_1->field_04D0 = CASE_4;
       *(undefined4 *)&param_1->field_0x510 = 0;
       *(undefined4 *)&param_1->field_0x514 = PTR_00802a38->field_00E4;
       TLOBaseTy::RotateSpr(param_1,0);
     }
     break;
-  case 4:
+  case CASE_4:
     if (*(int *)&param_1->field_0x510 < 0x1e) break;
     thunk_FUN_004d0a80(DAT_00800bcc,*(int *)&param_1->field_0x4f0,*(int *)&param_1->field_0x4f4,
                        *(int *)&param_1->field_0x4f8);
@@ -221,7 +229,7 @@ LAB_004e0de2:
         goto LAB_004e0de2;
       }
     }
-    param_1->field_04D0 = 5;
+    param_1->field_04D0 = CASE_5;
     thunk_FUN_004cbf70((int)param_1);
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
@@ -238,21 +246,21 @@ LAB_004e0f14:
     cVar20 = param_1->field_023D;
     pTVar8 = param_1->vtable;
     goto LAB_004e0e15;
-  case 5:
+  case CASE_5:
     iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-    if (iVar4 == *(int *)(param_1->field_01F5 + 0x20c)) {
-      param_1->field_04D0 = 0;
+    if (iVar4 == param_1->field_01F5->field_020C) {
+      param_1->field_04D0 = CASE_0;
       *(undefined4 *)&param_1->field_0x4dc = 0;
       *(undefined4 *)&param_1->field_0x508 = 0;
       thunk_FUN_004cbf70((int)param_1);
       TLOBaseTy::RotateSpr(param_1,0);
     }
     break;
-  case 6:
+  case CASE_6:
     if (((*(int *)&param_1->field_0x4fc != *(int *)&param_1->field_0x5b0 * 0xc9 + 0xdc) ||
         (*(int *)&param_1->field_0x500 != *(int *)&param_1->field_0x5b4 * 0xc9 + 100)) ||
        (*(int *)&param_1->field_0x504 != *(int *)&param_1->field_0x5b8 * 0xc9 + -0x28)) break;
-    param_1->field_04D0 = 5;
+    param_1->field_04D0 = CASE_5;
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
@@ -263,7 +271,7 @@ LAB_004e0e15:
     (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
-  if ((param_1->field_05AC == CASE_61) && (*(int *)&param_1->field_0x4e0 != 0)) {
+  if ((param_1->field_05AC == 0x61) && (*(int *)&param_1->field_0x4e0 != 0)) {
     iVar4 = thunk_FUN_004e4180(*(int *)&param_1->field_0x24);
     iVar5 = thunk_FUN_004e41c0(*(int *)&param_1->field_0x24);
     if ((iVar5 < iVar4) &&

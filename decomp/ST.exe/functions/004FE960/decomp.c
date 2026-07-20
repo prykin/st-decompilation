@@ -17,7 +17,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   char cVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar9;
+  AnonShape_006B84D0_7C7D97C6 *pAVar9;
   undefined4 uVar10;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
@@ -40,28 +40,30 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x8a);
     return;
   }
-  DibPut((undefined4 *)local_c->field_0180,0,0,'\x01',(byte *)local_c->field_0954);
-  DibPut((undefined4 *)this_00->field_0184,0,0,'\x01',(byte *)this_00->field_0958);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)local_c->field_0180,0,0,'\x01',(byte *)local_c->field_0954);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0184,0,0,'\x01',(byte *)this_00->field_0958);
   if (this_00->field_02E2 != 0) {
     thunk_FUN_004f1890(this_00,0);
   }
   if (this_00->field_0B63 == '\0') {
     if (DAT_0080874e == '\x03') {
-      DibPut((undefined4 *)this_00->field_018C,0,0,'\x06',(byte *)this_00->field_0978);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_018C,0,0,'\x06',
+             (byte *)this_00->field_0978);
       goto LAB_004fea77;
     }
     pbVar6 = (byte *)FUN_0070b3a0(this_00->field_029E,1);
-    puVar9 = (undefined4 *)this_00->field_0188;
+    pAVar9 = (AnonShape_006B84D0_7C7D97C6 *)this_00->field_0188;
   }
   else {
     if (DAT_0080874e == '\x03') {
-      DibPut((undefined4 *)this_00->field_018C,0,0,'\x06',(byte *)this_00->field_0980);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_018C,0,0,'\x06',
+             (byte *)this_00->field_0980);
       goto LAB_004fea77;
     }
     pbVar6 = (byte *)FUN_0070b3a0(this_00->field_029E,0);
-    puVar9 = (undefined4 *)this_00->field_0188;
+    pAVar9 = (AnonShape_006B84D0_7C7D97C6 *)this_00->field_0188;
   }
-  DibPut(puVar9,0,0,'\x01',pbVar6);
+  DibPut(pAVar9,0,0,'\x01',pbVar6);
 LAB_004fea77:
   PaintDeep(this_00,1);
   if (this_00->field_0B63 == '\x02') {
@@ -81,7 +83,7 @@ LAB_004fea77:
       if (this_00->field_0B81 != 0) {
         uVar5 = thunk_FUN_00526ba0(this_00->field_0B81,this_00->field_0B85);
         pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02BE,uVar5);
-        DibPut((undefined4 *)this_00->field_0184,0xb,0x31,'\x01',pbVar6);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0184,0xb,0x31,'\x01',pbVar6);
         FUN_006b4170(this_00->field_0184,0,0x3b,0x31,7,0x21,0);
         bVar1 = this_00->field_0B86;
         cVar8 = (char)(((uint)bVar1 * 0x21) / 100);
@@ -100,7 +102,7 @@ LAB_004fea77:
                   ((undefined4 *)this_00->field_0184,0,0x3c,0x52 - uVar5,(byte *)this_00->field_028A
                    ,0,iVar3,*(int *)(this_00->field_028A + 4) - uVar5,5,uVar5);
         pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02CA,1);
-        DibPut((undefined4 *)this_00->field_0184,10,0x30,'\x06',pbVar6);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0184,10,0x30,'\x06',pbVar6);
       }
     }
     else {

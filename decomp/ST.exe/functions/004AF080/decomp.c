@@ -69,9 +69,9 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
         iVar19 = iVar10 * local_1c;
         if (0 < iVar10) {
           do {
-            local_10 = *(STFishC **)
-                        (DAT_007fb248 + (iVar10 * local_1c + iVar22 + SHORT_007fb246 * local_14) * 8
-                        );
+            local_10 = (STFishC *)
+                       g_worldCells[iVar10 * local_1c + iVar22 + SHORT_007fb246 * local_14].objects
+                       [0];
             if (local_10 == (STFishC *)0x0) {
               sVar21 = (short)iVar22;
               if ((((sVar21 < 0) || ((short)_SHORT_007fb240 <= sVar21)) ||
@@ -240,7 +240,7 @@ LAB_004af325:
             }
             if (param_2 != 100) {
               if (param_2 == 0x4d) {
-                pDVar14 = g_playerRuntime[param_1].field2287_0x9e2;
+                pDVar14 = g_playerRuntime[param_1].field2169_0x9e2;
                 if (pDVar14 != (DArrayTy *)0x0) {
                   iVar9 = DAT_00795118 / 0xc9;
                   uVar20 = 0;
@@ -254,14 +254,14 @@ LAB_004af325:
                          (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
                       goto cf_common_join_004AFC34;
                       uVar20 = uVar20 + 1;
-                      pDVar14 = g_playerRuntime[param_1].field2287_0x9e2;
+                      pDVar14 = g_playerRuntime[param_1].field2169_0x9e2;
                     } while ((int)uVar20 < (int)pDVar14->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (param_2 == 0x43) {
-                pDVar14 = g_playerRuntime[param_1].field2290_0x9ee;
+                pDVar14 = g_playerRuntime[param_1].field2172_0x9ee;
                 if (pDVar14 != (DArrayTy *)0x0) {
                   iVar9 = DAT_007950f0 / 0xc9;
                   uVar20 = 0;
@@ -275,14 +275,14 @@ LAB_004af325:
                          (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
                       goto cf_common_join_004AFC34;
                       uVar20 = uVar20 + 1;
-                      pDVar14 = g_playerRuntime[param_1].field2290_0x9ee;
+                      pDVar14 = g_playerRuntime[param_1].field2172_0x9ee;
                     } while ((int)uVar20 < (int)pDVar14->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (param_2 == 0x73) {
-                pDVar14 = g_playerRuntime[param_1].field2291_0x9f2;
+                pDVar14 = g_playerRuntime[param_1].field2173_0x9f2;
                 if (pDVar14 != (DArrayTy *)0x0) {
                   iVar9 = DAT_007951b0 / 0xc9;
                   uVar20 = 0;
@@ -296,14 +296,14 @@ LAB_004af325:
                          (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
                       goto cf_common_join_004AFC34;
                       uVar20 = uVar20 + 1;
-                      pDVar14 = g_playerRuntime[param_1].field2291_0x9f2;
+                      pDVar14 = g_playerRuntime[param_1].field2173_0x9f2;
                     } while ((int)uVar20 < (int)pDVar14->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (param_2 == 0x65) {
-                pDVar14 = g_playerRuntime[param_1].field2288_0x9e6;
+                pDVar14 = g_playerRuntime[param_1].field2170_0x9e6;
                 if (pDVar14 != (DArrayTy *)0x0) {
                   iVar9 = DAT_00795178 / 0xc9;
                   uVar20 = 0;
@@ -317,7 +317,7 @@ LAB_004af325:
                          (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
                       goto cf_common_join_004AFC34;
                       uVar20 = uVar20 + 1;
-                      pDVar14 = g_playerRuntime[param_1].field2288_0x9e6;
+                      pDVar14 = g_playerRuntime[param_1].field2170_0x9e6;
                     } while ((int)uVar20 < (int)pDVar14->count);
                   }
                 }
@@ -361,7 +361,7 @@ LAB_004af325:
                             ((iVar10 != iVar22 ||
                              ((iVar11 != iVar15 && ((iVar10 != iVar22 || (iVar11 != iVar1)))))))) &&
                            (((*local_3c == '\x05' &&
-                             (local_10 = *(STFishC **)(iVar18 + DAT_007fb248),
+                             (local_10 = *(STFishC **)((int)g_worldCells->objects + iVar18),
                              local_10 != (STFishC *)0x0)) &&
                             (((iVar12 = (*local_10->vtable->vfunc_2C)(), iVar12 == 0x53 &&
                               (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
@@ -387,7 +387,7 @@ LAB_004af325:
               }
               goto cf_common_join_004AFC34;
             }
-            pDVar14 = g_playerRuntime[param_1].field2284_0x9d6;
+            pDVar14 = g_playerRuntime[param_1].field2166_0x9d6;
             if ((pDVar14 != (DArrayTy *)0x0) && (uVar20 = 0, 0 < (int)pDVar14->count)) {
               do {
                 FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar14,uVar20,&local_10);
@@ -397,7 +397,7 @@ LAB_004af325:
                    (uVar17 = local_8 - local_1c >> 0x1f,
                    (int)((local_8 - local_1c ^ uVar17) - uVar17) < 0x10))
                 goto cf_common_join_004AFC34;
-                pDVar14 = g_playerRuntime[param_1].field2284_0x9d6;
+                pDVar14 = g_playerRuntime[param_1].field2166_0x9d6;
                 uVar20 = uVar20 + 1;
               } while ((int)uVar20 < (int)pDVar14->count);
             }

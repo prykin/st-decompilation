@@ -4,7 +4,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
 {
   int iVar1;
   undefined1 *this;
-  undefined4 *puVar2;
+  STWorldObject *pSVar2;
   bool bVar3;
   int iVar4;
   uint uVar5;
@@ -106,11 +106,11 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       if ((((-1 < local_10) &&
            (((local_10 < SHORT_007fb240 && (-1 < local_8)) && (local_8 < SHORT_007fb242)))) &&
           (((-1 < sVar7 && (sVar7 < SHORT_007fb244)) &&
-           (puVar2 = *(undefined4 **)
-                      (DAT_007fb248 +
-                      ((int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
-                      (int)local_10) * 8), puVar2 != (undefined4 *)0x0)))) && (puVar2[8] != 0xaa)) {
-        thunk_FUN_00584c50(param_1,puVar2);
+           (pSVar2 = g_worldCells
+                     [(int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
+                      (int)local_10].objects[0], pSVar2 != (STWorldObject *)0x0)))) &&
+         (pSVar2->value_20 != 0xaa)) {
+        thunk_FUN_00584c50(param_1,&pSVar2->vtable);
         thunk_FUN_005860d0(param_1,(int)(short)param_1->field_0041,(int)(short)param_1->field_0043,
                            0x464);
       }
@@ -232,11 +232,11 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       if (((-1 < local_10) &&
           ((((local_10 < SHORT_007fb240 && (-1 < local_8)) && (local_8 < SHORT_007fb242)) &&
            ((-1 < sVar7 && (sVar7 < SHORT_007fb244)))))) &&
-         ((puVar2 = *(undefined4 **)
-                     (DAT_007fb248 +
-                     ((int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
-                     (int)local_10) * 8), puVar2 != (undefined4 *)0x0 && (puVar2[8] != 0xaa)))) {
-        thunk_FUN_00584c50(param_1,puVar2);
+         ((pSVar2 = g_worldCells
+                    [(int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
+                     (int)local_10].objects[0], pSVar2 != (STWorldObject *)0x0 &&
+          (pSVar2->value_20 != 0xaa)))) {
+        thunk_FUN_00584c50(param_1,&pSVar2->vtable);
       }
       param_1->field_0231 = 2;
       thunk_FUN_00584b10((AnonShape_00584B10_33997544 *)param_1);

@@ -5,7 +5,7 @@ void __fastcall FUN_00581200(int param_1)
   byte bVar1;
   byte bVar2;
   char cVar3;
-  int *piVar4;
+  STWorldObject *pSVar4;
   void *this;
   undefined4 uVar5;
   uint uVar6;
@@ -80,28 +80,28 @@ void __fastcall FUN_00581200(int param_1)
           ((-1 < (short)local_10 &&
            (((short)local_10 < SHORT_007fb242 && (sVar16 = (short)local_18, -1 < sVar16)))))) &&
          ((sVar16 < SHORT_007fb244 &&
-          ((piVar4 = *(int **)(DAT_007fb248 +
-                              ((int)sVar16 * (int)SHORT_007fb246 +
-                               (int)SHORT_007fb240 * (int)(short)local_10 + (int)sVar13) * 8),
-           piVar4 != (int *)0x0 &&
-           (((((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
-              (iVar12 = (**(code **)(*piVar4 + 0xf0))(), pAVar8 = local_c, iVar12 != 0)) &&
-             ((uint)piVar4[9] < 8)) &&
-            ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8))
-            )))))))) {
+          ((pSVar4 = g_worldCells
+                     [(int)sVar16 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)(short)local_10
+                      + (int)sVar13].objects[0], pSVar4 != (STWorldObject *)0x0 &&
+           (((((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
+              (iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), pAVar8 = local_c, iVar12 != 0)) &&
+             (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)) &&
+            ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+             ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))))))))) {
         this = (void *)local_c->field_0010;
         if (*(char *)((int)this + 0x146f) == '\0') {
-          iVar10 = thunk_FUN_005822e0(this,*(byte *)(piVar4 + 9),local_c->field_0024);
+          iVar10 = thunk_FUN_005822e0(this,*(byte *)&pSVar4[1].vtable,local_c->field_0024);
           bVar17 = iVar10 < 0;
         }
         else {
           local_5 = *(char *)((uint)local_c->field_0024 * 0x51 + 0x11ca + (int)this);
-          bVar17 = local_5 != *(char *)((uint)*(byte *)(piVar4 + 9) * 0x51 + 0x11ca + (int)this);
+          bVar17 = local_5 !=
+                   *(char *)((uint)*(byte *)&pSVar4[1].vtable * 0x51 + 0x11ca + (int)this);
         }
         iVar10 = local_18;
-        if ((bVar17) && (iVar12 = (**(code **)(*piVar4 + 0xf8))(), iVar10 = local_18, iVar12 != 0))
-        {
-          *(int **)(pAVar8->field_020B + local_1c * 4) = piVar4;
+        if ((bVar17) &&
+           (iVar12 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar10 = local_18, iVar12 != 0)) {
+          *(STWorldObject **)(pAVar8->field_020B + local_1c * 4) = pSVar4;
           local_1c = local_1c + 1;
           if (pAVar8->field_01FD <= local_1c) goto cf_break_loop_00581775;
         }
@@ -160,14 +160,16 @@ LAB_00581545:
               ((sVar16 = (short)local_10, sVar16 < 0 || (SHORT_007fb242 <= sVar16)))))) ||
             (sVar9 = (short)local_18, sVar9 < 0)) ||
            ((SHORT_007fb244 <= sVar9 ||
-            (piVar4 = *(int **)(DAT_007fb248 +
-                               ((int)sVar9 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar16
-                               + (int)sVar13) * 8), piVar4 == (int *)0x0)))))) ||
-         ((((piVar4[8] != 1000 && (piVar4[8] != 0x14)) ||
-           ((iVar12 = (**(code **)(*piVar4 + 0xf0))(), iVar12 == 0 || (7 < (uint)piVar4[9])))) ||
-          ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[piVar4[9] * 0x51]))))
-         )) goto cf_continue_loop_005814A2;
-      bVar1 = *(byte *)(piVar4 + 9);
+            (pSVar4 = g_worldCells
+                      [(int)sVar9 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar16 +
+                       (int)sVar13].objects[0], pSVar4 == (STWorldObject *)0x0)))))) ||
+         ((((pSVar4->value_20 != 1000 && (pSVar4->value_20 != 0x14)) ||
+           ((iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar12 == 0 ||
+            ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable)))) ||
+          ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+           (7 < (byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51]))))))
+      goto cf_continue_loop_005814A2;
+      bVar1 = *(byte *)&pSVar4[1].vtable;
       bVar2 = local_c->field_0024;
       iVar12 = local_c->field_0010;
       if (*(char *)(iVar12 + 0x146f) != '\0') {
@@ -204,9 +206,9 @@ LAB_0058171d:
       }
       bVar17 = iVar12 < 0;
 LAB_00581728:
-      if ((bVar17) && (iVar12 = (**(code **)(*piVar4 + 0xf8))(), iVar12 != 0)) {
+      if ((bVar17) && (iVar12 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar12 != 0)) {
         local_1c = local_1c + 1;
-        *(int **)(local_c->field_020B + -4 + local_1c * 4) = piVar4;
+        *(STWorldObject **)(local_c->field_020B + -4 + local_1c * 4) = pSVar4;
         if (local_c->field_01FD <= local_1c) goto cf_break_loop_00581775;
       }
       goto cf_continue_loop_005814A2;

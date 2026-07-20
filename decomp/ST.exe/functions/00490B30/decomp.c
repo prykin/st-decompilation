@@ -25,10 +25,10 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
       param_1 = (AnonShape_00490B30_6CCF6294 *)0x0;
     }
     else {
-      param_1 = *(AnonShape_00490B30_6CCF6294 **)
-                 (DAT_007fb248 +
-                 ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1)
-                 * 8);
+      param_1 = (AnonShape_00490B30_6CCF6294 *)
+                g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+                objects[0];
     }
     if ((((param_1 != (AnonShape_00490B30_6CCF6294 *)0x0) &&
          (param_1->field_0018 == *(int *)((int)this + 0x7f4))) ||

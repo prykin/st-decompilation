@@ -25,7 +25,8 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar9);
   pCVar2 = local_8;
   if (iVar3 == 0) {
-    DibPut((undefined4 *)local_8->field_0190,0,0,'\x01',(byte *)local_8->field_0994);
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)local_8->field_0190,0,0,'\x01',(byte *)local_8->field_0994
+          );
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0190,0,5,6,0x2a,10);
     iVar8 = -1;
     iVar7 = -1;

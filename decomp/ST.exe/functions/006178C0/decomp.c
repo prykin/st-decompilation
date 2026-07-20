@@ -7,47 +7,50 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this,int param_1)
 
 {
   code *pcVar1;
-  int iVar2;
+  DArrayTy *pDVar2;
   int iVar3;
   int iVar4;
-  uint uVar5;
-  bool bVar6;
+  void *pvVar5;
+  uint uVar6;
+  bool bVar7;
   int local_8;
   
-  iVar4 = this->field_005E;
-  iVar3 = 1;
-  if (iVar4 != 0) {
-    uVar5 = 0;
-    if (0 < *(int *)(iVar4 + 0xc)) {
-      bVar6 = *(int *)(iVar4 + 0xc) != 0;
+  pDVar2 = this->field_005E;
+  iVar4 = 1;
+  if (pDVar2 != (DArrayTy *)0x0) {
+    uVar6 = 0;
+    if (0 < (int)pDVar2->count) {
+      bVar7 = pDVar2->count != 0;
       do {
-        if ((bVar6) && (iVar4 = *(int *)(iVar4 + 8) * uVar5 + *(int *)(iVar4 + 0x1c), iVar4 != 0)) {
-          if (*(int *)(iVar4 + 0x18) == 0) {
-            iVar3 = -2;
+        if ((bVar7) &&
+           (pvVar5 = (void *)(pDVar2->elementSize * uVar6 + (int)pDVar2->data),
+           pvVar5 != (void *)0x0)) {
+          if (*(int *)((int)pvVar5 + 0x18) == 0) {
+            iVar4 = -2;
           }
           else {
-            iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)(iVar4 + 0x1c),&local_8);
-            if (iVar2 == -4) {
-              iVar3 = -3;
+            iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)((int)pvVar5 + 0x1c),&local_8);
+            if (iVar3 == -4) {
+              iVar4 = -3;
             }
-            else if (*(int *)(iVar4 + 0x18) == local_8) {
-              if (*(int *)(local_8 + 0x8b) != *(int *)(iVar4 + 0x20)) {
-                iVar3 = -5;
+            else if (*(int *)((int)pvVar5 + 0x18) == local_8) {
+              if (*(int *)(local_8 + 0x8b) != *(int *)((int)pvVar5 + 0x20)) {
+                iVar4 = -5;
               }
             }
             else {
-              iVar3 = -4;
+              iVar4 = -4;
             }
           }
         }
         else {
-          iVar3 = -1;
+          iVar4 = -1;
         }
-        uVar5 = uVar5 + 1;
-        iVar4 = this->field_005E;
-        bVar6 = uVar5 < *(uint *)(iVar4 + 0xc);
-      } while ((int)uVar5 < (int)*(uint *)(iVar4 + 0xc));
-      if (iVar3 == 0) {
+        uVar6 = uVar6 + 1;
+        pDVar2 = this->field_005E;
+        bVar7 = uVar6 < pDVar2->count;
+      } while ((int)uVar6 < (int)pDVar2->count);
+      if (iVar4 == 0) {
         iVar4 = ReportDebugMessage(s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x8a,0,0,
                                    s_JumpManagC__CheckSystrm_CheckPro_007d00a0,0);
         if (iVar4 != 0) {

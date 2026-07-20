@@ -114,10 +114,10 @@ LAB_0058ea68:
         if (((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) &&
              ((-1 < sVar3 && ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))))) &&
             (sVar2 < SHORT_007fb244)) &&
-           ((((pSVar8 = *(STFishC **)
-                         (DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar1) * 8), local_8 = pSVar8, pSVar8 != (STFishC *)0x0 &&
+           ((((pSVar8 = (STFishC *)
+                        g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                         (int)sVar1].objects[0], local_8 = pSVar8, pSVar8 != (STFishC *)0x0 &&
               (STFishC::sub_004162B0(pSVar8,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
@@ -164,10 +164,10 @@ LAB_0058ea68:
         local_8 = (STFishC *)0x0;
       }
       else {
-        local_8 = *(STFishC **)
-                   (DAT_007fb248 +
-                   ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3
-                   ) * 8);
+        local_8 = (STFishC *)
+                  g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3]
+                  .objects[0];
       }
       if (((this->field_0047 != sVar3) || (this->field_0049 != sVar2)) ||
          ((this->field_004B != sVar1 ||

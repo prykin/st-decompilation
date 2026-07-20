@@ -12,7 +12,7 @@ int FUN_004dfb90(uint param_1,int param_2,int param_3)
   iVar3 = param_3;
   iVar6 = 0;
   pSVar2 = g_playerRuntime + param_1;
-  pDVar5 = pSVar2->field2283_0x9d2;
+  pDVar5 = pSVar2->field2165_0x9d2;
   if ((pDVar5 != (DArrayTy *)0x0) && (param_1 = 0, 0 < (int)pDVar5->count)) {
     do {
       FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar5,param_1,&param_3);
@@ -29,7 +29,7 @@ int FUN_004dfb90(uint param_1,int param_2,int param_3)
         }
       }
       param_1 = param_1 + 1;
-      pDVar5 = pSVar2->field2283_0x9d2;
+      pDVar5 = pSVar2->field2165_0x9d2;
     } while ((int)param_1 < (int)pDVar5->count);
   }
   return iVar6;

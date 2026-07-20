@@ -8,7 +8,7 @@
    /SubmarineTitans/Recovered/Enums/STVolcanoC_field_00A9State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
-undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
+undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,AnonShape_006461E0_67B0C9B5 *param_1)
 
 {
   char cVar1;
@@ -20,7 +20,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
   int iVar6;
   undefined4 uVar7;
   undefined4 unaff_ESI;
-  undefined4 *puVar8;
+  AnonNested_006461E0_0014_EFB6F372 *pAVar8;
   void *unaff_EDI;
   undefined4 *puVar9;
   InternalExceptionFrame local_54;
@@ -45,7 +45,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
     uVar7 = (*pcVar3)();
     return uVar7;
   }
-  uVar2 = *(uint *)(param_1 + 0x10);
+  uVar2 = param_1->field_0010;
   if (uVar2 < 4) {
     if (uVar2 == 3) {
       thunk_FUN_006479e0((int)local_8);
@@ -256,9 +256,9 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
       }
     }
     else if (uVar2 == 2) {
-      puVar8 = *(undefined4 **)(param_1 + 0x14);
-      if (puVar8[3] == 2) {
-        thunk_FUN_00646db0(local_8,puVar8);
+      pAVar8 = param_1->field_0014;
+      if (pAVar8->field_000C == 2) {
+        thunk_FUN_00646db0(local_8,&pAVar8->field_0000);
         *(undefined4 *)&this_00->field_0xb1 = *(undefined4 *)&this_00->field_0xad;
         this_00->field_0xa8 = 0;
         g_currentExceptionFrame = local_54.previous;
@@ -266,8 +266,8 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
       }
       puVar9 = (undefined4 *)&local_8->field_0x1c;
       for (iVar4 = 0xe; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar9 = *puVar8;
-        puVar8 = puVar8 + 1;
+        *puVar9 = pAVar8->field_0000;
+        pAVar8 = (AnonNested_006461E0_0014_EFB6F372 *)&pAVar8->field_0x4;
         puVar9 = puVar9 + 1;
       }
       *(undefined4 *)&local_8->field_0xb1 = DAT_00808754;

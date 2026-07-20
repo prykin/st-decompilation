@@ -41,7 +41,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
        (local_20 = iVar5,
        local_c = thunk_FUN_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar5 - local_c)) {
-      local_18 = thunk_FUN_0068f8f0((void *)this->field_0284,this->field_007B);
+      local_18 = thunk_FUN_0068f8f0(this->field_0284,this->field_007B);
       local_8 = (uint *)0x0;
       local_10 = (uint *)0x0;
       local_68.previous = g_currentExceptionFrame;
@@ -134,7 +134,7 @@ LAB_00661a96:
           local_8 = (uint *)0x0;
           if (groupContent != (uint *)0x0) {
             if (groupContent[3] != 0) {
-              thunk_FUN_0068fa00((void *)pAVar3->field_0284,groupContent);
+              thunk_FUN_0068fa00(pAVar3->field_0284,groupContent);
             }
             if (groupContent != (uint *)0x0) {
               FUN_006ae110((byte *)groupContent);

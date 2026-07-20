@@ -3,7 +3,8 @@
    E:\__titans\nick\to_jump_mine.cpp
    STJumpMineC::GetMessage */
 
-undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
+undefined4 __thiscall
+STJumpMineC::GetMessage(STJumpMineC *this,AnonShape_00618C00_CCBA84F5 *param_1)
 
 {
   void *pvVar1;
@@ -14,7 +15,7 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
   int iVar5;
   undefined4 uVar6;
   undefined4 unaff_ESI;
-  undefined4 *puVar7;
+  AnonNested_00618C00_0014_AEDCAA43 *pAVar7;
   void *unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_58;
@@ -40,7 +41,7 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
     uVar6 = (*pcVar2)();
     return uVar6;
   }
-  uVar4 = *(uint *)(param_1 + 0x10);
+  uVar4 = param_1->field_0010;
   if (uVar4 < 0x110) {
     if (uVar4 == 0x10f) {
       local_10 = (byte *)thunk_FUN_00619350(local_8,&local_c);
@@ -70,15 +71,15 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
       }
     }
     else if (uVar4 == 2) {
-      puVar7 = *(undefined4 **)(param_1 + 0x14);
-      if (puVar7[3] == 2) {
-        thunk_FUN_006193a0(local_8,puVar7);
-        puVar7 = (undefined4 *)&this_00->field_0x20;
+      pAVar7 = param_1->field_0014;
+      if (pAVar7->field_000C == 2) {
+        thunk_FUN_006193a0(local_8,&pAVar7->field_0000);
+        puVar8 = (undefined4 *)&this_00->field_0x20;
         for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar7 = 0;
-          puVar7 = puVar7 + 1;
+          *puVar8 = 0;
+          puVar8 = puVar8 + 1;
         }
-        *(undefined1 *)puVar7 = 0;
+        *(undefined1 *)puVar8 = 0;
         *(undefined4 *)&this_00->field_0x1c = *(undefined4 *)&this_00->field_0x14c;
         if ((this_00->field_0x150 != '\0') && (*(int *)&this_00->field_0x93 != 5)) {
           LoadImagJMine((STJumpMineC *)this_00,1);
@@ -93,11 +94,11 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
       else {
         puVar8 = (undefined4 *)&local_8->field_004D;
         for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar8 = *puVar7;
-          puVar7 = puVar7 + 1;
+          *puVar8 = pAVar7->field_0000;
+          pAVar7 = (AnonNested_00618C00_0014_AEDCAA43 *)&pAVar7->field_0x4;
           puVar8 = puVar8 + 1;
         }
-        *(undefined2 *)puVar8 = *(undefined2 *)puVar7;
+        *(undefined2 *)puVar8 = *(undefined2 *)&pAVar7->field_0000;
         *(undefined4 *)&local_8->field_0x1c = DAT_00808754;
         iVar3 = thunk_FUN_006193e0((AnonShape_006193E0_B2745ECE *)local_8);
         if (iVar3 == 0) {

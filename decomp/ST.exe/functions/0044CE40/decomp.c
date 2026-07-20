@@ -2,7 +2,7 @@
 uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
 
 {
-  AnonShape_006ACC70_C8641025 *pAVar1;
+  DArrayTy *pDVar1;
   int *piVar2;
   undefined4 uVar3;
   int iVar4;
@@ -15,12 +15,12 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   
   uVar6 = 0;
   uVar8 = 0;
-  pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[DAT_0080874d].field329_0x16d;
-  uVar5 = pAVar1->field_000C;
+  pDVar1 = g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectIds;
+  uVar5 = pDVar1->count;
   local_8 = param_1;
   if (0 < (int)uVar5) {
     do {
-      FUN_006acc70(pAVar1,uVar8,&local_c);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,uVar8,&local_c);
       if (((short)local_c != -1) &&
          (piVar2 = (int *)STAllPlayersC::GetObjPtr
                                     (local_8,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,

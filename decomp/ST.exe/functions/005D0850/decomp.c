@@ -8,8 +8,9 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
 {
   code *pcVar1;
   SettMapMTy *this_00;
+  int errorCode;
   int iVar2;
-  int iVar3;
+  DArrayTy *pDVar3;
   uint uVar4;
   undefined4 unaff_ESI;
   char *pcVar5;
@@ -18,16 +19,16 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if (this->field_1F84 != 0) {
+  if (this->field_1F84 != (DArrayTy *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
-    if (iVar2 == 0) {
-      iVar2 = local_8->field_1F84;
-      if (param_1 < *(uint *)(iVar2 + 0xc)) {
-        pcVar5 = (char *)(*(int *)(iVar2 + 8) * param_1 + *(int *)(iVar2 + 0x1c));
+    if (errorCode == 0) {
+      pDVar3 = local_8->field_1F84;
+      if (param_1 < pDVar3->count) {
+        pcVar5 = (char *)(pDVar3->elementSize * param_1 + (int)pDVar3->data);
       }
       else {
         pcVar5 = (char *)0x0;
@@ -40,13 +41,13 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
         if ((pcVar5[4] == '\x02') && (*(int *)(pcVar5 + 6) == DAT_0080877f)) {
           DAT_0080874d = param_2;
         }
-        iVar2 = this_00->field_1F84;
+        pDVar3 = this_00->field_1F84;
         uVar4 = param_1 + 1;
-        bVar6 = uVar4 < *(uint *)(iVar2 + 0xc);
-        if ((int)uVar4 < (int)*(uint *)(iVar2 + 0xc)) {
+        bVar6 = uVar4 < pDVar3->count;
+        if ((int)uVar4 < (int)pDVar3->count) {
           do {
             if (bVar6) {
-              pcVar5 = (char *)(*(int *)(iVar2 + 8) * uVar4 + *(int *)(iVar2 + 0x1c));
+              pcVar5 = (char *)(pDVar3->elementSize * uVar4 + (int)pDVar3->data);
             }
             else {
               pcVar5 = (char *)0x0;
@@ -56,12 +57,12 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
             if (*(int *)(pcVar5 + 6) == DAT_0080877f) {
               DAT_0080874d = param_2;
             }
-            iVar2 = this_00->field_1F84;
+            pDVar3 = this_00->field_1F84;
             uVar4 = uVar4 + 1;
-            bVar6 = uVar4 < *(uint *)(iVar2 + 0xc);
-          } while ((int)uVar4 < (int)*(uint *)(iVar2 + 0xc));
+            bVar6 = uVar4 < pDVar3->count;
+          } while ((int)uVar4 < (int)pDVar3->count);
         }
-        (**(code **)(this_00->field_0000 + 0x2c))();
+        (*(code *)this_00->field_0000->field_002C)();
         SettMapTy::PaintSC((SettMapTy *)this_00);
         this_00->field_2121 = this_00->field_2121 + 1;
       }
@@ -69,14 +70,14 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x598,0,iVar2,&DAT_007a4ccc
-                               ,s_SettMapMTy__ChangePlayerColor_007cd434);
-    if (iVar3 != 0) {
+    iVar2 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x598,0,errorCode,
+                               &DAT_007a4ccc,s_SettMapMTy__ChangePlayerColor_007cd434);
+    if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0x598);
+    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x598);
   }
   return;
 }

@@ -33,17 +33,17 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,unde
   this->field_0030 = 0;
   this->field_02F4 = 0;
   this->field_02EC = 0xffffffff;
-  this->field_02F0 = 0;
+  this->field_02F0 = (AnonPointee_StartSystemTy_02F0 *)0x0;
   this->field_0389 = 0;
   this->field_0540 = 0xffffffff;
-  this->field_0544 = 0;
+  this->field_0544 = (AnonPointee_StartSystemTy_0544 *)0x0;
   this->field_0548 = 0;
   this->field_0550 = 0;
   this->field_054C = 0;
   this->field_0558 = 0xffffffff;
   this->field_0554 = 0xffffffff;
-  this->field_0682 = 0;
-  this->field_067E = 0;
+  this->field_0682 = (AnonPointee_StartSystemTy_0682 *)0x0;
+  this->field_067E = (AnonPointee_StartSystemTy_067E *)0x0;
   this->field_0686 = 0;
   puVar2 = (undefined4 *)&this->field_0x244;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {

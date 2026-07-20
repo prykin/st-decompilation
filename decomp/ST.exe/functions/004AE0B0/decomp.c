@@ -8,7 +8,7 @@ FUN_004ae0b0(int param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4Enum
             ,undefined4 *param_6,int *param_7,int *param_8,int param_9,int *param_10)
 
 {
-  int *piVar1;
+  STWorldObject *pSVar1;
   int *piVar2;
   bool bVar3;
   short sVar4;
@@ -68,9 +68,9 @@ cf_break_loop_004AE25B:
           if ((((sVar14 < SHORT_007fb240) && (-1 < sVar10)) &&
               ((sVar10 < SHORT_007fb242 &&
                (((-1 < sVar15 && (sVar15 < SHORT_007fb244)) &&
-                (*(int *)(DAT_007fb248 +
-                         ((int)sVar15 * (int)SHORT_007fb246 + (int)sVar10 * (int)SHORT_007fb240 +
-                         (int)sVar14) * 8) != 0)))))) ||
+                (g_worldCells
+                 [(int)sVar15 * (int)SHORT_007fb246 + (int)sVar10 * (int)SHORT_007fb240 +
+                  (int)sVar14].objects[0] != (STWorldObject *)0x0)))))) ||
              (((sVar14 < 0 || (SHORT_007fb240 <= sVar14)) ||
               ((sVar10 < 0 ||
                (((SHORT_007fb242 <= sVar10 || (sVar15 < 0)) ||
@@ -96,9 +96,9 @@ cf_break_loop_004AE25B:
           if ((-1 < sVar10) &&
              ((((((sVar4 = (short)iVar7, sVar10 < SHORT_007fb240 && (-1 < sVar4)) &&
                  (sVar4 < SHORT_007fb242)) && ((-1 < sVar15 && (sVar15 < SHORT_007fb244)))) &&
-               (*(int *)(DAT_007fb248 +
-                        ((int)sVar15 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 +
-                        (int)sVar10) * 8) != 0)) ||
+               (g_worldCells
+                [(int)sVar15 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 + (int)sVar10]
+                .objects[0] != (STWorldObject *)0x0)) ||
               (((-1 < sVar10 && (sVar10 < SHORT_007fb240)) &&
                ((-1 < sVar4 &&
                 ((((sVar4 < SHORT_007fb242 && (-1 < sVar15)) && (sVar15 < SHORT_007fb244)) &&
@@ -179,10 +179,10 @@ LAB_004ae41c:
               local_10 = (STFishC *)0x0;
             }
             else {
-              local_10 = *(STFishC **)
-                          (DAT_007fb248 + 4 +
-                          ((int)sVar4 * (int)sVar15 + (int)sVar5 * (int)SHORT_007fb246 + (int)sVar10
-                          ) * 8);
+              local_10 = (STFishC *)
+                         g_worldCells
+                         [(int)sVar4 * (int)sVar15 + (int)sVar5 * (int)SHORT_007fb246 + (int)sVar10]
+                         .objects[1];
             }
             if (((local_10 != (STFishC *)0x0) && (*(int *)&local_10->field_0x20 != 0xbe)) ||
                (pvVar8 = thunk_FUN_004d85e0(iVar17,iVar7,iVar6), pvVar8 != (void *)0x0))
@@ -196,7 +196,7 @@ LAB_004ae41c:
     }
     if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
       if (param_4 == 100) {
-        pDVar12 = g_playerRuntime[param_5].field2284_0x9d6;
+        pDVar12 = g_playerRuntime[param_5].field2166_0x9d6;
         if ((pDVar12 != (DArrayTy *)0x0) && (uVar18 = 0, 0 < (int)pDVar12->count)) {
           do {
             FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar12,uVar18,&local_10);
@@ -206,14 +206,14 @@ LAB_004ae41c:
                 (int)((uVar9 ^ uVar13) - uVar13) < 0x10)) &&
                (uVar9 = local_6 - param_2 >> 0x1f, (int)((local_6 - param_2 ^ uVar9) - uVar9) < 0x10
                )) goto cf_break_loop_004AEC96;
-            pDVar12 = g_playerRuntime[param_5].field2284_0x9d6;
+            pDVar12 = g_playerRuntime[param_5].field2166_0x9d6;
             uVar18 = uVar18 + 1;
           } while ((int)uVar18 < (int)pDVar12->count);
         }
       }
       else if (param_4 == 0x4d) {
-        pDVar12 = g_playerRuntime[param_5].field2287_0x9e2;
-        param_10 = (int *)&g_playerRuntime[param_5].field2287_0x9e2;
+        pDVar12 = g_playerRuntime[param_5].field2169_0x9e2;
+        param_10 = (int *)&g_playerRuntime[param_5].field2169_0x9e2;
         if (pDVar12 != (DArrayTy *)0x0) {
           iVar11 = DAT_00795118 / 0xc9;
           uVar18 = 0;
@@ -234,8 +234,8 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x43) {
-        pDVar12 = g_playerRuntime[param_5].field2290_0x9ee;
-        param_10 = (int *)&g_playerRuntime[param_5].field2290_0x9ee;
+        pDVar12 = g_playerRuntime[param_5].field2172_0x9ee;
+        param_10 = (int *)&g_playerRuntime[param_5].field2172_0x9ee;
         if (pDVar12 != (DArrayTy *)0x0) {
           iVar11 = DAT_007950f0 / 0xc9;
           uVar18 = 0;
@@ -256,8 +256,8 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x73) {
-        pDVar12 = g_playerRuntime[param_5].field2291_0x9f2;
-        param_10 = (int *)&g_playerRuntime[param_5].field2291_0x9f2;
+        pDVar12 = g_playerRuntime[param_5].field2173_0x9f2;
+        param_10 = (int *)&g_playerRuntime[param_5].field2173_0x9f2;
         if (pDVar12 != (DArrayTy *)0x0) {
           iVar11 = DAT_007951b0 / 0xc9;
           uVar18 = 0;
@@ -278,8 +278,8 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x65) {
-        pDVar12 = g_playerRuntime[param_5].field2288_0x9e6;
-        param_10 = (int *)&g_playerRuntime[param_5].field2288_0x9e6;
+        pDVar12 = g_playerRuntime[param_5].field2170_0x9e6;
+        param_10 = (int *)&g_playerRuntime[param_5].field2170_0x9e6;
         if (pDVar12 != (DArrayTy *)0x0) {
           iVar11 = DAT_00795178 / 0xc9;
           uVar18 = 0;
@@ -307,38 +307,45 @@ LAB_004ae41c:
           (((sVar4 = (short)(param_2 + -1), sVar4 < 0 || (SHORT_007fb242 <= sVar4)) ||
            ((sVar14 < 0 ||
             ((SHORT_007fb244 <= sVar14 ||
-             (piVar1 = *(int **)(DAT_007fb248 +
-                                ((int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)sVar4 +
-                                (int)sVar10) * 8), piVar1 == (int *)0x0)))))))) ||
-         (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), iVar11 != 0x53 ||
-           ((param_10 != (int *)0x0 && ((int *)piVar1[6] != param_10)))) &&
-          (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), sVar15 = SHORT_007fb240, iVar11 < 0x54 ||
-            (iVar11 = (**(code **)(*piVar1 + 0x2c))(), sVar15 = SHORT_007fb240, 0x5a < iVar11)) ||
-           ((param_10 != (int *)0x0 && (*(int **)((int)piVar1 + 0x5d3) != param_10)))))))) {
+             (pSVar1 = g_worldCells
+                       [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)sVar4 + (int)sVar10].
+                       objects[0], pSVar1 == (STWorldObject *)0x0)))))))) ||
+         (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar11 != 0x53 ||
+           ((param_10 != (int *)0x0 && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+          (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), sVar15 = SHORT_007fb240,
+            iVar11 < 0x54 ||
+            (iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), sVar15 = SHORT_007fb240,
+            0x5a < iVar11)) ||
+           ((param_10 != (int *)0x0 && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
         sVar4 = (short)param_2;
         if (((param_1 + -1 < 0) ||
             ((((sVar5 = (short)(param_1 + -1), sVar5 < 0 || (sVar15 <= sVar5)) || (sVar4 < 0)) ||
              (((SHORT_007fb242 <= sVar4 || (sVar14 < 0)) ||
               ((SHORT_007fb244 <= sVar14 ||
-               (piVar1 = *(int **)(DAT_007fb248 +
-                                  ((int)sVar14 * (int)SHORT_007fb246 + (int)sVar4 * (int)sVar15 +
-                                  (int)sVar5) * 8), piVar1 == (int *)0x0)))))))) ||
-           (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), piVar2 = param_10, iVar11 != 0x53 ||
-             ((param_10 != (int *)0x0 && ((int *)piVar1[6] != param_10)))) &&
-            (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), sVar15 = SHORT_007fb240, iVar11 < 0x54 ||
-              (iVar11 = (**(code **)(*piVar1 + 0x2c))(), sVar15 = SHORT_007fb240, 0x5a < iVar11)) ||
-             ((piVar2 != (int *)0x0 && (*(int **)((int)piVar1 + 0x5d3) != piVar2)))))))) {
+               (pSVar1 = g_worldCells
+                         [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar4 * (int)sVar15 + (int)sVar5]
+                         .objects[0], pSVar1 == (STWorldObject *)0x0)))))))) ||
+           (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), piVar2 = param_10, iVar11 != 0x53
+             || ((param_10 != (int *)0x0 && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+            (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), sVar15 = SHORT_007fb240,
+              iVar11 < 0x54 ||
+              (iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), sVar15 = SHORT_007fb240,
+              0x5a < iVar11)) ||
+             ((piVar2 != (int *)0x0 && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
           if (((param_1 + 1 < (int)sVar15) &&
               ((((((sVar5 = (short)(param_1 + 1), -1 < sVar5 && (sVar5 < sVar15)) && (-1 < sVar4))
                  && ((sVar4 < SHORT_007fb242 && (-1 < sVar14)))) && (sVar14 < SHORT_007fb244)) &&
-               (piVar1 = *(int **)(DAT_007fb248 +
-                                  ((int)sVar14 * (int)SHORT_007fb246 + (int)sVar4 * (int)sVar15 +
-                                  (int)sVar5) * 8), piVar1 != (int *)0x0)))) &&
-             (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), piVar2 = param_10, iVar11 == 0x53 &&
-               ((param_10 == (int *)0x0 || ((int *)piVar1[6] == param_10)))) ||
-              ((iVar11 = (**(code **)(*piVar1 + 0x2c))(), sVar15 = SHORT_007fb240, 0x53 < iVar11 &&
-               ((iVar11 = (**(code **)(*piVar1 + 0x2c))(), sVar15 = SHORT_007fb240, iVar11 < 0x5b &&
-                ((piVar2 == (int *)0x0 || (*(int **)((int)piVar1 + 0x5d3) == piVar2)))))))))) {
+               (pSVar1 = g_worldCells
+                         [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar4 * (int)sVar15 + (int)sVar5]
+                         .objects[0], pSVar1 != (STWorldObject *)0x0)))) &&
+             (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), piVar2 = param_10,
+               iVar11 == 0x53 &&
+               ((param_10 == (int *)0x0 || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+              ((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), sVar15 = SHORT_007fb240,
+               0x53 < iVar11 &&
+               ((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), sVar15 = SHORT_007fb240,
+                iVar11 < 0x5b &&
+                ((piVar2 == (int *)0x0 || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
             local_c = 1;
           }
           else if (((param_2 + 1 < (int)SHORT_007fb242) &&
@@ -346,15 +353,16 @@ LAB_004ae41c:
                     (sVar4 = (short)(param_2 + 1), -1 < sVar4)))) &&
                   ((((sVar4 < SHORT_007fb242 && (-1 < sVar14)) &&
                     ((sVar14 < SHORT_007fb244 &&
-                     (piVar1 = *(int **)(DAT_007fb248 +
-                                        ((int)sVar14 * (int)SHORT_007fb246 +
-                                         (int)sVar15 * (int)sVar4 + (int)sVar10) * 8),
-                     piVar1 != (int *)0x0)))) &&
-                   (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), piVar2 = param_10, iVar11 == 0x53 &&
-                     ((param_10 == (int *)0x0 || ((int *)piVar1[6] == param_10)))) ||
-                    (((iVar11 = (**(code **)(*piVar1 + 0x2c))(), 0x53 < iVar11 &&
-                      (iVar11 = (**(code **)(*piVar1 + 0x2c))(), iVar11 < 0x5b)) &&
-                     ((piVar2 == (int *)0x0 || (*(int **)((int)piVar1 + 0x5d3) == piVar2)))))))))) {
+                     (pSVar1 = g_worldCells
+                               [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)sVar4 +
+                                (int)sVar10].objects[0], pSVar1 != (STWorldObject *)0x0)))) &&
+                   (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), piVar2 = param_10,
+                     iVar11 == 0x53 &&
+                     ((param_10 == (int *)0x0 || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+                    (((iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar11 &&
+                      (iVar11 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar11 < 0x5b)) &&
+                     ((piVar2 == (int *)0x0 || (*(int **)&pSVar1[0x29].field_0xf == piVar2))))))))))
+          {
             local_c = 1;
           }
         }

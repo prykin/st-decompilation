@@ -24,11 +24,10 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
         pSVar2 = (STFishC *)0x0;
       }
       else {
-        pSVar2 = *(STFishC **)
-                  (DAT_007fb248 +
-                  ((uint)(byte)param_1->field_0x8e +
-                  ((int)SHORT_007fb246 * (int)local_a + (int)SHORT_007fb240 * (int)local_8 +
-                  (int)local_6) * 2) * 4);
+        pSVar2 = (STFishC *)
+                 g_worldCells
+                 [(int)SHORT_007fb246 * (int)local_a + (int)SHORT_007fb240 * (int)local_8 +
+                  (int)local_6].objects[(byte)param_1->field_0x8e];
       }
       if (pSVar2 == param_1) {
         thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);

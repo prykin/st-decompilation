@@ -56,7 +56,7 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
     *(undefined4 *)((int)this + 0x353) = 0xffffffff;
     iVar2 = STTmMineC::LoadImagNuclear(this,(uint)(*(int *)((int)this + 0x34b) != 0));
     if (iVar2 == 0) {
-      thunk_FUN_0063d410((int)this);
+      thunk_FUN_0063d410(this);
       thunk_FUN_0063ddb0(this,1);
       FUN_006eaaa0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a),0);
     }

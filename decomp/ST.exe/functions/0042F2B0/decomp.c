@@ -36,7 +36,7 @@ STAllPlayersC::UnRegisterObject
   local_c = 0;
   local_14 = g_playerRuntime[iVar10].objects;
   local_1c = g_playerRuntime[iVar10].groups;
-  local_20 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[iVar10].field597_0x2e7;
+  local_20 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[iVar10].field479_0x2e7;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
@@ -77,13 +77,13 @@ STAllPlayersC::UnRegisterObject
       }
       else {
         iVar10 = (char)param_1 * 0xa62;
-        g_playerRuntime[(char)param_1].field23_0x2f =
-             g_playerRuntime[(char)param_1].field23_0x2f + -1;
+        g_playerRuntime[(char)param_1].field20_0x2f =
+             g_playerRuntime[(char)param_1].field20_0x2f + -1;
       }
     }
     else {
       iVar10 = (char)param_1 * 0xa62;
-      g_playerRuntime[(char)param_1].field22_0x2b = g_playerRuntime[(char)param_1].field22_0x2b + -1
+      g_playerRuntime[(char)param_1].field19_0x2b = g_playerRuntime[(char)param_1].field19_0x2b + -1
       ;
     }
     *(int *)(&g_playerRuntime[0].field_0x37 + iVar10) =
@@ -260,12 +260,12 @@ LAB_0042f547:
     }
     iVar6 = (**(code **)(*param_4 + 0x2c))();
     if (iVar6 == 0x33) {
-      *(int *)&g_playerRuntime[iVar10].field320_0x15b =
-           *(int *)&g_playerRuntime[iVar10].field320_0x15b + -1;
+      *(int *)&g_playerRuntime[iVar10].field317_0x15b =
+           *(int *)&g_playerRuntime[iVar10].field317_0x15b + -1;
     }
     else if (iVar6 == 0x62) {
-      *(int *)&g_playerRuntime[iVar10].field323_0x15f =
-           *(int *)&g_playerRuntime[iVar10].field323_0x15f + -1;
+      *(int *)&g_playerRuntime[iVar10].field320_0x15f =
+           *(int *)&g_playerRuntime[iVar10].field320_0x15f + -1;
     }
     iVar6 = (**(code **)(*param_4 + 0x2c))();
     if (((&DAT_00801420)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0) {

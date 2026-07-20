@@ -25,9 +25,8 @@ FUN_00492550(void *this,short param_1,short param_2,short param_3,undefined2 *pa
               (*(short *)(DAT_007fb280 +
                          (SHORT_007fb278 * iVar3 + iVar4 + (int)SHORT_007fb27e * (int)param_3) * 2)
                == 0)) &&
-             (*(int *)(DAT_007fb248 +
-                      ((uint)*(byte *)((int)this + 0x8e) +
-                      ((int)SHORT_007fb246 * (int)param_3 + _param_1 + iVar4) * 2) * 4) == 0)) {
+             (g_worldCells[(int)SHORT_007fb246 * (int)param_3 + _param_1 + iVar4].objects
+              [*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)) {
             *param_4 = (short)iVar4;
             *param_5 = (short)iVar3;
             *param_6 = param_3;

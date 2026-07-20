@@ -22,7 +22,8 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   AnonShape_005A2A60_B397ABCA *local_c;
   FSGSTy *local_8;
   
-  if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) && (this->field_1EA6 != 0)) {
+  if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) &&
+     (this->field_1EA6 != (DArrayTy *)0x0)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
@@ -30,14 +31,15 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
     if (iVar3 == 0) {
       uVar6 = 0;
       local_c = (AnonShape_005A2A60_B397ABCA *)local_8->field_1EA6;
-      local_10 = local_c->field_000C;
+      local_10 = ((DArrayTy *)local_c)->count;
       if (local_10 != 0) {
         if (local_10 == 0) {
           pbVar8 = (byte *)0x0;
           goto LAB_005a2aea;
         }
         do {
-          pbVar8 = (byte *)(local_c->field_0008 * uVar6 + local_c->field_001C);
+          pbVar8 = (byte *)(((DArrayTy *)local_c)->elementSize * uVar6 +
+                           (int)((DArrayTy *)local_c)->data);
 LAB_005a2aea:
           pbVar4 = pbVar8;
           pbVar7 = param_1;

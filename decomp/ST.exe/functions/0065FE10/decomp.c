@@ -8,9 +8,9 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   undefined2 extraout_var;
   uint uVar3;
   uint *groupContent;
-  STGroupBoatC *pSVar4;
-  int iVar5;
-  uint **ppuVar6;
+  STGroupBoatC *this;
+  int iVar4;
+  uint **ppuVar5;
   uint *local_38 [5];
   uint local_24;
   undefined4 local_20;
@@ -18,10 +18,10 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   DArrayTy *local_c;
   undefined4 local_8;
   
-  ppuVar6 = local_38;
-  for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *ppuVar6 = (uint *)0x0;
-    ppuVar6 = ppuVar6 + 1;
+  ppuVar5 = local_38;
+  for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *ppuVar5 = (uint *)0x0;
+    ppuVar5 = ppuVar5 + 1;
   }
   local_c = (DArrayTy *)0x0;
   local_8 = 0;
@@ -43,21 +43,21 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   else {
     uVar3 = 0;
   }
-  groupContent = thunk_FUN_0065fa60(uVar3,1,param_4);
+  groupContent = thunk_FUN_0065fa60(param_1,uVar3,(short *)0x1);
   if (groupContent != (uint *)0x0) {
     sVar1 = param_1->field_0039;
     if (sVar1 < 1) {
 LAB_0065fec9:
-      iVar5 = 0;
+      iVar4 = 0;
     }
     else if (sVar1 < 3) {
-      iVar5 = 0x3b;
+      iVar4 = 0x3b;
     }
     else {
       if (sVar1 != 3) goto LAB_0065fec9;
-      iVar5 = 0x60;
+      iVar4 = 0x60;
     }
-    local_c = (DArrayTy *)thunk_FUN_0065fa60(iVar5,1,(short *)0x0);
+    local_c = (DArrayTy *)thunk_FUN_0065fa60(param_1,iVar4,(short *)0x1);
     if (local_c != (DArrayTy *)0x0) {
       sVar1 = param_1->field_0039;
       local_38[0] = (uint *)0x0;
@@ -77,10 +77,10 @@ LAB_0065fec9:
       local_38[1] = groupContent;
       local_1c = local_c;
       if (((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
-         (pSVar4 = thunk_FUN_0042b760((uint)(byte)param_1->field_0x24,
-                                      CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
-         pSVar4 != (STGroupBoatC *)0x0)) {
-        (*pSVar4->vtable->vfunc_08)(8,local_38);
+         (this = thunk_FUN_0042b760((uint)(byte)param_1->field_0x24,
+                                    CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
+         this != (STGroupBoatC *)0x0)) {
+        (*this->vtable->vfunc_08)(this,CASE_8,local_38);
         goto LAB_0065ff72;
       }
     }

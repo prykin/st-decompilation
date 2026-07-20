@@ -73,7 +73,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
           local_1c = (short *)((int)psVar10 * 8);
           local_8 = psVar10;
           do {
-            local_c = *(STFishC **)((int)local_1c + DAT_007fb248);
+            local_c = *(STFishC **)((int)local_1c + (int)g_worldCells);
             if (local_c == (STFishC *)0x0) {
               sVar13 = (short)iVar14;
               if (((((sVar13 < 0) || ((short)uVar9 <= sVar13)) ||

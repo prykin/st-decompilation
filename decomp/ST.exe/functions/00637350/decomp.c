@@ -6,7 +6,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
 {
   byte bVar1;
   char cVar2;
-  int *this;
+  STWorldObject *this;
   uint uVar3;
   short sVar4;
   int iVar5;
@@ -113,14 +113,14 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
               if (((((((-1 < sVar12) && (sVar12 < sVar10)) && (sVar4 = (short)uVar8, -1 < sVar4)) &&
                     ((sVar4 < SHORT_007fb242 && (sVar7 = (short)iVar9, -1 < sVar7)))) &&
                    ((sVar7 < SHORT_007fb244 &&
-                    ((this = *(int **)(DAT_007fb248 +
-                                      ((int)sVar4 * (int)sVar10 + (int)sVar7 * (int)SHORT_007fb246 +
-                                      (int)sVar12) * 8), this != (int *)0x0 &&
-                     (iVar11 = (**(code **)(*this + 0xf0))(), uVar8 = param_9, iVar11 != 0)))))) &&
-                  ((uint)this[9] < 8)) &&
+                    ((this = g_worldCells
+                             [(int)sVar4 * (int)sVar10 + (int)sVar7 * (int)SHORT_007fb246 +
+                              (int)sVar12].objects[0], this != (STWorldObject *)0x0 &&
+                     (iVar11 = (*this->vtable[5].slots_00_28[0])(), uVar8 = param_9, iVar11 != 0))))
+                   )) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
                  ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[this[9] * 0x51] < 8)))) {
-                bVar1 = *(byte *)(this + 9);
+                  ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) {
+                bVar1 = *(byte *)&this[1].vtable;
                 param_8 = CONCAT31(param_8._1_3_,bVar1);
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == (byte)param_5) {
@@ -158,7 +158,7 @@ LAB_006375fd:
                   iVar15 = _param_6;
                 }
                 if ((bVar16) &&
-                   (iVar11 = (**(code **)(*this + 0xf8))(), uVar8 = param_9, iVar11 != 0)) {
+                   (iVar11 = (*this->vtable[5].slots_00_28[2])(), uVar8 = param_9, iVar11 != 0)) {
                   thunk_FUN_00416270(this,(undefined2 *)((int)&param_4 + 2),
                                      (int *)((int)&param_3 + 2),(int *)&stack0x0000001e);
                   iVar11 = FUN_006aced8((int)param_4._2_2_,(int)param_3._2_2_,param_1,param_2);
@@ -169,11 +169,11 @@ LAB_006375fd:
                       *piVar14 = 0;
                       piVar14 = piVar14 + 1;
                     }
-                    local_58[2] = this[6];
+                    local_58[2] = *(int *)&this->field_0x18;
                     local_58[3] = 4;
                     local_58[4] = 0x110;
                     local_44 = local_38;
-                    (**(code **)*this)(local_58);
+                    (*this->vtable->slots_00_28[0])(local_58);
                     local_8 = local_8 + 1;
                     uVar8 = param_9;
                     iVar15 = _param_6;

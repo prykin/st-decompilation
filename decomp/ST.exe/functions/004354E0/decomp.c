@@ -48,11 +48,11 @@ STAllPlayersC::ReplaceObject
   local_10 = (DArrayTy *)0x0;
   do {
     uVar5 = (uint)DAT_0080874d;
-    if ((*(int *)((int)&g_playerRuntime[uVar5].field443_0x207 + (int)local_10) == 0x19a) &&
-       (*(int *)((int)&g_playerRuntime[uVar5].field444_0x20b + (int)local_10) == (int)(char)param_1)
-       ) {
+    if ((*(int *)((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 4) == 0x19a) &&
+       (*(int *)((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 8) ==
+        (int)(char)param_1)) {
       pAVar1 = *(AnonShape_006ACC70_C8641025 **)
-                ((int)&g_playerRuntime[uVar5].field446_0x211 + (int)local_10);
+                ((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 0xe);
       uVar7 = 0;
       uVar5 = pAVar1->field_000C;
       if (0 < (int)uVar5) {

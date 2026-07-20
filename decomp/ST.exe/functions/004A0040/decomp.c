@@ -87,10 +87,10 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
       pAVar13 = (AnonShape_004B9D90_4F3151F9 *)0x0;
     }
     else {
-      pAVar13 = *(AnonShape_004B9D90_4F3151F9 **)
-                 (DAT_007fb248 +
-                 ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1)
-                 * 8);
+      pAVar13 = (AnonShape_004B9D90_4F3151F9 *)
+                g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+                objects[0];
     }
     if (((pAVar13 == (AnonShape_004B9D90_4F3151F9 *)0x0) || (*(int *)&pAVar13->field_0x20 != 1000))
        || ((*(int *)&pAVar13->field_0x24 != (int)pSVar5->field_0024 ||

@@ -8,7 +8,8 @@
    /SubmarineTitans/Recovered/Enums/STBHEShellC_field_0104State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
-undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
+undefined4 __thiscall
+STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
 
 {
   code *pcVar1;
@@ -20,7 +21,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
   undefined4 uVar6;
   uint uVar7;
   undefined4 unaff_ESI;
-  undefined4 *puVar8;
+  AnonNested_005F27C0_0014_1CFA0467 *pAVar8;
   uint uVar9;
   void *unaff_EDI;
   undefined4 *puVar10;
@@ -54,7 +55,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
     RaiseInternalException(iVar4,0,s_E____titans_nick_to_BheShell_cpp_007ce694,0x165);
     return 0xffff;
   }
-  uVar9 = *(uint *)(param_1 + 0x10);
+  uVar9 = param_1->field_0010;
   if (0x10f < uVar9) {
     if (uVar9 == 0x112) {
       uVar9 = *(uint *)&local_14->field_0x8f;
@@ -102,19 +103,19 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
         return 0;
       }
       thunk_FUN_005f3b00((int)local_14);
-      thunk_FUN_005f53a0((int)this_00);
+      thunk_FUN_005f53a0((AnonShape_005F53A0_843EB0E7 *)this_00);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    puVar8 = *(undefined4 **)(param_1 + 0x14);
-    if (puVar8[3] != 2) {
+    pAVar8 = param_1->field_0014;
+    if (pAVar8->field_000C != 2) {
       puVar10 = (undefined4 *)&local_14->field_0x4d;
       for (iVar4 = 0xe; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar10 = *puVar8;
-        puVar8 = puVar8 + 1;
+        *puVar10 = pAVar8->field_0000;
+        pAVar8 = (AnonNested_005F27C0_0014_1CFA0467 *)&pAVar8->field_0x4;
         puVar10 = puVar10 + 1;
       }
-      *(undefined2 *)puVar10 = *(undefined2 *)puVar8;
+      *(undefined2 *)puVar10 = *(undefined2 *)&pAVar8->field_0000;
       iVar4 = *(int *)&local_14->field_0x6d;
       uVar9 = iVar4 - *(int *)&local_14->field_0x61;
       if (((int)((uVar9 ^ (int)uVar9 >> 0x1f) - ((int)uVar9 >> 0x1f)) < 4) &&
@@ -149,25 +150,25 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
                                  *(int *)&this_00->field_0x69);
       this_00->field_0103 = (char)iVar4;
       if ((char)iVar4 != '\0') {
-        thunk_FUN_005f35f0(*(int *)&this_00->field_0x87);
+        thunk_FUN_005f35f0(this_00);
       }
       *(undefined4 *)&this_00->field_0x7d = DAT_007e66d4;
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    thunk_FUN_005f5b80(local_14,puVar8);
-    puVar8 = (undefined4 *)&this_00->field_0x20;
+    thunk_FUN_005f5b80(local_14,&pAVar8->field_0000);
+    puVar10 = (undefined4 *)&this_00->field_0x20;
     for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+      *puVar10 = 0;
+      puVar10 = puVar10 + 1;
     }
-    *(undefined1 *)puVar8 = 0;
+    *(undefined1 *)puVar10 = 0;
     *(undefined4 *)&this_00->field_0x1c = *(undefined4 *)&this_00->field_0x16d;
     if (this_00->field_0103 == '\0') {
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    thunk_FUN_005f35f0(*(int *)&this_00->field_0x87);
+    thunk_FUN_005f35f0(this_00);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
@@ -366,7 +367,7 @@ LAB_005f2d8b:
     }
     if (this_00->field_0x108 != '\0') {
       thunk_FUN_005f4fa0(this_00);
-      thunk_FUN_005f5440((int)this_00);
+      thunk_FUN_005f5440((AnonShape_005F5440_D27C3BDE *)this_00);
     }
     goto switchD_005f29cb_default;
   case 4:
@@ -374,7 +375,7 @@ LAB_005f2d8b:
       iVar4 = thunk_FUN_005f4fa0(local_14);
       if (iVar4 != 0) {
         if (this_00->field_0103 != '\0') {
-          thunk_FUN_005f5440((int)this_00);
+          thunk_FUN_005f5440((AnonShape_005F5440_D27C3BDE *)this_00);
         }
         goto switchD_005f29cb_default;
       }

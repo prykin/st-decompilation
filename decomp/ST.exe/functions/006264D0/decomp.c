@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
 {
   byte bVar1;
   char cVar2;
-  int *piVar3;
+  STWorldObject *pSVar3;
   uint uVar4;
   uint uVar5;
   byte bVar6;
@@ -150,17 +150,17 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
           if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar12 = (short)iVar16, sVar12 < 0))
               || ((SHORT_007fb242 <= sVar12 || (sVar14 = (short)iVar8, sVar14 < 0)))) ||
              ((SHORT_007fb244 <= sVar14 ||
-              (piVar3 = *(int **)(DAT_007fb248 +
-                                 ((int)SHORT_007fb246 * (int)sVar14 +
-                                  (int)SHORT_007fb240 * (int)sVar12 + (int)sVar9) * 8),
-              piVar11 = local_18, iVar13 = local_c, piVar3 == (int *)0x0)))) {
+              (pSVar3 = g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar14 + (int)SHORT_007fb240 * (int)sVar12 +
+                         (int)sVar9].objects[0], piVar11 = local_18, iVar13 = local_c,
+              pSVar3 == (STWorldObject *)0x0)))) {
             piVar10 = piVar11;
             if (*(short *)(DAT_007fb280 +
                           (SHORT_007fb278 * iVar16 + iVar7 + SHORT_007fb27e * iVar8) * 2) < 0) {
               return 0;
             }
           }
-          else if (local_18[6] != piVar3[6]) {
+          else if (local_18[6] != *(int *)&pSVar3->field_0x18) {
             iVar7 = (**(code **)(*param_1 + 0xf0))();
             if (iVar7 == 0) {
               return 0;
@@ -168,7 +168,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
             if (((uint)param_1[9] < 8) &&
                ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                 ((byte)(&DAT_008087e9)[param_1[9] * 0x51] < 8)))) {
-              bVar6 = *(byte *)(piVar3 + 9);
+              bVar6 = *(byte *)&pSVar3[1].vtable;
               bVar1 = *(byte *)(piVar10 + 9);
               _local_50 = CONCAT31(uStack_4f,bVar6);
               _local_44 = CONCAT31(uStack_43,bVar1);
@@ -209,7 +209,7 @@ LAB_0062687f:
                 return 0;
               }
             }
-            iVar7 = (**(code **)(*piVar3 + 0xf8))();
+            iVar7 = (*pSVar3->vtable[5].slots_00_28[2])();
             iVar13 = local_c;
             if (iVar7 == 0) {
               return 0;

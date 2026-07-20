@@ -4,19 +4,20 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
 {
   STGroupBoatCVTable *pSVar1;
   int *piVar2;
-  int *piVar3;
+  int iVar3;
+  int *piVar4;
   AnonShape_006B0C70_7C4FE646 *groupContent;
-  int iVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  uint *puVar8;
-  STAllPlayersC *in_ECX;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
   int iVar9;
-  int iVar10;
+  uint *puVar10;
+  STAllPlayersC *in_ECX;
   int iVar11;
+  STGroupBoatC **unaff_ESI;
   uint uVar12;
-  int unaff_EDI;
+  Global_sub_00498D20_param_1Enum unaff_EDI;
   STGroupBoatC *pSVar13;
   uint local_2c;
   int local_28;
@@ -29,7 +30,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   int local_c;
   int local_8;
   
-  piVar3 = param_4;
+  piVar4 = param_4;
   local_14 = thunk_FUN_0042b760(param_1,param_2);
   if (local_14 != (STGroupBoatC *)0x0) {
     groupContent = (AnonShape_006B0C70_7C4FE646 *)
@@ -43,13 +44,14 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,uVar12,&local_2c);
           local_14 = (STGroupBoatC *)STAllPlayersC::GetObjPtr(in_ECX,param_1,local_2c,CASE_1);
           if ((local_14 == (STGroupBoatC *)0x0) ||
-             (iVar4 = (*local_14->vtable[6].vfunc_08)(), iVar4 == 0)) {
+             (iVar5 = (*local_14->vtable[6].vfunc_08)(local_14,unaff_EDI,unaff_ESI), iVar5 == 0)) {
             FUN_006b0c70(groupContent,uVar12);
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;
           }
           else {
-            Library::DKW::TBL::FUN_006ae140(local_18,uVar12,&local_14);
+            unaff_ESI = &local_14;
+            unaff_EDI = Library::DKW::TBL::FUN_006ae140(local_18,uVar12,unaff_ESI);
           }
           uVar12 = uVar12 + 1;
         } while ((int)uVar12 < (int)param_2);
@@ -66,24 +68,24 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
         if (0 < (int)param_2) {
           do {
             pSVar1 = pSVar13->vtable;
-            iVar4 = (int)*(short *)((int)&pSVar1[2].vfunc_08 + 3);
-            iVar11 = *(int *)((int)&pSVar1[6].ChangeMDNotify + 1);
-            iVar5 = iVar4 - iVar11;
-            if (iVar5 < local_8) {
-              local_8 = iVar5;
+            iVar5 = (int)*(short *)((int)&pSVar1[2].vfunc_08 + 3);
+            iVar8 = *(int *)((int)&pSVar1[6].ChangeMDNotify + 1);
+            iVar6 = iVar5 - iVar8;
+            if (iVar6 < local_8) {
+              local_8 = iVar6;
             }
-            iVar4 = iVar11 + iVar4;
-            if (local_c < iVar4) {
-              local_c = iVar4;
+            iVar5 = iVar8 + iVar5;
+            if (local_c < iVar5) {
+              local_c = iVar5;
             }
-            iVar4 = (int)*(short *)((int)&pSVar1[2].vfunc_0C + 1);
-            uVar6 = iVar4 - iVar11;
-            if ((int)uVar6 < (int)param_1) {
-              param_1 = uVar6;
+            iVar5 = (int)*(short *)((int)&pSVar1[2].vfunc_0C + 1);
+            uVar7 = iVar5 - iVar8;
+            if ((int)uVar7 < (int)param_1) {
+              param_1 = uVar7;
             }
-            iVar4 = iVar4 + iVar11;
-            if (local_10 < iVar4) {
-              local_10 = iVar4;
+            iVar5 = iVar5 + iVar8;
+            if (local_10 < iVar5) {
+              local_10 = iVar5;
             }
             uVar12 = uVar12 - 1;
             pSVar13 = (STGroupBoatC *)&pSVar13->field_0004;
@@ -92,9 +94,9 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             local_8 = 0;
           }
         }
-        iVar4 = SHORT_007fb240 + -1;
-        if (iVar4 < local_c) {
-          local_c = iVar4;
+        iVar5 = SHORT_007fb240 + -1;
+        if (iVar5 < local_c) {
+          local_c = iVar5;
         }
         if ((int)param_1 < 0) {
           param_1 = 0;
@@ -103,64 +105,64 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           local_10 = SHORT_007fb242 + -1;
         }
         local_28 = 5;
-        iVar5 = ((int)SHORT_007fb240 * param_1 - (int)SHORT_007fb246) + local_8;
-        iVar4 = local_c;
-        iVar11 = local_8;
+        iVar6 = ((int)SHORT_007fb240 * param_1 - (int)SHORT_007fb246) + local_8;
+        iVar5 = local_c;
+        iVar8 = local_8;
         do {
-          iVar5 = iVar5 + SHORT_007fb246;
-          iVar9 = iVar5 - SHORT_007fb240;
+          iVar6 = iVar6 + SHORT_007fb246;
+          iVar11 = iVar6 - SHORT_007fb240;
           if ((int)param_1 <= local_10) {
             local_24 = (local_10 - param_1) + 1;
             do {
-              iVar9 = iVar9 + SHORT_007fb240;
-              if (iVar11 <= iVar4) {
-                iVar10 = iVar9 * 8 + -8;
-                local_20 = (iVar4 - iVar11) + 1;
+              iVar11 = iVar11 + SHORT_007fb240;
+              if (iVar8 <= iVar5) {
+                local_20 = (iVar5 - iVar8) + 1;
+                iVar5 = iVar11 * 8 + -8;
                 do {
-                  iVar10 = iVar10 + 8;
-                  piVar2 = *(int **)(iVar10 + DAT_007fb248);
+                  piVar2 = *(int **)((int)g_worldCells[1].objects + iVar5);
                   if (((piVar2 != (int *)0x0) &&
-                      (((iVar4 = piVar2[8], iVar4 == 0x14 || (iVar4 == 1000)) || (iVar4 == 0x3e9))))
+                      (((iVar8 = piVar2[8], iVar8 == 0x14 || (iVar8 == 1000)) || (iVar8 == 0x3e9))))
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&
-                          (iVar4 = (**(code **)(*piVar2 + 0xf8))(), iVar4 != 0)) &&
+                          (iVar8 = (**(code **)(*piVar2 + 0xf8))(), iVar8 != 0)) &&
                          (local_1c = 0, 0 < (int)param_2)))) {
                     param_4 = (int *)local_14;
                     do {
-                      iVar4 = *param_4;
-                      iVar7 = (int)*(short *)((int)piVar2 + 0x5b) - (int)*(short *)(iVar4 + 0x5b);
-                      iVar11 = *(int *)(iVar4 + 0x101);
-                      if (iVar7 < 1) {
-                        if (iVar7 < -iVar11) goto LAB_0044e4d5;
+                      iVar8 = *param_4;
+                      iVar9 = (int)*(short *)((int)piVar2 + 0x5b) - (int)*(short *)(iVar8 + 0x5b);
+                      iVar3 = *(int *)(iVar8 + 0x101);
+                      if (iVar9 < 1) {
+                        if (iVar9 < -iVar3) goto LAB_0044e4d5;
 LAB_0044e508:
-                        iVar4 = piVar3[piVar2[9]];
+                        iVar8 = piVar4[piVar2[9]];
 joined_r0x0044e51a:
-                        if (iVar4 == 0) {
-                          puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                          piVar3[piVar2[9]] = (int)puVar8;
+                        if (iVar8 == 0) {
+                          puVar10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                          piVar4[piVar2[9]] = (int)puVar10;
                         }
                         Library::DKW::TBL::FUN_006ae1c0
-                                  ((uint *)piVar3[piVar2[9]],(undefined4 *)((int)piVar2 + 0x32));
+                                  ((uint *)piVar4[piVar2[9]],(undefined4 *)((int)piVar2 + 0x32));
                         break;
                       }
-                      if (iVar7 <= iVar11) goto LAB_0044e508;
+                      if (iVar9 <= iVar3) goto LAB_0044e508;
 LAB_0044e4d5:
-                      iVar4 = (int)*(short *)((int)piVar2 + 0x5d) - (int)*(short *)(iVar4 + 0x5d);
-                      if (iVar4 < 1) {
-                        if (iVar4 < -iVar11) goto LAB_0044e4ef;
-                        iVar4 = piVar3[piVar2[9]];
+                      iVar8 = (int)*(short *)((int)piVar2 + 0x5d) - (int)*(short *)(iVar8 + 0x5d);
+                      if (iVar8 < 1) {
+                        if (iVar8 < -iVar3) goto LAB_0044e4ef;
+                        iVar8 = piVar4[piVar2[9]];
                         goto joined_r0x0044e51a;
                       }
-                      if (iVar4 <= iVar11) goto LAB_0044e508;
+                      if (iVar8 <= iVar3) goto LAB_0044e508;
 LAB_0044e4ef:
                       local_1c = local_1c + 1;
                       param_4 = param_4 + 1;
                     } while (local_1c < (int)param_2);
                   }
                   local_20 = local_20 + -1;
+                  iVar5 = iVar5 + 8;
                 } while (local_20 != 0);
                 local_20 = 0;
-                iVar4 = local_c;
-                iVar11 = local_8;
+                iVar5 = local_c;
+                iVar8 = local_8;
               }
               local_24 = local_24 + -1;
             } while (local_24 != 0);

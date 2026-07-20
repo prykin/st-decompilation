@@ -180,35 +180,35 @@ switchD_0056fad2_caseD_6105:
           puVar12 = puVar12 + 1;
           puVar21 = puVar21 + 1;
         }
-        puVar12 = &g_playerRuntime[DAT_0080874d].field598_0x2eb;
+        puVar12 = &g_playerRuntime[DAT_0080874d].field480_0x2eb;
         puVar21 = (undefined4 *)&pSVar7->field_0x48cc;
         for (iVar8 = 5; iVar8 != 0; iVar8 = iVar8 + -1) {
           *puVar21 = *puVar12;
           puVar12 = puVar12 + 1;
           puVar21 = puVar21 + 1;
         }
-        puVar12 = &g_playerRuntime[DAT_0080874d].field612_0x2ff;
+        puVar12 = &g_playerRuntime[DAT_0080874d].field494_0x2ff;
         puVar21 = (undefined4 *)&pSVar7->field_0x48e0;
         for (iVar8 = 5; iVar8 != 0; iVar8 = iVar8 + -1) {
           *puVar21 = *puVar12;
           puVar12 = puVar12 + 1;
           puVar21 = puVar21 + 1;
         }
-        puVar12 = &g_playerRuntime[DAT_0080874d].field640_0x327;
+        puVar12 = &g_playerRuntime[DAT_0080874d].field522_0x327;
         puVar21 = (undefined4 *)&pSVar7->field_0x48f4;
         for (iVar8 = 0x9b; iVar8 != 0; iVar8 = iVar8 + -1) {
           *puVar21 = *puVar12;
           puVar12 = puVar12 + 1;
           puVar21 = puVar21 + 1;
         }
-        puVar12 = &g_playerRuntime[DAT_0080874d].field1254_0x593;
+        puVar12 = &g_playerRuntime[DAT_0080874d].field1136_0x593;
         puVar21 = (undefined4 *)&pSVar7->field_0x4b60;
         for (iVar8 = 0x6a; iVar8 != 0; iVar8 = iVar8 + -1) {
           *puVar21 = *puVar12;
           puVar12 = puVar12 + 1;
           puVar21 = puVar21 + 1;
         }
-        puVar12 = &g_playerRuntime[DAT_0080874d].field1672_0x73b;
+        puVar12 = &g_playerRuntime[DAT_0080874d].field1554_0x73b;
         puVar21 = (undefined4 *)&pSVar7->field_0x4d08;
         for (iVar8 = 0x26; iVar8 != 0; iVar8 = iVar8 + -1) {
           *puVar21 = *puVar12;

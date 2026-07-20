@@ -243,9 +243,10 @@ switchD_0057988b_default:
                (((((sVar4 < 0 || (SHORT_007fb240 <= sVar4)) || ((short)local_8 < 0)) ||
                  ((SHORT_007fb242 <= (short)local_8 || (local_10 < 0)))) ||
                 ((SHORT_007fb244 <= local_10 ||
-                 (*(int *)(DAT_007fb248 +
-                          ((int)SHORT_007fb240 * (int)(short)local_8 +
-                          (int)sVar4 + (int)SHORT_007fb246 * (int)local_10) * 8) == 0)))))) {
+                 (g_worldCells
+                  [(int)SHORT_007fb240 * (int)(short)local_8 +
+                   (int)sVar4 + (int)SHORT_007fb246 * (int)local_10].objects[0] ==
+                  (STWorldObject *)0x0)))))) {
               if ((*(short *)((int)this + 0x47) != iVar3) ||
                  (*(short *)((int)this + 0x49) != local_8)) {
                 *param_1 = (short)local_14;

@@ -1,28 +1,29 @@
 
-void __fastcall FUN_006366d0(int param_1)
+void __fastcall FUN_006366d0(AnonShape_006366D0_80B1100F *param_1)
 
 {
-  int iVar1;
-  uint uVar2;
-  int iVar3;
-  uint uVar4;
+  dword dVar1;
+  DArrayTy *pDVar2;
+  uint uVar3;
+  void *pvVar4;
+  uint uVar5;
   
-  if (*(int *)(param_1 + 0x2c) != 0) {
-    iVar1 = *(int *)(*(int *)(param_1 + 0x2c) + 0xc);
-    uVar4 = 0;
-    if (0 < iVar1) {
+  if (param_1->field_002C != (DArrayTy *)0x0) {
+    dVar1 = param_1->field_002C->count;
+    uVar5 = 0;
+    if (0 < (int)dVar1) {
       do {
-        iVar3 = *(int *)(param_1 + 0x2c);
-        if (((uVar4 < *(uint *)(iVar3 + 0xc)) &&
-            (iVar3 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c), iVar3 != 0)) &&
-           (uVar2 = *(uint *)(iVar3 + 4), -1 < (int)uVar2)) {
-          FUN_006e8ba0(PTR_00807598,uVar2);
+        pDVar2 = param_1->field_002C;
+        if (((uVar5 < pDVar2->count) &&
+            (pvVar4 = (void *)(pDVar2->elementSize * uVar5 + (int)pDVar2->data),
+            pvVar4 != (void *)0x0)) && (uVar3 = *(uint *)((int)pvVar4 + 4), -1 < (int)uVar3)) {
+          FUN_006e8ba0(PTR_00807598,uVar3);
         }
-        uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < iVar1);
+        uVar5 = uVar5 + 1;
+      } while ((int)uVar5 < (int)dVar1);
     }
-    FUN_006ae110(*(byte **)(param_1 + 0x2c));
-    *(undefined4 *)(param_1 + 0x2c) = 0;
+    FUN_006ae110((byte *)param_1->field_002C);
+    param_1->field_002C = (DArrayTy *)0x0;
   }
   return;
 }

@@ -68,11 +68,14 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
         *(undefined1 *)puVar5 = 0xff;
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      FUN_006c7610(*param_1,0,0,0,(uint)local_c,(uint)local_14,local_10,0);
+      FUN_006c7610((AnonShape_006C7610_838EDECF *)*param_1,0,0,0,(uint)local_c,(uint)local_14,
+                   local_10,0);
       if (param_4 != 0) {
-        FUN_006c7570(*param_1,0,2,2,local_c + -1,(int)(puVar3 + -1),iVar4,(byte)_local_8);
+        FUN_006c7570((AnonShape_006C7570_82D7EB54 *)*param_1,0,2,2,local_c + -1,(int)(puVar3 + -1),
+                     iVar4,(byte)_local_8);
       }
-      FUN_006c7570(*param_1,0,0,0,local_c,(int)puVar3,iVar4,(byte)_local_8);
+      FUN_006c7570((AnonShape_006C7570_82D7EB54 *)*param_1,0,0,0,local_c,(int)puVar3,iVar4,
+                   (byte)_local_8);
       pMVar2 = local_18;
       if (param_2 != 0) {
         ccFntTy::SetSurf(local_18->field_0089,*param_1,0,0,0,0,0);

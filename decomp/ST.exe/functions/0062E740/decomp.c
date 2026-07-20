@@ -15,10 +15,11 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
   bool bVar6;
   int iVar7;
   undefined3 extraout_var;
-  int iVar8;
-  undefined4 uVar9;
-  int iVar10;
-  AnonShape_0062FA80_0B91B2B9 *pAVar11;
+  STWorldObject *pSVar8;
+  int iVar9;
+  undefined4 uVar10;
+  int iVar11;
+  AnonShape_0062FA80_0B91B2B9 *pAVar12;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_58;
@@ -34,15 +35,15 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
   this_00 = local_14;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xa6,0,iVar7,&DAT_007a4ccc,
+    iVar11 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xa6,0,iVar7,&DAT_007a4ccc,
                                 s_STRubbishC__GetMessage_007d17bc);
-    if (iVar10 == 0) {
+    if (iVar11 == 0) {
       RaiseInternalException(iVar7,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0xa8);
       return 0xffff;
     }
     pcVar5 = (code *)swi(3);
-    uVar9 = (*pcVar5)();
-    return uVar9;
+    uVar10 = (*pcVar5)();
+    return uVar10;
   }
   iVar7 = STGameObjC::GetMessage(local_14,param_1);
   if (iVar7 == 0xffff) {
@@ -94,10 +95,10 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  pAVar11 = (AnonShape_0062FA80_0B91B2B9 *)param_1->field_0014;
-  local_8 = (AnonShape_0062E740_213F21A8 *)pAVar11;
-  if (*(int *)&pAVar11->field_0xc == 2) {
-    thunk_FUN_0062fa80(this_00,pAVar11);
+  pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)param_1->field_0014;
+  local_8 = (AnonShape_0062E740_213F21A8 *)pAVar12;
+  if (*(int *)&pAVar12->field_0xc == 2) {
+    thunk_FUN_0062fa80(this_00,pAVar12);
     if (*(char *)&this_00[1].field_0028 == '\0') {
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -108,7 +109,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
   }
   if (((*(int *)&this_00[1].field_0x4 < 0) || (*(int *)&this_00[1].field_0x8 < 0)) ||
      (*(int *)&this_00[1].field_0xc < 0)) {
-    iVar7 = pAVar11->field_0014;
+    iVar7 = pAVar12->field_0014;
     sVar1 = (short)(iVar7 >> 0x1f);
     if (iVar7 < 0) {
       iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar1) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
@@ -119,7 +120,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     *(int *)&this_00[1].field_0x4 = iVar7;
-    iVar7 = pAVar11->field_0018;
+    iVar7 = pAVar12->field_0018;
     sVar1 = (short)(iVar7 >> 0x1f);
     if (iVar7 < 0) {
       iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar1) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
@@ -130,7 +131,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     *(int *)&this_00[1].field_0x8 = iVar7;
-    iVar7 = pAVar11->field_001C;
+    iVar7 = pAVar12->field_001C;
     if (iVar7 < 0) {
       iVar7 = (short)(iVar7 / 200) + -1;
     }
@@ -147,21 +148,21 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
       if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
           ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (SHORT_007fb244 <= sVar2))
       {
-        iVar7 = 0;
+        pSVar8 = (STWorldObject *)0x0;
       }
       else {
-        iVar7 = *(int *)(DAT_007fb248 + 4 +
-                        ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                        (int)sVar1) * 8);
-        pAVar11 = (AnonShape_0062FA80_0B91B2B9 *)local_8;
+        pSVar8 = g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+                 objects[1];
+        pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)local_8;
       }
-      if ((iVar7 == 0) &&
+      if ((pSVar8 == (STWorldObject *)0x0) &&
          (iVar7 = DumpClassC::WritePtr
                             ((short)*(undefined4 *)&this_00[1].field_0x4,
                              (short)*(undefined4 *)&this_00[1].field_0x8,
                              (short)*(undefined4 *)&this_00[1].field_0xc,1,
                              (AnonShape_00495EC0_95A268C6 *)this_00),
-         pAVar11 = (AnonShape_0062FA80_0B91B2B9 *)local_8, iVar7 == 0)) {
+         pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)local_8, iVar7 == 0)) {
         iVar7 = local_8->field_0014;
         sVar1 = (short)(iVar7 >> 0x1f);
         if (iVar7 < 0) {
@@ -173,29 +174,29 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
                               (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
         }
         *(int *)&this_00[1].field_0x4 = iVar7;
-        iVar10 = local_8->field_0018;
-        sVar1 = (short)(iVar10 >> 0x1f);
-        if (iVar10 < 0) {
-          iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar1) -
-                          (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
+        iVar11 = local_8->field_0018;
+        sVar1 = (short)(iVar11 >> 0x1f);
+        if (iVar11 < 0) {
+          iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar1) -
+                          (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar1) -
-                               (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
+          iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar1) -
+                               (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
         }
-        *(int *)&this_00[1].field_0x8 = iVar10;
-        iVar8 = local_8->field_001C;
-        sVar1 = (short)(iVar8 >> 0x1f);
-        if (iVar8 < 0) {
-          iVar8 = (short)(((short)(iVar8 / 200) + sVar1) -
-                         (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1;
+        *(int *)&this_00[1].field_0x8 = iVar11;
+        iVar9 = local_8->field_001C;
+        sVar1 = (short)(iVar9 >> 0x1f);
+        if (iVar9 < 0) {
+          iVar9 = (short)(((short)(iVar9 / 200) + sVar1) -
+                         (short)((longlong)iVar9 * 0x51eb851f >> 0x3f)) + -1;
         }
         else {
-          iVar8 = (int)(short)(((short)(iVar8 / 200) + sVar1) -
-                              (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
+          iVar9 = (int)(short)(((short)(iVar9 / 200) + sVar1) -
+                              (short)((longlong)iVar9 * 0x51eb851f >> 0x3f));
         }
-        *(int *)&this_00[1].field_0xc = iVar8;
-        iVar7 = thunk_FUN_0062fea0(this_00,iVar7,iVar10);
+        *(int *)&this_00[1].field_0xc = iVar9;
+        iVar7 = thunk_FUN_0062fea0(this_00,iVar7,iVar11);
         *(char *)&this_00[1].field_0028 = (char)iVar7;
         goto LAB_0062ea02;
       }
@@ -203,7 +204,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
     thunk_FUN_0062f900((STJellyGunC *)this_00);
   }
 LAB_0062ea02:
-  iVar7 = thunk_FUN_0062fca0(this_00,(int)pAVar11);
+  iVar7 = thunk_FUN_0062fca0(this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar12);
   if (iVar7 == 0xffff) {
     return 0xffff;
   }

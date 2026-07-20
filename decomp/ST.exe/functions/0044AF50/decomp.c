@@ -6,14 +6,15 @@
 void STAllPlayersC::PushTV(char param_1,int param_2)
 
 {
+  DArrayTy *groupContent;
   code *pcVar1;
   int iVar2;
-  undefined4 *puVar3;
+  STPlayerTempSlot (*paSVar3) [5];
   Global_sub_0043FC50_param_1Enum GVar4;
   
   if (param_2 == 0) {
     GVar4 = CASE_E;
-    puVar3 = &g_playerRuntime[param_1].field326_0x163;
+    paSVar3 = g_playerRuntime[param_1].tempSlots;
   }
   else {
     if (param_2 != 1) {
@@ -27,19 +28,20 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
       return;
     }
     GVar4 = CASE_F;
-    puVar3 = &g_playerRuntime[param_1].field384_0x1b3;
+    paSVar3 = g_playerRuntime[param_1].tempSlots + 1;
   }
   thunk_FUN_0043fc50(GVar4,0);
-  if (*(byte **)((int)puVar3 + 0x4a) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)((int)puVar3 + 0x4a));
-    *(undefined4 *)((int)puVar3 + 0x4a) = 0;
-    *(undefined2 *)((int)puVar3 + 0x4e) = 0;
+  groupContent = (*paSVar3)[4].objectIds;
+  if (groupContent != (DArrayTy *)0x0) {
+    FUN_006ae110((byte *)groupContent);
+    (*paSVar3)[4].objectIds = (DArrayTy *)0x0;
+    (*paSVar3)[4].activityCount = 0;
   }
-  puVar3[0x10] = 0;
-  Library::MSVCRT::FUN_0072da70(puVar3 + 4,puVar3,0x40);
-  *puVar3 = 0;
-  *(undefined4 *)((int)puVar3 + 10) = 0;
-  *(undefined2 *)((int)puVar3 + 0xe) = 0;
+  (*paSVar3)[4].objectType = 0;
+  Library::MSVCRT::FUN_0072da70(&(*paSVar3)[1].objectType,(undefined4 *)paSVar3,0x40);
+  (*paSVar3)[0].objectType = 0;
+  (*paSVar3)[0].objectIds = (DArrayTy *)0x0;
+  (*paSVar3)[0].activityCount = 0;
   return;
 }
 

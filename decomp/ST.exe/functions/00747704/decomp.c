@@ -25,7 +25,7 @@ uint FUN_00747704(AnonShape_0074784F_2D85CB12 *param_1,uint param_2,int *param_3
       *param_4 = 0;
     }
     local_8 = 0;
-    bVar3 = FUN_00747e4e((int)param_1);
+    bVar3 = FUN_00747e4e((AnonShape_00747E4E_3F64CF30 *)param_1);
     if (CONCAT31(extraout_var,bVar3) == 1) {
       FUN_0074784f(param_1);
     }

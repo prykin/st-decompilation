@@ -244,17 +244,17 @@ LAB_0058fb0d:
                       (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
                        ((sVar11 < 0 ||
                         ((((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) || (SHORT_007fb244 <= sVar12))
-                         || (*(int *)(DAT_007fb248 +
-                                     ((int)sVar12 * (int)SHORT_007fb246 +
-                                      (int)sVar11 * (int)SHORT_007fb240 + (int)sVar5) * 8) == 0)))))
-                       ))) && (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
-                               ((sVar11 < 0 ||
-                                (((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) ||
-                                 ((SHORT_007fb244 <= sVar12 ||
-                                  (*(int *)(DAT_007fb248 + 4 +
-                                           ((int)sVar12 * (int)SHORT_007fb246 +
-                                            (int)sVar11 * (int)SHORT_007fb240 + (int)sVar5) * 8) ==
-                                   0)))))))))) goto LAB_0058fd1a;
+                         || (g_worldCells
+                             [(int)sVar12 * (int)SHORT_007fb246 + (int)sVar11 * (int)SHORT_007fb240
+                              + (int)sVar5].objects[0] == (STWorldObject *)0x0)))))))) &&
+                     (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
+                      ((sVar11 < 0 ||
+                       (((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) ||
+                        ((SHORT_007fb244 <= sVar12 ||
+                         (g_worldCells
+                          [(int)sVar12 * (int)SHORT_007fb246 + (int)sVar11 * (int)SHORT_007fb240 +
+                           (int)sVar5].objects[1] == (STWorldObject *)0x0))))))))))
+                  goto LAB_0058fd1a;
                   bVar2 = (int)(uVar10 - (int)*(short *)((int)this + 0x47)) < 0;
                   if (uVar10 == (int)*(short *)((int)this + 0x47) || bVar2) break;
                   uVar10 = uVar10 - 1;

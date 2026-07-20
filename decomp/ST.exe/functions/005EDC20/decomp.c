@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  int *this;
+  STWorldObject *this;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -23,28 +23,28 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
     if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
         ((sVar2 < SHORT_007fb242 && (-1 < sVar1)))) &&
        ((sVar1 < SHORT_007fb244 &&
-        (this = *(int **)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
-                         (int)sVar3) * 8), this != (int *)0x0)))) {
-      iVar4 = (**(code **)(*this + 0x2c))();
+        (this = g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
+                objects[0], this != (STWorldObject *)0x0)))) {
+      iVar4 = (*this->vtable->GetObjectTypeId)(this);
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
-        if ((this[0x142] == *(int *)&param_1->field_0x18) &&
-           ((this[0x134] == 3 &&
-            (iVar4 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x0e'),
-            iVar4 == *(int *)(*(int *)((int)this + 0x1f5) + 0x20c))))) {
+        if ((*(int *)&this[0x23].field_0x1c == *(int *)&param_1->field_0x18) &&
+           ((*(int *)&this[0x22].field_0x8 == 3 &&
+            (iVar4 = thunk_FUN_004ac910((void *)((int)&this[0xd].vtable + 1),'\x0e'),
+            iVar4 == *(int *)(*(int *)((int)&this[0xd].value_20 + 1) + 0x20c))))) {
           uVar12 = param_1->field_02C6;
           uVar10 = param_1->field_02C2;
           uVar8 = param_1->field_02BE;
           iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
-          thunk_FUN_005f05a0(param_1,(short)this[9],*(undefined2 *)((int)this + 0x32));
+          thunk_FUN_005f05a0(param_1,(short)this[1].vtable,*(undefined2 *)&this[1].field_0xe);
           return 1;
         }
         return 0;
       }
-      iVar4 = (**(code **)(*this + 0x2c))();
-      if ((iVar4 == 99) && (this[0x134] == 2)) {
+      iVar4 = (*this->vtable->GetObjectTypeId)(this);
+      if ((iVar4 == 99) && (*(int *)&this[0x22].field_0x8 == 2)) {
         uVar11 = 0;
         iVar9 = -100;
         iVar7 = -100;

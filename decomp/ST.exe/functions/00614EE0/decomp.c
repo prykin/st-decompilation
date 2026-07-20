@@ -26,10 +26,10 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   if ((((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
        ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) ||
       ((SHORT_007fb244 <= sVar2 ||
-       ((this_00 = *(STFishC **)
-                    (DAT_007fb248 +
-                    ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                    (int)sVar1) * 8), this_00 == (STFishC *)0x0 ||
+       ((this_00 = (STFishC *)
+                   g_worldCells
+                   [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1
+                   ].objects[0], this_00 == (STFishC *)0x0 ||
         (this_00->field_0018 != *(int *)((int)this + 0x2d1))))))) &&
      (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2d1),(int *)&local_1c),
      this_00 = local_1c, iVar4 == -4)) {

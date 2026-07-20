@@ -1,0 +1,7 @@
+program=ST.exe
+candidates=168
+convention_apply=8
+receiver_type_apply=8
+note=No class owner or semantic method name is invented.
+note_safety=High confidence requires incoming ECX capture/use, two explicit pointer receiver call sites, no scalar ECX setup or caller cleanup, no live incoming EDX use, and exact RET n/stack-parameter agreement.
+note_vtable=Generated anonymous vtables contain neutral void-pointer slots only; a later signature pass may refine individually proven slots.

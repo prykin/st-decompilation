@@ -1,5 +1,5 @@
 family	component	slot_index	slot_offset	tables	owners	unique_targets	named_methods	named_owners	signature_shapes
-007900A0:0	007900A0	0	0x0	00790AA0 | 00797560 | 0079B238 | 0079B3C4 | 0079B528 | 0079B68C | 0079B78C | 0079B8F0 | 0079BA54 | 0079BBB8 | 0079BD1C | 0079BE80 | 0079C3EC | 0079C5AC | 0079C9B0 | 0079CB14 | 0079CEFC | 0079D098	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	18	GetMessage	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	/int(/int) varargs=false noreturn=false | /undefined4(/int) varargs=false noreturn=false
+007900A0:0	007900A0	0	0x0	00790AA0 | 00797560 | 0079B238 | 0079B3C4 | 0079B528 | 0079B68C | 0079B78C | 0079B8F0 | 0079BA54 | 0079BBB8 | 0079BD1C | 0079BE80 | 0079C3EC | 0079C5AC | 0079C9B0 | 0079CB14 | 0079CEFC | 0079D098	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	18	GetMessage	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	/int(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577 *32) varargs=false noreturn=false | /int(/SubmarineTitans/Recovered/PointerShapes/AnonShape_004B9FA0_DF027633 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00578630_E75DF825 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0057BF60_09E2DBC1 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0057E0A0_323CBAA3 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00581BF0_F07EE3A2 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00583270_A36DCD7A *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_005859A0_2C017738 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00588BC0_F7B2CBED *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00589C10_66C697EB *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0058C760_1E722DF9 *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0058D7C0_0930224F *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_005F5F20_58E29B9E *32) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00621B50_242D543A *32) varargs=false noreturn=false
 007900A0:1	007900A0	1	0x4	00790AA0 | 00797560 | 0079B238 | 0079B3C4 | 0079B528 | 0079B68C | 0079B78C | 0079B8F0 | 0079BA54 | 0079BBB8 | 0079BD1C | 0079BE80 | 0079C3EC | 0079C5AC | 0079C9B0 | 0079CB14 | 0079CEFC | 0079D098	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	1			
 007900A0:10	007900A0	10	0x28	00790AA0 | 00797560 | 0079B238 | 0079B3C4 | 0079B528 | 0079B68C | 0079B78C | 0079B8F0 | 0079BA54 | 0079BBB8 | 0079BD1C | 0079BE80 | 0079C3EC | 0079C5AC | 0079C9B0 | 0079CB14 | 0079CEFC | 0079D098	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	3			
 007900A0:11	007900A0	11	0x2C	00790AA0 | 00797560 | 0079B238 | 0079B3C4 | 0079B528 | 0079B68C | 0079B78C | 0079B8F0 | 0079BA54 | 0079BBB8 | 0079BD1C | 0079BE80 | 0079C3EC | 0079C5AC | 0079C9B0 | 0079CB14 | 0079CEFC | 0079D098	STColl3C | STCrabC | STDcResourcC | STDestC | STExplosion | STFishC | STJellyGunC | STJellyManC | STLBombC | STMBombC | STMineSetC | STOctopusC | STRubbishC | STSatC | STSharkC | STSprGameObjC | TLOBaseTy | TLOFakeTy	15			
@@ -98,7 +98,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 007905A0:21	007905A0	21	0x54	007905A0	STBoatC	1			
 007905A0:22	007905A0	22	0x58	007905A0	STBoatC	1			
 007905A0:23	007905A0	23	0x5C	007905A0	STBoatC	1			
-007905A0:24	007905A0	24	0x60	007905A0	STBoatC	1	GetInfo16	STBoatC	/undefined(/uint *) varargs=false noreturn=false
+007905A0:24	007905A0	24	0x60	007905A0	STBoatC	1	GetInfo16	STBoatC	/undefined(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00488F30_727896DE *32) varargs=false noreturn=false
 007905A0:25	007905A0	25	0x64	007905A0	STBoatC	1			
 007905A0:26	007905A0	26	0x68	007905A0	STBoatC	1			
 007905A0:27	007905A0	27	0x6C	007905A0	STBoatC	1			
@@ -154,7 +154,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 007905A0:72	007905A0	72	0x120	007905A0	STBoatC	1			
 007905A0:8	007905A0	8	0x20	007905A0	STBoatC	1	StopMove	STBoatC	
 007905A0:9	007905A0	9	0x24	007905A0	STBoatC	1			
-00790728:0	00790728	0	0x0	00790728	STGroupBoatC	1	GetMessage	STGroupBoatC	/undefined4(/int) varargs=false noreturn=false
+00790728:0	00790728	0	0x0	00790728	STGroupBoatC	1	GetMessage	STGroupBoatC	/undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00497E00_1D819A47 *32) varargs=false noreturn=false
 00790728:1	00790728	1	0x4	00790728	STGroupBoatC	1			
 00790728:2	00790728	2	0x8	00790728	STGroupBoatC	1			
 00790728:3	00790728	3	0xC	00790728	STGroupBoatC	1			
@@ -166,10 +166,10 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 00790728:9	00790728	9	0x24	00790728	STGroupBoatC	1			
 0079AC48:0	0079AC48	0	0x0	0079AC48	HelpPanelTy	1	GetMessage	HelpPanelTy	/undefined4(/int) varargs=false noreturn=false
 0079AC48:1	0079AC48	1	0x4	0079AC48	HelpPanelTy	1	CreateBut	PanelTy	/undefined4(/undefined4,/int,/int,/int,/int,/int,/byte,/winnt.h/LPSTR,/undefined4,/undefined4,/short,/undefined2,/undefined4,/char *,/undefined4) varargs=false noreturn=false
-0079AC48:2	0079AC48	2	0x8	0079AC48	HelpPanelTy	1	PaintBut	PanelTy	/undefined(/int,/byte,/char *,/undefined *,/int,/int) varargs=false noreturn=false
-0079AC48:3	0079AC48	3	0xC	0079AC48	HelpPanelTy	1	PaintTxtBut	PanelTy	/undefined(/int,/byte,/char *,/ccFntTy *32,/WinDef.h/UINT,/undefined *,/int,/int) varargs=false noreturn=false
-0079AC48:4	0079AC48	4	0x10	0079AC48	HelpPanelTy	1	PaintIBut	PanelTy	/undefined(/int,/char *,/WinDef.h/UINT,/int,/int) varargs=false noreturn=false
-0079AC48:5	0079AC48	5	0x14	0079AC48	HelpPanelTy	1	PaintLBut	PanelTy	/undefined(/int,/byte,/char *,/char *,/undefined *,/int,/int) varargs=false noreturn=false
+0079AC48:2	0079AC48	2	0x8	0079AC48	HelpPanelTy	1	PaintBut	PanelTy	/undefined(/SubmarineTitans/Recovered/PointerShapes/AnonShape_005389E0_C98BD548 *32,/byte,/char *,/undefined *,/int,/int) varargs=false noreturn=false
+0079AC48:3	0079AC48	3	0xC	0079AC48	HelpPanelTy	1	PaintTxtBut	PanelTy	/undefined(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538BA0_C95DDA1D *32,/byte,/char *,/ccFntTy *32,/WinDef.h/UINT,/undefined *,/int,/int) varargs=false noreturn=false
+0079AC48:4	0079AC48	4	0x10	0079AC48	HelpPanelTy	1	PaintIBut	PanelTy	/undefined(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538DB0_574DDCD0 *32,/char *,/WinDef.h/UINT,/int,/int) varargs=false noreturn=false
+0079AC48:5	0079AC48	5	0x14	0079AC48	HelpPanelTy	1	PaintLBut	PanelTy	/undefined(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538FC0_B5E96243 *32,/byte,/char *,/char *,/undefined *,/int,/int) varargs=false noreturn=false
 0079AC48:6	0079AC48	6	0x18	0079AC48	HelpPanelTy	1	SetPanel	HelpPanelTy	/undefined4(/char) varargs=false noreturn=false
 0079ADB8:0	0079ADB8	0	0x0	0079C1E8	StartSystemTy	1	InitSystem	StartSystemTy	
 0079ADB8:1	0079ADB8	1	0x4	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	3	<destructor>	InterSystemC | StartSystemTy	
@@ -177,7 +177,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079ADB8:4	0079ADB8	4	0x10	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			
 0079ADB8:5	0079ADB8	5	0x14	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	4	CreateSystemObjects	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	
 0079ADB8:6	0079ADB8	6	0x18	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy	1			
-0079ADB8:8	0079ADB8	8	0x20	0079ADB8 | 0079C1E8	InterSystemC | StartSystemTy	2	GetMessage	InterSystemC | StartSystemTy	/int(/int *) varargs=false noreturn=false | /undefined4(/int) varargs=false noreturn=false
+0079ADB8:8	0079ADB8	8	0x20	0079ADB8 | 0079C1E8	InterSystemC | StartSystemTy	2	GetMessage	InterSystemC | StartSystemTy	/int(/int *) varargs=false noreturn=false | /undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00542F40_93D3A62D *32) varargs=false noreturn=false
 0079AE38:0	0079AE38	0	0x0	0079AE38	STPlaySystemC	1	InitSystem	STPlaySystemC	/undefined4(/int) varargs=false noreturn=false
 0079AE38:1	0079AE38	1	0x4	0079AE38	STPlaySystemC	1	DoneSystem	STPlaySystemC	
 0079AE38:2	0079AE38	2	0x8	0079AE38	STPlaySystemC	1			
@@ -220,7 +220,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079B1E0:5	0079B1E0	5	0x14	0079B1E0	GameSystemC	1	CreateSystemObjects	GameSystemC	
 0079B1E0:6	0079B1E0	6	0x18	0079B1E0	GameSystemC	1			
 0079B1E0:7	0079B1E0	7	0x1C	0079B1E0	GameSystemC	1			
-0079B1E0:8	0079B1E0	8	0x20	0079B1E0	GameSystemC	1	GetMessage	GameSystemC	/undefined4(/int) varargs=false noreturn=false
+0079B1E0:8	0079B1E0	8	0x20	0079B1E0	GameSystemC	1	GetMessage	GameSystemC	/undefined4(/SubmarineTitans/Recovered/PointerShapes/AnonShape_005776D0_202C27C7 *32) varargs=false noreturn=false
 0079C008:0	0079C008	0	0x0	0079C008 | 0079C0C4	MMObjTy | PrividerTy	2	GetMessage	MMObjTy | PrividerTy	/undefined4(/int) varargs=false noreturn=false
 0079C008:1	0079C008	1	0x4	0079C008 | 0079C0C4	MMObjTy | PrividerTy	1	DoneMMObj	MMObjTy	
 0079C008:2	0079C008	2	0x8	0079C008 | 0079C0C4	MMObjTy | PrividerTy	1	CloseButtons	MMObjTy	

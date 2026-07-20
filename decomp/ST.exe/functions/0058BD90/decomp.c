@@ -186,10 +186,12 @@ switchD_0058bec9_caseD_0:
   if (((sVar6 < 0) || (SHORT_007fb240 <= sVar6)) ||
      ((sVar7 < 0 ||
       ((((SHORT_007fb242 <= sVar7 || (sVar8 = (short)iVar3, sVar8 < 0)) || (SHORT_007fb244 <= sVar8)
-        ) || ((iVar5 = *(int *)(DAT_007fb248 +
-                               ((int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar7
-                               + (int)sVar6) * 8), iVar5 == 0 || (*(int *)(iVar5 + 0x20) == 400)))))
-      ))) {
+        ) || ((g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar7 + (int)sVar6].
+               objects[0] == (STWorldObject *)0x0 ||
+              (g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar7 + (int)sVar6].
+               objects[0]->value_20 == 400)))))))) {
     if ((5 < iVar3) && ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0)) {
       iVar3 = param_1->field_0239 + 1;
       param_1->field_0239 = iVar3;

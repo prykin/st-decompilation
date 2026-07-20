@@ -116,11 +116,10 @@ STAllPlayersC::GetGObjFromBox
         do {
           local_2c = local_2c + SHORT_007fb240;
           if (local_8 <= local_14) {
-            iVar4 = local_2c * 8 + -8;
             iVar6 = (local_14 - local_8) + 1;
+            iVar4 = local_2c * 8 + -8;
             do {
-              iVar4 = iVar4 + 8;
-              piVar1 = *(int **)(iVar4 + DAT_007fb248);
+              piVar1 = *(int **)((int)g_worldCells[1].objects + iVar4);
               if (((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) &&
                  (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
                 iVar7 = piVar1[8];
@@ -146,6 +145,7 @@ STAllPlayersC::GetGObjFromBox
 LAB_0042b469:
               iVar6 = iVar6 + -1;
               iVar7 = local_28;
+              iVar4 = iVar4 + 8;
             } while (iVar6 != 0);
           }
           local_20 = local_20 + -1;

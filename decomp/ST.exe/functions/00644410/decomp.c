@@ -11,11 +11,11 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
   int iVar7;
   undefined4 *puVar8;
   short sVar9;
-  int *piVar10;
-  int iVar11;
-  short sVar12;
-  int iVar13;
-  longlong lVar14;
+  STWorldObject *this_00;
+  int iVar10;
+  short sVar11;
+  int iVar12;
+  longlong lVar13;
   undefined1 local_48 [4];
   int local_44;
   int local_40;
@@ -35,7 +35,7 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
   short local_8;
   short local_6;
   
-  iVar13 = 0;
+  iVar12 = 0;
   local_3c = (int)*(short *)((int)this + 0x41);
   local_40 = (int)*(short *)((int)this + 0x43);
   local_44 = (int)*(short *)((int)this + 0x45);
@@ -58,21 +58,21 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
   local_38 = 1;
   if (0 < local_2c) {
     do {
-      iVar13 = ((local_3c - ((AnonShape_00644410_A4B3CF3D *)this)->field_0268) * local_38) /
+      iVar12 = ((local_3c - ((AnonShape_00644410_A4B3CF3D *)this)->field_0268) * local_38) /
                local_2c + (int)((AnonShape_00644410_A4B3CF3D *)this)->field_0268;
       local_14 = ((local_40 - ((AnonShape_00644410_A4B3CF3D *)this)->field_026A) * local_38) /
                  local_2c + (int)((AnonShape_00644410_A4B3CF3D *)this)->field_026A;
       local_18 = (undefined4 *)
                  (((local_44 - ((AnonShape_00644410_A4B3CF3D *)this)->field_026C) * local_38) /
                   local_2c + (int)((AnonShape_00644410_A4B3CF3D *)this)->field_026C);
-      sVar2 = (short)(iVar13 >> 0x1f);
-      if (iVar13 < 0) {
-        local_24 = (short)(((short)(iVar13 / 0xc9) + sVar2) -
-                          (short)((longlong)iVar13 * 0x28c1979 >> 0x3f)) + -1;
+      sVar2 = (short)(iVar12 >> 0x1f);
+      if (iVar12 < 0) {
+        local_24 = (short)(((short)(iVar12 / 0xc9) + sVar2) -
+                          (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
       }
       else {
-        local_24 = (int)(short)(((short)(iVar13 / 0xc9) + sVar2) -
-                               (short)((longlong)iVar13 * 0x28c1979 >> 0x3f));
+        local_24 = (int)(short)(((short)(iVar12 / 0xc9) + sVar2) -
+                               (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
       }
       sVar2 = (short)(local_14 >> 0x1f);
       if (local_14 < 0) {
@@ -98,7 +98,7 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
       *param_1 = 0;
       local_30 = puVar8;
       local_28 = iVar5;
-      local_20 = iVar13;
+      local_20 = iVar12;
       if (local_34 <= (int)puVar8 + 1) {
         do {
           if ((local_34 <= SHORT_007fb244 + -1) && (local_1c = iVar5 + -1, local_1c <= iVar5 + 1)) {
@@ -108,19 +108,19 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                   ))) {
                 do {
                   pAVar1 = local_10;
-                  iVar13 = local_34;
+                  iVar12 = local_34;
                   if ((-1 < iVar5) && (iVar6 = (int)SHORT_007fb240, iVar5 <= iVar6 + -1)) {
                     if (local_34 < 0) {
                       if ((((undefined4 *)local_34 == local_30) && (local_1c == local_28)) &&
                          (iVar5 == local_24)) {
                         *param_1 = 1;
                         local_10->field_0270 = 0;
-                        lVar14 = Library::MSVCRT::__ftol();
-                        *param_2 = (int)lVar14;
-                        pAVar1->field_0041 = (short)lVar14;
-                        lVar14 = Library::MSVCRT::__ftol();
-                        *param_3 = (int)lVar14;
-                        *(short *)&pAVar1->field_0x43 = (short)lVar14;
+                        lVar13 = Library::MSVCRT::__ftol();
+                        *param_2 = (int)lVar13;
+                        pAVar1->field_0041 = (short)lVar13;
+                        lVar13 = Library::MSVCRT::__ftol();
+                        *param_3 = (int)lVar13;
+                        *(short *)&pAVar1->field_0x43 = (short)lVar13;
                         *param_4 = 5;
                         pAVar1->field_0045 = 5;
                         return;
@@ -128,35 +128,35 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                     }
                     else {
                       sVar9 = (short)iVar5;
-                      sVar12 = (short)local_34;
+                      sVar11 = (short)local_34;
                       sVar2 = (short)local_1c;
                       if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar2 < 0)) ||
-                          ((SHORT_007fb242 <= sVar2 || (sVar12 < 0)))) || (SHORT_007fb244 <= sVar12)
+                          ((SHORT_007fb242 <= sVar2 || (sVar11 < 0)))) || (SHORT_007fb244 <= sVar11)
                          ) {
-                        piVar10 = (int *)0x0;
+                        this_00 = (STWorldObject *)0x0;
                       }
                       else {
-                        piVar10 = *(int **)(DAT_007fb248 +
-                                           ((int)sVar12 * (int)SHORT_007fb246 + sVar2 * iVar6 +
-                                           (int)sVar9) * 8);
+                        this_00 = g_worldCells
+                                  [(int)sVar11 * (int)SHORT_007fb246 + sVar2 * iVar6 + (int)sVar9].
+                                  objects[0];
                       }
-                      if (((local_10->field_0287 != '\0') && (piVar10 == (int *)0x0)) &&
+                      if (((local_10->field_0287 != '\0') && (this_00 == (STWorldObject *)0x0)) &&
                          ((((sVar9 < 0 ||
                             (((SHORT_007fb240 <= sVar9 || (sVar2 < 0)) || (SHORT_007fb242 <= sVar2))
-                            )) || ((sVar12 < 0 || (SHORT_007fb244 <= sVar12)))) ||
-                          ((piVar10 = *(int **)(DAT_007fb248 + 4 +
-                                               ((int)sVar12 * (int)SHORT_007fb246 + sVar2 * iVar6 +
-                                               (int)sVar9) * 8), piVar10 != (int *)0x0 &&
-                           (((iVar6 = (**(code **)(*piVar10 + 0x2c))(), iVar6 != 0xa6 &&
+                            )) || ((sVar11 < 0 || (SHORT_007fb244 <= sVar11)))) ||
+                          ((this_00 = g_worldCells
+                                      [(int)sVar11 * (int)SHORT_007fb246 + sVar2 * iVar6 +
+                                       (int)sVar9].objects[1], this_00 != (STWorldObject *)0x0 &&
+                           (((iVar6 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar6 != 0xa6 &&
                              (iVar6 != 0xa7)) && ((iVar6 != 0xbd && (iVar6 != 0xaf)))))))))) {
-                        piVar10 = (int *)0x0;
+                        this_00 = (STWorldObject *)0x0;
                       }
                       iVar6 = local_20;
-                      if (((((undefined4 *)iVar13 == local_30) && (local_1c == local_28)) &&
+                      if (((((undefined4 *)iVar12 == local_30) && (local_1c == local_28)) &&
                           (iVar5 == local_24)) &&
                          ((*(short *)(DAT_007fb280 +
-                                     (SHORT_007fb27e * iVar13 + iVar5 + SHORT_007fb278 * local_1c) *
-                                     2) < 0 && (piVar10 == (int *)0x0)))) {
+                                     (SHORT_007fb27e * iVar12 + iVar5 + SHORT_007fb278 * local_1c) *
+                                     2) < 0 && (this_00 == (STWorldObject *)0x0)))) {
                         *param_1 = 1;
                         local_10->field_0270 = 0;
                         *param_2 = local_20;
@@ -164,12 +164,12 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                         *param_4 = (int)local_18;
                         sVar2 = (short)((int)local_18 >> 0x1f);
                         if ((int)local_18 < 0) {
-                          iVar13 = (short)(((short)((int)local_18 / 200) + sVar2) -
+                          iVar12 = (short)(((short)((int)local_18 / 200) + sVar2) -
                                           (short)((longlong)(int)local_18 * 0x51eb851f >> 0x3f)) +
                                    -1;
                         }
                         else {
-                          iVar13 = (int)(short)(((short)((int)local_18 / 200) + sVar2) -
+                          iVar12 = (int)(short)(((short)((int)local_18 / 200) + sVar2) -
                                                (short)((longlong)(int)local_18 * 0x51eb851f >> 0x3f)
                                                );
                         }
@@ -206,11 +206,11 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                         sVar2 = local_10->field_026A;
                         local_34 = (int)sVar2;
                         if (sVar2 < 0) {
-                          iVar11 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+                          iVar10 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                           (short)((longlong)local_34 * 0x28c1979 >> 0x3f)) + -1;
                         }
                         else {
-                          iVar11 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+                          iVar10 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                                (short)((longlong)local_34 * 0x28c1979 >> 0x3f));
                         }
                         sVar2 = local_10->field_0268;
@@ -224,18 +224,18 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                               (short)((longlong)local_38 * 0x28c1979 >> 0x3f));
                         }
                         sVar2 = *(short *)(DAT_007fb280 +
-                                          (iVar7 * SHORT_007fb27e + iVar4 + iVar11 * SHORT_007fb278)
+                                          (iVar7 * SHORT_007fb27e + iVar4 + iVar10 * SHORT_007fb278)
                                           * 2);
                         if (-1 < sVar2) {
                           if (*(short *)(DAT_007fb280 +
-                                        (iVar13 * SHORT_007fb27e + iVar3 + iVar5 * SHORT_007fb278) *
+                                        (iVar12 * SHORT_007fb27e + iVar3 + iVar5 * SHORT_007fb278) *
                                         2) == sVar2) {
                             return;
                           }
                           iVar5 = local_38 - local_20;
                           local_28 = local_20;
                           local_20 = 3;
-                          iVar13 = (local_34 - local_14) / 2 + local_14;
+                          iVar12 = (local_34 - local_14) / 2 + local_14;
                           param_1 = local_18;
                           iVar6 = iVar5 / 2 + iVar6;
                           local_18 = (undefined4 *)
@@ -253,14 +253,14 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                                      (short)((longlong)(int)local_18 * 0x51eb851f >>
                                                             0x3f));
                             }
-                            sVar2 = (short)(iVar13 >> 0x1f);
-                            if (iVar13 < 0) {
-                              iVar5 = (short)(((short)(iVar13 / 0xc9) + sVar2) -
-                                             (short)((longlong)iVar13 * 0x28c1979 >> 0x3f)) + -1;
+                            sVar2 = (short)(iVar12 >> 0x1f);
+                            if (iVar12 < 0) {
+                              iVar5 = (short)(((short)(iVar12 / 0xc9) + sVar2) -
+                                             (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
                             }
                             else {
-                              iVar5 = (int)(short)(((short)(iVar13 / 0xc9) + sVar2) -
-                                                  (short)((longlong)iVar13 * 0x28c1979 >> 0x3f));
+                              iVar5 = (int)(short)(((short)(iVar12 / 0xc9) + sVar2) -
+                                                  (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
                             }
                             sVar2 = (short)(iVar6 >> 0x1f);
                             if (iVar6 < 0) {
@@ -272,22 +272,22 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                                   (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
                             }
                             iVar7 = iVar6;
-                            iVar11 = iVar13;
+                            iVar10 = iVar12;
                             if (*(short *)(DAT_007fb280 +
                                           (local_2c * SHORT_007fb27e +
                                           iVar3 + iVar5 * SHORT_007fb278) * 2) < 0) {
                               param_1 = local_18;
                               iVar7 = local_38;
-                              iVar11 = local_34;
+                              iVar10 = local_34;
                               local_18 = local_30;
                               local_28 = iVar6;
-                              local_24 = iVar13;
+                              local_24 = iVar12;
                             }
                             local_30 = local_18;
-                            local_34 = iVar11;
+                            local_34 = iVar10;
                             local_38 = iVar7;
                             iVar6 = (local_38 - local_28) / 2 + local_28;
-                            iVar13 = (local_34 - local_24) / 2 + local_24;
+                            iVar12 = (local_34 - local_24) / 2 + local_24;
                             local_18 = (undefined4 *)
                                        (((int)local_30 - (int)param_1) / 2 + (int)param_1);
                             local_20 = local_20 + -1;
@@ -305,14 +305,14 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                                   (short)((longlong)(int)local_18 * 0x51eb851f >>
                                                          0x3f));
                           }
-                          sVar2 = (short)(iVar13 >> 0x1f);
-                          if (iVar13 < 0) {
-                            iVar5 = (short)(((short)(iVar13 / 0xc9) + sVar2) -
-                                           (short)((longlong)iVar13 * 0x28c1979 >> 0x3f)) + -1;
+                          sVar2 = (short)(iVar12 >> 0x1f);
+                          if (iVar12 < 0) {
+                            iVar5 = (short)(((short)(iVar12 / 0xc9) + sVar2) -
+                                           (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
                           }
                           else {
-                            iVar5 = (int)(short)(((short)(iVar13 / 0xc9) + sVar2) -
-                                                (short)((longlong)iVar13 * 0x28c1979 >> 0x3f));
+                            iVar5 = (int)(short)(((short)(iVar12 / 0xc9) + sVar2) -
+                                                (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
                           }
                           sVar2 = (short)(iVar6 >> 0x1f);
                           if (iVar6 < 0) {
@@ -328,10 +328,10 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                                         iVar3 + iVar5 * SHORT_007fb278) * 2) < 0) {
                             iVar6 = local_38;
                             local_18 = local_30;
-                            iVar13 = local_34;
+                            iVar12 = local_34;
                           }
                           *param_2 = iVar6;
-                          *param_3 = iVar13;
+                          *param_3 = iVar12;
                           *param_4 = (int)local_18;
                           local_10->field_0045 = (short)local_18;
                           local_10->field_0041 = (short)iVar6;
@@ -340,30 +340,33 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                         *param_1 = 2;
                         return;
                       }
-                      if (((piVar10 != (int *)0x0) && (piVar10[6] != local_10->field_025E)) &&
-                         (iVar13 = (**(code **)(*piVar10 + 0xdc))
+                      if (((this_00 != (STWorldObject *)0x0) &&
+                          (*(int *)&this_00->field_0x18 != local_10->field_025E)) &&
+                         (iVar12 = (*this_00->vtable[4].slots_00_28[7])
                                              (local_20,local_14,local_18,local_10->field_024B,
                                               local_10->field_024D,local_10->field_024F),
-                         pAVar1 = local_10, -1 < iVar13)) {
+                         pAVar1 = local_10, -1 < iVar12)) {
                         *param_1 = 1;
                         iVar5 = local_10->field_0259;
                         if (((((iVar5 == 0x9c) || (iVar5 == 0x9d)) || (iVar5 == 0x9e)) ||
                             (iVar5 == 0x9b)) &&
                            (((local_10->field_0285 == '\0' &&
-                             (iVar5 = thunk_FUN_004406c0((char)piVar10[9]), (char)iVar5 != '\x03'))
-                            && (iVar5 = thunk_FUN_004e60d0(piVar10[9],0x1b), iVar5 != 0)))) {
-                          (**(code **)(*piVar10 + 0xe0))(iVar13,&local_6,&local_8,&local_a,local_48)
-                          ;
+                             (iVar5 = thunk_FUN_004406c0(*(char *)&this_00[1].vtable),
+                             (char)iVar5 != '\x03')) &&
+                            (iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x1b), iVar5 != 0))))
+                        {
+                          (*this_00->vtable[4].slots_00_28[8])
+                                    (iVar12,&local_6,&local_8,&local_a,local_48);
                           *param_2 = (int)local_6;
                           *param_3 = (int)local_8;
                           *param_4 = (int)local_a;
-                          thunk_FUN_00645f10(pAVar1,piVar10,(short)*param_2,(short)*param_3,local_a)
+                          thunk_FUN_00645f10(pAVar1,this_00,(short)*param_2,(short)*param_3,local_a)
                           ;
                           pAVar1->field_0285 = '\x02';
                         }
                         pAVar1->field_0270 = 1;
-                        *(int *)&pAVar1->field_0x274 = piVar10[6];
-                        *(int *)&pAVar1->field_0x278 = iVar13;
+                        *(undefined4 *)&pAVar1->field_0x274 = *(undefined4 *)&this_00->field_0x18;
+                        *(int *)&pAVar1->field_0x278 = iVar12;
                         *param_2 = local_20;
                         *param_3 = local_14;
                         *param_4 = (int)local_18;
@@ -374,7 +377,7 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                   iVar5 = iVar5 + 1;
                   puVar8 = local_30;
                   this = local_10;
-                  iVar13 = local_20;
+                  iVar12 = local_20;
                 } while (iVar5 <= local_24 + 1);
               }
               local_1c = local_1c + 1;
@@ -387,7 +390,7 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
       local_38 = local_38 + 1;
     } while (local_38 <= local_2c);
   }
-  *param_2 = iVar13;
+  *param_2 = iVar12;
   *param_3 = local_14;
   *param_4 = (int)local_18;
   return;

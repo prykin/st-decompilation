@@ -42,7 +42,7 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
   if (uVar2 < 0xc001) {
     if (uVar2 == 0xc000) {
       pCVar5 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
-      PanelTy::PaintIBut(this_00,param_1,pCVar5,0x274e,0,1);
+      PanelTy::PaintIBut(this_00,(AnonShape_00538DB0_574DDCD0 *)param_1,pCVar5,0x274e,0,1);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
@@ -107,7 +107,8 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
       text = s_BUT_SLLT_007c7abc;
     }
     pCVar5 = thunk_FUN_00571240(text,0);
-    PanelTy::PaintBut(this_00,param_1,1,pCVar5,thunk_FUN_00529fe0,0,1);
+    PanelTy::PaintBut(this_00,(AnonShape_005389E0_C98BD548 *)param_1,1,pCVar5,thunk_FUN_00529fe0,0,1
+                     );
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

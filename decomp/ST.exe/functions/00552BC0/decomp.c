@@ -52,7 +52,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
         iVar7 = pUVar3->field_03EB;
       }
       pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
-      DibPut((undefined4 *)pUVar3->field_0068,0x24,iVar4,'\x01',pbVar6);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,0x24,iVar4,'\x01',pbVar6);
       pGVar9 = pGVar9 + 0x30;
       iVar4 = iVar4 + 0x1b;
       local_8 = local_8 + -1;
@@ -72,7 +72,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
           iVar7 = pUVar3->field_03EB;
         }
         pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
-        DibPut((undefined4 *)pUVar3->field_0068,local_8,iVar4,'\x01',pbVar6);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,local_8,iVar4,'\x01',pbVar6);
         pGVar9 = pGVar9 + 0x30;
         iVar4 = iVar4 + 0x1b;
         local_10 = local_10 + -1;
@@ -93,7 +93,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
         iVar7 = pUVar3->field_03EB;
       }
       pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
-      DibPut((undefined4 *)pUVar3->field_0068,0xd3,iVar4,'\x01',pbVar6);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,0xd3,iVar4,'\x01',pbVar6);
       pGVar9 = pGVar9 + 0x30;
       iVar4 = iVar4 + 0x1b;
       local_c = local_c + -1;

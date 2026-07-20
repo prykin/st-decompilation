@@ -14,9 +14,9 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
   if ((((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
        ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))) ||
       ((SHORT_007fb244 <= sVar3 ||
-       (*(int *)(DAT_007fb248 +
-                ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1) *
-                8) == 0)))) &&
+       (g_worldCells
+        [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1].objects
+        [0] == (STWorldObject *)0x0)))) &&
      (iVar4 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)param_1),
      iVar4 == 0)) {
     param_1->field_0252 = param_1->field_0252 + '\x01';

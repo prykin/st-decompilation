@@ -1,15 +1,15 @@
 
-char __cdecl FUN_004ef5f0(int param_1)
+char __cdecl FUN_004ef5f0(AnonShape_004EF5F0_1FA558EC *param_1)
 
 {
-  undefined4 *puVar1;
+  AnonNested_004EF5F0_0014_2E827CED *pAVar1;
   char cVar2;
   bool bVar3;
   
   bVar3 = false;
   cVar2 = '\b';
-  puVar1 = *(undefined4 **)(param_1 + 0x14);
-  switch(*puVar1) {
+  pAVar1 = param_1->field_0014;
+  switch(pAVar1->field_0000) {
   case 1:
     cVar2 = '\b';
     break;
@@ -22,14 +22,14 @@ char __cdecl FUN_004ef5f0(int param_1)
   case 4:
     cVar2 = '\x06';
   }
-  switch(puVar1[1]) {
+  switch(pAVar1->field_0004) {
   case 0:
   case 2:
     return cVar2;
   case 1:
     return cVar2 + '\x01';
   case 3:
-    bVar3 = puVar1[2] != 0;
+    bVar3 = pAVar1->field_0008 != 0;
   }
   return bVar3 + cVar2;
 }

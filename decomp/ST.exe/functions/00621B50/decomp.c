@@ -20,8 +20,9 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   int iVar11;
   undefined4 unaff_ESI;
   undefined4 *puVar12;
+  STWorldObject *pSVar13;
   void *unaff_EDI;
-  undefined4 *puVar13;
+  undefined4 *puVar14;
   InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
@@ -116,11 +117,11 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   }
   if (uVar9 == 3) {
     thunk_FUN_00622880((AnonShape_00622880_C4191DB5 *)local_8);
-    if (this_00->field_0363 == 0) {
+    if ((AnonShape_006366D0_80B1100F *)this_00->field_0363 == (AnonShape_006366D0_80B1100F *)0x0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    thunk_FUN_006366d0(this_00->field_0363);
+    thunk_FUN_006366d0((AnonShape_006366D0_80B1100F *)this_00->field_0363);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_0363);
     this_00->field_0363 = 0;
     g_currentExceptionFrame = local_60.previous;
@@ -193,7 +194,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     }
     if (((int *)this_00->field_0363 != (int *)0x0) &&
        (iVar7 = thunk_FUN_006372e0((int *)this_00->field_0363), iVar7 != 0)) {
-      thunk_FUN_006366d0(this_00->field_0363);
+      thunk_FUN_006366d0((AnonShape_006366D0_80B1100F *)this_00->field_0363);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_0363);
       this_00->field_0363 = 0;
     }
@@ -223,15 +224,14 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
       local_18 = (int)sVar4;
       if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar4 < 0)) ||
          (((SHORT_007fb242 <= sVar4 || (sVar3 < 0)) || (SHORT_007fb244 <= sVar3)))) {
-        iVar7 = 0;
+        pSVar13 = (STWorldObject *)0x0;
       }
       else {
-        iVar7 = *(int *)(DAT_007fb248 +
-                        (local_14 +
-                        ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 +
-                        (int)sVar2) * 2) * 4);
+        pSVar13 = g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 + (int)sVar2]
+                  .objects[local_14];
       }
-      if ((iVar7 == 0) &&
+      if ((pSVar13 == (STWorldObject *)0x0) &&
          (iVar7 = DumpClassC::WritePtr
                             (sVar2,sVar4,sVar3,local_14,(AnonShape_00495EC0_95A268C6 *)this_00),
          iVar7 == 0)) {
@@ -267,14 +267,14 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     return 0;
   }
   puVar12 = (undefined4 *)param_1->field_0014;
-  puVar13 = (undefined4 *)&local_8->field_0x25e;
+  puVar14 = (undefined4 *)&local_8->field_0x25e;
   for (iVar11 = 0x13; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *puVar13 = *puVar12;
+    *puVar14 = *puVar12;
     puVar12 = puVar12 + 1;
-    puVar13 = puVar13 + 1;
+    puVar14 = puVar14 + 1;
   }
-  *(undefined2 *)puVar13 = *(undefined2 *)puVar12;
-  *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)((int)puVar12 + 2);
+  *(undefined2 *)puVar14 = *(undefined2 *)puVar12;
+  *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar12 + 2);
   if (*(int *)(iVar7 + 0xc) == 0) {
     *(int *)&local_8->field_0x276 = (int)(short)(*(short *)&local_8->field_0x276 * 0xc9 + 100);
     *(int *)&local_8->field_0x27a = (int)(short)(*(short *)&local_8->field_0x27a * 0xc9 + 100);

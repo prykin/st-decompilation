@@ -26,7 +26,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_
   undefined8 uVar11;
   short local_18;
   short local_16;
-  short local_14 [2];
+  short local_14;
   undefined4 local_10;
   int local_c;
   void *local_8;
@@ -99,20 +99,20 @@ LAB_0046d1e2:
         if (((((short)this->field_051C < 0) || ((short)this->field_051E < 0)) ||
             (sVar2 = this->field_051C, sVar3 = this->field_051E, sVar4 = this->field_0520,
             (short)this->field_0520 < 0)) &&
-           (iVar7 = CONCAT22(extraout_var,this->field_0512),
-           iVar8 = CONCAT22(extraout_var_00,this->field_0510),
-           iVar7 = thunk_FUN_0048dfd0(iVar8,iVar7,(uint)(ushort)this->field_0514,iVar8,iVar7,
-                                      (int *)(uint)(ushort)this->field_0514,2,&local_18,&local_16,
-                                      local_14), sVar2 = local_18, sVar3 = local_16,
-           sVar4 = local_14[0], iVar7 == 0)) {
+           (uVar10 = CONCAT22(extraout_var,this->field_0512),
+           iVar7 = CONCAT22(extraout_var_00,this->field_0510),
+           iVar7 = thunk_FUN_0048dfd0(this,iVar7,uVar10,(uint)(ushort)this->field_0514,iVar7,
+                                      (int *)uVar10,(uint)(ushort)this->field_0514,(short *)0x2,
+                                      &local_18,&local_16), sVar2 = local_18, sVar3 = local_16,
+           sVar4 = local_14, iVar7 == 0)) {
           sVar2 = this->field_0510;
           sVar3 = this->field_0512;
           sVar4 = this->field_0514;
         }
-        local_14[0] = sVar4;
+        local_14 = sVar4;
         local_16 = sVar3;
         local_18 = sVar2;
-        sub_00481520(this,(int)local_18,(int)local_16,(int)local_14[0]);
+        sub_00481520(this,(int)local_18,(int)local_16,(int)local_14);
         iVar7 = sub_0045FF50(this,0);
         if (iVar7 == -1) {
           return 0xffffffff;

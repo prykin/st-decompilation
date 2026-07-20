@@ -1,5 +1,5 @@
 
-void __thiscall FUN_0067a020(void *this,uint *param_1,int param_2)
+void __thiscall FUN_0067a020(void *this,AnonShape_0068FD00_A5257008 *param_1,int param_2)
 
 {
   AiTactClassTy *this_00;
@@ -23,9 +23,9 @@ void __thiscall FUN_0067a020(void *this,uint *param_1,int param_2)
           }
           if (((puVar2[1] != 0) &&
               (this_00 = (AiTactClassTy *)*puVar2, this_00 != (AiTactClassTy *)0x0)) &&
-             (param_1 != (uint *)0x0)) {
+             (param_1 != (AnonShape_0068FD00_A5257008 *)0x0)) {
             if (param_2 < 0) {
-              AiTactClassTy::GetAiMess(this_00,(AnonShape_0068FD00_A5257008 *)param_1);
+              AiTactClassTy::GetAiMess(this_00,param_1);
             }
             else {
               thunk_FUN_0068fc70(this_00,(int)param_1,(short)param_2);

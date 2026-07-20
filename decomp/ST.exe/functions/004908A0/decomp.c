@@ -27,9 +27,9 @@ bool __thiscall FUN_004908a0(void *this,STFishC *param_1,int param_2)
        (((SHORT_007fb242 <= sVar4 || (sVar3 < 0)) ||
         ((SHORT_007fb244 <= sVar3 ||
          (iVar5 = param_2,
-         *(int *)(DAT_007fb248 +
-                 ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 + (int)sVar1)
-                 * 8) == 0)))))) {
+         g_worldCells
+         [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 + (int)sVar1].objects
+         [0] == (STWorldObject *)0x0)))))) {
       iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                            (int)*(short *)((int)this + 0x4b),(short)param_1 + iVar5,
                            local_8[0] + iVar6,local_c[0] + 1);

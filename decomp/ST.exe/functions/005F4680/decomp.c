@@ -14,7 +14,7 @@ void __fastcall FUN_005f4680(int param_1)
   int local_8;
   
   if (*(int *)(param_1 + 0x8f) < 0) {
-    thunk_FUN_005f35f0(*(int *)(param_1 + 0x87));
+    thunk_FUN_005f35f0((void *)param_1);
   }
   pVVar2 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

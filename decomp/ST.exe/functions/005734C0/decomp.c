@@ -298,7 +298,7 @@ LAB_0057366c:
     pcVar8 = pcVar8 + 1;
   }
 LAB_005737e5:
-  thunk_FUN_00573260();
+  thunk_FUN_00573260(this);
   return;
 }
 

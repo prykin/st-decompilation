@@ -20,7 +20,7 @@ int __fastcall FUN_0060c320(void *param_1)
   short sVar16;
   int iVar17;
   int iVar18;
-  int *piVar19;
+  STWorldObject *pSVar19;
   short sVar20;
   bool bVar21;
   undefined2 local_80 [2];
@@ -122,19 +122,19 @@ int __fastcall FUN_0060c320(void *param_1)
                    (sVar14 = (short)iVar18, sVar14 < 0)) ||
                   ((SHORT_007fb242 <= sVar14 || (sVar16 = (short)local_3c, sVar16 < 0)))) ||
                  (SHORT_007fb244 <= sVar16)) {
-                piVar19 = (int *)0x0;
+                pSVar19 = (STWorldObject *)0x0;
               }
               else {
-                piVar19 = *(int **)(DAT_007fb248 +
-                                   ((int)SHORT_007fb246 * (int)sVar16 +
-                                    (int)SHORT_007fb240 * (int)sVar14 + (int)sVar20) * 8);
+                pSVar19 = g_worldCells
+                          [(int)SHORT_007fb246 * (int)sVar16 + (int)SHORT_007fb240 * (int)sVar14 +
+                           (int)sVar20].objects[0];
               }
-              if (((piVar19 != (int *)0x0) &&
-                  (iVar12 = (**(code **)(*piVar19 + 0xf0))(), iVar18 = local_40, iVar12 != 0)) &&
-                 (((uint)piVar19[9] < 8 &&
-                  ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                   ((byte)(&DAT_008087e9)[piVar19[9] * 0x51] < 8)))))) {
-                bVar3 = *(byte *)(piVar19 + 9);
+              if (((pSVar19 != (STWorldObject *)0x0) &&
+                  (iVar12 = (*pSVar19->vtable[5].slots_00_28[0])(), iVar18 = local_40, iVar12 != 0))
+                 && ((pSVar19[1].vtable < (STWorldObjectVTable *)0x8 &&
+                     ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                      ((byte)(&DAT_008087e9)[(int)pSVar19[1].vtable * 0x51] < 8)))))) {
+                bVar3 = *(byte *)&pSVar19[1].vtable;
                 bVar4 = *(byte *)((int)param_1 + 0x1d9);
                 if (DAT_00808a8f == '\0') {
                   if (bVar3 == bVar4) {
@@ -171,11 +171,11 @@ LAB_0060c5f5:
                            (&DAT_008087ea)[(uint)bVar3 * 0x51];
                 }
                 if ((bVar21) &&
-                   (iVar13 = (**(code **)(*piVar19 + 0xf8))(), iVar12 = local_74, iVar18 = local_40,
-                   iVar13 != 0)) {
+                   (iVar13 = (*pSVar19->vtable[5].slots_00_28[2])(), iVar12 = local_74,
+                   iVar18 = local_40, iVar13 != 0)) {
                   puVar1 = (undefined4 *)(local_68 + local_74 * 0xc);
-                  *puVar1 = piVar19;
-                  iVar13 = (**(code **)(*piVar19 + 0x78))();
+                  *puVar1 = pSVar19;
+                  iVar13 = (*pSVar19->vtable[2].slots_00_28[6])();
                   iVar13 = iVar13 + 1;
                   iVar18 = local_40;
                   iVar17 = local_3c;

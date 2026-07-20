@@ -57,7 +57,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
   }
   else {
     if (iVar2 == 3) {
-      uVar1 = *(ushort *)(param_1->field_0097 + 6 + param_1->field_00D3 * 8);
+      uVar1 = *(ushort *)(&param_1->field_0097->field_0x6 + param_1->field_00D3 * 8);
       if (((uVar1 & 0xfff) != 0xffe) && (uVar1 != param_1->field_006C)) {
         thunk_FUN_00417740(param_1,param_1->field_006C,uVar1);
       }
@@ -72,7 +72,8 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
       this = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar3 >> 8),param_1->field_0x24),
                                 CONCAT22(extraout_var,param_1->field_0030));
       if (this != (STGroupBoatC *)0x0) {
-        iVar2 = thunk_FUN_0040d540(this,(uint)(ushort)param_1->field_0032);
+        iVar2 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this,
+                                   (uint)(ushort)param_1->field_0032);
         switch(iVar2) {
         case 0:
           if (*(int *)&param_1->field_0x8f == -1) {

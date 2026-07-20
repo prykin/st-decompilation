@@ -5,44 +5,44 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
 
 {
   char *pcVar1;
-  STGroupBoatC *pSVar2;
-  int iVar4;
+  STGroupBoatC *this_00;
+  int iVar3;
   int extraout_EDX;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
   undefined4 local_24;
   undefined2 local_20;
   undefined4 local_1e;
   int local_1a;
   char local_16 [15];
   undefined2 local_7;
-  undefined2 uVar3;
+  undefined2 uVar2;
   
-  puVar5 = &local_24;
-  for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  puVar4 = &local_24;
+  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar4 = 0;
+    puVar4 = puVar4 + 1;
   }
-  *(undefined2 *)puVar5 = 0;
-  *(undefined1 *)((int)puVar5 + 2) = 0;
+  *(undefined2 *)puVar4 = 0;
+  *(undefined1 *)((int)puVar4 + 2) = 0;
   local_24._2_2_ = param_3;
-  iVar4 = (int)param_6;
+  iVar3 = (int)param_6;
   local_1e = param_1;
   local_20 = param_4;
   local_24._0_2_ = param_2;
   *(undefined4 *)((int)this + 0xa7) = 0;
   local_7 = param_5;
-  uVar3 = 0;
-  local_1a = iVar4;
+  uVar2 = 0;
+  local_1a = iVar3;
   if (param_7 != (char *)0x0) {
     pcVar1 = Library::MSVCRT::_strncpy(local_16,param_7,0xe);
-    uVar3 = (undefined2)((uint)pcVar1 >> 0x10);
-    iVar4 = extraout_EDX;
+    uVar2 = (undefined2)((uint)pcVar1 >> 0x10);
+    iVar3 = extraout_EDX;
   }
   if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    pSVar2 = thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar4 >> 8),*(undefined1 *)((int)this + 0x24))
-                                ,CONCAT22(uVar3,*(short *)((int)this + 0x7d)));
-    if (pSVar2 != (STGroupBoatC *)0x0) {
-      (*pSVar2->vtable->vfunc_08)(9,&local_24);
+    this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar3 >> 8),*(undefined1 *)((int)this + 0x24)
+                                         ),CONCAT22(uVar2,*(short *)((int)this + 0x7d)));
+    if (this_00 != (STGroupBoatC *)0x0) {
+      (*this_00->vtable->vfunc_08)(this_00,CASE_9,&local_24);
       return 0;
     }
   }

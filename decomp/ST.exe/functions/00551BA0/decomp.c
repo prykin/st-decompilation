@@ -56,7 +56,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
                                           *(ushort *)
                                            (&this_00->field_01AB +
                                            iVar6 + (uint)(byte)this_00->field_01D0 * 2) - 1);
-            DibPut((undefined4 *)this_00->field_0068,local_8,0x39,'\x01',pbVar4);
+            DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,local_8,0x39,'\x01',pbVar4);
           }
           wsprintfA(&this_00->field_0x18d,&DAT_007c8720,
                     (uint)*(ushort *)

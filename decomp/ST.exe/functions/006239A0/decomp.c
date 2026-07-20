@@ -1,5 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
 
@@ -23,9 +26,9 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
   
   local_8 = 0;
   switch(param_1->field_02AE) {
-  case 0:
+  case CASE_0:
     return 1;
-  case 1:
+  case CASE_1:
     iVar2 = thunk_FUN_00624920(param_1,*(Global_sub_00624920_param_1Enum *)&param_1->field_0x2ee,
                                &local_c,&local_10,&local_14);
     if (0 < iVar2) {
@@ -38,7 +41,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
       return 1;
     }
     return local_8;
-  case 2:
+  case CASE_2:
     if ((uint)PTR_00802a38->field_00E4 < (uint)param_1->field_030F) {
       return 0;
     }
@@ -61,14 +64,14 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
         }
       }
     }
-    param_1->field_02AE = 3;
+    param_1->field_02AE = CASE_3;
     param_1->field_030F = PTR_00802a38->field_00E4 + 7;
     return local_8;
-  case 3:
+  case CASE_3:
     if ((uint)PTR_00802a38->field_00E4 < (uint)param_1->field_030F) goto switchD_006239c1_caseD_4;
     thunk_FUN_00625730(param_1);
     thunk_FUN_00627790((AnonShape_00627790_BD208A1C *)param_1);
-    param_1->field_02AE = 4;
+    param_1->field_02AE = CASE_4;
     iVar2 = thunk_FUN_00627d90(1);
     uVar3 = thunk_FUN_00627db0(param_1,*(int *)&param_1->field_0x2c2,*(int *)&param_1->field_0x2c6,
                                iVar2);
@@ -88,10 +91,10 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
       return local_8;
     }
     break;
-  case 4:
+  case CASE_4:
 switchD_006239c1_caseD_4:
     if ((int)param_1->field_02BA < 0) {
-      if (param_1->field_02AE != 4) {
+      if (param_1->field_02AE != CASE_4) {
         return 0;
       }
       thunk_FUN_00622670(param_1);

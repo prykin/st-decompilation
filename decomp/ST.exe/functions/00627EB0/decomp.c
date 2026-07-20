@@ -9,7 +9,8 @@
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_10=16;CASE_20=32;CASE_40=64;CASE_80=128
     */
 
-undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
+undefined4 __thiscall
+STParticleC::GetMessage(STParticleC *this,AnonShape_00627EB0_4C14C976 *param_1)
 
 {
   int *piVar1;
@@ -25,11 +26,12 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
   int iVar10;
   undefined4 uVar11;
   undefined4 unaff_ESI;
-  undefined4 *puVar12;
+  AnonNested_00627EB0_0014_B8FBF6AA *pAVar12;
   void *unaff_EDI;
   AnonShape_00629F90_C3CBACCB *pAVar13;
-  VisibleClassTy *pVVar14;
-  bool bVar15;
+  undefined4 *puVar14;
+  VisibleClassTy *pVVar15;
+  bool bVar16;
   InternalExceptionFrame local_7c;
   int local_38;
   int local_34;
@@ -62,7 +64,7 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
     RaiseInternalException(iVar8,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x21a);
     return 0xffff;
   }
-  uVar9 = *(uint *)(param_1 + 0x10);
+  uVar9 = param_1->field_0010;
   if (0x10f < uVar9) {
     g_currentExceptionFrame = local_7c.previous;
     return 0;
@@ -89,15 +91,15 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    puVar12 = *(undefined4 **)(param_1 + 0x14);
-    if (puVar12[3] != 2) {
+    pAVar12 = param_1->field_0014;
+    if (pAVar12->field_000C != 2) {
       pAVar13 = local_10;
       for (iVar8 = 0x11; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *(undefined4 *)pAVar13 = *puVar12;
-        puVar12 = puVar12 + 1;
+        *(undefined4 *)pAVar13 = pAVar12->field_0000;
+        pAVar12 = (AnonNested_00627EB0_0014_B8FBF6AA *)&pAVar12->field_0x4;
         pAVar13 = (AnonShape_00629F90_C3CBACCB *)&pAVar13->field_0x4;
       }
-      *(undefined2 *)pAVar13 = *(undefined2 *)puVar12;
+      *(undefined2 *)pAVar13 = *(undefined2 *)&pAVar12->field_0000;
       thunk_FUN_00629f90(local_10,local_10,PTR_00802a38->field_00E4);
       InitVisibelFlight((STParticleC *)this_00,(uint)(byte)this_00[2].field_0x46);
       iVar8 = *(int *)&this_00->field_0x3c;
@@ -124,13 +126,13 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    thunk_FUN_0062aef0(local_10,puVar12);
-    puVar12 = (undefined4 *)&this_00[2].field_0x47;
+    thunk_FUN_0062aef0(local_10,&pAVar12->field_0000);
+    puVar14 = (undefined4 *)&this_00[2].field_0x47;
     for (iVar8 = 0xb; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
+      *puVar14 = 0;
+      puVar14 = puVar14 + 1;
     }
-    *(undefined1 *)puVar12 = 0;
+    *(undefined1 *)puVar14 = 0;
     iVar8 = *(int *)((int)&this_00[2].field_0030 + 2);
     if (iVar8 == 3) {
       thunk_FUN_0062a860((int)this_00);
@@ -191,7 +193,7 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
     fVar7 = (float)*(int *)&this_00[1].field_0x6 * _DAT_007904f8 * _DAT_007904f0;
     *(float *)((int)&this_00[1].field_0028 + 2) = fVar7;
     FUN_006ea960(PTR_00807598,uVar9,local_c,local_8,fVar7 + _DAT_007904fc);
-    pVVar14 = g_visibleClass_00802A88;
+    pVVar15 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -231,20 +233,20 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
                             ,&local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
-    if (((local_24 < 0) || ((int)pVVar14->field_0030 <= local_24)) ||
+    if (((local_24 < 0) || ((int)pVVar15->field_0030 <= local_24)) ||
        (((&DAT_0079aed0)[(int)local_c] + local_28 < 0 ||
-        ((int)pVVar14->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_28)))) {
-      bVar15 = false;
+        ((int)pVVar15->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_28)))) {
+      bVar16 = false;
     }
     else {
-      bVar15 = true;
+      bVar16 = true;
     }
-    if ((bVar15) && (pVVar14->field_004C != 0)) {
-      bVar15 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_28) * pVVar14->field_0030 +
-                         pVVar14->field_004C + local_24) != '\0';
+    if ((bVar16) && (pVVar15->field_004C != 0)) {
+      bVar16 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_28) * pVVar15->field_0030 +
+                         pVVar15->field_004C + local_24) != '\0';
     }
     else {
-      bVar15 = true;
+      bVar16 = true;
     }
     break;
   case 2:
@@ -313,7 +315,7 @@ LAB_006283bd:
     fVar7 = (float)*(int *)&this_00[1].field_0x6 * _DAT_007904f8 * _DAT_007904f0;
     *(float *)((int)&this_00[1].field_0028 + 2) = fVar7;
     FUN_006ea960(PTR_00807598,uVar9,local_c,local_8,fVar7 + _DAT_007904fc);
-    pVVar14 = g_visibleClass_00802A88;
+    pVVar15 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -353,7 +355,7 @@ LAB_006283bd:
                             ,&local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
     goto LAB_00628286;
 LAB_006282e0:
-    bVar15 = true;
+    bVar16 = true;
     break;
   case 3:
     cVar2 = *(char *)((int)&this_00[2].field_002C + 3);
@@ -395,7 +397,7 @@ LAB_006282e0:
       fVar7 = (float)*(int *)&this_00[1].field_0x6 * _DAT_007904f8 * _DAT_007904f0;
       *(float *)((int)&this_00[1].field_0028 + 2) = fVar7;
       FUN_006ea960(PTR_00807598,uVar9,local_c,local_8,fVar7 + _DAT_007904fc);
-      pVVar14 = g_visibleClass_00802A88;
+      pVVar15 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar8 = *(int *)&this_00[1].field_0x6;
         sVar6 = (short)(iVar8 >> 0x1f);
@@ -428,27 +430,27 @@ LAB_006282e0:
             (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,
                                 iVar8,&local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)
            ) {
-          bVar15 = true;
+          bVar16 = true;
         }
         else {
-          if (((local_2c < 0) || ((int)pVVar14->field_0030 <= local_2c)) ||
+          if (((local_2c < 0) || ((int)pVVar15->field_0030 <= local_2c)) ||
              (((&DAT_0079aed0)[(int)local_c] + local_30 < 0 ||
-              ((int)pVVar14->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_30)))) {
-            bVar15 = false;
+              ((int)pVVar15->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_30)))) {
+            bVar16 = false;
           }
           else {
-            bVar15 = true;
+            bVar16 = true;
           }
-          if ((bVar15) && (pVVar14->field_004C != 0)) {
-            bVar15 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_30) * pVVar14->field_0030 +
-                               pVVar14->field_004C + local_2c) != '\0';
+          if ((bVar16) && (pVVar15->field_004C != 0)) {
+            bVar16 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_30) * pVVar15->field_0030 +
+                               pVVar15->field_004C + local_2c) != '\0';
           }
           else {
-            bVar15 = true;
+            bVar16 = true;
           }
         }
         cVar2 = *(char *)((int)&this_00[2].field_0030 + 1);
-        if (bVar15) {
+        if (bVar16) {
           if (cVar2 == '\0') {
             FUN_006eaaa0(PTR_00807598,*(uint *)((int)&this_00[2].field_0034 + 2),0);
             *(undefined1 *)((int)&this_00[2].field_0030 + 1) = 1;
@@ -493,7 +495,7 @@ LAB_006282e0:
     fVar7 = (float)*(int *)&this_00[1].field_0x6 * _DAT_007904f8 * _DAT_007904f0;
     *(float *)((int)&this_00[1].field_0028 + 2) = fVar7;
     FUN_006ea960(PTR_00807598,uVar9,local_c,local_8,fVar7 + _DAT_007904fc);
-    pVVar14 = g_visibleClass_00802A88;
+    pVVar15 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -531,23 +533,23 @@ LAB_006282e0:
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar8
                             ,&local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
-      bVar15 = true;
+      bVar16 = true;
     }
     else {
-      if (((local_34 < 0) || ((int)pVVar14->field_0030 <= local_34)) ||
+      if (((local_34 < 0) || ((int)pVVar15->field_0030 <= local_34)) ||
          (((&DAT_0079aed0)[(int)local_c] + local_38 < 0 ||
-          ((int)pVVar14->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_38)))) {
-        bVar15 = false;
+          ((int)pVVar15->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_38)))) {
+        bVar16 = false;
       }
       else {
-        bVar15 = true;
+        bVar16 = true;
       }
-      if ((bVar15) && (pVVar14->field_004C != 0)) {
-        bVar15 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_38) * pVVar14->field_0030 +
-                           local_34 + pVVar14->field_004C) != '\0';
+      if ((bVar16) && (pVVar15->field_004C != 0)) {
+        bVar16 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_38) * pVVar15->field_0030 +
+                           local_34 + pVVar15->field_004C) != '\0';
       }
       else {
-        bVar15 = true;
+        bVar16 = true;
       }
     }
     cVar2 = *(char *)((int)&this_00[2].field_0030 + 1);
@@ -557,7 +559,7 @@ LAB_006282e0:
   }
   cVar2 = *(char *)((int)&this_00[2].field_0030 + 1);
 joined_r0x00628af1:
-  if (bVar15) {
+  if (bVar16) {
     if (cVar2 == '\0') {
       FUN_006eaaa0(PTR_00807598,*(uint *)((int)&this_00[2].field_0034 + 2),0);
       *(undefined1 *)((int)&this_00[2].field_0030 + 1) = 1;

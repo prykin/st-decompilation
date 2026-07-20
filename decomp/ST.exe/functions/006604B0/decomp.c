@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_006604b0(AiFltClassTy *param_1,undefined4 param_2,unde
 {
   undefined2 uVar1;
   undefined2 extraout_var;
-  STGroupBoatC *pSVar2;
+  STGroupBoatC *this;
   undefined4 extraout_EDX;
   undefined4 local_c;
   undefined4 local_8;
@@ -16,10 +16,10 @@ undefined4 __fastcall FUN_006604b0(AiFltClassTy *param_1,undefined4 param_2,unde
   if (CONCAT22(extraout_var,uVar1) != 0) {
     local_c = param_3;
     if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-      pSVar2 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),param_1->field_0x24),
-                                  CONCAT22(extraout_var,param_1->field_007D));
-      if (pSVar2 != (STGroupBoatC *)0x0) {
-        (*pSVar2->vtable->vfunc_08)(6,&local_c);
+      this = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),param_1->field_0x24),
+                                CONCAT22(extraout_var,param_1->field_007D));
+      if (this != (STGroupBoatC *)0x0) {
+        (*this->vtable->vfunc_08)(this,CASE_6,&local_c);
         return 0;
       }
     }

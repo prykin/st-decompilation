@@ -443,7 +443,7 @@ LAB_0065c4bb:
 cf_common_exit_0065C65B:
   this->field_05A7 = (uint)PTR_00802a38->field_00E4 / 0x19;
   this->field_05AB = PTR_00802a38->field_00E4;
-  uVar6 = (**(code **)(this->field_0000 + 0x14))();
+  uVar6 = (*(code *)this->field_0000->field_0014)();
   this->field_05AF = uVar6;
   return local_c;
 }

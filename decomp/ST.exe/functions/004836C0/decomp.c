@@ -5,7 +5,7 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  int iVar4;
+  STWorldObject *pSVar4;
   undefined2 uVar6;
   uint uVar5;
   
@@ -17,27 +17,27 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
     if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
        ((sVar2 < 0 || (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
     goto cf_common_exit_004837CF;
-    iVar4 = *(int *)(DAT_007fb248 + 4 +
-                    ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
-                    (int)sVar3) * 8);
+    pSVar4 = g_worldCells
+             [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
+             objects[1];
   }
   else {
     if ((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar2 < 0)) ||
        (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))
     goto cf_common_exit_004837CF;
-    iVar4 = *(int *)(DAT_007fb248 +
-                    ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
-                    (int)sVar3) * 8);
+    pSVar4 = g_worldCells
+             [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
+             objects[0];
   }
   uVar5 = 0;
-  if (iVar4 != 0) {
-    uVar6 = (undefined2)((uint)iVar4 >> 0x10);
+  if (pSVar4 != (STWorldObject *)0x0) {
+    uVar6 = (undefined2)((uint)pSVar4 >> 0x10);
     uVar5 = (**(code **)(*(int *)param_1 + 0x10))
                       (CONCAT22(uVar6,param_1->field_0041),CONCAT22(uVar6,param_1->field_0043),
                        CONCAT22(uVar6,param_1->field_0045),
-                       CONCAT22(uVar6,*(undefined2 *)(iVar4 + 0x41)),
-                       CONCAT22(sVar2 >> 0xf,*(undefined2 *)(iVar4 + 0x43)),
-                       CONCAT22(sVar2 >> 0xf,*(undefined2 *)(iVar4 + 0x45)));
+                       CONCAT22(uVar6,*(undefined2 *)&pSVar4[1].field_0x1d),
+                       CONCAT22(sVar2 >> 0xf,*(undefined2 *)&pSVar4[1].field_0x1f),
+                       CONCAT22(sVar2 >> 0xf,*(undefined2 *)((int)&pSVar4[1].value_20 + 1)));
     return uVar5;
   }
 cf_common_exit_004837CF:

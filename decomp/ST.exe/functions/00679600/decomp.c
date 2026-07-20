@@ -10,11 +10,11 @@ void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
   int iVar6;
   uint uVar7;
   int *piVar8;
-  uint *puVar9;
+  AnonShape_0068FD00_A5257008 *pAVar9;
   bool bVar10;
   int local_1a8;
   undefined4 local_1a4 [87];
-  uint local_48 [13];
+  AnonShape_0068FD00_A5257008 local_48 [3];
   uint local_14;
   byte *local_10;
   byte local_c;
@@ -133,14 +133,14 @@ LAB_0067971a:
 cf_common_exit_0067989B:
   uVar4 = param_1->field_0640;
   if (uVar4 != local_14) {
-    puVar9 = local_48;
+    pAVar9 = local_48;
     for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+      *(undefined4 *)pAVar9 = 0;
+      pAVar9 = (AnonShape_0068FD00_A5257008 *)&pAVar9->field_0x4;
     }
-    local_48[1] = param_1->field_06FE;
-    local_48[0] = 0x6a;
-    local_48[2] = uVar4;
+    local_48[0]._4_4_ = param_1->field_06FE;
+    local_48[0]._0_4_ = 0x6a;
+    local_48[0]._8_4_ = uVar4;
     thunk_FUN_0067a020(param_1,local_48,-1);
     thunk_FUN_0067c110(param_1);
   }

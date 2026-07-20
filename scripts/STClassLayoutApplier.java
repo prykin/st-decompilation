@@ -18,8 +18,10 @@ import java.util.Locale;
 import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
+import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.PointerDataType;
@@ -44,26 +46,49 @@ public class STClassLayoutApplier extends GhidraScript {
         if (classFile == null) return;
         File directory = classFile.getAbsoluteFile().getParentFile();
         File fieldFile = new File(directory, "class_field_proposals.tsv");
+        File nestedTypeFile = new File(directory, "class_nested_type_proposals.tsv");
+        File nestedFieldFile = new File(directory, "class_nested_field_proposals.tsv");
         if (!fieldFile.isFile())
             throw new IllegalArgumentException("Missing sibling " + fieldFile);
 
         Tsv classes = readTsv(classFile.toPath());
         Tsv fields = readTsv(fieldFile.toPath());
+        Tsv nestedTypes = nestedTypeFile.isFile() ? readTsv(nestedTypeFile.toPath()) :
+            new Tsv(List.of(), List.of());
+        Tsv nestedFields = nestedFieldFile.isFile() ? readTsv(nestedFieldFile.toPath()) :
+            new Tsv(List.of(), List.of());
+        if (nestedTypeFile.isFile() != nestedFieldFile.isFile())
+            throw new IllegalArgumentException("Both class_nested proposal files are required");
         requireColumns(classes, "apply", "owner", "type_path", "existing_length",
             "proposed_length", "confidence", "reason");
         requireColumns(fields, "apply", "owner", "offset", "size", "proposed_name",
             "proposed_type", "type_apply", "inferred_type", "suggested_name",
             "name_apply", "type_confidence", "name_confidence", "type_evidence",
             "name_evidence", "reads", "writes", "confidence", "reason");
+        if (nestedTypeFile.isFile()) {
+            requireColumns(nestedTypes, "apply", "owner", "parent_offset", "type_path",
+                "length", "field_count", "access_count", "confidence", "reason");
+            requireColumns(nestedFields, "apply", "type_path", "offset", "size",
+                "proposed_name", "proposed_type", "evidence_count", "reason");
+        }
         Map<String, List<Map<String, String>>> fieldsByOwner = new LinkedHashMap<>();
         for (Map<String, String> row : fields.rows)
             fieldsByOwner.computeIfAbsent(unt(row.get("owner")), ignored -> new ArrayList<>())
+                .add(row);
+        Map<String, List<Map<String, String>>> nestedByType = new LinkedHashMap<>();
+        for (Map<String, String> row : nestedFields.rows)
+            nestedByType.computeIfAbsent(unt(row.get("type_path")), ignored -> new ArrayList<>())
                 .add(row);
         dataTypes = currentProgram.getDataTypeManager();
 
         int transaction = currentProgram.startTransaction("Apply recovered class layouts");
         boolean commit = false;
         try {
+            for (Map<String, String> row : nestedTypes.rows) {
+                monitor.checkCancelled();
+                applyNestedType(row, nestedByType.getOrDefault(
+                    unt(row.get("type_path")), List.of()));
+            }
             for (Map<String, String> row : classes.rows) {
                 monitor.checkCancelled();
                 applyClass(row, fieldsByOwner.getOrDefault(unt(row.get("owner")), List.of()));
@@ -89,6 +114,79 @@ public class STClassLayoutApplier extends GhidraScript {
             ", conflicts=" + conflicts + ", disabled=" + disabled +
             ", typed_fields=" + typed + ", named_fields=" + named);
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
+    }
+
+    private void applyNestedType(Map<String, String> row,
+            List<Map<String, String>> fieldRows) {
+        String owner = unt(row.get("owner"));
+        String path = unt(row.get("type_path"));
+        if (!enabled(row.get("apply"))) {
+            report.add(new ReportRow(owner + "::pointee", path, "disabled", "apply=0"));
+            return;
+        }
+        try {
+            int length = Integer.parseInt(row.get("length"));
+            if (length < 1) throw new IllegalArgumentException("invalid nested length " + length);
+            DataType current = dataTypes.getDataType(path);
+            if (current != null && !(current instanceof Structure))
+                throw new IllegalArgumentException("nested path is not a structure");
+            Structure existing = (Structure)current;
+            if (existing != null) {
+                Safety safety = safety(existing);
+                if (!safety.safe) {
+                    report.add(new ReportRow(owner + "::pointee", path, "preserved",
+                        safety.reason));
+                    return;
+                }
+            }
+            StructureDataType desired = new StructureDataType(category(path), leaf(path),
+                length, dataTypes);
+            long previousEnd = -1;
+            List<Map<String, String>> selected = fieldRows.stream()
+                .filter(field -> enabled(field.get("apply")))
+                .sorted(Comparator.comparingLong(field ->
+                    Long.parseLong(field.get("offset")))).toList();
+            for (Map<String, String> field : selected) {
+                int offset = Integer.parseInt(field.get("offset"));
+                int size = Integer.parseInt(field.get("size"));
+                if (offset < previousEnd || offset < 0 || size < 1 || offset + size > length)
+                    throw new IllegalArgumentException("invalid/overlapping nested field " + offset);
+                DataType fieldType = resolveType(unt(field.get("proposed_type")), size);
+                String comment = MARKER + " nested evidence_count=" +
+                    field.get("evidence_count") + "; " + unt(field.get("reason"));
+                desired.replaceAtOffset(offset, fieldType, size,
+                    unt(field.get("proposed_name")), comment);
+                previousEnd = (long)offset + size;
+            }
+            String desiredHash = layoutHash(desired);
+            desired.setDescription(MARKER + " Generated nested class-field pointee; source=" +
+                unt(row.get("reason")) + HASH_MARKER + desiredHash);
+            if (existing == null) {
+                DataType installed = dataTypes.resolve(desired,
+                    DataTypeConflictHandler.KEEP_HANDLER);
+                if (!(installed instanceof Structure structure) ||
+                        !structure.getPathName().equals(path))
+                    throw new IllegalStateException("could not create exact nested type " + path);
+                structure.setDescription(desired.getDescription());
+                report.add(new ReportRow(owner + "::pointee", path, "applied",
+                    selected.size() + " fields; length=" + length));
+                return;
+            }
+            if (layoutHash(existing).equals(desiredHash)) {
+                existing.setDescription(desired.getDescription());
+                report.add(new ReportRow(owner + "::pointee", path, "unchanged",
+                    selected.size() + " fields; length=" + length));
+                return;
+            }
+            existing.replaceWith(desired);
+            existing.setDescription(desired.getDescription());
+            report.add(new ReportRow(owner + "::pointee", path, "updated",
+                selected.size() + " fields; length=" + length));
+        }
+        catch (Exception exception) {
+            report.add(new ReportRow(owner + "::pointee", path, "conflict",
+                message(exception)));
+        }
     }
 
     private void applyClass(Map<String, String> row, List<Map<String, String>> fieldRows) {
@@ -239,6 +337,16 @@ public class STClassLayoutApplier extends GhidraScript {
         for (String line : description.split("\\R"))
             if (line.contains("[STConstructorApplier]")) result.add(line);
         return String.join("\n", result);
+    }
+
+    private CategoryPath category(String path) {
+        int separator = path.lastIndexOf('/');
+        return new CategoryPath(separator <= 0 ? "/" : path.substring(0, separator));
+    }
+
+    private String leaf(String path) {
+        int separator = path.lastIndexOf('/');
+        return separator < 0 ? path : path.substring(separator + 1);
     }
 
     private String sha256(String value) {

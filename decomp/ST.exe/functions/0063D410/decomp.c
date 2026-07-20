@@ -1,23 +1,24 @@
 
-void __fastcall FUN_0063d410(int param_1)
+void __fastcall FUN_0063d410(AnonShape_0063D410_5C8A60D7 *param_1)
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
+  AnonNested_0063D410_0336_B4CDA572 *pAVar2;
+  int iVar3;
+  uint uVar4;
   
-  if (*(int *)(param_1 + 0x336) != 0) {
-    iVar1 = *(int *)(*(int *)(param_1 + 0x336) + 0xc);
-    uVar3 = 0;
+  if (param_1->field_0336 != (AnonNested_0063D410_0336_B4CDA572 *)0x0) {
+    iVar1 = param_1->field_0336->field_000C;
+    uVar4 = 0;
     if (0 < iVar1) {
       do {
-        iVar2 = *(int *)(param_1 + 0x336);
-        if ((uVar3 < *(uint *)(iVar2 + 0xc)) &&
-           (iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c), iVar2 != 0)) {
-          *(undefined4 *)(iVar2 + 0x38) = 0xffffffff;
+        pAVar2 = param_1->field_0336;
+        if ((uVar4 < (uint)pAVar2->field_000C) &&
+           (iVar3 = pAVar2->field_0008 * uVar4 + pAVar2->field_001C, iVar3 != 0)) {
+          *(undefined4 *)(iVar3 + 0x38) = 0xffffffff;
         }
-        uVar3 = uVar3 + 1;
-      } while ((int)uVar3 < iVar1);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < iVar1);
     }
   }
   return;

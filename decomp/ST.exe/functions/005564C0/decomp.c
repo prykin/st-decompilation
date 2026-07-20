@@ -10,7 +10,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
   code *pcVar2;
   TraksClassTy *this_00;
   int errorCode;
-  uint *puVar3;
+  DArrayTy *pDVar3;
   int iVar4;
   undefined4 uVar5;
   undefined4 unaff_ESI;
@@ -44,7 +44,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {
     if (uVar1 == 3) {
-      thunk_FUN_005557b0((int)this_00);
+      thunk_FUN_005557b0((AnonShape_005557B0_28260162 *)this_00);
       g_traksClass_00802A7C = (TraksClassTy *)0x0;
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -60,8 +60,8 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
-        puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
-        this_00->field_0024 = puVar3;
+        pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
+        this_00->field_0024 = pDVar3;
         this_00->field_001C = DAT_00808754 * 0x7d;
       }
       else {

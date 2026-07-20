@@ -16,7 +16,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
   StartServTy *this_01;
   uint uVar6;
   undefined4 unaff_ESI;
-  undefined4 *puVar7;
+  AnonPointee_MainMenuTy_1AA7 **ppAVar7;
   void *unaff_EDI;
   uint uVar8;
   uint uVar9;
@@ -56,13 +56,13 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       puVar4 = (uint *)FUN_006b0140(0x26b0,HINSTANCE_00807618);
       StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar10,iVar3);
     }
-    puVar7 = &pMVar2->field_1AA7;
+    ppAVar7 = &pMVar2->field_1AA7;
     iVar3 = 10;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar7 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar7);
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*ppAVar7 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*ppAVar7);
       }
-      puVar7 = puVar7 + 1;
+      ppAVar7 = ppAVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 0;

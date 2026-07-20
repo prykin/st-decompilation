@@ -41,29 +41,26 @@ undefined4 __thiscall FUN_00493610(void *this,short *param_1,short *param_2,shor
               if ((((sVar6 < 0) ||
                    ((((((SHORT_007fb240 <= sVar6 || (sVar8 < 0)) || (SHORT_007fb242 <= sVar8)) ||
                       ((sVar4 < 0 || (SHORT_007fb244 <= sVar4)))) ||
-                     (*(int *)(DAT_007fb248 +
-                              ((int)sVar4 * (int)SHORT_007fb246 + sVar8 * iVar3 + (int)sVar6) * 8)
-                      == 0)) &&
+                     (g_worldCells[(int)sVar4 * (int)SHORT_007fb246 + sVar8 * iVar3 + (int)sVar6].
+                      objects[0] == (STWorldObject *)0x0)) &&
                     (((sVar6 < 0 || (SHORT_007fb240 <= sVar6)) ||
                      (((sVar8 < 0 ||
                        (((SHORT_007fb242 <= sVar8 || (sVar4 < 0)) || (SHORT_007fb244 <= sVar4)))) ||
-                      (*(int *)(DAT_007fb248 + 4 +
-                               ((int)sVar4 * (int)SHORT_007fb246 + sVar8 * iVar3 + (int)sVar6) * 8)
-                       == 0)))))))) &&
+                      (g_worldCells[(int)sVar4 * (int)SHORT_007fb246 + sVar8 * iVar3 + (int)sVar6].
+                       objects[1] == (STWorldObject *)0x0)))))))) &&
                   ((sVar1 = sVar4 + -1, sVar6 < 0 ||
                    ((((((SHORT_007fb240 <= sVar6 || (sVar8 < 0)) ||
                        ((SHORT_007fb242 <= sVar8 || ((sVar1 < 0 || (SHORT_007fb244 <= sVar1)))))) ||
-                      (*(int *)(DAT_007fb248 +
-                               ((int)SHORT_007fb246 * (int)sVar1 + sVar8 * iVar3 + (int)sVar6) * 8)
-                       == 0)) ||
+                      (g_worldCells[(int)SHORT_007fb246 * (int)sVar1 + sVar8 * iVar3 + (int)sVar6].
+                       objects[0] == (STWorldObject *)0x0)) ||
                      (*(short *)(DAT_007fb280 +
                                 (local_8 * SHORT_007fb27e + SHORT_007fb278 * iVar9 + iVar7) * 2) ==
                       0)) && (((((sVar6 < 0 || (SHORT_007fb240 <= sVar6)) || (sVar8 < 0)) ||
                                ((SHORT_007fb242 <= sVar8 || (sVar1 = sVar4 + -1, sVar1 < 0)))) ||
                               ((SHORT_007fb244 <= sVar1 ||
-                               (*(int *)(DAT_007fb248 + 4 +
-                                        ((int)SHORT_007fb246 * (int)sVar1 + sVar8 * iVar3 +
-                                        (int)sVar6) * 8) == 0)))))))))) &&
+                               (g_worldCells
+                                [(int)SHORT_007fb246 * (int)sVar1 + sVar8 * iVar3 + (int)sVar6].
+                                objects[1] == (STWorldObject *)0x0)))))))))) &&
                  (iVar3 = FUN_006aadd0((int)*(short *)((int)this + 0x47),
                                        (int)*(short *)((int)this + 0x49),
                                        (int)*(short *)((int)this + 0x4b),iVar7,iVar9,iVar5),

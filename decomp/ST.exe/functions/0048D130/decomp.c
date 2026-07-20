@@ -15,23 +15,23 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
   short sVar1;
   short sVar2;
   short sVar3;
-  void *pvVar4;
+  STWorldObject *pSVar4;
   code *pcVar5;
   undefined1 uVar6;
   bool bVar7;
-  int in_EAX;
+  STWorldObject *in_EAX;
   int iVar8;
-  int extraout_EAX;
+  STWorldObject *extraout_EAX;
   uint uVar9;
   
   if ((param_5 != -1) &&
      ((((param_2 < 0 || (SHORT_007fb240 <= param_2)) || (param_3 < 0)) ||
       (((SHORT_007fb242 <= param_3 || (param_4 < 0)) ||
        ((SHORT_007fb244 <= param_4 ||
-        ((in_EAX = *(int *)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)param_4 + (int)SHORT_007fb240 * (int)param_3
-                           + (int)param_2) * 8), in_EAX == 0 || (*(int *)(in_EAX + 0x18) != param_5)
-         ))))))))) {
+        ((in_EAX = g_worldCells
+                   [(int)SHORT_007fb246 * (int)param_4 + (int)SHORT_007fb240 * (int)param_3 +
+                    (int)param_2].objects[0], in_EAX == (STWorldObject *)0x0 ||
+         (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
     iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc,
                                s_STBoatC__SetNewMD_007aba24);
     if (iVar8 != 0) {
@@ -54,12 +54,12 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
          ((-1 < sVar3 && (((sVar3 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244))))))
       {
         uVar9 = (uint)sVar1;
-        pvVar4 = *(void **)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                           uVar9) * 8);
-        if (pvVar4 != (void *)0x0) {
-          thunk_FUN_004e18e0(pvVar4,this->field_0018);
-          bVar7 = thunk_FUN_004e1690(pvVar4,this->field_0018);
+        pSVar4 = g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + uVar9].
+                 objects[0];
+        if (pSVar4 != (STWorldObject *)0x0) {
+          thunk_FUN_004e18e0(pSVar4,this->field_0018);
+          bVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
           uVar9 = (uint)bVar7;
         }
         uVar6 = (undefined1)uVar9;
@@ -83,12 +83,12 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
     if (((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
         ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) && (sVar2 < SHORT_007fb244)) {
       uVar9 = (uint)sVar1;
-      pvVar4 = *(void **)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                         uVar9) * 8);
-      if (pvVar4 != (void *)0x0) {
-        thunk_FUN_004e18e0(pvVar4,this->field_0018);
-        bVar7 = thunk_FUN_004e1690(pvVar4,this->field_0018);
+      pSVar4 = g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + uVar9].objects
+               [0];
+      if (pSVar4 != (STWorldObject *)0x0) {
+        thunk_FUN_004e18e0(pSVar4,this->field_0018);
+        bVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
         uVar9 = (uint)bVar7;
       }
       uVar6 = (undefined1)uVar9;

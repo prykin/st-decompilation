@@ -9,7 +9,8 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   code *pcVar1;
   SettMapTy *pSVar2;
   undefined1 uVar3;
-  int iVar4;
+  int errorCode;
+  DArrayTy *pDVar4;
   int iVar5;
   char *pcVar6;
   undefined4 unaff_ESI;
@@ -22,19 +23,20 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar4 == 0) {
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     if ((DAT_008087b6 != 0) && (PTR_0081176c->field_02F4 != 0)) {
-      FUN_006e83f0(PTR_0081176c->field_02F0,0x14,0x14,0x8b,(uint)DAT_008087c2);
-      FUN_006b5440(PTR_0081176c->field_02F0,0,0x14,0x14,PTR_0081176c->field_02F4,0,0);
+      FUN_006e83f0((AnonShape_006E83F0_6F955BEB *)PTR_0081176c->field_02F0,0x14,0x14,0x8b,
+                   (uint)DAT_008087c2);
+      FUN_006b5440((int)PTR_0081176c->field_02F0,0,0x14,0x14,PTR_0081176c->field_02F4,0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
-         ((iVar4 = local_8->field_1F84, iVar4 != 0 && (0 < *(int *)(iVar4 + 0xc))))) {
-        bVar8 = *(int *)(iVar4 + 0xc) != 0;
+         ((pDVar4 = local_8->field_1F84, pDVar4 != (DArrayTy *)0x0 && (0 < (int)pDVar4->count)))) {
+        bVar8 = pDVar4->count != 0;
         uVar7 = 0;
         do {
           if (bVar8) {
-            pcVar6 = (char *)(*(int *)(iVar4 + 8) * uVar7 + *(int *)(iVar4 + 0x1c));
+            pcVar6 = (char *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
           }
           else {
             pcVar6 = (char *)0x0;
@@ -71,10 +73,10 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
             }
             FUN_006e8460(*(undefined4 *)(pcVar6 + 0x54),*(undefined4 *)(pcVar6 + 0x58),4,uVar3);
           }
-          iVar4 = pSVar2->field_1F84;
+          pDVar4 = pSVar2->field_1F84;
           uVar7 = uVar7 + 1;
-          bVar8 = uVar7 < *(uint *)(iVar4 + 0xc);
-        } while ((int)uVar7 < (int)*(uint *)(iVar4 + 0xc));
+          bVar8 = uVar7 < pDVar4->count;
+        } while ((int)uVar7 < (int)pDVar4->count);
       }
       if (-1 < (int)PTR_0081176c->field_02EC) {
         FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_02EC);
@@ -84,10 +86,10 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac,0,iVar4,&DAT_007a4ccc,
-                             s_SettMapTy__PaintSC_007cd224);
+  iVar5 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac,0,errorCode,
+                             &DAT_007a4ccc,s_SettMapTy__PaintSC_007cd224);
   if (iVar5 == 0) {
-    RaiseInternalException(iVar4,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac);
+    RaiseInternalException(errorCode,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac);
     return;
   }
   pcVar1 = (code *)swi(3);

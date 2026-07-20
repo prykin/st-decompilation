@@ -12,7 +12,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
   Global_sub_004B1FB0_param_1Enum GVar2;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  STWorldObject *this;
   int local_1c;
   STFishC *local_18;
   int local_14;
@@ -64,12 +64,12 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
         if (((local_8 < 0) || (SHORT_007fb240 <= local_8)) ||
            ((local_6 < 0 ||
             (((SHORT_007fb242 <= local_6 || (local_a < 0)) || (SHORT_007fb244 <= local_a)))))) {
-          piVar5 = (int *)0x0;
+          this = (STWorldObject *)0x0;
         }
         else {
-          piVar5 = *(int **)(DAT_007fb248 +
-                            ((int)SHORT_007fb246 * (int)local_a + (int)SHORT_007fb240 * (int)local_6
-                            + (int)local_8) * 8);
+          this = g_worldCells
+                 [(int)SHORT_007fb246 * (int)local_a + (int)SHORT_007fb240 * (int)local_6 +
+                  (int)local_8].objects[0];
         }
         switch(param_1) {
         case CASE_5E:
@@ -85,12 +85,12 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
         case CASE_DE:
           local_10 = 0x4f;
         }
-        if (((piVar5 == (int *)0x0) || (piVar5[8] != 1000)) ||
-           (iVar4 = (**(code **)(*piVar5 + 0x2c))(), iVar4 != local_10)) {
+        if (((this == (STWorldObject *)0x0) || (this->value_20 != 1000)) ||
+           (iVar4 = (*this->vtable->GetObjectTypeId)(this), iVar4 != local_10)) {
           local_14 = local_14 + *(int *)&local_18->field_0x259;
         }
         else {
-          iVar4 = (**(code **)(*piVar5 + 0x88))(0);
+          iVar4 = (*this->vtable[2].slots_00_28[10])(0);
           local_14 = local_14 + iVar4;
         }
       }

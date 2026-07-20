@@ -67,7 +67,7 @@ TraksClassTy::TraksCreate
   if (((param_15 & 1) == 0) && (DAT_0080731e == 0)) {
     return 0;
   }
-  if (this->field_0024 == 0) {
+  if (this->field_0024 == (DArrayTy *)0x0) {
     return 0;
   }
   if (param_4 < 0) {

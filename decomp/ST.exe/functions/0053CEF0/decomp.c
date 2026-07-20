@@ -83,7 +83,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
         iVar16 = 0;
         puVar7 = (uint *)FUN_006b0140(iVar3 - 0x842b,HINSTANCE_00807618);
         ccFntTy::WrStr(pSVar2->field_0189,puVar7,iVar16,iVar18,uVar9);
-        DibPut((undefined4 *)pSVar2->field_0068,0x37,local_8,'\x01',pbVar6);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pSVar2->field_0068,0x37,local_8,'\x01',pbVar6);
         ccFntTy::EraseSufr(pSVar2->field_0189);
       }
       iVar3 = iVar3 + 1;

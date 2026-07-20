@@ -105,10 +105,9 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
     if (*(char *)((int)param_1 + 0x313) != '\0') {
       if (((-1 < sVar5) && (sVar5 < SHORT_007fb240)) &&
          (((-1 < sVar6 && (((sVar6 < SHORT_007fb242 && (-1 < sVar7)) && (sVar7 < SHORT_007fb244))))
-          && (*(int *)(DAT_007fb248 +
-                      ((uint)*(byte *)((int)param_1 + 0x8e) +
-                      ((int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)sVar6 +
-                      (int)sVar5) * 2) * 4) != 0)))) {
+          && (g_worldCells
+              [(int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)sVar6 + (int)sVar5].
+              objects[*(byte *)((int)param_1 + 0x8e)] != (STWorldObject *)0x0)))) {
         return 0;
       }
       iVar4 = DumpClassC::WritePtr(sVar5,sVar6,sVar7,(uint)*(byte *)((int)param_1 + 0x8e),param_1);

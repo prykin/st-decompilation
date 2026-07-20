@@ -55,7 +55,8 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     (*pcVar1)();
     return;
   }
-  DibPut((undefined4 *)local_2c->field_0194,param_1,0x36,'\x01',(byte *)local_2c->field_09F9);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)local_2c->field_0194,param_1,0x36,'\x01',
+         (byte *)local_2c->field_09F9);
   pcVar9 = &pCVar2->field_0C11;
   local_6 = 0;
   local_28 = -1;
@@ -256,8 +257,8 @@ LAB_00505581:
     }
 switchD_00505324_default:
     if (pbVar5 != (byte *)0x0) {
-      DibPut((undefined4 *)pCVar2->field_0194,local_10 + 0xf + param_1,local_c + 0x36,'\x06',pbVar5)
-      ;
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,local_10 + 0xf + param_1,
+             local_c + 0x36,'\x06',pbVar5);
     }
     uVar3 = local_14;
     if (*pcVar9 == '\0') {
@@ -272,7 +273,8 @@ switchD_00505324_default:
       local_20 = (local_14 & 0xff) * 0xb + 0x3b;
       do {
         pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,3);
-        DibPut((undefined4 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20,'\x01',pbVar5);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20
+               ,'\x01',pbVar5);
         bVar7 = (byte)local_18 + 1;
         local_18 = CONCAT31(local_18._1_3_,bVar7);
         uVar8 = (uint)bVar7;
@@ -284,7 +286,7 @@ switchD_00505324_default:
       local_1c = param_1 + 0x4d + (local_18 & 0xff) * 4;
       do {
         pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
-        DibPut((undefined4 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
         local_1c = local_1c + 4;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);

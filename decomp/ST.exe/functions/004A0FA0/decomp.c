@@ -283,7 +283,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     local_4c = PTR_00802a38->field_00E4;
     ReMakePatrolPoints(this_00,(int)unaff_EDI);
     local_28 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    if (*(int *)(this_00->field_022E + 0xc) == 0) {
+    if (this_00->field_022E->field_000C == 0) {
       uVar12 = 0;
       local_18 = 0;
       if (uVar13 != 0) {
@@ -324,7 +324,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
       local_18 = 0;
       if (uVar13 != 0) {
         do {
-          uVar13 = *(uint *)(this_00->field_022E + 0xc);
+          uVar13 = this_00->field_022E->field_000C;
           uVar12 = uVar13;
           uVar5 = local_18;
           while (uVar13 = uVar13 - 1, local_18 = uVar5, -1 < (int)uVar13) {

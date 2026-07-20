@@ -48,14 +48,14 @@ LAB_004e63ab:
         goto cf_continue_loop_004E643C;
       }
 LAB_004e645f:
-      if (g_playerRuntime[param_1].field2282_0x9ce != (DArrayTy *)0x0) {
-        (g_playerRuntime[param_1].field2282_0x9ce)->iteratorIndex = 0;
+      if (g_playerRuntime[param_1].field2164_0x9ce != (DArrayTy *)0x0) {
+        (g_playerRuntime[param_1].field2164_0x9ce)->iteratorIndex = 0;
         iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)
-                              g_playerRuntime[param_1].field2282_0x9ce,&local_c);
+                              g_playerRuntime[param_1].field2164_0x9ce,&local_c);
         while (-1 < iVar11) {
           thunk_FUN_004dd880(local_c);
           iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)
-                                g_playerRuntime[param_1].field2282_0x9ce,&local_c);
+                                g_playerRuntime[param_1].field2164_0x9ce,&local_c);
         }
       }
       if (((((param_2 == 0x1d) || (param_2 == 0x89)) || (param_2 == 0x46)) ||

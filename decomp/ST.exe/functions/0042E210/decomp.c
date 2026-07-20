@@ -48,7 +48,7 @@ STAllPlayersC::RegisterObject
   iVar11 = (int)(char)param_1;
   local_1c = g_playerRuntime[iVar11].groups;
   local_28 = g_playerRuntime[iVar11].objects;
-  local_24 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[iVar11].field597_0x2e7;
+  local_24 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[iVar11].field479_0x2e7;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
   local_18 = this;
@@ -99,11 +99,11 @@ STAllPlayersC::RegisterObject
         piVar7 = (int *)&g_playerRuntime[(char)param_1].field_0x33;
       }
       else {
-        piVar7 = &g_playerRuntime[(char)param_1].field23_0x2f;
+        piVar7 = &g_playerRuntime[(char)param_1].field20_0x2f;
       }
     }
     else {
-      piVar7 = &g_playerRuntime[(char)param_1].field22_0x2b;
+      piVar7 = &g_playerRuntime[(char)param_1].field19_0x2b;
     }
     *piVar7 = *piVar7 + 1;
   }
@@ -253,12 +253,12 @@ LAB_0042e4fd:
     }
     iVar9 = (**(code **)(*param_4 + 0x2c))();
     if (iVar9 == 0x33) {
-      *(int *)&g_playerRuntime[iVar8].field320_0x15b =
-           *(int *)&g_playerRuntime[iVar8].field320_0x15b + 1;
+      *(int *)&g_playerRuntime[iVar8].field317_0x15b =
+           *(int *)&g_playerRuntime[iVar8].field317_0x15b + 1;
     }
     else if (iVar9 == 0x62) {
-      *(int *)&g_playerRuntime[iVar8].field323_0x15f =
-           *(int *)&g_playerRuntime[iVar8].field323_0x15f + 1;
+      *(int *)&g_playerRuntime[iVar8].field320_0x15f =
+           *(int *)&g_playerRuntime[iVar8].field320_0x15f + 1;
     }
     iVar9 = (**(code **)(*param_4 + 0x2c))();
     if (((&DAT_00801420)[iVar9 - 0x32U >> 5] & 1 << ((byte)(iVar9 - 0x32U) & 0x1f)) == 0) {
@@ -424,7 +424,7 @@ LAB_0042ebf6:
   if (iVar11 == 0x1d) {
     if (local_24 == (AnonShape_006ACC70_C8641025 *)0x0) {
       local_24 = (AnonShape_006ACC70_C8641025 *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      g_playerRuntime[(char)param_1].field597_0x2e7 = local_24;
+      g_playerRuntime[(char)param_1].field479_0x2e7 = local_24;
     }
     pAVar5 = local_24;
     uVar15 = local_24->field_000C;

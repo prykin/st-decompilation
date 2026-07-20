@@ -15,7 +15,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char *pcVar7;
-  undefined4 *puVar8;
+  AnonShape_006B84D0_7C7D97C6 *pAVar8;
   int iVar9;
   int iVar10;
   InternalExceptionFrame local_70;
@@ -79,7 +79,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,(int)(pcVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          puVar8 = (undefined4 *)(&pCVar2->field_0180)[local_8 & 0xff];
+          pAVar8 = (AnonShape_006B84D0_7C7D97C6 *)(&pCVar2->field_0180)[local_8 & 0xff];
         }
         else {
           if (*pcVar7 == '\0') {
@@ -93,9 +93,9 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          puVar8 = (undefined4 *)(&pCVar2->field_0180)[local_8 & 0xff];
+          pAVar8 = (AnonShape_006B84D0_7C7D97C6 *)(&pCVar2->field_0180)[local_8 & 0xff];
         }
-        DibPut(puVar8,iVar9,iVar10,cVar3,pbVar5);
+        DibPut(pAVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;
         iVar4 = iVar4 + 0xb;
         pcVar7 = pcVar7 + 1;

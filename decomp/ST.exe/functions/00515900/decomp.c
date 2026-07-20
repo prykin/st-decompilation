@@ -60,7 +60,7 @@ HelpPanelTy::DrawWeapon
       }
       iVar7 = *param_2;
       *param_2 = iVar7 + iVar2;
-      ccFntTy::SetSurf(local_8->field_01E0,local_8->field_0218,0,param_1,iVar7 + iVar2,
+      ccFntTy::SetSurf(local_8->field_01E0,(int)local_8->field_0218,0,param_1,iVar7 + iVar2,
                        0x19c - param_1,0xf);
       if (param_4 == 0) {
         pHVar9 = HINSTANCE_00807618;
@@ -75,8 +75,9 @@ HelpPanelTy::DrawWeapon
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___d__007c3bc0,uVar6,param_4);
       }
       ccFntTy::WrStr(local_8->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
-      DibPut((undefined4 *)local_8->field_0218,(param_1 - *(int *)(pbVar4 + 4)) + -5,
-             (0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2,'\x06',pbVar4);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_8->field_0218,
+             (param_1 - *(int *)(pbVar4 + 4)) + -5,(0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2,
+             '\x06',pbVar4);
       local_28 = (param_1 - *(int *)(pbVar4 + 4)) + -5;
       local_20 = *(undefined4 *)(pbVar4 + 4);
       local_24 = (0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2;

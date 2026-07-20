@@ -1,5 +1,5 @@
 
-void FUN_0075fe30(int param_1,int param_2,int *param_3,int param_4)
+void FUN_0075fe30(AnonShape_0075FE30_46CD87E7 *param_1,int param_2,int *param_3,int param_4)
 
 {
   byte bVar1;
@@ -17,8 +17,8 @@ void FUN_0075fe30(int param_1,int param_2,int *param_3,int param_4)
   char *pcVar13;
   
   piVar10 = param_3;
-  iVar2 = *(int *)(param_1 + 0x68);
-  piVar3 = *(int **)(*(int *)(param_1 + 0x1ba) + 0x18);
+  iVar2 = param_1->field_0068;
+  piVar3 = *(int **)(param_1->field_01BA + 0x18);
   iVar4 = *piVar3;
   iVar5 = piVar3[1];
   iVar6 = piVar3[2];

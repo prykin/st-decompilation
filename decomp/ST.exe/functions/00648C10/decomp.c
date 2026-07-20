@@ -11,7 +11,8 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
 
 {
   code *pcVar1;
-  int iVar2;
+  int errorCode;
+  AiPlrClassTy *pAVar2;
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -23,15 +24,15 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     if ((((PTR_00802a38 == (STPlaySystemC *)0x0) || (strategData == (ushort *)0x0)) || (7 < param_2)
         ) || (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x49);
     }
-    iVar2 = thunk_FUN_004357f0((char)param_2);
-    if (iVar2 != 0) {
+    pAVar2 = thunk_FUN_004357f0((char)param_2);
+    if (pAVar2 != (AiPlrClassTy *)0x0) {
       thunk_FUN_00648dd0(param_2);
     }
     local_8 = strategData;
@@ -49,7 +50,7 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x5f,0,iVar2,&DAT_007a4ccc,
+  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x5f,0,errorCode,&DAT_007a4ccc,
                              s_StartStrateg_007d28a4);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
@@ -59,7 +60,7 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
   if (local_c != 0) {
     thunk_FUN_0067d160((int *)&local_8);
   }
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x61);
+  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x61);
   return;
 }
 

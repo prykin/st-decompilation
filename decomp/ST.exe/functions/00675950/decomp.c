@@ -46,10 +46,9 @@ FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5
           sVar9 = (short)iVar7;
           bVar2 = thunk_FUN_004961b0(sVar8,sVar9,sVar6);
           if ((CONCAT31(extraout_var,bVar2) != 0) &&
-             (*(int *)(DAT_007fb248 +
-                      (param_7 +
-                      ((int)SHORT_007fb246 * (int)sVar6 + (int)SHORT_007fb240 * (int)sVar9 +
-                      (int)sVar8) * 2) * 4) == 0)) {
+             (g_worldCells
+              [(int)SHORT_007fb246 * (int)sVar6 + (int)SHORT_007fb240 * (int)sVar9 + (int)sVar8].
+              objects[param_7] == (STWorldObject *)0x0)) {
             *param_4 = sVar8;
             *param_5 = sVar9;
             *param_6 = sVar6;

@@ -11,91 +11,93 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
   char cVar2;
   code *pcVar3;
   SettMapMTy *pSVar4;
-  int iVar5;
+  int errorCode;
+  void *pvVar5;
   char *pcVar6;
   undefined4 uVar7;
   uint uVar8;
   int iVar9;
-  uint uVar10;
+  DArrayTy *pDVar10;
   uint uVar11;
+  uint uVar12;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  bool bVar12;
+  bool bVar13;
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
   SettMapMTy *local_c;
   uint local_8;
   
-  if ((this->field_1F84 != 0) && (DAT_00808a8f == param_2)) {
+  if ((this->field_1F84 != (DArrayTy *)0x0) && (DAT_00808a8f == param_2)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_c = this;
-    iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar4 = local_c;
-    if (iVar5 == 0) {
-      iVar5 = local_c->field_1F84;
-      if (param_1 < *(uint *)(iVar5 + 0xc)) {
-        iVar5 = *(int *)(iVar5 + 8) * param_1 + *(int *)(iVar5 + 0x1c);
+    if (errorCode == 0) {
+      pDVar10 = local_c->field_1F84;
+      if (param_1 < pDVar10->count) {
+        pvVar5 = (void *)(pDVar10->elementSize * param_1 + (int)pDVar10->data);
       }
       else {
-        iVar5 = 0;
+        pvVar5 = (void *)0x0;
       }
-      if (iVar5 != 0) {
+      if (pvVar5 != (void *)0x0) {
         if (param_2 != 0) {
-          uVar11 = param_1 + 1;
-          *(byte *)(iVar5 + 0x4a) = (byte)param_3;
-          iVar5 = local_c->field_1F84;
-          bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
-          if ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc)) {
+          uVar12 = param_1 + 1;
+          *(byte *)((int)pvVar5 + 0x4a) = (byte)param_3;
+          pDVar10 = local_c->field_1F84;
+          bVar13 = uVar12 < pDVar10->count;
+          if ((int)uVar12 < (int)pDVar10->count) {
             do {
-              if (bVar12) {
-                pcVar6 = (char *)(*(int *)(iVar5 + 8) * uVar11 + *(int *)(iVar5 + 0x1c));
+              if (bVar13) {
+                pcVar6 = (char *)(pDVar10->elementSize * uVar12 + (int)pDVar10->data);
               }
               else {
                 pcVar6 = (char *)0x0;
               }
               if ((pcVar6 == (char *)0x0) || (*pcVar6 != '\0')) break;
               pcVar6[0x4a] = (byte)param_3;
-              iVar5 = local_c->field_1F84;
-              uVar11 = uVar11 + 1;
-              bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
-            } while ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc));
+              pDVar10 = local_c->field_1F84;
+              uVar12 = uVar12 + 1;
+              bVar13 = uVar12 < pDVar10->count;
+            } while ((int)uVar12 < (int)pDVar10->count);
           }
-          (**(code **)(local_c->field_0000 + 0x2c))();
+          (*(code *)local_c->field_0000->field_002C)();
           pSVar4->field_2121 = pSVar4->field_2121 + 1;
           g_currentExceptionFrame = local_54.previous;
           return;
         }
         if (param_3 != 0xff) {
-          bVar1 = *(byte *)(iVar5 + 2);
+          bVar1 = *(byte *)((int)pvVar5 + 2);
           local_8 = CONCAT31(local_8._1_3_,bVar1);
           if ((bVar1 != 0xff) && (param_3 != bVar1)) {
-            if (*(char *)(iVar5 + 4) == '\x04') {
+            if (*(char *)((int)pvVar5 + 4) == '\x04') {
               _local_10 = CONCAT31(uStack_f,bVar1);
               if ((byte)param_3 == bVar1) {
                 uVar7 = 0;
-                uVar10 = (uint)bVar1;
+                uVar11 = (uint)bVar1;
               }
               else {
                 uVar8 = param_3 & 0xff;
-                uVar11 = (uint)bVar1;
-                cVar2 = *(char *)((int)&DAT_00808a4f + uVar8 * 8 + uVar11);
-                uVar10 = local_8;
-                if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar8) == '\0'))
+                uVar12 = (uint)bVar1;
+                cVar2 = *(char *)((int)&DAT_00808a4f + uVar8 * 8 + uVar12);
+                uVar11 = local_8;
+                if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\0'))
                 {
                   uVar7 = 0xfffffffe;
                 }
                 else if ((cVar2 == '\x01') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar8) == '\0')) {
+                        (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\0')) {
                   uVar7 = 0xffffffff;
                 }
                 else if ((cVar2 == '\0') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar8) == '\x01')) {
+                        (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\x01')) {
                   uVar7 = 1;
                 }
                 else if ((cVar2 == '\x01') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar8) == '\x01')) {
+                        (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\x01')) {
                   uVar7 = 2;
                 }
                 else {
@@ -104,22 +106,22 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
               }
               switch(uVar7) {
               case 1:
-                thunk_FUN_0056a8d0(&DAT_00807620,uVar10,(byte)param_3,'\0');
+                thunk_FUN_0056a8d0(&DAT_00807620,uVar11,(byte)param_3,'\0');
                 break;
               case 2:
-                thunk_FUN_0056a8d0(&DAT_00807620,param_3,(byte)uVar10,'\0');
+                thunk_FUN_0056a8d0(&DAT_00807620,param_3,(byte)uVar11,'\0');
                 break;
               case 0xfffffffe:
-                thunk_FUN_0056a8d0(&DAT_00807620,param_3,(byte)uVar10,'\x01');
+                thunk_FUN_0056a8d0(&DAT_00807620,param_3,(byte)uVar11,'\x01');
                 break;
               case 0xffffffff:
-                thunk_FUN_0056a8d0(&DAT_00807620,uVar10,(byte)param_3,'\x01');
+                thunk_FUN_0056a8d0(&DAT_00807620,uVar11,(byte)param_3,'\x01');
               }
             }
             else {
               thunk_FUN_0056a960(&DAT_00807620,param_3,bVar1);
             }
-            (**(code **)(pSVar4->field_0000 + 0x2c))();
+            (*(code *)pSVar4->field_0000->field_002C)();
             DAT_00808aab = DAT_00808aab + 1;
           }
         }
@@ -128,14 +130,14 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x5df,0,iVar5,&DAT_007a4ccc
-                               ,s_SettMapMTy__ChangePlayerTeam_007cd47c);
+    iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x5df,0,errorCode,
+                               &DAT_007a4ccc,s_SettMapMTy__ChangePlayerTeam_007cd47c);
     if (iVar9 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Start_settmobj_cpp_007cd258,0x5df);
+    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x5df);
   }
   return;
 }

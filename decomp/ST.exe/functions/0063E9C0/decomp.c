@@ -121,23 +121,27 @@ cf_common_join_0063EACD:
                   sVar3 = (short)local_10;
                   if ((((((short)local_c < SHORT_007fb240) && (-1 < sVar8)) &&
                        (sVar8 < SHORT_007fb242)) && ((-1 < sVar3 && (sVar3 < SHORT_007fb244)))) &&
-                     (iVar4 = *(int *)(DAT_007fb248 +
-                                      ((int)sVar3 * (int)SHORT_007fb246 +
-                                       (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8),
-                     iVar4 != 0)) {
-                    thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,iVar4,
-                                       (short)*(undefined4 *)((int)this + 0x25d),
+                     (g_worldCells
+                      [(int)sVar3 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar8 +
+                       (int)(short)local_c].objects[0] != (STWorldObject *)0x0)) {
+                    thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
+                                       (int)g_worldCells
+                                            [(int)sVar3 * (int)SHORT_007fb246 +
+                                             (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c]
+                                            .objects[0],(short)*(undefined4 *)((int)this + 0x25d),
                                        *(undefined2 *)((int)this + 0x261),0xa8,0x110);
                   }
                   if ((((short)local_c < SHORT_007fb240) && (-1 < sVar8)) &&
                      ((sVar8 < SHORT_007fb242 &&
                       (((-1 < sVar3 && (sVar3 < SHORT_007fb244)) &&
-                       (iVar4 = *(int *)(DAT_007fb248 + 4 +
-                                        ((int)sVar3 * (int)SHORT_007fb246 +
-                                         (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8
-                                        ), iVar4 != 0)))))) {
-                    thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,iVar4,
-                                       (short)*(undefined4 *)((int)this + 0x25d),
+                       (g_worldCells
+                        [(int)sVar3 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar8 +
+                         (int)(short)local_c].objects[1] != (STWorldObject *)0x0)))))) {
+                    thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
+                                       (int)g_worldCells
+                                            [(int)sVar3 * (int)SHORT_007fb246 +
+                                             (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c]
+                                            .objects[1],(short)*(undefined4 *)((int)this + 0x25d),
                                        *(undefined2 *)((int)this + 0x261),0xa8,0x110);
                   }
                 }
@@ -182,12 +186,14 @@ cf_common_join_0063EACD:
               if ((((-1 < (short)local_c) && ((short)local_c < SHORT_007fb240)) && (-1 < sVar8)) &&
                  (((sVar8 < SHORT_007fb242 && (sVar3 = (short)local_10, -1 < sVar3)) &&
                   ((sVar3 < SHORT_007fb244 &&
-                   (iVar4 = *(int *)(DAT_007fb248 +
-                                    ((int)sVar3 * (int)SHORT_007fb246 +
-                                     (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c) * 8),
-                   iVar4 != 0)))))) {
-                thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,iVar4,
-                                   (short)*(undefined4 *)((int)this + 0x25d),
+                   (g_worldCells
+                    [(int)sVar3 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar8 +
+                     (int)(short)local_c].objects[0] != (STWorldObject *)0x0)))))) {
+                thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
+                                   (int)g_worldCells
+                                        [(int)sVar3 * (int)SHORT_007fb246 +
+                                         (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c].
+                                        objects[0],(short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x110);
               }
               local_10 = local_10 + 1;

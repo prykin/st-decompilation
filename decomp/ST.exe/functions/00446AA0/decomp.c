@@ -38,7 +38,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   short local_6;
   
   local_1c = g_playerRuntime[param_1].pgPairs;
-  local_40 = g_playerRuntime[param_1].field2293_0x9fa;
+  local_40 = g_playerRuntime[param_1].field2175_0x9fa;
   if (local_1c != (DArrayTy *)0x0) {
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
@@ -129,7 +129,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar7,0,&local_3c);
       uVar9 = local_3c->count;
       pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar9,10,1);
-      g_playerRuntime[param_1].field2293_0x9fa = pDVar4;
+      g_playerRuntime[param_1].field2175_0x9fa = pDVar4;
       local_10 = 0;
       local_c = 0;
       local_40 = pDVar4;

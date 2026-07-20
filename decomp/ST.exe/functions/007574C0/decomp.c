@@ -2,7 +2,7 @@
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00755830 -> 007574C0 @ 00755958 */
 
-void FUN_007574c0(int param_1,int param_2,uint *param_3,int param_4)
+void FUN_007574c0(AnonShape_007574C0_ED6B02E3 *param_1,int param_2,uint *param_3,int param_4)
 
 {
   uint uVar1;
@@ -11,9 +11,9 @@ void FUN_007574c0(int param_1,int param_2,uint *param_3,int param_4)
   uint uVar4;
   uint *puVar5;
   
-  sVar2 = *(short *)(*(int *)(param_1 + 0xc) + 0x34);
+  sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
-    iVar3 = (**(code **)(*(int *)(param_1 + 0xc) + 8))(param_3 + 2);
+    iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
   }
   else {
     iVar3 = (int)sVar2;

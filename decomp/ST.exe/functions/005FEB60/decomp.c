@@ -17,7 +17,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   short sVar13;
   int iVar14;
   undefined4 *puVar15;
-  int *this_00;
+  STWorldObject *this_00;
   undefined4 *puVar16;
   bool bVar17;
   uint local_90 [11];
@@ -104,18 +104,19 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
             if (((((sVar13 < 0) || (SHORT_007fb240 <= sVar13)) || (sVar6 = (short)iVar11, sVar6 < 0)
                  ) || ((SHORT_007fb242 <= sVar6 || (sVar10 = (short)local_44, sVar10 < 0)))) ||
                (SHORT_007fb244 <= sVar10)) {
-              this_00 = (int *)0x0;
+              this_00 = (STWorldObject *)0x0;
             }
             else {
-              this_00 = *(int **)(DAT_007fb248 +
-                                 ((int)SHORT_007fb246 * (int)sVar10 +
-                                  (int)SHORT_007fb240 * (int)sVar6 + (int)sVar13) * 8);
+              this_00 = g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar10 + (int)SHORT_007fb240 * (int)sVar6 +
+                         (int)sVar13].objects[0];
             }
-            if (((this_00 != (int *)0x0) && (iVar8 = (**(code **)(*this_00 + 0xf0))(), iVar8 != 0))
-               && (((uint)this_00[9] < 8 &&
-                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))) {
-              bVar1 = *(byte *)(this_00 + 9);
+            if (((this_00 != (STWorldObject *)0x0) &&
+                (iVar8 = (*this_00->vtable[5].slots_00_28[0])(), iVar8 != 0)) &&
+               ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
+                ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))) {
+              bVar1 = *(byte *)&this_00[1].vtable;
               bVar2 = *(byte *)((int)this + 0x24);
               if (DAT_00808a8f == '\0') {
                 if (bVar1 == bVar2) {
@@ -150,7 +151,7 @@ LAB_005fee45:
               else {
                 bVar17 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
               }
-              if ((bVar17) && (iVar8 = (**(code **)(*this_00 + 0xf8))(), iVar8 != 0)) {
+              if ((bVar17) && (iVar8 = (*this_00->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
                 thunk_FUN_00416270(this_00,local_20,(int *)local_30,(int *)local_2c);
                 iVar8 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
                 iVar8 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar8);
@@ -158,17 +159,18 @@ LAB_005fee45:
                   iVar8 = 0;
                   if (0 < iVar12) {
                     do {
-                      if (((uint)*(ushort *)((int)this_00 + 0x32) == local_90[iVar8 * 6 + -3]) &&
-                         (this_00[9] == local_90[iVar8 * 6 + -1])) goto LAB_005fef0e;
+                      if (((uint)*(ushort *)&this_00[1].field_0xe == local_90[iVar8 * 6 + -3]) &&
+                         (this_00[1].vtable == (STWorldObjectVTable *)local_90[iVar8 * 6 + -1]))
+                      goto LAB_005fef0e;
                       iVar8 = iVar8 + 1;
                     } while (iVar8 < iVar12);
                   }
-                  local_90[iVar12 * 6 + -1] = this_00[9];
-                  local_90[iVar12 * 6 + -3] = (uint)*(ushort *)((int)this_00 + 0x32);
-                  uVar9 = (**(code **)(*this_00 + 0x2c))();
+                  local_90[iVar12 * 6 + -1] = (uint)this_00[1].vtable;
+                  local_90[iVar12 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
+                  uVar9 = (*this_00->vtable->GetObjectTypeId)(this_00);
                   local_90[iVar12 * 6 + -2] = uVar9;
-                  local_90[iVar12 * 6] = *(uint *)((int)this_00 + 0x215);
-                  local_90[iVar12 * 6 + 1] = *(uint *)((int)this_00 + 0x219);
+                  local_90[iVar12 * 6] = *(uint *)&this_00[0xe].field_0x1d;
+                  local_90[iVar12 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);
                   iVar12 = iVar12 + 1;
                 }
               }

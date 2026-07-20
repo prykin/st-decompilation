@@ -367,9 +367,9 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         if ((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar6 < 0)) ||
            (((SHORT_007fb242 <= sVar6 || (sVar8 = (short)local_14, sVar8 < 0)) ||
             ((SHORT_007fb244 <= sVar8 ||
-             (*(int *)(DAT_007fb248 + 4 +
-                      ((int)sVar6 * (int)SHORT_007fb240 + (int)sVar8 * (int)SHORT_007fb246 +
-                      (int)sVar7) * 8) == 0)))))) {
+             (g_worldCells
+              [(int)sVar6 * (int)SHORT_007fb240 + (int)sVar8 * (int)SHORT_007fb246 + (int)sVar7].
+              objects[1] == (STWorldObject *)0x0)))))) {
           STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)((int)this + (int)piVar9 * 0x80 + 0x29d) = 1;
           *(int *)((int)this + (int)piVar9 * 0x80 + 0x2c5) =

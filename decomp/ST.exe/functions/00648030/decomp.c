@@ -10,17 +10,18 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *p
   code *pcVar2;
   AiBossClassTy *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  AiPlrClassTy *pAVar4;
   int iVar5;
   undefined4 uVar6;
   uint uVar7;
   uint uVar8;
   undefined4 unaff_ESI;
   char *pcVar9;
-  char cVar10;
+  undefined4 *puVar10;
+  char cVar11;
   void *unaff_EDI;
-  undefined4 *puVar11;
-  char *pcVar12;
+  undefined4 *puVar12;
+  char *pcVar13;
   InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
   byte *local_c;
@@ -60,12 +61,12 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *p
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_0x1c,param_1);
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar4 = param_1->data;
-      if (puVar4 == (undefined4 *)0x0) {
+      puVar10 = param_1->data;
+      if (puVar10 == (undefined4 *)0x0) {
         RaiseInternalException
                   (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_boss_cpp_007d2750,0x61);
       }
-      InitData(this_00,puVar4);
+      InitData(this_00,puVar10);
       DAT_008117bc = this_00;
       thunk_FUN_0064a450();
     }
@@ -83,15 +84,15 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *p
       }
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_0x1c,param_1);
       if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
-        cVar10 = '\0';
+        cVar11 = '\0';
         pcVar9 = &DAT_008087e9;
         do {
           if ((*pcVar9 != -1) &&
-             (puVar4 = (undefined4 *)thunk_FUN_004357f0(cVar10), puVar4 != (undefined4 *)0x0)) {
-            (**(code **)*puVar4)(param_1);
+             (pAVar4 = thunk_FUN_004357f0(cVar11), pAVar4 != (AiPlrClassTy *)0x0)) {
+            (*(code *)**(undefined4 **)pAVar4)(param_1);
           }
           pcVar9 = pcVar9 + 0x51;
-          cVar10 = cVar10 + '\x01';
+          cVar11 = cVar11 + '\x01';
         } while ((int)pcVar9 < 0x808a71);
       }
     }
@@ -104,60 +105,60 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *p
     else {
       DAT_0080c83a = (uint)PTR_00802a38->field_00E4 / 0x19;
     }
-    puVar4 = &DAT_008087b6;
-    puVar11 = &DAT_0080c967;
+    puVar10 = &DAT_008087b6;
+    puVar12 = &DAT_0080c967;
     for (iVar3 = 0x666; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar11 = *puVar4;
-      puVar4 = puVar4 + 1;
-      puVar11 = puVar11 + 1;
+      *puVar12 = *puVar10;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
     }
-    *(undefined1 *)puVar11 = *(undefined1 *)puVar4;
+    *(undefined1 *)puVar12 = *(undefined1 *)puVar10;
     thunk_FUN_006765b0();
     uVar7 = 0xffffffff;
     pcVar9 = &DAT_0080ef1e;
     do {
-      pcVar12 = pcVar9;
+      pcVar13 = pcVar9;
       if (uVar7 == 0) break;
       uVar7 = uVar7 - 1;
-      pcVar12 = pcVar9 + 1;
-      cVar10 = *pcVar9;
-      pcVar9 = pcVar12;
-    } while (cVar10 != '\0');
+      pcVar13 = pcVar9 + 1;
+      cVar11 = *pcVar9;
+      pcVar9 = pcVar13;
+    } while (cVar11 != '\0');
     uVar7 = ~uVar7;
-    pcVar9 = pcVar12 + -uVar7;
-    pcVar12 = (char *)&DAT_0080c52e;
+    pcVar9 = pcVar13 + -uVar7;
+    pcVar13 = (char *)&DAT_0080c52e;
     for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar9;
+      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar9;
       pcVar9 = pcVar9 + 4;
-      pcVar12 = pcVar12 + 4;
+      pcVar13 = pcVar13 + 4;
     }
     for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pcVar12 = *pcVar9;
+      *pcVar13 = *pcVar9;
       pcVar9 = pcVar9 + 1;
-      pcVar12 = pcVar12 + 1;
+      pcVar13 = pcVar13 + 1;
     }
     uVar7 = 0xffffffff;
     pcVar9 = (char *)&DAT_0080c3c3;
     do {
-      pcVar12 = pcVar9;
+      pcVar13 = pcVar9;
       if (uVar7 == 0) break;
       uVar7 = uVar7 - 1;
-      pcVar12 = pcVar9 + 1;
-      cVar10 = *pcVar9;
-      pcVar9 = pcVar12;
-    } while (cVar10 != '\0');
+      pcVar13 = pcVar9 + 1;
+      cVar11 = *pcVar9;
+      pcVar9 = pcVar13;
+    } while (cVar11 != '\0');
     uVar7 = ~uVar7;
-    pcVar9 = pcVar12 + -uVar7;
-    pcVar12 = (char *)&DAT_0080c736;
+    pcVar9 = pcVar13 + -uVar7;
+    pcVar13 = (char *)&DAT_0080c736;
     for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar9;
+      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar9;
       pcVar9 = pcVar9 + 4;
-      pcVar12 = pcVar12 + 4;
+      pcVar13 = pcVar13 + 4;
     }
     for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pcVar12 = *pcVar9;
+      *pcVar13 = *pcVar9;
       pcVar9 = pcVar9 + 1;
-      pcVar12 = pcVar12 + 1;
+      pcVar13 = pcVar13 + 1;
     }
     if (DAT_008087a0 == '\b') {
       thunk_FUN_006767d0();

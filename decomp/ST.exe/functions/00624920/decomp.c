@@ -159,10 +159,9 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
         if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar3 < 0)) ||
             ((SHORT_007fb242 <= sVar3 || (sVar13 < 0)))) ||
            ((SHORT_007fb244 <= sVar13 ||
-            (*(int *)(DAT_007fb248 +
-                     ((uint)*(byte *)((int)this + 0x8e) +
-                     ((int)SHORT_007fb240 * (int)sVar3 + (int)SHORT_007fb246 * (int)sVar13 +
-                     (int)sVar2) * 2) * 4) == 0)))) {
+            (g_worldCells
+             [(int)SHORT_007fb240 * (int)sVar3 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
+             objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)))) {
           iVar6 = thunk_FUN_00495ff0(sVar2,sVar3,*(short *)((int)this + 0x4b),
                                      (uint)*(byte *)((int)this + 0x8e),this);
           if (iVar6 == 0) {
@@ -173,10 +172,9 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
           if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
                ((sVar3 < 0 ||
                 (((SHORT_007fb242 <= sVar3 || (sVar13 < 0)) || (SHORT_007fb244 <= sVar13)))))) ||
-              (*(int *)(DAT_007fb248 +
-                       ((uint)*(byte *)((int)this + 0x8e) +
-                       ((int)sVar3 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 +
-                       (int)sVar2) * 2) * 4) == 0)) &&
+              (g_worldCells
+               [(int)sVar3 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
+               objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)) &&
              (iVar6 = DumpClassC::WritePtr
                                 (sVar2,sVar3,sVar13,(uint)*(byte *)((int)this + 0x8e),this),
              iVar6 == 0)) {

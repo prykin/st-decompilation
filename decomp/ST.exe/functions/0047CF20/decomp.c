@@ -13,7 +13,7 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  void *this_00;
+  STWorldObject *this_00;
   code *pcVar4;
   int iVar5;
   
@@ -24,10 +24,10 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   if ((((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
        ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) &&
       ((sVar2 < SHORT_007fb244 &&
-       ((this_00 = *(void **)(DAT_007fb248 +
-                             ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                             (int)sVar1) * 8), this_00 != (void *)0x0 &&
-        (*(int *)((int)this_00 + 0x18) == this->field_0679)))))) && (this->field_0675 == 99)) {
+       ((this_00 = g_worldCells
+                   [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1
+                   ].objects[0], this_00 != (STWorldObject *)0x0 &&
+        (*(int *)&this_00->field_0x18 == this->field_0679)))))) && (this->field_0675 == 99)) {
     thunk_FUN_004b7d50(this_00,this);
   }
   switch(this->field_0687) {

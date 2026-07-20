@@ -302,8 +302,8 @@ LAB_005aef44:
     local_fe4[2] = PTR_0081176c->field_0034;
     local_fe4[3] = (ccFntTy *)0xcb;
     local_fe4[4] = (ccFntTy *)0x23f;
-    local_fe4[5] = *(ccFntTy **)(PTR_0081176c->field_0682 + 4);
-    local_fcc = *(undefined4 *)(PTR_0081176c->field_0682 + 8);
+    local_fe4[5] = (ccFntTy *)PTR_0081176c->field_0682->field_0004;
+    local_fcc = PTR_0081176c->field_0682->field_0008;
     local_fc8 = 0x104;
     local_fc4 = PTR_0081176c->field_0686;
     pSVar1 = this_00->field_000C;

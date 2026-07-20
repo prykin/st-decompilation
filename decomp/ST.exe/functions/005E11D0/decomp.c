@@ -3,7 +3,8 @@
    E:\__titans\Start\task_obj.cpp
    MTaskTy::PrepareTSurf */
 
-void __thiscall MTaskTy::PrepareTSurf(MTaskTy *this,int param_1,char param_2,char param_3)
+void __thiscall
+MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char param_2,char param_3)
 
 {
   code *pcVar1;
@@ -20,12 +21,12 @@ void __thiscall MTaskTy::PrepareTSurf(MTaskTy *this,int param_1,char param_2,cha
   g_currentExceptionFrame = &local_48;
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    uVar5 = *(uint *)(param_1 + 0x14);
+    uVar5 = param_1->field_0014;
     if (uVar5 == 0) {
-      uVar5 = ((uint)*(ushort *)(param_1 + 0xe) * *(int *)(param_1 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(param_1 + 8);
+      uVar5 = ((uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+              param_1->field_0008;
     }
-    puVar2 = (undefined4 *)FUN_006b4fa0(param_1);
+    puVar2 = (undefined4 *)FUN_006b4fa0((int)param_1);
     for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
       *puVar2 = 0xffffffff;
       puVar2 = puVar2 + 1;
@@ -35,9 +36,10 @@ void __thiscall MTaskTy::PrepareTSurf(MTaskTy *this,int param_1,char param_2,cha
       puVar2 = (undefined4 *)((int)puVar2 + 1);
     }
     if (param_2 != '\0') {
-      FUN_006c7610(param_1,0,0,0,*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),2,0);
-      FUN_006c7570(param_1,0,0,0,*(undefined4 **)(param_1 + 4),*(int *)(param_1 + 8),2,
-                   (-(param_3 != '\x01') & 0xecU) + 0x2c);
+      FUN_006c7610((AnonShape_006C7610_838EDECF *)param_1,0,0,0,param_1->field_0004,
+                   param_1->field_0008,2,0);
+      FUN_006c7570((AnonShape_006C7570_82D7EB54 *)param_1,0,0,0,(undefined4 *)param_1->field_0004,
+                   param_1->field_0008,2,(-(param_3 != '\x01') & 0xecU) + 0x2c);
     }
     g_currentExceptionFrame = local_48.previous;
     return;

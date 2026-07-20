@@ -127,7 +127,7 @@ LAB_0051d689:
     uVar11 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar11;
     CheckBkView(this_00,0,uVar11);
-    ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,0,0x19c,uVar11 + 2);
+    ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,0,0x19c,uVar11 + 2);
     ccFntTy::WrTxt(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,-1,-1);
   }
   CheckBkView(this_00,uVar11,0x1e);
@@ -139,10 +139,10 @@ LAB_0051d689:
   pCVar6 = FUN_006f2c00(pCVar6,iVar4,uVar12);
   local_8 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar15,iVar10);
   uVar12 = uVar11 + 10;
-  DibPut((undefined4 *)this_00->field_0218,0x50,uVar12,'\x01',(byte *)local_8);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x50,uVar12,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,local_18 + 0x5f,uVar12,0x13d - local_18
-                   ,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,uVar12,
+                   0x13d - local_18,0xf);
   uVar7 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar10 = -1;
   iVar4 = 1;
@@ -165,8 +165,8 @@ LAB_0051d689:
   }
   CreateSlider(this_00,iVar4);
   Library::DKW::WGR::FUN_006b5110
-            (this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,this_00->field_0218,0,0,0
-             ,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
+            ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+             (int)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
   Library::DKW::DDX::FUN_006b3640
             (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044);
   g_currentExceptionFrame = local_78.previous;

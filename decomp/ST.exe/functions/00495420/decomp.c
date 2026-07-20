@@ -3,70 +3,74 @@ bool __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *par
 
 {
   short sVar1;
-  void *pvVar2;
+  short sVar2;
   short sVar3;
-  short sVar4;
-  int iVar5;
+  int iVar4;
+  short sVar5;
   short sVar6;
-  short sVar7;
-  int iVar8;
+  int iVar7;
   int local_c;
   int local_8;
   
   local_c = 1000000;
   if (*(int *)((int)this + 0x6b9) != 1) {
-    sVar6 = *(short *)((int)this + 0x6a9);
+    sVar5 = *(short *)((int)this + 0x6a9);
     sVar1 = *(short *)((int)this + 0x6ab);
-    sVar4 = *(short *)((int)this + 0x6ad) + 1;
-    if ((((-1 < sVar6) && (sVar6 < SHORT_007fb240)) && (-1 < sVar1)) &&
-       (((sVar1 < SHORT_007fb242 && (-1 < sVar4)) &&
-        ((sVar4 < SHORT_007fb244 &&
-         ((pvVar2 = *(void **)(DAT_007fb248 +
-                              ((int)SHORT_007fb246 * (int)sVar4 + (int)SHORT_007fb240 * (int)sVar1 +
-                              (int)sVar6) * 8), pvVar2 != (void *)0x0 && (pvVar2 != this)))))))) {
+    sVar3 = *(short *)((int)this + 0x6ad) + 1;
+    if ((((-1 < sVar5) && (sVar5 < SHORT_007fb240)) && (-1 < sVar1)) &&
+       (((sVar1 < SHORT_007fb242 && (-1 < sVar3)) &&
+        ((sVar3 < SHORT_007fb244 &&
+         ((g_worldCells
+           [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar5].
+           objects[0] != (STWorldObject *)0x0 &&
+          (g_worldCells
+           [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar5].
+           objects[0] != this)))))))) {
       return false;
     }
-    *param_1 = sVar6;
-    sVar6 = *(short *)((int)this + 0x6ab);
+    *param_1 = sVar5;
+    sVar5 = *(short *)((int)this + 0x6ab);
 LAB_00495607:
-    *param_2 = sVar6;
+    *param_2 = sVar5;
     *param_3 = *(short *)((int)this + 0x6ad) + 1;
     return true;
   }
   local_8 = 0;
   do {
-    iVar8 = 0;
+    iVar7 = 0;
     do {
       sVar1 = *(short *)((int)this + 0x6ad) + 1;
-      sVar6 = (short)iVar8;
-      sVar7 = sVar6 + *(short *)((int)this + 0x6ab);
-      sVar4 = (short)local_8;
-      sVar3 = *(short *)((int)this + 0x6a9) + sVar4;
-      if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar7 < 0)) ||
-          ((SHORT_007fb242 <= sVar7 || (sVar1 < 0)))) ||
+      sVar5 = (short)iVar7;
+      sVar6 = sVar5 + *(short *)((int)this + 0x6ab);
+      sVar3 = (short)local_8;
+      sVar2 = *(short *)((int)this + 0x6a9) + sVar3;
+      if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar6 < 0)) ||
+          ((SHORT_007fb242 <= sVar6 || (sVar1 < 0)))) ||
          ((SHORT_007fb244 <= sVar1 ||
-          (pvVar2 = *(void **)(DAT_007fb248 +
-                              ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar7 +
-                              (int)sVar3) * 8), pvVar2 == (void *)0x0)))) {
-        iVar5 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
+          (g_worldCells
+           [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar6 + (int)sVar2].
+           objects[0] == (STWorldObject *)0x0)))) {
+        iVar4 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),
                              *(short *)((int)this + 0x6a9) + local_8,
-                             *(short *)((int)this + 0x6ab) + iVar8,*(short *)((int)this + 0x6ad) + 1
+                             *(short *)((int)this + 0x6ab) + iVar7,*(short *)((int)this + 0x6ad) + 1
                             );
-        if (iVar5 < local_c) {
-          *param_1 = *(short *)((int)this + 0x6a9) + sVar4;
-          *param_2 = *(short *)((int)this + 0x6ab) + sVar6;
+        if (iVar4 < local_c) {
+          *param_1 = *(short *)((int)this + 0x6a9) + sVar3;
+          *param_2 = *(short *)((int)this + 0x6ab) + sVar5;
           *param_3 = *(short *)((int)this + 0x6ad) + 1;
-          local_c = iVar5;
+          local_c = iVar4;
         }
       }
-      else if (pvVar2 == this) {
-        *param_1 = *(short *)((int)this + 0x6a9) + sVar4;
-        sVar6 = *(short *)((int)this + 0x6ab) + sVar6;
+      else if (g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar6 + (int)sVar2].
+               objects[0] == this) {
+        *param_1 = *(short *)((int)this + 0x6a9) + sVar3;
+        sVar5 = *(short *)((int)this + 0x6ab) + sVar5;
         goto LAB_00495607;
       }
-      iVar8 = iVar8 + 1;
-    } while (iVar8 < 2);
+      iVar7 = iVar7 + 1;
+    } while (iVar7 < 2);
     local_8 = local_8 + 1;
     if (1 < local_8) {
       return local_c != 1000000;

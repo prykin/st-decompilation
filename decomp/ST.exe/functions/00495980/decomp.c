@@ -16,7 +16,8 @@ undefined4 __thiscall DumpClassC::GetMessage(DumpClassC *this,int param_1)
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar8;
+  STWorldObject **ppSVar8;
+  undefined4 *puVar9;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   DumpClassC *local_8;
@@ -53,14 +54,14 @@ LAB_00495c27:
                 (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x2b);
     }
     uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
-    puVar8 = DAT_007fb280;
+    puVar9 = DAT_007fb280;
     for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
     for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar8 = 0;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+      *(undefined1 *)puVar9 = 0;
+      puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
     SHORT_007fb232 = SHORT_007fb27a;
     DAT_007fb234 = SHORT_007fb27c;
@@ -76,35 +77,35 @@ LAB_00495c27:
     SHORT_007fb244 = SHORT_007fb27c;
     SHORT_007fb240 = SHORT_007fb278;
     SHORT_007fb246 = SHORT_007fb27e;
-    DAT_007fb248 = (undefined4 *)
+    g_worldCells = (STWorldCell *)
                    Library::DKW::LIB::FUN_006aac70
                              ((int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278 * 8);
-    if (DAT_007fb248 == (undefined4 *)0x0) {
+    if (g_worldCells == (STWorldCell *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x34);
     }
-    puVar8 = DAT_007fb248;
-    for (iVar3 = ((int)SHORT_007fb244 * (int)SHORT_007fb242 * (int)SHORT_007fb240 & 0x1fffffffU) <<
-                 1; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+    iVar3 = ((int)SHORT_007fb244 * (int)SHORT_007fb242 * (int)SHORT_007fb240 & 0x1fffffffU) << 1;
+    ppSVar8 = g_worldCells->objects;
+    for (; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *ppSVar8 = (STWorldObject *)0x0;
+      ppSVar8 = ppSVar8 + 1;
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)puVar8 = 0;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+      *(undefined1 *)ppSVar8 = 0;
+      ppSVar8 = (STWorldObject **)((int)ppSVar8 + 1);
     }
     DAT_007fb26c = (undefined4 *)
                    Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb232 * (int)SHORT_007fb230);
     iVar3 = (int)SHORT_007fb232;
     iVar4 = (int)SHORT_007fb230;
-    puVar8 = DAT_007fb26c;
+    puVar9 = DAT_007fb26c;
     for (uVar6 = (uint)(iVar3 * iVar4) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
     for (uVar6 = iVar3 * iVar4 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar8 = 0;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+      *(undefined1 *)puVar9 = 0;
+      puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
     PTR_007fb270 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x18,10);
     thunk_FUN_00495e50();
@@ -134,8 +135,8 @@ LAB_00495c27:
     if (DAT_007fb238 != 0) {
       FUN_006ab060((LPVOID *)&DAT_007fb238);
     }
-    if (DAT_007fb248 != (undefined4 *)0x0) {
-      FUN_006ab060(&DAT_007fb248);
+    if (g_worldCells != (STWorldCell *)0x0) {
+      FUN_006ab060(&g_worldCells);
     }
     pDVar2 = local_8;
     thunk_FUN_00497000();

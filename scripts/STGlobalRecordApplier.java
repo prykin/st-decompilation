@@ -276,16 +276,52 @@ public class STGlobalRecordApplier extends GhidraScript {
     }
 
     private DataType resolveType(String specification, int size) {
-        if (specification == null || specification.isBlank())
+        if (specification == null || specification.isBlank()) {
+            if (size < 1)
+                throw new IllegalArgumentException("array element type is blank");
             return Undefined.getUndefinedDataType(size);
+        }
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            if (separator < 0)
+                throw new IllegalArgumentException("invalid array type " + specification);
+            int count;
+            try {
+                count = Integer.parseInt(
+                    specification.substring("array:".length(), separator));
+            }
+            catch (NumberFormatException exception) {
+                throw new IllegalArgumentException("invalid array count in " + specification);
+            }
+            if (count < 1)
+                throw new IllegalArgumentException("invalid array count in " + specification);
+            String elementSpecification = specification.substring(separator + 1);
+            DataType element = resolveType(elementSpecification, -1);
+            if (element.getLength() < 1)
+                throw new IllegalArgumentException(
+                    "array element has no fixed length: " + elementSpecification);
+            return new ArrayDataType(element, count, element.getLength(), dataTypes);
+        }
         if (specification.startsWith("pointer:")) {
             String path = specification.substring("pointer:".length());
             DataType pointed = dataTypes.getDataType(path);
             if (pointed == null) throw new IllegalArgumentException("missing pointed type " + path);
             return new PointerDataType(pointed, currentProgram.getDefaultPointerSize(), dataTypes);
         }
-        if (specification.startsWith("/undefined"))
-            return Undefined.getUndefinedDataType(size);
+        if (specification.startsWith("/undefined")) {
+            int undefinedSize = size;
+            if (undefinedSize < 1) {
+                try {
+                    undefinedSize = Integer.parseInt(
+                        specification.substring("/undefined".length()));
+                }
+                catch (NumberFormatException exception) {
+                    throw new IllegalArgumentException(
+                        "invalid undefined type " + specification);
+                }
+            }
+            return Undefined.getUndefinedDataType(undefinedSize);
+        }
         DataType type = dataTypes.getDataType(specification);
         if (type == null) throw new IllegalArgumentException("missing data type " + specification);
         return type;

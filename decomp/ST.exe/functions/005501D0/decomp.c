@@ -1,16 +1,24 @@
 
-void __thiscall FUN_005501d0(void *this,undefined1 *param_1)
+void __thiscall FUN_005501d0(void *this,STControlCommand *command)
 
 {
-  undefined4 in_stack_ffffffdc;
-  undefined1 *in_stack_ffffffe0;
+  undefined1 local_24 [16];
+  undefined4 local_14;
+  STControlCommand *local_10;
   
-  *(undefined1 **)(param_1 + 0x17) = param_1 + 0x1b;
-  if ((param_1[0xe] != '\x05') && (param_1[0xe] != '2')) {
-    STAllPlayersC::CmdToPlsObj(g_sTAllPlayers_007FA174,param_1,in_stack_ffffffdc,in_stack_ffffffe0);
-    return;
+  command->payload = (STControlCommandPayload *)(command + 1);
+  if (command->commandType == 5) {
+    local_14 = 0x43ff;
   }
-  (**(code **)(**(int **)((int)this + 0x1c) + 0x20))(&stack0xffffffdc);
+  else {
+    if (command->commandType != 0x32) {
+      STAllPlayersC::CmdToPlsObj(g_sTAllPlayers_007FA174,command);
+      return;
+    }
+    local_14 = 0x4400;
+  }
+  local_10 = command;
+  (**(code **)(**(int **)((int)this + 0x1c) + 0x20))(local_24);
   return;
 }
 

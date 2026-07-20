@@ -6,7 +6,7 @@ undefined4 FUN_007477ea(AnonShape_007477EA_440BD1E9 *param_1,uint param_2)
   undefined3 extraout_var;
   undefined4 uVar2;
   
-  bVar1 = FUN_00747e4e((int)param_1);
+  bVar1 = FUN_00747e4e((AnonShape_00747E4E_3F64CF30 *)param_1);
   if (CONCAT31(extraout_var,bVar1) == 1) {
     uVar2 = 0x80040203;
   }

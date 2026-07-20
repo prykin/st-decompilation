@@ -46,11 +46,10 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
       pSVar7 = (STBoatC *)0x0;
     }
     else {
-      pSVar7 = *(STBoatC **)
-                (DAT_007fb248 +
-                ((uint)(byte)this->field_008E +
-                ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1) *
-                2) * 4);
+      pSVar7 = (STBoatC *)
+               g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+               objects[(byte)this->field_008E];
     }
     if (pSVar7 == this) {
       thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);

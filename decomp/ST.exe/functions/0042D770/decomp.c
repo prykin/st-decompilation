@@ -2,7 +2,7 @@
 uint FUN_0042d770(uint param_1,int *param_2)
 
 {
-  AnonShape_006ACC70_C8641025 *pAVar1;
+  DArrayTy *pDVar1;
   uint uVar2;
   ushort uVar3;
   uint *puVar4;
@@ -24,12 +24,12 @@ uint FUN_0042d770(uint param_1,int *param_2)
   short local_6;
   
   local_18 = 0xffff;
-  pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[(char)param_1].field329_0x16d;
+  pDVar1 = g_playerRuntime[(char)param_1].tempSlots[0][0].objectIds;
   local_1c = 1;
   local_20 = 1;
   puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   *param_2 = (int)puVar4;
-  uVar2 = pAVar1->field_000C;
+  uVar2 = pDVar1->count;
   if (uVar2 == 0) {
     return CONCAT22((short)((uint)puVar4 >> 0x10),0xffff);
   }
@@ -38,7 +38,7 @@ uint FUN_0042d770(uint param_1,int *param_2)
   local_10 = groupContent;
   if (0 < (int)uVar2) {
     do {
-      FUN_006acc70(pAVar1,local_14,&local_c);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,local_14,&local_c);
       if ((short)local_c != -1) {
         pAVar5 = (AnonShape_00493CD0_11D91B87 *)
                  STAllPlayersC::GetObjPtr(local_24,param_1,local_c,CASE_1);

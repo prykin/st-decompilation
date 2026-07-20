@@ -33,9 +33,9 @@ FUN_00624140(void *this,int param_1,int param_2,int param_3,int param_4,int para
       }
       if (((((-1 < sVar7) && (sVar7 < SHORT_007fb240)) &&
            ((-1 < sVar8 && ((sVar8 < SHORT_007fb242 && (-1 < sVar9)))))) && (sVar9 < SHORT_007fb244)
-          ) && (*(int *)(DAT_007fb248 +
-                        ((int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 +
-                        (int)sVar7) * 8) != 0)) {
+          ) && (g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7].
+                objects[0] != (STWorldObject *)0x0)) {
         if (param_8 < 1) {
           iVar1 = iVar1 * 0xc9 + 0x32;
           if (iVar1 < param_6) {

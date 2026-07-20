@@ -1,23 +1,23 @@
 
-void FUN_0075a800(undefined4 *param_1)
+void FUN_0075a800(AnonShape_0075A800_65F17FFC *param_1)
 
 {
-  int iVar1;
+  AnonNested_0075A800_019A_8DF3E337 *pAVar1;
   int iVar2;
   
-  iVar1 = *(int *)((int)param_1 + 0x19a);
-  if (*(int *)(iVar1 + 0x10) != 0) {
-    if (param_1[0x12] != 0) {
-      iVar2 = FUN_0075ae60(param_1);
+  pAVar1 = param_1->field_019A;
+  if (pAVar1->field_0010 != 0) {
+    if (*(int *)&param_1->field_0x48 != 0) {
+      iVar2 = FUN_0075ae60((undefined4 *)param_1);
       if (iVar2 != 0) {
-        *(code **)(iVar1 + 0xc) = FUN_0075af80;
-        param_1[0x25] = 0;
+        pAVar1->field_000C = FUN_0075af80;
+        *(undefined4 *)&param_1->field_0x94 = 0;
         return;
       }
     }
-    *(code **)(iVar1 + 0xc) = FUN_0075acb0;
+    pAVar1->field_000C = FUN_0075acb0;
   }
-  param_1[0x25] = 0;
+  *(undefined4 *)&param_1->field_0x94 = 0;
   return;
 }
 

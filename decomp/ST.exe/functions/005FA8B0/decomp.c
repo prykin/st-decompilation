@@ -21,10 +21,10 @@ undefined4 __thiscall FUN_005fa8b0(void *this,int *param_1,int *param_2,int *par
   if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
       ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) ||
      ((SHORT_007fb244 <= sVar2 ||
-      (this_00 = *(STFishC **)
-                  (DAT_007fb248 +
-                  ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1)
-                  * 8), this_00 == (STFishC *)0x0)))) {
+      (this_00 = (STFishC *)
+                 g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+                 objects[0], this_00 == (STFishC *)0x0)))) {
     if ((*(int *)((int)this + 0x255) == 0) ||
        (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x255),(int *)&local_14), iVar4 == -4
        )) {
@@ -36,7 +36,8 @@ undefined4 __thiscall FUN_005fa8b0(void *this,int *param_1,int *param_2,int *par
   else {
     uVar5 = local_10;
     if ((*(int *)&this_00->field_0x20 == 1000) &&
-       (iVar4 = (*this_00->vtable->vfunc_2C)(), uVar5 = local_10, iVar4 == 0x6e)) {
+       (iVar4 = (*this_00->vtable->vfunc_2C)((STWorldObject *)this_00), uVar5 = local_10,
+       iVar4 == 0x6e)) {
       uVar5 = 1;
     }
   }

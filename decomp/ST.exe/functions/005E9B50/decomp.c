@@ -52,8 +52,8 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       local_8d8[2] = PTR_0081176c->field_0034;
       local_8d8[3] = (ccFntTy *)0xcb;
       local_8d8[4] = (ccFntTy *)0x23f;
-      local_8d8[5] = *(ccFntTy **)(PTR_0081176c->field_0682 + 4);
-      local_8c0 = *(undefined4 *)(PTR_0081176c->field_0682 + 8);
+      local_8d8[5] = (ccFntTy *)PTR_0081176c->field_0682->field_0004;
+      local_8c0 = PTR_0081176c->field_0682->field_0008;
       local_8bc = 0x104;
       local_8b8 = PTR_0081176c->field_0686;
       this_00 = pWVar2->field_000C;

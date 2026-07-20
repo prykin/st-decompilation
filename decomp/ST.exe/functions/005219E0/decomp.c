@@ -46,7 +46,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     uVar7 = FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
                          (uint)pIVar2->field_0184[7],uVar6,(undefined4 *)puVar11,iVar3);
     pIVar2->field_019C = uVar7;
-    DibPut((undefined4 *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184);
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184);
     puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     pIVar2->field_0198 = puVar8;
     Library::DKW::TBL::FUN_006b6020(puVar8,0,&DAT_008016a0);

@@ -8,12 +8,13 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   int *piVar2;
   int iVar3;
   byte *pbVar4;
-  int iVar5;
+  STWorldCell *pSVar5;
   int iVar6;
   int iVar7;
   int iVar8;
   byte *pbVar9;
-  bool bVar10;
+  int iVar10;
+  bool bVar11;
   byte local_20 [16];
   int local_10;
   int local_c;
@@ -51,7 +52,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
     iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),SHORT_007fb240);
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
-    iVar5 = local_8;
+    iVar10 = local_8;
     param_6 = 0;
     do {
       iVar6 = iVar6 + SHORT_007fb246;
@@ -60,43 +61,43 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
         iVar7 = (_param_4 - _param_3) + 1;
         do {
           local_10 = local_10 + (short)iVar3;
-          if (iVar5 <= iVar8) {
-            iVar3 = local_10 * 8 + -8;
+          if (iVar10 <= iVar8) {
             iVar8 = (iVar8 - local_8) + 1;
+            iVar3 = local_10 * 8 + -8;
             do {
-              iVar3 = iVar3 + 8;
-              piVar2 = *(int **)(iVar3 + DAT_007fb248);
-              iVar5 = DAT_007fb248;
+              piVar2 = *(int **)((int)g_worldCells[1].objects + iVar3);
+              pSVar5 = g_worldCells;
               if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
                 (**(code **)(*piVar2 + 0x74))(local_20);
                 pbVar9 = local_20;
                 pbVar4 = param_2;
                 do {
                   bVar1 = *pbVar4;
-                  bVar10 = bVar1 < *pbVar9;
+                  bVar11 = bVar1 < *pbVar9;
                   if (bVar1 != *pbVar9) {
 LAB_0043f4c8:
-                    iVar5 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+                    pSVar5 = (STWorldCell *)((1 - (uint)bVar11) - (uint)(bVar11 != 0));
                     goto LAB_0043f4cd;
                   }
                   if (bVar1 == 0) break;
                   bVar1 = pbVar4[1];
-                  bVar10 = bVar1 < pbVar9[1];
+                  bVar11 = bVar1 < pbVar9[1];
                   if (bVar1 != pbVar9[1]) goto LAB_0043f4c8;
                   pbVar4 = pbVar4 + 2;
                   pbVar9 = pbVar9 + 2;
                 } while (bVar1 != 0);
-                iVar5 = 0;
+                pSVar5 = (STWorldCell *)0x0;
 LAB_0043f4cd:
-                if (iVar5 == 0) {
+                if (pSVar5 == (STWorldCell *)0x0) {
                   param_6 = param_6 + 1;
                 }
               }
               iVar8 = iVar8 + -1;
+              iVar3 = iVar3 + 8;
             } while (iVar8 != 0);
-            iVar3 = CONCAT22((short)((uint)iVar5 >> 0x10),SHORT_007fb240);
+            iVar3 = CONCAT22((short)((uint)pSVar5 >> 0x10),SHORT_007fb240);
             iVar8 = local_c;
-            iVar5 = local_8;
+            iVar10 = local_8;
           }
           iVar7 = iVar7 + -1;
         } while (iVar7 != 0);

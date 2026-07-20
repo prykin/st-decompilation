@@ -16,20 +16,19 @@ STBoatC::GetCellForLoading
 
 {
   undefined2 uVar1;
-  STBoatC *pSVar2;
-  code *pcVar3;
-  int *piVar4;
-  int iVar5;
-  undefined4 uVar6;
+  code *pcVar2;
+  int *piVar3;
+  int iVar4;
+  undefined4 uVar5;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
+  int iVar8;
   int iVar9;
   int iVar10;
   int iVar11;
-  int iVar12;
-  short *psVar13;
+  short *psVar12;
+  undefined4 *puVar13;
   undefined4 *puVar14;
-  undefined4 *puVar15;
   int local_68;
   int local_64 [4];
   int local_54;
@@ -41,44 +40,44 @@ STBoatC::GetCellForLoading
   int local_8;
   
   local_68 = (int)param_4;
-  iVar11 = (int)param_5;
+  iVar10 = (int)param_5;
   local_64[1] = local_68 + -1;
-  local_64[0] = iVar11 + -1;
+  local_64[0] = iVar10 + -1;
   local_64[3] = local_68 + 1;
   local_48[0] = 0;
   local_48[1] = 0;
   local_48[2] = 0;
   local_48[3] = 0;
   local_48[4] = 0;
-  uVar7 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
-  local_4c = iVar11 + 1;
-  puVar14 = DAT_007fb280;
-  puVar15 = DAT_007fb238;
-  for (uVar8 = (uVar7 & 0x7fffffff) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *puVar15 = *puVar14;
+  uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
+  local_4c = iVar10 + 1;
+  puVar13 = DAT_007fb280;
+  puVar14 = DAT_007fb238;
+  for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *puVar14 = *puVar13;
+    puVar13 = puVar13 + 1;
     puVar14 = puVar14 + 1;
-    puVar15 = puVar15 + 1;
   }
-  for (uVar7 = uVar7 * 2 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined1 *)puVar15 = *(undefined1 *)puVar14;
+  for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+    *(undefined1 *)puVar14 = *(undefined1 *)puVar13;
+    puVar13 = (undefined4 *)((int)puVar13 + 1);
     puVar14 = (undefined4 *)((int)puVar14 + 1);
-    puVar15 = (undefined4 *)((int)puVar15 + 1);
   }
   local_48[5] = 0xffffffff;
   local_48[6] = 0xffffffff;
   local_48[7] = 0xffffffff;
   local_48[8] = 0xffffffff;
   local_48[9] = 0xffffffff;
-  local_64[2] = iVar11;
-  local_54 = iVar11;
+  local_64[2] = iVar10;
+  local_54 = iVar10;
   local_50 = local_68;
   local_c = this;
   FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
                (int)param_1,(int)param_2,(int)param_3,-1,-1,-1);
-  iVar11 = SHORT_007fb278 * iVar11;
-  iVar10 = 0;
+  iVar10 = SHORT_007fb278 * iVar10;
+  iVar9 = 0;
   if (*(short *)((int)DAT_007fb238 +
-                ((int)(short)param_6 * (int)SHORT_007fb27e + iVar11 + (int)param_4) * 2) < 1) {
+                ((int)(short)param_6 * (int)SHORT_007fb27e + iVar10 + (int)param_4) * 2) < 1) {
     return 0xfffffffe;
   }
   switch((int)(short)param_6) {
@@ -116,146 +115,145 @@ LAB_00491b42:
     local_20[4] = 0;
     break;
   default:
-    iVar11 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5071,0,0,&DAT_007a4ccc,
+    iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5071,0,0,&DAT_007a4ccc,
                                 s_STBoatC__GetCellForLoading_zo_007abb04);
-    if (iVar11 == 0) {
+    if (iVar10 == 0) {
       return 0xfffffffe;
     }
-    pcVar3 = (code *)swi(3);
-    uVar6 = (*pcVar3)();
-    return uVar6;
+    pcVar2 = (code *)swi(3);
+    uVar5 = (*pcVar2)();
+    return uVar5;
   }
   do {
-    local_8 = *(int *)((int)local_20 + iVar10) * (int)SHORT_007fb27e;
-    if (0 < *(short *)((int)DAT_007fb238 + (local_8 + iVar11 + (int)param_4) * 2)) {
-      piVar4 = &local_68;
+    local_8 = *(int *)((int)local_20 + iVar9) * (int)SHORT_007fb27e;
+    if (0 < *(short *)((int)DAT_007fb238 + (local_8 + iVar10 + (int)param_4) * 2)) {
+      piVar3 = &local_68;
       _param_3 = 1000000000;
-      iVar12 = 0;
+      iVar11 = 0;
       do {
-        iVar5 = *piVar4;
-        if ((((-1 < iVar5) && (iVar5 <= SHORT_007fb278 + -1)) && (iVar9 = piVar4[1], -1 < iVar9)) &&
-           (iVar9 <= SHORT_007fb27a + -1)) {
-          iVar5 = iVar9 * SHORT_007fb278 + local_8 + iVar5;
-          iVar9 = (int)*(short *)((int)DAT_007fb238 + iVar5 * 2);
-          if (0 < iVar9) {
-            pSVar2 = *(STBoatC **)(DAT_007fb248 + iVar5 * 8);
-            if (pSVar2 == local_c) {
-              *(int *)((int)local_48 + iVar10 + 0x14) = iVar12;
-              *(undefined4 *)((int)local_48 + iVar10) = 2;
+        iVar4 = *piVar3;
+        if ((((-1 < iVar4) && (iVar4 <= SHORT_007fb278 + -1)) && (iVar8 = piVar3[1], -1 < iVar8)) &&
+           (iVar8 <= SHORT_007fb27a + -1)) {
+          iVar4 = iVar8 * SHORT_007fb278 + local_8 + iVar4;
+          iVar8 = (int)*(short *)((int)DAT_007fb238 + iVar4 * 2);
+          if (0 < iVar8) {
+            if ((STBoatC *)g_worldCells[iVar4].objects[0] == local_c) {
+              *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+              *(undefined4 *)((int)local_48 + iVar9) = 2;
               break;
             }
-            if (pSVar2 == (STBoatC *)0x0) {
-              if (*(int *)((int)local_48 + iVar10) == 0) {
-                *(int *)((int)local_48 + iVar10 + 0x14) = iVar12;
-                *(undefined4 *)((int)local_48 + iVar10) = 1;
-                _param_3 = iVar9;
+            if ((STBoatC *)g_worldCells[iVar4].objects[0] == (STBoatC *)0x0) {
+              if (*(int *)((int)local_48 + iVar9) == 0) {
+                *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+                *(undefined4 *)((int)local_48 + iVar9) = 1;
+                _param_3 = iVar8;
                 goto cf_continue_loop_00491C1C;
               }
-              if (*(int *)((int)local_48 + iVar10) != 1) goto LAB_00491c08;
+              if (*(int *)((int)local_48 + iVar9) != 1) goto LAB_00491c08;
             }
             else {
 LAB_00491c08:
-              if (*(int *)((int)local_48 + iVar10) != 0) goto cf_continue_loop_00491C1C;
+              if (*(int *)((int)local_48 + iVar9) != 0) goto cf_continue_loop_00491C1C;
             }
-            if (iVar9 < _param_3) {
-              *(int *)((int)local_48 + iVar10 + 0x14) = iVar12;
-              _param_3 = iVar9;
+            if (iVar8 < _param_3) {
+              *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+              _param_3 = iVar8;
             }
           }
         }
 cf_continue_loop_00491C1C:
-        iVar12 = iVar12 + 1;
-        piVar4 = piVar4 + 2;
-      } while (iVar12 < 4);
+        iVar11 = iVar11 + 1;
+        piVar3 = piVar3 + 2;
+      } while (iVar11 < 4);
     }
-    iVar10 = iVar10 + 4;
-    if (0x13 < iVar10) {
-      iVar10 = (short)param_6 + 1;
-      if (iVar10 < 5) {
-        iVar12 = (short)param_6 + 2;
-        psVar13 = (short *)((int)DAT_007fb238 +
-                           (SHORT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2);
+    iVar9 = iVar9 + 4;
+    if (0x13 < iVar9) {
+      iVar9 = (short)param_6 + 1;
+      if (iVar9 < 5) {
+        iVar11 = (short)param_6 + 2;
+        psVar12 = (short *)((int)DAT_007fb238 + (SHORT_007fb27e * iVar9 + iVar10 + (int)param_4) * 2
+                           );
         do {
-          iVar10 = iVar12;
-          if (*psVar13 < 1) {
-            for (; iVar10 < 5; iVar10 = iVar10 + 1) {
-              iVar5 = 0;
-              piVar4 = local_20;
+          iVar9 = iVar11;
+          if (*psVar12 < 1) {
+            for (; iVar9 < 5; iVar9 = iVar9 + 1) {
+              iVar4 = 0;
+              piVar3 = local_20;
               do {
-                if (*piVar4 == iVar10) {
-                  local_48[iVar5 + 5] = -1;
+                if (*piVar3 == iVar9) {
+                  local_48[iVar4 + 5] = -1;
                   break;
                 }
-                iVar5 = iVar5 + 1;
-                piVar4 = piVar4 + 1;
-              } while (iVar5 < 5);
+                iVar4 = iVar4 + 1;
+                piVar3 = piVar3 + 1;
+              } while (iVar4 < 5);
             }
           }
-          psVar13 = psVar13 + SHORT_007fb27e;
-          iVar12 = iVar12 + 1;
-        } while (iVar12 < 6);
+          psVar12 = psVar12 + SHORT_007fb27e;
+          iVar11 = iVar11 + 1;
+        } while (iVar11 < 6);
       }
-      iVar10 = (short)param_6 + -1;
-      if (-1 < iVar10) {
-        psVar13 = (short *)((int)DAT_007fb238 +
-                           (SHORT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2);
+      iVar9 = (short)param_6 + -1;
+      if (-1 < iVar9) {
+        psVar12 = (short *)((int)DAT_007fb238 + (SHORT_007fb27e * iVar9 + iVar10 + (int)param_4) * 2
+                           );
         do {
-          if ((*psVar13 < 1) && (iVar11 = iVar10 + -1, 0 < iVar10)) {
+          if ((*psVar12 < 1) && (iVar10 = iVar9 + -1, 0 < iVar9)) {
             do {
-              iVar12 = 0;
-              piVar4 = local_20;
+              iVar11 = 0;
+              piVar3 = local_20;
               do {
-                if (*piVar4 == iVar11) {
-                  local_48[iVar12 + 5] = -1;
+                if (*piVar3 == iVar10) {
+                  local_48[iVar11 + 5] = -1;
                   break;
                 }
-                iVar12 = iVar12 + 1;
-                piVar4 = piVar4 + 1;
-              } while (iVar12 < 5);
-              iVar11 = iVar11 + -1;
-            } while (-1 < iVar11);
+                iVar11 = iVar11 + 1;
+                piVar3 = piVar3 + 1;
+              } while (iVar11 < 5);
+              iVar10 = iVar10 + -1;
+            } while (-1 < iVar10);
           }
-          iVar10 = iVar10 + -1;
-          psVar13 = psVar13 + -(int)SHORT_007fb27e;
-        } while (-1 < iVar10);
+          iVar9 = iVar9 + -1;
+          psVar12 = psVar12 + -(int)SHORT_007fb27e;
+        } while (-1 < iVar9);
       }
-      iVar11 = -1;
-      iVar10 = 0;
+      iVar10 = -1;
+      iVar9 = 0;
       _param_3 = 1000000000;
       _param_6 = 0;
       do {
-        iVar12 = *(int *)((int)local_48 + iVar10 + 0x14);
-        if (iVar12 != -1) {
-          if ((iVar11 == -1) || ((*(int *)((int)local_48 + iVar10) == 1 && (local_48[iVar11] == 0)))
-             ) {
+        iVar11 = *(int *)((int)local_48 + iVar9 + 0x14);
+        if (iVar11 != -1) {
+          if ((iVar10 == -1) || ((*(int *)((int)local_48 + iVar9) == 1 && (local_48[iVar10] == 0))))
+          {
             _param_3 = (int)*(short *)((int)DAT_007fb238 +
-                                      (*(int *)((int)local_64 + iVar12 * 8) * (int)SHORT_007fb278 +
-                                       *(int *)((int)local_20 + iVar10) * (int)SHORT_007fb27e +
-                                      (&local_68)[iVar12 * 2]) * 2);
-            iVar11 = _param_6;
+                                      (*(int *)((int)local_64 + iVar11 * 8) * (int)SHORT_007fb278 +
+                                       *(int *)((int)local_20 + iVar9) * (int)SHORT_007fb27e +
+                                      (&local_68)[iVar11 * 2]) * 2);
+            iVar10 = _param_6;
           }
-          else if (((*(int *)((int)local_48 + iVar10) != 0) || (local_48[iVar11] != 1)) &&
-                  (iVar12 = (int)*(short *)((int)DAT_007fb238 +
-                                           (*(int *)((int)local_64 + iVar12 * 8) *
+          else if (((*(int *)((int)local_48 + iVar9) != 0) || (local_48[iVar10] != 1)) &&
+                  (iVar11 = (int)*(short *)((int)DAT_007fb238 +
+                                           (*(int *)((int)local_64 + iVar11 * 8) *
                                             (int)SHORT_007fb278 +
-                                            *(int *)((int)local_20 + iVar10) * (int)SHORT_007fb27e +
-                                           (&local_68)[iVar12 * 2]) * 2), iVar12 < _param_3)) {
-            iVar11 = _param_6;
-            _param_3 = iVar12;
+                                            *(int *)((int)local_20 + iVar9) * (int)SHORT_007fb27e +
+                                           (&local_68)[iVar11 * 2]) * 2), iVar11 < _param_3)) {
+            iVar10 = _param_6;
+            _param_3 = iVar11;
           }
         }
-        iVar10 = iVar10 + 4;
+        iVar9 = iVar9 + 4;
         _param_6 = _param_6 + 1;
-      } while (iVar10 < 0x14);
-      if (iVar11 != -1) {
-        iVar10 = local_20[iVar11];
-        uVar1 = *(undefined2 *)((int)local_64 + local_48[iVar11 + 5] * 8);
-        *param_7 = (short)(&local_68)[local_48[iVar11 + 5] * 2];
+      } while (iVar9 < 0x14);
+      if (iVar10 != -1) {
+        iVar9 = local_20[iVar10];
+        uVar1 = *(undefined2 *)((int)local_64 + local_48[iVar10 + 5] * 8);
+        *param_7 = (short)(&local_68)[local_48[iVar10 + 5] * 2];
         *param_8 = uVar1;
-        *param_9 = (short)iVar10;
+        *param_9 = (short)iVar9;
         *param_10 = param_4;
         *param_11 = param_5;
-        *param_12 = (short)iVar10;
+        *param_12 = (short)iVar9;
         return 0;
       }
       return 0xffffffff;

@@ -28,7 +28,7 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
   short local_30;
   short local_2e [5];
   uint local_24;
-  int local_20;
+  AiPlrClassTy *local_20;
   short local_1c [2];
   short local_18 [2];
   AnonShape_00661CA0_93A030EF *local_14;
@@ -177,9 +177,9 @@ LAB_00661e5f:
         if ((void *)param_1->field_0284 != (void *)0x0) {
           pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,
                                               *(short *)&local_10[3].field_0xdb);
-          if (local_20 != 0) {
-            uVar4 = *(uint *)(local_20 + 0x65c);
-            *(uint *)(local_20 + 0x65c) = uVar4 + 1;
+          if (local_20 != (AiPlrClassTy *)0x0) {
+            uVar4 = *(uint *)&local_20->field_0x65c;
+            *(uint *)&local_20->field_0x65c = uVar4 + 1;
           }
           if (pvVar8 != (void *)0x0) {
             thunk_FUN_006616b0(pvVar8,local_c,uVar4);

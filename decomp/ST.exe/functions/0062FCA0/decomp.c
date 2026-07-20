@@ -1,5 +1,5 @@
 
-int __thiscall FUN_0062fca0(void *this,int param_1)
+int __thiscall FUN_0062fca0(void *this,AnonShape_0062FCA0_22A9EE35 *param_1)
 
 {
   int *piVar1;
@@ -18,9 +18,9 @@ int __thiscall FUN_0062fca0(void *this,int param_1)
   }
   else {
     if (4 < iVar4) {
-      sVar2 = (short)((uint)*(undefined4 *)(param_1 + 0x28) >> 0x10);
+      sVar2 = (short)((uint)param_1->field_0028 >> 0x10);
       if ((sVar2 != 3) && (sVar2 != 6)) {
-        iVar4 = *(int *)(param_1 + 0x20);
+        iVar4 = param_1->field_0020;
         puVar5 = (undefined4 *)((int)this + 0x1e5);
         iVar3 = 5;
         do {
@@ -35,7 +35,7 @@ int __thiscall FUN_0062fca0(void *this,int param_1)
       return *(int *)((int)this + 0x1e1);
     }
     *(int *)((int)this + 0x1e1) = iVar4 + 1;
-    thunk_FUN_0062ef00(this,iVar3,param_1);
+    thunk_FUN_0062ef00(this,iVar3,(int)param_1);
     if (*(char *)((int)this + 0x1f9) != '\0') {
       iVar4 = *(int *)((int)this + iVar3 * 4 + 0x1e5);
       iVar4 = thunk_FUN_0062f080(this,iVar3,*(undefined4 *)(iVar4 + 0xc),*(undefined4 *)(iVar4 + 4))

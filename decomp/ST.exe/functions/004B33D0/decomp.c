@@ -12,6 +12,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   DArrayTy **ppDVar2;
   byte bVar3;
   char cVar4;
+  STWorldObject *this;
   code *pcVar5;
   DArrayTy *pDVar6;
   AnonShape_006B0CD0_C8D121FA *pAVar7;
@@ -83,7 +84,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_11c;
   int local_118;
   int local_114;
-  int *local_110;
+  STWorldObject *local_110;
   int local_10c;
   Global_sub_004B1120_param_2Enum local_108 [4];
   undefined4 local_f8;
@@ -234,11 +235,11 @@ int FUN_004b33d0(uint param_1,int *param_2)
     while (-1 < iVar11) {
       if (local_58 != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-        piVar20 = *(int **)(DAT_007fb248 +
-                           ((int)local_8c[0] * (int)SHORT_007fb240 +
-                            (int)SHORT_007fb246 * (int)local_a8[0] + (int)local_7c[0]) * 8);
-        local_110 = piVar20;
-        if (piVar20 == (int *)0x0) {
+        this = g_worldCells
+               [(int)local_8c[0] * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)local_a8[0] +
+                (int)local_7c[0]].objects[0];
+        local_110 = this;
+        if (this == (STWorldObject *)0x0) {
           pbVar28 = &local_2ec;
           for (iVar11 = 7; iVar11 != 0; iVar11 = iVar11 + -1) {
             pbVar28[0] = 0;
@@ -268,11 +269,12 @@ int FUN_004b33d0(uint param_1,int *param_2)
           }
         }
         else {
-          if ((piVar20[9] != param_1) ||
-             (((piVar20[8] != 1000 ||
-               (iVar11 = (**(code **)(*piVar20 + 0x2c))(), *(int *)(&DAT_00790888 + iVar11 * 4) != 0
-               )) && ((piVar20[8] != 0x3e9 ||
-                      (*(int *)(&DAT_00790888 + *(int *)((int)local_110 + 0x259) * 4) != 0))))))
+          if ((this[1].vtable != (STWorldObjectVTable *)param_1) ||
+             (((this->value_20 != 1000 ||
+               (iVar11 = (*this->vtable->GetObjectTypeId)(this),
+               *(int *)(&DAT_00790888 + iVar11 * 4) != 0)) &&
+              ((this->value_20 != 0x3e9 ||
+               (*(int *)(&DAT_00790888 + *(int *)&local_110[0x10].field_0x19 * 4) != 0))))))
           goto LAB_004b3895;
           pbVar28 = &local_2ec;
           for (iVar11 = 7; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -284,7 +286,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
           }
           *pbVar28 = 0;
           local_2ec = 2;
-          local_2eb = (**(code **)(*local_110 + 0x2c))();
+          local_2eb = (*local_110->vtable->GetObjectTypeId)(local_110);
           if (local_2eb == 0x61) {
             local_2ec = local_2ec | 8;
           }
@@ -359,7 +361,7 @@ switchD_004b38f0_caseD_3a:
         iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
       }
     }
-    ppDVar2 = &g_playerRuntime[param_1].field2289_0x9ea;
+    ppDVar2 = &g_playerRuntime[param_1].field2171_0x9ea;
     if (*ppDVar2 != (DArrayTy *)0x0) {
       (*ppDVar2)->iteratorIndex = 0;
       iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)*ppDVar2,&local_58);
@@ -588,7 +590,7 @@ cf_break_loop_004B60CD:
   iVar24 = local_13c;
   if (local_4c[3] != 0) {
     local_184 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-    pDVar15 = g_playerRuntime[param_1].field2284_0x9d6;
+    pDVar15 = g_playerRuntime[param_1].field2166_0x9d6;
     if ((pDVar15 != (DArrayTy *)0x0) && (uVar25 = 0, 0 < (int)pDVar15->count)) {
       do {
         FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar15,uVar25,&local_58);
@@ -598,7 +600,7 @@ cf_break_loop_004B60CD:
         local_13c = (int)local_a8[0];
         Library::DKW::TBL::FUN_006ae1c0(&local_184->flags,&local_144);
         uVar25 = uVar25 + 1;
-        pDVar15 = g_playerRuntime[param_1].field2284_0x9d6;
+        pDVar15 = g_playerRuntime[param_1].field2166_0x9d6;
       } while ((int)uVar25 < (int)pDVar15->count);
     }
     iVar16 = param_2[5];
@@ -944,11 +946,13 @@ LAB_004b4f35:
                                   local_12c = local_12c + 1;
                                 }
                                 else if (*(short *)(local_27c + iVar17 * 2) == 0x205) {
-                                  local_58 = *(STFishC **)(DAT_007fb248 + iVar17 * 8);
+                                  local_58 = (STFishC *)g_worldCells[iVar17].objects[0];
                                   if (((local_58 != (STFishC *)0x0) &&
-                                      (iVar24 = (*local_58->vtable->vfunc_2C)(), 0x53 < iVar24)) &&
-                                     ((iVar24 = (*local_58->vtable->vfunc_2C)(), iVar24 < 0x5b &&
-                                      (*(int *)&local_58[2].field_0xfd == 0)))) goto LAB_004b4f35;
+                                      (iVar24 = (*local_58->vtable->vfunc_2C)
+                                                          ((STWorldObject *)local_58), 0x53 < iVar24
+                                      )) && ((iVar24 = (*local_58->vtable->vfunc_2C)(),
+                                             iVar24 < 0x5b && (*(int *)&local_58[2].field_0xfd == 0)
+                                             ))) goto LAB_004b4f35;
                                 }
                               }
                             }
@@ -1499,7 +1503,7 @@ LAB_004b5fd6:
             (local_254[0] = 0, puVar31 = local_27c, 0 < SHORT_007fb244)))) {
           do {
             iVar11 = SHORT_007fb240 * local_138 + local_11c + SHORT_007fb246 * local_254[0];
-            local_58 = *(STFishC **)(DAT_007fb248 + iVar11 * 8);
+            local_58 = (STFishC *)g_worldCells[iVar11].objects[0];
             if (local_58 == (STFishC *)0x0) {
               sVar21 = (short)local_11c;
               if (((((sVar21 < 0) || (SHORT_007fb240 <= sVar21)) ||
@@ -1514,12 +1518,12 @@ LAB_004b5fd6:
                                     (int)sVar23 * (int)SHORT_007fb27e + (int)sVar21) * 2);
               }
               if (sVar21 == 0) {
-                local_58 = *(STFishC **)(DAT_007fb248 + 4 + iVar11 * 8);
+                local_58 = (STFishC *)g_worldCells[iVar11].objects[1];
                 if ((local_58 == (STFishC *)0x0) ||
-                   (((iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xa6 &&
-                     (iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xbd)) &&
-                    ((iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xa7 &&
-                     (iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xaf)))))) {
+                   (((iVar30 = (*local_58->vtable->vfunc_2C)((STWorldObject *)local_58),
+                     iVar30 != 0xa6 && (iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xbd))
+                    && ((iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xa7 &&
+                        (iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xaf)))))) {
 LAB_004b432d:
                   *(undefined2 *)(puVar31 + iVar11 * 2) = 0;
                 }
@@ -1534,7 +1538,7 @@ LAB_004b432d:
             }
             else {
               if (*(int *)&local_58->field_0x20 == 1000) {
-                local_34c = (*local_58->vtable->vfunc_2C)();
+                local_34c = (*local_58->vtable->vfunc_2C)((STWorldObject *)local_58);
               }
               else {
                 if (*(int *)&local_58->field_0x20 != 0x3e9) goto LAB_004b432d;

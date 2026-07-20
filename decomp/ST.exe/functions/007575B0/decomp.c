@@ -1,11 +1,11 @@
 
-uint FUN_007575b0(int param_1,ushort *param_2,ushort *param_3)
+uint FUN_007575b0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort *param_3)
 
 {
   int iVar1;
   uint uVar2;
   
-  switch(*(undefined4 *)(*(int *)(param_1 + 0xc) + 0x30)) {
+  switch(param_1->field_000C->field_0030) {
   case 1:
     return (int)(char)*param_2 - (int)(char)*param_3;
   case 2:
@@ -21,7 +21,7 @@ uint FUN_007575b0(int param_1,ushort *param_2,ushort *param_3)
     iVar1 = *(int *)param_2;
     break;
   default:
-    uVar2 = (**(code **)(*(int *)(param_1 + 0xc) + 4))(param_2,param_3);
+    uVar2 = (*(code *)param_1->field_000C->field_0004)(param_2,param_3);
     return uVar2;
   }
   if (-1 < iVar1 - *(int *)param_3) {

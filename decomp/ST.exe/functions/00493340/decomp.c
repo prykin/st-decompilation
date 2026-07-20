@@ -19,7 +19,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
   short local_8;
   short local_6;
   
-  pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[*(int *)&this->field_0x24].field597_0x2e7;
+  pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[*(int *)&this->field_0x24].field479_0x2e7;
   pDVar2 = g_playerRuntime[*(int *)&this->field_0x24].objects;
   if (pAVar1 != (AnonShape_006ACC70_C8641025 *)0x0) {
     uVar3 = pAVar1->field_000C;

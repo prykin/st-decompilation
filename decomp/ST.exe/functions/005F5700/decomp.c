@@ -3,7 +3,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
 
 {
   int iVar1;
-  void *this_00;
+  STWorldObject *this_00;
   short sVar2;
   int iVar3;
   short sVar4;
@@ -69,12 +69,12 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
       if ((((-1 < sVar4) && (sVar4 < sVar2)) && (sVar7 = (short)iVar6, -1 < sVar7)) &&
          (((sVar7 < SHORT_007fb242 && (sVar8 = (short)iVar3, -1 < sVar8)) &&
           ((sVar8 < SHORT_007fb244 &&
-           (this_00 = *(void **)(DAT_007fb248 +
-                                ((int)sVar7 * (int)sVar2 + (int)SHORT_007fb246 * (int)sVar8 +
-                                (int)sVar4) * 8), this_00 != (void *)0x0)))))) {
+           (this_00 = g_worldCells
+                      [(int)sVar7 * (int)sVar2 + (int)SHORT_007fb246 * (int)sVar8 + (int)sVar4].
+                      objects[0], this_00 != (STWorldObject *)0x0)))))) {
         thunk_FUN_00416270(this_00,(undefined2 *)((int)&local_8 + 2),(int *)((int)&param_1 + 2),
                            &local_8);
-        if (*(int *)((int)this_00 + 0x2c) == 1) {
+        if (*(int *)&this_00[1].field_0x8 == 1) {
           iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,*(int *)((int)this + 0x111),
                                *(int *)((int)this + 0x115));
           if (param_2 <= iVar5) {

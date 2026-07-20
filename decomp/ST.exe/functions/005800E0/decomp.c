@@ -17,10 +17,10 @@ void __thiscall FUN_005800e0(void *this,int param_1)
       pAVar4 = (AnonShape_004E0250_5A3B9236 *)0x0;
     }
     else {
-      pAVar4 = *(AnonShape_004E0250_5A3B9236 **)
-                (DAT_007fb248 +
-                ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1) *
-                8);
+      pAVar4 = (AnonShape_004E0250_5A3B9236 *)
+               g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+               objects[0];
     }
     if (pAVar4->field_0018 == *(int *)((int)this + 0x269)) {
       thunk_FUN_004e0250(pAVar4);

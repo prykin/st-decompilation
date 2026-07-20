@@ -4,7 +4,7 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
 
 {
   int iVar1;
-  STGroupBoatC *pSVar2;
+  STGroupBoatC *this_00;
   undefined4 extraout_EDX;
   short local_10 [3];
   undefined4 uStack_a;
@@ -19,12 +19,12 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
   if (iVar1 != 0) {
     if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       uStack_a = param_4;
-      pSVar2 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                           *(undefined1 *)((int)this + 0x24)),
-                                  CONCAT22((short)((uint)iVar1 >> 0x10),*(short *)((int)this + 0x7d)
-                                          ));
-      if (pSVar2 != (STGroupBoatC *)0x0) {
-        (*pSVar2->vtable->vfunc_08)(1,local_10);
+      this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),
+                                            *(undefined1 *)((int)this + 0x24)),
+                                   CONCAT22((short)((uint)iVar1 >> 0x10),
+                                            *(short *)((int)this + 0x7d)));
+      if (this_00 != (STGroupBoatC *)0x0) {
+        (*this_00->vtable->vfunc_08)(this_00,CASE_1,local_10);
         return 0;
       }
     }

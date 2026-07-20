@@ -1,5 +1,5 @@
 
-undefined4 FUN_007476a9(int param_1,undefined4 *param_2)
+undefined4 FUN_007476a9(AnonShape_00747E4E_3F64CF30 *param_1,undefined4 *param_2)
 
 {
   bool bVar1;
@@ -24,7 +24,7 @@ undefined4 FUN_007476a9(int param_1,undefined4 *param_2)
         puVar3 = (undefined4 *)0x0;
       }
       else {
-        puVar3 = FUN_0074756b(this,*(AnonShape_0074756B_58F08DE7 **)(param_1 + 0xc));
+        puVar3 = FUN_0074756b(this,(AnonShape_0074756B_58F08DE7 *)param_1->field_000C);
       }
       *param_2 = puVar3;
       if (puVar3 == (undefined4 *)0x0) {

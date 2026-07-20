@@ -36,9 +36,9 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
     if ((((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
          ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) ||
         ((SHORT_007fb244 <= sVar2 ||
-         (*(int *)(DAT_007fb248 + 4 +
-                  ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1)
-                  * 8) == 0)))) &&
+         (g_worldCells
+          [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].objects
+          [1] == (STWorldObject *)0x0)))) &&
        (iVar8 = DumpClassC::WritePtr
                           ((short)*(undefined4 *)((int)this + 0x1d5),
                            (short)*(undefined4 *)((int)this + 0x1d9),

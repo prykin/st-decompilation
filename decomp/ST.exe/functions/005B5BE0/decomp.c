@@ -1,16 +1,16 @@
 
-void __thiscall FUN_005b5be0(void *this,int param_1,int *param_2)
+void __thiscall FUN_005b5be0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int *param_2)
 
 {
   int iVar1;
   int iVar2;
   
   iVar2 = (*param_2 + -1) * param_2[5];
-  FUN_006b4170(param_1,0,iVar2,0,param_2[5] + -2,*(int *)(param_1 + 8),0xff);
+  FUN_006b4170((int)param_1,0,iVar2,0,param_2[5] + -2,param_1->field_0008,0xff);
   if (param_2[1] == 1) {
-    FUN_006b4170(param_1,0,iVar2,0,param_2[5] + -2,0x14,0);
-    FUN_006b4170(param_1,0,iVar2 + 1,0x14,param_2[5] + -5,2,0);
-    FUN_006b4170(param_1,0,iVar2 + 3,0x16,param_2[5] + -9,2,0);
+    FUN_006b4170((int)param_1,0,iVar2,0,param_2[5] + -2,0x14,0);
+    FUN_006b4170((int)param_1,0,iVar2 + 1,0x14,param_2[5] + -5,2,0);
+    FUN_006b4170((int)param_1,0,iVar2 + 3,0x16,param_2[5] + -9,2,0);
     FUN_006b5b10(param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,0x14,
                  (byte)*(undefined4 *)(*(int *)((int)this + 0x1a5b) + 0x140),0xd);
     FUN_006b5b10(param_1,0,iVar2,0x14,iVar2 + 3,0x17,
@@ -24,8 +24,8 @@ void __thiscall FUN_005b5be0(void *this,int param_1,int *param_2)
                  (byte)*(undefined4 *)(*(int *)((int)this + 0x1a5b) + 0x140),0xd);
     return;
   }
-  FUN_006b4170(param_1,0,iVar2,0,param_2[5] + -2,0x13,0);
-  FUN_006b4170(param_1,0,iVar2 + 2,0x13,param_2[5] + -6,3,0);
+  FUN_006b4170((int)param_1,0,iVar2,0,param_2[5] + -2,0x13,0);
+  FUN_006b4170((int)param_1,0,iVar2 + 2,0x13,param_2[5] + -6,3,0);
   FUN_006b5b10(param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,0x13,
                (byte)*(undefined4 *)(*(int *)((int)this + 0x1a5b) + 0x140),0xd);
   FUN_006b5b10(param_1,0,iVar2,0x13,iVar2 + 3,0x16,

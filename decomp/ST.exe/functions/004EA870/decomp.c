@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004ea870(TLOBaseTy *param_1)
     iVar2 = thunk_FUN_004c7860(param_1,3,0,1,1,1);
     if ((iVar2 != 0) &&
        ((bVar1 = thunk_FUN_004c7c20((int)param_1), CONCAT31(extraout_var,bVar1) != 0 &&
-        (g_playerRuntime[*(int *)&param_1->field_0x24].field1823_0x7d6 != 0)))) {
+        (g_playerRuntime[*(int *)&param_1->field_0x24].field1705_0x7d6 != 0)))) {
       pDVar3 = g_playerRuntime[*(int *)&param_1->field_0x24].objects;
       uVar4 = 0;
       if (pDVar3->count != 0) {

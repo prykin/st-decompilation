@@ -70,7 +70,7 @@ LAB_00515ee1:
         if ((*(char *)((int)local_c + -1) != '\0') && (uVar8 = 0, *local_c != 0)) {
           if (local_14 != 0) {
             CheckBkView(this_00,*param_1,0xf);
-            ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,*param_1,0x19c,0xf);
+            ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,0xf);
             uVar11 = 3;
             iVar10 = -1;
             iVar3 = -1;
@@ -79,7 +79,7 @@ LAB_00515ee1:
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
           }
-          DibPut((undefined4 *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
+          DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
                  (byte *)this_00->field_024C);
           local_24 = *(uint *)sizeHelp_exref;
           if (local_24 != 0) {
@@ -88,8 +88,8 @@ LAB_00515ee1:
             do {
               if (((*(char *)((int)piVar5 + -1) == local_5) && (*piVar5 == *local_c)) &&
                  (piVar5[1] == local_c[1])) {
-                ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,local_18 + 0x5f,*param_1,
-                                 0x13d - local_18,0xf);
+                ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,
+                                 *param_1,0x13d - local_18,0xf);
                 pcVar7 = (char *)FUN_006b0140(*(UINT *)(uVar8 * 0x11 + this_00->field_01C7),
                                               HINSTANCE_00807618);
                 uVar8 = 0xffffffff;
@@ -121,8 +121,8 @@ LAB_005160da:
   }
   CreateSlider(this_00,iVar3);
   Library::DKW::WGR::FUN_006b5110
-            (this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,this_00->field_0218,0,0,0
-             ,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
+            ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+             (int)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
   Library::DKW::DDX::FUN_006b3640
             (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044);
   g_currentExceptionFrame = local_88.previous;

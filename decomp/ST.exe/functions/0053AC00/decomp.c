@@ -45,7 +45,8 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     (*pcVar2)();
     return;
   }
-  DibPut((undefined4 *)local_14->field_0068,0x1d,0x13,'\x01',(byte *)local_14->field_01CD);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,0x1d,0x13,'\x01',
+         (byte *)local_14->field_01CD);
   local_c = 0x1b;
   local_10 = 8;
   iVar4 = 0;
@@ -55,8 +56,8 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     if (uVar7 < DAT_00808aaf) {
       local_8 = iVar4;
       pbVar5 = (byte *)FUN_0070b3a0(pPVar3->field_01D1,(byte)(&DAT_00808af4)[uVar7 * 0x9c] + 9);
-      DibPut((undefined4 *)pPVar3->field_0068,0x22,uVar8,'\x01',pbVar5);
-      ccFntTy::SetSurf(pPVar3->field_01DD,pPVar3->field_0068,0,0x37,uVar8,0x10,0xc);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)pPVar3->field_0068,0x22,uVar8,'\x01',pbVar5);
+      ccFntTy::SetSurf(pPVar3->field_01DD,(int)pPVar3->field_0068,0,0x37,uVar8,0x10,0xc);
       cVar1 = (&DAT_008087e8)
               [(uint)(byte)(&DAT_00808af4)[(iVar4 + pPVar3->field_01C9) * 0x9c] * 0x51];
       if (cVar1 == '\x01') {
@@ -76,7 +77,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
       iVar11 = -1;
       puVar6 = (uint *)FUN_006b0140(uID,HINSTANCE_00807618);
       ccFntTy::WrStr(pPVar3->field_01DD,puVar6,iVar11,iVar12,uVar7);
-      ccFntTy::SetSurf(pPVar3->field_01DD,pPVar3->field_0068,0,0x68,uVar8,0x10e,0xc);
+      ccFntTy::SetSurf(pPVar3->field_01DD,(int)pPVar3->field_0068,0,0x68,uVar8,0x10e,0xc);
       iVar11 = FUN_00711110(pPVar3->field_01DD,&DAT_00808ab0 + (iVar4 + pPVar3->field_01C9) * 0x27);
       if (iVar11 < 0x10e) {
         uVar7 = 0xffffffff;

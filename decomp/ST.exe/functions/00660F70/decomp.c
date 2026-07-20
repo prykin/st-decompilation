@@ -18,7 +18,7 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
   undefined4 extraout_EDX_00;
   AnonShape_0068EB30_4F4B480A *pAVar10;
   AnonShape_0068EB30_4F4B480A local_6c;
-  int local_20;
+  AiPlrClassTy *local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -152,12 +152,12 @@ switchD_0066104e_caseD_9:
           *(undefined2 *)pAVar10 = 0;
           local_6c._0_4_ = *pGVar4;
           local_6c._4_2_ = param_2;
-          if (local_20 == 0) {
+          if (local_20 == (AiPlrClassTy *)0x0) {
             local_6c._8_4_ = 0;
           }
           else {
-            local_6c._8_4_ = *(uint *)(local_20 + 0x65c);
-            *(uint *)(local_20 + 0x65c) = local_6c._8_4_ + 1;
+            local_6c._8_4_ = *(undefined4 *)&local_20->field_0x65c;
+            *(uint *)&local_20->field_0x65c = local_6c._8_4_ + 1;
           }
           local_6c._12_2_ = *(undefined2 *)((int)this + 0x7d);
           local_6c._22_2_ = *(undefined2 *)((int)param_1 + 0xe);

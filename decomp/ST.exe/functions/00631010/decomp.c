@@ -45,8 +45,7 @@ void __fastcall FUN_00631010(AnonShape_00631010_DBA5BE90 *param_1)
             param_1->field_0044 = 1;
           }
           else {
-            puVar3 = thunk_FUN_00630c50(param_1->field_0040,param_1->field_004C,1,1,
-                                        param_1->field_0050);
+            puVar3 = thunk_FUN_00630c50(param_1,param_1->field_0040,param_1->field_004C,1,1);
             if (puVar3 != (ushort *)0x0) {
               param_1->field_0044 = 2;
             }

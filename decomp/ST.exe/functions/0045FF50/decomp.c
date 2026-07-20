@@ -17,7 +17,8 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
                                  (uint)(ushort)this->field_0030);
     if (this_00 != (STGroupBoatC *)0x0) {
       thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
-      iVar1 = thunk_FUN_0040d540(this_00,(uint)(ushort)this->field_0032);
+      iVar1 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this_00,
+                                 (uint)(ushort)this->field_0032);
       switch(iVar1) {
       case 0:
         this->field_00FD = 1;

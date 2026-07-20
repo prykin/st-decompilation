@@ -24,6 +24,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   undefined4 extraout_EDX;
   uint uVar12;
   undefined4 unaff_ESI;
+  STWorldObject *this_01;
   void *unaff_EDI;
   undefined4 *puVar13;
   STBoatC_CmdToObj_param_1Enum SVar14;
@@ -144,17 +145,18 @@ LAB_0049d3ca:
     sVar3 = pSVar6->field_0297;
     if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
         ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (SHORT_007fb244 <= sVar2)) {
-      piVar8 = (int *)0x0;
+      this_01 = (STWorldObject *)0x0;
     }
     else {
-      piVar8 = *(int **)(DAT_007fb248 +
-                        ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                        (int)sVar1) * 8);
+      this_01 = g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
+                objects[0];
     }
     uVar11 = 0;
-    if (((piVar8 == (int *)0x0) || (piVar8[9] != (int)pSVar6->field_0024)) ||
-       ((iVar7 = (**(code **)(*piVar8 + 0x2c))(), iVar7 != 0x3b &&
-        (iVar7 = (**(code **)(*piVar8 + 0x2c))(), iVar7 != 0x60)))) {
+    if (((this_01 == (STWorldObject *)0x0) ||
+        (this_01[1].vtable != (STWorldObjectVTable *)(int)pSVar6->field_0024)) ||
+       ((iVar7 = (*this_01->vtable->GetObjectTypeId)(this_01), iVar7 != 0x3b &&
+        (iVar7 = (*this_01->vtable->GetObjectTypeId)(this_01), iVar7 != 0x60)))) {
       local_20 = 0;
     }
     else {

@@ -1,5 +1,6 @@
 
-void FUN_007603b0(int *param_1,int param_2,int *param_3,int *param_4,int param_5)
+void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3,int *param_4,
+                 int param_5)
 
 {
   undefined1 uVar1;
@@ -21,12 +22,12 @@ void FUN_007603b0(int *param_1,int param_2,int *param_3,int *param_4,int param_5
   int local_20;
   int local_1c;
   int local_18;
-  int *local_14;
+  AnonNested_007603B0_0050_0992C9A2 *local_14;
   int *local_10;
   int local_c;
   int local_8;
   
-  local_14 = *(int **)(param_2 + 0x50);
+  local_14 = param_2->field_0050;
   iVar6 = *(int *)((int)param_1 + 0x132) + 0x80;
   param_1 = local_134;
   local_2c = iVar6;
@@ -38,7 +39,7 @@ void FUN_007603b0(int *param_1,int param_2,int *param_3,int *param_4,int param_5
     local_30 = local_10[8];
     if ((((((local_30 == 0 && local_10[0x10] == 0) && local_c == 0) && local_10[0x20] == 0) &&
          local_8 == 0) && local_10[0x30] == 0) && local_10[0x38] == 0) {
-      iVar3 = *local_10 * *local_14 * 4;
+      iVar3 = *local_10 * local_14->field_0000 * 4;
       *param_1 = iVar3;
       param_1[8] = iVar3;
       param_1[0x10] = iVar3;
@@ -47,22 +48,25 @@ void FUN_007603b0(int *param_1,int param_2,int *param_3,int *param_4,int param_5
       param_1[0x28] = iVar3;
       param_1[0x30] = iVar3;
       param_1[0x38] = iVar3;
-      local_14 = local_14 + 1;
+      local_14 = (AnonNested_007603B0_0050_0992C9A2 *)&local_14->field_0x4;
     }
     else {
-      iVar6 = (local_14[0x30] * local_10[0x30] + local_14[0x10] * local_10[0x10]) * 0x1151;
-      iVar2 = iVar6 + local_14[0x30] * local_10[0x30] * -0x3b21;
-      iVar6 = iVar6 + local_14[0x10] * local_10[0x10] * 0x187e;
-      iVar10 = local_14[0x20] * local_10[0x20];
-      iVar4 = (iVar10 + *local_10 * *local_14) * 0x2000;
-      iVar3 = iVar4 + iVar6;
-      local_28 = iVar4 - iVar6;
-      iVar6 = (*local_10 * *local_14 - iVar10) * 0x2000;
-      iVar7 = local_14[0x18] * local_c;
+      iVar3 = local_14->field_00C0 * local_10[0x30];
+      iVar4 = local_14->field_0040 * local_10[0x10];
+      iVar6 = (iVar3 + iVar4) * 0x1151;
+      iVar2 = iVar6 + iVar3 * -0x3b21;
+      iVar6 = iVar6 + iVar4 * 0x187e;
+      iVar4 = *local_10 * local_14->field_0000;
+      iVar7 = local_14->field_0080 * local_10[0x20];
+      iVar10 = (iVar7 + iVar4) * 0x2000;
+      iVar3 = iVar10 + iVar6;
+      local_28 = iVar10 - iVar6;
+      iVar6 = (iVar4 - iVar7) * 0x2000;
+      iVar7 = local_14->field_0060 * local_c;
       local_24 = iVar6 + iVar2;
-      iVar10 = local_14[0x38] * local_10[0x38];
-      local_30 = local_14[8] * local_30;
-      local_8 = local_14[0x28] * local_8;
+      iVar10 = local_14->field_00E0 * local_10[0x38];
+      local_30 = local_14->field_0020 * local_30;
+      local_8 = local_14->field_00A0 * local_8;
       local_20 = iVar6 - iVar2;
       local_34 = iVar3;
       local_c = (local_30 + local_8 + iVar10 + iVar7) * 0x25a1;
@@ -82,7 +86,7 @@ void FUN_007603b0(int *param_1,int param_2,int *param_3,int *param_4,int param_5
       param_1[0x10] = local_20 + 0x400 + iVar2 >> 0xb;
       param_1[8] = local_24 + 0x400 + local_8 >> 0xb;
       param_1[0x20] = (local_28 - iVar10) + 0x400 >> 0xb;
-      local_14 = local_14 + 1;
+      local_14 = (AnonNested_007603B0_0050_0992C9A2 *)&local_14->field_0x4;
       iVar6 = local_2c;
     }
     local_10 = local_10 + 1;
@@ -95,14 +99,14 @@ void FUN_007603b0(int *param_1,int param_2,int *param_3,int *param_4,int param_5
   do {
     iVar3 = piVar8[7];
     iVar4 = piVar8[2];
-    local_14 = (int *)piVar8[5];
+    local_14 = (AnonNested_007603B0_0050_0992C9A2 *)piVar8[5];
     iVar10 = piVar8[4];
     puVar5 = (undefined1 *)(*local_10 + param_5);
     iVar2 = piVar8[6];
     local_1c = piVar8[3];
     iVar7 = piVar8[1];
-    if ((((((iVar7 == 0 && iVar4 == 0) && local_1c == 0) && iVar10 == 0) && local_14 == (int *)0x0)
-        && iVar2 == 0) && iVar3 == 0) {
+    if ((((((iVar7 == 0 && iVar4 == 0) && local_1c == 0) && iVar10 == 0) &&
+         local_14 == (AnonNested_007603B0_0050_0992C9A2 *)0x0) && iVar2 == 0) && iVar3 == 0) {
       uVar1 = *(undefined1 *)((*piVar8 + 0x10 >> 5 & 0x3ffU) + iVar6);
       *puVar5 = uVar1;
       puVar5[1] = uVar1;

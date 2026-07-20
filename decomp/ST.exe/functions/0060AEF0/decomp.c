@@ -159,10 +159,10 @@ int __fastcall FUN_0060aef0(void *param_1)
               pSVar18 = (STFishC *)0x0;
             }
             else {
-              pSVar18 = *(STFishC **)
-                         (DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar15 +
-                         (int)sVar16) * 8);
+              pSVar18 = (STFishC *)
+                        g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar15 +
+                         (int)sVar16].objects[0];
             }
             if ((pSVar18 != (STFishC *)0x0) &&
                (iVar12 = (*pSVar18->vtable->vfunc_F0)(), iVar12 != 0)) {

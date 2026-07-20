@@ -95,10 +95,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar6 = thunk_FUN_005259b0(GVar20,0,'\x01');
       pbVar7 = (byte *)FUN_0070b3a0(this_00->field_0244,uVar6);
       if (pbVar7 != (byte *)0x0) {
-        DibPut((undefined4 *)this_00->field_0068,0x35,(0x1e - *(int *)(pbVar7 + 8)) / 2 + 0x2a,
-               '\x06',pbVar7);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0x35,
+               (0x1e - *(int *)(pbVar7 + 8)) / 2 + 0x2a,'\x06',pbVar7);
       }
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar21 = 3;
       iVar18 = -1;
       iVar4 = -3;
@@ -110,7 +110,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         do {
           iVar4 = thunk_FUN_00646110(param_1,iVar18,&local_c,&local_14,&local_18);
           if (iVar4 != 0) {
-            ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+            ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
             if ((local_14 == (int *)0x0) || (local_18 == 0)) {
               if (iVar18 == 0) {
                 uVar21 = FUN_006b0140(0x565c,HINSTANCE_00807618);
@@ -154,13 +154,13 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       iVar4 = param_1 * 3 + -0x1c2;
       local_14 = (int *)(iVar4 * 4);
       if ((&DAT_007bf67c)[iVar4] != 0) {
-        ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+        ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar21 = 3;
         iVar18 = -1;
         iVar4 = -3;
         puVar8 = (uint *)FUN_006b0140(0x5657,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar18,uVar21);
-        ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+        ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         piVar13 = local_14;
         uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar18 = -1;
@@ -174,7 +174,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar6 = thunk_FUN_005276e0(*(Global_sub_005276E0_param_1Enum *)
                                     ((int)&DAT_007bf67c + (int)piVar13),0);
         pbVar7 = (byte *)FUN_0070b3a0(this_00->field_0230,uVar6);
-        DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
         local_60 = 0x96;
         local_58 = *(undefined4 *)(pbVar7 + 4);
         local_5c = local_8;
@@ -187,17 +187,18 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       }
       iVar4 = (&DAT_007e6024)[param_1 * 5 + -0x2ee];
       if (iVar4 != 0) {
-        ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+        ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar21 = 3;
         iVar19 = -1;
         iVar18 = -3;
         puVar8 = (uint *)FUN_006b0140(0x55f7,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar18,iVar19,uVar21);
-        ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
+        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
+        ;
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,iVar4);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         iVar4 = FUN_0070b3a0(this_00->field_0238,0);
-        FUN_006b5440(this_00->field_0218,0,0xb4,local_8,iVar4,0,0x3a);
+        FUN_006b5440((int)this_00->field_0218,0,0xb4,local_8,iVar4,0,0x3a);
         local_34 = 0xb4;
         local_2c = *(undefined4 *)(iVar4 + 4);
         local_30 = local_8;
@@ -208,7 +209,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
         local_8 = local_8 + 0x14;
       }
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar21 = FUN_006b0140(0x5658,HINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c3cd8,uVar21);
       ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,-3,-1,3);
@@ -249,20 +250,20 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           UVar5 = (iVar4 < local_3c + iVar18 * 2) + 0x5613;
         }
       }
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar18 = -1;
       iVar4 = 1;
       puVar8 = (uint *)FUN_006b0140(UVar5,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar18,uVar6);
       local_8 = local_8 + 0xf;
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar21 = 3;
       iVar18 = -1;
       iVar4 = -3;
       puVar8 = (uint *)FUN_006b0140(0x565e,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar18,uVar21);
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar18 = -1;
       iVar4 = 1;
@@ -274,13 +275,13 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       cVar16 = (char)param_2;
       if (*(int *)((int)&DAT_007bf678 + (int)local_14) != 0) {
         local_c = CASE_34;
-        ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+        ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar21 = 3;
         iVar18 = -1;
         iVar4 = -3;
         puVar8 = (uint *)FUN_006b0140(0x565f,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar18,uVar21);
-        ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+        ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         switch(*(undefined4 *)((int)&DAT_007bf678 + (int)piVar13)) {
         case 1:
           local_c = CASE_34;
@@ -328,9 +329,9 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_8 = local_8 + 0xf;
         uVar6 = thunk_FUN_00526ba0(local_c,cVar16);
         pbVar7 = (byte *)FUN_0070b3a0(this_00->field_0240,uVar6);
-        DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
         pbVar7 = local_38;
-        DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
         local_34 = 0x94;
         local_2c = *(undefined4 *)(pbVar7 + 4);
         local_30 = local_8 - 2;
@@ -342,7 +343,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_8 = local_8 + *(int *)(pbVar7 + 8);
       }
       local_d = '\0';
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar21 = 3;
       iVar18 = -1;
       iVar4 = -3;
@@ -353,7 +354,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       do {
         GVar12 = local_c;
         if ((*local_14 == param_1) && (iVar4 = thunk_FUN_004e8030(local_c), iVar4 == param_2)) {
-          ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+          ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
           pHVar15 = HINSTANCE_00807618;
           UVar5 = thunk_FUN_00523410(local_c,cVar16,0);
           pcVar10 = (char *)FUN_006b0140(UVar5,pHVar15);
@@ -388,9 +389,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_8 = local_8 + 0xf;
           uVar6 = thunk_FUN_00526ba0(local_c,cVar16);
           pbVar7 = (byte *)FUN_0070b3a0(this_00->field_023C,uVar6);
-          DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+          DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
           pbVar7 = local_38;
-          DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
+          DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38
+                );
           local_34 = 0x94;
           local_2c = *(undefined4 *)(pbVar7 + 4);
           local_30 = local_8 - 2;
@@ -410,7 +412,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       do {
         GVar12 = local_c;
         if ((*local_14 == param_1) && (iVar4 = thunk_FUN_004e8030(local_c), iVar4 == param_2)) {
-          ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+          ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
           pHVar15 = HINSTANCE_00807618;
           UVar5 = thunk_FUN_00523410(local_c,cVar16,0);
           pcVar10 = (char *)FUN_006b0140(UVar5,pHVar15);
@@ -445,9 +447,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_8 = local_8 + 0xf;
           uVar6 = thunk_FUN_00526ba0(local_c,cVar16);
           pbVar7 = (byte *)FUN_0070b3a0(this_00->field_023C,uVar6);
-          DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+          DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
           pbVar7 = local_38;
-          DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
+          DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38
+                );
           local_34 = 0x94;
           local_2c = *(undefined4 *)(pbVar7 + 4);
           local_30 = local_8 - 2;
@@ -470,7 +473,8 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
             do {
               if ((*piVar13 == param_1) &&
                  (local_14 = piVar13, iVar4 = thunk_FUN_004e8030(GVar12), iVar4 == param_2)) {
-                ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+                ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,
+                                 0xf);
                 pHVar15 = HINSTANCE_00807618;
                 UVar5 = thunk_FUN_00523410(local_c,cVar16,0);
                 pcVar10 = (char *)FUN_006b0140(UVar5,pHVar15);
@@ -506,9 +510,11 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 local_8 = local_8 + 0xf;
                 uVar6 = thunk_FUN_00526ba0(local_c,cVar16);
                 pbVar7 = (byte *)FUN_0070b3a0(this_00->field_0240,uVar6);
-                DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+                DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7
+                      );
                 pbVar7 = local_38;
-                DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
+                DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x94,local_8 - 2,'\x06',
+                       local_38);
                 local_34 = 0x94;
                 local_2c = *(undefined4 *)(pbVar7 + 4);
                 local_30 = local_8 - 2;
