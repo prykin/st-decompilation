@@ -18,7 +18,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   TLOBaseTy *local_8;
   
   local_8 = this;
-  if ((param_1 != 0) && (iVar4 = (*this->vtable->slot_F8)(), iVar4 == 0)) {
+  if ((param_1 != 0) && (iVar4 = (*this->vtable->vfunc_F8)(), iVar4 == 0)) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -34,8 +34,8 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
        (*(uint *)&pTVar3->field_0x24 == (uint)*(byte *)(pTVar3->field_0010 + 0x112d))) {
       pTVar1 = pTVar3->vtable;
       uVar5 = thunk_FUN_004406c0(pTVar3->field_023D);
-      (*pTVar1->slot_90)(4,*(undefined4 *)
-                            (&DAT_00795c00 + ((uVar5 & 0xff) + pTVar3->field_0235 * 3) * 4));
+      (*pTVar1->vfunc_90)(4,*(undefined4 *)
+                             (&DAT_00795c00 + ((uVar5 & 0xff) + pTVar3->field_0235 * 3) * 4));
     }
     if (*(int *)(&DAT_00794d94 + pTVar3->field_0235 * 4) != 0) {
       thunk_FUN_004c2f70((int)pTVar3);

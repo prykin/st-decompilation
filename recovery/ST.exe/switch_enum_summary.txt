@@ -1,10 +1,11 @@
 program=ST.exe
 candidate_functions=555
-switches_seen=848
-decompile_failures=2
-proposals=794
+switches_seen=889
+decompile_retries=1
+decompile_failures=0
+proposals=834
 auto_apply=131
-target_kinds={class_field=12, global=4, local=658, parameter=120}
+target_kinds={class_field=12, global=4, local=698, parameter=120}
 note=At least three numeric case values are required.
 note_grouping=Switches over the same generated class field are merged across functions.
 note_apply=Only non-manual integral parameters and fields owned by STClassLayoutApplier are enabled automatically.

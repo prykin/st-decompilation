@@ -1,4 +1,4 @@
-FUN_0054cb40:
+STPlaySystemC::STPlaySystemC:
 0054CB40  55                        PUSH EBP
 0054CB41  8B EC                     MOV EBP,ESP
 0054CB43  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

@@ -1,4 +1,4 @@
-FUN_00576dd0:
+GameSystemC::GameSystemC:
 00576DD0  55                        PUSH EBP
 00576DD1  8B EC                     MOV EBP,ESP
 00576DD3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

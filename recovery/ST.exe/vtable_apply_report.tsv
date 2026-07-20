@@ -19,15 +19,15 @@ table	0079AD30	skipped	PanelTyVTable_0079AD30	apply=0
 table	0079AD4C	skipped	PanelTyVTable_0079AD4C	apply=0
 table	0079AD68	skipped	PanelTyVTable_0079AD68	apply=0
 table	0079AD90	skipped	PanelTyVTable_0079AD90	apply=0
-table	0079ADB8	updated	InterSystemCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/InterSystemCVTable; 9 slots
-table	0079ADF4	skipped	SpriteClassTyVTable_0079ADF4	apply=0
-table	0079AE38	skipped	STPlaySystemCVTable	apply=0
+table	0079ADB8	already_present	InterSystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/InterSystemCVTable; 9 slots
+table	0079ADF4	skipped	VTable_0079ADF4	apply=0
+table	0079AE38	already_present	STPlaySystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STPlaySystemCVTable; 9 slots
 table	0079AE68	skipped	PanelTyVTable_0079AE68	apply=0
 table	0079AE94	skipped	PanelTyVTable_0079AE94	apply=0
 table	0079AEFC	already_present	CFsgsConnectionVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable; 23 slots
-table	0079B0A8	skipped	STAppCVTable	apply=0
+table	0079B0A8	already_present	STAppCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STAppCVTable; 7 slots
 table	0079B1B4	already_present	BaseSystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/BaseSystemCVTable; 9 slots
-table	0079B1E0	skipped	GameSystemCVTable	apply=0
+table	0079B1E0	already_present	GameSystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/GameSystemCVTable; 9 slots
 table	0079B20C	already_present	DebugSystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/DebugSystemCVTable; 9 slots
 table	0079B238	already_present	STCrabCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STCrabCVTable; 73 slots
 table	0079B3C4	already_present	STFishCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STFishCVTable; 73 slots
@@ -39,11 +39,11 @@ table	0079BA54	already_present	STMBombCVTable	used unchanged generated type /Sub
 table	0079BBB8	already_present	STOctopusCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STOctopusCVTable; 73 slots
 table	0079BD1C	already_present	STSatCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STSatCVTable; 73 slots
 table	0079BE80	already_present	STSharkCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STSharkCVTable; 73 slots
-table	0079C008	updated	MMObjTyVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/MMObjTyVTable; 3 slots
+table	0079C008	already_present	MMObjTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MMObjTyVTable; 3 slots
 table	0079C0C4	already_present	PrividerTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/PrividerTyVTable; 3 slots
 table	0079C124	skipped	VTable_0079C124	apply=0
 table	0079C160	skipped	VTable_0079C160	apply=0
-table	0079C1E8	updated	StartSystemTyVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/StartSystemTyVTable; 9 slots
+table	0079C1E8	already_present	StartSystemTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/StartSystemTyVTable; 9 slots
 table	0079C264	skipped	STGameObjCVTable_0079C264	apply=0
 table	0079C2D8	skipped	VTable_0079C2D8	apply=0
 table	0079C3EC	already_present	STSprGameObjCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STSprGameObjCVTable; 82 slots
@@ -85,7 +85,7 @@ table	0079DE90	skipped	VTable_0079DE90	apply=0
 table	0079DED8	skipped	VTable_0079DED8	apply=0
 table	0079E16C	already_present	AppClassTyVTable	preserved legacy generated type (layout differs; no safety hash) /SubmarineTitans/Recovered/VTables/AppClassTyVTable; 7 slots
 table	0079E188	already_present	SystemClassTyVTable	used existing manual type /SubmarineTitans/Recovered/SystemClassTyVTable; 9 slots
-table	0079E1B4	updated	SystemWithNamedObjClassTyVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/SystemWithNamedObjClassTyVTable; 9 slots
+table	0079E1B4	already_present	SystemWithNamedObjClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/SystemWithNamedObjClassTyVTable; 9 slots
 table	0079E21C	already_present	SpriteClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/SpriteClassTyVTable; 3 slots
 table	0079E284	skipped	VTable_0079E284	apply=0
 table	0079E298	skipped	VTable_0079E298	apply=0

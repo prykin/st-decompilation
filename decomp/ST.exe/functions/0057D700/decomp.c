@@ -1,7 +1,11 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=1; incoming_this_accesses=7;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+   
+   [STSwitchEnumApplier] Switch target field_0267 uses
+   /SubmarineTitans/Recovered/Enums/STFishC_field_0267State. Cases:
+   CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235 */
 
 undefined4 __thiscall
 STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int *param_4)

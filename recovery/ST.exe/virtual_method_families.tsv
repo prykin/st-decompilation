@@ -165,31 +165,25 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 00790728:8	00790728	8	0x20	00790728	STGroupBoatC	1			
 00790728:9	00790728	9	0x24	00790728	STGroupBoatC	1			
 0079AC48:0	0079AC48	0	0x0	0079AC48	HelpPanelTy	1	GetMessage	HelpPanelTy	/undefined4(/int) varargs=false noreturn=false
-0079AC48:1	0079AC48	1	0x4	0079AC48	HelpPanelTy	1	CreateBut	PanelTy	/undefined4(/undefined4,/int,/int,/int,/int,/int,/byte,/undefined4,/undefined4,/undefined4,/short,/undefined2,/undefined4,/char *,/undefined4) varargs=false noreturn=false
+0079AC48:1	0079AC48	1	0x4	0079AC48	HelpPanelTy	1	CreateBut	PanelTy	/undefined4(/undefined4,/int,/int,/int,/int,/int,/byte,/winnt.h/LPSTR,/undefined4,/undefined4,/short,/undefined2,/undefined4,/char *,/undefined4) varargs=false noreturn=false
 0079AC48:2	0079AC48	2	0x8	0079AC48	HelpPanelTy	1	PaintBut	PanelTy	/undefined(/int,/byte,/char *,/undefined *,/int,/int) varargs=false noreturn=false
-0079AC48:3	0079AC48	3	0xC	0079AC48	HelpPanelTy	1	PaintTxtBut	PanelTy	/undefined(/int,/byte,/char *,/undefined4,/WinDef.h/UINT,/undefined *,/int,/int) varargs=false noreturn=false
+0079AC48:3	0079AC48	3	0xC	0079AC48	HelpPanelTy	1	PaintTxtBut	PanelTy	/undefined(/int,/byte,/char *,/ccFntTy *32,/WinDef.h/UINT,/undefined *,/int,/int) varargs=false noreturn=false
 0079AC48:4	0079AC48	4	0x10	0079AC48	HelpPanelTy	1	PaintIBut	PanelTy	/undefined(/int,/char *,/WinDef.h/UINT,/int,/int) varargs=false noreturn=false
 0079AC48:5	0079AC48	5	0x14	0079AC48	HelpPanelTy	1	PaintLBut	PanelTy	/undefined(/int,/byte,/char *,/char *,/undefined *,/int,/int) varargs=false noreturn=false
 0079AC48:6	0079AC48	6	0x18	0079AC48	HelpPanelTy	1	SetPanel	HelpPanelTy	/undefined4(/char) varargs=false noreturn=false
-0079ADB8:0	0079ADB8	0	0x0	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2	InitSystem	StartSystemTy | SystemClassTy	/int() varargs=false noreturn=false
-0079ADB8:1	0079ADB8	1	0x4	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	3			
-0079ADB8:2	0079ADB8	2	0x8	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2	CreateObject	SystemClassTy	/int(/int,/undefined4 *,/int *,/undefined4,/undefined4) varargs=false noreturn=false
+0079ADB8:0	0079ADB8	0	0x0	0079C1E8	StartSystemTy	1	InitSystem	StartSystemTy	
+0079ADB8:1	0079ADB8	1	0x4	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	3	<destructor>	InterSystemC | StartSystemTy	
 0079ADB8:3	0079ADB8	3	0xC	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			
 0079ADB8:4	0079ADB8	4	0x10	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			
-0079ADB8:5	0079ADB8	5	0x14	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	4	CreateSystemObjects	BaseSystemC | DebugSystemC	
-0079ADB8:6	0079ADB8	6	0x18	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2	SendMessage	SystemWithNamedObjClassTy	/int(/int) varargs=false noreturn=false
-0079ADB8:7	0079ADB8	7	0x1C	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	1	Life	SystemClassTy	/int() varargs=false noreturn=false
-0079ADB8:8	0079ADB8	8	0x20	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	3	GetMessage	InterSystemC | StartSystemTy | SystemClassTy	/int(/int *) varargs=false noreturn=false | /int(/int) varargs=false noreturn=false | /undefined4(/int) varargs=false noreturn=false
-0079ADF4:0	0079ADF4	0	0x0	0079E21C	SpriteClassTy	1	SetImages	SpriteClassTy	/undefined4(/undefined4,/undefined1,/uint,/char *,/uint,/int) varargs=false noreturn=false
-0079ADF4:1	0079ADF4	1	0x4	0079E21C	SpriteClassTy	1	SetImagesReg	SpriteClassTy	/undefined4(/int *,/byte,/uint,/byte *,/uint) varargs=false noreturn=false
-0079ADF4:2	0079ADF4	2	0x8	0079E21C	SpriteClassTy	1	SetImagesPtr	SpriteClassTy	/undefined4(/short *,/undefined1,/uint) varargs=false noreturn=false
+0079ADB8:5	0079ADB8	5	0x14	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	4	CreateSystemObjects	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	
+0079ADB8:6	0079ADB8	6	0x18	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy	1			
+0079ADB8:8	0079ADB8	8	0x20	0079ADB8 | 0079C1E8	InterSystemC | StartSystemTy	2	GetMessage	InterSystemC | StartSystemTy	/int(/int *) varargs=false noreturn=false | /undefined4(/int) varargs=false noreturn=false
 0079AE38:0	0079AE38	0	0x0	0079AE38	STPlaySystemC	1	InitSystem	STPlaySystemC	/undefined4(/int) varargs=false noreturn=false
 0079AE38:1	0079AE38	1	0x4	0079AE38	STPlaySystemC	1	DoneSystem	STPlaySystemC	
 0079AE38:2	0079AE38	2	0x8	0079AE38	STPlaySystemC	1			
 0079AE38:3	0079AE38	3	0xC	0079AE38	STPlaySystemC	1			
 0079AE38:4	0079AE38	4	0x10	0079AE38	STPlaySystemC	1			
 0079AE38:5	0079AE38	5	0x14	0079AE38	STPlaySystemC	1			
-0079AE38:6	0079AE38	6	0x18	0079AE38	STPlaySystemC	1	SendMessage	SystemWithNamedObjClassTy	/int(/int) varargs=false noreturn=false
 0079AE38:7	0079AE38	7	0x1C	0079AE38	STPlaySystemC	1	Life	STPlaySystemC	
 0079AE38:8	0079AE38	8	0x20	0079AE38	STPlaySystemC	1	GetMessage	STPlaySystemC	/undefined4(/int) varargs=false noreturn=false
 0079AEFC:0	0079AEFC	0	0x0	0079AEFC	CFsgsConnection	1			
@@ -216,25 +210,20 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079B0A8:0	0079B0A8	0	0x0	0079B0A8	STAppC	1	InitApp	STAppC	/undefined4(/WinDef.h/HINSTANCE,/undefined4,/undefined4,/int) varargs=false noreturn=false
 0079B0A8:1	0079B0A8	1	0x4	0079B0A8	STAppC	1	DoneApp	STAppC	
 0079B0A8:2	0079B0A8	2	0x8	0079B0A8	STAppC	1			
-0079B0A8:3	0079B0A8	3	0xC	0079B0A8	STAppC	1	RunApp	AppClassTy	/WinDef.h/WPARAM() varargs=false noreturn=false
 0079B0A8:4	0079B0A8	4	0x10	0079B0A8	STAppC	1			
 0079B0A8:5	0079B0A8	5	0x14	0079B0A8	STAppC	1	CommonFunction	STAppC	/undefined4(/int) varargs=false noreturn=false
 0079B0A8:6	0079B0A8	6	0x18	0079B0A8	STAppC	1	GetMessage	STAppC	/undefined4(/int) varargs=false noreturn=false
 0079B1E0:0	0079B1E0	0	0x0	0079B1E0	GameSystemC	1	InitSystem	GameSystemC	
 0079B1E0:1	0079B1E0	1	0x4	0079B1E0	GameSystemC	1	DoneSystem	GameSystemC	/undefined(/int) varargs=false noreturn=false
-0079B1E0:2	0079B1E0	2	0x8	0079B1E0	GameSystemC	1	CreateObject	SystemClassTy	/int(/int,/undefined4 *,/int *,/undefined4,/undefined4) varargs=false noreturn=false
 0079B1E0:3	0079B1E0	3	0xC	0079B1E0	GameSystemC	1			
 0079B1E0:4	0079B1E0	4	0x10	0079B1E0	GameSystemC	1			
 0079B1E0:5	0079B1E0	5	0x14	0079B1E0	GameSystemC	1	CreateSystemObjects	GameSystemC	
 0079B1E0:6	0079B1E0	6	0x18	0079B1E0	GameSystemC	1			
 0079B1E0:7	0079B1E0	7	0x1C	0079B1E0	GameSystemC	1			
 0079B1E0:8	0079B1E0	8	0x20	0079B1E0	GameSystemC	1	GetMessage	GameSystemC	/undefined4(/int) varargs=false noreturn=false
-0079C008:0	0079C008	0	0x0	0079C008 | 0079C0C4	MMObjTy | PrividerTy	2	GetMessage	PrividerTy	/undefined4(/int) varargs=false noreturn=false
+0079C008:0	0079C008	0	0x0	0079C008 | 0079C0C4	MMObjTy | PrividerTy	2	GetMessage	MMObjTy | PrividerTy	/undefined4(/int) varargs=false noreturn=false
 0079C008:1	0079C008	1	0x4	0079C008 | 0079C0C4	MMObjTy | PrividerTy	1	DoneMMObj	MMObjTy	
 0079C008:2	0079C008	2	0x8	0079C008 | 0079C0C4	MMObjTy | PrividerTy	1	CloseButtons	MMObjTy	
-0079E16C:0	0079E16C	0	0x0	0079E16C	AppClassTy	1	InitApp	AppClassTy	
-0079E16C:1	0079E16C	1	0x4	0079E16C	AppClassTy	1	DoneApp	AppClassTy	
 0079E16C:2	0079E16C	2	0x8	0079E16C	AppClassTy	1			
-0079E16C:3	0079E16C	3	0xC	0079E16C	AppClassTy	1	RunApp	AppClassTy	/WinDef.h/WPARAM() varargs=false noreturn=false
 0079E16C:4	0079E16C	4	0x10	0079E16C	AppClassTy	1			
 0079E16C:6	0079E16C	6	0x18	0079E16C	AppClassTy	1			

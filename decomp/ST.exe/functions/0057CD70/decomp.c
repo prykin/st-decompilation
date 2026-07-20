@@ -46,7 +46,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   FUN_006e6870((void *)this->field_0211,iVar5,iVar3);
   iVar3 = this->field_023B;
   if (iVar3 == 4) {
-    iVar3 = (*this->vtable->slot_20)();
+    iVar3 = (*this->vtable->vfunc_20)();
     if (iVar3 == -1) {
       iVar3 = ReportDebugMessage(s_E____titans_Igor_To_fish_cpp_007cb044,0x709,0,0,&DAT_007a4ccc,
                                  s_stop_move_error_007ad3a0);
@@ -122,7 +122,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
       return;
     }
   }
-  else if ((0xf < (uint)this->field_023F) && (iVar3 = (*this->vtable->slot_20)(), iVar3 == 1)) {
+  else if ((0xf < (uint)this->field_023F) && (iVar3 = (*this->vtable->vfunc_20)(), iVar3 == 1)) {
     this->field_023F = 0;
     uVar6 = sub_0057D5F0(this,1);
     this->field_023B = uVar6;
@@ -169,7 +169,7 @@ LAB_0057d24b:
   STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
 switchD_0057cff4_default:
   this->field_023F = this->field_023F + 1;
-  (*this->vtable->slot_D8)();
+  (*this->vtable->vfunc_D8)();
   return;
 }
 

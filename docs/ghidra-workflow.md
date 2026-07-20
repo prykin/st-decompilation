@@ -138,7 +138,8 @@ appliers.
      script.
 2. Run `STDebugSymbolAnalyzer`.
    - Directory: `<repo>/recovery`
-   - Output: `proposals.tsv`, `proposals.jsonl`, `conflicts.jsonl`, `summary.txt`
+   - Output: `proposals.tsv`, `proposals.jsonl`, `conflicts.jsonl`,
+     `debug_calling_convention_review.tsv`, `summary.txt`
 3. Review `proposals.tsv` and run `STDebugSymbolApplier`.
    - File: `<repo>/recovery/ST.exe/proposals.tsv`
 4. If present and reviewed, run `STCuratedRecoveryApplier`.
@@ -147,6 +148,14 @@ appliers.
 The debug analyzer uses embedded `ClassTy::Method`, source path, calling
 convention, and diagnostic-line evidence. The curated applier is reserved for
 address-specific knowledge that cannot yet be derived generically.
+
+`__thiscall` is proposed only when the incoming `ECX` value is still live when
+the body first uses it; temporary uses after `ECX` has been overwritten do not
+count. Incoming `EDX` is tracked independently so a real `__fastcall` second
+argument is not silently converted into a stack parameter. Older script runs
+may already have assigned `__thiscall` more aggressively. Such functions are
+listed in `debug_calling_convention_review.tsv`; they are never reverted
+automatically because an instance method is allowed to leave `this` unused.
 
 ### 2. Message IDs
 
@@ -184,13 +193,21 @@ and multi-owner targets are preserved.
    - File: `<repo>/recovery/ST.exe/constructor_proposals.tsv`
    - Rerun the analyzer after applying. Stop when `name_apply`,
      `convention_apply`, and `parameter_apply` are all zero.
-3. Run `STClassLayoutAnalyzer`.
+3. Rerun `STVTableAnalyzer` and `STVTableApplier`, then rerun the virtual-method
+   pair. A newly named constructor is exact evidence for the final vtable it
+   installs and may safely resolve a table whose inherited slots previously
+   made its owner ambiguous.
+4. Repeat the constructor/vtable/virtual-method cycle until the physical table
+   count, enabled table set, and constructor apply counts no longer change.
+5. Run `STClassLayoutAnalyzer`.
    - Directory: `<repo>/recovery`
-4. Optionally review field-name suggestions in
+6. Optionally review field-name suggestions in
    `class_field_proposals.tsv`.
-5. Run `STClassLayoutApplier`.
+7. Run `STClassLayoutApplier`.
    - File: `<repo>/recovery/ST.exe/class_layout_proposals.tsv`
    - The sibling `class_field_proposals.tsv` is loaded automatically.
+8. Rerun the class-layout pair once. New constructor ownership can expose
+   additional `this + offset` accesses even when no new class is created.
 
 The class-layout pass consumes constructor allocation sizes and recovered
 vtable types. It tracks exact `this + constant` accesses, typed call flows,
@@ -255,6 +272,15 @@ as a bogus stack parameter.
 The analyzer groups repeated numeric switch domains. Safe parameter and
 script-owned class-field targets may be enabled automatically. Locals, globals,
 and ambiguously owned fields stay review-only.
+
+Each candidate first receives a 30-second decompilation attempt. A timeout gets
+one 120-second retry; `switch_enum_decompile_retries.tsv` records the address
+and whether the retry recovered it, while unrecoverable functions are retained
+in `switch_enum_decompile_failures.tsv` instead of disappearing behind a count.
+Tagged MSVCRT/DKW implementations stay excluded, but internal `OURLIB_*`
+functions remain eligible: their state domains are part of the recovered game
+API even though their assembly and decompilation bodies are omitted from the
+final LLM corpus.
 
 ### 7. Prototype and global-data propagation
 
@@ -365,6 +391,15 @@ noise from later analysis. In that early pass, keep all `OURLIB_*` rows disabled
 until source provenance and class-layout analysis have finished. Rerun the
 library analyzer at the end to regenerate current rows.
 
+After the final library apply, source-provenance, class-layout, prototype,
+global-data, and control-flow analyzers intentionally skip tagged
+implementations. Rerunning them at that point therefore produces a smaller
+diagnostic set; it does not mean their previously applied facts became invalid.
+The switch analyzer is the exception: it continues to inspect internal
+`OURLIB_*` functions so their enum/state domains remain stable across reruns.
+Keep the richer pre-library proposal files for the other analyzers unless the
+purpose of the rerun is specifically to analyze only game-owned code.
+
 ### 11. Export the text corpus
 
 Run `STDecompExport`.
@@ -384,6 +419,26 @@ change to an unused field therefore does not invalidate all methods of that
 class, while a type/name/comment change at an accessed offset still does. The
 first export after this fingerprinting revision intentionally recalculates the
 corpus once; later exports can reuse unaffected function bodies.
+
+## When a rerun can discover something new
+
+The analysis is iterative, but it is not necessary to rerun every script after
+every edit. Use the smallest affected loop:
+
+| Database change | Rerun |
+| --- | --- |
+| New constructor or class owner | vtable → virtual methods → constructors → class layouts |
+| New vtable owner or slot function | virtual methods → constructors → destructors |
+| New method name, receiver type, or class field type | method owners → prototypes → globals → class layouts |
+| New prototype or typed global | prototypes → globals → class layouts, until enabled counts reach zero |
+| New class field suitable for a switch domain | switch enums, then class layouts once more |
+| New source/debug name | source provenance; vtable too if the function writes a vptr |
+| Final library classification | no recovery loop; export the corpus |
+
+An analyzer may continue to emit enabled rows whose desired state is already
+present. The corresponding applier report should say `unchanged` or `already
+present`; that is a fixed point. A growing enabled set, an `updated` result, or
+a new conflict is what requires another iteration.
 
 ## Script reference
 

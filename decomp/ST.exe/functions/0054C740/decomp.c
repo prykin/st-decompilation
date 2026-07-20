@@ -9,7 +9,7 @@ void CreatePlaySystem(void)
 {
   code *pcVar1;
   int errorCode;
-  void *this;
+  STPlaySystemC *this;
   int iVar2;
   byte bVar3;
   undefined4 unaff_EBX;
@@ -22,12 +22,12 @@ void CreatePlaySystem(void)
   g_currentExceptionFrame = &local_50;
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode == 0) {
-    this = (void *)Library::MSVCRT::FUN_0072e530(0xf8);
-    if (this == (void *)0x0) {
+    this = (STPlaySystemC *)Library::MSVCRT::FUN_0072e530(0xf8);
+    if (this == (STPlaySystemC *)0x0) {
       DAT_00802a38 = (SystemClassTy *)0x0;
     }
     else {
-      DAT_00802a38 = (SystemClassTy *)thunk_FUN_0054cb40(this,g_appClass_00806728);
+      DAT_00802a38 = (SystemClassTy *)STPlaySystemC::STPlaySystemC(this,g_appClass_00806728);
     }
     if (DAT_00802a38 == (SystemClassTy *)0x0) {
       RaiseInternalException

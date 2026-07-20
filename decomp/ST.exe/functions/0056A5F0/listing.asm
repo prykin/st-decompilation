@@ -1,4 +1,4 @@
-FUN_0056a5f0:
+STAppC::STAppC:
 0056A5F0  55                        PUSH EBP
 0056A5F1  8B EC                     MOV EBP,ESP
 0056A5F3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

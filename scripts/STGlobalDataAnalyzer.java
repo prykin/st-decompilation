@@ -362,10 +362,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
 
     private int accessWidth(String operand) {
         String value = operand.toUpperCase(Locale.ROOT);
-        if (value.contains("BYTE PTR")) return 1;
-        if (value.contains("WORD PTR")) return 2;
-        if (value.contains("DWORD PTR")) return 4;
         if (value.contains("QWORD PTR")) return 8;
+        if (value.contains("DWORD PTR")) return 4;
+        if (value.contains("WORD PTR")) return 2;
+        if (value.contains("BYTE PTR")) return 1;
         return -1;
     }
     private String signedType(int width) {

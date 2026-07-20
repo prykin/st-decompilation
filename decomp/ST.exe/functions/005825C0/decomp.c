@@ -79,7 +79,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
     local_1c = (uint)this->field_004B;
     local_28 = (int)this->field_0049;
     sVar4 = this->field_0047;
-    local_2c = (*this->vtable->slot_24)();
+    local_2c = (*this->vtable->vfunc_24)();
     iVar9 = (int)this->field_0047;
     if ((((((sVar4 == iVar9) && (local_28 == this->field_0049)) &&
           (uVar10 = (uint)this->field_004B, local_1c == uVar10)) ||
@@ -282,7 +282,7 @@ LAB_00582958:
         (**(code **)(*piVar12 + 0xe0))(this->field_0252,&local_14,&local_10,&local_c,&local_18);
         thunk_FUN_00416240(this,(short)local_14,(short)local_10,(short)local_c);
       }
-      (*this->vtable->slot_D8)();
+      (*this->vtable->vfunc_D8)();
       return;
     }
   case CASE_4:
@@ -387,7 +387,7 @@ cf_common_exit_00582F72:
   STT3DSprC::SetCurShad((STT3DSprC *)puVar1,'\x0e',this->field_0247);
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x0e');
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\f');
-  (*this->vtable->slot_D8)();
+  (*this->vtable->vfunc_D8)();
   return;
 }
 

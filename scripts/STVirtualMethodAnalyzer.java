@@ -281,12 +281,18 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
 
         SourceType signatureSource = function.getSignatureSource();
         boolean signatureManual = signatureSource == SourceType.USER_DEFINED;
-        boolean conventionApply = family != null && family.namedMethods.size() == 1 &&
-            family.hasNamedThiscallAnchor && !signatureManual &&
-            !"__thiscall".equals(function.getCallingConventionName());
         boolean signatureApply = family != null && anchorChoice.anchor != null &&
             !signatureManual && !owner.isBlank() && !ownerTypePath.isBlank() &&
             !signatureMatches(function, anchorChoice.anchor.function);
+        boolean conventionApply = family != null && family.namedMethods.size() == 1 &&
+            family.hasNamedThiscallAnchor && !signatureManual && !owner.isBlank() &&
+            !ownerTypePath.isBlank() &&
+            !"__thiscall".equals(function.getCallingConventionName()) &&
+            (signatureApply || explicitParameters(function).isEmpty());
+        if (!"__thiscall".equals(function.getCallingConventionName()) &&
+                family != null && family.hasNamedThiscallAnchor && !signatureApply &&
+                !explicitParameters(function).isEmpty())
+            reasons.add("receiver_parameter_shape_requires_review");
         if (signatureManual) reasons.add("manual_signature_preserved");
 
         String confidence = nameApply || signatureApply ? "high" :
@@ -648,6 +654,8 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
                 "slot-family method are auto-named.",
             "note_signatures=Signatures come only from one agreed, meaningful USER_DEFINED anchor " +
                 "shape; auto this types must already exist.",
+            "note_conventions=Convention-only conversion requires one owner type and no explicit " +
+                "parameters; anchored signature replacement may safely rebuild parameters.",
             "note_thunks=Names and signatures target the final thunk destination; adjustor thunk " +
                 "entries remain linked and inherit display names from Ghidra."),
             StandardCharsets.UTF_8);
