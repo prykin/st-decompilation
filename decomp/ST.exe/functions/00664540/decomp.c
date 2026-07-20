@@ -36,8 +36,8 @@ undefined4 __thiscall FUN_00664540(void *this,undefined4 *param_1,uint *param_2)
     if (param_2 != (uint *)0x0) {
       *param_2 = uVar5;
     }
-    FUN_006acc70(*(int *)((int)this + 0x217),uVar5,param_1);
-    FUN_006b0c70(*(int *)((int)this + 0x217),uVar5);
+    FUN_006acc70(*(AnonShape_006ACC70_C8641025 **)((int)this + 0x217),uVar5,param_1);
+    FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x217),uVar5);
     return *(undefined4 *)(*(int *)((int)this + 0x217) + 0xc);
   }
   return 0xffffffff;

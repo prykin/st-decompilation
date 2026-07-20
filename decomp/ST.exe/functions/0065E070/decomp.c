@@ -20,7 +20,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   bool bVar13;
   int local_4c [8];
   byte local_2c [16];
-  byte *local_1c;
+  DArrayTy *local_1c;
   uint local_18;
   int local_14;
   int *local_10;
@@ -49,14 +49,14 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   local_10 = local_4c;
   local_c = 0;
   do {
-    local_1c = (byte *)*local_10;
-    if (local_1c != (byte *)0x0) {
+    local_1c = (DArrayTy *)*local_10;
+    if (local_1c != (DArrayTy *)0x0) {
       local_18 = 0;
-      if (0 < *(int *)(local_1c + 0xc)) {
-        bVar13 = *(int *)(local_1c + 0xc) != 0;
+      if (0 < (int)local_1c->count) {
+        bVar13 = local_1c->count != 0;
         do {
           if (bVar13) {
-            puVar4 = (undefined2 *)(*(int *)(local_1c + 8) * local_18 + *(int *)(local_1c + 0x1c));
+            puVar4 = (undefined2 *)(local_1c->elementSize * local_18 + (int)local_1c->data);
           }
           else {
             puVar4 = (undefined2 *)0x0;
@@ -65,16 +65,16 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
                  STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,local_c,
                             CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
-          if ((this == (STFishC *)0x0) || (iVar9 = (*this->vtable->slot_F8)(), iVar9 == 0))
+          if ((this == (STFishC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
-          uVar5 = (*this->vtable->slot_2C)();
+          uVar5 = (*this->vtable->vfunc_2C)();
           STFishC::sub_004162B0(this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2));
           if (param_5 != 0) {
             if (uVar5 == 0x78) {
               if ((param_5 & 0x80000000) == 0) {
                 uVar10 = param_5 & 0x3fffffff;
                 if (uVar10 != 0) {
-                  iVar9 = (*this->vtable->slot_2C)();
+                  iVar9 = (*this->vtable->vfunc_2C)();
                   if (iVar9 == 0x78) {
                     uVar6 = *(uint *)&this->field_0x259;
                   }
@@ -97,7 +97,7 @@ LAB_0065e1b6:
 LAB_0065e218:
             pbVar8 = param_7;
             if ((param_7 != (byte *)0x0) && (*param_7 != 0)) {
-              (*this->vtable->slot_74)(local_2c);
+              (*this->vtable->vfunc_74)(local_2c);
               pbVar11 = local_2c;
               do {
                 bVar1 = *pbVar8;
@@ -119,13 +119,13 @@ LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
             cVar3 = param_6;
-            if ((param_6 == -1) || (iVar9 = (*this->vtable->slot_6C)(), cVar3 == iVar9)) {
+            if ((param_6 == -1) || (iVar9 = (*this->vtable->vfunc_6C)(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
           }
           else if (uVar5 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
-              iVar9 = (*this->vtable->slot_2C)();
+              iVar9 = (*this->vtable->vfunc_2C)();
               if (iVar9 == 0x78) {
                 iVar9 = *(int *)&this->field_0x259;
               }
@@ -143,10 +143,10 @@ joined_r0x0065e216:
           }
 cf_continue_loop_0065E27E:
           local_18 = local_18 + 1;
-          bVar13 = local_18 < *(uint *)(local_1c + 0xc);
-        } while ((int)local_18 < (int)*(uint *)(local_1c + 0xc));
+          bVar13 = local_18 < local_1c->count;
+        } while ((int)local_18 < (int)local_1c->count);
       }
-      FUN_006ae110(local_1c);
+      FUN_006ae110((byte *)local_1c);
     }
     local_c = local_c + 1;
     local_10 = local_10 + 1;

@@ -3,14 +3,14 @@
    E:\__titans\Igor\to_crab.cpp
    STCrabC::GetMessage */
 
-undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
+undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF825 *param_1)
 
 {
-  code *pcVar1;
-  undefined1 uVar2;
-  undefined1 uVar3;
-  undefined1 uVar4;
+  undefined4 *puVar1;
+  code *pcVar2;
+  byte bVar3;
   STSprGameObjC *this_00;
+  undefined1 uVar4;
   bool bVar5;
   short sVar6;
   int iVar7;
@@ -18,12 +18,13 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
   undefined4 uVar8;
   int iVar9;
   uint uVar10;
+  STSprGameObjC_field_0259State SVar11;
   undefined4 unaff_ESI;
-  undefined4 *puVar11;
-  byte *pbVar12;
+  STSprGameObjC_field_0259State *pSVar12;
+  byte *pbVar13;
   void *unaff_EDI;
-  undefined4 *puVar13;
-  byte *pbVar14;
+  STSprGameObjC_field_0259State *pSVar14;
+  byte *pbVar15;
   InternalExceptionFrame local_80;
   LPVOID local_3c;
   undefined4 local_38;
@@ -32,15 +33,15 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
-  undefined4 *local_20;
+  STSprGameObjC_field_0259State *local_20;
   STSprGameObjC *local_1c;
   byte *local_18;
-  byte *local_14;
+  STSprGameObjC_field_0259State *local_14;
   uint local_10;
-  byte *local_c;
-  uint local_8;
+  STSprGameObjC_field_0259State *local_c;
+  STSprGameObjC_field_0259State local_8;
   
-  if ((this->field_0239 == 3) && (*(int *)(param_1 + 0x10) != 3)) {
+  if ((this->field_0239 == 3) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_80.previous = g_currentExceptionFrame;
@@ -53,30 +54,30 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
     iVar9 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x1b7,0,iVar7,&DAT_007a4ccc,
                                s_STCrabC__GetMessage_007cad9c);
     if (iVar9 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar8 = (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      uVar8 = (*pcVar2)();
       return uVar8;
     }
     RaiseInternalException(iVar7,0,s_E____titans_Igor_to_crab_cpp_007cad4c,0x1b8);
     return 0xffff;
   }
-  STSprGameObjC::GetMessage(local_1c,param_1);
-  uVar10 = *(uint *)(param_1 + 0x10);
+  STSprGameObjC::GetMessage(local_1c,(AnonShape_0041AF40_F59F8577 *)param_1);
+  uVar10 = param_1->field_0010;
   if (0x10f < uVar10) {
     if (uVar10 != 0x128) {
       if (uVar10 != 0x440f) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      puVar11 = &this_00->field_01D5;
+      puVar1 = &this_00->field_01D5;
       if (DAT_0080732c != 0) {
-        thunk_FUN_004ad0e0(puVar11,0xe);
-        thunk_FUN_004ad0e0(puVar11,0xd);
+        thunk_FUN_004ad0e0(puVar1,0xe);
+        thunk_FUN_004ad0e0(puVar1,0xd);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      thunk_FUN_004ad070(puVar11,0xe);
-      thunk_FUN_004ad070(puVar11,0xd);
+      thunk_FUN_004ad070(puVar1,0xe);
+      thunk_FUN_004ad070(puVar1,0xd);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -85,147 +86,77 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
     goto LAB_00578ea2;
   }
   if (uVar10 == 0x10f) {
-    local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+    local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x68 + local_8);
-    if (local_14 == (byte *)0x0) {
+    local_c = (STSprGameObjC_field_0259State *)
+              Library::DKW::LIB::FUN_006aac70(local_10 + 0x68 + local_8);
+    if (local_14 == (STSprGameObjC_field_0259State *)0x0) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (local_c == (byte *)0x0) {
+    if (local_c == (STSprGameObjC_field_0259State *)0x0) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    puVar11 = &this_00->field_0259;
-    pbVar12 = local_c;
+    pSVar12 = &this_00->field_0259;
+    pSVar14 = local_c;
     for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *(undefined4 *)pbVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      pbVar12 = pbVar12 + 4;
+      *pSVar14 = *pSVar12;
+      pSVar12 = pSVar12 + 1;
+      pSVar14 = pSVar14 + 1;
     }
-    local_c[0xc] = 2;
-    local_c[0xd] = 0;
-    local_c[0xe] = 0;
-    local_c[0xf] = 0;
-    uVar2 = this_00->field_0x236;
-    uVar3 = this_00->field_0x237;
-    uVar4 = this_00->field_0x238;
-    local_c[0x28] = this_00->field_0x235;
-    local_c[0x29] = uVar2;
-    local_c[0x2a] = uVar3;
-    local_c[0x2b] = uVar4;
-    uVar2 = this_00->field_0x23a;
-    uVar3 = this_00->field_0x23b;
-    uVar4 = this_00->field_0x23c;
-    local_c[0x2c] = this_00->field_0x239;
-    local_c[0x2d] = uVar2;
-    local_c[0x2e] = uVar3;
-    local_c[0x2f] = uVar4;
-    uVar2 = this_00->field_0x42;
-    local_c[0x50] = this_00->field_0x41;
-    local_c[0x51] = uVar2;
-    uVar2 = this_00->field_0x44;
-    local_c[0x52] = this_00->field_0x43;
-    local_c[0x53] = uVar2;
-    uVar2 = this_00->field_0x46;
-    local_c[0x54] = this_00->field_0x45;
-    local_c[0x55] = uVar2;
-    uVar2 = this_00->field_0x232;
-    uVar3 = this_00->field_0x233;
-    uVar4 = this_00->field_0x234;
-    local_c[0x34] = this_00->field_0x231;
-    local_c[0x35] = uVar2;
-    local_c[0x36] = uVar3;
-    local_c[0x37] = uVar4;
-    uVar2 = this_00->field_0x246;
-    uVar3 = this_00->field_0x247;
-    uVar4 = this_00->field_0x248;
-    local_c[0x48] = this_00->field_0x245;
-    local_c[0x49] = uVar2;
-    local_c[0x4a] = uVar3;
-    local_c[0x4b] = uVar4;
-    uVar2 = this_00->field_0x24e;
-    uVar3 = this_00->field_0x24f;
-    uVar4 = this_00->field_0x250;
-    local_c[0x4c] = this_00->field_0x24d;
-    local_c[0x4d] = uVar2;
-    local_c[0x4e] = uVar3;
-    local_c[0x4f] = uVar4;
-    uVar2 = this_00->field_0x242;
-    uVar3 = this_00->field_0x243;
-    uVar4 = this_00->field_0x244;
-    local_c[0x38] = this_00->field_0x241;
-    local_c[0x39] = uVar2;
-    local_c[0x3a] = uVar3;
-    local_c[0x3b] = uVar4;
-    uVar2 = this_00->field_0x24a;
-    uVar3 = this_00->field_0x24b;
-    uVar4 = this_00->field_0x24c;
-    local_c[0x3c] = this_00->field_0x249;
-    local_c[0x3d] = uVar2;
-    local_c[0x3e] = uVar3;
-    local_c[0x3f] = uVar4;
-    uVar2 = this_00->field_0x252;
-    uVar3 = this_00->field_0x253;
-    uVar4 = this_00->field_0x254;
-    local_c[0x40] = this_00->field_0x251;
-    local_c[0x41] = uVar2;
-    local_c[0x42] = uVar3;
-    local_c[0x43] = uVar4;
-    uVar2 = this_00->field_0x256;
-    uVar3 = this_00->field_0x257;
-    uVar4 = this_00->field_0x258;
-    local_c[0x44] = this_00->field_0x255;
-    local_c[0x45] = uVar2;
-    local_c[0x46] = uVar3;
-    local_c[0x47] = uVar4;
-    uVar2 = this_00->field_0x4f;
-    local_c[0x56] = this_00->field_0x4e;
-    local_c[0x57] = uVar2;
-    uVar2 = this_00->field_0x51;
-    local_c[0x58] = this_00->field_0x50;
-    local_c[0x59] = uVar2;
-    uVar2 = this_00->field_0x6d;
-    local_c[0x5a] = this_00->field_0x6c;
-    local_c[0x5b] = uVar2;
-    uVar2 = this_00->field_0x23e;
-    uVar3 = this_00->field_0x23f;
-    uVar4 = this_00->field_0x240;
-    local_c[0x30] = this_00->field_0x23d;
-    local_c[0x31] = uVar2;
-    local_c[0x32] = uVar3;
-    local_c[0x33] = uVar4;
-    local_c[0x5c] = 0;
-    local_c[0x5d] = 0;
-    local_c[0x5e] = 0;
-    local_c[0x5f] = 0;
-    *(uint *)(local_c + 0x60) = local_8;
-    pbVar12 = local_14;
-    pbVar14 = local_c + 100;
+    local_c[3] = 2;
+    local_c[10] = *(STSprGameObjC_field_0259State *)&this_00->field_0x235;
+    local_c[0xb] = *(STSprGameObjC_field_0259State *)&this_00->field_0x239;
+    *(undefined2 *)(local_c + 0x14) = *(undefined2 *)&this_00->field_0x41;
+    uVar4 = this_00->field_0x44;
+    ((byte *)((int)local_c + 0x52))[0] = this_00->field_0x43;
+    ((byte *)((int)local_c + 0x52))[1] = uVar4;
+    *(undefined2 *)(local_c + 0x15) = *(undefined2 *)&this_00->field_0x45;
+    local_c[0xd] = *(STSprGameObjC_field_0259State *)&this_00->field_0x231;
+    local_c[0x12] = *(STSprGameObjC_field_0259State *)&this_00->field_0x245;
+    local_c[0x13] = *(STSprGameObjC_field_0259State *)&this_00->field_0x24d;
+    local_c[0xe] = *(STSprGameObjC_field_0259State *)&this_00->field_0x241;
+    local_c[0xf] = *(STSprGameObjC_field_0259State *)&this_00->field_0x249;
+    local_c[0x10] = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
+    local_c[0x11] = *(STSprGameObjC_field_0259State *)&this_00->field_0x255;
+    uVar4 = this_00->field_0x4f;
+    ((byte *)((int)local_c + 0x56))[0] = this_00->field_0x4e;
+    ((byte *)((int)local_c + 0x56))[1] = uVar4;
+    *(undefined2 *)(local_c + 0x16) = *(undefined2 *)&this_00->field_0x50;
+    uVar4 = this_00->field_0x6d;
+    ((byte *)((int)local_c + 0x5a))[0] = this_00->field_0x6c;
+    ((byte *)((int)local_c + 0x5a))[1] = uVar4;
+    local_c[0xc] = *(STSprGameObjC_field_0259State *)&this_00->field_0x23d;
+    local_c[0x17] = 0;
+    local_c[0x18] = local_8;
+    pSVar12 = local_14;
+    pSVar14 = local_c + 0x19;
     for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pbVar14 = *(undefined4 *)pbVar12;
-      pbVar12 = pbVar12 + 4;
-      pbVar14 = pbVar14 + 4;
+      *pSVar14 = *pSVar12;
+      pSVar12 = pSVar12 + 1;
+      pSVar14 = pSVar14 + 1;
     }
-    for (uVar10 = local_8 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pbVar14 = *pbVar12;
-      pbVar12 = pbVar12 + 1;
-      pbVar14 = pbVar14 + 1;
+    for (SVar11 = local_8 & 3; SVar11 != 0; SVar11 = SVar11 - 1) {
+      *(char *)pSVar14 = (char)*pSVar12;
+      pSVar12 = (STSprGameObjC_field_0259State *)((int)pSVar12 + 1);
+      pSVar14 = (STSprGameObjC_field_0259State *)((int)pSVar14 + 1);
     }
-    *(uint *)(local_c + local_8 + 100) = local_10;
-    pbVar12 = local_18;
-    pbVar14 = local_c + local_8 + 0x68;
+    *(uint *)((int)local_c + local_8 + 100) = local_10;
+    pbVar13 = local_18;
+    pbVar15 = (byte *)((int)local_c + local_8 + 0x68);
     for (uVar10 = local_10 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pbVar14 = *(undefined4 *)pbVar12;
-      pbVar12 = pbVar12 + 4;
-      pbVar14 = pbVar14 + 4;
+      *(undefined4 *)pbVar15 = *(undefined4 *)pbVar13;
+      pbVar13 = pbVar13 + 4;
+      pbVar15 = pbVar15 + 4;
     }
     for (uVar10 = local_10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pbVar14 = *pbVar12;
-      pbVar12 = pbVar12 + 1;
-      pbVar14 = pbVar14 + 1;
+      *pbVar15 = *pbVar13;
+      pbVar13 = pbVar13 + 1;
+      pbVar15 = pbVar15 + 1;
     }
-    STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_c,local_10 + 0x68 + local_8);
+    STPlaySystemC::SaveObjData
+              (PTR_00802a38,this_00->field_0018,(byte *)local_c,local_10 + 0x68 + local_8);
     FUN_006ab060(&local_14);
     FUN_006ab060(&local_18);
     FUN_006ab060(&local_c);
@@ -237,7 +168,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    thunk_FUN_00579350((int *)this_00);
+    thunk_FUN_00579350((AnonShape_00579350_2E014C47 *)this_00);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
@@ -247,23 +178,23 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
       return 0;
     }
     thunk_FUN_0058d080(this_00->field_0018);
-    thunk_FUN_004ad310((int)&this_00->field_01D5);
+    thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  local_20 = *(undefined4 **)(param_1 + 0x14);
-  if ((uint)local_20[3] < 2) {
+  local_20 = param_1->field_0014;
+  if (local_20[3] < 2) {
     *(undefined4 *)&this_00->field_0x239 = 3;
-    iVar7 = DAT_00802a38->field_00E4;
+    iVar7 = PTR_00802a38->field_00E4;
     *(undefined4 *)&this_00->field_0x23d = 0;
     *(undefined4 *)&this_00->field_0x231 = 0;
     *(int *)&this_00->field_0x235 = iVar7 + -3;
-    puVar11 = *(undefined4 **)(param_1 + 0x14);
-    puVar13 = &this_00->field_0259;
+    pSVar12 = param_1->field_0014;
+    pSVar14 = &this_00->field_0259;
     for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar13 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar13 = puVar13 + 1;
+      *pSVar14 = *pSVar12;
+      pSVar12 = pSVar12 + 1;
+      pSVar14 = pSVar14 + 1;
     }
     Bad((STCrabC *)this_00,(int)unaff_EDI);
     if (((((*(int *)&this_00->field_0x26d < 0) ||
@@ -274,7 +205,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
        ((SHORT_007fb244 <= iVar7 ||
         (bVar5 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
                                     (short)iVar7), CONCAT31(extraout_var,bVar5) == 0)))) {
-      thunk_FUN_005783f0(this_00);
+      thunk_FUN_005783f0((STJellyGunC *)this_00);
       *(undefined4 *)&this_00->field_0x239 = 2;
     }
     else {
@@ -377,12 +308,12 @@ cf_error_exit_00578B5D:
           goto cf_error_exit_00578B5D;
         }
       }
-      puVar11 = &this_00->field_01D5;
-      thunk_FUN_004acf50(puVar11,'\r');
-      thunk_FUN_004ac610(puVar11,'\x0e');
-      thunk_FUN_004ac610(puVar11,'\r');
-      STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,DAT_00802a38->field_00E4);
-      STT3DSprC::StartShow((STT3DSprC *)puVar11,0xd,DAT_00802a38->field_00E4);
+      puVar1 = &this_00->field_01D5;
+      thunk_FUN_004acf50(puVar1,'\r');
+      thunk_FUN_004ac610(puVar1,'\x0e');
+      thunk_FUN_004ac610(puVar1,'\r');
+      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,PTR_00802a38->field_00E4);
       sVar6 = *(short *)&this_00->field_0x275 * 200;
       *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x26d * 0xc9 + 100;
       *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x271 * 0xc9 + 100;
@@ -404,33 +335,39 @@ cf_error_exit_00578B5D:
     }
   }
   else if (local_20[3] == 2) {
-    puVar11 = local_20;
-    puVar13 = &this_00->field_0259;
+    pSVar12 = local_20;
+    pSVar14 = &this_00->field_0259;
     for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar13 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar13 = puVar13 + 1;
+      *pSVar14 = *pSVar12;
+      pSVar12 = pSVar12 + 1;
+      pSVar14 = pSVar14 + 1;
     }
     local_8 = local_20[0x18];
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x68 + (int)local_20));
-    puVar11 = local_20;
-    *(undefined4 *)&this_00->field_0x239 = local_20[0xb];
-    *(undefined4 *)&this_00->field_0x235 = local_20[10];
-    *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)(local_20 + 0x14);
-    *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)((int)local_20 + 0x52);
-    *(undefined2 *)&this_00->field_0x45 = *(undefined2 *)(local_20 + 0x15);
-    *(undefined4 *)&this_00->field_0x231 = local_20[0xd];
-    *(undefined4 *)&this_00->field_0x245 = local_20[0x12];
-    *(undefined4 *)&this_00->field_0x24d = local_20[0x13];
-    *(undefined4 *)&this_00->field_0x241 = local_20[0xe];
-    *(undefined4 *)&this_00->field_0x249 = local_20[0xf];
-    *(undefined4 *)&this_00->field_0x251 = local_20[0x10];
-    *(undefined4 *)&this_00->field_0x255 = local_20[0x11];
-    *(undefined2 *)&this_00->field_0x4e = *(undefined2 *)((int)local_20 + 0x56);
-    *(undefined2 *)&this_00->field_0x50 = *(undefined2 *)(local_20 + 0x16);
-    *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)((int)local_20 + 0x5a);
-    *(undefined4 *)&this_00->field_0x23d = local_20[0xc];
+    pSVar12 = local_20;
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x239 = local_20[0xb];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x235 = local_20[10];
+    *(short *)&this_00->field_0x41 = (short)local_20[0x14];
+    bVar3 = ((byte *)((int)local_20 + 0x52))[1];
+    this_00->field_0x43 = ((byte *)((int)local_20 + 0x52))[0];
+    this_00->field_0x44 = bVar3;
+    *(short *)&this_00->field_0x45 = (short)local_20[0x15];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x231 = local_20[0xd];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x245 = local_20[0x12];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x24d = local_20[0x13];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x241 = local_20[0xe];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x249 = local_20[0xf];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x251 = local_20[0x10];
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x255 = local_20[0x11];
+    bVar3 = ((byte *)((int)local_20 + 0x56))[1];
+    this_00->field_0x4e = ((byte *)((int)local_20 + 0x56))[0];
+    this_00->field_0x4f = bVar3;
+    *(short *)&this_00->field_0x50 = (short)local_20[0x16];
+    bVar3 = ((byte *)((int)local_20 + 0x5a))[1];
+    this_00->field_0x6c = ((byte *)((int)local_20 + 0x5a))[0];
+    this_00->field_0x6d = bVar3;
+    *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
     local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
     if (local_3c != (LPVOID)0x0) {
       iVar7 = 0;
@@ -444,7 +381,9 @@ cf_error_exit_00578B5D:
       local_2c = 0;
       local_28 = 0;
       local_24 = 0;
-      STT3DSprC::RestoreSpr((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,puVar11 + 0x19);
+      STT3DSprC::RestoreSpr
+                ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
+                 (AnonShape_004ADBA0_E7CEFF88 *)(pSVar12 + 0x19));
       FUN_006ab060(&local_3c);
     }
   }
@@ -458,7 +397,7 @@ cf_error_exit_00578B5D:
     return 0;
   }
 LAB_00578ea2:
-  thunk_FUN_005783f0(this_00);
+  thunk_FUN_005783f0((STJellyGunC *)this_00);
   *(undefined4 *)&this_00->field_0x239 = 2;
   g_currentExceptionFrame = local_80.previous;
   return 0;

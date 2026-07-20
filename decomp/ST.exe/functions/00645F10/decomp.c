@@ -59,7 +59,7 @@ FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,unde
     *(uint *)((int)this + 0x1c) = uVar1;
     local_3c = (short)((ulonglong)(uVar1 >> 0x10) % 0x3d) + *(short *)((int)this + 0x24f) + -0x1e;
     local_38 = *(undefined4 *)((int)this + 0x259);
-    (**(code **)(*DAT_00802a38 + 8))(0x106,0,0,local_60,0);
+    (*PTR_00802a38->vtable->vfunc_08)(0x106,0,0,local_60,0);
   }
   return;
 }

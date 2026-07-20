@@ -55,7 +55,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
     iVar9 = 0;
     uVar10 = thunk_FUN_004ad650((int)puVar1);
     FUN_006eabf0((void *)this->field_0211,uVar10,iVar9);
-    bVar8 = thunk_FUN_0041caf0((int)this);
+    bVar8 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     if (CONCAT31(extraout_var,bVar8) == 1) {
       iVar9 = 1;
     }
@@ -93,7 +93,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
              iVar9 = extraout_ECX, uVar10 = extraout_EDX, (int)uVar14 < 0)) {
       if (local_2c == 0) {
 LAB_005829e6:
-        if ((*(byte *)(DAT_00802a38 + 0xe4) & 0x3f) == 0) goto LAB_005829f4;
+        if ((*(byte *)&PTR_00802a38->field_00E4 & 0x3f) == 0) goto LAB_005829f4;
       }
       else {
         if (local_2c != 1) {
@@ -134,7 +134,8 @@ LAB_005829f4:
           ((piVar12[8] == 1000 || (piVar12[8] == 0x14)))) &&
          ((iVar9 = (**(code **)(*piVar12 + 0xf0))(), iVar9 != 0 &&
           (((uint)piVar12[9] < 8 &&
-           ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar12[9] * 0x51] < 8)))))))) {
+           ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar12[9] * 0x51] < 8))
+           )))))) {
         iVar9 = this->field_0010;
         bVar2 = *(byte *)(piVar12 + 9);
         bVar3 = this->field_0x24;
@@ -248,7 +249,7 @@ LAB_00582958:
       uVar10 = local_1c;
     }
     if ((this->field_024F != '\0') && (uVar10 == (byte)this->field_0250)) {
-      STT3DSprC::StartShow((STT3DSprC *)puVar1,9,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow((STT3DSprC *)puVar1,9,PTR_00802a38->field_00E4);
       thunk_FUN_004ad0e0(puVar1,9);
     }
     iVar9 = thunk_FUN_004acd30(puVar1,'\b');
@@ -300,7 +301,7 @@ LAB_00582958:
         this->field_023D = 0;
         goto switchD_00582651_default;
       }
-      if (((byte)*(undefined4 *)(DAT_00802a38 + 0xe4) & 7) != 1) {
+      if (((byte)PTR_00802a38->field_00E4 & 7) != 1) {
 LAB_005827b7:
         if (iVar9 == 0) goto switchD_00582651_default;
         break;
@@ -348,12 +349,12 @@ LAB_00582f27:
     }
     else if (this->field_0231 == 0) {
       if ((int)this->field_003E - (int)this->field_0038 < -10) {
-        if (((*(byte *)(DAT_00802a38 + 0xe4) & 3) == 0) &&
+        if (((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0) &&
            (iVar9 = this->field_0247 + 1, this->field_0247 = iVar9, 10 < iVar9)) {
           this->field_0247 = 10;
         }
       }
-      else if ((*(byte *)(DAT_00802a38 + 0xe4) & 1) != 0) goto LAB_00582edf;
+      else if ((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0) goto LAB_00582edf;
     }
     else {
 LAB_00582edf:

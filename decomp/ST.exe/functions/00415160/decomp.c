@@ -3,7 +3,9 @@
    E:\__titans\wlad\Grpway3d.cpp
    STGroupBoatC::Way3DGrpDistribTgt */
 
-int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int param_4,int param_5)
+int STGroupBoatC::Way3DGrpDistribTgt
+              (void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3,int param_4,
+              int param_5)
 
 {
   short sVar1;
@@ -24,7 +26,7 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
   
   iVar8 = 0;
   local_c = 0;
-  sVar1 = *(short *)(param_2 + 0xc);
+  sVar1 = (short)param_2->field_000C;
   *(short *)((int)param_1 + 0x27) = sVar1;
   if (sVar1 == 0) {
     return 0;
@@ -32,11 +34,11 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
   uVar4 = thunk_FUN_004233c0((int)param_1);
   DAT_007f4d4c = (uint)uVar4;
   if ((DAT_007f4d4c < 2) && (*(short *)((int)param_1 + 0x27) == 1)) {
-    if (*(int *)(param_2 + 0xc) == 0) {
+    if (param_2->field_000C == 0) {
       puVar5 = (undefined2 *)0x0;
     }
     else {
-      puVar5 = *(undefined2 **)(param_2 + 0x1c);
+      puVar5 = (undefined2 *)param_2->field_001C;
     }
     iVar6 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5));
     if (iVar6 != 0) {
@@ -62,8 +64,8 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
       if (0 < DAT_007f4d40) {
         do {
           uVar2 = *(uint *)(uVar9 + 0x18 + (int)DAT_007f4d04);
-          if (uVar2 < *(uint *)(param_2 + 0xc)) {
-            puVar5 = (undefined2 *)(*(int *)(param_2 + 8) * uVar2 + *(int *)(param_2 + 0x1c));
+          if (uVar2 < param_2->field_000C) {
+            puVar5 = (undefined2 *)(param_2->field_0008 * uVar2 + param_2->field_001C);
           }
           else {
             puVar5 = (undefined2 *)0x0;
@@ -89,8 +91,8 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
         do {
           uVar9 = *(uint *)(DAT_007f4d04 +
                            ((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 0xe + -2);
-          if (uVar9 < *(uint *)(param_2 + 0xc)) {
-            puVar5 = (undefined2 *)(*(int *)(param_2 + 8) * uVar9 + *(int *)(param_2 + 0x1c));
+          if (uVar9 < param_2->field_000C) {
+            puVar5 = (undefined2 *)(param_2->field_0008 * uVar9 + param_2->field_001C);
           }
           else {
             puVar5 = (undefined2 *)0x0;
@@ -119,8 +121,8 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
     }
     else if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
-        if (uVar9 < *(uint *)(param_2 + 0xc)) {
-          puVar5 = (undefined2 *)(*(int *)(param_2 + 8) * uVar9 + *(int *)(param_2 + 0x1c));
+        if (uVar9 < param_2->field_000C) {
+          puVar5 = (undefined2 *)(param_2->field_0008 * uVar9 + param_2->field_001C);
         }
         else {
           puVar5 = (undefined2 *)0x0;

@@ -89,7 +89,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   if (DAT_0080168c != (int *)0x0) {
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
-  thunk_FUN_0054a8d0(DAT_00802a30);
+  thunk_FUN_0054a8d0(PTR_00802a30);
   bVar1 = (&pCVar4->field_0BA2)[param_1 & 0xff];
   switch((uint)bVar1) {
   case 1:
@@ -112,7 +112,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 0x12:
   case 0x13:
   case 0x18:
-    thunk_FUN_0054b630(DAT_00802a30,(uint)bVar1,0);
+    thunk_FUN_0054b630(PTR_00802a30,(uint)bVar1,0);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 4:

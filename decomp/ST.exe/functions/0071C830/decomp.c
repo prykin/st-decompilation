@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0071c830(int param_1)
+void __fastcall FUN_0071c830(AnonShape_0071C830_6B4541B2 *param_1)
 
 {
   int *piVar1;
@@ -7,11 +7,11 @@ void __fastcall FUN_0071c830(int param_1)
   uint uVar3;
   int iVar4;
   
-  if (*(int *)(param_1 + 0x24) != 0) {
-    *(undefined4 *)(param_1 + 0x70) = 1;
-    *(undefined4 *)(*(int *)(param_1 + 0x24) + 4) = 0;
+  if (param_1->field_0024 != 0) {
+    param_1->field_0070 = 1;
+    *(undefined4 *)(param_1->field_0024 + 4) = 0;
     while( true ) {
-      iVar2 = *(int *)(param_1 + 0x24);
+      iVar2 = param_1->field_0024;
       uVar3 = *(uint *)(iVar2 + 4);
       if (*(uint *)(iVar2 + 0xc) <= uVar3) break;
       iVar4 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c);

@@ -69,17 +69,17 @@ void __fastcall FUN_005f5440(int param_1)
                  (*(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_10) != '\0')))))
                ) {
               if (pcVar6[0x1e] == '\0') {
-                FUN_006eaaa0(DAT_00807598,*(uint *)(pcVar6 + 0x1f),0);
+                FUN_006eaaa0(PTR_00807598,*(uint *)(pcVar6 + 0x1f),0);
                 pcVar6[0x1e] = '\x01';
               }
             }
             else if (pcVar6[0x1e] != '\0') {
-              FUN_006eab60(DAT_00807598,*(uint *)(pcVar6 + 0x1f));
+              FUN_006eab60(PTR_00807598,*(uint *)(pcVar6 + 0x1f));
               pcVar6[0x1e] = '\0';
             }
           }
-          FUN_006ea270(DAT_00807598,*(uint *)(pcVar6 + 0x1f),0,*(uint *)(pcVar6 + 0xe));
-          FUN_006ea960(DAT_00807598,*(uint *)(pcVar6 + 0x1f),
+          FUN_006ea270(PTR_00807598,*(uint *)(pcVar6 + 0x1f),0,*(uint *)(pcVar6 + 0xe));
+          FUN_006ea960(PTR_00807598,*(uint *)(pcVar6 + 0x1f),
                        (float)*(int *)(pcVar6 + 2) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)(pcVar6 + 6) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)(pcVar6 + 10) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)

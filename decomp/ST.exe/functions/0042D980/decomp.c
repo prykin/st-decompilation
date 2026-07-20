@@ -8,7 +8,7 @@ STAllPlayersC::GetActiveCenter
           (STAllPlayersC *this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
 
 {
-  int iVar1;
+  AnonShape_006ACC70_C8641025 *pAVar1;
   code *pcVar2;
   int iVar3;
   undefined4 uVar4;
@@ -17,8 +17,7 @@ STAllPlayersC::GetActiveCenter
   undefined3 uVar7;
   int iVar8;
   int iVar9;
-  int iVar10;
-  STAllPlayersC_GetObjPtr_param_3Enum SVar11;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar10;
   int local_1c;
   uint local_18;
   uint local_14;
@@ -27,11 +26,10 @@ STAllPlayersC::GetActiveCenter
   int local_8;
   
   uVar6 = (uint)DAT_0080874d;
-  iVar3 = uVar6 * 0xa62;
   uVar7 = (undefined3)(uVar6 * 0x29 >> 8);
-  if (*(int *)((int)&DAT_007f5023 + iVar3) == 0) {
-    iVar1 = *(int *)((int)&DAT_007f4f83 + iVar3);
-    if (iVar1 == 0) {
+  if (g_playerRuntime[uVar6].field442_0x203 == 0) {
+    iVar3 = g_playerRuntime[uVar6].field326_0x163;
+    if (iVar3 == 0) {
       if (param_1 != (undefined2 *)0x0) {
         *param_1 = 0xffff;
       }
@@ -44,45 +42,44 @@ STAllPlayersC::GetActiveCenter
       *param_3 = 0xffff;
       return 0xffffffff;
     }
-    if (iVar1 == 0x3c) {
-      iVar3 = *(int *)((int)&DAT_007f4f8d + iVar3);
-      iVar9 = 0;
+    if (iVar3 == 0x3c) {
+      pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[uVar6].field329_0x16d;
       iVar8 = 0;
-      iVar1 = *(int *)(iVar3 + 0xc);
-      iVar10 = 0;
+      iVar3 = 0;
+      uVar6 = pAVar1->field_000C;
+      iVar9 = 0;
       local_1c = 0;
       local_18 = 0;
-      if (0 < iVar1) {
+      if (0 < (int)uVar6) {
         do {
-          FUN_006acc70(iVar3,local_18,&local_14);
+          FUN_006acc70(pAVar1,local_18,&local_14);
           if ((short)local_14 != -1) {
             local_1c = local_1c + 1;
             pSVar5 = (STFishC *)
                      GetObjPtr(g_sTAllPlayers_007FA174,
                                CONCAT31((int3)((uint)DAT_0080874d * 0x29 >> 8),
-                                        *(undefined1 *)
-                                         ((int)&DAT_007f4f87 + (uint)DAT_0080874d * 0xa62)),local_14
-                               ,CASE_1);
+                                        *(undefined1 *)&g_playerRuntime[DAT_0080874d].field327_0x167
+                                       ),local_14,CASE_1);
             STFishC::sub_004162B0
                       (pSVar5,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10)
             ;
-            iVar9 = iVar9 + local_8;
-            iVar10 = iVar10 + local_c;
-            iVar8 = iVar8 + local_10;
+            iVar8 = iVar8 + local_8;
+            iVar9 = iVar9 + local_c;
+            iVar3 = iVar3 + local_10;
           }
           local_18 = local_18 + 1;
-        } while ((int)local_18 < iVar1);
+        } while ((int)local_18 < (int)uVar6);
         if (0 < local_1c) {
           if (param_1 != (undefined2 *)0x0) {
-            *param_1 = (short)((int)(short)iVar9 / local_1c);
+            *param_1 = (short)((int)(short)iVar8 / local_1c);
           }
           if (param_2 != (undefined2 *)0x0) {
-            *param_2 = (short)((int)(short)iVar10 / local_1c);
+            *param_2 = (short)((int)(short)iVar9 / local_1c);
           }
           if (param_3 == (undefined2 *)0x0) {
             return 0;
           }
-          *param_3 = (short)((int)(short)iVar8 / local_1c);
+          *param_3 = (short)((int)(short)iVar3 / local_1c);
           return 0;
         }
       }
@@ -99,11 +96,11 @@ joined_r0x0042de37:
       *param_3 = 0xffff;
       return 0;
     }
-    if (iVar1 == 0x1ae) {
+    if (iVar3 == 0x1ae) {
       pSVar5 = (STFishC *)
                GetObjPtr(g_sTAllPlayers_007FA174,
-                         CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4f87 + iVar3)),
-                         (uint)(ushort)(&DAT_007f4f8b)[uVar6 * 0x531],CASE_3);
+                         CONCAT31(uVar7,*(undefined1 *)&g_playerRuntime[uVar6].field327_0x167),
+                         (uint)(ushort)g_playerRuntime[uVar6].field328_0x16b,CASE_3);
       STFishC::sub_004162B0
                 (pSVar5,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
       if (param_1 != (undefined2 *)0x0) {
@@ -129,21 +126,21 @@ joined_r0x0042de37:
     }
     goto joined_r0x0042dcbd;
   }
-  if (*(int *)((int)&DAT_007f5023 + iVar3) == 1) {
-    iVar1 = *(int *)((int)&DAT_007f4fd3 + iVar3);
-    if (0x19a < iVar1) {
-      if (iVar1 == 0x1a4) {
-        SVar11 = CASE_5;
+  if (g_playerRuntime[uVar6].field442_0x203 == 1) {
+    iVar3 = g_playerRuntime[uVar6].field384_0x1b3;
+    if (0x19a < iVar3) {
+      if (iVar3 == 0x1a4) {
+        SVar10 = CASE_5;
 LAB_0042da27:
         pSVar5 = (STFishC *)
                  GetObjPtr(g_sTAllPlayers_007FA174,
-                           CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4fd7 + iVar3)),
-                           (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],SVar11);
+                           CONCAT31(uVar7,*(undefined1 *)&g_playerRuntime[uVar6].field385_0x1b7),
+                           (uint)(ushort)g_playerRuntime[uVar6].field386_0x1bb,SVar10);
         STFishC::sub_004162B0
                   (pSVar5,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
       }
       else {
-        if (iVar1 != 0x1b8) {
+        if (iVar3 != 0x1b8) {
 LAB_0042dbdf:
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x537,0,0,
                                      &DAT_007a4ccc,s_STAllPlayersC__GetActiveCenter_A_007a64e0);
@@ -156,8 +153,8 @@ LAB_0042dbdf:
         }
         pSVar5 = (STFishC *)
                  GetObjPtr(g_sTAllPlayers_007FA174,
-                           CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4fd7 + iVar3)),
-                           (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],CASE_6);
+                           CONCAT31(uVar7,*(undefined1 *)&g_playerRuntime[uVar6].field385_0x1b7),
+                           (uint)(ushort)g_playerRuntime[uVar6].field386_0x1bb,CASE_6);
         STFishC::sub_004162B0
                   (pSVar5,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
       }
@@ -174,45 +171,44 @@ joined_r0x0042dc56:
       *param_3 = (undefined2)local_10;
       return 0;
     }
-    if (iVar1 == 0x19a) {
-      iVar3 = *(int *)((int)&DAT_007f4fdd + iVar3);
-      iVar9 = 0;
+    if (iVar3 == 0x19a) {
+      pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[uVar6].field387_0x1bd;
       iVar8 = 0;
-      iVar1 = *(int *)(iVar3 + 0xc);
-      iVar10 = 0;
+      iVar3 = 0;
+      uVar6 = pAVar1->field_000C;
+      iVar9 = 0;
       local_1c = 0;
       local_18 = 0;
-      if (0 < iVar1) {
+      if (0 < (int)uVar6) {
         do {
-          FUN_006acc70(iVar3,local_18,&local_14);
+          FUN_006acc70(pAVar1,local_18,&local_14);
           if ((short)local_14 != -1) {
             local_1c = local_1c + 1;
             pSVar5 = (STFishC *)
                      GetObjPtr(g_sTAllPlayers_007FA174,
                                CONCAT31((int3)((uint)DAT_0080874d * 0x29 >> 8),
-                                        *(undefined1 *)
-                                         ((int)&DAT_007f4fd7 + (uint)DAT_0080874d * 0xa62)),local_14
-                               ,CASE_1);
+                                        *(undefined1 *)&g_playerRuntime[DAT_0080874d].field385_0x1b7
+                                       ),local_14,CASE_1);
             STFishC::sub_004162B0
                       (pSVar5,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10)
             ;
-            iVar9 = iVar9 + local_8;
-            iVar10 = iVar10 + local_c;
-            iVar8 = iVar8 + local_10;
+            iVar8 = iVar8 + local_8;
+            iVar9 = iVar9 + local_c;
+            iVar3 = iVar3 + local_10;
           }
           local_18 = local_18 + 1;
-        } while ((int)local_18 < iVar1);
+        } while ((int)local_18 < (int)uVar6);
         if (0 < local_1c) {
           if (param_1 != (undefined2 *)0x0) {
-            *param_1 = (short)((int)(short)iVar9 / local_1c);
+            *param_1 = (short)((int)(short)iVar8 / local_1c);
           }
           if (param_2 != (undefined2 *)0x0) {
-            *param_2 = (short)((int)(short)iVar10 / local_1c);
+            *param_2 = (short)((int)(short)iVar9 / local_1c);
           }
           if (param_3 == (undefined2 *)0x0) {
             return 0;
           }
-          *param_3 = (short)((int)(short)iVar8 / local_1c);
+          *param_3 = (short)((int)(short)iVar3 / local_1c);
           return 0;
         }
       }
@@ -221,12 +217,12 @@ joined_r0x0042dc56:
       }
       goto joined_r0x0042de37;
     }
-    if (iVar1 != 0) {
-      if (iVar1 == 0x5a) {
+    if (iVar3 != 0) {
+      if (iVar3 == 0x5a) {
         pSVar5 = (STFishC *)
                  GetObjPtr(g_sTAllPlayers_007FA174,
-                           CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4fd7 + iVar3)),
-                           (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],CASE_4);
+                           CONCAT31(uVar7,*(undefined1 *)&g_playerRuntime[uVar6].field385_0x1b7),
+                           (uint)(ushort)g_playerRuntime[uVar6].field386_0x1bb,CASE_4);
         STFishC::sub_004162B0
                   (pSVar5,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
         if (param_1 != (undefined2 *)0x0) {
@@ -234,8 +230,8 @@ joined_r0x0042dc56:
         }
         goto joined_r0x0042dc56;
       }
-      if (iVar1 != 0x172) goto LAB_0042dbdf;
-      SVar11 = CASE_2;
+      if (iVar3 != 0x172) goto LAB_0042dbdf;
+      SVar10 = CASE_2;
       goto LAB_0042da27;
     }
   }

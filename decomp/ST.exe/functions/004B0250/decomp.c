@@ -36,7 +36,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   short *local_38;
   short *local_34;
   short local_2e;
-  uint *local_2c;
+  DArrayTy *local_2c;
   char *local_28;
   short local_22;
   int local_20;
@@ -59,7 +59,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   local_88[9] = (int)sVar13 / (int)(uint)DAT_008087c4._2_1_;
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
   local_10 = (short *)Library::DKW::LIB::FUN_006aac70(SHORT_007fb246 * 5);
-  local_2c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+  local_2c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
   local_18 = 0;
   do {
     local_34 = (short *)(SHORT_007fb246 * local_18);
@@ -98,7 +98,7 @@ LAB_004b03a2:
             }
             else {
               if ((*(uint *)&local_c->field_0x24 < 8) &&
-                 ((DAT_00802a38 == 0 ||
+                 ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[*(uint *)&local_c->field_0x24 * 0x51] < 8)))) {
                 bVar1 = local_c->field_0x24;
                 local_28 = (char *)CONCAT31(local_28._1_3_,bVar1);
@@ -145,23 +145,23 @@ LAB_004b04c9:
                 }
                 if (bVar16) {
                   *(undefined1 *)((int)psVar10 + iVar14 + (int)local_10) = 4;
-                  iVar8 = (*local_c->vtable->slot_2C)();
+                  iVar8 = (*local_c->vtable->vfunc_2C)();
                   if (((&STGroupBoatCVTable.vfunc_04)[iVar8] == (void *)0x2) ||
-                     ((iVar8 = (*local_c->vtable->slot_2C)(), iVar8 == 0x78 &&
+                     ((iVar8 = (*local_c->vtable->vfunc_2C)(), iVar8 == 0x78 &&
                       ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] == (void *)0x2)
                       ))) {
-                    Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_c);
+                    Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
                   }
                   goto LAB_004b057d;
                 }
               }
-              iVar8 = (*local_c->vtable->slot_2C)();
+              iVar8 = (*local_c->vtable->vfunc_2C)();
               if (((&STGroupBoatCVTable.vfunc_04)[iVar8] == (void *)0x2) ||
-                 ((iVar8 = (*local_c->vtable->slot_2C)(), iVar8 == 0x78 &&
+                 ((iVar8 = (*local_c->vtable->vfunc_2C)(), iVar8 == 0x78 &&
                   ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] == (void *)0x2))))
               {
                 *(undefined1 *)((int)psVar10 + iVar14 + (int)local_10) = 6;
-                Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_c);
+                Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
               }
               else {
                 *(undefined1 *)((int)psVar10 + iVar14 + (int)local_10) = 5;
@@ -178,9 +178,9 @@ LAB_004b057d:
     }
     local_18 = local_18 + 1;
   } while (local_18 < 4);
-  if (DAT_007fa150 != 0) {
-    *(undefined4 *)(DAT_007fa150 + 4) = 0;
-    iVar14 = FUN_006b1190(DAT_007fa150,&local_c);
+  if (PTR_007fa150 != (DArrayTy *)0x0) {
+    PTR_007fa150->iteratorIndex = 0;
+    iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_c);
     while (-1 < iVar14) {
       if (local_c != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
@@ -189,7 +189,7 @@ LAB_004b057d:
          (int)local_22 +
          (int)local_2e * (int)SHORT_007fb246 + (int)param_2._2_2_ * (int)SHORT_007fb240) = 2;
       }
-      iVar14 = FUN_006b1190(DAT_007fa150,&local_c);
+      iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_c);
     }
   }
   local_18 = 0;
@@ -317,11 +317,11 @@ LAB_004b057d:
               }
               iVar8 = local_54;
               iVar11 = local_54;
-              if (local_2c[3] != 0) {
+              if (local_2c->count != 0) {
                 iVar8 = -1;
                 local_54 = -1;
-                local_2c[1] = 0;
-                iVar5 = FUN_006b1190((int)local_2c,&local_c);
+                local_2c->iteratorIndex = 0;
+                iVar5 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)local_2c,&local_c);
                 iVar11 = local_54;
                 if (-1 < iVar5) {
                   iVar5 = local_40 / 2;
@@ -332,7 +332,7 @@ LAB_004b057d:
                     if ((iVar11 <= iVar5) && ((iVar8 < 0 || (iVar11 < iVar8)))) {
                       iVar8 = iVar11;
                     }
-                    iVar6 = FUN_006b1190((int)local_2c,&local_c);
+                    iVar6 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)local_2c,&local_c);
                     iVar11 = iVar8;
                   } while (-1 < iVar6);
                 }

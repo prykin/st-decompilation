@@ -1,15 +1,15 @@
 
-void __fastcall FUN_00694c30(int param_1)
+void __fastcall FUN_00694c30(AnonShape_00694C30_EF3EE984 *param_1)
 
 {
-  if ((*(int *)(param_1 + 0x10) != 0) || (*(int *)(param_1 + 0x14) != 0)) {
-    thunk_FUN_00694be0(param_1);
+  if ((param_1->field_0010 != 0) || (param_1->field_0014 != 0)) {
+    thunk_FUN_00694be0((AnonShape_00694BE0_C065E5E3 *)param_1);
   }
-  *(undefined4 *)(param_1 + 0x14) = *(undefined4 *)(param_1 + 0xc);
-  *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)(param_1 + 8);
-  *(undefined4 *)(param_1 + 8) = 0;
-  *(undefined4 *)(param_1 + 0xc) = 0;
-  thunk_FUN_006a0150(param_1);
+  param_1->field_0014 = param_1->field_000C;
+  param_1->field_0010 = param_1->field_0008;
+  param_1->field_0008 = 0;
+  param_1->field_000C = 0;
+  thunk_FUN_006a0150((AnonShape_006A0150_D0561BCC *)param_1);
   return;
 }
 

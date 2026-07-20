@@ -10,7 +10,7 @@ int __cdecl FUN_0067f4f0(byte *param_1)
   uint uVar6;
   bool bVar7;
   
-  iVar2 = *(int *)(DAT_00848a2c + 8);
+  iVar2 = PTR_00848a2c->field_0008;
   uVar6 = 0;
   if (0 < iVar2) {
     if (iVar2 < 1) {
@@ -19,7 +19,7 @@ int __cdecl FUN_0067f4f0(byte *param_1)
       goto LAB_0067f51b;
     }
     do {
-      pbVar5 = *(byte **)(*(int *)(DAT_00848a2c + 0x14) + uVar6 * 4);
+      pbVar5 = *(byte **)(PTR_00848a2c->field_0014 + uVar6 * 4);
       pbVar3 = param_1;
 LAB_0067f51b:
       do {
@@ -43,10 +43,10 @@ LAB_0067f544:
         if ((int)uVar6 < 0) {
           return 0;
         }
-        if (*(uint *)(DAT_00848a28 + 0xc) <= uVar6) {
+        if (PTR_00848a28->field_000C <= uVar6) {
           return 0;
         }
-        return *(int *)(DAT_00848a28 + 8) * uVar6 + *(int *)(DAT_00848a28 + 0x1c);
+        return PTR_00848a28->field_0008 * uVar6 + PTR_00848a28->field_001C;
       }
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < iVar2);

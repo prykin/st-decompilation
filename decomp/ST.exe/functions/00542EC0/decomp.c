@@ -31,7 +31,7 @@ void __thiscall InterSystemC::~InterSystemC(InterSystemC *this)
     ccFntTy::operator(this_00,(uint *)this->field_0030);
     this->field_0030 = 0;
   }
-  FUN_006e52d0((int)this);
+  FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)this);
   return;
 }
 

@@ -12,7 +12,7 @@ undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   undefined4 *puVar3;
   
   AppClassTy::AppClassTy((AppClassTy *)this,0,param_1);
-  thunk_FUN_00571cd0(&this->field_0038);
+  thunk_FUN_00571cd0((AnonShape_00571CD0_C1ECCB3F *)&this->field_0038);
   this->field_1111 = 10;
   this->field_1115 = 10;
   this->field_0FC7 = 0;

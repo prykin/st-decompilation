@@ -1,5 +1,6 @@
 
-undefined4 __fastcall FUN_0065fe10(int param_1,undefined4 param_2,int param_3,short *param_4)
+undefined4 __fastcall
+FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4)
 
 {
   short sVar1;
@@ -13,8 +14,8 @@ undefined4 __fastcall FUN_0065fe10(int param_1,undefined4 param_2,int param_3,sh
   uint *local_38 [5];
   uint local_24;
   undefined4 local_20;
-  uint *local_1c;
-  uint *local_c;
+  DArrayTy *local_1c;
+  DArrayTy *local_c;
   undefined4 local_8;
   
   ppuVar6 = local_38;
@@ -22,14 +23,14 @@ undefined4 __fastcall FUN_0065fe10(int param_1,undefined4 param_2,int param_3,sh
     *ppuVar6 = (uint *)0x0;
     ppuVar6 = ppuVar6 + 1;
   }
-  local_c = (uint *)0x0;
+  local_c = (DArrayTy *)0x0;
   local_8 = 0;
-  *(undefined4 *)(param_1 + 0xa7) = 0;
-  uVar2 = AiFltClassTy::sub_0065D9C0((AiFltClassTy *)param_1);
+  param_1->field_00A7 = 0;
+  uVar2 = AiFltClassTy::sub_0065D9C0(param_1);
   if (CONCAT22(extraout_var,uVar2) == 0) {
     return 0xffffffff;
   }
-  sVar1 = *(short *)(param_1 + 0x39);
+  sVar1 = param_1->field_0039;
   if (param_3 == 0xdd) {
     uVar3 = (-(uint)(sVar1 != 3) & 0xffffffdb) + 0x5e;
   }
@@ -44,7 +45,7 @@ undefined4 __fastcall FUN_0065fe10(int param_1,undefined4 param_2,int param_3,sh
   }
   groupContent = thunk_FUN_0065fa60(uVar3,1,param_4);
   if (groupContent != (uint *)0x0) {
-    sVar1 = *(short *)(param_1 + 0x39);
+    sVar1 = param_1->field_0039;
     if (sVar1 < 1) {
 LAB_0065fec9:
       iVar5 = 0;
@@ -56,9 +57,9 @@ LAB_0065fec9:
       if (sVar1 != 3) goto LAB_0065fec9;
       iVar5 = 0x60;
     }
-    local_c = thunk_FUN_0065fa60(iVar5,1,(short *)0x0);
-    if (local_c != (uint *)0x0) {
-      sVar1 = *(short *)(param_1 + 0x39);
+    local_c = (DArrayTy *)thunk_FUN_0065fa60(iVar5,1,(short *)0x0);
+    if (local_c != (DArrayTy *)0x0) {
+      sVar1 = param_1->field_0039;
       local_38[0] = (uint *)0x0;
       if (param_3 == 0xdd) {
         local_24 = (-(uint)(sVar1 != 3) & 0xffffffdb) + 0x5e;
@@ -75,11 +76,10 @@ LAB_0065fec9:
       local_20 = 0;
       local_38[1] = groupContent;
       local_1c = local_c;
-      if (((*(short *)(param_1 + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
-         && (pSVar4 = thunk_FUN_0042b760((uint)*(byte *)(param_1 + 0x24),
-                                         CONCAT22((short)((uint)local_c >> 0x10),
-                                                  *(short *)(param_1 + 0x7d))),
-            pSVar4 != (STGroupBoatC *)0x0)) {
+      if (((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+         (pSVar4 = thunk_FUN_0042b760((uint)(byte)param_1->field_0x24,
+                                      CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
+         pSVar4 != (STGroupBoatC *)0x0)) {
         (*pSVar4->vtable->vfunc_08)(8,local_38);
         goto LAB_0065ff72;
       }
@@ -90,7 +90,7 @@ LAB_0065ff72:
   if (groupContent != (uint *)0x0) {
     FUN_006ae110((byte *)groupContent);
   }
-  if (local_c != (uint *)0x0) {
+  if (local_c != (DArrayTy *)0x0) {
     FUN_006ae110((byte *)local_c);
   }
   return local_8;

@@ -18,7 +18,7 @@ int __thiscall FUN_0065ed90(void *this,short *param_1,short *param_2,int param_3
   
   psVar1 = param_2;
   local_10 = this;
-  iVar3 = thunk_FUN_0065e700((int)this,&local_c,&local_8,&local_c,&local_1c);
+  iVar3 = thunk_FUN_0065e700(this,&local_c,&local_8,&local_c,&local_1c);
   if (iVar3 != 0) {
     return -4;
   }

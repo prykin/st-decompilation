@@ -56,7 +56,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
                  (undefined4 *)&pWVar2->field_1A5B->field_0x140);
     }
     uVar8 = 0;
-    pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
     uVar6 = 0xffffffff;
     uVar5 = 0xfffffffe;
     puVar3 = (uint *)FUN_006b0140(0x26ae,HINSTANCE_00807618);

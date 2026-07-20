@@ -9,15 +9,16 @@ STAllPlayersC::GetCursorType
           undefined4 param_3,int *param_4,undefined4 param_5,undefined4 param_6)
 
 {
-  int iVar1;
-  int iVar2;
+  AnonShape_006ACC70_C8641025 *pAVar1;
+  uint uVar2;
   code *pcVar3;
   short sVar4;
-  int *piVar5;
+  uint uVar5;
+  int iVar6;
+  int *piVar7;
   undefined4 in_EDX;
   undefined4 extraout_EDX;
-  int iVar6;
-  uint uVar7;
+  uint uVar8;
   uint local_8;
   
   if ((param_2 != (int *)0x0) &&
@@ -26,50 +27,50 @@ STAllPlayersC::GetCursorType
     thunk_FUN_0041f390((int)param_2);
     in_EDX = extraout_EDX;
   }
-  uVar7 = (uint)DAT_0080874d;
-  iVar6 = uVar7 * 0xa62;
-  if (*(int *)((int)&DAT_007f5023 + iVar6) == 0) {
-    if (*(int *)((int)&DAT_007f4f83 + iVar6) != 0) {
-      if (*(int *)((int)&DAT_007f4f83 + iVar6) != 0x3c) {
+  uVar5 = (uint)DAT_0080874d;
+  if (g_playerRuntime[uVar5].field442_0x203 == 0) {
+    if (g_playerRuntime[uVar5].field326_0x163 != 0) {
+      if (g_playerRuntime[uVar5].field326_0x163 != 0x3c) {
         return 0;
       }
-      if (*(uint *)((int)&DAT_007f4f87 + iVar6) != uVar7) {
+      if (g_playerRuntime[uVar5].field327_0x167 != uVar5) {
         return 0;
       }
       sVar4 = thunk_FUN_00435b90(CONCAT31((int3)((uint)in_EDX >> 8),DAT_0080874d),
-                                 *(int *)((int)&DAT_007f4f8d + iVar6),param_1,param_2,param_3,
-                                 param_4);
+                                 (DArrayTy *)g_playerRuntime[uVar5].field329_0x16d,param_1,param_2,
+                                 param_3,param_4);
       return sVar4;
     }
   }
-  else if (*(int *)((int)&DAT_007f5023 + iVar6) == 1) {
-    if (*(int *)((int)&DAT_007f4fd3 + iVar6) != 0) {
-      if (*(int *)((int)&DAT_007f4fd3 + iVar6) != 0x19a) {
+  else if (g_playerRuntime[uVar5].field442_0x203 == 1) {
+    if (g_playerRuntime[uVar5].field384_0x1b3 != 0) {
+      if (g_playerRuntime[uVar5].field384_0x1b3 != 0x19a) {
         return 0;
       }
-      if (*(uint *)((int)&DAT_007f4fd7 + iVar6) != uVar7) {
+      if (g_playerRuntime[uVar5].field385_0x1b7 != uVar5) {
         return 0;
       }
-      if ((&DAT_007f4fe1)[uVar7 * 0x531] != 1) {
+      if (g_playerRuntime[uVar5].field388_0x1c1 != 1) {
         return 0;
       }
-      iVar1 = *(int *)((int)&DAT_007f4fdd + iVar6);
-      uVar7 = 0;
-      iVar2 = *(int *)(iVar1 + 0xc);
-      if (iVar2 < 1) {
+      pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[uVar5].field387_0x1bd;
+      uVar8 = 0;
+      uVar2 = pAVar1->field_000C;
+      if ((int)uVar2 < 1) {
         return 0;
       }
       do {
-        FUN_006acc70(iVar1,uVar7,&local_8);
+        FUN_006acc70(pAVar1,uVar8,&local_8);
         if ((short)local_8 != -1) {
-          piVar5 = (int *)GetObjPtr(this,CONCAT31((int3)(local_8 >> 8),
-                                                  *(undefined1 *)((int)&DAT_007f4fd7 + iVar6)),
-                                    local_8,CASE_1);
-          sVar4 = (**(code **)(*piVar5 + 0x28))(param_1,param_2,param_3,param_4);
+          piVar7 = (int *)GetObjPtr(this,CONCAT31((int3)(local_8 >> 8),
+                                                  *(undefined1 *)
+                                                   &g_playerRuntime[uVar5].field385_0x1b7),local_8,
+                                    CASE_1);
+          sVar4 = (**(code **)(*piVar7 + 0x28))(param_1,param_2,param_3,param_4);
           return sVar4;
         }
-        uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < iVar2);
+        uVar8 = uVar8 + 1;
+      } while ((int)uVar8 < (int)uVar2);
       return 0;
     }
   }

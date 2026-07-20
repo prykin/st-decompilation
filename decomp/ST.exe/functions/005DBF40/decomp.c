@@ -23,7 +23,7 @@ StartSystemTy::OutBmpProc
     if (errorCode == 0) {
       Library::DKW::DDX::FUN_006b48e0
                 (param_1,param_4,param_5,param_8,0,0,0,*(uint *)(param_8 + 4),*(int *)(param_8 + 8),
-                 DAT_0081176c + 0x144,0,0x10000ff);
+                 (int)&PTR_0081176c->field_0x144,0,0x10000ff);
       g_currentExceptionFrame = pIVar3;
       return;
     }

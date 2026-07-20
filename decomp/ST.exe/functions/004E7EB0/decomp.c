@@ -2,14 +2,12 @@
 void FUN_004e7eb0(int param_1,int param_2,int param_3)
 
 {
-  int iVar1;
-  uint uVar2;
+  uint uVar1;
   
-  uVar2 = *(int *)(DAT_00802a38 + 0xe4) + param_3;
-  iVar1 = param_2 * 4 + param_1 * 0xa62;
-  if (*(uint *)((int)&DAT_007f5842 + iVar1) < uVar2) {
-    *(uint *)((int)&DAT_007f5842 + iVar1) = uVar2;
-    *(undefined4 *)((int)&DAT_007f5862 + iVar1) = 0;
+  uVar1 = PTR_00802a38->field_00E4 + param_3;
+  if ((uint)(&g_playerRuntime[param_1].field2303_0xa22)[param_2] < uVar1) {
+    (&g_playerRuntime[param_1].field2303_0xa22)[param_2] = uVar1;
+    (&g_playerRuntime[param_1].field2329_0xa42)[param_2] = 0;
   }
   return;
 }

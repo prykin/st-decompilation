@@ -1,18 +1,18 @@
 
-void __fastcall FUN_0061d650(int param_1)
+void __fastcall FUN_0061d650(AnonShape_0061D650_84237B09 *param_1)
 
 {
-  if (*(int *)(param_1 + 0x57) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x57));
+  if (param_1->field_0057 != 0) {
+    FUN_006ab060((LPVOID *)&param_1->field_0057);
   }
-  if (*(int *)(param_1 + 0x9b) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x9b));
+  if (param_1->field_009B != 0) {
+    FUN_006ab060((LPVOID *)&param_1->field_009B);
   }
-  if (*(int *)(param_1 + 0x9f) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x9f));
+  if (param_1->field_009F != 0) {
+    FUN_006ab060((LPVOID *)&param_1->field_009F);
   }
-  *(undefined4 *)(param_1 + 0x93) = 0;
-  *(undefined4 *)(param_1 + 0x97) = 0;
+  param_1->field_0093 = 0;
+  param_1->field_0097 = 0;
   return;
 }
 

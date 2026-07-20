@@ -1,21 +1,22 @@
 
-void __fastcall FUN_00492fc0(int param_1)
+void __fastcall FUN_00492fc0(AnonShape_00492FC0_E6F586EF *param_1)
 
 {
   undefined4 in_EAX;
-  int *piVar1;
+  AnonShape_004CC900_31EE9CAA *pAVar1;
   int iVar2;
   
-  if ((*(int *)(param_1 + 0x45d) == 9) && (*(int *)(param_1 + 0x611) == 3)) {
-    piVar1 = (int *)STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x5fc))
-                               ,CONCAT22((short)((uint)in_EAX >> 0x10),
-                                         *(undefined2 *)(param_1 + 0x5fd)),CASE_1);
-    if ((piVar1 != (int *)0x0) && (piVar1[6] == *(int *)(param_1 + 0x5ff))) {
-      iVar2 = (**(code **)(*piVar1 + 0x108))(*(undefined4 *)(param_1 + 0x24));
+  if ((param_1->field_045D == 9) && (param_1->field_0611 == 3)) {
+    pAVar1 = (AnonShape_004CC900_31EE9CAA *)
+             STAllPlayersC::GetObjPtr
+                       (g_sTAllPlayers_007FA174,
+                        CONCAT31((int3)((uint)param_1 >> 8),param_1->field_05FC),
+                        CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_05FD),CASE_1);
+    if ((pAVar1 != (AnonShape_004CC900_31EE9CAA *)0x0) &&
+       (*(int *)&pAVar1->field_0x18 == param_1->field_05FF)) {
+      iVar2 = (**(code **)(*(int *)pAVar1 + 0x108))(param_1->field_0024);
       if (iVar2 != 0) {
-        thunk_FUN_004cd450((int)piVar1);
+        thunk_FUN_004cd450(pAVar1);
       }
     }
   }

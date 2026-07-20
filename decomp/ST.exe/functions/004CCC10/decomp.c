@@ -108,7 +108,7 @@ LAB_004ccd43:
   *(int **)((int)this + 0x5c0) = param_2;
   uVar1 = thunk_FUN_004406c0(cVar9);
   *(uint *)((int)this + 0x239) = (uVar1 & 0xff) - 1;
-  thunk_FUN_004b9920((int)this);
+  thunk_FUN_004b9920(this);
   iVar5 = 0;
   thunk_FUN_00419c70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
@@ -168,11 +168,11 @@ LAB_004ccedc:
       iVar2 = *(int *)((int)this + 0x235);
       uVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar4 & 0xff) + ((uVar1 & 0xff) + iVar2 * 3) * 3] == '\0') {
-        thunk_FUN_004c2d40((int)this);
+        thunk_FUN_004c2d40(this);
         goto LAB_004cd038;
       }
     }
-    iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x40c),(int *)&param_2);
+    iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x40c),(int *)&param_2);
     if ((iVar2 == 0) && (param_2 != (int *)0x0)) {
       thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),
                          (uint)*(ushort *)((int)this + 0x32));
@@ -180,14 +180,14 @@ LAB_004ccedc:
   }
 LAB_004cd038:
   if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
-      (*(uint *)((int)this + 0x4d4) <= *(uint *)((int)DAT_00802a38 + 0xe4))) &&
-     (iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4d0),(int *)&param_2), iVar2 == 0)) {
+      (*(uint *)((int)this + 0x4d4) <= (uint)PTR_00802a38->field_00E4)) &&
+     (iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4d0),(int *)&param_2), iVar2 == 0)) {
     thunk_FUN_005822b0(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x41) && (0 < *(int *)((int)this + 0x4e4))) {
     piVar8 = (int *)((int)this + 0x4d0);
     do {
-      if ((*piVar8 != 0) && (iVar2 = FUN_006e62d0(DAT_00802a38,*piVar8,(int *)&param_2), iVar2 == 0)
+      if ((*piVar8 != 0) && (iVar2 = FUN_006e62d0(PTR_00802a38,*piVar8,(int *)&param_2), iVar2 == 0)
          ) {
         thunk_FUN_00590130(param_2,*(undefined4 *)((int)this + 0x24));
       }
@@ -196,11 +196,11 @@ LAB_004cd038:
     } while (iVar5 < *(int *)((int)this + 0x4e4));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x69) &&
-     (iVar5 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_2), iVar5 == 0)) {
+     (iVar5 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_2), iVar5 == 0)) {
     thunk_FUN_00618b40(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (((*(int *)((int)this + 0x5ac) == 0x70) && (*(int *)((int)this + 0x4f0) != 0)) &&
-     (iVar5 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4f0),(int *)&param_2), iVar5 == 0)) {
+     (iVar5 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4f0),(int *)&param_2), iVar5 == 0)) {
     thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {

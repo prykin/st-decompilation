@@ -1,15 +1,15 @@
 
-int FUN_00749a79(int param_1)
+int FUN_00749a79(AnonShape_00749A79_05F12707 *param_1)
 
 {
   int iVar1;
   
-  if (*(int *)(param_1 + 0x40) == 3) {
-    iVar1 = *(int *)(param_1 + 0x30) + 0x3c;
+  if (param_1->field_0040 == 3) {
+    iVar1 = param_1->field_0030 + 0x3c;
   }
   else {
-    iVar1 = *(int *)(param_1 + 0x30) + 0x30;
+    iVar1 = param_1->field_0030 + 0x30;
   }
-  return iVar1 + param_1;
+  return (int)(&param_1->field_0x0 + iVar1);
 }
 

@@ -1,5 +1,5 @@
 
-void __fastcall FUN_004f0c80(void *param_1)
+void __fastcall FUN_004f0c80(AnonShape_004F0C80_4C5E559C *param_1)
 
 {
   UINT UVar1;
@@ -14,36 +14,35 @@ void __fastcall FUN_004f0c80(void *param_1)
   undefined4 *local_c;
   int local_8;
   
-  if (*(int *)((int)param_1 + (uint)*(byte *)((int)param_1 + 0x278) * 4 + 0x27e) != 0) {
-    local_c = (undefined4 *)((int)param_1 + 0x1be);
-    puVar6 = (undefined4 *)((int)param_1 + 0x1a1);
+  if (*(int *)(&param_1[1].field_0x2 + (uint)param_1->field_0278 * 4) != 0) {
+    local_c = (undefined4 *)&param_1->field_0x1be;
+    puVar6 = (undefined4 *)&param_1->field_0x1a1;
     local_8 = 0;
     local_14 = 5;
     do {
-      *(undefined4 *)((int)param_1 + 0x28) = 0x21;
-      FUN_006e6080(param_1,2,*puVar6,(undefined4 *)((int)param_1 + 0x18));
-      iVar3 = *(int *)((int)param_1 + 0x2c);
-      uVar2 = (uint)((uint)(local_8 + *(int *)((int)param_1 + 0x199)) <
-                    *(uint *)(*(int *)((int)param_1 +
-                                      (uint)*(byte *)((int)param_1 + 0x278) * 4 + 0x27e) + 0xc));
-      *(uint *)((int)param_1 + 0x2c) = uVar2;
+      param_1->field_0028 = 0x21;
+      FUN_006e6080(param_1,2,*puVar6,(undefined4 *)&param_1->field_0x18);
+      iVar3 = param_1->field_002C;
+      uVar2 = (uint)((uint)(local_8 + param_1->field_0199) <
+                    *(uint *)(*(int *)(&param_1[1].field_0x2 + (uint)param_1->field_0278 * 4) + 0xc)
+                    );
+      param_1->field_002C = uVar2;
       if (uVar2 == 0) {
         if (iVar3 != 0) goto LAB_004f0da7;
 LAB_004f0d0c:
-        *(undefined4 *)((int)param_1 + 0x28) = 5;
+        param_1->field_0028 = 5;
         uVar8 = *puVar6;
       }
       else {
         if (iVar3 != 0) goto LAB_004f0d0c;
 LAB_004f0da7:
-        *(undefined4 *)((int)param_1 + 0x28) = 0x20;
+        param_1->field_0028 = 0x20;
         uVar8 = *puVar6;
       }
-      FUN_006e6080(param_1,2,uVar8,(undefined4 *)((int)param_1 + 0x18));
-      if ((((*(int *)((int)param_1 + 0x2c) != 0) &&
-           (iVar3 = *(int *)((int)param_1 + (uint)*(byte *)((int)param_1 + 0x278) * 4 + 0x27e),
-           iVar3 != 0)) &&
-          (uVar2 = *(int *)((int)param_1 + 0x199) + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
+      FUN_006e6080(param_1,2,uVar8,(undefined4 *)&param_1->field_0x18);
+      if ((((param_1->field_002C != 0) &&
+           (iVar3 = *(int *)(&param_1[1].field_0x2 + (uint)param_1->field_0278 * 4), iVar3 != 0)) &&
+          (uVar2 = param_1->field_0199 + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
          (pGVar4 = (Global_sub_00523410_param_1Enum *)
                    (*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c)),
          pGVar4 != (Global_sub_00523410_param_1Enum *)0x0)) {

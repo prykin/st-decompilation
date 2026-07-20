@@ -12,10 +12,10 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
   InternalExceptionFrame local_94;
   InternalExceptionFrame local_50;
   CFsgsConnection *local_c;
-  BITMAPINFO *local_8;
+  tagBITMAPINFO *local_8;
   
   *(undefined4 *)((int)this + 0x3c) = param_1;
-  local_8 = (BITMAPINFO *)0x0;
+  local_8 = (tagBITMAPINFO *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -25,11 +25,11 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
     pcVar4 = CFsgsConnection::GetIconFilename(local_c);
     if (pcVar4 != (char *)0x0) {
       pcVar4 = CFsgsConnection::GetIconFilename(pCVar2);
-      local_8 = (BITMAPINFO *)Library::DKW::WGR::FUN_006bc260(pcVar4);
+      local_8 = (tagBITMAPINFO *)Library::DKW::WGR::FUN_006bc260(pcVar4);
     }
   }
   g_currentExceptionFrame = local_50.previous;
-  if (local_8 != (BITMAPINFO *)0x0) {
+  if (local_8 != (tagBITMAPINFO *)0x0) {
     g_currentExceptionFrame = &local_94;
     local_94.previous = local_50.previous;
     iVar3 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);

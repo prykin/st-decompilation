@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_004dccf0(int param_1)
+undefined4 __fastcall FUN_004dccf0(AnonShape_004DCCF0_FF75E3FE *param_1)
 
 {
   undefined2 uVar1;
@@ -23,18 +23,18 @@ undefined4 __fastcall FUN_004dccf0(int param_1)
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
-  uVar2 = *(undefined4 *)(param_1 + 0x18);
-  uVar1 = *(undefined2 *)(param_1 + 0x32);
+  uVar2 = param_1->field_0018;
+  uVar1 = param_1->field_0032;
   *(undefined2 *)puVar4 = 0;
-  local_2c = *(undefined4 *)(param_1 + 0x5b4);
+  local_2c = param_1->field_05B4;
   local_48[3] = 1;
   local_48[2] = 1;
-  local_48[1] = *(undefined4 *)(param_1 + 0x24);
-  local_48[6] = *(undefined4 *)(param_1 + 0x5b0);
-  local_24 = (int)*(short *)(param_1 + 0x41);
-  local_20 = (int)*(short *)(param_1 + 0x43);
-  local_28 = *(undefined4 *)(param_1 + 0x5b8);
-  local_1c = *(short *)(param_1 + 0x45) + 0x4b;
+  local_48[1] = param_1->field_0024;
+  local_48[6] = param_1->field_05B0;
+  local_24 = (int)param_1->field_0041;
+  local_20 = (int)param_1->field_0043;
+  local_28 = param_1->field_05B8;
+  local_1c = param_1->field_0045 + 0x4b;
   local_8 = 0;
   local_48[4] = 0;
   local_48[0] = 0x186;
@@ -43,9 +43,9 @@ undefined4 __fastcall FUN_004dccf0(int param_1)
   local_18 = 0xf;
   local_10 = uVar2;
   local_c = uVar1;
-  STPlaySystemC::CreateGameObject(DAT_00802a38,0x186,0,&local_8,local_48,0);
+  STPlaySystemC::CreateGameObject(PTR_00802a38,0x186,0,&local_8,local_48,0);
   if (local_8 != 0) {
-    *(undefined4 *)(param_1 + 0x4ec) = *(undefined4 *)(local_8 + 0x18);
+    param_1->field_04EC = *(undefined4 *)(local_8 + 0x18);
   }
   return 0;
 }

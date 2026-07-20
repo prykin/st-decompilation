@@ -55,7 +55,7 @@ FUN_004e99e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     local_60 = 1000;
     local_4c = 0x6c;
     local_5c = local_70;
-    STPlaySystemC::CreateGameObject(DAT_00802a38,0x3e9,0,(int *)((int)this + 0x61b),&local_74,0);
+    STPlaySystemC::CreateGameObject(PTR_00802a38,0x3e9,0,(int *)((int)this + 0x61b),&local_74,0);
     uVar1 = *(undefined4 *)(*(int *)((int)this + 0x61b) + 0x18);
     *(undefined4 *)((int)this + 0x4fc) = 0;
     *(undefined4 *)((int)this + 0x4f8) = uVar1;

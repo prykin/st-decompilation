@@ -27,12 +27,12 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar7);
-  this_00 = DAT_00802a30;
+  this_00 = PTR_00802a30;
   if (errorCode == 0) {
-    if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar1 = DAT_00802a30->field_00C9;
-      uVar2 = DAT_00802a30->field_00C5;
-      DAT_00802a30->field_0493 = 1;
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      uVar1 = PTR_00802a30->field_00C9;
+      uVar2 = PTR_00802a30->field_00C5;
+      PTR_00802a30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar1);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

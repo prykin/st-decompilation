@@ -35,8 +35,8 @@ undefined4 FUN_00635bf0(int param_1,int param_2,int param_3)
     param_1 = (int)(short)(((short)(param_3 / 200) + sVar1) -
                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((iVar4 < *(int *)(DAT_00807598 + 0x48)) || (*(int *)(DAT_00807598 + 0x58) < iVar4)) ||
-      (iVar5 < *(int *)(DAT_00807598 + 0x44))) || (*(int *)(DAT_00807598 + 0x54) < iVar5)) {
+  if ((((iVar4 < PTR_00807598->field_0048) || (PTR_00807598->field_0058 < iVar4)) ||
+      (iVar5 < PTR_00807598->field_0044)) || (PTR_00807598->field_0054 < iVar5)) {
     uVar3 = 0;
   }
   else {

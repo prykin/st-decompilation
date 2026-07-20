@@ -32,7 +32,7 @@ FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_
     local_2c = local_20;
     local_40[3] = 2;
     local_40[4] = param_7;
-    (**(code **)(*DAT_00802a38 + 0x18))(local_40);
+    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_40);
   }
   return;
 }

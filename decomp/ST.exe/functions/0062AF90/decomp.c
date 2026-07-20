@@ -19,7 +19,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
   undefined4 local_14;
   uint local_10;
   undefined4 local_c;
-  void *local_8;
+  AnonShape_0062AF90_A19AAC76 *local_8;
   
   iVar5 = 1;
   sVar6 = (short)(param_1 >> 0x1f);
@@ -71,16 +71,16 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     }
     local_1c = param_3;
     local_24 = param_1;
-    local_c = *(undefined4 *)((int)local_8 + 0x18);
+    local_c = local_8->field_0018;
     local_20 = param_2;
-    local_14 = *(undefined4 *)((int)local_8 + 4);
+    local_14 = local_8->field_0004;
     local_18 = 1000;
-    switch(*(undefined1 *)((int)local_8 + 0x15)) {
+    switch(local_8->field_0015) {
     case 1:
-      if (*(int *)((int)local_8 + 0x1c) == 1) {
+      if (local_8->field_001C == 1) {
         iVar5 = 1;
       }
-      else if (*(int *)((int)local_8 + 0x1c) == 2) {
+      else if (local_8->field_001C == 2) {
         iVar5 = 2;
       }
       break;
@@ -98,7 +98,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     case 0x40:
       iVar5 = 6;
     }
-    local_10 = iVar5 << 0x10 | (uint)*(byte *)((int)local_8 + 0x14);
+    local_10 = iVar5 << 0x10 | (uint)local_8->field_0014;
     local_38[0] = 0xbe;
     local_38[1] = 0xff;
     local_38[2] = 0;
@@ -107,7 +107,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
       thunk_FUN_006301b0(this_00,(int)local_38);
       return;
     }
-    (**(code **)(*DAT_00802a38 + 8))(0x132,0,0,local_38,0);
+    (*PTR_00802a38->vtable->vfunc_08)(0x132,0,0,local_38,0);
   }
   return;
 }

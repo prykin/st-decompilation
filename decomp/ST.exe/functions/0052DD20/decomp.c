@@ -57,7 +57,7 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
       DVar6 = FUN_006e51b0(0x807620);
       this_00->field_009D = DVar6;
       if (this_00->field_009C != '\0') {
-        FUN_006b7830(this_00->field_0098,0);
+        FUN_006b7830((AnonShape_006B7830_769CA2DF *)this_00->field_0098,0);
         puVar4 = (undefined4 *)this_00->field_0090;
         Library::DKW::WGR::FUN_006b55f0
                   (puVar4,0,0,0,(byte *)puVar4,0,0,0x13,puVar4[1],
@@ -182,8 +182,8 @@ LAB_0052e184:
       ccFntTy::operator(pcVar3,(uint *)this_00->field_0094);
       this_00->field_0094 = (ccFntTy *)0x0;
     }
-    if ((byte *)this_00->field_0098 != (byte *)0x0) {
-      FUN_006b5570((byte *)this_00->field_0098);
+    if ((AnonShape_006B5570_4D68B99C *)this_00->field_0098 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_0098);
       this_00->field_0098 = 0;
     }
     break;

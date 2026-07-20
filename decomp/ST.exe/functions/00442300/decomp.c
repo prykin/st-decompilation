@@ -49,8 +49,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   uint local_18;
   int local_14;
   undefined4 local_10;
-  uint *local_c;
-  uint *local_8;
+  AnonShape_006ACC70_C8641025 *local_c;
+  AnonShape_006ACC70_C8641025 *local_8;
   
   local_4c = 4;
   local_6c[0] = CASE_38;
@@ -59,7 +59,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   local_6c[3] = 0x5e;
   local_5c = this;
   local_44 = (STFishC *)GetObjPtr(this,param_1,param_2,CASE_1);
-  local_58 = (*local_44->vtable->slot_2C)();
+  local_58 = (*local_44->vtable->vfunc_2C)();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
@@ -80,7 +80,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = (int *)((int)&DAT_007f4e2f + (char)param_1 * 0xa62);
+    piVar10 = &g_playerRuntime[(char)param_1].field9_0xf;
     iVar4 = local_4c;
     do {
       if (*piVar10 == 0) {
@@ -117,17 +117,18 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
     if (0 < iVar6) {
       do {
         iVar6 = local_14 * 4;
-        local_c = GetTOBJList(pSVar2,(char)param_1,local_6c[local_14],0,-1);
-        local_48 = local_c[3];
+        local_c = (AnonShape_006ACC70_C8641025 *)
+                  GetTOBJList(pSVar2,(char)param_1,local_6c[local_14],0,-1);
+        local_48 = local_c->field_000C;
         if (local_48 != 0) {
-          local_8 = *(uint **)((int)&DAT_007f4e2f + (char)param_1 * 0xa62 + iVar6);
+          local_8 = *(AnonShape_006ACC70_C8641025 **)(iVar6 + 0x7f4e2f + (char)param_1 * 0xa62);
           local_18 = 0;
           if (0 < (int)local_48) {
             do {
-              FUN_006acc70((int)local_c,local_18,&local_1c);
+              FUN_006acc70(local_c,local_18,&local_1c);
               pSVar5 = (STFishC *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
               local_44 = pSVar5;
-              iVar6 = (*pSVar5->vtable->slot_88)(local_54);
+              iVar6 = (*pSVar5->vtable->vfunc_88)(local_54);
               if (0 < iVar6) {
                 STFishC::sub_004162B0(pSVar5,&local_40,&local_3e,&local_3c);
                 local_3a = *(undefined2 *)&pSVar5->field_0x32;
@@ -146,13 +147,14 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   local_28 = (undefined4)(40000 / (longlong)local_30);
                 }
                 uVar9 = 0;
-                uVar8 = local_8[3];
+                uVar8 = local_8->field_000C;
                 local_2c = local_28;
                 if (0 < (int)uVar8) {
                   do {
-                    FUN_006acc70((int)local_8,uVar9,&local_90);
+                    FUN_006acc70(local_8,uVar9,&local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::FUN_006ae140(local_8,uVar9,(undefined4 *)&local_40);
+                      Library::DKW::TBL::FUN_006ae140((uint *)local_8,uVar9,(undefined4 *)&local_40)
+                      ;
                       local_10 = 1;
                       break;
                     }
@@ -160,7 +162,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   } while ((int)uVar9 < (int)uVar8);
                 }
                 if (uVar9 == uVar8) {
-                  Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)&local_40);
+                  Library::DKW::TBL::FUN_006ae1c0((uint *)local_8,(undefined4 *)&local_40);
                   local_10 = 1;
                 }
               }
@@ -187,9 +189,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
           else {
             SVar14 = 0x3b;
           }
-          local_c = GetTOBJList(pSVar2,(char)param_1,SVar14,0,-1);
+          local_c = (AnonShape_006ACC70_C8641025 *)GetTOBJList(pSVar2,(char)param_1,SVar14,0,-1);
           pSVar5 = local_44;
-          local_48 = local_c[3];
+          local_48 = local_c->field_000C;
           if (local_48 != 0) {
             STFishC::sub_004162B0(local_44,&local_40,&local_3e,&local_3c);
             local_3a = *(undefined2 *)&pSVar5->field_0x32;
@@ -209,12 +211,13 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
             FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,
                          (int)SHORT_007fb27c,(int)local_40,(int)local_3e,(int)local_3c,-1,-1,-1);
             local_18 = 0;
-            local_8 = *(uint **)((int)&DAT_007f4e2f + (char)param_1 * 0xa62 + local_14 * 4);
+            local_8 = *(AnonShape_006ACC70_C8641025 **)
+                       (local_14 * 4 + 0x7f4e2f + (char)param_1 * 0xa62);
             iVar6 = local_14;
             SVar13 = local_58;
             if (0 < (int)local_48) {
               do {
-                FUN_006acc70((int)local_c,local_18,&local_1c);
+                FUN_006acc70(local_c,local_18,&local_1c);
                 pSVar5 = (STFishC *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
                 local_44 = pSVar5;
                 STFishC::sub_004162B0(pSVar5,&local_38,&local_36,&local_34);
@@ -234,13 +237,14 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   local_28 = (undefined4)(40000 / (longlong)local_30);
                 }
                 uVar9 = 0;
-                uVar8 = local_8[3];
+                uVar8 = local_8->field_000C;
                 local_2c = local_28;
                 if (0 < (int)uVar8) {
                   do {
-                    FUN_006acc70((int)local_8,uVar9,&local_90);
+                    FUN_006acc70(local_8,uVar9,&local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::FUN_006ae140(local_8,uVar9,(undefined4 *)&local_40);
+                      Library::DKW::TBL::FUN_006ae140((uint *)local_8,uVar9,(undefined4 *)&local_40)
+                      ;
                       local_10 = 1;
                       break;
                     }
@@ -248,7 +252,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   } while ((int)uVar9 < (int)uVar8);
                 }
                 if (uVar9 == uVar8) {
-                  Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)&local_40);
+                  Library::DKW::TBL::FUN_006ae1c0((uint *)local_8,(undefined4 *)&local_40);
                   local_10 = 1;
                 }
                 local_18 = local_18 + 1;

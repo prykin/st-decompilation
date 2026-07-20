@@ -1,28 +1,28 @@
 
-undefined4 __fastcall FUN_004ce860(int param_1)
+undefined4 __fastcall FUN_004ce860(AnonShape_004CE860_DECB0AA9 *param_1)
 
 {
-  int iVar1;
+  DArrayTy *pDVar1;
   uint uVar2;
-  int local_8;
+  AnonShape_004CE860_DECB0AA9 *local_8;
   
-  iVar1 = *(int *)(&DAT_007f57fe + *(int *)(param_1 + 0x24) * 0xa62);
-  if ((iVar1 != 0) && (uVar2 = 0, local_8 = param_1, 0 < *(int *)(iVar1 + 0xc))) {
+  pDVar1 = g_playerRuntime[param_1->field_0024].field2286_0x9de;
+  if ((pDVar1 != (DArrayTy *)0x0) && (uVar2 = 0, local_8 = param_1, 0 < (int)pDVar1->count)) {
     while( true ) {
-      FUN_006acc70(iVar1,uVar2,&local_8);
-      if (*(int *)(local_8 + 0x4dc + *(int *)(param_1 + 0x369) * 4) != 0) break;
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,uVar2,&local_8);
+      if (*(int *)(&local_8[1].field_0x134 + param_1->field_0369 * 4) != 0) break;
       uVar2 = uVar2 + 1;
-      iVar1 = *(int *)(&DAT_007f57fe + *(int *)(param_1 + 0x24) * 0xa62);
-      if (*(int *)(iVar1 + 0xc) <= (int)uVar2) {
+      pDVar1 = g_playerRuntime[param_1->field_0024].field2286_0x9de;
+      if ((int)pDVar1->count <= (int)uVar2) {
         return 0;
       }
     }
-    *(int *)(local_8 + 0x4dc + *(int *)(param_1 + 0x369) * 4) =
-         *(int *)(local_8 + 0x4dc + *(int *)(param_1 + 0x369) * 4) + -1;
-    *(int *)(param_1 + 0x398) = (*(int *)(param_1 + 0x398) * 0x32) / 100;
-    *(int *)(param_1 + 0x39c) = (*(int *)(param_1 + 0x39c) * 0x32) / 100;
-    *(int *)(param_1 + 0x3a0) = (*(int *)(param_1 + 0x3a0) * 0x32) / 100;
-    *(int *)(param_1 + 0x3a4) = (*(int *)(param_1 + 0x3a4) * 0x32) / 100;
+    *(int *)(&local_8[1].field_0x134 + param_1->field_0369 * 4) =
+         *(int *)(&local_8[1].field_0x134 + param_1->field_0369 * 4) + -1;
+    param_1->field_0398 = (param_1->field_0398 * 0x32) / 100;
+    param_1->field_039C = (param_1->field_039C * 0x32) / 100;
+    param_1->field_03A0 = (param_1->field_03A0 * 0x32) / 100;
+    param_1->field_03A4 = (param_1->field_03A4 * 0x32) / 100;
   }
   return 0;
 }

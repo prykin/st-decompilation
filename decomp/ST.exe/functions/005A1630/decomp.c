@@ -27,17 +27,17 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   undefined4 local_28 [8];
   FSGSTy *local_8;
   
-  if (((this->field_1A5F == '\x01') && (this->field_1AC0 != 0)) && (-1 < (int)this->field_1ABC)) {
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != 0)) && (-1 < (int)this->field_1ABC)) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_8 = this;
     iVar6 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    this_01 = DAT_00802a30;
+    this_01 = PTR_00802a30;
     if (iVar6 == 0) {
-      if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar1 = DAT_00802a30->field_00C9;
-        uVar2 = DAT_00802a30->field_00C5;
-        DAT_00802a30->field_0493 = 1;
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        uVar1 = PTR_00802a30->field_00C9;
+        uVar2 = PTR_00802a30->field_00C5;
+        PTR_00802a30->field_0493 = 1;
         this_01->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_01,CASE_0,uVar2,uVar1);
         CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);

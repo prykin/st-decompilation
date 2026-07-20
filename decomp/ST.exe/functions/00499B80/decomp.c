@@ -57,7 +57,8 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
       do {
-        FUN_006acc70(pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar3->field_020E,uVar9,(undefined4 *)&local_14
+                    );
         uVar6 = STAllPlayersC::GetObjPtr
                           (g_sTAllPlayers_007FA174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14)),
                            CONCAT22(uStack_10,uStack_12),(int)cStack_13);

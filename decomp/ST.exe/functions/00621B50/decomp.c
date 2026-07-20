@@ -3,7 +3,7 @@
    E:\__titans\nick\to_mine_set.cpp
    STMineSetC::GetMessage */
 
-undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
+undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50_242D543A *param_1)
 
 {
   char cVar1;
@@ -31,7 +31,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   STMineSetC *local_8;
   
   local_8 = this;
-  iVar7 = STSprGameObjC::GetMessage((STSprGameObjC *)this,param_1);
+  iVar7 = STSprGameObjC::GetMessage((STSprGameObjC *)this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar7 == 0xffff) {
     return 0xffff;
   }
@@ -51,7 +51,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     uVar8 = (*pcVar5)();
     return uVar8;
   }
-  uVar9 = *(uint *)(param_1 + 0x10);
+  uVar9 = param_1->field_0010;
   if (0x110 < uVar9) {
     if (0x128 < uVar9) {
       g_currentExceptionFrame = local_60.previous;
@@ -109,13 +109,13 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       return 0;
     }
     local_10 = thunk_FUN_00622990(local_8,&local_c);
-    STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_10,local_c);
+    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
     FUN_006ab060(&local_10);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (uVar9 == 3) {
-    thunk_FUN_00622880((int *)local_8);
+    thunk_FUN_00622880((AnonShape_00622880_C4191DB5 *)local_8);
     if (this_00->field_0363 == 0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -128,10 +128,10 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   }
   if (uVar9 == 0) {
     if ((local_8->field_02AD == '\x03') &&
-       (0x1194 < (uint)(DAT_00802a38->field_00E4 - local_8->field_035F))) {
+       (0x1194 < (uint)(PTR_00802a38->field_00E4 - local_8->field_035F))) {
       thunk_FUN_00627390((int)local_8);
     }
-    iVar7 = thunk_FUN_006239a0((int *)this_00);
+    iVar7 = thunk_FUN_006239a0(this_00);
     if (iVar7 == 0) {
       if ((this_00->field_02AE == 2) && (this_00->field_0353 == '\0')) {
         uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
@@ -158,7 +158,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
             thunk_FUN_004ad460(&this_00->field_01D5,1);
           }
         }
-        else if ((*(byte *)&DAT_00802a38->field_00E4 & 3) == 0) {
+        else if ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0) {
           uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = (char)uVar9;
           if (((char)uVar9 == '\0') && (this_00->field_02E9 != '\0')) {
@@ -170,18 +170,18 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
         this_00->field_0041 = *(undefined2 *)&this_00->field_0x2c2;
         this_00->field_0043 = *(undefined2 *)&this_00->field_0x2c6;
         if (this_00->field_0353 != '\0') {
-          thunk_FUN_00623600((int *)this_00);
+          thunk_FUN_00623600((AnonShape_00623600_61226D23 *)this_00);
         }
         cVar1 = this_00->field_02AD;
         if ((((cVar1 == '\0') || (cVar1 == '\x01')) || (cVar1 == '\x02')) &&
-           (((((uint)DAT_00802a38->field_00E4 % 5 == 0 &&
-              (0x19 < (uint)(DAT_00802a38->field_00E4 - this_00->field_0346))) &&
+           (((((uint)PTR_00802a38->field_00E4 % 5 == 0 &&
+              (0x19 < (uint)(PTR_00802a38->field_00E4 - this_00->field_0346))) &&
              ((this_00->field_02AE == 0 || (this_00->field_02AE == 1)))) &&
             (iVar7 = thunk_FUN_00625730(this_00), iVar7 != 0)))) {
           this_00->field_02AE = 2;
           this_00->field_030F =
                *(int *)(&DAT_007d02a4 + (uint)(byte)this_00->field_02AD * 4) +
-               DAT_00802a38->field_00E4;
+               PTR_00802a38->field_00E4;
         }
       }
     }
@@ -201,7 +201,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    thunk_FUN_00627170(this_00);
+    thunk_FUN_00627170((AnonShape_00627170_DB470A34 *)this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -209,11 +209,11 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  iVar7 = *(int *)(param_1 + 0x14);
+  iVar7 = param_1->field_0014;
   local_8->field_0219 = 0x23a;
   local_8->field_0215 = 0x32;
   if (*(int *)(iVar7 + 0xc) == 2) {
-    thunk_FUN_00622ab0(local_8,*(undefined4 **)(param_1 + 0x14));
+    thunk_FUN_00622ab0(local_8,(undefined4 *)param_1->field_0014);
     if (this_00->field_0x313 != '\0') {
       sVar2 = this_00->field_0047;
       local_1c = 1;
@@ -232,7 +232,9 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
                         (int)sVar2) * 2) * 4);
       }
       if ((iVar7 == 0) &&
-         (iVar7 = DumpClassC::WritePtr(sVar2,sVar4,sVar3,local_14,(int)this_00), iVar7 == 0)) {
+         (iVar7 = DumpClassC::WritePtr
+                            (sVar2,sVar4,sVar3,local_14,(AnonShape_00495EC0_95A268C6 *)this_00),
+         iVar7 == 0)) {
         this_00->field_0314 = this_00->field_0314 + '\x01';
         iVar7 = local_1c;
       }
@@ -264,7 +266,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar12 = *(undefined4 **)(param_1 + 0x14);
+  puVar12 = (undefined4 *)param_1->field_0014;
   puVar13 = (undefined4 *)&local_8->field_0x25e;
   for (iVar11 = 0x13; iVar11 != 0; iVar11 = iVar11 + -1) {
     *puVar13 = *puVar12;
@@ -315,7 +317,7 @@ cf_common_exit_00621D24:
     if (iVar7 != 0) {
       thunk_FUN_00622670(this_00);
     }
-    thunk_FUN_00627700((int)this_00);
+    thunk_FUN_00627700((AnonShape_00627700_6F319351 *)this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }

@@ -45,7 +45,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uVar6 = local_18;
   if (errorCode == 0) {
     while (uVar6 = uVar6 - 1, -1 < (int)uVar6) {
-      FUN_006acc70(pSVar2->field_0029,uVar6,(undefined4 *)&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,(undefined4 *)&local_8);
       if (local_8 == -1) {
         uVar7 = uVar6;
         local_14 = uVar6;

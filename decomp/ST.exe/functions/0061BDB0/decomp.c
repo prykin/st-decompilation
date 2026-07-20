@@ -35,7 +35,7 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
     *(int *)((int)this + 0x10b) = (int)((uVar3 - *(int *)((int)this + 0xa7)) * 10000) / iVar5;
     *(undefined4 *)((int)this + 0xcf) = *(undefined4 *)((int)this + 0x9f);
     *(undefined4 *)((int)this + 0xd3) = *(undefined4 *)((int)this + 0xa3);
-    *(undefined4 *)((int)this + 0x11b) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0x11b) = PTR_00802a38->field_00E4;
     return 1;
   case CASE_1:
     if ((*(char *)((int)this + 0x14b) != '\0') && (*(void **)((int)this + 0x7d) != (void *)0x0)) {
@@ -59,10 +59,9 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
       iVar5 = (int)(short)(((short)(iVar5 / 200) + sVar1) -
                           (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
-    FUN_006e3310(DAT_00807598,
-                 (*(int *)((int)this + 0x9f) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9,
-                 (int *)((*(int *)((int)this + 0xa3) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9),
-                 iVar5,(int *)&param_1);
+    FUN_006e3310(PTR_00807598,(*(int *)((int)this + 0x9f) * PTR_00807598->field_0380) / 0xc9,
+                 (int *)((*(int *)((int)this + 0xa3) * PTR_00807598->field_0380) / 0xc9),iVar5,
+                 (int *)&param_1);
     lVar6 = Library::MSVCRT::__ftol();
     if (*(int *)((int)this + 0xd7) < (int)(short)lVar6) {
       *(int *)((int)this + 0xd7) = (int)(short)lVar6;
@@ -92,7 +91,7 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
     *(undefined4 *)((int)this + 0xcf) = *(undefined4 *)((int)this + 0x9f);
     *(undefined4 *)((int)this + 0xd3) = *(undefined4 *)((int)this + 0xa3);
 LAB_0061c0e4:
-    *(undefined4 *)((int)this + 0x11b) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0x11b) = PTR_00802a38->field_00E4;
     return 1;
   case CASE_3:
     param_3 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),

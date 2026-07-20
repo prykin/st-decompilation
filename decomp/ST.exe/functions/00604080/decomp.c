@@ -13,7 +13,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004158e0((STGroupBoatC *)this);
   this->vtable = &STExplosionVTable;
   this->field_0215 = 0;
   puVar2 = (undefined4 *)&this->field_0x219;
@@ -23,7 +23,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
   }
   this->field_0269 = 0;
   this->field_026D = 0;
-  this->field_026E = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  this->field_026E = PTR_00802a38->field_00E4;
   puVar2 = (undefined4 *)&this->field_0x282;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

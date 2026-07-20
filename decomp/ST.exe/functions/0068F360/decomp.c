@@ -100,7 +100,7 @@ joined_r0x0068f3e2:
       if (iVar7 == 0x78) {
         *(uint *)((int)objPtr + 0x269) = (uint)uVar1;
       }
-      FUN_006b0c70((int)param_1,uVar3);
+      FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,uVar3);
       pAVar6 = local_8;
     }
     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
@@ -161,7 +161,7 @@ LAB_0068f516:
       }
     }
     AiFltClassTy::_AddObjFlt(pAVar10,(uint)objPtr,0);
-    FUN_006b0c70((int)param_1,uVar3);
+    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,uVar3);
     pAVar6 = local_8;
   }
   goto joined_r0x0068f3e2;

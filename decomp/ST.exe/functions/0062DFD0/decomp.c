@@ -29,7 +29,7 @@ uint __thiscall FUN_0062dfd0(void *this,int param_1,int param_2,int *param_3)
             *(undefined4 *)(iVar3 + 0x10 + piVar4[2] * 4) = 0;
             *(int *)(iVar3 + 0xc) = *(int *)(iVar3 + 0xc) + -1;
           }
-          FUN_006b0c70(*(int *)((int)this + param_1 * 4 + 0x70),local_8);
+          FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + param_1 * 4 + 0x70),local_8);
           local_c = local_8;
         }
         local_8 = local_8 + 1;

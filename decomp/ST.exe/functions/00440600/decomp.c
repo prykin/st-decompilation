@@ -11,7 +11,7 @@ uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
   uint uVar3;
   
   if (param_1 == 0) {
-    return (uint)(ushort)(&DAT_007f4f91)[param_2 * 8 + (uint)DAT_0080874d * 0x531];
+    return (uint)*(ushort *)(param_2 * 0x10 + 0x7f4f91 + (uint)DAT_0080874d * 0xa62);
   }
   if (param_1 != 1) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2184,0,0,&DAT_007a4ccc,
@@ -23,6 +23,6 @@ uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
     }
     return 0;
   }
-  return (uint)(ushort)(&DAT_007f4fe1)[param_2 * 8 + (uint)DAT_0080874d * 0x531];
+  return (uint)*(ushort *)(param_2 * 0x10 + 0x7f4fe1 + (uint)DAT_0080874d * 0xa62);
 }
 

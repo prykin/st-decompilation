@@ -38,10 +38,10 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
                  this_00->field_1A7C,this_00->field_1A80);
     }
     iVar2 = 1;
-    puVar4 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
-    uVar3 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
-    iVar2 = FUN_006b50c0(0x15e,0xa5,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar3,
-                         puVar4,iVar2);
+    puVar4 = (undefined4 *)(PTR_0081176c->field_002C + 0x28);
+    uVar3 = FUN_006b4fe0(PTR_0081176c->field_002C);
+    iVar2 = FUN_006b50c0(0x15e,0xa5,(uint)*(ushort *)(PTR_0081176c->field_002C + 0xe),uVar3,puVar4,
+                         iVar2);
     this_00->field_1CB8 = iVar2;
     uVar3 = *(uint *)(iVar2 + 0x14);
     if (uVar3 == 0) {
@@ -58,10 +58,10 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    puVar4 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
-    uVar3 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
-    iVar2 = FUN_006b50c0(0x13e,0xe,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar3,
-                         puVar4,iVar2);
+    puVar4 = (undefined4 *)(PTR_0081176c->field_002C + 0x28);
+    uVar3 = FUN_006b4fe0(PTR_0081176c->field_002C);
+    iVar2 = FUN_006b50c0(0x13e,0xe,(uint)*(ushort *)(PTR_0081176c->field_002C + 0xe),uVar3,puVar4,
+                         iVar2);
     this_00->field_1CBC = iVar2;
     uVar3 = *(uint *)(iVar2 + 0x14);
     if (uVar3 == 0) {
@@ -78,10 +78,10 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    puVar4 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
-    uVar3 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
-    iVar2 = FUN_006b50c0(0x104,0x28,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar3,
-                         puVar4,iVar2);
+    puVar4 = (undefined4 *)(PTR_0081176c->field_002C + 0x28);
+    uVar3 = FUN_006b4fe0(PTR_0081176c->field_002C);
+    iVar2 = FUN_006b50c0(0x104,0x28,(uint)*(ushort *)(PTR_0081176c->field_002C + 0xe),uVar3,puVar4,
+                         iVar2);
     this_00->field_1CC0 = iVar2;
     uVar3 = *(uint *)(iVar2 + 0x14);
     if (uVar3 == 0) {

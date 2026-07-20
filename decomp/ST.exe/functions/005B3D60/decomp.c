@@ -91,8 +91,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2334,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -107,8 +107,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2335,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -123,8 +123,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2332,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     iVar10 = this_01->field_0765;
     uVar21 = 0xffffffff;
@@ -139,8 +139,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2333,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -155,8 +155,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2336,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     this_01->field_00C9 = this_01->field_0008;
     this_01->field_00CD = 2;
@@ -175,7 +175,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_01->field_08BD = 0x7102;
     Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar19 = 0;
-    pcVar20 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar20 = (ccFntTy *)PTR_0081176c->field_0030;
     uVar18 = 0xffffffff;
     uVar14 = 0xfffffffe;
     puVar2 = (uint *)FUN_006b0140(0x26ac,HINSTANCE_00807618);
@@ -188,7 +188,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     pSVar6 = (StartServTy *)(this_01->field_1A5B + 0x3c);
     StartServTy::WrTextDDX
               (pSVar6,0,0,0x240,800,0x18,(uint *)pSVar6,0xfffffffe,0xffffffff,
-               *(ccFntTy **)(DAT_0081176c + 0x34),0);
+               PTR_0081176c->field_0034,0);
   }
   else if (param_1 == '\x01') {
     uVar21 = 0xffffffff;
@@ -205,8 +205,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x233c,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -221,8 +221,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x233d,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -237,8 +237,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x233e,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     iVar10 = this_01->field_0765;
     uVar21 = 0xffffffff;
@@ -253,8 +253,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x233f,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -269,8 +269,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2359,HINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar15,
-                        iVar16,iVar17);
+                       ((ccFntTy *)PTR_0081176c->field_0030,puVar2,iVar5,iVar12,cVar13,uVar14,iVar15
+                        ,iVar16,iVar17);
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     bVar7 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -312,7 +312,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     }
     Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar19 = 0;
-    pcVar20 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar20 = (ccFntTy *)PTR_0081176c->field_0030;
     uVar18 = 0xffffffff;
     uVar14 = 0xfffffffe;
     puVar2 = (uint *)FUN_006b0140(0x26b0,HINSTANCE_00807618);
@@ -328,7 +328,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
   if (this_01->field_1EE3 == '\0') {
-    pcVar20 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar20 = (ccFntTy *)PTR_0081176c->field_0030;
     uID = 0x26ac;
 LAB_005b4465:
     uVar19 = 0;
@@ -338,7 +338,7 @@ LAB_005b4465:
     StartServTy::WrTextDDX(this_04,0,0xe9,0x14,0x14c,0x18,puVar2,uVar14,uVar18,pcVar20,uVar19);
   }
   else if (this_01->field_1EE3 == '\x01') {
-    pcVar20 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar20 = (ccFntTy *)PTR_0081176c->field_0030;
     uID = 0x26b0;
     goto LAB_005b4465;
   }
@@ -349,8 +349,8 @@ LAB_005b4465:
   wsprintfA((LPSTR)(this_01->field_1A5B + 0x3c),pcVar3,uVar14,uVar9,uVar18);
   pSVar6 = (StartServTy *)(this_01->field_1A5B + 0x3c);
   StartServTy::WrTextDDX
-            (pSVar6,0,0,0x240,800,0x18,(uint *)pSVar6,0xfffffffe,0xffffffff,
-             *(ccFntTy **)(DAT_0081176c + 0x34),0);
+            (pSVar6,0,0,0x240,800,0x18,(uint *)pSVar6,0xfffffffe,0xffffffff,PTR_0081176c->field_0034
+             ,0);
 LAB_005b44f1:
   local_8 = local_8 & 0xffffff00;
   if (this_01->field_009A != '\0') {

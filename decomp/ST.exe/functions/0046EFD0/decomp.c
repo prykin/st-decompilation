@@ -30,14 +30,14 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,int *param_1)
   case CASE_1:
   case CASE_3:
     if (this->field_0544 != 0) {
-      iVar5 = thunk_FUN_004620f0((int *)this);
+      iVar5 = thunk_FUN_004620f0(this);
       return iVar5;
     }
   case CASE_7:
     iVar5 = sub_00460360(this);
     break;
   case CASE_2:
-    iVar5 = thunk_FUN_004620f0((int *)this);
+    iVar5 = thunk_FUN_004620f0(this);
     break;
   case CASE_4:
     iVar5 = *(int *)&this->field_0x550;

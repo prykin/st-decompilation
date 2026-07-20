@@ -5,6 +5,10 @@
    
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/HoloTy_Init_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+   
+   [STSwitchEnumApplier] Switch target field_0001 uses
+   /SubmarineTitans/Recovered/Enums/HoloTy_field_0001State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 uint __thiscall
@@ -80,14 +84,14 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
       uVar4 = *puVar3;
       if (-1 < (int)uVar4) {
         switch(this_00->field_0001) {
-        case 1:
-        case 3:
+        case CASE_1:
+        case CASE_3:
           FUN_006b2800((int)DAT_008075a8,uVar4,this_00->field_002B,DAT_00806734);
           uVar4 = this_00->field_0023;
           uVar5 = 0;
           break;
-        case 2:
-        case 4:
+        case CASE_2:
+        case CASE_4:
           FUN_006b2800((int)DAT_008075a8,uVar4,g_nWidth_00806730,this_00->field_002F);
           uVar5 = this_00->field_0027;
           uVar4 = 0;

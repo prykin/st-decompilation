@@ -46,7 +46,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   short local_22;
   short local_20;
   char local_1e [8];
-  int local_16;
+  AnonShape_004FF380_D63D7463 *local_16;
   int local_10;
   uint local_c;
   uint local_8;
@@ -82,11 +82,12 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     puVar13 = puVar13 + 1;
   }
   *(undefined2 *)puVar13 = 0;
-  local_16 = local_4c->field_0B4B;
-  Library::DKW::TBL::FUN_006afe40(&local_16,(uint *)local_4c->field_0B95);
+  local_16 = (AnonShape_004FF380_D63D7463 *)local_4c->field_0B4B;
+  Library::DKW::TBL::FUN_006afe40((int *)&local_16,(uint *)local_4c->field_0B95);
   *(undefined4 *)(this_00->field_0B95 + 0xc) = 0;
   this_00->field_0B4B = local_16;
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,1,(int *)&this_00->field_0B63);
+  STAllPlayersC::GetPanelInfo
+            (g_sTAllPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
     if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
@@ -126,7 +127,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     }
   }
   if (this_00->field_0B63 == '\x02') {
-    if ((*(int *)(this_00->field_0B95 + 0xc) != *(int *)(local_16 + 0xc)) ||
+    if ((*(int *)(this_00->field_0B95 + 0xc) != local_16->field_000C) ||
        (local_47 != this_00->field_0B64)) {
       SwitchTV(this_00,1);
     }
@@ -154,7 +155,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
         }
       }
     }
-    uVar6 = FUN_006b5a50(local_16,this_00->field_0B95);
+    uVar6 = FUN_006b5a50((AnonShape_006B5A50_BD82F60D *)local_16,
+                         (AnonShape_006B5A50_C145E640 *)this_00->field_0B95);
     if (uVar6 != 0) {
       Library::DKW::WGR::FUN_006b55f0
                 ((undefined4 *)this_00->field_0184,0,0,0,(byte *)this_00->field_0958,0,0,0,
@@ -175,13 +177,13 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       }
       local_10 = 1;
       local_c = 0;
-      local_8 = *(uint *)(local_16 + 0xc);
+      local_8 = local_16->field_000C;
       if (local_8 != 0) {
         iVar5 = this_00->field_0B95;
         uVar6 = *(uint *)(iVar5 + 0xc);
         do {
           if (local_c < local_8) {
-            piVar8 = (int *)(*(int *)(local_16 + 8) * local_c + *(int *)(local_16 + 0x1c));
+            piVar8 = (int *)(local_16->field_0008 * local_c + local_16->field_001C);
           }
           else {
             piVar8 = (int *)0x0;

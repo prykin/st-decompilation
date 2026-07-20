@@ -1,7 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::ShiftControls */
+   OptPanelTy::ShiftControls
+   
+   [STSwitchEnumApplier] Switch target field_01A4 uses
+   /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01A4State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14
+    */
 
 void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
 
@@ -57,10 +62,10 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
       switch(this_00->field_01A4) {
-      case 3:
-      case 4:
-      case 0xc:
-      case 0xe:
+      case CASE_3:
+      case CASE_4:
+      case CASE_C:
+      case CASE_E:
         puVar7 = (undefined4 *)&this_00->field_0x18;
         for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar7 = 0;

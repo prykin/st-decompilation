@@ -65,7 +65,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
       piVar7 = piVar7 + 2;
     } while (iVar5 < 4);
     if (fVar2 != _DAT_0079034c) {
-      puVar6 = FUN_006e6460(DAT_00807598,(int)this + (uint)param_1 * 4 + 0xdb7,1,0x97,0x96,0,1);
+      puVar6 = FUN_006e6460(PTR_00807598,(int)this + (uint)param_1 * 4 + 0xdb7,1,0x97,0x96,0,1);
       iVar5 = local_30[iVar8 * 2];
       *(undefined4 **)((int)this + 0xdb3) = puVar6;
       *(byte *)((int)this + 0xdcc) = param_1;
@@ -92,7 +92,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
     }
   }
   else {
-    FUN_006e65c0(DAT_00807598,*(undefined4 *)((int)this + (uint)param_1 * 4 + 0xdbf),
+    FUN_006e65c0(PTR_00807598,*(undefined4 *)((int)this + (uint)param_1 * 4 + 0xdbf),
                  (char)*(undefined2 *)(*(int *)((int)this + (uint)param_1 * 4 + 0x9c8) + 0x23),
                  param_2,param_3,5,5,1);
     thunk_FUN_005252c0((param_1 != 0) + CASE_B6);

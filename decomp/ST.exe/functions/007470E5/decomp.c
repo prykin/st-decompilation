@@ -1,5 +1,5 @@
 
-int FUN_007470e5(int param_1)
+int FUN_007470e5(AnonShape_007470E5_0A8F5E67 *param_1)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
@@ -8,14 +8,14 @@ int FUN_007470e5(int param_1)
   int iVar3;
   int iVar4;
   
-  lpCriticalSection = *(LPCRITICAL_SECTION *)(param_1 + 0x2c);
+  lpCriticalSection = param_1->field_002C;
   EnterCriticalSection(lpCriticalSection);
   iVar4 = 0;
-  if (*(int *)(param_1 + 8) == 0) {
-    iVar1 = (**(code **)(*(int *)(param_1 + -0xc) + 0x18))();
+  if (param_1->field_0008 == 0) {
+    iVar1 = (**(code **)(*(int *)&param_1[-1].field_0x24 + 0x18))();
     if (0 < iVar1) {
       do {
-        piVar2 = (int *)(**(code **)(*(int *)(param_1 + -0xc) + 0x1c))(iVar4);
+        piVar2 = (int *)(**(code **)(*(int *)&param_1[-1].field_0x24 + 0x1c))(iVar4);
         if ((piVar2[6] != 0) && (iVar3 = (**(code **)(*piVar2 + 0x14))(), iVar3 < 0)) {
           LeaveCriticalSection(lpCriticalSection);
           return iVar3;
@@ -24,7 +24,7 @@ int FUN_007470e5(int param_1)
       } while (iVar4 < iVar1);
     }
   }
-  *(undefined4 *)(param_1 + 8) = 1;
+  param_1->field_0008 = 1;
   LeaveCriticalSection(lpCriticalSection);
   return 0;
 }

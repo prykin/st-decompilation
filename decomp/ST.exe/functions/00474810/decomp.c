@@ -22,7 +22,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
     return -(uint)(iVar2 != 0);
   }
   if (iVar2 == 2) {
-    FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&param_1);
+    FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&param_1);
     if ((param_1 != (int *)0x0) && (param_1[6] == this->field_058E)) {
       (**(code **)(*param_1 + 0xac))(this->field_0018);
       iVar2 = (*this->vtable->vfunc_D8)();

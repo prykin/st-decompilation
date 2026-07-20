@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 local_54 [18];
+  AnonShape_007109F0_BD33A2FF local_54;
   int local_c;
   int local_8;
   
@@ -19,8 +19,8 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
      (*(int *)((int)this + 8) <= param_1)) {
     return 0xffffffcc;
   }
-  ccFntTy::Save(*(ccFntTy **)this,local_54);
-  FUN_007109f0(*(void **)this,(undefined4 *)((int)this + 0x10));
+  ccFntTy::Save(*(ccFntTy **)this,(undefined4 *)&local_54);
+  FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
   *(undefined4 *)((int)this + 0x90) = *(undefined4 *)((int)this + 0x58);
   *(undefined4 *)((int)this + 0x8c) = *(undefined4 *)((int)this + 0x58);
   iVar1 = *(int *)this;
@@ -71,7 +71,7 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
       }
     }
   }
-  FUN_007109f0(*(void **)this,local_54);
+  FUN_007109f0(*(void **)this,&local_54);
   return 0;
 }
 

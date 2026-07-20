@@ -2,303 +2,325 @@
 void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
 
 {
-  undefined4 uVar1;
-  uint *puVar2;
-  uint uVar3;
-  int *piVar4;
+  AnonShape_00444E70_E59ECBC3 *pAVar1;
+  undefined4 uVar2;
+  uint *puVar3;
+  uint uVar4;
   int iVar5;
   int iVar6;
-  uint uVar7;
-  undefined4 *puVar8;
-  int *piVar9;
-  int *piVar10;
+  int *piVar7;
+  uint uVar8;
+  undefined4 *puVar9;
+  AnonShape_00444E70_E59ECBC3 *pAVar10;
   undefined4 *puVar11;
   undefined4 local_20;
   undefined4 local_1c;
   undefined4 local_18;
-  int *local_14;
-  int *local_10;
+  AnonShape_00444E70_8EFB8E54 *local_14;
+  AnonShape_00444E70_523E22DE *local_10;
   undefined4 local_c;
-  int *local_8;
+  AnonShape_00444E70_E59ECBC3 *local_8;
   
   iVar5 = 0;
-  piVar4 = param_1 + 2;
+  pAVar10 = (AnonShape_00444E70_E59ECBC3 *)(param_1 + 2);
   local_c = 0;
   *(undefined4 *)((int)this + 0x1c) = *param_1;
   do {
-    local_8 = piVar4;
-    if (0 < piVar4[-1]) {
+    iVar6 = *(int *)((int)&pAVar10[-1].field_0A73 + 1);
+    local_8 = pAVar10;
+    if (0 < iVar6) {
       Library::DKW::TBL::FUN_006ae140
-                (*(uint **)((int)&DAT_007f4e24 + iVar5 + 1),piVar4[-1] - 1,&local_c);
+                (*(uint **)((int)&g_playerRuntime[0].groups + iVar5),iVar6 - 1,&local_c);
     }
-    if (0 < *piVar4) {
-      Library::DKW::TBL::FUN_006ae140(*(uint **)((int)&DAT_007f4e29 + iVar5),*piVar4 - 1,&local_c);
+    if (0 < *(int *)pAVar10) {
+      Library::DKW::TBL::FUN_006ae140
+                (*(uint **)((int)&g_playerRuntime[0].objects + iVar5),*(int *)pAVar10 - 1,&local_c);
     }
-    local_10 = piVar4 + 1;
+    local_10 = (AnonShape_00444E70_523E22DE *)&pAVar10->field_0x4;
     iVar6 = 0;
     do {
-      if (*local_10 == -1) {
-        *(undefined4 *)((int)&DAT_007f4e2f + iVar5 + iVar6) = 0;
+      if (*(int *)local_10 == -1) {
+        *(undefined4 *)(iVar6 + 0x7f4e2f + iVar5) = 0;
       }
       else {
-        uVar1 = FUN_006b0060((uint *)0x0,(uint *)(*local_10 + (int)param_1));
-        *(undefined4 *)((int)&DAT_007f4e2f + iVar5 + iVar6) = uVar1;
+        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)local_10 + (int)param_1));
+        *(undefined4 *)(iVar6 + 0x7f4e2f + iVar5) = uVar2;
       }
-      piVar10 = local_8;
+      pAVar1 = local_8;
       iVar6 = iVar6 + 4;
-      local_10 = local_10 + 2;
+      local_10 = (AnonShape_00444E70_523E22DE *)((int)&local_10->field_0006 + 2);
     } while (iVar6 < 0x10);
-    *(int *)((int)&DAT_007f4e3f + iVar5) = piVar4[9];
-    *(int *)((int)&DAT_007f4e43 + iVar5) = piVar4[10];
-    *(int *)((int)&DAT_007f4e47 + iVar5) = piVar4[0xb];
-    local_14 = (int *)0x5;
-    piVar4 = piVar4 + 0xc;
-    piVar9 = (int *)((int)&DAT_007f4e4b + iVar5);
+    *(undefined4 *)((int)&g_playerRuntime[0].field19_0x1f + iVar5) =
+         *(undefined4 *)&pAVar10->field_0x24;
+    *(undefined4 *)((int)&g_playerRuntime[0].field20_0x23 + iVar5) =
+         *(undefined4 *)&pAVar10->field_0x28;
+    *(undefined4 *)((int)&g_playerRuntime[0].field21_0x27 + iVar5) =
+         *(undefined4 *)&pAVar10->field_0x2c;
+    local_14 = (AnonShape_00444E70_8EFB8E54 *)0x5;
+    puVar9 = (undefined4 *)&pAVar10->field_0x30;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field22_0x2b + iVar5);
     for (iVar6 = 0x4e; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar9 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar9 = piVar9 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    piVar4 = (int *)((int)&DAT_007f4f87 + iVar5);
-    local_10 = local_8 + 0x5b;
+    puVar9 = (undefined4 *)((int)&g_playerRuntime[0].field327_0x167 + iVar5);
+    local_10 = (AnonShape_00444E70_523E22DE *)&local_8->field_0x16c;
     do {
-      piVar4[-1] = local_10[-1];
-      *piVar4 = *local_10;
-      *(short *)(piVar4 + 1) = (short)local_10[1];
-      *(undefined2 *)((int)piVar4 + 10) = *(undefined2 *)((int)local_10 + 0xe);
-      if (*(int *)((int)local_10 + 6) == -1) {
-        *(undefined4 *)((int)piVar4 + 6) = 0;
+      puVar9[-1] = *(undefined4 *)&local_10[-1].field_0x70;
+      *puVar9 = *(undefined4 *)local_10;
+      *(undefined2 *)(puVar9 + 1) = *(undefined2 *)&local_10->field_0x4;
+      *(undefined2 *)((int)puVar9 + 10) = local_10->field_000E;
+      if (local_10->field_0006 == -1) {
+        *(undefined4 *)((int)puVar9 + 6) = 0;
       }
       else {
-        uVar1 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)local_10 + 6) + (int)param_1));
-        *(undefined4 *)((int)piVar4 + 6) = uVar1;
+        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(local_10->field_0006 + (int)param_1));
+        *(undefined4 *)((int)puVar9 + 6) = uVar2;
       }
-      piVar4[0x13] = local_10[0x18];
-      piVar4[0x14] = local_10[0x19];
-      *(short *)(piVar4 + 0x15) = (short)local_10[0x1a];
-      *(undefined2 *)((int)piVar4 + 0x5a) = *(undefined2 *)((int)local_10 + 0x72);
-      if (*(int *)((int)local_10 + 0x6a) == -1) {
-        *(undefined4 *)((int)piVar4 + 0x56) = 0;
+      puVar9[0x13] = *(undefined4 *)&local_10->field_0x60;
+      puVar9[0x14] = *(undefined4 *)&local_10->field_0x64;
+      *(undefined2 *)(puVar9 + 0x15) = *(undefined2 *)&local_10->field_0x68;
+      *(undefined2 *)((int)puVar9 + 0x5a) = local_10->field_0072;
+      if (local_10->field_006A == -1) {
+        *(undefined4 *)((int)puVar9 + 0x56) = 0;
       }
       else {
-        uVar1 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)local_10 + 0x6a) + (int)param_1));
-        *(undefined4 *)((int)piVar4 + 0x56) = uVar1;
+        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(local_10->field_006A + (int)param_1));
+        *(undefined4 *)((int)puVar9 + 0x56) = uVar2;
       }
-      local_10 = local_10 + 5;
-      piVar4 = piVar4 + 4;
-      local_14 = (int *)((int)local_14 + -1);
-    } while (local_14 != (int *)0x0);
-    local_14 = piVar10 + 0x8e;
-    *(int *)((int)&DAT_007f5023 + iVar5) = piVar10[0x8c];
-    piVar4 = (int *)((int)&DAT_007f502b + iVar5);
-    local_10 = (int *)0xa;
+      local_10 = (AnonShape_00444E70_523E22DE *)&local_10->field_0x14;
+      puVar9 = puVar9 + 4;
+      local_14 = (AnonShape_00444E70_8EFB8E54 *)((int)&local_14[-1].field_000E + 1);
+    } while (local_14 != (AnonShape_00444E70_8EFB8E54 *)0x0);
+    local_14 = (AnonShape_00444E70_8EFB8E54 *)&pAVar1->field_0x238;
+    *(undefined4 *)((int)&g_playerRuntime[0].field442_0x203 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x230;
+    puVar9 = (undefined4 *)((int)&g_playerRuntime[0].field444_0x20b + iVar5);
+    local_10 = (AnonShape_00444E70_523E22DE *)0xa;
     do {
-      piVar4[-1] = local_14[-1];
-      *piVar4 = *local_14;
-      *(short *)(piVar4 + 1) = (short)local_14[1];
-      *(undefined2 *)((int)piVar4 + 10) = *(undefined2 *)((int)local_14 + 0xe);
-      if (*(int *)((int)local_14 + 6) == -1) {
-        *(undefined4 *)((int)piVar4 + 6) = 0;
+      puVar9[-1] = *(undefined4 *)&local_14[-1].field_0xc;
+      *puVar9 = *(undefined4 *)local_14;
+      *(undefined2 *)(puVar9 + 1) = *(undefined2 *)&local_14->field_0x4;
+      *(undefined2 *)((int)puVar9 + 10) = local_14->field_000E;
+      if (local_14->field_0006 == -1) {
+        *(undefined4 *)((int)puVar9 + 6) = 0;
       }
       else {
-        uVar1 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)local_14 + 6) + (int)param_1));
-        *(undefined4 *)((int)piVar4 + 6) = uVar1;
+        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(local_14->field_0006 + (int)param_1));
+        *(undefined4 *)((int)puVar9 + 6) = uVar2;
       }
-      local_14 = local_14 + 5;
-      piVar4 = piVar4 + 4;
-      local_10 = (int *)((int)local_10 + -1);
-    } while (local_10 != (int *)0x0);
-    *(int *)((int)&DAT_007f50c7 + iVar5) = piVar10[0xbf];
-    *(int *)((int)&DAT_007f50cb + iVar5) = piVar10[0xc0];
-    *(int *)((int)&DAT_007f50cf + iVar5) = piVar10[0xc1];
-    *(int *)((int)&DAT_007f50d3 + iVar5) = piVar10[0xc2];
-    *(int *)((int)&DAT_007f50d7 + iVar5) = piVar10[0xc3];
-    *(int *)((int)&DAT_007f50db + iVar5) = piVar10[0xc4];
-    *(int *)((int)&DAT_007f50df + iVar5) = piVar10[0xc5];
-    *(int *)((int)&DAT_007f50e3 + iVar5) = piVar10[0xc6];
-    *(int *)((int)&DAT_007f50e7 + iVar5) = piVar10[199];
-    *(int *)((int)&DAT_007f50eb + iVar5) = piVar10[200];
-    *(int *)((int)&DAT_007f50ef + iVar5) = piVar10[0xc9];
-    *(int *)((int)&DAT_007f50f3 + iVar5) = piVar10[0xca];
-    *(int *)((int)&DAT_007f50f7 + iVar5) = piVar10[0xcb];
-    *(int *)((int)&DAT_007f50fb + iVar5) = piVar10[0xcc];
-    *(int *)((int)&DAT_007f50ff + iVar5) = piVar10[0xcd];
-    *(int *)((int)&DAT_007f5103 + iVar5) = piVar10[0xce];
-    piVar4 = piVar10 + 0xcf;
-    piVar10 = (int *)((int)&DAT_007f510b + iVar5);
+      local_14 = (AnonShape_00444E70_8EFB8E54 *)&local_14[1].field_0x4;
+      puVar9 = puVar9 + 4;
+      local_10 = (AnonShape_00444E70_523E22DE *)((int)&local_10[-1].field_0072 + 1);
+    } while (local_10 != (AnonShape_00444E70_523E22DE *)0x0);
+    *(undefined4 *)((int)&g_playerRuntime[0].field581_0x2a7 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x2fc;
+    *(undefined4 *)((int)&g_playerRuntime[0].field582_0x2ab + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x300;
+    *(undefined4 *)((int)&g_playerRuntime[0].field583_0x2af + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x304;
+    *(undefined4 *)((int)&g_playerRuntime[0].field584_0x2b3 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x308;
+    *(undefined4 *)((int)&g_playerRuntime[0].field585_0x2b7 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x30c;
+    *(undefined4 *)((int)&g_playerRuntime[0].field586_0x2bb + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x310;
+    *(undefined4 *)((int)&g_playerRuntime[0].field587_0x2bf + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x314;
+    *(undefined4 *)((int)&g_playerRuntime[0].field588_0x2c3 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x318;
+    *(undefined4 *)((int)&g_playerRuntime[0].field589_0x2c7 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x31c;
+    *(undefined4 *)((int)&g_playerRuntime[0].field590_0x2cb + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x320;
+    *(undefined4 *)((int)&g_playerRuntime[0].field591_0x2cf + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x324;
+    *(undefined4 *)((int)&g_playerRuntime[0].field592_0x2d3 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x328;
+    *(undefined4 *)((int)&g_playerRuntime[0].field593_0x2d7 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x32c;
+    *(undefined4 *)((int)&g_playerRuntime[0].field594_0x2db + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x330;
+    *(undefined4 *)((int)&g_playerRuntime[0].field595_0x2df + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x334;
+    *(undefined4 *)((int)&g_playerRuntime[0].field596_0x2e3 + iVar5) =
+         *(undefined4 *)&pAVar1->field_0x338;
+    puVar9 = (undefined4 *)&pAVar1->field_0x33c;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field598_0x2eb + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar10 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    piVar4 = local_8 + 0xd4;
-    piVar10 = (int *)((int)&DAT_007f511f + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0x350;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field612_0x2ff + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar10 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    piVar4 = local_8 + 0xd9;
-    piVar10 = (int *)((int)&DAT_007f5133 + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0x364;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field626_0x313 + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar10 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    piVar4 = local_8 + 0xde;
-    piVar10 = (int *)((int)&DAT_007f5147 + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0x378;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field640_0x327 + iVar5);
     for (iVar6 = 0x9b; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar10 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    piVar4 = local_8 + 0x179;
-    piVar10 = (int *)((int)&DAT_007f53b3 + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0x5e4;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field1254_0x593 + iVar5);
     for (iVar6 = 0x6a; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar10 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    piVar4 = local_8 + 0x1e3;
-    piVar10 = (int *)((int)&DAT_007f555b + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0x78c;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field1672_0x73b + iVar5);
     for (iVar6 = 0x26; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar10 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
-    *(short *)piVar10 = (short)*piVar4;
-    *(undefined1 *)((int)piVar10 + 2) = *(undefined1 *)((int)piVar4 + 2);
-    *(undefined4 *)((int)&DAT_007f55f6 + iVar5) = *(undefined4 *)((int)local_8 + 0x827);
-    puVar8 = (undefined4 *)((int)local_8 + 0x82b);
-    puVar11 = (undefined4 *)((int)&DAT_007f55fa + iVar5);
+    *(undefined2 *)puVar11 = *(undefined2 *)puVar9;
+    *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar9 + 2);
+    *(undefined4 *)((int)&g_playerRuntime[0].field1823_0x7d6 + iVar5) = local_8->field_0827;
+    puVar9 = (undefined4 *)&local_8->field_0x82b;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field1824_0x7da + iVar5);
     for (iVar6 = 0x66; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar11 = puVar11 + 1;
     }
-    *(undefined4 *)((int)&DAT_007f5792 + iVar5) = *(undefined4 *)((int)local_8 + 0x9c3);
-    *(undefined4 *)((int)&DAT_007f5796 + iVar5) = *(undefined4 *)((int)local_8 + 0x9c7);
-    puVar8 = (undefined4 *)((int)local_8 + 0x9cb);
-    puVar11 = (undefined4 *)((int)&DAT_007f579a + iVar5);
+    *(undefined4 *)((int)&g_playerRuntime[0].field2226_0x972 + iVar5) = local_8->field_09C3;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2227_0x976 + iVar5) = local_8->field_09C7;
+    puVar9 = (undefined4 *)&local_8->field_0x9cb;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2228_0x97a + iVar5);
     for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar11 = puVar11 + 1;
     }
-    *(undefined4 *)((int)&DAT_007f57b6 + iVar5) = *(undefined4 *)((int)local_8 + 0x9e3);
-    *(undefined4 *)((int)&DAT_007f57ba + iVar5) = *(undefined4 *)((int)local_8 + 0x9e7);
-    *(undefined4 *)((int)&DAT_007f57be + iVar5) = *(undefined4 *)((int)local_8 + 0x9eb);
-    local_14 = (int *)0x6;
-    puVar8 = (undefined4 *)((int)local_8 + 0x9ef);
-    puVar11 = (undefined4 *)((int)&DAT_007f57c2 + iVar5);
+    *(undefined4 *)((int)&g_playerRuntime[0].field2250_0x996 + iVar5) = local_8->field_09E3;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2251_0x99a + iVar5) = local_8->field_09E7;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2252_0x99e + iVar5) = local_8->field_09EB;
+    local_14 = (AnonShape_00444E70_8EFB8E54 *)0x6;
+    puVar9 = (undefined4 *)&local_8->field_0x9ef;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2253_0x9a2 + iVar5);
     for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar11 = puVar11 + 1;
     }
-    puVar2 = (uint *)(&DAT_007f560e + iVar5);
-    piVar4 = (int *)((int)local_8 + 0xa77);
-    local_10 = (int *)0x0;
+    puVar3 = (uint *)(&g_playerRuntime[0].field_0x7ee + iVar5);
+    piVar7 = (int *)&local_8->field_0xa77;
+    local_10 = (AnonShape_00444E70_523E22DE *)0x0;
     do {
-      FUN_006b0060(puVar2,(uint *)(*piVar4 + (int)param_1));
-      piVar4 = piVar4 + 2;
-      puVar2 = puVar2 + 0x11;
-      local_14 = (int *)((int)local_14 + -1);
-    } while (local_14 != (int *)0x0);
-    puVar8 = (undefined4 *)((int)local_8 + 0xa17);
-    puVar11 = (undefined4 *)((int)&DAT_007f582e + iVar5);
+      FUN_006b0060(puVar3,(uint *)(*piVar7 + (int)param_1));
+      piVar7 = piVar7 + 2;
+      puVar3 = puVar3 + 0x11;
+      local_14 = (AnonShape_00444E70_8EFB8E54 *)((int)&local_14[-1].field_000E + 1);
+    } while (local_14 != (AnonShape_00444E70_8EFB8E54 *)0x0);
+    puVar9 = (undefined4 *)&local_8->field_0xa17;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2298_0xa0e + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar11 = puVar11 + 1;
     }
-    puVar8 = (undefined4 *)((int)local_8 + 0xa2b);
-    puVar11 = (undefined4 *)((int)&DAT_007f5842 + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0xa2b;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2303_0xa22 + iVar5);
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar11 = puVar11 + 1;
     }
-    puVar8 = (undefined4 *)((int)local_8 + 0xa4b);
-    puVar11 = (undefined4 *)((int)&DAT_007f5862 + iVar5);
+    puVar9 = (undefined4 *)&local_8->field_0xa4b;
+    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2329_0xa42 + iVar5);
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar11 = puVar11 + 1;
     }
-    *(undefined4 *)((int)&DAT_007f581a + iVar5) = 0;
-    *(undefined4 *)((int)&DAT_007f581e + iVar5) = 0;
-    *(undefined4 *)((int)&DAT_007f5822 + iVar5) = 0;
-    *(undefined4 *)((int)&DAT_007f5826 + iVar5) = 0;
-    *(undefined4 *)((int)&DAT_007f582a + iVar5) = *(undefined4 *)((int)local_8 + 0xa73);
-    if (*(int *)((int)local_8 + 0xa6b) == -1) {
-      *(undefined4 *)((int)&DAT_007f5816 + iVar5) = 0;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2293_0x9fa + iVar5) = 0;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2294_0x9fe + iVar5) = 0;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2295_0xa02 + iVar5) = 0;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2296_0xa06 + iVar5) = 0;
+    *(undefined4 *)((int)&g_playerRuntime[0].field2297_0xa0a + iVar5) = local_8->field_0A73;
+    if (local_8->field_0A6B == -1) {
+      *(undefined4 *)((int)&g_playerRuntime[0].pgPairs + iVar5) = 0;
     }
     else {
-      uVar7 = *(uint *)((int)local_8 + 0xa6f) / 0x18;
-      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar7,0xc,1);
-      *(uint **)((int)&DAT_007f5816 + iVar5) = puVar2;
-      local_10 = (int *)0x0;
-      if (uVar7 != 0) {
-        piVar4 = (int *)((int)param_1 + *(int *)((int)local_8 + 0xa6b) + 0x10);
+      uVar8 = local_8->field_0A6F / 0x18;
+      puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar8,0xc,1);
+      *(uint **)((int)&g_playerRuntime[0].pgPairs + iVar5) = puVar3;
+      local_10 = (AnonShape_00444E70_523E22DE *)0x0;
+      if (uVar8 != 0) {
+        piVar7 = (int *)((int)param_1 + local_8->field_0A6B + 0x10);
         do {
           local_20 = 0;
-          if (piVar4[-4] != -1) {
-            local_20 = FUN_006b0060((uint *)0x0,(uint *)(piVar4[-4] + (int)param_1));
+          if (piVar7[-4] != -1) {
+            local_20 = FUN_006b0060((uint *)0x0,(uint *)(piVar7[-4] + (int)param_1));
           }
           local_1c = 0;
-          if (piVar4[-2] != -1) {
-            local_1c = FUN_006b0060((uint *)0x0,(uint *)(piVar4[-2] + (int)param_1));
+          if (piVar7[-2] != -1) {
+            local_1c = FUN_006b0060((uint *)0x0,(uint *)(piVar7[-2] + (int)param_1));
           }
           local_18 = 0;
-          if (*piVar4 != -1) {
-            local_18 = FUN_006b0060((uint *)0x0,(uint *)(*piVar4 + (int)param_1));
+          if (*piVar7 != -1) {
+            local_18 = FUN_006b0060((uint *)0x0,(uint *)(*piVar7 + (int)param_1));
           }
           Library::DKW::TBL::FUN_006ae140
-                    (*(uint **)((int)&DAT_007f5816 + iVar5),(uint)local_10,&local_20);
-          piVar4 = piVar4 + 6;
-          local_10 = (int *)((int)local_10 + 1);
-        } while ((int)local_10 < (int)uVar7);
+                    (*(uint **)((int)&g_playerRuntime[0].pgPairs + iVar5),(uint)local_10,&local_20);
+          piVar7 = piVar7 + 6;
+          local_10 = (AnonShape_00444E70_523E22DE *)&local_10->field_0x1;
+        } while ((int)local_10 < (int)uVar8);
       }
     }
     iVar5 = iVar5 + 0xa62;
-    piVar4 = (int *)((int)local_8 + 0xaab);
+    pAVar10 = (AnonShape_00444E70_E59ECBC3 *)&local_8[1].field_0x33;
   } while (iVar5 < 0x5310);
-  puVar8 = param_1 + 0x1557;
+  puVar9 = param_1 + 0x1557;
   puVar11 = &DAT_007fa138;
   for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar11 = *puVar8;
-    puVar8 = puVar8 + 1;
+    *puVar11 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar11 = puVar11 + 1;
   }
-  local_8 = piVar4;
+  local_8 = pAVar10;
   if (0 < (int)param_1[0x155d]) {
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa154,param_1[0x155d] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa154->flags,param_1[0x155d] - 1,&local_c);
   }
   if (0 < (int)param_1[0x155e]) {
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa158,param_1[0x155e] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa158->flags,param_1[0x155e] - 1,&local_c);
   }
   if (0 < (int)param_1[0x155f]) {
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa15c,param_1[0x155f] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa15c->flags,param_1[0x155f] - 1,&local_c);
   }
   if (0 < (int)param_1[0x1560]) {
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa160,param_1[0x1560] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa160->flags,param_1[0x1560] - 1,&local_c);
   }
   if (0 < (int)param_1[0x1561]) {
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa164,param_1[0x1561] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa164->flags,param_1[0x1561] - 1,&local_c);
   }
   DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1[0x1563]);
-  uVar7 = param_1[0x1563];
-  puVar8 = (undefined4 *)(param_1[0x1562] + (int)param_1);
+  uVar8 = param_1[0x1563];
+  puVar9 = (undefined4 *)(param_1[0x1562] + (int)param_1);
   puVar11 = DAT_007fa168;
-  for (uVar3 = uVar7 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *puVar11 = *puVar8;
-    puVar8 = puVar8 + 1;
+  for (uVar4 = uVar8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *puVar11 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar11 = puVar11 + 1;
   }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined1 *)puVar11 = *(undefined1 *)puVar8;
-    puVar8 = (undefined4 *)((int)puVar8 + 1);
+  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+    *(undefined1 *)puVar11 = *(undefined1 *)puVar9;
+    puVar9 = (undefined4 *)((int)puVar9 + 1);
     puVar11 = (undefined4 *)((int)puVar11 + 1);
   }
   return;

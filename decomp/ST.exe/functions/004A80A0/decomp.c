@@ -7,7 +7,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  uint *groupContent;
+  DArrayTy *groupContent;
   uint uVar2;
   int iVar3;
   undefined4 extraout_EDX;
@@ -19,15 +19,15 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   short local_1a;
   short local_18;
   int local_c;
-  uint *local_8;
+  DArrayTy *local_8;
   
   iVar3 = *(int *)(this->field_022E + 0xc);
   local_c = iVar3;
-  local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   uVar4 = 0;
   if (0 < iVar3) {
     do {
-      FUN_006acc70(this->field_022E,uVar4,&local_34);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022E,uVar4,&local_34);
       if ((short)local_30[0] != -1) {
         local_34 = 0;
         local_22 = 0;
@@ -48,17 +48,18 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0x16ca);
         }
-        Library::DKW::TBL::FUN_006ae1c0(local_8,local_30);
+        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,local_30);
         *(undefined4 *)(uVar2 + 0x493) = 1;
         iVar3 = local_c;
       }
       uVar4 = uVar4 + 1;
     } while ((int)uVar4 < iVar3);
   }
-  FUN_006acc70(this->field_022A,this->field_0232,(undefined4 *)&local_1c);
+  FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022A,this->field_0232,
+               (undefined4 *)&local_1c);
   groupContent = local_8;
-  if (local_8[3] != 0) {
-    InitWay(this,(int)local_8,(int)local_1c,(int)local_1a,(int)local_18);
+  if (local_8->count != 0) {
+    InitWay(this,local_8,(int)local_1c,(int)local_1a,(int)local_18);
   }
   FUN_006ae110((byte *)groupContent);
   return;

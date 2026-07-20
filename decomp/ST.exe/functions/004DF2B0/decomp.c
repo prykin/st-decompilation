@@ -1,24 +1,24 @@
 
-undefined4 __fastcall FUN_004df2b0(int param_1)
+undefined4 __fastcall FUN_004df2b0(AnonShape_004DF2B0_8C37D68B *param_1)
 
 {
   undefined4 uVar1;
   
-  if (*(char *)((int)&DAT_008087c4 + *(int *)(param_1 + 0x24) * 0x51 + 3) == '\x01') {
-    *(undefined4 *)(param_1 + 0x4d8) = 10000;
-    *(undefined4 *)(param_1 + 0x4d0) = 2;
-    *(undefined4 *)(param_1 + 0x4d4) = 0;
-    uVar1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    *(undefined4 *)(param_1 + 0x4e0) = 1;
-    *(undefined4 *)(param_1 + 0x4dc) = uVar1;
+  if (*(char *)((int)&DAT_008087c4 + param_1->field_0024 * 0x51 + 3) == '\x01') {
+    param_1->field_04D8 = 10000;
+    param_1->field_04D0 = 2;
+    param_1->field_04D4 = 0;
+    uVar1 = PTR_00802a38->field_00E4;
+    param_1->field_04E0 = 1;
+    param_1->field_04DC = uVar1;
     return 0;
   }
-  *(undefined4 *)(param_1 + 0x4d0) = 2;
-  *(undefined4 *)(param_1 + 0x4d8) = 0;
-  *(undefined4 *)(param_1 + 0x4d4) = 0;
-  uVar1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-  *(undefined4 *)(param_1 + 0x4e0) = 0;
-  *(undefined4 *)(param_1 + 0x4dc) = uVar1;
+  param_1->field_04D0 = 2;
+  param_1->field_04D8 = 0;
+  param_1->field_04D4 = 0;
+  uVar1 = PTR_00802a38->field_00E4;
+  param_1->field_04E0 = 0;
+  param_1->field_04DC = uVar1;
   return 0;
 }
 

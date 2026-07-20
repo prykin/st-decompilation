@@ -3,7 +3,7 @@
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GiveObjByGrpNum */
 
-void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
+void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *param_1)
 
 {
   uint uVar1;
@@ -30,10 +30,11 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    if ((param_1 != 0) && (uVar1 = *(uint *)(param_1 + 0xc), uVar6 = extraout_EDX, uVar1 != 0)) {
+    if ((param_1 != (DArrayTy *)0x0) && (uVar1 = param_1->count, uVar6 = extraout_EDX, uVar1 != 0))
+    {
       while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
-        if (uVar1 < *(uint *)(param_1 + 0xc)) {
-          puVar4 = (undefined2 *)(*(int *)(param_1 + 8) * uVar1 + *(int *)(param_1 + 0x1c));
+        if (uVar1 < param_1->count) {
+          puVar4 = (undefined2 *)(param_1->elementSize * uVar1 + (int)param_1->data);
         }
         else {
           puVar4 = (undefined2 *)0x0;
@@ -61,7 +62,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
              (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,(short)objPtr[0x207]),
              uVar6 = extraout_EDX_01, this_00 != (AiFltClassTy *)0x0)) {
             AiFltClassTy::_AddObjFlt(this_00,(uint)objPtr,0);
-            FUN_006b0c70(param_1,uVar1);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,uVar1);
             uVar6 = extraout_EDX_02;
           }
         }

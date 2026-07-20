@@ -1,5 +1,5 @@
 
-int * __fastcall FUN_00586320(int param_1)
+int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
 
 {
   byte bVar1;
@@ -28,7 +28,7 @@ int * __fastcall FUN_00586320(int param_1)
   int local_14;
   int local_c;
   
-  sVar12 = *(short *)(param_1 + 0x41);
+  sVar12 = param_1->field_0041;
   if (sVar12 < 0) {
     iVar13 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                     (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;
@@ -37,7 +37,7 @@ int * __fastcall FUN_00586320(int param_1)
     iVar13 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                          (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f));
   }
-  sVar12 = *(short *)(param_1 + 0x43);
+  sVar12 = param_1->field_0043;
   if (sVar12 < 0) {
     local_14 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                       (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;
@@ -46,9 +46,9 @@ int * __fastcall FUN_00586320(int param_1)
     local_14 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                            (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f));
   }
-  *(undefined2 *)(param_1 + 0x273) = 0;
-  *(undefined4 *)(param_1 + 0x26f) = 0xff;
-  *(undefined4 *)(param_1 + 0x231) = 1;
+  param_1->field_0273 = 0;
+  param_1->field_026F = 0xff;
+  param_1->field_0231 = 1;
   iVar9 = iVar13 + 5;
   local_40 = iVar13 + -5;
   if (SHORT_007fb240 <= iVar9) {
@@ -80,11 +80,11 @@ int * __fastcall FUN_00586320(int param_1)
             piVar4 != (int *)0x0 &&
             (((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
              (iVar7 = (**(code **)(*piVar4 + 0xf0))(), iVar7 != 0)))) && ((uint)piVar4[9] < 8)))) &&
-         (((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8)) &&
-          (iVar7 = (**(code **)(*piVar4 + 0xf8))(), iVar7 != 0)))) {
+         (((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8))
+          && (iVar7 = (**(code **)(*piVar4 + 0xf8))(), iVar7 != 0)))) {
         bVar1 = *(byte *)(piVar4 + 9);
-        bVar2 = *(byte *)(param_1 + 0x24);
-        iVar7 = *(int *)(param_1 + 0x10);
+        bVar2 = param_1->field_0024;
+        iVar7 = param_1->field_0010;
         if (*(char *)(iVar7 + 0x146f) == '\0') {
           if (bVar1 == bVar2) {
             iVar7 = 0;
@@ -117,10 +117,10 @@ int * __fastcall FUN_00586320(int param_1)
                    *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar7);
         }
         if (bVar14) {
-          *(undefined4 *)(param_1 + 0x231) = 0;
-          *(undefined4 *)(param_1 + 599) = 0;
-          *(undefined2 *)(param_1 + 0x273) = *(undefined2 *)((int)piVar4 + 0x32);
-          *(int *)(param_1 + 0x26f) = piVar4[9];
+          param_1->field_0231 = 0;
+          param_1->field_0257 = 0;
+          param_1->field_0273 = *(undefined2 *)((int)piVar4 + 0x32);
+          param_1->field_026F = piVar4[9];
           return piVar4;
         }
       }
@@ -179,10 +179,11 @@ LAB_00586713:
                piVar4 != (int *)0x0)))) &&
              (((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
               ((iVar7 = (**(code **)(*piVar4 + 0xf0))(), iVar7 != 0 && ((uint)piVar4[9] < 8))))))))
-           && ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8)))) {
+           && ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+               ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8)))) {
           bVar1 = *(byte *)(piVar4 + 9);
-          bVar2 = *(byte *)(param_1 + 0x24);
-          iVar7 = *(int *)(param_1 + 0x10);
+          bVar2 = param_1->field_0024;
+          iVar7 = param_1->field_0010;
           if (*(char *)(iVar7 + 0x146f) == '\0') {
             if (bVar1 == bVar2) {
               iVar7 = 0;
@@ -217,10 +218,10 @@ LAB_00586713:
                      *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar7);
           }
           if ((bVar14) && (iVar7 = (**(code **)(*piVar4 + 0xf8))(), iVar7 != 0)) {
-            *(undefined4 *)(param_1 + 0x231) = 0;
-            *(undefined4 *)(param_1 + 599) = 0;
-            *(undefined2 *)(param_1 + 0x273) = *(undefined2 *)((int)piVar4 + 0x32);
-            *(int *)(param_1 + 0x26f) = piVar4[9];
+            param_1->field_0231 = 0;
+            param_1->field_0257 = 0;
+            param_1->field_0273 = *(undefined2 *)((int)piVar4 + 0x32);
+            param_1->field_026F = piVar4[9];
             return piVar4;
           }
         }

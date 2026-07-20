@@ -35,14 +35,14 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,int *param_1)
   case CASE_8:
   case CASE_A:
     if (this->field_04CD != 0) {
-      iVar5 = thunk_FUN_004620f0((int *)this);
+      iVar5 = thunk_FUN_004620f0(this);
       return iVar5;
     }
     iVar5 = sub_00460360(this);
     break;
   case CASE_3:
   case CASE_9:
-    iVar5 = thunk_FUN_004620f0((int *)this);
+    iVar5 = thunk_FUN_004620f0(this);
     break;
   case CASE_5:
     sub_0048D930(this);
@@ -178,7 +178,7 @@ cf_common_exit_0046ABCB:
       }
       if (*(int *)&this->field_0x4d9 != 3) {
 switchD_0046aa71_caseD_0:
-        iVar5 = thunk_FUN_004620f0((int *)this);
+        iVar5 = thunk_FUN_004620f0(this);
         iVar3 = (*this->vtable->vfunc_D8)();
         if (iVar3 != 0) {
           return -1;

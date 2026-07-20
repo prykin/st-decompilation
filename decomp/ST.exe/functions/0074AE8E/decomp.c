@@ -1,17 +1,17 @@
 
-void __fastcall FUN_0074ae8e(int param_1)
+void __fastcall FUN_0074ae8e(AnonShape_0074AE8E_9E31CE72 *param_1)
 
 {
   DWORD DVar1;
   int iVar2;
   
   DVar1 = timeGetTime();
-  iVar2 = (DVar1 - *(int *)(param_1 + 0xe4)) * 10000;
-  if ((iVar2 < *(int *)(param_1 + 0xdc) * 2) || (iVar2 < *(int *)(param_1 + 0xe0) * 2)) {
-    *(int *)(param_1 + 0xdc) = (iVar2 + *(int *)(param_1 + 0xdc) * 3) / 4;
+  iVar2 = (DVar1 - param_1->field_00E4) * 10000;
+  if ((iVar2 < param_1->field_00DC * 2) || (iVar2 < param_1->field_00E0 * 2)) {
+    param_1->field_00DC = (iVar2 + param_1->field_00DC * 3) / 4;
   }
-  *(int *)(param_1 + 0xe0) = iVar2;
-  FUN_0074ae16(param_1);
+  param_1->field_00E0 = iVar2;
+  FUN_0074ae16((int)param_1);
   return;
 }
 

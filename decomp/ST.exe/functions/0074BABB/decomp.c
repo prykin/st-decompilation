@@ -1,12 +1,12 @@
 
-void __fastcall FUN_0074babb(int param_1)
+void __fastcall FUN_0074babb(AnonShape_0074BABB_7C20C67C *param_1)
 
 {
-  if (*(int *)(param_1 + 0x40) != 0) {
-    CoTaskMemFree(*(LPVOID *)(param_1 + 0x44));
+  if (param_1->field_0040 != 0) {
+    CoTaskMemFree((LPVOID)param_1->field_0044);
   }
-  *(undefined4 *)(param_1 + 0x40) = 0;
-  *(undefined4 *)(param_1 + 0x44) = 0;
+  param_1->field_0040 = 0;
+  param_1->field_0044 = 0;
   return;
 }
 

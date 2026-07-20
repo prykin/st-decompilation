@@ -16,7 +16,7 @@ void FUN_0044cc90(uint param_1,uint *groupContent,undefined4 param_3)
   if (uVar1 != 0) {
     uVar2 = 0;
     do {
-      FUN_006acc70((int)groupContent,uVar2,&param_1);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,uVar2,&param_1);
       if ((((short)param_1 != -1) &&
           (uVar2 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,objPtr,param_1,CASE_1),
           uVar2 != 0)) && (*(int *)(uVar2 + 0x20) == 0x14)) {

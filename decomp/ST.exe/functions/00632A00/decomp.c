@@ -120,14 +120,14 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
               puVar3 = local_14;
               local_8 = local_14;
             }
-            FUN_006e8660(DAT_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
+            FUN_006e8660(PTR_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
                          *(uint *)((int)puVar3 + 0xd),(int)*(uint *)((int)puVar3 + 9) / 2,
                          (int)*(uint *)((int)puVar3 + 0xd) / 2 - 0xe,0);
-            FUN_006e98e0(DAT_00807598,local_c,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1
+            FUN_006e98e0(PTR_00807598,local_c,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1
                         );
-            FUN_006ea270(DAT_00807598,local_c,0,0);
-            FUN_006ea5e0(DAT_00807598,local_c,0,0);
-            FUN_006ea960(DAT_00807598,local_c,
+            FUN_006ea270(PTR_00807598,local_c,0,0);
+            FUN_006ea5e0(PTR_00807598,local_c,0,0);
+            FUN_006ea960(PTR_00807598,local_c,
                          (float)*(int *)((int)piVar6 + 0xd) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)piVar6 + 0x11) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)((int)piVar6 + 0x15) * _DAT_007904f8 * _DAT_007904f0 +

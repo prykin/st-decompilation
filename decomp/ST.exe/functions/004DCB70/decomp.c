@@ -1,13 +1,13 @@
 
-undefined4 __fastcall FUN_004dcb70(int param_1)
+undefined4 __fastcall FUN_004dcb70(AnonShape_004DCB70_1032D92F *param_1)
 
 {
-  *(undefined4 *)(param_1 + 0x2d1) = 7;
-  *(undefined4 *)(param_1 + 0x4d0) = 0;
-  *(undefined4 *)(param_1 + 0x4ec) = 0;
-  *(undefined4 *)(param_1 + 0x2cd) = 0;
-  if ((*(int *)(param_1 + 0x231) == 1) || (*(int *)(param_1 + 0x231) == 3)) {
-    thunk_FUN_004dccf0(param_1);
+  param_1->field_02D1 = 7;
+  param_1->field_04D0 = 0;
+  param_1->field_04EC = 0;
+  param_1->field_02CD = 0;
+  if ((param_1->field_0231 == 1) || (param_1->field_0231 == 3)) {
+    thunk_FUN_004dccf0((AnonShape_004DCCF0_FF75E3FE *)param_1);
   }
   return 0;
 }

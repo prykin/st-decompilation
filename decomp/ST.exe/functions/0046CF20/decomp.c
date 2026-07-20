@@ -90,7 +90,7 @@ LAB_0046d1e2:
     if (iVar7 == 0) {
       uVar10 = 0;
       if ((this->field_0524 != 0) &&
-         (iVar7 = FUN_006e62d0(DAT_00802a38,this->field_0524,(int *)&local_8), iVar7 != -4)) {
+         (iVar7 = FUN_006e62d0(PTR_00802a38,this->field_0524,(int *)&local_8), iVar7 != -4)) {
         thunk_FUN_004cf3e0(local_8,this->field_0018);
         FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
       }

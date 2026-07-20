@@ -1,5 +1,6 @@
 
-void FUN_0075d490(int param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
+void FUN_0075d490(AnonShape_0075D490_1FEB0A4F *param_1,int param_2,undefined4 *param_3,
+                 undefined4 *param_4)
 
 {
   byte bVar1;
@@ -16,18 +17,18 @@ void FUN_0075d490(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
   undefined4 *local_8;
   
   puVar3 = (undefined4 *)*param_4;
-  iVar4 = *(int *)(param_1 + 0x1b2) + *(int *)(param_2 + 4);
+  iVar4 = param_1->field_01B2 + *(int *)(param_2 + 4);
   uVar5 = (uint)*(byte *)(iVar4 + 0x96);
   bVar1 = *(byte *)(iVar4 + 0x8c);
   uVar8 = (uint)bVar1;
   param_2 = 0;
-  if (0 < *(int *)(param_1 + 0x126)) {
+  if (0 < param_1->field_0126) {
     param_4 = param_3;
     local_8 = puVar3;
     do {
       puVar9 = (undefined1 *)*param_4;
       puVar10 = (undefined4 *)*local_8;
-      puVar6 = (undefined4 *)(*(int *)(param_1 + 0x68) + (int)puVar10);
+      puVar6 = (undefined4 *)(param_1->field_0068 + (int)puVar10);
       while (puVar10 < puVar6) {
         uVar2 = *puVar9;
         puVar9 = puVar9 + 1;
@@ -45,13 +46,12 @@ void FUN_0075d490(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
         }
       }
       if (1 < uVar5) {
-        FUN_00759eb0((int)puVar3,param_2,(int)puVar3,param_2 + 1,uVar5 - 1,*(uint *)(param_1 + 0x68)
-                    );
+        FUN_00759eb0((int)puVar3,param_2,(int)puVar3,param_2 + 1,uVar5 - 1,param_1->field_0068);
       }
       param_2 = param_2 + uVar5;
       param_4 = param_4 + 1;
       local_8 = local_8 + uVar5;
-    } while (param_2 < *(int *)(param_1 + 0x126));
+    } while (param_2 < param_1->field_0126);
   }
   return;
 }

@@ -39,7 +39,7 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
   local_20 = &DAT_0079aedc;
   while( true ) {
     piVar8 = local_20;
-    FUN_006e1c20(DAT_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,&local_18);
+    FUN_006e1c20(PTR_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,&local_18);
     if (local_14 < _DAT_0079034c) {
       lVar11 = Library::MSVCRT::__ftol();
       iVar9 = (short)lVar11 + -1;

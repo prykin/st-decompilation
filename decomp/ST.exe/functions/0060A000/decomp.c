@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_0060a000(int param_1)
+undefined4 __fastcall FUN_0060a000(AnonShape_0060A000_715F6478 *param_1)
 
 {
   int iVar1;
@@ -22,19 +22,19 @@ undefined4 __fastcall FUN_0060a000(int param_1)
   int local_8;
   
   local_18 = 0;
-  if (*(int *)(param_1 + 0x234) != 0) {
+  if (param_1->field_0234 != 0) {
     local_14 = 0;
-    local_8 = *(int *)(*(int *)(param_1 + 0x234) + 0xc);
-    switch(*(int *)(param_1 + 0x20d)) {
+    local_8 = *(int *)(param_1->field_0234 + 0xc);
+    switch(param_1->field_020D) {
     case 0:
     case 3:
-      if (*(int *)(param_1 + 0x1f5) == 0x4d) {
-        local_8 = local_8 / *(int *)(param_1 + 0x21d);
-        local_18 = (int)(0x3ed / (longlong)*(int *)(param_1 + 0x21d));
+      if (param_1->field_01F5 == 0x4d) {
+        local_8 = local_8 / param_1->field_021D;
+        local_18 = (int)(0x3ed / (longlong)param_1->field_021D);
       }
       fVar6 = (float10)_DAT_0079c5a4 / (float10)local_8;
-      if (*(int *)(param_1 + 0x20d) == 3) {
-        *(undefined4 *)(param_1 + 0x1fd) = *(undefined4 *)(param_1 + 0x1f9);
+      if (param_1->field_020D == 3) {
+        param_1->field_01FD = param_1->field_01F9;
       }
       break;
     default:
@@ -46,17 +46,17 @@ undefined4 __fastcall FUN_0060a000(int param_1)
       local_14 = local_8 / 2;
     }
     local_10 = 0;
-    *(undefined4 *)(param_1 + 0x226) = *(undefined4 *)(param_1 + 0x1fd);
-    *(undefined4 *)(param_1 + 0x230) = 1;
+    param_1->field_0226 = param_1->field_01FD;
+    param_1->field_0230 = 1;
     local_c = 0;
     if (0 < local_8) {
       do {
-        if (*(int *)(param_1 + 0x1f5) == 0x4d) {
+        if (param_1->field_01F5 == 0x4d) {
           iVar4 = 0;
-          if (0 < *(int *)(param_1 + 0x21d)) {
+          if (0 < param_1->field_021D) {
             do {
               uVar3 = iVar4 * local_8 + local_c;
-              iVar1 = *(int *)(param_1 + 0x234);
+              iVar1 = param_1->field_0234;
               if ((uVar3 < *(uint *)(iVar1 + 0xc)) &&
                  (puVar5 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c)),
                  puVar5 != (undefined4 *)0x0)) {
@@ -64,17 +64,17 @@ undefined4 __fastcall FUN_0060a000(int param_1)
                 fcos((float10)(int)local_c * fVar6);
                 lVar7 = Library::MSVCRT::__ftol();
                 fsin(extraout_ST0);
-                puVar5[3] = (int)lVar7 + *(int *)(param_1 + 0x1e9);
+                puVar5[3] = (int)lVar7 + param_1->field_01E9;
                 lVar7 = Library::MSVCRT::__ftol();
-                puVar5[4] = (int)lVar7 + *(int *)(param_1 + 0x1ed);
-                puVar5[5] = iVar4 * local_18 + *(int *)(param_1 + 0x1f1);
-                puVar5[6] = *(undefined4 *)(param_1 + 0x1e9);
-                puVar5[7] = *(undefined4 *)(param_1 + 0x1ed);
-                puVar5[8] = *(undefined4 *)(param_1 + 0x1f1);
+                puVar5[4] = (int)lVar7 + param_1->field_01ED;
+                puVar5[5] = iVar4 * local_18 + param_1->field_01F1;
+                puVar5[6] = param_1->field_01E9;
+                puVar5[7] = param_1->field_01ED;
+                puVar5[8] = param_1->field_01F1;
                 puVar5[1] = 0xffffffff;
                 fVar6 = extraout_ST0_00;
                 if (iVar4 == 0) {
-                  uVar2 = *(undefined4 *)(param_1 + 0x215);
+                  uVar2 = param_1->field_0215;
                   puVar5[9] = local_10;
                   *puVar5 = uVar2;
                   puVar5[10] = 7;
@@ -83,12 +83,12 @@ undefined4 __fastcall FUN_0060a000(int param_1)
                   }
                 }
                 else {
-                  uVar2 = *(undefined4 *)(param_1 + 0x211);
+                  uVar2 = param_1->field_0211;
                   puVar5[10] = 0;
                   *puVar5 = uVar2;
-                  iVar1 = *(int *)(param_1 + 0x1fd);
-                  uVar3 = *(int *)(param_1 + 0x1c) * 0x41c64e6d + 0x3039;
-                  *(uint *)(param_1 + 0x1c) = uVar3;
+                  iVar1 = param_1->field_01FD;
+                  uVar3 = param_1->field_001C * 0x41c64e6d + 0x3039;
+                  param_1->field_001C = uVar3;
                   puVar5[9] = 0;
                   puVar5[0xd] = 0;
                   puVar5[0xc] = (float)((uVar3 >> 0x10) % (iVar1 - 99U) + 200);
@@ -99,11 +99,11 @@ undefined4 __fastcall FUN_0060a000(int param_1)
                 local_10 = 0;
               }
               iVar4 = iVar4 + 1;
-            } while (iVar4 < *(int *)(param_1 + 0x21d));
+            } while (iVar4 < param_1->field_021D);
           }
         }
         else {
-          iVar4 = *(int *)(param_1 + 0x234);
+          iVar4 = param_1->field_0234;
           if ((local_c < *(uint *)(iVar4 + 0xc)) &&
              (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * local_c + *(int *)(iVar4 + 0x1c)),
              puVar5 != (undefined4 *)0x0)) {
@@ -111,26 +111,26 @@ undefined4 __fastcall FUN_0060a000(int param_1)
             fcos((float10)(int)local_c * fVar6);
             lVar7 = Library::MSVCRT::__ftol();
             fsin(extraout_ST0_01);
-            puVar5[3] = (int)lVar7 + *(int *)(param_1 + 0x1e9);
+            puVar5[3] = (int)lVar7 + param_1->field_01E9;
             lVar7 = Library::MSVCRT::__ftol();
-            puVar5[4] = (int)lVar7 + *(int *)(param_1 + 0x1ed);
-            puVar5[5] = *(undefined4 *)(param_1 + 0x1f1);
-            iVar4 = *(int *)(param_1 + 0x1e9);
+            puVar5[4] = (int)lVar7 + param_1->field_01ED;
+            puVar5[5] = param_1->field_01F1;
+            iVar4 = param_1->field_01E9;
             puVar5[6] = iVar4;
-            puVar5[7] = *(undefined4 *)(param_1 + 0x1ed);
-            if (*(int *)(param_1 + 0x1f5) == 0x4d) {
+            puVar5[7] = param_1->field_01ED;
+            if (param_1->field_01F5 == 0x4d) {
               puVar5[6] = iVar4 + 100;
               puVar5[7] = puVar5[7] + 100;
             }
-            puVar5[8] = *(undefined4 *)(param_1 + 0x1f1);
-            if ((*(int *)(param_1 + 0x20d) == 4) && ((int)local_c <= local_14)) {
-              puVar5[0xc] = (float)(int)local_c * *(float *)(param_1 + 0x22a);
+            puVar5[8] = param_1->field_01F1;
+            if ((param_1->field_020D == 4) && ((int)local_c <= local_14)) {
+              puVar5[0xc] = (float)(int)local_c * param_1->field_022A;
             }
             if ((local_14 < 1) || ((int)local_c <= local_14)) {
-              *puVar5 = *(undefined4 *)(param_1 + 0x211);
+              *puVar5 = param_1->field_0211;
             }
             else {
-              *puVar5 = *(undefined4 *)(param_1 + 0x215);
+              *puVar5 = param_1->field_0215;
             }
             puVar5[10] = 0;
             puVar5[9] = local_10;
@@ -144,7 +144,7 @@ undefined4 __fastcall FUN_0060a000(int param_1)
         local_c = local_c + 1;
       } while ((int)local_c < local_8);
     }
-    *(undefined4 *)(param_1 + 0x254) = 0;
+    param_1->field_0254 = 0;
     return 0;
   }
   return 0;

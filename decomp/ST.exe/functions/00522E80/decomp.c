@@ -3,7 +3,8 @@
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::GetMessage */
 
-undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int param_1)
+undefined4 __thiscall
+IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *param_1)
 
 {
   ushort uVar1;
@@ -58,11 +59,11 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
     uVar7 = (*pcVar4)();
     return uVar7;
   }
-  if (*(int *)(param_1 + 0x10) == 2) {
+  if (param_1->field_0010 == 2) {
     PreInitIntercomPanel(local_c);
   }
-  PanelTy::GetMessage((PanelTy *)this_00,param_1);
-  uVar9 = *(uint *)(param_1 + 0x10);
+  PanelTy::GetMessage((PanelTy *)this_00,(int)param_1);
+  uVar9 = param_1->field_0010;
   if (uVar9 < 0xc0a0) {
     if (uVar9 != 0xc09f) {
       if (uVar9 == 0) {
@@ -104,7 +105,9 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
             local_848 = 0xc09f;
             local_890 = local_8b0;
             local_850 = local_8b0;
-            (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_01A0,0,local_8dc,1);
+            (*this_00->field_000C->vtable->CreateObject)
+                      ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,(int *)0x0,
+                       local_8dc,1);
           }
           Library::DKW::DDX::FUN_006b3640
                     (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
@@ -171,11 +174,11 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     ccFntTy::SetSurf((ccFntTy *)this_00->field_0180,this_00->field_019C,0,0,0,0,0);
-    ccFntTy::WrStr((ccFntTy *)this_00->field_0180,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,0);
-    uVar1 = *(ushort *)(param_1 + 0x18);
-    if ((uVar1 != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {
-      FUN_006b5b10(this_00->field_019C,0,(uint)uVar1,*(ushort *)(param_1 + 0x1a) + 1,(uint)uVar1,
-                   *(int *)(this_00->field_019C + 8) + -3 + (uint)*(ushort *)(param_1 + 0x1a),0x6c,
+    ccFntTy::WrStr((ccFntTy *)this_00->field_0180,(uint *)*param_1->field_0014,0,-1,0);
+    uVar1 = param_1->field_0018;
+    if ((uVar1 != 0xffff) || (param_1->field_001A != -1)) {
+      FUN_006b5b10(this_00->field_019C,0,(uint)uVar1,(ushort)param_1->field_001A + 1,(uint)uVar1,
+                   *(int *)(this_00->field_019C + 8) + -3 + (uint)(ushort)param_1->field_001A,0x6c,
                    0xd);
     }
     pbVar3 = (byte *)this_00->field_019C;

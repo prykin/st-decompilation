@@ -14,7 +14,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   STExplosionC *pSVar4;
   int iVar5;
   undefined4 uVar6;
-  undefined4 *puVar7;
+  AnonShape_004AB810_8E5693D5 *pAVar7;
   STT3DSprC *pSVar8;
   int iVar9;
   undefined4 unaff_ESI;
@@ -59,19 +59,19 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
     STT3DSprC::SetCurFase(pSVar4->field_02AF,'\x0f',pSVar4->field_029F);
     thunk_FUN_004ac610(pSVar4->field_02AF,'\x0f');
-    STT3DSprC::StartShow(pSVar4->field_02AF,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(pSVar4->field_02AF,0xf,PTR_00802a38->field_00E4);
     uVar6 = thunk_FUN_004acd30(pSVar4->field_02AF,'\x0f');
     pSVar4->field_02A3 = uVar6;
     g_currentExceptionFrame = local_68.previous;
     return local_24;
   }
   if (local_18->field_02AF == (STT3DSprC *)0x0) {
-    puVar7 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (puVar7 == (undefined4 *)0x0) {
+    pAVar7 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+    if (pAVar7 == (AnonShape_004AB810_8E5693D5 *)0x0) {
       pSVar8 = (STT3DSprC *)0x0;
     }
     else {
-      pSVar8 = (STT3DSprC *)thunk_FUN_004ab810(puVar7);
+      pSVar8 = (STT3DSprC *)thunk_FUN_004ab810(pAVar7);
     }
     pSVar4->field_02AF = pSVar8;
   }
@@ -90,7 +90,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
                 (-1,g_overwriteContext_007ED77C,s_E____titans_nick_to_Expl_cpp_007cf630,0x370);
       return 0xffff;
     }
-    FUN_006e9210(DAT_00807598,pSVar4->field_02AF->field_0018);
+    FUN_006e9210(PTR_00807598,pSVar4->field_02AF->field_0018);
   }
   iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xd,DAT_00806774,local_8,0x1d);
   if (iVar5 == 0) {
@@ -105,7 +105,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
                        (float)*(int *)&pSVar4->field_0x292 * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
     thunk_FUN_004ac610(pSVar4->field_02AF,'\r');
-    STT3DSprC::StartShow(pSVar4->field_02AF,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(pSVar4->field_02AF,0xd,PTR_00802a38->field_00E4);
     *(undefined4 *)&pSVar4->field_0x286 = 1;
     pVVar3 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

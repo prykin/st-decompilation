@@ -1,66 +1,66 @@
 
-void FUN_00756480(int param_1)
+void FUN_00756480(AnonShape_00756480_42788A49 *param_1)
 
 {
   int iVar1;
   int *piVar2;
   
-  iVar1 = *(int *)(param_1 + 0x1c);
+  iVar1 = param_1->field_001C;
   if (iVar1 == 1) {
-    *(undefined4 *)(param_1 + 0x20) = 1;
-    *(undefined4 *)(param_1 + 0x24) = 1;
+    param_1->field_0020 = 1;
+    param_1->field_0024 = 1;
     goto cf_common_exit_00756569;
   }
   if (iVar1 != 3) {
     if (iVar1 == 4) {
-      if ((*(int *)(param_1 + 0x119) == 0) || (*(char *)(param_1 + 0x11d) == '\0')) {
-        *(undefined4 *)(param_1 + 0x20) = 4;
-        *(undefined4 *)(param_1 + 0x24) = 4;
+      if ((param_1->field_0119 == 0) || (param_1->field_011D == '\0')) {
+        param_1->field_0020 = 4;
+        param_1->field_0024 = 4;
       }
       else {
-        *(undefined4 *)(param_1 + 0x20) = 5;
-        *(undefined4 *)(param_1 + 0x24) = 4;
+        param_1->field_0020 = 5;
+        param_1->field_0024 = 4;
       }
     }
     else {
-      *(undefined4 *)(param_1 + 0x20) = 0;
-      *(undefined4 *)(param_1 + 0x24) = 0;
+      param_1->field_0020 = 0;
+      param_1->field_0024 = 0;
     }
     goto cf_common_exit_00756569;
   }
-  if (*(int *)(param_1 + 0x110) == 0) {
-    if (*(int *)(param_1 + 0x119) == 0) {
-      piVar2 = *(int **)(param_1 + 0xd0);
+  if (param_1->field_0110 == 0) {
+    if (param_1->field_0119 == 0) {
+      piVar2 = param_1->field_00D0;
       if ((((*piVar2 != 1) && (*piVar2 == 0x52)) && (piVar2[0x15] == 0x47)) &&
          (piVar2[0x2a] == 0x42)) goto LAB_00756548;
     }
-    else if (*(char *)(param_1 + 0x11d) == '\0') {
+    else if (param_1->field_011D == '\0') {
 LAB_00756548:
-      *(undefined4 *)(param_1 + 0x20) = 2;
-      *(undefined4 *)(param_1 + 0x24) = 2;
+      param_1->field_0020 = 2;
+      param_1->field_0024 = 2;
       goto cf_common_exit_00756569;
     }
   }
-  *(undefined4 *)(param_1 + 0x20) = 3;
-  *(undefined4 *)(param_1 + 0x24) = 2;
+  param_1->field_0020 = 3;
+  param_1->field_0024 = 2;
 cf_common_exit_00756569:
-  *(undefined4 *)(param_1 + 0x30) = 0;
-  *(undefined4 *)(param_1 + 0x38) = 0;
-  *(undefined4 *)(param_1 + 0x3c) = 0;
-  *(undefined4 *)(param_1 + 0x40) = 0;
-  *(undefined4 *)(param_1 + 0x4c) = 0;
-  *(undefined4 *)(param_1 + 0x80) = 0;
-  *(undefined4 *)(param_1 + 0x5c) = 0;
-  *(undefined4 *)(param_1 + 0x60) = 0;
-  *(undefined4 *)(param_1 + 100) = 0;
-  *(undefined4 *)(param_1 + 0x28) = 1;
-  *(undefined4 *)(param_1 + 0x2c) = 1;
-  *(undefined4 *)(param_1 + 0x34) = 0x3ff00000;
-  *(undefined4 *)(param_1 + 0x44) = 1;
-  *(undefined4 *)(param_1 + 0x48) = 1;
-  *(undefined4 *)(param_1 + 0x50) = 2;
-  *(undefined4 *)(param_1 + 0x54) = 1;
-  *(undefined4 *)(param_1 + 0x58) = 0x100;
+  param_1->field_0030 = 0;
+  param_1->field_0038 = 0;
+  param_1->field_003C = 0;
+  param_1->field_0040 = 0;
+  param_1->field_004C = 0;
+  param_1->field_0080 = 0;
+  param_1->field_005C = 0;
+  param_1->field_0060 = 0;
+  param_1->field_0064 = 0;
+  param_1->field_0028 = 1;
+  param_1->field_002C = 1;
+  param_1->field_0034 = 0x3ff00000;
+  param_1->field_0044 = 1;
+  param_1->field_0048 = 1;
+  param_1->field_0050 = 2;
+  param_1->field_0054 = 1;
+  param_1->field_0058 = 0x100;
   return;
 }
 

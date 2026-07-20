@@ -15,22 +15,22 @@ undefined4 * __cdecl FUN_00648400(char *text,undefined4 param_2)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar2;
   undefined4 local_48 [16];
-  undefined4 *local_8;
+  AnonShape_00648400_5C076F88 *local_8;
   
   pIVar2 = g_currentExceptionFrame;
-  local_8 = (undefined4 *)0x0;
+  local_8 = (AnonShape_00648400_5C076F88 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   exceptionCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar2);
   if (exceptionCode == 0) {
-    local_8 = Library::DKW::LIB::FUN_006aac10(0x85);
-    *(undefined4 *)((int)local_8 + 1) = 0x85;
-    *(undefined1 *)((int)local_8 + 5) = 2;
-    Library::MSVCRT::_strncpy((char *)((int)local_8 + 6),text,0x3f);
+    local_8 = (AnonShape_00648400_5C076F88 *)Library::DKW::LIB::FUN_006aac10(0x85);
+    local_8->field_0001 = 0x85;
+    local_8->field_0005 = 2;
+    Library::MSVCRT::_strncpy(&local_8->field_0x6,text,0x3f);
     puVar1 = thunk_FUN_0065c9e0(text);
-    *(undefined4 **)((int)local_8 + 0x4e) = puVar1;
-    *(undefined4 *)((int)local_8 + 0x52) = param_2;
+    local_8->field_004E = puVar1;
+    local_8->field_0052 = param_2;
     g_currentExceptionFrame = pIVar2;
-    return local_8;
+    return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = pIVar2;
   thunk_FUN_006484f0((int *)&local_8);

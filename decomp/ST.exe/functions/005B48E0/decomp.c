@@ -44,10 +44,10 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
     local_10 = 0;
     local_c = 0x244;
     do {
-      iVar3 = *(int *)(local_c + DAT_0081176c);
+      iVar3 = *(int *)((int)&PTR_0081176c->vtable + local_c);
       if (iVar3 != 0) {
-        piVar8 = (int *)(local_10 + 0x25c + DAT_0081176c);
-        if (*(char *)(local_10 + 0x270 + DAT_0081176c) == '\0') {
+        piVar8 = (int *)((int)&PTR_0081176c->field_025C + local_10);
+        if ((&PTR_0081176c->field_0x270)[local_10] == '\0') {
           uVar4 = piVar8[2];
         }
         else {

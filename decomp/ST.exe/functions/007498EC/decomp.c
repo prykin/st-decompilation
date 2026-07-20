@@ -1,5 +1,5 @@
 
-void FUN_007498ec(int *param_1,int param_2)
+void FUN_007498ec(int *param_1,AnonShape_0074987C_9BF4FFD0 *param_2)
 
 {
   short sVar1;
@@ -10,9 +10,9 @@ void FUN_007498ec(int *param_1,int param_2)
   undefined4 local_c;
   undefined4 local_8;
   
-  local_14 = *(int *)(param_2 + 0x10);
+  local_14 = param_2->field_0010;
   if ((local_14 == 0) || (local_14 == 3)) {
-    sVar1 = *(short *)(param_2 + 0xe);
+    sVar1 = *(short *)&param_2->field_0xe;
     if (sVar1 == 1) {
       piVar2 = (int *)&DAT_007a1bb0;
     }

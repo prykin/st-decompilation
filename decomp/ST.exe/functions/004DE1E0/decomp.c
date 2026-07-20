@@ -51,8 +51,8 @@ undefined4 __thiscall FUN_004de1e0(void *this,Global_sub_004DE1E0_param_1Enum pa
   do {
     if (*puVar2 == uVar4) {
       *puVar3 = (uint)(*puVar3 == 0);
-      puVar3[1] = *(uint *)(DAT_00802a38 + 0xe4);
-      thunk_FUN_004ddcc0((int)this);
+      puVar3[1] = PTR_00802a38->field_00E4;
+      thunk_FUN_004ddcc0(this);
     }
     puVar1 = puVar3 + 2;
     puVar2 = puVar3 + 2;

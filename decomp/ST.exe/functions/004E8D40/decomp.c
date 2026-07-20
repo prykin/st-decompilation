@@ -1,19 +1,19 @@
 
-void __fastcall FUN_004e8d40(int *param_1)
+void __fastcall FUN_004e8d40(AnonShape_004E8D40_DAF7916C *param_1)
 
 {
   int iVar1;
-  int *local_8;
+  AnonShape_004E8D40_DAF7916C *local_8;
   
-  if (param_1[0x16b] == 0x6c) {
+  if (*(int *)&param_1->field_0x5ac == 0x6c) {
     local_8 = param_1;
-    if ((param_1[0x13e] == 0) && (*(int *)((int)param_1 + 0x5d3) != 0)) {
-      thunk_FUN_004e8dc0(param_1);
+    if ((*(int *)&param_1->field_0x4f8 == 0) && (param_1->field_05D3 != 0)) {
+      thunk_FUN_004e8dc0((AnonShape_004E8DC0_1D60A929 *)param_1);
     }
-    if ((param_1[0x13e] != 0) && (*(int *)((int)param_1 + 0x61b) == 0)) {
-      iVar1 = FUN_006e62d0(DAT_00802a38,param_1[0x13e],(int *)&local_8);
+    if ((*(int *)&param_1->field_0x4f8 != 0) && (param_1->field_061B == 0)) {
+      iVar1 = FUN_006e62d0(PTR_00802a38,*(int *)&param_1->field_0x4f8,(int *)&local_8);
       if (iVar1 == 0) {
-        *(int **)((int)param_1 + 0x61b) = local_8;
+        param_1->field_061B = local_8;
       }
     }
   }

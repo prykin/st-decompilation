@@ -1,7 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
-   CPanelTy::PaintCtrlObj */
+   CPanelTy::PaintCtrlObj
+   
+   [STSwitchEnumApplier] Switch target field_0BF5 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
+   
+   [STSwitchEnumApplier] Switch target field_0BFA uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BFAState. Cases:
+   CASE_0=0;CASE_1=1;CASE_3=3;CASE_4=4;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_70=112;CASE_72=114;CASE_73=115
+    */
 
 void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
 
@@ -64,15 +73,15 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   }
   if (param_1 == 0) goto switchD_00506214_caseD_2;
   switch(local_20->field_0BFA) {
-  case 0:
-  case 3:
-  case 4:
+  case CASE_0:
+  case CASE_3:
+  case CASE_4:
     puVar11 = local_20->field_09D9;
     puVar18 = (undefined4 *)local_20->field_0194;
     iVar10 = 0;
     iVar3 = 0;
     goto LAB_0050633b;
-  case 1:
+  case CASE_1:
     if (local_20->field_0BFB == '\x02') {
       puVar11 = local_20->field_09DD;
       puVar18 = (undefined4 *)local_20->field_0194;
@@ -85,49 +94,49 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
     goto switchD_00506214_caseD_2;
   }
   switch(local_20->field_0BF5) {
-  case 0x32:
-  case 0x3c:
-  case 0x3e:
-  case 0x3f:
-  case 0x40:
-  case 0x46:
-  case 0x47:
-  case 0x49:
-  case 0x4a:
-  case 0x4b:
-  case 0x4e:
-  case 0x51:
-  case 0x52:
+  case CASE_32:
+  case CASE_3C:
+  case CASE_3E:
+  case CASE_3F:
+  case CASE_40:
+  case CASE_46:
+  case CASE_47:
+  case CASE_49:
+  case CASE_4A:
+  case CASE_4B:
+  case CASE_4E:
+  case CASE_51:
+  case CASE_52:
     puVar11 = local_20->field_09E5;
     goto LAB_005062d5;
-  case 0x33:
-  case 0x35:
-  case 0x37:
-  case 0x3a:
-  case 0x42:
-  case 0x43:
-  case 0x44:
-  case 0x45:
-  case 0x4c:
+  case CASE_33:
+  case CASE_35:
+  case CASE_37:
+  case CASE_3A:
+  case CASE_42:
+  case CASE_43:
+  case CASE_44:
+  case CASE_45:
+  case CASE_4C:
     puVar11 = local_20->field_09E1;
 LAB_005062d5:
     puVar18 = (undefined4 *)local_20->field_0194;
     break;
-  case 0x34:
-  case 0x38:
-  case 0x39:
-  case 0x3b:
-  case 0x3d:
-  case 0x41:
-  case 0x48:
-  case 0x4d:
-  case 0x4f:
-  case 0x50:
-  case 0x6f:
+  case CASE_34:
+  case CASE_38:
+  case CASE_39:
+  case CASE_3B:
+  case CASE_3D:
+  case CASE_41:
+  case CASE_48:
+  case CASE_4D:
+  case CASE_4F:
+  case CASE_50:
+  case CASE_6F:
     puVar11 = local_20->field_09DD;
     puVar18 = (undefined4 *)local_20->field_0194;
     break;
-  case 0x36:
+  case CASE_36:
     if (local_20->field_0BF9 == '\x01') {
       puVar11 = local_20->field_09E5;
       puVar18 = (undefined4 *)local_20->field_0194;
@@ -144,7 +153,7 @@ LAB_005062d5:
   DibPut(puVar18,0,0,'\x01',(byte *)puVar11);
 switchD_00506270_caseD_53:
   switch(this_00->field_0BF5) {
-  case 0x36:
+  case CASE_36:
     if (this_00->field_0BF9 == '\x01') {
       puVar11 = this_00->field_09E9;
       puVar18 = (undefined4 *)this_00->field_0194;
@@ -153,14 +162,14 @@ switchD_00506270_caseD_53:
       goto LAB_0050633b;
     }
     break;
-  case 0x3e:
-  case 0x3f:
-  case 0x42:
-  case 0x46:
-  case 0x47:
-  case 0x4a:
-  case 0x4b:
-  case 0x51:
+  case CASE_3E:
+  case CASE_3F:
+  case CASE_42:
+  case CASE_46:
+  case CASE_47:
+  case CASE_4A:
+  case CASE_4B:
+  case CASE_51:
     puVar11 = this_00->field_09E9;
     puVar18 = (undefined4 *)this_00->field_0194;
     iVar10 = 0x35;
@@ -169,13 +178,13 @@ LAB_0050633b:
     DibPut(puVar18,iVar3,iVar10,'\x01',(byte *)puVar11);
   }
 switchD_00506214_caseD_2:
-  if (this_00->field_0BFA != '\x01') {
-    if (this_00->field_0BFA == '\x04') {
+  if (this_00->field_0BFA != CASE_1) {
+    if (this_00->field_0BFA == CASE_4) {
       switch(this_00->field_0BF5) {
-      case 0xdd:
-      case 0xde:
-      case 0xe0:
-      case 0xfe:
+      case CASE_DD:
+      case CASE_DE:
+      case CASE_E0:
+      case CASE_FE:
         iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09ED + 2)) / 2;
         DibPut((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',(byte *)this_00->field_09ED);
         pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02D2,(uint)(byte)this_00->field_0C11);
@@ -224,7 +233,7 @@ switchD_00506214_caseD_2:
           ccFntTy::EraseSufr(this_00->field_01C4);
         }
         break;
-      case 0xfd:
+      case CASE_FD:
         iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_0A11 + 2)) / 2;
         DibPut((undefined4 *)this_00->field_0194,iVar3,0x3f,'\x01',(byte *)this_00->field_0A11);
         bVar2 = this_00->field_0C11;
@@ -327,9 +336,9 @@ switchD_00506214_caseD_2:
     goto switchD_00506878_caseD_3b;
   }
   switch(this_00->field_0BF5) {
-  case 0x32:
-  case 0x40:
-  case 0x49:
+  case CASE_32:
+  case CASE_40:
+  case CASE_49:
     GVar14 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09ED + 2)) / 2;
     local_8 = GVar14;
     DibPut((undefined4 *)this_00->field_0194,GVar14,0x50,'\x01',(byte *)this_00->field_09ED);
@@ -403,7 +412,7 @@ LAB_005070be:
       *(undefined1 *)puVar8 = 0x20;
     }
     goto cf_common_exit_00507034;
-  case 0x33:
+  case CASE_33:
     iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09F9 + 2)) / 2;
     DibPut((undefined4 *)this_00->field_0194,iVar10,0x36,'\x01',(byte *)this_00->field_09F9);
     DibPut((undefined4 *)this_00->field_0194,iVar10 + 5,0x39,'\x01',(byte *)this_00->field_09FD);
@@ -458,13 +467,13 @@ LAB_005070be:
       local_10 = local_10 + 1;
     } while (iVar3 < 0x80);
     break;
-  case 0x34:
+  case CASE_34:
     iVar3 = ((undefined4 *)this_00->field_0194)[1];
     iVar10 = *(int *)(this_00->field_09F9 + 2);
     DibPut((undefined4 *)this_00->field_0194,0x60,0x1f,'\x01',(byte *)this_00->field_0A05);
     PaintMunition(this_00,(iVar3 - iVar10) / 2);
     break;
-  case 0x35:
+  case CASE_35:
     iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09ED + 2)) / 2;
     DibPut((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',(byte *)this_00->field_09ED);
     if (this_00->field_0C31 != '\0') {
@@ -483,15 +492,15 @@ LAB_005070be:
     iVar3 = -2;
     puVar8 = &DAT_0080f33a;
     goto LAB_00507784;
-  case 0x36:
-  case 0x37:
-  case 0x43:
-  case 0x45:
-  case 0x48:
-  case 0x4c:
-  case 0x4d:
-  case 0x4e:
-  case 0x6f:
+  case CASE_36:
+  case CASE_37:
+  case CASE_43:
+  case CASE_45:
+  case CASE_48:
+  case CASE_4C:
+  case CASE_4D:
+  case CASE_4E:
+  case CASE_6F:
     iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09F5 + 2)) / 2;
     DibPut((undefined4 *)this_00->field_0194,iVar3,0x67,'\x01',(byte *)this_00->field_09F5);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3 + 2,0x69,0xa7,0xc);
@@ -511,7 +520,7 @@ LAB_005070be:
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_0C29 != '\0') {
         do {
-          if ((this_00->field_0BF5 != 0x4d) || (iVar10 = 4, this_00->field_0C28 == '\0')) {
+          if ((this_00->field_0BF5 != CASE_4D) || (iVar10 = 4, this_00->field_0C28 == '\0')) {
             iVar10 = 3;
           }
           pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,iVar10);
@@ -533,13 +542,13 @@ LAB_005070be:
       }
     }
     break;
-  case 0x38:
-  case 0x39:
-  case 0x4f:
+  case CASE_38:
+  case CASE_39:
+  case CASE_4F:
     PaintMineInf(this_00,(*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09ED + 2)) / 2
                 );
     break;
-  case 0x3a:
+  case CASE_3A:
     iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09ED + 2)) / 2;
     DibPut((undefined4 *)this_00->field_0194,iVar10,0x50,'\x01',(byte *)this_00->field_09ED);
     iVar3 = iVar10 + 2;
@@ -630,7 +639,7 @@ LAB_005070be:
       } while (iVar19 != 0);
     }
     break;
-  case 0x3c:
+  case CASE_3C:
     iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09ED + 2)) / 2;
     DibPut((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',(byte *)this_00->field_09ED);
     switch(this_00->field_0C3C) {
@@ -707,7 +716,7 @@ LAB_00507784:
       ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar3,iVar10,uVar4,iVar19,iVar20);
     }
     break;
-  case 0x44:
+  case CASE_44:
     DibPut((undefined4 *)this_00->field_0194,
            (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_0A01 + 2)) / 2,0x37,
            '\x01',(byte *)this_00->field_0A01);
@@ -778,7 +787,7 @@ cf_common_exit_00507034:
     PaintCostsXY(this_00,this_00->field_0194,iVar3,0x68,this_00->field_0C1C,this_00->field_0C20,4,2)
     ;
     break;
-  case 0x50:
+  case CASE_50:
     DibPut((undefined4 *)this_00->field_0194,
            (((undefined4 *)this_00->field_0194)[1] - *(int *)(this_00->field_09F9 + 2)) / 2,0x36,
            '\x01',(byte *)this_00->field_09F9);

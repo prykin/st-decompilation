@@ -1,5 +1,5 @@
 
-undefined4 FUN_00758010(int param_1)
+undefined4 FUN_00758010(AnonShape_00758010_64471088 *param_1)
 
 {
   byte bVar1;
@@ -10,7 +10,7 @@ undefined4 FUN_00758010(int param_1)
   int iVar6;
   byte local_10 [12];
   
-  puVar2 = *(undefined4 **)(param_1 + 0x10);
+  puVar2 = (undefined4 *)param_1->field_0010;
   iVar3 = puVar2[1];
   pbVar4 = (byte *)*puVar2;
   if (iVar3 == 0) {
@@ -55,14 +55,14 @@ undefined4 FUN_00758010(int param_1)
     iVar6 = iVar5 + -0xe;
     if ((((local_10[0] == 0x41) && (local_10[1] == 'd')) && (local_10[2] == 'o')) &&
        ((local_10[3] == 'b' && (local_10[4] == 'e')))) {
-      *(undefined4 *)(param_1 + 0x119) = 1;
-      *(byte *)(param_1 + 0x11d) = local_10[0xb];
+      param_1->field_0119 = 1;
+      param_1->field_011D = local_10[0xb];
     }
   }
   *puVar2 = pbVar4;
   puVar2[1] = iVar3;
   if (0 < iVar6) {
-    (**(code **)(*(int *)(param_1 + 0x10) + 0x10))(param_1,iVar6);
+    (**(code **)(param_1->field_0010 + 0x10))(param_1,iVar6);
   }
   return 1;
 }

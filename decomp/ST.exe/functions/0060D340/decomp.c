@@ -1,14 +1,13 @@
 
-undefined4 __fastcall FUN_0060d340(int param_1)
+undefined4 __fastcall FUN_0060d340(AnonShape_0060D340_D77FEBE7 *param_1)
 
 {
   undefined4 uVar1;
   
   uVar1 = 0;
-  if (((*(int *)(param_1 + 0x244) != 0) && (*(int *)(param_1 + 0x20d) == 5)) &&
-     (*(int *)(param_1 + 0x248) == 1)) {
+  if (((param_1->field_0244 != 0) && (param_1->field_020D == 5)) && (param_1->field_0248 == 1)) {
     uVar1 = 1;
-    *(undefined4 *)(param_1 + 0x250) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    param_1->field_0250 = PTR_00802a38->field_00E4;
   }
   return uVar1;
 }

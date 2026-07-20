@@ -54,7 +54,7 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
       }
       local_1a = (undefined2)param_4;
       local_18 = param_5;
-      local_14 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      local_14 = PTR_00802a38->field_00E4;
       local_20 = (short)param_1;
       local_1c = (short)param_3;
       local_1e = (short)param_2;
@@ -73,7 +73,7 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
         iVar4 = thunk_FUN_00631190(this,uVar5,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
         if (iVar4 == 0) {
-          FUN_006b0c70(*(int *)((int)this + 0x38),uVar5);
+          FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x38),uVar5);
           uVar5 = 0xffffffff;
         }
       }

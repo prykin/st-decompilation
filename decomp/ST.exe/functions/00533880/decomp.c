@@ -16,7 +16,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
   OptPanelTy *local_8;
   
   pIVar4 = g_currentExceptionFrame;
-  if (this->field_0172 != 2) {
+  if (this->field_0172 != CASE_2) {
     return;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
@@ -29,8 +29,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
         iVar2 = 0x3e84;
       }
       else {
-        iVar2 = 0x3e96 - (uint)((uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)(DAT_00802a38 + 0x34)
-                                      ) < 6000);
+        iVar2 = 0x3e96 - (uint)((uint)(PTR_00802a38->field_00E4 - PTR_00802a38->field_0034) < 6000);
       }
       local_8->field_01A5 = iVar2;
     }
@@ -47,7 +46,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
     local_8->field_01AB = param_1;
     local_8->field_01A0 = (uint)(param_1 != '\a');
     local_8->field_01A9 = 0;
-    local_8->field_01A4 = 5;
+    local_8->field_01A4 = CASE_5;
     SetOptControls(local_8);
     SwitchOptPanel(this_00,-1);
     g_currentExceptionFrame = pIVar4;

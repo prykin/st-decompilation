@@ -41,7 +41,7 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  FUN_006acc70(local_8->field_0241,param_2,local_10);
+  FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8->field_0241,param_2,local_10);
   if (local_10[0] == param_1) {
     local_10[1] = 0;
     Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_0241,param_2,local_10);

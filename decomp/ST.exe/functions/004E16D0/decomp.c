@@ -37,16 +37,16 @@ undefined4 __thiscall FUN_004e16d0(void *this,int param_1)
     break;
   case 0x5e:
     (**(code **)(*(int *)this + 0x90))(3,0x3a9);
-    thunk_FUN_004e04a0((int)this);
+    thunk_FUN_004e04a0(this);
     return 0;
   case 0x60:
     (**(code **)(*(int *)this + 0x90))(3,0x3b8);
-    thunk_FUN_004e04a0((int)this);
+    thunk_FUN_004e04a0(this);
     return 0;
   }
   (**(code **)(iVar2 + 0x90))(3,iVar1);
 switchD_004e172f_caseD_3a:
-  thunk_FUN_004e04a0((int)this);
+  thunk_FUN_004e04a0(this);
   return 0;
 }
 

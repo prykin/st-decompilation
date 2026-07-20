@@ -11,30 +11,31 @@
    0041E530 @ 00589C58 | 0058C760 -> 0041E530 @ 0058C7C2 | 0058D7C0 -> 0041E530 @ 0058D81F |
    006406D0 -> 0041E530 @ 00640720 */
 
-undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
+undefined4 __thiscall
+STSprGameObjC::GetMessage(STSprGameObjC *this,AnonShape_0041AF40_F59F8577 *message)
 
 {
   char cVar1;
   uint uVar2;
   code *pcVar3;
-  STSprGameObjC *this_00;
+  STGameObjC *this_00;
   int iVar4;
   int iVar5;
   undefined4 uVar6;
   uint uVar7;
   undefined4 unaff_ESI;
-  undefined4 *puVar8;
+  undefined1 *puVar8;
   int *unaff_EDI;
   bool bVar9;
   InternalExceptionFrame local_54;
-  STSprGameObjC *local_10;
+  STGameObjC *local_10;
   byte local_c;
   undefined3 uStack_b;
   byte local_5;
   
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_10 = this;
+  local_10 = (STGameObjC *)this;
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar4 != 0) {
@@ -49,12 +50,12 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
     uVar6 = (*pcVar3)();
     return uVar6;
   }
-  STGameObjC::GetMessage((STGameObjC *)local_10,message);
-  uVar2 = *(uint *)(message + 0x10);
+  STGameObjC::GetMessage(local_10,message);
+  uVar2 = message->field_0010;
   if (0x113 < uVar2) {
     if (0x4403 < uVar2) {
       if (uVar2 == 0x4404) {
-        thunk_FUN_0041f970((int)this_00);
+        thunk_FUN_0041f970((AnonShape_0041F970_0C561B1E *)this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -63,38 +64,38 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
         return 0;
       }
       if (DAT_0080732c != 0) {
-        if (*(int *)&this_00->field_0x21d != 1) {
+        if (*(int *)&this_00[1].field_0x4c != 1) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        puVar8 = &this_00->field_01D5;
+        puVar8 = &this_00[1].field_0x4;
         STT3DSprC::StopShow((STT3DSprC *)puVar8,0xf);
         STT3DSprC::StopShow((STT3DSprC *)puVar8,0);
         thunk_FUN_004abce0(puVar8,0,0,0x13,'\0');
         thunk_FUN_004abce0(puVar8,0xf,0x14,0x27,'\0');
-        thunk_FUN_004acd60(puVar8,'\0',*(uint *)(DAT_00802a38 + 0xe4) & 1);
-        thunk_FUN_004acd60(puVar8,'\x0f',*(uint *)(DAT_00802a38 + 0xe4) & 1);
-        STT3DSprC::StartShow((STT3DSprC *)puVar8,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
-        STT3DSprC::StartShow((STT3DSprC *)puVar8,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        thunk_FUN_004acd60(puVar8,'\0',PTR_00802a38->field_00E4 & 1);
+        thunk_FUN_004acd60(puVar8,'\x0f',PTR_00802a38->field_00E4 & 1);
+        STT3DSprC::StartShow((STT3DSprC *)puVar8,0,PTR_00802a38->field_00E4);
+        STT3DSprC::StartShow((STT3DSprC *)puVar8,0xf,PTR_00802a38->field_00E4);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (*(int *)&this_00->field_0x21d != 1) {
+      if (*(int *)&this_00[1].field_0x4c != 1) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      puVar8 = &this_00->field_01D5;
+      puVar8 = &this_00[1].field_0x4;
       STT3DSprC::StopShow((STT3DSprC *)puVar8,0xf);
       STT3DSprC::StopShow((STT3DSprC *)puVar8,0);
       thunk_FUN_004abce0(puVar8,0,0,0,'\0');
       thunk_FUN_004abce0(puVar8,0xf,0x14,0x14,'\0');
-      STT3DSprC::StartShow((STT3DSprC *)puVar8,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      STT3DSprC::StartShow((STT3DSprC *)puVar8,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow((STT3DSprC *)puVar8,0,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar8,0xf,PTR_00802a38->field_00E4);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar2 == 0x4403) {
-      thunk_FUN_0041f630((int *)this_00);
+      thunk_FUN_0041f630((AnonShape_0041F630_B1BEE81C *)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -103,8 +104,8 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      thunk_FUN_004ad4a0(&this_00->field_01D5,DAT_00806774,s_simmsk_007a4f4c);
-      thunk_FUN_004ad4f0((int)&this_00->field_01D5);
+      thunk_FUN_004ad4a0(&this_00[1].field_0x4,DAT_00806774,s_simmsk_007a4f4c);
+      thunk_FUN_004ad4f0((int)&this_00[1].field_0x4);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -116,7 +117,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    thunk_FUN_004ad510((int)&this_00->field_01D5);
+    thunk_FUN_004ad510((int)&this_00[1].field_0x4);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -125,7 +126,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    (**(code **)this_00->field_01D5)();
+    (*(code *)**(undefined4 **)&this_00[1].field_0x4)();
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -147,40 +148,41 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    thunk_FUN_004ad5e0((int)&this_00->field_01D5);
+    thunk_FUN_004ad5e0((int)&this_00[1].field_0x4);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar2 == 0x109) {
-    if (*(int *)&this_00->field_0x21d == 1) {
-      LoadActFrame(this_00,unaff_EDI);
+    if (*(int *)&this_00[1].field_0x4c == 1) {
+      LoadActFrame((STSprGameObjC *)this_00,unaff_EDI);
     }
-    LoadLifeFrame(this_00,unaff_EDI);
+    LoadLifeFrame((STSprGameObjC *)this_00,unaff_EDI);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar2 != 0) {
     if (uVar2 == 2) {
-      *(undefined4 *)&this_00->field_0x219 = 10;
-      *(undefined4 *)&this_00->field_0x215 = 10;
-      *(undefined4 *)&this_00->field_0x21d = 0;
-      *(undefined4 *)&this_00->field_0x221 = 0xffffffff;
-      *(undefined4 *)&this_00->field_0x225 = 0;
-      *(undefined4 *)&this_00->field_0x229 = 0;
+      *(undefined4 *)&this_00[1].field_0x48 = 10;
+      *(undefined4 *)&this_00[1].field_0x44 = 10;
+      iVar4 = this_00->field_002C;
+      *(undefined4 *)&this_00[1].field_0x4c = 0;
+      *(undefined4 *)&this_00[1].field_0x50 = 0xffffffff;
+      *(undefined4 *)&this_00[1].field_0x54 = 0;
+      *(undefined4 *)&this_00[1].field_0x58 = 0;
       *(undefined4 *)&this_00->field_0x101 = 0xffffffff;
       *(undefined4 *)&this_00->field_0x105 = 0xffffffff;
       *(undefined4 *)&this_00->field_0x109 = 0xffffffff;
-      *(undefined4 *)&this_00->field_0x22d = 0;
-      if (*(int *)&this_00->field_0x2c != 0) {
-        if (*(int *)&this_00->field_0x2c == 1) {
-          iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_01D5,DAT_008073cc,0x78,0x56,
+      *(undefined4 *)&this_00[1].field_0x5c = 0;
+      if (iVar4 != 0) {
+        if (iVar4 == 1) {
+          iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00[1].field_0x4,DAT_008073cc,0x78,0x56,
                                   (uint)this_00,0xf0,0xbe,0x11);
           if (iVar4 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d2)
             ;
           }
-          FUN_006e9210((void *)this_00->field_0211,this_00->field_01ED);
+          FUN_006e9210(*(void **)&this_00[1].field_0x40,this_00[1].field_001C);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -189,8 +191,8 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_01D5,DAT_008073cc,0x5a,0x45,(uint)this_00
-                              ,0xb4,0x8c,0x11);
+      iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00[1].field_0x4,DAT_008073cc,0x5a,0x45,
+                              (uint)this_00,0xb4,0x8c,0x11);
       if (iVar4 == 0) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
@@ -204,18 +206,18 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    thunk_FUN_0041f970((int)this_00);
-    FUN_006ab060((LPVOID *)&this_00->field_0x11d);
-    FUN_006ab060((LPVOID *)&this_00->field_0x121);
-    FUN_006ab060((LPVOID *)&this_00->field_0x125);
-    FUN_006ab060((LPVOID *)&this_00->field_0x129);
+    thunk_FUN_0041f970((AnonShape_0041F970_0C561B1E *)this_00);
+    FUN_006ab060((LPVOID *)&this_00->field_011D);
+    FUN_006ab060((LPVOID *)&this_00->field_0121);
+    FUN_006ab060((LPVOID *)&this_00->field_0125);
+    FUN_006ab060((LPVOID *)&this_00->field_0129);
     iVar4 = this_00->field_0020;
     if (iVar4 != 0x14) {
       if (iVar4 == 0x1ae) {
-        FUN_006ab060((LPVOID *)&this_00->field_0x1ad);
-        FUN_006ab060((LPVOID *)&this_00->field_0x1b1);
-        FUN_006ab060((LPVOID *)&this_00->field_0x1c5);
-        FUN_006ab060((LPVOID *)&this_00->field_0x1c9);
+        FUN_006ab060((LPVOID *)&this_00->field_01AD);
+        FUN_006ab060((LPVOID *)&this_00->field_01B1);
+        FUN_006ab060((LPVOID *)&this_00->field_01C5);
+        FUN_006ab060((LPVOID *)&this_00->field_01C9);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -271,10 +273,10 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
       this_00->field_0141 = 0;
       this_00->field_0145 = 0;
       this_00->field_0149 = 0;
-      FUN_006ab060((LPVOID *)&this_00->field_0x185);
-      FUN_006ab060((LPVOID *)&this_00->field_0x189);
-      FUN_006ab060((LPVOID *)&this_00->field_0x18d);
-      FUN_006ab060((LPVOID *)&this_00->field_0x191);
+      FUN_006ab060((LPVOID *)&this_00->field_0185);
+      FUN_006ab060((LPVOID *)&this_00->field_0189);
+      FUN_006ab060((LPVOID *)&this_00->field_018D);
+      FUN_006ab060((LPVOID *)&this_00->field_0191);
       if ((byte *)this_00->field_01A1 != (byte *)0x0) {
         FUN_006ae110((byte *)this_00->field_01A1);
         this_00->field_01A1 = 0;
@@ -283,79 +285,80 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
         FUN_006ae110((byte *)this_00->field_019D);
         this_00->field_019D = 0;
       }
-      FUN_006ab060((LPVOID *)&this_00->field_0x1a5);
-      FUN_006ab060((LPVOID *)&this_00->field_0x1a9);
-      FUN_006ab060((LPVOID *)&this_00->field_0x1b5);
-      FUN_006ab060((LPVOID *)&this_00->field_0x1b9);
+      FUN_006ab060((LPVOID *)&this_00->field_01A5);
+      FUN_006ab060((LPVOID *)&this_00->field_01A9);
+      FUN_006ab060((LPVOID *)&this_00->field_01B5);
+      FUN_006ab060((LPVOID *)&this_00->field_01B9);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    if (*(byte **)&this_00->field_0x171 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x171);
+    if ((byte *)this_00->field_0171 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0171);
     }
-    if (*(byte **)&this_00->field_0x175 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x175);
+    if ((byte *)this_00->field_0175 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0175);
     }
-    if (*(byte **)&this_00->field_0x179 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x179);
+    if ((byte *)this_00->field_0179 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0179);
     }
-    if (*(byte **)&this_00->field_0x17d != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x17d);
+    if ((byte *)this_00->field_017D != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_017D);
     }
-    if (*(byte **)&this_00->field_0x181 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x181);
+    if ((byte *)this_00->field_0181 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0181);
     }
-    *(undefined4 *)&this_00->field_0x171 = 0;
-    *(undefined4 *)&this_00->field_0x175 = 0;
-    *(undefined4 *)&this_00->field_0x179 = 0;
-    *(undefined4 *)&this_00->field_0x17d = 0;
-    *(undefined4 *)&this_00->field_0x181 = 0;
-    if (*(byte **)&this_00->field_0x15d != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x15d);
+    this_00->field_0171 = 0;
+    this_00->field_0175 = 0;
+    this_00->field_0179 = 0;
+    this_00->field_017D = 0;
+    this_00->field_0181 = 0;
+    if ((byte *)this_00->field_015D != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_015D);
     }
-    if (*(byte **)&this_00->field_0x161 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x161);
+    if ((byte *)this_00->field_0161 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0161);
     }
-    if (*(byte **)&this_00->field_0x165 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x165);
+    if ((byte *)this_00->field_0165 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0165);
     }
-    if (*(byte **)&this_00->field_0x169 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x169);
+    if ((byte *)this_00->field_0169 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0169);
     }
-    if (*(byte **)&this_00->field_0x16d != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x16d);
+    if ((byte *)this_00->field_016D != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_016D);
     }
-    *(undefined4 *)&this_00->field_0x15d = 0;
-    *(undefined4 *)&this_00->field_0x161 = 0;
-    *(undefined4 *)&this_00->field_0x165 = 0;
-    *(undefined4 *)&this_00->field_0x169 = 0;
-    *(undefined4 *)&this_00->field_0x16d = 0;
-    FUN_006ab060((LPVOID *)&this_00->field_0x195);
-    FUN_006ab060((LPVOID *)&this_00->field_0x199);
-    FUN_006ab060((LPVOID *)&this_00->field_0x1ad);
-    FUN_006ab060((LPVOID *)&this_00->field_0x1b1);
-    FUN_006ab060((LPVOID *)&this_00->field_0x1bd);
-    FUN_006ab060((LPVOID *)&this_00->field_0x1c1);
+    this_00->field_015D = 0;
+    this_00->field_0161 = 0;
+    this_00->field_0165 = 0;
+    this_00->field_0169 = 0;
+    this_00->field_016D = 0;
+    FUN_006ab060((LPVOID *)&this_00->field_0195);
+    FUN_006ab060((LPVOID *)&this_00->field_0199);
+    FUN_006ab060((LPVOID *)&this_00->field_01AD);
+    FUN_006ab060((LPVOID *)&this_00->field_01B1);
+    FUN_006ab060((LPVOID *)&this_00->field_01BD);
+    FUN_006ab060((LPVOID *)&this_00->field_01C1);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   iVar4 = this_00->field_0020;
   if ((((iVar4 == 0x14) || (iVar4 == 1000)) || (iVar4 == 0x3e9)) ||
      ((iVar4 == 0x172 || (iVar4 == 0x1a4)))) {
-    if (*(int *)&this_00->field_0x21d == 1) {
-      *(undefined4 *)&this_00->field_0x221 = 2;
+    if (*(int *)&this_00[1].field_0x4c == 1) {
+      *(undefined4 *)&this_00[1].field_0x50 = 2;
     }
-    thunk_FUN_0041f3b0((int *)this_00);
+    thunk_FUN_0041f3b0((STSprGameObjC *)this_00);
   }
-  if (*(uint *)(DAT_00802a38 + 0xe4) % 0xc != 0) {
+  if ((uint)PTR_00802a38->field_00E4 % 0xc != 0) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  if (7 < *(uint *)&this_00->field_0024) {
+  if (7 < (uint)this_00->field_0024) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[*(uint *)&this_00->field_0024 * 0x51])) {
+  if ((PTR_00802a38 != (STPlaySystemC *)0x0) &&
+     (7 < (byte)(&DAT_008087e9)[this_00->field_0024 * 0x51])) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -363,11 +366,12 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int message)
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[(uint)DAT_0080874d * 0x51])) {
+  if ((PTR_00802a38 != (STPlaySystemC *)0x0) &&
+     (7 < (byte)(&DAT_008087e9)[(uint)DAT_0080874d * 0x51])) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  local_5 = this_00->field_0024;
+  local_5 = *(byte *)&this_00->field_0024;
   if (DAT_00808a8f == '\0') {
     if (DAT_0080874d == local_5) {
 LAB_0041ebc0:
@@ -429,23 +433,23 @@ LAB_0041ec79:
     bVar9 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] != (&DAT_008087ea)[(uint)local_5 * 0x51];
   }
   if (!bVar9) {
-    if (*(int *)&this_00->field_0x22d != 0) {
+    if (*(int *)&this_00[1].field_0x5c != 0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    *(undefined4 *)&this_00->field_0x22d = 1;
-    FUN_006e97c0((void *)this_00->field_0211,this_00->field_01ED,DAT_008032c0);
+    *(undefined4 *)&this_00[1].field_0x5c = 1;
+    FUN_006e97c0(*(void **)&this_00[1].field_0x40,this_00[1].field_001C,DAT_008032c0);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
 LAB_0041eccc:
   _local_c = CONCAT31(uStack_b,local_5);
-  if (*(int *)&this_00->field_0x22d == 0) {
+  if (*(int *)&this_00[1].field_0x5c == 0) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  *(undefined4 *)&this_00->field_0x22d = 0;
-  FUN_006e97c0((void *)this_00->field_0211,this_00->field_01ED,0);
+  *(undefined4 *)&this_00[1].field_0x5c = 0;
+  FUN_006e97c0(*(void **)&this_00[1].field_0x40,this_00[1].field_001C,0);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

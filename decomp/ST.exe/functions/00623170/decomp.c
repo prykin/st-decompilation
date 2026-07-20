@@ -51,7 +51,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     thunk_FUN_004ac610(this_00,'\x0e');
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(uint *)&pSVar2->field_0x2ce);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
-    STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,PTR_00802a38->field_00E4);
     uVar4 = thunk_FUN_004acd30(this_00,'\x0e');
     *(undefined4 *)&pSVar2->field_0x2d2 = uVar4;
     if (pSVar2->field_0x352 != '\0') {
@@ -65,7 +65,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
       STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\f',*(uint *)&pSVar2->field_0x2ce);
       thunk_FUN_004ac610(this_00,'\f');
       STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\f');
-      STT3DSprC::StartShow((STT3DSprC *)this_00,0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0xc,PTR_00802a38->field_00E4);
     }
     if (DAT_00807326 != '\0') {
       STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',(uint)(byte)pSVar2->field_0x2d6);
@@ -81,7 +81,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     thunk_FUN_004ac610(this_00,'\x0e');
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(uint *)&pSVar2->field_0x2ce);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
-    STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,PTR_00802a38->field_00E4);
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,10,DAT_00806774,
                        (&PTR_DAT_007d0364)[(byte)pSVar2->field_02AD],0x1d);
@@ -93,7 +93,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\n');
     thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
     thunk_FUN_004acfe0(this_00,'\n');
-    STT3DSprC::StartShow((STT3DSprC *)this_00,10,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow((STT3DSprC *)this_00,10,PTR_00802a38->field_00E4);
     pSVar2->field_0x2e0 = 1;
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,9,DAT_00806764,
@@ -104,7 +104,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     thunk_FUN_004ac610(this_00,'\t');
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\t',*(uint *)&pSVar2->field_0x2db);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\t');
-    STT3DSprC::StartShow((STT3DSprC *)this_00,9,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow((STT3DSprC *)this_00,9,PTR_00802a38->field_00E4);
     thunk_FUN_004ad070(this_00,9);
     pSVar2->field_0x2df = 1;
   }

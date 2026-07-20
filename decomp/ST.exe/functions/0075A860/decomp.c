@@ -1,5 +1,5 @@
 
-undefined4 FUN_0075a860(int param_1,int *param_2)
+undefined4 FUN_0075a860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
 
 {
   int iVar1;
@@ -22,15 +22,15 @@ undefined4 FUN_0075a860(int param_1,int *param_2)
   int local_14;
   int local_10;
   
-  iVar1 = *(int *)(param_1 + 0x12e);
-  iVar2 = *(int *)(param_1 + 0x19a);
-  uVar9 = *(int *)(param_1 + 0x14a) - 1;
+  iVar1 = param_1->field_012E;
+  iVar2 = param_1->field_019A;
+  uVar9 = param_1->field_014A - 1;
   iVar8 = *(int *)(iVar2 + 0x18);
   if (iVar8 < *(int *)(iVar2 + 0x1c)) {
     do {
       for (uVar7 = *(uint *)(iVar2 + 0x14); uVar7 <= uVar9; uVar7 = uVar7 + 1) {
-        FUN_00759f30(*(undefined4 **)(iVar2 + 0x20),*(int *)(param_1 + 0x152) << 8);
-        iVar6 = (**(code **)(*(int *)(param_1 + 0x1aa) + 4))(param_1,iVar2 + 0x20);
+        FUN_00759f30(*(undefined4 **)(iVar2 + 0x20),param_1->field_0152 << 8);
+        iVar6 = (**(code **)(param_1->field_01AA + 4))(param_1,iVar2 + 0x20);
         if (iVar6 == 0) {
           *(int *)(iVar2 + 0x18) = iVar8;
           *(uint *)(iVar2 + 0x14) = uVar7;
@@ -39,8 +39,8 @@ undefined4 FUN_0075a860(int param_1,int *param_2)
         iVar6 = 0;
         local_10 = 0;
         local_30 = 0;
-        if (0 < *(int *)(param_1 + 0x136)) {
-          local_18 = (int *)(param_1 + 0x13a);
+        if (0 < param_1->field_0136) {
+          local_18 = (int *)&param_1->field_0x13a;
           local_1c = param_2;
           do {
             iVar3 = *local_18;
@@ -49,7 +49,7 @@ undefined4 FUN_0075a860(int param_1,int *param_2)
               local_10 = iVar6;
             }
             else {
-              pcVar4 = *(code **)(*(int *)(param_1 + 0x1ae) + 4 + *(int *)(iVar3 + 4) * 4);
+              pcVar4 = *(code **)(param_1->field_01AE + 4 + *(int *)(iVar3 + 4) * 4);
               if (uVar7 < uVar9) {
                 local_24 = *(int *)(iVar3 + 0x34);
               }
@@ -61,7 +61,7 @@ undefined4 FUN_0075a860(int param_1,int *param_2)
               local_2c = 0;
               if (0 < *(int *)(iVar3 + 0x38)) {
                 do {
-                  if (((*(uint *)(param_1 + 0x8c) < iVar1 - 1U) ||
+                  if ((((uint)param_1->field_008C < iVar1 - 1U) ||
                       (iVar8 + local_2c < *(int *)(iVar3 + 0x48))) && (0 < local_24)) {
                     local_28 = local_24;
                     puVar10 = (undefined4 *)(iVar2 + 0x20 + iVar6 * 4);
@@ -84,21 +84,21 @@ undefined4 FUN_0075a860(int param_1,int *param_2)
             local_18 = local_18 + 1;
             local_1c = local_1c + 1;
             local_30 = local_30 + 1;
-          } while (local_30 < *(int *)(param_1 + 0x136));
+          } while (local_30 < param_1->field_0136);
         }
       }
       iVar8 = iVar8 + 1;
       *(undefined4 *)(iVar2 + 0x14) = 0;
     } while (iVar8 < *(int *)(iVar2 + 0x1c));
   }
-  uVar9 = *(int *)(param_1 + 0x8c) + 1;
-  *(int *)(param_1 + 0x94) = *(int *)(param_1 + 0x94) + 1;
-  *(uint *)(param_1 + 0x8c) = uVar9;
-  if (uVar9 < *(uint *)(param_1 + 0x12e)) {
-    FUN_0075a7a0(param_1);
+  uVar9 = param_1->field_008C + 1;
+  param_1->field_0094 = param_1->field_0094 + 1;
+  param_1->field_008C = uVar9;
+  if (uVar9 < (uint)param_1->field_012E) {
+    FUN_0075a7a0((AnonShape_0075A7A0_BCCC082B *)param_1);
     return 3;
   }
-  (**(code **)(*(int *)(param_1 + 0x1a2) + 0xc))(param_1);
+  (**(code **)(param_1->field_01A2 + 0xc))(param_1);
   return 4;
 }
 

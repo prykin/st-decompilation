@@ -25,10 +25,6 @@ address	status	proposed_name	detail
 007EE1B0	disabled		apply flags are 0
 007F4D04	disabled	g_short_007F4D04	apply flags are 0
 007F4D18	disabled		apply flags are 0
-007F4E33	disabled	g_uint_007F4E33	apply flags are 0
-007F5107	disabled	g_groupContent_007F5107	apply flags are 0
-007F5816	disabled	g_uint_007F5816	apply flags are 0
-007F5887	disabled	g_uint_007F5887	apply flags are 0
 007FA168	disabled		apply flags are 0
 007FA170	disabled	g_groupContent_007FA170	apply flags are 0
 007FB234	disabled		apply flags are 0
@@ -89,7 +85,6 @@ address	status	proposed_name	detail
 00811914	disabled		apply flags are 0
 00811970	disabled	g_int_00811970	apply flags are 0
 00811978	disabled	g_int_00811978	apply flags are 0
-00811984	applied	g_sTFish_00811984	type=applied(/STFishC *32); name=applied(g_sTFish_00811984)
 00811990	disabled		apply flags are 0
 00811AA0	disabled		apply flags are 0
 00811AF0	disabled	g__Source_00811AF0	apply flags are 0

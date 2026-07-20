@@ -19,12 +19,12 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   bool bVar9;
   InternalExceptionFrame local_64;
   byte local_20 [16];
-  int local_10;
+  DArrayTy *local_10;
   uint *local_c;
-  int local_8;
+  dword local_8;
   
-  local_10 = *(int *)((int)&DAT_007f4e29 + param_1 * 0xa62);
-  local_8 = *(int *)(local_10 + 0xc);
+  local_10 = g_playerRuntime[param_1].objects;
+  local_8 = local_10->count;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -42,9 +42,9 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   }
   local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   iVar4 = 0;
-  if (0 < local_8) {
+  if (0 < (int)local_8) {
     do {
-      piVar2 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
+      piVar2 = *(int **)((int)local_10->data + iVar4 * 4);
       if (piVar2 != (int *)0x0) {
         (**(code **)(*piVar2 + 0x74))(local_20);
         pbVar8 = local_20;
@@ -71,7 +71,7 @@ LAB_0043f2b2:
         }
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < local_8);
+    } while (iVar4 < (int)local_8);
   }
   g_currentExceptionFrame = local_64.previous;
   return local_c;

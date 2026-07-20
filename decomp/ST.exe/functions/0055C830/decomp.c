@@ -112,7 +112,7 @@ LAB_0055cf74:
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081176c != (StartSystemTy *)0x0) {
+        if (PTR_0081176c != (StartSystemTy *)0x0) {
           pcVar4 = local_488;
           for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
             pcVar4[0] = '\0';
@@ -126,7 +126,7 @@ LAB_0055cf74:
           local_449 = 0;
           Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
-          StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
+          StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
         }
         FUN_006ab060(&param_2);
         return;
@@ -196,7 +196,7 @@ LAB_0055c9c5:
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081176c != (StartSystemTy *)0x0) {
+        if (PTR_0081176c != (StartSystemTy *)0x0) {
           pcVar4 = local_488;
           for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
             pcVar4[0] = '\0';
@@ -210,7 +210,7 @@ LAB_0055c9c5:
           local_449 = 0;
           Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
-          StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
+          StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
         }
         FUN_006ab060(&param_2);
         return;
@@ -250,7 +250,7 @@ LAB_0055c9c5:
         FSGSTy::AddMessage(g_fSGS_0081174C,6,param_4,param_5,5);
         return;
       }
-      if (DAT_0081176c != (StartSystemTy *)0x0) {
+      if (PTR_0081176c != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar4[0] = '\0';
@@ -264,7 +264,7 @@ LAB_0055c9c5:
         local_449 = 0;
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
+        StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
         return;
       }
       break;
@@ -277,7 +277,7 @@ LAB_0055c9c5:
         FSGSTy::AddMessage(g_fSGS_0081174C,2,param_4,param_5,5);
         return;
       }
-      if (DAT_0081176c != (StartSystemTy *)0x0) {
+      if (PTR_0081176c != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar4[0] = '\0';
@@ -291,7 +291,7 @@ LAB_0055c9c5:
         local_449 = 0;
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
+        StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
         return;
       }
       break;
@@ -304,7 +304,7 @@ LAB_0055c9c5:
         FSGSTy::AddMessage(g_fSGS_0081174C,3,&DAT_008016a0,param_5,5);
         return;
       }
-      if (DAT_0081176c != (StartSystemTy *)0x0) {
+      if (PTR_0081176c != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar4[0] = '\0';
@@ -339,7 +339,7 @@ LAB_0055c9c5:
         }
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
+        StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
         return;
       }
       break;

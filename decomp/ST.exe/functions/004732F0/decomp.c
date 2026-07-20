@@ -94,7 +94,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
                          (int)sVar16) * 8);
     }
     if ((local_c == (int *)0x0) || (local_c[6] != param_1)) {
-      iVar9 = FUN_006e62d0(DAT_00802a38,param_1,(int *)&local_c);
+      iVar9 = FUN_006e62d0(PTR_00802a38,param_1,(int *)&local_c);
       if (iVar9 == -4) {
         return 0;
       }
@@ -157,7 +157,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
                            (int)sVar16) * 8);
       }
       if ((((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
-          (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) ||
+          (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) ||
          ((iVar9 = (**(code **)(*local_c + 0xa4))(), iVar9 == 1 ||
           (iVar9 = (**(code **)(*local_c + 0xc0))(), iVar9 == 1)))) goto cf_common_exit_004743A5;
       thunk_FUN_004162f0(local_c,(undefined2 *)&this->field_0x588,&this->field_058A,
@@ -223,7 +223,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
                            (int)sVar16) * 8);
       }
       if (((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
-         (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) {
+         (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) {
         return 0;
       }
       iVar9 = (**(code **)(*local_c + 0xa4))();
@@ -295,7 +295,7 @@ LAB_004736e2:
                          (int)sVar16) * 8);
     }
     if (((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
-       (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) {
+       (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) {
       return 0;
     }
     iVar9 = (**(code **)(*local_c + 0xa4))();
@@ -467,16 +467,18 @@ cf_common_exit_0047405D:
         (**(code **)(*local_c + 0xb4))();
         this->field_07CA = this->field_058E;
         *(undefined4 *)&this->field_0x7ce = 0;
-        thunk_FUN_0041c5a0((int *)this);
-        thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,(int)this);
+        thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this);
+        thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
+                           (AnonShape_00495FF0_59081BDD *)this);
         DumpClassC::WritePtr
-                  (*(short *)&this->field_0x588,this->field_058A,this->field_058C,0,(int)this);
+                  (*(short *)&this->field_0x588,this->field_058A,this->field_058C,0,
+                   (AnonShape_00495EC0_95A268C6 *)this);
         thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
         iVar9 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar9 != 0);
       }
       sub_00492420(this);
-      local_30 = *(uint *)((int)DAT_00802a38 + 0xe4);
+      local_30 = PTR_00802a38->field_00E4;
       CmdToObj(this,CASE_3,&local_30);
 switchD_004734db_caseD_2:
       return 2;

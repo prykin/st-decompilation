@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_00492b20(int param_1)
+undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
 
 {
   undefined4 in_EAX;
@@ -22,19 +22,17 @@ undefined4 __fastcall FUN_00492b20(int param_1)
   
   this = (STFishC *)
          STAllPlayersC::GetObjPtr
-                   (g_sTAllPlayers_007FA174,
-                    CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x5fc)),
-                    CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0x5fd)),CASE_1)
-  ;
-  if ((((((this != (STFishC *)0x0) && (this->field_0018 == *(int *)(param_1 + 0x5ff))) &&
-        (iVar1 = (*this->vtable->slot_108)(*(undefined4 *)(param_1 + 0x24)), iVar1 != 0)) &&
+                   (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)param_1 >> 8),param_1->field_05FC)
+                    ,CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_05FD),CASE_1);
+  if ((((((this != (STFishC *)0x0) && (this->field_0018 == param_1->field_05FF)) &&
+        (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
        ((STFishC::sub_004162B0(this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < SHORT_007fb278)))) && (-1 < local_6)) &&
      (((local_6 < SHORT_007fb27a && (-1 < local_c[0])) && ((int)local_c[0] < SHORT_007fb27c + -1))))
   {
-    *(short *)(param_1 + 0x609) = local_8;
-    *(short *)(param_1 + 0x60b) = local_6;
-    *(short *)(param_1 + 0x60d) = local_c[0];
+    param_1->field_0609 = local_8;
+    param_1->field_060B = local_6;
+    param_1->field_060D = local_c[0];
     uVar4 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
     puVar8 = DAT_007fb280;
     puVar11 = DAT_007fb238;
@@ -49,8 +47,8 @@ undefined4 __fastcall FUN_00492b20(int param_1)
       puVar11 = (undefined4 *)((int)puVar11 + 1);
     }
     FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
-                 (int)*(short *)(param_1 + 0x5b),(int)*(short *)(param_1 + 0x5d),
-                 (int)*(short *)(param_1 + 0x5f),(int)local_8,(int)local_6,local_c[0] + 1);
+                 (int)param_1->field_005B,(int)param_1->field_005D,(int)param_1->field_005F,
+                 (int)local_8,(int)local_6,local_c[0] + 1);
     if (*(int *)&this->field_0x2c == 0) {
       sVar7 = local_c[0] + 1;
       if ((((-1 < local_8) && (local_8 < SHORT_007fb240)) && (-1 < local_6)) &&
@@ -61,16 +59,16 @@ undefined4 __fastcall FUN_00492b20(int param_1)
            (*(short *)((int)DAT_007fb238 +
                       ((local_c[0] + 1) * (int)SHORT_007fb27e + (int)SHORT_007fb278 * (int)local_6 +
                       (int)local_8) * 2) != 0)) {
-          *(short *)(param_1 + 0x603) = local_8;
-          *(short *)(param_1 + 0x605) = local_6;
-          *(short *)(param_1 + 0x607) = sVar7;
+          param_1->field_0603 = local_8;
+          param_1->field_0605 = local_6;
+          param_1->field_0607 = sVar7;
           return 1;
         }
       }
     }
     else if (*(int *)&this->field_0x2c == 1) {
       local_10 = 10000000;
-      *(short *)(param_1 + 0x607) = local_c[0] + 1;
+      param_1->field_0607 = local_c[0] + 1;
       iVar2 = (int)local_8;
       iVar1 = iVar2 + 1;
       if (iVar2 <= iVar1) {
@@ -89,8 +87,8 @@ undefined4 __fastcall FUN_00492b20(int param_1)
                                            ((int)sVar10 * (int)SHORT_007fb27e +
                                             (int)sVar3 * (int)SHORT_007fb278 + (int)sVar7) * 2) &&
                            (iVar9 != 0)))))))) && (iVar9 < local_10)) {
-                *(short *)(param_1 + 0x603) = sVar7;
-                *(short *)(param_1 + 0x605) = sVar3;
+                param_1->field_0603 = sVar7;
+                param_1->field_0605 = sVar3;
                 local_10 = iVar9;
               }
               iVar6 = iVar6 + 1;

@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0062f150(void *param_1)
+void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
 
 {
   int iVar1;
@@ -12,13 +12,11 @@ void __fastcall FUN_0062f150(void *param_1)
   
   pVVar2 = g_visibleClass_00802A88;
   local_c = 0;
-  if ((*(char *)((int)param_1 + 0x1f9) != '\0') &&
-     (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
-    iVar1 = *(int *)((int)param_1 + 0x1dd);
+  if ((param_1->field_01F9 != '\0') && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+    iVar1 = param_1->field_01DD;
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
       thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                         *(int *)((int)param_1 + 0x1d5),*(int *)((int)param_1 + 0x1d9),&local_8,
-                         &local_10);
+                         param_1->field_01D5,param_1->field_01D9,&local_8,&local_10);
       if (((((-1 < iVar1) && (iVar1 < 5)) && (-1 < local_8)) &&
           (((local_8 < (int)pVVar2->field_0030 &&
             (local_10 = (&DAT_0079aed0)[iVar1] + local_10, -1 < local_10)) &&
@@ -31,13 +29,13 @@ void __fastcall FUN_0062f150(void *param_1)
   }
 LAB_0062f208:
   local_8 = 0;
-  piVar3 = (int *)((int)param_1 + 0x1e5);
+  piVar3 = (int *)&param_1->field_0x1e5;
   do {
     iVar1 = *piVar3;
     if (iVar1 != 0) {
       this = *(void **)(iVar1 + 0x10);
       if (*(int *)(iVar1 + 0x18) == 2) {
-        if (*(uint *)(DAT_00802a38 + 0xe4) % 5 == 0) {
+        if ((uint)PTR_00802a38->field_00E4 % 5 == 0) {
           if (this != (void *)0x0) {
             thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 +
                                              (uint)*(byte *)(iVar1 + 0x34) * 4),
@@ -49,10 +47,10 @@ LAB_0062f208:
           }
         }
       }
-      else if (*(uint *)(iVar1 + 0x39) <
-               (uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)(iVar1 + 0x35))) {
+      else if (*(uint *)(iVar1 + 0x39) < (uint)(PTR_00802a38->field_00E4 - *(int *)(iVar1 + 0x35)))
+      {
         *(undefined4 *)(iVar1 + 0x18) = 2;
-        *(undefined4 *)(*piVar3 + 0x35) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        *(undefined4 *)(*piVar3 + 0x35) = PTR_00802a38->field_00E4;
         *(undefined4 *)(*piVar3 + 0x39) = 10;
         *(undefined1 *)(*piVar3 + 0x34) = 0;
       }

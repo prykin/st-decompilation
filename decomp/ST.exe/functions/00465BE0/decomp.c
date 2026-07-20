@@ -14,7 +14,7 @@ int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
     return iVar2;
   }
   if (this->field_0497 == 1) {
-    iVar2 = thunk_FUN_004620f0((int *)this);
+    iVar2 = thunk_FUN_004620f0(this);
     return iVar2;
   }
   iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1c52,0,0,&DAT_007a4ccc,

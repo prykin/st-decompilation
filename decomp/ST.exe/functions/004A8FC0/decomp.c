@@ -79,8 +79,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     _DAT_0080742c = (float)fVar8;
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
     lVar9 = Library::MSVCRT::__ftol();
-    FUN_006dc050(DAT_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574,
-                 SUB84((double)(_DAT_00807428 * _DAT_00790780),0),
+    FUN_006dc050((AnonShape_006DC050_D52EE3EA *)PTR_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,
+                 DAT_00807570,DAT_00807574,SUB84((double)(_DAT_00807428 * _DAT_00790780),0),
                  (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790780) >> 0x20),
                  SUB84((double)(_DAT_00807428 * _DAT_00790784),0),
                  (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790784) >> 0x20),
@@ -89,11 +89,11 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
                  SUB84((double)(_DAT_0080742c * _DAT_00790784),0),
                  (int)((ulonglong)(double)(_DAT_0080742c * _DAT_00790784) >> 0x20),
                  0x4024000000000000,0x4023ee97865e3540,(int)lVar9);
-    FUN_006dd530(DAT_00807598,&local_18,&local_14,&local_8);
-    FUN_006dd790(DAT_00807598,
+    FUN_006dd530(PTR_00807598,&local_18,&local_14,&local_8);
+    FUN_006dd790(PTR_00807598,
                  ((local_8 - _DAT_0079077c) * (float)_DAT_00790770 - _DAT_0080742c * _DAT_00790784)
                  - _DAT_0080742c * _DAT_0079070c);
-    FUN_006dd800(DAT_00807598,
+    FUN_006dd800(PTR_00807598,
                  _DAT_0080742c * _DAT_00790784 + local_8 * (float)_DAT_00790770 +
                  (float)_DAT_00790760);
     iVar3 = 0;
@@ -122,8 +122,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   *(char *)(puVar7 + 1) = (char)puVar6[1];
   Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
   lVar9 = Library::MSVCRT::__ftol();
-  FUN_006dc050(DAT_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574,
-               SUB84((double)(DAT_00807420 * _DAT_00790780),0),
+  FUN_006dc050((AnonShape_006DC050_D52EE3EA *)PTR_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,
+               DAT_00807570,DAT_00807574,SUB84((double)(DAT_00807420 * _DAT_00790780),0),
                (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20),
                SUB84((double)(DAT_00807420 * _DAT_00790784),0),
                (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20),

@@ -42,8 +42,8 @@ int __thiscall FUN_004803d0(void *this,int param_1)
     if (iVar1 != 0) {
       return -1;
     }
-    if (*(uint *)((int)DAT_00802a38 + 0xe4) % 0x25 == 0) {
-      iVar1 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x7ca),&param_1);
+    if ((uint)PTR_00802a38->field_00E4 % 0x25 == 0) {
+      iVar1 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),&param_1);
       if (iVar1 == -4) {
         return 0;
       }

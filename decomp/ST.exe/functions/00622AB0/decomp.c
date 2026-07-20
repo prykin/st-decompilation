@@ -39,10 +39,10 @@ int __thiscall FUN_00622ab0(void *this,undefined4 *param_1)
   local_c = 0x10;
   local_8 = 0;
   STT3DSprC::RestoreSpr
-            ((STT3DSprC *)((int)this + 0x1d5),(int *)&local_20,(undefined4 *)((int)param_1 + 0x10d))
-  ;
+            ((STT3DSprC *)((int)this + 0x1d5),(int *)&local_20,
+             (AnonShape_004ADBA0_E7CEFF88 *)((int)param_1 + 0x10d));
   FUN_006ab060(&local_20);
-  piVar4 = (int *)((int)param_1 + 0x10d + iVar2);
+  piVar4 = (int *)(&((AnonShape_004ADBA0_E7CEFF88 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
   iVar1 = *piVar4;
   STAllPlayersC::RestoreGObjData(this,piVar4 + 1);
   return iVar1 + iVar2 + 0x109;

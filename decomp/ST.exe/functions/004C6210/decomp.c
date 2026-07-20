@@ -7,7 +7,7 @@
 undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  AnonShape_004AB810_8E5693D5 *pAVar1;
   STT3DSprC *this_00;
   int iVar2;
   uint uVar3;
@@ -16,12 +16,12 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
   *(undefined4 *)((int)this + 0x18) = 0;
   *(undefined4 *)((int)this + 0x1c) = param_1;
   *(undefined4 *)((int)this + 0x20) = param_2;
-  puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (puVar1 == (undefined4 *)0x0) {
+  pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+  if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
     this_00 = (STT3DSprC *)0x0;
   }
   else {
-    this_00 = (STT3DSprC *)thunk_FUN_004ab810(puVar1);
+    this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
   }
   *(STT3DSprC **)((int)this + 0x2c) = this_00;
   if (*(int *)(&DAT_00791d68 + *(int *)((int)this + 0x1c) * 4) == 0) {
@@ -40,7 +40,7 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
       ;
     }
     uVar3 = thunk_FUN_004ad650(*(int *)((int)this + 0x2c));
-    FUN_006e9210(DAT_00807598,uVar3);
+    FUN_006e9210(PTR_00807598,uVar3);
   }
   thunk_FUN_004ad5e0(*(int *)((int)this + 0x2c));
   iVar2 = STT3DSprC::LoadSequence

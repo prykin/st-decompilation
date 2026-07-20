@@ -1,19 +1,19 @@
 
-int __fastcall FUN_0058ff70(int param_1)
+int __fastcall FUN_0058ff70(AnonShape_0058FF70_CCAF0F72 *param_1)
 
 {
   uint uVar1;
   int iVar2;
   
-  iVar2 = *(int *)(DAT_00802a38 + 0xe4);
-  switch(*(undefined4 *)(param_1 + 599)) {
+  iVar2 = PTR_00802a38->field_00E4;
+  switch(param_1->field_0257) {
   case 0:
-    uVar1 = *(int *)(param_1 + 0x1c) * 0x41c64e6d + 0x3039;
-    *(uint *)(param_1 + 0x1c) = uVar1;
+    uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
+    param_1->field_001C = uVar1;
     return iVar2 + 1 + (uVar1 >> 0x10) % 5;
   case 6:
-    uVar1 = *(int *)(param_1 + 0x1c) * 0x41c64e6d + 0x3039;
-    *(uint *)(param_1 + 0x1c) = uVar1;
+    uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
+    param_1->field_001C = uVar1;
     iVar2 = iVar2 + 0xf + (uVar1 >> 0x10 & 0xf);
   }
   return iVar2;

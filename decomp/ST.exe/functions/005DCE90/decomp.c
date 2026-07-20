@@ -86,11 +86,11 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
             cMf32::delete(this_01,g_cMf32_00806758);
           }
           g_cMf32_00806758 = (cMf32 *)0x0;
-          if (DAT_00802a30 != 0) {
-            thunk_FUN_00544940(DAT_00802a30);
+          if (PTR_00802a30 != (CursorClassTy *)0x0) {
+            thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)PTR_00802a30);
           }
           FUN_006bbb20(DAT_0080759c,1);
-          FUN_006ba780(DAT_0080759c,1);
+          FUN_006ba780((int)DAT_0080759c,1);
           goto switchD_005dd1c0_default;
         }
         if (uVar1 != 0x6102) goto switchD_005dd1c0_default;
@@ -211,7 +211,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
       }
       local_48[3] = 2;
       local_48[2] = iVar3;
-      (*this_00->vtable->slot_18)(local_48);
+      (*this_00->vtable->vfunc_18)(local_48);
     }
   }
 switchD_005dd1c0_default:

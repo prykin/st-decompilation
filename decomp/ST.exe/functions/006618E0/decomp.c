@@ -38,7 +38,8 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
     uVar4 = sub_0065D9C0(this);
     iVar5 = CONCAT22(extraout_var,uVar4);
     if ((0 < iVar5) &&
-       (local_20 = iVar5, local_c = thunk_FUN_00661800((int)this,extraout_EDX),
+       (local_20 = iVar5,
+       local_c = thunk_FUN_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar5 - local_c)) {
       local_18 = thunk_FUN_0068f8f0((void *)this->field_0284,this->field_007B);
       local_8 = (uint *)0x0;
@@ -48,7 +49,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
       iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pAVar3 = local_1c;
       if (iVar5 == 0) {
-        local_8 = thunk_FUN_0065da10((int)local_1c,extraout_EDX_00);
+        local_8 = thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)local_1c,extraout_EDX_00);
         if (local_8 != (uint *)0x0) {
           local_14 = 0;
           groupContent = local_10;

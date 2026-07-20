@@ -107,7 +107,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   if (DAT_0080168c != (int *)0x0) {
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
-  thunk_FUN_0054a8d0(DAT_00802a30);
+  thunk_FUN_0054a8d0(PTR_00802a30);
   bVar1 = (&pCVar4->field_0BFE)[param_1 & 0xff];
   switch((uint)bVar1) {
   case 1:
@@ -127,7 +127,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   case 0x37:
   case 0x42:
   case 0x43:
-    thunk_FUN_0054b630(DAT_00802a30,(uint)bVar1,0);
+    thunk_FUN_0054b630(PTR_00802a30,(uint)bVar1,0);
     g_currentExceptionFrame = local_e8.previous;
     return;
   default:
@@ -326,7 +326,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     local_19c[0] = (bVar1 != 0x39) + '\f';
     break;
   case 0x3e:
-    thunk_FUN_0054b630(DAT_00802a30,0xe,0x6c);
+    thunk_FUN_0054b630(PTR_00802a30,0xe,0x6c);
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x44:

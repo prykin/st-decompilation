@@ -6,10 +6,10 @@
 undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
 
 {
-  int iVar1;
-  int iVar2;
-  code *pcVar3;
-  int iVar4;
+  AnonShape_006ACC70_C8641025 *pAVar1;
+  DArrayTy *pDVar2;
+  uint uVar3;
+  code *pcVar4;
   int iVar5;
   undefined4 uVar6;
   uint uVar7;
@@ -19,23 +19,22 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
   short local_8;
   short local_6;
   
-  iVar4 = *(int *)&this->field_0x24 * 0xa62;
-  iVar1 = *(int *)((int)&DAT_007f5107 + iVar4);
-  iVar4 = *(int *)((int)&DAT_007f4e29 + iVar4);
-  if (iVar1 != 0) {
-    iVar2 = *(int *)(iVar1 + 0xc);
+  pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[*(int *)&this->field_0x24].field597_0x2e7;
+  pDVar2 = g_playerRuntime[*(int *)&this->field_0x24].objects;
+  if (pAVar1 != (AnonShape_006ACC70_C8641025 *)0x0) {
+    uVar3 = pAVar1->field_000C;
     uVar7 = 0;
-    if (0 < iVar2) {
+    if (0 < (int)uVar3) {
       do {
-        FUN_006acc70(iVar1,uVar7,&local_14);
+        FUN_006acc70(pAVar1,uVar7,&local_14);
         if ((short)local_14 != -1) {
-          FUN_006acc70(iVar4,local_14 & 0xffff,&local_10);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,local_14 & 0xffff,&local_10);
           if (local_10 == (STFishC *)0x0) {
             iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5221,0,0,
                                        &DAT_007a4ccc,s_STBoatC__CheckForReplenisher_NUL_007abbf4);
             if (iVar5 != 0) {
-              pcVar3 = (code *)swi(3);
-              uVar6 = (*pcVar3)();
+              pcVar4 = (code *)swi(3);
+              uVar6 = (*pcVar4)();
               return uVar6;
             }
             RaiseInternalException
@@ -50,7 +49,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
           }
         }
         uVar7 = uVar7 + 1;
-        if (iVar2 <= (int)uVar7) {
+        if ((int)uVar3 <= (int)uVar7) {
           return 0;
         }
       } while( true );

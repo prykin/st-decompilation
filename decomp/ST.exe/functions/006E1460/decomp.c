@@ -89,7 +89,7 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     uVar6 = (int)local_dc >> 0x1f;
     if (((local_78 / 2 < iVar7) || (local_cc / 2 < (int)((local_dc ^ uVar6) - uVar6))) &&
        (*(int *)((int)this + 0x124) != 1)) {
-      FUN_006ddbe0((int)this);
+      FUN_006ddbe0(this);
       FUN_006e1050(this);
       *(undefined4 *)((int)this + 0x140) = 0;
       *(undefined4 *)((int)this + 0x13c) = 0;
@@ -256,7 +256,7 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
             } while (local_58 < *(int *)((int)this + 700));
           }
         }
-        FUN_006ddbe0((int)this);
+        FUN_006ddbe0(this);
         FUN_006de9c0(this);
         *(undefined4 *)((int)this + 0x140) = 0;
         *(undefined4 *)((int)this + 0x13c) = 0;
@@ -295,7 +295,7 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
             } while (iVar7 != 0);
           }
         }
-        FUN_006ddbe0((int)this);
+        FUN_006ddbe0(this);
         FUN_006de9c0(this);
         *(undefined4 *)((int)this + 0x140) = 0;
         *(undefined4 *)((int)this + 0x13c) = 0;

@@ -13,7 +13,8 @@ undefined4 __thiscall FUN_004237d0(void *this,short param_1)
     uVar2 = 0;
     uStack_8 = this;
     do {
-      FUN_006acc70(*(int *)((int)this + 0x29),uVar2,(undefined4 *)((int)&uStack_8 + 2));
+      FUN_006acc70(*(AnonShape_006ACC70_C8641025 **)((int)this + 0x29),uVar2,
+                   (undefined4 *)((int)&uStack_8 + 2));
       if (uStack_8._2_2_ == param_1) {
         return 1;
       }

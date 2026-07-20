@@ -33,7 +33,7 @@ void __thiscall StartSystemTy::~StartSystemTy(StartSystemTy *this)
   sub_005DAF20(this);
   thunk_FUN_005db010();
   sub_005DA910(this);
-  FUN_006e52d0((int)this);
+  FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)this);
   return;
 }
 

@@ -3,7 +3,7 @@
    E:\__titans\Andrey\bldobj.cpp
    BldObjPanelTy::PaintBldBut */
 
-void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
+void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004F0E60_091DB1BE *param_1)
 
 {
   int *piVar1;
@@ -23,7 +23,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   ushort *local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
   
-  piVar1 = *(int **)(param_1 + 0x18);
+  piVar1 = param_1->field_0018;
   local_18 = *piVar1 - this->field_003C;
   if (this->field_005C == 0) {
     local_10 = piVar1[1] - DAT_00806734;
@@ -31,7 +31,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   else {
     local_10 = piVar1[1] - this->field_0044;
   }
-  uVar5 = this->field_0199 + -0xc0af + *(int *)(param_1 + 0x10);
+  uVar5 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar7 = (&this->field_027E)[(byte)this->field_0278];
   if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar5)) {
     local_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
@@ -41,7 +41,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
               (*(int *)(iVar7 + 8) * uVar5 + *(int *)(iVar7 + 0x1c));
   }
   local_14 = this;
-  if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
+  if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
     local_c = this->field_027A;
   }
   else {
@@ -62,7 +62,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   iVar7 = local_18;
   if (errorCode == 0) {
     DibPut((undefined4 *)local_14->field_0068,local_18,local_10,'\x01',(byte *)local_c);
-    if ((*(short *)(param_1 + 0x14) == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
+    if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
       pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
       DibPut((undefined4 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
     }

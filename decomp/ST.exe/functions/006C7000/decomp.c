@@ -1,13 +1,13 @@
 
-int FUN_006c7000(int param_1)
+int FUN_006c7000(AnonShape_006C7000_4A8D1200 *param_1)
 
 {
-  if ((*(uint *)(param_1 + 0x56) & 8) != 0) {
+  if ((param_1->field_0056 & 8) != 0) {
     return 0;
   }
-  if ((*(uint *)(param_1 + 0x56) & 1) != 0) {
+  if ((param_1->field_0056 & 1) != 0) {
     return -1;
   }
-  return (uint)*(ushort *)(param_1 + 0x5f) * 10;
+  return (uint)param_1->field_005F * 10;
 }
 

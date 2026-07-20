@@ -21,18 +21,18 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
   undefined1 local_b;
   FSGSTy *local_8;
   
-  if (this->field_1A5F == '\x06') {
+  if (this->field_1A5F == CASE_6) {
     this->field_1A60 = 0;
     local_7c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_7c;
     local_8 = this;
     errorCode = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    this_00 = DAT_00802a30;
+    this_00 = PTR_00802a30;
     if (errorCode == 0) {
-      if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar4 = DAT_00802a30->field_00C9;
-        uVar2 = DAT_00802a30->field_00C5;
-        DAT_00802a30->field_0493 = 1;
+      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        uVar4 = PTR_00802a30->field_00C9;
+        uVar2 = PTR_00802a30->field_00C5;
+        PTR_00802a30->field_0493 = 1;
         this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar4);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

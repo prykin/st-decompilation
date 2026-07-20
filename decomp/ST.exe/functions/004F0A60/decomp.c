@@ -1,18 +1,18 @@
 
-void __fastcall FUN_004f0a60(int param_1)
+void __fastcall FUN_004f0a60(AnonShape_004F0A60_A5DE070F *param_1)
 
 {
   undefined4 *puVar1;
   int iVar2;
   
-  if (*(uint *)(param_1 + 0x292) != 0) {
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x292));
+  if (param_1->field_0292 != 0) {
+    StartSystemTy::sub_006E56B0(param_1->field_000C,param_1->field_0292);
   }
-  *(undefined4 *)(param_1 + 0x292) = 0;
-  if (*(int *)(param_1 + 0x27a) != 0) {
-    cMf32::RecMemFree(DAT_00806790,(uint *)(param_1 + 0x27a));
+  param_1->field_0292 = 0;
+  if (param_1->field_027A != 0) {
+    cMf32::RecMemFree(DAT_00806790,(uint *)&param_1->field_027A);
   }
-  puVar1 = (undefined4 *)(param_1 + 0x27e);
+  puVar1 = (undefined4 *)&param_1->field_0x27e;
   iVar2 = 5;
   do {
     if ((byte *)*puVar1 != (byte *)0x0) {

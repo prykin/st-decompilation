@@ -137,8 +137,8 @@ void __thiscall FUN_00621780(void *this,uint param_1)
     SoundClassTy::PlaySound_thunk
               ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar1,&local_10,0);
     *puVar2 = 1;
-    *(undefined4 *)(puVar2 + 1) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    *(undefined4 *)((int)this + 0x106) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)(puVar2 + 1) = PTR_00802a38->field_00E4;
+    *(undefined4 *)((int)this + 0x106) = PTR_00802a38->field_00E4;
   }
 switchD_006217ba_default:
   return;

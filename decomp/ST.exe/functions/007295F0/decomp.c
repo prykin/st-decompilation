@@ -1,5 +1,5 @@
 
-int __fastcall FUN_007295f0(void *param_1)
+int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
 
 {
   int iVar1;
@@ -28,41 +28,40 @@ int __fastcall FUN_007295f0(void *param_1)
   iVar8 = 0;
   local_2c = 0;
   local_24 = 0;
-  iVar1 = *(int *)((int)param_1 + 0x328);
-  iVar2 = *(int *)((int)param_1 + 800);
+  iVar1 = param_1->field_0328;
+  iVar2 = param_1->field_0320;
   local_8 = 0;
   iVar7 = iVar1 + -1;
-  pbVar6 = (byte *)(*(int *)((int)param_1 + 0x330) + iVar7 * 0x68);
+  pbVar6 = (byte *)(param_1->field_0330 + iVar7 * 0x68);
   ExceptionList = &local_14;
   for (; iVar1 - iVar2 <= iVar7; iVar7 = iVar7 + -1) {
     local_20 = *(uint **)(pbVar6 + 100);
     if ((((*(uint *)(pbVar6 + 4) & 0x8000) != 0) && ((*pbVar6 & 2) != 0)) &&
        (puVar9 = (uint *)(*(int *)(pbVar6 + 0x60) * 0x10 + local_20[0x3c]), (*puVar9 & 2) == 0)) {
       if (local_2c == 0) {
-        iVar8 = FUN_006bbe40(*(int **)(*(int *)((int)param_1 + 4) + 0x40),&local_2c,&local_24,0);
+        iVar8 = FUN_006bbe40(*(int **)(param_1->field_0004 + 0x40),&local_2c,&local_24,0);
         local_28 = iVar8;
         if (iVar8 != 0) break;
-        local_2c = local_2c +
-                   *(int *)((int)param_1 + 0x24) * local_24 + *(int *)((int)param_1 + 0x20);
+        local_2c = local_2c + param_1->field_0024 * local_24 + param_1->field_0020;
         local_28 = 0;
       }
       uVar5 = local_20[0x41];
       if (uVar5 == 0) {
-        if ((*(int *)((int)param_1 + 0x144) == 0) || (*(int *)((int)param_1 + 0x158) == 0)) {
-          uVar5 = *(uint *)((int)param_1 + 0x27c);
+        if ((param_1->field_0144 == 0) || (param_1->field_0158 == 0)) {
+          uVar5 = param_1->field_027C;
         }
         else {
-          iVar3 = *(int *)((int)param_1 + 0x278);
-          iVar8 = (((int)*(short *)(puVar9[3] + 4) - *(int *)((int)param_1 + 0x16c)) * iVar3) /
-                  (*(int *)((int)param_1 + 0x170) - *(int *)((int)param_1 + 0x16c));
+          iVar3 = param_1->field_0278;
+          iVar8 = (((int)*(short *)(puVar9[3] + 4) - param_1->field_016C) * iVar3) /
+                  (param_1->field_0170 - param_1->field_016C);
           if (iVar8 < 0) {
-            uVar5 = *(uint *)((int)param_1 + 0x27c);
+            uVar5 = param_1->field_027C;
           }
           else {
             if (iVar3 <= iVar8) {
               iVar8 = iVar3 + -1;
             }
-            uVar5 = *(int *)((int)param_1 + 0x27c) + iVar8 * 0x100;
+            uVar5 = param_1->field_027C + iVar8 * 0x100;
           }
         }
       }
@@ -77,7 +76,7 @@ int __fastcall FUN_007295f0(void *param_1)
   }
   local_8 = 0xffffffff;
   if (local_2c != 0) {
-    piVar4 = *(int **)(*(int *)((int)param_1 + 4) + 0x40);
+    piVar4 = *(int **)(param_1->field_0004 + 0x40);
     (**(code **)(*piVar4 + 0x80))(piVar4,0);
   }
   ExceptionList = local_14;

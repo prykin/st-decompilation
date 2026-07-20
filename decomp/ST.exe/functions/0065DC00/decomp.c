@@ -17,7 +17,7 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
   int local_8;
   
   local_8 = 0;
-  groupContent = thunk_FUN_0065da10(param_1,param_2);
+  groupContent = thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)param_1,param_2);
   if (groupContent == (uint *)0x0) {
     return 0;
   }

@@ -76,18 +76,17 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       local_8 = 0;
     }
     if ((this_00->field_0x21e4 != '\0') &&
-       (*(int *)(DAT_0081176c + 0x300) < *(int *)(DAT_0081176c + 0x304) + -1)) {
-      *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + 1;
-      if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
+       ((int)PTR_0081176c->field_0300 < *(int *)&PTR_0081176c->field_0x304 + -1)) {
+      PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + 1;
+      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),
-                   *(uint *)(DAT_0081176c + 0x300),*(uint *)(DAT_0081176c + 0x314),
-                   *(uint *)(DAT_0081176c + 0x318));
+                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                   PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x01')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -145,27 +144,27 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       cVar1 = this_00->field_1E26;
       if (((cVar1 != '\x06') && (cVar1 != '\a')) && (cVar1 != '\x0e')) {
-        if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
+        if (PTR_0081176c->field_0391 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x3a9),*(uint *)(DAT_0081176c + 0x3ad));
+                    ((uint *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391,0xfffffffe,
+                     PTR_0081176c->field_03A9,PTR_0081176c->field_03AD);
         }
-        if (*(uint *)(DAT_0081176c + 0x422) != 0xffffffff) {
+        if (PTR_0081176c->field_0422 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x466),*(uint *)(DAT_0081176c + 0x422),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x43a),*(uint *)(DAT_0081176c + 0x43e));
+                    ((uint *)PTR_0081176c->field_0466,PTR_0081176c->field_0422,0xfffffffe,
+                     PTR_0081176c->field_043A,PTR_0081176c->field_043E);
         }
-        if (*(uint *)(DAT_0081176c + 0x4b3) != 0xffffffff) {
+        if (PTR_0081176c->field_04B3 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x4cb),*(uint *)(DAT_0081176c + 0x4cf));
+                    ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,0xfffffffe,
+                     PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
         }
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0540);
       }
       if (this_00->field_0x21e4 != '\0') {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
-        if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
-          FUN_006b3af0(*(int **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_02EC);
+        if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+          FUN_006b3af0(*(int **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc);
         }
       }
       if (this_00->field_21F8 != (HoloTy *)0x0) {
@@ -174,18 +173,18 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         this_00->field_21F8 = (HoloTy *)0x0;
       }
       if (this_00->field_0x21e6 != '\0') {
-        if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
+        if (PTR_0081176c->field_0560 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
+                    ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
+                     PTR_0081176c->field_0578,PTR_0081176c->field_057C);
         }
-        if (*(uint *)(DAT_0081176c + 0x5f1) != 0xffffffff) {
+        if (PTR_0081176c->field_05F1 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
+                    ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
+                     PTR_0081176c->field_0609,PTR_0081176c->field_060D);
         }
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0558);
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
       }
       this_00->field_0065 = 1;
       (**(code **)(this_00->field_0000 + 0x18))(0);
@@ -203,13 +202,12 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    if ((local_c->field_0x21e4 != '\0') && (0 < *(int *)(DAT_0081176c + 0x300))) {
-      *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + -1;
-      if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
+    if ((local_c->field_0x21e4 != '\0') && (0 < (int)PTR_0081176c->field_0300)) {
+      PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + -1;
+      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),
-                   *(uint *)(DAT_0081176c + 0x300),*(uint *)(DAT_0081176c + 0x314),
-                   *(uint *)(DAT_0081176c + 0x318));
+                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                   PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
     }
@@ -279,8 +277,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         local_8 = 0;
       }
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x02')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

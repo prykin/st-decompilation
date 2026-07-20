@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
   
   local_8 = (void *)0x0;
   if ((*(int *)((int)this + 0x5d3) != 0) && (*(int *)((int)this + 0x4d4) == 0)) {
-    iVar4 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x5d3),(int *)&local_8);
+    iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x5d3),(int *)&local_8);
     if (iVar4 == 0) {
       thunk_FUN_004cdeb0(local_8,*(undefined4 *)((int)this + 0x18));
       uVar5 = thunk_FUN_004cdf80(local_8,*(int *)((int)this + 0x18));

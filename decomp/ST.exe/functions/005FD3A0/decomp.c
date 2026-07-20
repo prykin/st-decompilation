@@ -13,14 +13,14 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   short local_6;
   
   iVar3 = param_1;
-  iVar2 = STGameObjC::GetMessage(this,param_1);
+  iVar2 = STGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
   }
   uVar1 = *(uint *)(iVar3 + 0x10);
   if (uVar1 < 4) {
     if (uVar1 == 3) {
-      thunk_FUN_005fda60((int)this);
+      thunk_FUN_005fda60(this);
       return 0;
     }
     if (uVar1 == 0) {
@@ -45,11 +45,11 @@ LAB_005fd4eb:
         if (iVar3 != 0) {
           *(undefined1 *)((int)this + 0x232) = 1;
         }
-        iVar3 = thunk_FUN_005fd850((int)this);
+        iVar3 = thunk_FUN_005fd850(this);
         if ((-1 < iVar3) &&
            (iVar3 = thunk_FUN_005ff3a0(this,&local_6,(undefined2 *)((int)&param_1 + 2),&local_8),
            iVar3 != 0)) {
-          thunk_FUN_005fea50((int)this);
+          thunk_FUN_005fea50(this);
           thunk_FUN_005feb60(this,(int)local_6,(int)param_1._2_2_,(int)local_8);
           thunk_FUN_00600110(this,(int)local_6,(int)param_1._2_2_,0x45f);
           return 0;
@@ -73,7 +73,7 @@ LAB_005fd4eb:
   }
   else if ((uVar1 == 0x10f) &&
           (local_10 = (byte *)thunk_FUN_006012d0(this,(int *)&local_c), local_10 != (byte *)0x0)) {
-    STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_10,local_c);
+    STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_10,local_c);
     FUN_006ab060(&local_10);
   }
   return 0;

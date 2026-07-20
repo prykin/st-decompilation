@@ -35,7 +35,7 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
     }
   }
   else if ((uVar1 != 0x61) && (uVar1 == 0x8102)) {
-    FUN_006e1c20(DAT_00807598,*(float *)((int)this + 0x1c),*(int *)((int)this + 0x20),0.0,&local_8,
+    FUN_006e1c20(PTR_00807598,*(float *)((int)this + 0x1c),*(int *)((int)this + 0x20),0.0,&local_8,
                  &param_1);
     lVar6 = Library::MSVCRT::__ftol();
     uVar5 = (undefined4)lVar6;

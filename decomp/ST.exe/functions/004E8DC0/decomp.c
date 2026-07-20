@@ -1,21 +1,21 @@
 
-undefined4 __fastcall FUN_004e8dc0(int *param_1)
+undefined4 __fastcall FUN_004e8dc0(AnonShape_004E8DC0_1D60A929 *param_1)
 
 {
   int iVar1;
-  int *local_8;
+  AnonShape_004E8DC0_1D60A929 *local_8;
   
-  if ((param_1[0x13e] == 0) && (*(int *)((int)param_1 + 0x5d3) != 0)) {
+  if ((*(int *)&param_1->field_0x4f8 == 0) && (param_1->field_05D3 != 0)) {
     local_8 = param_1;
-    iVar1 = FUN_006e62d0(DAT_00802a38,*(int *)((int)param_1 + 0x5d3),(int *)&local_8);
+    iVar1 = FUN_006e62d0(PTR_00802a38,param_1->field_05D3,(int *)&local_8);
     if (iVar1 == 0) {
-      iVar1 = (**(code **)(*local_8 + 0x2c))();
+      iVar1 = (**(code **)(*(int *)local_8 + 0x2c))();
       if (iVar1 == 0x6c) {
         iVar1 = thunk_FUN_004e9b10(local_8,(int)param_1);
         if (iVar1 != 0) {
-          param_1[0x13e] = *(int *)((int)param_1 + 0x5d3);
-          param_1[0x13f] = 1;
-          *(int **)((int)param_1 + 0x61b) = local_8;
+          *(int *)&param_1->field_0x4f8 = param_1->field_05D3;
+          *(undefined4 *)&param_1->field_0x4fc = 1;
+          param_1->field_061B = (int *)local_8;
         }
       }
     }

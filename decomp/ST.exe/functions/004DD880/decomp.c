@@ -2,21 +2,20 @@
 undefined4 __fastcall FUN_004dd880(int param_1)
 
 {
-  int iVar1;
+  AnonShape_004DDCC0_33DEB43E *pAVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
   int iVar6;
-  int iVar7;
+  int *piVar7;
   int *piVar8;
   int *piVar9;
-  int *piVar10;
   int local_104 [4];
   undefined4 local_f4 [51];
   int local_28;
   int local_24;
-  int local_20;
+  AnonShape_004DDCC0_33DEB43E *local_20;
   int *local_1c;
   int *local_18;
   undefined4 *local_14;
@@ -24,7 +23,7 @@ undefined4 __fastcall FUN_004dd880(int param_1)
   uint *local_c;
   int *local_8;
   
-  local_20 = param_1;
+  local_20 = (AnonShape_004DDCC0_33DEB43E *)param_1;
   thunk_FUN_004406c0(*(char *)(param_1 + 0x24));
   piVar8 = local_104;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -53,24 +52,24 @@ undefined4 __fastcall FUN_004dd880(int param_1)
   piVar8 = local_104;
   local_18 = &DAT_007bf67c;
   do {
-    iVar1 = local_20;
+    pAVar1 = local_20;
     iVar6 = local_28;
     if (local_18[-1] == local_24) {
       iVar4 = *local_18;
       if (((iVar4 < 0) || (iVar4 == 0)) ||
-         (iVar4 = thunk_FUN_004e60d0(*(int *)(local_20 + 0x24),iVar4), local_18[1] <= iVar4)) {
-        iVar7 = *(int *)(iVar1 + 0x4d0);
-        iVar4 = iVar1 + 0x4d0;
+         (iVar4 = thunk_FUN_004e60d0(*(int *)&local_20->field_0024,iVar4), local_18[1] <= iVar4)) {
+        iVar4 = pAVar1->field_04D0;
+        piVar7 = &pAVar1->field_04D0;
         iVar5 = 0;
-        if (-1 < iVar7) {
+        if (-1 < iVar4) {
 LAB_004dd9b3:
-          if (iVar7 != iVar6) goto code_r0x004dd9bb;
-          piVar9 = (int *)(iVar1 + 0x4d0 + iVar5 * 0x14);
-          piVar10 = piVar8;
+          if (iVar4 != iVar6) goto code_r0x004dd9bb;
+          piVar7 = &pAVar1->field_04D0 + iVar5 * 5;
+          piVar9 = piVar8;
           for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *piVar10 = *piVar9;
+            *piVar9 = *piVar7;
+            piVar7 = piVar7 + 1;
             piVar9 = piVar9 + 1;
-            piVar10 = piVar10 + 1;
           }
           piVar8 = piVar8 + 5;
           local_10 = local_10 + 5;
@@ -81,11 +80,11 @@ LAB_004dd9b3:
           goto LAB_004dda13;
         }
 LAB_004dd9c6:
-        iVar1 = *local_1c;
+        iVar4 = *local_1c;
         *piVar8 = iVar6;
         *local_10 = 0;
         *local_8 = 0;
-        *local_c = (uint)(iVar1 < 10);
+        *local_c = (uint)(iVar4 < 10);
         piVar8 = piVar8 + 5;
         *local_14 = 0;
         local_10 = local_10 + 5;
@@ -98,23 +97,23 @@ LAB_004dda13:
     local_18 = local_18 + 3;
     local_1c = local_1c + 5;
     local_28 = iVar6 + 1;
-    param_1 = local_20;
+    param_1 = (int)local_20;
   } while (iVar6 + -0x95 < 0x2d);
 LAB_004dda3a:
   piVar8 = local_104;
-  piVar9 = (int *)(param_1 + 0x4d0);
+  piVar7 = &((AnonShape_004DDCC0_33DEB43E *)param_1)->field_04D0;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *piVar9 = *piVar8;
+    *piVar7 = *piVar8;
     piVar8 = piVar8 + 1;
-    piVar9 = piVar9 + 1;
+    piVar7 = piVar7 + 1;
   }
-  thunk_FUN_004ddcc0(param_1);
+  thunk_FUN_004ddcc0((AnonShape_004DDCC0_33DEB43E *)param_1);
   return 0;
 code_r0x004dd9bb:
-  iVar7 = *(int *)(iVar4 + 0x14);
-  iVar4 = iVar4 + 0x14;
+  iVar4 = piVar7[5];
+  piVar7 = piVar7 + 5;
   iVar5 = iVar5 + 1;
-  if (iVar7 < 0) goto LAB_004dd9c6;
+  if (iVar4 < 0) goto LAB_004dd9c6;
   goto LAB_004dd9b3;
 }
 

@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_0075022f(void *this,int *param_1)
     (**(code **)(**(int **)((int)this + 0x60) + 8))(*(int **)((int)this + 0x60));
   }
   *(int **)((int)this + 0x60) = param_1;
-  FUN_00750287((int)this);
+  FUN_00750287(this);
   LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }

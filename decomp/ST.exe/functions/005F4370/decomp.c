@@ -11,14 +11,13 @@ uint __thiscall FUN_005f4370(void *this,int *param_1,int *param_2,int *param_3,i
   if (param_4 == 0) {
     *param_1 = (int)*(short *)((int)this + 0xd1);
     *param_2 = (int)*(short *)((int)this + 0xd3);
-    iVar2 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0xfb)) *
-            *(int *)((int)this + 0xdf);
+    iVar2 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0xfb)) * *(int *)((int)this + 0xdf);
     *param_3 = *(short *)((int)this + 0xd5) + iVar2;
     uVar1 = (uint)(*(int *)((int)this + 0xef) <= iVar2);
   }
   else {
     if (param_4 == 1) {
-      iVar4 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0xfb);
+      iVar4 = PTR_00802a38->field_00E4 - *(int *)((int)this + 0xfb);
       iVar2 = *(int *)((int)this + 0xe7);
       iVar3 = iVar4 * iVar4;
       *param_3 = (*(int *)((int)this + 0xdf) * iVar3) / 20000 +
@@ -32,7 +31,7 @@ uint __thiscall FUN_005f4370(void *this,int *param_1,int *param_2,int *param_3,i
       return (uint)(iVar4 == *(int *)((int)this + 0xe7));
     }
     if (param_4 == 2) {
-      iVar2 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0xfb);
+      iVar2 = PTR_00802a38->field_00E4 - *(int *)((int)this + 0xfb);
       *param_1 = (*(int *)((int)this + 0xd7) * iVar2) / 10000 + (int)*(short *)((int)this + 0xd1);
       *param_2 = (*(int *)((int)this + 0xdb) * iVar2) / 10000 + (int)*(short *)((int)this + 0xd3);
       *param_3 = ((*(int *)((int)this + 0xdf) * iVar2) / 10000 -

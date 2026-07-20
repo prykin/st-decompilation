@@ -19,7 +19,7 @@ int FUN_00755970(int param_1,ushort *param_2,int param_3)
   *(undefined4 *)(param_1 + 0xc) = *(undefined4 *)(*(int *)(param_1 + 8) + 0x50);
   do {
     *(int *)(*(int *)(iVar2 + 0xc) + 0x1c) = local_8;
-    iVar3 = FUN_00753b80(iVar2,iVar6,local_8);
+    iVar3 = FUN_00753b80((AnonShape_00753B80_E259A731 *)iVar2,iVar6,local_8);
     param_1 = -1;
     iVar5 = -1;
     iVar6 = 0;

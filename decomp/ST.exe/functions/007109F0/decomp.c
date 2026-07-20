@@ -1,27 +1,27 @@
 
-void __thiscall FUN_007109f0(void *this,undefined4 *param_1)
+void __thiscall FUN_007109f0(void *this,AnonShape_007109F0_BD33A2FF *param_1)
 
 {
-  if (param_1 != (undefined4 *)0x0) {
-    *(undefined4 *)((int)this + 0x44) = *param_1;
-    *(undefined4 *)((int)this + 0x48) = param_1[1];
-    *(undefined4 *)((int)this + 0x4c) = param_1[2];
-    *(undefined4 *)((int)this + 0x50) = param_1[3];
-    *(undefined4 *)((int)this + 0x54) = param_1[4];
-    *(undefined4 *)((int)this + 0x58) = param_1[5];
-    *(undefined4 *)((int)this + 0x5c) = param_1[6];
-    *(undefined4 *)((int)this + 0x60) = param_1[7];
-    *(undefined4 *)((int)this + 100) = param_1[8];
-    *(undefined4 *)((int)this + 0x68) = param_1[9];
-    *(undefined4 *)((int)this + 0x6c) = param_1[10];
-    *(undefined2 *)((int)this + 0x70) = *(undefined2 *)(param_1 + 0xb);
-    *(undefined4 *)((int)this + 0x72) = *(undefined4 *)((int)param_1 + 0x2e);
-    *(undefined4 *)((int)this + 0x76) = *(undefined4 *)((int)param_1 + 0x32);
-    *(undefined4 *)((int)this + 0x7a) = *(undefined4 *)((int)param_1 + 0x36);
-    *(undefined4 *)((int)this + 0x7e) = *(undefined4 *)((int)param_1 + 0x3a);
-    *(undefined2 *)((int)this + 0x9e) = *(undefined2 *)((int)param_1 + 0x3e);
-    *(undefined4 *)((int)this + 0x82) = param_1[0x10];
-    *(undefined4 *)((int)this + 0x96) = param_1[0x11];
+  if (param_1 != (AnonShape_007109F0_BD33A2FF *)0x0) {
+    *(undefined4 *)((int)this + 0x44) = *(undefined4 *)param_1;
+    *(undefined4 *)((int)this + 0x48) = *(undefined4 *)&param_1->field_0x4;
+    *(undefined4 *)((int)this + 0x4c) = *(undefined4 *)&param_1->field_0x8;
+    *(undefined4 *)((int)this + 0x50) = *(undefined4 *)((int)&param_1->field_000B + 1);
+    *(undefined4 *)((int)this + 0x54) = *(undefined4 *)&param_1->field_0x10;
+    *(undefined4 *)((int)this + 0x58) = *(undefined4 *)&param_1->field_0x14;
+    *(undefined4 *)((int)this + 0x5c) = *(undefined4 *)&param_1->field_0x18;
+    *(undefined4 *)((int)this + 0x60) = *(undefined4 *)&param_1->field_0x1c;
+    *(undefined4 *)((int)this + 100) = *(undefined4 *)&param_1->field_0x20;
+    *(undefined4 *)((int)this + 0x68) = *(undefined4 *)&param_1->field_0x24;
+    *(undefined4 *)((int)this + 0x6c) = *(undefined4 *)&param_1->field_0x28;
+    *(undefined2 *)((int)this + 0x70) = *(undefined2 *)&param_1->field_0x2c;
+    *(undefined4 *)((int)this + 0x72) = param_1->field_002E;
+    *(undefined4 *)((int)this + 0x76) = param_1->field_0032;
+    *(undefined4 *)((int)this + 0x7a) = param_1->field_0036;
+    *(undefined4 *)((int)this + 0x7e) = param_1->field_003A;
+    *(undefined2 *)((int)this + 0x9e) = param_1->field_003E;
+    *(undefined4 *)((int)this + 0x82) = *(undefined4 *)(param_1 + 1);
+    *(undefined4 *)((int)this + 0x96) = *(undefined4 *)&param_1[1].field_0x4;
   }
   return;
 }

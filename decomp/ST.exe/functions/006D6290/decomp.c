@@ -7,18 +7,18 @@ int FUN_006d6290(int param_1,int *param_2)
   uint uVar3;
   int iVar4;
   int local_10;
-  int local_c;
+  AnonShape_006D6290_10462BC7 *local_c;
   uint *local_8;
   
   iVar1 = *(int *)(param_1 + 0x18);
-  local_c = *(int *)(iVar1 + 0x5c);
-  iVar2 = *(int *)(local_c + 0x288);
+  local_c = *(AnonShape_006D6290_10462BC7 **)(iVar1 + 0x5c);
+  iVar2 = local_c->field_0288;
   local_10 = 0;
   if (*(int *)(iVar1 + 0x6c) != 0) {
     *param_2 = *(int *)(param_1 + 0xc);
     return 0;
   }
-  if (*(int *)(local_c + 0x310) != 0) {
+  if (local_c->field_0310 != 0) {
     if ((*(uint *)(*(int *)(iVar2 + 0x28) + 8) & 0x4000000) != 0) {
       EnterCriticalSection((LPCRITICAL_SECTION)(*(int *)(iVar2 + 0x28) + 0x4f0));
     }
@@ -38,7 +38,7 @@ int FUN_006d6290(int param_1,int *param_2)
 LAB_006d6394:
       uVar3 = *local_8;
       *param_2 = uVar3;
-      if (*(int *)(local_c + 0x310) != 0) {
+      if (local_c->field_0310 != 0) {
         *param_2 = *(int *)(iVar2 + 0x1c) * local_10 +
                    uVar3 + *(int *)(*(int *)(iVar2 + 0x28) + 0x28) * *(int *)(iVar2 + 0x18);
       }
@@ -54,8 +54,8 @@ LAB_006d6394:
     param_1 = param_1 + 1;
     if (1 < param_1) {
 LAB_006d6363:
-      if ((*(int *)(local_c + 0x310) != 0) &&
-         ((*(uint *)(*(int *)(iVar2 + 0x28) + 8) & 0x4000000) != 0)) {
+      if ((local_c->field_0310 != 0) && ((*(uint *)(*(int *)(iVar2 + 0x28) + 8) & 0x4000000) != 0))
+      {
         LeaveCriticalSection((LPCRITICAL_SECTION)(*(int *)(iVar2 + 0x28) + 0x4f0));
       }
       return iVar4;

@@ -1,19 +1,19 @@
 
-int __fastcall FUN_004620f0(int *param_1)
+int __fastcall FUN_004620f0(STBoatC *param_1)
 
 {
   int iVar1;
   
-  if (*(byte **)((int)param_1 + 0x47b) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)((int)param_1 + 0x47b));
-    *(undefined4 *)((int)param_1 + 0x47b) = 0;
+  if ((byte *)param_1->field_047B != (byte *)0x0) {
+    FUN_006ae110((byte *)param_1->field_047B);
+    param_1->field_047B = 0;
   }
-  iVar1 = *(int *)((int)param_1 + 0x82e);
+  iVar1 = param_1->field_082E;
   if (((iVar1 != -1) && (iVar1 != 0)) && (iVar1 != 2)) {
-    iVar1 = STBoatC::sub_00460360((STBoatC *)param_1);
+    iVar1 = STBoatC::sub_00460360(param_1);
     return iVar1;
   }
-  iVar1 = (**(code **)(*param_1 + 0xd8))();
+  iVar1 = (*param_1->vtable->vfunc_D8)();
   if (iVar1 != 0) {
     return -1;
   }

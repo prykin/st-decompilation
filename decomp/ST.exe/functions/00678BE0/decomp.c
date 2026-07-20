@@ -11,38 +11,39 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
   int errorCode;
   int iVar3;
   undefined4 *puVar4;
+  AnonShape_0067D3B0_A3AACF30 *pAVar5;
   void *unaff_ESI;
-  InternalExceptionFrame *pIVar5;
+  InternalExceptionFrame *pIVar6;
   undefined4 local_54 [16];
   AiPlrClassTy *local_14;
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
   
-  pIVar5 = g_currentExceptionFrame;
+  pIVar6 = g_currentExceptionFrame;
   local_c = (undefined4 *)0x0;
   local_8 = (undefined4 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar6);
   pAVar2 = local_14;
   if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->field_0x1c,&local_10);
     if (pAVar2 == (AiPlrClassTy *)0x0) {
-      puVar4 = (undefined4 *)0x0;
+      pAVar5 = (AnonShape_0067D3B0_A3AACF30 *)0x0;
     }
     else {
-      puVar4 = &pAVar2->field_05D3;
+      pAVar5 = (AnonShape_0067D3B0_A3AACF30 *)&pAVar2->field_05D3;
     }
-    local_c = PlrDataPack(puVar4,local_8,local_10,param_1);
+    local_c = PlrDataPack(pAVar5,local_8,local_10,param_1);
     local_c[3] = 1;
     if (local_8 != (undefined4 *)0x0) {
       FUN_006ab060(&local_8);
     }
-    g_currentExceptionFrame = pIVar5;
+    g_currentExceptionFrame = pIVar6;
     return local_c;
   }
-  g_currentExceptionFrame = pIVar5;
+  g_currentExceptionFrame = pIVar6;
   if (local_8 != (undefined4 *)0x0) {
     FUN_006ab060(&local_8);
   }

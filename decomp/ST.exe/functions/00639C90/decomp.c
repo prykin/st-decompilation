@@ -35,7 +35,7 @@ undefined4 __thiscall FUN_00639c90(void *this,uint param_1)
   byte *local_8;
   
   uVar9 = param_1;
-  iVar7 = STSprGameObjC::GetMessage(this,param_1);
+  iVar7 = STSprGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar7 == 0xffff) {
     return 0xffff;
   }
@@ -60,7 +60,7 @@ undefined4 __thiscall FUN_00639c90(void *this,uint param_1)
         }
       }
       STPlaySystemC::SaveObjData
-                (DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_8,local_10 + param_1);
+                (PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,local_10 + param_1);
       FUN_006ab060(&local_8);
       FUN_006ab060(&local_14);
       return 0;
@@ -74,7 +74,7 @@ switchD_00639e3d_caseD_d:
     return 0;
   }
   if (uVar12 == 3) {
-    thunk_FUN_004ad310((int)this + 0x1d5);
+    thunk_FUN_004ad310((STT3DSprC *)((int)this + 0x1d5));
     if (-1 < (int)*(uint *)((int)this + 0x33a)) {
       FUN_006e8ba0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a));
       *(undefined4 *)((int)this + 0x33a) = 0xffffffff;
@@ -84,7 +84,7 @@ switchD_00639e3d_caseD_d:
       *(undefined4 *)((int)this + 0x353) = 0xffffffff;
     }
     thunk_FUN_0063e660((int)this);
-    thunk_FUN_00640130((int)this);
+    thunk_FUN_00640130(this);
     return 0;
   }
   if (uVar12 != 0) {
@@ -108,7 +108,7 @@ switchD_00639e3d_caseD_d:
       puVar10 = puVar10 + 1;
       puVar14 = puVar14 + 1;
     }
-    thunk_FUN_0063c030(this,DAT_00802a38->field_00E4);
+    thunk_FUN_0063c030(this,PTR_00802a38->field_00E4);
     if (*(uint *)((int)this + 0x245) < 2) {
       iVar7 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,s_trmmine_007d1f30,0x1d);
@@ -133,19 +133,19 @@ LAB_00639dab:
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     thunk_FUN_004ac660((STT3DSprC *)((int)this + 0x1d5),'\r');
-    STT3DSprC::StartShow((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)((int)this + 0x1d5),0xd,PTR_00802a38->field_00E4);
     *(undefined1 *)((int)this + 0x29f) = 1;
     *(undefined1 *)((int)this + 0x265) = 1;
     return 0;
   }
   switch(*(undefined1 *)((int)this + 0x265)) {
   case 1:
-    uVar9 = thunk_FUN_0063c170(this,DAT_00802a38->field_00E4);
+    uVar9 = thunk_FUN_0063c170(this,PTR_00802a38->field_00E4);
     if (0 < (int)uVar9) {
       if (uVar9 != 2) {
         thunk_FUN_004ad430((int)this + 0x1d5);
         *(undefined1 *)((int)this + 0x29f) = 0;
-        *(undefined4 *)((int)this + 0x28e) = DAT_00802a38->field_00E4;
+        *(undefined4 *)((int)this + 0x28e) = PTR_00802a38->field_00E4;
         *(undefined1 *)((int)this + 0x265) = 2;
         return 0;
       }
@@ -155,7 +155,7 @@ LAB_00639dab:
         iVar7 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,s_expl_s0_007d1f48,0x1d);
         if (iVar7 == 0) {
           thunk_FUN_004ac700(pSVar1,'\x0f');
-          STT3DSprC::StartShow(pSVar1,0xd,DAT_00802a38->field_00E4);
+          STT3DSprC::StartShow(pSVar1,0xd,PTR_00802a38->field_00E4);
           *(undefined1 *)((int)this + 0x29f) = 1;
           thunk_FUN_0062b990(*(undefined4 *)((int)this + 0x266),*(undefined4 *)((int)this + 0x26a),
                              *(undefined4 *)((int)this + 0x26e),0,(int)this,0,0);
@@ -237,7 +237,7 @@ joined_r0x0063a754:
     }
     break;
   case 2:
-    if ((uint)(DAT_00802a38->field_00E4 - *(int *)((int)this + 0x28e)) < 0x1f) {
+    if ((uint)(PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28e)) < 0x1f) {
       return 0;
     }
     sVar3 = *(short *)((int)this + 0x255);
@@ -279,10 +279,10 @@ joined_r0x0063a754:
     thunk_FUN_004abce0((void *)((int)this + 0x1d5),0xd,iVar7,iVar8,'\0');
 LAB_0063a27d:
     *(undefined1 *)((int)this + 0x29e) = 4;
-    STT3DSprC::StartShow((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)((int)this + 0x1d5),0xd,PTR_00802a38->field_00E4);
     thunk_FUN_004ad460((STT3DSprC *)((int)this + 0x1d5),0);
     *(undefined1 *)((int)this + 0x29f) = 1;
-    *(undefined4 *)((int)this + 0x28e) = DAT_00802a38->field_00E4;
+    *(undefined4 *)((int)this + 0x28e) = PTR_00802a38->field_00E4;
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
@@ -341,9 +341,9 @@ LAB_0063a27d:
     *(undefined4 *)((int)this + 0x292) = 0x13;
     return 0;
   case 3:
-    bVar6 = thunk_FUN_0063c4a0(this,DAT_00802a38->field_00E4);
+    bVar6 = thunk_FUN_0063c4a0(this,PTR_00802a38->field_00E4);
     if (CONCAT31(extraout_var,bVar6) != 0 && -1 < extraout_var) {
-      *(undefined4 *)((int)this + 0x28e) = DAT_00802a38->field_00E4;
+      *(undefined4 *)((int)this + 0x28e) = PTR_00802a38->field_00E4;
       *(undefined1 *)((int)this + 0x265) = 4;
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar7 = *(int *)((int)this + 0x26a);
@@ -382,7 +382,7 @@ LAB_0063a27d:
         *(undefined4 *)((int)this + 0x292) = 0x13;
       }
     }
-    if ((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) {
+    if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
       iVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
       *(int *)((int)this + 0x1c) = iVar7;
       iVar7 = iVar7 * 0x41c64e6d + 0x3039;
@@ -447,13 +447,13 @@ LAB_0063a728:
     }
     break;
   case 4:
-    iVar7 = thunk_FUN_0063c510(this,DAT_00802a38->field_00E4);
+    iVar7 = thunk_FUN_0063c510(this,PTR_00802a38->field_00E4);
     if (0 < iVar7) {
       return 0;
     }
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
-    if ((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) {
+    if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
       iVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
       *(int *)((int)this + 0x1c) = iVar7;
       iVar7 = iVar7 * 0x41c64e6d + 0x3039;
@@ -511,7 +511,7 @@ LAB_0063a728:
     }
     break;
   case 5:
-    uVar9 = thunk_FUN_0063c380(this,DAT_00802a38->field_00E4);
+    uVar9 = thunk_FUN_0063c380(this,PTR_00802a38->field_00E4);
     if (uVar9 == 0) {
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
@@ -578,7 +578,7 @@ LAB_0063a728:
                 (g_traksClass_00802A7C,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
                  *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
                  ,-1,0,0);
-      thunk_FUN_0063f340((int)this);
+      thunk_FUN_0063f340(this);
       return 0;
     }
     *(int *)((int)this + 0x26e) = *(int *)((int)this + 0x27a) + 100;
@@ -621,16 +621,16 @@ LAB_0063a728:
     }
     return 0xffff;
   case 6:
-    iVar7 = thunk_FUN_0063c510(this,DAT_00802a38->field_00E4);
+    iVar7 = thunk_FUN_0063c510(this,PTR_00802a38->field_00E4);
     if (iVar7 == 4) {
       pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
       thunk_FUN_004abce0(pSVar1,0xd,0x10,0x13,'\0');
       thunk_FUN_004ac660(pSVar1,'\r');
-      STT3DSprC::StartShow(pSVar1,0xd,DAT_00802a38->field_00E4);
+      STT3DSprC::StartShow(pSVar1,0xd,PTR_00802a38->field_00E4);
       *(undefined1 *)((int)this + 0x29f) = 1;
       *(undefined1 *)((int)this + 0x29e) = 3;
       *(undefined1 *)((int)this + 0x265) = 7;
-      *(undefined4 *)((int)this + 0x28e) = DAT_00802a38->field_00E4;
+      *(undefined4 *)((int)this + 0x28e) = PTR_00802a38->field_00E4;
     }
     iVar7 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\r');
     if (iVar7 % 7 == 0) {
@@ -692,7 +692,7 @@ LAB_0063a728:
     if (iVar7 == 0) {
       thunk_FUN_004ac700(pSVar1,'\x0f');
       thunk_FUN_004ac700(pSVar1,'\r');
-      STT3DSprC::StartShow(pSVar1,0xd,DAT_00802a38->field_00E4);
+      STT3DSprC::StartShow(pSVar1,0xd,PTR_00802a38->field_00E4);
       *(undefined1 *)((int)this + 0x29f) = 1;
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
@@ -707,7 +707,7 @@ LAB_0063a728:
     pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
     iVar7 = thunk_FUN_004ac910(pSVar1,'\r');
     if (iVar7 == 0x17) {
-      STT3DSprC::StartShow(pSVar1,0xf,DAT_00802a38->field_00E4);
+      STT3DSprC::StartShow(pSVar1,0xf,PTR_00802a38->field_00E4);
     }
     iVar7 = thunk_FUN_004acd30(pSVar1,'\r');
     iVar8 = thunk_FUN_004ac910(pSVar1,'\r');
@@ -789,7 +789,7 @@ LAB_0063a728:
       }
     }
     uVar9 = *(uint *)((int)this + 0x33a);
-    if ((-1 < (int)uVar9) && ((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0)) {
+    if ((-1 < (int)uVar9) && ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0)) {
       uVar12 = *(int *)((int)this + 0x33e) + 1;
       *(uint *)((int)this + 0x33e) = uVar12;
       if ((int)uVar12 < *(int *)((int)this + 0x342)) {
@@ -801,7 +801,7 @@ LAB_0063a728:
       }
     }
     uVar9 = *(uint *)((int)this + 0x353);
-    if ((-1 < (int)uVar9) && ((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0)) {
+    if ((-1 < (int)uVar9) && ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0)) {
       uVar12 = *(int *)((int)this + 0x357) + 1;
       *(uint *)((int)this + 0x357) = uVar12;
       if ((int)uVar12 < *(int *)((int)this + 0x35b)) {
@@ -820,7 +820,7 @@ LAB_0063a728:
       return 0;
     }
     thunk_FUN_0063e9c0(this,10);
-    thunk_FUN_0063e410((int)this);
+    thunk_FUN_0063e410(this);
     iVar7 = *(int *)((int)this + 0x2c0) * 10;
     if (iVar7 - *(int *)((int)this + 0x2b0) == 0 || iVar7 < *(int *)((int)this + 0x2b0)) {
       return 0;
@@ -833,8 +833,9 @@ LAB_0063a728:
     if (-1 < *(int *)((int)this + 0x363)) {
       if (*(int *)((int)this + 0x367) == 0) {
         local_c = CONCAT31((int3)uVar9,1);
-        iVar7 = *(int *)(*(int *)((int)this + 0x211) + 0x380);
-        FUN_006e3210(*(int *)((int)this + 0x211),(*(int *)((int)this + 0x2a4) * iVar7) / 0xc9,
+        iVar7 = (*(AnonShape_006E3210_FE49985F **)((int)this + 0x211))->field_0380;
+        FUN_006e3210(*(AnonShape_006E3210_FE49985F **)((int)this + 0x211),
+                     (*(int *)((int)this + 0x2a4) * iVar7) / 0xc9,
                      (*(int *)((int)this + 0x2a8) * iVar7) / 0xc9);
         lVar16 = Library::MSVCRT::__ftol();
         param_1 = (int)(short)lVar16 + 0x2d;
@@ -849,7 +850,7 @@ LAB_0063a728:
         *(undefined4 *)((int)this + 0x363) = 0xffffffff;
       }
     }
-    iVar7 = thunk_FUN_0063f790((int)this);
+    iVar7 = thunk_FUN_0063f790(this);
     if (iVar7 != 0) {
       if (-1 < iVar7) {
         thunk_FUN_0063d460(this,*(undefined4 *)((int)this + 0x266),
@@ -858,7 +859,7 @@ LAB_0063a728:
         thunk_FUN_0063ddb0(this,0);
         iVar7 = *(int *)((int)this + 0x37f);
         if (iVar7 != 0) {
-          if ((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) {
+          if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
             *(char *)(iVar7 + 0x15) = *(char *)(iVar7 + 0x15) + -1;
             uVar9 = **(uint **)((int)this + 0x37f);
             if (-1 < (int)uVar9) {
@@ -869,7 +870,7 @@ LAB_0063a728:
             }
           }
           else {
-            thunk_FUN_00640130((int)this);
+            thunk_FUN_00640130(this);
           }
         }
         if (*(int *)((int)this + 0x34b) != 0) {
@@ -932,7 +933,7 @@ LAB_0063a728:
     }
     iVar7 = *(int *)((int)this + 0x37f);
     if (iVar7 != 0) {
-      if ((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) {
+      if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
         *(char *)(iVar7 + 0x15) = *(char *)(iVar7 + 0x15) + -1;
         uVar9 = **(uint **)((int)this + 0x37f);
         if (-1 < (int)uVar9) {
@@ -943,11 +944,11 @@ LAB_0063a728:
         }
       }
       else {
-        thunk_FUN_00640130((int)this);
+        thunk_FUN_00640130(this);
       }
     }
     thunk_FUN_0063e9c0(this,0xc);
-    thunk_FUN_0063e410((int)this);
+    thunk_FUN_0063e410(this);
     if (*(int *)((int)this + 0x2b8) < *(int *)((int)this + 0x2b0)) {
       thunk_FUN_0063e660((int)this);
       *(undefined1 *)((int)this + 0x265) = 0xd;

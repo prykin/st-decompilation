@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_0060cef0(void *param_1)
+undefined4 __fastcall FUN_0060cef0(AnonShape_0060CEF0_8FC1D59C *param_1)
 
 {
   int iVar1;
@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_0060cef0(void *param_1)
   int local_c;
   int local_8;
   
-  iVar1 = *(int *)((int)param_1 + 0x23c);
+  iVar1 = param_1->field_023C;
   local_c = 0;
   local_10 = 0;
   if (0 < iVar1) {
@@ -21,20 +21,19 @@ undefined4 __fastcall FUN_0060cef0(void *param_1)
     do {
       iVar3 = FUN_006aff50(local_8);
       iVar4 = FUN_006aff5b(local_8);
-      iVar5 = (*(int *)((int)param_1 + 0x1fd) * iVar3) / 10000 + *(int *)((int)param_1 + 0x1e9);
-      iVar6 = (*(int *)((int)param_1 + 0x1fd) * iVar4) / 10000 + *(int *)((int)param_1 + 0x1ed);
-      bVar2 = thunk_FUN_0060ccf0(param_1,local_10,iVar5,iVar6,*(int *)((int)param_1 + 0x1f1),
-                                 (*(int *)((int)param_1 + 0x1f9) * iVar3) / 10000 + iVar5,
-                                 (*(int *)((int)param_1 + 0x1f9) * iVar4) / 10000 + iVar6,
-                                 *(int *)((int)param_1 + 0x1f1));
+      iVar5 = (param_1->field_01FD * iVar3) / 10000 + param_1->field_01E9;
+      iVar6 = (param_1->field_01FD * iVar4) / 10000 + param_1->field_01ED;
+      bVar2 = thunk_FUN_0060ccf0(param_1,local_10,iVar5,iVar6,param_1->field_01F1,
+                                 (param_1->field_01F9 * iVar3) / 10000 + iVar5,
+                                 (param_1->field_01F9 * iVar4) / 10000 + iVar6,param_1->field_01F1);
       if (CONCAT31(extraout_var,bVar2) != 0) {
         local_c = local_c + 1;
       }
       local_8 = local_8 + (int)(0x168 / (longlong)iVar1);
       local_10 = local_10 + 1;
-    } while (local_10 < *(int *)((int)param_1 + 0x23c));
+    } while (local_10 < param_1->field_023C);
   }
-  if (local_c != *(int *)((int)param_1 + 0x23c)) {
+  if (local_c != param_1->field_023C) {
     return 0;
   }
   return 1;

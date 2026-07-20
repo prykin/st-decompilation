@@ -11,7 +11,7 @@ void __thiscall STBoatC::sub_0048DBA0(STBoatC *this)
   short sVar3;
   void *this_00;
   
-  if ((this->field_045D == 4) || (this->field_0459 == 0x68)) {
+  if ((this->field_045D == CASE_4) || (this->field_0459 == CASE_68)) {
     sVar1 = this->field_0554;
     sVar2 = this->field_0558;
     sVar3 = this->field_0556;

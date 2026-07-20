@@ -1,36 +1,36 @@
 
-void __thiscall FUN_00580780(void *this,undefined4 *param_1)
+void __thiscall FUN_00580780(void *this,AnonShape_00580780_266862D6 *param_1)
 
 {
   undefined4 uVar1;
   int iVar2;
   
   uVar1 = (**(code **)(*(int *)this + 0x2c))();
-  *param_1 = uVar1;
+  *(undefined4 *)param_1 = uVar1;
   iVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
-  *(char *)(param_1 + 1) = (char)iVar2;
-  *(undefined1 *)((int)param_1 + 5) = 4;
-  *(undefined1 *)((int)param_1 + 6) = 0;
-  *(undefined1 *)((int)param_1 + 7) = 1;
-  *(undefined1 *)(param_1 + 2) = *(undefined1 *)((int)this + 0x21d);
+  param_1->field_0x4 = (char)iVar2;
+  param_1->field_0005 = 4;
+  param_1->field_0006 = 0;
+  param_1->field_0007 = 1;
+  param_1->field_0x8 = *(undefined1 *)((int)this + 0x21d);
   uVar1 = (**(code **)(*(int *)this + 0x2c))();
   switch(uVar1) {
   case 0xdc:
-    *(undefined1 *)(param_1 + 7) = 2;
-    *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)((int)this + 0x259);
+    param_1->field_0x1c = 2;
+    param_1->field_001D = *(undefined4 *)((int)this + 0x259);
     return;
   case 0xdd:
-    *(undefined1 *)(param_1 + 7) = 0;
-    *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)((int)this + 0x259);
+    param_1->field_0x1c = 0;
+    param_1->field_001D = *(undefined4 *)((int)this + 0x259);
     return;
   case 0xde:
-    *(undefined1 *)(param_1 + 7) = 1;
-    *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)((int)this + 0x259);
+    param_1->field_0x1c = 1;
+    param_1->field_001D = *(undefined4 *)((int)this + 0x259);
     return;
   case 0xe0:
-    *(undefined1 *)(param_1 + 7) = 4;
+    param_1->field_0x1c = 4;
   }
-  *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)((int)this + 0x259);
+  param_1->field_001D = *(undefined4 *)((int)this + 0x259);
   return;
 }
 

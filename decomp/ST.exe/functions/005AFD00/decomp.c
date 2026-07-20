@@ -6,7 +6,12 @@
    
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
-   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_13=19 */
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_13=19
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
 
@@ -43,6 +48,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   undefined4 *puVar23;
   bool bVar24;
   undefined4 uVar25;
+  AnonShape_006B8200_800652FF *pAVar26;
   byte local_370 [260];
   _WIN32_FIND_DATAA local_26c;
   InternalExceptionFrame local_12c;
@@ -120,16 +126,16 @@ switchD_005afd30_caseD_c:
     RaiseInternalException(iVar6,0,s_E____titans_Start_load_obj_cpp_007cc728,0x4f5);
     return;
   }
-  if ((byte *)local_28->field_1C97 != (byte *)0x0) {
-    FUN_006b5570((byte *)local_28->field_1C97);
+  if ((AnonShape_006B5570_4D68B99C *)local_28->field_1C97 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_28->field_1C97);
     this_01->field_1C97 = 0;
   }
   if ((byte *)this_01->field_1C9B != (byte *)0x0) {
     FUN_006ae110((byte *)this_01->field_1C9B);
     this_01->field_1C9B = 0;
   }
-  if ((byte *)this_01->field_1C9F != (byte *)0x0) {
-    FUN_006b5570((byte *)this_01->field_1C9F);
+  if ((AnonShape_006B5570_4D68B99C *)this_01->field_1C9F != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_01->field_1C9F);
     this_01->field_1C9F = 0;
   }
   puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,0x32,10);
@@ -219,8 +225,7 @@ switchD_005afd30_caseD_c:
     pcVar12 = pcVar12 + 1;
   }
   CVar2 = this_01->field_1A5F;
-  if ((CVar2 != 0) && ((CVar2 < (CASE_4|CASE_2) || ((CVar2 == CASE_13 && (DAT_00803400 != '\f'))))))
-  {
+  if ((CVar2 != CASE_0) && ((CVar2 < CASE_6 || ((CVar2 == CASE_13 && (DAT_00803400 != '\f')))))) {
     local_2c = 1;
   }
   pbVar20 = &this_01->field_1CA3;
@@ -287,7 +292,7 @@ LAB_005b003c:
             iVar6 = 0;
 LAB_005b0041:
             if ((iVar6 != 0) || (local_34 != 0)) {
-              if (this_01->field_1A5F == (CASE_2|CASE_1)) {
+              if (this_01->field_1A5F == CASE_3) {
                 uVar19 = 0xffffffff;
                 local_20 = &this_01->field_0x1faf;
                 pcVar16 = &this_01->field_1DA7;
@@ -388,13 +393,15 @@ LAB_005b0041:
                 if (iVar6 == 0) {
                   pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                               (0x345,&local_28->field_0x1faf,0,0,0);
-                  if (DAT_0080c4cb != (uint *)0x0) {
-                    FUN_006b5570((byte *)DAT_0080c4cb);
+                  if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+                    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
                   }
-                  DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
+                  PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                                 Library::Ourlib::MFSARR::mfSarLoad
                                            (pcVar8,PTR_s_OBJECTIVES_0079c074,0);
-                  if (DAT_0080c4cb == (uint *)0x0) {
-                    DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                  if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+                    PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
                   }
                   puVar23 = (undefined4 *)&DAT_0080ed16;
                   for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -550,7 +557,7 @@ LAB_005b01f3:
     pcVar16 = pcVar16 + 1;
     pcVar12 = pcVar12 + 1;
   }
-  if (this_01->field_1A5F == (CASE_2|CASE_1)) {
+  if (this_01->field_1A5F == CASE_3) {
     bVar24 = false;
   }
   else {
@@ -742,7 +749,7 @@ LAB_005b0523:
           }
           iVar6 = Library::MSVCRT::__strcmpi(pcVar12,pcVar16);
           if (0 < iVar6) {
-            FUN_006b8200(this_01->field_1C9F,uVar19,uVar14);
+            FUN_006b8200((AnonShape_006B8200_800652FF *)this_01->field_1C9F,uVar19,uVar14);
             local_1c = 1;
           }
           uVar19 = uVar14;
@@ -786,19 +793,21 @@ LAB_005b0639:
             }
             iVar6 = Library::MSVCRT::__strcmpi(pcVar12,pcVar16);
             if (0 < iVar6) {
-              iVar6 = this_01->field_1C97;
+              pAVar26 = (AnonShape_006B8200_800652FF *)this_01->field_1C97;
               goto LAB_005b06e8;
             }
           }
           else {
-            FUN_006acc70(this_01->field_1C9B,uVar19,&local_3c.dwLowDateTime);
-            FUN_006acc70(this_01->field_1C9B,uVar19 + 1,&local_44.dwLowDateTime);
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_01->field_1C9B,uVar19,
+                         &local_3c.dwLowDateTime);
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_01->field_1C9B,uVar19 + 1,
+                         &local_44.dwLowDateTime);
             LVar11 = CompareFileTime(&local_3c,&local_44);
             if (LVar11 < 0) {
-              FUN_006b0cd0(this_01->field_1C9B,uVar19,uVar19 + 1);
-              iVar6 = this_01->field_1C97;
+              FUN_006b0cd0((AnonShape_006B0CD0_C8D121FA *)this_01->field_1C9B,uVar19,uVar19 + 1);
+              pAVar26 = (AnonShape_006B8200_800652FF *)this_01->field_1C97;
 LAB_005b06e8:
-              FUN_006b8200(iVar6,uVar19,uVar19 + 1);
+              FUN_006b8200(pAVar26,uVar19,uVar19 + 1);
               local_1c = 1;
             }
           }

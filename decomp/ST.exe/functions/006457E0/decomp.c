@@ -3,7 +3,7 @@ void __fastcall FUN_006457e0(int param_1)
 
 {
   undefined4 local_24 [2];
-  int local_1c;
+  undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
@@ -11,8 +11,8 @@ void __fastcall FUN_006457e0(int param_1)
   local_14 = 10;
   local_18 = 0;
   local_10 = *(undefined4 *)(param_1 + 8);
-  local_1c = DAT_00802a38->systemId;
-  SystemClassTy::PostMessage(DAT_00802a38,local_24);
+  local_1c = *(undefined4 *)&PTR_00802a38->field_0x14;
+  SystemClassTy::PostMessage((SystemClassTy *)PTR_00802a38,local_24);
   return;
 }
 

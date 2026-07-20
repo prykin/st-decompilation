@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
     return 0xffffffff;
   }
   iVar5 = *(int *)((int)this + 0x298);
-  iVar6 = *(int *)(DAT_00802a38 + 0xe4);
+  iVar6 = PTR_00802a38->field_00E4;
   local_8 = (int)*(short *)((int)this + 0x25a);
   local_c = (int)*(short *)((int)this + 0x25c);
   *(int *)((int)this + 0x298) = iVar6;
@@ -50,12 +50,12 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
         *(undefined2 *)((int)this + 0x270) = 0xffff;
         uVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar7;
-        *(uint *)((int)this + 0x294) = (uVar7 >> 0x10) % 0xb + 10 + *(int *)(DAT_00802a38 + 0xe4);
-        *(undefined4 *)((int)this + 0x298) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        *(uint *)((int)this + 0x294) = (uVar7 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
+        *(undefined4 *)((int)this + 0x298) = PTR_00802a38->field_00E4;
       }
     }
     else {
-      fVar8 = thunk_FUN_00616400((int)this,local_10,local_14,local_18);
+      fVar8 = thunk_FUN_00616400(this,local_10,local_14,local_18);
       if (fVar8 != (float10)_DAT_0079034c) {
         sVar1 = *(short *)((int)this + 0x25a);
         lVar9 = Library::MSVCRT::__ftol();

@@ -84,8 +84,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
     pcVar3 = (ccFntTy *)
-             ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
-                               (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
+             ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
+                               (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
     this_00->field_01DD = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
@@ -215,7 +215,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     }
     local_300[3] = local_300[3] + 0x1a;
     local_298 = 0x6201;
-    (**(code **)(*(int *)this_00->field_000C + 8))(4,&this_00->field_01C5,0,local_488,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,4,&this_00->field_01C5,(int *)0x0,local_488,0);
     if (8 < DAT_00808aaf) {
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;
@@ -303,7 +304,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       local_38 = 2;
       local_34 = 0xb209;
       local_3c = local_5c;
-      (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_01C1,0,local_6c,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C1,(int *)0x0,local_6c,0);
       uID = 0x42b8;
       iVar8 = 0x3c;
       local_c = 4;

@@ -12,13 +12,13 @@ undefined4 * FUN_005f1e40(int param_1,int param_2,int param_3,int param_4,int pa
     return (undefined4 *)0x0;
   }
   if (param_1 == 0) {
-    puVar2 = FUN_006e9000(DAT_00807598,**(undefined4 **)((int)puVar1 + 0x21),0x5a,0x35,
+    puVar2 = FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar1 + 0x21),0x5a,0x35,
                           (float)param_3 * _DAT_007904f8 * _DAT_007904f0,
                           (float)param_4 * _DAT_007904f8 * _DAT_007904f0,
                           (float)param_5 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,0);
     return puVar2;
   }
-  puVar2 = FUN_006e9000(DAT_00807598,**(undefined4 **)((int)puVar1 + 0x21),0x78,0x56,
+  puVar2 = FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar1 + 0x21),0x78,0x56,
                         (float)(param_3 + 100) * _DAT_007904f8 * _DAT_007904f0,
                         (float)(param_4 + 100) * _DAT_007904f8 * _DAT_007904f0,
                         (float)param_5 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,0);

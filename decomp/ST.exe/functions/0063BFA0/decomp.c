@@ -1,20 +1,20 @@
 
-undefined4 * __fastcall FUN_0063bfa0(undefined4 *param_1)
+undefined4 * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
 
 {
-  thunk_FUN_004158e0(param_1);
-  thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_0079d49c;
-  *(undefined4 *)((int)param_1 + 0x292) = 0;
-  *(undefined4 *)((int)param_1 + 0x29a) = 0;
-  *(undefined1 *)((int)param_1 + 0x29f) = 0;
-  *(undefined4 *)((int)param_1 + 0x336) = 0;
-  *param_1 = &PTR_thunk_FUN_00639c90_0079d33c;
-  *(undefined4 *)((int)param_1 + 0x33a) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x353) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x363) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x373) = 0xffffffff;
-  *(undefined1 *)((int)param_1 + 0x265) = 4;
-  return param_1;
+  thunk_FUN_004158e0((STGroupBoatC *)param_1);
+  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&param_1->field_01D5);
+  param_1->field_01D5 = &PTR_LAB_0079d49c;
+  param_1->field_0292 = 0;
+  param_1->field_029A = 0;
+  param_1->field_029F = 0;
+  param_1->field_0336 = 0;
+  *(undefined ***)param_1 = &PTR_thunk_FUN_00639c90_0079d33c;
+  param_1->field_033A = 0xffffffff;
+  param_1->field_0353 = 0xffffffff;
+  param_1->field_0363 = 0xffffffff;
+  param_1->field_0373 = 0xffffffff;
+  param_1->field_0265 = 4;
+  return (undefined4 *)param_1;
 }
 

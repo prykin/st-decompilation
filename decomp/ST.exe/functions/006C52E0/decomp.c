@@ -1,5 +1,6 @@
 
-int FUN_006c52e0(int param_1,int param_2,undefined4 param_3,int param_4,undefined4 param_5)
+int FUN_006c52e0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 param_3,int param_4,
+                undefined4 param_5)
 
 {
   int iVar1;
@@ -16,7 +17,7 @@ int FUN_006c52e0(int param_1,int param_2,undefined4 param_3,int param_4,undefine
   local_28 = param_5;
   uVar2 = 0;
   local_78[0] = 100;
-  if (*(int *)(param_1 + 0x498) == 7) {
+  if (param_1->field_0498 == 7) {
     uVar2 = 0x20000;
     local_70 = 0x5a0049;
   }
@@ -26,11 +27,11 @@ int FUN_006c52e0(int param_1,int param_2,undefined4 param_3,int param_4,undefine
   uVar3 = 0;
   local_10 = param_3;
   while( true ) {
-    iVar1 = (**(code **)(**(int **)(param_1 + 0x40) + 0x14))
-                      (*(int **)(param_1 + 0x40),&local_14,0,0,uVar2 | 0x1000400,local_78);
+    iVar1 = (**(code **)(*param_1->field_0040 + 0x14))
+                      (param_1->field_0040,&local_14,0,0,uVar2 | 0x1000400,local_78);
     if (iVar1 == 0) break;
     if (iVar1 == -0x7789fe3e) {
-      FUN_006cec40(param_1);
+      FUN_006cec40((AnonShape_006CEC40_BB23E716 *)param_1);
     }
     else {
       if (((iVar1 != -0x7789ff60) && (iVar1 != -0x7789fe52)) || (uVar3 != 0)) break;

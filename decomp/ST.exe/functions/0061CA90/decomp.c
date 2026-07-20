@@ -123,8 +123,8 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                                         (int)sVar14 * (int)SHORT_007fb246 + (int)sVar9) * 8),
                    this_00 != (int *)0x0 && (iVar17 = (**(code **)(*this_00 + 0xf0))(), iVar17 != 0)
                    ) && (((uint)this_00[9] < 8 &&
-                         ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))))
-                 ) {
+                         ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                          ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))))) {
                 bVar1 = *(byte *)(this_00 + 9);
                 bVar2 = *(byte *)((int)local_44 + 0x51);
                 _local_30 = CONCAT31(uStack_2f,bVar1);

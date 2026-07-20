@@ -8,6 +8,6 @@
 undefined4 FUN_004357f0(char objPtr)
 
 {
-  return *(undefined4 *)(&DAT_007f4e21 + objPtr * 0xa62);
+  return *(undefined4 *)&g_playerRuntime[objPtr].field_0x1;
 }
 

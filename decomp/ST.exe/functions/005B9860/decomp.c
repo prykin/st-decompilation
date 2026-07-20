@@ -33,11 +33,12 @@ MMMObjTy::OutLstProc
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       OutBSlProc(param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 (undefined4 *)(DAT_0081176c + 0x140));
-      Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,0x15,DAT_0081176c + 0x144);
-      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,*(undefined4 *)(DAT_0081176c + 0x140));
+                 (undefined4 *)&PTR_0081176c->field_0x140);
+      Library::DKW::DDX::FUN_006c68f0
+                (param_1,param_4,param_5,param_6,0x15,(int)&PTR_0081176c->field_0x144);
+      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,*(undefined4 *)&PTR_0081176c->field_0x140);
       uVar7 = 0;
-      pcVar6 = *(ccFntTy **)(DAT_0081176c + 0x34);
+      pcVar6 = PTR_0081176c->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xfffffffe;
       puVar2 = (uint *)FUN_006b0140(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),

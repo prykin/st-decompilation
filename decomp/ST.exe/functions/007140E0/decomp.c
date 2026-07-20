@@ -15,7 +15,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   undefined4 *puVar10;
   char *pcVar11;
   char *pcVar12;
-  undefined4 local_6c [18];
+  AnonShape_007109F0_BD33A2FF local_6c;
   char local_24 [12];
   int local_18;
   int local_14;
@@ -32,8 +32,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
      (**(char **)((int)this + 0x58) == '\0')) {
     return 0;
   }
-  ccFntTy::Save(*(ccFntTy **)this,local_6c);
-  FUN_007109f0(*(void **)this,(undefined4 *)((int)this + 0x10));
+  ccFntTy::Save(*(ccFntTy **)this,(undefined4 *)&local_6c);
+  FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
   this_00 = *(ccFntTy **)this;
   if (&stack0x00000000 != &DAT_0000000c) {
     local_c = this_00->field_0072;
@@ -526,7 +526,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
 cf_common_exit_00714ACB:
   *(int *)((int)this + 0xc) = *(int *)((int)this + 0xc) + 1;
   *(int *)((int)this + 4) = *(int *)((int)this + 4) + 1;
-  FUN_007109f0(*(void **)this,local_6c);
+  FUN_007109f0(*(void **)this,&local_6c);
   return local_c;
 }
 

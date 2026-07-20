@@ -24,17 +24,17 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
   undefined4 local_14;
   FSGSTy *local_8;
   
-  this_00 = DAT_00802a30;
+  this_00 = PTR_00802a30;
   local_8 = this;
-  if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    DAT_00802a30->field_0493 = 1;
+  if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    PTR_00802a30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_0xd2 = 0;
     *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
   }
-  if (this->field_1A5F == '\t') {
+  if (this->field_1A5F == CASE_9) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);

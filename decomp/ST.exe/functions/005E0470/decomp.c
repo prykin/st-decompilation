@@ -9,7 +9,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   code *pcVar1;
   MTaskTy *this_00;
   int iVar2;
-  uint *puVar3;
+  AnonShape_005E10A0_819783CC *pAVar3;
   int iVar4;
   ccFntTy *extraout_ECX;
   ccFntTy *extraout_ECX_00;
@@ -19,12 +19,13 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   cMf32 *extraout_ECX_03;
   cMf32 *extraout_ECX_04;
   cMf32 *pcVar5;
-  uint uVar6;
-  LPVOID *ppvVar7;
+  uint *puVar6;
+  uint uVar7;
+  LPVOID *ppvVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   SpriteClassTy *this_02;
-  undefined4 *puVar8;
+  undefined4 *puVar9;
   InternalExceptionFrame local_4c;
   MTaskTy *local_8;
   
@@ -59,8 +60,8 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_051D);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_05AE);
-  if ((byte *)this_00->field_0643 != (byte *)0x0) {
-    FUN_006b5570((byte *)this_00->field_0643);
+  if ((AnonShape_006B5570_4D68B99C *)this_00->field_0643 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_0643);
   }
   this_00->field_0643 = 0;
   if (this_00->field_02CD != 0) {
@@ -74,77 +75,78 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_03F3);
-  puVar3 = &this_00->field_02BD;
+  puVar6 = &this_00->field_02BD;
   iVar2 = 4;
   do {
-    if (-1 < (int)*puVar3) {
-      FUN_006b3bb0(DAT_008075a8,*puVar3);
-      *puVar3 = 0xffffffff;
+    if (-1 < (int)*puVar6) {
+      FUN_006b3bb0(DAT_008075a8,*puVar6);
+      *puVar6 = 0xffffffff;
     }
-    puVar3 = puVar3 + 1;
+    puVar6 = puVar6 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (this_00->field_02B9 != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02B9);
     this_00->field_02B9 = 0;
   }
-  puVar3 = &this_00->field_02A5;
+  puVar6 = &this_00->field_02A5;
   iVar2 = 5;
   do {
-    if (-1 < (int)*puVar3) {
-      FUN_006b3bb0(DAT_008075a8,*puVar3);
-      *puVar3 = 0xffffffff;
+    if (-1 < (int)*puVar6) {
+      FUN_006b3bb0(DAT_008075a8,*puVar6);
+      *puVar6 = 0xffffffff;
     }
-    puVar3 = puVar3 + 1;
+    puVar6 = puVar6 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  puVar3 = &this_00->field_0291;
+  puVar6 = &this_00->field_0291;
   iVar2 = 5;
   do {
-    if (*puVar3 != 0) {
-      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar3);
-      *puVar3 = 0;
+    if (*puVar6 != 0) {
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
+      *puVar6 = 0;
     }
-    puVar3 = puVar3 + 1;
+    puVar6 = puVar6 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   iVar2 = this_00->field_064B;
   if (iVar2 != 0) {
-    uVar6 = 0;
+    uVar7 = 0;
     if (*(int *)(iVar2 + 0xc) != 0) {
       if (*(int *)(iVar2 + 0xc) == 0) {
         this_02 = (SpriteClassTy *)0x0;
         goto LAB_005e0672;
       }
       do {
-        this_02 = (SpriteClassTy *)(*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
+        this_02 = (SpriteClassTy *)(*(int *)(iVar2 + 8) * uVar7 + *(int *)(iVar2 + 0x1c));
 LAB_005e0672:
         SpriteClassTy::CloseSprite(this_02);
         if (*(int *)((int)&this_02[1].field_0008 + 1) != 0) {
           FUN_006ab060((LPVOID *)((int)&this_02[1].field_0008 + 1));
         }
         iVar2 = this_00->field_064B;
-        uVar6 = uVar6 + 1;
-      } while (uVar6 < *(uint *)(iVar2 + 0xc));
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < *(uint *)(iVar2 + 0xc));
     }
     FUN_006ae110((byte *)this_00->field_064B);
     this_00->field_064B = 0;
   }
   iVar2 = this_00->field_0647;
   if (iVar2 != 0) {
-    uVar6 = 0;
+    uVar7 = 0;
     if (*(int *)(iVar2 + 0xc) != 0) {
       if (*(int *)(iVar2 + 0xc) == 0) {
-        puVar3 = (uint *)0x0;
+        pAVar3 = (AnonShape_005E10A0_819783CC *)0x0;
         goto LAB_005e06d9;
       }
       do {
-        puVar3 = (uint *)(*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
+        pAVar3 = (AnonShape_005E10A0_819783CC *)
+                 (*(int *)(iVar2 + 8) * uVar7 + *(int *)(iVar2 + 0x1c));
 LAB_005e06d9:
-        TTaskItemClose(this_00,puVar3);
+        TTaskItemClose(this_00,pAVar3);
         iVar2 = this_00->field_0647;
-        uVar6 = uVar6 + 1;
-      } while (uVar6 < *(uint *)(iVar2 + 0xc));
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < *(uint *)(iVar2 + 0xc));
     }
     FUN_006ae110((byte *)this_00->field_0647);
     this_00->field_0647 = 0;
@@ -152,32 +154,33 @@ LAB_005e06d9:
   iVar2 = this_00->field_064F;
   this_01 = (ccFntTy *)0x0;
   if (iVar2 != 0) {
-    uVar6 = 0;
+    uVar7 = 0;
     if (*(int *)(iVar2 + 0xc) != 0) {
       if (*(int *)(iVar2 + 0xc) == 0) {
-        puVar3 = (uint *)0x0;
+        pAVar3 = (AnonShape_005E10A0_819783CC *)0x0;
         goto LAB_005e072b;
       }
       do {
-        puVar3 = (uint *)(*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
+        pAVar3 = (AnonShape_005E10A0_819783CC *)
+                 (*(int *)(iVar2 + 8) * uVar7 + *(int *)(iVar2 + 0x1c));
 LAB_005e072b:
-        TTaskItemClose(this_00,puVar3);
+        TTaskItemClose(this_00,pAVar3);
         iVar2 = this_00->field_064F;
-        uVar6 = uVar6 + 1;
-      } while (uVar6 < *(uint *)(iVar2 + 0xc));
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < *(uint *)(iVar2 + 0xc));
     }
     FUN_006ae110((byte *)this_00->field_064F);
     this_00->field_064F = 0;
     this_01 = extraout_ECX;
   }
-  ppvVar7 = (LPVOID *)&this_00->field_0653;
+  ppvVar8 = (LPVOID *)&this_00->field_0653;
   iVar2 = 0xb;
   do {
-    if (*ppvVar7 != (LPVOID)0x0) {
-      FUN_006ab060(ppvVar7);
+    if (*ppvVar8 != (LPVOID)0x0) {
+      FUN_006ab060(ppvVar8);
       this_01 = extraout_ECX_00;
     }
-    ppvVar7 = ppvVar7 + 3;
+    ppvVar8 = ppvVar8 + 3;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (this_00->field_0089 != (ccFntTy *)0x0) {
@@ -202,10 +205,10 @@ LAB_005e072b:
   }
   if (DAT_008085e3 != 0) {
     FUN_006c1e20();
-    puVar8 = &DAT_00808463;
+    puVar9 = &DAT_00808463;
     for (iVar2 = 0x60; pcVar5 = (cMf32 *)0x0, iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
   }
   if ((byte *)this_00->field_0074 != (byte *)0x0) {

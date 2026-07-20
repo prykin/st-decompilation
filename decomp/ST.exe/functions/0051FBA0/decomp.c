@@ -44,7 +44,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
       }
       break;
     case 2:
-      pcVar3 = (ccFntTy *)ccFntTy::operator(DAT_00802a28,0x19d,*(int *)&DAT_00802a28->field_0x30);
+      pcVar3 = (ccFntTy *)ccFntTy::operator(PTR_00802a28,0x19d,*(int *)&PTR_00802a28->field_0x30);
       this_00->field_011E = pcVar3;
       pcVar3->field_0058 = 0;
       pcVar3->field_005C = 0;

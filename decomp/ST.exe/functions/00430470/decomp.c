@@ -28,11 +28,11 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
                   (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x7e2);
       }
-      uVar5 = DAT_007fa130[3];
+      uVar5 = PTR_007fa130->count;
       uVar2 = uVar5;
       if (uVar5 != 0) {
         while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
-          FUN_006acc70((int)DAT_007fa130,uVar2,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,uVar2,&local_8);
           if (local_8 == 0) {
             uVar5 = uVar2;
           }
@@ -41,14 +41,14 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
     }
     else {
       uVar5 = (uint)param_2;
-      if ((uVar5 < DAT_007fa130[3]) &&
-         (FUN_006acc70((int)DAT_007fa130,uVar5,&local_8), local_8 != 0)) {
+      if ((uVar5 < PTR_007fa130->count) &&
+         (FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,uVar5,&local_8), local_8 != 0)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x7f0);
       }
     }
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa130,uVar5,&param_1);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa130->flags,uVar5,&param_1);
     DAT_007fa134 = DAT_007fa134 + 1;
     g_currentExceptionFrame = local_4c.previous;
     return CONCAT22((short)((uint)DAT_007fa134 >> 0x10),(short)uVar5);

@@ -14,11 +14,11 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   byte *pbVar6;
   int iVar7;
   undefined4 unaff_ESI;
-  int *piVar8;
+  undefined4 *puVar8;
   Global_sub_005276E0_param_1Enum *pGVar9;
   void *unaff_EDI;
-  int *piVar10;
-  int local_298 [144];
+  undefined4 *puVar10;
+  undefined4 local_298 [144];
   InternalExceptionFrame local_58;
   UpgPanelTy *local_14;
   int local_10;
@@ -32,14 +32,14 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   pUVar3 = local_14;
   if (iVar4 == 0) {
     puVar1 = &local_14->field_0x1ab;
-    piVar8 = (int *)puVar1;
-    piVar10 = local_298;
+    puVar8 = (undefined4 *)puVar1;
+    puVar10 = local_298;
     for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar10 = *piVar8;
-      piVar8 = piVar8 + 1;
-      piVar10 = piVar10 + 1;
+      *puVar10 = *puVar8;
+      puVar8 = puVar8 + 1;
+      puVar10 = puVar10 + 1;
     }
-    STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0x10,(int *)puVar1);
+    STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
     iVar4 = 0x19;
     pGVar9 = &pUVar3->field_0x1ab;
     local_8 = 3;

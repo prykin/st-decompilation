@@ -7,8 +7,8 @@ int __thiscall FUN_0062fea0(void *this,int param_1,int param_2)
   int iVar3;
   void *local_8;
   
-  if ((((*(int *)(DAT_00807598 + 0x48) <= param_1) && (param_1 <= *(int *)(DAT_00807598 + 0x58))) &&
-      (*(int *)(DAT_00807598 + 0x44) <= param_2)) && (param_2 <= *(int *)(DAT_00807598 + 0x54))) {
+  if ((((PTR_00807598->field_0048 <= param_1) && (param_1 <= PTR_00807598->field_0058)) &&
+      (PTR_00807598->field_0044 <= param_2)) && (param_2 <= PTR_00807598->field_0054)) {
     local_8 = this;
     iVar2 = FUN_006ddbd0();
     pVVar1 = g_visibleClass_00802A88;

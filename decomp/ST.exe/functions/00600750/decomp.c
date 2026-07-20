@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_00600750(void *param_1)
+undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
 
 {
   short sVar1;
@@ -27,20 +27,20 @@ undefined4 __fastcall FUN_00600750(void *param_1)
   
   local_18 = 0;
   local_8 = 0;
-  if (0 < *(int *)((int)param_1 + 0x226)) {
+  if (0 < param_1->field_0226) {
     do {
       iVar4 = local_8;
       iVar6 = local_8 * 0x52;
-      iVar3 = iVar6 + *(int *)((int)param_1 + 0x233);
+      iVar3 = iVar6 + param_1->field_0233;
       local_c = (void *)iVar6;
-      switch(*(undefined4 *)(iVar6 + 0x39 + *(int *)((int)param_1 + 0x233))) {
+      switch(*(undefined4 *)(iVar6 + 0x39 + param_1->field_0233)) {
       case 1:
         uVar7 = thunk_FUN_006001e0(param_1,local_8);
         pVVar2 = g_visibleClass_00802A88;
         if (uVar7 == 0) {
-          if (*(char *)((int)param_1 + 0x232) != '\0') {
-            local_c = *(void **)(iVar6 + 0x42 + *(int *)((int)param_1 + 0x233));
-            iVar3 = iVar6 + *(int *)((int)param_1 + 0x233);
+          if (param_1->field_0232 != '\0') {
+            local_c = *(void **)(iVar6 + 0x42 + param_1->field_0233);
+            iVar3 = iVar6 + param_1->field_0233;
             if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
               sVar1 = *(short *)(iVar3 + 10);
               if (sVar1 < 0) {
@@ -78,17 +78,17 @@ undefined4 __fastcall FUN_00600750(void *param_1)
                     ((int)pVVar2->field_0034 <= iVar3)) || (pVVar2->field_004C == 0)) ||
                   (*(char *)(iVar3 * pVVar2->field_0030 + local_1c + pVVar2->field_004C) != '\0'))))
               {
-                if (*(char *)(iVar6 + 0x41 + *(int *)((int)param_1 + 0x233)) == '\0') {
+                if (*(char *)(iVar6 + 0x41 + param_1->field_0233) == '\0') {
                   thunk_FUN_004ad460(local_c,0);
-                  *(undefined1 *)(iVar6 + 0x41 + *(int *)((int)param_1 + 0x233)) = 1;
+                  *(undefined1 *)(iVar6 + 0x41 + param_1->field_0233) = 1;
                 }
               }
-              else if (*(char *)(iVar6 + 0x41 + *(int *)((int)param_1 + 0x233)) != '\0') {
+              else if (*(char *)(iVar6 + 0x41 + param_1->field_0233) != '\0') {
                 thunk_FUN_004ad430((int)local_c);
-                *(undefined1 *)(iVar6 + 0x41 + *(int *)((int)param_1 + 0x233)) = 0;
+                *(undefined1 *)(iVar6 + 0x41 + param_1->field_0233) = 0;
               }
             }
-            iVar6 = *(int *)((int)param_1 + 0x233) + iVar6;
+            iVar6 = param_1->field_0233 + iVar6;
             local_14 = (uint)*(short *)(iVar6 + 6);
             thunk_FUN_004ad3c0(local_c,(float)(int)local_14 * _DAT_007904f8 * _DAT_007904f0,
                                (float)(int)*(short *)(iVar6 + 8) * _DAT_007904f8 * _DAT_007904f0,
@@ -97,15 +97,15 @@ undefined4 __fastcall FUN_00600750(void *param_1)
           }
         }
         else {
-          *(undefined4 *)(iVar6 + 0x39 + *(int *)((int)param_1 + 0x233)) = 3;
-          if ((*(char *)((int)param_1 + 0x232) == '\0') ||
+          *(undefined4 *)(iVar6 + 0x39 + param_1->field_0233) = 3;
+          if ((param_1->field_0232 == '\0') ||
              (iVar3 = thunk_FUN_005fdb50(param_1,1,iVar4), iVar3 != 0)) {
 LAB_00600928:
             thunk_FUN_005fd940(param_1,iVar4);
           }
           else {
-            sVar1 = *(short *)(iVar6 + 8 + *(int *)((int)param_1 + 0x233));
-            iVar6 = iVar6 + *(int *)((int)param_1 + 0x233);
+            sVar1 = *(short *)(iVar6 + 8 + param_1->field_0233);
+            iVar6 = iVar6 + param_1->field_0233;
             iVar3 = *(int *)(iVar6 + 0x42);
             if (sVar1 < 0) {
               iVar4 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
@@ -125,35 +125,34 @@ LAB_00600928:
                                   (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
             }
             thunk_FUN_00600110(param_1,iVar6,iVar4,0x460);
-            iVar6 = *(int *)((int)param_1 + 0x1e9);
+            iVar6 = param_1->field_01E9;
             if (iVar6 != 0) {
-              if (*(int *)((int)param_1 + 0x1f1) == 0) {
-                FUN_006ea460(DAT_00807598,*(uint *)(iVar3 + 0x18),*(int *)(iVar6 + 0x1ed));
+              if (param_1->field_01F1 == 0) {
+                FUN_006ea460(PTR_00807598,*(uint *)(iVar3 + 0x18),*(int *)(iVar6 + 0x1ed));
               }
               else {
-                FUN_006ea3e0(DAT_00807598,*(uint *)(iVar3 + 0x18),*(int *)(iVar6 + 0x1ed));
+                FUN_006ea3e0(PTR_00807598,*(uint *)(iVar3 + 0x18),*(int *)(iVar6 + 0x1ed));
               }
             }
             uVar9 = 0x53;
             uVar8 = 0x5a;
             iVar6 = 1;
             uVar7 = thunk_FUN_004ad650(iVar3);
-            FUN_006ea4e0(DAT_00807598,uVar7,iVar6,uVar8,uVar9);
+            FUN_006ea4e0(PTR_00807598,uVar7,iVar6,uVar8,uVar9);
           }
         }
         break;
       case 2:
-        if (((*(uint *)(iVar3 + 0x3d) <= *(uint *)(DAT_00802a38 + 0xe4)) &&
-            (iVar3 = thunk_FUN_005ff1f0(param_1,local_8,3,*(int *)((int)param_1 + 0x22e)),
-            -1 < iVar3)) &&
+        if (((*(uint *)(iVar3 + 0x3d) <= (uint)PTR_00802a38->field_00E4) &&
+            (iVar3 = thunk_FUN_005ff1f0(param_1,local_8,3,param_1->field_022E), -1 < iVar3)) &&
            (iVar3 = thunk_FUN_005fff60(param_1,local_8,iVar3), iVar4 = local_8, iVar3 != 0)) {
           iVar3 = thunk_FUN_005fdb50(param_1,0,local_8);
           if (iVar3 != 0) goto LAB_00600928;
-          *(undefined4 *)(iVar6 + 0x39 + *(int *)((int)param_1 + 0x233)) = 1;
+          *(undefined4 *)(iVar6 + 0x39 + param_1->field_0233) = 1;
         }
         break;
       case 3:
-        if (*(char *)((int)param_1 + 0x232) == '\0') {
+        if (param_1->field_0232 == '\0') {
           thunk_FUN_005fd940(param_1,local_8);
         }
         else {
@@ -162,7 +161,7 @@ LAB_00600928:
           local_28 = thunk_FUN_004ac910(this,'\x0e');
           if (0x15 < (int)local_14) {
             if (local_14 == 0x16) {
-              STT3DSprC::StartShow(this,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+              STT3DSprC::StartShow(this,0xf,PTR_00802a38->field_00E4);
             }
             local_10 = thunk_FUN_004ac910(this,'\x0f');
             STT3DSprC::ShowCurFase(this,'\x0f');
@@ -172,7 +171,7 @@ LAB_00600928:
             }
             STT3DSprC::SetCurFase(this,'\x0f',local_10);
           }
-          if (*(char *)(iVar6 + 0x28 + *(int *)((int)param_1 + 0x233)) != '\0') {
+          if (*(char *)(iVar6 + 0x28 + param_1->field_0233) != '\0') {
             iVar3 = thunk_FUN_004acd30(this,'\x0e');
             iVar6 = thunk_FUN_004ac910(this,'\x0e');
             if (iVar3 + -1 == iVar6) {
@@ -187,7 +186,7 @@ LAB_00600928:
           iVar3 = thunk_FUN_004acd30(this,'\x0f');
           iVar6 = thunk_FUN_004ac910(this,'\x0f');
           if (iVar3 + -1 == iVar6) {
-            *(undefined4 *)((int)local_c + 0x39 + *(int *)((int)param_1 + 0x233)) = 4;
+            *(undefined4 *)((int)local_c + 0x39 + param_1->field_0233) = 4;
           }
           iVar3 = thunk_FUN_004acd30(this,'\r');
           uVar7 = local_14;
@@ -203,17 +202,16 @@ LAB_00600928:
           STT3DSprC::ShowCurFase(this,'\x0e');
           STT3DSprC::SetCurFase(this,'\r',uVar7);
           STT3DSprC::ShowCurFase(this,'\r');
-          iVar3 = (int)local_c + *(int *)((int)param_1 + 0x233);
+          iVar3 = (int)local_c + param_1->field_0233;
           local_28 = (uint)*(short *)(iVar3 + 6);
           thunk_FUN_004ad3c0(this,(float)(int)local_28 * _DAT_007904f8 * _DAT_007904f0,
                              (float)(int)*(short *)(iVar3 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(int)*(short *)((int)local_c + 10 +
-                                                   *(int *)((int)param_1 + 0x233)) * _DAT_007904f8 *
-                             _DAT_007904f0 + _DAT_007904fc);
+                             (float)(int)*(short *)((int)local_c + 10 + param_1->field_0233) *
+                             _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
           pVVar2 = g_visibleClass_00802A88;
           if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-            sVar1 = *(short *)((int)local_c + 10 + *(int *)((int)param_1 + 0x233));
-            iVar3 = (int)local_c + *(int *)((int)param_1 + 0x233);
+            sVar1 = *(short *)((int)local_c + 10 + param_1->field_0233);
+            iVar3 = (int)local_c + param_1->field_0233;
             if (sVar1 < 0) {
               local_10 = (int)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                                      (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f)) - 1;
@@ -249,14 +247,14 @@ LAB_00600928:
                    ((int)pVVar2->field_0034 <= iVar3)))))))) ||
                ((pVVar2->field_004C == 0 ||
                 (*(char *)(iVar3 * pVVar2->field_0030 + pVVar2->field_004C + local_20) != '\0')))) {
-              if (*(char *)((int)local_c + 0x41 + *(int *)((int)param_1 + 0x233)) == '\0') {
+              if (*(char *)((int)local_c + 0x41 + param_1->field_0233) == '\0') {
                 thunk_FUN_004ad460(this,0);
-                *(undefined1 *)((int)local_c + 0x41 + *(int *)((int)param_1 + 0x233)) = 1;
+                *(undefined1 *)((int)local_c + 0x41 + param_1->field_0233) = 1;
               }
             }
-            else if (*(char *)((int)local_c + 0x41 + *(int *)((int)param_1 + 0x233)) != '\0') {
+            else if (*(char *)((int)local_c + 0x41 + param_1->field_0233) != '\0') {
               thunk_FUN_004ad430((int)this);
-              *(undefined1 *)((int)local_c + 0x41 + *(int *)((int)param_1 + 0x233)) = 0;
+              *(undefined1 *)((int)local_c + 0x41 + param_1->field_0233) = 0;
             }
           }
         }
@@ -268,9 +266,9 @@ LAB_00600928:
         local_18 = local_18 + 1;
       }
       local_8 = local_8 + 1;
-    } while (local_8 < *(int *)((int)param_1 + 0x226));
+    } while (local_8 < param_1->field_0226);
   }
-  if (local_18 != *(int *)((int)param_1 + 0x226)) {
+  if (local_18 != param_1->field_0226) {
     return 0;
   }
   return 1;

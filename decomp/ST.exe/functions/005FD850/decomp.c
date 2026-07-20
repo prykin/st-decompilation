@@ -1,51 +1,52 @@
 
-int __fastcall FUN_005fd850(int param_1)
+int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  int iVar3;
-  uint uVar4;
+  AnonShape_004AB810_8E5693D5 *pAVar2;
+  undefined4 uVar3;
+  int iVar4;
   uint uVar5;
-  int iVar6;
+  uint uVar6;
   int iVar7;
+  int iVar8;
   int local_8;
   
-  iVar6 = 0;
-  iVar3 = -1;
+  iVar7 = 0;
+  iVar4 = -1;
   local_8 = -1;
-  if (*(int *)(param_1 + 0x226) != 0) {
-    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(param_1 + 0x226) * 0x52);
-    *(undefined4 **)(param_1 + 0x233) = puVar1;
+  if (param_1->field_0226 != 0) {
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1->field_0226 * 0x52);
+    param_1->field_0233 = puVar1;
     local_8 = 0;
-    uVar4 = *(int *)(param_1 + 0x226) * 0x52;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    uVar5 = param_1->field_0226 * 0x52;
+    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar1 = 0;
       puVar1 = puVar1 + 1;
     }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
       *(undefined1 *)puVar1 = 0;
       puVar1 = (undefined4 *)((int)puVar1 + 1);
     }
-    iVar3 = 0;
+    iVar4 = 0;
   }
-  if (((*(int *)(param_1 + 0x233) != 0) && (*(char *)(param_1 + 0x232) != '\0')) &&
-     (iVar7 = 0, 0 < *(int *)(param_1 + 0x226))) {
+  if (((param_1->field_0233 != 0) && (param_1->field_0232 != '\0')) &&
+     (iVar8 = 0, 0 < param_1->field_0226)) {
     do {
-      puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
-      if (puVar1 == (undefined4 *)0x0) {
-        uVar2 = 0;
+      pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+      if (pAVar2 == (AnonShape_004AB810_8E5693D5 *)0x0) {
+        uVar3 = 0;
       }
       else {
-        uVar2 = thunk_FUN_004ab810(puVar1);
+        uVar3 = thunk_FUN_004ab810(pAVar2);
       }
-      iVar6 = iVar6 + 0x52;
-      *(undefined4 *)(*(int *)(param_1 + 0x233) + -0x10 + iVar6) = uVar2;
+      iVar7 = iVar7 + 0x52;
+      *(undefined4 *)(param_1->field_0233 + -0x10 + iVar7) = uVar3;
       local_8 = local_8 + 1;
-      iVar7 = iVar7 + 1;
-    } while (iVar7 < *(int *)(param_1 + 0x226));
+      iVar8 = iVar8 + 1;
+    } while (iVar8 < param_1->field_0226);
     return local_8;
   }
-  return iVar3;
+  return iVar4;
 }
 

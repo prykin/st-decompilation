@@ -233,9 +233,10 @@ undefined4 * CreateBossData(void)
     pcVar9 = pcVar9 + 1;
     pcVar13 = pcVar13 + 1;
   }
-  local_8 = thunk_FUN_00683c70(local_17c,&stack0xfffffb6c,&local_1c,local_34,(undefined *)0x0);
+  local_8 = thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
+                               local_34,(undefined *)0x0);
   if (local_8 != (uint *)0x0) {
-    local_10 = EventDataPack(*(undefined4 **)((int)local_8 + 0x4e),&local_14);
+    local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)local_8 + 0x4e),&local_14);
     local_c = BossDataPack(local_8,local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_006484f0((int *)&local_8);

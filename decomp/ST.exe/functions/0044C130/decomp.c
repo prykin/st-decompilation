@@ -112,7 +112,7 @@ STAllPlayersC::GetTOBJImage
                           1,0,(undefined4 *)0x0);
       local_54[0xc] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
-    uVar4 = FUN_00709470(DAT_00807598,local_54,0x11,1,10,0xff);
+    uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);
     return uVar4;
   default:
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x324e,0,0,&DAT_007a4ccc,
@@ -270,7 +270,7 @@ LAB_0044c44d:
     local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:
-  uVar4 = FUN_00709470(DAT_00807598,local_54,0x11,1,10,0xff);
+  uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);
   return uVar4;
 }
 

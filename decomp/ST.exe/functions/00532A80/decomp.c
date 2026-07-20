@@ -35,29 +35,29 @@ void __thiscall OptPanelTy::PrepMissObj(OptPanelTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3d1);
     return;
   }
-  if (local_8->field_02F9 != (uint *)0x0) {
-    FUN_006b5570((byte *)local_8->field_02F9);
+  if ((AnonShape_006B5570_4D68B99C *)local_8->field_02F9 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_02F9);
   }
   puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   this_00->field_02F9 = puVar4;
   iVar3 = 0;
-  if (0 < *(int *)(DAT_0080c4cb + 8)) {
-    if (*(int *)(DAT_0080c4cb + 8) < 1) {
+  if (0 < PTR_0080c4cb->field_0008) {
+    if (PTR_0080c4cb->field_0008 < 1) {
       pcVar5 = (char *)0x0;
       goto LAB_00532af5;
     }
     do {
-      pcVar5 = *(char **)(*(int *)(DAT_0080c4cb + 0x14) + iVar3 * 4);
+      pcVar5 = *(char **)(PTR_0080c4cb->field_0014 + iVar3 * 4);
 LAB_00532af5:
       thunk_FUN_005411a0(this_00->field_02F9,pcVar5,s_____s_007c72b4);
       iVar3 = iVar3 + 1;
-    } while (iVar3 < *(int *)(DAT_0080c4cb + 8));
+    } while (iVar3 < PTR_0080c4cb->field_0008);
   }
   puVar4 = ccFntTy::FormIndentSarr
                      (this_00->field_017C,this_00->field_02F9,s________________007c21d8,
                       (uint *)&DAT_007c21ec,200,0,0xffffffff,(char *)0x0,1);
-  if (this_00->field_02F9 != (uint *)0x0) {
-    FUN_006b5570((byte *)this_00->field_02F9);
+  if ((AnonShape_006B5570_4D68B99C *)this_00->field_02F9 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_02F9);
   }
   this_00->field_02F9 = puVar4;
   if (puVar4 == (uint *)0x0) {
@@ -68,7 +68,7 @@ LAB_00532af5:
   if (puVar4[2] != 0) {
     ccFntTy::SepColorStrInSarr(this_00->field_017C,puVar4,puVar4);
   }
-  if ((this_00->field_01A4 == '\f') && (this_00->field_01B5 != 0)) {
+  if ((this_00->field_01A4 == CASE_C) && (this_00->field_01B5 != 0)) {
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = 1;

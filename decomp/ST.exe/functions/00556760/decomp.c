@@ -92,11 +92,10 @@ TraksClassTy::TraksCreate
   local_14 = iVar7;
   if ((param_15 & 2) != 0) goto LAB_0055693a;
   sVar5 = (short)local_18;
-  if (DAT_00807598 != (void *)0x0) {
-    if (((((int)(short)local_10 < *(int *)((int)DAT_00807598 + 0x48)) ||
-         (*(int *)((int)DAT_00807598 + 0x58) < (int)(short)local_10)) ||
-        ((int)sVar5 < *(int *)((int)DAT_00807598 + 0x44))) ||
-       (*(int *)((int)DAT_00807598 + 0x54) < (int)sVar5)) {
+  if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+    if (((((int)(short)local_10 < PTR_00807598->field_0048) ||
+         (PTR_00807598->field_0058 < (int)(short)local_10)) ||
+        ((int)sVar5 < PTR_00807598->field_0044)) || (PTR_00807598->field_0054 < (int)sVar5)) {
       iVar3 = 0;
     }
     else {
@@ -175,7 +174,7 @@ LAB_0055693a:
   local_50 = param_7;
   local_4e = param_8;
   local_36 = 0xffff;
-  local_30 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  local_30 = PTR_00802a38->field_00E4;
   if (((((param_7 == 0) && (param_8 == 0)) && (param_9 == 0)) &&
       ((param_10 == 0 && (param_11 == 0)))) && (param_12 == 0)) {
     local_1c = 0;
@@ -198,30 +197,30 @@ LAB_0055693a:
   ;
   local_22 = *puVar4;
   iVar3 = local_58 * 0x18;
-  FUN_006e8660(DAT_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),
+  FUN_006e8660(PTR_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),
                *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
                *(uint *)(&DAT_007c8ffc + iVar3),0);
   local_26 = local_c;
-  FUN_006e98e0(DAT_00807598,local_c,0,(int)(short)local_22,*(int *)((int)puVar4 + 0x21),1);
+  FUN_006e98e0(PTR_00807598,local_c,0,(int)(short)local_22,*(int *)((int)puVar4 + 0x21),1);
   if (iVar7 == 0) {
-    FUN_006ea050(DAT_00807598,local_26,(int)local_44,0xffffffff,0);
+    FUN_006ea050(PTR_00807598,local_26,(int)local_44,0xffffffff,0);
   }
-  FUN_006ea270(DAT_00807598,local_26,0,param_3);
+  FUN_006ea270(PTR_00807598,local_26,0,param_3);
   if (-1 < local_42) {
     if (local_3e == -1) {
-      FUN_006ea3e0(DAT_00807598,local_26,local_42);
+      FUN_006ea3e0(PTR_00807598,local_26,local_42);
     }
     else if (local_3e == 1) {
-      FUN_006ea460(DAT_00807598,local_26,local_42);
+      FUN_006ea460(PTR_00807598,local_26,local_42);
     }
   }
-  FUN_006ea4e0(DAT_00807598,local_26,1,*(int *)(&DAT_007c9000 + local_58 * 0x18) / 2,
+  FUN_006ea4e0(PTR_00807598,local_26,1,*(int *)(&DAT_007c9000 + local_58 * 0x18) / 2,
                *(int *)(&DAT_007c9004 + local_58 * 0x18) / 2);
   local_8 = (int)local_56;
-  FUN_006ea960(DAT_00807598,local_26,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
+  FUN_006ea960(PTR_00807598,local_26,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)local_54 * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)local_52 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-  FUN_006eaaa0(DAT_00807598,local_26,0);
+  FUN_006eaaa0(PTR_00807598,local_26,0);
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;
   if (iVar7 != 0) {

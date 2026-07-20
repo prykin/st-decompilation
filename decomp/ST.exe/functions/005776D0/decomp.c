@@ -3,7 +3,8 @@
    E:\__titans\tsystem.cpp
    GameSystemC::GetMessage */
 
-undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
+undefined4 __thiscall
+GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
 
 {
   char cVar1;
@@ -73,9 +74,9 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
     uVar12 = (*pcVar5)();
     return uVar12;
   }
-  SystemClassTy::GetMessage(this_01,param_1);
-  if (*(int *)(param_1 + 0x10) == 0x43ff) {
-    piVar3 = *(int **)(*(int *)(param_1 + 0x14) + 0x17);
+  SystemClassTy::GetMessage(this_01,(int)param_1);
+  if (param_1->field_0010 == 0x43ff) {
+    piVar3 = *(int **)(param_1->field_0014 + 0x17);
     switch(*piVar3) {
     case 1:
       if (DAT_00808783 == '\x03') {
@@ -83,7 +84,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           DAT_00808784 = (void *)piVar3[1];
           this_01[0x21].objectLock = DAT_00808784;
           Library::Ourlib::ST3DPAUS::FUN_00725760
-                    (DAT_00807598,(int)DAT_00808784,
+                    (PTR_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
           if (g_pausePanel_008016E0 != (PausePanelTy *)0x0) {
             PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,(int)DAT_00808784);
@@ -96,7 +97,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         if (this_01[0x21].objectLock == (void *)0x0) {
           DAT_00808784 = (void *)piVar3[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
-                    (DAT_00807598,(int)DAT_00808784,
+                    (PTR_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -106,7 +107,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
           DAT_00808784 = (void *)piVar3[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
-                    (DAT_00807598,(int)DAT_00808784,
+                    (PTR_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
         }
         pvVar4 = (void *)piVar3[1];
@@ -130,8 +131,8 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           iVar6 = (uVar14 & 0xff) * 0x18;
           DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar6 + 8);
         }
-        if (DAT_00807598 != (void *)0x0) {
-          FUN_006e8640(DAT_00807598,*(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar6 + 0x10),
+        if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+          FUN_006e8640(PTR_00807598,*(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar6 + 0x10),
                        *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar6 + 4));
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -277,8 +278,8 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
       }
     }
   }
-  else if (*(int *)(param_1 + 0x10) == 0x4400) {
-    pcVar17 = *(char **)(*(int *)(param_1 + 0x14) + 0x17);
+  else if (param_1->field_0010 == 0x4400) {
+    pcVar17 = *(char **)(param_1->field_0014 + 0x17);
     cVar1 = *pcVar17;
     bVar2 = pcVar17[1];
     uVar14 = (uint)bVar2;
@@ -364,7 +365,7 @@ LAB_00577956:
       StartStrateg((ushort *)(pcVar17 + 2),uVar14);
     }
     if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
-      thunk_FUN_00532ce0(g_optPanel_008016DC);
+      thunk_FUN_00532ce0((AnonShape_00532CE0_361E49BD *)g_optPanel_008016DC);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }

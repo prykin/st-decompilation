@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_004c2e60(int param_1)
         }
       }
       if (*(int *)(&DAT_00794e9c + *(int *)(param_1 + 0x235) * 4) != 0) {
-        thunk_FUN_004c2c10(param_1);
+        thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
         return 0;
       }
     }
@@ -27,7 +27,7 @@ undefined4 __fastcall FUN_004c2e60(int param_1)
   case 2:
   case 6:
     if (*(int *)(&DAT_00794e9c + *(int *)(param_1 + 0x235) * 4) != 0) {
-      thunk_FUN_004c2d40(param_1);
+      thunk_FUN_004c2d40((AnonShape_004C2D40_7C578146 *)param_1);
     }
   }
   return 0;

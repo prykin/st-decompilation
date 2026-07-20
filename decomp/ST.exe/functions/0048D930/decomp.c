@@ -11,7 +11,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
   short sVar3;
   void *pvVar4;
   
-  if ((this->field_045D == 0xc) || (this->field_0459 == 0x70)) {
+  if ((this->field_045D == CASE_C) || (this->field_0459 == CASE_70)) {
     sVar1 = this->field_049B;
     sVar2 = this->field_049F;
     sVar3 = this->field_049D;
@@ -38,7 +38,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
       thunk_FUN_004e1690(pvVar4,this->field_0018);
     }
   }
-  if ((this->field_045D == 0xd) || (this->field_0459 == 0x71)) {
+  if ((this->field_045D == CASE_D) || (this->field_0459 == CASE_71)) {
     sVar1 = this->field_052C;
     sVar2 = this->field_0530;
     sVar3 = this->field_052E;

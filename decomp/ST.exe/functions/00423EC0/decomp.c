@@ -3,7 +3,7 @@
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::GetMessage */
 
-undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
+undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64CE1121 *param_1)
 
 {
   code *pcVar1;
@@ -44,8 +44,8 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
     return 0xffff;
   }
   FUN_006e5fd0();
-  if (*(int *)(param_1 + 0x10) == 2) {
-    iVar2 = *(int *)(param_1 + 0x14);
+  if (param_1->field_0010 == 2) {
+    iVar2 = param_1->field_0014;
     if (*(uint *)(iVar2 + 0xc) < 2) {
       this_00->field_0020 = *(undefined4 *)(iVar2 + 0x20);
       this_00->field_0024 = *(char *)(iVar2 + 4);
@@ -78,7 +78,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
       return 0;
     }
   }
-  else if (*(int *)(param_1 + 0x10) == 3) {
+  else if (param_1->field_0010 == 3) {
     thunk_FUN_00423e00(this_00);
     FUN_006ae110((byte *)this_00->field_0029);
     this_00->field_0029 = 0;

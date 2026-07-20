@@ -18,7 +18,7 @@ void FUN_0075ef60(int *param_1,int param_2)
   iVar3 = 0;
   if (0 < iVar2) {
     do {
-      FUN_0075f590((int)param_1,piVar1,iVar3);
+      FUN_0075f590((AnonShape_0075F590_570A7014 *)param_1,piVar1,iVar3);
       iVar3 = iVar3 + 1;
       piVar1 = piVar1 + 8;
     } while (iVar3 < iVar2);

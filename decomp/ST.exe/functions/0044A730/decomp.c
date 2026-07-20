@@ -4,13 +4,14 @@
    STAllPlayersC::UnRegisterContainer */
 
 undefined4 __thiscall
-STAllPlayersC::UnRegisterContainer(STAllPlayersC *this,uint param_1,uint param_2)
+STAllPlayersC::UnRegisterContainer
+          (STAllPlayersC *this,uint param_1,AnonShape_0044A730_DBE673B2 *param_2)
 
 {
   code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
-  uint uVar2;
+  AnonShape_0044A730_DBE673B2 *pAVar2;
   int iVar3;
   undefined4 uVar4;
   undefined4 extraout_ECX;
@@ -28,18 +29,18 @@ STAllPlayersC::UnRegisterContainer(STAllPlayersC *this,uint param_1,uint param_2
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (errorCode == 0) {
-    uVar2 = GetObjPtr(local_c,0xffffffff,param_1,CASE_5);
+    pAVar2 = (AnonShape_0044A730_DBE673B2 *)GetObjPtr(local_c,0xffffffff,param_1,CASE_5);
     uVar4 = extraout_ECX;
-    if (uVar2 != param_2) {
+    if (pAVar2 != param_2) {
       RaiseInternalException
                 (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0x2f85);
       uVar4 = extraout_ECX_00;
     }
-    DelObjFromTmps(this_00,DAT_0080874d,*(int *)(param_2 + 0x20),
-                   CONCAT31((int3)((uint)uVar4 >> 8),*(undefined1 *)(param_2 + 0x24)),param_1);
-    DelObjFromSaveTmps(this_00,*(int *)(param_2 + 0x20),*(char *)(param_2 + 0x24),(short)param_1);
-    Library::DKW::TBL::FUN_006ae140(DAT_007fa160,param_1 & 0xffff,&local_8);
+    DelObjFromTmps(this_00,DAT_0080874d,param_2->field_0020,
+                   CONCAT31((int3)((uint)uVar4 >> 8),param_2->field_0024),param_1);
+    DelObjFromSaveTmps(this_00,param_2->field_0020,param_2->field_0024,(short)param_1);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa160->flags,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {

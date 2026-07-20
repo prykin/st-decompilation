@@ -21,7 +21,7 @@ void __thiscall STResourceC::sub_00580D30(STResourceC *this,int param_1)
   thunk_FUN_004d8530(this);
   this->field_0032 = 0xffff;
   if (param_1 == 0) {
-    thunk_FUN_00580380(this);
+    thunk_FUN_00580380((STJellyGunC *)this);
   }
   return;
 }

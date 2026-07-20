@@ -45,7 +45,7 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
         iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
         this_00 = g_cMf32_00806754;
         if (iVar5 == 0) {
-          if (DAT_00802a58 != (cLoadingTy *)0x0) {
+          if (PTR_00802a58 != (cLoadingTy *)0x0) {
             uVar10 = 0xffffffff;
             pcVar12 = PTR_DAT_007c83b0;
             do {
@@ -81,7 +81,7 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
             }
             local_8 = iVar5;
             pcVar12 = (char *)FUN_006b0140(19000,HINSTANCE_00807618);
-            cLoadingTy::SetProcess(DAT_00802a58,0,pcVar12,iVar5);
+            cLoadingTy::SetProcess(PTR_00802a58,0,pcVar12,iVar5);
           }
           pSVar11 = local_c;
           DAT_00802a3c = 0;
@@ -89,8 +89,8 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
                     (g_cMf32_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
           uVar7 = FUN_006b0140(0x4a39,HINSTANCE_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,uVar7);
-          if (DAT_00802a58 != (cLoadingTy *)0x0) {
-            cLoadingTy::SetState(DAT_00802a58,CASE_2,0,(char *)&DAT_0080f33a);
+          if (PTR_00802a58 != (cLoadingTy *)0x0) {
+            cLoadingTy::SetState(PTR_00802a58,CASE_2,0,(char *)&DAT_0080f33a);
           }
           g_currentExceptionFrame = local_b4.previous;
         }

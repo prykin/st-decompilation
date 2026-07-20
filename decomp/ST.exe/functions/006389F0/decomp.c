@@ -37,7 +37,8 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
         local_28[2] = *(undefined4 *)(iVar1 + 8);
         local_28[3] = 2;
         local_28[4] = 0x128;
-        (**(code **)(*DAT_00802a38 + 0x18))(local_28);
+        (*PTR_00802a38->vtable->SendMessage)
+                  ((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_28);
         return 1;
       }
     }

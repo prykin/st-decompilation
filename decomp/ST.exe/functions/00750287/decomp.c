@@ -1,26 +1,26 @@
 
-void __fastcall FUN_00750287(int param_1)
+void __fastcall FUN_00750287(AnonShape_00750287_BC8A1854 *param_1)
 
 {
   int iVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 local_8;
+  int local_8;
   
-  if (*(int *)(param_1 + 0x60) != 0) {
-    ResetEvent(*(HANDLE *)(param_1 + 0x50));
+  if (param_1->field_0060 != 0) {
+    ResetEvent((HANDLE)param_1->field_0050);
     uVar3 = 0;
     local_8 = 0;
-    if (0 < *(int *)(param_1 + 0x28)) {
-      iVar1 = FUN_0074ded7(*(int *)(param_1 + 0x20));
+    if (0 < param_1->field_0028) {
+      iVar1 = FUN_0074ded7(param_1->field_0020);
       local_8 = *(int *)(iVar1 + 0x1c);
       uVar3 = *(uint *)(iVar1 + 0x18);
     }
-    if ((*(int *)(param_1 + 100) != 0) && (0 < *(int *)(param_1 + 0x40))) {
-      iVar1 = FUN_0074ded7(*(int *)(param_1 + 0x38));
-      uVar2 = *(uint *)(iVar1 + 0x18) + *(uint *)(param_1 + 0x68);
-      iVar1 = *(int *)(iVar1 + 0x1c) + *(int *)(param_1 + 0x6c) +
-              (uint)CARRY4(*(uint *)(iVar1 + 0x18),*(uint *)(param_1 + 0x68));
+    if ((param_1->field_0064 != 0) && (0 < param_1->field_0040)) {
+      iVar1 = FUN_0074ded7(param_1->field_0038);
+      uVar2 = *(uint *)(iVar1 + 0x18) + param_1->field_0068;
+      iVar1 = *(int *)(iVar1 + 0x1c) + param_1->field_006C +
+              (uint)CARRY4(*(uint *)(iVar1 + 0x18),param_1->field_0068);
       if ((uVar3 == 0 && local_8 == 0) ||
          ((iVar1 <= local_8 && ((iVar1 < local_8 || (uVar2 < uVar3)))))) {
         local_8 = iVar1;
@@ -28,17 +28,17 @@ void __fastcall FUN_00750287(int param_1)
       }
     }
     if (((-1 < local_8) && ((0 < local_8 || (uVar3 != 0)))) &&
-       ((uVar3 != *(uint *)(param_1 + 0x58) || (local_8 != *(int *)(param_1 + 0x5c))))) {
-      if (*(int *)(param_1 + 0x54) != 0) {
-        (**(code **)(**(int **)(param_1 + 0x60) + 0x18))
-                  (*(int **)(param_1 + 0x60),*(int *)(param_1 + 0x54));
-        ResetEvent(*(HANDLE *)(param_1 + 0x50));
+       ((uVar3 != param_1->field_0058 || (local_8 != param_1->field_005C)))) {
+      if (param_1->field_0054 != 0) {
+        (**(code **)(*(int *)param_1->field_0060 + 0x18))
+                  ((int *)param_1->field_0060,param_1->field_0054);
+        ResetEvent((HANDLE)param_1->field_0050);
       }
-      (**(code **)(**(int **)(param_1 + 0x60) + 0x10))
-                (*(int **)(param_1 + 0x60),uVar3,local_8,0,0,*(undefined4 *)(param_1 + 0x50),
-                 param_1 + 0x54);
-      *(uint *)(param_1 + 0x58) = uVar3;
-      *(int *)(param_1 + 0x5c) = local_8;
+      (**(code **)(*(int *)param_1->field_0060 + 0x10))
+                ((int *)param_1->field_0060,uVar3,local_8,0,0,param_1->field_0050,
+                 &param_1->field_0054);
+      param_1->field_0058 = uVar3;
+      param_1->field_005C = local_8;
     }
   }
   return;

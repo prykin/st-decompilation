@@ -30,7 +30,7 @@ int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1,undefined4 param_2,
     iVar5 = sub_00460360(this);
     break;
   case CASE_2:
-    iVar5 = thunk_FUN_004620f0((int *)this);
+    iVar5 = thunk_FUN_004620f0(this);
     break;
   case CASE_4:
     iVar5 = *(int *)&this->field_0x584;

@@ -40,8 +40,9 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   local_c = (byte *)((int)local_18 + 0x76f6);
   pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_c,0,0,0);
   local_8 = pcVar4;
-  if (*(byte **)((int)pvVar2 + 0x4ea7) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)((int)pvVar2 + 0x4ea7));
+  if (*(AnonShape_006B5570_4D68B99C **)((int)pvVar2 + 0x4ea7) != (AnonShape_006B5570_4D68B99C *)0x0)
+  {
+    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)((int)pvVar2 + 0x4ea7));
   }
   puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_DESCRIPTION_0079b074,0);
   *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
@@ -49,8 +50,9 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
     puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
   }
-  if (*(byte **)((int)pvVar2 + 0x4eab) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)((int)pvVar2 + 0x4eab));
+  if (*(AnonShape_006B5570_4D68B99C **)((int)pvVar2 + 0x4eab) != (AnonShape_006B5570_4D68B99C *)0x0)
+  {
+    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)((int)pvVar2 + 0x4eab));
   }
   puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_OBJECTIVES_0079b078,0);
   *(uint **)((int)pvVar2 + 0x4eab) = puVar5;

@@ -21,7 +21,7 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,unde
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_055C);
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_05ED);
   this->vtable = &StartSystemTyVTable;
-  DAT_0081176c = this;
+  PTR_0081176c = this;
   this->field_0028 = DAT_00807332;
   this->field_02EA = 1;
   this->field_02EB = 1;

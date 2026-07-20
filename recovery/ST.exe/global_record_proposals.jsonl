@@ -1,0 +1,1 @@
+{"apply":true,"record_id":"player_runtime","base_address":"007F4E20","stride":2658,"count":8,"type_path":"/SubmarineTitans/Recovered/GlobalRecords/STPlayerRuntimeRecord","array_name":"g_playerRuntime","confidence":"high","reason":"stride_0xA62 in 9 functions; total_0x5310 / stride = 8 records; exact_end=007FA130; first_record_fields=113"}

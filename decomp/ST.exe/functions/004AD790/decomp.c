@@ -20,10 +20,11 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   char *pcVar10;
   char *pcVar11;
   void *unaff_EDI;
+  AnonShape_004AD790_77673787 *pAVar12;
   InternalExceptionFrame local_60;
   char *local_1c;
   STT3DSprC *local_18;
-  undefined4 *local_14;
+  AnonShape_004AD790_77673787 *local_14;
   int local_10;
   char *local_c;
   int local_8;
@@ -70,30 +71,30 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       local_c = (char *)((int)local_c + 0x24);
     } while (iVar3 < (int)this_00->field_0014);
   }
-  local_14 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
+  local_14 = (AnonShape_004AD790_77673787 *)Library::DKW::LIB::FUN_006aac70(*param_1);
   uVar9 = *param_1;
-  puVar6 = local_14;
+  pAVar12 = local_14;
   for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+    *(undefined4 *)pAVar12 = 0;
+    pAVar12 = (AnonShape_004AD790_77673787 *)&pAVar12->field_0x4;
   }
   for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined1 *)puVar6 = 0;
-    puVar6 = (undefined4 *)((int)puVar6 + 1);
+    *(undefined1 *)pAVar12 = 0;
+    pAVar12 = (AnonShape_004AD790_77673787 *)&pAVar12->field_0x1;
   }
-  pcVar10 = (char *)(local_14 + 9);
-  *local_14 = this_00->field_0004;
-  local_14[1] = this_00->field_0008;
-  *(undefined1 *)(local_14 + 2) = this_00->field_0010;
-  *(undefined1 *)((int)local_14 + 9) = this_00->field_0011;
-  *(undefined1 *)((int)local_14 + 10) = this_00->field_0012;
-  *(undefined4 *)((int)local_14 + 0xb) = this_00->field_000C;
-  *(undefined4 *)((int)local_14 + 0xf) = this_00->field_0014;
-  *(undefined4 *)((int)local_14 + 0x13) = this_00->field_0024;
-  *(undefined4 *)((int)local_14 + 0x17) = this_00->field_0028;
-  *(undefined4 *)((int)local_14 + 0x1b) = this_00->field_002C;
-  *(undefined1 *)((int)local_14 + 0x1f) = this_00->field_0013;
-  local_14[8] = this_00->field_0030;
+  pcVar10 = &local_14[1].field_0x4;
+  *(undefined4 *)local_14 = this_00->field_0004;
+  *(undefined4 *)&local_14->field_0x4 = this_00->field_0008;
+  local_14->field_0x8 = this_00->field_0010;
+  local_14->field_0009 = this_00->field_0011;
+  local_14->field_000A = this_00->field_0012;
+  local_14->field_000B = this_00->field_000C;
+  local_14->field_000F = this_00->field_0014;
+  local_14->field_0013 = this_00->field_0024;
+  local_14->field_0017 = this_00->field_0028;
+  local_14->field_001B = this_00->field_002C;
+  local_14->field_001F = this_00->field_0013;
+  *(undefined4 *)(local_14 + 1) = this_00->field_0030;
   local_8 = 0;
   if (0 < (int)this_00->field_0014) {
     iVar3 = 0;
@@ -196,6 +197,6 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     } while (local_8 < (int)this_00->field_0014);
   }
   g_currentExceptionFrame = local_60.previous;
-  return local_14;
+  return (undefined4 *)local_14;
 }
 

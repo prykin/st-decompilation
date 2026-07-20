@@ -60,7 +60,7 @@ void __fastcall FUN_005f4680(int param_1)
       if (*(char *)(param_1 + 0xc4) == '\0') {
         return;
       }
-      FUN_006eab60(DAT_00807598,*(uint *)(param_1 + 0x8f));
+      FUN_006eab60(PTR_00807598,*(uint *)(param_1 + 0x8f));
       *(undefined1 *)(param_1 + 0xc4) = 0;
       return;
     }
@@ -69,11 +69,11 @@ void __fastcall FUN_005f4680(int param_1)
     if (*(int *)(param_1 + 0xaf) <= iVar5) {
       *(undefined4 *)(param_1 + 0xab) = 0;
     }
-    FUN_006ea960(DAT_00807598,*(uint *)(param_1 + 0x8f),
+    FUN_006ea960(PTR_00807598,*(uint *)(param_1 + 0x8f),
                  (float)*(int *)(param_1 + 0x93) * _DAT_007904f8 * _DAT_007904f0,
                  (float)*(int *)(param_1 + 0x97) * _DAT_007904f8 * _DAT_007904f0,
                  (float)*(int *)(param_1 + 0x9b) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    FUN_006ea270(DAT_00807598,*(uint *)(param_1 + 0x8f),0,*(uint *)(param_1 + 0xab));
+    FUN_006ea270(PTR_00807598,*(uint *)(param_1 + 0x8f),0,*(uint *)(param_1 + 0xab));
     local_8 = FUN_006acf0d(*(int *)(param_1 + 0x9f),*(int *)(param_1 + 0xa3),
                            *(int *)(param_1 + 0xa7),*(int *)(param_1 + 0x93),
                            *(int *)(param_1 + 0x97),*(int *)(param_1 + 0x9b));
@@ -92,7 +92,7 @@ void __fastcall FUN_005f4680(int param_1)
     }
     TraksClassTy::TraksCreate(g_traksClass_00802A7C,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
     if (*(char *)(param_1 + 0xc4) == '\0') {
-      FUN_006eaaa0(DAT_00807598,*(uint *)(param_1 + 0x8f),0);
+      FUN_006eaaa0(PTR_00807598,*(uint *)(param_1 + 0x8f),0);
       *(undefined1 *)(param_1 + 0xc4) = 1;
       return;
     }

@@ -1,5 +1,5 @@
 
-int __fastcall FUN_005f4fa0(void *param_1)
+int __fastcall FUN_005f4fa0(AnonShape_005F4FA0_36330E3A *param_1)
 
 {
   int iVar1;
@@ -23,36 +23,35 @@ int __fastcall FUN_005f4fa0(void *param_1)
   local_c = 0;
   bVar3 = false;
   iVar5 = 0;
-  if ((*(int *)((int)param_1 + 0x169) != 0) && (local_8 = 0, 0 < *(int *)((int)param_1 + 0x10d))) {
+  if ((param_1->field_0169 != 0) && (local_8 = 0, 0 < param_1->field_010D)) {
     do {
-      uVar8 = local_8 * *(int *)((int)param_1 + 0x109);
-      if (*(uint *)(DAT_00802a38 + 0xe4) < *(uint *)((int)param_1 + local_8 * 4 + 0x159)) {
+      uVar8 = local_8 * param_1->field_0109;
+      if ((uint)PTR_00802a38->field_00E4 < *(uint *)(&param_1->field_0x159 + local_8 * 4)) {
         local_c = 1;
       }
       else {
-        *(int *)((int)param_1 + local_8 * 4 + 0x139) =
-             *(int *)((int)param_1 + local_8 * 4 + 0x139) + *(int *)((int)param_1 + 0x125);
-        iVar5 = *(int *)((int)param_1 + local_8 * 4 + 0x149) + *(int *)((int)param_1 + 0x121);
-        *(int *)((int)param_1 + local_8 * 4 + 0x149) = iVar5;
-        if ((local_8 == 0) && (iVar5 = iVar5 / 200, iVar5 != *(int *)((int)param_1 + 0x129))) {
-          *(int *)((int)param_1 + 0x129) = iVar5;
-          thunk_FUN_005f5700(param_1,iVar5,*(int *)((int)param_1 + 0x139));
+        (&param_1->field_0139)[local_8] = (&param_1->field_0139)[local_8] + param_1->field_0125;
+        iVar5 = *(int *)(&param_1->field_0x149 + local_8 * 4) + param_1->field_0121;
+        *(int *)(&param_1->field_0x149 + local_8 * 4) = iVar5;
+        if ((local_8 == 0) && (iVar5 = iVar5 / 200, iVar5 != param_1->field_0129)) {
+          param_1->field_0129 = iVar5;
+          thunk_FUN_005f5700(param_1,iVar5,param_1->field_0139);
         }
         local_20 = 0;
-        if (0 < *(int *)((int)param_1 + 0x109)) {
+        if (0 < param_1->field_0109) {
           do {
-            iVar5 = *(int *)((int)param_1 + 0x169);
+            iVar5 = param_1->field_0169;
             if (((uVar8 < *(uint *)(iVar5 + 0xc)) &&
                 (pcVar9 = (char *)(*(int *)(iVar5 + 8) * uVar8 + *(int *)(iVar5 + 0x1c)),
                 pcVar9 != (char *)0x0)) && (*pcVar9 != '\x02')) {
               *(int *)(pcVar9 + 2) =
-                   (*(int *)(pcVar9 + 0x12) * *(int *)((int)param_1 + local_8 * 4 + 0x139)) / 10000
-                   + *(int *)((int)param_1 + 0x111);
+                   (*(int *)(pcVar9 + 0x12) * (&param_1->field_0139)[local_8]) / 10000 +
+                   param_1->field_0111;
               iVar5 = *(int *)(pcVar9 + 2);
               *(int *)(pcVar9 + 6) =
-                   (*(int *)(pcVar9 + 0x16) * *(int *)((int)param_1 + local_8 * 4 + 0x139)) / 10000
-                   + *(int *)((int)param_1 + 0x115);
-              iVar1 = *(int *)((int)param_1 + local_8 * 4 + 0x149);
+                   (*(int *)(pcVar9 + 0x16) * (&param_1->field_0139)[local_8]) / 10000 +
+                   param_1->field_0115;
+              iVar1 = *(int *)(&param_1->field_0x149 + local_8 * 4);
               *(int *)(pcVar9 + 10) = iVar1;
               sVar6 = (short)(iVar5 >> 0x1f);
               if (iVar5 < 0) {
@@ -87,15 +86,15 @@ int __fastcall FUN_005f4fa0(void *param_1)
                    (((int)SHORT_007fb242 <= *(int *)(pcVar9 + 6) || (iVar1 < 0)))))) ||
                  (bVar4 = thunk_FUN_004961b0(local_18,local_14,sVar6), uVar7 = extraout_EDX,
                  CONCAT31(extraout_var,bVar4) == 0)) {
-                FUN_006e3210((int)DAT_00807598,
-                             (*(int *)(pcVar9 + 2) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9,
-                             (*(int *)(pcVar9 + 6) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9);
+                FUN_006e3210((AnonShape_006E3210_FE49985F *)PTR_00807598,
+                             (*(int *)(pcVar9 + 2) * PTR_00807598->field_0380) / 0xc9,
+                             (*(int *)(pcVar9 + 6) * PTR_00807598->field_0380) / 0xc9);
                 lVar10 = Library::MSVCRT::__ftol();
                 uVar7 = (undefined4)((ulonglong)lVar10 >> 0x20);
                 if (*(int *)(pcVar9 + 10) < (int)(short)lVar10) {
                   *pcVar9 = '\x02';
                   if (-1 < (int)*(uint *)(pcVar9 + 0x1f)) {
-                    FUN_006e8ba0(DAT_00807598,*(uint *)(pcVar9 + 0x1f));
+                    FUN_006e8ba0(PTR_00807598,*(uint *)(pcVar9 + 0x1f));
                     pcVar9[0x1f] = -1;
                     pcVar9[0x20] = -1;
                     pcVar9[0x21] = -1;
@@ -105,7 +104,7 @@ int __fastcall FUN_005f4fa0(void *param_1)
                 }
               }
               if (*pcVar9 == '\0') {
-                if ((*(int *)(pcVar9 + 0x1f) == -1) && (*(char *)((int)param_1 + 0x103) != '\0')) {
+                if ((*(int *)(pcVar9 + 0x1f) == -1) && (param_1->field_0103 != '\0')) {
                   thunk_FUN_005f4a30((int)pcVar9,CONCAT31((int3)((uint)uVar7 >> 8),pcVar9[1]),0);
                 }
                 *pcVar9 = '\x01';
@@ -120,12 +119,12 @@ int __fastcall FUN_005f4fa0(void *param_1)
 LAB_005f528b:
             local_20 = local_20 + 1;
             uVar8 = uVar8 + 1;
-          } while (local_20 < *(int *)((int)param_1 + 0x109));
+          } while (local_20 < param_1->field_0109);
         }
       }
       local_8 = local_8 + 1;
       iVar5 = local_c;
-    } while (local_8 < *(int *)((int)param_1 + 0x10d));
+    } while (local_8 < param_1->field_010D);
   }
   return iVar5;
 }

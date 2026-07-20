@@ -13,7 +13,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   
   if (param_2 == 0) {
     GVar4 = CASE_E;
-    puVar3 = (undefined4 *)((int)&DAT_007f4f83 + param_1 * 0xa62);
+    puVar3 = &g_playerRuntime[param_1].field326_0x163;
   }
   else {
     if (param_2 != 1) {
@@ -27,7 +27,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
       return;
     }
     GVar4 = CASE_F;
-    puVar3 = (undefined4 *)((int)&DAT_007f4fd3 + param_1 * 0xa62);
+    puVar3 = &g_playerRuntime[param_1].field384_0x1b3;
   }
   thunk_FUN_0043fc50(GVar4,0);
   if (*(byte **)((int)puVar3 + 0x4a) != (byte *)0x0) {

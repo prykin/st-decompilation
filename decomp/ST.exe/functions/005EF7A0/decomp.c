@@ -21,7 +21,7 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
           (*(int *)(DAT_007fb248 +
                    ((int)SHORT_007fb246 * (int)param_3 + (int)SHORT_007fb240 * (int)param_2 +
                    (int)sVar1) * 8) != 0)))))) ||
-       (_param_1 = (void *)DumpClassC::WritePtr(sVar1,param_2,param_3,0,(int)this),
+       (_param_1 = (void *)DumpClassC::WritePtr(sVar1,param_2,param_3,0,this),
        _param_1 != (void *)0x0)) goto cf_common_exit_005EF8D0;
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
   }

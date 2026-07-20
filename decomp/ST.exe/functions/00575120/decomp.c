@@ -18,7 +18,7 @@ void __thiscall FUN_00575120(void *this,short *param_1,int param_2,int param_3)
     puVar1 = (undefined4 *)*puVar4;
     if (puVar1 != (undefined4 *)0x0) {
       puVar1[6] = 0;
-      thunk_FUN_005745e0((int)param_1,puVar1);
+      thunk_FUN_005745e0((AnonShape_005745E0_AF52CC75 *)param_1,puVar1);
     }
     puVar4 = puVar4 + -iVar2;
     iVar3 = iVar3 + -1;

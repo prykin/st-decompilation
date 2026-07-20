@@ -3,7 +3,7 @@
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::GetMessage */
 
-undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
+undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1)
 
 {
   char cVar1;
@@ -53,16 +53,16 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
     uVar11 = (*pcVar4)();
     return uVar11;
   }
-  uVar12 = *(uint *)(param_1 + 0x10);
+  uVar12 = *(uint *)&param_1->field_0x10;
   if (0x6214 < uVar12) {
     if (uVar12 < 0x6980) {
       if (uVar12 == 0x697f) {
-        if (*(ushort *)(param_1 + 0x14) < 3) {
-          ccFntTy::SetSurf(local_10->field_0087,*(int *)(param_1 + 0x18),0,0,0,0,0);
-          if (*(short *)(param_1 + 0x14) == 1) {
+        if ((ushort)param_1->field_0014 < 3) {
+          ccFntTy::SetSurf(local_10->field_0087,(int)param_1->field_0018,0,0,0,0,0);
+          if (param_1->field_0014 == 1) {
             UVar17 = 0x23f0;
           }
-          else if (*(short *)(param_1 + 0x14) == 2) {
+          else if (param_1->field_0014 == 2) {
             UVar17 = 0x23f2;
           }
           else {
@@ -96,17 +96,17 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
             *(undefined1 *)puVar9 = 0x20;
           }
           ccFntTy::WrStr(this_00->field_0087,&DAT_0080f33a,-1,-1,
-                         (uint)(*(short *)(param_1 + 0x16) == 1));
-          if (*(short *)(param_1 + 0x16) == 1) {
-            iVar7 = *(int *)(param_1 + 0x18);
-            FUN_006b5ee0(iVar7,0,0,0,*(int *)(iVar7 + 4),*(int *)(iVar7 + 8),0x18,0xd);
+                         (uint)(*(short *)&param_1->field_0x16 == 1));
+          if (*(short *)&param_1->field_0x16 == 1) {
+            piVar15 = param_1->field_0018;
+            FUN_006b5ee0((int)piVar15,0,0,0,piVar15[1],piVar15[2],0x18,0xd);
           }
         }
       }
       else if (uVar12 < 0x6901) {
         if (uVar12 == 0x6900) {
-          if (*(int *)(param_1 + 0x14) != -1) {
-            local_10->field_006B = *(int *)(param_1 + 0x14);
+          if (*(int *)&param_1->field_0014 != -1) {
+            local_10->field_006B = *(int *)&param_1->field_0014;
             SetCtrl(local_10);
             this_00->field_002D = 5;
             FUN_006e6080(this_00,2,this_00->field_009B,(undefined4 *)&this_00->field_0x1d);
@@ -136,7 +136,7 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
             }
           }
         }
-        else if ((uVar12 == 0x68ff) && (uVar12 = *(uint *)(param_1 + 0x14), uVar12 < 3)) {
+        else if ((uVar12 == 0x68ff) && (uVar12 = *(uint *)&param_1->field_0014, uVar12 < 3)) {
           local_10->field_006A = (char)uVar12;
           uVar12 = *(uint *)((&local_10->field_0347)[uVar12 & 0xff] + 0xc);
           if (uVar12 <= (uint)local_10->field_006B) {
@@ -148,21 +148,21 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
         }
       }
       else if (uVar12 == 0x693f) {
-        thunk_FUN_005c00d0((int)local_10);
+        thunk_FUN_005c00d0((AnonShape_005C00D0_8BBBA4CC *)local_10);
       }
       else if (uVar12 == 0x6940) {
-        thunk_FUN_005c0190((int)local_10);
+        thunk_FUN_005c0190((AnonShape_005C0190_99FBAF43 *)local_10);
       }
       goto cf_common_exit_005C22B1;
     }
     if (0xb208 < uVar12) {
       if (uVar12 == 0xb209) {
-        PaintTab(local_10,param_1);
+        PaintTab(local_10,(int)param_1);
       }
       goto cf_common_exit_005C22B1;
     }
     if (uVar12 == 0xb208) {
-      cVar1 = **(char **)(param_1 + 0x14);
+      cVar1 = **(char **)&param_1->field_0014;
       local_10->field_0068 = 0;
       local_10->field_0069 = cVar1 + -1;
       PaintMReport(local_10,'\0');
@@ -170,20 +170,20 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
     }
     if (uVar12 == 0x6980) {
       iVar7 = (&local_10->field_0347)[(byte)local_10->field_006A];
-      if ((iVar7 != 0) && ((uint)*(ushort *)(param_1 + 0x14) < *(uint *)(iVar7 + 0xc))) {
-        piVar15 = (int *)(*(int *)(iVar7 + 8) * (uint)*(ushort *)(param_1 + 0x14) +
+      if ((iVar7 != 0) && ((uint)(ushort)param_1->field_0014 < *(uint *)(iVar7 + 0xc))) {
+        piVar15 = (int *)(*(int *)(iVar7 + 8) * (uint)(ushort)param_1->field_0014 +
                          *(int *)(iVar7 + 0x1c));
       }
       if (piVar15 != (int *)0x0) {
-        ccFntTy::SetSurf(local_10->field_0087,*(int *)(param_1 + 0x18),0,0,0,0,0);
+        ccFntTy::SetSurf(local_10->field_0087,(int)param_1->field_0018,0,0,0,0,0);
         iVar7 = *piVar15 + 1;
         uVar11 = FUN_006b0140(0x2445,HINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_007cd0b8,uVar11,iVar7);
         ccFntTy::WrStr(this_00->field_0087,&DAT_0080f33a,-1,-1,
-                       (uint)(*(short *)(param_1 + 0x16) == 1));
-        if (*(short *)(param_1 + 0x16) == 1) {
-          iVar7 = *(int *)(param_1 + 0x18);
-          FUN_006b5ee0(iVar7,0,0,0,*(int *)(iVar7 + 4),*(int *)(iVar7 + 8),0x18,0xd);
+                       (uint)(*(short *)&param_1->field_0x16 == 1));
+        if (*(short *)&param_1->field_0x16 == 1) {
+          piVar15 = param_1->field_0018;
+          FUN_006b5ee0((int)piVar15,0,0,0,piVar15[1],piVar15[2],0x18,0xd);
         }
       }
       goto cf_common_exit_005C22B1;
@@ -241,7 +241,7 @@ switchD_005c1b14_caseD_5:
         NoneMReport(local_10);
         break;
       case 2:
-        InitMReport(local_10,*(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14));
+        InitMReport(local_10,*(undefined1 *)(*(int *)&param_1->field_0014 + 0x14));
         break;
       case 3:
         DoneMReport(local_10);
@@ -249,8 +249,8 @@ switchD_005c1b14_caseD_5:
       case 5:
         goto switchD_005c1b14_caseD_5;
       case 0x60:
-        uVar2 = *(ushort *)(param_1 + 0x18);
-        uVar3 = *(ushort *)(param_1 + 0x1a);
+        uVar2 = *(ushort *)&param_1->field_0018;
+        uVar3 = *(ushort *)((int)&param_1->field_0018 + 2);
         local_8 = (int *)0x0;
         local_18 = CONCAT22(local_18._2_2_,uVar2);
         local_14 = CONCAT22(local_14._2_2_,uVar3);
@@ -284,7 +284,7 @@ switchD_005c1b14_caseD_5:
             *(undefined2 *)&local_10->field_0x31 = 0;
             local_10->field_0033 = 3;
             local_10->field_0035 = piVar14;
-            (**(code **)*DAT_00802a30)(&local_10->field_0x1d);
+            (*(code *)**(undefined4 **)PTR_00802a30)(&local_10->field_0x1d);
           }
           this_00->field_044F = piVar15;
           if (piVar15 != (int *)0x0) {
@@ -292,7 +292,7 @@ switchD_005c1b14_caseD_5:
             *(undefined2 *)&this_00->field_0x31 = 0;
             this_00->field_0033 = 3;
             this_00->field_0035 = piVar15;
-            (**(code **)*DAT_00802a30)(&this_00->field_0x1d);
+            (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x1d);
           }
         }
       }
@@ -301,7 +301,7 @@ switchD_005c1b14_caseD_5:
     local_10->field_0049 = 1;
     if (local_10->field_0066 == '\0') {
       local_10->field_004D = 0x6108;
-      thunk_FUN_005c05f0((int)local_10);
+      thunk_FUN_005c05f0((AnonShape_005C05F0_AB1ACC3B *)local_10);
       goto cf_common_exit_005C22B1;
     }
     wsprintfA(&DAT_0080ed16,&DAT_007c6ee4,&DAT_00807680,&DAT_0080c52e);
@@ -357,12 +357,12 @@ switchD_005c1b14_caseD_5:
       this_00->field_004D = 0x6104;
       this_00->field_0051 = 0;
       this_00->field_0055 = 2;
-      thunk_FUN_005c05f0((int)this_00);
+      thunk_FUN_005c05f0((AnonShape_005C05F0_AB1ACC3B *)this_00);
       goto cf_common_exit_005C22B1;
     }
 LAB_005c1d24:
     this_00->field_004D = 0x6102;
-    thunk_FUN_005c05f0((int)this_00);
+    thunk_FUN_005c05f0((AnonShape_005C05F0_AB1ACC3B *)this_00);
   }
   else {
     switch(uVar12) {
@@ -378,7 +378,9 @@ LAB_005c1d24:
       local_10->field_032B = 0x50;
       local_10->field_0333 = 200;
       local_10->field_032F = 0x1b3;
-      (**(code **)(*(int *)local_10->field_000C + 8))(0x100ef,0,0,&local_10->field_0x2c7,0);
+      (*local_10->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                 &local_10->field_0x2c7,0);
       break;
     case 0x6203:
       if ((&local_10->field_0347)[(byte)local_10->field_006A] != 0) {
@@ -396,7 +398,9 @@ LAB_005c1d24:
         if (600 < iVar7 + iVar10) {
           local_10->field_032F = 600 - iVar10;
         }
-        (**(code **)(*(int *)local_10->field_000C + 8))(0x100ef,0,0,&local_10->field_0x2c7,0);
+        (*local_10->field_000C->vtable->CreateObject)
+                  ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                   &local_10->field_0x2c7,0);
       }
       break;
     case 0x6212:

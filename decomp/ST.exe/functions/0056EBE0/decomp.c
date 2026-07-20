@@ -18,11 +18,11 @@ void __fastcall FUN_0056ebe0(int param_1)
   char *pcVar10;
   int local_8;
   
-  if (*(byte **)(param_1 + 0x4eab) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)(param_1 + 0x4eab));
+  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4eab) != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4eab));
   }
-  if (*(byte **)(param_1 + 0x4ea7) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)(param_1 + 0x4ea7));
+  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4ea7) != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4ea7));
   }
   if ((*(int *)(*(int *)(param_1 + 0x4ee6) + 0xc) == 0) ||
      (iVar6 = *(int *)(*(int *)(param_1 + 0x4ee6) + 0x1c), iVar6 == 0)) {

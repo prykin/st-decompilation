@@ -3,7 +3,7 @@
    E:\__titans\Artem\TLO_dock.cpp
    TLOFakeTy::GetMessage */
 
-int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
+int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,AnonShape_0041AF40_F59F8577 *param_1)
 
 {
   short *psVar1;
@@ -41,12 +41,12 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
     return iVar4;
   }
   STSprGameObjC::GetMessage(local_c,param_1);
-  iVar4 = *(int *)(param_1 + 0x10);
+  iVar4 = param_1->field_0010;
   if (iVar4 == 2) {
     DAT_00800bcc = pSVar3;
     pSVar3->field_0020 = 0x3ea;
     *(undefined4 *)&pSVar3->field_0x28 = 2;
-    local_8 = *(byte **)(param_1 + 0x14);
+    local_8 = (byte *)param_1->field_0014;
     if (pSVar3 != (STSprGameObjC *)0x0) {
       puVar8 = (undefined4 *)&pSVar3->field_0x231;
     }
@@ -82,7 +82,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
             exceptionCode =
                  DumpClassC::WritePtr
                            (*psVar1,*(short *)(*(int *)&pSVar3->field_0x24d + 4 + iVar7),psVar1[4],0
-                            ,(int)pSVar3);
+                            ,(AnonShape_00495EC0_95A268C6 *)pSVar3);
             if (exceptionCode != 0) {
               RaiseInternalException
                         (exceptionCode,g_overwriteContext_007ED77C,
@@ -97,7 +97,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
   }
   else if (iVar4 == 3) {
     DAT_00800bcc = (STSprGameObjC *)0x0;
-    thunk_FUN_004ad310((int)&pSVar3->field_01D5);
+    thunk_FUN_004ad310((STT3DSprC *)&pSVar3->field_01D5);
     if (*(int *)&pSVar3->field_0x24d != 0) {
       FUN_006ab060((LPVOID *)&pSVar3->field_0x24d);
       g_currentExceptionFrame = local_50.previous;
@@ -137,7 +137,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
       }
     }
     STPlaySystemC::SaveObjData
-              (DAT_00802a38,pSVar3->field_0018,local_8,*(int *)&pSVar3->field_0x245 * 0xc + 0x1c);
+              (PTR_00802a38,pSVar3->field_0018,local_8,*(int *)&pSVar3->field_0x245 * 0xc + 0x1c);
     FUN_006ab060(&local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;

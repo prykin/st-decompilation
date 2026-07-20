@@ -82,7 +82,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       this_00->field_029F = puVar3;
       if (0 < (int)uVar8) {
         do {
-          FUN_006acc70(this_00->field_0160,uVar10,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0160,uVar10,&local_8);
           if ((((short)local_8 != -1) &&
               (piVar4 = (int *)STAllPlayersC::GetObjPtr
                                          (g_sTAllPlayers_007FA174,
@@ -111,11 +111,11 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
                    0x9cd);
       }
     }
-    DistributeDock(this_00,1,(int)this_00->field_029F,this_00->field_0029);
+    DistributeDock(this_00,1,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
   }
   uVar8 = 0;
   local_10 = 2;
-  if (*(uint *)(DAT_00802a38 + 0xe4) % 0x19 == 0) {
+  if ((uint)PTR_00802a38->field_00E4 % 0x19 == 0) {
     if ((this_00->field_029F == (uint *)0x0) || (this_00->field_0027 == 0)) {
       local_10 = 0;
     }
@@ -124,7 +124,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       local_c = uVar10;
       if (0 < (int)uVar10) {
         do {
-          FUN_006acc70(this_00->field_0029,uVar8,&local_8);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar8,&local_8);
           if ((short)local_8 != -1) {
             this_01 = (STBoatC *)
                       STAllPlayersC::GetObjPtr

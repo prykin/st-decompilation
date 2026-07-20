@@ -57,15 +57,16 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     return;
   }
   puVar7 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
-  DibPut((undefined4 *)DAT_0081176c->field_02F0,0,0,'\x01',(byte *)puVar7);
-  iVar6 = DAT_0081176c->field_0544;
+  DibPut((undefined4 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar7);
+  iVar6 = PTR_0081176c->field_0544;
   FUN_006b4170(iVar6,0,0,0,*(int *)(iVar6 + 4),*(int *)(iVar6 + 8),0xff);
-  if ((byte *)DAT_0081176c->field_0548 != (byte *)0x0) {
-    FUN_006b5570((byte *)DAT_0081176c->field_0548);
+  if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
+  {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
   }
   puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   pCVar15 = local_10;
-  DAT_0081176c->field_0548 = puVar8;
+  PTR_0081176c->field_0548 = puVar8;
   uVar12 = *(uint *)(local_10->field_1C9F + 8);
   if ((0 < (int)(*(int *)(local_10->field_1C97 + 8) + uVar12)) && (uVar12 <= param_1)) {
     uVar12 = 0xffffffff;
@@ -179,14 +180,14 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     pcVar10 = local_14;
     g_currentExceptionFrame = local_bc.previous;
     if (local_14 != (cMf32 *)0x0) {
-      StartSystemTy::LoadMapData(DAT_0081176c,(int)local_14,pCVar15->field_1A5F);
+      StartSystemTy::LoadMapData(PTR_0081176c,local_14,pCVar15->field_1A5F);
       cMf32::delete(this_00,pcVar10);
     }
     goto LAB_005ae602;
   }
   uVar12 = 0xffffffff;
   DAT_008087be = 0xffffffff;
-  if ((local_10->field_1A5F == (CASE_2|CASE_1)) &&
+  if ((local_10->field_1A5F == CASE_3) &&
      (0 < *(int *)(local_10->field_1C97 + 8) + *(int *)(local_10->field_1C9F + 8))) {
     pcVar9 = &local_10->field_1DA7;
     do {
@@ -293,10 +294,11 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pcVar10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0)
       ;
       local_14 = pcVar10;
-      if (DAT_0080c4cb != (uint *)0x0) {
-        FUN_006b5570((byte *)DAT_0080c4cb);
+      if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+        FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
       }
-      DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad(pcVar10,PTR_s_OBJECTIVES_0079c074,0);
+      PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                     Library::Ourlib::MFSARR::mfSarLoad(pcVar10,PTR_s_OBJECTIVES_0079c074,0);
       puVar19 = (undefined4 *)&DAT_0080ed16;
       for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
         *puVar19 = 0;
@@ -312,28 +314,30 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       local_8 = &DAT_0080874e;
       cMf32::RecGet(local_14,0xc,PTR_DAT_0079c068,(int *)&local_8,0);
       cMf32::delete(this_01,pcVar10);
-      if ((byte *)DAT_0081176c->field_0548 != (byte *)0x0) {
-        FUN_006b5570((byte *)DAT_0081176c->field_0548);
+      if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
+          (AnonShape_006B5570_4D68B99C *)0x0) {
+        FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
       }
-      if (DAT_0080c4cb == (uint *)0x0) {
-        DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+      if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
+        PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                       Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
         puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-        DAT_0081176c->field_0548 = puVar8;
+        PTR_0081176c->field_0548 = puVar8;
       }
       else {
-        pcVar3 = DAT_0081176c->field_0034;
+        pcVar3 = PTR_0081176c->field_0034;
         pcVar3->field_007E = 1;
         puVar11 = &pcVar3->field_0x9e;
         *(undefined2 *)puVar11 = 0;
         *puVar11 = DAT_007cc854;
         puVar8 = ccFntTy::FormIndentSarr
-                           (DAT_0081176c->field_0034,DAT_0080c4cb,s________________007c21d8,
-                            (uint *)&DAT_007c21ec,*(int *)(DAT_0081176c->field_0544 + 4) + -0x14,0,
+                           (PTR_0081176c->field_0034,(uint *)PTR_0080c4cb,s________________007c21d8,
+                            (uint *)&DAT_007c21ec,*(int *)(PTR_0081176c->field_0544 + 4) + -0x14,0,
                             0xffffffff,(char *)0x0,1);
-        DAT_0081176c->field_0548 = puVar8;
-        if (DAT_0081176c->field_0548 == 0) {
+        PTR_0081176c->field_0548 = puVar8;
+        if (PTR_0081176c->field_0548 == 0) {
           puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-          DAT_0081176c->field_0548 = puVar8;
+          PTR_0081176c->field_0548 = puVar8;
           g_currentExceptionFrame = local_100.previous;
           goto LAB_005ae53a;
         }
@@ -354,15 +358,15 @@ LAB_005ae53a:
   pCVar15->field_002D = 0x28;
   *(undefined2 *)&pCVar15->field_0x31 = 1;
   puVar11 = &pCVar15->field_0x1d;
-  pCVar15->field_0033 = *(undefined2 *)(DAT_0081176c->field_0548 + 8);
-  FUN_006e6080(pCVar15,2,DAT_0081176c->field_0389,(undefined4 *)puVar11);
+  pCVar15->field_0033 = *(undefined2 *)(PTR_0081176c->field_0548 + 8);
+  FUN_006e6080(pCVar15,2,PTR_0081176c->field_0389,(undefined4 *)puVar11);
   pCVar15->field_002D = 0x22;
   *(undefined2 *)&pCVar15->field_0x31 = 0;
   pCVar15->field_0033 = 0;
-  FUN_006e6080(pCVar15,2,DAT_0081176c->field_0389,(undefined4 *)puVar11);
+  FUN_006e6080(pCVar15,2,PTR_0081176c->field_0389,(undefined4 *)puVar11);
   pCVar15->field_002D = 0x20;
   *(uint *)&pCVar15->field_0x31 = (uint)(iVar6 != 0);
-  FUN_006e6080(pCVar15,2,DAT_0081176c->field_0389,(undefined4 *)puVar11);
+  FUN_006e6080(pCVar15,2,PTR_0081176c->field_0389,(undefined4 *)puVar11);
   pSVar4 = pCVar15->field_1A5B;
   if (pSVar4->field_02E6 != (MMsgTy *)0x0) {
     psVar20 = local_34;
@@ -377,11 +381,11 @@ LAB_005ae53a:
     MMsgTy::StatePanel(pSVar4->field_02E6,(int)local_34);
   }
 LAB_005ae602:
-  if ((pCVar15->field_1A5F != (CASE_2|CASE_1)) && (-1 < (int)DAT_0081176c->field_02EC)) {
-    FUN_006b35d0(DAT_008075a8,DAT_0081176c->field_02EC);
+  if ((pCVar15->field_1A5F != CASE_3) && (-1 < (int)PTR_0081176c->field_02EC)) {
+    FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_02EC);
   }
-  if (-1 < (int)DAT_0081176c->field_0540) {
-    FUN_006b35d0(DAT_008075a8,DAT_0081176c->field_0540);
+  if (-1 < (int)PTR_0081176c->field_0540) {
+    FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_0540);
   }
   g_currentExceptionFrame = local_78.previous;
   return;

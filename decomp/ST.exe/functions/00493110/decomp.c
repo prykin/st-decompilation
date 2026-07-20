@@ -5,7 +5,7 @@ void __thiscall FUN_00493110(void *this,int *param_1)
   int iVar1;
   int iVar2;
   
-  iVar1 = FUN_006e62d0(DAT_00802a38,(int)param_1,(int *)&param_1);
+  iVar1 = FUN_006e62d0(PTR_00802a38,(int)param_1,(int *)&param_1);
   if (iVar1 != -4) {
     iVar2 = (**(code **)(*param_1 + 0x2c))();
     iVar1 = *(int *)((int)this + 0x6f7);

@@ -1,5 +1,5 @@
 
-undefined4 FUN_0075c440(int param_1,int *param_2)
+undefined4 FUN_0075c440(AnonShape_0075C440_EFE38C9F *param_1,int *param_2)
 
 {
   int iVar1;
@@ -14,7 +14,7 @@ undefined4 FUN_0075c440(int param_1,int *param_2)
   undefined4 local_30;
   uint local_2c;
   int local_28;
-  int local_24;
+  AnonShape_0075C440_EFE38C9F *local_24;
   int local_20;
   int local_1c;
   undefined4 local_18;
@@ -23,25 +23,25 @@ undefined4 FUN_0075c440(int param_1,int *param_2)
   int local_c;
   int local_8;
   
-  local_c = *(int *)(param_1 + 0x182);
-  iVar2 = *(int *)(param_1 + 0x1aa);
-  local_18 = *(undefined4 *)(param_1 + 0x18a);
+  local_c = param_1->field_0182;
+  iVar2 = param_1->field_01AA;
+  local_18 = param_1->field_018A;
   local_10 = iVar2;
-  if (((*(int *)(param_1 + 0x10c) != 0) && (*(int *)(iVar2 + 0x28) == 0)) &&
-     (iVar1 = FUN_0075c3b0(param_1), iVar1 == 0)) {
+  if (((param_1->field_010C != 0) && (*(int *)(iVar2 + 0x28) == 0)) &&
+     (iVar1 = FUN_0075c3b0((AnonShape_0075C3B0_6803BA0D *)param_1), iVar1 == 0)) {
     return 0;
   }
   if (*(int *)(iVar2 + 0x14) == 0) {
-    local_30 = *(undefined4 *)(param_1 + 0x18e);
+    local_30 = param_1->field_018E;
     local_24 = param_1;
-    local_38 = **(undefined4 **)(param_1 + 0x10);
-    local_34 = (*(undefined4 **)(param_1 + 0x10))[1];
+    local_38 = *(undefined4 *)param_1->field_0010;
+    local_34 = ((undefined4 *)param_1->field_0010)[1];
     uVar7 = *(uint *)(iVar2 + 8);
     iVar1 = *(int *)(iVar2 + 0xc);
     local_20 = iVar2 + 0x10;
     local_1c = *param_2;
     local_8 = *(int *)(iVar2 + 0x3c);
-    param_2 = *(int **)(param_1 + 0x17e);
+    param_2 = param_1->field_017E;
     local_14 = 0;
     if ((int)param_2 <= local_c) {
       do {
@@ -112,9 +112,9 @@ LAB_0075c512:
         iVar2 = local_10;
       } while ((int)param_2 <= local_c);
     }
-    **(undefined4 **)(param_1 + 0x10) = local_38;
-    *(undefined4 *)(*(int *)(param_1 + 0x10) + 4) = local_34;
-    *(undefined4 *)(param_1 + 0x18e) = local_30;
+    *(undefined4 *)param_1->field_0010 = local_38;
+    *(undefined4 *)(param_1->field_0010 + 4) = local_34;
+    param_1->field_018E = local_30;
     *(int *)(iVar2 + 0xc) = iVar1;
     *(uint *)(iVar2 + 8) = uVar7;
   }

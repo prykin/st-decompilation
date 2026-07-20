@@ -17,7 +17,7 @@ void FUN_004a9b60(int param_1,int param_2,int param_3,int param_4)
   DAT_00807410 = param_1;
   DAT_00807414 = param_2;
   DAT_0080741c = param_4;
-  Library::Ourlib::STREND::FUN_006dd660(DAT_00807598,iVar1,iVar3,param_3,param_4);
+  Library::Ourlib::STREND::FUN_006dd660(PTR_00807598,iVar1,iVar3,param_3,param_4);
   unique0x10000069 = ((float)iVar1 * DAT_00807420) / (float)DAT_00807408;
   _DAT_00807441 = ((float)(iVar2 + param_3) * DAT_00807420) / (float)DAT_00807408;
   _DAT_00807445 = ((float)(iVar4 + param_4) * DAT_00807424) / (float)DAT_0080740c;

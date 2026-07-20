@@ -9,11 +9,13 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
   code *pcVar1;
   int iVar2;
   STAllPlayersC *in_ECX;
-  undefined4 *puVar3;
+  int iVar3;
+  undefined4 *puVar4;
   
-  iVar2 = *(int *)((int)&DAT_007f5023 + param_1 * 0xa62);
+  iVar3 = (int)param_1;
+  iVar2 = g_playerRuntime[iVar3].field442_0x203;
   if (iVar2 == 0) {
-    puVar3 = &DAT_007f4f83;
+    puVar4 = &g_playerRuntime[iVar3].field326_0x163;
   }
   else {
     if (iVar2 != 1) {
@@ -26,15 +28,14 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
       (*pcVar1)();
       return;
     }
-    puVar3 = &DAT_007f4fd3;
+    puVar4 = &g_playerRuntime[iVar3].field384_0x1b3;
   }
-  puVar3 = (undefined4 *)((int)puVar3 + param_1 * 0xa62);
   ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);
-  if (*(byte **)((int)puVar3 + 10) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)((int)puVar3 + 10));
-    *(undefined4 *)((int)puVar3 + 10) = 0;
+  if (*(byte **)((int)puVar4 + 10) != (byte *)0x0) {
+    FUN_006ae110(*(byte **)((int)puVar4 + 10));
+    *(undefined4 *)((int)puVar4 + 10) = 0;
   }
-  *puVar3 = 0;
+  *puVar4 = 0;
   return;
 }
 

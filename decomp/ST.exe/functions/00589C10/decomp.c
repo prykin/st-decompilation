@@ -3,7 +3,7 @@
    E:\__titans\Igor\to_oct.cpp
    STOctopusC::GetMessage */
 
-undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
+undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,AnonShape_00589C10_66C697EB *param_1)
 
 {
   code *pcVar1;
@@ -59,8 +59,8 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
     RaiseInternalException(iVar7,0,s_E____titans_Igor_to_oct_cpp_007cba18,0x1d0);
     return 0xffff;
   }
-  STSprGameObjC::GetMessage(local_28,param_1);
-  uVar10 = *(uint *)(param_1 + 0x10);
+  STSprGameObjC::GetMessage(local_28,(AnonShape_0041AF40_F59F8577 *)param_1);
+  uVar10 = param_1->field_0010;
   if (0x112 < uVar10) {
     if (0x128 < uVar10) {
       if (uVar10 != 0x440f) {
@@ -86,7 +86,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
       }
       uVar10 = thunk_FUN_004ad650((int)&this_00->field_01D5);
       FUN_006eab60((void *)this_00->field_0211,uVar10);
-      thunk_FUN_005899e0(this_00);
+      thunk_FUN_005899e0((STJellyGunC *)this_00);
       *(undefined4 *)&this_00->field_0x249 = 2;
       g_currentExceptionFrame = local_88.previous;
       return 0;
@@ -97,19 +97,19 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
         return 0;
       }
       iVar7 = thunk_FUN_0058d160(0,0,SHORT_007fb240 + -1,SHORT_007fb242 + -1,(int)this_00,
-                                 (int)(short)((short)*(undefined4 *)(param_1 + 0x14) * 0xc9 + 100),
-                                 (int)(short)((short)*(undefined4 *)(param_1 + 0x18) * 0xc9 + 100),
-                                 (int)(short)((short)((uint)*(undefined4 *)(param_1 + 0x14) >> 0x10)
-                                              * 0xc9 + 100),
-                                 (int)(short)((short)((uint)*(undefined4 *)(param_1 + 0x18) >> 0x10)
-                                              * 0xc9 + 100),(undefined2 *)&local_1c,
-                                 (undefined2 *)&local_24,(short *)&local_20);
+                                 (int)(short)((short)param_1->field_0014 * 0xc9 + 100),
+                                 (int)(short)((short)param_1->field_0018 * 0xc9 + 100),
+                                 (int)(short)((short)((uint)param_1->field_0014 >> 0x10) * 0xc9 +
+                                             100),
+                                 (int)(short)((short)((uint)param_1->field_0018 >> 0x10) * 0xc9 +
+                                             100),(undefined2 *)&local_1c,(undefined2 *)&local_24,
+                                 (short *)&local_20);
       if (iVar7 == 0) {
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
       thunk_FUN_0058af70(this_00,(short)local_1c,(short)local_24,(short)local_20);
-      sVar6 = (*this_00->vtable->slot_10)
+      sVar6 = (*this_00->vtable->vfunc_10)
                         (*(undefined2 *)&this_00->field_0x41,*(undefined2 *)&this_00->field_0x43,
                          *(undefined2 *)&this_00->field_0x45,local_1c,local_24,local_20);
       *(short *)&this_00->field_0x6c = sVar6 / 0x2d - (short)((int)sVar6 / -0x4c000000);
@@ -213,7 +213,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
     local_c[0x4d] = uVar2;
     local_c[0x4e] = uVar3;
     local_c[0x4f] = uVar4;
-    *(undefined4 *)(local_c + 0x50) = this_00->field_0259;
+    *(STSprGameObjC_field_0259State *)(local_c + 0x50) = this_00->field_0259;
     uVar2 = this_00->field_0x25e;
     uVar3 = this_00->field_0x25f;
     uVar4 = this_00->field_0x260;
@@ -354,7 +354,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
       pbVar12 = pbVar12 + 1;
       pbVar14 = pbVar14 + 1;
     }
-    STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_c,local_10 + 0x96 + local_8);
+    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x96 + local_8);
     FUN_006ab060(&local_14);
     FUN_006ab060(&local_18);
     FUN_006ab060(&local_c);
@@ -363,7 +363,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
   }
   if (uVar10 == 3) {
     thunk_FUN_0058d080(this_00->field_0018);
-    thunk_FUN_004ad310((int)&this_00->field_01D5);
+    thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
     g_currentExceptionFrame = local_88.previous;
     return 0;
   }
@@ -372,7 +372,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
-    thunk_FUN_0058a9e0((int *)this_00);
+    thunk_FUN_0058a9e0((AnonShape_0058A9E0_DB5690D0 *)this_00);
     g_currentExceptionFrame = local_88.previous;
     return 0;
   }
@@ -381,9 +381,9 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
     return 0;
   }
   *(undefined4 *)&this_00->field_0x249 = 3;
-  local_1c = *(undefined4 **)(param_1 + 0x14);
+  local_1c = (undefined4 *)param_1->field_0014;
   if ((uint)local_1c[3] < 2) {
-    iVar7 = DAT_00802a38->field_00E4;
+    iVar7 = PTR_00802a38->field_00E4;
     *(undefined4 *)&this_00->field_0x24d = 0;
     *(undefined4 *)&this_00->field_0x231 = 0;
     *(int *)&this_00->field_0x245 = iVar7 + -3;
@@ -393,7 +393,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
     *(undefined4 *)&this_00->field_0x269 = 0;
     *(undefined4 *)&this_00->field_0x281 = 0;
     *(undefined4 *)&this_00->field_0x241 = 0;
-    puVar11 = *(undefined4 **)(param_1 + 0x14);
+    puVar11 = (undefined4 *)param_1->field_0014;
     puVar13 = (undefined4 *)&this_00->field_0x285;
     for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar13 = *puVar11;
@@ -450,7 +450,7 @@ cf_error_exit_0058A005:
       }
     }
     thunk_FUN_004ac610(&this_00->field_01D5,'\x0e');
-    STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00802a38->field_00E4);
     *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x299 * 0xc9 + 100;
     *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x29d * 0xc9 + 100;
     *(short *)&this_00->field_0x45 = *(short *)&this_00->field_0x2a1 * 200 + 100;
@@ -523,7 +523,7 @@ cf_error_exit_0058A005:
       local_2c = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_44,
-                 (undefined4 *)((int)puVar11 + 0x92));
+                 (AnonShape_004ADBA0_E7CEFF88 *)((int)puVar11 + 0x92));
       FUN_006ab060(&local_44);
     }
   }
@@ -533,7 +533,7 @@ cf_error_exit_0058A005:
     return 0;
   }
 LAB_0058a0d0:
-  thunk_FUN_005899e0(this_00);
+  thunk_FUN_005899e0((STJellyGunC *)this_00);
   *(undefined4 *)&this_00->field_0x249 = 2;
   g_currentExceptionFrame = local_88.previous;
   return 0;

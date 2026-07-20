@@ -31,17 +31,18 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
   undefined3 extraout_var;
   void *this;
   char *pcVar21;
-  char *pcVar22;
-  uint uVar23;
+  AnonShape_0065E360_B94C37CB *pAVar22;
+  char *pcVar23;
+  uint uVar24;
   undefined4 unaff_ESI;
-  AiFltClassTy **ppAVar24;
+  AiFltClassTy **ppAVar25;
   void *unaff_EDI;
-  undefined4 *puVar25;
-  undefined8 uVar26;
-  undefined *puVar27;
+  undefined4 *puVar26;
+  undefined8 uVar27;
   undefined *puVar28;
-  undefined4 uVar29;
-  undefined1 *puVar30;
+  undefined *puVar29;
+  undefined4 uVar30;
+  undefined1 *puVar31;
   undefined4 local_628 [78];
   undefined4 local_4f0 [78];
   undefined4 local_3b8 [78];
@@ -149,10 +150,10 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
   Library::MSVCRT::_strncpy((char *)(local_64 + 1),&DAT_008016a0,0x7f);
   local_64[0x21] = -1;
   cVar2 = *param_1;
-  pcVar22 = param_1;
+  pcVar23 = param_1;
   for (iVar10 = 0; (cVar2 != '\a' && (iVar10 < param_2)); iVar10 = iVar10 + 1) {
-    cVar2 = pcVar22[5];
-    pcVar22 = pcVar22 + 5;
+    cVar2 = pcVar23[5];
+    pcVar23 = pcVar23 + 5;
   }
   if (iVar10 != param_2) {
     RaiseInternalException
@@ -163,10 +164,11 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
     if (iVar10 == 0x7f6) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -174,9 +176,9 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
       } while ((int)local_8 < 0xf);
       if ((param_1[0xf] != '\x06') && (param_1[0xf] != '\x03')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -185,10 +187,11 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
       if (4 < param_2) {
         local_8 = (AiFltClassTy *)0x14;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -200,9 +203,9 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -220,16 +223,16 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
         local_30 = param_1 + 0x14;
         local_28 = param_1 + 0xf;
         local_c = param_1 + 10;
-        ppAVar24 = local_50;
+        ppAVar25 = local_50;
         do {
-          uVar29 = 0;
-          puVar27 = &LAB_00405628;
-          pcVar22 = local_10;
+          uVar30 = 0;
+          puVar28 = &LAB_00405628;
+          pcVar23 = local_10;
           sVar3 = (**(code **)*local_64)();
-          sVar7 = (short)pcVar22;
-          pcVar22 = local_18;
+          sVar7 = (short)pcVar23;
+          pcVar23 = local_18;
           sVar4 = (**(code **)*local_64)();
-          sVar9 = (short)pcVar22;
+          sVar9 = (short)pcVar23;
           pbVar15 = local_2c;
           sVar5 = (**(code **)*local_64)();
           sVar8 = (short)pbVar15;
@@ -239,9 +242,9 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)(*local_64 + 8))(local_28,uVar19);
           sVar6 = (**(code **)*local_64)(local_c,uVar19);
-          _EnumRCCont(*(short *)ppAVar24,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar27,
-                      uVar29);
-          ppAVar24 = ppAVar24 + 1;
+          _EnumRCCont(*(short *)ppAVar25,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar28,
+                      uVar30);
+          ppAVar25 = ppAVar25 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -253,10 +256,11 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
         if (0 < param_2) {
           local_8 = (AiFltClassTy *)0x0;
           do {
-            if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-              pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-              if (pcVar22 != (char *)0x0) {
-                Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+               (param_1[(int)&local_8->field_0x0] != '\x01')) {
+              pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+              if (pcVar23 != (char *)0x0) {
+                Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
               }
               local_64[0x21] = -1;
               RaiseInternalException
@@ -271,18 +275,18 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
         iVar10 = (**(code **)(*local_64 + 0x18))();
         if ((((iVar10 == 8) && ((local_8 == (AiFltClassTy *)0x9 || (local_c == (char *)0x9)))) ||
             (local_8 == (AiFltClassTy *)0xff)) || (local_c == (char *)0xff)) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
         }
         iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
         if (iVar10 != 1) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -290,9 +294,9 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
         local_8 = local_50[0];
         iVar10 = thunk_FUN_00668f50(local_64,local_c,0,(uint *)local_50);
         if (iVar10 != 1) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -309,21 +313,21 @@ LAB_0066bdcc:
         }
         else {
           uVar11 = (uint)local_50[0] & 0xff;
-          uVar23 = (uint)local_8 & 0xff;
-          cVar2 = *(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar23);
-          if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar23 * 8 + uVar11) == '\0')) {
+          uVar24 = (uint)local_8 & 0xff;
+          cVar2 = *(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar24);
+          if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar24 * 8 + uVar11) == '\0')) {
             iVar10 = -2;
           }
           else if ((cVar2 == '\x01') &&
-                  (*(char *)((int)&DAT_00808a4f + uVar23 * 8 + uVar11) == '\0')) {
+                  (*(char *)((int)&DAT_00808a4f + uVar24 * 8 + uVar11) == '\0')) {
             iVar10 = -1;
           }
           else if ((cVar2 == '\0') &&
-                  (*(char *)((int)&DAT_00808a4f + uVar23 * 8 + uVar11) == '\x01')) {
+                  (*(char *)((int)&DAT_00808a4f + uVar24 * 8 + uVar11) == '\x01')) {
             iVar10 = 1;
           }
           else {
-            if ((cVar2 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar23 * 8 + uVar11) != '\x01')
+            if ((cVar2 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar24 * 8 + uVar11) != '\x01')
                ) goto LAB_0066bdcc;
             iVar10 = 2;
           }
@@ -338,9 +342,9 @@ LAB_0066bdcc:
             local_10 = (char *)0x0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = -1;
                 RaiseInternalException
@@ -351,16 +355,17 @@ LAB_0066bdcc:
             } while ((int)local_c < param_2);
           }
           iVar10 = (**(code **)*local_64)(param_1);
-          if ((DAT_0080c4c7 == 0) || (*(int *)(DAT_0080c4c7 + 8) <= iVar10)) {
+          if ((PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) ||
+             ((int)PTR_0080c4c7->field_0008 <= iVar10)) {
             local_c = (char *)0x0;
           }
           else {
-            local_c = *(char **)(*(int *)(DAT_0080c4c7 + 0x14) + iVar10 * 4);
+            local_c = *(char **)(PTR_0080c4c7->field_0014 + iVar10 * 4);
           }
           if (local_c == (char *)0x0) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -381,9 +386,9 @@ LAB_0066bdcc:
               local_10 = (char *)0x0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                  pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                  if (pcVar22 != (char *)0x0) {
-                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                  pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                  if (pcVar23 != (char *)0x0) {
+                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                   }
                   local_64[0x21] = -1;
                   RaiseInternalException
@@ -413,9 +418,9 @@ LAB_0066bdcc:
                   local_10 = (char *)0x0;
                   do {
                     if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                      if (pcVar22 != (char *)0x0) {
-                        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                      if (pcVar23 != (char *)0x0) {
+                        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                       }
                       local_64[0x21] = -1;
                       RaiseInternalException
@@ -427,9 +432,9 @@ LAB_0066bdcc:
                 }
                 local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
                 if (((int)local_8 < 0) || (3 < (int)local_8)) {
-                  pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                  if (pcVar22 != (char *)0x0) {
-                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                  pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                  if (pcVar23 != (char *)0x0) {
+                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                   }
                   local_64[0x21] = -1;
                   RaiseInternalException
@@ -445,9 +450,9 @@ LAB_0066bdcc:
               local_10 = (char *)0x0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                  pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                  if (pcVar22 != (char *)0x0) {
-                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                  pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                  if (pcVar23 != (char *)0x0) {
+                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                   }
                   local_64[0x21] = -1;
                   RaiseInternalException
@@ -459,9 +464,9 @@ LAB_0066bdcc:
             }
             local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
             if (((int)local_8 < 0) || (0x20 < (int)local_8)) {
-              pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-              if (pcVar22 != (char *)0x0) {
-                Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+              pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+              if (pcVar23 != (char *)0x0) {
+                Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
               }
               local_64[0x21] = -1;
               RaiseInternalException
@@ -479,9 +484,9 @@ LAB_0066bdcc:
             local_10 = (char *)0x0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = -1;
                 RaiseInternalException
@@ -493,9 +498,9 @@ LAB_0066bdcc:
           }
           local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
           if (((int)local_8 < 0) || (0xff < (int)local_8)) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -511,9 +516,9 @@ LAB_0066bdcc:
               local_10 = (char *)0x0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                  pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                  if (pcVar22 != (char *)0x0) {
-                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                  pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                  if (pcVar23 != (char *)0x0) {
+                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                   }
                   local_64[0x21] = -1;
                   RaiseInternalException
@@ -550,16 +555,16 @@ LAB_0066bdcc:
                   goto cf_common_exit_00670431;
                 }
                 local_8 = local_50[0];
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = (int)local_8;
               }
               else {
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = -1;
               }
@@ -576,9 +581,9 @@ LAB_0066bdcc:
               local_10 = (char *)0x0;
               do {
                 if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                  pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                  if (pcVar22 != (char *)0x0) {
-                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                  pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                  if (pcVar23 != (char *)0x0) {
+                    Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                   }
                   local_64[0x21] = -1;
                   RaiseInternalException
@@ -596,9 +601,9 @@ LAB_0066bdcc:
         }
         if (iVar10 != 0x7d1) {
 cf_common_exit_00670456:
-          pcVar22 = thunk_FUN_00674af0(iVar10);
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          pcVar23 = thunk_FUN_00674af0(iVar10);
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x77,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -610,9 +615,9 @@ cf_common_exit_00670456:
           local_10 = (char *)0x0;
           do {
             if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-              pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-              if (pcVar22 != (char *)0x0) {
-                Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+              pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+              if (pcVar23 != (char *)0x0) {
+                Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
               }
               local_64[0x21] = -1;
               RaiseInternalException
@@ -625,9 +630,9 @@ cf_common_exit_00670456:
         local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
         local_10 = (char *)(**(code **)*local_64)(param_1 + 5);
         if (((int)local_10 < 0) || (0xff < (int)local_10)) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -642,7 +647,7 @@ cf_common_exit_00670456:
         }
         iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
         if (iVar10 != 1) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           goto joined_r0x0066b1d2;
         }
         if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
@@ -658,9 +663,9 @@ cf_common_exit_00670456:
           goto cf_common_exit_00670431;
         }
         local_8 = local_50[0];
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
 LAB_0066b1ad:
         local_64[0x21] = (int)local_8;
@@ -683,11 +688,11 @@ LAB_0066b1fb:
           goto cf_common_exit_00670456;
         case 0x7da:
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
-          *local_14 = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
+          *local_14 = (uint)PTR_00802a38->field_00E4 / 0x19;
           break;
         case 0x7dc:
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
-          *local_14 = *(uint *)(DAT_00802a38 + 0xe4);
+          *local_14 = PTR_00802a38->field_00E4;
           break;
         case 0x7dd:
           local_c = (char *)0x0;
@@ -695,9 +700,9 @@ LAB_0066b1fb:
             local_10 = (char *)0x0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = -1;
                 RaiseInternalException
@@ -731,16 +736,16 @@ LAB_0066b1fb:
               break;
             }
             local_8 = local_50[0];
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             goto LAB_0066b1ad;
           }
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
 joined_r0x0066b1d2:
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           goto LAB_0066b1fb;
@@ -750,9 +755,9 @@ joined_r0x0066b1d2:
             local_10 = (char *)0x0;
             do {
               if ((local_10[(int)param_1] != '\x04') && (local_10[(int)param_1] != '\x01')) {
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = -1;
                 RaiseInternalException
@@ -765,18 +770,18 @@ joined_r0x0066b1d2:
           local_c = (char *)(**(code **)*local_64)(param_1);
           if (((local_c == (char *)0x9) && (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)
               ) || (local_c == (char *)0xff)) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           iVar10 = thunk_FUN_00668f50(local_64,local_c,0,(uint *)local_50);
           if (iVar10 != 1) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -803,10 +808,11 @@ joined_r0x0066b1d2:
           if (0 < param_2) {
             local_8 = (AiFltClassTy *)0x0;
             do {
-              if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-                pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-                if (pcVar22 != (char *)0x0) {
-                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+              if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+                 (param_1[(int)&local_8->field_0x0] != '\x01')) {
+                pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+                if (pcVar23 != (char *)0x0) {
+                  Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
                 }
                 local_64[0x21] = -1;
                 RaiseInternalException
@@ -820,18 +826,18 @@ joined_r0x0066b1d2:
           if (((local_8 == (AiFltClassTy *)0x9) &&
               (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
              (local_8 == (AiFltClassTy *)0xff)) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
           }
           iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
           if (iVar10 != 1) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -852,10 +858,11 @@ joined_r0x0066b1d2:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -867,9 +874,9 @@ joined_r0x0066b1d2:
       local_c = (char *)(**(code **)*local_64)(param_1);
       if (((local_c == (char *)0x9) && (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
          (local_c == (char *)0xff)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -877,13 +884,14 @@ joined_r0x0066b1d2:
       if (local_c == (char *)0x8) {
         local_c = (char *)(uint)DAT_0080874d;
       }
-      pcVar22 = local_c;
+      pcVar23 = local_c;
       if (local_c == (char *)0x9) {
-        pcVar22 = (char *)(**(code **)(*local_64 + 0x18))();
+        pcVar23 = (char *)(**(code **)(*local_64 + 0x18))();
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
-      if ((pcVar22 < 8) && ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(int)pcVar22 * 0x51] < 8)))
-         ) {
+      if ((pcVar23 < 8) &&
+         ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(int)pcVar23 * 0x51] < 8))
+         )) {
         *local_14 = 1;
         break;
       }
@@ -895,10 +903,11 @@ LAB_0066bb5e:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -908,17 +917,18 @@ LAB_0066bb5e:
         } while ((int)local_c < param_2);
       }
       uVar11 = (**(code **)*local_64)(param_1);
-      uVar23 = 0;
+      uVar24 = 0;
       if (DAT_00808a8f == '\0') {
 LAB_0066bff3:
         local_14 = Library::DKW::LIB::FUN_006aac10(4);
-        *local_14 = uVar23;
+        *local_14 = uVar24;
       }
       else {
         pbVar15 = &DAT_008087ea;
         do {
-          if (((DAT_00802a38 == 0) || (pbVar15[-1] < 8)) && (*pbVar15 == uVar11)) {
-            uVar23 = 1;
+          if (((PTR_00802a38 == (STPlaySystemC *)0x0) || (pbVar15[-1] < 8)) && (*pbVar15 == uVar11))
+          {
+            uVar24 = 1;
             goto LAB_0066bff3;
           }
           pbVar15 = pbVar15 + 0x51;
@@ -936,10 +946,11 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -952,18 +963,18 @@ LAB_0066bff3:
       if (((local_8 == (AiFltClassTy *)0x9) &&
           (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
          (local_8 == (AiFltClassTy *)0xff)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
       if (iVar10 != 1) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -980,10 +991,11 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -996,18 +1008,18 @@ LAB_0066bff3:
       if (((local_8 == (AiFltClassTy *)0x9) &&
           (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
          (local_8 == (AiFltClassTy *)0xff)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
       if (iVar10 != 1) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1024,10 +1036,11 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1039,9 +1052,9 @@ LAB_0066bff3:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1059,31 +1072,31 @@ LAB_0066bff3:
         local_30 = param_1 + 0x14;
         local_28 = param_1 + 0xf;
         local_c = param_1 + 10;
-        ppAVar24 = local_50;
+        ppAVar25 = local_50;
         do {
-          puVar28 = (undefined *)0x0;
+          puVar29 = (undefined *)0x0;
           puVar20 = (uint *)0x0;
-          puVar27 = &LAB_00401e8d;
-          pcVar22 = local_10;
+          puVar28 = &LAB_00401e8d;
+          pcVar23 = local_10;
           sVar3 = (**(code **)*local_64)();
-          sVar9 = (short)pcVar22;
-          pcVar22 = local_18;
+          sVar9 = (short)pcVar23;
+          pcVar23 = local_18;
           sVar4 = (**(code **)*local_64)();
-          sVar8 = (short)pcVar22;
+          sVar8 = (short)pcVar23;
           pbVar15 = local_2c;
           sVar5 = (**(code **)*local_64)();
           sVar6 = (short)pbVar15;
           pbVar15 = local_1c;
           pbVar14 = (byte *)(**(code **)*local_64)();
           cVar2 = (char)pbVar15;
-          pcVar22 = local_24;
+          pcVar23 = local_24;
           uVar19 = (**(code **)*local_64)();
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           uVar11 = (**(code **)*local_64)(local_c,0x3fffffff,0,uVar19);
-          _EnumPlObj(*ppAVar24,uVar11,(uint)pcVar22,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
-                     sVar9,puVar27,puVar20,puVar28);
-          ppAVar24 = ppAVar24 + 1;
+          _EnumPlObj(*ppAVar25,uVar11,(uint)pcVar23,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
+                     sVar9,puVar28,puVar20,puVar29);
+          ppAVar25 = ppAVar25 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -1093,10 +1106,11 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1108,9 +1122,9 @@ LAB_0066bff3:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1128,17 +1142,17 @@ LAB_0066bff3:
         local_30 = param_1 + 0x14;
         local_28 = param_1 + 0xf;
         local_c = param_1 + 10;
-        ppAVar24 = local_50;
+        ppAVar25 = local_50;
         do {
-          puVar28 = (undefined *)0x0;
+          puVar29 = (undefined *)0x0;
           puVar20 = (uint *)0x0;
-          puVar27 = &LAB_00401e8d;
-          pcVar22 = local_10;
+          puVar28 = &LAB_00401e8d;
+          pcVar23 = local_10;
           sVar3 = (**(code **)*local_64)();
-          sVar9 = (short)pcVar22;
-          pcVar22 = local_18;
+          sVar9 = (short)pcVar23;
+          pcVar23 = local_18;
           sVar4 = (**(code **)*local_64)();
-          sVar8 = (short)pcVar22;
+          sVar8 = (short)pcVar23;
           pbVar15 = local_2c;
           sVar5 = (**(code **)*local_64)();
           sVar6 = (short)pbVar15;
@@ -1149,9 +1163,9 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           uVar11 = (**(code **)*local_64)(local_c,0,uVar19);
-          _EnumPlObj(*ppAVar24,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,puVar27,
-                     puVar20,puVar28);
-          ppAVar24 = ppAVar24 + 1;
+          _EnumPlObj(*ppAVar25,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,puVar28,
+                     puVar20,puVar29);
+          ppAVar25 = ppAVar25 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -1159,10 +1173,11 @@ LAB_0066bff3:
     case 0x7f0:
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1170,9 +1185,9 @@ LAB_0066bff3:
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
       } while ((int)local_8 < 10);
       if ((param_1[10] != '\x06') && (param_1[10] != '\x03')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1181,10 +1196,11 @@ LAB_0066bff3:
       if (3 < param_2) {
         local_8 = (AiFltClassTy *)0xf;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1196,9 +1212,9 @@ LAB_0066bff3:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1216,17 +1232,17 @@ LAB_0066bff3:
         local_30 = param_1 + 0x14;
         local_28 = param_1 + 0xf;
         local_c = param_1 + 10;
-        ppAVar24 = local_50;
+        ppAVar25 = local_50;
         do {
-          puVar28 = (undefined *)0x0;
+          puVar29 = (undefined *)0x0;
           puVar20 = (uint *)0x0;
-          puVar27 = &LAB_00401e8d;
-          pcVar22 = local_10;
+          puVar28 = &LAB_00401e8d;
+          pcVar23 = local_10;
           sVar3 = (**(code **)*local_64)();
-          sVar9 = (short)pcVar22;
-          pcVar22 = local_18;
+          sVar9 = (short)pcVar23;
+          pcVar23 = local_18;
           sVar4 = (**(code **)*local_64)();
-          sVar8 = (short)pcVar22;
+          sVar8 = (short)pcVar23;
           pbVar15 = local_2c;
           sVar5 = (**(code **)*local_64)();
           sVar6 = (short)pbVar15;
@@ -1237,9 +1253,9 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           pbVar15 = (byte *)(**(code **)(*local_64 + 8))(local_c,uVar19);
-          _EnumPlObj(*ppAVar24,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
-                     puVar27,puVar20,puVar28);
-          ppAVar24 = ppAVar24 + 1;
+          _EnumPlObj(*ppAVar25,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
+                     puVar28,puVar20,puVar29);
+          ppAVar25 = ppAVar25 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -1252,10 +1268,11 @@ cf_common_exit_0066DF5E:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1267,38 +1284,38 @@ cf_common_exit_0066DF5E:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
-      pcVar22 = (char *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
+      pcVar23 = (char *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
       local_10 = (char *)0x0;
-      if (0 < (int)pcVar22) {
+      if (0 < (int)pcVar23) {
         local_c = param_1 + 10;
         local_8 = (AiFltClassTy *)local_50;
         do {
-          local_18 = pcVar22;
+          local_18 = pcVar23;
           puVar16 = (undefined4 *)thunk_FUN_0043e420(local_4f0,*(char *)local_8);
-          pcVar22 = local_c;
-          puVar25 = local_19c;
+          pcVar23 = local_c;
+          puVar26 = local_19c;
           for (iVar10 = 0x4e; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *puVar25 = *puVar16;
+            *puVar26 = *puVar16;
             puVar16 = puVar16 + 1;
-            puVar25 = puVar25 + 1;
+            puVar26 = puVar26 + 1;
           }
-          uVar11 = (**(code **)*local_64)(pcVar22);
+          uVar11 = (**(code **)*local_64)(pcVar23);
           iVar10 = 0;
           do {
-            uVar23 = 1 << ((byte)iVar10 & 0x1f) & uVar11;
-            if (uVar23 < 0x101) {
+            uVar24 = 1 << ((byte)iVar10 & 0x1f) & uVar11;
+            if (uVar24 < 0x101) {
               iVar13 = local_74;
-              if (uVar23 != 0x100) {
-                switch(uVar23) {
+              if (uVar24 != 0x100) {
+                switch(uVar24) {
                 case 1:
                   iVar13 = local_f4;
                   break;
@@ -1330,31 +1347,31 @@ cf_common_join_0066CACB:
               local_10 = (char *)((int)local_10 + iVar13);
             }
             else {
-              if (0x100000 < uVar23) {
+              if (0x100000 < uVar24) {
                 iVar13 = local_124;
-                if (((uVar23 != 0x200000) && (iVar13 = local_114, uVar23 != 0x400000)) &&
-                   (iVar13 = local_104, uVar23 != 0x800000)) goto cf_continue_loop_0066CACD;
+                if (((uVar24 != 0x200000) && (iVar13 = local_114, uVar24 != 0x400000)) &&
+                   (iVar13 = local_104, uVar24 != 0x800000)) goto cf_continue_loop_0066CACD;
                 goto cf_common_join_0066CACB;
               }
               iVar13 = local_134;
-              if (uVar23 == 0x100000) goto cf_common_join_0066CACB;
-              if (uVar23 < 0x40001) {
+              if (uVar24 == 0x100000) goto cf_common_join_0066CACB;
+              if (uVar24 < 0x40001) {
                 iVar13 = local_174;
-                if (((uVar23 == 0x40000) || (iVar13 = local_154, uVar23 == 0x10000)) ||
-                   (iVar13 = local_144, uVar23 == 0x20000)) goto cf_common_join_0066CACB;
+                if (((uVar24 == 0x40000) || (iVar13 = local_154, uVar24 == 0x10000)) ||
+                   (iVar13 = local_144, uVar24 == 0x20000)) goto cf_common_join_0066CACB;
               }
               else {
                 iVar13 = local_164;
-                if (uVar23 == 0x80000) goto cf_common_join_0066CACB;
+                if (uVar24 == 0x80000) goto cf_common_join_0066CACB;
               }
             }
 cf_continue_loop_0066CACD:
             iVar10 = iVar10 + 1;
           } while (iVar10 < 0x20);
           local_8 = (AiFltClassTy *)&local_8->field_0x4;
-          pcVar22 = local_18 + -1;
-          local_18 = pcVar22;
-        } while (pcVar22 != (char *)0x0);
+          pcVar23 = local_18 + -1;
+          local_18 = pcVar23;
+        } while (pcVar23 != (char *)0x0);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)local_10;
@@ -1364,10 +1381,11 @@ cf_continue_loop_0066CACD:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1379,38 +1397,38 @@ cf_continue_loop_0066CACD:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
-      pcVar22 = (char *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
+      pcVar23 = (char *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
       local_10 = (char *)0x0;
-      if (0 < (int)pcVar22) {
+      if (0 < (int)pcVar23) {
         local_c = param_1 + 10;
         local_8 = (AiFltClassTy *)local_50;
         do {
-          local_18 = pcVar22;
+          local_18 = pcVar23;
           puVar16 = (undefined4 *)thunk_FUN_0043e420(local_3b8,*(char *)local_8);
-          pcVar22 = local_c;
-          puVar25 = local_19c;
+          pcVar23 = local_c;
+          puVar26 = local_19c;
           for (iVar10 = 0x4e; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *puVar25 = *puVar16;
+            *puVar26 = *puVar16;
             puVar16 = puVar16 + 1;
-            puVar25 = puVar25 + 1;
+            puVar26 = puVar26 + 1;
           }
-          uVar11 = (**(code **)*local_64)(pcVar22);
+          uVar11 = (**(code **)*local_64)(pcVar23);
           iVar10 = 0;
           do {
-            uVar23 = 1 << ((byte)iVar10 & 0x1f) & uVar11;
-            if (uVar23 < 0x101) {
+            uVar24 = 1 << ((byte)iVar10 & 0x1f) & uVar11;
+            if (uVar24 < 0x101) {
               iVar13 = local_70;
-              if (uVar23 != 0x100) {
-                switch(uVar23) {
+              if (uVar24 != 0x100) {
+                switch(uVar24) {
                 case 1:
                   iVar13 = local_f0;
                   break;
@@ -1442,31 +1460,31 @@ cf_common_join_0066CD48:
               local_10 = (char *)((int)local_10 + iVar13);
             }
             else {
-              if (0x100000 < uVar23) {
+              if (0x100000 < uVar24) {
                 iVar13 = local_120;
-                if (((uVar23 != 0x200000) && (iVar13 = local_110, uVar23 != 0x400000)) &&
-                   (iVar13 = local_100, uVar23 != 0x800000)) goto cf_continue_loop_0066CD4A;
+                if (((uVar24 != 0x200000) && (iVar13 = local_110, uVar24 != 0x400000)) &&
+                   (iVar13 = local_100, uVar24 != 0x800000)) goto cf_continue_loop_0066CD4A;
                 goto cf_common_join_0066CD48;
               }
               iVar13 = local_130;
-              if (uVar23 == 0x100000) goto cf_common_join_0066CD48;
-              if (uVar23 < 0x40001) {
+              if (uVar24 == 0x100000) goto cf_common_join_0066CD48;
+              if (uVar24 < 0x40001) {
                 iVar13 = local_170;
-                if (((uVar23 == 0x40000) || (iVar13 = local_150, uVar23 == 0x10000)) ||
-                   (iVar13 = local_140, uVar23 == 0x20000)) goto cf_common_join_0066CD48;
+                if (((uVar24 == 0x40000) || (iVar13 = local_150, uVar24 == 0x10000)) ||
+                   (iVar13 = local_140, uVar24 == 0x20000)) goto cf_common_join_0066CD48;
               }
               else {
                 iVar13 = local_160;
-                if (uVar23 == 0x80000) goto cf_common_join_0066CD48;
+                if (uVar24 == 0x80000) goto cf_common_join_0066CD48;
               }
             }
 cf_continue_loop_0066CD4A:
             iVar10 = iVar10 + 1;
           } while (iVar10 < 0x20);
           local_8 = (AiFltClassTy *)&local_8->field_0x4;
-          pcVar22 = local_18 + -1;
-          local_18 = pcVar22;
-        } while (pcVar22 != (char *)0x0);
+          pcVar23 = local_18 + -1;
+          local_18 = pcVar23;
+        } while (pcVar23 != (char *)0x0);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)local_10;
@@ -1476,10 +1494,11 @@ cf_continue_loop_0066CD4A:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1491,38 +1510,38 @@ cf_continue_loop_0066CD4A:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
       }
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
-      pcVar22 = (char *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
+      pcVar23 = (char *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
       local_10 = (char *)0x0;
-      if (0 < (int)pcVar22) {
+      if (0 < (int)pcVar23) {
         local_c = param_1 + 10;
         local_8 = (AiFltClassTy *)local_50;
         do {
-          local_18 = pcVar22;
+          local_18 = pcVar23;
           puVar16 = (undefined4 *)thunk_FUN_0043e420(local_628,*(char *)local_8);
-          pcVar22 = local_c;
-          puVar25 = local_19c;
+          pcVar23 = local_c;
+          puVar26 = local_19c;
           for (iVar10 = 0x4e; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *puVar25 = *puVar16;
+            *puVar26 = *puVar16;
             puVar16 = puVar16 + 1;
-            puVar25 = puVar25 + 1;
+            puVar26 = puVar26 + 1;
           }
-          uVar11 = (**(code **)*local_64)(pcVar22);
+          uVar11 = (**(code **)*local_64)(pcVar23);
           iVar10 = 0;
           do {
-            uVar23 = 1 << ((byte)iVar10 & 0x1f) & uVar11;
-            if (uVar23 < 0x101) {
+            uVar24 = 1 << ((byte)iVar10 & 0x1f) & uVar11;
+            if (uVar24 < 0x101) {
               iVar13 = local_78;
-              if (uVar23 != 0x100) {
-                switch(uVar23) {
+              if (uVar24 != 0x100) {
+                switch(uVar24) {
                 case 1:
                   iVar13 = local_f8;
                   break;
@@ -1554,31 +1573,31 @@ cf_common_join_0066CFC8:
               local_10 = (char *)((int)local_10 + iVar13);
             }
             else {
-              if (0x100000 < uVar23) {
+              if (0x100000 < uVar24) {
                 iVar13 = local_128;
-                if (((uVar23 != 0x200000) && (iVar13 = local_118, uVar23 != 0x400000)) &&
-                   (iVar13 = local_108, uVar23 != 0x800000)) goto cf_continue_loop_0066CFCA;
+                if (((uVar24 != 0x200000) && (iVar13 = local_118, uVar24 != 0x400000)) &&
+                   (iVar13 = local_108, uVar24 != 0x800000)) goto cf_continue_loop_0066CFCA;
                 goto cf_common_join_0066CFC8;
               }
               iVar13 = local_138;
-              if (uVar23 == 0x100000) goto cf_common_join_0066CFC8;
-              if (uVar23 < 0x40001) {
+              if (uVar24 == 0x100000) goto cf_common_join_0066CFC8;
+              if (uVar24 < 0x40001) {
                 iVar13 = local_178;
-                if (((uVar23 == 0x40000) || (iVar13 = local_158, uVar23 == 0x10000)) ||
-                   (iVar13 = local_148, uVar23 == 0x20000)) goto cf_common_join_0066CFC8;
+                if (((uVar24 == 0x40000) || (iVar13 = local_158, uVar24 == 0x10000)) ||
+                   (iVar13 = local_148, uVar24 == 0x20000)) goto cf_common_join_0066CFC8;
               }
               else {
                 iVar13 = local_168;
-                if (uVar23 == 0x80000) goto cf_common_join_0066CFC8;
+                if (uVar24 == 0x80000) goto cf_common_join_0066CFC8;
               }
             }
 cf_continue_loop_0066CFCA:
             iVar10 = iVar10 + 1;
           } while (iVar10 < 0x20);
           local_8 = (AiFltClassTy *)&local_8->field_0x4;
-          pcVar22 = local_18 + -1;
-          local_18 = pcVar22;
-        } while (pcVar22 != (char *)0x0);
+          pcVar23 = local_18 + -1;
+          local_18 = pcVar23;
+        } while (pcVar23 != (char *)0x0);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)local_10;
@@ -1588,10 +1607,11 @@ cf_continue_loop_0066CFCA:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1603,9 +1623,9 @@ cf_continue_loop_0066CFCA:
       local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
       if ((local_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1613,16 +1633,16 @@ cf_continue_loop_0066CFCA:
       puVar20 = (uint *)(param_1 + 5);
       uVar11 = (**(code **)*local_64)(puVar20,local_50);
       pAVar12 = (AiFltClassTy *)thunk_FUN_00668f50(local_64,(char *)local_8,uVar11,puVar20);
-      pcVar22 = (char *)0x0;
+      pcVar23 = (char *)0x0;
       if (0 < (int)pAVar12) {
         local_c = param_1 + 10;
-        ppAVar24 = local_50;
+        ppAVar25 = local_50;
         local_8 = pAVar12;
         do {
           GVar17 = (**(code **)*local_64)(local_c);
-          iVar10 = thunk_FUN_00677700((int)*ppAVar24,GVar17);
-          pcVar22 = pcVar22 + iVar10;
-          ppAVar24 = ppAVar24 + 1;
+          iVar10 = thunk_FUN_00677700((int)*ppAVar25,GVar17);
+          pcVar23 = pcVar23 + iVar10;
+          ppAVar25 = ppAVar25 + 1;
           local_8 = (AiFltClassTy *)((int)&local_8[-1].field_0284 + 3);
         } while (local_8 != (AiFltClassTy *)0x0);
         local_8 = (AiFltClassTy *)0x0;
@@ -1633,10 +1653,11 @@ cf_continue_loop_0066CFCA:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-            pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-            if (pcVar22 != (char *)0x0) {
-              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+            if (pcVar23 != (char *)0x0) {
+              Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
             }
             local_64[0x21] = -1;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1650,12 +1671,12 @@ cf_continue_loop_0066CFCA:
       uVar19 = (**(code **)*local_64)(param_1 + 0x19,uVar19);
       uVar19 = (**(code **)*local_64)(param_1 + 0x14,uVar19);
       uVar19 = (**(code **)*local_64)(param_1 + 0xf,uVar19);
-      pcVar22 = param_1 + 10;
-      iVar10 = (**(code **)*local_64)(pcVar22,uVar19);
+      pcVar23 = param_1 + 10;
+      iVar10 = (**(code **)*local_64)(pcVar23,uVar19);
       pcVar21 = param_1 + 5;
       iVar13 = (**(code **)*local_64)();
       GVar18 = (**(code **)*local_64)();
-      uVar11 = thunk_FUN_006777d0(GVar18,(int)param_1,iVar13,pcVar21,iVar10,(int)pcVar22);
+      uVar11 = thunk_FUN_006777d0(GVar18,(int)param_1,iVar13,pcVar21,iVar10,(int)pcVar23);
       *local_14 = uVar11;
       break;
     default:
@@ -1668,10 +1689,11 @@ cf_continue_loop_0066CFCA:
   case 0x7f7:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1679,9 +1701,9 @@ cf_continue_loop_0066CFCA:
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0xf);
     if ((param_1[0xf] != '\x06') && (param_1[0xf] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1690,10 +1712,11 @@ cf_continue_loop_0066CFCA:
     if (4 < param_2) {
       local_8 = (AiFltClassTy *)0x14;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1705,9 +1728,9 @@ cf_continue_loop_0066CFCA:
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1725,16 +1748,16 @@ cf_continue_loop_0066CFCA:
       local_30 = param_1 + 0x14;
       local_28 = param_1 + 0xf;
       local_c = param_1 + 10;
-      ppAVar24 = local_50;
+      ppAVar25 = local_50;
       do {
-        uVar29 = 0;
-        puVar27 = &LAB_004050fb;
-        pcVar22 = local_10;
+        uVar30 = 0;
+        puVar28 = &LAB_004050fb;
+        pcVar23 = local_10;
         sVar3 = (**(code **)*local_64)();
-        sVar7 = (short)pcVar22;
-        pcVar22 = local_18;
+        sVar7 = (short)pcVar23;
+        pcVar23 = local_18;
         sVar4 = (**(code **)*local_64)();
-        sVar9 = (short)pcVar22;
+        sVar9 = (short)pcVar23;
         pbVar15 = local_2c;
         sVar5 = (**(code **)*local_64)();
         sVar8 = (short)pbVar15;
@@ -1744,26 +1767,26 @@ cf_continue_loop_0066CFCA:
         uVar19 = (**(code **)*local_64)(local_30,uVar19);
         uVar19 = (**(code **)(*local_64 + 8))(local_28,uVar19);
         sVar6 = (**(code **)*local_64)(local_c,uVar19);
-        _EnumRCCont(*(short *)ppAVar24,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar27,
-                    uVar29);
-        ppAVar24 = ppAVar24 + 1;
+        _EnumRCCont(*(short *)ppAVar25,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar28,
+                    uVar30);
+        ppAVar25 = ppAVar25 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
     }
     goto cf_common_exit_0066DF5E;
   case 0x7f8:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1772,10 +1795,11 @@ cf_continue_loop_0066CFCA:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1788,7 +1812,7 @@ cf_continue_loop_0066CFCA:
     uVar19 = (**(code **)*local_64)(param_1 + 0x23,&LAB_00402bcb,0);
     uVar19 = (**(code **)*local_64)(param_1 + 0x1e,uVar19);
     uVar19 = (**(code **)*local_64)(param_1 + 0x19,uVar19);
-    pcVar22 = param_1 + 0x14;
+    pcVar23 = param_1 + 0x14;
     sVar6 = (**(code **)*local_64)();
     sVar4 = sVar3 + 0xf;
     sVar8 = (**(code **)*local_64)();
@@ -1797,21 +1821,21 @@ cf_continue_loop_0066CFCA:
     sVar3 = sVar3 + 5;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
     sVar7 = (**(code **)*local_64)(param_1);
-    _EnumArt(sVar7,pbVar15,sVar3,sVar9,sVar5,sVar8,sVar4,sVar6,pcVar22,uVar19);
+    _EnumArt(sVar7,pbVar15,sVar3,sVar9,sVar5,sVar8,sVar4,sVar6,pcVar23,uVar19);
     goto cf_common_exit_0066DCED;
   case 0x7f9:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1820,10 +1844,11 @@ cf_continue_loop_0066CFCA:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1836,7 +1861,7 @@ cf_continue_loop_0066CFCA:
     uVar19 = (**(code **)*local_64)(param_1 + 0x23,&LAB_00403d50,0);
     uVar19 = (**(code **)*local_64)(param_1 + 0x1e,uVar19);
     uVar19 = (**(code **)*local_64)(param_1 + 0x19,uVar19);
-    pcVar22 = param_1 + 0x14;
+    pcVar23 = param_1 + 0x14;
     sVar5 = (**(code **)*local_64)();
     sVar4 = sVar3 + 0xf;
     sVar6 = (**(code **)*local_64)();
@@ -1846,15 +1871,16 @@ cf_continue_loop_0066CFCA:
     cVar2 = (**(code **)*local_64)();
     sVar9 = (short)pcVar21;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-    _EnumDest(pbVar15,cVar2,sVar9,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar22,uVar19);
+    _EnumDest(pbVar15,cVar2,sVar9,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar23,uVar19);
     goto cf_common_exit_0066DCED;
   case 0x7fa:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1862,9 +1888,9 @@ cf_continue_loop_0066CFCA:
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
     if ((param_1[0x14] != '\x06') && (param_1[0x14] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1873,10 +1899,11 @@ cf_continue_loop_0066CFCA:
     if (5 < param_2) {
       local_8 = (AiFltClassTy *)0x19;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1888,9 +1915,9 @@ cf_continue_loop_0066CFCA:
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1909,19 +1936,19 @@ cf_continue_loop_0066CFCA:
       local_30 = param_1 + 0x14;
       local_28 = param_1 + 0xf;
       local_c = param_1 + 10;
-      ppAVar24 = local_50;
+      ppAVar25 = local_50;
       do {
-        uVar29 = 0;
-        puVar27 = &LAB_004027a7;
+        uVar30 = 0;
+        puVar28 = &LAB_004027a7;
         pAVar12 = local_8;
         sVar3 = (**(code **)*local_64)();
         sVar7 = (short)pAVar12;
-        pcVar22 = local_10;
+        pcVar23 = local_10;
         sVar4 = (**(code **)*local_64)();
-        sVar9 = (short)pcVar22;
-        pcVar22 = local_18;
+        sVar9 = (short)pcVar23;
+        pcVar23 = local_18;
         sVar5 = (**(code **)*local_64)();
-        sVar8 = (short)pcVar22;
+        sVar8 = (short)pcVar23;
         pbVar15 = local_2c;
         cVar2 = (**(code **)*local_64)();
         uVar19 = (**(code **)*local_64)(local_1c);
@@ -1929,9 +1956,9 @@ cf_continue_loop_0066CFCA:
         uVar19 = (**(code **)(*local_64 + 8))(local_30,uVar19);
         uVar19 = (**(code **)*local_64)(local_28,uVar19);
         sVar6 = (**(code **)*local_64)(local_c,uVar19);
-        _EnumMines((int)*ppAVar24,sVar6,cVar2,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar27,
-                   uVar29);
-        ppAVar24 = ppAVar24 + 1;
+        _EnumMines((int)*ppAVar25,sVar6,cVar2,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar28,
+                   uVar30);
+        ppAVar25 = ppAVar25 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
     }
@@ -1941,10 +1968,11 @@ cf_continue_loop_0066CFCA:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1957,14 +1985,14 @@ cf_continue_loop_0066CFCA:
     uVar19 = (**(code **)*local_64)(param_1 + 0x1e,&LAB_00401f7d,0);
     uVar19 = (**(code **)*local_64)(param_1 + 0x19,uVar19);
     uVar19 = (**(code **)*local_64)(param_1 + 0x14,uVar19);
-    pcVar22 = param_1 + 0xf;
+    pcVar23 = param_1 + 0xf;
     sVar5 = (**(code **)*local_64)();
     sVar4 = sVar3 + 10;
     sVar6 = (**(code **)*local_64)();
     sVar3 = sVar3 + 5;
     sVar8 = (**(code **)*local_64)();
     sVar9 = (**(code **)*local_64)();
-    _EnumRCField(sVar9,(short)param_1,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar22,uVar19);
+    _EnumRCField(sVar9,(short)param_1,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar23,uVar19);
 cf_common_exit_0066DCED:
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = DAT_00811980;
@@ -1974,10 +2002,11 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2091,9 +2120,9 @@ cf_common_exit_0066DCED:
       }
     }
     if ((int)local_c < 0) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2105,17 +2134,17 @@ cf_common_exit_0066DCED:
     goto cf_common_exit_00670456;
   case 0x80c:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2124,10 +2153,11 @@ cf_common_exit_0066DCED:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2139,9 +2169,9 @@ cf_common_exit_0066DCED:
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2149,9 +2179,9 @@ cf_common_exit_0066DCED:
     local_10 = (char *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 == 1) {
-      puVar28 = (undefined *)0x0;
+      puVar29 = (undefined *)0x0;
       puVar20 = (uint *)0x0;
-      puVar27 = &LAB_00402ba3;
+      puVar28 = &LAB_00402ba3;
       sVar9 = -1;
       sVar8 = -1;
       sVar6 = -1;
@@ -2161,7 +2191,7 @@ cf_common_exit_0066DCED:
       cVar2 = -1;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
       iVar10 = _EnumPlObj(local_50[0],0,0x3fffffff,pbVar15,cVar2,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9
-                          ,puVar27,puVar20,puVar28);
+                          ,puVar28,puVar20,puVar29);
       if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
         local_10 = (char *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);
@@ -2184,9 +2214,9 @@ cf_common_exit_0066DCED:
       }
     }
     else {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2196,17 +2226,17 @@ cf_common_exit_0066DCED:
     break;
   case 0x80d:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2215,10 +2245,11 @@ cf_common_exit_0066DCED:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2230,9 +2261,9 @@ cf_common_exit_0066DCED:
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2241,7 +2272,7 @@ cf_common_exit_0066DCED:
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 == 1) {
       uVar19 = 0;
-      puVar27 = &LAB_00402ca2;
+      puVar28 = &LAB_00402ca2;
       sVar9 = -1;
       sVar8 = -1;
       sVar6 = -1;
@@ -2249,7 +2280,7 @@ cf_common_exit_0066DCED:
       sVar4 = 0;
       sVar3 = 0;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-      iVar10 = _EnumRCCont((short)local_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
+      iVar10 = _EnumRCCont((short)local_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar28,
                            uVar19);
       if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
         local_10 = (char *)0x1;
@@ -2273,9 +2304,9 @@ cf_common_exit_0066DCED:
       }
     }
     else {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2285,9 +2316,9 @@ cf_common_exit_0066DCED:
     break;
   case 0x80e:
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2296,10 +2327,11 @@ cf_common_exit_0066DCED:
     if (1 < param_2) {
       local_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2309,17 +2341,17 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar19 = 0;
-    puVar30 = &LAB_0040188e;
-    puVar27 = (undefined *)0xffffffff;
+    puVar31 = &LAB_0040188e;
+    puVar28 = (undefined *)0xffffffff;
     sVar8 = -1;
     sVar6 = -1;
     sVar5 = 0;
     local_10 = (char *)0x0;
     sVar4 = 0;
     sVar3 = 0;
-    pcVar22 = param_1;
+    pcVar23 = param_1;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
-    iVar10 = _EnumArt(0,pbVar15,(short)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,puVar27,puVar30);
+    iVar10 = _EnumArt(0,pbVar15,(short)pcVar23,sVar3,sVar4,sVar5,sVar6,sVar8,puVar28,puVar31);
     if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
       local_10 = (char *)0x1;
       iVar10 = (**(code **)*local_64)(param_1 + 5,uVar19);
@@ -2343,9 +2375,9 @@ cf_common_exit_0066DCED:
     break;
   case 0x80f:
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2354,10 +2386,11 @@ cf_common_exit_0066DCED:
     if (1 < param_2) {
       local_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2367,8 +2400,8 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar19 = 0;
-    puVar30 = &LAB_00404c73;
-    puVar27 = (undefined *)0xffffffff;
+    puVar31 = &LAB_00404c73;
+    puVar28 = (undefined *)0xffffffff;
     sVar9 = -1;
     sVar8 = -1;
     sVar6 = 0;
@@ -2376,9 +2409,9 @@ cf_common_exit_0066DCED:
     local_10 = (char *)0x0;
     sVar4 = 0;
     sVar3 = -1;
-    pcVar22 = param_1;
+    pcVar23 = param_1;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
-    iVar10 = _EnumDest(pbVar15,(char)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,puVar30);
+    iVar10 = _EnumDest(pbVar15,(char)pcVar23,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar28,puVar31);
     if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
       local_10 = (char *)0x1;
       iVar10 = (**(code **)*local_64)(param_1 + 5,uVar19);
@@ -2403,17 +2436,17 @@ cf_common_exit_0066DCED:
     break;
   case 0x810:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2422,10 +2455,11 @@ cf_common_exit_0066DCED:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2437,9 +2471,9 @@ cf_common_exit_0066DCED:
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2448,7 +2482,7 @@ cf_common_exit_0066DCED:
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 == 1) {
       uVar19 = 0;
-      puVar27 = &LAB_0040446c;
+      puVar28 = &LAB_0040446c;
       sVar9 = -1;
       sVar8 = -1;
       sVar6 = -1;
@@ -2456,7 +2490,7 @@ cf_common_exit_0066DCED:
       sVar4 = 0;
       sVar3 = 0;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-      iVar10 = _EnumMines((int)local_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
+      iVar10 = _EnumMines((int)local_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar28,
                           uVar19);
       if ((iVar10 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
         local_1c = (byte *)0x1;
@@ -2482,9 +2516,9 @@ cf_common_exit_0066DCED:
       }
     }
     else {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2498,10 +2532,11 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2512,9 +2547,9 @@ cf_common_exit_0066DCED:
     }
     local_c = (char *)(**(code **)*local_64)(param_1);
     if ((local_c == (char *)0x9) && (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2535,9 +2570,9 @@ cf_common_exit_0066DCED:
       *local_14 = (uint)local_8;
     }
     else {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2550,10 +2585,11 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2564,15 +2600,15 @@ cf_common_exit_0066DCED:
     }
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     if (((int)local_8 < 0) || (0x9a < (int)local_8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
-    *local_14 = (uint)*(byte *)((int)&DAT_00798fd8 + (int)local_8);
+    *local_14 = (uint)*(byte *)((int)&local_8[0x3006].field_00A7 + 1);
     break;
   case 0x819:
   case 0x81b:
@@ -2581,10 +2617,11 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2597,17 +2634,17 @@ cf_common_exit_0066DCED:
     local_c = (char *)(**(code **)*local_64)(param_1 + 5);
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1 + 10);
     if (((int)local_c < 0) || (0x9a < (int)local_c)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((local_10 == (char *)0x9) && (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2615,7 +2652,7 @@ cf_common_exit_0066DCED:
     local_18 = (char *)0x0;
     iVar10 = thunk_FUN_00668f50(local_64,local_10,0,(uint *)local_50);
     pAVar12 = local_8;
-    pcVar22 = local_c;
+    pcVar23 = local_c;
     if (iVar10 == 1) {
       sVar3 = *(short *)(param_1 + param_2 * 5 + 1);
       if (sVar3 == 0x819) {
@@ -2634,7 +2671,7 @@ cf_common_exit_0066DCED:
       if (sVar3 == 0x81c) {
         iVar10 = thunk_FUN_004e5cc0((int)local_50[0],(uint)local_c,(int)local_8);
         if ((iVar10 == 0) &&
-           (iVar10 = thunk_FUN_004e7f20((int)local_50[0],(int)pcVar22,(int)pAVar12), iVar10 == 0)) {
+           (iVar10 = thunk_FUN_004e7f20((int)local_50[0],(int)pcVar23,(int)pAVar12), iVar10 == 0)) {
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = 0;
         }
@@ -2646,9 +2683,9 @@ cf_common_exit_0066DCED:
       }
     }
     else {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2662,10 +2699,11 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2677,18 +2715,18 @@ cf_common_exit_0066DCED:
     local_8 = (AiFltClassTy *)(**(code **)*local_64)(param_1);
     local_c = (char *)(**(code **)*local_64)(param_1 + 5);
     if (((int)local_c < 0) || (0x9a < (int)local_c)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if ((local_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2701,9 +2739,9 @@ cf_common_exit_0066DCED:
       *local_14 = (uint)(CONCAT31(extraout_var,bVar1) != 0);
     }
     else {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2717,10 +2755,11 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2733,17 +2772,17 @@ cf_common_exit_0066DCED:
     iVar10 = (**(code **)*local_64)(param_1 + 5);
     local_8 = (AiFltClassTy *)(iVar10 + -1);
     if (((int)local_c < 0) || (0x9a < (int)local_c)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     if (((int)local_8 < 0) || (3 < (int)local_c)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2753,9 +2792,9 @@ cf_common_exit_0066DCED:
     break;
   case 0x82a:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
-      pcVar22 = thunk_FUN_00674af0(iVar10);
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0(iVar10);
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2764,10 +2803,11 @@ cf_common_exit_0066DCED:
     if (1 < param_2) {
       local_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)local_8] != '\x06') && (param_1[(int)local_8] != '\x03')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x06') &&
+           (param_1[(int)&local_8->field_0x0] != '\x03')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2780,18 +2820,18 @@ cf_common_exit_0066DCED:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2811,10 +2851,11 @@ cf_common_exit_0066DCED:
   case 0x82b:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2825,18 +2866,18 @@ cf_common_exit_0066DCED:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2845,23 +2886,24 @@ cf_common_exit_0066DCED:
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     this = (void *)thunk_FUN_0066ac80(local_50[0],uVar11);
     pAVar12 = local_50[0];
-    pcVar22 = local_c;
+    pcVar23 = local_c;
     if (this != (void *)0x0) {
       cVar2 = (char)param_1 + '\x0f';
       uVar19 = (**(code **)*local_64)();
       iVar10 = (**(code **)*local_64)(param_1 + 10,uVar19);
-      pcVar22 = (char *)thunk_FUN_0065da50(this,iVar10,cVar2);
+      pcVar23 = (char *)thunk_FUN_0065da50(this,iVar10,cVar2);
       pAVar12 = local_50[0];
-      local_c = pcVar22;
+      local_c = pcVar23;
     }
     goto joined_r0x006703e6;
   case 0x82c:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2872,18 +2914,18 @@ cf_common_exit_0066DCED:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2892,24 +2934,25 @@ cf_common_exit_0066DCED:
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     iVar10 = thunk_FUN_0066ac80(local_50[0],uVar11);
     pAVar12 = local_50[0];
-    pcVar22 = local_c;
+    pcVar23 = local_c;
     if (iVar10 != 0) {
       cVar2 = (char)param_1 + '\x0f';
       uVar19 = (**(code **)*local_64)();
-      uVar26 = (**(code **)*local_64)(param_1 + 10,uVar19);
-      pcVar22 = (char *)thunk_FUN_0065dc00(iVar10,(int)((ulonglong)uVar26 >> 0x20),(uint)uVar26,
+      uVar27 = (**(code **)*local_64)(param_1 + 10,uVar19);
+      pcVar23 = (char *)thunk_FUN_0065dc00(iVar10,(int)((ulonglong)uVar27 >> 0x20),(uint)uVar27,
                                            cVar2);
       pAVar12 = local_50[0];
-      local_c = pcVar22;
+      local_c = pcVar23;
     }
     goto joined_r0x006703e6;
   case 0x82d:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2920,36 +2963,37 @@ cf_common_exit_0066DCED:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     iVar10 = thunk_FUN_0066ac80(local_50[0],uVar11);
-    pcVar22 = (char *)0xffffffff;
+    pcVar23 = (char *)0xffffffff;
     if (iVar10 != 0) {
-      pcVar22 = *(char **)(iVar10 + 0xeb);
+      pcVar23 = *(char **)(iVar10 + 0xeb);
     }
     goto LAB_0066fbc1;
   case 0x82e:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2957,9 +3001,9 @@ cf_common_exit_0066DCED:
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x19);
     if ((param_1[0x19] != '\x06') && (param_1[0x19] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2968,10 +3012,11 @@ cf_common_exit_0066DCED:
     if (6 < param_2) {
       local_8 = (AiFltClassTy *)0x1e;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -2984,18 +3029,18 @@ cf_common_exit_0066DCED:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3004,7 +3049,7 @@ cf_common_exit_0066DCED:
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     iVar10 = thunk_FUN_0066ac80(local_50[0],uVar11);
     pAVar12 = local_50[0];
-    pcVar22 = local_c;
+    pcVar23 = local_c;
     if (iVar10 != 0) {
       sVar4 = sVar3 + 0x37;
       sVar6 = (**(code **)*local_64)();
@@ -3014,27 +3059,28 @@ cf_common_exit_0066DCED:
       sVar9 = (**(code **)*local_64)();
       pbVar15 = (byte *)(param_1 + 0x28);
       cVar2 = (**(code **)*local_64)();
-      pcVar22 = param_1 + 0x23;
+      pcVar23 = param_1 + 0x23;
       uVar19 = (**(code **)*local_64)();
       uVar19 = (**(code **)*local_64)(param_1 + 0x1e,uVar19);
       uVar19 = (**(code **)(*local_64 + 8))(param_1 + 0x19,uVar19);
       uVar19 = (**(code **)*local_64)(param_1 + 0x14,uVar19);
       uVar19 = (**(code **)*local_64)(param_1 + 0xf,uVar19);
-      uVar26 = (**(code **)*local_64)(param_1 + 10,uVar19);
-      pcVar22 = (char *)thunk_FUN_0065dd30(iVar10,(int)((ulonglong)uVar26 >> 0x20),(uint)uVar26,
-                                           (uint)pcVar22,cVar2,pbVar15,sVar9,sVar3,sVar8,sVar5,sVar6
+      uVar27 = (**(code **)*local_64)(param_1 + 10,uVar19);
+      pcVar23 = (char *)thunk_FUN_0065dd30(iVar10,(int)((ulonglong)uVar27 >> 0x20),(uint)uVar27,
+                                           (uint)pcVar23,cVar2,pbVar15,sVar9,sVar3,sVar8,sVar5,sVar6
                                            ,sVar4);
       pAVar12 = local_50[0];
-      local_c = pcVar22;
+      local_c = pcVar23;
     }
     goto joined_r0x006703e6;
   case 0x82f:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-        pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-        if (pcVar22 != (char *)0x0) {
-          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+        if (pcVar23 != (char *)0x0) {
+          Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
         }
         local_64[0x21] = -1;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3042,9 +3088,9 @@ cf_common_exit_0066DCED:
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x23);
     if ((param_1[0x23] != '\x06') && (param_1[0x23] != '\x03')) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3053,27 +3099,27 @@ cf_common_exit_0066DCED:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_8 = (AiFltClassTy *)0x0;
     puVar20 = (uint *)(**(code **)*local_64)(param_1 + 0xf,local_280);
-    pcVar22 = param_1 + 10;
+    pcVar23 = param_1 + 10;
     pcVar21 = (char *)(**(code **)*local_64)();
-    iVar10 = thunk_FUN_00668f50(local_64,pcVar21,(uint)pcVar22,puVar20);
+    iVar10 = thunk_FUN_00668f50(local_64,pcVar21,(uint)pcVar23,puVar20);
     if (0 < iVar10) {
       puVar16 = local_280;
       do {
@@ -3086,20 +3132,20 @@ cf_common_exit_0066DCED:
     local_c = (char *)0xffffffff;
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     iVar10 = thunk_FUN_0066ac80(local_50[0],uVar11);
-    pcVar22 = local_c;
+    pcVar23 = local_c;
     if (iVar10 != 0) {
       pbVar15 = (byte *)(param_1 + 0x23);
       cVar2 = (**(code **)(*local_64 + 8))();
-      pcVar22 = param_1 + 0x1e;
+      pcVar23 = param_1 + 0x1e;
       uVar19 = (**(code **)*local_64)();
       uVar19 = (**(code **)*local_64)(param_1 + 0x19,uVar19);
-      uVar26 = (**(code **)*local_64)(param_1 + 0x14,uVar19);
-      pcVar22 = (char *)thunk_FUN_0065e070(iVar10,(int)((ulonglong)uVar26 >> 0x20),(uint)local_8,
-                                           (uint)uVar26,(uint)pcVar22,cVar2,pbVar15);
-      local_c = pcVar22;
+      uVar27 = (**(code **)*local_64)(param_1 + 0x14,uVar19);
+      pcVar23 = (char *)thunk_FUN_0065e070(iVar10,(int)((ulonglong)uVar27 >> 0x20),(uint)local_8,
+                                           (uint)uVar27,(uint)pcVar23,cVar2,pbVar15);
+      local_c = pcVar23;
     }
 LAB_0066fbc1:
-    if ((int)pcVar22 < 0) {
+    if ((int)pcVar23 < 0) {
       Library::MSVCRT::_strncpy((char *)(local_64 + 1),&DAT_008016a0,0x7f);
       local_64[0x21] = (int)local_50[0];
       goto LAB_0067041b;
@@ -3110,10 +3156,11 @@ LAB_0066fbc1:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3126,18 +3173,18 @@ LAB_0066fbc1:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3145,7 +3192,7 @@ LAB_0066fbc1:
     uVar11 = (**(code **)*local_64)(param_1 + 5);
     local_8 = (AiFltClassTy *)thunk_FUN_0066ac80(local_50[0],uVar11);
     pAVar12 = local_50[0];
-    pcVar22 = (char *)0xffffffff;
+    pcVar23 = (char *)0xffffffff;
     if (local_8 != (AiFltClassTy *)0x0) {
       puVar16 = &local_21c;
       for (iVar10 = 0x12; iVar10 != 0; iVar10 = iVar10 + -1) {
@@ -3167,7 +3214,7 @@ LAB_0066fbc1:
       local_1d0[0] = 0x68;
       AiFltClassTy::GetAiMess(local_8,local_1d0);
       pAVar12 = local_50[0];
-      pcVar22 = (char *)(uint)('\0' < local_1c8);
+      pcVar23 = (char *)(uint)('\0' < local_1c8);
     }
     goto joined_r0x006703e6;
   case 0x831:
@@ -3175,10 +3222,11 @@ LAB_0066fbc1:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3191,40 +3239,40 @@ LAB_0066fbc1:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_c = (char *)0xffffffff;
     uVar11 = (**(code **)*local_64)(param_1 + 5);
-    iVar10 = thunk_FUN_0066ac80(local_50[0],uVar11);
+    pAVar22 = (AnonShape_0065E360_B94C37CB *)thunk_FUN_0066ac80(local_50[0],uVar11);
     pAVar12 = local_50[0];
-    pcVar22 = local_c;
-    if (iVar10 != 0) {
+    pcVar23 = local_c;
+    if (pAVar22 != (AnonShape_0065E360_B94C37CB *)0x0) {
       uVar19 = (**(code **)*local_64)(param_1 + 0x19);
-      pcVar22 = param_1 + 0x14;
-      uVar29 = (**(code **)*local_64)();
-      uVar29 = (**(code **)*local_64)(param_1 + 0xf,uVar29);
-      uVar26 = (**(code **)*local_64)(param_1 + 10,uVar29);
-      pcVar22 = (char *)thunk_FUN_0065e450(iVar10,(int)((ulonglong)uVar26 >> 0x20),
-                                           (Global_sub_0065E450_param_3Enum)uVar26,pcVar22,uVar19);
+      pcVar23 = param_1 + 0x14;
+      uVar30 = (**(code **)*local_64)();
+      uVar30 = (**(code **)*local_64)(param_1 + 0xf,uVar30);
+      uVar27 = (**(code **)*local_64)(param_1 + 10,uVar30);
+      pcVar23 = (char *)thunk_FUN_0065e450(pAVar22,(int)((ulonglong)uVar27 >> 0x20),
+                                           (Global_sub_0065E450_param_3Enum)uVar27,pcVar23,uVar19);
       pAVar12 = local_50[0];
-      local_c = pcVar22;
+      local_c = pcVar23;
     }
 joined_r0x006703e6:
-    if ((int)pcVar22 < 0) {
+    if ((int)pcVar23 < 0) {
       Library::MSVCRT::_strncpy((char *)(local_64 + 1),&DAT_008016a0,0x7f);
       local_64[0x21] = (int)pAVar12;
 LAB_0067041b:
@@ -3232,17 +3280,18 @@ LAB_0067041b:
     }
 cf_common_exit_00670425:
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
-    *local_14 = (uint)pcVar22;
+    *local_14 = (uint)pcVar23;
     break;
   case 0x848:
     local_c = (char *)0x0;
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)local_8] != '\x04') && (param_1[(int)local_8] != '\x01')) {
-          pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-          if (pcVar22 != (char *)0x0) {
-            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
+           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+          if (pcVar23 != (char *)0x0) {
+            Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
           }
           local_64[0x21] = -1;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3255,18 +3304,18 @@ cf_common_exit_00670425:
     if (((local_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*local_64 + 0x18))(), iVar10 == 8)) ||
        (local_8 == (AiFltClassTy *)0xff)) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     iVar10 = thunk_FUN_00668f50(local_64,(char *)local_8,0,(uint *)local_50);
     if (iVar10 != 1) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
@@ -3287,9 +3336,9 @@ cf_common_exit_00670425:
     }
     pAVar12 = local_8;
     if (local_8 == (AiFltClassTy *)0x0) {
-      pcVar22 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
-      if (pcVar22 != (char *)0x0) {
-        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar22,0x7f);
+      pcVar23 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
+      if (pcVar23 != (char *)0x0) {
+        Library::MSVCRT::_strncpy((char *)(local_64 + 1),pcVar23,0x7f);
       }
       local_64[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);

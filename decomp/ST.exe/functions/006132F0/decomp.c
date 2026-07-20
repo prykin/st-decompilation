@@ -12,7 +12,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   VisibleClassTy *pVVar3;
   STGenBombC *pSVar4;
   int iVar5;
-  undefined4 *puVar6;
+  AnonShape_004AB810_8E5693D5 *pAVar6;
   STT3DSprC *this_00;
   uint uVar7;
   int iVar8;
@@ -49,12 +49,12 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     return uVar10;
   }
   if (*(int *)(local_10 + 0x252) == 0) {
-    puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (puVar6 == (undefined4 *)0x0) {
+    pAVar6 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+    if (pAVar6 == (AnonShape_004AB810_8E5693D5 *)0x0) {
       this_00 = (STT3DSprC *)0x0;
     }
     else {
-      this_00 = (STT3DSprC *)thunk_FUN_004ab810(puVar6);
+      this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
     }
     *(STT3DSprC **)(pSVar4 + 0x252) = this_00;
     if (this_00 == (STT3DSprC *)0x0) {
@@ -84,19 +84,19 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     if (iVar5 != 0) {
       return 0xffff;
     }
-    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x252),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x252),0xe,PTR_00802a38->field_00E4);
     uVar12 = 0x53;
     uVar10 = 0x5a;
     iVar5 = 1;
     pSVar4[0x251] = (STGenBombC)0x1;
     uVar7 = thunk_FUN_004ad650(*(int *)(pSVar4 + 0x252));
-    FUN_006ea4e0(DAT_00807598,uVar7,iVar5,uVar10,uVar12);
+    FUN_006ea4e0(PTR_00807598,uVar7,iVar5,uVar10,uVar12);
     thunk_FUN_004ac700(*(void **)(pSVar4 + 0x252),'\x0f');
-    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x252),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x252),0xd,PTR_00802a38->field_00E4);
     iVar5 = (int)*(short *)(DAT_00806724 + 0x2c);
     uVar11 = 0;
     uVar7 = thunk_FUN_004ad650(*(int *)(pSVar4 + 0x252));
-    FUN_006e9350(DAT_00807598,uVar7,uVar11,iVar5);
+    FUN_006e9350(PTR_00807598,uVar7,uVar11,iVar5);
     pSVar4[0x250] = (STGenBombC)0x1;
     thunk_FUN_004acf20(*(void **)(pSVar4 + 0x252),DAT_008032b8,0x10);
     *(undefined4 *)(pSVar4 + 0x237) = 0;
@@ -138,7 +138,7 @@ LAB_00613424:
                        (float)*(int *)(pSVar4 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)(pSVar4 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
-    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x252),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x252),0xd,PTR_00802a38->field_00E4);
     pSVar4[0x250] = (STGenBombC)0x1;
   }
   local_8 = 1;

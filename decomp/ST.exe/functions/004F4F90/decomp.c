@@ -201,7 +201,7 @@ undefined4 * __fastcall FUN_004f4f90(undefined4 *param_1)
   param_1[0x265] = 0;
   param_1[0x267] = 0;
   param_1[0x266] = 0;
-  param_1[0x268] = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
+  param_1[0x268] = (uint)PTR_00802a38->field_00E4 / 0x19;
   puVar2 = param_1 + 0x269;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar2 = 0;

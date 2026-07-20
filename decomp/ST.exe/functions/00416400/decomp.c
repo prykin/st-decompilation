@@ -1,5 +1,5 @@
 
-int __fastcall FUN_00416400(void *param_1)
+int __fastcall FUN_00416400(STJellyGunC *param_1)
 
 {
   short *psVar1;
@@ -23,42 +23,42 @@ int __fastcall FUN_00416400(void *param_1)
   undefined1 local_6;
   bool local_5;
   
-  if (*(char *)((int)param_1 + 0xe3) != '\x01') {
-    return (int)*(char *)((int)param_1 + 0xe3);
+  if (param_1->field_0xe3 != '\x01') {
+    return (int)(char)param_1->field_0xe3;
   }
-  if (*(int *)((int)param_1 + 0xe4) == 1) {
-    *(undefined4 *)((int)param_1 + 0xe4) = 0;
+  if (*(int *)&param_1->field_0xe4 == 1) {
+    *(undefined4 *)&param_1->field_0xe4 = 0;
   }
-  if (*(int *)((int)param_1 + 0x7e) == 1) {
-    *(undefined4 *)((int)param_1 + 0x7e) = 0;
-    *(undefined4 *)((int)param_1 + 0xe4) = 1;
+  if (param_1->field_007E == 1) {
+    param_1->field_007E = 0;
+    *(undefined4 *)&param_1->field_0xe4 = 1;
   }
-  if (*(int *)((int)param_1 + 0xf4) == 1) {
-    *(undefined4 *)((int)param_1 + 0xf4) = 0;
+  if (*(int *)&param_1->field_0xf4 == 1) {
+    *(undefined4 *)&param_1->field_0xf4 = 0;
   }
   iVar4 = STJellyGunC::sub_00415ED0(param_1,&local_28,&local_2c);
   if (iVar4 == -1) {
-    *(undefined1 *)((int)param_1 + 0xe3) = 0xff;
+    param_1->field_0xe3 = 0xff;
     return -1;
   }
   if (iVar4 == 0) {
-    *(undefined4 *)((int)param_1 + 0xf4) = 1;
-    if (*(int *)((int)param_1 + 0xd3) == *(int *)((int)param_1 + 0x9b) + -1) {
-      *(undefined4 *)((int)param_1 + 0xe4) = 0;
-      *(undefined1 *)((int)param_1 + 0xe3) = 0;
+    *(undefined4 *)&param_1->field_0xf4 = 1;
+    if (*(int *)&param_1->field_0xd3 == *(int *)&param_1->field_0x9b + -1) {
+      *(undefined4 *)&param_1->field_0xe4 = 0;
+      param_1->field_0xe3 = 0;
       return 0;
     }
     thunk_FUN_00416270(param_1,local_24,(int *)local_20,(int *)local_1c);
-    iVar4 = *(int *)((int)param_1 + 0xd3) + 1;
+    iVar4 = *(int *)&param_1->field_0xd3 + 1;
     local_6 = 0;
-    *(int *)((int)param_1 + 0xd3) = iVar4;
+    *(int *)&param_1->field_0xd3 = iVar4;
     local_5 = false;
-    psVar1 = (short *)(*(int *)((int)param_1 + 0x97) + iVar4 * 8);
+    psVar1 = (short *)(*(int *)&param_1->field_0x97 + iVar4 * 8);
     sVar6 = *psVar1 * 0xc9 + 100;
     sVar8 = psVar1[1] * 0xc9 + 100;
     uVar5 = (int)sVar6 - (int)local_24[0];
     local_c = CONCAT22((short)((uint)iVar4 >> 0x10),
-                       *(short *)(*(int *)((int)param_1 + 0x97) + 4 + iVar4 * 8) * 200) + 100;
+                       *(short *)(*(int *)&param_1->field_0x97 + 4 + iVar4 * 8) * 200) + 100;
     uVar7 = (int)uVar5 >> 0x1f;
     local_14 = (uVar5 ^ uVar7) - uVar7;
     uVar5 = (int)sVar8 - (int)local_20[0];
@@ -68,16 +68,16 @@ int __fastcall FUN_00416400(void *param_1)
     uVar7 = (int)uVar5 >> 0x1f;
     local_18 = (uVar5 ^ uVar7) - uVar7;
     if (local_18 == 0) {
-      bVar2 = *(byte *)((int)param_1 + 0x61);
+      bVar2 = param_1->field_0x61;
     }
     else {
       bVar3 = 2 < local_18 / local_14;
       local_5 = local_14 == 0 || bVar3;
       if ((local_14 == 0 || bVar3) && (iVar4 == 0 || 2 < local_18 / iVar4)) {
-        bVar2 = *(byte *)((int)param_1 + 0x62);
+        bVar2 = param_1->field_0x62;
       }
       else {
-        bVar2 = *(byte *)((int)param_1 + 0x61);
+        bVar2 = param_1->field_0x61;
       }
     }
     _local_10 = CONCAT31((int3)((uint)iVar4 >> 8),bVar2);
@@ -85,20 +85,20 @@ int __fastcall FUN_00416400(void *param_1)
                       (param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,(short)local_c,bVar2)
     ;
     if (iVar4 != 0) {
-      *(undefined1 *)((int)param_1 + 0xe3) = 0xff;
+      param_1->field_0xe3 = 0xff;
       return -1;
     }
-    *(undefined1 *)((int)param_1 + 0xe3) = 3;
-    *(undefined4 *)((int)param_1 + 0xe4) = 0;
+    param_1->field_0xe3 = 3;
+    *(undefined4 *)&param_1->field_0xe4 = 0;
     return 3;
   }
   if (local_28 == 1) {
-    *(undefined1 *)((int)param_1 + 0xe3) = 2;
-    *(undefined4 *)((int)param_1 + 0xe4) = 0;
-    return (int)*(char *)((int)param_1 + 0xe3);
+    param_1->field_0xe3 = 2;
+    *(undefined4 *)&param_1->field_0xe4 = 0;
+    return (int)(char)param_1->field_0xe3;
   }
-  if ((*(char *)((int)param_1 + 0x5a) == '\0') && (*(char *)((int)param_1 + 0x4d) == '\x01')) {
-    sVar6 = *(short *)((int)param_1 + 0x3a);
+  if ((param_1->field_005A == '\0') && (param_1->field_004D == '\x01')) {
+    sVar6 = param_1->field_003A;
     if (sVar6 < 0) {
       iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                      (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
@@ -107,8 +107,8 @@ int __fastcall FUN_00416400(void *param_1)
       iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                           (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
     }
-    if (*(short *)((int)param_1 + 0x54) == iVar4) {
-      sVar6 = *(short *)((int)param_1 + 0x3c);
+    if ((short)param_1->field_0054 == iVar4) {
+      sVar6 = param_1->field_003C;
       if (sVar6 < 0) {
         iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                        (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
@@ -117,8 +117,8 @@ int __fastcall FUN_00416400(void *param_1)
         iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                             (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
       }
-      if (*(short *)((int)param_1 + 0x56) == iVar4) {
-        sVar6 = *(short *)((int)param_1 + 0x3e);
+      if ((short)param_1->field_0056 == iVar4) {
+        sVar6 = param_1->field_003E;
         if (sVar6 < 0) {
           iVar4 = (short)((sVar6 / 200 + (sVar6 >> 0xf)) -
                          (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f)) + -1;
@@ -127,13 +127,13 @@ int __fastcall FUN_00416400(void *param_1)
           iVar4 = (int)(short)((sVar6 / 200 + (sVar6 >> 0xf)) -
                               (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f));
         }
-        if (*(short *)((int)param_1 + 0x58) == iVar4) goto LAB_004166c7;
+        if ((short)param_1->field_0058 == iVar4) goto LAB_004166c7;
       }
     }
-    *(undefined1 *)((int)param_1 + 0x5a) = 1;
+    param_1->field_005A = 1;
   }
 LAB_004166c7:
-  *(undefined1 *)((int)param_1 + 0xe3) = 1;
-  return (int)*(char *)((int)param_1 + 0xe3);
+  param_1->field_0xe3 = 1;
+  return (int)(char)param_1->field_0xe3;
 }
 

@@ -4,7 +4,7 @@
    Diagnostic line evidence: 926 | 933 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-int __cdecl FUN_00683780(int *param_1,int param_2,int param_3)
+int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int param_3)
 
 {
   int iVar1;
@@ -19,16 +19,17 @@ int __cdecl FUN_00683780(int *param_1,int param_2,int param_3)
   undefined1 uStack_9;
   undefined1 uStack_8;
   
-  if (((param_3 == 0) || (param_1 == (int *)0x0)) || (param_2 == 0)) {
+  if (((param_3 == 0) || (param_1 == (int *)0x0)) || (param_2 == (AnonShape_00683780_11EA4E23 *)0x0)
+     ) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x39e);
   }
   iVar7 = 0;
   iVar1 = param_1[1];
-  if (0 < *(int *)(param_2 + 4)) {
+  if (0 < param_2->field_0004) {
     iVar6 = 0;
     do {
-      puVar3 = (undefined4 *)(*(int *)(param_2 + 8) + iVar6);
+      puVar3 = (undefined4 *)(param_2->field_0008 + iVar6);
       uVar2 = *puVar3;
       local_c = (char)uVar2;
       sStack_b = (short)((uint)uVar2 >> 8);
@@ -49,7 +50,7 @@ int __cdecl FUN_00683780(int *param_1,int param_2,int param_3)
       thunk_FUN_0064a830(param_1,(undefined4 *)&local_c);
       iVar7 = iVar7 + 1;
       iVar6 = iVar6 + 5;
-    } while (iVar7 < *(int *)(param_2 + 4));
+    } while (iVar7 < param_2->field_0004);
   }
   local_c = '\a';
   sStack_b = 0x1d;

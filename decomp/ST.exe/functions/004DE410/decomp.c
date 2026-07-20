@@ -2,19 +2,20 @@
 int FUN_004de410(void *param_1,int param_2,int param_3)
 
 {
-  int iVar1;
+  STPlayerRuntimeRecord *pSVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  DArrayTy *pDVar4;
+  uint uVar5;
   int local_8;
   
   iVar2 = param_2;
   local_8 = 0;
-  iVar1 = (int)param_1 * 0xa62;
-  iVar3 = *(int *)(&DAT_007f57ee + iVar1);
-  if ((iVar3 != 0) && (uVar4 = 0, 0 < *(int *)(iVar3 + 0xc))) {
+  pSVar1 = g_playerRuntime + (int)param_1;
+  pDVar4 = pSVar1->field2282_0x9ce;
+  if ((pDVar4 != (DArrayTy *)0x0) && (uVar5 = 0, 0 < (int)pDVar4->count)) {
     do {
-      FUN_006acc70(iVar3,uVar4,&param_1);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,uVar5,&param_1);
       iVar3 = thunk_FUN_004ddb30(param_1,iVar2);
       if (iVar3 != 0) {
         if (param_3 - local_8 <= iVar3) {
@@ -24,9 +25,9 @@ int FUN_004de410(void *param_1,int param_2,int param_3)
         thunk_FUN_004ddc30(param_1,iVar2,iVar3);
         local_8 = local_8 + iVar3;
       }
-      uVar4 = uVar4 + 1;
-      iVar3 = *(int *)(&DAT_007f57ee + iVar1);
-    } while ((int)uVar4 < *(int *)(iVar3 + 0xc));
+      uVar5 = uVar5 + 1;
+      pDVar4 = pSVar1->field2282_0x9ce;
+    } while ((int)uVar5 < (int)pDVar4->count);
     return local_8;
   }
   return 0;

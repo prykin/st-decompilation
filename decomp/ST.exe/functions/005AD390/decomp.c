@@ -1,7 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
-   ChooseMapTy::NoneChooseMap */
+   ChooseMapTy::NoneChooseMap
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1)
 
@@ -35,7 +40,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   uint local_18;
   int local_14;
   int local_10;
-  LPVOID local_c;
+  AnonShape_005AD390_9AB360A8 *local_c;
   int local_8;
   
   local_8 = 1;
@@ -66,8 +71,8 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
     if (this_00->field_1A6C != 0) {
       FUN_006e6080(this_00,2,this_00->field_1A6C,(undefined4 *)&this_00->field_0x1d);
     }
-    if (*(int *)(DAT_0081176c + 0x389) != 0) {
-      FUN_006e6080(this_00,2,*(int *)(DAT_0081176c + 0x389),(undefined4 *)&this_00->field_0x1d);
+    if (PTR_0081176c->field_0389 != 0) {
+      FUN_006e6080(this_00,2,PTR_0081176c->field_0389,(undefined4 *)&this_00->field_0x1d);
     }
   }
   if ((this_00->field_1A64 != 0) && (0xf9 < this_00->field_0061 - this_00->field_1A68)) {
@@ -82,7 +87,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
       case CASE_5:
       case CASE_C:
       case CASE_13:
-        local_c = (LPVOID)0x0;
+        local_c = (AnonShape_005AD390_9AB360A8 *)0x0;
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_14,-1,0);
         if (DAT_008067a0 != '\0') {
           CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
@@ -111,7 +116,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
             }
             else if (iVar7 == 1) {
               if (local_18 == 0x1a) {
-                if (*(char *)((int)local_c + 2) == '\x04') {
+                if (local_c->field_0002 == '\x04') {
                   local_46 = 3;
                   local_48 = (undefined2)((uint)DAT_00807dd5 >> 0x10);
                   local_45 = DAT_008087be;
@@ -146,15 +151,15 @@ switchD_005adb01_caseD_c:
                       local_3d = 4;
                     }
                   }
-                  local_26 = *(undefined4 *)((int)local_c + 0x22);
-                  local_2a = *(undefined4 *)((int)local_c + 0x1e);
+                  local_26 = local_c->field_0022;
+                  local_2a = local_c->field_001E;
                   FUN_00715360(g_int_00811764,local_1c,'\x1a',(char *)&local_48,0x26,1,0xffffffff);
                 }
               }
               else if (local_18 == 0x1b) {
                 StartSystemTy::AddToChat(this_00->field_1A5B,(int)local_c);
               }
-              if (local_c != (LPVOID)0x0) {
+              if (local_c != (AnonShape_005AD390_9AB360A8 *)0x0) {
                 FUN_006ab060(&local_c);
               }
             }
@@ -166,13 +171,12 @@ switchD_005adb01_caseD_c:
   }
   else if (cVar1 == '\x03') {
     if ((this_00->field_20B5 != '\0') &&
-       (*(int *)(DAT_0081176c + 0x300) < *(int *)(DAT_0081176c + 0x304) + -1)) {
-      *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + 1;
-      if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
+       ((int)PTR_0081176c->field_0300 < *(int *)&PTR_0081176c->field_0x304 + -1)) {
+      PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + 1;
+      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),
-                   *(uint *)(DAT_0081176c + 0x300),*(uint *)(DAT_0081176c + 0x314),
-                   *(uint *)(DAT_0081176c + 0x318));
+                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                   PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
     }
@@ -188,8 +192,8 @@ switchD_005adb01_caseD_c:
        (iVar7 = HoloTy::NextFas(this_00->field_20C0), iVar7 != 0)) {
       local_8 = 0;
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x01')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -210,9 +214,9 @@ switchD_005adb01_caseD_c:
       }
       this_00->field_0065 = 1;
       if (this_00->field_20B5 != '\0') {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
-        if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
-          FUN_006b3af0(*(int **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_02EC);
+        if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+          FUN_006b3af0(*(int **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc);
         }
       }
       CreateCtrls(this_00,'\x01');
@@ -238,36 +242,36 @@ switchD_005adb01_caseD_c:
         puVar9 = puVar9 + 1;
         iVar7 = iVar7 + -1;
       } while (iVar7 != 0);
-      if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
+      if (PTR_0081176c->field_0391 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391),0xfffffffe,
-                   *(uint *)(DAT_0081176c + 0x3a9),*(uint *)(DAT_0081176c + 0x3ad));
+                  ((uint *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391,0xfffffffe,
+                   PTR_0081176c->field_03A9,PTR_0081176c->field_03AD);
       }
-      if (*(uint *)(DAT_0081176c + 0x422) != 0xffffffff) {
+      if (PTR_0081176c->field_0422 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)(DAT_0081176c + 0x466),*(uint *)(DAT_0081176c + 0x422),0xfffffffe,
-                   *(uint *)(DAT_0081176c + 0x43a),*(uint *)(DAT_0081176c + 0x43e));
+                  ((uint *)PTR_0081176c->field_0466,PTR_0081176c->field_0422,0xfffffffe,
+                   PTR_0081176c->field_043A,PTR_0081176c->field_043E);
       }
-      if (*(uint *)(DAT_0081176c + 0x4b3) != 0xffffffff) {
+      if (PTR_0081176c->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),0xfffffffe,
-                   *(uint *)(DAT_0081176c + 0x4cb),*(uint *)(DAT_0081176c + 0x4cf));
+                  ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,0xfffffffe,
+                   PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
       }
-      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0540);
       CVar3 = this_00->field_1A5F;
       if ((((CVar3 == CASE_C) || (CVar3 == CASE_4)) || (CVar3 == CASE_5)) || (CVar3 == CASE_13)) {
-        if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
+        if (PTR_0081176c->field_0560 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
+                    ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
+                     PTR_0081176c->field_0578,PTR_0081176c->field_057C);
         }
-        if (*(uint *)(DAT_0081176c + 0x5f1) != 0xffffffff) {
+        if (PTR_0081176c->field_05F1 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    (*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
+                    ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
+                     PTR_0081176c->field_0609,PTR_0081176c->field_060D);
         }
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0558);
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
       }
       PaintChooseMap(this_00,'\0');
       g_currentExceptionFrame = local_b0.previous;
@@ -275,13 +279,12 @@ switchD_005adb01_caseD_c:
     }
   }
   else if (cVar1 == '\x04') {
-    if ((this_00->field_20B5 != '\0') && (0 < *(int *)(DAT_0081176c + 0x300))) {
-      *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + -1;
-      if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
+    if ((this_00->field_20B5 != '\0') && (0 < (int)PTR_0081176c->field_0300)) {
+      PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + -1;
+      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),
-                   *(uint *)(DAT_0081176c + 0x300),*(uint *)(DAT_0081176c + 0x314),
-                   *(uint *)(DAT_0081176c + 0x318));
+                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                   PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
     }
@@ -321,8 +324,8 @@ switchD_005adb01_caseD_c:
         local_8 = 0;
       }
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x02')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

@@ -11,22 +11,23 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
   code *pcVar2;
   PopUpTy *this_00;
   int iVar3;
-  uint *puVar4;
-  uint *puVar5;
+  AnonShape_006B5570_4D68B99C *pAVar4;
+  AnonShape_006B5570_4D68B99C *pAVar5;
   char *pcVar6;
   int iVar7;
-  uint uVar8;
+  uint *puVar8;
   uint uVar9;
+  uint uVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_58;
   PopUpTy *local_14;
-  uint *local_10;
-  uint *local_c;
+  AnonShape_006B5570_4D68B99C *local_10;
+  AnonShape_006B5570_4D68B99C *local_c;
   uint *local_8;
   
-  local_c = (uint *)0x0;
-  local_10 = (uint *)0x0;
+  local_c = (AnonShape_006B5570_4D68B99C *)0x0;
+  local_10 = (AnonShape_006B5570_4D68B99C *)0x0;
   local_8 = (uint *)0x0;
   if (param_1 != (char *)0x0) {
     local_58.previous = g_currentExceptionFrame;
@@ -34,40 +35,41 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
     local_14 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
-      uVar9 = 0xffffffff;
+      uVar10 = 0xffffffff;
       pcVar6 = param_1;
       do {
-        if (uVar9 == 0) break;
-        uVar9 = uVar9 - 1;
+        if (uVar10 == 0) break;
+        uVar10 = uVar10 - 1;
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + 1;
       } while (cVar1 != '\0');
-      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar9 + 4);
+      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar10 + 4);
       this_00 = local_14;
-      puVar4 = local_c;
+      pAVar4 = local_c;
       if (local_8 != (uint *)0x0) {
         wsprintfA((LPSTR)local_8,s__s_1d_s_007c6fe4,&DAT_007c6ff0,param_2 & 0xff,param_1);
-        puVar4 = ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
-        local_c = puVar4;
+        pAVar4 = (AnonShape_006B5570_4D68B99C *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
+        local_c = pAVar4;
         FUN_006ab060(&local_8);
       }
-      puVar5 = local_10;
-      if (puVar4 != (uint *)0x0) {
-        puVar5 = ccFntTy::FormSarr(this_00->field_0094,puVar4,s________________007c21d8,
+      pAVar5 = local_10;
+      if (pAVar4 != (AnonShape_006B5570_4D68B99C *)0x0) {
+        pAVar5 = (AnonShape_006B5570_4D68B99C *)
+                 ccFntTy::FormSarr(this_00->field_0094,(uint *)pAVar4,s________________007c21d8,
                                    (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
-        local_10 = puVar5;
-        ccFntTy::SepColorStrInSarr(this_00->field_0094,puVar5,puVar5);
-        FUN_006b5570((byte *)puVar4);
+        local_10 = pAVar5;
+        ccFntTy::SepColorStrInSarr(this_00->field_0094,(uint *)pAVar5,(uint *)pAVar5);
+        FUN_006b5570(pAVar4);
       }
-      if (puVar5 != (uint *)0x0) {
+      if (pAVar5 != (AnonShape_006B5570_4D68B99C *)0x0) {
         iVar3 = 0;
-        if (0 < (int)puVar5[2]) {
-          if ((int)puVar5[2] < 1) {
+        if (0 < (int)pAVar5->field_0008) {
+          if ((int)pAVar5->field_0008 < 1) {
             pcVar6 = (char *)0x0;
             goto LAB_0052d48d;
           }
           do {
-            pcVar6 = *(char **)(puVar5[5] + iVar3 * 4);
+            pcVar6 = *(char **)(pAVar5->field_0014 + iVar3 * 4);
 LAB_0052d48d:
             iVar7 = Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0098,pcVar6);
             if ((byte)this_00->field_009C < DAT_00807346) {
@@ -77,21 +79,21 @@ LAB_0052d48d:
                (OutStr(this_00,CONCAT31((int3)((uint)iVar7 >> 8),this_00->field_009C - 1)),
                DAT_00807342 != 0)) {
               if ((int)((byte)this_00->field_009C - 1) < *(int *)(this_00->field_0098 + 8)) {
-                puVar4 = *(uint **)(*(int *)(this_00->field_0098 + 0x14) + -4 +
+                puVar8 = *(uint **)(*(int *)(this_00->field_0098 + 0x14) + -4 +
                                    (uint)(byte)this_00->field_009C * 4);
               }
               else {
-                puVar4 = (uint *)0x0;
+                puVar8 = (uint *)0x0;
               }
-              uVar8 = FUN_00711110(this_00->field_0094,puVar4);
-              uVar9 = *(uint *)(this_00->field_0090 + 4);
-              if ((int)uVar9 <= (int)uVar8) {
-                uVar8 = uVar9;
+              uVar9 = FUN_00711110(this_00->field_0094,puVar8);
+              uVar10 = *(uint *)(this_00->field_0090 + 4);
+              if ((int)uVar10 <= (int)uVar9) {
+                uVar9 = uVar10;
               }
-              *(uint *)(&this_00->field_0x50 + (uint)(byte)this_00->field_009C * 4) = uVar8;
+              *(uint *)(&this_00->field_0x50 + (uint)(byte)this_00->field_009C * 4) = uVar9;
               FUN_006b2800((int)DAT_008075a8,
                            *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4),
-                           uVar8,0x13);
+                           uVar9,0x13);
               Library::DKW::DDX::FUN_006b3640
                         (DAT_008075a8,
                          *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4),
@@ -101,9 +103,9 @@ LAB_0052d48d:
                          *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4));
             }
             iVar3 = iVar3 + 1;
-          } while (iVar3 < (int)puVar5[2]);
+          } while (iVar3 < (int)pAVar5->field_0008);
         }
-        FUN_006b5570((byte *)puVar5);
+        FUN_006b5570(pAVar5);
       }
       g_currentExceptionFrame = local_58.previous;
       return;

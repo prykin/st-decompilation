@@ -3,7 +3,7 @@
    Evidence: 006D7330 -> 0074CEB2 @ 006D733D | 0074CEB2 -> EXTERNAL:00000019 @ 0074CF11 | 0074CEB2
    -> EXTERNAL:00000019 @ 0074CF1E */
 
-int FUN_0074ceb2(int param_1,int *lpCriticalSection,int param_3)
+int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int param_3)
 
 {
   LPCRITICAL_SECTION lpCriticalSection_00;
@@ -15,16 +15,16 @@ int FUN_0074ceb2(int param_1,int *lpCriticalSection,int param_3)
     iVar2 = -0x7fffbffd;
   }
   else {
-    *(int *)(param_1 + 0x4c) = param_3;
-    lpCriticalSection_00 = *(LPCRITICAL_SECTION *)(param_1 + -0x30);
+    param_1->field_004C = param_3;
+    lpCriticalSection_00 = *(LPCRITICAL_SECTION *)&param_1[-1].field_0x20;
     EnterCriticalSection(lpCriticalSection_00);
     (**(code **)(*lpCriticalSection + 4))(lpCriticalSection);
-    piVar1 = *(int **)(param_1 + 4);
+    piVar1 = param_1->field_0004;
     if (piVar1 != (int *)0x0) {
       (**(code **)(*piVar1 + 8))(piVar1);
     }
-    *(int **)(param_1 + 4) = lpCriticalSection;
-    this = *(void **)(*(int *)(param_1 + 0x48) + 0x90);
+    param_1->field_0004 = lpCriticalSection;
+    this = *(void **)(param_1->field_0048 + 0x90);
     if ((*(int *)((int)this + 0x18) != 0) &&
        (iVar2 = FUN_0074d156(this,lpCriticalSection,param_3), iVar2 < 0)) {
       LeaveCriticalSection(lpCriticalSection_00);

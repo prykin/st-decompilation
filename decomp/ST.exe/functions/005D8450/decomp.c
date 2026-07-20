@@ -22,7 +22,8 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   char *pcVar10;
   char *pcVar11;
   undefined4 *puVar12;
-  undefined4 local_db0 [19];
+  ccFntTy **ppcVar13;
+  ccFntTy *local_db0 [19];
   undefined4 local_d64;
   undefined4 local_d60;
   undefined4 local_d5c;
@@ -237,30 +238,32 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_394 = local_4fc;
   local_214 = local_4fc;
   local_a4 = local_4fc;
-  (**(code **)(*(int *)this_00->field_000C + 8))(7,&this_00->field_1AF1,0,local_524,0);
-  puVar12 = local_db0;
+  (*this_00->field_000C->vtable->CreateObject)
+            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1AF1,(int *)0x0,local_524,0);
+  ppcVar13 = local_db0;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
+    *ppcVar13 = (ccFntTy *)0x0;
+    ppcVar13 = ppcVar13 + 1;
   }
-  local_db0[0] = 0;
-  local_db0[1] = 9;
-  local_db0[2] = *(undefined4 *)(DAT_0081176c + 0x34);
-  local_db0[8] = this_00->field_1CD0;
+  local_db0[0] = (ccFntTy *)0x0;
+  local_db0[1] = (ccFntTy *)0x9;
+  local_db0[2] = PTR_0081176c->field_0034;
+  local_db0[8] = (ccFntTy *)this_00->field_1CD0;
   local_d64 = this_00->field_0008;
-  local_db0[3] = 0xe4;
-  local_db0[4] = 0x1aa;
-  local_db0[5] = 0x156;
-  local_db0[6] = 0x10;
+  local_db0[3] = (ccFntTy *)0xe4;
+  local_db0[4] = (ccFntTy *)0x1aa;
+  local_db0[5] = (ccFntTy *)0x156;
+  local_db0[6] = (ccFntTy *)0x10;
   local_550 = 1;
   local_554 = 1;
-  local_db0[7] = 0x104;
+  local_db0[7] = (ccFntTy *)0x104;
   local_d60 = 2;
   local_d5c = 0x697f;
   local_d20 = 2;
   local_d1c = 0x68ff;
   local_d24 = local_d64;
-  (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_1AF5,0,local_db0,1);
+  (*this_00->field_000C->vtable->CreateObject)
+            ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AF5,(int *)0x0,local_db0,1);
   uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
   this_00->field_1AF9 = uVar5;
   uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);

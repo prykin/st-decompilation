@@ -28,7 +28,7 @@ undefined4 * CreateDefaultBossData(void)
   errorCode = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
     local_8 = thunk_FUN_00648400(s_Default_Arbiter_007d2988,1);
-    local_10 = EventDataPack(*(undefined4 **)((int)local_8 + 0x4e),&local_14);
+    local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)local_8 + 0x4e),&local_14);
     local_c = BossDataPack(local_8,local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_006484f0((int *)&local_8);

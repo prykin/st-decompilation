@@ -46,7 +46,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),pSVar2->field_1CC0,0,0,0,0,0);
+    ccFntTy::SetSurf(PTR_0081176c->field_0034,pSVar2->field_1CC0,0,0,0,0,0);
     if (pSVar2->field_1A5F == '\0') {
       iVar11 = -1;
       iVar10 = -1;
@@ -54,14 +54,14 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       iVar9 = -1;
       iVar3 = -2;
       puVar6 = (uint *)FUN_006b0140(0x2521,HINSTANCE_00807618);
-      this_00 = *(ccFntTy **)(DAT_0081176c + 0x34);
+      this_00 = PTR_0081176c->field_0034;
     }
     else {
       puVar4 = &DAT_00807ddd;
       puVar6 = (uint *)&pSVar2->field_1CD4;
       uVar5 = FUN_006b0140(0x2520,HINSTANCE_00807618);
       wsprintfA((LPSTR)puVar6,s__0_s__5_s_0__007cd6c4,uVar5,puVar4);
-      this_00 = *(ccFntTy **)(DAT_0081176c + 0x34);
+      this_00 = PTR_0081176c->field_0034;
       iVar11 = -1;
       iVar10 = -1;
       uVar8 = 0;

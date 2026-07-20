@@ -3,7 +3,7 @@
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::GetMessage */
 
-undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
+undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040_4F5768CD *param_1)
 
 {
   char cVar1;
@@ -53,11 +53,11 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
     RaiseInternalException(iVar6,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x24f);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_8,param_1);
-  uVar14 = *(uint *)(param_1 + 0x10);
+  thunk_FUN_005b6450(local_8,(int)param_1);
+  uVar14 = param_1->field_0010;
   if (uVar14 < 0x6941) {
     if (uVar14 == 0x6940) {
-      thunk_FUN_00592620((int)this_00);
+      thunk_FUN_00592620((AnonShape_00592620_9AEC2C08 *)this_00);
     }
     else if (uVar14 < 6) {
       if (uVar14 == 5) {
@@ -67,15 +67,15 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
         NoneCampaign(this_00,unaff_EDI);
       }
       else if (uVar14 == 2) {
-        InitCampaign(this_00,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x14));
+        InitCampaign(this_00,*(undefined4 *)(param_1->field_0014 + 0x14));
       }
       else if (uVar14 == 3) {
         DoneCampaign(this_00);
       }
     }
     else if (uVar14 == 0x68ff) {
-      DAT_0080874e = **(byte **)(param_1 + 0x14);
-      if (*(int *)(DAT_0081176c + 0x28) == 0) {
+      DAT_0080874e = *(byte *)param_1->field_0014;
+      if (PTR_0081176c->field_0028 == 0) {
         FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
         iVar6 = 0;
         bVar19 = 0;
@@ -86,7 +86,7 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
       thunk_FUN_005b6730(this_00,4,'\x01',-1);
     }
     else if (uVar14 == 0x693f) {
-      thunk_FUN_005925a0((int)this_00);
+      thunk_FUN_005925a0((AnonShape_005925A0_ACA54D35 *)this_00);
     }
     goto switchD_005931ad_caseD_6944;
   }
@@ -95,11 +95,11 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
     *(undefined4 *)&this_00->field_0x45 = 0x200;
     *(undefined4 *)&this_00->field_0x49 = 0;
     this_00->field_004D = 0x6102;
-    *(undefined4 *)&this_00->field_0x51 = *(undefined4 *)(param_1 + 0x14);
-    thunk_FUN_005b66e0(this_00);
+    *(undefined4 *)&this_00->field_0x51 = param_1->field_0014;
+    thunk_FUN_005b66e0((STJellyGunC *)this_00);
     break;
   case 0x6943:
-    thunk_FUN_005b6350(this_00,0x6942,*(undefined4 *)(param_1 + 0x14),0);
+    thunk_FUN_005b6350(this_00,0x6942,param_1->field_0014,0);
     (**(code **)(*(int *)this_00 + 8))();
     pMVar3 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     if (pMVar3 != (MMsgTy *)0x0) {
@@ -112,7 +112,7 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
     this_00->field_004D = 0x7101;
     *(undefined4 *)&this_00->field_0x51 = 3;
     *(undefined4 *)&this_00->field_0x55 = 1;
-    thunk_FUN_005b66e0(this_00);
+    thunk_FUN_005b66e0((STJellyGunC *)this_00);
     break;
   case 0x694a:
     if ((((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (DAT_0080874e == 3)) &&
@@ -178,10 +178,10 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
     this_00->field_004D = 0x6104;
     *(undefined4 *)&this_00->field_0x51 = 0;
     *(undefined4 *)&this_00->field_0x55 = 1;
-    thunk_FUN_005b66e0(this_00);
+    thunk_FUN_005b66e0((STJellyGunC *)this_00);
     break;
   case 0x697f:
-    piVar2 = *(int **)(param_1 + 0x14);
+    piVar2 = (int *)param_1->field_0014;
     if (*piVar2 == 1) {
       iVar6 = 2;
     }
@@ -288,7 +288,7 @@ LAB_00593378:
   }
 switchD_005931ad_caseD_6944:
   g_currentExceptionFrame = local_54.previous;
-  uVar9 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
+  uVar9 = MMObjTy::GetMessage((MMObjTy *)this_00,(int)param_1);
   return uVar9;
 }
 

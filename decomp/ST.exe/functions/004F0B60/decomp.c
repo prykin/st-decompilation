@@ -23,7 +23,8 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (errorCode == 0) {
-    STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,8,&local_8->field_027E);
+    STAllPlayersC::GetPanelInfo
+              (g_sTAllPlayers_007FA174,8,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027E);
     if ((&this_00->field_027E)[(byte)this_00->field_0279] == 0) {
       uVar4 = 0;
     }
@@ -37,7 +38,7 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027E)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
-    thunk_FUN_004f0c80(this_00);
+    thunk_FUN_004f0c80((AnonShape_004F0C80_4C5E559C *)this_00);
     g_currentExceptionFrame = pIVar5;
     return;
   }

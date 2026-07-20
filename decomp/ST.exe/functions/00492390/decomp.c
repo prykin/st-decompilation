@@ -14,10 +14,10 @@ void __thiscall STBoatC::sub_00492390(STBoatC *this)
   int iVar1;
   STBoatC *local_8;
   
-  if (((this->field_045D == 0xf) || (this->field_045D == 0xe)) && (this->field_07C6 == 0)) {
+  if (((this->field_045D == CASE_F) || (this->field_045D == CASE_E)) && (this->field_07C6 == 0)) {
     this->field_07C6 = 1;
     local_8 = this;
-    iVar1 = FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&local_8);
+    iVar1 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_8);
     if (iVar1 == -4) {
       RaiseInternalException
                 (-0x5001fffd,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,

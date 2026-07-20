@@ -48,8 +48,8 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FUN_006ab060((LPVOID *)&this->field_02F4);
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_02F8);
-  if ((byte *)this->field_0548 != (byte *)0x0) {
-    FUN_006b5570((byte *)this->field_0548);
+  if ((AnonShape_006B5570_4D68B99C *)this->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0548);
   }
   this->field_0548 = 0;
   if (-1 < (int)this->field_0540) {
@@ -75,8 +75,8 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FUN_006b3bb0(DAT_008075a8,this->field_0554);
     this->field_0554 = 0xffffffff;
   }
-  if ((byte *)this->field_0686 != (byte *)0x0) {
-    FUN_006b5570((byte *)this->field_0686);
+  if ((AnonShape_006B5570_4D68B99C *)this->field_0686 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0686);
   }
   this->field_0686 = 0;
   return;

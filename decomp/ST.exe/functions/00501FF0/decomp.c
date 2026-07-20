@@ -1,30 +1,28 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
-   CPanelTy::Update2PanelWB */
+   CPanelTy::Update2PanelWB
+   
+   [STSwitchEnumApplier] Switch target field_0B9E uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
+    */
 
 void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
 
 {
-  undefined4 *puVar1;
+  CPanelTy_field_0B99State *pCVar1;
   uint uVar2;
   code *pcVar3;
   CPanelTy *this_00;
   int iVar4;
   int iVar5;
   undefined4 unaff_ESI;
-  int *piVar6;
+  CPanelTy_field_0B99State *pCVar6;
   void *unaff_EDI;
-  int *piVar7;
-  undefined4 *puVar8;
+  AnonShape_00501D00_04A7E309 *pAVar7;
   InternalExceptionFrame local_a8;
-  int local_64;
-  char local_60;
-  char local_5f;
-  char local_48;
-  char local_47;
-  char local_46;
-  char local_30;
+  AnonShape_00501D00_04A7E309 local_64;
   CPanelTy *local_8;
   
   local_a8.previous = g_currentExceptionFrame;
@@ -44,38 +42,38 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     (*pcVar3)();
     return;
   }
-  puVar1 = &local_8->field_0B99;
-  piVar6 = puVar1;
-  piVar7 = &local_64;
+  pCVar1 = &local_8->field_0B99;
+  pCVar6 = pCVar1;
+  pAVar7 = &local_64;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *piVar7 = *piVar6;
-    piVar6 = piVar6 + 1;
-    piVar7 = piVar7 + 1;
+    *(CPanelTy_field_0B99State *)pAVar7 = *pCVar6;
+    pCVar6 = pCVar6 + 1;
+    pAVar7 = (AnonShape_00501D00_04A7E309 *)&pAVar7->field_0x4;
   }
-  puVar8 = puVar1;
+  pCVar6 = pCVar1;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar8 = 0;
-    puVar8 = puVar8 + 1;
+    *pCVar6 = 0;
+    pCVar6 = pCVar6 + 1;
   }
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,puVar1);
-  if (local_5f != this_00->field_0B9E) {
+  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
+  if (local_64._5_1_ != this_00->field_0B9E) {
 cf_common_exit_00502155:
     PaintCtrlBoat(this_00);
     SetControlBoat(this_00);
-    thunk_FUN_00501a10((int)this_00);
+    thunk_FUN_00501a10((AnonShape_00501A10_7BD31715 *)this_00);
     g_currentExceptionFrame = local_a8.previous;
     return;
   }
   switch(this_00->field_0B9E) {
-  case 1:
-    if ((local_64 != this_00->field_0B99) || (local_60 != this_00->field_0B9D))
+  case CASE_1:
+    if ((local_64._0_4_ != this_00->field_0B99) || (local_64._4_1_ != this_00->field_0B9D))
     goto cf_common_exit_00502155;
-    thunk_FUN_00501d00(this_00,&this_00->field_0B99,&local_64);
+    thunk_FUN_00501d00(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_64);
     switch(this_00->field_0B99) {
-    case 8:
-    case 0x14:
-      if (((this_00->field_0BB6 == local_47) && (this_00->field_0BB5 == local_48)) &&
-         (this_00->field_0BB7 == local_46)) {
+    case CASE_8:
+    case CASE_14:
+      if (((this_00->field_0BB6 == local_64._29_1_) && (this_00->field_0BB5 == local_64._28_1_)) &&
+         (this_00->field_0BB7 == local_64._30_1_)) {
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
@@ -84,10 +82,10 @@ cf_common_exit_00502155:
       break;
     default:
       goto switchD_0050207d_default;
-    case 0x16:
-    case 0x17:
-    case 0x25:
-      if (this_00->field_0BCD == local_30) {
+    case CASE_16:
+    case CASE_17:
+    case CASE_25:
+      if (this_00->field_0BCD == local_64._52_1_) {
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
@@ -95,16 +93,16 @@ cf_common_exit_00502155:
       uVar2 = this_00->field_0154;
     }
     break;
-  case 2:
-  case 3:
-    if (local_64 == this_00->field_0B99) {
-      thunk_FUN_00501d00(this_00,&this_00->field_0B99,&local_64);
+  case CASE_2:
+  case CASE_3:
+    if (local_64._0_4_ == this_00->field_0B99) {
+      thunk_FUN_00501d00(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_64);
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
     goto cf_common_exit_00502155;
-  case 4:
-    if (local_64 != this_00->field_0B99) goto cf_common_exit_00502155;
+  case CASE_4:
+    if (local_64._0_4_ != this_00->field_0B99) goto cf_common_exit_00502155;
     if (this_00->field_0B99 != 0xaf) {
       g_currentExceptionFrame = local_a8.previous;
       return;

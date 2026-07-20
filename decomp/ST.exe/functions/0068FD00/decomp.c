@@ -3,10 +3,10 @@
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GetAiMess */
 
-int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
+int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *param_1)
 
 {
-  uint uVar1;
+  undefined4 uVar1;
   code *pcVar2;
   AiTactClassTy *this_00;
   int iVar3;
@@ -41,15 +41,15 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
     iVar3 = (*pcVar2)();
     return iVar3;
   }
-  if (99 < *param_1) {
-    switch(*param_1) {
+  if (99 < *(uint *)param_1) {
+    switch(*(uint *)param_1) {
     case 0x6a:
-      local_8->field_009D = param_1[2];
-      thunk_FUN_00690230(local_8,param_1);
+      local_8->field_009D = *(undefined4 *)&param_1->field_0x8;
+      thunk_FUN_00690230(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6c:
-      if ((char)param_1[2] == '\0') {
+      if (param_1->field_0x8 == '\0') {
         puVar6 = local_3c;
         for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
           *puVar6 = 0;
@@ -58,9 +58,9 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
         local_3c[0] = 0x6d;
         local_30 = 1;
         local_3c[1] = local_8->field_012C;
-        uStack_2f = *(undefined1 *)((int)param_1 + 9);
-        uStack_2e = (undefined2)*(undefined4 *)((int)param_1 + 10);
-        uStack_2c = (undefined2)((uint)*(undefined4 *)((int)param_1 + 10) >> 0x10);
+        uStack_2f = param_1->field_0009;
+        uStack_2e = (undefined2)param_1->field_000A;
+        uStack_2c = (undefined2)((uint)param_1->field_000A >> 0x10);
         thunk_FUN_00690230(local_8,local_3c);
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -68,14 +68,15 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
       break;
     case 0x6e:
     case 0x74:
-      thunk_FUN_00690230(local_8,param_1);
+      thunk_FUN_00690230(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6f:
-      iVar3 = thunk_FUN_0068e850(local_8,param_1[3]);
-      param_1[2] = param_1[2] + iVar3;
-      iVar3 = thunk_FUN_0068e610(this_00,param_1[3]);
-      param_1[2] = param_1[2] + iVar3;
+      iVar4 = thunk_FUN_0068e850(local_8,*(int *)((int)&param_1->field_000A + 2));
+      iVar3 = *(int *)((int)&param_1->field_000A + 2);
+      *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
+      iVar3 = thunk_FUN_0068e610(this_00,iVar3);
+      *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar3;
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x70:
@@ -98,13 +99,13 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
             }
             local_3c[1] = this_00->field_012C;
             local_3c[0] = 0x70;
-            uVar1 = param_1[3];
+            uVar1 = *(undefined4 *)((int)&param_1->field_000A + 2);
             local_30 = (undefined1)uVar1;
-            uStack_2f = (undefined1)(uVar1 >> 8);
-            uStack_2e = (undefined2)(uVar1 >> 0x10);
+            uStack_2f = (undefined1)((uint)uVar1 >> 8);
+            uStack_2e = (undefined2)((uint)uVar1 >> 0x10);
             AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar3 + 4),local_3c);
             if (0 < (int)local_3c[2]) {
-              param_1[2] = local_3c[2];
+              *(uint *)&param_1->field_0x8 = local_3c[2];
               g_currentExceptionFrame = local_80.previous;
               return 0;
             }
@@ -131,9 +132,9 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
             iVar3 = 0;
           }
           if ((iVar3 != 0) && (*(AiFltClassTy **)(iVar3 + 4) != (AiFltClassTy *)0x0)) {
-            AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar3 + 4),param_1);
-            thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(*(int *)(iVar3 + 4) + 8));
-            FUN_006b0c70(this_00->field_00A5,uVar5);
+            AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar3 + 4),(uint *)param_1);
+            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(*(int *)(iVar3 + 4) + 8));
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this_00->field_00A5,uVar5);
           }
           uVar5 = uVar5 - 1;
         } while (-1 < (int)uVar5);
@@ -142,19 +143,19 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
       }
       break;
     case 0x72:
-      uVar5 = param_1[2];
-      if (uVar5 == 0) {
-        GiveObjByClaim(local_8,(uint *)param_1[3]);
+      iVar3 = *(int *)&param_1->field_0x8;
+      if (iVar3 == 0) {
+        GiveObjByClaim(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (uVar5 == 1) {
-        GiveObjByFltType(local_8,(uint *)param_1[3]);
+      if (iVar3 == 1) {
+        GiveObjByFltType(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (uVar5 == 2) {
-        GiveObjByGrpNum(local_8,param_1[3]);
+      if (iVar3 == 2) {
+        GiveObjByGrpNum(local_8,*(DArrayTy **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
@@ -172,8 +173,8 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
             iVar3 = 0;
           }
           if (((iVar3 != 0) && (*(AiFltClassTy **)(iVar3 + 4) != (AiFltClassTy *)0x0)) &&
-             (AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar3 + 4),param_1),
-             '\0' < (char)param_1[2])) {
+             (AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar3 + 4),(uint *)param_1),
+             '\0' < (char)param_1->field_0x8)) {
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }

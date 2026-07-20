@@ -22,7 +22,7 @@ int FUN_004e6fe0(int param_1)
     do {
       if ((&PTR_DAT_007bfc04)[(uVar2 & 0xff) - 1] + uVar4 != (undefined *)0x0) {
         iVar3 = thunk_FUN_004e60d0(param_1,uVar5);
-        if ((int)(uint)*(byte *)((int)&DAT_007f555b + param_1 * 0xa62 + uVar5) <= iVar3) {
+        if ((int)(uint)*(byte *)(uVar5 + 0x7f555b + param_1 * 0xa62) <= iVar3) {
           local_c = local_c + 1;
         }
         bVar1 = thunk_FUN_004e5910(param_1,uVar5);

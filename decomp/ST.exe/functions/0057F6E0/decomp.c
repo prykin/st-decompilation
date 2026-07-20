@@ -2,7 +2,11 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
-   STDcResourcC::CreateRes */
+   STDcResourcC::CreateRes
+   
+   [STSwitchEnumApplier] Switch target field_0255 uses
+   /SubmarineTitans/Recovered/Enums/STDcResourcC_field_0255State. Cases:
+   CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_E0=224 */
 
 int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
 
@@ -50,7 +54,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
     return 0xffff;
   }
   switch(local_18->field_0255) {
-  case 0xdc:
+  case CASE_DC:
     local_c = -1;
     local_14 = 0;
     do {
@@ -78,10 +82,10 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         pcVar8 = (char *)thunk_FUN_0057f3a0(this_00,local_c,1);
         iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pcVar8,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
-        STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xe,PTR_00802a38->field_00E4);
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
         thunk_FUN_004acf50(pSVar7,'\r');
-        STT3DSprC::StartShow(pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xd,PTR_00802a38->field_00E4);
         iVar10 = *(int *)&this_00->field_0x249 + local_10;
         local_10 = *(int *)&this_00->field_0x245 + iVar6;
         thunk_FUN_004ad3c0(pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
@@ -94,7 +98,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       local_c = local_c + 1;
     } while (local_14 < 0x21);
     break;
-  case 0xdd:
+  case CASE_DD:
     local_c = -1;
     local_14 = 0;
     do {
@@ -122,10 +126,10 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         pcVar8 = (char *)thunk_FUN_0057f2e0(this_00,local_c,1);
         iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pcVar8,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
-        STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xe,PTR_00802a38->field_00E4);
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
         thunk_FUN_004acf50(pSVar7,'\r');
-        STT3DSprC::StartShow(pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xd,PTR_00802a38->field_00E4);
         iVar10 = *(int *)&this_00->field_0x249 + local_10;
         local_10 = *(int *)&this_00->field_0x245 + iVar6;
         thunk_FUN_004ad3c0(pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
@@ -138,7 +142,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       local_c = local_c + 1;
     } while (local_14 < 0x21);
     break;
-  case 0xde:
+  case CASE_DE:
     iVar6 = -1;
     do {
       if (iVar6 == 1) {
@@ -167,10 +171,10 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
             pcVar8 = (char *)thunk_FUN_0057f470(this_00,iVar6,1);
             iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pcVar8,bVar13);
             if (iVar10 == 0) {
-              STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+              STT3DSprC::StartShow(pSVar7,0xe,PTR_00802a38->field_00E4);
               thunk_FUN_004acef0(pSVar7,DAT_008073cc);
               thunk_FUN_004acf50(pSVar7,'\r');
-              STT3DSprC::StartShow(pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+              STT3DSprC::StartShow(pSVar7,0xd,PTR_00802a38->field_00E4);
               local_14 = *(int *)&this_00->field_0x245 + local_c;
               thunk_FUN_004ad3c0(pSVar7,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                                  (float)(*(int *)&this_00->field_0x249 + local_10) * _DAT_007904f8 +
@@ -194,7 +198,7 @@ LAB_0057fc59:
     goto LAB_0057fd72;
   default:
     goto switchD_0057f734_caseD_df;
-  case 0xe0:
+  case CASE_E0:
     if (((((*(int *)&local_18->field_0x245 < (int)SHORT_007fb240) &&
           (-1 < *(int *)&local_18->field_0x245)) &&
          (*(int *)&local_18->field_0x249 < (int)SHORT_007fb242)) &&
@@ -217,7 +221,7 @@ LAB_0057fc59:
                         (int)sVar1) * 8);
       }
       if (iVar6 == 0) {
-        thunk_FUN_005805c0(this_00);
+        thunk_FUN_005805c0((AnonShape_005805C0_8BDDDE2B *)this_00);
         goto LAB_0057fd72;
       }
     }
@@ -250,7 +254,7 @@ LAB_0057fd72:
         iVar11 = iVar6 + 4;
         iVar12 = iVar10 + 1;
         iVar9 = local_10 + 4;
-        if (this_00->field_0255 == 0xde) {
+        if (this_00->field_0255 == CASE_DE) {
           iVar11 = iVar6 + 8;
           iVar12 = iVar10 + 2;
           iVar9 = local_10 + 8;

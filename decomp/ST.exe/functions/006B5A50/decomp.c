@@ -1,5 +1,6 @@
 
-uint __fastcall FUN_006b5a50(int param_1,int param_2)
+uint __fastcall
+FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_C145E640 *param_2)
 
 {
   int iVar1;
@@ -7,19 +8,20 @@ uint __fastcall FUN_006b5a50(int param_1,int param_2)
   char *pcVar3;
   bool bVar4;
   
-  if ((param_1 == 0) || (param_2 == 0)) {
+  if ((param_1 == (AnonShape_006B5A50_BD82F60D *)0x0) ||
+     (param_2 == (AnonShape_006B5A50_C145E640 *)0x0)) {
     return 0xffffffcc;
   }
-  if (*(int *)(param_1 + 8) != *(int *)(param_2 + 8)) {
+  if (param_1->field_0008 != param_2->field_0008) {
     return 0xffffffce;
   }
-  if (*(int *)(param_1 + 0xc) != *(int *)(param_2 + 0xc)) {
+  if (param_1->field_000C != param_2->field_000C) {
     return 2;
   }
-  iVar1 = *(int *)(param_1 + 0xc) * *(int *)(param_1 + 8);
+  iVar1 = param_1->field_000C * param_1->field_0008;
   bVar4 = true;
-  pcVar2 = *(char **)(param_1 + 0x1c);
-  pcVar3 = *(char **)(param_2 + 0x1c);
+  pcVar2 = param_1->field_001C;
+  pcVar3 = param_2->field_001C;
   do {
     if (iVar1 == 0) break;
     iVar1 = iVar1 + -1;

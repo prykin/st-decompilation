@@ -11,14 +11,14 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
             int param_4)
 
 {
-  int *piVar1;
+  AnonShape_004C21A0_FDE833A6 *pAVar1;
   uint uVar2;
   int iVar3;
   short sVar4;
   int iVar5;
   longlong lVar6;
   float local_c;
-  int *local_8;
+  AnonShape_004C21A0_FDE833A6 *local_8;
   
   sVar4 = 0;
   local_8 = this;
@@ -39,13 +39,14 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
     lVar6 = Library::MSVCRT::__ftol();
     param_4 = (int)(short)lVar6;
   }
-  piVar1 = local_8;
+  pAVar1 = local_8;
   if ((*(byte *)((int)this + 0x1d1) & 4) != 0) {
     sVar4 = 0;
     if (param_2 == this) {
       sVar4 = 4;
     }
-    if ((param_2 == (int *)0x0) || (param_2[9] != local_8[9])) goto cf_common_exit_004C261B;
+    if ((param_2 == (int *)0x0) || (param_2[9] != *(int *)&local_8->field_0x24))
+    goto cf_common_exit_004C261B;
     iVar5 = param_2[8];
     if (iVar5 == 0x14) {
       iVar5 = *param_2;
@@ -66,9 +67,9 @@ LAB_004c2616:
   }
   switch(param_1) {
   case CASE_0:
-    if (param_2 != local_8) {
+    if ((AnonShape_004C21A0_FDE833A6 *)param_2 != local_8) {
       if (param_2 == (int *)0x0) {
-        if (*(int *)((int)local_8 + 0x245) == 4) {
+        if (local_8->field_0245 == 4) {
           if ((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) && (-1 < param_4)) &&
              (param_4 < SHORT_007fb242)) {
             sVar4 = 5;
@@ -76,10 +77,10 @@ LAB_004c2616:
           break;
         }
       }
-      else if (((*(int *)((int)local_8 + 0x245) == 4) &&
+      else if (((local_8->field_0245 == 4) &&
                ((iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x37 ||
                 (iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x6c)))) &&
-              (iVar3 = thunk_FUN_004e8b10(param_2,local_8[9]), iVar3 != 0)) {
+              (iVar3 = thunk_FUN_004e8b10(param_2,*(uint *)&local_8->field_0x24), iVar3 != 0)) {
         sVar4 = 0x1d;
         break;
       }
@@ -87,12 +88,12 @@ LAB_004c2616:
           ((-1 < param_4 &&
            ((param_4 < SHORT_007fb242 &&
             (uVar2 = thunk_FUN_004c5350(local_8,0,param_2,iVar5,param_4,0,0,1), uVar2 != 0)))))) &&
-         ((iVar5 = (&DAT_00792ca0)[*(int *)((int)local_8 + 0x235) * 6], iVar5 != 0xa8 &&
+         ((iVar5 = (&DAT_00792ca0)[local_8->field_0235 * 6], iVar5 != 0xa8 &&
           ((iVar5 != 0xa3 && (iVar5 != 0xbe)))))) {
         sVar4 = 7;
         break;
       }
-      if ((param_2 == (int *)0x0) || (param_2[9] != local_8[9])) break;
+      if ((param_2 == (int *)0x0) || (param_2[9] != *(int *)&local_8->field_0x24)) break;
       iVar5 = param_2[8];
       if (iVar5 == 0x14) {
         iVar5 = *param_2;
@@ -110,7 +111,7 @@ LAB_004c2616:
   case CASE_19:
   case CASE_1A:
   case CASE_34:
-    if (param_2 == local_8) {
+    if ((AnonShape_004C21A0_FDE833A6 *)param_2 == local_8) {
       sVar4 = 0;
     }
     else if ((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) && (-1 < param_4)) &&
@@ -121,15 +122,16 @@ LAB_004c2616:
     break;
   case CASE_E:
     sVar4 = 0x15;
-    if ((DAT_007fb2ac != 0) && (*(int *)(DAT_007fb2ac + 0x24) != 0)) {
+    if ((PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) &&
+       (PTR_007fb2ac->field_0024 != 0)) {
       sVar4 = 0x14;
     }
     break;
   case CASE_17:
-    if (((param_2 != (int *)0x0) && (*(int *)((int)local_8 + 0x245) == 4)) &&
+    if (((param_2 != (int *)0x0) && (local_8->field_0245 == 4)) &&
        (((iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x37 ||
          (iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x6c)) &&
-        (iVar5 = thunk_FUN_004e8b10(param_2,piVar1[9]), iVar5 != 0)))) {
+        (iVar5 = thunk_FUN_004e8b10(param_2,*(uint *)&pAVar1->field_0x24), iVar5 != 0)))) {
       sVar4 = 0x1d;
       break;
     }
@@ -149,15 +151,15 @@ joined_r0x004c231f:
     if (((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) &&
          ((-1 < param_4 &&
           ((param_4 < SHORT_007fb242 && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)))))) &&
-        (0x27 < local_8[0x135])) &&
-       (iVar5 = thunk_FUN_0055ad00(g_visibleClass_00802A88,iVar5,param_4,2,local_8[9],7), iVar5 == 0
-       )) {
+        (0x27 < *(int *)&local_8[2].field_0x3c)) &&
+       (iVar5 = thunk_FUN_0055ad00(g_visibleClass_00802A88,iVar5,param_4,2,
+                                   *(uint *)&local_8->field_0x24,7), iVar5 == 0)) {
       sVar4 = 0x19;
     }
     break;
   case CASE_42:
-    if ((((param_2 != (int *)0x0) && (param_2[9] == local_8[9])) && (param_2[8] == 1000)) &&
-       (iVar5 = thunk_FUN_004dbb10(local_8,(int)param_2), iVar5 != 0)) {
+    if ((((param_2 != (int *)0x0) && (param_2[9] == *(int *)&local_8->field_0x24)) &&
+        (param_2[8] == 1000)) && (iVar5 = thunk_FUN_004dbb10(local_8,(int)param_2), iVar5 != 0)) {
       sVar4 = 0x1f;
       break;
     }
@@ -165,9 +167,9 @@ cf_common_exit_004C2352:
     sVar4 = 1;
   }
 cf_common_exit_004C261B:
-  if (((local_8[0x108] != 0) && (sVar4 != 4)) && (sVar4 != 3)) {
+  if (((*(int *)&local_8[1].field_0x1d4 != 0) && (sVar4 != 4)) && (sVar4 != 3)) {
     return 0;
   }
-  return CONCAT22((short)((uint)local_8[0x108] >> 0x10),sVar4);
+  return CONCAT22((short)((uint)*(int *)&local_8[1].field_0x1d4 >> 0x10),sVar4);
 }
 

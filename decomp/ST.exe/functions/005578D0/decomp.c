@@ -38,7 +38,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
       (*pcVar2)();
       return;
     }
-    thunk_FUN_00558140((int)local_c);
+    thunk_FUN_00558140((AnonShape_00558140_7CF35A3F *)local_c);
     RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0x79);
     return;
   }
@@ -80,7 +80,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
       uVar11 = 0;
       local_8 = &DAT_008087e9;
       do {
-        if ((DAT_00802a38 == 0) || (*local_8 < 8)) {
+        if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (*local_8 < 8)) {
           uVar9 = (uint)DAT_0080874d;
           if (uVar11 != uVar9) {
             if (DAT_00808a8f == '\0') {

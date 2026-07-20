@@ -16,7 +16,7 @@ void __fastcall FUN_006366d0(int param_1)
         if (((uVar4 < *(uint *)(iVar3 + 0xc)) &&
             (iVar3 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c), iVar3 != 0)) &&
            (uVar2 = *(uint *)(iVar3 + 4), -1 < (int)uVar2)) {
-          FUN_006e8ba0(DAT_00807598,uVar2);
+          FUN_006e8ba0(PTR_00807598,uVar2);
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iVar1);

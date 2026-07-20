@@ -15,7 +15,7 @@ STAllPlayersC::GetScrObjList
   code *pcVar4;
   bool bVar5;
   int iVar6;
-  uint *puVar7;
+  DArrayTy *pDVar7;
   ushort *puVar8;
   uint uVar9;
   uint uVar10;
@@ -28,7 +28,7 @@ STAllPlayersC::GetScrObjList
   InternalExceptionFrame local_68;
   byte local_24;
   undefined3 uStack_23;
-  uint *local_20;
+  DArrayTy *local_20;
   int local_1c;
   int local_18;
   ushort *local_14;
@@ -40,7 +40,7 @@ STAllPlayersC::GetScrObjList
   
   iVar12 = 0;
   local_14 = (ushort *)0x0;
-  local_20 = (uint *)0x0;
+  local_20 = (DArrayTy *)0x0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -72,16 +72,16 @@ LAB_0044cada:
   else {
     if (param_1 < 3) {
       Library::Ourlib::ST3DSPR::FUN_006ead90
-                (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+                (PTR_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x3268);
       }
-      puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
+      pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
       bVar5 = false;
       local_18 = 0;
-      local_20 = puVar7;
+      local_20 = pDVar7;
       if (0 < local_8) {
         local_1c = 0;
         do {
@@ -94,7 +94,8 @@ LAB_0044cada:
                 local_f = 3;
 LAB_0044c950:
                 if (((uint)piVar3[9] < 8) &&
-                   ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) {
+                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                    ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) {
                   bVar1 = *(byte *)(piVar3 + 9);
                   _local_24 = CONCAT31(uStack_23,bVar1);
                   if (DAT_00808a8f == '\0') {
@@ -133,7 +134,7 @@ LAB_0044ca10:
                      (iVar6 = (**(code **)(*piVar3 + 0xf4))(DAT_0080874d), iVar6 != 0)) {
                     local_10 = (undefined1)piVar3[9];
                     local_e = *(undefined2 *)((int)piVar3 + 0x32);
-                    Library::DKW::TBL::FUN_006ae1c0(puVar7,(undefined4 *)&local_10);
+                    Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar7,(undefined4 *)&local_10);
                     bVar5 = true;
                   }
                 }
@@ -156,34 +157,34 @@ LAB_0044c94c:
                   (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x327d);
       }
-      iVar6 = puVar7[3] * 4 + 3;
+      iVar6 = pDVar7->count * 4 + 3;
       *param_6 = iVar6;
       local_14 = (ushort *)Library::DKW::LIB::FUN_006aac70(iVar6);
-      *local_14 = (ushort)puVar7[3];
+      *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = (undefined1)param_1;
-      puVar11 = (undefined4 *)puVar7[7];
+      puVar11 = pDVar7->data;
       uVar9 = (uint)*local_14 << 2;
     }
     else {
       if (param_1 != 3) goto LAB_0044cada;
       Library::Ourlib::ST3DSPR::FUN_006ead90
-                (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+                (PTR_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x3291);
       }
-      puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+      pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
       bVar5 = false;
       local_18 = 0;
-      local_20 = puVar7;
+      local_20 = pDVar7;
       if (0 < local_8) {
         do {
           iVar6 = *(int *)(iVar12 + 4 + (int)local_c);
           uVar9 = *(uint *)(iVar6 + 0x20);
           if (((uVar9 == 0x14) || ((999 < uVar9 && (uVar9 < 0x3ea)))) &&
              (*(uint *)(iVar6 + 0x24) == (uint)DAT_0080874d)) {
-            Library::DKW::TBL::FUN_006ae1c0(puVar7,(undefined4 *)(iVar6 + 0x32));
+            Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar7,(undefined4 *)(iVar6 + 0x32));
             bVar5 = true;
           }
           local_18 = local_18 + 1;
@@ -196,12 +197,12 @@ LAB_0044c94c:
                   (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x32a1);
       }
-      iVar6 = puVar7[3] * 2 + 3;
+      iVar6 = pDVar7->count * 2 + 3;
       *param_6 = iVar6;
       local_14 = (ushort *)Library::DKW::LIB::FUN_006aac70(iVar6);
-      *local_14 = (ushort)puVar7[3];
+      *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = 3;
-      puVar11 = (undefined4 *)puVar7[7];
+      puVar11 = pDVar7->data;
       uVar9 = (uint)*local_14 << 1;
     }
     puVar13 = (undefined4 *)((int)local_14 + 3);
@@ -219,7 +220,7 @@ LAB_0044c94c:
   }
 LAB_0044cb54:
   puVar8 = local_14;
-  if (local_20 != (uint *)0x0) {
+  if (local_20 != (DArrayTy *)0x0) {
     FUN_006ae110((byte *)local_20);
   }
   return puVar8;

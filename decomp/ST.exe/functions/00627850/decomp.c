@@ -122,7 +122,7 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_38 = (int)(short)(sVar7 * 0xc9 + 100);
   local_34 = (int)(short)(sVar6 * 0xc9 + 100);
   local_30 = (int)(short)((short)local_c * 200 + 100);
-  (**(code **)(*DAT_00802a38 + 8))(0x158,0,0,&local_5c,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x158,0,0,&local_5c,0);
   return;
 }
 

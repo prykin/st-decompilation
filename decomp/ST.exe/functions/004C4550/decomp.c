@@ -88,7 +88,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         local_94 = *(undefined2 *)((int)this + iVar10 + 0x2a9);
         local_98 = (undefined2)local_10;
         local_92 = *(undefined2 *)((int)this + iVar10 + 0x2ad);
-        STPlaySystemC::CreateGameObject(DAT_00802a38,0x168,0,0,local_b0,0);
+        STPlaySystemC::CreateGameObject(PTR_00802a38,0x168,0,0,local_b0,0);
         return 0;
       }
       *(undefined4 *)((int)this + iVar10 + 0x29d) = 1;
@@ -195,10 +195,10 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
                 else {
                   iVar3 = 0x28;
                 }
-                STPlaySystemC::CreateGameObject(DAT_00802a38,iVar3,0,0,local_84,0);
+                STPlaySystemC::CreateGameObject(PTR_00802a38,iVar3,0,0,local_84,0);
               }
               *(int *)((int)this + iVar10 + 0x2c5) = *(int *)((int)this + iVar10 + 0x2c5) + -1;
-              *(undefined4 *)((int)this + iVar10 + 0x2c9) = DAT_00802a38->field_00E4;
+              *(undefined4 *)((int)this + iVar10 + 0x2c9) = PTR_00802a38->field_00E4;
               iVar3 = local_18;
               piVar9 = param_1;
             }
@@ -327,7 +327,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         sVar6 = *(short *)((int)this + 0x45);
       }
       if (*(int *)((int)this + 0x4d0) != 0) {
-        iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4d0),(int *)&local_24);
+        iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4d0),(int *)&local_24);
         if (iVar3 != 0) {
           *(undefined4 *)((int)this + 0x4d0) = 0;
           *(undefined4 *)((int)piVar9 * 0x80 + 0x29d + (int)this) = 1;
@@ -381,7 +381,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
     else if ((&DAT_00792ca0)[iVar3 * 3] == 0xb3) {
       param_1 = (int *)0x0;
       if ((*(int *)((int)this + 0x4ec) != 0) &&
-         (iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_1), iVar3 == 0
+         (iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_1), iVar3 == 0
          )) {
         thunk_FUN_00617b10(param_1,*(undefined4 *)((int)this + (int)piVar9 * 0x80 + 0x2a5),
                            *(undefined4 *)((int)this + (int)piVar9 * 0x80 + 0x2a9),

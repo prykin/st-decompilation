@@ -1,12 +1,12 @@
 
-int __fastcall FUN_004b8c00(int param_1)
+int __fastcall FUN_004b8c00(AnonShape_004B8C00_93076312 *param_1)
 
 {
   int iVar1;
   
   iVar1 = -1;
-  if (*(int *)(param_1 + 0x249) < 0) {
-    switch(*(undefined4 *)(param_1 + 0x245)) {
+  if (param_1->field_0249 < 0) {
+    switch(param_1->field_0245) {
     case 0:
     case 3:
     case 5:
@@ -21,6 +21,6 @@ int __fastcall FUN_004b8c00(int param_1)
     }
     return iVar1;
   }
-  return *(int *)(param_1 + 0x249);
+  return param_1->field_0249;
 }
 

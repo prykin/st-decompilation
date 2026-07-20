@@ -19,7 +19,7 @@ undefined4 __thiscall FUN_004dbcc0(void *this,int *param_1,int param_2)
     if (*(int *)((int)this + (int)param_1 * 4 + 0x4e0) < 0) {
       *(undefined4 *)((int)this + (int)param_1 * 4 + 0x4e0) = 0;
     }
-    iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + (int)param_1 * 4 + 0x4d0),(int *)&param_1
+    iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + (int)param_1 * 4 + 0x4d0),(int *)&param_1
                         );
     if (iVar3 == 0) {
       iVar3 = *(int *)((int)this + 0x18);
@@ -30,7 +30,7 @@ undefined4 __thiscall FUN_004dbcc0(void *this,int *param_1,int param_2)
       piVar1 = (int *)((int)this + (0x139 - (int)piVar2) * 4);
       *piVar1 = 100 - *(int *)((int)this + (int)piVar2 * 4 + 0x4e0);
       if (*(int *)((int)this + (0x13b - (int)piVar2) * 4) != 0) {
-        iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + (0x135 - (int)piVar2) * 4),
+        iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + (0x135 - (int)piVar2) * 4),
                              (int *)&param_1);
         if ((iVar3 == 0) && (param_1[0x131] == *(int *)((int)this + 0x18))) {
           param_1[0x130] = *piVar1;

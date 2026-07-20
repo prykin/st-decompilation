@@ -357,34 +357,34 @@ undefined4 __thiscall CPanelTy::GetMessage(CPanelTy *this,int param_1)
     case 0xb212:
     case 0xb216:
       switch(local_44->field_0BF5) {
-      case 0x5f:
+      case CASE_5E|CASE_1:
         pcVar24 = s_BUT_TBDN_007c22f4;
 LAB_004fd533:
         pcVar30 = thunk_FUN_00529fe0;
         pCVar8 = thunk_FUN_00571240(pcVar24,0);
         PaintBut(this_00,5,param_1,1,pCVar8,pcVar30);
         break;
-      case 100:
-      case 0x65:
-      case 0x6d:
+      case CASE_64:
+      case CASE_64|CASE_1:
+      case CASE_6D:
         PaintBut(local_44,5,param_1,1,s_BUT_MINUSSI_007c2300,thunk_FUN_00529fe0);
       }
       break;
     case 0xb214:
     case 0xb218:
       switch(local_44->field_0BF5) {
-      case 0x5f:
+      case CASE_5E|CASE_1:
         pcVar24 = s_BUT_TBUP_007c22d8;
         goto LAB_004fd533;
-      case 100:
-      case 0x65:
-      case 0x6d:
+      case CASE_64:
+      case CASE_64|CASE_1:
+      case CASE_6D:
         PaintBut(local_44,5,param_1,1,s_BUT_PLUSSI_007c22e4,thunk_FUN_00529fe0);
       }
       break;
     case 0xb21a:
     case 0xb21c:
-      if (local_44->field_0BF5 != 0x6d) break;
+      if (local_44->field_0BF5 != CASE_6D) break;
       local_c = (undefined1 *)CONCAT31(local_c._1_3_,1);
       piVar20 = *(int **)(param_1 + 0x18);
       switch(*(undefined4 *)(param_1 + 0x14)) {
@@ -628,7 +628,7 @@ cf_common_exit_004FD1D2:
           else {
             DAT_00807327 = DAT_00807327 & 0xfd;
           }
-          *(uint *)((int)DAT_00807598 + 0x418) = (uint)DAT_00807327;
+          PTR_00807598->field_0418 = (uint)DAT_00807327;
           thunk_FUN_005252c0(0xae);
           goto cf_common_exit_004FD60B;
         }
@@ -639,7 +639,7 @@ cf_common_exit_004FD1D2:
       }
       local_8 = -1;
       local_c = (undefined1 *)0x1;
-      if (local_44->field_023F == 2) goto cf_common_exit_004FD60B;
+      if (local_44->field_023F == CASE_2) goto cf_common_exit_004FD60B;
       iVar5 = 0;
       uVar7 = (uint)*(ushort *)(param_1 + 0x18);
       local_18 = (uint)*(ushort *)(param_1 + 0x1a);
@@ -927,7 +927,7 @@ LAB_004fbe73:
       local_8 = 0;
       local_1c = (char *)CONCAT22(local_1c._2_2_,*(undefined2 *)(param_1 + 0x18));
       local_40 = CONCAT22(local_40._2_2_,*(undefined2 *)(param_1 + 0x1a));
-      if (local_44->field_023F == 1) {
+      if (local_44->field_023F == CASE_1) {
         local_c = (undefined1 *)&local_44->field_0204;
         local_18 = 0;
         local_3c = 5;
@@ -1006,7 +1006,7 @@ LAB_004fbaa0:
           *(undefined2 *)&this_00->field_0x2c = 0;
           this_00->field_002E = 2;
           this_00->field_0030 = this_00->field_0144;
-          (**(code **)*DAT_00802a30)(&this_00->field_0x18);
+          (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
         }
         this_00->field_0144 = local_8;
         if (local_8 != 0) {
@@ -1014,10 +1014,10 @@ LAB_004fbaa0:
           *(undefined2 *)&this_00->field_0x2c = 0;
           this_00->field_002E = 2;
           this_00->field_0030 = this_00->field_0144;
-          (**(code **)*DAT_00802a30)(&this_00->field_0x18);
+          (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
         }
       }
-      if (this_00->field_023F == 1) {
+      if (this_00->field_023F == CASE_1) {
         local_28 = this_00->field_00A4;
         local_2c = this_00->field_004C;
         local_24 = this_00->field_0078;
@@ -1040,7 +1040,7 @@ LAB_004fbaa0:
               bVar2 = true;
             }
             if (bVar2) {
-              iVar5 = FUN_006e68c0(DAT_00807598,(uVar7 - local_2c) + -5,
+              iVar5 = FUN_006e68c0(PTR_00807598,(uVar7 - local_2c) + -5,
                                    (uVar14 - this_00->field_00A4) + -7,&local_34,&local_38);
               if (this_00->field_013C != 0) {
                 if (iVar5 == 0) {
@@ -1151,7 +1151,7 @@ LAB_004fbaa0:
         bVar16 = bVar16 + 1;
         local_c = (undefined1 *)CONCAT31(local_c._1_3_,bVar16);
       } while (bVar16 < 0x14);
-      if (this_00->field_023F == 3) {
+      if (this_00->field_023F == CASE_3) {
         bVar2 = false;
         bVar16 = 0;
         piVar20 = (int *)&this_00->field_0x94;
@@ -1180,9 +1180,9 @@ LAB_004fbaa0:
         if (bVar2) {
           thunk_FUN_004a9b60(this_00->field_011C,this_00->field_0120,this_00->field_0124,
                              this_00->field_0128 + -0x9b);
-          this_00->field_023F = 5;
+          this_00->field_023F = CASE_4|CASE_1;
           if (DAT_0080731a == 0) {
-            this_00->field_023F = 1;
+            this_00->field_023F = CASE_1;
             ShiftControls(this_00,1);
           }
           else {
@@ -1234,7 +1234,7 @@ LAB_004fbaa0:
             local_8 = 0;
           }
         }
-        thunk_FUN_0054b6d0((int)DAT_00802a30);
+        thunk_FUN_0054b6d0((int)PTR_00802a30);
         bVar16 = 0;
         puVar11 = &this_00->field_0148;
         do {
@@ -1246,7 +1246,7 @@ LAB_004fbaa0:
           puVar11 = puVar11 + 1;
         } while (bVar16 < 0xb);
       }
-      else if (this_00->field_023F == 4) {
+      else if (this_00->field_023F == CASE_4) {
         bVar16 = 0;
         piVar20 = (int *)&this_00->field_0x94;
         do {
@@ -1266,12 +1266,12 @@ LAB_004fbaa0:
               iVar5 = iVar5 + this_00->field_00C0;
             }
             *piVar20 = iVar5;
-            this_00->field_023F = 2;
+            this_00->field_023F = CASE_2;
           }
           bVar16 = bVar16 + 1;
           piVar20 = piVar20 + 1;
         } while (bVar16 < 0xb);
-        thunk_FUN_0054b6d0((int)DAT_00802a30);
+        thunk_FUN_0054b6d0((int)PTR_00802a30);
         bVar16 = 0;
         puVar11 = &this_00->field_0148;
         do {
@@ -1455,15 +1455,15 @@ LAB_004fc9c0:
     break;
   case 0xb113:
     if (*(int *)(param_1 + 0x14) == 3) {
-      FUN_006e6500(DAT_00807598,&local_44->field_0227);
+      FUN_006e6500(PTR_00807598,&local_44->field_0227);
       DAT_00807327 = DAT_00807327 | 8;
     }
     else {
-      FUN_006e6500(DAT_00807598,(undefined4 *)0x0);
+      FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
       DAT_00807327 = DAT_00807327 & 0xf7;
     }
 LAB_004fc53f:
-    *(uint *)((int)DAT_00807598 + 0x418) = (uint)DAT_00807327;
+    PTR_00807598->field_0418 = (uint)DAT_00807327;
     thunk_FUN_005252c0(0xae);
     break;
   case 0xb114:

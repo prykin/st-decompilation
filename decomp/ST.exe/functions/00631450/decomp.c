@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_00631450(void *param_1)
+undefined4 __fastcall FUN_00631450(AnonShape_00631450_C4E92303 *param_1)
 
 {
   int iVar1;
@@ -7,10 +7,10 @@ undefined4 __fastcall FUN_00631450(void *param_1)
   uint uVar3;
   short *psVar4;
   
-  if ((*(int *)((int)param_1 + 0x38) != 0) &&
-     (uVar3 = *(int *)(*(int *)((int)param_1 + 0x38) + 0xc) - 1, -1 < (int)uVar3)) {
+  if ((param_1->field_0038 != 0) &&
+     (uVar3 = *(int *)(param_1->field_0038 + 0xc) - 1, -1 < (int)uVar3)) {
     do {
-      iVar1 = *(int *)((int)param_1 + 0x38);
+      iVar1 = param_1->field_0038;
       if (uVar3 < *(uint *)(iVar1 + 0xc)) {
         psVar4 = (short *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c));
       }
@@ -19,11 +19,11 @@ undefined4 __fastcall FUN_00631450(void *param_1)
       }
       thunk_FUN_00630bb0(param_1,*psVar4,psVar4[1],psVar4[2],*(undefined4 *)(psVar4 + 4),
                          (int)psVar4[3],*(undefined4 *)(psVar4 + 10));
-      puVar2 = thunk_FUN_00630c50(*(undefined4 *)((int)param_1 + 0x40),*(int *)((int)param_1 + 0x4c)
-                                  ,0,1,*(int *)(psVar4 + 10));
+      puVar2 = thunk_FUN_00630c50(param_1->field_0040,param_1->field_004C,0,1,*(int *)(psVar4 + 10))
+      ;
       *(ushort **)(psVar4 + 8) = puVar2;
       if (puVar2 == (ushort *)0x0) {
-        FUN_006b0c70(*(int *)((int)param_1 + 0x38),uVar3);
+        FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1->field_0038,uVar3);
       }
       uVar3 = uVar3 - 1;
     } while (-1 < (int)uVar3);

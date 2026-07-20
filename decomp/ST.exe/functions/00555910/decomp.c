@@ -4,7 +4,8 @@
    E:\__titans\grig\traks.cpp
    TraksClassTy::DrawTrakSprite */
 
-void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
+void __thiscall
+TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *param_1)
 
 {
   undefined2 uVar1;
@@ -28,59 +29,59 @@ void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    sVar4 = *(short *)(param_1 + 0x22);
+    sVar4 = param_1->field_0022;
     local_20 = (int)sVar4;
-    if (((uint)((int)*(short *)(param_1 + 0x14) + *(int *)(param_1 + 0x24)) <=
-         (uint)local_8->field_0020) || (*(short *)(param_1 + 0x3a) != 0)) {
-      *(short *)(param_1 + 0x22) = sVar4 + 1;
-      if (*(short *)(param_1 + 0x36) <= (short)(sVar4 + 1)) {
-        *(short *)(param_1 + 0x22) = sVar4;
-        *(undefined2 *)(param_1 + 0x38) = 1;
+    if (((uint)((int)param_1->field_0014 + param_1->field_0024) <= (uint)local_8->field_0020) ||
+       (param_1->field_003A != 0)) {
+      param_1->field_0022 = sVar4 + 1;
+      if (param_1->field_0036 <= (short)(sVar4 + 1)) {
+        param_1->field_0022 = sVar4;
+        param_1->field_0038 = 1;
       }
-      *(undefined4 *)(param_1 + 0x24) = local_8->field_0020;
+      param_1->field_0024 = local_8->field_0020;
     }
-    local_c = (int)*(short *)(param_1 + 2);
-    local_10 = (int)*(short *)(param_1 + 4);
-    local_18 = (int)*(short *)(param_1 + 0x1e);
-    uVar1 = *(undefined2 *)(param_1 + 0x1c);
-    local_14 = (int)*(short *)(param_1 + 6);
-    local_1c = (int)*(short *)(param_1 + 0x20);
-    if (*(short *)(param_1 + 0x3a) == 0) {
-      iVar3 = local_8->field_0020 - *(int *)(param_1 + 0x28);
+    local_c = (int)(short)param_1->field_0002;
+    local_10 = (int)(short)param_1->field_0004;
+    local_18 = (int)(short)param_1->field_001E;
+    uVar1 = param_1->field_001C;
+    local_14 = (int)(short)param_1->field_0006;
+    local_1c = (int)(short)param_1->field_0020;
+    if (param_1->field_003A == 0) {
+      iVar3 = local_8->field_0020 - param_1->field_0028;
       if (iVar3 == 0) {
         iVar3 = 1;
       }
-      iVar5 = *(short *)(param_1 + 8) * iVar3;
+      iVar5 = param_1->field_0008 * iVar3;
       sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + *(short *)(param_1 + 0x2c);
-      *(short *)(param_1 + 2) = sVar4;
-      if (*(short *)(param_1 + 0xe) != 0) {
-        iVar5 = *(short *)(param_1 + 0xe) * iVar3 * iVar3;
-        *(short *)(param_1 + 2) =
+              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_002C;
+      param_1->field_0002 = sVar4;
+      if (param_1->field_000E != 0) {
+        iVar5 = param_1->field_000E * iVar3 * iVar3;
+        param_1->field_0002 =
              (((short)(iVar5 / 0x14) + (short)(iVar5 >> 0x1f)) -
              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + sVar4;
       }
-      iVar5 = *(short *)(param_1 + 10) * iVar3;
+      iVar5 = param_1->field_000A * iVar3;
       sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + *(short *)(param_1 + 0x2e);
-      *(short *)(param_1 + 4) = sVar4;
-      if (*(short *)(param_1 + 0x10) != 0) {
-        iVar5 = *(short *)(param_1 + 0x10) * iVar3 * iVar3;
-        *(short *)(param_1 + 4) =
+              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_002E;
+      param_1->field_0004 = sVar4;
+      if (param_1->field_0010 != 0) {
+        iVar5 = param_1->field_0010 * iVar3 * iVar3;
+        param_1->field_0004 =
              (((short)(iVar5 / 0x14) + (short)(iVar5 >> 0x1f)) -
              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + sVar4;
       }
-      iVar5 = *(short *)(param_1 + 0xc) * iVar3;
+      iVar5 = param_1->field_000C * iVar3;
       sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + *(short *)(param_1 + 0x30);
-      *(short *)(param_1 + 6) = sVar4;
-      if (*(short *)(param_1 + 0x12) != 0) {
-        iVar3 = *(short *)(param_1 + 0x12) * iVar3 * iVar3;
-        *(short *)(param_1 + 6) =
+              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_0030;
+      param_1->field_0006 = sVar4;
+      if (param_1->field_0012 != 0) {
+        iVar3 = param_1->field_0012 * iVar3 * iVar3;
+        param_1->field_0006 =
              (((short)(iVar3 / 0x14) + (short)(iVar3 >> 0x1f)) -
              (short)((longlong)iVar3 * 0x66666667 >> 0x3f)) + sVar4;
       }
-      sVar4 = *(short *)(param_1 + 2);
+      sVar4 = param_1->field_0002;
       if (sVar4 < 0) {
         sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)
                 ) + -1;
@@ -88,8 +89,8 @@ void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
       else {
         sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
       }
-      *(short *)(param_1 + 0x1c) = sVar4;
-      sVar4 = *(short *)(param_1 + 4);
+      param_1->field_001C = sVar4;
+      sVar4 = param_1->field_0004;
       if (sVar4 < 0) {
         sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)
                 ) + -1;
@@ -97,8 +98,8 @@ void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
       else {
         sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
       }
-      *(short *)(param_1 + 0x1e) = sVar4;
-      sVar4 = *(short *)(param_1 + 6);
+      param_1->field_001E = sVar4;
+      sVar4 = param_1->field_0006;
       if (sVar4 < 0) {
         sVar4 = ((sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f)
                 ) + -1;
@@ -106,30 +107,29 @@ void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
       else {
         sVar4 = (sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f);
       }
-      *(short *)(param_1 + 0x20) = sVar4;
-      iVar3 = thunk_FUN_00555880(param_1);
+      param_1->field_0020 = sVar4;
+      iVar3 = thunk_FUN_00555880((AnonShape_00555880_021D11E5 *)param_1);
       if (iVar3 == 0) {
-        *(undefined2 *)(param_1 + 2) = (undefined2)local_c;
-        *(undefined2 *)(param_1 + 4) = (undefined2)local_10;
-        *(undefined2 *)(param_1 + 0x1c) = uVar1;
-        *(undefined2 *)(param_1 + 0x1e) = (undefined2)local_18;
-        *(undefined2 *)(param_1 + 6) = (undefined2)local_14;
-        *(undefined2 *)(param_1 + 0x20) = (undefined2)local_1c;
-        if (((*(short *)(param_1 + 8) != 0) || (*(short *)(param_1 + 10) != 0)) ||
-           (*(short *)(param_1 + 0xc) != 0)) {
-          *(undefined2 *)(param_1 + 0x3a) = 1;
+        param_1->field_0002 = (undefined2)local_c;
+        param_1->field_0004 = (undefined2)local_10;
+        param_1->field_001C = uVar1;
+        param_1->field_001E = (undefined2)local_18;
+        param_1->field_0006 = (undefined2)local_14;
+        param_1->field_0020 = (undefined2)local_1c;
+        if (((param_1->field_0008 != 0) || (param_1->field_000A != 0)) || (param_1->field_000C != 0)
+           ) {
+          param_1->field_003A = 1;
         }
       }
     }
-    if ((((*(short *)(param_1 + 2) != local_c) || (*(short *)(param_1 + 4) != local_10)) ||
-        ((*(short *)(param_1 + 6) != local_14 || (*(short *)(param_1 + 0x22) != local_20)))) &&
-       (*(short *)(param_1 + 0x38) == 0)) {
-      FUN_006ea270(DAT_00807598,*(uint *)(param_1 + 0x32),0,(int)*(short *)(param_1 + 0x22));
-      local_20 = (int)*(short *)(param_1 + 2);
-      FUN_006ea960(DAT_00807598,*(uint *)(param_1 + 0x32),
-                   (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)(int)*(short *)(param_1 + 4) * _DAT_007904f8 * _DAT_007904f0,
-                   (float)(int)*(short *)(param_1 + 6) * _DAT_007904f8 * _DAT_007904f0 +
+    if (((((short)param_1->field_0002 != local_c) || ((short)param_1->field_0004 != local_10)) ||
+        (((short)param_1->field_0006 != local_14 || (param_1->field_0022 != local_20)))) &&
+       (param_1->field_0038 == 0)) {
+      FUN_006ea270(PTR_00807598,param_1->field_0032,0,(int)param_1->field_0022);
+      local_20 = (int)(short)param_1->field_0002;
+      FUN_006ea960(PTR_00807598,param_1->field_0032,(float)local_20 * _DAT_007904f8 * _DAT_007904f0,
+                   (float)(int)(short)param_1->field_0004 * _DAT_007904f8 * _DAT_007904f0,
+                   (float)(int)(short)param_1->field_0006 * _DAT_007904f8 * _DAT_007904f0 +
                    _DAT_007904fc);
     }
     g_currentExceptionFrame = local_64.previous;

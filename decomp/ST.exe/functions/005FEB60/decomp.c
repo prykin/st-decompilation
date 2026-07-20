@@ -113,7 +113,8 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
             }
             if (((this_00 != (int *)0x0) && (iVar8 = (**(code **)(*this_00 + 0xf0))(), iVar8 != 0))
                && (((uint)this_00[9] < 8 &&
-                   ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))) {
+                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                    ((byte)(&DAT_008087e9)[this_00[9] * 0x51] < 8)))))) {
               bVar1 = *(byte *)(this_00 + 9);
               bVar2 = *(byte *)((int)this + 0x24);
               if (DAT_00808a8f == '\0') {

@@ -26,7 +26,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   uint local_c;
   undefined4 *local_8;
   
-  if ((this->field_1A5F == '\x06') && (this->field_1A60 == '\0')) {
+  if ((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) {
     local_84.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_84;
     local_10 = this;
@@ -87,7 +87,7 @@ LAB_005a27ba:
 LAB_005a27bf:
             uVar7 = local_c;
             if (iVar3 == 0) {
-              FUN_006b0c70(this_00->field_1EA6,uVar6);
+              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this_00->field_1EA6,uVar6);
               break;
             }
           }

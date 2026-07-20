@@ -28,8 +28,9 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,undefined4 *param_3,char param
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x10b);
     }
-    local_c = EventDataPack(*(undefined4 **)((int)param_3 + 0x106),&local_14);
-    local_8 = (byte *)PlrDataPack(param_3,local_c,local_14,&local_10);
+    local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)param_3 + 0x106),&local_14);
+    local_8 = (byte *)PlrDataPack((AnonShape_0067D3B0_A3AACF30 *)param_3,local_c,local_14,&local_10)
+    ;
     thunk_FUN_0065d0f0((int *)&local_c);
     Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,local_8,local_10,param_4);
     thunk_FUN_0067d160((int *)&local_8);

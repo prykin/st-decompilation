@@ -93,7 +93,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   this->field_0308 = 0;
   this->field_030C = 0;
   this->field_030E = 0;
-  this->field_01E6 = 3;
+  this->field_01E6 = CASE_3;
   this->field_0039 = 0;
   return this;
 }

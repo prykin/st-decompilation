@@ -65,7 +65,8 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         }
       }
       pSVar1 = pCVar4->field_04EB;
-      if ((pSVar1 != (SpriteClassTy *)0x0) && (DAT_00807598 != (void *)0x0)) {
+      if ((pSVar1 != (SpriteClassTy *)0x0) &&
+         (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
         if (pSVar1->field_000C + -1 <= (int)pSVar1->field_0008) {
           SpriteClassTy::CloseSprite(pSVar1);
           Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar4->field_04EB);
@@ -76,7 +77,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= DVar3) {
           pSVar1->field_0044 = DVar3;
           pSVar1->field_0008 = pSVar1->field_0008 + 1;
-          FUN_006e2970(DAT_00807598,*(undefined4 *)(pCVar4 + 1),*(undefined4 *)&pCVar4[1].field_0x4,
+          FUN_006e2970(PTR_00807598,*(undefined4 *)(pCVar4 + 1),*(undefined4 *)&pCVar4[1].field_0x4,
                        pCVar4[1].field_0008,&pCVar4->field_04EB->field_001C,
                        &pCVar4->field_04EB->field_0020);
           pCVar4->field_04EB->field_001C =

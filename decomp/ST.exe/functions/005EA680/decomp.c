@@ -3,7 +3,7 @@
    E:\__titans\Start\wait_obj.cpp
    WaitTy::GetMessage */
 
-undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
+undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD86458 *param_1)
 
 {
   char cVar1;
@@ -48,26 +48,26 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x3bb);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_c,param_1);
-  StartSystemTy::ChatMessage(DAT_0081176c,param_1);
-  uVar8 = *(uint *)(param_1 + 0x10);
+  thunk_FUN_005b6450(local_c,(int)param_1);
+  StartSystemTy::ChatMessage(PTR_0081176c,(int)param_1);
+  uVar8 = *(uint *)&param_1->field_0x10;
   if (uVar8 < 0x6336) {
     if (uVar8 == 0x6335) {
-      DAT_0081176c->field_04CF =
-           *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
-      if (DAT_0081176c->field_04B3 != 0xffffffff) {
+      PTR_0081176c->field_04CF =
+           *(int *)(*(int *)&param_1->field_0x18 + 4) + (uint)param_1->field_0016;
+      if (PTR_0081176c->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  ((uint *)DAT_0081176c->field_04F7,DAT_0081176c->field_04B3,
-                   DAT_0081176c->field_04B7,DAT_0081176c->field_04CB,DAT_0081176c->field_04CF);
+                  ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,
+                   PTR_0081176c->field_04B7,PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
       }
     }
     else if (uVar8 < 0x610b) {
       if (uVar8 == 0x610a) {
         this_02->field_0045 = 0x200;
         this_02->field_0049 = 0;
-        this_02->field_004D = *(undefined4 *)(param_1 + 0x10);
+        this_02->field_004D = *(undefined4 *)&param_1->field_0x10;
         this_02->field_0051 = 8;
-        thunk_FUN_005b66e0(this_02);
+        thunk_FUN_005b66e0((STJellyGunC *)this_02);
       }
       else if (uVar8 < 4) {
         if (uVar8 == 3) {
@@ -77,8 +77,8 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
           NoneWait(this_02,unaff_EDI);
         }
         else if (uVar8 == 2) {
-          InitWait(this_02,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x14),
-                   *(undefined4 *)(*(int *)(param_1 + 0x14) + 0x18));
+          InitWait(this_02,*(undefined4 *)(*(int *)&param_1->field_0x14 + 0x14),
+                   *(undefined4 *)(*(int *)&param_1->field_0x14 + 0x18));
         }
       }
       else if (uVar8 == 5) {
@@ -87,30 +87,34 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       else if (uVar8 == 0x6105) {
         this_02->field_0045 = 0x200;
         this_02->field_0049 = 0;
-        this_02->field_004D = *(undefined4 *)(param_1 + 0x10);
-        this_02->field_0051 = *(undefined4 *)(param_1 + 0x14);
+        this_02->field_004D = *(undefined4 *)&param_1->field_0x10;
+        this_02->field_0051 = *(undefined4 *)&param_1->field_0x14;
         this_02->field_0055 = 0;
-        thunk_FUN_005b66e0(this_02);
+        thunk_FUN_005b66e0((STJellyGunC *)this_02);
       }
     }
     else if (uVar8 < 0x6334) {
       if (uVar8 == 0x6333) {
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_038D,param_1,0);
+        MMMObjTy::PaintSlBut
+                  ((MMMObjTy *)this_02,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_038D,
+                   (int)param_1,0);
       }
       else if (uVar8 == 0x6121) {
         this_02->field_0045 = 0x200;
         this_02->field_0049 = 0;
-        this_02->field_004D = *(undefined4 *)(param_1 + 0x10);
-        this_02->field_0051 = *(undefined4 *)(param_1 + 0x14);
-        this_02->field_0055 = *(undefined4 *)(param_1 + 0x18);
-        thunk_FUN_005b66e0(this_02);
+        this_02->field_004D = *(undefined4 *)&param_1->field_0x10;
+        this_02->field_0051 = *(undefined4 *)&param_1->field_0x14;
+        this_02->field_0055 = *(undefined4 *)&param_1->field_0x18;
+        thunk_FUN_005b66e0((STJellyGunC *)this_02);
       }
       else if (uVar8 == 0x6332) {
-        StartSystemTy::PaintBinDesc(DAT_0081176c,param_1);
+        StartSystemTy::PaintBinDesc(PTR_0081176c,param_1);
       }
     }
     else if (uVar8 == 0x6334) {
-      MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_041E,param_1,0);
+      MMMObjTy::PaintSlBut
+                ((MMMObjTy *)this_02,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_041E,
+                 (int)param_1,0);
     }
     goto cf_common_exit_005EAB6A;
   }
@@ -119,22 +123,26 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       this_02->field_0045 = 0x200;
       this_02->field_0049 = 0;
       this_02->field_004D = 0x6102;
-      this_02->field_0051 = *(undefined4 *)(param_1 + 0x14);
-      thunk_FUN_005b66e0(this_02);
+      this_02->field_0051 = *(undefined4 *)&param_1->field_0x14;
+      thunk_FUN_005b66e0((STJellyGunC *)this_02);
     }
     else if (uVar8 < 0x6940) {
       if (uVar8 == 0x693f) {
-        thunk_FUN_005e9970((int)this_02);
+        thunk_FUN_005e9970((AnonShape_005E9970_7C1AA6F1 *)this_02);
       }
       else if (uVar8 == 0x6340) {
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&this_02->field_1A5B->field_055C,param_1,0);
+        MMMObjTy::PaintSlBut
+                  ((MMMObjTy *)this_02,
+                   (AnonShape_005B6560_61F462DF *)&this_02->field_1A5B->field_055C,(int)param_1,0);
       }
       else if (uVar8 == 0x6341) {
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&this_02->field_1A5B->field_05ED,param_1,0);
+        MMMObjTy::PaintSlBut
+                  ((MMMObjTy *)this_02,
+                   (AnonShape_005B6560_61F462DF *)&this_02->field_1A5B->field_05ED,(int)param_1,0);
       }
     }
     else if (uVar8 == 0x6940) {
-      thunk_FUN_005e9a40(this_02);
+      thunk_FUN_005e9a40((AnonShape_005E9A40_265F7E5B *)this_02);
     }
     goto cf_common_exit_005EAB6A;
   }
@@ -144,7 +152,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       this_02->field_1A64 = 0;
     }
     else if (uVar8 == 0x6943) {
-      thunk_FUN_005b6350(this_02,0x6942,*(undefined4 *)(param_1 + 0x14),0);
+      thunk_FUN_005b6350(this_02,0x6942,*(undefined4 *)&param_1->field_0x14,0);
       this_02->field_1A64 = 0;
       if (DAT_00811768 == '\x01') {
         DAT_00811768 = '\x02';
@@ -265,7 +273,7 @@ LAB_005eab28:
   FUN_006e6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
-  uVar6 = MMObjTy::GetMessage((MMObjTy *)this_02,param_1);
+  uVar6 = MMObjTy::GetMessage((MMObjTy *)this_02,(int)param_1);
   return uVar6;
 }
 

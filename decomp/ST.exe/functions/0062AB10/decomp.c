@@ -54,7 +54,7 @@ FUN_0062ab10(void *this,int param_1,int param_2,int param_3,int param_4,int para
         *(int *)((int)this + 0x92) = (iVar4 * 10000) / iVar7;
         *(int *)((int)this + 0x96) = (iVar2 * 10000) / iVar7;
         *(int *)((int)this + 0x9a) = (int)(iVar1 + (iVar1 >> 0x1f & 0x7fU)) >> 7;
-        *(undefined4 *)((int)this + 0xae) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        *(undefined4 *)((int)this + 0xae) = PTR_00802a38->field_00E4;
         return 1;
       }
       iVar2 = *(int *)((int)this + 0x9a);

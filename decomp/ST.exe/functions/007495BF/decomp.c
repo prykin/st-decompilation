@@ -12,7 +12,7 @@ uint __fastcall FUN_007495bf(uint param_1)
   lpCriticalSection = (LPCRITICAL_SECTION)(-(uint)(param_1 != 0) & param_1 + 0x10);
   local_8 = param_1;
   EnterCriticalSection(lpCriticalSection);
-  uVar1 = FUN_00749415(param_1);
+  uVar1 = FUN_00749415((AnonShape_00749415_513CA2B2 *)param_1);
   local_8 = uVar1;
   if ((int)uVar1 < 0) {
     LeaveCriticalSection(lpCriticalSection);
@@ -20,7 +20,7 @@ uint __fastcall FUN_007495bf(uint param_1)
   else {
     if (uVar1 != 1) {
       if (*(int *)(param_1 + 0x58) != 0) {
-        FUN_007496a1(param_1);
+        FUN_007496a1((AnonShape_007496A1_B3436AED *)param_1);
       }
       pvVar2 = VirtualAlloc((LPVOID)0x0,
                             (*(int *)(param_1 + 0x40) + *(int *)(param_1 + 0x48)) *

@@ -187,11 +187,12 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         iVar5 = thunk_FUN_00640170(this,*(int *)((int)this + 0x2a4),*(int *)((int)this + 0x2a8),
                                    *(undefined4 *)((int)this + 0x2b4));
         if (iVar5 != 0) {
-          thunk_FUN_00640240((int)this);
+          thunk_FUN_00640240(this);
         }
       }
-      iVar5 = *(int *)(*(int *)((int)this + 0x211) + 0x380);
-      fVar7 = FUN_006e3210(*(int *)((int)this + 0x211),(*(int *)((int)this + 0x2a4) * iVar5) / 0xc9,
+      iVar5 = (*(AnonShape_006E3210_FE49985F **)((int)this + 0x211))->field_0380;
+      fVar7 = FUN_006e3210(*(AnonShape_006E3210_FE49985F **)((int)this + 0x211),
+                           (*(int *)((int)this + 0x2a4) * iVar5) / 0xc9,
                            (*(int *)((int)this + 0x2a8) * iVar5) / 0xc9);
       *(float *)((int)this + 0x332) = (float)(fVar7 + (float10)_DAT_00790500);
       return 0;

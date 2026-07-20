@@ -95,9 +95,11 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       if (0 < local_18) {
         uVar14 = 0;
         do {
-          FUN_006acc70(pSVar12->field_00EF,uVar14,(undefined4 *)&local_2c);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar12->field_00EF,uVar14,
+                       (undefined4 *)&local_2c);
           if ((local_2c < 8) &&
-             ((((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)) &&
+             ((((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)) &&
                (piVar8 = (int *)STAllPlayersC::GetObjPtr
                                           (g_sTAllPlayers_007FA174,
                                            CONCAT22(uStack_2a,CONCAT11(cStack_2b,local_2c)),
@@ -175,8 +177,8 @@ LAB_0049af27:
                     }
                     if (((piVar8 != (int *)0x0) && (piVar8[8] == 0x1ae)) &&
                        ((local_2c = *(byte *)(piVar8 + 9), local_2c < 8 &&
-                        ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8))))
-                       )) {
+                        ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                         ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)))))) {
                       bVar1 = local_8->field_0024;
                       _local_20 = CONCAT31(uStack_1f,bVar1);
                       if (DAT_00808a8f == '\0') {
@@ -230,8 +232,8 @@ LAB_0049b073:
                   else {
                     local_2c = *(byte *)(piVar8 + 9);
                     if ((local_2c < 8) &&
-                       ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8))))
-                    {
+                       ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                        ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)))) {
                       bVar1 = local_8->field_0024;
                       _local_1c = CONCAT31(uStack_1b,bVar1);
                       if (DAT_00808a8f == '\0') {
@@ -313,13 +315,14 @@ LAB_0049aec9:
       iVar6 = *(int *)(local_8->field_020E + 0xc);
       if (0 < iVar6) {
         do {
-          FUN_006acc70(local_8->field_020E,(int)sVar5,(undefined4 *)&local_2c);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8->field_020E,(int)sVar5,
+                       (undefined4 *)&local_2c);
           if ((cStack_2b != '\x01') ||
              (uVar14 = STAllPlayersC::GetObjPtr
                                  (g_sTAllPlayers_007FA174,CONCAT22(uStack_2a,CONCAT11(1,local_2c)),
                                   CONCAT22(uStack_28,uStack_2a),CASE_1),
              *(int *)(uVar14 + 0x20) != 0x14)) {
-            FUN_006b0c70(local_8->field_020E,(int)sVar5);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_8->field_020E,(int)sVar5);
             iVar6 = iVar6 + -1;
             sVar5 = sVar5 + -1;
           }

@@ -1,5 +1,5 @@
 
-uint __fastcall FUN_006d5ed0(int param_1)
+uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
 
 {
   int *piVar1;
@@ -7,89 +7,88 @@ uint __fastcall FUN_006d5ed0(int param_1)
   void *this;
   undefined4 *puVar3;
   int iVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   LPCRITICAL_SECTION lpCriticalSection;
-  int iVar5;
+  AnonShape_006D5ED0_6A5D6B49 *pAVar6;
   InternalExceptionFrame local_5c;
   uint local_18;
-  int local_14;
+  AnonShape_006D5ED0_6A5D6B49 *local_14;
   int local_10;
-  int local_c;
-  LPCRITICAL_SECTION local_8;
+  AnonShape_006D5ED0_5EF510E8 *local_c;
+  _RTL_CRITICAL_SECTION *local_8;
   
-  iVar4 = *(int *)(*(int *)(param_1 + 0x5c) + 0x288);
-  if (param_1 == 0) {
+  iVar5 = *(int *)(param_1->field_005C + 0x288);
+  if (param_1 == (AnonShape_006D5ED0_5EF510E8 *)0x0) {
     lpCriticalSection = (LPCRITICAL_SECTION)0x0;
   }
   else {
-    lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 0x10);
+    lpCriticalSection = (LPCRITICAL_SECTION)&param_1->field_0x10;
   }
-  local_10 = iVar4;
+  local_10 = iVar5;
   local_c = param_1;
   local_8 = lpCriticalSection;
   EnterCriticalSection(lpCriticalSection);
-  uVar2 = FUN_00749415(param_1);
+  uVar2 = FUN_00749415((AnonShape_00749415_513CA2B2 *)param_1);
   local_18 = uVar2;
   if ((int)uVar2 < 0) {
     LeaveCriticalSection(lpCriticalSection);
     return uVar2;
   }
-  if (*(int *)(param_1 + 0x3c) < *(int *)(param_1 + 0x38)) {
+  if (param_1->field_003C < param_1->field_0038) {
     do {
-      iVar5 = *(int *)(*(int *)(param_1 + 0x58) + 0x44) + 0x30;
-      local_14 = iVar5;
-      if (*(int *)(*(int *)(param_1 + 0x5c) + 0x310) == 0) {
+      pAVar6 = (AnonShape_006D5ED0_6A5D6B49 *)(*(int *)(param_1->field_0058 + 0x44) + 0x30);
+      local_14 = pAVar6;
+      if (*(int *)(param_1->field_005C + 0x310) == 0) {
         local_5c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_5c;
         uVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
         param_1 = local_c;
-        iVar4 = local_10;
-        iVar5 = local_14;
+        iVar5 = local_10;
+        pAVar6 = local_14;
         if (uVar2 != 0) {
           g_currentExceptionFrame = local_5c.previous;
           LeaveCriticalSection(local_8);
           return uVar2;
         }
-        if (*(int *)(local_c + 0x70) == 0) {
-          uVar2 = (int)*(uint *)(local_14 + 8) >> 0x1f;
+        if (*(int *)(local_c + 1) == 0) {
+          uVar2 = (int)local_14->field_0008 >> 0x1f;
           Library::DKW::DDX::FUN_006c4350
-                    (*(int *)(local_10 + 0x28),(undefined4 *)(local_c + 100),
-                     *(undefined4 *)(local_14 + 4),(*(uint *)(local_14 + 8) ^ uVar2) - uVar2,0,
-                     *(uint *)(local_10 + 4) & 0xc);
+                    (*(int *)(local_10 + 0x28),&local_c->field_0064,local_14->field_0004,
+                     (local_14->field_0008 ^ uVar2) - uVar2,0,*(uint *)(local_10 + 4) & 0xc);
         }
         g_currentExceptionFrame = local_5c.previous;
       }
       else {
-        *(undefined4 *)(param_1 + 100) = *(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x40);
+        param_1->field_0064 = *(undefined4 *)(*(int *)(iVar5 + 0x28) + 0x40);
       }
-      *(uint *)(iVar4 + 4) = *(uint *)(iVar4 + 4) | 0x2000000;
+      *(uint *)(iVar5 + 4) = *(uint *)(iVar5 + 4) | 0x2000000;
       this = (void *)Library::MSVCRT::FUN_0072e530(0x48);
       if (this == (void *)0x0) {
         puVar3 = (undefined4 *)0x0;
       }
       else {
-        puVar3 = FUN_006d6160(this,param_1,0,&local_18,*(undefined4 *)(param_1 + 100),
-                              *(undefined4 *)(iVar5 + 0x14));
+        puVar3 = FUN_006d6160(this,param_1,0,&local_18,param_1->field_0064,pAVar6[1].field_0008);
       }
-      *(undefined4 **)(param_1 + 0x60) = puVar3;
+      param_1->field_0060 = puVar3;
       if (puVar3 == (undefined4 *)0x0) {
-        if ((*(int *)(*(int *)(param_1 + 0x5c) + 0x310) == 0) &&
-           (piVar1 = *(int **)(param_1 + 100), piVar1 != (int *)0x0)) {
+        if ((*(int *)(param_1->field_005C + 0x310) == 0) &&
+           (piVar1 = (int *)param_1->field_0064, piVar1 != (int *)0x0)) {
           (**(code **)(*piVar1 + 8))(piVar1);
-          *(undefined4 *)(param_1 + 100) = 0;
+          param_1->field_0064 = 0;
         }
         LeaveCriticalSection(local_8);
         return 0x8007000e;
       }
-      *(undefined4 *)(param_1 + 0x6c) = 0;
-      *(undefined4 *)(param_1 + 0x68) = 0;
-      puVar3[7] = *(undefined4 *)(param_1 + 0x28);
-      *(undefined4 **)(param_1 + 0x28) = puVar3;
-      *(int *)(param_1 + 0x2c) = *(int *)(param_1 + 0x2c) + 1;
-      iVar5 = *(int *)(param_1 + 0x3c) + 1;
-      *(int *)(param_1 + 0x3c) = iVar5;
-    } while (iVar5 < *(int *)(param_1 + 0x38));
+      param_1->field_006C = 0;
+      param_1->field_0068 = 0;
+      puVar3[7] = param_1->field_0028;
+      param_1->field_0028 = puVar3;
+      param_1->field_002C = param_1->field_002C + 1;
+      iVar4 = param_1->field_003C + 1;
+      param_1->field_003C = iVar4;
+    } while (iVar4 < param_1->field_0038);
   }
   LeaveCriticalSection(local_8);
   return 0;

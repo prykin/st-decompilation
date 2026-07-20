@@ -73,7 +73,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
                  (undefined4 *)(pSVar3->field_1A5B + 0x140));
     }
     uVar11 = 0;
-    pcVar10 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
     uVar9 = 0xffffffff;
     uVar8 = 0xfffffffe;
     puVar4 = (uint *)FUN_006b0140(0x26b2,HINSTANCE_00807618);

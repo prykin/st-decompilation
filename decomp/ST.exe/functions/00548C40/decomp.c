@@ -176,28 +176,28 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     (*pcVar4)();
     return;
   }
-  if (DAT_00807598 != (void *)0x0) {
+  if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
     local_148 = local_124->field_00EF;
     local_144 = local_124->field_00F3;
     local_140 = iVar6;
-    FUN_006e25d0(DAT_00807598,&local_218);
+    FUN_006e25d0(PTR_00807598,&local_218);
     pCVar5->field_00DF = local_218 >> 0x10;
     pCVar5->field_00E7 = (pCVar5->field_00C5 - pCVar5->field_04B2) - (local_218 >> 0x10);
     pCVar5->field_00E3 = local_214 >> 0x10;
     pCVar5->field_00EB = (pCVar5->field_00C9 - pCVar5->field_04B6) - (local_214 >> 0x10);
   }
-  if (DAT_00802a38 == 0) {
+  if (PTR_00802a38 == (STPlaySystemC *)0x0) {
     g_currentExceptionFrame = local_2c8.previous;
     return;
   }
   if (pCVar5->field_04DE != '\0') {
     if (((pCVar5->field_0494 == 0x48) && (pSVar2 = pCVar5->field_049A, pSVar2 != (STFishC *)0x0)) &&
        (DAT_00801690 != (void *)0x0)) {
-      iVar6 = (*pSVar2->vtable->slot_2C)();
+      iVar6 = (*pSVar2->vtable->vfunc_2C)();
       if (iVar6 == 0x78) {
         iVar6 = *(int *)&pCVar5->field_049A->field_0x259;
       }
-      iVar7 = (*pSVar2->vtable->slot_0C)();
+      iVar7 = (*pSVar2->vtable->vfunc_0C)();
       thunk_FUN_00514bc0(DAT_00801690,iVar6,iVar7);
       pCVar5->field_04DE = 0;
     }
@@ -292,24 +292,24 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar13 = (undefined4 *)0x17;
       goto cf_common_join_0054A19A;
     case 0xe:
-      if (DAT_007fb2ac != 0) {
+      if (PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
         local_b8 = *(undefined4 *)&pCVar5->field_0x4aa;
         local_b4 = 0;
         local_b0 = 0;
         local_ac = 0;
-        if (*(int *)(DAT_007fb2ac + 0x24) != 0) {
+        if (PTR_007fb2ac->field_0024 != 0) {
           if (&stack0x00000000 != (undefined1 *)0xb4) {
-            local_b4 = *(undefined4 *)(DAT_007fb2ac + 0x30);
+            local_b4 = PTR_007fb2ac->field_0030;
           }
           if (&stack0x00000000 != (undefined1 *)0xb0) {
-            local_b0 = *(undefined4 *)(DAT_007fb2ac + 0x34);
+            local_b0 = PTR_007fb2ac->field_0034;
           }
           if (&stack0x00000000 != (undefined1 *)0xac) {
-            local_ac = *(undefined4 *)(DAT_007fb2ac + 0x38);
+            local_ac = PTR_007fb2ac->field_0038;
           }
-          if (*(int *)(DAT_007fb2ac + 0x24) != 0) {
+          if (PTR_007fb2ac->field_0024 != 0) {
             thunk_FUN_0054edf0((undefined4 *)0x23,&local_b8,0,0xffffffff);
-            iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+            iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                                  pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                                  (float *)&local_8);
             if (iVar6 != 0) {
@@ -420,7 +420,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar13 = puVar13 + 1;
     }
     if (pCVar5->field_049A == (STFishC *)0x0) {
-      iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+      iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                            pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
       if (iVar6 == 0) break;
@@ -452,7 +452,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 5:
   case 6:
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 != 0) {
@@ -480,7 +480,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     break;
   case 8:
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 != 0) {
@@ -523,7 +523,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_160[0] = 1;
     local_160._1_4_ = pCVar5->field_049A->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x16,(undefined4 *)local_160,0,0xffffffff);
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 == 0) break;
@@ -588,7 +588,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 0xf:
   case 0x10:
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 != 0) {
@@ -617,7 +617,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     break;
   case 0x11:
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 != 0) {
@@ -653,24 +653,24 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar13 = (undefined4 *)0x1f;
     goto cf_common_join_0054A19A;
   case 0x14:
-    if (DAT_007fb2ac != 0) {
+    if (PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
       local_c8 = *(undefined4 *)&pCVar5->field_0x4aa;
       local_c4 = 0;
       local_c0 = 0;
       local_bc = 0;
-      if (*(int *)(DAT_007fb2ac + 0x24) != 0) {
+      if (PTR_007fb2ac->field_0024 != 0) {
         if (&stack0x00000000 != (undefined1 *)0xc4) {
-          local_c4 = *(undefined4 *)(DAT_007fb2ac + 0x30);
+          local_c4 = PTR_007fb2ac->field_0030;
         }
         if (&stack0x00000000 != (undefined1 *)0xc0) {
-          local_c0 = *(undefined4 *)(DAT_007fb2ac + 0x34);
+          local_c0 = PTR_007fb2ac->field_0034;
         }
         if (&stack0x00000000 != (undefined1 *)0xbc) {
-          local_bc = *(undefined4 *)(DAT_007fb2ac + 0x38);
+          local_bc = PTR_007fb2ac->field_0038;
         }
-        if (*(int *)(DAT_007fb2ac + 0x24) != 0) {
+        if (PTR_007fb2ac->field_0024 != 0) {
           thunk_FUN_0054edf0((undefined4 *)0x23,&local_c8,0,0xffffffff);
-          iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+          iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                                pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                                (float *)&local_8);
           if (iVar6 != 0) {
@@ -714,7 +714,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar13 = (undefined4 *)0x21;
     goto cf_common_join_0054A19A;
   case 0x19:
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 != 0) {
@@ -792,7 +792,7 @@ LAB_0054a196:
     goto cf_common_join_0054A19A;
   case 0x1d:
     if (pCVar5->field_04A2 == 0x18) {
-      iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+      iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                            pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
       if (iVar6 == 0) break;
@@ -841,7 +841,7 @@ LAB_0054a196:
     local_d8._1_3_ = (int3)local_7a;
     local_d4 = (char)(local_7a >> 0xf);
     thunk_FUN_0054edf0((undefined4 *)0x1a,&local_e0,0,0xffffffff);
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 == 0) break;
@@ -886,7 +886,7 @@ cf_common_join_0054A19A:
     local_284[0]._0_1_ = 0x19;
     local_267 = pSVar2->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_284,0,0xffffffff);
-    iVar6 = FUN_006e1dd0(DAT_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
+    iVar6 = FUN_006e1dd0(PTR_00807598,pCVar5->field_00C5 - pCVar5->field_04B2,
                          pCVar5->field_00C9 - pCVar5->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar6 == 0) break;

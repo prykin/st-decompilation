@@ -15,8 +15,8 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
   if (*(char *)((int)this + 0x644) == '\x01') {
     uVar1 = (ushort)param_1;
     if ((uVar1 < 8) &&
-       ((((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(short)uVar1 * 0x51] < 8)) &&
-         (uVar4 = (uint)(short)uVar1, uVar4 != local_8)) &&
+       ((((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(short)uVar1 * 0x51] < 8))
+         && (uVar4 = (uint)(short)uVar1, uVar4 != local_8)) &&
         (uVar2 = *(uint *)((int)this + 0x5d7), uVar4 != uVar2)))) {
       if (DAT_00808a8f == '\0') {
         iVar3 = thunk_FUN_005822e0(&DAT_00807620,(byte)param_1,(byte)uVar2);

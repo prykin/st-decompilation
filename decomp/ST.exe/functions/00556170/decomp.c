@@ -70,30 +70,30 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
                            (piVar7,CASE_1D,text,uVar8,bVar9,iVar3,iVar10,puVar11);
         psVar6[0x1b] = *puVar4;
         iVar3 = *psVar6 * 0x18;
-        FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
+        FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
                      *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
                      *(uint *)(&DAT_007c8ffc + iVar3),0);
         *(uint *)(psVar6 + 0x19) = local_8;
-        FUN_006e98e0(DAT_00807598,local_8,0,(int)psVar6[0x1b],*(int *)((int)puVar4 + 0x21),1);
-        FUN_006ea270(DAT_00807598,*(uint *)(psVar6 + 0x19),0,(int)psVar6[0x11]);
+        FUN_006e98e0(PTR_00807598,local_8,0,(int)psVar6[0x1b],*(int *)((int)puVar4 + 0x21),1);
+        FUN_006ea270(PTR_00807598,*(uint *)(psVar6 + 0x19),0,(int)psVar6[0x11]);
         iVar3 = *(int *)(psVar6 + 0xb);
         if (-1 < iVar3) {
           if (psVar6[0xd] == -1) {
-            FUN_006ea3e0(DAT_00807598,*(uint *)(psVar6 + 0x19),iVar3);
+            FUN_006ea3e0(PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
           }
           else if (psVar6[0xd] == 1) {
-            FUN_006ea460(DAT_00807598,*(uint *)(psVar6 + 0x19),iVar3);
+            FUN_006ea460(PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
           }
         }
-        FUN_006ea4e0(DAT_00807598,*(uint *)(psVar6 + 0x19),1,
+        FUN_006ea4e0(PTR_00807598,*(uint *)(psVar6 + 0x19),1,
                      *(int *)(&DAT_007c9000 + *psVar6 * 0x18) / 2,
                      *(int *)(&DAT_007c9004 + *psVar6 * 0x18) / 2);
         local_10 = (int)psVar6[1];
-        FUN_006ea960(DAT_00807598,*(uint *)(psVar6 + 0x19),
+        FUN_006ea960(PTR_00807598,*(uint *)(psVar6 + 0x19),
                      (float)local_10 * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)psVar6[2] * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)psVar6[3] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-        FUN_006eaaa0(DAT_00807598,*(uint *)(psVar6 + 0x19),0);
+        FUN_006eaaa0(PTR_00807598,*(uint *)(psVar6 + 0x19),0);
         *(undefined4 *)(psVar6 + 0x12) = pTVar2->field_0020;
       }
     }

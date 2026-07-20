@@ -4,6 +4,7 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
 {
   short sVar1;
   undefined4 uVar2;
+  AnonShape_00482DB0_070D50BF *this;
   short sVar3;
   int *piVar4;
   int iVar5;
@@ -21,10 +22,10 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   int local_20;
   int local_1c;
   undefined4 local_18;
-  int *local_14;
+  AnonShape_00482DB0_070D50BF *local_14;
   ushort *local_10;
   short local_c [2];
-  int *local_8;
+  AnonShape_00482DB0_070D50BF *local_8;
   
   if (((char)param_1[0x10] != '\0') || (*(char *)((int)param_1 + 0x4d) != '\0')) {
     return 1;
@@ -47,29 +48,32 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   }
   sVar1 = (short)param_1[0x201];
   sVar3 = *(short *)((int)param_1 + 0x802);
-  local_14 = (int *)CONCAT22((short)((uint)iVar5 >> 0x10),sVar3);
+  local_14 = (AnonShape_00482DB0_070D50BF *)CONCAT22((short)((uint)iVar5 >> 0x10),sVar3);
   if (param_1[0x1ff] == 3) {
     sVar8 = (short)param_1[0x200];
     if ((((-1 < sVar8) && (sVar8 < SHORT_007fb240)) &&
         ((-1 < sVar3 && ((sVar3 < SHORT_007fb242 && (-1 < sVar1)))))) && (sVar1 < SHORT_007fb244)) {
-      local_8 = *(int **)(DAT_007fb248 + 4 +
-                         ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar8) * 8);
+      local_8 = *(AnonShape_00482DB0_070D50BF **)
+                 (DAT_007fb248 + 4 +
+                 ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar8)
+                 * 8);
 LAB_00482f52:
-      if ((local_8 != (int *)0x0) && (local_8[6] == param_1[0x1fd])) goto LAB_00482fa9;
+      if ((local_8 != (AnonShape_00482DB0_070D50BF *)0x0) &&
+         (*(int *)&local_8->field_0x18 == param_1[0x1fd])) goto LAB_00482fa9;
     }
   }
   else {
     sVar8 = (short)param_1[0x200];
     if (((-1 < sVar8) && (sVar8 < SHORT_007fb240)) &&
        ((-1 < sVar3 && (((sVar3 < SHORT_007fb242 && (-1 < sVar1)) && (sVar1 < SHORT_007fb244)))))) {
-      local_8 = *(int **)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar8) * 8);
+      local_8 = *(AnonShape_00482DB0_070D50BF **)
+                 (DAT_007fb248 +
+                 ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar8)
+                 * 8);
       goto LAB_00482f52;
     }
   }
-  iVar5 = FUN_006e62d0(DAT_00802a38,param_1[0x1fd],(int *)&local_14);
+  iVar5 = FUN_006e62d0(PTR_00802a38,param_1[0x1fd],(int *)&local_14);
   if (iVar5 == -4) {
     return 4;
   }
@@ -77,15 +81,16 @@ LAB_00482f52:
                      (undefined2 *)(param_1 + 0x201));
   local_8 = local_14;
 LAB_00482fa9:
-  piVar4 = local_8;
-  iVar5 = (**(code **)(*local_8 + 0xf8))();
+  this = local_8;
+  iVar5 = (**(code **)(*(int *)local_8 + 0xf8))();
   if (iVar5 == 0) {
     return 4;
   }
-  if ((piVar4[8] == 0x1ae) && (iVar5 = (**(code **)(*piVar4 + 0xf4))(param_1[9]), iVar5 == 0)) {
+  if ((*(int *)&this->field_0x20 == 0x1ae) &&
+     (iVar5 = (**(code **)(*(int *)this + 0xf4))(param_1[9]), iVar5 == 0)) {
     return 4;
   }
-  thunk_FUN_00416270(piVar4,(undefined2 *)&local_18,&local_1c,(int *)local_c);
+  thunk_FUN_00416270(this,(undefined2 *)&local_18,&local_1c,(int *)local_c);
   iVar5 = FUN_006acf0d((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43),
                        (int)*(short *)((int)param_1 + 0x45),(int)(short)local_18,
                        (int)(short)local_1c,(int)local_c[0]);
@@ -95,7 +100,7 @@ LAB_00482fa9:
   uVar6 = (int)local_c[0] - (int)*(short *)((int)param_1 + 0x45);
   uVar10 = (int)uVar6 >> 0x1f;
   if ((int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar5 < 4) {
-    uVar6 = thunk_FUN_004836c0(param_1);
+    uVar6 = thunk_FUN_004836c0((AnonShape_004836C0_617DC527 *)param_1);
     if ((short)uVar6 != (short)param_1[0x1b]) {
       return 9;
     }
@@ -122,15 +127,15 @@ LAB_00482fa9:
           puVar7 = (undefined4 *)thunk_FUN_0041dc40(local_3c,local_2c,0,(short)param_1[0x1b]);
           local_2c = *puVar7;
           local_28 = *(undefined2 *)(puVar7 + 1);
-          sVar3 = (short)local_2c + *(short *)((int)local_8 + 0x41);
+          sVar3 = (short)local_2c + local_8->field_0041;
           local_18 = CONCAT22((short)((uint)puVar7 >> 0x10),sVar3);
           sVar9 = (short)((uint)local_2c >> 0x10);
-          sVar8 = *(short *)((int)local_8 + 0x43) - sVar9;
+          sVar8 = local_8->field_0043 - sVar9;
           local_1c = CONCAT22(sVar9,sVar8);
-          local_c[0] = *(short *)((int)local_8 + 0x45);
+          local_c[0] = local_8->field_0045;
           iVar5 = STSprGameObjC::CheckRay
                             ((STSprGameObjC *)param_1,(short)uVar2 + sVar1,sVar11,(short)local_24,
-                             sVar3,sVar8,*(short *)((int)local_8 + 0x45),
+                             sVar3,sVar8,local_8->field_0045,
                              *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
                              (int *)&local_14,0);
           if (iVar5 == 0) {

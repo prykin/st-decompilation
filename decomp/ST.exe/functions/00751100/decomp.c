@@ -6,7 +6,7 @@ int FUN_00751100(uint *param_1,ushort *param_2)
   
   iVar1 = Library::DKW::DB::FUN_00753ea0(*param_1,param_2,&param_2);
   if ((iVar1 == 0) && (param_2 != (ushort *)0x0)) {
-    FUN_00753ce0(param_1[1],(uint)param_2);
+    FUN_00753ce0((AnonShape_00753CE0_1943F9C2 *)param_1[1],(uint)param_2);
   }
   return iVar1;
 }

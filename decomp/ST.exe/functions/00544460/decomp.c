@@ -13,17 +13,12 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar4;
+  AnonShape_00544100_1A02F945 *pAVar5;
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [5];
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
+  AnonShape_00544100_1A02F945 local_74;
   undefined4 local_28 [4];
   undefined4 local_18;
-  undefined4 *local_14;
+  AnonShape_00544100_1A02F945 *local_14;
   CursorClassTy *local_8;
   
   local_b8.previous = g_currentExceptionFrame;
@@ -37,53 +32,53 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    local_14 = (undefined4 *)this_00->field_0008;
+    local_14 = (AnonShape_00544100_1A02F945 *)this_00->field_0008;
     local_18 = 0x14;
     FUN_006e6000(this_00,3,1,local_28);
-    puVar4 = local_74;
+    pAVar5 = &local_74;
     for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
+      *(undefined4 *)pAVar5 = 0;
+      pAVar5 = (AnonShape_00544100_1A02F945 *)&pAVar5->field_0004;
     }
-    local_60 = this_00->field_0008;
-    local_5c = 2;
-    local_3c = 2;
-    local_74[0] = 8;
+    local_74._20_4_ = this_00->field_0008;
+    local_74._24_4_ = 2;
+    local_74._56_4_ = 2;
+    local_74._0_4_ = 8;
     local_18 = 0x11;
-    local_74[1] = 0x8000000;
-    local_58 = 0xa110;
-    local_38 = 0xa111;
-    local_40 = local_60;
-    local_14 = local_74;
+    local_74.field_0004 = 0x8000000;
+    local_74.field_001C = 0xa110;
+    local_74.field_003C = 0xa111;
+    local_74._52_4_ = local_74._20_4_;
+    local_14 = &local_74;
     FUN_006e6000(this_00,3,1,local_28);
-    local_74[1] = 0x1000000;
-    local_58 = 0xa112;
-    local_38 = 0xa113;
+    local_74.field_0004 = 0x1000000;
+    local_74.field_001C = 0xa112;
+    local_74.field_003C = 0xa113;
     FUN_006e6000(this_00,3,1,local_28);
-    local_74[1] = 0x40000000;
-    local_58 = 0xa114;
-    local_38 = 0xa115;
+    local_74.field_0004 = 0x40000000;
+    local_74.field_001C = 0xa114;
+    local_74.field_003C = 0xa115;
     FUN_006e6000(this_00,3,1,local_28);
-    local_38 = 0xa133;
+    local_74.field_003C = 0xa133;
     iVar2 = 4;
     do {
-      thunk_FUN_005440c0(this_00,iVar2,local_28,(int)local_74);
+      thunk_FUN_005440c0(this_00,iVar2,local_28,(int)&local_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 8);
-    local_38 = 0;
+    local_74.field_003C = 0;
     iVar2 = 8;
     do {
-      thunk_FUN_005440c0(this_00,iVar2,local_28,(int)local_74);
+      thunk_FUN_005440c0(this_00,iVar2,local_28,(int)&local_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0x50);
     iVar2 = 0;
     do {
-      thunk_FUN_00544150(this_00,iVar2,local_28,(int)local_74);
+      thunk_FUN_00544150(this_00,iVar2,local_28,(int)&local_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 10);
     iVar2 = 0;
     do {
-      thunk_FUN_00544100(this_00,iVar2,local_28,(int)local_74);
+      thunk_FUN_00544100(this_00,iVar2,local_28,&local_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0x1e);
     g_currentExceptionFrame = local_b8.previous;

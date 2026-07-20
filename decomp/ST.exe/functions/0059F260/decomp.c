@@ -41,8 +41,8 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar6 == 0) {
-    if ((byte *)local_10->field_1AE8 != (byte *)0x0) {
-      FUN_006b5570((byte *)local_10->field_1AE8);
+    if ((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8);
     }
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AE8 = puVar2;
@@ -104,7 +104,8 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_84c = 0x690a;
     local_88c = 0x6988;
     local_854 = local_894;
-    (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_1AC4,0,local_8e0,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_8e0,0);
     this_00->field_002D = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

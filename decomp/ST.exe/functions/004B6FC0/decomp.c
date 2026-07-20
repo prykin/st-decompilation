@@ -6,13 +6,13 @@ undefined4 FUN_004b6fc0(char param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  puVar3 = (undefined4 *)((int)&DAT_007f579a + param_1 * 0xa62);
+  puVar3 = &g_playerRuntime[param_1].field2228_0x97a;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
   puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
-  *(uint **)(&DAT_007f57b2 + param_1 * 0xa62) = puVar1;
+  *(uint **)&g_playerRuntime[param_1].field_0x992 = puVar1;
   return 0;
 }
 

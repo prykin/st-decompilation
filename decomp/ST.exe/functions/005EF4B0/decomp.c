@@ -7,7 +7,7 @@ bool __thiscall FUN_005ef4b0(void *this,int param_1)
   
   if ((1 < *(byte *)((int)this + 0x252)) &&
      (iVar1 = thunk_FUN_00495ff0(*(short *)((int)this + 0x254),*(short *)((int)this + 0x256),
-                                 *(short *)((int)this + 600),0,(int)this), iVar1 == 0)) {
+                                 *(short *)((int)this + 600),0,this), iVar1 == 0)) {
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + -1;
   }
   iVar1 = (int)(short)(*(short *)((int)this + 0x242) * 0xc9 + 100);

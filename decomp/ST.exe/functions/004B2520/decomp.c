@@ -86,7 +86,8 @@ LAB_004b266b:
                                     (int)sVar13 * (int)SHORT_007fb246 + (int)sVar3) * 8);
               }
               if (((piVar14 != (int *)0x0) && ((uint)piVar14[9] < 8)) &&
-                 (((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[piVar14[9] * 0x51] < 8)) &&
+                 (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                   ((byte)(&DAT_008087e9)[piVar14[9] * 0x51] < 8)) &&
                   (iVar8 = (**(code **)(*piVar14 + 0x2c))(), uVar12 = _SHORT_007fb240, iVar8 == 0x6f
                   )))) {
                 bVar1 = *(byte *)(piVar14 + 9);
@@ -149,7 +150,7 @@ LAB_004b288e:
     if (*piVar14 < 0) {
       local_30[0x134] = 0;
     }
-    local_30[0x135] = *(int *)(DAT_00802a38 + 0xe4);
+    local_30[0x135] = PTR_00802a38->field_00E4;
     uVar12 = _SHORT_007fb240;
   }
   local_28 = 1;

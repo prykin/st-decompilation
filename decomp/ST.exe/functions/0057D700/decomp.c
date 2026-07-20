@@ -37,7 +37,7 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
   uVar5 = (uint)SHORT_007fb242;
   uVar6 = uVar5 - 1;
   sub_004162B0(this,&local_a,&local_8,&local_6);
-  local_18 = (int)this->field_004B - (*(uint *)(DAT_00802a38 + 0xe4) & 1);
+  local_18 = (int)this->field_004B - (PTR_00802a38->field_00E4 & 1);
   if (local_18 < 0) {
     local_18 = 1;
   }

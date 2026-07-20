@@ -1,5 +1,5 @@
 
-void FUN_006e8840(int param_1)
+void FUN_006e8840(AnonShape_006E8840_CF3FA5BA *param_1)
 
 {
   int iVar1;
@@ -10,9 +10,9 @@ void FUN_006e8840(int param_1)
   int iVar6;
   int local_c;
   
-  piVar2 = *(int **)(param_1 + 0xa0);
+  piVar2 = param_1->field_00A0;
   if (piVar2 != (int *)0x0) {
-    local_c = *(int *)(param_1 + 0x94);
+    local_c = param_1->field_0094;
     iVar5 = 0;
     iVar6 = 0;
     if (0 < local_c) {
@@ -36,8 +36,8 @@ void FUN_006e8840(int param_1)
         local_c = local_c + -1;
       } while (local_c != 0);
     }
-    *(int *)(param_1 + 0x38) = iVar6;
-    *(int *)(param_1 + 0x34) = iVar5;
+    param_1->field_0038 = iVar6;
+    param_1->field_0034 = iVar5;
   }
   return;
 }

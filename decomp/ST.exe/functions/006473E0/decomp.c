@@ -36,7 +36,7 @@ void __thiscall FUN_006473e0(void *this,undefined4 param_1)
 cf_common_exit_00647445:
   local_1c = param_1;
   local_30 = 0;
-  (**(code **)(*DAT_00802a38 + 8))(0x124,0,0,local_44,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x124,0,0,local_44,0);
   thunk_FUN_00647a60(this,0x4b5);
   return;
 }

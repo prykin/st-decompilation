@@ -2,17 +2,17 @@
 void __fastcall FUN_0064cd30(int param_1)
 
 {
-  int iVar1;
+  AnonShape_0065D030_CB0F82F0 *pAVar1;
   
   if (param_1 == 0) {
-    iVar1 = 0;
+    pAVar1 = (AnonShape_0065D030_CB0F82F0 *)0x0;
   }
   else {
-    iVar1 = param_1 + 0x8c;
+    pAVar1 = (AnonShape_0065D030_CB0F82F0 *)(param_1 + 0x8c);
   }
-  thunk_FUN_0065d030(iVar1);
-  if (*(byte **)(param_1 + 0x5b3) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)(param_1 + 0x5b3));
+  thunk_FUN_0065d030(pAVar1);
+  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x5b3) != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x5b3));
     *(undefined4 *)(param_1 + 0x5b3) = 0;
   }
   return;

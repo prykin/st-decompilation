@@ -49,19 +49,18 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x471);
     return iVar3;
   }
-  if (DAT_007fa164 == 0) {
+  if (PTR_007fa164 == (DArrayTy *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x459);
   }
-  local_10 = *(int *)(DAT_007fa164 + 0xc) - 1;
+  local_10 = PTR_007fa164->count - 1;
   if ((int)local_10 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
   }
   do {
-    if (local_10 < *(uint *)(DAT_007fa164 + 0xc)) {
-      puVar4 = (undefined4 *)(*(int *)(DAT_007fa164 + 8) * local_10 + *(int *)(DAT_007fa164 + 0x1c))
-      ;
+    if (local_10 < PTR_007fa164->count) {
+      puVar4 = (undefined4 *)(PTR_007fa164->elementSize * local_10 + (int)PTR_007fa164->data);
     }
     else {
       puVar4 = (undefined4 *)0x0;
@@ -71,7 +70,7 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
       iVar3 = 1;
       local_14 = 1;
       if ((param_1 != (byte *)0x0) && (*param_1 != 0)) {
-        (*this->vtable->slot_74)(local_28);
+        (*this->vtable->vfunc_74)(local_28);
         pbVar7 = local_28;
         pbVar5 = param_1;
         do {
@@ -97,7 +96,7 @@ LAB_00678692:
         }
       }
       if ((iVar3 != 0) &&
-         ((local_5 == -1 || (iVar6 = (*this->vtable->slot_6C)(), local_5 == iVar6)))) {
+         ((local_5 == -1 || (iVar6 = (*this->vtable->vfunc_6C)(), local_5 == iVar6)))) {
         if ((0 < param_6) &&
            (((0 < param_7 && (0 < param_8)) &&
             ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_3 ||

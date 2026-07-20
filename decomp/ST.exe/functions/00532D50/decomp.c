@@ -73,8 +73,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     (*pcVar4)();
     return;
   }
-  if ((byte *)local_10->field_01E9 != (byte *)0x0) {
-    FUN_006b5570((byte *)local_10->field_01E9);
+  if ((AnonShape_006B5570_4D68B99C *)local_10->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_01E9);
     this_02->field_01E9 = 0;
   }
   if ((byte *)this_02->field_01ED != (byte *)0x0) {
@@ -384,7 +384,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           }
           else {
             bVar19 = false;
-            if (this_02->field_01A4 == '\x03') {
+            if (this_02->field_01A4 == CASE_3) {
               if (((char)(local_8 >> 0x18) == -0x78) && ((char)local_8 == '\x16')) {
                 bVar19 = true;
               }
@@ -392,7 +392,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
                 bVar19 = false;
               }
             }
-            else if (this_02->field_01A4 == '\x04') {
+            else if (this_02->field_01A4 == CASE_4) {
               bVar19 = local_14 == local_8;
             }
             this_01 = (cMf32 *)0x0;
@@ -427,7 +427,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   uVar13 = *(uint *)(this_02->field_01E9 + 8);
   local_8 = uVar13;
   if (uVar13 == 0) {
-    if (this_02->field_01A4 != '\x03') goto LAB_0053325d;
+    if (this_02->field_01A4 != CASE_3) goto LAB_0053325d;
     Library::DKW::TBL::FUN_006b6020((uint *)this_02->field_01F1,0,&DAT_008016a0);
     uVar21 = this_02->field_01B9;
     this_02->field_0028 = 0x33;
@@ -440,13 +440,15 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         uVar14 = 0;
         if (uVar13 != 1) {
           do {
-            FUN_006acc70(this_02->field_01ED,uVar14,&local_2c.dwLowDateTime);
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_02->field_01ED,uVar14,
+                         &local_2c.dwLowDateTime);
             uVar1 = uVar14 + 1;
-            FUN_006acc70(this_02->field_01ED,uVar1,&local_24.dwLowDateTime);
+            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_02->field_01ED,uVar1,
+                         &local_24.dwLowDateTime);
             LVar11 = CompareFileTime(&local_2c,&local_24);
             if (LVar11 < 0) {
-              FUN_006b0cd0(this_02->field_01ED,uVar14,uVar1);
-              FUN_006b8200(this_02->field_01E9,uVar14,uVar1);
+              FUN_006b0cd0((AnonShape_006B0CD0_C8D121FA *)this_02->field_01ED,uVar14,uVar1);
+              FUN_006b8200((AnonShape_006B8200_800652FF *)this_02->field_01E9,uVar14,uVar1);
               local_c = 1;
             }
             uVar14 = uVar1;
@@ -473,7 +475,7 @@ LAB_0053325d:
   this_02->field_0028 = 0x20;
   *(uint *)&this_02->field_0x2c = (uint)(uVar13 != 0);
   FUN_006e6080(this_02,2,this_02->field_01C1,(undefined4 *)&this_02->field_0x18);
-  if (this_02->field_01A4 == '\x04') {
+  if (this_02->field_01A4 == CASE_4) {
     FUN_006e6080(this_02,2,this_02->field_01BD,(undefined4 *)&this_02->field_0x18);
   }
   g_currentExceptionFrame = local_70.previous;

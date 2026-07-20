@@ -80,7 +80,7 @@ FUN_0058b190(void *this,short *param_1,short *param_2,short *param_3,short *para
     bVar15 = bVar15 + 1;
   }
   if ((((*(int *)((int)this + 0x2a5) == 0xf8) || (*(int *)((int)this + 0x2a5) == 0xf9)) &&
-      (sVar12 < 4)) && (((byte)*(undefined4 *)(DAT_00802a38 + 0xe4) & 7) == 1)) {
+      (sVar12 < 4)) && (((byte)PTR_00802a38->field_00E4 & 7) == 1)) {
     uVar13 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar13;
     *(undefined4 *)((int)this + 0x281) = 1;
@@ -89,7 +89,7 @@ FUN_0058b190(void *this,short *param_1,short *param_2,short *param_3,short *para
   }
   iVar14 = 0;
   iVar10 = 0;
-  if ((*(byte *)(DAT_00802a38 + 0xe4) & 3) == 0) {
+  if ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0) {
     iVar14 = *(int *)((int)this + 0x251);
     iVar10 = iVar14;
     if (iVar14 < 0) {

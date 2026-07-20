@@ -4,7 +4,7 @@
    Diagnostic line evidence: 664 | 666 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004d0310(int param_1)
+undefined4 __fastcall FUN_004d0310(AnonShape_004D0310_B8EE97FF *param_1)
 
 {
   char cVar1;
@@ -30,24 +30,24 @@ undefined4 __fastcall FUN_004d0310(int param_1)
   uVar5 = 0;
   local_8 = 0;
   iVar4 = STT3DSprC::LoadSequence
-                    (*(STT3DSprC **)(param_1 + 0x5ff),0xe,DAT_0080677c,
-                     &DAT_007a9342 + *(int *)(param_1 + 0x369) * 6,0x1d);
+                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_0080677c,
+                     &DAT_007a9342 + param_1->field_0369 * 6,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x298);
   }
-  iVar4 = *(int *)(param_1 + 0x379);
+  iVar4 = param_1->field_0379;
   if (iVar4 == 0xff) {
-    iVar4 = *(int *)(param_1 + 0x24);
+    iVar4 = param_1->field_0024;
   }
-  wsprintfA(local_48,s__s_1i_007ac908,&DAT_007a9342 + *(int *)(param_1 + 0x369) * 6,iVar4);
-  iVar4 = STT3DSprC::LoadSequence(*(STT3DSprC **)(param_1 + 0x5ff),0xc,DAT_0080677c,local_48,0x1d);
+  wsprintfA(local_48,s__s_1i_007ac908,&DAT_007a9342 + param_1->field_0369 * 6,iVar4);
+  iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xc,DAT_0080677c,local_48,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x29a);
   }
   iVar4 = -1;
-  pcVar8 = (char *)((int)&DAT_007a9440 + *(int *)(param_1 + 0x369) * 6 + 2);
+  pcVar8 = (char *)((int)&DAT_007a9440 + param_1->field_0369 * 6 + 2);
   pcVar7 = pcVar8;
   do {
     if (iVar4 == 0) break;
@@ -56,46 +56,46 @@ undefined4 __fastcall FUN_004d0310(int param_1)
     pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
   if (iVar4 == -2) {
-    STT3DSprC::StopShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd);
+    STT3DSprC::StopShow((STT3DSprC *)param_1->field_05FF,0xd);
   }
   else {
-    iVar4 = STT3DSprC::LoadSequence(*(STT3DSprC **)(param_1 + 0x5ff),0xd,DAT_0080677c,pcVar8,0x1d);
+    iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xd,DAT_0080677c,pcVar8,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }
   }
   uVar9 = 10;
-  iVar4 = thunk_FUN_004ad650(param_1 + 0x1d5);
-  uVar2 = thunk_FUN_004ad650(*(int *)(param_1 + 0x5ff));
-  FUN_006ea340(*(void **)(param_1 + 0x211),uVar2,iVar4,uVar9);
+  iVar4 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+  uVar2 = thunk_FUN_004ad650(param_1->field_05FF);
+  FUN_006ea340(param_1->field_0211,uVar2,iVar4,uVar9);
   uVar3 = thunk_FUN_004ab050();
   switch(uVar3) {
   case 0:
-    uVar5 = *(uint *)(&DAT_007a90b8 + *(int *)(param_1 + 0x369) * 0x10);
+    uVar5 = *(uint *)(&DAT_007a90b8 + param_1->field_0369 * 0x10);
     local_8 = DAT_007a9438;
     break;
   case 1:
     local_8 = DAT_007a943c;
-    uVar5 = *(uint *)(&DAT_007a90bc + *(int *)(param_1 + 0x369) * 0x10);
+    uVar5 = *(uint *)(&DAT_007a90bc + param_1->field_0369 * 0x10);
     break;
   case 2:
     local_8 = DAT_007a9440;
-    uVar5 = *(uint *)(&DAT_007a90c0 + *(int *)(param_1 + 0x369) * 0x10);
+    uVar5 = *(uint *)(&DAT_007a90c0 + param_1->field_0369 * 0x10);
     break;
   case 3:
-    uVar5 = *(uint *)(&DAT_007a90c4 + *(int *)(param_1 + 0x369) * 0x10);
+    uVar5 = *(uint *)(&DAT_007a90c4 + param_1->field_0369 * 0x10);
     local_8 = DAT_007a9444;
   }
-  thunk_FUN_004ad460(*(void **)(param_1 + 0x5ff),0);
-  thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,uVar5,uVar5,'\0');
-  thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xc,uVar5,uVar5,'\0');
-  STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',uVar5);
-  STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\f',uVar5);
-  STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
-  STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  thunk_FUN_004ad460((void *)param_1->field_05FF,0);
+  thunk_FUN_004abce0((void *)param_1->field_05FF,0xe,uVar5,uVar5,'\0');
+  thunk_FUN_004abce0((void *)param_1->field_05FF,0xc,uVar5,uVar5,'\0');
+  STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\x0e',uVar5);
+  STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\f',uVar5);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,PTR_00802a38->field_00E4);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xc,PTR_00802a38->field_00E4);
   uVar5 = local_8;
   iVar4 = -1;
-  pcVar8 = (char *)((int)&DAT_007a9440 + *(int *)(param_1 + 0x369) * 6 + 2);
+  pcVar8 = (char *)((int)&DAT_007a9440 + param_1->field_0369 * 6 + 2);
   do {
     if (iVar4 == 0) break;
     iVar4 = iVar4 + -1;
@@ -103,9 +103,9 @@ undefined4 __fastcall FUN_004d0310(int param_1)
     pcVar8 = pcVar8 + 1;
   } while (cVar1 != '\0');
   if (iVar4 != -2) {
-    thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xd,local_8,local_8,'\0');
-    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\r',uVar5);
-    STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    thunk_FUN_004abce0((void *)param_1->field_05FF,0xd,local_8,local_8,'\0');
+    STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\r',uVar5);
+    STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xd,PTR_00802a38->field_00E4);
   }
   return 0;
 }

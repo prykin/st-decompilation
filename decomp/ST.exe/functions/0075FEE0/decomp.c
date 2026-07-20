@@ -1,5 +1,5 @@
 
-void FUN_0075fee0(int param_1,int param_2,undefined4 *param_3,int *param_4)
+void FUN_0075fee0(AnonShape_0075FEE0_E0ABA202 *param_1,int param_2,undefined4 *param_3,int *param_4)
 
 {
   int iVar1;
@@ -15,9 +15,9 @@ void FUN_0075fee0(int param_1,int param_2,undefined4 *param_3,int *param_4)
   uint uVar11;
   int *local_14;
   
-  iVar1 = *(int *)(param_1 + 0x1ba);
-  iVar2 = *(int *)(param_1 + 0x70);
-  uVar3 = *(uint *)(param_1 + 0x68);
+  iVar1 = param_1->field_01BA;
+  iVar2 = param_1->field_0070;
+  uVar3 = param_1->field_0068;
   if (0 < (int)param_4) {
     iVar8 = param_2 - (int)param_3;
     local_14 = param_4;

@@ -9,8 +9,8 @@ uint __cdecl FUN_0067fab0(byte *param_1,undefined4 param_2)
   if ((int)uVar1 < 0) {
     return uVar1;
   }
-  if ((uVar1 < *(uint *)(DAT_00848a30 + 0xc)) &&
-     (puVar2 = (undefined4 *)(*(int *)(DAT_00848a30 + 8) * uVar1 + *(int *)(DAT_00848a30 + 0x1c)),
+  if ((uVar1 < PTR_00848a30->field_000C) &&
+     (puVar2 = (undefined4 *)(PTR_00848a30->field_0008 * uVar1 + PTR_00848a30->field_001C),
      puVar2 != (undefined4 *)0x0)) {
     *puVar2 = param_2;
     return uVar1;

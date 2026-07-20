@@ -50,12 +50,11 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,undefined1 param_3)
       do {
         bVar2 = pbVar12[1];
         for (iVar10 = 1; (bVar2 != 0 && (iVar10 < 3)); iVar10 = iVar10 + 1) {
-          if ((*(byte *)((int)&DAT_007f510b +
-                        ((int)(pbVar12[iVar10] ^ 7) >> 3) + (int)puVar5 * 0xa62) >>
+          if ((*(byte *)((int)puVar5 * 0xa62 + 0x7f510b + ((int)(pbVar12[iVar10] ^ 7) >> 3)) >>
                ((pbVar12[iVar10] ^ 7) & 7) & 1) == 0) goto LAB_004e7a7f;
           bVar2 = pbVar12[iVar10 + 1];
         }
-        *(undefined4 *)((int)&DAT_007f53b3 + (uint)*pbVar12 * 4 + (int)puVar5 * 0xa62) = 1;
+        *(undefined4 *)((int)puVar5 * 0xa62 + 0x7f53b3 + (uint)*pbVar12 * 4) = 1;
 LAB_004e7a7f:
         pbVar12 = pbVar12 + 3;
       } while ((int)pbVar12 < 0x7c0e4c);
@@ -64,12 +63,11 @@ LAB_004e7a7f:
       do {
         bVar2 = pbVar12[1];
         for (iVar10 = 1; (bVar2 != 0 && (iVar10 < 3)); iVar10 = iVar10 + 1) {
-          if ((*(byte *)((int)&DAT_007f510b +
-                        ((int)(pbVar12[iVar10] ^ 7) >> 3) + (int)puVar5 * 0xa62) >>
+          if ((*(byte *)((int)puVar5 * 0xa62 + 0x7f510b + ((int)(pbVar12[iVar10] ^ 7) >> 3)) >>
                ((pbVar12[iVar10] ^ 7) & 7) & 1) == 0) goto LAB_004e7b13;
           bVar2 = pbVar12[iVar10 + 1];
         }
-        *(undefined4 *)((int)&DAT_007f53b3 + (uint)*pbVar12 * 4 + (int)puVar5 * 0xa62) = 1;
+        *(undefined4 *)((int)puVar5 * 0xa62 + 0x7f53b3 + (uint)*pbVar12 * 4) = 1;
 LAB_004e7b13:
         pbVar12 = pbVar12 + 3;
         param_2 = param_2 + -1;

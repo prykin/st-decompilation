@@ -10,8 +10,8 @@
 STMBombC * __thiscall STMBombC::STMBombC(STMBombC *this)
 
 {
-  thunk_FUN_004158e0(&this->vtable);
-  thunk_FUN_004ab810(&this->field_01D5);
+  thunk_FUN_004158e0((STGroupBoatC *)this);
+  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &PTR_LAB_0079bbb4;
   this->vtable = &STMBombCVTable;
   this->field_0231 = 1;

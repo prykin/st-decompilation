@@ -3,21 +3,21 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
                  undefined4 *param_6)
 
 {
-  int iVar1;
+  dword dVar1;
   uint uVar2;
   int *piVar3;
   uint uVar4;
-  int iVar5;
+  DArrayTy *pDVar5;
   
   uVar2 = 0xffffffff;
   *param_6 = 0;
   uVar4 = 0;
-  iVar1 = *(int *)(DAT_007fb270 + 0xc);
-  iVar5 = DAT_007fb270;
-  if (0 < iVar1) {
+  dVar1 = PTR_007fb270->count;
+  pDVar5 = PTR_007fb270;
+  if (0 < (int)dVar1) {
     do {
-      if (uVar4 < *(uint *)(iVar5 + 0xc)) {
-        piVar3 = (int *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c));
+      if (uVar4 < pDVar5->count) {
+        piVar3 = (int *)(pDVar5->elementSize * uVar4 + (int)pDVar5->data);
       }
       else {
         piVar3 = (int *)0x0;
@@ -26,10 +26,10 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
          (((uVar2 = uVar4, *piVar3 != param_1 || (piVar3[1] != param_2)) || (piVar3[2] != param_3)))
          ) {
         *param_6 = 1;
-        iVar5 = DAT_007fb270;
+        pDVar5 = PTR_007fb270;
       }
       uVar4 = uVar4 + 1;
-    } while ((int)uVar4 < iVar1);
+    } while ((int)uVar4 < (int)dVar1);
   }
   return uVar2;
 }

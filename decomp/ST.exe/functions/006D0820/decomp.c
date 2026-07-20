@@ -1,6 +1,7 @@
 
-void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                 int param_7,int param_8,int param_9,int param_10,int param_11,HPALETTE param_12)
+void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,
+                 AnonShape_006D0820_E08F8169 *param_5,int param_6,int param_7,int param_8,
+                 int param_9,int param_10,int param_11,HPALETTE param_12)
 
 {
   ushort uVar1;
@@ -20,11 +21,11 @@ void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,int param_5,in
   int local_8;
   
   if (param_6 == 0) {
-    param_6 = FUN_006b4fa0(param_5);
+    param_6 = FUN_006b4fa0((int)param_5);
   }
-  local_1c = *(int *)(param_5 + 4);
-  local_18 = *(int *)(param_5 + 8);
-  uVar4 = (uint)*(ushort *)(param_5 + 0xe) * local_1c + 0x1f >> 3 & 0x1ffffffc;
+  local_1c = param_5->field_0004;
+  local_18 = param_5->field_0008;
+  uVar4 = (uint)param_5->field_000E * local_1c + 0x1f >> 3 & 0x1ffffffc;
   local_20 = 0;
   local_24 = 0;
   uVar5 = -uVar4;
@@ -48,7 +49,7 @@ void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,int param_5,in
     }
     puVar6 = (ushort *)(iVar3 + param_6 + local_14 * 2);
     param_6 = local_c;
-    if ((*(int *)(param_5 + 0x10) == 3) && (*(int *)(param_5 + 0x28) == 0xf800)) {
+    if ((param_5->field_0010 == 3) && (param_5->field_0028 == 0xf800)) {
       if (0 < local_8) {
         do {
           local_8 = local_8 + -1;

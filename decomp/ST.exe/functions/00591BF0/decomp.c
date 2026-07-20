@@ -168,8 +168,8 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
         uVar7 = (uint)(byte)this_00->field_009A;
       } while (iVar6 < (int)uVar7);
     }
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x01')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -266,8 +266,8 @@ LAB_00591d08:
       } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
     }
     iVar6 = 0;
-    if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
-       (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x02')) {
+    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
+       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

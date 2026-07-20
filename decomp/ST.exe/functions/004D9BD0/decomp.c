@@ -1,16 +1,16 @@
 
-undefined4 __fastcall FUN_004d9bd0(int param_1)
+undefined4 __fastcall FUN_004d9bd0(AnonShape_004D9BD0_B3B50583 *param_1)
 
 {
   int iVar1;
   
-  iVar1 = *(int *)(param_1 + 0x245);
+  iVar1 = param_1->field_0245;
   if (iVar1 == 0) {
-    if (*(int *)(param_1 + 0x4d0) != 0) {
-      if (*(int *)(param_1 + 0x4d0) != 1) {
+    if (param_1->field_04D0 != 0) {
+      if (param_1->field_04D0 != 1) {
         return 0;
       }
-      *(undefined4 *)(param_1 + 0x261) = 1;
+      param_1->field_0261 = 1;
       return 0;
     }
   }
@@ -18,9 +18,9 @@ undefined4 __fastcall FUN_004d9bd0(int param_1)
     if ((iVar1 != 1) && (iVar1 != 6)) {
       return 0;
     }
-    *(undefined4 *)(param_1 + 0x4d0) = 0;
+    param_1->field_04D0 = 0;
   }
-  *(undefined4 *)(param_1 + 0x261) = 0;
+  param_1->field_0261 = 0;
   return 0;
 }
 

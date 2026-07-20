@@ -20,7 +20,7 @@ FUN_005fac40(void *this,int param_1,int param_2,int param_3,int param_4,int para
       *(int *)(*(int *)((int)this + 0x2e6) + 0x14) = (int)(short)param_1;
       *(int *)(*(int *)((int)this + 0x2e6) + 0x18) = (int)(short)param_4;
       *(int *)(*(int *)((int)this + 0x2e6) + 0x1c) = (short)param_5 + -0x32;
-      *(undefined4 *)(*(int *)((int)this + 0x2e6) + 0x68) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      *(undefined4 *)(*(int *)((int)this + 0x2e6) + 0x68) = PTR_00802a38->field_00E4;
       *(undefined4 *)(*(int *)((int)this + 0x2e6) + 100) = 9;
       *(undefined4 *)(*(int *)((int)this + 0x2e6) + 0x60) =
            *(undefined4 *)(*(int *)((int)this + 0x2e6) + 0x1c);

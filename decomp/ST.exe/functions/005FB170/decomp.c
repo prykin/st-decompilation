@@ -1,10 +1,10 @@
 
-void __fastcall FUN_005fb170(int *param_1)
+void __fastcall FUN_005fb170(STColl3C *param_1)
 
 {
-  switch(*(undefined4 *)((int)param_1 + 0x2dd)) {
+  switch(param_1->field_02DD) {
   case 1:
-    thunk_FUN_005f66b0(param_1);
+    thunk_FUN_005f66b0((STJellyGunC *)param_1);
     return;
   case 2:
   case 3:
@@ -16,9 +16,9 @@ void __fastcall FUN_005fb170(int *param_1)
   case 10:
   case 0xb:
   case 0xc:
-    STColl3C::LoadImagSpr((STColl3C *)param_1,0);
-    thunk_FUN_005fa070(param_1);
-    *(undefined4 *)((int)param_1 + 0x2dd) = 0xd;
+    STColl3C::LoadImagSpr(param_1,0);
+    thunk_FUN_005fa070((int *)param_1);
+    param_1->field_02DD = 0xd;
   }
   return;
 }

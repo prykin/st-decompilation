@@ -35,7 +35,7 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
     }
     return local_c;
   }
-  uVar2 = FUN_006acc70(DAT_007fa130,(int)param_1,&local_8);
+  uVar2 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,(int)param_1,&local_8);
   if (uVar2 != 0xfffffffc) {
     if (local_8 == 0) {
       RaiseInternalException

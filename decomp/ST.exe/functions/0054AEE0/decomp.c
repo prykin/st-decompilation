@@ -63,7 +63,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   }
   bVar3 = thunk_FUN_00544990((int)local_18);
   if ((CONCAT31(extraout_var,bVar3) != 0) &&
-     ((((this_00->field_00DE == '\x02' || (this_00->field_00DE == '\x04')) &&
+     ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == 4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
     thunk_FUN_0054b700(this_00,-1);
     if ((DAT_00801690 == (void *)0x0) || (*(short *)((int)DAT_00801690 + 0x172) == 2))
@@ -103,7 +103,8 @@ LAB_0054b366:
     if (bVar3) goto LAB_0054b335;
     if ((((g_playPanel_008016E4 != (PlayPanelTy *)0x0) && (g_playPanel_008016E4->field_0172 != 2))
         || ((DAT_00801690 != (void *)0x0 && (*(short *)((int)DAT_00801690 + 0x172) != 2)))) ||
-       ((g_optPanel_008016DC != (OptPanelTy *)0x0 && (g_optPanel_008016DC->field_0172 != 2)))) {
+       ((g_optPanel_008016DC != (OptPanelTy *)0x0 && (g_optPanel_008016DC->field_0172 != CASE_2))))
+    {
       if ((DAT_00801690 != (void *)0x0) && (*(short *)((int)DAT_00801690 + 0x172) != 2))
       goto LAB_0054b019;
       uVar18 = this_00->field_0038;
@@ -115,7 +116,7 @@ LAB_0054b366:
                                 this_00->field_00C9 - this_00->field_04B6);
     this_00->field_049A = pSVar6;
     if (pSVar6 == (STFishC *)0x0) {
-      FUN_006e1dd0(DAT_00807598,this_00->field_00C5 - this_00->field_04B2,
+      FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
                    this_00->field_00C9 - this_00->field_04B6,(float *)0x0,(float *)0x0,&local_10);
       lVar15 = Library::MSVCRT::__ftol();
       local_c = (undefined4)lVar15;
@@ -137,7 +138,7 @@ LAB_0054b366:
       CVar4 = CASE_47;
     }
     else {
-      (*this_00->field_049A->vtable->slot_68)(&local_30);
+      (*this_00->field_049A->vtable->vfunc_68)(&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
         pHVar17 = HINSTANCE_00807618;
@@ -199,12 +200,12 @@ LAB_0054b2a9:
       }
       else {
         pSVar6 = this_00->field_049A;
-        iVar5 = (*pSVar6->vtable->slot_2C)();
+        iVar5 = (*pSVar6->vtable->vfunc_2C)();
         if (iVar5 == 0x78) {
           iVar5 = *(int *)&this_00->field_049A->field_0x259;
         }
         if (DAT_00801690 != (void *)0x0) {
-          iVar9 = (*pSVar6->vtable->slot_0C)();
+          iVar9 = (*pSVar6->vtable->vfunc_0C)();
           iVar5 = thunk_FUN_005121f0(DAT_00801690,iVar5,iVar9);
           if (iVar5 != 0) {
             uVar18 = this_00->field_0038;

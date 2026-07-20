@@ -13,7 +13,7 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
   
   lpParameter = lpThreadId;
   if ((lpThreadId[1] & 0x80000000) != 0) {
-    FUN_006c3570((int)lpThreadId);
+    FUN_006c3570((AnonShape_006C3570_37024033 *)lpThreadId);
   }
   DVar3 = CoCreateInstance((IID *)&DAT_007a10e8,(LPUNKNOWN)0x0,1,(IID *)&DAT_007a10f8,
                            (LPVOID *)(lpParameter + 0x15));
@@ -37,7 +37,7 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
             }
             DVar3 = GetLastError();
             if (DVar3 == 0) {
-              FUN_006c3570((int)lpParameter);
+              FUN_006c3570((AnonShape_006C3570_37024033 *)lpParameter);
               return 0xffffff03;
             }
           }
@@ -45,7 +45,7 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
       }
     }
   }
-  FUN_006c3570((int)lpParameter);
+  FUN_006c3570((AnonShape_006C3570_37024033 *)lpParameter);
   return DVar3;
 }
 

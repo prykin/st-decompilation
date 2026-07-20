@@ -31,8 +31,8 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
         iVar2 = iVar2 + 1;
         piVar3 = piVar3 + 1;
       } while (iVar2 < 0x17);
-      if ((this->field_045D == 0x14) && (iVar2 == 0x17)) {
-        param_1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      if ((this->field_045D == CASE_14) && (iVar2 == 0x17)) {
+        param_1 = PTR_00802a38->field_00E4;
         CmdToObj(this,CASE_3,&param_1);
       }
       this->field_0314 = 0;

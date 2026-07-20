@@ -1,5 +1,5 @@
 
-int __cdecl FUN_0067bc80(int param_1,uint param_2)
+int __cdecl FUN_0067bc80(AnonShape_0067BC80_D4009586 *param_1,uint param_2)
 
 {
   short sVar1;
@@ -12,13 +12,12 @@ int __cdecl FUN_0067bc80(int param_1,uint param_2)
   
   uVar5 = 0;
   sVar4 = 10000;
-  uVar2 = *(uint *)(param_1 + 0xc);
+  uVar2 = param_1->field_000C;
   local_8 = 0;
   bVar6 = uVar2 != 0;
   if (0 < (int)uVar2) {
     do {
-      if ((((bVar6) &&
-           (iVar3 = *(int *)(param_1 + 8) * uVar5 + *(int *)(param_1 + 0x1c), iVar3 != 0)) &&
+      if ((((bVar6) && (iVar3 = param_1->field_0008 * uVar5 + param_1->field_001C, iVar3 != 0)) &&
           ((*(uint *)(iVar3 + 0x14) & param_2) != 0)) &&
          ((sVar1 = *(short *)(iVar3 + 0x1a), sVar1 < sVar4 &&
           (sVar4 = sVar1, local_8 = iVar3, sVar1 == 0)))) {

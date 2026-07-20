@@ -2,7 +2,7 @@
 undefined4 * __thiscall FUN_006d71a0(void *this,byte param_1)
 
 {
-  FUN_0074be28((int)this);
+  FUN_0074be28(this);
   if ((param_1 & 1) != 0) {
     Library::MSVCRT::FUN_0072e2b0(this);
   }

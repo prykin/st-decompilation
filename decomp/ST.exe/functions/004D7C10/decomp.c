@@ -2,35 +2,40 @@
 undefined4 FUN_004d7c10(char param_1,int param_2,int param_3,int param_4)
 
 {
-  int iVar1;
-  uint uVar2;
-  undefined4 uVar3;
-  int *piVar4;
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  int *piVar5;
   
-  uVar3 = 0;
-  iVar1 = param_2 * 0x44 + param_1 * 0xa62;
-  if (param_4 <= *(int *)((int)&DAT_007f55fe + iVar1)) {
-    *(undefined4 *)(&DAT_007f5612 + iVar1) = 0;
+  iVar2 = (int)param_1;
+  uVar4 = 0;
+  iVar3 = param_2 * 0x44;
+  if (param_4 <= (int)(&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11]) {
+    *(undefined4 *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = 0;
     do {
-      uVar2 = *(uint *)(&DAT_007f5612 + iVar1);
-      if (*(uint *)(&DAT_007f561a + iVar1) <= uVar2) {
+      uVar1 = *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3);
+      if (*(uint *)(&g_playerRuntime[iVar2].field_0x7fa + iVar3) <= uVar1) {
         return 0;
       }
-      piVar4 = (int *)(*(int *)(&DAT_007f5616 + iVar1) * uVar2 + *(int *)(&DAT_007f562a + iVar1));
-      *(uint *)(&DAT_007f5612 + iVar1) = uVar2 + 1;
-      if (piVar4 == (int *)0x0) {
+      piVar5 = (int *)(*(int *)(&g_playerRuntime[iVar2].field_0x7f6 + iVar3) * uVar1 +
+                      *(int *)(&g_playerRuntime[iVar2].field_0x80a + iVar3));
+      *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = uVar1 + 1;
+      if (piVar5 == (int *)0x0) {
         return 0;
       }
-    } while (*piVar4 != param_3);
+    } while (*piVar5 != param_3);
     thunk_FUN_004d8800(param_1,param_4);
-    *(int *)((int)&DAT_007f55fe + iVar1) = *(int *)((int)&DAT_007f55fe + iVar1) - param_4;
-    *(int *)(&DAT_007f562e + iVar1) = *(int *)(&DAT_007f562e + iVar1) - param_4;
-    piVar4[1] = piVar4[1] - param_4;
-    uVar3 = 1;
-    if (*(int *)((int)&DAT_007f55fe + iVar1) == 0) {
+    (&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11] =
+         (&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11] - param_4;
+    *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar3) =
+         *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar3) - param_4;
+    piVar5[1] = piVar5[1] - param_4;
+    uVar4 = 1;
+    if ((&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11] == 0) {
       thunk_FUN_004d78e0(param_1);
     }
   }
-  return uVar3;
+  return uVar4;
 }
 

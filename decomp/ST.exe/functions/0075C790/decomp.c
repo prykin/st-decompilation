@@ -1,5 +1,5 @@
 
-undefined4 FUN_0075c790(int param_1,int *param_2)
+undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
 
 {
   int *piVar1;
@@ -20,8 +20,8 @@ undefined4 FUN_0075c790(int param_1,int *param_2)
   undefined4 local_3c;
   uint local_38;
   int local_34;
-  int local_30;
-  int local_2c;
+  AnonShape_0075C790_3F1CCBA9 *local_30;
+  int *local_2c;
   int *local_28;
   int local_24;
   uint local_20;
@@ -32,28 +32,28 @@ undefined4 FUN_0075c790(int param_1,int *param_2)
   int local_c;
   int *local_8;
   
-  local_14 = *(int *)(param_1 + 0x182);
-  bVar7 = (byte)*(undefined4 *)(param_1 + 0x18a);
+  local_14 = param_1->field_0182;
+  bVar7 = (byte)param_1->field_018A;
   local_18 = 1 << (bVar7 & 0x1f);
-  piVar6 = *(int **)(param_1 + 0x1aa);
+  piVar6 = param_1->field_01AA;
   local_20 = -1 << (bVar7 & 0x1f);
   local_8 = piVar6;
-  if (((*(int *)(param_1 + 0x10c) != 0) && (*(int *)((int)piVar6 + 0x28) == 0)) &&
-     (iVar3 = FUN_0075c3b0(param_1), iVar3 == 0)) {
+  if (((param_1->field_010C != 0) && (piVar6[10] == 0)) &&
+     (iVar3 = FUN_0075c3b0((AnonShape_0075C3B0_6803BA0D *)param_1), iVar3 == 0)) {
     return 0;
   }
   local_30 = param_1;
   local_24 = 0;
-  local_44 = **(undefined4 **)(param_1 + 0x10);
-  local_40 = (*(undefined4 **)(param_1 + 0x10))[1];
-  local_3c = *(undefined4 *)(param_1 + 0x18e);
-  uVar10 = *(uint *)((int)piVar6 + 8);
-  iVar3 = *(int *)((int)piVar6 + 0xc);
+  local_44 = *(undefined4 *)param_1->field_0010;
+  local_40 = ((undefined4 *)param_1->field_0010)[1];
+  local_3c = param_1->field_018E;
+  uVar10 = piVar6[2];
+  iVar3 = piVar6[3];
   local_1c = *param_2;
-  local_2c = (int)piVar6 + 0x10;
-  local_c = *(int *)((int)piVar6 + 0x14);
-  local_48 = *(int *)((int)piVar6 + 0x3c);
-  param_2 = *(int **)(param_1 + 0x17e);
+  local_2c = piVar6 + 4;
+  local_c = piVar6[5];
+  local_48 = piVar6[0xf];
+  param_2 = param_1->field_017E;
   if (local_c == 0) {
     if ((int)param_2 <= local_14) {
       local_4c = local_14c;
@@ -190,13 +190,13 @@ cf_break_loop_0075CB0B:
       local_c = local_c + -1;
     }
   }
-  **(undefined4 **)(param_1 + 0x10) = local_44;
-  *(undefined4 *)(*(int *)(param_1 + 0x10) + 4) = local_40;
-  *(undefined4 *)(param_1 + 0x18e) = local_3c;
-  *(int *)((int)piVar6 + 0xc) = iVar3;
-  *(uint *)((int)piVar6 + 8) = uVar10;
-  *(int *)((int)piVar6 + 0x14) = local_c;
-  *(int *)((int)piVar6 + 0x28) = *(int *)((int)piVar6 + 0x28) + -1;
+  *(undefined4 *)param_1->field_0010 = local_44;
+  *(undefined4 *)(param_1->field_0010 + 4) = local_40;
+  param_1->field_018E = local_3c;
+  piVar6[3] = iVar3;
+  piVar6[2] = uVar10;
+  piVar6[5] = local_c;
+  piVar6[10] = piVar6[10] + -1;
   return 1;
 }
 

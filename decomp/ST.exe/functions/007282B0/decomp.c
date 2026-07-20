@@ -1,7 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __thiscall FUN_007282b0(void *this,int param_1,uint param_2,int param_3)
+void __thiscall
+FUN_007282b0(void *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -22,7 +23,7 @@ void __thiscall FUN_007282b0(void *this,int param_1,uint param_2,int param_3)
   int local_c;
   void *local_8;
   
-  pbVar1 = (byte *)(*(int *)(param_1 + 0x28) + param_2 * 0x1c);
+  pbVar1 = (byte *)(param_1->field_0028 + param_2 * 0x1c);
   puVar3 = (undefined4 *)((uint)pbVar1[1] * 0x10 + param_3);
   DAT_008570a8 = *puVar3;
   DAT_008570ac = puVar3[1];
@@ -38,20 +39,20 @@ void __thiscall FUN_007282b0(void *this,int param_1,uint param_2,int param_3)
   DAT_008570cc = puVar3[1];
   DAT_008570d0 = puVar3[2];
   _DAT_008570d4 = puVar3[3];
-  if ((*(byte *)(*(int *)(param_1 + 0x3c) + param_2) & DAT_0085706c) == 0) {
+  if ((*(byte *)(param_1->field_003C + param_2) & DAT_0085706c) == 0) {
     _DAT_008570f8 = 0xff;
   }
   else {
-    _DAT_008570f8 = (int)*(short *)(param_1 + 8) << 1;
+    _DAT_008570f8 = (int)param_1->field_0008 << 1;
     if ((*pbVar1 & 0x20) == 0) {
-      _DAT_008570f8 = ((int)*(short *)(param_1 + 8) - (uint)*(byte *)(param_1 + 0x48)) * 2 + 1;
-      if ((*(byte *)(*(int *)(param_1 + 0x3c) + param_2) & DAT_00857058) == 0) {
+      _DAT_008570f8 = ((int)param_1->field_0008 - (uint)param_1->field_0048) * 2 + 1;
+      if ((*(byte *)(param_1->field_003C + param_2) & DAT_00857058) == 0) {
         _DAT_008570f8 = _DAT_008570f8 | 0x80;
       }
       else {
         _DAT_008570f8 = _DAT_008570f8 | (param_2 & 3) << 4;
       }
-      iVar4 = *(int *)(param_1 + 0x20);
+      iVar4 = param_1->field_0020;
       fVar2 = *(float *)(iVar4 + (uint)pbVar1[1] * 0xc);
       if (*(float *)(iVar4 + (uint)pbVar1[2] * 0xc) < fVar2) {
         fVar2 = *(float *)(iVar4 + (uint)pbVar1[2] * 0xc);
@@ -64,12 +65,12 @@ void __thiscall FUN_007282b0(void *this,int param_1,uint param_2,int param_3)
       }
     }
     else {
-      if ((*(byte *)(param_1 + 0x48) != 0) &&
-         ((double)*(float *)(*(int *)(param_1 + 0x20) + 8 + (uint)pbVar1[1] * 0xc) <=
+      if ((param_1->field_0048 != 0) &&
+         ((double)*(float *)(param_1->field_0020 + 8 + (uint)pbVar1[1] * 0xc) <=
           -(*(double *)((int)this + 0xd0) * _DAT_007901c0))) {
-        _DAT_008570f8 = ((int)*(short *)(param_1 + 8) - (uint)*(byte *)(param_1 + 0x48)) * 2;
+        _DAT_008570f8 = ((int)param_1->field_0008 - (uint)param_1->field_0048) * 2;
       }
-      if ((*(byte *)(*(int *)(param_1 + 0x3c) + param_2) & DAT_00857058) == 0) {
+      if ((*(byte *)(param_1->field_003C + param_2) & DAT_00857058) == 0) {
         _DAT_008570f8 = _DAT_008570f8 | 0x80;
       }
     }

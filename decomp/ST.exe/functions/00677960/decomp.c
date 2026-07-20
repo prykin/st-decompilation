@@ -41,23 +41,23 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
     RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x380);
     return iVar2;
   }
-  if (DAT_007fa15c == 0) {
+  if (PTR_007fa15c == (DArrayTy *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x36b);
   }
-  uVar5 = *(int *)(DAT_007fa15c + 0xc) - 1;
+  uVar5 = PTR_007fa15c->count - 1;
   if (-1 < (int)uVar5) {
     do {
-      if (uVar5 < *(uint *)(DAT_007fa15c + 0xc)) {
-        puVar3 = (undefined4 *)(*(int *)(DAT_007fa15c + 8) * uVar5 + *(int *)(DAT_007fa15c + 0x1c));
+      if (uVar5 < PTR_007fa15c->count) {
+        puVar3 = (undefined4 *)(PTR_007fa15c->elementSize * uVar5 + (int)PTR_007fa15c->data);
       }
       else {
         puVar3 = (undefined4 *)0x0;
       }
       this = (STFishC *)*puVar3;
       if ((this != (STFishC *)0x0) &&
-         ((local_10 = uVar5, param_1 == 0 || (iVar2 = (*this->vtable->slot_2C)(), param_1 == iVar2))
-         )) {
+         ((local_10 = uVar5, param_1 == 0 || (iVar2 = (*this->vtable->vfunc_2C)(), param_1 == iVar2)
+          ))) {
         iVar2 = 1;
         local_18 = 1;
         if ((0 < param_5) &&

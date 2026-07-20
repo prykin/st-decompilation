@@ -8,7 +8,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
 {
   uint uVar1;
   HDC hdc;
-  tagPALETTEENTRY *ptVar2;
+  PALETTEENTRY *pPVar2;
   UINT UVar3;
   undefined1 *puVar4;
   int iVar5;
@@ -17,7 +17,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
   uint uVar8;
   byte *pbVar9;
   ushort *puVar10;
-  tagPALETTEENTRY local_914 [256];
+  tagPALETTEENTRY *local_914;
   LOGPALETTE local_514 [128];
   byte local_110 [256];
   int local_10;
@@ -45,19 +45,19 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     local_c = puVar10;
     iVar5 = FUN_006b4fe0((int)param_1);
     hdc = GetDC((HWND)0x0);
-    GetSystemPaletteEntries(hdc,0,0x100,local_914);
+    GetSystemPaletteEntries(hdc,0,0x100,(LPPALETTEENTRY)&local_914);
     ReleaseDC((HWND)0x0,hdc);
     GetPaletteEntries(param_3,0,0x100,local_514[0].palPalEntry);
     iVar7 = 0;
-    ptVar2 = local_514[0].palPalEntry;
+    pPVar2 = local_514[0].palPalEntry;
     local_8 = 0;
     iVar6 = 0x100;
     do {
-      if ((ptVar2->peFlags & 2) != 0) {
+      if ((pPVar2->peFlags & 2) != 0) {
         iVar7 = 1;
-        *ptVar2 = local_914[ptVar2->peRed];
+        *pPVar2 = *(PALETTEENTRY *)(&local_914 + pPVar2->peRed);
       }
-      ptVar2 = ptVar2 + 1;
+      pPVar2 = pPVar2 + 1;
       iVar6 = iVar6 + -1;
     } while (iVar6 != 0);
     local_8 = iVar7;

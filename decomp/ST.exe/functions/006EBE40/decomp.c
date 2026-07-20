@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __fastcall FUN_006ebe40(int param_1)
+void __fastcall FUN_006ebe40(AnonShape_006EBE40_77FE2AA7 *param_1)
 
 {
   undefined1 uVar1;
@@ -19,14 +19,14 @@ void __fastcall FUN_006ebe40(int param_1)
   undefined1 *puVar13;
   undefined1 *puVar14;
   
-  puVar11 = *(undefined1 **)(param_1 + 0xc);
-  puVar13 = *(undefined1 **)(param_1 + 0x1c);
-  DAT_00856db0 = *(int *)(param_1 + 0x28);
-  puVar6 = (undefined1 *)(*(int *)(param_1 + 0x14) + 1);
-  _DAT_00856dbc = *(int *)(param_1 + 0x28) << 1;
+  puVar11 = param_1->field_000C;
+  puVar13 = param_1->field_001C;
+  DAT_00856db0 = param_1->field_0028;
+  puVar6 = (undefined1 *)(param_1->field_0014 + 1);
+  _DAT_00856dbc = param_1->field_0028 << 1;
   _DAT_00856dac = 0;
-  _DAT_00856db4 = *(int *)(param_1 + 0x174);
-  iVar4 = *(int *)(param_1 + 0x158);
+  _DAT_00856db4 = param_1->field_0174;
+  iVar4 = param_1->field_0158;
   DAT_00856da8 = iVar4;
   do {
     if ((_DAT_00856dac & 1) == 0) {

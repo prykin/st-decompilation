@@ -15,7 +15,7 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
 {
   code *pcVar1;
   undefined2 uVar2;
-  int *piVar3;
+  AnonShape_004CC900_31EE9CAA *pAVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -105,14 +105,16 @@ LAB_0047848a:
     }
     break;
   case CASE_3:
-    piVar3 = (int *)STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)this >> 8),this->field_0x5fc),
-                               CONCAT22((short)(this->field_0611 >> 0x10),
-                                        *(undefined2 *)&this->field_0x5fd),CASE_1);
-    if (((piVar3 != (int *)0x0) && (piVar3[6] == *(int *)&this->field_0x5ff)) &&
-       (iVar6 = (**(code **)(*piVar3 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 != 0)) {
-      thunk_FUN_004cd450((int)piVar3);
+    pAVar3 = (AnonShape_004CC900_31EE9CAA *)
+             STAllPlayersC::GetObjPtr
+                       (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)this >> 8),this->field_0x5fc),
+                        CONCAT22((short)(this->field_0611 >> 0x10),*(undefined2 *)&this->field_0x5fd
+                                ),CASE_1);
+    if (((pAVar3 != (AnonShape_004CC900_31EE9CAA *)0x0) &&
+        (*(int *)&pAVar3->field_0x18 == *(int *)&this->field_0x5ff)) &&
+       (iVar6 = (**(code **)(*(int *)pAVar3 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 != 0)
+       ) {
+      thunk_FUN_004cd450(pAVar3);
     }
     if (((int)this->field_0041 != (*(short *)&this->field_0x609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (*(short *)&this->field_0x60b + 1) * 0xc9)) {

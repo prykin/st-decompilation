@@ -4,12 +4,12 @@ undefined4 __fastcall FUN_006646e0(int param_1)
 {
   int iVar1;
   uint *puVar2;
-  int groupContent;
+  AnonShape_006B0C70_7C4FE646 *groupContent;
   uint uVar3;
   bool bVar4;
   
-  groupContent = *(int *)(param_1 + 0x217);
-  iVar1 = *(int *)(groupContent + 0xc);
+  groupContent = *(AnonShape_006B0C70_7C4FE646 **)(param_1 + 0x217);
+  iVar1 = groupContent->field_000C;
   if (iVar1 == 0) {
     return 0xffffffff;
   }
@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_006646e0(int param_1)
     bVar4 = iVar1 != 0;
     do {
       if (bVar4) {
-        puVar2 = (uint *)(*(int *)(groupContent + 8) * uVar3 + *(int *)(groupContent + 0x1c));
+        puVar2 = (uint *)(groupContent->field_0008 * uVar3 + groupContent->field_001C);
       }
       else {
         puVar2 = (uint *)0x0;
@@ -26,10 +26,10 @@ undefined4 __fastcall FUN_006646e0(int param_1)
       if ((0x31 < *puVar2) && (*puVar2 < 100)) {
         FUN_006b0c70(groupContent,uVar3);
       }
-      groupContent = *(int *)(param_1 + 0x217);
+      groupContent = *(AnonShape_006B0C70_7C4FE646 **)(param_1 + 0x217);
       uVar3 = uVar3 + 1;
-      bVar4 = uVar3 < *(uint *)(groupContent + 0xc);
-    } while ((int)uVar3 < (int)*(uint *)(groupContent + 0xc));
+      bVar4 = uVar3 < (uint)groupContent->field_000C;
+    } while ((int)uVar3 < (int)groupContent->field_000C);
   }
   return *(undefined4 *)(*(int *)(param_1 + 0x217) + 0xc);
 }

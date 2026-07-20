@@ -1,5 +1,5 @@
 
-undefined4 FUN_00757d90(int param_1)
+undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
 
 {
   int *piVar1;
@@ -9,7 +9,7 @@ undefined4 FUN_00757d90(int param_1)
   byte *pbVar5;
   uint uVar6;
   
-  puVar3 = *(undefined4 **)(param_1 + 0x10);
+  puVar3 = param_1->field_0010;
   pbVar5 = (byte *)*puVar3;
   iVar4 = puVar3[1];
   while( true ) {
@@ -26,7 +26,7 @@ undefined4 FUN_00757d90(int param_1)
       pbVar5 = pbVar5 + 1;
       iVar4 = iVar4 + -1;
       if (bVar2 == 0xff) break;
-      piVar1 = (int *)(*(int *)(param_1 + 0x1a6) + 0x5c);
+      piVar1 = (int *)(param_1->field_01A6 + 0x5c);
       *piVar1 = *piVar1 + 1;
       *puVar3 = pbVar5;
       puVar3[1] = iVar4;
@@ -54,15 +54,15 @@ undefined4 FUN_00757d90(int param_1)
       pbVar5 = pbVar5 + 1;
     } while (uVar6 == 0xff);
     if (uVar6 != 0) break;
-    piVar1 = (int *)(*(int *)(param_1 + 0x1a6) + 0x5c);
+    piVar1 = (int *)(param_1->field_01A6 + 0x5c);
     *piVar1 = *piVar1 + 2;
     *puVar3 = pbVar5;
     puVar3[1] = iVar4;
   }
-  if (*(int *)(*(int *)(param_1 + 0x1a6) + 0x5c) != 0) {
-    *(undefined4 *)(*(int *)(param_1 + 0x1a6) + 0x5c) = 0;
+  if (*(int *)(param_1->field_01A6 + 0x5c) != 0) {
+    *(undefined4 *)(param_1->field_01A6 + 0x5c) = 0;
   }
-  *(uint *)(param_1 + 0x18e) = uVar6;
+  param_1->field_018E = uVar6;
   *puVar3 = pbVar5;
   puVar3[1] = iVar4;
   return 1;

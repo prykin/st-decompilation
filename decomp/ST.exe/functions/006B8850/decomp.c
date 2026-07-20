@@ -1,34 +1,34 @@
 
-void FUN_006b8850(int param_1)
+void FUN_006b8850(AnonShape_006B8850_E5DFE1E1 *param_1)
 
 {
   int *piVar1;
   int iVar2;
   
-  if (param_1 != 0) {
-    piVar1 = *(int **)(param_1 + 0x3c);
+  if (param_1 != (AnonShape_006B8850_E5DFE1E1 *)0x0) {
+    piVar1 = (int *)param_1->field_003C;
     if (piVar1 != (int *)0x0) {
       (**(code **)(*piVar1 + 8))(piVar1);
-      *(undefined4 *)(param_1 + 0x3c) = 0;
+      param_1->field_003C = 0;
     }
-    piVar1 = *(int **)(param_1 + 0x38);
+    piVar1 = (int *)param_1->field_0038;
     if (piVar1 != (int *)0x0) {
-      if ((*(uint *)(param_1 + 4) & 0x20000000) != 0) {
+      if ((param_1->field_0004 & 0x20000000) != 0) {
         (**(code **)(*piVar1 + 8))(piVar1);
-        *(undefined4 *)(param_1 + 0x38) = 0;
+        param_1->field_0038 = 0;
         return;
       }
-      if ((*(uint *)(param_1 + 4) & 0xa0000000) != 0) {
+      if ((param_1->field_0004 & 0xa0000000) != 0) {
         iVar2 = 0;
-        if (0 < *(int *)(param_1 + 0x2c)) {
+        if (0 < param_1->field_002C) {
           do {
-            piVar1 = *(int **)(*(int *)(param_1 + 0x38) + iVar2 * 4);
+            piVar1 = *(int **)(param_1->field_0038 + iVar2 * 4);
             (**(code **)(*piVar1 + 8))(piVar1);
             iVar2 = iVar2 + 1;
-          } while (iVar2 < *(int *)(param_1 + 0x2c));
+          } while (iVar2 < param_1->field_002C);
         }
-        FUN_006a5e90(*(short **)(param_1 + 0x38));
-        *(undefined4 *)(param_1 + 0x38) = 0;
+        FUN_006a5e90((short *)param_1->field_0038);
+        param_1->field_0038 = 0;
       }
     }
   }

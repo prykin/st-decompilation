@@ -15,30 +15,30 @@ undefined4 * __cdecl FUN_00648530(ushort *param_1)
   undefined4 unaff_ESI;
   ushort *puVar3;
   void *unaff_EDI;
+  AnonShape_00648530_D39EB612 *pAVar4;
   InternalExceptionFrame local_4c;
-  undefined4 *local_8;
+  AnonShape_00648530_D39EB612 *local_8;
   
-  local_8 = (undefined4 *)0x0;
+  local_8 = (AnonShape_00648530_D39EB612 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
-    local_8 = Library::DKW::LIB::FUN_006aac10(0x85);
+    local_8 = (AnonShape_00648530_D39EB612 *)Library::DKW::LIB::FUN_006aac10(0x85);
     puVar3 = param_1;
-    puVar2 = local_8;
+    pAVar4 = local_8;
     for (iVar1 = 0x21; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = *(undefined4 *)puVar3;
+      *(undefined4 *)pAVar4 = *(undefined4 *)puVar3;
       puVar3 = puVar3 + 2;
-      puVar2 = puVar2 + 1;
+      pAVar4 = (AnonShape_00648530_D39EB612 *)((int)&pAVar4->field_0001 + 3);
     }
-    *(char *)puVar2 = (char)*puVar3;
-    *(undefined4 *)((int)local_8 + 1) = 0x85;
-    *(undefined1 *)((int)local_8 + 5) = 2;
-    puVar2 = thunk_FUN_0065cb00((undefined4 *)(*(int *)((int)local_8 + 0x46) + 0x84 + (int)param_1))
-    ;
-    *(undefined4 **)((int)local_8 + 0x4e) = puVar2;
+    *(char *)pAVar4 = (char)*puVar3;
+    local_8->field_0001 = 0x85;
+    local_8->field_0005 = 2;
+    puVar2 = thunk_FUN_0065cb00((undefined4 *)(local_8->field_0046 + 0x84 + (int)param_1));
+    local_8->field_004E = puVar2;
     g_currentExceptionFrame = local_4c.previous;
-    return local_8;
+    return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006484f0((int *)&local_8);

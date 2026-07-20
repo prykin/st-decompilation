@@ -26,7 +26,7 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this,int param_1)
             iVar3 = -2;
           }
           else {
-            iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)(iVar4 + 0x1c),&local_8);
+            iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)(iVar4 + 0x1c),&local_8);
             if (iVar2 == -4) {
               iVar3 = -3;
             }

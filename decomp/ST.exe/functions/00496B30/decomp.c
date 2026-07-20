@@ -12,8 +12,8 @@ void FUN_00496b30(uint param_1,int param_2,int param_3)
   int local_c;
   int local_8;
   
-  if ((param_1 < *(uint *)(DAT_007fb270 + 0xc)) &&
-     (piVar2 = (int *)(*(int *)(DAT_007fb270 + 8) * param_1 + *(int *)(DAT_007fb270 + 0x1c)),
+  if ((param_1 < PTR_007fb270->count) &&
+     (piVar2 = (int *)(PTR_007fb270->elementSize * param_1 + (int)PTR_007fb270->data),
      piVar2 != (int *)0x0)) {
     iVar3 = piVar2[1] + -7;
     if (iVar3 < 0) {

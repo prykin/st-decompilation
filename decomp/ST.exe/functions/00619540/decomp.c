@@ -1,20 +1,20 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_00619540(void *param_1,undefined4 param_2,int *param_3,int param_4)
+int FUN_00619540(void *param_1,undefined4 param_2,int *param_3,AnonShape_00619540_3F564CD2 *param_4)
 
 {
   int iVar1;
   
-  iVar1 = *(int *)(*(int *)(param_4 + 0x4e) + 0x29);
-  if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + *(int *)(param_4 + 0x5e) * 4), iVar1 != 0)) {
+  iVar1 = *(int *)(param_4->field_004E + 0x29);
+  if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + param_4->field_005E * 4), iVar1 != 0)) {
     iVar1 = thunk_FUN_00424e10(param_1,iVar1,
-                               (float)*(int *)(param_4 + 0x52) * _DAT_007904f8 * _DAT_007904f0 -
+                               (float)param_4->field_0052 * _DAT_007904f8 * _DAT_007904f0 -
                                _DAT_007907a8,
-                               (float)*(int *)(param_4 + 0x56) * _DAT_007904f8 * _DAT_007904f0 -
+                               (float)param_4->field_0056 * _DAT_007904f8 * _DAT_007904f0 -
                                _DAT_007907a8,
-                               (float)*(int *)(param_4 + 0x5a) * _DAT_007904f8 * _DAT_007904f0,0x20,
-                               0x20,param_3);
+                               (float)param_4->field_005A * _DAT_007904f8 * _DAT_007904f0,0x20,0x20,
+                               param_3);
     return iVar1;
   }
   return -4;

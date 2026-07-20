@@ -43,7 +43,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
     iVar6 = 0;
     uVar7 = thunk_FUN_004ad650((int)this_00);
     FUN_006eabf0((void *)this->field_0211,uVar7,iVar6);
-    bVar5 = thunk_FUN_0041caf0((int)this);
+    bVar5 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     uVar7 = (uint)(CONCAT31(extraout_var,bVar5) == 1);
     iVar6 = thunk_FUN_004ad650((int)this_00);
     FUN_006e6870((void *)this->field_0211,iVar6,uVar7);
@@ -59,13 +59,13 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
   if (0 < (int)this->field_0241) {
     thunk_FUN_004ace30(this_00,*(uint *)(DAT_00806724 + 0x2c + this->field_0241 * 4),
                        (int)*(short *)(DAT_00806724 + 0x2c));
-    if ((*(uint *)(DAT_00802a38 + 0xe4) % 3 == 0) &&
+    if (((uint)PTR_00802a38->field_00E4 % 3 == 0) &&
        (iVar6 = this->field_0241 + -1, this->field_0241 = iVar6, iVar6 < 1)) {
       thunk_FUN_004aceb0(this_00,'\x0e');
     }
     goto cf_common_exit_0058E925;
   }
-  if (*(uint *)(DAT_00802a38 + 0xe4) <= (uint)this->field_024F) goto cf_common_exit_0058E925;
+  if ((uint)PTR_00802a38->field_00E4 <= (uint)this->field_024F) goto cf_common_exit_0058E925;
   switch(this->field_0257) {
   case CASE_0:
     iVar6 = (*this->vtable->vfunc_20)();
@@ -147,7 +147,7 @@ LAB_0058ea68:
       if (this->field_0257 == CASE_4) break;
       bVar5 = sub_0058F430(this);
       if (this->field_023D == 0) {
-        iVar6 = thunk_FUN_0058ff70((int)this);
+        iVar6 = thunk_FUN_0058ff70((AnonShape_0058FF70_CCAF0F72 *)this);
         this->field_024F = iVar6;
         this->field_0257 = CASE_0;
         break;
@@ -181,7 +181,7 @@ LAB_0058ea68:
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
         if (iVar6 != 0) {
-          iVar6 = thunk_FUN_0058ff70((int)this);
+          iVar6 = thunk_FUN_0058ff70((AnonShape_0058FF70_CCAF0F72 *)this);
           this->field_024F = iVar6;
           this->field_0257 = CASE_0;
         }
@@ -211,7 +211,7 @@ LAB_0058e87e:
       if (iVar6 != 0) {
         return;
       }
-      STT3DSprC::StartShow((STT3DSprC *)this_00,8,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow((STT3DSprC *)this_00,8,PTR_00802a38->field_00E4);
       this->field_0257 = CASE_4;
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xe);
       thunk_FUN_004ad5e0((int)this_00);
@@ -223,7 +223,7 @@ LAB_0058e87e:
     if (iVar13 == iVar6 + -1) {
       this->field_0257 = CASE_6|CASE_1;
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
-      thunk_FUN_0058efe0(this);
+      thunk_FUN_0058efe0((STJellyGunC *)this);
     }
     break;
   case CASE_5:
@@ -245,9 +245,9 @@ LAB_0058e87e:
     }
     break;
   case CASE_6:
-    iVar6 = thunk_FUN_00417830((int)this);
+    iVar6 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
     if (iVar6 == 0) {
-      iVar6 = thunk_FUN_0058ff70((int)this);
+      iVar6 = thunk_FUN_0058ff70((AnonShape_0058FF70_CCAF0F72 *)this);
       this->field_0257 = CASE_0;
       this->field_024F = iVar6;
       this->field_0253 = 0xf;
@@ -266,7 +266,7 @@ LAB_0058e87e:
 cf_common_exit_0058E925:
   if ((this->field_0257 != CASE_4) && (this->field_0257 != (CASE_6|CASE_1))) {
     iVar6 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar7 = *(uint *)(DAT_00802a38 + 0xe4) % 0x1e;
+    uVar7 = (uint)PTR_00802a38->field_00E4 % 0x1e;
     local_10 = uVar7 + (iVar6 / 3) * 0x1e;
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',

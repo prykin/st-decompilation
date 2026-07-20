@@ -29,7 +29,7 @@ int FUN_00566600(int param_1)
   int local_1c;
   char *local_18;
   cMf32 *local_14;
-  int local_10;
+  AnonShape_00566600_1A7DDCB2 *local_10;
   uint local_c;
   ushort *local_8;
   
@@ -39,10 +39,10 @@ int FUN_00566600(int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    thunk_FUN_00566900(local_10);
+    thunk_FUN_00566900((AnonShape_00566900_A2478973 *)local_10);
     return iVar2;
   }
-  if (*(int *)(local_10 + 0x18) != 0) {
+  if (local_10->field_0018 != 0) {
     g_currentExceptionFrame = local_60.previous;
     return local_1c;
   }
@@ -105,7 +105,7 @@ int FUN_00566600(int param_1)
   }
   pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_164,3,0,0);
   uVar6 = 0xffffffff;
-  *(cMf32 **)(local_10 + 0x18) = pcVar3;
+  local_10->field_0018 = pcVar3;
   pcVar9 = PTR_s_GM_SET_0079b010;
   do {
     pcVar11 = pcVar9;
@@ -145,38 +145,38 @@ int FUN_00566600(int param_1)
   if (uVar6 == 0) {
     RaiseInternalException(-4,g_overwriteContext_007ED77C,s_E____titans_snd_mngr_cpp_007c9748,0x25);
   }
-  if ((param_1 == 0) || ((param_1 < 0 && (*(int *)(local_10 + 0x28) < 1)))) {
+  if ((param_1 == 0) || ((param_1 < 0 && ((int)local_10->field_0028 < 1)))) {
     uVar7 = Library::MSVCRT::FUN_0072e6c0();
-    *(uint *)(local_10 + 0x28) = uVar7 % uVar6 + 1;
+    local_10->field_0028 = uVar7 % uVar6 + 1;
   }
   if (0 < param_1) {
-    *(int *)(local_10 + 0x28) = param_1;
+    local_10->field_0028 = param_1;
   }
   iVar2 = 0;
   bVar12 = 0;
-  pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,*(undefined4 *)(local_10 + 0x28));
-  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(*(cMf32 **)(local_10 + 0x18),pCVar5,bVar12,iVar2);
+  pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
+  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)local_10->field_0018,pCVar5,bVar12,iVar2);
   if (local_8 == (ushort *)0x0) {
     uVar7 = Library::MSVCRT::FUN_0072e6c0();
     iVar13 = 0;
     bVar12 = 0;
     iVar2 = uVar7 % uVar6 + 1;
-    *(int *)(local_10 + 0x28) = iVar2;
+    local_10->field_0028 = iVar2;
     pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar2);
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(*(cMf32 **)(local_10 + 0x18),pCVar5,bVar12,iVar13)
-    ;
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
+                        ((cMf32 *)local_10->field_0018,pCVar5,bVar12,iVar13);
     if (local_8 == (ushort *)0x0) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,s_E____titans_snd_mngr_cpp_007c9748,0x32);
       goto LAB_0056681c;
     }
   }
-  *(undefined4 *)(local_10 + 0x2c) = *(undefined4 *)local_8;
-  *(undefined4 *)(local_10 + 0x30) = *(undefined4 *)(local_8 + 2);
-  *(undefined4 *)(local_10 + 0x34) = *(undefined4 *)(local_8 + 4);
+  local_10->field_002C = *(undefined4 *)local_8;
+  local_10->field_0030 = *(undefined4 *)(local_8 + 2);
+  local_10->field_0034 = *(undefined4 *)(local_8 + 4);
 LAB_0056681c:
   if (local_8 != (ushort *)0x0) {
-    cMf32::RecMemFree(*(cMf32 **)(local_10 + 0x18),(uint *)&local_8);
+    cMf32::RecMemFree((cMf32 *)local_10->field_0018,(uint *)&local_8);
   }
   g_currentExceptionFrame = local_60.previous;
   return local_1c;

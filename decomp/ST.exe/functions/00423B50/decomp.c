@@ -3,7 +3,7 @@
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::AddObjs */
 
-undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,int param_1,int param_2)
+undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int param_2)
 
 {
   code *pcVar1;
@@ -21,7 +21,7 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,int param_1,int param_2)
   uint local_c;
   uint local_8;
   
-  local_c = *(uint *)(param_1 + 0xc);
+  local_c = param_1->count;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
@@ -47,7 +47,7 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,int param_1,int param_2)
   if (local_c != 0) {
     uVar5 = 0;
     do {
-      FUN_006acc70(param_1,uVar5,&local_8);
+      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_1,uVar5,&local_8);
       AddObj(this_00,local_8,param_2);
       uVar6 = uVar6 + 1;
       uVar5 = uVar6 & 0xffff;

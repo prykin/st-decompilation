@@ -17,7 +17,7 @@ FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
-  if (((this->field_1A5F == '\x06') && (this->field_1A60 == '\0')) && (this->field_1EA6 != 0)) {
+  if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) && (this->field_1EA6 != 0)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;

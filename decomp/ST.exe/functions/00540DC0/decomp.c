@@ -80,16 +80,17 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   local_70[3] = 3;
   FUN_006e3db0((int)local_70);
   if (param_1 != 0) {
-    if (DAT_008026f0 == (uint *)0x0) {
-      DAT_008026f0 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x4c,10);
+    if (DAT_008026f0 == (AnonShape_006B0C70_7C4FE646 *)0x0) {
+      DAT_008026f0 = (AnonShape_006B0C70_7C4FE646 *)
+                     Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x4c,10);
     }
-    Library::DKW::TBL::FUN_006ae1c0(DAT_008026f0,local_50);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)DAT_008026f0,local_50);
     g_currentExceptionFrame = local_b4.previous;
     return;
   }
-  if (DAT_008026f0 != (uint *)0x0) {
-    DAT_008026f0[1] = 0;
-    uVar3 = FUN_006b1190((int)DAT_008026f0,local_100);
+  if (DAT_008026f0 != (AnonShape_006B0C70_7C4FE646 *)0x0) {
+    DAT_008026f0->field_0004 = 0;
+    uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)DAT_008026f0,local_100);
     if (-1 < (int)uVar3) {
       do {
         iVar2 = 0x13;
@@ -104,17 +105,17 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
           puVar7 = puVar7 + 1;
         } while (bVar8);
         if (bVar8) {
-          FUN_006b0c70((int)DAT_008026f0,uVar3);
-          if (DAT_008026f0[3] != 0) {
+          FUN_006b0c70(DAT_008026f0,uVar3);
+          if (DAT_008026f0->field_000C != 0) {
             g_currentExceptionFrame = local_b4.previous;
             return;
           }
           FUN_006ae110((byte *)DAT_008026f0);
-          DAT_008026f0 = (uint *)0x0;
+          DAT_008026f0 = (AnonShape_006B0C70_7C4FE646 *)0x0;
           g_currentExceptionFrame = local_b4.previous;
           return;
         }
-        uVar3 = FUN_006b1190((int)DAT_008026f0,local_100);
+        uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)DAT_008026f0,local_100);
         if ((int)uVar3 < 0) {
           g_currentExceptionFrame = local_b4.previous;
           return;

@@ -1,5 +1,5 @@
 
-void __fastcall FUN_004efe20(void *param_1)
+void __fastcall FUN_004efe20(AnonShape_004EFE20_20805E12 *param_1)
 
 {
   UINT UVar1;
@@ -14,34 +14,32 @@ void __fastcall FUN_004efe20(void *param_1)
   undefined4 *local_c;
   int local_8;
   
-  if (*(int *)((int)param_1 + 0x27a) != 0) {
-    local_c = (undefined4 *)((int)param_1 + 0x1be);
-    puVar6 = (undefined4 *)((int)param_1 + 0x1a1);
+  if (param_1->field_027A != 0) {
+    local_c = (undefined4 *)&param_1->field_0x1be;
+    puVar6 = (undefined4 *)&param_1->field_0x1a1;
     local_8 = 0;
     local_14 = 5;
     do {
-      *(undefined4 *)((int)param_1 + 0x28) = 0x21;
-      FUN_006e6080(param_1,2,*puVar6,(undefined4 *)((int)param_1 + 0x18));
-      iVar3 = *(int *)((int)param_1 + 0x2c);
-      uVar2 = (uint)((uint)(local_8 + *(int *)((int)param_1 + 0x199)) <
-                    *(uint *)(*(int *)((int)param_1 + 0x27a) + 0xc));
-      *(uint *)((int)param_1 + 0x2c) = uVar2;
+      param_1->field_0028 = 0x21;
+      FUN_006e6080(param_1,2,*puVar6,(undefined4 *)&param_1->field_0x18);
+      iVar3 = param_1->field_002C;
+      uVar2 = (uint)((uint)(local_8 + param_1->field_0199) < *(uint *)(param_1->field_027A + 0xc));
+      param_1->field_002C = uVar2;
       if (uVar2 == 0) {
         if (iVar3 != 0) goto LAB_004eff2c;
 LAB_004efe9c:
-        *(undefined4 *)((int)param_1 + 0x28) = 5;
+        param_1->field_0028 = 5;
         uVar8 = *puVar6;
       }
       else {
         if (iVar3 != 0) goto LAB_004efe9c;
 LAB_004eff2c:
-        *(undefined4 *)((int)param_1 + 0x28) = 0x20;
+        param_1->field_0028 = 0x20;
         uVar8 = *puVar6;
       }
-      FUN_006e6080(param_1,2,uVar8,(undefined4 *)((int)param_1 + 0x18));
-      if ((((*(int *)((int)param_1 + 0x2c) != 0) &&
-           (iVar3 = *(int *)((int)param_1 + 0x27a), iVar3 != 0)) &&
-          (uVar2 = *(int *)((int)param_1 + 0x199) + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
+      FUN_006e6080(param_1,2,uVar8,(undefined4 *)&param_1->field_0x18);
+      if ((((param_1->field_002C != 0) && (iVar3 = param_1->field_027A, iVar3 != 0)) &&
+          (uVar2 = param_1->field_0199 + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
          (pGVar4 = (Global_sub_00523410_param_1Enum *)
                    (*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c)),
          pGVar4 != (Global_sub_00523410_param_1Enum *)0x0)) {

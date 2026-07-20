@@ -1,5 +1,6 @@
 
-void __cdecl FUN_00571a30(undefined4 *param_1,undefined4 *param_2,char param_3)
+void __cdecl
+FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *param_2,char param_3)
 
 {
   int iVar1;
@@ -8,82 +9,82 @@ void __cdecl FUN_00571a30(undefined4 *param_1,undefined4 *param_2,char param_3)
   
   iVar1 = 0x10;
   if (param_3 != '\0') {
-    puVar2 = param_2 + 4;
-    puVar3 = (undefined4 *)((int)param_1 + 0x299);
+    puVar2 = (undefined4 *)&param_2->field_0x10;
+    puVar3 = (undefined4 *)&param_1->field_0x299;
     for (; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = *puVar2;
       puVar2 = puVar2 + 1;
       puVar3 = puVar3 + 1;
     }
-    *(undefined4 *)((int)param_1 + 0x2e6) = *(undefined4 *)((int)param_2 + 0x5d);
-    *(undefined4 *)((int)param_1 + 0x2ea) = *(undefined4 *)((int)param_2 + 0x61);
-    *(undefined4 *)((int)param_1 + 0x2ee) = *(undefined4 *)((int)param_2 + 0x65);
-    puVar2 = param_2 + 0x1d;
-    puVar3 = (undefined4 *)((int)param_1 + 0x11aa);
+    param_1->field_02E6 = param_2->field_005D;
+    param_1->field_02EA = param_2->field_0061;
+    param_1->field_02EE = param_2->field_0065;
+    puVar2 = (undefined4 *)&param_2[1].field_0x8;
+    puVar3 = (undefined4 *)&param_1->field_0x11aa;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = *puVar2;
       puVar2 = puVar2 + 1;
       puVar3 = puVar3 + 1;
     }
-    *param_1 = *param_2;
-    param_1[1] = param_2[1];
-    param_1[2] = param_2[2];
-    *(undefined2 *)(param_1 + 3) = *(undefined2 *)(param_2 + 3);
-    *(undefined2 *)((int)param_1 + 0xe) = *(undefined2 *)((int)param_2 + 0xe);
-    *(undefined1 *)((int)param_1 + 0x2d9) = *(undefined1 *)(param_2 + 0x14);
-    *(undefined1 *)((int)param_1 + 0x2da) = *(undefined1 *)((int)param_2 + 0x51);
-    *(undefined1 *)((int)param_1 + 0x2db) = *(undefined1 *)((int)param_2 + 0x52);
-    *(undefined1 *)(param_1 + 0xb7) = *(undefined1 *)((int)param_2 + 0x53);
-    *(undefined1 *)((int)param_1 + 0x2dd) = *(undefined1 *)(param_2 + 0x15);
-    *(undefined1 *)((int)param_1 + 0x2de) = *(undefined1 *)((int)param_2 + 0x55);
-    *(undefined1 *)((int)param_1 + 0x2df) = *(undefined1 *)((int)param_2 + 0x56);
-    *(undefined1 *)(param_1 + 0xb8) = *(undefined1 *)((int)param_2 + 0x57);
-    *(undefined4 *)((int)param_1 + 0x2e1) = param_2[0x16];
-    *(undefined1 *)((int)param_1 + 0x2e5) = *(undefined1 *)(param_2 + 0x17);
-    *(undefined1 *)((int)param_1 + 0x2f3) = *(undefined1 *)((int)param_2 + 0x6a);
-    *(undefined1 *)(param_1 + 0xbd) = *(undefined1 *)((int)param_2 + 0x6b);
-    *(undefined4 *)((int)param_1 + 0x2f5) = param_2[0x1b];
-    *(undefined1 *)((int)param_1 + 0x2f2) = *(undefined1 *)((int)param_2 + 0x69);
-    *(undefined4 *)((int)param_1 + 0x11a6) = param_2[0x1c];
+    *(undefined4 *)param_1 = *(undefined4 *)param_2;
+    *(undefined4 *)((int)&param_1->field_0003 + 1) = *(undefined4 *)((int)&param_2->field_0003 + 1);
+    *(undefined4 *)&param_1->field_0x8 = *(undefined4 *)&param_2->field_0x8;
+    *(undefined2 *)&param_1->field_0xc = *(undefined2 *)&param_2->field_0xc;
+    param_1->field_000E = param_2->field_000E;
+    param_1->field_02D9 = param_2->field_0x50;
+    param_1->field_02DA = param_2->field_0051;
+    param_1->field_02DB = param_2->field_0052;
+    param_1->field_0x2dc = param_2->field_0053;
+    param_1->field_02DD = param_2->field_0x54;
+    param_1->field_02DE = param_2->field_0055;
+    param_1->field_02DF = param_2->field_0056;
+    param_1->field_0x2e0 = param_2->field_0057;
+    param_1->field_02E1 = *(undefined4 *)&param_2->field_0x58;
+    param_1->field_02E5 = param_2->field_0x5c;
+    param_1->field_02F3 = param_2->field_006A;
+    param_1->field_0x2f4 = param_2->field_006B;
+    param_1->field_02F5 = *(undefined4 *)(param_2 + 1);
+    param_1->field_02F2 = param_2->field_0069;
+    param_1->field_11A6 = *(undefined4 *)((int)&param_2[1].field_0003 + 1);
     return;
   }
-  puVar2 = (undefined4 *)((int)param_1 + 0x299);
-  puVar3 = param_2 + 4;
+  puVar2 = (undefined4 *)&param_1->field_0x299;
+  puVar3 = (undefined4 *)&param_2->field_0x10;
   for (; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
-  *(undefined4 *)((int)param_2 + 0x5d) = *(undefined4 *)((int)param_1 + 0x2e6);
-  *(undefined4 *)((int)param_2 + 0x61) = *(undefined4 *)((int)param_1 + 0x2ea);
-  *(undefined4 *)((int)param_2 + 0x65) = *(undefined4 *)((int)param_1 + 0x2ee);
-  puVar2 = (undefined4 *)((int)param_1 + 0x11aa);
-  puVar3 = param_2 + 0x1d;
+  param_2->field_005D = param_1->field_02E6;
+  param_2->field_0061 = param_1->field_02EA;
+  param_2->field_0065 = param_1->field_02EE;
+  puVar2 = (undefined4 *)&param_1->field_0x11aa;
+  puVar3 = (undefined4 *)&param_2[1].field_0x8;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
-  *param_2 = *param_1;
-  param_2[1] = param_1[1];
-  param_2[2] = param_1[2];
-  *(undefined2 *)(param_2 + 3) = *(undefined2 *)(param_1 + 3);
-  *(undefined2 *)((int)param_2 + 0xe) = *(undefined2 *)((int)param_1 + 0xe);
-  *(undefined1 *)(param_2 + 0x14) = *(undefined1 *)((int)param_1 + 0x2d9);
-  *(undefined1 *)((int)param_2 + 0x51) = *(undefined1 *)((int)param_1 + 0x2da);
-  *(undefined1 *)((int)param_2 + 0x52) = *(undefined1 *)((int)param_1 + 0x2db);
-  *(undefined1 *)((int)param_2 + 0x53) = *(undefined1 *)(param_1 + 0xb7);
-  *(undefined1 *)(param_2 + 0x15) = *(undefined1 *)((int)param_1 + 0x2dd);
-  *(undefined1 *)((int)param_2 + 0x55) = *(undefined1 *)((int)param_1 + 0x2de);
-  *(undefined1 *)((int)param_2 + 0x56) = *(undefined1 *)((int)param_1 + 0x2df);
-  *(undefined1 *)((int)param_2 + 0x57) = *(undefined1 *)(param_1 + 0xb8);
-  param_2[0x16] = *(undefined4 *)((int)param_1 + 0x2e1);
-  *(undefined1 *)(param_2 + 0x17) = *(undefined1 *)((int)param_1 + 0x2e5);
-  *(undefined1 *)((int)param_2 + 0x6a) = *(undefined1 *)((int)param_1 + 0x2f3);
-  *(undefined1 *)((int)param_2 + 0x6b) = *(undefined1 *)(param_1 + 0xbd);
-  param_2[0x1b] = *(undefined4 *)((int)param_1 + 0x2f5);
-  *(undefined1 *)((int)param_2 + 0x69) = *(undefined1 *)((int)param_1 + 0x2f2);
-  param_2[0x1c] = *(undefined4 *)((int)param_1 + 0x11a6);
+  *(undefined4 *)param_2 = *(undefined4 *)param_1;
+  *(undefined4 *)((int)&param_2->field_0003 + 1) = *(undefined4 *)((int)&param_1->field_0003 + 1);
+  *(undefined4 *)&param_2->field_0x8 = *(undefined4 *)&param_1->field_0x8;
+  *(undefined2 *)&param_2->field_0xc = *(undefined2 *)&param_1->field_0xc;
+  param_2->field_000E = param_1->field_000E;
+  param_2->field_0x50 = param_1->field_02D9;
+  param_2->field_0051 = param_1->field_02DA;
+  param_2->field_0052 = param_1->field_02DB;
+  param_2->field_0053 = param_1->field_0x2dc;
+  param_2->field_0x54 = param_1->field_02DD;
+  param_2->field_0055 = param_1->field_02DE;
+  param_2->field_0056 = param_1->field_02DF;
+  param_2->field_0057 = param_1->field_0x2e0;
+  *(undefined4 *)&param_2->field_0x58 = param_1->field_02E1;
+  param_2->field_0x5c = param_1->field_02E5;
+  param_2->field_006A = param_1->field_02F3;
+  param_2->field_006B = param_1->field_0x2f4;
+  *(undefined4 *)(param_2 + 1) = param_1->field_02F5;
+  param_2->field_0069 = param_1->field_02F2;
+  *(undefined4 *)((int)&param_2[1].field_0003 + 1) = param_1->field_11A6;
   return;
 }
 

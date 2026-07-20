@@ -1,5 +1,5 @@
 
-void __thiscall FUN_006e8ea0(void *this,int param_1)
+void __thiscall FUN_006e8ea0(void *this,AnonShape_006E8EA0_96B71903 *param_1)
 
 {
   int iVar1;
@@ -23,14 +23,14 @@ void __thiscall FUN_006e8ea0(void *this,int param_1)
   local_2c = *(int *)((int)this + 0x34);
   local_28 = *(int *)((int)this + 0x38) - local_30;
   local_24 = *(int *)((int)this + 0x3c) - local_2c;
-  iVar1 = *(int *)(param_1 + 0x20);
+  iVar1 = param_1->field_0020;
   local_18 = -1;
   local_14 = -1;
   if (iVar1 != 0) {
     local_18 = *(int *)(iVar1 + 4);
     local_14 = *(int *)(iVar1 + 8);
   }
-  iVar1 = *(int *)(param_1 + 0x24);
+  iVar1 = param_1->field_0024;
   if (iVar1 != 0) {
     if (local_18 < *(int *)(iVar1 + 4)) {
       local_18 = *(int *)(iVar1 + 4);
@@ -39,22 +39,21 @@ void __thiscall FUN_006e8ea0(void *this,int param_1)
       local_14 = *(int *)(iVar1 + 8);
     }
   }
-  local_10 = *(undefined4 *)(param_1 + 8);
-  local_c = *(undefined4 *)(param_1 + 0xc);
-  local_8 = *(undefined4 *)(param_1 + 0x10);
+  local_10 = param_1->field_0008;
+  local_c = param_1->field_000C;
+  local_8 = param_1->field_0010;
   FUN_006e25d0(this,&local_40);
   iVar1 = *(int *)((int)this + 0x2f0);
   if ((iVar1 == 100) && (*(int *)((int)this + 0x2f4) == 100)) {
-    local_20 = -(int)*(short *)(param_1 + 0x1c);
-    local_1c = -(int)*(short *)(param_1 + 0x1e);
+    local_20 = -(int)param_1->field_001C;
+    local_1c = -(int)param_1->field_001E;
   }
   else {
-    iVar2 = (int)((ulonglong)((longlong)(*(short *)(param_1 + 0x1c) * iVar1) * -0x51eb851f) >> 0x20)
-    ;
+    iVar2 = (int)((ulonglong)((longlong)(param_1->field_001C * iVar1) * -0x51eb851f) >> 0x20);
     local_20 = (iVar2 >> 5) - (iVar2 >> 0x1f);
     iVar2 = (int)((ulonglong)
-                  ((longlong)((int)*(short *)(param_1 + 0x1e) * *(int *)((int)this + 0x2f4)) *
-                  -0x51eb851f) >> 0x20);
+                  ((longlong)((int)param_1->field_001E * *(int *)((int)this + 0x2f4)) * -0x51eb851f)
+                 >> 0x20);
     local_1c = (iVar2 >> 5) - (iVar2 >> 0x1f);
     local_18 = (iVar1 * local_18) / 100;
     local_14 = (*(int *)((int)this + 0x2f4) * local_14) / 100;

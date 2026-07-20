@@ -29,7 +29,7 @@ undefined4 __thiscall STFishC::sub_0057D5F0(STFishC *this,uint param_1)
     this->field_0237 = local_c[0];
     this->field_0239 = local_10[0];
   }
-  iVar1 = thunk_FUN_0057d420(this);
+  iVar1 = thunk_FUN_0057d420((AnonShape_0057D420_ACBACC73 *)this);
   if (iVar1 != 0) {
     return 1;
   }

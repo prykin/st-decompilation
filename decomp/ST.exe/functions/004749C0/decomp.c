@@ -6,7 +6,7 @@
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004749C0 -> 006E62D0 @ 00474A98 | 004749C0 -> 006E62D0 @ 00474FD8 */
 
-int __thiscall STBoatC::WaitLoad(STBoatC *this,int *param_1)
+int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
 
 {
   uint uVar1;
@@ -46,7 +46,7 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,int *param_1)
   int local_c;
   undefined4 *local_8;
   
-  if ((param_1 == (int *)0x0) || (pSVar11 = this, param_1 == (int *)0x1)) {
+  if ((param_1 == (STBoatC *)0x0) || (pSVar11 = this, param_1 == (STBoatC *)0x1)) {
     puVar8 = &this->field_02CC;
     for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
       *puVar8 = 0;
@@ -84,17 +84,17 @@ LAB_00475068:
         return iVar10;
       }
       if ((this->field_05A6 == 0) &&
-         (iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,&this->field_05A6), iVar10 == -4)) {
+         (iVar10 = FUN_006e62d0(PTR_00802a38,this->field_05A2,&this->field_05A6), iVar10 == -4)) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fea
                   );
       }
       if ((*(int *)(this->field_05A6 + 0x7ce) != 0) &&
          ((int)this->field_0716 < (int)this->field_0712)) {
-        uVar3 = ZEXT48(DAT_00802a38[7].messages) % 0x19;
+        uVar3 = (ulonglong)(uint)PTR_00802a38->field_00E4 % 0x19;
         if ((int)uVar3 == 0) {
           iVar10 = this->field_06F7 - CASE_1;
-          if ((int)((uVar3 << 0x20 | ZEXT48(DAT_00802a38[7].messages)) % 100) == 0) {
+          if ((int)((uVar3 << 0x20 | (ulonglong)(uint)PTR_00802a38->field_00E4) % 100) == 0) {
             (*this->vtable->vfunc_90)(3,0x363);
             thunk_FUN_00637930(this->field_01ED,1,-100,-100,-100,0,0);
           }
@@ -122,7 +122,7 @@ LAB_00475068:
       local_44 = *(undefined4 *)&this->field_0x8;
       local_3c = 0x129;
       local_40 = 2;
-      SystemClassTy::PostMessage(DAT_00802a38,local_4c);
+      SystemClassTy::PostMessage((SystemClassTy *)PTR_00802a38,local_4c);
 switchD_00474a47_caseD_2:
       return 2;
     }
@@ -136,10 +136,9 @@ switchD_00474a47_caseD_2:
         iVar6 = iVar10 + 1;
         this->field_05BC = iVar6;
         if ((&this->field_05B4)[iVar10] != -1) {
-          param_1 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                       this->field_0x24),
-                                              CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0030
-                                                      ));
+          param_1 = (STBoatC *)
+                    thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x24),
+                                       CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0030));
           sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
                        (int)(short)(&this->field_05B2)[this->field_05BC]);
           sub_00460260(this,0);
@@ -160,9 +159,9 @@ switchD_00474a47_caseD_2:
         goto switchD_00474a47_caseD_2;
       case 3:
         this->field_05C0 = 0;
-        iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&param_1);
+        iVar10 = FUN_006e62d0(PTR_00802a38,this->field_05A2,(int *)&param_1);
         if (iVar10 != -4) {
-          NotReadyForLoading((STBoatC *)param_1,this->field_0018);
+          NotReadyForLoading(param_1,this->field_0018);
           return 2;
         }
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f68,0,0,&DAT_007a4ccc
@@ -319,7 +318,7 @@ switchD_00474a47_caseD_2:
       if (iVar10 == 6) {
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
-          iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&param_1);
+          iVar10 = FUN_006e62d0(PTR_00802a38,this->field_05A2,(int *)&param_1);
           if (iVar10 == -4) {
             iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fd1,0,0,
                                         &DAT_007a4ccc,s_STBoatC__WaitLoad_WAITLOAD_PREPA_007aaecc);
@@ -330,7 +329,7 @@ switchD_00474a47_caseD_2:
             iVar10 = (*pcVar4)();
             return iVar10;
           }
-          ReadyForLoading((STBoatC *)param_1,(void *)this->field_0018);
+          ReadyForLoading(param_1,(void *)this->field_0018);
           this->field_05C4 = 7;
         }
         iVar10 = (*this->vtable->vfunc_D8)();

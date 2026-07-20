@@ -1,19 +1,19 @@
 
-undefined4 __fastcall FUN_004d9790(int param_1)
+undefined4 __fastcall FUN_004d9790(AnonShape_004D9790_FC54D6B0 *param_1)
 
 {
   int iVar1;
   uint uVar2;
   
-  *(undefined4 *)(param_1 + 0x4d0) = 0;
-  *(undefined4 *)(param_1 + 0x4d4) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-  uVar2 = *(int *)(param_1 + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)(param_1 + 0x1c) = uVar2;
-  iVar1 = *(int *)(DAT_00802a38 + 0xe4);
-  *(undefined4 *)(param_1 + 0x4dc) = 0;
-  *(undefined4 *)(param_1 + 0x4e0) = 0;
-  *(undefined4 *)(param_1 + 0x4e4) = 0;
-  *(uint *)(param_1 + 0x4d8) = (uVar2 >> 0x10) % 0x4c + iVar1;
+  param_1->field_04D0 = 0;
+  param_1->field_04D4 = PTR_00802a38->field_00E4;
+  uVar2 = param_1->field_001C * 0x41c64e6d + 0x3039;
+  param_1->field_001C = uVar2;
+  iVar1 = PTR_00802a38->field_00E4;
+  param_1->field_04DC = 0;
+  param_1->field_04E0 = 0;
+  param_1->field_04E4 = 0;
+  param_1->field_04D8 = (uVar2 >> 0x10) % 0x4c + iVar1;
   return 0;
 }
 

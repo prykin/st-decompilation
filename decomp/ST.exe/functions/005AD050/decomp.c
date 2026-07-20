@@ -1,7 +1,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
-   ChooseMapTy::PaintChooseMap */
+   ChooseMapTy::PaintChooseMap
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
 
@@ -42,7 +47,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  PutDDX(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
+  PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
   pCVar3 = local_8;
   if ((local_8->field_20B8 == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutBSlProc
@@ -69,11 +74,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_2:
   case CASE_4:
   case CASE_5:
-    pcVar8 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     uID = 0x26ae;
     break;
-  case CASE_2|CASE_1:
-    pcVar8 = *(ccFntTy **)(DAT_0081176c + 0x30);
+  case CASE_3:
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     uID = 0x26af;
     break;
   default:
@@ -82,11 +87,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_A:
   case CASE_B:
   case CASE_C:
-    pcVar8 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     uID = 0x26ad;
     break;
   case CASE_13:
-    pcVar8 = *(ccFntTy **)(DAT_0081176c + 0x30);
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     uID = (DAT_00803400 != '\f') + 0x26ad;
   }
   uVar9 = 0;

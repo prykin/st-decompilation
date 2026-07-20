@@ -37,7 +37,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   int local_8;
   
   if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) || (this->field_0024 == 0))
-     || ((param_1 == (int *)0x0 || (DAT_00806770 == (cMf32 *)0x0)))) {
+     || ((param_1 == (int *)0x0 || (PTR_00806770 == (cMf32 *)0x0)))) {
     return 0;
   }
   local_7c.previous = g_currentExceptionFrame;
@@ -152,7 +152,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
     else {
       pcVar11 = g_cMf32_00806760;
       if (*(int *)(&DAT_007c900c + *param_1 * 0x18) != 1) {
-        pcVar11 = DAT_00806770;
+        pcVar11 = PTR_00806770;
       }
       iVar3 = 1;
       cVar12 = '\x1d';

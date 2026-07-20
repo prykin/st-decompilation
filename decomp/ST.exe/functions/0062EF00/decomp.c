@@ -18,8 +18,7 @@ undefined4 __thiscall FUN_0062ef00(void *this,int param_1,int param_2)
     *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x28) =
          *(undefined4 *)(param_2 + 0x1c);
     **(undefined4 **)((int)this + param_1 * 4 + 0x1e5) = *(undefined4 *)(param_2 + 0x20);
-    *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x35) =
-         *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x35) = PTR_00802a38->field_00E4;
     *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x39) = 3000;
     uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar1;

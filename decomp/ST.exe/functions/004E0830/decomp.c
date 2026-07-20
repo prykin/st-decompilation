@@ -1,285 +1,296 @@
 
-undefined4 __fastcall FUN_004e0830(int *param_1)
+undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
 
 {
-  short sVar1;
+  TLOBaseTy_field_05ACState TVar1;
   int iVar2;
-  int iVar3;
+  short sVar3;
   int iVar4;
-  uint uVar5;
+  int iVar5;
+  int iVar6;
+  uint uVar7;
+  TLOBaseTyVTable *pTVar8;
   STResourceC *this;
-  short sVar6;
-  short sVar7;
-  int iVar8;
-  int iVar9;
-  undefined2 uVar10;
-  undefined2 uVar11;
-  undefined2 uVar12;
-  int iVar13;
-  char *pcVar14;
-  char cVar15;
+  short sVar9;
+  short sVar10;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  undefined2 uVar13;
+  undefined2 uVar14;
+  undefined2 uVar15;
   undefined4 uVar16;
+  undefined4 uVar17;
+  undefined4 uVar18;
+  char *pcVar19;
+  char cVar20;
+  undefined4 uVar21;
+  undefined4 uVar22;
   
-  if (param_1[0x134] == 1) {
-    if (*(int *)(*(int *)((int)param_1 + 0x1f5) + 0x1a4) ==
-        *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x1a0)) {
-      iVar2 = param_1[0x13a];
-      if (iVar2 == 1) {
-        if (param_1[0x139] == 0) {
-          param_1[0x13a] = 3;
-          thunk_FUN_004e04a0((int)param_1);
-          switch(param_1[0x16b]) {
-          case 0x39:
+  if (param_1->field_04D0 == 1) {
+    if (*(int *)(param_1->field_01F5 + 0x1a4) == *(int *)(param_1->field_01F5 + 0x1a0)) {
+      iVar4 = *(int *)&param_1->field_0x4e8;
+      if (iVar4 == 1) {
+        if (*(int *)&param_1->field_0x4e4 == 0) {
+          *(undefined4 *)&param_1->field_0x4e8 = 3;
+          thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
+          switch(param_1->field_05AC) {
+          case CASE_39:
 switchD_004e08b2_caseD_39:
-            iVar2 = *param_1;
-            iVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
-            (**(code **)(iVar2 + 0x90))(3,(-(uint)((char)iVar3 != '\x02') & 0xffffff3a) + 0x2e9);
+            pTVar8 = param_1->vtable;
+            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2e9);
             break;
-          case 0x3b:
+          case CASE_3B:
 switchD_004e08b2_caseD_3b:
-            iVar2 = *param_1;
-            iVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
-            (**(code **)(iVar2 + 0x90))(3,(-(uint)((char)iVar3 != '\x02') & 0xffffff3a) + 0x2f6);
+            pTVar8 = param_1->vtable;
+            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f6);
             break;
-          case 0x4f:
+          case CASE_4F:
 switchD_004e08b2_caseD_4f:
-            iVar2 = *param_1;
-            iVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
-            (**(code **)(iVar2 + 0x90))(3,(-(uint)((char)iVar3 != '\x02') & 0xffffff32) + 0x34f);
+            pTVar8 = param_1->vtable;
+            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x34f);
             break;
-          case 0x5e:
+          case CASE_5E:
 switchD_004e08b2_caseD_5e:
-            (**(code **)(*param_1 + 0x90))(3,0x3aa);
+            (*param_1->vtable->vfunc_90)(3,0x3aa);
             break;
-          case 0x60:
-            (**(code **)(*param_1 + 0x90))(3,0x3b9);
+          case CASE_60:
+            (*param_1->vtable->vfunc_90)(3,0x3b9);
           }
         }
         else {
-          param_1[0x13a] = 2;
+          *(undefined4 *)&param_1->field_0x4e8 = 2;
 LAB_004e0a1f:
-          thunk_FUN_004e04a0((int)param_1);
+          thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
         }
       }
-      else if (iVar2 == 2) {
-        if (param_1[0x139] == 0) {
-          param_1[0x13a] = 3;
-          thunk_FUN_004e04a0((int)param_1);
-          switch(param_1[0x16b]) {
-          case 0x39:
+      else if (iVar4 == 2) {
+        if (*(int *)&param_1->field_0x4e4 == 0) {
+          *(undefined4 *)&param_1->field_0x4e8 = 3;
+          thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
+          switch(param_1->field_05AC) {
+          case CASE_39:
             goto switchD_004e08b2_caseD_39;
-          case 0x3b:
+          case CASE_3B:
             goto switchD_004e08b2_caseD_3b;
-          case 0x4f:
+          case CASE_4F:
             goto switchD_004e08b2_caseD_4f;
-          case 0x52:
-            iVar2 = *param_1;
-            iVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
-            (**(code **)(iVar2 + 0x90))(3,(-(uint)((char)iVar3 != '\x02') & 0xffffff3b) + 0x35c);
+          case CASE_52:
+            pTVar8 = param_1->vtable;
+            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35c);
             break;
-          case 0x5e:
+          case CASE_5E:
             goto switchD_004e08b2_caseD_5e;
-          case 0x60:
-            (**(code **)(*param_1 + 0x90))(3,0x3b9);
+          case CASE_60:
+            (*param_1->vtable->vfunc_90)(3,0x3b9);
           }
         }
         else {
-          iVar2 = param_1[0x16b];
-          if (((iVar2 == 0x3b) || (iVar2 == 0x60)) || (iVar2 == 0x52)) goto LAB_004e0a1f;
+          TVar1 = param_1->field_05AC;
+          if (((TVar1 == CASE_3B) || (TVar1 == CASE_60)) || (TVar1 == CASE_52)) goto LAB_004e0a1f;
         }
       }
-      else if (iVar2 == 3) {
-        param_1[0x13a] = 0;
+      else if (iVar4 == 3) {
+        *(undefined4 *)&param_1->field_0x4e8 = 0;
         goto LAB_004e0a1f;
       }
     }
-    if (param_1[0x139] == 0) {
-      if (param_1[0x16b] == 0x4f) {
-        iVar2 = thunk_FUN_004406c0((char)param_1[9]);
-        iVar3 = 0xe;
-        if ((char)iVar2 != '\x02') goto LAB_004e0a4f;
+    if (*(int *)&param_1->field_0x4e4 == 0) {
+      if (param_1->field_05AC == CASE_4F) {
+        iVar4 = thunk_FUN_004406c0(param_1->field_0x24);
+        iVar5 = 0xe;
+        if ((char)iVar4 != '\x02') goto LAB_004e0a4f;
       }
       else {
 LAB_004e0a4f:
-        iVar3 = 0xc;
+        iVar5 = 0xc;
       }
-      if ((*(int *)(*(int *)((int)param_1 + 0x1f5) + 0x18 + iVar3 * 0x24) ==
-           *(int *)(*(int *)((int)param_1 + 0x1f5) + iVar3 * 0x24 + 0x14)) && (param_1[0x13a] == 0))
-      {
-        param_1[0x134] = 0;
-        TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,1);
+      if ((*(int *)(param_1->field_01F5 + 0x18 + iVar5 * 0x24) ==
+           *(int *)(param_1->field_01F5 + iVar5 * 0x24 + 0x14)) &&
+         (*(int *)&param_1->field_0x4e8 == 0)) {
+        param_1->field_04D0 = 0;
+        TLOBaseTy::RotateSpr(param_1,1);
       }
     }
   }
-  if ((param_1[0x16b] != 0x52) && (param_1[0x16b] != 0x5f)) goto switchD_004e0aad_default;
-  switch(param_1[0x134]) {
+  if ((param_1->field_05AC != CASE_52) && (param_1->field_05AC != CASE_5F))
+  goto switchD_004e0aad_default;
+  switch(param_1->field_04D0) {
   case 2:
-    iVar3 = param_1[0x16d];
-    iVar2 = iVar3 + 2;
-    if (iVar3 < iVar2) {
-      iVar13 = param_1[0x16c];
+    iVar5 = *(int *)&param_1->field_0x5b4;
+    iVar4 = iVar5 + 2;
+    if (iVar5 < iVar4) {
+      iVar2 = *(int *)&param_1->field_0x5b0;
       do {
-        if (iVar13 < iVar13 + 2) {
-          sVar7 = (short)param_1[0x16e] + 1;
-          iVar4 = iVar13;
+        if (iVar2 < iVar2 + 2) {
+          sVar10 = *(short *)&param_1->field_0x5b8 + 1;
+          iVar6 = iVar2;
           do {
-            sVar1 = (short)iVar4;
-            if (((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
-               ((sVar6 = (short)iVar3, sVar6 < 0 ||
-                ((((SHORT_007fb242 <= sVar6 || (sVar7 < 0)) || (SHORT_007fb244 <= sVar7)) ||
+            sVar3 = (short)iVar6;
+            if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
+               ((sVar9 = (short)iVar5, sVar9 < 0 ||
+                ((((SHORT_007fb242 <= sVar9 || (sVar10 < 0)) || (SHORT_007fb244 <= sVar10)) ||
                  (*(int *)(DAT_007fb248 +
-                          ((int)sVar6 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar7 +
-                          (int)sVar1) * 8) == 0)))))) {
-              param_1[0x13c] = iVar4;
-              param_1[0x13b] = 1;
-              param_1[0x13d] = iVar3;
-              param_1[0x13e] = param_1[0x16e] + 1;
+                          ((int)sVar9 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 +
+                          (int)sVar3) * 8) == 0)))))) {
+              *(int *)&param_1->field_0x4f0 = iVar6;
+              *(undefined4 *)&param_1->field_0x4ec = 1;
+              *(int *)&param_1->field_0x4f4 = iVar5;
+              *(int *)&param_1->field_0x4f8 = *(int *)&param_1->field_0x5b8 + 1;
               if (DAT_00800bcc == (void *)0x0) {
                 thunk_FUN_004cf430();
               }
-              thunk_FUN_004d0970(DAT_00800bcc,param_1[0x13c],param_1[0x13d],param_1[0x13e]);
-              param_1[0x134] = 3;
-              param_1[0x13f] = param_1[0x16c] * 0xc9 + 0xdc;
-              param_1[0x140] = param_1[0x16d] * 0xc9 + 100;
-              param_1[0x141] = param_1[0x16e] * 0xc9 + -0x28;
-              thunk_FUN_004ec0f0((int)param_1);
-              TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
-              if (param_1[0x16b] == 0x52) {
-                iVar2 = *param_1;
-                iVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
-                (**(code **)(iVar2 + 0x90))(3,(-(uint)((char)iVar3 != '\x02') & 0xffffff3b) + 0x35e)
-                ;
+              thunk_FUN_004d0970(DAT_00800bcc,*(undefined4 *)&param_1->field_0x4f0,
+                                 *(undefined4 *)&param_1->field_0x4f4,
+                                 *(undefined4 *)&param_1->field_0x4f8);
+              param_1->field_04D0 = 3;
+              *(int *)&param_1->field_0x4fc = *(int *)&param_1->field_0x5b0 * 0xc9 + 0xdc;
+              *(int *)&param_1->field_0x500 = *(int *)&param_1->field_0x5b4 * 0xc9 + 100;
+              *(int *)&param_1->field_0x504 = *(int *)&param_1->field_0x5b8 * 0xc9 + -0x28;
+              thunk_FUN_004ec0f0((AnonShape_004EC0F0_C371FA68 *)param_1);
+              TLOBaseTy::RotateSpr(param_1,0);
+              if (param_1->field_05AC == CASE_52) {
+                pTVar8 = param_1->vtable;
+                iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+                (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
-              if (param_1[0x16b] != 0x5f) goto switchD_004e0aad_default;
-              iVar2 = *param_1;
-              uVar16 = 0x3b1;
+              if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
+              pTVar8 = param_1->vtable;
+              uVar22 = 0x3b1;
               goto LAB_004e0f14;
             }
-            iVar4 = iVar4 + 1;
-          } while (iVar4 < iVar13 + 2);
+            iVar6 = iVar6 + 1;
+          } while (iVar6 < iVar2 + 2);
         }
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < iVar2);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < iVar4);
     }
     break;
   case 3:
-    iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
-    if ((*(int *)(*(int *)((int)param_1 + 0x1f5) + 0x20c) <= iVar2) && (param_1[0x137] != 0)) {
-      param_1[0x142] = 0;
-      if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
-        thunk_FUN_0052af50(0,*(float *)((int)param_1 + 0x1f9),*(float *)((int)param_1 + 0x1fd));
+    iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+    if ((*(int *)(param_1->field_01F5 + 0x20c) <= iVar4) && (*(int *)&param_1->field_0x4dc != 0)) {
+      *(undefined4 *)&param_1->field_0x508 = 0;
+      if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
+        thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
       }
-      param_1[0x134] = 4;
-      param_1[0x144] = 0;
-      param_1[0x145] = *(int *)(DAT_00802a38 + 0xe4);
-      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
+      param_1->field_04D0 = 4;
+      *(undefined4 *)&param_1->field_0x510 = 0;
+      *(undefined4 *)&param_1->field_0x514 = PTR_00802a38->field_00E4;
+      TLOBaseTy::RotateSpr(param_1,0);
     }
     break;
   case 4:
-    if (param_1[0x144] < 0x1e) break;
-    thunk_FUN_004d0a80(DAT_00800bcc,param_1[0x13c],param_1[0x13d],param_1[0x13e]);
-    iVar2 = param_1[6];
-    iVar3 = param_1[0x13e];
-    iVar13 = param_1[0x13d];
-    uVar16 = 0x5a;
-    iVar4 = param_1[0x13c];
-    pcVar14 = (char *)0x0;
-    uVar12 = (undefined2)param_1[0x141];
-    uVar11 = (undefined2)param_1[0x140];
-    uVar10 = (undefined2)param_1[0x13f];
-    iVar9 = param_1[0x138];
-    iVar8 = param_1[0x137];
-    param_1[0x13b] = 0;
-    uVar5 = thunk_FUN_004406c0((char)param_1[9]);
-    thunk_FUN_005fd1b0(param_1[9],uVar5 & 0xff,iVar8,iVar9,uVar10,uVar11,uVar12,iVar4,iVar13,iVar3,
-                       pcVar14,iVar2,uVar16);
-    if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
-      thunk_FUN_0052af50(0,*(float *)((int)param_1 + 0x1f9),*(float *)((int)param_1 + 0x1fd));
-      uVar5 = thunk_FUN_004406c0((char)param_1[9]);
-      uVar5 = uVar5 & 0xff;
-      if (uVar5 == 1) {
-        iVar2 = *param_1;
-        uVar16 = 0x6b;
+    if (*(int *)&param_1->field_0x510 < 0x1e) break;
+    thunk_FUN_004d0a80(DAT_00800bcc,*(int *)&param_1->field_0x4f0,*(int *)&param_1->field_0x4f4,
+                       *(int *)&param_1->field_0x4f8);
+    uVar22 = *(undefined4 *)&param_1->field_0x18;
+    uVar18 = *(undefined4 *)&param_1->field_0x4f8;
+    uVar17 = *(undefined4 *)&param_1->field_0x4f4;
+    uVar21 = 0x5a;
+    uVar16 = *(undefined4 *)&param_1->field_0x4f0;
+    pcVar19 = (char *)0x0;
+    uVar15 = (undefined2)*(undefined4 *)&param_1->field_0x504;
+    uVar14 = (undefined2)*(undefined4 *)&param_1->field_0x500;
+    uVar13 = (undefined2)*(undefined4 *)&param_1->field_0x4fc;
+    uVar12 = *(undefined4 *)&param_1->field_0x4e0;
+    uVar11 = *(undefined4 *)&param_1->field_0x4dc;
+    *(undefined4 *)&param_1->field_0x4ec = 0;
+    uVar7 = thunk_FUN_004406c0(param_1->field_0x24);
+    thunk_FUN_005fd1b0(*(undefined4 *)&param_1->field_0x24,uVar7 & 0xff,uVar11,uVar12,uVar13,uVar14,
+                       uVar15,uVar16,uVar17,uVar18,pcVar19,uVar22,uVar21);
+    if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
+      thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
+      uVar7 = thunk_FUN_004406c0(param_1->field_0x24);
+      uVar7 = uVar7 & 0xff;
+      if (uVar7 == 1) {
+        pTVar8 = param_1->vtable;
+        uVar22 = 0x6b;
 LAB_004e0de2:
-        (**(code **)(iVar2 + 0x90))(6,uVar16);
+        (*pTVar8->vfunc_90)(6,uVar22);
       }
-      else if (uVar5 == 2) {
-        (**(code **)(*param_1 + 0x90))(6,0x6c);
+      else if (uVar7 == 2) {
+        (*param_1->vtable->vfunc_90)(6,0x6c);
       }
-      else if (uVar5 == 3) {
-        iVar2 = *param_1;
-        uVar16 = 0x6d;
+      else if (uVar7 == 3) {
+        pTVar8 = param_1->vtable;
+        uVar22 = 0x6d;
         goto LAB_004e0de2;
       }
     }
-    param_1[0x134] = 5;
+    param_1->field_04D0 = 5;
     thunk_FUN_004cbf70((int)param_1);
-    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
-    iVar2 = param_1[0x16b];
-    if (iVar2 != 0x52) {
+    TLOBaseTy::RotateSpr(param_1,0);
+    TVar1 = param_1->field_05AC;
+    if (TVar1 != CASE_52) {
 joined_r0x004e0f0b:
-      if (iVar2 == 0x5f) {
-        iVar2 = *param_1;
-        uVar16 = 0x3b2;
+      if (TVar1 == CASE_5F) {
+        pTVar8 = param_1->vtable;
+        uVar22 = 0x3b2;
 LAB_004e0f14:
-        (**(code **)(iVar2 + 0x90))(3,uVar16);
+        (*pTVar8->vfunc_90)(3,uVar22);
       }
       break;
     }
-    cVar15 = *(char *)((int)param_1 + 0x23d);
-    iVar2 = *param_1;
+    cVar20 = param_1->field_023D;
+    pTVar8 = param_1->vtable;
     goto LAB_004e0e15;
   case 5:
-    iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
-    if (iVar2 == *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x20c)) {
-      param_1[0x134] = 0;
-      param_1[0x137] = 0;
-      param_1[0x142] = 0;
+    iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+    if (iVar4 == *(int *)(param_1->field_01F5 + 0x20c)) {
+      param_1->field_04D0 = 0;
+      *(undefined4 *)&param_1->field_0x4dc = 0;
+      *(undefined4 *)&param_1->field_0x508 = 0;
       thunk_FUN_004cbf70((int)param_1);
-      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
+      TLOBaseTy::RotateSpr(param_1,0);
     }
     break;
   case 6:
-    if (((param_1[0x13f] != param_1[0x16c] * 0xc9 + 0xdc) ||
-        (param_1[0x140] != param_1[0x16d] * 0xc9 + 100)) ||
-       (param_1[0x141] != param_1[0x16e] * 0xc9 + -0x28)) break;
-    param_1[0x134] = 5;
-    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
-    iVar2 = param_1[0x16b];
-    if (iVar2 != 0x52) goto joined_r0x004e0f0b;
-    cVar15 = *(char *)((int)param_1 + 0x23d);
-    iVar2 = *param_1;
+    if (((*(int *)&param_1->field_0x4fc != *(int *)&param_1->field_0x5b0 * 0xc9 + 0xdc) ||
+        (*(int *)&param_1->field_0x500 != *(int *)&param_1->field_0x5b4 * 0xc9 + 100)) ||
+       (*(int *)&param_1->field_0x504 != *(int *)&param_1->field_0x5b8 * 0xc9 + -0x28)) break;
+    param_1->field_04D0 = 5;
+    TLOBaseTy::RotateSpr(param_1,0);
+    TVar1 = param_1->field_05AC;
+    if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
+    cVar20 = param_1->field_023D;
+    pTVar8 = param_1->vtable;
 LAB_004e0e15:
-    iVar3 = thunk_FUN_004406c0(cVar15);
-    (**(code **)(iVar2 + 0x90))(3,(-(uint)((char)iVar3 != '\x02') & 0xffffff3b) + 0x35f);
+    iVar4 = thunk_FUN_004406c0(cVar20);
+    (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
-  if ((param_1[0x16b] == 0x61) && (param_1[0x138] != 0)) {
-    iVar2 = thunk_FUN_004e4180(param_1[9]);
-    iVar3 = thunk_FUN_004e41c0(param_1[9]);
-    if ((iVar3 < iVar2) &&
-       ((uint)(param_1[0x14a] + param_1[0x149]) <= *(uint *)(DAT_00802a38 + 0xe4))) {
-      param_1[0x149] = *(uint *)(DAT_00802a38 + 0xe4);
-      if (DAT_007be8c4 <= param_1[0x146]) {
-        thunk_FUN_004e1310((int)param_1);
+  if ((param_1->field_05AC == CASE_61) && (*(int *)&param_1->field_0x4e0 != 0)) {
+    iVar4 = thunk_FUN_004e4180(*(int *)&param_1->field_0x24);
+    iVar5 = thunk_FUN_004e41c0(*(int *)&param_1->field_0x24);
+    if ((iVar5 < iVar4) &&
+       ((uint)(*(int *)&param_1->field_0x528 + *(int *)&param_1->field_0x524) <=
+        (uint)PTR_00802a38->field_00E4)) {
+      *(undefined4 *)&param_1->field_0x524 = PTR_00802a38->field_00E4;
+      if (DAT_007be8c4 <= *(int *)&param_1->field_0x518) {
+        thunk_FUN_004e1310((AnonShape_004E1310_4FD56DAE *)param_1);
       }
-      iVar2 = param_1[0x138];
-      param_1[0x138] = iVar2 + -5;
-      if (iVar2 + -5 < 0) {
-        param_1[0x138] = 0;
+      iVar4 = *(int *)&param_1->field_0x4e0 + -5;
+      *(int *)&param_1->field_0x4e0 = iVar4;
+      if (iVar4 < 0) {
+        *(undefined4 *)&param_1->field_0x4e0 = 0;
       }
-      iVar2 = param_1[0x146];
-      param_1[0x146] = iVar2 + 5;
-      if (DAT_007be8c4 < iVar2 + 5) {
-        param_1[0x146] = DAT_007be8c4;
+      iVar4 = *(int *)&param_1->field_0x518 + 5;
+      *(int *)&param_1->field_0x518 = iVar4;
+      if (DAT_007be8c4 < iVar4) {
+        *(int *)&param_1->field_0x518 = DAT_007be8c4;
       }
-      this = thunk_FUN_004d85e0(param_1[0x16c],param_1[0x16d],param_1[0x16e]);
+      this = thunk_FUN_004d85e0(*(int *)&param_1->field_0x5b0,*(int *)&param_1->field_0x5b4,
+                                *(int *)&param_1->field_0x5b8);
       if (this != (STResourceC *)0x0) {
-        STResourceC::SetResource(this,param_1[0x138],1);
+        STResourceC::SetResource(this,*(int *)&param_1->field_0x4e0,1);
       }
-      if ((param_1[0x138] == 0) && (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d))) {
-        (**(code **)(*param_1 + 0x90))(4,0x3bd);
+      if ((*(int *)&param_1->field_0x4e0 == 0) &&
+         (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d))) {
+        (*param_1->vtable->vfunc_90)(4,0x3bd);
       }
     }
   }

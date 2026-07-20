@@ -1,48 +1,48 @@
 
-void FUN_00754af0(int param_1,int param_2,uint param_3)
+void FUN_00754af0(AnonShape_00754AF0_86EFDBFA *param_1,int param_2,uint param_3)
 
 {
   if (*(short *)(param_2 + 0xe) == 8) {
     if (*(int *)(param_2 + 0x20) == 0) {
-      *(undefined4 *)(param_1 + 0x58) = 0x100;
+      param_1->field_0058 = 0x100;
     }
     else {
-      *(int *)(param_1 + 0x58) = *(int *)(param_2 + 0x20);
+      param_1->field_0058 = *(int *)(param_2 + 0x20);
     }
-    *(undefined4 *)(param_1 + 0x4c) = 1;
+    param_1->field_004C = 1;
   }
   if ((param_3 & 4) == 0) {
     if ((param_3 & 8) == 0) {
       if ((param_3 & 0x10) != 0) {
-        *(undefined4 *)(param_1 + 0x40) = 2;
+        param_1->field_0040 = 2;
       }
     }
     else {
-      *(undefined4 *)(param_1 + 0x40) = 1;
+      param_1->field_0040 = 1;
     }
   }
   else {
-    *(undefined4 *)(param_1 + 0x40) = 0;
+    param_1->field_0040 = 0;
   }
   if ((param_3 & 0x80) == 0) {
     if ((param_3 & 0x20) == 0) {
       if ((param_3 & 0x40) != 0) {
-        *(undefined4 *)(param_1 + 0x50) = 1;
+        param_1->field_0050 = 1;
       }
     }
     else {
-      *(undefined4 *)(param_1 + 0x50) = 0;
+      param_1->field_0050 = 0;
     }
   }
   else {
-    *(undefined4 *)(param_1 + 0x50) = 2;
+    param_1->field_0050 = 2;
   }
   if ((param_3 & 2) != 0) {
-    *(undefined4 *)(param_1 + 0x24) = 1;
-    *(undefined4 *)(param_1 + 0x4c) = 1;
+    param_1->field_0024 = 1;
+    param_1->field_004C = 1;
   }
   if ((param_3 & 0x100) != 0) {
-    *(undefined4 *)(param_1 + 0x44) = 0;
+    param_1->field_0044 = 0;
   }
   return;
 }

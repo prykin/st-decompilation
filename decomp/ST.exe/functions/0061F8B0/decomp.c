@@ -9,15 +9,14 @@ void __thiscall FUN_0061f8b0(void *this,int param_1,int param_2,uint param_3)
   SoundPosition local_14;
   uint local_8;
   
-  local_8 = *(uint *)(DAT_00802a38 + 0xe4);
+  local_8 = PTR_00802a38->field_00E4;
   if ((((DAT_0080874d == param_3) && (*(uint *)((int)this + 0xb5) <= local_8)) &&
-      (((param_1 + 1 < *(int *)(DAT_00807598 + 0x48) ||
-        (((*(int *)(DAT_00807598 + 0x58) < param_1 + -1 ||
-          (param_2 + 1 < *(int *)(DAT_00807598 + 0x44))) ||
-         (*(int *)(DAT_00807598 + 0x54) < param_2 + -1)))) || (iVar1 = FUN_006ddbd0(), iVar1 == 0)))
-      ) && (((uVar2 = thunk_FUN_0061fa40(this,local_8,param_1,param_2), (int)uVar2 < 0 &&
-             (uVar2 = thunk_FUN_0061fb70(this,local_8,param_1,param_2,param_3), -1 < (int)uVar2)) ||
-            (uVar2 == 2)))) {
+      (((param_1 + 1 < PTR_00807598->field_0048 ||
+        (((PTR_00807598->field_0058 < param_1 + -1 || (param_2 + 1 < PTR_00807598->field_0044)) ||
+         (PTR_00807598->field_0054 < param_2 + -1)))) || (iVar1 = FUN_006ddbd0(), iVar1 == 0)))) &&
+     (((uVar2 = thunk_FUN_0061fa40(this,local_8,param_1,param_2), (int)uVar2 < 0 &&
+       (uVar2 = thunk_FUN_0061fb70(this,local_8,param_1,param_2,param_3), -1 < (int)uVar2)) ||
+      (uVar2 == 2)))) {
     if (DAT_0080874e == '\x01') {
       iVar1 = 0x3b;
     }

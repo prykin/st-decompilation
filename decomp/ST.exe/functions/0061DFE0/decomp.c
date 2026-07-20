@@ -21,17 +21,17 @@ void __fastcall FUN_0061dfe0(int param_1)
         if ((bVar5) && (iVar4 = *(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c), iVar4 != 0))
         {
           puVar1 = (uint *)(iVar4 + 0x26);
-          FUN_006e88c0(DAT_00807598,(int *)puVar1,*(undefined4 *)(iVar4 + 4),
+          FUN_006e88c0(PTR_00807598,(int *)puVar1,*(undefined4 *)(iVar4 + 4),
                        *(undefined4 *)(iVar4 + 8),*(undefined4 *)(iVar4 + 0xc),
                        *(undefined4 *)(iVar4 + 0x10),*(undefined4 *)(iVar4 + 0x14),
                        *(undefined4 *)(iVar4 + 0x18),*(undefined4 *)(iVar4 + 0x1c),
                        *(undefined1 *)(iVar4 + 0x20),*(undefined4 *)(iVar4 + 0x21),iVar3,0xffffffff)
           ;
           if (*(char *)(iVar4 + 0x2f) == '\0') {
-            FUN_006eab60(DAT_00807598,*puVar1);
+            FUN_006eab60(PTR_00807598,*puVar1);
           }
           else {
-            FUN_006eaaa0(DAT_00807598,*puVar1,0);
+            FUN_006eaaa0(PTR_00807598,*puVar1,0);
           }
         }
         iVar4 = *(int *)(param_1 + 0xa3);

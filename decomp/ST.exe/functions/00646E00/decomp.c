@@ -52,9 +52,8 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
   if (iVar5 < 0) {
     iVar7 = iVar7 + -1;
   }
-  if ((((iVar7 + 3 < *(int *)(DAT_00807598 + 0x48)) || (*(int *)(DAT_00807598 + 0x58) < iVar7 + -3))
-      || (iVar6 + 3 < *(int *)(DAT_00807598 + 0x44))) ||
-     (*(int *)(DAT_00807598 + 0x54) < iVar6 + -3)) {
+  if ((((iVar7 + 3 < PTR_00807598->field_0048) || (PTR_00807598->field_0058 < iVar7 + -3)) ||
+      (iVar6 + 3 < PTR_00807598->field_0044)) || (PTR_00807598->field_0054 < iVar6 + -3)) {
     return 0;
   }
   iVar7 = FUN_006ddbd0();

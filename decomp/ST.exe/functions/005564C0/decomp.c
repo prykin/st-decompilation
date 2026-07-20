@@ -39,7 +39,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
     RaiseInternalException(errorCode,0,s_E____titans_grig_traks_cpp_007c9104,0x152);
     return 0xffff;
   }
-  local_14->field_0020 = DAT_00802a38->field_00E4;
+  local_14->field_0020 = PTR_00802a38->field_00E4;
   FUN_006e5fd0();
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {
@@ -78,7 +78,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
   else if (uVar1 == 0x10f) {
     local_c = 0;
     local_10 = (byte *)PrepareToSave(this_00,&local_c);
-    STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
+    STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != (byte *)0x0) {
       FUN_006ab060(&local_10);
     }

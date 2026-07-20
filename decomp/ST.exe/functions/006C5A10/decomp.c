@@ -1,10 +1,10 @@
 
-void FUN_006c5a10(int param_1,ushort *param_2,uint param_3,uint param_4,uint param_5,ushort param_6,
-                 int param_7)
+void FUN_006c5a10(AnonShape_006C5A10_DB2339A4 *param_1,ushort *param_2,uint param_3,uint param_4,
+                 uint param_5,ushort param_6,int param_7)
 
 {
-  if ((*(byte *)(param_1 + 0x49c) & 1) == 0) {
-    if (*(int *)(param_1 + 0x498) != 7) {
+  if ((param_1->field_049C & 1) == 0) {
+    if (param_1->field_0498 != 7) {
       FUN_006ce6c0(param_2,param_3,param_6);
       return;
     }
@@ -17,7 +17,7 @@ void FUN_006c5a10(int param_1,ushort *param_2,uint param_3,uint param_4,uint par
       return;
     }
   }
-  else if (*(int *)(param_1 + 0x498) == 7) {
+  else if (param_1->field_0498 == 7) {
     if (param_3 != 0) {
       do {
         if ((param_5 & param_4) == 0) {

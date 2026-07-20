@@ -17,11 +17,11 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   float local_c;
-  SndUnderAttMenegC *local_8;
+  AnonShape_0061FCC0_94F6689F *local_8;
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_8 = this;
+  local_8 = (AnonShape_0061FCC0_94F6689F *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -38,21 +38,21 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   iVar3 = *(int *)(param_1 + 0x10);
   if (iVar3 == 0) {
     iVar3 = 0xafffff5;
-    piVar6 = &local_8->field_0031;
+    piVar6 = (int *)&local_8->field_0x31;
     do {
       if (*(char *)((int)piVar6 + -0x11) != '\0') {
-        FUN_006e6780(DAT_00807598,iVar3);
-        iVar4 = *(int *)(DAT_00802a38 + 0xe4) - piVar6[2];
+        FUN_006e6780(PTR_00807598,iVar3);
+        iVar4 = PTR_00802a38->field_00E4 - piVar6[2];
         fVar2 = (float)iVar4;
         local_c = fVar2 * (float)piVar6[1] * fVar2 * _DAT_00790784 +
                   ((float)(piVar6[-1] - iVar4 * *piVar6) * _DAT_007904f8 + _DAT_007904f4) *
                   _DAT_0079070c;
         if (local_c <= _DAT_007904f8) {
-          FUN_006e6780(DAT_00807598,iVar3);
+          FUN_006e6780(PTR_00807598,iVar3);
           *(undefined1 *)((int)piVar6 + -0x11) = 0;
         }
         else {
-          FUN_006e6710(DAT_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
+          FUN_006e6710(PTR_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
                        (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar6[-2],
                        iVar3);
         }
@@ -63,13 +63,13 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   }
   else if (iVar3 == 2) {
     if (DAT_007fb284 != 0) {
-      local_8->field_001C = (int)SHORT_007fb240 / 2;
+      *(int *)&local_8->field_0x1c = (int)SHORT_007fb240 / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
   else if (iVar3 == 3) {
-    thunk_FUN_0061fcc0((int)local_8);
+    thunk_FUN_0061fcc0(local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

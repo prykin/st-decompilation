@@ -49,13 +49,13 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
       *(undefined4 *)&local_14->field_0x2d2 = local_14->field_019D;
       local_14->field_02D6 = local_14->field_01A1;
       local_20 = local_14->field_02CE;
-      local_24 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      local_24 = PTR_00802a38->field_00E4;
       local_1c = *(undefined2 *)&local_14->field_0x2d2;
       local_18 = local_14->field_02D6;
       local_1a = local_14->field_02D4;
       if (0 < (int)local_8) {
         do {
-          FUN_006acc70(pSVar2->field_0029,uVar8,&local_c);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar8,&local_c);
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -73,11 +73,11 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
         } while ((int)uVar8 < (int)local_8);
       }
     }
-    if (*(uint *)(DAT_00802a38 + 0xe4) % 0x19 == 7) {
+    if ((uint)PTR_00802a38->field_00E4 % 0x19 == 7) {
       uVar8 = 0;
       if (0 < (int)local_8) {
         do {
-          FUN_006acc70(pSVar2->field_0029,uVar8,&local_c);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar8,&local_c);
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr

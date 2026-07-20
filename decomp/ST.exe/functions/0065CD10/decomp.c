@@ -4,37 +4,40 @@
    Diagnostic line evidence: 137 | 138 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 * __cdecl EventDataPack(undefined4 *param_1,uint *param_2)
+undefined4 * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
 
 {
   code *pcVar1;
   int iVar2;
-  undefined4 *puVar3;
+  AnonShape_0065CD10_CB9334E9 *pAVar3;
   uint uVar4;
   uint uVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 unaff_ESI;
   undefined4 *puVar8;
+  undefined4 unaff_ESI;
+  AnonShape_0065CD10_BA40DE58 *pAVar9;
+  undefined4 *puVar10;
   void *unaff_EDI;
-  undefined4 *puVar9;
-  bool bVar10;
+  AnonShape_0065CD10_CB9334E9 *pAVar11;
+  undefined4 *puVar12;
+  bool bVar13;
   InternalExceptionFrame local_50;
   int local_c;
-  undefined4 *local_8;
+  AnonShape_0065CD10_CB9334E9 *local_8;
   
-  local_8 = (undefined4 *)0x0;
+  local_8 = (AnonShape_0065CD10_CB9334E9 *)0x0;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     uVar5 = 0;
-    iVar2 = *(int *)((int)param_1 + 0x462);
+    iVar2 = param_1->field_0462;
     if (0 < *(int *)(iVar2 + 0xc)) {
-      bVar10 = *(int *)(iVar2 + 0xc) != 0;
+      bVar13 = *(int *)(iVar2 + 0xc) != 0;
       do {
-        if (bVar10) {
+        if (bVar13) {
           iVar2 = *(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c);
         }
         else {
@@ -46,45 +49,44 @@ undefined4 * __cdecl EventDataPack(undefined4 *param_1,uint *param_2)
           *(int *)(iVar2 + 0x17) = iVar6;
           local_c = local_c + iVar6;
         }
-        iVar2 = *(int *)((int)param_1 + 0x462);
+        iVar2 = param_1->field_0462;
         uVar5 = uVar5 + 1;
-        bVar10 = uVar5 < *(uint *)(iVar2 + 0xc);
+        bVar13 = uVar5 < *(uint *)(iVar2 + 0xc);
       } while ((int)uVar5 < (int)*(uint *)(iVar2 + 0xc));
     }
-    iVar2 = *(int *)(*(int *)((int)param_1 + 0x462) + 0xc) *
-            *(int *)(*(int *)((int)param_1 + 0x462) + 8) + 0x1c;
+    iVar2 = *(int *)(param_1->field_0462 + 0xc) * *(int *)(param_1->field_0462 + 8) + 0x1c;
     local_c = local_c + iVar2;
-    *(int *)((int)param_1 + 0x46a) = iVar2;
-    iVar2 = FUN_006c87f0(*(uint **)((int)param_1 + 0x456));
-    *(int *)((int)param_1 + 0x45e) = iVar2;
-    if ((int *)((int)param_1 + 0x46e) == (int *)0x0) {
+    param_1->field_046A = iVar2;
+    iVar2 = FUN_006c87f0(param_1->field_0456);
+    param_1->field_045E = iVar2;
+    if (&param_1->field_046E == (int *)0x0) {
       iVar6 = 0;
     }
     else {
-      iVar6 = *(int *)((int)param_1 + 0x46e) * 5;
+      iVar6 = param_1->field_046E * 5;
     }
     local_c = local_c + iVar2 + iVar6;
     *param_2 = local_c + 0x49fU;
-    puVar3 = Library::DKW::LIB::FUN_006aac10(local_c + 0x49fU);
-    puVar8 = param_1;
-    puVar9 = puVar3;
+    pAVar3 = (AnonShape_0065CD10_CB9334E9 *)Library::DKW::LIB::FUN_006aac10(local_c + 0x49fU);
+    pAVar9 = param_1;
+    pAVar11 = pAVar3;
     for (iVar2 = 0x127; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar9 = *puVar8;
-      puVar8 = puVar8 + 1;
-      puVar9 = puVar9 + 1;
+      *(undefined4 *)pAVar11 = *(undefined4 *)pAVar9;
+      pAVar9 = (AnonShape_0065CD10_BA40DE58 *)&pAVar9->field_0x4;
+      pAVar11 = (AnonShape_0065CD10_CB9334E9 *)&pAVar11->field_0x4;
     }
-    *(undefined2 *)puVar9 = *(undefined2 *)puVar8;
-    *(undefined1 *)((int)puVar9 + 2) = *(undefined1 *)((int)puVar8 + 2);
+    *(undefined2 *)pAVar11 = *(undefined2 *)pAVar9;
+    pAVar11->field_0x2 = pAVar9->field_0x2;
     uVar5 = 0;
-    *(uint *)((int)puVar3 + 1) = *param_2;
-    *(undefined1 *)((int)puVar3 + 5) = 0;
-    iVar2 = *(int *)((int)puVar3 + 0x462);
-    puVar7 = (uint *)((int)puVar3 + 0x49e);
-    local_8 = puVar3;
+    *(uint *)&pAVar3->field_0x1 = *param_2;
+    pAVar3->field_0x5 = 0;
+    iVar2 = *(int *)&pAVar3->field_0x462;
+    puVar7 = (uint *)&pAVar3[1].field_0x1e;
+    local_8 = pAVar3;
     if (0 < *(int *)(iVar2 + 0xc)) {
-      bVar10 = *(int *)(iVar2 + 0xc) != 0;
+      bVar13 = *(int *)(iVar2 + 0xc) != 0;
       do {
-        if (bVar10) {
+        if (bVar13) {
           iVar2 = *(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c);
         }
         else {
@@ -95,52 +97,52 @@ undefined4 * __cdecl EventDataPack(undefined4 *param_1,uint *param_2)
           iVar6 = (int)puVar7 + (-0x49e - (int)local_8);
           puVar7 = (uint *)((int)puVar7 + *(int *)(iVar2 + 0x17));
           *(int *)(iVar2 + 0x13) = iVar6;
-          puVar3 = local_8;
+          pAVar3 = local_8;
         }
-        iVar2 = *(int *)((int)puVar3 + 0x462);
+        iVar2 = *(int *)&pAVar3->field_0x462;
         uVar5 = uVar5 + 1;
-        bVar10 = uVar5 < *(uint *)(iVar2 + 0xc);
+        bVar13 = uVar5 < *(uint *)(iVar2 + 0xc);
       } while ((int)uVar5 < (int)*(uint *)(iVar2 + 0xc));
     }
-    FUN_006affc0(*(uint **)((int)puVar3 + 0x462),puVar7,&local_c);
-    *(int *)((int)local_8 + 0x466) = (int)puVar7 + (-0x49e - (int)local_8);
-    puVar7 = (uint *)((int)puVar7 + *(int *)((int)local_8 + 0x46a));
-    FUN_006c8840(*(uint **)((int)local_8 + 0x456),puVar7,&local_c);
-    *(int *)((int)local_8 + 0x45a) = (int)puVar7 + (-0x49e - (int)local_8);
-    puVar3 = (undefined4 *)((int)puVar7 + *(int *)((int)local_8 + 0x45e));
-    if ((int *)((int)param_1 + 0x46e) == (int *)0x0) {
+    FUN_006affc0(*(uint **)&pAVar3->field_0x462,puVar7,&local_c);
+    local_8->field_0466 = (int)puVar7 + (-0x49e - (int)local_8);
+    puVar7 = (uint *)((int)puVar7 + local_8->field_046A);
+    FUN_006c8840(local_8->field_0456,puVar7,&local_c);
+    local_8->field_045A = (int)puVar7 + (-0x49e - (int)local_8);
+    puVar8 = (undefined4 *)((int)puVar7 + local_8->field_045E);
+    if (&param_1->field_046E == (int *)0x0) {
       uVar5 = 0;
     }
     else {
-      uVar5 = *(int *)((int)param_1 + 0x46e) * 5;
+      uVar5 = param_1->field_046E * 5;
     }
-    puVar8 = *(undefined4 **)((int)param_1 + 0x476);
-    puVar9 = puVar3;
+    puVar10 = param_1->field_0476;
+    puVar12 = puVar8;
     for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar9 = *puVar8;
-      puVar8 = puVar8 + 1;
-      puVar9 = puVar9 + 1;
+      *puVar12 = *puVar10;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
     }
     for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)puVar9 = *(undefined1 *)puVar8;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+      *(undefined1 *)puVar12 = *(undefined1 *)puVar10;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
+      puVar12 = (undefined4 *)((int)puVar12 + 1);
     }
-    *(undefined1 **)((int)local_8 + 0x47a) = (undefined1 *)((int)puVar3 + (-0x49e - (int)local_8));
-    *(undefined4 *)((int)local_8 + 0x476) = 0;
+    local_8->field_047A = (undefined1 *)((int)puVar8 + (-0x49e - (int)local_8));
+    local_8->field_0476 = 0;
     g_currentExceptionFrame = local_50.previous;
-    return local_8;
+    return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  if (local_8 != (undefined4 *)0x0) {
+  if (local_8 != (AnonShape_0065CD10_CB9334E9 *)0x0) {
     FUN_006ab060(&local_8);
   }
   iVar6 = ReportDebugMessage(s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x89,0,iVar2,&DAT_007a4ccc,
                              s_EventDataPack_007d2b70);
   if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
-    puVar3 = (undefined4 *)(*pcVar1)();
-    return puVar3;
+    puVar8 = (undefined4 *)(*pcVar1)();
+    return puVar8;
   }
   RaiseInternalException(iVar2,0,s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x8a);
   return (undefined4 *)0x0;

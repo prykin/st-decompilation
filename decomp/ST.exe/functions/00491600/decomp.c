@@ -20,14 +20,14 @@ void __fastcall FUN_00491600(int *param_1)
   thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
                      *(short *)((int)param_1 + 0x5f),
                      CONCAT31((int3)((uint)uVar1 >> 8),*(undefined1 *)((int)param_1 + 0x8e)),
-                     (int)param_1);
+                     (AnonShape_00495FF0_59081BDD *)param_1);
   param_1[0x170] = 3;
   if (DAT_008117bc != (undefined4 *)0x0) {
     local_10 = (undefined2)param_1[9];
     local_e = *(undefined2 *)((int)param_1 + 0x32);
     local_14 = 0x5dd2;
     if (*(int *)((int)param_1 + 0x5a6) == 0) {
-      iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)((int)param_1 + 0x5a2),(int *)((int)param_1 + 0x5a6)
+      iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)param_1 + 0x5a2),(int *)((int)param_1 + 0x5a6)
                           );
       if (iVar2 == -4) {
         RaiseInternalException

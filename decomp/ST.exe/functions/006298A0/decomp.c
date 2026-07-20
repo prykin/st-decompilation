@@ -58,24 +58,24 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   if (param_1 != 0) {
     puVar1 = &pSVar6->field_00C6;
     if ((int)pSVar6->field_00C6 < 0) {
-      FUN_006e8660(DAT_00807598,puVar1,2,0,*(uint *)((int)puVar8 + 9),*(uint *)((int)puVar8 + 0xd),
+      FUN_006e8660(PTR_00807598,puVar1,2,0,*(uint *)((int)puVar8 + 9),*(uint *)((int)puVar8 + 0xd),
                    0x5a,0x45,0);
     }
     else {
-      FUN_006e9520(DAT_00807598,pSVar6->field_00C6,0,0,0);
-      FUN_006e9af0(DAT_00807598,*puVar1,2,0,*(uint *)((int)puVar8 + 9),*(uint *)((int)puVar8 + 0xd),
+      FUN_006e9520(PTR_00807598,pSVar6->field_00C6,0,0,0);
+      FUN_006e9af0(PTR_00807598,*puVar1,2,0,*(uint *)((int)puVar8 + 9),*(uint *)((int)puVar8 + 0xd),
                    0x5a,0x45,1);
     }
-    FUN_006e98e0(DAT_00807598,*puVar1,0,*(undefined4 *)puVar8,*(int *)((int)puVar8 + 0x21),1);
-    FUN_006ea270(DAT_00807598,*puVar1,0,pSVar6->field_00B2);
+    FUN_006e98e0(PTR_00807598,*puVar1,0,*(undefined4 *)puVar8,*(int *)((int)puVar8 + 0x21),1);
+    FUN_006ea270(PTR_00807598,*puVar1,0,pSVar6->field_00B2);
     local_1c = (float)pSVar6->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     pSVar6->field_006A = local_1c;
     local_c = (float)pSVar6->field_004A * _DAT_007904f8 * _DAT_007904f0;
     pSVar6->field_006E = local_c;
     fVar4 = (float)pSVar6->field_004E * _DAT_007904f8 * _DAT_007904f0;
     pSVar6->field_0072 = fVar4;
-    FUN_006ea960(DAT_00807598,*puVar1,local_1c,local_c,fVar4 + _DAT_007904fc);
-    FUN_006eaaa0(DAT_00807598,*puVar1,0);
+    FUN_006ea960(PTR_00807598,*puVar1,local_1c,local_c,fVar4 + _DAT_007904fc);
+    FUN_006eaaa0(PTR_00807598,*puVar1,0);
     pSVar6->field_00C1 = 1;
     pVVar5 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
@@ -134,12 +134,12 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
       if (bVar11) {
         if (pSVar6->field_00C1 == '\0') {
-          FUN_006eaaa0(DAT_00807598,*puVar1,0);
+          FUN_006eaaa0(PTR_00807598,*puVar1,0);
           pSVar6->field_00C1 = 1;
         }
       }
       else if (pSVar6->field_00C1 == '\x01') {
-        FUN_006eab60(DAT_00807598,*puVar1);
+        FUN_006eab60(PTR_00807598,*puVar1);
         pSVar6->field_00C1 = 0;
       }
     }
@@ -150,8 +150,8 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       if (0xe < (int)pSVar6->field_00B2) {
         local_8 = pSVar6->field_00B2 + 3;
       }
-      FUN_006e98e0(DAT_00807598,*puVar1,1,*(undefined4 *)puVar8,*(int *)((int)puVar8 + 0x21),1);
-      FUN_006ea270(DAT_00807598,*puVar1,1,local_8);
+      FUN_006e98e0(PTR_00807598,*puVar1,1,*(undefined4 *)puVar8,*(int *)((int)puVar8 + 0x21),1);
+      FUN_006ea270(PTR_00807598,*puVar1,1,local_8);
       puVar12 = (uint *)*puVar1;
     }
     else {
@@ -161,21 +161,21 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       if (0xe < (int)pSVar6->field_00B2) {
         local_8 = pSVar6->field_00B2 - 0xf;
       }
-      FUN_006e98e0(DAT_00807598,*puVar1,1,*(undefined4 *)puVar8,*(int *)((int)puVar8 + 0x21),1);
-      FUN_006ea270(DAT_00807598,*puVar1,1,local_8);
+      FUN_006e98e0(PTR_00807598,*puVar1,1,*(undefined4 *)puVar8,*(int *)((int)puVar8 + 0x21),1);
+      FUN_006ea270(PTR_00807598,*puVar1,1,local_8);
       puVar12 = (uint *)*puVar1;
     }
-    FUN_006e9d40(DAT_00807598,puVar12,1);
+    FUN_006e9d40(PTR_00807598,puVar12,1);
     iVar7 = pSVar6->field_00EB;
     if (iVar7 != 0) {
       if (pSVar6->field_00F3 == 0) {
-        FUN_006ea460(DAT_00807598,*puVar1,*(int *)(iVar7 + 0x1ed));
+        FUN_006ea460(PTR_00807598,*puVar1,*(int *)(iVar7 + 0x1ed));
       }
       else {
-        FUN_006ea3e0(DAT_00807598,*puVar1,*(int *)(iVar7 + 0x1ed));
+        FUN_006ea3e0(PTR_00807598,*puVar1,*(int *)(iVar7 + 0x1ed));
       }
     }
-    FUN_006ea4e0(DAT_00807598,*puVar1,1,0x5a,0x53);
+    FUN_006ea4e0(PTR_00807598,*puVar1,1,0x5a,0x53);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }

@@ -57,7 +57,7 @@ FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 p
   if (7 < (uint)this_00[9]) {
     return local_c;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[this_00[9] * 0x51])) {
+  if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[this_00[9] * 0x51])) {
     return local_c;
   }
   iVar5 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)((int)this + 0x24));

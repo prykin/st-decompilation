@@ -7,7 +7,7 @@ void __thiscall FUN_00620e40(void *this,int param_1,int param_2,uint param_3)
   int soundId;
   SoundPosition local_10;
   
-  uVar1 = *(uint *)(DAT_00802a38 + 0xe4);
+  uVar1 = PTR_00802a38->field_00E4;
   if (DAT_0080874d == param_3) {
     return;
   }

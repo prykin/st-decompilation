@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
   if ((uVar1 != 0) && (uVar4 = 0, uVar1 != 0)) {
     uVar3 = 0;
     while( true ) {
-      FUN_006acc70(*(int *)((int)this + 0x29),uVar3,&local_8);
+      FUN_006acc70(*(AnonShape_006ACC70_C8641025 **)((int)this + 0x29),uVar3,&local_8);
       if ((short)local_8 == param_1) break;
       uVar4 = uVar4 + 1;
       uVar3 = uVar4 & 0xffff;

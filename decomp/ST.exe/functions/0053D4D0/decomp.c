@@ -9,7 +9,7 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
   uint uVar1;
   int iVar2;
   code *pcVar3;
-  SAMPanelTy *this_00;
+  SpecPanelTy *this_00;
   byte bVar4;
   int iVar5;
   LPSTR pCVar6;
@@ -24,13 +24,13 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
-  SAMPanelTy *local_c;
+  SpecPanelTy *local_c;
   undefined1 local_6;
   char local_5;
   
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_c = this;
+  local_c = (SpecPanelTy *)this;
   iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar5 != 0) {
@@ -45,7 +45,7 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
     RaiseInternalException(iVar5,0,s_E____titans_Andrey_setamine_cpp_007c7798,0x94);
     return 0xffff;
   }
-  SpecPanelTy::GetMessage((SpecPanelTy *)local_c,param_1);
+  SpecPanelTy::GetMessage(local_c,param_1);
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 0xb509) {
     if (uVar1 == 0xb508) {
@@ -56,12 +56,12 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
     }
     if (uVar1 < 4) {
       if (uVar1 == 3) {
-        DoneSAMPanel(this_00);
+        DoneSAMPanel((SAMPanelTy *)this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (uVar1 == 2) {
-        InitSAMPanel(this_00);
+        InitSAMPanel((SAMPanelTy *)this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -75,22 +75,21 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
   }
   else if (0xb50e < uVar1) {
     if (uVar1 < 0xb518) {
-      iVar5 = *(int *)&this_00->field_0x3c;
+      iVar5 = this_00->field_003C;
       bVar4 = *(char *)(param_1 + 0x10) - 0xf;
       iVar9 = **(int **)(param_1 + 0x18);
       iVar2 = (*(int **)(param_1 + 0x18))[1];
       _local_10 = CONCAT31(uStack_f,bVar4);
       iVar7 = DAT_00806734;
       if (this_00->field_005C != 0) {
-        iVar7 = *(int *)&this_00->field_0x44;
+        iVar7 = this_00->field_0044;
       }
-      pbVar8 = (byte *)FUN_0070b3a0(this_00->field_01B1,
-                                    (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar4) ==
-                                          '\0'));
+      pbVar8 = (byte *)FUN_0070b3a0(*(int *)&this_00[1].field_0x24,
+                                    (uint)((&this_00[1].field_0x1e)[bVar4] == '\0'));
       DibPut((undefined4 *)this_00->field_0068,iVar9 - iVar5,iVar2 - iVar7,'\x01',pbVar8);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,*(uint *)&this_00->field_0x3c
-                 ,*(uint *)&this_00->field_0x44);
+                (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
+                 this_00->field_0044);
     }
     else if (uVar1 == 0xb518) {
       iVar5 = this_00->field_0000;

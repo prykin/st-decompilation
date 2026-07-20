@@ -1,5 +1,5 @@
 
-void __fastcall FUN_005c5eb0(int param_1)
+void __fastcall FUN_005c5eb0(AnonShape_005C5EB0_D4E7C108 *param_1)
 
 {
   int iVar1;
@@ -7,57 +7,57 @@ void __fastcall FUN_005c5eb0(int param_1)
   int local_8;
   
   iVar1 = 7;
-  *(undefined4 *)(param_1 + 0x1c63) = 0;
-  *(undefined4 *)(param_1 + 0x29) = 2;
-  *(undefined4 *)(param_1 + 0x2d) = 0x20;
-  *(undefined4 *)(param_1 + 0x31) = 0;
-  piVar2 = (int *)(param_1 + 0x1f60);
+  param_1->field_1C63 = 0;
+  param_1->field_0029 = 2;
+  param_1->field_002D = 0x20;
+  param_1->field_0031 = 0;
+  piVar2 = (int *)&param_1->field_0x1f60;
   do {
     if (*piVar2 != 0) {
-      *(int *)(param_1 + 0x25) = *piVar2;
-      (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+      param_1->field_0025 = *piVar2;
+      (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
     }
     piVar2 = piVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  if (*(int *)(param_1 + 0x215d) != 0) {
-    *(int *)(param_1 + 0x25) = *(int *)(param_1 + 0x215d);
-    (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+  if (param_1->field_215D != 0) {
+    param_1->field_0025 = param_1->field_215D;
+    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
-  piVar2 = (int *)(param_1 + 0x2125);
+  piVar2 = (int *)&param_1->field_0x2125;
   iVar1 = 0xe;
   do {
     if (*piVar2 != 0) {
-      *(int *)(param_1 + 0x25) = *piVar2;
-      (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+      param_1->field_0025 = *piVar2;
+      (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
     }
     piVar2 = piVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  piVar2 = (int *)(param_1 + 0x1f8c);
+  piVar2 = (int *)&param_1->field_0x1f8c;
   local_8 = 10;
   do {
     iVar1 = 8;
     do {
       if (*piVar2 != 0) {
-        *(int *)(param_1 + 0x25) = *piVar2;
-        (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+        param_1->field_0025 = *piVar2;
+        (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
       }
       piVar2 = piVar2 + 1;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if (*(int *)(param_1 + 0x211d) != 0) {
-    *(int *)(param_1 + 0x25) = *(int *)(param_1 + 0x211d);
-    *(undefined4 *)(param_1 + 0x31) = 0;
-    (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+  if (param_1->field_211D != 0) {
+    param_1->field_0025 = param_1->field_211D;
+    param_1->field_0031 = 0;
+    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
-  if (*(int *)(DAT_0081176c + 0x389) != 0) {
-    *(int *)(param_1 + 0x25) = *(int *)(DAT_0081176c + 0x389);
-    *(undefined4 *)(param_1 + 0x2d) = 0x20;
-    *(undefined4 *)(param_1 + 0x31) = 0;
-    (**(code **)(**(int **)(param_1 + 0xc) + 0x18))(param_1 + 0x1d);
+  if (PTR_0081176c->field_0389 != 0) {
+    param_1->field_0025 = PTR_0081176c->field_0389;
+    param_1->field_002D = 0x20;
+    param_1->field_0031 = 0;
+    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
   return;
 }

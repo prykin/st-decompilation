@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004cc130(int param_1)
     uVar1 = thunk_FUN_004d0900();
     return uVar1;
   case 0x45:
-    uVar1 = thunk_FUN_004eaf90(param_1);
+    uVar1 = thunk_FUN_004eaf90((AnonShape_004EAF90_D23494A9 *)param_1);
     return uVar1;
   case 0x4e:
     uVar1 = thunk_FUN_004da2b0(param_1);

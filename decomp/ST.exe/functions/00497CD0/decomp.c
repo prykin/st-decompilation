@@ -4,7 +4,7 @@
    STGroupBoatC::InitWay */
 
 undefined4 __thiscall
-STGroupBoatC::InitWay(STGroupBoatC *this,int param_1,int param_2,int param_3,int param_4)
+STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
@@ -28,18 +28,18 @@ STGroupBoatC::InitWay(STGroupBoatC *this,int param_1,int param_2,int param_3,int
   pSVar2 = local_c;
   if (errorCode == 0) {
     uVar6 = 0;
-    if (*(int *)(param_1 + 0xc) != 0) {
+    if (param_1->count != 0) {
       do {
-        FUN_006acc70(param_1,uVar6,&local_8);
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_1,uVar6,&local_8);
         uVar3 = STAllPlayersC::GetObjPtr
                           (g_sTAllPlayers_007FA174,
                            CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8,
                            CASE_1);
         *(undefined4 *)(uVar3 + 0xfd) = 0;
         uVar6 = uVar6 + 1;
-      } while (uVar6 < *(uint *)(param_1 + 0xc));
+      } while (uVar6 < param_1->count);
     }
-    Way3DGrpDistribTgt(pSVar2,param_1,param_2,param_3,param_4);
+    Way3DGrpDistribTgt(pSVar2,(AnonShape_00413AF0_B6B4EE9A *)param_1,param_2,param_3,param_4);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

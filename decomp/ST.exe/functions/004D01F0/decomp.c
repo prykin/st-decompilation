@@ -8,7 +8,7 @@
 undefined4 __fastcall FUN_004d01f0(void *param_1)
 
 {
-  undefined4 *puVar1;
+  AnonShape_004AB810_8E5693D5 *pAVar1;
   STT3DSprC *this;
   int exceptionCode;
   int local_10;
@@ -16,12 +16,12 @@ undefined4 __fastcall FUN_004d01f0(void *param_1)
   int local_8;
   
   if (*(int *)((int)param_1 + 0x5ff) == 0) {
-    puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (puVar1 == (undefined4 *)0x0) {
+    pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+    if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
       this = (STT3DSprC *)0x0;
     }
     else {
-      this = (STT3DSprC *)thunk_FUN_004ab810(puVar1);
+      this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     *(STT3DSprC **)((int)param_1 + 0x5ff) = this;
     exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);

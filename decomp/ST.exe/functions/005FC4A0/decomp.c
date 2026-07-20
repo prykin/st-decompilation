@@ -59,7 +59,7 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
       || (*(int *)(DAT_007fb248 +
                   ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar9)
                   * 8) == 0)) &&
-     (iVar7 = DumpClassC::WritePtr(sVar9,sVar2,sVar3,0,(int)param_1), iVar7 == 0)) {
+     (iVar7 = DumpClassC::WritePtr(sVar9,sVar2,sVar3,0,param_1), iVar7 == 0)) {
     *(char *)((int)param_1 + 0x252) = *(char *)((int)param_1 + 0x252) + '\x01';
     bVar5 = true;
   }
@@ -154,7 +154,7 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
   }
   *(undefined4 *)((int)param_1 + 0x2d6) = 0xffffffff;
   *(undefined4 *)((int)param_1 + 0x2d2) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x2e0) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  *(undefined4 *)((int)param_1 + 0x2e0) = PTR_00802a38->field_00E4;
   return 1;
 }
 

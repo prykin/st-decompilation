@@ -46,7 +46,7 @@ int __fastcall FUN_006101b0(int *param_1)
   case 1:
     cVar2 = (char)param_1[0x85];
     if (cVar2 == '\x01') {
-      iVar13 = thunk_FUN_00615ad0(param_1);
+      iVar13 = thunk_FUN_00615ad0((AnonShape_00615AD0_7BE8CE57 *)param_1);
       if ((iVar13 != 0) && (iVar13 = *(int *)(*(int *)((int)param_1 + 0x2dd) + 8), iVar13 != 0)) {
         param_1[0x9f] =
              (((int)*(short *)((int)param_1 + 0x1ef) - (int)*(short *)((int)param_1 + 0x1e9)) *
@@ -131,7 +131,7 @@ int __fastcall FUN_006101b0(int *param_1)
                (((int)*(short *)((int)param_1 + 499) - (int)*(short *)((int)param_1 + 0x1ed)) *
                10000) / iVar13;
           iVar8 = *(int *)((int)param_1 + 0x1f7);
-          param_1[0xa5] = *(int *)(DAT_00802a38 + 0xe4);
+          param_1[0xa5] = PTR_00802a38->field_00E4;
           param_1[0xa3] = iVar13;
           if (iVar8 == 0) {
             param_1[0xa2] = 10;
@@ -152,7 +152,7 @@ int __fastcall FUN_006101b0(int *param_1)
           goto cf_common_join_00610347;
         }
       }
-      thunk_FUN_0060ec00(param_1);
+      thunk_FUN_0060ec00((STJellyGunC *)param_1);
     }
     param_1[0x83] = 9;
 cf_common_join_00610347:
@@ -173,7 +173,7 @@ cf_common_join_00610347:
     iVar13 = thunk_FUN_006139a0(param_1,&local_10,&local_14,&local_18);
     if (iVar13 == 0) {
 cf_common_exit_006121E1:
-      thunk_FUN_0060ec00(param_1);
+      thunk_FUN_0060ec00((STJellyGunC *)param_1);
       param_1[0x83] = 9;
       return local_1c;
     }
@@ -232,7 +232,7 @@ cf_common_exit_006121E1:
                                  *(undefined2 *)((int)param_1 + 0x1ff),0xb0,local_8,0);
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
-          thunk_FUN_0060ec00(param_1);
+          thunk_FUN_0060ec00((STJellyGunC *)param_1);
           param_1[0x83] = 9;
         }
         else {
@@ -273,12 +273,12 @@ LAB_00610969:
         local_3c = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
         local_38 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
         local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(DAT_00807598,&local_68);
+        FUN_006e25d0(PTR_00807598,&local_68);
         local_24 = (uint)*(short *)((int)param_1 + 0x25e);
         local_48 = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
         local_44 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
         local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(DAT_00807598,&local_58);
+        FUN_006e25d0(PTR_00807598,&local_58);
         sVar7 = (**(code **)(*param_1 + 0x14))
                           (local_68 >> 0x10,local_64 >> 0x10,local_60 >> 0x10,local_58 >> 0x10,
                            local_54 >> 0x10,local_50 >> 0x10);
@@ -356,19 +356,19 @@ LAB_00611039:
         return local_1c;
       }
       if (param_1[0x92] < 0) {
-        if ((uint)param_1[0xa5] < *(uint *)(DAT_00802a38 + 0xe4)) {
+        if ((uint)param_1[0xa5] < (uint)PTR_00802a38->field_00E4) {
           param_1[0x92] = 0;
-          param_1[0x93] = *(int *)(DAT_00802a38 + 0xe4);
+          param_1[0x93] = PTR_00802a38->field_00E4;
         }
       }
       else {
-        uVar4 = (uint)(*(int *)(DAT_00802a38 + 0xe4) - param_1[0x93]) >> 2;
+        uVar4 = (uint)(PTR_00802a38->field_00E4 - param_1[0x93]) >> 2;
         param_1[0x92] = uVar4;
         if ((int)*(short *)(DAT_00806724 + 0x23) <= (int)uVar4) {
           param_1[0x92] = *(short *)(DAT_00806724 + 0x23) + -1;
           goto cf_common_exit_006121E1;
         }
-        if ((*(byte *)(DAT_00802a38 + 0xe4) & 1) == 0) {
+        if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
           iVar13 = param_1[0xa2];
           param_1[0xa2] = iVar13 + -3;
           if (iVar13 + -3 < 5) {
@@ -413,12 +413,12 @@ LAB_00610d9f:
         local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
         local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
         local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(DAT_00807598,&local_58);
+        FUN_006e25d0(PTR_00807598,&local_58);
         local_24 = (uint)*(short *)((int)param_1 + 0x25e);
         local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
         local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
         local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(DAT_00807598,&local_68);
+        FUN_006e25d0(PTR_00807598,&local_68);
         sVar7 = (**(code **)(*param_1 + 0x14))
                           (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
                            local_64 >> 0x10,local_60 >> 0x10);
@@ -495,8 +495,8 @@ LAB_00610d9f:
       *(undefined2 *)(param_1 + 0x9c) = 0xffff;
       uVar6 = param_1[7] * 0x41c64e6d + 0x3039;
       param_1[7] = uVar6;
-      param_1[0xa5] = (uVar6 >> 0x10) % 0xb + 10 + *(int *)(DAT_00802a38 + 0xe4);
-      param_1[0xa6] = *(int *)(DAT_00802a38 + 0xe4);
+      param_1[0xa5] = (uVar6 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
+      param_1[0xa6] = PTR_00802a38->field_00E4;
       local_1c = thunk_FUN_006173a0(param_1,10,&local_10,&local_14,&local_18);
       if (0 < local_1c) {
         return local_1c;
@@ -552,7 +552,7 @@ LAB_00611185:
       local_c = uVar6;
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
-          thunk_FUN_0060ec00(param_1);
+          thunk_FUN_0060ec00((STJellyGunC *)param_1);
           param_1[0x83] = 9;
         }
         else {
@@ -595,12 +595,12 @@ LAB_00611304:
       local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
       local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(DAT_00807598,&local_58);
+      FUN_006e25d0(PTR_00807598,&local_58);
       local_24 = (uint)*(short *)((int)param_1 + 0x25e);
       local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(DAT_00807598,&local_68);
+      FUN_006e25d0(PTR_00807598,&local_68);
       sVar7 = (**(code **)(*param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
                          local_64 >> 0x10,local_60 >> 0x10);
@@ -728,7 +728,7 @@ LAB_006117e5:
       local_c = uVar6;
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
-          thunk_FUN_0060ec00(param_1);
+          thunk_FUN_0060ec00((STJellyGunC *)param_1);
           param_1[0x83] = 9;
         }
         else {
@@ -772,12 +772,12 @@ LAB_0061196b:
       local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
       local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(DAT_00807598,&local_58);
+      FUN_006e25d0(PTR_00807598,&local_58);
       local_24 = (uint)*(short *)((int)param_1 + 0x25e);
       local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(DAT_00807598,&local_68);
+      FUN_006e25d0(PTR_00807598,&local_68);
       sVar7 = (**(code **)(*param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
                          local_64 >> 0x10,local_60 >> 0x10);
@@ -857,7 +857,7 @@ cf_common_exit_00611C0F:
     }
     break;
   case 6:
-    if (*(uint *)(DAT_00802a38 + 0xe4) <= (uint)param_1[0x84]) {
+    if ((uint)PTR_00802a38->field_00E4 <= (uint)param_1[0x84]) {
       return 0;
     }
     thunk_FUN_00615860((int)*(short *)((int)param_1 + 0x1f5),&local_30,&local_2c,&local_28);
@@ -887,9 +887,7 @@ cf_common_exit_00611C0F:
       local_24 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0e');
       if (0xe < (int)uVar6) {
         if (uVar6 == 0xf) {
-          STT3DSprC::StartShow
-                    (*(STT3DSprC **)((int)param_1 + 0x252),0xf,*(undefined4 *)(DAT_00802a38 + 0xe4))
-          ;
+          STT3DSprC::StartShow(*(STT3DSprC **)((int)param_1 + 0x252),0xf,PTR_00802a38->field_00E4);
         }
         uVar4 = thunk_FUN_004ac910(*(void **)((int)param_1 + 0x252),'\x0f');
         STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x252),'\x0f');
@@ -992,13 +990,13 @@ cf_common_exit_00611C0F:
       return local_1c;
     }
   case 9:
-    thunk_FUN_0060ec00(param_1);
+    thunk_FUN_0060ec00((STJellyGunC *)param_1);
     goto switchD_006101d2_default;
   case 8:
     *(undefined2 *)(param_1 + 0x98) = *(undefined2 *)((int)param_1 + 0x25a);
     *(short *)((int)param_1 + 0x262) = (short)param_1[0x97];
     *(undefined2 *)(param_1 + 0x99) = *(undefined2 *)((int)param_1 + 0x25e);
-    iVar13 = *(int *)(DAT_00802a38 + 0xe4) - param_1[0xa5];
+    iVar13 = PTR_00802a38->field_00E4 - param_1[0xa5];
     if ((iVar13 == 2) && (*(int *)((int)param_1 + 0x1f7) == 1)) {
       thunk_FUN_00617560(param_1,0x48b);
     }
@@ -1022,8 +1020,8 @@ cf_common_exit_00611C0F:
       *(undefined2 *)(param_1 + 0x9c) = 0xffff;
       uVar6 = param_1[7] * 0x41c64e6d + 0x3039;
       param_1[7] = uVar6;
-      param_1[0xa5] = (uVar6 >> 0x10) % 0xb + 10 + *(int *)(DAT_00802a38 + 0xe4);
-      param_1[0xa6] = *(int *)(DAT_00802a38 + 0xe4);
+      param_1[0xa5] = (uVar6 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
+      param_1[0xa6] = PTR_00802a38->field_00E4;
       local_1c = thunk_FUN_006173a0(param_1,iVar13,&local_10,&local_14,&local_18);
       if (0 < local_1c) {
         *(undefined2 *)((int)param_1 + 0x25a) = (undefined2)local_10;
@@ -1074,7 +1072,7 @@ LAB_006122dd:
                                  (uint)(*(int *)((int)param_1 + 0x1f7) == 2),0);
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
-          thunk_FUN_0060ec00(param_1);
+          thunk_FUN_0060ec00((STJellyGunC *)param_1);
           param_1[0x83] = 9;
         }
         else {
@@ -1114,12 +1112,12 @@ LAB_00612459:
       local_48 = (float)(int)(short)param_1[0x98] * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)((int)param_1 + 0x262) * _DAT_007904f8 * _DAT_007904f0;
       local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(DAT_00807598,&local_58);
+      FUN_006e25d0(PTR_00807598,&local_58);
       local_24 = (uint)*(short *)((int)param_1 + 0x25e);
       local_3c = (float)(int)*(short *)((int)param_1 + 0x25a) * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)(short)param_1[0x97] * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(DAT_00807598,&local_68);
+      FUN_006e25d0(PTR_00807598,&local_68);
       sVar7 = (**(code **)(*param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
                          local_64 >> 0x10,local_60 >> 0x10);
@@ -1194,7 +1192,7 @@ LAB_00612459:
     iVar13 = (int)*(short *)(DAT_00806724 + 0x2c);
     uVar6 = *(uint *)(DAT_00806724 + 0x30 + param_1[0x92] * 4);
     uVar4 = thunk_FUN_004ad650(*(int *)((int)param_1 + 0x252));
-    FUN_006e9350(DAT_00807598,uVar4,uVar6,iVar13);
+    FUN_006e9350(PTR_00807598,uVar4,uVar6,iVar13);
     return local_1c;
   }
 switchD_006101d2_default:

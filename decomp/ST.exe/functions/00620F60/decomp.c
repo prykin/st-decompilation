@@ -2,7 +2,7 @@
 undefined4 __thiscall FUN_00620f60(void *this,int param_1,int param_2,int param_3)
 
 {
-  int groupContent;
+  AnonShape_006B0C70_7C4FE646 *groupContent;
   uint uVar1;
   int *piVar2;
   undefined4 uVar3;
@@ -13,9 +13,9 @@ undefined4 __thiscall FUN_00620f60(void *this,int param_1,int param_2,int param_
   if ((*(int *)((int)this + 0xf5) != 0) &&
      (uVar1 = *(int *)(*(int *)((int)this + 0xf5) + 0xc) - 1, -1 < (int)uVar1)) {
     do {
-      groupContent = *(int *)((int)this + 0xf5);
-      if ((uVar1 < *(uint *)(groupContent + 0xc)) &&
-         (piVar2 = (int *)(*(int *)(groupContent + 8) * uVar1 + *(int *)(groupContent + 0x1c)),
+      groupContent = *(AnonShape_006B0C70_7C4FE646 **)((int)this + 0xf5);
+      if ((uVar1 < (uint)groupContent->field_000C) &&
+         (piVar2 = (int *)(groupContent->field_0008 * uVar1 + groupContent->field_001C),
          piVar2 != (int *)0x0)) {
         if ((param_2 < piVar2[2] + -3) ||
            (((piVar2[2] + 3 < param_2 || (uVar3 = local_8, param_3 < piVar2[3] + -3)) ||

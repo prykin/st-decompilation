@@ -33,8 +33,9 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
       else {
         iVar2 = 0;
       }
-      if ((*(int *)(iVar2 + 4) != 0) &&
-         (groupContent_00 = thunk_FUN_0065e360(*(int *)(iVar2 + 4),iVar4,param_1),
+      if ((*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4) != (AnonShape_0065E360_B94C37CB *)0x0) &&
+         (groupContent_00 =
+               thunk_FUN_0065e360(*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4),iVar4,param_1),
          iVar4 = extraout_EDX_00, groupContent_00 != (uint *)0x0)) {
         uVar1 = groupContent_00[3];
         if ((uVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)uVar1)) {

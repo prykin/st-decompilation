@@ -3,7 +3,8 @@
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::PaintBut */
 
-void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
+void __thiscall
+FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char *param_2)
 
 {
   code *pcVar1;
@@ -23,7 +24,7 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   
   pIVar6 = g_currentExceptionFrame;
   local_c = (ushort *)0x0;
-  piVar5 = *(int **)(param_1 + 0x18);
+  piVar5 = param_1->field_0018;
   local_18 = *piVar5 - this->field_003C;
   if (this->field_005C == 0) {
     local_10 = piVar5[1] - DAT_00806734;
@@ -48,12 +49,12 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
     (*pcVar1)();
     return;
   }
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     local_8 = 0;
     break;
   case 1:
-    local_8 = (uint)(*(char *)(*(int *)(param_1 + 0x10) + -0xbf04 + (int)local_14) != '\0');
+    local_8 = (uint)(*(char *)(param_1->field_0010 + -0xbf04 + (int)local_14) != '\0');
     break;
   case 2:
   case 3:

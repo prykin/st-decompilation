@@ -47,7 +47,7 @@ int FUN_006d9f30(int *param_1,int param_2,int param_3,int param_4,int param_5)
                             &local_14,0x1000000,0), iVar3 != 0) {
     if (iVar3 == -0x7789fe3e) {
       (**(code **)(*(int *)param_1[0x73] + 0x6c))((int *)param_1[0x73]);
-      FUN_006cec40(*param_1);
+      FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
     }
     else {
       if (((iVar3 != -0x7789ff60) && (iVar3 != -0x7789fe52)) || (iVar2 != 0)) break;

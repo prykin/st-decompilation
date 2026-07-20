@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_00660010(int param_1)
+undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
 
 {
   short sVar1;
@@ -16,8 +16,8 @@ undefined4 __fastcall FUN_00660010(int param_1)
   undefined4 local_8;
   
   local_8 = 0;
-  sVar1 = *(short *)(param_1 + 0x39);
-  *(undefined4 *)(param_1 + 0xa7) = 0;
+  sVar1 = param_1->field_0039;
+  param_1->field_00A7 = 0;
   if (0 < sVar1) {
     if (sVar1 < 3) {
       iVar4 = 0x33;
@@ -34,16 +34,16 @@ LAB_00660050:
   if (groupContent == (uint *)0x0) {
     return 0xfffffffe;
   }
-  uVar3 = AiFltClassTy::sub_0065D9C0((AiFltClassTy *)param_1);
+  uVar3 = AiFltClassTy::sub_0065D9C0(param_1);
   if (CONCAT22(extraout_var,uVar3) == 0) {
     FUN_006ae110((byte *)groupContent);
     return 0xffffffff;
   }
-  uVar5 = CONCAT22(extraout_var,*(short *)(param_1 + 0x7d));
-  if ((*(short *)(param_1 + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)(uVar5 >> 8),*(undefined1 *)(param_1 + 0x24)),uVar5);
+  uVar5 = CONCAT22(extraout_var,param_1->field_007D);
+  if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)(uVar5 >> 8),param_1->field_0x24),uVar5);
     if (pSVar6 != (STGroupBoatC *)0x0) {
-      if (*(short *)(param_1 + 0x39) == 3) {
+      if (param_1->field_0039 == 3) {
         local_14 = 1;
         local_10 = (uint *)0x0;
         local_c = 0;

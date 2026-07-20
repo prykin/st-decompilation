@@ -25,12 +25,12 @@ StartServTy::WrSarrDDX
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_4 < 1) {
-      iVar2 = FUN_00711670(param_9,param_6,0,-1);
+      iVar2 = FUN_00711670(param_9,(AnonShape_00711670_5F8DCCF2 *)param_6,0,-1);
       param_4 = iVar2 + (((int)param_7 < 1) - 1 & param_7);
     }
     local_8 = param_4;
     if (param_5 < 1) {
-      iVar2 = FUN_007115e0(param_9,param_6,0,-1);
+      iVar2 = FUN_007115e0(param_9,(AnonShape_007115E0_FC3147FF *)param_6,0,-1);
       param_5 = iVar2 + (((int)param_8 < 1) - 1 & param_8);
     }
     if (param_1 == 0) {

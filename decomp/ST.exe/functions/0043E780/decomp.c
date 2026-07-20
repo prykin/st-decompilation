@@ -24,12 +24,12 @@ STAllPlayersC::GetTOBJList
   void *unaff_EDI;
   InternalExceptionFrame local_58;
   undefined1 local_14 [4];
-  int local_10;
-  int local_c;
+  DArrayTy *local_10;
+  dword local_c;
   uint *local_8;
   
-  local_10 = *(int *)((int)&DAT_007f4e29 + param_1 * 0xa62);
-  local_c = *(int *)(local_10 + 0xc);
+  local_10 = g_playerRuntime[param_1].objects;
+  local_c = local_10->count;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -47,9 +47,9 @@ STAllPlayersC::GetTOBJList
   }
   local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   iVar4 = 0;
-  if (0 < local_c) {
+  if (0 < (int)local_c) {
     do {
-      piVar1 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
+      piVar1 = *(int **)((int)local_10->data + iVar4 * 4);
       if (((piVar1 == (int *)0x0) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
          (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 0)) {
 switchD_0043e836_caseD_3a:
@@ -77,7 +77,7 @@ LAB_0043e85d:
         Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar1 + 0x32));
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < local_c);
+    } while (iVar4 < (int)local_c);
   }
   g_currentExceptionFrame = local_58.previous;
   return local_8;

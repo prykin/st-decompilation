@@ -5,7 +5,7 @@
    Diagnostic line evidence: 294 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004ec0f0(int param_1)
+undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
 
 {
   int iVar1;
@@ -14,21 +14,20 @@ undefined4 __fastcall FUN_004ec0f0(int param_1)
   uint uVar4;
   
   iVar1 = STT3DSprC::LoadSequence
-                    (*(STT3DSprC **)(param_1 + 0x5ff),0xe,DAT_00806774,
-                     *(char **)(&DAT_007cde6c + *(int *)(param_1 + 0x50c) * 4),0x1d);
+                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,
+                     *(char **)(&DAT_007cde6c + param_1->field_050C * 4),0x1d);
   if (iVar1 != 0) {
     RaiseInternalException
               (iVar1,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_trade_cpp_007c1648,0x126);
   }
   uVar4 = 10;
-  iVar1 = thunk_FUN_004ad650(param_1 + 0x1d5);
-  uVar2 = thunk_FUN_004ad650(*(int *)(param_1 + 0x5ff));
-  FUN_006ea340(*(void **)(param_1 + 0x211),uVar2,iVar1,uVar4);
-  thunk_FUN_004ad3c0(*(void **)(param_1 + 0x5ff),
-                     (float)*(int *)(param_1 + 0x4fc) * _DAT_007904f8 * _DAT_007904f0,
-                     (float)*(int *)(param_1 + 0x500) * _DAT_007904f8 * _DAT_007904f0,
-                     (float)*(int *)(param_1 + 0x504) * _DAT_007904f8 * _DAT_007904f0 +
-                     _DAT_007904fc);
+  iVar1 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+  uVar2 = thunk_FUN_004ad650(param_1->field_05FF);
+  FUN_006ea340(param_1->field_0211,uVar2,iVar1,uVar4);
+  thunk_FUN_004ad3c0((void *)param_1->field_05FF,
+                     (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
+                     (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
+                     (float)param_1->field_0504 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   uVar3 = thunk_FUN_004ab050();
   uVar2 = 0;
   switch(uVar3) {
@@ -44,10 +43,10 @@ undefined4 __fastcall FUN_004ec0f0(int param_1)
   case 3:
     uVar2 = DAT_0079aa9c;
   }
-  thunk_FUN_004ad460(*(void **)(param_1 + 0x5ff),1);
-  thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,uVar2,uVar2,'\0');
-  STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',uVar2);
-  STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  thunk_FUN_004ad460((void *)param_1->field_05FF,1);
+  thunk_FUN_004abce0((void *)param_1->field_05FF,0xe,uVar2,uVar2,'\0');
+  STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\x0e',uVar2);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,PTR_00802a38->field_00E4);
   return 0;
 }
 

@@ -10,7 +10,7 @@ void FUN_006c0800(short *param_1,uint param_2,undefined4 param_3,undefined4 para
   uint uVar4;
   int iVar5;
   undefined4 *puVar6;
-  uint *puVar7;
+  AnonShape_006BFBF0_13F73F95 *pAVar7;
   
   iVar5 = param_11 * 0xc4;
   (&DAT_00855024)[param_11 * 0x31] = param_2 & 0xff;
@@ -35,7 +35,7 @@ void FUN_006c0800(short *param_1,uint param_2,undefined4 param_3,undefined4 para
     param_1 = (short *)((int)param_1 + 1);
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
-  iVar2 = FUN_006bfbf0((uint *)(&DAT_00854ff8 + iVar5));
+  iVar2 = FUN_006bfbf0((AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5));
   if (iVar2 != 0) {
     piVar1 = (int *)(&DAT_00855004)[param_11 * 0x31];
     if (piVar1 != (int *)0x0) {
@@ -48,10 +48,10 @@ void FUN_006c0800(short *param_1,uint param_2,undefined4 param_3,undefined4 para
       (**(code **)(*(int *)(&DAT_00855004)[param_11 * 0x31] + 8))
                 ((int *)(&DAT_00855004)[param_11 * 0x31]);
     }
-    puVar7 = (uint *)(&DAT_00854ff8 + iVar5);
+    pAVar7 = (AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5);
     for (iVar2 = 0x31; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+      *(undefined4 *)pAVar7 = 0;
+      pAVar7 = (AnonShape_006BFBF0_13F73F95 *)&pAVar7->field_0x4;
     }
   }
   return;

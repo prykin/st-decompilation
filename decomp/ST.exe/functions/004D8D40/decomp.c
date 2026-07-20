@@ -3,11 +3,11 @@ undefined4 __fastcall FUN_004d8d40(int param_1)
 
 {
   int iVar1;
-  void *local_8;
+  STJellyGunC *local_8;
   
-  local_8 = (void *)0x0;
+  local_8 = (STJellyGunC *)0x0;
   if (*(int *)(param_1 + 0x4f0) != 0) {
-    iVar1 = FUN_006e62d0(DAT_00802a38,*(int *)(param_1 + 0x4f0),(int *)&local_8);
+    iVar1 = FUN_006e62d0(PTR_00802a38,*(int *)(param_1 + 0x4f0),(int *)&local_8);
     if (iVar1 == 0) {
       thunk_FUN_0058bb50(local_8);
       return 0;

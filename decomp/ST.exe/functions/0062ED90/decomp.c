@@ -10,8 +10,9 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   int iVar2;
   int *piVar3;
   undefined4 *puVar4;
-  undefined4 uVar5;
-  int iVar6;
+  AnonShape_004AB810_8E5693D5 *pAVar5;
+  undefined4 uVar6;
+  int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
@@ -25,9 +26,9 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xd9,0,iVar2,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xd9,0,iVar2,&DAT_007a4ccc,
                                s_STRubbishC__RubbishCreatePart_007d17d8);
-    if (iVar6 == 0) {
+    if (iVar7 == 0) {
       RaiseInternalException(iVar2,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0xdb);
       return 0xffff;
     }
@@ -37,34 +38,34 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   }
   piVar3 = &local_c->field_01E5;
   iVar2 = 0;
-  iVar6 = local_8;
+  iVar7 = local_8;
   do {
     if (*piVar3 == 0) {
-      local_8 = iVar6;
+      local_8 = iVar7;
       puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x3e);
       (&local_c->field_01E5)[iVar2] = puVar4;
       if (puVar4 != (undefined4 *)0x0) {
-        for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
+        for (iVar7 = 0xf; iVar7 != 0; iVar7 = iVar7 + -1) {
           *puVar4 = 0;
           puVar4 = puVar4 + 1;
         }
         *(undefined2 *)puVar4 = 0;
-        iVar6 = iVar2;
+        iVar7 = iVar2;
         if (local_c->field_01F9 != '\0') {
-          puVar4 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
-          if (puVar4 == (undefined4 *)0x0) {
-            uVar5 = 0;
+          pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+          if (pAVar5 == (AnonShape_004AB810_8E5693D5 *)0x0) {
+            uVar6 = 0;
           }
           else {
-            uVar5 = thunk_FUN_004ab810(puVar4);
+            uVar6 = thunk_FUN_004ab810(pAVar5);
           }
-          *(undefined4 *)((&local_c->field_01E5)[iVar2] + 0x10) = uVar5;
+          *(undefined4 *)((&local_c->field_01E5)[iVar2] + 0x10) = uVar6;
         }
       }
       g_currentExceptionFrame = local_50.previous;
-      return iVar6;
+      return iVar7;
     }
-    iVar6 = 5;
+    iVar7 = 5;
     iVar2 = iVar2 + 1;
     piVar3 = piVar3 + 1;
   } while (iVar2 < 5);

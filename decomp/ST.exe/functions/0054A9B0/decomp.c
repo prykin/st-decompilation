@@ -17,10 +17,11 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   InternalExceptionFrame local_58;
   int local_14;
   int local_10;
-  int local_c;
+  AnonShape_0054A9B0_643B0813 *local_c;
   uint local_8;
   
-  if ((DAT_00807598 == (void *)0x0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) {
+  if ((PTR_00807598 == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) ||
+     (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) {
     return;
   }
   local_58.previous = g_currentExceptionFrame;
@@ -107,10 +108,10 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
     }
   }
   if (0 < (int)uVar5) {
-    if (*(SpriteClassTy **)(local_c + 0x4eb) != (SpriteClassTy *)0x0) {
-      SpriteClassTy::CloseSprite(*(SpriteClassTy **)(local_c + 0x4eb));
-      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(local_c + 0x4eb));
-      *(undefined4 *)(local_c + 0x4eb) = 0;
+    if ((SpriteClassTy *)local_c->field_04EB != (SpriteClassTy *)0x0) {
+      SpriteClassTy::CloseSprite((SpriteClassTy *)local_c->field_04EB);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)local_c->field_04EB);
+      local_c->field_04EB = 0;
     }
     pSVar6 = (SpriteClassTy *)Library::MSVCRT::FUN_0072e530(0x91);
     if (pSVar6 == (SpriteClassTy *)0x0) {
@@ -119,26 +120,26 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
     else {
       pSVar6 = (SpriteClassTy *)SpriteClassTy::SpriteClassTy(pSVar6);
     }
-    *(SpriteClassTy **)(local_c + 0x4eb) = pSVar6;
+    local_c->field_04EB = pSVar6;
     if (pSVar6 == (SpriteClassTy *)0x0) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
     SpriteClassTy::InitSprite(pSVar6,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
-    (**(code **)(**(int **)(local_c + 0x4eb) + 4))
+    (**(code **)(*(int *)local_c->field_04EB + 4))
               (DAT_00806784,7,0,s_CUR_CONFIRM2D_007c7fb4,0xffffffff);
-    *(undefined4 *)(*(int *)(local_c + 0x4eb) + 0x40) = 0x19;
-    *(undefined4 *)(*(int *)(local_c + 0x4eb) + 8) = 0;
-    *(float *)(local_c + 0x4ef) = param_1;
-    *(float *)(local_c + 0x4f3) = param_2;
-    *(float *)(local_c + 0x4f7) = param_3;
-    FUN_006e2970(DAT_00807598,param_1,param_2,param_3,(int *)(*(int *)(local_c + 0x4eb) + 0x1c),
-                 (int *)(*(int *)(local_c + 0x4eb) + 0x20));
-    *(int *)(*(int *)(local_c + 0x4eb) + 0x1c) =
-         *(int *)(*(int *)(local_c + 0x4eb) + 0x1c) - *(int *)(*(int *)(local_c + 0x4e7) + 9) / 2;
-    *(int *)(*(int *)(local_c + 0x4eb) + 0x20) =
-         *(int *)(*(int *)(local_c + 0x4eb) + 0x20) - *(int *)(*(int *)(local_c + 0x4e7) + 0xd) / 2;
-    iVar4 = *(int *)(local_c + 0x4eb);
+    *(undefined4 *)(local_c->field_04EB + 0x40) = 0x19;
+    *(undefined4 *)(local_c->field_04EB + 8) = 0;
+    local_c->field_04EF = param_1;
+    local_c->field_04F3 = param_2;
+    local_c->field_04F7 = param_3;
+    FUN_006e2970(PTR_00807598,param_1,param_2,param_3,(int *)(local_c->field_04EB + 0x1c),
+                 (int *)(local_c->field_04EB + 0x20));
+    *(int *)(local_c->field_04EB + 0x1c) =
+         *(int *)(local_c->field_04EB + 0x1c) - *(int *)(local_c->field_04E7 + 9) / 2;
+    *(int *)(local_c->field_04EB + 0x20) =
+         *(int *)(local_c->field_04EB + 0x20) - *(int *)(local_c->field_04E7 + 0xd) / 2;
+    iVar4 = local_c->field_04EB;
     if (*(uint *)(iVar4 + 4) == 0xffffffff) {
       g_currentExceptionFrame = local_58.previous;
       return;
@@ -151,15 +152,15 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   }
 cf_common_exit_0054ACFD:
   local_8 = 0xffffffff;
-  uVar5 = *(uint *)(*(int *)(local_c + 0x4e7) + 0xd);
-  uVar1 = *(uint *)(*(int *)(local_c + 0x4e7) + 9);
-  FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,uVar1,uVar5,(int)uVar1 / 2,(int)uVar5 / 2 - 0xe,0);
+  uVar5 = *(uint *)(local_c->field_04E7 + 0xd);
+  uVar1 = *(uint *)(local_c->field_04E7 + 9);
+  FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,uVar1,uVar5,(int)uVar1 / 2,(int)uVar5 / 2 - 0xe,0);
   if (-1 < (int)local_8) {
-    FUN_006e98e0(DAT_00807598,local_8,0,**(undefined4 **)(local_c + 0x4e7),
-                 *(int *)((int)*(undefined4 **)(local_c + 0x4e7) + 0x21),1);
-    FUN_006eaaa0(DAT_00807598,local_8,0);
-    FUN_006ea960(DAT_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);
-    FUN_006ea050(DAT_00807598,local_8,1,0xffffffff,0);
+    FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)local_c->field_04E7,
+                 *(int *)((int)local_c->field_04E7 + 0x21),1);
+    FUN_006eaaa0(PTR_00807598,local_8,0);
+    FUN_006ea960(PTR_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);
+    FUN_006ea050(PTR_00807598,local_8,1,0xffffffff,0);
   }
   g_currentExceptionFrame = local_58.previous;
   return;

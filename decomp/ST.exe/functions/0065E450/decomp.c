@@ -4,8 +4,8 @@
    CASE_A3=163;CASE_A8=168;CASE_B2=178;CASE_BE=190 */
 
 int __fastcall
-FUN_0065e450(int param_1,undefined4 param_2,Global_sub_0065E450_param_3Enum param_3,
-            undefined4 param_4,undefined4 param_5)
+FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
+            Global_sub_0065E450_param_3Enum param_3,undefined4 param_4,undefined4 param_5)
 
 {
   byte bVar1;
@@ -59,7 +59,7 @@ FUN_0065e450(int param_1,undefined4 param_2,Global_sub_0065E450_param_3Enum para
       }
       this = (void *)STAllPlayersC::GetObjPtr
                                (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)puVar5 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                                CONCAT31((int3)((uint)puVar5 >> 8),param_1->field_0024),
                                 CONCAT22((short)((uint)uVar8 >> 0x10),*puVar5),CASE_1);
       uVar8 = extraout_EDX_00;
       switch(GVar2) {

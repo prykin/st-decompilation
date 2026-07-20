@@ -1,5 +1,5 @@
 
-undefined4 __thiscall FUN_00608e90(void *this,int param_1)
+undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param_1)
 
 {
   short sVar1;
@@ -13,18 +13,18 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
   byte *local_c;
   uint local_8;
   
-  iVar2 = STGameObjC::GetMessage(this,param_1);
+  iVar2 = STGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
   }
-  uVar3 = *(uint *)(param_1 + 0x10);
+  uVar3 = param_1->field_0010;
   if (3 < uVar3) {
     if (uVar3 == 0x10f) {
       local_c = (byte *)thunk_FUN_0060c020(this,&local_8);
       if (local_c == (byte *)0x0) {
         return 0;
       }
-      STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
+      STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
       FUN_006ab060(&local_c);
       return 0;
     }
@@ -81,7 +81,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
       return 0;
     }
     if (*(int *)((int)this + 0x248) == 1) {
-      if (*(uint *)((int)this + 0x250) <= (uint)DAT_00802a38->field_00E4) {
+      if (*(uint *)((int)this + 0x250) <= (uint)PTR_00802a38->field_00E4) {
         if ((*(int *)((int)this + 0x20d) == 5) && (iVar2 = thunk_FUN_0060cef0(this), iVar2 == 0)) {
           thunk_FUN_006099a0(this);
         }
@@ -113,13 +113,13 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
         iVar2 = thunk_FUN_0060d070(this);
         if ((0 < iVar2) && (iVar2 == 2)) {
           thunk_FUN_0060d220((int)this);
-          iVar2 = DAT_00802a38->field_00E4;
+          iVar2 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 0x248) = 1;
           *(int *)((int)this + 0x250) = iVar2 + 200;
         }
         break;
       case 6:
-        iVar2 = thunk_FUN_0060dab0((int)this);
+        iVar2 = thunk_FUN_0060dab0(this);
         if ((0 < iVar2) && (iVar2 == 2)) {
           thunk_FUN_0060d300((int)this);
           thunk_FUN_006099a0(this);
@@ -132,7 +132,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
           *(int *)((int)this + 0x254) = *(int *)((int)this + 0x254) + 1;
           return 0;
         }
-        iVar2 = thunk_FUN_0060dd70((int)this);
+        iVar2 = thunk_FUN_0060dd70(this);
         *(char *)((int)this + 0x225) = (char)iVar2;
         if ((char)iVar2 != '\0') {
           thunk_FUN_0060a430(this,0);
@@ -147,7 +147,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
   if (uVar3 != 2) {
     return 0;
   }
-  puVar7 = *(undefined4 **)(param_1 + 0x14);
+  puVar7 = param_1->field_0014;
   puVar8 = (undefined4 *)((int)this + 0x1d5);
   for (iVar2 = 0x14; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar8 = *puVar7;
@@ -155,7 +155,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
     puVar8 = puVar8 + 1;
   }
   if (*(int *)((int)this + 0x1e1) == 2) {
-    thunk_FUN_0060c1a0(this,*(undefined4 **)(param_1 + 0x14));
+    thunk_FUN_0060c1a0(this,param_1->field_0014);
     return 0;
   }
   iVar2 = *(int *)((int)this + 0x1f9) / 0xc9;
@@ -255,7 +255,7 @@ LAB_00609164:
     *(undefined4 *)((int)this + 0x211) = 2;
     *(undefined4 *)((int)this + 0x215) = 1;
 LAB_006091f5:
-    iVar2 = thunk_FUN_0060dd70((int)this);
+    iVar2 = thunk_FUN_0060dd70(this);
     *(char *)((int)this + 0x225) = (char)iVar2;
 LAB_00609202:
     *(undefined1 *)((int)this + 0x22e) = 1;
@@ -310,18 +310,18 @@ LAB_006092a0:
   case 2:
   case 3:
   case 4:
-    thunk_FUN_0060a000((int)this);
+    thunk_FUN_0060a000(this);
     if (*(int *)((int)this + 0x1f5) == 0x4d) {
       *(undefined4 *)((int)this + 0x248) = 2;
       goto switchD_006092d2_default;
     }
     break;
   case 5:
-    thunk_FUN_0060a000((int)this);
+    thunk_FUN_0060a000(this);
     *(undefined4 *)((int)this + 0x248) = 2;
     goto switchD_006092d2_default;
   case 6:
-    iVar2 = thunk_FUN_0060d940((int)this);
+    iVar2 = thunk_FUN_0060d940(this);
     if (iVar2 == 0) {
       thunk_FUN_006099a0(this);
       goto switchD_006092d2_default;

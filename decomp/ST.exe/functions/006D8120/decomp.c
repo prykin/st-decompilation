@@ -1,5 +1,5 @@
 
-uint __cdecl FUN_006d8120(int param_1)
+uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
 
 {
   byte *pbVar1;
@@ -28,14 +28,14 @@ uint __cdecl FUN_006d8120(int param_1)
   int local_20;
   int local_1c;
   
-  pcVar3 = *(code **)(param_1 + 0x3a);
-  uVar5 = (uint)*(byte *)(param_1 + 0x11);
+  pcVar3 = (code *)param_1->field_003A;
+  uVar5 = (uint)param_1->field_0011;
   uVar6 = uVar5;
-  if (*(byte *)(param_1 + 0x11) < 2) {
-    uVar6 = (uint)*(byte *)(param_1 + 0x10) * *(int *)(param_1 + 8) + 7 >> 3;
-    uVar4 = *(uint *)(param_1 + 0x12);
+  if (param_1->field_0011 < 2) {
+    uVar6 = (uint)param_1->field_0010 * param_1->field_0008 + 7 >> 3;
+    uVar4 = param_1->field_0012;
     uVar11 = uVar4 - uVar6;
-    local_20 = *(int *)(param_1 + 0xc);
+    local_20 = param_1->field_000C;
     pbVar7 = (byte *)thunk_FUN_006a3be0(uVar6 * uVar5 + 0x203);
     uVar6 = 0;
     if (pbVar7 != (byte *)0x0) {

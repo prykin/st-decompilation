@@ -1,37 +1,37 @@
 
-void __fastcall FUN_005fda60(int param_1)
+void __fastcall FUN_005fda60(AnonShape_005FDA60_3863B978 *param_1)
 
 {
-  LPVOID *ppvVar1;
-  int iVar2;
+  int *piVar1;
+  STT3DSprC *pSVar2;
   int iVar3;
-  undefined4 local_8;
+  int local_8;
   
-  ppvVar1 = (LPVOID *)(param_1 + 0x233);
+  piVar1 = &param_1->field_0233;
   iVar3 = 0;
-  if (*(int *)(param_1 + 0x233) != 0) {
-    if ((*(int *)(param_1 + 0x226) != 0) && (local_8 = 0, 0 < *(int *)(param_1 + 0x226))) {
+  if (param_1->field_0233 != 0) {
+    if ((param_1->field_0226 != 0) && (local_8 = 0, 0 < param_1->field_0226)) {
       do {
-        if (*(int *)(iVar3 + 0x4e + (int)*ppvVar1) != 0) {
-          FUN_006ab060((LPVOID *)(iVar3 + 0x4e + (int)*ppvVar1));
+        if (*(int *)(iVar3 + 0x4e + *piVar1) != 0) {
+          FUN_006ab060((LPVOID *)(iVar3 + 0x4e + *piVar1));
         }
-        iVar2 = *(int *)(iVar3 + 0x42 + (int)*ppvVar1);
-        if (iVar2 != 0) {
-          thunk_FUN_004ad310(iVar2);
-          Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(iVar3 + 0x42 + (int)*ppvVar1));
-          *(undefined4 *)(iVar3 + 0x42 + (int)*ppvVar1) = 0;
+        pSVar2 = *(STT3DSprC **)(iVar3 + 0x42 + *piVar1);
+        if (pSVar2 != (STT3DSprC *)0x0) {
+          thunk_FUN_004ad310(pSVar2);
+          Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(iVar3 + 0x42 + *piVar1));
+          *(undefined4 *)(iVar3 + 0x42 + *piVar1) = 0;
         }
         local_8 = local_8 + 1;
         iVar3 = iVar3 + 0x52;
-      } while (local_8 < *(int *)(param_1 + 0x226));
+      } while (local_8 < param_1->field_0226);
     }
-    FUN_006ab060(ppvVar1);
+    FUN_006ab060((LPVOID *)piVar1);
   }
-  if (*(int *)(param_1 + 0x23b) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x23b));
+  if (param_1->field_023B != 0) {
+    FUN_006ab060((LPVOID *)&param_1->field_023B);
   }
-  if (*(int *)(param_1 + 0x23f) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x23f));
+  if (param_1->field_023F != 0) {
+    FUN_006ab060((LPVOID *)&param_1->field_023F);
   }
   return;
 }

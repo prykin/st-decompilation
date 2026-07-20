@@ -44,7 +44,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     return extraout_EAX;
   }
   if ((uint)(local_8->field_0038 - local_8->field_0998) < 100) {
-    if ((*(int *)((int)DAT_00807598 + 0x442) == 0) && (*(int *)((int)DAT_00807598 + 0x446) == 0)) {
+    if ((PTR_00807598->field_0442 == 0) && (PTR_00807598->field_0446 == 0)) {
       uVar5 = 0;
     }
     else {
@@ -60,12 +60,12 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     }
   }
   local_8->field_0998 = local_8->field_0038;
-  thunk_FUN_0052b330((int)local_8);
-  FUN_006e6fb0(DAT_00807598,pCVar4->field_0190,5,7,(uint)(pCVar4->field_023F != 2));
-  uVar5 = *(uint *)(DAT_00802a38 + 0xe4) * 0x51eb851f;
-  uVar9 = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
+  thunk_FUN_0052b330((AnonShape_0052B330_71C9FFBF *)local_8);
+  FUN_006e6fb0(PTR_00807598,pCVar4->field_0190,5,7,(uint)(pCVar4->field_023F != CASE_2));
+  uVar5 = PTR_00802a38->field_00E4 * 0x51eb851f;
+  uVar9 = (uint)PTR_00802a38->field_00E4 / 0x19;
   if (300 < uVar9 - DAT_0080c4cf) {
-    uVar5 = thunk_FUN_0056f930(0x807620);
+    uVar5 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)&DAT_00807620);
     DAT_00808794 = uVar5;
     DAT_0080c4cf = uVar9;
   }
@@ -149,7 +149,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       }
     }
   }
-  if ((pCVar4->field_023F != 2) && (uVar5 = pCVar4->field_0158, -1 < (int)uVar5)) {
+  if ((pCVar4->field_023F != CASE_2) && (uVar5 = pCVar4->field_0158, -1 < (int)uVar5)) {
     uVar5 = Library::DKW::DDX::FUN_006b3640
                       (DAT_008075a8,uVar5,0xffffffff,pCVar4->field_004C,pCVar4->field_00A4);
   }

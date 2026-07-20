@@ -101,7 +101,7 @@ LAB_0056f325:
         Library::Ourlib::MFANY::mfAnySave
                   (*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),(int)pcVar7,
                    PTR_s_TEXTURE_0079b07c,'\x01');
-        STPlaySystemC::Save(DAT_00802a38,pcVar7);
+        STPlaySystemC::Save(PTR_00802a38,pcVar7);
         cMf32::RecPut(pcVar7,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
         cMf32::RecPut(pcVar7,0,PTR_s_DESCRIPTOR_0079b080,(byte *)((int)pvVar2 + 0x1196),0x1999,
@@ -123,7 +123,7 @@ LAB_0056f325:
           Library::Ourlib::MFSARR::mfSarSave
                     (*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01');
         }
-        if (DAT_00807598 != (void *)0x0) {
+        if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
           iVar3 = 1;
           puVar12 = (undefined4 *)(DAT_0080679c + 0x28);
           uVar4 = FUN_006b4fe0(DAT_0080679c);
@@ -131,7 +131,7 @@ LAB_0056f325:
                                          puVar12,iVar3);
           if (local_c != (byte *)0x0) {
             FUN_006b4170((int)local_c,0,0,0,*(int *)(local_c + 4),*(int *)(local_c + 8),0);
-            FUN_006e6fb0(DAT_00807598,(int)local_c,0,0,1);
+            FUN_006e6fb0(PTR_00807598,(int)local_c,0,0,1);
             puVar14 = (uint *)0x0;
             cVar13 = '\0';
             puVar12 = (undefined4 *)0x0;

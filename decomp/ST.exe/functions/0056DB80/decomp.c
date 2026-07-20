@@ -8,7 +8,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
 {
   char cVar1;
   code *pcVar2;
-  void *pvVar3;
+  AnonShape_GLOBAL_00807598_0C6808FB *pAVar3;
   InternalExceptionFrame *pIVar4;
   uint *puVar5;
   ushort *puVar6;
@@ -78,7 +78,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar11->field_4ED7 = 2;
     pSVar11->field_4EB3 = 2;
     pSVar11->field_4EAF = 0;
-    MMsgTy::HidePanel(*(MMsgTy **)(DAT_0081176c + 0x2e6),0,0,1);
+    MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
     DAT_00807327 = DAT_00807327 | 1;
     if ((DAT_0080733b == 0) || (3 < DAT_0080733b)) {
       DAT_0080733b = 2;
@@ -87,28 +87,28 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar11->field_1168 = 0;
     pSVar11->field_0034 = uVar7;
     pSVar11->field_1164 = 0;
-    DarkScreen(DAT_0080759c,10,2);
-    if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+    DarkScreen((undefined4 *)DAT_0080759c,10,2);
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       pcVar10 = extraout_ECX_00;
     }
     else {
-      pcVar10 = *(cLoadingTy **)(DAT_00802a30 + 0x1c);
+      pcVar10 = (cLoadingTy *)PTR_00802a30->field_001C;
       if (pcVar10 != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),(uint)pcVar10);
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)pcVar10);
         pcVar10 = extraout_ECX;
       }
     }
     puVar5 = cLoadingTy::new(pcVar10,0x5c,s_MisLoad_log_007ca1d4,1);
     if (puVar5 == (uint *)0x0) {
-      DAT_00802a58 = (cLoadingTy *)0x0;
+      PTR_00802a58 = (cLoadingTy *)0x0;
     }
     else {
-      DAT_00802a58 = (cLoadingTy *)thunk_FUN_005545c0((int *)puVar5);
+      PTR_00802a58 = (cLoadingTy *)thunk_FUN_005545c0((int *)puVar5);
     }
-    if ((DAT_00802a58 != (cLoadingTy *)0x0) &&
-       (cLoadingTy::ShowScr(DAT_00802a58,10,1), DAT_00802a58 != (cLoadingTy *)0x0)) {
-      cLoadingTy::InitParam(DAT_00802a58,0x14,10,0x316,0x244,0,1,2,0x4021c6,0);
+    if ((PTR_00802a58 != (cLoadingTy *)0x0) &&
+       (cLoadingTy::ShowScr(PTR_00802a58,10,1), PTR_00802a58 != (cLoadingTy *)0x0)) {
+      cLoadingTy::InitParam(PTR_00802a58,0x14,10,0x316,0x244,0,1,2,0x4021c6,0);
     }
     DAT_00806720 = timeGetTime();
     g_cMf32_00806754 =
@@ -199,8 +199,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       puVar16 = &pSVar11->field_4DA3;
       uVar7 = FUN_006b0140(0x267f,HINSTANCE_00807618);
       wsprintfA(&pSVar11->field_7D1A,s__s__s_007c411c,uVar7,puVar16);
-      if (DAT_00802a58 != (cLoadingTy *)0x0) {
-        cLoadingTy::DrawLineCR(DAT_00802a58,(uint *)&pSVar11->field_7D1A);
+      if (PTR_00802a58 != (cLoadingTy *)0x0) {
+        cLoadingTy::DrawLineCR(PTR_00802a58,(uint *)&pSVar11->field_7D1A);
       }
       if ((pSVar11->field_1180 == '\x03') || (pSVar11->field_1180 == '\b')) {
         puVar12 = (undefined4 *)&pSVar11->field_0x5012;
@@ -264,8 +264,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       }
       uVar7 = FUN_006b0140(0x267f,HINSTANCE_00807618);
       wsprintfA(&pSVar11->field_7D1A,s__s__s_007c411c,uVar7,pbVar15);
-      if (DAT_00802a58 != (cLoadingTy *)0x0) {
-        cLoadingTy::DrawLineCR(DAT_00802a58,(uint *)&pSVar11->field_7D1A);
+      if (PTR_00802a58 != (cLoadingTy *)0x0) {
+        cLoadingTy::DrawLineCR(PTR_00802a58,(uint *)&pSVar11->field_7D1A);
       }
       if ((pSVar11->field_1180 == '\f') || (pSVar11->field_1180 == '\x10')) {
         local_8 = &pSVar11->field_1180;
@@ -274,11 +274,12 @@ void __thiscall STAppC::StartGame(STAppC *this)
       else {
         local_10 = (undefined4 *)&pSVar11->field_0x1196;
         cMf32::RecGet(g_cMf32_00806754,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_10,0);
-        thunk_FUN_0056ef50((int)pSVar11);
-        thunk_FUN_0056f040((int)pSVar11);
+        thunk_FUN_0056ef50((AnonShape_0056EF50_CAB83E9D *)pSVar11);
+        thunk_FUN_0056f040((AnonShape_0056F040_86F75ABE *)pSVar11);
       }
-      if ((byte *)pSVar11->field_4EA7 != (byte *)0x0) {
-        FUN_006b5570((byte *)pSVar11->field_4EA7);
+      if ((AnonShape_006B5570_4D68B99C *)pSVar11->field_4EA7 != (AnonShape_006B5570_4D68B99C *)0x0)
+      {
+        FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar11->field_4EA7);
       }
       puVar5 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_00806754,PTR_s_DESCRIPTION_0079b074,0);
       pSVar11->field_4EA7 = puVar5;
@@ -286,8 +287,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
         puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
         pSVar11->field_4EA7 = puVar5;
       }
-      if ((byte *)pSVar11->field_4EAB != (byte *)0x0) {
-        FUN_006b5570((byte *)pSVar11->field_4EAB);
+      if ((AnonShape_006B5570_4D68B99C *)pSVar11->field_4EAB != (AnonShape_006B5570_4D68B99C *)0x0)
+      {
+        FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar11->field_4EAB);
       }
       puVar5 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_00806754,PTR_s_OBJECTIVES_0079b078,0);
       pSVar11->field_4EAB = puVar5;
@@ -357,32 +359,32 @@ void __thiscall STAppC::StartGame(STAppC *this)
     local_8 = (char *)&pSVar11->field_1134;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_RND_INIT_0079b05c,(int *)&local_8,0);
     CreateGameSystem();
-    FUN_006e8640(DAT_00807598,
+    FUN_006e8640(PTR_00807598,
                  *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10),
                  *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4));
-    FUN_006dda90(DAT_00807598,0.7,0.95);
-    FUN_006ddae0(DAT_00807598,0x10,4,4,DAT_008032c8);
+    FUN_006dda90(PTR_00807598,0.7,0.95);
+    FUN_006ddae0(PTR_00807598,0x10,4,4,DAT_008032c8);
     if (DAT_00807328 == 0) {
-      FUN_006ddbb0((int)DAT_00807598);
+      FUN_006ddbb0((int)PTR_00807598);
     }
-    pvVar3 = DAT_00807598;
+    pAVar3 = PTR_00807598;
     uVar7 = DAT_008032c0;
-    *(undefined4 *)((int)DAT_00807598 + 0x278) = 0x10;
-    *(undefined4 *)((int)pvVar3 + 0x27c) = uVar7;
-    FUN_006e8630(DAT_00807598,DAT_0080732c);
+    PTR_00807598->field_0278 = 0x10;
+    *(undefined4 *)&pAVar3->field_0x27c = uVar7;
+    FUN_006e8630(PTR_00807598,DAT_0080732c);
     thunk_FUN_005782d0();
     CreatePlaySystem();
     cMf32::delete(this_02,g_cMf32_00806754);
     g_cMf32_00806754 = (cMf32 *)0x0;
-    if (DAT_00802a58 != (cLoadingTy *)0x0) {
+    if (PTR_00802a58 != (cLoadingTy *)0x0) {
       puVar5 = (uint *)FUN_006b0140(0x2680,HINSTANCE_00807618);
-      cLoadingTy::DrawLineCR(DAT_00802a58,puVar5);
+      cLoadingTy::DrawLineCR(PTR_00802a58,puVar5);
       if ((pSVar11->field_115E != '\0') && (pSVar11->field_1163 == '\x03')) {
         Sleep(2000);
       }
       thunk_FUN_005547d0(10,1);
-      cLoadingTy::delete(this_03,(uint *)DAT_00802a58);
-      DAT_00802a58 = (cLoadingTy *)0x0;
+      cLoadingTy::delete(this_03,(uint *)PTR_00802a58);
+      PTR_00802a58 = (cLoadingTy *)0x0;
     }
     thunk_FUN_0056a500();
     puVar12 = local_34;
@@ -417,13 +419,13 @@ void __thiscall STAppC::StartGame(STAppC *this)
     }
     pSVar11->field_6CE1 = 0;
     pSVar11->field_6CE0 = 0;
-    if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      Library::DKW::DDX::FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
+    if (PTR_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
     }
-    else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
+    else if (PTR_00802a30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                (*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
-                 *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
+                ((uint *)PTR_00802a30->field_0060,PTR_00802a30->field_001C,0xfffffffe,
+                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
     }
     thunk_FUN_00440700((uint)DAT_00807326);
     thunk_FUN_0056a500();
@@ -436,14 +438,14 @@ void __thiscall STAppC::StartGame(STAppC *this)
     local_34[4] = 5;
     FUN_006e3db0((int)local_34);
     thunk_FUN_0056a500();
-    thunk_FUN_00577690(DAT_0081163c);
+    thunk_FUN_00577690(PTR_0081163c);
     SoundClassTy::PlaySound_thunk
               ((SoundClassTy *)&pSVar11->field_0038,SOUND_MODE_1,(char *)0x0,0x4b7,
                (SoundPosition *)0x0,0);
     DAT_0080674c = 2;
     ShowCursor(0);
     DAT_00856d7c = 0;
-    FUN_006bbb20((int)DAT_0080759c,0);
+    FUN_006bbb20(DAT_0080759c,0);
     FUN_006ba780((int)DAT_0080759c,0);
     g_currentExceptionFrame = local_98.previous;
     pSVar11->field_1195 = 0;
@@ -459,8 +461,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pcVar10 = extraout_ECX_03;
     }
     g_cMf32_00806754 = (cMf32 *)0x0;
-    if (DAT_00802a58 != (cLoadingTy *)0x0) {
-      cLoadingTy::delete(pcVar10,(uint *)DAT_00802a58);
+    if (PTR_00802a58 != (cLoadingTy *)0x0) {
+      cLoadingTy::delete(pcVar10,(uint *)PTR_00802a58);
     }
     pSVar11 = local_c;
     puVar12 = local_54;
@@ -468,7 +470,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       *puVar12 = 0;
       puVar12 = puVar12 + 1;
     }
-    DAT_00802a58 = (cLoadingTy *)0x0;
+    PTR_00802a58 = (cLoadingTy *)0x0;
     local_44 = 0x6102;
     (*pSVar11->vtable->GetMessage)(pSVar11,(int)local_54);
     pSVar11->field_1195 = 0;

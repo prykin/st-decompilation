@@ -1,5 +1,5 @@
 
-uint FUN_00755830(int param_1,uint *param_2,int param_3)
+uint FUN_00755830(AnonShape_00755830_DE41EB2A *param_1,uint *param_2,int param_3)
 
 {
   short *psVar1;
@@ -16,25 +16,25 @@ uint FUN_00755830(int param_1,uint *param_2,int param_3)
   uint *puVar12;
   
   if (param_3 < 0) {
-    puVar8 = (undefined4 *)(*(int *)(param_1 + 0xc) + 0x40);
-    puVar10 = (undefined4 *)(*(int *)(param_1 + 0xc) + 0x48);
+    puVar8 = (undefined4 *)(param_1->field_000C + 0x40);
+    puVar10 = (undefined4 *)(param_1->field_000C + 0x48);
     for (iVar5 = 0xe; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar10 = *puVar8;
       puVar8 = puVar8 + 1;
       puVar10 = puVar10 + 1;
     }
-    uVar3 = FUN_00753b40(param_1);
+    uVar3 = FUN_00753b40((int)param_1);
     if ((int)uVar3 < 0) {
       return uVar3;
     }
     uVar4 = Library::DKW::FMM::FUN_006d4c50
-                      (*(int *)(param_1 + 8),uVar3,(int)*(short *)(*(int *)(param_1 + 8) + 0x16));
+                      (param_1->field_0008,uVar3,(int)*(short *)(param_1->field_0008 + 0x16));
     if (uVar4 == 0) {
-      *(uint *)(*(int *)(param_1 + 8) + 8) = *(uint *)(*(int *)(param_1 + 8) + 8) | 0x10;
-      iVar5 = *(int *)(*(int *)(param_1 + 8) + 0x34);
+      *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
+      iVar5 = *(int *)(param_1->field_0008 + 0x34);
       puVar12 = (uint *)(iVar5 + uVar3);
-      puVar7 = (uint *)(*(int *)(*(int *)(param_1 + 0xc) + 0x24) + iVar5);
-      uVar6 = (uint)*(short *)(*(int *)(param_1 + 8) + 0x16);
+      puVar7 = (uint *)(*(int *)(param_1->field_000C + 0x24) + iVar5);
+      uVar6 = (uint)*(short *)(param_1->field_0008 + 0x16);
       puVar9 = puVar7;
       puVar11 = puVar12;
       for (uVar4 = uVar6 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
@@ -48,9 +48,9 @@ uint FUN_00755830(int param_1,uint *param_2,int param_3)
         puVar11 = (uint *)((int)puVar11 + 1);
       }
       *puVar12 = uVar3;
-      sVar2 = *(short *)(*(int *)(param_1 + 0xc) + 0x34);
+      sVar2 = *(short *)(param_1->field_000C + 0x34);
       if (sVar2 == 0) {
-        iVar5 = (**(code **)(*(int *)(param_1 + 0xc) + 8))(param_2 + 2);
+        iVar5 = (**(code **)(param_1->field_000C + 8))(param_2 + 2);
       }
       else {
         iVar5 = (int)sVar2;
@@ -69,11 +69,11 @@ uint FUN_00755830(int param_1,uint *param_2,int param_3)
       }
       *(short *)(puVar7 + 2) = (short)uVar4;
       puVar7[1] = uVar3;
-      *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x1c) = 0;
-      *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x44) = 0;
-      psVar1 = (short *)(*(int *)(param_1 + 0xc) + 0x2a);
+      *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
+      *(undefined4 *)(param_1->field_000C + 0x44) = 0;
+      psVar1 = (short *)(param_1->field_000C + 0x2a);
       *psVar1 = *psVar1 + 1;
-      *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x14) = 1;
+      *(undefined4 *)(param_1->field_000C + 0x14) = 1;
       return 0;
     }
     if (0 < (int)uVar4) {
@@ -81,8 +81,8 @@ uint FUN_00755830(int param_1,uint *param_2,int param_3)
     }
   }
   else {
-    FUN_007574c0(param_1,*(int *)(*(int *)(param_1 + 8) + 0x34) + *(int *)(param_1 + 0x10),param_2,
-                 *(int *)(*(int *)(param_1 + 0xc) + 0x44 + param_3 * 8));
+    FUN_007574c0((int)param_1,*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010,param_2,
+                 *(int *)(param_1->field_000C + 0x44 + param_3 * 8));
     uVar4 = 0;
   }
   return uVar4;

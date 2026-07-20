@@ -39,7 +39,7 @@ void __thiscall FUN_00728a80(void *this,int param_1,int param_2,int param_3)
   int local_1c;
   uint local_18;
   int local_14;
-  void *local_10;
+  AnonShape_00728A80_F2811CDB *local_10;
   int local_c;
   int local_8;
   
@@ -58,7 +58,7 @@ void __thiscall FUN_00728a80(void *this,int param_1,int param_2,int param_3)
     iVar6 = FUN_007287e0(&local_54,DAT_00857114);
     if ((iVar6 != 0) && (iVar15 < *(int *)((int)this + 0x3c))) {
       do {
-        if (*(int *)((int)this + 0x34) <= iVar15) {
+        if (*(int *)&((AnonShape_00728A80_F2811CDB *)this)->field_0x34 <= iVar15) {
           iVar6 = local_48 >> 0x10;
           iVar7 = local_2c >> 0x10;
           iVar14 = local_1c;
@@ -67,12 +67,12 @@ void __thiscall FUN_00728a80(void *this,int param_1,int param_2,int param_3)
           if (iVar6 - iVar7 != 0 && iVar7 <= iVar6) {
             local_18 = local_24;
             DAT_00857108 = (int)(local_40 - local_24) / (iVar6 - iVar7);
-            if (*(int *)((int)local_10 + 0x38) <= iVar6) {
-              iVar6 = *(int *)((int)local_10 + 0x38);
+            if (local_10->field_0038 <= iVar6) {
+              iVar6 = local_10->field_0038;
             }
-            if (iVar7 < *(int *)((int)local_10 + 0x30)) {
-              local_18 = local_24 + (*(int *)((int)local_10 + 0x30) - iVar7) * DAT_00857108;
-              iVar7 = *(int *)((int)local_10 + 0x30);
+            if (iVar7 < local_10->field_0030) {
+              local_18 = local_24 + (local_10->field_0030 - iVar7) * DAT_00857108;
+              iVar7 = local_10->field_0030;
             }
             iVar8 = iVar6 - iVar7;
             if (iVar8 != 0 && iVar7 <= iVar6) {

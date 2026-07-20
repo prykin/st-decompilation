@@ -64,41 +64,42 @@ STAllPlayersC::GetObjPtr
   code *pcVar1;
   int iVar2;
   uint uVar3;
+  DArrayTy *pDVar4;
   
   switch(param_3) {
   case CASE_1:
-    iVar2 = *(int *)((int)&DAT_007f4e29 + (char)objPtr * 0xa62);
-    if (iVar2 == 0) {
+    pDVar4 = g_playerRuntime[(char)objPtr].objects;
+    if (pDVar4 == (DArrayTy *)0x0) {
       return 0;
     }
     break;
   case CASE_2:
-    iVar2 = DAT_007fa154;
-    if (DAT_007fa154 == 0) {
+    pDVar4 = PTR_007fa154;
+    if (PTR_007fa154 == (DArrayTy *)0x0) {
       return 0;
     }
     break;
   case CASE_3:
-    iVar2 = DAT_007fa158;
-    if (DAT_007fa158 == 0) {
+    pDVar4 = PTR_007fa158;
+    if (PTR_007fa158 == (DArrayTy *)0x0) {
       return 0;
     }
     break;
   case CASE_4:
-    iVar2 = DAT_007fa15c;
-    if (DAT_007fa15c == 0) {
+    pDVar4 = PTR_007fa15c;
+    if (PTR_007fa15c == (DArrayTy *)0x0) {
       return 0;
     }
     break;
   case CASE_5:
-    iVar2 = DAT_007fa160;
-    if (DAT_007fa160 == 0) {
+    pDVar4 = PTR_007fa160;
+    if (PTR_007fa160 == (DArrayTy *)0x0) {
       return 0;
     }
     break;
   case CASE_6:
-    iVar2 = DAT_007fa164;
-    if (DAT_007fa164 == 0) {
+    pDVar4 = PTR_007fa164;
+    if (PTR_007fa164 == (DArrayTy *)0x0) {
       return 0;
     }
     break;
@@ -113,7 +114,7 @@ STAllPlayersC::GetObjPtr
     uVar3 = (*pcVar1)();
     return uVar3;
   }
-  uVar3 = FUN_006acc70(iVar2,param_2 & 0xffff,&objPtr);
+  uVar3 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,param_2 & 0xffff,&objPtr);
   return -(uint)(uVar3 != 0xfffffffc) & objPtr;
 }
 

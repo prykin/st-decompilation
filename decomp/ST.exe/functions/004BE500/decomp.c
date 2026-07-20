@@ -38,7 +38,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
                              (&DAT_00795c00 + ((uVar5 & 0xff) + pTVar3->field_0235 * 3) * 4));
     }
     if (*(int *)(&DAT_00794d94 + pTVar3->field_0235 * 4) != 0) {
-      thunk_FUN_004c2f70((int)pTVar3);
+      thunk_FUN_004c2f70((AnonShape_004C2F70_6CAAACC0 *)pTVar3);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

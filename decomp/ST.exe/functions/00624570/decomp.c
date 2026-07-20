@@ -17,7 +17,7 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
   case CASE_0:
     *(undefined1 *)((int)this + 0x61) = 0;
     *(undefined1 *)((int)this + 0x62) = 0;
-    *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
     return 1;
   case CASE_1:
     break;
@@ -40,9 +40,9 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
       *(int *)((int)this + 0x302) = ((param_4 - *(int *)((int)this + 0x2ca)) * 10000) / iVar2;
       *(undefined2 *)((int)this + 0x36) = *(undefined2 *)((int)this + 0x2c6);
       uVar1 = 1;
-      *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+      *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
     }
-    *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
     return uVar1;
   case CASE_3:
     if (param_4 < 0) {
@@ -70,14 +70,14 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
       *(undefined4 *)((int)this + 0x306) = 3;
       uVar1 = 1;
     }
-    *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
   default:
     return uVar1;
   }
   iVar2 = (uint)*(byte *)((int)this + 0x2ad) * 4;
   if (*(int *)(&DAT_007d0398 + iVar2) == 0) {
     *(undefined1 *)((int)this + 0x62) = 0;
-    *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
     return 1;
   }
   if (*(int *)((int)this + 0x302) == 0) {
@@ -92,7 +92,7 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
   *(char *)((int)this + 0x62) =
        (&DAT_007d0388)[(uint)*(byte *)((int)this + 0x2ad) * 4] -
        (char)((uVar3 >> 0x10) % (iVar2 / 3 + 1U));
-  uVar1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  uVar1 = PTR_00802a38->field_00E4;
   *(undefined2 *)((int)this + 0x34) = *(undefined2 *)((int)this + 0x2ca);
   *(undefined4 *)((int)this + 0x30f) = uVar1;
   return 1;

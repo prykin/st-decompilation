@@ -16,14 +16,14 @@ undefined4 __fastcall FUN_0065ef70(int param_1)
   int local_10;
   byte local_c;
   undefined3 uStack_b;
-  int local_8;
+  AnonShape_0065EF70_EB9B857D *local_8;
   
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
     iVar5 = *(int *)(param_1 + 0x22f);
     local_1c = 0;
     if (0 < *(int *)(iVar5 + 0xc)) {
       bVar9 = *(int *)(iVar5 + 0xc) != 0;
-      local_8 = param_1;
+      local_8 = (AnonShape_0065EF70_EB9B857D *)param_1;
       do {
         if (bVar9) {
           psVar7 = (short *)(*(int *)(iVar5 + 8) * local_1c + *(int *)(iVar5 + 0x1c));
@@ -36,8 +36,9 @@ undefined4 __fastcall FUN_0065ef70(int param_1)
           pbVar8 = &DAT_008087e9;
         }
         do {
-          if (((int)pbVar8 < 0x808a71) && ((DAT_00802a38 == 0 || (*pbVar8 < 8)))) {
-            bVar1 = *(byte *)(local_8 + 0x24);
+          if (((int)pbVar8 < 0x808a71) && ((PTR_00802a38 == (STPlaySystemC *)0x0 || (*pbVar8 < 8))))
+          {
+            bVar1 = local_8->field_0024;
             _local_c = CONCAT31(uStack_b,bVar1);
             if (DAT_00808a8f == '\0') {
               if (bVar6 == bVar1) {
@@ -79,9 +80,9 @@ LAB_0065f095:
                         (g_sTAllPlayers_007FA174,bVar6,*psVar7,psVar7[1],psVar7[2],psVar7[3],
                          psVar7[4],psVar7[5],(int *)0x0,(int *)0x0,&local_10,&local_14);
               if ((0 < local_10) || (0 < local_14)) {
-                *(undefined4 *)(local_8 + 0x195) = *(undefined4 *)psVar7;
-                *(undefined4 *)(local_8 + 0x199) = *(undefined4 *)(psVar7 + 2);
-                *(undefined4 *)(local_8 + 0x19d) = *(undefined4 *)(psVar7 + 4);
+                local_8->field_0195 = *(undefined4 *)psVar7;
+                local_8->field_0199 = *(undefined4 *)(psVar7 + 2);
+                local_8->field_019D = *(undefined4 *)(psVar7 + 4);
                 return 1;
               }
             }
@@ -90,7 +91,7 @@ LAB_0065f095:
           bVar6 = bVar6 + 1;
         } while ((int)pbVar8 < 0x808a71);
         local_1c = local_1c + 1;
-        iVar5 = *(int *)(local_8 + 0x22f);
+        iVar5 = local_8->field_022F;
         bVar9 = local_1c < *(uint *)(iVar5 + 0xc);
       } while ((int)local_1c < (int)*(uint *)(iVar5 + 0xc));
     }

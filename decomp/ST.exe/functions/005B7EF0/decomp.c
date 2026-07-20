@@ -53,7 +53,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar3;
-        (**(code **)(*(int *)this_00->field_000C + 0x18))(local_34);
+        (*this_00->field_000C->vtable->vfunc_18)(local_34);
       }
       this_00->field_1CA9 = 1;
       puVar6 = &this_00->field_1CD0;
@@ -110,7 +110,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         iVar3 = 0x158;
         puVar7 = (uint *)FUN_006b0140(param_1,HINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar3,iVar8,cVar13,uVar10,
+                           ((ccFntTy *)PTR_0081176c->field_0030,puVar7,iVar3,iVar8,cVar13,uVar10,
                             iVar12,iVar14,iVar15);
         (**(code **)(local_10 + 8))(puVar6,uVar4,uVar5);
       }
@@ -122,7 +122,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         uVar5 = 0xffffffff;
         uVar4 = 7;
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (*(ccFntTy **)(DAT_0081176c + 0x30),local_478,0x158,0x39,CASE_FFFFFFFE,
+                           ((ccFntTy *)PTR_0081176c->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                             0xffffffff,1,-1,-1);
         (**(code **)(iVar3 + 8))(puVar6,uVar4,uVar5);
       }
@@ -169,7 +169,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         iVar8 = 0x7d;
         puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,HINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
+                           ((ccFntTy *)PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);
         (**(code **)(iVar3 + 8))(puVar6,uVar4,uVar5);
         this_00->field_0572 = 0;
@@ -206,7 +206,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           iVar8 = 0x7d;
           puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,HINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
-                             (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
+                             ((ccFntTy *)PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
           (**(code **)(iVar3 + 8))(puVar6,uVar4,uVar5);
           this_00->field_0572 = 0;
@@ -246,7 +246,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           iVar8 = 0x7d;
           puVar7 = (uint *)FUN_006b0140(this_00->field_06AD,HINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
-                             (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
+                             ((ccFntTy *)PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
           (**(code **)(iVar3 + 8))(puVar6,uVar4,uVar5);
           this_00->field_076D = 0;
@@ -280,7 +280,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           iVar8 = 0x7d;
           puVar7 = (uint *)FUN_006b0140(this_00->field_04B2,HINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
-                             (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
+                             ((ccFntTy *)PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
           (**(code **)(iVar3 + 8))(puVar6,uVar4,uVar5);
           this_00->field_0572 = 0;
@@ -315,7 +315,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         iVar8 = 0x7d;
         puVar7 = (uint *)FUN_006b0140(this_00->field_02B7,HINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (*(ccFntTy **)(DAT_0081176c + 0x30),puVar7,iVar8,iVar12,cVar13,uVar10,
+                           ((ccFntTy *)PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);
         (**(code **)(iVar3 + 8))(puVar6,uVar4,uVar5);
         this_00->field_0377 = 0;

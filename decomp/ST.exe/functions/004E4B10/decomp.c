@@ -1,11 +1,11 @@
 
-undefined4 __fastcall FUN_004e4b10(int param_1)
+undefined4 __fastcall FUN_004e4b10(AnonShape_004E4B10_C52B4B94 *param_1)
 
 {
-  if ((*(int *)(param_1 + 0x245) == 0) && (*(int *)(param_1 + 0x4d4) < 0x28)) {
-    if (*(int *)(param_1 + 0x4d8) + 0x1cU <= *(uint *)(DAT_00802a38 + 0xe4)) {
-      *(uint *)(param_1 + 0x4d8) = *(uint *)(DAT_00802a38 + 0xe4);
-      *(int *)(param_1 + 0x4d4) = *(int *)(param_1 + 0x4d4) + 1;
+  if ((param_1->field_0245 == 0) && (param_1->field_04D4 < 0x28)) {
+    if (param_1->field_04D8 + 0x1c <= (uint)PTR_00802a38->field_00E4) {
+      param_1->field_04D8 = PTR_00802a38->field_00E4;
+      param_1->field_04D4 = param_1->field_04D4 + 1;
     }
   }
   return 0;

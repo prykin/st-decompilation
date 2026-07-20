@@ -11,7 +11,7 @@ bool __thiscall FUN_00494870(void *this,uint param_1)
   
   bVar6 = true;
   if (((*(int *)((int)this + 0x732) != 1) || (7 < param_1)) ||
-     ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51]))))
+     ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51]))))
   goto cf_common_exit_00494A35;
   bVar1 = *(byte *)((int)this + 0x24);
   if (DAT_00808a8f == '\0') {

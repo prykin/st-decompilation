@@ -40,14 +40,14 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  PutDDX(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
+  PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
   pPVar2 = local_8;
   if ((local_8->field_1C96 == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutLstProc
               (this_00,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x79,0x51,0x22e,0x145,(int)local_8);
   }
   uVar8 = 0;
-  pcVar7 = *(ccFntTy **)(DAT_0081176c + 0x30);
+  pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->field_1A5F == '\x01') {

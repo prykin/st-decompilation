@@ -66,7 +66,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     DAT_0080735e = 0;
     DAT_00807363 = 2;
     DAT_00807364 = 1;
-    thunk_FUN_005739a0((int)this);
+    thunk_FUN_005739a0(this);
   }
   if (((uint)phkResult & 2) != 0) {
     puVar7 = &DAT_008071f8;

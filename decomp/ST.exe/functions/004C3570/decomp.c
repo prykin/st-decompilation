@@ -49,20 +49,20 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
         if (this_00->field_0255 != 0) {
           if ((puVar7[-4] != 0) &&
              (*(int *)(&DAT_00792040 + this_00->field_0235 * 4) + *puVar7 <=
-              *(uint *)((int)DAT_00802a38 + 0xe4))) {
-            *puVar7 = *(uint *)((int)DAT_00802a38 + 0xe4);
-            uVar4 = *(uint *)((int)DAT_00802a38 + 0xe4);
+              (uint)PTR_00802a38->field_00E4)) {
+            *puVar7 = PTR_00802a38->field_00E4;
+            uVar4 = PTR_00802a38->field_00E4;
             bVar8 = uVar4 < puVar7[1] + *(int *)(&DAT_00792040 + this_00->field_0235 * 4) * 10;
             if (!bVar8) {
               puVar7[1] = uVar4;
               fireFindCheckTarget(this_00,(int)local_8,0);
             }
             if (puVar7[2] != 0) {
-              puVar7[0xc] = *(uint *)((int)DAT_00802a38 + 0xe4);
+              puVar7[0xc] = PTR_00802a38->field_00E4;
               puVar7[0xd] = 100;
               if ((bVar8) || (puVar7[3] == 0)) {
                 puVar7[3] = 0;
-                FUN_006e62d0(DAT_00802a38,puVar7[2],(int *)(puVar7 + 3));
+                FUN_006e62d0(PTR_00802a38,puVar7[2],(int *)(puVar7 + 3));
               }
               uVar4 = puVar7[3];
               if (uVar4 != 0) {
@@ -75,7 +75,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                 if (&stack0x00000000 != &DAT_0000000c) {
                   local_c = CONCAT22(local_c._2_2_,this_00->field_0045);
                 }
-                sVar2 = (*this_00->vtable->slot_10)
+                sVar2 = (*this_00->vtable->vfunc_10)
                                   (CONCAT22((short)(uVar4 >> 0x10),*(undefined2 *)(uVar4 + 0x41)),
                                    *(undefined2 *)(uVar4 + 0x43),*(undefined2 *)(uVar4 + 0x45),
                                    local_14,local_10,local_c);
@@ -89,8 +89,8 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           }
           if (((this_00->field_0255 != 0) && (puVar7[-4] != 0)) && (puVar7[2] == 0)) {
             if (puVar7[0xb] == 0) {
-              if (puVar7[0xd] + puVar7[0xc] <= *(uint *)((int)DAT_00802a38 + 0xe4)) {
-                puVar7[0xc] = *(uint *)((int)DAT_00802a38 + 0xe4);
+              if (puVar7[0xd] + puVar7[0xc] <= (uint)PTR_00802a38->field_00E4) {
+                puVar7[0xc] = PTR_00802a38->field_00E4;
                 puVar7[0xb] = 1;
                 do {
                   uVar4 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -99,7 +99,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   puVar7[0xe] = uVar4;
                 } while (uVar4 == *(uint *)&this_00->field_0x259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
-                  (*this_00->vtable->slot_90)(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
+                  (*this_00->vtable->vfunc_90)(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
               }
             }
@@ -107,7 +107,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               uVar4 = thunk_FUN_004c34a0(this_00,puVar7[0xe]);
               puVar7[0xb] = uVar4;
               if (uVar4 == 0) {
-                puVar7[0xc] = *(uint *)((int)DAT_00802a38 + 0xe4);
+                puVar7[0xc] = PTR_00802a38->field_00E4;
                 uVar4 = this_00->field_001C * 0x41c64e6d + 0x3039;
                 this_00->field_001C = uVar4;
                 puVar7[0xd] = (uVar4 >> 0x10) % 0x4c + 0x19;
@@ -115,7 +115,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             }
           }
         }
-        uVar4 = *(uint *)((int)DAT_00802a38 + 0xe4);
+        uVar4 = PTR_00802a38->field_00E4;
         iVar3 = thunk_FUN_004e8230(*(int *)&this_00->field_0x24,this_00->field_0235,(int)local_8);
         piVar6 = local_8;
         if (iVar3 + puVar7[-5] <= uVar4) {
@@ -128,11 +128,11 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             if (((*(int *)(&DAT_00792a90 + ((int)piVar6 + this_00->field_0235 * 2) * 4) == 2) ||
                 ((*(int *)(&DAT_00792a90 + ((int)piVar6 + this_00->field_0235 * 2) * 4) == 3 &&
                  (iVar3 = thunk_FUN_004c56b0(this_00,piVar6), iVar3 != 0)))) || (puVar7[2] != 0)) {
-              puVar7[0xc] = *(uint *)((int)DAT_00802a38 + 0xe4);
+              puVar7[0xc] = PTR_00802a38->field_00E4;
               puVar7[0xd] = 100;
               if (puVar7[2] != 0) {
                 if (puVar7[3] == 0) {
-                  FUN_006e62d0(DAT_00802a38,puVar7[2],(int *)(puVar7 + 3));
+                  FUN_006e62d0(PTR_00802a38,puVar7[2],(int *)(puVar7 + 3));
                 }
                 puVar7[8] = (int)*(short *)(puVar7[3] + 0x41);
                 puVar7[9] = (int)*(short *)(puVar7[3] + 0x43);
@@ -173,9 +173,9 @@ LAB_004c3985:
         if (((*(int *)(&DAT_00793e28 + iVar3) == 2) &&
             ((int)puVar7[0x10] < *(int *)(&DAT_00794038 + iVar3))) &&
            (iVar3 = thunk_FUN_004e8230(*(int *)&this_00->field_0x24,this_00->field_0235,(int)piVar6)
-           , puVar7[0x11] + iVar3 * 10 <= *(uint *)((int)DAT_00802a38 + 0xe4))) {
+           , puVar7[0x11] + iVar3 * 10 <= (uint)PTR_00802a38->field_00E4)) {
           puVar7[0x10] = puVar7[0x10] + 1;
-          puVar7[0x11] = *(uint *)((int)DAT_00802a38 + 0xe4);
+          puVar7[0x11] = PTR_00802a38->field_00E4;
         }
       }
       local_8 = (int *)((int)local_8 + 1);

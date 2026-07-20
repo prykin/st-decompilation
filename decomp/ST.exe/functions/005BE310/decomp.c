@@ -35,8 +35,8 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
     DarkScreen(DAT_0080759c,10,2);
-    if (DAT_00802a30 != 0) {
-      thunk_FUN_00544940(DAT_00802a30);
+    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)PTR_00802a30);
     }
     puVar5 = &pMVar2->field_0347;
     iVar3 = 3;
@@ -79,7 +79,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (pMVar2->field_0087 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pMVar2->field_0087);
       pMVar2->field_0087 = (ccFntTy *)0x0;
-      *(undefined4 *)(DAT_0081176c + 0x38) = 0;
+      PTR_0081176c->field_0038 = 0;
       this_00 = extraout_ECX_01;
     }
     if (pMVar2->field_008B != (ccFntTy *)0x0) {

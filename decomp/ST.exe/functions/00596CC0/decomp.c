@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::PaintFSGS */
+   FSGSTy::PaintFSGS
+   
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
 
 void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
 
@@ -41,20 +45,20 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   this_00 = local_c;
   PutDDX(0,0,'\x01',(BITMAPINFO *)local_c->field_005D);
   switch(this_00->field_1A5F) {
-  case 1:
+  case CASE_1:
     if (local_8 == 0) {
       local_8 = 0x2563;
       goto LAB_00596d58;
     }
     break;
-  case 2:
+  case CASE_2:
 LAB_00596d58:
     if (local_8 == 0) {
       local_8 = 0x2553;
       goto LAB_00596d69;
     }
     break;
-  case 3:
+  case CASE_3:
     if (this_00->field_1F23 != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -68,21 +72,21 @@ LAB_00596d58:
                (undefined4 *)&this_00->field_1A5B->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case 4:
+  case CASE_4:
 LAB_00596d69:
     if (local_8 == 0) {
       local_8 = 0x2552;
       goto LAB_00596d7a;
     }
     break;
-  case 5:
+  case CASE_5:
 LAB_00596d7a:
     if (local_8 == 0) {
       local_8 = 0x2562;
       goto LAB_00596d8b;
     }
     break;
-  case 6:
+  case CASE_6:
     if ((this_00->field_1F27 == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutChSlProc(this_01,(int)DAT_0080759c,0,0,0x13,0x5e,0x1bf,0x175,
                   (undefined4 *)&this_00->field_1A5B->field_0x140);
@@ -100,14 +104,14 @@ LAB_00596d7a:
                 (StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case 7:
+  case CASE_7:
 LAB_00596d8b:
     if (local_8 == 0) {
       local_8 = 0x255b;
       goto LAB_00596d9c;
     }
     break;
-  case 8:
+  case CASE_8:
     pFVar3 = this_01;
     if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutSGlProc(DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x199,0x5e,0x174,0x175,
@@ -127,7 +131,7 @@ LAB_00596d8b:
                (undefined4 *)&this_00->field_1A5B->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case 9:
+  case CASE_9:
     if (this_00->field_1F23 != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -136,11 +140,12 @@ LAB_00596d8b:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    OutLadProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x5e,(FSGSTy *)0x2e1,0x175);
+    OutLadProc(DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0x22,0x5e,
+               (FSGSTy *)0x2e1,0x175);
     PaintLadder(this_00,(int)unaff_ESI);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case 10:
+  case CASE_A:
 LAB_00596d9c:
     if (local_8 == 0) {
       local_8 = 0x259c;

@@ -40,7 +40,7 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_10 = param_6;
   local_c = 0xb4;
   local_8 = 5;
-  (**(code **)(*DAT_00802a38 + 8))(0x10a,0,0,local_30,0);
+  (*PTR_00802a38->vtable->vfunc_08)(0x10a,0,0,local_30,0);
   return;
 }
 

@@ -1,19 +1,18 @@
 
-void __fastcall FUN_00551b10(void *param_1)
+void __fastcall FUN_00551b10(AnonShape_00551B10_03263458 *param_1)
 
 {
-  if (*(int *)((int)param_1 + 0x1c0) != 0) {
-    *(undefined4 *)((int)param_1 + 0x28) = 0x26;
-    FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1c0),(undefined4 *)((int)param_1 + 0x18));
-    if (*(uint *)((int)param_1 + 0x2c) !=
-        (uint)*(ushort *)((int)param_1 + (uint)*(byte *)((int)param_1 + 0x1d0) * 2 + 0x1bc)) {
-      *(undefined4 *)((int)param_1 + 0x28) = 0x22;
-      *(uint *)((int)param_1 + 0x2c) =
-           (uint)*(ushort *)((int)param_1 + (uint)*(byte *)((int)param_1 + 0x1d0) * 2 + 0x1bc);
-      FUN_006e6080(param_1,2,*(undefined4 *)((int)param_1 + 0x1c0),
-                   (undefined4 *)((int)param_1 + 0x18));
+  if (param_1->field_01C0 != 0) {
+    param_1->field_0028 = 0x26;
+    FUN_006e6080(param_1,2,param_1->field_01C0,(undefined4 *)&param_1->field_0x18);
+    if (param_1->field_002C !=
+        (uint)*(ushort *)(&param_1->field_0x1bc + (uint)param_1->field_01D0 * 2)) {
+      param_1->field_0028 = 0x22;
+      param_1->field_002C = (uint)*(ushort *)(&param_1->field_0x1bc + (uint)param_1->field_01D0 * 2)
+      ;
+      FUN_006e6080(param_1,2,param_1->field_01C0,(undefined4 *)&param_1->field_0x18);
     }
-    thunk_FUN_00551800(param_1);
+    thunk_FUN_00551800((AnonShape_00551800_EBA95FA4 *)param_1);
   }
   return;
 }

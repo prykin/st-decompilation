@@ -1,12 +1,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
-   CPanelTy::SetControlObjSI */
+   CPanelTy::SetControlObjSI
+   
+   [STSwitchEnumApplier] Switch target field_0BF5 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
+    */
 
 void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
 
 {
-  char cVar1;
+  CPanelTy_field_0BFAState CVar1;
   code *pcVar2;
   CPanelTy *this_00;
   Global_sub_00529590_param_1Enum *pGVar3;
@@ -33,7 +38,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   undefined4 uVar22;
   char *pcVar23;
   undefined4 uVar24;
-  undefined4 local_84c [68];
+  AnonShape_004F2E40_DC76A8C6 local_84c;
   undefined4 auStack_73c [5];
   undefined4 auStack_728 [307];
   undefined4 local_25c [84];
@@ -57,7 +62,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   undefined4 local_3c;
   undefined4 local_38;
   int local_28;
-  undefined4 *local_24;
+  AnonShape_004F2E40_DC76A8C6 *local_24;
   CPanelTy *local_20;
   undefined1 *local_1c;
   uint local_18;
@@ -83,7 +88,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
     return;
   }
   if (param_1 != '\0') {
-    thunk_FUN_0054a8d0(DAT_00802a30);
+    thunk_FUN_0054a8d0(PTR_00802a30);
   }
   this_00 = local_20;
   if (local_20->field_0302 != 0) {
@@ -129,9 +134,9 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   if (this_00->field_0B37 != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0B37);
   }
-  cVar1 = this_00->field_0BFA;
+  CVar1 = this_00->field_0BFA;
   this_00->field_0B37 = 0;
-  if (((cVar1 == '\0') || (cVar1 == '\x03')) || (cVar1 == '\x04')) {
+  if (((CVar1 == CASE_0) || (CVar1 == CASE_3)) || (CVar1 == CASE_4)) {
     if (this_00->field_09C4 != 0) {
       *(undefined4 *)&this_00->field_0x2c = 0;
       this_00->field_0028 = 0x20;
@@ -182,8 +187,8 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
       puVar11 = local_1c;
       pcVar5 = thunk_FUN_00529590(*local_8,this_00->field_0BF5);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar19);
-      SetButStruct(this_00,local_84c + local_28 * 0x5f,5,local_c,iVar15,iVar4,6,pCVar6,uVar20,uVar21
-                   ,puVar11,pcVar23);
+      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)&local_84c + local_28 * 0x17c),5,
+                   local_c,iVar15,iVar4,6,pCVar6,uVar20,uVar21,puVar11,pcVar23);
       pGVar3 = local_14;
       iVar15 = local_28;
       iVar4 = this_00->field_02DE;
@@ -200,7 +205,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
     local_18 = CONCAT31(local_18._1_3_,bVar13);
   } while (bVar13 < 4);
   local_60 = this_00->field_0008;
-  local_24 = local_84c;
+  local_24 = &local_84c;
   local_70[0] = 1;
   local_70[1] = 0xffffffff;
   local_5c = 2;
@@ -238,7 +243,7 @@ LAB_0050eb47:
   }
   else {
     switch(this_00->field_0BF5) {
-    case 0x53:
+    case CASE_53:
       if (this_00->field_0C3C != '\x01') {
         g_currentExceptionFrame = local_10c.previous;
         return;
@@ -255,19 +260,19 @@ LAB_0050eb47:
       pCVar6 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
       uVar12 = (uint)(this_00->field_0BFC != '\0');
       break;
-    case 0x54:
-    case 0x55:
-    case 0x56:
-    case 0x57:
-    case 0x58:
-    case 0x59:
-    case 0x5a:
+    case CASE_54:
+    case CASE_55:
+    case CASE_56:
+    case CASE_57:
+    case CASE_58:
+    case CASE_59:
+    case CASE_5A:
       if (this_00->field_0C31 == '\0') {
         g_currentExceptionFrame = local_10c.previous;
         return;
       }
       goto LAB_0050eb47;
-    case 0x5b:
+    case CASE_5B:
       local_c = 2;
       puVar8 = local_c8;
       for (iVar4 = 0x16; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -375,7 +380,7 @@ LAB_0050edc5:
           return;
         }
       } while( true );
-    case 0x5c:
+    case CASE_5C:
       if (*(int *)&this_00->field_0xc12 == 0) {
         g_currentExceptionFrame = local_10c.previous;
         return;
@@ -395,8 +400,8 @@ LAB_0050edc5:
     default:
       g_currentExceptionFrame = local_10c.previous;
       return;
-    case 0x67:
-    case 0x68:
+    case CASE_67:
+    case CASE_68:
       if (this_00->field_0BFC == '\0') {
         uVar12 = 0;
       }
@@ -417,7 +422,7 @@ LAB_0050edc5:
       *(undefined4 *)&this_00->field_0xb23 = uVar7;
       g_currentExceptionFrame = local_10c.previous;
       return;
-    case 0x6d:
+    case CASE_6D:
       uVar7 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x2a,0x7b,1,
                         s_BUT_MINUSSI_007c2300,0xb211,0xb212,0,0,0,(char *)0x0,0,0,0);
       this_00->field_0B1F = uVar7;

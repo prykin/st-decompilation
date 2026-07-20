@@ -203,7 +203,7 @@ LAB_0047d831:
             }
           }
           sub_004952E0(this);
-          param_1 = *(undefined4 **)(DAT_00802a38 + 0xe4);
+          param_1 = (undefined4 *)PTR_00802a38->field_00E4;
           CmdToObj(this,CASE_3,&param_1);
         }
       }
@@ -235,7 +235,7 @@ LAB_0047d241:
           goto LAB_0047d7e6;
         }
       }
-      param_1 = *(undefined4 **)(DAT_00802a38 + 0xe4);
+      param_1 = (undefined4 *)PTR_00802a38->field_00E4;
       CmdToObj(this,CASE_3,&param_1);
     }
   }
