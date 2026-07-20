@@ -51,7 +51,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
       local_68 = (undefined4 *)0x50;
       local_70 = uVar2;
-      thunk_FUN_0067a020(param_1,(uint *)&local_74,-1);
+      thunk_FUN_0067a020(param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x50);
       if (iVar4 + local_6c < iVar5 / 0x28 + 1) {
         puVar7 = local_40;
@@ -113,7 +113,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_70 = param_1->field_06FE;
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
       local_68 = (undefined4 *)0x34;
-      thunk_FUN_0067a020(param_1,(uint *)&local_74,-1);
+      thunk_FUN_0067a020(param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x34);
       if (iVar4 + local_6c < (int)((uint)uVar3 + local_10)) {
         local_70 = param_1->field_06FE;
@@ -176,7 +176,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_70 = param_1->field_06FE;
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
       local_68 = (undefined4 *)0x48;
-      thunk_FUN_0067a020(param_1,(uint *)&local_74,-1);
+      thunk_FUN_0067a020(param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x48);
       if (iVar4 + local_6c < (int)((uint)uVar3 + local_10)) {
         local_70 = param_1->field_06FE;

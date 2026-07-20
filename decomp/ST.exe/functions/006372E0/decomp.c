@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_006372e0(int *param_1)
       return 0;
     }
   }
-  thunk_FUN_00637180((int)param_1);
+  thunk_FUN_00637180((AnonShape_00637180_4094267C *)param_1);
   return 0;
 }
 

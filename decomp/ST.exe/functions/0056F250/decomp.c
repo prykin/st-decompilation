@@ -31,7 +31,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   undefined4 local_19;
   cMf32 *local_14;
   void *local_10;
-  byte *local_c;
+  AnonShape_006B5050_99986F91 *local_c;
   uint local_8;
   
   local_8 = 0x88000016;
@@ -127,16 +127,18 @@ LAB_0056f325:
           iVar3 = 1;
           puVar12 = (undefined4 *)(DAT_0080679c + 0x28);
           uVar4 = FUN_006b4fe0(DAT_0080679c);
-          local_c = (byte *)FUN_006b50c0(0x8b,0x8b,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,
-                                         puVar12,iVar3);
-          if (local_c != (byte *)0x0) {
-            FUN_006b4170((int)local_c,0,0,0,*(int *)(local_c + 4),*(int *)(local_c + 8),0);
-            FUN_006e6fb0(PTR_00807598,(int)local_c,0,0,1);
+          local_c = (AnonShape_006B5050_99986F91 *)
+                    FUN_006b50c0(0x8b,0x8b,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar12,iVar3
+                                );
+          if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
+            FUN_006b4170((int)local_c,0,0,0,local_c->field_0004,(int)local_c->field_0008,0);
+            FUN_006e6fb0(PTR_00807598,(AnonShape_006E6FB0_BC494FEA *)local_c,0,0,1);
             puVar14 = (uint *)0x0;
             cVar13 = '\0';
             puVar12 = (undefined4 *)0x0;
-            uVar4 = FUN_006b5050((int)local_c);
-            cMf32::RecPut(pcVar7,0xc,PTR_s_SMALL_MAP_0079b084,local_c,uVar4,puVar12,cVar13,puVar14);
+            uVar4 = FUN_006b5050(local_c);
+            cMf32::RecPut(pcVar7,0xc,PTR_s_SMALL_MAP_0079b084,(byte *)local_c,uVar4,puVar12,cVar13,
+                          puVar14);
             FUN_006ab060(&local_c);
           }
         }

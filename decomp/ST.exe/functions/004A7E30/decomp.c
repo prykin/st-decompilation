@@ -22,8 +22,8 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
       return 1;
     }
     iVar6 = 0;
-    iVar1 = *(int *)(this->field_022E + 0xc);
-    piVar4 = *(int **)(this->field_022E + 0x1c);
+    iVar1 = this->field_022E->field_000C;
+    piVar4 = (int *)this->field_022E->field_001C;
     if (0 < iVar1) {
       do {
         if (((short)piVar4[1] != -1) && (*piVar4 == 0)) {

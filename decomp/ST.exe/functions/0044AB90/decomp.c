@@ -18,30 +18,33 @@
    00439100 -> 0044AB90 @ 0043A3DF | 00439100 -> 0044AB90 @ 0043A443 */
 
 int STAllPlayersC::CheckTmps
-              (undefined4 param_1,uint param_2,int param_3,char param_4,uint *param_5,uint param_6)
+              (char playerId,dword tempGroup,int objectType,char ownerPlayerId,DArrayTy *objectIds,
+              short objectId)
 
 {
   code *pcVar1;
   int iVar2;
   int *piVar3;
   AnonShape_006B0C70_7C4FE646 *groupContent;
-  uint uVar4;
+  dword dVar4;
   uint uVar5;
   int iVar6;
+  short in_stack_00000006;
+  short in_stack_0000001a;
   AnonShape_006B0C70_7C4FE646 *local_10;
   AnonShape_006B0C70_7C4FE646 *local_c;
   AnonShape_006B0C70_7C4FE646 *local_8;
   
-  iVar2 = param_3;
+  iVar2 = objectType;
   uVar5 = 0;
   local_c = (AnonShape_006B0C70_7C4FE646 *)0x0;
   local_10 = (AnonShape_006B0C70_7C4FE646 *)0x0;
   local_8 = (AnonShape_006B0C70_7C4FE646 *)0x0;
-  if (param_2 == 0) {
-    iVar6 = (char)param_1 * 0xa62 + 0x7f4f83;
+  if (tempGroup == 0) {
+    iVar6 = playerId * 0xa62 + 0x7f4f83;
   }
   else {
-    if (param_2 != 1) {
+    if (tempGroup != 1) {
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2fde,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__CheckTmps_invalid_007a88bc);
       if (iVar2 == 0) {
@@ -51,42 +54,42 @@ int STAllPlayersC::CheckTmps
       iVar2 = (*pcVar1)();
       return iVar2;
     }
-    iVar6 = (char)param_1 * 0xa62 + 0x7f4fd3;
+    iVar6 = playerId * 0xa62 + 0x7f4fd3;
   }
-  if (0x19a < param_3) {
-    if (((param_3 == 0x1a4) || (param_3 == 0x1ae)) || (param_3 == 0x1b8)) goto LAB_0044ae50;
+  if (0x19a < objectType) {
+    if (((objectType == 0x1a4) || (objectType == 0x1ae)) || (objectType == 0x1b8))
+    goto LAB_0044ae50;
     goto LAB_0044ae21;
   }
-  if (param_3 == 0x19a) {
+  if (objectType == 0x19a) {
 LAB_0044ac57:
-    if (param_5 == (uint *)0x0) {
+    if (objectIds == (DArrayTy *)0x0) {
       return -1;
     }
-    uVar4 = param_5[3];
-    if (uVar4 == 0) {
+    dVar4 = objectIds->count;
+    if (dVar4 == 0) {
       return -1;
     }
-    param_2 = uVar4;
-    Library::DKW::TBL::FUN_006afe40((int *)&local_c,param_5);
-    if (0 < (int)uVar4) {
+    tempGroup = dVar4;
+    Library::DKW::TBL::FUN_006afe40((int *)&local_c,&objectIds->flags);
+    if (0 < (int)dVar4) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar5,(undefined4 *)((int)&param_6 + 2))
-        ;
-        if (param_6._2_2_ == -1) {
+        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar5,(undefined4 *)&stack0x0000001a);
+        if (in_stack_0000001a == -1) {
           FUN_006b0c70(local_c,uVar5);
-          uVar4 = uVar4 - 1;
+          dVar4 = dVar4 - 1;
           uVar5 = uVar5 - 1;
         }
         uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)uVar4);
-      param_2 = uVar4;
-      if (uVar4 != 0) {
-        param_5 = (uint *)0x0;
+      } while ((int)uVar5 < (int)dVar4);
+      tempGroup = dVar4;
+      if (dVar4 != 0) {
+        objectIds = (DArrayTy *)0x0;
         piVar3 = (int *)(iVar6 + 10);
         groupContent = local_c;
         do {
           if (((*(int *)((int)piVar3 + -10) == iVar2) &&
-              (*(int *)((int)piVar3 + -6) == (int)param_4)) &&
+              (*(int *)((int)piVar3 + -6) == (int)ownerPlayerId)) &&
              (iVar6 = *(int *)(*piVar3 + 0xc), iVar6 != 0)) {
             Library::DKW::TBL::FUN_006afe40((int *)&local_10,(uint *)groupContent);
             Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)*piVar3);
@@ -94,32 +97,31 @@ LAB_0044ac57:
             if (0 < iVar6) {
               do {
                 FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,uVar5,
-                             (undefined4 *)((int)&param_1 + 2));
-                if (param_1._2_2_ == -1) {
+                             (undefined4 *)&stack0x00000006);
+                if (in_stack_00000006 == -1) {
                   FUN_006b0c70(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   uVar5 = uVar5 - 1;
                 }
                 uVar5 = uVar5 + 1;
               } while ((int)uVar5 < iVar6);
-              if ((iVar6 != 0) && (0 < (int)param_2)) {
+              if ((iVar6 != 0) && (0 < (int)tempGroup)) {
                 while( true ) {
                   FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10,0,
-                               (undefined4 *)((int)&param_6 + 2));
+                               (undefined4 *)&stack0x0000001a);
                   uVar5 = 0;
                   if (iVar6 < 1) break;
-                  while( true ) {
-                    FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,uVar5,
-                                 (undefined4 *)((int)&param_1 + 2));
-                    if (param_6._2_2_ == param_1._2_2_) break;
+                  while (FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,uVar5,
+                                      (undefined4 *)&stack0x00000006),
+                        in_stack_0000001a != in_stack_00000006) {
                     uVar5 = uVar5 + 1;
                     if (iVar6 <= (int)uVar5) goto LAB_0044ada0;
                   }
                   FUN_006b0c70(local_10,0);
-                  param_2 = param_2 - 1;
+                  tempGroup = tempGroup - 1;
                   FUN_006b0c70(local_8,uVar5);
                   iVar6 = iVar6 + -1;
-                  if ((int)param_2 < 1) break;
+                  if ((int)tempGroup < 1) break;
                 }
               }
             }
@@ -128,17 +130,17 @@ LAB_0044ada0:
             local_10 = (AnonShape_006B0C70_7C4FE646 *)0x0;
             FUN_006ae110((byte *)local_8);
             local_8 = (AnonShape_006B0C70_7C4FE646 *)0x0;
-            if ((param_2 == 0) && (iVar6 == 0)) {
+            if ((tempGroup == 0) && (iVar6 == 0)) {
               FUN_006ae110((byte *)local_c);
-              return (int)param_5;
+              return (int)objectIds;
             }
-            param_2 = local_c->field_000C;
+            tempGroup = local_c->field_000C;
             groupContent = local_c;
-            iVar2 = param_3;
+            iVar2 = objectType;
           }
           piVar3 = piVar3 + 4;
-          param_5 = (uint *)((int)param_5 + 1);
-          if (4 < (int)param_5) {
+          objectIds = (DArrayTy *)((int)&objectIds->flags + 1);
+          if (4 < (int)objectIds) {
             FUN_006ae110((byte *)groupContent);
             return -1;
           }
@@ -148,13 +150,13 @@ LAB_0044ada0:
     FUN_006ae110((byte *)local_c);
     return -1;
   }
-  if (param_3 < 0x5b) {
-    if (param_3 == 0x5a) {
+  if (objectType < 0x5b) {
+    if (objectType == 0x5a) {
 LAB_0044ae50:
       iVar2 = 0;
       piVar3 = (int *)(iVar6 + 4);
-      while (((piVar3[-1] != param_3 || ((short)piVar3[1] != (short)param_6)) ||
-             (*piVar3 != (int)param_4))) {
+      while (((piVar3[-1] != objectType || ((short)piVar3[1] != objectId)) ||
+             (*piVar3 != (int)ownerPlayerId))) {
         iVar2 = iVar2 + 1;
         piVar3 = piVar3 + 4;
         if (4 < iVar2) {
@@ -163,12 +165,12 @@ LAB_0044ae50:
       }
       return iVar2;
     }
-    if (param_3 == 0) {
+    if (objectType == 0) {
       return -1;
     }
-    if (param_3 == 0x3c) goto LAB_0044ac57;
+    if (objectType == 0x3c) goto LAB_0044ac57;
   }
-  else if (param_3 == 0x172) goto LAB_0044ae50;
+  else if (objectType == 0x172) goto LAB_0044ae50;
 LAB_0044ae21:
   iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3019,0,0,&DAT_007a4ccc,
                              s_STAllPlayersC__CheckTmps_invalid_007a888c);

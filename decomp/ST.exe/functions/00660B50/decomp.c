@@ -21,7 +21,7 @@ FUN_00660b50(AnonShape_00660B50_B7639A62 *param_1,undefined4 param_2,short param
       pSVar1 = thunk_FUN_0042b760(CONCAT31(uVar2,param_1->field_0024),
                                   CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_007D));
       if (pSVar1 != (STGroupBoatC *)0x0) {
-        (*pSVar1->vtable->vfunc_08)(0xc,&local_c);
+        (*pSVar1->vtable->vfunc_08)(pSVar1,CASE_C,&local_c);
         return 0;
       }
     }
@@ -29,9 +29,9 @@ FUN_00660b50(AnonShape_00660B50_B7639A62 *param_1,undefined4 param_2,short param
   else if ((((-1 < param_3) && (param_3 < SHORT_007fb240)) && (-1 < param_4)) &&
           (param_4 < SHORT_007fb242)) {
     if ((-1 < (short)param_5) && ((short)param_5 < SHORT_007fb244)) {
-      if (*(int *)(DAT_007fb248 +
-                  ((int)SHORT_007fb246 * (int)(short)param_5 + (int)SHORT_007fb240 * (int)param_4 +
-                  (int)param_3) * 8) != 0) {
+      if (g_worldCells
+          [(int)SHORT_007fb246 * (int)(short)param_5 + (int)SHORT_007fb240 * (int)param_4 +
+           (int)param_3].objects[0] != (STWorldObject *)0x0) {
         _local_14 = CONCAT22(param_4,param_3);
         if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
           local_10 = (short)param_5;
@@ -39,7 +39,7 @@ FUN_00660b50(AnonShape_00660B50_B7639A62 *param_1,undefined4 param_2,short param
           pSVar1 = thunk_FUN_0042b760(CONCAT31(uVar2,param_1->field_0024),
                                       CONCAT22((short)((uint)param_5 >> 0x10),param_1->field_007D));
           if (pSVar1 != (STGroupBoatC *)0x0) {
-            (*pSVar1->vtable->vfunc_08)(0x12,&local_14);
+            (*pSVar1->vtable->vfunc_08)(pSVar1,CASE_12,&local_14);
             return 0;
           }
         }

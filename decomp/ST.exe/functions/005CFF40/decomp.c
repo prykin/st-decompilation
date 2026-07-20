@@ -6,9 +6,10 @@
 void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
 
 {
-  uint uVar1;
-  code *pcVar2;
-  int iVar3;
+  DArrayTy *pDVar1;
+  uint uVar2;
+  code *pcVar3;
+  int errorCode;
   char *pcVar4;
   int iVar5;
   uint uVar6;
@@ -18,20 +19,20 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if (this->field_1F84 != 0) {
+  if (this->field_1F84 != (DArrayTy *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    if (iVar3 == 0) {
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    if (errorCode == 0) {
       uVar6 = 0;
-      iVar3 = local_8->field_1F84;
-      uVar1 = *(uint *)(iVar3 + 0xc);
-      if (0 < (int)uVar1) {
-        bVar7 = uVar1 != 0;
+      pDVar1 = local_8->field_1F84;
+      uVar2 = pDVar1->count;
+      if (0 < (int)uVar2) {
+        bVar7 = uVar2 != 0;
         while( true ) {
           if (bVar7) {
-            pcVar4 = (char *)(*(int *)(iVar3 + 8) * uVar6 + *(int *)(iVar3 + 0x1c));
+            pcVar4 = (char *)(pDVar1->elementSize * uVar6 + (int)pDVar1->data);
           }
           else {
             pcVar4 = (char *)0x0;
@@ -40,8 +41,8 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
              (((pcVar4[4] == '\x02' || (pcVar4[4] == '\x03')) && (*(int *)(pcVar4 + 6) == param_1)))
              ) break;
           uVar6 = uVar6 + 1;
-          bVar7 = uVar6 < uVar1;
-          if ((int)uVar1 <= (int)uVar6) {
+          bVar7 = uVar6 < uVar2;
+          if ((int)uVar2 <= (int)uVar6) {
             g_currentExceptionFrame = local_4c.previous;
             return;
           }
@@ -60,14 +61,14 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4dc,0,iVar3,&DAT_007a4ccc
-                               ,s_SettMapMTy__DeletePlayer_007cd3d4);
+    iVar5 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4dc,0,errorCode,
+                               &DAT_007a4ccc,s_SettMapMTy__DeletePlayer_007cd3d4);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4dc);
+    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4dc);
   }
   return;
 }

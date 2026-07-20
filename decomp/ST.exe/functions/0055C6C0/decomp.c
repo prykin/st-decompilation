@@ -6,7 +6,7 @@ void __thiscall FUN_0055c6c0(void *this,undefined4 param_1)
      (g_fSGS_0081174C != (FSGSTy *)0x0)) {
     *(undefined4 *)((int)this + 0x1b) = 0x6152;
     *(undefined4 *)((int)this + 0x1f) = param_1;
-    (**(code **)g_fSGS_0081174C->field_0000)((int)this + 0xb);
+    (*(code *)g_fSGS_0081174C->field_0000->field_0000)((int)this + 0xb);
   }
   return;
 }

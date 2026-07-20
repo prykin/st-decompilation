@@ -112,6 +112,9 @@ extension.
 Detailed installation instructions, script dependencies, review flags, and the
 canonical run order are documented in
 [`docs/ghidra-workflow.md`](docs/ghidra-workflow.md).
+The current taxonomy of unresolved raw memory forms and the safety boundary of
+automatic structure recovery are recorded in
+[`docs/structure-recovery-gaps.md`](docs/structure-recovery-gaps.md).
 
 ## Project status and direction
 
@@ -120,6 +123,7 @@ The current work focuses on recovering what the binary can prove:
 - original C++ class and method names embedded in diagnostics;
 - source-file provenance and compilation-unit boundaries;
 - calling conventions, callsite/thunk evidence, parameters, and selected free-function names;
+- anonymous hidden-`this` receivers proven from ECX flow and stack discipline;
 - message IDs and anonymous state/switch domains;
 - vtables, virtual slots, constructors, thunks, and class relationships;
 - non-virtual method ownership, cleanup/destructor shapes, and direct-call prototype propagation;

@@ -44,7 +44,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     pCVar3 = thunk_FUN_00571240(s_BKG_PAUSE_007c74d8,0);
     puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar3,piVar10,iVar2);
     this_00->field_0180 = puVar4;
-    DibPut((undefined4 *)this_00->field_0068,0,0,'\x01',(byte *)puVar4);
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0,'\x01',(byte *)puVar4);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
     iVar12 = -1;
     iVar11 = -1;

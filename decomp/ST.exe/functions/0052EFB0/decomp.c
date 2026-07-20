@@ -5,8 +5,8 @@
 
 void __thiscall
 OptPanelTy::PaintDblBut
-          (OptPanelTy *this,int param_1,char *param_2,UINT param_3,undefined *param_4,
-          undefined *param_5,int param_6)
+          (OptPanelTy *this,AnonShape_0052EFB0_CC661192 *param_1,char *param_2,UINT param_3,
+          undefined *param_4,undefined *param_5,int param_6)
 
 {
   code *pcVar1;
@@ -26,15 +26,15 @@ OptPanelTy::PaintDblBut
   OptPanelTy *local_1c;
   int local_18;
   uint local_14;
-  int *local_10;
+  AnonNested_0052EFB0_0018_CB007E0D *local_10;
   AnonShape_0052EFB0_8161B92D *local_c;
   ushort *local_8;
   
-  local_10 = *(int **)(param_1 + 0x18);
-  local_c = *(AnonShape_0052EFB0_8161B92D **)(param_1 + 0x14);
+  local_10 = param_1->field_0018;
+  local_c = param_1->field_0014;
   local_8 = (ushort *)0x0;
   if (param_6 == 0) {
-    local_18 = *local_10;
+    local_18 = local_10->field_0000;
   }
   else {
     local_18 = local_c->field_000C;
@@ -42,7 +42,7 @@ OptPanelTy::PaintDblBut
   local_18 = local_18 - this->field_003C;
   if (this->field_005C == 0) {
     if (param_6 == 0) {
-      local_14 = this->field_0048 + local_10[1];
+      local_14 = this->field_0048 + local_10->field_0004;
     }
     else {
       local_14 = this->field_0048 + local_c->field_0010;
@@ -50,7 +50,7 @@ OptPanelTy::PaintDblBut
   }
   else {
     if (param_6 == 0) {
-      iVar3 = local_10[1];
+      iVar3 = local_10->field_0004;
     }
     else {
       iVar3 = local_c->field_0010;
@@ -67,7 +67,8 @@ OptPanelTy::PaintDblBut
       uVar6 = local_14;
       iVar3 = local_18;
       pOVar2 = local_1c;
-      DibPut((undefined4 *)local_1c->field_0068,local_18,local_14,'\x01',(byte *)local_8);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_1c->field_0068,local_18,local_14,'\x01',
+             (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = (int *)0x0;
@@ -77,18 +78,18 @@ OptPanelTy::PaintDblBut
       pCVar5 = FUN_006f2c00(pCVar5,iVar8,uVar4);
       local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar9,iVar10);
       if (param_6 == 0) {
-        iVar8 = local_10[3];
+        iVar8 = local_10->field_000C;
       }
       else {
         iVar8 = local_c->field_0018;
       }
-      DibPut((undefined4 *)pOVar2->field_0068,iVar3 + 5,
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)pOVar2->field_0068,iVar3 + 5,
              (iVar8 - *(int *)(local_8 + 4)) / 2 + 1 + uVar6,'\x01',(byte *)local_8);
       iVar3 = *(int *)(local_8 + 2);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (param_6 == 0) {
-        iVar8 = local_10[3];
-        iVar10 = local_10[2];
+        iVar8 = local_10->field_000C;
+        iVar10 = local_10->field_0008;
       }
       else {
         iVar8 = local_c->field_0018;

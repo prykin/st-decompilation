@@ -4,17 +4,16 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
             undefined4 param_7)
 
 {
-  int *piVar1;
-  bool bVar2;
-  short sVar3;
+  bool bVar1;
+  short sVar2;
   undefined3 extraout_var;
-  int iVar4;
-  short sVar5;
-  int iVar6;
-  short sVar7;
-  int iVar8;
+  int iVar3;
+  short sVar4;
+  int iVar5;
+  short sVar6;
+  int iVar7;
+  short sVar8;
   short sVar9;
-  short sVar10;
   int local_24;
   short local_20;
   int local_18;
@@ -31,47 +30,49 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
     local_14 = local_24;
     local_8 = local_c;
     thunk_FUN_006756d0((short *)&local_10,(short *)&local_8,(short *)&local_14,(short *)&local_18);
-    sVar5 = (short)local_10;
-    sVar3 = (short)local_14 + -1 + sVar5;
+    sVar4 = (short)local_10;
+    sVar2 = (short)local_14 + -1 + sVar4;
     local_20 = (short)local_18 + -1 + (short)local_8;
-    iVar8 = local_10;
-    iVar4 = local_8;
-    while (sVar5 <= sVar3) {
-      sVar5 = (short)iVar4;
-      iVar6 = iVar4;
-      while (sVar5 <= local_20) {
-        sVar5 = 0;
-        sVar7 = param_3;
+    iVar7 = local_10;
+    iVar3 = local_8;
+    while (sVar4 <= sVar2) {
+      sVar4 = (short)iVar3;
+      iVar5 = iVar3;
+      while (sVar4 <= local_20) {
+        sVar4 = 0;
+        sVar6 = param_3;
         do {
-          sVar9 = (short)iVar8;
-          sVar10 = (short)iVar6;
-          bVar2 = thunk_FUN_004961b0(sVar9,sVar10,sVar7);
-          if ((CONCAT31(extraout_var,bVar2) != 0) &&
-             (((((sVar9 < 0 || (SHORT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
-               ((SHORT_007fb242 <= sVar10 || (sVar7 < 0)))) ||
-              ((SHORT_007fb244 <= sVar7 ||
-               ((piVar1 = *(int **)(DAT_007fb248 +
-                                   ((int)SHORT_007fb246 * (int)sVar7 +
-                                    (int)SHORT_007fb240 * (int)sVar10 + (int)sVar9) * 8),
-                piVar1 == (int *)0x0 ||
-                (iVar4 = (**(code **)(*piVar1 + 0x114))(param_7), iVar4 != 0)))))))) {
-            *param_4 = sVar9;
-            *param_5 = sVar10;
-            *param_6 = sVar7;
+          sVar8 = (short)iVar7;
+          sVar9 = (short)iVar5;
+          bVar1 = thunk_FUN_004961b0(sVar8,sVar9,sVar6);
+          if ((CONCAT31(extraout_var,bVar1) != 0) &&
+             (((((sVar8 < 0 || (SHORT_007fb240 <= sVar8)) || (sVar9 < 0)) ||
+               ((SHORT_007fb242 <= sVar9 || (sVar6 < 0)))) ||
+              ((SHORT_007fb244 <= sVar6 ||
+               ((g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar6 + (int)SHORT_007fb240 * (int)sVar9 + (int)sVar8].
+                 objects[0] == (STWorldObject *)0x0 ||
+                (iVar3 = (*g_worldCells
+                           [(int)SHORT_007fb246 * (int)sVar6 + (int)SHORT_007fb240 * (int)sVar9 +
+                            (int)sVar8].objects[0]->vtable[5].slots_00_28[9])(param_7), iVar3 != 0))
+               )))))) {
+            *param_4 = sVar8;
+            *param_5 = sVar9;
+            *param_6 = sVar6;
             return 1;
           }
-          sVar7 = sVar7 + 1;
-          if (4 < sVar7) {
-            sVar7 = 0;
+          sVar6 = sVar6 + 1;
+          if (4 < sVar6) {
+            sVar6 = 0;
           }
-          sVar5 = sVar5 + 1;
-        } while (sVar5 < 5);
-        iVar6 = iVar6 + 1;
-        iVar4 = local_8;
-        sVar5 = (short)iVar6;
+          sVar4 = sVar4 + 1;
+        } while (sVar4 < 5);
+        iVar5 = iVar5 + 1;
+        iVar3 = local_8;
+        sVar4 = (short)iVar5;
       }
-      iVar8 = iVar8 + 1;
-      sVar5 = (short)iVar8;
+      iVar7 = iVar7 + 1;
+      sVar4 = (short)iVar7;
     }
     local_24 = local_24 + 2;
     local_c = local_c + -1;

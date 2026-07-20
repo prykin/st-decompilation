@@ -29,7 +29,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   uint uVar12;
   uint uVar13;
   char *pcVar14;
-  undefined4 *puVar15;
+  AnonPointee_HelpPanelTy_0068 *pAVar15;
   HINSTANCE pHVar16;
   Global_sub_00528A30_param_1Enum GVar17;
   void *pvVar18;
@@ -116,14 +116,14 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   DrawTitle(this_00,0x55fc,uVar13,UVar8);
   uVar13 = thunk_FUN_005276e0(GVar17,param_2);
   pbVar9 = (byte *)FUN_0070b3a0(this_00->field_0230,uVar13);
-  DibPut((undefined4 *)this_00->field_0068,0x35,0x2a,'\x01',pbVar9);
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0x35,0x2a,'\x01',pbVar9);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar21 = 3;
   iVar19 = -1;
   iVar7 = -3;
   puVar10 = (uint *)FUN_006b0140(0x5622,HINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar7,iVar19,uVar21);
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   if ((char)local_c == DAT_0080874e) {
     bVar4 = thunk_FUN_004e5910((uint)DAT_0080874d,param_1);
     if (CONCAT31(extraout_var,bVar4) != 0) {
@@ -198,7 +198,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
           iVar7 = 3;
 LAB_00516eb8:
           pbVar9 = (byte *)FUN_0070b3a0(this_00->field_0248,iVar7);
-          puVar15 = (undefined4 *)this_00->field_0068;
+          pAVar15 = this_00->field_0068;
           goto LAB_00516f6b;
         }
         uVar13 = (DAT_0080874e != '\x03') - 1 & 5;
@@ -210,7 +210,7 @@ LAB_00516eb8:
       }
 LAB_00516f08:
       pbVar9 = (byte *)FUN_0070b3a0(this_00->field_0248,iVar7);
-      puVar15 = (undefined4 *)this_00->field_0068;
+      pAVar15 = this_00->field_0068;
       goto LAB_00516f6b;
     }
     uVar13 = (DAT_0080874e != '\x03') - 1 & 5;
@@ -222,17 +222,17 @@ LAB_00516f08:
   }
 LAB_00516f54:
   pbVar9 = (byte *)FUN_0070b3a0(this_00->field_0248,iVar7);
-  puVar15 = (undefined4 *)this_00->field_0068;
+  pAVar15 = this_00->field_0068;
 LAB_00516f6b:
-  DibPut(puVar15,0x33,0x28,'\x06',pbVar9);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)pAVar15,0x33,0x28,'\x06',pbVar9);
   local_8 = local_8 + 0xf;
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar21 = 3;
   iVar19 = -1;
   iVar7 = -3;
   puVar10 = (uint *)FUN_006b0140(0x5623,HINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar7,iVar19,uVar21);
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   uVar13 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar19 = -1;
   iVar7 = 1;
@@ -241,13 +241,13 @@ LAB_00516f6b:
   puVar10 = (uint *)FUN_006b0140(UVar8,pHVar16);
   ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar7,iVar19,uVar13);
   local_8 = local_8 + 0xf;
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar21 = 3;
   iVar19 = -1;
   iVar7 = -3;
   puVar10 = (uint *)FUN_006b0140(0x55f7,HINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar7,iVar19,uVar21);
-  ccFntTy::SetSurf(this_00->field_01E8,this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
+  ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
   local_38 = (uint)param_2;
   iVar7 = (local_38 + param_1 * 4) * 4;
   wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,*(undefined4 *)(&DAT_007e4818 + iVar7));
@@ -255,7 +255,7 @@ LAB_00516f6b:
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 3);
   local_40 = FUN_0070b3a0(this_00->field_0238,(-(uint)((char)local_c != '\x03') & 0xfffffffe) + 4);
   if (local_40 != 0) {
-    FUN_006b5440(this_00->field_0218,0,0xb4,local_8,local_40,0,0x3a);
+    FUN_006b5440((int)this_00->field_0218,0,0xb4,local_8,local_40,0,0x3a);
     local_34 = 0xb4;
     local_2c = *(undefined4 *)(local_40 + 4);
     local_30 = local_8;
@@ -266,24 +266,24 @@ LAB_00516f6b:
     Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
   }
   local_8 = local_8 + 0xf;
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar21 = 3;
   iVar20 = -1;
   iVar19 = -3;
   puVar10 = (uint *)FUN_006b0140(0x5624,HINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar19,iVar20,uVar21);
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   iVar7 = (*(int *)(&DAT_007e5474 + iVar7) / 0x19) % 0xe10;
   wsprintfA((LPSTR)&DAT_0080f33a,s__02d__02d_007c3c60,iVar7 / 0x3c,iVar7 % 0x3c);
   ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,2);
   local_8 = local_8 + 0xf;
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar21 = 3;
   iVar19 = -1;
   iVar7 = -3;
   puVar10 = (uint *)FUN_006b0140(0x5625,HINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar7,iVar19,uVar21);
-  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   UVar8 = 0x5d57;
   if ((&DAT_007e53bc)[param_1] != '\0') {
     if ((char)local_c == '\x02') {
@@ -302,14 +302,14 @@ LAB_00516f6b:
   if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      ((thunk_FUN_004e6e10(local_18,param_1,&local_10,&local_14), local_10 != 0 || (local_14 != 0))))
   {
-    ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,local_8,0x91,0xf);
+    ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
     uVar21 = 3;
     iVar19 = -1;
     iVar7 = -3;
     puVar10 = (uint *)FUN_006b0140(0x5626,HINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01E0,puVar10,iVar7,iVar19,uVar21);
     if (local_10 != 0) {
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       pHVar16 = HINSTANCE_00807618;
       UVar8 = thunk_FUN_00523410(local_10,(char)local_c,0);
       pcVar11 = (char *)FUN_006b0140(UVar8,pHVar16);
@@ -343,9 +343,9 @@ LAB_00516f6b:
       local_8 = local_8 + 0xf;
       uVar13 = thunk_FUN_00526ba0(local_10,(char)local_c);
       pbVar9 = (byte *)FUN_0070b3a0(this_00->field_0240,uVar13);
-      DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar9);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar9);
       pbVar9 = local_3c;
-      DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
       local_34 = 0x94;
       local_2c = *(undefined4 *)(pbVar9 + 4);
       local_30 = local_8 - 2;
@@ -357,7 +357,7 @@ LAB_00516f6b:
       local_8 = local_8 + *(int *)(pbVar9 + 8);
     }
     if (local_14 != 0) {
-      ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0x96,local_8,0x106,0xf);
+      ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       pHVar16 = HINSTANCE_00807618;
       UVar8 = thunk_FUN_00523410(local_14,(char)local_c,0);
       pcVar11 = (char *)FUN_006b0140(UVar8,pHVar16);
@@ -391,9 +391,9 @@ LAB_00516f6b:
       local_8 = local_8 + 0xf;
       uVar13 = thunk_FUN_00526ba0(local_14,(char)local_c);
       pbVar9 = (byte *)FUN_0070b3a0(this_00->field_023C,uVar13);
-      DibPut((undefined4 *)this_00->field_0218,0x96,local_8,'\x01',pbVar9);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x96,local_8,'\x01',pbVar9);
       pbVar9 = local_3c;
-      DibPut((undefined4 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
       local_34 = 0x94;
       local_2c = *(undefined4 *)(pbVar9 + 4);
       local_30 = local_8 - 2;

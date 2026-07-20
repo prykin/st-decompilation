@@ -1,5 +1,5 @@
 
-int FUN_00757360(int param_1,AnonShape_00757360_9B4621C9 *param_2)
+int FUN_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B4621C9 *param_2)
 
 {
   int iVar1;
@@ -18,13 +18,13 @@ int FUN_00757360(int param_1,AnonShape_00757360_9B4621C9 *param_2)
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     if (param_2->field_0014 != 0) {
-      *(uint *)(*(int *)(param_1 + 8) + 8) = *(uint *)(*(int *)(param_1 + 8) + 8) | 0x10;
+      param_1->field_0008->field_0008 = param_1->field_0008->field_0008 | 0x10;
       Library::DKW::FMM::FUN_006d4860
-                (*(int *)(param_1 + 8),param_2->field_0018,(undefined4 *)&param_2->field_0x20,0x20);
+                ((int)param_1->field_0008,param_2->field_0018,(undefined4 *)&param_2->field_0x20,
+                 0x20);
     }
     Library::DKW::FMM::FUN_006d4c50
-              (*(int *)(param_1 + 8),param_2->field_0024,
-               (int)*(short *)(*(int *)(param_1 + 8) + 0x16));
+              ((int)param_1->field_0008,param_2->field_0024,(int)param_1->field_0008->field_0016);
     param_2->field_0014 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return local_8;

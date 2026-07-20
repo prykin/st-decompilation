@@ -1,5 +1,5 @@
 
-int __cdecl FUN_0070b770(int param_1,int param_2)
+int __cdecl FUN_0070b770(AnonShape_0070B770_3BA0472D *param_1,int param_2)
 
 {
   short sVar1;
@@ -13,7 +13,7 @@ int __cdecl FUN_0070b770(int param_1,int param_2)
   int local_8;
   
   pIVar4 = g_currentExceptionFrame;
-  sVar1 = *(short *)(param_1 + 0xe);
+  sVar1 = param_1->field_000E;
   local_8 = 0;
   if (sVar1 == 8) {
     if (param_2 != 8) {
@@ -25,8 +25,8 @@ int __cdecl FUN_0070b770(int param_1,int param_2)
           g_currentExceptionFrame = pIVar4;
           return local_8;
         }
-        iVar2 = FUN_006d1a10((undefined4 *)0x0,0,0,0,param_1,0,0,0,*(int *)(param_1 + 4),
-                             *(int *)(param_1 + 8));
+        iVar2 = FUN_006d1a10((undefined4 *)0x0,0,0,0,(int)param_1,0,0,0,param_1->field_0004,
+                             param_1->field_0008);
         g_currentExceptionFrame = pIVar4;
         return iVar2;
       }
@@ -40,8 +40,8 @@ int __cdecl FUN_0070b770(int param_1,int param_2)
         g_currentExceptionFrame = local_90.previous;
         return local_8;
       }
-      iVar2 = FUN_006d1a50((undefined4 *)0x0,0,0,0,param_1,0,0,0,*(int *)(param_1 + 4),
-                           *(int *)(param_1 + 8));
+      iVar2 = FUN_006d1a50((undefined4 *)0x0,0,0,0,(int)param_1,0,0,0,param_1->field_0004,
+                           param_1->field_0008);
       g_currentExceptionFrame = local_90.previous;
       return iVar2;
     }
@@ -63,8 +63,8 @@ int __cdecl FUN_0070b770(int param_1,int param_2)
           g_currentExceptionFrame = local_4c.previous;
           return local_8;
         }
-        iVar2 = FUN_006d1a90((undefined4 *)0x0,0,0,0,param_1,0,0,0,*(int *)(param_1 + 4),
-                             *(int *)(param_1 + 8));
+        iVar2 = FUN_006d1a90((undefined4 *)0x0,0,0,0,(int)param_1,0,0,0,param_1->field_0004,
+                             param_1->field_0008);
         g_currentExceptionFrame = local_4c.previous;
         return iVar2;
       }
@@ -74,6 +74,6 @@ int __cdecl FUN_0070b770(int param_1,int param_2)
       return 0;
     }
   }
-  return param_1;
+  return (int)param_1;
 }
 

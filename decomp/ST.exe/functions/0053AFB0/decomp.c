@@ -80,7 +80,8 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
       pCVar7 = thunk_FUN_00571240(s_BUT_SWITCH_007c71d0,0);
       pCVar7 = FUN_006f2c00(pCVar7,iVar14,uVar8);
       local_c = cMf32::RecGet(DAT_00806790,1,pCVar7,piVar15,iVar17);
-      DibPut((undefined4 *)this_00->field_0068,local_10,iVar5 + iVar11,'\x01',(byte *)local_c);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,local_10,iVar5 + iVar11,'\x01',
+             (byte *)local_c);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -251,7 +252,8 @@ LAB_0053b2ea:
       }
       pcVar16 = thunk_FUN_00529fe0;
       pCVar7 = thunk_FUN_00571240(text,0);
-      UPanelTy::PaintBut((UPanelTy *)this_00,param_1,6,pCVar7,pcVar16);
+      UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)param_1,6,pCVar7,pcVar16
+                        );
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
@@ -346,7 +348,8 @@ LAB_0053b2ea:
         uVar6 = (uint)((&DAT_00808af7)[(this_00->field_01C9 + (uint)bVar12) * 0x9c] == '\0');
       }
       pbVar9 = (byte *)FUN_0070b3a0(this_00->field_01D9,uVar6);
-      DibPut((undefined4 *)this_00->field_0068,local_10,iVar5 + iVar11,'\x01',pbVar9);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,local_10,iVar5 + iVar11,'\x01',
+             pbVar9);
       Library::DKW::DDX::FUN_006b3640
                 (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
                 );
@@ -454,7 +457,7 @@ LAB_0053b2ea:
       else {
         cVar4 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
       }
-      FUN_006b4170(this_00->field_0068,0,(int)local_c,local_8,piVar15[2],piVar15[3],cVar4);
+      FUN_006b4170((int)this_00->field_0068,0,(int)local_c,local_8,piVar15[2],piVar15[3],cVar4);
       if (*(short *)(param_1 + 0x14) != 0) {
         iVar5 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c;
         bVar12 = (&DAT_00808af4)[iVar5];
@@ -497,7 +500,8 @@ LAB_0053b2ea:
           }
           if ((-1 < iVar11) && ((&DAT_00808af5)[iVar5] != '\0')) {
             pbVar9 = (byte *)FUN_0070b3a0(this_00->field_01D5,iVar11);
-            DibPut((undefined4 *)this_00->field_0068,(int)local_c,local_8,'\x06',pbVar9);
+            DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,(int)local_c,local_8,'\x06',
+                   pbVar9);
           }
         }
         Library::DKW::DDX::FUN_006b3640
@@ -511,8 +515,8 @@ LAB_0053b2ea:
       {
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c3f90,
                   (byte)(&DAT_008087ea)[(uint)(byte)(&DAT_00808af4)[iVar5] * 0x51] + 0x41);
-        ccFntTy::SetSurf(this_00->field_01DD,this_00->field_0068,0,(int)local_c,local_8,piVar15[2],
-                         piVar15[3]);
+        ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,(int)local_c,local_8,
+                         piVar15[2],piVar15[3]);
         ccFntTy::WrStr(this_00->field_01DD,&DAT_0080f33a,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -556,7 +560,7 @@ LAB_0053b2ea:
   else if (uVar6 == 0xc000) {
     UVar18 = 0x274e;
     pCVar7 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
-    UPanelTy::PaintIBut((UPanelTy *)this_00,param_1,pCVar7,UVar18);
+    UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)param_1,pCVar7,UVar18);
     g_currentExceptionFrame = local_64.previous;
     return 0;
   }

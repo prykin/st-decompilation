@@ -10,7 +10,7 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
 {
   int *piVar1;
   int iVar2;
-  Global_sub_0043E9A0_param_2Enum GVar3;
+  STWorldCell *pSVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -62,38 +62,41 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
         do {
           local_10 = local_10 + (short)iVar2;
           if (iVar7 <= iVar6) {
-            iVar2 = local_10 * 8 + -8;
             iVar6 = (iVar6 - local_8) + 1;
+            iVar2 = local_10 * 8 + -8;
             do {
-              iVar2 = iVar2 + 8;
-              piVar1 = *(int **)(iVar2 + DAT_007fb248);
-              GVar3 = DAT_007fb248;
+              piVar1 = *(int **)((int)g_worldCells[1].objects + iVar2);
+              pSVar3 = g_worldCells;
               if ((((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) && (piVar1 != (int *)0x0)
-                  ) && ((GVar3 = (**(code **)(*piVar1 + 0x2c))(), GVar3 == param_2 &&
-                        (GVar3 = (**(code **)(*piVar1 + 0xf8))(), GVar3 != 0)))) {
+                  ) && ((pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x2c))(),
+                        pSVar3 == (STWorldCell *)param_2 &&
+                        (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0xf8))(),
+                        pSVar3 != (STWorldCell *)0x0)))) {
                 if (param_9 == 0) {
 LAB_0043eb0f:
                   if ((param_10 == -1) ||
-                     (GVar3 = (**(code **)(*piVar1 + 0x6c))(), GVar3 == (int)param_10)) {
+                     (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x6c))(),
+                     pSVar3 == (STWorldCell *)(int)param_10)) {
                     param_3 = param_3 + 1;
                   }
                 }
                 else {
-                  GVar3 = param_2 - CASE_38;
+                  pSVar3 = (STWorldCell *)(param_2 - CASE_38);
                   switch(param_2) {
                   case CASE_38:
                   case CASE_39:
                   case CASE_4F:
                   case CASE_5E:
                     if ((param_9 == 1) &&
-                       (GVar3 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < (int)GVar3))
-                    goto LAB_0043eb0f;
+                       (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x88))(local_14),
+                       0 < (int)pSVar3)) goto LAB_0043eb0f;
                   }
                 }
               }
               iVar6 = iVar6 + -1;
+              iVar2 = iVar2 + 8;
             } while (iVar6 != 0);
-            iVar2 = CONCAT22((short)(GVar3 >> 0x10),SHORT_007fb240);
+            iVar2 = CONCAT22((short)((uint)pSVar3 >> 0x10),SHORT_007fb240);
             iVar6 = local_c;
             iVar7 = local_8;
           }

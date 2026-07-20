@@ -119,7 +119,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
         local_54 = (short *)(DAT_007fb280 +
                             ((int)SHORT_007fb278 * (local_44 + local_10) + local_30) * 2);
         local_1c = (AnonShape_006ACC70_C8641025 *)
-                   (DAT_007fb248 + ((int)SHORT_007fb240 * (local_44 + local_10) + local_30) * 8);
+                   (g_worldCells + (int)SHORT_007fb240 * (local_44 + local_10) + local_30);
         local_8 = 0;
         if (0 < local_c) {
           do {
@@ -181,8 +181,8 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
                 }
               }
               if (*local_5c != 0) {
-                if ((*(uint *)local_50 != 0) && (param_1 != 0xff)) {
-                  bVar1 = *(byte *)(*(uint *)local_50 + 0x24);
+                if ((*(STWorldObject **)local_50 != (STWorldObject *)0x0) && (param_1 != 0xff)) {
+                  bVar1 = *(byte *)&(*(STWorldObject **)local_50)[1].vtable;
                   _local_6c = CONCAT31(uStack_6b,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == (byte)param_1) {

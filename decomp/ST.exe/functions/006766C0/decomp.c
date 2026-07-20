@@ -7,35 +7,35 @@ void FUN_006766c0(void)
   undefined4 *puVar3;
   
   puVar2 = &DAT_0080e83b;
-  puVar3 = &g_playerRuntime[DAT_0080874d].field598_0x2eb;
+  puVar3 = &g_playerRuntime[DAT_0080874d].field480_0x2eb;
   for (iVar1 = 5; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
   puVar2 = &DAT_0080e84f;
-  puVar3 = &g_playerRuntime[DAT_0080874d].field612_0x2ff;
+  puVar3 = &g_playerRuntime[DAT_0080874d].field494_0x2ff;
   for (iVar1 = 5; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
   puVar2 = &DAT_0080e863;
-  puVar3 = &g_playerRuntime[DAT_0080874d].field640_0x327;
+  puVar3 = &g_playerRuntime[DAT_0080874d].field522_0x327;
   for (iVar1 = 0x9b; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
   puVar2 = &DAT_0080eacf;
-  puVar3 = &g_playerRuntime[DAT_0080874d].field1254_0x593;
+  puVar3 = &g_playerRuntime[DAT_0080874d].field1136_0x593;
   for (iVar1 = 0x6a; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
   puVar2 = &DAT_0080ec77;
-  puVar3 = &g_playerRuntime[DAT_0080874d].field1672_0x73b;
+  puVar3 = &g_playerRuntime[DAT_0080874d].field1554_0x73b;
   for (iVar1 = 0x26; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;

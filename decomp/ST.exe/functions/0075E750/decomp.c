@@ -1,5 +1,6 @@
 
-void FUN_0075e750(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+void FUN_0075e750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undefined4 param_3,
+                 int param_4)
 
 {
   short *psVar1;
@@ -10,10 +11,10 @@ void FUN_0075e750(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
   int iVar6;
   int iVar7;
   
-  iVar2 = *(int *)(param_1 + 0x68);
-  iVar3 = *(int *)(*(int *)(param_1 + 0x1ba) + 0x18);
+  iVar2 = param_1->field_0068;
+  iVar3 = *(int *)(param_1->field_01BA + 0x18);
   if (0 < param_4) {
-    param_1 = param_4;
+    param_1 = (AnonShape_0075E750_D250320C *)param_4;
     do {
       pbVar5 = (byte *)*param_2;
       for (iVar7 = iVar2; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -28,8 +29,8 @@ void FUN_0075e750(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
         pbVar5 = pbVar5 + 3;
       }
       param_2 = param_2 + 1;
-      param_1 = param_1 + -1;
-    } while (param_1 != 0);
+      param_1 = (AnonShape_0075E750_D250320C *)&param_1[-1].field_0x1bf;
+    } while (param_1 != (AnonShape_0075E750_D250320C *)0x0);
   }
   return;
 }

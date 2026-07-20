@@ -21,6 +21,7 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
   undefined4 *puVar9;
   void *unaff_EDI;
   undefined4 *puVar10;
+  STWorldObject *pSVar11;
   InternalExceptionFrame local_60;
   byte *local_1c;
   uint local_18;
@@ -175,14 +176,14 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
   if (CONCAT31(extraout_var,bVar5) != 0) {
     if (((((local_14[0] < 0) || (SHORT_007fb240 <= local_14[0])) || (local_10[0] < 0)) ||
         ((SHORT_007fb242 <= local_10[0] || (local_c[0] < 0)))) || (SHORT_007fb244 <= local_c[0])) {
-      iVar6 = 0;
+      pSVar11 = (STWorldObject *)0x0;
     }
     else {
-      iVar6 = *(int *)(DAT_007fb248 +
-                      ((int)SHORT_007fb246 * (int)local_c[0] +
-                       (int)SHORT_007fb240 * (int)local_10[0] + (int)local_14[0]) * 8);
+      pSVar11 = g_worldCells
+                [(int)SHORT_007fb246 * (int)local_c[0] + (int)SHORT_007fb240 * (int)local_10[0] +
+                 (int)local_14[0]].objects[0];
     }
-    if ((iVar6 == 0) &&
+    if ((pSVar11 == (STWorldObject *)0x0) &&
        ((this_00->field_02DD == 1 ||
         (iVar6 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,

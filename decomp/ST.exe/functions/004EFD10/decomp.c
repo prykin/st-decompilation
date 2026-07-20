@@ -14,11 +14,11 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
-  uint local_c;
+  dword local_c;
   AnonShape_004EFE20_20805E12 *local_8;
   
-  if (this->field_027A != 0) {
-    local_c = *(uint *)(this->field_027A + 0xc);
+  if (this->field_027A != (DArrayTy *)0x0) {
+    local_c = this->field_027A->count;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_8 = (AnonShape_004EFE20_20805E12 *)this;

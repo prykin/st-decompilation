@@ -13,7 +13,8 @@ MTaskTy::CreateTextSSpr
   uint uVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  AnonShape_006B4B20_3D4F4412 *pAVar5;
+  undefined4 *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_5c;
@@ -65,15 +66,16 @@ MTaskTy::CreateTextSSpr
     local_8->field_0023 = 3;
     local_8->field_0029 = (undefined2)local_18;
     local_8->field_002B = (short)iVar3;
-    puVar5 = ccFntTy::CreateSurf(param_6,0,0,0,0,(int)(short)local_8->field_0029,
+    pAVar5 = (AnonShape_006B4B20_3D4F4412 *)
+             ccFntTy::CreateSurf(param_6,0,0,0,0,(int)(short)local_8->field_0029,
                                  (int)local_8->field_002B,1);
-    ccFntTy::SetSurf(param_6,(int)puVar5,0,0,0,0,0);
+    ccFntTy::SetSurf(param_6,(int)pAVar5,0,0,0,0,0);
     ccFntTy::WrTxt(param_6,param_1,local_10,uVar2,param_7,-1,-1);
-    FUN_006b4b20((int *)&local_8->field_0x2d,(uint)puVar5,0,0);
+    FUN_006b4b20((int *)&local_8->field_0x2d,pAVar5,0,0);
     ccFntTy::WrTxt(param_6,param_1,local_10,uVar2,param_8,-1,-1);
-    FUN_006b4b20((int *)&local_8[1].field_0x1,(uint)puVar5,0,0);
+    FUN_006b4b20((int *)&local_8[1].field_0x1,pAVar5,0,0);
     ccFntTy::WrTxt(param_6,param_1,local_10,uVar2,param_9,-1,-1);
-    FUN_006b4b20((int *)&local_8[1].field_0x5,(uint)puVar5,0,0);
+    FUN_006b4b20((int *)&local_8[1].field_0x5,pAVar5,0,0);
     ccFntTy::EraseSufr(param_6);
     g_currentExceptionFrame = local_5c.previous;
     return (undefined4 *)local_8;
@@ -90,7 +92,7 @@ MTaskTy::CreateTextSSpr
     return (undefined4 *)0x0;
   }
   pcVar1 = (code *)swi(3);
-  puVar5 = (undefined4 *)(*pcVar1)();
-  return puVar5;
+  puVar6 = (undefined4 *)(*pcVar1)();
+  return puVar6;
 }
 

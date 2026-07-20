@@ -7,7 +7,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
 
 {
   uint uVar1;
-  int *piVar2;
+  STWorldObject *pSVar2;
   undefined4 uVar3;
   code *pcVar4;
   undefined2 uVar5;
@@ -58,21 +58,21 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
     if (((((sVar13 < 0) || (SHORT_007fb240 <= sVar13)) || (sVar14 < 0)) ||
         ((SHORT_007fb242 <= sVar14 || (sVar15 < 0)))) ||
        ((SHORT_007fb244 <= sVar15 ||
-        (piVar2 = *(int **)(DAT_007fb248 +
-                           ((int)sVar15 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                           (int)sVar13) * 8), piVar2 == (int *)0x0)))) {
+        (pSVar2 = g_worldCells
+                  [(int)sVar15 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                   (int)sVar13].objects[0], pSVar2 == (STWorldObject *)0x0)))) {
 LAB_0047d831:
       sub_004952E0(this);
       return 0;
     }
-    iVar9 = (**(code **)(*piVar2 + 0x2c))();
+    iVar9 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
     if (iVar9 != 99) goto LAB_0047d831;
     this->field_0691 = this->field_005B;
     this->field_0693 = this->field_005D;
     this->field_0695 = this->field_005F;
-    iVar9 = piVar2[6];
+    uVar3 = *(undefined4 *)&pSVar2->field_0x18;
     this->field_06A1 = 0;
-    this->field_0697 = iVar9;
+    this->field_0697 = uVar3;
     this->field_06A5 = 0;
   }
   iVar9 = this->field_06A1;
@@ -189,16 +189,16 @@ LAB_0047d831:
           if (((((-1 < sVar13) && (sVar13 < SHORT_007fb240)) && (-1 < sVar15)) &&
               ((sVar15 < SHORT_007fb242 && (-1 < sVar14)))) &&
              ((sVar14 < SHORT_007fb244 &&
-              ((piVar2 = *(int **)(DAT_007fb248 +
-                                  ((int)sVar14 * (int)SHORT_007fb246 +
-                                   (int)sVar15 * (int)SHORT_007fb240 + (int)sVar13) * 8),
-               piVar2 != (int *)0x0 && (piVar2[6] == this->field_0697)))))) {
-            iVar9 = (**(code **)(*piVar2 + 0xf8))();
+              ((pSVar2 = g_worldCells
+                         [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240 +
+                          (int)sVar13].objects[0], pSVar2 != (STWorldObject *)0x0 &&
+               (*(int *)&pSVar2->field_0x18 == this->field_0697)))))) {
+            iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
             if (iVar9 == 1) {
               this->field_06A5 = 0;
               this->field_06A1 = 1;
               *(undefined4 *)&this->field_0x69d = 0;
-              thunk_FUN_004b7d90(piVar2);
+              thunk_FUN_004b7d90((int *)pSVar2);
               goto LAB_0047d241;
             }
           }
@@ -220,13 +220,13 @@ LAB_0047d241:
       if ((((-1 < sVar13) && (sVar13 < SHORT_007fb240)) &&
           ((-1 < sVar15 &&
            (((sVar15 < SHORT_007fb242 && (-1 < sVar14)) && (sVar14 < SHORT_007fb244)))))) &&
-         ((piVar2 = *(int **)(DAT_007fb248 +
-                             ((int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240
-                             + (int)sVar13) * 8), piVar2 != (int *)0x0 &&
-          (piVar2[6] == this->field_0697)))) {
-        iVar9 = (**(code **)(*piVar2 + 0xf8))();
+         ((pSVar2 = g_worldCells
+                    [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240 +
+                     (int)sVar13].objects[0], pSVar2 != (STWorldObject *)0x0 &&
+          (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
+        iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
-          if (piVar2[0x134] == 2) {
+          if (*(int *)&pSVar2[0x22].field_0x8 == 2) {
             this->field_06A1 = 2;
             *(undefined4 *)&this->field_0x69d = 0;
             thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
@@ -259,15 +259,15 @@ LAB_0047d241:
       if ((((-1 < sVar13) && (sVar13 < SHORT_007fb240)) &&
           ((-1 < sVar15 &&
            (((sVar15 < SHORT_007fb242 && (-1 < sVar14)) && (sVar14 < SHORT_007fb244)))))) &&
-         ((piVar2 = *(int **)(DAT_007fb248 +
-                             ((int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240
-                             + (int)sVar13) * 8), piVar2 != (int *)0x0 &&
-          (piVar2[6] == this->field_0697)))) {
-        iVar9 = (**(code **)(*piVar2 + 0xf8))();
+         ((pSVar2 = g_worldCells
+                    [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240 +
+                     (int)sVar13].objects[0], pSVar2 != (STWorldObject *)0x0 &&
+          (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
+        iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
-          thunk_FUN_004b7e30(piVar2,this->field_06F7,0,0);
-          thunk_FUN_004b7de0(piVar2);
-          thunk_FUN_004b7d50(piVar2,this);
+          thunk_FUN_004b7e30(pSVar2,this->field_06F7,0,0);
+          thunk_FUN_004b7de0((int *)pSVar2);
+          thunk_FUN_004b7d50(pSVar2,this);
         }
       }
       local_30 = 1;

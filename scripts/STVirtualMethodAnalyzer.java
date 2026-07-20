@@ -32,6 +32,8 @@ import ghidra.program.model.data.Pointer;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.symbol.SourceType;
@@ -281,9 +283,21 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
 
         SourceType signatureSource = function.getSignatureSource();
         boolean signatureManual = signatureSource == SourceType.USER_DEFINED;
-        boolean signatureApply = family != null && anchorChoice.anchor != null &&
+        // A structural fallback is deliberately weaker than a family anchor.
+        // Do not use it to bypass evidence that the same slot family has
+        // competing, incompatible prototypes.
+        StructuralSignature structural = anchorChoice.anchor == null &&
+            !anchorChoice.conflict.startsWith("competing_") ?
+                receiverOnlyLeafSignature(function) : null;
+        boolean anchoredSignatureApply = family != null && anchorChoice.anchor != null &&
             !signatureManual && !owner.isBlank() && !ownerTypePath.isBlank() &&
             !signatureMatches(function, anchorChoice.anchor.function);
+        boolean structuralSignatureApply = family != null && structural != null &&
+            tableOwners.size() == 1 && !signatureManual && !owner.isBlank() &&
+            !ownerTypePath.isBlank() && !structuralSignatureMatches(function, structural);
+        boolean signatureApply = anchoredSignatureApply || structuralSignatureApply;
+        if (structuralSignatureApply)
+            reasons.add("receiver_only_leaf_virtual_signature");
         boolean conventionApply = family != null && family.namedMethods.size() == 1 &&
             family.hasNamedThiscallAnchor && !signatureManual && !owner.isBlank() &&
             !ownerTypePath.isBlank() &&
@@ -295,14 +309,16 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             reasons.add("receiver_parameter_shape_requires_review");
         if (signatureManual) reasons.add("manual_signature_preserved");
 
-        String confidence = nameApply || signatureApply ? "high" :
-            conventionApply ? "medium" : "low";
+        String confidence = nameApply || anchoredSignatureApply ? "high" :
+            signatureApply || conventionApply ? "medium" : "low";
         Anchor anchor = anchorChoice.anchor;
-        String returnType = anchor == null ? "" :
-            anchor.function.getReturnType().getPathName();
-        String parameters = anchor == null ? "" : parameterSpecification(anchor.function);
-        String proposedSignature = anchor == null || proposedName.isBlank() ? "" :
-            prototype(proposedName, anchor.function);
+        String returnType = anchor != null ? anchor.function.getReturnType().getPathName() :
+            structural != null ? structural.returnTypePath : "";
+        String parameters = anchor != null ? parameterSpecification(anchor.function) : "";
+        String proposedSignature = anchor != null && !proposedName.isBlank() ?
+            prototype(proposedName, anchor.function) :
+            structural != null && !proposedName.isBlank() ?
+                "dword __thiscall " + proposedName + "()" : "";
         return new Proposal(function.getEntryPoint(), function.getName(true),
             function.getSymbol().getSource().toString(),
             function.getSignature().getPrototypeString(true),
@@ -316,6 +332,39 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             returnType, parameters, anchor != null && anchor.function.hasVarArgs(),
             anchor != null && anchor.function.hasNoReturn(), proposedSignature,
             nameApply, conventionApply, signatureApply, confidence, String.join("; ", reasons));
+    }
+
+    private StructuralSignature receiverOnlyLeafSignature(Function function) {
+        if (function == null || function.isThunk() || function.getBody().getNumAddresses() > 48)
+            return null;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        int count = 0;
+        boolean readsEcx = false;
+        boolean writesEax = false;
+        Instruction last = null;
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (++count > 8) return null;
+            last = instruction;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+            if (mnemonic.equals("CALL") || mnemonic.startsWith("J")) return null;
+            if (rendered.matches(".*\\bECX\\b.*")) readsEcx = true;
+            if (rendered.matches(
+                    "(?:MOV|MOVZX|MOVSX|LEA|XOR|SUB|AND)\\s+EAX\\s*,.*"))
+                writesEax = true;
+        }
+        if (last == null || !"RET".equalsIgnoreCase(last.getMnemonicString()) ||
+                last.getNumOperands() != 0 || !readsEcx || !writesEax) return null;
+        return new StructuralSignature("/dword");
+    }
+
+    private boolean structuralSignatureMatches(Function function, StructuralSignature signature) {
+        if (!"__thiscall".equals(function.getCallingConventionName()) ||
+                !explicitParameters(function).isEmpty() || function.hasVarArgs() ||
+                function.hasNoReturn()) return false;
+        DataType expected = dataTypes.getDataType(signature.returnTypePath);
+        return expected != null && expected.isEquivalent(function.getReturnType());
     }
 
     private AnchorChoice chooseAnchor(Family family, String familyMethod, Function target) {
@@ -653,7 +702,10 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             "note_names=Only synthetic ANALYSIS/DEFAULT targets with one owner and one anchored " +
                 "slot-family method are auto-named.",
             "note_signatures=Signatures come only from one agreed, meaningful USER_DEFINED anchor " +
-                "shape; auto this types must already exist.",
+                "shape, or from a branch-free receiver-only leaf getter with no stack arguments; " +
+                "auto this types must already exist.",
+            "note_leaf_getters=Structural leaf recovery applies __thiscall dword() but does not " +
+                "invent a semantic method name or a narrower return type.",
             "note_conventions=Convention-only conversion requires one owner type and no explicit " +
                 "parameters; anchored signature replacement may safely rebuild parameters.",
             "note_thunks=Names and signatures target the final thunk destination; adjustor thunk " +
@@ -861,6 +913,11 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         final Anchor anchor;
         final String conflict;
         AnchorChoice(Anchor anchor, String conflict) { this.anchor = anchor; this.conflict = conflict; }
+    }
+
+    private static class StructuralSignature {
+        final String returnTypePath;
+        StructuralSignature(String returnTypePath) { this.returnTypePath = returnTypePath; }
     }
 
     private static class Proposal {

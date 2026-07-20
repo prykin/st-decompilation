@@ -39,9 +39,9 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
       param_1 = (int *)0x0;
     }
     else {
-      param_1 = *(int **)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar1) * 8);
+      param_1 = (int *)g_worldCells
+                       [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                        (int)sVar1].objects[0];
     }
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
         (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
@@ -84,9 +84,9 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
       param_1 = (int *)0x0;
     }
     else {
-      param_1 = *(int **)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar1) * 8);
+      param_1 = (int *)g_worldCells
+                       [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
+                        (int)sVar1].objects[0];
     }
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
         (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||

@@ -12,12 +12,13 @@ STAllPlayersC::AddObjToTmp2
   code *pcVar1;
   int iVar2;
   undefined4 uVar3;
-  undefined4 unaff_ESI;
   int *piVar4;
+  undefined4 unaff_ESI;
+  STPlayerTempSlot *pSVar5;
   void *unaff_EDI;
-  Global_sub_0043FC50_param_1Enum GVar5;
+  Global_sub_0043FC50_param_1Enum GVar6;
   InternalExceptionFrame local_58;
-  int local_14;
+  STPlayerTempSlot *local_14;
   undefined4 local_10;
   STAllPlayersC *local_c;
   STAllPlayersC_GetObjPtr_param_3Enum local_8;
@@ -54,19 +55,19 @@ STAllPlayersC::AddObjToTmp2
     return 0xaffe0001;
   }
   if (param_2 == 0) {
-    local_14 = param_1 * 0xa62 + 0x7f4f83;
+    local_14 = g_playerRuntime[param_1].tempSlots[0];
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
-      GVar5 = CASE_2;
+      GVar6 = CASE_2;
 LAB_0042bf8b:
-      thunk_FUN_0043fc50(GVar5,param_3);
+      thunk_FUN_0043fc50(GVar6,param_3);
     }
   }
   else if (param_2 == 1) {
-    local_14 = param_1 * 0xa62 + 0x7f4fd3;
+    local_14 = g_playerRuntime[param_1].tempSlots[1];
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
-      GVar5 = CASE_5;
+      GVar6 = CASE_5;
       goto LAB_0042bf8b;
     }
   }
@@ -82,16 +83,16 @@ LAB_0042bf8b:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0x23c);
   }
-  piVar4 = (int *)(param_3 * 0x10 + local_14);
-  if (((*piVar4 == param_4) && (piVar4[1] == (int)(char)param_5)) &&
-     ((short)piVar4[2] == (short)param_6)) {
+  pSVar5 = local_14 + param_3;
+  if (((pSVar5->objectType == param_4) && (pSVar5->playerId == (int)(char)param_5)) &&
+     (pSVar5->objectId == (short)param_6)) {
     RaiseInternalException
               (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0x23f);
   }
-  *piVar4 = param_4;
-  piVar4[1] = (int)(char)param_5;
-  *(short *)(piVar4 + 2) = (short)param_6;
+  pSVar5->objectType = param_4;
+  pSVar5->playerId = (int)(char)param_5;
+  pSVar5->objectId = (short)param_6;
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
       local_8 = CASE_5;

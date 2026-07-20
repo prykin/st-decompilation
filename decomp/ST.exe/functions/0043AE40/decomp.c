@@ -33,7 +33,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
   local_8 = 0;
   if (param_1 == (uint *)0x0) {
     iVar11 = (uint)DAT_0080874d * 0xa62;
-    if (g_playerRuntime[DAT_0080874d].field442_0x203 == 0) {
+    if (g_playerRuntime[DAT_0080874d].field324_0x203 == 0) {
       if (param_2 == 0) {
         return;
       }
@@ -92,7 +92,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       }
     }
     else {
-      if (g_playerRuntime[DAT_0080874d].field442_0x203 != 1) {
+      if (g_playerRuntime[DAT_0080874d].field324_0x203 != 1) {
         iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1a6b,0,0,&DAT_007a4ccc
                                    ,s_STAllPlayersC__SetActivePanel_007a7b70);
         if (iVar5 != 0) {
@@ -124,7 +124,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
           DAT_0080745d = 0;
         }
         bVar4 = DAT_0080874d;
-        g_playerRuntime[DAT_0080874d].field442_0x203 = 0;
+        g_playerRuntime[DAT_0080874d].field324_0x203 = 0;
         ResetActivityFromTmp(this,bVar4,1,0,0);
         ActivateTV(this,DAT_0080874d,0,iVar5);
         return;
@@ -157,7 +157,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         }
       }
       bVar4 = DAT_0080874d;
-      g_playerRuntime[DAT_0080874d].field442_0x203 = 0;
+      g_playerRuntime[DAT_0080874d].field324_0x203 = 0;
       ResetActivityFromTmp(this,bVar4,1,0,0);
       iVar5 = param_2;
     }
@@ -178,8 +178,8 @@ LAB_0043aee4:
   iVar5 = param_2;
   uVar8 = (uint)DAT_0080874d;
   uVar10 = (undefined3)(uVar8 * 0x29 >> 8);
-  if (g_playerRuntime[uVar8].field442_0x203 != 0) {
-    if (g_playerRuntime[uVar8].field442_0x203 != 1) {
+  if (g_playerRuntime[uVar8].field324_0x203 != 0) {
+    if (g_playerRuntime[uVar8].field324_0x203 != 1) {
       iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1b27,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__SetActivePanel_007a7b70);
       if (iVar5 == 0) {
@@ -306,7 +306,7 @@ cf_common_exit_0043B294:
         DAT_0080745d = 0;
       }
       bVar4 = DAT_0080874d;
-      g_playerRuntime[DAT_0080874d].field442_0x203 = 1;
+      g_playerRuntime[DAT_0080874d].field324_0x203 = 1;
       ResetActivityFromTmp(this,bVar4,0,0,0);
       ActivateTV(this,DAT_0080874d,1,iVar5);
       return;
@@ -384,7 +384,7 @@ LAB_0043b4a2:
     }
   }
   bVar4 = DAT_0080874d;
-  g_playerRuntime[DAT_0080874d].field442_0x203 = 1;
+  g_playerRuntime[DAT_0080874d].field324_0x203 = 1;
   ResetActivityFromTmp(this,bVar4,0,0,0);
 cf_common_exit_0043B686:
   iVar11 = 1;

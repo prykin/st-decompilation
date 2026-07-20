@@ -9,35 +9,34 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
 {
   short *psVar1;
   undefined1 *puVar2;
-  undefined1 *puVar3;
-  undefined4 uVar4;
-  STBoatC_field_06F7State SVar5;
-  code *pcVar6;
-  bool bVar7;
-  undefined2 uVar8;
-  int iVar9;
+  undefined4 uVar3;
+  STBoatC_field_06F7State SVar4;
+  code *pcVar5;
+  bool bVar6;
+  undefined2 uVar7;
+  int iVar8;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
-  int iVar10;
-  uint uVar11;
-  undefined4 *puVar12;
-  int iVar13;
-  int *piVar14;
-  int *extraout_ECX;
-  short sVar15;
-  int iVar16;
+  int iVar9;
+  uint uVar10;
+  undefined4 *puVar11;
+  int iVar12;
+  STWorldObject *pSVar13;
+  STWorldObject *extraout_ECX;
+  short sVar14;
+  int iVar15;
   undefined2 extraout_var_02;
-  longlong lVar17;
+  longlong lVar16;
+  short sVar17;
   short sVar18;
   short sVar19;
   short sVar20;
   short sVar21;
-  short sVar22;
-  int iVar23;
-  short sVar24;
-  byte bVar25;
-  uint uVar26;
+  int iVar22;
+  short sVar23;
+  byte bVar24;
+  uint uVar25;
   undefined4 local_30 [2];
   undefined4 local_28;
   short local_24;
@@ -47,14 +46,14 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   int local_14;
   undefined4 *local_10;
   int local_c;
-  int *local_8;
+  STWorldObject *local_8;
   
-  local_8 = (int *)0x0;
+  local_8 = (STWorldObject *)0x0;
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar12 = &this->field_02CC;
-    for (iVar9 = 0x17; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
+    puVar11 = &this->field_02CC;
+    for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar11 = 0;
+      puVar11 = puVar11 + 1;
     }
     this->field_02C4 = 0;
     this->field_0635 = *(undefined4 *)&this->field_0x405;
@@ -65,53 +64,53 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     this->field_0645 = *(undefined2 *)&this->field_0x411;
     this->field_0647 = *(undefined2 *)&this->field_0x413;
     *(undefined4 *)&this->field_0x64d = 0;
-    iVar9 = (*this->vtable->vfunc_D8)();
-    if (iVar9 != 0) {
+    iVar8 = (*this->vtable->vfunc_D8)();
+    if (iVar8 != 0) {
       return -1;
     }
-    iVar9 = this->field_0635;
-    if (iVar9 == 0) {
-      sVar18 = this->field_0639;
-      sVar19 = this->field_063D;
-      sVar15 = this->field_063B;
-      if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-          ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
-        local_8 = (int *)0x0;
+    iVar8 = this->field_0635;
+    if (iVar8 == 0) {
+      sVar17 = this->field_0639;
+      sVar18 = this->field_063D;
+      sVar14 = this->field_063B;
+      if (((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+          ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
+        local_8 = (STWorldObject *)0x0;
       }
       else {
-        local_8 = *(int **)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240 +
-                           (int)sVar18) * 8);
+        local_8 = g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                   (int)sVar17].objects[0];
       }
-      if (local_8 == (int *)0x0) {
+      if (local_8 == (STWorldObject *)0x0) {
         return 0;
       }
-      iVar9 = (**(code **)(*local_8 + 0x2c))();
-      if (iVar9 != 0x37) {
+      iVar8 = (*local_8->vtable->GetObjectTypeId)(local_8);
+      if (iVar8 != 0x37) {
         return 0;
       }
-      this->field_063F = local_8[6];
+      this->field_063F = *(undefined4 *)&local_8->field_0x18;
     }
     else {
-      if (iVar9 != 1) {
-        if (iVar9 != 2) {
-          iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x351b,0,0,
+      if (iVar8 != 1) {
+        if (iVar8 != 2) {
+          iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x351b,0,0,
                                      &DAT_007a4ccc,s_STBoatC__Teleport_invalid_type_o_007ab3ac);
-          if (iVar9 == 0) {
+          if (iVar8 == 0) {
             return 0;
           }
-          pcVar6 = (code *)swi(3);
-          iVar9 = (*pcVar6)();
-          return iVar9;
+          pcVar5 = (code *)swi(3);
+          iVar8 = (*pcVar5)();
+          return iVar8;
         }
-        uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
         psVar1 = (short *)((int)&this->field_065A + 1);
-        this->field_001C = uVar11;
+        this->field_001C = uVar10;
         puVar2 = &this->field_0x657;
         thunk_FUN_004b2520(*(uint *)&this->field_0x24,this->field_06F7,(int)(short)this->field_0643,
                            (int)(short)this->field_0645,(int)(short)this->field_0647,
                            (undefined4 *)puVar2,(undefined4 *)&this->field_0x659,
-                           (undefined4 *)psVar1,uVar11 >> 0x10,(int *)&this->field_0x64d);
+                           (undefined4 *)psVar1,uVar10 >> 0x10,(int *)&this->field_0x64d);
         if (*(short *)puVar2 < 0) {
           return 0;
         }
@@ -133,48 +132,48 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         *(undefined4 *)((int)&this->field_0666 + 1) = 0;
         return 2;
       }
-      sVar18 = this->field_0639;
-      sVar19 = this->field_063D;
-      sVar15 = this->field_063B;
-      if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-         ((sVar15 < 0 ||
-          (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
-        local_8 = (int *)0x0;
+      sVar17 = this->field_0639;
+      sVar18 = this->field_063D;
+      sVar14 = this->field_063B;
+      if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+         ((sVar14 < 0 ||
+          (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+        local_8 = (STWorldObject *)0x0;
       }
       else {
-        local_8 = *(int **)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240 +
-                           (int)sVar18) * 8);
+        local_8 = g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                   (int)sVar17].objects[0];
       }
-      if (local_8 == (int *)0x0) {
+      if (local_8 == (STWorldObject *)0x0) {
         return 0;
       }
-      iVar9 = (**(code **)(*local_8 + 0x2c))();
-      if (iVar9 != 0x6c) {
+      iVar8 = (*local_8->vtable->GetObjectTypeId)(local_8);
+      if (iVar8 != 0x6c) {
         return 0;
       }
-      this->field_063F = local_8[6];
-      sVar18 = this->field_0643;
-      sVar19 = this->field_0647;
-      sVar15 = this->field_0645;
-      if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-         (((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
-          (SHORT_007fb244 <= sVar19)))) {
-        local_8 = (int *)0x0;
+      this->field_063F = *(undefined4 *)&local_8->field_0x18;
+      sVar17 = this->field_0643;
+      sVar18 = this->field_0647;
+      sVar14 = this->field_0645;
+      if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+         (((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) ||
+          (SHORT_007fb244 <= sVar18)))) {
+        local_8 = (STWorldObject *)0x0;
       }
       else {
-        local_8 = *(int **)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240 +
-                           (int)sVar18) * 8);
+        local_8 = g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                   (int)sVar17].objects[0];
       }
-      if (local_8 == (int *)0x0) {
+      if (local_8 == (STWorldObject *)0x0) {
         return 0;
       }
-      iVar9 = (**(code **)(*local_8 + 0x2c))();
-      if (iVar9 != 0x6c) {
+      iVar8 = (*local_8->vtable->GetObjectTypeId)(local_8);
+      if (iVar8 != 0x6c) {
         return 0;
       }
-      this->field_0649 = local_8[6];
+      this->field_0649 = *(undefined4 *)&local_8->field_0x18;
     }
     *(undefined4 *)&this->field_0x663 = 0;
     *(undefined4 *)((int)&this->field_0666 + 1) = 0;
@@ -182,112 +181,113 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     sub_00481520(this,(int)this->field_0639,(int)this->field_063B,this->field_063D + 1);
   }
   else {
-    iVar9 = *(int *)&this->field_0x663;
-    if (iVar9 == 0) {
-      iVar9 = sub_00460260(this,2);
-      switch(iVar9) {
+    iVar8 = *(int *)&this->field_0x663;
+    if (iVar8 == 0) {
+      iVar8 = sub_00460260(this,2);
+      switch(iVar8) {
       case 0:
         this->field_00B7 = 0;
         if (this->field_0635 == 1) {
-          sVar18 = this->field_0643;
-          sVar19 = this->field_0647;
-          sVar15 = this->field_0645;
-          if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-              ((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))))) ||
-             (SHORT_007fb244 <= sVar19)) {
-            local_8 = (int *)0x0;
+          sVar17 = this->field_0643;
+          sVar18 = this->field_0647;
+          sVar14 = this->field_0645;
+          if ((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+              ((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))))) ||
+             (SHORT_007fb244 <= sVar18)) {
+            local_8 = (STWorldObject *)0x0;
           }
           else {
-            local_8 = *(int **)(DAT_007fb248 +
-                               ((int)SHORT_007fb246 * (int)sVar19 +
-                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+            local_8 = g_worldCells
+                      [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                       (int)sVar17].objects[0];
           }
-          if (local_8 == (int *)0x0) {
+          if (local_8 == (STWorldObject *)0x0) {
             return 0;
           }
-          if (local_8[6] != this->field_0649) {
+          if (*(int *)&local_8->field_0x18 != this->field_0649) {
             return 0;
           }
-          iVar9 = (**(code **)(*local_8 + 0xf8))();
-          if (iVar9 == 0) {
+          iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+          if (iVar8 == 0) {
             return 0;
           }
         }
-        sVar18 = this->field_0639;
-        sVar19 = this->field_063D;
-        sVar15 = this->field_063B;
-        if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-            ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
-          local_8 = (int *)0x0;
+        sVar17 = this->field_0639;
+        sVar18 = this->field_063D;
+        sVar14 = this->field_063B;
+        if (((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+            ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
+          local_8 = (STWorldObject *)0x0;
         }
         else {
-          local_8 = *(int **)(DAT_007fb248 +
-                             ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240
-                             + (int)sVar18) * 8);
+          local_8 = g_worldCells
+                    [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                     (int)sVar17].objects[0];
         }
-        if (local_8 == (int *)0x0) {
+        if (local_8 == (STWorldObject *)0x0) {
           return 0;
         }
-        if (local_8[6] != this->field_063F) {
+        if (*(int *)&local_8->field_0x18 != this->field_063F) {
           return 0;
         }
-        iVar9 = (**(code **)(*local_8 + 0xf8))();
-        if (iVar9 == 0) {
+        iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+        if (iVar8 == 0) {
           return 0;
         }
-        bVar7 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
+        bVar6 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
                              (short *)&this->field_0x655);
-        if ((CONCAT31(extraout_var,bVar7) != 1) ||
-           (iVar9 = thunk_FUN_004e91e0(local_8,this), iVar9 != 1)) {
+        if ((CONCAT31(extraout_var,bVar6) != 1) ||
+           (iVar8 = thunk_FUN_004e91e0(local_8,this), iVar8 != 1)) {
 LAB_00479e39:
           *(undefined4 *)&this->field_0x663 = 1;
           *(undefined4 *)((int)&this->field_065A + 3) = 0;
-          iVar9 = Defence(this,0);
-          if (iVar9 != -1) {
+          iVar8 = Defence(this,0);
+          if (iVar8 != -1) {
             return 2;
           }
           return -1;
         }
         *(undefined4 *)&this->field_0x663 = 2;
 LAB_0047b2dc:
-        iVar9 = (int)*(short *)&this->field_0x655;
-        sVar19 = *(short *)&this->field_0x653;
-        sVar18 = *(short *)&this->field_0x651;
+        iVar8 = (int)*(short *)&this->field_0x655;
+        sVar18 = *(short *)&this->field_0x653;
+        sVar17 = *(short *)&this->field_0x651;
         break;
       case 1:
-        sVar18 = this->field_0639;
-        sVar19 = this->field_063D;
-        sVar15 = this->field_063B;
-        if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-            ((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))))) ||
-           (SHORT_007fb244 <= sVar19)) {
-          local_8 = (int *)0x0;
+        sVar17 = this->field_0639;
+        sVar18 = this->field_063D;
+        sVar14 = this->field_063B;
+        if ((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+            ((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))))) ||
+           (SHORT_007fb244 <= sVar18)) {
+          local_8 = (STWorldObject *)0x0;
         }
         else {
-          local_8 = *(int **)(DAT_007fb248 +
-                             ((int)SHORT_007fb246 * (int)sVar19 + (int)sVar15 * (int)SHORT_007fb240
-                             + (int)sVar18) * 8);
+          local_8 = g_worldCells
+                    [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                     (int)sVar17].objects[0];
         }
-        if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
-           (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
+        if (((local_8 != (STWorldObject *)0x0) && (*(int *)&local_8->field_0x18 == this->field_063F)
+            ) && (iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
           if (this->field_0635 != 1) {
             return 2;
           }
-          sVar18 = this->field_0643;
-          sVar19 = this->field_0647;
-          sVar15 = this->field_0645;
-          if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-             (((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
-              (SHORT_007fb244 <= sVar19)))) {
-            local_8 = (int *)0x0;
+          sVar17 = this->field_0643;
+          sVar18 = this->field_0647;
+          sVar14 = this->field_0645;
+          if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+             (((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) ||
+              (SHORT_007fb244 <= sVar18)))) {
+            local_8 = (STWorldObject *)0x0;
           }
           else {
-            local_8 = *(int **)(DAT_007fb248 +
-                               ((int)SHORT_007fb246 * (int)sVar19 +
-                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+            local_8 = g_worldCells
+                      [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                       (int)sVar17].objects[0];
           }
-          if (((local_8 != (int *)0x0) && (local_8[6] == this->field_0649)) &&
-             (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
+          if (((local_8 != (STWorldObject *)0x0) &&
+              (*(int *)&local_8->field_0x18 == this->field_0649)) &&
+             (iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
             return 2;
           }
         }
@@ -297,31 +297,31 @@ LAB_0047b2dc:
       default:
         goto switchD_00479647_caseD_2;
       case 3:
-        sVar19 = this->field_063B;
-        sVar18 = this->field_0639;
-        iVar9 = this->field_063D + 1;
+        sVar18 = this->field_063B;
+        sVar17 = this->field_0639;
+        iVar8 = this->field_063D + 1;
         break;
       case -1:
-        iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3525,0,0,&DAT_007a4ccc,
+        iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3525,0,0,&DAT_007a4ccc,
                                    s_STBoatC__Teleport__TELEPORT_MOVE_007ab4f8);
-        if (iVar9 != 0) {
-          pcVar6 = (code *)swi(3);
-          iVar9 = (*pcVar6)();
-          return iVar9;
+        if (iVar8 != 0) {
+          pcVar5 = (code *)swi(3);
+          iVar8 = (*pcVar5)();
+          return iVar8;
         }
-        iVar9 = 0x3525;
+        iVar8 = 0x3525;
 LAB_00479ba6:
         RaiseInternalException
-                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar9)
+                  (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar8)
         ;
         return 0xffff;
       }
     }
     else {
-      if (iVar9 == 1) {
+      if (iVar8 == 1) {
         *(int *)((int)&this->field_065A + 3) = *(int *)((int)&this->field_065A + 3) + 1;
-        iVar9 = Defence(this,2);
-        if (iVar9 == -1) {
+        iVar8 = Defence(this,2);
+        if (iVar8 == -1) {
           return -1;
         }
         if (this->field_082E != 0) {
@@ -334,95 +334,95 @@ LAB_00479ba6:
           return 2;
         }
         if (this->field_0635 == 1) {
-          sVar18 = this->field_0643;
-          sVar19 = this->field_0647;
-          sVar15 = this->field_0645;
-          if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-              ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
-            local_8 = (int *)0x0;
+          sVar17 = this->field_0643;
+          sVar18 = this->field_0647;
+          sVar14 = this->field_0645;
+          if (((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+              ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
+            local_8 = (STWorldObject *)0x0;
           }
           else {
-            local_8 = *(int **)(DAT_007fb248 +
-                               ((int)SHORT_007fb246 * (int)sVar19 +
-                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+            local_8 = g_worldCells
+                      [(int)SHORT_007fb246 * (int)sVar18 + (int)sVar14 * (int)SHORT_007fb240 +
+                       (int)sVar17].objects[0];
           }
-          if (local_8 == (int *)0x0) {
+          if (local_8 == (STWorldObject *)0x0) {
             return 0;
           }
-          if (local_8[6] != this->field_0649) {
+          if (*(int *)&local_8->field_0x18 != this->field_0649) {
             return 0;
           }
-          iVar9 = (**(code **)(*local_8 + 0xf8))();
-          if (iVar9 == 0) {
+          iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+          if (iVar8 == 0) {
             return 0;
           }
         }
-        sVar18 = this->field_0639;
-        sVar19 = this->field_063D;
-        sVar15 = this->field_063B;
-        if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-           ((sVar15 < 0 ||
-            (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
-          local_8 = (int *)0x0;
+        sVar17 = this->field_0639;
+        sVar18 = this->field_063D;
+        sVar14 = this->field_063B;
+        if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+           ((sVar14 < 0 ||
+            (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+          local_8 = (STWorldObject *)0x0;
         }
         else {
-          local_8 = *(int **)(DAT_007fb248 +
-                             ((int)sVar19 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240
-                             + (int)sVar18) * 8);
+          local_8 = g_worldCells
+                    [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                     (int)sVar17].objects[0];
         }
-        if (local_8 == (int *)0x0) {
+        if (local_8 == (STWorldObject *)0x0) {
           return 0;
         }
-        if (local_8[6] != this->field_063F) {
+        if (*(int *)&local_8->field_0x18 != this->field_063F) {
           return 0;
         }
-        iVar9 = (**(code **)(*local_8 + 0xf8))();
-        if (iVar9 == 0) {
+        iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+        if (iVar8 == 0) {
           return 0;
         }
-        bVar7 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
+        bVar6 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
                              (short *)&this->field_0x655);
-        if (CONCAT31(extraout_var_00,bVar7) != 1) {
+        if (CONCAT31(extraout_var_00,bVar6) != 1) {
           return 2;
         }
-        iVar9 = thunk_FUN_004e91e0(local_8,this);
-        if (iVar9 != 1) {
+        iVar8 = thunk_FUN_004e91e0(local_8,this);
+        if (iVar8 != 1) {
           return 2;
         }
         *(undefined4 *)&this->field_0x663 = 2;
       }
       else {
-        if (iVar9 != 2) {
-          if (iVar9 != 3) {
-            if (iVar9 == 4) {
+        if (iVar8 != 2) {
+          if (iVar8 != 3) {
+            if (iVar8 == 4) {
               if (*(int *)((int)&this->field_0666 + 1) == 0) {
-                SVar5 = this->field_06F7;
-                if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
+                SVar4 = this->field_06F7;
+                if ((((SVar4 == CASE_7) || (SVar4 == CASE_13)) || (SVar4 == CASE_1B)) &&
                    ((this->field_07CA != 0 &&
-                    (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
-                    iVar9 != -4)))) {
-                  iVar23 = (int)this->field_0045;
-                  iVar9 = (int)this->field_0043;
-                  iVar10 = (int)this->field_0041;
-                  uVar26 = 0;
-                  iVar13 = 0;
-                  uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
+                    (iVar8 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
+                    iVar8 != -4)))) {
+                  iVar22 = (int)this->field_0045;
+                  iVar8 = (int)this->field_0043;
+                  iVar9 = (int)this->field_0041;
+                  uVar25 = 0;
+                  iVar12 = 0;
+                  uVar10 = thunk_FUN_004ad650((int)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
-                  iVar23 = (int)this->field_0045;
-                  iVar9 = (int)this->field_0043;
-                  iVar10 = (int)this->field_0041;
-                  uVar26 = 0;
-                  uVar11 = this->field_01ED;
-                  iVar13 = 0;
+                  iVar22 = (int)this->field_0045;
+                  iVar8 = (int)this->field_0043;
+                  iVar9 = (int)this->field_0041;
+                  uVar25 = 0;
+                  uVar10 = this->field_01ED;
+                  iVar12 = 0;
                 }
-                thunk_FUN_006377b0(uVar11,iVar13,iVar10,iVar9,iVar23,uVar26);
+                thunk_FUN_006377b0(uVar10,iVar12,iVar9,iVar8,iVar22,uVar25);
                 *(undefined4 *)((int)&this->field_0666 + 1) = 1;
                 *(undefined4 *)((int)&this->field_065A + 3) = 0;
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 1) &&
-                 (iVar9 = *(int *)((int)&this->field_065A + 3) + 1,
-                 *(int *)((int)&this->field_065A + 3) = iVar9, iVar9 == 0x16)) {
+                 (iVar8 = *(int *)((int)&this->field_065A + 3) + 1,
+                 *(int *)((int)&this->field_065A + 3) = iVar8, iVar8 == 0x16)) {
                 *(undefined4 *)((int)&this->field_0666 + 1) = 2;
                 *(undefined4 *)((int)&this->field_065A + 3) = 0;
                 thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this);
@@ -438,30 +438,30 @@ LAB_00479ba6:
                                    (int)*(short *)((int)&this->field_065A + 1));
                 thunk_FUN_00417a20(this,*(short *)&this->field_0x657,*(short *)&this->field_0x659,
                                    *(short *)((int)&this->field_065A + 1),1);
-                sVar18 = (this->field_0643 + 1) * 0xc9;
-                this->field_0041 = sVar18;
-                sVar19 = (this->field_0645 + 1) * 0xc9;
-                sVar15 = this->field_0647 * 200 + 300;
-                this->field_0043 = sVar19;
-                this->field_0045 = sVar15;
-                local_20 = (int)sVar18;
+                sVar17 = (this->field_0643 + 1) * 0xc9;
+                this->field_0041 = sVar17;
+                sVar18 = (this->field_0645 + 1) * 0xc9;
+                sVar14 = this->field_0647 * 200 + 300;
+                this->field_0043 = sVar18;
+                this->field_0045 = sVar14;
+                local_20 = (int)sVar17;
                 thunk_FUN_004ad3c0(&this->field_01D5,(float)local_20 * _DAT_007904f8 * _DAT_007904f0
-                                   ,(float)(int)sVar19 * _DAT_007904f8 * _DAT_007904f0,
-                                   (float)(int)sVar15 * _DAT_007904f8 * _DAT_007904f0);
+                                   ,(float)(int)sVar18 * _DAT_007904f8 * _DAT_007904f0,
+                                   (float)(int)sVar14 * _DAT_007904f8 * _DAT_007904f0);
                 thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
-                SVar5 = this->field_06F7;
-                if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
+                SVar4 = this->field_06F7;
+                if ((((SVar4 == CASE_7) || (SVar4 == CASE_13)) || (SVar4 == CASE_1B)) &&
                    ((this->field_07CA != 0 &&
-                    (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
-                    iVar9 != -4)))) {
-                  iVar10 = (int)this->field_0045;
-                  iVar9 = (int)this->field_0043;
-                  iVar23 = (int)this->field_0041;
-                  uVar26 = 0;
-                  iVar13 = 0;
-                  uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
-                  thunk_FUN_006377b0(uVar11,iVar13,iVar23,iVar9,iVar10,uVar26);
-                  thunk_FUN_004ad430((int)local_8 + 0x1d5);
+                    (iVar8 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
+                    iVar8 != -4)))) {
+                  iVar9 = (int)this->field_0045;
+                  iVar8 = (int)this->field_0043;
+                  iVar22 = (int)this->field_0041;
+                  uVar25 = 0;
+                  iVar12 = 0;
+                  uVar10 = thunk_FUN_004ad650((int)((int)&local_8[0xd].vtable + 1));
+                  thunk_FUN_006377b0(uVar10,iVar12,iVar22,iVar8,iVar9,uVar25);
+                  thunk_FUN_004ad430((int)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
                   thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
@@ -470,16 +470,16 @@ LAB_00479ba6:
                 thunk_FUN_004ad430((int)&this->field_01D5);
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 2) &&
-                 (iVar9 = *(int *)((int)&this->field_065A + 3) + 1,
-                 *(int *)((int)&this->field_065A + 3) = iVar9, iVar9 == 0x16)) {
+                 (iVar8 = *(int *)((int)&this->field_065A + 3) + 1,
+                 *(int *)((int)&this->field_065A + 3) = iVar8, iVar8 == 0x16)) {
                 *(undefined4 *)((int)&this->field_0666 + 1) = 3;
-                SVar5 = this->field_06F7;
+                SVar4 = this->field_06F7;
                 *(undefined4 *)((int)&this->field_065A + 3) = 0;
-                if (((SVar5 == CASE_7) || ((SVar5 == CASE_13 || (SVar5 == CASE_1B)))) &&
+                if (((SVar4 == CASE_7) || ((SVar4 == CASE_13 || (SVar4 == CASE_1B)))) &&
                    ((this->field_07CA != 0 &&
-                    (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
-                    iVar9 != -4)))) {
-                  thunk_FUN_004ad460((void *)((int)local_8 + 0x1d5),0);
+                    (iVar8 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
+                    iVar8 != -4)))) {
+                  thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);
                 if ((((this->field_06F7 == CASE_B) || (this->field_06F7 == CASE_23)) &&
@@ -496,49 +496,49 @@ LAB_00479ba6:
                 }
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 3) &&
-                 (iVar9 = *(int *)((int)&this->field_065A + 3) + 1,
-                 *(int *)((int)&this->field_065A + 3) = iVar9, iVar9 == 10)) {
+                 (iVar8 = *(int *)((int)&this->field_065A + 3) + 1,
+                 *(int *)((int)&this->field_065A + 3) = iVar8, iVar8 == 10)) {
                 *(undefined4 *)&this->field_0x663 = 6;
                 *(undefined4 *)((int)&this->field_0666 + 1) = 0;
                 *(undefined4 *)&this->field_0x742 = 0;
               }
               goto cf_common_exit_0047ADB5;
             }
-            if (iVar9 == 5) {
+            if (iVar8 == 5) {
               if (*(int *)((int)&this->field_0666 + 1) == 0) {
-                SVar5 = this->field_06F7;
-                if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
+                SVar4 = this->field_06F7;
+                if ((((SVar4 == CASE_7) || (SVar4 == CASE_13)) || (SVar4 == CASE_1B)) &&
                    ((this->field_07CA != 0 &&
-                    (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
-                    iVar9 != -4)))) {
-                  iVar23 = (int)this->field_0045;
-                  iVar9 = (int)this->field_0043;
-                  iVar10 = (int)this->field_0041;
-                  uVar26 = 0;
-                  iVar13 = 0;
-                  uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
+                    (iVar8 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
+                    iVar8 != -4)))) {
+                  iVar22 = (int)this->field_0045;
+                  iVar8 = (int)this->field_0043;
+                  iVar9 = (int)this->field_0041;
+                  uVar25 = 0;
+                  iVar12 = 0;
+                  uVar10 = thunk_FUN_004ad650((int)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
-                  iVar23 = (int)this->field_0045;
-                  iVar9 = (int)this->field_0043;
-                  iVar10 = (int)this->field_0041;
-                  uVar26 = 0;
-                  uVar11 = this->field_01ED;
-                  iVar13 = 0;
+                  iVar22 = (int)this->field_0045;
+                  iVar8 = (int)this->field_0043;
+                  iVar9 = (int)this->field_0041;
+                  uVar25 = 0;
+                  uVar10 = this->field_01ED;
+                  iVar12 = 0;
                 }
-                thunk_FUN_006377b0(uVar11,iVar13,iVar10,iVar9,iVar23,uVar26);
+                thunk_FUN_006377b0(uVar10,iVar12,iVar9,iVar8,iVar22,uVar25);
                 *(undefined4 *)((int)&this->field_0666 + 1) = 1;
                 *(undefined4 *)((int)&this->field_065A + 3) = 0;
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 1) &&
-                 (iVar9 = *(int *)((int)&this->field_065A + 3) + 1,
-                 *(int *)((int)&this->field_065A + 3) = iVar9, iVar9 == 0x16)) {
+                 (iVar8 = *(int *)((int)&this->field_065A + 3) + 1,
+                 *(int *)((int)&this->field_065A + 3) = iVar8, iVar8 == 0x16)) {
                 *(undefined4 *)((int)&this->field_065A + 3) = 0;
                 *(undefined4 *)((int)&this->field_0666 + 1) = 2;
                 if (this->field_0635 == 2) {
-                  iVar9 = this->field_071E + -10;
-                  this->field_071E = iVar9;
-                  if (iVar9 < 0) {
+                  iVar8 = this->field_071E + -10;
+                  this->field_071E = iVar8;
+                  if (iVar8 < 0) {
                     this->field_071E = 0;
                   }
                   if ((*(int *)&this->field_0x64d != 0) && (DAT_00811798 != (void *)0x0)) {
@@ -560,19 +560,19 @@ LAB_00479ba6:
                                    ,(float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
                                    (float)(int)this->field_0045 * _DAT_007904f8 * _DAT_007904f0);
                 thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
-                SVar5 = this->field_06F7;
-                if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
+                SVar4 = this->field_06F7;
+                if ((((SVar4 == CASE_7) || (SVar4 == CASE_13)) || (SVar4 == CASE_1B)) &&
                    ((this->field_07CA != 0 &&
-                    (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
-                    iVar9 != -4)))) {
-                  iVar10 = (int)this->field_0045;
-                  iVar9 = (int)this->field_0043;
-                  iVar23 = (int)this->field_0041;
-                  uVar26 = 0;
-                  iVar13 = 0;
-                  uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
-                  thunk_FUN_006377b0(uVar11,iVar13,iVar23,iVar9,iVar10,uVar26);
-                  thunk_FUN_004ad430((int)local_8 + 0x1d5);
+                    (iVar8 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
+                    iVar8 != -4)))) {
+                  iVar9 = (int)this->field_0045;
+                  iVar8 = (int)this->field_0043;
+                  iVar22 = (int)this->field_0041;
+                  uVar25 = 0;
+                  iVar12 = 0;
+                  uVar10 = thunk_FUN_004ad650((int)((int)&local_8[0xd].vtable + 1));
+                  thunk_FUN_006377b0(uVar10,iVar12,iVar22,iVar8,iVar9,uVar25);
+                  thunk_FUN_004ad430((int)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
                   thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
@@ -581,48 +581,49 @@ LAB_00479ba6:
                 thunk_FUN_004ad430((int)&this->field_01D5);
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 2) &&
-                 (iVar9 = *(int *)((int)&this->field_065A + 3) + 1,
-                 *(int *)((int)&this->field_065A + 3) = iVar9, iVar9 == 0x16)) {
+                 (iVar8 = *(int *)((int)&this->field_065A + 3) + 1,
+                 *(int *)((int)&this->field_065A + 3) = iVar8, iVar8 == 0x16)) {
                 *(undefined4 *)((int)&this->field_0666 + 1) = 3;
-                SVar5 = this->field_06F7;
+                SVar4 = this->field_06F7;
                 *(undefined4 *)((int)&this->field_065A + 3) = 0;
-                if (((SVar5 == CASE_7) || ((SVar5 == CASE_13 || (SVar5 == CASE_1B)))) &&
+                if (((SVar4 == CASE_7) || ((SVar4 == CASE_13 || (SVar4 == CASE_1B)))) &&
                    ((this->field_07CA != 0 &&
-                    (iVar9 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
-                    iVar9 != -4)))) {
-                  thunk_FUN_004ad460((void *)((int)local_8 + 0x1d5),0);
+                    (iVar8 = FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_8),
+                    iVar8 != -4)))) {
+                  thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);
               }
               if ((*(int *)((int)&this->field_0666 + 1) == 3) &&
-                 (iVar9 = *(int *)((int)&this->field_065A + 3) + 1,
-                 *(int *)((int)&this->field_065A + 3) = iVar9, iVar9 == 10)) {
-                sVar18 = this->field_0639;
-                sVar19 = this->field_063D;
-                sVar15 = this->field_063B;
+                 (iVar8 = *(int *)((int)&this->field_065A + 3) + 1,
+                 *(int *)((int)&this->field_065A + 3) = iVar8, iVar8 == 10)) {
+                sVar17 = this->field_0639;
+                sVar18 = this->field_063D;
+                sVar14 = this->field_063B;
                 *(undefined4 *)&this->field_0x742 = 0;
-                if ((sVar18 < 0) ||
-                   ((((SHORT_007fb240 <= sVar18 || (sVar15 < 0)) || (SHORT_007fb242 <= sVar15)) ||
-                    ((sVar19 < 0 || (SHORT_007fb244 <= sVar19)))))) {
-                  local_8 = (int *)0x0;
+                if ((sVar17 < 0) ||
+                   ((((SHORT_007fb240 <= sVar17 || (sVar14 < 0)) || (SHORT_007fb242 <= sVar14)) ||
+                    ((sVar18 < 0 || (SHORT_007fb244 <= sVar18)))))) {
+                  local_8 = (STWorldObject *)0x0;
                 }
                 else {
-                  local_8 = *(int **)(DAT_007fb248 +
-                                     ((int)sVar19 * (int)SHORT_007fb246 +
-                                      (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+                  local_8 = g_worldCells
+                            [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                             (int)sVar17].objects[0];
                 }
-                if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
-                   (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
+                if (((local_8 != (STWorldObject *)0x0) &&
+                    (*(int *)&local_8->field_0x18 == this->field_063F)) &&
+                   (iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
                   thunk_FUN_004e95c0(local_8,(int)this);
                 }
-                iVar9 = (*this->vtable->vfunc_D8)();
-                if (iVar9 != 0) {
+                iVar8 = (*this->vtable->vfunc_D8)();
+                if (iVar8 != 0) {
                   return -1;
                 }
 LAB_0047acdc:
-                iVar9 = thunk_FUN_004b2d10((byte)*(undefined4 *)&this->field_0x24,this->field_06F7,
+                iVar8 = thunk_FUN_004b2d10((byte)*(undefined4 *)&this->field_0x24,this->field_06F7,
                                            (int)this->field_005B,(int)this->field_005D);
-                if (iVar9 == 0) {
+                if (iVar8 == 0) {
                   return 0;
                 }
                 thunk_FUN_00495010(this,0xaf);
@@ -630,67 +631,66 @@ LAB_0047acdc:
               }
               goto cf_common_exit_0047ADB5;
             }
-            if (iVar9 != 6) {
-              if (iVar9 != 7) {
-                iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3744,0,0,
+            if (iVar8 != 6) {
+              if (iVar8 != 7) {
+                iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3744,0,0,
                                            &DAT_007a4ccc,s_STBoatC__Teleport___incorrect_en_007ab3e8
                                           );
-                if (iVar9 == 0) {
+                if (iVar8 == 0) {
                   return -1;
                 }
-                pcVar6 = (code *)swi(3);
-                iVar9 = (*pcVar6)();
-                return iVar9;
+                pcVar5 = (code *)swi(3);
+                iVar8 = (*pcVar5)();
+                return iVar8;
               }
-              iVar9 = sub_00460260(this,2);
-              if (iVar9 == -1) {
+              iVar8 = sub_00460260(this,2);
+              if (iVar8 == -1) {
                 return -1;
               }
-              if (iVar9 == 0) goto LAB_0047acdc;
-              if (iVar9 != 3) {
+              if (iVar8 == 0) goto LAB_0047acdc;
+              if (iVar8 != 3) {
                 return 2;
               }
-              iVar23 = CONCAT22(extraout_var_02,*(undefined2 *)&this->field_0x651);
-              uVar11 = (uint)(ushort)(*(short *)&this->field_0x655 + 1);
-              iVar9 = CONCAT22((short)((uint)&this->field_0x651 >> 0x10),
-                               *(undefined2 *)&this->field_0x653);
-              thunk_FUN_0048dfd0(iVar23,iVar9,uVar11,iVar23,iVar9,(int *)uVar11,1,
-                                 (short *)&this->field_0x651,(short *)&this->field_0x653,
-                                 (short *)&this->field_0x655);
+              iVar8 = CONCAT22(extraout_var_02,*(undefined2 *)&this->field_0x651);
+              uVar10 = (uint)(ushort)(*(short *)&this->field_0x655 + 1);
+              uVar25 = CONCAT22((short)((uint)&this->field_0x651 >> 0x10),
+                                *(undefined2 *)&this->field_0x653);
+              thunk_FUN_0048dfd0(this,iVar8,uVar25,uVar10,iVar8,(int *)uVar25,uVar10,(short *)0x1,
+                                 (short *)&this->field_0x651,(short *)&this->field_0x653);
               goto LAB_0047b2dc;
             }
             if (*(int *)((int)&this->field_0666 + 1) == 0) {
-              iVar9 = (ushort)(*(short *)((int)&this->field_065A + 1) * 200) + 100;
-              iVar10 = CONCAT22((short)((uint)this >> 0x10),*(short *)&this->field_0x659 * 0xc9) +
+              iVar8 = (ushort)(*(short *)((int)&this->field_065A + 1) * 200) + 100;
+              iVar9 = CONCAT22((short)((uint)this >> 0x10),*(short *)&this->field_0x659 * 0xc9) +
+                      100;
+              iVar22 = CONCAT22((short)((uint)iVar8 >> 0x10),*(short *)&this->field_0x657 * 0xc9) +
                        100;
-              iVar23 = CONCAT22((short)((uint)iVar9 >> 0x10),*(short *)&this->field_0x657 * 0xc9) +
-                       100;
-              uVar8 = (undefined2)((uint)iVar10 >> 0x10);
-              uVar8 = (*this->vtable->vfunc_10)
-                                (CONCAT22(uVar8,this->field_0041),
-                                 CONCAT22((short)((uint)iVar23 >> 0x10),this->field_0043),
-                                 CONCAT22(uVar8,this->field_0045),iVar23,iVar10,iVar9);
-              *(undefined2 *)((int)&this->field_065E + 3) = uVar8;
+              uVar7 = (undefined2)((uint)iVar9 >> 0x10);
+              uVar7 = (*this->vtable->vfunc_10)
+                                (CONCAT22(uVar7,this->field_0041),
+                                 CONCAT22((short)((uint)iVar22 >> 0x10),this->field_0043),
+                                 CONCAT22(uVar7,this->field_0045),iVar22,iVar9,iVar8);
+              *(undefined2 *)((int)&this->field_065E + 3) = uVar7;
               *(undefined4 *)((int)&this->field_0666 + 1) = 1;
             }
-            iVar9 = *(int *)((int)&this->field_0666 + 1);
-            if (iVar9 == 1) {
-              uVar11 = sub_004176C0(this,*(short *)((int)&this->field_065E + 3));
-              uVar11 = sub_00417910(this,(short)uVar11);
-              if (uVar11 == 0xffffffff) {
-                iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x36e3,0,0,
+            iVar8 = *(int *)((int)&this->field_0666 + 1);
+            if (iVar8 == 1) {
+              uVar10 = sub_004176C0(this,*(short *)((int)&this->field_065E + 3));
+              uVar10 = sub_00417910(this,(short)uVar10);
+              if (uVar10 == 0xffffffff) {
+                iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x36e3,0,0,
                                            &DAT_007a4ccc,s_STBoatC__Teleport_TELEPORT_OMOVE_007ab440
                                           );
-                if (iVar9 == 0) {
+                if (iVar8 == 0) {
                   return -1;
                 }
-                pcVar6 = (code *)swi(3);
-                iVar9 = (*pcVar6)();
-                return iVar9;
+                pcVar5 = (code *)swi(3);
+                iVar8 = (*pcVar5)();
+                return iVar8;
               }
               goto joined_r0x0047ada9;
             }
-            if (iVar9 == 2) {
+            if (iVar8 == 2) {
               STJellyGunC::sub_00415B30
                         ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
                          *(short *)&this->field_0x657 * 0xc9 + 100,
@@ -700,148 +700,148 @@ LAB_0047acdc:
             }
             if (*(int *)((int)&this->field_0666 + 1) != 3) goto cf_common_exit_0047ADB5;
             local_14 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_1c);
-            uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-            this->field_001C = uVar11;
-            iVar9 = (uVar11 >> 0x10) % 7 - 3;
-            uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-            this->field_001C = uVar11;
-            uVar26 = this->field_001C * 0x41c64e6d + 0x3039;
-            this->field_001C = uVar26;
-            local_20 = (uVar26 >> 0x10) % 7 - 3;
+            uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar10;
+            iVar8 = (uVar10 >> 0x10) % 7 - 3;
+            uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar10;
+            uVar25 = this->field_001C * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar25;
+            local_20 = (uVar25 >> 0x10) % 7 - 3;
             if (((int)this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
                (local_c = 0, this->field_0x2bf != '\0')) {
               local_10 = (undefined4 *)&this->field_0x2b3;
               do {
-                puVar12 = (undefined4 *)
+                puVar11 = (undefined4 *)
                           thunk_FUN_0041dc40(local_30,*local_10,*(undefined2 *)(local_10 + 1),
                                              this->field_006C);
-                uVar4 = *puVar12;
-                bVar25 = 0;
-                sVar24 = 0;
-                iVar23 = -1;
-                local_24 = *(short *)(puVar12 + 1);
-                sVar22 = 0;
+                uVar3 = *puVar11;
+                bVar24 = 0;
+                sVar23 = 0;
+                iVar22 = -1;
+                local_24 = *(short *)(puVar11 + 1);
                 sVar21 = 0;
                 sVar20 = 0;
-                sVar15 = 0;
                 sVar19 = 0;
+                sVar14 = 0;
                 sVar18 = 0;
-                local_28 = uVar4;
+                sVar17 = 0;
+                local_28 = uVar3;
                 if (DAT_0080732c == 1) {
+                  sVar17 = 0;
                   sVar18 = 0;
+                  sVar14 = 0;
                   sVar19 = 0;
-                  sVar15 = 0;
                   sVar20 = 0;
                   sVar21 = 0;
-                  sVar22 = 0;
-                  sVar24 = 0;
-                  bVar25 = 0;
-                  lVar17 = Library::MSVCRT::__ftol();
-                  iVar16 = (int)local_24 + this->field_0045 + local_20 + (int)(short)lVar17;
-                  iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
-                  iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
+                  sVar23 = 0;
+                  bVar24 = 0;
+                  lVar16 = Library::MSVCRT::__ftol();
+                  iVar15 = (int)local_24 + this->field_0045 + local_20 + (int)(short)lVar16;
+                  iVar9 = (int)this->field_0043 - (int)local_28._2_2_;
+                  iVar12 = (int)(short)local_28 + iVar8 + this->field_0041;
                 }
                 else {
-                  iVar16 = (int)local_24 + local_20 + this->field_0045;
-                  local_28._2_2_ = (short)((uint)uVar4 >> 0x10);
-                  iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
-                  local_28._0_2_ = (short)uVar4;
-                  iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
+                  iVar15 = (int)local_24 + local_20 + this->field_0045;
+                  local_28._2_2_ = (short)((uint)uVar3 >> 0x10);
+                  iVar9 = (int)this->field_0043 - (int)local_28._2_2_;
+                  local_28._0_2_ = (short)uVar3;
+                  iVar12 = (int)(short)local_28 + iVar8 + this->field_0041;
                 }
                 TraksClassTy::TraksCreate
-                          (g_traksClass_00802A7C,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),
-                           iVar16,sVar18,sVar19,sVar15,sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
+                          (g_traksClass_00802A7C,1,2,7,iVar12,iVar9 + ((uVar10 >> 0x10) % 7 - 3),
+                           iVar15,sVar17,sVar18,sVar14,sVar19,sVar20,sVar21,iVar22,sVar23,bVar24);
                 local_10 = (undefined4 *)((int)local_10 + 6);
                 local_c = local_c + 1;
               } while (local_c < (int)(uint)(byte)this->field_0x2bf);
             }
             if (local_14 == -1) {
-              iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x370a,0,0,
+              iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x370a,0,0,
                                          &DAT_007a4ccc,s_STBoatC__Teleport_TELEPORT_OMOVE_007ab414);
-              if (iVar9 == 0) {
+              if (iVar8 == 0) {
                 return -1;
               }
-              pcVar6 = (code *)swi(3);
-              iVar9 = (*pcVar6)();
-              return iVar9;
+              pcVar5 = (code *)swi(3);
+              iVar8 = (*pcVar5)();
+              return iVar8;
             }
             if (local_14 != 0) goto cf_common_exit_0047ADB5;
-            sVar18 = this->field_0639;
-            iVar9 = 0;
-            sVar19 = this->field_063D;
-            sVar15 = this->field_063B;
-            if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-               (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))) {
-              local_8 = (int *)0x0;
+            sVar17 = this->field_0639;
+            iVar8 = 0;
+            sVar18 = this->field_063D;
+            sVar14 = this->field_063B;
+            if ((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+               (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))) {
+              local_8 = (STWorldObject *)0x0;
             }
             else {
-              iVar9 = (int)sVar18;
-              local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + iVar9) * 8);
+              iVar8 = (int)sVar17;
+              local_8 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         iVar8].objects[0];
             }
-            if ((local_8 != (int *)0x0) && (iVar9 = local_8[6], iVar9 == this->field_063F)) {
-              iVar23 = (**(code **)(*local_8 + 0xf8))();
-              iVar9 = 0;
-              if (iVar23 != 0) {
-                iVar9 = thunk_FUN_004e95c0(local_8,(int)this);
+            if ((local_8 != (STWorldObject *)0x0) &&
+               (iVar8 = *(int *)&local_8->field_0x18, iVar8 == this->field_063F)) {
+              iVar22 = (*local_8->vtable[5].slots_00_28[2])();
+              iVar8 = 0;
+              if (iVar22 != 0) {
+                iVar8 = thunk_FUN_004e95c0(local_8,(int)this);
               }
             }
-            sVar18 = this->field_0643;
-            iVar9 = CONCAT22((short)((uint)iVar9 >> 0x10),sVar18);
-            sVar19 = this->field_0647;
-            sVar15 = this->field_0645;
-            if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-                ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
-              piVar14 = (int *)0x0;
+            sVar17 = this->field_0643;
+            iVar8 = CONCAT22((short)((uint)iVar8 >> 0x10),sVar17);
+            sVar18 = this->field_0647;
+            sVar14 = this->field_0645;
+            if (((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+                ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
+              pSVar13 = (STWorldObject *)0x0;
             }
             else {
-              iVar9 = (int)sVar18;
-              piVar14 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + iVar9) * 8);
+              iVar8 = (int)sVar17;
+              pSVar13 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         iVar8].objects[0];
             }
-            local_8 = piVar14;
-            if ((piVar14 == (int *)0x0) || (iVar9 = piVar14[6], iVar9 != this->field_0649)) {
+            local_8 = pSVar13;
+            if ((pSVar13 == (STWorldObject *)0x0) ||
+               (iVar8 = *(int *)&pSVar13->field_0x18, iVar8 != this->field_0649)) {
 LAB_0047b1c5:
-              iVar23 = CONCAT22((short)((uint)piVar14 >> 0x10),this->field_0645);
-              uVar11 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0647 + 1);
-              iVar9 = CONCAT22((short)((uint)&this->field_0x651 >> 0x10),this->field_0643);
-              iVar9 = thunk_FUN_0048dfd0(iVar9,iVar23,uVar11,iVar9,iVar23,(int *)uVar11,2,
-                                         (short *)&this->field_0x651,(short *)&this->field_0x653,
-                                         (short *)&this->field_0x655);
+              uVar10 = CONCAT22((short)((uint)pSVar13 >> 0x10),this->field_0645);
+              iVar8 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0647 + 1);
+              iVar22 = CONCAT22((short)((uint)&this->field_0x651 >> 0x10),this->field_0643);
+              iVar8 = thunk_FUN_0048dfd0(this,iVar22,uVar10,iVar8,iVar22,(int *)uVar10,iVar8,
+                                         (short *)0x2,(short *)&this->field_0x651,
+                                         (short *)&this->field_0x653);
 joined_r0x0047b202:
-              if (iVar9 == 0) {
+              if (iVar8 == 0) {
                 *(short *)&this->field_0x651 = this->field_0047;
                 *(short *)&this->field_0x653 = this->field_0049;
                 *(short *)&this->field_0x655 = this->field_004B;
               }
             }
             else {
-              iVar23 = (**(code **)(*piVar14 + 0xf8))();
-              iVar9 = 0;
-              piVar14 = extraout_ECX;
-              if (iVar23 == 0) goto LAB_0047b1c5;
-              puVar2 = &this->field_0x655;
-              puVar3 = &this->field_0x653;
-              if (local_8[0x10b] != 0) {
+              iVar22 = (*pSVar13->vtable[5].slots_00_28[2])();
+              iVar8 = 0;
+              pSVar13 = extraout_ECX;
+              if (iVar22 == 0) goto LAB_0047b1c5;
+              puVar2 = &this->field_0x653;
+              if (*(int *)&local_8[0x1d].field_0x18 != 0) {
                 if (&this->field_0x651 != (undefined1 *)0x0) {
-                  *(int *)&this->field_0x651 = local_8[0x10c];
-                }
-                if (puVar3 != (undefined1 *)0x0) {
-                  *(int *)puVar3 = local_8[0x10d];
+                  *(undefined4 *)&this->field_0x651 = *(undefined4 *)&local_8[0x1d].field_0x1c;
                 }
                 if (puVar2 != (undefined1 *)0x0) {
-                  *(int *)puVar2 = local_8[0x10e];
+                  *(int *)puVar2 = local_8[0x1d].value_20;
+                }
+                if (&this->field_0x655 != (undefined1 *)0x0) {
+                  *(STWorldObjectVTable **)&this->field_0x655 = local_8[0x1e].vtable;
                 }
               }
-              if (local_8[0x10b] == 0) {
-                uVar11 = CONCAT22((short)((uint)local_8 >> 0x10),this->field_0647 + 1);
-                iVar9 = CONCAT22((short)((uint)&this->field_0x651 >> 0x10),this->field_0643);
-                iVar9 = thunk_FUN_0048dfd0(iVar9,(uint)(ushort)this->field_0645,uVar11,iVar9,
-                                           (uint)(ushort)this->field_0645,(int *)uVar11,2,
-                                           (short *)&this->field_0x651,(short *)puVar3,
-                                           (short *)puVar2);
+              if (*(int *)&local_8[0x1d].field_0x18 == 0) {
+                iVar8 = CONCAT22((short)((uint)local_8 >> 0x10),this->field_0647 + 1);
+                iVar22 = CONCAT22((short)((uint)&this->field_0x651 >> 0x10),this->field_0643);
+                iVar8 = thunk_FUN_0048dfd0(this,iVar22,(uint)(ushort)this->field_0645,iVar8,iVar22,
+                                           (int *)(uint)(ushort)this->field_0645,iVar8,(short *)0x2,
+                                           (short *)&this->field_0x651,(short *)puVar2);
                 goto joined_r0x0047b202;
               }
             }
@@ -850,43 +850,43 @@ joined_r0x0047b202:
             sub_00460260(this,0);
             *(undefined4 *)&this->field_0x663 = 7;
 cf_common_exit_0047ADB5:
-            iVar9 = (*this->vtable->vfunc_D8)();
-            return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
+            iVar8 = (*this->vtable->vfunc_D8)();
+            return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
           }
           if (*(int *)((int)&this->field_0666 + 1) == 0) {
-            iVar10 = (ushort)(this->field_063D * 200) + 300;
-            iVar23 = CONCAT22((short)((uint)iVar10 >> 0x10),this->field_063B + 1) * 0xc9;
-            iVar13 = CONCAT22((short)((uint)iVar23 >> 0x10),this->field_0639 + 1);
-            iVar9 = iVar13 * 0xc9;
-            uVar8 = (undefined2)((uint)(iVar13 * 0x19) >> 0x10);
-            uVar8 = (*this->vtable->vfunc_10)
-                              (CONCAT22(uVar8,this->field_0041),
-                               CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0043),
-                               CONCAT22(uVar8,this->field_0045),iVar9,iVar23,iVar10);
-            *(undefined2 *)((int)&this->field_065E + 3) = uVar8;
+            iVar9 = (ushort)(this->field_063D * 200) + 300;
+            iVar22 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_063B + 1) * 0xc9;
+            iVar12 = CONCAT22((short)((uint)iVar22 >> 0x10),this->field_0639 + 1);
+            iVar8 = iVar12 * 0xc9;
+            uVar7 = (undefined2)((uint)(iVar12 * 0x19) >> 0x10);
+            uVar7 = (*this->vtable->vfunc_10)
+                              (CONCAT22(uVar7,this->field_0041),
+                               CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0043),
+                               CONCAT22(uVar7,this->field_0045),iVar8,iVar22,iVar9);
+            *(undefined2 *)((int)&this->field_065E + 3) = uVar7;
             *(undefined4 *)((int)&this->field_0666 + 1) = 1;
           }
-          iVar9 = *(int *)((int)&this->field_0666 + 1);
-          if (iVar9 == 1) {
-            uVar11 = sub_004176C0(this,*(short *)((int)&this->field_065E + 3));
-            uVar11 = sub_00417910(this,(short)uVar11);
-            if (uVar11 == 0xffffffff) {
-              iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x35f4,0,0,
+          iVar8 = *(int *)((int)&this->field_0666 + 1);
+          if (iVar8 == 1) {
+            uVar10 = sub_004176C0(this,*(short *)((int)&this->field_065E + 3));
+            uVar10 = sub_00417910(this,(short)uVar10);
+            if (uVar10 == 0xffffffff) {
+              iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x35f4,0,0,
                                          &DAT_007a4ccc,s_STBoatC__Teleport_TELEPORT_PMOVE_007ab498);
-              if (iVar9 == 0) {
+              if (iVar8 == 0) {
                 return -1;
               }
-              pcVar6 = (code *)swi(3);
-              iVar9 = (*pcVar6)();
-              return iVar9;
+              pcVar5 = (code *)swi(3);
+              iVar8 = (*pcVar5)();
+              return iVar8;
             }
 joined_r0x0047ada9:
-            if (uVar11 == 0) {
+            if (uVar10 == 0) {
               *(undefined4 *)((int)&this->field_0666 + 1) = 2;
             }
             goto cf_common_exit_0047ADB5;
           }
-          if (iVar9 == 2) {
+          if (iVar8 == 2) {
             STJellyGunC::sub_00415B30
                       ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
                        (this->field_0639 + 1) * 0xc9,(this->field_063B + 1) * 0xc9,
@@ -895,109 +895,112 @@ joined_r0x0047ada9:
           }
           if (*(int *)((int)&this->field_0666 + 1) != 3) goto cf_common_exit_0047A369;
           local_14 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_20,&local_1c);
-          uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar11;
-          iVar9 = (uVar11 >> 0x10) % 7 - 3;
-          uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar11;
-          uVar26 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar26;
-          local_18 = (uVar26 >> 0x10) % 7 - 3;
+          uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar10;
+          iVar8 = (uVar10 >> 0x10) % 7 - 3;
+          uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar10;
+          uVar25 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar25;
+          local_18 = (uVar25 >> 0x10) % 7 - 3;
           if (((int)this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
              (local_c = 0, this->field_0x2bf != '\0')) {
             local_10 = (undefined4 *)&this->field_0x2b3;
             do {
-              puVar12 = (undefined4 *)
+              puVar11 = (undefined4 *)
                         thunk_FUN_0041dc40(local_30,*local_10,*(undefined2 *)(local_10 + 1),
                                            this->field_006C);
-              uVar4 = *puVar12;
-              bVar25 = 0;
-              sVar24 = 0;
-              iVar23 = -1;
-              local_24 = *(short *)(puVar12 + 1);
-              sVar22 = 0;
+              uVar3 = *puVar11;
+              bVar24 = 0;
+              sVar23 = 0;
+              iVar22 = -1;
+              local_24 = *(short *)(puVar11 + 1);
               sVar21 = 0;
               sVar20 = 0;
-              sVar15 = 0;
               sVar19 = 0;
+              sVar14 = 0;
               sVar18 = 0;
-              local_28 = uVar4;
+              sVar17 = 0;
+              local_28 = uVar3;
               if (DAT_0080732c == 1) {
+                sVar17 = 0;
                 sVar18 = 0;
+                sVar14 = 0;
                 sVar19 = 0;
-                sVar15 = 0;
                 sVar20 = 0;
                 sVar21 = 0;
-                sVar22 = 0;
-                sVar24 = 0;
-                bVar25 = 0;
-                lVar17 = Library::MSVCRT::__ftol();
-                iVar16 = (int)local_24 + this->field_0045 + local_18 + (int)(short)lVar17;
-                iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
-                iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
+                sVar23 = 0;
+                bVar24 = 0;
+                lVar16 = Library::MSVCRT::__ftol();
+                iVar15 = (int)local_24 + this->field_0045 + local_18 + (int)(short)lVar16;
+                iVar9 = (int)this->field_0043 - (int)local_28._2_2_;
+                iVar12 = (int)(short)local_28 + iVar8 + this->field_0041;
               }
               else {
-                iVar16 = (int)local_24 + local_18 + this->field_0045;
-                local_28._2_2_ = (short)((uint)uVar4 >> 0x10);
-                iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
-                local_28._0_2_ = (short)uVar4;
-                iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
+                iVar15 = (int)local_24 + local_18 + this->field_0045;
+                local_28._2_2_ = (short)((uint)uVar3 >> 0x10);
+                iVar9 = (int)this->field_0043 - (int)local_28._2_2_;
+                local_28._0_2_ = (short)uVar3;
+                iVar12 = (int)(short)local_28 + iVar8 + this->field_0041;
               }
               TraksClassTy::TraksCreate
-                        (g_traksClass_00802A7C,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),
-                         iVar16,sVar18,sVar19,sVar15,sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
+                        (g_traksClass_00802A7C,1,2,7,iVar12,iVar9 + ((uVar10 >> 0x10) % 7 - 3),
+                         iVar15,sVar17,sVar18,sVar14,sVar19,sVar20,sVar21,iVar22,sVar23,bVar24);
               local_10 = (undefined4 *)((int)local_10 + 6);
               local_c = local_c + 1;
             } while (local_c < (int)(uint)(byte)this->field_0x2bf);
           }
           if (local_14 == -1) {
-            iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x361b,0,0,
+            iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x361b,0,0,
                                        &DAT_007a4ccc,s_STBoatC__Teleport_TELEPORT_PMOVE_007ab46c);
-            if (iVar9 == 0) {
+            if (iVar8 == 0) {
               return -1;
             }
-            pcVar6 = (code *)swi(3);
-            iVar9 = (*pcVar6)();
-            return iVar9;
+            pcVar5 = (code *)swi(3);
+            iVar8 = (*pcVar5)();
+            return iVar8;
           }
           if (local_14 != 0) goto cf_common_exit_0047A369;
           if (this->field_0635 == 1) {
-            sVar18 = this->field_0643;
-            sVar19 = this->field_0647;
-            sVar15 = this->field_0645;
-            if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-               (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))) {
-              local_8 = (int *)0x0;
+            sVar17 = this->field_0643;
+            sVar18 = this->field_0647;
+            sVar14 = this->field_0645;
+            if ((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+               (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))) {
+              local_8 = (STWorldObject *)0x0;
             }
             else {
-              local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+              local_8 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         (int)sVar17].objects[0];
             }
-            if (((local_8 != (int *)0x0) && (local_8[6] == this->field_0649)) &&
-               ((iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0 &&
-                ((local_8[0x12d] == 0 && (*(int *)((int)local_8 + 0x245) != 6))))))
-            goto LAB_0047a385;
+            if (((local_8 != (STWorldObject *)0x0) &&
+                (*(int *)&local_8->field_0x18 == this->field_0649)) &&
+               ((iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0 &&
+                ((*(int *)&local_8[0x21].field_0x10 == 0 && (*(int *)&local_8[0x10].field_0x5 != 6))
+                )))) goto LAB_0047a385;
             param_1 = PTR_00802a38->field_00E4;
           }
           else {
 LAB_0047a385:
-            sVar18 = this->field_0639;
-            sVar19 = this->field_063D;
-            sVar15 = this->field_063B;
-            if (((sVar18 < 0) ||
-                (((SHORT_007fb240 <= sVar18 || (sVar15 < 0)) || (SHORT_007fb242 <= sVar15)))) ||
-               ((sVar19 < 0 || (SHORT_007fb244 <= sVar19)))) {
-              local_8 = (int *)0x0;
+            sVar17 = this->field_0639;
+            sVar18 = this->field_063D;
+            sVar14 = this->field_063B;
+            if (((sVar17 < 0) ||
+                (((SHORT_007fb240 <= sVar17 || (sVar14 < 0)) || (SHORT_007fb242 <= sVar14)))) ||
+               ((sVar18 < 0 || (SHORT_007fb244 <= sVar18)))) {
+              local_8 = (STWorldObject *)0x0;
             }
             else {
-              local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+              local_8 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         (int)sVar17].objects[0];
             }
-            if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
-               ((iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0 &&
-                ((local_8[0x12d] == 0 && (*(int *)((int)local_8 + 0x245) != 6)))))) {
+            if (((local_8 != (STWorldObject *)0x0) &&
+                (*(int *)&local_8->field_0x18 == this->field_063F)) &&
+               ((iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0 &&
+                ((*(int *)&local_8[0x21].field_0x10 == 0 && (*(int *)&local_8[0x10].field_0x5 != 6))
+                )))) {
               psVar1 = (short *)((int)&this->field_065A + 1);
               *(undefined4 *)&this->field_0x742 = 1;
               thunk_FUN_004e9650(local_8,(undefined4 *)&this->field_0x657,
@@ -1013,58 +1016,58 @@ LAB_0047a385:
           }
           CmdToObj(this,CASE_3,&param_1);
 cf_common_exit_0047A369:
-          iVar9 = (*this->vtable->vfunc_D8)();
-          return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
+          iVar8 = (*this->vtable->vfunc_D8)();
+          return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
         }
-        iVar9 = sub_00460260(this,2);
-        switch(iVar9) {
+        iVar8 = sub_00460260(this,2);
+        switch(iVar8) {
         case 0:
           if (this->field_0635 == 1) {
-            sVar18 = this->field_0643;
-            sVar19 = this->field_0647;
-            sVar15 = this->field_0645;
-            if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-               ((sVar15 < 0 ||
-                (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
-              local_8 = (int *)0x0;
+            sVar17 = this->field_0643;
+            sVar18 = this->field_0647;
+            sVar14 = this->field_0645;
+            if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+               ((sVar14 < 0 ||
+                (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+              local_8 = (STWorldObject *)0x0;
             }
             else {
-              local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+              local_8 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         (int)sVar17].objects[0];
             }
-            if (local_8 == (int *)0x0) {
+            if (local_8 == (STWorldObject *)0x0) {
               return 0;
             }
-            if (local_8[6] != this->field_0649) {
+            if (*(int *)&local_8->field_0x18 != this->field_0649) {
               return 0;
             }
-            iVar9 = (**(code **)(*local_8 + 0xf8))();
-            if (iVar9 == 0) {
+            iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+            if (iVar8 == 0) {
               return 0;
             }
           }
-          sVar18 = this->field_0639;
-          sVar19 = this->field_063D;
-          sVar15 = this->field_063B;
-          if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-             (((sVar15 < 0 || ((SHORT_007fb242 <= sVar15 || (sVar19 < 0)))) ||
-              (SHORT_007fb244 <= sVar19)))) {
-            local_8 = (int *)0x0;
+          sVar17 = this->field_0639;
+          sVar18 = this->field_063D;
+          sVar14 = this->field_063B;
+          if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+             (((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) ||
+              (SHORT_007fb244 <= sVar18)))) {
+            local_8 = (STWorldObject *)0x0;
           }
           else {
-            local_8 = *(int **)(DAT_007fb248 +
-                               ((int)sVar19 * (int)SHORT_007fb246 +
-                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+            local_8 = g_worldCells
+                      [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                       (int)sVar17].objects[0];
           }
-          if (local_8 == (int *)0x0) {
+          if (local_8 == (STWorldObject *)0x0) {
             return 0;
           }
-          if (local_8[6] != this->field_063F) {
+          if (*(int *)&local_8->field_0x18 != this->field_063F) {
             return 0;
           }
-          iVar9 = (**(code **)(*local_8 + 0xf8))();
-          if (iVar9 == 0) {
+          iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+          if (iVar8 == 0) {
             return 0;
           }
           if (((this->field_0047 == *(short *)&this->field_0x651) &&
@@ -1077,39 +1080,41 @@ cf_common_exit_0047A369:
           thunk_FUN_004e95c0(local_8,(int)this);
           return 0;
         case 1:
-          sVar18 = this->field_0639;
-          sVar19 = this->field_063D;
-          sVar15 = this->field_063B;
-          if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-             ((sVar15 < 0 ||
-              (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
-            local_8 = (int *)0x0;
+          sVar17 = this->field_0639;
+          sVar18 = this->field_063D;
+          sVar14 = this->field_063B;
+          if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+             ((sVar14 < 0 ||
+              (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+            local_8 = (STWorldObject *)0x0;
           }
           else {
-            local_8 = *(int **)(DAT_007fb248 +
-                               ((int)sVar19 * (int)SHORT_007fb246 +
-                                (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+            local_8 = g_worldCells
+                      [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                       (int)sVar17].objects[0];
           }
-          if (((local_8 != (int *)0x0) && (local_8[6] == this->field_063F)) &&
-             (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
+          if (((local_8 != (STWorldObject *)0x0) &&
+              (*(int *)&local_8->field_0x18 == this->field_063F)) &&
+             (iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
             if (this->field_0635 != 1) {
               return 2;
             }
-            sVar18 = this->field_0643;
-            sVar19 = this->field_0647;
-            sVar15 = this->field_0645;
-            if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-               ((sVar15 < 0 ||
-                (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))))) {
-              local_8 = (int *)0x0;
+            sVar17 = this->field_0643;
+            sVar18 = this->field_0647;
+            sVar14 = this->field_0645;
+            if (((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) ||
+               ((sVar14 < 0 ||
+                (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+              local_8 = (STWorldObject *)0x0;
             }
             else {
-              local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+              local_8 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         (int)sVar17].objects[0];
             }
-            if (((local_8 != (int *)0x0) && (local_8[6] == this->field_0649)) &&
-               (iVar9 = (**(code **)(*local_8 + 0xf8))(), iVar9 != 0)) {
+            if (((local_8 != (STWorldObject *)0x0) &&
+                (*(int *)&local_8->field_0x18 == this->field_0649)) &&
+               (iVar8 = (*local_8->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
               return 2;
             }
           }
@@ -1118,29 +1123,29 @@ cf_common_exit_0047A369:
         default:
           return 2;
         case 3:
-          bVar7 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
+          bVar6 = sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
                                (short *)&this->field_0x655);
-          if (CONCAT31(extraout_var_01,bVar7) != 1) {
-            sVar18 = this->field_0639;
-            sVar19 = this->field_063D;
-            sVar15 = this->field_063B;
-            if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar15 < 0)) ||
-               (((SHORT_007fb242 <= sVar15 || (sVar19 < 0)) || (SHORT_007fb244 <= sVar19)))) {
-              local_8 = (int *)0x0;
+          if (CONCAT31(extraout_var_01,bVar6) != 1) {
+            sVar17 = this->field_0639;
+            sVar18 = this->field_063D;
+            sVar14 = this->field_063B;
+            if ((((sVar17 < 0) || (SHORT_007fb240 <= sVar17)) || (sVar14 < 0)) ||
+               (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))) {
+              local_8 = (STWorldObject *)0x0;
             }
             else {
-              local_8 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar19 * (int)SHORT_007fb246 +
-                                  (int)sVar15 * (int)SHORT_007fb240 + (int)sVar18) * 8);
+              local_8 = g_worldCells
+                        [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
+                         (int)sVar17].objects[0];
             }
-            if (local_8 == (int *)0x0) {
+            if (local_8 == (STWorldObject *)0x0) {
               return 0;
             }
-            if (local_8[6] != this->field_063F) {
+            if (*(int *)&local_8->field_0x18 != this->field_063F) {
               return 0;
             }
-            iVar9 = (**(code **)(*local_8 + 0xf8))();
-            if (iVar9 == 0) {
+            iVar8 = (*local_8->vtable[5].slots_00_28[2])();
+            if (iVar8 == 0) {
               return 0;
             }
             thunk_FUN_004e95c0(local_8,(int)this);
@@ -1148,22 +1153,22 @@ cf_common_exit_0047A369:
           }
           break;
         case -1:
-          iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3596,0,0,
+          iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3596,0,0,
                                      &DAT_007a4ccc,s_STBoatC__Teleport__TELEPORT_MOVE_007ab4c4);
-          if (iVar9 != 0) {
-            pcVar6 = (code *)swi(3);
-            iVar9 = (*pcVar6)();
-            return iVar9;
+          if (iVar8 != 0) {
+            pcVar5 = (code *)swi(3);
+            iVar8 = (*pcVar5)();
+            return iVar8;
           }
-          iVar9 = 0x3596;
+          iVar8 = 0x3596;
           goto LAB_00479ba6;
         }
       }
-      iVar9 = (int)*(short *)&this->field_0x655;
-      sVar19 = *(short *)&this->field_0x653;
-      sVar18 = *(short *)&this->field_0x651;
+      iVar8 = (int)*(short *)&this->field_0x655;
+      sVar18 = *(short *)&this->field_0x653;
+      sVar17 = *(short *)&this->field_0x651;
     }
-    sub_00481520(this,(int)sVar18,(int)sVar19,iVar9);
+    sub_00481520(this,(int)sVar17,(int)sVar18,iVar8);
   }
   sub_00460260(this,0);
 switchD_00479647_caseD_2:

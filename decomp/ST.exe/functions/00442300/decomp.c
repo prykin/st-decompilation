@@ -80,7 +80,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = &g_playerRuntime[(char)param_1].field9_0xf;
+    piVar10 = &g_playerRuntime[(char)param_1].field6_0xf;
     iVar4 = local_4c;
     do {
       if (*piVar10 == 0) {

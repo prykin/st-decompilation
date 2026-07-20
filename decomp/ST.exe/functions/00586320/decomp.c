@@ -5,7 +5,7 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
   byte bVar1;
   byte bVar2;
   char cVar3;
-  int *piVar4;
+  STWorldObject *pSVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
@@ -74,15 +74,17 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
             ((-1 < (short)local_14 &&
              (((short)local_14 < SHORT_007fb242 && (sVar11 = (short)local_1c, -1 < sVar11)))))) &&
            (sVar11 < SHORT_007fb244)) &&
-          (((piVar4 = *(int **)(DAT_007fb248 +
-                               ((int)(short)local_14 * (int)SHORT_007fb240 +
-                                (int)sVar11 * (int)SHORT_007fb246 + (int)sVar12) * 8),
-            piVar4 != (int *)0x0 &&
-            (((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
-             (iVar7 = (**(code **)(*piVar4 + 0xf0))(), iVar7 != 0)))) && ((uint)piVar4[9] < 8)))) &&
-         (((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8))
-          && (iVar7 = (**(code **)(*piVar4 + 0xf8))(), iVar7 != 0)))) {
-        bVar1 = *(byte *)(piVar4 + 9);
+          (((pSVar4 = g_worldCells
+                      [(int)(short)local_14 * (int)SHORT_007fb240 +
+                       (int)sVar11 * (int)SHORT_007fb246 + (int)sVar12].objects[0],
+            pSVar4 != (STWorldObject *)0x0 &&
+            (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
+             (iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0)))) &&
+           (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))) &&
+         (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+           ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)) &&
+          (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)))) {
+        bVar1 = *(byte *)&pSVar4[1].vtable;
         bVar2 = param_1->field_0024;
         iVar7 = param_1->field_0010;
         if (*(char *)(iVar7 + 0x146f) == '\0') {
@@ -119,9 +121,9 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
         if (bVar14) {
           param_1->field_0231 = 0;
           param_1->field_0257 = 0;
-          param_1->field_0273 = *(undefined2 *)((int)piVar4 + 0x32);
-          param_1->field_026F = piVar4[9];
-          return piVar4;
+          param_1->field_0273 = *(undefined2 *)&pSVar4[1].field_0xe;
+          param_1->field_026F = pSVar4[1].vtable;
+          return (int *)pSVar4;
         }
       }
       local_1c = local_1c + 1;
@@ -173,15 +175,15 @@ LAB_00586713:
                ((sVar11 = (short)local_c, -1 < sVar11 && (sVar11 < SHORT_007fb242)))))))) &&
             (((sVar8 = (short)local_1c, -1 < sVar8 &&
               ((sVar8 < SHORT_007fb244 &&
-               (piVar4 = *(int **)(DAT_007fb248 +
-                                  ((int)sVar8 * (int)SHORT_007fb246 +
-                                   (int)SHORT_007fb240 * (int)sVar11 + (int)sVar12) * 8),
-               piVar4 != (int *)0x0)))) &&
-             (((piVar4[8] == 1000 || (piVar4[8] == 0x14)) &&
-              ((iVar7 = (**(code **)(*piVar4 + 0xf0))(), iVar7 != 0 && ((uint)piVar4[9] < 8))))))))
-           && ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-               ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8)))) {
-          bVar1 = *(byte *)(piVar4 + 9);
+               (pSVar4 = g_worldCells
+                         [(int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar11 +
+                          (int)sVar12].objects[0], pSVar4 != (STWorldObject *)0x0)))) &&
+             (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
+              ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0 &&
+               (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))))))) &&
+           ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+            ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))) {
+          bVar1 = *(byte *)&pSVar4[1].vtable;
           bVar2 = param_1->field_0024;
           iVar7 = param_1->field_0010;
           if (*(char *)(iVar7 + 0x146f) == '\0') {
@@ -217,12 +219,12 @@ LAB_00586713:
             bVar14 = *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar7) !=
                      *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar7);
           }
-          if ((bVar14) && (iVar7 = (**(code **)(*piVar4 + 0xf8))(), iVar7 != 0)) {
+          if ((bVar14) && (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
             param_1->field_0231 = 0;
             param_1->field_0257 = 0;
-            param_1->field_0273 = *(undefined2 *)((int)piVar4 + 0x32);
-            param_1->field_026F = piVar4[9];
-            return piVar4;
+            param_1->field_0273 = *(undefined2 *)&pSVar4[1].field_0xe;
+            param_1->field_026F = pSVar4[1].vtable;
+            return (int *)pSVar4;
           }
         }
       }

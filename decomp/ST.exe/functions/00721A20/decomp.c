@@ -50,11 +50,11 @@ void __thiscall FUN_00721a20(void *this,int param_1)
       if ((param_1 != 0) && (*(int *)((int)this + 0x138) == 0)) {
         local_14 = 0x28;
         if ((*(byte *)((int)this + 0x20) & 4) == 0) {
-          local_10 = FUN_007219a0((int)this);
+          local_10 = FUN_007219a0(this);
         }
         else {
           iVar1 = FUN_00720de0((int)this);
-          local_10 = FUN_007219a0((int)this);
+          local_10 = FUN_007219a0(this);
           local_10 = (1 - iVar1) + local_10;
         }
         FUN_006e6060(this,local_24);

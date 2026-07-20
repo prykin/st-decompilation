@@ -87,7 +87,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   STFishC::sub_004162B0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
   local_1c = *(short *)&this->field_0x32;
   local_14 = (STFishC *)0x4;
-  param_1 = &g_playerRuntime[(char)param_1].field9_0xf;
+  param_1 = &g_playerRuntime[(char)param_1].field6_0xf;
   do {
     pAVar2 = (AnonShape_006ACC70_C8641025 *)*param_1;
     if ((pAVar2 != (AnonShape_006ACC70_C8641025 *)0x0) &&

@@ -33,7 +33,7 @@ void __fastcall FUN_00602be0(AnonShape_00602BE0_B1CC517D *param_1)
     }
   }
   else if (param_1->field_036E != 4) {
-    puVar3 = thunk_FUN_00602e90();
+    puVar3 = thunk_FUN_00602e90(param_1);
     param_1->field_03AB = puVar3;
     if (puVar3 != (undefined4 *)0x0) {
       thunk_FUN_004ad310((STT3DSprC *)&param_1->field_0x1d5);

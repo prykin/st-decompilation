@@ -7,7 +7,7 @@ undefined4 FUN_004d73b0(char param_1)
   undefined4 *puVar3;
   
   puVar2 = (uint *)&g_playerRuntime[param_1].field_0x7ee;
-  puVar3 = &g_playerRuntime[param_1].field1824_0x7da;
+  puVar3 = &g_playerRuntime[param_1].field1706_0x7da;
   for (iVar1 = 0x66; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;

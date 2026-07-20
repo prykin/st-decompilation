@@ -1,12 +1,12 @@
 
-void FUN_0075dfe0(int param_1)
+void FUN_0075dfe0(AnonShape_0075DFE0_9F2D3E56 *param_1)
 
 {
-  int iVar1;
+  AnonNested_0075DFE0_01B2_B9C955BF *pAVar1;
   
-  iVar1 = *(int *)(param_1 + 0x1b2);
-  *(undefined4 *)(iVar1 + 0x24) = 0;
-  *(undefined4 *)(iVar1 + 0x2c) = *(undefined4 *)(param_1 + 0x6c);
+  pAVar1 = param_1->field_01B2;
+  pAVar1->field_0024 = 0;
+  pAVar1->field_002C = param_1->field_006C;
   return;
 }
 

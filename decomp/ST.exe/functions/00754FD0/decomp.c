@@ -19,7 +19,7 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,undefi
   *(undefined4 *)(param_1->field_000C + 0x40) = 0;
   *(undefined4 *)(param_1->field_000C + 0x44) = 0xffffffff;
   Library::MSVCRT::FUN_00730c40((undefined1 *)(param_1->field_000C + 0x36),0x7f2ce8);
-  iVar2 = FUN_00753b40((int)param_1);
+  iVar2 = FUN_00753b40((AnonShape_00753B40_7E7955C3 *)param_1);
   *(int *)(param_1->field_000C + 0x24) = iVar2;
   uVar3 = *(uint *)(param_1->field_000C + 0x24);
   if (0 < (int)uVar3) {
@@ -43,7 +43,8 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,undefi
       *puVar5 = 0xffffffff;
       puVar5[1] = 0xffffffff;
       *(undefined2 *)(puVar5 + 2) = 0;
-      uVar3 = FUN_00757360((int)param_1,(AnonShape_00757360_9B4621C9 *)param_1->field_000C);
+      uVar3 = FUN_00757360((AnonShape_00757360_9C23D284 *)param_1,
+                           (AnonShape_00757360_9B4621C9 *)param_1->field_000C);
     }
     else if (0 < (int)uVar3) {
       return uVar3 | 0xffff0000;

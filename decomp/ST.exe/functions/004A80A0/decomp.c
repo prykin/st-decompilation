@@ -21,7 +21,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   int local_c;
   DArrayTy *local_8;
   
-  iVar3 = *(int *)(this->field_022E + 0xc);
+  iVar3 = this->field_022E->field_000C;
   local_c = iVar3;
   local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   uVar4 = 0;

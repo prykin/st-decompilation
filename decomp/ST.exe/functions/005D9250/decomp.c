@@ -6,82 +6,83 @@
 void __thiscall SIDTy::PaintExplanation(SIDTy *this)
 
 {
-  code *pcVar1;
-  SIDTy *pSVar2;
-  int iVar3;
-  undefined4 *puVar4;
-  undefined4 uVar5;
-  uint *puVar6;
-  uint uVar7;
-  ccFntTy *this_00;
+  AnonPointee_SIDTy_1CC0 *pAVar1;
+  code *pcVar2;
+  SIDTy *pSVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  undefined4 uVar6;
+  uint *puVar7;
   uint uVar8;
+  ccFntTy *this_00;
+  uint uVar9;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int iVar9;
   int iVar10;
   int iVar11;
+  int iVar12;
   InternalExceptionFrame local_4c;
   SIDTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pSVar2 = local_8;
-  if (iVar3 == 0) {
-    FUN_006b4170(local_8->field_1CB8,0,0,0x7d,*(int *)(local_8->field_1CC0 + 4),
-                 *(int *)(local_8->field_1CC0 + 8),0xff);
-    iVar3 = pSVar2->field_1CC0;
-    uVar8 = *(uint *)(iVar3 + 0x14);
-    if (uVar8 == 0) {
-      uVar8 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(iVar3 + 8);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pSVar3 = local_8;
+  if (iVar4 == 0) {
+    FUN_006b4170((int)local_8->field_1CB8,0,0,0x7d,local_8->field_1CC0->field_0004,
+                 local_8->field_1CC0->field_0008,0xff);
+    pAVar1 = pSVar3->field_1CC0;
+    uVar9 = pAVar1->field_0014;
+    if (uVar9 == 0) {
+      uVar9 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+              pAVar1->field_0008;
     }
-    puVar4 = (undefined4 *)FUN_006b4fa0(iVar3);
-    for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+    puVar5 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+    for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined1 *)puVar4 = 0xff;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *(undefined1 *)puVar5 = 0xff;
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,pSVar2->field_1CC0,0,0,0,0,0);
-    if (pSVar2->field_1A5F == '\0') {
+    ccFntTy::SetSurf(PTR_0081176c->field_0034,(int)pSVar3->field_1CC0,0,0,0,0,0);
+    if (pSVar3->field_1A5F == '\0') {
+      iVar12 = -1;
       iVar11 = -1;
+      uVar9 = 0;
       iVar10 = -1;
-      uVar8 = 0;
-      iVar9 = -1;
-      iVar3 = -2;
-      puVar6 = (uint *)FUN_006b0140(0x2521,HINSTANCE_00807618);
+      iVar4 = -2;
+      puVar7 = (uint *)FUN_006b0140(0x2521,HINSTANCE_00807618);
       this_00 = PTR_0081176c->field_0034;
     }
     else {
-      puVar4 = &DAT_00807ddd;
-      puVar6 = (uint *)&pSVar2->field_1CD4;
-      uVar5 = FUN_006b0140(0x2520,HINSTANCE_00807618);
-      wsprintfA((LPSTR)puVar6,s__0_s__5_s_0__007cd6c4,uVar5,puVar4);
+      puVar5 = &DAT_00807ddd;
+      puVar7 = (uint *)&pSVar3->field_1CD4;
+      uVar6 = FUN_006b0140(0x2520,HINSTANCE_00807618);
+      wsprintfA((LPSTR)puVar7,s__0_s__5_s_0__007cd6c4,uVar6,puVar5);
       this_00 = PTR_0081176c->field_0034;
+      iVar12 = -1;
       iVar11 = -1;
+      uVar9 = 0;
       iVar10 = -1;
-      uVar8 = 0;
-      iVar9 = -1;
-      iVar3 = -2;
+      iVar4 = -2;
     }
-    ccFntTy::WrTxt(this_00,puVar6,iVar3,iVar9,uVar8,iVar10,iVar11);
-    FUN_006b5440(pSVar2->field_1CB8,0,0,0x7d,pSVar2->field_1CC0,0,0xff);
+    ccFntTy::WrTxt(this_00,puVar7,iVar4,iVar10,uVar9,iVar11,iVar12);
+    FUN_006b5440((int)pSVar3->field_1CB8,0,0,0x7d,(int)pSVar3->field_1CC0,0,0xff);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x17b,0,iVar3,&DAT_007a4ccc,
-                             s_SIDTy__PaintExplanation_007cd6a8);
-  if (iVar9 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  iVar10 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x17b,0,iVar4,&DAT_007a4ccc,
+                              s_SIDTy__PaintExplanation_007cd6a8);
+  if (iVar10 != 0) {
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x17b);
+  RaiseInternalException(iVar4,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x17b);
   return;
 }
 

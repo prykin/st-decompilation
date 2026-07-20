@@ -103,7 +103,15 @@ public class STCuratedRecoveryApplier extends GhidraScript {
                         continue;
                     }
 
-                    if (!currentName.equals(expectedName) || !currentSignature.equals(expectedSignature)) {
+                    // A conservative baseline pass may already have installed the exact
+                    // reviewed prototype while leaving the synthetic function name intact.
+                    // Accept that state as a valid baseline; no looser signature drift is
+                    // permitted, and the address/name guards still apply.
+                    boolean desiredSignatureBaseline = signatureMatches(function, convention,
+                        returnType, parameters);
+                    if (!currentName.equals(expectedName) ||
+                            (!currentSignature.equals(expectedSignature) &&
+                                !desiredSignatureBaseline)) {
                         report.add(result(id, addressText, "conflict",
                             "expected " + expectedName + " | " + expectedSignature +
                             "; found " + currentName + " | " + currentSignature));

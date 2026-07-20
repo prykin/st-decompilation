@@ -85,7 +85,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   local_16 = (AnonShape_004FF380_D63D7463 *)local_4c->field_0B4B;
   Library::DKW::TBL::FUN_006afe40((int *)&local_16,(uint *)local_4c->field_0B95);
   *(undefined4 *)(this_00->field_0B95 + 0xc) = 0;
-  this_00->field_0B4B = local_16;
+  this_00->field_0B4B = (DArrayTy *)local_16;
   STAllPlayersC::GetPanelInfo
             (g_sTAllPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
@@ -316,9 +316,9 @@ LAB_004ff87a:
     if (GVar2 != local_2a) {
       uVar6 = thunk_FUN_00526ba0(GVar2,this_00->field_0B85);
       pbVar14 = (byte *)FUN_0070b3a0(this_00->field_02BE,uVar6);
-      DibPut((undefined4 *)this_00->field_0184,0xb,0x31,'\x01',pbVar14);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0184,0xb,0x31,'\x01',pbVar14);
       pbVar14 = (byte *)FUN_0070b3a0(this_00->field_02CA,1);
-      DibPut((undefined4 *)this_00->field_0184,10,0x30,'\x06',pbVar14);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0184,10,0x30,'\x06',pbVar14);
       if (-1 < (int)this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,

@@ -7,7 +7,7 @@ FUN_005f88d0(void *this,int param_1,int param_2,int *param_3,undefined4 *param_4
   short sVar1;
   short sVar2;
   short sVar3;
-  void *this_00;
+  STWorldObject *this_00;
   int iVar4;
   undefined4 uVar5;
   
@@ -17,10 +17,10 @@ FUN_005f88d0(void *this,int param_1,int param_2,int *param_3,undefined4 *param_4
   uVar5 = 0;
   if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
       ((sVar2 < SHORT_007fb242 && (-1 < sVar1)))) && (sVar1 < SHORT_007fb244)) {
-    this_00 = *(void **)(DAT_007fb248 + 4 +
-                        ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
-                        (int)sVar3) * 8);
-    if ((this_00 != (void *)0x0) && (*(int *)((int)this_00 + 0x20) == 0xbe)) {
+    this_00 = g_worldCells
+              [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
+              objects[1];
+    if ((this_00 != (STWorldObject *)0x0) && (this_00->value_20 == 0xbe)) {
       if (param_2 == 0) {
         iVar4 = thunk_FUN_00630340(this_00,param_1,(int *)0x0,(undefined4 *)0x0,(undefined4 *)0x0);
         if (iVar4 != 0) {

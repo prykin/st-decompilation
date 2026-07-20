@@ -11,7 +11,7 @@ undefined4 FUN_004d7c10(char param_1,int param_2,int param_3,int param_4)
   iVar2 = (int)param_1;
   uVar4 = 0;
   iVar3 = param_2 * 0x44;
-  if (param_4 <= (int)(&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11]) {
+  if (param_4 <= (int)(&g_playerRuntime[iVar2].field1707_0x7de)[param_2 * 0x11]) {
     *(undefined4 *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = 0;
     do {
       uVar1 = *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3);
@@ -26,13 +26,13 @@ undefined4 FUN_004d7c10(char param_1,int param_2,int param_3,int param_4)
       }
     } while (*piVar5 != param_3);
     thunk_FUN_004d8800(param_1,param_4);
-    (&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11] =
-         (&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11] - param_4;
+    (&g_playerRuntime[iVar2].field1707_0x7de)[param_2 * 0x11] =
+         (&g_playerRuntime[iVar2].field1707_0x7de)[param_2 * 0x11] - param_4;
     *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar3) =
          *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar3) - param_4;
     piVar5[1] = piVar5[1] - param_4;
     uVar4 = 1;
-    if ((&g_playerRuntime[iVar2].field1825_0x7de)[param_2 * 0x11] == 0) {
+    if ((&g_playerRuntime[iVar2].field1707_0x7de)[param_2 * 0x11] == 0) {
       thunk_FUN_004d78e0(param_1);
     }
   }

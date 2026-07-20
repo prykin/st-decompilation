@@ -3,33 +3,34 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
 
 {
   short sVar1;
-  int iVar2;
+  STWorldObject *pSVar2;
   int iVar3;
-  short sVar4;
+  int iVar4;
   short sVar5;
-  int iVar6;
+  short sVar6;
   int iVar7;
-  short sVar8;
+  int iVar8;
   short sVar9;
-  int iVar10;
+  short sVar10;
+  int iVar11;
   int local_8;
   
-  iVar7 = *(int *)((int)this + 0x2ba);
-  *param_4 = iVar7;
+  iVar8 = *(int *)((int)this + 0x2ba);
+  *param_4 = iVar8;
   if (*(char *)((int)this + 0x25a) != '\0') {
     if (*(int *)((int)this + 0x287) == 0) {
-      iVar10 = *(int *)((int)this + 0x293);
+      iVar11 = *(int *)((int)this + 0x293);
     }
     else {
-      iVar10 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) *
+      iVar11 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) *
                *(int *)((int)this + 0x287);
-      iVar10 = (int)(iVar10 + (iVar10 >> 0x1f & 0xfU)) >> 4;
+      iVar11 = (int)(iVar11 + (iVar11 >> 0x1f & 0xfU)) >> 4;
     }
     if (*(int *)((int)this + 0x28b) != 0) {
-      iVar7 = *(int *)((int)this + 0x28b) + iVar7;
-      *param_4 = iVar7;
-      if (iVar7 < 0) {
-        *param_4 = iVar7 + 0x18;
+      iVar8 = *(int *)((int)this + 0x28b) + iVar8;
+      *param_4 = iVar8;
+      if (iVar8 < 0) {
+        *param_4 = iVar8 + 0x18;
       }
       if (0x17 < *param_4) {
         *param_4 = *param_4 + -0x18;
@@ -38,7 +39,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
         *(undefined4 *)((int)this + 0x28b) = 0;
       }
     }
-    if (*(int *)((int)this + 0x293) <= iVar10) {
+    if (*(int *)((int)this + 0x293) <= iVar11) {
       if (*(int *)((int)this + 0x28b) != 0) {
         *(undefined4 *)((int)this + 0x287) = 0;
         return 1;
@@ -49,35 +50,35 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
       *(undefined4 *)((int)this + 0x283) = 0;
       return 1;
     }
-    iVar7 = *(int *)((int)this + 0x29b);
-    iVar6 = *(int *)((int)this + 0x29f);
-    iVar2 = *(int *)((int)this + 0x25f);
-    iVar3 = *(int *)((int)this + 0x263);
-    *param_1 = (*(int *)((int)this + 0x297) * iVar10) / 10000 + *(int *)((int)this + 0x25b);
-    *param_2 = (iVar7 * iVar10) / 10000 + iVar2;
-    *param_3 = (iVar6 * iVar10) / 10000 + iVar3;
+    iVar8 = *(int *)((int)this + 0x29b);
+    iVar7 = *(int *)((int)this + 0x29f);
+    iVar3 = *(int *)((int)this + 0x25f);
+    iVar4 = *(int *)((int)this + 0x263);
+    *param_1 = (*(int *)((int)this + 0x297) * iVar11) / 10000 + *(int *)((int)this + 0x25b);
+    *param_2 = (iVar8 * iVar11) / 10000 + iVar3;
+    *param_3 = (iVar7 * iVar11) / 10000 + iVar4;
     goto cf_common_exit_005ED874;
   }
-  iVar10 = *(int *)((int)this + 0x263);
-  if (*(int *)((int)this + 0x26f) - iVar10 < 1) {
-    local_8 = -(uint)(*(int *)((int)this + 0x26f) != iVar10);
+  iVar11 = *(int *)((int)this + 0x263);
+  if (*(int *)((int)this + 0x26f) - iVar11 < 1) {
+    local_8 = -(uint)(*(int *)((int)this + 0x26f) != iVar11);
   }
   else {
     local_8 = 1;
   }
   if (*(int *)((int)this + 0x287) == 0) {
-    iVar10 = *(int *)((int)this + 0x2c6);
+    iVar11 = *(int *)((int)this + 0x2c6);
   }
   else {
-    iVar6 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) * *(int *)((int)this + 0x287) *
+    iVar7 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) * *(int *)((int)this + 0x287) *
             local_8;
-    iVar10 = ((int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3) + iVar10;
+    iVar11 = ((int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3) + iVar11;
   }
   if (*(int *)((int)this + 0x28b) != 0) {
-    iVar7 = *(int *)((int)this + 0x28b) + iVar7;
-    *param_4 = iVar7;
-    if (iVar7 < 0) {
-      *param_4 = iVar7 + 0x18;
+    iVar8 = *(int *)((int)this + 0x28b) + iVar8;
+    *param_4 = iVar8;
+    if (iVar8 < 0) {
+      *param_4 = iVar8 + 0x18;
     }
     if (0x17 < *param_4) {
       *param_4 = *param_4 + -0x18;
@@ -86,33 +87,33 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
       *(undefined4 *)((int)this + 0x28b) = 0;
     }
   }
-  sVar1 = (short)(iVar10 >> 0x1f);
-  if (iVar10 < 0) {
-    iVar7 = (short)(((short)(iVar10 / 200) + sVar1) - (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)
+  sVar1 = (short)(iVar11 >> 0x1f);
+  if (iVar11 < 0) {
+    iVar8 = (short)(((short)(iVar11 / 200) + sVar1) - (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)
                    ) + -1;
   }
   else {
-    iVar7 = (int)(short)(((short)(iVar10 / 200) + sVar1) -
-                        (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
+    iVar8 = (int)(short)(((short)(iVar11 / 200) + sVar1) -
+                        (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
   }
   sVar1 = *(short *)((int)this + 0x246);
-  if (iVar7 != sVar1) {
-    if ((1 < *(byte *)((int)this + 0x252)) && (*(short *)((int)this + 600) == iVar7)) {
-      iVar6 = thunk_FUN_00495ff0(*(short *)((int)this + 0x242),*(short *)((int)this + 0x244),sVar1,0
+  if (iVar8 != sVar1) {
+    if ((1 < *(byte *)((int)this + 0x252)) && (*(short *)((int)this + 600) == iVar8)) {
+      iVar7 = thunk_FUN_00495ff0(*(short *)((int)this + 0x242),*(short *)((int)this + 0x244),sVar1,0
                                  ,this);
-      if (iVar6 == 0) {
+      if (iVar7 == 0) {
         *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + -1;
       }
-      *(short *)((int)this + 0x246) = (short)iVar7;
+      *(short *)((int)this + 0x246) = (short)iVar8;
       *(undefined1 *)((int)this + 0x253) = 0xff;
       *param_1 = *(int *)((int)this + 0x277);
       *param_2 = *(int *)((int)this + 0x27b);
-      *param_3 = iVar10;
+      *param_3 = iVar11;
       return 1;
     }
     *param_1 = *(int *)((int)this + 0x277);
     *param_2 = *(int *)((int)this + 0x27b);
-    *param_3 = iVar10;
+    *param_3 = iVar11;
     *(undefined4 *)((int)this + 0x283) = 1;
     if (*param_1 != *(int *)((int)this + 0x267)) {
       return 1;
@@ -131,18 +132,18 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
     *(undefined4 *)((int)this + 0x283) = 0;
     return 1;
   }
-  iVar7 = (int)(short)(sVar1 * 200 + 100);
+  iVar8 = (int)(short)(sVar1 * 200 + 100);
   if (1 < *(byte *)((int)this + 0x252)) {
     *param_1 = *(int *)((int)this + 0x277);
     *param_2 = *(int *)((int)this + 0x27b);
-    *param_3 = iVar10;
+    *param_3 = iVar11;
     goto cf_common_exit_005ED874;
   }
   if (local_8 == 0) {
 LAB_005ed68c:
     *param_1 = *(int *)((int)this + 0x277);
     *param_2 = *(int *)((int)this + 0x27b);
-    *param_3 = iVar10;
+    *param_3 = iVar11;
     *(undefined4 *)((int)this + 0x283) = 1;
     if (*param_1 != *(int *)((int)this + 0x267)) {
       return 1;
@@ -161,29 +162,30 @@ LAB_005ed68c:
     *(undefined4 *)((int)this + 0x283) = 0;
     return 1;
   }
-  sVar4 = (short)local_8;
-  if ((iVar7 + 0x1e < iVar10) && (0 < local_8)) {
-    sVar9 = *(short *)((int)this + 0x244);
-    sVar8 = sVar1 + sVar4;
-    sVar5 = *(short *)((int)this + 0x242);
-    if (((-1 < sVar5) && (sVar5 < SHORT_007fb240)) &&
-       ((-1 < sVar9 && (((sVar9 < SHORT_007fb242 && (-1 < sVar8)) && (sVar8 < SHORT_007fb244)))))) {
-      iVar7 = *(int *)(DAT_007fb248 +
-                      ((int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar9 +
-                      (int)sVar5) * 8);
+  sVar5 = (short)local_8;
+  if ((iVar8 + 0x1e < iVar11) && (0 < local_8)) {
+    sVar10 = *(short *)((int)this + 0x244);
+    sVar9 = sVar1 + sVar5;
+    sVar6 = *(short *)((int)this + 0x242);
+    if (((-1 < sVar6) && (sVar6 < SHORT_007fb240)) &&
+       ((-1 < sVar10 && (((sVar10 < SHORT_007fb242 && (-1 < sVar9)) && (sVar9 < SHORT_007fb244))))))
+    {
+      pSVar2 = g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar10 + (int)sVar6].
+               objects[0];
 joined_r0x005ed4b7:
-      if (iVar7 != 0) goto LAB_005ed643;
+      if (pSVar2 != (STWorldObject *)0x0) goto LAB_005ed643;
     }
   }
   else {
-    if ((iVar7 + -0x1e <= iVar10) || (-1 < local_8)) {
-      if (((0 < local_8) && (*(int *)((int)this + 0x26f) <= iVar10)) ||
-         ((local_8 < 0 && (iVar10 <= *(int *)((int)this + 0x26f))))) {
+    if ((iVar8 + -0x1e <= iVar11) || (-1 < local_8)) {
+      if (((0 < local_8) && (*(int *)((int)this + 0x26f) <= iVar11)) ||
+         ((local_8 < 0 && (iVar11 <= *(int *)((int)this + 0x26f))))) {
         *(undefined4 *)((int)this + 0x287) = 0;
         *param_1 = *(int *)((int)this + 0x277);
         *param_2 = *(int *)((int)this + 0x27b);
         *param_3 = *(int *)((int)this + 0x26f);
-        iVar10 = *(int *)((int)this + 0x26f);
+        iVar11 = *(int *)((int)this + 0x26f);
         if (*(int *)((int)this + 0x273) == *(int *)((int)this + 0x2ba)) {
           *(undefined4 *)((int)this + 0x28b) = 0;
           *(undefined4 *)((int)this + 0x283) = 0;
@@ -192,26 +194,26 @@ joined_r0x005ed4b7:
       }
       goto LAB_005ed68c;
     }
-    sVar9 = *(short *)((int)this + 0x244);
-    sVar8 = sVar1 + sVar4;
-    sVar5 = *(short *)((int)this + 0x242);
-    if ((((-1 < sVar5) && (sVar5 < SHORT_007fb240)) && (-1 < sVar9)) &&
-       (((sVar9 < SHORT_007fb242 && (-1 < sVar8)) && (sVar8 < SHORT_007fb244)))) {
-      iVar7 = *(int *)(DAT_007fb248 +
-                      ((int)sVar8 * (int)SHORT_007fb246 + (int)sVar9 * (int)SHORT_007fb240 +
-                      (int)sVar5) * 8);
+    sVar10 = *(short *)((int)this + 0x244);
+    sVar9 = sVar1 + sVar5;
+    sVar6 = *(short *)((int)this + 0x242);
+    if ((((-1 < sVar6) && (sVar6 < SHORT_007fb240)) && (-1 < sVar10)) &&
+       (((sVar10 < SHORT_007fb242 && (-1 < sVar9)) && (sVar9 < SHORT_007fb244)))) {
+      pSVar2 = g_worldCells
+               [(int)sVar9 * (int)SHORT_007fb246 + (int)sVar10 * (int)SHORT_007fb240 + (int)sVar6].
+               objects[0];
       goto joined_r0x005ed4b7;
     }
   }
-  iVar7 = DumpClassC::WritePtr(sVar5,sVar9,sVar1 + sVar4,0,this);
-  if (iVar7 == 0) {
+  iVar8 = DumpClassC::WritePtr(sVar6,sVar10,sVar1 + sVar5,0,this);
+  if (iVar8 == 0) {
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
     *(undefined2 *)((int)this + 0x254) = *(undefined2 *)((int)this + 0x242);
     *(undefined2 *)((int)this + 0x256) = *(undefined2 *)((int)this + 0x244);
-    *(short *)((int)this + 600) = *(short *)((int)this + 0x246) + sVar4;
+    *(short *)((int)this + 600) = *(short *)((int)this + 0x246) + sVar5;
     *param_1 = *(int *)((int)this + 0x277);
     *param_2 = *(int *)((int)this + 0x27b);
-    *param_3 = iVar10;
+    *param_3 = iVar11;
 cf_common_exit_005ED874:
     *(undefined4 *)((int)this + 0x283) = 1;
     return 1;

@@ -1,50 +1,50 @@
 
-uint FUN_00757530(int param_1,int param_2,undefined4 *param_3)
+uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *param_3)
 
 {
   uint uVar1;
   short sVar2;
   int iVar3;
-  uint uVar4;
-  uint *puVar5;
-  int *piVar6;
-  undefined4 *puVar7;
+  AnonNested_00757530_000C_743CE253 *pAVar4;
+  uint uVar5;
+  AnonShape_00757530_EEED7D69 *pAVar6;
+  AnonNested_00757530_000C_743CE253 **ppAVar7;
   
   if (param_2 == 0) {
-    piVar6 = (int *)(param_1 + 0x18);
-    puVar5 = (uint *)(param_1 + 0x20);
+    ppAVar7 = (AnonNested_00757530_000C_743CE253 **)&param_1[1].field_0x8;
+    pAVar6 = param_1 + 2;
   }
   else {
-    piVar6 = (int *)(param_1 + 0x1c);
-    puVar5 = (uint *)(param_1 + 0x24);
+    ppAVar7 = &param_1[1].field_000C;
+    pAVar6 = (AnonShape_00757530_EEED7D69 *)&param_1[2].field_0x4;
   }
-  sVar2 = *(short *)(*(int *)(param_1 + 0xc) + 0x34);
+  sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
-    iVar3 = (**(code **)(*(int *)(param_1 + 0xc) + 8))(param_3 + 2);
+    iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
   }
   else {
     iVar3 = (int)sVar2;
   }
   uVar1 = iVar3 + 8;
-  if ((int)*puVar5 < (int)uVar1) {
-    iVar3 = FUN_006bfb50((undefined4 *)*piVar6,uVar1);
-    *piVar6 = iVar3;
-    if (iVar3 == 0) {
+  if ((int)*(uint *)pAVar6 < (int)uVar1) {
+    pAVar4 = (AnonNested_00757530_000C_743CE253 *)FUN_006bfb50((undefined4 *)*ppAVar7,uVar1);
+    *ppAVar7 = pAVar4;
+    if (pAVar4 == (AnonNested_00757530_000C_743CE253 *)0x0) {
       return 0;
     }
-    *puVar5 = uVar1;
+    *(uint *)pAVar6 = uVar1;
   }
   if (uVar1 != 0) {
-    puVar7 = (undefined4 *)*piVar6;
-    for (uVar4 = uVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar7 = *param_3;
+    pAVar4 = *ppAVar7;
+    for (uVar5 = uVar1 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined4 *)pAVar4 = *param_3;
       param_3 = param_3 + 1;
-      puVar7 = puVar7 + 1;
+      pAVar4 = (AnonNested_00757530_000C_743CE253 *)&pAVar4->field_0x4;
     }
-    for (uVar4 = uVar1 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(undefined1 *)puVar7 = *(undefined1 *)param_3;
+    for (uVar5 = uVar1 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined1 *)pAVar4 = *(undefined1 *)param_3;
       param_3 = (undefined4 *)((int)param_3 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      pAVar4 = (AnonNested_00757530_000C_743CE253 *)&pAVar4->field_0x1;
     }
   }
   return uVar1;

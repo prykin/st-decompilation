@@ -92,7 +92,7 @@ LAB_004de602:
       *piVar7 = 0;
       piVar7 = piVar7 + 1;
     }
-    pAVar4 = *(AnonShape_006ACC70_C8641025 **)((int)&g_playerRuntime[0].field2282_0x9ce + iVar2);
+    pAVar4 = *(AnonShape_006ACC70_C8641025 **)((int)&g_playerRuntime[0].field2164_0x9ce + iVar2);
     if (pAVar4 != (AnonShape_006ACC70_C8641025 *)0x0) {
       uVar6 = 0;
       if (pAVar4->field_000C != 0) {
@@ -108,7 +108,7 @@ LAB_004de602:
           } while (param_1 < 0xc3);
           uVar6 = uVar6 + 1;
           pAVar4 = *(AnonShape_006ACC70_C8641025 **)
-                    ((int)&g_playerRuntime[0].field2282_0x9ce + local_14);
+                    ((int)&g_playerRuntime[0].field2164_0x9ce + local_14);
         } while (uVar6 < pAVar4->field_000C);
       }
       iVar3 = 0;

@@ -1,50 +1,51 @@
 
-void FUN_0075d370(int *param_1,int *param_2,int *param_3,undefined4 param_4,int param_5,int *param_6
-                 ,int param_7)
+void FUN_0075d370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *param_3,undefined4 param_4,
+                 int param_5,int *param_6,int param_7)
 
 {
-  int iVar1;
-  int *piVar2;
+  AnonNested_0075D370_01B2_35AE3A6A *pAVar1;
+  AnonShape_0075D370_6C1A68B3 *pAVar2;
   uint uVar3;
   int iVar4;
-  uint uVar5;
+  undefined1 *puVar5;
+  uint uVar6;
   int local_c;
   int local_8;
   
-  piVar2 = param_1;
-  iVar1 = *(int *)((int)param_1 + 0x1b2);
-  if (*(int *)((int)param_1 + 0x126) <= *(int *)(iVar1 + 0x5c)) {
-    local_8 = param_1[0x34];
+  pAVar2 = param_1;
+  pAVar1 = param_1->field_01B2;
+  if (param_1->field_0126 <= (int)pAVar1->field_005C) {
+    local_8 = *(int *)&param_1->field_0xd0;
     local_c = 0;
-    if (0 < param_1[7]) {
-      iVar4 = iVar1 + 0xc;
-      param_1 = param_2;
+    if (0 < *(int *)&param_1->field_0x1c) {
+      puVar5 = &pAVar1->field_0xc;
+      param_1 = (AnonShape_0075D370_6C1A68B3 *)param_2;
       do {
-        (**(code **)(iVar4 + 0x28))
-                  (piVar2,local_8,*param_1 + *(int *)(iVar4 + 0x58) * *param_3 * 4,iVar4);
-        param_1 = param_1 + 1;
+        (**(code **)(puVar5 + 0x28))
+                  (pAVar2,local_8,*(int *)param_1 + *(int *)(puVar5 + 0x58) * *param_3 * 4,puVar5);
+        param_1 = (AnonShape_0075D370_6C1A68B3 *)&param_1->field_0x4;
         local_c = local_c + 1;
-        iVar4 = iVar4 + 4;
+        puVar5 = puVar5 + 4;
         local_8 = local_8 + 0x54;
-      } while (local_c < piVar2[7]);
+      } while (local_c < *(int *)&pAVar2->field_0x1c);
     }
-    *(undefined4 *)(iVar1 + 0x5c) = 0;
+    pAVar1->field_005C = 0;
   }
-  uVar5 = *(int *)((int)piVar2 + 0x126) - *(int *)(iVar1 + 0x5c);
-  if (*(uint *)(iVar1 + 0x60) < uVar5) {
-    uVar5 = *(uint *)(iVar1 + 0x60);
+  uVar6 = pAVar2->field_0126 - pAVar1->field_005C;
+  if ((uint)pAVar1->field_0060 < uVar6) {
+    uVar6 = pAVar1->field_0060;
   }
   uVar3 = param_7 - *param_6;
-  if (uVar3 < uVar5) {
-    uVar5 = uVar3;
+  if (uVar3 < uVar6) {
+    uVar6 = uVar3;
   }
-  (**(code **)(*(int *)((int)piVar2 + 0x1b6) + 4))
-            (piVar2,iVar1 + 0xc,*(undefined4 *)(iVar1 + 0x5c),param_5 + *param_6 * 4,uVar5);
-  *param_6 = *param_6 + uVar5;
-  iVar4 = *(int *)(iVar1 + 0x5c) + uVar5;
-  *(uint *)(iVar1 + 0x60) = *(int *)(iVar1 + 0x60) - uVar5;
-  *(int *)(iVar1 + 0x5c) = iVar4;
-  if (*(int *)((int)piVar2 + 0x126) <= iVar4) {
+  (**(code **)(*(int *)&pAVar2->field_0x1b6 + 4))
+            (pAVar2,&pAVar1->field_0xc,pAVar1->field_005C,param_5 + *param_6 * 4,uVar6);
+  *param_6 = *param_6 + uVar6;
+  iVar4 = pAVar1->field_005C + uVar6;
+  pAVar1->field_0060 = pAVar1->field_0060 - uVar6;
+  pAVar1->field_005C = iVar4;
+  if (pAVar2->field_0126 <= iVar4) {
     *param_3 = *param_3 + 1;
   }
   return;

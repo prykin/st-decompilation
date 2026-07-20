@@ -1,7 +1,8 @@
 
 undefined4
-FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,int param_4,int param_5,
-            int param_6,int param_7,int param_8,int param_9,byte param_10)
+FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
+            AnonShape_006D0680_EDC74182 *param_4,int param_5,int param_6,int param_7,int param_8,
+            int param_9,byte param_10)
 
 {
   undefined1 *puVar1;
@@ -32,8 +33,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,int pa
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffa8;
-  if (((param_1->field_0474 == 0) || (0x10 < param_1->field_0020)) ||
-     (*(short *)(param_4 + 0xe) != 8)) {
+  if (((param_1->field_0474 == 0) || (0x10 < param_1->field_0020)) || (param_4->field_000E != 8)) {
     return 0xffffffd0;
   }
   if ((param_8 < 1) || (param_9 < 1)) {
@@ -43,7 +43,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,int pa
   puVar1 = &stack0xffffffa8;
   if (param_5 == 0) {
     ExceptionList = &local_14;
-    param_5 = FUN_006b4fa0(param_4);
+    param_5 = FUN_006b4fa0((int)param_4);
     puVar1 = local_1c;
   }
   local_1c = puVar1;
@@ -63,13 +63,14 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,int pa
     local_48 = param_7 + (local_30 - iVar5);
     local_44 = local_2c;
     local_40 = local_28;
-    iVar2 = FUN_006d0680((int)&param_1->field_0x4c,&local_34,&local_20,param_4,&local_4c,local_3c);
+    iVar2 = FUN_006d0680((AnonShape_006D0680_01056108 *)&param_1->field_0x4c,&local_34,&local_20,
+                         param_4,&local_4c,local_3c);
     if (iVar2 != 0) {
       if ((int)local_3c[0] < 0) {
         iVar2 = -((local_40 + -1 + local_48) * local_3c[0]);
       }
       else {
-        iVar2 = ((*(int *)(param_4 + 8) - local_40) - local_48) * local_3c[0];
+        iVar2 = ((param_4->field_0008 - local_40) - local_48) * local_3c[0];
       }
       pbVar3 = (byte *)(param_5 + local_4c + iVar2);
       iVar2 = param_1->field_0020 * local_34;

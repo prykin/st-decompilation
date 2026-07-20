@@ -67,9 +67,9 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint par
   
   iVar6 = (int)(char)(byte)param_1;
   local_7c = g_playerRuntime[iVar6].pgPairs;
-  local_48 = g_playerRuntime[iVar6].field2294_0x9fe;
-  local_60 = g_playerRuntime[iVar6].field2293_0x9fa;
-  local_64 = g_playerRuntime[iVar6].field2295_0xa02;
+  local_48 = g_playerRuntime[iVar6].field2176_0x9fe;
+  local_60 = g_playerRuntime[iVar6].field2175_0x9fa;
+  local_64 = g_playerRuntime[iVar6].field2177_0xa02;
   if (local_60 != (DArrayTy *)0x0) {
     local_e4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_e4;
@@ -92,7 +92,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint par
       local_48 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
       local_a0 = (int)(char)(byte)param_1;
       iVar6 = local_a0 * 0xa62;
-      g_playerRuntime[local_a0].field2294_0x9fe = local_48;
+      g_playerRuntime[local_a0].field2176_0x9fe = local_48;
       pDVar3 = (DArrayTy *)local_60->count;
       local_5c = iVar6;
       local_30 = pDVar3;
@@ -134,13 +134,13 @@ LAB_0044738a:
           } while ((int)local_8 < (int)dVar9);
         }
         FUN_006ae110((byte *)pDVar3);
-        *(undefined4 *)((int)&g_playerRuntime[0].field2295_0xa02 + iVar6) = 0;
+        *(undefined4 *)((int)&g_playerRuntime[0].field2177_0xa02 + iVar6) = 0;
       }
       uVar8 = local_48->count;
       local_3c = uVar8;
       pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar8,4,1);
       local_8 = 0;
-      *(DArrayTy **)((int)&g_playerRuntime[0].field2295_0xa02 + iVar6) = pDVar3;
+      *(DArrayTy **)((int)&g_playerRuntime[0].field2177_0xa02 + iVar6) = pDVar3;
       local_64 = pDVar3;
       if (0 < (int)uVar8) {
         do {
@@ -191,7 +191,7 @@ LAB_0044738a:
       }
       uVar8 = local_3c;
       pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_3c,4,1);
-      *(DArrayTy **)((int)&g_playerRuntime[0].field2296_0xa06 + local_5c) = pDVar3;
+      *(DArrayTy **)((int)&g_playerRuntime[0].field2178_0xa06 + local_5c) = pDVar3;
       local_8 = 0;
       local_40 = pDVar3;
       if (0 < (int)uVar8) {
@@ -394,7 +394,7 @@ LAB_0044738a:
         } while ((int)local_8 < (int)local_3c);
       }
       pDVar3 = local_7c;
-      *(undefined4 *)((int)&g_playerRuntime[0].field2297_0xa0a + local_5c) =
+      *(undefined4 *)((int)&g_playerRuntime[0].field2179_0xa0a + local_5c) =
            PTR_00802a38->field_00E4;
       if (local_7c != (DArrayTy *)0x0) {
         dVar9 = local_7c->count;
@@ -426,7 +426,7 @@ LAB_0044738a:
         }
         FUN_006ae110((byte *)pDVar3);
         local_60 = (DArrayTy *)0x0;
-        *(undefined4 *)((int)&g_playerRuntime[0].field2293_0x9fa + local_5c) = 0;
+        *(undefined4 *)((int)&g_playerRuntime[0].field2175_0x9fa + local_5c) = 0;
       }
       uVar8 = local_3c;
       pDVar3 = local_48;
@@ -443,7 +443,7 @@ LAB_0044738a:
         }
         FUN_006ae110((byte *)pDVar3);
         local_48 = (DArrayTy *)0x0;
-        *(undefined4 *)((int)&g_playerRuntime[0].field2294_0x9fe + local_5c) = 0;
+        *(undefined4 *)((int)&g_playerRuntime[0].field2176_0x9fe + local_5c) = 0;
       }
       uVar8 = local_3c;
       pDVar3 = local_64;
@@ -460,7 +460,7 @@ LAB_0044738a:
         }
         FUN_006ae110((byte *)pDVar3);
         local_64 = (DArrayTy *)0x0;
-        *(undefined4 *)((int)&g_playerRuntime[0].field2295_0xa02 + local_5c) = 0;
+        *(undefined4 *)((int)&g_playerRuntime[0].field2177_0xa02 + local_5c) = 0;
       }
       if (local_40 != (DArrayTy *)0x0) {
         local_8 = 0;
@@ -486,7 +486,7 @@ LAB_0044738a:
           } while ((int)local_8 < (int)local_3c);
         }
         FUN_006ae110((byte *)pDVar3);
-        *(undefined4 *)((int)&g_playerRuntime[0].field2296_0xa06 + local_5c) = 0;
+        *(undefined4 *)((int)&g_playerRuntime[0].field2178_0xa06 + local_5c) = 0;
       }
       g_currentExceptionFrame = local_e4.previous;
       return;

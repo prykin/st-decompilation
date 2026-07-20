@@ -9,7 +9,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
   int iVar5;
   short sVar6;
   int iVar7;
-  void *this_00;
+  STWorldObject *this_00;
   undefined4 *puVar8;
   undefined4 local_38 [5];
   int local_24;
@@ -56,12 +56,12 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
        ((sVar3 = (short)iVar4, sVar3 < 0 ||
         (((SHORT_007fb242 <= sVar3 || (sVar1 = (short)iVar2, sVar1 < 0)) ||
          (SHORT_007fb244 <= sVar1)))))) {
-      this_00 = (void *)0x0;
+      this_00 = (STWorldObject *)0x0;
     }
     else {
-      this_00 = *(void **)(DAT_007fb248 + 4 +
-                          ((int)SHORT_007fb246 * (int)sVar1 + (int)sVar3 * (int)SHORT_007fb240 +
-                          (int)sVar6) * 8);
+      this_00 = g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar1 + (int)sVar3 * (int)SHORT_007fb240 + (int)sVar6].
+                objects[1];
     }
     puVar8 = local_38;
     local_8 = this;
@@ -103,7 +103,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     local_38[1] = 0xff;
     local_38[2] = 0;
     local_38[3] = 1;
-    if ((this_00 != (void *)0x0) && (*(int *)((int)this_00 + 0x20) == 0xbe)) {
+    if ((this_00 != (STWorldObject *)0x0) && (this_00->value_20 == 0xbe)) {
       thunk_FUN_006301b0(this_00,(int)local_38);
       return;
     }

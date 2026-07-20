@@ -53,16 +53,17 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
+  undefined4 uVar2;
+  undefined4 uVar3;
   code *pcVar4;
   int iVar5;
-  uint uVar6;
-  int *piVar8;
-  int *piVar7;
+  STPlayerTempSlot *pSVar6;
+  uint uVar7;
+  STPlayerTempSlot (*paSVar9) [5];
+  STPlayerTempSlot (*paSVar8) [5];
   
   if (param_2 == 0) {
-    piVar8 = &g_playerRuntime[param_1].field326_0x163;
+    paSVar9 = g_playerRuntime[param_1].tempSlots;
   }
   else {
     if (param_2 != 1) {
@@ -75,39 +76,41 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       (*pcVar4)();
       return;
     }
-    piVar8 = &g_playerRuntime[param_1].field384_0x1b3;
+    paSVar9 = g_playerRuntime[param_1].tempSlots + 1;
   }
-  piVar7 = (int *)(int)param_1;
+  paSVar8 = (STPlayerTempSlot (*) [5])(int)param_1;
   if (0 < objPtr) {
-    if (*piVar8 == 0) {
-      piVar7 = piVar8 + objPtr * 4;
-      *piVar8 = *piVar7;
-      piVar8[1] = piVar7[1];
-      piVar8[2] = piVar7[2];
-      piVar8[3] = piVar7[3];
-      Library::MSVCRT::FUN_0072da70(piVar7,piVar8 + (objPtr + 1) * 4,objPtr * -0x10 + 0x40);
-      piVar8[0x10] = 0;
-      piVar8[0x11] = 0xff;
-      *(undefined4 *)((int)piVar8 + 0x4a) = 0;
-      piVar7 = (int *)0x0;
+    if ((*paSVar9)[0].objectType == 0) {
+      pSVar6 = *paSVar9 + objPtr;
+      (*paSVar9)[0].objectType = pSVar6->objectType;
+      (*paSVar9)[0].playerId = pSVar6->playerId;
+      *(undefined4 *)&(*paSVar9)[0].objectId = *(undefined4 *)&pSVar6->objectId;
+      *(undefined4 *)((int)&(*paSVar9)[0].objectIds + 2) =
+           *(undefined4 *)((int)&pSVar6->objectIds + 2);
+      Library::MSVCRT::FUN_0072da70
+                (&pSVar6->objectType,&(*paSVar9)[objPtr + 1].objectType,objPtr * -0x10 + 0x40);
+      (*paSVar9)[4].objectType = 0;
+      (*paSVar9)[4].playerId = 0xff;
+      (*paSVar9)[4].objectIds = (DArrayTy *)0x0;
+      paSVar8 = (STPlayerTempSlot (*) [5])0x0;
     }
     else {
       ResetActivityFromTmp(this,param_1,param_2,0,0);
-      iVar5 = piVar8[objPtr * 4];
-      iVar1 = piVar8[objPtr * 4 + 1];
-      iVar2 = piVar8[objPtr * 4 + 2];
-      iVar3 = piVar8[objPtr * 4 + 3];
-      Library::MSVCRT::FUN_0072da70(piVar8 + 4,piVar8,objPtr * 0x10);
-      *piVar8 = iVar5;
-      piVar8[1] = iVar1;
-      piVar8[2] = iVar2;
-      piVar8[3] = iVar3;
-      piVar7 = piVar8;
+      iVar5 = (*paSVar9)[objPtr].objectType;
+      iVar1 = (*paSVar9)[objPtr].playerId;
+      uVar2 = *(undefined4 *)&(*paSVar9)[objPtr].objectId;
+      uVar3 = *(undefined4 *)((int)&(*paSVar9)[objPtr].objectIds + 2);
+      Library::MSVCRT::FUN_0072da70(&(*paSVar9)[1].objectType,(undefined4 *)paSVar9,objPtr * 0x10);
+      (*paSVar9)[0].objectType = iVar5;
+      (*paSVar9)[0].playerId = iVar1;
+      *(undefined4 *)&(*paSVar9)[0].objectId = uVar2;
+      *(undefined4 *)((int)&(*paSVar9)[0].objectIds + 2) = uVar3;
+      paSVar8 = paSVar9;
     }
   }
-  uVar6 = CONCAT22((short)((uint)piVar7 >> 0x10),(short)piVar8[2]);
-  SetActivityToObjs(this,CONCAT31((int3)(uVar6 >> 8),(char)piVar8[1]),*piVar8,
-                    *(DArrayTy **)((int)piVar8 + 10),uVar6);
+  uVar7 = CONCAT22((short)((uint)paSVar8 >> 0x10),(*paSVar9)[0].objectId);
+  SetActivityToObjs(this,CONCAT31((int3)(uVar7 >> 8),(char)(*paSVar9)[0].playerId),
+                    (*paSVar9)[0].objectType,(*paSVar9)[0].objectIds,uVar7);
   SelfCheckObjControl(this);
   if (param_2 == 0) {
     thunk_FUN_0043fc50(CASE_1,0);

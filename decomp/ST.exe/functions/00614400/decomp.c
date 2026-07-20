@@ -7,7 +7,7 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
   char cVar3;
   short sVar4;
   short sVar5;
-  int *piVar6;
+  STWorldObject *pSVar6;
   uint uVar7;
   uint uVar8;
   int iVar9;
@@ -94,14 +94,15 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
   if (((((((-1 < sVar10) && (sVar10 < SHORT_007fb240)) && (-1 < (short)local_8)) &&
         (((short)local_8 < SHORT_007fb242 && (-1 < sVar11)))) &&
        ((sVar11 < SHORT_007fb244 &&
-        ((piVar6 = *(int **)(DAT_007fb248 +
-                            ((int)SHORT_007fb246 * (int)sVar11 +
-                             (int)SHORT_007fb240 * (int)(short)local_8 + (int)sVar10) * 8),
-         piVar6 != (int *)0x0 && (piVar6[6] == iVar9)))))) &&
-      (iVar9 = (**(code **)(*piVar6 + 0xf0))(), iVar9 != 0)) &&
-     (((uint)piVar6[9] < 8 &&
-      ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar6[9] * 0x51] < 8)))))) {
-    bVar1 = *(byte *)(piVar6 + 9);
+        ((pSVar6 = g_worldCells
+                   [(int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)(short)local_8 +
+                    (int)sVar10].objects[0], pSVar6 != (STWorldObject *)0x0 &&
+         (*(int *)&pSVar6->field_0x18 == iVar9)))))) &&
+      (iVar9 = (*pSVar6->vtable[5].slots_00_28[0])(), iVar9 != 0)) &&
+     ((pSVar6[1].vtable < (STWorldObjectVTable *)0x8 &&
+      ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+       ((byte)(&DAT_008087e9)[(int)pSVar6[1].vtable * 0x51] < 8)))))) {
+    bVar1 = *(byte *)&pSVar6[1].vtable;
     bVar2 = *(byte *)((int)this + 0x1d9);
     local_8 = CONCAT31(local_8._1_3_,bVar1);
     _local_c = CONCAT31(uStack_b,bVar2);
@@ -134,8 +135,8 @@ LAB_0061478b:
     else {
       bVar12 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
     }
-    if ((bVar12) && (iVar9 = (**(code **)(*piVar6 + 0xf8))(), iVar9 != 0)) {
-      *(int *)((int)this + 0x2d1) = piVar6[6];
+    if ((bVar12) && (iVar9 = (*pSVar6->vtable[5].slots_00_28[2])(), iVar9 != 0)) {
+      *(undefined4 *)((int)this + 0x2d1) = *(undefined4 *)&pSVar6->field_0x18;
       goto LAB_006147e6;
     }
   }

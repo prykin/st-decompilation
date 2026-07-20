@@ -38,14 +38,16 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     return;
   }
   if (DAT_0080874e == '\x03') {
-    DibPut((undefined4 *)local_8->field_0194,0xf,0x8d,'\x01',(byte *)local_8->field_09F1);
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)local_8->field_0194,0xf,0x8d,'\x01',
+           (byte *)local_8->field_09F1);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x10,0x8e,
                      *(int *)(pCVar2->field_09F1 + 2),0xb);
     uID = pCVar2->field_0C4D;
   }
   else {
-    DibPut((undefined4 *)local_8->field_0194,4,0x89,'\x01',(byte *)local_8->field_09F1);
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)local_8->field_0194,4,0x89,'\x01',
+           (byte *)local_8->field_09F1);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,6,0x8b,200,0xb);
     uID = pCVar2->field_0C4D;

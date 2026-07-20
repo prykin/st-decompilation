@@ -86,7 +86,8 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
       }
       pbVar8 = (byte *)FUN_0070b3a0(*(int *)&this_00[1].field_0x24,
                                     (uint)((&this_00[1].field_0x1e)[bVar4] == '\0'));
-      DibPut((undefined4 *)this_00->field_0068,iVar9 - iVar5,iVar2 - iVar7,'\x01',pbVar8);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,iVar9 - iVar5,iVar2 - iVar7,'\x01',
+             pbVar8);
       Library::DKW::DDX::FUN_006b3640
                 (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
                  this_00->field_0044);

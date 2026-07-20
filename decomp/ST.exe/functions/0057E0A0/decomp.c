@@ -30,13 +30,14 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
   undefined2 extraout_var_03;
   undefined2 extraout_var_04;
   undefined4 unaff_ESI;
-  int *piVar15;
+  STWorldObject *pSVar15;
   int iVar16;
   byte *pbVar17;
   void *unaff_EDI;
   undefined4 *puVar18;
   int iVar19;
   byte *pbVar20;
+  int *piVar21;
   InternalExceptionFrame local_68;
   STSprGameObjC *local_24;
   int local_20;
@@ -127,18 +128,18 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
     sVar2 = *(short *)&this_00->field_0x249;
     if ((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar2 < 0)) ||
        (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1)))) {
-      piVar15 = (int *)0x0;
+      pSVar15 = (STWorldObject *)0x0;
     }
     else {
-      piVar15 = *(int **)(DAT_007fb248 +
-                         ((int)sVar1 * (int)SHORT_007fb246 + (int)sVar2 * (int)SHORT_007fb240 +
-                         (int)sVar7) * 8);
+      pSVar15 = g_worldCells
+                [(int)sVar1 * (int)SHORT_007fb246 + (int)sVar2 * (int)SHORT_007fb240 + (int)sVar7].
+                objects[0];
     }
-    if (piVar15 == (int *)0x0) {
+    if (pSVar15 == (STWorldObject *)0x0) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    iVar8 = (**(code **)(*piVar15 + 0x2c))();
+    iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15);
     if ((*(int *)&this_00->field_0x255 != 0xdd) || ((iVar8 != 0x39 && (iVar8 != 0x5e)))) {
       if (*(int *)&this_00->field_0x255 != 0xde) {
         g_currentExceptionFrame = local_68.previous;
@@ -263,12 +264,12 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
       if (((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) ||
          (((sVar1 < 0 || ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2))))
       {
-        piVar15 = (int *)0x0;
+        pSVar15 = (STWorldObject *)0x0;
       }
       else {
-        piVar15 = *(int **)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar1 +
-                           (int)sVar7) * 8);
+        pSVar15 = g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar7]
+                  .objects[0];
       }
       if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
           ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
@@ -280,11 +281,11 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
                           (int)sVar7) * 2);
       }
       if ((sVar7 != 0) &&
-         ((piVar15 == (int *)0x0 ||
-          (((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x39 &&
-            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x4f)) &&
-           ((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x5e &&
-            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
+         ((pSVar15 == (STWorldObject *)0x0 ||
+          (((iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x39 &&
+            (iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x4f)) &&
+           ((iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x5e &&
+            (iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x61)))))))) {
         thunk_FUN_00580380((STJellyGunC *)this_00);
       }
       iVar8 = STAllPlayersC::RegisterDeposit(g_sTAllPlayers_007FA174,0xffff,this_00);
@@ -322,12 +323,12 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
       sVar2 = *(short *)&this_00->field_0x24d;
       if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
           ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
-        piVar15 = (int *)0x0;
+        pSVar15 = (STWorldObject *)0x0;
       }
       else {
-        piVar15 = *(int **)(DAT_007fb248 +
-                           ((int)sVar1 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar2 +
-                           (int)sVar7) * 8);
+        pSVar15 = g_worldCells
+                  [(int)sVar1 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar2 + (int)sVar7]
+                  .objects[0];
       }
       if (((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) ||
          ((sVar1 < 0 || (((SHORT_007fb242 <= sVar1 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2))))))
@@ -340,11 +341,11 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
                           (int)sVar7) * 2);
       }
       if ((sVar7 != 0) &&
-         ((piVar15 == (int *)0x0 ||
-          (((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x39 &&
-            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x4f)) &&
-           ((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x5e &&
-            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
+         ((pSVar15 == (STWorldObject *)0x0 ||
+          (((iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x39 &&
+            (iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x4f)) &&
+           ((iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x5e &&
+            (iVar8 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar8 != 0x61)))))))) {
         thunk_FUN_00580380((STJellyGunC *)this_00);
       }
       iVar8 = STAllPlayersC::RegisterDeposit
@@ -466,8 +467,8 @@ LAB_0057e6f0:
       *(undefined4 **)&this_00->field_0x273 = puVar11;
       goto cf_common_join_0057E9C2;
     }
-    piVar15 = *(int **)&this_00->field_0x273;
-    if (piVar15 == (int *)0x0) goto cf_common_join_0057E9C2;
+    piVar21 = *(int **)&this_00->field_0x273;
+    if (piVar21 == (int *)0x0) goto cf_common_join_0057E9C2;
   }
   else {
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto cf_common_join_0057E9C2;
@@ -527,9 +528,9 @@ LAB_0057e6f0:
       }
     }
     if (uVar10 != 2) goto cf_common_join_0057E9C2;
-    piVar15 = *(int **)&this_00->field_0x273;
+    piVar21 = *(int **)&this_00->field_0x273;
   }
-  FUN_006e6580((void *)this_00->field_0211,piVar15);
+  FUN_006e6580((void *)this_00->field_0211,piVar21);
   *(undefined4 *)&this_00->field_0x273 = 0;
 cf_common_join_0057E9C2:
   (*this_00->vtable->vfunc_D8)();

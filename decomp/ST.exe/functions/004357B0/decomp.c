@@ -1,8 +1,8 @@
 
-undefined4 FUN_004357b0(char param_1,undefined4 param_2)
+int FUN_004357b0(char playerId,AiPlrClassTy *aiPlayer)
 
 {
-  *(undefined4 *)&g_playerRuntime[param_1].field_0x1 = param_2;
+  g_playerRuntime[playerId].aiPlayer = aiPlayer;
   return 0;
 }
 

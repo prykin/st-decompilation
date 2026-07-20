@@ -1,46 +1,48 @@
 
-void __cdecl FUN_0067d0a0(int param_1)
+void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
 
 {
-  int *piVar1;
+  DArrayTy *pDVar1;
   int *piVar2;
-  uint uVar3;
-  int iVar4;
-  bool bVar5;
+  DArrayTy **ppDVar3;
+  uint uVar4;
+  int iVar5;
+  bool bVar6;
   
-  piVar2 = (int *)(param_1 + 0xc2);
-  iVar4 = *(int *)(param_1 + 0xc2);
-  if (iVar4 != 0) {
-    uVar3 = 0;
-    if (0 < *(int *)(iVar4 + 0xc)) {
-      bVar5 = *(int *)(iVar4 + 0xc) != 0;
+  ppDVar3 = &param_1->field_00C2;
+  pDVar1 = param_1->field_00C2;
+  if (pDVar1 != (DArrayTy *)0x0) {
+    uVar4 = 0;
+    if (0 < (int)pDVar1->count) {
+      bVar6 = pDVar1->count != 0;
       do {
-        if (bVar5) {
-          piVar1 = (int *)(*(int *)(iVar4 + 8) * uVar3 + *(int *)(iVar4 + 0x1c));
+        if (bVar6) {
+          piVar2 = (int *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
         }
         else {
-          piVar1 = (int *)0x0;
+          piVar2 = (int *)0x0;
         }
-        if ((*piVar1 != 0) && (piVar1[1] == 0)) {
-          param_1 = *piVar1;
-          thunk_FUN_00691540(&param_1);
-          *piVar1 = 0;
+        if (((AnonShape_0067D0A0_8092D907 *)*piVar2 != (AnonShape_0067D0A0_8092D907 *)0x0) &&
+           (piVar2[1] == 0)) {
+          param_1 = (AnonShape_0067D0A0_8092D907 *)*piVar2;
+          thunk_FUN_00691540((int *)&param_1);
+          *piVar2 = 0;
         }
-        iVar4 = *piVar2;
-        uVar3 = uVar3 + 1;
-        bVar5 = uVar3 < *(uint *)(iVar4 + 0xc);
-      } while ((int)uVar3 < (int)*(uint *)(iVar4 + 0xc));
+        pDVar1 = *ppDVar3;
+        uVar4 = uVar4 + 1;
+        bVar6 = uVar4 < pDVar1->count;
+      } while ((int)uVar4 < (int)pDVar1->count);
     }
   }
-  iVar4 = 5;
+  iVar5 = 5;
   do {
-    if ((byte *)*piVar2 != (byte *)0x0) {
-      FUN_006ae110((byte *)*piVar2);
-      *piVar2 = 0;
+    if (*ppDVar3 != (DArrayTy *)0x0) {
+      FUN_006ae110((byte *)*ppDVar3);
+      *ppDVar3 = (DArrayTy *)0x0;
     }
-    piVar2 = piVar2 + 3;
-    iVar4 = iVar4 + -1;
-  } while (iVar4 != 0);
+    ppDVar3 = ppDVar3 + 3;
+    iVar5 = iVar5 + -1;
+  } while (iVar5 != 0);
   return;
 }
 

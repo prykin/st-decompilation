@@ -24,7 +24,7 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
       param_2 = *(int *)(iVar4 + 4);
     } while (param_2 != -1);
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = 0;
-    uVar5 = FUN_00757530((int)param_1,1,(undefined4 *)(iVar4 + 0x10));
+    uVar5 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,(undefined4 *)(iVar4 + 0x10));
     if (uVar5 == 0) {
       return -2;
     }
@@ -40,7 +40,7 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
     iVar4 = *(int *)(param_1->field_000C + 0x1c);
     iVar6 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,
                          *(undefined4 *)(param_1->field_000C + 0x40 + iVar4 * 8),iVar4);
-    FUN_00755d40((int)param_1,iVar6,
+    FUN_00755d40((AnonShape_00755D40_9BC6D2DA *)param_1,iVar6,
                  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
     iVar4 = *(int *)(param_1->field_000C + 0x1c);
     if ((iVar4 == 0) && (*(short *)(iVar6 + 8) == 0)) {
@@ -64,7 +64,7 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
         }
         psVar1 = (short *)(param_1->field_000C + 0x2a);
         *psVar1 = *psVar1 + -1;
-        iVar4 = FUN_00757670((int)param_1,param_1->field_0010);
+        iVar4 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,param_1->field_0010);
         if (iVar4 != 0) {
           return iVar4;
         }

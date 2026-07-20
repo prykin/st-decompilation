@@ -4,11 +4,11 @@
    UPanelTy::PaintLBut */
 
 void __thiscall
-UPanelTy::PaintLBut(UPanelTy *this,int param_1,byte param_2,char *param_3,char *param_4,
-                   undefined *param_5)
+UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte param_2,char *param_3,
+                   char *param_4,undefined *param_5)
 
 {
-  int *piVar1;
+  AnonNested_0053DCC0_0018_16DF3813 *pAVar1;
   code *pcVar2;
   UPanelTy *pUVar3;
   int iVar4;
@@ -23,14 +23,14 @@ UPanelTy::PaintLBut(UPanelTy *this,int param_1,byte param_2,char *param_3,char *
   int local_c;
   ushort *local_8;
   
-  piVar1 = *(int **)(param_1 + 0x18);
+  pAVar1 = param_1->field_0018;
   local_8 = (ushort *)0x0;
-  local_10 = *piVar1 - this->field_003C;
+  local_10 = pAVar1->field_0000 - this->field_003C;
   if (this->field_005C == 0) {
-    local_c = piVar1[1] + this->field_0048;
+    local_c = pAVar1->field_0004 + this->field_0048;
   }
   else {
-    local_c = piVar1[1] - this->field_0044;
+    local_c = pAVar1->field_0004 - this->field_0044;
   }
   if (param_5 != (undefined *)0x0) {
     local_58.previous = g_currentExceptionFrame;
@@ -43,11 +43,13 @@ UPanelTy::PaintLBut(UPanelTy *this,int param_1,byte param_2,char *param_3,char *
       local_8 = cMf32::RecGet(DAT_00806790,param_2,text,(int *)0x0,1);
       iVar4 = local_c;
       pUVar3 = local_14;
-      DibPut((undefined4 *)local_14->field_0068,local_10,local_c,param_2,(byte *)local_8);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,local_10,local_c,param_2,
+             (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      if (*(int *)(param_1 + 0x14) == 3) {
+      if (param_1->field_0014 == 3) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_4,(int *)0x0,1);
-        DibPut((undefined4 *)pUVar3->field_0068,local_10,iVar4,'\x06',(byte *)local_8);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,local_10,iVar4,'\x06',
+               (byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640

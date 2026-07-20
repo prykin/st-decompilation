@@ -12,15 +12,14 @@ FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *pa
   int iVar6;
   int *piVar7;
   uint *puVar8;
-  undefined4 *puVar9;
+  AnonShape_00627EB0_4C14C976 *pAVar9;
+  AnonNested_00627EB0_0014_B8FBF6AA *pAVar10;
   uint local_100 [20];
-  undefined4 local_b0 [4];
-  undefined4 local_a0;
-  undefined4 *local_9c;
+  AnonShape_00627EB0_4C14C976 local_b0;
   int local_90 [6];
   int local_78;
   undefined4 local_74;
-  undefined4 local_70 [5];
+  AnonNested_00627EB0_0014_B8FBF6AA local_70;
   uint local_5c;
   int local_58;
   uint local_54;
@@ -172,30 +171,30 @@ LAB_00606321:
     }
     param_5 = (uint *)((int)param_5 + 1);
   } while ((int)param_5 < 0x14);
-  puVar9 = local_b0;
+  pAVar9 = &local_b0;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar9 = 0;
-    puVar9 = puVar9 + 1;
+    *(undefined4 *)pAVar9 = 0;
+    pAVar9 = (AnonShape_00627EB0_4C14C976 *)&pAVar9->field_0x4;
   }
-  local_a0 = 2;
+  local_b0.field_0010 = 2;
   if (iVar6 < local_c) {
     local_c = iVar6;
   }
   param_5 = (uint *)0x0;
   if (0 < local_c) {
     do {
-      puVar9 = local_70;
+      pAVar10 = &local_70;
       for (iVar2 = 0x11; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
+        pAVar10->field_0000 = 0;
+        pAVar10 = (AnonNested_00627EB0_0014_B8FBF6AA *)&pAVar10->field_0x4;
       }
-      *(undefined2 *)puVar9 = 0;
+      *(undefined2 *)&pAVar10->field_0000 = 0;
       local_54 = local_18;
-      local_70[1] = param_8;
+      local_70._4_4_ = param_8;
       local_30 = param_9;
-      local_70[0] = 100;
-      local_70[2] = 0;
-      local_70[3] = 0;
+      local_70.field_0000 = 100;
+      local_70._8_4_ = 0;
+      local_70.field_000C = 0;
       local_2e = param_5;
       local_58 = param_4;
       if (local_18 == 3) {
@@ -364,9 +363,8 @@ switchD_00606490_default:
         local_3c = local_3c + 2;
         local_48 = param_3 + 0x5a;
       }
-      local_9c = local_70;
-      STParticleC::GetMessage(*(STParticleC **)((int)this + (int)param_5 * 4 + 0x219),(int)local_b0)
-      ;
+      local_b0.field_0014 = &local_70;
+      STParticleC::GetMessage(*(STParticleC **)((int)this + (int)param_5 * 4 + 0x219),&local_b0);
       param_5 = (uint *)((int)param_5 + 1);
     } while ((int)param_5 < local_c);
   }

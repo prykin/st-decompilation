@@ -19,7 +19,7 @@ uint FUN_007479cd(int param_1,uint param_2,undefined4 *param_3,int *param_4)
     uVar3 = 0x80004003;
   }
   else {
-    bVar2 = FUN_00747f3b(param_1);
+    bVar2 = FUN_00747f3b((AnonShape_00747F3B_C97131D7 *)param_1);
     if (CONCAT31(extraout_var,bVar2) == 1) {
       uVar3 = 0x80040203;
     }

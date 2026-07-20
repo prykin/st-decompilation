@@ -179,19 +179,19 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
         iVar5 = 5;
-        puVar15 = local_14 + 0x5a;
+        ppDVar14 = local_14 + 0x5a;
         do {
-          if ((byte *)*puVar15 != (byte *)0x0) {
-            FUN_006ae110((byte *)*puVar15);
-            *puVar15 = 0;
-            *(undefined4 *)((int)puVar15 + -10) = 0;
+          if (*ppDVar14 != (DArrayTy *)0x0) {
+            FUN_006ae110((byte *)*ppDVar14);
+            *ppDVar14 = (DArrayTy *)0x0;
+            ((STPlayerTempSlot *)((int)ppDVar14 + -10))->objectType = 0;
           }
-          if ((byte *)puVar15[0x14] != (byte *)0x0) {
-            FUN_006ae110((byte *)puVar15[0x14]);
-            puVar15[0x14] = 0;
-            *(undefined4 *)((int)puVar15 + 0x46) = 0;
+          if (ppDVar14[0x14] != (DArrayTy *)0x0) {
+            FUN_006ae110((byte *)ppDVar14[0x14]);
+            ppDVar14[0x14] = (DArrayTy *)0x0;
+            *(undefined4 *)((int)ppDVar14 + 0x46) = 0;
           }
-          puVar15 = puVar15 + 4;
+          ppDVar14 = ppDVar14 + 4;
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
         iVar5 = 10;
@@ -233,7 +233,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
     if (uVar12 == 0) {
       uVar12 = 0;
       local_14 = (DArrayTy **)&DAT_008087e9;
-      piVar16 = &g_playerRuntime[0].field2297_0xa0a;
+      piVar16 = &g_playerRuntime[0].field2179_0xa0a;
       do {
         if (0x18 < (uint)(PTR_00802a38->field_00E4 - *piVar16)) {
           OptimizeGuardBoats(this_00,(char)uVar12);

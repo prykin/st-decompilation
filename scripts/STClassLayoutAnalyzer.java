@@ -50,7 +50,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         "^(Get|Set|Is|Has)([A-Z][A-Za-z0-9_]*)$");
     private static final String MARKER = "[STClassLayoutApplier]";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
+    private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
+    private static final String CLASS_POINTEE_ROOT =
+        "/SubmarineTitans/Recovered/ClassPointees/";
     private static final long MAX_CLASS_SIZE = 0x1000000L;
+    private static final long MAX_POINTEE_SIZE = 0x4000L;
 
     private DataTypeManager dataTypes;
 
@@ -86,6 +90,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
 
         List<ClassProposal> classRows = new ArrayList<>();
         List<FieldProposal> fieldRows = new ArrayList<>();
+        List<NestedTypeProposal> nestedTypes = new ArrayList<>();
+        List<NestedFieldProposal> nestedFields = new ArrayList<>();
         for (ClassEvidence evidence : classes.values()) {
             monitor.checkCancelled();
             DataType ownerType = findOwnerType(evidence.owner);
@@ -97,6 +103,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             long proposedSize = exactSize >= observedSize ? exactSize : observedSize;
             if (proposedSize < 1 || proposedSize > MAX_CLASS_SIZE) continue;
 
+            List<NestedTypeProposal> ownerNested = prepareNestedTypes(evidence, nestedFields);
             List<FieldProposal> ownerFields = makeFields(evidence, structure,
                 vtableTypes.get(evidence.owner), proposedSize);
             markOverlaps(ownerFields);
@@ -119,14 +126,29 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason, evidence.functions);
             classRows.add(proposal);
             fieldRows.addAll(ownerFields);
+            for (NestedTypeProposal nested : ownerNested) {
+                FieldProposal parent = ownerFields.stream().filter(field ->
+                    field.offset == nested.parentOffset).findFirst().orElse(null);
+                nested.apply = apply && parent != null && parent.apply && parent.typeApply &&
+                    parent.inferredType.equals("pointer:" + nested.typePath);
+                for (NestedFieldProposal field : nestedFields)
+                    if (field.typePath.equals(nested.typePath)) field.apply = nested.apply;
+                nestedTypes.add(nested);
+            }
         }
         classRows.sort(Comparator.comparing(row -> row.owner));
         fieldRows.sort(Comparator.comparing((FieldProposal row) -> row.owner)
             .thenComparingLong(row -> row.offset));
+        nestedTypes.sort(Comparator.comparing(row -> row.typePath));
+        nestedFields.sort(Comparator.comparing((NestedFieldProposal row) -> row.typePath)
+            .thenComparingLong(row -> row.offset));
 
         writeClasses(directory.resolve("class_layout_proposals.tsv"), classRows);
         writeFields(directory.resolve("class_field_proposals.tsv"), fieldRows);
-        writeSummary(directory.resolve("class_layout_summary.txt"), classRows, fieldRows);
+        writeNestedTypes(directory.resolve("class_nested_type_proposals.tsv"), nestedTypes);
+        writeNestedFields(directory.resolve("class_nested_field_proposals.tsv"), nestedFields);
+        writeSummary(directory.resolve("class_layout_summary.txt"), classRows, fieldRows,
+            nestedTypes);
         long applicable = classRows.stream().filter(row -> row.apply).count();
         long fields = fieldRows.stream().filter(row -> row.apply).count();
         Set<String> applicableOwners = new TreeSet<>();
@@ -139,6 +161,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         println("Classes: " + classRows.size() + ", class_apply: " + applicable +
             ", fields: " + fieldRows.size() + ", field_apply: " + fields +
             ", semantic_type_apply: " + semanticTypes +
+            ", nested_pointees: " + nestedTypes.size() +
+            ", nested_apply: " + nestedTypes.stream().filter(row -> row.apply).count() +
             ", review_name_suggestions: " + suggestedNames);
     }
 
@@ -162,6 +186,24 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 for (int operandIndex = 0; operandIndex < operands.length; operandIndex++) {
                     MemoryExpr memory = memoryExpr(operands[operandIndex]);
                     RegisterValue base = memory == null ? null : registers.get(memory.register);
+                    if (base != null && base.kind == ValueKind.FIELD_VALUE) {
+                        long childOffset = memory.displacement;
+                        if (childOffset < 0 || childOffset >= MAX_POINTEE_SIZE ||
+                                size <= 0 || size > 8) continue;
+                        boolean write = operandIndex == 0 && isWriteMnemonic(mnemonic);
+                        FieldEvidence parent = field(owner, base.offset);
+                        PointeeFieldEvidence child = parent.pointeeFields.computeIfAbsent(
+                            childOffset, PointeeFieldEvidence::new);
+                        child.sizes.merge(size, 1, Integer::sum);
+                        if (write) child.writes++;
+                        else child.reads++;
+                        String site = addr(function.getEntryPoint()) + " [this+" +
+                            hex(base.offset) + "] -> [pointee+" + hex(childOffset) + "]";
+                        child.sites.add(site);
+                        parent.pointerUses++;
+                        owner.functions.add(addr(function.getEntryPoint()));
+                        continue;
+                    }
                     if (base == null || base.kind != ValueKind.THIS_ADDRESS) continue;
                     long offset = base.offset + memory.displacement;
                     if (offset < 0 || offset >= MAX_CLASS_SIZE || size <= 0 || size > 8) continue;
@@ -417,6 +459,81 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             return new PushEvidence(ValueKind.FIELD_VALUE, base.offset + memory.displacement);
         }
         return PushEvidence.unknown();
+    }
+
+    private List<NestedTypeProposal> prepareNestedTypes(ClassEvidence evidence,
+            List<NestedFieldProposal> fieldRows) {
+        List<NestedTypeProposal> result = new ArrayList<>();
+        for (FieldEvidence parent : evidence.fields.values()) {
+            List<PointeeFieldEvidence> selected = selectedPointeeFields(parent);
+            if (parent.pointerUses < 3 || selected.size() < 2) continue;
+            if (looksLikeDArray(parent) && dataTypes.getDataType(DARRAY_PATH) instanceof Structure) {
+                parent.addType("pointer:" + DARRAY_PATH,
+                    "nested layout has DArray fields +0x8/+0xC/+0x1C");
+                continue;
+            }
+            int length = pointeeLength(selected);
+            if (length < 1 || length > MAX_POINTEE_SIZE) continue;
+            String owner = evidence.owner.replaceAll("[^A-Za-z0-9_]", "_");
+            String path = CLASS_POINTEE_ROOT + "AnonPointee_" + owner + "_" +
+                String.format("%04X", parent.offset);
+            parent.addType("pointer:" + path,
+                "consistent nested dereferences through [this+" + hex(parent.offset) + "]");
+            NestedTypeProposal type = new NestedTypeProposal(false, evidence.owner,
+                parent.offset, path, length, selected.size(), parent.pointerUses,
+                "multiple non-overlapping fixed offsets through one class pointer field");
+            result.add(type);
+            for (PointeeFieldEvidence child : selected) {
+                int size = child.uniqueSize();
+                fieldRows.add(new NestedFieldProposal(false, path, child.offset, size,
+                    String.format("field_%04X", child.offset), "/undefined" + size,
+                    child.sites.size(), "nested reads=" + child.reads +
+                    ", writes=" + child.writes));
+            }
+        }
+        return result;
+    }
+
+    private boolean looksLikeDArray(FieldEvidence parent) {
+        if (parent.pointerUses < 3) return false;
+        DataType candidate = dataTypes.getDataType(DARRAY_PATH);
+        if (!(candidate instanceof Structure darray)) return false;
+        PointeeFieldEvidence elementSize = parent.pointeeFields.get(8L);
+        PointeeFieldEvidence count = parent.pointeeFields.get(0xcL);
+        PointeeFieldEvidence data = parent.pointeeFields.get(0x1cL);
+        if (!(elementSize != null && count != null && data != null &&
+            elementSize.uniqueSize() == 4 && count.uniqueSize() == 4 &&
+            data.uniqueSize() == 4)) return false;
+        for (PointeeFieldEvidence field : parent.pointeeFields.values()) {
+            int size = field.sizes.keySet().stream().mapToInt(Integer::intValue).max()
+                .orElse(1);
+            if (field.offset < 0 || field.offset + size > darray.getLength()) return false;
+        }
+        return true;
+    }
+
+    private List<PointeeFieldEvidence> selectedPointeeFields(FieldEvidence parent) {
+        List<PointeeFieldEvidence> candidates = parent.pointeeFields.values().stream()
+            .filter(field -> field.uniqueSize() > 0)
+            .sorted(Comparator.<PointeeFieldEvidence>comparingInt(field ->
+                field.sites.size()).reversed().thenComparingLong(field -> field.offset))
+            .toList();
+        List<PointeeFieldEvidence> result = new ArrayList<>();
+        for (PointeeFieldEvidence candidate : candidates) {
+            long start = candidate.offset, end = start + candidate.uniqueSize();
+            boolean overlap = result.stream().anyMatch(field -> start <
+                field.offset + field.uniqueSize() && field.offset < end);
+            if (!overlap) result.add(candidate);
+        }
+        result.sort(Comparator.comparingLong(field -> field.offset));
+        return result;
+    }
+
+    private int pointeeLength(List<PointeeFieldEvidence> fields) {
+        long end = 0;
+        for (PointeeFieldEvidence field : fields)
+            end = Math.max(end, field.offset + field.uniqueSize());
+        return (int)((end + 3) & ~3L);
     }
 
     private List<FieldProposal> makeFields(ClassEvidence evidence, Structure structure,
@@ -870,8 +987,30 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
     }
 
-    private void writeSummary(Path path, List<ClassProposal> classes, List<FieldProposal> fields)
-            throws Exception {
+    private void writeNestedTypes(Path path, List<NestedTypeProposal> rows) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("apply\towner\tparent_offset\ttype_path\tlength\tfield_count\t" +
+                "access_count\tconfidence\treason\n");
+            for (NestedTypeProposal row : rows) out.write(bit(row.apply) + "\t" +
+                tsv(row.owner) + "\t" + row.parentOffset + "\t" + tsv(row.typePath) +
+                "\t" + row.length + "\t" + row.fieldCount + "\t" + row.accessCount +
+                "\t" + (row.apply ? "layout" : "review") + "\t" + tsv(row.reason) + "\n");
+        }
+    }
+
+    private void writeNestedFields(Path path, List<NestedFieldProposal> rows) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("apply\ttype_path\toffset\tsize\tproposed_name\tproposed_type\t" +
+                "evidence_count\treason\n");
+            for (NestedFieldProposal row : rows) out.write(bit(row.apply) + "\t" +
+                tsv(row.typePath) + "\t" + row.offset + "\t" + row.size + "\t" +
+                row.name + "\t" + tsv(row.type) + "\t" + row.evidenceCount + "\t" +
+                tsv(row.reason) + "\n");
+        }
+    }
+
+    private void writeSummary(Path path, List<ClassProposal> classes, List<FieldProposal> fields,
+            List<NestedTypeProposal> nestedTypes) throws Exception {
         Set<String> applicableOwners = new TreeSet<>();
         for (ClassProposal row : classes) if (row.apply) applicableOwners.add(row.owner);
         Files.write(path, List.of("program=" + currentProgram.getName(),
@@ -902,7 +1041,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 .filter(row -> row.reason.contains("inferred_type_conflict")).count(),
             "field_existing_type_conflicts=" + fields.stream()
                 .filter(row -> row.reason.contains("rejected_inference=")).count(),
-            "note=Only exact register-plus-constant accesses derived from incoming ECX are used.",
+            "nested_pointee_types=" + nestedTypes.size(),
+            "nested_pointee_type_auto_apply=" + nestedTypes.stream()
+                .filter(row -> row.apply).count(),
+            "note=Only exact register-plus-constant accesses derived from incoming ECX, " +
+                "or one pointer field loaded from it, are used.",
             "note_types=Types require one unambiguous typed receiver/argument/return, " +
                 "sign-extension, or x87 memory-use flow with an exactly matching width.",
             "note_names=Names are review-only (name_apply=0); suggestions come from typed " +
@@ -1020,7 +1163,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         final Set<String> functions = new TreeSet<>();
         final Map<String, Set<String>> inferredTypes = new TreeMap<>();
         final Map<String, Set<String>> inferredNames = new TreeMap<>();
-        int reads, writes;
+        final Map<Long, PointeeFieldEvidence> pointeeFields = new TreeMap<>();
+        int reads, writes, pointerUses;
         FieldEvidence(long offset) { this.offset = offset; }
         void addType(String type, String evidence) {
             inferredTypes.computeIfAbsent(type, ignored -> new TreeSet<>()).add(evidence);
@@ -1056,6 +1200,40 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             for (Map.Entry<Integer, Integer> entry : sizes.entrySet())
                 result.add(entry.getKey() + "x" + entry.getValue());
             return String.join("|", result);
+        }
+    }
+    private static class PointeeFieldEvidence {
+        final long offset;
+        final Map<Integer, Integer> sizes = new TreeMap<>();
+        final Set<String> sites = new TreeSet<>();
+        int reads, writes;
+        PointeeFieldEvidence(long offset) { this.offset = offset; }
+        int uniqueSize() {
+            return sizes.size() == 1 ? sizes.keySet().iterator().next() : -1;
+        }
+    }
+    private static class NestedTypeProposal {
+        boolean apply;
+        final String owner, typePath, reason;
+        final long parentOffset;
+        final int length, fieldCount, accessCount;
+        NestedTypeProposal(boolean apply, String owner, long parentOffset, String typePath,
+                int length, int fieldCount, int accessCount, String reason) {
+            this.apply = apply; this.owner = owner; this.parentOffset = parentOffset;
+            this.typePath = typePath; this.length = length; this.fieldCount = fieldCount;
+            this.accessCount = accessCount; this.reason = reason;
+        }
+    }
+    private static class NestedFieldProposal {
+        boolean apply;
+        final String typePath, name, type, reason;
+        final long offset;
+        final int size, evidenceCount;
+        NestedFieldProposal(boolean apply, String typePath, long offset, int size,
+                String name, String type, int evidenceCount, String reason) {
+            this.apply = apply; this.typePath = typePath; this.offset = offset;
+            this.size = size; this.name = name; this.type = type;
+            this.evidenceCount = evidenceCount; this.reason = reason;
         }
     }
     private static class ClassProposal {

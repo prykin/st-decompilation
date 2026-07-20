@@ -1,37 +1,39 @@
 
-int __thiscall FUN_00696d00(void *this,int *param_1,uint param_2)
+int __thiscall FUN_00696d00(void *this,AnonShape_00696D00_CB3CB395 *param_1,uint param_2)
 
 {
-  int iVar1;
-  uint *puVar2;
-  uint uVar3;
-  bool bVar4;
+  DArrayTy *pDVar1;
+  int iVar2;
+  uint *puVar3;
+  uint uVar4;
+  bool bVar5;
   
-  if ((param_1 != (int *)0x0) && (iVar1 = *(int *)((int)param_1 + 0x19), iVar1 != 0)) {
-    uVar3 = 0;
-    if (0 < *(int *)(iVar1 + 0xc)) {
-      bVar4 = *(int *)(iVar1 + 0xc) != 0;
+  if ((param_1 != (AnonShape_00696D00_CB3CB395 *)0x0) &&
+     (pDVar1 = param_1->field_0019, pDVar1 != (DArrayTy *)0x0)) {
+    uVar4 = 0;
+    if (0 < (int)pDVar1->count) {
+      bVar5 = pDVar1->count != 0;
       while( true ) {
-        if (bVar4) {
-          puVar2 = (uint *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c));
+        if (bVar5) {
+          puVar3 = (uint *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
         }
         else {
-          puVar2 = (uint *)0x0;
+          puVar3 = (uint *)0x0;
         }
-        iVar1 = thunk_FUN_00696c40(this,*puVar2,*param_1,param_2);
-        if (iVar1 == 0) break;
-        iVar1 = *(int *)((int)param_1 + 0x19);
-        uVar3 = uVar3 + 1;
-        bVar4 = uVar3 < *(uint *)(iVar1 + 0xc);
-        if ((int)*(uint *)(iVar1 + 0xc) <= (int)uVar3) {
+        iVar2 = thunk_FUN_00696c40(this,*puVar3,*(int *)param_1,param_2);
+        if (iVar2 == 0) break;
+        pDVar1 = param_1->field_0019;
+        uVar4 = uVar4 + 1;
+        bVar5 = uVar4 < pDVar1->count;
+        if ((int)pDVar1->count <= (int)uVar4) {
           return 0;
         }
       }
-      if ((int)*puVar2 < 0) {
+      if ((int)*puVar3 < 0) {
         return 0;
       }
-      iVar1 = thunk_FUN_006961b0(this,param_2,*puVar2,0,0);
-      return iVar1;
+      iVar2 = thunk_FUN_006961b0(this,param_2,*puVar3,0,0);
+      return iVar2;
     }
   }
   return 0;

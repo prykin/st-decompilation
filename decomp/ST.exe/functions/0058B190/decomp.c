@@ -255,9 +255,9 @@ LAB_0058b5ac:
              ((((sVar11 < 0 || (SHORT_007fb240 <= sVar11)) || (sVar12 < 0)) ||
               (((SHORT_007fb242 <= sVar12 || (sVar3 = (short)local_8, sVar3 < 0)) ||
                ((SHORT_007fb244 <= sVar3 ||
-                (*(int *)(DAT_007fb248 +
-                         ((int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar3 +
-                         (int)sVar11) * 8) == 0)))))))) {
+                (g_worldCells
+                 [(int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar3 + (int)sVar11
+                 ].objects[0] == (STWorldObject *)0x0)))))))) {
             if (iVar4 != local_8) {
               local_c = (int)(short)((short)iVar4 * 200 + 100);
             }

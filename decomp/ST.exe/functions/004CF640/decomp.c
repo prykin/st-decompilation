@@ -55,7 +55,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
       piVar4 = piVar4 + 1;
     }
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2286_0x9de,
+        (pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de,
         pDVar7 != (DArrayTy *)0x0)) && (uVar3 = 0, 0 < (int)pDVar7->count)) {
       do {
         FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar7,uVar3,&local_28);
@@ -70,7 +70,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         uVar3 = uVar3 + 1;
-        pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2286_0x9de;
+        pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de;
       } while ((int)uVar3 < (int)pDVar7->count);
     }
     local_2c = (int)local_10 << 4;

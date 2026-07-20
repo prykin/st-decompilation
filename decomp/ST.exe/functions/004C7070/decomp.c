@@ -40,9 +40,9 @@ LAB_004c7175:
           sVar4 = (short)iVar5;
           if ((((SHORT_007fb240 <= sVar2) || (sVar1 < 0)) || (SHORT_007fb242 <= sVar1)) ||
              (((sVar4 < 0 || (SHORT_007fb244 <= sVar4)) ||
-              (*(int *)(DAT_007fb248 +
-                       ((int)sVar4 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar1 +
-                       (int)sVar2) * 8) == 0)))) {
+              (g_worldCells
+               [(int)sVar4 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar2].
+               objects[0] == (STWorldObject *)0x0)))) {
             if (((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
                ((sVar1 < 0 ||
                 (((SHORT_007fb242 <= sVar1 || (sVar4 < 0)) || (SHORT_007fb244 <= sVar4))))))

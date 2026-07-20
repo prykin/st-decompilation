@@ -53,17 +53,20 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
        (((-1 < sVar3 && (sVar3 < SHORT_007fb240)) &&
         ((-1 < (short)uVar4 &&
          ((((((short)uVar4 < SHORT_007fb242 && (-1 < sVar5)) && (sVar5 < SHORT_007fb244)) &&
-           (iVar7 = *(int *)(DAT_007fb248 + 4 +
-                            ((int)SHORT_007fb246 * (int)sVar5 +
-                             (int)SHORT_007fb240 * (int)(short)uVar4 + (int)sVar3) * 8), iVar7 != 0)
-           ) && ((iVar7 = *(int *)(iVar7 + 0x20), iVar7 == 0x5a || (iVar7 == 0x1ae)))))))))) {
+           (g_worldCells
+            [(int)SHORT_007fb246 * (int)sVar5 + (int)SHORT_007fb240 * (int)(short)uVar4 + (int)sVar3
+            ].objects[1] != (STWorldObject *)0x0)) &&
+          ((iVar7 = g_worldCells
+                    [(int)SHORT_007fb246 * (int)sVar5 + (int)SHORT_007fb240 * (int)(short)uVar4 +
+                     (int)sVar3].objects[1]->value_20, iVar7 == 0x5a || (iVar7 == 0x1ae)))))))))) {
       psVar1 = (short *)((int)&this->field_05E0 + 2);
       uVar13 = (undefined2)((uint)psVar1 >> 0x10);
-      iVar9 = thunk_FUN_0048dfd0(CONCAT22((short)((uint)iVar9 >> 0x10),sVar3),(uint)uVar4,
+      iVar9 = thunk_FUN_0048dfd0(this,CONCAT22((short)((uint)iVar9 >> 0x10),sVar3),(uint)uVar4,
                                  CONCAT22((short)((uint)in_EDX >> 0x10),sVar5),
-                                 CONCAT22(uVar13,this->field_0047),CONCAT22(uVar13,this->field_0049)
-                                 ,(int *)CONCAT22(uVar13,this->field_004B),1,psVar1,
-                                 (short *)&this->field_05E4,(short *)((int)&this->field_05E4 + 2));
+                                 CONCAT22(uVar13,this->field_0047),
+                                 (int *)CONCAT22(uVar13,this->field_0049),
+                                 CONCAT22(uVar13,this->field_004B),(short *)0x1,psVar1,
+                                 (short *)&this->field_05E4);
       if (iVar9 == 0) {
         return 0;
       }
@@ -105,18 +108,20 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                      (int)sVar3) * 2) != 0)) ||
          ((((-1 < sVar3 && (sVar3 < SHORT_007fb240)) &&
            ((-1 < sVar5 && (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244))))
-           )) && ((iVar9 = *(int *)(DAT_007fb248 + 4 +
-                                   ((int)SHORT_007fb246 * (int)sVar2 +
-                                    (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3) * 8), iVar9 != 0
-                  && ((iVar9 = *(int *)(iVar9 + 0x20), iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
+           )) && ((g_worldCells
+                   [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3
+                   ].objects[1] != (STWorldObject *)0x0 &&
+                  ((iVar9 = g_worldCells
+                            [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 +
+                             (int)sVar3].objects[1]->value_20, iVar9 == 0x5a || (iVar9 == 0x1ae)))))
+          ))) {
         psVar1 = (short *)((int)&this->field_05E0 + 2);
         uVar12 = (undefined2)((uint)psVar1 >> 0x10);
-        iVar9 = thunk_FUN_0048dfd0(CONCAT22(uVar13,sVar3),CONCAT22(extraout_var,sVar5),
+        iVar9 = thunk_FUN_0048dfd0(this,CONCAT22(uVar13,sVar3),CONCAT22(extraout_var,sVar5),
                                    CONCAT22(extraout_var_00,sVar2),CONCAT22(uVar12,this->field_0047)
-                                   ,CONCAT22(uVar12,this->field_0049),
-                                   (int *)CONCAT22(uVar12,this->field_004B),1,psVar1,
-                                   (short *)&this->field_05E4,(short *)((int)&this->field_05E4 + 2))
-        ;
+                                   ,(int *)CONCAT22(uVar12,this->field_0049),
+                                   CONCAT22(uVar12,this->field_004B),(short *)0x1,psVar1,
+                                   (short *)&this->field_05E4);
         if (iVar9 == 0) {
           return 0;
         }
@@ -134,29 +139,31 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
       *(short *)&this->field_05E0 = sVar2;
       if ((((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) &&
             ((-1 < sVar5 && (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244)))
-             ))) && (*(int *)(DAT_007fb248 +
-                             ((int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 +
-                             (int)sVar3) * 8) != 0)) || ((sVar3 < 0 || (SHORT_007fb240 <= sVar3))))
-         || ((((sVar5 < 0 || ((SHORT_007fb242 <= sVar5 || (sVar2 < 0)))) ||
-              ((SHORT_007fb244 <= sVar2 ||
-               (*(short *)(DAT_007fb280 +
-                          ((int)SHORT_007fb278 * (int)sVar5 + (int)SHORT_007fb27e * (int)sVar2 +
-                          (int)sVar3) * 2) != 0)))) ||
-             (((((-1 < sVar3 && (sVar3 < SHORT_007fb240)) && (-1 < sVar5)) &&
-               (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) &&
-                ((sVar2 < SHORT_007fb244 &&
-                 (iVar9 = *(int *)(DAT_007fb248 + 4 +
-                                  ((int)SHORT_007fb246 * (int)sVar2 +
-                                   (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3) * 8), iVar9 != 0))
-                )))) && ((iVar9 = *(int *)(iVar9 + 0x20), iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
+             ))) && (g_worldCells
+                     [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 +
+                      (int)sVar3].objects[0] != (STWorldObject *)0x0)) ||
+          ((sVar3 < 0 || (SHORT_007fb240 <= sVar3)))) ||
+         ((((sVar5 < 0 || ((SHORT_007fb242 <= sVar5 || (sVar2 < 0)))) ||
+           ((SHORT_007fb244 <= sVar2 ||
+            (*(short *)(DAT_007fb280 +
+                       ((int)SHORT_007fb278 * (int)sVar5 + (int)SHORT_007fb27e * (int)sVar2 +
+                       (int)sVar3) * 2) != 0)))) ||
+          (((((-1 < sVar3 && (sVar3 < SHORT_007fb240)) && (-1 < sVar5)) &&
+            (((sVar5 < SHORT_007fb242 && (-1 < sVar2)) &&
+             ((sVar2 < SHORT_007fb244 &&
+              (g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3].
+               objects[1] != (STWorldObject *)0x0)))))) &&
+           ((iVar9 = g_worldCells
+                     [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 +
+                      (int)sVar3].objects[1]->value_20, iVar9 == 0x5a || (iVar9 == 0x1ae)))))))) {
         psVar1 = (short *)((int)&this->field_05E0 + 2);
         uVar12 = (undefined2)((uint)psVar1 >> 0x10);
-        iVar9 = thunk_FUN_0048dfd0(CONCAT22(uVar13,sVar3),CONCAT22(extraout_var,sVar5),
+        iVar9 = thunk_FUN_0048dfd0(this,CONCAT22(uVar13,sVar3),CONCAT22(extraout_var,sVar5),
                                    CONCAT22(extraout_var_00,sVar2),CONCAT22(uVar12,this->field_0047)
-                                   ,CONCAT22(uVar12,this->field_0049),
-                                   (int *)CONCAT22(uVar12,this->field_004B),1,psVar1,
-                                   (short *)&this->field_05E4,(short *)((int)&this->field_05E4 + 2))
-        ;
+                                   ,(int *)CONCAT22(uVar12,this->field_0049),
+                                   CONCAT22(uVar12,this->field_004B),(short *)0x1,psVar1,
+                                   (short *)&this->field_05E4);
         if (iVar9 == 0) {
           return 0;
         }

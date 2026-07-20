@@ -16,7 +16,7 @@ void __thiscall FUN_005f5e30(void *this,undefined4 param_1,undefined4 param_2,un
   *(undefined4 *)((int)this + 0xc0) = 0;
   *(undefined4 *)((int)this + 0xab) = 0;
   if (*(char *)((int)this + 0x103) != '\0') {
-    thunk_FUN_005f35f0(3);
+    thunk_FUN_005f35f0(this);
   }
   thunk_FUN_005f5c40(this,*(int *)((int)this + 0x93),*(int *)((int)this + 0x97),0x48a);
   return;

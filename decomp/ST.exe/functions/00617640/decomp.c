@@ -3,7 +3,7 @@
    E:\__titans\nick\to_jbomb_m.Cpp
    JumpManagC::GetMessage */
 
-undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,int param_1)
+undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,AnonShape_00617640_1122A6C6 *param_1)
 
 {
   code *pcVar1;
@@ -12,7 +12,7 @@ undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,int param_1)
   int iVar4;
   undefined4 uVar5;
   undefined4 unaff_ESI;
-  undefined4 *puVar6;
+  AnonNested_00617640_0014_CD0B523E *pAVar6;
   void *unaff_EDI;
   undefined4 *puVar7;
   InternalExceptionFrame local_54;
@@ -37,28 +37,28 @@ undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x4d);
     return 0xffff;
   }
-  iVar3 = *(int *)(param_1 + 0x10);
+  iVar3 = param_1->field_0010;
   if (iVar3 == 2) {
-    puVar6 = *(undefined4 **)(param_1 + 0x14);
-    if (puVar6[3] != 2) {
+    pAVar6 = param_1->field_0014;
+    if (pAVar6->field_000C != 2) {
       puVar7 = (undefined4 *)&local_8->field_0x1c;
       for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar7 = *puVar6;
-        puVar6 = puVar6 + 1;
+        *puVar7 = pAVar6->field_0000;
+        pAVar6 = (AnonNested_00617640_0014_CD0B523E *)&pAVar6->field_0x4;
         puVar7 = puVar7 + 1;
       }
-      *(undefined2 *)puVar7 = *(undefined2 *)puVar6;
+      *(undefined2 *)puVar7 = *(undefined2 *)&pAVar6->field_0000;
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    thunk_FUN_00618170(local_8,puVar6);
-    thunk_FUN_006179d0((int)pJVar2);
+    thunk_FUN_00618170(local_8,&pAVar6->field_0000);
+    thunk_FUN_006179d0((AnonShape_006179D0_BD0E52D0 *)pJVar2);
   }
   else if (iVar3 == 3) {
-    thunk_FUN_00618ad0((int)local_8);
-    if ((byte *)pJVar2->field_005E != (byte *)0x0) {
+    thunk_FUN_00618ad0((AnonShape_00618AD0_F1827B9B *)local_8);
+    if (pJVar2->field_005E != (DArrayTy *)0x0) {
       FUN_006ae110((byte *)pJVar2->field_005E);
-      pJVar2->field_005E = 0;
+      pJVar2->field_005E = (DArrayTy *)0x0;
     }
     if ((byte *)pJVar2->field_0062 != (byte *)0x0) {
       FUN_006ae110((byte *)pJVar2->field_0062);

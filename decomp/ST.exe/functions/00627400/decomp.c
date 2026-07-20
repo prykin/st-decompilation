@@ -14,18 +14,16 @@ undefined4 __thiscall FUN_00627400(void *this,undefined4 param_1)
   if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
      (((SHORT_007fb242 <= sVar2 || (sVar3 < 0)) ||
       ((SHORT_007fb244 <= sVar3 ||
-       (this_00 = *(STFishC **)
-                   (DAT_007fb248 +
-                   ((uint)*(byte *)((int)this + 0x8e) +
-                   ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1
-                   ) * 2) * 4), this_00 == (STFishC *)0x0)))))) {
+       (this_00 = (STFishC *)
+                  g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1]
+                  .objects[*(byte *)((int)this + 0x8e)], this_00 == (STFishC *)0x0)))))) {
     if ((((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
          ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))) ||
         ((SHORT_007fb244 <= sVar3 ||
-         (*(int *)(DAT_007fb248 +
-                  ((uint)*(byte *)((int)this + 0x8e) +
-                  ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1)
-                  * 2) * 4) == 0)))) &&
+         (g_worldCells
+          [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1].objects
+          [*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)))) &&
        (iVar4 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,(uint)*(byte *)((int)this + 0x8e),this),
        iVar4 == 0)) {
       *(char *)((int)this + 0x314) = *(char *)((int)this + 0x314) + '\x01';

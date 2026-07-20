@@ -30,7 +30,7 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   if (iVar3 == 0) {
     uVar4 = thunk_FUN_005276e0(local_8->field_0C31,local_8->field_0C32);
     pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_029A,uVar4);
-    DibPut((undefined4 *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',pbVar5);
+    DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',pbVar5);
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 2,0x52,0xb2,10);
     iVar10 = -1;
     iVar9 = -1;

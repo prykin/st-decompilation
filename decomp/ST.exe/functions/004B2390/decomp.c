@@ -22,9 +22,9 @@ FUN_004b2390(uint param_1,int param_2,int param_3,undefined4 param_4,int *param_
       sVar4 = (short)param_4;
       if (((((SHORT_007fb240 <= sVar3) || (sVar1 < 0)) ||
            ((SHORT_007fb242 <= sVar1 || ((sVar4 < 0 || (SHORT_007fb244 <= sVar4)))))) ||
-          (*(int *)(DAT_007fb248 +
-                   ((int)SHORT_007fb246 * (int)sVar4 + (int)sVar1 * (int)SHORT_007fb240 + (int)sVar3
-                   ) * 8) == 0)) &&
+          (g_worldCells
+           [(int)SHORT_007fb246 * (int)sVar4 + (int)sVar1 * (int)SHORT_007fb240 + (int)sVar3].
+           objects[0] == (STWorldObject *)0x0)) &&
          (((((sVar3 < SHORT_007fb240 && (-1 < sVar1)) && (sVar1 < SHORT_007fb242)) &&
            ((-1 < sVar4 && (sVar4 < SHORT_007fb244)))) &&
           (((*(short *)(DAT_007fb280 +

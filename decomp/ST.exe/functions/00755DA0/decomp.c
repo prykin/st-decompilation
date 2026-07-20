@@ -10,7 +10,7 @@ void FUN_00755da0(uint param_1,undefined4 *param_2)
   *param_2 = *(undefined4 *)
               (*(int *)(*(int *)(param_1 + 0xc) + 0x44 +
                        *(int *)(*(int *)(param_1 + 0xc) + 0x1c) * 8) + 0x10 + iVar1);
-  FUN_00755d40(param_1,iVar1,
+  FUN_00755d40((AnonShape_00755D40_9BC6D2DA *)param_1,iVar1,
                *(int *)(*(int *)(param_1 + 0xc) + 0x44 +
                        *(int *)(*(int *)(param_1 + 0xc) + 0x1c) * 8));
   FUN_007561d0((AnonShape_00753C80_4C8E695D *)param_1,

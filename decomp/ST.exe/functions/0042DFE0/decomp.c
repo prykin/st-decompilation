@@ -6,7 +6,7 @@
 uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *param_1,uint *param_2)
 
 {
-  AnonShape_006ACC70_C8641025 *pAVar1;
+  DArrayTy *pDVar1;
   code *pcVar2;
   uint *puVar3;
   int iVar4;
@@ -32,9 +32,10 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     *param_2 = 0;
   }
   uVar5 = (uint)DAT_0080874d;
-  if (g_playerRuntime[uVar5].field442_0x203 == 0) {
-    if (g_playerRuntime[uVar5].field327_0x167 == uVar5) {
-      if (g_playerRuntime[uVar5].field326_0x163 == 0x3c) {
+  if (g_playerRuntime[uVar5].field324_0x203 == 0) {
+    if (g_playerRuntime[uVar5].tempSlots[0][0].playerId == uVar5) {
+      iVar4 = g_playerRuntime[uVar5].tempSlots[0][0].objectType;
+      if (iVar4 == 0x3c) {
         local_10 = (uint *)thunk_FUN_0042d770(CONCAT31((int3)((uint)unaff_EBX >> 8),DAT_0080874d),
                                               (int *)&local_8);
         local_c = 0;
@@ -61,21 +62,21 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
         }
         FUN_006ae110((byte *)local_8);
       }
-      else if (g_playerRuntime[uVar5].field326_0x163 == 0x1ae) {
+      else if (iVar4 == 0x1ae) {
         local_c = 2;
-        local_10 = (uint *)(uint)(ushort)g_playerRuntime[uVar5].field328_0x16b;
+        local_10 = (uint *)(uint)(ushort)g_playerRuntime[uVar5].tempSlots[0][0].objectId;
       }
     }
   }
-  else if (g_playerRuntime[uVar5].field442_0x203 == 1) {
-    if ((g_playerRuntime[uVar5].field385_0x1b7 == uVar5) &&
-       (g_playerRuntime[uVar5].field384_0x1b3 == 0x19a)) {
-      pAVar1 = (AnonShape_006ACC70_C8641025 *)g_playerRuntime[uVar5].field387_0x1bd;
+  else if (g_playerRuntime[uVar5].field324_0x203 == 1) {
+    if ((g_playerRuntime[uVar5].tempSlots[1][0].playerId == uVar5) &&
+       (g_playerRuntime[uVar5].tempSlots[1][0].objectType == 0x19a)) {
+      pDVar1 = g_playerRuntime[uVar5].tempSlots[1][0].objectIds;
       uVar8 = 0;
-      uVar5 = pAVar1->field_000C;
+      uVar5 = pDVar1->count;
       if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(pAVar1,uVar8,&param_2);
+          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,uVar8,&param_2);
           if (((short)param_2 != -1) &&
              (uVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
                                 (uint)param_2,CASE_1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {

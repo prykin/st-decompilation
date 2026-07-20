@@ -36,9 +36,9 @@ bool __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_
       sVar3 = sVar2 + this->field_0639;
       if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
            ((sVar5 < 0 || ((SHORT_007fb242 <= sVar5 || (sVar1 < 0)))))) || (SHORT_007fb244 <= sVar1)
-          ) || (*(int *)(DAT_007fb248 +
-                        ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar5 +
-                        (int)sVar3) * 8) == 0)) {
+          ) || (g_worldCells
+                [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3].
+                objects[0] == (STWorldObject *)0x0)) {
         iVar4 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,iVar4
                              ,this->field_063B + iVar7,this->field_063D + 1);
         if (iVar4 < local_c) {

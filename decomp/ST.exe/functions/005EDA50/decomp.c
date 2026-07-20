@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  int *this;
+  STWorldObject *this;
   int iVar4;
   undefined4 uVar5;
   undefined4 local_18;
@@ -23,16 +23,17 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
     if ((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
        (((sVar2 < SHORT_007fb242 && (-1 < sVar1)) &&
         ((sVar1 < SHORT_007fb244 &&
-         (this = *(int **)(DAT_007fb248 +
-                          ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
-                          (int)sVar3) * 8), uVar5 = local_18, this != (int *)0x0)))))) {
+         (this = g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
+                 objects[0], uVar5 = local_18, this != (STWorldObject *)0x0)))))) {
       if ((param_1->field_02E9 != '\0') &&
-         (iVar4 = (**(code **)(*(int *)param_1 + 0x128))(), this[6] == iVar4)) {
+         (iVar4 = (**(code **)(*(int *)param_1 + 0x128))(), *(int *)&this->field_0x18 == iVar4)) {
         return 0;
       }
-      iVar4 = (**(code **)(*this + 0x2c))();
+      iVar4 = (*this->vtable->GetObjectTypeId)(this);
       if ((((iVar4 == 0x52) || (iVar4 == 0x5f)) &&
-          (iVar4 = thunk_FUN_004e1490((int)this), iVar4 != 0)) && (this[0x142] == 0)) {
+          (iVar4 = thunk_FUN_004e1490((int)this), iVar4 != 0)) &&
+         (*(int *)&this[0x23].field_0x1c == 0)) {
         iVar4 = (**(code **)(*(int *)param_1 + 0xc))();
         thunk_FUN_004ebcb0(this,*(int *)&param_1->field_0x18,iVar4);
         thunk_FUN_004ebfd0(this,&local_14,&local_10,&local_c,&local_8);
@@ -40,7 +41,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
         if (iVar4 != 0) {
           uVar5 = 1;
           if (param_1->field_0211 != (void *)0x0) {
-            FUN_006ea460(param_1->field_0211,param_1->field_01ED,*(int *)((int)this + 0x1ed));
+            FUN_006ea460(param_1->field_0211,param_1->field_01ED,*(int *)&this[0xd].field_0x19);
             return 1;
           }
         }

@@ -3,13 +3,13 @@
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::PaintTab */
 
-void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
+void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA *param_1)
 
 {
   int iVar1;
   uint uVar2;
   code *pcVar3;
-  uint *puVar4;
+  AnonNested_005C1610_0014_572A8044 *pAVar4;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -21,7 +21,7 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
   byte bVar11;
   InternalExceptionFrame local_8c;
   int local_48;
-  uint *local_44;
+  AnonNested_005C1610_0014_572A8044 *local_44;
   int local_40;
   int local_3c;
   int local_38;
@@ -38,14 +38,14 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
   uint local_c;
   MReportTy *local_8;
   
-  local_44 = *(uint **)(param_1 + 0x14);
-  local_40 = local_44[4] - 0x46;
-  local_48 = local_44[3] - 0x1a;
+  local_44 = param_1->field_0014;
+  local_40 = local_44->field_0010 - 0x46;
+  local_48 = local_44->field_000C - 0x1a;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_8 = this;
   iVar5 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  puVar4 = local_44;
+  pAVar4 = local_44;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_8c.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369,0,iVar5,&DAT_007a4ccc,
@@ -58,36 +58,38 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
     (*pcVar3)();
     return;
   }
-  FUN_006b5f80(DAT_008075a8,local_44[3],local_44[4],local_44[5],local_44[6]);
+  FUN_006b5f80(DAT_008075a8,local_44->field_000C,local_44->field_0010,local_44->field_0014,
+               local_44->field_0018);
   iVar7 = local_40;
   iVar5 = local_48;
-  FUN_006b4170(local_8->field_0073,0,local_48,local_40,puVar4[5],puVar4[6],0xff);
-  uVar2 = puVar4[1];
+  FUN_006b4170((int)local_8->field_0073,0,local_48,local_40,pAVar4->field_0014,pAVar4->field_0018,
+               0xff);
+  uVar2 = pAVar4->field_0004;
   if (uVar2 == 0) {
     local_3c = iVar5 + 5;
     local_38 = iVar7 + 2;
     local_34 = iVar5 + 7;
     local_30 = iVar7;
     local_28 = iVar7;
-    local_2c = iVar5 + -3 + puVar4[5];
-    local_24 = iVar5 + -3 + puVar4[5];
-    local_20 = (puVar4[6] - 1) + iVar7;
-    local_18 = (puVar4[6] - 1) + iVar7;
-    local_10 = (puVar4[6] - 3) + iVar7;
+    local_2c = iVar5 + -3 + pAVar4->field_0014;
+    local_24 = iVar5 + -3 + pAVar4->field_0014;
+    local_20 = (pAVar4->field_0018 - 1) + iVar7;
+    local_18 = (pAVar4->field_0018 - 1) + iVar7;
+    local_10 = (pAVar4->field_0018 - 3) + iVar7;
     local_1c = local_34;
     local_14 = local_3c;
     FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
-    FUN_006c7f10(local_8->field_0073,0,&local_3c,6,0x18);
-    iVar6 = iVar5 + -1 + puVar4[5];
+    FUN_006c7f10((int)local_8->field_0073,0,&local_3c,6,0x18);
+    iVar6 = iVar5 + -1 + pAVar4->field_0014;
 LAB_005c17e9:
     bVar11 = 0x18;
-    iVar1 = puVar4[6] - 1;
+    iVar1 = pAVar4->field_0018 - 1;
     iVar10 = iVar7;
   }
   else {
     if (uVar2 != 1) {
       if (uVar2 != 2) goto LAB_005c1806;
-      iVar6 = iVar5 + -1 + puVar4[5];
+      iVar6 = iVar5 + -1 + pAVar4->field_0014;
       goto LAB_005c17e9;
     }
     local_38 = iVar7 + 2;
@@ -95,24 +97,25 @@ LAB_005c17e9:
     local_3c = iVar5;
     local_30 = iVar7;
     local_28 = iVar7;
-    local_2c = iVar5 + -1 + puVar4[5];
-    local_24 = iVar5 + -1 + puVar4[5];
-    local_20 = (puVar4[6] - 1) + iVar7;
+    local_2c = iVar5 + -1 + pAVar4->field_0014;
+    local_24 = iVar5 + -1 + pAVar4->field_0014;
+    local_20 = (pAVar4->field_0018 - 1) + iVar7;
     local_14 = iVar5;
-    local_18 = (puVar4[6] - 1) + iVar7;
-    local_10 = (puVar4[6] - 3) + iVar7;
+    local_18 = (pAVar4->field_0018 - 1) + iVar7;
+    local_10 = (pAVar4->field_0018 - 3) + iVar7;
     local_1c = local_34;
     FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
-    FUN_006c7f10(local_8->field_0073,0,&local_3c,6,0x18);
+    FUN_006c7f10((int)local_8->field_0073,0,&local_3c,6,0x18);
     bVar11 = 0x4c;
-    iVar6 = iVar5 + -1 + puVar4[5];
-    iVar1 = puVar4[6] - 2;
+    iVar6 = iVar5 + -1 + pAVar4->field_0014;
+    iVar1 = pAVar4->field_0018 - 2;
     iVar10 = iVar7 + 1;
   }
-  FUN_006b5b10(local_8->field_0073,0,iVar6,iVar10,iVar6,iVar1 + iVar7,bVar11,0xd);
+  FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,iVar6,iVar10,iVar6,iVar1 + iVar7
+               ,bVar11,0xd);
 LAB_005c1806:
-  if (puVar4[1] < 2) {
-    uVar2 = *puVar4;
+  if (pAVar4->field_0004 < 2) {
+    uVar2 = pAVar4->field_0000;
     cVar9 = -1;
     local_c = CONCAT31(local_c._1_3_,0xff);
     if (1 < uVar2) {
@@ -151,15 +154,17 @@ LAB_005c1806:
       default:
         uVar8 = 0xff;
       }
-      FUN_006b4170(local_8->field_0073,0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,
-                   iVar7 + 0xb,0x1a,0xd,uVar8);
-      FUN_006b5ee0(local_8->field_0073,0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,
-                   iVar7 + 0xb,0x1a,0xd,0,0xd);
+      FUN_006b4170((int)local_8->field_0073,0,
+                   (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
+                   0xd,uVar8);
+      FUN_006b5ee0((int)local_8->field_0073,0,
+                   (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
+                   0xd,0,0xd);
     }
   }
   Library::DKW::DDX::FUN_006b48e0
-            (DAT_0080759c,puVar4[3],puVar4[4],local_8->field_0073,0,iVar5,iVar7,puVar4[5],puVar4[6],
-             (int)&local_8->field_0xa3,0x4c,0x10000ff);
+            (DAT_0080759c,pAVar4->field_000C,pAVar4->field_0010,(int)local_8->field_0073,0,iVar5,
+             iVar7,pAVar4->field_0014,pAVar4->field_0018,(int)&local_8->field_0xa3,0x4c,0x10000ff);
   g_currentExceptionFrame = local_8c.previous;
   return;
 }

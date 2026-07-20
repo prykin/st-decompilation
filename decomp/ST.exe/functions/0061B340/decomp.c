@@ -7,7 +7,7 @@ FUN_0061b340(void *this,int param_1,int param_2,int param_3,int param_4,int para
   byte bVar1;
   byte bVar2;
   char cVar3;
-  int *piVar4;
+  STWorldObject *pSVar4;
   int iVar5;
   uint uVar6;
   bool bVar7;
@@ -41,10 +41,9 @@ FUN_0061b340(void *this,int param_1,int param_2,int param_3,int param_4,int para
         if (((((sVar12 < 0) || (SHORT_007fb240 <= sVar12)) || (sVar13 < 0)) ||
             ((SHORT_007fb242 <= sVar13 || (sVar14 < 0)))) ||
            ((SHORT_007fb244 <= sVar14 ||
-            (piVar4 = *(int **)(DAT_007fb248 +
-                               ((int)SHORT_007fb246 * (int)sVar14 +
-                                (int)SHORT_007fb240 * (int)sVar13 + (int)sVar12) * 8),
-            piVar4 == (int *)0x0)))) {
+            (pSVar4 = g_worldCells
+                      [(int)SHORT_007fb246 * (int)sVar14 + (int)SHORT_007fb240 * (int)sVar13 +
+                       (int)sVar12].objects[0], pSVar4 == (STWorldObject *)0x0)))) {
           FUN_006e3310(PTR_00807598,(PTR_00807598->field_0380 * param_4) / 0xc9,
                        (int *)((PTR_00807598->field_0380 * param_5) / 0xc9),param_3,&local_14);
           lVar11 = Library::MSVCRT::__ftol();
@@ -126,12 +125,13 @@ FUN_0061b340(void *this,int param_1,int param_2,int param_3,int param_4,int para
           *param_7 = iVar8;
           return 2;
         }
-        if (((((uint)piVar4[9] < 8) &&
-             ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[piVar4[9] * 0x51] < 8)
-              ))) && (piVar4[8] == 1000)) &&
-           ((iVar8 = (**(code **)(*piVar4 + 0xf0))(), iVar8 != 0 &&
-            (iVar8 = (**(code **)(*piVar4 + 0xf8))(), iVar8 != 0)))) {
-          bVar1 = *(byte *)(piVar4 + 9);
+        if ((((pSVar4[1].vtable < (STWorldObjectVTable *)0x8) &&
+             ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+              ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))) &&
+            (pSVar4->value_20 == 1000)) &&
+           ((iVar8 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar8 != 0 &&
+            (iVar8 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar8 != 0)))) {
+          bVar1 = *(byte *)&pSVar4[1].vtable;
           bVar2 = *(byte *)((int)this + 0x51);
           _local_c = CONCAT31(uStack_b,bVar1);
           local_10 = CONCAT31(local_10._1_3_,bVar2);
@@ -200,22 +200,23 @@ LAB_0061b627:
       if (SHORT_007fb244 <= sVar14) {
         return local_8;
       }
-      piVar4 = *(int **)(DAT_007fb248 +
-                        ((int)SHORT_007fb246 * (int)sVar14 + (int)SHORT_007fb240 * (int)sVar13 +
-                        (int)sVar12) * 8);
-      if (piVar4 == (int *)0x0) {
+      pSVar4 = g_worldCells
+               [(int)SHORT_007fb246 * (int)sVar14 + (int)SHORT_007fb240 * (int)sVar13 + (int)sVar12]
+               .objects[0];
+      if (pSVar4 == (STWorldObject *)0x0) {
         return local_8;
       }
-      if (7 < (uint)piVar4[9]) {
+      if ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable) {
         return local_8;
       }
-      if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[piVar4[9] * 0x51])) {
+      if ((PTR_00802a38 != (STPlaySystemC *)0x0) &&
+         (7 < (byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51])) {
         return local_8;
       }
-      if (piVar4[8] != 1000) {
+      if (pSVar4->value_20 != 1000) {
         return local_8;
       }
-      bVar1 = *(byte *)(piVar4 + 9);
+      bVar1 = *(byte *)&pSVar4[1].vtable;
       bVar2 = *(byte *)((int)this + 0x51);
       local_10 = CONCAT31(local_10._1_3_,bVar1);
       _local_c = CONCAT31(uStack_b,bVar2);
@@ -251,11 +252,11 @@ LAB_0061b993:
         bVar7 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
       }
       if (bVar7) {
-        iVar8 = (**(code **)(*piVar4 + 0xf0))();
+        iVar8 = (*pSVar4->vtable[5].slots_00_28[0])();
         if (iVar8 == 0) {
           return local_8;
         }
-        iVar8 = (**(code **)(*piVar4 + 0xf8))();
+        iVar8 = (*pSVar4->vtable[5].slots_00_28[2])();
         if (iVar8 == 0) {
           return local_8;
         }

@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -83,7 +84,7 @@ public class STPointerShapeApplier extends GhidraScript {
             for (Map<String, String> row : fields.rows)
                 byShape.computeIfAbsent(unt(row.get("shape_id")), ignored -> new ArrayList<>())
                     .add(row);
-            for (Map<String, String> row : types.rows) {
+            for (Map<String, String> row : dependencyOrder(types.rows, byShape)) {
                 monitor.checkCancelled();
                 applyType(row, byShape.getOrDefault(unt(row.get("shape_id")), List.of()));
             }
@@ -101,6 +102,43 @@ public class STPointerShapeApplier extends GhidraScript {
             ", preserved=" + count("preserved") + ", conflicts=" + count("conflict") +
             ", disabled=" + count("disabled"));
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
+    }
+
+    // Child shapes must exist before a parent field can be resolved as a pointer
+    // to them. The analyzer normally names them so lexical order also works, but
+    // the dependency walk makes the TSV contract independent of naming.
+    private List<Map<String, String>> dependencyOrder(List<Map<String, String>> typeRows,
+            Map<String, List<Map<String, String>>> byShape) {
+        Map<String, Map<String, String>> byPath = new LinkedHashMap<>();
+        for (Map<String, String> row : typeRows)
+            byPath.put(unt(row.get("type_path")), row);
+        Map<String, Integer> state = new HashMap<>();
+        List<Map<String, String>> result = new ArrayList<>();
+        for (Map<String, String> row : typeRows)
+            visitType(row, byPath, byShape, state, result);
+        return result;
+    }
+
+    private void visitType(Map<String, String> row,
+            Map<String, Map<String, String>> byPath,
+            Map<String, List<Map<String, String>>> byShape, Map<String, Integer> state,
+            List<Map<String, String>> result) {
+        String path = unt(row.get("type_path"));
+        int current = state.getOrDefault(path, 0);
+        if (current == 2) return;
+        if (current == 1) return; // recursive pointers are left for normal conflict reporting
+        state.put(path, 1);
+        String shapeId = unt(row.get("shape_id"));
+        for (Map<String, String> field : byShape.getOrDefault(shapeId, List.of())) {
+            if (!enabled(field.get("apply"))) continue;
+            String specification = unt(field.get("proposed_type"));
+            if (!specification.startsWith("pointer:")) continue;
+            Map<String, String> dependency = byPath.get(
+                specification.substring("pointer:".length()));
+            if (dependency != null) visitType(dependency, byPath, byShape, state, result);
+        }
+        state.put(path, 2);
+        result.add(row);
     }
 
     private void applyType(Map<String, String> row, List<Map<String, String>> fieldRows) {

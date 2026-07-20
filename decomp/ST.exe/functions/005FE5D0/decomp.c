@@ -102,9 +102,9 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
              ((((((-1 < sVar9 && (sVar9 < SHORT_007fb240)) && (-1 < sVar10)) &&
                 ((sVar10 < SHORT_007fb242 && (-1 < sVar11)))) &&
                ((sVar11 < SHORT_007fb244 &&
-                (*(int *)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar10 +
-                         (int)sVar9) * 8) != 0)))) ||
+                (g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar10 + (int)sVar9
+                 ].objects[0] != (STWorldObject *)0x0)))) ||
               (uVar5 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar5)))) {
             local_c = 0;
           }

@@ -9,8 +9,8 @@
 
 void __thiscall
 PanelTy::PaintTxtBut
-          (PanelTy *this,int param_1,byte param_2,char *param_3,ccFntTy *param_4,UINT param_5,
-          undefined *param_6,int param_7,int param_8)
+          (PanelTy *this,AnonShape_00538BA0_C95DDA1D *param_1,byte param_2,char *param_3,
+          ccFntTy *param_4,UINT param_5,undefined *param_6,int param_7,int param_8)
 
 {
   code *pcVar1;
@@ -23,19 +23,19 @@ PanelTy::PaintTxtBut
   void *unaff_EDI;
   int iVar7;
   InternalExceptionFrame local_5c;
-  int *local_18;
+  AnonNested_00538BA0_0018_DBC85CBF *local_18;
   PanelTy *local_14;
   int local_10;
   uint local_c;
   ushort *local_8;
   
-  local_18 = *(int **)(param_1 + 0x18);
+  local_18 = param_1->field_0018;
   local_8 = (ushort *)0x0;
   if (param_7 == 0) {
-    local_10 = *local_18;
+    local_10 = local_18->field_0000;
   }
   else {
-    local_10 = *local_18;
+    local_10 = local_18->field_0000;
     iVar4 = g_nWidth_00806730;
     if (this->field_005C == 0) goto LAB_00538bd9;
   }
@@ -43,13 +43,13 @@ PanelTy::PaintTxtBut
 LAB_00538bd9:
   local_10 = local_10 - iVar4;
   if (param_8 == 0) {
-    local_c = local_18[1] - this->field_0044;
+    local_c = local_18->field_0004 - this->field_0044;
   }
   else if (this->field_005C == 0) {
-    local_c = local_18[1] - DAT_00806734;
+    local_c = local_18->field_0004 - DAT_00806734;
   }
   else {
-    local_c = local_18[1] - this->field_0044;
+    local_c = local_18->field_0004 - this->field_0044;
   }
   if (param_6 != (undefined *)0x0) {
     local_5c.previous = g_currentExceptionFrame;
@@ -61,9 +61,11 @@ LAB_00538bd9:
       uVar3 = local_c;
       iVar4 = local_10;
       pPVar2 = local_14;
-      DibPut((undefined4 *)local_14->field_0068,local_10,local_c,param_2,(byte *)local_8);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,local_10,local_c,param_2,
+             (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(param_4,pPVar2->field_0068,0,iVar4,uVar3,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(param_4,pPVar2->field_0068,0,iVar4,uVar3,local_18->field_0008,
+                       local_18->field_000C);
       uVar5 = (*(code *)param_6)(param_1);
       iVar7 = -1;
       iVar4 = -2;

@@ -6,10 +6,11 @@ void __thiscall FUN_0067bfd0(void *this,AnonShape_0067BFD0_C4B8A7A1 *param_1,int
   ushort *puVar1;
   int iVar2;
   ushort *puVar3;
-  uint *puVar4;
+  AnonShape_0068FD00_A5257008 **ppAVar4;
   uint uVar5;
   bool bVar6;
-  uint local_40 [2];
+  AnonShape_0068FD00_A5257008 *local_40;
+  undefined4 local_3c;
   undefined1 local_38;
   int local_37;
   undefined4 local_33;
@@ -35,14 +36,14 @@ void __thiscall FUN_0067bfd0(void *this,AnonShape_0067BFD0_C4B8A7A1 *param_1,int
           (puVar1 = (ushort *)thunk_FUN_0067bc10((AnonShape_0067BC10_0DEA2337 *)param_2),
           puVar1 != (ushort *)0x0)))) {
         *(uint *)(puVar3 + 6) = (uint)*puVar1;
-        puVar4 = local_40;
+        ppAVar4 = &local_40;
         for (iVar2 = 0xd; this_00 = local_c, iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar4 = 0;
-          puVar4 = puVar4 + 1;
+          *ppAVar4 = (AnonShape_0068FD00_A5257008 *)0x0;
+          ppAVar4 = ppAVar4 + 1;
         }
-        local_40[0] = 0x67;
+        local_40 = (AnonShape_0068FD00_A5257008 *)0x67;
         local_38 = 0;
-        local_40[1] = *(undefined4 *)((int)local_c + 0x6fe);
+        local_3c = *(undefined4 *)((int)local_c + 0x6fe);
         local_37 = thunk_FUN_0067bf30((int)local_c);
         local_33 = *(undefined4 *)(puVar3 + 6);
         iVar2 = thunk_FUN_0067bef0((int)this_00);
@@ -50,7 +51,7 @@ void __thiscall FUN_0067bfd0(void *this,AnonShape_0067BFD0_C4B8A7A1 *param_1,int
         local_2d = *(undefined4 *)(puVar1 + 2);
         local_29 = *(undefined4 *)(puVar1 + 4);
         local_25 = *(undefined4 *)(puVar1 + 6);
-        thunk_FUN_0067a020(this_00,local_40,(uint)*puVar3);
+        thunk_FUN_0067a020(this_00,(AnonShape_0068FD00_A5257008 *)&local_40,(uint)*puVar3);
         uVar5 = local_8;
       }
       local_8 = uVar5 + 1;

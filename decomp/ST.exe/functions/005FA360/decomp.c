@@ -55,9 +55,9 @@ FUN_005fa360(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
              (((sVar7 < 0 || (SHORT_007fb240 <= sVar7)) ||
               ((sVar8 < 0 ||
                ((((SHORT_007fb242 <= sVar8 || (sVar9 < 0)) || (SHORT_007fb244 <= sVar9)) ||
-                (*(int *)(DAT_007fb248 +
-                         ((int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 +
-                         (int)sVar7) * 8) == 0)))))))) {
+                (g_worldCells
+                 [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7].
+                 objects[0] == (STWorldObject *)0x0)))))))) {
             bVar1 = true;
             break;
           }

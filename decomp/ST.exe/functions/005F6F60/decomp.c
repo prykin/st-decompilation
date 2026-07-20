@@ -411,7 +411,7 @@ LAB_005f7efc:
     *(undefined4 *)((int)param_1 + 0x2ef) = 0;
     goto LAB_005f79aa;
   case 0xb:
-    bVar3 = thunk_FUN_005faee0((int)param_1);
+    bVar3 = thunk_FUN_005faee0((AnonShape_005FAEE0_B5D482C5 *)param_1);
     if (CONCAT31(extraout_var_00,bVar3) != 0) {
       iVar5 = param_1[0xa8];
       if (*(char *)((int)param_1 + iVar5 * 6 + 0x29e) != '\0') {

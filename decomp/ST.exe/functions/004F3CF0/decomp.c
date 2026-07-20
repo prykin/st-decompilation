@@ -5,8 +5,8 @@
 
 void __thiscall
 CPanelTy::PaintTxtBut
-          (CPanelTy *this,byte param_1,int param_2,byte param_3,char *param_4,UINT param_5,
-          undefined *param_6)
+          (CPanelTy *this,byte param_1,AnonShape_004F3CF0_F7329418 *param_2,byte param_3,
+          char *param_4,UINT param_5,undefined *param_6)
 
 {
   code *pcVar1;
@@ -24,17 +24,17 @@ CPanelTy::PaintTxtBut
   int iVar9;
   int iVar10;
   InternalExceptionFrame local_5c;
-  int *local_18;
+  AnonNested_004F3CF0_0018_4CF39192 *local_18;
   CPanelTy *local_14;
   int local_10;
   uint local_c;
   ushort *local_8;
   
   uVar2 = (uint)param_1;
-  local_18 = *(int **)(param_2 + 0x18);
+  local_18 = param_2->field_0018;
   local_8 = (ushort *)0x0;
-  iVar9 = local_18[1];
-  local_10 = *local_18 - (&this->field_003C)[uVar2];
+  iVar9 = local_18->field_0004;
+  local_10 = local_18->field_0000 - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
     iVar7 = this->field_0134;
@@ -80,10 +80,11 @@ cf_common_join_004F3D83:
       local_8 = cMf32::RecGet(DAT_00806790,param_3,text,errorCode,iVar9);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((undefined4 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,(byte *)local_8);
+      DibPut((AnonShape_006B84D0_7C7D97C6 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
+             (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,(&pCVar3->field_0180)[uVar2],0,
-                       local_10,local_c,local_18[2],local_18[3]);
+                       local_10,local_c,local_18->field_0008,local_18->field_000C);
       iVar10 = -1;
       iVar8 = -1;
       uVar5 = (*(code *)param_6)(param_2);

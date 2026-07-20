@@ -29,10 +29,10 @@ undefined4 __fastcall FUN_00580dc0(STJellyGunC *param_1)
     if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
         ((sVar2 < SHORT_007fb242 && (-1 < sVar1)))) &&
        ((sVar1 < SHORT_007fb244 &&
-        (pAVar4 = *(AnonShape_004E0250_5A3B9236 **)
-                   (DAT_007fb248 +
-                   ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3
-                   ) * 8), pAVar4 != (AnonShape_004E0250_5A3B9236 *)0x0)))) {
+        (pAVar4 = (AnonShape_004E0250_5A3B9236 *)
+                  g_worldCells
+                  [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3]
+                  .objects[0], pAVar4 != (AnonShape_004E0250_5A3B9236 *)0x0)))) {
       iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))();
       if (((iVar5 != 0x39) && (iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))(), iVar5 != 0x4f)) &&
          (iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))(), iVar5 != 0x5e)) {

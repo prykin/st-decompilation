@@ -55,7 +55,7 @@ undefined4 __fastcall FUN_004de820(int *param_1)
     }
   }
   param_1[0x134] = param_1[0x134] + 1;
-  g_playerRuntime[param_1[9]].field1823_0x7d6 = g_playerRuntime[param_1[9]].field1823_0x7d6 + 1;
+  g_playerRuntime[param_1[9]].field1705_0x7d6 = g_playerRuntime[param_1[9]].field1705_0x7d6 + 1;
   return 1;
 }
 

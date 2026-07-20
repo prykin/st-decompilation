@@ -14,10 +14,10 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
   if (*(int *)((int)this + 0x138) != 0) {
     if ((*(uint *)((int)this + 0x20) & 0x40) != 0) {
       if (((*(uint *)((int)this + 0x20) & 0x80) != 0) &&
-         (uVar2 = FUN_00721790((int)this), *(uint *)((int)this + 0x134) <= uVar2)) {
+         (uVar2 = FUN_00721790(this), *(uint *)((int)this + 0x134) <= uVar2)) {
         return 0;
       }
-      uVar2 = FUN_007217e0((int)this);
+      uVar2 = FUN_007217e0(this);
       if (*(uint *)((int)this + 0x134) <= uVar2) {
         return 0;
       }

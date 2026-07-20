@@ -87,8 +87,8 @@ LAB_00631713:
               ;
               *(undefined4 *)((int)this_00 + 0x44) = 1;
               if ((*(int *)((int)this_00 + 0x48) == 0) ||
-                 (puVar5 = thunk_FUN_00630c50(*(undefined4 *)((int)this_00 + 0x40),
-                                              *(int *)((int)this_00 + 0x4c),1,1,0),
+                 (puVar5 = thunk_FUN_00630c50(this_00,*(int *)((int)this_00 + 0x40),
+                                              *(int *)((int)this_00 + 0x4c),1,1),
                  puVar5 != (ushort *)0x0)) {
                 *(undefined4 *)((int)this_00 + 0x44) = 2;
               }

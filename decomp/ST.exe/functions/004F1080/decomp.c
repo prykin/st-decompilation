@@ -43,7 +43,7 @@ BldObjPanelTy::GetMessage(BldObjPanelTy *this,AnonShape_004F1080_64A4850E *param
   uVar1 = param_1->field_0010;
   if (uVar1 < 0xb207) {
     if (uVar1 == 0xb206) {
-      ProdPanelTy::PaintTab(this_00,(int)param_1,thunk_FUN_0052a7b0);
+      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)param_1,thunk_FUN_0052a7b0);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

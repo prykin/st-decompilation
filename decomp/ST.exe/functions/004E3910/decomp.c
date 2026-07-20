@@ -59,14 +59,14 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                        (((sVar3 = (short)_SHORT_007fb240, sVar3 < 1 || (sVar2 < 0)) ||
                         (((SHORT_007fb242 <= sVar2 ||
                           (((sVar13 < 0 || (SHORT_007fb244 <= sVar13)) ||
-                           (*(int *)(DAT_007fb248 +
-                                    ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246) *
-                                    8) == 0)))) &&
+                           (g_worldCells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246].objects[0]
+                            == (STWorldObject *)0x0)))) &&
                          ((((sVar2 < 0 || (SHORT_007fb242 <= sVar2)) || (sVar13 < 0)) ||
                           ((SHORT_007fb244 <= sVar13 ||
-                           (*(int *)(DAT_007fb248 + 4 +
-                                    ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246) *
-                                    8) == 0)))))))))) {
+                           (g_worldCells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246].objects[1]
+                            == (STWorldObject *)0x0)))))))))) {
                       local_20 = (STSharkC *)0x0;
                       local_1c = iVar10;
                       local_18 = iVar4;
@@ -79,16 +79,16 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                          ((((((sVar3 <= (short)(sVar3 + -1) || (sVar2 < 0)) ||
                              (SHORT_007fb242 <= sVar2)) ||
                             ((sVar13 < 0 || (SHORT_007fb244 <= sVar13)))) ||
-                           (*(int *)(DAT_007fb248 +
-                                    ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246 +
-                                    (int)(short)(sVar3 + -1)) * 8) == 0)) &&
+                           (g_worldCells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246 +
+                             (int)(short)(sVar3 + -1)].objects[0] == (STWorldObject *)0x0)) &&
                           (((((short)(sVar3 + -1) < 0 || (sVar3 <= (short)(sVar3 + -1))) ||
                             ((sVar2 < 0 ||
                              (((SHORT_007fb242 <= sVar2 || (sVar13 < 0)) ||
                               (SHORT_007fb244 <= sVar13)))))) ||
-                           (*(int *)(DAT_007fb248 + 4 +
-                                    ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246 +
-                                    (int)(short)(sVar3 + -1)) * 8) == 0)))))) {
+                           (g_worldCells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246 +
+                             (int)(short)(sVar3 + -1)].objects[1] == (STWorldObject *)0x0)))))) {
                         local_20 = (STSharkC *)(sVar3 + -1);
                         local_1c = iVar10;
                         local_18 = iVar4;
@@ -116,13 +116,12 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                     if (CONCAT31(extraout_var_01,bVar1) != 0) {
                       if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
                            ((SHORT_007fb242 < 1 || ((sVar13 < 0 || (SHORT_007fb244 <= sVar13))))))
-                          || (*(int *)(DAT_007fb248 +
-                                      ((int)sVar13 * (int)SHORT_007fb246 + (int)sVar2) * 8) == 0))
-                         && (((((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) || (SHORT_007fb242 < 1)) ||
-                              ((sVar13 < 0 || (SHORT_007fb244 <= sVar13)))) ||
-                             (*(int *)(DAT_007fb248 + 4 +
-                                      ((int)sVar13 * (int)SHORT_007fb246 + (int)sVar2) * 8) == 0))))
-                      {
+                          || (g_worldCells[(int)sVar13 * (int)SHORT_007fb246 + (int)sVar2].objects
+                              [0] == (STWorldObject *)0x0)) &&
+                         (((((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) || (SHORT_007fb242 < 1)) ||
+                           ((sVar13 < 0 || (SHORT_007fb244 <= sVar13)))) ||
+                          (g_worldCells[(int)sVar13 * (int)SHORT_007fb246 + (int)sVar2].objects[1]
+                           == (STWorldObject *)0x0)))) {
                         local_1c = 0;
                         local_20 = pSVar11;
                         local_18 = iVar10;
@@ -137,16 +136,16 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                           ((sVar3 < 0 ||
                            ((((SHORT_007fb242 <= sVar3 || (sVar13 < 0)) ||
                              (SHORT_007fb244 <= sVar13)) ||
-                            (*(int *)(DAT_007fb248 +
-                                     ((int)sVar13 * (int)SHORT_007fb246 + (int)sVar7 * (int)sVar3 +
-                                     (int)sVar2) * 8) == 0)))))) &&
+                            (g_worldCells
+                             [(int)sVar13 * (int)SHORT_007fb246 + (int)sVar7 * (int)sVar3 +
+                              (int)sVar2].objects[0] == (STWorldObject *)0x0)))))) &&
                          (((sVar2 < 0 || (sVar7 <= sVar2)) ||
                           ((sVar3 < 0 ||
                            (((SHORT_007fb242 <= sVar3 || (sVar13 < 0)) ||
                             ((SHORT_007fb244 <= sVar13 ||
-                             (*(int *)(DAT_007fb248 + 4 +
-                                      ((int)sVar13 * (int)SHORT_007fb246 + (int)sVar3 * (int)sVar7 +
-                                      (int)sVar2) * 8) == 0)))))))))) {
+                             (g_worldCells
+                              [(int)sVar13 * (int)SHORT_007fb246 + (int)sVar3 * (int)sVar7 +
+                               (int)sVar2].objects[1] == (STWorldObject *)0x0)))))))))) {
                         local_1c = SHORT_007fb242 + -1;
                         local_20 = pSVar11;
                         local_18 = iVar10;

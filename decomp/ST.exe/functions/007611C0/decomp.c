@@ -1,5 +1,6 @@
 
-void FUN_007611c0(int param_1,int param_2,int *param_3,int *param_4,int param_5)
+void FUN_007611c0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param_3,int *param_4,
+                 int param_5)
 
 {
   undefined1 uVar1;
@@ -10,7 +11,7 @@ void FUN_007611c0(int param_1,int param_2,int *param_3,int *param_4,int param_5)
   int iVar6;
   AnonShape_007611C0_979BF099 *pAVar7;
   int iVar8;
-  int *piVar9;
+  AnonNested_007611C0_0050_9F22CF38 *pAVar9;
   int iVar10;
   int iVar11;
   int local_a0 [8];
@@ -23,7 +24,7 @@ void FUN_007611c0(int param_1,int param_2,int *param_3,int *param_4,int param_5)
   int local_c;
   int local_8;
   
-  piVar9 = *(int **)(param_2 + 0x50);
+  pAVar9 = param_2->field_0050;
   local_14 = *(int *)(param_1 + 0x132) + 0x80;
   local_c = 8;
   pAVar7 = local_80;
@@ -34,30 +35,31 @@ void FUN_007611c0(int param_1,int param_2,int *param_3,int *param_4,int param_5)
       local_18 = piVar2[-0x18];
       if (((((local_20 == 0 && local_18 == 0) && piVar2[-8] == 0) && piVar2[8] == 0) &&
           piVar2[-0x20] == 0) && *piVar2 == 0) {
-        AVar4 = (AnonShape_007611C0_979BF099)(piVar2[-0x30] * *piVar9 * 4);
+        AVar4 = (AnonShape_007611C0_979BF099)(piVar2[-0x30] * pAVar9->field_0000 * 4);
         pAVar7[-8] = AVar4;
         *pAVar7 = AVar4;
         pAVar7[8] = AVar4;
         pAVar7[0x10] = AVar4;
       }
       else {
-        iVar3 = piVar2[-0x30] * *piVar9 * 0x4000;
-        iVar5 = piVar9[0x10] * piVar2[-0x20] * 0x3b21 + piVar9[0x30] * *piVar2 * -0x187e;
+        iVar3 = piVar2[-0x30] * pAVar9->field_0000 * 0x4000;
+        iVar5 = pAVar9->field_0040 * piVar2[-0x20] * 0x3b21 + pAVar9->field_00C0 * *piVar2 * -0x187e
+        ;
         iVar6 = iVar5 + iVar3;
-        iVar8 = piVar9[0x38] * piVar2[8];
+        iVar8 = pAVar9->field_00E0 * piVar2[8];
         local_1c = iVar3 - iVar5;
-        iVar3 = piVar9[0x28] * piVar2[-8];
-        iVar5 = iVar3 * 0x2e75 + piVar9[0x18] * local_18 * -0x4587 + piVar9[8] * local_20 * 0x21f9 +
-                iVar8 * -0x6c2;
-        iVar3 = piVar9[8] * local_20 * 0x5203 + piVar9[0x18] * local_18 * 0x1ccd + iVar3 * -0x133e +
-                iVar8 * -0x1050;
+        local_18 = pAVar9->field_0060 * local_18;
+        iVar3 = pAVar9->field_00A0 * piVar2[-8];
+        local_20 = pAVar9->field_0020 * local_20;
+        iVar5 = iVar3 * 0x2e75 + local_18 * -0x4587 + local_20 * 0x21f9 + iVar8 * -0x6c2;
+        iVar3 = local_20 * 0x5203 + local_18 * 0x1ccd + iVar3 * -0x133e + iVar8 * -0x1050;
         pAVar7[-8] = (AnonShape_007611C0_979BF099)(iVar6 + 0x800 + iVar3 >> 0xc);
         pAVar7[0x10] = (AnonShape_007611C0_979BF099)((iVar6 - iVar3) + 0x800 >> 0xc);
         pAVar7[8] = (AnonShape_007611C0_979BF099)((local_1c - iVar5) + 0x800 >> 0xc);
         *pAVar7 = (AnonShape_007611C0_979BF099)(local_1c + 0x800 + iVar5 >> 0xc);
       }
     }
-    piVar9 = piVar9 + 1;
+    pAVar9 = (AnonNested_007611C0_0050_9F22CF38 *)&pAVar9->field_0x4;
     piVar2 = piVar2 + 1;
     pAVar7 = pAVar7 + 1;
     local_c = local_c + -1;

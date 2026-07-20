@@ -1,28 +1,29 @@
 
-void __fastcall FUN_005f53a0(int param_1)
+void __fastcall FUN_005f53a0(AnonShape_005F53A0_843EB0E7 *param_1)
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
+  AnonNested_005F53A0_0169_99CDD61C *pAVar2;
+  int iVar3;
+  uint uVar4;
   
-  if (*(int *)(param_1 + 0x169) != 0) {
-    iVar1 = *(int *)(*(int *)(param_1 + 0x169) + 0xc);
-    uVar3 = 0;
+  if (param_1->field_0169 != (AnonNested_005F53A0_0169_99CDD61C *)0x0) {
+    iVar1 = param_1->field_0169->field_000C;
+    uVar4 = 0;
     if (0 < iVar1) {
       do {
-        iVar2 = *(int *)(param_1 + 0x169);
-        if (((uVar3 < *(uint *)(iVar2 + 0xc)) &&
-            (iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c), iVar2 != 0)) &&
-           (-1 < (int)*(uint *)(iVar2 + 0x1f))) {
-          FUN_006e8ba0(PTR_00807598,*(uint *)(iVar2 + 0x1f));
-          *(undefined4 *)(iVar2 + 0x1f) = 0xffffffff;
+        pAVar2 = param_1->field_0169;
+        if (((uVar4 < (uint)pAVar2->field_000C) &&
+            (iVar3 = pAVar2->field_0008 * uVar4 + *(int *)&pAVar2->field_0x1c, iVar3 != 0)) &&
+           (-1 < (int)*(uint *)(iVar3 + 0x1f))) {
+          FUN_006e8ba0(PTR_00807598,*(uint *)(iVar3 + 0x1f));
+          *(undefined4 *)(iVar3 + 0x1f) = 0xffffffff;
         }
-        uVar3 = uVar3 + 1;
-      } while ((int)uVar3 < iVar1);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < iVar1);
     }
-    FUN_006ae110(*(byte **)(param_1 + 0x169));
-    *(undefined4 *)(param_1 + 0x169) = 0;
+    FUN_006ae110((byte *)param_1->field_0169);
+    param_1->field_0169 = (AnonNested_005F53A0_0169_99CDD61C *)0x0;
   }
   return;
 }

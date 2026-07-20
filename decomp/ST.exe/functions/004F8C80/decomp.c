@@ -61,7 +61,8 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   }
   local_8->field_0998 = local_8->field_0038;
   thunk_FUN_0052b330((AnonShape_0052B330_71C9FFBF *)local_8);
-  FUN_006e6fb0(PTR_00807598,pCVar4->field_0190,5,7,(uint)(pCVar4->field_023F != CASE_2));
+  FUN_006e6fb0(PTR_00807598,(AnonShape_006E6FB0_BC494FEA *)pCVar4->field_0190,5,7,
+               (uint)(pCVar4->field_023F != CASE_2));
   uVar5 = PTR_00802a38->field_00E4 * 0x51eb851f;
   uVar9 = (uint)PTR_00802a38->field_00E4 / 0x19;
   if (300 < uVar9 - DAT_0080c4cf) {

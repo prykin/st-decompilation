@@ -23,7 +23,8 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   char *pcVar11;
   undefined4 *puVar12;
   ccFntTy **ppcVar13;
-  ccFntTy *local_db0 [19];
+  ccFntTy *local_db0 [8];
+  AnonPointee_SIDTy_1CD0 *local_d90;
   undefined4 local_d64;
   undefined4 local_d60;
   undefined4 local_d5c;
@@ -248,7 +249,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_db0[0] = (ccFntTy *)0x0;
   local_db0[1] = (ccFntTy *)0x9;
   local_db0[2] = PTR_0081176c->field_0034;
-  local_db0[8] = (ccFntTy *)this_00->field_1CD0;
+  local_d90 = this_00->field_1CD0;
   local_d64 = this_00->field_0008;
   local_db0[3] = (ccFntTy *)0xe4;
   local_db0[4] = (ccFntTy *)0x1aa;

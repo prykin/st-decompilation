@@ -64,7 +64,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
             _param_1 = (local_c - local_8) + 1;
             iVar11 = iVar7 * 8 + -8;
             do {
-              piVar3 = *(int **)(iVar11 + 8 + DAT_007fb248);
+              piVar3 = *(int **)((int)g_worldCells[1].objects + iVar11);
               if ((piVar3 != (int *)0x0) &&
                  ((((iVar8 = piVar3[8], param_6 = piVar3, iVar8 == 0x14 || (iVar8 == 1000)) ||
                    (iVar8 == 0x3e9)) && (param_2 != piVar3)))) {
@@ -115,7 +115,7 @@ LAB_0043f9bd:
                 }
               }
 LAB_0043f9fa:
-              piVar3 = *(int **)(iVar11 + 0xc + DAT_007fb248);
+              piVar3 = *(int **)((int)g_worldCells[1].objects + iVar11 + 4);
               if (((piVar3 != (int *)0x0) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {

@@ -77,7 +77,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   iVar3 = (int)param_1;
   if (0 < (int)local_24) {
     local_c = local_24;
-    puVar9 = &g_playerRuntime[iVar3].field9_0xf;
+    puVar9 = &g_playerRuntime[iVar3].field6_0xf;
     do {
       if ((byte *)*puVar9 != (byte *)0x0) {
         FUN_006ae110((byte *)*puVar9);
@@ -95,7 +95,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   local_20 = iVar3 * 0xa62;
   if (g_playerRuntime[iVar3].raceId != 0) {
     if (0 < (int)pDVar7) {
-      puVar9 = &g_playerRuntime[iVar3].field9_0xf;
+      puVar9 = &g_playerRuntime[iVar3].field6_0xf;
       pDVar13 = pDVar7;
       do {
         puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,0x24,1);
@@ -156,7 +156,7 @@ LAB_00441e92:
       local_3a = 0xffff;
       local_42 = 0xffff;
       if (0 < (int)pDVar7) {
-        puVar9 = (undefined4 *)((int)&g_playerRuntime[0].field9_0xf + local_20);
+        puVar9 = (undefined4 *)((int)&g_playerRuntime[0].field6_0xf + local_20);
         pDVar13 = pDVar7;
         do {
           Library::DKW::TBL::FUN_006ae1c0((uint *)*puVar9,(undefined4 *)&local_48);
@@ -190,7 +190,7 @@ LAB_00441e92:
           if (0 < (int)local_24) {
             local_1c = local_60;
             local_18 = local_24;
-            local_14 = (undefined4 *)((int)&g_playerRuntime[0].field9_0xf + local_20);
+            local_14 = (undefined4 *)((int)&g_playerRuntime[0].field6_0xf + local_20);
             do {
               pAVar10 = (AnonShape_006ACC70_C8641025 *)*local_1c;
               local_68 = pAVar10;

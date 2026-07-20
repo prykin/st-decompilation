@@ -1,6 +1,6 @@
 
-void FUN_006b5b10(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                 byte param_7,int param_8)
+void FUN_006b5b10(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
+                 int param_5,int param_6,byte param_7,int param_8)
 
 {
   int iVar1;
@@ -18,11 +18,11 @@ void FUN_006b5b10(int param_1,int param_2,int param_3,int param_4,int param_5,in
   iVar10 = param_6;
   iVar3 = param_5;
   if (param_2 == 0) {
-    param_2 = FUN_006b4fa0(param_1);
+    param_2 = FUN_006b4fa0((int)param_1);
   }
-  iVar4 = *(int *)(param_1 + 4);
-  iVar1 = *(int *)(param_1 + 8);
-  uVar5 = (uint)*(ushort *)(param_1 + 0xe) * iVar4 + 0x1f >> 3 & 0x1ffffffc;
+  iVar4 = param_1->field_0004;
+  iVar1 = param_1->field_0008;
+  uVar5 = (uint)param_1->field_000E * iVar4 + 0x1f >> 3 & 0x1ffffffc;
   iVar6 = param_5 - param_3;
   iVar8 = param_3;
   iVar11 = param_4;

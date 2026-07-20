@@ -1,6 +1,7 @@
 
 undefined4
-FUN_006d0680(int param_1,int *param_2,uint *param_3,int param_4,int *param_5,uint *param_6)
+FUN_006d0680(AnonShape_006D0680_01056108 *param_1,int *param_2,uint *param_3,
+            AnonShape_006D0680_EDC74182 *param_4,int *param_5,uint *param_6)
 
 {
   uint uVar1;
@@ -15,10 +16,10 @@ FUN_006d0680(int param_1,int *param_2,uint *param_3,int param_4,int *param_5,uin
   if ((0 < param_2[2]) && (0 < param_2[3])) {
     local_14[1] = 0;
     local_14[0] = 0;
-    local_14[2] = *(int *)(param_4 + 4);
-    uVar1 = (uint)*(ushort *)(param_4 + 0xe) * local_14[2] + 0x1f >> 3 & 0x1ffffffc;
+    local_14[2] = param_4->field_0004;
+    uVar1 = (uint)param_4->field_000E * local_14[2] + 0x1f >> 3 & 0x1ffffffc;
     *param_6 = uVar1;
-    local_8 = *(int *)(param_4 + 8);
+    local_8 = param_4->field_0008;
     if (local_8 < 0) {
       local_8 = -local_8;
       *param_6 = -uVar1;
@@ -35,10 +36,10 @@ FUN_006d0680(int param_1,int *param_2,uint *param_3,int param_4,int *param_5,uin
       param_5[3] = local_18;
       param_2[3] = local_18;
       param_2[2] = local_1c;
-      local_14[2] = *(int *)(param_1 + 4);
-      uVar1 = (uint)*(ushort *)(param_1 + 0xe) * local_14[2] + 0x1f >> 3 & 0x1ffffffc;
+      local_14[2] = param_1->field_0004;
+      uVar1 = (uint)param_1->field_000E * local_14[2] + 0x1f >> 3 & 0x1ffffffc;
       *param_3 = uVar1;
-      local_8 = *(int *)(param_1 + 8);
+      local_8 = param_1->field_0008;
       if (local_8 < 0) {
         local_8 = -local_8;
         *param_3 = -uVar1;

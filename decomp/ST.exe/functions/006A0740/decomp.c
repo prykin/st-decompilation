@@ -20,7 +20,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   uint *puVar9;
   InternalExceptionFrame local_54;
   CGenerate *local_10;
-  byte *local_c;
+  AnonShape_006B5050_99986F91 *local_c;
   int local_8;
   
   local_8 = 1;
@@ -90,13 +90,14 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
       local_8 = 0;
     }
   }
-  local_c = (byte *)thunk_FUN_006a2ed0((short *)this_00->field_000C);
+  local_c = (AnonShape_006B5050_99986F91 *)thunk_FUN_006a2ed0((short *)this_00->field_000C);
   puVar9 = (uint *)0x0;
   cVar8 = '\0';
   puVar7 = (undefined4 *)0x0;
-  uVar4 = FUN_006b5050((int)local_c);
-  cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,local_c,uVar4,puVar7,cVar8,puVar9);
-  if (local_c != (byte *)0x0) {
+  uVar4 = FUN_006b5050(local_c);
+  cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar7,cVar8,
+                puVar9);
+  if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
     FUN_006ab060(&local_c);
   }
   g_currentExceptionFrame = local_54.previous;

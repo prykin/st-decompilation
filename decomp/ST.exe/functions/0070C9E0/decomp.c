@@ -1,5 +1,5 @@
 
-undefined4 * __cdecl FUN_0070c9e0(int param_1,char param_2,uint *param_3)
+undefined4 * __cdecl FUN_0070c9e0(AnonShape_0070C9E0_7137F001 *param_1,char param_2,uint *param_3)
 
 {
   char cVar1;
@@ -15,8 +15,8 @@ undefined4 * __cdecl FUN_0070c9e0(int param_1,char param_2,uint *param_3)
   uint local_c;
   int local_8;
   
-  local_c = *(uint *)(param_1 + 4);
-  local_10 = *(int *)(param_1 + 8);
+  local_c = param_1->field_0004;
+  local_10 = param_1->field_0008;
   uVar6 = local_c & 0x80000007;
   bVar8 = uVar6 == 0;
   local_18[0] = 0x80;
@@ -50,7 +50,7 @@ undefined4 * __cdecl FUN_0070c9e0(int param_1,char param_2,uint *param_3)
       uVar6 = 0;
       if (0 < (int)local_c) {
         do {
-          cVar1 = FUN_0070c9a0(param_1,uVar6,iVar7);
+          cVar1 = FUN_0070c9a0((AnonShape_0070C9A0_D70EB495 *)param_1,uVar6,iVar7);
           if (cVar1 != param_2) {
             iVar4 = ((int)(uVar6 + ((int)uVar6 >> 0x1f & 7U)) >> 3) + local_8;
             uVar5 = uVar6 & 0x80000007;

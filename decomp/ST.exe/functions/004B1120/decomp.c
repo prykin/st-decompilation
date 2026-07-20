@@ -49,10 +49,10 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
                 if (iVar2 == 0xdc) {
 LAB_004b1226:
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
-                  if (((*(int *)(DAT_007fb248 +
-                                ((int)SHORT_007fb240 * (int)local_8 +
-                                (int)local_6 + (int)SHORT_007fb246 * (int)local_a) * 8) == 0) &&
-                      (local_a < 4)) &&
+                  if (((g_worldCells
+                        [(int)SHORT_007fb240 * (int)local_8 +
+                         (int)local_6 + (int)SHORT_007fb246 * (int)local_a].objects[0] ==
+                        (STWorldObject *)0x0) && (local_a < 4)) &&
                      ((iVar2 = FUN_006aced8((int)local_6,(int)local_8,*param_3,*param_4),
                       local_14 < 0 || (iVar2 < local_14)))) {
                     param_1 = (int)local_8;

@@ -13,16 +13,17 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   FSGSTy *this_01;
   int iVar4;
   undefined4 uVar5;
-  int iVar6;
-  uint uVar7;
+  void *pvVar6;
+  int iVar7;
+  uint uVar8;
   undefined4 unaff_ESI;
-  undefined4 *puVar8;
-  byte *pbVar9;
+  undefined4 *puVar9;
+  byte *pbVar10;
   void *unaff_EDI;
-  undefined4 *puVar10;
-  byte *pbVar11;
-  bool bVar12;
-  uint *puVar13;
+  undefined4 *puVar11;
+  byte *pbVar12;
+  bool bVar13;
+  DArrayTy *pDVar14;
   undefined4 local_2bc [11];
   byte local_290 [560];
   InternalExceptionFrame local_60;
@@ -32,7 +33,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   undefined4 *local_c;
   uint local_8;
   
-  if ((this->field_1A5F == CASE_8) && (this->field_1EBE != 0)) {
+  if ((this->field_1A5F == CASE_8) && (this->field_1EBE != (DArrayTy *)0x0)) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_10 = this;
@@ -52,35 +53,35 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
       this_01 = local_10;
       local_10->field_002D = 0x26;
       FUN_006e6080(local_10,2,local_10->field_1B20,(undefined4 *)&local_10->field_0x1d);
-      iVar4 = this_01->field_1EBE;
-      if ((uint)*(ushort *)&this_01->field_0x31 < *(uint *)(iVar4 + 0xc)) {
+      pDVar14 = this_01->field_1EBE;
+      if ((uint)*(ushort *)&this_01->field_0x31 < pDVar14->count) {
         local_c = (undefined4 *)
-                  (*(int *)(iVar4 + 8) * (uint)*(ushort *)&this_01->field_0x31 +
-                  *(int *)(iVar4 + 0x1c));
+                  (pDVar14->elementSize * (uint)*(ushort *)&this_01->field_0x31 + (int)pDVar14->data
+                  );
       }
       else {
         local_c = (undefined4 *)0x0;
       }
       if (local_c != (undefined4 *)0x0) {
-        puVar8 = local_c;
-        puVar10 = local_2bc;
-        for (iVar6 = 0x97; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *puVar10 = *puVar8;
-          puVar8 = puVar8 + 1;
-          puVar10 = puVar10 + 1;
+        puVar9 = local_c;
+        puVar11 = local_2bc;
+        for (iVar4 = 0x97; iVar4 != 0; iVar4 = iVar4 + -1) {
+          *puVar11 = *puVar9;
+          puVar9 = puVar9 + 1;
+          puVar11 = puVar11 + 1;
         }
       }
-      *(undefined4 *)(iVar4 + 0xc) = 0;
+      pDVar14->count = 0;
       do {
         if (param_1 == 0) {
           FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x174,0x175);
           PutDDXClip(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)this_01->field_1E9A);
           this_01->field_002D = 0x28;
-          *(undefined4 *)&this_01->field_0x31 = *(undefined4 *)(this_01->field_1EBE + 0xc);
+          *(dword *)&this_01->field_0x31 = this_01->field_1EBE->count;
           *(undefined2 *)&this_01->field_0x35 = 1;
           FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
           this_01->field_002D = 0x20;
-          if ((*(int *)(this_01->field_1EBE + 0xc) == 0) || (this_01->field_1A6B == 0)) {
+          if ((this_01->field_1EBE->count == 0) || (this_01->field_1A6B == 0)) {
             uVar5 = 0;
           }
           else {
@@ -89,39 +90,39 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
           *(undefined4 *)&this_01->field_0x31 = uVar5;
           FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
           if (local_c != (undefined4 *)0x0) {
-            uVar7 = 0;
-            local_8 = *(uint *)(this_01->field_1EBE + 0xc);
+            uVar8 = 0;
+            local_8 = this_01->field_1EBE->count;
             if (local_8 != 0) {
               if (local_8 == 0) {
-                iVar4 = 0;
+                pvVar6 = (void *)0x0;
                 goto LAB_005a37da;
               }
               do {
-                iVar4 = *(int *)(this_01->field_1EBE + 8) * uVar7 +
-                        *(int *)(this_01->field_1EBE + 0x1c);
+                pvVar6 = (void *)(this_01->field_1EBE->elementSize * uVar8 +
+                                 (int)this_01->field_1EBE->data);
 LAB_005a37da:
-                if (iVar4 != 0) {
-                  pbVar11 = local_290;
-                  pbVar9 = (byte *)(iVar4 + 0x2c);
+                if (pvVar6 != (void *)0x0) {
+                  pbVar12 = local_290;
+                  pbVar10 = (byte *)((int)pvVar6 + 0x2c);
                   do {
-                    bVar1 = *pbVar9;
-                    bVar12 = bVar1 < *pbVar11;
-                    if (bVar1 != *pbVar11) {
+                    bVar1 = *pbVar10;
+                    bVar13 = bVar1 < *pbVar12;
+                    if (bVar1 != *pbVar12) {
 LAB_005a380b:
-                      iVar4 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                      iVar4 = (1 - (uint)bVar13) - (uint)(bVar13 != 0);
                       goto LAB_005a3810;
                     }
                     if (bVar1 == 0) break;
-                    bVar1 = pbVar9[1];
-                    bVar12 = bVar1 < pbVar11[1];
-                    if (bVar1 != pbVar11[1]) goto LAB_005a380b;
-                    pbVar9 = pbVar9 + 2;
-                    pbVar11 = pbVar11 + 2;
+                    bVar1 = pbVar10[1];
+                    bVar13 = bVar1 < pbVar12[1];
+                    if (bVar1 != pbVar12[1]) goto LAB_005a380b;
+                    pbVar10 = pbVar10 + 2;
+                    pbVar12 = pbVar12 + 2;
                   } while (bVar1 != 0);
                   iVar4 = 0;
 LAB_005a3810:
                   if (iVar4 == 0) {
-                    *(short *)&this_01->field_0x31 = (short)uVar7;
+                    *(short *)&this_01->field_0x31 = (short)uVar8;
                     *(undefined2 *)&this_01->field_0x37 = 1;
                     *(undefined2 *)&this_01->field_0x35 = 1;
                     this_01->field_002D = 0x22;
@@ -130,8 +131,8 @@ LAB_005a3810:
                     return;
                   }
                 }
-                uVar7 = uVar7 + 1;
-                if (local_8 <= uVar7) {
+                uVar8 = uVar8 + 1;
+                if (local_8 <= uVar8) {
                   g_currentExceptionFrame = local_60.previous;
                   return;
                 }
@@ -144,7 +145,7 @@ LAB_005a3810:
         iVar4 = this_01->field_1EC2;
         if (iVar4 == 0) {
           if (*param_2 == 4) {
-            puVar13 = (uint *)this_01->field_1EBE;
+            pDVar14 = this_01->field_1EBE;
             goto LAB_005a36e9;
           }
         }
@@ -156,19 +157,19 @@ LAB_005a3810:
                 local_14 = 0;
                 Library::MSVCRT::FUN_0072ee80(local_1c,&DAT_007cc584);
                 if (local_8 == this_01->field_1EC6) {
-                  puVar13 = (uint *)this_01->field_1EBE;
+                  pDVar14 = this_01->field_1EBE;
                   goto LAB_005a36e9;
                 }
               }
               goto LAB_005a36ee;
             }
-            puVar13 = (uint *)this_01->field_1EBE;
+            pDVar14 = this_01->field_1EBE;
           }
           else {
-            puVar13 = (uint *)this_01->field_1EBE;
+            pDVar14 = this_01->field_1EBE;
           }
 LAB_005a36e9:
-          Library::DKW::TBL::FUN_006ae1c0(puVar13,param_2);
+          Library::DKW::TBL::FUN_006ae1c0(&pDVar14->flags,param_2);
         }
 LAB_005a36ee:
         param_2 = param_2 + 0x97;
@@ -176,9 +177,9 @@ LAB_005a36ee:
       } while( true );
     }
     g_currentExceptionFrame = local_60.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6,0,iVar4,&DAT_007a4ccc
+    iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6,0,iVar4,&DAT_007a4ccc
                                ,s_FSGSTy__SetGameList_007cc56c);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;

@@ -6,11 +6,11 @@
 int FUN_004b7080(uint param_1,int param_2)
 
 {
-  g_playerRuntime[(char)param_1].field2226_0x972 =
-       g_playerRuntime[(char)param_1].field2226_0x972 + param_2;
+  g_playerRuntime[(char)param_1].field2108_0x972 =
+       g_playerRuntime[(char)param_1].field2108_0x972 + param_2;
   if (param_2 != 0) {
     thunk_FUN_004b7750(param_1);
   }
-  return g_playerRuntime[(char)param_1].field2226_0x972;
+  return g_playerRuntime[(char)param_1].field2108_0x972;
 }
 

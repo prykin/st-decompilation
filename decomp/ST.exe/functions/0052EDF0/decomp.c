@@ -37,7 +37,7 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
       local_8 = CONCAT31(uVar3,param_2);
       do {
         pbVar5 = (byte *)FUN_0070b3a0(pOVar2->field_0198,6);
-        DibPut((undefined4 *)pOVar2->field_0068,iVar4,local_c,'\x01',pbVar5);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pOVar2->field_0068,iVar4,local_c,'\x01',pbVar5);
         iVar4 = iVar4 + 4;
         local_10 = local_10 - 1;
       } while (local_10 != 0);
@@ -48,7 +48,7 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
       iVar4 = (local_8 & 0xff) * 4 + 0x80;
       do {
         pbVar5 = (byte *)FUN_0070b3a0(pOVar2->field_0198,0);
-        DibPut((undefined4 *)pOVar2->field_0068,iVar4,local_c,'\x01',pbVar5);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pOVar2->field_0068,iVar4,local_c,'\x01',pbVar5);
         iVar4 = iVar4 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);

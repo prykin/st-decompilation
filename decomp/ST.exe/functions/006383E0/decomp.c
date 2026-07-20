@@ -12,19 +12,19 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
   int iVar6;
   short sVar7;
   int iVar8;
-  int *piVar9;
-  short sVar10;
-  int iVar11;
+  STWorldObject *this;
+  short sVar9;
+  int iVar10;
+  undefined4 **ppuVar11;
   undefined4 *puVar12;
-  int *local_a8;
+  undefined4 *local_a8;
   int *local_a4;
   int local_a0;
   int local_90;
   int local_80;
   int local_7c;
   int local_78;
-  int local_74 [5];
-  undefined4 *local_60;
+  undefined4 *local_74 [9];
   int local_50;
   undefined4 local_48 [3];
   undefined2 local_3c;
@@ -41,38 +41,38 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
   local_14 = ExceptionList;
   local_1c = &stack0xffffff4c;
   local_80 = 0;
-  sVar10 = (short)(param_1 >> 0x1f);
+  sVar9 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
-    iVar11 = (short)(((short)(param_1 / 0xc9) + sVar10) -
+    iVar10 = (short)(((short)(param_1 / 0xc9) + sVar9) -
                     (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    iVar11 = (int)(short)(((short)(param_1 / 0xc9) + sVar10) -
+    iVar10 = (int)(short)(((short)(param_1 / 0xc9) + sVar9) -
                          (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
   }
-  sVar10 = (short)(param_2 >> 0x1f);
+  sVar9 = (short)(param_2 >> 0x1f);
   if (param_2 < 0) {
-    iVar5 = (short)(((short)(param_2 / 0xc9) + sVar10) -
+    iVar5 = (short)(((short)(param_2 / 0xc9) + sVar9) -
                    (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    iVar5 = (int)(short)(((short)(param_2 / 0xc9) + sVar10) -
+    iVar5 = (int)(short)(((short)(param_2 / 0xc9) + sVar9) -
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
-  sVar10 = (short)(param_3 >> 0x1f);
+  sVar9 = (short)(param_3 >> 0x1f);
   if (param_3 < 0) {
-    iVar6 = (short)(((short)(param_3 / 200) + sVar10) -
+    iVar6 = (short)(((short)(param_3 / 200) + sVar9) -
                    (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
   }
   else {
-    iVar6 = (int)(short)(((short)(param_3 / 200) + sVar10) -
+    iVar6 = (int)(short)(((short)(param_3 / 200) + sVar9) -
                         (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
   iVar8 = iVar5 - param_9;
   if (iVar8 < 0) {
     iVar8 = 0;
   }
-  local_20 = iVar11 - param_9;
+  local_20 = iVar10 - param_9;
   if (local_20 < 0) {
     local_20 = 0;
   }
@@ -85,7 +85,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
   if (SHORT_007fb242 < iVar5) {
     iVar5 = (int)SHORT_007fb242;
   }
-  local_7c = iVar11 + 1 + param_9;
+  local_7c = iVar10 + 1 + param_9;
   if (SHORT_007fb240 < local_7c) {
     local_7c = (int)SHORT_007fb240;
   }
@@ -106,34 +106,34 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
     }
     local_a4 = (int *)&stack0xffffff4c;
     local_50 = iVar8;
-    iVar11 = iVar3;
-    for (; iVar11 < local_7c; iVar11 = iVar11 + 1) {
+    iVar10 = iVar3;
+    for (; iVar10 < local_7c; iVar10 = iVar10 + 1) {
       if (local_78 < local_90) {
-        local_a8 = (int *)(&stack0xffffff4c + local_a0 * 4);
+        local_a8 = (undefined4 *)(&stack0xffffff4c + local_a0 * 4);
         iVar6 = local_78;
         do {
-          sVar10 = (short)iVar11;
-          if (((((sVar10 < 0) || (SHORT_007fb240 <= sVar10)) || (sVar2 = (short)iVar8, sVar2 < 0))
-              || ((SHORT_007fb242 <= sVar2 || (sVar7 = (short)iVar6, sVar7 < 0)))) ||
+          sVar9 = (short)iVar10;
+          if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar2 = (short)iVar8, sVar2 < 0)) ||
+              ((SHORT_007fb242 <= sVar2 || (sVar7 = (short)iVar6, sVar7 < 0)))) ||
              (SHORT_007fb244 <= sVar7)) {
-            piVar9 = (int *)0x0;
+            this = (STWorldObject *)0x0;
           }
           else {
-            piVar9 = *(int **)(DAT_007fb248 +
-                              ((int)sVar2 * (int)SHORT_007fb240 + (int)sVar7 * (int)SHORT_007fb246 +
-                              (int)sVar10) * 8);
+            this = g_worldCells
+                   [(int)sVar2 * (int)SHORT_007fb240 + (int)sVar7 * (int)SHORT_007fb246 + (int)sVar9
+                   ].objects[0];
           }
-          if ((piVar9 != (int *)0x0) &&
-             (iVar3 = (**(code **)(*piVar9 + 0xf0))(), iVar8 = local_50, iVar3 != 0)) {
+          if ((this != (STWorldObject *)0x0) &&
+             (iVar3 = (*this->vtable[5].slots_00_28[0])(), iVar8 = local_50, iVar3 != 0)) {
             bVar1 = false;
-            if ((piVar9[8] == 1000) &&
-               (iVar8 = (**(code **)(*piVar9 + 0x2c))(), *(int *)(&DAT_00791d68 + iVar8 * 4) == 1))
-            {
+            if ((this->value_20 == 1000) &&
+               (iVar8 = (*this->vtable->GetObjectTypeId)(this),
+               *(int *)(&DAT_00791d68 + iVar8 * 4) == 1)) {
               iVar8 = 0;
               if (0 < local_a0) {
                 piVar4 = local_a4;
                 do {
-                  if (*piVar4 == piVar9[6]) {
+                  if (*piVar4 == *(int *)&this->field_0x18) {
                     bVar1 = true;
                     break;
                   }
@@ -143,30 +143,30 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
               }
               iVar8 = local_50;
               if (bVar1) goto LAB_006386ce;
-              *local_a8 = piVar9[6];
+              *local_a8 = *(undefined4 *)&this->field_0x18;
               local_a0 = local_a0 + 1;
               local_a8 = local_a8 + 1;
             }
-            piVar4 = local_74;
+            ppuVar11 = local_74;
             for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
-              *piVar4 = 0;
-              piVar4 = piVar4 + 1;
+              *ppuVar11 = (undefined4 *)0x0;
+              ppuVar11 = ppuVar11 + 1;
             }
             puVar12 = local_48;
             for (iVar8 = 7; iVar8 != 0; iVar8 = iVar8 + -1) {
               *puVar12 = 0;
               puVar12 = puVar12 + 1;
             }
-            local_74[2] = piVar9[6];
-            local_74[3] = 4;
+            local_74[2] = *(undefined4 **)&this->field_0x18;
+            local_74[3] = (undefined4 *)0x4;
             local_48[2] = param_4;
             local_3c = param_6;
             local_3a = param_5;
             local_48[0] = param_8;
             local_48[1] = param_7;
-            local_74[4] = 0x110;
-            local_60 = local_48;
-            (**(code **)*piVar9)(local_74);
+            local_74[4] = (undefined4 *)0x110;
+            local_74[5] = local_48;
+            (*this->vtable->slots_00_28[0])(local_74);
             local_80 = local_80 + 1;
             iVar8 = local_50;
           }

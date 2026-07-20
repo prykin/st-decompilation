@@ -1,3 +1,4 @@
 id	address	status	detail
 ai_event_decode_message_event_v1	0065BD70	disabled	apply is not 1
-ai_event_get_message_v1	00652810	applied	void __thiscall GetMessage(AiEventClassTy * this, STMessage * message)
+ai_event_get_message_v1	00652810	unchanged	void __thiscall GetMessage(AiEventClassTy * this, STMessage * message)
+group_boat_set_order_data_v1	00498D20	applied	void __thiscall SetOrderData(STGroupBoatC * this, STGroupBoatOrderType orderType, void * data)

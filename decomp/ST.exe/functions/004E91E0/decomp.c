@@ -75,9 +75,9 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
               if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar8 = (short)iVar9, sVar8 < 0))
                   || ((SHORT_007fb242 <= sVar8 || (sVar10 < 0)))) ||
                  ((SHORT_007fb244 <= sVar10 ||
-                  (*(int *)(DAT_007fb248 +
-                           ((int)sVar8 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 +
-                           (int)sVar3) * 8) == 0)))) {
+                  (g_worldCells
+                   [(int)sVar8 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 +
+                    (int)sVar3].objects[0] == (STWorldObject *)0x0)))) {
                 *(int *)((int)this + 0x4e4) = iVar5;
                 *(int *)((int)this + 0x4e8) = iVar9;
                 *(int *)((int)this + 0x4ec) = *(int *)(iVar11 + 0x5b8) + 1;

@@ -27,9 +27,10 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
   undefined4 *puVar13;
   void *unaff_EDI;
   undefined4 *puVar14;
-  int iVar15;
+  STWorldObject *pSVar15;
   int iVar16;
-  uint uVar17;
+  int iVar17;
+  uint uVar18;
   InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
@@ -80,14 +81,14 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
                                                       local_8->field_02AB),CASE_1),
               this_01 != (void *)0x0)))) {
             thunk_FUN_00492510(this_01,this_00->field_0018);
-            (**(code **)(this_00->field_0000 + 0xac))(*(undefined4 *)((int)this_01 + 0x18));
+            (*(code *)this_00->field_0000->field_00AC)(*(undefined4 *)((int)this_01 + 0x18));
           }
           switch(*(undefined4 *)(iVar6 + 0x18)) {
           case 2:
           case 4:
             goto switchD_005fbd82_caseD_2;
           case 3:
-            uVar17 = 0;
+            uVar18 = 0;
             this_00->field_030E = *(undefined1 *)(iVar6 + 8);
             this_00->field_030F = *(undefined2 *)(iVar6 + 0xc);
             iVar6 = this_00->field_02C6;
@@ -95,10 +96,10 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
             this_00->field_023A = 5;
             iVar9 = this_00->field_02C2;
             *(int *)&this_00->field_0x2e0 = PTR_00802a38->field_00E4 + 0x15;
-            iVar16 = this_00->field_02BE;
-            iVar15 = 1;
+            iVar17 = this_00->field_02BE;
+            iVar16 = 1;
             uVar7 = thunk_FUN_004ad650((int)&this_00->field_01D5);
-            thunk_FUN_006377b0(uVar7,iVar15,iVar16,iVar9,iVar6,uVar17);
+            thunk_FUN_006377b0(uVar7,iVar16,iVar17,iVar9,iVar6,uVar18);
             g_currentExceptionFrame = local_60.previous;
             return 0;
           case 5:
@@ -132,7 +133,7 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        iVar6 = (**(code **)(local_8->field_0000 + 0x124))(*puVar13);
+        iVar6 = (*(code *)local_8->field_0000->field_0124)(*puVar13);
         if (iVar6 == 0) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -291,15 +292,15 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
         if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
             ((sVar2 < 0 || ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))))) ||
            (SHORT_007fb244 <= sVar3)) {
-          iVar6 = 0;
+          pSVar15 = (STWorldObject *)0x0;
         }
         else {
-          iVar6 = *(int *)(DAT_007fb248 +
-                          ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 +
-                          (int)sVar1) * 8);
+          pSVar15 = g_worldCells
+                    [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 +
+                     (int)sVar1].objects[0];
         }
         bVar5 = true;
-        if ((iVar6 == 0) &&
+        if ((pSVar15 == (STWorldObject *)0x0) &&
            (iVar6 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)this_00)
            , iVar6 == 0)) {
           this_00->field_0252 = this_00->field_0252 + '\x01';
@@ -322,15 +323,15 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
           local_1c = 1;
           if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
              (((SHORT_007fb242 <= sVar2 || (sVar3 < 0)) || (SHORT_007fb244 <= sVar3)))) {
-            iVar6 = 0;
+            pSVar15 = (STWorldObject *)0x0;
           }
           else {
-            iVar6 = *(int *)(DAT_007fb248 +
-                            ((int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 +
-                            (int)sVar1) * 8);
+            pSVar15 = g_worldCells
+                      [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 +
+                       (int)sVar1].objects[0];
           }
           bVar5 = true;
-          if ((iVar6 == 0) &&
+          if ((pSVar15 == (STWorldObject *)0x0) &&
              (iVar6 = DumpClassC::WritePtr
                                 (sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)this_00),
              iVar6 == 0)) {
@@ -374,7 +375,7 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
   }
   return 0xffff;
 switchD_005fbd82_caseD_2:
-  iVar9 = (**(code **)(this_00->field_0000 + 0x124))(20000);
+  iVar9 = (*(code *)this_00->field_0000->field_0124)(20000);
   if (iVar9 == 0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -430,7 +431,7 @@ switchD_005fbd08_caseD_129:
     this_00->field_02C6 = this_00->field_027F;
   }
   thunk_FUN_005ef5f0((int)this_00);
-  iVar6 = (**(code **)(this_00->field_0000 + 0xd8))();
+  iVar6 = (*(code *)this_00->field_0000->field_00D8)();
   if (iVar6 == 0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;

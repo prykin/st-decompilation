@@ -7,88 +7,90 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
 
 {
   char cVar1;
-  code *pcVar2;
-  FSGSTy *pFVar3;
-  int iVar4;
-  undefined4 *puVar5;
-  undefined4 uVar6;
-  char *pcVar7;
-  int iVar8;
-  uint uVar9;
-  undefined4 unaff_ESI;
+  AnonPointee_FSGSTy_1AC0 *pAVar2;
+  code *pcVar3;
+  FSGSTy *pFVar4;
+  int iVar5;
+  undefined4 *puVar6;
+  undefined4 uVar7;
+  char *pcVar8;
+  int iVar9;
   uint uVar10;
+  undefined4 unaff_ESI;
+  uint uVar11;
   void *unaff_EDI;
-  char *pcVar11;
+  char *pcVar12;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != 0)) && (-1 < (int)this->field_1ABC)) {
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (AnonPointee_FSGSTy_1AC0 *)0x0)) &&
+     (-1 < (int)this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    pFVar3 = local_8;
-    if (iVar4 == 0) {
-      iVar4 = local_8->field_1AC0;
-      uVar10 = *(uint *)(iVar4 + 0x14);
-      if (uVar10 == 0) {
-        uVar10 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-                 *(int *)(iVar4 + 8);
+    iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    pFVar4 = local_8;
+    if (iVar5 == 0) {
+      pAVar2 = local_8->field_1AC0;
+      uVar11 = pAVar2->field_0014;
+      if (uVar11 == 0) {
+        uVar11 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+                 pAVar2->field_0008;
       }
-      puVar5 = (undefined4 *)FUN_006b4fa0(iVar4);
-      for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *puVar5 = 0xffffffff;
-        puVar5 = puVar5 + 1;
+      puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
+      for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+        *puVar6 = 0xffffffff;
+        puVar6 = puVar6 + 1;
       }
-      for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined1 *)puVar5 = 0xff;
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
+      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+        *(undefined1 *)puVar6 = 0xff;
+        puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      ccFntTy::SetSurf(pFVar3->field_1A73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
+      ccFntTy::SetSurf(pFVar4->field_1A73,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,0xf0);
       if (param_1 < param_2) {
-        iVar4 = (param_1 * 100) / param_2;
-        uVar6 = FUN_006b0140(0x2571,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,s__s_d___007cc3ec,uVar6,iVar4);
+        iVar5 = (param_1 * 100) / param_2;
+        uVar7 = FUN_006b0140(0x2571,HINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,s__s_d___007cc3ec,uVar7,iVar5);
       }
       else {
-        pcVar7 = (char *)FUN_006b0140(0x2570,HINSTANCE_00807618);
-        uVar10 = 0xffffffff;
+        pcVar8 = (char *)FUN_006b0140(0x2570,HINSTANCE_00807618);
+        uVar11 = 0xffffffff;
         do {
-          pcVar11 = pcVar7;
-          if (uVar10 == 0) break;
-          uVar10 = uVar10 - 1;
-          pcVar11 = pcVar7 + 1;
-          cVar1 = *pcVar7;
-          pcVar7 = pcVar11;
+          pcVar12 = pcVar8;
+          if (uVar11 == 0) break;
+          uVar11 = uVar11 - 1;
+          pcVar12 = pcVar8 + 1;
+          cVar1 = *pcVar8;
+          pcVar8 = pcVar12;
         } while (cVar1 != '\0');
-        uVar10 = ~uVar10;
-        pcVar7 = pcVar11 + -uVar10;
-        pcVar11 = (char *)&DAT_0080f33a;
-        for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          pcVar11 = pcVar11 + 4;
+        uVar11 = ~uVar11;
+        pcVar8 = pcVar12 + -uVar11;
+        pcVar12 = (char *)&DAT_0080f33a;
+        for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+          *(undefined4 *)pcVar12 = *(undefined4 *)pcVar8;
+          pcVar8 = pcVar8 + 4;
+          pcVar12 = pcVar12 + 4;
         }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *pcVar11 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          pcVar11 = pcVar11 + 1;
+        for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+          *pcVar12 = *pcVar8;
+          pcVar8 = pcVar8 + 1;
+          pcVar12 = pcVar12 + 1;
         }
       }
-      ccFntTy::WrTxt(pFVar3->field_1A73,&DAT_0080f33a,-1,-1,2,-1,-1);
-      FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
+      ccFntTy::WrTxt(pFVar4->field_1A73,&DAT_0080f33a,-1,-1,2,-1,-1);
+      FUN_006b35d0(DAT_008075a8,pFVar4->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x909,0,iVar4,&DAT_007a4ccc
+    iVar9 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x909,0,iVar5,&DAT_007a4ccc
                                ,s_FSGSTy__ConnectProc_007cc3d4);
-    if (iVar8 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+    if (iVar9 != 0) {
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x909);
+    RaiseInternalException(iVar5,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x909);
   }
   return;
 }

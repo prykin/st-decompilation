@@ -37,23 +37,23 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   }
   iVar9 = (int)param_1 * 0xa62;
   local_c = g_playerRuntime[(int)param_1].raceId - 1;
-  g_playerRuntime[(int)param_1].field598_0x2eb = 0;
-  g_playerRuntime[(int)param_1].field599_0x2ef = 0;
+  g_playerRuntime[(int)param_1].field480_0x2eb = 0;
+  g_playerRuntime[(int)param_1].field481_0x2ef = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x2f3 = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x2f7 = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x2fb = 0;
-  g_playerRuntime[(int)param_1].field612_0x2ff = 0;
-  g_playerRuntime[(int)param_1].field613_0x303 = 0;
+  g_playerRuntime[(int)param_1].field494_0x2ff = 0;
+  g_playerRuntime[(int)param_1].field495_0x303 = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x307 = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x30b = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x30f = 0;
-  puVar10 = &g_playerRuntime[(int)param_1].field640_0x327;
+  puVar10 = &g_playerRuntime[(int)param_1].field522_0x327;
   for (iVar7 = 0x9b; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
   puVar10 = &DAT_00798fd8;
-  puVar14 = &g_playerRuntime[(int)param_1].field1672_0x73b;
+  puVar14 = &g_playerRuntime[(int)param_1].field1554_0x73b;
   for (iVar7 = 0x26; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar14 = *puVar10;
     puVar10 = puVar10 + 1;
@@ -200,7 +200,7 @@ LAB_004e5598:
       param_2 = (uint *)((int)param_2 + 1);
       param_3 = param_3 + 1;
     } while ((int)puVar13 < 0x7c0e4c);
-    param_2 = &g_playerRuntime[(int)piVar5].field1254_0x593;
+    param_2 = &g_playerRuntime[(int)piVar5].field1136_0x593;
     param_3 = (uint *)0x32;
     do {
       iVar9 = FUN_006b0fd0((int)&local_30);
@@ -225,15 +225,15 @@ LAB_004e5655:
       param_3 = (uint *)((int)param_3 + 1);
       param_2 = param_2 + 1;
       if (0x73 < (int)param_3) {
-        iVar9 = *(int *)((int)&g_playerRuntime[0].field2282_0x9ce + local_10);
+        iVar9 = *(int *)((int)&g_playerRuntime[0].field2164_0x9ce + local_10);
         if (iVar9 != 0) {
           *(undefined4 *)(iVar9 + 4) = 0;
           iVar9 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)
-                                ((int)&g_playerRuntime[0].field2282_0x9ce + local_10),&param_1);
+                                ((int)&g_playerRuntime[0].field2164_0x9ce + local_10),&param_1);
           while (-1 < iVar9) {
             thunk_FUN_004dd880((int)param_1);
             iVar9 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)
-                                  ((int)&g_playerRuntime[0].field2282_0x9ce + iVar7),&param_1);
+                                  ((int)&g_playerRuntime[0].field2164_0x9ce + iVar7),&param_1);
           }
         }
         iVar9 = *(int *)((int)&g_playerRuntime[0].objects + iVar7);

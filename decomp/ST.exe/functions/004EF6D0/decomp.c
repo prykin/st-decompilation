@@ -51,7 +51,7 @@ BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,AnonShape_004EF6D0_502EEF25 *par
   uVar1 = param_1->field_0010;
   if (uVar1 < 0xb203) {
     if (uVar1 == 0xb202) {
-      ProdPanelTy::PaintTab(this_00,(int)param_1,&LAB_00402e7d);
+      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)param_1,&LAB_00402e7d);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }

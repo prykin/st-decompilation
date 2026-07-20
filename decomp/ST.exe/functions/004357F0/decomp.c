@@ -5,9 +5,9 @@
    00652810 -> 004357F0 @ 006569FA | 00652810 -> 004357F0 @ 00656D9B | 00652810 -> 004357F0 @
    00656E60 | 00661CA0 -> 004357F0 @ 00661CE6 */
 
-undefined4 FUN_004357f0(char objPtr)
+AiPlrClassTy * FUN_004357f0(char playerId)
 
 {
-  return *(undefined4 *)&g_playerRuntime[objPtr].field_0x1;
+  return g_playerRuntime[playerId].aiPlayer;
 }
 

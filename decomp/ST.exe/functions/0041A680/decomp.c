@@ -21,8 +21,8 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
   uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
-      FUN_006ab060((LPVOID *)&this->field_01AD);
-      FUN_006ab060((LPVOID *)&this->field_01B1);
+      FUN_006ab060(&this->field_01AD);
+      FUN_006ab060(&this->field_01B1);
       FUN_006ab060((LPVOID *)&this->field_01C5);
       FUN_006ab060((LPVOID *)&this->field_01C9);
       return;
@@ -72,10 +72,10 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
         this->field_0165 = 0;
         this->field_0169 = 0;
         this->field_016D = 0;
-        FUN_006ab060((LPVOID *)&this->field_0195);
-        FUN_006ab060((LPVOID *)&this->field_0199);
-        FUN_006ab060((LPVOID *)&this->field_01AD);
-        FUN_006ab060((LPVOID *)&this->field_01B1);
+        FUN_006ab060(&this->field_0195);
+        FUN_006ab060(&this->field_0199);
+        FUN_006ab060(&this->field_01AD);
+        FUN_006ab060(&this->field_01B1);
         FUN_006ab060((LPVOID *)&this->field_01BD);
         FUN_006ab060((LPVOID *)&this->field_01C1);
         return;

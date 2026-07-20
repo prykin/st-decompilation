@@ -10,7 +10,7 @@ undefined4 * __fastcall FUN_0042a940(undefined4 *param_1)
   pSVar1 = g_playerRuntime;
   for (iVar2 = 0x14d5; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(undefined4 *)pSVar1 = 0;
-    pSVar1 = (STPlayerRuntimeRecord *)&pSVar1->field_0x4;
+    pSVar1 = (STPlayerRuntimeRecord *)((int)&pSVar1->aiPlayer + 3);
   }
   pSVar1 = g_playerRuntime;
   do {

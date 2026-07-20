@@ -3,7 +3,7 @@
    E:\__titans\Start\adv_obj.cpp
    MAdvTy::GetMessage */
 
-undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
+undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,AnonShape_005908B0_8A8C8A83 *param_1)
 
 {
   code *pcVar1;
@@ -25,12 +25,12 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (errorCode == 0) {
-    switch(*(undefined4 *)(param_1 + 0x10)) {
+    switch(param_1->field_0010) {
     case 0:
       NoneMAdv(local_8);
       break;
     case 2:
-      local_8->field_005D = *(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14);
+      local_8->field_005D = *(undefined1 *)(param_1->field_0014 + 0x14);
       InitMAdv(local_8);
       break;
     case 3:

@@ -1,4 +1,5 @@
 {"apply":true,"record_id":"player_runtime","offset":0,"size":1,"proposed_name":"raceId","proposed_type":"/byte","type_confidence":"high","reason":"byte value selects one of three race tables and is compared with 1..3"}
+{"apply":true,"record_id":"player_runtime","offset":1,"size":4,"proposed_name":"aiPlayer","proposed_type":"pointer:/AiPlrClassTy","type_confidence":"high","reason":"AiPlrClassTy::GetMessage stores this through FUN_004357b0; CmdToPlsObj and FUN_004357f0 read the same packed field"}
 {"apply":true,"record_id":"player_runtime","offset":5,"size":4,"proposed_name":"groups","proposed_type":"pointer:/SubmarineTitans/Recovered/DArrayTy","type_confidence":"high","reason":"DArray used by RegisterGroup/UnRegisterGroup and group iteration"}
 {"apply":true,"record_id":"player_runtime","offset":9,"size":4,"proposed_name":"objects","proposed_type":"pointer:/SubmarineTitans/Recovered/DArrayTy","type_confidence":"high","reason":"DArray used by RegisterObject/GetObjPtr/UnRegisterObject"}
 {"apply":true,"record_id":"player_runtime","offset":15,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
@@ -10,26 +11,7 @@
 {"apply":true,"record_id":"player_runtime","offset":47,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"existing_first_record_data"}
 {"apply":true,"record_id":"player_runtime","offset":347,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
 {"apply":true,"record_id":"player_runtime","offset":351,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":355,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":359,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":363,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":365,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":369,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":371,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":375,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":379,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":381,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":385,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":435,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":439,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":443,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":445,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":449,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":451,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":455,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":459,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":461,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
-{"apply":true,"record_id":"player_runtime","offset":465,"size":2,"proposed_name":"","proposed_type":"/undefined2","type_confidence":"layout","reason":"stride_relative_memory_access"}
+{"apply":true,"record_id":"player_runtime","offset":355,"size":160,"proposed_name":"tempSlots","proposed_type":"array:2:array:5:/SubmarineTitans/Recovered/GlobalRecords/STPlayerTempSlot","type_confidence":"high","reason":"two adjacent groups of five packed 16-byte temporary-object slots; field meanings are shared by AddObjToTmp/AddObjToTmp2/DelObjFromTmps/ResetActivityFromTmp/SaveTmp/RestoreTmp"}
 {"apply":true,"record_id":"player_runtime","offset":515,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
 {"apply":true,"record_id":"player_runtime","offset":519,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}
 {"apply":true,"record_id":"player_runtime","offset":523,"size":4,"proposed_name":"","proposed_type":"/undefined4","type_confidence":"layout","reason":"stride_relative_memory_access"}

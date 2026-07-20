@@ -3,25 +3,25 @@ undefined4 __thiscall
 FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
 
 {
-  int *piVar1;
+  byte bVar1;
   byte bVar2;
-  byte bVar3;
-  char cVar4;
-  uint uVar5;
-  int iVar6;
-  undefined4 uVar7;
-  uint uVar8;
-  uint *puVar9;
-  short sVar10;
-  int iVar11;
-  short sVar12;
+  char cVar3;
+  uint uVar4;
+  int iVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  uint *puVar8;
+  short sVar9;
+  int iVar10;
+  short sVar11;
+  int iVar12;
   int iVar13;
-  int iVar14;
-  short sVar15;
-  undefined4 *puVar16;
-  int iVar17;
-  int *piVar18;
-  bool bVar19;
+  short sVar14;
+  undefined4 *puVar15;
+  int iVar16;
+  STWorldObject *this_00;
+  int *piVar17;
+  bool bVar18;
   short local_84 [2];
   int local_80;
   int *local_6c;
@@ -48,60 +48,60 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff58;
-  piVar18 = (int *)&stack0xffffff58;
+  piVar17 = (int *)&stack0xffffff58;
   local_4c = 0;
   if (param_4 == (undefined4 *)0x0) {
     local_4c = 0;
   }
   else {
-    sVar15 = (short)(param_1 >> 0x1f);
+    sVar14 = (short)(param_1 >> 0x1f);
     if (param_1 < 0) {
-      iVar17 = (short)(((short)(param_1 / 0xc9) + sVar15) -
+      iVar16 = (short)(((short)(param_1 / 0xc9) + sVar14) -
                       (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar17 = (int)(short)(((short)(param_1 / 0xc9) + sVar15) -
+      iVar16 = (int)(short)(((short)(param_1 / 0xc9) + sVar14) -
                            (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
     }
-    sVar15 = (short)(param_2 >> 0x1f);
+    sVar14 = (short)(param_2 >> 0x1f);
     if (param_2 < 0) {
-      iVar11 = (short)(((short)(param_2 / 0xc9) + sVar15) -
+      iVar10 = (short)(((short)(param_2 / 0xc9) + sVar14) -
                       (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar11 = (int)(short)(((short)(param_2 / 0xc9) + sVar15) -
+      iVar10 = (int)(short)(((short)(param_2 / 0xc9) + sVar14) -
                            (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
     }
-    sVar15 = (short)(param_3 >> 0x1f);
+    sVar14 = (short)(param_3 >> 0x1f);
     if (param_3 < 0) {
-      iVar6 = (short)(((short)(param_3 / 200) + sVar15) -
+      iVar5 = (short)(((short)(param_3 / 200) + sVar14) -
                      (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
     }
     else {
-      iVar6 = (int)(short)(((short)(param_3 / 200) + sVar15) -
+      iVar5 = (int)(short)(((short)(param_3 / 200) + sVar14) -
                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
     }
-    if (((((-1 < iVar17) && (-1 < iVar11)) && (-1 < iVar6)) &&
-        ((iVar14 = (int)SHORT_007fb240, iVar17 < iVar14 &&
-         (iVar13 = (int)SHORT_007fb242, iVar11 < iVar13)))) && (iVar6 < 5)) {
-      local_2c = iVar11 + -5;
+    if (((((-1 < iVar16) && (-1 < iVar10)) && (-1 < iVar5)) &&
+        ((iVar13 = (int)SHORT_007fb240, iVar16 < iVar13 &&
+         (iVar12 = (int)SHORT_007fb242, iVar10 < iVar12)))) && (iVar5 < 5)) {
+      local_2c = iVar10 + -5;
       if (local_2c < 0) {
         local_2c = 0;
       }
-      iVar6 = local_2c;
-      local_24 = iVar17 + -5;
+      iVar5 = local_2c;
+      local_24 = iVar16 + -5;
       if (local_24 < 0) {
         local_24 = 0;
       }
-      local_64 = iVar11 + 6;
-      if (iVar13 < iVar11 + 6) {
-        local_64 = iVar13;
+      local_64 = iVar10 + 6;
+      if (iVar12 < iVar10 + 6) {
+        local_64 = iVar12;
       }
-      local_5c = iVar17 + 6;
-      if (iVar14 < iVar17 + 6) {
-        local_5c = iVar14;
+      local_5c = iVar16 + 6;
+      if (iVar13 < iVar16 + 6) {
+        local_5c = iVar13;
       }
-      iVar17 = 0;
+      iVar16 = 0;
       local_8 = 0;
       ExceptionList = &local_14;
       Library::MSVCRT::FUN_0072da40();
@@ -113,152 +113,152 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
       local_6c = (int *)&stack0xffffff58;
       local_1c = &stack0xffffff58;
       do {
-        iVar11 = local_34;
-        iVar14 = iVar6;
-        local_38 = iVar6;
-        if (iVar6 < local_64) {
+        iVar10 = local_34;
+        iVar13 = iVar5;
+        local_38 = iVar5;
+        if (iVar5 < local_64) {
           do {
             local_80 = local_24;
-            iVar14 = local_24;
-            local_38 = iVar6;
+            iVar13 = local_24;
+            local_38 = iVar5;
             if (local_24 < local_5c) {
               do {
-                sVar15 = (short)iVar14;
-                if (((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) ||
-                   ((sVar10 = (short)iVar6, sVar10 < 0 ||
-                    (((SHORT_007fb242 <= sVar10 || (sVar12 = (short)iVar11, sVar12 < 0)) ||
-                     (SHORT_007fb244 <= sVar12)))))) {
-                  piVar18 = (int *)0x0;
+                sVar14 = (short)iVar13;
+                if (((sVar14 < 0) || (SHORT_007fb240 <= sVar14)) ||
+                   ((sVar9 = (short)iVar5, sVar9 < 0 ||
+                    (((SHORT_007fb242 <= sVar9 || (sVar11 = (short)iVar10, sVar11 < 0)) ||
+                     (SHORT_007fb244 <= sVar11)))))) {
+                  this_00 = (STWorldObject *)0x0;
                 }
                 else {
-                  piVar18 = *(int **)(DAT_007fb248 +
-                                     ((int)SHORT_007fb246 * (int)sVar12 +
-                                      (int)SHORT_007fb240 * (int)sVar10 + (int)sVar15) * 8);
-                  iVar11 = local_34;
+                  this_00 = g_worldCells
+                            [(int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar9 +
+                             (int)sVar14].objects[0];
+                  iVar10 = local_34;
                 }
-                if (((piVar18 != (int *)0x0) &&
-                    (local_80 = iVar14, iVar13 = (**(code **)(*piVar18 + 0xf0))(), iVar6 = local_38,
-                    iVar11 = local_34, iVar13 != 0)) &&
-                   (((uint)piVar18[9] < 8 &&
+                if (((this_00 != (STWorldObject *)0x0) &&
+                    (local_80 = iVar13, iVar12 = (*this_00->vtable[5].slots_00_28[0])(),
+                    iVar5 = local_38, iVar10 = local_34, iVar12 != 0)) &&
+                   ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
                     ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                     ((byte)(&DAT_008087e9)[piVar18[9] * 0x51] < 8)))))) {
-                  bVar2 = *(byte *)(piVar18 + 9);
-                  bVar3 = *(byte *)((int)this + 0x20);
+                     ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))) {
+                  bVar1 = *(byte *)&this_00[1].vtable;
+                  bVar2 = *(byte *)((int)this + 0x20);
                   if (DAT_00808a8f == '\0') {
-                    if (bVar2 == bVar3) {
+                    if (bVar1 == bVar2) {
 LAB_0061856a:
-                      iVar13 = 0;
+                      iVar12 = 0;
                     }
                     else {
-                      uVar8 = (uint)bVar2;
-                      uVar5 = (uint)bVar3;
-                      cVar4 = *(char *)((int)&DAT_00808a4f + uVar8 * 8 + uVar5);
-                      if ((cVar4 == '\0') &&
-                         (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\0')) {
-                        iVar13 = -2;
+                      uVar7 = (uint)bVar1;
+                      uVar4 = (uint)bVar2;
+                      cVar3 = *(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4);
+                      if ((cVar3 == '\0') &&
+                         (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar7) == '\0')) {
+                        iVar12 = -2;
                       }
-                      else if ((cVar4 == '\x01') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\0')) {
-                        iVar13 = -1;
+                      else if ((cVar3 == '\x01') &&
+                              (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar7) == '\0')) {
+                        iVar12 = -1;
                       }
-                      else if ((cVar4 == '\0') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\x01')) {
-                        iVar13 = 1;
+                      else if ((cVar3 == '\0') &&
+                              (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar7) == '\x01')) {
+                        iVar12 = 1;
                       }
                       else {
-                        if ((cVar4 != '\x01') ||
-                           (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) != '\x01'))
+                        if ((cVar3 != '\x01') ||
+                           (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar7) != '\x01'))
                         goto LAB_0061856a;
-                        iVar13 = 2;
+                        iVar12 = 2;
                       }
                     }
-                    bVar19 = iVar13 < 0;
+                    bVar18 = iVar12 < 0;
                   }
                   else {
-                    bVar19 = (&DAT_008087ea)[(uint)bVar3 * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar2 * 0x51];
-                    iVar14 = local_80;
+                    bVar18 = (&DAT_008087ea)[(uint)bVar2 * 0x51] !=
+                             (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                    iVar13 = local_80;
                   }
-                  if ((bVar19) &&
-                     (iVar13 = (**(code **)(*piVar18 + 0xf8))(), iVar6 = local_38, iVar11 = local_34
-                     , iVar13 != 0)) {
-                    thunk_FUN_00416270(piVar18,local_50,(int *)local_84,(int *)local_20);
-                    piVar1 = (int *)(local_60 + iVar17 * 0x2c);
-                    *piVar1 = piVar18[9];
-                    iVar11 = (**(code **)(*piVar18 + 0x2c))();
-                    piVar1[1] = iVar11;
-                    *(int *)((int)piVar1 + 0x26) = piVar18[6];
-                    *(undefined2 *)((int)piVar1 + 0x2a) = *(undefined2 *)((int)piVar18 + 0x32);
-                    *(int **)((int)piVar1 + 0x1a) = piVar18;
-                    *(undefined2 *)(piVar1 + 5) = (undefined2)local_80;
-                    *(undefined2 *)((int)piVar1 + 0x16) = (undefined2)local_38;
-                    *(undefined2 *)(piVar1 + 6) = (undefined2)local_34;
-                    piVar1[2] = (int)local_50[0];
-                    piVar1[3] = (int)local_84[0];
-                    piVar1[4] = (int)local_20[0];
-                    uVar7 = FUN_006aced8(param_1,param_2,(int)local_50[0],(int)local_84[0]);
-                    *(undefined4 *)((int)piVar1 + 0x1e) = uVar7;
-                    iVar17 = iVar17 + 1;
-                    iVar6 = local_38;
-                    iVar11 = local_34;
-                    iVar14 = local_80;
+                  if ((bVar18) &&
+                     (iVar12 = (*this_00->vtable[5].slots_00_28[2])(), iVar5 = local_38,
+                     iVar10 = local_34, iVar12 != 0)) {
+                    thunk_FUN_00416270(this_00,local_50,(int *)local_84,(int *)local_20);
+                    puVar15 = (undefined4 *)(local_60 + iVar16 * 0x2c);
+                    *puVar15 = this_00[1].vtable;
+                    iVar10 = (*this_00->vtable->GetObjectTypeId)(this_00);
+                    puVar15[1] = iVar10;
+                    *(undefined4 *)((int)puVar15 + 0x26) = *(undefined4 *)&this_00->field_0x18;
+                    *(undefined2 *)((int)puVar15 + 0x2a) = *(undefined2 *)&this_00[1].field_0xe;
+                    *(STWorldObject **)((int)puVar15 + 0x1a) = this_00;
+                    *(undefined2 *)(puVar15 + 5) = (undefined2)local_80;
+                    *(undefined2 *)((int)puVar15 + 0x16) = (undefined2)local_38;
+                    *(undefined2 *)(puVar15 + 6) = (undefined2)local_34;
+                    puVar15[2] = (int)local_50[0];
+                    puVar15[3] = (int)local_84[0];
+                    puVar15[4] = (int)local_20[0];
+                    uVar6 = FUN_006aced8(param_1,param_2,(int)local_50[0],(int)local_84[0]);
+                    *(undefined4 *)((int)puVar15 + 0x1e) = uVar6;
+                    iVar16 = iVar16 + 1;
+                    iVar5 = local_38;
+                    iVar10 = local_34;
+                    iVar13 = local_80;
                   }
                 }
-                iVar14 = iVar14 + 1;
-                local_80 = iVar14;
-              } while (iVar14 < local_5c);
+                iVar13 = iVar13 + 1;
+                local_80 = iVar13;
+              } while (iVar13 < local_5c);
             }
-            iVar6 = iVar6 + 1;
-            iVar14 = local_2c;
-            piVar18 = local_6c;
-            local_38 = iVar6;
-          } while (iVar6 < local_64);
+            iVar5 = iVar5 + 1;
+            iVar13 = local_2c;
+            piVar17 = local_6c;
+            local_38 = iVar5;
+          } while (iVar5 < local_64);
         }
-        local_34 = iVar11 + 1;
-        iVar6 = iVar14;
+        local_34 = iVar10 + 1;
+        iVar5 = iVar13;
       } while (local_34 < 5);
-      if (0 < iVar17) {
-        iVar11 = 0;
-        if (0 < iVar17) {
+      if (0 < iVar16) {
+        iVar10 = 0;
+        if (0 < iVar16) {
           do {
-            piVar18[iVar11] = iVar11;
-            iVar11 = iVar11 + 1;
-          } while (iVar11 < iVar17);
+            piVar17[iVar10] = iVar10;
+            iVar10 = iVar10 + 1;
+          } while (iVar10 < iVar16);
         }
-        thunk_FUN_006189c0((int)local_60,piVar18,iVar17);
+        thunk_FUN_006189c0((int)local_60,piVar17,iVar16);
         local_58[0] = 1000;
-        iVar11 = 0;
-        if (0 < iVar17) {
+        iVar10 = 0;
+        if (0 < iVar16) {
           do {
-            piVar18 = local_6c;
-            uVar8 = thunk_FUN_00618a50(this,*(int *)(local_60 + local_6c[iVar11] * 0x2c + 0x26),
+            piVar17 = local_6c;
+            uVar7 = thunk_FUN_00618a50(this,*(int *)(local_60 + local_6c[iVar10] * 0x2c + 0x26),
                                        local_58);
-            if ((int)uVar8 < 0) {
-              local_48 = *(undefined4 *)(local_60 + piVar18[iVar11] * 0x2c + 0x26);
-              local_44 = (uint)*(ushort *)(local_60 + piVar18[iVar11] * 0x2c + 0x2a);
+            if ((int)uVar7 < 0) {
+              local_48 = *(undefined4 *)(local_60 + piVar17[iVar10] * 0x2c + 0x26);
+              local_44 = (uint)*(ushort *)(local_60 + piVar17[iVar10] * 0x2c + 0x2a);
               if (*(int *)((int)this + 0x62) == 0) {
-                puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,8,10);
-                *(uint **)((int)this + 0x62) = puVar9;
+                puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,8,10);
+                *(uint **)((int)this + 0x62) = puVar8;
               }
-              uVar8 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x62),&local_48);
+              uVar7 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x62),&local_48);
               local_58[0] = 0;
-              if (-1 < (int)uVar8) goto LAB_0061871c;
+              if (-1 < (int)uVar7) goto LAB_0061871c;
             }
             else {
 LAB_0061871c:
               if (local_58[0] < 3) {
-                puVar16 = (undefined4 *)(local_60 + piVar18[iVar11] * 0x2c);
-                for (iVar17 = 0xb; iVar17 != 0; iVar17 = iVar17 + -1) {
-                  *param_4 = *puVar16;
-                  puVar16 = puVar16 + 1;
+                puVar15 = (undefined4 *)(local_60 + piVar17[iVar10] * 0x2c);
+                for (iVar16 = 0xb; iVar16 != 0; iVar16 = iVar16 + -1) {
+                  *param_4 = *puVar15;
+                  puVar15 = puVar15 + 1;
                   param_4 = param_4 + 1;
                 }
                 ExceptionList = local_14;
                 return 1;
               }
             }
-            iVar11 = iVar11 + 1;
-          } while (iVar11 < iVar17);
+            iVar10 = iVar10 + 1;
+          } while (iVar10 < iVar16);
         }
       }
     }

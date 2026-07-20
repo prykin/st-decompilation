@@ -28,10 +28,10 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
   int local_28;
   int local_24;
   undefined4 local_20;
-  void *local_1c;
+  STWorldObject *local_1c;
   int local_18;
   undefined4 local_14;
-  void *local_10;
+  STWorldObject *local_10;
   undefined *local_c;
   int local_8;
   
@@ -58,14 +58,14 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
   sVar1 = *(short *)((int)this + 0x804);
   if (((((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar4 < 0)) ||
         ((SHORT_007fb242 <= sVar4 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) ||
-      (local_10 = *(void **)(DAT_007fb248 +
-                            ((int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 +
-                            (int)sVar3) * 8), local_10 == (void *)0x0)) &&
+      (local_10 = g_worldCells
+                  [(int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 + (int)sVar3]
+                  .objects[0], local_10 == (STWorldObject *)0x0)) &&
      ((((sVar3 < 0 || (SHORT_007fb240 <= sVar3)) ||
        ((sVar4 < 0 || (((SHORT_007fb242 <= sVar4 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
-      || (local_10 = *(void **)(DAT_007fb248 + 4 +
-                               ((int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240
-                               + (int)sVar3) * 8), local_10 == (void *)0x0)))) {
+      || (local_10 = g_worldCells
+                     [(int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 +
+                      (int)sVar3].objects[1], local_10 == (STWorldObject *)0x0)))) {
     return 0;
   }
   thunk_FUN_00416270(local_10,(undefined2 *)&local_14,&local_18,&param_1);
@@ -93,9 +93,8 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
                  ((((sVar4 < 0 || (SHORT_007fb240 <= sVar4)) ||
                    ((sVar1 < 0 ||
                     (((SHORT_007fb242 <= sVar1 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2)))))) ||
-                  (*(int *)(DAT_007fb248 +
-                           ((int)sVar2 * (int)SHORT_007fb246 + sVar1 * local_28 + (int)sVar4) * 8)
-                   == 0)))) {
+                  (g_worldCells[(int)sVar2 * (int)SHORT_007fb246 + sVar1 * local_28 + (int)sVar4].
+                   objects[0] == (STWorldObject *)0x0)))) {
                 iVar12 = CONCAT22(sVar3 >> 0xf,sVar4) * 0xc9 + 100;
                 local_c = (undefined *)
                           (CONCAT22((short)((uint)(local_28 + -1) >> 0x10),sVar1) * 0xc9 + 100);

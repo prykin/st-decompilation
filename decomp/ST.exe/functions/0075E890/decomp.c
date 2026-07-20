@@ -17,7 +17,8 @@ void FUN_0075e890(int param_1,int param_2,int param_3,int param_4)
   piVar6 = (int *)((param_3 >> 3) * 0x20 + 2);
   iVar5 = (param_2 >> 2) * 0x20 + 4;
   iVar1 = FUN_0075e980(param_1,iVar5,piVar6,iVar4,(int)local_188);
-  FUN_0075eb40(param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,local_88);
+  FUN_0075eb40((AnonShape_0075EB40_977462DD *)param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,
+               local_88);
   param_1 = 4;
   pbVar3 = local_88;
   piVar6 = (int *)(local_8 + (param_2 >> 2) * 0x10);

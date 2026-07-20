@@ -114,6 +114,11 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                     Target target = target(function, block.expression, index, pointerOwners);
                     Set<Long> values = block.values(target.type);
                     if (values.size() < 3) continue;
+                    // A reviewed/semantic enum that already covers every observed arm is a
+                    // fixed point, not evidence for another address-derived enum. Generated
+                    // switch enums are deliberately excluded so they can still grow when a
+                    // later decompilation exposes additional cases.
+                    if (semanticEnumCovers(target.type, values)) continue;
                     String key = target.groupKey(function, index);
                     Proposal proposal = grouped.get(key);
                     if (proposal == null) {
@@ -323,6 +328,15 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         String description = value.getDescription();
         return description != null && description.contains(ENUM_MARKER) &&
             value.getLength() >= 1 && value.getLength() <= 4;
+    }
+
+    private boolean semanticEnumCovers(DataType type, Set<Long> values) {
+        if (!(type instanceof Enum current)) return false;
+        String description = current.getDescription();
+        if (description != null && description.contains(ENUM_MARKER)) return false;
+        Set<Long> defined = new TreeSet<>();
+        for (String name : current.getNames()) defined.add(current.getValue(name));
+        return defined.containsAll(values);
     }
 
     private Structure ownerStructure(String owner) {

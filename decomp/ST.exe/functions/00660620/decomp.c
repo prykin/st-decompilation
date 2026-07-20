@@ -33,7 +33,7 @@ FUN_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_
       if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
         pSVar1 = thunk_FUN_0042b760(CONCAT31((int3)(uVar2 >> 8),param_1->field_0024),uVar2);
         if (pSVar1 != (STGroupBoatC *)0x0) {
-          (*pSVar1->vtable->vfunc_08)(5,&local_18);
+          (*pSVar1->vtable->vfunc_08)(pSVar1,CASE_5,&local_18);
           if (groupContent != (uint *)0x0) {
             FUN_006ae110((byte *)groupContent);
           }

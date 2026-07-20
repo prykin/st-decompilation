@@ -41,9 +41,9 @@ cf_break_loop_004B1816:
                 if (((((sVar7 < SHORT_007fb240) && (-1 < sVar6)) &&
                      ((sVar6 < SHORT_007fb242 &&
                       (((-1 < sVar2 && (sVar2 < SHORT_007fb244)) &&
-                       (*(int *)(DAT_007fb248 +
-                                ((int)sVar2 * (int)SHORT_007fb246 + (int)sVar6 * (int)SHORT_007fb240
-                                + (int)sVar7) * 8) != 0)))))) ||
+                       (g_worldCells
+                        [(int)sVar2 * (int)SHORT_007fb246 + (int)sVar6 * (int)SHORT_007fb240 +
+                         (int)sVar7].objects[0] != (STWorldObject *)0x0)))))) ||
                     ((sVar7 < 0 || (SHORT_007fb240 <= sVar7)))) ||
                    ((sVar6 < 0 ||
                     (((SHORT_007fb242 <= sVar6 || (sVar2 < 0)) ||
@@ -86,9 +86,9 @@ cf_break_loop_004B1816:
               if ((-1 < sVar6) &&
                  ((((((sVar4 = (short)iVar5, sVar6 < SHORT_007fb240 && (-1 < sVar4)) &&
                      (sVar4 < SHORT_007fb242)) && ((-1 < sVar2 && (sVar2 < SHORT_007fb244)))) &&
-                   (*(int *)(DAT_007fb248 +
-                            ((int)sVar4 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar2 +
-                            (int)sVar6) * 8) != 0)) ||
+                   (g_worldCells
+                    [(int)sVar4 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar2 +
+                     (int)sVar6].objects[0] != (STWorldObject *)0x0)) ||
                   ((((-1 < sVar6 && (sVar6 < SHORT_007fb240)) &&
                     ((-1 < sVar4 &&
                      (((sVar4 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244)))))) &&
@@ -147,10 +147,10 @@ LAB_004b1a39:
                   local_10 = (STFishC *)0x0;
                 }
                 else {
-                  local_10 = *(STFishC **)
-                              (DAT_007fb248 + 4 +
-                              ((int)sVar6 * (int)sVar2 + (int)sVar4 * (int)SHORT_007fb246 +
-                              (int)sVar7) * 8);
+                  local_10 = (STFishC *)
+                             g_worldCells
+                             [(int)sVar6 * (int)sVar2 + (int)sVar4 * (int)SHORT_007fb246 +
+                              (int)sVar7].objects[1];
                   sVar2 = SHORT_007fb240;
                 }
                 if ((local_10 != (STFishC *)0x0) && (*(int *)&local_10->field_0x20 != 0xbe)) {

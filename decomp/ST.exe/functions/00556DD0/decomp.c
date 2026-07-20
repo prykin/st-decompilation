@@ -36,8 +36,9 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   int local_c;
   int local_8;
   
-  if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) || (this->field_0024 == 0))
-     || ((param_1 == (int *)0x0 || (PTR_00806770 == (cMf32 *)0x0)))) {
+  if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) ||
+      (this->field_0024 == (DArrayTy *)0x0)) ||
+     ((param_1 == (int *)0x0 || (PTR_00806770 == (cMf32 *)0x0)))) {
     return 0;
   }
   local_7c.previous = g_currentExceptionFrame;

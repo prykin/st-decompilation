@@ -5,15 +5,16 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
                      uint param_7)
 
 {
-  int iVar1;
-  ushort *puVar2;
+  AnonNested_005F1700_003C_057131A3 *pAVar1;
+  int iVar2;
+  ushort *puVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar3;
   uint uVar4;
+  uint uVar5;
   InternalExceptionFrame local_5c;
   int local_18;
-  int local_14;
+  AnonShape_005F1700_3FAAC417 *local_14;
   ushort *local_10;
   char *local_c;
   uint local_8;
@@ -27,39 +28,39 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar1 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar1 != 0) {
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     return local_10;
   }
-  puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
+  puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806774,CASE_1D,local_c,0xffffffff,0,1,0,(undefined4 *)0x0);
   if (param_3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    return puVar2;
+    return puVar3;
   }
   if (-1 < (int)param_7) {
-    iVar1 = *(int *)(local_14 + 0x3c);
-    if (param_7 < *(uint *)(iVar1 + 0xc)) {
-      iVar1 = *(int *)(iVar1 + 8) * param_7 + *(int *)(iVar1 + 0x1c);
+    pAVar1 = local_14->field_003C;
+    if (param_7 < pAVar1->field_000C) {
+      iVar2 = pAVar1->field_0008 * param_7 + pAVar1->field_001C;
     }
     else {
-      iVar1 = 0;
+      iVar2 = 0;
     }
-    if (iVar1 != 0) {
+    if (iVar2 != 0) {
       if (param_1 == 0) {
-        uVar4 = 0x45;
-        uVar3 = 0x5a;
+        uVar5 = 0x45;
+        uVar4 = 0x5a;
       }
       else {
-        uVar4 = 100;
-        uVar3 = 0x78;
+        uVar5 = 100;
+        uVar4 = 0x78;
       }
-      FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar2 + 9),
-                   *(uint *)((int)puVar2 + 0xd),uVar3,uVar4,0);
-      *(uint *)(iVar1 + 0x18) = local_8;
-      FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
-      FUN_006ea270(PTR_00807598,local_8,0,*(uint *)(iVar1 + 0xe));
+      FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
+                   *(uint *)((int)puVar3 + 0xd),uVar4,uVar5,0);
+      *(uint *)(iVar2 + 0x18) = local_8;
+      FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006ea270(PTR_00807598,local_8,0,*(uint *)(iVar2 + 0xe));
       FUN_006ea3e0(PTR_00807598,local_8,-1);
       FUN_006e9210(PTR_00807598,local_8);
       if (param_1 != 0) {
@@ -71,9 +72,9 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
                    (float)param_5 * _DAT_007904f8 * _DAT_007904f0,
                    (float)param_6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       FUN_006eaaa0(PTR_00807598,local_8,0);
-      *(undefined1 *)(iVar1 + 6) = 1;
+      *(undefined1 *)(iVar2 + 6) = 1;
       g_currentExceptionFrame = local_5c.previous;
-      return puVar2;
+      return puVar3;
     }
   }
   g_currentExceptionFrame = local_5c.previous;

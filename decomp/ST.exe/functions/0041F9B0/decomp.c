@@ -26,10 +26,11 @@ STSprGameObjC::CheckRay
   short sVar10;
   undefined4 unaff_ESI;
   int iVar11;
-  short sVar12;
+  STWorldObject *pSVar12;
+  short sVar13;
   void *unaff_EDI;
-  int iVar13;
-  bool bVar14;
+  int iVar14;
+  bool bVar15;
   InternalExceptionFrame local_ac;
   int local_68;
   int local_64;
@@ -127,17 +128,17 @@ STSprGameObjC::CheckRay
     do {
       iVar11 = (local_60 * local_28) / local_30 + (int)param_1;
       iVar7 = (local_50 * local_28) / local_30 + (int)param_2;
-      iVar13 = (local_48 * local_28) / local_30 + (int)param_3;
+      iVar14 = (local_48 * local_28) / local_30 + (int)param_3;
       local_64 = iVar11;
       local_5c = iVar7;
-      local_54 = iVar13;
-      local_8 = FUN_006acf0d(local_18,local_14,local_10,iVar11,iVar7,iVar13);
+      local_54 = iVar14;
+      local_8 = FUN_006acf0d(local_18,local_14,local_10,iVar11,iVar7,iVar14);
       local_8 = local_8 / 0x32;
       if (local_8 < 1) {
         local_8 = 1;
       }
       if (0 < local_8) {
-        local_4c = iVar13 - local_10;
+        local_4c = iVar14 - local_10;
         local_68 = iVar7 - local_14;
         local_58 = iVar11 - local_18;
         local_44 = local_8;
@@ -177,19 +178,19 @@ STSprGameObjC::CheckRay
           }
           sVar9 = (short)local_c;
           sVar10 = (short)iVar7;
-          sVar12 = (short)iVar11;
+          sVar13 = (short)iVar11;
           if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
-              ((SHORT_007fb242 <= sVar10 || (sVar12 < 0)))) || (SHORT_007fb244 <= sVar12)) {
-            iVar13 = 0;
+              ((SHORT_007fb242 <= sVar10 || (sVar13 < 0)))) || (SHORT_007fb244 <= sVar13)) {
+            pSVar12 = (STWorldObject *)0x0;
           }
           else {
-            iVar13 = *(int *)(DAT_007fb248 +
-                             ((int)SHORT_007fb246 * (int)sVar12 + (int)SHORT_007fb240 * (int)sVar10
-                             + (int)sVar9) * 8);
+            pSVar12 = g_worldCells
+                      [(int)SHORT_007fb246 * (int)sVar13 + (int)SHORT_007fb240 * (int)sVar10 +
+                       (int)sVar9].objects[0];
           }
-          if (((iVar13 == 0) || (7 < *(uint *)(iVar13 + 0x24))) ||
-             ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-              (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51])))) {
+          if (((pSVar12 == (STWorldObject *)0x0) || ((STWorldObjectVTable *)0x7 < pSVar12[1].vtable)
+              ) || ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+                    (7 < (byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51])))) {
 LAB_0041fe0d:
             if (*(short *)(DAT_007fb280 +
                           (SHORT_007fb278 * iVar7 + local_c + SHORT_007fb27e * iVar11) * 2) < 0) {
@@ -199,39 +200,40 @@ LAB_0041fe0d:
             }
             sVar9 = (short)local_c;
             if ((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
-               (((SHORT_007fb242 <= sVar10 || (sVar12 < 0)) || (SHORT_007fb244 <= sVar12)))) {
-              iVar7 = 0;
+               (((SHORT_007fb242 <= sVar10 || (sVar13 < 0)) || (SHORT_007fb244 <= sVar13)))) {
+              pSVar12 = (STWorldObject *)0x0;
             }
             else {
-              iVar7 = *(int *)(DAT_007fb248 + 4 +
-                              ((int)SHORT_007fb246 * (int)sVar12 + (int)SHORT_007fb240 * (int)sVar10
-                              + (int)sVar9) * 8);
+              pSVar12 = g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar13 + (int)SHORT_007fb240 * (int)sVar10 +
+                         (int)sVar9].objects[1];
             }
-            if (((iVar7 != 0) && (*(uint *)(iVar7 + 0x24) < 8)) &&
+            if (((pSVar12 != (STWorldObject *)0x0) &&
+                (pSVar12[1].vtable < (STWorldObjectVTable *)0x8)) &&
                (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                 ((byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51] < 8)) &&
-                (local_1c->field_0018 != *(int *)(iVar7 + 0x18))))) {
-              if ((*(byte *)(iVar7 + 0x1d1) & 0x10) != 0) {
+                 ((byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51] < 8)) &&
+                (local_1c->field_0018 != *(int *)&pSVar12->field_0x18)))) {
+              if ((pSVar12[0xc].value_20 & 0x1000) != 0) {
                 if (param_8 != (int *)0x0) {
-                  *param_8 = iVar7;
+                  *param_8 = (int)pSVar12;
                 }
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
                            s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb8c);
               }
               if (param_9 == 0) {
-                if ((7 < *(uint *)(iVar7 + 0x24)) ||
+                if (((STWorldObjectVTable *)0x7 < pSVar12[1].vtable) ||
                    ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-                    (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51]))))
+                    (7 < (byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51]))))
                 goto cf_continue_loop_0042004A;
-                bVar6 = *(byte *)(iVar7 + 0x24);
+                bVar6 = *(byte *)&pSVar12[1].vtable;
                 bVar1 = local_1c->field_0024;
                 _local_38 = CONCAT31(uStack_37,bVar6);
                 _local_3c = CONCAT31(uStack_3b,bVar1);
                 if (DAT_00808a8f == '\0') {
                   if (bVar6 == bVar1) {
 LAB_0041fffd:
-                    iVar11 = 0;
+                    iVar7 = 0;
                   }
                   else {
                     uVar4 = (uint)bVar6;
@@ -239,30 +241,30 @@ LAB_0041fffd:
                     cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar5);
                     if ((cVar2 == '\0') &&
                        (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                      iVar11 = -2;
+                      iVar7 = -2;
                     }
                     else if ((cVar2 == '\x01') &&
                             (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                      iVar11 = -1;
+                      iVar7 = -1;
                     }
                     else if ((cVar2 == '\0') &&
                             (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\x01')) {
-                      iVar11 = 1;
+                      iVar7 = 1;
                     }
                     else {
                       if ((cVar2 != '\x01') ||
                          (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) != '\x01'))
                       goto LAB_0041fffd;
-                      iVar11 = 2;
+                      iVar7 = 2;
                     }
                   }
-                  bVar14 = iVar11 < 0;
+                  bVar15 = iVar7 < 0;
                 }
                 else {
-                  bVar14 = (&DAT_008087ea)[(uint)bVar1 * 0x51] !=
+                  bVar15 = (&DAT_008087ea)[(uint)bVar1 * 0x51] !=
                            (&DAT_008087ea)[(uint)bVar6 * 0x51];
                 }
-                if ((!bVar14) && (*(int *)(iVar7 + 0x20) == 0x1ae)) {
+                if ((!bVar15) && (pSVar12->value_20 == 0x1ae)) {
                   RaiseInternalException
                             (-0x5001fff7,g_overwriteContext_007ED77C,
                              s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb91);
@@ -273,28 +275,28 @@ LAB_0041fffd:
                          s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb93);
             }
           }
-          else if (local_1c->field_0018 != *(int *)(iVar13 + 0x18)) {
+          else if (local_1c->field_0018 != *(int *)&pSVar12->field_0x18) {
             if (param_8 != (int *)0x0) {
-              *param_8 = iVar13;
+              *param_8 = (int)pSVar12;
             }
-            if ((*(byte *)(iVar13 + 0x1d1) & 0x10) != 0) {
+            if ((pSVar12[0xc].value_20 & 0x1000) != 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb7e);
             }
             if (param_9 == 0) {
-              if ((7 < *(uint *)(iVar13 + 0x24)) ||
+              if (((STWorldObjectVTable *)0x7 < pSVar12[1].vtable) ||
                  ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-                  (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51]))))
+                  (7 < (byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51]))))
               goto cf_continue_loop_0042004A;
-              bVar6 = *(byte *)(iVar13 + 0x24);
+              bVar6 = *(byte *)&pSVar12[1].vtable;
               bVar1 = local_1c->field_0024;
               _local_40 = CONCAT31(uStack_3f,bVar6);
               _local_34 = CONCAT31(uStack_33,bVar1);
               if (DAT_00808a8f == '\0') {
                 if (bVar6 == bVar1) {
 LAB_0041fdc6:
-                  iVar13 = 0;
+                  iVar14 = 0;
                 }
                 else {
                   uVar4 = (uint)bVar6;
@@ -302,29 +304,29 @@ LAB_0041fdc6:
                   cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar5);
                   if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')
                      ) {
-                    iVar13 = -2;
+                    iVar14 = -2;
                   }
                   else if ((cVar2 == '\x01') &&
                           (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                    iVar13 = -1;
+                    iVar14 = -1;
                   }
                   else if ((cVar2 == '\0') &&
                           (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\x01')) {
-                    iVar13 = 1;
+                    iVar14 = 1;
                   }
                   else {
                     if ((cVar2 != '\x01') ||
                        (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) != '\x01'))
                     goto LAB_0041fdc6;
-                    iVar13 = 2;
+                    iVar14 = 2;
                   }
                 }
-                bVar14 = iVar13 < 0;
+                bVar15 = iVar14 < 0;
               }
               else {
-                bVar14 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar6 * 0x51];
+                bVar15 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar6 * 0x51];
               }
-              if (!bVar14) {
+              if (!bVar15) {
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
                            s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb81);
@@ -344,12 +346,12 @@ cf_continue_loop_0042004A:
         local_44 = 0;
         iVar7 = local_5c;
         iVar11 = local_64;
-        iVar13 = local_54;
+        iVar14 = local_54;
       }
       local_28 = local_28 + 1;
       local_18 = iVar11;
       local_14 = iVar7;
-      local_10 = iVar13;
+      local_10 = iVar14;
     } while (local_28 <= local_30);
   }
   g_currentExceptionFrame = local_ac.previous;

@@ -241,16 +241,16 @@ cf_continue_loop_0057DBE9:
         (((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) ||
          ((sVar12 < 0 ||
           ((((SHORT_007fb242 <= sVar12 || (sVar13 < 0)) || (SHORT_007fb244 <= sVar13)) ||
-           (*(int *)(DAT_007fb248 +
-                    ((int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 +
-                    (int)sVar2) * 8) == 0)))))))) &&
+           (g_worldCells
+            [(int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
+            objects[0] == (STWorldObject *)0x0)))))))) &&
        (((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) ||
         ((sVar12 < 0 ||
          (((SHORT_007fb242 <= sVar12 || (sVar13 < 0)) ||
           ((SHORT_007fb244 <= sVar13 ||
-           (*(int *)(DAT_007fb248 + 4 +
-                    ((int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 +
-                    (int)sVar2) * 8) == 0)))))))))) {
+           (g_worldCells
+            [(int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
+            objects[1] == (STWorldObject *)0x0)))))))))) {
       *param_1 = uVar11;
       *param_2 = uVar10;
       *param_3 = local_18;

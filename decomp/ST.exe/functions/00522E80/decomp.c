@@ -147,7 +147,7 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    thunk_FUN_00521cf0((int)this_00);
+    thunk_FUN_00521cf0((AnonShape_00521CF0_154649D2 *)this_00);
     Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_0198,0,&DAT_008016a0);
     *(undefined4 *)&this_00->field_0x28 = 0x33;
     *(undefined4 *)&this_00->field_0x2c = this_00->field_0198;
@@ -177,9 +177,10 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
     ccFntTy::WrStr((ccFntTy *)this_00->field_0180,(uint *)*param_1->field_0014,0,-1,0);
     uVar1 = param_1->field_0018;
     if ((uVar1 != 0xffff) || (param_1->field_001A != -1)) {
-      FUN_006b5b10(this_00->field_019C,0,(uint)uVar1,(ushort)param_1->field_001A + 1,(uint)uVar1,
-                   *(int *)(this_00->field_019C + 8) + -3 + (uint)(ushort)param_1->field_001A,0x6c,
-                   0xd);
+      FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,(uint)uVar1,
+                   (ushort)param_1->field_001A + 1,(uint)uVar1,
+                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C)->field_0008 + -3 +
+                   (uint)(ushort)param_1->field_001A,0x6c,0xd);
     }
     pbVar3 = (byte *)this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0

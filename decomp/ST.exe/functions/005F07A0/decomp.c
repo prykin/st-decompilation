@@ -24,10 +24,10 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
       if ((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar2)) &&
          (((sVar2 < SHORT_007fb242 && (-1 < sVar4)) &&
           ((sVar4 < SHORT_007fb244 &&
-           (this = *(STFishC **)
-                    (DAT_007fb248 +
-                    ((int)SHORT_007fb246 * (int)sVar4 + (int)SHORT_007fb240 * (int)sVar2 +
-                    (int)sVar1) * 8), this != (STFishC *)0x0)))))) {
+           (this = (STFishC *)
+                   g_worldCells
+                   [(int)SHORT_007fb246 * (int)sVar4 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1
+                   ].objects[0], this != (STFishC *)0x0)))))) {
         iVar5 = (*this->vtable->vfunc_2C)();
         if (iVar5 == 99) {
           iVar5 = thunk_FUN_004b7d00(this,(int *)param_1);

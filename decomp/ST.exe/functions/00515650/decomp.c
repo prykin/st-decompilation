@@ -39,9 +39,9 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
                   ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,(byte *)pHVar2->field_021C,0,
                    (*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
                    (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
-        FUN_006b5440(pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);
-        FUN_006b5ee0(pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,local_14 + 4,local_c + 4,0x6f,0xd
-                    );
+        FUN_006b5440((int)pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);
+        FUN_006b5ee0((int)pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,local_14 + 4,local_c + 4,
+                     0x6f,0xd);
         *param_1 = *param_1 + local_c + 10;
         FUN_006ab060(&local_8);
       }
@@ -51,9 +51,11 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
       local_8 = (AnonShape_00515650_BBDC7053 *)FUN_0070b3a0(param_4,uVar4);
       if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
         iVar3 = (0x19c - local_8->field_0004) / 2;
-        DibPut((undefined4 *)pHVar2->field_0218,iVar3,*param_1,'\x01',(byte *)local_8);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pHVar2->field_0218,iVar3,*param_1,'\x01',
+               (byte *)local_8);
         pbVar5 = (byte *)FUN_0070b3a0(pHVar2->field_0248,4);
-        DibPut((undefined4 *)pHVar2->field_0218,iVar3 + -2,*param_1 + -2,'\x06',pbVar5);
+        DibPut((AnonShape_006B84D0_7C7D97C6 *)pHVar2->field_0218,iVar3 + -2,*param_1 + -2,'\x06',
+               pbVar5);
         iVar3 = FUN_0070b3a0(pHVar2->field_0248,4);
         *param_1 = *param_1 + *(int *)(iVar3 + 8);
       }

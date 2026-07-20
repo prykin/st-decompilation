@@ -97,7 +97,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
       *(undefined4 *)(*(int *)((int)local_10 + 0xe0) + 0x310) = 1;
     }
   }
-  _DAT_00856944 = FUN_00749841(0x856930);
+  _DAT_00856944 = FUN_00749841((AnonShape_00749841_39B3C899 *)&DAT_00856930);
   if (DAT_0085693e == 0x10) {
     if (((*(int *)&pAVar2[1].field_0x4c != 0x7c00) && (*(int *)&pAVar2[1].field_0x50 != 0x3e00)) &&
        (*(int *)&pAVar2[1].field_0x54 != 0x1f)) {

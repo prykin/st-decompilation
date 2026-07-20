@@ -36,7 +36,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   
   local_28 = 0;
   local_14 = 0;
-  local_1c = &g_playerRuntime[0].field2298_0xa0e;
+  local_1c = &g_playerRuntime[0].field2180_0xa0e;
   local_18 = param_1;
   do {
     uVar6 = local_14;

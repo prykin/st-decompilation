@@ -125,7 +125,7 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
       g_currentExceptionFrame = local_58.previous;
       return 0;
     case 0xc0b4:
-      ProdPanelTy::PaintTab(this_00,(int)param_1,thunk_FUN_0052a7b0);
+      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FEE0_A49592EB *)param_1,thunk_FUN_0052a7b0);
     }
   }
   g_currentExceptionFrame = local_58.previous;

@@ -4,7 +4,8 @@
    PanelTy::PaintIBut */
 
 void __thiscall
-PanelTy::PaintIBut(PanelTy *this,int param_1,char *param_2,UINT param_3,int param_4,int param_5)
+PanelTy::PaintIBut(PanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1,char *param_2,UINT param_3,
+                  int param_4,int param_5)
 
 {
   code *pcVar1;
@@ -23,17 +24,17 @@ PanelTy::PaintIBut(PanelTy *this,int param_1,char *param_2,UINT param_3,int para
   int iVar10;
   undefined4 *puVar11;
   InternalExceptionFrame local_58;
-  int *local_14;
+  AnonNested_00538DB0_0018_D0DE3542 *local_14;
   PanelTy *local_10;
   uint local_c;
   int local_8;
   
-  local_14 = *(int **)(param_1 + 0x18);
+  local_14 = param_1->field_0018;
   if (param_4 == 0) {
-    local_8 = *local_14;
+    local_8 = local_14->field_0000;
   }
   else {
-    local_8 = *local_14;
+    local_8 = local_14->field_0000;
     iVar8 = g_nWidth_00806730;
     if (this->field_005C == 0) goto LAB_00538de2;
   }
@@ -41,13 +42,13 @@ PanelTy::PaintIBut(PanelTy *this,int param_1,char *param_2,UINT param_3,int para
 LAB_00538de2:
   local_8 = local_8 - iVar8;
   if (param_5 == 0) {
-    local_c = local_14[1] - this->field_0044;
+    local_c = local_14->field_0004 - this->field_0044;
   }
   else if (this->field_005C == 0) {
-    local_c = local_14[1] - DAT_00806734;
+    local_c = local_14->field_0004 - DAT_00806734;
   }
   else {
-    local_c = local_14[1] - this->field_0044;
+    local_c = local_14->field_0004 - this->field_0044;
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -70,16 +71,16 @@ LAB_00538de2:
   uVar6 = 0xffffffff;
   puVar9 = errorCode;
   puVar11 = errorCode;
-  uVar3 = thunk_FUN_00529fe0(param_1);
+  uVar3 = thunk_FUN_00529fe0((int)param_1);
   bVar7 = (byte)errorCode;
   text = FUN_006f2c00(param_2,1,uVar3);
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_1,text,uVar6,bVar7,iVar8,(int)puVar9,puVar11);
   uVar6 = local_c;
-  DibPut((undefined4 *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
+  DibPut((AnonShape_006B84D0_7C7D97C6 *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
   ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,pPVar2->field_0068,0,local_8,uVar6,
-                   local_14[2],local_14[3]);
-  uVar3 = thunk_FUN_00529fe0(param_1);
+                   local_14->field_0008,local_14->field_000C);
+  uVar3 = thunk_FUN_00529fe0((int)param_1);
   iVar10 = -1;
   iVar8 = -2;
   puVar5 = (uint *)FUN_006b0140(param_3,HINSTANCE_00807618);

@@ -34,7 +34,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   int local_2c;
   int local_28;
   undefined1 *local_24;
-  undefined4 *local_20;
+  AnonShape_006B84D0_7C7D97C6 *local_20;
   uint local_1c;
   AnonShape_004F2560_DB98CB49 *local_18;
   int local_14;
@@ -44,13 +44,13 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   
   local_18 = (AnonShape_004F2560_DB98CB49 *)&this->field_0B63;
   if (param_1 == 0) {
-    local_20 = (undefined4 *)this->field_019C;
+    local_20 = (AnonShape_006B84D0_7C7D97C6 *)this->field_019C;
     local_18 = (AnonShape_004F2560_DB98CB49 *)&this->field_0C51;
     local_28 = this->field_0058;
     local_2c = this->field_00B0;
   }
   else {
-    local_20 = (undefined4 *)this->field_0184;
+    local_20 = (AnonShape_006B84D0_7C7D97C6 *)this->field_0184;
     local_28 = this->field_0040;
     local_2c = this->field_0098;
   }

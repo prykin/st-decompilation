@@ -167,7 +167,7 @@ LAB_00520987:
         uVar9 = local_10;
         if (-1 < iVar5 + -1) {
           pbVar11 = (byte *)FUN_0070b3a0(this_00->field_03C8,iVar5 + -1);
-          DibPut((undefined4 *)this_00->field_0068,0x41,local_10,'\x06',pbVar11);
+          DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0x41,local_10,'\x06',pbVar11);
           uVar9 = local_10;
         }
       }

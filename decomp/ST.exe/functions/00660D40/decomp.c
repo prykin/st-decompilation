@@ -12,7 +12,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
   AnonShape_0068EB30_4F4B480A *pAVar8;
   bool bVar9;
   AnonShape_0068EB30_4F4B480A local_5c;
-  int local_10;
+  AiPlrClassTy *local_10;
   uint local_c;
   AnonShape_00660D40_F4300C26 *local_8;
   
@@ -55,9 +55,9 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
                 local_5c.field_0006 = 0;
               }
               local_5c._4_2_ = SUB42(uVar5,0);
-              if (local_10 != 0) {
-                local_5c._8_4_ = *(int *)(local_10 + 0x65c);
-                *(int *)(local_10 + 0x65c) = local_5c._8_4_ + 1;
+              if (local_10 != (AiPlrClassTy *)0x0) {
+                local_5c._8_4_ = *(undefined4 *)&local_10->field_0x65c;
+                *(int *)&local_10->field_0x65c = local_5c._8_4_ + 1;
               }
               local_5c._12_2_ = local_8->field_007D;
               local_5c._22_2_ = *(undefined2 *)(iVar7 + 0xe);

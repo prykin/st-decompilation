@@ -56,6 +56,9 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         "/SubmarineTitans/Recovered/GlobalRecords/STPlayerRuntimeRecord";
     private static final String ARRAY_NAME = "g_playerRuntime";
     private static final String DARRAY_TYPE = "/SubmarineTitans/Recovered/DArrayTy";
+    private static final String TEMP_SLOT_TYPE =
+        "/SubmarineTitans/Recovered/GlobalRecords/STPlayerTempSlot";
+    private static final String AI_PLAYER_TYPE = "/AiPlrClassTy";
     private static final String MARKER = "[STGlobalRecordApplier]";
     private static final String HASH_MARKER = "; generated_layout_sha256=";
 
@@ -91,7 +94,11 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             scan.fieldSites >= 20 && !scan.totalSizeSites.isEmpty() &&
             !scan.boundarySites.isEmpty() && !scan.baseSites.isEmpty();
         boolean darrayPresent = dataTypes.getDataType(DARRAY_TYPE) instanceof Structure;
-        boolean apply = evidenceStrong && darrayPresent && range.safe && layout.safe;
+        DataType tempSlotDataType = dataTypes.getDataType(TEMP_SLOT_TYPE);
+        boolean tempSlotPresent = tempSlotDataType instanceof Structure &&
+            tempSlotDataType.getLength() == 0x10;
+        boolean apply = evidenceStrong && darrayPresent && tempSlotPresent &&
+            range.safe && layout.safe;
 
         List<FieldProposal> fields = makeFields(scan, layout, apply);
         long typedFields = fields.stream().filter(field -> field.apply &&
@@ -107,6 +114,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         reasons.add("first_record_fields=" + fields.size());
         if (!evidenceStrong) reasons.add("insufficient_binary_evidence");
         if (!darrayPresent) reasons.add("missing_type=" + DARRAY_TYPE);
+        if (!tempSlotPresent) reasons.add("missing_or_invalid_16_byte_type=" + TEMP_SLOT_TYPE);
         if (!range.safe) reasons.add(range.reason);
         if (!layout.safe) reasons.add(layout.reason);
 
@@ -119,7 +127,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         writeFieldJson(directory.resolve("global_record_field_proposals.jsonl"), fields);
         writeEvidence(directory.resolve("global_record_evidence.tsv"), scan);
         writeSummary(directory.resolve("global_record_summary.txt"), record, scan,
-            layout, range, evidenceStrong, darrayPresent);
+            layout, range, evidenceStrong, darrayPresent, tempSlotPresent);
 
         println("Global-record analysis complete: " + directory.toAbsolutePath().normalize());
         println("Records: 1, apply=" + bit(apply) + ", stride functions=" +
@@ -223,10 +231,20 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
 
         addCurated(candidates, 0x000, 1, "raceId", "/byte",
             "byte value selects one of three race tables and is compared with 1..3");
+        if (dataTypes.getDataType(AI_PLAYER_TYPE) instanceof Structure) {
+            addCurated(candidates, 0x001, 4, "aiPlayer", "pointer:" + AI_PLAYER_TYPE,
+                "AiPlrClassTy::GetMessage stores this through FUN_004357b0; " +
+                "CmdToPlsObj and FUN_004357f0 read the same packed field");
+        }
         addCurated(candidates, 0x005, 4, "groups", "pointer:" + DARRAY_TYPE,
             "DArray used by RegisterGroup/UnRegisterGroup and group iteration");
         addCurated(candidates, 0x009, 4, "objects", "pointer:" + DARRAY_TYPE,
             "DArray used by RegisterObject/GetObjPtr/UnRegisterObject");
+        addCurated(candidates, 0x163, 0x0a0, "tempSlots",
+            "array:2:array:5:" + TEMP_SLOT_TYPE,
+            "two adjacent groups of five packed 16-byte temporary-object slots; " +
+            "field meanings are shared by AddObjToTmp/AddObjToTmp2/DelObjFromTmps/" +
+            "ResetActivityFromTmp/SaveTmp/RestoreTmp");
         for (long offset = 0x9ce; offset <= 0xa06; offset += 4) {
             String name = offset == 0x9f6 ? "pgPairs" : "";
             String reason = offset == 0x9f6 ?
@@ -381,6 +399,9 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     }
 
     private String typeSpecification(DataType type) {
+        if (type instanceof Array array)
+            return "array:" + array.getNumElements() + ":" +
+                typeSpecification(array.getDataType());
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
             return "pointer:" + pointer.getDataType().getPathName();
         if (Undefined.isUndefined(type)) return "/undefined" + Math.max(1, type.getLength());
@@ -527,7 +548,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
 
     private void writeSummary(Path path, RecordProposal record, Scan scan,
             LayoutState layout, RangeSafety range, boolean evidenceStrong,
-            boolean darrayPresent) throws Exception {
+            boolean darrayPresent, boolean tempSlotPresent) throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "record_id=" + RECORD_ID, "base=" + addr(base),
             "stride=0x" + Integer.toHexString(PLAYER_STRIDE).toUpperCase(Locale.ROOT),
@@ -540,6 +561,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             "fields=" + record.fields, "typed_fields=" + record.typedFields,
             "named_fields=" + record.namedFields, "binary_evidence_strong=" + evidenceStrong,
             "darray_type_present=" + darrayPresent, "range_safe=" + range.safe,
+            "temp_slot_type_present=" + tempSlotPresent,
             "range_reason=" + range.reason, "layout_safe=" + layout.safe,
             "layout_reason=" + layout.reason, "auto_apply=" + record.apply,
             "note=The record is packed: stride and structure length are exactly 0xA62."),

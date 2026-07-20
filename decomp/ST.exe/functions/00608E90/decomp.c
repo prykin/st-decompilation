@@ -71,7 +71,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
     if (*(int *)((int)this + 0x23c) != 0) {
       thunk_FUN_0060d300((int)this);
     }
-    thunk_FUN_0060a9d0((int)this);
+    thunk_FUN_0060a9d0(this);
     return 0;
   }
   if (uVar3 == 0) {
@@ -127,7 +127,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       }
       if (*(char *)((int)this + 0x22e) != '\0') {
         if (*(char *)((int)this + 0x225) != '\0') {
-          uVar4 = thunk_FUN_0060a4b0((int)this);
+          uVar4 = thunk_FUN_0060a4b0(this);
           *(char *)((int)this + 0x225) = (char)uVar4;
           *(int *)((int)this + 0x254) = *(int *)((int)this + 0x254) + 1;
           return 0;

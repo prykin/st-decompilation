@@ -78,14 +78,14 @@ LAB_005846f7:
       if ((CONCAT31(extraout_var,bVar2) != 0) &&
          (((sVar7 < 0 || (SHORT_007fb240 <= sVar7)) ||
           ((((sVar8 < 0 || (((SHORT_007fb242 <= sVar8 || (sVar9 < 0)) || (SHORT_007fb244 <= sVar9)))
-             ) || (*(int *)(DAT_007fb248 +
-                           ((int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 +
-                           (int)sVar7) * 8) == 0)) &&
+             ) || (g_worldCells
+                   [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7
+                   ].objects[0] == (STWorldObject *)0x0)) &&
            ((((SHORT_007fb240 <= sVar7 || (sVar8 < 0)) ||
              ((SHORT_007fb242 <= sVar8 || ((sVar9 < 0 || (SHORT_007fb244 <= sVar9)))))) ||
-            (*(int *)(DAT_007fb248 + 4 +
-                     ((int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 +
-                     (int)sVar7) * 8) == 0)))))))) {
+            (g_worldCells
+             [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7].
+             objects[1] == (STWorldObject *)0x0)))))))) {
         *param_7 = iVar6;
         *param_8 = iVar4;
         *param_9 = iVar5;

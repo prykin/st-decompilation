@@ -3,7 +3,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
 
 {
   short sVar1;
-  int *piVar2;
+  STWorldObject *pSVar2;
   short sVar3;
   int iVar4;
   undefined4 uVar5;
@@ -25,15 +25,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < SHORT_007fb242)))) &&
            ((-1 < sVar1 &&
             ((sVar1 < SHORT_007fb244 &&
-             (piVar2 = *(int **)(DAT_007fb248 +
-                                ((int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3
-                                + (int)sVar6) * 8), piVar2 != (int *)0x0)))))) {
-          iVar4 = (**(code **)(*piVar2 + 0x2c))();
+             (pSVar2 = g_worldCells
+                       [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
+                        (int)sVar6].objects[0], pSVar2 != (STWorldObject *)0x0)))))) {
+          iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
           if (0x53 < iVar4) {
-            iVar4 = (**(code **)(*piVar2 + 0x2c))();
-            if ((iVar4 < 0x5b) && (*(int *)((int)piVar2 + 0x5d3) == 0)) {
-              *(undefined4 *)((int)piVar2 + 0x5d3) = *(undefined4 *)((int)this + 0x5d3);
-              thunk_FUN_004ce250(piVar2,1);
+            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+            if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
+              *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+              thunk_FUN_004ce250(pSVar2,1);
             }
           }
         }
@@ -43,16 +43,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
            (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < SHORT_007fb242)) &&
             ((-1 < sVar1 &&
              ((sVar1 < SHORT_007fb244 &&
-              (piVar2 = *(int **)(DAT_007fb248 +
-                                 ((int)SHORT_007fb246 * (int)sVar1 +
-                                  (int)SHORT_007fb240 * (int)sVar3 + (int)sVar6) * 8),
-              piVar2 != (int *)0x0)))))))) {
-          iVar4 = (**(code **)(*piVar2 + 0x2c))();
+              (pSVar2 = g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
+                         (int)sVar6].objects[0], pSVar2 != (STWorldObject *)0x0)))))))) {
+          iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
           if (0x53 < iVar4) {
-            iVar4 = (**(code **)(*piVar2 + 0x2c))();
-            if ((iVar4 < 0x5b) && (*(int *)((int)piVar2 + 0x5d3) == 0)) {
-              *(undefined4 *)((int)piVar2 + 0x5d3) = *(undefined4 *)((int)this + 0x5d3);
-              thunk_FUN_004ce250(piVar2,1);
+            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+            if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
+              *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+              thunk_FUN_004ce250(pSVar2,1);
             }
           }
         }
@@ -64,16 +63,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           if ((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar6)) &&
              (((sVar6 < SHORT_007fb242 && (-1 < sVar1)) &&
               ((sVar1 < SHORT_007fb244 &&
-               (piVar2 = *(int **)(DAT_007fb248 +
-                                  ((int)SHORT_007fb246 * (int)sVar1 +
-                                   (int)SHORT_007fb240 * (int)sVar6 + (int)sVar3) * 8),
-               piVar2 != (int *)0x0)))))) {
-            iVar4 = (**(code **)(*piVar2 + 0x2c))();
+               (pSVar2 = g_worldCells
+                         [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar6 +
+                          (int)sVar3].objects[0], pSVar2 != (STWorldObject *)0x0)))))) {
+            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
             if (0x53 < iVar4) {
-              iVar4 = (**(code **)(*piVar2 + 0x2c))();
-              if ((iVar4 < 0x5b) && (*(int *)((int)piVar2 + 0x5d3) == 0)) {
-                *(undefined4 *)((int)piVar2 + 0x5d3) = *(undefined4 *)((int)this + 0x5d3);
-                thunk_FUN_004ce250(piVar2,1);
+              iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+              if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
+                *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+                thunk_FUN_004ce250(pSVar2,1);
               }
             }
           }
@@ -85,16 +83,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar6)) &&
               ((sVar6 < SHORT_007fb242 && (-1 < sVar1)))) &&
              ((sVar1 < SHORT_007fb244 &&
-              (piVar2 = *(int **)(DAT_007fb248 +
-                                 ((int)SHORT_007fb246 * (int)sVar1 +
-                                  (int)sVar6 * (int)SHORT_007fb240 + (int)sVar3) * 8),
-              piVar2 != (int *)0x0)))) {
-            iVar4 = (**(code **)(*piVar2 + 0x2c))();
+              (pSVar2 = g_worldCells
+                        [(int)SHORT_007fb246 * (int)sVar1 + (int)sVar6 * (int)SHORT_007fb240 +
+                         (int)sVar3].objects[0], pSVar2 != (STWorldObject *)0x0)))) {
+            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
             if (0x53 < iVar4) {
-              iVar4 = (**(code **)(*piVar2 + 0x2c))();
-              if ((iVar4 < 0x5b) && (*(int *)((int)piVar2 + 0x5d3) == 0)) {
-                *(undefined4 *)((int)piVar2 + 0x5d3) = *(undefined4 *)((int)this + 0x5d3);
-                thunk_FUN_004ce250(piVar2,1);
+              iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+              if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
+                *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+                thunk_FUN_004ce250(pSVar2,1);
               }
             }
           }

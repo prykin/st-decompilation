@@ -61,7 +61,7 @@ LAB_004dfd49:
       } while (uVar5 < pDVar4->count);
     }
     uVar5 = 0;
-    pDVar4 = g_playerRuntime[(int)piVar1].field2283_0x9d2;
+    pDVar4 = g_playerRuntime[(int)piVar1].field2165_0x9d2;
     iVar3 = 0;
     if (pDVar4 == (DArrayTy *)0x0) {
       if (local_10 != 0) {
@@ -77,7 +77,7 @@ LAB_004dfd49:
           if (local_8 != 0) {
             iVar3 = iVar3 + (int)(0x5dc / (ulonglong)(longlong)(int)local_8);
           }
-          pDVar4 = g_playerRuntime[(int)piVar1].field2283_0x9d2;
+          pDVar4 = g_playerRuntime[(int)piVar1].field2165_0x9d2;
           uVar5 = uVar5 + 1;
         } while (uVar5 < pDVar4->count);
       }

@@ -182,7 +182,7 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00694cd0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_006a0470((int)this);
+      thunk_FUN_006a0470(this);
       thunk_FUN_0069ff90((int)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_0069cb50(this);

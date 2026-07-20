@@ -79,7 +79,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   }
   ppTVar14 = &local_60->vtable + param_1 * 0x20;
   *(undefined4 *)((int)ppTVar14 + 0x28d) = 0;
-  *(undefined4 *)((int)ppTVar14 + 0x291) = 0;
+  *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar14 + 0x291) = (AnonPointee_TLOBaseTy_0291 *)0x0;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
     local_2c = CONCAT22(local_2c._2_2_,local_60->field_0041);
   }
@@ -123,10 +123,10 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                         local_8 = (STFishC *)0x0;
                       }
                       else {
-                        local_8 = *(STFishC **)
-                                   (DAT_007fb248 +
-                                   ((int)sVar13 * (int)SHORT_007fb240 +
-                                    (int)sVar5 * (int)SHORT_007fb246 + (int)sVar6) * 8);
+                        local_8 = (STFishC *)
+                                  g_worldCells
+                                  [(int)sVar13 * (int)SHORT_007fb240 +
+                                   (int)sVar5 * (int)SHORT_007fb246 + (int)sVar6].objects[0];
                         iVar7 = local_18;
                       }
                       if (((((TLOBaseTy *)local_8 != (TLOBaseTy *)0x0) &&

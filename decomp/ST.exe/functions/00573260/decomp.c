@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00573260(void)
+void __thiscall FUN_00573260(void *this)
 
 {
   int iVar1;
@@ -24,6 +24,7 @@ void FUN_00573260(void)
   
   local_f4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_f4;
+  local_8 = this;
   iVar1 = Library::MSVCRT::__setjmp3(local_f4.jumpBuffer,0,in_stack_fffffec8,in_stack_fffffecc);
   if (iVar1 == 0) {
     if (*local_8 == 0) {

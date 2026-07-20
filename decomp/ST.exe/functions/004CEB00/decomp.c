@@ -93,9 +93,9 @@ switchD_004ceb68_caseD_32:
           if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar5 = (short)local_c, sVar5 < 0)) ||
              (((SHORT_007fb242 <= sVar5 || (sVar8 < 0)) ||
               ((SHORT_007fb244 <= sVar8 ||
-               (*(int *)(DAT_007fb248 +
-                        ((int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar5 +
-                        (int)sVar2) * 8) == 0)))))) {
+               (g_worldCells
+                [(int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar2].
+                objects[0] == (STWorldObject *)0x0)))))) {
             *(int *)((int)this + 0x4e0) = local_8;
             *(undefined4 *)((int)this + 0x4dc) = 1;
             *(int *)((int)this + 0x4e4) = local_c;

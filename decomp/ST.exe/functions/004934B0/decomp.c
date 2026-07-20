@@ -16,7 +16,7 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
   
   uVar4 = 0;
   iVar5 = 1000000;
-  pDVar1 = g_playerRuntime[*(int *)((int)this + 0x24)].field2285_0x9da;
+  pDVar1 = g_playerRuntime[*(int *)((int)this + 0x24)].field2167_0x9da;
   *param_3 = -1;
   *param_2 = -1;
   *param_1 = -1;

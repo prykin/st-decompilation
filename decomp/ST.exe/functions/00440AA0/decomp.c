@@ -27,6 +27,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,DArrayTy *param_2,D
   void *unaff_EDI;
   uint uVar16;
   short *psVar17;
+  STWorldObject *this_01;
   undefined4 *puVar18;
   undefined4 local_130 [13];
   short local_fc;
@@ -214,23 +215,24 @@ LAB_00440c19:
                     if ((((local_fc < 0) || (SHORT_007fb240 <= local_fc)) || (local_fa < 0)) ||
                        (((SHORT_007fb242 <= local_fa || (local_f8 < 0)) ||
                         (SHORT_007fb244 <= local_f8)))) {
-                      piVar5 = (int *)0x0;
+                      this_01 = (STWorldObject *)0x0;
                     }
                     else {
-                      piVar5 = *(int **)(DAT_007fb248 +
-                                        ((int)local_f8 * (int)SHORT_007fb246 +
-                                         (int)local_fa * (int)SHORT_007fb240 + (int)local_fc) * 8);
+                      this_01 = g_worldCells
+                                [(int)local_f8 * (int)SHORT_007fb246 +
+                                 (int)local_fa * (int)SHORT_007fb240 + (int)local_fc].objects[0];
                     }
-                    if (((piVar5 != (int *)0x0) && (piVar5[9] == (int)(char)param_1)) &&
-                       ((iVar4 = (**(code **)(*piVar5 + 0x2c))(), iVar4 == 0x33 &&
-                        (iVar4 = (**(code **)(*piVar5 + 0xf8))(), uVar16 = local_20, iVar4 == 1))))
-                    {
+                    if (((this_01 != (STWorldObject *)0x0) &&
+                        (this_01[1].vtable == (STWorldObjectVTable *)(int)(char)param_1)) &&
+                       ((iVar4 = (*this_01->vtable->GetObjectTypeId)(this_01), iVar4 == 0x33 &&
+                        (iVar4 = (*this_01->vtable[5].slots_00_28[2])(), uVar16 = local_20,
+                        iVar4 == 1)))) {
                       uVar15 = 0;
                       if (0 < (int)local_20) {
                         do {
                           FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,uVar15,
                                        (undefined4 *)&local_22);
-                          if (local_22 == *(short *)((int)piVar5 + 0x32)) break;
+                          if (local_22 == *(short *)&this_01[1].field_0xe) break;
                           uVar15 = uVar15 + 1;
                         } while ((int)uVar15 < (int)uVar16);
                       }

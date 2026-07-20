@@ -7,7 +7,7 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
 {
   short sVar1;
   short sVar2;
-  int *this;
+  STWorldObject *this;
   bool bVar3;
   ushort uVar4;
   undefined3 extraout_var;
@@ -31,20 +31,20 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
       if ((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar2)) &&
          (((sVar2 < SHORT_007fb242 && (-1 < (short)uVar4)) && ((short)uVar4 < SHORT_007fb244)))) {
         uVar5 = (uint)sVar1;
-        this = *(int **)(DAT_007fb248 +
-                        ((int)SHORT_007fb246 * (int)(short)uVar4 + (int)SHORT_007fb240 * (int)sVar2
-                        + uVar5) * 8);
-        if (this != (int *)0x0) {
-          uVar5 = (**(code **)(*this + 0x2c))();
+        this = g_worldCells
+               [(int)SHORT_007fb246 * (int)(short)uVar4 + (int)SHORT_007fb240 * (int)sVar2 + uVar5].
+               objects[0];
+        if (this != (STWorldObject *)0x0) {
+          uVar5 = (*this->vtable->GetObjectTypeId)(this);
           if (uVar5 == 99) {
             iVar6 = (*param_1->vtable[1].vfunc_14)();
             iVar7 = (*param_1->vtable[1].vfunc_0C)();
             iVar8 = (*param_1->vtable->vfunc_2C)();
             thunk_FUN_004b7e30(this,iVar8,iVar7,iVar6);
-            iVar6 = (*param_1->vtable->vfunc_AC)(this[6]);
+            iVar6 = (*param_1->vtable->vfunc_AC)(*(undefined4 *)&this->field_0x18);
             uVar5 = 0;
             if (iVar6 != 0) {
-              thunk_FUN_004b7de0(this);
+              thunk_FUN_004b7de0((int *)this);
               bVar3 = thunk_FUN_004b7d50(this,param_1);
               uVar5 = (uint)bVar3;
             }

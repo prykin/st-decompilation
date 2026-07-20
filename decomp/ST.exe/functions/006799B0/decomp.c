@@ -6,9 +6,9 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
   uint uVar2;
   int iVar3;
   uint uVar4;
-  uint *puVar5;
+  AnonShape_0068FD00_A5257008 *pAVar5;
   bool bVar6;
-  uint local_3c [13];
+  AnonShape_0068FD00_A5257008 local_3c [3];
   uint local_8;
   
   local_8 = *(uint *)((int)this + 0x640);
@@ -64,15 +64,15 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
       }
     }
   }
-  local_3c[2] = *(uint *)((int)this + 0x640);
-  if (local_3c[2] != local_8) {
-    puVar5 = local_3c;
+  local_3c[0]._8_4_ = *(uint *)((int)this + 0x640);
+  if (local_3c[0]._8_4_ != local_8) {
+    pAVar5 = local_3c;
     for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pAVar5 = 0;
+      pAVar5 = (AnonShape_0068FD00_A5257008 *)&pAVar5->field_0x4;
     }
-    local_3c[1] = *(undefined4 *)((int)this + 0x6fe);
-    local_3c[0] = 0x6a;
+    local_3c[0]._4_4_ = *(undefined4 *)((int)this + 0x6fe);
+    local_3c[0]._0_4_ = 0x6a;
     thunk_FUN_0067a020(this,local_3c,-1);
   }
   return;

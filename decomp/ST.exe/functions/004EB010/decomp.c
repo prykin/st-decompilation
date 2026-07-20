@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
   iVar5 = 0;
   local_8 = 0;
   iVar6 = param_1 * 0xa62;
-  g_playerRuntime[param_1].field2277_0x9c6 = 0;
+  g_playerRuntime[param_1].field2159_0x9c6 = 0;
   local_10 = 0;
   while( true ) {
     do {
@@ -30,7 +30,7 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
         iVar4 = iVar5 * 8;
         iVar5 = (&DAT_007c15c4)[iVar5 * 2];
         iVar2 = *(int *)(&DAT_007c15c0 +
-                        (local_10 + (local_8 + g_playerRuntime[param_1].field2277_0x9c6 * 2) * 2) *
+                        (local_10 + (local_8 + g_playerRuntime[param_1].field2159_0x9c6 * 2) * 2) *
                         8);
         uVar3 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar3;
@@ -46,7 +46,7 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
     local_10 = 0;
     local_8 = iVar5;
   }
-  g_playerRuntime[param_1].field2276_0x9c2 = PTR_00802a38->field_00E4;
+  g_playerRuntime[param_1].field2158_0x9c2 = PTR_00802a38->field_00E4;
   return 0;
 }
 

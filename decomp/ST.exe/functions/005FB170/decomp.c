@@ -1,24 +1,29 @@
 
+/* [STSwitchEnumApplier] Switch target field_02DD uses
+   /SubmarineTitans/Recovered/Enums/STColl3C_field_02DDState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12
+    */
+
 void __fastcall FUN_005fb170(STColl3C *param_1)
 
 {
   switch(param_1->field_02DD) {
-  case 1:
+  case CASE_1:
     thunk_FUN_005f66b0((STJellyGunC *)param_1);
     return;
-  case 2:
-  case 3:
-  case 4:
-  case 5:
-  case 6:
-  case 8:
-  case 9:
-  case 10:
-  case 0xb:
-  case 0xc:
+  case CASE_2:
+  case CASE_3:
+  case CASE_4:
+  case CASE_5:
+  case CASE_6:
+  case CASE_8:
+  case CASE_9:
+  case CASE_A:
+  case CASE_B:
+  case CASE_C:
     STColl3C::LoadImagSpr(param_1,0);
     thunk_FUN_005fa070((int *)param_1);
-    param_1->field_02DD = 0xd;
+    param_1->field_02DD = CASE_C|CASE_1;
   }
   return;
 }

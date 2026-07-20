@@ -13,7 +13,7 @@ int __thiscall FUN_0060ef40(void *this,int param_1)
   uint uVar8;
   int iVar9;
   short sVar10;
-  int *piVar11;
+  STWorldObject *pSVar11;
   short sVar12;
   uint uVar13;
   undefined4 *puVar14;
@@ -145,21 +145,22 @@ int __thiscall FUN_0060ef40(void *this,int param_1)
                 (sVar10 = (short)local_50, sVar10 < 0)) ||
                (((SHORT_007fb242 <= sVar10 || (sVar7 = (short)local_4c, sVar7 < 0)) ||
                 (SHORT_007fb244 <= sVar7)))) {
-              piVar11 = (int *)0x0;
+              pSVar11 = (STWorldObject *)0x0;
             }
             else {
-              piVar11 = *(int **)(DAT_007fb248 +
-                                 ((int)sVar7 * (int)SHORT_007fb246 +
-                                  (int)sVar10 * (int)SHORT_007fb240 + (int)sVar12) * 8);
+              pSVar11 = g_worldCells
+                        [(int)sVar7 * (int)SHORT_007fb246 + (int)sVar10 * (int)SHORT_007fb240 +
+                         (int)sVar12].objects[0];
             }
-            if (((piVar11 == (int *)0x0) || (iVar3 = (**(code **)(*piVar11 + 0xf8))(), iVar3 == 0))
-               || ((7 < (uint)piVar11[9] ||
-                   ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-                    (7 < (byte)(&DAT_008087e9)[piVar11[9] * 0x51])))))) {
+            if (((pSVar11 == (STWorldObject *)0x0) ||
+                (iVar3 = (*pSVar11->vtable[5].slots_00_28[2])(), iVar3 == 0)) ||
+               (((STWorldObjectVTable *)0x7 < pSVar11[1].vtable ||
+                ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+                 (7 < (byte)(&DAT_008087e9)[(int)pSVar11[1].vtable * 0x51])))))) {
               bVar2 = thunk_FUN_004961b0(sVar12,(short)local_50,(short)local_4c);
               if (CONCAT31(extraout_var,bVar2) == 0) goto LAB_0060f230;
             }
-            else if (*(int *)((int)this + 0x2d1) != piVar11[6]) {
+            else if (*(int *)((int)this + 0x2d1) != *(int *)&pSVar11->field_0x18) {
 LAB_0060f230:
               *(undefined2 *)(local_54 + local_88 * 2) = 0xbfff;
             }

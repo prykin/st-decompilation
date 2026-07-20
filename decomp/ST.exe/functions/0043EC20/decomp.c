@@ -57,11 +57,10 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
         do {
           iVar3 = iVar3 + SHORT_007fb240;
           if (local_8 <= local_c) {
-            iVar6 = iVar3 * 8 + -8;
             _param_4 = (local_c - local_8) + 1;
+            iVar6 = iVar3 * 8 + -8;
             do {
-              iVar6 = iVar6 + 8;
-              piVar1 = *(int **)(iVar6 + DAT_007fb248);
+              piVar1 = *(int **)((int)g_worldCells[1].objects + iVar6);
               if ((((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) && (piVar1 != (int *)0x0)
                   ) && ((GVar2 = (**(code **)(*piVar1 + 0x2c))(), GVar2 == param_2 &&
                         (iVar4 = (**(code **)(*piVar1 + 0xf8))(), iVar4 != 0)))) {
@@ -87,6 +86,7 @@ LAB_0043eda0:
               }
               _param_4 = _param_4 + -1;
               iVar4 = local_10;
+              iVar6 = iVar6 + 8;
             } while (_param_4 != 0);
           }
           iVar5 = iVar5 + -1;

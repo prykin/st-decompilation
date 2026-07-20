@@ -10,12 +10,12 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
   undefined4 *puVar2;
   code *pcVar3;
   AiPlrClassTy *this_00;
-  DArrayTy *pDVar4;
-  int iVar5;
-  byte *pbVar6;
-  LPSTR pCVar7;
-  int *piVar8;
+  int iVar4;
+  byte *pbVar5;
+  LPSTR pCVar6;
+  int *piVar7;
   AiFltClassTy *this_01;
+  DArrayTy *pDVar8;
   int iVar9;
   undefined4 uVar10;
   uint uVar11;
@@ -26,11 +26,13 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
   char *pcVar13;
   void *unaff_EDI;
   char *pcVar14;
-  uint *puVar15;
+  AnonShape_0068FD00_A5257008 **ppAVar15;
   bool bVar16;
   byte bVar17;
   InternalExceptionFrame local_b0;
-  uint local_6c [3];
+  AnonShape_0068FD00_A5257008 *local_6c;
+  undefined4 local_68;
+  undefined4 local_64;
   DArrayTy *local_60;
   int local_38 [5];
   undefined4 local_24;
@@ -44,11 +46,11 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x655,0,iVar5,
+    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x655,0,iVar4,
                                s_AiPlrClassTy__GetMessage_error_m_007d2f48,
                                *(undefined4 *)(param_1 + 0x10),local_10->field_0018);
     if (iVar9 != 0) {
@@ -56,7 +58,7 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
       uVar10 = (*pcVar3)();
       return uVar10;
     }
-    RaiseInternalException(iVar5,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x656);
+    RaiseInternalException(iVar4,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x656);
     return 0xffff;
   }
   local_10->field_06FE = PTR_00802a38->field_00E4;
@@ -68,21 +70,21 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
     else if (uVar11 < 0x110) {
       if (uVar11 == 0x10f) {
         local_14 = 0;
-        pbVar6 = (byte *)PrepareToSave(local_10,&local_14);
+        pbVar5 = (byte *)PrepareToSave(local_10,&local_14);
         bVar17 = 0xc;
         uVar11 = local_14;
-        local_18 = pbVar6;
-        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)&this_00->field_0x5d7);
-        STPlaySystemC::SaveObjData(PTR_00802a38,pCVar7,pbVar6,uVar11,bVar17);
-        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)&this_00->field_0x5d7);
+        local_18 = pbVar5;
+        pCVar6 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)&this_00->field_0x5d7);
+        STPlaySystemC::SaveObjData(PTR_00802a38,pCVar6,pbVar5,uVar11,bVar17);
+        pCVar6 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)&this_00->field_0x5d7);
         uVar11 = 0xffffffff;
         do {
-          pcVar13 = pCVar7;
+          pcVar13 = pCVar6;
           if (uVar11 == 0) break;
           uVar11 = uVar11 - 1;
-          pcVar13 = pCVar7 + 1;
-          cVar1 = *pCVar7;
-          pCVar7 = pcVar13;
+          pcVar13 = pCVar6 + 1;
+          cVar1 = *pCVar6;
+          pCVar6 = pcVar13;
         } while (cVar1 != '\0');
         uVar11 = ~uVar11;
         pcVar13 = pcVar13 + -uVar11;
@@ -104,10 +106,10 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
       else if (uVar11 == 0) {
         if ((&DAT_00809950)[*(int *)&local_10->field_0x5d7] == '\0') {
           if (DAT_008117bc != (undefined4 *)0x0) {
-            piVar8 = local_38;
-            for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar8 = 0;
-              piVar8 = piVar8 + 1;
+            piVar7 = local_38;
+            for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+              *piVar7 = 0;
+              piVar7 = piVar7 + 1;
             }
             local_38[4] = 0x5deb;
             local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_0x5d7);
@@ -132,10 +134,10 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
         }
         else {
           CloseAllTact(local_10);
-          piVar8 = local_38;
-          for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *piVar8 = 0;
-            piVar8 = piVar8 + 1;
+          piVar7 = local_38;
+          for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *piVar7 = 0;
+            piVar7 = piVar7 + 1;
           }
           local_38[2] = this_00->field_000C->systemId;
           local_38[3] = 0;
@@ -161,10 +163,10 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
       }
       else if (uVar11 == 3) {
         if (DAT_008117bc != (undefined4 *)0x0) {
-          piVar8 = local_38;
-          for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *piVar8 = 0;
-            piVar8 = piVar8 + 1;
+          piVar7 = local_38;
+          for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *piVar7 = 0;
+            piVar7 = piVar7 + 1;
           }
           local_38[4] = 0x5dec;
           local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_0x5d7);
@@ -178,61 +180,61 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
         }
         thunk_FUN_0064a580();
         if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
-          thunk_FUN_004357b0(this_00->field_0x5d7,0);
+          thunk_FUN_004357b0(this_00->field_0x5d7,(AiPlrClassTy *)0x0);
         }
         thunk_FUN_00678ba0((int)this_00);
       }
     }
     else if (uVar11 == 0x111) {
-      iVar5 = local_10->field_0695;
+      pDVar8 = local_10->field_0695;
       uVar11 = 0;
-      if (0 < *(int *)(iVar5 + 0xc)) {
-        bVar16 = *(int *)(iVar5 + 0xc) != 0;
+      if (0 < (int)pDVar8->count) {
+        bVar16 = pDVar8->count != 0;
         do {
           if (bVar16) {
-            piVar8 = (int *)(*(int *)(iVar5 + 8) * uVar11 + *(int *)(iVar5 + 0x1c));
+            piVar7 = (int *)(pDVar8->elementSize * uVar11 + (int)pDVar8->data);
           }
           else {
-            piVar8 = (int *)0x0;
+            piVar7 = (int *)0x0;
           }
-          if (piVar8[1] != 0) {
+          if (piVar7[1] != 0) {
             local_c = 0;
-            iVar5 = FUN_006e62d0(PTR_00802a38,piVar8[1],&local_c);
-            if ((iVar5 == 0) && (local_c != 0)) {
-              *piVar8 = local_c;
+            iVar4 = FUN_006e62d0(PTR_00802a38,piVar7[1],&local_c);
+            if ((iVar4 == 0) && (local_c != 0)) {
+              *piVar7 = local_c;
             }
             else {
-              *piVar8 = 0;
-              piVar8[1] = 0;
+              *piVar7 = 0;
+              piVar7[1] = 0;
             }
           }
-          iVar5 = this_00->field_0695;
+          pDVar8 = this_00->field_0695;
           uVar11 = uVar11 + 1;
-          bVar16 = uVar11 < *(uint *)(iVar5 + 0xc);
-        } while ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc));
+          bVar16 = uVar11 < pDVar8->count;
+        } while ((int)uVar11 < (int)pDVar8->count);
       }
     }
     else if (uVar11 == 0x5d94) {
       if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
-        piVar8 = (int *)0x0;
+        piVar7 = (int *)0x0;
       }
       else {
-        piVar8 = (int *)STAllPlayersC::GetObjPtr
+        piVar7 = (int *)STAllPlayersC::GetObjPtr
                                   (g_sTAllPlayers_007FA174,CONCAT31(0x5d,local_10->field_0x5d7),
                                    CONCAT22(extraout_var,*(undefined2 *)(param_1 + 0x16)),CASE_1);
       }
-      if (piVar8 != (int *)0x0) {
-        iVar5 = (**(code **)(*piVar8 + 0x2c))();
-        if ((iVar5 < 1) || (0x28 < iVar5)) {
+      if (piVar7 != (int *)0x0) {
+        iVar4 = (**(code **)(*piVar7 + 0x2c))();
+        if ((iVar4 < 1) || (0x28 < iVar4)) {
           bVar16 = false;
         }
         else {
           bVar16 = true;
         }
         if ((bVar16) &&
-           (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,(short)piVar8[0x207]),
+           (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,(short)piVar7[0x207]),
            this_01 != (AiFltClassTy *)0x0)) {
-          AiFltClassTy::_AddObjFlt(this_01,(uint)piVar8,0);
+          AiFltClassTy::_AddObjFlt(this_01,(uint)piVar7,0);
         }
       }
     }
@@ -246,20 +248,20 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
       else {
         local_8 = (DArrayTy *)0x0;
         Library::DKW::TBL::FUN_006afe40((int *)&local_8,*(uint **)(param_1 + 0x18));
-        pDVar4 = local_8;
+        pDVar8 = local_8;
         if (local_8 != (DArrayTy *)0x0) {
-          puVar15 = local_6c;
-          for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar15 = 0;
-            puVar15 = puVar15 + 1;
+          ppAVar15 = &local_6c;
+          for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *ppAVar15 = (AnonShape_0068FD00_A5257008 *)0x0;
+            ppAVar15 = ppAVar15 + 1;
           }
-          local_6c[1] = this_00->field_06FE;
-          local_6c[0] = 0x72;
-          local_6c[2] = 0;
-          local_60 = pDVar4;
-          thunk_FUN_0067a020(this_00,local_6c,-1);
-          local_6c[2] = 1;
-          thunk_FUN_0067a020(this_00,local_6c,-1);
+          local_68 = this_00->field_06FE;
+          local_6c = (AnonShape_0068FD00_A5257008 *)0x72;
+          local_64 = 0;
+          local_60 = pDVar8;
+          thunk_FUN_0067a020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          local_64 = 1;
+          thunk_FUN_0067a020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
           FUN_006ae110((byte *)local_8);
         }
       }

@@ -16,7 +16,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
   STT3DSprC *pSVar7;
   uint uVar8;
   uint uVar9;
-  void *this_01;
+  STWorldObject *this_01;
   undefined2 extraout_var;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
@@ -129,14 +129,14 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
           sVar1 = this_00->field_0265;
           if (((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) || (sVar17 < 0)) ||
               ((SHORT_007fb242 <= sVar17 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) {
-            this_01 = (void *)0x0;
+            this_01 = (STWorldObject *)0x0;
           }
           else {
-            this_01 = *(void **)(DAT_007fb248 + 4 +
-                                ((int)sVar17 * (int)SHORT_007fb240 +
-                                 (int)sVar1 * (int)SHORT_007fb246 + (int)sVar16) * 8);
+            this_01 = g_worldCells
+                      [(int)sVar17 * (int)SHORT_007fb240 + (int)sVar1 * (int)SHORT_007fb246 +
+                       (int)sVar16].objects[1];
           }
-          if ((this_01 != (void *)0x0) && (*(int *)((int)this_01 + 0x20) == 0xbe)) {
+          if ((this_01 != (STWorldObject *)0x0) && (this_01->value_20 == 0xbe)) {
             thunk_FUN_00630110(this_01,(char)*(undefined4 *)&this_00->field_0x24);
           }
           iVar12 = iVar12 + 1;
@@ -168,45 +168,45 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
   Library::DKW::TBL::FUN_006ae1c0(&PTR_007fa170->flags,&local_2c);
   iVar3 = this_00->field_0259;
   if (iVar3 == 100) {
-    if (g_playerRuntime[*(int *)&this_00->field_0x24].field2284_0x9d6 == (DArrayTy *)0x0) {
+    if (g_playerRuntime[*(int *)&this_00->field_0x24].field2166_0x9d6 == (DArrayTy *)0x0) {
       pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-      g_playerRuntime[*(int *)&this_00->field_0x24].field2284_0x9d6 = pDVar5;
+      g_playerRuntime[*(int *)&this_00->field_0x24].field2166_0x9d6 = pDVar5;
     }
     ppTVar18 = &local_8;
     local_8 = this_00;
-    pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2284_0x9d6;
+    pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2166_0x9d6;
 cf_common_join_004D1763:
     Library::DKW::TBL::FUN_006ae1c0(&pDVar5->flags,ppTVar18);
   }
   else {
     if (iVar3 == 0x4d) {
-      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2287_0x9e2 == (DArrayTy *)0x0) {
+      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2169_0x9e2 == (DArrayTy *)0x0) {
         pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-        g_playerRuntime[*(int *)&this_00->field_0x24].field2287_0x9e2 = pDVar5;
+        g_playerRuntime[*(int *)&this_00->field_0x24].field2169_0x9e2 = pDVar5;
       }
       ppTVar18 = &local_40;
       local_40 = this_00;
-      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2287_0x9e2;
+      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2169_0x9e2;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x43) {
-      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2290_0x9ee == (DArrayTy *)0x0) {
+      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2172_0x9ee == (DArrayTy *)0x0) {
         pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-        g_playerRuntime[*(int *)&this_00->field_0x24].field2290_0x9ee = pDVar5;
+        g_playerRuntime[*(int *)&this_00->field_0x24].field2172_0x9ee = pDVar5;
       }
       ppTVar18 = &local_44;
       local_44 = this_00;
-      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2290_0x9ee;
+      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2172_0x9ee;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x73) {
-      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2291_0x9f2 == (DArrayTy *)0x0) {
+      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2173_0x9f2 == (DArrayTy *)0x0) {
         pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-        g_playerRuntime[*(int *)&this_00->field_0x24].field2291_0x9f2 = pDVar5;
+        g_playerRuntime[*(int *)&this_00->field_0x24].field2173_0x9f2 = pDVar5;
       }
       ppTVar18 = &local_30;
       local_30 = this_00;
-      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2291_0x9f2;
+      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2173_0x9f2;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3a) {
@@ -219,23 +219,23 @@ cf_common_join_004D1763:
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x65) {
-      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2288_0x9e6 == (DArrayTy *)0x0) {
+      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2170_0x9e6 == (DArrayTy *)0x0) {
         pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-        g_playerRuntime[*(int *)&this_00->field_0x24].field2288_0x9e6 = pDVar5;
+        g_playerRuntime[*(int *)&this_00->field_0x24].field2170_0x9e6 = pDVar5;
       }
       ppTVar18 = &local_34;
       local_34 = this_00;
-      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2288_0x9e6;
+      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2170_0x9e6;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3b) {
-      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2289_0x9ea == (DArrayTy *)0x0) {
+      if (g_playerRuntime[*(int *)&this_00->field_0x24].field2171_0x9ea == (DArrayTy *)0x0) {
         pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
-        g_playerRuntime[*(int *)&this_00->field_0x24].field2289_0x9ea = pDVar5;
+        g_playerRuntime[*(int *)&this_00->field_0x24].field2171_0x9ea = pDVar5;
       }
       ppTVar18 = &local_38;
       local_38 = this_00;
-      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2289_0x9ea;
+      pDVar5 = g_playerRuntime[*(int *)&this_00->field_0x24].field2171_0x9ea;
       goto cf_common_join_004D1763;
     }
   }
@@ -345,7 +345,8 @@ cf_common_join_004D1763:
           FUN_006ea340((void *)this_00->field_0211,uVar9,iVar3,uVar8);
           STT3DSprC::RestoreSpr
                     (*ppSVar15,(int *)&local_28,
-                     (AnonShape_004ADBA0_E7CEFF88 *)(&param_1->field_0x0 + local_8->field_0000));
+                     (AnonShape_004ADBA0_E7CEFF88 *)(&param_1->field_0x0 + (int)local_8->field_0000)
+                    );
           uVar4 = uVar4 - 1;
           local_8 = (TLOEmbryoTy *)&local_8->field_0x4;
           ppSVar15 = ppSVar15 + 1;
@@ -449,7 +450,7 @@ LAB_004d204d:
                  iVar12);
     }
     this_00->field_02EC = 1;
-    (**(code **)(this_00->field_0000 + 0x90))(3,0x360);
+    (*(code *)this_00->field_0000->field_0090)(3,0x360);
     *(uint *)&this_00->field_0x2f0 = (-(uint)(this_00->field_0370 != 0) & 3) + 6;
     iVar3 = this_00->field_02EC + this_00->field_0241 * 4;
     thunk_FUN_004abce0(puVar14,this_00->field_0x2f0,*(int *)(this_00->field_0364 + iVar3 * 8),
@@ -531,7 +532,7 @@ LAB_004d1f0b:
       uVar8 = thunk_FUN_004ad650((int)this_00->field_035C);
       FUN_006ea340((void *)this_00->field_0211,uVar8,iVar3,uVar4);
       STT3DSprC::StartShow((STT3DSprC *)puVar14,this_00->field_0x2f0,PTR_00802a38->field_00E4);
-      (**(code **)(this_00->field_0000 + 0x90))(3,0x362);
+      (*(code *)this_00->field_0000->field_0090)(3,0x362);
       thunk_FUN_004abce0(this_00->field_035C,0xe,0,
                          **(int **)(this_00->field_035C->field_0020 + 0x1f8) + -1,'\0');
       STT3DSprC::SetCurFase(this_00->field_035C,'\x0e',0);
@@ -599,7 +600,7 @@ LAB_004d1df8:
   iVar3 = thunk_FUN_004b7520(CONCAT31((int3)((uint)this_00->field_0259 >> 8),this_00->field_0x24),
                              this_00->field_0259);
   if (iVar3 != 0) {
-    iVar3 = (**(code **)(this_00->field_0000 + 0x2c))();
+    iVar3 = (*(code *)this_00->field_0000->field_002C)();
     thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar3 >> 8),this_00->field_0x24),iVar3);
   }
   thunk_FUN_0041c3f0(this_00,(undefined *)0x5);

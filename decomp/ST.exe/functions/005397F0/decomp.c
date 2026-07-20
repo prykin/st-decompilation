@@ -3,7 +3,8 @@
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::GetMessage */
 
-undefined4 __thiscall PausePanelTy::GetMessage(PausePanelTy *this,int param_1)
+undefined4 __thiscall
+PausePanelTy::GetMessage(PausePanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1)
 
 {
   short sVar1;
@@ -36,8 +37,8 @@ undefined4 __thiscall PausePanelTy::GetMessage(PausePanelTy *this,int param_1)
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_pause_cpp_007c7490,0x9f);
     return 0xffff;
   }
-  PanelTy::GetMessage(local_8,param_1);
-  uVar2 = *(uint *)(param_1 + 0x10);
+  PanelTy::GetMessage(local_8,(int)param_1);
+  uVar2 = *(uint *)&param_1->field_0x10;
   if (uVar2 < 4) {
     if (uVar2 == 3) {
       DonePausePanel((PausePanelTy *)this_00);
