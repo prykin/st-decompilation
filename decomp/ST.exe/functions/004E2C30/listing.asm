@@ -1,4 +1,4 @@
-FUN_004e2c30:
+TLOBaseTy::FUN_004e2c30:
 004E2C30  55                        PUSH EBP
 004E2C31  8B EC                     MOV EBP,ESP
 004E2C33  83 EC 5C                  SUB ESP,0x5c
@@ -331,7 +331,7 @@ LAB_004e2fda:
 004E2FDA  6A 04                     PUSH 0x4
 004E2FDC  8B CB                     MOV ECX,EBX
 004E2FDE  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-FUN_004e2c30::cf_common_exit_004E2FE4:
+TLOBaseTy::FUN_004e2c30::cf_common_exit_004E2FE4:
 004E2FE4  BE 01 00 00 00            MOV ESI,0x1
 004E2FE9  8B CB                     MOV ECX,EBX
 004E2FEB  56                        PUSH ESI

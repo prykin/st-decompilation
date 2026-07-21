@@ -92,7 +92,8 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   }
 LAB_004ef4e9:
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,pBVar2->field_0060,0xffffffff,pBVar2->field_003C,pBVar2->field_0044);
+            ((int *)PTR_008075a8,pBVar2->field_0060,0xffffffff,pBVar2->field_003C,pBVar2->field_0044
+            );
   g_currentExceptionFrame = local_60.previous;
   return;
 }

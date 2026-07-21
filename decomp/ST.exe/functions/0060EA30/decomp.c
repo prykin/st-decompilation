@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param_1)
 
@@ -42,12 +44,8 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
         return 0;
       }
       thunk_FUN_00614a90(this,puVar4);
-      puVar4 = (undefined4 *)((int)this + 0x2eb);
-      for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar4 = 0;
-        puVar4 = puVar4 + 1;
-      }
-      *(undefined1 *)puVar4 = 0;
+      memset((void *)((int)this + 0x2eb), 0, 0x2d); /* compiler bulk-zero initialization */
+      iVar3 = 0;
       if (((*(int *)((int)this + 0x20c) != 7) && (*(int *)((int)this + 0x20c) != 9)) &&
          (iVar3 = STGenBombC::LoadImagSpr(this,1,0), iVar3 != 0)) {
         return 0;

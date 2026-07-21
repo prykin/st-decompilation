@@ -1,4 +1,4 @@
-FUN_0063ddb0:
+STTmMineC::FUN_0063ddb0:
 0063DDB0  55                        PUSH EBP
 0063DDB1  8B EC                     MOV EBP,ESP
 0063DDB3  53                        PUSH EBX

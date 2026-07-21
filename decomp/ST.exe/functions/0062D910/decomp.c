@@ -11,13 +11,14 @@ STManRub3C::AddNewDock
           int param_5,undefined2 param_6,int *param_7)
 
 {
-  code *pcVar1;
-  STManRub3C *pSVar2;
-  int iVar3;
-  uint *puVar4;
-  int *piVar5;
-  uint uVar6;
-  int iVar7;
+  uint *puVar1;
+  code *pcVar2;
+  STManRub3C *pSVar3;
+  int iVar4;
+  DArrayTy *pDVar5;
+  int *piVar6;
+  uint uVar7;
+  int iVar8;
   InternalExceptionFrame local_7c;
   int local_38;
   undefined2 local_34;
@@ -35,55 +36,51 @@ STManRub3C::AddNewDock
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
-  pSVar2 = local_8;
-  if (iVar3 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
+  pSVar3 = local_8;
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x1c8,0,iVar3,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x1c8,0,iVar4,"%s",
                                "STManRub3C::AddNewDock");
-    if (iVar7 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x1ca);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x1ca);
     return 0xffff;
   }
   if (*(int *)(&local_8->field_0x50 + param_1 * 4) == 0) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x28,10);
-    *(uint **)(&pSVar2->field_0x50 + param_1 * 4) = puVar4;
+    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x28,10);
+    *(DArrayTy **)(&pSVar3->field_0x50 + param_1 * 4) = pDVar5;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = *(int *)(*(int *)(&local_8->field_0x50 + param_1 * 4) + 0xc);
-    uVar6 = 0;
+    uVar7 = 0;
     if (0 < local_c) {
       do {
-        iVar3 = *(int *)(&local_8->field_0x50 + param_1 * 4);
-        if (uVar6 < *(uint *)(iVar3 + 0xc)) {
-          piVar5 = (int *)(*(int *)(iVar3 + 8) * uVar6 + *(int *)(iVar3 + 0x1c));
+        iVar4 = *(int *)(&local_8->field_0x50 + param_1 * 4);
+        if (uVar7 < *(uint *)(iVar4 + 0xc)) {
+          piVar6 = (int *)(*(int *)(iVar4 + 8) * uVar7 + *(int *)(iVar4 + 0x1c));
         }
         else {
-          piVar5 = (int *)0x0;
+          piVar6 = (int *)0x0;
         }
-        if ((piVar5 != (int *)0x0) && (*piVar5 == param_5)) {
-          piVar5[3] = 0;
-          *(undefined2 *)(piVar5 + 1) = param_6;
-          *(undefined2 *)((int)piVar5 + 6) = param_2;
-          *(undefined2 *)(piVar5 + 2) = param_3;
-          *(undefined2 *)((int)piVar5 + 10) = param_4;
-          piVar5[8] = 0;
+        if ((piVar6 != (int *)0x0) && (*piVar6 == param_5)) {
+          piVar6[3] = 0;
+          *(undefined2 *)(piVar6 + 1) = param_6;
+          *(undefined2 *)((int)piVar6 + 6) = param_2;
+          *(undefined2 *)(piVar6 + 2) = param_3;
+          *(undefined2 *)((int)piVar6 + 10) = param_4;
+          piVar6[8] = 0;
           *param_7 = 1;
         }
-        uVar6 = uVar6 + 1;
-      } while ((int)uVar6 < local_c);
+        uVar7 = uVar7 + 1;
+      } while ((int)uVar7 < local_c);
     }
   }
-  puVar4 = *(uint **)(&pSVar2->field_0x50 + param_1 * 4);
-  if ((puVar4 != (uint *)0x0) && (*param_7 == 0)) {
-    piVar5 = &local_38;
-    for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar5 = 0;
-      piVar5 = piVar5 + 1;
-    }
+  puVar1 = *(uint **)(&pSVar3->field_0x50 + param_1 * 4);
+  if ((puVar1 != (uint *)0x0) && (*param_7 == 0)) {
+    memset(&local_38, 0, 0x28); /* compiler bulk-zero initialization */
     local_34 = param_6;
     local_38 = param_5;
     local_30 = param_3;
@@ -91,9 +88,9 @@ STManRub3C::AddNewDock
     local_2e = param_4;
     local_2c = 0;
     local_18 = 0;
-    uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_38);
+    uVar7 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&local_38);
     g_currentExceptionFrame = local_7c.previous;
-    return uVar6;
+    return uVar7;
   }
   g_currentExceptionFrame = local_7c.previous;
   return local_10;

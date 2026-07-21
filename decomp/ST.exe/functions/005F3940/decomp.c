@@ -66,17 +66,17 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     if (pVVar2->field_0030 <= param_3) {
       return iVar3;
     }
-    local_8 = (&DAT_0079aed0)[param_2] + local_8;
+    local_8 = g_centeredOffsets5[param_2] + local_8;
     if (local_8 < 0) {
       return iVar3;
     }
     if (pVVar2->field_0034 <= local_8) {
       return iVar3;
     }
-    if (pVVar2->field_004C == 0) {
+    if (pVVar2->field_004C == (byte *)0x0) {
       return iVar3;
     }
-    if (*(char *)(local_8 * pVVar2->field_0030 + pVVar2->field_004C + param_3) != '\0') {
+    if (pVVar2->field_004C[param_3 + local_8 * pVVar2->field_0030] != 0) {
       return iVar3;
     }
   }

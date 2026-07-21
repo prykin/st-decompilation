@@ -409,7 +409,8 @@ LAB_0042eb3e:
     local_30 = 0;
     local_44 = 1;
     local_3c = uVar13;
-    (*PTR_00802a38->vtable->vfunc_08)(0x10ff,local_10,&local_c,local_50,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x10ff,local_10,&local_c,local_50,0);
     Library::DKW::TBL::FUN_006ae140(&local_1c->flags,uVar13,&local_c);
     iVar9 = param_5;
   }
@@ -444,7 +445,7 @@ LAB_0042ebf6:
   iVar9 = (**(code **)(*param_4 + 0x2c))();
   if (iVar9 == 0x1d) {
     if (local_24 == (DArrayTy *)0x0) {
-      local_24 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+      local_24 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
       g_playerRuntime[param_1].field479_0x2e7 = local_24;
     }
     pDVar4 = local_24;

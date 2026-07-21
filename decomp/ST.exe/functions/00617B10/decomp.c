@@ -1,18 +1,18 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall
 FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,undefined4 param_6)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   uint uVar2;
-  int iVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 *puVar4;
   undefined4 local_28;
   undefined2 local_24;
-  undefined4 local_22;
+  uint local_22;
   undefined2 local_1e;
   undefined2 local_1c;
   undefined2 local_1a;
@@ -21,19 +21,15 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   int local_8;
 
   if (*(int *)((int)this + 0x5e) == 0) {
-    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,0x24,10);
-    *(uint **)((int)this + 0x5e) = puVar1;
-    if (puVar1 == (uint *)0x0) {
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,0x24,10);
+    *(DArrayTy **)((int)this + 0x5e) = pDVar1;
+    if (pDVar1 == (DArrayTy *)0x0) {
       return 0xffffffff;
     }
   }
   local_8 = *(int *)((int)this + 0x5a) + 1;
   *(int *)((int)this + 0x5a) = local_8;
-  puVar4 = &local_28;
-  for (iVar3 = 9; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
+  memset(&local_28, 0, 0x24); /* compiler bulk-zero initialization */
   local_14 = *(undefined4 *)((int)this + 0x50);
   local_24 = (undefined2)param_3;
   local_18 = *(undefined4 *)((int)this + 0x4c);

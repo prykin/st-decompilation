@@ -9,8 +9,9 @@ uint __cdecl FUN_0067fab0(byte *param_1,undefined4 param_2)
   if ((int)uVar1 < 0) {
     return uVar1;
   }
-  if ((uVar1 < PTR_00848a30->field_000C) &&
-     (puVar2 = (undefined4 *)(PTR_00848a30->field_0008 * uVar1 + PTR_00848a30->field_001C),
+  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a30, uVar1) (runtime stride) */
+  if ((uVar1 < PTR_00848a30->count) &&
+     (puVar2 = (undefined4 *)(PTR_00848a30->elementSize * uVar1 + (int)PTR_00848a30->data),
      puVar2 != (undefined4 *)0x0)) {
     *puVar2 = param_2;
     return uVar1;

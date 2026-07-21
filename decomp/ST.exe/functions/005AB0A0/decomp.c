@@ -39,13 +39,13 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
       if (iVar3 < local_c->field_0013 + -2) {
         local_c->field_0017 = iVar3 + 1;
         local_8 = 1;
-        FUN_006b35d0(DAT_008075a8,uVar1);
+        FUN_006b35d0((int *)PTR_008075a8,uVar1);
       }
     }
     else if (0 < iVar3) {
       local_c->field_0017 = iVar3 + -1;
       local_8 = 1;
-      FUN_006b35d0(DAT_008075a8,uVar1);
+      FUN_006b35d0((int *)PTR_008075a8,uVar1);
       g_currentExceptionFrame = local_50.previous;
       return local_8;
     }

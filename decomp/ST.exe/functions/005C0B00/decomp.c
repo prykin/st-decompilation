@@ -94,7 +94,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
       ccFntTy::WrStr(local_c->field_0083,local_18,-1,-1,iVar6);
     }
     piVar3 = local_20;
-    FUN_006b5f80(DAT_008075a8,*local_20,local_20[1],(int)local_8,(int)pbVar4);
+    FUN_006b5f80((int *)PTR_008075a8,*local_20,local_20[1],(int)local_8,(int)pbVar4);
     PutDDXClip(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)local_8,pbVar4,'\x01',
                (BITMAPINFO *)local_c->field_005D);
     Library::DKW::DDX::FUN_006b48e0

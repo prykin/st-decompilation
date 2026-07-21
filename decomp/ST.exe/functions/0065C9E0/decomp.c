@@ -11,7 +11,7 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
 
 {
   int exceptionCode;
-  uint *puVar1;
+  DArrayTy *pDVar1;
   InternalExceptionFrame local_4c;
   AnonShape_0065C9E0_147DDF60 *local_8;
 
@@ -24,10 +24,10 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
     Library::MSVCRT::_strncpy(&local_8->field_0x6,source,0x3f);
-    puVar1 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,5,5);
-    local_8->field_0456 = puVar1;
-    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x1b,5);
-    local_8->field_0462 = puVar1;
+    pDVar1 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
+    local_8->field_0456 = &pDVar1->flags;
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x1b,5);
+    local_8->field_0462 = &pDVar1->flags;
     thunk_FUN_0064a6f0((int *)&local_8[1].field_0x6,10);
     g_currentExceptionFrame = local_4c.previous;
     return (undefined4 *)local_8;

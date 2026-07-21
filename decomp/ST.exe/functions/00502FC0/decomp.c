@@ -52,11 +52,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
     pCVar8 = pCVar8 + 1;
     pAVar9 = (AnonShape_00501D00_04A7E309 *)&pAVar9->field_0x4;
   }
-  pCVar8 = pCVar1;
-  for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pCVar8 = 0;
-    pCVar8 = pCVar8 + 1;
-  }
+  memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (local_68._5_1_ == this_00->field_0B9E) {
@@ -101,12 +97,12 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
               iVar7 = iVar7 + -1;
             } while (iVar7 != 0);
           }
-          if ((int)this_00->field_0154 < 0) {
+          if (this_00->field_0154 < 0) {
             g_currentExceptionFrame = local_ac.previous;
             return;
           }
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,
+                    ((int *)PTR_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,
                      this_00->field_00A0);
           g_currentExceptionFrame = local_ac.previous;
           return;
@@ -170,12 +166,13 @@ switchD_005030a2_caseD_1a:
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
   }
-  if ((int)this_00->field_0154 < 0) {
+  if (this_00->field_0154 < 0) {
     g_currentExceptionFrame = local_ac.previous;
     return;
   }
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,this_00->field_00A0);
+            ((int *)PTR_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,
+             this_00->field_00A0);
   g_currentExceptionFrame = local_ac.previous;
   return;
 }

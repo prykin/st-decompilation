@@ -32,11 +32,11 @@ uint __thiscall FUN_006191a0(void *this,uint param_1,int param_2)
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((((iVar2 < 0) || (4 < iVar2)) || (param_2 < 0)) ||
        ((((pVVar1->field_0030 <= param_2 ||
-          (in_EAX = (&DAT_0079aed0)[iVar2] + (int)local_8, (int)in_EAX < 0)) ||
+          (in_EAX = g_centeredOffsets5[iVar2] + (int)local_8, (int)in_EAX < 0)) ||
          (pVVar1->field_0034 <= (int)in_EAX)) ||
-        ((pVVar1->field_004C == 0 ||
-         (in_EAX = (uint)*(byte *)(in_EAX * pVVar1->field_0030 + pVVar1->field_004C + param_2),
-         in_EAX != 0)))))) goto cf_common_exit_00619287;
+        ((pVVar1->field_004C == (byte *)0x0 ||
+         (in_EAX = (uint)pVVar1->field_004C[param_2 + in_EAX * pVVar1->field_0030], in_EAX != 0)))))
+       ) goto cf_common_exit_00619287;
   }
   param_1 = 0;
 /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */

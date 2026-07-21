@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -13,10 +15,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
 
 {
   int iVar1;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   uint uVar3;
   int *piVar4;
-  undefined4 *puVar5;
   uint uVar6;
   longlong lVar7;
   undefined4 local_50 [13];
@@ -32,7 +33,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   *(int *)&this->field_0x14 = param_3;
   *(int *)&this->field_0x18 = param_4;
   *(int *)&this->field_0x1c = param_4;
-  *(undefined4 *)&this->field_0x30 = PTR_00802a38->field_00E4;
+  *(uint *)&this->field_0x30 = PTR_00802a38->field_00E4;
   local_8 = this;
   iVar1 = sub_00636FC0(this);
   *(int *)&this->field_0x28 = iVar1;
@@ -46,18 +47,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   }
   *(undefined4 *)&this->field_0x20 = 0x16;
 LAB_006362c5:
-  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_5 * param_6,0x32,10);
-  *(uint **)&this->field_0x2c = puVar2;
-  if ((puVar2 != (uint *)0x0) && (0 < param_4)) {
+  pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_5 * param_6,0x32,10);
+  *(DArrayTy **)&this->field_0x2c = pDVar2;
+  if ((pDVar2 != (DArrayTy *)0x0) && (0 < param_4)) {
     *(int *)this = param_5;
     *(int *)&this->field_0x8 = param_6;
-    puVar5 = local_50;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
-    *(undefined2 *)puVar5 = 0;
-    Library::DKW::TBL::FUN_006ae140(puVar2,param_5 * param_6 - 1,local_50);
+    memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
+    Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,param_5 * param_6 - 1,local_50);
     param_1 = 0;
     local_c = _DAT_0079c5a4 / (float)param_5;
     if (0 < param_5) {

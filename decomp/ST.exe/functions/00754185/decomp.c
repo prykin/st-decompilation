@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00754185(undefined4 param_1,undefined4 param_2)
 
@@ -38,11 +40,7 @@ void __fastcall FUN_00754185(undefined4 param_1,undefined4 param_2)
     puVar10 = puVar10 + 1;
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  puVar11 = (undefined1 *)(unaff_EBP + 0xd0);
-  for (iVar5 = 0x20fc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
-  }
+  memset((undefined1 *)(unaff_EBP + 0xd0), 0, 0x83f0); /* compiler bulk-zero initialization */
   *(undefined2 *)(unaff_EBP + 0x4c) = 1;
   *(int *)(unaff_EBP + 0x48) = unaff_EBP + 0x50;
   *(undefined2 *)(unaff_EBP + 0x4e) = 0;

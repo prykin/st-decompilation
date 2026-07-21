@@ -73,7 +73,7 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
     iVar4 = 6;
     local_c = 6;
   }
-  if (2 < (uint)(PTR_00802a38->field_00E4 - param_1->field_0245)) {
+  if (2 < PTR_00802a38->field_00E4 - param_1->field_0245) {
     param_1->field_0245 = PTR_00802a38->field_00E4;
     param_1->field_0235 = 0;
     iVar7 = (param_1->field_0231 + 1) % iVar4;

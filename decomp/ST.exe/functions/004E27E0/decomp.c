@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
   TLOBaseTy *local_8;
 
   local_8 = param_1;
-  if ((uint)PTR_00802a38->field_00E4 % 0x4b == 0) {
+  if (PTR_00802a38->field_00E4 % 0x4b == 0) {
     pTVar3 = &param_1->field_04D0;
     iVar2 = 2;
     do {

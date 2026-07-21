@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
 
@@ -7,15 +9,9 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   undefined4 uVar3;
   uint uVar4;
   int iVar5;
-  undefined4 *puVar6;
   int iVar7;
 
-  puVar6 = param_1;
-  for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
-  *(undefined2 *)puVar6 = 0;
+  memset(param_1, 0, 0x36); /* compiler bulk-zero initialization */
   *(undefined1 *)param_1 = 1;
   *(undefined1 *)((int)param_1 + 1) = *(undefined1 *)((int)this + 0x21d);
   iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));

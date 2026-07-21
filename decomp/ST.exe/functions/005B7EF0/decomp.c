@@ -19,7 +19,6 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
   undefined4 *puVar6;
   uint *puVar7;
   int iVar8;
-  int *piVar9;
   uint uVar10;
   undefined4 *puVar11;
   int iVar12;
@@ -47,15 +46,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
     if (iVar3 == 0) {
       iVar3 = local_14->field_1CAB;
       if (iVar3 != 0) {
-        piVar9 = local_34;
-        for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
-          *piVar9 = 0;
-          piVar9 = piVar9 + 1;
-        }
+        memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar3;
-        (*this_00->field_000C->vtable->vfunc_18)(local_34);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)this_00->field_000C->vtable->field_0018)(local_34);
       }
       this_00->field_1CA9 = 1;
       puVar6 = &this_00->field_1CD0;
@@ -69,12 +65,8 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
       *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar6 + 2);
       this_00->field_1A5F = this_00->field_0065;
       this_00->field_002D = 0x21;
-      puVar6 = (undefined4 *)&this_00->field_0x1c82;
-      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
-      *(undefined2 *)puVar6 = 0;
+      memset(&this_00->field_0x1c82, 0, 0x1a); /* compiler bulk-zero initialization */
+      iVar3 = 0;
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_009A != 0) {
         do {

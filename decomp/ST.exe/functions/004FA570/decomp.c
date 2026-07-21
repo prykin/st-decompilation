@@ -13,7 +13,6 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
   int *piVar6;
   uint uVar7;
   InternalExceptionFrame local_50;
@@ -34,11 +33,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     }
     this->field_0134 = param_2;
   }
-  puVar5 = (undefined4 *)&this->field_0x18;
-  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
   this->field_0028 = 0x24;
   if (param_2 == 0) {
     sVar2 = this->field_0241;

@@ -93,7 +93,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case 0:
       if (*(int *)(&DAT_00792778 + *(int *)&this_01->field_0x235 * 4) != 0) {
         *(undefined4 *)&this_01->field_0x275 = 1;
-        *(undefined4 *)&this_01->field_0x2b5 = PTR_00802a38->field_00E4;
+        *(uint *)&this_01->field_0x2b5 = PTR_00802a38->field_00E4;
         if (*(int *)&this_01->field_0x361 == 0) {
           *(undefined4 *)&this_01->field_0x261 = 1;
         }

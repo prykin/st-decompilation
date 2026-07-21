@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,undefined4 param_4)
 
@@ -6,10 +8,8 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
   DWORD DVar2;
   uint uVar3;
   uint uVar4;
-  int iVar5;
   char *pcVar6;
   char *pcVar7;
-  undefined4 *puVar8;
 
   if (*(byte *)((int)this + 0x11c) <= param_2) {
     if (param_1 != (char *)0x0) {
@@ -47,11 +47,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
       HelpStringTy::OutStr(this);
       return;
     }
-    puVar8 = (undefined4 *)((int)this + 0x18);
-    for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset((void *)((int)this + 0x18), 0, 0x104); /* compiler bulk-zero initialization */
     *(undefined4 *)((int)this + 0x12e) = 0;
     HelpStringTy::OutStr(this);
   }

@@ -30,7 +30,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   if (uVar2 == 0) {
     return (uint *)0x0;
   }
-  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)uVar2,6,1);
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)uVar2,6,1);
   local_8 = array;
   uVar2 = thunk_FUN_004233c0((int)param_1);
   DAT_007f4d4c = (uint)uVar2;
@@ -39,7 +39,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     local_14 = (short)param_6;
     local_12 = (short)param_7;
     local_10 = (short)param_8;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)&local_14);
+    Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
     goto LAB_004157f0;
   }
   local_58.previous = g_currentExceptionFrame;
@@ -57,7 +57,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       }
       *(uint *)((int)param_1 + 0x49) = *(uint *)((int)param_1 + 0x49) | 1;
     }
-    iVar4 = thunk_FUN_00413af0(param_1,param_2,param_6,param_7,param_8);
+    iVar4 = thunk_FUN_00413af0(param_1,(DArrayTy *)param_2,param_6,param_7,param_8);
     if (iVar4 == 0) {
       iVar4 = 0;
       if (0 < DAT_007f4d40) {

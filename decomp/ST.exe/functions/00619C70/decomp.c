@@ -503,7 +503,7 @@ cf_common_exit_0061A55D:
       thunk_FUN_00618900((void *)param_1->field_007D,param_1->field_0145,0);
       param_1->field_014B = 0;
     }
-    if ((int)param_1->field_0097 < 0) {
+    if (param_1->field_0097 < 0) {
       param_1->field_0093 = CASE_6;
       return local_2c;
     }
@@ -533,7 +533,7 @@ LAB_0061acc2:
       param_1->field_00AB = param_1->field_00AB + 1;
     }
     else if (uVar11 == param_1->field_00AF) {
-      if (-1 < (int)param_1->field_0097) {
+      if (-1 < param_1->field_0097) {
         FUN_006e9d40(PTR_00807598,(uint *)param_1->field_0097,0);
       }
       goto LAB_0061acc2;
@@ -543,7 +543,7 @@ LAB_0061acc2:
                  (float)param_1->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_1->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (param_1->field_00B7 == param_1->field_00B3) {
-      if (-1 < (int)param_1->field_0097) {
+      if (-1 < param_1->field_0097) {
         FUN_006eab60(PTR_00807598,param_1->field_0097);
       }
       param_1->field_0093 = CASE_6;
@@ -556,10 +556,10 @@ LAB_0061acc2:
                                 (int)param_1->field_00C9,(int)param_1->field_00CB,&local_28,
                                 &local_24), iVar12 < 0)) || ((4 < iVar12 || (local_28 < 0)))) ||
           (pVVar1->field_0030 <= local_28)) ||
-         (((local_24 = (&DAT_0079aed0)[iVar12] + local_24, local_24 < 0 ||
+         (((local_24 = g_centeredOffsets5[iVar12] + local_24, local_24 < 0 ||
            (pVVar1->field_0034 <= local_24)) ||
-          ((pVVar1->field_004C == 0 ||
-           (*(char *)(local_24 * pVVar1->field_0030 + local_28 + pVVar1->field_004C) != '\0')))))) {
+          ((pVVar1->field_004C == (byte *)0x0 ||
+           (pVVar1->field_004C[local_24 * pVVar1->field_0030 + local_28] != 0)))))) {
         if (param_1->field_00C4 == '\0') {
           FUN_006eaaa0(PTR_00807598,param_1->field_0097,0);
           param_1->field_00C4 = 1;
@@ -582,7 +582,7 @@ LAB_0061acc2:
 switchD_00619c92_default:
   return local_2c;
 cf_common_exit_0061AB3A:
-  if (-1 < (int)param_1->field_0097) {
+  if (-1 < param_1->field_0097) {
     FUN_006eab60(PTR_00807598,param_1->field_0097);
     param_1->field_00C4 = 0;
   }

@@ -8,15 +8,14 @@
 void __thiscall PopUpTy::ChangeState(PopUpTy *this)
 
 {
-  uint uVar1;
+  uint *puVar1;
   code *pcVar2;
   PopUpTy *pPVar3;
   int iVar4;
   char *resourceString;
   uint uVar5;
   int iVar6;
-  int iVar7;
-  uint *puVar8;
+  uint *puVar7;
   InternalExceptionFrame local_5c;
   PopUpTy *local_18;
   int local_14;
@@ -43,43 +42,42 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
   local_5 = 0;
   local_14 = 0;
   local_c = 0x1e;
-  puVar8 = &local_18->field_0018;
+  puVar7 = &local_18->field_0018;
   do {
     iVar4 = local_14;
     if ((DAT_00807342 == 0) || ((byte)pPVar3->field_009C <= local_5)) {
 LAB_0052da81:
-      puVar8[0xf] = 0;
-      FUN_006b2800((int)DAT_008075a8,*puVar8,0,0x13);
-      FUN_006b3af0(DAT_008075a8,*puVar8);
+      puVar7[0xf] = 0;
+      FUN_006b2800((int)PTR_008075a8,*puVar7,0,0x13);
+      FUN_006b3af0((int *)PTR_008075a8,*puVar7);
     }
     else {
-      iVar6 = pPVar3->field_0098;
-      if (local_14 < *(int *)(iVar6 + 8)) {
-        iVar7 = *(int *)(*(int *)(iVar6 + 0x14) + local_10 + (int)puVar8);
+      puVar1 = pPVar3->field_0098;
+      if (local_14 < (int)puVar1[2]) {
+        iVar6 = *(int *)(puVar1[5] + local_10 + (int)puVar7);
       }
       else {
-        iVar7 = 0;
+        iVar6 = 0;
       }
-      if (iVar7 == 0) goto LAB_0052da81;
-      if (local_14 < *(int *)(iVar6 + 8)) {
-        resourceString = *(char **)(*(int *)(iVar6 + 0x14) + local_10 + (int)puVar8);
+      if (iVar6 == 0) goto LAB_0052da81;
+      if (local_14 < (int)puVar1[2]) {
+        resourceString = *(char **)(puVar1[5] + local_10 + (int)puVar7);
       }
       else {
         resourceString = (char *)0x0;
       }
       uVar5 = FUN_00711110(pPVar3->field_0094,resourceString);
-      uVar1 = pPVar3->field_0090->field_0004;
-      if ((int)uVar1 <= (int)uVar5) {
-        uVar5 = uVar1;
+      if ((int)*(uint *)(pPVar3->field_0090 + 2) <= (int)uVar5) {
+        uVar5 = *(uint *)(pPVar3->field_0090 + 2);
       }
-      puVar8[0xf] = uVar5;
-      FUN_006b2800((int)DAT_008075a8,*puVar8,uVar5,0x13);
-      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar8,0xffffffff,0xd,local_c);
-      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar8);
+      puVar7[0xf] = uVar5;
+      FUN_006b2800((int)PTR_008075a8,*puVar7,uVar5,0x13);
+      Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar7,0xffffffff,0xd,local_c);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar7);
     }
     local_5 = local_5 + 1;
     local_14 = iVar4 + 1;
-    puVar8 = puVar8 + 1;
+    puVar7 = puVar7 + 1;
     local_c = local_c + 0x13;
     if (0xe < local_5) {
       g_currentExceptionFrame = local_5c.previous;

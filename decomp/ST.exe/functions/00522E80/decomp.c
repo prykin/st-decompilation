@@ -14,22 +14,22 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
 {
   ushort uVar1;
   STMessageId SVar2;
-  ccFntTy *pcVar3;
-  AnonPointee_IntercomPanelTy_019C *pAVar4;
+  uint *puVar3;
+  ushort *puVar4;
   code *pcVar5;
   IntercomPanelTy *this_00;
   int iVar6;
   undefined4 *puVar7;
   int iVar8;
   uint uVar9;
-  ccFntTy **ppcVar10;
-  ccFntTy *local_8dc [3];
+  uint **ppuVar10;
+  uint *local_8dc [3];
   int local_8d0;
   int local_8cc;
   int local_8c8;
   int local_8c4;
   undefined4 local_8c0;
-  undefined4 local_8bc;
+  uint *local_8bc;
   undefined4 local_8b0;
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -74,21 +74,21 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             this_00->field_0044 = this_00->field_0044 + 5;
           }
           if (iVar6 <= this_00->field_0044) {
-            ppcVar10 = local_8dc;
+            ppuVar10 = local_8dc;
             for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
-              *ppcVar10 = (ccFntTy *)0x0;
-              ppcVar10 = ppcVar10 + 1;
+              *ppuVar10 = (uint *)0x0;
+              ppuVar10 = ppuVar10 + 1;
             }
-            pcVar3 = this_00->field_0180;
+            puVar3 = this_00->field_0180;
             this_00->field_0044 = iVar6;
             this_00->field_0172 = 1;
-            local_8dc[0] = (ccFntTy *)0x1;
-            local_8dc[1] = (ccFntTy *)0x9;
-            local_8dc[2] = pcVar3;
-            if (pcVar3->field_00A0 != 0) {
-              FUN_00710790((uint *)pcVar3);
+            local_8dc[0] = (uint *)0x1;
+            local_8dc[1] = (uint *)0x9;
+            local_8dc[2] = puVar3;
+            if (puVar3[0x28] != 0) {
+              FUN_00710790(puVar3);
             }
-            local_8c4 = *(int *)&pcVar3->field_0x8a + 1;
+            local_8c4 = *(int *)((int)puVar3 + 0x8a) + 1;
             local_8d0 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e + this_00->field_003C;
             local_7c = 1;
             local_80 = 1;
@@ -105,12 +105,12 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             local_848 = 0xc09f;
             local_890 = local_8b0;
             local_850 = local_8b0;
-            (*this_00->field_000C->vtable->CreateObject)
-                      ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,(int *)0x0,
-                       local_8dc,1);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_01A0,0,local_8dc,1)
+            ;
           }
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                    ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                      this_00->field_0044);
           g_currentExceptionFrame = local_50.previous;
           return 0;
@@ -129,7 +129,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
           this_00->field_017C = 0;
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -148,7 +148,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       return 0;
     }
     thunk_FUN_00521cf0((AnonShape_00521CF0_154649D2 *)this_00);
-    Library::DKW::TBL::FUN_006b6020((uint *)this_00->field_0198,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(this_00->field_0198,0,&DAT_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = this_00->field_0198;
     FUN_006e6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);
@@ -158,13 +158,13 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    pAVar4 = this_00->field_019C;
-    local_8 = pAVar4->field_0014;
+    puVar4 = this_00->field_019C;
+    local_8 = *(uint *)(puVar4 + 10);
     if (local_8 == 0) {
-      local_8 = ((uint)(ushort)pAVar4->field_000E * pAVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar4->field_0008;
+      local_8 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar4 + 4);
     }
-    puVar7 = (undefined4 *)FUN_006b4fa0((int)pAVar4);
+    puVar7 = (undefined4 *)FUN_006b4fa0((int)puVar4);
     for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar7 = 0;
       puVar7 = puVar7 + 1;
@@ -179,15 +179,18 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
     if ((uVar1 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
       uVar9 = (uint)(message->arg1).words.high;
       FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,(uint)uVar1,uVar9 + 1,
-                   (uint)uVar1,this_00->field_019C->field_0008 + -3 + uVar9,0x6c,0xd);
+                   (uint)uVar1,
+                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C)->field_0008 + -3 + uVar9,
+                   0x6c,0xd);
     }
-    pAVar4 = this_00->field_019C;
+    puVar4 = this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,
-               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,(byte *)pAVar4,0,0,0,
-               pAVar4->field_0004,pAVar4->field_0008);
+               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,(byte *)puVar4,0,0,0,
+               *(int *)(puVar4 + 2),*(int *)(puVar4 + 4));
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044);
+              ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+               this_00->field_0044);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

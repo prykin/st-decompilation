@@ -433,16 +433,16 @@ LAB_0057e6f0:
       }
       else {
         if (((((int)local_18 < 0) || (pVVar6->field_0028 <= (int)local_18)) ||
-            ((&DAT_0079aed0)[iVar9] + local_14 < 0)) ||
-           (pVVar6->field_002C <= (&DAT_0079aed0)[iVar9] + local_14)) {
+            (g_centeredOffsets5[iVar9] + local_14 < 0)) ||
+           (pVVar6->field_002C <= g_centeredOffsets5[iVar9] + local_14)) {
           bVar5 = false;
         }
         else {
           bVar5 = true;
         }
-        if (((bVar5) && ((int)pVVar6->field_010C < 4)) &&
+        if (((bVar5) && (pVVar6->field_010C < 4)) &&
            ((&pVVar6->field_003C)[pVVar6->field_010C] != 0)) {
-          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar9] + local_14) * pVVar6->field_0028 +
+          uVar10 = (uint)*(byte *)((g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028 +
                                    (&pVVar6->field_003C)[pVVar6->field_010C] + (int)local_18);
         }
         else {
@@ -451,16 +451,17 @@ LAB_0057e6f0:
         if (-1 < (int)uVar10) {
           if (uVar10 == 0xf) {
             if ((((int)local_18 < 0) || (pVVar6->field_0030 <= (int)local_18)) ||
-               (((&DAT_0079aed0)[iVar9] + local_14 < 0 ||
-                (pVVar6->field_0034 <= (&DAT_0079aed0)[iVar9] + local_14)))) {
+               ((g_centeredOffsets5[iVar9] + local_14 < 0 ||
+                (pVVar6->field_0034 <= g_centeredOffsets5[iVar9] + local_14)))) {
               bVar5 = false;
             }
             else {
               bVar5 = true;
             }
-            if ((bVar5) && (pVVar6->field_004C != 0)) {
-              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar9] + local_14) * pVVar6->field_0030 +
-                                       pVVar6->field_004C + (int)local_18);
+            if ((bVar5) && (pVVar6->field_004C != (byte *)0x0)) {
+              uVar10 = (uint)pVVar6->field_004C
+                             [(int)((int)local_18 +
+                                   (g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0030)];
             }
             else {
               uVar10 = 0xffffffff;
@@ -500,16 +501,16 @@ LAB_0057e6f0:
       }
       else {
         if ((((local_1c < 0) || (pVVar6->field_0028 <= local_1c)) ||
-            ((&DAT_0079aed0)[iVar9] + local_20 < 0)) ||
-           (pVVar6->field_002C <= (&DAT_0079aed0)[iVar9] + local_20)) {
+            (g_centeredOffsets5[iVar9] + local_20 < 0)) ||
+           (pVVar6->field_002C <= g_centeredOffsets5[iVar9] + local_20)) {
           bVar5 = false;
         }
         else {
           bVar5 = true;
         }
-        if (((bVar5) && ((int)pVVar6->field_010C < 4)) &&
+        if (((bVar5) && (pVVar6->field_010C < 4)) &&
            ((&pVVar6->field_003C)[pVVar6->field_010C] != 0)) {
-          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar9] + local_20) * pVVar6->field_0028 +
+          uVar10 = (uint)*(byte *)((g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0028 +
                                    (&pVVar6->field_003C)[pVVar6->field_010C] + local_1c);
         }
         else {
@@ -518,16 +519,17 @@ LAB_0057e6f0:
         if (-1 < (int)uVar10) {
           if (uVar10 == 0xf) {
             if (((local_1c < 0) || (pVVar6->field_0030 <= local_1c)) ||
-               (((&DAT_0079aed0)[iVar9] + local_20 < 0 ||
-                (pVVar6->field_0034 <= (&DAT_0079aed0)[iVar9] + local_20)))) {
+               ((g_centeredOffsets5[iVar9] + local_20 < 0 ||
+                (pVVar6->field_0034 <= g_centeredOffsets5[iVar9] + local_20)))) {
               bVar5 = false;
             }
             else {
               bVar5 = true;
             }
-            if ((bVar5) && (pVVar6->field_004C != 0)) {
-              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar9] + local_20) * pVVar6->field_0030 +
-                                       pVVar6->field_004C + local_1c);
+            if ((bVar5) && (pVVar6->field_004C != (byte *)0x0)) {
+              uVar10 = (uint)pVVar6->field_004C
+                             [local_1c + (g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0030
+                             ];
             }
             else {
               uVar10 = 0xffffffff;
@@ -547,8 +549,9 @@ LAB_0057e6f0:
   }
   FUN_006e6580((void *)this_00->field_0211,piVar21);
   *(undefined4 *)&this_00->field_0x273 = 0;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_join_0057E9C2:
-  (*this_00->vtable->vfunc_D8)();
+  (**(code **)&this_00->vtable[4].field_0x18)();
   if ((*(int *)&this_00->field_0x255 != 0xe0) && (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
     do {
       thunk_FUN_004ac9e0(*(void **)(*(int *)&this_00->field_0x26d + iVar9 * 4),
@@ -557,7 +560,7 @@ cf_common_join_0057E9C2:
     } while (iVar9 < *(int *)&this_00->field_0x265);
   }
   if (*(int *)&this_00->field_0x25d == 2) {
-    if ((this_00->field_0211 != 0) && ((uint)PTR_00802a38->field_00E4 % 0xf == 0)) {
+    if ((this_00->field_0211 != 0) && (PTR_00802a38->field_00E4 % 0xf == 0)) {
       bVar7 = this_00->field_0x272 + 1;
       this_00->field_0x272 = bVar7;
       if ((short)(ushort)bVar7 < *(short *)(DAT_00806724 + 0x23)) {

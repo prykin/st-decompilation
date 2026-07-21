@@ -11,7 +11,7 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
   code *pcVar1;
   STTorpC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint *puVar4;
   int iVar5;
   undefined4 *puVar6;
   undefined4 *puVar7;
@@ -37,8 +37,8 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
     *(undefined4 *)&local_c->field_0x235 = local_8->field_005C;
     *(undefined4 *)&local_c->field_0x239 = local_8->field_0060;
     local_c->field_023D = local_8->field_0064;
-    uVar4 = FUN_006b0060((uint *)0x0,(uint *)(&local_8->field_0x0 + local_8->field_0068));
-    pSVar2->field_0241 = uVar4;
+    puVar4 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(&local_8->field_0x0 + local_8->field_0068));
+    pSVar2->field_0241 = puVar4;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

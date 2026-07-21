@@ -9,8 +9,8 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
 
 {
   code *pcVar1;
-  uint uVar2;
   CPanelTy *this_00;
+  uint uVar2;
   undefined1 *puVar3;
   byte bVar4;
   int iVar5;
@@ -73,11 +73,10 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_14 = CONCAT31(uStack_13,bVar4);
       if (bVar4 < 0xb) {
-        uVar2 = (uint)bVar4;
-        if (-1 < (int)(&this_00->field_0148)[uVar2]) {
+        if (-1 < (&this_00->field_0148)[bVar4]) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,(&this_00->field_0148)[uVar2],0xffffffff,
-                     (&this_00->field_003C)[uVar2],*(uint *)(&this_00->field_0x94 + uVar2 * 4));
+                    ((int *)PTR_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                     (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
         }
       }
     }

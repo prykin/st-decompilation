@@ -47,11 +47,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
 
   local_8 = (STWorldObject *)0x0;
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar13 = &this->field_02CC;
-    for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     this->field_0635 = this->field_0405;
     this->field_0639 = this->field_0409;
@@ -61,7 +57,8 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     this->field_0645 = this->field_0411;
     this->field_0647 = this->field_0413;
     this->field_064D = 0;
-    iVar10 = (*this->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar10 = (*(code *)this->vtable->field_00D8)();
     if (iVar10 != 0) {
       return -1;
     }
@@ -604,7 +601,8 @@ LAB_00479ba6:
                    (iVar10 = (*local_8->vtable[5].slots_00_28[2])(), iVar10 != 0)) {
                   thunk_FUN_004e95c0(local_8,(int)this);
                 }
-                iVar10 = (*this->vtable->vfunc_D8)();
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                iVar10 = (*(code *)this->vtable->field_00D8)();
                 if (iVar10 != 0) {
                   return -1;
                 }
@@ -655,8 +653,8 @@ LAB_0047acdc:
               iVar22 = CONCAT22((short)((uint)iVar10 >> 0x10),*(short *)&this->field_0x657 * 0xc9) +
                        100;
               uVar7 = (undefined2)((uint)iVar11 >> 0x10);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              uVar7 = (*this->vtable->vfunc_10)
+              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+              uVar7 = (*(code *)this->vtable->field_0010)
                                 (CONCAT22(uVar7,this->field_0041),
                                  CONCAT22((short)((uint)iVar22 >> 0x10),this->field_0043),
                                  CONCAT22(uVar7,this->field_0045),iVar22,iVar11,iVar10);
@@ -696,7 +694,7 @@ LAB_0047acdc:
             local_20 = (uVar25 >> 0x10) % 7 - 3;
             if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
                (local_c = 0, this->field_02BF != '\0')) {
-              local_10 = &this->field_02B3;
+              local_10 = (undefined4 *)&this->field_0x2b3;
               do {
                 puVar13 = (undefined4 *)
                           thunk_FUN_0041dc40(local_30,(short)*local_10,*(undefined2 *)(local_10 + 1)
@@ -843,8 +841,9 @@ joined_r0x0047b202:
                          (int)*(short *)&this->field_0x655);
             sub_00460260(this,0);
             *(undefined4 *)&this->field_0x663 = 7;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0047ADB5:
-            iVar10 = (*this->vtable->vfunc_D8)();
+            iVar10 = (*(code *)this->vtable->field_00D8)();
             return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
           }
           if (*(int *)&this->field_0x667 == 0) {
@@ -855,8 +854,8 @@ cf_common_exit_0047ADB5:
             iVar14 = CONCAT22((short)((uint)iVar22 >> 0x10),this->field_0639 + 1);
             iVar10 = iVar14 * 0xc9;
             uVar7 = (undefined2)((uint)(iVar14 * 0x19) >> 0x10);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar7 = (*this->vtable->vfunc_10)
+            /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+            uVar7 = (*(code *)this->vtable->field_0010)
                               (CONCAT22(uVar7,this->field_0041),
                                CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0043),
                                CONCAT22(uVar7,this->field_0045),iVar10,iVar22,iVar11);
@@ -899,7 +898,7 @@ joined_r0x0047ada9:
           local_18 = (uVar25 >> 0x10) % 7 - 3;
           if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
              (local_c = 0, this->field_02BF != '\0')) {
-            local_10 = &this->field_02B3;
+            local_10 = (undefined4 *)&this->field_0x2b3;
             do {
               puVar13 = (undefined4 *)
                         thunk_FUN_0041dc40(local_30,(short)*local_10,*(undefined2 *)(local_10 + 1),
@@ -1010,8 +1009,9 @@ LAB_0047a385:
             param_1 = PTR_00802a38->field_00E4;
           }
           CmdToObj(this,CASE_3,&param_1);
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0047A369:
-          iVar10 = (*this->vtable->vfunc_D8)();
+          iVar10 = (*(code *)this->vtable->field_00D8)();
           return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
         }
         iVar10 = sub_00460260(this,2);

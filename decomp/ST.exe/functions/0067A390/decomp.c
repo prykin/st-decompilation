@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
 
@@ -55,11 +57,8 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
                 ((AnonReceiver_006799B0 *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x50);
       if (iVar4 + local_6c < iVar5 / 0x28 + 1) {
-        puVar7 = local_40;
-        for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar7 = 0;
-          puVar7 = puVar7 + 1;
-        }
+        memset(local_40, 0, 0x2c); /* compiler bulk-zero initialization */
+        iVar4 = 0;
         local_40[1] = 0;
         local_2e = 0xffff;
         local_30 = 0xffff;
@@ -119,11 +118,8 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x34);
       if (iVar4 + local_6c < (int)((uint)uVar3 + local_10)) {
         local_70 = param_1->field_06FE;
-        puVar7 = local_40;
-        for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar7 = 0;
-          puVar7 = puVar7 + 1;
-        }
+        memset(local_40, 0, 0x2c); /* compiler bulk-zero initialization */
+        iVar4 = 0;
         local_40[1] = 0;
         local_2e = 0xffff;
         local_30 = 0xffff;
@@ -183,11 +179,8 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x48);
       if (iVar4 + local_6c < (int)((uint)uVar3 + local_10)) {
         local_70 = param_1->field_06FE;
-        puVar7 = local_40;
-        for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar7 = 0;
-          puVar7 = puVar7 + 1;
-        }
+        memset(local_40, 0, 0x2c); /* compiler bulk-zero initialization */
+        iVar4 = 0;
         local_40[1] = 0;
         local_2e = 0xffff;
         local_30 = 0xffff;

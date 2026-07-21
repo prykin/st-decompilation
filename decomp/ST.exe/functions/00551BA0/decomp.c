@@ -35,7 +35,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
     bVar8 = 0x3a;
     iVar6 = 0;
     iVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D1,
-                         (uint)this_00->field_01D0);
+                         (uint)(byte)this_00->field_01D0);
     FUN_006b5440(this_00->field_0068,0,0x22,0x38,iVar2,iVar6,bVar8);
     Library::DKW::WGR::FUN_006b55f0
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0xa6,0x31,
@@ -52,17 +52,18 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
         local_8 = 0xa9;
         local_c = 2;
         do {
-          if (*(ushort *)(&this_00->field_01AB + iVar6 + (uint)this_00->field_01D0 * 2) != 0) {
+          if (*(ushort *)(&this_00->field_01AB + iVar6 + (uint)(byte)this_00->field_01D0 * 2) != 0)
+          {
             pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D9,
                                           *(ushort *)
                                            (&this_00->field_01AB +
-                                           iVar6 + (uint)this_00->field_01D0 * 2) - 1);
+                                           iVar6 + (uint)(byte)this_00->field_01D0 * 2) - 1);
             DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,0x39,'\x01',pbVar4);
           }
           wsprintfA(&this_00->field_0x18d,"%d:1",
                     (uint)*(ushort *)
                            ((int)&this_00->field_01AB +
-                           (iVar6 + (uint)this_00->field_01D0 * 2) * 4 + 2));
+                           (iVar6 + (uint)(byte)this_00->field_01D0 * 2) * 4 + 2));
           ccFntTy::SetSurf(this_00->field_0189,this_00->field_0068,0,iVar2,0x36,0x22,0xc);
           ccFntTy::WrStr(this_00->field_0189,(uint *)&this_00->field_0x18d,-1,-1,1);
           iVar6 = iVar6 + 1;

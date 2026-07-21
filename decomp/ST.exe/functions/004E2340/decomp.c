@@ -28,11 +28,10 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar5 = *(int *)((int)this + param_1 * 0x28 + 0x4e8);
-    if ((uint)(iVar5 + iVar4) <= (uint)PTR_00802a38->field_00E4) {
+    if ((uint)(iVar5 + iVar4) <= PTR_00802a38->field_00E4) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      param_1 = (uint)((PTR_00802a38->field_00E4 - iVar5) *
-                      *(int *)((int)this + param_1 * 0x28 + 0x4e4)) /
-                *(uint *)(&DAT_007e091c + *piVar1 * 4);
+      param_1 = ((PTR_00802a38->field_00E4 - iVar5) * *(int *)((int)this + param_1 * 0x28 + 0x4e4))
+                / *(uint *)(&DAT_007e091c + *piVar1 * 4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar4 = (**(code **)(*(int *)this + 0x2c))();
       iVar4 = thunk_FUN_004b72e0(*(char *)((int)this + 0x24),iVar4);
@@ -109,9 +108,9 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
         bVar2 = iVar5 / 100 < (int)param_1;
         param_1 = iVar5 / 100;
       } while (bVar2);
-      *(undefined4 *)((int)this + uVar3 * 0x28 + 0x4e8) = PTR_00802a38->field_00E4;
-      if (*(int *)((int)this + 0x524) + 0x19U < (uint)PTR_00802a38->field_00E4) {
-        *(undefined4 *)((int)this + 0x524) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + uVar3 * 0x28 + 0x4e8) = PTR_00802a38->field_00E4;
+      if (*(int *)((int)this + 0x524) + 0x19U < PTR_00802a38->field_00E4) {
+        *(uint *)((int)this + 0x524) = PTR_00802a38->field_00E4;
         iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         if ((char)iVar4 == '\x02') {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

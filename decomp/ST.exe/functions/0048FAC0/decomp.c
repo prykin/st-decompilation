@@ -58,8 +58,8 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     puVar3 = puVar3 + 1;
     local_1c = (uint *)((int)local_1c + -1);
   } while (local_1c != (uint *)0x0);
-  if ((uint *)pSVar4->field_047B != (uint *)0x0) {
-    local_c = (undefined4 *)FUN_006b0020((uint *)pSVar4->field_047B,(int *)&local_8);
+  if (pSVar4->field_047B != (uint *)0x0) {
+    local_c = (undefined4 *)FUN_006b0020(pSVar4->field_047B,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
@@ -263,8 +263,8 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     local_20 = local_20 + -1;
     local_10 = uVar7;
   } while (local_20 != 0);
-  if ((uint *)pSVar4->field_047B != (uint *)0x0) {
-    local_c = (undefined4 *)FUN_006b0020((uint *)pSVar4->field_047B,(int *)&local_8);
+  if (pSVar4->field_047B != (uint *)0x0) {
+    local_c = (undefined4 *)FUN_006b0020(pSVar4->field_047B,(int *)&local_8);
     puVar10 = local_c;
     puVar13 = (undefined4 *)(uVar7 + (int)puVar3);
     for (uVar6 = local_8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {

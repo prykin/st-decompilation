@@ -68,11 +68,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(char *)((int)local_14 + 0x12) == '\0') {
     uVar9 = 0;
-    piVar11 = local_d0;
-    for (iVar7 = 0x14; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *piVar11 = 0;
-      piVar11 = piVar11 + 1;
-    }
+    memset(local_d0, 0, 0x50); /* compiler bulk-zero initialization */
     local_10 = local_10 & 0xffffff00;
     local_5 = '\0';
     if (*(uint *)sizeHelp_exref != 0) {
@@ -190,11 +186,7 @@ LAB_00513233:
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     puVar1 = &this_00->field_0x18;
-    puVar15 = (undefined4 *)puVar1;
-    for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar15 = 0;
-      puVar15 = puVar15 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     uVar3 = this_00->field_01B7;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = *(undefined2 *)&this_00->field_01B3->field_0xc;

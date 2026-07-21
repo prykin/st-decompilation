@@ -8,7 +8,7 @@
 void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
 
 {
-  AnonPointee_FSGSTy_1AC0 *pAVar1;
+  ushort *puVar1;
   StartSystemTy *pSVar2;
   MMsgTy *this_00;
   code *pcVar3;
@@ -26,7 +26,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   undefined4 local_28 [8];
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (AnonPointee_FSGSTy_1AC0 *)0x0)) &&
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (ushort *)0x0)) &&
      (-1 < this->field_1ABC)) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
@@ -53,13 +53,13 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         g_currentExceptionFrame = local_6c.previous;
         return;
       }
-      pAVar1 = local_8->field_1AC0;
-      uVar9 = pAVar1->field_0014;
+      puVar1 = local_8->field_1AC0;
+      uVar9 = *(uint *)(puVar1 + 10);
       if (uVar9 == 0) {
-        uVar9 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar1->field_0008;
+        uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar1 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+      puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar1);
       for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
         *puVar6 = 0xffffffff;
         puVar6 = puVar6 + 1;
@@ -76,13 +76,9 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       iVar5 = -2;
       puVar7 = (uint *)LoadResourceString(0x25b9,HINSTANCE_00807618);
       ccFntTy::WrTxt(pFVar4->field_1A73,puVar7,iVar5,iVar10,uVar9,iVar11,iVar12);
-      FUN_006b35d0(DAT_008075a8,pFVar4->field_1ABC);
+      FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
       pSVar2 = pFVar4->field_1A5B;
-      puVar6 = local_28;
-      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
+      memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       local_28[2] = pFVar4->field_0008;
       local_28[3] = 2;
       local_28[4] = 0x6956;

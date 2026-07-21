@@ -10,18 +10,17 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
 {
   code *pcVar1;
   bool bVar2;
-  InterSystemC *this_00;
-  int iVar3;
-  LPSTR pCVar4;
-  ushort *puVar5;
+  InterSystemC *pIVar3;
+  int iVar4;
+  LPSTR pCVar5;
+  ushort *puVar6;
   char *text;
-  uint *puVar6;
-  undefined4 uVar7;
-  uint uVar8;
-  byte bVar9;
-  int iVar10;
+  undefined4 uVar8;
+  uint uVar9;
+  byte bVar10;
   int iVar11;
-  undefined4 *puVar12;
+  int iVar12;
+  undefined4 *puVar13;
   InternalExceptionFrame local_1c8;
   uint local_184 [4];
   undefined4 local_174;
@@ -53,57 +52,53 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   local_1c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1c8;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_1c8.jumpBuffer,0);
-  this_00 = local_8;
-  if (iVar3 == 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_1c8.jumpBuffer,0);
+  pIVar3 = local_8;
+  if (iVar4 == 0) {
     if (DAT_0080874e == '\x01') {
-      iVar3 = thunk_FUN_00541cf0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      iVar4 = thunk_FUN_00541cf0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
     else if (DAT_0080874e == '\x02') {
-      iVar3 = thunk_FUN_00541f60(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      iVar4 = thunk_FUN_00541f60(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
     else {
-      iVar3 = thunk_FUN_005421d0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      iVar4 = thunk_FUN_005421d0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
-    this_00->field_0024 = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 1;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
-    iVar3 = thunk_FUN_005412b0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
-    this_00->field_0028 = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 0;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
-    iVar3 = thunk_FUN_005416a0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
-    this_00->field_002C = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 1;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
-    iVar3 = thunk_FUN_005419e0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
-    this_00->field_0030 = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 1;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
+    pIVar3->field_0024 = iVar4;
+    *(undefined4 *)(iVar4 + 0x58) = 1;
+    *(undefined4 *)(iVar4 + 0x5c) = 0;
+    iVar4 = thunk_FUN_005412b0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    pIVar3->field_0028 = iVar4;
+    *(undefined4 *)(iVar4 + 0x58) = 0;
+    *(undefined4 *)(iVar4 + 0x5c) = 0;
+    iVar4 = thunk_FUN_005416a0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    pIVar3->field_002C = iVar4;
+    *(undefined4 *)(iVar4 + 0x58) = 1;
+    *(undefined4 *)(iVar4 + 0x5c) = 0;
+    iVar4 = thunk_FUN_005419e0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    pIVar3->field_0030 = iVar4;
+    *(undefined4 *)(iVar4 + 0x58) = 1;
+    *(undefined4 *)(iVar4 + 0x5c) = 0;
     thunk_FUN_0056a500();
-    puVar6 = local_184;
-    for (iVar3 = 0x5f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
-    puVar12 = (undefined4 *)0x0;
-    iVar11 = 0;
-    iVar10 = 1;
-    bVar9 = 0;
-    uVar8 = 0xffffffff;
-    uVar7 = 0;
-    iVar3 = 1;
+    memset(local_184, 0, 0x17c); /* compiler bulk-zero initialization */
+    puVar13 = (undefined4 *)0x0;
+    iVar12 = 0;
+    iVar11 = 1;
+    bVar10 = 0;
+    uVar9 = 0xffffffff;
+    uVar8 = 0;
+    iVar4 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
-    pCVar4 = thunk_FUN_00571240("BUT_FILEOPT",0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar7);
-    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,pCVar4,uVar8,bVar9,iVar10,iVar11,puVar12);
+    pCVar5 = thunk_FUN_00571240("BUT_FILEOPT",0);
+    pCVar5 = FUN_006f2c00(pCVar5,iVar4,uVar8);
+    puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_1,pCVar5,uVar9,bVar10,iVar11,iVar12,puVar13);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
-    local_174 = *(undefined4 *)(puVar5 + 2);
-    local_164 = this_00->field_0014;
+    local_174 = *(undefined4 *)(puVar6 + 2);
+    local_164 = pIVar3->field_0014;
     local_184[3] = (DAT_0080874e != '\x03') + 7;
-    local_170 = *(undefined4 *)(puVar5 + 4);
+    local_170 = *(undefined4 *)(puVar6 + 4);
     local_e0 = 0x101;
     local_104 = 0x101;
     local_dc = 3;
@@ -123,8 +118,8 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_ec = 0;
     local_c8 = 1;
     local_124 = local_164;
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(2,0,0,local_184,1);
     if ((*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0') &&
        (DAT_0080874f == '\0')) {
       bVar2 = true;
@@ -140,31 +135,31 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_11c = 0xb906;
     local_d0 = 0x271a;
     local_f4 = 0x271a;
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(2,0,0,local_184,1);
     local_d0 = 0x2718;
     local_f4 = 0x2718;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 3) + 0xd2;
     local_184[0] = 1;
     local_15c = 0xb901;
     local_11c = 0xb902;
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(2,0,0,local_184,1);
     if ((*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0') &&
        (DAT_0080874f == '\0')) {
-      bVar9 = 1;
+      bVar10 = 1;
     }
     else {
-      bVar9 = 0;
+      bVar10 = 0;
     }
-    local_184[0] = (uint)bVar9;
+    local_184[0] = (uint)bVar10;
     local_d0 = 0x2719;
     local_f4 = 0x2719;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 2) + 0x128;
     local_15c = 0xb903;
     local_11c = 0xb904;
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(2,0,0,local_184,1);
     local_184[3] = DAT_00806734 + -0x1a;
     local_184[2] = g_nWidth_00806730 + -0x32;
     local_184[0] = 1;
@@ -178,89 +173,91 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_f4 = 0x2739;
     local_15c = 0xb907;
     local_11c = 0xb908;
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(2,0,0,local_184,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x11f,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x11f,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x120,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x120,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x122,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x122,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x123,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x123,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x125,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x125,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x127,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x127,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x128,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x128,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x12a,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x12a,0,0,0,1);
     thunk_FUN_0056a500();
     if (DAT_0080874e == '\x03') {
-      (*this_00->vtable->CreateObject)
-                ((SystemClassTy *)this_00,0x151,(undefined4 *)0x0,(int *)0x0,0,1);
-      (*this_00->vtable->CreateObject)
-                ((SystemClassTy *)this_00,0x159,(undefined4 *)0x0,(int *)0x0,0,1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)pIVar3->vtable->field_0008)(0x151,0,0,0,1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)pIVar3->vtable->field_0008)(0x159,0,0,0,1);
     }
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x149,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x149,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x148,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x148,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x14a,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x14a,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x153,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x153,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x155,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x155,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x154,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x154,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x156,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x156,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,299,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(299,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x12e,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x12e,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x14b,(undefined4 *)0x0,(int *)0x0,0,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0008)(0x14b,0,0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->vfunc_10)(0x201,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pIVar3->vtable->field_0010)(0x201,0);
     thunk_FUN_0056a500();
-    if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
-      thunk_FUN_0051da70((HelpPanelTy *)PTR_00801690);
+    if (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+      thunk_FUN_0051da70((HelpPanelTy *)g_helpPanel_00801690);
     }
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
-      uVar8 = 8;
+      uVar9 = 8;
       text = LoadResourceString(0x4275,HINSTANCE_00807618);
-      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar8);
+      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;
     return 0;
   }
   g_currentExceptionFrame = local_1c8.previous;
-  iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar3,"%s"
+  iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar4,"%s"
                               ,"InterSystemC::CreateInterfObjects");
-  if (iVar10 != 0) {
+  if (iVar11 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xb3);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xb3);
   return 0xfffffffc;
 }
 

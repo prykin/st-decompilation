@@ -100,7 +100,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
       DAT_0080c83a = 0;
     }
     else {
-      DAT_0080c83a = (uint)PTR_00802a38->field_00E4 / 0x19;
+      DAT_0080c83a = PTR_00802a38->field_00E4 / 0x19;
     }
     puVar9 = &DAT_008087b6;
     puVar11 = &DAT_0080c967;

@@ -179,8 +179,8 @@ LAB_00552481:
                (byte *)puVar5);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
-                );
+                ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                 this_00->field_0044);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }

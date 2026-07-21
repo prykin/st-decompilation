@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param_4,
@@ -7,10 +9,8 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   uint uVar1;
   int iVar2;
   uint *puVar3;
-  int iVar4;
   int iVar5;
   STMessage *pSVar6;
-  undefined4 *puVar7;
   uint local_cc [20];
   STMessage local_7c;
   undefined4 local_5c [5];
@@ -91,12 +91,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
       param_2 = local_cc;
       param_3 = (int)this + 0x219;
       do {
-        puVar7 = local_5c;
-        for (iVar4 = 0x11; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar7 = 0;
-          puVar7 = puVar7 + 1;
-        }
-        *(undefined2 *)puVar7 = 0;
+        memset(local_5c, 0, 0x46); /* compiler bulk-zero initialization */
         local_1c = param_9;
         local_5c[0] = 100;
         local_5c[1] = 0xff;

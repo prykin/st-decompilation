@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 004CCC10 -> 006E62D0 @ 004CD011 | 004CCC10 -> 006E62D0 @ 004CD062 | 004CCC10 ->
@@ -19,8 +21,6 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
-  int *piVar6;
-  undefined4 *puVar7;
   int *piVar8;
   char playerId;
   undefined4 uVar9;
@@ -39,11 +39,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   if ((*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) &&
      (*(int *)(&DAT_007e1218 + (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4)
       != 0)) {
-    piVar6 = local_294;
-    for (iVar5 = 0x9b; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *piVar6 = 0;
-      piVar6 = piVar6 + 1;
-    }
+    memset(local_294, 0, 0x26c); /* compiler bulk-zero initialization */
     param_1 = local_294;
     iVar5 = 0;
     do {
@@ -83,11 +79,7 @@ LAB_004ccd43:
       }
     }
     if (DAT_008117bc != (undefined4 *)0x0) {
-      puVar7 = local_28;
-      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
-      }
+      memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       param_1 = local_294;
       local_18 = 0x5de9;
       local_14 = SUB42(piVar8,0);
@@ -192,7 +184,7 @@ LAB_004ccedc:
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004cd038:
   if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
-      (*(uint *)((int)this + 0x4d4) <= (uint)PTR_00802a38->field_00E4)) &&
+      (*(uint *)((int)this + 0x4d4) <= PTR_00802a38->field_00E4)) &&
      (iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4d0),(int *)&param_2), iVar2 == 0)) {
     thunk_FUN_005822b0(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }

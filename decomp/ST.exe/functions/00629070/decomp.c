@@ -218,16 +218,17 @@ LAB_00629242:
     }
     else {
       if (((local_28 < 0) || (pVVar7->field_0030 <= local_28)) ||
-         (((&DAT_0079aed0)[(int)local_14] + local_2c < 0 ||
-          (pVVar7->field_0034 <= (&DAT_0079aed0)[(int)local_14] + local_2c)))) {
+         ((g_centeredOffsets5[(int)local_14] + local_2c < 0 ||
+          (pVVar7->field_0034 <= g_centeredOffsets5[(int)local_14] + local_2c)))) {
         bVar14 = false;
       }
       else {
         bVar14 = true;
       }
-      if ((bVar14) && (pVVar7->field_004C != 0)) {
-        bVar14 = *(char *)(((&DAT_0079aed0)[(int)local_14] + local_2c) * pVVar7->field_0030 +
-                           pVVar7->field_004C + local_28) != '\0';
+      if ((bVar14) && (pVVar7->field_004C != (byte *)0x0)) {
+        bVar14 = pVVar7->field_004C
+                 [local_28 + (g_centeredOffsets5[(int)local_14] + local_2c) * pVVar7->field_0030] !=
+                 0;
       }
       else {
         bVar14 = true;

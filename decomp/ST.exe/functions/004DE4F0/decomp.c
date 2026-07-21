@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_004de4f0(void *this,int param_1)
 
@@ -35,11 +37,7 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
   pDVar4 = g_playerRuntime[param_1].objects;
   iVar2 = 0;
   if (pDVar4 != (DArrayTy *)0x0) {
-    piVar6 = local_18c;
-    for (iVar2 = 0x2d; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar6 = 0;
-      piVar6 = piVar6 + 1;
-    }
+    memset(local_18c, 0, 0xb4); /* compiler bulk-zero initialization */
     uVar5 = 0;
     /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar2 = param_1 * 0xa62;
@@ -94,11 +92,7 @@ LAB_004de602:
         iVar2 = local_14;
       } while (uVar5 < pDVar4->count);
     }
-    piVar6 = local_d8;
-    for (iVar3 = 0x2d; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = 0;
-      piVar6 = piVar6 + 1;
-    }
+    memset(local_d8, 0, 0xb4); /* compiler bulk-zero initialization */
     pDVar4 = *(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + iVar2);
     if (pDVar4 != (DArrayTy *)0x0) {
       uVar5 = 0;

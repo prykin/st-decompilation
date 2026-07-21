@@ -10,7 +10,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
 {
   code *pcVar1;
   StartSystemTy *this_00;
-  AnonShape_006B5570_4D68B99C *pAVar2;
+  DArrayTy *pDVar2;
   AnonShape_006B5570_4D68B99C *pAVar3;
   char *text;
   int iVar4;
@@ -22,7 +22,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   undefined2 local_20;
   ushort uStack_1e;
   uint local_14;
-  AnonShape_006B5570_4D68B99C *local_10;
+  DArrayTy *local_10;
   StartSystemTy *local_c;
   char local_5;
 
@@ -37,23 +37,23 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar5 == 0) {
     if ((param_1 != 0) &&
-       (pAVar2 = (AnonShape_006B5570_4D68B99C *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,2,1),
-       this_00 = local_c, pAVar2 != (AnonShape_006B5570_4D68B99C *)0x0)) {
+       (pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,2,1), this_00 = local_c,
+       pDVar2 != (DArrayTy *)0x0)) {
       local_5 = '\0';
       local_24 = 0x26;
-      local_10 = pAVar2;
+      local_10 = pDVar2;
       SystemClassTy::SendMessage((SystemClassTy *)local_c,2,local_c->field_0550,(int)local_34);
       local_14 = (uint)uStack_1e;
       if ((int)(DAT_0080c4fa[2] - 5) <= (int)local_14) {
         local_5 = '\x01';
       }
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s:",param_1);
-      Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
+      Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,(char *)&DAT_0080f33a);
       wsprintfA((LPSTR)&DAT_0080f33a,"&2%s",param_1 + 0x40);
-      Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
+      Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,(char *)&DAT_0080f33a);
       pAVar3 = (AnonShape_006B5570_4D68B99C *)
-               ccFntTy::FormSarr(this_00->field_0034,(uint *)pAVar2," ,.;:!?/\\()[]{}",
-                                 this_00->field_067E->field_0004,0,0xffffffff,1);
+               ccFntTy::FormSarr(this_00->field_0034,&pDVar2->flags," ,.;:!?/\\()[]{}",
+                                 *(int *)(this_00->field_067E + 2),0,0xffffffff,1);
       if (pAVar3 != (AnonShape_006B5570_4D68B99C *)0x0) {
         if (pAVar3->field_0008 != 0) {
           ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pAVar3,(uint *)pAVar3);
@@ -72,9 +72,9 @@ LAB_005dd982:
           } while (iVar5 < (int)pAVar3->field_0008);
         }
         FUN_006b5570(pAVar3);
-        pAVar2 = local_10;
+        pDVar2 = local_10;
       }
-      FUN_006b5570(pAVar2);
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pDVar2);
       local_24 = 0x28;
       local_20 = 1;
       uStack_1e = (ushort)DAT_0080c4fa[2];

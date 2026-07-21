@@ -36,6 +36,7 @@ import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
+import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
@@ -44,6 +45,7 @@ import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.StackReference;
 import ghidra.program.model.symbol.Symbol;
 
 public class STGlobalDataAnalyzer extends GhidraScript {
@@ -68,19 +70,31 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             functionsSeen++; callsSeen += analyze(function);
         }
         List<Proposal> proposals = makeProposals();
+        List<PointerAudit> pointerAudit = pointerAudit(proposals);
         writeTsv(directory.resolve("global_data_proposals.tsv"), proposals);
         writeJson(directory.resolve("global_data_proposals.jsonl"), proposals);
+        writePointerAudit(directory.resolve("global_pointer_audit.tsv"), pointerAudit);
+        writePointerSummary(directory.resolve("global_pointer_summary.txt"), pointerAudit);
         writeSummary(directory.resolve("global_data_summary.txt"), proposals,
             functionsSeen, callsSeen);
         println("Global-data analysis complete: " + directory.toAbsolutePath().normalize());
         println("Functions: " + functionsSeen + ", calls: " + callsSeen +
             ", proposals: " + proposals.size() + ", type_apply: " +
             proposals.stream().filter(row -> row.typeApply).count() + ", name_apply: " +
-            proposals.stream().filter(row -> row.nameApply).count());
+            proposals.stream().filter(row -> row.nameApply).count() +
+            ", PTR audit: " + pointerAudit.size() + ", zero globals: " +
+            pointerAudit.stream().filter(row -> row.classification.equals(
+                "zero_initialized_global")).count());
     }
 
     private int analyze(Function function) {
         Map<String, GlobalValue> registers = new HashMap<>();
+        Map<String, TypedValue> typedRegisters = new HashMap<>();
+        Map<Integer, TypedValue> typedStack = new HashMap<>();
+        String owner = ownerTypePath(function);
+        if ("__thiscall".equals(function.getCallingConventionName()) && !owner.isBlank())
+            typedRegisters.put("ECX", new TypedValue("pointer:" + owner,
+                function.getName(true) + " this"));
         List<GlobalValue> pushes = new ArrayList<>();
         int calls = 0;
         InstructionIterator instructions = currentProgram.getListing()
@@ -103,16 +117,82 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                         instruction.getAddress());
                 }
                 registers.remove("EAX"); registers.remove("ECX"); registers.remove("EDX");
+                typedRegisters.remove("EAX"); typedRegisters.remove("ECX");
+                typedRegisters.remove("EDX");
+                String returnType = called == null ? "" : namedStructurePointer(
+                    called.getReturnType());
+                if (!returnType.isBlank()) typedRegisters.put("EAX",
+                    new TypedValue(returnType, called.getName(true) + " return"));
                 pushes.clear(); continue;
             }
-            if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal())
+            if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal()) {
                 pushes.clear();
+                typedRegisters.clear();
+            }
+            trackTypedStore(function, instruction, mnemonic, operands,
+                typedRegisters, typedStack);
             updateRegisters(instruction, mnemonic, operands, registers);
             if ("MOV".equals(mnemonic) && operands.length >= 2 &&
                     "EBP".equals(cleanRegister(operands[0])) &&
                     "ESP".equals(cleanRegister(operands[1]))) pushes.clear();
         }
         return calls;
+    }
+
+    private void trackTypedStore(Function containing, Instruction instruction,
+            String mnemonic, String[] operands, Map<String, TypedValue> registers,
+            Map<Integer, TypedValue> stack) {
+        if (operands.length == 0) return;
+        String destination = cleanRegister(operands[0]);
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            String source = cleanRegister(operands[1]);
+            TypedValue value = source == null ? null : registers.get(source);
+            Integer sourceStack = stackOffset(instruction, 1);
+            if (value == null && sourceStack != null) value = stack.get(sourceStack);
+            if (destination != null) {
+                if (isFullRegister(operands[0]) && value != null)
+                    registers.put(destination, value);
+                else registers.remove(destination);
+                return;
+            }
+            Integer destinationStack = stackOffset(instruction, 0);
+            if (destinationStack != null) {
+                if (value == null) stack.remove(destinationStack);
+                else stack.put(destinationStack, value);
+                return;
+            }
+            if (value == null) return;
+            GlobalValue global = referencedGlobal(instruction, 0, operands[0], false);
+            if (global == null || global.addressOf) return;
+            String site = addr(containing.getEntryPoint()) + " stores named pointer from " +
+                value.producer + " @ " + addr(instruction.getAddress());
+            add(global.address, value.type, "", true, false, site);
+            evidence.get(global.address).typedStores++;
+            return;
+        }
+        if (destination != null && !Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
+                .contains(mnemonic)) registers.remove(destination);
+    }
+
+    private Integer stackOffset(Instruction instruction, int operandIndex) {
+        for (Reference reference : instruction.getReferencesFrom())
+            if (reference.getOperandIndex() == operandIndex &&
+                    reference instanceof StackReference stack)
+                return stack.getStackOffset();
+        return null;
+    }
+
+    private String namedStructurePointer(DataType type) {
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        if (!(type instanceof Pointer pointer)) return "";
+        type = pointer.getDataType();
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        if (!(type instanceof Structure structure) ||
+                structure.getName().startsWith("Anon") ||
+                structure.getPathName().contains("/Recovered/PointerShapes/") ||
+                structure.getPathName().contains("/Recovered/ClassPointees/") ||
+                structure.getPathName().contains("/Recovered/HiddenThis/")) return "";
+        return "pointer:" + structure.getPathName();
     }
 
     private void propagateCall(Function containing, Function called, GlobalValue receiver,
@@ -200,13 +280,23 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean smallSafeType = proposedLength >= 1 && proposedLength <= 8 &&
                 !(resolveBaseType(proposedType) instanceof Structure &&
                     !proposedType.startsWith("pointer:"));
-            // Data objects do not have a per-change SourceType. Once a concrete type exists,
-            // treat it as manual for automatic updates even if an older script comment remains.
-            boolean currentReplaceable = Undefined.isUndefined(data.getDataType());
+            // Data objects do not have a per-change SourceType.  Preserve arbitrary concrete
+            // data, but allow a hash/comment-owned anonymous pointer produced by our earlier
+            // shape passes to graduate to a named type when repeated call ABI evidence agrees.
+            boolean generatedAnonymous = scriptOwned && anonymousPointer(data.getDataType());
+            boolean currentReplaceable = Undefined.isUndefined(data.getDataType()) ||
+                generatedAnonymous;
+            DataType currentBase = data.getDataType() instanceof Pointer pointer ?
+                pointer.getDataType() : null;
+            DataType proposedBase = resolveBaseType(proposedType);
+            boolean extentCompatible = !generatedAnonymous ||
+                currentBase instanceof Structure currentStructure &&
+                proposedBase instanceof Structure proposedStructure &&
+                proposedStructure.getLength() >= currentStructure.getLength();
             boolean typeChange = !proposedType.isBlank() && !sameType(currentType, proposedType);
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
-                currentReplaceable && ev.addressEvidence == 0 &&
-                (ev.strongCount >= 2 || count >= 3);
+                currentReplaceable && extentCompatible && ev.addressEvidence == 0 &&
+                (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
             if (proposedName.isBlank() && proposedType.startsWith("pointer:"))
                 proposedName = structuralName(proposedType.substring("pointer:".length()), address);
@@ -219,8 +309,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("type_evidence=" + ev.types);
             reasons.add("name_evidence=" + ev.names);
             reasons.add("strong_evidence=" + ev.strongCount);
+            reasons.add("closed_named_pointer_stores=" + ev.typedStores);
             if (typeConflict) reasons.add("type_conflict");
             if (ev.addressEvidence > 0) reasons.add("address_of_global_requires_review");
+            if (generatedAnonymous) reasons.add("script_owned_anonymous_pointer_upgrade");
+            if (!extentCompatible) reasons.add("named_type_shorter_than_observed_anonymous_extent");
             if (!currentReplaceable) reasons.add("concrete_existing_data_preserved");
             result.add(new Proposal(address, symbol, data, proposedType, proposedName,
                 typeApply, nameApply, typeConflict ? "conflict" :
@@ -423,7 +516,75 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     }
     private boolean isOwned(Address address) {
         String comment = currentProgram.getListing().getComment(CommentType.PLATE, address);
-        return comment != null && comment.contains(MARKER);
+        return comment != null && (comment.contains(MARKER) ||
+            comment.contains("[STPointerShapeApplier]") ||
+            comment.contains("[STTypeFamilyApplier]"));
+    }
+    private boolean anonymousPointer(DataType type) {
+        if (!(type instanceof Pointer pointer) || !(pointer.getDataType() instanceof Structure))
+            return false;
+        String path = pointer.getDataType().getPathName();
+        return path.contains("/Recovered/PointerShapes/") ||
+            path.contains("/Recovered/ClassPointees/") ||
+            path.contains("/Recovered/HiddenThis/") ||
+            pointer.getDataType().getName().startsWith("Anon");
+    }
+
+    private List<PointerAudit> pointerAudit(List<Proposal> proposals) {
+        Map<Address, Proposal> proposed = new HashMap<>();
+        for (Proposal row : proposals) proposed.put(row.address, row);
+        List<PointerAudit> result = new ArrayList<>();
+        DataIterator iterator = currentProgram.getListing().getDefinedData(true);
+        while (iterator.hasNext()) {
+            Data data = iterator.next();
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(data.getAddress());
+            if (symbol == null || !symbol.getName().startsWith("PTR_") ||
+                    !(data.getDataType() instanceof Pointer pointer) ||
+                    data.getLength() != currentProgram.getDefaultPointerSize()) continue;
+            long raw;
+            try {
+                raw = currentProgram.getDefaultPointerSize() == 4 ?
+                    Integer.toUnsignedLong(currentProgram.getMemory().getInt(data.getAddress())) :
+                    currentProgram.getMemory().getLong(data.getAddress());
+            }
+            catch (Exception exception) { raw = -1; }
+            Address target = raw < 0 ? null : currentProgram.getAddressFactory()
+                .getDefaultAddressSpace().getAddress(raw);
+            Data targetData = target == null ? null :
+                currentProgram.getListing().getDefinedDataContaining(target);
+            Function targetFunction = target == null ? null :
+                currentProgram.getFunctionManager().getFunctionContaining(target);
+            Symbol targetSymbol = target == null ? null :
+                currentProgram.getSymbolTable().getPrimarySymbol(target);
+            String classification;
+            if (raw == 0) classification = "zero_initialized_global";
+            else if (symbol.getName().matches("(?i)PTR_(?:case|LAB)_.*"))
+                classification = "control_flow_table_entry";
+            else if (target != null && (targetFunction != null ||
+                    currentProgram.getListing().getInstructionContaining(target) != null))
+                classification = "code_pointer";
+            else if (targetData != null && targetData.hasStringValue())
+                classification = "string_pointer";
+            else classification = "initialized_data_pointer";
+            DataType pointed = pointer.getDataType();
+            String pointee = pointed == null ? "" : pointed.getPathName();
+            boolean anonymous = pointed instanceof Structure &&
+                anonymousPointer(data.getDataType());
+            Proposal proposal = proposed.get(data.getAddress());
+            Evidence ev = evidence.get(data.getAddress());
+            String targetName = targetFunction != null ? targetFunction.getName(true) :
+                targetSymbol == null ? "" : targetSymbol.getName(true);
+            String targetType = targetData == null ? "" :
+                typeSpecification(targetData.getDataType());
+            result.add(new PointerAudit(data.getAddress(), symbol.getName(),
+                typeSpecification(data.getDataType()), raw < 0 ? "unreadable" :
+                    String.format("%08X", raw), classification, targetName, targetType,
+                pointee, anonymous, isOwned(data.getAddress()), ev == null ? 0 : ev.sites.size(),
+                proposal == null ? "" : proposal.proposedType,
+                proposal != null && proposal.typeApply));
+        }
+        result.sort(Comparator.comparing(row -> row.address));
+        return result;
     }
     private boolean isLibrary(Function function) {
         for (FunctionTag tag : function.getTags()) {
@@ -465,6 +626,36 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             ",\"reason\":" + q(p.reason) + "}");
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
+    private void writePointerAudit(Path path, List<PointerAudit> rows) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("address\tname\tcurrent_type\traw_target\tclassification\t" +
+                "target_name\ttarget_data_type\tpointee\t" +
+                "anonymous_pointee\tscript_owned\tevidence_sites\tproposed_type\t" +
+                "type_apply\n");
+            for (PointerAudit row : rows) out.write(addr(row.address) + "\t" +
+                tsv(row.name) + "\t" + tsv(row.currentType) + "\t" + row.rawTarget +
+                "\t" + row.classification + "\t" + tsv(row.targetName) + "\t" +
+                tsv(row.targetDataType) + "\t" + tsv(row.pointee) + "\t" +
+                bit(row.anonymousPointee) + "\t" + bit(row.scriptOwned) + "\t" +
+                row.evidenceSites + "\t" + tsv(row.proposedType) + "\t" +
+                bit(row.typeApply) + "\n");
+        }
+    }
+    private void writePointerSummary(Path path, List<PointerAudit> rows) throws Exception {
+        Map<String, Long> classes = new TreeMap<>();
+        for (PointerAudit row : rows)
+            classes.merge(row.classification, 1L, Long::sum);
+        List<String> lines = new ArrayList<>();
+        lines.add("program=" + currentProgram.getName());
+        lines.add("ptr_symbols=" + rows.size());
+        for (Map.Entry<String, Long> entry : classes.entrySet())
+            lines.add(entry.getKey() + "=" + entry.getValue());
+        lines.add("zero_global_anonymous_pointees=" + rows.stream().filter(row ->
+            row.classification.equals("zero_initialized_global") && row.anonymousPointee).count());
+        lines.add("named_upgrade_auto_apply=" + rows.stream().filter(row -> row.typeApply).count());
+        lines.add("note=Control-flow, code and string table entries retain PTR_* labels; they are not class instances.");
+        Files.write(path, lines, StandardCharsets.UTF_8);
+    }
     private void writeSummary(Path path, List<Proposal> rows, int functions, int calls)
             throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
@@ -501,8 +692,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     }
     private static class Evidence {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>();
-        final Set<String> sites = new TreeSet<>(); int strongCount, addressEvidence;
+        final Set<String> sites = new TreeSet<>();
+        int strongCount, addressEvidence, typedStores;
     }
+    private record TypedValue(String type, String producer) {}
     private static class Proposal {
         final Address address; final String expectedName, expectedNameSource, expectedType,
             proposedName, proposedType, confidence, reason; final int expectedLength;
@@ -521,4 +714,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             this.sites = new TreeSet<>(sites);
         }
     }
+    private record PointerAudit(Address address, String name, String currentType,
+        String rawTarget, String classification, String targetName, String targetDataType,
+        String pointee, boolean anonymousPointee, boolean scriptOwned, int evidenceSites,
+        String proposedType, boolean typeApply) {}
 }

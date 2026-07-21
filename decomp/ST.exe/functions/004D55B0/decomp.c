@@ -77,7 +77,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
         local_20 = 0;
         local_1c = 10;
         sub_006E60A0(this_00,local_2c);
-        *(undefined4 *)&this_00[1].field_0x39 = PTR_00802a38->field_00E4;
+        *(uint *)&this_00[1].field_0x39 = PTR_00802a38->field_00E4;
         *(undefined4 *)&this_00[1].field_0x3d = *(undefined4 *)(dVar3 + 8);
         g_currentExceptionFrame = local_70.previous;
         return 0;
@@ -148,7 +148,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
           thunk_FUN_004d76e0((char)this_00->field_0024,0,this_00->field_0018,iVar8,iVar11,iVar15,
                              iVar7);
         }
-        *(undefined4 *)&this_00[1].field_0x39 = PTR_00802a38->field_00E4;
+        *(uint *)&this_00[1].field_0x39 = PTR_00802a38->field_00E4;
         *(int *)&this_00[1].field_0x3d = local_8[2];
         g_currentExceptionFrame = local_70.previous;
         return 0;
@@ -164,7 +164,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
       }
       *(undefined4 *)&this_00[1].field_0x29 = 1;
       *(uint *)((int)&this_00[1].field_002C + 1) = puVar2[2];
-      *(undefined4 *)&this_00[1].field_0x31 = PTR_00802a38->field_00E4;
+      *(uint *)&this_00[1].field_0x31 = PTR_00802a38->field_00E4;
       *(uint *)&this_00[1].field_0x35 = puVar2[1];
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -226,7 +226,8 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
     *(undefined4 *)&this_00->field_0x2ec = 3;
     *(undefined4 *)&this_00->field_0x2e8 = 1;
     if (iVar7 == 0) {
-      (*this_00->vtable->vfunc_90)(3,0x361);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)(this_00->vtable + 3))(3,0x361);
     }
     SVar4 = this_00->field_0259;
     if (((SVar4 != 0x6c) || (*(int *)&this_00->field_0x251 != 3)) &&

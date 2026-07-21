@@ -14,7 +14,8 @@ void __thiscall STBoatC::sub_00492420(STBoatC *this)
     local_8 = this;
     iVar1 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_8);
     if (iVar1 != -4) {
-      (*local_8->vtable->ReleaseLoad)(local_8,this->field_0018);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)&local_8->vtable->field_0xa0)(this->field_0018);
     }
   }
   return;

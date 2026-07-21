@@ -61,7 +61,7 @@ undefined4 * __cdecl FUN_00540c40(void *param_1,uint *param_2,uint *param_3,int 
       }
       Library::MSVCRT::_strncpy((char *)&DAT_008016f0,(char *)param_2,local_c - 1);
       uVar3 = 0xffffffff;
-      *(undefined1 *)((int)&DAT_008016ec + local_c + 3) = 0;
+      *(undefined1 *)((int)&g_sAMPanel_008016EC + local_c + 3) = 0;
       do {
         puVar8 = param_3;
         if (uVar3 == 0) break;

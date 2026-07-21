@@ -1,4 +1,4 @@
-FUN_005b8f40:
+MMsgTy::FUN_005b8f40:
 005B8F40  55                        PUSH EBP
 005B8F41  8B EC                     MOV EBP,ESP
 005B8F43  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

@@ -1,4 +1,4 @@
-FUN_00622990:
+STAllPlayersC::FUN_00622990:
 00622990  55                        PUSH EBP
 00622991  8B EC                     MOV EBP,ESP
 00622993  83 EC 18                  SUB ESP,0x18

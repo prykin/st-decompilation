@@ -107,8 +107,8 @@ cf_common_exit_0045F1A9:
   case CASE_E:
     this->field_0300 = 1;
     this->field_0447 = *param_2;
-    this->field_044B = param_2[1];
-    this->field_044F = param_2[2];
+    *(undefined4 *)&this->field_0x44b = param_2[1];
+    *(undefined4 *)&this->field_0x44f = param_2[2];
     this->field_0453 = *(undefined2 *)(param_2 + 3);
     return;
   case CASE_F:

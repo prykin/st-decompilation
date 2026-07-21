@@ -202,7 +202,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
     thunk_FUN_0062f900(this_00);
   }
 LAB_0062ea02:
-  iVar6 = thunk_FUN_0062fca0(this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar10);
+  iVar6 = thunk_FUN_0062fca0((STRubbishC *)this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar10);
   if (iVar6 == 0xffff) {
     return 0xffff;
   }

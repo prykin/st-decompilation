@@ -234,8 +234,8 @@ cf_common_exit_00437191:
         if (pAVar19 == (AiPlrClassTy *)0x0) {
           return;
         }
-        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,&local_38);
+        pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_38);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_78 = (STControlCommand *)((uint)local_78._2_2_ << 0x10);
       }
@@ -243,8 +243,8 @@ cf_common_exit_00437191:
         if (pAVar19 == (AiPlrClassTy *)0x0) {
           return;
         }
-        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,&local_38);
+        pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_38);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_78 = (STControlCommand *)CONCAT22(local_78._2_2_,1);
       }
@@ -276,14 +276,14 @@ cf_common_exit_00437191:
       }
       else {
         dVar13 = command->primaryPayloadSize;
-        local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
         sVar17 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar6 = extraout_ECX_03;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      ((uint *)local_c,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
+                      (&local_c->flags,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
             sVar17 = sVar17 + 1;
             uVar6 = command->secondaryPayloadSize >> 1;
           } while (sVar17 < (short)uVar6);
@@ -307,14 +307,14 @@ cf_common_exit_00437191:
       }
       else {
         dVar13 = command->primaryPayloadSize;
-        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
         sVar17 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar20 = extraout_ECX;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      ((uint *)pDVar8,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
+                      (&pDVar8->flags,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
             sVar17 = sVar17 + 1;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar20 = extraout_ECX_00;
@@ -341,14 +341,14 @@ cf_common_exit_00437191:
       }
       else {
         dVar13 = command->primaryPayloadSize;
-        local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
         sVar17 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar20 = extraout_EDX_00;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      ((uint *)local_c,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
+                      (&local_c->flags,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
             sVar17 = sVar17 + 1;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar20 = extraout_EDX_01;
@@ -370,12 +370,12 @@ cf_common_exit_00437191:
       }
       else {
         dVar13 = command->primaryPayloadSize;
-        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
         sVar17 = 0;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      ((uint *)pDVar8,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
+                      (&pDVar8->flags,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
             sVar17 = sVar17 + 1;
           } while (sVar17 < (short)(command->secondaryPayloadSize >> 1));
         }
@@ -399,16 +399,16 @@ cf_common_exit_00437191:
   if (command->secondaryPayloadSize != 0) {
     pSVar4 = command->payload;
     dVar13 = command->primaryPayloadSize;
-    pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
     sVar17 = 0;
     if (0 < (short)(command->secondaryPayloadSize >> 1)) {
       do {
         Library::DKW::TBL::FUN_006ae1c0
-                  ((uint *)pDVar8,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
+                  (&pDVar8->flags,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar13));
         sVar17 = sVar17 + 1;
       } while (sVar17 < (short)(command->secondaryPayloadSize >> 1));
     }
-    AddObjsToGroup(local_20,command->playerId,0xfffe,(uint *)pDVar8,(undefined2 *)&local_1c);
+    AddObjsToGroup(local_20,command->playerId,0xfffe,&pDVar8->flags,(undefined2 *)&local_1c);
     DArrayDestroy(pDVar8);
   }
   pAVar19 = local_30;
@@ -437,12 +437,12 @@ cf_common_exit_00437191:
   case 0x14:
     iVar15 = STGroupBoatC::IsAgAtt(pSVar9,unaff_EDI);
     if (iVar15 != 0) {
-      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+      pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
       targetPosition.x = *(short *)command->payload;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       targetPosition.y = *(short *)((int)&(command->payload->packed).value_01.words.high + 1);
       thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&targetPosition);
+      Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 1;
       orderData6.positions = pDVar8;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_6,&orderData6);
@@ -470,7 +470,7 @@ cf_common_exit_00437191:
       if (local_8 == (STGameObjC *)0x0) {
         return;
       }
-      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+      pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
       local_18 = *(undefined1 *)&local_8->field_0024;
       local_16 = local_8->field_0032;
       uVar6 = local_8->field_0020;
@@ -493,7 +493,7 @@ cf_common_exit_00437191:
       }
       local_17 = 1;
 LAB_00437842:
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&local_18);
+      Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&local_18);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14c = (uint)((command->payload->packed).variant != 0);
       local_150 = 0;
@@ -530,8 +530,8 @@ LAB_00437842:
     case 1:
       FUN_006e62d0(PTR_00802a38,(pSVar4->packed).value_1d,(int *)&local_8);
       if (local_8 != (STGameObjC *)0x0) {
-        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&local_8->field_0032);
+        pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&local_8->field_0032);
         local_138 = 0;
         local_134 = pDVar8;
         (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_5,&local_138);
@@ -540,13 +540,13 @@ LAB_00437842:
       }
       break;
     case 2:
-      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+      pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
       targetPosition.x = (command->payload->position16).x;
       targetPosition.y = (command->payload->position16).y;
       thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&targetPosition);
+      Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       thunk_FUN_0049a500(pSVar9,&targetPosition.x,&targetPosition.y,(undefined2 *)0x0);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&targetPosition);
+      Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 0;
       orderData6.positions = pDVar8;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_6,&orderData6);
@@ -563,8 +563,8 @@ LAB_00437842:
                      [(int)sVar17 * (int)g_worldGrid.planeStride +
                       (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0],
           pSVar11 != (STWorldObject *)0x0)))) {
-        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&pSVar11[1].field_0xe);
+        pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&pSVar11[1].field_0xe);
         orderData4.mode = 0;
         orderData4.objectIds = pDVar8;
         (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_4,&orderData4);
@@ -842,8 +842,8 @@ cf_common_exit_0043824D:
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((pSVar4->packed).variant == 1) {
-      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&pSVar11[1].field_0xe);
+      pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&pSVar11[1].field_0xe);
       local_118[1] = 0;
       local_102 = 0xffff;
       local_104 = 0xffff;
@@ -868,10 +868,10 @@ cf_common_exit_0043824D:
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     pDVar8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
     dVar13 = pDVar8->count;
-    local_6c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    local_34 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    local_2c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    local_30 = (AiPlrClassTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    local_6c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    local_34 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    local_2c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    local_30 = (AiPlrClassTy *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
     local_3c = 0;
     local_68 = (STControlCommandPayload *)0x0;
     local_d4 = 0;
@@ -1076,7 +1076,7 @@ LAB_00437cb5:
       local_14c = (uint)((pSVar4->packed).value_01.bytes.byte2 != 1);
       sVar17 = 0;
       local_150 = 0;
-      local_148 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
+      local_148 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
       if ((pSVar4->position16).x != 0) {
         iVar15 = 0;
         do {
@@ -1092,7 +1092,7 @@ LAB_00437cb5:
     case 3:
       sVar17 = 0;
       local_138 = 0;
-      local_134 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+      local_134 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
       if ((pSVar4->position16).x != 0) {
         iVar15 = 0;
         do {

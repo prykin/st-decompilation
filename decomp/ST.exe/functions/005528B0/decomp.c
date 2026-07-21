@@ -38,7 +38,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     iVar2 = 0xc6;
     uVar6 = 2;
     uVar5 = 0x31;
-    DAT_00802a48 = local_8;
+    g_upgPanel_00802A48 = local_8;
     pCVar3 = thunk_FUN_00571240("BKG_UPDATESW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,uVar5,uVar6,iVar2,iVar9,UVar10,uVar11,uVar12);

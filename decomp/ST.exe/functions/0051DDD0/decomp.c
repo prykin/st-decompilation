@@ -78,7 +78,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     puVar10 = &local_20->field_004C;
-    FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,puVar10);
+    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,puVar10);
     this_00->field_003C = *puVar10;
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
@@ -282,7 +282,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                      (uint)(ushort)this_00->field_01B1 * this_00->field_01C3,0x19c,
                      0x117 - (uint)(ushort)this_00->field_01AF,0xff);
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                    ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                      this_00->field_0044);
           g_currentExceptionFrame = local_84.previous;
           return 0;
@@ -372,7 +372,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               ShiftControls(this_00,1);
             }
             Library::DKW::DDX::FUN_006b3640
-                      (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                      ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                        this_00->field_0044);
             g_currentExceptionFrame = local_84.previous;
             return 0;
@@ -390,7 +390,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             this_00->field_0172 = 2;
           }
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                    ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                      this_00->field_0044);
           g_currentExceptionFrame = local_84.previous;
           return 0;
@@ -684,8 +684,8 @@ LAB_0051ef61:
                      this_00->field_01EC,0,0xff);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
-                );
+                ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                 this_00->field_0044);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_OPTPANELTY_8162:
@@ -798,8 +798,8 @@ switchD_0051ea9b_caseD_0:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x1c3,
              (message->arg0).words.high + 0x2d,'\x06',pbVar11);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
-                );
+                ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                 this_00->field_0044);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     default:

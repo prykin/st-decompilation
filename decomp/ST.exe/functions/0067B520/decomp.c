@@ -37,8 +37,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   STGameObjC *local_8;
 
   if (((this->field_0695 != (DArrayTy *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
-     && ((this->field_066E == 0 || ((uint)(this->field_0672 + this->field_066E) <= this->field_06FE)
-         ))) {
+     && ((this->field_066E == 0 || (this->field_0672 + this->field_066E <= this->field_06FE)))) {
     this->field_0672 = this->field_06FE;
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;

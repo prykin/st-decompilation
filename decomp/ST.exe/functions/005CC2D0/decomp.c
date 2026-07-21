@@ -36,7 +36,7 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
   if (local_8->field_2204 != (AnonPointee_SettMapMTy_2204 *)0x0) {
     FreeAndNull(&local_8->field_2204);
   }
-  FUN_006b3bb0(DAT_008075a8,this_00->field_2200);
+  FUN_006b3bb0((int *)PTR_008075a8,this_00->field_2200);
   pDVar4 = this_00->field_2237;
   this_00->field_2200 = -1;
   if (pDVar4 != (DArrayTy *)0x0) {

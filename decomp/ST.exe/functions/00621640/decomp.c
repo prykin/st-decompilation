@@ -20,7 +20,7 @@ uint __thiscall FUN_00621640(void *this,int param_1,undefined4 *param_2)
       uVar3 = 0;
       while ((((!bVar6 || (iVar5 = *(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c), iVar5 == 0)
                ) || (*(int *)(iVar5 + 9) != param_1)) ||
-             (uVar4 = uVar3, (uint)(PTR_00802a38->field_00E4 - *(int *)(iVar5 + 1)) < 0x2ef))) {
+             (uVar4 = uVar3, PTR_00802a38->field_00E4 - *(int *)(iVar5 + 1) < 0x2ef))) {
         uVar3 = uVar3 + 1;
         bVar6 = uVar3 < uVar2;
         if ((int)uVar2 <= (int)uVar3) {

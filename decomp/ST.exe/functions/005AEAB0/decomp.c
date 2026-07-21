@@ -22,17 +22,16 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   uint uVar6;
   uint uVar7;
   char cVar8;
-  int *piVar9;
   ccFntTy **ppcVar10;
   undefined4 *puVar11;
   ccFntTy *local_fe4 [6];
   undefined4 local_fcc;
   undefined4 local_fc8;
-  undefined4 local_fc4;
-  int local_f98;
+  uint *local_fc4;
+  undefined4 local_f98;
   undefined4 local_f94;
   undefined4 local_f90;
-  int local_f58;
+  undefined4 local_f58;
   undefined4 local_f54;
   undefined4 local_f50;
   undefined4 local_780;
@@ -114,16 +113,9 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
     *ppcVar10 = (ccFntTy *)0x0;
     ppcVar10 = ppcVar10 + 1;
   }
-  puVar11 = local_80;
-  for (iVar4 = 0x16; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
-  }
-  piVar9 = local_758;
-  for (iVar4 = 0x70; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *piVar9 = 0;
-    piVar9 = piVar9 + 1;
-  }
+  memset(local_80, 0, 0x58); /* compiler bulk-zero initialization */
+  iVar4 = 0;
+  memset(local_758, 0, 0x1c0); /* compiler bulk-zero initialization */
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
   iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
@@ -199,9 +191,9 @@ LAB_005aecc2:
     local_4c = 2;
     local_48 = 0x6327;
     local_50 = local_70;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_1C83,(int *)0x0,local_80,0);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1C87);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_1C83,0,local_80,0);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1C87);
     goto LAB_005aecc2;
   }
   local_570 = this_00->field_0008;
@@ -261,8 +253,8 @@ LAB_005aecc2:
   local_408 = local_570;
   local_288 = local_570;
   local_118 = local_570;
-  (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1A6C,(int *)0x0,local_598,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)this_00->field_000C->vtable->field_0008)(7,&this_00->field_1A6C,0,local_598,0);
   if (this_00->field_1A74 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1AB8,this_00->field_1A74,0xfffffffe,this_00->field_1A8C,
@@ -301,8 +293,8 @@ LAB_005aef44:
     local_fe4[2] = PTR_0081176c->field_0034;
     local_fe4[3] = (ccFntTy *)0xcb;
     local_fe4[4] = (ccFntTy *)0x23f;
-    local_fe4[5] = (ccFntTy *)PTR_0081176c->field_0682->field_0004;
-    local_fcc = PTR_0081176c->field_0682->field_0008;
+    local_fe4[5] = *(ccFntTy **)(PTR_0081176c->field_0682 + 2);
+    local_fcc = *(undefined4 *)(PTR_0081176c->field_0682 + 4);
     local_fc8 = 0x104;
     local_fc4 = PTR_0081176c->field_0686;
     pSVar1 = this_00->field_000C;
@@ -313,18 +305,13 @@ LAB_005aef44:
     local_f58 = pSVar1->field_0014;
     local_f54 = 0;
     local_f50 = 0xc0a2;
-    (*pSVar1->vtable->CreateObject)
-              ((SystemClassTy *)pSVar1,6,&PTR_0081176c->field_054C,(int *)0x0,local_fe4,0);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pSVar1->vtable->field_0008)(6,&PTR_0081176c->field_054C,0,local_fe4,0);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
   }
   pSVar1 = this_00->field_1A5B;
   if (pSVar1->field_02E6 != (MMsgTy *)0x0) {
-    puVar11 = &local_28;
-    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar11 = 0;
-      puVar11 = puVar11 + 1;
-    }
-    *(undefined2 *)puVar11 = 0;
+    memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
     local_1c = 1;
     local_1e = 1;
     local_24 = 1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __fastcall
 FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param_5,char param_6,
@@ -16,7 +18,6 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   int iVar9;
   uint uVar10;
   byte *pbVar11;
-  int *piVar12;
   bool bVar13;
   int local_4c [8];
   byte local_2c [16];
@@ -30,11 +31,8 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(undefined2 *)(param_1 + 0x7d);
-  piVar12 = local_4c;
-  for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *piVar12 = 0;
-    piVar12 = piVar12 + 1;
-  }
+  memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
+  iVar9 = 0;
   local_14 = 0;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_0044e260(CONCAT31((int3)((uint)local_4c >> 8),*(undefined1 *)(param_1 + 0x24)),

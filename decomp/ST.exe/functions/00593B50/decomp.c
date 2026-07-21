@@ -15,11 +15,9 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   uint uVar4;
   AnonPointee_ComboTy_00FC *pAVar5;
   undefined4 *puVar6;
-  AnonPointee_ComboTy_0104 *pAVar7;
+  ushort *puVar7;
   uint uVar8;
   int iVar9;
-  undefined4 *puVar10;
-  int *piVar11;
   int iVar12;
   int local_528 [4];
   int local_518;
@@ -120,17 +118,17 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     puVar6 = (undefined4 *)(this_00->field_00D4 + 0x28);
     uVar4 = FUN_006b4fe0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pAVar7 = (AnonPointee_ComboTy_0104 *)
+    puVar7 = (ushort *)
              FUN_006b50c0(this_00->field_00F4 + -10,this_00->field_00CC,
                           (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,puVar6,iVar3);
-    this_00->field_0104 = pAVar7;
-    uVar4 = pAVar7->field_0014;
+    this_00->field_0104 = puVar7;
+    uVar4 = *(uint *)(puVar7 + 10);
     if (uVar4 == 0) {
-      uVar4 = ((uint)(ushort)pAVar7->field_000E * pAVar7->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-              pAVar7->field_0008;
+      uVar4 = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(puVar7 + 4);
     }
     local_5 = this_00->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar7);
+    puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar7);
     for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar6 = puVar6 + 1;
@@ -144,67 +142,44 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
                  this_00->field_00F8 + -4,(byte)this_00->field_00DC,0xd);
     puVar6 = &this_00->field_0108;
     local_c = puVar6;
-    FUN_006b2330((uint)DAT_008075a8,puVar6,2,0x401712,this_00->field_00FC->field_0004 + 3,
+    FUN_006b2330((uint)PTR_008075a8,puVar6,2,0x401712,this_00->field_00FC->field_0004 + 3,
                  this_00->field_00FC->field_0008 + 3,(uint)&this_00->field_0x88);
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*puVar6,0xffffffff,this_00->field_00EC - 3,this_00->field_00F0);
+              ((int *)PTR_008075a8,*puVar6,0xffffffff,this_00->field_00EC - 3,this_00->field_00F0);
     puVar1 = &this_00->field_0x18;
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_0028 = 0x1a;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_0028 = 0x18;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_0028 = 0x13;
-    this_00->field_002C = this_00->field_0008;
+    this_00->field_002C = (ComboTy *)this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_0028 = 0x65;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     puVar6 = &this_00->field_0038;
-    this_00->field_0084 = this_00->field_002C + 1;
-    puVar10 = puVar6;
-    for (iVar3 = 0x13; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
-    }
+    this_00->field_0084 = &this_00->field_002C->field_0x1;
+    memset(puVar6, 0, 0x4c); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_004C = this_00->field_0008;
-    this_00->field_0040 = this_00->field_0084;
+    this_00->field_0040 = (ComboTy *)this_00->field_0084;
     this_00->field_0050 = 2;
     this_00->field_0054 = 0x10003;
     *puVar6 = 10;
     this_00->field_003C = 1;
-    puVar10 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x10;
-    this_00->field_002C = puVar6;
+    this_00->field_002C = (ComboTy *)puVar6;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     iVar3 = this_00->field_00F0;
-    piVar11 = local_528;
-    for (iVar9 = 0x135; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *piVar11 = 0;
-      piVar11 = piVar11 + 1;
-    }
+    memset(local_528, 0, 0x4d4); /* compiler bulk-zero initialization */
     local_528[2] = this_00->field_00EC + 5;
     local_528[3] = iVar3 + 5;
     local_518 = this_00->field_00F4 + -10;
@@ -224,13 +199,13 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     local_4e0 = local_500;
     local_4c0 = local_500;
     local_4a0 = local_500;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,(int *)0x0,local_528,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(7,&this_00->field_010C,0,local_528,0);
     this_00->field_0028 = 0x22;
-    this_00->field_002C = this_00->field_00C8;
+    this_00->field_002C = (ComboTy *)this_00->field_00C8;
     FUN_006e6080(this_00,2,this_00->field_010C,(undefined4 *)puVar1);
     this_00->field_0110 = 1;
-    FUN_006b35d0(DAT_008075a8,*local_c);
+    FUN_006b35d0((int *)PTR_008075a8,*local_c);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

@@ -12,7 +12,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   uint uVar2;
   STGroupBoatC *pSVar3;
   int iVar4;
-  AnonPointee_STGroupBoatC_021E *pAVar5;
+  ushort *puVar5;
   STGameObjC *pSVar6;
   int iVar7;
   undefined4 uVar8;
@@ -31,29 +31,29 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    if (local_8->field_020E == 0) {
+    if (local_8->field_020E == (uint *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x52e);
     }
-    if (pSVar3->field_021E != (AnonPointee_STGroupBoatC_021E *)0x0) {
+    if (pSVar3->field_021E != (ushort *)0x0) {
       FreeAndNull(&pSVar3->field_021E);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar9 = *(uint *)(pSVar3->field_020E + 0xc);
+    uVar9 = pSVar3->field_020E[3];
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
-    pAVar5 = (AnonPointee_STGroupBoatC_021E *)Library::DKW::LIB::FUN_006aac70(uVar9 * 8);
+    puVar5 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar9 * 8);
     uVar2 = local_c;
-    pSVar3->field_021E = pAVar5;
+    pSVar3->field_021E = puVar5;
     for (iVar4 = (uVar9 & 0x1fffffff) << 1; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pAVar5->field_0000 = 0;
-      pAVar5 = (AnonPointee_STGroupBoatC_021E *)&pAVar5->field_0004;
+      puVar5[0] = 0;
+      puVar5[1] = 0;
+      puVar5 = puVar5 + 2;
     }
     uVar9 = 0;
     for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined1 *)&pAVar5->field_0000 = 0;
-      pAVar5 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar5->field_0000 + 1);
+      *(undefined1 *)puVar5 = 0;
+      puVar5 = (ushort *)((int)puVar5 + 1);
     }
     pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
@@ -65,18 +65,20 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
                             (int)cStack_13);
         if (pSVar6 == (STGameObjC *)0x0) {
           uStack_12 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
-          pSVar3->field_021E[uVar9].field_0000 = 0xffffffff;
+          Library::DKW::TBL::FUN_006ae140(pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
+          puVar5 = pSVar3->field_021E;
+          (puVar5 + uVar9 * 4)[0] = 0xffff;
+          (puVar5 + uVar9 * 4)[1] = 0xffff;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            pSVar3->field_021E[uVar9 + 1].field_0000 = pSVar3->field_0216;
+            *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         else {
           iVar4 = pSVar6->field_0219 + pSVar6->field_0215;
           pSVar3->field_0216 = pSVar3->field_0216 + iVar4;
-          *(int *)&pSVar3->field_021E[uVar9].field_0004 = iVar4;
+          *(int *)(pSVar3->field_021E + uVar9 * 4 + 2) = iVar4;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            pSVar3->field_021E[uVar9 + 1].field_0000 = pSVar3->field_0216;
+            *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         uVar9 = uVar9 + 1;

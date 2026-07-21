@@ -14,16 +14,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
   STBoatC_field_06F7State SVar4;
   code *pcVar5;
   int iVar6;
-  STBoatCVTable *pSVar7;
-  undefined4 *puVar8;
+  AnonPointee_STBoatC_0000 *pAVar7;
   undefined4 uVar9;
 
   if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
-    puVar8 = &this->field_02CC;
-    for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
+    iVar6 = 0;
     this->field_02C4 = 0;
     if (this->field_07BE < 1) {
       return 0;
@@ -167,16 +163,18 @@ switchD_004761eb_caseD_3:
   if (this->field_05E8 != 1) goto LAB_00476633;
   SVar4 = this->field_06F7;
   if (SVar4 == CASE_5) {
-    pSVar7 = this->vtable;
+    pAVar7 = this->vtable;
     uVar9 = 0xe6;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004765df:
-    (*pSVar7->vfunc_90)(3,uVar9);
+    (*(code *)pAVar7->field_0090)(3,uVar9);
   }
   else if (SVar4 == CASE_11) {
-    (*this->vtable->vfunc_90)(3,0x14a);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this->vtable->field_0090)(3,0x14a);
   }
   else if (SVar4 == CASE_21) {
-    pSVar7 = this->vtable;
+    pAVar7 = this->vtable;
     uVar9 = 0x1cb;
     goto LAB_004765df;
   }
@@ -184,8 +182,9 @@ LAB_004765df:
                      (uint)(ushort)this->field_0032,(int)this->field_0041,(int)this->field_0043,
                      this->field_0045 + -10,this->field_06F3,(char *)0x0,0xffffffff);
   this->field_07BE = this->field_07BE + -1;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00476633:
-  iVar6 = (*this->vtable->vfunc_D8)();
+  iVar6 = (*(code *)this->vtable->field_00D8)();
   return -(uint)(iVar6 != 0);
 }
 

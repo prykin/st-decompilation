@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004d9b20(int param_1)
       thunk_FUN_004d8b70((char)*(uint *)(param_1 + 0x24));
     }
     *(undefined4 *)(param_1 + 0x4d0) = 0;
-    *(undefined4 *)(param_1 + 0x4d4) = PTR_00802a38->field_00E4;
+    *(uint *)(param_1 + 0x4d4) = PTR_00802a38->field_00E4;
   }
   return 0;
 }

@@ -19,7 +19,7 @@ void __fastcall FUN_0061e770(AnonShape_0061E770_099C0C21 *param_1)
           iVar1 = 0;
         }
         uVar2 = uVar2 + 1;
-        *(undefined4 *)(iVar1 + 0x2a) = PTR_00802a38->field_00E4;
+        *(uint *)(iVar1 + 0x2a) = PTR_00802a38->field_00E4;
         iVar1 = param_1->field_00A3;
         bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
       } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));

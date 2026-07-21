@@ -5,7 +5,8 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  int iVar4;
+  uint uVar4;
+  int iVar5;
 
   sVar1 = param_1->field_0047;
   sVar2 = param_1->field_0049;
@@ -17,8 +18,8 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
        (g_worldGrid.cells
         [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
          (int)sVar1].objects[0] == (STWorldObject *)0x0)))) &&
-     (iVar4 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)param_1),
-     iVar4 == 0)) {
+     (iVar5 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)param_1),
+     iVar5 == 0)) {
     param_1->field_0252 = param_1->field_0252 + '\x01';
     thunk_FUN_005f06e0((AnonShape_005F0620_60AA17CE *)param_1);
     sVar1 = param_1->field_0047;
@@ -37,16 +38,16 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
       param_1->field_02AB = 0;
       param_1->field_024F = 0;
     }
-    iVar4 = (int)(short)(sVar1 * 0xc9 + 100);
-    if ((param_1->field_02BE == iVar4) && (param_1->field_02C2 == (int)(short)(sVar2 * 0xc9 + 100)))
+    iVar5 = (int)(short)(sVar1 * 0xc9 + 100);
+    if ((param_1->field_02BE == iVar5) && (param_1->field_02C2 == (int)(short)(sVar2 * 0xc9 + 100)))
     {
-      iVar4 = PTR_00802a38->field_00E4;
+      uVar4 = PTR_00802a38->field_00E4;
       param_1->field_023A = 0;
-      param_1->field_028F = iVar4 + 10;
+      param_1->field_028F = uVar4 + 10;
       return;
     }
     param_1->field_028F = PTR_00802a38->field_00E4 + 10;
-    thunk_FUN_005ecd70(param_1,iVar4,(int)(short)(sVar2 * 0xc9 + 100),param_1->field_02C6,
+    thunk_FUN_005ecd70(param_1,iVar5,(int)(short)(sVar2 * 0xc9 + 100),param_1->field_02C6,
                        param_1->field_02BA,'\x01',0x1e);
     param_1->field_023A = 2;
   }

@@ -1,10 +1,10 @@
 program=ST.exe
-functions_scanned=5630
+functions_scanned=5632
 direct_calls_seen=37200
-globals_with_evidence=248
-proposals=125
-type_auto_apply=0
-name_auto_apply=0
+globals_with_evidence=251
+proposals=127
+type_auto_apply=10
+name_auto_apply=10
 conflicts=0
 note=Automatic types require repeated non-address-of evidence and replace only undefined/script-owned data.
 note_names=Automatic names are structural and retain the address suffix.

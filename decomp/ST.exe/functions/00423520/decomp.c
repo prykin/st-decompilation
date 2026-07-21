@@ -17,7 +17,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
   undefined2 extraout_var;
   uint uVar6;
   InternalExceptionFrame local_58;
-  int local_14;
+  uint local_14;
   STGroupC *local_10;
   uint local_c;
   int local_8;
@@ -30,9 +30,8 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
   pSVar2 = local_10;
   if (iVar3 == 0) {
     local_8 = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_14 = *(int *)(local_10->field_0029 + 0xc);
-    if (0 < local_14) {
+    local_14 = local_10->field_0029[3];
+    if (0 < (int)local_14) {
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_c);
         if ((short)local_c != -1) {
@@ -50,7 +49,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
           }
         }
         uVar6 = uVar6 + 1;
-      } while ((int)uVar6 < local_14);
+      } while ((int)uVar6 < (int)local_14);
     }
     g_currentExceptionFrame = local_58.previous;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

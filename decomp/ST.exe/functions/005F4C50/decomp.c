@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -7,7 +9,7 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
 
 {
   int iVar1;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   undefined4 *puVar3;
   uint uVar4;
   int iVar5;
@@ -49,9 +51,9 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
   if (*(DArrayTy **)((int)this + 0x169) != (DArrayTy *)0x0) {
     DArrayDestroy(*(DArrayTy **)((int)this + 0x169));
   }
-  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,iVar5 * param_5,0x23,10);
-  *(uint **)((int)this + 0x169) = puVar2;
-  if ((puVar2 != (uint *)0x0) && (param_4 = 0, 0 < *(int *)((int)this + 0x10d))) {
+  pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,iVar5 * param_5,0x23,10);
+  *(DArrayTy **)((int)this + 0x169) = pDVar2;
+  if ((pDVar2 != (DArrayTy *)0x0) && (param_4 = 0, 0 < *(int *)((int)this + 0x10d))) {
     do {
       param_1 = 0.0;
       param_3 = 0;
@@ -59,11 +61,8 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
       if (0 < *(int *)((int)this + 0x109)) {
         do {
           puVar3 = (undefined4 *)local_2c;
-          for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar3 = 0;
-            puVar3 = puVar3 + 1;
-          }
-          *(undefined2 *)puVar3 = 0;
+          memset(puVar3, 0, 0x22); /* compiler bulk-zero initialization */
+          puVar3 = (undefined4 *)((byte *)puVar3 + 0x20);
           *(undefined1 *)((int)puVar3 + 2) = 0;
           if (param_4 == 0) {
             fcos((float10)param_1);

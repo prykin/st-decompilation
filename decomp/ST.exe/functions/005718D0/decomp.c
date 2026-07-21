@@ -17,7 +17,7 @@ void __fastcall FUN_005718d0(int param_1)
     local_c = param_1;
     iVar1 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     if (iVar1 == 0) {
-      Library::DKW::DDX::FUN_006bd740(DAT_008075a8);
+      Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
       Library::DKW::DDX::FUN_006c4630(DAT_0080759c,*(int **)(DAT_0080759c + 0x44),local_1c);
       local_8 = Library::DKW::DDX::FUN_006c4880
                           (DAT_0080759c,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);

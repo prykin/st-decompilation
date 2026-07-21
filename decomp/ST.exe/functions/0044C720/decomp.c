@@ -74,7 +74,7 @@ LAB_0044cada:
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x3268);
       }
-      pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
+      pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
       bVar5 = false;
       local_18 = 0;
       local_20 = pDVar7;
@@ -127,7 +127,7 @@ LAB_0044ca10:
                      (iVar6 = (**(code **)(*piVar3 + 0xf4))(DAT_0080874d), iVar6 != 0)) {
                     local_10 = (undefined1)piVar3[9];
                     local_e = *(undefined2 *)((int)piVar3 + 0x32);
-                    Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar7,(undefined4 *)&local_10);
+                    Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,(undefined4 *)&local_10);
                     bVar5 = true;
                   }
                 }
@@ -167,7 +167,7 @@ LAB_0044c94c:
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x3291);
       }
-      pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+      pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
       bVar5 = false;
       local_18 = 0;
       local_20 = pDVar7;
@@ -177,7 +177,7 @@ LAB_0044c94c:
           uVar9 = *(uint *)(iVar6 + 0x20);
           if (((uVar9 == 0x14) || ((999 < uVar9 && (uVar9 < 0x3ea)))) &&
              (*(uint *)(iVar6 + 0x24) == (uint)DAT_0080874d)) {
-            Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar7,(undefined4 *)(iVar6 + 0x32));
+            Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,(undefined4 *)(iVar6 + 0x32));
             bVar5 = true;
           }
           local_18 = local_18 + 1;

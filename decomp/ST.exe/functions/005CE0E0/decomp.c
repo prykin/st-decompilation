@@ -98,9 +98,9 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar4 = SettMapTy::NoneSettMap(local_5c,unaff_EDI);
   if (((iVar4 != 0) && (local_1d == '\x03')) && (this_00->field_0065 == '\x01')) {
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&this_00->field_0x2200);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0558);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*(uint *)&this_00[1].field_0x4);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
     if (PTR_0081176c->field_0560 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
@@ -115,26 +115,22 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_30,-1,0);
   if (DAT_0080877e == '\0') {
     DVar9 = this_00->field_0061;
-    if (799 < DVar9 - *(int *)&this_00->field_0x220d) {
-      local_f2 = *(undefined4 *)&this_00->field_0x2221;
-      local_e2 = *(undefined4 *)&this_00->field_0x2211;
+    if (799 < DVar9 - *(int *)((int)&this_00[1].field_0010 + 1)) {
+      local_f2 = *(undefined4 *)&this_00[1].field_0x25;
+      local_e2 = *(undefined4 *)&this_00[1].field_0x15;
       local_102 = 4;
       local_e6 = DVar9;
       FUN_006b6500(g_int_00811764,0);
       FUN_00715360(g_int_00811764,1,'\x1a',local_104,0x26,1,0xffffffff);
       FUN_006b6500(g_int_00811764,DAT_0080733c);
-      *(int *)&this_00->field_0x2221 = *(int *)&this_00->field_0x2221 + 1;
+      *(int *)&this_00[1].field_0x25 = *(int *)&this_00[1].field_0x25 + 1;
       DVar9 = this_00->field_0061;
-      *(DWORD *)&this_00->field_0x220d = DVar9;
+      *(DWORD *)((int)&this_00[1].field_0010 + 1) = DVar9;
     }
-    if (((local_30 == 0) && (60000 < DVar9 - *(int *)&this_00->field_0x2209)) &&
-       (this_00->field_0x2225 == '\0')) {
-      this_00->field_0x2225 = 1;
-      piVar20 = local_dc;
-      for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *piVar20 = 0;
-        piVar20 = piVar20 + 1;
-      }
+    if (((local_30 == 0) && (60000 < DVar9 - *(int *)((int)&this_00[1].field_000C + 1))) &&
+       (this_00[1].field_0x29 == '\0')) {
+      this_00[1].field_0x29 = 1;
+      memset(local_dc, 0, 0x20); /* compiler bulk-zero initialization */
       local_dc[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(this_00->field_1A5B + 0x2e6) == 0) {
@@ -150,9 +146,9 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
       }
     }
   }
-  else if ((this_00->field_0x222e != '\0') &&
-          (29999 < this_00->field_0061 - *(int *)&this_00->field_0x2233)) {
-    this_00->field_0x222e = 0;
+  else if ((*(char *)((int)&this_00[1].field_0031 + 1) != '\0') &&
+          (29999 < this_00->field_0061 - *(int *)&this_00[1].field_0x37)) {
+    *(undefined1 *)((int)&this_00[1].field_0031 + 1) = 0;
     RunGame((SettMapMTy *)this_00);
   }
   local_1c = 0;
@@ -171,7 +167,7 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
           piVar20 = piVar20 + 1;
         }
         if (iVar4 == -0x4d) {
-          this_00->field_0x2225 = 1;
+          this_00[1].field_0x29 = 1;
           local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
           pMVar8 = this_00->field_1A5B;
           if (*(int *)(pMVar8 + 0x2e6) == 0) {
@@ -189,7 +185,7 @@ LAB_005ce9b2:
         else {
           if (iVar4 != 1) goto cf_continue_loop_005CF38C;
           DVar9 = this_00->field_0061;
-          *(DWORD *)&this_00->field_0x2209 = DVar9;
+          *(DWORD *)((int)&this_00[1].field_000C + 1) = DVar9;
           switch(local_28) {
           case 0x10:
             if (this_00->field_0065 == '\x01') {
@@ -225,22 +221,22 @@ LAB_005cee1a:
                 if (bVar2 == 1) {
                   if (this_00->field_0065 == '\x01') {
                     if ((local_c->field_0003 == DAT_00809958) ||
-                       (DVar9 - *(int *)&this_00->field_0x2215 < 3000)) {
+                       (DVar9 - *(int *)&this_00[1].field_0x19 < 3000)) {
                       if ((local_c->field_0016 != DAT_00808aab) &&
-                         (2999 < DVar9 - *(int *)&this_00->field_0x2219)) {
+                         (2999 < DVar9 - *(int *)&this_00[1].field_0x1d)) {
                         FUN_006b6500(g_int_00811764,1);
                         FUN_00715360(g_int_00811764,1,'\x1d',(char *)0x0,0,0,0xffffffff);
                         FUN_006b6500(g_int_00811764,DAT_0080733c);
                         DVar9 = this_00->field_0061;
-                        *(DWORD *)&this_00->field_0x2219 = DVar9;
+                        *(DWORD *)&this_00[1].field_0x1d = DVar9;
                       }
                       if (((this_00->field_1F84 != (DArrayTy *)0x0) &&
                           (*(int *)&pAVar17->field_0x1a != *(int *)&this_00->field_0x2121)) &&
-                         (1999 < DVar9 - *(int *)&this_00->field_0x221d)) {
+                         (1999 < DVar9 - *(int *)&this_00[1].field_0x21)) {
                         FUN_006b6500(g_int_00811764,1);
                         FUN_00715360(g_int_00811764,1,'#',(char *)0x0,0,0,0xffffffff);
                         FUN_006b6500(g_int_00811764,DAT_0080733c);
-                        *(DWORD *)&this_00->field_0x221d = this_00->field_0061;
+                        *(DWORD *)&this_00[1].field_0x21 = this_00->field_0061;
                       }
                     }
                     else {
@@ -248,37 +244,37 @@ LAB_005cee1a:
                       FUN_00715360(g_int_00811764,1,'!',(char *)0x0,0,0,0xffffffff);
                       FUN_00715360(g_int_00811764,1,'\x1f',(char *)0x0,0,0,0xffffffff);
                       FUN_006b6500(g_int_00811764,DAT_0080733c);
-                      *(DWORD *)&this_00->field_0x2215 = this_00->field_0061;
+                      *(DWORD *)&this_00[1].field_0x19 = this_00->field_0061;
                     }
                   }
                 }
                 else if ((1 < bVar2) && (bVar2 < 6)) {
                   if ((local_c->field_0016 != DAT_00808aab) &&
-                     (2999 < DVar9 - *(int *)&this_00->field_0x2219)) {
+                     (2999 < DVar9 - *(int *)&this_00[1].field_0x1d)) {
                     FUN_006b6500(g_int_00811764,1);
                     FUN_00715360(g_int_00811764,1,'\x1d',(char *)0x0,0,0,0xffffffff);
                     FUN_006b6500(g_int_00811764,DAT_0080733c);
                     DVar9 = this_00->field_0061;
-                    *(DWORD *)&this_00->field_0x2219 = DVar9;
+                    *(DWORD *)&this_00[1].field_0x1d = DVar9;
                   }
                   if (this_00->field_1F84 != (DArrayTy *)0x0) {
                     if ((*(int *)&pAVar17->field_0x1a != *(int *)&this_00->field_0x2121) &&
-                       (1999 < DVar9 - *(int *)&this_00->field_0x221d)) {
+                       (1999 < DVar9 - *(int *)&this_00[1].field_0x21)) {
                       FUN_006b6500(g_int_00811764,1);
                       FUN_00715360(g_int_00811764,1,'#',(char *)0x0,0,0,0xffffffff);
                       FUN_006b6500(g_int_00811764,DAT_0080733c);
                       DVar9 = this_00->field_0061;
-                      *(DWORD *)&this_00->field_0x221d = DVar9;
+                      *(DWORD *)&this_00[1].field_0x21 = DVar9;
                     }
                     if ((this_00->field_1F84 != (DArrayTy *)0x0) &&
-                       (1999 < DVar9 - *(int *)&this_00->field_0x221d)) {
+                       (1999 < DVar9 - *(int *)&this_00[1].field_0x21)) {
                       AddPlList((SettMapMTy *)this_00,(uint)(this_00->field_1E26 == 0x10));
                     }
                   }
                 }
               }
               iVar4 = this_00->field_0061 - pAVar17->field_001E;
-              *(int *)&this_00->field_0x2211 = iVar4;
+              *(int *)&this_00[1].field_0x15 = iVar4;
               UpdatePing((SettMapMTy *)this_00,DAT_0080877f,iVar4);
               if ((((((*pcVar1 == '\x02') && (this_00->field_0065 == '\x01')) &&
                     (pAVar17->field_0003 == DAT_008087be)) &&
@@ -349,26 +345,28 @@ LAB_005cee1a:
               thunk_FUN_00571a30((AnonShape_00571A30_8BA8841B *)&DAT_008087b6,
                                  (AnonShape_00571A30_67EE4B56 *)local_c,'\x01');
               DAT_0080734b = DAT_00808aa8;
-              local_34 = (int *)PTR_0080c502->field_000C;
+              local_34 = (int *)PTR_0080c502->count;
               local_10 = (int *)0x0;
               if (0 < (int)local_34) {
                 bVar23 = local_34 != (int *)0x0;
                 do {
                   if (bVar23) {
-                    iVar4 = PTR_0080c502->field_0008 * (int)local_10 + PTR_0080c502->field_001C;
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_0080c502, (int)local_10) (runtime stride) */
+                    pvVar5 = (void *)(PTR_0080c502->elementSize * (int)local_10 +
+                                     (int)PTR_0080c502->data);
                   }
                   else {
-                    iVar4 = 0;
+                    pvVar5 = (void *)0x0;
                   }
-                  if ((iVar4 != 0) && (*(uint *)(iVar4 + 0x90) == DAT_0080995c)) {
+                  if ((pvVar5 != (void *)0x0) && (*(uint *)((int)pvVar5 + 0x90) == DAT_0080995c)) {
                     pbVar19 = (byte *)&DAT_00809960;
-                    pbVar16 = (byte *)(iVar4 + 0x4c);
+                    pbVar16 = (byte *)((int)pvVar5 + 0x4c);
                     do {
                       bVar2 = *pbVar16;
                       bVar23 = bVar2 < *pbVar19;
                       if (bVar2 != *pbVar19) {
 LAB_005cef58:
-                        iVar13 = (1 - (uint)bVar23) - (uint)(bVar23 != 0);
+                        iVar4 = (1 - (uint)bVar23) - (uint)(bVar23 != 0);
                         goto LAB_005cef5d;
                       }
                       if (bVar2 == 0) break;
@@ -378,12 +376,12 @@ LAB_005cef58:
                       pbVar16 = pbVar16 + 2;
                       pbVar19 = pbVar19 + 2;
                     } while (bVar2 != 0);
-                    iVar13 = 0;
+                    iVar4 = 0;
 LAB_005cef5d:
-                    if (iVar13 == 0) {
+                    if (iVar4 == 0) {
                       this_00->field_1C5F = (uint)local_10;
                       StartSystemTy::SetObjectives
-                                (PTR_0081176c,this_00->field_1F43,(char *)(iVar4 + 0x70),
+                                (PTR_0081176c,this_00->field_1F43,(char *)((int)pvVar5 + 0x70),
                                  this_00->field_1C63);
                       break;
                     }
@@ -462,7 +460,7 @@ LAB_005cef5d:
                 piVar20 = piVar20 + 1;
                 iVar4 = iVar4 + -1;
               } while (iVar4 != 0);
-              FUN_006b35d0(DAT_008075a8,this_00->field_1F80);
+              FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
             }
             break;
           case 0x22:
@@ -532,13 +530,13 @@ LAB_005cef5d:
                     }
                     if (pvVar5 != (void *)0x0) {
                       if ((local_11 == '\x05') || (this_00->field_1E26 == 0xf)) {
-                        puVar6 = CreateStrategList(this_00->field_1F3F,
+                        puVar6 = CreateStrategList((int)this_00->field_1F3F,
                                                    (uint)*(byte *)((int)pvVar5 + 2),0xffffffff);
                       }
                       else if ((local_11 == '\f') || (this_00->field_1E26 == 0x10)) {
                         puVar6 = CreateSaveStrategList
-                                           (this_00->field_1F3F,(uint)*(byte *)((int)pvVar5 + 2),
-                                            0xffffffff);
+                                           ((int)this_00->field_1F3F,
+                                            (uint)*(byte *)((int)pvVar5 + 2),0xffffffff);
                       }
                       else {
                         puVar6 = CreateOpponentList((cMf32 *)this_00->field_1F43,
@@ -564,8 +562,8 @@ LAB_005cef5d:
           case 0x31:
           case 0x33:
           case 0x35:
-            if (this_00->field_0x2225 == '\0') {
-              this_00->field_0x2225 = 1;
+            if (this_00[1].field_0x29 == '\0') {
+              this_00[1].field_0x29 = 1;
               local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)(this_00->field_1A5B + 0x2e6) == 0) goto LAB_005cee1a;
@@ -583,12 +581,9 @@ LAB_005cef5d:
         goto cf_continue_loop_005CF38C;
       }
       if (iVar4 == -0x4d) {
-        this_00->field_0x2225 = 1;
-        piVar20 = local_bc;
-        for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *piVar20 = 0;
-          piVar20 = piVar20 + 1;
-        }
+        this_00[1].field_0x29 = 1;
+        memset(local_bc, 0, 0x20); /* compiler bulk-zero initialization */
+        iVar4 = 0;
         pMVar8 = this_00->field_1A5B;
         if (*(int *)(pMVar8 + 0x2e6) != 0) {
           local_bc[2] = this_00->field_0008;
@@ -621,7 +616,7 @@ LAB_005cf387:
         if (local_c->field_0002 == '\x04') {
           local_90 = (undefined2)((uint)DAT_00807dd5 >> 0x10);
           local_84 = DAT_0080733b;
-          local_8e = (this_00->field_0x222e != '\0') + '\x01';
+          local_8e = (*(char *)((int)&this_00[1].field_0031 + 1) != '\0') + '\x01';
           local_83 = DAT_00807361;
           local_82 = DAT_00808754;
           local_7e = local_c->field_0012;
@@ -738,15 +733,16 @@ LAB_005ce59f:
         break;
       case 0x25:
         if (local_c == (AnonShape_005CE0E0_C50CCD71 *)0x0) goto cf_continue_loop_005CF38C;
-        if (((3 < local_2c) && (DAT_00807361 != '\0')) && (this_00->field_0x2243 != '\0')) {
+        if (((3 < local_2c) && (DAT_00807361 != '\0')) &&
+           (*(char *)((int)&this_00[1].field_0045 + 2) != '\0')) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B)->field_069A == (LPVOID)0x0) &&
              (thunk_FUN_005de670((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B),
              *(int *)(this_00->field_1A5B + 0x69a) == 0)) {
-            this_00->field_0x2243 = 0;
+            *(undefined1 *)((int)&this_00[1].field_0045 + 2) = 0;
           }
           else {
-            iVar4 = *(int *)&this_00->field_0x2237;
+            iVar4 = *(int *)&this_00[1].field_0x3b;
             bVar23 = false;
             uVar14 = 0;
             local_10 = (int *)0x0;
@@ -779,7 +775,7 @@ LAB_005ce8fe:
                    Library::DKW::LIB::FUN_006aac70(*(int *)(this_00->field_1A5B + 0x6a6));
               PrepareAFT((SettMapMTy *)this_00,&local_9c,(uint *)local_c);
               Library::DKW::TBL::FUN_006ae1c0
-                        (*(uint **)&this_00->field_0x2237,(undefined4 *)&local_9c);
+                        (*(uint **)&this_00[1].field_0x3b,(undefined4 *)&local_9c);
             }
           }
         }
@@ -804,8 +800,9 @@ LAB_005ce8fe:
         }
         break;
       case 0x2e:
-        if ((this_00->field_0x222e != '\0') &&
-           (pDVar10 = *(DArrayTy **)&this_00->field_0x222f, pDVar10 != (DArrayTy *)0x0)) {
+        if ((*(char *)((int)&this_00[1].field_0031 + 1) != '\0') &&
+           (pDVar10 = *(DArrayTy **)((int)&this_00[1].field_0031 + 2), pDVar10 != (DArrayTy *)0x0))
+        {
           uVar15 = pDVar10->count;
           uVar14 = 0;
           local_1c = 0;
@@ -829,9 +826,8 @@ LAB_005ce8fe:
               local_1c = uVar14;
             } while ((int)uVar14 < (int)uVar15);
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(int *)(*(int *)&this_00->field_0x222f + 0xc) == 0) {
-            this_00->field_0x222e = 0;
+          if (*(int *)(*(int *)((int)&this_00[1].field_0031 + 2) + 0xc) == 0) {
+            *(undefined1 *)((int)&this_00[1].field_0031 + 1) = 0;
             RunGame((SettMapMTy *)this_00);
             if (DAT_008067a0 != '\0') {
               CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,6,&this_00->field_0x1a5f)
@@ -853,22 +849,21 @@ cf_continue_loop_005CF38C:
       SendPlList((SettMapMTy *)this_00,local_24);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(uint *)&this_00->field_0x223b < *(uint *)(*(int *)&this_00->field_0x2237 + 0xc)) &&
+    if ((*(uint *)&this_00[1].field_0x3f < *(uint *)(*(int *)&this_00[1].field_0x3b + 0xc)) &&
        (*(int *)(this_00->field_1A5B + 0x69a) != 0)) {
-      if (*(int *)&this_00->field_0x223f == 0) {
-        *(undefined4 *)&this_00->field_0x223f = *(undefined4 *)(this_00->field_1A5B + 0x6aa);
+      if (*(int *)&this_00[1].field_0x43 == 0) {
+        *(undefined4 *)&this_00[1].field_0x43 = *(undefined4 *)(this_00->field_1A5B + 0x6aa);
       }
       else {
-        *(int *)&this_00->field_0x223f = *(int *)&this_00->field_0x223f + -1;
+        *(int *)&this_00[1].field_0x43 = *(int *)&this_00[1].field_0x43 + -1;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar4 = (**(code **)(*(int *)*g_int_00811764 + 200))
                         ((int *)*g_int_00811764,DAT_0080877f,0,1,0,&local_64);
-      if (((iVar4 == 0) && (local_64 < 0x400)) && (*(int *)&this_00->field_0x223f == 0)) {
-        iVar4 = *(int *)&this_00->field_0x2237;
-        if (*(uint *)&this_00->field_0x223b < *(uint *)(iVar4 + 0xc)) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_10 = (int *)(*(int *)(iVar4 + 8) * *(uint *)&this_00->field_0x223b +
+      if (((iVar4 == 0) && (local_64 < 0x400)) && (*(int *)&this_00[1].field_0x43 == 0)) {
+        iVar4 = *(int *)&this_00[1].field_0x3b;
+        if (*(uint *)&this_00[1].field_0x3f < *(uint *)(iVar4 + 0xc)) {
+          local_10 = (int *)(*(int *)(iVar4 + 8) * *(uint *)&this_00[1].field_0x3f +
                             *(int *)(iVar4 + 0x1c));
         }
         else {
@@ -924,15 +919,14 @@ LAB_005cf496:
             piVar20[1] = iVar4;
             if (iVar4 == 0) {
               FreeAndNull(local_60);
-              FUN_006b0c70(*(DArrayTy **)&this_00->field_0x2237,*(uint *)&this_00->field_0x223b);
+              FUN_006b0c70(*(DArrayTy **)&this_00[1].field_0x3b,*(uint *)&this_00[1].field_0x3f);
             }
           }
 LAB_005cf5bf:
-          uVar15 = *(int *)&this_00->field_0x223b + 1;
-          *(uint *)&this_00->field_0x223b = uVar15;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(uint *)(*(int *)&this_00->field_0x2237 + 0xc) <= uVar15) {
-            *(undefined4 *)&this_00->field_0x223b = 0;
+          uVar15 = *(int *)&this_00[1].field_0x3f + 1;
+          *(uint *)&this_00[1].field_0x3f = uVar15;
+          if (*(uint *)(*(int *)&this_00[1].field_0x3b + 0xc) <= uVar15) {
+            *(undefined4 *)&this_00[1].field_0x3f = 0;
           }
         }
       }

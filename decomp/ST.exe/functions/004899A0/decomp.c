@@ -139,7 +139,8 @@ LAB_0048a37f:
                 if ((iVar6 == 0) ||
                    (uVar4 = (int)(short)local_c - (int)this->field_0045, uVar11 = (int)uVar4 >> 0x1f
                    , (int)(((uVar4 ^ uVar11) - uVar11) * 10) / iVar6 < 4)) {
-                  local_24 = (*this->vtable->vfunc_10)
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  local_24 = (*(code *)this->vtable->field_0010)
                                        (this->field_0041,this->field_0043,this->field_0045,local_14,
                                         local_10,local_c);
                   local_2c = 0;
@@ -266,7 +267,8 @@ LAB_00489eb0:
               if ((iVar10 == 0) ||
                  (uVar4 = (int)(short)local_c - (int)this->field_0045, uVar11 = (int)uVar4 >> 0x1f,
                  (int)(((uVar4 ^ uVar11) - uVar11) * 10) / iVar10 < 4)) {
-                local_24 = (*this->vtable->vfunc_10)
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                local_24 = (*(code *)this->vtable->field_0010)
                                      (this->field_0041,this->field_0043,this->field_0045,local_14,
                                       local_10,local_c);
                 local_2c = 0;

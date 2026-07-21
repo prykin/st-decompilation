@@ -46,7 +46,8 @@ LAB_004a9cfb:
   local_18 = 0xf;
   local_14 = 0x109;
   local_10 = 0;
-  (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_24);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)PTR_00802a38->vtable->field_0018)(local_24);
   return;
 }
 

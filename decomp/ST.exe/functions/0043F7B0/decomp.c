@@ -48,7 +48,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
   if (g_worldGrid.sizeZ + -1 < param_5 + param_8) {
     iVar6 = g_worldGrid.sizeZ + -1;
   }
-  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0xf,4,10);
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0xf,4,10);
   iVar8 = g_worldGrid.sizeX * param_4 + local_8 + (iVar9 + -1) * (int)g_worldGrid.planeStride;
   if (iVar9 <= iVar6) {
     local_14 = (iVar6 - iVar9) + 1;
@@ -107,7 +107,7 @@ LAB_0043f9bd:
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 if (iVar7 == 1) {
-                  Library::DKW::TBL::FUN_006ae1c0((uint *)array,&param_6);
+                  Library::DKW::TBL::FUN_006ae1c0(&array->flags,&param_6);
                 }
               }
 LAB_0043f9fa:
@@ -156,7 +156,7 @@ LAB_0043fad9:
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 if (iVar7 == 1) {
-                  Library::DKW::TBL::FUN_006ae1c0((uint *)array,&param_6);
+                  Library::DKW::TBL::FUN_006ae1c0(&array->flags,&param_6);
                 }
               }
 LAB_0043fb16:

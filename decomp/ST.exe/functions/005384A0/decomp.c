@@ -38,8 +38,8 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_SHARED_0005) {
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,local_8->field_0060,0xffffffff,local_8->field_003C,local_8->field_0044
-                );
+                ((int *)PTR_008075a8,local_8->field_0060,0xffffffff,local_8->field_003C,
+                 local_8->field_0044);
     }
     g_currentExceptionFrame = local_4c.previous;
     iVar4 = FUN_006e5fd0(this_00,message);

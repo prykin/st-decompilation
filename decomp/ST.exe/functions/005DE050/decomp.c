@@ -23,8 +23,8 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int local_c;
   int local_8;
 
-  if ((((this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) && (this->field_0548 != 0)) &&
-      (-1 < this->field_0540)) &&
+  if ((((this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) &&
+       (this->field_0548 != (uint *)0x0)) && (-1 < this->field_0540)) &&
      ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 &&
       (local_c = param_1->field_001C, local_c != 0)))) {
     pcVar1 = this->field_0034;
@@ -45,9 +45,8 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {
         do {
-          if ((int)uVar8 < *(int *)(pSVar4->field_0548 + 8)) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            puVar7 = *(uint **)(*(int *)(pSVar4->field_0548 + 0x14) + uVar8 * 4);
+          if ((int)uVar8 < (int)pSVar4->field_0548[2]) {
+            puVar7 = *(uint **)(pSVar4->field_0548[5] + uVar8 * 4);
           }
           else {
             puVar7 = (uint *)0x0;
@@ -62,7 +61,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while ((int)uVar8 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
       }
-      FUN_006b35d0(DAT_008075a8,pSVar4->field_0540);
+      FUN_006b35d0((int *)PTR_008075a8,pSVar4->field_0540);
       g_currentExceptionFrame = local_54.previous;
       return;
     }

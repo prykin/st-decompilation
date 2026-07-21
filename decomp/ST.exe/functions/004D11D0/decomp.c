@@ -165,14 +165,14 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
     *(undefined4 *)&g_playerRuntime[this_00->field_0024].field_0x9ca = 1;
   }
   if (PTR_007fa170 == (DArrayTy *)0x0) {
-    PTR_007fa170 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+    PTR_007fa170 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
   }
   local_2c = this_00;
   Library::DKW::TBL::FUN_006ae1c0(&PTR_007fa170->flags,&local_2c);
   iVar3 = this_00->field_0259;
   if (iVar3 == 100) {
     if (g_playerRuntime[this_00->field_0024].field2166_0x9d6 == (DArrayTy *)0x0) {
-      pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
       g_playerRuntime[this_00->field_0024].field2166_0x9d6 = pDVar5;
     }
     ppTVar18 = &local_8;
@@ -184,7 +184,7 @@ cf_common_join_004D1763:
   else {
     if (iVar3 == 0x4d) {
       if (g_playerRuntime[this_00->field_0024].field2169_0x9e2 == (DArrayTy *)0x0) {
-        pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+        pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
         g_playerRuntime[this_00->field_0024].field2169_0x9e2 = pDVar5;
       }
       ppTVar18 = &local_40;
@@ -194,7 +194,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x43) {
       if (g_playerRuntime[this_00->field_0024].field2172_0x9ee == (DArrayTy *)0x0) {
-        pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+        pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
         g_playerRuntime[this_00->field_0024].field2172_0x9ee = pDVar5;
       }
       ppTVar18 = &local_44;
@@ -204,7 +204,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x73) {
       if (g_playerRuntime[this_00->field_0024].field2173_0x9f2 == (DArrayTy *)0x0) {
-        pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+        pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
         g_playerRuntime[this_00->field_0024].field2173_0x9f2 = pDVar5;
       }
       ppTVar18 = &local_30;
@@ -214,7 +214,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x3a) {
       if (PTR_007fa16c == (DArrayTy *)0x0) {
-        PTR_007fa16c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+        PTR_007fa16c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
       }
       ppTVar18 = &local_48;
       local_48 = this_00;
@@ -223,7 +223,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x65) {
       if (g_playerRuntime[this_00->field_0024].field2170_0x9e6 == (DArrayTy *)0x0) {
-        pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+        pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
         g_playerRuntime[this_00->field_0024].field2170_0x9e6 = pDVar5;
       }
       ppTVar18 = &local_34;
@@ -233,7 +233,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x3b) {
       if (g_playerRuntime[this_00->field_0024].field2171_0x9ea == (DArrayTy *)0x0) {
-        pDVar5 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+        pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
         g_playerRuntime[this_00->field_0024].field2171_0x9ea = pDVar5;
       }
       ppTVar18 = &local_38;
@@ -297,11 +297,7 @@ cf_common_join_004D1763:
         uVar4 = thunk_FUN_004ad650((int)this_00->field_035C);
         FUN_006e9210((void *)this_00->field_0211,uVar4);
       }
-      puVar14 = local_28;
-      for (iVar3 = 0x11; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar14 = 0;
-        puVar14 = puVar14 + 1;
-      }
+      memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
       local_28[0xe] = DAT_00806764;
       local_24 = 0;
       local_10 = 0;
@@ -313,11 +309,7 @@ cf_common_join_004D1763:
       iVar3 = thunk_FUN_004ad650((int)&this_00->field_01D5);
       uVar8 = thunk_FUN_004ad650((int)this_00->field_035C);
       FUN_006ea340((void *)this_00->field_0211,uVar8,iVar3,uVar4);
-      puVar14 = local_28;
-      for (iVar3 = 0x11; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar14 = 0;
-        puVar14 = puVar14 + 1;
-      }
+      memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
       local_28[0xe] = DAT_0080678c;
       local_24 = 0;
       local_10 = 0;
@@ -372,9 +364,9 @@ cf_common_join_004D1763:
     goto LAB_004d22a1;
   }
   this_00->field_02AC = PTR_00802a38->field_00E4;
-  uVar10 = PTR_00802a38->field_00E4;
+  uVar4 = PTR_00802a38->field_00E4;
   this_00->field_02B4 = 1;
-  this_00->field_02B0 = uVar10;
+  this_00->field_02B0 = uVar4;
   this_00->field_02A4 = 0;
   pAVar6 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (pAVar6 == (AnonShape_004AB810_8E5693D5 *)0x0) {

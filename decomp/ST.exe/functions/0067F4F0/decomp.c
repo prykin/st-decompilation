@@ -43,10 +43,11 @@ LAB_0067f544:
         if ((int)uVar6 < 0) {
           return 0;
         }
-        if (PTR_00848a28->field_000C <= uVar6) {
+        if (PTR_00848a28->count <= uVar6) {
           return 0;
         }
-        return PTR_00848a28->field_0008 * uVar6 + PTR_00848a28->field_001C;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a28, uVar6) (runtime stride) */
+        return (int)(PTR_00848a28->elementSize * uVar6 + (int)PTR_00848a28->data);
       }
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < iVar2);

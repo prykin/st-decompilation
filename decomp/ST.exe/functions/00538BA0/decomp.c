@@ -73,7 +73,8 @@ LAB_00538bd9:
       puVar6 = (uint *)LoadResourceString(param_5,HINSTANCE_00807618);
       ccFntTy::WrStr(param_4,puVar6,iVar4,iVar7,uVar5);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,pPVar2->field_0044);
+                ((int *)PTR_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
+                 pPVar2->field_0044);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

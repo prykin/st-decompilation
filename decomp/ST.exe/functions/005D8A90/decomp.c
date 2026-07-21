@@ -32,7 +32,7 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    FUN_006b3af0(DAT_008075a8,pSVar2->field_1CB4);
+    FUN_006b3af0((int *)PTR_008075a8,pSVar2->field_1CB4);
     if (pSVar2->field_1B05 != 0xffffffff) {
       FUN_006b3af0((int *)pSVar2->field_1B49,pSVar2->field_1B05);
     }

@@ -46,9 +46,9 @@ CursorClassTy::SetImages
             ((uint *)pCVar2->field_00AD,(int)*(short *)(pCVar2->field_0069 + 0x23),
              (BITMAPINFO *)(pCVar2->field_0069 + 0x2d),0x8000000,0,param_4,param_5);
   pCVar2->field_0058 = param_3;
-  if (pCVar2->field_001C != 0xffffffff) {
+  if (pCVar2->field_001C != (cLoadingTy *)0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)pCVar2->field_0060,pCVar2->field_001C,0xfffffffe,pCVar2->field_0034,
+              ((uint *)pCVar2->field_0060,(uint)pCVar2->field_001C,0xfffffffe,pCVar2->field_0034,
                pCVar2->field_0038);
   }
   if (param_6 < 0) {

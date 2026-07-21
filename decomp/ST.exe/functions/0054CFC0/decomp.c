@@ -8,7 +8,7 @@
 undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   code *pcVar2;
   STPlaySystemC *pSVar3;
   int iVar4;
@@ -17,7 +17,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   undefined4 uVar7;
   InternalExceptionFrame local_54;
   uint local_10;
-  undefined4 *local_c;
+  uint *local_c;
   STPlaySystemC *local_8;
 
   this->field_0030 = 0;

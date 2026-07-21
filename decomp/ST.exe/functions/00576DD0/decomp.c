@@ -16,7 +16,7 @@ GameSystemC * __thiscall GameSystemC::GameSystemC(GameSystemC *this,AppClassTy *
   SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,1);
   this->vtable = &GameSystemCVTable;
   this->field_0430 = 1;
-  this->field_0431 = 0;
+  this->field_0431 = (void *)0x0;
   return this;
 }
 

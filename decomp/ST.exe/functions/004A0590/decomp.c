@@ -21,10 +21,9 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   uint uVar7;
   int iVar8;
   uint *puVar9;
-  undefined4 *puVar10;
   uint uVar11;
   InternalExceptionFrame local_80;
-  undefined4 local_3c;
+  uint local_3c;
   undefined2 local_38;
   undefined2 local_36;
   undefined2 local_34;
@@ -55,11 +54,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   if (iVar5 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
       puVar1 = &local_18->field_0x300;
-      puVar10 = &local_18->field_0089;
-      for (iVar5 = 0x15; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar10 = 0;
-        puVar10 = puVar10 + 1;
-      }
+      memset(&local_18->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       local_18->field_0065 = 0;
       puVar2 = &local_18->field_0x302;
       *(undefined2 *)&local_18->field_0x2fa = *(undefined2 *)&local_18->field_0x1c1;
@@ -119,7 +114,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       DArrayDestroy(local_10);
       DArrayDestroy(array);
     }
-    if ((uint)PTR_00802a38->field_00E4 % 0x19 == 3) {
+    if (PTR_00802a38->field_00E4 % 0x19 == 3) {
       uVar11 = 0;
       if (0 < (int)local_8) {
         do {

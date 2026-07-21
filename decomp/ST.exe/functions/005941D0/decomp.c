@@ -13,7 +13,6 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   ComboTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   ComboTy *local_8;
 
@@ -28,38 +27,25 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     }
     puVar1 = &this_00->field_0x18;
     this_00->field_010C = 0;
-    puVar5 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_0028 = 0x11;
-    this_00->field_002C = &this_00->field_0038;
+    this_00->field_002C = (ComboTy *)&this_00->field_0038;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar5 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
-    this_00->field_002C = this_00->field_0008;
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
+    this_00->field_002C = (ComboTy *)this_00->field_0008;
     this_00->field_0028 = 0x14;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar5 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
     this_00->field_0028 = 0x19;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar5 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x1b;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     if (this_00->field_0108 != 0xffffffff) {
-      FUN_006b3bb0(DAT_008075a8,this_00->field_0108);
+      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0108);
     }
     this_00->field_0108 = 0xffffffff;
     if (this_00->field_00FC != (AnonPointee_ComboTy_00FC *)0x0) {
@@ -68,7 +54,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     if (this_00->field_0100 != 0) {
       FreeAndNull((void **)&this_00->field_0100);
     }
-    if (this_00->field_0104 != (AnonPointee_ComboTy_0104 *)0x0) {
+    if (this_00->field_0104 != (ushort *)0x0) {
       FreeAndNull(&this_00->field_0104);
     }
     if (this_00->field_0098 != 0) {

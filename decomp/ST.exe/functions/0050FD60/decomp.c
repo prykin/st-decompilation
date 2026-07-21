@@ -40,7 +40,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     iVar3 = 0xc6;
     uVar8 = 2;
     uVar7 = 0x31;
-    DAT_0080168c = local_8;
+    g_frmPanel_0080168C = local_8;
     pCVar4 = thunk_FUN_00571240("BKG_FORMATIONW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar4,uVar7,uVar8,iVar3,iVar9,UVar10,uVar12,uVar14);

@@ -12,7 +12,6 @@ void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
   MAdvTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -24,11 +23,7 @@ void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
   if (iVar2 == 0) {
     SetAccelerator(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
     SetAccelerator(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
-    puVar4 = (undefined4 *)&this_00->field_0x18;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    }
+    memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x14;
     this_00->field_002C = this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)&this_00->field_0x18);

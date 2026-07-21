@@ -35,7 +35,7 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47);
-  if (this_00->field_02E6 != 0) {
+  if (this_00->field_02E6 != (ushort *)0x0) {
     thunk_FUN_004f1890(this_00,1);
   }
   if (this_00->field_0C51 == '\0') {
@@ -74,17 +74,20 @@ LAB_004fef26:
       PaintEnergy(this_00,0);
     }
   }
-  if (-1 < (int)this_00->field_0168) {
+  if (-1 < this_00->field_0168) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0168,0xffffffff,this_00->field_005C,this_00->field_00B4);
+              ((int *)PTR_008075a8,this_00->field_0168,0xffffffff,this_00->field_005C,
+               this_00->field_00B4);
   }
-  if (-1 < (int)this_00->field_0164) {
+  if (-1 < this_00->field_0164) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,this_00->field_00B0);
+              ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+               this_00->field_00B0);
   }
-  if ((DAT_0080874e != '\x03') && (-1 < (int)this_00->field_0160)) {
+  if ((DAT_0080874e != '\x03') && (-1 < this_00->field_0160)) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0160,0xffffffff,this_00->field_0054,this_00->field_00AC);
+              ((int *)PTR_008075a8,this_00->field_0160,0xffffffff,this_00->field_0054,
+               this_00->field_00AC);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

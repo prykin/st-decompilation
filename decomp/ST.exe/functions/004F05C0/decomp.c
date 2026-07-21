@@ -11,7 +11,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   code *pcVar1;
   BldObjPanelTy *this_00;
   byte bVar2;
-  uint *puVar3;
+  DArrayTy *pDVar3;
   LPSTR pCVar4;
   ushort *puVar5;
   int iVar6;
@@ -52,11 +52,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  piVar12 = local_358;
-  for (iVar7 = 0xa8; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *piVar12 = 0;
-    piVar12 = piVar12 + 1;
-  }
+  memset(local_358, 0, 0x2a0); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
@@ -75,8 +71,8 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   g_prodPanel_00801684 = (ProdPanelTy *)local_1c;
   puVar10 = &local_1c->field_027E;
   do {
-    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
-    *puVar10 = puVar3;
+    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x30,5);
+    *puVar10 = pDVar3;
     puVar10 = puVar10 + 1;
     iVar7 = iVar7 + -1;
   } while (iVar7 != 0);

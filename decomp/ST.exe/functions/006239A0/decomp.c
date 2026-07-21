@@ -42,7 +42,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
     }
     return local_8;
   case CASE_2:
-    if ((uint)PTR_00802a38->field_00E4 < (uint)param_1->field_030F) {
+    if (PTR_00802a38->field_00E4 < param_1->field_030F) {
       return 0;
     }
     if (param_1->field_0353 == '\0') {
@@ -55,7 +55,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
       if (iVar2 == 0) {
         thunk_FUN_00622670(param_1);
       }
-      if (param_1->field_0363 == 0) {
+      if (param_1->field_0363 == (void *)0x0) {
         this_00 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
         param_1->field_0363 = this_00;
         if (this_00 != (AnonReceiver_00636260 *)0x0) {
@@ -69,7 +69,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
     param_1->field_030F = PTR_00802a38->field_00E4 + 7;
     return local_8;
   case CASE_3:
-    if ((uint)PTR_00802a38->field_00E4 < (uint)param_1->field_030F) goto switchD_006239c1_caseD_4;
+    if (PTR_00802a38->field_00E4 < param_1->field_030F) goto switchD_006239c1_caseD_4;
     thunk_FUN_00625730(param_1);
     thunk_FUN_00627790((AnonShape_00627790_BD208A1C *)param_1);
     param_1->field_02AE = CASE_4;
@@ -87,14 +87,14 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
     if (iVar2 == 0) {
       param_1->field_0314 = param_1->field_0314 + -1;
     }
-    if ((int)param_1->field_02BA < 0) {
+    if (param_1->field_02BA < 0) {
       thunk_FUN_00622670(param_1);
       return local_8;
     }
     break;
   case CASE_4:
 switchD_006239c1_caseD_4:
-    if ((int)param_1->field_02BA < 0) {
+    if (param_1->field_02BA < 0) {
       if (param_1->field_02AE != CASE_4) {
         return 0;
       }
@@ -136,7 +136,7 @@ LAB_00623d08:
     param_1->field_02CE = param_1->field_02CE + 1;
   }
   else if (uVar1 == param_1->field_02D2) {
-    if (-1 < (int)param_1->field_02BA) {
+    if (-1 < param_1->field_02BA) {
       thunk_FUN_004ad070(&param_1->field_01D5,0xe);
     }
     goto LAB_00623d08;
@@ -160,9 +160,9 @@ LAB_00623d08:
       lVar5 = Library::MSVCRT::__ftol();
       thunk_FUN_00558c00(this,this->field_010C,(int)lVar5,iVar4,piVar6,piVar7);
       if ((((-1 < iVar2) && (((iVar2 < 5 && (-1 < local_18)) && (local_18 < this->field_0030)))) &&
-          (((local_1c = (&DAT_0079aed0)[iVar2] + local_1c, -1 < local_1c &&
-            (local_1c < this->field_0034)) && (this->field_004C != 0)))) &&
-         (*(char *)(local_1c * this->field_0030 + this->field_004C + local_18) == '\0')) {
+          (((local_1c = g_centeredOffsets5[iVar2] + local_1c, -1 < local_1c &&
+            (local_1c < this->field_0034)) && (this->field_004C != (byte *)0x0)))) &&
+         (this->field_004C[local_18 + local_1c * this->field_0030] == 0)) {
         if (param_1->field_02E9 == '\0') {
           return local_8;
         }

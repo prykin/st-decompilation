@@ -38,7 +38,7 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
 
   local_28 = 0;
   local_c = 3;
-  local_20 = &DAT_0079aedc;
+  local_20 = g_centeredOffsets5 + 3;
   while( true ) {
     piVar8 = local_20;
     FUN_006e1c20(PTR_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,&local_18);
@@ -64,16 +64,16 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
         (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == (VisibleClassTy *)0x0 || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                  local_10,local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
           ((local_30 < 0 ||
            (((pVVar4->field_0030 <= local_30 ||
              (iVar9 = *piVar8 + local_34, piVar8 = local_20, iVar9 < 0)) ||
             (pVVar4->field_0034 <= iVar9)))))) ||
-         ((pVVar4->field_004C == 0 ||
-          (*(char *)(iVar9 * pVVar4->field_0030 + pVVar4->field_004C + local_30) != '\0')))) &&
+         ((pVVar4->field_004C == (byte *)0x0 ||
+          (pVVar4->field_004C[local_30 + iVar9 * pVVar4->field_0030] != 0)))) &&
         (iVar9 = local_10,
         thunk_FUN_004ae0b0((short)local_10,local_8,local_c,
                            *(Global_sub_004AE0B0_param_4Enum *)((int)this + 0x1c),(uint)DAT_0080874d

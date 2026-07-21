@@ -20,7 +20,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   InternalExceptionFrame local_64;
   byte local_20 [16];
   DArrayTy *local_10;
-  uint *local_c;
+  DArrayTy *local_c;
   dword local_8;
 
   local_10 = g_playerRuntime[param_1].objects;
@@ -38,7 +38,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
     RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2076);
     return (uint *)0x0;
   }
-  local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   iVar4 = 0;
   if (0 < (int)local_8) {
     do {
@@ -66,13 +66,13 @@ LAB_0043f2ad:
         iVar6 = 0;
 LAB_0043f2b2:
         if (iVar6 == 0) {
-          Library::DKW::TBL::FUN_006ae1c0(local_c,(undefined4 *)((int)piVar2 + 0x32));
+          Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,(undefined4 *)((int)piVar2 + 0x32));
         }
       }
       iVar4 = iVar4 + 1;
     } while (iVar4 < (int)local_8);
   }
   g_currentExceptionFrame = local_64.previous;
-  return local_c;
+  return &local_c->flags;
 }
 

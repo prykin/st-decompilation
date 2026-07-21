@@ -342,11 +342,7 @@ LAB_005d5ff8:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       DAT_008087c4._2_1_ = '\0';
       DAT_0080874f = 0;
-      puVar35 = (undefined4 *)((int)&DAT_008087c4 + 3);
-      for (iVar16 = 0xa2; iVar16 != 0; iVar16 = iVar16 + -1) {
-        *puVar35 = 0;
-        puVar35 = puVar35 + 1;
-      }
+      memset((void *)((int)&DAT_008087c4 + 3), 0, 0x288); /* compiler bulk-zero initialization */
       puVar19 = &DAT_008087e9;
       do {
         puVar19[-1] = 0;
@@ -517,11 +513,7 @@ LAB_005d5ff8:
         } while ((int)local_c < (int)pDVar20->count);
       }
       thunk_FUN_0056ee90((AnonShape_0056EE90_04DD57E6 *)&DAT_00807620);
-      puVar35 = &DAT_00808ab0;
-      for (iVar16 = 0x3a8; iVar16 != 0; iVar16 = iVar16 + -1) {
-        *puVar35 = 0;
-        puVar35 = puVar35 + 1;
-      }
+      memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
       DAT_00808aaf = 0;
       pDVar20 = this_00->field_1F84;
       local_c = 0;
@@ -633,16 +625,9 @@ LAB_005d5b7e:
         if ((this_00->field_1F47 == 0) && ((message->arg0).u32 == 0)) {
           pMVar5 = this_00->field_1A5B;
           if (*(int *)(pMVar5 + 0x2e6) != 0) {
-            puVar35 = local_64;
-            for (iVar16 = 8; iVar16 != 0; iVar16 = iVar16 + -1) {
-              *puVar35 = 0;
-              puVar35 = puVar35 + 1;
-            }
-            puVar35 = local_84;
-            for (iVar16 = 8; iVar16 != 0; iVar16 = iVar16 + -1) {
-              *puVar35 = 0;
-              puVar35 = puVar35 + 1;
-            }
+            memset(local_64, 0, 0x20); /* compiler bulk-zero initialization */
+            iVar16 = 0;
+            memset(local_84, 0, 0x20); /* compiler bulk-zero initialization */
             local_7c = this_00->field_0008;
             local_64[3] = 2;
             local_78 = 2;
@@ -896,10 +881,9 @@ LAB_005d5b7e:
         this_00->field_21CD = 0x1e;
         this_00->field_21A5 = 0x12;
         this_00->field_21C9 = local_c * 0x19 + 0x41;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005d619b:
-        (*this_00->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
-                   &this_00->field_0x2161,0);
+        (*(code *)this_00->field_000C->vtable->field_0008)(0x100ef,0,0,&this_00->field_0x2161,0);
         break;
       case MESS_ID_CREATE:
         this_00->field_2171 = 0x6504;
@@ -1014,10 +998,9 @@ LAB_005d619b:
           FUN_00710790((uint *)pcVar7);
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar7->field_0x8a;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005d6676:
-        (*this_00->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
-                   &this_00->field_0x2161,0);
+        (*(code *)this_00->field_000C->vtable->field_0008)(0x100ef,0,0,&this_00->field_0x2161,0);
         break;
       case MESS_SHARED_0003:
         this_00->field_2171 = 0x6505;
@@ -1622,7 +1605,7 @@ LAB_005d6d70:
     }
   }
 switchD_005d6abd_default:
-  FUN_006b35d0(DAT_008075a8,(&this_00->field_20CC)[uVar31]);
+  FUN_006b35d0((int *)PTR_008075a8,(&this_00->field_20CC)[uVar31]);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }

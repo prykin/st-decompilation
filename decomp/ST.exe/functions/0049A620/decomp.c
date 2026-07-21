@@ -22,9 +22,8 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   uint uVar9;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar10;
   InternalExceptionFrame local_64;
-  undefined4 local_20;
+  uint local_20;
   undefined2 local_1c;
   undefined2 local_1a;
   undefined2 local_18;
@@ -52,11 +51,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     return 0xffffffff;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar10 = (undefined4 *)&local_14[2].field_0xf;
-    for (iVar4 = 0x15; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
-    }
+    memset(&local_14[2].field_0xf, 0, 0x54); /* compiler bulk-zero initialization */
     sVar1 = *(short *)((int)&local_14[3].field_0029 + 1);
     sVar2 = *(short *)((int)&local_14[3].field_0027 + 1);
     local_14[1].vtable = (STGroupCVTable *)(int)*(short *)((int)&local_14[3].field_0025 + 1);
@@ -96,7 +91,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     local_8 = 2;
   }
   if (param_1 == 2) {
-    if ((uint)PTR_00802a38->field_00E4 % 3 == 0) {
+    if (PTR_00802a38->field_00E4 % 3 == 0) {
       uVar8 = 0;
       local_8 = 0;
       uVar9 = 0;

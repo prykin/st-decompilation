@@ -17,20 +17,21 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   int iVar5;
   int iVar6;
   uint uVar7;
-  TLOBaseTyVTable *pTVar8;
+  uint uVar8;
+  AnonPointee_TLOBaseTy_0000 *pAVar9;
   STResourceC *this;
-  short sVar9;
   short sVar10;
-  undefined4 uVar11;
+  short sVar11;
   undefined2 uVar12;
   undefined2 uVar13;
   undefined2 uVar14;
   undefined4 uVar15;
   undefined4 uVar16;
-  char *pcVar17;
+  undefined4 uVar17;
+  char *pcVar18;
   char playerId;
-  undefined4 uVar18;
   undefined4 uVar19;
+  undefined4 uVar20;
 
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
@@ -42,28 +43,33 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
           switch(param_1->field_05AC) {
           case CASE_39:
 switchD_004e08b2_caseD_39:
-            pTVar8 = param_1->vtable;
+            pAVar9 = param_1->vtable;
             iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2e9);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)pAVar9->field_0090)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2e9);
             break;
           case CASE_3B:
 switchD_004e08b2_caseD_3b:
-            pTVar8 = param_1->vtable;
+            pAVar9 = param_1->vtable;
             iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f6);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)pAVar9->field_0090)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f6);
             break;
           case CASE_4F:
 switchD_004e08b2_caseD_4f:
-            pTVar8 = param_1->vtable;
+            pAVar9 = param_1->vtable;
             iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x34f);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)pAVar9->field_0090)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x34f);
             break;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           case CASE_5E:
 switchD_004e08b2_caseD_5e:
-            (*param_1->vtable->vfunc_90)(3,0x3aa);
+            (*(code *)param_1->vtable->field_0090)(3,0x3aa);
             break;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           case CASE_60:
-            (*param_1->vtable->vfunc_90)(3,0x3b9);
+            (*(code *)param_1->vtable->field_0090)(3,0x3b9);
           }
         }
         else {
@@ -84,14 +90,16 @@ LAB_004e0a1f:
           case CASE_4F:
             goto switchD_004e08b2_caseD_4f;
           case CASE_52:
-            pTVar8 = param_1->vtable;
+            pAVar9 = param_1->vtable;
             iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35c);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)pAVar9->field_0090)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35c);
             break;
           case CASE_5E:
             goto switchD_004e08b2_caseD_5e;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           case CASE_60:
-            (*param_1->vtable->vfunc_90)(3,0x3b9);
+            (*(code *)param_1->vtable->field_0090)(3,0x3b9);
           }
         }
         else {
@@ -132,16 +140,17 @@ LAB_004e0a4f:
       iVar2 = param_1->field_05B0;
       do {
         if (iVar2 < iVar2 + 2) {
-          sVar10 = *(short *)&param_1->field_05B8 + 1;
+          sVar11 = *(short *)&param_1->field_05B8 + 1;
           iVar6 = iVar2;
           do {
             sVar3 = (short)iVar6;
             if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
-               ((sVar9 = (short)iVar5, sVar9 < 0 ||
-                ((((g_worldGrid.sizeY <= sVar9 || (sVar10 < 0)) || (g_worldGrid.sizeZ <= sVar10)) ||
-                 (g_worldGrid.cells
-                  [(int)sVar9 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar10
-                   + (int)sVar3].objects[0] == (STWorldObject *)0x0)))))) {
+               ((sVar10 = (short)iVar5, sVar10 < 0 ||
+                ((((g_worldGrid.sizeY <= sVar10 || (sVar11 < 0)) || (g_worldGrid.sizeZ <= sVar11))
+                 || (g_worldGrid.cells
+                     [(int)sVar10 * (int)g_worldGrid.sizeX +
+                      (int)g_worldGrid.planeStride * (int)sVar11 + (int)sVar3].objects[0] ==
+                     (STWorldObject *)0x0)))))) {
               param_1->field_04F0 = iVar6;
               param_1->field_04EC = 1;
               param_1->field_04F4 = iVar5;
@@ -158,14 +167,16 @@ LAB_004e0a4f:
               thunk_FUN_004ec0f0((AnonShape_004EC0F0_C371FA68 *)param_1);
               TLOBaseTy::RotateSpr(param_1,0);
               if (param_1->field_05AC == CASE_52) {
-                pTVar8 = param_1->vtable;
+                pAVar9 = param_1->vtable;
                 iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-                (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35e);
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                (*(code *)pAVar9->field_0090)
+                          (3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
               if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
-              pTVar8 = param_1->vtable;
-              uVar19 = 0x3b1;
+              pAVar9 = param_1->vtable;
+              uVar20 = 0x3b1;
               goto LAB_004e0f14;
             }
             iVar6 = iVar6 + 1;
@@ -192,38 +203,40 @@ LAB_004e0a4f:
   case CASE_4:
     if (param_1->field_0510 < 0x1e) break;
     thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_04F0,param_1->field_04F4,param_1->field_04F8);
-    uVar19 = param_1->field_0018;
-    uVar16 = param_1->field_04F8;
-    iVar4 = param_1->field_04F4;
-    uVar18 = 0x5a;
+    uVar20 = param_1->field_0018;
+    uVar17 = param_1->field_04F8;
+    uVar16 = param_1->field_04F4;
+    uVar19 = 0x5a;
     uVar15 = param_1->field_04F0;
-    pcVar17 = (char *)0x0;
+    pcVar18 = (char *)0x0;
     uVar14 = (undefined2)param_1->field_0504;
     uVar13 = (undefined2)param_1->field_0500;
     uVar12 = (undefined2)param_1->field_04FC;
-    iVar5 = param_1->field_04E0;
-    uVar11 = param_1->field_04DC;
+    iVar4 = param_1->field_04E0;
+    uVar8 = param_1->field_04DC;
     param_1->field_04EC = 0;
     uVar7 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-    thunk_FUN_005fd1b0(param_1->field_0024,uVar7 & 0xff,uVar11,iVar5,uVar12,uVar13,uVar14,uVar15,
-                       iVar4,uVar16,pcVar17,uVar19,uVar18);
+    thunk_FUN_005fd1b0(param_1->field_0024,uVar7 & 0xff,uVar8,iVar4,uVar12,uVar13,uVar14,uVar15,
+                       uVar16,uVar17,pcVar18,uVar20,uVar19);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (param_1->field_0024 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
       thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
-      uVar7 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-      uVar7 = uVar7 & 0xff;
-      if (uVar7 == 1) {
-        pTVar8 = param_1->vtable;
-        uVar19 = 0x6b;
+      uVar8 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+      uVar8 = uVar8 & 0xff;
+      if (uVar8 == 1) {
+        pAVar9 = param_1->vtable;
+        uVar20 = 0x6b;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004e0de2:
-        (*pTVar8->vfunc_90)(6,uVar19);
+        (*(code *)pAVar9->field_0090)(6,uVar20);
       }
-      else if (uVar7 == 2) {
-        (*param_1->vtable->vfunc_90)(6,0x6c);
+      else if (uVar8 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)param_1->vtable->field_0090)(6,0x6c);
       }
-      else if (uVar7 == 3) {
-        pTVar8 = param_1->vtable;
-        uVar19 = 0x6d;
+      else if (uVar8 == 3) {
+        pAVar9 = param_1->vtable;
+        uVar20 = 0x6d;
         goto LAB_004e0de2;
       }
     }
@@ -234,15 +247,16 @@ LAB_004e0de2:
     if (TVar1 != CASE_52) {
 joined_r0x004e0f0b:
       if (TVar1 == CASE_5F) {
-        pTVar8 = param_1->vtable;
-        uVar19 = 0x3b2;
+        pAVar9 = param_1->vtable;
+        uVar20 = 0x3b2;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004e0f14:
-        (*pTVar8->vfunc_90)(3,uVar19);
+        (*(code *)pAVar9->field_0090)(3,uVar20);
       }
       break;
     }
     playerId = *(char *)&param_1->field_023D;
-    pTVar8 = param_1->vtable;
+    pAVar9 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
     iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
@@ -263,17 +277,18 @@ LAB_004e0f14:
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
     playerId = *(char *)&param_1->field_023D;
-    pTVar8 = param_1->vtable;
+    pAVar9 = param_1->vtable;
 LAB_004e0e15:
     iVar4 = GetPlayerRaceId(playerId);
-    (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pAVar9->field_0090)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
   if ((param_1->field_05AC == 0x61) && (param_1->field_04E0 != 0)) {
     iVar4 = thunk_FUN_004e4180(param_1->field_0024);
     iVar5 = thunk_FUN_004e41c0(param_1->field_0024);
-    if ((iVar5 < iVar4) &&
-       ((uint)(param_1->field_0528 + param_1->field_0524) <= (uint)PTR_00802a38->field_00E4)) {
+    if ((iVar5 < iVar4) && (param_1->field_0528 + param_1->field_0524 <= PTR_00802a38->field_00E4))
+    {
       param_1->field_0524 = PTR_00802a38->field_00E4;
       if (DAT_007be8c4 <= param_1->field_0518) {
         thunk_FUN_004e1310((AnonShape_004E1310_4FD56DAE *)param_1);
@@ -295,7 +310,8 @@ switchD_004e0aad_default:
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((param_1->field_04E0 == 0) &&
          (param_1->field_0024 == (uint)*(byte *)(param_1->field_0010 + 0x112d))) {
-        (*param_1->vtable->vfunc_90)(4,0x3bd);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)param_1->vtable->field_0090)(4,0x3bd);
       }
     }
   }

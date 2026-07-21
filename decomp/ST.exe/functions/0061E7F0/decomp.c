@@ -224,10 +224,9 @@ LAB_0061eefe:
                    ((thunk_FUN_00558c00(this,this->field_010C,iVar15,local_34,&local_38,&local_48),
                     -1 < local_20 &&
                     ((((local_20 < 5 && (-1 < local_38)) && (local_38 < this->field_0030)) &&
-                     ((iVar15 = local_48 + (&DAT_0079aed0)[local_20], -1 < iVar15 &&
-                      (iVar15 < this->field_0034)))))))) && (this->field_004C != 0)) &&
-                 (*(char *)(iVar15 * this->field_0030 + this->field_004C + local_38) == '\0'))
-              goto LAB_0061eefe;
+                     ((iVar15 = local_48 + g_centeredOffsets5[local_20], -1 < iVar15 &&
+                      (iVar15 < this->field_0034)))))))) && (this->field_004C != (byte *)0x0)) &&
+                 (this->field_004C[local_38 + iVar15 * this->field_0030] == 0)) goto LAB_0061eefe;
             }
           }
           Library::DKW::TBL::FUN_006ae1c0((uint *)param_1->field_00A3,&local_80);

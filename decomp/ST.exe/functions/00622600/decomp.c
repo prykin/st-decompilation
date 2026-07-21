@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CEFC (store 00622629)
@@ -10,20 +12,13 @@
 STMineSetC * __thiscall STMineSetC::STMineSetC(STMineSetC *this)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_0079D05C;
   this->vtable = &STMineSetCVTable;
-  puVar2 = (undefined4 *)&this->field_0x25e;
-  for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined1 *)puVar2 = 0;
-  this->field_02BA = 0xffffffff;
+  memset(&this->field_0x25e, 0, 0x109); /* compiler bulk-zero initialization */
+  this->field_02BA = -1;
   return this;
 }
 

@@ -14,7 +14,7 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
 {
   undefined1 uVar1;
   STMessageId SVar2;
-  AnonPointee_ComboTy_0104 *pAVar3;
+  ushort *puVar3;
   code *pcVar4;
   ComboTy *this_00;
   int iVar5;
@@ -55,7 +55,7 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
       DoneCombo(local_c);
       break;
     case MESS_SHARED_0005:
-      FUN_006b35d0(DAT_008075a8,local_c->field_0108);
+      FUN_006b35d0((int *)PTR_008075a8,local_c->field_0108);
       break;
     case MESS_TRACKBARCLASSTY_0062:
       uVar9 = (uint)(message->arg1).words.low;
@@ -79,14 +79,14 @@ cf_common_exit_00594615:
   }
   switch(SVar2) {
   case 0x10001:
-    pAVar3 = local_c->field_0104;
-    local_8 = pAVar3->field_0014;
+    puVar3 = local_c->field_0104;
+    local_8 = *(uint *)(puVar3 + 10);
     if (local_8 == 0) {
-      local_8 = ((uint)(ushort)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar3->field_0008;
+      local_8 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar3 + 4);
     }
     uVar1 = local_c->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar3);
+    puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar3);
     for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
       puVar6 = puVar6 + 1;
@@ -97,11 +97,11 @@ cf_common_exit_00594615:
     }
     this_00->field_00BC = message->arg0;
     FUN_006e5fe0(this_00,(undefined4 *)&this_00->field_0xa8);
-    pAVar3 = this_00->field_0104;
+    puVar3 = this_00->field_0104;
     Library::DKW::WGR::FUN_006b55f0
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_00FC,0,(message->arg1).words.low + 5,
-               (message->arg1).words.high + 5,(byte *)pAVar3,0,0,0,pAVar3->field_0004,
-               pAVar3->field_0008);
+               (message->arg1).words.high + 5,(byte *)puVar3,0,0,0,*(int *)(puVar3 + 2),
+               *(int *)(puVar3 + 4));
     goto cf_common_exit_00594615;
   case 0x10002:
     if (local_c->field_0110 == 0) goto cf_common_exit_00594615;

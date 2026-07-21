@@ -13,7 +13,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
   uint uVar9;
 
   iVar3 = param_1->field_02D1;
-  if ((uint)PTR_00802a38->field_00E4 % 5 != 0) {
+  if (PTR_00802a38->field_00E4 % 5 != 0) {
     return iVar3;
   }
   if (param_1->field_02BB == '\x02') {

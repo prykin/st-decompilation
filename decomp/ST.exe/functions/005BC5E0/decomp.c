@@ -33,7 +33,6 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   MMsgTy *pMVar14;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 *unaff_EDI;
-  undefined4 *puVar15;
   uint uVar16;
   char cVar17;
   uint uVar18;
@@ -126,7 +125,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
               local_14 = 0;
               local_10 = 0;
               local_1c = 0x10101;
-              thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_1c);
+              MMsgTy::thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_1c);
             }
             this_00->field_0065 = CASE_5;
             this_00->field_1A60 = 1;
@@ -151,7 +150,7 @@ LAB_005bccb9:
             FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C8E,0,iVar10,uVar16 + 0x19,
                          iVar10,uVar16 + 0x28,9,0xd);
           }
-          FUN_006b35d0(DAT_008075a8,this_00->field_1C8A);
+          FUN_006b35d0((int *)PTR_008075a8,this_00->field_1C8A);
         }
         else if (SVar3 == MESS_SHARED_64FF) {
           this_00->field_1A71 = 0;
@@ -172,12 +171,7 @@ LAB_005bccb9:
             }
             pSVar4 = this_00->field_1A5B;
             if (pSVar4->field_02E6 != (MMsgTy *)0x0) {
-              puVar15 = &local_48;
-              for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
-                *puVar15 = 0;
-                puVar15 = puVar15 + 1;
-              }
-              *(undefined2 *)puVar15 = 0;
+              memset(&local_48, 0, 0x1a); /* compiler bulk-zero initialization */
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_48._2_2_ = ((*(int *)(PTR_0081176c->field_068E + 4) < 1) - 1 & 2) - 1;
               MMsgTy::StatePanel(pSVar4->field_02E6,(int)&local_48);
@@ -200,9 +194,11 @@ LAB_005bccb9:
     switch(SVar3) {
     case MESS_SIDTY_8161:
       FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C82,0,0,
-                   (uint)(message->arg1).words.high,this_00->field_1C82->field_0004,0x13,0);
+                   (uint)(message->arg1).words.high,
+                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C82)->field_0004,0x13,0);
       ccFntTy::SetSurf(PTR_0081176c->field_0030,(int)this_00->field_1C82,0,4,
-                       (uint)(message->arg1).words.high,this_00->field_1C82->field_0004 + -4,0x13);
+                       (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13)
+      ;
       if (this_00->field_1A5F == '\0') {
         iVar10 = PTR_0081176c->field_068A;
       }
@@ -216,7 +212,8 @@ LAB_005bccb9:
       }
       uVar16 = (uint)(message->arg1).words.high;
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,(&this_00->field_1C2A)[uVar16 / 0x13],0xfffffffe,0x7a,uVar16 + 0x67);
+                ((int *)PTR_008075a8,(&this_00->field_1C2A)[uVar16 / 0x13],0xfffffffe,0x7a,
+                 uVar16 + 0x67);
       break;
     case MESS_SIDTY_8163:
       SVar5 = message->arg0;
@@ -269,11 +266,11 @@ switchD_005bc9da_caseD_6949:
     if (CONCAT31(extraout_var_00,uVar8) != 0) goto LAB_005bccb9;
     iVar10 = thunk_FUN_005da980(this_00->field_1A61);
     if (iVar10 != 0) break;
-    if ((int)this_00->field_1C92->field_0008 < 1) {
+    if ((int)this_00->field_1C92[2] < 1) {
       uVar12 = 0;
     }
     else {
-      uVar12 = *(undefined4 *)this_00->field_1C92->field_0014;
+      uVar12 = *(undefined4 *)this_00->field_1C92[5];
     }
     iVar10 = thunk_FUN_005dab70(0,uVar12);
     if (iVar10 != 0) {
@@ -347,15 +344,15 @@ cf_common_exit_005BCD75:
         local_24 = 0;
         local_28 = 0x100;
         local_20 = 0;
-        thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_2c);
+        MMsgTy::thunk_FUN_005b8f40(this_00->field_1A5B->field_02E6,&local_2c);
       }
       this_00->field_0065 = CASE_5;
       this_00->field_1A60 = 0;
       local_8 = 0xffffffff;
-      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1C8A);
-      FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1C8A);
+      FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    (uint)&this_00->field_1A5B->field_0140);
-      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x197);
+      Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x79,0x197);
       pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar11 == (HoloTy *)0x0) {
         pHVar11 = (HoloTy *)0x0;
@@ -366,7 +363,7 @@ cf_common_exit_005BCD75:
         pHVar11->field_0003 = -1;
         pHVar11->field_0001 = CASE_2;
         pHVar11->field_0007 = 0;
-        pHVar11->field_000B = 0;
+        pHVar11->field_000B = (void *)0x0;
         *(undefined4 *)&pHVar11->field_0xf = 0;
         *(undefined4 *)&pHVar11->field_0x1b = 1;
         pHVar11->field_0013 = 1;
@@ -382,7 +379,7 @@ cf_common_exit_005BCD75:
         cVar17 = '\x01';
         uVar16 = 0x10;
         iVar13 = 1;
-        iVar10 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
+        iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x197,0x22e,0x2e);
         uVar16 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar10,iVar13,uVar16,cVar17,
                               uVar18);
         if (uVar16 != 0) {
@@ -391,13 +388,13 @@ cf_common_exit_005BCD75:
           pHVar11->field_0017 = pHVar11->field_0013;
           uVar16 = this_00->field_1C9A->field_0003;
           if (-1 < (int)uVar16) {
-            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar16);
+            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar16);
           }
-          FUN_006b3af0(DAT_008075a8,this_00->field_1C8A);
+          FUN_006b3af0((int *)PTR_008075a8,this_00->field_1C8A);
         }
       }
       if (local_8 != 0xffffffff) {
-        FUN_006b3bb0(DAT_008075a8,local_8);
+        FUN_006b3bb0((int *)PTR_008075a8,local_8);
       }
     }
   }

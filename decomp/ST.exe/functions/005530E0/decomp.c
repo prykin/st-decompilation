@@ -17,7 +17,7 @@ int __cdecl FUN_005530e0(int param_1)
   g_currentExceptionFrame = &local_54;
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
-    if (PTR_00802a4c == (AnonShape_GLOBAL_00802A4C_E3045C67 *)0x0) {
+    if (PTR_00802a4c == (DArrayTy *)0x0) {
       thunk_FUN_005531f0();
     }
     local_8 = (void *)thunk_FUN_00553060(param_1);
@@ -27,7 +27,7 @@ int __cdecl FUN_005530e0(int param_1)
         uStack_e = SUB42(local_8,0);
         local_c = (undefined2)((uint)local_8 >> 0x10);
         local_10 = (undefined2)param_1;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_00802a4c,(undefined4 *)&local_10);
+        Library::DKW::TBL::FUN_006ae1c0(&PTR_00802a4c->flags,(undefined4 *)&local_10);
       }
     }
     g_currentExceptionFrame = local_54.previous;

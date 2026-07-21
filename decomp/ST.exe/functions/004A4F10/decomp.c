@@ -16,14 +16,14 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   undefined4 *puVar6;
   uint uVar7;
   int *piVar8;
-  AnonPointee_STGroupBoatC_021E *pAVar9;
+  ushort *puVar9;
   undefined4 *puVar10;
   int *piVar11;
   InternalExceptionFrame local_5c;
   undefined4 *local_18;
   STGroupBoatC *local_14;
   int local_10;
-  AnonPointee_STGroupBoatC_021E *local_c;
+  ushort *local_c;
   uint local_8;
 
   local_5c.previous = g_currentExceptionFrame;
@@ -48,116 +48,98 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *param_1 = iVar3 + 0x32d;
   }
   if ((uint *)local_14->field_00EF != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_00EF,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_00EF,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_0103 != (DArrayTy *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020(&pSVar2->field_0103->flags,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_0103->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_010F != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_010F,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_010F,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_0127 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_0127,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_0127,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0160 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)FUN_006b0020(pSVar2->field_0160,(int *)&local_8);
+  if ((uint *)pSVar2->field_0160 != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_0160,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_0168 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_0168,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_0168,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_01CA != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_01CA,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_01CA,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_01CE != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_01CE,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_01CE,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (*(uint **)&pSVar2->field_0x1d2 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020(*(uint **)&pSVar2->field_0x1d2,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(*(uint **)&pSVar2->field_0x1d2,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_01D6 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_01D6,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_01D6,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_01DA != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_01DA,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_01DA,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if ((uint *)pSVar2->field_01DE != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_01DE,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_01DE,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if ((uint *)pSVar2->field_020E != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_020E,(int *)&local_8);
+  if (pSVar2->field_020E != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020(pSVar2->field_020E,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   *param_1 = *param_1 + pSVar2->field_021A * 8;
-  if ((uint *)pSVar2->field_0226 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_0226,(int *)&local_8);
+  if (pSVar2->field_0226 != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020(pSVar2->field_0226,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if ((uint *)pSVar2->field_022A != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_022A,(int *)&local_8);
+  if (pSVar2->field_022A != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020(pSVar2->field_022A,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_022E != (AnonPointee_STGroupBoatC_022E *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_022E,(int *)&local_8);
+  if (pSVar2->field_022E != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020(pSVar2->field_022E,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if ((uint *)pSVar2->field_024E != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_024E,(int *)&local_8);
+  if (pSVar2->field_024E != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020(pSVar2->field_024E,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if ((uint *)pSVar2->field_0266 != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)pSVar2->field_0266,(int *)&local_8);
+  if (pSVar2->field_0266 != (uint *)0x0) {
+    local_c = (ushort *)FUN_006b0020(pSVar2->field_0266,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (*(uint **)&pSVar2->field_0x29f != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020(*(uint **)&pSVar2->field_0x29f,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(*(uint **)&pSVar2->field_0x29f,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
@@ -366,18 +348,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0xb6) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_00EF,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_00EF,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xb2) = local_10;
@@ -391,18 +372,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0xce) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020(&local_14->field_0103->flags,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(&local_14->field_0103->flags,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xca) = local_10;
@@ -416,18 +396,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0xde) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_010F,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_010F,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xda) = local_10;
@@ -441,18 +420,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0xfa) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_0127,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_0127,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xf6) = local_10;
@@ -460,23 +438,23 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0160 == (uint *)0x0) {
+  if ((uint *)local_14->field_0160 == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x133) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x137) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)FUN_006b0020(local_14->field_0160,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_0160,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x133) = local_10;
@@ -490,18 +468,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x143) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_0168,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_0168,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x13f) = local_10;
@@ -515,18 +492,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x1a9) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_01CA,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01CA,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1a5) = local_10;
@@ -540,18 +516,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x1b1) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_01CE,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01CE,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1ad) = local_10;
@@ -565,18 +540,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x1b9) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020(*(uint **)&local_14->field_0x1d2,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(*(uint **)&local_14->field_0x1d2,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1b5) = local_10;
@@ -590,18 +564,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x1c1) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_01D6,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01D6,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1bd) = local_10;
@@ -615,18 +588,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x1c9) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_01DA,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01DA,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1c5) = local_10;
@@ -640,18 +612,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(undefined4 *)((int)puVar4 + 0x1d1) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_01DE,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01DE,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1cd) = local_10;
@@ -659,24 +630,23 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if ((uint *)local_14->field_020E == (uint *)0x0) {
+  if (local_14->field_020E == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1fd) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x201) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_020E,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(local_14->field_020E,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1fd) = local_10;
@@ -685,47 +655,46 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   }
   local_10 = local_10 + local_8;
   local_c = local_14->field_021E;
-  if (local_c == (AnonPointee_STGroupBoatC_021E *)0x0) {
+  if (local_c == (ushort *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x211) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x215) = 0;
   }
   else {
     local_8 = local_14->field_021A << 3;
-    pAVar9 = local_c;
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (iVar3 = (local_14->field_021A & 0x1fffffffU) << 1; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x211) = local_10;
     *(uint *)((int)puVar4 + 0x215) = local_8;
   }
   local_10 = local_10 + local_8;
-  if ((uint *)local_14->field_0226 == (uint *)0x0) {
+  if (local_14->field_0226 == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x21d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x221) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_0226,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(local_14->field_0226,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x21d) = local_10;
@@ -733,24 +702,23 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if ((uint *)local_14->field_022A == (uint *)0x0) {
+  if (local_14->field_022A == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x225) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x229) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_022A,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(local_14->field_022A,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x225) = local_10;
@@ -758,24 +726,23 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_022E == (AnonPointee_STGroupBoatC_022E *)0x0) {
+  if (local_14->field_022E == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x22d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x231) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_022E,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(local_14->field_022E,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x22d) = local_10;
@@ -783,24 +750,23 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if ((uint *)local_14->field_024E == (uint *)0x0) {
+  if (local_14->field_024E == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x251) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x255) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_024E,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(local_14->field_024E,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x251) = local_10;
@@ -808,24 +774,23 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if ((uint *)local_14->field_0266 == (uint *)0x0) {
+  if (local_14->field_0266 == (uint *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x26d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x271) = 0;
   }
   else {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020((uint *)local_14->field_0266,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(local_14->field_0266,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x26d) = local_10;
@@ -834,18 +799,17 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   }
   local_10 = local_10 + local_8;
   if (*(uint **)&local_14->field_0x29f != (uint *)0x0) {
-    local_c = (AnonPointee_STGroupBoatC_021E *)
-              FUN_006b0020(*(uint **)&local_14->field_0x29f,(int *)&local_8);
-    pAVar9 = local_c;
+    local_c = (ushort *)FUN_006b0020(*(uint **)&local_14->field_0x29f,(int *)&local_8);
+    puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar6 = pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)&pAVar9->field_0004;
+      *puVar6 = *(undefined4 *)puVar9;
+      puVar9 = puVar9 + 2;
       puVar6 = puVar6 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)&pAVar9->field_0000;
-      pAVar9 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar9->field_0000 + 1);
+      *(char *)puVar6 = (char)*puVar9;
+      puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x2aa) = local_10;

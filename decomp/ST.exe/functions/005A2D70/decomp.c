@@ -38,9 +38,9 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
         this_00->field_00D2 = 0;
         this_00->field_04DF = 0xffffffff;
       }
-      FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
+      FUN_006b5f80((int *)PTR_008075a8,0x1e9,0x5e,0x124,0xf3);
       this_01 = local_8;
-      PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',(BITMAPINFO *)local_8->field_1E9A);
+      PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',local_8->field_1E9A);
       this_01->field_1EA6->count = 0;
       local_b = 1;
       Library::DKW::TBL::FUN_006ae1c0(&this_01->field_1EA6->flags,local_38);

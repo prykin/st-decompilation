@@ -21,7 +21,7 @@ void FUN_006e4c90(int param_1,DArrayTy *param_2)
       }
     }
     if (local_8 != (DArrayTy *)0x0) {
-      FUN_006e3680((AnonShape_006E3450_BC2FF034 *)local_8);
+      FUN_006e3680(local_8);
       DArrayDestroy(local_8);
       local_8 = (DArrayTy *)0x0;
     }

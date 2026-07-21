@@ -1,5 +1,5 @@
 
-int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int param_5)
+int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,undefined4 param_4,int param_5)
 
 {
   int iVar1;
@@ -42,17 +42,20 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int par
     if (param_5 == 1) break;
     if (param_5 != 0) goto LAB_0058d54d;
     if ((*(int *)(iVar1 + 0x20) == 0x32) || (*(int *)(iVar1 + 0x20) == 0x8c)) {
-      (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,param_4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)PTR_00802a38->vtable->field_0018)(param_4);
 LAB_0058d559:
       local_8 = local_8 + 1;
     }
   }
   if ((*(int *)(iVar1 + 0x20) == 0x10e) || (*(int *)(iVar1 + 0x20) == 0x118)) {
-    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,param_4);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0018)(param_4);
     local_8 = local_8 + 1;
   }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0058d54d:
-  (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,param_4);
+  (*(code *)PTR_00802a38->vtable->field_0018)(param_4);
   goto LAB_0058d559;
 }
 

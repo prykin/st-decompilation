@@ -19,7 +19,6 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
   ccFntTy *this_00;
-  undefined4 *puVar5;
   DArrayTy **ppDVar6;
   InternalExceptionFrame local_4c;
   MReportTy *local_8;
@@ -30,11 +29,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    puVar5 = (undefined4 *)&local_8->field_0x1d;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset(&local_8->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     local_8->field_002D = 0x14;
     *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
@@ -93,7 +88,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       ccFntTy::operator(this_00,(uint *)pMVar2->field_008B);
       pMVar2->field_008B = (ccFntTy *)0x0;
     }
-    pMVar2->field_007F = 0;
+    pMVar2->field_007F = (ushort *)0x0;
     if (pMVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }

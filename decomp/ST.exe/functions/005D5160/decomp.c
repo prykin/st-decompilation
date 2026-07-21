@@ -63,7 +63,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_8->field_1E26 == 2) {
-    local_10 = (cMf32 *)local_8->field_1F3F;
+    local_10 = local_8->field_1F3F;
   }
   else {
     local_10 = (cMf32 *)local_8->field_1F43;
@@ -91,7 +91,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     }
     DArrayDestroy(this_00->field_1F84);
   }
-  pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
+  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,8,0x60,8);
   this_00->field_1F84 = pDVar6;
   local_c = &DAT_008087e8;
   do {

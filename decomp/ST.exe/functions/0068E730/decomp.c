@@ -1,8 +1,8 @@
 
-undefined4 __thiscall FUN_0068e730(void *this,int param_1)
+undefined4 __thiscall AiTactClassTy::FUN_0068e730(AiTactClassTy *this,int param_1)
 
 {
-  int iVar1;
+  DArrayTy *pDVar1;
   uint uVar2;
   undefined4 *puVar3;
 
@@ -14,9 +14,10 @@ undefined4 __thiscall FUN_0068e730(void *this,int param_1)
   if ((int)uVar2 < 0) {
     return 0xfffffffc;
   }
-  iVar1 = *(int *)((int)this + 0xa5);
-  if (uVar2 < *(uint *)(iVar1 + 0xc)) {
-    puVar3 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c));
+  pDVar1 = this->field_00A5;
+  if (uVar2 < pDVar1->count) {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar2) (runtime stride) */
+    puVar3 = (undefined4 *)(pDVar1->elementSize * uVar2 + (int)pDVar1->data);
   }
   else {
     puVar3 = (undefined4 *)0x0;
@@ -24,7 +25,7 @@ undefined4 __thiscall FUN_0068e730(void *this,int param_1)
   puVar3[1] = 0;
   *puVar3 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  AiTactClassTy::BackFromRepair(this,*(short *)(param_1 + 0x7d));
+  BackFromRepair(this,*(short *)(param_1 + 0x7d));
   thunk_FUN_0065d590(param_1);
   return 0;
 }

@@ -3,13 +3,11 @@ undefined4 __fastcall FUN_004ea870(TLOBaseTy *param_1)
 
 {
   int iVar1;
-  dword dVar2;
   DArrayTy *array;
   uint index;
   TLOBaseTy *local_8;
 
-  if ((param_1->field_04D0 == CASE_0) &&
-     (param_1->field_04EC + 0x19U <= (uint)PTR_00802a38->field_00E4)) {
+  if ((param_1->field_04D0 == CASE_0) && (param_1->field_04EC + 0x19 <= PTR_00802a38->field_00E4)) {
     param_1->field_04EC = PTR_00802a38->field_00E4;
     local_8 = param_1;
     iVar1 = thunk_FUN_004c7860(param_1,3,0,1,1,1);
@@ -19,8 +17,9 @@ undefined4 __fastcall FUN_004ea870(TLOBaseTy *param_1)
       array = g_playerRuntime[param_1->field_0024].objects;
       index = 0;
       if (array->count != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         while (((DArrayGetElement(array,index,&local_8), local_8 == (TLOBaseTy *)0x0 ||
-                (dVar2 = (*local_8->vtable->slot_2C)(local_8), dVar2 != 0x44)) ||
+                (iVar1 = (**(code **)&local_8->vtable->field_0x2c)(), iVar1 != 0x44)) ||
                (local_8->field_04D0 == CASE_0))) {
           index = index + 1;
           array = g_playerRuntime[param_1->field_0024].objects;

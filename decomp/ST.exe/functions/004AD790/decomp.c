@@ -103,7 +103,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       *(undefined4 *)pcVar11 = uVar5;
       pcVar10 = pcVar11 + 0x24;
       pcVar11[4] = *(char *)(iVar3 + 0xc + this_00->field_0020);
-      pcVar11[5] = (byte)((uint)this_00->field_001C >> ((byte)local_8 & 0x1f)) & 1;
+      pcVar11[5] = (byte)(this_00->field_001C >> ((byte)local_8 & 0x1f)) & 1;
       pcVar11[6] = *(byte *)(iVar3 + 0xe + this_00->field_0020) & 1;
       pcVar11[7] = *(char *)(iVar3 + 0xd + this_00->field_0020);
       pcVar11[8] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 1 & 1;

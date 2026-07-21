@@ -161,7 +161,7 @@ cf_common_join_0063EACD:
             }
           }
         }
-        else if (((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0) &&
+        else if (((PTR_00802a38->field_00E4 & 1) != 0) &&
                 ((int)local_14 % (int)(uint)*(byte *)((int)this + 0x328) == 0)) {
           iVar6 = (int)(local_14 - uVar9) / (int)(uint)*(byte *)((int)this + 0x328);
           if (iVar4 < 0) {
@@ -241,7 +241,7 @@ cf_common_join_0063EACD:
             *(undefined4 *)(iVar10 + 0x38) = 0xffffffff;
           }
         }
-        *(undefined4 *)(iVar10 + 0x30) = PTR_00802a38->field_00E4;
+        *(uint *)(iVar10 + 0x30) = PTR_00802a38->field_00E4;
         uVar7 = *(byte *)((int)this + 0x329) + 5;
         *(uint *)(iVar10 + 0x20) = uVar7;
         if (0xf < uVar7) {

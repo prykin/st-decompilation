@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * FUN_005d4b40(void)
 
@@ -15,16 +17,10 @@ undefined4 * FUN_005d4b40(void)
     *this = &VTable_0079C018;
     this[6] = 0;
     *(undefined4 *)((int)this + 0x5d) = 0;
-    puVar2 = (undefined4 *)((int)this + 0x1d);
-    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
-    puVar2 = (undefined4 *)((int)this + 0x3d);
-    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset((void *)((int)this + 0x1d), 0, 0x20); /* compiler bulk-zero initialization */
+    iVar1 = 0;
+    memset((void *)((int)this + 0x3d), 0, 0x20); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     DAT_0080879c = 0;
     this_00 = (SpriteClassTy *)(this + 0x5d);
     local_8 = 0xd;
@@ -38,20 +34,15 @@ undefined4 * FUN_005d4b40(void)
     *this = &MMObjTyVTable;
     *(undefined1 *)((int)this + 0x65) = 2;
     *(undefined1 *)((int)this + 0x9a) = 0;
-    puVar2 = (undefined4 *)((int)this + 0x66);
-    for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset((void *)((int)this + 0x66), 0, 0x34); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     local_8 = 0xd;
     puVar2 = this + 0x2f;
     do {
       puVar3 = puVar2;
-      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = 0;
-        puVar3 = puVar3 + 1;
-      }
-      *(undefined2 *)puVar3 = 0;
+      memset(puVar3, 0, 0x26); /* compiler bulk-zero initialization */
+      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
+      iVar1 = 0;
       *(undefined1 *)((int)puVar3 + 2) = 0;
       local_8 = local_8 + -1;
       puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
@@ -66,22 +57,16 @@ undefined4 * FUN_005d4b40(void)
     *(undefined4 *)((int)this + 0x21e1) = 0;
     *(undefined2 *)((int)this + 0x21e5) = 0;
     *(undefined1 *)((int)this + 0x21e7) = 0;
-    puVar2 = (undefined4 *)((int)this + 0x2161);
-    for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset((void *)((int)this + 0x2161), 0, 0x80); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     *(undefined4 *)((int)this + 0x1e2f) = 0;
     *(undefined4 *)((int)this + 0x1f43) = 0;
     *(undefined4 *)((int)this + 7999) = 0;
     *(undefined4 *)((int)this + 0x1f4f) = 0;
     *(undefined4 *)((int)this + 0x1f4b) = 0;
     this[0x7e1] = 0;
-    puVar2 = this + 0x7e3;
-    for (iVar1 = 0x50; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset(this + 0x7e3, 0, 0x140); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     *(undefined4 *)((int)this + 0x211d) = 0;
     this[0x7e2] = 0;
     puVar2 = this + 0x833;
@@ -89,18 +74,12 @@ undefined4 * FUN_005d4b40(void)
       *puVar2 = 0xffffffff;
       puVar2 = puVar2 + 1;
     }
-    puVar2 = this + 0x83d;
-    for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset(this + 0x83d, 0, 0x28); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     *(undefined4 *)((int)this + 0x1e1e) = 0;
     *(undefined4 *)((int)this + 0x1e22) = 0xffffffff;
-    puVar2 = (undefined4 *)((int)this + 0x2125);
-    for (iVar1 = 0xe; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset((void *)((int)this + 0x2125), 0, 0x38); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     *(undefined4 *)((int)this + 0x215d) = 0;
     this[0x87e] = 0;
     this[0x87d] = 0;
@@ -111,11 +90,7 @@ undefined4 * FUN_005d4b40(void)
     *(undefined4 *)((int)this + 0x1c67) = 0;
     *(undefined4 *)((int)this + 0x1f47) = 0;
     this[0x7df] = 0;
-    puVar2 = this + 0x7d8;
-    for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset(this + 0x7d8, 0, 0x1c); /* compiler bulk-zero initialization */
     this[0x7d6] = 0;
     *(undefined1 *)((int)this + 0x1f57) = 1;
     *(undefined1 *)(this + 0x7d7) = 4;

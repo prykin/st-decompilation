@@ -59,7 +59,7 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar3 = thunk_FUN_00626f10(*(Global_sub_00626F10_param_1Enum *)((int)param_1 + 0x272));
   *(char *)((int)param_1 + 0x2ad) = (char)uVar3;
-  *(undefined4 *)((int)param_1 + 0x35f) = PTR_00802a38->field_00E4;
+  *(uint *)((int)param_1 + 0x35f) = PTR_00802a38->field_00E4;
   if ((char)uVar3 == '\x02') {
     *(undefined4 *)((int)param_1 + 0x342) = 0xffffffff;
   }

@@ -18,7 +18,6 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
   int iVar6;
   char *pcVar7;
   uint uVar8;
-  uint uVar9;
   InternalExceptionFrame local_58;
   PopUpTy *local_14;
   AnonShape_006B5570_4D68B99C *local_10;
@@ -34,15 +33,15 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
     local_14 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar3 == 0) {
-      uVar9 = 0xffffffff;
+      uVar8 = 0xffffffff;
       pcVar7 = param_1;
       do {
-        if (uVar9 == 0) break;
-        uVar9 = uVar9 - 1;
+        if (uVar8 == 0) break;
+        uVar8 = uVar8 - 1;
         cVar1 = *pcVar7;
         pcVar7 = pcVar7 + 1;
       } while (cVar1 != '\0');
-      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar9 + 4);
+      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar8 + 4);
       this_00 = local_14;
       pAVar4 = local_c;
       if (local_8 != (uint *)0x0) {
@@ -70,7 +69,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
           do {
             pcVar7 = *(char **)(pAVar5->field_0014 + iVar3 * 4);
 LAB_0052d48d:
-            iVar6 = Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0098,pcVar7);
+            iVar6 = Library::DKW::TBL::FUN_006b5aa0(this_00->field_0098,pcVar7);
             if ((byte)this_00->field_009C < DAT_00807346) {
               this_00->field_009C = this_00->field_009C + 1;
             }
@@ -78,30 +77,28 @@ LAB_0052d48d:
             if (((byte)this_00->field_009C <= DAT_00807346) &&
                (OutStr(this_00,CONCAT31((int3)((uint)iVar6 >> 8),this_00->field_009C - 1)),
                DAT_00807342 != 0)) {
-              if ((int)((byte)this_00->field_009C - 1) < *(int *)(this_00->field_0098 + 8)) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                pcVar7 = *(char **)(*(int *)(this_00->field_0098 + 0x14) + -4 +
+              if ((int)((byte)this_00->field_009C - 1) < (int)this_00->field_0098[2]) {
+                pcVar7 = *(char **)((this_00->field_0098[5] - 4) +
                                    (uint)(byte)this_00->field_009C * 4);
               }
               else {
                 pcVar7 = (char *)0x0;
               }
               uVar8 = FUN_00711110(this_00->field_0094,pcVar7);
-              uVar9 = this_00->field_0090->field_0004;
-              if ((int)uVar9 <= (int)uVar8) {
-                uVar8 = uVar9;
+              if ((int)*(uint *)(this_00->field_0090 + 2) <= (int)uVar8) {
+                uVar8 = *(uint *)(this_00->field_0090 + 2);
               }
               *(uint *)(&this_00->field_0x50 + (uint)(byte)this_00->field_009C * 4) = uVar8;
-              FUN_006b2800((int)DAT_008075a8,
+              FUN_006b2800((int)PTR_008075a8,
                            *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4),
                            uVar8,0x13);
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               Library::DKW::DDX::FUN_006b3640
-                        (DAT_008075a8,
+                        ((int *)PTR_008075a8,
                          *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4),
                          0xffffffff,0xd,(uint)(byte)this_00->field_009C * 0x13 + 0xb);
               Library::DKW::DDX::FUN_006b3430
-                        (DAT_008075a8,
+                        ((int *)PTR_008075a8,
                          *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4));
             }
             iVar3 = iVar3 + 1;

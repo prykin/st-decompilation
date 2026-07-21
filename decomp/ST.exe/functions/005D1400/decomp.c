@@ -160,20 +160,21 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
       }
       else if (SVar5 < MESS_CHOOSEMAPTY_6327) {
         if (SVar5 == MESS_SHARED_6326) {
-          this_01->field_0x2208 = '\x02' - *(char *)(message->arg0).ptr;
+          *(char *)&this_01[1].field_000C = '\x02' - *(char *)(message->arg0).ptr;
         }
         else if (SVar5 == MESS_ID_CREATE) {
-          *(DWORD *)&this_01->field_0x2209 = this_01->field_0061;
+          *(DWORD *)((int)&this_01[1].field_000C + 1) = this_01->field_0061;
         }
         else if (SVar5 == MESS_SHARED_0003) {
-          if (*(int *)&this_01->field_0x2226 != 0) {
-            FreeAndNull((void **)&this_01->field_0x2226);
-            *(undefined4 *)&this_01->field_0x222a = 0;
+          if (*(int *)&this_01[1].field_0x2a != 0) {
+            FreeAndNull((void **)&this_01[1].field_0x2a);
+            *(undefined4 *)((int)&this_01[1].field_002D + 1) = 0;
           }
-          if (*(DArrayTy **)&this_01->field_0x222f != (DArrayTy *)0x0) {
-            DArrayDestroy(*(DArrayTy **)&this_01->field_0x222f);
+          pDVar18 = *(DArrayTy **)((int)&this_01[1].field_0031 + 2);
+          if (pDVar18 != (DArrayTy *)0x0) {
+            DArrayDestroy(pDVar18);
           }
-          *(undefined4 *)&this_01->field_0x222f = 0;
+          *(undefined4 *)((int)&this_01[1].field_0031 + 2) = 0;
           if ((this_01->field_004D != 0x60ff) && (g_int_00811764 != (int *)0x0)) {
             if (DAT_0080877e == '\0') {
               FUN_00715360(g_int_00811764,0,'\x11',(char *)0x0,0,0,0xffffffff);
@@ -193,19 +194,19 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
       }
       else if (SVar5 == MESS_CHOOSEMAPTY_6327) {
         piVar9 = (message->arg0).ptr;
-        thunk_FUN_005b5f00(this_01,*(AnonShape_006B5B10_E0D06CF1 **)&this_01->field_0x2204,piVar9);
+        thunk_FUN_005b5f00(this_01,(AnonShape_006B5B10_E0D06CF1 *)this_01[1].field_0008,piVar9);
         iVar14 = *piVar9;
         local_10 = (char *)piVar9[5];
-        ccFntTy::SetSurf(PTR_0081176c->field_0034,*(int *)&this_01->field_0x2204,0,
+        ccFntTy::SetSurf(PTR_0081176c->field_0034,this_01[1].field_0008,0,
                          (iVar14 + -1) * (int)local_10,0,(int)local_10,
-                         *(int *)(*(int *)&this_01->field_0x2204 + 8) -
+                         *(int *)(this_01[1].field_0008 + 8) -
                          ((-(uint)(piVar9[1] != 1) & 0xfffffffd) + 3));
         uVar38 = 2;
         iVar37 = -1;
         iVar36 = -1;
         puVar15 = (uint *)LoadResourceString((iVar14 != 1) + 0x2422,HINSTANCE_00807618);
         ccFntTy::WrStr(PTR_0081176c->field_0034,puVar15,iVar36,iVar37,uVar38);
-        FUN_006b35d0(DAT_008075a8,*(uint *)&this_01->field_0x2200);
+        FUN_006b35d0((int *)PTR_008075a8,*(uint *)&this_01[1].field_0x4);
       }
     }
     else if (SVar5 < MESS_PRIVIDERTY_6502) {
@@ -290,11 +291,7 @@ LAB_005d1b5a:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             DAT_008087c4._2_1_ = '\0';
             DAT_0080874f = 0;
-            puVar31 = (undefined4 *)((int)&DAT_008087c4 + 3);
-            for (iVar14 = 0xa2; iVar14 != 0; iVar14 = iVar14 + -1) {
-              *puVar31 = 0;
-              puVar31 = puVar31 + 1;
-            }
+            memset((void *)((int)&DAT_008087c4 + 3), 0, 0x288); /* compiler bulk-zero initialization */
             puVar17 = &DAT_008087e9;
             do {
               puVar17[-1] = 0;
@@ -532,16 +529,9 @@ LAB_005d1b5a:
                   pCVar11->field_04DF = 0xffffffff;
                 }
                 pMVar6 = this_01->field_1A5B;
-                puVar31 = local_90;
-                for (iVar14 = 8; iVar14 != 0; iVar14 = iVar14 + -1) {
-                  *puVar31 = 0;
-                  puVar31 = puVar31 + 1;
-                }
-                puVar31 = local_b0;
-                for (iVar14 = 8; iVar14 != 0; iVar14 = iVar14 + -1) {
-                  *puVar31 = 0;
-                  puVar31 = puVar31 + 1;
-                }
+                memset(local_90, 0, 0x20); /* compiler bulk-zero initialization */
+                iVar14 = 0;
+                memset(local_b0, 0, 0x20); /* compiler bulk-zero initialization */
                 local_b0[2] = this_01->field_0008;
                 local_90[3] = 2;
                 local_b0[3] = 2;
@@ -619,11 +609,7 @@ LAB_005d2018:
               DAT_008087a0 = this_01->field_1E26;
               DAT_0080879c = 0;
               if (DAT_0080877e == '\0') {
-                puVar31 = &DAT_00808ab0;
-                for (iVar14 = 0x3a8; iVar14 != 0; iVar14 = iVar14 + -1) {
-                  *puVar31 = 0;
-                  puVar31 = puVar31 + 1;
-                }
+                memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
                 DAT_00808aaf = 0;
                 pDVar18 = this_01->field_1F84;
                 local_18 = (AnonShape_005D1400_5A9F7B11 *)0x0;
@@ -741,12 +727,8 @@ LAB_005d24b8:
               }
               else {
                 FUN_006b6500(g_int_00811764,1);
-                puVar31 = (undefined4 *)local_70;
-                for (iVar14 = 9; iVar14 != 0; iVar14 = iVar14 + -1) {
-                  *puVar31 = 0;
-                  puVar31 = puVar31 + 1;
-                }
-                *(undefined2 *)puVar31 = 0;
+                memset((void *)local_70, 0, 0x26); /* compiler bulk-zero initialization */
+                iVar14 = 0;
                 local_64 = DAT_0080733b;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_70._3_4_ = DAT_008087be;
@@ -777,19 +759,15 @@ LAB_005d24b8:
                 }
                 FUN_00715360(g_int_00811764,0,'-',local_70,0x26,1,0xffffffff);
                 FUN_006b6500(g_int_00811764,DAT_0080733c);
-                *(DWORD *)&this_01->field_0x2233 = this_01->field_0061;
-                this_01->field_0x222e = 1;
-                puVar15 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x28,4,10);
-                *(uint **)&this_01->field_0x222f = puVar15;
+                *(DWORD *)&this_01[1].field_0x37 = this_01->field_0061;
+                *(undefined1 *)((int)&this_01[1].field_0031 + 1) = 1;
+                pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
+                *(DArrayTy **)((int)&this_01[1].field_0031 + 2) = pDVar18;
                 if (PTR_0080c4fe != (DArrayTy *)0x0) {
                   DArrayDestroy(PTR_0080c4fe);
                 }
-                PTR_0080c4fe = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x28,4,10);
-                puVar31 = &DAT_00808ab0;
-                for (iVar14 = 0x3a8; iVar14 != 0; iVar14 = iVar14 + -1) {
-                  *puVar31 = 0;
-                  puVar31 = puVar31 + 1;
-                }
+                PTR_0080c4fe = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
+                memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
                 DAT_00808aaf = 0;
                 pDVar18 = this_01->field_1F84;
                 local_18 = (AnonShape_005D1400_5A9F7B11 *)0x0;
@@ -809,7 +787,8 @@ LAB_005d24b8:
                       if (((pAVar30->field_0x4 == '\x02') || (pAVar30->field_0x4 == '\x03')) &&
                          (DAT_0080877f != pAVar30->field_0006)) {
                         Library::DKW::TBL::FUN_006ae1c0
-                                  (*(uint **)&this_01->field_0x222f,&pAVar30->field_0006);
+                                  (*(uint **)((int)&this_01[1].field_0031 + 2),&pAVar30->field_0006)
+                        ;
                         Library::DKW::TBL::FUN_006ae1c0(&PTR_0080c4fe->flags,&pAVar30->field_0006);
                       }
                       cVar2 = pAVar30->field_0x4;
@@ -932,9 +911,8 @@ LAB_005d22dd:
                     bVar34 = local_18 < (undefined1 *)pDVar18->count;
                   } while ((int)local_18 < (int)pDVar18->count);
                 }
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(int *)(*(int *)&this_01->field_0x222f + 0xc) == 0) {
-                  this_01->field_0x222e = 0;
+                if (*(int *)(*(int *)((int)&this_01[1].field_0031 + 2) + 0xc) == 0) {
+                  *(undefined1 *)((int)&this_01[1].field_0031 + 1) = 0;
                   RunGame((SettMapMTy *)this_01);
                   if (DAT_008067a0 != '\0') {
                     CFsgsConnection::UpdateGame
@@ -1095,12 +1073,12 @@ LAB_005d1b17:
           pcVar26 = pcVar26 + 1;
           pcVar23 = pcVar23 + 1;
         }
-        iVar14 = this_00->field_0686;
-        if (*(int *)(iVar14 + 8) < 1) {
+        puVar15 = this_00->field_0686;
+        if ((int)puVar15[2] < 1) {
           pcVar26 = (char *)0x0;
         }
         else {
-          pcVar26 = (char *)**(undefined4 **)(iVar14 + 0x14);
+          pcVar26 = *(char **)puVar15[5];
         }
         uVar27 = 0xffffffff;
         do {
@@ -1126,7 +1104,7 @@ LAB_005d1b17:
         }
         local_10 = local_640;
         StartSystemTy::AddToChat(this_00,(int)local_680);
-        if (this_01->field_0x2208 == '\0') {
+        if (*(char *)&this_01[1].field_000C == '\0') {
           pDVar18 = this_01->field_1F84;
           if (pDVar18 != (DArrayTy *)0x0) {
             uVar27 = pDVar18->count;
@@ -1234,7 +1212,7 @@ LAB_005d28da:
         if (DAT_0080877e == '\0') {
           ChgPlList((SettMapMTy *)this_01,message->arg1,3,*(undefined4 *)((int)pvVar16 + 0x104),
                     *(undefined4 *)((int)pvVar16 + 0x108));
-          this_01->field_0x2244 = 0;
+          *(undefined1 *)((int)&this_01[1].field_0045 + 3) = 0;
         }
         else {
           pcVar26 = &DAT_00807e1d;
@@ -1368,10 +1346,9 @@ switchD_005d1877_caseD_6507:
           this_01->field_21CD = 0x1e;
           this_01->field_21A5 = 0x12;
           this_01->field_21C9 = local_2c * 0x19 + 0x41;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005d3188:
-          (*this_01->field_000C->vtable->CreateObject)
-                    ((SystemClassTy *)this_01->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
-                     &this_01->field_0x2161,0);
+          (*(code *)this_01->field_000C->vtable->field_0008)(0x100ef,0,0,&this_01->field_0x2161,0);
         }
         break;
       case MESS_ID_CREATE:
@@ -1496,11 +1473,7 @@ LAB_005d3188:
         this_01->field_2179 = local_2c + this_01->field_1F88;
         this_01->field_2191 = 0x6500;
         this_01->field_1E2F->count = 0;
-        puVar31 = (undefined4 *)&this_01->field_0x1e33;
-        for (iVar14 = 0x43; iVar14 != 0; iVar14 = iVar14 + -1) {
-          *puVar31 = 0;
-          puVar31 = puVar31 + 1;
-        }
+        memset(&this_01->field_0x1e33, 0, 0x10c); /* compiler bulk-zero initialization */
         if (*(char *)pAVar24 == '\0') {
           uVar27 = local_2c + this_01->field_1F88;
           local_5 = '\0';
@@ -1924,9 +1897,9 @@ LAB_005d32d3:
               FUN_00710790((uint *)pcVar8);
             }
             this_01->field_21A5 = *(undefined4 *)&pcVar8->field_0x8a;
-            (*this_01->field_000C->vtable->CreateObject)
-                      ((SystemClassTy *)this_01->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
-                       &this_01->field_0x2161,0);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)this_01->field_000C->vtable->field_0008)(0x100ef,0,0,&this_01->field_0x2161,0)
+            ;
           }
         }
         break;
@@ -2258,7 +2231,7 @@ LAB_005d3bfa:
            (local_1c - *(int *)(pbVar20 + 8)) / 2 + 1 + local_24,'\x06',pbVar20);
   }
 switchD_005d35aa_default:
-  FUN_006b35d0(DAT_008075a8,(&this_01->field_20CC)[(int)pcVar26]);
+  FUN_006b35d0((int *)PTR_008075a8,(&this_01->field_20CC)[(int)pcVar26]);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_01,9,'\x01',-1);
   }

@@ -13,7 +13,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   STBoatC *pSVar2;
   uint uVar3;
   int errorCode;
-  uint *puVar4;
+  DArrayTy *pDVar4;
   int iVar5;
   InternalExceptionFrame local_64;
   int local_20;
@@ -42,11 +42,11 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     }
     return;
   }
-  if (local_10->field_047B == 0) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xe,5);
-    pSVar2->field_047B = puVar4;
+  if (local_10->field_047B == (uint *)0x0) {
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xe,5);
+    pSVar2->field_047B = &pDVar4->flags;
   }
-  index = ((uint *)pSVar2->field_047B)[3];
+  index = pSVar2->field_047B[3];
   uVar3 = index;
   if (index != 0) {
     while (local_c = uVar3, index = index - 1, -1 < (int)index) {
@@ -55,7 +55,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
       if (((local_1c != -1) && (uVar3 = local_c, local_20 == param_1)) && (local_1c == param_2)) {
         local_1a = local_1a + param_3;
         local_16 = local_8;
-        Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_047B,index,&local_20);
+        Library::DKW::TBL::FUN_006ae140(pSVar2->field_047B,index,&local_20);
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                    0x4b76);
@@ -66,7 +66,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     local_1c = param_2;
     local_1a = param_3;
     local_16 = local_8;
-    Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_047B,local_c,&local_20);
+    Library::DKW::TBL::FUN_006ae140(pSVar2->field_047B,local_c,&local_20);
     g_currentExceptionFrame = local_64.previous;
     return;
   }
@@ -74,7 +74,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   local_1c = param_2;
   local_1a = param_3;
   local_16 = local_8;
-  Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar2->field_047B,&local_20);
+  Library::DKW::TBL::FUN_006ae1c0(pSVar2->field_047B,&local_20);
   g_currentExceptionFrame = local_64.previous;
   return;
 }

@@ -81,17 +81,17 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
     if (pVVar3->field_0030 <= local_10) {
       return local_8;
     }
-    local_14 = (&DAT_0079aed0)[local_c] + local_14;
+    local_14 = g_centeredOffsets5[local_c] + local_14;
     if (local_14 < 0) {
       return local_8;
     }
     if (pVVar3->field_0034 <= local_14) {
       return local_8;
     }
-    if (pVVar3->field_004C == 0) {
+    if (pVVar3->field_004C == (byte *)0x0) {
       return local_8;
     }
-    if (*(char *)(local_14 * pVVar3->field_0030 + pVVar3->field_004C + local_10) != '\0') {
+    if (pVVar3->field_004C[local_10 + local_14 * pVVar3->field_0030] != 0) {
       return local_8;
     }
   }

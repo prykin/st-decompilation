@@ -90,7 +90,7 @@ FUN_0058b190(void *this,short *param_1,short *param_2,short *param_3,short *para
   }
   iVar13 = 0;
   iVar9 = 0;
-  if ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0) {
+  if ((PTR_00802a38->field_00E4 & 3) == 0) {
     iVar13 = *(int *)((int)this + 0x251);
     iVar9 = iVar13;
     if (iVar13 < 0) {

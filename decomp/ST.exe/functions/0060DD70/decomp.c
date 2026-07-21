@@ -99,17 +99,17 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar2->field_0030 <= local_20) {
       return local_14;
     }
-    iVar4 = (&DAT_0079aed0)[local_8] + local_24;
+    iVar4 = g_centeredOffsets5[local_8] + local_24;
     if (iVar4 < 0) {
       return local_14;
     }
     if (pVVar2->field_0034 <= iVar4) {
       return local_14;
     }
-    if (pVVar2->field_004C == 0) {
+    if (pVVar2->field_004C == (byte *)0x0) {
       return local_14;
     }
-    if (*(char *)(iVar4 * pVVar2->field_0030 + pVVar2->field_004C + local_20) != '\0') {
+    if (pVVar2->field_004C[local_20 + iVar4 * pVVar2->field_0030] != 0) {
       return local_14;
     }
     if (DAT_0080874d == -1) {
@@ -127,17 +127,17 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar3->field_0030 <= local_24) {
       return local_14;
     }
-    iVar6 = (&DAT_0079aed0)[iVar6] + local_20;
+    iVar6 = g_centeredOffsets5[iVar6] + local_20;
     if (iVar6 < 0) {
       return local_14;
     }
     if (pVVar3->field_0034 <= iVar6) {
       return local_14;
     }
-    if (pVVar3->field_004C == 0) {
+    if (pVVar3->field_004C == (byte *)0x0) {
       return local_14;
     }
-    if (*(char *)(iVar6 * pVVar3->field_0030 + pVVar3->field_004C + local_24) != '\0') {
+    if (pVVar3->field_004C[local_24 + iVar6 * pVVar3->field_0030] != 0) {
       return local_14;
     }
     if (DAT_0080874d == -1) {
@@ -157,17 +157,17 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar2->field_0030 <= local_24) {
       return local_14;
     }
-    iVar4 = (&DAT_0079aed0)[local_8] + local_20;
+    iVar4 = g_centeredOffsets5[local_8] + local_20;
     if (iVar4 < 0) {
       return local_14;
     }
     if (pVVar2->field_0034 <= iVar4) {
       return local_14;
     }
-    if (pVVar2->field_004C == 0) {
+    if (pVVar2->field_004C == (byte *)0x0) {
       return local_14;
     }
-    if (*(char *)(iVar4 * pVVar2->field_0030 + pVVar2->field_004C + local_24) != '\0') {
+    if (pVVar2->field_004C[local_24 + iVar4 * pVVar2->field_0030] != 0) {
       return local_14;
     }
     if (DAT_0080874d == -1) {
@@ -184,17 +184,17 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar3->field_0030 <= local_24) {
       return local_14;
     }
-    local_20 = (&DAT_0079aed0)[iVar6] + local_20;
+    local_20 = g_centeredOffsets5[iVar6] + local_20;
     if (local_20 < 0) {
       return local_14;
     }
     if (pVVar3->field_0034 <= local_20) {
       return local_14;
     }
-    if (pVVar3->field_004C == 0) {
+    if (pVVar3->field_004C == (byte *)0x0) {
       return local_14;
     }
-    if (*(char *)(local_20 * pVVar3->field_0030 + pVVar3->field_004C + local_24) != '\0') {
+    if (pVVar3->field_004C[local_24 + local_20 * pVVar3->field_0030] != 0) {
       return local_14;
     }
     iVar5 = thunk_FUN_005f1d80(g_visibleClass_00802A88,local_10,iVar5,local_8);

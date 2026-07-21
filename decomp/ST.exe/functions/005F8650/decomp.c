@@ -2,7 +2,7 @@
 undefined4 __thiscall FUN_005f8650(void *this,int param_1,int param_2,int param_3)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   short sVar3;
   short sVar4;
@@ -46,7 +46,7 @@ undefined4 __thiscall FUN_005f8650(void *this,int param_1,int param_2,int param_
   *(short *)((int)this + 0x5f) = sVar5;
   uVar1 = PTR_00802a38->field_00E4;
   *(undefined4 *)((int)this + 0x2d9) = 0;
-  *(undefined4 *)((int)this + 0x2d5) = uVar1;
+  *(uint *)((int)this + 0x2d5) = uVar1;
   iVar2 = thunk_FUN_005faf70(this,param_1,param_2,param_3,
                              (int)(short)(*(short *)((int)this + 0x27d) * 0xc9 + 100),
                              (int)(short)(*(short *)((int)this + 0x281) * 0xc9 + 100),

@@ -22,7 +22,6 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   int *piVar12;
   char *pcVar13;
   AnonShape_004F2560_DB98CB49 *pAVar14;
-  undefined4 *puVar15;
   char *pcVar16;
   int iVar17;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar18;
@@ -81,11 +80,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
     RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x146);
     return;
   }
-  puVar15 = (undefined4 *)&local_38->field_0x31c;
-  for (iVar6 = 0x46; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar15 = 0;
-    puVar15 = puVar15 + 1;
-  }
+  memset(&local_38->field_0x31c, 0, 0x118); /* compiler bulk-zero initialization */
   iVar6 = local_30;
   if (local_18->field_0020 != 0) {
     uVar7 = thunk_FUN_005259b0(local_18->field_0020,local_18->field_0024,'\0');

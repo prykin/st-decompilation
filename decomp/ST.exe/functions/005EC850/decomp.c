@@ -1,5 +1,5 @@
 
-int __thiscall FUN_005ec850(void *this,int *param_1)
+int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
 
 {
   int iVar1;
@@ -20,9 +20,9 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   undefined4 local_c;
   int local_8;
 
-  *(undefined4 *)((int)this + 0x318) = 0;
-  *(undefined4 *)((int)this + 0x2d6) = 0xffffffff;
-  *(undefined1 *)((int)this + 0x316) = 0;
+  this->field_0318 = 0;
+  this->field_02D6 = 0xffffffff;
+  this->field_0316 = 0;
   iVar1 = *param_1;
   local_8 = iVar1;
   local_24 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
@@ -39,25 +39,24 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   local_10 = 0x10;
   local_c = 0;
   STT3DSprC::RestoreSpr
-            ((STT3DSprC *)((int)this + 0x1d5),(int *)&local_24,
+            ((STT3DSprC *)&this->field_0x1d5,(int *)&local_24,
              (AnonShape_004AD790_77673787 *)(param_1 + 1));
-  uVar3 = thunk_FUN_004ad650((int)this + 0x1d5);
-  *(undefined4 *)((int)this + 0x2d6) = uVar3;
+  uVar3 = thunk_FUN_004ad650((int)&this->field_0x1d5);
+  this->field_02D6 = uVar3;
   FreeAndNull(&local_24);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((((*(int *)((int)this + 0x23a) == 8) && (*(char *)((int)this + 0x2b9) != '\0')) &&
-      (uVar4 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) + 0x15, 0 < (int)uVar4)) &&
+  if ((((this->field_023A == 8) && (this->field_02B9 != '\0')) &&
+      (uVar4 = (PTR_00802a38->field_00E4 - this->field_028F) + 0x15, 0 < (int)uVar4)) &&
      ((int)uVar4 < 0x15)) {
-    iVar2 = *(int *)((int)this + 0x2c6);
-    iVar8 = *(int *)((int)this + 0x2be);
-    iVar9 = *(int *)((int)this + 0x2c2);
+    iVar2 = this->field_02C6;
+    iVar8 = this->field_02BE;
+    iVar9 = this->field_02C2;
     iVar7 = 1;
-    uVar5 = thunk_FUN_004ad650((int)this + 0x1d5);
+    uVar5 = thunk_FUN_004ad650((int)&this->field_0x1d5);
     thunk_FUN_006377b0(uVar5,iVar7,iVar8,iVar9,iVar2,uVar4);
   }
   piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)(param_1 + 1))->field_0x0 + iVar1);
   iVar1 = *piVar6;
-  STAllPlayersC::RestoreGObjData(this,piVar6 + 1);
+  RestoreGObjData(this,piVar6 + 1);
   return iVar1 + local_8;
 }
 

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt.cpp
@@ -19,7 +21,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   int iVar2;
   DArrayTy *array;
   STGroupBoatC *pSVar3;
-  undefined4 *puVar4;
   InternalExceptionFrame local_78;
   undefined4 local_34 [3];
   short local_28;
@@ -46,11 +47,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       iVar2 = (uVar1 >> 0x10 & 1) + 1;
     }
     if (iVar2 != 2) {
-      puVar4 = local_34;
-      for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar4 = 0;
-        puVar4 = puVar4 + 1;
-      }
+      memset(local_34, 0, 0x18); /* compiler bulk-zero initialization */
       local_34[0] = 1;
       local_28 = *param_1;
       local_26 = param_1[1];
@@ -88,7 +85,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
     }
     return 0xffffffff;
   }
-  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,10);
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,10);
   local_14 = param_1[3] / 2 + *param_1;
   sStack_12 = param_1[4] / 2 + param_1[1];
   asStack_10[0] = param_1[5] / 2 + param_1[2];
@@ -96,7 +93,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_00675950(CONCAT22(sStack_12,local_14),CONCAT22(asStack_10[0],sStack_12),asStack_10[0],
                      &local_14,&sStack_12,asStack_10,0);
-  uVar1 = Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)&local_14);
+  uVar1 = Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
   local_18 = 1;
   local_1c = array;
   if ((local_c->field_007D == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) {

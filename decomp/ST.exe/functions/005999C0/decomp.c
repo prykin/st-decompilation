@@ -8,14 +8,13 @@
 void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
 
 {
-  AnonPointee_FSGSTy_1AC0 **value;
+  ushort **value;
   code *pcVar1;
   FSGSTy *pFVar2;
   int iVar3;
   uint uVar4;
-  AnonPointee_FSGSTy_1AC0 *pAVar5;
+  ushort *puVar5;
   int iVar6;
-  undefined4 *puVar7;
   InternalExceptionFrame local_54;
   FSGSTy *local_10;
   int local_c;
@@ -28,7 +27,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   pFVar2 = local_10;
   if (iVar3 == 0) {
     value = &local_10->field_1AC0;
-    if (local_10->field_1AC0 != (AnonPointee_FSGSTy_1AC0 *)0x0) {
+    if (local_10->field_1AC0 != (ushort *)0x0) {
       FreeAndNull(value);
     }
     if (param_1 == '\0') {
@@ -40,15 +39,15 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
       local_c = (-(uint)(param_1 != '\x01') & 0x129) + 0x1b8;
     }
     iVar3 = 1;
-    puVar7 = (undefined4 *)&pFVar2->field_005D->field_0x28;
+    puVar5 = pFVar2->field_005D + 0x14;
     uVar4 = FUN_006b4fe0((int)pFVar2->field_005D);
-    pAVar5 = (AnonPointee_FSGSTy_1AC0 *)
-             FUN_006b50c0(local_c,local_8,(uint)*(ushort *)&pFVar2->field_005D->field_0xe,uVar4,
-                          puVar7,iVar3);
+    puVar5 = (ushort *)
+             FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar5,
+                          iVar3);
     uVar4 = pFVar2->field_1ABC;
-    *value = pAVar5;
-    FUN_006b2410((int)DAT_008075a8,uVar4,(uint)pAVar5);
-    FUN_006b2800((int)DAT_008075a8,pFVar2->field_1ABC,(*value)->field_0004,(*value)->field_0008);
+    *value = puVar5;
+    FUN_006b2410((int)PTR_008075a8,uVar4,(uint)puVar5);
+    FUN_006b2800((int)PTR_008075a8,pFVar2->field_1ABC,*(uint *)(*value + 2),*(uint *)(*value + 4));
     if (param_1 == '\0') {
       uVar4 = 0xb4;
     }
@@ -56,9 +55,9 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
       uVar4 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,pFVar2->field_1ABC,0xffffffff,uVar4,
+              ((int *)PTR_008075a8,pFVar2->field_1ABC,0xffffffff,uVar4,
                (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
-    FUN_006b3af0(DAT_008075a8,pFVar2->field_1ABC);
+    FUN_006b3af0((int *)PTR_008075a8,pFVar2->field_1ABC);
     pFVar2->field_1ABB = param_1;
     g_currentExceptionFrame = local_54.previous;
     return;

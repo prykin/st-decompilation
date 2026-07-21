@@ -303,9 +303,8 @@ LAB_00565c6c:
       local_28 = (local_14[4] - (int)local_2c) + 1;
     }
     local_38 = param_2 - local_30;
-    pDVar7 = (DArrayTy *)
-             Library::DKW::TBL::FUN_006ae290
-                       ((uint *)0x0,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
+    pDVar7 = Library::DKW::TBL::DArrayCreate
+                       ((DArrayTy *)0x0,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
     local_8 = 0;
     local_1c = local_34;
     local_24 = pDVar7;
@@ -388,7 +387,7 @@ LAB_00565c6c:
       local_1c = (DArrayTy *)((int)&local_1c->flags + iVar14);
     } while (local_8 < 5);
     if ((0 < (int)param_7) && ((int)param_7 < (int)pDVar7->count)) {
-      local_1c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_7,6,10);
+      local_1c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_7,6,10);
       while( true ) {
         iVar11 = 0;
         local_2c = local_94;

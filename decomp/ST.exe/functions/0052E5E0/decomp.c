@@ -14,9 +14,9 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   ccFntTy *pcVar3;
   LPSTR pCVar4;
   ushort *puVar5;
-  undefined4 uVar6;
-  uint *puVar7;
+  DArrayTy *pDVar6;
   ccFntTy *this_01;
+  undefined4 uVar7;
   undefined4 uVar8;
   short sVar9;
   undefined2 uVar10;
@@ -83,11 +83,12 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     puVar5 = this_00->field_0184 + 0x14;
     iVar2 = 1;
     uVar11 = FUN_006b4fe0((int)this_00->field_0184);
-    uVar6 = FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar5,iVar2);
-    this_00->field_01E5 = uVar6;
-    puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    this_00->field_01F1 = puVar7;
-    Library::DKW::TBL::FUN_006b6020(puVar7,0,&DAT_008016a0);
+    puVar5 = (ushort *)
+             FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar5,iVar2);
+    this_00->field_01E5 = puVar5;
+    pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    this_00->field_01F1 = &pDVar6->flags;
+    Library::DKW::TBL::FUN_006b6020(&pDVar6->flags,0,&DAT_008016a0);
     PrepMissObj(this_00);
     SetOptControls(this_00);
     uVar19 = 0;
@@ -97,9 +98,9 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar10 = 0;
     sVar9 = 0;
     uVar8 = 0xc002;
-    uVar6 = 0xc001;
+    uVar7 = 0xc001;
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,(int)pCVar4,uVar6,uVar8,sVar9,
+    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,(int)pCVar4,uVar7,uVar8,sVar9,
                                 uVar10,uVar13,pcVar14,uVar17,uVar19);
     uVar20 = 0;
     uVar19 = 0;
@@ -109,11 +110,11 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     sVar9 = 0;
     uVar13 = 0xc004;
     uVar8 = 0xc003;
-    this_00->field_01AD = uVar6;
+    this_00->field_01AD = uVar7;
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,(int)pCVar4,uVar8,uVar13,sVar9,
+    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,(int)pCVar4,uVar8,uVar13,sVar9,
                                 uVar10,uVar17,pcVar14,uVar19,uVar20);
-    this_00->field_01B1 = uVar6;
+    this_00->field_01B1 = uVar7;
     this_00->field_0301 = this_00->field_0038;
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -1,4 +1,4 @@
-FUN_0060c1a0:
+STFieldC::FUN_0060c1a0:
 0060C1A0  55                        PUSH EBP
 0060C1A1  8B EC                     MOV EBP,ESP
 0060C1A3  51                        PUSH ECX

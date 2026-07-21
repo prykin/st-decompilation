@@ -62,6 +62,14 @@ public class STTypeFamilyApplier extends GhidraScript {
             report.add(new Report(row.get("function_address"), target, "disabled", "apply=0"));
             return;
         }
+        // Files emitted before the named-anchor policy used this family id for
+        // anonymous-to-anonymous geometry merges. Refuse stale unsafe proposals;
+        // the analyzer must be rerun and will emit EXACT_NAMED_LAYOUT instead.
+        if ("EXACT_ANONYMOUS_LAYOUT".equals(row.get("family_id"))) {
+            report.add(new Report(row.get("function_address"), target, "disabled",
+                "legacy geometry-only proposal; rerun STTypeFamilyAnalyzer"));
+            return;
+        }
         try {
             Address address = currentProgram.getAddressFactory().getAddress(row.get("function_address"));
             Function function = address == null ? null : currentProgram.getFunctionManager().getFunctionAt(address);

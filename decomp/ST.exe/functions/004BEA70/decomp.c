@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004BEA70 returns return of FUN_0044e1b0 @ 004C10A3 | 004BEA70 returns return of
@@ -74,11 +76,7 @@ bool __thiscall FUN_004bea70(void *this,int *param_1)
   *(undefined2 *)((int)param_1 + 0xd) = 0;
   *(undefined4 *)((int)param_1 + 0xf) = 0;
   *(undefined2 *)((int)param_1 + 0x13) = 0;
-  piVar17 = param_1 + 7;
-  for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *piVar17 = 0;
-    piVar17 = piVar17 + 1;
-  }
+  memset(param_1 + 7, 0, 0x3c); /* compiler bulk-zero initialization */
   iVar6 = thunk_FUN_004e8030(*(int *)((int)this + 0x5ac));
   if (iVar6 == 3) {
     iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
@@ -1200,8 +1198,8 @@ cf_common_join_004C01F3:
       }
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6);
-      uVar10 = (uint)(PTR_00802a38->field_00E4 * 100 +
-                     g_playerRuntime[*(int *)((int)this + 0x24)].field2183_0xa1a * -100) /
+      uVar10 = (PTR_00802a38->field_00E4 * 100 +
+               g_playerRuntime[*(int *)((int)this + 0x24)].field2183_0xa1a * -100) /
                *(uint *)(&DAT_00798f6c + iVar6 * 4);
       param_1[0x12] = uVar10;
       if (100 < uVar10) {

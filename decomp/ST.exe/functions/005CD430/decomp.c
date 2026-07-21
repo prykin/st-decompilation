@@ -30,7 +30,6 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   SettMapMTy *pSVar12;
   uint uVar13;
   byte *pbVar14;
-  undefined4 *puVar15;
   char *pcVar16;
   bool bVar17;
   InternalExceptionFrame local_b8;
@@ -97,7 +96,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
     }
     DArrayDestroy(pSVar12->field_1F84);
   }
-  pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
+  pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,8,0x60,8);
   pSVar12->field_1F84 = pDVar7;
   if ((pSVar12->field_1E26 != CASE_C) && (pSVar12->field_1E26 != CASE_10)) {
     DAT_0080874d = -1;
@@ -109,11 +108,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
       pcVar8 = local_c;
       cVar2 = local_c[1];
       if (cVar2 != -1) {
-        puVar15 = &local_74;
-        for (iVar5 = 0x18; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar15 = 0;
-          puVar15 = puVar15 + 1;
-        }
+        memset(&local_74, 0, 0x60); /* compiler bulk-zero initialization */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_74._0_1_ = 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

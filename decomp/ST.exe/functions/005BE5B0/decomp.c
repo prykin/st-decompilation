@@ -59,7 +59,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_20;
   PutDDXClip(0,0,0,0,800,(byte *)0x3c,'\x01',(BITMAPINFO *)local_20->field_005D);
   if ((this_00->field_0457 == (HoloTy *)0x0) && (param_1 == '\0')) {
@@ -152,11 +152,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     }
     else {
       iVar12 = 0;
-      puVar9 = (undefined4 *)&this_00->field_0x2a7;
-      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
-      }
+      memset(&this_00->field_0x2a7, 0, 0x20); /* compiler bulk-zero initialization */
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar12 == 0) {
@@ -248,11 +244,7 @@ LAB_005bf156:
           pcVar7 = pcVar7 + 1;
           pcVar18 = pcVar18 + 1;
         }
-        puVar9 = &DAT_0080f33a;
-        for (iVar5 = 0x20d; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar9 = 0;
-          puVar9 = puVar9 + 1;
-        }
+        memset(&DAT_0080f33a, 0, 0x834); /* compiler bulk-zero initialization */
         uVar10 = 0xffffffff;
         pcVar1 = this_00->field_0083;
         pcVar7 = (char *)&DAT_0080f33a;
@@ -275,11 +267,7 @@ LAB_005bf156:
           if (0x2a7 < iVar5) break;
         } while ((int)_Count < (int)(~uVar10 - 1));
         if (_Count != ~uVar10 - 1) {
-          puVar9 = &DAT_0080f33a;
-          for (iVar5 = 0x20d; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar9 = 0;
-            puVar9 = puVar9 + 1;
-          }
+          memset(&DAT_0080f33a, 0, 0x834); /* compiler bulk-zero initialization */
           Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,local_898,sVar15 - 2);
           uVar10 = 0xffffffff;
           pcVar7 = &DAT_007c7274;

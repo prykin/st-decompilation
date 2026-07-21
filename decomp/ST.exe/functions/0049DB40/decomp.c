@@ -17,13 +17,12 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   uint uVar6;
   int iVar7;
   uint uVar8;
-  undefined4 *puVar9;
   InternalExceptionFrame local_78;
   undefined4 local_34;
   STGroupBoatC *local_30;
   uint local_2c;
   DArrayTy *local_28;
-  undefined4 local_24;
+  uint local_24;
   uint local_20;
   uint *local_1c;
   int local_18;
@@ -55,13 +54,9 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
     return 0xffffffff;
   }
   if ((param_1 == 1) || (param_1 == 0)) {
-    puVar9 = &local_30->field_0089;
-    for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
-    }
+    memset(&local_30->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     local_30->field_0065 = 0;
-    local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
     if (pSVar2->field_0164 == 0) {
       Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)pSVar2->field_0168);
     }
@@ -110,7 +105,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
           }
           else {
             if (array == (DArrayTy *)0x0) {
-              array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+              array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_28 = array;
             }
             Library::DKW::TBL::FUN_006ae1c0(&array->flags,&local_c);
@@ -132,7 +127,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
       pSVar2->field_0168 = 0;
     }
   }
-  else if ((uint)PTR_00802a38->field_00E4 % 5 != 0) {
+  else if (PTR_00802a38->field_00E4 % 5 != 0) {
     g_currentExceptionFrame = local_78.previous;
     return local_34;
   }

@@ -22,7 +22,6 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   uint uVar7;
   uint uVar8;
   undefined1 *_Source;
-  undefined4 *puVar9;
   char *pcVar10;
   undefined1 local_2ec [516];
   char local_e8 [64];
@@ -35,12 +34,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   DArrayTy *local_c;
   AnonShape_0067DC20_B265FC02 *local_8;
 
-  puVar9 = (undefined4 *)local_2ec;
-  for (iVar6 = 0x80; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar9 = 0;
-    puVar9 = puVar9 + 1;
-  }
-  *(undefined1 *)puVar9 = 0;
+  memset((void *)local_2ec, 0, 0x201); /* compiler bulk-zero initialization */
   local_c = (DArrayTy *)0x0;
   local_8 = (AnonShape_0067DC20_B265FC02 *)0x0;
   local_50.previous = g_currentExceptionFrame;
@@ -63,7 +57,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x13f);
   }
-  local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
+  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x98,5);
   uVar7 = 0xffffffff;
   do {
     pcVar3 = param_3;

@@ -19,7 +19,7 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
   undefined4 uVar5;
   int *piVar6;
 
-  if (this->field_0018 != 0xffffffff) {
+  if (this->field_0018 != -1) {
     if ((param_1 < '\0') || (this->field_0014 + -1 < (int)param_1)) {
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x93,0,0,"%s",
                                  "STT3DSprC::SetCurFase wrong level");

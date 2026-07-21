@@ -64,7 +64,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
       if (0 < local_c) {
         puVar7 = (undefined4 *)(iVar2 + 0x24);
         do {
-          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0029,uVar6,puVar7);
+          Library::DKW::TBL::FUN_006ae140(this_00->field_0029,uVar6,puVar7);
           uVar6 = uVar6 + 1;
           puVar7 = puVar7 + 1;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -90,14 +90,14 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   else if (message->id == MESS_SHARED_0003) {
     thunk_FUN_00423e00(this_00);
     DArrayDestroy((DArrayTy *)this_00->field_0029);
-    this_00->field_0029 = 0;
+    this_00->field_0029 = (uint *)0x0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterGroup
               (g_sTAllPlayers_007FA174,this_00->field_0024,
                CONCAT22(extraout_var_00,this_00->field_0025),(int)this_00);
     if ((DArrayTy *)this_00->field_002D != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)this_00->field_002D);
-      this_00->field_002D = 0;
+      this_00->field_002D = (uint *)0x0;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

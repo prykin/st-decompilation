@@ -1,11 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006c1e20(void)
 
 {
   int *piVar1;
-  int iVar2;
   int *piVar3;
-  uint *puVar4;
 
   if ((DAT_008568b4 != 0) && (g_hThread_008568C0 != (HANDLE)0x0)) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
@@ -29,11 +29,7 @@ void FUN_006c1e20(void)
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)*piVar3 + 8))((int *)*piVar3);
           }
-          puVar4 = (uint *)(piVar3 + -3);
-          for (iVar2 = 0x31; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar4 = 0;
-            puVar4 = puVar4 + 1;
-          }
+          memset((uint *)(piVar3 + -3), 0, 0xc4); /* compiler bulk-zero initialization */
         }
         piVar3 = piVar3 + 0x31;
       } while ((int)piVar3 < 0x856884);

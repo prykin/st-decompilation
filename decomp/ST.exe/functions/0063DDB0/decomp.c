@@ -1,23 +1,24 @@
 
-void __thiscall FUN_0063ddb0(void *this,int param_1)
+void __thiscall STTmMineC::FUN_0063ddb0(STTmMineC *this,int param_1)
 
 {
-  int iVar1;
-  int iVar2;
+  dword dVar1;
+  DArrayTy *pDVar2;
   uint uVar3;
 
-  if (*(int *)((int)this + 0x336) != 0) {
-    iVar1 = *(int *)(*(int *)((int)this + 0x336) + 0xc);
+  if (this->field_0336 != (DArrayTy *)0x0) {
+    dVar1 = this->field_0336->count;
     uVar3 = 0;
-    if (0 < iVar1) {
+    if (0 < (int)dVar1) {
       do {
-        iVar2 = *(int *)((int)this + 0x336);
-        if ((uVar3 < *(uint *)(iVar2 + 0xc)) &&
-           (*(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c) != 0)) {
-          STTmMineC::LoadImagSpr(this,uVar3,param_1);
+        pDVar2 = this->field_0336;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar3) (runtime stride) */
+        if ((uVar3 < pDVar2->count) &&
+           ((void *)(pDVar2->elementSize * uVar3 + (int)pDVar2->data) != (void *)0x0)) {
+          LoadImagSpr(this,uVar3,param_1);
         }
         uVar3 = uVar3 + 1;
-      } while ((int)uVar3 < iVar1);
+      } while ((int)uVar3 < (int)dVar1);
     }
   }
   return;

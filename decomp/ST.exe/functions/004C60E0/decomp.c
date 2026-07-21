@@ -13,14 +13,14 @@ int __thiscall TLOBldMark::Create(TLOBldMark *this)
   int iVar3;
   int iVar4;
   int local_48 [16];
-  AnonShape_GLOBAL_007FB2AC_70073F41 *local_8;
+  TLOBldMark *local_8;
 
   pIVar2 = g_currentExceptionFrame;
-  local_8 = (AnonShape_GLOBAL_007FB2AC_70073F41 *)this;
+  local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0);
   if (iVar3 == 0) {
     g_currentExceptionFrame = pIVar2;
-    PTR_007fb2ac = local_8;
+    g_tLOBldMark_007FB2AC = (AnonShape_GLOBAL_007FB2AC_70073F41 *)local_8;
     return 0;
   }
   g_currentExceptionFrame = pIVar2;

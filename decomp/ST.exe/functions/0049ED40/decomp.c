@@ -17,17 +17,16 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   uint uVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 *puVar8;
   uint index;
   InternalExceptionFrame local_78;
-  undefined4 local_34;
+  uint local_34;
   undefined2 local_30;
   undefined2 local_2e;
   undefined2 local_2c;
   STGroupBoatC *local_28;
   undefined4 local_24;
   uint local_20;
-  undefined4 local_1c;
+  uint local_1c;
   int local_18;
   DArrayTy *local_14;
   int local_10;
@@ -47,11 +46,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   pSVar2 = local_28;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar8 = &local_28->field_0089;
-      for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar8 = 0;
-        puVar8 = puVar8 + 1;
-      }
+      memset(&local_28->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       local_28->field_0065 = 0;
       local_20 = 0;
       *(undefined4 *)&local_28->field_0x2bd = local_28->field_018C;
@@ -76,7 +71,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
             }
             if ((pSVar4->field_06F7 == CASE_4) && (0 < pSVar4->field_07BE)) {
               if (array_00 == (DArrayTy *)0x0) {
-                array_00 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                array_00 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
                 local_14 = array_00;
               }
               Library::DKW::TBL::FUN_006ae1c0(&array_00->flags,&local_8);
@@ -89,7 +84,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
               }
               else {
                 if (local_c == (DArrayTy *)0x0) {
-                  local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
                 }
                 Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
               }
@@ -114,7 +109,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
                  0xb84);
     }
     index = 0;
-    if ((uint)PTR_00802a38->field_00E4 % 0x1e == 10) {
+    if (PTR_00802a38->field_00E4 % 0x1e == 10) {
       if (0 < local_10) {
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);

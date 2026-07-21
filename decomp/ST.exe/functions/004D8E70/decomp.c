@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_004d8e70(void *this,int param_1,int param_2,undefined4
     if (iVar1 == 0) {
       thunk_FUN_0058c560(local_8,param_1,param_2);
       *(undefined4 *)((int)this + 0x4ec) = 0;
-      *(undefined4 *)((int)this + 0x4d8) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x4d8) = PTR_00802a38->field_00E4;
       *(undefined4 *)((int)this + 0x261) = 0;
       return 0;
     }

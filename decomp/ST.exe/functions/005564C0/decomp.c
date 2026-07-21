@@ -60,7 +60,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
-        pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
+        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,0x3c,0x32);
         this_00->field_0024 = pDVar4;
         this_00->field_001C = DAT_00808754 * 0x7d;
       }

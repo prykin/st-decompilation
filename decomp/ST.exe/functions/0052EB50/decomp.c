@@ -51,11 +51,7 @@ OptPanelTy::CreateSlider
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pOVar2 = local_10;
   if (iVar3 == 0) {
-    puVar6 = local_42c;
-    for (iVar3 = 0xf6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(local_42c, 0, 0x3d8); /* compiler bulk-zero initialization */
     iVar10 = 1;
     piVar9 = (int *)0x0;
     uVar8 = 0;
@@ -109,8 +105,8 @@ OptPanelTy::CreateSlider
     }
     local_2a4[3] = iVar3 + param_2;
     local_23c = 0xc006;
-    (*pOVar2->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)pOVar2->field_000C,4,&local_8,(int *)0x0,local_42c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pOVar2->field_000C->vtable->field_0008)(4,&local_8,0,local_42c,0);
     g_currentExceptionFrame = local_54.previous;
     return local_8;
   }

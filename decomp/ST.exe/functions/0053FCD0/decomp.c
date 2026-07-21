@@ -60,7 +60,8 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,pPVar3->field_0044);
+                ((int *)PTR_008075a8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,
+                 pPVar3->field_0044);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

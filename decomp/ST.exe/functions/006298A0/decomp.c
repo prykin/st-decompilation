@@ -116,16 +116,17 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
       else {
         if (((local_14 < 0) || (pVVar5->field_0030 <= local_14)) ||
-           ((local_10 + (&DAT_0079aed0)[(int)local_c] < 0 ||
-            (pVVar5->field_0034 <= local_10 + (&DAT_0079aed0)[(int)local_c])))) {
+           ((local_10 + g_centeredOffsets5[(int)local_c] < 0 ||
+            (pVVar5->field_0034 <= local_10 + g_centeredOffsets5[(int)local_c])))) {
           bVar11 = false;
         }
         else {
           bVar11 = true;
         }
-        if ((bVar11) && (pVVar5->field_004C != 0)) {
-          bVar11 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_10) * pVVar5->field_0030 +
-                             pVVar5->field_004C + local_14) != '\0';
+        if ((bVar11) && (pVVar5->field_004C != (byte *)0x0)) {
+          bVar11 = pVVar5->field_004C
+                   [local_14 + (g_centeredOffsets5[(int)local_c] + local_10) * pVVar5->field_0030]
+                   != 0;
         }
         else {
           bVar11 = true;

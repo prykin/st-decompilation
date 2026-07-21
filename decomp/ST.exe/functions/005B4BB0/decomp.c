@@ -29,7 +29,6 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   undefined4 extraout_EDX;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  undefined4 *puVar9;
   char cVar10;
   InternalExceptionFrame local_8c;
   undefined4 local_48 [8];
@@ -165,16 +164,9 @@ LAB_005b4df8:
     }
     pSVar2 = this_00->field_1A5B;
     if (*(int *)(pSVar2 + 0x2e6) == 0) break;
-    puVar9 = local_48;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
-    }
-    puVar9 = local_28;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
-    }
+    memset(local_48, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar5 = 0;
+    memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
     local_48[2] = this_00->field_0008;
     local_48[3] = 2;
     local_28[3] = 2;

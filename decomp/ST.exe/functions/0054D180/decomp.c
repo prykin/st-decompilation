@@ -12,7 +12,6 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
   STPlaySystemC *pSVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   STPlaySystemC *local_8;
 
@@ -22,14 +21,11 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    puVar5 = (undefined4 *)&local_8->field_0xc0;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset(&local_8->field_0xc0, 0, 0x20); /* compiler bulk-zero initialization */
     local_8->field_00CC = 0xf;
     local_8->field_00D0 = 0x7106;
-    (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)local_8->vtable->field_0018)(&local_8->field_0xc0);
     if (pSVar2->field_0039 != (AnonPointee_STPlaySystemC_0039 *)0x0) {
       FUN_006b9890((int *)&pSVar2->field_0039);
     }

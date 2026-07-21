@@ -353,7 +353,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
     }
     thunk_FUN_0041f3b0((STSprGameObjC *)this_00);
   }
-  if ((uint)PTR_00802a38->field_00E4 % 0xc != 0) {
+  if (PTR_00802a38->field_00E4 % 0xc != 0) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

@@ -34,7 +34,7 @@ undefined4 __thiscall FUN_0061f290(void *this,int param_1)
         }
         if ((-1 < (int)*(uint *)((int)piVar4 + 0x26)) && (-1 < *piVar4)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (PTR_00802a38->field_00E4 - *(int *)((int)piVar4 + 0x2a) <
+          if ((int)(PTR_00802a38->field_00E4 - *(int *)((int)piVar4 + 0x2a)) <
               *(int *)((int)local_14 + 0x5f)) {
             local_10 = 1;
             if ((param_1 != 0) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
@@ -66,11 +66,10 @@ undefined4 __thiscall FUN_0061f290(void *this,int param_1)
                     (thunk_FUN_00558c00(this_00,this_00->field_010C,iVar2,local_8,&local_18,
                                         &local_1c), iVar3 < 0)) || ((4 < iVar3 || (local_18 < 0))))
                   || ((this_00->field_0030 <= local_18 ||
-                      ((iVar3 = (&DAT_0079aed0)[iVar3] + local_1c, iVar3 < 0 ||
+                      ((iVar3 = g_centeredOffsets5[iVar3] + local_1c, iVar3 < 0 ||
                        (this_00->field_0034 <= iVar3)))))) ||
-                 ((this_00->field_004C == 0 ||
-                  (*(char *)(iVar3 * this_00->field_0030 + this_00->field_004C + local_18) != '\0'))
-                 )) {
+                 ((this_00->field_004C == (byte *)0x0 ||
+                  (this_00->field_004C[local_18 + iVar3 * this_00->field_0030] != 0)))) {
                 if (*(char *)((int)piVar4 + 0x2f) == '\0') {
                   FUN_006eaaa0(PTR_00807598,*(uint *)((int)piVar4 + 0x26),0);
                   *(undefined1 *)((int)piVar4 + 0x2f) = 1;

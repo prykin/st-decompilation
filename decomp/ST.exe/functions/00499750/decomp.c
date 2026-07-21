@@ -14,7 +14,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
   code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
-  AnonPointee_STGroupBoatC_021E *pAVar4;
+  ushort *puVar4;
   undefined4 uVar5;
   int iVar6;
   uint index;
@@ -46,16 +46,18 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
         if (local_8._2_2_ != -1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8._2_2_ = -1;
-          Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_020E,(int)local_a,&local_8);
+          Library::DKW::TBL::FUN_006ae140(pSVar2->field_020E,(int)local_a,&local_8);
+          puVar4 = pSVar2->field_021E;
           pSVar2->field_0212 = pSVar2->field_0212 + -1;
-          pSVar2->field_021E[local_a].field_0000 = 0xffffffff;
+          (puVar4 + local_a * 4)[0] = 0xffff;
+          (puVar4 + local_a * 4)[1] = 0xffff;
         }
         index = index + 1;
       } while ((int)index < (int)local_14);
     }
     if (pSVar2->field_0212 == 0) {
       DArrayDestroy((DArrayTy *)pSVar2->field_020E);
-      pSVar2->field_020E = 0;
+      pSVar2->field_020E = (uint *)0x0;
       FreeAndNull(&pSVar2->field_021E);
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
@@ -64,19 +66,20 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
     iVar6 = -1;
     iVar3 = 0;
     if (0 < pSVar2->field_021A) {
-      pAVar4 = pSVar2->field_021E;
+      puVar4 = pSVar2->field_021E;
       do {
-        if (pAVar4[iVar3].field_0000 != -1) {
+        if (*(int *)(puVar4 + iVar3 * 4) != -1) {
           if (iVar6 == -1) {
-            pAVar4[iVar3].field_0000 = 0;
-            pAVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = *(undefined4 *)&pAVar4[iVar3].field_0004;
+            (puVar4 + iVar3 * 4)[0] = 0;
+            (puVar4 + iVar3 * 4)[1] = 0;
+            puVar4 = pSVar2->field_021E;
+            pSVar2->field_0216 = *(undefined4 *)(puVar4 + iVar3 * 4 + 2);
             iVar6 = 0;
           }
           else {
-            pAVar4[iVar3].field_0000 = pSVar2->field_0216;
-            pAVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = pSVar2->field_0216 + *(int *)&pAVar4[iVar3].field_0004;
+            *(undefined4 *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;
+            puVar4 = pSVar2->field_021E;
+            pSVar2->field_0216 = pSVar2->field_0216 + *(int *)(puVar4 + iVar3 * 4 + 2);
           }
         }
         iVar3 = iVar3 + 1;

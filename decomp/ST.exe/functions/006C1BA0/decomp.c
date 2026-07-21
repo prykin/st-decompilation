@@ -1,11 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006c1ba0(int param_1)
 
 {
   int *piVar1;
   int *piVar2;
-  int iVar3;
-  uint *puVar4;
 
   if (DAT_008568b4 != 0) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
@@ -39,11 +39,7 @@ void FUN_006c1ba0(int param_1)
             }
           }
         }
-        puVar4 = (uint *)(&DAT_00854ff8 + param_1 * 0xc4);
-        for (iVar3 = 0x31; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar4 = 0;
-          puVar4 = puVar4 + 1;
-        }
+        memset((uint *)(&DAT_00854ff8 + param_1 * 0xc4), 0, 0xc4); /* compiler bulk-zero initialization */
       }
     }
     LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);

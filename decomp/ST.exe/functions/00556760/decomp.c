@@ -49,7 +49,7 @@ TraksClassTy::TraksCreate
   undefined2 local_38;
   undefined2 local_36;
   uint local_34;
-  undefined4 local_30;
+  uint local_30;
   short local_2c;
   short local_2a;
   short local_28;
@@ -117,16 +117,16 @@ LAB_00556926:
                        (int)(short)local_10,(int)sVar5,&local_5c,&local_8);
     if ((iVar7 < 0) || (4 < iVar7)) goto LAB_00556926;
     if (((local_5c < 0) || (pVVar2->field_0030 <= local_5c)) ||
-       (((&DAT_0079aed0)[iVar7] + local_8 < 0 ||
-        (pVVar2->field_0034 <= (&DAT_0079aed0)[iVar7] + local_8)))) {
+       ((g_centeredOffsets5[iVar7] + local_8 < 0 ||
+        (pVVar2->field_0034 <= g_centeredOffsets5[iVar7] + local_8)))) {
       bVar9 = false;
     }
     else {
       bVar9 = true;
     }
-    if ((bVar9) && (pVVar2->field_004C != 0)) {
-      bVar9 = *(char *)(((&DAT_0079aed0)[iVar7] + local_8) * pVVar2->field_0030 + pVVar2->field_004C
-                       + local_5c) != '\0';
+    if ((bVar9) && (pVVar2->field_004C != (byte *)0x0)) {
+      bVar9 = pVVar2->field_004C
+              [local_5c + (g_centeredOffsets5[iVar7] + local_8) * pVVar2->field_0030] != 0;
     }
     else {
       bVar9 = true;

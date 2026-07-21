@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
 import java.time.Instant;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -76,6 +77,31 @@ public class STDecompExport extends GhidraScript {
         "(?:\\([^()]+\\)\\s*)?\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
     private static final Pattern PLAIN_INDIRECT_CALL = Pattern.compile(
         "^(\\s*)\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
+    private static final Pattern BULK_ZERO_SIMPLE = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)(?<pointer>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
+        "(?<target>[^;\\r\\n]+);[ \\t]*\\R" +
+        "\\k<indent>for[ \\t]*\\((?<counter>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
+        "(?<count>0x[0-9A-Fa-f]+|[0-9]+);[ \\t]*\\k<counter>[ \\t]*!=[ \\t]*0;[ \\t]*" +
+        "\\k<counter>[ \\t]*=[ \\t]*\\k<counter>[ \\t]*\\+[ \\t]*-1\\)[ \\t]*\\{[ \\t]*\\R" +
+        "[ \\t]+\\*\\k<pointer>[ \\t]*=[ \\t]*0;[ \\t]*\\R" +
+        "[ \\t]+\\k<pointer>[ \\t]*=[ \\t]*\\k<pointer>[ \\t]*\\+[ \\t]*1;[ \\t]*\\R" +
+        "\\k<indent>\\}(?:[ \\t]*\\R\\k<indent>\\*\\(undefined(?<tail>[1248])[ \\t]*\\*\\)" +
+        "\\k<pointer>[ \\t]*=[ \\t]*0;)?");
+    private static final Pattern BULK_ZERO_NULL_SELECT = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)if[ \\t]*\\([^\\r\\n]+==[ \\t]*\\([^\\r\\n]+\\)0x0\\)[ \\t]*\\{[ \\t]*\\R" +
+        "[ \\t]+(?<pointer>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*\\(undefined4[ \\t]*\\*\\)0x0;[ \\t]*\\R" +
+        "\\k<indent>\\}[ \\t]*\\R\\k<indent>else[ \\t]*\\{[ \\t]*\\R" +
+        "[ \\t]+\\k<pointer>[ \\t]*=[ \\t]*(?<target>[^;\\r\\n]+);[ \\t]*\\R" +
+        "\\k<indent>\\}[ \\t]*\\R" +
+        "\\k<indent>for[ \\t]*\\((?<counter>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
+        "(?<count>0x[0-9A-Fa-f]+|[0-9]+);[ \\t]*\\k<counter>[ \\t]*!=[ \\t]*0;[ \\t]*" +
+        "\\k<counter>[ \\t]*=[ \\t]*\\k<counter>[ \\t]*\\+[ \\t]*-1\\)[ \\t]*\\{[ \\t]*\\R" +
+        "[ \\t]+\\*\\k<pointer>[ \\t]*=[ \\t]*0;[ \\t]*\\R" +
+        "[ \\t]+\\k<pointer>[ \\t]*=[ \\t]*\\k<pointer>[ \\t]*\\+[ \\t]*1;[ \\t]*\\R" +
+        "\\k<indent>\\}(?:[ \\t]*\\R\\k<indent>\\*\\(undefined(?<tail>[1248])[ \\t]*\\*\\)" +
+        "\\k<pointer>[ \\t]*=[ \\t]*0;)?");
+    private static final String BULK_ZERO_MARKER =
+        "/* compiler bulk-zero initialization */";
     private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
@@ -121,6 +147,8 @@ public class STDecompExport extends GhidraScript {
     private int thunkFunctionCount;
     private int bodyFunctionCount;
     private int pseudocodeNormalizationCount;
+    private int fingerprintCfgFallbackCount;
+    private final List<String> fingerprintCfgFallbackFunctions = new ArrayList<>();
     private final List<String> pseudocodeIdiomRows = new ArrayList<>();
     private final Set<String> pseudocodeIdiomFunctions = new HashSet<>();
     private final List<String> qualityIssueRows = new ArrayList<>();
@@ -523,6 +551,9 @@ public class STDecompExport extends GhidraScript {
         writePseudocodeArtifacts();
         pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
+        if (fingerprintCfgFallbackCount > 0)
+            println("Fingerprint CFG fallbacks: " + fingerprintCfgFallbackCount +
+                " (first: " + String.join(", ", fingerprintCfgFallbackFunctions) + ")");
     }
 
     private void normalizeAndCatalog(Function function, Path path) throws IOException {
@@ -543,9 +574,11 @@ public class STDecompExport extends GhidraScript {
      */
     private NormalizedCode normalizePseudocode(String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
+        NormalizedCode bulkZero = normalizeBulkZeroLoops(code);
+        code = bulkZero.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
-        int replacements = 0;
+        int replacements = bulkZero.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -578,6 +611,169 @@ public class STDecompExport extends GhidraScript {
         }
         String normalized = String.join(System.lineSeparator(), output);
         return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * MSVC emits REP STOSD followed by an optional STOSB for many aggregate and
+     * object-tail initializers.  Ghidra expands that instruction pair into an
+     * undefined4-pointer loop and an undefined1 tail store.  The widths describe
+     * the transfer instructions, not the logical fields being initialized.  Fold
+     * only the exact zero-fill loop so independently recovered fields can remain
+     * represented in the structure without inventing an overlapping array.
+     */
+    private NormalizedCode normalizeBulkZeroLoops(String code) {
+        Set<String> candidates = new LinkedHashSet<>();
+        NormalizedCode selected = normalizeBulkZeroPattern(
+            code, BULK_ZERO_NULL_SELECT, candidates, true);
+        NormalizedCode simple = normalizeBulkZeroPattern(
+            selected.code, BULK_ZERO_SIMPLE, candidates, false);
+        String normalized = removeDeadBulkZeroLocals(simple.code, candidates);
+        return new NormalizedCode(normalized,
+            selected.replacements + simple.replacements);
+    }
+
+    private NormalizedCode normalizeBulkZeroPattern(String code, Pattern pattern,
+            Set<String> candidates, boolean nullSelect) {
+        Matcher matcher = pattern.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            long count;
+            try {
+                String countText = matcher.group("count");
+                count = countText.regionMatches(true, 0, "0x", 0, 2) ?
+                    Long.parseUnsignedLong(countText.substring(2), 16) :
+                    Long.parseLong(countText);
+            }
+            catch (RuntimeException exception) {
+                matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            long tail = 0;
+            String tailText = matcher.group("tail");
+            if (tailText != null) tail = Long.parseLong(tailText);
+            long bytes;
+            try {
+                bytes = Math.addExact(Math.multiplyExact(count, 4L), tail);
+            }
+            catch (ArithmeticException exception) {
+                matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            if (bytes <= 0 || bytes > 0x1000000L) {
+                matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+
+            String indent = matcher.group("indent");
+            String pointer = matcher.group("pointer");
+            String counter = matcher.group("counter");
+            String rawTarget = matcher.group("target").trim();
+            String target = bulkZeroTarget(rawTarget);
+            boolean pointerLiveAfter = identifierValueLiveAfter(
+                code, pointer, matcher.end(), indent.length());
+            boolean counterLiveAfter = identifierValueLiveAfter(
+                code, counter, matcher.end(), indent.length());
+            StringBuilder replacement = new StringBuilder();
+            if (pointerLiveAfter) {
+                if (nullSelect) {
+                    // Preserve the explicit nullable selection if later code uses
+                    // the advanced temporary.  Constructors normally take the
+                    // cleaner target-only path below because `this` cannot be null.
+                    String prefix = matcher.group().substring(0,
+                        matcher.group().indexOf(indent + "for"));
+                    replacement.append(prefix);
+                }
+                else {
+                    replacement.append(indent).append(pointer).append(" = ")
+                        .append(rawTarget).append(';').append(System.lineSeparator());
+                }
+                replacement.append(indent).append("memset(").append(pointer)
+                    .append(", 0, ").append(hexLiteral(bytes)).append("); ")
+                    .append(BULK_ZERO_MARKER).append(System.lineSeparator());
+                replacement.append(indent).append(pointer)
+                    .append(" = (undefined4 *)((byte *)").append(pointer)
+                    .append(" + ").append(hexLiteral(count * 4L)).append(");");
+            }
+            else {
+                replacement.append(indent).append("memset(").append(target)
+                    .append(", 0, ").append(hexLiteral(bytes)).append("); ")
+                    .append(BULK_ZERO_MARKER);
+                candidates.add(pointer);
+            }
+            if (counterLiveAfter) {
+                replacement.append(System.lineSeparator()).append(indent)
+                    .append(counter).append(" = 0;");
+            }
+            else candidates.add(counter);
+            matcher.appendReplacement(output, Matcher.quoteReplacement(replacement.toString()));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private boolean identifierOccurs(String text, String identifier, int start, int end) {
+        Matcher matcher = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(identifier) + "(?![A-Za-z0-9_$])").matcher(text);
+        matcher.region(Math.max(0, start), Math.min(text.length(), end));
+        return matcher.find();
+    }
+
+    private boolean identifierValueLiveAfter(String text, String identifier, int start,
+            int sourceIndent) {
+        Pattern token = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(identifier) + "(?![A-Za-z0-9_$])");
+        Matcher occurrence = token.matcher(text);
+        occurrence.region(Math.max(0, start), text.length());
+        if (!occurrence.find()) return false;
+        String intervening = text.substring(Math.max(0, start), occurrence.start());
+        for (String line : intervening.split("\\R", -1)) {
+            String stripped = line.stripLeading();
+            int indent = line.length() - stripped.length();
+            if (indent <= sourceIndent && stripped.matches("return(?:\\s+[^;]*)?;\\s*"))
+                return false;
+        }
+        int lineStart = text.lastIndexOf('\n', occurrence.start()) + 1;
+        int lineEnd = text.indexOf('\n', occurrence.end());
+        if (lineEnd < 0) lineEnd = text.length();
+        String line = text.substring(lineStart, lineEnd);
+        Matcher assignment = Pattern.compile("^[ \\t]*" + Pattern.quote(identifier) +
+            "[ \\t]*=(?!=)").matcher(line);
+        if (!assignment.find()) return true;
+        // A plain later definition kills the value left by the zeroing loop.  If
+        // the right-hand side mentions the temporary, it is still a live read.
+        return token.matcher(line.substring(assignment.end())).find();
+    }
+
+    private String removeDeadBulkZeroLocals(String code, Set<String> candidates) {
+        String result = code;
+        for (String candidate : candidates) {
+            Pattern declaration = Pattern.compile(
+                "(?m)^[ \\t]+(?:int|uint|long|ulong|undefined4)[ \\t]+\\*?[ \\t]*" +
+                Pattern.quote(candidate) + "[ \\t]*;[ \\t]*(?:\\R|$)");
+            Matcher matcher = declaration.matcher(result);
+            if (!matcher.find()) continue;
+            String withoutDeclaration = result.substring(0, matcher.start()) +
+                result.substring(matcher.end());
+            if (!identifierOccurs(withoutDeclaration, candidate, 0, withoutDeclaration.length()))
+                result = withoutDeclaration;
+        }
+        return result;
+    }
+
+    private String bulkZeroTarget(String target) {
+        Matcher address = Pattern.compile(
+            "^\\(undefined4[ \\t]*\\*\\)[ \\t]*&(.+)$").matcher(target);
+        if (address.matches()) return "&" + address.group(1).trim();
+        Matcher cast = Pattern.compile(
+            "^\\(undefined4[ \\t]*\\*\\)[ \\t]*(.+)$").matcher(target);
+        if (cast.matches()) return "(void *)" + cast.group(1).trim();
+        return target;
+    }
+
+    private String hexLiteral(long value) {
+        return "0x" + Long.toHexString(value);
     }
 
     /**
@@ -761,7 +957,8 @@ public class STDecompExport extends GhidraScript {
         if (code == null || code.isEmpty()) return "";
         String[] lines = code.split("\\R", -1);
         List<String> clean = new ArrayList<>();
-        boolean needsRuntime = code.contains("STDebugBreak()");
+        boolean needsRuntime = code.contains("STDebugBreak()") ||
+            code.contains(BULK_ZERO_MARKER);
         boolean hasRuntimeInclude = false;
         for (String line : lines) {
             if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
@@ -828,6 +1025,8 @@ public class STDecompExport extends GhidraScript {
             }
             if (line.contains("STDebugBreak()"))
                 addIdiom(evidence, "terminal_debug_trap", index + 1, line);
+            if (line.contains(BULK_ZERO_MARKER))
+                addIdiom(evidence, "bulk_zero_initialization", index + 1, line);
         }
 
         // The instruction listing is authoritative even when an older reused body
@@ -842,10 +1041,13 @@ public class STDecompExport extends GhidraScript {
         for (Map.Entry<String, IdiomEvidence> item : evidence.entrySet()) {
             String kind = item.getKey();
             IdiomEvidence value = item.getValue();
-            boolean terminalNormalized = kind.equals("terminal_debug_trap") &&
-                code != null && code.contains("STDebugBreak()");
-            if (terminalNormalized) pseudocodeNormalizationCount += value.occurrences;
-            String status = terminalNormalized ? "normalized" : "catalogued";
+            boolean normalizedSite =
+                (kind.equals("terminal_debug_trap") && code != null &&
+                    code.contains("STDebugBreak()")) ||
+                (kind.equals("bulk_zero_initialization") && code != null &&
+                    code.contains(BULK_ZERO_MARKER));
+            if (normalizedSite) pseudocodeNormalizationCount += value.occurrences;
+            String status = normalizedSite ? "normalized" : "catalogued";
             List<String> hints = new TreeSet<>(value.addressHints).stream().toList();
             if (kind.equals("terminal_debug_trap")) hints = int3Addresses;
             pseudocodeIdiomRows.add(jsonObject(
@@ -1122,6 +1324,8 @@ public class STDecompExport extends GhidraScript {
         return switch (kind) {
             case "terminal_debug_trap" ->
                 "replace swi(3) plus synthetic indirect call/return with noreturn STDebugBreak()";
+            case "bulk_zero_initialization" ->
+                "replace the REP STOSD/STOSB decompiler loop with memset(destination, 0, byte_count)";
             case "unresolved_register_input" ->
                 "verify function boundary, calling convention, and SEH/setjmp live-in state before replacing unaff_/in_";
             case "return_width_artifact" ->
@@ -1143,6 +1347,8 @@ public class STDecompExport extends GhidraScript {
     private String detector(String kind) {
         return switch (kind) {
             case "terminal_debug_trap" -> "x86 opcode CC plus decompiler swi(3) call idiom";
+            case "bulk_zero_initialization" ->
+                "exact decrementing undefined4 zero loop with an optional undefined1/2/4/8 tail store";
             case "unresolved_register_input" -> "unaff_*/in_* high-variable name";
             case "return_width_artifact" ->
                 "extraout_* high variable, possibly consumed by CONCAT*";
@@ -1197,16 +1403,17 @@ public class STDecompExport extends GhidraScript {
             rawField("categories", "[" + String.join(",", categories) + "]")
         ));
         writeText(programRoot.resolve("pseudocode_runtime.h"),
-            "#ifndef ST_PSEUDOCODE_RUNTIME_H\\n" +
-            "#define ST_PSEUDOCODE_RUNTIME_H\\n\\n" +
-            "/* Standalone corpus code has no debugger continuation path. */\\n" +
-            "#include <stdlib.h>\\n" +
-            "#if defined(_MSC_VER)\\n" +
-            "__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\\n" +
-            "#else\\n" +
-            "static inline __attribute__((noreturn)) void STDebugBreak(void) { abort(); }\\n" +
-            "#endif\\n\\n" +
-            "#endif\\n");
+            "#ifndef ST_PSEUDOCODE_RUNTIME_H\n" +
+            "#define ST_PSEUDOCODE_RUNTIME_H\n\n" +
+            "/* Standalone corpus code has no debugger continuation path. */\n" +
+            "#include <stdlib.h>\n" +
+            "#include <string.h>\n" +
+            "#if defined(_MSC_VER)\n" +
+            "__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\n" +
+            "#else\n" +
+            "static inline __attribute__((noreturn)) void STDebugBreak(void) { abort(); }\n" +
+            "#endif\n\n" +
+            "#endif\n");
     }
 
     private String functionFingerprint(Function function, List<String> tags, List<String> callers,
@@ -1378,39 +1585,67 @@ public class STDecompExport extends GhidraScript {
         FingerprintState entry = fingerprintEntryState(function);
         Map<FingerprintBlock, FingerprintState> inputs = new LinkedHashMap<>();
         Map<FingerprintBlock, FingerprintState> outputs = new LinkedHashMap<>();
+        Map<FingerprintBlock, Set<String>> dependencies = new LinkedHashMap<>();
+        Set<String> observedDependencies = new TreeSet<>();
+        ArrayDeque<FingerprintBlock> work = new ArrayDeque<>();
+        Set<FingerprintBlock> queued = new HashSet<>();
+        inputs.put(entryBlock, entry.copy());
+        work.add(entryBlock);
+        queued.add(entryBlock);
 
-        int limit = Math.max(16, blocks.size() * 8);
-        for (int pass = 0; pass < limit; pass++) {
+        // Re-evaluate only successors whose joined input actually changed.  The
+        // previous whole-function sweeps processed every block at least twice and
+        // became the dominant cost even when 99% of functions were cache hits.
+        int processed = 0;
+        int processLimit = Math.max(128, blocks.size() * 16);
+        boolean fallback = false;
+        while (!work.isEmpty()) {
             checkCancelled();
-            boolean changed = false;
-            for (FingerprintBlock block : blocks) {
-                FingerprintState input;
-                if (block == entryBlock) input = entry.copy();
-                else {
-                    List<FingerprintState> predecessors = new ArrayList<>();
-                    for (FingerprintBlock predecessor : block.predecessors) {
-                        FingerprintState state = outputs.get(predecessor);
-                        if (state != null) predecessors.add(state);
-                    }
-                    if (predecessors.isEmpty()) continue;
-                    input = joinFingerprintStates(predecessors);
-                }
-                FingerprintState output = transferFingerprintBlock(block, input, null);
-                if (!input.equals(inputs.get(block)) || !output.equals(outputs.get(block))) {
-                    inputs.put(block, input);
-                    outputs.put(block, output);
-                    changed = true;
-                }
+            if (++processed > processLimit) {
+                fallback = true;
+                break;
             }
-            if (!changed) break;
+            FingerprintBlock block = work.removeFirst();
+            queued.remove(block);
+            FingerprintState input = inputs.get(block);
+            if (input == null) continue;
+            Set<String> blockDependencies = new TreeSet<>();
+            FingerprintState output = transferFingerprintBlock(block, input, blockDependencies);
+            dependencies.put(block, blockDependencies);
+            observedDependencies.addAll(blockDependencies);
+            if (output.equals(outputs.get(block))) continue;
+            outputs.put(block, output);
+            for (FingerprintBlock successor : block.successors) {
+                if (successor == entryBlock) continue;
+                List<FingerprintState> predecessors = new ArrayList<>();
+                for (FingerprintBlock predecessor : successor.predecessors) {
+                    FingerprintState state = outputs.get(predecessor);
+                    if (state != null) predecessors.add(state);
+                }
+                if (predecessors.isEmpty()) continue;
+                FingerprintState joined = joinFingerprintStates(predecessors);
+                if (joined.equals(inputs.get(successor))) continue;
+                inputs.put(successor, joined);
+                if (queued.add(successor)) work.addLast(successor);
+            }
         }
 
-        // Record dependencies from the converged input of every reachable block.
-        // A structure's complete layout remains excluded: only fields reached by
-        // this function's register/stack data flow enter its fingerprint.
-        for (FingerprintBlock block : blocks) {
-            FingerprintState input = inputs.get(block);
-            if (input != null) transferFingerprintBlock(block, input, result);
+        if (fallback) {
+            // A malformed/irreducible CFG must never stall a full export.  Every
+            // dependency seen before widening is retained, which may invalidate
+            // a few extra cached bodies but cannot reuse a body after a known
+            // relevant type change.
+            result.addAll(observedDependencies);
+            fingerprintCfgFallbackCount++;
+            if (fingerprintCfgFallbackFunctions.size() < 32)
+                fingerprintCfgFallbackFunctions.add(addr(function.getEntryPoint()));
+        }
+        else {
+            // Each block's dependency set is replaced whenever its input changes,
+            // so the final union corresponds to the converged states without a
+            // second full instruction pass.
+            for (Set<String> blockDependencies : dependencies.values())
+                result.addAll(blockDependencies);
         }
     }
 
@@ -1516,7 +1751,10 @@ public class STDecompExport extends GhidraScript {
         for (FingerprintState state : states) {
             TypedAccess candidate = stack ? state.stack.get((Long)key) :
                 state.registers.get((String)key);
-            if (candidate == null) continue;
+            // A fact is valid after a join only when every currently reachable
+            // predecessor carries the same value.  Ignoring an absent value made
+            // loop headers alternate between present/absent facts indefinitely.
+            if (candidate == null) return null;
             if (result == null) result = candidate;
             else if (!result.equals(candidate)) return null;
         }
@@ -2001,6 +2239,10 @@ public class STDecompExport extends GhidraScript {
             rawField("body_function_count", Integer.toString(bodyFunctionCount)),
             rawField("pseudocode_normalized_site_count",
                 Integer.toString(pseudocodeNormalizationCount)),
+            rawField("fingerprint_cfg_fallback_count",
+                Integer.toString(fingerprintCfgFallbackCount)),
+            rawField("fingerprint_cfg_fallback_functions",
+                jsonStringArray(fingerprintCfgFallbackFunctions)),
             rawField("pseudocode_idiom_function_count",
                 Integer.toString(pseudocodeIdiomFunctions.size())),
             rawField("pseudocode_idiom_record_count",

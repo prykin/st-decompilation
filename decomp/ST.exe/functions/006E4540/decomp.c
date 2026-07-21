@@ -2,30 +2,31 @@
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
-int FUN_006e4540(AnonShape_006E3450_BC2FF034 *param_1,int param_2)
+int FUN_006e4540(DArrayTy *param_1,int param_2)
 
 {
   uint uVar1;
   int iVar2;
-  int iVar3;
+  void *pvVar3;
 
   iVar2 = 0;
-  param_1->field_0004 = 0;
+  param_1->iteratorIndex = 0;
   do {
-    uVar1 = param_1->field_0004;
-    if (param_1->field_000C <= uVar1) {
+    uVar1 = param_1->iteratorIndex;
+    if (param_1->count <= uVar1) {
       return iVar2;
     }
-    iVar3 = param_1->field_0008 * uVar1 + param_1->field_001C;
-    param_1->field_0004 = uVar1 + 1;
-    if (iVar3 == 0) {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar1) (runtime stride) */
+    pvVar3 = (void *)(param_1->elementSize * uVar1 + (int)param_1->data);
+    param_1->iteratorIndex = uVar1 + 1;
+    if (pvVar3 == (void *)0x0) {
       return iVar2;
     }
-    if (*(int *)(*(int *)(iVar3 + 4) + 0x14) == param_2) {
-      return iVar3;
+    if (*(int *)(*(int *)((int)pvVar3 + 4) + 0x14) == param_2) {
+      return (int)pvVar3;
     }
-  } while ((*(AnonShape_006E3450_BC2FF034 **)(iVar3 + 8) == (AnonShape_006E3450_BC2FF034 *)0x0) ||
-          (iVar2 = FUN_006e4540(*(AnonShape_006E3450_BC2FF034 **)(iVar3 + 8),param_2), iVar2 == 0));
+  } while ((*(DArrayTy **)((int)pvVar3 + 8) == (DArrayTy *)0x0) ||
+          (iVar2 = FUN_006e4540(*(DArrayTy **)((int)pvVar3 + 8),param_2), iVar2 == 0));
   return iVar2;
 }
 

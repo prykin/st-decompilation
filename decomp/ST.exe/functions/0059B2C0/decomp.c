@@ -22,27 +22,27 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   uint *puVar10;
   InternalExceptionFrame local_8c;
   StartServTy local_48 [52];
-  uint local_14;
+  int local_14;
   FSGSTy *local_10;
   uint local_c;
   StartServTy *local_8;
 
   local_14 = this->field_1EDB;
-  if (((this->field_1E8E != 0) && (this->field_1E92 != 0)) && (local_14 != 0)) {
+  if (((this->field_1E8E != 0) && (this->field_1E92 != (tagBITMAPINFO *)0x0)) && (local_14 != 0)) {
     local_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_8c;
     local_10 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
     if (iVar4 == 0) {
-      FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
+      FUN_006b5f80((int *)PTR_008075a8,0x22,0x5e,0x2e1,0x175);
       pFVar2 = local_10;
-      PutDDXClip(0x18a,0x90,0x168,0x32,100,(byte *)0x19,'\x01',(BITMAPINFO *)local_10->field_1E92);
+      PutDDXClip(0x18a,0x90,0x168,0x32,100,(byte *)0x19,'\x01',local_10->field_1E92);
       wsprintfA((LPSTR)local_48,"%6d_:_%6d",pFVar2->field_1EDF,
                 (pFVar2->field_1EE3 - 1) + pFVar2->field_1EDF);
       StartServTy::WrTextDDX
                 (local_48,0,0x18b,0x91,0x62,0x17,(uint *)local_48,0xffffffff,0xffffffff,
                  (ccFntTy *)pFVar2->field_1A7F,0);
-      PutDDXClip(0x22,0xd6,0,0x78,0x2e1,(byte *)0xfd,'\x01',(BITMAPINFO *)pFVar2->field_1E92);
+      PutDDXClip(0x22,0xd6,0,0x78,0x2e1,(byte *)0xfd,'\x01',pFVar2->field_1E92);
       if (pFVar2->field_1EE3 != 0) {
         local_8 = (StartServTy *)0xdb;
         piVar9 = (int *)(local_14 + 0xc);

@@ -62,10 +62,10 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
     param_1[0x135] = 0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     fVar1 = (float)(int)*(short *)((int)param_1 + 0x45) * _DAT_007904f8;
-    iVar3 = PTR_00802a38->field_00E4;
+    uVar4 = PTR_00802a38->field_00E4;
     param_1[0x137] = 1;
     fVar1 = fVar1 * _DAT_007904f0;
-    param_1[0x136] = iVar3;
+    param_1[0x136] = uVar4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_8 = (int)*(short *)((int)param_1 + 0x41);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

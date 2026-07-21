@@ -282,11 +282,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       break;
     case 9:
       if (DAT_008117bc != (undefined4 *)0x0) {
-        puVar18 = &local_48;
-        for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *puVar18 = 0;
-          puVar18 = puVar18 + 1;
-        }
+        memset(&local_48, 0, 0x20); /* compiler bulk-zero initialization */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)();
       }

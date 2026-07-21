@@ -1,4 +1,4 @@
-FUN_005ec370:
+STAllPlayersC::FUN_005ec370:
 005EC370  55                        PUSH EBP
 005EC371  8B EC                     MOV EBP,ESP
 005EC373  83 EC 18                  SUB ESP,0x18

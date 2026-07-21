@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3,undefined2 param_4,
@@ -6,7 +8,6 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
 {
   char *pcVar1;
   STGroupBoatC *this_00;
-  int iVar3;
   undefined4 *puVar4;
   undefined4 local_24;
   undefined2 local_20;
@@ -17,11 +18,8 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
   undefined2 uVar2;
 
   puVar4 = &local_24;
-  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
-  *(undefined2 *)puVar4 = 0;
+  memset(puVar4, 0, 0x1e); /* compiler bulk-zero initialization */
+  puVar4 = (undefined4 *)((byte *)puVar4 + 0x1c);
   *(undefined1 *)((int)puVar4 + 2) = 0;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_24._2_2_ = param_3;

@@ -59,6 +59,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final int TEMP_OBJECT_IDS_OFFSET = 0x0a;
     private static final String ANON_ROOT = "/SubmarineTitans/Recovered/PointerShapes/";
     private static final String APPLIER_MARKER = "[STPointerShapeApplier]";
+    private static final Set<String> POINTER_OWNER_MARKERS = Set.of(
+        APPLIER_MARKER, "[STTypeFamilyApplier]", "[STGlobalDataApplier]");
     private static final Set<Long> DARRAY_FIRST_ARGUMENT = Set.of(
         0x006acc70L, // indexed get
         0x006ae110L, // destroy
@@ -107,6 +109,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final Pattern DIRECT_THIS_SPILL = Pattern.compile(
         "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*" +
         "(?:\\(\\s*[A-Za-z_$][A-Za-z0-9_$:]*\\s*\\*\\s*\\)\\s*)?this\\s*;");
+    private static final Pattern TYPED_DARRAY_BASE = Pattern.compile(
+        "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "field_(?:0[xX])?0*8\\b");
     private static final Pattern HEX_CONSTANT = Pattern.compile("0[xX]([0-9A-Fa-f]+)");
     private static final Pattern PLAYER_STRIDE_TERM = Pattern.compile(
         "(?i)(?:0x0*a62|2658)\\b");
@@ -242,6 +247,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             rawAccesses++;
         }
         collectAliasIndexes(function, c, aliases);
+        collectTypedDArrayTargets(function, c, locals, stableStorages, functionTargets);
         collectDArrayEvidence(c, functionTargets, aliases);
         boolean hasRawAccess = rawAccesses != before;
         if (hasRawAccess) functionsWithRawAccess++;
@@ -498,6 +504,29 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         }
     }
 
+    private void collectTypedDArrayTargets(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Matcher matcher = TYPED_DARRAY_BASE.matcher(c);
+        Set<String> seen = new HashSet<>();
+        while (matcher.find()) {
+            String name = matcher.group(1);
+            if (!seen.add(name) || !looksLikeDArrayIndex(c, name)) continue;
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, name);
+            if (target == null) continue;
+            recordField(function, target, 8, 4, "/dword",
+                name + " typed field_0008 DArray element-size role");
+            recordField(function, target, 0x1c, 4, "pointer:/void",
+                name + " typed field_001C DArray data role");
+            if (Pattern.compile("(?<![A-Za-z0-9_$:])" + Pattern.quote(name) +
+                    "\\s*->\\s*field_(?:0[xX])?0*[cC]\\b").matcher(c).find())
+                recordField(function, target, 0x0c, 4, "/dword",
+                    name + " typed field_000C DArray count role");
+            target.dArrayIndexEvidence++;
+        }
+    }
+
     private boolean looksLikeDArrayIndex(String c, String name) {
         String n = Pattern.quote(name);
         String size = "\\*\\s*\\(\\s*(?:u?int|undefined4)\\s*\\*\\s*\\)\\s*" +
@@ -506,9 +535,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         String data = "\\*\\s*\\(\\s*(?:u?int|undefined4)\\s*\\*\\s*\\)\\s*" +
             "\\(\\s*(?:\\(\\s*int\\s*\\)\\s*)?" + n +
             "\\s*\\+\\s*(?:28|0[xX]0*1[cC])\\s*\\)";
+        String typedSize = n + "\\s*->\\s*field_(?:0[xX])?0*8\\b";
+        String typedData = n + "\\s*->\\s*field_(?:0[xX])?0*1[cC]\\b";
         return Pattern.compile(size + "[^;\\r\\n]{0,160}\\+[^;\\r\\n]{0,80}" + data)
             .matcher(c).find() ||
             Pattern.compile(data + "[^;\\r\\n]{0,160}\\+[^;\\r\\n]{0,80}" + size)
+                .matcher(c).find() ||
+            Pattern.compile(typedSize + "[^;]{0,320}\\+[^;]{0,160}" + typedData)
+                .matcher(c).find() ||
+            Pattern.compile(typedData + "[^;]{0,320}\\+[^;]{0,160}" + typedSize)
                 .matcher(c).find();
     }
 
@@ -688,7 +723,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String key = addr(function.getEntryPoint()) + "|" + kind + "|" + storage;
             return new TargetEvidence(key, kind, function.getEntryPoint(),
                 function.getName(true), name, storage, typeSpecification(local.getDataType()),
-                source, comment.contains(APPLIER_MARKER), stableStorages.contains(storage));
+                source, scriptOwnedPointer(comment), typeFamilyOwned(comment),
+                stableStorages.contains(storage));
         }
         List<Symbol> matches = currentProgram.getSymbolTable().getGlobalSymbols(name);
         Symbol symbol = null;
@@ -706,7 +742,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         return new TargetEvidence("global|" + addr(symbol.getAddress()), "global", null,
             "", symbol.getName(), addr(symbol.getAddress()),
             typeSpecification(data.getDataType()), "DATA",
-            comment != null && comment.contains(APPLIER_MARKER), true);
+            scriptOwnedPointer(comment), typeFamilyOwned(comment), true);
     }
 
     private void collectCallEvidence(Function containing, String c,
@@ -943,8 +979,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     current.getPathName() + " to most-derived method owner " +
                     owner.getPathName());
         }
-        if (!currentStructure.isBlank()) return new TargetDecision(false, false,
-            currentStructure, "existing", "target already has a structure pointer type");
+        boolean generatedAnonymous = !currentStructure.isBlank() && target.scriptOwned &&
+            anonymousTypePath(currentStructure);
+        if (!currentStructure.isBlank() && !generatedAnonymous)
+            return new TargetDecision(false, false, currentStructure, "existing",
+                "target already has a named/manual structure pointer type");
 
         if (!target.typeEvidence.isEmpty()) {
             SemanticChoice choice = semanticChoice(target);
@@ -953,18 +992,28 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             Structure structure = structureFromPointer(choice.specification);
             if (structure == null) return new TargetDecision(false, false, "", "review",
                 "semantic type is missing or not a structure: " + choice.specification);
+            if (generatedAnonymous && !namedReceiverType(structure))
+                return new TargetDecision(false, false, currentStructure, "review",
+                    "script-owned anonymous type retained; stronger evidence names only " +
+                    "another anonymous structure: " + choice.specification);
+            if (generatedAnonymous && currentStructure.equals(structure.getPathName()))
+                return new TargetDecision(false, false, currentStructure, "existing",
+                    "semantic evidence confirms the current anonymous structure");
             if (!target.fields.isEmpty() && !semanticCompatible(structure, target))
                 return new TargetDecision(false, false, "",
                 "conflict", "semantic type " + choice.specification +
                     " is shorter than or conflicts with offsets");
             boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
-            boolean apply = replaceable && automaticTarget(target);
+            boolean safeAutoThis = !autoThis(target) || namedReceiverType(structure);
+            boolean apply = replaceable && automaticTarget(target) && safeAutoThis;
             String suffix = apply ? "" : !replaceable ? "; concrete target type preserved" :
+                !safeAutoThis ? "; anonymous auto-this ownership is review-only" :
                 !target.databaseBacked ? "; transient decompiler symbol requires review" :
                 "; unsettled decompiler type propagation: persistent local requires role repair";
             return new TargetDecision(apply, false, structure.getPathName(),
                 apply ? "high" : "review", choice.reason + "=" +
-                target.typeEvidence + suffix);
+                target.typeEvidence + (generatedAnonymous ?
+                    "; replaces script-owned anonymous type " + currentStructure : "") + suffix);
         }
 
         if (knownDArray(target.fields, target.dArrayIndexEvidence)) {
@@ -973,7 +1022,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
             boolean layoutCompatible = darray != null &&
                 compatibleFields(darray, target.fields);
-            boolean apply = layoutCompatible && replaceable && automaticTarget(target);
+            boolean apply = layoutCompatible && replaceable && automaticTarget(target) &&
+                !autoThis(target);
             return new TargetDecision(apply, false,
                 !layoutCompatible ? "" : darray.getPathName(), apply ? "high" : "review",
                 "DArray elementSize*index+data addressing idiom" +
@@ -990,6 +1040,30 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         if (!validFields(target)) return new TargetDecision(false, false, "", "review",
             "conflicting or invalid access widths");
 
+        // Older STTypeFamilyAnalyzer versions merged anonymous structures on
+        // offset/width geometry alone. That is not a type identity: unrelated
+        // records often share the same layout. Rebuild those script-owned
+        // targets from their own access profile so the unsafe merge is reversible.
+        if (generatedAnonymous && target.typeFamilyOwned) {
+            String path = anonymousPath(target);
+            boolean multiField = target.fields.size() >= 2 && target.accessCount >= 3;
+            boolean apply = !path.equals(currentStructure) && multiField &&
+                automaticTarget(target) && !autoThis(target);
+            return new TargetDecision(apply, true, path,
+                apply ? "repair" : "review",
+                "legacy geometry-only anonymous family split back to the target's " +
+                "own observed access profile" +
+                (path.equals(currentStructure) ? "; already target-local" : "") +
+                (!multiField ? "; insufficient independent field evidence" : "") +
+                (!target.databaseBacked ? "; transient decompiler symbol requires review" : "") +
+                (unsettledLocal(target) ?
+                    "; unsettled decompiler type propagation requires review" : ""));
+        }
+
+        if (generatedAnonymous) return new TargetDecision(false, false,
+            currentStructure, "existing",
+            "script-owned anonymous structure retained; no stronger named semantic evidence");
+
         Structure matched = matchExisting(target);
         if (matched != null) {
             return new TargetDecision(false, false, matched.getPathName(),
@@ -1003,7 +1077,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         });
         String path = anonymousPath(target);
         boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
-        boolean apply = (multiField || strongNested) && replaceable && automaticTarget(target);
+        boolean apply = (multiField || strongNested) && replaceable && automaticTarget(target) &&
+            !autoThis(target);
         String reason = multiField ? "multiple consistent fixed offsets in one persistent target" :
             strongNested ? "consistent nested offsets through a pointer field in one persistent target" :
             "single/weak fixed-offset profile retained for review";
@@ -1017,6 +1092,35 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private boolean automaticTarget(TargetEvidence target) {
         return target.databaseBacked && !unsettledLocal(target);
+    }
+
+    private boolean autoThis(TargetEvidence target) {
+        return target.kind.equals("parameter") && target.name.equals("this") &&
+            target.locator.toLowerCase(Locale.ROOT).contains("auto");
+    }
+
+    private boolean namedReceiverType(Structure structure) {
+        String path = structure.getPathName();
+        return !path.contains("/Recovered/PointerShapes/") &&
+            !path.contains("/Recovered/ClassPointees/") &&
+            !path.contains("/Recovered/HiddenThis/");
+    }
+
+    private boolean anonymousTypePath(String path) {
+        return path.contains("/Recovered/PointerShapes/") ||
+            path.contains("/Recovered/ClassPointees/") ||
+            path.contains("/Recovered/HiddenThis/") || leaf(path).startsWith("Anon");
+    }
+
+    private boolean scriptOwnedPointer(String comment) {
+        if (comment == null || comment.isBlank()) return false;
+        for (String marker : POINTER_OWNER_MARKERS)
+            if (comment.contains(marker)) return true;
+        return false;
+    }
+
+    private boolean typeFamilyOwned(String comment) {
+        return comment != null && comment.contains("[STTypeFamilyApplier]");
     }
 
     private boolean unsettledLocal(TargetEvidence target) {
@@ -1123,10 +1227,52 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private Structure knownNestedType(NestedEvidence nested) {
-        if (nested == null || !knownDArray(nested.fields, nested.dArrayIndexEvidence)) return null;
-        DataType candidate = dataTypes.getDataType(DARRAY_PATH);
-        return candidate instanceof Structure && compatibleFields((Structure)candidate,
-            nested.fields) ? (Structure)candidate : null;
+        if (nested == null) return null;
+        if (knownDArray(nested.fields, nested.dArrayIndexEvidence)) {
+            DataType candidate = dataTypes.getDataType(DARRAY_PATH);
+            if (candidate instanceof Structure && compatibleFields((Structure)candidate,
+                    nested.fields)) return (Structure)candidate;
+        }
+        return exactNamedNestedType(selectedNestedFields(nested));
+    }
+
+    private Structure exactNamedNestedType(List<FieldEvidence> fields) {
+        if (fields.size() < 2) return null;
+        int length = nestedLength(fields);
+        Structure winner = null;
+        for (Structure candidate : structures) {
+            String path = candidate.getPathName();
+            if (anonymousTypePath(path) || path.contains("/VTables/") ||
+                    path.contains("/VTableFunctions/") || candidate.getLength() != length ||
+                    candidate.getNumDefinedComponents() != fields.size() ||
+                    meaningfulFieldCount(candidate) < 2) continue;
+            boolean exact = true;
+            for (FieldEvidence field : fields) {
+                int width = uniqueWidth(field);
+                String specification = unique(field.types);
+                DataTypeComponent component = candidate.getComponentAt((int)field.offset);
+                if (width < 1 || specification.isBlank() || component == null ||
+                        component.getOffset() != field.offset ||
+                        component.getLength() != width ||
+                        !specification.equals(typeSpecification(component.getDataType()))) {
+                    exact = false; break;
+                }
+            }
+            if (!exact) continue;
+            if (winner != null) return null;
+            winner = candidate;
+        }
+        return winner;
+    }
+
+    private int meaningfulFieldCount(Structure structure) {
+        int result = 0;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            String name = component.getFieldName();
+            if (name != null && !name.isBlank() && !name.matches(
+                    "(?i)(?:field|value|unknown|unk)(?:_?(?:0x)?[0-9a-f]+)?")) result++;
+        }
+        return result;
     }
 
     private boolean knownDArray(Map<Long, FieldEvidence> fields, int indexEvidence) {
@@ -1521,7 +1667,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static class TargetEvidence {
         final String key, kind, functionName, name, locator, expectedType, expectedSource;
         final Address functionAddress;
-        final boolean scriptOwned, databaseBacked;
+        final boolean scriptOwned, typeFamilyOwned, databaseBacked;
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
         final Map<Long, NestedEvidence> nested = new TreeMap<>();
         final Map<String, Integer> typeEvidence = new TreeMap<>();
@@ -1532,11 +1678,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         int accessCount, dArrayIndexEvidence;
         TargetEvidence(String key, String kind, Address functionAddress, String functionName,
                 String name, String locator, String expectedType, String expectedSource,
-                boolean scriptOwned, boolean databaseBacked) {
+                boolean scriptOwned, boolean typeFamilyOwned, boolean databaseBacked) {
             this.key = key; this.kind = kind; this.functionAddress = functionAddress;
             this.functionName = functionName; this.name = name; this.locator = locator;
             this.expectedType = expectedType; this.expectedSource = expectedSource;
-            this.scriptOwned = scriptOwned; this.databaseBacked = databaseBacked;
+            this.scriptOwned = scriptOwned; this.typeFamilyOwned = typeFamilyOwned;
+            this.databaseBacked = databaseBacked;
         }
     }
     private record CallSite(Function function, List<String> arguments) {}

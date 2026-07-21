@@ -73,10 +73,9 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
                   (((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                         iVar3,iVar4,&local_1c,&local_24), (int)local_10 < 0 ||
                     ((4 < (int)local_10 || (local_1c < 0)))) || (pVVar2->field_0030 <= local_1c))))
-                 || ((((iVar3 = local_24 + (&DAT_0079aed0)[local_10], iVar3 < 0 ||
-                       (pVVar2->field_0034 <= iVar3)) || (pVVar2->field_004C == 0)) ||
-                     (*(char *)(iVar3 * pVVar2->field_0030 + local_1c + pVVar2->field_004C) != '\0')
-                     ))) {
+                 || ((((iVar3 = local_24 + g_centeredOffsets5[local_10], iVar3 < 0 ||
+                       (pVVar2->field_0034 <= iVar3)) || (pVVar2->field_004C == (byte *)0x0)) ||
+                     (pVVar2->field_004C[iVar3 * pVVar2->field_0030 + local_1c] != 0)))) {
                 if (*(char *)(iVar6 + 0x41 + param_1->field_0233) == '\0') {
                   thunk_FUN_004ad460(local_c,0);
                   *(undefined1 *)(iVar6 + 0x41 + param_1->field_0233) = 1;
@@ -143,7 +142,7 @@ LAB_00600928:
         }
         break;
       case 2:
-        if (((*(uint *)(iVar3 + 0x3d) <= (uint)PTR_00802a38->field_00E4) &&
+        if (((*(uint *)(iVar3 + 0x3d) <= PTR_00802a38->field_00E4) &&
             (iVar3 = thunk_FUN_005ff1f0(param_1,local_8,3,param_1->field_022E), -1 < iVar3)) &&
            (iVar3 = thunk_FUN_005fff60(param_1,local_8,iVar3), iVar4 = local_8, iVar3 != 0)) {
           iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
@@ -244,10 +243,10 @@ LAB_00600928:
                                      iVar3,iVar6,&local_20,&local_2c), (int)local_10 < 0)) ||
                 (((4 < (int)local_10 || (local_20 < 0)) ||
                  ((pVVar2->field_0030 <= local_20 ||
-                  ((iVar3 = (&DAT_0079aed0)[local_10] + local_2c, iVar3 < 0 ||
+                  ((iVar3 = g_centeredOffsets5[local_10] + local_2c, iVar3 < 0 ||
                    (pVVar2->field_0034 <= iVar3)))))))) ||
-               ((pVVar2->field_004C == 0 ||
-                (*(char *)(iVar3 * pVVar2->field_0030 + pVVar2->field_004C + local_20) != '\0')))) {
+               ((pVVar2->field_004C == (byte *)0x0 ||
+                (pVVar2->field_004C[local_20 + iVar3 * pVVar2->field_0030] != 0)))) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(char *)((int)local_c + 0x41 + param_1->field_0233) == '\0') {
                 thunk_FUN_004ad460(this,0);

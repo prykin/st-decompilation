@@ -47,11 +47,10 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
     pFVar13 = local_c;
     if (iVar4 == 0) {
       if ((param_3 == 1) || (param_3 == 8)) {
-        if ((AnonShape_006C6FC0_B2C34C14 *)local_c->field_1A9F != (AnonShape_006C6FC0_B2C34C14 *)0x0
-           ) {
-          FUN_006c6fc0((AnonShape_006C6FC0_B2C34C14 *)local_c->field_1A9F);
+        if (local_c->field_1A9F != (AnonShape_006C6FC0_B2C34C14 *)0x0) {
+          FUN_006c6fc0(local_c->field_1A9F);
         }
-        pFVar13->field_1A9F = 0;
+        pFVar13->field_1A9F = (void *)0x0;
         if (pFVar13->field_1A9B != 0) {
           FreeAndNull((void **)&pFVar13->field_1A9B);
         }
@@ -66,11 +65,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
           pFVar13 = local_c;
           local_8 = piVar8;
           if (piVar8 != (int *)0x0) {
-            puVar5 = &local_8e0;
-            for (iVar4 = 0x100; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *puVar5 = 0;
-              puVar5 = puVar5 + 1;
-            }
+            memset(&local_8e0, 0, 0x400); /* compiler bulk-zero initialization */
             FUN_006c7bb0(piVar8,(undefined1 *)&local_8e0,&local_14);
             iVar4 = 0x80;
             local_10 = 0x40;
@@ -127,11 +122,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                      Library::DKW::GPC::FUN_006c7dc0(local_c->field_1A9B);
             pFVar13->field_1A9F = pAVar6;
             if (pAVar6 != (AnonShape_006C7D20_41F6C243 *)0x0) {
-              puVar5 = &local_4e0;
-              for (iVar4 = 0x100; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *puVar5 = 0;
-                puVar5 = puVar5 + 1;
-              }
+              memset(&local_4e0, 0, 0x400); /* compiler bulk-zero initialization */
               FUN_006c7d20(pAVar6,(int)&local_4e0,&local_10);
               iVar4 = 0x80;
               local_8 = (int *)0x40;
@@ -147,14 +138,14 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                 local_8 = (int *)((int)local_8 + -1);
               } while (local_8 != (int *)0x0);
               FUN_006b0a20(DAT_0080759c,(int)local_460,0x20,0x40,0);
-              FUN_006c7d00((undefined4 *)pFVar13->field_1A9F,0x4e,9);
+              FUN_006c7d00(pFVar13->field_1A9F,0x4e,9);
               Library::DKW::GPC::FUN_006c7070
-                        ((int *)pFVar13->field_1A9F,(undefined4 *)pFVar13->field_1A97,0);
-              iVar4 = FUN_006c7000((AnonShape_006C7000_4A8D1200 *)pFVar13->field_1A9F);
+                        (pFVar13->field_1A9F,(undefined4 *)pFVar13->field_1A97,0);
+              iVar4 = FUN_006c7000(pFVar13->field_1A9F);
               pFVar13->field_1AA3 = iVar4;
               if (iVar4 < 1) {
-                FUN_006c6fc0((AnonShape_006C6FC0_B2C34C14 *)pFVar13->field_1A9F);
-                pFVar13->field_1A9F = 0;
+                FUN_006c6fc0(pFVar13->field_1A9F);
+                pFVar13->field_1A9F = (void *)0x0;
                 FreeAndNull((void **)&pFVar13->field_1A9B);
                 pFVar13->field_1AA3 = 0;
                 g_currentExceptionFrame = local_e0.previous;
@@ -172,11 +163,10 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         }
         else {
           g_currentExceptionFrame = local_e0.previous;
-          if ((AnonShape_006C6FC0_B2C34C14 *)local_c->field_1A9F !=
-              (AnonShape_006C6FC0_B2C34C14 *)0x0) {
-            FUN_006c6fc0((AnonShape_006C6FC0_B2C34C14 *)local_c->field_1A9F);
+          if (local_c->field_1A9F != (AnonShape_006C6FC0_B2C34C14 *)0x0) {
+            FUN_006c6fc0(local_c->field_1A9F);
           }
-          pFVar13->field_1A9F = 0;
+          pFVar13->field_1A9F = (void *)0x0;
           if (pFVar13->field_1A9B != 0) {
             FreeAndNull((void **)&pFVar13->field_1A9B);
           }
@@ -184,7 +174,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         }
       }
 LAB_005a1cfd:
-      FUN_006b35d0(DAT_008075a8,pFVar13->field_1A8F);
+      FUN_006b35d0((int *)PTR_008075a8,pFVar13->field_1A8F);
       if ((param_3 == 1) || (param_3 == 8)) {
         if (pFVar13->field_1AAB != (LPCSTR)0x0) {
           FreeAndNull(&pFVar13->field_1AAB);

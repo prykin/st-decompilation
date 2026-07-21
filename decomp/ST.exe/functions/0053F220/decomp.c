@@ -64,7 +64,7 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
     if (pPVar2->field_0184 != 0) {
       cMf32::RecMemFree(DAT_00806790,&pPVar2->field_0184);
     }
-    pPVar2->field_0190 = 0;
+    pPVar2->field_0190 = (ushort *)0x0;
     pPVar2->field_0188 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

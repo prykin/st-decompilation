@@ -10,8 +10,6 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
   STGroupBoatC *this_00;
   int iVar1;
   undefined4 uVar2;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
 
   if (param_1 == 0) {
     this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,(uint)(ushort)this->field_0030);
@@ -40,8 +38,10 @@ switchD_00460024_caseD_1:
     }
   }
   else {
-    uVar2 = (*this->vtable->vfunc_1C)();
-    iVar1 = (*this->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    uVar2 = (**(code **)&this->vtable->field_0x1c)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar1 = (*(code *)this->vtable->field_00D8)();
     if (iVar1 == 0) {
       switch(uVar2) {
       case 0:
@@ -68,9 +68,9 @@ switchD_00460024_caseD_1:
         return 2;
       case 1:
         goto switchD_00460024_caseD_1;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       case 2:
-        (*this->vtable->StopMove)(this,unaff_EDI);
+        (*(code *)this->vtable->field_0020)();
         return 3;
       }
     }

@@ -16,7 +16,6 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   undefined4 uVar4;
   int iVar5;
   uint *puVar6;
-  undefined4 *puVar7;
   uint uVar8;
   uint local_510 [280];
   InternalExceptionFrame local_b0;
@@ -42,16 +41,9 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   local_c = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar3 == 0) {
-    puVar7 = local_6c;
-    for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
-    puVar6 = local_510;
-    for (iVar3 = 0x118; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(local_6c, 0, 0x58); /* compiler bulk-zero initialization */
+    iVar3 = 0;
+    memset(local_510, 0, 0x460); /* compiler bulk-zero initialization */
     bVar2 = 0;
     if (param_1 != 0) {
       local_14 = local_c->field_005C;

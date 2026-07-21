@@ -67,11 +67,7 @@ ProdPanelTy::CreateSlider
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 == 0) {
-    piVar7 = local_42c;
-    for (iVar2 = 0xf6; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar7 = 0;
-      piVar7 = piVar7 + 1;
-    }
+    memset(local_42c, 0, 0x3d8); /* compiler bulk-zero initialization */
     local_6c = param_7;
     local_84 = this_00->field_0008;
     local_68 = param_8;
@@ -140,8 +136,8 @@ ProdPanelTy::CreateSlider
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,&local_8,(int *)0x0,local_42c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(4,&local_8,0,local_42c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }

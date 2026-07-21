@@ -21,7 +21,6 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   char *pcVar10;
   UINT *pUVar11;
   uint *puVar12;
-  int *piVar13;
   undefined4 *puVar14;
   UINT *pUVar15;
   ccFntTy_CreateTypeSSpr_param_4Enum cVar16;
@@ -170,14 +169,11 @@ LAB_005b7ad9:
       }
       if ((this_00->field_1CA9 == '\0') && (local_58[2] = this_00->field_1CAB, local_58[2] != 0)) {
         pSVar4 = this_00->field_000C;
-        piVar13 = local_58;
-        for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *piVar13 = 0;
-          piVar13 = piVar13 + 1;
-        }
+        memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
         local_58[3] = 2;
         local_58[4] = 0x693f;
-        (*pSVar4->vtable->vfunc_18)(local_58);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)pSVar4->vtable->field_0018)(local_58);
         g_currentExceptionFrame = local_bc.previous;
         return;
       }
@@ -243,15 +239,12 @@ LAB_005b7655:
         }
         iVar6 = this_00->field_1CAB;
         if (iVar6 != 0) {
-          piVar13 = local_78;
-          for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *piVar13 = 0;
-            piVar13 = piVar13 + 1;
-          }
+          memset(local_78, 0, 0x20); /* compiler bulk-zero initialization */
           local_78[3] = 2;
           local_78[4] = 0x693f;
           local_78[2] = iVar6;
-          (*this_00->field_000C->vtable->vfunc_18)(local_78);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->field_000C->vtable->field_0018)(local_78);
         }
         if (this_00->field_1A5F != '\0') {
           local_14 = 0;
@@ -316,15 +309,12 @@ LAB_005b7655:
       }
       iVar6 = this_00->field_1CAB;
       if (iVar6 != 0) {
-        piVar13 = local_38;
-        for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
-          *piVar13 = 0;
-          piVar13 = piVar13 + 1;
-        }
+        memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
         local_38[3] = 2;
         local_38[4] = 0x693f;
         local_38[2] = iVar6;
-        (*this_00->field_000C->vtable->vfunc_18)(local_38);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)this_00->field_000C->vtable->field_0018)(local_38);
       }
       bVar2 = this_00->field_1A5A;
       if ((bVar2 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {

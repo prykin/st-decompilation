@@ -23,7 +23,6 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   int iVar7;
   int iVar8;
   uint *puVar9;
-  int *piVar10;
   InternalExceptionFrame local_b0;
   int local_6c [8];
   uint local_4c;
@@ -96,11 +95,8 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
             iVar7 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
             if (iVar7 == -0x4d) {
-              piVar10 = local_6c;
-              for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-                *piVar10 = 0;
-                piVar10 = piVar10 + 1;
-              }
+              memset(local_6c, 0, 0x20); /* compiler bulk-zero initialization */
+              iVar7 = 0;
               local_6c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
               if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -213,7 +209,7 @@ switchD_005adb01_caseD_c:
       }
       this_00->field_0065 = 1;
       if (this_00->field_0x20b5 != '\0') {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_02EC);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_02EC);
         if (PTR_0081176c->field_02FC != 0xffffffff) {
           FUN_006b3af0((int *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC);
         }
@@ -237,7 +233,7 @@ switchD_005adb01_caseD_c:
       puVar9 = &this_00->field_1C23;
       iVar7 = 0x16;
       do {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar9);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar9);
         puVar9 = puVar9 + 1;
         iVar7 = iVar7 + -1;
       } while (iVar7 != 0);
@@ -256,7 +252,7 @@ switchD_005adb01_caseD_c:
                   ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,0xfffffffe,
                    PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
       }
-      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0540);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0540);
       CVar3 = this_00->field_1A5F;
       if ((((CVar3 == CASE_C) || (CVar3 == CASE_4)) || (CVar3 == CASE_5)) || (CVar3 == CASE_13)) {
         if (PTR_0081176c->field_0560 != 0xffffffff) {
@@ -269,8 +265,8 @@ switchD_005adb01_caseD_c:
                     ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
                      PTR_0081176c->field_0609,PTR_0081176c->field_060D);
         }
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0558);
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
       }
       PaintChooseMap(this_00,'\0');
       g_currentExceptionFrame = local_b0.previous;
@@ -292,7 +288,7 @@ switchD_005adb01_caseD_c:
       if (iVar7 == 0) {
         uVar4 = this_00->field_20B8->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {
@@ -304,7 +300,7 @@ switchD_005adb01_caseD_c:
       if (iVar7 == 0) {
         uVar4 = this_00->field_20BC->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {
@@ -316,7 +312,7 @@ switchD_005adb01_caseD_c:
       if (iVar7 == 0) {
         uVar4 = this_00->field_20C0->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {

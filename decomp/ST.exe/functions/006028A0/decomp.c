@@ -41,17 +41,17 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (pVVar1->field_0030 <= param_2) {
       return iVar2;
     }
-    iVar3 = (&DAT_0079aed0)[param_3] + (int)local_8;
+    iVar3 = g_centeredOffsets5[param_3] + (int)local_8;
     if (iVar3 < 0) {
       return iVar2;
     }
     if (pVVar1->field_0034 <= iVar3) {
       return iVar2;
     }
-    if (pVVar1->field_004C == 0) {
+    if (pVVar1->field_004C == (byte *)0x0) {
       return iVar2;
     }
-    if (*(char *)(iVar3 * pVVar1->field_0030 + pVVar1->field_004C + param_2) != '\0') {
+    if (pVVar1->field_004C[param_2 + iVar3 * pVVar1->field_0030] != 0) {
       return iVar2;
     }
   }

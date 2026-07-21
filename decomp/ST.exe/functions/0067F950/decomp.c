@@ -62,7 +62,7 @@ LAB_0067f9e1:
   if ((int)uVar3 < 0) {
     uVar3 = Library::DKW::TBL::FUN_006b5aa0((uint *)PTR_00848a34,(char *)param_1);
     local_8 = 0;
-    uVar6 = Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_00848a30,&local_8);
+    uVar6 = Library::DKW::TBL::FUN_006ae1c0(&PTR_00848a30->flags,&local_8);
     if (uVar6 != uVar3) {
       RaiseInternalException(-5,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0x195);
     }

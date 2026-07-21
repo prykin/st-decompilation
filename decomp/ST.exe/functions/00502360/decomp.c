@@ -58,11 +58,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
     *puVar11 = 0;
     puVar11 = puVar11 + 1;
   }
-  puVar11 = local_2c8;
-  for (iVar7 = 0x70; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
-  }
+  memset(local_2c8, 0, 0x1c0); /* compiler bulk-zero initialization */
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
@@ -105,11 +101,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   }
   else {
     local_c = (undefined4 *)((uint)local_c & 0xffffff00);
-    puVar11 = local_6c;
-    for (iVar7 = 0x14; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar11 = 0;
-      puVar11 = puVar11 + 1;
-    }
+    memset(local_6c, 0, 0x50); /* compiler bulk-zero initialization */
     local_8 = &this_00->field_0x780;
     local_14 = &this_00->field_0BA2;
     iVar7 = -0xba3 - (int)this_00;
@@ -171,8 +163,8 @@ LAB_0050254c:
     local_38 = 2;
     local_34 = 0xb200;
     local_3c = local_5c;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,(int *)0x0,local_6c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(9,&this_00->field_02FE,0,local_6c,0);
     thunk_FUN_004f1610(this_00,'\x01');
     iVar7 = this_00->field_09C0;
     if (iVar7 == 0) goto LAB_00502622;

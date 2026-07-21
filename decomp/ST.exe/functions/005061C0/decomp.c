@@ -854,9 +854,10 @@ cf_common_exit_00507034:
 switchD_00506878_caseD_3b:
   PaintIDSObj(this_00);
 switchD_00506377_caseD_df:
-  if (-1 < (int)this_00->field_015C) {
+  if (-1 < this_00->field_015C) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,this_00->field_00A8);
+              ((int *)PTR_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
+               this_00->field_00A8);
   }
   g_currentExceptionFrame = local_64.previous;
   return;

@@ -120,9 +120,10 @@ switchD_0050179b_caseD_16:
     PaintBEnergy(this_00);
   }
 switchD_0050179b_caseD_9:
-  if (-1 < (int)this_00->field_0154) {
+  if (-1 < this_00->field_0154) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,this_00->field_00A0);
+              ((int *)PTR_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,
+               this_00->field_00A0);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

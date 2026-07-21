@@ -36,7 +36,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
     local_14 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar3 == 0) {
-      FUN_006b13e0(DAT_008075a8);
+      FUN_006b13e0((int *)PTR_008075a8);
       pIVar6 = g_currentExceptionFrame;
       uVar7 = local_c;
       for (; (uVar7 == 0 && (-1 < local_8)); local_8 = local_8 + -1) {
@@ -68,16 +68,9 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
           } while (iVar3 < (int)*puVar8);
         }
         if (local_10 != 0) {
-          puVar8 = local_4bc;
-          for (iVar3 = 0x100; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar8 = 0;
-            puVar8 = puVar8 + 1;
-          }
-          puVar8 = local_78;
-          for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar8 = 0;
-            puVar8 = puVar8 + 1;
-          }
+          memset(local_4bc, 0, 0x400); /* compiler bulk-zero initialization */
+          iVar3 = 0;
+          memset(local_78, 0, 0x20); /* compiler bulk-zero initialization */
           g_currentExceptionFrame = &local_bc;
           local_bc.previous = pIVar6;
           iVar3 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
@@ -102,15 +95,15 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
         RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x442)
         ;
       }
-      Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
-      Library::DKW::DDX::FUN_006b1680(DAT_008075a8,(int)DAT_0080759c);
-      FUN_006b1980(DAT_008075a8,2,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
+      Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
+      Library::DKW::DDX::FUN_006b1680((int *)PTR_008075a8,(int)DAT_0080759c);
+      FUN_006b1980((int *)PTR_008075a8,2,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
-      FUN_006b1cc0((int)DAT_008075a8,2,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
+      FUN_006b1cc0((int)PTR_008075a8,2,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (undefined4 *)0x0);
-      FUN_006b1980(DAT_008075a8,3,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
+      FUN_006b1980((int *)PTR_008075a8,3,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
-      FUN_006b1cc0((int)DAT_008075a8,3,0,0,(undefined4 *)0x0);
+      FUN_006b1cc0((int)PTR_008075a8,3,0,0,(undefined4 *)0x0);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

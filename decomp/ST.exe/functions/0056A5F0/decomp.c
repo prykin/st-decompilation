@@ -1,15 +1,16 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B0A8 (store 0056A67D)
    Evidence: final_vptr=0079B0A8; returns_this=true; calls_before=2; field_writes_after=38;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; table_confidence=high */
 
-undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
+STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
 
 {
   DWORD DVar1;
   int iVar2;
-  undefined4 *puVar3;
 
   AppClassTy::AppClassTy((AppClassTy *)this,0,param_1);
   thunk_FUN_00571cd0((AnonShape_00571CD0_C1ECCB3F *)&this->field_0038);
@@ -28,7 +29,7 @@ undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_0E37 = 0;
   this->field_0E3F = 0xffffffff;
   this->field_0E3B = 0xffffffff;
-  this->vtable = &STAppCVTable;
+  this->vtable = (AnonPointee_STAppC_0000 *)&STAppCVTable;
   g_appClass_00806728 = (AppClassTy *)this;
   this->field_115A = (AnonPointee_STAppC_115A *)0x0;
   DAT_0080673c = 0;
@@ -51,11 +52,11 @@ undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_112D = 1;
   this->field_112E = 1;
   this->field_4EDE = 0;
-  this->field_4EE2 = 0;
-  this->field_4EE6 = 0;
+  this->field_4EE2 = (uint *)0x0;
+  this->field_4EE6 = (uint *)0x0;
   this->field_4EEA = 0;
   this->field_4EF2 = 0;
-  this->field_7D12 = 0;
+  this->field_7D12 = (ushort *)0x0;
   this->field_7D16 = 0;
   this->field_4EF6 = 1;
   this->field_4EFA = 0;
@@ -67,20 +68,12 @@ undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_854E = 0;
   this->field_8552 = 0;
   this->field_8556 = 0;
-  puVar3 = (undefined4 *)&this->field_0x1196;
-  for (iVar2 = 0x666; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
-  }
-  *(undefined1 *)puVar3 = 0;
-  puVar3 = (undefined4 *)&this->field_4DA3;
-  for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
-  }
-  this->field_4EA7 = 0;
-  this->field_4EAB = 0;
+  memset(&this->field_0x1196, 0, 0x1999); /* compiler bulk-zero initialization */
+  iVar2 = 0;
+  memset(&this->field_4DA3, 0, 0x104); /* compiler bulk-zero initialization */
+  this->field_4EA7 = (uint *)0x0;
+  this->field_4EAB = (uint *)0x0;
   this->field_4EFE = 0;
-  return &this->vtable;
+  return this;
 }
 

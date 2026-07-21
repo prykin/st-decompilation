@@ -26,9 +26,9 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   STBoatC *extraout_ECX;
   STBoatC *pSVar15;
   uint uVar16;
+  int iVar17;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  int iVar17;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -41,20 +41,17 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   undefined4 extraout_EDX_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_EDX_06;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   bool bVar18;
-  longlong lVar19;
-  short sVar20;
+  undefined8 uVar19;
+  longlong lVar20;
   short sVar21;
   short sVar22;
   short sVar23;
   short sVar24;
   short sVar25;
   short sVar26;
-  byte bVar27;
+  short sVar27;
+  byte bVar28;
   undefined4 local_d8;
   undefined4 local_d4;
   undefined4 local_d0;
@@ -83,7 +80,9 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   undefined4 local_54;
   undefined4 local_50;
   undefined4 local_4c [2];
-  STMessage local_44;
+  undefined1 local_44 [16];
+  undefined4 local_34;
+  undefined4 *local_30;
   uint local_24;
   int local_20;
   int local_1c;
@@ -94,24 +93,20 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   short local_8;
 
   if ((param_1 == 0) || (pSVar15 = this, param_1 == 1)) {
-    puVar12 = &this->field_02CC;
-    for (iVar14 = 0x17; iVar14 != 0; iVar14 = iVar14 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    sVar20 = this->field_0373;
-    sVar21 = this->field_0377;
-    sVar22 = this->field_0375;
-    if ((((sVar20 < 0) || (g_worldGrid.sizeX <= sVar20)) || (sVar22 < 0)) ||
-       (((g_worldGrid.sizeY <= sVar22 || (sVar21 < 0)) ||
-        ((g_worldGrid.sizeZ <= sVar21 ||
+    sVar21 = this->field_0373;
+    sVar22 = this->field_0377;
+    sVar23 = this->field_0375;
+    if ((((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) || (sVar23 < 0)) ||
+       (((g_worldGrid.sizeY <= sVar23 || (sVar22 < 0)) ||
+        ((g_worldGrid.sizeZ <= sVar22 ||
          (g_pathingGrid.cells
-          [(int)g_pathingGrid.sizeX * (int)sVar22 + (int)g_pathingGrid.planeStride * (int)sVar21 +
-           (int)sVar20] != 0)))))) {
+          [(int)g_pathingGrid.sizeX * (int)sVar23 + (int)g_pathingGrid.planeStride * (int)sVar22 +
+           (int)sVar21] != 0)))))) {
       return 0;
     }
-    this->field_04DD = sVar20;
+    this->field_04DD = sVar21;
     this->field_04FA = this->field_0390;
     this->field_04DF = this->field_0375;
     this->field_04E1 = this->field_0377;
@@ -153,22 +148,22 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     case 2:
       local_14 = PTR_00802a38->field_00E4;
       if (local_14 % 10 != 0) break;
-      sVar20 = this->field_04DD;
+      sVar21 = this->field_04DD;
       uVar3 = this->field_04DF;
       local_18 = (uint)uVar3;
-      sVar21 = this->field_04E1;
-      if ((((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) && (-1 < (short)uVar3)) &&
-         ((((short)uVar3 < g_worldGrid.sizeY && (-1 < sVar21)) &&
-          ((sVar21 < g_worldGrid.sizeZ &&
+      sVar22 = this->field_04E1;
+      if ((((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) && (-1 < (short)uVar3)) &&
+         ((((short)uVar3 < g_worldGrid.sizeY && (-1 < sVar22)) &&
+          ((sVar22 < g_worldGrid.sizeZ &&
            (g_pathingGrid.cells
             [(int)g_pathingGrid.sizeX * (int)(short)uVar3 +
-             (int)g_pathingGrid.planeStride * (int)sVar21 + (int)sVar20] == 0)))))) break;
-      if (((sVar20 < 0) || (g_worldGrid.sizeX <= sVar20)) ||
+             (int)g_pathingGrid.planeStride * (int)sVar22 + (int)sVar21] == 0)))))) break;
+      if (((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) ||
          (((short)uVar3 < 0 ||
-          ((((g_worldGrid.sizeY <= (short)uVar3 || (sVar21 < 0)) || (g_worldGrid.sizeZ <= sVar21))
+          ((((g_worldGrid.sizeY <= (short)uVar3 || (sVar22 < 0)) || (g_worldGrid.sizeZ <= sVar22))
            || (pSVar5 = g_worldGrid.cells
                         [(int)(short)uVar3 * (int)g_worldGrid.sizeX +
-                         (int)g_worldGrid.planeStride * (int)sVar21 + (int)sVar20].objects[0],
+                         (int)g_worldGrid.planeStride * (int)sVar22 + (int)sVar21].objects[0],
               pSVar5 == (STWorldObject *)0x0)))))) {
         iVar14 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x23c0,0,0,"%s"
                                     ,"STBoatC::Build NULL");
@@ -180,37 +175,37 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
       if ((pSVar5[1].vtable < (STWorldObjectVTable *)0x8) &&
          ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
           ((byte)(&DAT_008087e9)[(int)pSVar5[1].vtable * 0x51] < 8)))) {
-        bVar27 = *(byte *)&pSVar5[1].vtable;
+        bVar28 = *(byte *)&pSVar5[1].vtable;
         bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = (undefined4 *)CONCAT31(local_10._1_3_,bVar27);
+        local_10 = (undefined4 *)CONCAT31(local_10._1_3_,bVar28);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_1c = CONCAT31(local_1c._1_3_,bVar1);
         if (DAT_00808a8f == '\0') {
-          if (bVar27 == bVar1) {
+          if (bVar28 == bVar1) {
 LAB_0046b5ac:
             iVar14 = 0;
           }
           else {
-            bVar2 = g_playerRelationMatrix[bVar27][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar27] == 0)) {
+            bVar2 = g_playerRelationMatrix[bVar28][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar28] == 0)) {
               iVar14 = -2;
             }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar27] == 0)) {
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar28] == 0)) {
               iVar14 = -1;
             }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar27] == 1)) {
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar28] == 1)) {
               iVar14 = 1;
             }
             else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar27] != 1)) goto LAB_0046b5ac;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar28] != 1)) goto LAB_0046b5ac;
               iVar14 = 2;
             }
           }
           bVar18 = iVar14 < 0;
         }
         else {
-          bVar18 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar27 * 0x51];
+          bVar18 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar28 * 0x51];
         }
         if (bVar18) {
           param_1 = local_14;
@@ -238,15 +233,14 @@ LAB_0046b5ac:
   }
   else {
     if (SVar4 == CASE_1) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar14 = (*this->vtable->StopMove)(this,unaff_EDI);
-      if (iVar14 == -1) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      uVar19 = (*(code *)this->vtable->field_0020)();
+      if ((int)uVar19 == -1) {
         return -1;
       }
-      if (iVar14 == 1) {
+      if ((int)uVar19 == 1) {
         this->field_0508 = CASE_7;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX);
+        thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,(int)((ulonglong)uVar19 >> 0x20));
         sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
         iVar14 = sub_0045FF50(this,0);
         if (iVar14 == -1) {
@@ -264,8 +258,8 @@ LAB_0046b5ac:
         iVar10 = CONCAT22((short)((uint)iVar17 >> 0x10),this->field_04DD + 1);
         iVar14 = iVar10 * 0xc9;
         uVar7 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar7 = (*this->vtable->vfunc_10)
+        /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+        uVar7 = (*(code *)this->vtable->field_0010)
                           (CONCAT22(uVar7,this->field_0041),
                            CONCAT22((short)((uint)iVar14 >> 0x10),this->field_0043),
                            CONCAT22(uVar7,this->field_0045),iVar14,iVar17,iVar9);
@@ -299,7 +293,7 @@ LAB_0046b5ac:
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,(int *)&local_14);
         local_20 = 0;
         if (this->field_02BF != '\0') {
-          local_10 = &this->field_02B3;
+          local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar12 = (undefined4 *)
                       thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
@@ -307,23 +301,23 @@ LAB_0046b5ac:
             local_c = *puVar12;
             local_8 = *(short *)(puVar12 + 1);
             if (DAT_0080732c == 1) {
-              bVar27 = 0;
-              sVar26 = 0;
+              bVar28 = 0;
+              sVar27 = 0;
               uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar9 = -1;
               this->field_001C = uVar11;
+              sVar26 = 0;
               sVar25 = 0;
-              sVar24 = 0;
               uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-              sVar23 = 0;
+              sVar24 = 0;
               this->field_001C = uVar13;
+              sVar23 = 0;
               sVar22 = 0;
-              sVar21 = 0;
               local_24 = uVar13 * 0x41c64e6d + 0x3039;
-              sVar20 = 0;
+              sVar21 = 0;
               this->field_001C = local_24;
-              lVar19 = Library::MSVCRT::__ftol();
-              iVar14 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+              lVar20 = Library::MSVCRT::__ftol();
+              iVar14 = (int)(short)lVar20 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
@@ -331,18 +325,18 @@ LAB_0046b5ac:
             }
             else {
               uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
-              bVar27 = 0;
-              sVar26 = 0;
+              bVar28 = 0;
+              sVar27 = 0;
               uVar16 = uVar13 * 0x41c64e6d + 0x3039;
               iVar9 = -1;
+              sVar26 = 0;
               sVar25 = 0;
               sVar24 = 0;
               sVar23 = 0;
               sVar22 = 0;
-              sVar21 = 0;
               this->field_001C = uVar13;
               uVar11 = uVar16 * 0x41c64e6d + 0x3039;
-              sVar20 = 0;
+              sVar21 = 0;
               this->field_001C = uVar16;
               this->field_001C = uVar11;
               iVar14 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
@@ -354,8 +348,8 @@ LAB_0046b5ac:
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
-                       iVar17 + -3,iVar14,sVar20,sVar21,sVar22,sVar23,sVar24,sVar25,iVar9,sVar26,
-                       bVar27);
+                       iVar17 + -3,iVar14,sVar21,sVar22,sVar23,sVar24,sVar25,sVar26,iVar9,sVar27,
+                       bVar28);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
           } while (local_20 < (int)(uint)(byte)this->field_02BF);
@@ -396,7 +390,8 @@ LAB_0046b5ac:
       if (uVar11 == 0) {
         this->field_0508 = CASE_4;
         this->field_050C = 2;
-        iVar14 = (*this->vtable->vfunc_D8)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar14 = (*(code *)this->vtable->field_00D8)();
         return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
       }
       goto cf_common_exit_0046C3C5;
@@ -411,7 +406,7 @@ LAB_0046b5ac:
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
         if (this->field_02BF != '\0') {
-          local_10 = &this->field_02B3;
+          local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar12 = (undefined4 *)
                       thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
@@ -419,23 +414,23 @@ LAB_0046b5ac:
             local_c = *puVar12;
             local_8 = *(short *)(puVar12 + 1);
             if (DAT_0080732c == 1) {
-              bVar27 = 0;
-              sVar26 = 0;
+              bVar28 = 0;
+              sVar27 = 0;
               uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar9 = -1;
               this->field_001C = uVar11;
+              sVar26 = 0;
               sVar25 = 0;
-              sVar24 = 0;
               uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-              sVar23 = 0;
+              sVar24 = 0;
               this->field_001C = uVar13;
+              sVar23 = 0;
               sVar22 = 0;
-              sVar21 = 0;
               local_24 = uVar13 * 0x41c64e6d + 0x3039;
-              sVar20 = 0;
+              sVar21 = 0;
               this->field_001C = local_24;
-              lVar19 = Library::MSVCRT::__ftol();
-              iVar14 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+              lVar20 = Library::MSVCRT::__ftol();
+              iVar14 = (int)(short)lVar20 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
@@ -445,18 +440,18 @@ LAB_0046b5ac:
               uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
               this->field_001C = uVar13;
               uVar16 = uVar13 * 0x41c64e6d + 0x3039;
-              bVar27 = 0;
+              bVar28 = 0;
               this->field_001C = uVar16;
               uVar11 = uVar16 * 0x41c64e6d + 0x3039;
               this->field_001C = uVar11;
-              sVar26 = 0;
+              sVar27 = 0;
               iVar9 = -1;
+              sVar26 = 0;
               sVar25 = 0;
               sVar24 = 0;
               sVar23 = 0;
               sVar22 = 0;
               sVar21 = 0;
-              sVar20 = 0;
               iVar14 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
@@ -466,8 +461,8 @@ LAB_0046b5ac:
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
-                       iVar17 + -3,iVar14,sVar20,sVar21,sVar22,sVar23,sVar24,sVar25,iVar9,sVar26,
-                       bVar27);
+                       iVar17 + -3,iVar14,sVar21,sVar22,sVar23,sVar24,sVar25,sVar26,iVar9,sVar27,
+                       bVar28);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
           } while (local_20 < (int)(uint)(byte)this->field_02BF);
@@ -488,19 +483,18 @@ LAB_0046b5ac:
           this->field_050C = 0;
         }
       }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0046b6e2:
-      iVar14 = (*this->vtable->vfunc_D8)();
+      iVar14 = (*(code *)this->vtable->field_00D8)();
       return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_5) {
       puVar12 = &local_d8;
-      for (iVar14 = 0x1b; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *puVar12 = 0;
-        puVar12 = puVar12 + 1;
-      }
+      memset(puVar12, 0, 0x6c); /* compiler bulk-zero initialization */
+      puVar12 = (undefined4 *)((byte *)puVar12 + 0x6c);
       uVar8 = this->field_0502;
       *(undefined2 *)puVar12 = 0;
-      sVar20 = this->field_04DD;
+      sVar21 = this->field_04DD;
       *(undefined1 *)((int)puVar12 + 2) = 0;
       local_d4 = this->field_0024;
       local_b0 = this->field_04E3;
@@ -521,7 +515,7 @@ LAB_0046b6e2:
       local_c8 = uVar8;
       local_c0 = local_d4;
       local_b4 = uVar8;
-      local_ac = (int)sVar20;
+      local_ac = (int)sVar21;
       Library::MSVCRT::_strncpy(local_98,&this->field_0x4eb,0xe);
       local_8a = 0;
       if (this->field_0502 == 0) {
@@ -529,19 +523,20 @@ LAB_0046b6e2:
                                     this->field_04E3,this->field_0024,(undefined4 *)0x0,(int *)0x0,
                                     (int *)0x0,0,(int *)0x0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = extraout_EDX_00;
+        uVar8 = extraout_EDX;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((iVar14 != 0) &&
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
-           uVar8 = extraout_EDX_01, this->field_06F7 == CASE_19)) {
-          local_44.arg0.ptr = &local_68;
+           uVar8 = extraout_EDX_00, this->field_06F7 == CASE_19)) {
+          local_30 = &local_68;
           local_68 = 10000;
           local_64 = 0;
           local_60 = 0xfe;
           local_54 = 1;
           local_50 = 1;
-          local_44.id = MESS_HITKILL;
-          (*this->vtable->GetMessage)(this,&local_44);
+          local_34 = 0x128;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)this->vtable)(local_44);
           goto cf_common_exit_0046C3C5;
         }
       }
@@ -550,19 +545,20 @@ LAB_0046b6e2:
                                     this->field_04E3,this->field_0024,(undefined4 *)0x0,(int *)0x0,
                                     (int *)0x0,0,(int *)0x0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = extraout_EDX_02;
+        uVar8 = extraout_EDX_01;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((iVar14 != 0) &&
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
-           uVar8 = extraout_EDX_03, this->field_06F7 == CASE_19)) {
-          local_44.arg0.ptr = &local_68;
+           uVar8 = extraout_EDX_02, this->field_06F7 == CASE_19)) {
+          local_30 = &local_68;
           local_68 = 10000;
           local_64 = 0;
           local_60 = 0xfe;
           local_54 = 1;
           local_50 = 1;
-          local_44.id = MESS_HITKILL;
-          (*this->vtable->GetMessage)(this,&local_44);
+          local_34 = 0x128;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)this->vtable)(local_44);
           goto cf_common_exit_0046C3C5;
         }
       }
@@ -578,8 +574,9 @@ LAB_0046b6e2:
           return -1;
         }
       }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0046C04E:
-      iVar14 = (*this->vtable->vfunc_D8)();
+      iVar14 = (*(code *)this->vtable->field_00D8)();
       return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_6) {
@@ -590,8 +587,8 @@ cf_common_exit_0046C04E:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar17 = CONCAT22((short)((uint)iVar14 >> 0x10),this->field_04FC * 0xc9) + 100;
         uVar7 = (undefined2)((uint)iVar9 >> 0x10);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar7 = (*this->vtable->vfunc_10)
+        /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+        uVar7 = (*(code *)this->vtable->field_0010)
                           (CONCAT22(uVar7,this->field_0041),
                            CONCAT22((short)((uint)iVar17 >> 0x10),this->field_0043),
                            CONCAT22(uVar7,this->field_0045),iVar17,iVar9,iVar14);
@@ -625,9 +622,9 @@ cf_common_exit_0046C04E:
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = extraout_EDX_04;
+        uVar8 = extraout_EDX_03;
         if (this->field_02BF != '\0') {
-          local_10 = &this->field_02B3;
+          local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar12 = (undefined4 *)
                       thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
@@ -635,23 +632,23 @@ cf_common_exit_0046C04E:
             local_c = *puVar12;
             local_8 = *(short *)(puVar12 + 1);
             if (DAT_0080732c == 1) {
-              bVar27 = 0;
-              sVar26 = 0;
+              bVar28 = 0;
+              sVar27 = 0;
               uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar9 = -1;
               this->field_001C = uVar11;
+              sVar26 = 0;
               sVar25 = 0;
-              sVar24 = 0;
               uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-              sVar23 = 0;
+              sVar24 = 0;
               this->field_001C = uVar13;
+              sVar23 = 0;
               sVar22 = 0;
-              sVar21 = 0;
               local_24 = uVar13 * 0x41c64e6d + 0x3039;
-              sVar20 = 0;
+              sVar21 = 0;
               this->field_001C = local_24;
-              lVar19 = Library::MSVCRT::__ftol();
-              iVar14 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+              lVar20 = Library::MSVCRT::__ftol();
+              iVar14 = (int)(short)lVar20 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
@@ -661,18 +658,18 @@ cf_common_exit_0046C04E:
               uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
               this->field_001C = uVar13;
               uVar16 = uVar13 * 0x41c64e6d + 0x3039;
-              bVar27 = 0;
+              bVar28 = 0;
               this->field_001C = uVar16;
               uVar11 = uVar16 * 0x41c64e6d + 0x3039;
               this->field_001C = uVar11;
-              sVar26 = 0;
+              sVar27 = 0;
               iVar9 = -1;
+              sVar26 = 0;
               sVar25 = 0;
               sVar24 = 0;
               sVar23 = 0;
               sVar22 = 0;
               sVar21 = 0;
-              sVar20 = 0;
               iVar14 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
@@ -682,12 +679,12 @@ cf_common_exit_0046C04E:
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
-                       iVar17 + -3,iVar14,sVar20,sVar21,sVar22,sVar23,sVar24,sVar25,iVar9,sVar26,
-                       bVar27);
+                       iVar17 + -3,iVar14,sVar21,sVar22,sVar23,sVar24,sVar25,sVar26,iVar9,sVar27,
+                       bVar28);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar8 = extraout_EDX_05;
+            uVar8 = extraout_EDX_04;
           } while (local_20 < (int)(uint)(byte)this->field_02BF);
         }
         if (local_1c == -1) {
@@ -735,18 +732,20 @@ cf_error_exit_0046C422:
       return 0xffff;
     }
     if (iVar14 == 0) {
-      iVar14 = (*this->vtable->vfunc_D8)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar14 = (*(code *)this->vtable->field_00D8)();
       return -(uint)(iVar14 != 0);
     }
     if (iVar14 != 3) goto cf_common_exit_0046C3C5;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX_06);
+    thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX_05);
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
 LAB_0046c3be:
     sub_0045FF50(this,0);
   }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0046C3C5:
-  iVar14 = (*this->vtable->vfunc_D8)();
+  iVar14 = (*(code *)this->vtable->field_00D8)();
   return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
 }
 

@@ -35,7 +35,7 @@ void __fastcall FUN_005f6f60(int *param_1)
   switch(*(undefined4 *)((int)param_1 + 0x2dd)) {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 1:
-    if ((*(uint *)((int)param_1 + 0x2e1) <= (uint)PTR_00802a38->field_00E4) &&
+    if ((*(uint *)((int)param_1 + 0x2e1) <= PTR_00802a38->field_00E4) &&
        (*(int *)((int)param_1 + 0x2ea) == 0)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x2b7) < 0) {
@@ -99,7 +99,7 @@ void __fastcall FUN_005f6f60(int *param_1)
     if (*(char *)((int)param_1 + 0x29f) == '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(char *)((int)param_1 + 0x29e) == '\0') {
-        if ((PTR_00802a38->field_00E4 + param_1[6] & 3U) != 0) {
+        if ((PTR_00802a38->field_00E4 + param_1[6] & 3) != 0) {
           return;
         }
         uVar2 = thunk_FUN_005f9310(param_1,0);
@@ -254,8 +254,8 @@ cf_common_exit_005F7A68:
         *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
         *(undefined4 *)((int)param_1 + 0x2ef) = 0;
         *(undefined4 *)((int)param_1 + 0x76) = 1;
-        *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-        *(int *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+        *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+        *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
         return;
       }
       iVar5 = thunk_FUN_005f8cc0(param_1);
@@ -275,8 +275,8 @@ cf_common_exit_005F7A68:
       *(undefined4 *)((int)param_1 + 0x76) = 1;
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005f79aa:
-      *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-      *(int *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+      *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+      *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
       return;
     }
     break;
@@ -298,7 +298,7 @@ LAB_005f79aa:
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 7:
-    if (*(uint *)((int)param_1 + 0x2e1) <= (uint)PTR_00802a38->field_00E4) {
+    if (*(uint *)((int)param_1 + 0x2e1) <= PTR_00802a38->field_00E4) {
       *(undefined1 *)((int)param_1 + 0x2ee) = 0;
       *(undefined4 *)((int)param_1 + 0x2dd) = 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -362,7 +362,7 @@ LAB_005f79aa:
         if (iVar5 == 0) {
           return;
         }
-        *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 0x68) = PTR_00802a38->field_00E4;
+        *(uint *)(*(int *)((int)param_1 + 0x2e6) + 0x68) = PTR_00802a38->field_00E4;
         *(undefined4 *)((int)param_1 + 0x2dd) = 9;
         *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 100) = 1;
         *(undefined2 *)(*(int *)((int)param_1 + 0x2e6) + 0x32) = 0xffff;
@@ -373,11 +373,11 @@ LAB_005f79aa:
     }
     thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
     *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-    *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-    iVar5 = PTR_00802a38->field_00E4;
+    *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+    uVar4 = PTR_00802a38->field_00E4;
     *(undefined1 *)((int)param_1 + 699) = 1;
     *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-    *(int *)((int)param_1 + 0x2d9) = iVar5 + 0x32;
+    *(uint *)((int)param_1 + 0x2d9) = uVar4 + 0x32;
     *(undefined4 *)((int)param_1 + 0x76) = 1;
     if (0 < param_1[0xa8]) {
       *(undefined1 *)((int)param_1 + 0x29f) = 1;
@@ -434,11 +434,11 @@ LAB_005f7efc:
           return;
         }
         *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-        *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-        iVar5 = PTR_00802a38->field_00E4;
+        *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+        uVar4 = PTR_00802a38->field_00E4;
         *(undefined4 *)((int)param_1 + 0x2ef) = 0;
         *(undefined1 *)((int)param_1 + 699) = 1;
-        *(int *)((int)param_1 + 0x2d9) = iVar5 + 0x32;
+        *(uint *)((int)param_1 + 0x2d9) = uVar4 + 0x32;
         *(undefined4 *)((int)param_1 + 0x76) = 1;
         goto LAB_005f7efc;
       }
@@ -495,16 +495,16 @@ LAB_005f7efc:
           *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
           *(undefined4 *)((int)param_1 + 0x2ef) = 0;
           *(undefined4 *)((int)param_1 + 0x76) = 1;
-          *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-          *(int *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+          *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+          *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
           thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
           return;
         }
         *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
         *(undefined4 *)((int)param_1 + 0x2ef) = 0;
         *(undefined4 *)((int)param_1 + 0x76) = 1;
-        *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-        *(int *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+        *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+        *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
       }
       else {
         iVar5 = thunk_FUN_005f89f0(param_1,2);
@@ -546,12 +546,12 @@ LAB_005f7efc:
     if (*(char *)((int)param_1 + 0x29f) == '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(char *)((int)param_1 + 0x29e) == '\0') {
-        if ((param_1[6] + PTR_00802a38->field_00E4 & 3U) == 0) {
+        if ((param_1[6] + PTR_00802a38->field_00E4 & 3) == 0) {
           thunk_FUN_005f9310(param_1,0);
           return;
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((*(uint *)((int)param_1 + 0x2d9) < (uint)PTR_00802a38->field_00E4) &&
+        if ((*(uint *)((int)param_1 + 0x2d9) < PTR_00802a38->field_00E4) &&
            (iVar5 = FUN_006acfd0(*(int *)((int)param_1 + 0x25d),*(int *)((int)param_1 + 0x261),
                                  (int)*(short *)((int)param_1 + 0x5b),
                                  (int)*(short *)((int)param_1 + 0x5d)), 3 < iVar5)) {

@@ -52,10 +52,10 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
                                 iVar6,&local_c,&local_10), local_8 < 0)) ||
            ((4 < local_8 || (local_c < 0)))) ||
           ((pVVar4->field_0030 <= local_c ||
-           ((local_10 = (&DAT_0079aed0)[local_8] + local_10, local_10 < 0 ||
+           ((local_10 = g_centeredOffsets5[local_8] + local_10, local_10 < 0 ||
             (pVVar4->field_0034 <= local_10)))))) ||
-         ((pVVar4->field_004C == 0 ||
-          (*(char *)(local_10 * pVVar4->field_0030 + pVVar4->field_004C + local_c) != '\0')))) {
+         ((pVVar4->field_004C == (byte *)0x0 ||
+          (pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030] != 0)))) {
         if (param_1->field_0286 == 0) {
           thunk_FUN_004ad460(param_1->field_02AF,0);
           param_1->field_0286 = 1;
@@ -91,7 +91,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
         if (param_1->field_029E != '\0') {
           STT3DSprC::SetCurFase(param_1->field_02AF,'\x0f',param_1->field_029F);
           STT3DSprC::ShowCurFase(param_1->field_02AF,'\x0f');
-          if ((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0) {
+          if ((PTR_00802a38->field_00E4 & 1) != 0) {
             param_1->field_029F = param_1->field_029F + 1;
           }
           if (param_1->field_02A3 <= param_1->field_029F) {

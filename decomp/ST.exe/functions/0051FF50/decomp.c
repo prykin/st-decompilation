@@ -51,11 +51,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     *puVar17 = 0;
     puVar17 = puVar17 + 1;
   }
-  puVar17 = local_430;
-  for (iVar6 = 0xe0; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar17 = 0;
-    puVar17 = puVar17 + 1;
-  }
+  memset(local_430, 0, 0x380); /* compiler bulk-zero initialization */
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   iVar6 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
@@ -68,7 +64,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     iVar6 = 0xbf;
     uVar10 = 3;
     uVar9 = 0x40;
-    DAT_00801698 = local_10;
+    g_infocPanel_00801698 = local_10;
     pCVar3 = thunk_FUN_00571240("BKG_INFOCENTERW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,uVar9,uVar10,iVar6,iVar13,UVar14,uVar15,uVar16);
@@ -128,8 +124,8 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_03D0,(int *)0x0,local_6c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_03D0,0,local_6c,0);
     this_00->field_02D4 = 0x56;
     this_00->field_02D8 = 0x17;
     this_00->field_02DC = 0x31;

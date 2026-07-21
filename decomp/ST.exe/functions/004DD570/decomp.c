@@ -24,7 +24,7 @@ LAB_004dd5bb:
         param_1->field_04DC = PTR_00802a38->field_00E4;
         return 0;
       }
-      if (param_1->field_04DC + 0x2ee <= (uint)PTR_00802a38->field_00E4) {
+      if (param_1->field_04DC + 0x2ee <= PTR_00802a38->field_00E4) {
         iVar1 = thunk_FUN_0062e6b0(DAT_008117a4,param_1->field_0024,param_1->field_0018);
         param_1->field_04D8 = (uint)(iVar1 == 0);
       }

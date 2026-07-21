@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067BA50 parameter used as this of AiFltClassTy::GetAiMess @ 0067BA7A */
@@ -5,8 +7,6 @@
 undefined4 __cdecl FUN_0067ba50(AiFltClassTy *param_1,uint *param_2)
 
 {
-  int iVar1;
-  uint *puVar2;
   uint local_48 [2];
   char local_40;
   undefined2 local_3f;
@@ -18,11 +18,7 @@ undefined4 __cdecl FUN_0067ba50(AiFltClassTy *param_1,uint *param_2)
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar2 = local_48;
-  for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(local_48, 0, 0x34); /* compiler bulk-zero initialization */
   local_48[0] = 0x66;
   local_48[1] = 0xffffffff;
   AiFltClassTy::GetAiMess(param_1,local_48);

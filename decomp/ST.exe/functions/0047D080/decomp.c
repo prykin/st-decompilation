@@ -29,7 +29,9 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int iVar19;
   short sVar20;
   byte bVar21;
-  STMessage local_64;
+  undefined1 local_64 [16];
+  undefined4 local_54;
+  undefined4 *local_50;
   undefined4 local_44;
   undefined4 local_40;
   undefined4 local_3c;
@@ -45,11 +47,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int local_8;
 
   if ((param_1 == (undefined4 *)0x0) || (param_1 == (undefined4 *)0x1)) {
-    puVar8 = &this->field_02CC;
-    for (iVar9 = 0x17; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     sVar13 = this->field_0423;
     sVar14 = this->field_0425;
     sVar15 = this->field_0427;
@@ -87,8 +85,8 @@ LAB_0047d831:
       iVar10 = CONCAT22((short)((uint)iVar19 >> 0x10),this->field_068B + 1);
       iVar9 = iVar10 * 0xc9;
       uVar5 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar5 = (*this->vtable->vfunc_10)
+      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+      uVar5 = (*(code *)this->vtable->field_0010)
                         (CONCAT22(uVar5,this->field_0041),
                          CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0043),
                          CONCAT22(uVar5,this->field_0045),iVar9,iVar19,iVar6);
@@ -129,7 +127,7 @@ LAB_0047d831:
         local_8 = (uVar1 >> 0x10) % 7 - 3;
         if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
            (local_c = 0, this->field_02BF != '\0')) {
-          param_1 = &this->field_02B3;
+          param_1 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar8 = (undefined4 *)
                      thunk_FUN_0041dc40(local_28,(short)*param_1,*(undefined2 *)(param_1 + 1),
@@ -213,8 +211,9 @@ LAB_0047d831:
         }
       }
     }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0047d241:
-    iVar9 = (*this->vtable->vfunc_D8)();
+    iVar9 = (*(code *)this->vtable->field_00D8)();
     return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
   }
   if (iVar9 == 1) {
@@ -275,16 +274,18 @@ LAB_0047d241:
       }
       local_30 = 1;
       local_2c = 1;
-      local_64.arg0.ptr = &local_44;
+      local_50 = &local_44;
       local_44 = 10000;
       local_40 = 0;
       local_3c = 0xfe;
-      local_64.id = MESS_HITKILL;
-      (*this->vtable->GetMessage)(this,&local_64);
+      local_54 = 0x128;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)this->vtable)(local_64);
     }
   }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0047d7e6:
-  iVar9 = (*this->vtable->vfunc_D8)();
+  iVar9 = (*(code *)this->vtable->field_00D8)();
   return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
 }
 

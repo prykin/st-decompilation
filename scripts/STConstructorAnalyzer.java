@@ -25,6 +25,9 @@ import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
@@ -290,6 +293,8 @@ public class STConstructorAnalyzer extends GhidraScript {
             (receiverOnlyFastcall || staleAppliedReceiver);
         boolean conventionApply = high && !signatureManual &&
             !"__thiscall".equals(function.getCallingConventionName()) && parameterApply;
+        boolean returnApply = (high || alreadyApplied) && returnsThis && !signatureManual &&
+            !ownerPointerReturn(function, owner);
         String reason = "final_vptr=" + addr(finalStore.raw.table.address) +
             "; returns_this=" + returnsThis + "; calls_before=" + finalStore.callsBefore +
             "; field_writes_after=" + finalStore.postFieldWrites +
@@ -301,10 +306,20 @@ public class STConstructorAnalyzer extends GhidraScript {
             function.getSignature().getPrototypeString(true),
             function.getSignatureSource().toString(), owner, owner + "::" + leafOwner(owner),
             finalStore.raw.table.address, finalStore.raw.address, returnsThis,
-            nameApply, conventionApply, parameterApply, edxUses, stackParameterUses,
+            nameApply, conventionApply, parameterApply, returnApply,
+            "pointer:/" + leafOwner(owner), edxUses, stackParameterUses,
             alreadyApplied ? "high" : high ? "high" : "medium",
             alreadyApplied ? reason + "; previously_applied" : reason));
         return result;
+    }
+
+    private boolean ownerPointerReturn(Function function, String owner) {
+        DataType type = function.getReturnType();
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        if (!(type instanceof Pointer pointer)) return false;
+        type = pointer.getDataType();
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        return type != null && type.getName().equals(leafOwner(owner));
     }
 
     private boolean receiverOnlyFastcallSignature(Function function) {
@@ -453,16 +468,18 @@ public class STConstructorAnalyzer extends GhidraScript {
 
     private void writeConstructors(Path path, List<ConstructorProposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("name_apply\tconvention_apply\tparameter_apply\tfunction_address\texpected_name\t" +
+            out.write("name_apply\tconvention_apply\tparameter_apply\treturn_apply\t" +
+                "function_address\texpected_name\t" +
                 "expected_name_source\texpected_signature\texpected_signature_source\towner\t" +
-                "proposed_name\ttable_address\tstore_address\treturns_this\t" +
+                "proposed_name\tproposed_return_type\ttable_address\tstore_address\treturns_this\t" +
                 "incoming_edx_uses\tincoming_stack_parameter_uses\tconfidence\treason\n");
             for (ConstructorProposal p : rows) {
                 out.write(bit(p.nameApply) + "\t" + bit(p.conventionApply) + "\t" +
-                    bit(p.parameterApply) + "\t" + addr(p.address) +
+                    bit(p.parameterApply) + "\t" + bit(p.returnApply) + "\t" + addr(p.address) +
                     "\t" + tsv(p.expectedName) + "\t" + p.expectedNameSource + "\t" +
                     tsv(p.expectedSignature) + "\t" + p.expectedSignatureSource + "\t" +
-                    tsv(p.owner) + "\t" + tsv(p.proposedName) + "\t" + addr(p.tableAddress) +
+                    tsv(p.owner) + "\t" + tsv(p.proposedName) + "\t" +
+                    tsv(p.proposedReturnType) + "\t" + addr(p.tableAddress) +
                     "\t" + addr(p.storeAddress) + "\t" + p.returnsThis + "\t" +
                     p.incomingEdxUses + "\t" + p.incomingStackParameterUses + "\t" +
                     p.confidence + "\t" + tsv(p.reason) + "\n");
@@ -475,8 +492,10 @@ public class STConstructorAnalyzer extends GhidraScript {
         for (ConstructorProposal p : rows) output.add("{\"name_apply\":" + p.nameApply +
             ",\"convention_apply\":" + p.conventionApply + ",\"function_address\":" +
             q(addr(p.address)) + ",\"parameter_apply\":" + p.parameterApply +
+            ",\"return_apply\":" + p.returnApply +
             ",\"expected_name\":" + q(p.expectedName) +
             ",\"owner\":" + q(p.owner) + ",\"proposed_name\":" + q(p.proposedName) +
+            ",\"proposed_return_type\":" + q(p.proposedReturnType) +
             ",\"table_address\":" + q(addr(p.tableAddress)) + ",\"store_address\":" +
             q(addr(p.storeAddress)) + ",\"returns_this\":" + p.returnsThis +
             ",\"confidence\":" + q(p.confidence) + ",\"reason\":" + q(p.reason) + "}");
@@ -516,6 +535,8 @@ public class STConstructorAnalyzer extends GhidraScript {
                 .filter(p -> p.conventionApply).count(),
             "constructor_parameter_auto_apply=" + constructors.stream()
                 .filter(p -> p.parameterApply).count(),
+            "constructor_return_auto_apply=" + constructors.stream()
+                .filter(p -> p.returnApply).count(),
             "direct_hierarchy_relations=" + hierarchy.size(),
             "high_class_sizes=" + sizes.stream().filter(p -> p.apply).count(),
             "note=Constructor naming requires an ECX-derived vptr store, returned this, and " +
@@ -746,14 +767,16 @@ public class STConstructorAnalyzer extends GhidraScript {
     private static class ConstructorProposal {
         final Address address, tableAddress, storeAddress;
         final String expectedName, expectedNameSource, expectedSignature,
-            expectedSignatureSource, owner, proposedName, confidence, reason;
-        final boolean returnsThis, nameApply, conventionApply, parameterApply;
+            expectedSignatureSource, owner, proposedName, proposedReturnType,
+            confidence, reason;
+        final boolean returnsThis, nameApply, conventionApply, parameterApply, returnApply;
         final int incomingEdxUses, incomingStackParameterUses;
         ConstructorProposal(Address address, String expectedName, String expectedNameSource,
                 String expectedSignature, String expectedSignatureSource, String owner,
                 String proposedName, Address tableAddress, Address storeAddress,
                 boolean returnsThis, boolean nameApply, boolean conventionApply,
-                boolean parameterApply, int incomingEdxUses, int incomingStackParameterUses,
+                boolean parameterApply, boolean returnApply, String proposedReturnType,
+                int incomingEdxUses, int incomingStackParameterUses,
                 String confidence, String reason) {
             this.address = address; this.expectedName = expectedName;
             this.expectedNameSource = expectedNameSource; this.expectedSignature = expectedSignature;
@@ -762,6 +785,7 @@ public class STConstructorAnalyzer extends GhidraScript {
             this.storeAddress = storeAddress; this.returnsThis = returnsThis;
             this.nameApply = nameApply; this.conventionApply = conventionApply;
             this.parameterApply = parameterApply; this.incomingEdxUses = incomingEdxUses;
+            this.returnApply = returnApply; this.proposedReturnType = proposedReturnType;
             this.incomingStackParameterUses = incomingStackParameterUses;
             this.confidence = confidence; this.reason = reason;
         }

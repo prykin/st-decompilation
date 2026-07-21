@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 006B0A20 -> EXTERNAL:000000A9 @ 006B0B1D | 006B0A20 -> EXTERNAL:000000A9 @ 006B0B70 */
@@ -60,11 +62,7 @@ int FUN_006b0a20(undefined4 *param_1,int param_2,UINT iStart,UINT param_4,int pa
           *puVar8 = 0xffffffff;
           puVar8 = puVar8 + 1;
         }
-        puVar8 = (undefined4 *)(param_1[0x137] + 0x8000);
-        for (iVar5 = 0x2000; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar8 = 0;
-          puVar8 = puVar8 + 1;
-        }
+        memset((void *)(param_1[0x137] + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
         SetPaletteEntries((HPALETTE)param_1[0x138],iStart,param_4,local_404);
       }
       if (((iVar2 != -0x7789fdc4) && (iVar2 != -0x7789fdb3)) && (iVar2 != -0x7fffbfff)) {

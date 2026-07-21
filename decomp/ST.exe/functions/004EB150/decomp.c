@@ -14,13 +14,13 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
   uVar4 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar4;
   if ((uVar4 >> 0x10) % 0x385 + 0x834 + g_playerRuntime[param_1].field2158_0x9c2 <=
-      (uint)PTR_00802a38->field_00E4) {
+      PTR_00802a38->field_00E4) {
     g_playerRuntime[param_1].field2158_0x9c2 = PTR_00802a38->field_00E4;
     iVar5 = GetPlayerRaceId((char)param_1);
     if ((char)iVar5 != '\x03') {
-      if (((uint)PTR_00802a38->field_00E4 < 30000) ||
-         (0 < (int)g_playerRuntime[param_1].field2159_0x9c6)) {
-        if ((59999 < (uint)PTR_00802a38->field_00E4) &&
+      if ((PTR_00802a38->field_00E4 < 30000) || (0 < (int)g_playerRuntime[param_1].field2159_0x9c6))
+      {
+        if ((59999 < PTR_00802a38->field_00E4) &&
            ((int)g_playerRuntime[param_1].field2159_0x9c6 < 2)) {
           g_playerRuntime[param_1].field2159_0x9c6 = 2;
         }

@@ -37,9 +37,10 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   ccFntTy *extraout_ECX_09;
   ccFntTy *this_01;
   uint *puVar5;
-  undefined4 *puVar6;
-  ushort **ppuVar7;
-  void **ppvVar8;
+  int *piVar6;
+  undefined4 *puVar7;
+  ushort **ppuVar8;
+  void **ppvVar9;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   int local_8;
@@ -53,20 +54,16 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     puVar1 = &local_c->field_0x18;
     local_c->field_0028 = 0x4404;
     FUN_006e6000(local_c,0xf,0,(undefined4 *)puVar1);
-    ppvVar8 = (void **)&this_00->field_0x217;
+    ppvVar9 = (void **)&this_00->field_0x217;
     local_8 = 4;
     do {
-      if (*ppvVar8 != (void *)0x0) {
-        FreeAndNull(ppvVar8);
+      if (*ppvVar9 != (void *)0x0) {
+        FreeAndNull(ppvVar9);
       }
-      ppvVar8 = ppvVar8 + 1;
+      ppvVar9 = ppvVar9 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x14;
     *(undefined4 *)&this_00->field_0x2c = this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
@@ -159,37 +156,37 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (this_00->field_0970 != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0970);
     }
-    puVar5 = &this_00->field_0148;
+    piVar6 = &this_00->field_0148;
     this_00->field_0970 = 0;
     g_cPanel_00801688 = (CPanelTy *)0x0;
     iVar3 = 0xb;
     do {
-      if (-1 < (int)*puVar5) {
-        FUN_006b3bb0(DAT_008075a8,*puVar5);
+      if (-1 < *piVar6) {
+        FUN_006b3bb0((int *)PTR_008075a8,*piVar6);
       }
-      *puVar5 = 0xffffffff;
-      puVar5 = puVar5 + 1;
+      *piVar6 = 0xffffffff;
+      piVar6 = piVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (-1 < (int)this_00->field_0174) {
-      FUN_006b3bb0(DAT_008075a8,this_00->field_0174);
+    if (-1 < this_00->field_0174) {
+      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0174);
     }
-    this_00->field_0174 = 0xffffffff;
-    if (-1 < (int)this_00->field_0178) {
-      FUN_006b3bb0(DAT_008075a8,this_00->field_0178);
+    this_00->field_0174 = -1;
+    if (-1 < this_00->field_0178) {
+      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0178);
     }
-    this_00->field_0178 = 0xffffffff;
-    if (-1 < (int)this_00->field_017C) {
-      FUN_006b3bb0(DAT_008075a8,this_00->field_017C);
+    this_00->field_0178 = -1;
+    if (-1 < this_00->field_017C) {
+      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_017C);
     }
-    this_00->field_017C = 0xffffffff;
+    this_00->field_017C = -1;
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0B43);
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0B47);
-    ppuVar7 = &this_00->field_09D9;
+    ppuVar8 = &this_00->field_09D9;
     iVar3 = 0xf;
     do {
-      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar7);
-      ppuVar7 = ppuVar7 + 1;
+      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar8);
+      ppuVar8 = ppuVar8 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if ((PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) &&
@@ -200,58 +197,58 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
       FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
     }
-    ppvVar8 = (void **)&this_00->field_0227;
+    ppvVar9 = (void **)&this_00->field_0227;
     iVar3 = 4;
     do {
-      if (*ppvVar8 != (void *)0x0) {
-        FreeAndNull(ppvVar8);
+      if (*ppvVar9 != (void *)0x0) {
+        FreeAndNull(ppvVar9);
       }
-      ppvVar8 = ppvVar8 + 1;
+      ppvVar9 = ppvVar9 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0994);
-    puVar6 = &this_00->field_0DBF;
+    puVar7 = &this_00->field_0DBF;
     iVar3 = 2;
     do {
-      *(undefined4 *)((int)puVar6 + -0x3f7) = 0;
-      *puVar6 = 0;
-      cMf32::RecMemFree(g_cMf32_00806780,puVar6 + -2);
-      puVar6 = puVar6 + 1;
+      *(undefined4 *)((int)puVar7 + -0x3f7) = 0;
+      *puVar7 = 0;
+      cMf32::RecMemFree(g_cMf32_00806780,puVar7 + -2);
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    ppuVar7 = &this_00->field_0974;
+    ppuVar8 = &this_00->field_0974;
     iVar3 = 8;
     do {
-      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar7);
-      ppuVar7 = ppuVar7 + 1;
+      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar8);
+      ppuVar8 = ppuVar8 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0954);
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0958);
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0286);
     cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_028A);
-    this_00->field_077C = 0;
-    this_00->field_02DE = 0;
-    this_00->field_02DA = 0;
-    this_00->field_0B1B = 0;
-    this_00->field_09D5 = 0;
-    this_00->field_0B17 = 0;
-    this_00->field_02D6 = 0;
-    this_00->field_02D2 = 0;
-    this_00->field_02CE = 0;
-    this_00->field_02CA = 0;
-    this_00->field_02C6 = 0;
-    this_00->field_02C2 = 0;
-    this_00->field_02BE = 0;
-    this_00->field_02BA = 0;
-    this_00->field_02B2 = 0;
-    this_00->field_02B6 = 0;
-    this_00->field_02A2 = 0;
-    this_00->field_029E = 0;
-    this_00->field_029A = 0;
-    this_00->field_0296 = 0;
-    this_00->field_0292 = 0;
-    this_00->field_028E = 0;
+    this_00->field_077C = (ushort *)0x0;
+    this_00->field_02DE = (ushort *)0x0;
+    this_00->field_02DA = (ushort *)0x0;
+    this_00->field_0B1B = (ushort *)0x0;
+    this_00->field_09D5 = (ushort *)0x0;
+    this_00->field_0B17 = (ushort *)0x0;
+    this_00->field_02D6 = (ushort *)0x0;
+    this_00->field_02D2 = (ushort *)0x0;
+    this_00->field_02CE = (ushort *)0x0;
+    this_00->field_02CA = (ushort *)0x0;
+    this_00->field_02C6 = (ushort *)0x0;
+    this_00->field_02C2 = (ushort *)0x0;
+    this_00->field_02BE = (ushort *)0x0;
+    this_00->field_02BA = (ushort *)0x0;
+    this_00->field_02B2 = (ushort *)0x0;
+    this_00->field_02B6 = (ushort *)0x0;
+    this_00->field_02A2 = (ushort *)0x0;
+    this_00->field_029E = (ushort *)0x0;
+    this_00->field_029A = (ushort *)0x0;
+    this_00->field_0296 = (ushort *)0x0;
+    this_00->field_0292 = (ushort *)0x0;
+    this_00->field_028E = (ushort *)0x0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_01 = extraout_ECX;
     if (this_00->field_024B != (DArrayTy *)0x0) {
@@ -266,12 +263,12 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       this_01 = extraout_ECX_01;
     }
     this_00->field_0B4B = (DArrayTy *)0x0;
-    if (this_00->field_0B95 != (DArrayTy *)0x0) {
-      DArrayDestroy(this_00->field_0B95);
+    if ((DArrayTy *)this_00->field_0B95 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)this_00->field_0B95);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_02;
     }
-    this_00->field_0B95 = (DArrayTy *)0x0;
+    this_00->field_0B95 = (uint *)0x0;
     if (this_00->field_01CC != (ccFntTy *)0x0) {
       ccFntTy::operator(this_01,(uint *)this_00->field_01CC);
       this_00->field_01CC = (ccFntTy *)0x0;
@@ -302,9 +299,9 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_07;
     }
-    if ((uint *)this_00->field_01C0 != (uint *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01C0);
-      this_00->field_01C0 = 0;
+    if (this_00->field_01C0 != (uint *)0x0) {
+      ccFntTy::operator(this_01,this_00->field_01C0);
+      this_00->field_01C0 = (void *)0x0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_08;
     }
@@ -321,19 +318,19 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (this_00->field_01AC != (AnonPointee_CPanelTy_01AC *)0x0) {
       FreeAndNull(&this_00->field_01AC);
     }
-    if (this_00->field_01B0 != (AnonPointee_CPanelTy_01B0 *)0x0) {
+    if (this_00->field_01B0 != (ushort *)0x0) {
       FreeAndNull(&this_00->field_01B0);
     }
     if (this_00->field_01B4 != (AnonPointee_CPanelTy_01B4 *)0x0) {
       FreeAndNull(&this_00->field_01B4);
     }
-    ppvVar8 = (void **)&this_00->field_0180;
+    ppvVar9 = (void **)&this_00->field_0180;
     local_8 = 0xb;
     do {
-      if (*ppvVar8 != (void *)0x0) {
-        FreeAndNull(ppvVar8);
+      if (*ppvVar9 != (void *)0x0) {
+        FreeAndNull(ppvVar9);
       }
-      ppvVar8 = ppvVar8 + 1;
+      ppvVar9 = ppvVar9 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if ((int *)this_00->field_01D8 != (int *)0x0) {
@@ -341,8 +338,8 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_01D8);
       this_00->field_01D8 = 0;
     }
-    if (this_00->field_025B != 0) {
-      FUN_0070b600(&this_00->field_025B);
+    if (this_00->field_025B != (short *)0x0) {
+      FUN_0070b600((int *)&this_00->field_025B);
     }
     g_currentExceptionFrame = local_50.previous;
     return;

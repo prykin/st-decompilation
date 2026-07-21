@@ -14,7 +14,6 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   CPanelTy *pCVar4;
   int iVar5;
   int iVar6;
-  undefined4 *puVar7;
   undefined4 local_9c [9];
   undefined4 local_78 [9];
   InternalExceptionFrame local_54;
@@ -66,31 +65,31 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
   }
-  if (DAT_00801698 != (int *)0x0) {
+  if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*DAT_00801698 + 0x1c))(0);
+    (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
   }
-  if (DAT_00802a44 != (void *)0x0) {
-    thunk_FUN_00552160(DAT_00802a44,'\0','\0');
+  if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+    thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
   }
   if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
   }
-  if (DAT_00801678 != (int *)0x0) {
+  if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*DAT_00801678 + 0x1c))(0);
+    (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
   }
-  if (DAT_008016ec != (int *)0x0) {
+  if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*DAT_008016ec + 0x1c))(0);
+    (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
   }
-  if (DAT_00802a48 != (int *)0x0) {
+  if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*DAT_00802a48 + 0x1c))(0);
+    (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
   }
-  if (DAT_0080168c != (int *)0x0) {
+  if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*DAT_0080168c + 0x1c))(0);
+    (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
   }
   thunk_FUN_0054a8d0(PTR_00802a30);
   bVar1 = (&pCVar4->field_0BA2)[param_1 & 0xff];
@@ -119,12 +118,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   case 4:
-    puVar7 = local_78;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
-    *(undefined1 *)puVar7 = 0;
+    memset(local_78, 0, 0x21); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_78[0]._0_1_ = 10;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_78,0,0xffffffff);
@@ -150,27 +144,23 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   default:
     goto switchD_00503d36_caseD_15;
   case 0x2f:
-    if ((DAT_00801678 != (int *)0x0) && (*(short *)((int)DAT_00801678 + 0x172) == 2)) {
+    if ((g_behPanel_00801678 != (BehPanelTy *)0x0) && (g_behPanel_00801678->field_0172 == 2)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801678 + 0x1c))(1);
+      (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(1);
     }
     break;
   case 0x48:
-    puVar7 = local_9c;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
-    *(undefined1 *)puVar7 = 0;
+    memset(local_9c, 0, 0x21); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_9c[0]._0_1_ = 0x14;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_9c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0x4c:
-    if ((DAT_008016ec != (int *)0x0) && (*(short *)((int)DAT_008016ec + 0x172) == 2)) {
+    if ((g_sAMPanel_008016EC != (SAMPanelTy *)0x0) &&
+       (*(short *)&g_sAMPanel_008016EC->field_0x172 == 2)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_008016ec + 0x1c))(1);
+      (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(1);
     }
   }
   thunk_FUN_004fad20(pCVar4);

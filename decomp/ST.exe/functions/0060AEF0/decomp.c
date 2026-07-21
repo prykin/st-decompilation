@@ -339,16 +339,18 @@ LAB_0060b48b:
                     }
                     else {
                       if (((local_d4[0] < 0) || (pVVar8->field_0030 <= local_d4[0])) ||
-                         ((local_d8 + (&DAT_0079aed0)[iVar18] < 0 ||
-                          (pVVar8->field_0034 <= local_d8 + (&DAT_0079aed0)[iVar18])))) {
+                         ((local_d8 + g_centeredOffsets5[iVar18] < 0 ||
+                          (pVVar8->field_0034 <= local_d8 + g_centeredOffsets5[iVar18])))) {
                         bVar21 = false;
                       }
                       else {
                         bVar21 = true;
                       }
-                      if ((bVar21) && (pVVar8->field_004C != 0)) {
-                        bVar21 = *(char *)(((&DAT_0079aed0)[iVar18] + local_d8) * pVVar8->field_0030
-                                           + pVVar8->field_004C + local_d4[0]) != '\0';
+                      if ((bVar21) && (pVVar8->field_004C != (byte *)0x0)) {
+                        bVar21 = pVVar8->field_004C
+                                 [local_d4[0] +
+                                  (g_centeredOffsets5[iVar18] + local_d8) * pVVar8->field_0030] != 0
+                        ;
                       }
                       else {
                         bVar21 = true;

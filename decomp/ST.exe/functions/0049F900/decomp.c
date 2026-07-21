@@ -16,9 +16,8 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
   int iVar6;
   undefined4 uVar7;
   uint uVar8;
-  undefined4 *puVar9;
   InternalExceptionFrame local_6c;
-  undefined4 local_28;
+  uint local_28;
   undefined4 local_24;
   undefined2 local_20;
   undefined2 local_1e;
@@ -42,11 +41,7 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
   pSVar2 = local_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar9 = &local_14->field_0089;
-      for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
-      }
+      memset(&local_14->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       local_14->field_0065 = 0;
       local_14->field_02D8 = local_14->field_01A3;
       *(undefined4 *)&local_14->field_0x2dc = local_14->field_01A7;
@@ -78,7 +73,7 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
         } while ((int)uVar8 < (int)local_8);
       }
     }
-    if ((uint)PTR_00802a38->field_00E4 % 0x19 == 1) {
+    if (PTR_00802a38->field_00E4 % 0x19 == 1) {
       uVar8 = 0;
       if (0 < (int)local_8) {
         do {

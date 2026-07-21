@@ -17,7 +17,6 @@ VisibleClassTy::VisHoleCreate
   int iVar3;
   int iVar4;
   uint uVar5;
-  int *piVar6;
   InternalExceptionFrame local_6c;
   int local_28 [2];
   undefined *local_20;
@@ -38,11 +37,7 @@ VisibleClassTy::VisHoleCreate
     if (iVar3 == 0) {
       pDVar1 = local_c->field_00F4;
       if (pDVar1 != (DArrayTy *)0x0) {
-        piVar6 = local_28;
-        for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar6 = 0;
-          piVar6 = piVar6 + 1;
-        }
+        memset(local_28, 0, 0x1c); /* compiler bulk-zero initialization */
         local_28[1] = param_2;
         local_28[0] = param_1;
         local_18 = (int *)param_4;

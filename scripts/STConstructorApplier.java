@@ -50,9 +50,11 @@ public class STConstructorApplier extends GhidraScript {
         File proposalFile = inputFile();
         if (proposalFile == null) return;
         Tsv tsv = readTsv(proposalFile.toPath());
-        requireColumns(tsv, "name_apply", "convention_apply", "parameter_apply", "function_address",
+        requireColumns(tsv, "name_apply", "convention_apply", "parameter_apply", "return_apply",
+            "function_address",
             "expected_name", "expected_name_source", "expected_signature",
-            "expected_signature_source", "owner", "proposed_name", "table_address",
+            "expected_signature_source", "owner", "proposed_name", "proposed_return_type",
+            "table_address",
             "store_address", "confidence", "reason");
         dataTypes = currentProgram.getDataTypeManager();
 
@@ -90,10 +92,11 @@ public class STConstructorApplier extends GhidraScript {
         boolean nameApply = enabled(row.get("name_apply"));
         boolean conventionApply = enabled(row.get("convention_apply"));
         boolean parameterApply = enabled(row.get("parameter_apply"));
+        boolean returnApply = enabled(row.get("return_apply"));
         Address address = address(row.get("function_address"));
-        if (!nameApply && !conventionApply && !parameterApply) {
+        if (!nameApply && !conventionApply && !parameterApply && !returnApply) {
             report.add(new ReportRow(addr(address), "disabled", unt(row.get("proposed_name")),
-                "name_apply=0; convention_apply=0; parameter_apply=0"));
+                "name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0"));
             return;
         }
         Function function = currentProgram.getFunctionManager().getFunctionAt(address);
@@ -169,6 +172,28 @@ public class STConstructorApplier extends GhidraScript {
                 setThisType(function, owner);
                 if (conventionApply)
                     details.add("convention=applied(__thiscall, " + owner + " *this)");
+                changed = true;
+            }
+        }
+
+        if (returnApply) {
+            if (constructorReturnMatches(function, owner)) {
+                details.add("return=unchanged(" + owner + " *)");
+            }
+            else if (manualSignature) {
+                details.add("return=preserved(USER_DEFINED signature)");
+                preserved = true;
+            }
+            else if (!signatureBaseline && !hasTag(function, TAG)) {
+                details.add("return=preserved(stale signature baseline)");
+                preserved = true;
+            }
+            else {
+                DataType ownerType = ensureOwnerType(owner);
+                function.setReturnType(new PointerDataType(ownerType,
+                    currentProgram.getDefaultPointerSize(), dataTypes), SourceType.ANALYSIS);
+                function.setSignatureSource(SourceType.ANALYSIS);
+                details.add("return=applied(" + owner + " *)");
                 changed = true;
             }
         }
@@ -249,6 +274,13 @@ public class STConstructorApplier extends GhidraScript {
         DataType ownerType = findOwnerType(owner);
         return parameter != null && ownerType != null &&
             parameter.getDataType() instanceof Pointer pointer &&
+            ownerType.isEquivalent(pointer.getDataType());
+    }
+
+    private boolean constructorReturnMatches(Function function, String owner) {
+        DataType ownerType = findOwnerType(owner);
+        DataType type = function.getReturnType();
+        return ownerType != null && type instanceof Pointer pointer &&
             ownerType.isEquivalent(pointer.getDataType());
     }
 

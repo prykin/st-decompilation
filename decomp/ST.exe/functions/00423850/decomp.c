@@ -12,7 +12,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   STGroupC *this_00;
   int errorCode;
   STGameObjC *this_01;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   uint uVar3;
   int iVar4;
   uint uVar5;
@@ -31,8 +31,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   short local_8;
   undefined1 local_5;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_18 = *(uint *)(this->field_0029 + 0xc);
+  local_18 = this->field_0029[3];
   local_c = 0;
   local_10 = 0;
   local_80.previous = g_currentExceptionFrame;
@@ -56,16 +55,16 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
                    0xb1);
       }
     }
-    Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0029,uVar6,&param_1);
+    Library::DKW::TBL::FUN_006ae140(this_00->field_0029,uVar6,&param_1);
     this_01 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this_00->field_0024,param_1,CASE_1);
     thunk_FUN_00419c30(this_01,this_00->field_0025);
     this_00->field_0027 = this_00->field_0027 + 1;
     if (param_2 == 1) {
-      if (this_00->field_002D == 0) {
-        puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,2,5);
-        this_00->field_002D = puVar2;
+      if (this_00->field_002D == (uint *)0x0) {
+        pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,2,5);
+        this_00->field_002D = &pDVar2->flags;
       }
-      Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_002D,&param_1);
+      Library::DKW::TBL::FUN_006ae1c0(this_00->field_002D,&param_1);
       local_5 = 0xff;
       (*this_00->vtable->slot_08)(this_00,0x65,&local_5);
     }

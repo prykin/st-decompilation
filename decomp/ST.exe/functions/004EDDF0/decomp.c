@@ -37,8 +37,8 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
       StartSystemTy::sub_006E56B0(pBVar2->field_000C,pBVar2->field_01CA);
     }
     pBVar2->field_01CA = 0;
-    pBVar2->field_02B8 = 0;
-    DAT_00801678 = 0;
+    pBVar2->field_02B8 = (ushort *)0x0;
+    g_behPanel_00801678 = (BehPanelTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

@@ -56,7 +56,7 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006b5f80(DAT_008075a8,local_44->field_000C,local_44->field_0010,local_44->field_0014,
+  FUN_006b5f80((int *)PTR_008075a8,local_44->field_000C,local_44->field_0010,local_44->field_0014,
                local_44->field_0018);
   iVar7 = local_40;
   iVar5 = local_48;

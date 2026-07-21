@@ -17,15 +17,15 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     return 0;
   }
   if (-1 < *(int *)&param_1->field_0x44c) {
-    uVar1 = ((STT3DSprC *)param_1->field_0603)->field_0020;
-    if (*(int *)(uVar1 + 0x20c) <= *(int *)(uVar1 + 0x210)) {
+    iVar2 = ((STT3DSprC *)param_1->field_0603)->field_0020;
+    if (*(int *)(iVar2 + 0x20c) <= *(int *)(iVar2 + 0x210)) {
       STT3DSprC::StopShow((STT3DSprC *)param_1->field_0603,0xe);
       thunk_FUN_004ad430(param_1->field_0603);
       STT3DSprC::UnLoadSequence((STT3DSprC *)param_1->field_0603,0xe);
       uVar1 = thunk_FUN_004ad650(param_1->field_0603);
       FUN_006ea2f0(param_1->field_0211,uVar1);
       *(undefined4 *)&param_1->field_0x44c = 0xffffffff;
-      *(undefined4 *)&param_1->field_0x450 = PTR_00802a38->field_00E4;
+      *(uint *)&param_1->field_0x450 = PTR_00802a38->field_00E4;
     }
     goto cf_common_exit_004CC6D2;
   }
@@ -38,7 +38,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   STT3DSprC::UnLoadSequence((STT3DSprC *)&param_1->field_0x1d5,6);
   iVar2 = *(int *)&param_1->field_0x440;
   *(int *)&param_1->field_0x43c = iVar2;
-  if ((uint)PTR_00802a38->field_00E4 <
+  if (PTR_00802a38->field_00E4 <
       *(int *)&param_1->field_0x450 + (~-(uint)(iVar2 != 1) & DAT_00790c14))
   goto cf_common_exit_004CC6D2;
   if (iVar2 == 2) {

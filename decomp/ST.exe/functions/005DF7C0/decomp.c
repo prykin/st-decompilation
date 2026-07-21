@@ -11,7 +11,7 @@
 void __thiscall
 MTaskTy::OutGlassATxtProc
           (MTaskTy *this,int *param_1,int param_2,undefined4 param_3,int param_4,int param_5,
-          undefined4 param_6,undefined4 param_7,AnonShape_00413AF0_B6B4EE9A *param_8)
+          undefined4 param_6,undefined4 param_7,DArrayTy *param_8)
 
 {
   uint uVar1;
@@ -22,8 +22,8 @@ MTaskTy::OutGlassATxtProc
   InternalExceptionFrame local_4c;
   int *local_8;
 
-  if (param_8 != (AnonShape_00413AF0_B6B4EE9A *)0x0) {
-    uVar1 = param_8->field_000C;
+  if (param_8 != (DArrayTy *)0x0) {
+    uVar1 = param_8->count;
     uVar5 = 0;
     if (uVar1 != 0) {
       if (uVar1 == 0) {
@@ -31,7 +31,8 @@ MTaskTy::OutGlassATxtProc
         goto LAB_005df7f3;
       }
       do {
-        local_8 = (int *)(param_8->field_0008 * uVar5 + param_8->field_001C);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_8, uVar5) (runtime stride) */
+        local_8 = (int *)(param_8->elementSize * uVar5 + (int)param_8->data);
 LAB_005df7f3:
       } while ((*local_8 != param_2) && (uVar5 = uVar5 + 1, uVar5 < uVar1));
     }

@@ -8,7 +8,7 @@
 void __thiscall SIDTy::PaintExplanation(SIDTy *this)
 
 {
-  AnonPointee_SIDTy_1CC0 *pAVar1;
+  ushort *puVar1;
   code *pcVar2;
   SIDTy *pSVar3;
   int iVar4;
@@ -31,14 +31,14 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
   pSVar3 = local_8;
   if (iVar4 == 0) {
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_1CB8,0,0,0x7d,
-                 local_8->field_1CC0->field_0004,local_8->field_1CC0->field_0008,0xff);
-    pAVar1 = pSVar3->field_1CC0;
-    uVar9 = pAVar1->field_0014;
+                 *(int *)(local_8->field_1CC0 + 2),*(int *)(local_8->field_1CC0 + 4),0xff);
+    puVar1 = pSVar3->field_1CC0;
+    uVar9 = *(uint *)(puVar1 + 10);
     if (uVar9 == 0) {
-      uVar9 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-              pAVar1->field_0008;
+      uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(puVar1 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar1);
     for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;

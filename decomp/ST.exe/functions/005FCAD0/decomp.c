@@ -2,7 +2,7 @@
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005FCAD0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005FBC32 */
 
-byte * __thiscall FUN_005fcad0(void *this,uint *param_1)
+byte * __thiscall STAllPlayersC::FUN_005fcad0(STAllPlayersC *this,uint *param_1)
 
 {
   uint uVar1;
@@ -22,7 +22,7 @@ byte * __thiscall FUN_005fcad0(void *this,uint *param_1)
   uint local_8;
 
   local_10 = (byte *)Library::DKW::LIB::FUN_006aac70(0x24a);
-  puVar6 = (undefined4 *)((int)this + 0x326);
+  puVar6 = (undefined4 *)&this[1].field_0xa;
   puVar9 = (undefined4 *)local_10;
   for (iVar2 = 0x55; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar9 = *puVar6;
@@ -30,7 +30,7 @@ byte * __thiscall FUN_005fcad0(void *this,uint *param_1)
     puVar9 = puVar9 + 1;
   }
   *(undefined1 *)puVar9 = *(undefined1 *)puVar6;
-  puVar6 = (undefined4 *)((int)this + 0x231);
+  puVar6 = (undefined4 *)&this->field_0x231;
   puVar9 = (undefined4 *)((int)local_10 + 0x155);
   for (iVar2 = 0x3d; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar9 = *puVar6;
@@ -39,8 +39,8 @@ byte * __thiscall FUN_005fcad0(void *this,uint *param_1)
   }
   *(undefined1 *)puVar9 = *(undefined1 *)puVar6;
   *(undefined4 *)((int)local_10 + 0xc) = 2;
-  local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),&local_8);
-  local_18 = STAllPlayersC::SaveGObjData(this,(int *)&local_c);
+  local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this->field_0x1d5,&local_8);
+  local_18 = SaveGObjData(this,(int *)&local_c);
   uVar1 = local_c + 0x252 + local_8;
   local_10 = (byte *)Library::DKW::LIB::FUN_006acf50((int)local_10,uVar1);
   *(uint *)(local_10 + 0x246) = local_8;

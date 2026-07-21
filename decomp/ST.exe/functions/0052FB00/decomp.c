@@ -872,11 +872,7 @@ cf_switch_join_005305BC:
       }
     }
     iVar7 = this_00->field_005C;
-    piVar40 = local_77c;
-    for (iVar17 = 0x135; iVar17 != 0; iVar17 = iVar17 + -1) {
-      *piVar40 = 0;
-      piVar40 = piVar40 + 1;
-    }
+    memset(local_77c, 0, 0x4d4); /* compiler bulk-zero initialization */
     local_77c[0] = 0;
     local_77c[2] = this_00->field_003C + 0x26;
     if (iVar7 == 0) {
@@ -1498,11 +1494,8 @@ switchD_005311ec_caseD_3:
     break;
   case CASE_C:
     iVar7 = this_00->field_003C;
-    puVar10 = local_11fc;
-    for (iVar17 = 0x21e; iVar17 != 0; iVar17 = iVar17 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
-    }
+    memset(local_11fc, 0, 0x878); /* compiler bulk-zero initialization */
+    iVar17 = 0;
     local_11dc = iVar7 + 0x26;
     local_11fc[0] = 0;
     local_11fc[1] = 2;
@@ -1584,16 +1577,9 @@ switchD_005311ec_caseD_3:
     FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)&this_00->field_0x18);
     break;
   case CASE_D:
-    puVar37 = local_cc;
-    for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar37 = 0;
-      puVar37 = puVar37 + 1;
-    }
-    puVar10 = local_1c48;
-    for (iVar7 = 0x70; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
-    }
+    memset(local_cc, 0, 0x58); /* compiler bulk-zero initialization */
+    iVar7 = 0;
+    memset(local_1c48, 0, 0x1c0); /* compiler bulk-zero initialization */
     bVar6 = 0;
     iVar7 = 0;
     iVar17 = 0;

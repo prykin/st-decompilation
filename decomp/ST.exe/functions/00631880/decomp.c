@@ -3,7 +3,7 @@ uint __thiscall FUN_00631880(void *this,undefined4 *param_1,undefined4 param_2)
 
 {
   uint uVar1;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   int iVar3;
   undefined4 *puVar4;
   undefined4 local_2c [8];
@@ -20,8 +20,8 @@ uint __thiscall FUN_00631880(void *this,undefined4 *param_1,undefined4 param_2)
     *(undefined1 *)puVar4 = *(undefined1 *)param_1;
     local_b = param_2;
     if (*(int *)((int)this + 0x3c) == 0) {
-      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x25,10);
-      *(uint **)((int)this + 0x3c) = puVar2;
+      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x25,10);
+      *(DArrayTy **)((int)this + 0x3c) = pDVar2;
     }
     if (*(uint **)((int)this + 0x3c) == (uint *)0x0) {
       uVar1 = 0xffffffff;

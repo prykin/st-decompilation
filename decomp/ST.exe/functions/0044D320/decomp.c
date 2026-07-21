@@ -255,7 +255,7 @@ switchD_0044d78f_caseD_28:
                    (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)) {
                   puVar3[3] = 0x401;
                 }
-                if ((*(char *)(puVar3 + 5) == '\0') && (0 < (int)pSVar4->field_07BE)) {
+                if ((*(char *)(puVar3 + 5) == '\0') && (0 < pSVar4->field_07BE)) {
                   puVar3[5] = 0x901;
                 }
               }
@@ -291,7 +291,7 @@ joined_r0x0044d9f5:
                     puVar3[3] = 0x401;
                   }
 LAB_0044dc25:
-                  if ((*(char *)(puVar3 + 5) == '\0') && (0 < (int)pSVar4->field_07BE)) {
+                  if ((*(char *)(puVar3 + 5) == '\0') && (0 < pSVar4->field_07BE)) {
                     puVar3[5] = 0x801;
                   }
                 }

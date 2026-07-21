@@ -30,10 +30,10 @@ void CreateBaseSystem(void)
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38)
       ;
     }
-    DAT_00811638->field_0020 = 0;
+    DAT_00811638[8].vtable = (BaseSystemCVTable *)0x0;
     (*DAT_00811638->vtable->InitSystem)((SystemClassTy *)DAT_00811638);
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)DAT_00811638,0);
-    DAT_00811638->field_0020 = 1;
+    DAT_00811638[8].vtable = (BaseSystemCVTable *)0x1;
     g_currentExceptionFrame = local_48.previous;
     return;
   }

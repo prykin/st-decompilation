@@ -102,7 +102,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (*param_1 < 100) {
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_c->field_0217,param_1);
+    Library::DKW::TBL::FUN_006ae1c0(local_c->field_0217,param_1);
     g_currentExceptionFrame = local_74.previous;
     return 0;
   }
@@ -352,11 +352,10 @@ LAB_00663af0:
           if ((this_00->field_009B == 0xc) || (this_00->field_00B3 != 0)) goto LAB_0066263e;
         }
         else if ((((*(short *)(iVar10 + 0x16) < 0) || (*(short *)(iVar10 + 0x18) < 0)) ||
-                 (*(short *)(iVar10 + 0x1a) < 0)) &&
-                (this_00->field_0284 != (AnonPointee_AiFltClassTy_0284 *)0x0)) {
-          *(undefined2 *)(iVar10 + 0x16) = this_00->field_0284->field_0082;
-          *(undefined2 *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284->field_0084;
-          *(undefined2 *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284->field_0086;
+                 (*(short *)(iVar10 + 0x1a) < 0)) && (this_00->field_0284 != (ushort *)0x0)) {
+          *(ushort *)(iVar10 + 0x16) = this_00->field_0284[0x41];
+          *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
+          *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
         }
         local_10 = (DArrayTy *)0x0;
         if (0 < (int)local_8->count) {
@@ -549,11 +548,10 @@ LAB_0066263e:
       }
       if (((*(char *)(iVar10 + 0x3e) != '\0') &&
           (((*(short *)(iVar10 + 0x16) < 0 || (*(short *)(iVar10 + 0x18) < 0)) ||
-           (*(short *)(iVar10 + 0x1a) < 0)))) &&
-         (this_00->field_0284 != (AnonPointee_AiFltClassTy_0284 *)0x0)) {
-        *(undefined2 *)(iVar10 + 0x16) = this_00->field_0284->field_0082;
-        *(undefined2 *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284->field_0084;
-        *(undefined2 *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284->field_0086;
+           (*(short *)(iVar10 + 0x1a) < 0)))) && (this_00->field_0284 != (ushort *)0x0)) {
+        *(ushort *)(iVar10 + 0x16) = this_00->field_0284[0x41];
+        *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
+        *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
       }
       puVar19 = *(undefined4 **)((int)param_1 + 10);
       puVar21 = &this_00->field_01AD;
@@ -866,7 +864,7 @@ LAB_00663076:
           local_24 = pSVar16;
           if (pSVar16 != (STGameObjC *)0x0) {
             iVar10 = thunk_FUN_004e1490((int)pSVar16);
-            if ((iVar10 == 0) || (g_worldGrid.sizeZ + -1 <= pSVar16->field_05B8)) {
+            if ((iVar10 == 0) || (g_worldGrid.sizeZ + -1 <= *(int *)&pSVar16->field_0x5b8)) {
               bVar23 = false;
             }
             else {

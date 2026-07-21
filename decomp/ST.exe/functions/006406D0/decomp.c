@@ -31,7 +31,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   int iVar11;
   int iVar12;
   int *piVar13;
-  uint *puVar14;
+  DArrayTy *pDVar14;
   undefined4 *puVar15;
   undefined4 uVar16;
   uint uVar17;
@@ -250,7 +250,8 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
     local_16c = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
     local_168 = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
     FUN_006e25d0((void *)this_00->field_0211,&local_1c8);
-    sVar10 = (*this_00->vtable->vfunc_14)
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    sVar10 = (**(code **)&this_00->vtable->field_0x14)
                        (local_1b8 >> 0x10,local_1b4 >> 0x10,local_1b0 >> 0x10,local_1c8 >> 0x10,
                         local_1c4 >> 0x10,local_1c0 >> 0x10);
     thunk_FUN_004abce0(&this_00->field_01D5,0,*(int *)(&DAT_007d2138 + sVar10 * 4),
@@ -339,8 +340,8 @@ LAB_00642c6e:
     }
     this_00->field_0x27d = 0;
     *(undefined4 *)&this_00->field_0x27e = 0;
-    puVar14 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,8,1);
-    *(uint **)((int)&this_00->field_023E + 3) = puVar14;
+    pDVar14 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,8,1);
+    *(DArrayTy **)((int)&this_00->field_023E + 3) = pDVar14;
     *(undefined4 *)&this_00->field_0x270 = 1;
     *(undefined4 *)&this_00->field_0x278 = 0xffffffff;
     this_00->field_0x27c = 0;
@@ -412,8 +413,8 @@ LAB_00642c6e:
       uVar9 = extraout_var_00;
     }
     *(int *)&this_00->field_0x68 = *(int *)&this_00->field_0x68 + 1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar9 = (*this_00->vtable->vfunc_10)
+    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+    uVar9 = (**(code **)&this_00->vtable->field_0x10)
                       (CONCAT22(uVar9,*(undefined2 *)&this_00->field_0x24b),
                        *(undefined2 *)&this_00->field_0x24d,
                        CONCAT22(uVar9,*(undefined2 *)&this_00->field_0x24f),
@@ -628,7 +629,8 @@ switchD_00640c2d_caseD_a2:
       local_184 = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
       local_180 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0((void *)this_00->field_0211,&local_1a8);
-      sVar10 = (*this_00->vtable->vfunc_14)
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      sVar10 = (**(code **)&this_00->vtable->field_0x14)
                          (local_198 >> 0x10,local_194 >> 0x10,local_190 >> 0x10,local_1a8 >> 0x10,
                           local_1a4 >> 0x10,local_1a0 >> 0x10);
       iVar11 = *(int *)(&DAT_007d2138 + sVar10 * 4);
@@ -815,11 +817,7 @@ switchD_00640c2d_caseD_a2:
         iVar11 = (**(code **)(*local_30 + 0x2c))();
         if (iVar11 == 0x68) {
           uVar9 = *(undefined2 *)&this_00->field_0x245;
-          piVar13 = local_220;
-          for (iVar11 = 0x16; iVar11 != 0; iVar11 = iVar11 + -1) {
-            *piVar13 = 0;
-            piVar13 = piVar13 + 1;
-          }
+          memset(local_220, 0, 0x58); /* compiler bulk-zero initialization */
           local_220[0] = 0x15e;
           local_220[3] = 1;
           local_220[2] = 1;
@@ -846,14 +844,15 @@ switchD_00640c2d_caseD_a2:
           local_200 = *(undefined2 *)&this_00->field_0x34;
           local_1f8 = 1;
           local_1fa = 0;
-          (*PTR_00802a38->vtable->vfunc_08)(0x147,0,0,local_220,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)PTR_00802a38->vtable->field_0008)(0x147,0,0,local_220,0);
         }
         local_22c = &local_c4;
         local_238 = local_30[2];
         local_234 = 2;
         local_230 = 0x110;
-        (*PTR_00802a38->vtable->SendMessage)
-                  ((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_240);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)PTR_00802a38->vtable->field_0018)(local_240);
       }
     }
     puVar15 = &this_00->field_01D5;
@@ -917,11 +916,7 @@ switchD_00640c2d_caseD_a2:
     g_currentExceptionFrame = local_28c.previous;
     return 0;
   }
-  piVar13 = local_13c;
-  for (iVar11 = 0x1c; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *piVar13 = 0;
-    piVar13 = piVar13 + 1;
-  }
+  memset(local_13c, 0, 0x70); /* compiler bulk-zero initialization */
   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::thunk_FUN_00644410
             ((AnonReceiver_00644410 *)this_00,&local_18,&local_120,&local_11c,local_118);
   if (local_18 == 0) {
@@ -1103,8 +1098,9 @@ LAB_0064190c:
                        (int)*(short *)&this_00->field_0x45);
   }
   if (local_18 != 1) {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00642C8B:
-    iVar11 = (*this_00->vtable->vfunc_D8)();
+    iVar11 = (**(code **)&this_00->vtable[4].field_0x18)();
     if (iVar11 == 0) {
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -3160,7 +3156,8 @@ LAB_00642561:
   iVar11 = 1;
   uVar17 = thunk_FUN_004ad650((int)puVar15);
   FUN_006ea4e0((void *)this_00->field_0211,uVar17,iVar11,uVar16,uVar26);
-  iVar11 = (*this_00->vtable->vfunc_D8)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  iVar11 = (**(code **)&this_00->vtable[4].field_0x18)();
   if (iVar11 != 0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x27d);
@@ -3241,8 +3238,9 @@ LAB_00642561:
   case CASE_BF:
     local_c = 0x488;
   }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_00640fbd_caseD_a2:
-  (*this_00->vtable->vfunc_90)(2,local_c);
+  (**(code **)(this_00->vtable + 3))(2,local_c);
   g_currentExceptionFrame = local_28c.previous;
   return 0;
 }

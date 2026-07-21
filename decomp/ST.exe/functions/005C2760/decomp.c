@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_005c2760(void)
 
@@ -5,8 +7,6 @@ void FUN_005c2760(void)
   DWORD DVar1;
   DWORD DVar2;
   BITMAPINFO *pBVar3;
-  int iVar4;
-  undefined4 *puVar5;
   undefined4 local_2c;
   undefined1 local_20;
   undefined4 local_1e;
@@ -14,7 +14,7 @@ void FUN_005c2760(void)
   DVar2 = timeGetTime();
   DVar1 = DAT_00811754;
   if ((PTR_0081175c != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) && (99 < DVar2 - DAT_00811754)) {
-    FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     pBVar3 = (BITMAPINFO *)FUN_0070b3a0(PTR_0081175c,(int)(short)PTR_0081175c->field_0029);
     PutDDX(0x15,0x14,'\x06',pBVar3);
     Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
@@ -24,12 +24,7 @@ void FUN_005c2760(void)
     }
     DVar1 = DVar2;
     if ((DAT_00811750 != '\0') && (DAT_0080877e != '\0')) {
-      puVar5 = &local_2c;
-      for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
-      *(undefined2 *)puVar5 = 0;
+      memset(&local_2c, 0, 0x26); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._0_2_ = (undefined2)((uint)DAT_00807dd5 >> 0x10);
       local_20 = DAT_0080733b;

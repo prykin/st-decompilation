@@ -46,8 +46,8 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
     }
     iVar3 = *(int *)&pMVar2->field_0x4d;
@@ -70,7 +70,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
         FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
       if (-1 < PTR_0081176c->field_0540) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0540);
       }
     }
     if (*(HoloTy **)&pMVar2[0x26].field_0x42 != (HoloTy *)0x0) {
@@ -93,7 +93,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&pMVar2[0x26].field_0x46);
       *(undefined4 *)&pMVar2[0x26].field_0x46 = 0;
     }
-    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+    if (PTR_0081176c->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     if (*(int *)&pMVar2[0x22].field_0x5 != 0) {
@@ -141,7 +141,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     value = (void **)&pMVar2[0x25].field_0x25;
     iVar3 = 10;
     do {
-      FUN_006b3bb0(DAT_008075a8,(uint)value[-10]);
+      FUN_006b3bb0((int *)PTR_008075a8,(uint)value[-10]);
       if (*value != (void *)0x0) {
         FreeAndNull(value);
       }
@@ -151,7 +151,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     if (*(int *)&pMVar2[0x21].field_0xdb != 0) {
       FreeAndNull((void **)&pMVar2[0x21].field_0xdb);
     }
-    FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar2[0x21].field_0xdf);
+    FUN_006b3bb0((int *)PTR_008075a8,*(uint *)&pMVar2[0x21].field_0xdf);
     if ((pMVar2[0x26].field_0x35 != '\0') &&
        (this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6), this_00 != (MMsgTy *)0x0))
     {

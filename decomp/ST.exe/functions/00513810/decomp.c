@@ -15,7 +15,6 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
   int iVar4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar5;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   undefined4 local_8;
@@ -64,11 +63,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
         local_8 = *(undefined4 *)&this_00->field_0x1bf;
       }
       if (this_00->field_019C != 0) {
-        puVar5 = (undefined4 *)&this_00->field_0x18;
-        for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar5 = 0;
-          puVar5 = puVar5 + 1;
-        }
+        memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
         this_00->field_0028 = 0x22;
         *(short *)&this_00->field_0x2c = (short)local_8;
         *(undefined2 *)&this_00->field_0x30 = 1;

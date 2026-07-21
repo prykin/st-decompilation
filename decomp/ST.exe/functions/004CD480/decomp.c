@@ -33,8 +33,7 @@ LAB_004cd4c0:
       goto LAB_004cd4c0;
     }
   }
-  if ((uint)PTR_00802a38->field_00E4 <
-      (uint)((&DAT_007914d8)[iVar3] + *(int *)&param_1->field_0x468)) {
+  if (PTR_00802a38->field_00E4 < (uint)((&DAT_007914d8)[iVar3] + *(int *)&param_1->field_0x468)) {
     return 0;
   }
   uVar1 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;

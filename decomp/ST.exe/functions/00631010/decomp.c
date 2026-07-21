@@ -27,7 +27,7 @@ void __fastcall FUN_00631010(AnonShape_00631010_DBA5BE90 *param_1)
       else {
         puVar2 = (undefined4 *)0x0;
       }
-      if (puVar2[3] + 0x2ee < (uint)PTR_00802a38->field_00E4) {
+      if (puVar2[3] + 0x2ee < PTR_00802a38->field_00E4) {
         piVar1 = (int *)puVar2[4];
         psVar6 = &local_20;
         for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {

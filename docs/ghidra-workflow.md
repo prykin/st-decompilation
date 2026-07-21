@@ -287,7 +287,10 @@ structural until independent evidence names it.
 2. Run `STConstructorApplier`.
    - File: `<repo>/recovery/ST.exe/constructor_proposals.tsv`
    - Rerun the analyzer after applying. Stop when `name_apply`,
-     `convention_apply`, and `parameter_apply` are all zero.
+     `convention_apply`, `parameter_apply`, and `return_apply` are all zero.
+   - A machine-code constructor which returns the incoming `this` in EAX receives
+     an `Owner *` Ghidra return type. Source C++ still has no written constructor
+     return type; this models the compiler ABI and prevents `return &this->vtable`.
 3. Rerun `STVTableAnalyzer` and `STVTableApplier`, then rerun the virtual-method
    pair. A newly named constructor is exact evidence for the final vtable it
    installs and may safely resolve a table whose inherited slots previously
@@ -313,6 +316,19 @@ domains, and x87 memory operations. Pointer/scalar types are
 applied only when width and evidence agree. Generated structures carry a safety
 hash; a manual change causes later automatic updates to be preserved rather
 than overwritten.
+
+Concrete types previously written by this same pair are not treated as eternal
+truth. A generated, hash-unchanged component is revised when fresh direct
+evidence uniquely disagrees with it. Old unsigned inferences based only on
+`AND`/`OR`/`XOR`/`TEST` are retired: those x86 operations do not establish C
+signedness and a linear pass could carry a register fact into the wrong CFG arm.
+Types supported only by the old bidirectional field-copy propagation are also
+retired when the corrected directional pass cannot reproduce them.
+Typed cross-class provenance now survives a CFG join only when every reachable
+predecessor agrees, preventing a receiver from one switch arm leaking into the
+next arm's field evidence.
+`class_layout_summary.txt` reports generated revisions and deprecated repairs.
+Manual/imported structures and edited generated layouts remain protected.
 
 Incoming `this` values spilled once to an EBP-relative prologue slot are tracked
 as immutable receiver anchors. This lets mutually exclusive setjmp/SEH branches
@@ -492,6 +508,10 @@ final LLM corpus.
     - File: `<repo>/recovery/ST.exe/global_aggregate_proposals.tsv`
 18. Run `STGlobalDataAnalyzer`.
    - Directory: `<repo>/recovery`
+   - Besides proposals it writes `global_pointer_audit.tsv`, a complete inventory
+     of `PTR_*` data symbols split into control-flow/string/code table entries and
+     actual pointer-valued globals. Anonymous pointees and any named-type evidence
+     are shown explicitly.
 19. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
 20. Run `STIndirectCallAnalyzer`.
@@ -518,14 +538,28 @@ final LLM corpus.
      `STPointerShapeApplier`-owned, has stable storage, uses no base adjustment,
      and the derived layout is at least as large as the current base layout.
      Manual/imported locals and anonymous owners are never changed by this rule.
+   - Ghidra auto-parameters are never modified directly. A unique typed-call
+     receiver can attach an otherwise global helper to an existing named class;
+     anonymous receiver shapes remain review-only for `STHiddenThisAnalyzer`.
+   - Anonymous types previously assigned by an old `STTypeFamilyApplier` pass are
+     split back into target-local shapes when the current target has enough
+     consistent fixed-offset evidence. This repairs the former geometry-only
+     family heuristic without touching manual or named types.
 26. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
+    - Inspect `<repo>/recovery/ST.exe/anon_named_type_matches.tsv`. Exact full-layout
+      matches are automatic only when there is one unique named type with at least
+      two concrete, meaningfully named fields. Partial or ambiguous matches remain
+      `apply=0`; anonymous-to-anonymous geometry is never merged automatically.
 27. Run `STTypeFamilyApplier`.
     - File: `<repo>/recovery/ST.exe/type_family_proposals.tsv`
 
 The utility pass is intentionally small and strict. It verifies body shapes before
 assigning the semantics and prototypes of `FreeAndNull`, `DArrayDestroy`,
-`LoadResourceString`, `DArrayGetElement`, and `GetPlayerRaceId`. These high-fanout
+`DArrayCreate`, `SArrayCreate`, `LoadResourceString`, `DArrayGetElement`, and
+`GetPlayerRaceId`. Typing both DKW array factories is especially important:
+their named `DArrayTy *` returns flow into many otherwise anonymous globals.
+These high-fanout
 facts should precede prototype propagation because one corrected helper signature
 can improve many callers.
 
@@ -547,9 +581,10 @@ handles that width question from callers and return definitions. Existing
 manual/imported return types are preserved.
 
 `STGlobalAggregateAnalyzer` writes a broad SIB-index audit, but automatic application
-requires a proven complete range and element formula. The current high-confidence
-proposal is the 64-byte `g_playerRelationMatrix[8][8]` at `00808A4F`; the other
-indexed bases remain `apply=0` until their bounds and record shape are proven.
+requires a proven complete range and element formula. High-confidence proposals
+include the 64-byte `g_playerRelationMatrix[8][8]` and exact compiler-emitted
+centered neighbourhood sequences such as `{2,1,0,-1,-2}`. Other indexed bases
+remain `apply=0` until their bounds and record shape are proven.
 
 Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv` and
 then refines only slots backed by a trusted vtable layout and compatible target
@@ -757,7 +792,11 @@ a library or thunk, stale `decomp.c` and `listing.asm` files are deleted.
 Reused bodies still pass through the cheap text-normalization/catalog stage; no
 decompilation is needed. Terminal x86 `INT3` plus Ghidra's synthetic `swi(3)`
 indirect call becomes the standalone noreturn `STDebugBreak()` helper defined in
-`pseudocode_runtime.h`. Forms that cannot be safely rewritten from text alone
+`pseudocode_runtime.h`. Exact decrementing zero loops produced from
+`REP STOSD` plus an optional tail store become byte-counted `memset` calls; the
+transfer-only `undefined4 *`/`undefined1` artifacts are removed without replacing
+the recovered class fields with an overlapping integer array. Forms that cannot
+be safely rewritten from text alone
 are grouped by function in `pseudocode_idioms.jsonl`, with line excerpts,
 machine/address hints, and the intended structured form. See
 [`pseudocode-normalization.md`](pseudocode-normalization.md).
@@ -789,6 +828,10 @@ are the exception: their complete ordered member layout is part of the fingerpri
 because member order can change which expression Ghidra prints for the same byte
 offset. The first export after this fingerprinting revision intentionally
 recalculates the corpus once; later exports can reuse unaffected function bodies.
+The CFG join retains a typed fact only when every reachable predecessor agrees.
+An explicit per-function work limit widens conservatively and records the rare
+address in `manifest.json` instead of allowing an irreducible or malformed CFG to
+stall the whole export.
 
 ## When a rerun can discover something new
 
@@ -829,8 +872,8 @@ a new conflict is what requires another iteration.
 | `STMessageHandlerAnalyzer/Applier` | Apply the common `STMessage *` envelope and status return across the named `GetMessage` family, including the shared zero-return handler. |
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
-| `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, and repair proven receiver-only signatures. |
-| `STClassLayoutAnalyzer/Applier` | Build conservative class layouts, including fields reached after stable prologue `this` spills, nested class-field pointee layouts, and semantic field-type/name proposals. |
+| `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
+| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, and semantic field-type/name proposals. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods and repair weak script-owned assignments to high-fanout shared helpers. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
@@ -843,15 +886,15 @@ a new conflict is what requires another iteration.
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records and their proven fields, including nested temporary-object slot arrays, from stride/range evidence. |
 | `STSpatialGridAnalyzer/Applier` | Collapse the shared world/pathing x-y-z-stride globals into typed runtime grid descriptors. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
-| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and assign address-stable structural names. |
+| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls and refine trusted vtable/callback slots with compatible function definitions. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
-| `STPointerShapeAnalyzer/Applier` | Recover known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls. |
-| `STTypeFamilyAnalyzer/Applier` | Consolidate exact anonymous layouts and propagate named aggregate return types into script-owned anonymous locals. |
+| `STPointerShapeAnalyzer/Applier` | Recover known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; apply auto-`this` types through the owning class namespace. |
+| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts only to a unique exact named type and propagate named aggregate return types into script-owned anonymous locals; geometry-only anonymous families remain review-only. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, inline proven immutable strings, normalize terminal trap artifacts, and catalogue pseudocode idioms plus corpus-wide residual quality debt. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus with a bounded CFG worklist for cache-hit fingerprints, inline proven immutable strings, normalize terminal traps and compiler bulk-zero loops, and catalogue pseudocode idioms plus corpus-wide residual quality debt. |
 
 ## Git and Ghidra database hygiene
 

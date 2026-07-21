@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl
 FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param_4,uint param_5,
@@ -6,7 +8,6 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
 {
   STGameObjC *pSVar1;
   int iVar2;
-  uint *puVar3;
   uint local_30 [5];
   undefined2 local_1c;
   undefined2 local_1a;
@@ -17,11 +18,7 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar3 = local_30;
-  for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
-  }
+  memset(local_30, 0, 0x2c); /* compiler bulk-zero initialization */
   local_1c = param_2;
   local_1a = param_3;
   local_18 = param_4;
@@ -41,7 +38,8 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_10 = param_6;
   local_c = 0xb4;
   local_8 = 5;
-  (*PTR_00802a38->vtable->vfunc_08)(0x10a,0,0,local_30,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)PTR_00802a38->vtable->field_0008)(0x10a,0,0,local_30,0);
   return;
 }
 

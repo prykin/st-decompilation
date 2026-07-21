@@ -26,7 +26,6 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   void *pvVar11;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EDI;
-  uint *puVar12;
   bool bVar13;
   InternalExceptionFrame local_98;
   uint local_54 [2];
@@ -130,11 +129,7 @@ LAB_00690763:
               }
               if ((pvVar11 != (void *)0x0) &&
                  (this_00 = *(AiFltClassTy **)((int)pvVar11 + 4), this_00 != (AiFltClassTy *)0x0)) {
-                puVar12 = local_54;
-                for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
-                  *puVar12 = 0;
-                  puVar12 = puVar12 + 1;
-                }
+                memset(local_54, 0, 0x34); /* compiler bulk-zero initialization */
                 local_54[0] = 100;
                 local_4b = 1;
                 local_54[1] = local_c->field_012C;
@@ -150,8 +145,7 @@ LAB_00690763:
                                        *(undefined2 *)(*(int *)((int)pvVar11 + 4) + 0x7d));
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
-                  Library::DKW::TBL::FUN_006ae1c0
-                            ((uint *)local_c->field_00C9,(undefined4 *)&local_1c);
+                  Library::DKW::TBL::FUN_006ae1c0(local_c->field_00C9,(undefined4 *)&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;
                 }

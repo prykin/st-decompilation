@@ -4,7 +4,7 @@
    Evidence: final_vptr=0079E21C; returns_this=true; calls_before=0; field_writes_after=29;
    table_confidence=high */
 
-void __thiscall SpriteClassTy::SpriteClassTy(SpriteClassTy *this)
+SpriteClassTy * __thiscall SpriteClassTy::SpriteClassTy(SpriteClassTy *this)
 
 {
   this->vtable = &SpriteClassTyVTable;
@@ -37,6 +37,6 @@ void __thiscall SpriteClassTy::SpriteClassTy(SpriteClassTy *this)
   this->field_0034 = 0;
   this->field_0038 = 0;
   this->field_003C = 0;
-  return;
+  return this;
 }
 

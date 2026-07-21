@@ -58,7 +58,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           bVar10 = uVar9 < pDVar8->count;
         } while ((int)uVar9 < (int)pDVar8->count);
       }
-      thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_00BD,&LAB_0040242d);
+      thunk_FUN_00676c40(this_00->field_00BD,&LAB_0040242d);
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {

@@ -200,7 +200,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
       goto cf_common_exit_005C22B1;
     }
     if (SVar5 != MESS_MREPORTTY_70FF) goto cf_common_exit_005C22B1;
-    thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,local_10->field_005D,0,0);
+    thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,local_10->field_005D,0,0);
 switchD_005c1b14_caseD_5:
     PaintMReport(this_00,'\0');
     goto cf_common_exit_005C22B1;
@@ -394,9 +394,8 @@ LAB_005c1d24:
       local_10->field_032B = 0x50;
       local_10->field_0333 = 200;
       local_10->field_032F = 0x1b3;
-      (*local_10->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
-                 &local_10->field_0x2c7,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)local_10->field_000C->vtable->field_0008)(0x100ef,0,0,&local_10->field_0x2c7,0);
       break;
     case MESS_SETTMAPTY_6203:
       if ((&local_10->field_0347)[(byte)local_10->field_006A] != (DArrayTy *)0x0) {
@@ -414,9 +413,8 @@ LAB_005c1d24:
         if (600 < iVar12 + iVar16) {
           local_10->field_032F = 600 - iVar16;
         }
-        (*local_10->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
-                   &local_10->field_0x2c7,0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)local_10->field_000C->vtable->field_0008)(0x100ef,0,0,&local_10->field_0x2c7,0);
       }
       break;
     case MESS_MTASKTY_6212:

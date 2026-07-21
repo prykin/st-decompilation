@@ -82,7 +82,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       uVar9 = pCVar2->field_00A0;
       uVar8 = pCVar2->field_0048;
     }
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar8,uVar9);
+    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,uVar5,0xffffffff,uVar8,uVar9);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

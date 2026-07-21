@@ -20,7 +20,6 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
   undefined4 uVar5;
   longlong lVar6;
   InternalExceptionFrame local_6c;
-  undefined1 local_28 [12];
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -113,7 +112,8 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
-    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_28);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0018)();
 LAB_004a8b47:
     uVar4 = DAT_0080743c & 0xff;
   }
@@ -158,7 +158,8 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar5;
-    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_28);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0018)();
 LAB_004a8c49:
     uVar4 = DAT_0080743c & 0xff;
   }

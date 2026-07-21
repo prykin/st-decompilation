@@ -189,10 +189,10 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   local_20 = (STSprGameObjC_field_0259State *)(message->arg0).u32;
   if (local_20[3] < 2) {
     *(undefined4 *)&this_00->field_0x239 = 3;
-    iVar7 = PTR_00802a38->field_00E4;
+    uVar10 = PTR_00802a38->field_00E4;
     *(undefined4 *)&this_00->field_0x23d = 0;
     this_00->field_0231 = 0;
-    *(int *)&this_00->field_0x235 = iVar7 + -3;
+    *(uint *)&this_00->field_0x235 = uVar10 - 3;
     pSVar12 = (message->arg0).ptr;
     pSVar14 = &this_00->field_0259;
     for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {

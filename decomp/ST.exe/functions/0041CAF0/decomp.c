@@ -10,7 +10,7 @@
 int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
 
 {
-  int iVar1;
+  void *pvVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -22,12 +22,12 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       iVar4 = (int)param_1->field_005B;
       if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
         if (((-1 < iVar4) &&
-            (((iVar4 < (int)g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
+            (((iVar4 < g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
              (iVar5 < g_visibleClass_00802A88->field_0024)))) &&
-           (g_visibleClass_00802A88->field_0038 != 0)) {
+           (g_visibleClass_00802A88->field_0038 != (void *)0x0)) {
           iVar5 = g_visibleClass_00802A88->field_0020 * iVar5;
-          iVar1 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar4) * 2;
-          if ((iVar1 != 0) && (*(char *)(iVar1 + 1) != '\0')) {
+          pvVar1 = (void *)((int)g_visibleClass_00802A88->field_0038 + (iVar5 + iVar4) * 2);
+          if ((pvVar1 != (void *)0x0) && (*(char *)((int)pvVar1 + 1) != '\0')) {
             if (7 < param_1->field_0024) {
               return 1;
             }
@@ -49,12 +49,12 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
     iVar4 = (int)param_1->field_005B;
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
       if (((-1 < iVar4) &&
-          (((iVar4 < (int)g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
+          (((iVar4 < g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
            (iVar5 < g_visibleClass_00802A88->field_0024)))) &&
-         (g_visibleClass_00802A88->field_0038 != 0)) {
+         (g_visibleClass_00802A88->field_0038 != (void *)0x0)) {
         iVar2 = g_visibleClass_00802A88->field_0020 * iVar5;
-        iVar1 = g_visibleClass_00802A88->field_0038 + (iVar2 + iVar4) * 2;
-        if ((iVar1 != 0) && (*(char *)(iVar1 + 1) != '\0')) {
+        pvVar1 = (void *)((int)g_visibleClass_00802A88->field_0038 + (iVar2 + iVar4) * 2);
+        if ((pvVar1 != (void *)0x0) && (*(char *)((int)pvVar1 + 1) != '\0')) {
           if (7 < param_1->field_0024) {
             return 1;
           }
@@ -67,14 +67,14 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           }
         }
       }
-      iVar1 = iVar4 + 1;
-      if (((-1 < iVar1) && (iVar1 < (int)g_visibleClass_00802A88->field_0020)) &&
+      iVar2 = iVar4 + 1;
+      if (((-1 < iVar2) && (iVar2 < g_visibleClass_00802A88->field_0020)) &&
          ((-1 < iVar5 &&
           ((iVar5 < g_visibleClass_00802A88->field_0024 &&
-           (g_visibleClass_00802A88->field_0038 != 0)))))) {
+           (g_visibleClass_00802A88->field_0038 != (void *)0x0)))))) {
         iVar5 = g_visibleClass_00802A88->field_0020 * iVar5;
-        iVar2 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar1) * 2;
-        if ((iVar2 != 0) && (*(char *)(iVar2 + 1) != '\0')) {
+        pvVar1 = (void *)((int)g_visibleClass_00802A88->field_0038 + (iVar5 + iVar2) * 2);
+        if ((pvVar1 != (void *)0x0) && (*(char *)((int)pvVar1 + 1) != '\0')) {
           if (7 < param_1->field_0024) {
             return 1;
           }
@@ -82,18 +82,18 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
             return 1;
           }
           if (*(char *)(*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) +
-                        iVar5 + iVar1) == '\0') {
+                        iVar5 + iVar2) == '\0') {
             return 1;
           }
         }
       }
       iVar5 = param_1->field_005D + 1;
-      if ((((-1 < iVar4) && (iVar4 < (int)g_visibleClass_00802A88->field_0020)) && (-1 < iVar5)) &&
-         ((iVar5 < g_visibleClass_00802A88->field_0024 && (g_visibleClass_00802A88->field_0038 != 0)
-          ))) {
+      if ((((-1 < iVar4) && (iVar4 < g_visibleClass_00802A88->field_0020)) && (-1 < iVar5)) &&
+         ((iVar5 < g_visibleClass_00802A88->field_0024 &&
+          (g_visibleClass_00802A88->field_0038 != (void *)0x0)))) {
         iVar3 = g_visibleClass_00802A88->field_0020 * iVar5;
-        iVar2 = g_visibleClass_00802A88->field_0038 + (iVar3 + iVar4) * 2;
-        if ((iVar2 != 0) && (*(char *)(iVar2 + 1) != '\0')) {
+        pvVar1 = (void *)((int)g_visibleClass_00802A88->field_0038 + (iVar3 + iVar4) * 2);
+        if ((pvVar1 != (void *)0x0) && (*(char *)((int)pvVar1 + 1) != '\0')) {
           if (7 < param_1->field_0024) {
             return 1;
           }
@@ -106,7 +106,7 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           }
         }
       }
-      iVar5 = thunk_FUN_0041cda0(g_visibleClass_00802A88,iVar1,iVar5,(int)param_1->field_005F,
+      iVar5 = thunk_FUN_0041cda0(g_visibleClass_00802A88,iVar2,iVar5,(int)param_1->field_005F,
                                  param_1->field_0024);
       return (uint)(iVar5 != 0);
     }

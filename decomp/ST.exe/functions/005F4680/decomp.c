@@ -54,10 +54,10 @@ void __fastcall FUN_005f4680(AnonReceiver_005F35F0 *param_1)
                               iVar5,&local_c,&local_10), -1 < local_8)) &&
          ((local_8 < 5 && (-1 < local_c)))) &&
         ((local_c < pVVar2->field_0030 &&
-         ((local_10 = (&DAT_0079aed0)[local_8] + local_10, -1 < local_10 &&
+         ((local_10 = g_centeredOffsets5[local_8] + local_10, -1 < local_10 &&
           (local_10 < pVVar2->field_0034)))))) &&
-       ((pVVar2->field_004C != 0 &&
-        (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_c) == '\0')))) {
+       ((pVVar2->field_004C != (byte *)0x0 &&
+        (pVVar2->field_004C[local_c + local_10 * pVVar2->field_0030] == 0)))) {
       if (param_1->field_0xc4 == '\0') {
         return;
       }

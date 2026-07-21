@@ -11,7 +11,7 @@
 void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
 
 {
-  DArrayTy *pDVar1;
+  uint *puVar1;
   Global_sub_00526BA0_param_1Enum GVar2;
   code *pcVar3;
   CPanelTy *this_00;
@@ -29,7 +29,6 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   byte *pbVar15;
   char *pcVar16;
   bool bVar17;
-  dword dVar18;
   InternalExceptionFrame local_90;
   CPanelTy *local_4c;
   char local_48;
@@ -48,7 +47,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   short local_22;
   short local_20;
   char local_1e [8];
-  AnonNested_005F5B80_0169_794156D7 *local_16;
+  DArrayTy *local_16;
   int local_10;
   uint local_c;
   uint local_8;
@@ -76,37 +75,32 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     pcVar7 = pcVar7 + 4;
   }
   *(undefined2 *)pcVar7 = *(undefined2 *)puVar13;
-  puVar13 = (undefined4 *)&local_4c->field_0B63;
-  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar13 = 0;
-    puVar13 = puVar13 + 1;
-  }
-  *(undefined2 *)puVar13 = 0;
-  local_16 = (AnonNested_005F5B80_0169_794156D7 *)local_4c->field_0B4B;
-  Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);
-  this_00->field_0B95->count = 0;
-  this_00->field_0B4B = (DArrayTy *)local_16;
+  memset(&local_4c->field_0B63, 0, 0x32); /* compiler bulk-zero initialization */
+  local_16 = local_4c->field_0B4B;
+  Library::DKW::TBL::FUN_006afe40((int *)&local_16,local_4c->field_0B95);
+  this_00->field_0B95[3] = 0;
+  this_00->field_0B4B = local_16;
   STAllPlayersC::GetPanelInfo
             (g_sTAllPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
     if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
     }
-    if (DAT_00801678 != (int *)0x0) {
+    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801678 + 0x1c))(0);
+      (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
     }
-    if (DAT_008016ec != (int *)0x0) {
+    if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_008016ec + 0x1c))(0);
+      (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
     }
-    if (DAT_00802a48 != (int *)0x0) {
+    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00802a48 + 0x1c))(0);
+      (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
     }
-    if (DAT_0080168c != (int *)0x0) {
+    if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_0080168c + 0x1c))(0);
+      (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
     }
     SwitchTV(this_00,1);
     PaintInfoBoat(this_00);
@@ -117,25 +111,25 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
     }
-    if (DAT_00801678 != (int *)0x0) {
+    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801678 + 0x1c))(0);
+      (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
     }
-    if (DAT_008016ec != (int *)0x0) {
+    if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_008016ec + 0x1c))(0);
+      (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
     }
-    if (DAT_00802a48 != (int *)0x0) {
+    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00802a48 + 0x1c))(0);
+      (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
     }
-    if (DAT_0080168c != (int *)0x0) {
+    if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_0080168c + 0x1c))(0);
+      (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
     }
   }
   if (this_00->field_0B63 == '\x02') {
-    if ((this_00->field_0B95->count != local_16->field_000C) || (local_47 != this_00->field_0B64)) {
+    if ((this_00->field_0B95[3] != local_16->count) || (local_47 != this_00->field_0B64)) {
       SwitchTV(this_00,1);
     }
     iVar5 = 5;
@@ -155,9 +149,9 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar4);
       if (bVar4 < 0xb) {
-        if (-1 < (int)(&this_00->field_0148)[bVar4]) {
+        if (-1 < (&this_00->field_0148)[bVar4]) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                    ((int *)PTR_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
                      (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
         }
       }
@@ -168,15 +162,15 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       Library::DKW::WGR::FUN_006b55f0
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
-      dVar18 = this_00->field_0B95->count;
+      uVar6 = this_00->field_0B95[3];
       pcVar7 = LoadResourceString(0x36b9,HINSTANCE_00807618);
-      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar7,dVar18);
+      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar7,uVar6);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
       ccFntTy::WrTxt(this_00->field_01B8,*(uint **)&this_00->field_0x213,-2,-1,0,-1,-1);
-      if (-1 < (int)this_00->field_014C) {
+      if (-1 < this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+                  ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
                    this_00->field_0098);
       }
       if ((DAT_0080874e == '\x03') && (local_2c != this_00->field_0B7F)) {
@@ -184,13 +178,14 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       }
       local_10 = 1;
       local_c = 0;
-      local_8 = local_16->field_000C;
+      local_8 = local_16->count;
       if (local_8 != 0) {
-        pDVar1 = this_00->field_0B95;
-        uVar6 = pDVar1->count;
+        puVar1 = this_00->field_0B95;
+        uVar6 = puVar1[3];
         do {
           if (local_c < local_8) {
-            piVar8 = (int *)(local_16->field_0008 * local_c + local_16->field_001C);
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_16, local_c) (runtime stride) */
+            piVar8 = (int *)(local_16->elementSize * local_c + (int)local_16->data);
           }
           else {
             piVar8 = (int *)0x0;
@@ -202,8 +197,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
               goto LAB_004ff6e4;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar11) (runtime stride) */
-              piVar9 = (int *)(pDVar1->elementSize * uVar11 + (int)pDVar1->data);
+              piVar9 = (int *)(puVar1[2] * uVar11 + puVar1[7]);
 LAB_004ff6e4:
               if (*piVar9 == *piVar8) {
                 local_10 = 0;
@@ -216,9 +210,9 @@ LAB_004ff6e4:
           local_c = local_c + 1;
         } while (local_c < local_8);
       }
-      if ((local_10 != 0) && (DAT_00801678 != (int *)0x0)) {
+      if ((local_10 != 0) && (g_behPanel_00801678 != (BehPanelTy *)0x0)) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00801678 + 0x1c))(0);
+        (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
       }
     }
   }
@@ -233,21 +227,21 @@ LAB_004ff723:
     if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
     }
-    if (DAT_00801678 != (int *)0x0) {
+    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801678 + 0x1c))(0);
+      (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
     }
-    if (DAT_008016ec != (int *)0x0) {
+    if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_008016ec + 0x1c))(0);
+      (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
     }
-    if (DAT_00802a48 != (int *)0x0) {
+    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00802a48 + 0x1c))(0);
+      (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
     }
-    if (DAT_0080168c != (int *)0x0) {
+    if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_0080168c + 0x1c))(0);
+      (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
     }
     SwitchTV(this_00,1);
   }
@@ -261,9 +255,9 @@ LAB_004ff723:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0,
                  (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
       PaintName(this_00,1);
-      if (-1 < (int)this_00->field_014C) {
+      if (-1 < this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+                  ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
                    this_00->field_0098);
       }
     }
@@ -292,10 +286,10 @@ LAB_004ff87a:
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0,(byte *)this_00->field_0958,
                0,1,0,0x4e,0x20);
     PaintName(this_00,1);
-    if (-1 < (int)this_00->field_014C) {
+    if (-1 < this_00->field_014C) {
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,this_00->field_0098
-                );
+                ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+                 this_00->field_0098);
     }
   }
   if (local_2d != this_00->field_0B7E) {
@@ -303,10 +297,10 @@ LAB_004ff87a:
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x1f,
                (byte *)this_00->field_0958,0,1,0x1f,0x4e,0x11);
     PaintLife(this_00,1);
-    if (-1 < (int)this_00->field_014C) {
+    if (-1 < this_00->field_014C) {
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,this_00->field_0098
-                );
+                ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+                 this_00->field_0098);
     }
   }
   if (((DAT_0080874e == '\x03') && (this_00->field_0B6A == '\x03')) &&
@@ -319,9 +313,9 @@ LAB_004ff87a:
       Library::DKW::WGR::FUN_006b55f0
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x2f,
                  (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
-      if (-1 < (int)this_00->field_014C) {
+      if (-1 < this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+                  ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
                    this_00->field_0098);
       }
     }
@@ -334,9 +328,9 @@ LAB_004ff87a:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0xb,0x31,'\x01',pbVar14);
       pbVar14 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,10,0x30,'\x06',pbVar14);
-      if (-1 < (int)this_00->field_014C) {
+      if (-1 < this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+                  ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
                    this_00->field_0098);
       }
     }
@@ -376,7 +370,7 @@ LAB_004ff87a:
   }
   if (-1 < (int)uVar6) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,uVar6,0xffffffff,this_00->field_0040,this_00->field_0098);
+              ((int *)PTR_008075a8,uVar6,0xffffffff,this_00->field_0040,this_00->field_0098);
   }
 cf_common_exit_004FFB91:
   iVar5 = 5;
@@ -396,9 +390,9 @@ cf_common_exit_004FFB91:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,bVar4);
     if (bVar4 < 0xb) {
-      if (-1 < (int)(&this_00->field_0148)[bVar4]) {
+      if (-1 < (&this_00->field_0148)[bVar4]) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                  ((int *)PTR_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
                    (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
       }
     }

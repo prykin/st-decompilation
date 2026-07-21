@@ -96,7 +96,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
                            *(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(puVar6 + 8) * 4),
                            (int)*(short *)(DAT_00806724 + 0x2c));
             }
-            if ((uint)PTR_00802a38->field_00E4 % 6 == 0) {
+            if (PTR_00802a38->field_00E4 % 6 == 0) {
               *(char *)(puVar6 + 8) = *(char *)(puVar6 + 8) + '\x01';
             }
             if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(puVar6 + 8)) {

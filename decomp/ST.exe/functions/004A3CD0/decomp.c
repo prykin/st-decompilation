@@ -19,7 +19,7 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
   int iVar8;
   uint uVar9;
   InternalExceptionFrame local_88;
-  undefined4 local_44;
+  uint local_44;
   undefined2 local_40;
   undefined2 local_3e;
   undefined2 local_3c;
@@ -34,7 +34,7 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
   undefined2 local_1c [2];
   undefined2 local_18 [2];
   undefined2 local_14 [2];
-  undefined4 local_10;
+  uint local_10;
   DArrayTy *local_c;
   uint local_8;
 
@@ -53,8 +53,8 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
                  0x1189);
     }
     dVar1 = local_24;
-    local_20 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    local_20 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
     pSVar3 = local_2c;
     if (0 < (int)dVar1) {
       do {

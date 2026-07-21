@@ -70,7 +70,8 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,pBVar3->field_0044);
+              ((int *)PTR_008075a8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,
+               pBVar3->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

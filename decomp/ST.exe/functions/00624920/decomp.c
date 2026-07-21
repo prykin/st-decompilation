@@ -28,7 +28,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     *param_2 = *(int *)((int)this + 0x2c2);
     *param_3 = *(int *)((int)this + 0x2c6);
     *param_4 = *(int *)((int)this + 0x2ca);
-    if ((uint)PTR_00802a38->field_00E4 < *(uint *)((int)this + 0x30f)) {
+    if (PTR_00802a38->field_00E4 < *(uint *)((int)this + 0x30f)) {
       return 1;
     }
     bVar1 = *(byte *)((int)this + 0x2ad);
@@ -128,7 +128,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (iVar6 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 0;
         *(undefined4 *)((int)this + 0x2ae) = 1;
-        *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
         return 1;
       }
     }
@@ -224,7 +224,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (iVar5 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 2;
         *(undefined4 *)((int)this + 0x2ae) = 1;
-        *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
         *param_2 = (int)*(short *)((int)this + 0x3a);
         *param_3 = (int)*(short *)((int)this + 0x3c);
         *param_4 = iVar9;
@@ -241,7 +241,7 @@ LAB_00625067:
                                    (int)*(short *)((int)this + 0x3c),iVar9), iVar6 != 0)) {
       *(undefined4 *)((int)this + 0x2ee) = 0;
       *(undefined4 *)((int)this + 0x2ae) = 1;
-      *(undefined4 *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
     }
   }
   return local_8;

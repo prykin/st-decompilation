@@ -23,7 +23,6 @@ STAppC::MainWindowProc
   LRESULT LVar3;
   uint uVar4;
   HCURSOR pHVar5;
-  undefined4 *puVar6;
   undefined1 local_cc [16];
   undefined4 local_bc;
   tagPAINTSTRUCT local_ac;
@@ -60,19 +59,15 @@ STAppC::MainWindowProc
     }
     switch(param_2) {
     case CASE_5:
-      puVar6 = local_6c;
-      for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
+      memset(local_6c, 0, 0x20); /* compiler bulk-zero initialization */
       local_5c = 0x66;
       AppClassTy::SendMessage(g_appClass_00806728,3,1,(int)local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_F:
       BeginPaint(hWnd,&local_ac);
-      if (DAT_008075a8 != (int *)0x0) {
-        FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+      if (PTR_008075a8 != (AnonShape_006B1B10_121F236C *)0x0) {
+        FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       }
       if ((PTR_0081163c != (AnonShape_00577690_10255A81 *)0x0) &&
          (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
@@ -171,9 +166,9 @@ STAppC::MainWindowProc
       Library::DKW::DDX::FUN_006b9b40
                 (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730,
                  DAT_00806734,0,0,0);
-      Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
+      Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
     }
-    FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0x1000000);
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
     g_appClass_00806728->field_4EFA = 0;

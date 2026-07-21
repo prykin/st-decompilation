@@ -66,11 +66,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   else if ((byte)this_00->field_01AB <= (byte)this_00->field_03D4) {
     this_00->field_03D4 = 0;
   }
-  puVar9 = (undefined4 *)&this_00->field_0x18;
-  for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar9 = 0;
-    puVar9 = puVar9 + 1;
-  }
+  memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
   pbVar11 = &this_00->field_01AC;
   this_00->field_0028 = 0x23;
   local_5 = 0;

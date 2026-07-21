@@ -41,7 +41,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pSVar3 = local_14;
   if (iVar4 == 0) {
-    DAT_008016ec = local_14;
+    g_sAMPanel_008016EC = local_14;
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)local_14,"BKG_SETANYW",0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
     puVar19 = (undefined4 *)0x0;

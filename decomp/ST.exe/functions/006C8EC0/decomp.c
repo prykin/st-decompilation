@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_006C8EC0_param_3Enum. Cases:
@@ -157,11 +159,7 @@ cf_continue_loop_006C9187:
     param_4 = (undefined4 *)FUN_006bfb50(param_4,local_34 * 4 + 400);
     psVar37 = local_4c;
     if (param_4 == (undefined4 *)0x0) goto cf_break_loop_006CE63A;
-    puVar17 = param_4 + local_34;
-    for (iVar21 = 100; iVar21 != 0; iVar21 = iVar21 + -1) {
-      *puVar17 = 0;
-      puVar17 = puVar17 + 1;
-    }
+    memset(param_4 + local_34, 0, 0x190); /* compiler bulk-zero initialization */
     local_34 = local_34 + 100;
   }
   local_54 = 0;

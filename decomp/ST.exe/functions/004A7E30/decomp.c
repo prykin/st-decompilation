@@ -6,14 +6,13 @@
 undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
 
 {
-  int iVar1;
   DArrayTy *array;
-  byte bVar2;
-  int *piVar3;
-  uint uVar4;
+  byte bVar1;
+  int *piVar2;
+  uint uVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  int iVar5;
+  int iVar4;
   undefined1 local_14 [6];
   int local_e;
   int local_a;
@@ -22,43 +21,43 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
     if (param_1 != 1) {
       return 1;
     }
-    iVar5 = 0;
-    iVar1 = this->field_022E->field_000C;
-    piVar3 = (int *)this->field_022E->field_001C;
-    if (0 < iVar1) {
+    iVar4 = 0;
+    uVar3 = this->field_022E[3];
+    piVar2 = (int *)this->field_022E[7];
+    if (0 < (int)uVar3) {
       do {
-        if (((short)piVar3[1] != -1) && (*piVar3 == 0)) {
+        if (((short)piVar2[1] != -1) && (*piVar2 == 0)) {
           return 1;
         }
-        iVar5 = iVar5 + 1;
-        piVar3 = (int *)((int)piVar3 + 0x16);
-      } while (iVar5 < iVar1);
+        iVar4 = iVar4 + 1;
+        piVar2 = (int *)((int)piVar2 + 0x16);
+      } while (iVar4 < (int)uVar3);
     }
   }
   if (this->field_0236 == 1) {
     array = (DArrayTy *)this->field_022A;
-    iVar1 = this->field_0232;
-    if (iVar1 == array->count - 1) {
+    iVar4 = this->field_0232;
+    if (iVar4 == array->count - 1) {
       if (this->field_0246 != 0) {
         return 2;
       }
-      if (iVar1 < 1) {
+      if (iVar4 < 1) {
         return 1;
       }
       this->field_0236 = 0;
       this->field_023E = 0;
-      this->field_0232 = iVar1 - 1U;
-      DArrayGetElement(array,iVar1 - 1U,local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
-      uVar4 = (uint)bVar2;
+      this->field_0232 = iVar4 - 1U;
+      DArrayGetElement(array,iVar4 - 1U,local_14);
+      bVar1 = thunk_FUN_00430750(CASE_8);
+      uVar3 = (uint)bVar1;
       local_e = local_e * 0xc9;
     }
     else {
       this->field_023E = 0;
-      this->field_0232 = iVar1 + 1U;
-      DArrayGetElement(array,iVar1 + 1U,local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
-      uVar4 = (uint)bVar2;
+      this->field_0232 = iVar4 + 1U;
+      DArrayGetElement(array,iVar4 + 1U,local_14);
+      bVar1 = thunk_FUN_00430750(CASE_8);
+      uVar3 = (uint)bVar1;
       local_e = local_a * 0xc9;
     }
   }
@@ -68,20 +67,20 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
       this->field_0236 = 1;
       this->field_023E = 0;
       DArrayGetElement((DArrayTy *)this->field_022A,1,local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
+      bVar1 = thunk_FUN_00430750(CASE_8);
     }
     else {
-      uVar4 = this->field_0232 - 1;
-      this->field_0232 = uVar4;
+      uVar3 = this->field_0232 - 1;
+      this->field_0232 = uVar3;
       this->field_023E = 0;
-      DArrayGetElement((DArrayTy *)this->field_022A,uVar4,local_14);
-      bVar2 = thunk_FUN_00430750(CASE_8);
+      DArrayGetElement((DArrayTy *)this->field_022A,uVar3,local_14);
+      bVar1 = thunk_FUN_00430750(CASE_8);
       local_a = local_e;
     }
-    uVar4 = (uint)bVar2;
+    uVar3 = (uint)bVar1;
     local_e = local_a * 0xc9;
   }
-  this->field_023A = (local_e / (int)uVar4) / 3;
+  this->field_023A = (local_e / (int)uVar3) / 3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   SetPatrolCmdToBoat(this,unaff_EDI);
   return 0;

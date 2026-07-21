@@ -13,7 +13,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   CGenerate *pCVar3;
   int iVar4;
   cMf32 *pcVar5;
-  undefined4 *puVar6;
+  byte *pbVar6;
   int *piVar7;
   undefined4 uVar8;
   uint uVar9;
@@ -22,7 +22,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   char *pcVar12;
   InternalExceptionFrame local_64;
   int local_20;
-  uint local_1c;
+  undefined4 local_1c;
   undefined4 local_18;
   CGenerate *local_10;
   undefined4 local_c;
@@ -75,18 +75,18 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pCVar3->field_0x20,1,0,0);
   pCVar3->field_0018 = pcVar5;
   thunk_FUN_0069ff90((int)pCVar3);
-  puVar6 = Library::Ourlib::MFSTMAP::mfTMapCreate
-                     (pCVar3->field_0228,pCVar3->field_022C,(int)pCVar3->field_0234,
-                      pCVar3->field_0239,0x20);
-  pCVar3->field_000C = puVar6;
+  pbVar6 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
+                             (pCVar3->field_0228,pCVar3->field_022C,(int)pCVar3->field_0234,
+                              pCVar3->field_0239,0x20);
+  pCVar3->field_000C = pbVar6;
   thunk_FUN_0069ff90((int)pCVar3);
   piVar7 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)pCVar3->field_000C);
   pCVar3->field_0008 = piVar7;
   thunk_FUN_0069ff90((int)pCVar3);
-  thunk_FUN_006a2d80(1,(int *)pCVar3->field_0008);
+  thunk_FUN_006a2d80(1,pCVar3->field_0008);
   thunk_FUN_0069ff90((int)pCVar3);
   iVar4 = Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
-                    ((short *)pCVar3->field_000C,(int *)pCVar3->field_0008);
+                    ((short *)pCVar3->field_000C,pCVar3->field_0008);
   if (iVar4 != 0) {
     local_c = 0;
   }

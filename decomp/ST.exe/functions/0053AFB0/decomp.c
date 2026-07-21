@@ -60,7 +60,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     puVar1 = &local_14->field_004C;
-    FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,puVar1);
+    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,puVar1);
     this_00->field_003C = *puVar1;
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
@@ -298,7 +298,7 @@ LAB_0053b2ea:
           ShiftControls(this_00,1);
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_64.previous;
         return 0;
@@ -313,7 +313,7 @@ LAB_0053b2ea:
           this_00->field_0172 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_64.previous;
         return 0;
@@ -356,8 +356,8 @@ LAB_0053b2ea:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_10,iVar8 + iVar13,'\x01',
              pbVar12);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
-                );
+                ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                 this_00->field_0044);
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
@@ -508,7 +508,7 @@ LAB_0053b2ea:
           }
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_64.previous;
         return 0;
@@ -522,7 +522,7 @@ LAB_0053b2ea:
                          piVar17[2],piVar17[3]);
         ccFntTy::WrStr(this_00->field_01DD,&DAT_0080f33a,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_64.previous;
         return 0;

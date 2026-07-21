@@ -44,7 +44,7 @@ StartServTy::WrSarrDDX
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }
     ccFntTy::WrSarr(param_9,param_6,0,-1,param_7,param_8,param_10);
-    FUN_006b5f80(DAT_008075a8,param_2,param_3,local_8,param_5);
+    FUN_006b5f80((int *)PTR_008075a8,param_2,param_3,local_8,param_5);
     TransPutDDX(param_2,param_3,'\x01',local_c,-(uint)(param_1 != 0));
     ccFntTy::EraseSufr(param_9);
     g_currentExceptionFrame = local_50.previous;

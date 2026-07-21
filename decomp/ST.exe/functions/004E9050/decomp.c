@@ -25,7 +25,7 @@ LAB_004e9090:
     uVar2 = 0;
   }
   if (((int)param_1->field_04D0 < 100) &&
-     ((uint)(&DAT_0079a9fc)[uVar2] / 100 + param_1->field_04D4 <= (uint)PTR_00802a38->field_00E4)) {
+     ((uint)(&DAT_0079a9fc)[uVar2] / 100 + param_1->field_04D4 <= PTR_00802a38->field_00E4)) {
     TVar1 = param_1->field_04D0 + CASE_1;
     param_1->field_04D4 = PTR_00802a38->field_00E4;
     param_1->field_04D0 = TVar1;

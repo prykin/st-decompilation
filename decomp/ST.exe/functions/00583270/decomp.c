@@ -303,11 +303,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         }
         if ((*(int *)&this_00->field_0x235 != 4) && (*(int *)&this_00->field_0x235 != 2)) {
           uVar6 = *(undefined4 *)&this_00->field_0x8;
-          puVar11 = local_5c;
-          for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar11 = 0;
-            puVar11 = puVar11 + 1;
-          }
+          memset(local_5c, 0, 0x20); /* compiler bulk-zero initialization */
           local_4c = 0x125;
           local_48 = uVar6;
           FUN_006e6080(this_00,4,*(undefined4 *)&this_00->field_0x286,local_5c);

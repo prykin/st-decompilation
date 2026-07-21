@@ -20,7 +20,6 @@ STAllPlayersC::GetTOBJImage
   ushort *puVar3;
   uint uVar4;
   int iVar5;
-  int *piVar6;
   Global_sub_004C2950_param_3Enum GVar7;
   char local_154 [256];
   int local_54 [17];
@@ -29,11 +28,7 @@ STAllPlayersC::GetTOBJImage
   STBoatCVTable *local_8;
 
   SVar2 = param_2;
-  piVar6 = local_54;
-  for (iVar5 = 0x11; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *piVar6 = 0;
-    piVar6 = piVar6 + 1;
-  }
+  memset(local_54, 0, 0x44); /* compiler bulk-zero initialization */
   switch(param_2) {
   case CASE_1:
   case CASE_2:

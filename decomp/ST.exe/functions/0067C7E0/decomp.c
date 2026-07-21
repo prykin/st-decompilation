@@ -109,11 +109,8 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       else if (SVar2 == MESS_ID_NONE) {
         if ((&DAT_00809950)[local_10->field_05D7] == '\0') {
           if (DAT_008117bc != (undefined4 *)0x0) {
-            piVar14 = local_38;
-            for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar14 = 0;
-              piVar14 = piVar14 + 1;
-            }
+            memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
+            iVar5 = 0;
             local_38[4] = 0x5deb;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
@@ -141,11 +138,8 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         }
         else {
           CloseAllTact(local_10);
-          piVar14 = local_38;
-          for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *piVar14 = 0;
-            piVar14 = piVar14 + 1;
-          }
+          memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
+          iVar5 = 0;
           local_38[2] = this_00->field_000C->systemId;
           local_38[3] = 0;
           local_24 = this_00->field_0008;
@@ -170,11 +164,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       }
       else if (SVar2 == MESS_SHARED_0003) {
         if (DAT_008117bc != (undefined4 *)0x0) {
-          piVar14 = local_38;
-          for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *piVar14 = 0;
-            piVar14 = piVar14 + 1;
-          }
+          memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
           local_38[4] = 0x5dec;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);

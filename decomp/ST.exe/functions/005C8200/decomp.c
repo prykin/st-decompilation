@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Start\sett_obj.cpp
@@ -56,22 +58,20 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     (*(code *)local_c->field_0000->field_0028)();
     return;
   }
-  if ((cMf32 *)local_c->field_1F3F != (cMf32 *)0x0) {
-    cMf32::delete(this_01,(cMf32 *)local_c->field_1F3F);
+  if (local_c->field_1F3F != (cMf32 *)0x0) {
+    cMf32::delete(this_01,local_c->field_1F3F);
   }
   wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   puVar3 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   this_00->field_1F3F = puVar3;
-  if (PTR_0081176c->field_02F4 != 0) {
-    FreeAndNull((void **)&PTR_0081176c->field_02F4);
+  if (PTR_0081176c->field_02F4 != (ushort *)0x0) {
+    FreeAndNull(&PTR_0081176c->field_02F4);
   }
-  puVar4 = Library::Ourlib::MFIMG::mfImgLoad
-                     ((cMf32 *)this_00->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
+  puVar4 = Library::Ourlib::MFIMG::mfImgLoad(this_00->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
   PTR_0081176c->field_02F4 = puVar4;
-  if ((ushort *)PTR_0081176c->field_02F4 != (ushort *)0x0) {
-    FUN_006c7f90((ushort *)PTR_0081176c->field_02F4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),
-                 0);
+  if (PTR_0081176c->field_02F4 != (ushort *)0x0) {
+    FUN_006c7f90(PTR_0081176c->field_02F4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
   }
   local_84 = DAT_0080995c;
   puVar3 = &DAT_00809960;
@@ -82,8 +82,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     puVar10 = puVar10 + 1;
   }
   local_8 = &DAT_008087b6;
-  puVar4 = cMf32::RecGet((cMf32 *)this_00->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0)
-  ;
+  puVar4 = cMf32::RecGet(this_00->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x45a);
@@ -111,29 +110,25 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   }
   PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
                  Library::Ourlib::MFSARR::mfSarLoad
-                           ((cMf32 *)this_00->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
+                           (this_00->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
   if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
     PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                   Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
   }
   if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
   }
   PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                 Library::Ourlib::MFSARR::mfSarLoad
-                           ((cMf32 *)this_00->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
+                 Library::Ourlib::MFSARR::mfSarLoad(this_00->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0)
+  ;
   if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
     PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                   Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
   }
-  puVar3 = &DAT_0080c3c3;
-  for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
-  }
+  memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
+  iVar2 = 0;
   local_8 = &DAT_0080c3c3;
-  puVar4 = cMf32::RecGet((cMf32 *)this_00->field_1F3F,0xc,PTR_s_TITLE_MISSION_0079c104,
-                         (int *)&local_8,0);
+  puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_TITLE_MISSION_0079c104,(int *)&local_8,0);
   if ((puVar4 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
     Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_218,(byte *)0x0);
     uVar6 = 0xffffffff;
@@ -161,15 +156,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     }
   }
   local_8 = &DAT_00853de0;
-  puVar4 = cMf32::RecGet((cMf32 *)this_00->field_1F3F,0xc,PTR_s_GENERATE_RND_0079c0f8,
-                         (int *)&local_8,0);
+  puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x475);
   }
   local_8 = &this_00->field_1F53;
-  puVar4 = cMf32::RecGet((cMf32 *)this_00->field_1F3F,0xc,PTR_s_INTERFACE_RND_0079c0fc,
-                         (int *)&local_8,0);
+  puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x477);
@@ -194,11 +187,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   (*(code *)this_00->field_0000->field_0028)();
   SettMapTy::PaintSettMap(this_00,'\0');
   piVar9 = &this_00->field_1F60;
-  puVar3 = local_38;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
-  }
+  memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
   local_28 = 5;
   iVar2 = 7;
   do {

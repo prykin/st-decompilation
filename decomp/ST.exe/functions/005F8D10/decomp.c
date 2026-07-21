@@ -2,18 +2,19 @@
 undefined4 __fastcall FUN_005f8d10(int *param_1)
 
 {
-  undefined4 uVar1;
-  int iVar2;
+  uint uVar1;
+  undefined4 uVar2;
+  int iVar3;
   short local_a;
   short local_8;
   short local_6;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar1 = (**(code **)(*param_1 + 0x1c))();
+  uVar2 = (**(code **)(*param_1 + 0x1c))();
   thunk_FUN_005fa0b0((int)param_1);
-  switch(uVar1) {
+  switch(uVar2) {
   case 0:
-    uVar1 = 5;
+    uVar2 = 5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + 0x29d) == '\x01') {
       if (*(char *)((int)param_1 + 699) == '\x01') {
@@ -27,8 +28,8 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
         }
       }
       else {
-        iVar2 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
-        if (*(short *)(DAT_00806724 + 0x23) <= iVar2) {
+        iVar3 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
+        if (*(short *)(DAT_00806724 + 0x23) <= iVar3) {
           *(undefined4 *)((int)param_1 + 0x2dd) = 2;
           return 5;
         }
@@ -39,10 +40,10 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
   case 1:
     if (*(int *)((int)param_1 + 0x2ea) != 0) {
       thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
-      *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-      iVar2 = PTR_00802a38->field_00E4;
+      *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+      uVar1 = PTR_00802a38->field_00E4;
       *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-      *(int *)((int)param_1 + 0x2d9) = iVar2 + 0x32;
+      *(uint *)((int)param_1 + 0x2d9) = uVar1 + 0x32;
       *(undefined1 *)((int)param_1 + 699) = 1;
       *(undefined4 *)((int)param_1 + 0x76) = 1;
       if (0 < param_1[0xa8]) {
@@ -58,11 +59,11 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
       if (*(char *)((int)param_1 + 0x29d) != '\x01') {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(char *)((int)param_1 + 0x29d) == '\x03') {
-          *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-          iVar2 = PTR_00802a38->field_00E4;
+          *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+          uVar1 = PTR_00802a38->field_00E4;
           *(undefined1 *)((int)param_1 + 699) = 1;
           *(undefined4 *)((int)param_1 + 0x76) = 1;
-          *(int *)((int)param_1 + 0x2d9) = iVar2 + 0x32;
+          *(uint *)((int)param_1 + 0x2d9) = uVar1 + 0x32;
           *(undefined4 *)((int)param_1 + 0x2ef) = 0;
           return 0xc;
         }
@@ -83,20 +84,20 @@ LAB_005f8ea2:
       }
     }
   default:
-    uVar1 = 6;
+    uVar2 = 6;
     *(undefined1 *)((int)param_1 + 699) = 3;
     break;
   case 2:
-    iVar2 = thunk_FUN_005f8cc0(param_1);
-    if (-1 < iVar2) {
+    iVar3 = thunk_FUN_005f8cc0(param_1);
+    if (-1 < iVar3) {
       return 5;
     }
     *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
     *(undefined4 *)((int)param_1 + 0x76) = 1;
-    *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-    *(int *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+    *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
+    *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
     return 0;
   }
-  return uVar1;
+  return uVar2;
 }
 

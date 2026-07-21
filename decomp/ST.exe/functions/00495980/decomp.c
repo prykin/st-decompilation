@@ -116,7 +116,7 @@ LAB_00495c27:
       *(undefined1 *)puVar9 = 0;
       puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
-    PTR_007fb270 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x18,10);
+    PTR_007fb270 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x18,10);
     thunk_FUN_00495e50();
     g_currentExceptionFrame = local_4c.previous;
     FUN_006e4d40((void *)local_8->field_0010,local_8->field_000C);

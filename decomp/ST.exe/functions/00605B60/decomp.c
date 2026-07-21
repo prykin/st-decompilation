@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,int param_4)
 
@@ -86,12 +88,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
       local_10 = (undefined4 *)((int)this + 0x219);
       do {
         iVar6 = local_8;
-        puVar10 = local_78;
-        for (iVar7 = 0x11; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar10 = 0;
-          puVar10 = puVar10 + 1;
-        }
-        *(undefined2 *)puVar10 = 0;
+        memset(local_78, 0, 0x46); /* compiler bulk-zero initialization */
         iVar7 = local_2c;
         local_78[0] = 100;
         local_64 = (undefined1 *)*param_3;

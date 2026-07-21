@@ -16,7 +16,7 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
 
   thunk_FUN_0055db70();
   this_00 = (ccFntTy *)0x0;
-  if (this->field_002C != (ccFntTy *)0x0) {
+  if (this->field_002C != (ushort *)0x0) {
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&this->field_002C);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
@@ -42,47 +42,47 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_041E);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_04AF);
   if (-1 < this->field_02EC) {
-    FUN_006b3bb0(DAT_008075a8,this->field_02EC);
+    FUN_006b3bb0((int *)PTR_008075a8,this->field_02EC);
     this->field_02EC = -1;
   }
-  if (this->field_02F0 != (AnonPointee_StartSystemTy_02F0 *)0x0) {
+  if (this->field_02F0 != (ushort *)0x0) {
     FreeAndNull(&this->field_02F0);
   }
-  if (this->field_02F4 != 0) {
-    FreeAndNull((void **)&this->field_02F4);
+  if (this->field_02F4 != (ushort *)0x0) {
+    FreeAndNull(&this->field_02F4);
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_02F8);
   if ((AnonShape_006B5570_4D68B99C *)this->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0548);
   }
-  this->field_0548 = 0;
+  this->field_0548 = (uint *)0x0;
   if (-1 < this->field_0540) {
-    FUN_006b3bb0(DAT_008075a8,this->field_0540);
+    FUN_006b3bb0((int *)PTR_008075a8,this->field_0540);
     this->field_0540 = -1;
   }
   if (this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) {
     FreeAndNull(&this->field_0544);
   }
-  if (this->field_067E != (AnonPointee_StartSystemTy_067E *)0x0) {
+  if (this->field_067E != (ushort *)0x0) {
     FreeAndNull(&this->field_067E);
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_055C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_05ED);
   if (-1 < this->field_0558) {
-    FUN_006b3bb0(DAT_008075a8,this->field_0558);
+    FUN_006b3bb0((int *)PTR_008075a8,this->field_0558);
     this->field_0558 = -1;
   }
-  if (this->field_0682 != (AnonPointee_StartSystemTy_0682 *)0x0) {
+  if (this->field_0682 != (ushort *)0x0) {
     FreeAndNull(&this->field_0682);
   }
   if (-1 < this->field_0554) {
-    FUN_006b3bb0(DAT_008075a8,this->field_0554);
+    FUN_006b3bb0((int *)PTR_008075a8,this->field_0554);
     this->field_0554 = -1;
   }
   if ((AnonShape_006B5570_4D68B99C *)this->field_0686 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0686);
   }
-  this->field_0686 = 0;
+  this->field_0686 = (uint *)0x0;
   return;
 }
 

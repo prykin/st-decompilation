@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -37,11 +39,7 @@ void FUN_005c7800(void)
   iVar5 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    puVar7 = (undefined4 *)&stack0xffffffc8;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
+    memset(&stack0xffffffc8, 0, 0x20); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)this->field_0000)();
     return;
@@ -52,22 +50,22 @@ void FUN_005c7800(void)
     if (PTR_00802a30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != 0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
     }
   }
   SettMapTy::PaintSettMap(this,'\0');
-  Library::DKW::DDX::FUN_006bd740(DAT_008075a8);
+  Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
   Library::DKW::DDX::FUN_006c4630
             (DAT_0080759c,*(int **)(DAT_0080759c + 0x44),(undefined4 *)&stack0xffffffb8);
   PTR_00811758 = Library::DKW::DDX::FUN_006c4880
                            (DAT_0080759c,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
   Library::DKW::DDX::FUN_006c44e0(DAT_0080759c,(undefined4 *)&stack0xffffffb8);
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   FUN_006b4640(DAT_0080759c,0,0,PTR_00811758,(uint *)0x0);
   Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
-  if ((cMf32 *)this->field_1F3F != (cMf32 *)0x0) {
-    cMf32::delete(this_00,(cMf32 *)this->field_1F3F);
+  if (this->field_1F3F != (cMf32 *)0x0) {
+    cMf32::delete(this_00,this->field_1F3F);
   }
   if (DAT_0080877e == '\0') goto LAB_005c7ae0;
   if ((DAT_008067a0 != '\0') && (g_int_00811764 != (int *)0x0)) {
@@ -75,12 +73,7 @@ void FUN_005c7800(void)
     this->field_1A7F = 0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this->field_0x1a5f);
   }
-  pDVar12 = &DAT_00853de0;
-  for (iVar5 = 0x8c; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pDVar12 = 0;
-    pDVar12 = pDVar12 + 1;
-  }
-  *(undefined2 *)pDVar12 = 0;
+  memset(&DAT_00853de0, 0, 0x232); /* compiler bulk-zero initialization */
   DAT_00853de0 = this->field_1F53;
   _DAT_00853ff4 = (uint)this->field_1F5C;
   cVar2 = this->field_1F57;
@@ -197,16 +190,14 @@ LAB_005c7ae0:
   puVar7 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   this->field_1F3F = puVar7;
   DAT_008087b6 = 0;
-  if (this->field_1F3F != 0) {
-    if (PTR_0081176c->field_02F4 != 0) {
-      FreeAndNull((void **)&PTR_0081176c->field_02F4);
+  if (this->field_1F3F != (void *)0x0) {
+    if (PTR_0081176c->field_02F4 != (ushort *)0x0) {
+      FreeAndNull(&PTR_0081176c->field_02F4);
     }
-    puVar8 = Library::Ourlib::MFIMG::mfImgLoad
-                       ((cMf32 *)this->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
+    puVar8 = Library::Ourlib::MFIMG::mfImgLoad(this->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
     PTR_0081176c->field_02F4 = puVar8;
-    if ((ushort *)PTR_0081176c->field_02F4 != (ushort *)0x0) {
-      FUN_006c7f90((ushort *)PTR_0081176c->field_02F4,(byte *)0x0,
-                   *(HPALETTE *)(DAT_0080759c + 0x4b4),0);
+    if (PTR_0081176c->field_02F4 != (ushort *)0x0) {
+      FUN_006c7f90(PTR_0081176c->field_02F4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
     }
     local_94 = DAT_0080995c;
     puVar7 = &DAT_00809960;
@@ -216,7 +207,7 @@ LAB_005c7ae0:
       puVar7 = puVar7 + 1;
       puVar15 = puVar15 + 1;
     }
-    cMf32::RecGet((cMf32 *)this->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&stack0xfffffff8,0);
+    cMf32::RecGet(this->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&stack0xfffffff8,0);
     if (DAT_0080877e == '\0') {
       *(undefined4 *)&this->field_0x2121 = 0xffffffff;
       DAT_00808aab = 0xffffffff;
@@ -239,29 +230,24 @@ LAB_005c7ae0:
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
     }
     PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                   Library::Ourlib::MFSARR::mfSarLoad
-                             ((cMf32 *)this->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
+                   Library::Ourlib::MFSARR::mfSarLoad(this->field_1F3F,PTR_s_DESCRIPTION_0079c108,0)
+    ;
     if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
       PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                     Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                     Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     }
     if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
     }
     PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                   Library::Ourlib::MFSARR::mfSarLoad
-                             ((cMf32 *)this->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
+                   Library::Ourlib::MFSARR::mfSarLoad(this->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
     if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
       PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                     Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                     Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     }
     puVar17 = PTR_s_TITLE_MISSION_0079c104;
-    puVar7 = &DAT_0080c3c3;
-    for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
-    puVar8 = cMf32::RecGet((cMf32 *)this->field_1F3F,0xc,puVar17,(int *)&stack0xfffffff8,0);
+    memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
+    puVar8 = cMf32::RecGet(this->field_1F3F,0xc,puVar17,(int *)&stack0xfffffff8,0);
     if ((puVar8 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
       Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_228,(byte *)0x0);
       uVar6 = 0xffffffff;
@@ -315,9 +301,9 @@ LAB_005c7ae0:
     if (PTR_00802a30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != 0xffffffff) {
+    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_00802a30->field_0060,PTR_00802a30->field_001C,0xfffffffe,
+                ((uint *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C,0xfffffffe,
                  PTR_00802a30->field_0034,PTR_00802a30->field_0038);
       g_currentExceptionFrame = local_8c.previous;
       return;

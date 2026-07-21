@@ -37,11 +37,12 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
       puVar5 = (undefined4 *)0x0;
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)this_00,DAT_008075a8,0,cVar4,puVar5,iVar2,(uint)(param_1 != 7));
+              ((SpriteClassTy *)this_00,(int *)PTR_008075a8,0,cVar4,puVar5,iVar2,
+               (uint)(param_1 != 7));
     this_01->field_0494 = 0x58;
     SetGCType(this_01,CASE_0,this_01->field_0034,this_01->field_0038);
-    if (this_01->field_001C != 0xffffffff) {
-      FUN_006b3af0((int *)this_01->field_0060,this_01->field_001C);
+    if (this_01->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)this_01->field_0060,(uint)this_01->field_001C);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

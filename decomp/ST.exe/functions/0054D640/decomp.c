@@ -22,7 +22,6 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   int *piVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  undefined4 *puVar11;
   bool bVar12;
   uint uVar13;
   InternalExceptionFrame local_a8;
@@ -110,11 +109,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         else if (this_00->field_004D == '\0') {
           if ((30000 < (int)(DVar6 - this_00->field_0030)) ||
              (iVar2 = FUN_006b7140(g_int_00811764), iVar2 < 2)) {
-            puVar11 = local_64;
-            for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-              *puVar11 = 0;
-              puVar11 = puVar11 + 1;
-            }
+            memset(local_64, 0, 0x20); /* compiler bulk-zero initialization */
             local_64[3] = 1;
             local_64[4] = DAT_0080c526;
             AppClassTy::PostMessage((AppClassTy *)&DAT_00807620,local_64);
@@ -426,11 +421,7 @@ LAB_0054e02c:
   }
 LAB_0054e052:
   if ((DAT_0080874d < 8) && ((&DAT_00809950)[DAT_0080874d] != '\0')) {
-    puVar11 = local_44;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar11 = 0;
-      puVar11 = puVar11 + 1;
-    }
+    memset(local_44, 0, 0x20); /* compiler bulk-zero initialization */
     local_44[3] = 1;
     DAT_0080c526 = 0x6108;
     local_44[4] = 0x6108;

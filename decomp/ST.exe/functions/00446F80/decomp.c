@@ -93,7 +93,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char par
         }
         DArrayDestroy(pDVar3);
       }
-      local_48 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+      local_48 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
       local_a0 = (int)param_1;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
       iVar5 = local_a0 * 0xa62;
@@ -112,8 +112,8 @@ joined_r0x0044707d:
             if (local_4e != 1) {
               local_4e = 1;
               Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,local_8,(undefined4 *)&local_54);
-              local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
-              Library::DKW::TBL::FUN_006ae1c0((uint *)local_c,&local_8);
+              local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
               local_58 = Library::DKW::TBL::FUN_006ae1c0(&local_48->flags,&local_c);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_40 = *(DArrayTy **)(CONCAT22(uStack_50,uStack_52) + 0xc);
@@ -144,14 +144,14 @@ LAB_0044738a:
       }
       uVar7 = local_48->count;
       local_3c = uVar7;
-      pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar7,4,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,4,1);
       local_8 = 0;
       *(DArrayTy **)((int)&g_playerRuntime[0].field2177_0xa02 + iVar5) = pDVar3;
       local_64 = pDVar3;
       if (0 < (int)uVar7) {
         do {
-          local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-          Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar3,&local_c);
+          local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+          Library::DKW::TBL::FUN_006ae1c0(&pDVar3->flags,&local_c);
           local_8 = local_8 + 1;
         } while ((int)local_8 < (int)uVar7);
       }
@@ -196,14 +196,14 @@ LAB_0044738a:
         } while ((int)local_8 < (int)local_40);
       }
       uVar7 = local_3c;
-      pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_3c,4,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_3c,4,1);
       *(DArrayTy **)((int)&g_playerRuntime[0].field2178_0xa06 + local_5c) = pDVar3;
       local_8 = 0;
       local_40 = pDVar3;
       if (0 < (int)uVar7) {
         do {
-          local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,0x18,1);
-          Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar3,&local_c);
+          local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,0x18,1);
+          Library::DKW::TBL::FUN_006ae1c0(&pDVar3->flags,&local_c);
           local_8 = local_8 + 1;
         } while ((int)local_8 < (int)uVar7);
       }
@@ -246,10 +246,9 @@ LAB_0044738a:
                 local_1c = pDVar6;
                 pDVar6 = local_14;
                 if (pDVar3->count != 0) {
-                  pDVar3 = (DArrayTy *)
-                           Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)local_14,4,1);
+                  pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)local_14,4,1);
                   Library::DKW::TBL::FUN_006ae140
-                            ((uint *)pDVar3,(uint)((int)&pDVar6[-1].data + 3),&local_44);
+                            (&pDVar3->flags,(uint)((int)&pDVar6[-1].data + 3),&local_44);
                   puVar11 = pDVar3->data;
                   for (; pDVar12 = local_1c, pDVar2 = local_14, pDVar6 != (DArrayTy *)0x0;
                       pDVar6 = (DArrayTy *)((int)&pDVar6[-1].data + 3)) {
@@ -263,7 +262,7 @@ LAB_0044738a:
                         DArrayGetElement(pDVar3,uVar7,&local_44);
                         if (local_44 != 1) {
                           local_44 = 1;
-                          Library::DKW::TBL::FUN_006ae140((uint *)pDVar3,uVar7,&local_44);
+                          Library::DKW::TBL::FUN_006ae140(&pDVar3->flags,uVar7,&local_44);
                           DArrayGetElement(local_30,uVar7,&local_28);
                           STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                           local_9c = (uint)local_e;
@@ -294,7 +293,7 @@ LAB_0044738a:
                              (uVar10 = (int)local_36 - (int)local_10 >> 0x1f,
                              (int)(((int)local_36 - (int)local_10 ^ uVar10) - uVar10) < 3)) {
                             local_44 = 1;
-                            Library::DKW::TBL::FUN_006ae140((uint *)pDVar3,uVar7,&local_44);
+                            Library::DKW::TBL::FUN_006ae140(&pDVar3->flags,uVar7,&local_44);
                             local_90 = local_90 + 1;
                             local_8c = local_8c + *(int *)&local_28->field_0x219;
                             Library::DKW::TBL::FUN_006ae140(&local_c->flags,local_58,&local_9c);
@@ -368,7 +367,7 @@ LAB_0044738a:
                         local_2c = (int)local_2c / 10;
                         local_30 = (DArrayTy *)((int)local_30 - local_2c);
                         if (local_88 == (DArrayTy *)0x0) {
-                          local_88 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                          local_88 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
                         }
                         uVar9 = uVar10;
                         if ((int)uVar10 < (int)(uVar10 + local_2c)) {
@@ -399,8 +398,7 @@ LAB_0044738a:
         } while ((int)local_8 < (int)local_3c);
       }
       pDVar3 = local_7c;
-      *(undefined4 *)((int)&g_playerRuntime[0].field2179_0xa0a + local_5c) =
-           PTR_00802a38->field_00E4;
+      *(uint *)((int)&g_playerRuntime[0].field2179_0xa0a + local_5c) = PTR_00802a38->field_00E4;
       if (local_7c != (DArrayTy *)0x0) {
         dVar8 = local_7c->count;
         local_8 = 0;
@@ -409,7 +407,7 @@ LAB_0044738a:
             DArrayGetElement(pDVar3,local_8,&local_78);
             if (local_70 != (DArrayTy *)0x0) {
               DArrayDestroy(local_70);
-              local_70 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+              local_70 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
               Library::DKW::TBL::FUN_006ae140(&pDVar3->flags,local_8,&local_78);
             }
             local_8 = local_8 + 1;

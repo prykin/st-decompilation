@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
 
@@ -8,20 +10,12 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
   int iVar4;
   int iVar5;
   uint *puVar6;
-  undefined4 *puVar7;
 
   iVar4 = param_2;
   iVar2 = param_1;
-  puVar7 = param_3;
-  for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
-  puVar7 = param_4;
-  for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
+  memset(param_3, 0, 0x1c); /* compiler bulk-zero initialization */
+  iVar5 = 0;
+  memset(param_4, 0, 0x1c); /* compiler bulk-zero initialization */
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
     uVar3 = GetPlayerRaceId((char)param_1);
     param_1 = 0;

@@ -88,10 +88,10 @@ cf_common_join_004F3AC3:
       iVar4 = -2;
       puVar6 = (uint *)LoadResourceString(param_5,HINSTANCE_00807618);
       ccFntTy::WrTxt(pCVar3->field_01B8,puVar6,iVar4,iVar7,uVar5,iVar8,iVar9);
-      if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
+      if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
-                   ,(&pCVar3->field_0094)[uVar2]);
+                  ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,
+                   (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_5c.previous;
       return;

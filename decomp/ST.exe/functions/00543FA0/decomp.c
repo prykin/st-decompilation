@@ -30,7 +30,7 @@ CursorClassTy::CursDrawInit(CursorClassTy *this,int param_1,int param_2,int para
     return;
   }
   if (local_8->field_00A9 != 0) {
-    FUN_006b5f80(DAT_008075a8,param_1,param_2,param_3,param_4);
+    FUN_006b5f80((int *)PTR_008075a8,param_1,param_2,param_3,param_4);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

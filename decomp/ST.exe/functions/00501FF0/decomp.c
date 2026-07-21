@@ -48,11 +48,7 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     pCVar6 = pCVar6 + 1;
     pAVar7 = (AnonShape_00501D00_04A7E309 *)&pAVar7->field_0x4;
   }
-  pCVar6 = pCVar1;
-  for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *pCVar6 = 0;
-    pCVar6 = pCVar6 + 1;
-  }
+  memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (local_64._5_1_ != this_00->field_0B9E) {
@@ -119,7 +115,7 @@ cf_common_exit_00502155:
   }
   if (-1 < (int)uVar2) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,uVar2,0xffffffff,this_00->field_0048,this_00->field_00A0);
+              ((int *)PTR_008075a8,uVar2,0xffffffff,this_00->field_0048,this_00->field_00A0);
   }
 switchD_0050207d_default:
   g_currentExceptionFrame = local_a8.previous;

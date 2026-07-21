@@ -41,7 +41,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     *(int *)&pAVar6->field_0x284 = iVar4;
     *(int *)&pAVar6->field_0x288 = iVar4 * iVar4;
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
-    FUN_006e8580(PTR_00807598,DAT_008075a8);
+    FUN_006e8580(PTR_00807598,(int *)PTR_008075a8);
     DAT_00806724 = Library::Ourlib::MFIMG::mfImtLoad
                              (PTR_00806770,"scmask",0,0,(undefined4 *)0x0,1);
     local_90.previous = g_currentExceptionFrame;

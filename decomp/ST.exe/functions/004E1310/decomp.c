@@ -2,7 +2,7 @@
 undefined4 __fastcall FUN_004e1310(AnonShape_004E1310_4FD56DAE *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
 
   thunk_FUN_004e4270(param_1->field_0024,param_1->field_0518);
   uVar1 = PTR_00802a38->field_00E4;

@@ -125,7 +125,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       }
       DArrayGetElement(array,0,&local_3c);
       uVar6 = local_3c->count;
-      pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar6,10,1);
+      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,10,1);
       g_playerRuntime[param_1].field2175_0x9fa = pDVar4;
       local_10 = 0;
       local_c = 0;
@@ -134,10 +134,10 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
         do {
           DArrayGetElement(local_3c,local_c,&local_6);
           local_28 = local_6;
-          local_26 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+          local_26 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
           local_22 = 0;
-          Library::DKW::TBL::FUN_006ae1c0((uint *)local_26,&local_10);
-          Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar4,(undefined4 *)&local_28);
+          Library::DKW::TBL::FUN_006ae1c0(&local_26->flags,&local_10);
+          Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,(undefined4 *)&local_28);
           local_c = local_c + 1;
         } while ((int)local_c < (int)uVar6);
       }
@@ -163,10 +163,10 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
               }
               if (index_01 == dVar1) {
                 local_28 = local_6;
-                local_26 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+                local_26 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
                 local_22 = 0;
-                Library::DKW::TBL::FUN_006ae1c0((uint *)local_26,&local_c);
-                Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar4,(undefined4 *)&local_28);
+                Library::DKW::TBL::FUN_006ae1c0(&local_26->flags,&local_c);
+                Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,(undefined4 *)&local_28);
               }
               local_10 = local_10 + 1;
             } while ((int)local_10 < (int)local_2c);

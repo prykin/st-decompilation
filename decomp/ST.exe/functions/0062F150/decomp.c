@@ -19,11 +19,10 @@ void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
                          param_1->field_01D5,param_1->field_01D9,&local_8,&local_10);
       if (((((-1 < iVar1) && (iVar1 < 5)) && (-1 < local_8)) &&
           (((local_8 < pVVar2->field_0030 &&
-            (local_10 = (&DAT_0079aed0)[iVar1] + local_10, -1 < local_10)) &&
+            (local_10 = g_centeredOffsets5[iVar1] + local_10, -1 < local_10)) &&
            (local_10 < pVVar2->field_0034)))) &&
-         ((pVVar2->field_004C != 0 &&
-          (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_8) == '\0'))))
-      goto LAB_0062f208;
+         ((pVVar2->field_004C != (byte *)0x0 &&
+          (pVVar2->field_004C[local_8 + local_10 * pVVar2->field_0030] == 0)))) goto LAB_0062f208;
     }
     local_c = 1;
   }
@@ -35,7 +34,7 @@ LAB_0062f208:
     if (iVar1 != 0) {
       this = *(void **)(iVar1 + 0x10);
       if (*(int *)(iVar1 + 0x18) == 2) {
-        if ((uint)PTR_00802a38->field_00E4 % 5 == 0) {
+        if (PTR_00802a38->field_00E4 % 5 == 0) {
           if (this != (void *)0x0) {
             thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 +
                                              (uint)*(byte *)(iVar1 + 0x34) * 4),
@@ -48,10 +47,9 @@ LAB_0062f208:
         }
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      else if (*(uint *)(iVar1 + 0x39) < (uint)(PTR_00802a38->field_00E4 - *(int *)(iVar1 + 0x35)))
-      {
+      else if (*(uint *)(iVar1 + 0x39) < PTR_00802a38->field_00E4 - *(int *)(iVar1 + 0x35)) {
         *(undefined4 *)(iVar1 + 0x18) = 2;
-        *(undefined4 *)(*piVar3 + 0x35) = PTR_00802a38->field_00E4;
+        *(uint *)(*piVar3 + 0x35) = PTR_00802a38->field_00E4;
         *(undefined4 *)(*piVar3 + 0x39) = 10;
         *(undefined1 *)(*piVar3 + 0x34) = 0;
       }

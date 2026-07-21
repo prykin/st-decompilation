@@ -102,9 +102,9 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             _local_14 = CONCAT31(uStack_13,bVar10);
             pAVar11 = local_c;
             if (bVar10 < 0xb) {
-              if (-1 < (int)(&pCVar4->field_0148)[bVar10]) {
+              if (-1 < (&pCVar4->field_0148)[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
+                          ((int *)PTR_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
                            (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
                 pAVar11 = local_c;
               }
@@ -128,9 +128,9 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar10);
             if (bVar10 < 0xb) {
-              if (-1 < (int)(&pCVar4->field_0148)[bVar10]) {
+              if (-1 < (&pCVar4->field_0148)[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
+                          ((int *)PTR_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
                            (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
               }
             }

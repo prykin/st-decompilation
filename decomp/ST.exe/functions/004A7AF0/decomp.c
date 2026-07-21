@@ -12,7 +12,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   code *pcVar1;
   int iVar2;
   uint uVar3;
-  AnonPointee_STGroupBoatC_022E *pAVar4;
+  uint *puVar4;
   undefined4 local_2c;
   int local_26;
   int local_22;
@@ -41,12 +41,12 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             if (local_1e < local_26) {
               local_1a = 1;
               local_26 = local_1e;
-              Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
+              Library::DKW::TBL::FUN_006ae140(this->field_022E,param_3,&local_2c);
               return 0;
             }
             local_1a = 2;
             local_22 = local_1e;
-            Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
+            Library::DKW::TBL::FUN_006ae140(this->field_022E,param_3,&local_2c);
             return 0;
           }
           if (local_1a != 2) {
@@ -63,14 +63,14 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             }
             local_1a = 3;
             local_2c = 1;
-            Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
+            Library::DKW::TBL::FUN_006ae140(this->field_022E,param_3,&local_2c);
             iVar2 = sub_004A7E30(this,1);
             return (uint)(iVar2 != 0);
           }
         }
         local_1a = 1;
         local_26 = local_1e;
-        Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
+        Library::DKW::TBL::FUN_006ae140(this->field_022E,param_3,&local_2c);
       }
       return 0;
     }
@@ -78,7 +78,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
       this->field_023E = 1;
     }
     DArrayGetElement((DArrayTy *)this->field_022E,param_3,&local_2c);
-    pAVar4 = this->field_022E;
+    puVar4 = this->field_022E;
   }
   else {
     iVar2 = thunk_FUN_00423e70(this,param_2);
@@ -95,10 +95,10 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
       this->field_023E = 1;
     }
     DArrayGetElement((DArrayTy *)this->field_022E,param_3,&local_2c);
-    pAVar4 = this->field_022E;
+    puVar4 = this->field_022E;
   }
   local_2c = 1;
-  Library::DKW::TBL::FUN_006ae140((uint *)pAVar4,param_3,&local_2c);
+  Library::DKW::TBL::FUN_006ae140(puVar4,param_3,&local_2c);
   iVar2 = sub_004A7E30(this,1);
   return (uint)(iVar2 != 0);
 }

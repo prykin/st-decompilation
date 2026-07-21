@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004ead90(AnonShape_004EAD90_30D2E515 *param_1)
   iVar1 = param_1->field_04D0;
   if (((1 < *(int *)(&DAT_0079aa08 + iVar1 * 4)) &&
       (param_1->field_04D4 < *(int *)(&DAT_0079aa08 + iVar1 * 4))) &&
-     ((uint)(param_1->field_04DC + param_1->field_04D8) <= (uint)PTR_00802a38->field_00E4)) {
+     ((uint)(param_1->field_04DC + param_1->field_04D8) <= PTR_00802a38->field_00E4)) {
     param_1->field_04D8 = PTR_00802a38->field_00E4;
     iVar6 = param_1->field_04D4 + 1;
     iVar5 = iVar1 * 0x18;

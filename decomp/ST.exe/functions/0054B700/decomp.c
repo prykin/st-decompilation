@@ -42,7 +42,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::FUN_0054b700
     iVar2 = g_nWidth_00806730 + -0x18;
     iVar4 = 0xa1;
   }
-  FUN_006b5f80(DAT_008075a8,iVar2,iVar4,iVar5,iVar6);
+  FUN_006b5f80((int *)PTR_008075a8,iVar2,iVar4,iVar5,iVar6);
   pAVar1 = local_8;
   if (local_8->field_04DF < 0) goto LAB_0054b81b;
   if (DAT_0080874e == '\x01') {

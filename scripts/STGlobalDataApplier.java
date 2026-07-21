@@ -172,7 +172,9 @@ public class STGlobalDataApplier extends GhidraScript {
     }
     private boolean owned(Address address) {
         String comment = listing.getComment(CommentType.PLATE, address);
-        return comment != null && comment.contains(MARKER);
+        return comment != null && (comment.contains(MARKER) ||
+            comment.contains("[STPointerShapeApplier]") ||
+            comment.contains("[STTypeFamilyApplier]"));
     }
     private void addComment(Address address, Map<String, String> row) {
         String block = MARKER + " Recovered global data.\nType: " +

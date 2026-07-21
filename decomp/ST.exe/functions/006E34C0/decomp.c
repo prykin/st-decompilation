@@ -4,7 +4,8 @@
    Evidence: final_vptr=0079E16C; returns_this=true; calls_before=0; field_writes_after=12;
    table_confidence=high */
 
-void __thiscall AppClassTy::AppClassTy(AppClassTy *this,undefined4 param_1,undefined4 param_2)
+AppClassTy * __thiscall
+AppClassTy::AppClassTy(AppClassTy *this,undefined4 param_1,undefined4 param_2)
 
 {
   this->vtable = &AppClassTyVTable;
@@ -21,6 +22,6 @@ void __thiscall AppClassTy::AppClassTy(AppClassTy *this,undefined4 param_1,undef
   this->field_002C = 0;
   this->field_0034 = 0x14;
   this->field_0024 = 1;
-  return;
+  return this;
 }
 

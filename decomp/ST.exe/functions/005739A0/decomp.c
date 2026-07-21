@@ -1,20 +1,15 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_005739a0(AnonShape_005739A0_A4724D00 *param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
 
-  puVar2 = &param_1->field_080E;
-  for (iVar1 = 100; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = &param_1->field_0D86;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_080E, 0, 0x190); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&param_1->field_0D86, 0, 0x28); /* compiler bulk-zero initialization */
+  iVar1 = 0;
   param_1->field_099E = 0x4e;
   param_1->field_0ADE = 0xa206;
   param_1->field_09A2 = 0x4a;
@@ -161,11 +156,7 @@ void __fastcall FUN_005739a0(AnonShape_005739A0_A4724D00 *param_1)
   param_1->field_0BFA = 0xa125;
   param_1->field_0ABE = 0x39;
   param_1->field_0BFE = 0xa128;
-  puVar2 = &param_1->field_0C1E;
-  for (iVar1 = 0x5a; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0C1E, 0, 0x168); /* compiler bulk-zero initialization */
   param_1->field_0C1E = 0x1000000;
   param_1->field_0C96 = 0xa4ff;
   param_1->field_0D0E = 0xa500;

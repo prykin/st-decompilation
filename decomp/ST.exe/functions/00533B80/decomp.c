@@ -28,7 +28,7 @@ void __fastcall FUN_00533b80(void *param_1)
         resourceId = 0x3e84;
       }
       else {
-        resourceId = 0x3e96 - ((uint)(PTR_00802a38->field_00E4 - PTR_00802a38->field_0034) < 6000);
+        resourceId = 0x3e96 - (PTR_00802a38->field_00E4 - PTR_00802a38->field_0034 < 6000);
       }
       *(UINT *)((int)param_1 + 0x1a5) = resourceId;
       if (DAT_0080874e == '\x03') {
@@ -46,7 +46,7 @@ void __fastcall FUN_00533b80(void *param_1)
       ccFntTy::WrTxt(*(ccFntTy **)((int)param_1 + 0x180),puVar2,iVar3,iVar4,uVar1,iVar5,iVar6);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)((int)param_1 + 0x60),0xffffffff,
+                ((int *)PTR_008075a8,*(uint *)((int)param_1 + 0x60),0xffffffff,
                  *(uint *)((int)param_1 + 0x3c),*(uint *)((int)param_1 + 0x44));
       return;
     }

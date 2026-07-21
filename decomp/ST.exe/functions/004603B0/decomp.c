@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004603B0 parameter used as this of STTorpC::ClearDangerous @ 004604BD | 004603B0
@@ -22,18 +24,14 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  undefined4 *puVar8;
   uint index;
   bool bVar9;
   undefined4 uVar10;
   uint local_8;
 
   if ((param_1 == (STTorpC *)0x0) || (param_1 == (STTorpC *)0x1)) {
-    puVar8 = (undefined4 *)((int)this + 0x2cc);
-    for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset((void *)((int)this + 0x2cc), 0, 0x5c); /* compiler bulk-zero initialization */
+    iVar6 = 0;
     *(undefined4 *)((int)this + 0x2c4) = 0;
     *(undefined4 *)((int)this + 0x82e) = 0xffffffff;
     *(undefined4 *)((int)this + 0x836) = 3;

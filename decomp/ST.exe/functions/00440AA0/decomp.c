@@ -150,7 +150,7 @@ LAB_00440c19:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2225);
   }
-  pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar15,0xc,1);
+  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar15,0xc,1);
   uVar13 = 0;
   local_44 = pDVar6;
   if (0 < (int)uVar15) {
@@ -158,7 +158,7 @@ LAB_00440c19:
       local_10 = (DArrayTy *)0x0;
       local_8 = (DArrayTy *)0x0;
       local_c = (DArrayTy *)0x0;
-      Library::DKW::TBL::FUN_006ae140((uint *)pDVar6,uVar13,&local_10);
+      Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar15);
   }
@@ -236,7 +236,7 @@ LAB_00440c19:
                       if (uVar13 != uVar15) {
                         DArrayGetElement(local_44,uVar13,&local_10);
                         if (local_10 == (DArrayTy *)0x0) {
-                          local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+                          local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
                           Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
                         }
                         local_3c = (short)local_28;
@@ -256,13 +256,13 @@ LAB_00440c19:
     } while ((int)local_1c < (int)local_84);
   }
   dVar1 = local_48;
-  pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_48,4,1);
+  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_48,4,1);
   uVar15 = 0;
   local_78 = pDVar6;
   if (0 < (int)dVar1) {
     do {
-      local_54 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_20,4,1);
-      Library::DKW::TBL::FUN_006ae140((uint *)pDVar6,uVar15,&local_54);
+      local_54 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_20,4,1);
+      Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar15,&local_54);
       uVar15 = uVar15 + 1;
     } while ((int)uVar15 < (int)dVar1);
   }
@@ -447,7 +447,7 @@ LAB_00440c19:
           }
           else {
             if (local_10 == (DArrayTy *)0x0) {
-              local_10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+              local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
             }
             Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,(undefined4 *)&local_3c);
             local_8 = (DArrayTy *)0x0;
@@ -552,7 +552,7 @@ LAB_00440c19:
         } while ((int)local_2c < (int)uVar15);
       }
       if (local_70 == (DArrayTy *)0x0) {
-        local_70 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
+        local_70 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
       }
       DArrayGetElement(param_3,local_1c,&local_4c);
       uVar13 = 0;

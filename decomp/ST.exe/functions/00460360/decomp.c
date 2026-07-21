@@ -8,12 +8,11 @@ int __thiscall STBoatC::sub_00460360(STBoatC *this)
 {
   int iVar1;
   int iVar2;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
 
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  iVar1 = (*this->vtable->StopMove)(this,unaff_EDI);
-  iVar2 = (*this->vtable->vfunc_D8)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  iVar1 = (*(code *)this->vtable->field_0020)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  iVar2 = (*(code *)this->vtable->field_00D8)();
   if ((iVar2 == 0) && (iVar1 != -1)) {
     if (iVar1 != 0) {
       return -(uint)(iVar1 != 1);

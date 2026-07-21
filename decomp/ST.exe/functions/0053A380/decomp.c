@@ -77,9 +77,9 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
     if (pPVar2->field_01CD != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&pPVar2->field_01CD);
     }
-    pPVar2->field_01D9 = 0;
-    pPVar2->field_01D5 = 0;
-    pPVar2->field_01D1 = 0;
+    pPVar2->field_01D9 = (ushort *)0x0;
+    pPVar2->field_01D5 = (ushort *)0x0;
+    pPVar2->field_01D1 = (ushort *)0x0;
     g_playPanel_008016E4 = (PlayPanelTy *)0x0;
     g_currentExceptionFrame = local_50.previous;
     return;

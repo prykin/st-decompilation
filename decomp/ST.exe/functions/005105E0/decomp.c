@@ -67,7 +67,8 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   ;
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,pFVar2->field_0060,0xffffffff,pFVar2->field_003C,pFVar2->field_0044);
+            ((int *)PTR_008075a8,pFVar2->field_0060,0xffffffff,pFVar2->field_003C,pFVar2->field_0044
+            );
   g_currentExceptionFrame = local_5c.previous;
   return;
 }

@@ -10,6 +10,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -49,9 +50,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private static final Pattern MEMORY = Pattern.compile(
         "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final Pattern REGISTER = Pattern.compile("^[A-Z][A-Z0-9]{1,3}$");
+    private static final Pattern X86_REGISTER = Pattern.compile(
+        "(?i)\\b(EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)\\b");
     private static final Pattern ACCESSOR = Pattern.compile(
         "^(Get|Set|Is|Has)([A-Z][A-Za-z0-9_]*)$");
     private static final String MARKER = "[STClassLayoutApplier]";
+    private static final String HASH_MARKER = "generated_layout_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
     private static final String CLASS_POINTEE_ROOT =
@@ -109,9 +113,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             long proposedSize = exactSize >= observedSize ? exactSize : observedSize;
             if (proposedSize < 1 || proposedSize > MAX_CLASS_SIZE) continue;
 
-            List<NestedTypeProposal> ownerNested = prepareNestedTypes(evidence, nestedFields);
+            String ownerVtableType = vtableTypes.get(evidence.owner);
+            List<NestedTypeProposal> ownerNested = prepareNestedTypes(evidence, nestedFields,
+                ownerVtableType != null);
             List<FieldProposal> ownerFields = makeFields(evidence, structure,
-                vtableTypes.get(evidence.owner), proposedSize);
+                ownerVtableType, proposedSize);
             markOverlaps(ownerFields);
             long autoFields = ownerFields.stream().filter(field -> field.apply).count();
             boolean safeStructure = isPlaceholder(structure) || isOwnedUnchangedCandidate(structure);
@@ -161,12 +167,18 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         for (ClassProposal row : classRows) if (row.apply) applicableOwners.add(row.owner);
         long semanticTypes = fieldRows.stream().filter(row -> row.typeApply &&
             applicableOwners.contains(row.owner)).count();
+        long revisedTypes = fieldRows.stream().filter(row ->
+            row.reason.contains("generated_concrete_type_revised=")).count();
+        long retiredTypes = fieldRows.stream().filter(row ->
+            row.reason.contains("deprecated_generated_type_reverted=")).count();
         long suggestedNames = fieldRows.stream().filter(row -> !row.suggestedName.isBlank() &&
             row.apply && applicableOwners.contains(row.owner)).count();
         println("Class-layout analysis complete: " + directory.toAbsolutePath().normalize());
         println("Classes: " + classRows.size() + ", class_apply: " + applicable +
             ", fields: " + fieldRows.size() + ", field_apply: " + fields +
             ", semantic_type_apply: " + semanticTypes +
+            ", generated_type_revisions: " + revisedTypes +
+            ", deprecated_type_repairs: " + retiredTypes +
             ", cross_typed_accesses: " + crossTypedFieldAccesses +
             ", cross_type_links: " + crossTypeLinks +
             ", nested_pointees: " + nestedTypes.size() +
@@ -232,7 +244,6 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     if (write) local.writes++;
                     else local.reads++;
                     inferInstructionType(field, instruction, mnemonic, size);
-                    if (isUnsignedBitwiseUse(mnemonic, operands)) field.bitwiseUses++;
                     field.functions.add(function.getEntryPoint().toString().toUpperCase(Locale.ROOT));
                     owner.functions.add(function.getEntryPoint().toString().toUpperCase(Locale.ROOT));
                 }
@@ -401,7 +412,10 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         for (CrossState state : states) {
             CrossValue candidate = stack ? state.stack.get((Long)key) :
                 state.registers.get((String)key);
-            if (candidate == null) continue;
+            // A receiver/field provenance fact survives a CFG join only when all
+            // reachable predecessors carry it.  Ignoring a missing fact leaked a
+            // class field from one switch arm into unrelated arms.
+            if (candidate == null) return null;
             if (result == null) result = candidate;
             else if (!result.equals(candidate)) return null;
         }
@@ -430,6 +444,16 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         int size = accessSize(text, operands);
         if (!"LEA".equals(mnemonic)) {
             for (int index = 0; index < operands.length; index++) {
+                for (String register : memoryRegisters(operands[index])) {
+                    CrossValue carrier = state.registers.get(register);
+                    if (carrier == null || carrier.kind != CrossKind.POINTER_FIELD) continue;
+                    String element = bufferElementType(size);
+                    if (!element.isBlank()) addCrossType(
+                        CrossValue.field(carrier.ownerPath, carrier.offset),
+                        "pointer:" + element, addr(instruction.getAddress()) +
+                        " dynamic " + size + "-byte dereference of field-derived address in " +
+                        function.getName(true), owners);
+                }
                 MemoryExpr memory = memoryExpr(operands[index]);
                 CrossValue pointerField = memory == null ? null :
                     state.registers.get(memory.register);
@@ -443,24 +467,17 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             }
         }
 
-        String jump = "CMP".equals(mnemonic) ? followingConditionalJump(function, instruction) : "";
+        String jump = Set.of("CMP", "TEST").contains(mnemonic) ?
+            followingConditionalJump(function, instruction) : "";
+        if ("TEST".equals(mnemonic) &&
+                (!sameRegisterOperands(operands) || !isSignedJump(jump))) jump = "";
         if (!jump.isBlank()) {
-            boolean signed = Set.of("JL", "JLE", "JG", "JGE", "JNGE", "JNG", "JNLE", "JNL")
-                .contains(jump);
+            boolean signed = isSignedJump(jump);
             String type = signed ? signedIntegerType(size) : unsignedIntegerType(size);
             for (String operand : operands)
                 addCrossType(crossOperandValue(operand, state), type,
                     addr(instruction.getAddress()) + " CMP/" + jump +
                     " through typed class pointer in " + function.getName(true), owners);
-        }
-        if (isUnsignedBitwiseUse(mnemonic, operands)) {
-            for (String operand : operands) {
-                int width = registerWidth(operand);
-                addCrossType(crossOperandValue(operand, state),
-                    unsignedIntegerType(width > 0 ? width : size),
-                    addr(instruction.getAddress()) + " " + mnemonic +
-                    " through typed class pointer in " + function.getName(true), owners);
-            }
         }
         if ("DIV".equals(mnemonic) || "IDIV".equals(mnemonic)) {
             boolean signed = "IDIV".equals(mnemonic);
@@ -481,6 +498,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     source != null && source.kind == CrossKind.ADDRESS)
                 addCrossType(destination, "pointer:" + source.ownerPath,
                     addr(instruction.getAddress()) + " exact typed pointer assignment in " +
+                    function.getName(true), owners);
+            if (destination != null && destination.kind == CrossKind.FIELD &&
+                    source != null && source.kind == CrossKind.GENERIC_POINTER)
+                addCrossType(destination, "pointer:" + source.ownerPath,
+                    addr(instruction.getAddress()) + " generic pointer-return assignment in " +
                     function.getName(true), owners);
             if (destination != null && source != null &&
                     destination.kind == CrossKind.FIELD && source.kind == CrossKind.FIELD &&
@@ -555,12 +577,21 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 CrossValue.address(base.ownerPath, base.offset + memory.displacement));
             return;
         }
-        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && operands.length >= 2 &&
-                state.registers.containsKey(destination)) {
+        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && operands.length >= 2) {
             CrossValue old = state.registers.get(destination);
             Long value = immediate(operands[1]);
-            if (value == null) state.registers.remove(destination);
-            else if (old.kind == CrossKind.ADDRESS)
+            CrossValue source = crossOperandValue(operands[1], state);
+            if (value == null && "ADD".equals(mnemonic) && source != null &&
+                    (source.kind == CrossKind.FIELD ||
+                     source.kind == CrossKind.POINTER_FIELD))
+                state.registers.put(destination,
+                    CrossValue.pointerField(source.ownerPath, source.offset));
+            else if (value == null && old != null && (old.kind == CrossKind.FIELD ||
+                    old.kind == CrossKind.POINTER_FIELD))
+                state.registers.put(destination,
+                    CrossValue.pointerField(old.ownerPath, old.offset));
+            else if (value == null) state.registers.remove(destination);
+            else if (old != null && old.kind == CrossKind.ADDRESS)
                 state.registers.put(destination, CrossValue.address(old.ownerPath,
                     old.offset + ("SUB".equals(mnemonic) ? -value : value)));
             // Preserve scalar-field provenance through simple arithmetic so a
@@ -594,7 +625,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         DataTypeComponent component = owner.structure.getComponentContaining((int)field.offset);
         if (component == null || component.getOffset() != field.offset) return field;
         CrossValue pointer = crossPointer(component.getDataType(), owners);
-        return pointer == null ? field : pointer;
+        if (pointer == null) return field;
+        return pointer.kind == CrossKind.GENERIC_POINTER ?
+            CrossValue.pointerField(field.ownerPath, field.offset) : pointer;
     }
 
     private CrossValue referencedCrossPointer(Instruction instruction, int operandIndex,
@@ -616,8 +649,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (!(type instanceof Pointer pointer)) return null;
         type = pointer.getDataType();
         while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
-        return type instanceof Structure structure && owners.containsKey(structure.getPathName()) ?
-            CrossValue.address(structure.getPathName(), 0) : null;
+        if (type instanceof Structure structure && owners.containsKey(structure.getPathName()))
+            return CrossValue.address(structure.getPathName(), 0);
+        String path = type == null || type.getPathName().matches(
+            "/undefined(?:1|2|4|8)?") ? "/void" : type.getPathName();
+        return CrossValue.genericPointer(path);
     }
 
     private void recordCrossAccess(Function function, Instruction instruction,
@@ -661,6 +697,23 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (owner != null) field(owner.evidence, value.offset).addType(type, evidence);
     }
 
+    private List<String> memoryRegisters(String operand) {
+        int open = operand.indexOf('['), close = operand.lastIndexOf(']');
+        if (open < 0 || close <= open) return List.of();
+        List<String> result = new ArrayList<>();
+        Matcher matcher = X86_REGISTER.matcher(operand.substring(open + 1, close));
+        while (matcher.find()) result.add(matcher.group(1).toUpperCase(Locale.ROOT));
+        return result;
+    }
+
+    private String bufferElementType(int size) {
+        return switch (size) {
+            case 1 -> "/byte";
+            case 2 -> "/ushort";
+            default -> "";
+        };
+    }
+
     private void propagateCrossFieldTypes(Map<String, CrossOwner> owners,
             Set<FieldLink> links) {
         for (int pass = 0; pass < Math.max(8, links.size()); pass++) {
@@ -671,8 +724,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 if (leftOwner == null || rightOwner == null) continue;
                 FieldEvidence left = field(leftOwner.evidence, link.leftOffset);
                 FieldEvidence right = field(rightOwner.evidence, link.rightOffset);
+                // MOV [destination-field], source-field is directional.  Copying every
+                // observed scalar type in both directions made large assignment graphs
+                // collapse into artificial int/uint conflicts.  A bit-pattern copy does
+                // not prove the source's signedness; only propagate a uniquely resolved
+                // source type into a destination which has no contrary direct evidence.
                 changed |= copyCrossTypes(right, left, link.site);
-                changed |= copyCrossTypes(left, right, link.site);
             }
             if (!changed) break;
         }
@@ -680,14 +737,13 @@ public class STClassLayoutAnalyzer extends GhidraScript {
 
     private boolean copyCrossTypes(FieldEvidence source, FieldEvidence destination,
             String site) {
-        boolean changed = false;
-        for (String type : new ArrayList<>(source.inferredTypes.keySet())) {
-            if (typeLength(type) != destination.layoutSize()) continue;
-            Set<String> evidence = destination.inferredTypes.computeIfAbsent(type,
-                ignored -> new TreeSet<>());
-            changed |= evidence.add(site + " exact field-to-field MOV propagation");
-        }
-        return changed;
+        String type = source.resolvedPropagationType();
+        if (type.isBlank() || typeLength(type) != destination.layoutSize()) return false;
+        Set<String> direct = destination.directTypes();
+        if (!direct.isEmpty() && !direct.equals(Set.of(type))) return false;
+        Set<String> evidence = destination.inferredTypes.computeIfAbsent(type,
+            ignored -> new TreeSet<>());
+        return evidence.add(site + " exact field-to-field MOV propagation");
     }
 
     /**
@@ -846,7 +902,6 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                         CfgFieldAccess::new);
                     access.sizes.merge(size, 1, Integer::sum);
                     if (write) access.writes++; else access.reads++;
-                    if (isUnsignedBitwiseUse(mnemonic, operands)) access.bitwiseUses++;
                     if (access.sites.size() < 64)
                         access.sites.add(new CfgSite(instruction, mnemonic, size,
                             operandIndex, write));
@@ -907,7 +962,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private void inferCfgComparisonType(Function function, FieldEvidence field,
             CfgSite site) {
         String jump = followingConditionalJump(function, site.instruction);
-        if ("CMP".equals(site.mnemonic) && !jump.isBlank()) {
+        if (("CMP".equals(site.mnemonic) ||
+                ("TEST".equals(site.mnemonic) && isSignedJump(jump))) &&
+                !jump.isBlank()) {
             addComparisonType(function, field, site.instruction, jump, site.size);
             return;
         }
@@ -924,15 +981,13 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 function.getBody().contains(cursor.getAddress()); step++) {
             String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(cursor.toString().toUpperCase(Locale.ROOT));
-            if ("CMP".equals(mnemonic) && usesRegister(operands, register)) {
+            if (("CMP".equals(mnemonic) && usesRegister(operands, register)) ||
+                    ("TEST".equals(mnemonic) && sameRegisterOperands(operands) &&
+                     register.equals(cleanRegister(operands[0])))) {
                 jump = followingConditionalJump(function, cursor);
-                if (!jump.isBlank())
+                if (!jump.isBlank() &&
+                        (!"TEST".equals(mnemonic) || isSignedJump(jump)))
                     addComparisonType(function, field, cursor, jump, site.size);
-                return;
-            }
-            if (isUnsignedBitwiseUse(mnemonic, operands) &&
-                    usesRegister(operands, register)) {
-                field.bitwiseUses++;
                 return;
             }
             if ("CALL".equals(mnemonic) || cursor.getFlowType().isJump() ||
@@ -955,37 +1010,27 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (next == null || !function.getBody().contains(next.getAddress())) return "";
         String jump = next.getMnemonicString().toUpperCase(Locale.ROOT);
         return Set.of("JL", "JLE", "JG", "JGE", "JNGE", "JNG", "JNLE", "JNL",
-            "JB", "JBE", "JA", "JAE", "JNAE", "JNA", "JNBE", "JNB", "JC", "JNC")
+            "JS", "JNS", "JB", "JBE", "JA", "JAE", "JNAE", "JNA", "JNBE",
+            "JNB", "JC", "JNC")
             .contains(jump) ? jump : "";
     }
 
     private void addComparisonType(Function function, FieldEvidence field,
             Instruction comparison, String jump, int size) {
-        boolean signed = Set.of("JL", "JLE", "JG", "JGE", "JNGE", "JNG", "JNLE", "JNL")
-            .contains(jump);
+        boolean signed = isSignedJump(jump);
         String type = signed ? signedIntegerType(size) : unsignedIntegerType(size);
         if (!type.isBlank()) field.addType(type, addr(comparison.getAddress()) + " CMP/" +
             jump + " establishes " + type + " through CFG-recovered field flow in " +
             function.getName(true));
     }
 
-    private boolean isUnsignedBitwise(String mnemonic) {
-        // Logical right shift is unsigned evidence; left shift is not (signed
-        // integer scaling uses the same SHL instruction).
-        return Set.of("AND", "OR", "XOR", "TEST", "SHR").contains(mnemonic);
-    }
-
-    private boolean isUnsignedBitwiseUse(String mnemonic, String[] operands) {
-        if (!isUnsignedBitwise(mnemonic)) return false;
-        for (String operand : operands)
-            if (immediate(operand) != null) return true;
-        return false;
-    }
-
     private void inferBitwiseTypes(ClassEvidence owner, Function function,
             Instruction instruction, String mnemonic, String[] operands,
             Map<String, RegisterValue> registers) {
-        if (!isUnsignedBitwiseUse(mnemonic, operands)) return;
+        // AND/OR/XOR/TEST are valid on signed values and do not establish C
+        // signedness.  SHR is the one useful x86 distinction here: SAR is the
+        // signed right shift while SHR is logical/unsigned.
+        if (!"SHR".equals(mnemonic)) return;
         for (String operand : operands) {
             RegisterValue value = registers.get(cleanRegister(operand));
             if (value == null || value.kind != ValueKind.FIELD_VALUE) continue;
@@ -1105,7 +1150,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (type instanceof Pointer pointer) {
             DataType pointed = pointer.getDataType();
             if (pointed == null || pointed.getPathName().matches(
-                    "/undefined(?:1|2|4|8)?")) return "";
+                    "/undefined(?:1|2|4|8)?")) return "pointer:/void";
             return "pointer:" + pointed.getPathName();
         }
         if (type.getPathName().matches("/undefined(?:1|2|4|8)?") ||
@@ -1163,14 +1208,17 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private void inferComparisonTypes(ClassEvidence owner, Function function,
             Instruction instruction, String mnemonic, String[] operands,
             Map<String, RegisterValue> registers) {
-        if (!"CMP".equals(mnemonic)) return;
+        if (!Set.of("CMP", "TEST").contains(mnemonic)) return;
+        if ("TEST".equals(mnemonic) && !sameRegisterOperands(operands)) return;
         Instruction next = currentProgram.getListing().getInstructionAfter(instruction.getAddress());
         if (next == null || !function.getBody().contains(next.getAddress())) return;
         String jump = next.getMnemonicString().toUpperCase(Locale.ROOT);
-        boolean signed = Set.of("JL", "JLE", "JG", "JGE", "JNGE", "JNG", "JNLE", "JNL")
-            .contains(jump);
+        boolean signed = isSignedJump(jump);
         boolean unsigned = Set.of("JB", "JBE", "JA", "JAE", "JNAE", "JNA", "JNBE", "JNB",
             "JC", "JNC").contains(jump);
+        // TEST clears OF and CF.  A signed conditional after TEST reg,reg is a
+        // sign/zero test; unsigned conditions do not establish an unsigned C type.
+        if ("TEST".equals(mnemonic)) unsigned = false;
         if (!signed && !unsigned) return;
         for (String operand : operands) {
             RegisterValue value = registers.get(cleanRegister(operand));
@@ -1182,6 +1230,19 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 jump + " establishes " + type + " through a field-derived value in " +
                 function.getName(true));
         }
+    }
+
+    private boolean sameRegisterOperands(String[] operands) {
+        if (operands.length < 2) return false;
+        String left = cleanRegister(operands[0]);
+        String right = cleanRegister(operands[1]);
+        return left != null && left.equals(right) &&
+            registerWidth(operands[0]) == registerWidth(operands[1]);
+    }
+
+    private boolean isSignedJump(String jump) {
+        return Set.of("JL", "JLE", "JG", "JGE", "JNGE", "JNG", "JNLE", "JNL",
+            "JS", "JNS").contains(jump);
     }
 
     private int registerWidth(String operand) {
@@ -1280,9 +1341,13 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private List<NestedTypeProposal> prepareNestedTypes(ClassEvidence evidence,
-            List<NestedFieldProposal> fieldRows) {
+            List<NestedFieldProposal> fieldRows, boolean hasOwnerVtable) {
         List<NestedTypeProposal> result = new ArrayList<>();
         for (FieldEvidence parent : evidence.fields.values()) {
+            // Offset zero is the actual dispatch table whenever a reviewed vtable exists.
+            // Treating calls through it as arbitrary nested-data dereferences used to replace
+            // the vptr with AnonPointee_<owner>_0000 and made every virtual call raw again.
+            if (hasOwnerVtable && parent.offset == 0) continue;
             List<PointeeFieldEvidence> selected = selectedPointeeFields(parent);
             if (parent.pointerUses < 3 || selected.size() < 2) continue;
             if (looksLikeDArray(parent) && dataTypes.getDataType(DARRAY_PATH) instanceof Structure) {
@@ -1359,11 +1424,6 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         List<FieldProposal> result = new ArrayList<>();
         Map<String, Integer> inferredTypeCounts = new HashMap<>();
         for (FieldEvidence field : evidence.fields.values()) {
-            if (field.bitwiseUses > 0 && field.compatibleWidths()) {
-                String unsigned = unsignedIntegerType(field.layoutSize());
-                if (!unsigned.isBlank()) field.addType(unsigned,
-                    "bitwise use establishes unsigned storage width");
-            }
             String inferred = field.uniqueType();
             if (!inferred.isBlank()) inferredTypeCounts.merge(inferred, 1, Integer::sum);
         }
@@ -1372,11 +1432,14 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (field.offset == 0) hasOffsetZero = true;
             int size = field.layoutSize();
             boolean consistent = field.compatibleWidths();
-            String name = field.offset == 0 && vtableType != null ? "vtable" :
+            boolean ownerVtable = field.offset == 0 && vtableType != null;
+            String name = ownerVtable ? "vtable" :
                 String.format("field_%04X", field.offset);
-            String type = field.offset == 0 && vtableType != null ? "pointer:" + vtableType :
+            String type = ownerVtable ? "pointer:" + vtableType :
                 "/undefined" + size;
-            String inferredType = field.uniqueType();
+            // A constructor/vptr-store backed table is stronger evidence than a generic
+            // fixed-offset pointee inferred from CALL [vptr+slot].
+            String inferredType = ownerVtable ? type : field.uniqueType();
             boolean typeApply = !inferredType.isBlank() && typeLength(inferredType) == size;
             String suggestedName = field.uniqueName();
             if (suggestedName.isBlank() && !inferredType.isBlank() &&
@@ -1390,13 +1453,29 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             DataTypeComponent existing = field.offset <= Integer.MAX_VALUE ?
                 structure.getComponentAt((int)field.offset) : null;
             boolean existingConcreteType = false;
-            if (existing != null && existing.getOffset() == field.offset &&
+            boolean generatedTypeRevision = false;
+            String retiredDeprecatedInference = "";
+            if (ownerVtable && existing != null && existing.getOffset() == field.offset &&
+                    existing.getLength() == size) {
+                String existingType = typeSpecification(existing.getDataType());
+                existingConcreteType = !isUndefined(existing.getDataType());
+                if (existing.getFieldName() != null && existingType.equals(type))
+                    name = existing.getFieldName();
+                if (existingType.equals(type)) typeApply = false;
+                else if (isOwnedUnchangedCandidate(structure)) {
+                    generatedTypeRevision = true;
+                    typeApply = true;
+                }
+                else typeApply = false;
+            }
+            else if (existing != null && existing.getOffset() == field.offset &&
                     existing.getDataType() instanceof Enum && existing.getLength() == size &&
                     existing.getComment() != null &&
                     existing.getComment().contains(SWITCH_ENUM_MARKER)) {
                 type = existing.getDataType().getPathName();
                 if (existing.getFieldName() != null) name = existing.getFieldName();
                 existingConcreteType = true;
+                typeApply = false;
             }
             else if (existing != null && existing.getOffset() == field.offset &&
                     existing.getLength() == size && existing.getComment() != null &&
@@ -1405,19 +1484,39 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type = typeSpecification(existing.getDataType());
                 if (existing.getFieldName() != null) name = existing.getFieldName();
                 existingConcreteType = true;
+                if (isOwnedUnchangedCandidate(structure) && !inferredType.isBlank() &&
+                        !inferredType.equals(type)) {
+                    generatedTypeRevision = true;
+                    typeApply = typeLength(inferredType) == size;
+                }
+                else if (isOwnedUnchangedCandidate(structure) && inferredType.isBlank()) {
+                    retiredDeprecatedInference = deprecatedGeneratedInference(existing);
+                    if (retiredDeprecatedInference.isBlank() && scalarTypeConflict(field))
+                        retiredDeprecatedInference = "unresolved_scalar_domain";
+                    if (!retiredDeprecatedInference.isBlank()) {
+                        inferredType = "/undefined" + size;
+                        typeApply = true;
+                    }
+                    else typeApply = false;
+                }
+                else typeApply = false;
             }
-            if (existingConcreteType) typeApply = false;
             if (!genericFieldName(name)) suggestedName = "";
             boolean apply = consistent && field.offset + size <= proposedSize;
             if (!apply) typeApply = false;
             String reason = !consistent ? "conflicting_access_widths=" + field.sizeText() :
-                field.offset == 0 && vtableType != null ? "owner_vtable_pointer" :
+                ownerVtable ? "owner_vtable_pointer" :
                 field.thisAccesses == 0 && field.cfgRecovered == 0 && field.crossRecovered > 0 ?
                     "consistent_typed_class_pointer_access" :
                     "consistent_this_relative_access";
             if (field.sizes.size() > 1 && consistent)
                 reason += "; compatible_subwidth_views=" + field.sizeText();
-            if (field.inferredTypes.size() > 1)
+            if (generatedTypeRevision)
+                reason += "; generated_concrete_type_revised=" + type + "->" + inferredType;
+            else if (!retiredDeprecatedInference.isBlank())
+                reason += "; deprecated_generated_type_reverted=" + type +
+                    "; deprecated_source=" + retiredDeprecatedInference;
+            else if (field.inferredTypes.size() > 1)
                 reason += "; inferred_type_conflict=" + String.join("|", field.inferredTypes.keySet());
             else if (existingConcreteType && !inferredType.isBlank() &&
                     !inferredType.equals(type))
@@ -1431,7 +1530,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; typed_cross_class_recovery=" + field.crossRecovered;
             result.add(new FieldProposal(evidence.owner, field.offset, size, name, type,
                 inferredType, typeApply, suggestedName, nameApply, field.typeEvidenceText(),
-                field.nameEvidenceText(), typeApply ? "high" :
+                field.nameEvidenceText(), !retiredDeprecatedInference.isBlank() ? "repair" :
+                    typeApply ? "high" :
                     field.inferredTypes.size() > 1 ? "conflict" :
                     existingConcreteType ? "existing" : "none", nameConfidence,
                 field.reads, field.writes, field.functions, apply,
@@ -1597,8 +1697,73 @@ public class STClassLayoutAnalyzer extends GhidraScript {
 
     private boolean isOwnedUnchangedCandidate(Structure structure) {
         String description = structure.getDescription();
-        return description != null && description.contains(MARKER) &&
-            description.contains("generated_layout_sha256=");
+        if (description == null || !description.contains(MARKER)) return false;
+        String stored = storedLayoutHash(description);
+        return stored != null && stored.equals(layoutHash(structure));
+    }
+
+    private String storedLayoutHash(String description) {
+        int index = description.indexOf(HASH_MARKER);
+        if (index < 0) return null;
+        String value = description.substring(index + HASH_MARKER.length()).trim();
+        int end = value.indexOf(';');
+        if (end >= 0) value = value.substring(0, end);
+        return value.matches("[0-9a-fA-F]{64}") ? value.toLowerCase(Locale.ROOT) : null;
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder layout = new StringBuilder();
+        layout.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            layout.append(component.getOffset()).append('|').append(component.getLength())
+                .append('|').append(component.getDataType().getPathName()).append('|')
+                .append(component.getFieldName() == null ? "" : component.getFieldName())
+                .append('|').append(component.getComment() == null ? "" :
+                    component.getComment()).append('\n');
+        }
+        return sha256(layout.toString());
+    }
+
+    private String sha256(String value) {
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest) result.append(String.format("%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException(exception);
+        }
+    }
+
+    private String deprecatedGeneratedInference(DataTypeComponent component) {
+        String comment = component.getComment();
+        if (comment == null || !comment.contains(MARKER)) return "";
+        int marker = comment.indexOf("type_evidence=");
+        if (marker < 0) return "";
+        String evidence = comment.substring(marker);
+        boolean deprecated = evidence.contains(" bitwise use establishes ") ||
+            evidence.matches("(?s).*\\s(?:AND|OR|XOR|TEST)\\s.*");
+        boolean independentlyTyped = evidence.contains(" CMP/") ||
+            evidence.contains(" SHR ") || evidence.contains(" DIV ") ||
+            evidence.contains(" IDIV ") || evidence.contains("typed receiver") ||
+            evidence.contains("typed pointer assignment") ||
+            evidence.contains("parameter ") || evidence.contains(" return from ");
+        if (deprecated && !independentlyTyped) return "bitwise_signedness";
+        boolean propagation = evidence.contains("exact field-to-field MOV propagation");
+        String withoutPropagation = evidence.replaceAll(
+            "(?i)[^|;]*exact field-to-field MOV propagation", "").
+            replace("type_evidence=", "").replace("|", "").replace(";", "").trim();
+        if (propagation && withoutPropagation.isBlank()) return "bidirectional_mov_propagation";
+        return "";
+    }
+
+    private boolean scalarTypeConflict(FieldEvidence field) {
+        if (field.inferredTypes.size() < 2) return false;
+        return field.inferredTypes.keySet().stream().allMatch(type -> Set.of(
+            "/char", "/byte", "/short", "/ushort", "/int", "/uint",
+            "/longlong", "/ulonglong").contains(type));
     }
 
     private void updateRegisters(ClassEvidence owner, Function function, String mnemonic,
@@ -1885,6 +2050,10 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 .filter(row -> row.reason.contains("inferred_type_conflict")).count(),
             "field_existing_type_conflicts=" + fields.stream()
                 .filter(row -> row.reason.contains("rejected_inference=")).count(),
+            "field_generated_type_revisions=" + fields.stream()
+                .filter(row -> row.reason.contains("generated_concrete_type_revised=")).count(),
+            "field_deprecated_type_repairs=" + fields.stream()
+                .filter(row -> row.reason.contains("deprecated_generated_type_reverted=")).count(),
             "cross_typed_field_accesses=" + crossTypedFieldAccesses,
             "cross_field_type_links=" + crossTypeLinks,
             "nested_pointee_types=" + nestedTypes.size(),
@@ -2032,7 +2201,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             this.write = write;
         }
     }
-    private enum CrossKind { ADDRESS, FIELD }
+    private enum CrossKind { ADDRESS, FIELD, POINTER_FIELD, GENERIC_POINTER }
     private static class CrossValue {
         final CrossKind kind;
         final String ownerPath;
@@ -2045,6 +2214,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         static CrossValue field(String ownerPath, long offset) {
             return new CrossValue(CrossKind.FIELD, ownerPath, offset);
+        }
+        static CrossValue pointerField(String ownerPath, long offset) {
+            return new CrossValue(CrossKind.POINTER_FIELD, ownerPath, offset);
+        }
+        static CrossValue genericPointer(String pointedPath) {
+            return new CrossValue(CrossKind.GENERIC_POINTER, pointedPath, 0);
         }
         @Override public boolean equals(Object other) {
             if (!(other instanceof CrossValue value)) return false;
@@ -2084,13 +2259,42 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         int reads, writes, pointerUses, thisAccesses, cfgRecovered, crossRecovered, bitwiseUses;
         FieldEvidence(long offset) { this.offset = offset; }
         void addType(String type, String evidence) {
+            if ("pointer:/void".equals(type) && inferredTypes.keySet().stream()
+                    .anyMatch(value -> value.startsWith("pointer:") &&
+                        !value.equals("pointer:/void"))) return;
+            if (type.startsWith("pointer:") && !type.equals("pointer:/void"))
+                inferredTypes.remove("pointer:/void");
             inferredTypes.computeIfAbsent(type, ignored -> new TreeSet<>()).add(evidence);
         }
         void addName(String name, String evidence) {
             inferredNames.computeIfAbsent(name, ignored -> new TreeSet<>()).add(evidence);
         }
         String uniqueType() {
-            return inferredTypes.size() == 1 ? inferredTypes.keySet().iterator().next() : "";
+            if (inferredTypes.size() == 1) return inferredTypes.keySet().iterator().next();
+            List<String> namedPointers = inferredTypes.keySet().stream()
+                .filter(type -> type.startsWith("pointer:") &&
+                    !type.contains("/Recovered/ClassPointees/") &&
+                    !type.contains("/Recovered/PointerShapes/") &&
+                    !type.equals("pointer:/void"))
+                .toList();
+            boolean pointerAlternativesOnly = inferredTypes.keySet().stream().allMatch(type ->
+                type.startsWith("pointer:"));
+            return pointerAlternativesOnly && namedPointers.size() == 1 ?
+                namedPointers.get(0) : "";
+        }
+        Set<String> directTypes() {
+            Set<String> result = new TreeSet<>();
+            for (Map.Entry<String, Set<String>> entry : inferredTypes.entrySet())
+                if (entry.getValue().stream().anyMatch(value ->
+                        !value.contains("exact field-to-field MOV propagation")))
+                    result.add(entry.getKey());
+            return result;
+        }
+        String resolvedPropagationType() {
+            Set<String> direct = directTypes();
+            if (direct.size() == 1) return direct.iterator().next();
+            return direct.isEmpty() && inferredTypes.size() == 1 ?
+                inferredTypes.keySet().iterator().next() : "";
         }
         String uniqueName() {
             return inferredNames.size() == 1 ? inferredNames.keySet().iterator().next() : "";

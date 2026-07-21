@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00694450(void *this,int param_1,byte *param_2)
 
@@ -6,7 +8,6 @@ void __thiscall FUN_00694450(void *this,int param_1,byte *param_2)
   int iVar2;
   byte *pbVar3;
   int iVar4;
-  undefined4 *puVar5;
   bool bVar6;
 
   iVar2 = thunk_FUN_00693e60(this,param_1);
@@ -31,16 +32,9 @@ LAB_00694491:
 LAB_00694496:
     if (iVar4 == 0) {
       *(char *)((int)this + 0x2f9) = *(char *)((int)this + 0x2f9) + -1;
-      puVar5 = (undefined4 *)((int)this + (uint)*(byte *)(iVar2 + 0x39) * 0x9c + 0x2fa);
-      for (iVar4 = 0x27; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
-      puVar5 = (undefined4 *)(iVar2 + 1);
-      for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
+      memset((void *)((int)this + (uint)*(byte *)(iVar2 + 0x39) * 0x9c + 0x2fa), 0, 0x9c); /* compiler bulk-zero initialization */
+      iVar4 = 0;
+      memset((void *)(iVar2 + 1), 0, 0x20); /* compiler bulk-zero initialization */
       *(undefined1 *)(iVar2 + 0x39) = 0xff;
     }
   }

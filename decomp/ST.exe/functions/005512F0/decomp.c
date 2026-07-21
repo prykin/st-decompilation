@@ -62,10 +62,10 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
       ccFntTy::operator(this_00,(uint *)pTVar2->field_01DD);
       pTVar2->field_01DD = (ccFntTy *)0x0;
     }
-    pTVar2->field_01D9 = 0;
-    pTVar2->field_01D5 = 0;
-    pTVar2->field_01D1 = 0;
-    DAT_00802a44 = 0;
+    pTVar2->field_01D9 = (ushort *)0x0;
+    pTVar2->field_01D5 = (ushort *)0x0;
+    pTVar2->field_01D1 = (ushort *)0x0;
+    g_tradePanel_00802A44 = (TradePanelTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

@@ -43,7 +43,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
   if (g_worldGrid.sizeZ + -1 < iVar3) {
     iVar3 = g_worldGrid.sizeZ + -1;
   }
-  local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   iVar6 = g_worldGrid.sizeX * _param_6 + iVar5 + (iVar7 + -1) * (int)g_worldGrid.planeStride;
   if (iVar7 <= iVar3) {
     _param_8 = (iVar3 - iVar7) + 1;

@@ -55,7 +55,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
       if (MESS_TORPHIT < SVar4) {
         switch(SVar4) {
         case MESS_STOCTOPUSC_0112:
-          if ((int)local_8->field_02D6 < 0) {
+          if (local_8->field_02D6 < 0) {
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
@@ -63,7 +63,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         case MESS_STSPRGAMEOBJC_0113:
-          if ((int)local_8->field_02D6 < 0) {
+          if (local_8->field_02D6 < 0) {
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
@@ -118,7 +118,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             this_00->field_030E = *(undefined1 *)(dVar5 + 8);
             this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
             this_00->field_030D = 1;
-            if (-1 < (int)this_00->field_02D6) {
+            if (-1 < this_00->field_02D6) {
               thunk_FUN_004ad430((int)&this_00->field_01D5);
             }
             thunk_FUN_005ebcb0(this_00);
@@ -164,7 +164,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        local_10 = thunk_FUN_005ec370(local_8,(uint *)&local_c);
+        local_10 = STAllPlayersC::thunk_FUN_005ec370((STAllPlayersC *)local_8,(uint *)&local_c);
         STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
         FreeAndNull(&local_10);
         g_currentExceptionFrame = local_60.previous;
@@ -348,9 +348,9 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
         this_00->field_02C2 = this_00->field_027B;
         this_00->field_02C6 = this_00->field_027F;
         thunk_FUN_005eff00((int)this_00);
-        if ((-1 < (int)this_00->field_02D2) &&
+        if ((-1 < this_00->field_02D2) &&
            (iVar8 = thunk_FUN_005f0ba0((AnonShape_005F0BA0_C8D654C5 *)this_00), iVar8 != 0)) {
-          this_00->field_02D2 = 0xffffffff;
+          this_00->field_02D2 = -1;
         }
         thunk_FUN_005eeff0(this_00,0);
         if (this_00->field_0320 == '\0') {

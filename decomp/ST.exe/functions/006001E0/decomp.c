@@ -22,7 +22,7 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
        *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233));
   *(undefined2 *)(iVar5 + *(int *)((int)this + 0x233) + 0x16) =
        *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233));
-  if (((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) &&
+  if (((PTR_00802a38->field_00E4 & 1) == 0) &&
      (iVar3 = *(int *)((int)this + 0x233) + iVar5,
      0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
     TraksClassTy::TraksCreate

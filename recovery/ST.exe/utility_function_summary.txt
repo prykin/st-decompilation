@@ -1,10 +1,12 @@
 ST utility-function semantics
 
-Rules: 5
-Verified: 2
+Rules: 7
+Verified: 4
 
 006AB060 FreeAndNull: review - missing body tokens: = (LPVOID)0x0
 006AE110 DArrayDestroy: review - missing body tokens: + 0x1c
+006AE290 DArrayCreate: apply - body pattern verified
+006B54F0 SArrayCreate: apply - body pattern verified
 006B0140 LoadResourceString: apply - body pattern verified
 006ACC70 DArrayGetElement: review - missing body tokens: 0xfffffffc,field_0008,field_000C,field_001C
 004406C0 GetPlayerRaceId: apply - body pattern verified

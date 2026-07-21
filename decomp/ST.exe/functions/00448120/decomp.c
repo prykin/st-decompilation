@@ -81,7 +81,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   STBoatC *local_24;
   uint local_20;
   uint local_1c;
-  undefined4 local_18;
+  uint local_18;
   undefined4 local_14;
   undefined4 local_10;
   undefined4 local_c;

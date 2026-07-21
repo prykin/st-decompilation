@@ -16,8 +16,8 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   dword dVar2;
   AnonPointee_STGameObjC_0195 *pAVar3;
   AnonPointee_STGameObjC_01AD *pAVar4;
-  AnonPointee_STGameObjC_01C5 *pAVar5;
-  AnonPointee_STGameObjC_01C9 *pAVar6;
+  ushort *puVar5;
+  ushort *puVar6;
   AnonPointee_STGameObjC_018D *pAVar7;
   AnonPointee_STGameObjC_01A5 *pAVar8;
   AnonPointee_STGameObjC_01B5 *pAVar9;
@@ -31,7 +31,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   char *pcVar17;
   AnonPointee_STGameObjC_01B1 *pAVar18;
   int *piVar19;
-  AnonPointee_STGameObjC_01C9 *pAVar20;
+  ushort *puVar20;
   short *psVar21;
   DArrayTy *pDVar22;
   AnonPointee_STGameObjC_01A9 *pAVar23;
@@ -41,7 +41,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   AnonPointee_STGameObjC_0195 *pAVar27;
   AnonPointee_STGameObjC_01AD *pAVar28;
   int *piVar29;
-  AnonPointee_STGameObjC_01C5 *pAVar30;
+  ushort *puVar30;
   short *psVar31;
   AnonPointee_STGameObjC_018D *pAVar32;
   AnonPointee_STGameObjC_01A5 *pAVar33;
@@ -208,25 +208,25 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)&pSVar12->vtable->field_0x64)(pSVar12->field_01C9);
-      pAVar5 = pSVar12->field_01C5;
-      pAVar6 = pSVar12->field_01C9;
+      puVar5 = pSVar12->field_01C5;
+      puVar6 = pSVar12->field_01C9;
       iVar13 = 3;
       bVar36 = true;
-      pAVar20 = pAVar6;
-      pAVar30 = pAVar5;
+      puVar20 = puVar6;
+      puVar30 = puVar5;
       do {
         if (iVar13 == 0) break;
         iVar13 = iVar13 + -1;
-        bVar36 = *(short *)&pAVar20->field_0000 == *(short *)&pAVar30->field_0000;
-        pAVar20 = (AnonPointee_STGameObjC_01C9 *)((int)&pAVar20->field_0000 + 2);
-        pAVar30 = (AnonPointee_STGameObjC_01C5 *)((int)&pAVar30->field_0000 + 2);
+        bVar36 = *puVar20 == *puVar30;
+        puVar20 = puVar20 + 1;
+        puVar30 = puVar30 + 1;
       } while (bVar36);
       if (bVar36) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      pAVar5->field_0000 = pAVar6->field_0000;
-      pAVar5->field_0004 = pAVar6->field_0004;
+      *(undefined4 *)puVar5 = *(undefined4 *)puVar6;
+      puVar5[2] = puVar6[2];
       GVar37 = CASE_12;
       goto cf_common_exit_0041BE5F;
     }

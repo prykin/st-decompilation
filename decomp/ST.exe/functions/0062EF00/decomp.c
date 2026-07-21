@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_0062ef00(void *this,int param_1,AnonShape_0062FCA0_22A
     *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x28) =
          *(undefined4 *)&param_2->field_0x1c;
     **(int **)((int)this + param_1 * 4 + 0x1e5) = param_2->field_0020;
-    *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x35) = PTR_00802a38->field_00E4;
+    *(uint *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x35) = PTR_00802a38->field_00E4;
     *(undefined4 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x39) = 3000;
     uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar1;

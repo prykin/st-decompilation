@@ -79,10 +79,10 @@ LAB_004f38ad:
          local_10->field_0000 - (&local_8->field_003C)[uVar2],iVar5 - iVar4,param_3,(byte *)local_c)
   ;
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
-  if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
+  if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2],
-               (&pCVar3->field_0094)[uVar2]);
+              ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,
+               (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
   }
   g_currentExceptionFrame = local_54.previous;
   return;

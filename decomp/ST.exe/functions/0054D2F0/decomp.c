@@ -21,7 +21,7 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   undefined4 local_24;
   undefined4 local_20;
   STPlaySystemC *local_10;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
 
   local_c = this->field_00E4;

@@ -15,9 +15,8 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   int iVar4;
   uint *puVar5;
   ccFntTy **ppcVar6;
-  undefined4 *puVar7;
   ccFntTy *local_dd0 [8];
-  AnonPointee_PrividerTy_1C92 *local_db0;
+  uint *local_db0;
   undefined4 local_d84;
   undefined4 local_d80;
   undefined4 local_d7c;
@@ -134,20 +133,14 @@ LAB_005bbb22:
       local_dd0[7] = (ccFntTy *)0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
-      (*local_10->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,(int *)0x0,local_dd0,
-                 0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)local_10->field_000C->vtable->field_0008)(6,&local_10->field_1C86,0,local_dd0,0);
       this_00->field_002D = 0x20;
       this_00->field_0031 = 1;
       FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)&this_00->field_0x1d);
     }
     if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
-      puVar7 = &local_2c;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
-      }
-      *(undefined2 *)puVar7 = 0;
+      memset(&local_2c, 0, 0x1a); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._2_2_ = (-(ushort)(local_544[6] != 0) & 2) - 1;
       local_1e = 1;
@@ -216,9 +209,8 @@ LAB_005bbb22:
     local_3b4 = local_51c;
     local_234 = local_51c;
     local_c4 = local_51c;
-    (*local_10->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,(int *)0x0,local_544,0)
-    ;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)local_10->field_000C->vtable->field_0008)(7,&local_10->field_1A73,0,local_544,0);
   }
   this_00->field_0031 = 0;
   puVar1 = &this_00->field_0x1d;

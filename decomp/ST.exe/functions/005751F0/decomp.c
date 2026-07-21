@@ -14,7 +14,7 @@ void __cdecl LandInit(short *param_1)
   code *pcVar3;
   int iVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
-  uint *puVar6;
+  DArrayTy *pDVar6;
   undefined4 *puVar7;
   int iVar8;
   InternalExceptionFrame local_54;
@@ -43,10 +43,10 @@ void __cdecl LandInit(short *param_1)
                  0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
     DAT_0080760c->field_0128 = 0;
     FUN_006dd610(DAT_0080760c,4,0,0x40240000,0,0x40240000);
-    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,8,0x14);
-    *(uint **)((int)param_1 + 0x44d) = puVar6;
-    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
-    *(uint **)((int)param_1 + 0x451) = puVar6;
+    pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,8,0x14);
+    *(DArrayTy **)((int)param_1 + 0x44d) = pDVar6;
+    pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0xc,0x14);
+    *(DArrayTy **)((int)param_1 + 0x451) = pDVar6;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (0 < *(int *)((int)param_1 + 0x455)) {
       puVar7 = (undefined4 *)((int)param_1 + 0x459);

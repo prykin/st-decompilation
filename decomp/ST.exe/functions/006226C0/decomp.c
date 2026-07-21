@@ -48,10 +48,10 @@ uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
                                         (int)*(short *)((int)this + 0x47),
                                         (int)*(short *)((int)this + 0x49),&param_2,(int *)&local_8),
             iVar3 < 0)) || (4 < iVar3)) || ((param_2 < 0 || (pVVar1->field_0030 <= param_2)))) ||
-         ((uVar2 = (&DAT_0079aed0)[iVar3] + (int)local_8, (int)uVar2 < 0 ||
-          ((pVVar1->field_0034 <= (int)uVar2 || (pVVar1->field_004C == 0)))))) ||
-        (uVar2 = (uint)*(byte *)(uVar2 * pVVar1->field_0030 + pVVar1->field_004C + param_2),
-        uVar2 != 0)))) goto cf_common_exit_006227F9;
+         ((uVar2 = g_centeredOffsets5[iVar3] + (int)local_8, (int)uVar2 < 0 ||
+          ((pVVar1->field_0034 <= (int)uVar2 || (pVVar1->field_004C == (byte *)0x0)))))) ||
+        (uVar2 = (uint)pVVar1->field_004C[param_2 + uVar2 * pVVar1->field_0030], uVar2 != 0))))
+    goto cf_common_exit_006227F9;
   }
   param_1 = 0;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

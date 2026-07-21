@@ -37,12 +37,12 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
     }
     DarkScreen(DAT_0080759c,10,2);
-    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+    if (PTR_0081176c->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     thunk_FUN_005a0590((int)pMVar3);
@@ -97,7 +97,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FreeAndNull((void **)&pMVar3[0x22].field_0x74);
     }
     if (-1 < (int)*(uint *)&pMVar3[0x1e].field_0x22) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar3[0x1e].field_0x22);
+      FUN_006b3bb0((int *)PTR_008075a8,*(uint *)&pMVar3[0x1e].field_0x22);
     }
     *(undefined4 *)&pMVar3[0x1e].field_0x22 = 0xffffffff;
     if (*(int *)&pMVar3[0x1e].field_0x26 != 0) {
@@ -120,7 +120,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FreeAndNull((void **)((int)&pMVar3[0x1e].vtable + 1));
     }
     if (-1 < (int)*(uint *)&pMVar3[0x1d].field_0xd8) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar3[0x1d].field_0xd8);
+      FUN_006b3bb0((int *)PTR_008075a8,*(uint *)&pMVar3[0x1d].field_0xd8);
     }
     *(undefined4 *)&pMVar3[0x1d].field_0xd8 = 0xffffffff;
     this_01 = (ccFntTy *)0x0;

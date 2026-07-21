@@ -20,7 +20,6 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   int iVar3;
   int iVar4;
   undefined4 uVar5;
-  int *piVar6;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
   undefined4 local_17c;
@@ -66,11 +65,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   iVar3 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0);
   pPVar2 = local_10;
   if (iVar3 == 0) {
-    piVar6 = local_18c;
-    for (iVar3 = 0x5f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = 0;
-      piVar6 = piVar6 + 1;
-    }
+    memset(local_18c, 0, 0x17c); /* compiler bulk-zero initialization */
     local_18c[1] = param_1;
     local_18c[0] = param_2;
     wsprintfA((LPSTR)(pPVar2 + 1),"%s0",param_8);

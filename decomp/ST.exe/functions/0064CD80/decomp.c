@@ -11,9 +11,9 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   code *pcVar1;
   AiEventClassTy *pAVar2;
   int iVar3;
-  uint *puVar4;
+  DArrayTy *pDVar4;
   undefined4 *puVar5;
-  DArrayTy *pDVar6;
+  uint *puVar6;
   undefined4 uVar7;
   int iVar8;
   uint uVar9;
@@ -47,11 +47,11 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     *(short *)piVar14 = (short)*piVar10;
     *(undefined1 *)((int)piVar14 + 2) = *(undefined1 *)((int)piVar10 + 2);
     local_8->field_0091 = 1;
-    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,5,5);
-    pAVar2->field_05B3 = puVar4;
+    pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
+    pAVar2->field_05B3 = &pDVar4->flags;
     uVar11 = 0;
     do {
-      Library::DKW::TBL::FUN_006b6020((uint *)pAVar2->field_05B3,uVar11,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b6020(pAVar2->field_05B3,uVar11,&DAT_008016a0);
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < 4);
     if (pAVar2->field_008C == '\0') {
@@ -94,20 +94,20 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
       puVar12 = (undefined4 *)((int)puVar12 + 1);
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    pDVar6 = (DArrayTy *)
+    pDVar4 = (DArrayTy *)
              FUN_006b0060((uint *)0x0,(uint *)(pAVar2->field_04F2 + 0x49e + (int)param_1));
-    pAVar2->field_04EE = pDVar6;
-    puVar4 = Library::DKW::TBL::FUN_006c8680
+    pAVar2->field_04EE = pDVar4;
+    puVar6 = Library::DKW::TBL::FUN_006c8680
                        ((uint *)0x0,(uint *)(pAVar2->field_04E6 + 0x49e + (int)param_1));
-    pAVar2->field_04E2 = puVar4;
-    pDVar6 = pAVar2->field_04EE;
+    pAVar2->field_04E2 = puVar6;
+    pDVar4 = pAVar2->field_04EE;
     uVar11 = 0;
-    if (0 < (int)pDVar6->count) {
-      bVar15 = pDVar6->count != 0;
+    if (0 < (int)pDVar4->count) {
+      bVar15 = pDVar4->count != 0;
       do {
         if (bVar15) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar11) (runtime stride) */
-          pvVar13 = (void *)(pDVar6->elementSize * uVar11 + (int)pDVar6->data);
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar11) (runtime stride) */
+          pvVar13 = (void *)(pDVar4->elementSize * uVar11 + (int)pDVar4->data);
         }
         else {
           pvVar13 = (void *)0x0;
@@ -117,10 +117,10 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
                                (uint *)(*(int *)((int)pvVar13 + 0x13) + 0x49e + (int)param_1));
           *(undefined4 *)((int)pvVar13 + 0xf) = uVar7;
         }
-        pDVar6 = pAVar2->field_04EE;
+        pDVar4 = pAVar2->field_04EE;
         uVar11 = uVar11 + 1;
-        bVar15 = uVar11 < pDVar6->count;
-      } while ((int)uVar11 < (int)pDVar6->count);
+        bVar15 = uVar11 < pDVar4->count;
+      } while ((int)uVar11 < (int)pDVar4->count);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;

@@ -175,7 +175,7 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
   }
   *(undefined4 *)((int)param_1 + 0x2d6) = 0xffffffff;
   *(undefined4 *)((int)param_1 + 0x2d2) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x2e0) = PTR_00802a38->field_00E4;
+  *(uint *)((int)param_1 + 0x2e0) = PTR_00802a38->field_00E4;
   return 1;
 }
 

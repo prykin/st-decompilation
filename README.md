@@ -91,8 +91,9 @@ callees, strings, globals, tags, source evidence, and other context. Library and
 thunk implementations are represented without duplicating unnecessary bodies.
 Per-function fingerprints allow unchanged bodies to be reused on later exports.
 
-The exporter also normalizes proven terminal `INT3` artifacts for standalone
-pseudocode and writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
+The exporter also normalizes proven terminal `INT3` artifacts and compiler
+bulk-zero loops (`REP STOS*`) into standalone `STDebugBreak`/`memset` source, and
+writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
 reliably spell as structured C (packed/unaligned fields, runtime-stride arrays,
 flat global-record arithmetic, raw indirect calls, and residual ABI artifacts).
 Every referenced immutable NUL-terminated string is emitted as an escaped C

@@ -19,6 +19,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   undefined4 *puVar8;
   int *piVar9;
   undefined4 *puVar10;
+  ushort *puVar11;
   int local_8c4 [5];
   int local_8b0;
   undefined4 local_8ac;
@@ -73,14 +74,14 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     if (local_8->field_1E8E != 0) {
       FreeAndNull((void **)puVar8);
     }
-    if (this_00->field_1E92 != 0) {
-      FreeAndNull((void **)&this_00->field_1E92);
+    if (this_00->field_1E92 != (tagBITMAPINFO *)0x0) {
+      FreeAndNull(&this_00->field_1E92);
     }
     iVar7 = 1;
-    puVar10 = (undefined4 *)&this_00->field_005D->field_0x28;
+    puVar11 = this_00->field_005D + 0x14;
     uVar3 = FUN_006b4fe0((int)this_00->field_005D);
-    uVar4 = FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,
-                         (uint)*(ushort *)&this_00->field_005D->field_0xe,uVar3,puVar10,iVar7);
+    uVar4 = FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,(uint)this_00->field_005D[7],uVar3,
+                         (undefined4 *)puVar11,iVar7);
     *puVar8 = uVar4;
     ptVar5 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x22,0x72,0x2e1,0x14c,8);
     iVar7 = *puVar8;
@@ -142,9 +143,8 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_4b0 = 0x6335;
       local_688[3] = uVar4;
       local_4b8 = local_88c;
-      (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,(int *)0x0,local_8c4,0)
-      ;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)this_00->field_000C->vtable->field_0008)(8,&this_00->field_1B14,0,local_8c4,0);
       this_00->field_002D = 5;
       FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       if (this_00->field_1B2C != 0xffffffff) {

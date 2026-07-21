@@ -1,14 +1,15 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_004cf640(void *this,int *param_1)
 
 {
   bool bVar1;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   uint uVar3;
   int *piVar4;
   int iVar5;
   int iVar6;
-  DArrayTy *array;
   int *piVar7;
   int local_fc [40];
   int local_5c [2];
@@ -38,8 +39,8 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   piVar4 = param_1;
   do {
     if (*piVar4 == 0) {
-      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
-      *piVar4 = (int)puVar2;
+      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+      *piVar4 = (int)pDVar2;
     }
     iVar6 = *piVar4;
     piVar4 = piVar4 + 1;
@@ -49,16 +50,12 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   if ((*(int *)((int)this + 0x5ac) == 0x32) || (*(int *)((int)this + 0x5ac) == 0x5c)) {
     uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     local_10 = (undefined *)((uVar3 & 0xff) - 1);
-    piVar4 = local_fc;
-    for (iVar6 = 0x28; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *piVar4 = 0;
-      piVar4 = piVar4 + 1;
-    }
+    memset(local_fc, 0, 0xa0); /* compiler bulk-zero initialization */
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (array = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de,
-        array != (DArrayTy *)0x0)) && (uVar3 = 0, 0 < (int)array->count)) {
+        (pDVar2 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de,
+        pDVar2 != (DArrayTy *)0x0)) && (uVar3 = 0, 0 < (int)pDVar2->count)) {
       do {
-        DArrayGetElement(array,uVar3,&local_28);
+        DArrayGetElement(pDVar2,uVar3,&local_28);
         piVar4 = local_fc;
         piVar7 = (int *)(local_28 + 0x4e0);
         iVar6 = 0x28;
@@ -70,8 +67,8 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         uVar3 = uVar3 + 1;
-        array = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de;
-      } while ((int)uVar3 < (int)array->count);
+        pDVar2 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de;
+      } while ((int)uVar3 < (int)pDVar2->count);
     }
     local_2c = (int)local_10 << 4;
     local_8 = 0;
@@ -99,11 +96,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
           iVar5 = FUN_006b0fd0((int)local_c);
           if ((iVar5 != 0) &&
              (iVar5 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),iVar6 + 0x41), iVar5 != 0)) {
-            piVar4 = local_5c;
-            for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar4 = 0;
-              piVar4 = piVar4 + 1;
-            }
+            memset(local_5c, 0, 0x30); /* compiler bulk-zero initialization */
             local_5c[0] = iVar6;
             local_5c[1] = thunk_FUN_004c9370(this,1,iVar6,-1);
             if ((*(int *)((int)this + 0x361) == 1) && (*(int *)((int)this + 0x369) == iVar6)) {

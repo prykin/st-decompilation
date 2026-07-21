@@ -157,7 +157,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     if (pHVar2->field_021C != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_021C);
     }
-    PTR_00801690 = (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0;
+    g_helpPanel_00801690 = (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

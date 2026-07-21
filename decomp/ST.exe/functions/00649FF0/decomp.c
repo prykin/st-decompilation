@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __cdecl
 FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
@@ -14,7 +16,6 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   uint uVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 *puVar10;
   char *pcVar11;
   char *pcVar12;
   bool bVar13;
@@ -27,16 +28,9 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
 
   module = HINSTANCE_00807618;
   local_14 = 0;
-  puVar10 = &DAT_008117c0;
-  for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
-  }
-  puVar10 = (undefined4 *)&stack0xfffffcd0;
-  for (iVar6 = 0xc6; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
-  }
+  memset(&DAT_008117c0, 0, 0x104); /* compiler bulk-zero initialization */
+  iVar6 = 0;
+  memset(&stack0xfffffcd0, 0, 0x318); /* compiler bulk-zero initialization */
   local_8 = (DArrayTy *)0x0;
   local_c = DAT_00807dd5 >> 0x10 & 0xff;
   local_18 = DAT_00807dd5 & 0xffff;

@@ -40,7 +40,7 @@ LAB_0074a6c4:
         if (MVar6 != 0) goto LAB_0074a6c4;
       }
     }
-    uVar7 = FUN_0074a6cb(param_1);
+    uVar7 = FUN_0074a6cb((AnonShape_0074A6CB_17890C91 *)param_1);
   }
   return uVar7;
 }

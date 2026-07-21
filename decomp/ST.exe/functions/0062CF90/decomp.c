@@ -12,10 +12,9 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   STManRub3C *pSVar2;
   int *piVar3;
   int iVar4;
-  uint *puVar5;
+  DArrayTy *pDVar5;
   uint uVar6;
   int iVar7;
-  int *piVar8;
   InternalExceptionFrame local_74;
   int local_30 [4];
   int local_20;
@@ -38,15 +37,11 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   pSVar2 = local_c;
   if (iVar4 == 0) {
     if (*(int *)(&local_c->field_0x30 + *local_8 * 4) == 0) {
-      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x20,10);
-      *(uint **)(&pSVar2->field_0x30 + *piVar3 * 4) = puVar5;
+      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x20,10);
+      *(DArrayTy **)(&pSVar2->field_0x30 + *piVar3 * 4) = pDVar5;
     }
     if (*(int *)(&pSVar2->field_0x30 + *piVar3 * 4) != 0) {
-      piVar8 = local_30;
-      for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *piVar8 = 0;
-        piVar8 = piVar8 + 1;
-      }
+      memset(local_30, 0, 0x20); /* compiler bulk-zero initialization */
       local_20 = piVar3[4];
       local_18 = piVar3[6];
       local_1c = piVar3[5];

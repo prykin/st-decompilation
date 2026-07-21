@@ -10,7 +10,7 @@ void __fastcall FUN_00619a20(STJumpMineC *param_1)
   int local_c;
   int local_8;
 
-  if ((int)param_1->field_0097 < 0) {
+  if (param_1->field_0097 < 0) {
     STJumpMineC::LoadImagJMine(param_1,param_1->field_008F);
   }
   pVVar1 = g_visibleClass_00802A88;
@@ -27,10 +27,10 @@ void __fastcall FUN_00619a20(STJumpMineC *param_1)
                               (int)param_1->field_00C9,(int)param_1->field_00CB,&local_8,&local_c),
           iVar2 < 0)) || ((4 < iVar2 || (local_8 < 0)))) ||
         ((pVVar1->field_0030 <= local_8 ||
-         ((local_c = (&DAT_0079aed0)[iVar2] + local_c, local_c < 0 ||
+         ((local_c = g_centeredOffsets5[iVar2] + local_c, local_c < 0 ||
           (pVVar1->field_0034 <= local_c)))))) ||
-       ((pVVar1->field_004C == 0 ||
-        (*(char *)(local_c * pVVar1->field_0030 + pVVar1->field_004C + local_8) != '\0')))) {
+       ((pVVar1->field_004C == (byte *)0x0 ||
+        (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] != 0)))) {
       iVar2 = param_1->field_00AB + 1;
       param_1->field_00AB = iVar2;
       if (param_1->field_00AF <= iVar2) {

@@ -48,7 +48,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
       if (local_8->field_0020 != 0) {
         sub_006E56B0(local_8,local_8->field_0020);
       }
-      (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,0x306,puVar6,(int *)0x0,message,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)this_00->vtable->field_0008)(0x306,puVar6,0,message,0);
     }
     else {
       if (SVar1 < (MESS_STARTSYSTEMTY_6104|MESS_ID_CREATE)) {
@@ -57,8 +58,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x30a,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x30a,puVar6,0,message,0);
           goto switchD_005dd1c0_default;
         }
         if (MESS_STARTSYSTEMTY_6103 < SVar1) {
@@ -67,8 +68,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
             if (local_8->field_0020 != 0) {
               sub_006E56B0(local_8,local_8->field_0020);
             }
-            (*this_00->vtable->CreateObject)
-                      ((SystemClassTy *)this_00,0x302,puVar6,(int *)0x0,message,0);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)this_00->vtable->field_0008)(0x302,puVar6,0,message,0);
           }
           goto switchD_005dd1c0_default;
         }
@@ -77,8 +78,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x304,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x304,puVar6,0,message,0);
           goto switchD_005dd1c0_default;
         }
         if (SVar1 == MESS_SHARED_0008) {
@@ -102,30 +103,29 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
         }
         if ((DAT_0080fb72 != 0) || (DAT_00811768 == '\x02')) {
           puVar6 = local_28;
-          for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar6 = 0;
-            puVar6 = puVar6 + 1;
-          }
+          memset(puVar6, 0, 0x20); /* compiler bulk-zero initialization */
+          puVar6 = (undefined4 *)((byte *)puVar6 + 0x20);
           local_28[3] = 1;
           local_28[4] = 0x7102;
           AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,local_28);
           goto switchD_005dd1c0_default;
         }
         if (DAT_00811768 != '\x01') {
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x301,puVar6,(int *)0x0,message->arg0,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x301,puVar6,0,(message->arg0).u32,0);
           goto switchD_005dd1c0_default;
         }
         if (g_int_00811764 == (int *)0x0) {
           DAT_00811768 = '\0';
-          (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,0x301,puVar6,(int *)0x0,0,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x301,puVar6,0,0,0);
           goto switchD_005dd1c0_default;
         }
         if ((*(byte *)(g_int_00811764 + 1) & 1) == 0) {
           DAT_0080877e = 0;
           (message->arg0).u32 = 0;
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x30d,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x30d,puVar6,0,message,0);
           goto switchD_005dd1c0_default;
         }
         DAT_0080877e = 1;
@@ -137,8 +137,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x30d,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x30d,puVar6,0,message,0);
           goto switchD_005dd1c0_default;
         }
         if (SVar1 == MESS_SHARED_610A) {
@@ -146,8 +146,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x30e,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x30e,puVar6,0,message,0);
           goto switchD_005dd1c0_default;
         }
         if (SVar1 != MESS_SHARED_611F) goto switchD_005dd1c0_default;
@@ -155,8 +155,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           sub_006E56B0(local_8,local_8->field_0020);
         }
       }
-      (*this_00->vtable->CreateObject)
-                ((SystemClassTy *)this_00,0x305,&this_00->field_0020,(int *)0x0,message,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)this_00->vtable->field_0008)(0x305,&this_00->field_0020,0,message,0);
     }
   }
   else {
@@ -168,32 +168,32 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x30b,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x30b,puVar6,0,message,0);
           break;
         case MESS_STAPPC_6122:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x307,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x307,puVar6,0,message,0);
           break;
         case MESS_STAPPC_6123:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x308,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x308,puVar6,0,message,0);
           break;
         case MESS_STARTSYSTEMTY_6124:
           puVar6 = &local_8->field_0020;
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
-          (*this_00->vtable->CreateObject)
-                    ((SystemClassTy *)this_00,0x30c,puVar6,(int *)0x0,message,0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this_00->vtable->field_0008)(0x30c,puVar6,0,message,0);
         }
         goto switchD_005dd1c0_default;
       }
@@ -216,7 +216,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
       }
       local_48[3] = 2;
       local_48[2] = iVar3;
-      (*this_00->vtable->vfunc_18)(local_48);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)this_00->vtable->field_0018)(local_48);
     }
   }
 switchD_005dd1c0_default:
