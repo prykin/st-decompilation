@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -25,31 +27,28 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   AnonPointee_FSGSTy_1AC0 *pAVar14;
   uint *puVar15;
   int iVar16;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   ccFntTy *this_02;
   ccFntTy *this_03;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined1 uVar17;
   byte bVar18;
   undefined4 local_450 [256];
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar16 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d,0,iVar4,
                                 &DAT_007a4ccc,s_FSGSTy__InitFSGS_007cbff8);
     if (iVar16 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d);
     return;
@@ -108,6 +107,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1A77 = pcVar9;
   pcVar9->field_007E = 1;
   *(undefined2 *)&pcVar9->field_0x9e = 0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   this_02 = (ccFntTy *)CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_007c6ff0);
   pcVar9->field_0x9e = DAT_007c6ff0;
   puVar10 = ccFntTy::operator(this_02,0x19d,g_cMf32_00806780,s_FSGS_NB_007cc070,0);
@@ -121,6 +121,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
   iVar4 = 1;
   uVar12 = FUN_006b4fe0(this_01->field_005D);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   pAVar13 = (AnonPointee_FSGSTy_1A97 *)
             FUN_006b50c0(0x24d,0x59,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar12,puVar10,
                          iVar4);
@@ -152,6 +153,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   iVar4 = 1;
   puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
   uVar12 = FUN_006b4fe0(this_01->field_005D);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   pAVar14 = (AnonPointee_FSGSTy_1AC0 *)
             FUN_006b50c0(0x1b8,0x106,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar12,puVar10,
                          iVar4);
@@ -164,6 +166,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   FUN_006b3af0(DAT_008075a8,*puVar10);
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1B28,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1B28 + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
   this_01->field_1B30 = 0;
   if (this_01->field_1B2C != 0xffffffff) {
@@ -171,6 +174,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1BB9,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1BB9 + 4))(DAT_00806784,7,0,s_MM_SLDDN_007cc040,0xffffffff);
   this_01->field_1BC1 = 0;
   if (this_01->field_1BBD != 0xffffffff) {
@@ -178,6 +182,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1C4A,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1C4A + 4))(DAT_00806784,7,0,s_MM_SLDT_007cc034,0xffffffff);
   this_01->field_1C52 = 0;
   if (this_01->field_1C4E != 0xffffffff) {
@@ -185,6 +190,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1CDB,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1CDB + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
   this_01->field_1CE3 = 0;
   if (this_01->field_1CDF != 0xffffffff) {
@@ -192,6 +198,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1D6C,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1D6C + 4))(DAT_00806784,7,0,s_MM_SLDDN_007cc040,0xffffffff);
   this_01->field_1D74 = 0;
   if (this_01->field_1D70 != 0xffffffff) {
@@ -199,6 +206,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1DFD,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1DFD + 4))(DAT_00806784,7,0,s_MM_SLDT_007cc034,0xffffffff);
   this_01->field_1E05 = 0;
   if (this_01->field_1E01 != 0xffffffff) {

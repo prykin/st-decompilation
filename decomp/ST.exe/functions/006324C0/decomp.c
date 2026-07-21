@@ -12,7 +12,7 @@ FUN_006324c0(void *this,Global_sub_006324C0_param_1Enum param_1,
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   thunk_FUN_00632030(param_2,&param_2,&local_8,&local_c,&local_10);
   switch(param_1) {
   case CASE_0:

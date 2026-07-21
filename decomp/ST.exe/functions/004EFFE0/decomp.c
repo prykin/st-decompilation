@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldlab.cpp
@@ -14,8 +16,6 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   int iVar6;
   byte *pbVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar9;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -23,7 +23,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   BldLabPanelTy *local_10;
   uint local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
-  
+
   piVar2 = param_1->field_0018;
   local_18 = *piVar2 - this->field_003C;
   if (this->field_005C == 0) {
@@ -38,10 +38,12 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
     local_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
   }
   else {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar1) (runtime stride) */
     local_8 = (Global_sub_00526BA0_param_1Enum *)(pDVar3->elementSize * uVar1 + (int)pDVar3->data);
   }
   local_10 = this;
   if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = (int)*(short *)(this->field_0188 + 0x23) - 1;
   }
   else {
@@ -49,7 +51,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pBVar5 = local_10;
   if (iVar6 == 0) {
     if ((local_8 == (Global_sub_00526BA0_param_1Enum *)0x0) || ((char)local_8[2] == 0)) {
@@ -76,9 +78,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   iVar8 = ReportDebugMessage(s_E____titans_Andrey_bldlab_cpp_007c18b4,0x66,0,iVar6,&DAT_007a4ccc,
                              s_BldLabPanelTy__PaintUpdBut_007c1944);
   if (iVar8 != 0) {
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Andrey_bldlab_cpp_007c18b4,0x66);
   return;

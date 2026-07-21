@@ -4,7 +4,7 @@ int __cdecl FUN_006a3ae0(int param_1)
 {
   int iVar1;
   int *piVar2;
-  
+
   iVar1 = 0;
   piVar2 = &DAT_007dfaf0;
   do {

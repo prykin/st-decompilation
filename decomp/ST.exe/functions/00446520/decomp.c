@@ -1,15 +1,19 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DeleteGuardBoat
-   
+
    [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0044EE30 -> 00446520 @ 0045A2BF | 0044EE30 -> 00446520 @ 0045A2D4 | 0044EE30 ->
    00446520 @ 0045AAC8 | 0044EE30 -> 00446520 @ 0045AADD | 0045EF00 -> 00446520 @ 0045EF2A |
-   00490E00 -> 00446520 @ 00490E46 */
+   00490E00 -> 00446520 @ 00490E46
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=00446526 MOVSX EAX,byte ptr [EBP + 0x8] */
 
 void __thiscall
-STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,int param_3)
+STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,int param_3)
 
 {
   dword dVar1;
@@ -19,11 +23,9 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   STBoatC *pSVar4;
   int iVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   uint uVar7;
   DArrayTy *array;
   uint uVar8;
-  void *unaff_EDI;
   InternalExceptionFrame local_68;
   DArrayTy *local_24;
   DArrayTy *local_20;
@@ -33,12 +35,12 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   undefined4 local_10;
   dword local_c;
   uint local_8;
-  
+
   local_68.previous = g_currentExceptionFrame;
-  local_18 = g_playerRuntime[(char)param_1].pgPairs;
+  local_18 = g_playerRuntime[param_1].pgPairs;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   array = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -46,9 +48,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
       iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x296d,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__DeleteGuardBoat_007a83b8);
       if (iVar5 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x296e);
     }
@@ -71,7 +71,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
           do {
             DArrayGetElement(local_20,uVar7,&local_8);
             if ((short)local_8 == param_2) {
-              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_20,uVar7);
+              FUN_006b0c70(local_20,uVar7);
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,CASE_1);
               local_10 = PTR_00802a38->field_00E4;
               STBoatC::CmdToObj(pSVar4,CASE_21,&local_10);
@@ -85,7 +85,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
             DArrayDestroy(local_24);
             DArrayDestroy(local_20);
             DArrayDestroy(local_1c);
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_18,uVar6);
+            FUN_006b0c70(local_18,uVar6);
             local_c = local_c - 1;
           }
           break;
@@ -95,7 +95,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
       } while ((int)uVar6 < (int)local_c);
     }
     if (local_c == 0) {
-      DeletePGPairs(local_14,(char)param_1);
+      DeletePGPairs(local_14,param_1);
       g_currentExceptionFrame = local_68.previous;
       return;
     }
@@ -111,7 +111,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
           do {
             DArrayGetElement(local_24,uVar7,&local_8);
             if ((short)local_8 == param_2) {
-              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_24,uVar7);
+              FUN_006b0c70(local_24,uVar7);
               break;
             }
             uVar7 = uVar7 + 1;
@@ -129,9 +129,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
                                            &DAT_007a4ccc,s_STAllPlayersC__DeleteGuardBoat_N_007a83e0
                                           );
                 if (iVar3 != 0) {
-                  pcVar2 = (code *)swi(3);
-                  (*pcVar2)();
-                  return;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
               }
               else {
@@ -144,7 +142,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
           DArrayDestroy(local_24);
           DArrayDestroy(local_20);
           DArrayDestroy(local_1c);
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_18,uVar6);
+          FUN_006b0c70(local_18,uVar6);
           local_c = local_c - 1;
           uVar6 = uVar6 - 1;
         }
@@ -153,13 +151,13 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
       } while ((int)uVar6 < (int)local_c);
     }
     if (local_c == 0) {
-      DeletePGPairs(local_14,(char)param_1);
+      DeletePGPairs(local_14,param_1);
       g_currentExceptionFrame = local_68.previous;
       return;
     }
   }
   this_00 = local_14;
-  OptimizeGuardBoats(local_14,(char)param_1);
+  OptimizeGuardBoats(local_14,param_1);
   DistributeGuardBoats(this_00,param_1);
   g_currentExceptionFrame = local_68.previous;
   return;

@@ -10,7 +10,7 @@ void __thiscall FUN_0069ece0(void *this,int param_1,int param_2)
   int local_19c [100];
   int local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_19c[0] = 0x3f2;
   local_19c[1] = 0x3ed;

@@ -5,7 +5,7 @@ undefined4 FUN_006cfd90(byte *param_1,int param_2,int param_3)
   byte *pbVar1;
   uint uVar2;
   uint uVar3;
-  
+
   if (param_3 < 1) {
     pbVar1 = param_1 + (param_1[0xd] >> 1 & 0xe) + 0x16;
   }

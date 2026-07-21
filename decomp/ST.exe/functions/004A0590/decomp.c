@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::Scout
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 004A0590 returns return of STGroupBoatC::Way3DGrpGetDistrPoint @ 004A0681 */
 
@@ -19,9 +21,6 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   uint uVar7;
   int iVar8;
   uint *puVar9;
-  undefined4 extraout_ECX;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar10;
   uint uVar11;
   InternalExceptionFrame local_80;
@@ -44,13 +43,14 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   DArrayTy *local_10;
   uint local_c;
   uint local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8 = *(uint *)(this->field_0029 + 0xc);
   local_14 = (uint *)0x2;
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_18 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   pSVar4 = local_18;
   if (iVar5 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
@@ -96,9 +96,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar4->field_0024),local_c
-                                ,CASE_1);
+                               (g_sTAllPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -127,8 +125,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)(local_c >> 8),pSVar4->field_0024),local_c,CASE_1);
+                               (g_sTAllPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -154,9 +151,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       iVar8 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd46,0,iVar5,&DAT_007a4ccc
                                  ,s_STGroupBoatC__Scout_007ac178);
       if (iVar8 != 0) {
-        pcVar3 = (code *)swi(3);
-        puVar9 = (uint *)(*pcVar3)();
-        return puVar9;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar5,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd47);
       return (uint *)0xffffffff;

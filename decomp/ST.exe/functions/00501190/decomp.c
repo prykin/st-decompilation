@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
@@ -12,19 +14,17 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   int iVar4;
   byte *pbVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   InternalExceptionFrame local_58;
   uint local_14;
   CPanelTy *local_10;
   uint local_c;
   uint local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pCVar2 = local_10;
   if (iVar4 == 0) {
     iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02B2,0);
@@ -39,10 +39,12 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4 + 3 + (local_8 & 0xff) * 4,
                0x53,'\x01',pbVar5);
         bVar3 = (byte)local_8 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar3);
       } while (bVar3 < (byte)pCVar2->field_0BB6);
     }
     uVar7 = local_8 & 0xff;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = CONCAT31(local_c._1_3_,(byte)local_8);
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB7 + uVar7) {
@@ -51,11 +53,13 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',
                pbVar5);
         bVar3 = (byte)local_c + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = CONCAT31(local_c._1_3_,bVar3);
         uVar7 = (uint)bVar3;
       } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB7 + local_14));
     }
     uVar7 = local_c & 0xff;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8._0_1_ = (byte)local_c;
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB5 + uVar7) {
@@ -63,6 +67,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',
                pbVar5);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8._0_1_ = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
       } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB5 + local_14));
@@ -74,9 +79,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x32,0,iVar4,&DAT_007a4ccc,
                              s_CPanelTy__PaintBCapacity_007c2568);
   if (iVar6 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x32);
   return;

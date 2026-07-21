@@ -5,7 +5,7 @@ void __thiscall FUN_00585890(void *this,int param_1,int param_2,uint param_3)
   short sVar1;
   int soundId;
   SoundPosition local_10;
-  
+
   if (DAT_0080874d == param_3) {
     if (DAT_0080874e == '\x01') {
       soundId = 0xa7;

@@ -5,7 +5,7 @@ char __cdecl FUN_0052a890(AnonShape_0052A890_F679384E *param_1)
   AnonNested_0052A890_0014_9BCDCE5B *pAVar1;
   char cVar2;
   bool bVar3;
-  
+
   cVar2 = '\0';
   bVar3 = false;
   pAVar1 = param_1->field_0014;

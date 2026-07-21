@@ -2,11 +2,14 @@
 void FUN_00754af0(AnonShape_00754AF0_86EFDBFA *param_1,int param_2,uint param_3)
 
 {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_2 + 0xe) == 8) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(param_2 + 0x20) == 0) {
       param_1->field_0058 = 0x100;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       param_1->field_0058 = *(int *)(param_2 + 0x20);
     }
     param_1->field_004C = 1;

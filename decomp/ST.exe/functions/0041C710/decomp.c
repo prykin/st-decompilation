@@ -8,12 +8,14 @@ undefined4 __fastcall FUN_0041c710(int param_1)
   int iVar4;
   int local_c;
   int local_8;
-  
+
   pVVar2 = g_visibleClass_00802A88;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x2c) == 0) {
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = (int)*(short *)(param_1 + 0x5f);
     if (DAT_0080874d == -1) {
       return 1;
@@ -21,6 +23,7 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                        (int)*(short *)(param_1 + 0x5b),(int)*(short *)(param_1 + 0x5d),&local_8,
                        &local_c);
@@ -52,7 +55,9 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = (int)*(short *)(param_1 + 0x5f);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                               (int)*(short *)(param_1 + 0x5b),(int)*(short *)(param_1 + 0x5d),
@@ -63,7 +68,9 @@ undefined4 __fastcall FUN_0041c710(int param_1)
             (*(char *)(iVar4 * pVVar2->field_0030 + pVVar2->field_004C + local_c) != '\0')))))) {
       return 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = (int)*(short *)(param_1 + 0x5f);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                             *(short *)(param_1 + 0x5b) + 1,(int)*(short *)(param_1 + 0x5d),&local_c,
@@ -75,7 +82,9 @@ undefined4 __fastcall FUN_0041c710(int param_1)
          (*(char *)(iVar4 * pVVar3->field_0030 + pVVar3->field_004C + local_c) != '\0')))))) {
       return 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = (int)*(short *)(param_1 + 0x5f);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                              (int)*(short *)(param_1 + 0x5b),*(short *)(param_1 + 0x5d) + 1,&local_c
@@ -88,6 +97,7 @@ undefined4 __fastcall FUN_0041c710(int param_1)
         (*(char *)(iVar4 * pVVar2->field_0030 + pVVar2->field_004C + local_c) != '\0')))) {
       return 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = (int)*(short *)(param_1 + 0x5f);
     if (DAT_0080874d == -1) {
       return 1;
@@ -95,6 +105,7 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                        *(short *)(param_1 + 0x5b) + 1,*(short *)(param_1 + 0x5d) + 1,&local_c,
                        &local_8);

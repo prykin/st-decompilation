@@ -12,7 +12,7 @@ int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
   int iVar4;
   int iVar5;
   undefined4 *puVar6;
-  
+
   if (0x100 < (int)param_4) {
     param_4 = 0;
   }

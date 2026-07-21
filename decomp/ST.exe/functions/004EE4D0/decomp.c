@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
@@ -13,9 +15,8 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
   char *pcVar4;
   LPSTR pCVar5;
   uint uVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar7;
   undefined1 *puVar8;
   undefined4 uVar9;
@@ -24,20 +25,18 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
   char local_2c [29];
   uint local_f;
   SpecPanelTy *local_8;
-  
+
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_8 = (SpecPanelTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0xf3,0,iVar3,&DAT_007a4ccc
                                ,s_BehPanelTy__GetMessage_007c178c);
     if (iVar7 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar9 = (*pcVar1)();
-      return uVar9;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0xf3);
     return 0xffff;
@@ -54,6 +53,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
       pcVar4 = thunk_FUN_00529590((&this_00[1].field_0x22)[*(ushort *)&param_1->field_0x16],
                                   *(int *)&this_00[1].field_0x1e);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar7);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar3 + 8))(param_1,6,pCVar5,puVar8,uVar9,uVar10);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -71,6 +71,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
       pcVar4 = thunk_FUN_00529590((&this_00[1].field_0x22)[*(ushort *)&param_1->field_0x16],
                                   *(int *)&this_00[1].field_0x1e);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar7);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar3 + 8))(param_1,1,pCVar5,puVar8,uVar9,uVar10);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -84,6 +85,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
       thunk_FUN_0054b630(PTR_00802a30,
                          (uint)(byte)(&this_00[1].field_0x22)[*(int *)&param_1->field_0x14],0);
       this_00->field_0028 = 0xbfff;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)this_00->field_0000)(&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -139,6 +141,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
     return 0;
   default:
     goto switchD_004ee68c_caseD_c0a2;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case 0xc0af:
     uVar6 = CONCAT31((int3)(uVar6 - 0xc09f >> 8),*(char *)&this_00[1].field_002E == '\x03');
     pcVar4 = s_BUT_BLOCK_007c17a8;
@@ -147,6 +150,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,AnonShape_004EE350
     uVar6 = (uint)(*(char *)((int)&this_00[1].field_002E + 1) == '\x03');
     pcVar4 = s_BUT_BHOLD_007c16e8;
     break;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   case 0xc0b1:
     uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[1].field_0x30 == '\x03');
     pcVar4 = s_BUT_BAGR_007c16dc;

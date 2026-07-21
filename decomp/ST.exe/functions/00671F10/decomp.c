@@ -14,8 +14,6 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   int iVar4;
   char *pcVar5;
   float fVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   short *psVar7;
   float10 fVar8;
   int *piVar9;
@@ -30,7 +28,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   int local_10;
   int *local_c;
   float *local_8;
-  
+
   local_18 = (float *)0x0;
   local_8 = (float *)0x0;
   local_c = (int *)0x0;
@@ -38,7 +36,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   local_14 = 0;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (local_8 != (float *)0x0) {
@@ -174,6 +172,7 @@ cf_continue_loop_006721A4:
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x559);
       }
       local_2c = 3;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2b = (float)CONCAT22(local_2b._2_2_,(short)iVar3);
     }
     else {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
 
@@ -11,7 +13,7 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
   char *pcVar7;
   char *pcVar8;
   char local_204 [512];
-  
+
   local_204[0] = '\0';
   if ((param_4 != (byte *)0x0) &&
      (iVar3 = Library::MSVCRT::FUN_007300e0(local_204,0x200,param_4,(undefined4 *)&stack0x00000014),
@@ -54,8 +56,6 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
   if (iVar3 == 0) {
     return param_3;
   }
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

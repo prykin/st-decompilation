@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_006f02d0(int *param_1,int param_2,int param_3,int param_4
   ushort *puVar3;
   int iVar4;
   int iVar5;
-  
+
   if (param_1 == (int *)0x0) {
     return 0;
   }

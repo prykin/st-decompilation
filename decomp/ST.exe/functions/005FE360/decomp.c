@@ -1,6 +1,9 @@
 
+/* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
+   width=/short; unmasked_dword_reads=0; evidence=005FE3A0 MOVSX EDI,word ptr [EBP + 0x1c] */
+
 undefined4
-FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,int param_6,
+FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,short param_6,
             short param_7)
 
 {
@@ -8,16 +11,18 @@ FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,in
   int iVar2;
   int iVar3;
   int iVar4;
-  
-  param_1[7] = (short)param_6;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_0000001a;
+
+  param_1[7] = param_6;
   param_1[2] = param_4;
   param_1[8] = param_7;
   *param_1 = (short)param_2;
   param_1[1] = (short)param_3;
   *(int *)(param_1 + 0xc) = (int)(short)param_5 - (int)(short)param_2;
   param_1[6] = (short)param_5;
-  *(int *)(param_1 + 0xe) = (int)(short)param_6 - (int)(short)param_3;
-  iVar2 = FUN_006aced8(param_2,param_3,param_5,param_6);
+  *(int *)(param_1 + 0xe) = (int)param_6 - (int)(short)param_3;
+  iVar2 = FUN_006aced8(param_2,param_3,param_5,_param_6);
   *(int *)(param_1 + 0x10) = iVar2;
   param_1[0x12] = 0x11;
   param_1[0x13] = 0;

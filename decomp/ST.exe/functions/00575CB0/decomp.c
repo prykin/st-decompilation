@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -16,6 +18,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
   int iVar7;
   int iVar8;
   BOOL BVar9;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX;
   DArrayTy *array;
   byte *pbVar10;
@@ -25,11 +28,9 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
   uint uVar14;
   undefined4 uVar15;
   STAlgaC *pSVar16;
-  undefined4 unaff_ESI;
   undefined4 *puVar17;
   AnonShape_00575CB0_0408A0C4 *pAVar18;
   int *piVar19;
-  void *unaff_EDI;
   char *pcVar20;
   int iVar21;
   undefined4 *puVar22;
@@ -62,20 +63,18 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
   AnonShape_00575CB0_065D0A66 *local_10;
   uint local_c;
   AnonShape_00575CB0_0408A0C4 *local_8;
-  
+
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_2c = this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   pSVar16 = local_2c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a4.previous;
     iVar21 = ReportDebugMessage(s_E____titans_Object_To_alga_cpp_007cab24,0x196,0,iVar8,
                                 &DAT_007a4ccc,s_STAlgaC__GetMessage_007cab0c);
     if (iVar21 != 0) {
-      pcVar4 = (code *)swi(3);
-      iVar8 = (*pcVar4)();
-      return iVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,s_E____titans_Object_To_alga_cpp_007cab24,0x197);
     return iVar8;
@@ -104,12 +103,14 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
       puVar17 = puVar17 + 1;
       puVar22 = puVar22 + 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_20 = *(AnonShape_0060EA30_DCEB68AD **)(param_1->field_0014 + 0x14);
     local_10 = (AnonShape_00575CB0_065D0A66 *)(param_1->field_0014 + 0x18);
     BVar9 = IsBadReadPtr(local_10,(int)local_20 * 0x92);
     if (BVar9 != 0) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,s_E____titans_Object_To_alga_cpp_007cab24,0x66);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       return extraout_EAX;
     }
     array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x24,10);
@@ -122,6 +123,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
           do {
             uVar13 = local_14->iteratorIndex;
             if (uVar13 < local_14->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_14, uVar13) (runtime stride) */
               piVar19 = (int *)(local_14->elementSize * uVar13 + (int)local_14->data);
               local_14->iteratorIndex = uVar13 + 1;
             }
@@ -175,7 +177,7 @@ LAB_005761a6:
 LAB_005761b9:
           local_e8.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_e8;
-          iVar8 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar8 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
           pAVar5 = local_10;
           if (iVar8 == 0) {
             local_8 = (AnonShape_00575CB0_0408A0C4 *)&local_10->field_0x6;
@@ -520,6 +522,7 @@ LAB_00576308:
           pcVar20 = pcVar20 + 1;
         }
         local_14 = (DArrayTy *)&local_14[1].count;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_10->field_0086 = *(undefined4 *)(local_38 + 0x28);
         *(undefined4 *)&local_10->field_0x8e = 0;
         local_18 = local_18 + 1;

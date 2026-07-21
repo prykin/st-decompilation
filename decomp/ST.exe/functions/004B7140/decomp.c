@@ -3,7 +3,7 @@ int FUN_004b7140(undefined4 param_1,int param_2)
 
 {
   char cVar1;
-  
+
   cVar1 = (char)param_1;
   g_playerRuntime[cVar1].field2108_0x972 = param_2;
   if (param_2 != 0) {

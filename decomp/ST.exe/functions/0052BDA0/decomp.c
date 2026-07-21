@@ -9,7 +9,7 @@ void __thiscall FUN_0052bda0(void *this,char param_1,int param_2)
   uint uVar5;
   uint uVar6;
   uint local_c [2];
-  
+
   if (param_1 == DAT_0080874d) {
     if (DAT_00808a97 != -1) {
       param_2 = DAT_00808a97 - param_2;

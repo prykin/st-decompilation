@@ -1,9 +1,13 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=16;
-   incoming_edx_uses=6 */
+   incoming_edx_uses=6
+   [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (3), none consume AL/AX, and every RET path defines full EAX; sites=00479600 @ 004797DA
+   -> CMP CMP EAX,0x1 | 00479600 @ 00479B2B -> CMP CMP EAX,0x1 | 00479600 @ 00479D79 -> CMP CMP
+   EAX,0x1 */
 
-bool __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_2,short *param_3)
+int __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_2,short *param_3)
 
 {
   short sVar1;
@@ -15,7 +19,7 @@ bool __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_
   int iVar7;
   int local_c;
   int local_8;
-  
+
   local_c = 1000000;
   local_8 = 0;
   do {
@@ -29,7 +33,7 @@ bool __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_
         *param_1 = this->field_0639 + sVar2;
         *param_2 = this->field_063B + sVar6;
         *param_3 = this->field_063D + 1;
-        return true;
+        return 1;
       }
       sVar1 = this->field_063D + 1;
       sVar5 = sVar6 + this->field_063B;
@@ -53,7 +57,7 @@ bool __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_
     } while (iVar7 < 2);
     local_8 = local_8 + 1;
     if (1 < local_8) {
-      return local_c != 1000000;
+      return (uint)(local_c != 1000000);
     }
   } while( true );
 }

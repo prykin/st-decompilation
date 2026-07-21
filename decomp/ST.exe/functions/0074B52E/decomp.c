@@ -5,7 +5,7 @@ undefined4 FUN_0074b52e(AnonShape_0074B52E_469E30A2 *param_1,undefined4 *param_2
   undefined4 uVar1;
   uint uVar2;
   undefined8 uVar3;
-  
+
   if (param_2 == (undefined4 *)0x0) {
     uVar1 = 0x80004003;
   }

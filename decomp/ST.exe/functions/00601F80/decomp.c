@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_dest.cpp
@@ -13,21 +15,20 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
   undefined4 *puVar4;
   int iVar5;
   undefined4 uVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar7;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   AnonShape_00602BE0_B1CC517D *local_8;
-  
+
   local_8 = (AnonShape_00602BE0_B1CC517D *)this;
   iVar3 = STSprGameObjC::GetMessage((STSprGameObjC *)this,param_1);
   if (iVar3 != 0xffff) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     this_00 = local_8;
     if (iVar3 == 0) {
       uVar1 = param_1->field_0010;
@@ -110,6 +111,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
                  (thunk_FUN_004ad310((STT3DSprC *)&local_8->field_0x1d5),
                  this_00->field_0x3a5 != '\0')) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)
                 ) {
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           STAllPlayersC::UnRegisterBlot
                     (g_sTAllPlayers_007FA174,
                      CONCAT22(extraout_var,*(undefined2 *)&this_00->field_0x32),
@@ -125,6 +127,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
       }
       else if (uVar1 == 0x113) {
         if (-1 < (int)local_8->field_039B) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)&local_8->field_0x1d5)();
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -143,9 +146,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
     iVar5 = ReportDebugMessage(s_E____titans_nick_to_dest_cpp_007ced34,0x95,0,iVar3,&DAT_007a4ccc,
                                s_STDestC__GetMessage_007ced58);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar6 = (*pcVar2)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_dest_cpp_007ced34,0x97);
   }

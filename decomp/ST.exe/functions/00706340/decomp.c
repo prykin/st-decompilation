@@ -19,7 +19,7 @@ void FUN_00706340(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   byte *pbVar11;
   uint local_c;
   uint local_8;
-  
+
   _DAT_00857000 = 1;
   pbVar5 = param_5;
   do {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -18,7 +20,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
   array = (DArrayTy *)g_playerRuntime[*(int *)&this->field_0x24].field479_0x2e7;
   array_00 = g_playerRuntime[*(int *)&this->field_0x24].objects;
   if (array != (DArrayTy *)0x0) {
@@ -33,9 +35,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
             iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5221,0,0,
                                        &DAT_007a4ccc,s_STBoatC__CheckForReplenisher_NUL_007abbf4);
             if (iVar3 != 0) {
-              pcVar2 = (code *)swi(3);
-              uVar4 = (*pcVar2)();
-              return uVar4;
+              STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

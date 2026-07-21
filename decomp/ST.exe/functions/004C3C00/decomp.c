@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bfire.cpp
@@ -20,8 +22,6 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   int iVar11;
   uint uVar12;
   short sVar13;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   TLOBaseTyVTable **ppTVar14;
   int iVar15;
   bool bVar16;
@@ -57,13 +57,13 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   TLOBaseTyVTable **local_10;
   short local_a;
   STFishC *local_8;
-  
+
   local_8 = (STFishC *)0x0;
   local_20 = (STFishC *)0x0;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_60 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_60;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
@@ -73,20 +73,21 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
       RaiseInternalException(iVar7,0,s_E____titans_Artem_TLO_bfire_cpp_007ac910,0x127);
       return iVar7;
     }
-    pcVar4 = (code *)swi(3);
-    iVar7 = (*pcVar4)();
-    return iVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   ppTVar14 = &local_60->vtable + param_1 * 0x20;
   *(undefined4 *)((int)ppTVar14 + 0x28d) = 0;
   *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar14 + 0x291) = (AnonPointee_TLOBaseTy_0291 *)0x0;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_2c = CONCAT22(local_2c._2_2_,local_60->field_0041);
   }
   if (&stack0x00000000 != (undefined1 *)0x34) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_34 = CONCAT22(local_34._2_2_,local_60->field_0043);
   }
   if (&stack0x00000000 != (undefined1 *)0x30) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_30 = CONCAT22(local_30._2_2_,local_60->field_0045);
   }
   local_10 = ppTVar14;
@@ -108,6 +109,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                  iVar8 = FUN_006aced8(iVar15,iVar7,iVar8,*(int *)&this_00->field_0x5b4),
                  iVar8 <= local_58)) {
                 local_24 = iVar8 / 3;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (3 < *(int *)((int)local_10 + 0x281)) {
                   local_24 = 5;
                 }
@@ -147,6 +149,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                         uVar12 = (int)uVar9 >> 0x1f;
                         iVar7 = local_18;
                         iVar15 = local_28;
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         if ((int)(((uVar9 ^ uVar12) - uVar12) * 10) / iVar8 <=
                             *(int *)((int)local_10 + 0x281)) {
                           *(undefined4 *)((int)local_10 + 0x295) = PTR_00802a38->field_00E4;
@@ -162,6 +165,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                                                 * 4) >> 0x1f;
                           iVar7 = local_18;
                           iVar15 = local_28;
+                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((int)((*(uint *)(&DAT_007be8c8 +
                                               (*(int *)&this_00->field_0x259 / 0xf + iVar8 * 0x18) *
                                               4) ^ uVar9) - uVar9) <=
@@ -169,6 +173,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                             iVar11 = param_1 + this_00->field_0235 * 2;
                             if ((&DAT_00792ca0)[iVar11 * 3] == 0xb0) {
                               if (iVar8 % 3 == 0) {
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004c4080:
                                 if (((*(uint *)((int)local_10 + 0x265) & 2) != 0) &&
                                    (local_8->field_0018 == *(int *)((int)local_10 + 0x26d))) {
@@ -181,6 +186,7 @@ LAB_004c4080:
                                 }
                                 iVar7 = local_18;
                                 iVar15 = local_28;
+                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                 if ((*(uint *)((int)local_10 + 0x265) & 1) != 0) {
                                   if (this_00->field_0420 == 0) {
                                     if ((*(uint *)&local_8->field_0x24 < 8) &&
@@ -189,7 +195,9 @@ LAB_004c4080:
                                          < 8)))) {
                                       bVar1 = local_8->field_0x24;
                                       bVar2 = this_00->field_0x24;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       _local_50 = CONCAT31(uStack_4f,bVar1);
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       _local_54 = CONCAT31(uStack_53,bVar2);
                                       if (DAT_00808a8f == '\0') {
                                         if (bVar1 == bVar2) {
@@ -237,6 +245,7 @@ LAB_004c41a5:
                                                            *(int *)&this_00->field_0x5b8,local_28,
                                                            local_18,local_3c);
                                       ppTVar14 = local_10;
+                                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                       if (*(int *)((int)local_10 + 0x269) == 0) {
                                         iVar11 = *(int *)&local_8->field_0x215;
                                       }
@@ -268,9 +277,9 @@ LAB_004c41a5:
                                 iVar7 = 0;
                                 do {
                                   puVar10 = (undefined4 *)
-                                            thunk_FUN_0041dc40(local_74,*(undefined4 *)
-                                                                         (&DAT_007932d4 +
-                                                                         iVar7 + iVar11),
+                                            thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)
+                                                                                (&DAT_007932d4 +
+                                                                                iVar7 + iVar11),
                                                                *(undefined2 *)
                                                                 ((int)(&DAT_007932d4 +
                                                                       iVar7 + iVar11) + 4),
@@ -287,6 +296,7 @@ LAB_004c41a5:
                                                       (&DAT_00792ca0)
                                                       [(param_1 + this_00->field_0235 * 2) * 3],
                                                       &local_44,this_00->field_0420);
+                                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                   if ((iVar15 != 0) ||
                                      ((((*(byte *)((int)local_10 + 0x265) & 2) != 0 &&
                                        (local_44 != 0)) &&

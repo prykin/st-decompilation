@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
@@ -9,36 +11,36 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
   code *pcVar1;
   STGroupC *this_00;
   int iVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint *puVar3;
   int iVar4;
   undefined4 uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   undefined2 uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_50;
   int local_c;
   STGroupC *local_8;
-  
+
   uVar7 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17c,0,iVar2,&DAT_007a4ccc,
                                s_STGroupC__GetMessage_007a514c);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17d);
     return 0xffff;
@@ -54,6 +56,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
       puVar3 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,5,2,5,0x4045c5);
       this_00->field_0029 = puVar3;
       local_c = *(int *)(iVar2 + 0x1c);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar6 = extraout_var_01;
       if (0 < local_c) {
         puVar8 = (undefined4 *)(iVar2 + 0x24);
@@ -61,9 +64,11 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
           Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0029,uVar7,puVar8);
           uVar7 = uVar7 + 1;
           puVar8 = puVar8 + 1;
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_var_02;
         } while ((int)uVar7 < local_c);
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterGroup
                 (g_sTAllPlayers_007FA174,this_00->field_0024,CONCAT22(uVar6,this_00->field_0025),
                  (int)this_00);
@@ -71,6 +76,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
     }
     else if (*(uint *)(iVar2 + 0xc) == 2) {
       RestoreGrpData(this_00,iVar2);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::RegisterGroup
                 (g_sTAllPlayers_007FA174,this_00->field_0024,
                  CONCAT22(extraout_var,this_00->field_0025),(int)this_00);
@@ -82,6 +88,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
     thunk_FUN_00423e00(this_00);
     DArrayDestroy((DArrayTy *)this_00->field_0029);
     this_00->field_0029 = 0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterGroup
               (g_sTAllPlayers_007FA174,this_00->field_0024,
                CONCAT22(extraout_var_00,this_00->field_0025),(int)this_00);

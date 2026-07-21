@@ -7,7 +7,7 @@ FUN_006e9000(void *this,int param_1,short param_2,short param_3,undefined4 param
   AnonShape_006E8EA0_96B71903 *pAVar1;
   int iVar2;
   longlong lVar3;
-  
+
   pAVar1 = (AnonShape_006E8EA0_96B71903 *)Library::DKW::LIB::FUN_006aac10(0x2c);
   pAVar1->field_0008 = param_4;
   pAVar1->field_000C = param_5;

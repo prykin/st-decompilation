@@ -7,8 +7,9 @@ void __thiscall FUN_00621780(void *this,uint param_1)
   undefined1 *puVar2;
   uint uVar3;
   SoundPosition local_10;
-  
+
   iVar1 = *(int *)((int)this + 0x10a);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1 < *(uint *)(iVar1 + 0xc)) &&
      (puVar2 = (undefined1 *)(*(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c)),
      puVar2 != (undefined1 *)0x0)) {
@@ -113,7 +114,7 @@ void __thiscall FUN_00621780(void *this,uint param_1)
       break;
     case 8:
       uVar3 = 8;
-      LoadResourceString(0x274a,HINSTANCE_00807618);
+      text = LoadResourceString(0x274a,HINSTANCE_00807618);
       thunk_FUN_0052d320(g_popUp_008016D8,text,uVar3);
       if (DAT_0080874e == '\x01') {
         iVar1 = 0xba;

@@ -39,7 +39,7 @@ FUN_006e6fb0(void *this,AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int par
   int local_10;
   int local_c;
   int local_8;
-  
+
   if ((*(int *)((int)this + 0xa8) < 4) && (*(int *)((int)this + 0x280) != 0)) {
     _DAT_00856d90 = 0;
     _DAT_00856d94 = 0;
@@ -583,6 +583,7 @@ LAB_006e7ff9:
       if ((*(int *)((int)this + 0x3f4) < *(int *)((int)this + 0x3dc) + -1) &&
          (*(int *)((int)this + 0x3f8) < *(int *)((int)this + 0x3fc))) {
         iVar6 = *(int *)((int)this + 0x3f4) + param_3;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)param_1,0,*(int *)((int)this + 0x3f8) + param_2,
                      iVar6,*(int *)((int)this + 0x3fc) + param_2,iVar6,
                      (byte)*(undefined4 *)((int)this + 0x3e4),0xd);
@@ -590,6 +591,7 @@ LAB_006e7ff9:
       if ((0 < *(int *)((int)this + 0x400)) &&
          (*(int *)((int)this + 0x404) < *(int *)((int)this + 0x408))) {
         iVar6 = *(int *)((int)this + 0x400) + param_2;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)param_1,0,iVar6,
                      *(int *)((int)this + 0x404) + param_3,iVar6,
                      *(int *)((int)this + 0x408) + param_3,(byte)*(undefined4 *)((int)this + 0x3e4),
@@ -598,6 +600,7 @@ LAB_006e7ff9:
       if (*(int *)((int)this + 0x40c) < *(int *)((int)this + 0x3dc) + -1) {
         if (*(int *)((int)this + 0x410) < *(int *)((int)this + 0x414)) {
           iVar6 = param_2 + *(int *)((int)this + 0x40c);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)param_1,0,iVar6,
                        *(int *)((int)this + 0x410) + param_3,iVar6,
                        *(int *)((int)this + 0x414) + param_3,

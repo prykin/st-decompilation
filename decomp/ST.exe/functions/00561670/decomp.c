@@ -33,7 +33,7 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_2c = 0;
   if (param_5 < 1) {
     return (undefined4 *)0x0;

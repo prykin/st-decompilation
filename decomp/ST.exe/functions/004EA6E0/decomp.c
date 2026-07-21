@@ -4,7 +4,7 @@ void FUN_004ea6e0(uint param_1,int param_2,int param_3,undefined4 param_4)
 {
   uint uVar1;
   int iVar2;
-  
+
   uVar1 = GetPlayerRaceId(DAT_0080874d);
   uVar1 = uVar1 & 0xff;
   if (uVar1 == 1) {

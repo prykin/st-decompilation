@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
@@ -21,9 +23,8 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   DArrayTy *pDVar11;
   ushort *puVar12;
   uint uVar13;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EDX;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar14;
   InternalExceptionFrame local_80;
   undefined4 local_3c;
@@ -38,14 +39,14 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   int local_10;
   DArrayTy *local_c;
   uint local_8;
-  
+
   local_c = (DArrayTy *)0x0;
   if ((((this->field_0676 != '\0') && (*(int *)&this->field_0x640 != 0xff)) &&
       (this->field_0695 != (DArrayTy *)0x0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
     this_00 = local_20;
     if (iVar4 == 0) {
       iVar4 = local_20->field_0681;
@@ -65,6 +66,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
           if (0 < (int)uVar10) {
             do {
               if (bVar14) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar13) (runtime stride) */
                 psVar5 = (short *)(array->elementSize * uVar13 + (int)array->data);
               }
               else {
@@ -89,17 +91,21 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
             if (0 < *(int *)(iVar4 + 0xc)) {
               do {
                 if (bVar14) {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   piVar6 = (int *)(*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                 }
                 else {
                   piVar6 = (int *)0x0;
                 }
                 piVar6 = (int *)*piVar6;
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 if ((piVar6 != (int *)0x0) && (iVar7 = (**(code **)(*piVar6 + 0xf8))(), iVar7 != 0))
                 {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar7 = (**(code **)(*piVar6 + 0x2c))();
                   pIVar8 = thunk_FUN_00674fb0(iVar7);
                   if ((((uint)pIVar8 & 3) != 0) || (((uint)pIVar8 & 0x630000) != 0)) {
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                     iVar7 = (**(code **)(*piVar6 + 0xd4))();
                     local_14 = local_14 + iVar7;
                   }
@@ -117,6 +123,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
               if (0 < *(int *)(iVar4 + 0xc)) {
                 do {
                   if (bVar14) {
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     puVar9 = (undefined4 *)(*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                   }
                   else {
@@ -130,10 +137,13 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                       *puVar9 = 0;
                       puVar9 = puVar9 + 1;
                     }
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_3c._0_2_ = (undefined2)local_8;
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_3c._2_2_ = (*pSVar1->vtable->vfunc_2C)();
                     thunk_FUN_0067bda0(local_38,pSVar1);
                     local_2c = (*pSVar1->vtable->vfunc_D4)();
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                     uVar10 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                     local_24 = (undefined2)uVar10;
@@ -148,7 +158,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
               thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD,&LAB_004026fd);
               thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)array,&LAB_004029b4);
               thunk_FUN_0067bfd0(this_00,(AnonNested_005F5B80_0169_794156D7 *)array,
-                                 this_00->field_06AD);
+                                 (AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD);
               this_00->field_0689 = 1;
             }
           }
@@ -161,6 +171,7 @@ LAB_0067c61b:
         }
       }
       else {
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar10 = extraout_EDX;
         if ((iVar4 == 0) ||
            (uVar10 = local_20->field_0685 + iVar4, uVar10 <= (uint)local_20->field_06FE)) {
@@ -178,6 +189,7 @@ LAB_0067c61b:
           else {
             array = local_c;
             if (0 < (int)pDVar11->count) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)(this_00->field_06AD + 0xc) < iVar4) {
                 iVar4 = thunk_FUN_0042a990(this_00->field_0x640);
                 local_18 = iVar4;
@@ -188,6 +200,7 @@ LAB_0067c61b:
                     do {
                       uVar10 = local_8;
                       if (bVar14) {
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         puVar9 = (undefined4 *)
                                  (*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                       }
@@ -206,10 +219,13 @@ LAB_0067c61b:
                           *puVar9 = 0;
                           puVar9 = puVar9 + 1;
                         }
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_3c._0_2_ = uVar3;
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_3c._2_2_ = (*pSVar1->vtable->vfunc_2C)();
                         thunk_FUN_0067bda0(local_38,pSVar1);
                         local_2c = (*pSVar1->vtable->vfunc_D4)();
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                         uVar10 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                         local_24 = (undefined2)uVar10;
@@ -225,13 +241,13 @@ LAB_0067c61b:
                 thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD,&LAB_004026fd)
                 ;
               }
-              if (*(int *)(this_00->field_06AD + 0xc) == 0) {
+              if (((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD)->field_000C == 0) {
                 thunk_FUN_0067c110((AnonReceiver_006799B0 *)this_00);
                 array = local_c;
               }
               else {
                 thunk_FUN_0067bfd0(this_00,(AnonNested_005F5B80_0169_794156D7 *)local_c,
-                                   this_00->field_06AD);
+                                   (AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD);
                 array = local_c;
               }
             }
@@ -245,9 +261,7 @@ LAB_0067c61b:
       iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x570,0,iVar4,&DAT_007a4ccc,
                                  s_AiPlrClassTy__Offensive_007d2f2c);
       if (iVar7 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (local_c != (DArrayTy *)0x0) {
         DArrayDestroy(local_c);

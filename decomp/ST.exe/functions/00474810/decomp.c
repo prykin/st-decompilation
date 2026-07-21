@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -8,7 +10,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
 {
   code *pcVar1;
   int iVar2;
-  
+
   if (param_1 == (int *)0x0) {
     sub_00492420(this);
   }
@@ -24,6 +26,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
   if (iVar2 == 2) {
     FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&param_1);
     if ((param_1 != (int *)0x0) && (param_1[6] == this->field_058E)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0xac))(this->field_0018);
       iVar2 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar2 != 0);
@@ -31,9 +34,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f2d,0,0,&DAT_007a4ccc,
                                s_STBoatC__BackLoadObj_LOADOBJ_WAI_007aae70);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar2 = (*pcVar1)();
-      return iVar2;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return -1;
   }

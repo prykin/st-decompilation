@@ -12,13 +12,12 @@ undefined2 * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   STGameObjC *pSVar4;
   int iVar5;
   undefined4 uVar6;
-  undefined4 extraout_ECX;
   uint local_18;
   DArrayTy *local_14;
   dword local_10;
   STAllPlayersC *local_c;
   int local_8;
-  
+
   GVar2 = param_1;
   local_8 = 0;
   local_14 = g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectIds;
@@ -226,9 +225,8 @@ LAB_0044d710:
     do {
       DArrayGetElement(local_14,param_1,&local_18);
       if (((short)local_18 != -1) &&
-         (pSVar4 = STAllPlayersC::GetObjPtr
-                             (local_c,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                              local_18,CASE_1), pSVar4 != (STGameObjC *)0x0)) {
+         (pSVar4 = STAllPlayersC::GetObjPtr(local_c,DAT_0080874d,local_18,CASE_1),
+         pSVar4 != (STGameObjC *)0x0)) {
         if (GVar2 < 0x1001) {
           if (GVar2 == 0x1000) {
 switchD_0044d78f_caseD_28:

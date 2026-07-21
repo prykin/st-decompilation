@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -15,8 +17,6 @@ SettMapMTy::ChgPlList
   int iVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar6;
   char *pcVar7;
   undefined4 local_15c;
@@ -25,18 +25,16 @@ SettMapMTy::ChgPlList
   undefined4 local_150;
   char local_14c [260];
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x1dd,0,errorCode,
                                &DAT_007a4ccc,s_SettMapMTy__ChgPlList_007cd32c);
     if (iVar3 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x1dd);
     return;

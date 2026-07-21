@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
@@ -11,8 +13,6 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   void *this_01;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar4;
   InternalExceptionFrame local_80;
   uint local_3c [2];
@@ -20,7 +20,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   undefined4 local_31;
   DArrayTy *local_2b;
   AiTactClassTy *local_8;
-  
+
   puVar4 = local_3c;
   local_8 = this;
   for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -29,7 +29,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
-  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
     local_3c[1] = local_8->field_012C;
@@ -52,9 +52,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   iVar2 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x2fb,0,iVar3,&DAT_007a4ccc,
                              s_AiTactClassTy__BackFromRepair_007d5850);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x2fc);
   return;

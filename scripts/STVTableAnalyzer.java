@@ -51,6 +51,9 @@ public class STVTableAnalyzer extends GhidraScript {
     private static final int MAX_SLOTS = 128;
     private static final Map<String, String> KNOWN_TABLE_OWNERS = Map.of(
         "007900A0", "STGameObjC",
+        // STGroupBoatC::sub_004232A0 installs this table while constructing its
+        // STGroupC base.  The derived constructor context must not win the owner vote.
+        "00790508", "STGroupC",
         "0079E188", "SystemClassTy"
     );
     private static final Pattern RECOVERED_CONSTRUCTOR_TABLE = Pattern.compile(

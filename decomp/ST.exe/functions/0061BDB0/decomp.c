@@ -15,7 +15,7 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
   int iVar5;
   longlong lVar6;
   undefined4 local_8;
-  
+
   uVar3 = param_4;
   iVar4 = param_3;
   iVar5 = param_2;
@@ -59,6 +59,7 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
       iVar5 = (int)(short)(((short)(iVar5 / 200) + sVar1) -
                           (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006e3310(PTR_00807598,(*(int *)((int)this + 0x9f) * PTR_00807598->field_0380) / 0xc9,
                  (int *)((*(int *)((int)this + 0xa3) * PTR_00807598->field_0380) / 0xc9),iVar5,
                  (int *)&param_1);

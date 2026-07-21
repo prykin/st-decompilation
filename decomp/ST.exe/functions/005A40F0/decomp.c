@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -15,15 +17,15 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
   undefined4 *puVar3;
   int iVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame local_6c;
   undefined4 local_28 [4];
   undefined4 local_18;
   undefined4 local_14;
   FSGSTy *local_8;
-  
+
   this_00 = PTR_00802a30;
   local_8 = this;
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -37,7 +39,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
   if (this->field_1A5F == CASE_9) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
-    iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_01 = local_8;
     if (iVar2 == 0) {
       puVar6 = &local_8->field_1EDB;
@@ -59,7 +61,8 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
         param_4 = (undefined4 *)((int)param_4 + 1);
         puVar3 = (undefined4 *)((int)puVar3 + 1);
       }
-      PaintLadder(this_01,(int)unaff_EDI);
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      PaintLadder(this_01,unaff_EDI);
       puVar6 = local_28;
       for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
         *puVar6 = 0;
@@ -85,9 +88,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
     iVar4 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xb65,0,iVar2,&DAT_007a4ccc
                                ,s_FSGSTy__SetLadder_007cc5c0);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xb65);
   }

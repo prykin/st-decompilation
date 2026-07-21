@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 488 | 491 | 492 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067E580 parameter used as this of cMf32::RecChk @ 0067E5E8 */
 
@@ -15,21 +17,17 @@ LPSTR __cdecl GetAssistantNameDB(cMf32 *param_1)
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1eb,0,iVar2,&DAT_007a4ccc,
                                s_GetAssistantNameDB_007d30b0);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      pCVar3 = (LPSTR)(*pcVar1)();
-      return pCVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1ec);
     return (LPSTR)0x0;

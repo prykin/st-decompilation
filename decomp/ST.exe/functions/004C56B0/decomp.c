@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_004c56b0(void *this,void *param_1)
   int local_10;
   int local_c;
   uint local_8;
-  
+
   sVar5 = 0;
   sVar6 = 0;
   local_8 = 0;

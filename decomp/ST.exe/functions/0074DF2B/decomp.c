@@ -3,7 +3,7 @@ int __thiscall FUN_0074df2b(void *this,int *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 0;
   if (param_1 != (int *)0x0) {
     if (*param_1 == 0) {

@@ -7,7 +7,7 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   short sVar2;
   int iVar3;
   short sVar4;
-  
+
   if ((param_1 < 0) || (4 < param_1)) {
     if ((param_2 != -1) &&
        (((param_3 != -1 && (param_4 != -1)) &&

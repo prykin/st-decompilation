@@ -6,7 +6,8 @@ void __thiscall FUN_006e4c30(void *this,int param_1)
   uint uVar2;
   int iVar3;
   int *piVar4;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = FUN_006e45a0(this,*(int *)(param_1 + 0x14));
   if ((iVar3 != 0) && (*(int *)(iVar3 + 8) != 0)) {
     *(undefined4 *)(*(int *)(iVar3 + 8) + 4) = 0;

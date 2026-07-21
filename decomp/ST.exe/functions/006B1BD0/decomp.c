@@ -7,9 +7,11 @@ uint FUN_006b1bd0(int param_1,uint param_2)
   uint uVar3;
   uint uVar4;
   int iVar5;
-  
+
   uVar3 = 0xfffffffd;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (param_2 < *(uint *)(param_1 + 0x1a0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     puVar1 = *(uint **)(*(int *)(param_1 + 0x1b0) + param_2 * 4);
     if ((*puVar1 & 0x88000) == 0x8000) {
       uVar3 = puVar1[0x13];

@@ -4,7 +4,8 @@ void __cdecl FUN_00668670(int param_1)
 {
   undefined4 *puVar1;
   int iVar2;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(char *)(param_1 + 0x18) != '\0') {
     puVar1 = (undefined4 *)(param_1 + 0x1eb);
     iVar2 = 7;

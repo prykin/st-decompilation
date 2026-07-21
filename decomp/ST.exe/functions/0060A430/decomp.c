@@ -3,7 +3,7 @@ void __thiscall FUN_0060a430(void *this,int param_1)
 
 {
   undefined4 uVar1;
-  
+
   STFieldC::InitSprSistem(this,param_1);
   uVar1 = thunk_FUN_0060a4b0(this);
   *(char *)((int)this + 0x225) = (char)uVar1;

@@ -3,7 +3,7 @@ undefined4 __fastcall FUN_004b9920(AnonShape_004B9920_1D6BF5BA *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = param_1->field_05AC;
   if ((iVar1 == 0x34) || (iVar1 == 0x5b)) {
     thunk_FUN_004de030((int)param_1);

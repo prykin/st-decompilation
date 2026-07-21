@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
   int iVar5;
   int iVar6;
   int iVar7;
-  
+
   if (*(int *)((int)this + 0x18) != -1) {
     if ((-1 < (char)param_1) && ((int)(char)param_1 <= *(int *)((int)this + 0x14) + -1)) {
       iVar7 = (char)param_1 * 0x24;

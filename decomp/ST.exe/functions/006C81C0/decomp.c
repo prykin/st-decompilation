@@ -8,7 +8,7 @@ int * FUN_006c81c0(int param_1,int param_2,int param_3,int param_4,int param_5)
   int iVar4;
   int iVar5;
   int iVar6;
-  
+
   if (param_5 < 1) {
     return (int *)0x0;
   }

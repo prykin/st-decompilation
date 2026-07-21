@@ -42,24 +42,28 @@
    00660691 | 00660700 -> 0042B760 @ 00660874 | 00660910 -> 0042B760 @ 006609CF | 00660A40 ->
    0042B760 @ 00660ADF | 00660B50 -> 0042B760 @ 00660BB0 | 00660B50 -> 0042B760 @ 00660C78 |
    00667D90 -> 0042B760 @ 00667F33
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 0042B760 returns used as this of STGroupBoatC::GetDepotForAttack @ 00462A9B | 0042B760
    returns used as this of STGroupBoatC::GetDepotForAttack @ 00462E01 | 0042B760 returns used as
    this of STGroupBoatC::GetDepotForAttack @ 0046326C | 0042B760 returns used as this of
    STGroupBoatC::GetDepotForAttack @ 004634A7 | 0042B760 returns used as this of
    STGroupBoatC::GetPatrolTask @ 00465943 | 0042B760 returns used as this of
-   STGroupBoatC::GetPatrolTask @ 004659C3 */
+   STGroupBoatC::GetPatrolTask @ 004659C3
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=0042B763 MOVSX EAX,byte ptr [EBP + 0x8] */
 
-STGroupBoatC * FUN_0042b760(uint param_1,uint param_2)
+STGroupBoatC * FUN_0042b760(char param_1,uint param_2)
 
 {
   uint uVar1;
-  
-  uVar1 = (g_playerRuntime[(char)param_1].groups)->count;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined3 in_stack_00000005;
+
+  uVar1 = (g_playerRuntime[param_1].groups)->count;
   if ((uVar1 != 0) && ((param_2 & 0xffff) < uVar1)) {
-    DArrayGetElement(g_playerRuntime[(char)param_1].groups,param_2 & 0xffff,&param_1);
-    return (STGroupBoatC *)param_1;
+    DArrayGetElement(g_playerRuntime[param_1].groups,param_2 & 0xffff,&param_1);
+    return _param_1;
   }
   return (STGroupBoatC *)0x0;
 }

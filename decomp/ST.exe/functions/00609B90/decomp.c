@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_field.cpp
@@ -6,56 +8,56 @@
 undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
 
 {
-  code *pcVar1;
+  dword dVar1;
+  DArrayTy *pDVar2;
+  code *pcVar3;
   STFieldC *this_00;
-  int iVar2;
-  int iVar3;
-  undefined4 uVar4;
-  undefined4 unaff_ESI;
-  uint uVar5;
-  void *unaff_EDI;
+  int errorCode;
+  void *pvVar4;
+  int iVar5;
+  undefined4 uVar6;
+  uint uVar7;
   InternalExceptionFrame local_4c;
   STFieldC *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar2 == 0) {
-    if ((local_8->field_0234 != 0) &&
-       (iVar2 = *(int *)(local_8->field_0234 + 0xc), uVar5 = 0, 0 < iVar2)) {
+  if (errorCode == 0) {
+    if ((local_8->field_0234 != (DArrayTy *)0x0) &&
+       (dVar1 = local_8->field_0234->count, uVar7 = 0, 0 < (int)dVar1)) {
       do {
-        iVar3 = this_00->field_0234;
-        if (uVar5 < *(uint *)(iVar3 + 0xc)) {
-          iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
+        pDVar2 = this_00->field_0234;
+        if (uVar7 < pDVar2->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar7) (runtime stride) */
+          pvVar4 = (void *)(pDVar2->elementSize * uVar7 + (int)pDVar2->data);
         }
         else {
-          iVar3 = 0;
+          pvVar4 = (void *)0x0;
         }
-        if (iVar3 != 0) {
+        if (pvVar4 != (void *)0x0) {
           if ((this_00->field_01F5 == 0x4d) && (param_1 != 0)) {
-            *(undefined4 *)(iVar3 + 4) = 0;
+            *(undefined4 *)((int)pvVar4 + 4) = 0;
           }
-          if (*(int *)(iVar3 + 0x3c) < 0) {
-            LoadImagSpr(this_00,uVar5);
+          if (*(int *)((int)pvVar4 + 0x3c) < 0) {
+            LoadImagSpr(this_00,uVar7);
           }
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < iVar2);
+        uVar7 = uVar7 + 1;
+      } while ((int)uVar7 < (int)dVar1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x208,0,iVar2,&DAT_007a4ccc,
-                             s_STFieldC__InitSprSistem_void__007cf874);
-  if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+  iVar5 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x208,0,errorCode,
+                             &DAT_007a4ccc,s_STFieldC__InitSprSistem_void__007cf874);
+  if (iVar5 != 0) {
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_nick_to_field_cpp_007cf850,0x20a);
+  RaiseInternalException(errorCode,0,s_E____titans_nick_to_field_cpp_007cf850,0x20a);
   return 0xffff;
 }
 

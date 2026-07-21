@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
@@ -18,11 +20,9 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
   undefined4 *puVar8;
   int iVar9;
   uint *puVar10;
-  undefined4 unaff_ESI;
   AnonShape_0067D3B0_A3AACF30 *pAVar11;
   uint *puVar12;
   void **ppvVar13;
-  void *unaff_EDI;
   uint uVar14;
   undefined4 *puVar15;
   uint *puVar16;
@@ -33,17 +33,18 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
   int local_10;
   undefined4 *local_c;
   undefined4 *local_8;
-  
+
   uVar14 = 0;
   local_8 = (undefined4 *)0x0;
   local_10 = 0;
   local_c = (undefined4 *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  piVar3 = (int *)Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  piVar3 = (int *)Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   local_18 = piVar3;
   if (piVar3 == (int *)0x0) {
     local_10 = param_3;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((param_1->field_0x18 == '\x02') && (param_1->field_00C2 != 0)) &&
        (iVar7 = *(int *)(param_1->field_00C2 + 0xc), iVar7 != 0)) {
       local_c = Library::DKW::LIB::FUN_006aac10(iVar7 << 2);
@@ -141,6 +142,7 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
       bVar17 = *(int *)(iVar7 + 0xc) != 0;
       do {
         if (bVar17) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar8 = (undefined4 *)(*(int *)(iVar7 + 8) * local_14 + *(int *)(iVar7 + 0x1c));
         }
         else {
@@ -194,6 +196,7 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
           else {
             ppvVar13 = (void **)0x0;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (((*ppvVar13 != (void *)0x0) && (*(char *)((int)*ppvVar13 + 0x18) == '\0')) &&
              ((local_c[uVar14] != 0 && (*(char *)(local_c[uVar14] + 0x18) == '\x02')))) {
             FreeAndNull(ppvVar13);
@@ -222,6 +225,7 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
         else {
           ppvVar13 = (void **)0x0;
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((((*ppvVar13 != (void *)0x0) && (*(char *)((int)*ppvVar13 + 0x18) == '\0')) &&
             (local_c[uVar14] != 0)) && (*(char *)(local_c[uVar14] + 0x18) == '\x02')) {
           FreeAndNull(ppvVar13);
@@ -247,8 +251,6 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
     RaiseInternalException((int)piVar3,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xdb);
     return (undefined4 *)0x0;
   }
-  pcVar2 = (code *)swi(3);
-  puVar4 = (undefined4 *)(*pcVar2)();
-  return puVar4;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

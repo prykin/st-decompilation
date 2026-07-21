@@ -8,7 +8,7 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
   int *piVar3;
   uint uVar4;
   DArrayTy *pDVar5;
-  
+
   uVar2 = 0xffffffff;
   *param_6 = 0;
   uVar4 = 0;
@@ -17,6 +17,7 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
   if (0 < (int)dVar1) {
     do {
       if (uVar4 < pDVar5->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar4) (runtime stride) */
         piVar3 = (int *)(pDVar5->elementSize * uVar4 + (int)pDVar5->data);
       }
       else {

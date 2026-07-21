@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -14,21 +16,31 @@ STAllPlayersC::FramePick
   int iVar3;
   STGameObjC *pSVar4;
   uint uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_05;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_06;
   undefined4 uVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char playerId;
   short sVar7;
   InternalExceptionFrame local_90;
@@ -48,9 +60,9 @@ STAllPlayersC::FramePick
   DArrayTy *local_18;
   DArrayTy *local_14;
   DArrayTy *local_10;
-  uint local_c;
+  char local_c [4];
   uint local_8;
-  
+
   local_10 = (DArrayTy *)0x0;
   local_18 = (DArrayTy *)0x0;
   local_3c = (DArrayTy *)0x0;
@@ -68,7 +80,7 @@ STAllPlayersC::FramePick
   local_48 = (DArrayTy *)0x0;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
-  iVar2 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_90.previous;
     if (iVar2 == -0x5001fff7) {
@@ -117,9 +129,7 @@ STAllPlayersC::FramePick
       RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0xdd2);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   playerId = (char)param_1;
   GetGObjFromZone2(this,playerId,param_2,param_3,param_4,param_5,(int *)&local_10,(int *)&local_18,
@@ -187,9 +197,7 @@ LAB_004318b5:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa60,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6f58);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -221,9 +229,7 @@ cf_error_exit_004318A9:
           iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa88,0,0,
                                      &DAT_007a4ccc,s_STAllPlayersC__FramePick_GAMETYP_007a6f94);
           if (iVar2 != 0) {
-            pcVar1 = (code *)swi(3);
-            (*pcVar1)();
-            return;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
       }
@@ -232,9 +238,7 @@ cf_error_exit_004318A9:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa8c,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6fd0);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -250,13 +254,14 @@ cf_error_exit_004318A9:
     DArrayGetElement(local_34,0,&local_8);
     local_34->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_34->flags,&local_8);
-    pSVar4 = GetObjPtr(this,0,local_8,CASE_3);
+    pSVar4 = GetObjPtr(this,'\0',local_8,CASE_3);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xa95);
     }
     iVar2 = (int)playerId;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[0][0].objectType;
@@ -265,6 +270,7 @@ cf_error_exit_004318A9:
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
                           ,sVar7);
         if (iVar2 < 1) {
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_error_exit_00431A49:
           AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
                        CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024),local_8
@@ -299,9 +305,7 @@ LAB_00431c38:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xaba,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6e40);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -336,9 +340,7 @@ LAB_00431a3f:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xade,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6ecc);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -346,9 +348,7 @@ LAB_00431a3f:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xae2,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6f0c);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -364,13 +364,14 @@ LAB_00431a3f:
     DArrayGetElement(local_28,0,&local_8);
     local_28->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
-    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_2);
+    pSVar4 = GetObjPtr(this,-1,local_8,CASE_2);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xaeb);
     }
     iVar2 = (int)playerId;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       g_playerRuntime[iVar2].field324_0x203 = 1;
@@ -391,6 +392,7 @@ LAB_00431a3f:
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX;
           if (iVar2 < 1) goto LAB_00431ed1;
           ActivateTV(this,playerId,1,iVar2);
@@ -403,7 +405,9 @@ LAB_00431e9e:
         if (iVar2 < 0) {
 LAB_00431ec7:
           PushTV(playerId,1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_00;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00431ed1:
           uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
           iVar2 = pSVar4->field_0020;
@@ -419,9 +423,7 @@ LAB_00431e77:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb3a,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6dc0);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -436,7 +438,9 @@ LAB_00431e77:
 LAB_00431da2:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_EDX_00;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00431dba:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
             iVar2 = pSVar4->field_0020;
@@ -451,6 +455,7 @@ LAB_00431dba:
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_EDX;
           if (iVar2 < 1) goto LAB_00431dba;
           ActivateTV(this,playerId,1,iVar2);
@@ -472,9 +477,7 @@ LAB_00431d42:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb13,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6e00);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -482,9 +485,7 @@ LAB_00431d42:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb3e,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6e80);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -500,13 +501,14 @@ LAB_00431d42:
     DArrayGetElement(local_30,0,&local_8);
     local_30->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_30->flags,&local_8);
-    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_5);
+    pSVar4 = GetObjPtr(this,-1,local_8,CASE_5);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xb47);
     }
     iVar2 = (int)playerId;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       g_playerRuntime[iVar2].field324_0x203 = 1;
@@ -538,6 +540,7 @@ LAB_004321ca:
         if (iVar2 < 0) {
 LAB_004321f3:
           iVar2 = PushTV(playerId,1);
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004321fd:
           uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
           iVar2 = pSVar4->field_0020;
@@ -553,9 +556,7 @@ LAB_004321a3:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb96,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6cf4);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -570,7 +571,9 @@ LAB_004321a3:
 LAB_004320ce:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_ECX_02;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004320e6:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
             iVar2 = pSVar4->field_0020;
@@ -585,6 +588,7 @@ LAB_004320e6:
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_01;
           if (iVar2 < 1) goto LAB_004320e6;
           ActivateTV(this,playerId,1,iVar2);
@@ -606,9 +610,7 @@ LAB_0043206e:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb6f,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6d34);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -616,9 +618,7 @@ LAB_0043206e:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb9a,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6d74);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -647,7 +647,7 @@ LAB_0043206e:
           }
           PushTV(playerId,1);
 cf_error_exit_0043256B:
-          AddObjToTmp(this,playerId,1,0,param_1,local_8);
+          AddObjToTmp(this,playerId,1,0,playerId,local_8);
         }
         else {
           if (iVar2 != 0) {
@@ -675,9 +675,7 @@ LAB_0043250f:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xbfb,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6c30);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -719,9 +717,7 @@ LAB_004323dc:
           iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xbd1,0,0,
                                      &DAT_007a4ccc,s_STAllPlayersC__FramePick_GAMETYP_007a6c6c);
           if (iVar2 != 0) {
-            pcVar1 = (code *)swi(3);
-            (*pcVar1)();
-            return;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
       }
@@ -741,9 +737,7 @@ LAB_0043240a:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xbff,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6cac);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
 LAB_00432582:
@@ -760,13 +754,14 @@ LAB_00432582:
     DArrayGetElement(local_20,0,&local_8);
     local_20->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,&local_8);
-    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_4);
+    pSVar4 = GetObjPtr(this,-1,local_8,CASE_4);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xc08);
     }
     iVar2 = (int)playerId;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       g_playerRuntime[iVar2].field324_0x203 = 1;
@@ -787,6 +782,7 @@ LAB_00432582:
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_03;
           if (iVar2 < 1) goto LAB_00432895;
           ActivateTV(this,playerId,1,iVar2);
@@ -799,7 +795,9 @@ LAB_00432862:
         if (iVar2 < 0) {
 LAB_0043288b:
           PushTV(playerId,1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_04;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432895:
           uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
           iVar2 = pSVar4->field_0020;
@@ -815,9 +813,7 @@ LAB_0043283b:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc57,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6b64);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -832,7 +828,9 @@ LAB_0043283b:
 LAB_00432766:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_EDX_02;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0043277e:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
             iVar2 = pSVar4->field_0020;
@@ -847,6 +845,7 @@ LAB_0043277e:
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_EDX_01;
           if (iVar2 < 1) goto LAB_0043277e;
           ActivateTV(this,playerId,1,iVar2);
@@ -868,9 +867,7 @@ LAB_00432706:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc30,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6ba4);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -878,9 +875,7 @@ LAB_00432706:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc5b,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6be4);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -896,13 +891,14 @@ LAB_00432706:
     DArrayGetElement(local_38,0,&local_8);
     local_38->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_38->flags,&local_8);
-    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_6);
+    pSVar4 = GetObjPtr(this,-1,local_8,CASE_6);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xc64);
     }
     iVar2 = (int)playerId;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       g_playerRuntime[iVar2].field324_0x203 = 1;
@@ -934,6 +930,7 @@ LAB_00432b8e:
         if (iVar2 < 0) {
 LAB_00432bb7:
           iVar2 = PushTV(playerId,1);
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432bc1:
           uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
           iVar2 = pSVar4->field_0020;
@@ -949,9 +946,7 @@ LAB_00432b67:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xcb3,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6aa4);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -966,7 +961,9 @@ LAB_00432b67:
 LAB_00432a92:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_ECX_06;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432aaa:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
             iVar2 = pSVar4->field_0020;
@@ -981,6 +978,7 @@ LAB_00432aaa:
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_05;
           if (iVar2 < 1) goto LAB_00432aaa;
           ActivateTV(this,playerId,1,iVar2);
@@ -1002,9 +1000,7 @@ LAB_00432a32:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc8c,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6ae0);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -1012,9 +1008,7 @@ LAB_00432a32:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xcb7,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6b1c);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -1030,17 +1024,17 @@ LAB_00432a32:
     DArrayGetElement(local_18,0,&local_8);
     local_18->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_18->flags,&local_8);
-    DArrayGetElement(local_3c,0,&local_c);
+    DArrayGetElement(local_3c,0,local_c);
     local_3c->count = 0;
-    Library::DKW::TBL::FUN_006ae1c0(&local_3c->flags,&local_c);
+    Library::DKW::TBL::FUN_006ae1c0(&local_3c->flags,(undefined4 *)local_c);
     if (g_playerRuntime[playerId].field324_0x203 == 0) {
       iVar2 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
       if (iVar2 == 0) {
 LAB_00432e7f:
-        iVar2 = CheckTmps(playerId,0,0x3c,(char)local_c,local_18,0);
+        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (iVar2 < 1) {
 cf_error_exit_00432EAE:
-          AddObjToTmp(this,playerId,0,0,local_c,local_8);
+          AddObjToTmp(this,playerId,0,0,local_c[0],local_8);
         }
         else {
           ActivateTV(this,playerId,0,iVar2);
@@ -1048,7 +1042,7 @@ cf_error_exit_00432EAE:
         g_playerRuntime[playerId].tempSlots[0][0].objectType = 0x3c;
       }
       else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,0x3c,(char)local_c,local_18,0);
+        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (iVar2 < 1) {
           if (iVar2 < 0) {
             PushTV(playerId,0);
@@ -1061,7 +1055,7 @@ cf_error_exit_00432EAE:
         }
       }
       else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,0x3c,(char)local_c,local_18,0);
+        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (iVar2 < 1) {
           PushTV(playerId,0);
           ResetActivityFromTmp(this,playerId,0,1,0);
@@ -1073,9 +1067,7 @@ cf_error_exit_00432EAE:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xce7,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a69cc);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -1085,7 +1077,7 @@ cf_error_exit_00432EAE:
       iVar2 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
       if (iVar2 == 0) goto LAB_00432e7f;
       if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,0x3c,(char)local_c,local_18,0);
+        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (iVar2 < 0) {
           PushTV(playerId,0);
           goto cf_error_exit_00432EAE;
@@ -1093,7 +1085,7 @@ cf_error_exit_00432EAE:
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,0x3c,(char)local_c,local_18,0);
+        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (iVar2 < 1) {
           PushTV(playerId,0);
           goto cf_error_exit_00432EAE;
@@ -1104,9 +1096,7 @@ cf_error_exit_00432EAE:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd0e,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6a10);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -1114,9 +1104,7 @@ cf_error_exit_00432EAE:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd12,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6a54);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -1132,13 +1120,14 @@ cf_error_exit_00432EAE:
     DArrayGetElement(local_2c,0,&local_8);
     local_2c->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_8);
-    pSVar4 = GetObjPtr(this,0,local_8,CASE_3);
+    pSVar4 = GetObjPtr(this,'\0',local_8,CASE_3);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xd1b);
     }
     iVar2 = (int)playerId;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[0][0].objectType;
@@ -1147,6 +1136,7 @@ cf_error_exit_00432EAE:
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
                           ,sVar7);
         if (iVar2 < 1) {
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_error_exit_00433050:
           AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
                        CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024),local_8
@@ -1181,9 +1171,7 @@ LAB_0043322b:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd40,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6894);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -1222,9 +1210,7 @@ LAB_00433046:
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd66,0,0,&DAT_007a4ccc,
                                    s_STAllPlayersC__FramePick_GAMETYP_007a6930);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
@@ -1232,9 +1218,7 @@ LAB_00433046:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd6a,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6978);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
@@ -1250,24 +1234,22 @@ LAB_00433046:
   DArrayGetElement(local_1c,0,&local_8);
   local_1c->count = 0;
   Library::DKW::TBL::FUN_006ae1c0(&local_1c->flags,&local_8);
-  DArrayGetElement(local_40,0,&local_c);
+  DArrayGetElement(local_40,0,local_c);
   local_40->count = 0;
-  Library::DKW::TBL::FUN_006ae1c0(&local_40->flags,&local_c);
+  Library::DKW::TBL::FUN_006ae1c0(&local_40->flags,(undefined4 *)local_c);
   if (g_playerRuntime[playerId].field324_0x203 != 0) {
     if (g_playerRuntime[playerId].field324_0x203 != 1) {
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xdcb,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a68dc);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       goto cf_error_exit_004334F5;
     }
     iVar2 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
     if (iVar2 < 0x19b) {
       if (iVar2 == 0x19a) {
-        iVar2 = CheckTmps(playerId,1,0x19a,(char)local_c,local_1c,0);
+        iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
         if (0 < iVar2) {
           ActivateTV(this,playerId,1,iVar2);
           goto cf_error_exit_004334F5;
@@ -1282,7 +1264,7 @@ LAB_00433046:
     }
     else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00433363:
-      iVar2 = CheckTmps(playerId,1,0x19a,(char)local_c,local_1c,0);
+      iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
       if (0 < iVar2) {
         ActivateTV(this,playerId,1,iVar2);
         goto cf_error_exit_004334F5;
@@ -1294,9 +1276,7 @@ LAB_00433363:
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd9d,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__FramePick_GAMETYP_007a684c);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     goto cf_error_exit_004334F5;
   }
@@ -1305,7 +1285,7 @@ LAB_00433363:
   iVar2 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
   if (iVar2 < 0x19b) {
     if (iVar2 == 0x19a) {
-      iVar2 = CheckTmps(playerId,1,0x19a,(char)local_c,local_1c,0);
+      iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
       if (-1 < iVar2) {
         ActivateTV(this,playerId,1,iVar2);
         goto cf_error_exit_004334F5;
@@ -1318,7 +1298,7 @@ LAB_00433363:
       goto LAB_0043347c;
     }
 LAB_004333f5:
-    iVar2 = CheckTmps(playerId,1,0x19a,(char)local_c,local_1c,0);
+    iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
     if (iVar2 < 1) goto cf_error_exit_004334DF;
     ActivateTV(this,playerId,1,iVar2);
   }
@@ -1328,21 +1308,19 @@ LAB_0043347c:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xdc7,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__FramePick_GAMETYP_007a6804);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       goto cf_error_exit_004334F5;
     }
 LAB_004334a3:
-    iVar2 = CheckTmps(playerId,1,0x19a,(char)local_c,local_1c,0);
+    iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
     if (0 < iVar2) {
       ActivateTV(this,playerId,1,iVar2);
       goto cf_error_exit_004334F5;
     }
     PushTV(playerId,1);
 cf_error_exit_004334DF:
-    AddObjToTmp(this,playerId,1,0,local_c,local_8);
+    AddObjToTmp(this,playerId,1,0,local_c[0],local_8);
   }
   g_playerRuntime[playerId].tempSlots[1][0].objectType = 0x19a;
 cf_error_exit_004334F5:

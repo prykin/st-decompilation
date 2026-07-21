@@ -18,7 +18,7 @@ void __fastcall FUN_006ebe40(AnonShape_006EBE40_77FE2AA7 *param_1)
   undefined1 *puVar12;
   undefined1 *puVar13;
   undefined1 *puVar14;
-  
+
   puVar11 = param_1->field_000C;
   puVar13 = param_1->field_001C;
   DAT_00856db0 = param_1->field_0028;
@@ -37,6 +37,7 @@ void __fastcall FUN_006ebe40(AnonShape_006EBE40_77FE2AA7 *param_1)
         puVar10 = puVar6;
         puVar11 = puVar12 + 4;
         puVar6 = puVar10 + 8;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar1 = *(undefined1 *)(iVar4 + -0x100 + (uint)CONCAT11(puVar10[2],puVar12[1]));
         *puVar14 = *(undefined1 *)(iVar4 + (uint)CONCAT11(*puVar10,*puVar12));
         uVar2 = puVar10[4];
@@ -44,8 +45,10 @@ void __fastcall FUN_006ebe40(AnonShape_006EBE40_77FE2AA7 *param_1)
         uVar1 = puVar10[6];
         puVar13 = puVar14 + 4;
         uVar3 = puVar12[3];
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         puVar14[2] = *(undefined1 *)(iVar4 + -0x200 + (uint)CONCAT11(uVar2,puVar12[2]));
         iVar9 = iVar8 + -4;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         puVar14[3] = *(undefined1 *)(iVar4 + -0x300 + (uint)CONCAT11(uVar1,uVar3));
         bVar5 = 3 < iVar8;
         iVar8 = iVar9;
@@ -85,6 +88,7 @@ void __fastcall FUN_006ebe40(AnonShape_006EBE40_77FE2AA7 *param_1)
         iVar9 = iVar8;
         puVar11 = puVar12 + 4;
         puVar6 = puVar10 + 8;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar1 = *(undefined1 *)(iVar4 + -0x200 + (uint)CONCAT11(puVar10[2],puVar12[1]));
         *puVar14 = *(undefined1 *)(iVar4 + -0x300 + (uint)CONCAT11(*puVar10,*puVar12));
         uVar2 = puVar10[4];
@@ -92,7 +96,9 @@ void __fastcall FUN_006ebe40(AnonShape_006EBE40_77FE2AA7 *param_1)
         uVar1 = puVar10[6];
         puVar13 = puVar14 + 4;
         uVar3 = puVar12[3];
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         puVar14[2] = *(undefined1 *)(iVar4 + -0x100 + (uint)CONCAT11(uVar2,puVar12[2]));
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         puVar14[3] = *(undefined1 *)(iVar4 + (uint)CONCAT11(uVar1,uVar3));
         iVar8 = iVar9 + -4;
       } while (3 < iVar9);

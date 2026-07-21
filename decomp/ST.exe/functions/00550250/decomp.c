@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
@@ -12,19 +14,17 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
   STPlaySystemC *this_00;
   int errorCode;
   int iVar4;
-  undefined4 unaff_ESI;
   STControlCommand *command;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
   uint local_8;
-  
+
   if ((this->field_003D != (AnonPointee_STPlaySystemC_003D *)0x0) &&
      (this->field_003D->field_0005 != 0)) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_c;
     if (errorCode == 0) {
       local_8 = 0;
@@ -46,9 +46,7 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x819,0,errorCode,
                                &DAT_007a4ccc,s_STPlaySystemC__SendMail_007c8608);
     if (iVar4 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x81a);
   }

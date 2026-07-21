@@ -25,7 +25,7 @@ void FUN_00700190(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   bVar1 = 0;
   _DAT_00857000 = 1;
   pbVar7 = param_6;

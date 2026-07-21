@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
@@ -17,8 +19,6 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   int iVar8;
   int iVar9;
   int iVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar11;
   undefined4 *puVar12;
   uint uVar13;
@@ -54,7 +54,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   int local_10;
   uint local_c;
   int local_8;
-  
+
   puVar12 = local_110;
   local_24 = this;
   for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -68,7 +68,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x29d,0,iVar8,&DAT_007a4ccc
@@ -77,9 +77,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
       RaiseInternalException(iVar8,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x29d);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0054a8d0(PTR_00802a30);
   this_00 = local_24;
@@ -182,6 +180,7 @@ LAB_0050367a:
       local_2c = iVar9 + 1;
 LAB_005036ae:
       bVar4 = (byte)local_c + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = CONCAT31(local_c._1_3_,bVar4);
     } while (bVar4 < 6);
     local_28 = &local_9f8;
@@ -299,6 +298,7 @@ switchD_0050389f_default:
       bVar4 = (byte)local_c + 1;
       local_8 = local_8 + 1;
       local_14 = local_14 + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = CONCAT31(local_c._1_3_,bVar4);
     } while (bVar4 < 4);
   }

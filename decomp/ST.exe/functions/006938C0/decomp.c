@@ -4,7 +4,7 @@ uint __cdecl FUN_006938c0(int param_1)
 {
   uint uVar1;
   int *piVar2;
-  
+
   uVar1 = 0;
   if (DAT_00853d84 != 0) {
     piVar2 = (int *)(DAT_00853d80 + 0x208);

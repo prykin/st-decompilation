@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\generate.cpp
@@ -9,12 +11,9 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   code *pcVar1;
   CGenerate *this_00;
   int iVar2;
-  char *extraout_EAX;
-  uint uVar3;
+  char *pcVar3;
   uint uVar4;
-  undefined4 unaff_ESI;
-  char *pcVar5;
-  void *unaff_EDI;
+  uint uVar5;
   char *pcVar6;
   undefined4 *puVar7;
   char cVar8;
@@ -23,21 +22,19 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   CGenerate *local_10;
   AnonShape_006B5050_99986F91 *local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar2 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0xcd,0,iVar2,&DAT_007a4ccc,
                                s_CGenerate__SaveMap_007d868c);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar2 = (*pcVar1)();
-      return iVar2;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0;
   }
@@ -48,28 +45,27 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   if (iVar2 == 0) {
     local_8 = 0;
   }
-  LoadResourceString(0x232b,HINSTANCE_00807618);
-  uVar3 = 0xffffffff;
-  pcVar5 = extraout_EAX;
+  pcVar3 = LoadResourceString(0x232b,HINSTANCE_00807618);
+  uVar4 = 0xffffffff;
   do {
-    pcVar6 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar6 = pcVar5 + 1;
-    cVar8 = *pcVar5;
-    pcVar5 = pcVar6;
+    pcVar6 = pcVar3;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar6 = pcVar3 + 1;
+    cVar8 = *pcVar3;
+    pcVar3 = pcVar6;
   } while (cVar8 != '\0');
-  uVar3 = ~uVar3;
-  pcVar5 = pcVar6 + -uVar3;
+  uVar4 = ~uVar4;
+  pcVar3 = pcVar6 + -uVar4;
   pcVar6 = &this_00->field_0x55fb;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar3;
+    pcVar3 = pcVar3 + 4;
     pcVar6 = pcVar6 + 4;
   }
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pcVar6 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pcVar6 = *pcVar3;
+    pcVar3 = pcVar3 + 1;
     pcVar6 = pcVar6 + 1;
   }
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TITLE_MISSION_0079d838,&this_00->field_0x55fb,0x104,
@@ -98,8 +94,8 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   puVar9 = (uint *)0x0;
   cVar8 = '\0';
   puVar7 = (undefined4 *)0x0;
-  uVar3 = FUN_006b5050(local_c);
-  cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar3,puVar7,cVar8,
+  uVar4 = FUN_006b5050(local_c);
+  cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar7,cVar8,
                 puVar9);
   if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
     FreeAndNull(&local_c);

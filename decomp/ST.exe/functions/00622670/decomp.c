@@ -6,7 +6,7 @@ void __fastcall FUN_00622670(void *param_1)
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  
+
   local_10 = *(undefined4 *)((int)param_1 + 8);
   *(undefined4 *)((int)param_1 + 0x2ae) = 5;
   local_18 = 0;

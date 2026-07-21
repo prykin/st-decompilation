@@ -11,6 +11,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
 
 {
   ushort uVar1;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
   STGroupBoatC *this_00;
   uint uVar2;
@@ -18,32 +19,38 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
   dword dVar3;
   undefined2 *puVar4;
   STGameObjC *pSVar5;
+  int iVar6;
+  void *pvVar7;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   void *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   void *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   void *extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   void *extraout_ECX_02;
-  void *pvVar6;
+  void *pvVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  undefined4 uVar7;
-  undefined4 extraout_EDX_00;
-  undefined4 extraout_EDX_01;
-  undefined4 extraout_EDX_02;
-  char cVar8;
-  undefined8 uVar9;
+  undefined4 uVar9;
+  char cVar10;
   uint local_8;
-  
+
   local_8 = 0;
-  uVar2 = CONCAT22((short)((uint)in_EAX >> 0x10),*(short *)&this->field_0x7d);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   if ((((*(short *)&this->field_0x7d != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
-      (this_00 = thunk_FUN_0042b760(CONCAT31((int3)(uVar2 >> 8),this->field_0x24),uVar2),
+      (this_00 = thunk_FUN_0042b760(this->field_0x24,
+                                    CONCAT22((short)((uint)in_EAX >> 0x10),
+                                             *(short *)&this->field_0x7d)),
       this_00 != (STGroupBoatC *)0x0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    cVar8 = this->field_0x81;
-    if ((cVar8 < '\0') || ('\a' < cVar8)) {
-      cVar8 = (char)*(undefined4 *)&this->field_0x24;
+    cVar10 = this->field_0x81;
+    if ((cVar10 < '\0') || ('\a' < cVar10)) {
+      cVar10 = (char)*(undefined4 *)&this->field_0x24;
     }
-    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar8 = param_2, '\b' < param_2)))) ||
-       (param_2 = cVar8, uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
-    {
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar10 = param_2, '\b' < param_2)))) ||
+       (param_2 = cVar10, uVar9 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0')
+       ) {
       if (param_1 != 0) {
         uVar2 = STGroupC::GetTOBJQty((STGroupC *)this_00,param_1);
         return uVar2 & 0xffff;
@@ -52,14 +59,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       return (uint)uVar1;
     }
     if (param_1 == 0) {
-      array = (DArrayTy *)thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)this,uVar7);
-      pvVar6 = extraout_ECX;
-      uVar7 = extraout_EDX_00;
+      array = (DArrayTy *)thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)this,uVar9);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      pvVar8 = extraout_ECX;
     }
     else {
-      array = (DArrayTy *)thunk_FUN_0065e360((AnonShape_0065E360_B94C37CB *)this,uVar7,param_1);
-      pvVar6 = extraout_ECX_00;
-      uVar7 = extraout_EDX_01;
+      array = (DArrayTy *)thunk_FUN_0065e360((AnonShape_0065E360_B94C37CB *)this,uVar9,param_1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      pvVar8 = extraout_ECX_00;
     }
     if (array != (DArrayTy *)0x0) {
       dVar3 = array->count;
@@ -67,29 +74,25 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       if (0 < (int)dVar3) {
         do {
           if (uVar2 < dVar3) {
-            pvVar6 = array->data;
-            puVar4 = (undefined2 *)(array->elementSize * uVar2 + (int)pvVar6);
+            pvVar8 = array->data;
+            puVar4 = (undefined2 *)(array->elementSize * uVar2 + (int)pvVar8);
           }
           else {
             puVar4 = (undefined2 *)0x0;
           }
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,
-                              CONCAT31((int3)((uint)uVar7 >> 8),this->field_0x24),
-                              CONCAT22((short)((uint)pvVar6 >> 0x10),*puVar4),CASE_1);
-          pvVar6 = extraout_ECX_01;
-          uVar7 = extraout_EDX_02;
-          if (pSVar5 != (STGameObjC *)0x0) {
-            uVar9 = (*pSVar5->vtable[1].vfunc_24)();
-            uVar7 = (undefined4)((ulonglong)uVar9 >> 0x20);
-            pvVar6 = extraout_ECX_02;
-            if ((int)uVar9 != 0) {
-              uVar9 = (*pSVar5->vtable->vfunc_6C)();
-              uVar7 = (undefined4)((ulonglong)uVar9 >> 0x20);
-              pvVar6 = (void *)(int)param_2;
-              if (pvVar6 == (void *)uVar9) {
-                local_8 = local_8 + 1;
-              }
+                             (g_sTAllPlayers_007FA174,this->field_0x24,
+                              CONCAT22((short)((uint)pvVar8 >> 0x10),*puVar4),CASE_1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          pvVar8 = extraout_ECX_01;
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          if ((pSVar5 != (STGameObjC *)0x0) &&
+             (iVar6 = (*pSVar5->vtable[1].vfunc_24)(), pvVar8 = extraout_ECX_02, iVar6 != 0)) {
+            pvVar7 = (void *)(*pSVar5->vtable->vfunc_6C)();
+            pvVar8 = (void *)(int)param_2;
+            if (pvVar8 == pvVar7) {
+              local_8 = local_8 + 1;
             }
           }
           dVar3 = array->count;

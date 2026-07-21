@@ -31,7 +31,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_8 = 0;
   sVar9 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
@@ -120,6 +120,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
                  ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) {
                 bVar1 = *(byte *)&this[1].vtable;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 param_8 = CONCAT31(param_8._1_3_,bVar1);
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == (byte)param_5) {
@@ -155,6 +156,7 @@ LAB_006375fd:
                    (iVar10 = (*this->vtable[5].slots_00_28[2])(), uVar7 = param_9, iVar10 != 0)) {
                   thunk_FUN_00416270(this,(undefined2 *)((int)&param_4 + 2),
                                      (int *)((int)&param_3 + 2),(int *)&stack0x0000001e);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   iVar10 = FUN_006aced8((int)param_4._2_2_,(int)param_3._2_2_,param_1,param_2);
                   uVar7 = param_9;
                   if (iVar10 < 0x28b) {

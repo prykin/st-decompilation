@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_5 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_5Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
-   
+
    [STSwitchEnumApplier] Switch target param_6 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
@@ -22,7 +22,7 @@ FUN_004248d0(void *this,int param_1,int param_2,int param_3,int param_4,
   short sVar8;
   uint uVar9;
   int iVar10;
-  
+
   sVar8 = (short)param_3;
   sVar4 = sVar8;
   if ((param_5 & CASE_2) != CASE_0) {

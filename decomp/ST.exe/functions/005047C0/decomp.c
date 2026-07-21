@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
@@ -11,21 +13,20 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
   int iVar2;
   byte *pbVar3;
   uint uVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EAX;
   byte bVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   InternalExceptionFrame local_54;
   uint local_10;
   CPanelTy *local_c;
   uint local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
     PaintDamageXY(local_c,local_c->field_0194,param_1 + 0x39,0x65,(uint)(byte)local_c->field_0C33,
@@ -41,6 +42,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
                '\x01',pbVar3);
         bVar5 = (byte)local_8 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar5);
         uVar7 = (uint)bVar5;
         uVar4 = local_10;
@@ -63,11 +65,10 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
   iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x57,0,iVar2,&DAT_007a4ccc,
                              s_CPanelTy__PaintPerRes_007c275c);
   if (iVar6 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x57);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   return extraout_EAX;
 }
 

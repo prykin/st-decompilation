@@ -17,7 +17,7 @@ byte * __thiscall FUN_0062d670(void *this,uint *param_1)
   byte *local_10;
   uint local_c;
   void *local_8;
-  
+
   puVar1 = param_1;
   local_c = 0;
   *(undefined4 *)((int)this + 0xb0) = *(undefined4 *)((int)this + 0xb4);

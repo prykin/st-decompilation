@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
@@ -15,12 +17,12 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   AiTactClassTy *pAVar6;
   char cVar7;
   int iVar8;
-  int iVar9;
+  DArrayTy *pDVar9;
   int iVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
-  uint *puVar11;
-  bool bVar12;
+  void *pvVar11;
+  void *pvVar12;
+  uint *puVar13;
+  bool bVar14;
   InternalExceptionFrame local_88;
   uint local_44 [2];
   char local_3c;
@@ -32,165 +34,168 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   AiTactClassTy *local_10;
   uint local_c;
   uint local_8;
-  
+
   if ((this->field_0091 == 0) ||
      ((uint)(this->field_0095 + this->field_0091) <= (uint)this->field_012C)) {
     this->field_0095 = this->field_012C;
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;
     local_10 = this;
-    iVar8 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar8 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
     pAVar6 = local_10;
     if (iVar8 == 0) {
       local_8 = 0;
-      iVar8 = local_10->field_00BD;
-      if (0 < *(int *)(iVar8 + 0xc)) {
-        bVar12 = *(int *)(iVar8 + 0xc) != 0;
+      pDVar9 = local_10->field_00BD;
+      if (0 < (int)pDVar9->count) {
+        bVar14 = pDVar9->count != 0;
         do {
           uVar4 = uStack_37;
           cVar7 = cStack_3b;
-          if (bVar12) {
-            iVar8 = *(int *)(iVar8 + 8) * local_8 + *(int *)(iVar8 + 0x1c);
+          if (bVar14) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, local_8) (runtime stride) */
+            pvVar12 = (void *)(pDVar9->elementSize * local_8 + (int)pDVar9->data);
           }
           else {
-            iVar8 = 0;
+            pvVar12 = (void *)0x0;
           }
-          cStack_3b = (char)iVar8;
+          cStack_3b = (char)pvVar12;
           cVar3 = cStack_3b;
-          uStack_37 = (undefined1)((uint)iVar8 >> 0x18);
+          uStack_37 = (undefined1)((uint)pvVar12 >> 0x18);
           uVar5 = uStack_37;
           uStack_37 = uVar4;
-          switch(*(undefined4 *)(iVar8 + 0x2c)) {
+          switch(*(undefined4 *)((int)pvVar12 + 0x2c)) {
           case 0:
-            if ((*(int *)(iVar8 + 0x12) == 0) ||
-               ((uint)(*(int *)(iVar8 + 0x3a) + *(int *)(iVar8 + 0x12)) <= (uint)pAVar6->field_012C)
-               ) {
-              iVar9 = pAVar6->field_00A5;
+            if ((*(int *)((int)pvVar12 + 0x12) == 0) ||
+               ((uint)(*(int *)((int)pvVar12 + 0x3a) + *(int *)((int)pvVar12 + 0x12)) <=
+                (uint)pAVar6->field_012C)) {
+              pDVar9 = pAVar6->field_00A5;
               local_c = 0;
-              if (0 < *(int *)(iVar9 + 0xc)) {
-                bVar12 = *(int *)(iVar9 + 0xc) != 0;
+              if (0 < (int)pDVar9->count) {
+                bVar14 = pDVar9->count != 0;
                 cStack_3b = cVar7;
                 do {
-                  if (bVar12) {
-                    iVar9 = *(int *)(iVar9 + 8) * local_c + *(int *)(iVar9 + 0x1c);
+                  if (bVar14) {
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, local_c) (runtime stride) */
+                    pvVar11 = (void *)(pDVar9->elementSize * local_c + (int)pDVar9->data);
                   }
                   else {
-                    iVar9 = 0;
+                    pvVar11 = (void *)0x0;
                   }
-                  this_00 = *(AiFltClassTy **)(iVar9 + 4);
+                  this_00 = *(AiFltClassTy **)((int)pvVar11 + 4);
                   if (this_00 != (AiFltClassTy *)0x0) {
-                    puVar11 = local_44;
-                    for (iVar9 = 0xd; iVar9 != 0; iVar9 = iVar9 + -1) {
-                      *puVar11 = 0;
-                      puVar11 = puVar11 + 1;
+                    puVar13 = local_44;
+                    for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
+                      *puVar13 = 0;
+                      puVar13 = puVar13 + 1;
                     }
                     local_44[1] = pAVar6->field_012C;
                     local_44[0] = 0x68;
-                    uStack_3a = (undefined2)iVar8;
-                    uStack_38 = (undefined1)((uint)iVar8 >> 0x10);
+                    uStack_3a = SUB42(pvVar12,0);
+                    uStack_38 = (undefined1)((uint)pvVar12 >> 0x10);
                     cStack_3b = '\x01';
                     uStack_37 = uVar5;
                     AiFltClassTy::GetAiMess(this_00,local_44);
                     if ('\0' < local_3c) {
-                      *(undefined4 *)(iVar8 + 0x2c) = 1;
-                      *(uint *)(iVar8 + 0x34) = local_c;
-                      *(undefined2 *)(iVar8 + 0x38) = local_36;
-                      *(undefined4 *)(iVar8 + 0x3a) = pAVar6->field_012C;
+                      *(undefined4 *)((int)pvVar12 + 0x2c) = 1;
+                      *(uint *)((int)pvVar12 + 0x34) = local_c;
+                      *(undefined2 *)((int)pvVar12 + 0x38) = local_36;
+                      *(undefined4 *)((int)pvVar12 + 0x3a) = pAVar6->field_012C;
                       cVar7 = cStack_3b;
                       break;
                     }
                   }
-                  iVar9 = pAVar6->field_00A5;
+                  pDVar9 = pAVar6->field_00A5;
                   local_c = local_c + 1;
-                  bVar12 = local_c < *(uint *)(iVar9 + 0xc);
+                  bVar14 = local_c < pDVar9->count;
                   cVar7 = cStack_3b;
-                } while ((int)local_c < (int)*(uint *)(iVar9 + 0xc));
+                } while ((int)local_c < (int)pDVar9->count);
               }
             }
             else {
-              *(undefined4 *)(iVar8 + 0x2c) = 3;
+              *(undefined4 *)((int)pvVar12 + 0x2c) = 3;
             }
             break;
           case 1:
-            if ((*(int *)(iVar8 + 0xe) == 0) ||
-               ((uint)(*(int *)(iVar8 + 0x3a) + *(int *)(iVar8 + 0xe)) <= (uint)pAVar6->field_012C))
-            {
-              iVar9 = pAVar6->field_00A5;
-              if (*(uint *)(iVar8 + 0x34) < *(uint *)(iVar9 + 0xc)) {
-                iVar9 = *(int *)(iVar9 + 8) * *(uint *)(iVar8 + 0x34) + *(int *)(iVar9 + 0x1c);
+            if ((*(int *)((int)pvVar12 + 0xe) == 0) ||
+               ((uint)(*(int *)((int)pvVar12 + 0x3a) + *(int *)((int)pvVar12 + 0xe)) <=
+                (uint)pAVar6->field_012C)) {
+              pDVar9 = pAVar6->field_00A5;
+              if (*(uint *)((int)pvVar12 + 0x34) < pDVar9->count) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+                pvVar11 = (void *)(pDVar9->elementSize * *(uint *)((int)pvVar12 + 0x34) +
+                                  (int)pDVar9->data);
               }
               else {
-                iVar9 = 0;
+                pvVar11 = (void *)0x0;
               }
-              if ((iVar9 != 0) && (*(int *)(iVar9 + 4) != 0)) {
-                puVar11 = local_44;
-                for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
-                  *puVar11 = 0;
-                  puVar11 = puVar11 + 1;
+              if ((pvVar11 != (void *)0x0) && (*(int *)((int)pvVar11 + 4) != 0)) {
+                puVar13 = local_44;
+                for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
+                  *puVar13 = 0;
+                  puVar13 = puVar13 + 1;
                 }
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x69;
-                uStack_3a = (undefined2)((uint)iVar8 >> 8);
+                uStack_3a = (undefined2)((uint)pvVar12 >> 8);
                 uStack_38 = uVar5;
-                AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar9 + 4),local_44);
+                AiFltClassTy::GetAiMess(*(AiFltClassTy **)((int)pvVar11 + 4),local_44);
                 if ('\0' < local_3c) {
-                  *(undefined4 *)(iVar8 + 0x2c) = 2;
+                  *(undefined4 *)((int)pvVar12 + 0x2c) = 2;
                 }
                 cVar7 = cStack_3b;
                 if (local_3c < '\0') {
-                  *(undefined4 *)(iVar8 + 0x2c) = 3;
+                  *(undefined4 *)((int)pvVar12 + 0x2c) = 3;
                 }
                 break;
               }
             }
-            *(undefined4 *)(iVar8 + 0x2c) = 3;
+            *(undefined4 *)((int)pvVar12 + 0x2c) = 3;
             break;
           case 2:
           case 3:
-            uVar1 = *(uint *)(iVar8 + 0x30);
+            uVar1 = *(uint *)((int)pvVar12 + 0x30);
             cStack_3b = cVar7;
             if (-1 < (int)uVar1) {
-              iVar9 = pAVar6->field_00A5;
-              if (uVar1 < *(uint *)(iVar9 + 0xc)) {
-                iVar9 = *(int *)(iVar9 + 8) * uVar1 + *(int *)(iVar9 + 0x1c);
+              pDVar9 = pAVar6->field_00A5;
+              if (uVar1 < pDVar9->count) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar1) (runtime stride) */
+                pvVar11 = (void *)(pDVar9->elementSize * uVar1 + (int)pDVar9->data);
               }
               else {
-                iVar9 = 0;
+                pvVar11 = (void *)0x0;
               }
-              if ((iVar9 != 0) && (*(int *)(iVar9 + 4) != 0)) {
-                puVar11 = local_44;
-                for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
-                  *puVar11 = 0;
-                  puVar11 = puVar11 + 1;
+              if ((pvVar11 != (void *)0x0) && (*(int *)((int)pvVar11 + 4) != 0)) {
+                puVar13 = local_44;
+                for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
+                  *puVar13 = 0;
+                  puVar13 = puVar13 + 1;
                 }
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x6b;
-                cStack_3b = (char)((uint)iVar8 >> 8);
-                uStack_3a = (undefined2)((uint)iVar8 >> 0x10);
+                cStack_3b = (char)((uint)pvVar12 >> 8);
+                uStack_3a = (undefined2)((uint)pvVar12 >> 0x10);
                 local_3c = cVar3;
-                AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar9 + 4),local_44);
+                AiFltClassTy::GetAiMess(*(AiFltClassTy **)((int)pvVar11 + 4),local_44);
               }
             }
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pAVar6->field_00BD,local_8);
+            FUN_006b0c70(pAVar6->field_00BD,local_8);
             local_8 = local_8 - 1;
             cVar7 = cStack_3b;
           }
           cStack_3b = cVar7;
-          iVar8 = pAVar6->field_00BD;
+          pDVar9 = pAVar6->field_00BD;
           local_8 = local_8 + 1;
-          bVar12 = local_8 < *(uint *)(iVar8 + 0xc);
-        } while ((int)local_8 < (int)*(uint *)(iVar8 + 0xc));
+          bVar14 = local_8 < pDVar9->count;
+        } while ((int)local_8 < (int)pDVar9->count);
       }
       g_currentExceptionFrame = local_88.previous;
       return;
     }
     g_currentExceptionFrame = local_88.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1ff,0,iVar8,&DAT_007a4ccc,
-                               s_AiTactClassTy__ExecClaim_007d5798);
-    if (iVar9 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1ff,0,iVar8,&DAT_007a4ccc,
+                                s_AiTactClassTy__ExecClaim_007d5798);
+    if (iVar10 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x200);
   }

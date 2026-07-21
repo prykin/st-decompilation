@@ -6,7 +6,7 @@ FUN_0072ac20(void *this,byte *param_1,byte *param_2,uint *param_3,int param_4,in
 {
   int iVar1;
   int iVar2;
-  
+
   if (1 < param_4) {
     iVar1 = param_4 + -1;
     param_4 = 0;

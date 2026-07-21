@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   void *local_10;
   AnonShape_006BB8B0_D6DE56CA *local_c;
   _RTL_CRITICAL_SECTION *local_8;
-  
+
   local_58[1] = (undefined4 *)0x0;
   local_58[2] = (undefined4 *)0x0;
   local_58[3] = (undefined4 *)0x0;

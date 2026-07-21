@@ -11,10 +11,8 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
   int iVar7;
   uint uVar8;
   int iVar9;
-  undefined4 unaff_ESI;
   int iVar10;
   int *piVar11;
-  void *unaff_EDI;
   InternalExceptionFrame local_6c;
   int local_28;
   uint local_24;
@@ -25,12 +23,12 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if (*(int *)((int)this + 0xf8b) != 0) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_1c = this;
-    iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     pvVar2 = local_1c;
     if (iVar3 == 0) {
       local_8 = 2;
@@ -103,6 +101,7 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
             }
             Library::DKW::SND::FUN_006c1ce0(local_8,iVar7);
             iVar6 = local_14;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar3 = *(int *)((int)pvVar2 + 0x10e9) * local_28 + *(int *)((int)pvVar2 + 0x10ed);
             uVar4 = iVar3 - local_14 >> 0x1f;
             iVar9 = (int)(((iVar3 - local_14 ^ uVar4) - uVar4) * 7) / 10;

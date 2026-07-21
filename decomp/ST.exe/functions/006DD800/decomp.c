@@ -5,7 +5,7 @@ void __thiscall FUN_006dd800(void *this,float param_1)
 
 {
   longlong lVar1;
-  
+
   *(double *)((int)this + 0x11c) = (double)param_1;
   if ((float)*(double *)((int)this + 0x114) < param_1) {
     *(double *)((int)this + 0x10c) =

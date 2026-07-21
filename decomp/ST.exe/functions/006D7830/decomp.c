@@ -17,7 +17,7 @@ void FUN_006d7830(undefined1 *param_1,int param_2,undefined4 *param_3,int param_
   undefined1 *local_14;
   int local_10;
   undefined1 *local_8;
-  
+
   uVar1 = param_6;
   puVar9 = param_1;
   iVar2 = (int)param_3 + (-1 - param_5);

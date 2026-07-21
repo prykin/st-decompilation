@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
@@ -12,23 +14,22 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,AnonShape_005908B0_8A8C8A8
   int errorCode;
   undefined4 uVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
-  
+
   local_8 = this;
   DVar3 = FUN_006e51b0(this->field_0010);
   this->field_0058 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (errorCode == 0) {
     switch(param_1->field_0010) {
     case 0:
       NoneMAdv(local_8);
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 2:
       local_8->field_005D = *(undefined1 *)(param_1->field_0014 + 0x14);
       InitMAdv(local_8);
@@ -60,9 +61,7 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,AnonShape_005908B0_8A8C8A8
   iVar5 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x87,0,errorCode,&DAT_007a4ccc
                              ,s_MAdvTy__GetMessage_007cbca0);
   if (iVar5 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Start_adv_obj_cpp_007cbc24,0x87);
   return 0xffff;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\tplaysys.cpp
@@ -12,15 +14,15 @@ void CreatePlaySystem(void)
   STPlaySystemC *this;
   int iVar2;
   byte bVar3;
-  undefined4 unaff_EBX;
-  void *unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_ESI;
   InternalExceptionFrame local_50;
   uint *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     this = (STPlaySystemC *)Library::MSVCRT::FUN_0072e530(0xf8);
     if (this == (STPlaySystemC *)0x0) {
@@ -34,7 +36,8 @@ void CreatePlaySystem(void)
                 (-1,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x7d);
     }
     *(undefined4 *)&PTR_00802a38->field_0xe0 = 0;
-    (*PTR_00802a38->vtable->InitSystem)(PTR_00802a38,(int)unaff_ESI);
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+    (*PTR_00802a38->vtable->InitSystem)(PTR_00802a38,unaff_ESI);
     (*PTR_00802a38->vtable->vfunc_08)(0x1100,0,&g_sTAllPlayers_007FA174,0,0);
     (*PTR_00802a38->vtable->vfunc_08)(0x109,0,0,0,0);
     (*PTR_00802a38->vtable->vfunc_08)(0x121,0,0,0,0);
@@ -47,8 +50,9 @@ void CreatePlaySystem(void)
       bVar3 = 0;
       local_8 = local_8 & 0xffffff00;
       do {
-        thunk_FUN_00435850(local_8,1,(int *)0x0);
+        thunk_FUN_00435850((char)local_8,1,(int *)0x0);
         bVar3 = bVar3 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar3);
       } while (bVar3 < 8);
     }
@@ -75,9 +79,7 @@ void CreatePlaySystem(void)
   iVar2 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0xb0,0,errorCode,
                              &DAT_007a4ccc,s_CreatePlaySystem_007c841c);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xb1);
   return;

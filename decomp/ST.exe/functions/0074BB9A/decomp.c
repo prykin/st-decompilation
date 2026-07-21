@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_0074bb9a(char *param_1)
   char *pcVar2;
   char *pcVar3;
   bool bVar4;
-  
+
   iVar1 = 0x10;
   bVar4 = true;
   pcVar2 = param_1;

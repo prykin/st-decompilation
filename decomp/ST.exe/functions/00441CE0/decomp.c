@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,11 +15,9 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   int *piVar5;
   uint uVar6;
   DArrayTy *pDVar7;
-  undefined4 unaff_ESI;
   int iVar8;
   short *psVar9;
   undefined4 *puVar10;
-  void *unaff_EDI;
   uint uVar11;
   short *psVar12;
   DArrayTy *pDVar13;
@@ -51,7 +51,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   DArrayTy *local_10;
   DArrayTy *local_c;
   STFishC *local_8;
-  
+
   local_24 = (DArrayTy *)0x4;
   local_80[0] = 0x38;
   local_80[1] = 0x39;
@@ -60,7 +60,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_50 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   pDVar7 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
@@ -70,9 +70,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
       RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c6);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar3 = (int)param_1;
   if (0 < (int)local_24) {
@@ -92,6 +90,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   local_60[1] = 0;
   local_60[0] = 0;
   local_10 = (DArrayTy *)0x0;
+  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
   local_20 = iVar3 * 0xa62;
   if (g_playerRuntime[iVar3].raceId != 0) {
     if (0 < (int)pDVar7) {

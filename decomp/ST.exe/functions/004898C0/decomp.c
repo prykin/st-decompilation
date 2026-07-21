@@ -4,7 +4,7 @@ void __thiscall FUN_004898c0(void *this,AnonShape_004898C0_081F3DAB *param_1)
 {
   int iVar1;
   AnonShape_004898C0_081F3DAB *pAVar2;
-  
+
   pAVar2 = param_1;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)pAVar2 = 0;

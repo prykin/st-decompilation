@@ -7,6 +7,7 @@ void __thiscall FUN_0055c500(void *this,int param_1)
   {
     *(undefined4 *)((int)this + 0x1b) = 0x6150;
     *(int *)((int)this + 0x1f) = param_1;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)g_fSGS_0081174C->field_0000->field_0000)((int)this + 0xb);
   }
   return;

@@ -3,7 +3,7 @@ void __thiscall FUN_004f9120(void *this,byte param_1,char param_2,undefined4 par
 
 {
   uint uVar1;
-  
+
   if (param_1 < 8) {
     uVar1 = (uint)param_1;
     (&DAT_008087f7)[uVar1 * 0x51] = param_2;

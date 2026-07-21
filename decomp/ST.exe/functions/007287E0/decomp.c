@@ -4,7 +4,7 @@ undefined4 FUN_007287e0(int *param_1,int param_2)
 {
   int iVar1;
   int iVar2;
-  
+
   if (param_2 != DAT_00857104) {
     do {
       iVar2 = *param_1 + param_2;

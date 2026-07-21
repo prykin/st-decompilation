@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
@@ -17,18 +19,16 @@ CPanelTy::SetButStruct
   int iVar4;
   undefined4 uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   AnonShape_004F2E40_DC76A8C6 *pAVar7;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   ushort *local_8;
-  
+
   local_8 = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 == 0) {
     pAVar7 = param_1;
     for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -104,9 +104,7 @@ CPanelTy::SetButStruct
   iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x171,0,iVar4,&DAT_007a4ccc,
                              s_CPanelTy__SetButStruct_007c1b04);
   if (iVar6 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x171);
   return;

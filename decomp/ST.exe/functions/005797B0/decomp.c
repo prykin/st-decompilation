@@ -18,7 +18,7 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
   short local_10;
   int local_c;
   int local_8;
-  
+
   iVar3 = 0;
   iVar9 = 0;
   sVar4 = *(short *)((int)this + 0x41);
@@ -265,7 +265,9 @@ switchD_0057988b_default:
                 *(int *)((int)this + 0x251) = (int)sVar4;
                 sVar5 = *(short *)((int)this + 0x43);
                 *(int *)((int)this + 0x255) = (int)sVar5;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar7 = CONCAT22(sVar5 >> 0xf,*(undefined2 *)((int)this + 0x45));
+                /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
                 sVar4 = (**(code **)(*(int *)this + 0x10))
                                   (CONCAT22((short)((uint)iVar3 >> 0x10),sVar4),
                                    CONCAT22(sVar4 >> 0xf,sVar5),uVar7,local_14,local_18,uVar7);

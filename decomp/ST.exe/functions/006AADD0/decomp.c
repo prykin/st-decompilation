@@ -6,7 +6,7 @@ int FUN_006aadd0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   int iVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = param_4 - param_1 >> 0x1f;
   iVar2 = (param_4 - param_1 ^ uVar3) - uVar3;
   uVar3 = param_5 - param_2 >> 0x1f;

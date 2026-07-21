@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
@@ -12,15 +14,13 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
   uint uVar2;
   int iVar3;
   uint uVar4;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar5;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   ResearchPanelTy *local_8;
-  
-  pIVar5 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
     STAllPlayersC::GetPanelInfo
@@ -29,26 +29,26 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
       uVar4 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar4 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0279] + 0xc);
     }
     if ((&this_00->field_027A)[(byte)this_00->field_0278] == 0) {
       uVar2 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
     thunk_FUN_0053c620((AnonShape_004EF140_16642BA0 *)this_00);
-    g_currentExceptionFrame = pIVar5;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar5;
+  g_currentExceptionFrame = local_4c.previous;
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_research_cpp_007c76c8,0x52,0,errorCode,
                              &DAT_007a4ccc,s_ResearchPanelTy__Update_007c7734);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_research_cpp_007c76c8,0x52);
   return;

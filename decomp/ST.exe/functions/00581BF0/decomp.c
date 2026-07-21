@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_jell_m.cpp
@@ -17,30 +19,26 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
   int *piVar8;
   int iVar9;
   uint uVar10;
-  undefined4 unaff_ESI;
   undefined4 *puVar11;
   undefined4 *puVar12;
-  void *unaff_EDI;
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
   int local_c;
   byte *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pSVar5 = local_10;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x191,0,iVar6,&DAT_007a4ccc
                                ,s_STJellyManC__GetMessage_007cb348);
     if (iVar9 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar7 = (*pcVar1)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x192);
     return 0xffff;
@@ -60,9 +58,7 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
            (iVar9 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x128,0,0,
                                        &DAT_007a4ccc,s_Jell_m_Small_finding_jelly_007cb364),
            iVar9 != 0)) {
-          pcVar1 = (code *)swi(3);
-          uVar7 = (*pcVar1)();
-          return uVar7;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         iVar6 = iVar6 + -1;
         if (iVar6 < 0) {
@@ -123,9 +119,7 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        pcVar1 = (code *)swi(3);
-        uVar7 = (*pcVar1)();
-        return uVar7;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (uVar10 != 0x128) {
         g_currentExceptionFrame = local_54.previous;
@@ -220,9 +214,7 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
       iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13d,0,0,&DAT_007a4ccc,
                                  s_Bad_init_coordinates_007cb3ac);
       if (iVar6 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar7 = (*pcVar1)();
-        return uVar7;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13e);
@@ -235,9 +227,7 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
     iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x143,0,0,&DAT_007a4ccc,
                                s_Not_enough_memory_007cb3c8);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar7 = (*pcVar1)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar6 = 0x144;
   }
@@ -265,9 +255,7 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
     iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x15a,0,0,&DAT_007a4ccc,
                                s_Not_enough_memory_007cb3c8);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar7 = (*pcVar1)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar6 = 0x15b;
   }

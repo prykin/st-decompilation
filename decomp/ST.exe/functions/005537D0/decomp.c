@@ -3,7 +3,7 @@ short __cdecl FUN_005537d0(ushort param_1)
 
 {
   short sVar1;
-  
+
   if (param_1 == 0) {
     return 0xf;
   }

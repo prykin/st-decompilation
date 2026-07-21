@@ -15,7 +15,8 @@ void __fastcall FUN_006975f0(void *param_1)
   uint local_18;
   AnonShape_006975F0_6D562F4E *local_10;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = *(int *)((int)param_1 + 0x5853);
   if (iVar4 != 0) {
     uVar1 = *(uint *)(iVar4 + 0xc);
@@ -42,7 +43,9 @@ void __fastcall FUN_006975f0(void *param_1)
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < (int)uVar1);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = (local_8 * 100) / *(int *)((int)param_1 + 0x582f);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)((int)param_1 + 0x5843) < iVar4) {
       local_20 = 9;
       do {
@@ -50,9 +53,11 @@ void __fastcall FUN_006975f0(void *param_1)
         if (0x117 < local_20) {
           return;
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         while ((uVar8 = uVar8 - 1, -1 < (int)uVar8 &&
                (iVar4 = (local_8 * 100) / *(int *)((int)param_1 + 0x582f),
                *(int *)((int)param_1 + 0x5843) < iVar4))) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar6 = *(int *)((int)param_1 + 0x5853);
           if (uVar8 < *(uint *)(iVar6 + 0xc)) {
             local_10 = (AnonShape_006975F0_6D562F4E *)
@@ -74,12 +79,14 @@ void __fastcall FUN_006975f0(void *param_1)
               bVar9 = *(int *)(iVar6 + 0xc) != 0;
               do {
                 if (bVar9) {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   iVar6 = *(int *)(iVar6 + 8) * local_18 + *(int *)(iVar6 + 0x1c);
                 }
                 else {
                   iVar6 = 0;
                 }
                 if (*(char *)(iVar6 + 1) == '\0') {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   iVar2 = *(int *)((int)param_1 + 0x5833);
                   *(undefined1 *)(iVar6 + 1) = 1;
                   thunk_FUN_006a0e30(param_1,*(int *)(iVar6 + 2) % iVar2,*(int *)(iVar6 + 2) / iVar2
@@ -94,6 +101,7 @@ void __fastcall FUN_006975f0(void *param_1)
           }
         }
         local_20 = local_20 + 9;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       } while (*(int *)((int)param_1 + 0x5843) < iVar4);
     }
   }

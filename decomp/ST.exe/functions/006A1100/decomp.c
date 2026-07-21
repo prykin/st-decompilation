@@ -12,7 +12,7 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   byte local_c [2];
   byte bStack_a;
   byte bStack_8;
-  
+
   iVar6 = param_3;
   if ((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
      (((param_3 < param_1[1] && (-1 < param_4)) && (param_4 < 6)))) {
@@ -22,12 +22,15 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     }
     iVar4 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(undefined4 *)local_c);
     if (param_5 == 0xff) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_3._3_1_ = bStack_8;
     }
     else if (param_5 == 1) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_3._3_1_ = bStack_a;
     }
     else {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_3._3_1_ = local_c[0];
     }
     uVar5 = thunk_FUN_006a0ef0(param_1,param_2,iVar6,param_4,param_5,param_6);
@@ -35,6 +38,7 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     if (sVar2 == -1) {
       return false;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (param_3._3_1_ == 0) {
       return sVar2 == 0;
     }
@@ -52,8 +56,10 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
       }
     }
     else {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar1 = CONCAT12(bStack_8,(ushort)bStack_a);
       if (param_5 != 1) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar1 = CONCAT12(bStack_a,(ushort)local_c[0]);
       }
       if ((int)(short)uVar3 != (uVar1 & 0xf)) {

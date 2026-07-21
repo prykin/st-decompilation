@@ -8,6 +8,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
   int iVar3;
   undefined4 uVar4;
   int iVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   int iVar6;
   short local_18;
@@ -17,14 +18,14 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
   *param_1 = 0;
   if ((*(char *)((int)this + 0x14b) != '\0') && (*(short *)((int)this + 0x149) != -1)) {
     SVar2 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)((int)this + 0x123));
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = (STFishC *)
               STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,
-                         CONCAT31((int3)(SVar2 >> 8),*(undefined1 *)((int)this + 0x11f)),
+                        (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x11f),
                          CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x149)),SVar2);
     if (this_00 != (STFishC *)0x0) {
       *(STFishC **)((int)this + 0x139) = this_00;

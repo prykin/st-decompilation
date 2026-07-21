@@ -4,7 +4,7 @@ FUN_0071f2f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
 
 {
   int iVar1;
-  
+
   *(undefined2 *)((int)this + 0x174) = param_1;
   *(undefined2 *)((int)this + 0x178) = param_3;
   *(undefined2 *)((int)this + 0x176) = param_2;

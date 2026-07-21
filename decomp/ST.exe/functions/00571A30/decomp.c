@@ -6,7 +6,7 @@ FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *p
   int iVar1;
   undefined4 *puVar2;
   undefined4 *puVar3;
-  
+
   iVar1 = 0x10;
   if (param_3 != '\0') {
     puVar2 = (undefined4 *)&param_2->field_0x10;

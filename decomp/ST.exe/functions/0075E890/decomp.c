@@ -11,7 +11,8 @@ void FUN_0075e890(int param_1,int param_2,int param_3,int param_4)
   undefined1 local_188 [256];
   byte local_88 [128];
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8 = *(int *)(*(int *)(param_1 + 0x1ba) + 0x18);
   iVar4 = (param_4 >> 2) * 0x20 + 4;
   piVar6 = (int *)((param_3 >> 3) * 0x20 + 2);

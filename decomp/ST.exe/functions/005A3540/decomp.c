@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -16,10 +18,8 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   void *pvVar6;
   int iVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   undefined4 *puVar9;
   byte *pbVar10;
-  void *unaff_EDI;
   undefined4 *puVar11;
   byte *pbVar12;
   bool bVar13;
@@ -32,12 +32,12 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   FSGSTy *local_10;
   undefined4 *local_c;
   uint local_8;
-  
+
   if ((this->field_1A5F == CASE_8) && (this->field_1EBE != (DArrayTy *)0x0)) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_10 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     this_00 = PTR_00802a30;
     if (iVar4 == 0) {
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -55,6 +55,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
       FUN_006e6080(local_10,2,local_10->field_1B20,(undefined4 *)&local_10->field_0x1d);
       pDVar14 = this_01->field_1EBE;
       if ((uint)*(ushort *)&this_01->field_0x31 < pDVar14->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar14, (uint)*(ushort *)&this_01->field_0x31) (runtime stride) */
         local_c = (undefined4 *)
                   (pDVar14->elementSize * (uint)*(ushort *)&this_01->field_0x31 + (int)pDVar14->data
                   );
@@ -98,6 +99,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
                 goto LAB_005a37da;
               }
               do {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                 pvVar6 = (void *)(this_01->field_1EBE->elementSize * uVar8 +
                                  (int)this_01->field_1EBE->data);
 LAB_005a37da:
@@ -180,9 +182,7 @@ LAB_005a36ee:
     iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6,0,iVar4,&DAT_007a4ccc
                                ,s_FSGSTy__SetGameList_007cc56c);
     if (iVar7 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6);
   }

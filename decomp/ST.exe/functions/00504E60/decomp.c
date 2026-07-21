@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
@@ -9,30 +11,26 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
-  uint *extraout_EAX;
-  int iVar4;
-  void *unaff_ESI;
+  uint *puVar4;
+  int iVar5;
   UINT resourceId;
-  uint uVar5;
-  int iVar6;
+  uint uVar6;
   int iVar7;
-  InternalExceptionFrame *pIVar8;
-  undefined4 local_48 [16];
+  int iVar8;
+  InternalExceptionFrame local_4c;
   CPanelTy *local_8;
-  
-  pIVar8 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar8);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 != 0) {
-    g_currentExceptionFrame = pIVar8;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0,0,iVar3,&DAT_007a4ccc,
+    g_currentExceptionFrame = local_4c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0,0,iVar3,&DAT_007a4ccc,
                                s_CPanelTy__PaintIDSObj_007c27d0);
-    if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+    if (iVar5 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0);
     return;
@@ -52,19 +50,19 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,6,0x8b,200,0xb);
     resourceId = pCVar2->field_0C4D;
   }
+  iVar8 = -1;
   iVar7 = -1;
-  iVar6 = -1;
-  uVar5 = 0;
-  iVar4 = -1;
+  uVar6 = 0;
+  iVar5 = -1;
   iVar3 = -2;
-  LoadResourceString(resourceId,HINSTANCE_00807618);
-  ccFntTy::WrTxt(pCVar2->field_01B8,extraout_EAX,iVar3,iVar4,uVar5,iVar6,iVar7);
+  puVar4 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
+  ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
 cf_common_exit_00504F81:
   if (-1 < (int)pCVar2->field_015C) {
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,pCVar2->field_015C,0xffffffff,pCVar2->field_0050,pCVar2->field_00A8);
   }
-  g_currentExceptionFrame = pIVar8;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

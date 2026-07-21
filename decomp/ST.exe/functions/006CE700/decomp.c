@@ -7,7 +7,7 @@ void FUN_006ce700(AnonShape_006CE700_6E2936C3 *param_1,AnonShape_006CE700_F21E59
   AnonShape_006CE700_6E2936C3 AVar2;
   bool bVar3;
   char cVar4;
-  
+
   while (bVar3 = 3 < param_3, param_3 = param_3 + -4, bVar3) {
     AVar2 = *param_1;
     *param_1 = *(AnonShape_006CE700_6E2936C3 *)param_2;

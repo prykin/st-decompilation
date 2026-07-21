@@ -12,7 +12,8 @@ FUN_0055a110(void *this,int param_1,int param_2,undefined1 param_3,uint param_4,
   int iVar6;
   int iVar7;
   int iVar8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((*(int *)((int)this + 0x114) != 0) && (-1 < (int)param_5)) && (param_4 < 8)) &&
      (((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)) &&
       (*(int *)((int)this + param_4 * 4 + 0x94) != 0)))) {
@@ -32,6 +33,7 @@ FUN_0055a110(void *this,int param_1,int param_2,undefined1 param_3,uint param_4,
              ((-1 < iVar7 &&
               (((iVar7 < *(int *)((int)this + 0x20) && (-1 < iVar8)) &&
                (iVar8 < *(int *)((int)this + 0x24))))))) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar6 = iVar8 * *(int *)((int)this + 0x20) + *(int *)((int)this + param_4 * 4 + 0x94);
             cVar2 = *(char *)(iVar6 + iVar7);
             if (cVar2 != '\0') {

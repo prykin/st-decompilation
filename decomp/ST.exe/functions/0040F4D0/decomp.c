@@ -18,7 +18,7 @@ void FUN_0040f4d0(undefined4 *param_1,uint param_2,int param_3,int param_4)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_00790050;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -10,7 +10,7 @@ void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
   undefined2 local_10;
   undefined2 local_e;
   int local_8;
-  
+
   if (DAT_008117bc != (undefined4 *)0x0) {
     puVar2 = local_28;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -23,9 +23,11 @@ void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
     if (param_1->field_0354 != 0) {
       iVar1 = FUN_006e62d0(PTR_00802a38,param_1->field_0354,&local_8);
       if (iVar1 != -4) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_e = *(undefined2 *)(local_8 + 0x32);
       }
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*DAT_008117bc)(local_28);
   }
   return;

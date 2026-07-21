@@ -24,7 +24,7 @@ void FUN_00704460(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   byte *local_10;
   byte *local_c;
   ushort *local_8;
-  
+
   pbVar3 = (byte *)(param_16 + (param_18 >> 3));
   _DAT_00857000 = 1;
   do {

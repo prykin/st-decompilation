@@ -6,7 +6,7 @@ undefined4 FUN_004e7d70(int param_1)
   int iVar2;
   int *piVar3;
   int iVar4;
-  
+
   if ((-1 < param_1) && (param_1 < 8)) {
     uVar1 = GetPlayerRaceId((char)param_1);
     iVar2 = (uVar1 & 0xff) - 1;

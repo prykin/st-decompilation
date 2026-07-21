@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -9,22 +11,22 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
 {
   char cVar1;
   code *pcVar2;
-  CursorClassTy *this_00;
   bool bVar3;
+  CursorClassTy *this_00;
   CursorClassTy_SetGCType_param_1Enum CVar4;
   int iVar5;
-  undefined3 extraout_var;
   STFishC *pSVar6;
   UINT resourceId;
-  char *extraout_EAX;
-  uint *puVar7;
-  int iVar8;
-  uint uVar9;
+  char *pcVar7;
+  uint *puVar8;
+  int iVar9;
   uint uVar10;
+  uint uVar11;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
-  void *unaff_EDI;
-  undefined4 *puVar11;
-  char *pcVar12;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 unaff_EDI;
+  undefined4 *puVar12;
   char *pcVar13;
   uint *puVar14;
   longlong lVar15;
@@ -43,27 +45,25 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   float local_10;
   undefined4 local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_18 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   this_00 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fc,0,iVar5,
+    iVar9 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fc,0,iVar5,
                                &DAT_007a4ccc,s_CursorClassTy__GCGameState_007c7fc4);
-    if (iVar8 == 0) {
+    if (iVar9 == 0) {
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fe);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  bVar3 = thunk_FUN_00544990((int)local_18);
-  if ((CONCAT31(extraout_var,bVar3) != 0) &&
+  iVar5 = thunk_FUN_00544990((int)local_18);
+  if ((iVar5 != 0) &&
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == 4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::thunk_FUN_0054b700
@@ -76,10 +76,10 @@ LAB_0054b019:
     CVar4 = (CursorClassTy_SetGCType_param_1Enum)*(byte *)((int)DAT_00801690 + 0x1db);
     goto cf_common_exit_0054B368;
   }
-  puVar11 = local_f8;
+  puVar12 = local_f8;
   for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
   if ((g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
@@ -146,35 +146,35 @@ LAB_0054b366:
         this_00->field_049E = local_30;
         module = HINSTANCE_00807618;
         resourceId = thunk_FUN_00523410(local_2c,(char)local_28,0);
-        LoadResourceString(resourceId,module);
-        uVar9 = 0xffffffff;
-        pcVar12 = extraout_EAX;
+        pcVar7 = LoadResourceString(resourceId,module);
+        uVar10 = 0xffffffff;
         do {
-          pcVar13 = pcVar12;
-          if (uVar9 == 0) break;
-          uVar9 = uVar9 - 1;
-          pcVar13 = pcVar12 + 1;
-          cVar1 = *pcVar12;
-          pcVar12 = pcVar13;
+          pcVar13 = pcVar7;
+          if (uVar10 == 0) break;
+          uVar10 = uVar10 - 1;
+          pcVar13 = pcVar7 + 1;
+          cVar1 = *pcVar7;
+          pcVar7 = pcVar13;
         } while (cVar1 != '\0');
-        uVar9 = ~uVar9;
-        puVar7 = (uint *)(pcVar13 + -uVar9);
+        uVar10 = ~uVar10;
+        puVar8 = (uint *)(pcVar13 + -uVar10);
         puVar14 = local_d8;
-        for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *puVar14 = *puVar7;
-          puVar7 = puVar7 + 1;
+        for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+          *puVar14 = *puVar8;
+          puVar8 = puVar8 + 1;
           puVar14 = puVar14 + 1;
         }
-        for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(char *)puVar14 = (char)*puVar7;
-          puVar7 = (uint *)((int)puVar7 + 1);
+        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+          *(char *)puVar14 = (char)*puVar8;
+          puVar8 = (uint *)((int)puVar8 + 1);
           puVar14 = (uint *)((int)puVar14 + 1);
         }
-        puVar7 = Library::MSVCRT::FUN_0072e560(local_d8,'\n');
-        while (puVar7 != (uint *)0x0) {
-          *(undefined1 *)puVar7 = 0x20;
-          puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n');
+        puVar8 = Library::MSVCRT::FUN_0072e560(local_d8,'\n');
+        while (puVar8 != (uint *)0x0) {
+          *(undefined1 *)puVar8 = 0x20;
+          puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n');
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (local_28._1_1_ == '\0') {
           wsprintfA((LPSTR)local_d8,&DAT_007a4ccc,local_d8);
         }
@@ -186,6 +186,7 @@ LAB_0054b366:
         }
       }
       if (this_00->field_04DE == '\0') {
+/* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_0054b2a9:
         CVar4 = STAllPlayersC::GetCursorType
                           (g_sTAllPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
@@ -193,6 +194,7 @@ LAB_0054b2a9:
                            (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
         while (CVar4 == (CASE_40|CASE_18)) {
           thunk_FUN_0054a8d0(this_00);
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           CVar4 = STAllPlayersC::GetCursorType
                             (g_sTAllPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
                              this_00->field_00C5 - this_00->field_04B2,
@@ -209,8 +211,8 @@ LAB_0054b2a9:
           iVar5 = *(int *)&this_00->field_049A->field_0x259;
         }
         if (DAT_00801690 != (void *)0x0) {
-          iVar8 = (*pSVar6->vtable->vfunc_0C)();
-          iVar5 = thunk_FUN_005121f0(DAT_00801690,iVar5,iVar8);
+          iVar9 = (*pSVar6->vtable->vfunc_0C)();
+          iVar5 = thunk_FUN_005121f0(DAT_00801690,iVar5,iVar9);
           if (iVar5 != 0) {
             uVar17 = this_00->field_0038;
             uVar16 = this_00->field_0034;

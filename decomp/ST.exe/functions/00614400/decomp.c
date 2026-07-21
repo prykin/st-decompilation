@@ -16,7 +16,7 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
   byte local_c;
   undefined3 uStack_b;
   int local_8;
-  
+
   *(undefined4 *)((int)this + 0x1fb) = param_1->field_002D;
   *(undefined2 *)((int)this + 0x1ff) = param_1->field_0031;
   *(undefined2 *)((int)this + 0x1e9) = param_1->field_001A;
@@ -102,7 +102,9 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
        ((byte)(&DAT_008087e9)[(int)pSVar6[1].vtable * 0x51] < 8)))))) {
     bVar1 = *(byte *)&pSVar6[1].vtable;
     bVar2 = *(byte *)((int)this + 0x1d9);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,bVar1);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_c = CONCAT31(uStack_b,bVar2);
     if (DAT_00808a8f == '\0') {
       if (bVar1 == bVar2) {

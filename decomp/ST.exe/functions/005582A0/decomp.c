@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
@@ -13,9 +15,7 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   undefined4 *puVar8;
-  void *unaff_EDI;
   undefined4 *puVar9;
   InternalExceptionFrame local_68;
   VisibleClassTy *local_24;
@@ -26,7 +26,7 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
-  
+
   local_8 = (undefined4 *)0x0;
   local_c = (undefined4 *)0x0;
   local_10 = 0;
@@ -35,7 +35,7 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_24 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pVVar2 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -51,9 +51,7 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
     iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x105,0,iVar3,&DAT_007a4ccc,
                                s_VisibleClassTy__PrepareToSave_er_007c932c);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      puVar4 = (undefined4 *)(*pcVar1)();
-      return puVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_grig_visible_cpp_007c92cc,0x106);
     return (undefined4 *)0x0;

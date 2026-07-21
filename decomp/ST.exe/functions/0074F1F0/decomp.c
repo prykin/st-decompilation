@@ -6,7 +6,7 @@ uint FUN_0074f1f0(undefined4 param_1,char *param_2)
   int iVar2;
   char *pcVar3;
   bool bVar4;
-  
+
   if (param_2 == (char *)0x0) {
     uVar1 = 0x80004003;
   }

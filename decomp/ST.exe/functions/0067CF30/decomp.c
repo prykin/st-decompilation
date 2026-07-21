@@ -3,7 +3,7 @@
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 40 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067CF30 -> 0072E340 @ 0067CF98 */
 
@@ -13,18 +13,16 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
   int exceptionCode;
   uint *puVar1;
   undefined4 *puVar2;
-  void *unaff_ESI;
   char *_Source;
-  InternalExceptionFrame *pIVar3;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   AnonShape_0067CF30_CDCAC01F *local_8;
-  
-  pIVar3 = g_currentExceptionFrame;
+
   local_8 = (AnonShape_0067CF30_CDCAC01F *)0x0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  exceptionCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode != 0) {
-    g_currentExceptionFrame = pIVar3;
+    g_currentExceptionFrame = local_4c.previous;
     thunk_FUN_0067d160((int *)&local_8);
     RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x28);
     return (undefined4 *)0x0;
@@ -46,7 +44,7 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
   puVar2 = thunk_FUN_0065c9e0(source);
   local_8->field_0106 = puVar2;
   local_8->field_010A = param_4;
-  g_currentExceptionFrame = pIVar3;
+  g_currentExceptionFrame = local_4c.previous;
   return (undefined4 *)local_8;
 }
 

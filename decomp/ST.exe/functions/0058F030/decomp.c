@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_0058f030(AnonShape_0058F030_ED0F322F *param_1)
   short local_10 [2];
   short local_c [2];
   short local_8 [2];
-  
+
   uVar1 = FUN_006db910((int)param_1->field_0047,(int)param_1->field_0049,(int)param_1->field_0231,
                        (int)param_1->field_0233);
   uVar2 = FUN_006db990(uVar1,8);

@@ -33,7 +33,7 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_11;
   int local_c;
   int local_8;
-  
+
   sVar7 = (short)(param_5 >> 0x1f);
   if (param_5 < 0) {
     local_8 = (short)(((short)(param_5 / 0xc9) + sVar7) -

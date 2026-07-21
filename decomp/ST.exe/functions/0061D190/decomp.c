@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_light.Cpp
@@ -13,29 +15,25 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,AnonShape_0061D190_F4B
   uint uVar4;
   undefined4 uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   AnonNested_0061D190_0014_96ED958D *pAVar7;
-  void *unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_60;
   SoundPosition local_1c;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   STJellyGunC *local_8;
-  
+
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = (STJellyGunC *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
     iVar6 = ReportDebugMessage(s_E____titans_nick_to_light_Cpp_007d01b0,0x7a,0,iVar3,&DAT_007a4ccc,
                                s_STLightC__GetMessage_007d01d4);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar5 = (*pcVar2)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_light_Cpp_007d01b0,0x7c);
     return 0xffff;

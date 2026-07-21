@@ -10,7 +10,7 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
   AnonShape_006E8840_CF3FA5BA *pAVar4;
   AnonShape_006E8840_CF3FA5BA *pAVar5;
   int local_8;
-  
+
   *param_1 = -1;
   pAVar5 = *(AnonShape_006E8840_CF3FA5BA **)((int)this + 0x2e8);
   pAVar4 = (AnonShape_006E8840_CF3FA5BA *)0x0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -10,35 +12,47 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   HelpPanelTy *pHVar2;
   int errorCode;
   int iVar3;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_05;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_06;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_07;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_08;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_09;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_10;
   ccFntTy *this_00;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar4;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   int local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pHVar2 = local_c;
   if (errorCode == 0) {
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
     if (local_c->field_017C != 0) {
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_017C);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_00;
     }
     pHVar2->field_017C = 0;
@@ -48,6 +62,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       if (*puVar4 != 0) {
         StartSystemTy::sub_006E56B0(pHVar2->field_000C,*puVar4);
         *puVar4 = 0;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_00 = extraout_ECX_01;
       }
       puVar4 = puVar4 + 1;
@@ -55,31 +70,37 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     } while (local_8 != 0);
     if (pHVar2->field_019C != 0) {
       StartSystemTy::sub_006E56B0(pHVar2->field_000C,pHVar2->field_019C);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_02;
     }
     pHVar2->field_019C = 0;
     if ((DArrayTy *)pHVar2->field_01B3 != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)pHVar2->field_01B3);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_03;
     }
     pHVar2->field_01B3 = (AnonPointee_HelpPanelTy_01B3 *)0x0;
     if (pHVar2->field_01BB != (DArrayTy *)0x0) {
       DArrayDestroy(pHVar2->field_01BB);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_04;
     }
     pHVar2->field_01BB = (DArrayTy *)0x0;
     if (pHVar2->field_01CB != (DArrayTy *)0x0) {
       DArrayDestroy(pHVar2->field_01CB);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_05;
     }
     pHVar2->field_01CB = (DArrayTy *)0x0;
     if ((DArrayTy *)pHVar2->field_01D7 != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)pHVar2->field_01D7);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_06;
     }
     pHVar2->field_01D7 = 0;
     if ((AnonShape_006B5570_4D68B99C *)pHVar2->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pHVar2->field_01D3);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_07;
     }
     pHVar2->field_01D3 = (uint *)0x0;
@@ -88,6 +109,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     do {
       if (*puVar4 != 0) {
         cMf32::RecMemFree(DAT_00806790,puVar4);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_00 = extraout_ECX_08;
       }
       puVar4 = puVar4 + 1;
@@ -107,11 +129,13 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     if (pHVar2->field_01E0 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pHVar2->field_01E0);
       pHVar2->field_01E0 = (ccFntTy *)0x0;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_09;
     }
     if (pHVar2->field_01E4 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pHVar2->field_01E4);
       pHVar2->field_01E4 = (ccFntTy *)0x0;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_10;
     }
     if (pHVar2->field_01E8 != (ccFntTy *)0x0) {
@@ -141,9 +165,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xcf,0,errorCode,
                              &DAT_007a4ccc,s_HelpPanelTy__DoneHelpPanel_007c3918);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xcf);
   return;

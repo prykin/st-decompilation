@@ -4,7 +4,7 @@ undefined4 FUN_006b9aa0(AnonShape_006B9AA0_FC1882B5 *param_1,undefined4 *param_2
 {
   int iVar1;
   int *piVar2;
-  
+
   piVar2 = (int *)*param_2;
   if (*piVar2 <= piVar2[1]) {
     iVar1 = *piVar2 + 10;

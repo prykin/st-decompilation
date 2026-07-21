@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   undefined1 local_11;
   DWORD local_10 [2];
   HKEY local_8;
-  
+
   LVar4 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Ellipse_Studios_Submari_007ca434,&local_8);
   pcVar9 = RegQueryValueExA_exref;
   if (LVar4 != 0) goto cf_common_exit_0057238D;
@@ -206,6 +206,7 @@ LAB_005722ed:
         if (iVar8 != 0) {
           local_18 = 0;
           local_14 = 0;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_1c = CONCAT31((int3)((uint)DAT_007ca690 >> 8),*(undefined1 *)((int)this + 0x640));
           UVar5 = GetDriveTypeA(&local_1c);
           if (UVar5 == 5) {

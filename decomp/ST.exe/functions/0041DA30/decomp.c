@@ -7,7 +7,7 @@ void __fastcall FUN_0041da30(AnonShape_0041DA30_EF7DF530 *param_1)
   float fVar1;
   float fVar2;
   float fVar3;
-  
+
   if (param_1->field_002C == 0) {
     if (DAT_0080732c == 1) {
       fVar3 = (float)(int)param_1->field_0045 * _DAT_007904f8 * _DAT_007904f0 + param_1->field_0070

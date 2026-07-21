@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpPatrol
-   
+
    [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
@@ -18,16 +20,13 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   AnonPointee_STGroupBoatC_022E *pAVar7;
   STBoatC *this_00;
   int iVar8;
-  undefined4 extraout_ECX;
   int iVar9;
   uint uVar10;
   DArrayTy *pDVar11;
   uint uVar12;
-  undefined4 extraout_EDX;
-  undefined4 extraout_EDX_00;
-  undefined4 extraout_EDX_01;
   short *psVar13;
   Global_sub_006C8EC0_param_3Enum GVar14;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   undefined4 *puVar15;
   int iVar16;
@@ -55,7 +54,8 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_1c = *(int *)(this->field_0029 + 0xc);
   if ((param_1 != 0) && (param_1 != 1)) {
     if (0 < (int)this->field_023E) {
@@ -103,6 +103,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   local_24 = (short *)0xffff8ad0;
   if (0 < (int)local_2c) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((uVar12 < local_2c) &&
          (psVar4 = (short *)(*(int *)(this->field_0103 + 8) * uVar12 +
                             *(int *)(this->field_0103 + 0x1c)), psVar4 != (short *)0x0)) {
@@ -129,10 +130,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
-        pSVar5 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,
-                            CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0024),local_18,
-                            CASE_1);
+        pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,local_18,CASE_1);
         if (pSVar5 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
@@ -140,6 +138,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         }
         thunk_FUN_004162f0(pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                            (undefined2 *)&local_14);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar8 = (int)param_1._2_2_;
         if (iVar8 < local_c) {
           local_c = iVar8;
@@ -207,10 +206,12 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     }
     local_14 = local_14 + 1;
   } while ((short)local_14 < 5);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(this->field_0103 + 0xc) == 0) {
     psVar4 = (short *)0x0;
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     psVar4 = *(short **)(this->field_0103 + 0x1c);
   }
   FUN_006ab090((int)g_pathingScratchGrid.cells,local_2c,local_20,5,*psVar4 - local_c,
@@ -242,10 +243,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       GVar14 = local_20;
       DArrayGetElement((DArrayTy *)this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
-        pSVar5 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,
-                            CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),local_18,
-                            CASE_1);
+        pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,local_18,CASE_1);
         if (pSVar5 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
@@ -254,6 +252,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         thunk_FUN_004162f0(pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                            (undefined2 *)&local_14);
         GVar14 = local_20;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (g_pathingScratchGrid.cells
             [(((short)local_10 - local_8) * (int)g_pathingGrid.sizeX +
               (int)g_pathingGrid.planeStride * (int)(short)local_14 + (int)param_1._2_2_) - iVar8]
@@ -288,9 +287,7 @@ joined_r0x0049bc58:
           DArrayGetElement((DArrayTy *)this->field_0029,uVar12,&local_18);
           if ((short)local_18 != -1) {
             pSVar5 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this->field_0024),
-                                local_18,CASE_1);
+                               (g_sTAllPlayers_007FA174,this->field_0024,local_18,CASE_1);
             if (pSVar5 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -298,10 +295,11 @@ joined_r0x0049bc58:
             }
             thunk_FUN_004162f0(pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                                (undefined2 *)&local_14);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (g_pathingScratchGrid.cells
                 [(int)g_pathingGrid.planeStride * (int)(short)local_14 +
                  (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)param_1._2_2_] == 0) {
-              FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this->field_0103,local_28);
+              FUN_006b0c70((DArrayTy *)this->field_0103,local_28);
               break;
             }
           }
@@ -316,6 +314,7 @@ joined_r0x0049bc58:
       return 0;
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,*(uint *)(this->field_0103 + 0xc),6,1);
   pDVar11 = (DArrayTy *)this->field_0103;
   this->field_0226 = puVar6;
@@ -330,6 +329,7 @@ joined_r0x0049bc58:
   }
   DArrayDestroy((DArrayTy *)this->field_0103);
   this->field_0103 = 0;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ReMakePatrolPoints(this,unaff_EDI);
   pAVar7 = (AnonPointee_STGroupBoatC_022E *)
            Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)(ushort)this->field_0027,0x16,1);
@@ -341,6 +341,7 @@ joined_r0x0049bc58:
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,uVar12,&local_18);
       if ((short)local_18 != -1) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_68[0] = CONCAT22(local_68[0]._2_2_,(short)local_18);
         Library::DKW::TBL::FUN_006ae1c0((uint *)this->field_022E,&local_6c);
       }
@@ -359,16 +360,12 @@ joined_r0x0049bc58:
       if ((short)local_68[0] != -1) {
         this_00 = (STBoatC *)
                   STAllPlayersC::GetObjPtr
-                            (g_sTAllPlayers_007FA174,
-                             CONCAT31((int3)((uint)extraout_EDX_01 >> 8),this->field_0024),
-                             local_68[0],CASE_1);
+                            (g_sTAllPlayers_007FA174,this->field_0024,local_68[0],CASE_1);
         if (this_00 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x7ed,0,0,&DAT_007a4ccc
                                      ,s_STGroupBoatC__GrpPatrol_NULL_val_007abf94);
           if (iVar3 != 0) {
-            pcVar1 = (code *)swi(3);
-            uVar12 = (*pcVar1)();
-            return uVar12;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c

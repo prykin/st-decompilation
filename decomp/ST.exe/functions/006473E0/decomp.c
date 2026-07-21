@@ -11,7 +11,7 @@ void __thiscall FUN_006473e0(void *this,undefined4 param_1)
   undefined4 local_24;
   int local_20;
   undefined4 local_1c;
-  
+
   puVar2 = local_44;
   for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

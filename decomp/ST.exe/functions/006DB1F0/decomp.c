@@ -13,7 +13,7 @@ void FUN_006db1f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
   byte *pbVar8;
   uint *puVar9;
   undefined4 *puVar10;
-  
+
   iVar5 = param_5;
   if (((uint)param_1 & 2) == 0) {
     do {
@@ -21,6 +21,7 @@ void FUN_006db1f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
         bVar2 = *param_3;
         param_3 = param_3 + 1;
         *(uint *)param_1 =
+             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
              CONCAT22(*(undefined2 *)(param_7 + (uint)bVar2 * 2),
                       *(undefined2 *)(param_7 + (uint)bVar2 * 2));
         param_1 = param_1 + 2;

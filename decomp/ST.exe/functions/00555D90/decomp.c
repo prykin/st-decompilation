@@ -9,7 +9,7 @@ uint __thiscall FUN_00555d90(void *this,undefined4 *param_1)
   uint uVar5;
   undefined4 *puVar6;
   bool bVar7;
-  
+
   iVar4 = *(int *)((int)this + 0x828);
   if (-1 < iVar4) {
     uVar2 = (uint)*(short *)((int)this + iVar4 * 2 + 0x28);

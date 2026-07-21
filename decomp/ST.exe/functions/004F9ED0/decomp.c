@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
    CPanelTy::SwitchCPanel
-   
+
    [STSwitchEnumApplier] Switch target field_023F uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -17,10 +19,8 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   char *pcVar4;
   ushort *puVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   undefined1 *puVar7;
   undefined4 *puVar8;
-  void *unaff_EDI;
   uint uVar9;
   byte bVar10;
   undefined4 *puVar11;
@@ -28,7 +28,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   CPanelTy *local_10;
   int local_c;
   int local_8;
-  
+
   if (DAT_00808784 == 0) {
     if (((DAT_00808788 == 0) && (DAT_0080878c == 0)) && (DAT_00808790 == 0)) {
       bVar2 = false;
@@ -40,7 +40,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
       local_54.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_54;
       local_10 = this;
-      iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
       this_00 = local_10;
       if (iVar3 == 0) {
         switch(local_10->field_023F) {
@@ -61,24 +61,30 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
             ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
           }
           if (DAT_00801698 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00801698 + 0x1c))(0);
           }
           if (DAT_00802a44 != (void *)0x0) {
             thunk_FUN_00552160(DAT_00802a44,'\0','\0');
           }
           if (DAT_00801678 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00801678 + 0x1c))(0);
           }
           if (DAT_008016ec != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_008016ec + 0x1c))(0);
           }
           if (DAT_00802a48 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00802a48 + 0x1c))(0);
           }
           if (DAT_0080168c != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_0080168c + 0x1c))(0);
           }
           if (DAT_00801690 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00801690 + 0x18))(0);
           }
           if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
@@ -155,24 +161,30 @@ switchD_004f9f52_caseD_3:
             ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
           }
           if (DAT_00801698 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00801698 + 0x1c))(0);
           }
           if (DAT_00802a44 != (void *)0x0) {
             thunk_FUN_00552160(DAT_00802a44,'\0','\0');
           }
           if (DAT_00801678 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00801678 + 0x1c))(0);
           }
           if (DAT_008016ec != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_008016ec + 0x1c))(0);
           }
           if (DAT_00802a48 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00802a48 + 0x1c))(0);
           }
           if (DAT_0080168c != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_0080168c + 0x1c))(0);
           }
           if (DAT_00801690 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_00801690 + 0x18))(0);
           }
           if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
@@ -189,9 +201,7 @@ switchD_004f9f52_caseD_3:
       iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f,0,iVar3,
                                  &DAT_007a4ccc,s_CPanelTy__SwitchCPanel_007c2284);
       if (iVar6 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f);
     }

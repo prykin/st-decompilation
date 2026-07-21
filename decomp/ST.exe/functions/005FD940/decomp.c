@@ -7,7 +7,7 @@ int __thiscall FUN_005fd940(void *this,int param_1)
   int iVar3;
   int iVar4;
   undefined4 local_8;
-  
+
   iVar2 = 0;
   local_8 = 0;
   if (((*(int *)((int)this + 0x233) != 0) && (*(int *)((int)this + 0x226) != 0)) &&

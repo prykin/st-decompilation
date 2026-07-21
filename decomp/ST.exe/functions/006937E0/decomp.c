@@ -11,7 +11,7 @@ uint __cdecl FUN_006937e0(byte *param_1,int param_2)
   int iVar7;
   bool bVar8;
   byte local_108 [260];
-  
+
   uVar2 = thunk_FUN_006938c0(param_2);
   uVar5 = 0;
   iVar7 = uVar2 * 0x218;

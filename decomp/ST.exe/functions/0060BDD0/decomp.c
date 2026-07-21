@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
   int local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   ppiVar2 = local_58;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *ppiVar2 = (int *)0x0;
@@ -73,6 +73,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_58[4] = (int *)0x110;
     local_58[5] = local_38;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)*param_1)(local_58);
   return local_40;
 }

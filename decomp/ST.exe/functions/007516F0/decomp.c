@@ -21,7 +21,7 @@ int FUN_007516f0(int param_1,byte *param_2)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_007a1e68;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

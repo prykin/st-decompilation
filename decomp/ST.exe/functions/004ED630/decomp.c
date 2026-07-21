@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
@@ -14,8 +16,6 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   byte bVar5;
   int iVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar8;
   undefined4 uVar9;
   Global_mfRLoad_param_2Enum GVar10;
@@ -53,7 +53,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   uint local_10;
   int local_c;
   int local_8;
-  
+
   puVar22 = local_68;
   local_18 = this;
   for (iVar6 = 0x14; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -67,7 +67,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   }
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
-  iVar6 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
   this_00 = local_18;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_ac.previous;
@@ -77,9 +77,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
       RaiseInternalException(iVar6,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0x68);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar21 = 0x77;
   uVar18 = 0x99;
@@ -238,6 +236,7 @@ LAB_004eda0d:
       auStack_870[iVar6 * 0x5f] = uVar11;
       auStack_870[iVar6 * 0x5f + 1] = 0x3c;
     }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004eda47:
     local_10 = CONCAT31(local_10._1_3_,bVar5 + 1);
     if (5 < (byte)(bVar5 + 1)) {
@@ -262,6 +261,7 @@ LAB_004eda47:
       uVar12 = 0xc0af;
       uVar11 = 0xc09f;
       pCVar2 = thunk_FUN_00571240(s_BUT_BHOLD_007c16e8,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar11 = (**(code **)(iVar6 + 4))
                          (0,0,(-(DAT_0080874e != '\x03') & 2U) + 0x1f,
                           (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar2,uVar11,uVar12,uVar18,
@@ -276,6 +276,7 @@ LAB_004eda47:
       uVar12 = 0xc0a0;
       this_00->field_01C2 = uVar11;
       pCVar2 = thunk_FUN_00571240(s_BUT_BHOLD_007c16e8,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar11 = (**(code **)(iVar6 + 4))
                          (0,0,(-(DAT_0080874e != '\x03') & 6U) + 0x45,
                           (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar2,uVar12,uVar18,uVar21,
@@ -290,6 +291,7 @@ LAB_004eda47:
       uVar12 = 0xc0a1;
       this_00->field_01C6 = uVar11;
       pCVar2 = thunk_FUN_00571240(s_BUT_BAGR_007c16dc,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar11 = (**(code **)(iVar6 + 4))
                          (0,0,(-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 0xb3,
                           (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar2,uVar12,uVar18,uVar21,

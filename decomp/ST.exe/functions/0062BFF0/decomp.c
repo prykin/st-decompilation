@@ -27,7 +27,7 @@ FUN_0062bff0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   float local_10;
   float local_c;
   float local_8;
-  
+
   local_34[0] = (float)(param_4 - param_1);
   local_34[1] = (float)(param_5 - param_2);
   local_34[2] = (float)(param_6 - param_3);

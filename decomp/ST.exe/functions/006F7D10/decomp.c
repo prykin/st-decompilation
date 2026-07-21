@@ -12,7 +12,7 @@ void FUN_006f7d10(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   uint uVar4;
   int iVar5;
   int local_8;
-  
+
   _DAT_00857000 = 1;
   if (-1 < param_12 + -1) {
     local_8 = param_12;

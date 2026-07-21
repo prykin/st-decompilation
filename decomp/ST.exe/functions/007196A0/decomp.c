@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_007196a0(undefined4 param_1,MCIDEVICEID *param_2)
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   if (*param_2 == 0) {
     return 1;
   }

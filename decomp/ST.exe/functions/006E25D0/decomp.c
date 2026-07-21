@@ -8,7 +8,7 @@ int __thiscall FUN_006e25d0(void *this,int *param_1)
   int iVar2;
   int iVar3;
   longlong lVar4;
-  
+
   uVar1 = *(uint *)((int)this + 0xa8);
   if ((uVar1 & 8) == 0) {
     switch(uVar1) {

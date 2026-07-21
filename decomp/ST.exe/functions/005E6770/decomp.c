@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -7,7 +9,7 @@
 void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 param_2)
 
 {
-  AnonShape_006C7610_838EDECF *pAVar1;
+  AnonShape_006B5B10_E0D06CF1 *pAVar1;
   undefined4 uVar2;
   StartSystemTy *pSVar3;
   code *pcVar4;
@@ -23,8 +25,6 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
   undefined4 *puVar12;
   HoloTy *pHVar13;
   uint uVar14;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar15;
   char cVar16;
   undefined4 local_668 [256];
@@ -41,11 +41,11 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
   InternalExceptionFrame local_50;
   WaitTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_c;
   if (iVar5 == 0) {
     _DAT_0080f32e = 0;
@@ -74,7 +74,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
               ((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
     puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
-    pAVar1 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+    pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
     FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
     if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
         (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -96,6 +96,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     iVar5 = 1;
     puVar12 = (undefined4 *)(this_01->field_005D + 0x28);
     uVar10 = FUN_006b4fe0(this_01->field_005D);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar11 = (AnonPointee_WaitTy_1AEC *)
               FUN_006b50c0(0x1e4,399,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar10,puVar12,
                            iVar5);
@@ -386,6 +387,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       MMsgTy::StatePanel(this_01->field_1A5B->field_02E6,(int)local_6c);
     }
     thunk_FUN_00568bc0(&g_sound,0);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((DAT_00807300._1_1_ & 8) != 0) {
       thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
     }
@@ -400,8 +402,6 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0xa3);
     return;
   }
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

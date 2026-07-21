@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -13,9 +15,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   int iVar3;
   undefined4 uVar4;
   int iVar5;
-  undefined4 unaff_ESI;
   uint *puVar6;
-  void *unaff_EDI;
   undefined4 *puVar7;
   uint uVar8;
   uint local_510 [280];
@@ -35,12 +35,12 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   uint local_10;
   UPanelTy *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar3 == 0) {
     puVar7 = local_6c;
     for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -92,6 +92,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)local_c->field_000C + 8))(5,&local_8,0,local_6c,0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;
@@ -103,8 +104,6 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xd1);
     return 0xffffffff;
   }
-  pcVar1 = (code *)swi(3);
-  uVar4 = (*pcVar1)();
-  return uVar4;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

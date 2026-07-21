@@ -6,7 +6,7 @@ void __fastcall FUN_00618ad0(AnonShape_00618AD0_F1827B9B *param_1)
   AnonNested_00618AD0_005E_B3F50575 *pAVar2;
   uint uVar3;
   bool bVar4;
-  
+
   pAVar2 = param_1->field_005E;
   if (pAVar2 != (AnonNested_00618AD0_005E_B3F50575 *)0x0) {
     uVar3 = 0;

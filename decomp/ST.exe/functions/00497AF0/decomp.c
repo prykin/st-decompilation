@@ -3,7 +3,7 @@
    VTable: 00790728 (store 00497B05)
    Evidence: final_vptr=00790728; returns_this=true; calls_before=1; field_writes_after=47;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 00497AF0 returns STGroupBoatC::STGroupBoatC this @ 00497C6C */
 
@@ -12,7 +12,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   sub_004232A0(this);
   this->vtable = &STGroupBoatCVTable;
   this->field_0045 = 0;

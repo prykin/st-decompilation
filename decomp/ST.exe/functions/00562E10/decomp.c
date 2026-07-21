@@ -9,7 +9,7 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
   undefined4 *puVar5;
   int iVar6;
   int iVar7;
-  
+
   iVar1 = *(int *)(DAT_00803300 + param_4 * 0x14);
   iVar2 = *(int *)(DAT_00803300 + param_4 * 0x14 + 4);
   iVar3 = DAT_008032ec;

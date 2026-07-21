@@ -8,9 +8,10 @@ void __thiscall FUN_00514bc0(void *this,int param_1,int param_2)
   void *pvVar4;
   bool bVar5;
   int iVar6;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   uint local_c;
-  
+
   bVar5 = false;
   local_c = 0;
   if (*(int *)sizeHelp_exref == 0) {
@@ -20,6 +21,7 @@ LAB_00514be2:
   iVar6 = local_c * 0x11 + *(int *)((int)this + 0x1c7);
   cVar1 = *(char *)(iVar6 + 8);
   switch(cVar1) {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case '\x01':
   case '\x02':
   case '\x03':
@@ -116,8 +118,10 @@ LAB_00514d04:
     }
     iVar6 = *(int *)((int)this + 0x1c7) + local_c * 0x11;
     HelpPanelTy::LinkAct(this,*(int *)(iVar6 + 9),*(int *)(iVar6 + 0xd));
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     HelpPanelTy::PutToSHlp(this,unaff_EDI);
     local_c = *(uint *)sizeHelp_exref;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0x18))(1);
   }
   local_c = local_c + 1;

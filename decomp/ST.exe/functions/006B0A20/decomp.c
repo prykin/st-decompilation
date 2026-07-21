@@ -14,7 +14,7 @@ int FUN_006b0a20(undefined4 *param_1,int param_2,UINT iStart,UINT param_4,int pa
   PALETTEENTRY *pPVar7;
   undefined4 *puVar8;
   PALETTEENTRY local_404 [256];
-  
+
   if (param_1 != (undefined4 *)0x0) {
     iVar2 = 0;
     if (((param_1[2] & 0x20000001) == 0) && ((int)param_1[9] < 9)) {
@@ -43,10 +43,12 @@ int FUN_006b0a20(undefined4 *param_1,int param_2,UINT iStart,UINT param_4,int pa
         UVar4 = UVar4 - 1;
       } while (UVar4 != 0);
       if (param_5 != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)param_1[0xc] + 0x58))((int *)param_1[0xc],1,0);
       }
       piVar1 = (int *)param_1[0xf];
       if (piVar1 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 0x18))(piVar1,0,iStart,param_4,local_404);
       }
       SetPaletteEntries((HPALETTE)*param_1,iStart,param_4,local_404);

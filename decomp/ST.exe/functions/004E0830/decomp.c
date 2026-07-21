@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_69=105;CASE_70=112;CASE_72=114
-   
+
    [STSwitchEnumApplier] Switch target field_04D0 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
@@ -33,7 +33,7 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   char playerId;
   undefined4 uVar20;
   undefined4 uVar21;
-  
+
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
       iVar4 = *(int *)&param_1->field_0x4e8;
@@ -182,6 +182,7 @@ LAB_004e0a4f:
     iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
     if (((int)param_1->field_01F5->field_020C <= iVar4) && (*(int *)&param_1->field_0x4dc != 0)) {
       *(undefined4 *)&param_1->field_0x508 = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
         thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
       }
@@ -210,6 +211,7 @@ LAB_004e0a4f:
     uVar7 = GetPlayerRaceId(param_1->field_0x24);
     thunk_FUN_005fd1b0(*(undefined4 *)&param_1->field_0x24,uVar7 & 0xff,uVar11,uVar12,uVar13,uVar14,
                        uVar15,uVar16,uVar17,uVar18,pcVar19,uVar21,uVar20);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
       thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
       uVar7 = GetPlayerRaceId(param_1->field_0x24);
@@ -296,6 +298,7 @@ switchD_004e0aad_default:
       if (this != (STResourceC *)0x0) {
         STResourceC::SetResource(this,*(int *)&param_1->field_0x4e0,1);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((*(int *)&param_1->field_0x4e0 == 0) &&
          (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d))) {
         (*param_1->vtable->vfunc_90)(4,0x3bd);

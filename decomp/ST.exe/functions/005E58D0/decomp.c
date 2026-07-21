@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp
@@ -14,17 +16,15 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   int iVar4;
   ushort *puVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar7;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   MTestTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
       if (PTR_00802a30->field_00A9 == 0) {
@@ -76,9 +76,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   iVar6 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x31,0,iVar4,&DAT_007a4ccc,
                              s_MTestTy__InitMTest_007cdce4);
   if (iVar6 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Start_test_obj_cpp_007cdcbc,0x31);
   return;

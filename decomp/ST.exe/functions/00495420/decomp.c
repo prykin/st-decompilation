@@ -1,5 +1,10 @@
 
-bool __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *param_3)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (3), none consume AL/AX, and every RET path defines full EAX; sites=0047DF00 @ 0047E05A
+   -> CMP CMP EAX,0x1 | 0047DF00 @ 0047E298 -> CMP CMP EAX,0x1 | 0047DF00 @ 0047E4D5 -> CMP CMP
+   EAX,0x1 */
+
+int __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *param_3)
 
 {
   short sVar1;
@@ -11,7 +16,7 @@ bool __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *par
   int iVar7;
   int local_c;
   int local_8;
-  
+
   local_c = 1000000;
   if (*(int *)((int)this + 0x6b9) != 1) {
     sVar5 = *(short *)((int)this + 0x6a9);
@@ -26,14 +31,14 @@ bool __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *par
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar1 +
             (int)sVar5].objects[0] != this)))))))) {
-      return false;
+      return 0;
     }
     *param_1 = sVar5;
     sVar5 = *(short *)((int)this + 0x6ab);
 LAB_00495607:
     *param_2 = sVar5;
     *param_3 = *(short *)((int)this + 0x6ad) + 1;
-    return true;
+    return 1;
   }
   local_8 = 0;
   do {
@@ -50,6 +55,7 @@ LAB_00495607:
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar6 +
             (int)sVar2].objects[0] == (STWorldObject *)0x0)))) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar4 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),
                              *(short *)((int)this + 0x6a9) + local_8,
@@ -73,7 +79,7 @@ LAB_00495607:
     } while (iVar7 < 2);
     local_8 = local_8 + 1;
     if (1 < local_8) {
-      return local_c != 1000000;
+      return (uint)(local_c != 1000000);
     }
   } while( true );
 }

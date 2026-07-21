@@ -100,8 +100,10 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         if (returns.size() >= 2 && bare == 0 && allBooleanConstants(returns) &&
                 genericInteger(currentType))
             return row(function, currentType, "/bool", function.hasNoReturn(), function.hasNoReturn(),
-                mutable, "boolean_return_domain", "high",
-                "all explicit return values are constants in {0,1}: " + returns);
+                false, "boolean_return_domain", "review",
+                "all explicit return values are constants in {0,1}, but the source domain alone " +
+                "does not prove the x86 ABI return width; review STAbiConsistencyAnalyzer evidence: " +
+                returns);
 
         return null;
     }

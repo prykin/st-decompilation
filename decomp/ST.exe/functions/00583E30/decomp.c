@@ -22,7 +22,7 @@ int __thiscall STJellyGunC::sub_00583E30(STJellyGunC *this)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar1 = 2;
   if (this->field_0235 != CASE_2) {
     local_14 = sub_00584060(this,&local_10,&local_c,&local_8);

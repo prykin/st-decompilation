@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
@@ -11,25 +13,21 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undef
   IntercomPanelTy *pIVar3;
   int errorCode;
   int iVar4;
-  void *unaff_ESI;
   Global_sub_005252C0_param_1Enum GVar5;
-  InternalExceptionFrame *pIVar6;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   IntercomPanelTy *local_8;
-  
-  pIVar6 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar6);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pIVar3 = local_8;
   if (errorCode != 0) {
-    g_currentExceptionFrame = pIVar6;
+    g_currentExceptionFrame = local_4c.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x13b,0,errorCode,
                                &DAT_007a4ccc,s_IntercomPanelTy__SwitchIntercomP_007c4174);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x13b);
     return;
@@ -43,7 +41,7 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undef
       goto LAB_00522dd6;
     }
     if (sVar1 != 3) {
-      g_currentExceptionFrame = pIVar6;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
   }
@@ -55,7 +53,7 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undef
   GVar5 = CASE_B0;
 LAB_00522dd6:
   thunk_FUN_005252c0(GVar5);
-  g_currentExceptionFrame = pIVar6;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

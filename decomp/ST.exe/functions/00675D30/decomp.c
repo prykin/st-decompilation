@@ -3,7 +3,7 @@ void __cdecl FUN_00675d30(short param_1,short param_2,short param_3,short param_
 
 {
   short sVar1;
-  
+
   *param_5 = param_1 - param_4;
   param_5[1] = param_2 - param_4;
   param_5[2] = param_3 - param_4;

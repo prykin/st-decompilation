@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GetMessage
-   
+
    [STSwitchEnumApplier] Switch target field_01E6 uses
    /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_01E6State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21
@@ -19,10 +21,10 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
   int iVar4;
   undefined4 uVar5;
   DArrayTy *pDVar6;
-  undefined4 unaff_ESI;
   uint uVar7;
   uint index;
   byte *pbVar8;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   byte *pbVar9;
   bool bVar10;
@@ -39,11 +41,11 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
   uint local_10;
   uint local_c;
   byte *local_8;
-  
+
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
   local_20 = (STGroupC *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0);
   this_00 = local_20;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_84.previous;
@@ -53,9 +55,7 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x3b5);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1->field_0010 != 3) {
     STGroupC::GetMessage(local_20,(AnonShape_00423EC0_64CE1121 *)param_1);
@@ -166,6 +166,7 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_0031 + 2) = 0;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar7 = *(uint *)(this_00->field_0029 + 0xc);
     if ((uVar7 != 0) && (index = 0, uVar7 != 0)) {
       do {
@@ -184,10 +185,10 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[8].field_0025 + 1) = 0;
     }
-    pDVar6 = *(DArrayTy **)((int)&this_00[9].field_0000 + 1);
+    pDVar6 = *(DArrayTy **)((int)&this_00[9].vtable + 1);
     if (pDVar6 != (DArrayTy *)0x0) {
       DArrayDestroy(pDVar6);
-      *(undefined4 *)((int)&this_00[9].field_0000 + 1) = 0;
+      *(undefined4 *)((int)&this_00[9].vtable + 1) = 0;
     }
     if (*(DArrayTy **)&this_00[9].field_0x5 != (DArrayTy *)0x0) {
       DArrayDestroy(*(DArrayTy **)&this_00[9].field_0x5);
@@ -205,11 +206,11 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       DArrayDestroy(*(DArrayTy **)&this_00[10].field_0x4);
       *(undefined4 *)&this_00[10].field_0x4 = 0;
     }
-    if ((DArrayTy *)this_00[0xb].field_0000 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00[0xb].field_0000);
-      this_00[0xb].field_0000 = 0;
+    if (this_00[0xb].vtable != (STGroupCVTable *)0x0) {
+      DArrayDestroy((DArrayTy *)this_00[0xb].vtable);
+      this_00[0xb].vtable = (STGroupCVTable *)0x0;
     }
-    (**(code **)(this_00->field_0000 + 0x18))(this_00,0,0,0);
+    (*this_00->vtable->vfunc_18)(this_00,0,0,0);
     STGroupC::GetMessage(this_00,(AnonShape_00423EC0_64CE1121 *)param_1);
     g_currentExceptionFrame = local_84.previous;
     return 0;
@@ -252,12 +253,13 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       if (0 < (int)pDVar6->count) {
         do {
           DArrayGetElement(pDVar6,uVar7,&local_14);
-          (**(code **)(this_00->field_0000 + 4))(local_14);
+          (*this_00->vtable->vfunc_04)(local_14);
           pDVar6 = *(DArrayTy **)((int)&this_00[7].field_002D + 2);
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)pDVar6->count);
       }
       if (*(int *)((int)&this_00[7].field_0039 + 2) == 6) {
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         ReMakePatrolPoints((STGroupBoatC *)this_00,(int)unaff_EDI);
         sub_004A7E30((STGroupBoatC *)this_00,1);
       }
@@ -270,6 +272,7 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
     if ((*(int *)((int)&this_00[1].field_002D + 3) == 1) &&
        (iVar2 = this_00->field_002D, *(undefined4 *)((int)&this_00[1].field_002D + 3) = 0,
        iVar2 != 0)) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       RechargeNewCmd((STGroupBoatC *)this_00,unaff_EDI);
       DArrayDestroy((DArrayTy *)this_00->field_002D);
       this_00->field_002D = 0;
@@ -294,9 +297,9 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       DArrayDestroy(pDVar6);
       *(undefined4 *)&this_00[7].field_0027 = 0;
     }
-    if (*(int *)((int)&this_00[2].field_0000 + 3) == 1) {
+    if (*(int *)((int)&this_00[2].vtable + 3) == 1) {
       pDVar6 = *(DArrayTy **)((int)&this_00[7].field_0029 + 2);
-      *(undefined4 *)((int)&this_00[2].field_0000 + 3) = 0;
+      *(undefined4 *)((int)&this_00[2].vtable + 3) = 0;
       DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_0029 + 2) = 0;
     }
@@ -496,7 +499,7 @@ switchD_004984e0_default:
       }
       else {
         if (*(int *)((int)&this_00[2].field_0039 + 2) != 1) {
-          if (*(int *)((int)&this_00[3].field_0000 + 2) == 1) {
+          if (*(int *)((int)&this_00[3].vtable + 2) == 1) {
             if (*(int *)((int)&this_00[7].field_0039 + 2) == 0xd) {
               puVar3 = (uint *)SetMine((STGroupBoatC *)this_00,1);
             }

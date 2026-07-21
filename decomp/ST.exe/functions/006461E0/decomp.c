@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_volc.cpp
    STVolcanoC::GetMessage
-   
+
    [STSwitchEnumApplier] Switch target field_00A9 uses
    /SubmarineTitans/Recovered/Enums/STVolcanoC_field_00A9State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
@@ -19,19 +21,17 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,AnonShape_006461E0
   ushort *puVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 unaff_ESI;
   AnonNested_006461E0_0014_EFB6F372 *pAVar8;
-  void *unaff_EDI;
   undefined4 *puVar9;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   STJellyGunC *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = (STJellyGunC *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -41,9 +41,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,AnonShape_006461E0
       RaiseInternalException(iVar4,0,s_E____titans_nick_to_volc_cpp_007d26e4,0x123);
       return 0xffff;
     }
-    pcVar3 = (code *)swi(3);
-    uVar7 = (*pcVar3)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar2 = param_1->field_0010;
   if (uVar2 < 4) {
@@ -91,6 +89,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,AnonShape_006461E0
                (uVar2 >> 0x10) % 0x2711 + 20000 + PTR_00802a38->field_00E4;
           if (cVar1 == '\0') {
             if (*(int *)&local_8->field_0x61 != 0) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_006e9000(PTR_00807598,
                            *(undefined4 *)(*(int *)(*(int *)&local_8->field_0x61 + 0x21) + 0xa0),
                            0x5a,0x2f,

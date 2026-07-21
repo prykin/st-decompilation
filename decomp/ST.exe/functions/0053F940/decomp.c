@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -14,8 +16,6 @@ ProdPanelTy::CreateSlider
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar5;
   undefined4 uVar6;
   int *piVar7;
@@ -59,12 +59,12 @@ ProdPanelTy::CreateSlider
   ProdPanelTy *local_10;
   ushort *local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 == 0) {
     piVar7 = local_42c;
@@ -140,7 +140,8 @@ ProdPanelTy::CreateSlider
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
-    (**(code **)(*(int *)this_00->field_000C + 8))(4,&local_8,0,local_42c,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,4,&local_8,(int *)0x0,local_42c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }
@@ -155,9 +156,7 @@ ProdPanelTy::CreateSlider
   iVar8 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x239,0,iVar2,&DAT_007a4ccc,
                              s_ProdPanelTy__CreateSlider_007c7a9c);
   if (iVar8 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x239);
   return -1;

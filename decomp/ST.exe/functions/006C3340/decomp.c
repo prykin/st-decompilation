@@ -10,7 +10,7 @@ void FUN_006c3340(int param_1)
   int iVar6;
   int iVar7;
   tagRECT local_18;
-  
+
   iVar2 = param_1;
   GetClientRect(*(HWND *)(*(int *)(param_1 + 4) + 4),&local_18);
   piVar1 = (int *)(param_1 + 4);

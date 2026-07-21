@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -12,18 +14,16 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   int iVar3;
   ushort *puVar4;
   undefined4 *puVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *text;
   InternalExceptionFrame local_50;
   STFieldC *local_c;
   undefined4 *local_8;
-  
+
   local_8 = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -32,9 +32,7 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
     if (iVar3 == 0) {
       return local_8;
     }
-    pcVar1 = (code *)swi(3);
-    puVar5 = (undefined4 *)(*pcVar1)();
-    return puVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c->field_0255 == 0xdd) {
     text = s_ResSmall_007cb100;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -19,9 +21,7 @@ STAllPlayersC::GetScrObjList
   ushort *puVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 unaff_ESI;
   undefined4 *puVar11;
-  void *unaff_EDI;
   int iVar12;
   undefined4 *puVar13;
   bool bVar14;
@@ -37,22 +37,20 @@ STAllPlayersC::GetScrObjList
   undefined2 local_e;
   short *local_c;
   int local_8;
-  
+
   iVar12 = 0;
   local_14 = (ushort *)0x0;
   local_20 = (DArrayTy *)0x0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar6 != -0x5001fff7) {
       iVar12 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x32ad,0,0,&DAT_007a4ccc,
                                   s_STAllPlayersC__GetScrObjList_007a8ac4);
       if (iVar12 != 0) {
-        pcVar4 = (code *)swi(3);
-        puVar8 = (ushort *)(*pcVar4)();
-        return puVar8;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar6,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x32ae);
     }
@@ -63,9 +61,7 @@ LAB_0044cada:
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x32a9,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__GetScrObjList_inv_007a8ae8);
     if (iVar6 != 0) {
-      pcVar4 = (code *)swi(3);
-      puVar8 = (ushort *)(*pcVar4)();
-      return puVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     g_currentExceptionFrame = local_68.previous;
   }
@@ -97,6 +93,7 @@ LAB_0044c950:
                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) {
                   bVar1 = *(byte *)(piVar3 + 9);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_24 = CONCAT31(uStack_23,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == DAT_0080874d) {
@@ -125,6 +122,7 @@ LAB_0044ca10:
                   else {
                     bVar14 = (&DAT_008087ea)[uVar9 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
                   }
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   if (((bVar14) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 != 0)) &&
                      (iVar6 = (**(code **)(*piVar3 + 0xf4))(DAT_0080874d), iVar6 != 0)) {
                     local_10 = (undefined1)piVar3[9];

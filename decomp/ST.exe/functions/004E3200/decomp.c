@@ -3,18 +3,18 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
 
 {
   uint index;
-  bool bVar1;
-  undefined1 uVar2;
+  undefined1 uVar1;
+  bool bVar2;
   uint *puVar3;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
   int iVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined3 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined3 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_02;
-  undefined3 extraout_var_03;
-  undefined3 extraout_var_04;
-  undefined3 extraout_var_05;
-  undefined3 extraout_var_06;
   int iVar5;
   DArrayTy *array;
   undefined1 *puVar6;
@@ -36,7 +36,7 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   int local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar6 = (undefined1 *)0x0;
   local_8 = 0;
   local_c = 0;
@@ -60,16 +60,16 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
         iVar4 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)puVar6,iVar4 + 1);
       }
       else {
-        bVar1 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)puVar6);
-        iVar4 = CONCAT31(extraout_var_03,bVar1);
+        iVar4 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)puVar6);
       }
       if (iVar4 != 0) {
-        uVar2 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)puVar6);
+        uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)puVar6);
         iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar6);
-        if ((iVar4 < CONCAT31(extraout_var_04,uVar2)) &&
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        if ((iVar4 < CONCAT31(extraout_var_01,uVar1)) &&
            (((*(int *)((int)this + 0x361) != 2 || (*(undefined1 **)((int)this + 0x369) != puVar6))
-            && (bVar1 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)puVar6),
-               CONCAT31(extraout_var_05,bVar1) == 0)))) {
+            && (iVar4 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)puVar6), iVar4 == 0))))
+        {
           puVar3 = local_48;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             *puVar3 = 0;
@@ -82,9 +82,10 @@ LAB_004e3526:
             local_40 = '\x01';
           }
           else {
-            bVar1 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)puVar6);
+            bVar2 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)puVar6);
             local_40 = '\0';
-            if (CONCAT31(extraout_var_06,bVar1) != 0) goto LAB_004e3526;
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            if (CONCAT31(extraout_var_02,bVar2) != 0) goto LAB_004e3526;
           }
           thunk_FUN_004c7260(this,CASE_2,(int)puVar6,&local_8,&local_c,&local_10,&local_14);
           local_3a = (undefined2)local_8;
@@ -118,14 +119,14 @@ LAB_004e3526:
     puVar3 = &DAT_0079a3fc + (iVar4 * 3 + -0xfc) * 5;
     do {
       if (0xe < local_18) break;
-      bVar1 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),*puVar3);
-      if (CONCAT31(extraout_var,bVar1) != 0) {
-        uVar2 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),*puVar3);
+      iVar4 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),*puVar3);
+      if (iVar4 != 0) {
+        uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),*puVar3);
         iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar3);
-        if (((iVar4 < CONCAT31(extraout_var_00,uVar2)) &&
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        if (((iVar4 < CONCAT31(extraout_var,uVar1)) &&
             ((*(int *)((int)this + 0x361) != 2 || (*(uint *)((int)this + 0x369) != *puVar3)))) &&
-           (bVar1 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),*puVar3),
-           CONCAT31(extraout_var_01,bVar1) == 0)) {
+           (iVar4 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),*puVar3), iVar4 == 0)) {
           iVar4 = *(int *)((int)this + 0x24);
           puVar8 = local_48;
           for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -139,9 +140,10 @@ LAB_004e336e:
             local_40 = '\0';
           }
           else {
-            bVar1 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),*puVar3);
+            bVar2 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),*puVar3);
             local_40 = '\x01';
-            if (CONCAT31(extraout_var_02,bVar1) == 0) goto LAB_004e336e;
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            if (CONCAT31(extraout_var_00,bVar2) == 0) goto LAB_004e336e;
           }
           thunk_FUN_004c7260(this,CASE_2,*puVar3,&local_8,&local_c,&local_10,&local_14);
           local_3e = (undefined2)local_c;

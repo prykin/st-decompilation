@@ -6,7 +6,7 @@ void __cdecl FUN_00648dd0(uint param_1)
   int iVar1;
   STMessage *pSVar2;
   STMessage local_24;
-  
+
   if ((((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) && (PTR_00802a38 != (STPlaySystemC *)0x0))
       && (param_1 < 8)) && ((byte)(&DAT_008087e9)[param_1 * 0x51] < 8)) {
     this = thunk_FUN_004357f0((char)param_1);

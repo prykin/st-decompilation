@@ -5,6 +5,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
   char cVar1;
   StartSystemTy *pSVar2;
   bool bVar3;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar4;
   uint uVar5;
@@ -16,18 +17,22 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
   char local_420 [1044];
   char *local_c;
   StartSystemTy *local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(*(int *)(param_1 + 0x686) + 8) < 1) {
     pcVar8 = (char *)0x0;
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pcVar8 = (char *)**(undefined4 **)(*(int *)(param_1 + 0x686) + 0x14);
   }
   local_8 = (StartSystemTy *)param_1;
   bVar3 = thunk_FUN_00571810(pcVar8);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT31(extraout_var,bVar3) == 0) {
     return 0;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar7 = *(int *)(param_1 + 0x696);
   pcVar8 = local_460;
   for (iVar4 = 0x114; iVar4 != 0; iVar4 = iVar4 + -1) {

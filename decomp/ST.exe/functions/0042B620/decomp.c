@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetObjPtr
-   
+
    [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00435060 -> 0042B620 @ 0043513F | 00435060 -> 0042B620 @ 00435244 | 0043AE40 ->
    0042B620 @ 0043B99C | 0049E510 -> 0042B620 @ 0049E761 | 0049FBF0 -> 0042B620 @ 0049FDF3 |
@@ -14,7 +16,7 @@
    004A20FE | 004A0FA0 -> 0042B620 @ 004A2723 | 004A3430 -> 0042B620 @ 004A3686 | 004A3430 ->
    0042B620 @ 004A3787 | 004A3430 -> 0042B620 @ 004A3996 | 004A3CD0 -> 0042B620 @ 004A3E62 |
    004DE820 -> 0042B620 @ 004DE8BF | 006406D0 -> 0042B620 @ 00640BE2
-   
+
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 0042D980 -> 0042B620 @ 0042DA3C | 0042D980 -> 0042B620 @ 0042DA7B | 0042D980 ->
    0042B620 @ 0042DC2B | 0042D980 -> 0042B620 @ 0042DCF7 | 00435060 -> 0042B620 @ 004350F4 |
@@ -54,21 +56,26 @@
    00675DC0 -> 0042B620 @ 00675E0E | 00675FE0 -> 0042B620 @ 00676063 | 00676260 -> 0042B620 @
    006762F0 | 006763F0 -> 0042B620 @ 00676480 | 0067B520 -> 0042B620 @ 0067B7B1 | 0067BE20 ->
    0042B620 @ 0067BE5F | 0067C7E0 -> 0042B620 @ 0067CAEE | 0068F020 -> 0042B620 @ 0068F101 |
-   0068F360 -> 0042B620 @ 0068F415 | 0068F660 -> 0042B620 @ 0068F6E1 */
+   0068F360 -> 0042B620 @ 0068F415 | 0068F660 -> 0042B620 @ 0068F6E1
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=0042B637 MOVSX EAX,byte ptr [EBP + 0x8] | 0042B6C9 MOVSX
+   ECX,byte ptr [EBP + 0x8] */
 
 STGameObjC * __thiscall
 STAllPlayersC::GetObjPtr
-          (STAllPlayersC *this,uint objPtr,uint param_2,STAllPlayersC_GetObjPtr_param_3Enum param_3)
+          (STAllPlayersC *this,char objPtr,uint param_2,STAllPlayersC_GetObjPtr_param_3Enum param_3)
 
 {
   code *pcVar1;
   int iVar2;
   STGameObjC *pSVar3;
   DArrayTy *array;
-  
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined3 in_stack_00000005;
+
   switch(param_3) {
   case CASE_1:
-    array = g_playerRuntime[(char)objPtr].objects;
+    array = g_playerRuntime[objPtr].objects;
     if (array == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
@@ -105,16 +112,14 @@ STAllPlayersC::GetObjPtr
     break;
   default:
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x17a,0,0,
-                               s_STAllPlayersC__GetObjPtr_player__007a609c,(int)(char)objPtr,
+                               s_STAllPlayersC__GetObjPtr_player__007a609c,(int)objPtr,
                                param_2 & 0xffff);
     if (iVar2 == 0) {
       return (STGameObjC *)0x0;
     }
-    pcVar1 = (code *)swi(3);
-    pSVar3 = (STGameObjC *)(*pcVar1)();
-    return pSVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar2 = DArrayGetElement(array,param_2 & 0xffff,&objPtr);
-  return (STGameObjC *)(-(uint)(iVar2 != -4) & objPtr);
+  return (STGameObjC *)(-(uint)(iVar2 != -4) & _objPtr);
 }
 

@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_005822e0(void *this,byte param_1,byte param_2)
   char cVar1;
   uint uVar2;
   uint uVar3;
-  
+
   if (param_1 != param_2) {
     uVar2 = (uint)param_1;
     uVar3 = (uint)param_2;

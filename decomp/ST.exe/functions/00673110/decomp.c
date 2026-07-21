@@ -4,7 +4,7 @@ int __cdecl FUN_00673110(byte *param_1,byte *param_2)
 {
   byte bVar1;
   bool bVar2;
-  
+
   while( true ) {
     bVar1 = *param_1;
     bVar2 = bVar1 < *param_2;

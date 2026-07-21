@@ -5,7 +5,7 @@ undefined4 FUN_004eb300(uint param_1,int param_2,int param_3,int param_4)
   int iVar1;
   int iVar2;
   char playerId;
-  
+
   playerId = (char)param_1;
   iVar1 = GetPlayerRaceId(playerId);
   if ((char)iVar1 == '\x03') {

@@ -9,7 +9,7 @@ undefined4 * __thiscall FUN_0057f3a0(void *this,int param_1,int param_2)
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  
+
   pcVar5 = PTR_s_rgold__d_007cb098;
   if (param_1 == -1) {
     iVar4 = *(int *)((int)this + 0x259) / 999999;

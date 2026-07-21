@@ -7,7 +7,7 @@ void * FUN_004d85e0(int param_1,int param_2,int param_3)
   short local_a;
   short local_8;
   short local_6;
-  
+
   if (PTR_007fa150 != (DArrayTy *)0x0) {
     PTR_007fa150->iteratorIndex = 0;
     iVar1 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);

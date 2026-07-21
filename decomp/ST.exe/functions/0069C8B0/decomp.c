@@ -23,7 +23,7 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
   int local_10;
   int *local_c;
   void *local_8;
-  
+
   iVar1 = param_1;
   puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x10,10);
   if (((puVar2 != (uint *)0x0) && (param_1 != 0)) && (0 < param_3)) {

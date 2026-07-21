@@ -5,7 +5,7 @@ undefined4 * __fastcall FUN_004d0fc0(STGroupBoatC *param_1)
   AnonShape_004AB810_8E5693D5 *pAVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   STGameObjC::STGameObjC((STGameObjC *)param_1);
   pAVar1 = (AnonShape_004AB810_8E5693D5 *)((int)&param_1->field_01D2 + 3);
   thunk_FUN_004ab810(pAVar1);

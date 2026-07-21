@@ -3,7 +3,7 @@
    VTable: 0079E1B4 (store 006E6115)
    Evidence: final_vptr=0079E1B4; returns_this=true; calls_before=1; field_writes_after=1;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 006E6100 returns SystemWithNamedObjClassTy::SystemWithNamedObjClassTy this @ 006E6126
     */

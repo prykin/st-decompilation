@@ -3,7 +3,7 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
 
 {
   undefined4 uVar1;
-  
+
   thunk_FUN_00423160();
   uVar1 = 0;
   if (param_1->field_0361 != 0) {
@@ -12,6 +12,7 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
   param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
   param_1->field_026D = 0;
   if (*(int *)&param_1[1].field_0x244 == 0x50) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     thunk_FUN_004b70d0(CONCAT31((int3)((uint)uVar1 >> 8),param_1->field_0x24),0x28);
   }
   if ((*(int *)&param_1[1].field_0x244 == 0x6f) || (*(int *)&param_1[1].field_0x244 == 0x73)) {

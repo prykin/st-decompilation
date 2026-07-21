@@ -7,7 +7,7 @@ void FUN_004d8530(STResourceC *param_1)
 {
   int iVar1;
   STResourceC *local_8;
-  
+
   if (PTR_007fa150 != (DArrayTy *)0x0) {
     PTR_007fa150->iteratorIndex = 0;
     iVar1 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_8);
@@ -18,7 +18,7 @@ void FUN_004d8530(STResourceC *param_1)
           return;
         }
       }
-      FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_007fa150,PTR_007fa150->iteratorIndex - 1);
+      FUN_006b0c70(PTR_007fa150,PTR_007fa150->iteratorIndex - 1);
     }
   }
   return;

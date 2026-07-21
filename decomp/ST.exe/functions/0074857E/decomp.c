@@ -6,7 +6,7 @@ FUN_0074857e(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   FUN_00747b12(this,param_1,param_2,param_3,param_4,param_5,0);
   *(undefined4 *)((int)this + 0x9c) = 0;
   *(undefined1 *)((int)this + 0xa0) = 0;

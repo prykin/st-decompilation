@@ -11,10 +11,12 @@ FUN_00629f90(void *this,AnonShape_00629F90_C3CBACCB *param_1,undefined4 param_2)
   byte bVar4;
   uint uVar5;
   int iVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_00;
   longlong lVar7;
-  
+
   *(undefined4 *)((int)this + 0xd2) = param_1->field_0042;
   *(undefined4 *)((int)this + 0x46) = param_1->field_0020;
   *(undefined4 *)((int)this + 0x4a) = param_1->field_0024;
@@ -31,6 +33,7 @@ FUN_00629f90(void *this,AnonShape_00629F90_C3CBACCB *param_1,undefined4 param_2)
   }
   fsin((float10)param_1->field_002C * (float10)_DAT_0079d064 * (float10)_DAT_0079d060);
   lVar7 = Library::MSVCRT::__ftol();
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fcos(extraout_ST0);
   *(int *)((int)this + 0x8a) = (int)lVar7;
   lVar7 = Library::MSVCRT::__ftol();
@@ -41,6 +44,7 @@ FUN_00629f90(void *this,AnonShape_00629F90_C3CBACCB *param_1,undefined4 param_2)
   }
   fsin((float10)param_1->field_0030 * (float10)_DAT_0079d064 * (float10)_DAT_0079d060);
   lVar7 = Library::MSVCRT::__ftol();
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fcos(extraout_ST0_00);
   *(int *)((int)this + 0x92) = (int)lVar7;
   lVar7 = Library::MSVCRT::__ftol();

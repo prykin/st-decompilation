@@ -12,7 +12,7 @@ int __thiscall FUN_0060d660(void *this,int *param_1)
   int local_14;
   int local_10;
   int local_8;
-  
+
   iVar2 = *(int *)((int)this + 0x23c);
   uVar5 = iVar2 * 0x44;
   iVar1 = Library::DKW::LIB::FUN_006aac70(uVar5);
@@ -50,11 +50,15 @@ int __thiscall FUN_0060d660(void *this,int *param_1)
           }
           piVar6 = (int *)((int)piVar6 + iVar1);
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(int *)(local_14 + 8 + *(int *)((int)this + 0x244)) != 0) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar2 = Library::DKW::LIB::FUN_006aac70
                             (*(int *)(local_14 + *(int *)((int)this + 0x244) + 4) << 2);
           *(int *)(local_14 + 8 + *(int *)((int)this + 0x244)) = iVar2;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           piVar7 = *(int **)(local_14 + *(int *)((int)this + 0x244) + 8);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           for (uVar3 = *(uint *)(local_14 + 4 + *(int *)((int)this + 0x244)) & 0x3fffffff;
               uVar3 != 0; uVar3 = uVar3 - 1) {
             *piVar7 = *piVar6;

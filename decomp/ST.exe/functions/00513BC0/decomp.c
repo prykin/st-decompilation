@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -6,143 +8,153 @@
 void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
 
 {
-  void *pvVar1;
-  code *pcVar2;
+  AnonPointee_HelpPanelTy_01B3 *pAVar1;
+  void *pvVar2;
+  code *pcVar3;
   HelpPanelTy *this_00;
-  int iVar3;
-  int *piVar4;
-  int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
-  uint uVar6;
+  int iVar4;
+  int *piVar5;
+  int iVar6;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
+  uint uVar7;
   InternalExceptionFrame local_50;
   uint local_c;
   HelpPanelTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9,0,iVar3,&DAT_007a4ccc
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9,0,iVar4,&DAT_007a4ccc
                                ,s_HelpPanelTy__PrevBut_007c3ab8);
-    if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9);
+    if (iVar6 == 0) {
+      RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = local_8->field_01B7;
-  iVar3 = local_8->field_01B3;
-  if (iVar5 == 0) {
-    iVar5 = *(int *)(iVar3 + 0xc);
-    if (iVar5 == 0) {
-      piVar4 = (int *)0x0;
+  iVar4 = local_8->field_01B7;
+  pAVar1 = local_8->field_01B3;
+  if (iVar4 == 0) {
+    iVar4 = *(int *)&pAVar1->field_0xc;
+    if (iVar4 == 0) {
+      piVar5 = (int *)0x0;
     }
     else {
-      piVar4 = *(int **)(iVar3 + 0x1c);
+      piVar5 = (int *)pAVar1->field_001C;
     }
-    if ((char)piVar4[2] != '\0') {
+    if ((char)piVar5[2] != '\0') {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if (*(char *)((int)piVar4 + 0x12) != '\0') {
+    if (*(char *)((int)piVar5 + 0x12) != '\0') {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    uVar6 = 0xffffffff;
+    uVar7 = 0xffffffff;
   }
   else {
-    uVar6 = iVar5 - 1;
-    if (uVar6 < *(uint *)(iVar3 + 0xc)) {
-      piVar4 = (int *)(*(int *)(iVar3 + 8) * (iVar5 + -1) + *(int *)(iVar3 + 0x1c));
+    uVar7 = iVar4 - 1;
+    if (uVar7 < *(uint *)&pAVar1->field_0xc) {
+      piVar5 = (int *)(pAVar1->field_0008 * (iVar4 + -1) + pAVar1->field_001C);
     }
     else {
-      piVar4 = (int *)0x0;
+      piVar5 = (int *)0x0;
     }
-    if (piVar4 == (int *)0x0) {
+    if (piVar5 == (int *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    local_c = uVar6;
-    if ((char)piVar4[2] != '\0') {
-      local_8->field_01B7 = uVar6;
+    local_c = uVar7;
+    if ((char)piVar5[2] != '\0') {
+      local_8->field_01B7 = uVar7;
       local_8->field_01A1 = 0;
       local_8->field_01A7 = 0;
       local_8->field_01A3 = 0;
-      uVar6 = *(uint *)((int)piVar4 + 0xd);
-      pvVar1 = *(void **)((int)piVar4 + 9);
-      switch((char)piVar4[2]) {
+      uVar7 = *(uint *)((int)piVar5 + 0xd);
+      pvVar2 = *(void **)((int)piVar5 + 9);
+      switch((char)piVar5[2]) {
       case '\x01':
-        RCProc(local_8,(int)pvVar1,uVar6,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        RCProc(local_8,(int)pvVar2,uVar7,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x02':
-        ObjProc(local_8,(int)pvVar1,uVar6,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        ObjProc(local_8,(int)pvVar2,uVar7,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x03':
-        SubProc(local_8,(int)pvVar1,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        SubProc(local_8,(int)pvVar2,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x04':
-        ArmProc(local_8,(int)pvVar1,uVar6,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        ArmProc(local_8,(int)pvVar2,uVar7,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x05':
-        TechProc(local_8,(uint)pvVar1,(byte)uVar6,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        TechProc(local_8,(uint)pvVar2,(byte)uVar7,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x06':
-        TTreeProc(local_8,(uint)pvVar1,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        TTreeProc(local_8,(uint)pvVar2,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\a':
         MObjProc(local_8);
-        PutToSHlp(this_00,(int)unaff_EDI);
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\b':
-        TipProc(local_8,pvVar1,uVar6,'\0');
+        TipProc(local_8,pvVar2,uVar7,'\0');
         break;
       case '\n':
         IndexBut(local_8);
-        PutToSHlp(this_00,(int)unaff_EDI);
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\v':
-        SpecProc(local_8,(int)pvVar1,uVar6,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        SpecProc(local_8,(int)pvVar2,uVar7,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\f':
-        NatProc(local_8,(int)pvVar1,'\0');
-        PutToSHlp(this_00,(int)unaff_EDI);
+        NatProc(local_8,(int)pvVar2,'\0');
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PutToSHlp(this_00,unaff_EDI);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
-      PutToSHlp(this_00,(int)unaff_EDI);
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      PutToSHlp(this_00,unaff_EDI);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    iVar5 = *(uint *)(iVar3 + 0xc) - iVar5;
-    if (*(char *)((int)piVar4 + 0x12) != '\0') {
-      local_8->field_01B7 = uVar6;
+    iVar4 = *(uint *)&pAVar1->field_0xc - iVar4;
+    if (*(char *)((int)piVar5 + 0x12) != '\0') {
+      local_8->field_01B7 = uVar7;
       goto LAB_00513e3e;
     }
   }
-  ChangeTree(local_8,piVar4,uVar6);
-  this_00->field_01B7 = *(int *)(this_00->field_01B3 + 0xc) - iVar5;
+  ChangeTree(local_8,piVar5,uVar7);
+  this_00->field_01B7 = *(int *)&this_00->field_01B3->field_0xc - iVar4;
 LAB_00513e3e:
   PrevBut(this_00);
   g_currentExceptionFrame = local_50.previous;

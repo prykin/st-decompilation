@@ -20,7 +20,7 @@ byte * __thiscall FUN_00622990(void *this,uint *param_1)
   byte *local_10;
   uint local_c;
   uint local_8;
-  
+
   local_10 = (byte *)Library::DKW::LIB::FUN_006aac70(0x109);
   puVar6 = (undefined4 *)((int)this + 0x25e);
   puVar9 = (undefined4 *)local_10;

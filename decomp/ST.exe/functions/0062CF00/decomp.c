@@ -9,7 +9,7 @@ undefined4 * __thiscall STManRub3C::STManRub3C(STManRub3C *this)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
   this->vtable = &STManRub3CVTable;
   if (this != (STManRub3C *)0x0) {

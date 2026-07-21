@@ -18,7 +18,7 @@ FUN_00613140(void *this,int param_1,int param_2,int param_3,int param_4,int para
   float local_10;
   float local_c;
   float local_8;
-  
+
   local_10 = (float)param_4 * _DAT_007904f8 * _DAT_007904f0;
   local_c = (float)param_5 * _DAT_007904f8 * _DAT_007904f0;
   local_8 = (float)param_6 * _DAT_007904f8 * _DAT_007904f0;
@@ -27,6 +27,7 @@ FUN_00613140(void *this,int param_1,int param_2,int param_3,int param_4,int para
   local_18 = (float)param_2 * _DAT_007904f8 * _DAT_007904f0;
   local_14 = (float)param_3 * _DAT_007904f8 * _DAT_007904f0;
   FUN_006e25d0(PTR_00807598,&local_2c);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   sVar1 = (**(code **)(*(int *)this + 0x14))
                     (local_3c >> 0x10,local_38 >> 0x10,local_34 >> 0x10,local_2c >> 0x10,
                      local_28 >> 0x10,local_24 >> 0x10);

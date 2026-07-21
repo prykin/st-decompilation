@@ -7,7 +7,7 @@ void __thiscall FUN_005f91e0(void *this,int param_1,int param_2)
   short local_c [2];
   short local_8;
   short local_6;
-  
+
   STFishC::sub_004162B0(this,&local_6,&local_8,local_c);
   local_c[0] = local_c[0] + -1;
   if (((((-1 < local_6) && (local_6 < g_worldGrid.sizeX)) && (-1 < local_8)) &&

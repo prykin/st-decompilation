@@ -2,23 +2,25 @@
 undefined4 __fastcall FUN_006646e0(int param_1)
 
 {
-  int iVar1;
+  dword dVar1;
   uint *puVar2;
-  AnonShape_006B0C70_7C4FE646 *groupContent;
+  DArrayTy *groupContent;
   uint uVar3;
   bool bVar4;
-  
-  groupContent = *(AnonShape_006B0C70_7C4FE646 **)(param_1 + 0x217);
-  iVar1 = groupContent->field_000C;
-  if (iVar1 == 0) {
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  groupContent = *(DArrayTy **)(param_1 + 0x217);
+  dVar1 = groupContent->count;
+  if (dVar1 == 0) {
     return 0xffffffff;
   }
   uVar3 = 0;
-  if (0 < iVar1) {
-    bVar4 = iVar1 != 0;
+  if (0 < (int)dVar1) {
+    bVar4 = dVar1 != 0;
     do {
       if (bVar4) {
-        puVar2 = (uint *)(groupContent->field_0008 * uVar3 + groupContent->field_001C);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar3) (runtime stride) */
+        puVar2 = (uint *)(groupContent->elementSize * uVar3 + (int)groupContent->data);
       }
       else {
         puVar2 = (uint *)0x0;
@@ -26,11 +28,13 @@ undefined4 __fastcall FUN_006646e0(int param_1)
       if ((0x31 < *puVar2) && (*puVar2 < 100)) {
         FUN_006b0c70(groupContent,uVar3);
       }
-      groupContent = *(AnonShape_006B0C70_7C4FE646 **)(param_1 + 0x217);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      groupContent = *(DArrayTy **)(param_1 + 0x217);
       uVar3 = uVar3 + 1;
-      bVar4 = uVar3 < (uint)groupContent->field_000C;
-    } while ((int)uVar3 < (int)groupContent->field_000C);
+      bVar4 = uVar3 < groupContent->count;
+    } while ((int)uVar3 < (int)groupContent->count);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   return *(undefined4 *)(*(int *)(param_1 + 0x217) + 0xc);
 }
 

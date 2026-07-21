@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_004d10a0(void *this,int param_1)
 {
   uint uVar1;
   uint uVar2;
-  
+
   uVar1 = ((((0x18 - *(int *)((int)this + 0x29c) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 6
           ) * 9;
   uVar2 = uVar1;

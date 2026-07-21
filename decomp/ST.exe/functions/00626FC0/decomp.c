@@ -4,7 +4,7 @@ void __thiscall FUN_00626fc0(void *this,char *param_1)
 {
   undefined4 uVar1;
   int iVar2;
-  
+
   if (*(int *)((int)this + 0x2ae) == 4) {
     *param_1 = '\x04';
   }
@@ -12,6 +12,7 @@ void __thiscall FUN_00626fc0(void *this,char *param_1)
     *param_1 = ((*(uint *)((int)this + 0x262) != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
   }
   param_1[1] = '\x01';
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar1 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)(param_1 + 2) = uVar1;
   iVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));

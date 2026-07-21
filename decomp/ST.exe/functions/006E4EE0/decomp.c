@@ -7,7 +7,7 @@ int __fastcall FUN_006e4ee0(int *param_1)
   int iVar1;
   int iVar2;
   bool bVar3;
-  
+
   iVar1 = param_1[0xb];
   iVar2 = *(int *)(iVar1 + 0xc);
   do {
@@ -33,7 +33,7 @@ LAB_006e4f26:
             param_1[7] = 1;
             return 0xffff;
           }
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1[10],0);
+          FUN_006b0c70((DArrayTy *)param_1[10],0);
           iVar1 = param_1[10];
           bVar3 = *(int *)(iVar1 + 0xc) == 0;
         } while (!bVar3);
@@ -41,6 +41,7 @@ LAB_006e4f26:
           return iVar2;
         }
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar1 = (**(code **)(*param_1 + 0x14))();
       if (iVar1 != 0) {
         param_1[7] = 1;
@@ -53,7 +54,7 @@ LAB_006e4f26:
       param_1[7] = 1;
       goto LAB_006e4f26;
     }
-    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1[0xb],0);
+    FUN_006b0c70((DArrayTy *)param_1[0xb],0);
     iVar1 = param_1[0xb];
     iVar2 = *(int *)(iVar1 + 0xc);
   } while( true );

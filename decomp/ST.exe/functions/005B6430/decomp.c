@@ -11,7 +11,7 @@ undefined4 __thiscall MMObjTy::GetMessage(MMObjTy *this,int param_1)
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = FUN_006e5fd0();
   return uVar1;
 }

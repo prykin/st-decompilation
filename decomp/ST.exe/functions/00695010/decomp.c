@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00695010(void *this,int param_1,int param_2,int param_
   uint local_10;
   int local_c;
   undefined4 local_8;
-  
+
   iVar1 = *(int *)(param_3 + 4);
   local_8 = 0xffffffff;
   local_c = 0;

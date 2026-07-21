@@ -6,7 +6,7 @@ ushort * __cdecl FUN_0067bd00(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
   ushort *puVar2;
   uint uVar3;
   bool bVar4;
-  
+
   uVar3 = 0;
   uVar1 = param_1->field_000C;
   if (0 < (int)uVar1) {

@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_0057cc90(void *this,Global_sub_0057CC90_param_1Enum pa
   undefined4 uVar1;
   int iVar2;
   int iVar3;
-  
+
   uVar1 = 0xffffffff;
   iVar3 = 0;
   if (8 < param_2) {

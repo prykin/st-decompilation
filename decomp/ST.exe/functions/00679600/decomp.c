@@ -20,7 +20,7 @@ void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
   byte local_c;
   undefined3 uStack_b;
   AnonShape_00679600_B8E418A8 *local_8;
-  
+
   local_14 = param_1->field_0640;
   if (8 < local_14) {
     param_1->field_0640 = 0xff;
@@ -34,7 +34,9 @@ void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
   uVar7 = param_1->field_05D7;
   if ((uVar4 != uVar7) && (uVar4 != 0xff)) {
     cVar2 = (char)uVar4;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = (byte *)CONCAT31(local_10._1_3_,cVar2);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_c = CONCAT31(uStack_b,(char)uVar7);
     if (DAT_00808a8f == '\0') {
       if (cVar2 == (char)uVar7) {
@@ -74,6 +76,7 @@ LAB_0067971a:
   do {
     uVar4 = (uint)*local_10;
     if ((uVar4 != 0xff) && (uVar7 = param_1->field_05D7, uVar4 != uVar7)) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,(byte)uVar7);
       if (DAT_00808a8f == '\0') {
         if (*local_10 == (byte)uVar7) {
@@ -134,8 +137,11 @@ cf_common_exit_0067989B:
       *(undefined4 *)pAVar9 = 0;
       pAVar9 = (AnonShape_0068FD00_A5257008 *)&pAVar9->field_0x4;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_48[0]._4_4_ = param_1->field_06FE;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_48[0]._0_4_ = 0x6a;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_48[0]._8_4_ = uVar4;
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
               ((AnonReceiver_006799B0 *)param_1,local_48,-1);

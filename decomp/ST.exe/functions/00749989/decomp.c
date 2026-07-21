@@ -9,7 +9,7 @@ undefined4 FUN_00749989(char *param_1)
   char *pcVar5;
   bool bVar6;
   int local_8;
-  
+
   local_8 = 0;
   ppuVar2 = &PTR_DAT_007a1270;
   do {
@@ -26,6 +26,7 @@ undefined4 FUN_00749989(char *param_1)
       pcVar5 = pcVar5 + 1;
     } while (bVar6);
     if (bVar6) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       return CONCAT22((short)((uint)pcVar4 >> 0x10),0xffff);
     }
     iVar1 = 0x10;
@@ -39,6 +40,7 @@ undefined4 FUN_00749989(char *param_1)
       pcVar3 = pcVar3 + 1;
     } while (bVar6);
     if (bVar6) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       return CONCAT22((short)((uint)(local_8 * 3) >> 0x10),
                       *(undefined2 *)(&DAT_007a1274 + local_8 * 0xc));
     }

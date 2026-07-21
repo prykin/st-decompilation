@@ -7,7 +7,7 @@ undefined4 FUN_004b79c0(char param_1,int param_2)
   DArrayTy *array;
   uint index;
   int local_10 [3];
-  
+
   iVar1 = thunk_FUN_004b72b0(param_1);
   iVar2 = thunk_FUN_004b71c0(param_1);
   if (iVar1 <= iVar2) {

@@ -9,7 +9,7 @@ void FUN_004e6d00(int param_1,int param_2,uint *param_3)
   int iVar5;
   uint *puVar6;
   int iVar7;
-  
+
   puVar6 = param_3;
   for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar6 = 0;

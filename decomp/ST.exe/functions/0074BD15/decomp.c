@@ -5,7 +5,7 @@ undefined4 FUN_0074bd15(ushort *param_1,undefined4 *param_2,int param_3)
   undefined4 *puVar1;
   uint uVar2;
   uint uVar3;
-  
+
   *param_2 = DAT_007a1da8;
   param_2[1] = DAT_007a1dac;
   param_2[2] = DAT_007a1db0;

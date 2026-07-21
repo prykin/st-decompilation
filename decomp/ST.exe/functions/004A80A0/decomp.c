@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -10,7 +12,6 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   DArrayTy *array;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 extraout_EDX;
   uint index;
   undefined4 local_34;
   uint local_30 [3];
@@ -20,7 +21,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   short local_18;
   int local_c;
   DArrayTy *local_8;
-  
+
   iVar3 = this->field_022E->field_000C;
   local_c = iVar3;
   local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
@@ -33,16 +34,12 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
         local_22 = 0;
         Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,index,&local_34);
         pSVar2 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,
-                            CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),local_30[0],
-                            CASE_1);
+                           (g_sTAllPlayers_007FA174,this->field_0024,local_30[0],CASE_1);
         if (pSVar2 == (STGameObjC *)0x0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x16c9,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__SetPatrolCmdToBoat_007ac4bc);
           if (iVar3 != 0) {
-            pcVar1 = (code *)swi(3);
-            (*pcVar1)();
-            return;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c

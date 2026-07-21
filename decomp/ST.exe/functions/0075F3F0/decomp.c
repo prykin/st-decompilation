@@ -8,7 +8,7 @@ int FUN_0075f3f0(int *param_1,int param_2,int param_3,int param_4)
   int *piVar4;
   int iVar5;
   int local_8;
-  
+
   if (param_3 < param_4) {
     local_8 = param_3 * 2;
     piVar4 = (int *)(param_3 * 0x20 + 0xc + param_2);

@@ -16,7 +16,8 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
   uint uVar5;
   CHAR local_108 [256];
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x5ff) == 0) {
     pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (pAVar2 == (AnonShape_004AB810_8E5693D5 *)0x0) {
@@ -32,6 +33,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
                 (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_jump_cpp_007bf64c,0x58);
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x245) == 5) {
     param_1[0x134] = 1;
   }
@@ -40,33 +42,44 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
   }
   if (param_1[0x134] == 1) {
     wsprintfA(local_108,&DAT_007a4ccc,s_jmpmine_007bf640);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = STT3DSprC::LoadSequence
                       (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,DAT_00806774,local_108,0x1d);
     if (iVar3 != 0) {
       RaiseInternalException
                 (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_jump_cpp_007bf64c,0x61);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad5e0(*(int *)((int)param_1 + 0x5ff));
     uVar5 = 10;
     iVar3 = thunk_FUN_004ad650((int)param_1 + 0x1d5);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = thunk_FUN_004ad650(*(int *)((int)param_1 + 0x5ff));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006ea340(*(void **)((int)param_1 + 0x211),uVar4,iVar3,uVar5);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::StartShow(*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,PTR_00802a38->field_00E4);
     param_1[0x135] = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     fVar1 = (float)(int)*(short *)((int)param_1 + 0x45) * _DAT_007904f8;
     iVar3 = PTR_00802a38->field_00E4;
     param_1[0x137] = 1;
     fVar1 = fVar1 * _DAT_007904f0;
     param_1[0x136] = iVar3;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_8 = (int)*(short *)((int)param_1 + 0x41);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x5ff),
                        (float)local_8 * _DAT_007904f8 * _DAT_007904f0,
                        (float)(int)*(short *)((int)param_1 + 0x43) * _DAT_007904f8 * _DAT_007904f0,
                        fVar1 + _DAT_007904fc);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad460(*(void **)((int)param_1 + 0x5ff),1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1 + 0x90))(3,0x3f4);
     return 0;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   thunk_FUN_004ad430(*(int *)((int)param_1 + 0x5ff));
   return 0;
 }

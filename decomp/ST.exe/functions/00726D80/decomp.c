@@ -25,7 +25,7 @@ void __cdecl FUN_00726d80(int *param_1,int param_2)
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_8 = DAT_008570d0;
   local_10 = DAT_00857054;
   local_c = DAT_00857050;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -11,14 +13,10 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
-  uint *extraout_EAX;
-  int *piVar4;
-  char *extraout_EAX_00;
-  uint *puVar5;
+  uint *puVar4;
+  int *piVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   char *pcVar7;
-  void *unaff_EDI;
   uint uVar8;
   char *pcVar9;
   int iVar10;
@@ -40,23 +38,21 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   int *local_10;
   int *local_c;
   char local_5;
-  
+
   local_28 = *(undefined4 *)(this->field_024C + 4);
   local_18 = *(int *)(this->field_024C + 2);
   local_14 = 1;
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_20 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
   this_00 = local_20;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_88.previous;
     iVar10 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x460,0,iVar3,
                                 &DAT_007a4ccc,s_HelpPanelTy__AddLinks_007c3bf0);
     if (iVar10 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x460);
     return;
@@ -76,8 +72,8 @@ LAB_00515ee1:
             uVar11 = 3;
             iVar10 = -1;
             iVar3 = -1;
-            LoadResourceString(0x55f6,HINSTANCE_00807618);
-            ccFntTy::WrStr(this_00->field_01E0,extraout_EAX,iVar3,iVar10,uVar11);
+            puVar4 = (uint *)LoadResourceString(0x55f6,HINSTANCE_00807618);
+            ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar10,uVar11);
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
           }
@@ -86,30 +82,29 @@ LAB_00515ee1:
           local_24 = *(uint *)sizeHelp_exref;
           if (local_24 != 0) {
             local_5 = *(char *)((int)local_c + -1);
-            piVar4 = (int *)(this_00->field_01C7 + 9);
+            piVar5 = (int *)(this_00->field_01C7 + 9);
             do {
-              if (((*(char *)((int)piVar4 + -1) == local_5) && (*piVar4 == *local_c)) &&
-                 (piVar4[1] == local_c[1])) {
+              if (((*(char *)((int)piVar5 + -1) == local_5) && (*piVar5 == *local_c)) &&
+                 (piVar5[1] == local_c[1])) {
                 ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,
                                  *param_1,0x13d - local_18,0xf);
-                LoadResourceString(*(UINT *)(uVar8 * 0x11 + this_00->field_01C7),HINSTANCE_00807618)
-                ;
+                pcVar7 = LoadResourceString(*(UINT *)(uVar8 * 0x11 + this_00->field_01C7),
+                                            HINSTANCE_00807618);
                 uVar8 = 0xffffffff;
-                pcVar7 = extraout_EAX_00;
                 goto code_r0x00516013;
               }
               uVar8 = uVar8 + 1;
-              piVar4 = (int *)((int)piVar4 + 0x11);
+              piVar5 = (int *)((int)piVar5 + 0x11);
             } while (uVar8 < local_24);
           }
           goto LAB_0051607e;
         }
       }
 LAB_005160da:
-      piVar4 = (int *)((int)local_10 + 0x36);
+      piVar5 = (int *)((int)local_10 + 0x36);
       pcVar9 = (char *)((int)local_10 + 0x31);
       pcVar7 = (char *)((int)local_10 + 0x31);
-      local_10 = piVar4;
+      local_10 = piVar5;
     } while (*pcVar9 != '\0');
   }
   CheckBkView(this_00,*param_1,10);
@@ -153,9 +148,9 @@ code_r0x00516013:
     pcVar7 = pcVar7 + 1;
     pcVar9 = pcVar9 + 1;
   }
-  for (puVar5 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar5 != (uint *)0x0;
-      puVar5 = Library::MSVCRT::FUN_0072e560(puVar5,'\n')) {
-    *(undefined1 *)puVar5 = 0x20;
+  for (puVar4 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != (uint *)0x0;
+      puVar4 = Library::MSVCRT::FUN_0072e560(puVar4,'\n')) {
+    *(undefined1 *)puVar4 = 0x20;
   }
   ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
 LAB_0051607e:

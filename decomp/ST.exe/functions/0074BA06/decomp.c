@@ -5,7 +5,7 @@ bool __fastcall FUN_0074ba06(char *param_1)
   int iVar1;
   char *pcVar2;
   bool bVar3;
-  
+
   iVar1 = 0x10;
   bVar3 = true;
   pcVar2 = "";

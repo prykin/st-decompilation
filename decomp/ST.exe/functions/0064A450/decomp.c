@@ -5,7 +5,7 @@ DWORD FUN_0064a450(void)
   DWORD DVar1;
   DWORD local_118 [65];
   _SYSTEMTIME local_14;
-  
+
   if ((HANDLE_008118f8 == (HANDLE)0x0) && (DAT_0080734a != '\0')) {
     wsprintfA((LPSTR)local_118,s__sAIScript_dbg_007d29ec,&DAT_00807680);
     HANDLE_008118f8 =

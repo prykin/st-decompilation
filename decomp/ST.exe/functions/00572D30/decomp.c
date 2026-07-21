@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00572D30 -> EXTERNAL:000000C6 @ 00573032
-   
+
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00572D30 -> EXTERNAL:000000C6 @ 00573001 */
 
@@ -24,7 +24,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
   char *local_10;
   char *local_c;
   HKEY local_8;
-  
+
   LVar3 = RegCreateKeyA((HKEY)0x80000002,s_SOFTWARE_Ellipse_Studios_Submari_007ca46c,&local_8);
   pcVar10 = RegSetValueExA_exref;
   if (LVar3 == 0) {
@@ -43,6 +43,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
         local_1c[1] = 0;
         local_14 = 0;
         uVar4 = thunk_FUN_00571dc0();
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_1c[0] = CONCAT31(local_1c[0]._1_3_,(char)uVar4);
         UVar5 = GetDriveTypeA((LPCSTR)local_1c);
         if (UVar5 != 5) {

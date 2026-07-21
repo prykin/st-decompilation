@@ -14,7 +14,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   puVar8 = param_1;
   puVar2 = (undefined4 *)((int)this + 0x206);
   for (iVar4 = 0xf; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -24,12 +24,15 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
   }
   *(undefined1 *)puVar2 = *(undefined1 *)puVar8;
   local_8 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(int *)((int)this + 0x233) != 0) && (iVar4 = thunk_FUN_005fd850(this), -1 < iVar4)) &&
      (local_10 = 0, 0 < *(int *)((int)this + 0x226))) {
     local_c = 0;
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = *(int *)((int)param_1 + local_8 + 0x3d);
       puVar8 = (undefined4 *)((int)param_1 + local_8 + 0x41);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar1 = *(undefined4 *)(local_c + 0x42 + *(int *)((int)this + 0x233));
       puVar2 = puVar8;
       puVar9 = (undefined4 *)(local_c + *(int *)((int)this + 0x233));
@@ -40,6 +43,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
       }
       *(undefined2 *)puVar9 = *(undefined2 *)puVar2;
       *(undefined4 *)(local_c + 0x42 + *(int *)((int)this + 0x233)) = uVar1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar3 = *(int *)(local_c + 0x39 + *(int *)((int)this + 0x233));
       iVar5 = local_c + *(int *)((int)this + 0x233);
       if ((iVar3 == 3) || (iVar3 == 4)) {

@@ -15,10 +15,11 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079e2e8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1 + 0x28) + param_2 * 0x1c;
   piVar3 = (int *)((uint)*(byte *)(iVar2 + 1) * 0x10 + param_3);
   DAT_008570a8 = *piVar3;

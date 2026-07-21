@@ -8,7 +8,7 @@ int FUN_004de410(void *param_1,int param_2,int param_3)
   DArrayTy *array;
   uint index;
   int local_8;
-  
+
   iVar2 = param_2;
   local_8 = 0;
   pSVar1 = g_playerRuntime + (int)param_1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
@@ -10,14 +12,12 @@ void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
   InternalExceptionFrame *pIVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
-  undefined4 local_48 [16];
+  int local_48 [16];
   UpgPanelTy *local_8;
-  
+
   pIVar2 = g_currentExceptionFrame;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0);
   if (errorCode == 0) {
     local_8->field_03F3 = 0;
     local_8->field_03EF = 0;
@@ -30,9 +30,7 @@ void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x2a,0,errorCode,
                              &DAT_007a4ccc,s_UpgPanelTy__DoneUpgPanel_007c8810);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x2a);
   return;

@@ -19,7 +19,7 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   undefined4 local_10;
   undefined4 local_c;
   int local_8;
-  
+
   *(undefined4 *)((int)this + 0x318) = 0;
   *(undefined4 *)((int)this + 0x2d6) = 0xffffffff;
   *(undefined1 *)((int)this + 0x316) = 0;
@@ -44,6 +44,7 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   uVar3 = thunk_FUN_004ad650((int)this + 0x1d5);
   *(undefined4 *)((int)this + 0x2d6) = uVar3;
   FreeAndNull(&local_24);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((*(int *)((int)this + 0x23a) == 8) && (*(char *)((int)this + 0x2b9) != '\0')) &&
       (uVar4 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x28f)) + 0x15, 0 < (int)uVar4)) &&
      ((int)uVar4 < 0x15)) {

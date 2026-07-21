@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004e04a0(AnonShape_004E04A0_3A5B2D2E *param_1)
   int iVar2;
   uint uVar3;
   char *local_8;
-  
+
   uVar3 = 0;
   iVar2 = 0;
   iVar1 = param_1->field_05AC;
@@ -101,11 +101,13 @@ LAB_004e05d3:
   }
   iVar1 = param_1->field_04E8;
   if (iVar1 == 1) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = **(int **)(param_1->field_01F5 + 0x18c);
   }
   else {
     if (iVar1 != 2) {
       if (iVar1 == 3) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = **(int **)(param_1->field_01F5 + 0x18c) - 1;
         iVar2 = 0;
       }
@@ -113,10 +115,12 @@ LAB_004e05d3:
     }
     iVar1 = param_1->field_05AC;
     if (((iVar1 != 0x3b) && (iVar1 != 0x60)) && (iVar1 != 0x52)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = **(int **)(param_1->field_01F5 + 0x18c) - 1;
       iVar2 = 0;
       goto cf_common_exit_004E068C;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = **(int **)(param_1->field_01F5 + 0x18c);
   }
   uVar3 = 0;

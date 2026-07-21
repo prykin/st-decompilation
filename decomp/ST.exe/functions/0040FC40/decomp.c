@@ -57,7 +57,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790060;
   puStack_10 = &LAB_0072d964;

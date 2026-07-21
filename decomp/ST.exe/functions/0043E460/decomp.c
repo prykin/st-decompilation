@@ -9,7 +9,7 @@ short FUN_0043e460(char param_1)
   short sVar5;
   int iVar6;
   int iVar7;
-  
+
   iVar7 = 0;
   sVar5 = 0;
   pDVar1 = g_playerRuntime[param_1].objects;
@@ -19,6 +19,7 @@ short FUN_0043e460(char param_1)
     do {
       sVar5 = sVar4;
       piVar3 = *(int **)((int)pDVar1->data + iVar7 * 4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((piVar3 != (int *)0x0) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 == 1)) {
         sVar5 = sVar5 + 1;
       }

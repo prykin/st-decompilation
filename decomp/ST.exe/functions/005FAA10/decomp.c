@@ -14,8 +14,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
   AnonShape_005FAA10_427149EB *pAVar1;
   int iVar2;
   ushort *puVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar4;
   uint uVar5;
   uint uVar6;
@@ -24,12 +22,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
   AnonShape_005FAA10_427149EB *local_10;
   undefined4 local_c;
   uint local_8;
-  
+
   local_c = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (AnonShape_005FAA10_427149EB *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pAVar1 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;

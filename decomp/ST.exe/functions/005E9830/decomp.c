@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
@@ -10,15 +12,13 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
   MMObjTy *this_00;
   int errorCode;
   int iVar2;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar3;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   MMObjTy *local_8;
-  
-  pIVar3 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = (MMObjTy *)this;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
     MMObjTy::CloseButtons(local_8);
@@ -33,16 +33,14 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
     this_00->field_0x65 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     DeleteCtrls((WaitTy *)this_00);
-    g_currentExceptionFrame = pIVar3;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar3;
+  g_currentExceptionFrame = local_4c.previous;
   iVar2 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2b3,0,errorCode,
                              &DAT_007a4ccc,s_WaitTy__CloseButtons_007cde08);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2b3);
   return;

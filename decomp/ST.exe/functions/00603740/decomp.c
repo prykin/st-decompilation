@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -21,20 +23,18 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
   AnonReceiver_00636260 *this_02;
   int iVar9;
   undefined4 uVar10;
-  undefined4 unaff_ESI;
   AnonShape_00604A90_035626E6 *pAVar11;
-  void *unaff_EDI;
   undefined4 *puVar12;
   byte **value;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
   byte *local_c;
   AnonShape_0060EA30_DCEB68AD *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -44,9 +44,7 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
       RaiseInternalException(iVar8,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x1bd);
       return 0xffff;
     }
-    pcVar6 = (code *)swi(3);
-    uVar10 = (*pcVar6)();
-    return uVar10;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar8 = STGameObjC::GetMessage(local_10,param_1);
   this_01 = local_10;

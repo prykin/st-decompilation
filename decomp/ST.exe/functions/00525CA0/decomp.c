@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00525CA0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_C0=192;CASE_C1=193
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 00525CA0 returns used as parameter 2 of HelpPanelTy::DrawDescription @ 0051C4F6 */
 
@@ -10,7 +10,7 @@ UINT __cdecl FUN_00525ca0(Global_sub_00525CA0_param_1Enum param_1)
 
 {
   UINT UVar1;
-  
+
   UVar1 = 0;
   switch(param_1) {
   case CASE_96:

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -16,9 +18,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   DArrayTy *pDVar7;
   int iVar8;
   int iVar9;
-  undefined4 unaff_ESI;
   undefined4 *puVar10;
-  void *unaff_EDI;
   int *piVar11;
   undefined4 *puVar12;
   ccFntTy **ppcVar13;
@@ -80,7 +80,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   undefined4 local_50;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
-  
+
   ppcVar13 = local_dac;
   local_8 = this;
   for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
@@ -94,7 +94,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar9 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar9 == 0) {
     if (local_8->field_1E8E != 0) {
@@ -106,6 +106,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     iVar9 = 1;
     puVar10 = (undefined4 *)(this_00->field_005D + 0x28);
     uVar2 = FUN_006b4fe0(this_00->field_005D);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar3 = FUN_006b50c0(0x174,0x175,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar2,puVar10,
                          iVar9);
     this_00->field_1E8E = uVar3;
@@ -249,9 +250,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x7f0,0,iVar9,&DAT_007a4ccc,
                              s_FSGSTy__JoinGameCtrls_007cc388);
   if (iVar8 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar9,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x7f0);
   return;

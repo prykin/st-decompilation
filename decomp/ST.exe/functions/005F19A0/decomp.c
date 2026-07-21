@@ -24,10 +24,12 @@ void __fastcall FUN_005f19a0(void *param_1)
   int local_10;
   uint local_c;
   short *local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x3c) == 0) {
     return;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(uint *)(*(int *)((int)param_1 + 0x3c) + 0xc);
   local_14 = param_1;
   pVVar4 = g_visibleClass_00802A88;
@@ -40,6 +42,7 @@ joined_r0x005f19be:
     }
     pDVar1 = local_14->field_003C;
     if (local_c < pDVar1->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, local_c) (runtime stride) */
       psVar6 = (short *)(pDVar1->elementSize * local_c + (int)pDVar1->data);
     }
     else {
@@ -100,7 +103,7 @@ LAB_005f1c4c:
                              *(short *)((int)psVar6 + 7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
-    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_14->field_003C,local_c);
+    FUN_006b0c70(local_14->field_003C,local_c);
     pVVar4 = g_visibleClass_00802A88;
   }
   goto joined_r0x005f19be;

@@ -10,7 +10,7 @@ void FUN_00601d10(undefined4 param_1,undefined4 param_2,int param_3,undefined2 p
   undefined4 local_20 [3];
   undefined2 local_14;
   undefined2 local_12;
-  
+
   if (param_3 != 0) {
     puVar2 = local_20;
     for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {

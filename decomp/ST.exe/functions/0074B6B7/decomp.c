@@ -7,7 +7,7 @@ void FUN_0074b6b7(int *param_1,char *param_2,undefined4 *param_3)
   char *pcVar3;
   char *pcVar4;
   bool bVar5;
-  
+
   iVar2 = 0x10;
   bVar5 = true;
   pcVar3 = param_2;

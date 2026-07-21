@@ -3,7 +3,7 @@ void FUN_00683070(void)
 
 {
   int iVar1;
-  
+
   thunk_FUN_00682ec0();
   iVar1 = thunk_FUN_00682fb0(DAT_007d2d18);
   while (iVar1 != 0) {

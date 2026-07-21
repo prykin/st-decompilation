@@ -6,12 +6,14 @@ void __cdecl FUN_007285d0(int param_1,int param_2)
   uint uVar2;
   uint uVar3;
   undefined1 *puVar4;
-  
+
   uVar1 = DAT_008570f8;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(uint *)(param_2 + 0x24) & 0xffff0000;
   if ((int)DAT_0085705c <= (int)uVar2) {
     uVar2 = DAT_0085705c;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar3 = *(uint *)(param_1 + 0x24) & 0xffff0000;
   if ((int)uVar3 < (int)DAT_008570dc) {
     uVar3 = DAT_008570dc;

@@ -67,7 +67,7 @@ int __fastcall FUN_0060aef0(void *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079cd38;
   puStack_10 = &LAB_0072d964;
@@ -79,8 +79,10 @@ int __fastcall FUN_0060aef0(void *param_1)
   local_ac = (undefined1 *)0x0;
   ExceptionList = &local_14;
   puVar9 = &stack0xfffffef8;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x1f5) == 0x42) {
     ExceptionList = &local_14;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar12 = thunk_FUN_004e60d0(*(int *)((int)param_1 + 0x1d9),0x1c);
     if (iVar12 == 0) {
       iVar12 = DAT_007950ec / 0xc9;
@@ -92,6 +94,7 @@ int __fastcall FUN_0060aef0(void *param_1)
     puVar9 = local_1c;
   }
   local_1c = puVar9;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar12 = *(int *)((int)param_1 + 0x1e9);
   sVar16 = (short)(iVar12 >> 0x1f);
   if (iVar12 < 0) {
@@ -102,6 +105,7 @@ int __fastcall FUN_0060aef0(void *param_1)
     local_7c = (int)(short)(((short)(iVar12 / 0xc9) + sVar16) -
                            (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar12 = *(int *)((int)param_1 + 0x1ed);
   sVar16 = (short)(iVar12 >> 0x1f);
   if (iVar12 < 0) {
@@ -112,6 +116,7 @@ int __fastcall FUN_0060aef0(void *param_1)
     local_8c = (int)(short)(((short)(iVar12 / 0xc9) + sVar16) -
                            (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar12 = *(int *)((int)param_1 + 0x24c);
   iVar17 = local_8c - iVar12;
   if (iVar17 < 0) {
@@ -133,6 +138,7 @@ int __fastcall FUN_0060aef0(void *param_1)
   local_78 = iVar19;
   Library::MSVCRT::FUN_0072da40();
   local_a8 = &stack0xfffffef8;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
     local_8 = 1;
     local_a8 = &stack0xfffffef8;
@@ -185,13 +191,17 @@ int __fastcall FUN_0060aef0(void *param_1)
                 local_a4 = local_a4 + 1;
               }
               uVar14 = *(uint *)&pSVar18->field_0x24;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
                 if ((uVar14 < 8) &&
                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[uVar14 * 0x51] < 8)))) {
                   bVar3 = pSVar18->field_0x24;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_b8 = CONCAT31(uStack_b7,bVar3);
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   bVar4 = *(byte *)((int)param_1 + 0x1d9);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_b4 = CONCAT31(uStack_b3,bVar4);
                   if (DAT_00808a8f == '\0') {
                     if (bVar3 == bVar4) {
@@ -226,6 +236,7 @@ LAB_0060b2ce:
                     *puVar1 = pSVar18;
                     uVar13 = (*pSVar18->vtable->vfunc_78)();
                     puVar1[1] = uVar13;
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar12 = *(int *)((int)param_1 + 0x1ed);
                     sVar16 = (short)(iVar12 >> 0x1f);
                     if (iVar12 < 0) {
@@ -236,6 +247,7 @@ LAB_0060b2ce:
                       iVar12 = (int)(short)(((short)(iVar12 / 0xc9) + sVar16) -
                                            (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
                     }
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar17 = *(int *)((int)param_1 + 0x1e9);
                     sVar16 = (short)(iVar17 >> 0x1f);
                     if (iVar17 < 0) {
@@ -261,8 +273,11 @@ LAB_0060b2ce:
                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[uVar14 * 0x51] < 8)))) {
                   bVar3 = pSVar18->field_0x24;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_c8 = CONCAT31(uStack_c7,bVar3);
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   bVar4 = *(byte *)((int)param_1 + 0x1d9);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_c4 = CONCAT31(uStack_c3,bVar4);
                   if (DAT_00808a8f == '\0') {
                     if (bVar3 == bVar4) {
@@ -294,6 +309,7 @@ LAB_0060b48b:
                   }
                   if (bVar20) {
                     iVar12 = (*pSVar18->vtable->vfunc_F8)();
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     if ((iVar12 != 0) && (*(int *)((int)param_1 + 0x1f5) != 0x4c)) {
                       thunk_FUN_0060bdd0(param_1,&pSVar18->vtable);
                       goto LAB_0060b643;
@@ -301,9 +317,11 @@ LAB_0060b48b:
                     goto cf_continue_loop_0060B649;
                   }
                 }
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (*(int *)((int)param_1 + 0x1f5) == 0x4c) {
                   thunk_FUN_0060bdd0(param_1,&pSVar18->vtable);
                   iVar12 = FUN_006acf90(local_7c,local_8c,local_98,local_40);
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   uVar14 = *(int *)((int)param_1 + 0x1c) * 0x41c64e6d + 0x3039;
                   *(uint *)((int)param_1 + 0x1c) = uVar14;
                   iVar12 = iVar12 + (uVar14 >> 0x10) % (iVar12 * 3 + 1U);
@@ -357,6 +375,7 @@ cf_continue_loop_0060B649:
       local_40 = local_40 + 1;
     } while (local_40 < iVar19);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
     if (local_4c != 0) {
       local_8 = 2;
@@ -375,6 +394,7 @@ cf_continue_loop_0060B649:
           local_ac = puVar9;
           puVar1 = (undefined4 *)(local_74 + local_6c * 0xc);
           piVar6 = (int *)*puVar1;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar17 = (**(code **)(*piVar6 + 0x2c))();
           if (iVar17 == 0x23) {
             puVar1[2] = 0;
@@ -428,6 +448,7 @@ cf_continue_loop_0060B649:
         if (((iVar12 != 0x23) && (local_4c != 0)) && (iVar12 = 0, 0 < local_4c)) {
           do {
             this = *(void **)(local_ac + iVar12 * 0xc);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((*(int *)((int)this + 0x24) == *(int *)&pSVar18->field_0x24) &&
                (*(int *)((int)this + 0x72e) != 0)) {
               thunk_FUN_00416270(pSVar18,local_50,local_94,&local_20);
@@ -445,6 +466,7 @@ cf_continue_loop_0060B649:
         if ((local_48 != 0) && (*(int *)(local_74 + local_6c * 0xc + 8) != 0)) {
           STFishC::sub_004162B0(pSVar18,local_50,(undefined2 *)local_94,(undefined2 *)&local_20);
           iVar12 = FUN_006acf90(local_7c,local_8c,(int)local_50[0],(int)(short)local_94[0]);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           uVar14 = *(int *)((int)param_1 + 0x1c) * 0x41c64e6d + 0x3039;
           *(uint *)((int)param_1 + 0x1c) = uVar14;
           iVar12 = iVar12 + (uVar14 >> 0x10) % (iVar12 * 3 + 1U);

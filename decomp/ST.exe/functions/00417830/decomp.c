@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_00417830(AnonShape_00417830_9254190A *param_1)
   short sVar2;
   int iVar3;
   uint uVar4;
-  
+
   if (param_1->field_00EC == 1) {
     param_1->field_00EC = 0;
   }

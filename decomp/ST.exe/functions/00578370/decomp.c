@@ -7,6 +7,7 @@ void FUN_00578370(void)
       FUN_006e4b80(g_appClass_00806728,(int)DAT_00811644);
       FUN_006e4d20(g_appClass_00806728,(int)DAT_00811644);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)DAT_00811644 + 4))();
     Library::MSVCRT::FUN_0072e2b0(DAT_00811644);
     DAT_00811644 = (HoloTy *)0x0;

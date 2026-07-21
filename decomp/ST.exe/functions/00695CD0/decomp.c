@@ -6,14 +6,15 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
   uint uVar2;
   int iVar3;
   uint *puVar4;
-  AnonShape_006B0C70_7C4FE646 *groupContent;
+  DArrayTy *groupContent;
   uint uVar5;
   uint uVar6;
   int *piVar7;
   int iVar8;
   bool bVar9;
-  
+
   iVar8 = *(int *)((int)this + 0x5853);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((iVar8 != 0) && (param_1 < *(uint *)(iVar8 + 0xc))) &&
      (piVar7 = (int *)(*(int *)(iVar8 + 8) * param_1 + *(int *)(iVar8 + 0x1c)), piVar7 != (int *)0x0
      )) {
@@ -31,7 +32,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
     else {
       param_2 = *piVar7;
     }
-    FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x5853),param_1);
+    FUN_006b0c70(*(DArrayTy **)((int)this + 0x5853),param_1);
     iVar8 = *(int *)((int)this + 0x5853);
     uVar6 = 0;
     if (0 < *(int *)(iVar8 + 0xc)) {
@@ -65,14 +66,15 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
             } while ((int)uVar5 < (int)*(uint *)(iVar3 + 0xc));
           }
         }
-        groupContent = *(AnonShape_006B0C70_7C4FE646 **)(iVar8 + 0x19);
-        if (groupContent != (AnonShape_006B0C70_7C4FE646 *)0x0) {
+        groupContent = *(DArrayTy **)(iVar8 + 0x19);
+        if (groupContent != (DArrayTy *)0x0) {
           uVar5 = 0;
-          if (0 < (int)groupContent->field_000C) {
-            bVar9 = groupContent->field_000C != 0;
+          if (0 < (int)groupContent->count) {
+            bVar9 = groupContent->count != 0;
             do {
               if (bVar9) {
-                puVar4 = (uint *)(groupContent->field_0008 * uVar5 + groupContent->field_001C);
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar5) (runtime stride) */
+                puVar4 = (uint *)(groupContent->elementSize * uVar5 + (int)groupContent->data);
               }
               else {
                 puVar4 = (uint *)0x0;
@@ -89,10 +91,10 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
                   thunk_FUN_006960d0(this,uVar6,param_3);
                 }
               }
-              groupContent = *(AnonShape_006B0C70_7C4FE646 **)(iVar8 + 0x19);
+              groupContent = *(DArrayTy **)(iVar8 + 0x19);
               uVar5 = uVar5 + 1;
-              bVar9 = uVar5 < (uint)groupContent->field_000C;
-            } while ((int)uVar5 < (int)groupContent->field_000C);
+              bVar9 = uVar5 < groupContent->count;
+            } while ((int)uVar5 < (int)groupContent->count);
           }
         }
         uVar6 = uVar6 + 1;

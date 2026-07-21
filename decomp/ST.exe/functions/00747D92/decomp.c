@@ -6,13 +6,15 @@ int __thiscall FUN_00747d92(void *this,int *param_1,char *param_2,int *param_3)
   int iVar2;
   int iVar3;
   void *local_8;
-  
+
   piVar1 = param_3;
   local_8 = this;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (**(code **)(*param_3 + 0x14))(param_3);
   if (-1 < iVar2) {
     param_3 = (int *)0x0;
     local_8 = (void *)0x0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)(*piVar1 + 0xc))(piVar1,1,&param_3,&local_8);
     iVar2 = 0;
     while (iVar3 == 0) {
@@ -31,6 +33,7 @@ int __thiscall FUN_00747d92(void *this,int *param_1,char *param_2,int *param_3)
       if (iVar3 == 0) {
         return 0;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar3 = (**(code **)(*piVar1 + 0xc))(piVar1,1,&param_3,&local_8);
     }
     if (iVar2 == 0) {

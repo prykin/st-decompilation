@@ -7,7 +7,7 @@ void __fastcall FUN_0059b820(AnonShape_0059B820_F1E7AB4B *param_1)
   byte *pbVar3;
   int iVar4;
   bool bVar5;
-  
+
   param_1->field_1A6B = 1;
   param_1->field_0029 = 2;
   switch(param_1->field_1A5F) {

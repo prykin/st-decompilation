@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
@@ -14,21 +16,21 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
   DArrayTy *pDVar5;
   int iVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   int *piVar8;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   bool bVar9;
   InternalExceptionFrame local_58;
   AiTactClassTy *local_14;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   int local_8;
-  
+
   uVar7 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar4 == 0) {
     local_14->field_012C = PTR_00802a38->field_00E4;
@@ -49,7 +51,8 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
         }
         else {
           thunk_FUN_00690ab0((AnonShape_00690AB0_91AAAD49 *)local_14);
-          ExecClaim(this_00,(int)unaff_EDI);
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+          ExecClaim(this_00,unaff_EDI);
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {
@@ -79,6 +82,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
         bVar9 = pDVar5->count != 0;
         do {
           if (bVar9) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar7) (runtime stride) */
             piVar8 = (int *)(pDVar5->elementSize * uVar7 + (int)pDVar5->data);
           }
           else {
@@ -115,8 +119,6 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x4ae);
     return 0xffff;
   }
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

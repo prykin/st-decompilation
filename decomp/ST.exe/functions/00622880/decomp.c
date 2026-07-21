@@ -3,7 +3,7 @@ void __fastcall FUN_00622880(AnonShape_00622880_C4191DB5 *param_1)
 
 {
   byte bVar1;
-  
+
   thunk_FUN_004ad310((STT3DSprC *)&param_1->field_0x1d5);
   bVar1 = param_1->field_02AD;
   if (bVar1 < 3) {

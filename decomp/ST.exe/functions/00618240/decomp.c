@@ -42,7 +42,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079cec0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -224,10 +224,13 @@ LAB_0061856a:
         if (0 < iVar15) {
           do {
             piVar16 = local_6c;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             uVar6 = thunk_FUN_00618a50(this,*(int *)(local_60 + local_6c[iVar9] * 0x2c + 0x26),
                                        local_58);
             if ((int)uVar6 < 0) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_48 = *(undefined4 *)(local_60 + piVar16[iVar9] * 0x2c + 0x26);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_44 = (uint)*(ushort *)(local_60 + piVar16[iVar9] * 0x2c + 0x2a);
               if (*(int *)((int)this + 0x62) == 0) {
                 puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,8,10);

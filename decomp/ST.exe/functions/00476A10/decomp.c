@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -11,9 +13,10 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
   short sVar3;
   code *pcVar4;
   int iVar5;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_ESI;
   undefined4 *puVar6;
-  
+
   if ((param_1 != 0) && (param_1 != 1)) {
     if (this->field_05F8 != 0) {
       if (this->field_05F8 == 1) {
@@ -39,14 +42,13 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
       if (iVar5 == 0) {
         return 0xffff;
       }
-      pcVar4 = (code *)swi(3);
-      iVar5 = (*pcVar4)();
-      return iVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (iVar5 == 0) {
       this->field_05F8 = 1;
     }
     else if (iVar5 == 3) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar5 = sub_004926C0(this,unaff_ESI);
       if (iVar5 != 1) {
         return 0;
@@ -68,6 +70,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
     *(undefined2 *)&this->field_0x5ec = *(undefined2 *)&this->field_0x3e2;
     this->field_05EE = *(undefined2 *)&this->field_0x3e4;
     *(undefined2 *)&this->field_0x5f0 = *(undefined2 *)&this->field_0x3e6;
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar5 = sub_004926C0(this,unaff_ESI);
     if (iVar5 == 1) {
       sVar1 = this->field_05F6;

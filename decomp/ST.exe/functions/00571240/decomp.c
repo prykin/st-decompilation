@@ -12,7 +12,7 @@ LPSTR __cdecl FUN_00571240(char *text,int param_2)
   undefined1 *puVar1;
   LPSTR pCVar2;
   char *text_00;
-  
+
   if (param_2 == 0) {
     if (DAT_0080874e == 2) {
       puVar1 = &DAT_007ca248;

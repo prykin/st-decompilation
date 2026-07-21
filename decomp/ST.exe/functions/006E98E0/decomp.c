@@ -6,7 +6,8 @@ FUN_006e98e0(void *this,uint param_1,uint param_2,int param_3,int param_4,int pa
   AnonShape_006E8840_CF3FA5BA *pAVar1;
   byte *pbVar2;
   int *piVar3;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1 < *(uint *)((int)this + 0x310)) &&
      (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)((int)this + 0x31c) + param_1 * 0x114),
      (*(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114) & 0x8000) != 0)) {

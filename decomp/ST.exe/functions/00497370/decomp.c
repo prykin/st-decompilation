@@ -34,7 +34,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,undefined4 param_4,
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   pDVar14 = PTR_007fb270;
   puStack_c = &DAT_00790718;
   puStack_10 = &LAB_0072d964;
@@ -61,6 +61,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,undefined4 param_4,
     local_1c = &stack0xffffff90;
     do {
       if (local_34 < pDVar14->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar14, local_34) (runtime stride) */
         puVar12 = (uint *)(pDVar14->elementSize * local_34 + (int)pDVar14->data);
       }
       else {
@@ -68,6 +69,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,undefined4 param_4,
       }
       uVar4 = puVar12[2];
       if (uVar4 != param_3) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         _local_5c = CONCAT31(uStack_5b,(char)uVar4);
         if (DAT_00808a8f == '\0') {
           if ((char)uVar4 == (char)param_3) {

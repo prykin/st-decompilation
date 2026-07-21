@@ -3,7 +3,7 @@
    Recovered source file: E:\__titans\ai\Ai_lex.c
    Diagnostic line evidence: 231 | 253 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006736F0 -> 00672B60 @ 00673B35 */
 
@@ -16,8 +16,6 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   char *pcVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   short *psVar6;
   InternalExceptionFrame local_60;
   int *local_1c;
@@ -26,7 +24,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   short *local_10;
   short *local_c;
   short *local_8;
-  
+
   local_c = (short *)0x0;
   local_10 = (short *)0x0;
   local_14 = (short *)0x0;
@@ -42,7 +40,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  exceptionCode = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  exceptionCode = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_60.previous;
     FUN_006a5e90(local_c);
@@ -90,6 +88,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   PTR_0081194c = param_2;
   local_18 = 0;
   if (param_1 != (char *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_18 = (**(code **)param_2)(param_1);
     if (local_18 == 0) {
       RaiseInternalException

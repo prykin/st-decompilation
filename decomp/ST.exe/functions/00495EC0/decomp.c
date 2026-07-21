@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_dump.cpp
@@ -12,15 +14,13 @@ DumpClassC::WritePtr
   code *pcVar1;
   int iVar2;
   undefined4 uVar3;
-  
+
   if ((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
      (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x7f,0,0,&DAT_007a4ccc,
                                s_DumpClassC__WritePtr_007abdf8);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar3 = (*pcVar1)();
-      return uVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0;
   }
@@ -38,9 +38,7 @@ DumpClassC::WritePtr
   iVar2 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x84,0,0,&DAT_007a4ccc,
                              s_DumpClassC__WritePtr_cell_is_bus_007abe14);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar3 = (*pcVar1)();
-    return uVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   return 0xffffffff;
 }

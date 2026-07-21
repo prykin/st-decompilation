@@ -11,12 +11,13 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
   byte bVar2;
   int *piVar3;
   uint uVar4;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   int iVar5;
   undefined1 local_14 [6];
   int local_e;
   int local_a;
-  
+
   if ((int)this->field_023E < (int)this->field_023A) {
     if (param_1 != 1) {
       return 1;
@@ -81,6 +82,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
     local_e = local_a * 0xc9;
   }
   this->field_023A = (local_e / (int)uVar4) / 3;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   SetPatrolCmdToBoat(this,unaff_EDI);
   return 0;
 }

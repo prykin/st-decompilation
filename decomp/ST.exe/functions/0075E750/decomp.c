@@ -10,8 +10,9 @@ void FUN_0075e750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undef
   byte *pbVar5;
   int iVar6;
   int iVar7;
-  
+
   iVar2 = param_1->field_0068;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1->field_01BA + 0x18);
   if (0 < param_4) {
     param_1 = (AnonShape_0075E750_D250320C *)param_4;

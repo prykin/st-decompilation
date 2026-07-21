@@ -13,7 +13,7 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
   undefined2 local_2c;
   undefined2 local_2a;
   int local_8;
-  
+
   if (*param_1 == 0) {
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
     *param_1 = (int)puVar1;
@@ -23,6 +23,7 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
     local_8 = 0x54;
     iVar4 = 0xfc;
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),local_8 + -0x32);
       if (iVar2 != 0) {
         piVar5 = local_38;

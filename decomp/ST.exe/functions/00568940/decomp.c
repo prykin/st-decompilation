@@ -8,16 +8,14 @@ void __thiscall FUN_00568940(void *this,Global_sub_00568940_param_1Enum param_1)
 {
   void *this_00;
   int iVar1;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   void *local_8;
-  
+
   if (*(int *)((int)this + 0xf8b) != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar1 == 0) {
       switch(param_1) {

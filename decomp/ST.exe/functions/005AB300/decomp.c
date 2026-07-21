@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::InitChooseMap
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
@@ -15,7 +17,7 @@ ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy_field_1A5FState param_1
 {
   undefined1 *puVar1;
   ChooseMapTy_field_1A5FState CVar2;
-  AnonShape_006C7610_838EDECF *pAVar3;
+  AnonShape_006B5B10_E0D06CF1 *pAVar3;
   MMsgTy *this_00;
   undefined4 uVar4;
   StartSystemTy *pSVar5;
@@ -33,10 +35,8 @@ ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy_field_1A5FState param_1
   AnonPointee_ChooseMapTy_1C8B *pAVar15;
   uint uVar16;
   uint uVar17;
-  undefined4 unaff_ESI;
   char *pcVar18;
   char *pcVar19;
-  void *unaff_EDI;
   char *pcVar20;
   int iVar21;
   char cVar22;
@@ -69,20 +69,18 @@ ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy_field_1A5FState param_1
   ChooseMapTy *local_10;
   uint local_c;
   uint local_8;
-  
+
   local_250.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_250;
   local_10 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_250.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_250.jumpBuffer,0);
   this_02 = local_10;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_250.previous;
     iVar21 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x15a,0,iVar7,
                                 &DAT_007a4ccc,s_ChooseMapTy__InitChooseMap_007cc770);
     if (iVar21 != 0) {
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x15a);
     return;
@@ -367,7 +365,7 @@ switchD_005ab66b_caseD_6:
       case 7:
         this_02->field_20B5 = 0;
       default:
-        pAVar3 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+        pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
         local_c = param_2 - 1;
         FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
         if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
@@ -411,6 +409,7 @@ switchD_005ab66b_caseD_6:
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_02->field_1A70,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,
                    0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1A70 + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
         this_02->field_1A8C = 0x2f8;
         this_02->field_1A90 = 0x3c;
@@ -418,6 +417,7 @@ switchD_005ab66b_caseD_6:
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_02->field_1B01,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,
                    0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1B01 + 4))(DAT_00806784,7,0,s_MM_SLDDN_007cc040,0xffffffff);
         this_02->field_1B1D = 0x2f8;
         this_02->field_1B21 = 0x1b8;
@@ -425,6 +425,7 @@ switchD_005ab66b_caseD_6:
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_02->field_1B92,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,
                    0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1B92 + 4))(DAT_00806784,7,0,s_MM_SLDT_007cc034,0xffffffff);
         iVar7 = 1;
         this_02->field_1BAE = 0x2fe;
@@ -432,6 +433,7 @@ switchD_005ab66b_caseD_6:
         puVar13 = (undefined4 *)(this_02->field_005D + 0x28);
         this_02->field_1B9A = 0;
         uVar16 = FUN_006b4fe0(this_02->field_005D);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pAVar12 = (AnonPointee_ChooseMapTy_1C7B *)
                   FUN_006b50c0(0x1e4,399,(uint)*(ushort *)(this_02->field_005D + 0xe),uVar16,puVar13
                                ,iVar7);
@@ -696,6 +698,7 @@ switchD_005ab66b_caseD_6:
         iVar7 = 1;
         puVar13 = (undefined4 *)(this_02->field_005D + 0x28);
         uVar16 = FUN_006b4fe0(this_02->field_005D);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pAVar15 = (AnonPointee_ChooseMapTy_1C8B *)
                   FUN_006b50c0(0x172,0x18,(uint)*(ushort *)(this_02->field_005D + 0xe),uVar16,
                                puVar13,iVar7);
@@ -872,6 +875,7 @@ switchD_005ab66b_caseD_6:
         CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,local_46c);
       }
       thunk_FUN_00568bc0(&g_sound,0);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((DAT_00807300._1_1_ & 8) != 0) {
         thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
       }

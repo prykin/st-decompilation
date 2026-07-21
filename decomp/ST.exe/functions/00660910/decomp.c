@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
   undefined1 uStack_9;
   undefined2 local_8;
   undefined1 local_6;
-  
+
   *(undefined4 *)((int)this + 0xa7) = 0;
   if (((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
       ((param_2 < g_worldGrid.sizeY && (-1 < param_3)))) && (param_3 < g_worldGrid.sizeZ)) {
@@ -26,9 +26,8 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
       local_6 = (undefined1)((uint)uVar2 >> 0x18);
       if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
       {
-        this_00 = thunk_FUN_0042b760(CONCAT31((int3)(CONCAT22((short)((uint)g_worldGrid.cells >>
-                                                                     0x10),uStack_b) >> 8),
-                                              *(undefined1 *)((int)this + 0x24)),
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                      CONCAT22((short)((uint)uVar2 >> 0x10),
                                               *(short *)((int)this + 0x7d)));
         if (this_00 != (STGroupBoatC *)0x0) {

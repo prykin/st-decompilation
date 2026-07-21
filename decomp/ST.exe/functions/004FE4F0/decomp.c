@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
@@ -8,31 +10,31 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
 {
   code *pcVar1;
   CPanelTy *this_00;
-  AnonShape_006B84D0_7C7D97C6 *pAVar2;
+  AnonShape_006B5B10_E0D06CF1 *pAVar2;
   byte bVar3;
   int iVar4;
   int iVar5;
   char cVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   UINT UVar8;
   InternalExceptionFrame local_5c;
   CPanelTy *local_18;
-  AnonShape_006B84D0_7C7D97C6 *local_14;
+  AnonShape_006B5B10_E0D06CF1 *local_14;
   uint local_10;
   uint local_c;
   char local_5;
-  
+
   if (param_1 == 0) {
-    local_14 = (AnonShape_006B84D0_7C7D97C6 *)this->field_019C;
+    local_14 = (AnonShape_006B5B10_E0D06CF1 *)this->field_019C;
     bVar3 = this->field_0C6C;
   }
   else {
-    local_14 = (AnonShape_006B84D0_7C7D97C6 *)this->field_0184;
+    local_14 = (AnonShape_006B5B10_E0D06CF1 *)this->field_0184;
     bVar3 = this->field_0B7E;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31(local_c._1_3_,bVar3);
   if (param_1 == 0) {
     local_5 = this->field_0C53;
@@ -44,14 +46,16 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_18 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     pAVar2 = local_14;
     this_00 = local_18;
     if (iVar4 == 0) {
       bVar3 = (byte)local_c;
       cVar6 = (char)(((local_c & 0xff) * 7) / 10);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_10 = CONCAT31(local_10._1_3_,cVar6);
       if (((byte)local_c != 0) && (cVar6 == '\0')) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_10 = CONCAT31(local_10._1_3_,1);
       }
       if ((byte)local_c < 0x46) {
@@ -68,6 +72,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
       }
       else {
         UVar8 = 0x36b1;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),'d' - bVar3);
       }
       PaintDamageXY(this_00,(int)pAVar2,5,0x27,uVar7,UVar8);
@@ -78,9 +83,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x2f,0,iVar4,&DAT_007a4ccc,
                                s_CPanelTy__PaintLife_007c240c);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x2f);
   }

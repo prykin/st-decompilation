@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -7,23 +9,24 @@ int __thiscall TraksClassTy::CreateDate(TraksClassTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  InternalExceptionFrame *pIVar2;
   int iVar3;
-  void *unaff_ESI;
-  undefined4 local_44 [16];
-  
-  iVar2 = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,g_currentExceptionFrame);
-  if (iVar2 == 0) {
+  int iVar4;
+  int local_44 [16];
+
+  pIVar2 = g_currentExceptionFrame;
+  iVar3 = Library::MSVCRT::__setjmp3(local_44,0);
+  if (iVar3 == 0) {
+    g_currentExceptionFrame = pIVar2;
     return 0;
   }
-  iVar3 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x37,0,iVar2,&DAT_007a4ccc,
+  g_currentExceptionFrame = pIVar2;
+  iVar4 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x37,0,iVar3,&DAT_007a4ccc,
                              s_TraksClassTy__CreateDate_error_007c9124);
-  if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+  if (iVar4 != 0) {
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_grig_traks_cpp_007c9104,0x38);
-  return iVar2;
+  RaiseInternalException(iVar3,0,s_E____titans_grig_traks_cpp_007c9104,0x38);
+  return iVar3;
 }
 

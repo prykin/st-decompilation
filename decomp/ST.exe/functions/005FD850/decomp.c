@@ -11,7 +11,7 @@ int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
   int iVar7;
   int iVar8;
   int local_8;
-  
+
   iVar7 = 0;
   iVar4 = -1;
   local_8 = -1;

@@ -7,7 +7,7 @@ void __thiscall FUN_006042d0(void *this,uint param_1)
   AnonShape_00627EB0_4C14C976 *pAVar3;
   undefined4 *puVar4;
   AnonShape_00627EB0_4C14C976 local_24;
-  
+
   iVar2 = 0;
   pAVar3 = &local_24;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {

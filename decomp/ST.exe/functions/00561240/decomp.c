@@ -21,7 +21,7 @@ int * FUN_00561240(int param_1,int param_2,int param_3)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar4 = param_1;
   local_c = 0;
   param_1 = 0x75300000;

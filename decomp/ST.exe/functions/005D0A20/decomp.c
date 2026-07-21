@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -13,21 +15,20 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
   int errorCode;
   char *pcVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   AnonShape_005D00B0_9E7CC102 *pAVar7;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
-  
+
   if (this->field_1F84 != (DArrayTy *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     pSVar4 = local_8;
     if (errorCode == 0) {
       pDVar2 = local_8->field_1F84;
       if (param_1 < pDVar2->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, param_1) (runtime stride) */
         pAVar7 = (AnonShape_005D00B0_9E7CC102 *)(pDVar2->elementSize * param_1 + (int)pDVar2->data);
       }
       else {
@@ -39,6 +40,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
           while( true ) {
             pDVar2 = pSVar4->field_1F84;
             if (uVar1 < pDVar2->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar1) (runtime stride) */
               pcVar5 = (char *)(pDVar2->elementSize * uVar1 + (int)pDVar2->data);
             }
             else {
@@ -48,7 +50,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
             if (*(DArrayTy **)(pcVar5 + 0x50) != (DArrayTy *)0x0) {
               DArrayDestroy(*(DArrayTy **)(pcVar5 + 0x50));
             }
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pSVar4->field_1F84,uVar1);
+            FUN_006b0c70(pSVar4->field_1F84,uVar1);
           }
           pAVar7->field_0x1 = 1;
         }
@@ -56,6 +58,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
           pAVar7->field_0x1 = 0;
           thunk_FUN_005d00b0(local_8,pAVar7,param_1 + 1);
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)pSVar4->field_0000->field_002C)();
         pSVar4->field_2121 = pSVar4->field_2121 + 1;
       }
@@ -66,9 +69,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
     iVar6 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x5ba,0,errorCode,
                                &DAT_007a4ccc,s_SettMapMTy__ChangePlayerState_007cd458);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x5ba);
   }

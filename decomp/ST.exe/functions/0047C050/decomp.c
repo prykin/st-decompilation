@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -12,30 +14,25 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   STBoatC_field_0687State SVar4;
   STBoatC_field_06F7State SVar5;
   code *pcVar6;
-  bool bVar7;
+  ushort uVar7;
   int iVar8;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
-  undefined3 extraout_var_01;
-  uint uVar9;
-  undefined4 uVar10;
+  undefined4 uVar9;
+  dword dVar10;
   int iVar11;
-  undefined2 uVar12;
-  undefined2 extraout_var_02;
-  int iVar13;
+  int iVar12;
   STWorldObject *this_00;
-  undefined4 *puVar14;
+  undefined4 *puVar13;
   undefined4 local_14;
   short local_10;
   short local_e;
   short local_c;
   STBoatC *local_8;
-  
+
   if ((param_1 == (STBoatC *)0x0) || (param_1 == (STBoatC *)0x1)) {
-    puVar14 = &this->field_02CC;
+    puVar13 = &this->field_02CC;
     for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar14 = 0;
-      puVar14 = puVar14 + 1;
+      *puVar13 = 0;
+      puVar13 = puVar13 + 1;
     }
     SVar5 = this->field_06F7;
     this->field_02C4 = 0;
@@ -50,9 +47,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       if (iVar8 == 0) {
         return 0;
       }
-      pcVar6 = (code *)swi(3);
-      uVar10 = (*pcVar6)();
-      return uVar10;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     sVar1 = *(short *)&this->field_0x41b;
     sVar2 = *(short *)&this->field_0x41d;
@@ -75,13 +70,13 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     if (param_1 == (STBoatC *)0x0) {
       return 0;
     }
-    iVar8 = (*param_1->vtable->vfunc_2C)((STWorldObject *)param_1);
-    this->field_0675 = iVar8;
-    if ((((iVar8 != 0x52) && (iVar8 != 0x5f)) || (*(int *)&this->field_0x66b != 0x1a4)) &&
-       (iVar8 != 99)) {
+    dVar10 = (*param_1->vtable->slot_2C)(param_1);
+    this->field_0675 = dVar10;
+    if ((((dVar10 != 0x52) && (dVar10 != 0x5f)) || (*(int *)&this->field_0x66b != 0x1a4)) &&
+       (dVar10 != 99)) {
       return 0;
     }
-    iVar13 = (short)this->field_0673 + 1;
+    iVar12 = (short)this->field_0673 + 1;
     iVar8 = (int)(short)this->field_0671;
     this->field_0679 = param_1->field_0018;
     iVar11 = (int)(short)this->field_066F;
@@ -133,9 +128,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                   );
         return 0xffff;
       }
-      pcVar6 = (code *)swi(3);
-      uVar10 = (*pcVar6)();
-      return uVar10;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   if (SVar4 != CASE_1) {
@@ -189,10 +182,10 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       default:
         return 2;
       case 3:
-        bVar7 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
+        iVar8 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
                                    (short *)&this->field_0x681);
-        if (CONCAT31(extraout_var_01,bVar7) == 1) {
-          iVar13 = (int)*(short *)&this->field_0x681;
+        if (iVar8 == 1) {
+          iVar12 = (int)*(short *)&this->field_0x681;
           iVar8 = (int)*(short *)&this->field_0x67f;
           iVar11 = (int)*(short *)&this->field_0x67d;
           goto cf_common_exit_0047C9FE;
@@ -228,9 +221,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                      0x37e9);
           return 0xffff;
         }
-        pcVar6 = (code *)swi(3);
-        uVar10 = (*pcVar6)();
-        return uVar10;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       goto cf_common_exit_0047C74D;
     }
@@ -293,7 +284,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                 local_14 = PTR_00802a38->field_00E4;
                 local_8 = param_1;
                 CmdToObj(param_1,CASE_B,&local_14);
-                thunk_FUN_004b7d00(this_00,(int *)param_1);
+                thunk_FUN_004b7d00(this_00,param_1);
                 return 2;
               }
             }
@@ -315,7 +306,6 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         return 2;
       }
       this->field_0687 = CASE_4;
-      uVar12 = 0;
     }
     else {
       if (SVar4 != CASE_4) {
@@ -324,9 +314,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         if (iVar8 == 0) {
           return 0xffffffff;
         }
-        pcVar6 = (code *)swi(3);
-        uVar10 = (*pcVar6)();
-        return uVar10;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar8 = sub_00460260(this,2);
       if (iVar8 == -1) {
@@ -335,18 +323,16 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       if (iVar8 == 0) {
         return 0;
       }
-      uVar12 = extraout_var_02;
       if (iVar8 != 3) {
         return 2;
       }
     }
-    iVar8 = CONCAT22(uVar12,this->field_0671);
-    uVar9 = (uint)(ushort)(this->field_0673 + 1);
-    iVar13 = CONCAT22((short)((uint)&this->field_0x67d >> 0x10),this->field_066F);
+    uVar7 = this->field_0673 + 1;
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-              ((AnonReceiver_0048DFD0 *)this,iVar13,iVar8,uVar9,iVar13,iVar8,(int *)uVar9,2,
-               (short *)&this->field_0x67d,(short *)&this->field_0x67f,(short *)&this->field_0x681);
-    iVar13 = (int)*(short *)&this->field_0x681;
+              ((AnonReceiver_0048DFD0 *)this,this->field_066F,this->field_0671,uVar7,
+               this->field_066F,this->field_0671,(int *)(uint)uVar7,2,(short *)&this->field_0x67d,
+               (short *)&this->field_0x67f,(short *)&this->field_0x681);
+    iVar12 = (int)*(short *)&this->field_0x681;
     iVar8 = (int)*(short *)&this->field_0x67f;
     iVar11 = (int)*(short *)&this->field_0x67d;
     goto cf_common_exit_0047C9FE;
@@ -385,13 +371,13 @@ cf_common_exit_0047C74D:
     sub_004602B0(this);
     return 0;
   }
-  bVar7 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
+  iVar8 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
                              (short *)&this->field_0x681);
-  if (CONCAT31(extraout_var_00,bVar7) != 1) {
+  if (iVar8 != 1) {
     return 2;
   }
   if (this->field_0675 == 99) {
-    iVar8 = thunk_FUN_004b7d00(param_1,(int *)this);
+    iVar8 = thunk_FUN_004b7d00(param_1,this);
     if (iVar8 == 1) goto cf_common_exit_0047C43E;
     if (this->field_0675 == 99) {
       return 2;
@@ -424,11 +410,11 @@ switchD_0047c090_caseD_0:
   }
   if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
      (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 == 0)) goto cf_common_exit_0047C74D;
-  bVar7 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
+  iVar8 = thunk_FUN_004950b0(this,(short *)&this->field_0x67d,(short *)&this->field_0x67f,
                              (short *)&this->field_0x681);
-  if (CONCAT31(extraout_var,bVar7) != 1) goto cf_common_exit_0047C68C;
+  if (iVar8 != 1) goto cf_common_exit_0047C68C;
   if (this->field_0675 == 99) {
-    iVar8 = thunk_FUN_004b7d00(param_1,(int *)this);
+    iVar8 = thunk_FUN_004b7d00(param_1,this);
     if (iVar8 == 1) goto cf_common_exit_0047C43E;
     if (this->field_0675 == 99) goto cf_common_exit_0047C68C;
   }
@@ -445,12 +431,12 @@ cf_common_exit_0047C68C:
     return 0xffffffff;
   }
 cf_common_exit_0047C43E:
-  iVar13 = (int)*(short *)&this->field_0x681;
+  iVar12 = (int)*(short *)&this->field_0x681;
   iVar8 = (int)*(short *)&this->field_0x67f;
   iVar11 = (int)*(short *)&this->field_0x67d;
   this->field_0687 = CASE_2;
 cf_common_exit_0047C9FE:
-  sub_00481520(this,iVar11,iVar8,iVar13);
+  sub_00481520(this,iVar11,iVar8,iVar12);
   sub_00460260(this,0);
   return 2;
 }

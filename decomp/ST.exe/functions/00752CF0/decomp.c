@@ -7,7 +7,7 @@ void FUN_00752cf0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,c
 
 {
   uint uVar1;
-  
+
   if (param_2 == 0) {
     param_2 = FUN_006b4fa0((int)param_1);
   }

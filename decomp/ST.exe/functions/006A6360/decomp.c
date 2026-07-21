@@ -6,7 +6,7 @@ uint FUN_006a6360(int param_1,int param_2,int param_3,int param_4,int param_5,in
   uint uVar2;
   int iVar3;
   uint local_8;
-  
+
   local_8 = 0xffe;
   iVar3 = param_3;
 switchD_006a63e5_caseD_1:

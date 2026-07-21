@@ -3,7 +3,7 @@
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 119 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067D880 -> 0067D1D0 @ 0067D8F6 */
 
@@ -17,18 +17,16 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
   uint *puVar5;
   undefined4 *puVar6;
   AnonShape_0067D1D0_21940C5B *pAVar7;
-  undefined4 unaff_ESI;
   ushort *puVar8;
-  void *unaff_EDI;
   uint uVar9;
   bool bVar10;
   InternalExceptionFrame local_4c;
   AnonShape_0067D1D0_21940C5B *local_8;
-  
+
   local_8 = (AnonShape_0067D1D0_21940C5B *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     local_8 = (AnonShape_0067D1D0_21940C5B *)Library::DKW::LIB::FUN_006aac10(299);
     puVar8 = param_1;

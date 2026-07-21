@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -13,20 +15,18 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
   ushort *puVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   STVolcanoC *local_14;
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   local_18 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pSVar2 = local_14;
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_1 == 2)) {
@@ -80,9 +80,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
   iVar4 = ReportDebugMessage(s_E____titans_nick_to_volc_cpp_007d26e4,0x214,0,errorCode,&DAT_007a4ccc
                              ,s_STVolcanoC__LoadImagVolcano_007d2724);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_nick_to_volc_cpp_007d26e4,0x216);
   return 0xffff;

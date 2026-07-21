@@ -15,7 +15,7 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
   int iVar7;
   undefined1 local_c [4];
   dword local_8;
-  
+
   iVar7 = 0;
   sVar4 = 0;
   pDVar1 = g_playerRuntime[param_1].objects;
@@ -25,9 +25,11 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
     do {
       sVar4 = sVar3;
       piVar2 = *(int **)((int)pDVar1->data + iVar7 * 4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((piVar2 != (int *)0x0) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
          (iVar6 = (**(code **)(*piVar2 + 0xf8))(), iVar6 != 0)) {
         if (param_3 == 0) {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0043e6d3:
           if ((param_4 == -1) ||
              (iVar6 = (**(code **)(**(int **)((int)pDVar1->data + iVar7 * 4) + 0x6c))(),
@@ -37,6 +39,7 @@ LAB_0043e6d3:
         }
         else {
           switch(param_2) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           case CASE_38:
           case CASE_39:
           case CASE_4F:

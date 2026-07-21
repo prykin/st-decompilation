@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::new
-   
+
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0056DB80 -> 005540E0 @ 0056DCEC */
 
@@ -20,8 +22,6 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   uint *puVar7;
   uint uVar8;
   ccFntTy *this_01;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar9;
   char *pcVar10;
   byte bVar11;
@@ -34,11 +34,11 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   InternalExceptionFrame local_50;
   uint local_c;
   uint *local_8;
-  
+
   local_8 = (uint *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc,
@@ -55,9 +55,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x41);
       return (uint *)0x0;
     }
-    pcVar2 = (code *)swi(3);
-    puVar7 = (uint *)(*pcVar2)();
-    return puVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_8 = Library::DKW::LIB::FUN_006aac10(param_1);
   this_00 = g_cMf32_00806780;

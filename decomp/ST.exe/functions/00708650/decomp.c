@@ -37,7 +37,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e200;
   puStack_10 = &LAB_0072d964;
@@ -46,6 +46,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   iVar7 = 0;
   ExceptionList = &local_14;
   do {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = FUN_006bbe40(*(int **)(param_1[1] + 0x40),(uint *)&DAT_00857004,(int *)&DAT_00857028,
                          0x20);
     local_3c = iVar4;
@@ -143,6 +144,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
              (uVar5 = *(uint *)(iVar7 + 4 + iVar4), (uVar5 & 0x8000) == 0)) {
             local_78 = 1;
             if ((uVar5 & 0x40) != 0) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_78 = ~*(uint *)(iVar7 + *(int *)(param_1[199] + 0xc + puVar3[7] * 0x114) * 0x68)
                          >> 1 & 1;
             }
@@ -168,6 +170,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
           puVar3[0x10] = puVar3[0x1a];
           puVar3[0x11] = puVar3[0x1b];
           puVar3[0x12] = puVar3[0x1c];
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_7c = *(int *)(iVar4 + param_1[0xcc] + 0x18);
           if (local_7c < 5) {
             local_7c = 0;
@@ -179,6 +182,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
             local_48 = local_28[2] + *local_28;
             local_44 = local_28[3] + local_28[1];
             uVar5 = puVar3[0x28];
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             FUN_0072ac20(param_1,DAT_00857004,DAT_00857028,(uint *)(uVar5 + 0x25),
                          *(int *)(uVar5 + 4),(int *)&local_50,*(int *)(uVar5 + 0x14),
                          *(undefined1 *)(uVar5 + 0x18),0,0,0xffffffff);
@@ -198,6 +202,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
         puVar3[0x10] = puVar3[0x1a];
         puVar3[0x11] = puVar3[0x1b];
         puVar3[0x12] = puVar3[0x1c];
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_7c = *(int *)(iVar4 + param_1[0xcc] + 0x18);
         if (local_7c < 5) {
           local_7c = 0;
@@ -240,6 +245,7 @@ LAB_007088a4:
       }
     }
     local_8 = 0xffffffff;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)(param_1[1] + 0x40) + 0x80))(*(int **)(param_1[1] + 0x40),0);
   }
   ExceptionList = local_14;

@@ -9,7 +9,7 @@ FUN_00615e70(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar2 = FUN_006acf0d(param_1,param_2,param_3,param_7,param_8,param_9);
   iVar3 = (iVar2 * param_4) / 10000 + param_1;
   iVar4 = (iVar2 * param_5) / 10000 + param_2;

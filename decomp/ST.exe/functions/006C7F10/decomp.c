@@ -8,7 +8,7 @@ void FUN_006c7f10(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int *param_3,
 {
   int *piVar1;
   int *piVar2;
-  
+
   piVar1 = param_3;
   if (1 < param_4) {
     piVar2 = param_3 + 1;

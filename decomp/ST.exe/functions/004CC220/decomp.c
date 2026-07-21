@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
   AnonShape_004AB810_8E5693D5 *pAVar2;
   STT3DSprC *this;
   int exceptionCode;
-  
+
   param_1->field_0444 = 0;
   param_1->field_0448 = 0;
   param_1->field_044C = 0xffffffff;

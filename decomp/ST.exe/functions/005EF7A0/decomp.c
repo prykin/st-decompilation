@@ -9,9 +9,8 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
   short sVar1;
   short sVar2;
   short sVar3;
-  bool bVar4;
-  undefined3 extraout_var;
-  
+  int iVar4;
+
   sVar1 = param_1;
   _param_1 = (STWorldObject *)(uint)(ushort)param_1;
   if (*(char *)((int)this + 0x252) == '\0') {
@@ -41,11 +40,11 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
     }
     if (_param_1 != this) goto cf_common_exit_005EF8D0;
   }
-  bVar4 = thunk_FUN_005ef4b0(this,*(int *)((int)this + 0x273));
+  iVar4 = thunk_FUN_005ef4b0(this,*(int *)((int)this + 0x273));
   _param_1 = (STWorldObject *)0x0;
-  if (CONCAT31(extraout_var,bVar4) != 0) {
+  if (iVar4 != 0) {
     *(undefined4 *)((int)this + 0x23a) = 2;
-    return bVar4;
+    return SUB41(iVar4,0);
   }
 cf_common_exit_005EF8D0:
   *(undefined4 *)((int)this + 0x23a) = 6;

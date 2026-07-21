@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
 {
   int iVar1;
   uint uVar2;
-  
+
   if (param_4 == 0) {
     return 0;
   }
@@ -106,14 +106,17 @@ cf_common_exit_004EB94E:
     uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     uVar2 = uVar2 & 0xff;
     if (uVar2 == 1) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x90))(6,0x6e);
     }
     else {
       if (uVar2 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x6f);
         return 0;
       }
       if (uVar2 == 3) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x70);
         return 0;
       }

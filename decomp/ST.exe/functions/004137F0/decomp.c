@@ -9,7 +9,7 @@ undefined4 FUN_004137f0(void *param_1,int param_2,uint param_3,int param_4)
   short *psVar4;
   int iVar5;
   int *piVar6;
-  
+
   this = param_1;
   if ((int)param_3 < 0) {
     param_3 = 0;
@@ -31,6 +31,7 @@ undefined4 FUN_004137f0(void *param_1,int param_2,uint param_3,int param_4)
     FreeAndNull((void **)((int)param_1 + 0x59));
   }
   if ((param_2 == -2) || (param_2 == -3)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar5 = *(int *)(*(int *)((int)param_1 + 0x29) + 0xc);
     *(uint *)((int)param_1 + 0x49) = *(uint *)((int)param_1 + 0x49) & 0xfffffffe;
     param_1 = (void *)0x0;
@@ -46,10 +47,12 @@ undefined4 FUN_004137f0(void *param_1,int param_2,uint param_3,int param_4)
     if (0 < iVar5) {
       do {
         iVar2 = *(int *)((int)this + 0x29);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(uint *)(iVar2 + 0xc) <= param_3) ||
            (psVar4 = (short *)(*(int *)(iVar2 + 8) * param_3 + *(int *)(iVar2 + 0x1c)),
            psVar4 == (short *)0x0)) break;
         if (*psVar4 != -1) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar2 = thunk_FUN_00423e70(this,CONCAT22((short)((uint)psVar4 >> 0x10),*psVar4));
           if (iVar2 != 0) {
             iVar3 = *(int *)(iVar2 + 199);

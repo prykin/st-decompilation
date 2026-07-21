@@ -204,6 +204,13 @@ strings and message dispatch comparisons.
 5. Run `STVirtualMethodApplier`.
    - File: `<repo>/recovery/ST.exe/virtual_method_proposals.tsv`
 
+For a uniquely owned `__thiscall` slot, signature application may move a
+synthetically named global function into the proven class namespace while
+leaving its `FUN_*` leaf name unchanged. This is structural ownership, not a
+semantic rename: Ghidra derives its immutable automatic `this` parameter from
+that class namespace. The applier never edits the auto-parameter directly; a
+namespace/type mismatch is reported and the row transaction is rolled back.
+
 `STVTableAnalyzer` distinguishes physical and semantic recovery. A strong vptr
 store enables `layout_apply=1`, which safely installs an address-named table
 layout even if its class owner is still unknown. `apply=1` is stricter: it also
@@ -245,6 +252,13 @@ writes EAX, and returns without popping stack arguments. It may safely propose
 narrower return type unresolved. After applying such rows, rerun
 `STVTableAnalyzer`/`STVTableApplier` so table slot definitions can consume the
 newly trusted target signatures.
+
+A one-instruction virtual no-op ending in `RET n` is another provable ABI case.
+The cleanup value gives the exact explicit `__thiscall` argument count. When a
+reviewed implementation exists in the same inherited slot family, its complete
+compatible signature is reused; otherwise the analyzer emits the proven count
+with provisional `undefined4` arguments. The semantic slot name remains
+structural until independent evidence names it.
 
 ### 4. Constructors and class layouts
 
@@ -404,64 +418,68 @@ final LLM corpus.
    - Directory: `<repo>/recovery`
 2. Run `STUtilityFunctionApplier`.
    - File: `<repo>/recovery/ST.exe/utility_function_proposals.tsv`
-3. Run `STReturnSemanticsAnalyzer`.
+3. Run `STAbiConsistencyAnalyzer`.
    - Directory: `<repo>/recovery`
-4. Run `STReturnSemanticsApplier`.
+4. Run `STAbiConsistencyApplier`.
+   - File: `<repo>/recovery/ST.exe/abi_consistency_proposals.tsv`
+5. Run `STReturnSemanticsAnalyzer`.
+   - Directory: `<repo>/recovery`
+6. Run `STReturnSemanticsApplier`.
    - File: `<repo>/recovery/ST.exe/return_semantics_proposals.tsv`
-5. Run `STPrototypeAnalyzer`.
+7. Run `STPrototypeAnalyzer`.
    - Directory: `<repo>/recovery`
-6. If `prototype_summary.txt` reports repair rows, run
+8. If `prototype_summary.txt` reports repair rows, run
    `STPrototypeRepairAnalyzer`.
    - File: `<repo>/recovery/ST.exe/prototype_proposals.tsv`
-7. Run `STPrototypeRepairApplier`.
+9. Run `STPrototypeRepairApplier`.
    - File: `<repo>/recovery/ST.exe/prototype_repair_proposals.tsv`
-8. After a repair pass, rerun `STPrototypeAnalyzer` so ordinary proposals have
+10. After a repair pass, rerun `STPrototypeAnalyzer` so ordinary proposals have
    current baselines.
-9. Run `STPrototypeApplier`.
+11. Run `STPrototypeApplier`.
    - File: `<repo>/recovery/ST.exe/prototype_proposals.tsv`
    - Repair rows are deliberately ignored by this applier.
-10. Run `STGlobalRecordAnalyzer`.
+12. Run `STGlobalRecordAnalyzer`.
    - Directory: `<repo>/recovery`
    - Rerun `STRecoveredTypesApplier` first after script updates: the global-record
      model depends on the recovered packed `STPlayerTempSlot` type.
-11. Run `STGlobalRecordApplier`.
+13. Run `STGlobalRecordApplier`.
    - File: `<repo>/recovery/ST.exe/global_record_proposals.tsv`
    - The sibling `global_record_field_proposals.tsv` is loaded automatically.
-12. Run `STSpatialGridAnalyzer`.
+14. Run `STSpatialGridAnalyzer`.
    - Directory: `<repo>/recovery`
-13. Run `STSpatialGridApplier`.
+15. Run `STSpatialGridApplier`.
    - File: `<repo>/recovery/ST.exe/spatial_grid_proposals.tsv`
    - The containing program directory is also accepted.
-14. Run `STGlobalAggregateAnalyzer`.
+16. Run `STGlobalAggregateAnalyzer`.
     - Directory: `<repo>/recovery`
-15. Run `STGlobalAggregateApplier`.
+17. Run `STGlobalAggregateApplier`.
     - File: `<repo>/recovery/ST.exe/global_aggregate_proposals.tsv`
-16. Run `STGlobalDataAnalyzer`.
+18. Run `STGlobalDataAnalyzer`.
    - Directory: `<repo>/recovery`
-17. Run `STGlobalDataApplier`.
+19. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
-18. Run `STIndirectCallAnalyzer`.
+20. Run `STIndirectCallAnalyzer`.
     - Directory: `<repo>/recovery`
-19. Run `STIndirectCallApplier`.
+21. Run `STIndirectCallApplier`.
     - File: `<repo>/recovery/ST.exe/indirect_call_proposals.tsv`
-20. Run `STPointerRoleRepairAnalyzer`.
+22. Run `STPointerRoleRepairAnalyzer`.
    - Directory: `<repo>/recovery`
    - This is normally a one-time cleanup after an older pointer-shape pass. It
      scans only locals carrying an `STPointerShapeApplier` marker.
-21. Run `STPointerRoleRepairApplier`.
+23. Run `STPointerRoleRepairApplier`.
    - File: `<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv`
-22. Run `STPointerShapeAnalyzer`.
+24. Run `STPointerShapeAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - Run it after global-record application: it also propagates
+     `STPlayerTempSlot *` and `DArrayTy *` through persistent locals derived
+     from packed `g_playerRuntime` address arithmetic.
+25. Run `STPointerShapeApplier`.
+   - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
+   - The program directory containing that file is also accepted. The sibling
+     type and field proposal TSVs are loaded automatically.
+26. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
-    - Run it after global-record application: it also propagates
-      `STPlayerTempSlot *` and `DArrayTy *` through persistent locals derived
-      from packed `g_playerRuntime` address arithmetic.
-23. Run `STPointerShapeApplier`.
-    - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
-    - The program directory containing that file is also accepted. The sibling
-      type and field proposal TSVs are loaded automatically.
-24. Run `STTypeFamilyAnalyzer`.
-    - Directory: `<repo>/recovery`
-25. Run `STTypeFamilyApplier`.
+27. Run `STTypeFamilyApplier`.
     - File: `<repo>/recovery/ST.exe/type_family_proposals.tsv`
 
 The utility pass is intentionally small and strict. It verifies body shapes before
@@ -470,11 +488,22 @@ assigning the semantics and prototypes of `FreeAndNull`, `DArrayDestroy`,
 facts should precede prototype propagation because one corrected helper signature
 can improve many callers.
 
+The ABI-consistency pair handles facts that source-level value domains cannot
+prove. It restores the two fixed arguments plus varargs of MSVC `_setjmp3`, the
+pointer return of `LoadResourceString`, full-width EAX returns consumed as
+32-bit values by every observed caller, and consistently narrowed stack
+parameters. Every automatic width repair requires closed machine-code evidence;
+manual/imported targets are preserved. Correcting `_setjmp3` removes the large
+family of synthetic `unaff_ESI`/`unaff_EDI` inputs produced by a fixed four-arg
+prototype.
+
 Return semantics are recovered only from closed evidence: leaf functions with no
-return-register write become `void`, boolean candidates must exhibit both zero and
-one as their complete explicit return domain, and a terminal call is marked
-`noreturn` only when its target already has that property. Existing manual/imported
-return types are preserved.
+return-register write become `void`, and a terminal call is marked `noreturn`
+only when its target already has that property. A complete zero/one source domain
+is reported as a boolean candidate but remains review-only: it does not by itself
+prove whether the x86 ABI value is returned in `AL` or full `EAX`. The ABI pass
+handles that width question from callers and return definitions. Existing
+manual/imported return types are preserved.
 
 `STGlobalAggregateAnalyzer` writes a broad SIB-index audit, but automatic application
 requires a proven complete range and element formula. The current high-confidence
@@ -682,6 +711,17 @@ callgraph indexes, and per-function directories. It reuses an existing function
 body when its dependency-scoped fingerprint is unchanged. If a function becomes
 a library or thunk, stale `decomp.c` and `listing.asm` files are deleted.
 
+Reused bodies still pass through the cheap text-normalization/catalog stage; no
+decompilation is needed. Terminal x86 `INT3` plus Ghidra's synthetic `swi(3)`
+indirect call becomes the standalone noreturn `STDebugBreak()` helper defined in
+`pseudocode_runtime.h`. Forms that cannot be safely rewritten from text alone
+are grouped by function in `pseudocode_idioms.jsonl`, with line excerpts,
+machine/address hints, and the intended structured form. See
+[`pseudocode-normalization.md`](pseudocode-normalization.md).
+Each unresolved expression also receives an idempotent `ST_PSEUDO[...]` comment
+immediately above it in `decomp.c`; reused bodies have old exporter comments
+removed and regenerated before the JSONL line numbers are recorded.
+
 Composite layouts are fingerprinted selectively: a function depends on the
 identity of its referenced structures and on the components it actually
 accesses, not on every field of every structure mentioned by its signature. A
@@ -703,7 +743,7 @@ every edit. Use the smallest affected loop:
 | New vtable owner or slot function | virtual methods → constructors → destructors |
 | New method name, receiver type, or class field type | method owners → prototypes → globals → class layouts |
 | Newly proven anonymous ECX receiver | hidden this → prototypes/export audit; anonymous vtable slots may then be refined separately |
-| New high-fanout helper semantics | utility functions → return semantics → prototypes |
+| New high-fanout helper semantics | utility functions → ABI consistency → return semantics → prototypes |
 | New named aggregate return type | type families → pointer shapes/prototypes for affected callers |
 | New or corrected vtable slot prototype | indirect calls → type families → affected callers |
 | New prototype or typed global | prototypes → global records → globals → pointer shapes → class layouts, until enabled counts reach zero |
@@ -736,6 +776,7 @@ a new conflict is what requires another iteration.
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums. |
 | `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers and install their exact prototypes. |
+| `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative `void`, boolean, and terminal `noreturn` behavior. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
@@ -750,7 +791,7 @@ a new conflict is what requires another iteration.
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, normalize proven terminal trap artifacts, and catalogue unresolved pseudocode idioms. |
 
 ## Git and Ghidra database hygiene
 

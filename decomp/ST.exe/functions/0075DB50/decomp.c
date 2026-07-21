@@ -19,7 +19,7 @@ void FUN_0075db50(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,
   uint uVar14;
   int iVar15;
   int iVar16;
-  
+
   iVar5 = param_1->field_0068;
   iVar6 = param_1->field_01B6;
   iVar7 = param_1->field_0132;

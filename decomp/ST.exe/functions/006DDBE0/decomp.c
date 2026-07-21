@@ -12,11 +12,12 @@ void __fastcall FUN_006ddbe0(AnonShape_006DDBE0_9835BAB9 *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079dfd8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((param_1->field_0004 == 0) || ((*(uint *)(param_1->field_0004 + 0xc) & 0x1100) != 0x100)) &&
      ((param_1->field_02DC == 0 || (param_1->field_02D8 != 0)))) {
     uVar4 = param_1->field_0038 - param_1->field_0030;

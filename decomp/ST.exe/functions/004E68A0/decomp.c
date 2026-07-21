@@ -8,15 +8,17 @@ void FUN_004e68a0(int param_1,undefined1 *param_2,uint param_3,undefined4 *param
   bool bVar4;
   undefined1 uVar5;
   uint uVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar7;
   int iVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
   int iVar9;
   undefined1 *puVar10;
   int *piVar11;
   undefined4 *puVar12;
-  
+
   puVar12 = param_4;
   for (iVar9 = 7; iVar9 != 0; iVar9 = iVar9 + -1) {
     *puVar12 = 0;
@@ -26,6 +28,7 @@ void FUN_004e68a0(int param_1,undefined1 *param_2,uint param_3,undefined4 *param
   uVar6 = GetPlayerRaceId((char)param_1);
   iVar9 = (uVar6 & 0xff) - 1;
   bVar4 = thunk_FUN_004e5c40(param_1,(uint)param_2);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT31(extraout_var,bVar4) == 0) {
     piVar2 = (int *)(&PTR_DAT_007c0dc8)[iVar9];
     puVar10 = (undefined1 *)*piVar2;
@@ -56,6 +59,7 @@ void FUN_004e68a0(int param_1,undefined1 *param_2,uint param_3,undefined4 *param
             iVar8 = GetPlayerRaceId((char)param_1);
             param_2[-1] = (char)iVar8;
             bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7));
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if ((CONCAT31(extraout_var_00,bVar4) == 0) ||
                (iVar8 = thunk_FUN_004e60d0(param_1,*(int *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7)),
                iVar8 != (byte)(&PTR_DAT_007c0dc8)[iVar9][iVar7 + 4] - 1)) {

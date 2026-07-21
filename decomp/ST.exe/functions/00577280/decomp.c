@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tsystem.cpp
@@ -14,13 +16,11 @@ void CreateGameSystem(void)
   int errorCode;
   GameSystemC *this_00;
   int iVar4;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar5;
-  undefined4 local_44 [16];
-  
-  pIVar5 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar5);
+  InternalExceptionFrame local_48;
+
+  local_48.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_48;
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     this_00 = (GameSystemC *)Library::MSVCRT::FUN_0072e530(0x435);
     if (this_00 == (GameSystemC *)0x0) {
@@ -35,6 +35,7 @@ void CreateGameSystem(void)
       ;
     }
     *(undefined4 *)&PTR_0081163c->field_0x428 = 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)**(undefined4 **)PTR_0081163c)();
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)PTR_0081163c,0);
     *(undefined4 *)&PTR_0081163c->field_0x428 = 1;
@@ -47,16 +48,14 @@ void CreateGameSystem(void)
     CursorClassTy::DrawSprite(this,this->field_00C5,this->field_00C9);
     this->field_0xd2 = 0;
     *(undefined4 *)&this->field_0x4df = 0xffffffff;
-    g_currentExceptionFrame = pIVar5;
+    g_currentExceptionFrame = local_48.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar5;
+  g_currentExceptionFrame = local_48.previous;
   iVar4 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0xbb,0,errorCode,&DAT_007a4ccc,
                              s_CreateGameSystem_007cac34);
   if (iVar4 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0xbb);
   return;

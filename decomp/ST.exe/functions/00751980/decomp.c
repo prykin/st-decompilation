@@ -4,7 +4,7 @@ DWORD FUN_00751980(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4
 {
   int iVar1;
   DWORD DVar2;
-  
+
   iVar1 = Library::DKW::DB::FUN_00751b60(*param_1,param_2,&param_2);
   if (iVar1 == 0) {
     DVar2 = FUN_00754360(param_1[1],(DWORD)param_2,param_3,param_4);

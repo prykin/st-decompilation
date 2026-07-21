@@ -9,7 +9,7 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
   int iVar4;
   undefined4 *puVar5;
   int iVar6;
-  
+
   uVar1 = param_3;
   uVar2 = thunk_FUN_00496a90(param_1,param_2,param_3,param_4,param_5,&param_3);
   pvVar3 = param_6;
@@ -38,6 +38,7 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
   }
   else if (param_3 != 0) {
     if (uVar2 < PTR_007fb270->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, uVar2) (runtime stride) */
       pvVar3 = (void *)(PTR_007fb270->elementSize * uVar2 + (int)PTR_007fb270->data);
     }
     else {

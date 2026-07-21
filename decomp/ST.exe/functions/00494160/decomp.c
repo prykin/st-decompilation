@@ -9,7 +9,7 @@ void __thiscall FUN_00494160(void *this,int param_1)
   int iVar5;
   undefined4 *puVar6;
   bool bVar7;
-  
+
   iVar5 = *(int *)((int)this + 0x6f7);
   if (iVar5 != 0x16) {
     if (iVar5 == 0x23) {
@@ -21,10 +21,12 @@ void __thiscall FUN_00494160(void *this,int param_1)
           return;
         }
         *(undefined4 *)((int)this + 0x72e) = 1;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(3,0x16c);
         return;
       }
       *(undefined4 *)((int)this + 0x72e) = 0;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x90))(3,0x16d);
       return;
     }
@@ -37,6 +39,7 @@ void __thiscall FUN_00494160(void *this,int param_1)
   }
   if (param_1 != 1) {
     *(undefined4 *)((int)this + 0x732) = 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0x90))(3,0x16d);
     return;
   }
@@ -136,6 +139,7 @@ LAB_004943a0:
   thunk_FUN_004ace60(pvVar1,'\t');
   thunk_FUN_004ace60(pvVar1,'\b');
   *(undefined4 *)((int)this + 0x746) = 1;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00494498:
   (**(code **)(*(int *)this + 0x90))(3,0x16c);
   return;

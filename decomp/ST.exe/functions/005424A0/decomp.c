@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tintersys.cpp
@@ -13,8 +15,6 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   LPSTR pCVar4;
   ushort *puVar5;
   char *text;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar6;
   undefined4 uVar7;
   uint uVar8;
@@ -49,11 +49,11 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   undefined4 local_60;
   int local_5c;
   InterSystemC *local_8;
-  
+
   local_1c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1c8;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_1c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_1c8.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
     if (DAT_0080874e == '\x01') {
@@ -248,7 +248,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
       uVar8 = 8;
-      LoadResourceString(0x4275,HINSTANCE_00807618);
+      text = LoadResourceString(0x4275,HINSTANCE_00807618);
       thunk_FUN_0052d320(g_popUp_008016D8,text,uVar8);
     }
     g_currentExceptionFrame = local_1c8.previous;
@@ -258,9 +258,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   iVar10 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3,0,iVar3,&DAT_007a4ccc
                               ,s_InterSystemC__CreateInterfObject_007c7c10);
   if (iVar10 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar7 = (*pcVar1)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3);
   return 0xfffffffc;

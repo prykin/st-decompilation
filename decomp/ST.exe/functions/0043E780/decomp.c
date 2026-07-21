@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJList
-   
+
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJList_param_2Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94 */
@@ -20,27 +22,23 @@ STAllPlayersC::GetTOBJList
   STAllPlayersC_GetTOBJList_param_2Enum SVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   undefined1 local_14 [4];
   DArrayTy *local_10;
   dword local_c;
   uint *local_8;
-  
+
   local_10 = g_playerRuntime[param_1].objects;
   local_c = local_10->count;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1fbf,0,iVar4,&DAT_007a4ccc
                                ,s_STAllPlayersC__GetTOBJList_007a7f94);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      puVar7 = (uint *)(*pcVar2)();
-      return puVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1fc0);
     return (uint *)0x0;
@@ -50,6 +48,7 @@ STAllPlayersC::GetTOBJList
   if (0 < (int)local_c) {
     do {
       piVar1 = *(int **)((int)local_10->data + iVar4 * 4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((piVar1 == (int *)0x0) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
          (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 0)) {
 switchD_0043e836_caseD_3a:
@@ -58,6 +57,7 @@ switchD_0043e836_caseD_3a:
       else {
         if (param_3 != 0) {
           switch(param_2) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           case CASE_38:
           case CASE_39:
           case CASE_4F:
@@ -71,6 +71,7 @@ switchD_0043e836_caseD_3a:
         }
         bVar3 = true;
       }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0043e85d:
       if ((bVar3) &&
          ((param_4 == -1 || (iVar6 = (**(code **)(*piVar1 + 0x6c))(), iVar6 == param_4)))) {

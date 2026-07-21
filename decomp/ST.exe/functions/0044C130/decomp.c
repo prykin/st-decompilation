@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJImage
-   
+
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJImage_param_2Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_78=120;CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_DF=223;CASE_E0=224;CASE_E2=226;CASE_E6=230;CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235;CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251;CASE_FD=253;CASE_FE=254
@@ -25,7 +27,7 @@ STAllPlayersC::GetTOBJImage
   int *local_10;
   STBoatCVTable *local_c;
   STBoatCVTable *local_8;
-  
+
   SVar2 = param_2;
   piVar6 = local_54;
   for (iVar5 = 0x11; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -75,6 +77,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_28:
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     STBoatC::GetVisualInfo
@@ -88,6 +91,7 @@ STAllPlayersC::GetTOBJImage
     }
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     STBoatC::GetVisualInfo
@@ -101,6 +105,7 @@ STAllPlayersC::GetTOBJImage
     }
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     STBoatC::GetVisualInfo
@@ -118,9 +123,7 @@ STAllPlayersC::GetTOBJImage
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x324e,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__GetTOBJImage_unkn_007a8a8c);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar4 = (*pcVar1)();
-      return uVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0;
   case CASE_32:
@@ -195,6 +198,7 @@ STAllPlayersC::GetTOBJImage
     do {
       local_c = (STBoatCVTable *)0x0;
       local_154[0] = '\0';
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
       param_2 = 0;
       thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -219,6 +223,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_E2:
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_00580910(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -241,6 +246,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_FB:
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -248,6 +254,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_FD:
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -255,6 +262,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_FE:
     local_c = (STBoatCVTable *)0x0;
     local_154[0] = '\0';
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);

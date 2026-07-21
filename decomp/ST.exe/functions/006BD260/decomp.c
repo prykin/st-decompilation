@@ -9,7 +9,7 @@ void FUN_006bd260(void)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d940;
   puStack_10 = &LAB_0072d964;
@@ -20,6 +20,7 @@ void FUN_006bd260(void)
   if (g_int_00854FD4[0x76] == 0) {
     if (g_int_00854FD4[0x8b] == 0) {
       DAT_00854ed8 = 0;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       while (DAT_00854fec = (**(code **)(*PTR_00854ee8->field_0044 + 0x14))
                                       (PTR_00854ee8->field_0044,0,PTR_00854ee8->field_0040,0,
                                        0x1000000,0), DAT_00854fec != 0) {
@@ -39,11 +40,14 @@ void FUN_006bd260(void)
       }
     }
     else {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       DAT_00854fec = (*(code *)g_int_00854FD4[0x8a])(PTR_00854ee8,g_int_00854FD4[0x8d]);
       if (DAT_00854fec == 0) {
         local_8 = 0;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         DAT_00854fec = (*(code *)g_int_00854FD4[0x8b])(0,g_int_00854FD4[0x8d]);
         local_8 = 0xffffffff;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)g_int_00854FD4[0x8c])(g_int_00854FD4[0x8d]);
       }
     }

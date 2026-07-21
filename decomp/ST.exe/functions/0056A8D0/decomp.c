@@ -3,7 +3,7 @@ void __thiscall FUN_0056a8d0(void *this,uint param_1,byte param_2,char param_3)
 
 {
   undefined *puVar1;
-  
+
   puVar1 = (undefined *)(param_1 & 0xff);
   *(char *)((int)this + (int)puVar1 * 8 + param_2 + 0x142f) = param_3;
   if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&

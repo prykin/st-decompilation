@@ -10,16 +10,14 @@ void FUN_00522810(char *param_1)
   int iVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
   char *pcVar6;
-  void *unaff_EDI;
   char *pcVar7;
   InternalExceptionFrame local_4c;
   int local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     return;

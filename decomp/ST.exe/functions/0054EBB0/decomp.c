@@ -3,7 +3,7 @@ void __thiscall FUN_0054ebb0(void *this,char *param_1,uint param_2)
 
 {
   DWORD DVar1;
-  
+
   *(undefined4 *)param_1 = *(undefined4 *)((int)this + 0x41);
   *(int *)((int)this + 0x41) = *(int *)((int)this + 0x41) + 1;
   STPlaySystemC::AddToRep(this,(undefined4 *)param_1,param_2);

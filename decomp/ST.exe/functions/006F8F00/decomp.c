@@ -22,7 +22,7 @@ void FUN_006f8f00(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   uint local_10;
   ushort *local_c;
   int local_8;
-  
+
   _DAT_00857000 = 1;
   iVar9 = param_10;
 joined_r0x006f8f1a:

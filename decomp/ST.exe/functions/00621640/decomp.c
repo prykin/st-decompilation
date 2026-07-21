@@ -8,7 +8,7 @@ uint __thiscall FUN_00621640(void *this,int param_1,undefined4 *param_2)
   uint uVar4;
   int iVar5;
   bool bVar6;
-  
+
   uVar3 = 0xffffffff;
   *param_2 = 0;
   iVar1 = *(int *)((int)this + 0x10a);

@@ -18,7 +18,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
   bool bVar12;
   longlong lVar13;
   undefined8 local_14;
-  
+
   uVar6 = param_2;
   if ((int)param_2 < 0) {
     bVar11 = param_1 != 0;
@@ -46,6 +46,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     lVar13 = Library::MSVCRT::__allmul(uVar6,0,uVar7,0);
     lVar13 = lVar13 + (local_14 >> 0x20);
     uVar5 = (uint)((ulonglong)lVar13 >> 0x20);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT44((int)lVar13,(uint)local_14);
   }
   if (param_5 != 0) {
@@ -60,9 +61,12 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     }
     bVar9 = CARRY4((uint)local_14,param_5);
     uVar3 = (uint)local_14 + param_5;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     bVar10 = CARRY4(local_14._4_4_,uVar6);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar6 = local_14._4_4_ + uVar6;
     uVar7 = bVar9 + uVar6;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT44(uVar7,uVar3);
     uVar5 = uVar5 + (uint)bVar10 + (uint)CARRY4((uint)bVar9,uVar6) + (bVar12 - 1);
     if ((int)uVar5 < 0) {
@@ -70,6 +74,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
       uVar3 = ~uVar3;
       iVar4 = uVar3 + 1;
       iVar8 = ~uVar7 + (uint)(0xfffffffe < uVar3);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14 = CONCAT44(iVar8,iVar4);
       uVar5 = ~uVar5 + (uint)(iVar4 == 0 && iVar8 == 0);
     }
@@ -78,13 +83,16 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     bVar11 = !bVar11;
   }
   if (uVar5 < uVar2) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((uVar5 == 0) && (local_14._4_4_ < uVar2)) {
       iVar4 = 0;
     }
     else {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar4 = (int)(CONCAT44(uVar5,local_14._4_4_) / (ulonglong)uVar2);
       if (&stack0x00000000 != (undefined1 *)0x10) {
                     /* WARNING: Ignoring partial resolution of indirect */
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_14._4_4_ = (int)(CONCAT44(uVar5,local_14._4_4_) % (ulonglong)uVar2);
       }
     }
@@ -103,6 +111,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     iVar8 = -1;
     iVar4 = 0x7fffffff;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   return CONCAT44(iVar4,iVar8);
 }
 

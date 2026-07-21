@@ -15,7 +15,7 @@ FUN_006d0680(AnonShape_006B5B10_E0D06CF1 *param_1,int *param_2,uint *param_3,
   int local_18;
   int local_14 [3];
   int local_8;
-  
+
   if ((0 < param_2[2]) && (0 < param_2[3])) {
     local_14[1] = 0;
     local_14[0] = 0;

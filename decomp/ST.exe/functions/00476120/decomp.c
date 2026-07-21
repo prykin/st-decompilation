@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -8,8 +10,9 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
 {
   code *pcVar1;
   int iVar2;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_retaddr;
-  
+
   iVar2 = this->field_05D6;
   if ((iVar2 == 0) || (iVar2 == 1)) {
     iVar2 = (*this->vtable->vfunc_D8)();
@@ -20,15 +23,14 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
     return iVar2;
   }
   if (iVar2 == 5) {
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar2 = (*this->vtable->StopMove)(this,unaff_retaddr);
     return iVar2;
   }
   iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30fa,0,0,&DAT_007a4ccc,
                              s_STBoatC__BackUnLoadObj_007ab0c4);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   return 2;
 }

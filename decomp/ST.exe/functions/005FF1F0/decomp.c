@@ -11,7 +11,7 @@ int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_
   int iVar7;
   int local_10;
   uint local_8;
-  
+
   uVar6 = 0;
   local_8 = 0;
   local_10 = -1;

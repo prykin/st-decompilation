@@ -15,7 +15,7 @@ void FUN_00682850(void)
   char *pcVar6;
   char local_8c [128];
   undefined4 local_c [2];
-  
+
   GVar2 = DAT_007d2d18;
   pcVar6 = local_8c;
   for (iVar4 = 0x20; iVar4 != 0; iVar4 = iVar4 + -1) {

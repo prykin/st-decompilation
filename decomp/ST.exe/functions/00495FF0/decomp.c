@@ -5,7 +5,7 @@ FUN_00495ff0(short param_1,short param_2,short param_3,uint param_4,
 
 {
   int iVar1;
-  
+
   iVar1 = (int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
           (int)param_1;
   if ((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&

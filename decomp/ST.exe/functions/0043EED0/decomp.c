@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJListFromDArr
-   
+
    [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJListFromDArr_param_3Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94 */
@@ -22,20 +24,18 @@ STAllPlayersC::GetTOBJListFromDArr
   STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar6;
   int iVar7;
   uint *puVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_5c;
   undefined1 local_18 [4];
   STAllPlayersC *local_14;
   int local_10;
   DArrayTy *local_c;
   uint local_8;
-  
+
   local_10 = param_2->field_000C;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2049,0,iVar4,&DAT_007a4ccc
@@ -44,9 +44,7 @@ STAllPlayersC::GetTOBJListFromDArr
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x204a);
       return (uint *)0x0;
     }
-    pcVar2 = (code *)swi(3);
-    puVar8 = (uint *)(*pcVar2)();
-    return puVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   this_00 = local_14;
@@ -54,9 +52,10 @@ STAllPlayersC::GetTOBJListFromDArr
   if (0 < local_10) {
     do {
       sVar1 = *(short *)(param_2->field_001C + iVar4 * 2);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT22((short)((uint)param_2->field_001C >> 0x10),sVar1);
       if (sVar1 != -1) {
-        pSVar5 = GetObjPtr(this_00,param_1,local_8,CASE_1);
+        pSVar5 = GetObjPtr(this_00,(char)param_1,local_8,CASE_1);
         if (pSVar5 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,

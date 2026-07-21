@@ -15,17 +15,19 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
   int local_10;
   uint local_c;
   int local_8;
-  
+
   if (param_1->field_0169 != (DArrayTy *)0x0) {
     dVar1 = param_1->field_0169->count;
     local_c = 0;
     if (0 < (int)dVar1) {
       do {
         pDVar2 = param_1->field_0169;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c) (runtime stride) */
         if (((local_c < pDVar2->count) &&
             (pcVar7 = (char *)(pDVar2->elementSize * local_c + (int)pDVar2->data),
             pcVar7 != (char *)0x0)) && (*pcVar7 == '\x01')) {
           if (*(int *)(pcVar7 + 0x1f) == -1) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             thunk_FUN_005f4a30((int)pcVar7,CONCAT31((int3)((uint)pDVar2 >> 8),pcVar7[1]),0);
           }
           pVVar4 = g_visibleClass_00802A88;

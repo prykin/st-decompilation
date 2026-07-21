@@ -8,7 +8,7 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
   char *pcVar3;
   undefined *puVar4;
   undefined *local_8;
-  
+
   if (*(char *)((int)this + 0x146f) != '\0') {
     puVar4 = (undefined *)(uint)param_1;
     pcVar1 = (char *)((int)puVar4 * 0x51 + 0x11ca + (int)this);

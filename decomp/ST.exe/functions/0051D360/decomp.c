@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -12,17 +14,15 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   int errorCode;
   UINT UVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
     if (param_2 == '\0') {
@@ -46,6 +46,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
         local_c->field_002E = 2;
         *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
         if (PTR_00802a30 != (CursorClassTy *)0x0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)PTR_00802a30)(&local_c->field_0x18);
         }
       }
@@ -63,9 +64,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x93f,0,errorCode,
                              &DAT_007a4ccc,s_HelpPanelTy__NatProc_007c3d70);
   if (iVar4 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x93f);
   return;

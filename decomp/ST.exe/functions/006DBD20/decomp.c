@@ -11,6 +11,7 @@ FUN_006dbd20(AnonShape_006DBD20_CC24D445 *param_1,undefined4 param_2,uint param_
   double dVar2;
   int iVar3;
   int iVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
   float10 fVar5;
   longlong lVar6;
@@ -23,7 +24,7 @@ FUN_006dbd20(AnonShape_006DBD20_CC24D445 *param_1,undefined4 param_2,uint param_
   undefined4 local_18;
   double local_14;
   double local_c;
-  
+
   param_1->field_0004 = param_2;
   param_1->field_0020 = param_3;
   param_1->field_0024 = param_4;
@@ -46,6 +47,7 @@ FUN_006dbd20(AnonShape_006DBD20_CC24D445 *param_1,undefined4 param_2,uint param_
       param_1->field_001C = iVar3;
     }
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_14 = (double)CONCAT44(param_10,param_9) - (double)CONCAT44(param_8,param_7);
   param_1->field_02F0 = 100;
   param_1->field_0014 = param_1->field_0010 + 8;
@@ -59,6 +61,7 @@ FUN_006dbd20(AnonShape_006DBD20_CC24D445 *param_1,undefined4 param_2,uint param_
   lVar6 = Library::MSVCRT::__ftol();
   param_1->field_02E4 = (int)lVar6;
   Library::Ourlib::STREND::FUN_006dd660(param_1,0,0,param_5,param_6);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   Library::Ourlib::STREND::FUN_006dd6e0
             (param_1,param_7,param_8,param_9,param_10,param_11._0_4_,param_11._4_4_,param_12._0_4_,
              param_12._4_4_);
@@ -82,14 +85,20 @@ FUN_006dbd20(AnonShape_006DBD20_CC24D445 *param_1,undefined4 param_2,uint param_
     lVar6 = Library::MSVCRT::__ftol();
     iVar3 = (int)lVar6;
     param_1->field_0370 = iVar3;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     fVar5 = (float10)iVar3 * extraout_ST0;
     param_1->field_0360 = (double)fVar5;
     dVar1 = (double)(fVar5 * (float10)_DAT_007901c0);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_12._4_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_12._0_4_ = SUB84(dVar1,0);
     dVar2 = (double)(fVar5 * (float10)_DAT_0079df58);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_11._4_4_ = (undefined4)((ulonglong)dVar2 >> 0x20);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_11._0_4_ = SUB84(dVar2,0);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     FUN_006dbd20((AnonShape_006DBD20_CC24D445 *)param_1->field_0358,0,0,0,iVar3,iVar3,param_11._0_4_
                  ,param_11._4_4_,param_12._0_4_,param_12._4_4_,dVar2,dVar1);
     iVar3 = param_1->field_0358;

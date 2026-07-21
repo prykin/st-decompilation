@@ -7,7 +7,7 @@ void __cdecl FUN_00719c90(MCIERROR mcierr,MCIDEVICEID *param_2)
 {
   BOOL BVar1;
   CHAR local_104 [256];
-  
+
   if (*param_2 != 0) {
     FUN_00719c60((DWORD_PTR)param_2);
   }

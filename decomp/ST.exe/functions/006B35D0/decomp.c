@@ -4,7 +4,7 @@ undefined4 FUN_006b35d0(int *param_1,uint param_2)
 {
   uint *puVar1;
   uint uVar2;
-  
+
   if (param_2 < (uint)param_1[0x68]) {
     puVar1 = *(uint **)(param_1[0x6c] + param_2 * 4);
     uVar2 = *puVar1;

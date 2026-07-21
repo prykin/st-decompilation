@@ -10,7 +10,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
   char *pcVar6;
   char *local_c;
   char *local_8;
-  
+
   iVar2 = param_1->field_0138;
   if ((iVar2 == 0) || (*(int *)(iVar2 + 8) == 0)) {
     return 0;

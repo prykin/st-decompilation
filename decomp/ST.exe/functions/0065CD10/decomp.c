@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event_d.cpp
@@ -15,22 +17,20 @@ undefined4 * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *pa
   int iVar6;
   uint *puVar7;
   undefined4 *puVar8;
-  undefined4 unaff_ESI;
   AnonShape_0065CD10_BA40DE58 *pAVar9;
   undefined4 *puVar10;
-  void *unaff_EDI;
   AnonShape_0065CD10_CB9334E9 *pAVar11;
   undefined4 *puVar12;
   bool bVar13;
   InternalExceptionFrame local_50;
   int local_c;
   AnonShape_0065CD10_CB9334E9 *local_8;
-  
+
   local_8 = (AnonShape_0065CD10_CB9334E9 *)0x0;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     uVar5 = 0;
     iVar2 = param_1->field_0462;
@@ -54,6 +54,7 @@ undefined4 * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *pa
         bVar13 = uVar5 < *(uint *)(iVar2 + 0xc);
       } while ((int)uVar5 < (int)*(uint *)(iVar2 + 0xc));
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)(param_1->field_0462 + 0xc) * *(int *)(param_1->field_0462 + 8) + 0x1c;
     local_c = local_c + iVar2;
     param_1->field_046A = iVar2;
@@ -140,9 +141,7 @@ undefined4 * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *pa
   iVar6 = ReportDebugMessage(s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x89,0,iVar2,&DAT_007a4ccc,
                              s_EventDataPack_007d2b70);
   if (iVar6 != 0) {
-    pcVar1 = (code *)swi(3);
-    puVar8 = (undefined4 *)(*pcVar1)();
-    return puVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x8a);
   return (undefined4 *)0x0;

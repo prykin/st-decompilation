@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintCtrlBoat
-   
+
    [STSwitchEnumApplier] Switch target field_0B99 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
    CASE_8=8;CASE_14=20;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37
-   
+
    [STSwitchEnumApplier] Switch target field_0B9E uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
@@ -19,26 +21,22 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   CPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   AnonShape_006B5B10_E0D06CF1 *pAVar4;
   ushort *puVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x95,0,iVar2,&DAT_007a4ccc,
                                s_CPanelTy__PaintCtrlBoat_007c25a4);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x95);
     return;

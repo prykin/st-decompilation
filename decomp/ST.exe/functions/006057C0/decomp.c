@@ -13,7 +13,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   pVVar4 = g_visibleClass_00802A88;
   if (param_1->field_02AF != (STT3DSprC *)0x0) {
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

@@ -9,7 +9,7 @@ int __cdecl FUN_00677700(int param_1,Global_sub_00677700_param_2Enum param_2)
   int iVar1;
   int iVar2;
   char cVar3;
-  
+
   iVar1 = 0;
   if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return iVar1;

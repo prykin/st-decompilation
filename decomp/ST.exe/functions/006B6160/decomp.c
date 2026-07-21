@@ -4,7 +4,7 @@ void FUN_006b6160(char *param_1,int param_2)
 {
   byte *pbVar1;
   int iVar2;
-  
+
   iVar2 = 0;
   do {
     *param_1 = s_0123456789ABCDEF_007edbb0[*(byte *)(iVar2 + param_2) >> 4];

@@ -3,7 +3,7 @@ undefined4 __fastcall FUN_004e8cc0(AnonShape_004E8DC0_1D60A929 *param_1)
 
 {
   undefined4 uVar1;
-  
+
   *(undefined4 *)&param_1->field_0x4d0 = 0;
   uVar1 = PTR_00802a38->field_00E4;
   *(undefined4 *)&param_1->field_0x4e0 = 0;

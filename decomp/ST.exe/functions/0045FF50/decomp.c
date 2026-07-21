@@ -10,11 +10,11 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
   STGroupBoatC *this_00;
   int iVar1;
   undefined4 uVar2;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  
+
   if (param_1 == 0) {
-    this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
-                                 (uint)(ushort)this->field_0030);
+    this_00 = thunk_FUN_0042b760(this->field_0x24,(uint)(ushort)this->field_0030);
     if (this_00 != (STGroupBoatC *)0x0) {
       thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
       iVar1 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this_00,
@@ -54,9 +54,11 @@ switchD_00460024_caseD_1:
         if (*(uint *)&this->field_0x24 != (uint)DAT_0080874d) {
           return 2;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         FUN_006e6780((void *)this->field_0211,
                      CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
                               *(undefined2 *)&this->field_0018));
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         FUN_006e6710((void *)this->field_0211,
                      (float)(int)this->field_0041 * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
@@ -66,6 +68,7 @@ switchD_00460024_caseD_1:
         return 2;
       case 1:
         goto switchD_00460024_caseD_1;
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case 2:
         (*this->vtable->StopMove)(this,unaff_EDI);
         return 3;

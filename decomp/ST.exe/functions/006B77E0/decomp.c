@@ -5,7 +5,7 @@ char * FUN_006b77e0(char *param_1,byte *param_2)
   char cVar1;
   uint uVar2;
   char *pcVar3;
-  
+
   uVar2 = Library::MSVCRT::FUN_00734030((uint)*param_2);
   cVar1 = (char)uVar2;
   *param_1 = cVar1;

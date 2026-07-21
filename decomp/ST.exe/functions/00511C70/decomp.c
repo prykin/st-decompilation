@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -11,13 +13,11 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar5;
   undefined4 *puVar6;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
-  
+
   if (param_1 != this->field_005C) {
     this->field_005C = param_1;
     puVar6 = (undefined4 *)&this->field_0x18;
@@ -34,7 +34,7 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar4 == 0) {
       if (local_8->field_017C != 0) {
@@ -64,9 +64,7 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xf2,0,iVar4,&DAT_007a4ccc,
                                s_HelpPanelTy__ShiftControls_007c3958);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xf2);
   }

@@ -6,14 +6,12 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
   short sVar1;
   short sVar2;
   short sVar3;
-  AnonShape_00490B30_6CCF6294 *objPtr;
   int iVar4;
   STGameObjC *pSVar5;
-  char cVar6;
-  
-  objPtr = param_1;
-  cVar6 = (char)param_1;
-  if ((*(char *)((int)this + 0x33a) == cVar6) && (*(short *)((int)this + 0x33f) == param_2)) {
+  char objPtr;
+
+  objPtr = (char)param_1;
+  if ((*(char *)((int)this + 0x33a) == objPtr) && (*(short *)((int)this + 0x33f) == param_2)) {
     *(undefined2 *)((int)this + 0x33f) = (undefined2)param_3;
   }
   if (*(int *)((int)this + 0x45d) == 2) {
@@ -33,8 +31,8 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
     if ((((param_1 != (AnonShape_00490B30_6CCF6294 *)0x0) &&
          (param_1->field_0018 == *(int *)((int)this + 0x7f4))) ||
         (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&param_1), iVar4 != -4
-        )) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)cVar6)))) {
-      pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(uint)objPtr,param_3,CASE_1);
+        )) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)objPtr)))) {
+      pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,objPtr,param_3,CASE_1);
       *(undefined4 *)((int)this + 0x7f4) = pSVar5->field_0018;
     }
   }

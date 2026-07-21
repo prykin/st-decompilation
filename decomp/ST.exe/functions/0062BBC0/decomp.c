@@ -23,7 +23,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   float local_10;
   float local_c;
   AnonShape_0062BBC0_87279CD5 *local_8;
-  
+
   local_8 = (AnonShape_0062BBC0_87279CD5 *)Library::DKW::LIB::FUN_006aac70(0x6d);
   pAVar7 = local_8;
   for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {

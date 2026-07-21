@@ -22,7 +22,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610
   undefined4 local_14;
   int local_c;
   int local_8;
-  
+
   local_8 = (int)*(short *)&this->field_0x621;
   uVar2 = 0;
   iVar5 = local_8 + -1;

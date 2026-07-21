@@ -17,10 +17,11 @@ void FUN_0075f7d0(AnonShape_0075F7D0_BDBF0616 *param_1)
   int *local_10;
   int local_c;
   int local_8;
-  
+
   pAVar1 = param_1->field_01BA;
   local_10 = (int *)&pAVar1[1].field_0x8;
   iVar3 = Library::DKW::JPG::FUN_0075f8e0((int)param_1,local_10);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   piVar4 = (int *)(**(code **)(*(int *)param_1 + 8))
                             (param_1,1,iVar3,*(undefined4 *)&param_1->field_0x70);
   local_c = 0;

@@ -6,7 +6,7 @@ FUN_006e3450(AnonShape_006E3450_BC2FF034 *param_1,int param_2,int *param_3,undef
   uint uVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar3 = 0;
   if (param_2 == 0) {
     return 0xfffffffc;

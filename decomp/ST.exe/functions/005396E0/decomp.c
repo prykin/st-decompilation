@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
@@ -10,12 +12,10 @@ void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
-  
+
   if (param_1 != this->field_005C) {
     this->field_005C = param_1;
     puVar5 = (undefined4 *)&this->field_0x18;
@@ -32,7 +32,7 @@ void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar4 == 0) {
       if (local_8->field_0184 != 0) {
         FUN_006e6080(local_8,2,local_8->field_0184,(undefined4 *)&local_8->field_0x18);
@@ -44,9 +44,7 @@ void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x68,0,iVar4,&DAT_007a4ccc,
                                s_PausePanelTy__ShiftControls_007c7530);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_pause_cpp_007c7490,0x68);
   }

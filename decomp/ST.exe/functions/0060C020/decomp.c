@@ -18,7 +18,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   local_8 = 0x83;
   local_18 = this;
   puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x83);
@@ -37,7 +37,9 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   }
   *(undefined2 *)puVar6 = *(undefined2 *)puVar4;
   *(undefined1 *)((int)puVar6 + 2) = *(undefined1 *)((int)puVar4 + 2);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(uint **)((int)local_18 + 0x234) != (uint *)0x0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_14 = (undefined4 *)FUN_006b0020(*(uint **)((int)local_18 + 0x234),(int *)&local_c);
     uVar3 = local_c + 0x87;
     local_8 = uVar3;
@@ -56,6 +58,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     FreeAndNull(&local_14);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(int *)((int)local_18 + 0x23c) != 0) && (*(int *)((int)local_18 + 0x244) != 0)) {
       local_1c = (uint *)thunk_FUN_0060d390(local_18,&local_10);
       if (local_1c != (uint *)0x0) {

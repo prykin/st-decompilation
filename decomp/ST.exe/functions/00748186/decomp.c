@@ -4,7 +4,7 @@ undefined4 FUN_00748186(AnonShape_00748186_DDF6596C *param_1,int *param_2)
 {
   undefined4 uVar1;
   int iVar2;
-  
+
   if (param_2 == (int *)0x0) {
     uVar1 = 0x80004003;
   }
@@ -18,6 +18,7 @@ undefined4 FUN_00748186(AnonShape_00748186_DDF6596C *param_1,int *param_2)
     *param_2 = iVar2;
     iVar2 = param_1->field_0064;
     if (iVar2 != 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)(iVar2 + 0xc) + 4))(iVar2 + 0xc);
     }
     if (param_1->field_0008 == (short *)0x0) {

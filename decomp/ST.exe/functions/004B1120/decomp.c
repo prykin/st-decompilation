@@ -21,15 +21,16 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_14 = -1;
   if (param_6 == 0) {
     piVar4 = (int *)0x0;
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar4 = *(int **)(param_6 + 0x18);
   }
-  local_10 = thunk_FUN_004ae0b0(*param_3,*param_4,*param_5,param_2,param_1,(undefined4 *)0x0,
+  local_10 = thunk_FUN_004ae0b0((short)*param_3,*param_4,*param_5,param_2,param_1,(undefined4 *)0x0,
                                 (int *)0x0,(int *)0x0,0,piVar4);
   if (local_10 == 0) {
     if ((&STGroupBoatCVTable.vfunc_04)[param_2] == (void *)0x1) {
@@ -111,10 +112,11 @@ LAB_004b1226:
                         piVar4 = (int *)0x0;
                       }
                       else {
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0(iVar6,iVar7,iVar5,param_2,param_1,(undefined4 *)0x0
-                                                 ,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
                       iVar2 = local_14;
                       if (iVar3 == 0) goto LAB_004b13a9;
 LAB_004b14f8:
@@ -129,10 +131,11 @@ LAB_004b13a9:
                         piVar4 = (int *)0x0;
                       }
                       else {
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0(iVar6,iVar7,iVar5,param_2,param_1,(undefined4 *)0x0
-                                                 ,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
                       iVar2 = local_14;
                       if (iVar3 != 0) goto LAB_004b14f8;
                     }
@@ -151,10 +154,11 @@ LAB_004b13a9:
                         piVar4 = (int *)0x0;
                       }
                       else {
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0(iVar6,iVar7,iVar5,param_2,param_1,(undefined4 *)0x0
-                                                 ,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
                       iVar2 = local_14;
                       if (iVar3 != 0) goto LAB_004b1504;
                     }
@@ -164,10 +168,11 @@ LAB_004b13a9:
                         piVar4 = (int *)0x0;
                       }
                       else {
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0(iVar6,iVar7,iVar5,param_2,param_1,(undefined4 *)0x0
-                                                 ,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
                       iVar2 = local_14;
                       if (iVar3 != 0) {
 LAB_004b1504:

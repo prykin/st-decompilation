@@ -1,2 +1,2 @@
-FUN_005f0450:
+STSprGameObjC::FUN_005f0450:
 005F0450  C2 04 00                  RET 0x4

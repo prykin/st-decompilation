@@ -32,7 +32,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   int *local_10;
   byte *local_c;
   int *local_8;
-  
+
   local_28 = 0;
   local_14 = 0;
   local_1c = &g_playerRuntime[0].field2180_0xa0e;
@@ -111,6 +111,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
         }
         if (((local_8 != (int *)uVar6) && (bVar1 = *local_c, bVar1 != 0xff)) && (local_c[-1] != 0))
         {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_2c = CONCAT31(uStack_2b,bVar1);
           if (DAT_00808a8f == '\0') {
             if (bVar1 == playerId) {
@@ -238,6 +239,7 @@ LAB_004dad15:
               local_38 = (undefined2)iVar4;
               uVar7 = thunk_FUN_004e60d0(uVar3,iVar4);
               local_36 = (short)uVar7 + 1;
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)*DAT_008117bc)(local_50);
             }
             iVar4 = iVar4 + 1;
@@ -250,6 +252,7 @@ LAB_004dad15:
       local_8 = local_8 + 1;
     } while ((int)local_c < 8);
     local_14 = uVar6 + 1;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_1c = (int *)((int)local_1c + 0xa62);
     if (0x7fab3d < (int)local_1c) {
       return 0;

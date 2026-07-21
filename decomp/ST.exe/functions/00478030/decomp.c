@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackCapture
-   
+
    [STSwitchEnumApplier] Switch target field_0611 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_0611State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00478030 -> 00415ED0 @ 004781BF | 00478030 -> 00415ED0 @ 00478438 */
 
@@ -21,7 +23,7 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
   int iVar6;
   int iVar7;
   STBoatC *local_8;
-  
+
   uVar2 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
   switch(this->field_0611) {
@@ -44,9 +46,12 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
     }
     if (iVar6 == 3) {
       iVar6 = (ushort)(*(short *)&this->field_0x607 * 200) + 100;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar7 = CONCAT22(uVar2,*(short *)&this->field_0x605 * 0xc9) + 100;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar4 = CONCAT22((short)((uint)iVar6 >> 0x10),*(short *)&this->field_0x603 * 0xc9) + 100;
       uVar2 = (undefined2)((uint)iVar7 >> 0x10);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar2 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar2,this->field_0041),
                          CONCAT22((short)((uint)iVar4 >> 0x10),this->field_0043),
@@ -63,9 +68,7 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
         if (iVar6 == 0) {
           return -1;
         }
-        pcVar1 = (code *)swi(3);
-        iVar6 = (*pcVar1)();
-        return iVar6;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (uVar5 == 0) {
         *(undefined4 *)&this->field_0x615 = 5;
@@ -87,9 +90,7 @@ LAB_00478373:
         iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x334b,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackCapture__CAPTURE_PM_007ab2ec);
         if (iVar6 != 0) {
-          pcVar1 = (code *)swi(3);
-          iVar6 = (*pcVar1)();
-          return iVar6;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         iVar6 = 0x334c;
 LAB_0047848a:
@@ -104,12 +105,14 @@ LAB_0047848a:
       }
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_3:
     pAVar3 = (AnonShape_004CC900_31EE9CAA *)
              STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)this >> 8),this->field_0x5fc),
+                       (g_sTAllPlayers_007FA174,this->field_0x5fc,
                         CONCAT22((short)(this->field_0611 >> 0x10),*(undefined2 *)&this->field_0x5fd
                                 ),CASE_1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (((pAVar3 != (AnonShape_004CC900_31EE9CAA *)0x0) &&
         (*(int *)&pAVar3->field_0x18 == *(int *)&this->field_0x5ff)) &&
        (iVar6 = (**(code **)(*(int *)pAVar3 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 != 0)
@@ -127,9 +130,12 @@ LAB_0047848a:
   case CASE_4:
     if (*(int *)&this->field_0x615 == 0) {
       iVar6 = (ushort)(*(short *)&this->field_0x607 * 200) + 100;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar7 = CONCAT22(uVar2,*(short *)&this->field_0x605 * 0xc9) + 100;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar4 = CONCAT22((short)((uint)iVar6 >> 0x10),*(short *)&this->field_0x603 * 0xc9) + 100;
       uVar2 = (undefined2)((uint)iVar7 >> 0x10);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar2 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar2,this->field_0041),
                          CONCAT22((short)((uint)iVar4 >> 0x10),this->field_0043),
@@ -146,9 +152,7 @@ LAB_0047848a:
         if (iVar6 == 0) {
           return -1;
         }
-        pcVar1 = (code *)swi(3);
-        iVar6 = (*pcVar1)();
-        return iVar6;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (uVar5 == 0) {
         *(undefined4 *)&this->field_0x615 = 2;
@@ -168,9 +172,7 @@ LAB_0047848a:
         iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3388,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackCapture__CAPTURE_OM_007ab290);
         if (iVar6 != 0) {
-          pcVar1 = (code *)swi(3);
-          iVar6 = (*pcVar1)();
-          return iVar6;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         iVar6 = 0x3389;
         goto LAB_0047848a;
@@ -187,9 +189,7 @@ LAB_0047848a:
     if (iVar6 == 0) {
       return -1;
     }
-    pcVar1 = (code *)swi(3);
-    iVar6 = (*pcVar1)();
-    return iVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar6 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
@@ -14,8 +16,6 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
   int iVar4;
   undefined1 *puVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar7;
   InternalExceptionFrame local_58;
   uint local_14;
@@ -25,20 +25,18 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
   undefined2 local_c;
   undefined1 local_a;
   ProdPanelTy *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = (ProdPanelTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_research_cpp_007c76c8,200,0,iVar3,&DAT_007a4ccc,
                                s_ResearchPanelTy__GetMessage_007c7774);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar6 = (*pcVar2)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_research_cpp_007c76c8,200);
     return 0xffff;
@@ -78,6 +76,7 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
         this_00[1].field_0xd4 = this_00[1].field_0xd3;
         this_00[1].field_0xd3 = *(char *)param_1->field_0014 + -1;
         thunk_FUN_005252c0(0xae);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_00->field_0000 + 0x1c))();
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -97,6 +96,7 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
         uStack_d = 0;
         local_c = 0;
         local_a = 0;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_14 = (uint)CONCAT11(*puVar5,2);
         local_10 = 0;
         uStack_f = 1;

@@ -6,7 +6,7 @@ bool FUN_00571810(char *param_1)
   char **ppcVar2;
   byte *pbVar3;
   bool bVar4;
-  
+
   if (param_1 == (char *)0x0) {
     return false;
   }

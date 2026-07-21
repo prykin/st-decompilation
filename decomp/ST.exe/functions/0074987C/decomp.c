@@ -3,7 +3,7 @@ void FUN_0074987c(undefined4 *param_1,AnonShape_0074987C_9BF4FFD0 *param_2)
 
 {
   undefined4 *puVar1;
-  
+
   if ((param_2->field_0010 == 0) ||
      (((param_2->field_0028 == DAT_007a1240 && (param_2->field_002C == DAT_007a1244)) &&
       (param_2->field_0030 == DAT_007a1248)))) {

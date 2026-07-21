@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackDismant
-   
+
    [STSwitchEnumApplier] Switch target field_06C3 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
@@ -15,9 +17,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
   short sVar3;
   code *pcVar4;
   int iVar5;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EDI;
-  
+
   this->field_00B7 = 0;
   switch(this->field_06C3) {
   case CASE_0:
@@ -61,6 +65,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     }
     iVar5 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   case CASE_5:
     iVar5 = Dismant(this,(AnonShape_004B9D90_4F3151F9 *)0x2,unaff_EDI,unaff_ESI);
     return iVar5;
@@ -70,9 +75,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     if (iVar5 == 0) {
       return -1;
     }
-    pcVar4 = (code *)swi(3);
-    iVar5 = (*pcVar4)();
-    return iVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar5 = sub_00460360(this);
   if (iVar5 == 0) {

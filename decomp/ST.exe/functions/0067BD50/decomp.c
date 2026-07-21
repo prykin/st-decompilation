@@ -7,7 +7,7 @@ int __cdecl FUN_0067bd50(AnonShape_00413AF0_B6B4EE9A *param_1)
   int iVar3;
   uint uVar4;
   bool bVar5;
-  
+
   iVar2 = 0;
   uVar1 = param_1->field_000C;
   uVar4 = 0;

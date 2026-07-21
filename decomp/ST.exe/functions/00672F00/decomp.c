@@ -1,5 +1,12 @@
 
-bool FUN_00672f00(void)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (8), none consume AL/AX, and every RET path defines full EAX; sites=00683C70 @ 0068A720
+   -> TEST TEST EAX,EAX | 00683C70 @ 0068A729 -> TEST TEST EAX,EAX | 00683C70 @ 0068A8C8 -> TEST
+   TEST EAX,EAX | 00683C70 @ 0068A8D1 -> TEST TEST EAX,EAX | 0068CEC0 @ 0068D6D4 -> TEST TEST
+   EAX,EAX | 0068CEC0 @ 0068D6DD -> TEST TEST EAX,EAX | 0068CEC0 @ 0068D7D5 -> TEST TEST EAX,EAX |
+   0068CEC0 @ 0068D7E2 -> TEST TEST EAX,EAX */
+
+int FUN_00672f00(void)
 
 {
   char cVar1;
@@ -9,9 +16,10 @@ bool FUN_00672f00(void)
   uint uVar5;
   char *pcVar6;
   char *pcVar7;
-  
+
   piVar3 = DAT_00811958;
   if (DAT_00857560 != 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)PTR_0081194c->field_0004)(DAT_00857560);
     DAT_00857560 = 0;
   }
@@ -116,6 +124,6 @@ bool FUN_00672f00(void)
     FUN_006b9890((int *)&DAT_00811908);
   }
   FUN_006a5e90((short *)piVar3);
-  return DAT_00811958 != (int *)0x0;
+  return (uint)(DAT_00811958 != (int *)0x0);
 }
 

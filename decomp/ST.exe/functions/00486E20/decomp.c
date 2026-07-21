@@ -7,11 +7,12 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   AiPlrClassTy *pAVar3;
   STGroupBoatC *pSVar4;
   int iVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   undefined4 *puVar6;
   bool bVar7;
   undefined4 local_8;
-  
+
   puVar2 = param_1;
   puVar6 = param_1;
   for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -30,6 +31,7 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   else {
     *(undefined1 *)((int)puVar2 + 7) = 0;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar5 = (**(code **)(*(int *)this + 8))();
   if (iVar5 == 1) {
     *(undefined1 *)(puVar2 + 2) = 1;
@@ -934,8 +936,9 @@ switchD_00486f27_default:
     *(undefined1 *)((int)puVar2 + 0x15) = 0;
   }
   else {
-    pSVar4 = thunk_FUN_0042b760(CONCAT31((int3)((uint)pAVar3 >> 8),*(undefined1 *)((int)this + 0x24)
-                                        ),CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x30)));
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    pSVar4 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
+                                CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x30)));
     if (pSVar4 == (STGroupBoatC *)0x0) {
       *(undefined1 *)((int)puVar2 + 0x15) = 0;
     }

@@ -4,7 +4,8 @@ void __fastcall FUN_005eff00(int param_1)
 {
   int iVar1;
   short sVar2;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x277);
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
@@ -13,6 +14,7 @@ void __fastcall FUN_005eff00(int param_1)
   else {
     sVar2 = ((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x27b);
   *(short *)(param_1 + 0x47) = sVar2;
   sVar2 = (short)(iVar1 >> 0x1f);
@@ -22,6 +24,7 @@ void __fastcall FUN_005eff00(int param_1)
   else {
     sVar2 = ((short)(iVar1 / 0xc9) + sVar2) - (short)((longlong)iVar1 * 0x28c1979 >> 0x3f);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x27f);
   *(short *)(param_1 + 0x49) = sVar2;
   sVar2 = (short)(iVar1 >> 0x1f);

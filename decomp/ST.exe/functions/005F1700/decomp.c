@@ -8,8 +8,6 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   AnonNested_005F1700_003C_057131A3 *pAVar1;
   int iVar2;
   ushort *puVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar4;
   uint uVar5;
   InternalExceptionFrame local_5c;
@@ -18,7 +16,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   ushort *local_10;
   char *local_c;
   uint local_8;
-  
+
   local_10 = (ushort *)0x0;
   if (param_1 == 1) {
     local_c = (&PTR_s_basis_40_007ce534)[param_2];
@@ -28,7 +26,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     return local_10;

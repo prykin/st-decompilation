@@ -29,7 +29,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
   int local_14;
   int *local_10;
   int local_8;
-  
+
   if (param_5 == DAT_0080330c) {
     local_24 = DAT_008032f4;
     iVar5 = *(int *)(param_3 * 4 + DAT_008032fc);

@@ -28,7 +28,7 @@ undefined4 FUN_0040eb90(void)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puVar11 = DAT_007f4d20;
   puStack_c = &DAT_00790040;
   puStack_10 = &LAB_0072d964;

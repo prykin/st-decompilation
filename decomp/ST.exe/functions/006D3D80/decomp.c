@@ -30,7 +30,7 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
   byte *local_10;
   byte *local_c;
   byte *local_8;
-  
+
   iVar2 = param_18 / param_14;
   iVar3 = (int)(param_5 + 7 + (param_5 + 7 >> 0x1f & 7U)) >> 3;
   if (param_20 != (byte *)0x0) {
@@ -55,12 +55,14 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
           pbVar14 = (byte *)(param_7 * param_14 + param_1);
           iVar4 = param_7;
           if (((param_3 == 0) || (param_10 == 0)) || (local_28 = (uint)*local_c, local_28 != 0)) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (((param_4 != (byte *)0x0) && (param_12 != 0)) &&
                (((uint)*local_14 != param_13 - 1U &&
                 ((param_21 == (byte *)0x0 || ((*local_10 & param_18._3_1_) != 0)))))) {
               FUN_006dac70(pbVar14,param_2,*(byte **)(param_12 + (uint)*local_14 * 4),param_14,0,
                            param_14,param_15,0);
             }
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((((param_3 != 0) && (param_10 != 0)) && (local_28 != param_11 - 1U)) &&
                ((param_20 == (byte *)0x0 || ((*local_8 & param_18._3_1_) != 0)))) {
               param_9 = *(byte **)(param_10 + local_28 * 4);
@@ -100,6 +102,7 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
                 }
               }
             }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_006d4180:
             bVar7 = param_18._3_1_ >> 1;
             param_18 = (uint)bVar7 << 0x18;
@@ -117,8 +120,10 @@ LAB_006d4180:
             if (param_8 <= param_7) goto LAB_006d4180;
             do {
               local_28 = (uint)*local_c;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((local_28 != 0) ||
                  ((param_20 != (byte *)0x0 && ((*local_8 & param_18._3_1_) == 0)))) break;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               bVar7 = param_18._3_1_ >> 1;
               param_18 = (uint)bVar7 << 0x18;
               if (bVar7 == 0) {

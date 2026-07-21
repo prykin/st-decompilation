@@ -4,14 +4,12 @@ uint __cdecl FUN_0067fd20(undefined4 param_1,char *param_2)
 {
   uint uVar1;
   uint uVar2;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar3;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   undefined4 local_8;
-  
-  pIVar3 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  uVar1 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  uVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (uVar1 == 0) {
     local_8 = param_1;
     uVar1 = Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_00848a38,&local_8);
@@ -19,10 +17,10 @@ uint __cdecl FUN_0067fd20(undefined4 param_1,char *param_2)
     if (uVar1 != uVar2) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,s___ai_ai_script_v_inl_007d55d8,0x203);
     }
-    g_currentExceptionFrame = pIVar3;
+    g_currentExceptionFrame = local_4c.previous;
     return uVar1;
   }
-  g_currentExceptionFrame = pIVar3;
+  g_currentExceptionFrame = local_4c.previous;
   if (-1 < (int)uVar1) {
     uVar1 = 0xffffffff;
   }

@@ -20,7 +20,7 @@ void FUN_00702510(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   uint local_10;
   uint local_c;
   int local_8;
-  
+
   _DAT_00857000 = 1;
   iVar3 = param_12;
 joined_r0x0070252a:

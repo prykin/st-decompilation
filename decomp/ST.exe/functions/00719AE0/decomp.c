@@ -5,7 +5,7 @@ undefined4 __cdecl FUN_00719ae0(uint param_1,MCIDEVICEID *param_2)
   MCIERROR mcierr;
   undefined4 local_c;
   uint local_8;
-  
+
   if (*param_2 != 0) {
     local_c = 0;
     if ((param_1 != 0) && (param_1 <= DAT_00857038)) {

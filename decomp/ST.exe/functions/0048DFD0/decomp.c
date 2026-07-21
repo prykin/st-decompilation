@@ -4,32 +4,42 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0048DFD0.
    Evidence: incoming_receiver_captures=2; receiver_accesses=3; incoming_edx_uses=0; calls=30;
    ecx_pointer_setup=30; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[40];
-   expected_stack=40; receiver_family_members=1 */
+   expected_stack=40; receiver_family_members=1
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
+   width=/short; unmasked_dword_reads=0; evidence=0048EA1D MOVSX EAX,word ptr [EBP + 0x8] | 0048EAAA
+   MOVSX EAX,word ptr [EBP + 0x8] */
 
 undefined4 __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
-          (AnonReceiver_0048DFD0 *this,int param_1,int param_2,uint param_3,int param_4,int param_5,
-          int *param_6,int param_7,short *param_8,short *param_9,short *param_10)
+          (AnonReceiver_0048DFD0 *this,short param_1,short param_2,short param_3,short param_4,
+          short param_5,int *param_6,int param_7,short *param_8,short *param_9,short *param_10)
 
 {
   short sVar1;
   short sVar2;
   short sVar3;
-  short sVar4;
+  int iVar4;
   int iVar5;
-  int iVar6;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
-  short sVar9;
-  int iVar10;
-  short *psVar11;
-  uint uVar12;
-  short sVar13;
-  short sVar14;
-  short sVar15;
-  short *psVar16;
-  int iVar17;
-  undefined4 *puVar18;
+  int iVar8;
+  short *psVar9;
+  uint uVar10;
+  short sVar11;
+  short sVar12;
+  short *psVar13;
+  int iVar14;
+  undefined4 *puVar15;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_00000006;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_0000000a;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_0000000e;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_00000012;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_00000016;
   int local_3fc [194];
   int local_f4;
   int local_f0;
@@ -134,7 +144,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
   short sStack_c;
   short local_a;
   undefined4 *local_8;
-  
+
   local_3fc[0] = 6;
   local_3fc[1] = 4;
   local_3fc[2] = 8;
@@ -330,70 +340,68 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
   local_3fc[0xc0] = 0;
   local_18 = param_7;
   local_e4 = 0;
-  if ((((((short)param_1 < 0) || (g_worldGrid.sizeX <= (short)param_1)) ||
-       (sVar9 = (short)param_2, sVar9 < 0)) ||
-      ((((g_worldGrid.sizeY <= sVar9 || (sVar4 = (short)param_3, sVar4 < 0)) ||
-        ((g_worldGrid.sizeZ <= sVar4 ||
-         ((sVar13 = (short)param_4, sVar13 < 0 || (g_worldGrid.sizeX <= sVar13)))))) ||
-       ((short)param_5 < 0)))) ||
-     (((g_worldGrid.sizeY <= (short)param_5 || (sVar14 = (short)param_6, sVar14 < 0)) ||
-      (g_worldGrid.sizeZ <= sVar14)))) {
+  if (((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
+      ((((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) ||
+        ((g_worldGrid.sizeZ <= param_3 || ((param_4 < 0 || (g_worldGrid.sizeX <= param_4)))))) ||
+       (param_5 < 0)))) ||
+     (((g_worldGrid.sizeY <= param_5 || (sVar3 = (short)param_6, sVar3 < 0)) ||
+      (g_worldGrid.sizeZ <= sVar3)))) {
     return 0;
   }
   if (param_7 < 1) {
-    if (sVar4 < 1) {
+    if (param_3 < 1) {
       if ((g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar9 +
-            (int)(short)param_1].objects[0] == (STWorldObject *)0x0) &&
+           [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
+            (int)param_1].objects[0] == (STWorldObject *)0x0) &&
          (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar9 +
-           (int)(short)param_1].objects[1] == (STWorldObject *)0x0)) {
-        *param_8 = (short)param_1;
-        *param_9 = sVar9;
-        *param_10 = sVar4;
+          [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
+           (int)param_1].objects[1] == (STWorldObject *)0x0)) {
+        *param_8 = param_1;
+        *param_9 = param_2;
+        *param_10 = param_3;
         return 1;
       }
     }
     else {
-      local_1c = (int)sVar4;
-      iVar6 = (int)g_worldGrid.sizeX * (int)sVar9;
-      iVar10 = (int)(short)param_1;
-      if ((((g_worldGrid.cells[local_1c * g_worldGrid.planeStride + iVar10 + iVar6].objects[0] ==
+      local_1c = (int)param_3;
+      iVar5 = (int)g_worldGrid.sizeX * (int)param_2;
+      iVar8 = (int)param_1;
+      if ((((g_worldGrid.cells[local_1c * g_worldGrid.planeStride + iVar8 + iVar5].objects[0] ==
              (STWorldObject *)0x0) &&
-           (g_worldGrid.cells[local_1c * g_worldGrid.planeStride + iVar10 + iVar6].objects[1] ==
+           (g_worldGrid.cells[local_1c * g_worldGrid.planeStride + iVar8 + iVar5].objects[1] ==
             (STWorldObject *)0x0)) &&
-          ((sVar15 = sVar4 + -1, sVar15 < 0 ||
-           (((g_worldGrid.sizeZ <= sVar15 ||
-             (g_worldGrid.cells[(int)sVar15 * (int)g_worldGrid.planeStride + iVar10 + iVar6].objects
+          ((sVar11 = param_3 + -1, sVar11 < 0 ||
+           (((g_worldGrid.sizeZ <= sVar11 ||
+             (g_worldGrid.cells[(int)sVar11 * (int)g_worldGrid.planeStride + iVar8 + iVar5].objects
               [0] == (STWorldObject *)0x0)) ||
             (g_pathingGrid.cells
-             [(int)g_pathingGrid.sizeX * (int)sVar9 +
-              iVar10 + (local_1c + -1) * (int)g_pathingGrid.planeStride] == 0)))))) &&
-         (((sVar15 = sVar4 + -1, sVar15 < 0 || (g_worldGrid.sizeZ <= sVar15)) ||
-          (g_worldGrid.cells[(int)sVar15 * (int)g_worldGrid.planeStride + iVar10 + iVar6].objects[1]
+             [(int)g_pathingGrid.sizeX * (int)param_2 +
+              iVar8 + (local_1c + -1) * (int)g_pathingGrid.planeStride] == 0)))))) &&
+         (((sVar11 = param_3 + -1, sVar11 < 0 || (g_worldGrid.sizeZ <= sVar11)) ||
+          (g_worldGrid.cells[(int)sVar11 * (int)g_worldGrid.planeStride + iVar8 + iVar5].objects[1]
            == (STWorldObject *)0x0)))) {
-        *param_8 = (short)param_1;
-        *param_9 = sVar9;
-        *param_10 = sVar4;
+        *param_8 = param_1;
+        *param_9 = param_2;
+        *param_10 = param_3;
         return 1;
       }
     }
     local_18 = 1;
   }
-  iVar6 = local_18;
-  sVar15 = (short)param_1;
-  sVar3 = sVar13;
-  if ((short)param_1 <= sVar13) {
-    sVar15 = sVar13;
-    sVar3 = (short)param_1;
+  iVar5 = local_18;
+  sVar11 = param_1;
+  sVar12 = param_4;
+  if (param_1 <= param_4) {
+    sVar11 = param_4;
+    sVar12 = param_1;
   }
-  sVar1 = sVar9;
-  sVar2 = (short)param_5;
-  if (sVar9 <= (short)param_5) {
-    sVar1 = (short)param_5;
-    sVar2 = sVar9;
+  sVar1 = param_2;
+  sVar2 = param_5;
+  if (param_2 <= param_5) {
+    sVar1 = param_5;
+    sVar2 = param_2;
   }
-  local_20 = (int)sVar3 + local_18 * -4 + -5;
+  local_20 = (int)sVar12 + local_18 * -4 + -5;
   if (local_20 < 0) {
     local_20 = 0;
   }
@@ -401,8 +409,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
   if (local_28 < 0) {
     local_28 = 0;
   }
-  iVar10 = local_28;
-  local_ec = sVar15 + 5 + local_18 * 4;
+  iVar8 = local_28;
+  local_ec = sVar11 + 5 + local_18 * 4;
   if (g_pathingGrid.sizeX <= local_ec) {
     local_ec = g_pathingGrid.sizeX + -1;
   }
@@ -416,43 +424,43 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
   local_30 = (undefined4 *)0x0;
   local_2c = this;
   local_8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_a * 10);
-  iVar17 = local_20;
+  iVar14 = local_20;
   local_14 = 0;
   do {
-    psVar11 = g_pathingGrid.cells +
-              g_pathingGrid.sizeX * iVar10 + local_20 + g_pathingGrid.planeStride * local_14;
+    psVar9 = g_pathingGrid.cells +
+             g_pathingGrid.sizeX * iVar8 + local_20 + g_pathingGrid.planeStride * local_14;
     local_24 = (undefined4 *)((int)local_8 + local_a * local_14 * 2);
-    iVar5 = 0;
+    iVar4 = 0;
     if (0 < sStack_e) {
-      uVar7 = (int)local_10 << 1;
+      uVar6 = (int)local_10 << 1;
       do {
-        psVar16 = psVar11;
-        puVar18 = local_24;
-        for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *puVar18 = *(undefined4 *)psVar16;
-          psVar16 = psVar16 + 2;
-          puVar18 = puVar18 + 1;
+        psVar13 = psVar9;
+        puVar15 = local_24;
+        for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+          *puVar15 = *(undefined4 *)psVar13;
+          psVar13 = psVar13 + 2;
+          puVar15 = puVar15 + 1;
         }
-        iVar5 = iVar5 + 1;
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(char *)puVar18 = (char)*psVar16;
-          psVar16 = (short *)((int)psVar16 + 1);
-          puVar18 = (undefined4 *)((int)puVar18 + 1);
+        iVar4 = iVar4 + 1;
+        for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+          *(char *)puVar15 = (char)*psVar13;
+          psVar13 = (short *)((int)psVar13 + 1);
+          puVar15 = (undefined4 *)((int)puVar15 + 1);
         }
-        psVar11 = psVar11 + g_pathingGrid.sizeX;
-        uVar7 = local_10 * 2;
-        local_24 = (undefined4 *)((int)local_24 + uVar7);
-        iVar10 = local_28;
-      } while (iVar5 < sStack_e);
+        psVar9 = psVar9 + g_pathingGrid.sizeX;
+        uVar6 = local_10 * 2;
+        local_24 = (undefined4 *)((int)local_24 + uVar6);
+        iVar8 = local_28;
+      } while (iVar4 < sStack_e);
     }
     local_14 = local_14 + 1;
   } while (local_14 < 5);
-  FUN_006ab090((int)local_8,(int)local_10,(int)sStack_e,5,sVar13 - local_20,(short)param_5 - iVar10,
-               (int)sVar14,-1,-1,-1);
-  local_1c = (int)sVar4;
+  FUN_006ab090((int)local_8,(int)local_10,(int)sStack_e,5,param_4 - local_20,param_5 - iVar8,
+               (int)sVar3,-1,-1,-1);
+  local_1c = (int)param_3;
   if (*(short *)((int)local_8 +
-                ((((sVar9 - iVar10) * (int)local_10 + (int)local_a * (int)sVar4) - iVar17) +
-                (int)(short)param_1) * 2) < 1) {
+                ((((param_2 - iVar8) * (int)local_10 + (int)local_a * (int)param_3) - iVar14) +
+                (int)param_1) * 2) < 1) {
     FreeAndNull(&local_8);
     local_36 = g_pathingGrid.sizeY;
     local_34 = g_pathingGrid.sizeZ;
@@ -462,21 +470,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
                Library::DKW::LIB::FUN_006aac70
                          ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                           (int)g_pathingGrid.sizeX * 2);
-    uVar7 = (int)local_34 * (int)local_36 * (int)local_38;
-    psVar11 = g_pathingGrid.cells;
-    puVar18 = local_30;
-    for (uVar8 = (uVar7 & 0x7fffffff) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *puVar18 = *(undefined4 *)psVar11;
-      psVar11 = psVar11 + 2;
-      puVar18 = puVar18 + 1;
+    uVar6 = (int)local_34 * (int)local_36 * (int)local_38;
+    psVar9 = g_pathingGrid.cells;
+    puVar15 = local_30;
+    for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
+      *puVar15 = *(undefined4 *)psVar9;
+      psVar9 = psVar9 + 2;
+      puVar15 = puVar15 + 1;
     }
-    for (uVar7 = uVar7 * 2 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(char *)puVar18 = (char)*psVar11;
-      psVar11 = (short *)((int)psVar11 + 1);
-      puVar18 = (undefined4 *)((int)puVar18 + 1);
+    for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *(char *)puVar15 = (char)*psVar9;
+      psVar9 = (short *)((int)psVar9 + 1);
+      puVar15 = (undefined4 *)((int)puVar15 + 1);
     }
-    FUN_006ab090((int)local_30,(int)local_38,(int)local_36,(int)local_34,(int)(short)param_1,
-                 (int)sVar9,local_1c,-1,-1,-1);
+    FUN_006ab090((int)local_30,(int)local_38,(int)local_36,(int)local_34,(int)param_1,(int)param_2,
+                 local_1c,-1,-1,-1);
     sStack_e = g_pathingGrid.sizeY;
     sStack_c = g_pathingGrid.sizeZ;
     local_10 = g_pathingGrid.sizeX;
@@ -485,21 +493,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
               Library::DKW::LIB::FUN_006aac70
                         ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                          (int)g_pathingGrid.sizeX * 2);
-    uVar7 = (int)sStack_c * (int)sStack_e * (int)local_10;
-    psVar11 = g_pathingGrid.cells;
-    puVar18 = local_8;
-    for (uVar8 = (uVar7 & 0x7fffffff) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *puVar18 = *(undefined4 *)psVar11;
-      psVar11 = psVar11 + 2;
-      puVar18 = puVar18 + 1;
+    uVar6 = (int)sStack_c * (int)sStack_e * (int)local_10;
+    psVar9 = g_pathingGrid.cells;
+    puVar15 = local_8;
+    for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
+      *puVar15 = *(undefined4 *)psVar9;
+      psVar9 = psVar9 + 2;
+      puVar15 = puVar15 + 1;
     }
-    for (uVar7 = uVar7 * 2 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(char *)puVar18 = (char)*psVar11;
-      psVar11 = (short *)((int)psVar11 + 1);
-      puVar18 = (undefined4 *)((int)puVar18 + 1);
+    for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *(char *)puVar15 = (char)*psVar9;
+      psVar9 = (short *)((int)psVar9 + 1);
+      puVar15 = (undefined4 *)((int)puVar15 + 1);
     }
-    FUN_006ab090((int)local_8,(int)local_10,(int)sStack_e,(int)sStack_c,(int)sVar13,
-                 (int)(short)param_5,(int)sVar14,-1,-1,-1);
+    FUN_006ab090((int)local_8,(int)local_10,(int)sStack_e,(int)sStack_c,(int)param_4,(int)param_5,
+                 (int)sVar3,-1,-1,-1);
     local_20 = 0;
     local_28 = 0;
     local_24 = local_30;
@@ -509,51 +517,55 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
   else {
     local_24 = local_8;
   }
-  if (((short)param_1 == sVar13) && (sVar9 == (short)param_5)) {
-    uVar7 = *(int *)&local_2c->field_0x1c * 0x41c64e6d + 0x3039;
-    *(uint *)&local_2c->field_0x1c = uVar7;
-    param_3 = uVar7 >> 0x10 & 7;
+  if ((param_1 == param_4) && (param_2 == param_5)) {
+    uVar6 = *(int *)&local_2c->field_0x1c * 0x41c64e6d + 0x3039;
+    *(uint *)&local_2c->field_0x1c = uVar6;
+    _param_3 = uVar6 >> 0x10 & 7;
   }
   else {
-    sVar4 = (**(code **)(*(int *)local_2c + 0x10))
-                      (param_1 * 0xc9 + 100,param_2 * 0xc9 + 100,param_3 * 200 + 100,
-                       param_4 * 0xc9 + 100,param_5 * 0xc9 + 100,(int)param_6 * 200 + 100);
-    iVar5 = (int)sVar4;
-    iVar17 = (iVar5 / 0x2d) * 0x2d;
-    iVar10 = iVar17 + 0x2d;
-    uVar7 = iVar5 - iVar10;
-    uVar8 = (int)uVar7 >> 0x1f;
-    uVar12 = iVar5 % 0x2d >> 0x1f;
-    if ((int)((uVar7 ^ uVar8) - uVar8) <= (int)((iVar5 % 0x2d ^ uVar12) - uVar12)) {
-      iVar17 = iVar10;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    sVar3 = (**(code **)(*(int *)local_2c + 0x10))
+                      (_param_1 * 0xc9 + 100,_param_2 * 0xc9 + 100,_param_3 * 200 + 100,
+                       _param_4 * 0xc9 + 100,_param_5 * 0xc9 + 100,(int)param_6 * 200 + 100);
+    iVar4 = (int)sVar3;
+    iVar14 = (iVar4 / 0x2d) * 0x2d;
+    iVar8 = iVar14 + 0x2d;
+    uVar6 = iVar4 - iVar8;
+    uVar7 = (int)uVar6 >> 0x1f;
+    uVar10 = iVar4 % 0x2d >> 0x1f;
+    if ((int)((uVar6 ^ uVar7) - uVar7) <= (int)((iVar4 % 0x2d ^ uVar10) - uVar10)) {
+      iVar14 = iVar8;
     }
-    if (iVar17 == 0x168) {
-      param_3 = 0;
+    if (iVar14 == 0x168) {
+      _param_3 = 0;
     }
     else {
-      param_3 = iVar17 / 0x2d;
+      _param_3 = iVar14 / 0x2d;
     }
   }
-  if (local_18 / iVar6 < 5) {
-    param_5 = local_18 * 2 + 1;
+  if (local_18 / iVar5 < 5) {
+    _param_5 = local_18 * 2 + 1;
     do {
       local_92 = (short)local_18;
-      local_84 = local_92 + (short)param_1;
-      local_e0[0] = -local_92 + (short)param_1;
-      local_aa = (short)(param_5 / 3);
+      local_84 = local_92 + param_1;
+      local_e0[0] = -local_92 + param_1;
+      local_aa = (short)(_param_5 / 3);
       local_d4 = local_84 - local_aa;
       local_98 = local_e0[0];
       local_e0[2] = local_aa + -1 + local_e0[0];
       local_b8 = local_e0[0];
-      local_e0[3] = -local_92 + sVar9;
+      local_e0[3] = -local_92 + param_2;
       local_88 = local_d4 + 1;
       local_d8 = local_e0[2] + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_d0 = CONCAT22(local_e0[3],local_88);
       local_e0[1] = local_e0[3];
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_cc = CONCAT22(local_e0[3],local_84);
       local_d6 = local_e0[3];
       local_d2 = local_e0[3];
-      local_92 = local_92 + sVar9;
+      local_92 = local_92 + param_2;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_96 = CONCAT22(local_e0[2],local_92);
       local_82 = local_92;
       local_86 = local_92;
@@ -565,12 +577,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
       local_aa = local_92 - local_aa;
       local_60 = local_d8;
       local_5c = local_d4;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_b6 = CONCAT22(local_e0[0],local_ae);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_b2 = CONCAT22(local_84,local_aa);
       local_ac = local_84;
       local_5e = local_ae;
       local_5a = local_aa;
-      if (param_5 < 7) {
+      if (_param_5 < 7) {
         local_3a = -0x7960;
         local_3e = -0x7960;
         local_3c = -0x7960;
@@ -673,10 +687,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
       local_14 = 0;
       do {
         local_2c = (AnonReceiver_0048DFD0 *)0x0;
-        param_6 = local_3fc + param_3 * 0x15;
+        param_6 = local_3fc + _param_3 * 0x15;
         do {
           local_f4 = *param_6;
-          iVar10 = (int)local_e0[local_f4 * 4];
+          iVar8 = (int)local_e0[local_f4 * 4];
           local_c8 = local_a4;
           local_c6 = local_6e;
           local_c4 = local_a4;
@@ -711,81 +725,81 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0
           local_4a = local_3a;
           local_46 = local_3e;
           local_42 = local_3a;
-          if ((iVar10 != 100000) &&
+          if ((iVar8 != 100000) &&
              ((local_f4 < 0xc ||
-              (uVar7 = local_1c - local_3fc[local_14 + local_1c * 5 + 0xa8] >> 0x1f,
-              iVar6 <= (int)((local_1c - local_3fc[local_14 + local_1c * 5 + 0xa8] ^ uVar7) - uVar7)
+              (uVar6 = local_1c - local_3fc[local_14 + local_1c * 5 + 0xa8] >> 0x1f,
+              iVar5 <= (int)((local_1c - local_3fc[local_14 + local_1c * 5 + 0xa8] ^ uVar6) - uVar6)
               )))) {
             local_3fc[0xc1] = (int)local_e0[local_f4 * 4 + 2];
-            for (; iVar10 <= local_e0[local_f4 * 4 + 2]; iVar10 = iVar10 + 1) {
-              if ((local_20 <= iVar10) && (iVar10 <= local_ec)) {
+            for (; iVar8 <= local_e0[local_f4 * 4 + 2]; iVar8 = iVar8 + 1) {
+              if ((local_20 <= iVar8) && (iVar8 <= local_ec)) {
                 local_f0 = (int)local_e0[local_f4 * 4 + 3];
-                for (iVar17 = (int)local_e0[local_f4 * 4 + 1]; iVar17 <= local_e0[local_f4 * 4 + 3];
-                    iVar17 = iVar17 + 1) {
-                  if ((local_28 <= iVar17) && (iVar17 <= local_e8)) {
-                    iVar5 = local_3fc[local_14 + local_1c * 5 + 0xa8];
-                    sVar4 = (short)iVar5;
-                    sVar13 = (short)iVar10;
-                    sVar14 = (short)iVar17;
-                    if (iVar5 < 1) {
-                      if (sVar13 < 0) {
+                for (iVar14 = (int)local_e0[local_f4 * 4 + 1]; iVar14 <= local_e0[local_f4 * 4 + 3];
+                    iVar14 = iVar14 + 1) {
+                  if ((local_28 <= iVar14) && (iVar14 <= local_e8)) {
+                    iVar4 = local_3fc[local_14 + local_1c * 5 + 0xa8];
+                    sVar3 = (short)iVar4;
+                    sVar11 = (short)iVar8;
+                    sVar12 = (short)iVar14;
+                    if (iVar4 < 1) {
+                      if (sVar11 < 0) {
 LAB_0048f3f7:
-                        iVar5 = ((((iVar17 - local_28) * (int)local_10 + local_a * iVar5) - local_20
-                                 ) + iVar10) * 2;
-                        if ((0 < *(short *)(iVar5 + (int)local_24)) &&
-                           (local_18 <= (*(short *)(iVar5 + (int)local_8) + -1) / 3)) {
+                        iVar4 = ((((iVar14 - local_28) * (int)local_10 + local_a * iVar4) - local_20
+                                 ) + iVar8) * 2;
+                        if ((0 < *(short *)(iVar4 + (int)local_24)) &&
+                           (local_18 <= (*(short *)(iVar4 + (int)local_8) + -1) / 3)) {
                           local_e4 = 1;
-                          *param_8 = sVar13;
-                          *param_9 = sVar14;
+                          *param_8 = sVar11;
+                          *param_9 = sVar12;
                           *param_10 = (short)local_3fc[local_1c * 5 + local_14 + 0xa8];
                           goto LAB_0048f4e0;
                         }
                       }
-                      else if (((((g_worldGrid.sizeX <= sVar13) || (sVar14 < 0)) ||
-                                (g_worldGrid.sizeY <= sVar14)) ||
-                               ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))) ||
+                      else if (((((g_worldGrid.sizeX <= sVar11) || (sVar12 < 0)) ||
+                                (g_worldGrid.sizeY <= sVar12)) ||
+                               ((sVar3 < 0 || (g_worldGrid.sizeZ <= sVar3)))) ||
                               (g_worldGrid.cells
-                               [(int)sVar4 * (int)g_worldGrid.planeStride +
-                                (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0] ==
+                               [(int)sVar3 * (int)g_worldGrid.planeStride +
+                                (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
                                (STWorldObject *)0x0)) {
 joined_r0x0048f3a9:
-                        if ((((sVar13 < 0) || (g_worldGrid.sizeX <= sVar13)) || (sVar14 < 0)) ||
-                           ((((g_worldGrid.sizeY <= sVar14 || (sVar4 < 0)) ||
-                             (g_worldGrid.sizeZ <= sVar4)) ||
+                        if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar12 < 0)) ||
+                           ((((g_worldGrid.sizeY <= sVar12 || (sVar3 < 0)) ||
+                             (g_worldGrid.sizeZ <= sVar3)) ||
                             (g_worldGrid.cells
-                             [(int)sVar4 * (int)g_worldGrid.planeStride +
-                              (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar13].objects[1] ==
+                             [(int)sVar3 * (int)g_worldGrid.planeStride +
+                              (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1] ==
                              (STWorldObject *)0x0)))) goto LAB_0048f3f7;
                       }
                     }
-                    else if ((sVar13 < 0) ||
-                            ((((g_worldGrid.sizeX <= sVar13 || (sVar14 < 0)) ||
-                              ((g_worldGrid.sizeY <= sVar14 ||
-                               (((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)) ||
+                    else if ((sVar11 < 0) ||
+                            ((((g_worldGrid.sizeX <= sVar11 || (sVar12 < 0)) ||
+                              ((g_worldGrid.sizeY <= sVar12 ||
+                               (((sVar3 < 0 || (g_worldGrid.sizeZ <= sVar3)) ||
                                 (g_worldGrid.cells
-                                 [(int)sVar4 * (int)g_worldGrid.planeStride +
-                                  (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0] ==
+                                 [(int)sVar3 * (int)g_worldGrid.planeStride +
+                                  (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
                                  (STWorldObject *)0x0)))))) &&
-                             (((sVar13 < 0 || (g_worldGrid.sizeX <= sVar13)) ||
-                              ((sVar14 < 0 ||
-                               (((g_worldGrid.sizeY <= sVar14 || (sVar4 < 0)) ||
-                                ((g_worldGrid.sizeZ <= sVar4 ||
+                             (((sVar11 < 0 || (g_worldGrid.sizeX <= sVar11)) ||
+                              ((sVar12 < 0 ||
+                               (((g_worldGrid.sizeY <= sVar12 || (sVar3 < 0)) ||
+                                ((g_worldGrid.sizeZ <= sVar3 ||
                                  (g_worldGrid.cells
-                                  [(int)sVar4 * (int)g_worldGrid.planeStride +
-                                   (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar13].objects[1] ==
+                                  [(int)sVar3 * (int)g_worldGrid.planeStride +
+                                   (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1] ==
                                   (STWorldObject *)0x0)))))))))))) {
-                      sVar4 = sVar4 + -1;
-                      if (sVar13 < 0) goto LAB_0048f3f7;
-                      if (((((g_worldGrid.sizeX <= sVar13) || (sVar14 < 0)) ||
-                           (g_worldGrid.sizeY <= sVar14)) ||
-                          ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))) ||
+                      sVar3 = sVar3 + -1;
+                      if (sVar11 < 0) goto LAB_0048f3f7;
+                      if (((((g_worldGrid.sizeX <= sVar11) || (sVar12 < 0)) ||
+                           (g_worldGrid.sizeY <= sVar12)) ||
+                          ((sVar3 < 0 || (g_worldGrid.sizeZ <= sVar3)))) ||
                          ((g_worldGrid.cells
-                           [(int)sVar4 * (int)g_worldGrid.planeStride +
-                            (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0] ==
+                           [(int)sVar3 * (int)g_worldGrid.planeStride +
+                            (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
                            (STWorldObject *)0x0 ||
                           (g_pathingGrid.cells
-                           [g_pathingGrid.sizeX * iVar17 +
-                            iVar10 + (iVar5 + -1) * (int)g_pathingGrid.planeStride] == 0))))
+                           [g_pathingGrid.sizeX * iVar14 +
+                            iVar8 + (iVar4 + -1) * (int)g_pathingGrid.planeStride] == 0))))
                       goto joined_r0x0048f3a9;
                     }
                   }
@@ -799,8 +813,8 @@ joined_r0x0048f3a9:
         local_14 = local_14 + 1;
       } while (local_14 < 5);
       local_18 = local_18 + 1;
-      param_5 = param_5 + 2;
-    } while (local_18 / iVar6 < 5);
+      _param_5 = _param_5 + 2;
+    } while (local_18 / iVar5 < 5);
   }
 LAB_0048f4e0:
   if (local_30 != (undefined4 *)0x0) {

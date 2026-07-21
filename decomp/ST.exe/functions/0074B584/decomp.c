@@ -3,7 +3,7 @@ int FUN_0074b584(int param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 1;
   if (param_1 < 0x40000001) {
     if (1 < param_1) {

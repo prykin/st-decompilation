@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_004de1e0(void *this,Global_sub_004DE1E0_param_1Enum pa
   uint *puVar2;
   uint *puVar3;
   uint uVar4;
-  
+
   uVar4 = 0;
   switch(param_1) {
   case CASE_0:

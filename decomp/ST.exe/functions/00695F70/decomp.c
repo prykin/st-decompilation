@@ -7,8 +7,9 @@ uint __thiscall FUN_00695f70(void *this,uint param_1,int param_2,int param_3)
   int iVar3;
   undefined2 local_c;
   int iStack_a;
-  
+
   iVar3 = *(int *)((int)this + 0x5853);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((iVar3 == 0) || (*(uint *)(iVar3 + 0xc) <= param_1)) ||
      (iVar3 = *(int *)(iVar3 + 8) * param_1 + *(int *)(iVar3 + 0x1c), iVar3 == 0)) {
 LAB_00696007:

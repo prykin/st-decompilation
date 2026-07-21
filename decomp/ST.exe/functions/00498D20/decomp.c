@@ -16,7 +16,7 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
   undefined4 local_10;
   undefined2 local_c;
   undefined4 local_8;
-  
+
   switch(orderType) {
   case CASE_1:
     *(undefined4 *)((int)this + 0x65) = 1;

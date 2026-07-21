@@ -9,6 +9,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   bool bVar3;
   ushort uVar4;
   undefined4 uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar6;
   uint uVar7;
@@ -16,7 +17,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   undefined4 local_14 [2];
   undefined4 local_c;
   ushort local_8;
-  
+
   thunk_FUN_006a1370(param_1,param_2,param_3,param_4,local_14);
   uVar5 = thunk_FUN_006a0ef0(param_1,param_2,param_3,param_4,param_5,param_6);
   uVar4 = (ushort)uVar5;
@@ -25,6 +26,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   }
   if (uVar4 != 0) {
     bVar3 = thunk_FUN_006a1100(param_1,param_2,param_3,param_4,param_5,param_6);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var,bVar3) == 0) {
       iVar6 = thunk_FUN_006a1070(uVar4);
       uVar4 = (ushort)iVar6;
@@ -43,24 +45,34 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
                                    '\x01') * '\x10' ^ (byte)local_8) & 0xf0;
       }
       else {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c._0_2_ = (ushort)uVar5;
         uVar1 = (ushort)local_c;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c._2_2_ = (ushort)((uint)uVar5 >> 0x10);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar2 = local_c._2_2_;
         if (param_5 == 1) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c._2_1_ = (byte)((uint)uVar5 >> 0x10);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(uVar2 ^ (local_c._2_1_ ^ bVar8) & 0xf,(ushort)local_c);
           uVar7 = Library::MSVCRT::FUN_0072e6c0();
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar4 * 2)) + '\x01')
                   * '\x10' ^ local_c._2_1_;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(local_c._2_2_ ^ bVar8 & 0xf0,(ushort)local_c);
         }
         else {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c._0_1_ = (byte)uVar5;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(local_c._2_2_,uVar1 ^ ((byte)local_c ^ bVar8) & 0xf);
           uVar7 = Library::MSVCRT::FUN_0072e6c0();
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar4 * 2)) + '\x01')
                   * '\x10' ^ (byte)local_c;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(local_c._2_2_,(ushort)local_c ^ bVar8 & 0xf0);
         }
       }

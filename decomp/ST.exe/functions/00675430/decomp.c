@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00675430_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8;CASE_10=16;CASE_20=32;CASE_40=64;CASE_80=128
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 00675430 returns partial register write at 00675458 @ 0067545D | 00675430 returns
    partial register write at 0067545E @ 00675463 | 00675430 returns partial register write at
@@ -18,7 +18,7 @@ uint __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
 {
   undefined2 uVar2;
   Global_sub_00675430_param_1Enum GVar1;
-  
+
   if (param_1 < 0x101) {
     if (param_1 == 0x100) {
       return 0x32;
@@ -26,19 +26,26 @@ uint __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
     uVar2 = (undefined2)(param_1 - CASE_1 >> 0x10);
     GVar1 = param_1 - CASE_1;
     switch(param_1) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_1:
     case CASE_2:
       return CONCAT22(uVar2,0x1e);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_4:
       return CONCAT22(uVar2,0x5f);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_8:
       return CONCAT22(uVar2,100);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_10:
       return CONCAT22(uVar2,0x46);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_20:
       return CONCAT22(uVar2,0x28);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_40:
       return CONCAT22(uVar2,0x5a);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_80:
       return CONCAT22(uVar2,0x6e);
     }
@@ -47,6 +54,7 @@ uint __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
     GVar1 = param_1;
     if (param_1 < 0x100001) {
       if (param_1 == 0x100000) {
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_006754A8:
         return CONCAT22((short)(param_1 >> 0x10),10);
       }

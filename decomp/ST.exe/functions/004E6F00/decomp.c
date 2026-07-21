@@ -9,7 +9,7 @@ int FUN_004e6f00(int param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar3 = 0;
   local_10 = 0;
   local_c = 0;

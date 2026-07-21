@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -14,21 +16,19 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   STGameObjC *pSVar6;
   int iVar7;
   undefined4 uVar8;
-  undefined4 unaff_ESI;
   uint uVar9;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
-  undefined1 local_14;
+  char local_14;
   char cStack_13;
   undefined2 uStack_12;
   undefined2 uStack_10;
   uint local_c;
   STGroupBoatC *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_020E == 0) {
@@ -39,6 +39,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     if (pSVar3->field_021E != 0) {
       FreeAndNull((void **)&pSVar3->field_021E);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar9 = *(uint *)(pSVar3->field_020E + 0xc);
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
@@ -58,9 +59,10 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     if (0 < (int)local_c) {
       do {
         DArrayGetElement((DArrayTy *)pSVar3->field_020E,uVar9,&local_14);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14))
-                            ,CONCAT22(uStack_10,uStack_12),(int)cStack_13);
+                           (g_sTAllPlayers_007FA174,local_14,CONCAT22(uStack_10,uStack_12),
+                            (int)cStack_13);
         if (pSVar6 == (STGameObjC *)0x0) {
           uStack_12 = 0xffff;
           Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
@@ -90,9 +92,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x543,0,iVar4,&DAT_007a4ccc,
                              s_STGroupBoatC__MakePVec_007abef8);
   if (iVar7 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar8 = (*pcVar1)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x544);
   return 0xffffffff;

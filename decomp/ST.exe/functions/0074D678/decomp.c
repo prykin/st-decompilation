@@ -14,7 +14,7 @@ int __cdecl FUN_0074d678(LPWSTR lpWideCharStr,LPCWSTR param_2)
   LPBOOL lpUsedDefaultChar;
   CHAR local_204 [256];
   CHAR local_104 [256];
-  
+
   lpMultiByteStr = local_104;
   lpUsedDefaultChar = (LPBOOL)0x0;
   lpDefaultChar = (LPCSTR)0x0;

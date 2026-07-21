@@ -5,7 +5,7 @@ FUN_006a0da0(void *this,uint param_1,int param_2,uint param_3,int param_4,int pa
 {
   uint uVar1;
   ushort local_c [4];
-  
+
   if (param_5 == 0) {
     local_c[0] = 0;
     local_c[1] = 0;

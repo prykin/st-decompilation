@@ -33,8 +33,9 @@ void FUN_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param_3,
   int *local_10;
   int local_c;
   int local_8;
-  
+
   pAVar4 = param_2->field_0050;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar10 = *(int *)(param_1 + 0x132) + 0x80;
   piVar2 = local_128;
   local_28 = iVar10;

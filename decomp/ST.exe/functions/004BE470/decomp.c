@@ -4,7 +4,7 @@ void __thiscall FUN_004be470(void *this,int param_1)
 {
   int iVar1;
   uint uVar2;
-  
+
   uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   *(int *)((int)this + 0x241) = param_1;
   iVar1 = ((uVar2 & 0xff) - 1) + *(int *)((int)this + 0x235) * 3;

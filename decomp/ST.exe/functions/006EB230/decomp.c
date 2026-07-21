@@ -8,7 +8,7 @@ FUN_006eb230(void *this,uint param_1,int param_2,int param_3,int param_4,int par
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   if ((param_4 != 0) && (param_5 != 0)) {
     iVar5 = param_4;
     if (param_4 < 0) {

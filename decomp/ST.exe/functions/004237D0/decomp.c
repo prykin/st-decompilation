@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_004237d0(void *this,short param_1)
   uint index;
   uint uVar2;
   undefined4 uStack_8;
-  
+
   uVar2 = 0;
   uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
   if (uVar1 != 0) {
@@ -14,6 +14,7 @@ undefined4 __thiscall FUN_004237d0(void *this,short param_1)
     uStack_8 = this;
     do {
       DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,(void *)((int)&uStack_8 + 2));
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (uStack_8._2_2_ == param_1) {
         return 1;
       }

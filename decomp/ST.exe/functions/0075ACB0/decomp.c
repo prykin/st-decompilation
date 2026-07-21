@@ -15,13 +15,14 @@ int FUN_0075acb0(AnonShape_0075ACB0_25ECA7C9 *param_1,int *param_2)
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
-  
+
   pAVar3 = param_1;
   iVar5 = param_1->field_019A;
   iVar1 = param_1->field_012E;
   while ((*(int *)&param_1->field_0x88 < *(int *)&param_1->field_0x90 ||
          ((*(int *)&param_1->field_0x88 == *(int *)&param_1->field_0x90 &&
           (*(uint *)&param_1->field_0x8c <= *(uint *)&param_1->field_0x94))))) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (*(code *)*param_1->field_01A2)(param_1);
     if (iVar4 == 0) {
       return 0;
@@ -35,6 +36,7 @@ int FUN_0075acb0(AnonShape_0075ACB0_25ECA7C9 *param_1,int *param_2)
     piVar7 = param_2;
     do {
       if (*(int *)(iVar4 + 0x30) != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_8 = (undefined4 *)
                   (**(code **)(*(int *)pAVar3 + 0x20))
                             (pAVar3,*local_c,*(int *)&pAVar3->field_0x94 * *(int *)(iVar4 + 0xc),

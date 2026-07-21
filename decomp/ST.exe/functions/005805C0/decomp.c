@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_005805c0(AnonShape_005805C0_8BDDDE2B *param_1)
   char *text;
   int iVar1;
   byte bVar2;
-  
+
   bVar2 = 0x1d;
   this = &param_1->field_0x1d5;
   text = thunk_FUN_0057f530(param_1,param_1->field_025D);

@@ -1,39 +1,43 @@
 
-char __cdecl FUN_0052a7b0(AnonShape_0052A7B0_DD603BF4 *param_1)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=005522A0 @ 005524FB
+   -> PUSH PUSH EAX */
+
+int __cdecl FUN_0052a7b0(AnonShape_0052A7B0_DD603BF4 *param_1)
 
 {
   AnonNested_0052A7B0_0014_0177A204 *pAVar1;
-  char cVar2;
-  bool bVar3;
-  
-  bVar3 = false;
-  cVar2 = '\b';
+  int iVar2;
+  uint local_8;
+
+  local_8 = 0;
+  iVar2 = 8;
   pAVar1 = param_1->field_0014;
   switch(pAVar1->field_0000) {
   case 1:
-    cVar2 = '\0';
+    iVar2 = 0;
     break;
   case 2:
-    cVar2 = '\x02';
+    iVar2 = 2;
     break;
   case 3:
-    cVar2 = '\x04';
+    iVar2 = 4;
     break;
   case 4:
-    cVar2 = '\x0e';
+    iVar2 = 0xe;
     break;
   case 5:
-    cVar2 = '\x06';
+    iVar2 = 6;
   }
   switch(pAVar1->field_0004) {
   case 0:
   case 2:
-    return cVar2;
+    return iVar2;
   case 1:
-    return cVar2 + '\x01';
+    return iVar2 + 1;
   case 3:
-    bVar3 = pAVar1->field_0008 != 0;
+    local_8 = (uint)(pAVar1->field_0008 != 0);
   }
-  return bVar3 + cVar2;
+  return local_8 + iVar2;
 }
 

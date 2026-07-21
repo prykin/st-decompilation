@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::ChangePlayer
-   
+
    [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
@@ -15,22 +17,20 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   byte *pbVar4;
   int iVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   byte *pbVar7;
-  void *unaff_EDI;
   byte *pbVar8;
   bool bVar9;
   InternalExceptionFrame local_54;
   uint local_10;
   AnonShape_00413AF0_B6B4EE9A *local_c;
   FSGSTy *local_8;
-  
+
   if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) &&
      (this->field_1EA6 != (DArrayTy *)0x0)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
-    iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (iVar3 == 0) {
       uVar6 = 0;
       local_c = (AnonShape_00413AF0_B6B4EE9A *)local_8->field_1EA6;
@@ -41,6 +41,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
           goto LAB_005a2aea;
         }
         do {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pbVar8 = (byte *)(((DArrayTy *)local_c)->elementSize * uVar6 +
                            (int)((DArrayTy *)local_c)->data);
 LAB_005a2aea:
@@ -81,9 +82,7 @@ LAB_005a2b1c:
     iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa50,0,iVar3,&DAT_007a4ccc
                                ,s_FSGSTy__ChangePlayer_007cc4e4);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa50);
   }

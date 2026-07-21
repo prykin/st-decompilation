@@ -5,7 +5,7 @@ FUN_00646110(int param_1,int param_2,undefined4 *param_3,undefined4 *param_4,und
 {
   int iVar1;
   undefined4 uVar2;
-  
+
   uVar2 = 0;
   *param_3 = 0;
   iVar1 = param_1 + -0x96;

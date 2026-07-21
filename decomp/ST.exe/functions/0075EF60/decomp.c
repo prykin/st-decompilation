@@ -5,7 +5,8 @@ void FUN_0075ef60(int *param_1,int param_2)
   int *piVar1;
   int iVar2;
   int iVar3;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   piVar1 = (int *)(**(code **)*param_1)(param_1,1,param_2 << 5);
   *piVar1 = 0;
   piVar1[1] = 0x1f;

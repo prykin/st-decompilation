@@ -1,11 +1,18 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::UnRegisterObject */
+   STAllPlayersC::UnRegisterObject
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=0042F2BA MOVSX ECX,byte ptr [EBP + 0x8] | 0042F37C MOVSX
+   ECX,byte ptr [EBP + 0x8] | 0042F3C7 MOVSX ECX,byte ptr [EBP + 0x8] | 0042F40F MOVSX ECX,byte ptr
+   [EBP + 0x8] | 0042F468 MOVSX ECX,byte ptr [EBP + 0x8] | 0042F4B3 MOVSX ECX,byte ptr [EBP + 0x8] |
+   0042F527 MOVSX ECX,byte ptr [EBP + 0x8] */
 
 undefined4 __thiscall
 STAllPlayersC::UnRegisterObject
-          (STAllPlayersC *this,uint param_1,uint param_2,uint param_3,int *param_4,int param_5)
+          (STAllPlayersC *this,char param_1,uint param_2,uint param_3,int *param_4,int param_5)
 
 {
   code *pcVar1;
@@ -18,9 +25,9 @@ STAllPlayersC::UnRegisterObject
   STGameObjC *pSVar7;
   DArrayTy *pDVar8;
   int iVar9;
-  undefined4 unaff_ESI;
   uint uVar10;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined3 in_stack_00000005;
   InternalExceptionFrame local_68;
   dword local_24;
   DArrayTy *local_20;
@@ -30,8 +37,8 @@ STAllPlayersC::UnRegisterObject
   STGroupBoatC *local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
-  iVar9 = (int)(char)param_1;
+
+  iVar9 = (int)param_1;
   local_c = 0;
   local_14 = g_playerRuntime[iVar9].objects;
   local_1c = g_playerRuntime[iVar9].groups;
@@ -39,7 +46,7 @@ STAllPlayersC::UnRegisterObject
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar9 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar9 == -0x5001fff7) {
@@ -51,9 +58,7 @@ STAllPlayersC::UnRegisterObject
       RaiseInternalException(iVar9,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7ce);
       return 0xffffffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((short)param_3 == -1) {
     RaiseInternalException
@@ -61,61 +66,72 @@ STAllPlayersC::UnRegisterObject
                0x6cd);
   }
   if (param_4[8] == 0x14) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar9 = (**(code **)(*param_4 + 0x2c))();
     if ((*(uint *)(&DAT_00801480 + (iVar9 + 0x41U >> 5) * 4) & 1 << ((byte)(iVar9 + 0x41U) & 0x1f))
         == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar9 = (**(code **)(*param_4 + 0x2c))();
       if ((*(uint *)(&DAT_00800f10 + (iVar9 + 0x41U >> 5) * 4) & 1 << ((byte)(iVar9 + 0x41U) & 0x1f)
           ) == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar9 = (**(code **)(*param_4 + 0x2c))();
         if ((*(uint *)(&DAT_00801450 + (iVar9 + 0x41U >> 5) * 4) &
             1 << ((byte)(iVar9 + 0x41U) & 0x1f)) == 0) goto LAB_0042f42f;
-        iVar9 = (char)param_1 * 0xa62;
-        *(int *)&g_playerRuntime[(char)param_1].field_0x33 =
-             *(int *)&g_playerRuntime[(char)param_1].field_0x33 + -1;
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        iVar9 = param_1 * 0xa62;
+        *(int *)&g_playerRuntime[param_1].field_0x33 =
+             *(int *)&g_playerRuntime[param_1].field_0x33 + -1;
       }
       else {
-        iVar9 = (char)param_1 * 0xa62;
-        g_playerRuntime[(char)param_1].field20_0x2f =
-             g_playerRuntime[(char)param_1].field20_0x2f + -1;
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        iVar9 = param_1 * 0xa62;
+        g_playerRuntime[param_1].field20_0x2f = g_playerRuntime[param_1].field20_0x2f + -1;
       }
     }
     else {
-      iVar9 = (char)param_1 * 0xa62;
-      g_playerRuntime[(char)param_1].field19_0x2b = g_playerRuntime[(char)param_1].field19_0x2b + -1
-      ;
+      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+      iVar9 = param_1 * 0xa62;
+      g_playerRuntime[param_1].field19_0x2b = g_playerRuntime[param_1].field19_0x2b + -1;
     }
     *(int *)(&g_playerRuntime[0].field_0x37 + iVar9) =
          *(int *)(&g_playerRuntime[0].field_0x37 + iVar9) + 1;
   }
 LAB_0042f42f:
   if (param_4[8] == 1000) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar9 = (**(code **)(*param_4 + 0x2c))();
     if ((*(uint *)(&DAT_00800f90 + (iVar9 - 0x32U >> 5) * 4) & 1 << ((byte)(iVar9 - 0x32U) & 0x1f))
         == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar9 = (**(code **)(*param_4 + 0x2c))();
       if ((*(uint *)(&DAT_00801360 + (iVar9 - 0x32U >> 5) * 4) & 1 << ((byte)(iVar9 - 0x32U) & 0x1f)
           ) == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar9 = (**(code **)(*param_4 + 0x2c))();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((*(uint *)(&DAT_008014a0 + (iVar9 - 0x32U >> 5) * 4) &
              1 << ((byte)(iVar9 - 0x32U) & 0x1f)) == 0) &&
            (iVar9 = (**(code **)(*param_4 + 0x2c))(),
            (*(uint *)(&DAT_00800f80 + (iVar9 - 0x32U >> 5) * 4) &
            1 << ((byte)(iVar9 - 0x32U) & 0x1f)) == 0)) goto LAB_0042f547;
-        iVar9 = (char)param_1 * 0xa62;
-        *(int *)&g_playerRuntime[(char)param_1].field_0x43 =
-             *(int *)&g_playerRuntime[(char)param_1].field_0x43 + -1;
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        iVar9 = param_1 * 0xa62;
+        *(int *)&g_playerRuntime[param_1].field_0x43 =
+             *(int *)&g_playerRuntime[param_1].field_0x43 + -1;
       }
       else {
-        iVar9 = (char)param_1 * 0xa62;
-        *(int *)&g_playerRuntime[(char)param_1].field_0x3f =
-             *(int *)&g_playerRuntime[(char)param_1].field_0x3f + -1;
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        iVar9 = param_1 * 0xa62;
+        *(int *)&g_playerRuntime[param_1].field_0x3f =
+             *(int *)&g_playerRuntime[param_1].field_0x3f + -1;
       }
     }
     else {
-      iVar9 = (char)param_1 * 0xa62;
-      *(int *)&g_playerRuntime[(char)param_1].field_0x3b =
-           *(int *)&g_playerRuntime[(char)param_1].field_0x3b + -1;
+      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+      iVar9 = param_1 * 0xa62;
+      *(int *)&g_playerRuntime[param_1].field_0x3b =
+           *(int *)&g_playerRuntime[param_1].field_0x3b + -1;
     }
     *(int *)(&g_playerRuntime[0].field_0x47 + iVar9) =
          *(int *)(&g_playerRuntime[0].field_0x47 + iVar9) + 1;
@@ -123,30 +139,39 @@ LAB_0042f42f:
 LAB_0042f547:
   pvVar2 = DAT_008016d4;
   if (param_4[8] == 0x14) {
-    iVar9 = (int)(char)param_1;
+    iVar9 = (int)param_1;
     *(short *)&g_playerRuntime[iVar9].field_0xd = *(short *)&g_playerRuntime[iVar9].field_0xd + -1;
     if (pvVar2 != (void *)0x0) {
-      thunk_FUN_0052bda0(pvVar2,(char)param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
+      thunk_FUN_0052bda0(pvVar2,param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
     if (iVar5 != 0x19) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)(*param_4 + 0x2c))();
       if (((&DAT_00801000)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (**(code **)(*param_4 + 0x2c))();
         if (((&DAT_00801010)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)(*param_4 + 0x2c))();
           if (((&DAT_00800f00)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar5 = (**(code **)(*param_4 + 0x2c))();
             if (((&DAT_00801370)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               iVar5 = (**(code **)(*param_4 + 0x2c))();
               if (((&DAT_00800fa0)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0)
               {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar5 = (**(code **)(*param_4 + 0x2c))();
                 if (((&DAT_00800ff0)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0
                    ) {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar5 = (**(code **)(*param_4 + 0x2c))();
                   if ((*(uint *)(&DAT_00801460 + (iVar5 + 0x41U >> 5) * 4) &
                       1 << ((byte)(iVar5 + 0x41U) & 0x1f)) == 0) {
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                     iVar5 = (**(code **)(*param_4 + 0x2c))();
                     if (((&DAT_00800fe0)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f))
                         == 0) {
@@ -154,9 +179,7 @@ LAB_0042f547:
                                                  &DAT_007a4ccc,
                                                  s_STAllPlayersC__UnRegisterObject_u_007a66dc);
                       if (iVar9 != 0) {
-                        pcVar1 = (code *)swi(3);
-                        uVar6 = (*pcVar1)();
-                        return uVar6;
+                        STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
                     }
                     else {
@@ -250,11 +273,12 @@ LAB_0042f547:
   }
   pvVar2 = DAT_008016d4;
   if (param_4[8] == 1000) {
-    iVar9 = (int)(char)param_1;
+    iVar9 = (int)param_1;
     *(short *)&g_playerRuntime[iVar9].field_0xd = *(short *)&g_playerRuntime[iVar9].field_0xd + -1;
     if (pvVar2 != (void *)0x0) {
-      thunk_FUN_0052bda0(pvVar2,(char)param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
+      thunk_FUN_0052bda0(pvVar2,param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
     if (iVar5 == 0x33) {
       *(int *)&g_playerRuntime[iVar9].field317_0x15b =
@@ -264,25 +288,34 @@ LAB_0042f547:
       *(int *)&g_playerRuntime[iVar9].field320_0x15f =
            *(int *)&g_playerRuntime[iVar9].field320_0x15f + -1;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
     if (((&DAT_00801420)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)(*param_4 + 0x2c))();
       if (((&DAT_008013e0)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (**(code **)(*param_4 + 0x2c))();
         if (((&DAT_00800ee0)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)(*param_4 + 0x2c))();
           if (((&DAT_00801490)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar5 = (**(code **)(*param_4 + 0x2c))();
             if (((&DAT_00800f20)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               iVar5 = (**(code **)(*param_4 + 0x2c))();
               if (((&DAT_00800ef0)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0)
               {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar5 = (**(code **)(*param_4 + 0x2c))();
                 if (((&DAT_00801430)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) == 0
                    ) {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar5 = (**(code **)(*param_4 + 0x2c))();
                   if (((&DAT_00801440)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f)) ==
                       0) {
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                     iVar5 = (**(code **)(*param_4 + 0x2c))();
                     if (((&DAT_00800f60)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f))
                         == 0) {
@@ -290,9 +323,7 @@ LAB_0042f547:
                                                  &DAT_007a4ccc,
                                                  s_STAllPlayersC__UnRegisterObject_u_007a669c);
                       if (iVar9 != 0) {
-                        pcVar1 = (code *)swi(3);
-                        uVar6 = (*pcVar1)();
-                        return uVar6;
+                        STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
                     }
                     else {
@@ -414,9 +445,9 @@ LAB_0042f547:
                  0x7a6);
     }
   }
-  thunk_FUN_00440820(param_1,param_3);
+  thunk_FUN_00440820(_param_1,param_3);
   DelObjFromTmps(this_00,DAT_0080874d,param_4[8],param_1,param_3);
-  DelObjFromSaveTmps(this_00,param_4[8],(char)param_1,(short)param_3);
+  DelObjFromSaveTmps(this_00,param_4[8],param_1,(short)param_3);
   pSVar3 = local_10;
   pDVar8 = local_14;
   uVar10 = param_3;
@@ -430,6 +461,7 @@ LAB_0042f547:
     uVar10 = param_2;
   }
   Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar10 & 0xffff,&local_c);
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00430018:
   iVar9 = (**(code **)(*param_4 + 0x2c))();
   pDVar8 = local_20;

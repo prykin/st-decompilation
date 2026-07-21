@@ -18,7 +18,7 @@ int FUN_006bb780(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   undefined4 local_20;
   int local_c;
   int local_8;
-  
+
   *param_2 = 0;
   local_88 = 0x7c;
   local_84 = 7;
@@ -59,13 +59,16 @@ int FUN_006bb780(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   local_7c = param_3;
   local_20 = 0x4080;
   local_80 = param_4;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(**(int **)(param_1 + 0x30) + 0x18))
                     (*(int **)(param_1 + 0x30),&local_88,param_2,0);
   if ((iVar1 == 0) && (param_8 != -1)) {
     local_8 = param_8;
     local_c = param_8;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*(int *)*param_2 + 0x74))((int *)*param_2,0x10,&local_c);
     if (iVar1 != 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)*param_2 + 8))((int *)*param_2);
       *param_2 = 0;
     }

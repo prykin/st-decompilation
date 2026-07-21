@@ -9,7 +9,7 @@ FUN_0072a9d0(undefined1 *param_1,int param_2,ushort *param_3,uint *param_4,int *
 {
   int iVar1;
   uint uVar2;
-  
+
   iVar1 = *param_5 + -1;
   *param_5 = iVar1;
   while (-1 < iVar1) {

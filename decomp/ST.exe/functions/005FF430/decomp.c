@@ -15,10 +15,9 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
   STGameObjC *this_00;
   int iVar4;
   uint uVar5;
-  undefined4 extraout_ECX;
   uint uVar6;
   undefined4 uVar7;
-  
+
   uVar7 = 0;
   if (param_2 != 30000) {
     puVar1 = (undefined2 *)
@@ -27,9 +26,9 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
     SVar3 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)
                                 (*(int *)((int)this + 0x23b) + 4 +
                                 *(int *)(*(int *)((int)this + 0x23f) + param_2 * 4) * 0x18));
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,
-                         CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)(puVar1 + 4)),
+                        (g_sTAllPlayers_007FA174,*(char *)(puVar1 + 4),
                          CONCAT22((short)(SVar3 >> 0x10),*puVar1),SVar3);
     if (this_00 == (STGameObjC *)0x0) {
       return 0;

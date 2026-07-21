@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -15,16 +17,10 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   ushort *puVar5;
   undefined1 *puVar6;
   uint *puVar7;
-  undefined4 extraout_EAX;
-  uint uVar8;
-  undefined4 extraout_EAX_00;
-  undefined4 extraout_EAX_01;
-  undefined4 extraout_EAX_02;
-  char *pcVar9;
+  char *pcVar8;
+  uint uVar9;
   int iVar10;
   uint uVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar12;
   InternalExceptionFrame local_9c;
   undefined4 local_58;
@@ -39,20 +35,18 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   undefined1 local_e;
   undefined4 local_d;
   undefined4 *local_8;
-  
+
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
   local_1c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
   this_01 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_9c.previous;
     iVar10 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x231,0,iVar4,
                                 &DAT_007a4ccc,s_StartSystemTy__LoadMapData_007cd7b0);
     if (iVar10 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_startsys_cpp_007cd718,0x231);
     return;
@@ -114,13 +108,13 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
       iVar4 = 0;
       if (0 < PTR_0080c4cb->field_0008) {
         if (PTR_0080c4cb->field_0008 < 1) {
-          pcVar9 = (char *)0x0;
+          pcVar8 = (char *)0x0;
           goto LAB_005dc22d;
         }
         do {
-          pcVar9 = *(char **)(PTR_0080c4cb->field_0014 + iVar4 * 4);
+          pcVar8 = *(char **)(PTR_0080c4cb->field_0014 + iVar4 * 4);
 LAB_005dc22d:
-          thunk_FUN_005411a0((uint *)this_01->field_0548,pcVar9,s_____s_007c72b4);
+          thunk_FUN_005411a0((uint *)this_01->field_0548,pcVar8,s_____s_007c72b4);
           iVar4 = iVar4 + 1;
         } while (iVar4 < PTR_0080c4cb->field_0008);
       }
@@ -141,20 +135,20 @@ LAB_005dc22d:
       puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
       this_01->field_0548 = puVar7;
       puVar6 = &this_01->field_0x3c;
-      LoadResourceString(0x2347,HINSTANCE_00807618);
-      wsprintfA(puVar6,s__2__s__007cd800,extraout_EAX);
+      pcVar8 = LoadResourceString(0x2347,HINSTANCE_00807618);
+      wsprintfA(puVar6,s__2__s__007cd800,pcVar8);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
       wsprintfA(puVar6,s__0__s_007cd7f8,&DAT_0080c3c3);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
-      uVar8 = DAT_008087c4 & 0xffff;
+      uVar9 = DAT_008087c4 & 0xffff;
       uVar11 = (uint)DAT_008087c2;
-      LoadResourceString(0x2344,HINSTANCE_00807618);
-      wsprintfA(puVar6,s__2__s___0_d_2x_0_d_007cd7e0,extraout_EAX_00,uVar11,uVar8);
+      pcVar8 = LoadResourceString(0x2344,HINSTANCE_00807618);
+      wsprintfA(puVar6,s__2__s___0_d_2x_0_d_007cd7e0,pcVar8,uVar11,uVar9);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
-      uVar8 = DAT_008087c4 >> 0x10 & 0xff;
-      LoadResourceString(0x2345,HINSTANCE_00807618);
-      wsprintfA(puVar6,s__2__s___0_d_007cd7d0,extraout_EAX_01,uVar8);
+      uVar9 = DAT_008087c4 >> 0x10 & 0xff;
+      pcVar8 = LoadResourceString(0x2345,HINSTANCE_00807618);
+      wsprintfA(puVar6,s__2__s___0_d_007cd7d0,pcVar8,uVar9);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       switch(param_2) {
@@ -171,8 +165,8 @@ LAB_005dc22d:
       case '\x0f':
       case '\x10':
       case '\x13':
-        LoadResourceString(0x2346,HINSTANCE_00807618);
-        wsprintfA(puVar6,s__2__s__007cd800,extraout_EAX_02);
+        pcVar8 = LoadResourceString(0x2346,HINSTANCE_00807618);
+        wsprintfA(puVar6,s__2__s__007cd800,pcVar8);
         Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
         Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       }
@@ -184,13 +178,13 @@ LAB_005dc22d:
         iVar4 = 0;
         if (0 < (int)pAVar3->field_0008) {
           if ((int)pAVar3->field_0008 < 1) {
-            pcVar9 = (char *)0x0;
+            pcVar8 = (char *)0x0;
             goto LAB_005dc430;
           }
           do {
-            pcVar9 = *(char **)(pAVar3->field_0014 + iVar4 * 4);
+            pcVar8 = *(char **)(pAVar3->field_0014 + iVar4 * 4);
 LAB_005dc430:
-            Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,pcVar9);
+            Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,pcVar8);
             iVar4 = iVar4 + 1;
           } while (iVar4 < (int)pAVar3->field_0008);
         }
@@ -204,6 +198,7 @@ LAB_005dc430:
         DAT_00808750 = local_d;
       }
       local_2c = 0x28;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_28 = CONCAT22(*(undefined2 *)(this_01->field_0548 + 8),1);
       if (this_01->field_0389 != 0) {
         SystemClassTy::SendMessage((SystemClassTy *)this_01,2,this_01->field_0389,(int)local_3c);
@@ -227,7 +222,9 @@ LAB_005dc430:
         puVar12 = puVar12 + 1;
       }
       *(undefined2 *)puVar12 = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_58._0_2_ = 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_58._2_2_ = 1;
       MMsgTy::StatePanel(this_00,(int)&local_58);
     }

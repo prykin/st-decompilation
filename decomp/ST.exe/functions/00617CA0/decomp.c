@@ -13,7 +13,7 @@ FUN_00617ca0(void *this,int *param_1,int *param_2,undefined4 *param_3,int *param
   int iVar7;
   int local_14;
   int local_10;
-  
+
   uVar4 = *(uint *)((int)this + 0x30);
   local_14 = 0;
   if (uVar4 == 0) {

@@ -4,7 +4,7 @@ void __fastcall FUN_0048a910(AnonShape_0048A910_6D6DD7B1 *param_1)
 {
   undefined2 uVar1;
   undefined2 uVar2;
-  
+
   switch(param_1->field_06F7) {
   case 1:
     param_1->field_0231 = 0;

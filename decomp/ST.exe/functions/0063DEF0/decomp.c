@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -13,18 +15,16 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   ushort *puVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   STTmMineC *local_c;
   uint local_8;
-  
+
   local_10 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pSVar2 = local_c;
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
@@ -60,9 +60,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   iVar4 = ReportDebugMessage(s_E____titans_nick_to_TmMin_cpp_007d209c,0x5d3,0,errorCode,
                              &DAT_007a4ccc,s_STTmMineC__LoadImagNuclear_007d20dc);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x5d5);
   return 0xffff;

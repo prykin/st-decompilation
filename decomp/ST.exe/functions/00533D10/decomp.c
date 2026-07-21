@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -18,21 +20,21 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   DWORD DVar9;
   uint uVar10;
   undefined4 *puVar11;
-  uint *extraout_EAX;
   LPSTR pCVar12;
   cMf32 *pcVar13;
   byte *pbVar14;
   undefined1 *puVar15;
   uint uVar16;
   void *pvVar17;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
   cMf32 *pcVar18;
   OptPanelTy *this_00;
-  undefined4 unaff_ESI;
   ushort *puVar19;
-  void *unaff_EDI;
   int *piVar20;
   char *pcVar21;
   undefined4 *puVar22;
@@ -74,28 +76,28 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   OptPanelTy *local_10;
   cMf32 *local_c;
   uint local_8;
-  
+
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_10 = this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_8c.previous;
     iVar30 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x7f4,0,iVar8,
                                 &DAT_007a4ccc,s_OptPanelTy__GetMessage_007c7334);
     if (iVar30 != 0) {
-      pcVar35 = (code *)swi(3);
-      uVar33 = (*pcVar35)();
-      return uVar33;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x7f4);
     return 0xffff;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x10) == 2) {
     PreInitOptPanel(local_10);
   }
   PanelTy::GetMessage((PanelTy *)this_00,param_1);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x10)) {
   case 0xc001:
   case 0xc003:
@@ -104,6 +106,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   case 0xc0a1:
   case 0xc0a2:
   case 0xc0a3:
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0xc0a4:
   case 0xc0a5:
   case 0xc0a6:
@@ -116,11 +119,13 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   case 0xc0ad:
   case 0xc0ae:
     if ((*(int *)(param_1 + 0x1c) != 0) &&
+       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
        ((uVar10 = *(uint *)(*(int *)(param_1 + 0x1c) + 4), uVar10 == 2 ||
         ((3 < uVar10 && (uVar10 < 6)))))) {
       thunk_FUN_005252c0(0xae);
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar10 = *(uint *)(param_1 + 0x10);
   if (uVar10 < 0xc007) {
     if (uVar10 == 0xc006) {
@@ -153,28 +158,36 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               ccFntTy::SetSurf(this_00->field_017C,this_00->field_01E5,0,0,0,0,0);
               if (this_00->field_01A4 == CASE_E) {
                 pDVar4 = this_00->field_02FD;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if ((uint)*(ushort *)(param_1 + 0x14) < pDVar4->count) {
+                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                   puVar28 = (uint *)(pDVar4->elementSize * (uint)*(ushort *)(param_1 + 0x14) +
                                     (int)pDVar4->data);
                 }
                 else {
                   puVar28 = (uint *)0x0;
                 }
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar10 = (uint)(*(short *)(param_1 + 0x16) == 0);
               }
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               else if ((int)(uint)*(ushort *)(param_1 + 0x14) < (int)this_00->field_01E9->field_0008
                       ) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 puVar28 = *(uint **)(this_00->field_01E9->field_0014 +
                                     (uint)*(ushort *)(param_1 + 0x14) * 4);
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar10 = (uint)(*(short *)(param_1 + 0x16) == 0);
               }
               else {
                 puVar28 = (uint *)0x0;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar10 = (uint)(*(short *)(param_1 + 0x16) == 0);
               }
               ccFntTy::WrStr(this_00->field_017C,puVar28,2,-1,uVar10);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               Library::DKW::WGR::FUN_006b55f0
-                        ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,
+                        ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,
                          *(ushort *)(param_1 + 0x18) + 0x26,*(ushort *)(param_1 + 0x1a) + 0x31,
                          (byte *)this_00->field_01E5,0,0,0,200,
                          *(int *)((byte *)this_00->field_01E5 + 8));
@@ -191,7 +204,9 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               }
               OVar2 = this_00->field_01A4;
               if (OVar2 == CASE_3) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (*(int *)(param_1 + 0x14) < (int)this_00->field_01E9->field_0008) {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   pcVar21 = *(char **)(this_00->field_01E9->field_0014 +
                                       *(int *)(param_1 + 0x14) * 4);
                 }
@@ -236,7 +251,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                 ccFntTy::WrStr(this_00->field_017C,puVar28,0,-1,0);
                 pbVar14 = (byte *)this_00->field_01E5;
                 Library::DKW::WGR::FUN_006b55f0
-                          ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,
+                          ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,
                            0,0,*(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
                 g_currentExceptionFrame = local_8c.previous;
                 return 0;
@@ -268,8 +283,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               iVar32 = -1;
               iVar30 = 0;
               if (iVar8 == 0) {
-                LoadResourceString(0x2711,HINSTANCE_00807618);
-                puVar28 = extraout_EAX;
+                puVar28 = (uint *)LoadResourceString(0x2711,HINSTANCE_00807618);
               }
               else {
                 puVar28 = &DAT_0080f33a;
@@ -277,7 +291,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               ccFntTy::WrStr(this_00->field_017C,puVar28,iVar30,iVar32,uVar33);
               pbVar14 = (byte *)this_00->field_01E5;
               Library::DKW::WGR::FUN_006b55f0
-                        ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,
+                        ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,
                          0,*(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
               g_currentExceptionFrame = local_8c.previous;
               return 0;
@@ -303,16 +317,19 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_18 = *(uint *)(param_1 + 0x1c);
             pcVar31 = this_00->field_017C;
             if (pcVar31->field_00A0 != 0) {
               FUN_00710790((uint *)pcVar31);
             }
             local_8 = *(uint *)&pcVar31->field_0x8a;
-            FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
+            FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
                          (DAT_0080874e != '\x03') - 1U & 0x73);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             uVar16 = (uint)*(ushort *)(param_1 + 0x16);
             uVar10 = uVar16;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((int)uVar16 < (int)(*(int *)(local_18 + 0x1e0) + uVar16)) {
               do {
                 if ((int)uVar10 < (int)this_00->field_02F9[2]) {
@@ -326,8 +343,10 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                                    (uVar10 - uVar16) * local_8 + 0x1b,0xca,local_8);
                   ccFntTy::WrStr(this_00->field_017C,local_1c,0,-1,0);
                 }
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar16 = (uint)*(ushort *)(param_1 + 0x16);
                 uVar10 = uVar10 + 1;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               } while ((int)uVar10 < (int)(*(int *)(local_18 + 0x1e0) + uVar16));
             }
             Library::DKW::DDX::FUN_006b3640
@@ -408,9 +427,11 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                 if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == '\x02')) {
                   _DAT_0080f32e = 1;
                   if (DAT_00808783 == '\x01') {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     _DAT_008087a0 = CONCAT31(_DAT_008087a1,9);
                   }
                   else if (DAT_00808783 == '\x02') {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     _DAT_008087a0 = CONCAT31(_DAT_008087a1,10);
                   }
                 }
@@ -495,6 +516,7 @@ LAB_00534016:
           }
           this_00->field_01A0 = 1;
           *(undefined4 *)(param_1 + 0x10) = 0xa101;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)PTR_00802a30)(param_1);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -506,6 +528,7 @@ LAB_00534016:
           }
           *(undefined4 *)(param_1 + 0x1c) = 0;
           *(uint *)(param_1 + 0x10) = (uVar10 != 0xa105) + 0xc09f;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)this_00->field_0000)(param_1);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -1185,11 +1208,13 @@ LAB_00534654:
         (*PTR_00802a38->vtable->GetMessage)(PTR_00802a38,(int)&this_00->field_0x18);
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)this_00->field_0000)(&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
       break;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
       DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 1;
       thunk_FUN_00568010(&g_sound,CASE_1);
@@ -1197,14 +1222,18 @@ LAB_00534654:
       return 0;
     case CASE_7:
       thunk_FUN_005713b0(0x807620);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar8 = **(int **)(param_1 + 0x14);
       if (iVar8 == 1) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         DAT_00807300._0_1_ = '\x01';
       }
       else if (iVar8 == 2) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         DAT_00807300._0_1_ = '\b';
       }
       else if (iVar8 == 3) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         DAT_00807300._0_1_ = '\x02';
       }
       switch((char)DAT_00807300) {
@@ -1214,7 +1243,7 @@ LAB_00534654:
       case '\x02':
         local_d0.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_d0;
-        iVar8 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar8 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0);
         if (iVar8 == 0) {
           if (g_sound == 0) {
             uVar10 = 0;
@@ -1250,7 +1279,7 @@ LAB_005350ba:
       case '\x04':
         local_224.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_224;
-        iVar8 = Library::MSVCRT::__setjmp3(local_224.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar8 = Library::MSVCRT::__setjmp3(local_224.jumpBuffer,0);
         if (iVar8 == 0) {
           if (g_sound == 0) {
             uVar10 = 0;
@@ -1293,6 +1322,7 @@ LAB_005350bc:
       thunk_FUN_00571320(&DAT_00807620,HWND_00856d78);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
       DAT_0080733b = 4 - **(char **)(param_1 + 0x14);
       if (DAT_0080877e == '\0') {
@@ -1351,6 +1381,7 @@ LAB_005350bc:
 switchD_00535190_caseD_3:
       this_00->field_0028 = 0xc0a1;
       this_00->field_0034 = 0;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)this_00->field_0000)(&this_00->field_0x18);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1392,11 +1423,13 @@ switchD_00535190_caseD_3:
         return 0;
       }
       break;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
       DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 2;
       thunk_FUN_00568010(&g_sound,CASE_2);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
       DAT_0080733a = '\x03' - **(char **)(param_1 + 0x14);
       g_currentExceptionFrame = local_8c.previous;
@@ -1445,6 +1478,7 @@ LAB_00535271:
         pcVar21 = (char *)0x0;
       }
       else {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pcVar21 = (char *)**(undefined4 **)(this_00->field_01F1 + 0x14);
       }
       uVar10 = 0xffffffff;
@@ -1556,6 +1590,7 @@ switchD_00534835_caseD_1:
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
       DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 4;
       thunk_FUN_00568010(&g_sound,CASE_4);
@@ -1585,6 +1620,7 @@ switchD_00534835_caseD_1:
       FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)&this_00->field_0x18);
       pDVar4 = this_00->field_02FD;
       if (*(uint *)&this_00->field_0x2c < pDVar4->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, *(uint *)&this_00->field_0x2c) (runtime stride) */
         pvVar17 = (void *)(pDVar4->elementSize * *(uint *)&this_00->field_0x2c + (int)pDVar4->data);
       }
       else {
@@ -1611,8 +1647,9 @@ switchD_00534835_caseD_1:
         }
         local_19c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_19c;
-        iVar8 = Library::MSVCRT::__setjmp3(local_19c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar8 = Library::MSVCRT::__setjmp3(local_19c.jumpBuffer,0);
         this_00 = local_10;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pcVar18 = extraout_ECX;
         pcVar13 = local_c;
         if (iVar8 == 0) {
@@ -1620,6 +1657,7 @@ switchD_00534835_caseD_1:
                                        (0x345,(byte *)&DAT_0080f33a,0,0,0);
           pDVar4 = this_00->field_02FD;
           if (*(uint *)&this_00->field_0x2c < pDVar4->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, *(uint *)&this_00->field_0x2c) (runtime stride) */
             pvVar17 = (void *)(pDVar4->elementSize * *(uint *)&this_00->field_0x2c +
                               (int)pDVar4->data);
           }
@@ -1629,6 +1667,7 @@ switchD_00534835_caseD_1:
           local_c = pcVar13;
           local_20 = LoadStrategData((int)pcVar13,(char *)((int)pvVar17 + 0x4c),(int *)&local_18);
           uVar10 = local_8;
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           pcVar18 = extraout_ECX_00;
           if (local_20 != (ushort *)0x0) {
             local_14 = Library::DKW::LIB::FUN_006aac10(local_18 + local_8 * 2);
@@ -1649,6 +1688,7 @@ switchD_00534835_caseD_1:
             }
             thunk_FUN_0054edf0((undefined4 *)0x32,local_14,1,local_18 + local_8 * 2);
             local_1c = (uint *)0x1;
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             pcVar18 = extraout_ECX_01;
             pcVar13 = local_c;
           }
@@ -1677,6 +1717,7 @@ switchD_00534835_caseD_1:
       if (local_1c != (uint *)0x0) {
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)this_00->field_0000)(&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1752,6 +1793,7 @@ switchD_00534835_caseD_1:
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
       DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 8;
       thunk_FUN_00568010(&g_sound,CASE_8);
@@ -1759,6 +1801,7 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_8:
       g_currentExceptionFrame = local_8c.previous;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DAT_00807349 = **(char **)(param_1 + 0x14) + -1;
       return 0;
     case CASE_9:
@@ -1766,6 +1809,7 @@ switchD_00534835_caseD_1:
       thunk_FUN_00440700((uint)(byte)DAT_00807326);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_D:
       DAT_00807346 = (*(char *)(param_1 + 0x14) + '\x01') * '\x05';
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
@@ -1800,9 +1844,11 @@ switchD_00534835_caseD_1:
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_6:
       DAT_0080730e = (uint)(*(int *)(param_1 + 0x14) * 4000) / 0x1e - 4000;
       thunk_FUN_005682c0(&g_sound,DAT_0080730e);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       PaintVolume(this_00,0,*(byte *)(param_1 + 0x14));
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1827,12 +1873,14 @@ switchD_00534835_caseD_1:
           else {
             iVar8 = (PTR_0080765c->field_0094 - PTR_0080765c->field_0090) + 1;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_8 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           DAT_00807300._2_2_ = (undefined2)local_8;
           uRam00807304 = (undefined2)(local_8 >> 0x10);
           local_158.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_158;
-          iVar8 = Library::MSVCRT::__setjmp3(local_158.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar8 = Library::MSVCRT::__setjmp3(local_158.jumpBuffer,0);
           pIVar6 = local_158.previous;
           if (iVar8 == 0) {
             if (g_sound == 0) {
@@ -1849,6 +1897,7 @@ switchD_00534835_caseD_1:
           }
 LAB_00535ef1:
           g_currentExceptionFrame = pIVar6;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           PaintVolume(local_10,0,*(byte *)(param_1 + 0x14));
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -1874,11 +1923,12 @@ LAB_00535ef1:
           else {
             iVar8 = (PTR_0080765c->field_007C - PTR_0080765c->field_0078) + 1;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           _DAT_00807306 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
           local_114.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_114;
           local_8 = _DAT_00807306;
-          iVar8 = Library::MSVCRT::__setjmp3(local_114.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar8 = Library::MSVCRT::__setjmp3(local_114.jumpBuffer,0);
           pIVar6 = local_114.previous;
           if (iVar8 == 0) {
             if (g_sound == 0) {
@@ -1897,8 +1947,10 @@ LAB_00535ef1:
         }
       }
       else if ((char)DAT_00807300 == '\b') {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         DAT_0080730a = (uint)(*(int *)(param_1 + 0x14) * 4000) / 0x1e - 4000;
         thunk_FUN_005686c0(&g_sound,DAT_0080730a);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         PaintVolume(this_00,0,*(byte *)(param_1 + 0x14));
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1914,6 +1966,7 @@ LAB_00535ef1:
       FUN_006ddbb0((int)PTR_00807598);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_D:
       DAT_00807347 = *(byte *)(param_1 + 0x14);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x81,'\x01',
@@ -1974,11 +2027,12 @@ LAB_00535ef1:
         else {
           iVar8 = (PTR_0080765c->field_0064 - PTR_0080765c->field_0060) + 1;
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         _DAT_00807312 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
         local_1e0.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_1e0;
         local_8 = _DAT_00807312;
-        iVar8 = Library::MSVCRT::__setjmp3(local_1e0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar8 = Library::MSVCRT::__setjmp3(local_1e0.jumpBuffer,0);
         if (iVar8 == 0) {
           if (g_sound == 0) {
             uVar10 = 0;
@@ -1991,6 +2045,7 @@ LAB_00535ef1:
           }
         }
         g_currentExceptionFrame = local_1e0.previous;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         PaintVolume(local_10,2,*(byte *)(param_1 + 0x14));
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2018,11 +2073,12 @@ LAB_00535ef1:
         else {
           iVar8 = (PTR_0080765c->field_004C - PTR_0080765c->field_0048) + 1;
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         _DAT_00807316 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
         local_268.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_268;
         local_8 = _DAT_00807316;
-        iVar8 = Library::MSVCRT::__setjmp3(local_268.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar8 = Library::MSVCRT::__setjmp3(local_268.jumpBuffer,0);
         if (iVar8 == 0) {
           if (g_sound == 0) {
             uVar10 = 0;
@@ -2035,6 +2091,7 @@ LAB_00535ef1:
           }
         }
         g_currentExceptionFrame = local_268.previous;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         PaintVolume(local_10,3,*(byte *)(param_1 + 0x14));
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2093,6 +2150,7 @@ LAB_00535ef1:
         UVar34 = 0x3efc;
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_7:
       iVar8 = **(int **)(param_1 + 0x14);
       if (iVar8 == 1) {
@@ -2151,6 +2209,7 @@ LAB_00535ef1:
         }
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
       iVar8 = **(int **)(param_1 + 0x14);
       if (iVar8 == 1) {
@@ -2232,6 +2291,7 @@ cf_common_exit_00536441:
         UVar34 = 0x3ef4;
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_D:
       iVar8 = **(int **)(param_1 + 0x14);
       if (iVar8 == 1) {
@@ -2351,16 +2411,20 @@ cf_common_exit_00536EE8:
         puVar11 = (undefined4 *)((int)puVar11 + 1);
       }
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_01E5,0,0,0,0,0);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       ccFntTy::WrStr(this_00->field_017C,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,0);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = *(ushort *)(param_1 + 0x18);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((uVar3 != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01E5,0,(uint)uVar3,
                      (uint)*(ushort *)(param_1 + 0x1a),(uint)uVar3,*(ushort *)(param_1 + 0x1a) + 10,
                      0x6c,0xd);
       }
       pbVar14 = (byte *)this_00->field_01E5;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,0,
+                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,0,
                  *(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
       Library::DKW::DDX::FUN_006b3640
                 (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
@@ -2389,6 +2453,7 @@ cf_common_exit_00536EE8:
         UVar34 = 0x3efd;
       }
       goto cf_common_exit_00536EE8;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
       iVar8 = **(int **)(param_1 + 0x14);
       if (iVar8 == 1) {
@@ -2514,6 +2579,7 @@ cf_common_exit_00536DB5:
         UVar34 = 0x3efe;
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
       if (**(int **)(param_1 + 0x14) == 1) {
         if (DAT_0080874e == '\x03') {
@@ -2529,6 +2595,7 @@ cf_common_exit_00536DB5:
         }
       }
       else {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (**(int **)(param_1 + 0x14) != 2) {
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -2642,8 +2709,10 @@ cf_common_exit_00536DB5:
         UVar34 = 0x3eff;
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
       if (**(int **)(param_1 + 0x14) != 1) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (**(int **)(param_1 + 0x14) != 2) {
           g_currentExceptionFrame = local_8c.previous;
           return 0;

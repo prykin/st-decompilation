@@ -4,8 +4,9 @@ void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
 {
   int *this;
   int iVar1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  
+
   if (param_1->field_04D4 != 0) {
     return;
   }
@@ -13,6 +14,7 @@ void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
   if (this == (int *)0x0) {
     return;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*this + 0x2c))();
   param_1->field_04DC = iVar1;
   switch(param_1->field_05AC) {
@@ -44,6 +46,7 @@ cf_common_exit_004E02E4:
       }
     }
     else {
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::_ChangeMD
                 (g_sTAllPlayers_007FA174,1,(int *)param_1->field_0024,
                  CONCAT22(extraout_var,param_1->field_0032));

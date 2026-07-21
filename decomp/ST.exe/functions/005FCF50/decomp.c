@@ -12,7 +12,7 @@ FUN_005fcf50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
-  
+
   *param_4 = 0;
   *param_5 = '\0';
   *param_6 = 0x1d;

@@ -11,7 +11,7 @@ FUN_006e6710(void *this,undefined4 param_1,undefined4 param_2,uint param_3,undef
 {
   undefined4 *puVar1;
   longlong lVar2;
-  
+
   puVar1 = *(undefined4 **)((int)this + 0x44e);
   do {
     if (puVar1 == (undefined4 *)0x0) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -13,28 +15,23 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   STGameObjC *pSVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 extraout_EDX;
-  undefined4 unaff_ESI;
   uint index;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (errorCode == 0) {
     index = 0;
     if (param_1->count != 0) {
       do {
         DArrayGetElement(param_1,index,&local_8);
-        pSVar3 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,
-                            CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8,
-                            CASE_1);
+        pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1)
+        ;
         *(undefined4 *)&pSVar3->field_0xfd = 0;
         index = index + 1;
       } while (index < param_1->count);
@@ -47,9 +44,7 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e,0,errorCode,&DAT_007a4ccc,
                              s_STGroupBoatC__InitWay_007abe60);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6f);
   return 0xffffffff;

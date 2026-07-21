@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_0063cb30(AnonShape_0063CB30_3EF2BD1B *param_1)
   uint uVar1;
   int iVar2;
   uint uVar3;
-  
+
   if ((int)param_1->field_0266 < 0) {
     param_1->field_0266 = 0;
     return 2;

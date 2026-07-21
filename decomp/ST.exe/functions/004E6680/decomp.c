@@ -12,7 +12,7 @@ void FUN_004e6680(int param_1)
   byte *pbVar8;
   int iVar9;
   int local_8;
-  
+
   uVar2 = GetPlayerRaceId((char)param_1);
   local_8 = 0x42;
   iVar3 = (uVar2 & 0xff) - 1;

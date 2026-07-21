@@ -9,17 +9,15 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
   uint *puVar4;
   DWORD DVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   void *local_8;
-  
+
   if (((*(int *)((int)this + 0xf8b) != 0) && (param_2 != (char *)0x0)) && (param_1 != (cMf32 *)0x0))
   {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar3 == 0) {
       if ((*(uint *)(*(int *)(param_1->field_0000 + 4) + 8) & 0x100000) == 0) {
         puVar4 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(param_1,param_2,0,(ushort *)0x0);
@@ -30,6 +28,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
       pvVar2 = local_8;
       if (puVar4 != (uint *)0x0) {
         if (param_3 < 1) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar3 = *(int *)((int)local_8 + 0xe07);
           uVar1 = param_1->field_0000;
           if (iVar3 < 0) {

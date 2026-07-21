@@ -8,7 +8,7 @@ undefined4 __cdecl FUN_007195b0(DWORD_PTR dwParam2)
   MCIDEVICEID mciId;
   DWORD_PTR DVar1;
   MCIERROR mcierr;
-  
+
   DVar1 = dwParam2;
   mciId = *(MCIDEVICEID *)dwParam2;
   if (mciId == 0) {

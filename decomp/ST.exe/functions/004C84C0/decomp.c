@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_bproc.cpp
    Diagnostic line evidence: 415 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_69=105;CASE_70=112;CASE_72=114
@@ -20,7 +22,6 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
   int iVar6;
   undefined4 uVar7;
   int iVar8;
-  undefined3 extraout_var;
   uint uVar9;
   uint uVar10;
   undefined4 *puVar11;
@@ -29,7 +30,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if (param_1->field_0361 == 0) {
     if (*(int *)&param_1->field_0x3d4 == 0) {
       return 0;
@@ -42,8 +43,8 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     if (iVar6 == 0) {
       return 0;
     }
-    bVar5 = thunk_FUN_004c7c20((int)param_1);
-    if (CONCAT31(extraout_var,bVar5) == 0) {
+    iVar6 = thunk_FUN_004c7c20((int)param_1);
+    if (iVar6 == 0) {
       return 0;
     }
     piVar3 = (int *)param_1->field_0607;
@@ -81,9 +82,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
       if ((iVar6 == 0) &&
          (iVar6 = ReportDebugMessage(s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x19f,0,0,
                                      &DAT_007a4ccc,s_What_s_that___007ad3dc), iVar6 != 0)) {
-        pcVar4 = (code *)swi(3);
-        uVar7 = (*pcVar4)();
-        return uVar7;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       *(undefined4 *)&param_1->field_0x36d = 0;
       thunk_FUN_004c7460((AnonShape_004C7460_AC9F4C4C *)param_1);
@@ -136,6 +135,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
       thunk_FUN_004d7e50(param_1->field_0x24,*(int *)(&DAT_00794d70 + param_1->field_0361 * 4),
                          *(int *)&param_1->field_0x18,iVar6);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
       thunk_FUN_004d8b70((char)*(uint *)&param_1->field_0x24);
     }
@@ -226,6 +226,7 @@ LAB_004c8bf2:
     if (100 < *(int *)&param_1->field_0x394) {
       *(undefined4 *)&param_1->field_0x394 = 100;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
       thunk_FUN_004d8b70((char)*(uint *)&param_1->field_0x24);
       return 0;

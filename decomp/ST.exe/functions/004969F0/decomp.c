@@ -1,10 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00496CC0 -> 004969F0 @ 00496D38 | 00496CC0 -> 004969F0 @ 00496D81
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00496CC0 -> 004969F0 @ 00496D38 | 00496CC0 -> 004969F0 @ 00496D81
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00496CC0 -> 004969F0 @ 00496D38 | 00496CC0 -> 004969F0 @ 00496D81 */
 
@@ -19,9 +19,10 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
   int local_10;
   uint local_c;
   undefined4 local_8;
-  
+
   if (-1 < (int)param_7) {
     if (param_7 < PTR_007fb270->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, param_7) (runtime stride) */
       piVar1 = (int *)(PTR_007fb270->elementSize * param_7 + (int)PTR_007fb270->data);
     }
     else {

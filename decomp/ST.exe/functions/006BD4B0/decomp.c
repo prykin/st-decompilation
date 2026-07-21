@@ -5,7 +5,7 @@ void FUN_006bd4b0(void)
 
 {
   int iVar1;
-  
+
   if (((*DAT_00854f44 & 0x80004) == 0x80004) &&
      ((undefined8 *)DAT_00854f44[0x30] != (undefined8 *)0x0)) {
     FUN_006cea60((undefined8 *)DAT_00854f44[0x30],DAT_00854f44[3],

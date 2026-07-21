@@ -9,6 +9,7 @@ void __fastcall FUN_005e9a40(AnonShape_005E9970_7C1AA6F1 *param_1)
     param_1->field_0025 = PTR_0081176c->field_0389;
     param_1->field_002D = 0x20;
     param_1->field_0031 = 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
   if (PTR_0081176c->field_054C != 0) {

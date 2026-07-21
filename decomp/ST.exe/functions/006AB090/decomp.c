@@ -51,7 +51,7 @@ FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int
   uint local_10;
   int local_c;
   ushort *local_8;
-  
+
   local_c = param_2 * param_3;
   local_4c = 0;
   *(undefined2 *)(param_1 + (param_2 * param_6 + param_5 + local_c * param_7) * 2) = 1;

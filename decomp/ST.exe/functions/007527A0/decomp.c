@@ -25,7 +25,7 @@ FUN_007527a0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,char p
   byte *pbVar16;
   byte *local_1c;
   int local_c;
-  
+
   if (param_2 == 0) {
     param_2 = FUN_006b4fa0((int)param_1);
   }
@@ -114,12 +114,15 @@ FUN_007527a0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,char p
       iVar11 = 0;
       if (0 < iVar2) {
         do {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_1._3_1_ = (byte)(0x80 >> ((byte)local_c & 7));
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((char)*param_5 != param_4) || ((*local_1c & param_1._3_1_) != 0)) {
             if (iVar11 < iVar2) {
               pcVar6 = (char *)(param_2 + local_c);
               iVar14 = iVar2 + -1;
               for (pbVar7 = (byte *)(iVar14 * iVar15 + iVar8 + (int)puVar3);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   ((iVar11 < iVar14 && (*pcVar6 == param_4)) && ((param_1._3_1_ & *pbVar7) == 0));
                   pbVar7 = pbVar7 + -iVar15) {
                 pcVar6 = pcVar6 + uVar13;

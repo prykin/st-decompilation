@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_0069acc0(void *this,int param_1,int param_2,int param_
   int iVar4;
   undefined4 local_c;
   uint local_8;
-  
+
   iVar4 = param_2 / 2;
   iVar3 = param_1 / 2;
   iVar1 = thunk_FUN_006a1370(*(int **)((int)this + 8),iVar3,iVar4,param_3,&local_c);

@@ -26,9 +26,7 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   char *pcVar12;
   uint uVar13;
   uint uVar14;
-  undefined4 unaff_ESI;
   float *pfVar15;
-  void *unaff_EDI;
   float *pfVar16;
   bool bVar17;
   float10 fVar18;
@@ -64,12 +62,12 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   char *local_10;
   int *local_c;
   float *local_8;
-  
+
   local_8 = (float *)0x0;
   local_1c = (undefined4 *)0x0;
   local_c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c0;
-  iVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_c0.previous;
     if (local_1c != (undefined4 *)0x0) {
@@ -114,7 +112,9 @@ switchD_0064aa67_caseD_1:
       sVar4 = *(short *)(local_10 + 1);
       if ((sVar4 == 1) && ((*param_1 == '\x06' || (*param_1 == '\x03')))) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pcVar12 = (char *)(**(code **)(*local_38 + 8))(param_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           local_18 = pbVar7;
           if ((pcVar12 == (char *)0x0) || (pbVar7 == (byte *)0x0)) {
@@ -209,7 +209,9 @@ cf_common_exit_0064BBB1:
       case '\x04':
         cVar3 = param_1[5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar8 = (**(code **)*local_38)(param_1 + 5);
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           switch(*(undefined2 *)(local_10 + 1)) {
@@ -253,8 +255,10 @@ cf_common_exit_0064BBB1:
           }
           goto cf_error_exit_0064B714;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_18 = (byte *)(**(code **)*local_38)(param_1);
         local_c = (int *)(float)(int)local_18;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
         local_14 = (float)fVar18;
         local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -293,8 +297,10 @@ cf_common_exit_0064BBB1:
             }
             goto cf_error_exit_0064B714;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
           local_c = (int *)(float)fVar18;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_14 = (float)fVar18;
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -321,8 +327,10 @@ cf_common_exit_0064BBB1:
           }
           break;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
         local_c = (int *)(float)fVar18;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
         local_14 = (float)(int)local_18;
         local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -391,7 +399,9 @@ switchD_0064aa67_caseD_3:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar8 = (**(code **)*local_38)(param_1 + 5);
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           sVar4 = *(short *)(local_10 + 1);
@@ -447,7 +457,9 @@ LAB_0064ae25:
         goto cf_error_exit_0064C2A4;
       }
       if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064ae25;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar13 = (**(code **)*local_38)(param_1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar14 = (**(code **)*local_38)(param_1 + 5);
       local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       sVar4 = *(short *)(local_10 + 1);
@@ -475,6 +487,7 @@ cf_error_exit_0064B368:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar13 = (**(code **)*local_38)(param_1);
         *local_8 = (float)~uVar13;
         goto cf_common_exit_0064B36F;
@@ -486,23 +499,27 @@ cf_error_exit_0064B368:
                   (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_erc_cpp_007d2a04,0x171);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (**(code **)*local_38)(param_1);
         iVar5 = 2 - (uint)(iVar5 != 0);
         pcVar12 = param_1 + iVar5 * 5;
         cVar3 = param_1[iVar5 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar9 = (float)(**(code **)*local_38)(pcVar12);
           *local_8 = fVar9;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(pcVar12);
           *local_8 = (float)fVar18;
           goto cf_common_exit_0064B291;
         }
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pcVar12 = (char *)(**(code **)(*local_38 + 8))(pcVar12);
           if (pcVar12 == (char *)0x0) {
             RaiseInternalException
@@ -563,7 +580,9 @@ cf_error_exit_0064B368:
       cVar3 = *param_1;
       if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar8 = (**(code **)*local_38)(param_1 + 5);
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           switch(*(undefined2 *)(local_10 + 1)) {
@@ -593,8 +612,10 @@ cf_error_exit_0064B368:
       }
       if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
         if ((param_1[5] == '\x05') || (param_1[5] == '\x02')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
           local_20 = (float)fVar18;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_24 = (float)fVar18;
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -644,7 +665,9 @@ cf_error_exit_0064B368:
       }
       if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pbVar6 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           if ((pbVar7 == (byte *)0x0) || (pbVar6 == (byte *)0x0)) {
             RaiseInternalException
@@ -710,6 +733,7 @@ LAB_0064ab59:
         goto cf_error_exit_0064C2A4;
       }
       local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)*local_38)(param_1);
       *local_8 = (float)(uint)(iVar5 == 0);
       goto cf_common_exit_0064B36F;
@@ -733,6 +757,7 @@ LAB_0064b80a:
                       (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_erc_cpp_007d2a04,399);
           }
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar7 == (byte *)0x0) {
               RaiseInternalException
@@ -761,6 +786,7 @@ LAB_0064b80a:
               iVar5 = -0x78;
               goto cf_error_exit_0064C2A4;
             }
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar7 == (byte *)0x0) {
               RaiseInternalException
@@ -781,7 +807,9 @@ LAB_0064b80a:
           }
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               iVar5 = (**(code **)*local_38)(param_1);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               iVar8 = (**(code **)*local_38)(param_1 + 5);
               if (iVar8 < 2) {
                 iVar8 = 2;
@@ -815,11 +843,13 @@ LAB_0064b80a:
             cVar3 = *param_1;
             local_c = (int *)0x0;
             if (cVar3 == '\x04') {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0064b8f1:
               local_18 = (byte *)(**(code **)*local_38)(param_1);
               local_c = (int *)(float)(int)local_18;
 LAB_0064b901:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 local_c = (int *)(float)fVar18;
               }
@@ -854,12 +884,14 @@ LAB_0064b901:
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
           *local_8 = (float)-iVar5;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
           *local_8 = (float)-fVar18;
           goto cf_common_exit_0064B36F;
@@ -879,10 +911,12 @@ LAB_0064b901:
             cVar3 = *param_1;
             local_c = (int *)0x0;
             if (cVar3 == '\x04') {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0064b659:
               local_c = (int *)(**(code **)*local_38)(param_1);
 LAB_0064b663:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 Library::MSVCRT::FUN_00730450
                           (SUB84((double)fVar18,0),(uint)((ulonglong)(double)fVar18 >> 0x20));
@@ -920,8 +954,10 @@ LAB_0064b663:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
         local_18 = (byte *)(float)fVar18;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (**(code **)*local_38)(param_1 + 5);
         if (iVar5 < 2) {
           iVar5 = 2;
@@ -952,6 +988,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_erc_cpp_007d2a04,0x1ca);
     }
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_18 = (byte *)(**(code **)*local_38)(param_1);
       local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       *local_8 = (float)(int)local_18;
@@ -970,6 +1007,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_erc_cpp_007d2a04,0x1d8);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar18;
       local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -993,6 +1031,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_erc_cpp_007d2a04,0x1e6);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar18;
       local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -1017,6 +1056,7 @@ LAB_0064bd33:
       local_38[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_18 = (byte *)(**(code **)(*local_38 + 8))(param_1);
     if (local_18 == (byte *)0x0) {
       RaiseInternalException
@@ -1043,6 +1083,7 @@ LAB_0064bd33:
       do {
         cVar3 = (char)*local_c;
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pcVar10 = (char *)(**(code **)(*local_38 + 8))(local_c);
           local_78 = pcVar10;
           if (pcVar10 == (char *)0x0) {
@@ -1070,6 +1111,7 @@ LAB_0064bd33:
           pcVar12 = local_28;
         }
         else if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar11 = (**(code **)*local_38)(local_c);
           local_7c = uVar11;
           if ((int)pcVar12 <= local_2c) {
@@ -1085,6 +1127,7 @@ LAB_0064bd33:
           local_20 = (float)((int)local_20 + 0xc);
         }
         else if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(local_c);
           local_34 = (float)fVar18;
           if ((int)pcVar12 <= (int)local_24) {
@@ -1132,6 +1175,7 @@ LAB_0064bd33:
       local_c = &local_74;
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
           *local_c = iVar5;
         }
@@ -1166,6 +1210,7 @@ LAB_0064bd33:
       local_c = &local_50;
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
           *local_c = iVar5;
         }

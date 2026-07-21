@@ -7,7 +7,7 @@ void FUN_004ab650(void)
   float fVar1;
   longlong lVar2;
   float local_8;
-  
+
   fVar1 = ((float)DAT_00807461 * *(float *)(&DAT_007ac584 + (uint)DAT_0080733a * 4) * _DAT_0079078c)
           / _DAT_008073f8;
   local_8 = (_DAT_008073f0 - _DAT_008073e8) * fVar1 + DAT_008073d0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -13,8 +15,6 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   DArrayTy *array;
   int iVar3;
   undefined4 uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint index;
   InternalExceptionFrame local_54;
   STGroupBoatC *local_10;
@@ -22,11 +22,11 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   undefined2 local_a;
   char local_8 [2];
   short local_6;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 == 0) {
     if (local_10->field_0212 == 0) {
@@ -40,6 +40,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
                  0x50b);
     }
     index = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)(this_00->field_020E + 0xc);
     if (0 < iVar2) {
       do {
@@ -67,9 +68,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
         RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51d);
         return 0xffffffff;
       }
-      pcVar1 = (code *)swi(3);
-      uVar4 = (*pcVar1)();
-      return uVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   return this_00->field_0212;

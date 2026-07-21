@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -21,7 +23,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   short local_10;
   int local_e;
   int local_a;
-  
+
   if ((DArrayTy *)this->field_022A == (DArrayTy *)0x0) {
     return 1;
   }
@@ -53,9 +55,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             if (iVar2 == 0) {
               return 0;
             }
-            pcVar1 = (code *)swi(3);
-            uVar3 = (*pcVar1)();
-            return uVar3;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           if (local_22 <= local_1e) {
             if (this->field_023E == 0) {

@@ -38,7 +38,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790550;
   puStack_10 = &LAB_0072d964;

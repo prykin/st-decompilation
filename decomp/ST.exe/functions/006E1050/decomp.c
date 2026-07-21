@@ -18,7 +18,7 @@ void __fastcall FUN_006e1050(AnonShape_006E1050_52F5A113 *param_1)
   undefined4 local_10;
   int local_c;
   int local_8;
-  
+
   dVar1 = param_1->field_00D8 * param_1->field_00C8 * _DAT_0079df60 + _DAT_007901c0;
   Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   lVar6 = Library::MSVCRT::__ftol();

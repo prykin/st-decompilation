@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
@@ -13,13 +15,11 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
   int iVar4;
   DArrayTy *array;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar4 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar5 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x101,0,iVar4,&DAT_007a4ccc,
@@ -28,14 +28,13 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
       RaiseInternalException(iVar4,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x102);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 == (int *)0x0) {
     g_currentExceptionFrame = local_48.previous;
     return;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((iVar4 < 1) || (0x28 < iVar4)) {
     bVar2 = false;

@@ -8,7 +8,7 @@ void FUN_0075e000(AnonShape_0075E000_A9FEDC0C *param_1,undefined4 param_2,int *p
   uint uVar3;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   pAVar1 = param_1->field_01B2;
   if (pAVar1->field_0024 == 0) {
     uVar3 = 2;
@@ -27,6 +27,7 @@ void FUN_0075e000(AnonShape_0075E000_A9FEDC0C *param_1,undefined4 param_2,int *p
     else {
       local_8 = *(undefined4 *)(param_5 + 4 + iVar2 * 4);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)pAVar1->field_000C)(param_1,param_2,*param_3,&local_c);
   }
   else {

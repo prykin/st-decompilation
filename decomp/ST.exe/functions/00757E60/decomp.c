@@ -5,7 +5,8 @@ void FUN_00757e60(AnonShape_00759190_45B6ED67 *param_1)
   undefined4 *puVar1;
   int iVar2;
   int iVar3;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(*(code *)**(undefined4 **)param_1)(param_1,0,0x60);
   param_1->field_01A6 = (int)puVar1;
   *puVar1 = FUN_00759190;

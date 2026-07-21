@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
@@ -12,8 +14,6 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   int iVar4;
   byte *pbVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar7;
   AnonShape_006B5B10_E0D06CF1 *pAVar8;
   int iVar9;
@@ -29,7 +29,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   int local_10;
   char *local_c;
   uint local_8;
-  
+
   if (param_1 == 0) {
     local_c = &this->field_0C51;
   }
@@ -42,12 +42,13 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   else {
     cVar3 = (DAT_0080874e == '\x03') + '\x02';
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_8 = CONCAT31(local_8._1_3_,cVar3);
   if (*local_c != '\0') {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
     local_1c = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
     pCVar2 = local_1c;
     if (iVar4 == 0) {
       local_2c = -0x16 - (int)local_c;
@@ -114,9 +115,7 @@ LAB_00500689:
     iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1da,0,iVar4,&DAT_007a4ccc
                                ,s_CPanelTy__PaintDeep_007c24d4);
     if (iVar9 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1da);
   }

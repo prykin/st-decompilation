@@ -5,10 +5,11 @@ void FUN_006b2330(uint param_1,uint *param_2,uint param_3,uint param_4,uint para
 {
   uint *puVar1;
   int iVar2;
-  
+
   iVar2 = Library::DKW::DDX::FUN_006b1d50
                     (param_1,param_2,param_3,0,(int *)0x0,0,0xffffffff,0xffffffff,0,1);
   if (iVar2 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     puVar1 = *(uint **)(*(int *)(param_1 + 0x1b0) + *param_2 * 4);
     puVar1[0xe] = param_5;
     puVar1[0xc] = param_5;

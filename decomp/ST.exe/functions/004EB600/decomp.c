@@ -7,7 +7,7 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
   int iVar3;
   short *psVar4;
   short *psVar5;
-  
+
   param_1[0] = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -34,6 +34,7 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
         }
         iVar2 = iVar3 + 8;
         psVar4 = psVar5 + 2;
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         psVar5[1] = *(short *)(iVar3 + 0x7f57c2 + *(int *)((int)this + 0x24) * 0xa62);
         param_1 = (short *)((int)param_1 + -1);
         iVar3 = iVar2;

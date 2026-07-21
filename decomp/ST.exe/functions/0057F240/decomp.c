@@ -3,7 +3,7 @@ undefined1 FUN_0057f240(int param_1,int param_2)
 
 {
   bool bVar1;
-  
+
   bVar1 = false;
   if (param_1 == 0xdd) {
     if (param_2 < 0x1389) {

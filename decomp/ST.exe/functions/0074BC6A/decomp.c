@@ -6,7 +6,7 @@ LPVOID FUN_0074bc6a(undefined4 *param_1)
 
 {
   AnonShape_0074BC89_92881050 *pAVar1;
-  
+
   pAVar1 = CoTaskMemAlloc(0x48);
   if (pAVar1 != (AnonShape_0074BC89_92881050 *)0x0) {
     FUN_0074bc89(pAVar1,param_1);

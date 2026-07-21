@@ -19,7 +19,7 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if (DAT_007f4d20 <= *(int *)(&DAT_007a4c20 + param_5 * 8)) {
     iVar2 = thunk_FUN_0040fc40(param_1,param_2,param_3,param_4,param_5,0);
     return iVar2;

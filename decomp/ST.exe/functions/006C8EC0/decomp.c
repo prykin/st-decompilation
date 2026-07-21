@@ -60,7 +60,7 @@ FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,und
   int local_34;
   short local_18;
   uint local_10;
-  
+
   psVar12 = param_8;
   if ((((int)param_8 < 0) || (param_9 < 0)) || (param_10 < 0)) {
     uVar16 = FUN_006ab090(param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7,(int)param_8,
@@ -134,6 +134,7 @@ LAB_006c8f65:
     param_4[local_48 + 1] = psVar37;
     local_4c[4] = (short)(param_5 - (int)psVar12);
     local_4c[5] = local_18;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_8._0_2_ = (short)uVar41;
     local_4c[7] = (short)local_48;
     local_4c[6] = (short)param_8;
@@ -280,6 +281,7 @@ cf_continue_loop_006C9187:
           param_4[iVar35 + iVar24 + 3] = psVar38;
           psVar38[2] = sVar4 + -1;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar38[5] = (undefined2)param_3;
           psVar38[3] = sVar5;
@@ -301,6 +303,7 @@ cf_continue_loop_006C9187:
           param_4[iVar35 + iVar24 + 3] = psVar37;
           psVar37[2] = sVar4 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[3] = sVar5;
@@ -324,6 +327,7 @@ cf_continue_loop_006C9187:
             param_4[iVar35 + iVar24 + 3] = psVar38;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[2] = sVar4;
@@ -344,6 +348,7 @@ cf_continue_loop_006C9187:
           param_4[iVar35 + iVar24 + 3] = psVar37;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[2] = sVar4;
@@ -405,6 +410,7 @@ cf_continue_loop_006C9187:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -427,6 +433,7 @@ cf_continue_loop_006C9187:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -450,6 +457,7 @@ cf_continue_loop_006C9187:
               psVar38[3] = sVar5 + -1;
               psVar38[2] = sVar4;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -472,6 +480,7 @@ cf_continue_loop_006C9187:
             psVar37[3] = sVar5 + 1;
             psVar37[2] = sVar4;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -503,6 +512,7 @@ cf_continue_loop_006C9187:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -525,6 +535,7 @@ cf_continue_loop_006C9187:
             psVar30[2] = sVar4 + 1;
             psVar30[3] = sVar5;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -548,6 +559,7 @@ cf_continue_loop_006C9187:
               psVar38[3] = sVar5 + -1;
               psVar38[2] = sVar4;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -570,6 +582,7 @@ cf_continue_loop_006C9187:
             psVar30[3] = sVar5 + 1;
             psVar30[2] = sVar4;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -602,6 +615,7 @@ cf_continue_loop_006C9187:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)GVar31;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -621,6 +635,7 @@ cf_continue_loop_006C9187:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + -1;
             psVar37[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)(GVar33 + 4);
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -678,6 +693,7 @@ cf_continue_loop_006C9187:
           psVar37[2] = sVar4 + 1;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)GVar33;
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 4;
@@ -715,6 +731,7 @@ cf_continue_loop_006C9187:
               psVar38[3] = sVar5 + -1;
               psVar38[6] = uVar39;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar38[5] = (undefined2)param_3;
             }
@@ -769,6 +786,7 @@ cf_continue_loop_006C9187:
             psVar38[3] = sVar5 + 1;
             psVar38[6] = uVar39;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar27;
             psVar38[5] = (undefined2)param_3;
           }
@@ -797,6 +815,7 @@ cf_continue_loop_006C9187:
             psVar37[3] = sVar5 + 1;
             psVar37[6] = uVar39;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)param_5;
             psVar37[5] = (undefined2)param_3;
           }
@@ -832,6 +851,7 @@ cf_continue_loop_006C9187:
               psVar38[3] = sVar5 + -1;
               psVar38[6] = uVar39;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar38[5] = (undefined2)param_3;
             }
@@ -886,6 +906,7 @@ cf_continue_loop_006C9187:
             psVar30[3] = sVar5 + 1;
             psVar30[6] = uVar39;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar27;
             psVar30[5] = (undefined2)param_3;
           }
@@ -915,6 +936,7 @@ LAB_006ce57c:
             *(undefined4 *)psVar37 = param_4[param_1 + iVar24 + 5];
             param_4[param_1 + iVar24 + 5] = psVar37;
             psVar37[2] = sVar4 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)param_1;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + -1;
@@ -940,6 +962,7 @@ LAB_006ce57c:
           param_4[iVar35 + iVar24 + 3] = psVar38;
           psVar38[2] = sVar4 + -1;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar38[5] = (undefined2)param_3;
           psVar38[3] = sVar5;
@@ -959,6 +982,7 @@ LAB_006ce57c:
           param_4[iVar35 + iVar24 + 3] = psVar37;
           psVar37[2] = sVar4 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[3] = sVar5;
@@ -982,6 +1006,7 @@ LAB_006ce57c:
             param_4[iVar35 + iVar24 + 3] = psVar38;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[2] = sVar4;
@@ -1002,6 +1027,7 @@ LAB_006ce57c:
           param_4[iVar35 + iVar24 + 3] = psVar37;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[2] = sVar4;
@@ -1055,6 +1081,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -1076,6 +1103,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -1099,6 +1127,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -1121,6 +1150,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -1144,6 +1174,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -1165,6 +1196,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4 + 1;
             psVar30[3] = sVar5;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -1188,6 +1220,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -1210,6 +1243,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4;
             psVar30[3] = sVar5 + 1;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -1257,6 +1291,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + -1;
             psVar37[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)GVar31;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -1284,6 +1319,7 @@ LAB_006ce57c:
           psVar38[2] = sVar4 + -1;
           psVar38[3] = sVar5 + 1;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)GVar31;
           psVar38[5] = (undefined2)param_3;
           psVar38[6] = sVar8 + 4;
@@ -1300,6 +1336,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4 + 1;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)(GVar33 + ~CASE_3);
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 4;
@@ -1352,6 +1389,7 @@ LAB_006ce57c:
               psVar37[2] = sVar4 + 1;
               psVar37[3] = sVar5 + -1;
               psVar37[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar25;
               psVar37[5] = (undefined2)param_3;
               psVar37[6] = uVar39;
@@ -1381,6 +1419,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5 + 1;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar25;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = uVar39;
@@ -1399,6 +1438,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)(param_5 + -4);
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = uVar39;
@@ -1450,6 +1490,7 @@ LAB_006ce57c:
               psVar37[2] = sVar4 + 1;
               psVar37[3] = sVar5 + -1;
               psVar37[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar37[5] = (undefined2)param_3;
               psVar37[6] = uVar39;
@@ -1479,6 +1520,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4 + -1;
             psVar30[3] = sVar5 + 1;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = uVar39;
@@ -1521,6 +1563,7 @@ LAB_006ce57c:
           psVar38[2] = sVar4 + -1;
           psVar38[3] = sVar5;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar38[5] = (undefined2)param_3;
           psVar38[6] = sVar8 + 3;
@@ -1542,6 +1585,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4 + 1;
           psVar37[3] = sVar5;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 3;
@@ -1573,6 +1617,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 3;
@@ -1595,6 +1640,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 3;
@@ -1655,6 +1701,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -1677,6 +1724,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -1708,6 +1756,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -1731,6 +1780,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -1762,6 +1812,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -1784,6 +1835,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4 + 1;
             psVar30[3] = sVar5;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -1815,6 +1867,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -1837,6 +1890,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4;
             psVar30[3] = sVar5 + 1;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -1874,6 +1928,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)GVar31;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -1905,6 +1960,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + -1;
             psVar37[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)GVar31;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -1935,6 +1991,7 @@ LAB_006ce57c:
           psVar38[2] = sVar4 + -1;
           psVar38[3] = sVar5 + 1;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)GVar31;
           psVar38[5] = (undefined2)param_3;
           psVar38[6] = sVar8 + 4;
@@ -1952,6 +2009,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4 + 1;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)(GVar33 + 4);
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 4;
@@ -1993,6 +2051,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4 + -1;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = uVar39;
@@ -2026,6 +2085,7 @@ LAB_006ce57c:
               psVar37[2] = sVar4 + 1;
               psVar37[3] = sVar5 + -1;
               psVar37[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar37[5] = (undefined2)param_3;
               psVar37[6] = uVar39;
@@ -2058,6 +2118,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5 + 1;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar27;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = uVar39;
@@ -2077,6 +2138,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)(param_5 + 4);
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = uVar39;
@@ -2117,6 +2179,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4 + -1;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = uVar39;
@@ -2150,6 +2213,7 @@ LAB_006ce57c:
               psVar37[2] = sVar4 + 1;
               psVar37[3] = sVar5 + -1;
               psVar37[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar37[5] = (undefined2)param_3;
               psVar37[6] = uVar39;
@@ -2181,6 +2245,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4 + -1;
             psVar30[3] = sVar5 + 1;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar27;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = uVar39;
@@ -2216,6 +2281,7 @@ LAB_006ce57c:
           psVar38[2] = sVar4 + -1;
           psVar38[3] = sVar5;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar38[5] = (undefined2)param_3;
           psVar38[6] = sVar8 + 3;
@@ -2235,6 +2301,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4 + 1;
           psVar37[3] = sVar5;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 3;
@@ -2266,6 +2333,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 3;
@@ -2288,6 +2356,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)iVar35;
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 3;
@@ -2340,6 +2409,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -2361,6 +2431,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -2392,6 +2463,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -2415,6 +2487,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -2438,6 +2511,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5;
             psVar38[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -2459,6 +2533,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4 + 1;
             psVar30[3] = sVar5;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -2490,6 +2565,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar35;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = sVar8 + 4;
@@ -2512,6 +2588,7 @@ LAB_006ce57c:
             psVar30[2] = sVar4;
             psVar30[3] = sVar5 + 1;
             psVar30[4] = sVar6 + -1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)iVar35;
             psVar30[5] = (undefined2)param_3;
             psVar30[6] = sVar8 + 4;
@@ -2544,6 +2621,7 @@ LAB_006ce57c:
             psVar38[2] = sVar4 + -1;
             psVar38[3] = sVar5 + -1;
             psVar38[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)GVar31;
             psVar38[5] = (undefined2)param_3;
             psVar38[6] = sVar8 + 4;
@@ -2577,6 +2655,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + -1;
             psVar37[4] = sVar6;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)GVar31;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = sVar8 + 4;
@@ -2595,6 +2674,7 @@ LAB_006ce57c:
           psVar38[2] = sVar4 + -1;
           psVar38[3] = sVar5 + 1;
           psVar38[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)(GVar33 + 4);
           psVar38[5] = (undefined2)param_3;
           psVar38[6] = sVar8 + 4;
@@ -2621,6 +2701,7 @@ LAB_006ce57c:
           psVar37[2] = sVar4 + 1;
           psVar37[3] = sVar5 + 1;
           psVar37[4] = sVar6;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_3._0_2_ = (undefined2)GVar33;
           psVar37[5] = (undefined2)param_3;
           psVar37[6] = sVar8 + 4;
@@ -2657,6 +2738,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4 + -1;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = uVar39;
@@ -2692,6 +2774,7 @@ LAB_006ce57c:
               psVar37[2] = sVar4 + 1;
               psVar37[3] = sVar5 + -1;
               psVar37[4] = sVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar37[5] = (undefined2)param_3;
               psVar37[6] = uVar39;
@@ -2739,6 +2822,7 @@ LAB_006ce57c:
             psVar37[2] = sVar4 + 1;
             psVar37[3] = sVar5 + 1;
             psVar37[4] = sVar6 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_3._0_2_ = (undefined2)param_5;
             psVar37[5] = (undefined2)param_3;
             psVar37[6] = uVar39;
@@ -2774,6 +2858,7 @@ LAB_006ce57c:
               psVar38[2] = sVar4 + -1;
               psVar38[3] = sVar5 + -1;
               psVar38[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar38[5] = (undefined2)param_3;
               psVar38[6] = uVar39;
@@ -2809,6 +2894,7 @@ LAB_006ce57c:
               psVar37[2] = sVar4 + 1;
               psVar37[3] = sVar5 + -1;
               psVar37[4] = sVar6 + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               param_3._0_2_ = (undefined2)iVar27;
               psVar37[5] = (undefined2)param_3;
               psVar37[6] = uVar39;

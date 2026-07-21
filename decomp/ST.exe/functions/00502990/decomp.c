@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintCtrlBoatSI
-   
+
    [STSwitchEnumApplier] Switch target field_0B99 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
    CASE_8=8;CASE_14=20;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37
-   
+
    [STSwitchEnumApplier] Switch target field_0B9E uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
@@ -22,26 +24,22 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
   int iVar5;
   ushort *puVar6;
   byte bVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   AnonShape_006B5B10_E0D06CF1 *pAVar8;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1ed,0,iVar3,&DAT_007a4ccc
                                ,s_CPanelTy__PaintCtrlBoatSI_007c2600);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1ed);
     return;
@@ -111,6 +109,7 @@ LAB_00502b3b:
           DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
                  '\x01',pbVar4);
           bVar7 = bVar7 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar7);
         } while (bVar7 < (byte)pCVar2->field_0BB6 >> 1);
       }
@@ -141,6 +140,7 @@ LAB_00502b3b:
             DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,
                    0x87,'\x01',pbVar4);
             bVar7 = bVar7 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_8 = CONCAT31(local_8._1_3_,bVar7);
           } while (bVar7 < (byte)pCVar2->field_0BCD);
         }

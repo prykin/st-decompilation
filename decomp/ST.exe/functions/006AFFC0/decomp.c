@@ -7,7 +7,7 @@ void FUN_006affc0(uint *param_1,uint *param_2,int *param_3)
   uint uVar3;
   uint *puVar4;
   uint *puVar5;
-  
+
   uVar3 = param_1[3] * param_1[2];
   if (param_3 != (int *)0x0) {
     *param_3 = uVar3 + 0x1c;

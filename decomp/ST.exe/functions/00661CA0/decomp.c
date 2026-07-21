@@ -5,6 +5,7 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
   undefined4 uVar1;
   AiTactClassTy *pAVar2;
   STFishC *pSVar3;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
   STFishC *this;
   uint uVar4;
@@ -35,13 +36,13 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
   STFishC *local_10;
   uint local_c;
   undefined2 local_6;
-  
+
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      (local_14 = param_1,
      this = (STFishC *)
             STAllPlayersC::GetObjPtr
-                      (g_sTAllPlayers_007FA174,
-                       CONCAT31((int3)((uint)param_2 >> 8),param_1->field_0024),
+                      (g_sTAllPlayers_007FA174,param_1->field_0024,
                        CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_3 + 0x16)),
                        CASE_1), this != (STFishC *)0x0)) {
     local_10 = this;
@@ -49,15 +50,18 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
     uVar4 = (*this->vtable->vfunc_2C)();
     pSVar3 = local_10;
     local_c = uVar4;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)(param_3 + 0x14) == 0) {
       STFishC::sub_004162B0(this,local_18,local_1c,&local_6);
       if ((0x31 < (int)local_c) && ((int)local_c < 0x74)) {
         uVar4 = 0;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_24 = *(uint *)(param_1->field_020B + 0xc);
         if (0 < (int)local_24) {
           bVar15 = local_24 != 0;
           do {
             if (bVar15) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               puVar5 = (uint *)(*(int *)(param_1->field_020B + 8) * uVar4 +
                                *(int *)(param_1->field_020B + 0x1c));
             }
@@ -69,6 +73,7 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
               puVar13 = puVar5;
               do {
                 if (*puVar13 == local_c) {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   puVar5[10] = *(uint *)(param_3 + 0x18);
                   *(short *)((int)puVar5 + 0xe) = local_18[0];
                   *(short *)(puVar5 + 4) = local_1c[0];
@@ -101,6 +106,7 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
               }
               if ((*(int *)(iVar6 + 0x28) == 0) &&
                  (*(int *)(iVar6 + 0x24) == *(int *)&local_10[3].field_0xdd)) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar1 = *(undefined4 *)(param_3 + 0x18);
                 *(undefined4 *)(iVar6 + 0x24) = 0;
                 *(undefined4 *)(iVar6 + 0x28) = uVar1;
@@ -128,6 +134,7 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
               do {
                 param_1 = local_14;
                 if (*puVar13 == local_c) {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   uVar4 = *(uint *)(param_3 + 0x18);
                   puVar5[9] = 0;
                   puVar5[10] = uVar4;
@@ -201,6 +208,7 @@ LAB_00661e5f:
           else {
             iVar6 = 0;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(iVar6 + 0x28) == *(int *)(param_3 + 0x18)) {
             *(undefined4 *)(iVar6 + 0x28) = 0;
             break;
@@ -226,9 +234,13 @@ LAB_00661e5f:
         ppAVar14 = ppAVar14 + 1;
       }
       local_60 = param_1->field_0280;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5c = *(undefined1 *)(param_3 + 0x14);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       psStack_5a._0_1_ = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       psStack_5a._1_3_ = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
       local_64 = (AnonShape_0068FD00_A5257008 *)0x6e;
@@ -243,9 +255,13 @@ LAB_00661e5f:
         ppAVar14 = ppAVar14 + 1;
       }
       local_60 = param_1->field_0280;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5c = *(undefined1 *)(param_3 + 0x14);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       psStack_5a._0_1_ = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       psStack_5a._1_3_ = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
       local_64 = (AnonShape_0068FD00_A5257008 *)0x74;

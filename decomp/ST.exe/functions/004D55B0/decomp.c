@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_embryo.cpp
@@ -15,9 +17,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,AnonShape_004D55B0_3121
   undefined4 uVar6;
   uint uVar7;
   int iVar8;
-  undefined4 unaff_ESI;
   int *piVar9;
-  void *unaff_EDI;
   int iVar10;
   undefined4 *puVar11;
   int iVar12;
@@ -37,11 +37,11 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,AnonShape_004D55B0_3121
   undefined4 local_18;
   STSprGameObjC *local_c;
   int *local_8;
-  
+
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_c = (STSprGameObjC *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -51,9 +51,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,AnonShape_004D55B0_3121
       RaiseInternalException(iVar4,0,s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,0x4e6);
       return iVar4;
     }
-    pcVar2 = (code *)swi(3);
-    iVar4 = (*pcVar2)();
-    return iVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_c,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar7 = param_1->field_0010;
@@ -67,6 +65,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,AnonShape_004D55B0_3121
         }
         local_18 = *(undefined4 *)&this_00->field_0x8;
         *(undefined4 *)&this_00->field_0x2a0 = 1;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_24 = *(undefined4 *)(*(int *)&this_00->field_0xc + 0x14);
         local_20 = 0;
         local_1c = 10;
@@ -166,12 +165,14 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,AnonShape_004D55B0_3121
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     cVar15 = *(char *)(param_1->field_0014 + 0xe);
     if (cVar15 != '\t') {
       if (cVar15 != '\x17') {
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pcVar14 = *(char **)(param_1->field_0014 + 0x17);
       if (*(int *)&this_00->field_0x2a4 != 0) {
         if (*pcVar14 != '\x1c') {
@@ -296,6 +297,7 @@ LAB_004d600f:
   iVar4 = 0;
   do {
     piVar13 = (int *)(*(int *)&this_00->field_0x1f5 + iVar4);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     auStack_17c[iVar10] = *(undefined4 *)(*(int *)&this_00->field_0x1f5 + 0x1c + iVar4);
     aiStack_f4[iVar10] = piVar13[8];
     if (*piVar13 != 0) {
@@ -355,6 +357,7 @@ LAB_004d600f:
     thunk_FUN_004abce0(puVar11,0xe,uVar7,uVar7,'\0');
     STT3DSprC::SetCurFase((STT3DSprC *)puVar11,'\x0e',uVar7);
     STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,PTR_00802a38->field_00E4);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (**(int **)(*(int *)&this_00->field_0x1f5 + 0x1d4) < (int)uVar7) {
       uVar7 = 0;
     }

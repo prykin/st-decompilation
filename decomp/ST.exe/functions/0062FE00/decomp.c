@@ -7,7 +7,7 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
   int iVar3;
   int iVar4;
   int *piVar5;
-  
+
   iVar4 = 0;
   piVar5 = (int *)&param_1->field_0x1e5;
   do {

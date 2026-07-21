@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
@@ -14,12 +16,13 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
   bool bVar3;
   DWORD DVar4;
   int iVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   undefined4 uVar6;
   int iVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   char *pcVar10;
   char *pcVar11;
@@ -28,22 +31,20 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
   InternalExceptionFrame local_50;
   WaitTy *local_c;
   char *local_8;
-  
+
   local_c = this;
   DVar4 = FUN_006e51b0(this->field_0010);
   this->field_0061 = DVar4;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_02 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x3bb,0,iVar5,&DAT_007a4ccc
                                ,s_WaitTy__GetMessage_007cde54);
     if (iVar7 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar6 = (*pcVar2)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x3bb);
     return 0xffff;
@@ -74,9 +75,11 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
           DoneWait(this_02);
         }
         else if (uVar8 == 0) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           NoneWait(this_02,unaff_EDI);
         }
         else if (uVar8 == 2) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           InitWait(this_02,*(undefined4 *)(*(int *)&param_1->field_0x14 + 0x14),
                    *(undefined4 *)(*(int *)&param_1->field_0x14 + 0x18));
         }
@@ -166,6 +169,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
         DAT_00811768 = '\x02';
       }
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_0000 + 8))();
     this_00 = this_02->field_1A5B->field_02E6;
     if (this_00 != (MMsgTy *)0x0) {
@@ -185,6 +189,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
         pcVar10 = (char *)**(undefined4 **)(iVar5 + 0x14);
       }
       bVar3 = thunk_FUN_005717e0(pcVar10);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT31(extraout_var,bVar3) != 0) {
         iVar5 = this_02->field_1A5B->field_0686;
         if (*(int *)(iVar5 + 8) < 1) {

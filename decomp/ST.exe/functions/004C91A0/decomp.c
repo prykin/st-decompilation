@@ -3,36 +3,50 @@ undefined4 __fastcall FUN_004c91a0(void *param_1)
 
 {
   int iVar1;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)((int)param_1 + 0x3d4) != 0) && (*(int *)((int)param_1 + 0x607) != 0)) {
     *(undefined4 *)((int)param_1 + 0x3d4) = 0;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x361) != 0) {
     *(undefined4 *)((int)param_1 + 0x36d) = 1;
     *(int *)((int)param_1 + 0x365) = *(int *)((int)param_1 + 0x361);
     iVar1 = thunk_FUN_004c90c0(param_1);
     if (iVar1 != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = GetPlayerRaceId(*(char *)((int)param_1 + 0x24));
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (((char)iVar1 != '\x03') && (*(int *)((int)param_1 + 0x398) != 0)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004d87b0(*(char *)((int)param_1 + 0x24),
                            (*(int *)((int)param_1 + 0x394) * *(int *)((int)param_1 + 0x398)) / 100);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x39c) != 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004d88f0(*(char *)((int)param_1 + 0x24),
                            (*(int *)((int)param_1 + 0x394) * *(int *)((int)param_1 + 0x39c)) / 100);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x3a0) != 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004d8a30(*(char *)((int)param_1 + 0x24),
                            (*(int *)((int)param_1 + 0x394) * *(int *)((int)param_1 + 0x3a0)) / 100);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x3a4) != 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004e4380(*(int *)((int)param_1 + 0x24),
                            (*(int *)((int)param_1 + 0x394) * *(int *)((int)param_1 + 0x3a4)) / 100);
       }
       thunk_FUN_004c7460(param_1);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_004d78e0(*(char *)((int)param_1 + 0x24));
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(uint *)((int)param_1 + 0x24) == (uint)*(byte *)(*(int *)((int)param_1 + 0x10) + 0x112d))
       {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004d8b70((char)*(uint *)((int)param_1 + 0x24));
       }
     }

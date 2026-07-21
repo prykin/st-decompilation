@@ -43,7 +43,7 @@ FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *pa
   byte *local_10;
   int local_c;
   char local_5;
-  
+
   iVar5 = 0;
   local_5 = '\0';
   local_18 = GetPlayerRaceId((char)param_8);
@@ -190,9 +190,11 @@ LAB_00606321:
       }
       *(undefined2 *)&pAVar10->field_0000 = 0;
       local_54 = local_18;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_70._4_4_ = param_8;
       local_30 = param_9;
       local_70.field_0000 = 100;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_70._8_4_ = 0;
       local_70.field_000C = 0;
       local_2e = param_5;
@@ -364,6 +366,7 @@ switchD_00606490_default:
         local_48 = param_3 + 0x5a;
       }
       local_b0.field_0014 = &local_70;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       STParticleC::GetMessage(*(STParticleC **)((int)this + (int)param_5 * 4 + 0x219),&local_b0);
       param_5 = (uint *)((int)param_5 + 1);
     } while ((int)param_5 < local_c);

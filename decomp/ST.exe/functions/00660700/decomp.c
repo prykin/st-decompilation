@@ -11,18 +11,18 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
   STWorldObjectVTable *pSVar4;
   STGroupBoatC *this_01;
   short sVar5;
-  undefined2 extraout_var;
   undefined4 local_14;
   undefined4 local_10;
   short local_c;
   short sStack_a;
   short local_8;
   short sStack_6;
-  
+
   local_14 = 0;
   *(undefined4 *)((int)this + 0xa7) = 0;
   sVar1 = (short)param_4;
   sVar5 = (short)param_5;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_10 = CONCAT22(sVar5,sVar1);
   local_c = (short)param_6;
   sStack_a = param_1;
@@ -33,7 +33,6 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
   if (((param_4 < 0) || (param_5 < 0)) || (param_6 < 0)) {
     local_14 = 2;
     pSVar4 = (STWorldObjectVTable *)param_4;
-    iVar2 = param_6;
   }
   else {
     if (sVar1 < 0) {
@@ -68,7 +67,6 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
       this_00[0x1e].vtable = (STWorldObjectVTable *)(int)sStack_6;
       *(undefined4 *)&this_00[0x1d].field_0x18 = 1;
       pSVar4 = (STWorldObjectVTable *)(int)sStack_6;
-      iVar2 = (int)sStack_a;
     }
     else {
       iVar2 = (*this_00->vtable->GetObjectTypeId)(this_00);
@@ -81,13 +79,13 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
       sStack_a = param_1;
       local_8 = param_2;
       sStack_6 = param_3;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       pSVar4 = (STWorldObjectVTable *)CONCAT22((short)((uint)uVar3 >> 0x10),param_3);
-      iVar2 = CONCAT22(extraout_var,param_2);
     }
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
-     (this_01 = thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar2 >> 8),
-                                            *(undefined1 *)((int)this + 0x24)),
+     (this_01 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                    CONCAT22((short)((uint)pSVar4 >> 0x10),
                                             *(short *)((int)this + 0x7d))),
      this_01 != (STGroupBoatC *)0x0)) {

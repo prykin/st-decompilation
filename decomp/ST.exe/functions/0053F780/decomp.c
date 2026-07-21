@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -12,13 +14,11 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
   undefined4 uVar3;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   int *piVar7;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
-  
+
   if (param_1 != this->field_005C) {
     this->field_005C = param_1;
     puVar6 = (undefined4 *)&this->field_0x18;
@@ -35,7 +35,7 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar5 == 0) {
       if (local_8->field_0180 != 0) {
@@ -67,9 +67,7 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x1ff,0,iVar5,&DAT_007a4ccc
                                ,s_ProdPanelTy__ShiftControls_007c7a7c);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x1ff);
   }

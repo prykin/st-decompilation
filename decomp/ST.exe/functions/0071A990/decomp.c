@@ -11,7 +11,7 @@ FUN_0071a990(AnonShape_0071A990_7656000F *param_1,int soundId,int param_3,undefi
   int iVar1;
   uint uVar2;
   int *piVar3;
-  
+
   if (((((param_1 != (AnonShape_0071A990_7656000F *)0x0) && (param_1->field_000C != 0)) &&
        (-1 < soundId)) &&
       ((soundId < param_1->field_0008 &&

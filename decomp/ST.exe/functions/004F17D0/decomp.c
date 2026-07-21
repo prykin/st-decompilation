@@ -7,7 +7,7 @@ void __thiscall FUN_004f17d0(void *this,int param_1,byte param_2)
   int iVar3;
   undefined4 uVar4;
   int *piVar5;
-  
+
   if (param_2 < 6) {
     piVar5 = (int *)((int)this + 0xb99);
     if (param_1 == 0) {

@@ -4,8 +4,9 @@ void __fastcall FUN_00489950(int param_1)
 {
   undefined4 *puVar1;
   int iVar2;
-  
+
   iVar2 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(char *)(param_1 + 0x281) != '\0') {
     puVar1 = (undefined4 *)(param_1 + 0x282);
     do {
@@ -15,6 +16,7 @@ void __fastcall FUN_00489950(int param_1)
       }
       iVar2 = iVar2 + 1;
       puVar1 = puVar1 + 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (iVar2 < (int)(uint)*(byte *)(param_1 + 0x281));
   }
   return;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\gen_map.cpp
@@ -15,17 +17,15 @@ CGenerate::CteateField
   uint *puVar4;
   undefined4 uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   CGenerate *local_8;
-  
+
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = param_1 * param_2;
@@ -54,9 +54,7 @@ CGenerate::CteateField
     iVar6 = ReportDebugMessage(s_E____titans_Maps_gen_map_cpp_007d85fc,0x330,0,iVar3,&DAT_007a4ccc,
                                s_CGenerate__CteateField_007d8620);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Maps_gen_map_cpp_007d85fc,0x332);
     uVar5 = 0xffff;

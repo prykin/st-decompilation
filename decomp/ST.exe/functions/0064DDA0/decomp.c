@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
@@ -12,26 +14,21 @@ AiEventClassTy::_CreateDest
   code *pcVar1;
   bool bVar2;
   int iVar3;
-  undefined3 extraout_var;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
   int local_8;
-  
+
   local_c = -1;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x13c,0,iVar3,&DAT_007a4ccc,
                                s_AiEventClassTy___CreateDest_007d2b04);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar3 = (*pcVar1)();
-      return iVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x13d);
     return iVar3;
@@ -40,8 +37,8 @@ AiEventClassTy::_CreateDest
     bVar2 = true;
   }
   if (bVar2) {
-    bVar2 = thunk_FUN_004961b0(param_3,param_4,param_5);
-    if (CONCAT31(extraout_var,bVar2) != 0) {
+    iVar3 = thunk_FUN_004961b0(param_3,param_4,param_5);
+    if (iVar3 != 0) {
       local_8 = (int)param_3;
       iVar3 = thunk_FUN_006036a0(param_3,param_4,param_5,(int)param_1);
       if (iVar3 != 0) {

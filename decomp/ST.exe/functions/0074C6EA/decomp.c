@@ -9,7 +9,7 @@ HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
   char *pcVar5;
   char *pcVar6;
   bool bVar7;
-  
+
   if (param_3 == (undefined4 *)0x0) {
     HVar2 = -0x7fffbffd;
   }
@@ -44,10 +44,12 @@ HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
       }
     }
     if (param_1[0x29] == 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(param_1[0x28] + 0x8c) == 0) {
         ppvVar4 = (void **)0x0;
       }
       else {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         ppvVar4 = (void **)(*(int *)(param_1[0x28] + 0x8c) + 0xc);
       }
       HVar2 = FUN_00746bab((LPUNKNOWN)param_1[1],(IID *)0x0,ppvVar4,param_1 + 0x29);
@@ -56,6 +58,7 @@ HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
       }
     }
     puVar1 = (undefined4 *)param_1[0x29];
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     HVar2 = (**(code **)*puVar1)(puVar1,param_2,param_3);
   }
   return HVar2;

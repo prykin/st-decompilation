@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::LoadSequence
-   
+
    [STPrototypeRepairApplier] Propagated parameter 3.
    Evidence: 0044EE30 -> 004AB880 @ 004501D7 | 0044EE30 -> 004AB880 @ 00450A94 | 0044EE30 ->
    004AB880 @ 00450D29 | 0044EE30 -> 004AB880 @ 00450D51 | 0044EE30 -> 004AB880 @ 00450D78 |
@@ -57,28 +59,24 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   uint uVar11;
   uint uVar12;
   undefined4 *puVar13;
-  undefined4 unaff_ESI;
   char *pcVar14;
-  void *unaff_EDI;
   char *pcVar15;
   InternalExceptionFrame local_58;
   uint local_14;
   STT3DSprC *local_c;
   int local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
     iVar4 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3b,0,iVar4,&DAT_007a4ccc,
                                s_STT3DSprC__LoadSequence_007ac61c);
     if (iVar4 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar8 = (*pcVar3)();
-      return uVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0xffffffff;
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -8,7 +10,6 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
 {
   char *pcVar1;
   byte bVar2;
-  AnonShape_006B0C70_7C4FE646 *groupContent;
   code *pcVar3;
   SettMapTy *this_00;
   int iVar4;
@@ -22,10 +23,10 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   int iVar12;
   uint uVar13;
   uint uVar14;
-  undefined4 unaff_ESI;
   byte *pbVar15;
   AnonShape_005CE0E0_C50CCD71 *pAVar16;
   undefined4 *puVar17;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   byte *pbVar18;
   int *piVar19;
@@ -74,27 +75,26 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   int *local_10;
   AnonShape_005CE0E0_C50CCD71 *local_c;
   char local_5;
-  
+
   local_1d = this->field_0065;
   local_c = (AnonShape_005CE0E0_C50CCD71 *)0x0;
   local_24 = 0xffffffff;
   local_148.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_148;
   local_5c = (SettMapTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_148.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_148.jumpBuffer,0);
   this_00 = local_5c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_148.previous;
     iVar12 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4a9,0,iVar4,
                                 &DAT_007a4ccc,s_SettMapMTy__NoneSettMap_007cd380);
     if (iVar12 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar11 = (*pcVar3)();
-      return uVar11;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4a9);
     return 0;
   }
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar4 = SettMapTy::NoneSettMap(local_5c,unaff_EDI);
   if (((iVar4 != 0) && (local_1d == '\x03')) && (this_00->field_0065 == '\x01')) {
     Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&this_00[1].field_0x4);
@@ -135,12 +135,15 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
         piVar19 = piVar19 + 1;
       }
       local_dc[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(this_00->field_1A5B + 0x2e6) == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)this_00->field_0000)(local_dc);
       }
       else {
         local_dc[2] = this_00->field_0008;
         local_dc[3] = 2;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         MMsgTy::SetMessage(*(MMsgTy **)(this_00->field_1A5B + 0x2e6),0x2522,'\0',local_dc,
                            (undefined4 *)0x0,(undefined4 *)0x0,0,0);
       }
@@ -190,9 +193,11 @@ LAB_005ce9b2:
           case 0x10:
             if (this_00->field_0065 == '\x01') {
               local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)(this_00->field_1A5B + 0x2e6) == 0) goto LAB_005cee1a;
               local_58[2] = this_00->field_0008;
               local_58[3] = 2;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               MMsgTy::SetMessage(*(MMsgTy **)(this_00->field_1A5B + 0x2e6),0x2524,'\0',local_58,
                                  (undefined4 *)0x0,(undefined4 *)0x0,0,0);
             }
@@ -200,6 +205,7 @@ LAB_005ce9b2:
           case 0x12:
             if (this_00->field_0065 == '\x01') {
               local_58[4] = 0x694f;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005cee1a:
               (**(code **)this_00->field_0000)(local_58);
             }
@@ -209,6 +215,7 @@ LAB_005cee1a:
             pcVar1 = &local_c->field_0002;
             if ((local_c->field_0002 == '\x03') && (this_00->field_0065 == '\x01')) {
               local_58[4] = 0x694f;
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)this_00->field_0000)(local_58);
             }
             else {
@@ -290,6 +297,7 @@ LAB_005cee1a:
                   bVar22 = uVar14 != 0;
                   do {
                     if (bVar22) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar13) (runtime stride) */
                       pvVar5 = (void *)(pDVar9->elementSize * uVar13 + (int)pDVar9->data);
                     }
                     else {
@@ -310,11 +318,13 @@ LAB_005cee1a:
                 }
                 if (local_5 == '\0') {
                   this_00->field_002D = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   (**(code **)this_00->field_0000)(&this_00->field_0x1d);
                 }
                 else {
                   this_00->field_002D = 0x694a;
                   this_00->field_0031 = 1;
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   (**(code **)this_00->field_0000)(&this_00->field_0x1d);
                 }
               }
@@ -391,6 +401,7 @@ LAB_005cef5d:
                 piVar19 = piVar19 + 1;
                 iVar4 = iVar4 + -1;
               } while (iVar4 != 0);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if (((local_5 == '\0') ||
                   ((*(code *)this_00->field_0000->field_002C)(), local_5 == '\0')) &&
                  (local_11 != '\0')) {
@@ -469,6 +480,7 @@ LAB_005cef5d:
                   bVar22 = pDVar9->count != 0;
                   do {
                     if (bVar22) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar14) (runtime stride) */
                       pvVar5 = (void *)(pDVar9->elementSize * uVar14 + (int)pDVar9->data);
                     }
                     else {
@@ -511,6 +523,7 @@ LAB_005cef5d:
                   bVar22 = pDVar9->count != 0;
                   do {
                     if (bVar22) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar14) (runtime stride) */
                       pvVar5 = (void *)(pDVar9->elementSize * uVar14 + (int)pDVar9->data);
                     }
                     else {
@@ -541,6 +554,7 @@ LAB_005cef5d:
               if (this_00->field_1E26 != 0x10) {
                 thunk_FUN_005d1380((AnonShape_005D1380_CEECF2C3 *)this_00);
               }
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)this_00->field_0000->field_002C)();
               SettMapTy::PaintSC(this_00);
             }
@@ -552,9 +566,11 @@ LAB_005cef5d:
             if (this_00[1].field_0x29 == '\0') {
               this_00[1].field_0x29 = 1;
               local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)(this_00->field_1A5B + 0x2e6) == 0) goto LAB_005cee1a;
               local_58[2] = this_00->field_0008;
               local_58[3] = 2;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               MMsgTy::SetMessage(*(MMsgTy **)(this_00->field_1A5B + 0x2e6),0x2522,'\0',local_58,
                                  (undefined4 *)0x0,(undefined4 *)0x0,0,0);
             }
@@ -583,6 +599,7 @@ LAB_005cef5d:
         pAVar10 = this_00->field_0000;
         local_bc[4] = 0x6947;
         piVar19 = local_bc;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005cf387:
         (**(code **)pAVar10)(piVar19);
         goto cf_continue_loop_005CF38C;
@@ -591,7 +608,9 @@ LAB_005cf387:
       switch(local_28) {
       case 0x11:
         DeletePlayer((SettMapMTy *)this_00,local_18);
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         CheckPlList((SettMapMTy *)this_00,unaff_EDI);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_002C)();
         SettMapTy::PaintSC(this_00);
         local_24 = 0;
@@ -661,6 +680,7 @@ LAB_005ce59f:
             pvVar5 = (void *)0x0;
           }
           else {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, *(uint *)local_c) (runtime stride) */
             pvVar5 = (void *)(pDVar9->elementSize * *(uint *)local_c + (int)pDVar9->data);
           }
           if (pvVar5 != (void *)0x0) {
@@ -719,6 +739,7 @@ LAB_005ce59f:
         if (local_c == (AnonShape_005CE0E0_C50CCD71 *)0x0) goto cf_continue_loop_005CF38C;
         if (((3 < local_2c) && (DAT_00807361 != '\0')) &&
            (*(char *)((int)&this_00[1].field_0045 + 2) != '\0')) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B)->field_069A == (LPVOID)0x0) &&
              (thunk_FUN_005de670((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B),
              *(int *)(this_00->field_1A5B + 0x69a) == 0)) {
@@ -751,7 +772,9 @@ LAB_005ce8db:
             }
 LAB_005ce8fe:
             if (!bVar22) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_9c._0_4_ = local_18;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_9c.field_0008 =
                    Library::DKW::LIB::FUN_006aac70(*(int *)(this_00->field_1A5B + 0x6a6));
               PrepareAFT((SettMapMTy *)this_00,&local_9c,(uint *)local_c);
@@ -768,6 +791,7 @@ LAB_005ce8fe:
             pvVar5 = (void *)0x0;
           }
           else {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, *(uint *)local_c) (runtime stride) */
             pvVar5 = (void *)(pDVar9->elementSize * *(uint *)local_c + (int)pDVar9->data);
           }
           if ((pvVar5 != (void *)0x0) && (*(int *)((int)&local_c->field_0003 + 1) == 3)) {
@@ -781,23 +805,23 @@ LAB_005ce8fe:
         break;
       case 0x2e:
         if ((*(char *)((int)&this_00[1].field_0031 + 1) != '\0') &&
-           (groupContent = *(AnonShape_006B0C70_7C4FE646 **)((int)&this_00[1].field_0031 + 2),
-           groupContent != (AnonShape_006B0C70_7C4FE646 *)0x0)) {
-          uVar14 = groupContent->field_000C;
+           (pDVar9 = *(DArrayTy **)((int)&this_00[1].field_0031 + 2), pDVar9 != (DArrayTy *)0x0)) {
+          uVar14 = pDVar9->count;
           uVar13 = 0;
           local_1c = 0;
           if (0 < (int)uVar14) {
             bVar22 = uVar14 != 0;
             do {
               if (bVar22) {
-                puVar6 = (uint *)(groupContent->field_0008 * uVar13 + groupContent->field_001C);
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar13) (runtime stride) */
+                puVar6 = (uint *)(pDVar9->elementSize * uVar13 + (int)pDVar9->data);
               }
               else {
                 puVar6 = (uint *)0x0;
               }
               if ((puVar6 != (uint *)0x0) && (*puVar6 == local_18)) {
                 local_1c = uVar13;
-                FUN_006b0c70(groupContent,uVar13);
+                FUN_006b0c70(pDVar9,uVar13);
                 break;
               }
               uVar13 = uVar13 + 1;
@@ -827,6 +851,7 @@ cf_continue_loop_005CF38C:
     if (local_24 != 0xffffffff) {
       SendPlList((SettMapMTy *)this_00,local_24);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(uint *)&this_00[1].field_0x3f < *(uint *)(*(int *)&this_00[1].field_0x3b + 0xc)) &&
        (*(int *)(this_00->field_1A5B + 0x69a) != 0)) {
       if (*(int *)&this_00[1].field_0x43 == 0) {
@@ -835,6 +860,7 @@ cf_continue_loop_005CF38C:
       else {
         *(int *)&this_00[1].field_0x43 = *(int *)&this_00[1].field_0x43 + -1;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar4 = (**(code **)(*(int *)*g_int_00811764 + 200))
                         ((int *)*g_int_00811764,DAT_0080877f,0,1,0,&local_64);
       if (((iVar4 == 0) && (local_64 < 0x400)) && (*(int *)&this_00[1].field_0x43 == 0)) {
@@ -865,11 +891,17 @@ LAB_005cf496:
             piVar19 = local_10;
             *local_38 = DAT_008087be;
             local_38[1] = local_1c;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_38[2] = *(uint *)(this_00->field_1A5B + 0x6a6);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_38[3] = *(uint *)(this_00->field_1A5B + 0x69e);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_38[4] = *(uint *)(this_00->field_1A5B + 0x6ae);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_38[5] = *(uint *)(this_00->field_1A5B + 0x6b2);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_38[6] = *(uint *)(this_00->field_1A5B + 0x6a2);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             puVar6 = (uint *)(*(int *)(this_00->field_1A5B + 0x6a2) * local_1c +
                              *(int *)(this_00->field_1A5B + 0x69a));
             puVar21 = local_38 + 7;
@@ -890,8 +922,7 @@ LAB_005cf496:
             piVar19[1] = iVar4;
             if (iVar4 == 0) {
               FreeAndNull(local_60);
-              FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)&this_00[1].field_0x3b,
-                           *(uint *)&this_00[1].field_0x3f);
+              FUN_006b0c70(*(DArrayTy **)&this_00[1].field_0x3b,*(uint *)&this_00[1].field_0x3f);
             }
           }
 LAB_005cf5bf:

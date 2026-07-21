@@ -23,7 +23,6 @@ import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
-import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
@@ -199,7 +198,7 @@ public class STVirtualMethodApplier extends GhidraScript {
                 actionPreserved = true;
             }
             else {
-                applySignature(function, row, desiredConvention, ownerTypePath);
+                applySignature(function, row, desiredConvention, owner, ownerTypePath);
                 details.add("signature=applied(" +
                     function.getSignature().getPrototypeString(true) + ")");
                 changed = true;
@@ -219,9 +218,10 @@ public class STVirtualMethodApplier extends GhidraScript {
                 actionPreserved = true;
             }
             else {
+                ensureOwnerNamespace(function, owner);
                 function.setCallingConvention(desiredConvention);
                 function.setSignatureSource(SourceType.ANALYSIS);
-                setThisType(function, ownerTypePath);
+                verifyThisType(function, ownerTypePath);
                 details.add("convention=applied(" + desiredConvention + ")");
                 changed = true;
             }
@@ -244,7 +244,11 @@ public class STVirtualMethodApplier extends GhidraScript {
     }
 
     private void applySignature(Function function, Map<String, String> row,
-            String convention, String ownerTypePath) throws Exception {
+            String convention, String owner, String ownerTypePath) throws Exception {
+        // Ghidra owns the synthetic this parameter and rejects setDataType() on it.
+        // Give the method its proven class namespace first; __thiscall can then
+        // synthesize this from the class/type relationship itself.
+        ensureOwnerNamespace(function, owner);
         DataType returnType = requireType(unt(row.get("return_type_path")));
         List<Variable> parameters = parseParameters(unt(row.get("parameters")));
         function.updateFunction(convention, new ReturnParameterImpl(returnType, currentProgram),
@@ -253,7 +257,7 @@ public class STVirtualMethodApplier extends GhidraScript {
         function.setVarArgs(booleanValue(row.get("varargs")));
         function.setNoReturn(booleanValue(row.get("noreturn")));
         function.setSignatureSource(SourceType.ANALYSIS);
-        setThisType(function, ownerTypePath);
+        verifyThisType(function, ownerTypePath);
     }
 
     private boolean signatureMatches(Function function, Map<String, String> row,
@@ -316,17 +320,35 @@ public class STVirtualMethodApplier extends GhidraScript {
         return type;
     }
 
-    private void setThisType(Function function, String ownerTypePath) throws Exception {
+    private void ensureOwnerNamespace(Function function, String owner) throws Exception {
+        if (owner == null || owner.isBlank())
+            throw new IllegalArgumentException("Missing owner for __thiscall method");
+        Namespace desired = getOrCreateClass(owner);
+        Namespace current = function.getParentNamespace();
+        if (desired.equals(current)) return;
+
+        SourceType source = function.getSymbol().getSource();
+        boolean replaceable = current.equals(currentProgram.getGlobalNamespace()) &&
+            (source == SourceType.DEFAULT || source == SourceType.ANALYSIS ||
+                hasTag(function, TAG));
+        if (!replaceable)
+            throw new IllegalArgumentException("Owner namespace conflict: current " +
+                current.getName(true) + ", proposed " + desired.getName(true));
+        function.setParentNamespace(desired);
+    }
+
+    private void verifyThisType(Function function, String ownerTypePath) throws Exception {
         if (ownerTypePath == null || ownerTypePath.isBlank() ||
                 !"__thiscall".equals(function.getCallingConventionName())) return;
         DataType ownerType = requireType(ownerTypePath);
         Parameter parameter = thisParameter(function);
-        if (parameter == null) return;
+        if (parameter == null)
+            throw new IllegalArgumentException("Ghidra did not synthesize an automatic this parameter");
         if (parameter.getDataType() instanceof Pointer pointer &&
                 ownerType.isEquivalent(pointer.getDataType())) return;
-        DataType pointer = new PointerDataType(ownerType,
-            currentProgram.getDefaultPointerSize(), dataTypes);
-        parameter.setDataType(pointer, SourceType.ANALYSIS);
+        throw new IllegalArgumentException("Automatic this type mismatch: got " +
+            parameter.getDataType().getPathName() + ", expected pointer to " +
+            ownerType.getPathName());
     }
 
     private Parameter thisParameter(Function function) {

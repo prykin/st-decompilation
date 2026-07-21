@@ -4,7 +4,7 @@ void FUN_00756480(AnonShape_00756480_42788A49 *param_1)
 {
   int iVar1;
   int *piVar2;
-  
+
   iVar1 = param_1->field_001C;
   if (iVar1 == 1) {
     param_1->field_0020 = 1;

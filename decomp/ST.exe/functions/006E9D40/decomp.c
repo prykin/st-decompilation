@@ -5,7 +5,7 @@ uint * __thiscall FUN_006e9d40(void *this,uint *param_1,uint param_2)
   ushort *puVar1;
   uint uVar2;
   uint *puVar3;
-  
+
   puVar3 = *(uint **)((int)this + 0x310);
   if ((param_1 < puVar3) &&
      (puVar3 = (uint *)(*(int *)((int)this + 0x31c) + (int)param_1 * 0x114), (*puVar3 & 0x8000) != 0

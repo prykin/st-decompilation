@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -15,11 +17,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   uint uVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 extraout_ECX;
-  undefined4 extraout_ECX_00;
   uint uVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar9;
   uint uVar10;
   InternalExceptionFrame local_58;
@@ -27,11 +25,11 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   undefined4 local_10;
   uint local_c;
   uint local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -52,9 +50,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9eb);
       return local_10;
     }
-    pcVar1 = (code *)swi(3);
-    uVar7 = (*pcVar1)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((param_1 == 1) || (param_1 == 0)) {
     puVar9 = (undefined4 *)&local_14->field_0x89;
@@ -70,6 +66,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
     this_00->field_029F = (uint *)this_00->field_0160;
     this_00->field_029F = (uint *)0x0;
     if (this_00->field_029B == 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((this_00->field_0160 == 0) ||
          (uVar8 = *(int *)(this_00->field_0160 + 0xc), local_c = uVar8, uVar8 == 0)) {
         uVar8 = local_c;
@@ -85,9 +82,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
           DArrayGetElement((DArrayTy *)this_00->field_0160,uVar10,&local_8);
           if ((((short)local_8 != -1) &&
               (pSVar4 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0024),
-                                   local_8,CASE_1), pSVar4 != (STGameObjC *)0x0)) &&
+                                  (g_sTAllPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
+              pSVar4 != (STGameObjC *)0x0)) &&
              (iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x33)) {
             Library::DKW::TBL::FUN_006ae1c0(this_00->field_029F,&local_8);
           }
@@ -120,6 +116,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       local_10 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar10 = *(uint *)(this_00->field_0029 + 0xc);
       local_c = uVar10;
       if (0 < (int)uVar10) {
@@ -128,9 +125,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
           if ((short)local_8 != -1) {
             this_01 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
-                                (g_sTAllPlayers_007FA174,
-                                 CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00->field_0024),
-                                 local_8,CASE_1);
+                                (g_sTAllPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
             iVar2 = thunk_FUN_0045ff10((int)this_01);
             uVar10 = local_c;
             if ((iVar2 == 4) ||

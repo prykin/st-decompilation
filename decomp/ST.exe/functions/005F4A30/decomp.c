@@ -8,20 +8,18 @@ undefined4 FUN_005f4a30(int param_1,uint param_2,int param_3)
   int iVar2;
   int iVar3;
   uint uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   AnonShape_005F4A30_D28DC55A *local_14;
   undefined **local_10;
   int local_c;
   undefined4 local_8;
-  
+
   local_c = param_1;
   local_8 = 0;
   local_10 = &PTR_s_pics_g_007ce5f8;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   iVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;

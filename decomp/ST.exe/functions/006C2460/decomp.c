@@ -7,7 +7,7 @@ void FUN_006c2460(int param_1,DWORD param_2,uint param_3,uint param_4,undefined4
   DWORD DVar2;
   int iVar3;
   AnonShape_006BFBF0_13F73F95 *pAVar4;
-  
+
   iVar3 = param_7 * 0xc4;
   pAVar4 = (AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar3);
   *(undefined4 *)(&DAT_00855028 + iVar3) = param_5;
@@ -32,7 +32,9 @@ void FUN_006c2460(int param_1,DWORD param_2,uint param_3,uint param_4,undefined4
   }
   piVar1 = (int *)(&DAT_00855004)[param_7 * 0x31];
   if (piVar1 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 0x48))(piVar1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)(&DAT_00855004)[param_7 * 0x31] + 8))
               ((int *)(&DAT_00855004)[param_7 * 0x31]);
   }

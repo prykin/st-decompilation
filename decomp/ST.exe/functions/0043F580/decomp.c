@@ -17,7 +17,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
   int local_10;
   DArrayTy *local_c;
   int local_8;
-  
+
   local_8 = (int)param_3;
   iVar7 = (int)param_5;
   _param_3 = param_6 + -1 + local_8;
@@ -61,6 +61,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
               if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(*piVar2 + 0x74))(local_24);
                 pbVar8 = local_24;
                 pbVar4 = param_2;

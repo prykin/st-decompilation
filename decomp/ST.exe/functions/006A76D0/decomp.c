@@ -22,7 +22,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int local_14;
   int local_10;
   int local_c;
-  
+
   iVar2 = param_2 * param_3;
   local_10 = 0x7fffffff;
   local_c = 0x7fffffff;

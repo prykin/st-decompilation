@@ -4,7 +4,7 @@ void FUN_00682ec0(void)
 {
   bool bVar1;
   int iVar2;
-  
+
   iVar2 = DAT_007d2d18;
   bVar1 = false;
   switch(DAT_007d2d18) {

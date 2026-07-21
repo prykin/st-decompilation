@@ -26,7 +26,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   undefined4 local_10;
   float local_c;
   AnonReceiver_00636260 *local_8;
-  
+
   *(uint *)&this->field_0xc = param_1;
   *(int *)&this->field_0x10 = param_2;
   *(int *)&this->field_0x14 = param_3;

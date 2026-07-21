@@ -9,8 +9,11 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
   uint uVar5;
   int iVar6;
   float10 fVar7;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST1;
   longlong lVar8;
   uint local_1c;
@@ -18,9 +21,10 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
   int local_14;
   int local_10;
   float local_8;
-  
+
   local_8 = 0.0;
   local_14 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(int *)(param_1->field_0234 + 0xc);
   switch(param_1->field_020D) {
   case 1:
@@ -60,15 +64,18 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
                 *(float *)(iVar6 + 0x30) = (float)((uVar3 >> 1) + 10) + *(float *)(iVar6 + 0x30);
                 lVar8 = Library::MSVCRT::__ftol();
                 *(int *)(iVar6 + 0x24) = (int)lVar8;
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((float10)(param_1->field_01FD + 100) <= extraout_ST0) {
                   *(undefined4 *)(iVar6 + 0x30) = 0x43480000;
                   *(undefined4 *)(iVar6 + 0x34) = 0;
                 }
                 Library::MSVCRT::__ftol();
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 fVar7 = extraout_ST0_00;
               }
               fcos(fVar7);
               lVar8 = Library::MSVCRT::__ftol();
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fsin(extraout_ST1);
               iVar1 = (int)lVar8 + *(int *)(iVar6 + 0x18);
               *(int *)(iVar6 + 0xc) = iVar1;
@@ -87,6 +94,7 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
       }
       else {
         iVar6 = param_1->field_0234;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((local_1c < *(uint *)(iVar6 + 0xc)) &&
            (iVar6 = *(int *)(iVar6 + 8) * local_1c + *(int *)(iVar6 + 0x1c), iVar6 != 0)) {
           if (param_1->field_020D == 3) {

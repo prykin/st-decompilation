@@ -17,7 +17,7 @@ uint FUN_006f5920(byte *param_1,int param_2,uint *param_3,int param_4,int param_
   byte *pbVar10;
   byte *pbVar11;
   int iStack_18;
-  
+
   DAT_0085701c = param_9;
   DAT_00857024 = param_10;
   DAT_00857020 = param_12;
@@ -80,6 +80,7 @@ uint FUN_006f5920(byte *param_1,int param_2,uint *param_3,int param_4,int param_
           param_6 = pbVar10 + 1;
           iStack_18 = iStack_18 - (uVar4 & 0x3f);
           bVar2 = *(byte *)(*pbVar10 + DAT_0085701c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_9 = CONCAT31((int3)(*pbVar10 + DAT_0085701c >> 8),bVar2);
           uVar6 = uVar4 & 0x3f;
           do {
@@ -217,6 +218,7 @@ LAB_006f5b32:
       uVar6 = uVar6 & 0x3f;
       pbVar10 = param_6 + 1;
       iStack_18 = iStack_18 - uVar6;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_9 = CONCAT31((int3)(*param_6 + DAT_0085701c >> 8),
                          *(undefined1 *)(*param_6 + DAT_0085701c));
       param_3 = puVar8;

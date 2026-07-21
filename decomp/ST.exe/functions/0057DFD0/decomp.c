@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
@@ -8,15 +10,13 @@ void __thiscall STResourceC::SetResource(STResourceC *this,int param_1,int param
 {
   code *pcVar1;
   int iVar2;
-  
+
   if (this->field_0255 == 0xdd) {
     if (param_1 < 1000000) goto cf_common_exit_0057E045;
     iVar2 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x36,0,0,&DAT_007a4ccc,
                                s_STResourceC__SetResource___value_007cb1c0);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
@@ -24,9 +24,7 @@ void __thiscall STResourceC::SetResource(STResourceC *this,int param_1,int param
     iVar2 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x3c,0,0,&DAT_007a4ccc,
                                s_STResourceC__SetResource___value_007cb1c0);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   param_1 = 999999;

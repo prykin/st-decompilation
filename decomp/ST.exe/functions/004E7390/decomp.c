@@ -22,7 +22,7 @@ void FUN_004e7390(int param_1,uint param_2,uint param_3,int param_4)
   int *local_10;
   int local_c;
   char *local_8;
-  
+
   if ((-1 < param_1) && (param_1 < 8)) {
     uVar3 = GetPlayerRaceId((char)param_1);
     puVar11 = &DAT_00801020;
@@ -35,6 +35,7 @@ void FUN_004e7390(int param_1,uint param_2,uint param_3,int param_4)
       *puVar11 = 0;
       puVar11 = puVar11 + 1;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     DAT_00800bd4._0_1_ = (undefined1)param_3;
     iVar5 = 0;
     DAT_00800bd0 = param_2;

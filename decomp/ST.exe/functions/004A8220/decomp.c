@@ -5,13 +5,15 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,undefined2 pa
   int iVar1;
   uint uVar2;
   undefined4 local_8;
-  
+
   local_8 = this;
   if (((*(int *)((int)this + 0xef) != 0) &&
       (iVar1 = *(int *)(*(int *)((int)this + 0xef) + 0xc), iVar1 != 0)) && (uVar2 = 0, 0 < iVar1)) {
     do {
       DArrayGetElement(*(DArrayTy **)((int)this + 0xef),uVar2,&local_8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((local_8._2_2_ == param_2) && ((char)local_8 == param_1)) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
         Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar2,&local_8);
         break;
@@ -24,12 +26,14 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,undefined2 pa
   {
     while( true ) {
       DArrayGetElement(*(DArrayTy **)((int)this + 0x20e),uVar2,&local_8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((local_8._2_2_ == param_2) && ((char)local_8 == param_1)) break;
       uVar2 = uVar2 + 1;
       if (iVar1 <= (int)uVar2) {
         return;
       }
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
     Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x20e),uVar2,&local_8);
   }

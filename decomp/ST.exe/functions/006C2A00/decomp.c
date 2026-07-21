@@ -9,13 +9,14 @@ undefined4 FUN_006c2a00(LPVOID lpBuffer)
   BOOL BVar1;
   undefined4 uVar2;
   DWORD local_8;
-  
+
   uVar2 = 0;
   hFile = CreateFileA(lpBuffer,0x80000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     return 0;
   }
   BVar1 = ReadFile(hFile,&lpBuffer,4,&local_8,(LPOVERLAPPED)0x0);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if ((((BVar1 != 0) && (local_8 == 4)) && ((char)lpBuffer == 'B')) &&
      (((char)((uint)lpBuffer >> 8) == 'I' && (lpBuffer._2_1_ == 'K')))) {
     uVar2 = 1;

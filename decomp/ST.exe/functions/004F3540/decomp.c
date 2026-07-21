@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintBut
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004FB060 -> 004F3540 @ 004FD4D0 | 004FB060 -> 004F3540 @ 004FD51D */
 
@@ -18,14 +20,12 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,AnonShape_004F3540_E0E47AE6 *para
   undefined4 uVar4;
   LPSTR text_00;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar6;
   InternalExceptionFrame local_54;
   AnonNested_004F3540_0018_2CFA22F7 *local_10;
   ushort *local_c;
   CPanelTy *local_8;
-  
+
   local_10 = param_2->field_0018;
   local_c = (ushort *)0x0;
   if (param_5 == (undefined *)0x0) {
@@ -34,7 +34,7 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,AnonShape_004F3540_E0E47AE6 *para
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  errorCode = (int *)Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = (int *)Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (errorCode != (int *)0x0) {
     g_currentExceptionFrame = local_54.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1cd,0,(int)errorCode,
@@ -43,11 +43,10 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,AnonShape_004F3540_E0E47AE6 *para
       RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1cd);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar6 = 1;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar4 = (*(code *)param_5)(param_2);
   text_00 = FUN_006f2c00(text,1,uVar4);
   local_c = cMf32::RecGet(DAT_00806790,param_3,text_00,errorCode,iVar6);

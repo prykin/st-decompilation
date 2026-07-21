@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::SwitchOptPanel
-   
+
    [STSwitchEnumApplier] Switch target field_0172 uses
    /SubmarineTitans/Recovered/Enums/OptPanelTy_field_0172State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -14,8 +16,6 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   OptPanelTy *this_00;
   int errorCode;
   int iVar2;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar3;
   bool bVar4;
   bool bVar5;
@@ -34,14 +34,14 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   undefined4 local_10;
   OptPanelTy *local_c;
   int local_8;
-  
+
   if (this->field_019C != 0) {
     return;
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -51,9 +51,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x125);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   switch(local_c->field_0172) {
   case CASE_1:
@@ -111,6 +109,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar5 = local_8 != 0;
     if (DAT_00801698 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(*DAT_00801698 + 0x1c))(0);
     }
     bVar6 = local_8 != 0;
@@ -119,18 +118,22 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar7 = local_8 != 0;
     if (DAT_00801678 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(*DAT_00801678 + 0x1c))(0);
     }
     bVar8 = local_8 != 0;
     if (DAT_008016ec != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(*DAT_008016ec + 0x1c))(0);
     }
     bVar9 = local_8 != 0;
     if (DAT_00802a48 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(*DAT_00802a48 + 0x1c))(0);
     }
     bVar10 = local_8 != 0;
     if (DAT_0080168c != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(*DAT_0080168c + 0x1c))(0);
     }
     bVar11 = local_8 != 0;
@@ -139,6 +142,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar12 = local_8 != 0;
     if (DAT_00801690 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(*DAT_00801690 + 0x18))(0);
     }
     bVar13 = local_8 != 0;

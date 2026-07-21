@@ -43,10 +43,11 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
   uint local_10;
   int local_c;
   uint local_8;
-  
+
   pbVar8 = param_2;
   local_60 = 1;
   local_58 = 1;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)((int)this + 0x24) * (int)param_2 + *(int *)((int)this + 0x20);
   local_8 = 0x80000000;
   local_2c = (param_6 + -1 + param_8 * 2) / 2;
@@ -289,6 +290,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_68 = param_5[3];
               local_70 = local_20;
               local_6c = param_5[1];
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a6f0(local_24,(int)param_2,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -296,6 +298,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
                            *(int *)((int)this + 0x28),&local_74,param_3);
             }
             else {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a810(local_24,(int)param_2,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -327,6 +330,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_68 = param_5[3];
               local_70 = local_24;
               local_6c = param_5[1];
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a550(param_3,(int)pbVar8,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -334,6 +338,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
                            *(int *)((int)this + 0x28),&local_74,param_7);
             }
             else {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a660(param_3,(int)pbVar8,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -399,6 +404,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
             local_64 = local_10;
             local_5c = local_34;
             if (((int)local_20 < param_5[3]) && (param_5[1] <= (int)(local_20 + iVar11))) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a810(local_24,-(int)param_2,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -409,6 +415,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_70 = local_28;
               local_6c = 1 - param_5[3];
               local_68 = 1 - param_5[1];
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a6f0(local_24,-(int)param_2,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -439,6 +446,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
             local_64 = local_10;
             local_5c = local_34;
             if (((int)local_24 < param_5[3]) && (param_5[1] <= (int)(local_24 + iVar11))) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a660(param_3,-(int)pbVar8,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +
@@ -449,6 +457,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_70 = local_28;
               local_6c = 1 - param_5[3];
               local_68 = 1 - param_5[1];
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a550(param_3,-(int)pbVar8,
                            (ushort *)
                            (*(int *)((int)this + 0x14) +

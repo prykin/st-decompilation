@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
@@ -15,24 +17,20 @@ PausePanelTy::GetMessage(PausePanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1
   LPSTR pCVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   PanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = (PanelTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x9f,0,iVar4,&DAT_007a4ccc,
                                s_PausePanelTy__GetMessage_007c7554);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar7 = (*pcVar3)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_pause_cpp_007c7490,0x9f);
     return 0xffff;
@@ -87,6 +85,7 @@ PausePanelTy::GetMessage(PausePanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1
   }
   else if (uVar2 == 0xbfff) {
     this_00->field_0028 = 0xa100;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
   }
   else if (uVar2 == 0xc000) {

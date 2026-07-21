@@ -6,7 +6,7 @@ FUN_0071b760(uint param_1,byte param_2,AnonShape_0071B760_B33E06ED *param_3,
 {
   byte bVar1;
   uint uVar2;
-  
+
   switch(param_1 & 0xfffff) {
   case 0xfb:
     uVar2 = (uint)param_4->field_000F;

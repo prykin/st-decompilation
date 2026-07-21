@@ -9,7 +9,7 @@ undefined4 FUN_005f3b30(float param_1,float param_2,float param_3,float param_4,
   float fVar3;
   float fVar4;
   float fVar5;
-  
+
   fVar2 = param_1 * param_1;
   fVar3 = fVar2 * _DAT_00790784;
   fVar4 = fVar2 * param_1 * _DAT_0079c588;

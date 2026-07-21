@@ -3,7 +3,7 @@
    VTable: 0079B238 (store 005785FC)
    Evidence: final_vptr=0079B238; returns_this=true; calls_before=2; field_writes_after=1;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 005785E0 returns STCrabC::STCrabC this @ 00578610 */
 

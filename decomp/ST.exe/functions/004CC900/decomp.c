@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_004cc900(AnonShape_004CC900_31EE9CAA *param_1)
 {
   undefined4 uVar1;
   uint uVar2;
-  
+
   if ((((STT3DSprC *)param_1->field_0603 != (STT3DSprC *)0x0) && (param_1->field_0444 != 0)) &&
      (param_1->field_0448 != 0)) {
     param_1->field_0448 = 0;

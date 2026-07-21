@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -19,10 +21,10 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
   int iVar8;
   uint uVar9;
   short sVar10;
-  undefined4 unaff_ESI;
   AnonShape_00583270_F758043B *pAVar11;
   undefined4 *puVar12;
   byte *pbVar13;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   int *piVar14;
   undefined4 *puVar15;
@@ -46,14 +48,14 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
   uint local_10;
   byte *local_c;
   uint local_8;
-  
+
   if ((this->field_0235 == CASE_4) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
   local_3c = (STSprGameObjC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   this_00 = local_3c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_a0.previous;
@@ -63,9 +65,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
       RaiseInternalException(iVar6,0,s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x2b0);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar7 = (*pcVar2)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_3c,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar9 = param_1->field_0010;
@@ -92,6 +92,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
     else if (uVar9 < 4) {
       if (uVar9 == 3) {
         uVar7 = thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this_00);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                            *(short *)&this_00->field_0x5f,
                            CONCAT31((int3)((uint)uVar7 >> 8),this_00->field_0x8e),
@@ -101,6 +102,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
         return 0;
       }
       if (uVar9 == 0) {
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         LifeGun((STJellyGunC *)this_00,unaff_EDI);
         g_currentExceptionFrame = local_a0.previous;
         return 0;
@@ -179,9 +181,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
                                              &DAT_007a4ccc,
                                              s_STJellyGunC__Invalid_player_numb_007cb818);
                   if (iVar6 != 0) {
-                    pcVar2 = (code *)swi(3);
-                    uVar7 = (*pcVar2)();
-                    return uVar7;
+                    STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
                   *(undefined4 *)((int)&this_00->field_0259 + 1) = 0;
                   iVar6 = 0;
@@ -224,9 +224,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
                 iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jelly_cpp_007cb7b0,499,0,0,
                                            &DAT_007a4ccc,s_STJellyGunC__Phase_Count_err_007cb844);
                 if (iVar6 != 0) {
-                  pcVar2 = (code *)swi(3);
-                  uVar7 = (*pcVar2)();
-                  return uVar7;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 sub_00582580((STJellyGunC *)this_00);
               }
@@ -235,9 +233,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
               iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x1ec,0,0,
                                          &DAT_007a4ccc,s_STJellyGunC__GetMessage_Phase_Co_007cb868);
               if (iVar6 != 0) {
-                pcVar2 = (code *)swi(3);
-                uVar7 = (*pcVar2)();
-                return uVar7;
+                STDebugBreak(); /* noreturn in standalone pseudocode */
               }
               sub_00582580((STJellyGunC *)this_00);
             }
@@ -246,9 +242,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
             iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x1e5,0,0,
                                        &DAT_007a4ccc,s_STJellyGunC__Cell_is_busy_007cb898);
             if (iVar6 != 0) {
-              pcVar2 = (code *)swi(3);
-              uVar7 = (*pcVar2)();
-              return uVar7;
+              STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             sub_00582580((STJellyGunC *)this_00);
           }
@@ -446,6 +440,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
   }
   else {
     if (uVar9 == 0x113) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_a0.previous;
       return 0;

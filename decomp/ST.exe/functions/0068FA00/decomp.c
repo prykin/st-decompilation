@@ -14,7 +14,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
   char local_30;
   undefined1 local_2f;
   uint *local_2e;
-  
+
   uVar2 = 0;
   iVar1 = *(int *)((int)this + 0xa5);
   if (0 < *(int *)(iVar1 + 0xc)) {

@@ -5,7 +5,7 @@ undefined4 FUN_006e45c0(AnonShape_006E45C0_FB272364 *param_1)
   DArrayTy *pDVar1;
   uint uVar2;
   AnonShape_006E45C0_FB272364 *pAVar3;
-  
+
   param_1->field_0008->iteratorIndex = 0;
   while( true ) {
     pDVar1 = param_1->field_0008;
@@ -13,6 +13,7 @@ undefined4 FUN_006e45c0(AnonShape_006E45C0_FB272364 *param_1)
     if (pDVar1->count <= uVar2) {
       return 0;
     }
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar2) (runtime stride) */
     pAVar3 = (AnonShape_006E45C0_FB272364 *)(pDVar1->elementSize * uVar2 + (int)pDVar1->data);
     pDVar1->iteratorIndex = uVar2 + 1;
     if (pAVar3 == (AnonShape_006E45C0_FB272364 *)0x0) break;

@@ -18,7 +18,7 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
   char acStackY_1979 [614];
   undefined4 auStackY_1713 [1470];
   undefined4 uStackY_18;
-  
+
   iVar10 = param_2;
   Library::MSVCRT::FUN_0072da40();
   puVar8 = this;

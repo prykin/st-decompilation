@@ -11,7 +11,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
   int iVar7;
   int iVar8;
   uint uVar9;
-  
+
   iVar3 = param_1->field_02D1;
   if ((uint)PTR_00802a38->field_00E4 % 5 != 0) {
     return iVar3;
@@ -26,6 +26,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
       cVar2 = thunk_FUN_004ad610((int)puVar1);
       if (cVar2 != '\0') {
         thunk_FUN_005fa0b0((int)param_1);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)puVar1)();
       }
     }

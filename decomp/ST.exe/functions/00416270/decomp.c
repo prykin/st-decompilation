@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0057B670 -> 00416270 @ 0057B716 | 005FAC40 -> 00416270 @ 005FAC6A
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00484020 -> 00416270 @ 00484166 | 0057B670 -> 00416270 @ 0057B716 | 005FAC40 ->
    00416270 @ 005FAC6A */

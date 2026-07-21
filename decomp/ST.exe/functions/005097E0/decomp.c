@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
    CPanelTy::SetControlObj
-   
+
    [STSwitchEnumApplier] Switch target field_0BF5 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
@@ -23,8 +25,6 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   uint uVar9;
   byte bVar10;
   int iVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar12;
   int iVar13;
   undefined1 *puVar14;
@@ -68,19 +68,17 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   uint local_10;
   undefined1 *local_c;
   undefined4 *local_8;
-  
+
   local_10c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_10c;
   local_20 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_10c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_10c.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_10c.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x53e,0,iVar5,
                                 &DAT_007a4ccc,s_CPanelTy__SetControlObj_007c2898);
     if (iVar11 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x53e);
     return;
@@ -185,6 +183,7 @@ LAB_00509a02:
       bVar10 = (char)local_10 + 1;
       local_c = local_c + 0x27;
       local_1c = local_1c + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_10 = CONCAT31(local_10._1_3_,bVar10);
     } while (bVar10 < 6);
     local_60 = this_00->field_0008;
@@ -365,6 +364,7 @@ LAB_00509ddd:
             bVar10 = (char)local_c + 1;
             iVar5 = iVar5 + 1;
             local_8 = local_8 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = (undefined1 *)CONCAT31(local_c._1_3_,bVar10);
           } while (bVar10 < 6);
           g_currentExceptionFrame = local_10c.previous;

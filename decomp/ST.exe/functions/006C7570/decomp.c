@@ -7,7 +7,7 @@ void FUN_006c7570(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
 
 {
   uint uVar1;
-  
+
   if (((param_7 != 0) && (param_7 * 2 <= (int)param_5)) && (param_7 * 2 <= param_6)) {
     if (param_2 == 0) {
       param_2 = FUN_006b4fa0((int)param_1);
@@ -17,7 +17,7 @@ void FUN_006c7570(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
                  -uVar1,param_5,param_6,param_7,param_8);
     return;
   }
-  FUN_006b5ee0((int)param_1,param_2,param_3,param_4,(int)param_5,param_6,param_8,0xd);
+  FUN_006b5ee0(param_1,param_2,param_3,param_4,(int)param_5,param_6,param_8,0xd);
   return;
 }
 

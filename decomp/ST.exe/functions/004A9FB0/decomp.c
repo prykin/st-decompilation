@@ -5,14 +5,18 @@ undefined4 FUN_004a9fb0(float param_1)
 
 {
   uint uVar1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
-  
+
   local_8 = DAT_008073d0;
   switch(DAT_008073fc) {
   case 0:
@@ -35,7 +39,9 @@ undefined4 FUN_004a9fb0(float param_1)
   }
   lVar3 = Library::MSVCRT::__ftol();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fVar2 = extraout_ST1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = Library::MSVCRT::__ftol(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {

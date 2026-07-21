@@ -10,7 +10,7 @@ undefined4 __cdecl FUN_006aced8(int param_1,int param_2,int param_3,int param_4)
   int iVar6;
   int iVar7;
   uint uVar8;
-  
+
   lVar3 = (longlong)(param_1 - param_3) * (longlong)(param_1 - param_3);
   iVar6 = (int)((ulonglong)lVar3 >> 0x20);
   if ((lVar3 < 0) ||

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bspr.cpp
@@ -13,9 +15,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   int iVar4;
   DWORD DVar5;
   TLOBaseTy_field_0245State TVar6;
-  undefined4 unaff_ESI;
   undefined4 *this_01;
-  void *unaff_EDI;
   uint uVar7;
   char cVar8;
   char *text;
@@ -25,22 +25,20 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   TLOBaseTy *local_10;
   TLOBaseTy_field_0245State local_c;
   int local_8;
-  
+
   local_10 = this;
   uVar2 = GetPlayerRaceId(this->field_023D);
   local_8 = (uVar2 & 0xff) - 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xbb,0,iVar3,&DAT_007a4ccc,
                                s_TLOBaseTy__LoadImages_error_007ad410);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar3 = (*pcVar1)();
-      return iVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xbc);
     return iVar3;
@@ -181,6 +179,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
       thunk_FUN_004ad5e0((int)this_01);
     }
     else {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*this_01)();
     }
   }
@@ -217,6 +216,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
       thunk_FUN_004ace60(this_01,'\t');
       thunk_FUN_004ace60(this_01,'\b');
       thunk_FUN_004ace60(this_01,'\a');
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_004ace30(this_01,*(uint *)(DAT_00806724 + 0x30 + this_00->field_04C8 * 4),
                          (int)*(short *)(DAT_00806724 + 0x2c));
     }

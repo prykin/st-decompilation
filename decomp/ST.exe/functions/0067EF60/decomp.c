@@ -4,13 +4,11 @@ int __cdecl FUN_0067ef60(byte *param_1,int *param_2)
 {
   int iVar1;
   int iVar2;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar1 == 0) {
     iVar1 = thunk_FUN_0067eea0(param_1);
     if (iVar1 == 0) {

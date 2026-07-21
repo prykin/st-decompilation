@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
@@ -11,15 +13,13 @@ void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
   MainMenuTy *pMVar3;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_1AD3 != 0) {
@@ -39,9 +39,7 @@ void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
   iVar5 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xe8,0,iVar4,&DAT_007a4ccc,
                              s_MainMenuTy__LightPalette_007cc9a0);
   if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0xe8);
   return;

@@ -18,7 +18,7 @@ void FUN_006b7070(int *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d908;
   puStack_10 = &LAB_0072d964;
@@ -29,6 +29,7 @@ void FUN_006b7070(int *param_1)
     puStack_38 = local_28;
     uStack_3c = 0;
     ExceptionList = &local_14;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*piStack_40 + 0x58))();
     if (iVar1 == -0x7788ffe2) {
       local_8 = 0;
@@ -44,9 +45,11 @@ void FUN_006b7070(int *param_1)
         *(undefined1 *)ppiVar3 = 0;
         ppiVar3 = (int **)((int)ppiVar3 + 1);
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar1 = (**(code **)(*(int *)*param_1 + 0x58))((int *)*param_1,&piStack_40,local_28);
       if (iVar1 == 0) {
         uStack_3c = uStack_3c | 0x20;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)*param_1 + 0x7c))((int *)*param_1,&piStack_40,0);
       }
     }

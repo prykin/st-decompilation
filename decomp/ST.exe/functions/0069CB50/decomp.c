@@ -73,7 +73,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d818;
   puStack_10 = &LAB_0072d964;
@@ -124,6 +124,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
       if (0 < (int)uVar14) {
         do {
           if (uVar9 < pDVar3->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar9) (runtime stride) */
             piVar4 = (int *)(pDVar3->elementSize * uVar9 + (int)pDVar3->data);
           }
           else {
@@ -141,6 +142,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
         } while ((int)uVar9 < (int)uVar14);
       }
       if ((0 < iVar13) && (0 < iVar8)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar8 = *(int *)((int)param_1 + 0x5833);
         local_140 = iVar8 * 8;
         local_6c = 0;
@@ -164,6 +166,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
             iVar8 = iVar13 + -1;
           }
           if (*(uint *)(local_74 + iVar8 * 4) < pDVar3->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pAVar15 = (AnonShape_0069CB50_B339E56A *)
                       (pDVar3->elementSize * *(uint *)(local_74 + iVar8 * 4) + (int)pDVar3->data);
           }
@@ -182,6 +185,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
               uVar14 = (int)uVar14 % (int)dVar2;
               pDVar3 = pAVar15->field_000C;
               if (uVar14 < pDVar3->count) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
                 piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
               }
               else {
@@ -240,6 +244,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
       if (0 < (int)local_13c) {
         do {
           if (uVar14 < pDVar3->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
             piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
           }
           else {
@@ -283,6 +288,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
             local_148 = local_144 + -1;
           }
           if (*(uint *)(local_74 + local_148 * 4) < local_138->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             local_30 = (AnonShape_0069CB50_B339E56A *)
                        (local_138->elementSize * *(uint *)(local_74 + local_148 * 4) +
                        (int)local_138->data);
@@ -312,6 +318,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
               do {
                 uVar14 = local_e4;
                 if (bVar18) {
+                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, local_e4) (runtime stride) */
                   piVar4 = (int *)(pDVar3->elementSize * local_e4 + (int)pDVar3->data);
                 }
                 else {
@@ -650,6 +657,7 @@ LAB_0069d7b2:
       if (0 < (int)local_13c) {
         do {
           if (uVar14 < local_138->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_138, uVar14) (runtime stride) */
             piVar4 = (int *)(local_138->elementSize * uVar14 + (int)local_138->data);
           }
           else {
@@ -667,8 +675,10 @@ LAB_0069d7b2:
         } while ((int)uVar14 < (int)local_13c);
       }
       if ((0 < iVar13) && (0 < iVar8)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_140 = *(int *)((int)param_1 + 0x5833) * 8;
         local_b0 = 0;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_170 = (*(int *)((int)param_1 + 0x5833) * 3) / 2;
         pDVar3 = local_138;
         while ((0 < local_140 && (local_b0 < local_170))) {
@@ -691,6 +701,7 @@ LAB_0069d7b2:
             local_15c = iVar13 + -1;
           }
           if (*(uint *)(local_74 + local_15c * 4) < pDVar3->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pAVar15 = (AnonShape_0069CB50_B339E56A *)
                       (pDVar3->elementSize * *(uint *)(local_74 + local_15c * 4) + (int)pDVar3->data
                       );
@@ -710,6 +721,7 @@ LAB_0069d7b2:
               uVar14 = (int)uVar14 % (int)dVar2;
               pDVar3 = pAVar15->field_000C;
               if (uVar14 < pDVar3->count) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
                 piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
               }
               else {
@@ -816,6 +828,7 @@ LAB_0069d7b2:
       bVar18 = local_138->count != 0;
       do {
         if (bVar18) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
           pvVar7 = (void *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
         }
         else {

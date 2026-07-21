@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bspr.cpp
    TLOBaseTy::RotateSpr
-   
+
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
-   
+
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_69=105;CASE_70=112;CASE_72=114
@@ -21,16 +23,14 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
   TLOBaseTy *this_00;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
   TLOBaseTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -40,9 +40,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       RaiseInternalException(iVar4,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x1a8);
       return iVar4;
     }
-    pcVar3 = (code *)swi(3);
-    iVar4 = (*pcVar3)();
-    return iVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((local_8->field_0245 == CASE_1) && (local_8->field_05DF != 5)) &&
      (iVar4 = thunk_FUN_004ac910(&local_8->field_01D5,'\x04'),

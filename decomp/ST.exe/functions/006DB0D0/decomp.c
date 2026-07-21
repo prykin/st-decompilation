@@ -12,7 +12,7 @@ void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
   int iVar5;
   bool bVar6;
   int local_8;
-  
+
   piVar3 = (int *)&stack0xffffffe8;
   Library::MSVCRT::FUN_0072da40();
   iVar2 = -1;
@@ -47,6 +47,7 @@ joined_r0x006db171:
       while (1 < iVar1) {
         *param_1 = CONCAT22(*(undefined2 *)(param_9 + (uint)pbVar4[piVar3[1]] * 2),
                             *(undefined2 *)
+                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                              (param_9 +
                              CONCAT22((short)((uint)*piVar3 >> 0x10),(ushort)pbVar4[*piVar3]) * 2));
         param_1 = param_1 + 1;

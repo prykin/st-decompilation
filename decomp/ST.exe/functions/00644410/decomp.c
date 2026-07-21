@@ -43,7 +43,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
   short local_a;
   short local_8;
   short local_6;
-  
+
   iVar12 = 0;
   local_3c = (int)*(short *)&this->field_0x41;
   local_40 = (int)*(short *)&this->field_0x43;

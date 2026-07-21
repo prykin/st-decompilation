@@ -4,7 +4,7 @@ void FUN_006b50c0(int param_1,int param_2,int param_3,uint param_4,undefined4 *p
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   if (0x100 < (int)param_4) {
     param_4 = 0;
   }

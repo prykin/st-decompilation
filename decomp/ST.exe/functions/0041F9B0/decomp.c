@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STSprGameObjC::CheckRay
-   
+
    [STSwitchEnumApplier] Switch target param_7 uses
    /SubmarineTitans/Recovered/Enums/STSprGameObjC_CheckRay_param_7Enum. Cases:
    CASE_9B=155;CASE_A3=163;CASE_A5=165;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AA=170;CASE_AB=171;CASE_AF=175;CASE_B0=176;CASE_B1=177;CASE_B2=178;CASE_B3=179;CASE_B4=180;CASE_B5=181;CASE_B9=185;CASE_BB=187;CASE_BC=188
@@ -22,11 +24,9 @@ STSprGameObjC::CheckRay
   undefined4 uVar6;
   short sVar7;
   short sVar8;
-  undefined4 unaff_ESI;
   int iVar9;
   STWorldObject *pSVar10;
   short sVar11;
-  void *unaff_EDI;
   int iVar12;
   bool bVar13;
   InternalExceptionFrame local_ac;
@@ -59,11 +59,11 @@ STSprGameObjC::CheckRay
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   local_1c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_ac.previous;
     if (iVar5 != -0x5001fff7) {
@@ -73,9 +73,7 @@ STSprGameObjC::CheckRay
       iVar9 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9b,0,iVar5,&DAT_007a4ccc
                                  ,s_STSprGameObjC__CheckRay_007a4f54);
       if (iVar9 != 0) {
-        pcVar3 = (code *)swi(3);
-        uVar6 = (*pcVar3)();
-        return uVar6;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar5,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9c);
     }
@@ -226,7 +224,9 @@ LAB_0041fe0d:
                 goto cf_continue_loop_0042004A;
                 bVar4 = *(byte *)&pSVar10[1].vtable;
                 bVar1 = local_1c->field_0024;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_38 = CONCAT31(uStack_37,bVar4);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_3c = CONCAT31(uStack_3b,bVar1);
                 if (DAT_00808a8f == '\0') {
                   if (bVar4 == bVar1) {
@@ -283,7 +283,9 @@ LAB_0041fffd:
               goto cf_continue_loop_0042004A;
               bVar4 = *(byte *)&pSVar10[1].vtable;
               bVar1 = local_1c->field_0024;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_40 = CONCAT31(uStack_3f,bVar4);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_34 = CONCAT31(uStack_33,bVar1);
               if (DAT_00808a8f == '\0') {
                 if (bVar4 == bVar1) {

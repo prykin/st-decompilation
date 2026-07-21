@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::DeleteCtrls
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
@@ -15,19 +17,17 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   int iVar3;
   HoloTy *pHVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar6;
   char cVar7;
   int *piVar8;
   uint uVar9;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x89c,0,iVar3,&DAT_007a4ccc
@@ -36,9 +36,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x89c);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
     if (PTR_00802a30->field_00A9 == 0) {

@@ -9,7 +9,7 @@ undefined4 * __thiscall AiTactClassTy::AiTactClassTy(AiTactClassTy *this)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
   this->vtable = &AiTactClassTyVTable;
   if (this == (AiTactClassTy *)0x0) {

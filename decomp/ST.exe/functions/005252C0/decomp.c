@@ -7,15 +7,14 @@ void __cdecl FUN_005252c0(Global_sub_005252C0_param_1Enum param_1)
 
 {
   int iVar1;
-  InternalExceptionFrame *pIVar2;
-  int in_stack_ffffffb8;
+  InternalExceptionFrame local_4c;
   int local_8;
-  
-  pIVar2 = g_currentExceptionFrame;
+
   local_8 = 0;
   if (param_1 != 0xffffffff) {
-    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-    iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar2,in_stack_ffffffb8);
+    local_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_4c;
+    iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar1 == 0) {
       switch(param_1) {
       case CASE_AF:
@@ -29,11 +28,11 @@ void __cdecl FUN_005252c0(Global_sub_005252C0_param_1Enum param_1)
       SoundClassTy::PlaySound_thunk
                 ((SoundClassTy *)&g_sound,SOUND_MODE_5,(char *)0x0,param_1,(SoundPosition *)0x0,
                  local_8);
-      g_currentExceptionFrame = pIVar2;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    g_currentExceptionFrame = local_4c.previous;
   }
-  g_currentExceptionFrame = pIVar2;
   return;
 }
 

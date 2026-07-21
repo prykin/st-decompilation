@@ -8,7 +8,7 @@ int FUN_004b70d0(uint param_1,int param_2)
 {
   undefined4 *puVar1;
   int iVar2;
-  
+
   puVar1 = &g_playerRuntime[(char)param_1].field2108_0x972;
   iVar2 = g_playerRuntime[(char)param_1].field2108_0x972 - param_2;
   *puVar1 = iVar2;

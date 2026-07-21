@@ -17,7 +17,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::FUN_00664540
   uint index;
   uint uVar5;
   bool bVar6;
-  
+
   iVar1 = *(int *)&this->field_0x217;
   index = 0;
   uVar5 = 0;
@@ -45,7 +45,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::FUN_00664540
       *param_2 = index;
     }
     DArrayGetElement(*(DArrayTy **)&this->field_0x217,index,param_1);
-    FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)&this->field_0x217,index);
+    FUN_006b0c70(*(DArrayTy **)&this->field_0x217,index);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     return *(undefined4 *)(*(int *)&this->field_0x217 + 0xc);
   }
   return 0xffffffff;

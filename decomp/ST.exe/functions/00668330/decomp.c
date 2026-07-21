@@ -11,17 +11,15 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
   AnonShape_00668330_F270680B *pAVar2;
   undefined4 uVar3;
   uint *puVar4;
-  undefined4 unaff_ESI;
   undefined4 *puVar5;
-  void *unaff_EDI;
   AnonShape_00668330_F270680B *pAVar6;
   InternalExceptionFrame local_4c;
   AnonShape_00668330_F270680B *local_8;
-  
+
   local_8 = (AnonShape_00668330_F270680B *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     pAVar2 = (AnonShape_00668330_F270680B *)Library::DKW::LIB::FUN_006aac10(0x260);
     puVar5 = param_1;
@@ -37,6 +35,7 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
     local_8 = pAVar2;
     do {
       if (*(int *)((int)&pAVar2->field_01EB + iVar1) != 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = FUN_006b0060((uint *)0x0,
                              (uint *)(*(int *)(&pAVar2->field_0x1ef + iVar1) + 0x25f + (int)param_1)
                             );

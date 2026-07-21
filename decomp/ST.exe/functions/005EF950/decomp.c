@@ -4,7 +4,7 @@ int FUN_005ef950(int param_1,int param_2)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = param_1 / 0xf;
   iVar2 = param_2 / 0xf;
   if (iVar1 == iVar2) {

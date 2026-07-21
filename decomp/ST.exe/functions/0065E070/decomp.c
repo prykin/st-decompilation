@@ -24,10 +24,11 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   uint local_18;
   int local_14;
   int *local_10;
-  uint local_c;
+  int local_c;
   undefined2 local_8;
   undefined2 local_6;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(undefined2 *)(param_1 + 0x7d);
   piVar12 = local_4c;
   for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
@@ -35,10 +36,13 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
     piVar12 = piVar12 + 1;
   }
   local_14 = 0;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_0044e260(CONCAT31((int3)((uint)local_4c >> 8),*(undefined1 *)(param_1 + 0x24)),
                      CONCAT22((short)((uint)param_2 >> 0x10),uVar2),param_3,local_4c);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   cVar3 = *(char *)(param_1 + 0x81);
   if ((cVar3 < '\0') || ('\a' < cVar3)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
@@ -56,14 +60,16 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
         bVar13 = local_1c->count != 0;
         do {
           if (bVar13) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_1c, local_18) (runtime stride) */
             puVar4 = (undefined2 *)(local_1c->elementSize * local_18 + (int)local_1c->data);
           }
           else {
             puVar4 = (undefined2 *)0x0;
           }
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           this = (STFishC *)
                  STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,local_c,
+                           (g_sTAllPlayers_007FA174,(char)local_c,
                             CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
           if ((this == (STFishC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
@@ -150,7 +156,7 @@ cf_continue_loop_0065E27E:
     }
     local_c = local_c + 1;
     local_10 = local_10 + 1;
-    if (7 < (int)local_c) {
+    if (7 < local_c) {
       return local_14;
     }
   } while( true );

@@ -4,7 +4,8 @@ int __thiscall FUN_004ac660(void *this,char param_1)
 {
   char *pcVar1;
   char cVar2;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(int *)((int)this + 0x18) != -1) && (-1 < param_1)) &&
      ((int)param_1 <= *(int *)((int)this + 0x14) + -1)) {
     pcVar1 = (char *)(*(int *)((int)this + 0x20) + 0xd + param_1 * 0x24);

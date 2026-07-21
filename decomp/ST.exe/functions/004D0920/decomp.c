@@ -3,7 +3,7 @@
    VTable: 00797560 (store 004D093C)
    Evidence: final_vptr=00797560; returns_this=true; calls_before=2; field_writes_after=1;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 004D0920 returns TLOFakeTy::TLOFakeTy this @ 004D0950 */
 

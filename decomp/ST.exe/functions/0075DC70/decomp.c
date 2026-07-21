@@ -10,8 +10,10 @@ void FUN_0075dc70(int param_1,int *param_2,int param_3,int *param_4,int param_5)
   int *piVar6;
   int iVar7;
   int iVar8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1 + 0x1c);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1 + 0x68);
   if (-1 < param_5 + -1) {
     param_1 = param_3 * 4;

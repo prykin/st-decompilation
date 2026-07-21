@@ -42,7 +42,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d968;
   puStack_10 = &LAB_0072d964;
@@ -69,6 +69,7 @@ int FUN_006bea40(int *param_1,uint param_2)
     local_1c = &stack0xffffff4c;
     puVar3 = &stack0xffffff4c;
     if ((*(uint *)&pAVar1->field_0x8 & 0x1000000) != 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       while (iVar4 = (**(code **)(*pAVar1->field_0048 + 0x14))(pAVar1->field_0048,0),
             ppvVar2 = ExceptionList, puVar3 = local_1c, iVar4 != 0) {
         if (iVar4 == -0x7789fe3e) {
@@ -87,6 +88,7 @@ int FUN_006bea40(int *param_1,uint param_2)
     local_1c = puVar3;
     ExceptionList = ppvVar2;
     iVar4 = 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     while (iVar6 = (**(code **)(*pAVar1->field_0034 + 0x2c))(), iVar6 != 0) {
       if (iVar6 == -0x7789fe3e) {
         FUN_006cec40(pAVar1);
@@ -127,6 +129,7 @@ int FUN_006bea40(int *param_1,uint param_2)
       local_40 = local_3c.left;
       local_44 = local_3c.top;
       if (*(int *)(pAVar1 + 0x11) != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(**(int **)&pAVar1->field_0x2c + 0x58))();
         *(undefined4 *)(pAVar1 + 0x11) = 0;
       }
@@ -141,6 +144,7 @@ int FUN_006bea40(int *param_1,uint param_2)
           local_3c.right = piVar7[2] + local_40;
           local_3c.bottom = piVar7[3] + local_44;
           local_48 = 0;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           while (iVar6 = (**(code **)(*pAVar1->field_0034 + 0x14))(pAVar1->field_0034,&local_3c),
                 iVar6 != 0) {
             if (iVar6 == -0x7789fe3e) {
@@ -171,9 +175,11 @@ int FUN_006bea40(int *param_1,uint param_2)
       local_3c.bottom = local_3c.bottom + local_3c.top;
       iVar4 = 0;
       if (*(int *)(pAVar1 + 0x11) != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(**(int **)&pAVar1->field_0x2c + 0x58))();
         *(undefined4 *)(pAVar1 + 0x11) = 0;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       while (iVar6 = (**(code **)(*pAVar1->field_0034 + 0x14))(pAVar1->field_0034,&local_3c),
             iVar6 != 0) {
         if (iVar6 == -0x7789fe3e) {
@@ -225,6 +231,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   local_68 = 0;
   local_6c = (int *)0x0;
   iVar4 = 0;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar6 = (**(code **)(**(int **)&pAVar1->field_0x38 + 0xc))();
   if (iVar6 == 0) {
     local_8 = 0;
@@ -232,11 +239,13 @@ int FUN_006bea40(int *param_1,uint param_2)
     local_8 = 0xffffffff;
     local_78 = &stack0xffffff3c;
     local_1c = &stack0xffffff3c;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar6 = (**(code **)(**(int **)&pAVar1->field_0x38 + 0xc))
                       (*(int **)&pAVar1->field_0x38,&local_3c,&stack0xffffff3c,local_64);
     if (iVar6 == 0) {
       local_68 = iVar4;
       if (iVar4 < 1) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*pAVar1->field_0034 + 0x80))(pAVar1->field_0034,0);
         iVar6 = 0;
         goto cf_common_join_006BF619;
@@ -417,8 +426,10 @@ switchD_006bf136_caseD_9:
                    *(int *)(pAVar1 + 0x10));
     }
     local_8 = 0xffffffff;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*pAVar1->field_0044 + 0x80))(pAVar1->field_0044,0);
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*pAVar1->field_0034 + 0x80))(pAVar1->field_0034,0);
 cf_common_join_006BF619:
   if ((iVar6 == -0x7789ff60) || (iVar6 == -0x7789fe52)) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -15,19 +17,17 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
   AnonPointee_HelpPanelTy_0218 *pAVar6;
   undefined4 *puVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   ushort *puVar9;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   uint local_8;
-  
+
   if ((this->field_0218 != (AnonPointee_HelpPanelTy_0218 *)0x0) &&
      ((int)this->field_0218->field_0008 < (int)((param_2 & 0xffff) + param_1))) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     pHVar3 = local_c;
     if (iVar4 == 0) {
       iVar4 = 1;
@@ -54,7 +54,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
       }
       pAVar1 = *value;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B84D0_7C7D97C6 *)pAVar6,0,0,0,(byte *)pAVar1,0,0,0,pAVar1->field_0004
+                ((AnonShape_006B5B10_E0D06CF1 *)pAVar6,0,0,0,(byte *)pAVar1,0,0,0,pAVar1->field_0004
                  ,pAVar1->field_0008);
       FreeAndNull(value);
       *value = pAVar6;
@@ -65,9 +65,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
     iVar8 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xdc,0,iVar4,&DAT_007a4ccc,
                                s_HelpPanelTy__CheckBkView_007c3938);
     if (iVar8 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xdc);
   }

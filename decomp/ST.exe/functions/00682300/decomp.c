@@ -3,7 +3,7 @@ float10 FUN_00682300(char *param_1)
 
 {
   float10 fVar1;
-  
+
   if (*param_1 == '\x02') {
     return (float10)*(float *)(param_1 + 1);
   }

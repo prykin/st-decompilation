@@ -19,7 +19,7 @@ void FUN_006db310(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
   int local_14;
   int local_10;
   int local_c;
-  
+
   Library::MSVCRT::FUN_0072da40();
   local_18 = -(param_7 >> 1);
   local_10 = -1;

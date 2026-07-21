@@ -3,7 +3,7 @@ undefined4 __cdecl FUN_0065e860(uint param_1,uint param_2,int param_3,int param_
 
 {
   uint uVar1;
-  
+
   if (param_4 != 0) {
     uVar1 = thunk_FUN_00423120(param_3);
     if ((uVar1 & 0x10) == 0) {

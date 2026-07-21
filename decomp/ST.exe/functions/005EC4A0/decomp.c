@@ -5,7 +5,7 @@ int __thiscall FUN_005ec4a0(void *this,undefined4 *param_1)
   int iVar1;
   undefined4 *puVar2;
   undefined4 *puVar3;
-  
+
   puVar2 = param_1;
   puVar3 = (undefined4 *)((int)this + 0x326);
   for (iVar1 = 0x54; iVar1 != 0; iVar1 = iVar1 + -1) {

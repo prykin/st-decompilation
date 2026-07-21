@@ -8,7 +8,7 @@ void FUN_006cebe0(char *param_1,int param_2,char *param_3,int param_4,int param_
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar2 = param_5;
   iVar4 = param_2 - param_5;
   iVar3 = param_4 - param_5;

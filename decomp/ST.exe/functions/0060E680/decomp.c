@@ -15,13 +15,14 @@ FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,ui
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   uVar6 = param_4;
   iVar3 = *param_7;
   iVar5 = (param_4 ^ (int)param_4 >> 0x1f) - ((int)param_4 >> 0x1f);
   if ((iVar5 < iVar3) &&
      (iVar1 = (param_5 ^ (int)param_5 >> 0x1f) - ((int)param_5 >> 0x1f), iVar1 < iVar3)) {
     iVar2 = (param_6 ^ (int)param_6 >> 0x1f) - ((int)param_6 >> 0x1f);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((iVar2 < param_7[2]) &&
        (param_7[2] * iVar2 * iVar2 + iVar3 * iVar5 * iVar5 + param_7[1] * iVar1 * iVar1 <
         *(int *)(param_8 + 0xc))) {
@@ -36,6 +37,7 @@ FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,ui
       if ((iVar5 < iVar3) &&
          (iVar1 = (param_2 ^ (int)param_2 >> 0x1f) - ((int)param_2 >> 0x1f), iVar1 < iVar3)) {
         iVar2 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((iVar2 < param_7[2]) &&
            (param_7[2] * iVar2 * iVar2 + iVar3 * iVar5 * iVar5 + param_7[1] * iVar1 * iVar1 <
             *(int *)(param_8 + 0xc))) {
@@ -62,6 +64,7 @@ FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,ui
         if ((iVar5 < iVar3) &&
            (iVar1 = (uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f), iVar1 < iVar3)) {
           iVar2 = (uVar4 ^ (int)uVar4 >> 0x1f) - ((int)uVar4 >> 0x1f);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((iVar2 < param_7[2]) &&
              (uVar6 = param_3,
              param_7[2] * iVar2 * iVar2 + iVar3 * iVar5 * iVar5 + param_7[1] * iVar1 * iVar1 <

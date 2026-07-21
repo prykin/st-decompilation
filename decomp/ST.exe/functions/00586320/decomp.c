@@ -27,7 +27,7 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
   int local_18;
   int local_14;
   int local_c;
-  
+
   sVar12 = param_1->field_0041;
   if (sVar12 < 0) {
     iVar13 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -

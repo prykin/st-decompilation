@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
@@ -16,8 +18,6 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   int iVar7;
   byte bVar8;
   int iVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar10;
   undefined4 *puVar11;
   int iVar12;
@@ -51,7 +51,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   uint local_10;
   undefined4 *local_c;
   undefined1 *local_8;
-  
+
   puVar11 = local_108;
   local_1c = this;
   for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -65,7 +65,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   }
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
-  iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b0.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1a0,0,iVar7,&DAT_007a4ccc
@@ -74,9 +74,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
       RaiseInternalException(iVar7,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1a0);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0054a8d0(PTR_00802a30);
   this_00 = local_1c;
@@ -161,6 +159,7 @@ LAB_0050254c:
       bVar8 = (char)local_c + 1;
       local_8 = local_8 + 0x27;
       local_14 = local_14 + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = (undefined4 *)CONCAT31(local_c._1_3_,bVar8);
     } while (bVar8 < 6);
     local_5c = this_00->field_0008;

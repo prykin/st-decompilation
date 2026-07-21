@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
@@ -17,23 +19,21 @@ VisibleClassTy::SetZoneMin1
   undefined *puVar6;
   int iVar7;
   int iVar8;
-  undefined4 unaff_ESI;
   int iVar9;
-  void *unaff_EDI;
   InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
   int local_10;
   int local_c;
   undefined *local_8;
-  
+
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
      ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
     local_14 = this;
     if (*(int *)(&this->field_0xb4 + param_4 * 4) == 0) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
-      iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
@@ -42,9 +42,7 @@ VisibleClassTy::SetZoneMin1
         if (iVar4 == 0) {
           return;
         }
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       puVar5 = Library::DKW::LIB::FUN_006aac10(local_14->field_0024 * local_14->field_0020);
       *(undefined4 **)(&this->field_0xb4 + param_4 * 4) = puVar5;

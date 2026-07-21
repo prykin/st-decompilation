@@ -6,7 +6,7 @@ void FUN_006b3af0(int *param_1,uint param_2)
   uint uVar2;
   uint uVar3;
   int iVar4;
-  
+
   if (param_2 < (uint)param_1[0x68]) {
     puVar1 = *(uint **)(param_1[0x6c] + param_2 * 4);
     if ((*puVar1 & 0x80000) != 0) {

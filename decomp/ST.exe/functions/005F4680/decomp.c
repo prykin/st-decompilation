@@ -12,7 +12,7 @@ void __fastcall FUN_005f4680(AnonReceiver_005F35F0 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if (*(int *)&param_1->field_0x8f < 0) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::thunk_FUN_005f35f0
               (param_1,*(int *)&param_1->field_0x87);

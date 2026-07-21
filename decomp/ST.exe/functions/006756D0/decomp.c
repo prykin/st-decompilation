@@ -8,7 +8,7 @@ void __cdecl FUN_006756d0(short *param_1,short *param_2,short *param_3,short *pa
   int iVar4;
   int iVar5;
   int iVar6;
-  
+
   sVar1 = g_worldGrid.sizeY;
   sVar3 = g_worldGrid.sizeX;
   iVar4 = (int)g_worldGrid.sizeY;

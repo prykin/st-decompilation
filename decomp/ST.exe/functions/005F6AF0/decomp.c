@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_coll3.cpp
@@ -6,26 +8,24 @@
 undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
 
 {
-  undefined4 *this_00;
+  STColl3CVTable_at_1D5 **this_00;
   code *pcVar1;
   STColl3C *this_01;
   int iVar2;
   undefined4 uVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   STColl3C *local_8;
-  
+
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_8;
   if (iVar2 == 0) {
-    this_00 = &local_8->field_01D5;
+    this_00 = &local_8->vtable_at_1d5;
     if (param_1 == 0) {
       STT3DSprC::LoadSequence
                 ((STT3DSprC *)this_00,8,DAT_00806774,
@@ -76,9 +76,7 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
     iVar4 = ReportDebugMessage(s_E____titans_nick_to_coll3_cpp_007ce868,0x1af,0,iVar2,&DAT_007a4ccc,
                                s_STColl3C__LoadImagSpr_007ce8a8);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar3 = (*pcVar1)();
-      return uVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_nick_to_coll3_cpp_007ce868,0x1b1);
   }

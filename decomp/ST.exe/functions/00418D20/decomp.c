@@ -11,7 +11,7 @@ uint FUN_00418d20(short param_1,short param_2,short param_3,short param_4,short 
   int iVar6;
   short sVar7;
   int iVar8;
-  
+
   sVar7 = param_5 - param_2;
   sVar5 = param_6 - param_3;
   if ((short)(param_4 - param_1) == 1) {

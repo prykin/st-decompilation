@@ -7,7 +7,7 @@ void __thiscall FUN_006e92c0(void *this,uint param_1,float param_2)
   uint *puVar1;
   uint uVar2;
   longlong lVar3;
-  
+
   if (param_1 < *(uint *)((int)this + 0x310)) {
     puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);
     uVar2 = *(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);

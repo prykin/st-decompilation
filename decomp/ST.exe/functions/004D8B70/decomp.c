@@ -9,7 +9,7 @@ undefined4 FUN_004d8b70(char param_1)
   uint uVar5;
   uint uVar6;
   undefined1 uVar7;
-  
+
   uVar4 = (uint)param_1;
   if (uVar4 == 0xff) {
     return 0;

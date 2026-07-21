@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
 {
   int iVar1;
   int iVar2;
-  
+
   switch(param_1->field_04D0) {
   case CASE_0:
     iVar1 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
@@ -45,7 +45,9 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
         param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,0);
         iVar1 = (*param_1->vtable->vfunc_2C)();
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         thunk_FUN_004b7710(CONCAT31((int3)((uint)iVar1 >> 8),param_1->field_0x24),iVar1);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
           thunk_FUN_004d8b70((char)*(uint *)&param_1->field_0x24);
         }
@@ -61,7 +63,9 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
       TLOBaseTy::RotateSpr(param_1,0);
       *(undefined4 *)&param_1->field_0x4d8 = PTR_00802a38->field_00E4;
       iVar1 = (*param_1->vtable->vfunc_2C)();
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar1 >> 8),param_1->field_0x24),iVar1);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
         thunk_FUN_004d8b70((char)*(uint *)&param_1->field_0x24);
       }

@@ -4,7 +4,7 @@ int __thiscall FUN_0074dee5(void *this,int param_1)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = FUN_0074deb7(this);
   while( true ) {
     if (iVar1 == 0) {

@@ -9,7 +9,7 @@ bool __fastcall FUN_0048dcf0(AnonShape_0048DCF0_C8633E73 *param_1)
   int iVar5;
   int local_c;
   int local_8;
-  
+
   local_c = 1000000;
   sVar1 = param_1->field_04DD;
   sVar3 = param_1->field_04DF;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
@@ -11,8 +13,6 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   PrividerTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   undefined4 local_264;
   undefined4 local_257;
@@ -43,11 +43,11 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   undefined4 local_68 [7];
   InternalExceptionFrame local_4c;
   PrividerTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     puVar5 = &local_264;
     for (iVar3 = 0x7e; this_00 = local_8, iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -59,7 +59,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     *(undefined1 *)((int)puVar5 + 2) = 0;
     if (param_1 == '\x01') {
       local_1a1 = 0x2340;
-      if ((this_00->field_0065 != '\x05') || (local_19d = 0, this_00->field_1A72 != '\0')) {
+      if ((this_00->field_0065 != CASE_5) || (local_19d = 0, this_00->field_1A72 != '\0')) {
         local_19d = 1;
       }
       local_194 = this_00->field_0008;
@@ -67,7 +67,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
       local_18c = 0x6943;
     }
     local_17a = 0x24bc;
-    if ((this_00->field_0065 != '\x05') || (local_176 = 0, this_00->field_1A72 != '\0')) {
+    if ((this_00->field_0065 != CASE_5) || (local_176 = 0, this_00->field_1A72 != '\0')) {
       local_176 = 1;
     }
     local_230 = this_00->field_0008;
@@ -109,8 +109,9 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
       MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)local_68);
     }
     PaintPrivider(this_00,param_2);
-    this_00->field_0065 = 3;
+    this_00->field_0065 = CASE_3;
     thunk_FUN_00568bc0(&g_sound,0);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((DAT_00807300._1_1_ & 8) != 0) {
       thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
     }
@@ -122,9 +123,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   iVar4 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e,0,iVar3,&DAT_007a4ccc,
                              s_PrividerTy__SetMode_007cce00);
   if (iVar4 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e);
   return;

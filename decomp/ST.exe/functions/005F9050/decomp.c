@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_005f9050(void *this,int *param_1,undefined4 *param_2)
   int local_c;
   short local_8;
   short local_6;
-  
+
   STFishC::sub_004162B0(this,&local_8,&local_6,(undefined2 *)&local_c);
   sVar1 = (short)local_c + -1;
   if (((((-1 < local_8) && (local_8 < g_worldGrid.sizeX)) && (-1 < local_6)) &&

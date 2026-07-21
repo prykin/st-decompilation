@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
@@ -14,13 +16,10 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   MMsgTy *this_00;
   int iVar6;
   uint uVar7;
-  uint *extraout_EAX;
   undefined4 *puVar8;
   int iVar9;
-  undefined4 unaff_ESI;
   char *pcVar10;
   UINT *pUVar11;
-  void *unaff_EDI;
   uint *puVar12;
   int *piVar13;
   undefined4 *puVar14;
@@ -40,21 +39,19 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   UINT *local_10;
   int local_c;
   UINT *local_8;
-  
+
   local_c = 1;
   local_bc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_bc;
   local_18 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
   this_00 = local_18;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_bc.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0xe4,0,iVar6,&DAT_007a4ccc,
                                s_MMsgTy__NoneMMsg_007ccc78);
     if (iVar9 != 0) {
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0xe4);
     return;
@@ -290,10 +287,11 @@ LAB_005b7655:
                 cVar16 = CASE_FFFFFFFE;
                 iVar9 = 0x1e;
                 iVar6 = 0x7d;
-                LoadResourceString(*local_8,HINSTANCE_00807618);
+                puVar12 = (uint *)LoadResourceString(*local_8,HINSTANCE_00807618);
                 puVar8 = ccFntTy::CreateTypeSSpr
-                                   ((ccFntTy *)PTR_0081176c->field_0030,extraout_EAX,iVar6,iVar9,
-                                    cVar16,uVar7,iVar17,iVar18,iVar19);
+                                   ((ccFntTy *)PTR_0081176c->field_0030,puVar12,iVar6,iVar9,cVar16,
+                                    uVar7,iVar17,iVar18,iVar19);
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(UVar3 + 8))(puVar8,uVar20,uVar21);
                 local_8[0x30] = 0;
               }

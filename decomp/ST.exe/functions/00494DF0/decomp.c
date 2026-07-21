@@ -3,7 +3,7 @@ void __fastcall FUN_00494df0(AnonShape_00494DF0_56294F0B *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = param_1->field_06F7;
   if (((iVar1 == 5) || (iVar1 == 0x11)) || (iVar1 == 0x21)) {
     if (((param_1->field_0792 == 1) && (param_1->field_078A == 0)) &&

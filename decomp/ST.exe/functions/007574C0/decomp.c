@@ -10,9 +10,10 @@ void FUN_007574c0(AnonShape_007574C0_ED6B02E3 *param_1,int param_2,uint *param_3
   int iVar3;
   uint uVar4;
   uint *puVar5;
-  
+
   sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
   }
   else {

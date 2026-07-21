@@ -1,0 +1,1 @@
+#ifndef ST_PSEUDOCODE_RUNTIME_H\n#define ST_PSEUDOCODE_RUNTIME_H\n\n/* Standalone corpus code has no debugger continuation path. */\n#include <stdlib.h>\n#if defined(_MSC_VER)\n__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\n#else\nstatic inline __attribute__((noreturn)) void STDebugBreak(void) { abort(); }\n#endif\n\n#endif\n

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -17,9 +19,7 @@ TraksClassTy::TraksCreate
   char *text;
   ushort *puVar4;
   short sVar5;
-  undefined4 unaff_ESI;
   int *piVar6;
-  void *unaff_EDI;
   int iVar7;
   short *psVar8;
   bool bVar9;
@@ -61,7 +61,7 @@ TraksClassTy::TraksCreate
   int local_10;
   uint local_c;
   int local_8;
-  
+
   local_c = 0xffffffff;
   local_1c = 1;
   if (((param_15 & 1) == 0) && (DAT_0080731e == 0)) {
@@ -138,15 +138,13 @@ LAB_00556926:
 LAB_0055693a:
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
-  iVar7 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a8.previous;
     iVar3 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x1bc,0,iVar7,&DAT_007a4ccc,
                                s_TraksClassTy__TraksCreate_error_007c9234);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar10 = (*pcVar1)();
-      return uVar10;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar7,0,s_E____titans_grig_traks_cpp_007c9104,0x1bd);
     return 0xffffffff;

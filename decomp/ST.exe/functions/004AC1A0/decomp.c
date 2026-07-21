@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
@@ -12,27 +14,23 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
   int iVar4;
   int *piVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   undefined1 *puVar8;
   InternalExceptionFrame local_50;
   uint local_c;
   STT3DSprC *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0xf1,0,iVar3,&DAT_007a4ccc,
                                s_STT3DSprC__StartShow_007ac6dc);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar6 = (*pcVar1)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0xffffffff;
   }
@@ -69,8 +67,10 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
   }
   if (pSVar2->field_0011 == '\0') {
     if (pSVar2->field_0010 == '\0') {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(*(int *)(pSVar2->field_0020 + iVar3) + 0x29) == 0) goto cf_common_exit_004AC330;
       pSVar2->field_0013 = param_1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pSVar2->field_0030 = *(undefined4 *)(pSVar2->field_0020 + iVar3 + 0x18);
       puVar8 = &LAB_00404999;
     }
@@ -86,6 +86,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
               ((AnonReceiver_004248D0 *)pSVar2->field_003C,pSVar2->field_0018,pSVar2->field_0034,
                (uint)puVar8,(uint)pSVar2);
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 cf_common_exit_004AC330:
   *(undefined4 *)(pSVar2->field_0020 + 0x1c + iVar3) = param_2;
   g_currentExceptionFrame = local_50.previous;

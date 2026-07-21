@@ -14,7 +14,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
   char *pcVar8;
   char *pcVar9;
   byte *pbVar10;
-  
+
   uVar3 = 0xffffffff;
   do {
     pbVar7 = param_1;

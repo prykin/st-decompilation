@@ -9,7 +9,7 @@ FUN_00553b00(int param_1,int param_2,int param_3,uint param_4,int param_5,undefi
   int iVar4;
   int iVar5;
   int iVar6;
-  
+
   if (param_3 != 0) {
     puVar3 = thunk_FUN_005532f0((Global_sub_005532F0_param_1Enum)param_6);
     iVar2 = (int)param_6 * 2 + 1;

@@ -2,7 +2,7 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 005734C0 -> EXTERNAL:000000C4 @ 00573652
-   
+
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 005734C0 -> EXTERNAL:000000C5 @ 00573628 */
 
@@ -18,7 +18,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
   undefined4 *puVar7;
   char *pcVar8;
   void *local_8;
-  
+
   local_8 = this;
   if (((uint)phkResult & 1) != 0) {
     _DAT_008072f8 = 0;
@@ -34,6 +34,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
       _DAT_008072f8 = _DAT_008072f8 + (uint)(byte)(&DAT_008072f8)[uVar2];
       uVar2 = uVar2 + 1;
     } while (uVar2 < 0x82);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     DAT_00807300._1_1_ = DAT_00807300._1_1_ | 0xf;
     DAT_0080731a = 1;
     DAT_0080731e = 1;
@@ -42,6 +43,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     DAT_00807328 = 1;
     DAT_0080732c = 1;
     DAT_00807327 = 7;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     DAT_00807300._0_1_ = 8;
     _DAT_00807330 = 3;
     DAT_00807332 = 1;

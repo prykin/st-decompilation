@@ -12,7 +12,7 @@ FUN_004b2390(uint param_1,int param_2,int param_3,undefined4 param_4,int *param_
   short sVar3;
   short sVar4;
   undefined4 local_8;
-  
+
   local_8 = 0;
   if ((((-1 < param_2) && (param_2 < g_worldGrid.sizeX)) && (-1 < param_3)) &&
      (param_3 < g_worldGrid.sizeY)) {

@@ -12,7 +12,7 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
   short sVar5;
   uint uVar6;
   void *local_8;
-  
+
   sVar4 = (short)param_2;
   local_8 = this;
   if (((((((-1 < sVar4) && (sVar4 < g_worldGrid.sizeX)) && (sVar5 = (short)param_3, -1 < sVar5)) &&

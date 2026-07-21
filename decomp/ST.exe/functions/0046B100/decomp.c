@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -20,18 +22,28 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   undefined4 *puVar12;
   uint uVar13;
   int iVar14;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   STBoatC *extraout_ECX;
   STBoatC *pSVar15;
   uint uVar16;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   int iVar17;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_05;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_06;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   bool bVar18;
   longlong lVar19;
@@ -80,7 +92,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   undefined4 *local_10;
   undefined4 local_c;
   short local_8;
-  
+
   if ((param_1 == 0) || (pSVar15 = this, param_1 == 1)) {
     puVar12 = &this->field_02CC;
     for (iVar14 = 0x17; iVar14 != 0; iVar14 = iVar14 + -1) {
@@ -114,6 +126,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     sub_00481520(this,(int)*(short *)&this->field_0x4fc,(int)*(short *)&this->field_0x4fe,
                  (int)*(short *)&this->field_0x500);
     iVar14 = sub_0045FF50(this,0);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pSVar15 = extraout_ECX;
     if (iVar14 == -1) {
       return -1;
@@ -127,9 +140,8 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
       if ((((this->field_0047 != *(short *)&this->field_0x4fc) ||
            (this->field_0049 != *(short *)&this->field_0x4fe)) ||
           (this->field_004B != *(short *)&this->field_0x500)) ||
-         (iVar14 = thunk_FUN_004ae0b0((int)*(short *)&this->field_0x4dd,
-                                      (int)*(short *)&this->field_0x4df,
-                                      (int)*(short *)&this->field_0x4e1,
+         (iVar14 = thunk_FUN_004ae0b0(*(short *)&this->field_0x4dd,(int)*(short *)&this->field_0x4df
+                                      ,(int)*(short *)&this->field_0x4e1,
                                       *(Global_sub_004AE0B0_param_4Enum *)&this->field_0x4e3,
                                       *(int *)&this->field_0x24,(undefined4 *)0x0,(int *)0x0,
                                       (int *)0x0,0,(int *)0x0), iVar14 == 0)) {
@@ -167,16 +179,16 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
         if (iVar14 == 0) {
           return -1;
         }
-        pcVar6 = (code *)swi(3);
-        iVar14 = (*pcVar6)();
-        return iVar14;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if ((pSVar5[1].vtable < (STWorldObjectVTable *)0x8) &&
          ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
           ((byte)(&DAT_008087e9)[(int)pSVar5[1].vtable * 0x51] < 8)))) {
         bVar27 = *(byte *)&pSVar5[1].vtable;
         bVar1 = this->field_0x24;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_10 = (undefined4 *)CONCAT31(local_10._1_3_,bVar27);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_1c = CONCAT31(local_1c._1_3_,bVar1);
         if (DAT_00808a8f == '\0') {
           if (bVar27 == bVar1) {
@@ -226,19 +238,19 @@ LAB_0046b5ac:
                   );
         return 0xffff;
       }
-      pcVar6 = (code *)swi(3);
-      iVar14 = (*pcVar6)();
-      return iVar14;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
     if (SVar4 == CASE_1) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar14 = (*this->vtable->StopMove)(this,unaff_EDI);
       if (iVar14 == -1) {
         return -1;
       }
       if (iVar14 == 1) {
         this->field_0508 = CASE_7;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX);
         sub_00481520(this,(int)*(short *)&this->field_0x4fc,(int)*(short *)&this->field_0x4fe,
                      (int)*(short *)&this->field_0x500);
@@ -252,10 +264,13 @@ LAB_0046b5ac:
     if (SVar4 == CASE_2) {
       if (*(int *)&this->field_0x50c == 0) {
         iVar9 = (ushort)(*(short *)&this->field_0x500 * 200) + 100;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar17 = CONCAT22((short)((uint)iVar9 >> 0x10),*(short *)&this->field_0x4df + 1) * 0xc9;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar10 = CONCAT22((short)((uint)iVar17 >> 0x10),*(short *)&this->field_0x4dd + 1);
         iVar14 = iVar10 * 0xc9;
         uVar7 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar7 = (*this->vtable->vfunc_10)
                           (CONCAT22(uVar7,this->field_0041),
                            CONCAT22((short)((uint)iVar14 >> 0x10),this->field_0043),
@@ -270,9 +285,7 @@ LAB_0046b5ac:
           iVar14 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x23f3,0,0,
                                       &DAT_007a4ccc,s_STBoatC__Build__BUILD_PMOVE_007aa6e0);
           if (iVar14 != 0) {
-            pcVar6 = (code *)swi(3);
-            iVar14 = (*pcVar6)();
-            return iVar14;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           iVar14 = 0x23f4;
           goto cf_error_exit_0046C422;
@@ -297,7 +310,7 @@ LAB_0046b5ac:
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar12 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,*local_10,*(undefined2 *)(local_10 + 1),
+                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar12;
             local_8 = *(short *)(puVar12 + 1);
@@ -320,6 +333,7 @@ LAB_0046b5ac:
               lVar19 = Library::MSVCRT::__ftol();
               iVar14 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
               uVar11 = local_24;
             }
@@ -340,7 +354,9 @@ LAB_0046b5ac:
               this->field_001C = uVar16;
               this->field_001C = uVar11;
               iVar14 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
             }
             TraksClassTy::TraksCreate
@@ -361,9 +377,7 @@ LAB_0046b5ac:
                        0x241a);
             return 0xffff;
           }
-          pcVar6 = (code *)swi(3);
-          iVar14 = (*pcVar6)();
-          return iVar14;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
           *(undefined4 *)&this->field_0x50c = 0;
@@ -382,9 +396,7 @@ LAB_0046b5ac:
         iVar14 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2434,0,0,&DAT_007a4ccc
                                     ,s_STBoatC__Build__BUILD_ROTATE_007aa698);
         if (iVar14 != 0) {
-          pcVar6 = (code *)swi(3);
-          iVar14 = (*pcVar6)();
-          return iVar14;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         iVar14 = 0x2435;
         goto cf_error_exit_0046C422;
@@ -411,7 +423,7 @@ LAB_0046b5ac:
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar12 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,*local_10,*(undefined2 *)(local_10 + 1),
+                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar12;
             local_8 = *(short *)(puVar12 + 1);
@@ -434,6 +446,7 @@ LAB_0046b5ac:
               lVar19 = Library::MSVCRT::__ftol();
               iVar14 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
               uVar11 = local_24;
             }
@@ -454,7 +467,9 @@ LAB_0046b5ac:
               sVar21 = 0;
               sVar20 = 0;
               iVar14 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
             }
             TraksClassTy::TraksCreate
@@ -475,9 +490,7 @@ LAB_0046b5ac:
                        0x2460);
             return 0xffff;
           }
-          pcVar6 = (code *)swi(3);
-          iVar14 = (*pcVar6)();
-          return iVar14;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
           this->field_0508 = CASE_5;
@@ -521,13 +534,14 @@ LAB_0046b6e2:
       Library::MSVCRT::_strncpy(local_98,&this->field_0x4eb,0xe);
       local_8a = 0;
       if (this->field_0502 == 0) {
-        iVar14 = thunk_FUN_004ae0b0((int)*(short *)&this->field_0x4dd,
-                                    (int)*(short *)&this->field_0x4df,
+        iVar14 = thunk_FUN_004ae0b0(*(short *)&this->field_0x4dd,(int)*(short *)&this->field_0x4df,
                                     (int)*(short *)&this->field_0x4e1,
                                     *(Global_sub_004AE0B0_param_4Enum *)&this->field_0x4e3,
                                     *(int *)&this->field_0x24,(undefined4 *)0x0,(int *)0x0,
                                     (int *)0x0,0,(int *)0x0);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_00;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((iVar14 != 0) &&
            (STPlaySystemC::CreateGameObject
                       (*(STPlaySystemC **)&this->field_0xc,0x3e9,0,0,&local_d8,0),
@@ -544,13 +558,14 @@ LAB_0046b6e2:
         }
       }
       else {
-        iVar14 = thunk_FUN_004ae0b0((int)*(short *)&this->field_0x4dd,
-                                    (int)*(short *)&this->field_0x4df,
+        iVar14 = thunk_FUN_004ae0b0(*(short *)&this->field_0x4dd,(int)*(short *)&this->field_0x4df,
                                     (int)*(short *)&this->field_0x4e1,
                                     *(Global_sub_004AE0B0_param_4Enum *)&this->field_0x4e3,
                                     *(int *)&this->field_0x24,(undefined4 *)0x0,(int *)0x0,
                                     (int *)0x0,0,(int *)0x0);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_02;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((iVar14 != 0) &&
            (STPlaySystemC::CreateGameObject
                       (*(STPlaySystemC **)&this->field_0xc,0x3e9,0,0,&local_d8,0),
@@ -586,9 +601,12 @@ cf_common_exit_0046C04E:
     if (SVar4 == CASE_6) {
       if (*(int *)&this->field_0x50c == 0) {
         iVar14 = (ushort)(*(short *)&this->field_0x500 * 200) + 100;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar9 = CONCAT22((short)((uint)pSVar15 >> 0x10),*(short *)&this->field_0x4fe * 0xc9) + 100;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar17 = CONCAT22((short)((uint)iVar14 >> 0x10),*(short *)&this->field_0x4fc * 0xc9) + 100;
         uVar7 = (undefined2)((uint)iVar9 >> 0x10);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar7 = (*this->vtable->vfunc_10)
                           (CONCAT22(uVar7,this->field_0041),
                            CONCAT22((short)((uint)iVar17 >> 0x10),this->field_0043),
@@ -603,9 +621,7 @@ cf_common_exit_0046C04E:
           iVar14 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x24c1,0,0,
                                       &DAT_007a4ccc,s_STBoatC__Build__BUILD_OMOVE_007aa650);
           if (iVar14 != 0) {
-            pcVar6 = (code *)swi(3);
-            iVar14 = (*pcVar6)();
-            return iVar14;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           iVar14 = 0x24c2;
           goto cf_error_exit_0046C422;
@@ -626,12 +642,13 @@ cf_common_exit_0046C04E:
       if (*(int *)&this->field_0x50c == 3) {
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_04;
         if (this->field_0x2bf != '\0') {
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar12 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,*local_10,*(undefined2 *)(local_10 + 1),
+                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar12;
             local_8 = *(short *)(puVar12 + 1);
@@ -654,6 +671,7 @@ cf_common_exit_0046C04E:
               lVar19 = Library::MSVCRT::__ftol();
               iVar14 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
               uVar11 = local_24;
             }
@@ -674,7 +692,9 @@ cf_common_exit_0046C04E:
               sVar21 = 0;
               sVar20 = 0;
               iVar14 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
             }
             TraksClassTy::TraksCreate
@@ -684,6 +704,7 @@ cf_common_exit_0046C04E:
                        bVar27);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar8 = extraout_EDX_05;
           } while (local_20 < (int)(uint)(byte)this->field_0x2bf);
         }
@@ -696,9 +717,7 @@ cf_common_exit_0046C04E:
                        0x24e8);
             return 0xffff;
           }
-          pcVar6 = (code *)swi(3);
-          iVar14 = (*pcVar6)();
-          return iVar14;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
           this->field_0508 = CASE_7;
@@ -719,18 +738,14 @@ cf_common_exit_0046C04E:
       if (iVar14 == 0) {
         return -1;
       }
-      pcVar6 = (code *)swi(3);
-      iVar14 = (*pcVar6)();
-      return iVar14;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar14 = sub_0045FF50(this,2);
     if (iVar14 == -1) {
       iVar14 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x24fe,0,0,&DAT_007a4ccc,
                                   s_STBoatC__Build__BUILD_ESCMOVE_er_007aa600);
       if (iVar14 != 0) {
-        pcVar6 = (code *)swi(3);
-        iVar14 = (*pcVar6)();
-        return iVar14;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar14 = 0x24fe;
 cf_error_exit_0046C422:
@@ -743,6 +758,7 @@ cf_error_exit_0046C422:
       return -(uint)(iVar14 != 0);
     }
     if (iVar14 != 3) goto cf_common_exit_0046C3C5;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX_06);
     sub_00481520(this,(int)*(short *)&this->field_0x4fc,(int)*(short *)&this->field_0x4fe,
                  (int)*(short *)&this->field_0x500);

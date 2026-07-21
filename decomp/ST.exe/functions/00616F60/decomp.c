@@ -16,7 +16,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
   int local_10;
   float local_c;
   float local_8;
-  
+
   local_14 = *(int *)((int)this + 0x2c1);
   if (local_14 == 0) {
     return 0;
@@ -45,6 +45,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
       iVar4 = FUN_006acf0d((int)*(short *)((int)this + 0x260),(int)*(short *)((int)this + 0x262),
                            (int)*(short *)((int)this + 0x264),(int)local_c,local_10,local_14);
       if ((iVar3 == 0) || (iVar4 == 0)) goto cf_common_exit_00617221;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((float)(((int)*(short *)((int)this + 0x25a) - (int)*(short *)((int)this + 0x260)) *
                   ((int)local_c - (int)*(short *)((int)this + 0x260)) +
                   ((int)*(short *)((int)this + 0x25c) - (int)*(short *)((int)this + 0x262)) *

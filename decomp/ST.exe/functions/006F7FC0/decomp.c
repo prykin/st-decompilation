@@ -11,7 +11,7 @@ void FUN_006f7fc0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   int iVar4;
   byte *pbVar5;
   int local_8;
-  
+
   _DAT_00857000 = 1;
   if (-1 < param_10 + -1) {
     local_8 = param_10;

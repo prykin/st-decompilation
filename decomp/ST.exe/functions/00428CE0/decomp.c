@@ -14,7 +14,7 @@ FUN_00428ce0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar6;
   int iVar7;
   int iVar8;
-  
+
   if ((param_5 < 1) || (param_6 < 1)) {
     return 0;
   }

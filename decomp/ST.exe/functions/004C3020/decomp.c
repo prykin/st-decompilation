@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
   int iVar2;
   undefined4 uVar3;
   uint uVar4;
-  
+
   param_1->field_0219 = *(undefined4 *)(&DAT_007942fc + param_1->field_0235 * 4);
   param_1->field_025D = 1;
   param_1->field_0261 = *(undefined4 *)(&DAT_00792778 + param_1->field_0235 * 4);

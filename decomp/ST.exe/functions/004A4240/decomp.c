@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -12,11 +14,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   STFishC *this_01;
   int iVar3;
   int iVar4;
-  undefined4 extraout_ECX;
   uint *puVar5;
   int *piVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   uint uVar8;
   DArrayTy *pDVar9;
@@ -33,7 +32,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_1c = 4;
   local_34[0] = 0x38;
   local_34[1] = 0x39;
@@ -42,7 +41,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_24 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_24;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
@@ -50,19 +49,14 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x126a,0,iVar2,
                                  &DAT_007a4ccc,s_STGroupBoatC__ChangeMDNotify_007ac310);
       if (iVar3 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x126b);
     }
     return;
   }
   this_01 = (STFishC *)
-            STAllPlayersC::GetObjPtr
-                      (g_sTAllPlayers_007FA174,
-                       CONCAT31((int3)((uint)extraout_ECX >> 8),local_24->field_0024),param_2,CASE_1
-                      );
+            STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,local_24->field_0024,param_2,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
     iVar2 = (*this_01->vtable->vfunc_2C)();
@@ -74,6 +68,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                      ,0x11f2);
         }
         uVar7 = 0;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar2 = *(int *)(this_00->field_0266 + 0xc);
         if (0 < iVar2) {
           do {
@@ -122,6 +117,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                    0x11fe);
       }
       uVar7 = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
       if (0 < iVar2) {
         do {
@@ -148,9 +144,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x120a,0,0,&DAT_007a4ccc,
                                    s_STGroupBoatC__ChangeMDNotify_inv_007ac3a0);
         if (iVar2 != 0) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
                   (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
@@ -201,6 +195,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                    0x1215);
       }
       uVar7 = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(this_00->field_024E + 0xc);
       if (0 < iVar2) {
         do {
@@ -227,6 +222,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                    0x1226);
       }
       uVar7 = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
       if (0 < iVar2) {
         do {
@@ -278,6 +274,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                  0x1234);
     }
     uVar8 = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar7 = *(uint *)(this_00->field_0266 + 0xc);
     if (0 < (int)uVar7) {
       do {
@@ -294,9 +291,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x123b,0,0,&DAT_007a4ccc,
                                  s_STGroupBoatC__ChangeMDNotify_dep_007ac334);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar2 = 0x123c;
       goto LAB_004a4a83;
@@ -317,9 +312,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1246,0,0,&DAT_007a4ccc,
                                  s_STGroupBoatC__ChangeMDNotify_inv_007ac3a0);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
                 (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
@@ -332,6 +325,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                    0x124b);
       }
       uVar7 = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(this_00->field_024E + 0xc);
       if (0 < iVar2) {
         do {
@@ -382,6 +376,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                  0x1259);
     }
     uVar8 = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar7 = *(uint *)(this_00->field_024E + 0xc);
     if (0 < (int)uVar7) {
       do {
@@ -398,9 +393,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1260,0,0,&DAT_007a4ccc,
                                  s_STGroupBoatC__ChangeMDNotify_min_007ac36c);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar2 = 0x1261;
 LAB_004a4a83:

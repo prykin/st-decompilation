@@ -20,11 +20,14 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import ghidra.app.decompiler.DecompInterface;
@@ -64,6 +67,27 @@ public class STDecompExport extends GhidraScript {
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final java.util.regex.Pattern SIMPLE_MEMORY = java.util.regex.Pattern.compile(
         "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
+    private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
+        "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
+    private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
+        "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*" +
+        "(?:\\([^()]+\\)\\s*)?\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
+    private static final Pattern PLAIN_INDIRECT_CALL = Pattern.compile(
+        "^(\\s*)\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
+    private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
+    private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
+        "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
+    private static final Pattern RAW_OFFSET_DEREFERENCE = Pattern.compile(
+        "\\*\\([^)]*\\*\\)\\([^;]*(?:param_|local_|->)[^;]*[+-]\\s*0x[0-9A-Fa-f]+");
+    private static final Pattern PACKED_PIECE = Pattern.compile(
+        "(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*|" +
+        "(?:->|\\.)packed\\b|&\\([^)]*packed)");
+    private static final Pattern DARRAY_ELEMENT_ADDRESS = Pattern.compile(
+        "\\b([A-Za-z_][A-Za-z0-9_]*)->elementSize\\s*\\*\\s*([^+;]+?)\\s*\\+\\s*" +
+        "(?:\\(int\\)\\s*)?\\1->data\\b");
+    private static final String PSEUDOCODE_COMMENT_MARKER = "/* ST_PSEUDO[";
+    private static final String PSEUDOCODE_RUNTIME_INCLUDE =
+        "#include \"../../pseudocode_runtime.h\"";
     private Path programRoot;
     private Path functionsRoot;
     private Listing listing;
@@ -76,6 +100,9 @@ public class STDecompExport extends GhidraScript {
     private int libraryFunctionCount;
     private int thunkFunctionCount;
     private int bodyFunctionCount;
+    private int pseudocodeNormalizationCount;
+    private final List<String> pseudocodeIdiomRows = new ArrayList<>();
+    private final Set<String> pseudocodeIdiomFunctions = new HashSet<>();
 
     @Override
     protected void run() throws Exception {
@@ -328,6 +355,9 @@ public class STDecompExport extends GhidraScript {
         int total = exportedFunctionCount;
         int number = 0;
         int reused = 0;
+        pseudocodeNormalizationCount = 0;
+        pseudocodeIdiomRows.clear();
+        pseudocodeIdiomFunctions.clear();
         Set<String> liveFunctionIds = new TreeSet<>();
 
         while (iterator.hasNext()) {
@@ -378,6 +408,7 @@ public class STDecompExport extends GhidraScript {
                     (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
 
             if (reusable) {
+                if (bodyExported) normalizeAndCatalog(function, dir.resolve("decomp.c"));
                 String meta = Files.readString(metaPath, StandardCharsets.UTF_8).trim();
                 indexRows.add(meta);
                 if (library) libraryRows.add(meta);
@@ -407,7 +438,10 @@ public class STDecompExport extends GhidraScript {
                 else {
                     status = result == null ? "no_result" : nullToEmpty(result.getErrorMessage());
                 }
+                NormalizedCode normalized = normalizePseudocode(cCode);
+                cCode = annotatePseudocode(normalized.code);
                 writeText(dir.resolve("decomp.c"), cCode);
+                catalogPseudocodeIdioms(function, cCode);
                 writeFunctionListing(function, dir.resolve("listing.asm"));
             }
 
@@ -461,8 +495,353 @@ public class STDecompExport extends GhidraScript {
         writeJsonArray(programRoot.resolve("library_functions.json"), libraryRows);
         writeJsonArray(programRoot.resolve("thunk_functions.json"), thunkRows);
         writeJsonArray(programRoot.resolve("callgraph.json"), graphRows);
+        writePseudocodeArtifacts();
         pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
+    }
+
+    private void normalizeAndCatalog(Function function, Path path) throws IOException {
+        String original = Files.readString(path, StandardCharsets.UTF_8);
+        NormalizedCode normalized = normalizePseudocode(original);
+        String annotated = annotatePseudocode(normalized.code);
+        if (!annotated.equals(original)) writeText(path, annotated);
+        catalogPseudocodeIdioms(function, annotated);
+    }
+
+    /**
+     * Ghidra renders a terminal x86 INT3 as a call through the value returned by
+     * swi(3).  That is not a real indirect call.  In this corpus there is no
+     * attached debugger and continuation is deliberately unsupported, so expose
+     * the intended standalone behavior as a noreturn helper.
+     */
+    private NormalizedCode normalizePseudocode(String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
+        String[] lines = code.split("\\R", -1);
+        List<String> output = new ArrayList<>();
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
+            if (!assignment.matches() || index + 1 >= lines.length) {
+                output.add(lines[index]);
+                continue;
+            }
+            String variable = assignment.group(2);
+            Matcher assignedCall = ASSIGNED_INDIRECT_CALL.matcher(lines[index + 1]);
+            Matcher plainCall = PLAIN_INDIRECT_CALL.matcher(lines[index + 1]);
+            String returnedVariable = "";
+            boolean matched = false;
+            if (assignedCall.matches() && variable.equals(assignedCall.group(3))) {
+                returnedVariable = assignedCall.group(2);
+                matched = true;
+            }
+            else if (plainCall.matches() && variable.equals(plainCall.group(2))) matched = true;
+            if (!matched) {
+                output.add(lines[index]);
+                continue;
+            }
+            output.add(assignment.group(1) +
+                "STDebugBreak(); /* noreturn in standalone pseudocode */");
+            replacements++;
+            index++;
+            if (index + 1 < lines.length) {
+                String next = lines[index + 1].trim();
+                if ((!returnedVariable.isBlank() && next.equals("return " + returnedVariable + ";")) ||
+                        (returnedVariable.isBlank() && next.equals("return;"))) index++;
+            }
+        }
+        String normalized = String.join(System.lineSeparator(), output);
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private String annotatePseudocode(String code) {
+        if (code == null || code.isEmpty()) return "";
+        String[] lines = code.split("\\R", -1);
+        List<String> clean = new ArrayList<>();
+        boolean needsRuntime = code.contains("STDebugBreak()");
+        boolean hasRuntimeInclude = false;
+        for (String line : lines) {
+            if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
+            if (line.strip().equals(PSEUDOCODE_RUNTIME_INCLUDE)) {
+                if (needsRuntime) {
+                    clean.add(PSEUDOCODE_RUNTIME_INCLUDE);
+                    hasRuntimeInclude = true;
+                }
+                continue;
+            }
+            clean.add(line.stripTrailing());
+        }
+        List<String> output = new ArrayList<>();
+        int coveredUntil = -1;
+        for (int index = 0; index < clean.size(); index++) {
+            String line = clean.get(index);
+            String stripped = line.stripLeading();
+            if (stripped.isBlank() || stripped.startsWith("/*") || stripped.startsWith("*") ||
+                    stripped.startsWith("//") || stripped.startsWith("#")) {
+                output.add(line);
+                continue;
+            }
+            // Export-owned hints are regenerated from the current logical C
+            // statement.  A bounded forward window catches expressions which
+            // Ghidra wrapped across several physical lines.
+            StatementWindow statement = statementWindow(clean, index);
+            List<String> kinds = index <= coveredUntil ? new ArrayList<>() :
+                lineIdiomKinds(statement.text);
+            kinds.remove("terminal_debug_trap");
+            if (!kinds.isEmpty()) {
+                String indent = line.substring(0, line.length() - line.stripLeading().length());
+                List<String> suggestions = new ArrayList<>();
+                for (String kind : kinds) suggestions.add(inlineTransform(kind, statement.text));
+                output.add(indent + PSEUDOCODE_COMMENT_MARKER + String.join(",", kinds) +
+                    "]: " + String.join("; ", suggestions) + " */");
+                coveredUntil = statement.endIndex;
+            }
+            output.add(line);
+        }
+        if (needsRuntime && !hasRuntimeInclude) {
+            output.add(0, "");
+            output.add(0, PSEUDOCODE_RUNTIME_INCLUDE);
+        }
+        return String.join(System.lineSeparator(), output);
+    }
+
+    private void catalogPseudocodeIdioms(Function function, String code) {
+        Map<String, IdiomEvidence> evidence = new LinkedHashMap<>();
+        String[] lines = code == null ? new String[0] : code.split("\\R", -1);
+        List<String> finalLines = List.of(lines);
+        for (int index = 0; index < lines.length; index++) {
+            String line = lines[index];
+            if (line.contains(PSEUDOCODE_COMMENT_MARKER)) {
+                int start = line.indexOf(PSEUDOCODE_COMMENT_MARKER) +
+                    PSEUDOCODE_COMMENT_MARKER.length();
+                int end = line.indexOf("]:", start);
+                if (end > start && index + 1 < lines.length) {
+                    StatementWindow statement = statementWindow(finalLines, index + 1);
+                    for (String kind : line.substring(start, end).split(",", -1))
+                        if (!kind.isBlank())
+                            addIdiom(evidence, kind, index + 2, statement.text);
+                }
+                continue;
+            }
+            if (line.contains("STDebugBreak()"))
+                addIdiom(evidence, "terminal_debug_trap", index + 1, line);
+        }
+
+        // The instruction listing is authoritative even when an older reused body
+        // was already normalized by a previous export.
+        List<String> int3Addresses = int3Addresses(function);
+        if (!int3Addresses.isEmpty() && !evidence.containsKey("terminal_debug_trap"))
+            addIdiom(evidence, "terminal_debug_trap", 0,
+                "machine code contains terminal INT3; no decompiler body was available");
+
+        if (evidence.isEmpty()) return;
+        pseudocodeIdiomFunctions.add(addr(function.getEntryPoint()));
+        for (Map.Entry<String, IdiomEvidence> item : evidence.entrySet()) {
+            String kind = item.getKey();
+            IdiomEvidence value = item.getValue();
+            boolean terminalNormalized = kind.equals("terminal_debug_trap") &&
+                code != null && code.contains("STDebugBreak()");
+            if (terminalNormalized) pseudocodeNormalizationCount += value.occurrences;
+            String status = terminalNormalized ? "normalized" : "catalogued";
+            List<String> hints = new TreeSet<>(value.addressHints).stream().toList();
+            if (kind.equals("terminal_debug_trap")) hints = int3Addresses;
+            pseudocodeIdiomRows.add(jsonObject(
+                field("function_address", addr(function.getEntryPoint())),
+                field("function_name", function.getName(true)),
+                field("source_file", "functions/" + addr(function.getEntryPoint()) + "/decomp.c"),
+                field("kind", kind),
+                field("status", status),
+                rawField("occurrences", Integer.toString(value.occurrences)),
+                rawField("lines", integerArray(value.lines)),
+                rawField("excerpts", jsonStringArray(value.excerpts)),
+                field("intended_transform", intendedTransform(kind)),
+                rawField("metadata", jsonObject(
+                    rawField("address_hints", jsonStringArray(hints)),
+                    field("detector", detector(kind))
+                ))
+            ));
+        }
+    }
+
+    private List<String> lineIdiomKinds(String line) {
+        List<String> kinds = new ArrayList<>();
+        if (line.contains("STDebugBreak()")) kinds.add("terminal_debug_trap");
+        if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
+            kinds.add("unresolved_register_input");
+        boolean extraout = line.matches(".*\\bextraout_[A-Za-z0-9_]+.*");
+        boolean concat = line.matches(".*\\bCONCAT[0-9]+\\s*\\(.*");
+        if (extraout)
+            kinds.add("return_width_artifact");
+        if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
+                (line.contains("->data") || line.contains(".data")))
+            kinds.add("dynamic_array_indexing");
+        if (line.toLowerCase(Locale.ROOT).contains("0xa62"))
+            kinds.add("flattened_global_record_array");
+        if (RAW_INDIRECT_CALL.matcher(line).find()) kinds.add("raw_indirect_call");
+        if (PACKED_PIECE.matcher(line).find() || (concat && !extraout))
+            kinds.add("packed_or_unaligned_piece");
+        // Prefer a more specific diagnosis over an additional generic offset hint.
+        if (RAW_OFFSET_DEREFERENCE.matcher(line).find() &&
+                !kinds.contains("dynamic_array_indexing") &&
+                !kinds.contains("flattened_global_record_array") &&
+                !kinds.contains("raw_indirect_call") &&
+                !kinds.contains("packed_or_unaligned_piece"))
+            kinds.add("raw_pointer_offset");
+        return kinds;
+    }
+
+    private StatementWindow statementWindow(List<String> lines, int startIndex) {
+        StringBuilder text = new StringBuilder();
+        int endIndex = startIndex;
+        for (int index = startIndex; index < lines.size() && index < startIndex + 12; index++) {
+            String line = lines.get(index);
+            if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
+            if (text.length() > 0) text.append(' ');
+            text.append(line.strip());
+            endIndex = index;
+            String trimmed = line.stripTrailing();
+            if (trimmed.contains(";") || trimmed.endsWith("{") ||
+                    trimmed.stripLeading().equals("}")) break;
+        }
+        return new StatementWindow(text.toString(), endIndex);
+    }
+
+    private String inlineTransform(String kind, String line) {
+        return switch (kind) {
+            case "unresolved_register_input" ->
+                "candidate live-in register: verify boundary, SEH/setjmp ABI, or convention";
+            case "return_width_artifact" ->
+                "candidate call-output artifact: verify return width, clobbers, or x87 state";
+            case "dynamic_array_indexing" -> darrayInlineTransform(line);
+            case "flattened_global_record_array" ->
+                line.toLowerCase(Locale.ROOT).contains("0x7f4fdd") ?
+                    "expected g_playerRuntime[(char)param_1].tempSlots[param_2][param_3].objectIds" :
+                    "expected g_playerRuntime[player].field[index...] after base/stride proof";
+            case "raw_indirect_call" ->
+                "expected typed vtable/callback call with explicit __thiscall receiver";
+            case "packed_or_unaligned_piece" ->
+                "expected named packed member, bit extract/compose, or unaligned load";
+            case "raw_pointer_offset" ->
+                "candidate structure field after proof; otherwise retain buffer arithmetic";
+            default -> intendedTransform(kind);
+        };
+    }
+
+    private String darrayInlineTransform(String line) {
+        Matcher matcher = DARRAY_ELEMENT_ADDRESS.matcher(line);
+        if (matcher.find())
+            return "expected DArrayAt<T>(" + matcher.group(1) + ", " +
+                oneLine(matcher.group(2)) + ") (runtime stride)";
+        return "expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array)";
+    }
+
+    private void addIdiom(Map<String, IdiomEvidence> evidence, String kind, int lineNumber,
+            String excerpt) {
+        IdiomEvidence value = evidence.computeIfAbsent(kind, ignored -> new IdiomEvidence());
+        value.occurrences++;
+        if (lineNumber > 0 && value.lines.size() < 16) value.lines.add(lineNumber);
+        if (value.excerpts.size() < 4) value.excerpts.add(oneLine(excerpt));
+        if (!kind.equals("terminal_debug_trap")) value.addressHints.addAll(addressHints(excerpt));
+    }
+
+    private List<String> int3Addresses(Function function) {
+        List<String> result = new ArrayList<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            try {
+                byte[] bytes = instruction.getBytes();
+                if (bytes.length > 0 && (bytes[0] & 0xff) == 0xcc)
+                    result.add(addr(instruction.getAddress()));
+            }
+            catch (ghidra.program.model.mem.MemoryAccessException ignored) { }
+        }
+        return result;
+    }
+
+    private List<String> addressHints(String line) {
+        List<String> result = new ArrayList<>();
+        Matcher matcher = HEX_ADDRESS.matcher(line == null ? "" : line);
+        while (matcher.find() && result.size() < 8) {
+            try {
+                long offset = Long.parseUnsignedLong(matcher.group(1), 16);
+                Address address = currentProgram.getAddressFactory().getDefaultAddressSpace()
+                    .getAddress(offset);
+                Symbol symbol = symbols.getPrimarySymbol(address);
+                if (symbol != null) result.add(addr(address) + " " + symbol.getName(true));
+                else {
+                    Data data = listing.getDefinedDataContaining(address);
+                    result.add(addr(address) + (data == null ? "" :
+                        " inside " + data.getPathName() + " @ " + addr(data.getMinAddress())));
+                }
+            }
+            catch (Exception ignored) { }
+        }
+        return result;
+    }
+
+    private String intendedTransform(String kind) {
+        return switch (kind) {
+            case "terminal_debug_trap" ->
+                "replace swi(3) plus synthetic indirect call/return with noreturn STDebugBreak()";
+            case "unresolved_register_input" ->
+                "verify function boundary, calling convention, and SEH/setjmp live-in state before replacing unaff_/in_";
+            case "return_width_artifact" ->
+                "repair the proven call output: return width, register clobber, x87 stack state, or split high variable";
+            case "dynamic_array_indexing" ->
+                "render DArrayGet(array, index) or typed array->data[index]; runtime elementSize prevents a static C array type";
+            case "flattened_global_record_array" ->
+                "recompose as g_playerRuntime[player].field[index...] using the 0xA62 record stride and data-component metadata";
+            case "raw_indirect_call" ->
+                "apply a function-pointer or vtable-slot prototype, including explicit __thiscall receiver";
+            case "packed_or_unaligned_piece" ->
+                "replace piece syntax with a named packed field, bit extract/compose, memcpy, or explicit unaligned load";
+            case "raw_pointer_offset" ->
+                "propagate a compatible structure type across the pointer family and render a named field access";
+            default -> "review and express the machine operation as typed, compilable source";
+        };
+    }
+
+    private String detector(String kind) {
+        return switch (kind) {
+            case "terminal_debug_trap" -> "x86 opcode CC plus decompiler swi(3) call idiom";
+            case "unresolved_register_input" -> "unaff_*/in_* high-variable name";
+            case "return_width_artifact" ->
+                "extraout_* high variable, possibly consumed by CONCAT*";
+            case "dynamic_array_indexing" -> "same expression uses DArrayTy.elementSize and .data";
+            case "flattened_global_record_array" -> "literal 0xA62 STPlayerRuntimeRecord stride";
+            case "raw_indirect_call" -> "cast to code* or code** at call site";
+            case "packed_or_unaligned_piece" ->
+                "Ghidra piece/CONCAT syntax or packed member arithmetic";
+            case "raw_pointer_offset" -> "typed dereference over param/local plus constant offset";
+            default -> "text pattern";
+        };
+    }
+
+    private String integerArray(Collection<Integer> values) {
+        List<String> strings = new ArrayList<>();
+        for (Integer value : values) strings.add(Integer.toString(value));
+        return "[" + String.join(",", strings) + "]";
+    }
+
+    private void writePseudocodeArtifacts() throws IOException {
+        pseudocodeIdiomRows.sort(Comparator.naturalOrder());
+        atomicWrite(programRoot.resolve("pseudocode_idioms.jsonl"), writer -> {
+            for (String row : pseudocodeIdiomRows) {
+                writer.write(row);
+                writer.newLine();
+            }
+        });
+        writeText(programRoot.resolve("pseudocode_runtime.h"),
+            "#ifndef ST_PSEUDOCODE_RUNTIME_H\\n" +
+            "#define ST_PSEUDOCODE_RUNTIME_H\\n\\n" +
+            "/* Standalone corpus code has no debugger continuation path. */\\n" +
+            "#include <stdlib.h>\\n" +
+            "#if defined(_MSC_VER)\\n" +
+            "__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\\n" +
+            "#else\\n" +
+            "static inline __attribute__((noreturn)) void STDebugBreak(void) { abort(); }\\n" +
+            "#endif\\n\\n" +
+            "#endif\\n");
     }
 
     private String functionFingerprint(Function function, List<String> tags, List<String> callers,
@@ -846,6 +1225,14 @@ public class STDecompExport extends GhidraScript {
             this.register = register; this.displacement = displacement;
         }
     }
+    private static class IdiomEvidence {
+        int occurrences;
+        final List<Integer> lines = new ArrayList<>();
+        final List<String> excerpts = new ArrayList<>();
+        final Set<String> addressHints = new TreeSet<>();
+    }
+    private record NormalizedCode(String code, int replacements) { }
+    private record StatementWindow(String text, int endIndex) { }
 
     private static void updateDigest(MessageDigest digest, String value) {
         digest.update(value.getBytes(StandardCharsets.UTF_8));
@@ -1046,6 +1433,12 @@ public class STDecompExport extends GhidraScript {
             rawField("library_function_count", Integer.toString(libraryFunctionCount)),
             rawField("thunk_function_count", Integer.toString(thunkFunctionCount)),
             rawField("body_function_count", Integer.toString(bodyFunctionCount)),
+            rawField("pseudocode_normalized_site_count",
+                Integer.toString(pseudocodeNormalizationCount)),
+            rawField("pseudocode_idiom_function_count",
+                Integer.toString(pseudocodeIdiomFunctions.size())),
+            rawField("pseudocode_idiom_record_count",
+                Integer.toString(pseudocodeIdiomRows.size())),
             field("primary_key", "program + function entry address")
         ));
     }

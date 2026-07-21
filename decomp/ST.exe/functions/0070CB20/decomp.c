@@ -23,7 +23,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
   int local_10;
   int *local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_10 = 0x10;
   local_18 = 0;
@@ -41,6 +41,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
     iVar10 = *local_c + param_2;
     if ((((-1 < iVar7) && (iVar7 < param_4)) && (-1 < iVar10)) && (iVar10 < param_5)) {
       iVar2 = FUN_006b4fa0((int)param_3);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       bVar1 = *(byte *)(((uint)*(ushort *)((int)param_3 + 0xe) * param_3[1] + 0x1f >> 3 & 0x1ffffffc
                         ) * ((param_3[2] - iVar10) + -1) + iVar7 + iVar2);
       if (bVar1 != param_7) {
@@ -106,6 +107,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
       return (uint)bVar1;
     }
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   UVar6 = GetNearestPaletteIndex(h,(uint)CONCAT11((char)uVar5,(char)uVar4) << 8 | uVar3 & 0xff);
   if (UVar6 != 0xffffffff) {
     param_1 = UVar6 & 0xff;

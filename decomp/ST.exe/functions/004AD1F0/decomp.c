@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
@@ -14,15 +16,13 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
   undefined4 *puVar4;
   undefined4 uVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
     local_8->field_0034 = param_1;
@@ -48,9 +48,7 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
   iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x2b1,0,iVar3,&DAT_007a4ccc,
                              s_STT3DSprC__Init_007ac710);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   return 0xffffffff;
 }

@@ -11,7 +11,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   undefined2 local_a;
   undefined2 local_8;
   undefined2 local_6;
-  
+
   if (*(int *)((int)this + 0x66) == 0) {
     puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,8,10);
     *(uint **)((int)this + 0x66) = puVar2;

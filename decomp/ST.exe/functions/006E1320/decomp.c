@@ -15,7 +15,7 @@ FUN_006e1320(void *this,double *param_1,double *param_2,int *param_3,int *param_
   undefined4 local_18;
   double local_14;
   double local_c;
-  
+
   local_c = *(double *)((int)this + 0x98);
   local_14 = *(double *)((int)this + 0xa0);
   local_20 = 0;

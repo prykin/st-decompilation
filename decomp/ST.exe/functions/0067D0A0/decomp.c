@@ -8,7 +8,7 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
   uint uVar4;
   int iVar5;
   bool bVar6;
-  
+
   ppDVar3 = &param_1->field_00C2;
   pDVar1 = param_1->field_00C2;
   if (pDVar1 != (DArrayTy *)0x0) {
@@ -17,6 +17,7 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
       bVar6 = pDVar1->count != 0;
       do {
         if (bVar6) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar4) (runtime stride) */
           piVar2 = (int *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
         }
         else {

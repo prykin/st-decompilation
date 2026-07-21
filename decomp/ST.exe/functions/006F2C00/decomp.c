@@ -16,7 +16,7 @@ LPSTR __cdecl FUN_006f2c00(char *text,int param_2,undefined4 param_3)
   LPSTR pCVar8;
   CHAR local_44 [32];
   char local_24 [32];
-  
+
   iVar2 = DAT_00856fc4;
   if (param_2 < 1) {
     uVar3 = 0xffffffff;

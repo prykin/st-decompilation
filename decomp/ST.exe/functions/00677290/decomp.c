@@ -12,15 +12,13 @@ FUN_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short pa
   int exceptionCode;
   uint *puVar1;
   undefined *puVar2;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar3;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   DArrayTy *local_8;
-  
-  pIVar3 = g_currentExceptionFrame;
+
   local_8 = (DArrayTy *)0x0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  exceptionCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
     puVar2 = &LAB_00401852;
@@ -30,10 +28,10 @@ FUN_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short pa
     local_8 = (DArrayTy *)puVar1;
     _EnumPlObj(param_1,param_2,0x3fffffff,(byte *)0x0,param_3,param_4,param_5,param_6,param_7,
                param_8,param_9,puVar2,puVar1,(undefined *)0x0);
-    g_currentExceptionFrame = pIVar3;
+    g_currentExceptionFrame = local_4c.previous;
     return puVar1;
   }
-  g_currentExceptionFrame = pIVar3;
+  g_currentExceptionFrame = local_4c.previous;
   if (local_8 != (DArrayTy *)0x0) {
     DArrayDestroy(local_8);
   }

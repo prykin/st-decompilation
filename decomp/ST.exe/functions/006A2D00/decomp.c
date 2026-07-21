@@ -14,7 +14,7 @@ char * __cdecl FUN_006a2d00(int param_1,int param_2,uint param_3,int param_4,uin
   uint uVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   puVar3 = &DAT_0085428c;
   for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;

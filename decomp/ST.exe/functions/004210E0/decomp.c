@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
@@ -26,8 +28,6 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   int iVar18;
   uint uVar19;
   uint uVar20;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar21;
   InternalExceptionFrame local_6c;
   undefined1 *local_28;
@@ -39,20 +39,18 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   undefined4 *local_10;
   AnonShape_004210E0_306A4C8B *local_c;
   uint local_8;
-  
+
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_14 = this;
-  iVar15 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar15 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   pSVar14 = local_14;
   if (iVar15 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar17 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe46,0,iVar15,&DAT_007a4ccc
                                 ,s_STAllPlayersC__SaveGObjData_007a5058);
     if (iVar17 != 0) {
-      pcVar11 = (code *)swi(3);
-      puVar16 = (undefined4 *)(*pcVar11)();
-      return puVar16;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar15,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe47);
     return (undefined4 *)local_c;

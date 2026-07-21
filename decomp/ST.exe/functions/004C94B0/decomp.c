@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bproc.cpp
    TLOBaseTy::procResult
-   
+
    [STSwitchEnumApplier] Switch target field_0361 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0361State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_8=8 */
@@ -16,17 +18,15 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   uint uVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   TLOBaseTy *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pTVar2 = local_c;
   if (errorCode == 0) {
     switch(local_c->field_0361) {
@@ -71,9 +71,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x291,0,errorCode,
                              &DAT_007a4ccc,s_TLOBaseTy__procResult_error_007ad3ec);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x292);
   return 0;

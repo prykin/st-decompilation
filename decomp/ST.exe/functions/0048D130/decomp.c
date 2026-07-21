@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::SetNewMD
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 0048D130 returns return of FUN_004e1690 @ 0048D2CC | 0048D130 returns return of
    FUN_004e1690 @ 0048D39C */
@@ -18,12 +20,13 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
   STWorldObject *pSVar4;
   code *pcVar5;
   undefined1 uVar6;
-  bool bVar7;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STWorldObject *in_EAX;
-  int iVar8;
+  int iVar7;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   STWorldObject *extraout_EAX;
-  uint uVar9;
-  
+
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   if ((param_5 != -1) &&
      ((((param_2 < 0 || (g_worldGrid.sizeX <= param_2)) || (param_3 < 0)) ||
       (((g_worldGrid.sizeY <= param_3 || (param_4 < 0)) ||
@@ -32,17 +35,18 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
                    [(int)g_worldGrid.planeStride * (int)param_4 +
                     (int)g_worldGrid.sizeX * (int)param_3 + (int)param_2].objects[0],
          in_EAX == (STWorldObject *)0x0 || (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
-    iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc,
                                s_STBoatC__SetNewMD_007aba24);
-    if (iVar8 != 0) {
-      pcVar5 = (code *)swi(3);
-      uVar6 = (*pcVar5)();
+    if (iVar7 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
       return (bool)uVar6;
     }
     RaiseInternalException
               (0,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcd);
+    /* ST_PSEUDO[unresolved_register_input,return_width_artifact]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate call-output artifact: verify return width, clobbers, or x87 state */
     in_EAX = extraout_EAX;
   }
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar6 = (char)in_EAX;
   if (param_1 == 1) {
     if (this->field_04A1 != param_5) {
@@ -53,16 +57,15 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
       if (((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
          ((-1 < sVar3 &&
           (((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)))))) {
-        uVar9 = (uint)sVar1;
+        iVar7 = (int)sVar1;
         pSVar4 = g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  uVar9].objects[0];
+                  iVar7].objects[0];
         if (pSVar4 != (STWorldObject *)0x0) {
           thunk_FUN_004e18e0(pSVar4,this->field_0018);
-          bVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
-          uVar9 = (uint)bVar7;
+          iVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
         }
-        uVar6 = (undefined1)uVar9;
+        uVar6 = (undefined1)iVar7;
       }
       this->field_04A1 = param_5;
       this->field_04BD = 1;
@@ -82,16 +85,15 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
     sVar3 = this->field_04A7;
     if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
         ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))) && (sVar2 < g_worldGrid.sizeZ)) {
-      uVar9 = (uint)sVar1;
+      iVar7 = (int)sVar1;
       pSVar4 = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                uVar9].objects[0];
+                iVar7].objects[0];
       if (pSVar4 != (STWorldObject *)0x0) {
         thunk_FUN_004e18e0(pSVar4,this->field_0018);
-        bVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
-        uVar9 = (uint)bVar7;
+        iVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
       }
-      uVar6 = (undefined1)uVar9;
+      uVar6 = (undefined1)iVar7;
     }
     this->field_04AB = param_5;
     *(undefined4 *)&this->field_0x4c1 = 1;

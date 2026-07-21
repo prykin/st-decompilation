@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -18,8 +20,6 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   ushort *puVar8;
   int iVar9;
   undefined4 uVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar11;
   uint *puVar12;
   InternalExceptionFrame local_60;
@@ -29,12 +29,12 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   int local_10;
   float local_c;
   uint local_8;
-  
+
   local_8 = 0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_18 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   pSVar6 = local_18;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -44,9 +44,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       RaiseInternalException(iVar7,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x322);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar10 = (*pcVar2)();
-    return uVar10;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   text = PTR_s_expl_sb1_007d0c44;
   if (3 < (byte)local_18->field_0x14) {

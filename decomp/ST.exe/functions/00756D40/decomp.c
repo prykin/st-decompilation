@@ -5,7 +5,8 @@ undefined4 FUN_00756d40(AnonShape_00756D40_7190B7CA *param_1)
   int iVar1;
   int iVar2;
   undefined4 uVar3;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((((param_1->field_0044 != 0) || (param_1->field_011E != 0)) || (param_1->field_0020 != 3)) ||
       (((param_1->field_001C != 3 || (param_1->field_0024 != 2)) ||
        ((param_1->field_0070 != 3 ||

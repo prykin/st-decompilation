@@ -7,7 +7,7 @@ void __cdecl FUN_00680340(char *param_1,undefined4 param_2,undefined4 param_3,un
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
-  
+
   uVar2 = 0xffffffff;
   do {
     pcVar4 = param_1;

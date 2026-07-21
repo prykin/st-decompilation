@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\generate.cpp
@@ -16,9 +18,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   undefined4 uVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 unaff_ESI;
   char *pcVar11;
-  void *unaff_EDI;
   char *pcVar12;
   InternalExceptionFrame local_64;
   int local_20;
@@ -27,21 +27,19 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   CGenerate *local_10;
   undefined4 local_c;
   Global_sub_00693710_param_1Enum *local_8;
-  
+
   local_c = 1;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pCVar3 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0x72,0,iVar4,&DAT_007a4ccc,
                                s_CGenerate__CreateMap_007d8670);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar8 = (*pcVar2)();
-      return uVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0;
   }

@@ -5,12 +5,10 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
 {
   undefined4 *puVar1;
   int iVar2;
-  undefined4 unaff_ESI;
   undefined4 **value;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   int local_8;
-  
+
   local_8 = 0;
   puVar1 = FUN_006b04d0(0x54);
   param_1->field_0008 = puVar1;
@@ -19,7 +17,7 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if (param_4 == 1) {
       Library::DKW::FMM::FUN_006d4380(param_1->field_0008,param_2,0);

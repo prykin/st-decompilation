@@ -3,7 +3,7 @@ undefined4 FUN_005fe990(int param_1,int param_2)
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = 0;
   if (200 < param_1) {
     switch(param_1 / 200) {

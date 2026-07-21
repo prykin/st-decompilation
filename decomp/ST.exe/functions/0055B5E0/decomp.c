@@ -11,7 +11,7 @@ FUN_0055b5e0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
   bool bVar6;
   char *local_c;
   int *local_8;
-  
+
   if (((*(int *)((int)this + 0x114) != 0) && (param_4 < 8)) &&
      ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
     uVar2 = 0;
@@ -49,6 +49,7 @@ LAB_0055b6ee:
           ;
         }
         if (bVar6) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((((*local_8 != 0) && (-1 < param_1)) && (param_1 < *(int *)((int)this + 0x20))) &&
              (((-1 < param_2 && (param_2 < *(int *)((int)this + 0x24))) &&
               (((int)local_c < 0x808a71 &&

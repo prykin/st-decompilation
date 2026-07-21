@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
@@ -11,15 +13,14 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   int *piVar6;
   uint uVar7;
   InternalExceptionFrame local_50;
   uint local_c;
   CPanelTy *local_8;
-  
+
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31(local_c._1_3_,param_1 == 0);
   if (param_1 == 0) {
     if (param_2 == this->field_0138) {
@@ -49,7 +50,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -59,9 +60,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
       RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x452);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1 == 0) {
     if (local_8->field_09D0 != 0) {

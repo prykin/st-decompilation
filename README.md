@@ -91,6 +91,15 @@ callees, strings, globals, tags, source evidence, and other context. Library and
 thunk implementations are represented without duplicating unnecessary bodies.
 Per-function fingerprints allow unchanged bodies to be reused on later exports.
 
+The exporter also normalizes proven terminal `INT3` artifacts for standalone
+pseudocode and writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
+reliably spell as structured C (packed/unaligned fields, runtime-stride arrays,
+flat global-record arithmetic, raw indirect calls, and residual ABI artifacts).
+The same hints appear as idempotent `ST_PSEUDO[...]` comments immediately above
+the corresponding expressions in each `decomp.c`.
+The normalization contract and examples are documented in
+[`docs/pseudocode-normalization.md`](docs/pseudocode-normalization.md).
+
 This format is deliberately usable without a live Ghidra/MCP connection. An LLM
 can load a narrow set of functions and metadata from disk instead of spending
 context on interactive database queries.
@@ -115,6 +124,9 @@ canonical run order are documented in
 The current taxonomy of unresolved raw memory forms and the safety boundary of
 automatic structure recovery are recorded in
 [`docs/structure-recovery-gaps.md`](docs/structure-recovery-gaps.md).
+The boundary between Ghidra typing and export-time pseudocode rewriting is
+recorded in
+[`docs/pseudocode-normalization.md`](docs/pseudocode-normalization.md).
 
 ## Project status and direction
 

@@ -8,7 +8,7 @@ void __thiscall FUN_0063de20(void *this,int soundId)
   int iVar1;
   short sVar2;
   SoundPosition local_10;
-  
+
   iVar1 = *(int *)((int)this + 0x266);
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {

@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,undefined2 param_2,und
   undefined2 local_e;
   undefined2 local_c;
   undefined2 local_a;
-  
+
   iVar2 = *(int *)((int)this + 0x241) - param_1;
   *(int *)((int)this + 0x241) = iVar2;
   uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
@@ -30,6 +30,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,undefined2 param_2,und
         local_a = param_3;
         local_14 = 0x5dd1;
         local_c = param_2;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)(local_24);
         return 0;
       }

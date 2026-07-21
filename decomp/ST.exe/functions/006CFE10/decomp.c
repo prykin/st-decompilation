@@ -9,7 +9,8 @@ byte * FUN_006cfe10(byte *param_1,int param_2)
   int iVar5;
   int iVar6;
   byte *pbVar7;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = (int)*(short *)(param_1 + 0x12);
   uVar4 = (param_1[0xd] & 0x1c) >> 2;
   uVar3 = (int)(param_2 + (param_2 >> 0x1f & 0xfU)) >> 4;
@@ -19,6 +20,7 @@ byte * FUN_006cfe10(byte *param_1,int param_2)
       uVar3 = uVar4;
     }
     param_2 = param_2 + uVar3 * -0x10;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pbVar7 = param_1 + *(ushort *)(param_1 + uVar3 * 2 + 0x14) + 0x16;
   }
   param_1 = pbVar7;

@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
   int iVar3;
   int iVar4;
   int *piVar5;
-  
+
   switch(param_2) {
   case CASE_0:
     iVar4 = 0;
@@ -38,6 +38,7 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
     return 0;
   }
   iVar4 = iVar4 * 4;
+  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
   iVar3 = *(int *)((int)this + 0x24) * 0xa62;
   if (*(int *)(iVar4 + 0x7f579a + iVar3) == 0) {
     iVar2 = 0;
@@ -58,6 +59,7 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
   else {
     iVar3 = 0;
     do {
+      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
       iVar1 = *(int *)((int)this + 0x24) * 0xa62;
       iVar2 = *(int *)(iVar3 + 0x7f579a + iVar1);
       if (*(int *)(iVar4 + 0x7f579a + iVar1) < iVar2) {
@@ -68,6 +70,7 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
     iVar2 = *(int *)((int)this + 0x24);
     *(undefined4 *)(iVar4 + 0x7f579a + iVar2 * 0xa62) = 0;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_004b7750(CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)((int)this + 0x24)));
   return 0;
 }

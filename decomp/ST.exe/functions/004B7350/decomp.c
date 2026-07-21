@@ -8,7 +8,7 @@ undefined4 FUN_004b7350(undefined4 param_1,Global_sub_004B7350_param_2Enum param
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = 0xffffffff;
   switch(param_2) {
   case CASE_32:

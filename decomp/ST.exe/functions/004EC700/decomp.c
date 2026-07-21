@@ -2,10 +2,10 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004EC700_param_1Enum. Cases:
    CASE_7=7;CASE_8=8;CASE_9=9;CASE_D=13;CASE_E=14
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004EC700 @ 004CB117
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004CAFC0 -> 004EC700 @ 004CB117 */
 
@@ -18,7 +18,7 @@ FUN_004ec700(void *this,Global_sub_004EC700_param_1Enum param_1,int param_2,uint
   int iVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar4 = (uVar3 & 0xff) - 1;
@@ -44,18 +44,21 @@ FUN_004ec700(void *this,Global_sub_004EC700_param_1Enum param_1,int param_2,uint
                             (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         return;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                        (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
       *param_4 = uVar3;
       *param_3 = uVar3;
       return;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
     *param_4 = uVar3;
     *param_3 = uVar3;
     return;
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 switchD_004ec735_caseD_a:
   *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                       (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);

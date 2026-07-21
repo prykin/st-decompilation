@@ -9,7 +9,7 @@ void FUN_007498ec(int *param_1,AnonShape_0074987C_9BF4FFD0 *param_2)
   undefined2 local_e;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   local_14 = param_2->field_0010;
   if ((local_14 == 0) || (local_14 == 3)) {
     sVar1 = *(short *)&param_2->field_0xe;

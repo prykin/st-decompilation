@@ -5,7 +5,7 @@ undefined4 * FUN_006b04d0(uint param_1)
   undefined4 *puVar1;
   uint uVar2;
   undefined4 *puVar3;
-  
+
   if (param_1 == 0) {
     param_1 = 1;
   }

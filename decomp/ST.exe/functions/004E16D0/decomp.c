@@ -4,7 +4,8 @@ undefined4 __thiscall FUN_004e16d0(void *this,int param_1)
 {
   int iVar1;
   int iVar2;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)((int)this + 0x4d8) != param_1) || (*(int *)((int)this + 0x4d0) != 0)) {
     return 0;
   }
@@ -35,15 +36,18 @@ undefined4 __thiscall FUN_004e16d0(void *this,int param_1)
     iVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
     iVar1 = (-(uint)((char)iVar1 != '\x02') & 0xffffff3b) + 0x35b;
     break;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   case 0x5e:
     (**(code **)(*(int *)this + 0x90))(3,0x3a9);
     thunk_FUN_004e04a0(this);
     return 0;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   case 0x60:
     (**(code **)(*(int *)this + 0x90))(3,0x3b8);
     thunk_FUN_004e04a0(this);
     return 0;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(iVar2 + 0x90))(3,iVar1);
 switchD_004e172f_caseD_3a:
   thunk_FUN_004e04a0(this);

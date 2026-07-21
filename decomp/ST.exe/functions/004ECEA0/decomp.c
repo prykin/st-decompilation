@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
   int iVar3;
   uint uVar4;
   uint uVar5;
-  
+
   if (param_1->field_05FF == 0) {
     pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (pAVar2 == (AnonShape_004AB810_8E5693D5 *)0x0) {
@@ -94,6 +94,7 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
                        (float)(*(int *)(&DAT_0079aac8 + iVar3) + (int)param_1->field_0045) *
                        _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ad460((void *)param_1->field_05FF,1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x42a);
     return 0;
   }

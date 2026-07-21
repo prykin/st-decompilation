@@ -6,7 +6,7 @@ void __thiscall FUN_005f5d10(void *this,int param_1)
   undefined4 local_c;
   short local_8;
   short local_6;
-  
+
   if (param_1 != 0) {
     if (param_1 == 1) {
       *(undefined4 *)((int)this + 0x93) = *(undefined4 *)((int)this + 0x40);
@@ -21,6 +21,7 @@ LAB_005f5d4b:
     }
     if (param_1 == 2) {
       if (*(int **)((int)this + 0x34) != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar1 = (**(code **)(**(int **)((int)this + 0x34) + 0xe0))
                           (*(undefined4 *)((int)this + 0x38),(int)&param_1 + 2,&local_6,&local_8,
                            &local_c);

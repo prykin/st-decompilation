@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -11,15 +13,13 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
   AnonReceiver_004EEFB0 *this_00;
   int errorCode;
   int iVar3;
-  undefined4 unaff_EBX;
-  void *unaff_ESI;
   InternalExceptionFrame local_4c;
   AnonReceiver_004EEFB0 *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = (AnonReceiver_004EEFB0 *)this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
     cVar1 = local_8->field_0x1a1;
@@ -42,6 +42,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
       *(undefined2 *)&local_8->field_0x2e = 2;
       *(int *)&local_8->field_0x30 = *(int *)&local_8->field_0x178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)PTR_00802a30)(&local_8->field_0x18);
       }
     }
@@ -58,9 +59,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x46e,0,errorCode,
                              &DAT_007a4ccc,s_HelpPanelTy__MObjProc_007c3c0c);
   if (iVar3 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x46e);
   return;

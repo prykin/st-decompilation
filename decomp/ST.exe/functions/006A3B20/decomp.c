@@ -7,7 +7,7 @@ undefined * FUN_006a3b20(int param_1)
   undefined4 *lp;
   undefined4 *lp_00;
   int iVar3;
-  
+
   lp = (undefined4 *)&stack0xfffffffc;
   iVar3 = 0;
   DAT_00854970 = 0;

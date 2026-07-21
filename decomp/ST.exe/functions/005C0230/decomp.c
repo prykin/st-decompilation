@@ -19,7 +19,7 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   undefined4 local_24;
   int *local_14;
   undefined4 local_10;
-  
+
   puVar5 = local_5c;
   for (iVar4 = 0x16; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar5 = 0;

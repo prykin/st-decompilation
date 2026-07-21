@@ -12,17 +12,18 @@ void __thiscall StartSystemTy::sub_006E56B0(StartSystemTy *this,uint param_1)
   undefined1 local_28 [16];
   undefined4 local_18;
   undefined4 *local_8;
-  
+
   uVar2 = param_1;
   local_8 = (undefined4 *)0x0;
   iVar3 = sub_006E5360(this,param_1,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
     local_18 = 3;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*local_8)(local_28);
   }
   iVar3 = sub_006E5360(this,uVar2,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
-    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)this->field_0010,param_1);
+    FUN_006b0c70((DArrayTy *)this->field_0010,param_1);
     AppClassTy::DeleteObject(this->field_0018,uVar2);
     for (pAVar1 = this->field_000C; pAVar1 != (AnonPointee_StartSystemTy_000C *)0x0;
         pAVar1 = (AnonPointee_StartSystemTy_000C *)pAVar1->field_0000) {

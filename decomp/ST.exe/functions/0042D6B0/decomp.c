@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -9,10 +11,11 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
   DArrayTy *array;
   code *pcVar1;
   int iVar2;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   int iVar3;
   STPlayerTempSlot (*paSVar4) [5];
-  
+
   iVar3 = (int)param_1;
   iVar2 = g_playerRuntime[iVar3].field324_0x203;
   if (iVar2 == 0) {
@@ -25,12 +28,11 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
       if (iVar2 == 0) {
         return;
       }
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     paSVar4 = g_playerRuntime[iVar3].tempSlots + 1;
   }
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);
   array = (*paSVar4)[0].objectIds;
   if (array != (DArrayTy *)0x0) {

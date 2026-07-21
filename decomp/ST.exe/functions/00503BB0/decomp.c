@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
@@ -12,8 +14,6 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   CPanelTy *pCVar4;
   int iVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar7;
   undefined4 local_9c [9];
   undefined4 local_78 [9];
@@ -23,7 +23,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   undefined1 local_8;
   undefined1 local_6;
   undefined1 local_5;
-  
+
   if (DAT_00808784 != 0) {
     return;
   }
@@ -39,7 +39,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x2ff,0,iVar5,&DAT_007a4ccc
@@ -48,9 +48,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x2ff);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_005252c0(0xae);
   pCVar4 = local_10;
@@ -69,6 +67,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
   }
   if (DAT_00801698 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00801698 + 0x1c))(0);
   }
   if (DAT_00802a44 != (void *)0x0) {
@@ -78,15 +77,19 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
   }
   if (DAT_00801678 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00801678 + 0x1c))(0);
   }
   if (DAT_008016ec != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_008016ec + 0x1c))(0);
   }
   if (DAT_00802a48 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00802a48 + 0x1c))(0);
   }
   if (DAT_0080168c != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
   thunk_FUN_0054a8d0(PTR_00802a30);
@@ -122,6 +125,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
       puVar7 = puVar7 + 1;
     }
     *(undefined1 *)puVar7 = 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_78[0]._0_1_ = 10;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_78,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
@@ -147,6 +151,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     goto switchD_00503d36_caseD_15;
   case 0x2f:
     if ((DAT_00801678 != (int *)0x0) && (*(short *)((int)DAT_00801678 + 0x172) == 2)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*DAT_00801678 + 0x1c))(1);
     }
     break;
@@ -157,12 +162,14 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
       puVar7 = puVar7 + 1;
     }
     *(undefined1 *)puVar7 = 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_9c[0]._0_1_ = 0x14;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_9c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0x4c:
     if ((DAT_008016ec != (int *)0x0) && (*(short *)((int)DAT_008016ec + 0x172) == 2)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*DAT_008016ec + 0x1c))(1);
     }
   }

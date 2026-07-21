@@ -1,11 +1,15 @@
 function_address	target	status	detail
-0068CEC0	parameter:0	applied	type=applied(/winnt.h/LPCSTR)
+0046AA50	parameter:1	unchanged	type=unchanged
+0046EFD0	parameter:1	unchanged	type=unchanged
+004B7D00	parameter:1	unchanged	type=unchanged
 0068FC70	parameter:1	disabled	apply flags are 0
+006B0C70	parameter:0	unchanged	type=unchanged
+006B4170	parameter:0	unchanged	type=unchanged
+006B55F0	parameter:0	unchanged	type=unchanged
 006BBE40	parameter:1	disabled	apply flags are 0
-006CEF60	parameter:2	applied	type=applied(/int)
-00725910	parameter:0	applied	type=applied(/winnt.h/HANDLE)
-0074868B	parameter:1	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
-00749106	parameter:1	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
-007494D1	parameter:2	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
-00749F88	parameter:0	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
-0074B5E6	parameter:2	applied	type=applied(/winbase.h/LPCRITICAL_SECTION)
+006BFE70	parameter:2	unchanged	type=unchanged
+006D2820	parameter:1	unchanged	type=unchanged
+00711110	parameter:1	unchanged	type=unchanged
+007111C0	parameter:1	unchanged	type=unchanged
+0072F260	parameter:1	unchanged	type=unchanged
+0075FB30	parameter:0	unchanged	type=unchanged

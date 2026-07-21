@@ -8,7 +8,7 @@ FUN_00747b12(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 *puVar2;
   uint uVar3;
   uint uVar4;
-  
+
   FUN_0074b7b8(this,param_1,0);
   *(undefined4 *)((int)this + 0x14) = 0;
   *(undefined4 *)((int)this + 0x18) = 0;

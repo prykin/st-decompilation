@@ -33,13 +33,13 @@ void FUN_0072b0b0(void)
   uint local_2c;
   uint local_28;
   uint local_24;
-  AnonShape_006B84D0_7C7D97C6 *local_20;
+  AnonShape_006B5B10_E0D06CF1 *local_20;
   undefined1 *local_1c;
   void *local_14;
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e330;
   puStack_10 = &LAB_0072d964;
@@ -95,6 +95,7 @@ void FUN_0072b0b0(void)
         local_8 = 0xffffffff;
       }
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))(*(int **)(*DAT_00857134 + 0x44),0);
     local_54.x = DAT_00857134[1];
     local_54.y = DAT_00857134[2];
@@ -117,6 +118,7 @@ void FUN_0072b0b0(void)
         local_4c = local_90 + LVar2;
         local_48 = local_8c + LVar3;
         piVar1 = *(int **)(*DAT_00857134 + 0x34);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_3c = (**(code **)(*piVar1 + 0x14))
                              (piVar1,&local_54,*(undefined4 *)(*DAT_00857134 + 0x44),&local_98,
                               0x1000000,0);
@@ -133,9 +135,11 @@ void FUN_0072b0b0(void)
                          (int)local_20,local_30,local_2c);
             iVar4 = local_84;
             local_8 = 0xffffffff;
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))
                       (*(int **)(*DAT_00857134 + 0x44),0);
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(**(int **)(*DAT_00857134 + 0x34) + 0x80))(*(int **)(*DAT_00857134 + 0x34),0);
         }
       }
@@ -171,6 +175,7 @@ void FUN_0072b0b0(void)
       local_48 = iVar4 + LVar3;
       piVar1 = *(int **)(*DAT_00857134 + 0x34);
       local_8c = iVar4;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)(*piVar1 + 0x14))
                         (piVar1,&local_54,*(undefined4 *)(*DAT_00857134 + 0x44),&local_98,0x1000000,
                          0);
@@ -184,8 +189,10 @@ void FUN_0072b0b0(void)
                        (undefined8 *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,
                        local_68 - local_5c,iVar4 - local_80);
           local_8 = 0xffffffff;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))(*(int **)(*DAT_00857134 + 0x44),0);
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(**(int **)(*DAT_00857134 + 0x34) + 0x80))(*(int **)(*DAT_00857134 + 0x34),0);
       }
       local_3c = local_3c | uVar6;

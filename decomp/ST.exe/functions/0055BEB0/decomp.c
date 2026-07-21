@@ -7,12 +7,13 @@ void __thiscall FUN_0055beb0(void *this,DWORD lastError)
 
 {
   int iVar1;
-  
+
   iVar1 = CFsgsConnection::IsInitialized(this);
   if (((iVar1 != 0) && (*(undefined1 *)((int)this + 8) = 0, *(char *)((int)this + 9) == '\0')) &&
      (g_fSGS_0081174C != (FSGSTy *)0x0)) {
     *(undefined4 *)((int)this + 0x1b) = 0x614f;
     *(DWORD *)((int)this + 0x1f) = lastError;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)g_fSGS_0081174C->field_0000->field_0000)((int)this + 0xb);
   }
   return;

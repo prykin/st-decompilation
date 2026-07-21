@@ -17,7 +17,7 @@ FUN_005f23d0(void *this,int param_1,int param_2,int param_3,uint param_4,int par
   int local_10;
   void *local_c;
   undefined4 local_8;
-  
+
   iVar4 = param_2;
   iVar5 = param_1;
   local_8 = 0;

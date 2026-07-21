@@ -17,7 +17,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
   float local_10;
   float local_c;
   float local_8;
-  
+
   local_30[5] = 2;
   local_30[6] = 2;
   iVar8 = 0;
@@ -92,6 +92,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
     }
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006e65c0(PTR_00807598,*(undefined4 *)((int)this + (uint)param_1 * 4 + 0xdbf),
                  (char)*(undefined2 *)(*(int *)((int)this + (uint)param_1 * 4 + 0x9c8) + 0x23),
                  param_2,param_3,5,5,1);

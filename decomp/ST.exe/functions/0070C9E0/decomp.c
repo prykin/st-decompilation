@@ -14,7 +14,7 @@ undefined4 * __cdecl FUN_0070c9e0(AnonShape_0070C9E0_7137F001 *param_1,char para
   int local_10;
   uint local_c;
   int local_8;
-  
+
   local_c = param_1->field_0004;
   local_10 = param_1->field_0008;
   uVar6 = local_c & 0x80000007;

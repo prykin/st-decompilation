@@ -11,11 +11,13 @@ uint __thiscall STBoatC::sub_004176C0(STBoatC *this,short param_1)
   uint uVar3;
   uint uVar4;
   uint uVar5;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
   int iVar6;
   uint uVar7;
   int iVar8;
-  
+
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   iVar6 = CONCAT22((short)((uint)unaff_ESI >> 0x10),this->field_0086);
   iVar8 = (int)param_1;
   uVar3 = (iVar8 / (int)this->field_0086) * iVar6;

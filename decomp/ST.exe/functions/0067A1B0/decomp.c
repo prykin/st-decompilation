@@ -6,7 +6,7 @@ void __thiscall FUN_0067a1b0(void *this,int param_1)
   int *piVar2;
   int iVar3;
   uint uVar4;
-  
+
   iVar3 = *(int *)((int)this + 0x695);
   if (iVar3 != 0) {
     uVar1 = *(uint *)(iVar3 + 0xc);
@@ -22,6 +22,7 @@ void __thiscall FUN_0067a1b0(void *this,int param_1)
           }
           if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != (undefined4 *)0x0)) && (param_1 != 0))
           {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)**(undefined4 **)*piVar2)(param_1);
           }
         }

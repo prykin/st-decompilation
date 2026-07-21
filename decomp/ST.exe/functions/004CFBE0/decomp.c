@@ -2,10 +2,10 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004CFBE0_param_1Enum. Cases:
    CASE_8=8;CASE_9=9;CASE_D=13;CASE_E=14
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004CFBE0 @ 004CB022
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004CAFC0 -> 004CFBE0 @ 004CB022 */
 
@@ -18,7 +18,7 @@ FUN_004cfbe0(void *this,Global_sub_004CFBE0_param_1Enum param_1,int param_2,uint
   int iVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar4 = (uVar3 & 0xff) - 1;
@@ -28,6 +28,7 @@ FUN_004cfbe0(void *this,Global_sub_004CFBE0_param_1Enum param_1,int param_2,uint
     iVar2 = *(int *)((int)this + 0x4d0);
     if (iVar2 != 3) {
       if (iVar2 == 4) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                          (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         *param_4 = uVar3;
@@ -42,6 +43,7 @@ joined_r0x004cfc7d:
                             (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         return;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                        (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
       *param_4 = uVar3;
@@ -57,6 +59,7 @@ switchD_004cfc1d_caseD_a:
     iVar2 = *(int *)((int)this + 0x4d0);
     if (iVar2 != 3) {
       if (iVar2 == 4) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                          (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         goto LAB_004cfc50;
@@ -64,6 +67,7 @@ switchD_004cfc1d_caseD_a:
       goto joined_r0x004cfc7d;
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                    (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
 LAB_004cfc50:

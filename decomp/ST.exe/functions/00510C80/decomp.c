@@ -5,7 +5,7 @@ undefined4 * __fastcall FUN_00510c80(STGroupBoatC *param_1)
   undefined4 uVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   STGroupBoatC::sub_006E5FB0(param_1);
   *(undefined4 *)((int)&param_1->field_0059 + 3) = 0;
   *(undefined4 *)((int)&param_1->field_0041 + 3) = 0;

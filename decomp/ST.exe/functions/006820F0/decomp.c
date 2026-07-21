@@ -4,7 +4,7 @@ undefined4 __cdecl FUN_006820f0(int param_1,int param_2,int param_3)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar2 = 0;
   if (0 < param_1) {
     do {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_sat.cpp
@@ -11,7 +13,7 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
   int iVar2;
   int iVar3;
   short sVar4;
-  
+
   iVar2 = *(int *)((int)this + 0x231);
   *(int *)((int)this + 0x249) = param_1;
   *(int *)((int)this + 0x24d) = param_2;
@@ -47,9 +49,7 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
       iVar2 = ReportDebugMessage(s_E____titans_Igor_to_sat_cpp_007cbab8,0x11b,0,0,&DAT_007a4ccc,
                                  s_For_Artem___already_has_athe_tar_007cbadc);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
   }

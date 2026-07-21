@@ -9,9 +9,10 @@ void FUN_0075a040(AnonShape_0075A040_811C231E *param_1)
   int iVar5;
   int *piVar6;
   int iVar7;
-  
+
   iVar1 = param_1->field_0196;
   iVar2 = param_1->field_012A;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar3 = (*(code *)**(undefined4 **)param_1)(param_1,1,*(int *)&param_1->field_0x1c << 3);
   *(int *)(iVar1 + 0x38) = iVar3;
   *(int *)(iVar1 + 0x3c) = iVar3 + *(int *)&param_1->field_0x1c * 4;
@@ -21,6 +22,7 @@ void FUN_0075a040(AnonShape_0075A040_811C231E *param_1)
     do {
       iVar4 = (piVar6[6] * *piVar6) / param_1->field_012A;
       iVar7 = (iVar2 + 4) * iVar4;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (*(code *)**(undefined4 **)param_1)(param_1,1,iVar7 * 8);
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + iVar4 * 4;

@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::SetProcess
-   
+
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 0052AB40 -> 00554F20 @ 0052ABA6 */
 
@@ -14,16 +16,14 @@ void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,char 
   int errorCode;
   DWORD DVar2;
   int iVar3;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar4;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
-  
+
   local_8 = this;
   sub_00555570(this);
-  pIVar4 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
     if (-1 < (int)local_8->field_003C) {
@@ -38,16 +38,14 @@ void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,char 
     }
     this_00->field_0050 = 0xffffffff;
     DrawLineCR(this_00,(uint *)text);
-    g_currentExceptionFrame = pIVar4;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar4;
+  g_currentExceptionFrame = local_4c.previous;
   iVar3 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x109,0,errorCode,&DAT_007a4ccc
                              ,s_cLoadingTy__SetProcess_007c8fb4);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_grig_loading_cpp_007c8f0c,0x10a);
   return;

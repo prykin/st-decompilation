@@ -6,7 +6,7 @@ void __thiscall FUN_0071c9f0(void *this,int param_1)
   uint index;
   byte local_10 [8];
   int local_8;
-  
+
   index = 0;
   if (param_1 != 0) {
     array = *(DArrayTy **)((int)this + 0x28);
@@ -15,7 +15,7 @@ void __thiscall FUN_0071c9f0(void *this,int param_1)
       do {
         DArrayGetElement(array,index,local_10);
         if (*(int *)(local_8 + 8) == param_1) {
-          FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x28),index);
+          FUN_006b0c70(*(DArrayTy **)((int)this + 0x28),index);
         }
         else {
           if ((local_10[0] & 2) != 0) {

@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\pal_tbl.CPP
    Diagnostic line evidence: 81 | 85 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0056DB80 -> 0055D730 @ 0056E073 */
 
@@ -13,13 +15,11 @@ int __cdecl LoadGamePlt(cMf32 *param_1,byte param_2)
   code *pcVar1;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     DAT_008032b4 = Library::Ourlib::MFPLT::mfPltPtrTy
                              ((int)param_1,PTR_s_PLT_PAUSE_0079af70,param_2,1);
@@ -49,9 +49,7 @@ int __cdecl LoadGamePlt(cMf32 *param_1,byte param_2)
   iVar3 = ReportDebugMessage(s_E____titans_pal_tbl_CPP_007c959c,0x51,0,iVar2,&DAT_007a4ccc,
                              s_LoadGamePlt_007c95b8);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0055d910();
   RaiseInternalException(iVar2,0,s_E____titans_pal_tbl_CPP_007c959c,0x55);

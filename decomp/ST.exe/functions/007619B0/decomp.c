@@ -2,7 +2,7 @@
 /* Library Function - Multiple Matches With Different Base Names
     __wremove
     _remove
-   
+
    Library: Visual Studio */
 
 int __cdecl FID_conflict__remove(char *_Filename)
@@ -11,7 +11,7 @@ int __cdecl FID_conflict__remove(char *_Filename)
   BOOL BVar1;
   int iVar2;
   undefined4 local_8;
-  
+
   BVar1 = DeleteFileA(_Filename);
   if (BVar1 == 0) {
     local_8 = GetLastError();

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
@@ -13,7 +15,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
   int iVar4;
   undefined4 *puVar5;
   undefined4 *puVar6;
-  
+
   pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (pAVar2 != (AnonShape_004AB810_8E5693D5 *)0x0) {
     this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar2);
@@ -42,9 +44,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
         iVar4 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x203,0,0,&DAT_007a4ccc,
                                    s_STDcResourcC__Init_Sprite_Error_007cb264);
         if (iVar4 != 0) {
-          pcVar1 = (code *)swi(3);
-          puVar3 = (undefined4 *)(*pcVar1)();
-          return puVar3;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         return (undefined4 *)0x0;
       }

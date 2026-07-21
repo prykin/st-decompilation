@@ -5,7 +5,7 @@ bool __fastcall FUN_005faee0(AnonShape_005FAEE0_B5D482C5 *param_1)
   AnonNested_005FAEE0_02E6_E37EB1FC *pAVar1;
   int iVar2;
   int iVar3;
-  
+
   pAVar1 = param_1->field_02E6;
   if (pAVar1 == (AnonNested_005FAEE0_02E6_E37EB1FC *)0x0) {
     return true;

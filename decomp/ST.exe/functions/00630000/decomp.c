@@ -8,7 +8,7 @@ void __thiscall FUN_00630000(void *this,int param_1)
   int iVar1;
   int *piVar2;
   int local_8;
-  
+
   piVar2 = (int *)((int)this + 0x1e5);
   local_8 = 5;
   do {

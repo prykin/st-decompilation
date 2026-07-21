@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::PaintChooseMap
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
@@ -16,32 +18,28 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   ChooseMapTy *pCVar3;
   int errorCode;
   UINT resourceId;
-  uint *extraout_EAX;
-  int iVar4;
+  uint *puVar4;
+  int iVar5;
   MMMObjTy *this_00;
   undefined1 *this_01;
   StartServTy *this_02;
-  undefined4 unaff_EBX;
-  void *unaff_ESI;
-  uint uVar5;
   uint uVar6;
-  ccFntTy *pcVar7;
-  undefined4 uVar8;
+  uint uVar7;
+  ccFntTy *pcVar8;
+  undefined4 uVar9;
   InternalExceptionFrame local_4c;
   ChooseMapTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1bb,0,errorCode,
+    iVar5 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1bb,0,errorCode,
                                &DAT_007a4ccc,s_ChooseMapTy__PaintChooseMap_007cc7cc);
-    if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+    if (iVar5 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_load_obj_cpp_007cc728,0x1bb);
     return;
@@ -74,11 +72,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_2:
   case CASE_4:
   case CASE_5:
-    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     resourceId = 0x26ae;
     break;
   case CASE_3:
-    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     resourceId = 0x26af;
     break;
   default:
@@ -87,18 +85,18 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_A:
   case CASE_B:
   case CASE_C:
-    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     resourceId = 0x26ad;
     break;
   case CASE_13:
-    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
     resourceId = (DAT_00803400 != '\f') + 0x26ad;
   }
-  uVar8 = 0;
-  uVar6 = 0xffffffff;
-  uVar5 = 0xfffffffe;
-  LoadResourceString(resourceId,HINSTANCE_00807618);
-  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,extraout_EAX,uVar5,uVar6,pcVar7,uVar8);
+  uVar9 = 0;
+  uVar7 = 0xffffffff;
+  uVar6 = 0xfffffffe;
+  puVar4 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
+  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar4,uVar6,uVar7,pcVar8,uVar9);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;
   return;

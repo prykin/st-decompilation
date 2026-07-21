@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -12,10 +14,8 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   undefined4 uVar4;
   STBoatC *pSVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   STBoatC_field_06F3State *pSVar7;
   undefined4 *puVar8;
-  void *unaff_EDI;
   STBoatC_field_06F3State *pSVar9;
   short *psVar10;
   undefined4 *puVar11;
@@ -24,21 +24,19 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   AnonShape_004900E0_F89C68CE *local_10;
   int local_c;
   STBoatC *local_8;
-  
+
   local_10 = (AnonShape_004900E0_F89C68CE *)param_1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pAVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4ed4,0,iVar3,&DAT_007a4ccc,
                                s_STBoatC__RestoreBoatData_007aba58);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4ed5);
     return;

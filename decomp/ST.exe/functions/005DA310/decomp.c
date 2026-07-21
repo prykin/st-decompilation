@@ -21,7 +21,7 @@ void __cdecl FUN_005da310(int param_1,undefined *param_2,BYTE param_3)
   char local_88 [32];
   byte local_68 [88];
   byte local_10 [12];
-  
+
   puVar6 = local_a4;
   for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;

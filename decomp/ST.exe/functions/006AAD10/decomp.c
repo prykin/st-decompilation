@@ -8,13 +8,15 @@ void FUN_006aad10(void)
 {
   int *piVar1;
   uint uVar2;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   byte in_ID;
   uint local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_c = 0;
   DAT_00858de0 = 0;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar2 = (uint)(in_ID & 1) * 0x200000 ^ 0x200000;
   if (uVar2 == (uint)(uVar2 != 0) * 0x200000) {
     piVar1 = (int *)cpuid_basic_info(0);

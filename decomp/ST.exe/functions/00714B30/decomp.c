@@ -5,15 +5,15 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  AnonShape_006C7610_838EDECF *pAVar4;
+  AnonShape_006B5B10_E0D06CF1 *pAVar4;
   int iVar5;
   AnonShape_007109F0_BD33A2FF local_54;
   int local_c;
-  AnonShape_006C7610_838EDECF *local_8;
-  
+  AnonShape_006B5B10_E0D06CF1 *local_8;
+
   iVar2 = param_1;
   iVar5 = 0;
-  local_8 = (AnonShape_006C7610_838EDECF *)0x0;
+  local_8 = (AnonShape_006B5B10_E0D06CF1 *)0x0;
   local_c = 0;
   if (((*(int *)((int)this + 0x58) == 0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
      (*(int *)((int)this + 8) <= param_1)) {
@@ -34,7 +34,7 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
   *(undefined4 *)((int)this + 0xa4) = *(undefined4 *)((int)this + 0x70);
   pAVar4 = local_8;
   if (&stack0x00000000 != (undefined1 *)0x8) {
-    pAVar4 = *(AnonShape_006C7610_838EDECF **)(iVar1 + 0x72);
+    pAVar4 = *(AnonShape_006B5B10_E0D06CF1 **)(iVar1 + 0x72);
   }
   iVar3 = local_c;
   if (&stack0x00000000 != &DAT_0000000c) {

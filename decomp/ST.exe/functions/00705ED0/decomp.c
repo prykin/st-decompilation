@@ -20,7 +20,7 @@ void FUN_00705ed0(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   int iVar12;
   uint local_c;
   uint local_8;
-  
+
   _DAT_00857000 = 1;
   pbVar6 = param_5;
   iVar12 = param_9;

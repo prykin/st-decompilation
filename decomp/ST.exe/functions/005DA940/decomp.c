@@ -7,7 +7,7 @@ undefined1 __thiscall FUN_005da940(void *this,int param_1)
   int iVar3;
   int *piVar4;
   int *piVar5;
-  
+
   iVar3 = 4;
   piVar4 = (int *)(*(int *)((int)this + 0x68a) + 0xc + param_1 * 0x14);
   piVar5 = &DAT_007cd700;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
@@ -13,18 +15,16 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   DArrayTy *pDVar4;
   char *pcVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   byte bVar7;
   byte bVar8;
   short *psVar9;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (g_cMf32_00806758 != (cMf32 *)0x0) {
       pDVar4 = (DArrayTy *)Library::Ourlib::MFDARR::mfDarLoad(g_cMf32_00806758,param_1,0);
@@ -50,7 +50,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         *puVar1 = psVar9;
         pCVar3->field_0260 = CASE_1;
         pCVar3->field_025F = 0;
-        FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
+        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
           pCVar3->field_0260 = CASE_3;
           DAT_0080c4f7 = 3;
@@ -65,9 +65,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3c8,0,errorCode,
                              &DAT_007a4ccc,s_CPanelTy__PlayBriefing_007c2268);
   if (iVar6 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3c8);
   return;

@@ -18,7 +18,7 @@ byte * FUN_006f5430(byte *param_1,int param_2,uint *param_3,int param_4,int para
   int iVar9;
   uint uVar10;
   byte *pbVar11;
-  
+
   DAT_00857034 = param_11;
   DAT_00856ff8 = param_13;
   _DAT_00857000 = 1;
@@ -95,6 +95,7 @@ LAB_006f545a:
         puVar5 = param_3;
         pbVar6 = DAT_00857014;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_11 = (byte *)CONCAT31((int3)((uint)param_11 >> 8),*pbVar6);
       pbVar11 = pbVar6 + 1;
       *param_1 = *pbVar6;
@@ -133,6 +134,7 @@ LAB_006f54e6:
       uVar8 = uVar8 & 0x3f;
       pbVar11 = param_6 + 1;
       bVar1 = *param_6;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_11 = (byte *)CONCAT31((int3)((uint)param_11 >> 8),bVar1);
       if ((int)uVar10 < (int)uVar8) {
         uVar8 = uVar8 | 0xc0;
@@ -188,6 +190,7 @@ LAB_006f54e6:
         puVar5 = param_3;
       }
       bVar1 = *param_6;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_11 = (byte *)CONCAT31((int3)((uint)param_11 >> 8),bVar1);
       param_6 = param_6 + 1;
       *param_1 = bVar1;

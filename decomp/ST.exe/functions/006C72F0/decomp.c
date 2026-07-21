@@ -18,7 +18,7 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079da08;
   puStack_10 = &LAB_0072d964;
@@ -50,7 +50,7 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
     if (iVar5 == 0) {
       local_8 = 0;
       puVar4 = Library::DKW::WGR::FUN_006b55f0
-                         ((AnonShape_006B84D0_7C7D97C6 *)0x0,0,0,0,(byte *)param_1->field_003A,
+                         ((AnonShape_006B5B10_E0D06CF1 *)0x0,0,0,0,(byte *)param_1->field_003A,
                           param_1->field_003E,local_20,local_24,local_28,local_2c);
       param_1->field_0072 = puVar4;
       g_currentExceptionFrame = local_70.previous;

@@ -8,7 +8,7 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
   int iVar4;
   int iVar5;
   int local_8;
-  
+
   sVar1 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
     iVar4 = (short)(((short)(param_1 / 0xc9) + sVar1) -

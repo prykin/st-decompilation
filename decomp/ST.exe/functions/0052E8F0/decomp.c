@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -10,25 +12,30 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   OptPanelTy *pOVar2;
   int iVar3;
   int iVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_05;
   ccFntTy *this_00;
-  undefined4 unaff_ESI;
   ushort **ppuVar5;
-  void *unaff_EDI;
   uint *puVar6;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pOVar2 = local_8;
   if (iVar3 == 0) {
     if ((AnonShape_006B5570_4D68B99C *)local_8->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -46,21 +53,25 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     this_00 = (ccFntTy *)0x0;
     if (pOVar2->field_01E5 != 0) {
       FreeAndNull((void **)&pOVar2->field_01E5);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX;
     }
     if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_00;
     }
     pOVar2->field_02F9 = (uint *)0x0;
     if (pOVar2->field_02FD != (DArrayTy *)0x0) {
       DArrayDestroy(pOVar2->field_02FD);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_01;
     }
     pOVar2->field_02FD = (DArrayTy *)0x0;
     if (pOVar2->field_01DD != (HANDLE)0x0) {
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_02;
     }
     puVar6 = &pOVar2->field_01B5;
@@ -68,6 +79,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     do {
       if (*puVar6 != 0) {
         StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_00 = extraout_ECX_03;
       }
       *puVar6 = 0;
@@ -79,6 +91,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     do {
       if (*puVar6 != 0) {
         StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_00 = extraout_ECX_04;
       }
       *puVar6 = 0;
@@ -89,6 +102,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     if (pOVar2->field_017C != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pOVar2->field_017C);
       pOVar2->field_017C = (ccFntTy *)0x0;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_05;
     }
     if (pOVar2->field_0180 != (ccFntTy *)0x0) {
@@ -112,9 +126,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x79,0,iVar3,&DAT_007a4ccc,
                              s_OptPanelTy__DoneOptPanel_007c714c);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x79);
   return;

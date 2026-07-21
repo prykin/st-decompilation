@@ -4,7 +4,7 @@ undefined4 FUN_00680d40(void)
 {
   int iVar1;
   undefined4 uVar2;
-  
+
   iVar1 = DAT_008488b0;
   if ((0 < *(int *)(&DAT_00811ae8 + DAT_008488b0 * 0x2b14)) &&
      (0 < *(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14))) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
@@ -11,25 +13,21 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
   int iVar3;
   int iVar4;
   undefined4 uVar5;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar6;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   HoloTy *local_c;
   undefined4 local_8;
-  
-  pIVar6 = g_currentExceptionFrame;
+
   local_8 = 0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar6);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
-    g_currentExceptionFrame = pIVar6;
+    g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0xc1,0,iVar3,&DAT_007a4ccc,
                                s_HoloTy__NextFas_007cc6f0);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar5 = (*pcVar2)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_hologram_cpp_007cc674,0xc1);
     return local_8;
@@ -48,11 +46,11 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
       local_c->field_0017 = iVar3 + -1;
       local_8 = 1;
       FUN_006b35d0(DAT_008075a8,uVar1);
-      g_currentExceptionFrame = pIVar6;
+      g_currentExceptionFrame = local_50.previous;
       return local_8;
     }
   }
-  g_currentExceptionFrame = pIVar6;
+  g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
 

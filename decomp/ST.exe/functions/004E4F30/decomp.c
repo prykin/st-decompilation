@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_004e4f30(AnonShape_004E4F30_490004C0 *param_1)
   uint uVar2;
   uint uVar3;
   int iVar4;
-  
+
   if ((*(int *)&param_1[2].field_0x124 != 0x5d) && (*(int *)&param_1[2].field_0x124 != 0x3d)) {
     return 0;
   }

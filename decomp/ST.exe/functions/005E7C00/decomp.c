@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
@@ -19,18 +21,16 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
   uint *puVar10;
   uint uVar11;
   int iVar12;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   AnonShape_006B5570_4D68B99C *local_10;
   WaitTy *local_c;
   uint *local_8;
-  
+
   if (param_1 != (uint *)0x0) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_c = this;
-    iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pWVar4 = local_c;
     if (iVar5 == 0) {
       if (param_2 != 0) {
@@ -43,7 +43,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
             uVar11 = pWVar4->field_1AF4;
           } while ((int)uVar11 < (int)pAVar6->field_0008);
         }
-        FUN_006b4170((AnonShape_006C7610_838EDECF *)pWVar4->field_1AEC,0,0,pWVar4->field_1AF4 * 0x13
+        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar4->field_1AEC,0,0,pWVar4->field_1AF4 * 0x13
                      ,pWVar4->field_1AEC->field_0004,(0x16 - pWVar4->field_1AF4) * 0x13,0);
       }
       pAVar7 = (AnonShape_006B5570_4D68B99C *)
@@ -81,7 +81,7 @@ LAB_005e7d14:
         pAVar1 = pWVar4->field_1AEC;
         iVar12 = 0x2c - iVar5;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)pAVar1,0,0,0,(byte *)pAVar1,0,0,
+                  ((AnonShape_006B5B10_E0D06CF1 *)pAVar1,0,0,0,(byte *)pAVar1,0,0,
                    iVar5 * 0x13 + -0x1a2,pAVar1->field_0004,iVar12 * 0x13);
       }
       else {
@@ -113,7 +113,7 @@ LAB_005e7d14:
         local_8 = &pWVar4->field_1A94 + iVar12;
         uVar11 = iVar12 * 0x13;
         do {
-          FUN_006b4170((AnonShape_006C7610_838EDECF *)pWVar4->field_1AEC,0,0,uVar11,
+          FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar4->field_1AEC,0,0,uVar11,
                        pWVar4->field_1AEC->field_0004,0x13,0);
           ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,(int)pWVar4->field_1AEC,0,2,uVar11,
                            pWVar4->field_1AEC->field_0004 + -4,0x13);
@@ -137,9 +137,7 @@ LAB_005e7d14:
     iVar12 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x120,0,iVar5,
                                 &DAT_007a4ccc,s_WaitTy__AddStr_007cddc4);
     if (iVar12 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x120);
   }

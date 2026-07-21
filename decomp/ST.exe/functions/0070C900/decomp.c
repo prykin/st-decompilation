@@ -5,15 +5,13 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
   int iVar1;
   undefined4 *puVar2;
   int iVar3;
-  void *unaff_ESI;
   uint *puVar4;
-  InternalExceptionFrame *pIVar5;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   uint local_8;
-  
-  pIVar5 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar1 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (param_4 < 0) {
       puVar4 = &local_8;
@@ -30,10 +28,10 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
     if (param_2 != (uint *)0x0) {
       *param_2 = local_8;
     }
-    g_currentExceptionFrame = pIVar5;
+    g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
-  g_currentExceptionFrame = pIVar5;
+  g_currentExceptionFrame = local_4c.previous;
   return (undefined4 *)0x0;
 }
 

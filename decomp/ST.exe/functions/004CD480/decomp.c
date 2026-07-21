@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004cd480(AnonShape_004CC900_31EE9CAA *param_1)
   undefined4 uVar4;
   int iVar5;
   undefined4 uVar6;
-  
+
   iVar3 = 0;
   uVar1 = GetPlayerRaceId(param_1->field_0x464);
   uVar1 = uVar1 & 0xff;
@@ -51,6 +51,7 @@ LAB_004cd4c0:
     }
     else {
       if (uVar1 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)param_1 + 0x90))(6,0x7b);
         thunk_FUN_004cd450(param_1);
         return 1;
@@ -72,6 +73,7 @@ LAB_004cd4c0:
     }
     else {
       if (uVar1 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)param_1 + 0x90))(6,0x7e);
         thunk_FUN_004cd450(param_1);
         return 2;
@@ -81,6 +83,7 @@ LAB_004cd4c0:
       uVar6 = 0x7f;
     }
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(iVar3 + 0x90))(6,uVar6);
 cf_common_exit_004CD624:
   thunk_FUN_004cd450(param_1);

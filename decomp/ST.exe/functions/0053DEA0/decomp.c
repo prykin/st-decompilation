@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -16,8 +18,6 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   int iVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar6;
   int local_1d0 [4];
   undefined4 local_1c0;
@@ -50,13 +50,13 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   UPanelTy *local_10;
   undefined4 local_c;
   ushort *local_8;
-  
+
   local_8 = (ushort *)0x0;
   local_c = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar3 == 0) {
     piVar6 = local_1d0;
     for (iVar3 = 0x5f; pUVar2 = local_10, iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -117,6 +117,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
       local_ac = FUN_0070aa70(DAT_00806790,param_12,0,1);
       local_a8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_12,1);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pUVar2->field_000C + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
@@ -128,8 +129,6 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xb1);
     return 0;
   }
-  pcVar1 = (code *)swi(3);
-  uVar5 = (*pcVar1)();
-  return uVar5;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
   int local_10;
   int local_c;
   int *local_8;
-  
+
   local_14 = 0;
   local_18 = (_RTL_CRITICAL_SECTION *)&param_1->field_0x7c;
   EnterCriticalSection(local_18);
@@ -42,6 +42,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
   *(int *)(param_1->field_0288 + 0xb8) = piVar1[8];
   *(int *)(param_1->field_0288 + 0xbc) = piVar1[9];
   uVar4 = piVar1[0xe] >> 0x1f;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = Library::DKW::DDX::FUN_006c4350
                        (*(int *)(param_1->field_0288 + 0x28),&local_8,piVar1[0xd],
                         (piVar1[0xe] ^ uVar4) - uVar4,0,0);
@@ -51,6 +52,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
     do {
       local_10 = FUN_006bbe40(local_8,&local_1c,(int *)&local_14,0);
       if (local_10 == 0) {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_006d5620:
         (**(code **)(*local_8 + 0x80))(local_8,0);
         break;
@@ -59,14 +61,17 @@ LAB_006d5620:
         if (local_10 == 0) goto LAB_006d5620;
         break;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_8 + 0x6c))(local_8);
       local_c = local_c + 1;
     } while (local_c < 2);
   }
   if (local_8 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*local_8 + 8))(local_8);
     local_8 = (int *)0x0;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((((local_10 != 0) || (iVar2 = param_1->field_0288, *(int *)(iVar2 + 0x90) != iVar3)) ||
         (*(int *)(iVar2 + 0x94) != iVar5)) ||
        (((piVar1[0xd] * (uint)*(ushort *)((int)piVar1 + 0x3e) + 0x1f >> 3 & 0x1ffffffc) != local_14

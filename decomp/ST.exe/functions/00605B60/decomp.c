@@ -14,6 +14,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   int *piVar9;
   AnonShape_00627EB0_4C14C976 *pAVar10;
   AnonNested_00627EB0_0014_B8FBF6AA *pAVar11;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   char in_stack_00000020;
   int local_ec [20];
   AnonShape_00627EB0_4C14C976 local_9c;
@@ -41,7 +42,8 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   undefined4 *local_10;
   uint local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_24 = GetPlayerRaceId(in_stack_00000020);
   local_24 = local_24 & 0xff;
   local_c = (uint)param_3 & 0xffff;
@@ -94,6 +96,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         iVar8 = local_2c;
         local_78.field_0000 = 100;
         local_64 = (undefined1 *)*param_3;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_78._8_4_ = 0;
         local_78.field_000C = 0;
         if (local_64 < &DAT_0000000b) {

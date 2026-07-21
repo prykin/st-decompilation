@@ -13,7 +13,7 @@ void __fastcall FUN_006dd870(AnonShape_006DD870_3C379B38 *param_1)
   int local_14;
   int local_10;
   int local_c;
-  
+
   if (((param_1->field_0148 < 1) || (param_1->field_0154 == 0)) ||
      (param_1->field_0164 <= param_1->field_015C)) {
     FreeAndNull((void **)&param_1->field_0158);

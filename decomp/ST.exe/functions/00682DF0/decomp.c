@@ -3,7 +3,7 @@ void FUN_00682df0(void)
 
 {
   int iVar1;
-  
+
   switch(DAT_007d2d18) {
   case 0x22:
     thunk_FUN_006829b0();

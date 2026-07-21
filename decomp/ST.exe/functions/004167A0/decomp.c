@@ -6,7 +6,7 @@ void __fastcall FUN_004167a0(AnonShape_004167A0_C6E28A87 *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_007901d0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

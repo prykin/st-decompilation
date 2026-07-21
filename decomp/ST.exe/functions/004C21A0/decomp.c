@@ -19,7 +19,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
   longlong lVar6;
   float local_c;
   AnonShape_004C21A0_FDE833A6 *local_8;
-  
+
   sVar4 = 0;
   local_8 = this;
   FUN_006e1c20(*(void **)((int)this + 0x211),param_3,param_4,0.0,&param_3,&local_c);
@@ -50,6 +50,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
     iVar5 = param_2[8];
     if (iVar5 == 0x14) {
       iVar5 = *param_2;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004c2260:
       iVar5 = (**(code **)(iVar5 + 0xec))();
       if (iVar5 != 0) {
@@ -58,6 +59,7 @@ LAB_004c2260:
       goto cf_common_exit_004C261B;
     }
     if ((iVar5 != 1000) && (iVar5 != 0x3e9)) goto cf_common_exit_004C261B;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_2 + 0xec))();
 joined_r0x004c2294:
     if (iVar5 == 0) goto cf_common_exit_004C261B;
@@ -77,6 +79,7 @@ LAB_004c2616:
           break;
         }
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       else if (((local_8->field_0245 == 4) &&
                ((iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x37 ||
                 (iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x6c)))) &&
@@ -101,6 +104,7 @@ LAB_004c2616:
         goto LAB_004c2260;
       }
       if ((iVar5 != 1000) && (iVar5 != 0x3e9)) break;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)(*param_2 + 0xec))();
       goto joined_r0x004c2294;
     }
@@ -127,6 +131,7 @@ LAB_004c2616:
       sVar4 = 0x14;
     }
     break;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   case CASE_17:
     if (((param_2 != (int *)0x0) && (local_8->field_0245 == 4)) &&
        (((iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x37 ||
@@ -170,6 +175,7 @@ cf_common_exit_004C261B:
   if (((*(int *)&local_8[1].field_0x1d4 != 0) && (sVar4 != 4)) && (sVar4 != 3)) {
     return 0;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   return CONCAT22((short)((uint)*(int *)&local_8[1].field_0x1d4 >> 0x10),sVar4);
 }
 

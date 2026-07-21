@@ -6,7 +6,7 @@ undefined4 __cdecl FUN_0069fd70(AnonShape_0069FD70_008BB09C *param_1)
   int iVar2;
   undefined4 uVar3;
   char local_cc [200];
-  
+
   uVar3 = 0;
   if (param_1 != (AnonShape_0069FD70_008BB09C *)0x0) {
     piVar1 = (int *)Library::MSVCRT::FUN_0072ea70(s_ResRand_dat_007d863c,&DAT_007d1d98);

@@ -7,7 +7,7 @@ void FUN_0072ae80(void)
   int iVar3;
   int local_c;
   int local_8;
-  
+
   do {
     do {
       WaitForSingleObject(*(HANDLE *)(*DAT_00857134 + 0x508),0xffffffff);

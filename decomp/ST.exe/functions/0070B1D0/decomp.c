@@ -5,7 +5,7 @@ void __cdecl FUN_0070b1d0(int *param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar1 = *param_1;
   if (iVar1 != 0) {
     iVar2 = 0;

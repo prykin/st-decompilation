@@ -16,21 +16,24 @@ undefined4 __thiscall FUN_0061f290(void *this,int param_1)
   undefined4 local_10;
   uint local_c;
   int local_8;
-  
+
   local_10 = 0;
   if (*(int *)((int)this + 0xa3) != 0) {
     iVar1 = *(int *)(*(int *)((int)this + 0xa3) + 0xc);
     if ((iVar1 != 0) && (local_c = 0, local_14 = this, 0 < iVar1)) {
       do {
         this_00 = g_visibleClass_00802A88;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar3 = *(int *)((int)local_14 + 0xa3);
         if (local_c < *(uint *)(iVar3 + 0xc)) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           piVar4 = (int *)(*(int *)(iVar3 + 8) * local_c + *(int *)(iVar3 + 0x1c));
         }
         else {
           piVar4 = (int *)0x0;
         }
         if ((-1 < (int)*(uint *)((int)piVar4 + 0x26)) && (-1 < *piVar4)) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (PTR_00802a38->field_00E4 - *(int *)((int)piVar4 + 0x2a) <
               *(int *)((int)local_14 + 0x5f)) {
             local_10 = 1;

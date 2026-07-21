@@ -18,7 +18,7 @@ void FUN_006f66c0(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   int iVar10;
   byte *pbVar11;
   int local_8;
-  
+
   pbVar4 = param_13 + param_8;
   pbVar1 = (byte *)(param_11 + ((int)pbVar4 >> 3));
   _DAT_00857000 = 1;

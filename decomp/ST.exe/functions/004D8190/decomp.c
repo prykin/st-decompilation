@@ -6,7 +6,7 @@ void FUN_004d8190(void)
   int iVar2;
   longlong lVar3;
   longlong lVar4;
-  
+
   if (DAT_007fa13c != 0) {
     lVar3 = FUN_006b12cc(DAT_007fa140);
     lVar4 = FUN_006b12cc(DAT_007fa13c);

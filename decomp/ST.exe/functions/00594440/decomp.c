@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
@@ -15,29 +17,26 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
   undefined4 uVar5;
   int iVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   ComboTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,0xb7,0,errorCode,&DAT_007a4ccc
                                ,s_ComboTy__GetMessage_007cbf58);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar5 = (*pcVar3)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_combo_cpp_007cbeec,0xb7);
     return 0xffff;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar7 = *(uint *)(param_1 + 0x10);
   if (uVar7 < 0x10000) {
     if (uVar7 == 0xffff) {
@@ -45,6 +44,7 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
       goto cf_common_exit_00594615;
     }
     switch(uVar7) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 2:
       InitCombo(local_c,*(undefined4 **)(param_1 + 0x14));
       break;
@@ -54,10 +54,12 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
     case 5:
       FUN_006b35d0(DAT_008075a8,local_c->field_0108);
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 0x62:
       if ((((int)local_c->field_00EC <= (int)(uint)*(ushort *)(param_1 + 0x18)) &&
           ((int)(uint)*(ushort *)(param_1 + 0x18) < (int)(local_c->field_00F4 + local_c->field_00EC)
           )) && ((int)local_c->field_00F0 <= (int)(uint)*(ushort *)(param_1 + 0x1a))) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((int)(local_c->field_00F8 + local_c->field_00F0) <=
             (int)(uint)*(ushort *)(param_1 + 0x1a)) {
           thunk_FUN_005943f0((STJellyGunC *)local_c);
@@ -91,16 +93,19 @@ cf_common_exit_00594615:
       *(undefined1 *)puVar4 = uVar1;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_00BC = *(undefined4 *)(param_1 + 0x14);
     FUN_006e5fe0(this_00,(undefined4 *)&this_00->field_0xa8);
     pAVar2 = this_00->field_0104;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_00FC,0,*(ushort *)(param_1 + 0x18) + 5,
+              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_00FC,0,*(ushort *)(param_1 + 0x18) + 5,
                *(ushort *)(param_1 + 0x1a) + 5,(byte *)pAVar2,0,0,0,pAVar2->field_0004,
                pAVar2->field_0008);
     goto cf_common_exit_00594615;
   case 0x10002:
     if (local_c->field_0110 == 0) goto cf_common_exit_00594615;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x10000:
     local_c->field_009C = *(undefined4 *)(param_1 + 0x14);
     break;

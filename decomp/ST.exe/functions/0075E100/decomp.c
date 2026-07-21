@@ -18,8 +18,10 @@ void FUN_0075e100(int param_1,int *param_2,int param_3,undefined4 *param_4)
   byte *pbVar14;
   int iVar15;
   byte *pbVar16;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1 + 0x1b2);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = *(int *)(param_1 + 0x132);
   iVar5 = *(int *)(iVar3 + 0x10);
   iVar6 = *(int *)(iVar3 + 0x14);
@@ -29,6 +31,7 @@ void FUN_0075e100(int param_1,int *param_2,int param_3,undefined4 *param_4)
   pbVar14 = *(byte **)(param_2[1] + param_3 * 4);
   pbVar13 = *(byte **)(param_2[2] + param_3 * 4);
   puVar10 = (undefined1 *)*param_4;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   for (uVar11 = *(uint *)(param_1 + 0x68) >> 1; uVar11 != 0; uVar11 = uVar11 - 1) {
     bVar1 = *pbVar14;
     pbVar14 = pbVar14 + 1;
@@ -48,6 +51,7 @@ void FUN_0075e100(int param_1,int *param_2,int param_3,undefined4 *param_4)
     puVar10[3] = *(undefined1 *)(uVar12 + iVar9 + iVar4);
     puVar10 = puVar10 + 6;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(byte *)(param_1 + 0x68) & 1) != 0) {
     iVar3 = *(int *)(iVar3 + (uint)*pbVar14 * 4);
     iVar7 = *(int *)(iVar7 + (uint)*pbVar13 * 4);

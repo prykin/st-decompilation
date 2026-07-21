@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
@@ -10,8 +12,6 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   code *pcVar1;
   int errorCode;
   int iVar2;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_94;
   int local_50;
   int local_4c;
@@ -32,7 +32,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_40 = param_2[2];
   if (local_40 / 2 <= param_3) {
     param_3 = local_40 / 2;
@@ -61,7 +61,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   local_14 = local_3c;
   local_c = local_40;
   local_8 = local_3c;
-  errorCode = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
       FUN_006c7ea0(param_1,0,&local_50,8,param_5);
@@ -74,9 +74,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   iVar2 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0xa0,0,errorCode,
                              &DAT_007a4ccc,s_MMObjTy__PaintButDib_007ccab0);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0xa0);
   return;

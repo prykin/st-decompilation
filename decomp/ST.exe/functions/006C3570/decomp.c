@@ -3,7 +3,7 @@ void FUN_006c3570(AnonShape_006C3570_37024033 *param_1)
 
 {
   int *piVar1;
-  
+
   if (param_1 != (AnonShape_006C3570_37024033 *)0x0) {
     EnterCriticalSection((LPCRITICAL_SECTION)&param_1[9].field_0040);
     if ((param_1->field_0004 & 0x20000000) != 0) {
@@ -18,11 +18,13 @@ void FUN_006c3570(AnonShape_006C3570_37024033 *param_1)
     }
     piVar1 = (int *)param_1->field_0058;
     if (piVar1 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
       param_1->field_0058 = 0;
     }
     piVar1 = (int *)param_1->field_0054;
     if (piVar1 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
       param_1->field_0054 = 0;
     }

@@ -10,7 +10,7 @@ int __cdecl FUN_0069f7f0(int param_1,int param_2,int param_3,int param_4,int par
   int iVar6;
   int iVar7;
   undefined4 local_8;
-  
+
   iVar6 = 0;
   iVar2 = -1;
   if (0 < param_2) {

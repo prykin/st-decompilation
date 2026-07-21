@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
   short local_24 [12];
   int local_c;
   int local_8;
-  
+
   local_c = 0;
   if ((param_1->field_0244 != 0) && (local_8 = 0, 0 < param_1->field_023C)) {
     do {
@@ -29,6 +29,7 @@ undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
           }
           local_c = local_c + 1;
           iVar1 = iVar5 + param_1->field_0244;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar5 = *(int *)(iVar5 + 0x34 + param_1->field_0244) + *(int *)(iVar1 + 0x30);
           if (0x168 < iVar5) {
             iVar5 = iVar5 + -0x168;

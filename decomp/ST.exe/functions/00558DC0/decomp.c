@@ -1,10 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00558DC0 -> 00558C00 @ 00558F0B | 00558DC0 -> 00558C00 @ 00558F93
-   
+
    [STPrototypeApplier] Propagated parameter 6.
    Evidence: 00558DC0 -> 00558C00 @ 00558F0B | 00558DC0 -> 00558C00 @ 00558F93
-   
+
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 00557C90 -> 00558DC0 @ 00557E59 | 00558840 -> 00558DC0 @ 00558A11 | 0055B7F0 ->
    00558DC0 @ 0055B921 */
@@ -27,7 +27,7 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,int *param_4,
   uint uVar11;
   int iVar12;
   undefined *local_c;
-  
+
   uVar11 = param_5;
   piVar10 = param_4;
   if ((((*(int *)((int)this + 0x114) != 0) && (-1 < (int)param_5)) && (param_4 < (int *)0x8)) &&

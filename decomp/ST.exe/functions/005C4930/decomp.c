@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
@@ -13,26 +15,26 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   int iVar3;
   int iVar4;
   cMf32 *this_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
   cMf32 *this_02;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar5;
   void **value;
   bool bVar6;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = (MMObjTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj(local_8);
     this_02 = this_01;
     if (*(cMf32 **)&pMVar2[0x23].field_0x36 != (cMf32 *)0x0) {
       cMf32::delete(this_01,*(cMf32 **)&pMVar2[0x23].field_0x36);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_02 = extraout_ECX;
     }
     *(undefined4 *)&pMVar2[0x23].field_0x36 = 0;
@@ -166,9 +168,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x1ce,0,iVar3,&DAT_007a4ccc,
                              s_SettMapTy__DoneSettMap_007cd170);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x1ce);
   return;

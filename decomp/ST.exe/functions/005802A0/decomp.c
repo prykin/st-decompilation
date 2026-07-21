@@ -10,7 +10,7 @@ void __thiscall STResourceC::sub_005802A0(STResourceC *this,int param_1,int para
   short sVar2;
   short sVar3;
   AnonShape_004E0250_5A3B9236 *pAVar4;
-  
+
   SetResource(this,param_1,param_2);
   if (this->field_025D == 1) {
     sVar1 = this->field_0245;

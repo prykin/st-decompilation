@@ -10,7 +10,7 @@ int __thiscall FUN_00679d60(void *this,byte *param_1,byte *param_2)
   int iVar5;
   byte *pbVar6;
   bool bVar7;
-  
+
   if ((param_1 == (byte *)0x0) || (param_2 == (byte *)0x0)) {
 LAB_00679e18:
     iVar5 = 0;

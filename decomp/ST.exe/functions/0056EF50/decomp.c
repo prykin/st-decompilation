@@ -6,7 +6,7 @@ void __fastcall FUN_0056ef50(AnonShape_0056EF50_CAB83E9D *param_1)
   byte bVar2;
   int iVar3;
   uint local_8;
-  
+
   if (param_1->field_1195 != '\0') {
     bVar2 = 0;
     local_8 = 0;

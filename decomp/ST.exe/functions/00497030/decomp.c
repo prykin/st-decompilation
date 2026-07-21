@@ -7,7 +7,7 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
   int iVar3;
   int *piVar4;
   uint uVar5;
-  
+
   uVar1 = PTR_007fb270->count;
   uVar5 = 0;
   if ((int)uVar1 < 1) {
@@ -15,6 +15,7 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
   }
   do {
     if (uVar5 < uVar1) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, uVar5) (runtime stride) */
       piVar4 = (int *)(PTR_007fb270->elementSize * uVar5 + (int)PTR_007fb270->data);
     }
     else {

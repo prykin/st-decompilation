@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
@@ -13,8 +15,6 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,AnonShape_005105E0
   LPSTR pCVar4;
   int iVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar7;
   undefined1 *puVar8;
   undefined4 uVar9;
@@ -25,11 +25,11 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,AnonShape_005105E0
   undefined4 local_10;
   undefined2 local_c;
   SpecPanelTy *local_8;
-  
+
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = (SpecPanelTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -39,9 +39,7 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,AnonShape_005105E0
       RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar6 = (*pcVar2)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   SpecPanelTy::GetMessage(local_8,(int)param_1);
   uVar1 = param_1->field_0010;
@@ -127,6 +125,7 @@ LAB_00510902:
       uVar6 = 0;
       puVar8 = &LAB_004030fd;
       pCVar4 = thunk_FUN_00571240(pcVar7,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar3 + 8))(param_1,6,pCVar4,puVar8,uVar6,uVar9);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -157,6 +156,7 @@ LAB_00510902:
       goto switchD_00510930_default;
     }
     thunk_FUN_0054b630(PTR_00802a30,0x4e,uVar6);
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_00510930_default:
     (**(code **)(this_00->field_0000 + 0x1c))(0);
     thunk_FUN_005252c0(0xae);

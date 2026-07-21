@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settsobj.cpp
@@ -15,19 +17,17 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   uint *puVar7;
   uint uVar8;
   int iVar9;
-  undefined4 unaff_ESI;
   char *pcVar10;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   SettMapSTy *local_14;
   int local_10;
   int local_c;
   cMf32 *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar5 = local_14;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -37,9 +37,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
       RaiseInternalException(iVar6,0,s_E____titans_Start_settsobj_cpp_007cd544,0x3b);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_14->field_1E26 == '\x02') {
     local_8 = (cMf32 *)local_14->field_1F3F;
@@ -62,6 +60,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
           pcVar10 = (char *)0x0;
         }
         else {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar8) (runtime stride) */
           pcVar10 = (char *)(pDVar1->elementSize * uVar8 + (int)pDVar1->data);
         }
         pAVar2 = (&pSVar5->field_0000)[iVar6 + iVar9];
@@ -112,6 +111,7 @@ LAB_005d5030:
             }
           }
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)pSVar5->field_000C + 0x18))(&pSVar5->field_0x1d);
         iVar6 = local_10;
       }

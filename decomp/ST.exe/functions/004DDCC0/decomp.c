@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_004ddcc0(AnonShape_004DDCC0_33DEB43E *param_1)
   int iVar2;
   int *piVar3;
   int iVar4;
-  
+
   piVar3 = &param_1->field_04D0;
   iVar4 = 0;
   iVar2 = param_1->field_04D0;

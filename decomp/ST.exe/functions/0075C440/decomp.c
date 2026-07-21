@@ -22,7 +22,7 @@ undefined4 FUN_0075c440(AnonShape_0075C440_EFE38C9F *param_1,int *param_2)
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_c = param_1->field_0182;
   iVar2 = param_1->field_01AA;
   local_18 = param_1->field_018A;
@@ -46,7 +46,7 @@ undefined4 FUN_0075c440(AnonShape_0075C440_EFE38C9F *param_1,int *param_2)
     if ((int)param_2 <= local_c) {
       do {
         if (iVar1 < 8) {
-          iVar2 = FUN_0075b720(&local_38,(uint)pAVar7,iVar1,0);
+          iVar2 = FUN_0075b720(&local_38,pAVar7,iVar1,0);
           if (iVar2 == 0) {
             return 0;
           }
@@ -65,6 +65,7 @@ LAB_0075c541:
         else {
 LAB_0075c512:
           uVar3 = (int)pAVar7 >> ((char)iVar1 - 8U & 0x1f) & 0xff;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar2 = *(int *)(local_8 + 0xd4 + uVar3 * 4);
           if (iVar2 == 0) {
             iVar2 = 9;
@@ -80,7 +81,7 @@ LAB_0075c512:
             iVar6 = 1 << ((byte)iVar2 & 0x1f);
             if (iVar2 != 0) {
               if ((iVar1 < iVar2) &&
-                 (iVar4 = FUN_0075b720(&local_38,(uint)pAVar7,iVar1,iVar2), iVar1 = local_28,
+                 (iVar4 = FUN_0075b720(&local_38,pAVar7,iVar1,iVar2), iVar1 = local_28,
                  pAVar7 = local_2c, iVar4 == 0)) {
                 return 0;
               }
@@ -96,7 +97,7 @@ LAB_0075c512:
         else {
           param_2 = (int *)((int)param_2 + iVar2);
           if ((iVar1 < (int)uVar3) &&
-             (iVar2 = FUN_0075b720(&local_38,(uint)pAVar7,iVar1,uVar3), iVar1 = local_28,
+             (iVar2 = FUN_0075b720(&local_38,pAVar7,iVar1,uVar3), iVar1 = local_28,
              pAVar7 = local_2c, iVar2 == 0)) {
             return 0;
           }

@@ -9,12 +9,15 @@ int __cdecl FUN_006f0e30(byte *param_1,byte *param_2)
   byte *pbVar5;
   bool bVar6;
   bool bVar7;
-  
+
   if (*param_1 != *param_2) {
     return (uint)*param_1 - (uint)*param_2;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar1 = *(short *)(param_1 + 0x16);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (sVar1 != *(short *)(param_2 + 0x16)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     return (int)sVar1 - (int)*(short *)(param_2 + 0x16);
   }
   iVar3 = (int)sVar1;

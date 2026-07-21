@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
@@ -15,13 +17,10 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   AnonPointee_MReportTy_0077 *pAVar5;
   int iVar6;
   undefined4 *puVar7;
-  uint *extraout_EAX;
   int iVar8;
   char cVar9;
   uint uVar10;
   uint uVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_64;
   int *local_20;
   byte *local_1c;
@@ -31,7 +30,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   undefined3 uStack_f;
   MReportTy *local_c;
   undefined4 *local_8;
-  
+
   if (param_1->field_0014 == 3) {
     cVar9 = (-(param_4 != '\0') & 0xedU) + 0x2a;
   }
@@ -39,6 +38,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
     cVar9 = (-(param_4 != '\0') & 0xecU) + 0x2c;
   }
   local_20 = param_1->field_0018;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT31(uStack_f,cVar9);
   if (param_4 == '\0') {
     local_14 = this->field_0077;
@@ -51,7 +51,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_c = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pAVar5 = local_14;
   if (iVar6 == 0) {
     uVar11 = local_14->field_0014;
@@ -77,8 +77,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
                  (byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != (uint *)0x0)))) {
       if (param_4 == '\0') {
-        LoadResourceString(param_2,HINSTANCE_00807618);
-        param_5 = extraout_EAX;
+        param_5 = (uint *)LoadResourceString(param_2,HINSTANCE_00807618);
       }
       local_18 = param_5;
       ccFntTy::SetSurf(local_c->field_0083,(int)pAVar5,0,0,0,0,0);
@@ -108,9 +107,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   iVar8 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x2c1,0,iVar6,&DAT_007a4ccc,
                              s_MReportTy__PaintBut_007cd044);
   if (iVar8 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x2c1);
   return;

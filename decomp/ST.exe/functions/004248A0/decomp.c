@@ -2,6 +2,7 @@
 void __thiscall FUN_004248a0(void *this,undefined4 param_1)
 
 {
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_0044cc90(CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)((int)this + 0x24)),
                      *(uint **)((int)this + 0x29),param_1);
   return;

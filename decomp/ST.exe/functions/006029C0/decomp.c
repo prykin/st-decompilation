@@ -7,16 +7,14 @@ undefined4 FUN_006029c0(void)
   int iVar2;
   char *text;
   undefined4 uVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   AnonShape_006029C0_E1371936 *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if (local_c->field_0241 == 1) {
       text = (&PTR_s_Dest4_0_007cec00)[local_c->field_0372];

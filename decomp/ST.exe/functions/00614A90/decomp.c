@@ -7,7 +7,7 @@ int __thiscall FUN_00614a90(void *this,undefined4 *param_1)
   uint uVar3;
   undefined4 *puVar4;
   int local_8;
-  
+
   if (this == (void *)0x0) {
     puVar4 = (undefined4 *)0x0;
   }

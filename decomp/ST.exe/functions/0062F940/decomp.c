@@ -11,7 +11,7 @@ void __thiscall FUN_0062f940(void *this,uint *param_1)
   undefined4 *puVar7;
   uint local_c;
   int local_8;
-  
+
   local_8 = 0;
   *param_1 = 0;
   local_c = 0x3d;

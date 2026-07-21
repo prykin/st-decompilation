@@ -8,7 +8,7 @@ undefined4 * __thiscall OpticClassC::OpticClassC(OpticClassC *this)
 
 {
   DWORD DVar1;
-  
+
   STGroupBoatC::sub_006E5FB0((STGroupBoatC *)this);
   *(OpticClassCVTable **)this = &OpticClassCVTable;
   DVar1 = timeGetTime();

@@ -20,7 +20,7 @@ undefined4 __fastcall FUN_00632e30(AnonShape_00632E30_A9A0278F *param_1)
   float local_10;
   undefined4 local_c;
   float local_8;
-  
+
   local_c = 0;
   local_8 = 0.0;
   switch(param_1->field_0011) {
@@ -70,6 +70,7 @@ LAB_00632f7e:
     param_1->field_0085 = DAT_007d1b14;
     param_1->field_0089 = DAT_007d1b18;
     if (*(int *)param_1 != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar6 = *(int *)(*(int *)param_1 + 0xc);
       uVar10 = 0;
       if (0 < iVar6) {
@@ -177,6 +178,7 @@ LAB_00632f7e:
     param_1->field_007D = fVar1;
     param_1->field_0075 = _DAT_0079c5a4 / (float)(iVar6 * 3);
     if (*(int *)param_1 != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar6 = *(int *)(*(int *)param_1 + 0xc);
       uVar10 = 0;
       if (0 < iVar6) {
@@ -220,6 +222,7 @@ LAB_00632f7e:
     param_1->field_0081 = _DAT_007d1b98 * _DAT_0079d1a4;
     param_1->field_0085 = DAT_007d1b9c;
     param_1->field_0089 = DAT_007d1ba0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(int *)param_1 != 0) && (iVar6 = *(int *)(*(int *)param_1 + 0xc), iVar6 != 0)) {
       uVar10 = 0;
       local_10 = 0.0;
@@ -277,6 +280,7 @@ LAB_00632f7e:
   }
   iVar6 = param_1->field_0011;
   if (((iVar6 == 0) || (iVar6 == 1)) && (*(int *)param_1 != 0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar10 = *(uint *)(*(int *)param_1 + 0xc);
     if (iVar6 == 1) {
       iVar6 = param_1->field_001D;

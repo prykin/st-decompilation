@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_0074e1c9(void *this,int *param_1,int *param_2)
   int iVar1;
   int *piVar2;
   int iVar3;
-  
+
   if (param_1 != (int *)0x0) {
     iVar3 = 0;
     piVar2 = param_1;

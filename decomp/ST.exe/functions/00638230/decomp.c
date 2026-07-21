@@ -6,7 +6,7 @@ void __cdecl FUN_00638230(undefined4 param_1,int param_2,int param_3,int param_4
 {
   ushort *puVar1;
   uint local_8;
-  
+
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806774,CASE_1D,s_rippleM_007d1c98,0xffffffff,0,1,0,(undefined4 *)0x0);
   if ((puVar1 != (ushort *)0x0) && (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {

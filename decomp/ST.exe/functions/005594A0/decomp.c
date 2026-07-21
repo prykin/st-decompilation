@@ -19,7 +19,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::FUN_005594a0
   int iVar6;
   int iVar7;
   int iVar8;
-  
+
   if ((((*(int *)&this->field_0x114 != 0) && (*(int *)&this->field_0x38 != 0)) && (-1 < param_5)) &&
      ((param_4 < (undefined *)0x8 &&
       ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))))

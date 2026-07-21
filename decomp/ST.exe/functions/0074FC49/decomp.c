@@ -8,7 +8,7 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,unde
   uint uVar1;
   longlong lVar2;
   int *local_8;
-  
+
   local_8 = this;
   FUN_0074b7b8(this,0,(int)param_2);
   *(int *)((int)this + 0x14) = param_4;
@@ -25,18 +25,22 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,unde
   *(VTable_007A1D68 **)((int)this + 0xc) = &VTable_007A1D68;
   lVar2 = Library::MSVCRT::__ftol();
   *(longlong *)((int)this + 0x18) = lVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar1 = (**(code **)**(undefined4 **)((int)this + 0x14))
                     (*(undefined4 **)((int)this + 0x14),*(undefined4 *)((int)this + 0x20),&param_2);
   if (-1 < (int)uVar1) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_2 + 8))(param_2);
     uVar1 = FUN_0074e337((int *)((int)this + 0x48),param_7,(int *)0x0,0,(int *)&local_8);
     if (-1 < (int)uVar1) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_8 + 8))(local_8);
       if (param_9 == 4) {
         *(undefined4 *)((int)this + 0x40) = 1;
         *(undefined4 **)((int)this + 0x38) = (undefined4 *)((int)this + 0x44);
         *(undefined4 *)((int)this + 0x44) = 0xfffffffd;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar1 = (**(code **)(*param_1 + 8))(this);
       if (-1 < (int)uVar1) {
         return this;

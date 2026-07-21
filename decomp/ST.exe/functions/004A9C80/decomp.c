@@ -10,7 +10,7 @@ void FUN_004a9c80(int param_1)
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  
+
   if (param_1 == 0) {
     uVar2 = DAT_0080743c & 0xff;
     if (uVar2 == 0) {
@@ -39,6 +39,7 @@ void FUN_004a9c80(int param_1)
     }
     cVar1 = (char)DAT_0080743c + '\x01';
   }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004a9cfb:
   DAT_0080743c = CONCAT31(DAT_0080743c._1_3_,cVar1);
   thunk_FUN_004a9990();

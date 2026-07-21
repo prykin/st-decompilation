@@ -10,7 +10,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar4 = param_1 - *(int *)((int)this + 0x28e);
   iVar4 = ((*(int *)((int)this + 0x292) * iVar4 - (*(int *)((int)this + 0x296) * iVar4 * iVar4) / 2)
           * 3) / 10;
@@ -43,6 +43,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       thunk_FUN_004ac6b0(this_00,'\r');
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar2 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

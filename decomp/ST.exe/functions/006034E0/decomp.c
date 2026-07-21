@@ -23,7 +23,7 @@ FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_
   undefined1 local_10c;
   char local_10b [259];
   undefined1 local_8;
-  
+
   puVar6 = local_144;
   for (iVar2 = 0x4f; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;

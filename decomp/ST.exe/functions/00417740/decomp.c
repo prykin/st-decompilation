@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_00417740(void *this,short param_1,short param_2)
   short sVar3;
   int iVar4;
   int iVar5;
-  
+
   uVar1 = *(ushort *)((int)this + 0x86);
   iVar5 = (int)param_1;
   if (((int)(param_1 / (short)uVar1) * (int)(short)uVar1 - iVar5 != 0) ||

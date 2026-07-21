@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_0061dd40(AnonShape_0061DD40_21C2820F *param_1)
   undefined4 local_10;
   int local_c;
   int local_8;
-  
+
   local_10 = 0xffffffff;
   fVar3 = (float)(int)param_1->field_0030 * _DAT_007904f8 * _DAT_007904f0;
   fVar4 = (float)(int)param_1->field_0032 * _DAT_007904f8 * _DAT_007904f0;

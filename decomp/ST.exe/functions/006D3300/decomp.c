@@ -16,7 +16,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
   uint uVar8;
   int iVar9;
   uint *puVar10;
-  
+
   if (param_9 != (byte *)0x0) {
     param_9 = param_9 + param_10 * param_12 + (param_11 >> 3);
   }
@@ -26,6 +26,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
   else {
     pbVar3 = FUN_006cfe10(param_3,param_5);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar2 = *(short *)(param_3 + 0x12);
   bVar1 = (byte)param_11;
   if (param_6 == sVar2) {

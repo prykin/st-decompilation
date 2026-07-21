@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
@@ -13,32 +15,29 @@ undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
   int iVar4;
   undefined4 uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   InternalExceptionFrame local_4c;
   MMsgTy *local_8;
-  
+
   local_8 = this;
   DVar3 = FUN_006e51b0(this->field_0010);
   this->field_0061 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x200,0,iVar4,&DAT_007a4ccc
                                ,s_MMsgTy__GetMessage_007ccd10);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x200);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_8,param_1);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar7 = *(uint *)(param_1 + 0x10);
   if ((0x697e < uVar7) && (uVar7 < 0x69ff)) {
     switch(uVar7) {
@@ -87,6 +86,7 @@ undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
     }
     MMObjTy::PaintSprBut((MMObjTy *)this_00,param_1,uVar7,iVar4,iVar6,-1);
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 switchD_005b939a_default:
   uVar7 = *(uint *)(param_1 + 0x10);
   if ((0x68fe < uVar7) && (uVar7 < 0x697f)) {
@@ -100,9 +100,11 @@ switchD_005b939a_default:
       }
     }
     else {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(this_00->field_0000 + 8))();
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x10)) {
   case 0:
     NoneMMsg(this_00);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -8,21 +10,19 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
 
 {
   ccFntTy *pcVar1;
-  AnonShape_006C7610_838EDECF *pAVar2;
+  AnonShape_006B5B10_E0D06CF1 *pAVar2;
   code *pcVar3;
   StartSystemTy *pSVar4;
   int errorCode;
   uint uVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 unaff_ESI;
   uint uVar8;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   StartSystemTy *local_10;
   int local_c;
   int local_8;
-  
+
   if ((((this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) && (this->field_0548 != 0)) &&
       (-1 < (int)this->field_0540)) &&
      ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 &&
@@ -35,16 +35,18 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
     local_8 = *(int *)&pcVar1->field_0x8a;
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pSVar4 = local_10;
     if (errorCode == 0) {
-      pAVar2 = (AnonShape_006C7610_838EDECF *)local_10->field_0544;
+      pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)local_10->field_0544;
       FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
       uVar5 = (uint)param_1->field_0016;
       uVar8 = uVar5;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {
         do {
           if ((int)uVar8 < *(int *)(pSVar4->field_0548 + 8)) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             puVar7 = *(uint **)(*(int *)(pSVar4->field_0548 + 0x14) + uVar8 * 4);
           }
           else {
@@ -57,6 +59,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
           }
           uVar8 = uVar8 + 1;
           uVar5 = (uint)param_1->field_0016;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while ((int)uVar8 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
       }
       FUN_006b35d0(DAT_008075a8,pSVar4->field_0540);
@@ -67,9 +70,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
     iVar6 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3cb,0,errorCode,
                                &DAT_007a4ccc,s_StartSystemTy__PaintBinDesc_007cd8e0);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_startsys_cpp_007cd718,0x3cb);
   }

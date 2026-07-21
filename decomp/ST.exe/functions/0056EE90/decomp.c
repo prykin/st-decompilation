@@ -4,7 +4,7 @@ void __fastcall FUN_0056ee90(AnonShape_0056EE90_04DD57E6 *param_1)
 {
   byte bVar1;
   uint local_8;
-  
+
   if (param_1->field_112D == -1) {
     bVar1 = 0;
     param_1->field_112D = 0;

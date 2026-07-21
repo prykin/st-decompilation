@@ -4,7 +4,7 @@ int __thiscall FUN_004e3800(void *this,int param_1,int param_2)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = thunk_FUN_004c9370(this,2,param_1,-1);
   if (iVar1 == 0) {
     if (*(int *)((int)this + 0x361) != 2) {

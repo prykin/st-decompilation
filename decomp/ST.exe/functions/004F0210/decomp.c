@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldlab.cpp
@@ -14,15 +16,13 @@ BldLabPanelTy::GetMessage(BldLabPanelTy *this,AnonShape_004F0210_51A01EB3 *param
   int iVar4;
   undefined4 *puVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = (ProdPanelTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -32,9 +32,7 @@ BldLabPanelTy::GetMessage(BldLabPanelTy *this,AnonShape_004F0210_51A01EB3 *param
       RaiseInternalException(iVar3,0,s_E____titans_Andrey_bldlab_cpp_007c18b4,0x9a);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar6 = (*pcVar2)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1->field_0010 == 2) {
     ProdPanelTy::PreInitProdPanel(local_8);

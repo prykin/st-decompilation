@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
   undefined2 local_e;
   undefined2 local_c;
   short local_a;
-  
+
   if (param_1 != 2) {
     return 0;
   }
@@ -30,6 +30,7 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
   }
   else {
     if (uVar1 == 2) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x90))(4,0x2d4);
       goto cf_common_exit_004E2B69;
     }
@@ -37,6 +38,7 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
     iVar3 = *(int *)this;
     uVar5 = 0x38f;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(iVar3 + 0x90))(4,uVar5);
 cf_common_exit_004E2B69:
   if (DAT_008117bc == (undefined4 *)0x0) {
@@ -54,6 +56,7 @@ cf_common_exit_004E2B69:
   local_c = (undefined2)param_2;
   uVar5 = thunk_FUN_004e60d0(iVar3,param_2);
   local_a = (short)uVar5 + 1;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)*DAT_008117bc)(local_24);
   return 0;
 }

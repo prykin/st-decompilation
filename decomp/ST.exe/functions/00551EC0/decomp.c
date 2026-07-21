@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
@@ -13,8 +15,6 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   int iVar5;
   LPSTR text;
   ushort *puVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   byte bVar8;
   int iVar9;
@@ -24,11 +24,11 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   TradePanelTy *local_10;
   int local_c;
   int local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pTVar4 = local_10;
   if (iVar5 == 0) {
     puVar1 = &local_10->field_0x18d;
@@ -79,9 +79,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   iVar9 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x111,0,iVar5,&DAT_007a4ccc,
                              s_TradePanelTy__PaintIndicators_007c8728);
   if (iVar9 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar5,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x111);
   return;

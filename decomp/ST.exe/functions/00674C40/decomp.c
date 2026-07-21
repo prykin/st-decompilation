@@ -8,7 +8,7 @@ void __cdecl FUN_00674c40(byte *_Drive)
   char local_308 [260];
   byte local_204 [256];
   byte local_104 [256];
-  
+
   if ((DAT_0081196c != 0) && (DAT_00811970 == 0)) {
     Library::MSVCRT::FUN_0072e730(_Drive,(byte *)&_Drive,local_104,local_204,(byte *)0x0);
     Library::MSVCRT::__makepath

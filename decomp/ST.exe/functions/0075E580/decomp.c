@@ -9,8 +9,10 @@ void FUN_0075e580(undefined4 *param_1)
   int iVar5;
   int *piVar6;
   int *piVar7;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar5 = *(int *)((int)param_1 + 0x1ba);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)*param_1)(param_1,1,0x7fc);
   piVar2 = (int *)(iVar1 + 0x3fc);
   iVar3 = 0;

@@ -1,6 +1,6 @@
 
 /* [STVTableApplier] Virtual slot 0079DD34+0x28
-   
+
    [STVTableApplier] Virtual slot 007A1148+0x28 */
 
 undefined4 FUN_00748d6e(int param_1,int param_2)

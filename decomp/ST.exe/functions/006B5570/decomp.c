@@ -3,7 +3,7 @@ void FUN_006b5570(AnonShape_006B5570_4D68B99C *param_1)
 
 {
   uint uVar1;
-  
+
   if (param_1 != (AnonShape_006B5570_4D68B99C *)0x0) {
     uVar1 = 0;
     if (param_1->field_0008 != 0) {

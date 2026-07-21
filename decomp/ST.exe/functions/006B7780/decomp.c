@@ -5,7 +5,7 @@ char * FUN_006b7780(char *param_1,char *param_2)
   char *pcVar1;
   char cVar2;
   char *pcVar3;
-  
+
   if (param_2 == (char *)0x0) {
     return (char *)0x0;
   }

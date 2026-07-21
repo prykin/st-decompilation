@@ -13,7 +13,7 @@ FUN_006e1c20(void *this,float param_1,int param_2,float param_3,float *param_4,f
   float local_14;
   float local_10;
   undefined4 local_c;
-  
+
   local_14 = (float)*(double *)((int)this + 0x98);
   local_10 = (float)*(double *)((int)this + 0xa0);
   local_c = 0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -16,12 +18,13 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
   int iVar6;
   int iVar7;
   undefined4 uVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   uint uVar9;
   short sVar10;
-  undefined4 unaff_ESI;
   undefined4 *puVar11;
   byte *pbVar12;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   undefined4 *puVar13;
   byte *pbVar14;
@@ -40,14 +43,14 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
   uint local_10;
   byte *local_c;
   uint local_8;
-  
+
   if ((this->field_023B == 6) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -57,9 +60,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
       RaiseInternalException(iVar6,0,s_E____titans_Igor_To_fish_cpp_007cb044,0x664);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar8 = (*pcVar2)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_1c,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar9 = param_1->field_0010;
@@ -69,6 +70,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
       thunk_FUN_004ad5e0((int)&this_00->field_01D5);
       g_currentExceptionFrame = local_80.previous;
       return 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     case 0x113:
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_80.previous;
@@ -203,6 +205,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
   }
   if (uVar9 == 3) {
     thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this_00);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                        *(short *)&this_00->field_0x5f,
                        CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0x8e),
@@ -217,6 +220,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     LifeFish((STFishC *)this_00,unaff_EDI);
     g_currentExceptionFrame = local_80.previous;
     return 0;
@@ -235,6 +239,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027
         puVar11 = puVar11 + 1;
         puVar13 = puVar13 + 1;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_8 = *(uint *)((int)local_20 + 0x3e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x46 + (int)local_20));

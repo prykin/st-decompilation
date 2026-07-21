@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_etorp.cpp
@@ -22,15 +24,13 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
   int local_10;
   int local_c;
   int local_8;
-  
+
   piVar5 = param_1;
   if ((param_2 < 0x1a) || (0x23 < param_2)) {
     iVar7 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x156,0,0,&DAT_007a4ccc,
                                s_ConusExplosion_Wrong_number_of_t_007caf80);
     if (iVar7 != 0) {
-      pcVar4 = (code *)swi(3);
-      uVar8 = (*pcVar4)();
-      return uVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
@@ -56,6 +56,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar10 + 4) = (short)iVar7 + *(short *)((int)piVar5 + 0x45);
               puVar2 = (undefined2 *)*piVar10;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
+              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
                                 (CONCAT22(uVar9,*(undefined2 *)((int)piVar5 + 0x41)),
                                  CONCAT22(uVar6,*(undefined2 *)((int)piVar5 + 0x43)),
@@ -98,6 +99,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar10 + 4) = (short)iVar7 + *(short *)((int)piVar5 + 0x45);
               puVar2 = (undefined2 *)*piVar10;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
+              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
                                 (CONCAT22(uVar9,*(undefined2 *)((int)piVar5 + 0x41)),
                                  CONCAT22(uVar6,*(undefined2 *)((int)piVar5 + 0x43)),
@@ -125,9 +127,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
     iVar7 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x15d,0,0,&DAT_007a4ccc,
                                s_SphereExplosion_Bad_parameters_007cafc8);
     if (iVar7 != 0) {
-      pcVar4 = (code *)swi(3);
-      uVar8 = (*pcVar4)();
-      return uVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   return 0;

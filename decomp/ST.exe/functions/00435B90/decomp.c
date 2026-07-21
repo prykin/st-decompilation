@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum. Cases:
    CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2D=45;CASE_4D=77;CASE_4E=78
-   
+
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 00435930 -> 00435B90 @ 00435B00 */
 
@@ -13,28 +13,28 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
   byte bVar1;
   byte bVar2;
   dword dVar3;
-  uint objPtr;
   int *piVar4;
   short sVar5;
   STGameObjC *pSVar6;
   int iVar7;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   uint uVar8;
-  byte bVar9;
-  bool bVar10;
+  byte objPtr;
+  bool bVar9;
   uint local_10;
   int local_c;
-  
+
   piVar4 = param_4;
-  objPtr = param_1;
+  uVar8 = param_1;
   dVar3 = param_2->count;
   local_10 = 0;
   local_c = 0;
-  bVar9 = (byte)param_1;
+  objPtr = (byte)param_1;
   if ((param_4 != (int *)0x0) &&
-     ((7 < bVar9 ||
-      ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[(char)bVar9 * 0x51]))))))
-  {
+     ((7 < objPtr ||
+      ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[(char)objPtr * 0x51])))))
+     ) {
     return 1;
   }
   param_4 = (int *)0x0;
@@ -48,6 +48,7 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       param_4 = (int *)((int)param_4 + 1);
     } while ((int)param_4 < (int)dVar3);
     if (local_c == 1) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,local_10,CASE_1);
       sVar5 = (*pSVar6->vtable->vfunc_28)(param_3,piVar4,param_5,param_6);
       return sVar5;
@@ -64,6 +65,7 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
           if (sVar5 == 5) {
@@ -74,13 +76,16 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       } while ((int)param_4 < (int)dVar3);
       return 0;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*piVar4 + 0x2c))();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if ((((iVar7 == 99) || (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x52)) ||
         (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x5f)) &&
        (param_4 = (int *)0x0, 0 < (int)dVar3)) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
           if (sVar5 == 0x1e) {
@@ -91,14 +96,15 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       } while ((int)param_4 < (int)dVar3);
     }
     bVar1 = *(byte *)(piVar4 + 9);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_3 = CONCAT31(param_3._1_3_,bVar1);
     if (DAT_00808a8f == '\0') {
-      if (bVar1 == bVar9) {
+      if (bVar1 == objPtr) {
 LAB_004366b0:
         iVar7 = 0;
       }
       else {
-        uVar8 = objPtr & 0xff;
+        uVar8 = uVar8 & 0xff;
         bVar2 = g_playerRelationMatrix[bVar1][uVar8];
         if ((bVar2 == 0) && (g_playerRelationMatrix[uVar8][bVar1] == 0)) {
           iVar7 = -2;
@@ -114,19 +120,21 @@ LAB_004366b0:
           iVar7 = 2;
         }
       }
-      bVar10 = iVar7 < 0;
+      bVar9 = iVar7 < 0;
     }
     else {
-      bVar10 = (&DAT_008087ea)[(objPtr & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+      bVar9 = (&DAT_008087ea)[(uVar8 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
     }
-    if (!bVar10) {
+    if (!bVar9) {
       if (piVar4[8] != 0x14) {
-        if ((piVar4[8] != 0x3e9) && (piVar4[9] == (int)(char)bVar9)) {
+        if ((piVar4[8] != 0x3e9) && (piVar4[9] == (int)(char)objPtr)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*piVar4 + 0x2c))();
           if ((iVar7 == 0x33) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
                 sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
                 if (sVar5 == 0x18) {
@@ -136,12 +144,15 @@ LAB_004366b0:
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*piVar4 + 0x2c))();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if (((iVar7 == 0x37) || (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x6c)) &&
              (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
                 sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
                 if (sVar5 == 0x1d) {
@@ -151,7 +162,9 @@ LAB_004366b0:
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*piVar4 + 0x2c))();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((((iVar7 == 0x38) || (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x39)) ||
               ((iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x4f ||
                (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x5e)))) &&
@@ -159,6 +172,7 @@ LAB_004366b0:
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
                 sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
                 if (sVar5 == 0x12) {
@@ -168,9 +182,11 @@ LAB_004366b0:
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*piVar4 + 0xec))();
           return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar7 = (**(code **)(*piVar4 + 0xec))();
         return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
       }
@@ -179,6 +195,7 @@ LAB_004366b0:
         do {
           DArrayGetElement(param_2,(uint)param_4,&param_1);
           if ((short)param_1 != -1) {
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
             sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
             if (sVar5 == 0x17) {
@@ -191,9 +208,11 @@ LAB_004366b0:
           param_4 = (int *)((int)param_4 + 1);
         } while ((int)param_4 < (int)dVar3);
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar7 = (**(code **)(*piVar4 + 0xec))();
       return (-(ushort)(iVar7 != 1) & 0xfffd) + 3;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*piVar4 + 0x2c))();
     param_4 = (int *)0x0;
     if (iVar7 == 0x6c) {
@@ -201,6 +220,7 @@ LAB_004366b0:
         do {
           DArrayGetElement(param_2,(uint)param_4,&param_1);
           if ((short)param_1 != -1) {
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
             sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
             if (sVar5 == 7) {
@@ -221,6 +241,7 @@ LAB_004366b0:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
           if (sVar5 == 7) {
@@ -240,6 +261,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(2,piVar4,param_5,param_6);
           if (sVar5 == 6) {
@@ -261,6 +283,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(param_3,piVar4,param_5,param_6);
           if (sVar5 == 7) {
@@ -283,6 +306,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(4,piVar4,param_5,param_6);
           if (sVar5 == 0x18) {
@@ -303,6 +327,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(5,piVar4,param_5,param_6);
           if (sVar5 == 0xd) {
@@ -320,6 +345,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(6,piVar4,param_5,param_6);
           if (sVar5 == 0xf) {
@@ -340,6 +366,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(7,piVar4,param_5,param_6);
           if (sVar5 == 9) {
@@ -362,6 +389,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(8,piVar4,param_5,param_6);
           if (sVar5 == 0x11) {
@@ -379,6 +407,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(9,piVar4,param_5,param_6);
           if (sVar5 == 8) {
@@ -399,6 +428,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(10,piVar4,param_5,param_6);
           if (sVar5 == 0xc) {
@@ -415,6 +445,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
@@ -437,6 +468,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
@@ -459,6 +491,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0x10,piVar4,param_5,param_6);
           if (sVar5 == 0x16) {
@@ -479,6 +512,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0x11,piVar4,param_5,param_6);
           if (sVar5 == 0x12) {
@@ -499,6 +533,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0x12,piVar4,param_5,param_6);
           if (sVar5 == 0x13) {
@@ -519,6 +554,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
@@ -541,6 +577,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
@@ -563,6 +600,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0x2d,piVar4,param_5,param_6);
           if (sVar5 == 0x10) {
@@ -583,6 +621,7 @@ switchD_00435c5c_caseD_1:
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
           sVar5 = (*pSVar6->vtable->vfunc_28)(0x4d,piVar4,param_5,param_6);
           if (sVar5 == 0x1d) {

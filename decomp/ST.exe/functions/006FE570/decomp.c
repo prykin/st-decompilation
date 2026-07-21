@@ -25,7 +25,7 @@ void FUN_006fe570(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   byte *local_10;
   byte *local_c;
   ushort *local_8;
-  
+
   pbVar7 = (byte *)(param_13 + (param_15 >> 3));
   _DAT_00857000 = 1;
   iVar10 = param_10;

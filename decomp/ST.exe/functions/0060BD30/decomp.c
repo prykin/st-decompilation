@@ -10,7 +10,7 @@ void __thiscall FUN_0060bd30(void *this,undefined4 *param_1,undefined4 param_2)
   undefined2 local_14;
   undefined2 local_12;
   undefined4 local_c;
-  
+
   ppuVar2 = local_40;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *ppuVar2 = (undefined4 *)0x0;
@@ -31,6 +31,7 @@ void __thiscall FUN_0060bd30(void *this,undefined4 *param_1,undefined4 param_2)
   local_20[1] = *(undefined4 *)((int)this + 0x1f5);
   local_20[0] = param_2;
   local_40[5] = local_20;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)*param_1)(local_40);
   return;
 }

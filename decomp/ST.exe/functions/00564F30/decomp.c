@@ -25,7 +25,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
   int local_14;
   byte *local_c;
   int local_8;
-  
+
   if (param_5 == DAT_0080330c) {
     local_1c = DAT_008032f4;
     iVar3 = *(int *)(DAT_008032fc + param_3 * 4);

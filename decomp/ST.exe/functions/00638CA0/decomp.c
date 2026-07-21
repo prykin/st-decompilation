@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,AnonShape_0041AF40_F59F8577 *param
   int local_10;
   int local_c;
   byte *local_8;
-  
+
   iVar4 = STSprGameObjC::GetMessage(this,param_1);
   if (iVar4 == 0xffff) {
     return 0xffff;
@@ -107,6 +107,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,AnonShape_0041AF40_F59F8577 *param
     }
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x27a),*(undefined2 *)((int)this + 0x27e),
                        *(undefined2 *)((int)this + 0x282));
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar3 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
@@ -204,6 +205,7 @@ joined_r0x00639236:
     if (iVar4 + -1 == iVar6) {
       *(undefined1 *)((int)this + 0x26f) = 3;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar3 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {

@@ -17,7 +17,7 @@ byte * __thiscall FUN_00617fb0(void *this,int *param_1)
   uint *puVar10;
   uint *local_c;
   uint local_8;
-  
+
   iVar5 = *(int *)((int)this + 0x5e);
   if (iVar5 == 0) {
     iVar5 = 0;

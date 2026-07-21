@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -12,12 +14,12 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   code *pcVar4;
   int iVar5;
   STGroupBoatC *pSVar6;
-  undefined4 extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 extraout_EDX;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   undefined4 *puVar7;
-  
+
   if ((param_1 == 0) || (param_1 == 1)) {
     puVar7 = &this->field_02CC;
     for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -41,6 +43,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   iVar5 = this->field_06E7;
   if (iVar5 != 0) {
     if (iVar5 == 1) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar5 = (*this->vtable->StopMove)(this,unaff_EDI);
       if (iVar5 == -1) {
         return -1;
@@ -64,9 +67,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       if (iVar5 == 0) {
         return -1;
       }
-      pcVar4 = (code *)swi(3);
-      iVar5 = (*pcVar4)();
-      return iVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar5 = sub_0045FF50(this,2);
     if (iVar5 == -1) {
@@ -78,17 +79,15 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     if (iVar5 != 3) {
       return 2;
     }
-    pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0x24),
-                                CONCAT22(extraout_var,this->field_0030));
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    pSVar6 = thunk_FUN_0042b760(this->field_0x24,CONCAT22(extraout_var,this->field_0030));
     if (pSVar6 == (STGroupBoatC *)0x0) {
       iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b9b,0,0,&DAT_007a4ccc,
                                  s_STBoatC__Scout_ptr__NULL_007ab8d8);
       if (iVar5 == 0) {
         return -1;
       }
-      pcVar4 = (code *)swi(3);
-      iVar5 = (*pcVar4)();
-      return iVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar5 = thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,
                                (short *)(int)*(short *)&this->field_0x6d1,
@@ -122,9 +121,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       if (iVar5 == 0) {
         return 2;
       }
-      pcVar4 = (code *)swi(3);
-      iVar5 = (*pcVar4)();
-      return iVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     *(int *)&this->field_0x6d7 = iVar5;
     *(undefined4 *)&this->field_0x6e3 = 1;
@@ -152,17 +149,14 @@ LAB_0047ff46:
   if (iVar5 != 3) {
     return 2;
   }
-  pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x24),
-                              (uint)(ushort)this->field_0030);
+  pSVar6 = thunk_FUN_0042b760(this->field_0x24,(uint)(ushort)this->field_0030);
   if (pSVar6 == (STGroupBoatC *)0x0) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b57,0,0,&DAT_007a4ccc,
                                s_STBoatC__Scout_ptr__NULL_007ab8d8);
     if (iVar5 == 0) {
       return -1;
     }
-    pcVar4 = (code *)swi(3);
-    iVar5 = (*pcVar4)();
-    return iVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar5 = thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,
                              (short *)(int)*(short *)&this->field_0x6cb,
@@ -195,9 +189,7 @@ LAB_0047ff46:
     if (iVar5 == 0) {
       return 2;
     }
-    pcVar4 = (code *)swi(3);
-    iVar5 = (*pcVar4)();
-    return iVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   *(int *)&this->field_0x6d7 = iVar5;
   *(undefined4 *)&this->field_0x6e3 = 1;

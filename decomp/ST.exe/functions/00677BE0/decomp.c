@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
@@ -18,9 +20,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   int iVar6;
   DArrayTy *pDVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   byte *pbVar9;
-  void *unaff_EDI;
   bool bVar10;
   InternalExceptionFrame local_70;
   byte local_2c [16];
@@ -31,19 +31,17 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_18 = 0;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x3ba,0,iVar3,&DAT_007a4ccc,
                                s__EnumRCCont_007d2e14);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      iVar3 = (*pcVar2)();
-      return iVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x3bb);
     return iVar3;
@@ -60,12 +58,14 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   }
   do {
     if (uVar8 < pDVar7->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar8) (runtime stride) */
       puVar4 = (undefined4 *)(pDVar7->elementSize * uVar8 + (int)pDVar7->data);
     }
     else {
       puVar4 = (undefined4 *)0x0;
     }
     this = (int *)*puVar4;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (((this != (int *)0x0) &&
         (local_10 = uVar8, local_1c = (**(code **)(*this + 300))(), pDVar7 = PTR_007fa160,
         (short)local_1c == param_1)) &&
@@ -74,6 +74,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
       iVar3 = 1;
       local_14 = 1;
       if ((param_3 != (byte *)0x0) && (*param_3 != 0)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*this + 0x74))(local_2c);
         pbVar9 = local_2c;
         pbVar5 = param_3;
@@ -113,6 +114,7 @@ LAB_00677cee:
         }
         pDVar7 = PTR_007fa160;
         uVar8 = local_10;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((iVar3 != 0) && (param_10 != (undefined *)0x0)) &&
            (iVar3 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar7 = PTR_007fa160,
            uVar8 = local_10, iVar3 != 0)) {

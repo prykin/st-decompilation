@@ -25,7 +25,7 @@ bool __cdecl FUN_0062c2d0(AnonShape_0062C2D0_06591E1F *param_1,int param_2,int p
   int iVar19;
   short sVar20;
   byte bVar21;
-  
+
   bVar5 = false;
   if (param_1 != (AnonShape_0062C2D0_06591E1F *)0x0) {
     iVar2 = param_3 - *(int *)&param_1->field_0x4;

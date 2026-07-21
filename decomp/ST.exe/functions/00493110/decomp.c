@@ -4,9 +4,10 @@ void __thiscall FUN_00493110(void *this,int *param_1)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = FUN_006e62d0(PTR_00802a38,(int)param_1,(int *)&param_1);
   if (iVar1 != -4) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (**(code **)(*param_1 + 0x2c))();
     iVar1 = *(int *)((int)this + 0x6f7);
     if (((iVar1 == 7) || (iVar1 == 0x13)) || (iVar1 == 0x1b)) {
@@ -15,6 +16,7 @@ void __thiscall FUN_00493110(void *this,int *param_1)
           ((((0 < iVar2 && ((iVar2 < 0x29 && (iVar2 != 7)))) && (iVar2 != 0x13)) && (iVar2 != 0x1b))
           )))) {
         *(int *)((int)this + 0x7ca) = param_1[6];
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         FUN_006ea3e0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
                      *(int *)((int)param_1 + 0x1ed));
       }
@@ -28,6 +30,7 @@ void __thiscall FUN_00493110(void *this,int *param_1)
       *(undefined4 *)((int)this + 0x76) = 0;
       *(int *)((int)this + 0x5a2) = iVar1;
       *(undefined4 *)((int)this + 0x5c4) = 7;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xb4))();
       return;
     }

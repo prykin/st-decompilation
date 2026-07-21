@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
@@ -12,23 +14,21 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
   int iVar4;
   uint uVar5;
   undefined4 *puVar6;
-  undefined4 unaff_ESI;
   AnonPointee_PlaySystemTy_0039 *pAVar7;
   PlaySystemTy *pPVar8;
-  void *unaff_EDI;
   undefined4 *puVar9;
   InternalExceptionFrame local_58;
   uint local_14;
   PlaySystemTy *local_10;
   AnonPointee_PlaySystemTy_0039 *local_c;
   uint local_8;
-  
+
   local_c = this->field_0039;
   local_8 = 4;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pPVar8 = local_10;
   if (iVar3 == 0) {
     *(undefined4 *)local_10->field_004F = 0;
@@ -88,9 +88,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x4e6,0,iVar3,&DAT_007a4ccc,
                              s_PlaySystemTy__SendClientMail_007c8598);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x4e8);
   return;

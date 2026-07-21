@@ -13,7 +13,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
   char *local_10;
   char *local_c;
   char *local_8;
-  
+
   iVar2 = *(int *)((int)this + 0x138);
   if (iVar2 != 0) {
     local_c = *(char **)(iVar2 + 8);

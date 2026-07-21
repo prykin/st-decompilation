@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
@@ -13,16 +15,14 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   MMObjTy *pMVar3;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar6;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = (MMObjTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar3 = local_8;
   if (iVar4 == 0) {
     MMObjTy::DoneMMObj(local_8);
@@ -150,9 +150,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   iVar5 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x191,0,iVar4,&DAT_007a4ccc,
                              s_ChooseMapTy__DoneChooseMap_007cc7ac);
   if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x191);
   return;

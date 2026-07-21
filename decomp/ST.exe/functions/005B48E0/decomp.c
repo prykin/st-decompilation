@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
@@ -15,18 +17,16 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
   BITMAPINFO *pBVar7;
   int iVar8;
   MainMenuTy *pMVar9;
-  undefined4 unaff_ESI;
   AnonPointee_MainMenuTy_1AA7 **ppAVar10;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   int local_10;
   int local_c;
   MainMenuTy *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pMVar9 = local_8;
   if (iVar5 == 0) {
     if (local_8->field_1ACF != 0) {
@@ -112,8 +112,6 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
     RaiseInternalException(iVar5,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0x1ba);
     return;
   }
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

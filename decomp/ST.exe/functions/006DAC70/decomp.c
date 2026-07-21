@@ -7,7 +7,7 @@ void FUN_006dac70(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   byte bVar2;
   uint uVar3;
   byte *pbVar4;
-  
+
   iVar1 = param_4 + 7;
   if (0 < param_7) {
     do {

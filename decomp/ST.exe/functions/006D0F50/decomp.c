@@ -10,10 +10,12 @@ void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3
   uint uVar5;
   uint uVar6;
   uint uVar7;
-  
+
   if (0 < (int)param_5) {
     if (param_9 != 0xffffffff) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _param_8 = CONCAT13(param_8,CONCAT12(param_8,CONCAT11(param_8,param_8)));
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_9 = CONCAT13((byte)param_9,CONCAT12((byte)param_9,CONCAT11((byte)param_9,(byte)param_9))
                         );
       do {
@@ -34,6 +36,7 @@ void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3
               else {
                 if ((byte)uVar6 != (byte)param_9) {
                   if ((byte)uVar6 == param_8) {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar6 = CONCAT31((int3)(uVar6 >> 8),
                                      *(undefined1 *)(param_7 + (uint)*(byte *)param_1));
                   }
@@ -43,6 +46,7 @@ void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3
                 bVar4 = (byte)(uVar6 >> 8);
                 if (bVar4 != (byte)param_9) {
                   if (bVar4 == param_8) {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar5 = (uint)CONCAT21((short)(uVar6 >> 0x10),
                                            *(undefined1 *)(param_7 + (uint)param_1->field_0001));
                   }
@@ -52,6 +56,7 @@ void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3
                 bVar4 = (byte)(uVar5 >> 8);
                 if (bVar4 != (byte)param_9) {
                   if (bVar4 == param_8) {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar6 = (uint)CONCAT21((short)(uVar5 >> 0x10),
                                            *(undefined1 *)(param_7 + (uint)param_1->field_0002));
                   }

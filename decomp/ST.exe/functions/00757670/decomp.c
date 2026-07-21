@@ -6,7 +6,7 @@ void FUN_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2)
   DWORD DVar2;
   int *piVar3;
   int iVar4;
-  
+
   DVar2 = Library::DKW::FMM::FUN_006d4c50
                     ((int)param_1->field_0008,param_2,(int)param_1->field_0008->field_0016);
   if (DVar2 == 0) {

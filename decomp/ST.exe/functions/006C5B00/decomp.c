@@ -4,7 +4,7 @@ void FUN_006c5b00(AnonShape_006C5B00_75F2A72F *param_1,byte *param_2,uint param_
 
 {
   uint uVar1;
-  
+
   if ((param_1->field_049C & 1) == 0) {
     if (param_1->field_0498 != 7) {
       for (uVar1 = param_3 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {

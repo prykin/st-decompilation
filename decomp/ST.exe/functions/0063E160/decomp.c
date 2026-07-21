@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -16,21 +18,20 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
   ushort *puVar6;
   int iVar7;
   undefined4 uVar8;
-  undefined4 unaff_ESI;
   undefined4 *puVar9;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   undefined4 local_14;
   STTmMineC *local_10;
   int *local_c;
   uint local_8;
-  
+
   pDVar1 = this->field_0336;
   local_14 = 0;
   if (pDVar1 == (DArrayTy *)0x0) {
     return 0;
   }
   if (param_1 < pDVar1->count) {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, param_1) (runtime stride) */
     local_c = (int *)(pDVar1->elementSize * param_1 + (int)pDVar1->data);
   }
   else {
@@ -43,16 +44,14 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_10 = this;
-    errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     piVar5 = local_c;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_58.previous;
       iVar7 = ReportDebugMessage(s_E____titans_nick_to_TmMin_cpp_007d209c,0x603,0,errorCode,
                                  &DAT_007a4ccc,s_STTmMineC__LoadImagSpr_007d20fc);
       if (iVar7 != 0) {
-        pcVar3 = (code *)swi(3);
-        uVar8 = (*pcVar3)();
-        return uVar8;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(errorCode,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x605);
       return 0xffff;

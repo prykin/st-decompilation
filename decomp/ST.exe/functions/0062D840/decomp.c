@@ -9,7 +9,7 @@ int __thiscall FUN_0062d840(void *this,undefined4 *param_1)
   int *piVar5;
   undefined4 *puVar6;
   int *piVar7;
-  
+
   puVar1 = param_1;
   if (this == (void *)0x0) {
     puVar6 = (undefined4 *)0x0;

@@ -17,13 +17,14 @@ void __thiscall FUN_0069ada0(void *this,int param_1,int param_2)
   int local_18;
   int local_14;
   int local_10;
-  
+
   iVar2 = param_2;
   psVar6 = *(short **)((int)this + 0xc);
   iVar4 = (int)psVar6[1] * (int)*psVar6;
   local_18 = 0;
   if (0 < *(int *)((int)psVar6 + 0x455)) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar9 = *(int *)((int)psVar6 + local_18 * 4 + 0x459);
       if (iVar9 != 0) {
         iVar5 = (int)*(short *)(iVar9 + 8);

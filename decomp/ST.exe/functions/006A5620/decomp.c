@@ -6,7 +6,7 @@ BOOL __cdecl FUN_006a5620(int param_1)
   int iVar1;
   uint uVar2;
   BOOL BVar3;
-  
+
   if (param_1 == 0) {
     return 0;
   }

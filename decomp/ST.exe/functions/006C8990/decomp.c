@@ -25,7 +25,7 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
   int local_14;
   byte *local_c;
   char local_5;
-  
+
   iVar11 = 0;
   local_14 = 0;
   local_c = param_1;

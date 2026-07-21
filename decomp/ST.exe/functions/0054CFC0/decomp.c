@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
@@ -10,28 +12,27 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   code *pcVar2;
   STPlaySystemC *pSVar3;
   int iVar4;
-  int iVar5;
-  undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  AnonPointee_STPlaySystemC_003D *pAVar5;
+  int iVar6;
+  undefined4 uVar7;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined4 *local_c;
   STPlaySystemC *local_8;
-  
+
   this->field_0030 = 0;
   local_10 = 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     pSVar3->field_0039 = 0;
     pSVar3->field_0045 = 7;
-    iVar4 = Library::DKW::LIB::FUN_006aac70(7);
-    pSVar3->field_003D = iVar4;
+    pAVar5 = (AnonPointee_STPlaySystemC_003D *)Library::DKW::LIB::FUN_006aac70(7);
+    pSVar3->field_003D = pAVar5;
     pSVar3->field_0053 = 0x1400;
     iVar4 = Library::DKW::LIB::FUN_006aac70(0x1400);
     pSVar3->field_004F = iVar4;
@@ -70,12 +71,10 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
     return 0;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x18c,0,iVar4,&DAT_007a4ccc,
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x18c,0,iVar4,&DAT_007a4ccc,
                              s_STPlaySystemC__InitSystem_007c84b8);
-  if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    uVar6 = (*pcVar2)();
-    return uVar6;
+  if (iVar6 != 0) {
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x18e);
   return 0xfffffffc;

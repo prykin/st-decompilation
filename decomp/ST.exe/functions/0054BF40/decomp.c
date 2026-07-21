@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::SetGCType
-   
+
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_46=70;CASE_47=71;CASE_48=72
@@ -19,38 +21,34 @@ CursorClassTy::SetGCType
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  void *unaff_ESI;
   char *pcVar5;
   BITMAPINFO *pBVar6;
   uint uVar7;
-  InternalExceptionFrame *pIVar8;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   CursorClassTy *local_14;
   undefined4 local_10;
   BITMAPINFO *local_c;
   uint local_8;
-  
-  pIVar8 = g_currentExceptionFrame;
+
   local_10 = 1;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar8);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 != 0) {
-    g_currentExceptionFrame = pIVar8;
+    g_currentExceptionFrame = local_58.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8ee,0,iVar2,
                                &DAT_007a4ccc,s_CursorClassTy__SetGCType_007c7ff0);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar4 = (*pcVar1)();
-      return uVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8f0);
     return local_10;
   }
   if (local_14->field_0494 == param_1) {
 switchD_0054bfbc_caseD_20:
-    g_currentExceptionFrame = pIVar8;
+    g_currentExceptionFrame = local_58.previous;
     return local_10;
   }
   local_14->field_0494 = param_1;
@@ -318,7 +316,7 @@ switchD_0054bfbc_caseD_20:
 cf_common_exit_0054C06F:
     SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-    g_currentExceptionFrame = pIVar8;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x39:
     iVar3 = -1;
@@ -330,7 +328,7 @@ cf_common_exit_0054C06F:
 cf_common_exit_0054C01C:
     SetImages(local_14,1,pcVar5,uVar4,pBVar6,uVar7,iVar2,iVar3);
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-    g_currentExceptionFrame = pIVar8;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x3c:
   case 0x3d:
@@ -384,12 +382,12 @@ switchD_0054c0ac_default:
   case 0x46:
     SetImages(local_14,1,s_CUR_HYPER_007c8030,0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-    g_currentExceptionFrame = pIVar8;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x47:
     SetImages(local_14,1,s_CUR_HELPNO_007c8020,0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-    g_currentExceptionFrame = pIVar8;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x48:
     iVar3 = 0x1e;
@@ -400,7 +398,7 @@ switchD_0054c0ac_default:
   }
   SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-  g_currentExceptionFrame = pIVar8;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 

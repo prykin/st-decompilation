@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
@@ -11,15 +13,13 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   int *piVar6;
   InternalExceptionFrame local_54;
   PlayPanelTy *local_10;
   int local_c;
   int *local_8;
-  
+
   if (param_1 != this->field_005C) {
     this->field_005C = param_1;
     puVar5 = (undefined4 *)&this->field_0x18;
@@ -36,7 +36,7 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     this_00 = local_10;
     if (iVar4 == 0) {
       if (local_10->field_017C != 0) {
@@ -71,9 +71,7 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0xfe,0,iVar4,&DAT_007a4ccc,
                                s_PlayPanelTy__ShiftControls_007c7668);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_playpan_cpp_007c7574,0xfe);
   }

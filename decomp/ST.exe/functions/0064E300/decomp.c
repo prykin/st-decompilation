@@ -12,8 +12,6 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   uint uVar1;
   int iVar2;
   DArrayTy *array;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar3;
   InternalExceptionFrame local_64;
   uint local_20 [3];
@@ -21,7 +19,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   uint local_10;
   undefined4 *local_c;
   AnonShape_GLOBAL_008489C4_F7BABFAC *local_8;
-  
+
   local_10 = param_7;
   local_8 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
   local_c = (undefined4 *)0x0;
@@ -30,7 +28,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   local_14 = (void *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  uVar1 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar1 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (uVar1 != 0) {
     g_currentExceptionFrame = local_64.previous;
     thunk_FUN_006686c0((int *)&local_8);
@@ -62,6 +60,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
     uVar1 = local_20[2];
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar1 = (uint)*(ushort *)((int)local_14 + 0x7d);
     local_20[2] = uVar1;
     array = (DArrayTy *)_GetStaffGrpExch(param_1);

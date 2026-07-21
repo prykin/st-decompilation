@@ -4,7 +4,7 @@ uint FUN_00757430(char *param_1)
 {
   char cVar1;
   uint uVar2;
-  
+
   uVar2 = 0xffffffff;
   do {
     if (uVar2 == 0) break;

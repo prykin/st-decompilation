@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
@@ -16,9 +18,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   int iVar6;
   uint uVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   char *pcVar9;
-  void *unaff_EDI;
   char *pcVar10;
   char *pcVar11;
   undefined4 *puVar12;
@@ -88,20 +88,18 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   undefined4 local_54;
   InternalExceptionFrame local_50;
   SIDTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104,0,iVar3,&DAT_007a4ccc,
                                s_SIDTy__CreateCtrls_007cd664);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104);
     return;

@@ -1,6 +1,6 @@
 
 /* [STVTableApplier] Virtual slot 0079DB78+0xB4
-   
+
    [STVTableApplier] Virtual slot 007A15E8+0xB4 */
 
 void __thiscall FUN_0074ad60(int param_1,int param_2,int param_3)
@@ -11,9 +11,10 @@ void __thiscall FUN_0074ad60(int param_1,int param_2,int param_3)
   int iVar3;
   uint uVar4;
   uint uVar5;
-  
+
   uVar4 = param_2 / 10000;
   if ((1000 < (int)uVar4) || ((int)uVar4 < -1000)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(param_1 + 0x10c) < 2) {
       uVar4 = 0;
     }
@@ -21,6 +22,7 @@ void __thiscall FUN_0074ad60(int param_1,int param_2,int param_3)
       uVar4 = (((int)uVar4 < 1) - 1 & 2000) - 1000;
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1 + 0x10c);
   if (1 < iVar3) {
     puVar1 = (uint *)(param_1 + 0x110);

@@ -6,7 +6,7 @@ void FUN_00695140(undefined4 *param_1,undefined4 *param_2)
   undefined4 uVar2;
   int iVar3;
   undefined4 *puVar4;
-  
+
   uVar1 = param_2[6];
   uVar2 = param_2[7];
   puVar4 = param_1;

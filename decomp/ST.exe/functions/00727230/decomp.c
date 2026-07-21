@@ -24,7 +24,7 @@ void FUN_00727230(int *param_1)
   bool bVar17;
   int local_10;
   int local_8;
-  
+
   iVar2 = 0;
   local_8 = DAT_008570ec - DAT_00857064;
   iVar8 = 1;

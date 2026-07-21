@@ -8,10 +8,11 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
   STWorldObject *pSVar4;
   undefined2 uVar6;
   uint uVar5;
-  
+
   sVar1 = *(short *)(param_1 + 1);
   sVar2 = param_1->field_0802;
   sVar3 = *(short *)&param_1->field_0x800;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   uVar5 = CONCAT22((short)((uint)*(int *)&param_1->field_0x7fc >> 0x10),sVar3);
   if (*(int *)&param_1->field_0x7fc == 3) {
     if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
@@ -33,6 +34,7 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
   uVar5 = 0;
   if (pSVar4 != (STWorldObject *)0x0) {
     uVar6 = (undefined2)((uint)pSVar4 >> 0x10);
+    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
     uVar5 = (**(code **)(*(int *)param_1 + 0x10))
                       (CONCAT22(uVar6,param_1->field_0041),CONCAT22(uVar6,param_1->field_0043),
                        CONCAT22(uVar6,param_1->field_0045),

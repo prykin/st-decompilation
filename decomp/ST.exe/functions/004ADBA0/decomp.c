@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
@@ -15,9 +17,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   AnonShape_004ADBA0_0D812343 *pAVar5;
   int iVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   char *pcVar8;
-  void *unaff_EDI;
   char *pcVar9;
   int iVar10;
   InternalExceptionFrame local_68;
@@ -30,11 +30,11 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   char local_c;
   undefined3 uStack_b;
   int local_8;
-  
+
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_24 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_24;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -43,9 +43,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
     if (iVar6 == 0) {
       return;
     }
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_24->field_0004 = *(undefined4 *)param_2;
   local_24->field_0008 = *(undefined4 *)&param_2->field_0x4;
@@ -109,6 +107,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
       } while (cVar3 != '\0');
       if (iVar6 != -2) {
         *(undefined1 *)(local_18 + 0xc + this_00->field_0020) = local_10->field_0x4;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         LoadSequence(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),local_1c,
                      *(byte *)(local_18 + 0xc + this_00->field_0020));
         pAVar5 = local_10;
@@ -168,6 +167,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
         pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
         *pbVar1 = *pbVar1 | 4;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,(char)local_8);
       if (local_10->field_001F == '\0') {
         thunk_FUN_004ace60(this_00,(char)local_8);
@@ -217,6 +217,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   if ((-1 < (int)this_00->field_000C) && (iVar6 = 0, 0 < (int)this_00->field_0014)) {
     iVar10 = 0;
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((*(byte *)(this_00->field_0020 + 0xf + iVar10) & 1) != 0) {
         FUN_006e93c0((void *)this_00->field_003C,this_00->field_0018,iVar6,this_00->field_000C);
       }

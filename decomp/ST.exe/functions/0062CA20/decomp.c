@@ -9,7 +9,7 @@ int __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
   uint uVar2;
   uint uVar3;
   undefined4 *puVar4;
-  
+
   puVar1 = (undefined4 *)0x0;
   uVar3 = 0x6d;
   if (param_1 != (undefined4 *)0x0) {

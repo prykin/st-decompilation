@@ -6,7 +6,7 @@ int FUN_0074d60a(ushort *param_1,ushort *param_2)
   ushort uVar2;
   ushort uVar3;
   ushort uVar4;
-  
+
   while( true ) {
     uVar1 = *param_1;
     uVar2 = *param_2;

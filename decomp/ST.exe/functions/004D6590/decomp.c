@@ -12,9 +12,10 @@ FUN_004d6590(void *this,float param_1,short *param_2,short *param_3,short *param
   short *psVar6;
   short *psVar7;
   int iVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
   longlong lVar9;
-  
+
   psVar7 = param_4;
   psVar6 = param_3;
   uVar2 = *(undefined4 *)((int)this + 0x265);
@@ -34,9 +35,11 @@ FUN_004d6590(void *this,float param_1,short *param_2,short *param_3,short *param
   param_1 = (float)(int)(short)lVar9;
   lVar9 = Library::MSVCRT::__ftol();
   fVar4 = (float)(int)*(short *)((int)this + 0x43) - param_1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fVar1 = (float)((float10)(int)*(short *)((int)this + 0x41) - extraout_ST0);
   fVar5 = (float)(int)*psVar7 - (float)(int)(short)lVar9;
   fVar5 = fVar5 * fVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (((float10)(int)*param_2 - extraout_ST0) * ((float10)(int)*param_2 - extraout_ST0) +
       ((float10)(int)*psVar6 - (float10)param_1) * ((float10)(int)*psVar6 - (float10)param_1) +
       (float10)fVar5 <

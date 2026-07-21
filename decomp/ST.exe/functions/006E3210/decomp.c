@@ -11,7 +11,7 @@ float10 __thiscall FUN_006e3210(AnonShape_006E3210_FE49985F *param_1,int param_2
   uint uVar5;
   int iVar6;
   int *piVar7;
-  
+
   if ((-1 < param_2) && (-1 < param_3)) {
     iVar2 = param_1->field_0380 * 2;
     iVar3 = param_2 / iVar2;

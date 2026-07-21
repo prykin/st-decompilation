@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
@@ -11,23 +13,19 @@ undefined4 * __cdecl CreatePlrData(int param_1)
   int errorCode;
   undefined4 *puVar2;
   int iVar3;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar4;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   undefined4 *local_8;
-  
-  pIVar4 = g_currentExceptionFrame;
+
   local_8 = (undefined4 *)0x0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
-    g_currentExceptionFrame = pIVar4;
+    g_currentExceptionFrame = local_4c.previous;
     iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x178,0,errorCode,
                                &DAT_007a4ccc,s_CreatePlrData_007d2930);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      puVar2 = (undefined4 *)(*pcVar1)();
-      return puVar2;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x179);
     return (undefined4 *)0x0;
@@ -36,15 +34,15 @@ undefined4 * __cdecl CreatePlrData(int param_1)
     if ((&DAT_008087e8)[param_1 * 0x51] != '\x02') {
       RaiseInternalException
                 (-5,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x175);
-      g_currentExceptionFrame = pIVar4;
+      g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
     puVar2 = CreatePlrDataForBO();
-    g_currentExceptionFrame = pIVar4;
+    g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
   puVar2 = CreatePlrDataForWS();
-  g_currentExceptionFrame = pIVar4;
+  g_currentExceptionFrame = local_4c.previous;
   return puVar2;
 }
 

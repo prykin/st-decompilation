@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -35,7 +37,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
   STGroupBoatC *local_10;
   uint local_c;
   uint local_8;
-  
+
   uVar1 = this->field_0027;
   if (uVar1 < 10) {
     this->field_0242 = 2;
@@ -53,6 +55,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
     this->field_0242 = 10;
   }
   local_10 = this;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   array = (DArrayTy *)
           Library::DKW::TBL::FUN_006ae290((uint *)0x0,*(uint *)(this->field_0226 + 0xc),0xe,1);
   pDVar6 = (DArrayTy *)this->field_0226;
@@ -113,7 +116,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
         uVar8 = local_c;
         iVar7 = iVar7 / 3;
         if (iVar7 < (int)this->field_0242) {
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)array,local_c);
+          FUN_006b0c70(array,local_c);
           local_8 = local_8 - 1;
           local_c = uVar8 - 1;
         }
@@ -147,9 +150,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
       iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x15ed,0,0,&DAT_007a4ccc,
                                  s_STGroupBoatC__ReMakePatrolPoints_007ac450);
       if (iVar7 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
 LAB_004a77bb:
       this->field_0232 = 0xffffffff;
@@ -201,9 +202,7 @@ LAB_004a77bb:
          (iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x160e,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__ReMakePatrolPoints_007ac418),
          iVar7 != 0)) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       goto LAB_004a792e;
     }

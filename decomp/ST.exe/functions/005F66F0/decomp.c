@@ -24,7 +24,7 @@ byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   local_14 = this;
   puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xc2);
   pSVar2 = local_14;
@@ -93,6 +93,7 @@ byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
       pbVar12 = pbVar12 + 4;
     }
     if (uVar7 != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar12 = *(byte **)(*(int *)&local_14[1].field_0xb9 + 0x58);
       pbVar4 = pbVar5 + (uVar1 - uVar7) + -0x6c + 0x6c;
       for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {

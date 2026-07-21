@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
   void *this_00;
   undefined4 *puVar2;
   void *local_8;
-  
+
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);
   local_8 = this;
   EnterCriticalSection(lpCriticalSection);

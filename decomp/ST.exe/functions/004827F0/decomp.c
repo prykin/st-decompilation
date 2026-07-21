@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -12,21 +14,19 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
   STBoatC *pSVar3;
   int errorCode;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar5;
   InternalExceptionFrame local_5c;
   short local_18 [4];
   uint local_10;
   uint local_c;
   STBoatC *local_8;
-  
+
   local_10 = param_1 >> 0x10;
   local_c = param_1 & 0xffff;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   uVar5 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -36,9 +36,7 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
       RaiseInternalException(errorCode,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d80);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((int)local_c < 0) || ((int)((byte)local_8->field_0281 - 1) < (int)local_c)) {
     RaiseInternalException

@@ -26,7 +26,7 @@ FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_13;
   undefined4 local_f;
   undefined4 local_b;
-  
+
   puVar6 = local_158;
   for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;

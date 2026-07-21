@@ -10,7 +10,7 @@ void FUN_006d26d0(byte *param_1,int param_2,byte *param_3,int param_4,int param_
   int iVar5;
   uint uVar6;
   byte *pbVar7;
-  
+
   do {
     while( true ) {
       uVar4 = (uint)*param_3;

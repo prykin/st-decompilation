@@ -11,7 +11,7 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
   int *piVar7;
   int *piVar8;
   bool bVar9;
-  
+
   iVar5 = 4;
   bVar9 = true;
   piVar7 = param_2 + 0xb;

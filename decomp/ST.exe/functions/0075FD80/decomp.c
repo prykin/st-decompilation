@@ -12,7 +12,8 @@ void FUN_0075fd80(AnonShape_0075FD80_7EE67BE7 *param_1,int param_2,int *param_3,
   char cVar8;
   int iVar9;
   byte *pbVar10;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar1 = *(int **)(param_1->field_01BA + 0x18);
   iVar2 = param_1->field_0068;
   pAVar3 = (AnonShape_0075FD80_7EE67BE7 *)param_1->field_0070;

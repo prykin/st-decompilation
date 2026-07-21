@@ -1,8 +1,8 @@
 
 /* [STVTableApplier] Virtual slot 0079DB78+0x58
-   
+
    [STVTableApplier] Virtual slot 007A13D0+0x58
-   
+
    [STVTableApplier] Virtual slot 007A15E8+0x58 */
 
 undefined4 __thiscall FUN_0074a220(int *param_1,int *param_2,uint *param_3,uint *param_4)
@@ -10,8 +10,10 @@ undefined4 __thiscall FUN_0074a220(int *param_1,int *param_2,uint *param_3,uint 
 {
   int iVar1;
   undefined4 uVar2;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*param_2 + 0x14))(param_2,param_3,param_4);
   if (-1 < iVar1) {
     if (((int)param_4[1] <= (int)param_3[1]) &&
@@ -19,6 +21,7 @@ undefined4 __thiscall FUN_0074a220(int *param_1,int *param_2,uint *param_3,uint 
       return 0x80040228;
     }
     if (param_1[6] != 0) {
+      /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable/callback call with explicit __thiscall receiver */
       uVar2 = (**(code **)(*param_1 + 0x5c))(unaff_ESI,param_3,param_4);
       return uVar2;
     }

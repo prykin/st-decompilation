@@ -12,7 +12,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar4 = param_2;
   iVar5 = param_1;
   sVar1 = (short)(param_1 >> 0x1f);

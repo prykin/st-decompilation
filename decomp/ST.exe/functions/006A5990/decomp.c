@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_006a5990(undefined4 *param_1)
 
@@ -7,13 +9,11 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
   int iVar3;
   uint uVar4;
   undefined4 *puVar5;
-  
+
   puVar5 = (undefined4 *)0x0;
   iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
   if (iVar3 == 1) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar2 = DAT_0085496c;
   if (param_1 != (undefined4 *)0x0) {
@@ -23,9 +23,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
     if ((puVar2 == (undefined4 *)0x0) || (puVar2 == puVar5)) {
       iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar3 == 1) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       return;
     }
@@ -36,34 +34,26 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
         if (iVar3 == 0) {
           iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s__File_Error___d____007eca44);
           if (iVar3 == 1) {
-            pcVar1 = (code *)swi(3);
-            (*pcVar1)();
-            return;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
         else {
           iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s__hs__d____007eca34);
           if (iVar3 == 1) {
-            pcVar1 = (code *)swi(3);
-            (*pcVar1)();
-            return;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
       }
       iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s___ld__007eca2c);
       if (iVar3 == 1) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       uVar4 = puVar2[5] & 0xffff;
       if (uVar4 == 4) {
         iVar3 = Library::MSVCRT::FUN_00730fa0
                           (0,0,0,0,(byte *)s_client_block_at_0x_08X__subtype___007ec9ec);
         if (iVar3 == 1) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (DAT_0085751c != (code *)0x0) {
           (*DAT_0085751c)(puVar2 + 8,puVar2[4]);
@@ -74,9 +64,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
         iVar3 = Library::MSVCRT::FUN_00730fa0
                           (0,0,0,0,(byte *)s_normal_block_at_0x_08X___u_bytes_007ec9bc);
         if (iVar3 == 1) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
       else {
@@ -84,9 +72,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
         iVar3 = Library::MSVCRT::FUN_00730fa0
                           (0,0,0,0,(byte *)s_crt_block_at_0x_08X__subtype__x__007ec980);
         if (iVar3 == 1) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
       FUN_006a5be0((int)puVar2);

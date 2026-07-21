@@ -6,7 +6,7 @@ int __thiscall FUN_0062fea0(void *this,int param_1,int param_2)
   int iVar2;
   int iVar3;
   void *local_8;
-  
+
   if ((((PTR_00807598->field_0048 <= param_1) && (param_1 <= PTR_00807598->field_0058)) &&
       (PTR_00807598->field_0044 <= param_2)) && (param_2 <= PTR_00807598->field_0054)) {
     local_8 = this;

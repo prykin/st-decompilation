@@ -4,7 +4,7 @@ int FUN_004b7240(undefined4 param_1,int param_2)
 {
   undefined4 *puVar1;
   int iVar2;
-  
+
   puVar1 = &g_playerRuntime[(char)param_1].field2109_0x976;
   iVar2 = g_playerRuntime[(char)param_1].field2109_0x976 - param_2;
   *puVar1 = iVar2;

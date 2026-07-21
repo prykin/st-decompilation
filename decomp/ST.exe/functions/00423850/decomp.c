@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
@@ -14,10 +16,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uint uVar4;
   int iVar5;
   uint uVar6;
-  undefined4 extraout_ECX;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_80;
   undefined1 local_3c [16];
   undefined4 local_2c;
@@ -31,7 +30,8 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uint local_c;
   short local_8;
   undefined1 local_5;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_18 = *(uint *)(this->field_0029 + 0xc);
   local_c = 0;
   local_10 = 0;
@@ -39,7 +39,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   g_currentExceptionFrame = &local_80;
   local_1c = this;
   local_14 = local_18;
-  errorCode = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   pSVar2 = local_1c;
   uVar7 = local_14;
   uVar6 = local_18;
@@ -57,10 +57,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
     }
     Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_0029,uVar7,&param_1);
-    this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,
-                         CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),param_1,CASE_1
-                        );
+    this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar2->field_0024,param_1,CASE_1);
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);
     pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
@@ -70,7 +67,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
       Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
-      (**(code **)(pSVar2->field_0000 + 8))(0x65,&local_5);
+      (*pSVar2->vtable->vfunc_08)(0x65,&local_5);
     }
     uVar4 = thunk_FUN_00423120((int)this_00);
     uVar6 = pSVar2->field_0035;
@@ -128,6 +125,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00->field_0018;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
     g_currentExceptionFrame = local_80.previous;
@@ -138,9 +136,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
     iVar5 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0xdf,0,errorCode,&DAT_007a4ccc
                                ,s_STGroupC__AddObj_007a5120);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar6 = (*pcVar1)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0xe0);
     return 0xffffffff;

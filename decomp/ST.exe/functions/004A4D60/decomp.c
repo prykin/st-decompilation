@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -12,17 +14,15 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   int errorCode;
   int iVar3;
   short *psVar4;
-  undefined4 unaff_ESI;
   uint index;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
   short local_8 [2];
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -30,9 +30,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
       iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1294,0,errorCode,
                                  &DAT_007a4ccc,s_STGroupBoatC__ChangeMDNotify_007ac310);
       if (iVar3 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(errorCode,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1295);
     }

@@ -6,7 +6,7 @@ void FUN_004ab530(int param_1,int param_2,int param_3)
 {
   float fVar1;
   float fVar2;
-  
+
   if (param_1 == 1) {
     DAT_008073e0 = 1;
     _DAT_008073ec = _DAT_008073d4;

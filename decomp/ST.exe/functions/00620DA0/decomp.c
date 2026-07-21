@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_00620da0(void *this,int param_1,undefined4 param_2,und
 {
   int iVar1;
   char *pcVar2;
-  
+
   iVar1 = 0;
   pcVar2 = (char *)((int)this + 0x20);
   do {

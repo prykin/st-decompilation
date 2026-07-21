@@ -4,6 +4,7 @@ undefined4 * __thiscall FUN_0057f470(void *this,int param_1,int param_2)
 {
   char cVar1;
   undefined1 uVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   uint uVar3;
   int iVar4;
@@ -11,10 +12,11 @@ undefined4 * __thiscall FUN_0057f470(void *this,int param_1,int param_2)
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
-  
+
   pcVar6 = PTR_s_rmeta__d_007cb0a0;
   if (param_1 == -1) {
     uVar2 = thunk_FUN_0057f240(0xde,*(int *)((int)this + 0x259));
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6 = PTR_s_rmeta_c_d_007cb09c;
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_mbomb.cpp
@@ -13,10 +15,8 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
   int iVar4;
   uint uVar5;
   short sVar6;
-  undefined4 unaff_ESI;
   undefined4 *puVar7;
   byte *pbVar8;
-  void *unaff_EDI;
   undefined4 *puVar9;
   AnonShape_00588BC0_84BDD66C *pAVar10;
   byte *pbVar11;
@@ -39,7 +39,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_24 = (void *)0x0;
   if ((this->field_0231 == 3) && (param_1->field_0010 != 3)) {
     return 0;
@@ -47,7 +47,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_44 = (STSprGameObjC *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_44;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_8c.previous;
@@ -57,9 +57,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
       RaiseInternalException(iVar2,0,s_E____titans_Igor_to_mbomb_cpp_007cb9b8,0x38a);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar3 = (*pcVar1)();
-    return uVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_44,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar5 = param_1->field_0010;
@@ -68,6 +66,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
       thunk_FUN_004ad5e0((int)&this_00->field_01D5);
     }
     else if (uVar5 == 0x113) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -197,6 +196,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
       *(undefined4 *)&this_00->field_0x263 = 0;
       if ((*(int *)&this_00->field_0x290 < (int)(short)(g_worldGrid.sizeX * 0xc9 + 100)) &&
          (-1 < *(int *)&this_00->field_0x290)) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((*(int *)&this_00->field_0x294 < (int)(short)(g_worldGrid.sizeY * 0xc9 + 100)) &&
            (((-1 < *(int *)&this_00->field_0x294 &&
              (iVar2 = *(int *)&this_00->field_0x298, iVar2 < (short)(g_worldGrid._4_4_ * 200 + 100))
@@ -284,9 +284,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      pcVar1 = (code *)swi(3);
-      uVar3 = (*pcVar1)();
-      return uVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (uVar5 != 2) {
       g_currentExceptionFrame = local_8c.previous;
@@ -301,6 +299,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
       puVar9 = puVar9 + 1;
     }
     *(undefined2 *)puVar9 = *(undefined2 *)puVar7;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_10 = *(uint *)((int)local_48 + 0x7f);
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_10 + 0x87 + (int)local_48));
@@ -330,8 +329,11 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
     *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)((int)local_48 + 0x6e);
     *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)(local_48 + 0x1c);
     *(undefined2 *)&this_00->field_0x45 = *(undefined2 *)((int)local_48 + 0x72);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0x275 = *(undefined1 *)(local_48 + 0x1e);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0x276 = *(undefined1 *)((int)local_48 + 0x79);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0x277 = *(undefined1 *)((int)local_48 + 0x7a);
     *(undefined4 *)&this_00->field_0x278 = *(undefined4 *)((int)local_48 + 0x7b);
     local_40 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);

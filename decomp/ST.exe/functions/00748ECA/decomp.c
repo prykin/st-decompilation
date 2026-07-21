@@ -4,7 +4,7 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
 {
   uint uVar1;
   LPVOID local_8;
-  
+
   local_8 = (LPVOID)0x0;
   if (param_2 < 4) {
     return 0;
@@ -16,6 +16,7 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
   if (uVar1 < param_2) {
     param_2 = uVar1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((((0x30 < param_2) || (0x30 < uVar1)) ||
        ((0xb < param_2 &&
         (((param_3[2] & 0xfffffe20) != 0 ||
@@ -59,7 +60,9 @@ LAB_00748fc9:
     *(uint *)(param_1 + 0x24) = param_3[5];
   }
   if ((0x27 < param_2) && ((param_3[2] & 8) != 0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(LPVOID *)(param_1 + 0x3c) != (LPVOID)0x0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       FUN_0074bc50(*(LPVOID *)(param_1 + 0x3c));
     }
     *(LPVOID *)(param_1 + 0x3c) = local_8;

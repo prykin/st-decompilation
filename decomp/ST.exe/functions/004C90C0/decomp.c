@@ -5,7 +5,7 @@ int __fastcall FUN_004c90c0(TLOBaseTy *param_1)
   TLOBaseTy_field_0361State TVar1;
   TLOBaseTy_field_05ACState TVar2;
   int iVar3;
-  
+
   TVar1 = param_1->field_0361;
   if (TVar1 == 0) {
     return 1;

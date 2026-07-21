@@ -88,7 +88,7 @@ void __cdecl FUN_00428e50(short *param_1)
   AnonShape_00428E50_DFCBD4F2 *local_10;
   byte local_9;
   int *local_8;
-  
+
   pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
   if (pAVar5 == (AnonShape_006DBCA0_EF06575F *)0x0) {
     local_30 = (AnonShape_006DDD50_309FA381 *)0x0;
@@ -125,6 +125,7 @@ LAB_00428e95:
   *(undefined4 *)&pAVar6->field_0x128 = 0xff;
   pAVar6->field_0124 = 6;
   iVar12 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)((int)param_1 + 0x455)) {
     local_40 = (int *)((int)param_1 + 0x459);
     do {
@@ -135,6 +136,7 @@ LAB_00428e95:
       }
       iVar12 = iVar12 + 1;
       local_40 = local_40 + 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (iVar12 < *(int *)((int)param_1 + 0x455));
   }
   FUN_006dd610(pAVar6,0,0,0x40240000,0,0x40240000);
@@ -167,17 +169,21 @@ LAB_00428e95:
     piVar13 = piVar13 + 3;
     local_2c = local_2c + 2;
   } while ((int)piVar13 < 0x7f4dc5);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_2c._1_3_ = (undefined3)((uint)local_2c >> 8);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_2c = CONCAT31(local_2c._1_3_,2);
   local_a4 = 0;
   local_9 = 1;
   local_40 = (int *)0x0;
   do {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
     FUN_006dd610(pAVar6,(uint)local_40,0,0x40240000,0,0x40240000);
     local_44 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1c,10);
     DAT_007f4dd0 = 0;
     local_90 = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (0 < *(int *)((int)param_1 + 0x455)) {
       local_28 = (int *)((int)param_1 + 0x459);
       do {
@@ -198,6 +204,7 @@ LAB_00428e95:
           }
           uVar11 = 0;
           while( true ) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, uVar11) (runtime stride) */
             if ((local_44->count <= uVar11) ||
                (piVar13 = (int *)(local_44->elementSize * uVar11 + (int)local_44->data),
                piVar13 == (int *)0x0)) goto LAB_004292e2;
@@ -243,6 +250,7 @@ LAB_004292e2:
 LAB_004293c6:
         local_28 = local_28 + 1;
         local_90 = local_90 + 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       } while (local_90 < *(int *)((int)param_1 + 0x455));
     }
     local_38 = (int)*param_1 / 2;
@@ -280,6 +288,7 @@ LAB_00429475:
     }
     local_80 = local_38 * local_38;
     local_90 = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (0 < *(int *)((int)param_1 + 0x455)) {
       local_48 = (int *)((int)param_1 + 0x459);
       do {
@@ -300,6 +309,7 @@ LAB_00429475:
             }
           }
           if (*(uint *)&pAVar3->field_0x18 < local_44->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, *(uint *)&pAVar3->field_0x18) (runtime stride) */
             pvVar10 = (void *)(local_44->elementSize * *(uint *)&pAVar3->field_0x18 +
                               (int)local_44->data);
           }
@@ -329,6 +339,7 @@ LAB_0042958f:
                (iVar15 = (int)*(short *)(iVar12 + 8) - (uint)*(byte *)(iVar12 + 0x48),
                iVar8 + 3 < iVar15)) goto cf_continue_loop_004296CF;
             if (*(uint *)(iVar12 + 0x18) < local_44->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
               pvVar14 = (void *)(local_44->elementSize * *(uint *)(iVar12 + 0x18) +
                                 (int)local_44->data);
             }
@@ -366,6 +377,7 @@ LAB_0042958f:
                   puVar16 = (undefined4 *)((int)puVar16 + 1);
                 }
               }
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               uVar11 = thunk_FUN_00428ce0((int)((int)local_20 +
                                                local_a0 + ((local_9c - iVar8) * iVar12 - iVar15)),
                                           *(int *)((int)pvVar10 + 0x14),local_4c,
@@ -382,6 +394,7 @@ LAB_00429d7a:
             iVar8 = local_64;
             goto LAB_00429d7d;
           }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00429715:
           local_c0 = (double)CONCAT44(local_84 * local_38,(undefined4)local_c0);
           local_14 = local_6c * local_38;
@@ -406,6 +419,7 @@ LAB_00429715:
                    ((int)(((int)local_10->field_0008 - local_ac) + *local_88) <
                     (int)*(short *)(iVar12 + 8))) {
                   if (*(uint *)(iVar12 + 0x18) < local_44->count) {
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                     pvVar14 = (void *)(local_44->elementSize * *(uint *)(iVar12 + 0x18) +
                                       (int)local_44->data);
                   }
@@ -444,6 +458,7 @@ LAB_00429715:
                         puVar16 = (undefined4 *)((int)puVar16 + 1);
                       }
                     }
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     uVar11 = thunk_FUN_00428ce0((int)((int)local_20 +
                                                      local_a0 +
                                                      ((local_9c - iVar12) * iVar8 - iVar15)),
@@ -461,6 +476,7 @@ LAB_00429715:
             }
             local_64 = iVar8;
             iVar12 = local_a8 + local_68;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_b4 = (double)CONCAT44(iVar12,(undefined4)local_b4);
             if ((((-1 < iVar12) && (iVar12 < local_38)) && (-1 < local_6c + local_78)) &&
                (local_6c + local_78 < local_38)) {
@@ -475,6 +491,7 @@ LAB_00429715:
                      ((int)(((int)local_10->field_0008 - local_ac) + *local_88) <
                       (int)*(short *)(iVar12 + 8))) {
                     if (*(uint *)(iVar12 + 0x18) < local_44->count) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                       pvVar14 = (void *)(local_44->elementSize * *(uint *)(iVar12 + 0x18) +
                                         (int)local_44->data);
                     }
@@ -523,6 +540,7 @@ LAB_00429715:
                             puVar16 = (undefined4 *)((int)puVar16 + 1);
                           }
                         }
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         uVar11 = thunk_FUN_00428ce0((int)((int)local_20 +
                                                          local_a0 +
                                                          ((local_9c - iVar12) * iVar8 - iVar15)),
@@ -540,6 +558,7 @@ LAB_00429715:
             }
             if (((-1 < local_74 + local_68) && (local_74 + local_68 < local_38)) &&
                ((-1 < local_84 + local_78 && (local_84 + local_78 < local_38)))) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = (int *)((int)param_1 +
                                ((int)local_28 + local_68 + local_74 + local_b8 + local_c0._4_4_) * 4
                                + 0x459);
@@ -551,6 +570,7 @@ LAB_00429715:
                      ((int)(((int)local_10->field_0008 - local_ac) + *local_88) <
                       (int)*(short *)(iVar12 + 8))) {
                     if (*(uint *)(iVar12 + 0x18) < local_44->count) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                       pvVar14 = (void *)(local_44->elementSize * *(uint *)(iVar12 + 0x18) +
                                         (int)local_44->data);
                     }
@@ -590,6 +610,7 @@ LAB_00429715:
                           puVar16 = (undefined4 *)((int)puVar16 + 1);
                         }
                       }
+                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       uVar11 = thunk_FUN_00428ce0((int)((int)local_20 +
                                                        local_a0 +
                                                        ((local_9c - iVar12) * iVar8 - iVar15)),
@@ -604,12 +625,14 @@ LAB_00429715:
                 } while (local_1c != 0);
               }
             }
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_68 = local_b4._4_4_;
             local_28 = (int *)((int)local_28 + local_14);
             iVar8 = local_64 + local_14;
             iVar12 = local_78 + local_6c;
             local_70 = local_70 + 3;
             local_88 = local_88 + 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_64 = local_b4._4_4_;
             local_78 = iVar12;
           } while ((int)local_88 < 0x7a524d);
@@ -638,11 +661,13 @@ LAB_00429d7d:
         }
         local_90 = local_90 + 1;
         local_48 = local_48 + 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       } while (local_90 < *(int *)((int)param_1 + 0x455));
     }
     array = local_44;
     local_44->iteratorIndex = 0;
     while (uVar11 = array->iteratorIndex, uVar11 < array->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar11) (runtime stride) */
       pvVar10 = (void *)(array->elementSize * uVar11 + (int)array->data);
       array->iteratorIndex = uVar11 + 1;
       if (pvVar10 == (void *)0x0) break;
@@ -651,6 +676,7 @@ LAB_00429d7d:
     DArrayDestroy(array);
     local_9 = local_9 << 1;
     local_40 = (int *)((int)local_40 + 1);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_2c = CONCAT31(local_2c._1_3_,(byte)local_2c << 2);
     if (3 < (int)local_40) {
       if (pAVar6 != (AnonShape_006DDD50_309FA381 *)0x0) {

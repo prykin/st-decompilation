@@ -2,6 +2,7 @@
 undefined4 __fastcall FUN_00548bc0(int param_1)
 
 {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x4a2)) {
   case 3:
   case 5:

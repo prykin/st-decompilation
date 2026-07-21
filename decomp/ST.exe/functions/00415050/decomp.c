@@ -6,7 +6,7 @@ void FUN_00415050(undefined4 param_1,undefined4 param_2,undefined4 param_3,int p
   int *piVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar2 = DAT_007f4d44 + -1;
   if (-1 < iVar2) {
     piVar1 = (int *)(DAT_007f4d18 + 0xc + iVar2 * 0x18);

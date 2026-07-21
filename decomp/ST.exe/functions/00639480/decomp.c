@@ -4,7 +4,7 @@ undefined4 * __fastcall FUN_00639480(AnonShape_00639480_B53D0B0F *param_1)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGameObjC::STGameObjC((STGameObjC *)param_1);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&param_1->field_01D5);
   param_1->field_01D5 = &VTable_0079D338;

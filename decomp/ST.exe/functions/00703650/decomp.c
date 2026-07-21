@@ -19,7 +19,7 @@ void FUN_00703650(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   byte *pbVar11;
   uint local_c;
   uint local_8;
-  
+
   _DAT_00857000 = 1;
   pbVar10 = param_6;
   do {
@@ -340,6 +340,7 @@ switchD_00703b70_default:
               if (((int)(param_6 + -1) < 1) || (pbVar10 = pbVar11 + 2, (int)(param_6 + -2) < 1))
               break;
               if (param_5 <= puVar6[1]) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 puVar9[1] = *(undefined1 *)((uint)CONCAT11(pbVar11[2],puVar9[1]) + param_13);
               }
               puVar6 = puVar6 + 2;
@@ -399,6 +400,7 @@ switchD_00703a52_default:
           }
           if ((int)(param_6 + -2) < 1) break;
           if (param_5 <= puVar6[1]) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             puVar9[1] = *(undefined1 *)((uint)CONCAT11(bVar7,puVar9[1]) + param_13);
           }
           puVar6 = puVar6 + 2;

@@ -11,12 +11,13 @@ FUN_00631e00(void *this,uint param_1,int param_2,undefined4 *param_3,undefined4 
   int iVar5;
   bool bVar6;
   undefined4 local_8;
-  
+
   iVar5 = *(int *)((int)this + 0x69);
   local_8 = 0;
   uVar2 = 0;
   if (iVar5 != 0) {
     uVar1 = *(uint *)(iVar5 + 0xc);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((param_1 < uVar1) &&
          (piVar3 = (int *)(*(int *)(iVar5 + 8) * param_1 + *(int *)(iVar5 + 0x1c)),
          piVar3 != (int *)0x0)) && (piVar3[2] == param_2)) &&

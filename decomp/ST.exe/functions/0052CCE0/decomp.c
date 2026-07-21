@@ -99,7 +99,7 @@ void __cdecl FUN_0052cce0(int param_1,undefined *param_2,BYTE param_3)
   undefined1 local_1f;
   undefined1 local_1e;
   byte local_1c [24];
-  
+
   pLVar6 = &local_b0;
   for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
     pLVar6->lfHeight = 0;

@@ -12,7 +12,7 @@ void __cdecl FUN_006d0200(int *param_1,uint param_2,byte *param_3)
   size_t *psVar8;
   char local_204 [511];
   undefined1 local_5;
-  
+
   if (param_2 < (uint)param_1[0x68]) {
     puVar2 = *(uint **)(param_1[0x6c] + param_2 * 4);
     if ((*puVar2 & 0xc000) == 0xc000) {

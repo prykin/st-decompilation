@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldboat.cpp
@@ -18,8 +20,6 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   int iVar8;
   uint uVar9;
   undefined4 uVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar11;
   bool bVar12;
   int *piVar13;
@@ -47,7 +47,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   int local_10;
   int local_c;
   uint local_8;
-  
+
   puVar11 = local_74;
   local_1c = this;
   for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -61,7 +61,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
@@ -71,9 +71,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
       RaiseInternalException(iVar8,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x3f);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar8 = 4;
   g_prodPanel_0080167C = (ProdPanelTy *)local_1c;
@@ -168,6 +166,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
       auStack_2b0[uVar9 * 0x1c + 1] = uVar10;
 switchD_004eed0b_default:
       bVar2 = (char)local_8 + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar2);
       uVar9 = (uint)bVar2;
     } while ((int)uVar9 < local_10);
@@ -184,6 +183,7 @@ switchD_004eed0b_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00 + 1,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;

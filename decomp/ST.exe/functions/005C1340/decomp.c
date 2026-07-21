@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
@@ -15,15 +17,13 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   int iVar7;
   ccFntTy *this_00;
   ccFntTy *this_01;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar8;
   undefined4 local_470 [256];
   InternalExceptionFrame local_70;
   undefined4 local_2c [8];
   MReportTy *local_c;
   char local_5;
-  
+
   if (this->field_0066 == '\x01') {
     local_5 = this->field_006A + '\x01';
   }
@@ -33,7 +33,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   pMVar2 = local_c;
   if (iVar3 == 0) {
     puVar8 = &local_c->field_005D;
@@ -90,9 +90,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c,0,iVar3,&DAT_007a4ccc,
                              s_MReportTy__SetCtrl_007cd05c);
   if (iVar7 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c);
   return;

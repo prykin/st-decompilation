@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -12,25 +14,29 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   int iVar4;
   int iVar5;
   cMf32 *this_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_04;
   cMf32 *pcVar6;
-  undefined4 unaff_ESI;
   undefined4 *this_01;
-  void *unaff_EDI;
   InternalExceptionFrame local_94;
   InternalExceptionFrame local_50;
   int *local_c;
   STAppC *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_1189 != (LPVOID)0x0) {
@@ -77,26 +83,32 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     pcVar6 = (cMf32 *)0x0;
     if (g_cMf32_00806760 != (cMf32 *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar6 = extraout_ECX;
       if (DAT_00806764 != 0) {
         FUN_0070a300(&DAT_00806764);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pcVar6 = extraout_ECX_00;
       }
       cMf32::delete(pcVar6,g_cMf32_00806760);
       g_cMf32_00806760 = (cMf32 *)0x0;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar6 = extraout_ECX_01;
     }
     if (DAT_00806784 != 0) {
       FUN_0070a300(&DAT_00806784);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar6 = extraout_ECX_02;
     }
     if (g_cMf32_00806780 != (cMf32 *)0x0) {
       cMf32::delete(pcVar6,g_cMf32_00806780);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar6 = extraout_ECX_03;
     }
     g_cMf32_00806780 = (cMf32 *)0x0;
     if (g_cMf32_00806798 != (cMf32 *)0x0) {
       cMf32::delete(pcVar6,g_cMf32_00806798);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar6 = extraout_ECX_04;
     }
     g_cMf32_00806798 = (cMf32 *)0x0;
@@ -133,7 +145,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
     local_c = this_01;
-    iVar4 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
     piVar2 = local_c;
     if ((iVar4 == 0) && (*local_c != 0)) {
       FUN_006b81d0((undefined4 *)local_c[1]);
@@ -165,8 +177,6 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     RaiseInternalException(iVar4,0,s_E____titans_tapp_cpp_007ca0c8,0x31d);
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

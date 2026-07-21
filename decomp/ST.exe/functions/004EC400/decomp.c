@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  
+
   if (param_1->field_04D0 == 4) {
     if (param_1->field_0514 + 1 <= (uint)PTR_00802a38->field_00E4) {
       iVar3 = param_1->field_0504 + 3;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -16,9 +18,7 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
   uint *puVar7;
   int iVar8;
   int iVar9;
-  undefined4 unaff_ESI;
   byte *pbVar10;
-  void *unaff_EDI;
   ccFntTy **ppcVar11;
   bool bVar12;
   ccFntTy *local_8dc [8];
@@ -35,7 +35,7 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
   int local_8;
-  
+
   pAVar3 = this->field_1B0C;
   if (pAVar3 != (AnonPointee_FSGSTy_1B0C *)0x0) {
     pbVar10 = &DAT_00807e1d;
@@ -64,7 +64,7 @@ LAB_0059d77b:
 LAB_0059d780:
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    iVar9 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar9 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar9 == 0) {
       pAVar4 = (AnonPointee_FSGSTy_1AF8 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00 = local_c;
@@ -141,9 +141,7 @@ LAB_0059d780:
     iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x69c,0,iVar9,&DAT_007a4ccc
                                ,s_FSGSTy__InfoCtrls_007cc33c);
     if (iVar8 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar9,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x69c);
   }

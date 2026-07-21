@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -13,13 +15,11 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
   int iVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     uVar5 = param_1->field_0014;
     if (uVar5 == 0) {
@@ -48,9 +48,7 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
   iVar3 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x1b9,0,errorCode,
                              &DAT_007a4ccc,s_MTaskTy__PrepareTSurf_007cdad4);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Start_task_obj_cpp_007cd994,0x1b9);
   return;

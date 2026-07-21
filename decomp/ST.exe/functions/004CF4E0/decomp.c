@@ -5,7 +5,7 @@ FUN_004cf4e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   int iVar1;
-  
+
   if (*(int *)((int)this + 0x361) != 0) {
     thunk_FUN_004c90c0(this);
   }

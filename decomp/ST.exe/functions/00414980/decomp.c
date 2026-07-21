@@ -9,7 +9,7 @@ void FUN_00414980(int param_1)
 
 {
   uint uVar1;
-  
+
   Library::MSVCRT::thunk_FUN_006a49c0(DAT_007f4d50,2);
   uVar1 = param_1 * 4 + 8;
   DAT_007f4d50 = (undefined4 *)

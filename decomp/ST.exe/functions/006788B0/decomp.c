@@ -9,7 +9,7 @@ undefined4 * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
   thunk_FUN_0064cc90(&this->vtable_at_1c);
   this->vtable = &AiPlrClassTyVTable;

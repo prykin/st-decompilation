@@ -8,7 +8,7 @@ FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint p
   undefined4 uVar1;
   ushort *puVar2;
   uint local_8;
-  
+
   uVar1 = thunk_FUN_00635da0(param_3,param_4,param_5);
   if ((((char)uVar1 != '\0') &&
       (puVar2 = Library::Ourlib::MFRLOAD::mfRLoad

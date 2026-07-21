@@ -6,12 +6,13 @@ undefined4 __thiscall FUN_005f9cb0(void *this,int param_1,int *param_2,int *para
   int iVar2;
   int iVar3;
   int iVar4;
-  
+
   iVar2 = *(int *)((int)this + 0x2e6);
   if (iVar2 == 0) {
     return 0xffffffff;
   }
   if (*(short *)(iVar2 + 0x32) == -1) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = *(int *)(iVar2 + 0x60) - (param_1 - *(int *)(iVar2 + 0x68)) * *(int *)(iVar2 + 100);
     if (iVar4 < 1) {
       param_1 = 3;

@@ -4,7 +4,7 @@ void FUN_006d03e0(HDC param_1,int param_2,int param_3,BITMAPINFO *param_4,void *
 
 {
   UINT cLines;
-  
+
   if (param_5 == (void *)0x0) {
     param_5 = (void *)FUN_006b4fa0((int)param_4);
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_shark.cpp
@@ -22,7 +24,7 @@ STSharkC::CreateShark
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar4 = local_38;
   for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
@@ -42,9 +44,7 @@ STSharkC::CreateShark
     iVar3 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x4bb,0,0,&DAT_007a4ccc,
                                s_STSharkC__CreateShark___Bad_para_007cbbf4);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar2 = (*pcVar1)();
-      return uVar2;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     param_1 = 0;
     param_2 = 0;

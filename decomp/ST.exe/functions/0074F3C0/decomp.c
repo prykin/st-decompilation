@@ -15,7 +15,7 @@ FUN_0074f3c0(int *param_1,uint *param_2,uint param_3,uint *param_4,
   undefined4 uVar5;
   uint uVar6;
   LPCRITICAL_SECTION p_Var7;
-  
+
   p_Var7 = (LPCRITICAL_SECTION)((uint)lpCriticalSection & 3);
   uVar6 = param_3 & 3;
   if (lpCriticalSection != (LPCRITICAL_SECTION)0x0) {
@@ -69,9 +69,11 @@ cf_common_exit_0074F489:
   LeaveCriticalSection(lpCriticalSection_00);
   uVar5 = 0;
   if (p_Var7 != (LPCRITICAL_SECTION)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar5 = (**(code **)(*param_1 + 0x54))();
   }
   if (uVar6 != 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar5 = (**(code **)(*param_1 + 0x50))();
   }
   return uVar5;

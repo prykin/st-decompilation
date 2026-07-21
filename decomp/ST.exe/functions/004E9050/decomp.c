@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_004e9050(TLOBaseTy *param_1)
   uint uVar2;
   int iVar3;
   int iVar4;
-  
+
   if (param_1->field_05AC != 0x37) goto LAB_004e914a;
   uVar2 = GetPlayerRaceId(param_1->field_0x24);
   if ((uVar2 & 0xff) == 1) {

@@ -4,7 +4,7 @@ void __fastcall FUN_0074d423(AnonShape_0074D423_CE3F4999 *param_1)
 {
   HoloTy *pHVar1;
   AnonShape_0074D423_CE3F4999 *local_8;
-  
+
   if (param_1->field_0008 != (HANDLE)0x0) {
     local_8 = param_1;
     WaitForSingleObject(param_1->field_0008,0xffffffff);

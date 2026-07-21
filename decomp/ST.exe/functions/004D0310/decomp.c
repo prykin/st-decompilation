@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_004d0310(AnonShape_004D0310_B8EE97FF *param_1)
   uint uVar9;
   CHAR local_48 [64];
   uint local_8;
-  
+
   pCVar6 = local_48;
   for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
     pCVar6[0] = '\0';

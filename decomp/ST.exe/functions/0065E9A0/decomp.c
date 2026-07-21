@@ -12,7 +12,7 @@ FUN_0065e9a0(void *this,uint param_1,short *param_2,uint param_3,uint param_4,by
   void *local_10;
   undefined4 local_c;
   uint *local_8;
-  
+
   psVar1 = param_2;
   local_c = 0;
   local_8 = (uint *)0x0;
@@ -34,9 +34,11 @@ FUN_0065e9a0(void *this,uint param_1,short *param_2,uint param_3,uint param_4,by
     local_8 = Library::DKW::LIB::FUN_006aac10((uint)uVar2 * 0x2c);
     DAT_00811900 = 0;
     if ((char)param_6 == '\b') {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_6 = CONCAT31(param_6._1_3_,(char)uVar4);
     }
     else if (((char)param_6 < '\0') || ('\b' < (char)param_6)) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_6 = CONCAT31(param_6._1_3_,0xff);
     }
     _EnumPlObj(uVar4,param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,&LAB_0040559c,local_8,

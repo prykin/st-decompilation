@@ -8,7 +8,7 @@ int __fastcall FUN_007217e0(AnonShape_007217E0_1A4AB243 *param_1)
   uint uVar4;
   int iVar5;
   char *pcVar6;
-  
+
   iVar5 = 0;
   param_1->field_0138->field_0004 = 0;
   do {

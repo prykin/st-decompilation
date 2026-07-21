@@ -18,7 +18,7 @@ void __thiscall FUN_006e8ea0(void *this,AnonShape_006E8EA0_96B71903 *param_1)
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   local_30 = *(int *)((int)this + 0x30);
   local_2c = *(int *)((int)this + 0x34);
   local_28 = *(int *)((int)this + 0x38) - local_30;

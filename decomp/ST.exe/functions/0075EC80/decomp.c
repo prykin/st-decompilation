@@ -33,7 +33,7 @@ void FUN_0075ec80(AnonShape_0075EC80_53406127 *param_1,int param_2,int *param_3,
   int local_14;
   undefined1 *local_c;
   int local_8;
-  
+
   iVar1 = param_1->field_01BA;
   iVar2 = param_1->field_0132;
   iVar3 = *(int *)(iVar1 + 0x18);
@@ -70,10 +70,13 @@ void FUN_0075ec80(AnonShape_0075EC80_53406127 *param_1,int param_2,int *param_3,
       iVar19 = 0;
       iVar18 = 0;
       local_1c = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_1c._0_2_ = 0;
       local_18 = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_18._0_2_ = 0;
       local_14 = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14._0_2_ = 0;
       for (iVar11 = iVar5; iVar11 != 0; iVar11 = iVar11 + -1) {
         uVar13 = (uint)*(byte *)(*(int *)(iVar4 + (psVar10[local_8] + 8 + iVar18 >> 4) * 4) +

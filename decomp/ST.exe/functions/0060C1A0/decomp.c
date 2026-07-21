@@ -9,7 +9,7 @@ int __thiscall FUN_0060c1a0(void *this,undefined4 *param_1)
   undefined4 *puVar5;
   undefined4 *puVar6;
   bool bVar7;
-  
+
   iVar1 = 0;
   if (param_1 != (undefined4 *)0x0) {
     if (this == (void *)0x0) {
@@ -55,6 +55,7 @@ int __thiscall FUN_0060c1a0(void *this,undefined4 *param_1)
         }
       }
       iVar1 = 0x10a;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar2 = (int *)((int)param_1 + *(int *)((int)param_1 + 0x83) + 0x8b);
     }
     if ((*(int *)((int)this + 0x23c) != 0) && (*(int *)((int)this + 0x244) != 0)) {

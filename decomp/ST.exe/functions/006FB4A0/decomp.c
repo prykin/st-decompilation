@@ -25,7 +25,7 @@ void FUN_006fb4a0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   uint local_10;
   byte *local_c;
   ushort *local_8;
-  
+
   _DAT_00857000 = 1;
 joined_r0x006fb4b7:
   param_10 = param_10 + -1;

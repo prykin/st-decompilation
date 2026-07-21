@@ -10,7 +10,7 @@ int __thiscall FUN_0058f1e0(void *this,int param_1)
   int iVar6;
   uint uVar7;
   uint uVar8;
-  
+
   sVar5 = *(short *)((int)this + 0x47);
   if ((*(int *)((int)this + 0x27f) <= (int)sVar5) && ((int)sVar5 <= *(int *)((int)this + 0x287))) {
     sVar1 = *(short *)((int)this + 0x49);

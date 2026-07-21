@@ -14,7 +14,7 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
   byte *pbVar5;
   int iVar6;
   bool bVar7;
-  
+
   if ((param_1 == 0) || (param_2 == (byte *)0x0)) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x38a);
@@ -25,6 +25,7 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
     do {
       pbVar5 = param_2;
       if (iVar6 < iVar2) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pbVar3 = *(byte **)(*(int *)(param_1 + 0x14) + iVar6 * 4);
       }
       else {

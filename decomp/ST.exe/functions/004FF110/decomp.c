@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
@@ -14,8 +16,6 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   int iVar5;
   char *pcVar6;
   ushort *puVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar8;
   uint uVar9;
   int iVar10;
@@ -26,18 +26,19 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   CPanelTy *local_10;
   uint local_c;
   undefined1 *local_8;
-  
+
   if (param_1 == 0) {
     local_8 = &this->field_0C51;
   }
   else {
     local_8 = &this->field_0B63;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31(local_c._1_3_,param_1 == 0);
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   puVar3 = local_8;
   uVar2 = local_c;
   this_00 = local_10;
@@ -69,6 +70,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
       (&this_00->field_02EA)[uVar8] = 0;
       thunk_FUN_004f1890(this_00,(byte)uVar2);
       bVar4 = (-(param_1 != 0) & 0xf8U) + 8;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_14 = CONCAT31(uStack_13,bVar4);
       if (bVar4 < 0xb) {
         uVar2 = (uint)bVar4;
@@ -92,9 +94,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3,0,iVar5,&DAT_007a4ccc,
                               s_CPanelTy__SwitchTV_007c2484);
   if (iVar10 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3);
   return;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
@@ -14,9 +16,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   int iVar2;
   uint uVar3;
   int iVar4;
-  undefined4 unaff_ESI;
   uint *puVar5;
-  void *unaff_EDI;
   int *piVar6;
   uint *puVar7;
   bool bVar8;
@@ -35,10 +35,10 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   undefined4 local_14;
   undefined4 local_10;
   undefined4 local_c;
-  
+
   local_b4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b4;
-  iVar2 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_b4.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0xe7,0,iVar2,&DAT_007a4ccc,
@@ -47,9 +47,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
       RaiseInternalException(iVar2,0,s_E____titans_Andrey_support_cpp_007c7b2c,0xe7);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar5 = local_50;
   for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -104,7 +102,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
           puVar7 = puVar7 + 1;
         } while (bVar8);
         if (bVar8) {
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)DAT_008026f0,uVar3);
+          FUN_006b0c70(DAT_008026f0,uVar3);
           if (DAT_008026f0->count != 0) {
             g_currentExceptionFrame = local_b4.previous;
             return;

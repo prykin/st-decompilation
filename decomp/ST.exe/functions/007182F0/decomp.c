@@ -5,7 +5,7 @@ float10 __cdecl FUN_007182f0(float param_1,float param_2,float param_3)
 
 {
   float10 fVar1;
-  
+
   if (param_1 < _DAT_0079034c) {
     param_1 = param_1 + _DAT_0079e250;
   }

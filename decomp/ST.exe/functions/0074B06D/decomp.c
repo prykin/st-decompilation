@@ -17,7 +17,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   int local_10;
   int local_c;
   uint local_8;
-  
+
   puVar2 = param_2;
   uVar3 = param_2[1];
   uVar1 = *param_2;
@@ -30,6 +30,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   }
   *(uint *)((int)this + 0x100) = *param_2;
   *(uint *)((int)this + 0x104) = param_2[1];
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(**(int **)((int)this + 0x18) + 0xc))(*(int **)((int)this + 0x18),&local_18);
   bVar9 = local_18 < *(uint *)((int)this + 0x20);
   local_18 = local_18 - *(uint *)((int)this + 0x20);
@@ -45,6 +46,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   else {
     param_2 = (uint *)0xe2329b00;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar4 = (**(code **)(*(int *)this + 0xc0))(param_2,(int)param_2 >> 0x1f,local_18,local_14);
   local_8 = (uint)(iVar4 == 0);
   *(uint *)((int)this + 0xd4) = local_8;
@@ -54,6 +56,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
     *(int *)((int)this + 0xf4) = iVar4;
     *(int *)((int)this + 0xf8) = iVar4;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   if (((local_8 != 0) && (iVar5 = (**(code **)(*param_1 + 0x3c))(param_1), iVar5 == 0)) ||
      (local_8 = 0, *(int *)((int)this + 0xd0) == -1)) {
     local_8 = 1;
@@ -79,6 +82,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   local_10 = *(int *)((int)this + 0xf0) * 3;
   local_c = (local_10 + iVar5) / 4;
   piVar6 = (int *)(local_18 - *(uint *)((int)this + 0x120));
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar5 = (local_14 - *(int *)((int)this + 0x124)) - (uint)(local_18 < *(uint *)((int)this + 0x120))
   ;
   local_20 = piVar6;

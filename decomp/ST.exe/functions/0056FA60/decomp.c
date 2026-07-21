@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -25,11 +27,9 @@ undefined4 __thiscall STAppC::GetMessage(STAppC *this,int param_1)
   uint uVar16;
   int iVar17;
   STAppCVTable *pSVar18;
-  undefined4 unaff_ESI;
   byte *pbVar19;
   char *pcVar20;
   undefined4 *puVar21;
-  void *unaff_EDI;
   uint uVar22;
   byte *pbVar23;
   undefined4 *puVar24;
@@ -64,11 +64,11 @@ undefined4 __thiscall STAppC::GetMessage(STAppC *this,int param_1)
   int local_10;
   DArrayTy *local_c;
   byte *local_8;
-  
+
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_18 = this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   pSVar7 = local_18;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a4.previous;
@@ -78,12 +78,11 @@ undefined4 __thiscall STAppC::GetMessage(STAppC *this,int param_1)
       RaiseInternalException(iVar8,0,s_E____titans_tapp_cpp_007ca0c8,0x891);
       return 0xffff;
     }
-    pcVar5 = (code *)swi(3);
-    uVar15 = (*pcVar5)();
-    return uVar15;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   FUN_006e5150(local_18,(AnonShape_006E5150_51076593 *)param_1);
   pCVar6 = PTR_00802a30;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar22 = *(uint *)(param_1 + 0x10);
   if (uVar22 < 0x6120) {
     if (uVar22 == 0x611f) {
@@ -103,17 +102,22 @@ switchD_0056fad2_caseD_6105:
       else {
         AppClassTy::AddSystem((AppClassTy *)pSVar7,(int *)PTR_0081176c,0);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(param_1 + 0x10) != 0x6122) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         PTR_0081176c->field_02EB = (*(int *)(param_1 + 0x14) == 2) + '\x01';
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar15 = *(undefined4 *)(param_1 + 0x18);
       piVar14 = local_44;
       for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
         *piVar14 = 0;
         piVar14 = piVar14 + 1;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_44[5] = *(undefined4 *)(param_1 + 0x14);
       local_44[3] = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_44[4] = *(undefined4 *)(param_1 + 0x10);
       local_44[2] = 0x200;
       local_44[6] = uVar15;
@@ -315,10 +319,12 @@ switchD_0056fad2_caseD_6102:
         piVar14 = piVar14 + 1;
       }
       local_44[3] = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_44[4] = *(int *)(param_1 + 0x10);
       local_44[2] = 0x200;
       if (local_44[4] != 0x6103) {
         if (local_44[4] == 0x6104) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_44[6] = *(undefined4 *)(param_1 + 0x18);
         }
         else if (local_44[4] != 0x610a) {
@@ -327,6 +333,7 @@ switchD_0056fad2_caseD_6102:
           return 0;
         }
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_44[5] = *(undefined4 *)(param_1 + 0x14);
       FUN_006e3db0((int)local_44);
       g_currentExceptionFrame = local_a4.previous;
@@ -336,7 +343,9 @@ switchD_0056fad2_caseD_6102:
     case 0x6106:
       bVar3 = pSVar7->field_112D;
       (&pSVar7->field_0x11a7)[(uint)bVar3 * 0x51] = 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pSVar7->field_112D = *(undefined1 *)(param_1 + 0x16);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pSVar7->field_112E = *(undefined1 *)(param_1 + 0x14);
       (&pSVar7->field_0x11a7)[(uint)(byte)pSVar7->field_112D * 0x51] = 0;
       if (PTR_00802a38 != (STPlaySystemC *)0x0) {
@@ -380,6 +389,7 @@ switchD_0056fad2_caseD_6102:
         }
       }
       CreateInterSystem();
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((PTR_0081163c != (AnonShape_00577690_10255A81 *)0x0) && (*(int *)(param_1 + 0x14) == 0)) {
         thunk_FUN_00577690(PTR_0081163c);
         g_currentExceptionFrame = local_a4.previous;
@@ -537,7 +547,7 @@ switchD_0056fad2_caseD_6102:
       Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
       local_14c.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_14c;
-      local_4c = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      local_4c = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0);
       if (local_4c != 0) {
         g_currentExceptionFrame = local_14c.previous;
         if (local_10 != 0) {
@@ -596,7 +606,7 @@ switchD_0056fad2_caseD_6102:
           local_108.previous = g_currentExceptionFrame;
           DAT_00806738 = iVar8;
           g_currentExceptionFrame = &local_108;
-          iVar17 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar17 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0);
           iVar8 = local_1c;
           if (iVar17 == 0) {
             DVar10 = Library::DKW::DDX::FUN_006b9b40
@@ -629,6 +639,7 @@ LAB_00570645:
         }
       }
       iVar8 = local_10;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((DAT_0080350c._2_1_ == '\x01') ||
          ((DAT_0080350c._2_1_ == '\x02' && (DAT_0080351f == '\x01')))) {
         local_8 = (byte *)((uint)local_8 | 4);
@@ -639,6 +650,7 @@ LAB_00570645:
       else {
         Library::DKW::DV::FUN_006c2ae0(g_int_008075A4,&DAT_00803408,(uint)local_8);
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (DAT_0080350c._2_1_ == '\x01') {
         iVar17 = 0;
         iVar26 = 0;
@@ -650,6 +662,7 @@ LAB_00570645:
         }
       }
       else {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (DAT_0080350c._2_1_ != '\x02') goto cf_common_exit_0057073B;
         iVar17 = ram0x0080350f;
         iVar26 = DAT_00803513;
@@ -692,6 +705,7 @@ cf_common_exit_0057073B:
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar8 = *(int *)(param_1 + 0x14);
     local_10 = 1;
     if (iVar8 == 1) {
@@ -773,8 +787,10 @@ cf_common_exit_0057073B:
                                      (int *)0x0,(undefined *)0x0);
         if ((local_50 == 0x40) && (local_c != (DArrayTy *)0x0)) {
           uVar22 = local_c->iteratorIndex;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(param_1 + 0x18) == 0) {
             if (uVar22 < local_c->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar22) (runtime stride) */
               pcVar11 = (char *)(local_c->elementSize * uVar22 + (int)local_c->data);
               local_c->iteratorIndex = uVar22 + 1;
             }
@@ -796,6 +812,7 @@ cf_common_exit_0057073B:
           }
           else {
             if (uVar22 < local_c->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar22) (runtime stride) */
               local_8 = (byte *)(local_c->elementSize * uVar22 + (int)local_c->data);
               local_c->iteratorIndex = uVar22 + 1;
             }
@@ -843,6 +860,7 @@ LAB_00570ab6:
                 else {
                   uVar22 = local_c->iteratorIndex;
                   if (uVar22 < local_c->count) {
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar22) (runtime stride) */
                     local_8 = (byte *)(local_c->elementSize * uVar22 + (int)local_c->data);
                     local_c->iteratorIndex = uVar22 + 1;
                   }

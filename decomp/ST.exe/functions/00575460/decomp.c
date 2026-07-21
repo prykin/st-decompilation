@@ -11,7 +11,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
   int iVar5;
   undefined4 *puVar6;
   int local_8;
-  
+
   pAVar4 = param_1;
   pHVar3 = DAT_0080760c;
   if (DAT_0080760c != (HoloTy *)0x0) {
@@ -45,6 +45,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
           do {
             uVar2 = array->iteratorIndex;
             if (array->count <= uVar2) goto LAB_0057554f;
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
             puVar6 = (undefined4 *)(array->elementSize * uVar2 + (int)array->data);
             array->iteratorIndex = uVar2 + 1;
             if (puVar6 == (undefined4 *)0x0) goto LAB_0057554f;

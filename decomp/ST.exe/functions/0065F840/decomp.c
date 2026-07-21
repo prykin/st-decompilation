@@ -9,20 +9,18 @@ uint * FUN_0065f840(AnonNested_005F5B80_0169_794156D7 *param_1,uint param_2,int 
   DArrayTy *pDVar2;
   uint uVar3;
   undefined4 *puVar4;
-  undefined4 unaff_ESI;
   uint uVar5;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined2 local_c;
   DArrayTy *local_8;
-  
+
   local_8 = (DArrayTy *)0x0;
   if ((((param_1 != (AnonNested_005F5B80_0169_794156D7 *)0x0) && (param_1->field_000C != 0)) &&
       ((int)param_2 < (int)param_1->field_000C)) && (0 < param_3)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (iVar1 != 0) {
       g_currentExceptionFrame = local_54.previous;
       if (local_8 != (DArrayTy *)0x0) {

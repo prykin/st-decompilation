@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_006943d0(void *this,int param_1,byte *param_2)
   int iVar2;
   byte *pbVar3;
   bool bVar4;
-  
+
   iVar2 = thunk_FUN_00693e60(this,param_1);
   if (iVar2 != 0) {
     pbVar3 = (byte *)(iVar2 + 1);

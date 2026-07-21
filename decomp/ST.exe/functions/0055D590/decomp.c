@@ -13,7 +13,7 @@ byte * FUN_0055d590(char *text,uint param_2,byte *param_3)
   byte *pbVar5;
   uint uVar6;
   bool bVar7;
-  
+
   if ((param_3 == (byte *)0x0) ||
      (uVar6 = 0, pbVar2 = (byte *)text, pbVar5 = param_3, pbVar4 = param_3, param_2 == 0)) {
     return (byte *)0x0;

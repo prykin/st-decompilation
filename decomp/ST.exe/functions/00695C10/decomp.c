@@ -13,7 +13,7 @@ FUN_00695c10(void *this,undefined4 param_1,undefined4 param_2,int param_3,undefi
   undefined4 local_1f;
   undefined4 local_1b;
   undefined4 local_17;
-  
+
   puVar4 = &local_24;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;

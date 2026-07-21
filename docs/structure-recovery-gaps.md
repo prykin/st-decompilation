@@ -1,8 +1,52 @@
 # Structure-recovery gap inventory
 
-Snapshot: current `decomp/ST.exe/functions/*/decomp.c` corpus, 5,630 decompiled
+Snapshot: current `decomp/ST.exe/functions/*/decomp.c` corpus, 5,632 decompiled
 functions. Counts below are diagnostic regex matches, not mutually exclusive
 objects: one expression can belong to several rows.
+
+The exporter now turns this static inventory into an address-stable per-function
+catalog at `decomp/ST.exe/pseudocode_idioms.jsonl`. See
+[`pseudocode-normalization.md`](pseudocode-normalization.md) for the rewrite
+boundary and concrete before/after forms.
+
+## Current post-ABI snapshot
+
+The latest corpus contains 5,632 function bodies. `pseudocode_idioms.jsonl`
+records 4,174 function/kind rows across 2,842 bodies (50.5%); kinds overlap:
+
+| Remaining presentation class | Functions | Occurrences | Main next step |
+| --- | ---: | ---: | --- |
+| Raw pointer + constant offset | 1,227 | 3,734 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
+| Packed/piece/CONCAT value | 525 | 2,661 | Use discriminator-local union facets, bit extraction, or explicit unaligned access. |
+| Raw indirect call | 864 | 2,173 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
+| Residual call-output artifact | 208 | 1,499 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
+| Terminal debug trap | 968 | 1,277 | Already normalized to standalone noreturn `STDebugBreak()`. |
+| Residual live-in register | 195 | 775 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
+| Runtime-stride DArray indexing | 133 | 296 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
+| Flattened player record array | 54 | 94 | Recompose only after exact base, stride, field, and index proof. |
+
+The ABI pass applied 140 closed-evidence repairs and reduced the old widespread
+`unaff_*` family substantially. The remaining work is no longer one missing
+global type database. It is concentrated in semantic ownership and optimized
+per-use representation:
+
+- 4,581 of 5,632 bodies still have a default Ghidra function symbol, and 4,625
+  still use a `FUN_`/`sub_`-style qualified name;
+- placeholder `field_XXXX` forms remain in 2,088 bodies;
+- 878 bodies still contain at least one `goto`;
+- 178 physical vtable candidates are known, but only 57 have an active semantic
+  owner; eight owner conflicts remain;
+- virtual-method analysis leaves 207 placeholder names and 91 multi-owner
+  targets unresolved;
+- indirect-call application currently proves only a small subset of the full
+  audit; roughly half the raw-call functions lie in the late runtime address
+  range and should be checked against library classification before game types
+  are invented for them.
+
+Before treating this snapshot as a fixed point, service the 12 automatic rows
+currently reported as `repair_auto_apply` in `prototype_summary.txt`, rerun the
+prototype analyzer, and apply ordinary rows only after the repair count reaches
+zero.
 
 | Raw form / cause | Matches | Functions | General treatment |
 | --- | ---: | ---: | --- |

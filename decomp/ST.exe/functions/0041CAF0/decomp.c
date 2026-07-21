@@ -1,5 +1,13 @@
 
-bool __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (11), none consume AL/AX, and every RET path defines full EAX; sites=00480600 @ 00480689
+   -> PUSH PUSH EAX | 004CBAD0 @ 004CBBA4 -> TEST TEST EAX,EAX | 004D5470 @ 004D553E -> TEST TEST
+   EAX,EAX | 00579350 @ 00579440 -> CMP CMP EAX,0x1 | 0057CD70 @ 0057CDB8 -> CMP CMP EAX,0x1 |
+   005825C0 @ 0058260A -> CMP CMP EAX,0x1 | 00585020 @ 00585116 -> CMP CMP EAX,0x1 | 00586AF0 @
+   00586BED -> CMP CMP EAX,0x1 | 0058A9E0 @ 0058AAD6 -> CMP CMP EAX,0x1 | 0058BD90 @ 0058BE98 -> CMP
+   CMP EAX,0x1 | 0058E570 @ 0058E5D0 -> CMP CMP EAX,0x1 */
+
+int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
 
 {
   int iVar1;
@@ -7,7 +15,7 @@ bool __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   if (param_1->field_002C == 0) {
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar5 = (int)param_1->field_005D;
@@ -21,18 +29,18 @@ bool __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           iVar1 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar4) * 2;
           if ((iVar1 != 0) && (*(char *)(iVar1 + 1) != '\0')) {
             if (7 < param_1->field_0024) {
-              return true;
+              return 1;
             }
             if (*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) == 0) {
-              return true;
+              return 1;
             }
             if (*(char *)(*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) +
                           iVar5 + iVar4) == '\0') {
-              return true;
+              return 1;
             }
           }
         }
-        return false;
+        return 0;
       }
     }
   }
@@ -48,14 +56,14 @@ bool __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
         iVar1 = g_visibleClass_00802A88->field_0038 + (iVar2 + iVar4) * 2;
         if ((iVar1 != 0) && (*(char *)(iVar1 + 1) != '\0')) {
           if (7 < param_1->field_0024) {
-            return true;
+            return 1;
           }
           if (*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) == 0) {
-            return true;
+            return 1;
           }
           if (*(char *)(*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) +
                         iVar2 + iVar4) == '\0') {
-            return true;
+            return 1;
           }
         }
       }
@@ -68,14 +76,14 @@ bool __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
         iVar2 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar1) * 2;
         if ((iVar2 != 0) && (*(char *)(iVar2 + 1) != '\0')) {
           if (7 < param_1->field_0024) {
-            return true;
+            return 1;
           }
           if (*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) == 0) {
-            return true;
+            return 1;
           }
           if (*(char *)(*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) +
                         iVar5 + iVar1) == '\0') {
-            return true;
+            return 1;
           }
         }
       }
@@ -87,22 +95,22 @@ bool __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
         iVar2 = g_visibleClass_00802A88->field_0038 + (iVar3 + iVar4) * 2;
         if ((iVar2 != 0) && (*(char *)(iVar2 + 1) != '\0')) {
           if (7 < param_1->field_0024) {
-            return true;
+            return 1;
           }
           if (*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) == 0) {
-            return true;
+            return 1;
           }
           if (*(char *)(*(int *)(&g_visibleClass_00802A88->field_0x54 + param_1->field_0024 * 4) +
                         iVar3 + iVar4) == '\0') {
-            return true;
+            return 1;
           }
         }
       }
       iVar5 = thunk_FUN_0041cda0(g_visibleClass_00802A88,iVar1,iVar5,(int)param_1->field_005F,
                                  param_1->field_0024);
-      return iVar5 != 0;
+      return (uint)(iVar5 != 0);
     }
   }
-  return true;
+  return 1;
 }
 

@@ -7,7 +7,7 @@ void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
   undefined4 *puVar1;
   STT3DSprC *this;
   int iVar2;
-  
+
   puVar1 = (undefined4 *)param_1->field_02E6;
   if (puVar1 != (undefined4 *)0x0) {
     this = (STT3DSprC *)*puVar1;

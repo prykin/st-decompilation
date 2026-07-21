@@ -7,10 +7,11 @@ undefined4 __fastcall FUN_004d9fe0(TLOBaseTy *param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar1 = param_1->field_04D0;
   if ((iVar1 == 3) || (iVar1 == 5)) {
     iVar1 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (iVar1 != *(int *)(param_1->field_01F5 + 0x1c4)) {
       return 0;
     }

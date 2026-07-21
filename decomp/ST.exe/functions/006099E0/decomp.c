@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_field.cpp
@@ -11,8 +13,6 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
   int iVar3;
   DArrayTy *pDVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   uint uVar7;
   undefined4 local_90 [15];
@@ -20,12 +20,12 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
   InternalExceptionFrame local_50;
   STFieldC *local_c;
   uint local_8;
-  
+
   local_8 = 0xffffffff;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -43,9 +43,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
       RaiseInternalException(iVar3,0,s_E____titans_nick_to_field_cpp_007cf850,0x1e7);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar7 = (*pcVar1)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c->field_0234 == (DArrayTy *)0x0) {
     pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1,0x40,10);

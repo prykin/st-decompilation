@@ -18,7 +18,7 @@ int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,in
   int local_18;
   int local_14;
   int local_8;
-  
+
   local_8 = 0;
   local_28 = 0;
   iVar8 = 0;
@@ -27,6 +27,7 @@ int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,in
     while (iVar8 = local_8, 0 < iVar9) {
       uVar5 = Library::MSVCRT::FUN_0072e6c0();
       local_18 = (int)uVar5 % param_2;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (param_6 < *(int *)(local_18 * 0x40 + 0x2c + param_1)) {
         iVar8 = local_18 * 0x40;
         bVar4 = true;

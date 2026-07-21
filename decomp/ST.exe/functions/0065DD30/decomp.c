@@ -23,14 +23,16 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
   short local_a;
   short local_8;
   short local_6;
-  
+
   iVar9 = 0;
   local_10 = 0;
   local_18 = param_1;
   local_1c = (DArrayTy *)thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)param_1,param_2);
   if (local_1c != (DArrayTy *)0x0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     cVar2 = *(char *)(param_1 + 0x81);
     if ((cVar2 < '\0') || ('\a' < cVar2)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       cVar2 = (char)*(undefined4 *)(param_1 + 0x24);
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
@@ -43,15 +45,16 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
     if (0 < (int)uVar4) {
       do {
         if (local_14 < uVar4) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_1c, local_14) (runtime stride) */
           puVar3 = (undefined2 *)(local_1c->elementSize * local_14 + (int)local_1c->data);
         }
         else {
           puVar3 = (undefined2 *)0x0;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this = (STFishC *)
                STAllPlayersC::GetObjPtr
-                         (g_sTAllPlayers_007FA174,
-                          CONCAT31((int3)(local_14 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                         (g_sTAllPlayers_007FA174,*(char *)(param_1 + 0x24),
                           CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
         if ((this == (STFishC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(), iVar9 == 0))
         goto cf_common_join_0065DF91;

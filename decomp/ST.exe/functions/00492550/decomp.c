@@ -8,7 +8,7 @@ FUN_00492550(void *this,short param_1,short param_2,short param_3,undefined2 *pa
   int iVar2;
   int iVar3;
   int iVar4;
-  
+
   iVar1 = (int)param_1;
   iVar4 = iVar1 + -1;
   do {

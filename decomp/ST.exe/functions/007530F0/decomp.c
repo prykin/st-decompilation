@@ -6,7 +6,7 @@ undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
   int iVar2;
   undefined4 *puVar3;
   undefined4 *puVar4;
-  
+
   if (param_3 < 0x28) {
     param_3 = 0x28;
   }

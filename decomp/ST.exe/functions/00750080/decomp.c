@@ -7,7 +7,7 @@ FUN_00750080(void *this,undefined4 *param_1,int param_2,undefined8 param_3,int p
   void *this_00;
   int *piVar1;
   int *local_8;
-  
+
   local_8 = this;
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   local_8 = (int *)0x0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
@@ -18,10 +20,8 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   byte *pbVar5;
   int iVar6;
   DArrayTy *pDVar7;
-  undefined4 unaff_ESI;
   uint uVar8;
   byte *pbVar9;
-  void *unaff_EDI;
   bool bVar10;
   InternalExceptionFrame local_6c;
   byte local_28 [16];
@@ -32,7 +32,7 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   short local_a;
   short local_8;
   char local_5;
-  
+
   local_18 = 0;
   if (param_3 == '\b') {
     local_5 = (char)param_1;
@@ -42,15 +42,13 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   }
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x439,0,iVar3,&DAT_007a4ccc,
                                s__EnumMines_007d2e30);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      iVar3 = (*pcVar2)();
-      return iVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x43a);
     return iVar3;
@@ -67,6 +65,7 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   }
   do {
     if (uVar8 < pDVar7->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar8) (runtime stride) */
       puVar4 = (undefined4 *)(pDVar7->elementSize * uVar8 + (int)pDVar7->data);
     }
     else {
@@ -121,6 +120,7 @@ LAB_00678362:
         }
         pDVar7 = PTR_007fa158;
         uVar8 = local_10;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((iVar3 != 0) && (param_11 != (undefined *)0x0)) &&
            (iVar3 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = PTR_007fa158,
            uVar8 = local_10, iVar3 != 0)) {

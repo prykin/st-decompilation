@@ -18,7 +18,7 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
   undefined4 local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   if (this == (void *)0x0) {
     puVar6 = (undefined4 *)0x0;
   }
@@ -51,6 +51,7 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
   thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x2c1),*(undefined2 *)((int)this + 0x2c5),
                      *(undefined2 *)((int)this + 0x2c9));
   FreeAndNull(&local_28);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)((int)param_1 + 0xc2);
   piVar5 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar2);
   STAllPlayersC::RestoreGObjData(this,piVar5 + 1);

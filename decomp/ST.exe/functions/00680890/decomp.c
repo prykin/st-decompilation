@@ -17,7 +17,7 @@ undefined4 __cdecl FUN_00680890(byte param_1,byte *param_2,uint param_3,undefine
   CHAR local_408 [1024];
   uint local_8;
   uint uVar4;
-  
+
   local_8 = 0;
   pcVar3 = (char *)thunk_FUN_006803b0(param_1);
   if (*pcVar3 == '\0') {
@@ -33,7 +33,7 @@ undefined4 __cdecl FUN_00680890(byte param_1,byte *param_2,uint param_3,undefine
   bVar2 = thunk_FUN_00680570();
   uVar4 = (uint)bVar2;
   pcVar5 = s_M_ANY_007ef0a4 + (uint)param_1 * 10;
-  LoadResourceString(0x1b5a,HINSTANCE_00807618);
+  text = LoadResourceString(0x1b5a,HINSTANCE_00807618);
   wsprintfA(local_408,text,pcVar5,pcVar3,param_3,uVar4,uVar7);
   thunk_FUN_00674ef0(local_408);
   return 1;

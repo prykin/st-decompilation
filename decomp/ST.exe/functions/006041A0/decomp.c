@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Expl.cpp
@@ -10,20 +12,18 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   STExplosionC *pSVar2;
   int iVar3;
   undefined4 *puVar4;
-  undefined4 unaff_ESI;
   int iVar5;
-  void *unaff_EDI;
   int *piVar6;
   InternalExceptionFrame local_50;
   STExplosionC *local_c;
   int local_8;
-  
+
   iVar5 = 0;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 == 0) {
     if (0 < param_1) {
@@ -55,9 +55,7 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   iVar5 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x1f6,0,iVar3,&DAT_007a4ccc,
                              s_STExplosionC__CreateGroupPart_007cf670);
   if (iVar5 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar3 = (*pcVar1)();
-    return iVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x1f8);
   return 0xffff;

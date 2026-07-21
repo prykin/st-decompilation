@@ -13,13 +13,15 @@ void __thiscall FUN_00694cd0(void *this,AnonShape_00694CD0_AC50FDB9 *param_1)
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   local_8 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1->field_0018 + 0xc);
   if (0 < iVar2) {
     do {
       iVar3 = param_1->field_0018;
       if (local_8 < *(uint *)(iVar3 + 0xc)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         puVar7 = (uint *)(*(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c));
       }
       else {
@@ -32,6 +34,7 @@ void __thiscall FUN_00694cd0(void *this,AnonShape_00694CD0_AC50FDB9 *param_1)
     } while ((int)local_8 < iVar2);
   }
   local_8 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1->field_001C + 0xc);
   iVar3 = (*(int **)((int)this + 8))[1];
   iVar4 = **(int **)((int)this + 8);
@@ -39,6 +42,7 @@ void __thiscall FUN_00694cd0(void *this,AnonShape_00694CD0_AC50FDB9 *param_1)
     do {
       iVar5 = param_1->field_001C;
       if (local_8 < *(uint *)(iVar5 + 0xc)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         psVar8 = (short *)(*(int *)(iVar5 + 8) * local_8 + *(int *)(iVar5 + 0x1c));
       }
       else {

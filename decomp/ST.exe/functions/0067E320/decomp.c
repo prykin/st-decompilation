@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
@@ -14,24 +16,20 @@ LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   char *pcVar8;
-  void *unaff_EDI;
   char *pcVar9;
   char local_88 [64];
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar5 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c7,0,iVar3,&DAT_007a4ccc,
                                s_GetStrategNameDB_007d3088);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      pCVar4 = (LPSTR)(*pcVar2)();
-      return pCVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c8);
     return (LPSTR)0x0;

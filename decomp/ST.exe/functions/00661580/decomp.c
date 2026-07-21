@@ -7,7 +7,7 @@ void __fastcall FUN_00661580(AnonShape_00661580_92A3F5B0 *param_1)
   uint uVar2;
   uint *puVar3;
   bool bVar4;
-  
+
   this = param_1->field_0284;
   if (this == (void *)0x0) {
     return;

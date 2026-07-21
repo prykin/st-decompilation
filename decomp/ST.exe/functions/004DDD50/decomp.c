@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
   int *piVar9;
   int local_c;
   int local_8;
-  
+
   bVar3 = false;
   bVar2 = false;
   uVar4 = GetPlayerRaceId((char)param_1[9]);
@@ -46,6 +46,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
           iVar8 = piVar9[-2] + -0x96;
           iVar6 = thunk_FUN_004e60d0(param_1[9],local_8);
           local_c = *(int *)(&DAT_007e601c + (iVar6 + iVar8 * 5) * 4);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar6 = (**(code **)(*param_1 + 0x2c))();
           iVar6 = thunk_FUN_004b72e0((char)param_1[9],iVar6);
           if (iVar6 != 0) {
@@ -81,6 +82,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
     if (bVar2) {
       thunk_FUN_004ddcc0((AnonShape_004DDCC0_33DEB43E *)param_1);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((bVar3) && (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d))) {
       thunk_FUN_004d8b70((char)param_1[9]);
     }

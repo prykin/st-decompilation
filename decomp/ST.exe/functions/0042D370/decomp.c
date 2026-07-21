@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -9,16 +11,16 @@ STAllPlayersC::SetActivityToObjs
 
 {
   code *pcVar1;
-  uint objPtr;
   STGameObjC *pSVar2;
   int iVar3;
   uint index;
+  char objPtr;
   STAllPlayersC_GetObjPtr_param_3Enum SVar4;
-  
-  objPtr = param_1;
+
+  objPtr = (char)param_1;
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
-      pSVar2 = GetObjPtr(this,param_1,param_4,CASE_5);
+      pSVar2 = GetObjPtr(this,objPtr,param_4,CASE_5);
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
@@ -55,7 +57,7 @@ LAB_0042d3b2:
     if (param_2 == 0x5a) {
       SVar4 = CASE_4;
 cf_common_exit_0042D44C:
-      pSVar2 = GetObjPtr(this,param_1,param_4,SVar4);
+      pSVar2 = GetObjPtr(this,objPtr,param_4,SVar4);
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
@@ -77,8 +79,6 @@ LAB_0042d41b:
   if (iVar3 == 0) {
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

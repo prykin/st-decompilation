@@ -14,7 +14,7 @@ uint * FUN_0062d550(int *param_1,int *param_2)
   uint *puVar10;
   int local_c;
   uint *local_8;
-  
+
   piVar2 = param_2;
   iVar6 = 0;
   iVar3 = 0;

@@ -8,10 +8,12 @@ void __fastcall FUN_00749b5f(int *param_1)
   FUN_0074a7e3(param_1);
   FUN_0074a5d8((int)param_1);
   if (param_1[0x14] != 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)(param_1[0x14] + 8) + 0xc))(1);
     param_1[0x14] = 0;
   }
   if ((int *)param_1[0x1e] != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1[0x1e] + 0xc))(1);
     param_1[0x1e] = 0;
   }

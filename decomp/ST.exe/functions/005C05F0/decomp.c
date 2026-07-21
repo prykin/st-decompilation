@@ -10,7 +10,7 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
   char cVar6;
   uint uVar7;
   int local_8;
-  
+
   local_8 = 4;
   puVar3 = (uint *)&param_1->field_0x8f;
   do {

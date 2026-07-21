@@ -5,7 +5,7 @@ uint FUN_006364b0(int param_1)
   ushort *puVar1;
   char *text;
   uint local_8;
-  
+
   local_8 = 0xffffffff;
   if (param_1 == 0) {
     puVar1 = Library::Ourlib::MFRLOAD::mfRLoad

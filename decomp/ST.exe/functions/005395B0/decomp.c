@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::SwitchPausePanel
-   
+
    [STSwitchEnumApplier] Switch target field_0172 uses
    /SubmarineTitans/Recovered/Enums/PausePanelTy_field_0172State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -14,25 +16,21 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
   PausePanelTy *pPVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   Global_sub_005252C0_param_1Enum GVar4;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x54,0,errorCode,
                                &DAT_007a4ccc,s_PausePanelTy__SwitchPausePanel_007c7508);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_pause_cpp_007c7490,0x54);
     return;

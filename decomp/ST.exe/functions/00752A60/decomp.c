@@ -18,7 +18,7 @@ byte * FUN_00752a60(int param_1,int param_2,int param_3,int param_4,int param_5,
   int local_18;
   int local_10;
   int local_c;
-  
+
   iVar10 = (int)(param_3 + 7 + (param_3 + 7 >> 0x1f & 7U)) >> 3;
   *param_7 = iVar10 * param_4;
   pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac10(iVar10 * param_4);

@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_00525ef0(Global_sub_00525EF0_param_1Enum param_1,undefine
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = 0;
   switch(param_1) {
   case CASE_1:

@@ -11,12 +11,16 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
   byte *pbVar7;
   byte *pbVar8;
   byte *pbVar9;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_ECX_00;
   int iVar10;
   uint uVar11;
   byte *pbVar12;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   byte *extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   byte *extraout_EDX_00;
   uint uVar13;
   uint uVar14;
@@ -27,7 +31,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
   uint local_30;
   int local_20;
   int local_1c;
-  
+
   pcVar3 = (code *)param_1->field_003A;
   uVar5 = (uint)param_1->field_0011;
   uVar6 = uVar5;
@@ -56,6 +60,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
             if (uVar14 == 0) {
               bVar18 = pbVar15 < pbVar12;
               iVar10 = 0;
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if ((!bVar18) &&
                  (uVar6 = FUN_006d822b(), iVar10 = extraout_ECX, pbVar12 = extraout_EDX, bVar18))
               goto cf_common_exit_006D8217;
@@ -65,8 +70,10 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
               pbVar9 = (byte *)(uint)bVar2;
               pbVar16 = pbVar1;
               if (0xbf < bVar2) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar14 = CONCAT31((int3)(uVar14 >> 8),bVar2) & 0xffffff3f;
                 bVar18 = pbVar1 < pbVar12;
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((!bVar18) &&
                    (uVar6 = FUN_006d822b(), uVar14 = extraout_ECX_00, pbVar12 = extraout_EDX_00,
                    bVar18)) goto cf_common_exit_006D8217;

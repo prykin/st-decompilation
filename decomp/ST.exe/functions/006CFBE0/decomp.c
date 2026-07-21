@@ -14,7 +14,7 @@ void FUN_006cfbe0(uint *param_1)
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   uVar4 = *param_1;
   if (((uVar4 & 0x60004000) == 0) && (piVar2 = (int *)param_1[0x33], piVar2 != (int *)0x0)) {
     local_c = 0;
@@ -56,6 +56,7 @@ void FUN_006cfbe0(uint *param_1)
             do {
               if (*piVar2 != 0) {
                 local_88 = 6;
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar1 = (**(code **)(*(int *)*piVar2 + 0x58))((int *)*piVar2,&local_8c);
                 if (iVar1 != 0) {
                   local_c = 0;

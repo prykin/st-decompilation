@@ -9,7 +9,7 @@ undefined4 * __thiscall FUN_00614950(void *this,int *param_1)
   undefined4 *puVar5;
   undefined4 *puVar6;
   int local_8;
-  
+
   local_8 = 0x116;
   if (*(int *)((int)this + 0x2dd) != 0) {
     local_8 = *(int *)((int)this + 0x2d5) * 0x1c + 0x116;

@@ -17,7 +17,7 @@ void __fastcall FUN_006a0470(AnonShape_006A0470_E995C390 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   pAVar4 = param_1->field_0008;
   iVar6 = pAVar4->field_0000 * 0x28;
   *(int *)&param_1[0x740].field_0x3 = iVar6;

@@ -3,7 +3,7 @@ int __thiscall FUN_00630110(void *this,char param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 0;
   if (*(int *)((int)this + 0x1fa) != 2) {
     iVar1 = thunk_FUN_006300e0((int)this);

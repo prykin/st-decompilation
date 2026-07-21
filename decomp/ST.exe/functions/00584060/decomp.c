@@ -7,12 +7,10 @@ undefined4 __thiscall
 STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
 
 {
-  bool bVar1;
   STGameObjC *this_00;
-  int iVar2;
-  uint uVar3;
-  undefined3 extraout_var;
-  int iVar4;
+  int iVar1;
+  uint uVar2;
+  int iVar3;
   int local_1c;
   int local_18;
   int local_14;
@@ -22,13 +20,13 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   short local_a;
   short local_8;
   short local_6;
-  
+
   if (this->field_023D != 0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)this >> 8),this->field_0x241)
-                         ,CONCAT22((short)((uint)this->field_023D >> 0x10),this->field_0245),CASE_1)
-    ;
-    if ((this_00 != (STGameObjC *)0x0) && (iVar2 = (*this_00->vtable[1].vfunc_24)(), iVar2 != 0)) {
+                        (g_sTAllPlayers_007FA174,this->field_0x241,
+                         CONCAT22((short)((uint)this->field_023D >> 0x10),this->field_0245),CASE_1);
+    if ((this_00 != (STGameObjC *)0x0) && (iVar1 = (*this_00->vtable[1].vfunc_24)(), iVar1 != 0)) {
       thunk_FUN_004162f0(this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;
@@ -38,12 +36,12 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
     this->field_023D = 0;
   }
   STFishC::sub_004162B0((STFishC *)this,&local_10,&local_e,&local_c);
-  iVar2 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-  *(int *)&this->field_0x1c = iVar2;
-  local_14 = (int)(short)(((ushort)((uint)iVar2 >> 0x10) & 1) + 1);
-  uVar3 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-  *(uint *)&this->field_0x1c = uVar3;
-  if ((uVar3 >> 0x10) % 3 == 0) {
+  iVar1 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+  *(int *)&this->field_0x1c = iVar1;
+  local_14 = (int)(short)(((ushort)((uint)iVar1 >> 0x10) & 1) + 1);
+  uVar2 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+  *(uint *)&this->field_0x1c = uVar2;
+  if ((uVar2 >> 0x10) % 3 == 0) {
     local_14 = -local_14;
   }
   local_14 = this->field_004B - local_14;
@@ -53,40 +51,39 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   local_18 = *(int *)&this->field_0x276;
   local_14 = local_14 % 5;
   if (local_18 < 0) {
-    iVar2 = *(int *)&this->field_0x1c;
+    iVar1 = *(int *)&this->field_0x1c;
   }
   else {
-    iVar2 = *(int *)&this->field_0x1c;
+    iVar1 = *(int *)&this->field_0x1c;
   }
-  uVar3 = iVar2 * 0x41c64e6d + 0x3039;
-  *(uint *)&this->field_0x1c = uVar3;
-  iVar2 = *(int *)&this->field_0x27a;
-  local_18 = (uVar3 >> 0x10) % (uint)(*(int *)&this->field_0x27e - local_18) + local_18;
-  if (iVar2 < 0) {
-    iVar4 = *(int *)&this->field_0x1c;
+  uVar2 = iVar1 * 0x41c64e6d + 0x3039;
+  *(uint *)&this->field_0x1c = uVar2;
+  iVar1 = *(int *)&this->field_0x27a;
+  local_18 = (uVar2 >> 0x10) % (uint)(*(int *)&this->field_0x27e - local_18) + local_18;
+  if (iVar1 < 0) {
+    iVar3 = *(int *)&this->field_0x1c;
   }
   else {
-    iVar4 = *(int *)&this->field_0x1c;
+    iVar3 = *(int *)&this->field_0x1c;
   }
-  uVar3 = iVar4 * 0x41c64e6d + 0x3039;
-  *(uint *)&this->field_0x1c = uVar3;
+  uVar2 = iVar3 * 0x41c64e6d + 0x3039;
+  *(uint *)&this->field_0x1c = uVar2;
   local_1c = 0;
-  iVar2 = (uVar3 >> 0x10) % (uint)(*(int *)&this->field_0x282 - iVar2) + iVar2;
+  iVar1 = (uVar2 >> 0x10) % (uint)(*(int *)&this->field_0x282 - iVar1) + iVar1;
 LAB_005841dc:
   do {
     while( true ) {
-      while (bVar1 = thunk_FUN_004961b0((short)local_18,(short)iVar2,(short)local_14),
-            CONCAT31(extraout_var,bVar1) != 0) {
-        if (((local_18 != this->field_0047) || (iVar2 != this->field_0049)) ||
+      while (iVar3 = thunk_FUN_004961b0((short)local_18,(short)iVar1,(short)local_14), iVar3 != 0) {
+        if (((local_18 != this->field_0047) || (iVar1 != this->field_0049)) ||
            (local_14 != this->field_004B)) {
           *param_1 = local_18;
-          *param_2 = iVar2;
+          *param_2 = iVar1;
           *param_3 = local_14;
           return 1;
         }
-        uVar3 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-        *(uint *)&this->field_0x1c = uVar3;
-        if ((uVar3 >> 0x10) % 3 == 0) {
+        uVar2 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+        *(uint *)&this->field_0x1c = uVar2;
+        if ((uVar2 >> 0x10) % 3 == 0) {
           local_14 = local_14 + 1;
           if (4 < local_14) {
             local_14 = 3;
@@ -103,26 +100,26 @@ LAB_005841dc:
           return 0;
         }
       }
-      iVar4 = local_18 - this->field_0047;
-      if (iVar4 < 1) break;
+      iVar3 = local_18 - this->field_0047;
+      if (iVar3 < 1) break;
       local_18 = local_18 + -1;
-      iVar4 = local_18;
+      iVar3 = local_18;
 joined_r0x00584297:
-      if (iVar4 < 0) {
+      if (iVar3 < 0) {
         return 0;
       }
     }
-    if (-1 < iVar4) {
-      iVar4 = iVar2 - this->field_0049;
-      if (0 < iVar4) {
-        iVar2 = iVar2 + -1;
-        iVar4 = iVar2;
+    if (-1 < iVar3) {
+      iVar3 = iVar1 - this->field_0049;
+      if (0 < iVar3) {
+        iVar1 = iVar1 + -1;
+        iVar3 = iVar1;
         goto joined_r0x00584297;
       }
-      if (-1 < iVar4) {
+      if (-1 < iVar3) {
         return 0;
       }
-      iVar2 = iVar2 + 1;
+      iVar1 = iVar1 + 1;
       goto LAB_005841dc;
     }
     local_18 = local_18 + 1;

@@ -12,7 +12,7 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,und
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079e210;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
@@ -16,27 +18,28 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
-  
+
   uVar7 = 0;
   local_c = (DArrayTy *)0x0;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
       this = (STGroupBoatC *)0x0;
     }
     else {
-      this = thunk_FUN_0042b760(param_1,0);
+      this = thunk_FUN_0042b760((char)param_1,0);
     }
     if (this != (STGroupBoatC *)0x0) {
-      local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,(int)unaff_EDI);
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,unaff_EDI);
     }
     array = local_c;
     if (local_c->count != 0) {
@@ -46,9 +49,11 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
         goto LAB_00676470;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
         puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
 LAB_00676470:
-        pSVar4 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,param_1,(uint)*puVar3,CASE_1);
+        pSVar4 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,(char)param_1,(uint)*puVar3,CASE_1);
         if (pSVar4 != (STGameObjC *)0x0) {
           iVar2 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar2 == 0x78) {
@@ -90,8 +95,6 @@ LAB_00676470:
     RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x151);
     return iVar2;
   }
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
-  return iVar2;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

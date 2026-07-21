@@ -6,7 +6,7 @@ void __thiscall FUN_00647a60(void *this,int soundId)
 
 {
   SoundPosition local_10;
-  
+
   local_10.x = *(int *)((int)this + 0x30);
   local_10.y = *(int *)((int)this + 0x34);
   local_10.unknown = *(int *)((int)this + 0x18);

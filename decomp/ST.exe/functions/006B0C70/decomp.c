@@ -1,23 +1,24 @@
 
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00446F80 -> 006B0C70 @ 004476A1 | 0044E260 -> 006B0C70 @ 0044E2F9 | 004A7490 ->
-   006B0C70 @ 004A76D5 | 0067B520 -> 006B0C70 @ 0067B813 */
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 00496E40 -> 006B0C70 @ 00496E9C | 004D2760 -> 006B0C70 @ 004D28A9 | 004D2760 ->
+   006B0C70 @ 004D2C21 | 004D8530 -> 006B0C70 @ 004D8583 | 004D9700 -> 006B0C70 @ 004D9741 |
+   0054D640 -> 006B0C70 @ 0054D803 */
 
-undefined4 FUN_006b0c70(AnonShape_006B0C70_7C4FE646 *groupContent,uint param_2)
+undefined4 FUN_006b0c70(DArrayTy *groupContent,uint param_2)
 
 {
-  int iVar1;
+  dword dVar1;
   uint uVar2;
   uint uVar3;
   undefined4 *puVar4;
   undefined4 *puVar5;
-  
-  if (groupContent != (AnonShape_006B0C70_7C4FE646 *)0x0) {
-    if (param_2 < (uint)groupContent->field_000C) {
-      iVar1 = groupContent->field_0008;
-      puVar5 = (undefined4 *)(iVar1 * param_2 + groupContent->field_001C);
-      uVar2 = ((groupContent->field_000C - param_2) + -1) * iVar1;
-      puVar4 = (undefined4 *)(iVar1 + (int)puVar5);
+
+  if (groupContent != (DArrayTy *)0x0) {
+    if (param_2 < groupContent->count) {
+      dVar1 = groupContent->elementSize;
+      puVar5 = (undefined4 *)(dVar1 * param_2 + (int)groupContent->data);
+      uVar2 = ((groupContent->count - param_2) + -1) * dVar1;
+      puVar4 = (undefined4 *)(dVar1 + (int)puVar5);
       for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
         *puVar5 = *puVar4;
         puVar4 = puVar4 + 1;
@@ -28,9 +29,9 @@ undefined4 FUN_006b0c70(AnonShape_006B0C70_7C4FE646 *groupContent,uint param_2)
         puVar4 = (undefined4 *)((int)puVar4 + 1);
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      groupContent->field_000C = groupContent->field_000C + -1;
-      if (param_2 < groupContent->field_0004) {
-        groupContent->field_0004 = groupContent->field_0004 - 1;
+      groupContent->count = groupContent->count - 1;
+      if (param_2 < groupContent->iteratorIndex) {
+        groupContent->iteratorIndex = groupContent->iteratorIndex - 1;
       }
       return 0;
     }

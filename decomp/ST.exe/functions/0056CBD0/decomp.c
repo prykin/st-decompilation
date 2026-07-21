@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::MainWindowProc
-   
+
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum. Cases:
    CASE_5=5;CASE_F=15;CASE_10=16;CASE_1C=28
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056CBD0 -> EXTERNAL:00000090 @ 0056CF3D | 0056CBD0 -> EXTERNAL:00000094 @ 0056CC82 */
 
@@ -21,8 +23,6 @@ STAppC::MainWindowProc
   LRESULT LVar3;
   uint uVar4;
   HCURSOR pHVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   undefined1 local_cc [16];
   undefined4 local_bc;
@@ -31,11 +31,11 @@ STAppC::MainWindowProc
   undefined4 local_5c;
   InternalExceptionFrame local_4c;
   LRESULT local_8;
-  
+
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x3aa,0,iVar2,&DAT_007a4ccc,
@@ -43,17 +43,13 @@ STAppC::MainWindowProc
     if (iVar2 == 0) {
       return local_8;
     }
-    pcVar1 = (code *)swi(3);
-    LVar3 = (*pcVar1)();
-    return LVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar2 = AppClassTy::DecodeMessage(g_appClass_00806728,param_2,param_3,param_4);
   if ((iVar2 != 0) &&
      (iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x330,0,-0x5001fff8,&DAT_007a4ccc,
                                  s_STAppC__MainWindowProc_007ca0f8), iVar2 != 0)) {
-    pcVar1 = (code *)swi(3);
-    LVar3 = (*pcVar1)();
-    return LVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 < 0x21) {
     if (param_2 == 0x20) {
@@ -148,6 +144,7 @@ STAppC::MainWindowProc
           return local_8;
         }
         local_bc = 0xa100;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)PTR_00802a30)(local_cc);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;

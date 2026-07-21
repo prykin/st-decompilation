@@ -7,7 +7,7 @@ undefined * __cdecl FUN_005532f0(Global_sub_005532F0_param_1Enum param_1)
 
 {
   undefined *puVar1;
-  
+
   switch(param_1) {
   case CASE_0:
     return &DAT_007c89e4;

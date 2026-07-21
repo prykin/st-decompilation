@@ -12,7 +12,7 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
   uint *puVar6;
   uint uVar7;
   bool bVar8;
-  
+
   if (*(int *)((int)this + 0x6d) != 0) {
     iVar3 = *(int *)(*(int *)((int)this + 0x6d) + 0xc);
     uVar7 = 0;

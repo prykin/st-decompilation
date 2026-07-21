@@ -31,7 +31,7 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,undefined4 param_5
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_00790940;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -57,12 +57,14 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,undefined4 param_5
       goto LAB_004b266b;
     }
     local_2c = 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar11 = g_worldGrid._0_4_;
     this = local_30;
   }
   else {
     uVar7 = GetPlayerRaceId((byte)param_1);
     local_2c = *(int *)(&DAT_007e3f20 + ((uVar7 & 0xff) + param_2 * 3) * 4);
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004b266b:
     uVar11 = g_worldGrid._0_4_;
     for (iVar6 = param_3 + -8; this = local_30, iVar6 <= param_3 + 8; iVar6 = iVar6 + 1) {
@@ -83,6 +85,7 @@ LAB_004b266b:
                        [(int)sVar5 * (int)(short)uVar11 + (int)sVar12 * (int)g_worldGrid.planeStride
                         + (int)sVar4].objects[0];
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                  && (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                       ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)) &&
@@ -144,6 +147,7 @@ LAB_004b288e:
       *(undefined4 *)&local_30[0x22].field_0x8 = 0;
     }
     *(undefined4 *)&local_30[0x22].field_0xc = PTR_00802a38->field_00E4;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar11 = g_worldGrid._0_4_;
   }
   local_28 = 1;
@@ -166,6 +170,7 @@ LAB_004b288e:
           do {
             if ((-1 < iVar13) && (iVar13 < (short)uVar11)) {
               iVar8 = local_68 + iVar6;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((-1 < iVar8) &&
                  ((iVar8 < g_worldGrid.sizeY &&
                   (iVar10 = thunk_FUN_004b2390(param_1,iVar13,iVar8,iVar9,param_10,local_48),
@@ -178,6 +183,7 @@ LAB_004b288e:
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
               iVar8 = local_64 + iVar6;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) &&
                  (iVar10 = thunk_FUN_004b2390(param_1,iVar13,iVar8,iVar9,param_10,local_48),
                  uVar11 = g_worldGrid._0_4_, iVar10 != 0)) {
@@ -198,6 +204,7 @@ LAB_004b288e:
           piVar14 = (int *)(&stack0xffffff7c + local_34 * 0xc);
           do {
             if ((-1 < iVar13) && (iVar13 < g_worldGrid.sizeY)) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((-1 < local_68) &&
                  ((local_68 < (short)uVar11 &&
                   (iVar10 = thunk_FUN_004b2390(param_1,local_68,iVar13,iVar9,param_10,local_48),
@@ -209,6 +216,7 @@ LAB_004b288e:
                 piVar14 = piVar14 + 3;
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((-1 < local_64) && (local_64 < (short)uVar11)) &&
                  (iVar10 = thunk_FUN_004b2390(param_1,local_64,iVar13,iVar9,param_10,local_48),
                  uVar11 = g_worldGrid._0_4_, iVar10 != 0)) {

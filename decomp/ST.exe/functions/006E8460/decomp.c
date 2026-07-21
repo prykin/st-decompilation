@@ -8,7 +8,7 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,undefined1 param_
   int iVar4;
   undefined4 *puVar5;
   longlong lVar6;
-  
+
   iVar1 = DAT_00856d84;
   lVar6 = Library::MSVCRT::__ftol();
   param_1 = (int)lVar6;

@@ -25,7 +25,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   undefined4 local_10;
   AnonReceiver_006308F0 *local_c;
   AnonShape_00413AF0_B6B4EE9A *local_8;
-  
+
   local_8 = *(AnonShape_00413AF0_B6B4EE9A **)((int)this + 0x38);
   if ((local_8 != (AnonShape_00413AF0_B6B4EE9A *)0x0) &&
      (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {

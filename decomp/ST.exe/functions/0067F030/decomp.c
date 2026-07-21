@@ -8,30 +8,30 @@
 undefined4 __cdecl FUN_0067f030(char *text,char *param_2,uint *param_3)
 
 {
-  InternalExceptionFrame *pIVar1;
-  int iVar2;
-  undefined4 uVar3;
-  InternalExceptionFrame *pIVar4;
-  int in_stack_ffffffb8;
+  int iVar1;
+  undefined4 uVar2;
+  InternalExceptionFrame local_4c;
   uint local_8;
-  
-  pIVar4 = g_currentExceptionFrame;
+
   local_8 = 0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar4,in_stack_ffffffb8);
-  pIVar1 = pIVar4;
-  if (((iVar2 == 0) &&
-      (iVar2 = thunk_FUN_0067ef60((byte *)text,(int *)&local_8), pIVar1 = g_currentExceptionFrame,
-      iVar2 != 0)) && (-1 < (int)local_8)) {
-    local_8 = Library::DKW::TBL::FUN_006b6020((uint *)PTR_00848a18,local_8,param_2);
-    g_currentExceptionFrame = pIVar4;
-    if (param_3 != (uint *)0x0) {
-      *param_3 = local_8;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  if (iVar1 == 0) {
+    iVar1 = thunk_FUN_0067ef60((byte *)text,(int *)&local_8);
+    if ((iVar1 != 0) && (-1 < (int)local_8)) {
+      local_8 = Library::DKW::TBL::FUN_006b6020((uint *)PTR_00848a18,local_8,param_2);
+      if (param_3 != (uint *)0x0) {
+        *param_3 = local_8;
+      }
+      g_currentExceptionFrame = local_4c.previous;
+      uVar2 = thunk_FUN_0067ee40(local_8);
+      return uVar2;
     }
-    uVar3 = thunk_FUN_0067ee40(local_8);
-    return uVar3;
   }
-  g_currentExceptionFrame = pIVar1;
+  else {
+    g_currentExceptionFrame = local_4c.previous;
+  }
   return 0;
 }
 

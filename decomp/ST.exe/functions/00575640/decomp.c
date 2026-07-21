@@ -19,7 +19,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   int *local_18;
   int local_14;
   uint local_8;
-  
+
   psVar2 = param_1;
   iVar4 = (int)*param_1 * (int)param_1[1];
   uVar10 = iVar4 * 10;
@@ -33,6 +33,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
     *(undefined1 *)puVar11 = 0;
     puVar11 = (undefined4 *)((int)puVar11 + 1);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)((int)param_1 + 0x455)) {
     local_18 = (int *)((int)param_1 + 0x459);
     do {

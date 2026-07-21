@@ -4,7 +4,7 @@
    CCritSec *,long *,unsigned short const *)
     public: __thiscall CBaseOutputPin::CBaseOutputPin(unsigned short const *,class CBaseFilter
    *,class CCritSec *,long *,unsigned short const *)
-   
+
    Library: Visual Studio 2012 Release */
 
 void * __thiscall

@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
   char *pcVar6;
   char *pcVar7;
   short *psVar8;
-  
+
   if (*(int *)((int)this + 0x138) != 0) {
     if ((*(uint *)((int)this + 0x20) & 0x40) != 0) {
       if (((*(uint *)((int)this + 0x20) & 0x80) != 0) &&

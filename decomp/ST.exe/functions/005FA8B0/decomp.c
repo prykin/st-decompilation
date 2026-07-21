@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_005fa8b0(void *this,int *param_1,int *param_2,int *par
   short local_a;
   short local_8;
   short local_6;
-  
+
   sVar1 = *(short *)((int)this + 0x25d);
   sVar2 = *(short *)((int)this + 0x265);
   sVar3 = *(short *)((int)this + 0x261);

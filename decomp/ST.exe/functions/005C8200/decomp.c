@@ -3,7 +3,7 @@
    Recovered source file: E:\__titans\Start\sett_obj.cpp
    Diagnostic line evidence: 1114 | 1141 | 1143 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004EEFB0.
    Evidence: incoming_receiver_captures=2; receiver_accesses=22; incoming_edx_uses=0; calls=1;
@@ -24,10 +24,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   cMf32 *this_01;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   byte *pbVar8;
   int *piVar9;
-  void *unaff_EDI;
   undefined4 *puVar10;
   byte *pbVar11;
   byte local_218 [336];
@@ -40,11 +38,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   undefined4 local_14;
   SettMapTy *local_c;
   DWORD *local_8;
-  
+
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_c = (SettMapTy *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_7c.previous;
@@ -54,6 +52,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
       thunk_FUN_005c7800();
       return;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)local_c->field_0000->field_0028)();
     return;
   }
@@ -181,6 +180,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != (int *)0x0)) {
     FUN_006b6160(&this_00->field_0x1a5f,(int)(g_int_00811764 + 6));
     this_00->field_1A7F = 1;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00->field_1A80 = DAT_008087c4._2_1_;
     this_00->field_1A81 = (char)(DAT_008087c2 >> 1);
     wsprintfA((LPSTR)&local_18,&DAT_007cc584,DAT_0080995c);
@@ -190,6 +190,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     this_00->field_1C5E = 0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_00->field_0x1a5f);
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)this_00->field_0000->field_0028)();
   SettMapTy::PaintSettMap(this_00,'\0');
   piVar9 = &this_00->field_1F60;

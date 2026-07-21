@@ -4,7 +4,8 @@ void __thiscall FUN_00422ff0(void *this,byte param_1)
 {
   int iVar1;
   int iVar2;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)this + 4))();
   if (((*(int *)((int)this + 0x20) == 0x14) && (iVar2 = thunk_FUN_0045ff10(iVar1), iVar2 == 0x14))
      && (*(int *)(iVar1 + 0x5c0) == 3)) {

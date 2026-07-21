@@ -19,7 +19,7 @@ void FUN_0075f590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar9 = 0;
   iVar6 = param_2[2];
   iVar3 = param_2[4];
@@ -33,6 +33,7 @@ void FUN_0075f590(AnonShape_0075F590_570A7014 *param_1,int *param_2,int param_3)
   if (iVar7 <= param_2[1]) {
     local_c = iVar7 * 8 + 4;
     local_28 = (param_2[1] - iVar7) + 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     param_2 = (int *)(*(int *)(param_1->field_01BA + 0x18) + iVar7 * 4);
     do {
       if (iVar6 <= *piVar1) {

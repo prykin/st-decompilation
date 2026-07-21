@@ -12,7 +12,7 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
   int iVar4;
   uint uVar5;
   char *pcVar6;
-  
+
   piVar2 = param_1;
   if (DAT_0080879c == 0) {
     switch(_DAT_008087a0 & 0xff) {

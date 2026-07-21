@@ -3,7 +3,7 @@ void __fastcall FUN_00717870(AnonShape_00717870_6CEBD31A *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 0;
   param_1->field_04BA = 0;
   param_1->field_04A2 = 0;

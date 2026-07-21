@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
@@ -14,16 +16,14 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   int errorCode;
   byte *pbVar6;
   int iVar7;
-  undefined4 unaff_ESI;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar8;
-  void *unaff_EDI;
   InternalExceptionFrame local_5c;
   int local_18;
   BldObjPanelTy *local_14;
   int local_10;
   ushort *local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
-  
+
   piVar1 = param_1->field_0018;
   local_18 = *piVar1 - this->field_003C;
   if (this->field_005C == 0) {
@@ -57,7 +57,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   iVar4 = local_10;
   pBVar3 = local_14;
   iVar7 = local_18;
@@ -78,9 +78,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   iVar7 = ReportDebugMessage(s_E____titans_Andrey_bldobj_cpp_007c1984,0x92,0,errorCode,&DAT_007a4ccc
                              ,s_BldObjPanelTy__PaintBldBut_007c1a0c);
   if (iVar7 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_bldobj_cpp_007c1984,0x92);
   return;

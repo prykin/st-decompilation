@@ -5,7 +5,7 @@ void FUN_004ab300(int param_1)
 
 {
   int iVar1;
-  
+
   if (param_1 < 0) {
     return;
   }

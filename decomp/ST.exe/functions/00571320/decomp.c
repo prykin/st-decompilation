@@ -7,7 +7,7 @@ void __thiscall FUN_00571320(void *this,HWND param_1)
 {
   char cVar1;
   uint uVar2;
-  
+
   uVar2 = DAT_00807300 & 0xff;
   if (uVar2 == 2) {
     thunk_FUN_00566e70((void *)((int)this + 0x38),param_1);

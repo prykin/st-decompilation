@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
@@ -8,7 +10,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
 {
   char cVar1;
   ChooseMapTy_field_1A5FState CVar2;
-  AnonShape_006C7610_838EDECF *pAVar3;
+  AnonShape_006B5B10_E0D06CF1 *pAVar3;
   ccFntTy *pcVar4;
   StartSystemTy *pSVar5;
   code *pcVar6;
@@ -24,8 +26,6 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   cMf32 *this_01;
   int iVar15;
   ChooseMapTy *pCVar16;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar17;
   char *pcVar18;
   char *pcVar19;
@@ -40,11 +40,11 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   ChooseMapTy *local_10;
   int local_c;
   undefined1 *local_8;
-  
+
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_10 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_78.previous;
     iVar15 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x2c0,0,iVar7,
@@ -53,13 +53,11 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x2c0);
       return;
     }
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
-  pAVar3 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+  pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
   FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
   if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
   {
@@ -172,7 +170,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     }
     local_bc.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_bc;
-    iVar7 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar7 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
     pCVar16 = local_10;
     if (iVar7 == 0) {
       local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
@@ -289,7 +287,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     }
     local_100.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_100;
-    iVar7 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar7 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0);
     pCVar16 = local_10;
     if (iVar7 == 0) {
       pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0)

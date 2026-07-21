@@ -21,7 +21,7 @@ void FUN_0075fff0(AnonShape_0075FFF0_30A040AA *param_1,int param_2,int *param_3,
   int iVar17;
   char *pcVar18;
   uint uVar19;
-  
+
   pAVar2 = param_1->field_01BA;
   iVar3 = *(int *)&param_1->field_0x68;
   piVar4 = pAVar2->field_0018;

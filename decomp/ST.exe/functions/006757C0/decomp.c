@@ -12,7 +12,7 @@ FUN_006757c0(short *param_1,short *param_2,short *param_3,short *param_4,short *
   int iVar6;
   int iVar7;
   int iVar8;
-  
+
   sVar2 = g_worldGrid.sizeZ;
   sVar1 = g_worldGrid.sizeY;
   sVar4 = g_worldGrid.sizeX;

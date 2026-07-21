@@ -4,7 +4,7 @@ undefined4 FUN_00757cd0(AnonShape_00757D90_5427B306 *param_1,int param_2)
 {
   uint uVar1;
   int iVar2;
-  
+
   uVar1 = param_1->field_018E;
   do {
     if ((int)uVar1 < 0xc0) {

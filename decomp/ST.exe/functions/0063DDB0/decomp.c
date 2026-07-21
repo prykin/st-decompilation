@@ -5,7 +5,7 @@ void __thiscall FUN_0063ddb0(void *this,int param_1)
   int iVar1;
   int iVar2;
   uint uVar3;
-  
+
   if (*(int *)((int)this + 0x336) != 0) {
     iVar1 = *(int *)(*(int *)((int)this + 0x336) + 0xc);
     uVar3 = 0;

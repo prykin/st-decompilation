@@ -9,7 +9,7 @@ void __fastcall FUN_005f0d00(AnonShape_005F0D00_68DA5B8B *param_1)
   undefined2 local_e;
   ushort local_c;
   undefined2 local_a;
-  
+
   if (DAT_008117bc != (undefined4 *)0x0) {
     puVar2 = local_24;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -25,6 +25,7 @@ void __fastcall FUN_005f0d00(AnonShape_005F0D00_68DA5B8B *param_1)
       local_c = (ushort)param_1->field_030E;
     }
     local_14 = 0x5ddc;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*DAT_008117bc)(local_24);
   }
   return;

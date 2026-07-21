@@ -28,8 +28,9 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   int local_10;
   undefined4 *local_c;
   char local_5;
-  
+
   local_c = (undefined4 *)0x0;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   DVar2 = (*(code *)param_1->field_0036)(param_1,&local_94,0x80);
   if (DVar2 != 0x80) {
     if (-1 < (int)DVar2) {
@@ -79,6 +80,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
       else {
         _llseek(param_1->field_0026,iVar7 + -0x301 + param_2,0);
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       DVar2 = (*(code *)param_1->field_0036)(param_1,&local_5,1);
       if (DVar2 != 1) {
         if (-1 < (int)DVar2) {
@@ -88,6 +90,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
       }
       if (local_5 == '\f') {
         param_2 = 0x100;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         DVar2 = (*(code *)param_1->field_0036)(param_1,local_c,0x300);
         if (DVar2 != 0x300) {
           if (-1 < (int)DVar2) {
@@ -129,6 +132,7 @@ LAB_006c78ff:
   *(int *)&param_1->field_0x8 = ((int)local_8c - (int)sStack_90) + 1;
   param_1->field_0011 = local_53;
   param_1->field_0012 = (int)sStack_52;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   param_1->field_0016 = (int)CONCAT11(uStack_4f,uStack_50);
   return 0;
 }

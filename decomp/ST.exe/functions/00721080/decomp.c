@@ -7,16 +7,15 @@ void __thiscall FUN_00721080(void *this,int param_1,uint param_2)
   uint uVar3;
   int iVar4;
   uint uVar5;
-  uint *puVar6;
-  uint *puVar7;
+  char *pcVar6;
+  char *pcVar7;
   int iVar8;
   byte *pbVar9;
-  char *pcVar10;
   void *this_00;
-  byte *pbVar11;
+  byte *pbVar10;
   int local_10;
   int local_c;
-  
+
   iVar8 = *(int *)((int)this + 0x138);
   if (iVar8 == 0) {
     return;
@@ -34,17 +33,17 @@ void __thiscall FUN_00721080(void *this,int param_1,uint param_2)
   }
   if (param_1 == 0xfff) {
     if ((int)uVar5 < iVar4) {
-      pcVar10 = *(char **)(*(int *)(iVar8 + 0x14) + uVar5 * 4);
+      pcVar6 = *(char **)(*(int *)(iVar8 + 0x14) + uVar5 * 4);
     }
     else {
-      pcVar10 = (char *)0x0;
+      pcVar6 = (char *)0x0;
     }
     uVar3 = 0xffffffff;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     param_2 = ~uVar3 - 1;
   }
@@ -60,31 +59,31 @@ void __thiscall FUN_00721080(void *this,int param_1,uint param_2)
   }
 LAB_0072111d:
   if ((int)uVar5 < iVar4) {
-    pcVar10 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + uVar5 * 4);
+    pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + uVar5 * 4);
   }
   else {
-    pcVar10 = (char *)0x0;
+    pcVar6 = (char *)0x0;
   }
   uVar3 = 0xffffffff;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar10;
-    pcVar10 = pcVar10 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
   if (~uVar3 - 1 < param_2) {
     if ((int)uVar5 < iVar4) {
-      pcVar10 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + uVar5 * 4);
+      pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + uVar5 * 4);
     }
     else {
-      pcVar10 = (char *)0x0;
+      pcVar6 = (char *)0x0;
     }
     uVar3 = 0xffffffff;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     param_2 = ~uVar3 - 1;
   }
@@ -105,26 +104,26 @@ LAB_0072122f:
     else {
       do {
         if (iVar8 < *(int *)(*(int *)((int)this + 0x138) + 8)) {
-          puVar6 = *(uint **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + iVar8 * 4);
+          pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + iVar8 * 4);
         }
         else {
-          puVar6 = (uint *)0x0;
+          pcVar6 = (char *)0x0;
         }
         iVar4 = -1;
-        puVar7 = puVar6;
+        pcVar7 = pcVar6;
         do {
           if (iVar4 == 0) break;
           iVar4 = iVar4 + -1;
-          uVar3 = *puVar7;
-          puVar7 = (uint *)((int)puVar7 + 1);
-        } while ((char)uVar3 != '\0');
-        puVar7 = (uint *)PTR_DAT_007f0afc;
+          cVar1 = *pcVar7;
+          pcVar7 = pcVar7 + 1;
+        } while (cVar1 != '\0');
+        pcVar7 = PTR_DAT_007f0afc;
         if ((iVar4 == -2) ||
-           (puVar7 = puVar6, puVar6 = (uint *)PTR_DAT_007f0b00,
-           (*(byte *)((int)this + 0x20) & 0x20) == 0)) {
-          puVar6 = puVar7;
+           (pcVar7 = pcVar6, pcVar6 = PTR_DAT_007f0b00, (*(byte *)((int)this + 0x20) & 0x20) == 0))
+        {
+          pcVar6 = pcVar7;
         }
-        iVar4 = FUN_007111c0(*(void **)((int)this + 0x214),puVar6);
+        iVar4 = FUN_007111c0(*(void **)((int)this + 0x214),pcVar6);
         if (*(int *)((int)this + 0x30) < iVar4 + local_c) {
           bVar2 = true;
           *(int *)((int)this + 0x144) = *(int *)((int)this + 0x144) + 1;
@@ -152,13 +151,13 @@ LAB_0072122f:
       do {
         if ((*(byte *)((int)this + 0x20) & 0x20) == 0) {
           this_00 = *(void **)((int)this + 0x214);
-          pbVar11 = pbVar9;
+          pbVar10 = pbVar9;
         }
         else {
           this_00 = *(void **)((int)this + 0x214);
-          pbVar11 = PTR_DAT_007f0b00;
+          pbVar10 = PTR_DAT_007f0b00;
         }
-        uVar3 = FUN_00710fb0(this_00,pbVar11);
+        uVar3 = FUN_00710fb0(this_00,pbVar10);
         iVar8 = *(int *)(*(int *)((int)this + 0x214) + 0x58) +
                 (int)*(short *)(*(int *)((int)this_00 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10) +
                 local_c;

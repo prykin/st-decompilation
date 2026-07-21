@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
   int iVar4;
   short sVar5;
   short sVar6;
-  
+
   iVar3 = param_1->field_05B4 + -1;
   sVar5 = (short)param_1->field_05B0;
   if (((((((-1 < iVar3) && (sVar6 = param_1->field_05B8, -1 < sVar5)) && (sVar5 < g_worldGrid.sizeX)

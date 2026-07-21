@@ -5,7 +5,7 @@ void __fastcall FUN_00566aa0(AnonShape_00566AA0_2703DA85 *param_1)
   int iVar1;
   uint uVar2;
   uint uVar3;
-  
+
   if ((param_1->field_0018 != 0) && (param_1->field_0028 != 0)) {
     switch(param_1->field_0038) {
     case 0:

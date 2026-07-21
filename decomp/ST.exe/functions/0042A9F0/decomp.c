@@ -3,11 +3,14 @@ void FUN_0042a9f0(char param_1)
 
 {
   int iVar1;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   DArrayTy **ppDVar2;
   undefined4 *puVar3;
-  
+
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,0,0,0);
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;
   _param_1 = 5;

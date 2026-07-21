@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_00483e30(void *this,AnonShape_00482DB0_070D50BF *param
   longlong lVar6;
   longlong lVar7;
   longlong lVar8;
-  
+
   uVar2 = (int)*(short *)((int)this + 0x41) - (int)param_1->field_0041;
   uVar1 = *(uint *)((int)this + 0x80c);
   uVar3 = (int)*(short *)((int)this + 0x43) - (int)param_1->field_0043;

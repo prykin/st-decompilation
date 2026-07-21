@@ -14,7 +14,7 @@ short FUN_0043f130(char param_1,byte *param_2)
   bool bVar10;
   byte local_18 [16];
   dword local_8;
-  
+
   iVar9 = 0;
   sVar5 = 0;
   pDVar2 = g_playerRuntime[param_1].objects;
@@ -25,6 +25,7 @@ short FUN_0043f130(char param_1,byte *param_2)
       sVar5 = sVar4;
       piVar3 = *(int **)((int)pDVar2->data + iVar9 * 4);
       if (piVar3 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar3 + 0x74))(local_18);
         pbVar8 = local_18;
         pbVar6 = param_2;

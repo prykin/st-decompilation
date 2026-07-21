@@ -8,7 +8,8 @@ int * FUN_0075fd10(undefined4 *param_1,int param_2)
   int *piVar4;
   int *piVar5;
   undefined1 *puVar6;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   piVar2 = (int *)(**(code **)*param_1)(param_1,1,0x400);
   puVar6 = &DAT_007a2198;
   piVar4 = piVar2;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
@@ -19,22 +21,26 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
   int iVar8;
   cMf32 *pcVar9;
   ushort *puVar10;
-  char *text;
   cMf32 *pcVar11;
   DArrayTy *array;
   undefined4 uVar12;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   SystemClassTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
   cMf32 *pcVar13;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_03;
   uint uVar14;
   uint uVar15;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_05;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar16;
   char *pcVar17;
   char *pcVar18;
@@ -57,13 +63,13 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
   SystemClassTy *this_01;
   undefined *puVar21;
   undefined1 *puVar22;
-  undefined *puVar23;
-  
+
   Library::MSVCRT::FUN_0072da40();
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   this_01 = extraout_ECX;
-  iVar6 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_8c.previous;
     iVar8 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x1c6,0,iVar6,&DAT_007a4ccc);
@@ -71,12 +77,11 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
       RaiseInternalException(iVar6,0,s_E____titans_tsystem_cpp_007cab5c,0x1c7);
       return 0xffff;
     }
-    pcVar5 = (code *)swi(3);
-    uVar12 = (*pcVar5)();
-    return uVar12;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   SystemClassTy::GetMessage(this_01,(int)param_1);
   if (param_1->field_0010 == 0x43ff) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar3 = *(int **)(param_1->field_0014 + 0x17);
     switch(*piVar3) {
     case 1:
@@ -176,8 +181,8 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             } while (uVar14 != 0);
           }
         }
-        LoadResourceString(0x42c2,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,text);
+        pcVar17 = LoadResourceString(0x42c2,HINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,pcVar17);
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           g_currentExceptionFrame = local_8c.previous;
@@ -188,7 +193,7 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
     case 8:
       local_1b0.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_1b0;
-      iVar6 = Library::MSVCRT::__setjmp3(local_1b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar6 = Library::MSVCRT::__setjmp3(local_1b0.jumpBuffer,0);
       if (iVar6 == 0) {
         wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
         pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0)
@@ -196,16 +201,19 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
         local_48 = 0x577d84;
         array = (DArrayTy *)CreateOpponentList(pcVar11,piVar3[1],DAT_0080995c);
         pcVar13 = (cMf32 *)array->count;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pcVar9 = extraout_ECX_02;
         if (pcVar13 != (cMf32 *)0x0) {
           pcVar9 = (cMf32 *)((int)&pcVar13[-1].field_002E + 1);
           if (pcVar9 < pcVar13) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar17 = (char *)((int)((int)&pcVar13[-1].field_002E + 1) * array->elementSize +
                               (int)array->data);
           }
           else {
             pcVar17 = (char *)0x0;
           }
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((pcVar17 + 0x4c != (char *)0x0) &&
              (puVar10 = LoadStrategData((int)pcVar11,pcVar17 + 0x4c,(int *)0x0),
              pcVar9 = extraout_ECX_03, puVar10 != (ushort *)0x0)) {
@@ -256,11 +264,13 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             *(undefined1 *)((int)&DAT_008087c4 + piVar3[2] * 0x51 + 3) = 1;
             array = (DArrayTy *)0x577e9d;
             FreeAndNull((void **)&stack0xffffffdc);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             pcVar9 = extraout_ECX_04;
           }
         }
         if (array != (DArrayTy *)0x0) {
           DArrayDestroy(array);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           pcVar9 = extraout_ECX_05;
         }
         cMf32::delete(pcVar9,pcVar11);
@@ -275,11 +285,13 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
           *puVar19 = 0;
           puVar19 = puVar19 + 1;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)();
       }
     }
   }
   else if (param_1->field_0010 == 0x4400) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pcVar17 = *(char **)(param_1->field_0014 + 0x17);
     cVar1 = *pcVar17;
     bVar2 = pcVar17[1];
@@ -317,10 +329,9 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          puVar23 = (undefined *)0x0;
           local_d0.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_d0;
-          iVar8 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0,(void *)0x0,iVar6);
+          iVar8 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0);
           if (iVar8 == 0) {
             pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                         (0x345,(byte *)&DAT_0080f022,0,0,0);
@@ -330,15 +341,18 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             else {
               puVar10 = cMf32::RecGet(pcVar9,(byte)local_1d90,PTR_s_DESCRIPTOR_0079b1a4,
                                       (int *)&stack0xffffffe0,0);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               pcVar13 = extraout_ECX_00;
               if (puVar10 != (ushort *)0x0) {
                 pcVar11 = (cMf32 *)&stack0xffffffe0;
                 puVar21 = PTR_s_SAVE_DESC_0079b1a0;
                 puVar10 = cMf32::RecGet(pcVar9,(byte)&stack0xfffffff0,PTR_s_SAVE_DESC_0079b1a0,
                                         (int *)pcVar11,0);
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 pcVar13 = extraout_ECX_01;
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((puVar10 != (ushort *)0x0) &&
-                   ((pcVar13 = extraout_ECX_01, puVar21 != puVar23 ||
+                   ((pcVar13 = extraout_ECX_01, puVar21 != (undefined *)0x0 ||
                     (pcVar13 = pcVar11, local_1d88 != pcVar11)))) {
                   bVar20 = true;
                   cMf32::delete(pcVar13,pcVar9);

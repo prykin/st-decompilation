@@ -13,7 +13,7 @@ FUN_004cfa00(void *this,Global_sub_004CFA00_param_1Enum param_1,int param_2,int 
   int iVar3;
   uint uVar4;
   int iVar5;
-  
+
   iVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar3 = (-(uint)((char)iVar2 != '\x01') & 0xfffffffd) + 0x13;
   uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
@@ -31,6 +31,7 @@ FUN_004cfa00(void *this,Global_sub_004CFA00_param_1Enum param_1,int param_2,int 
     iVar1 = *(int *)((int)this + 0x4d0);
   }
   if (iVar1 == 3) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)((&PTR_DAT_007b5170)[iVar2] +
                     (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
     *param_3 = iVar2;
@@ -38,6 +39,7 @@ FUN_004cfa00(void *this,Global_sub_004CFA00_param_1Enum param_1,int param_2,int 
     return;
   }
   if (iVar1 == 4) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)((&PTR_DAT_007b5170)[iVar2] +
                     (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
     *param_3 = iVar2 + iVar3;
@@ -45,6 +47,7 @@ FUN_004cfa00(void *this,Global_sub_004CFA00_param_1Enum param_1,int param_2,int 
     return;
   }
   if (iVar1 == 5) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)((&PTR_DAT_007b5170)[iVar2] +
                     (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
     *param_4 = iVar2;

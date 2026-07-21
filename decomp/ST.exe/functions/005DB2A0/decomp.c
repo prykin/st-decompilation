@@ -6,21 +6,25 @@
 void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
 
 {
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
   ccFntTy *this_00;
   int iVar1;
   int *piVar2;
-  
+
   thunk_FUN_0055db70();
   this_00 = (ccFntTy *)0x0;
   if (this->field_002C != 0) {
     cMf32::RecMemFree(g_cMf32_00806780,&this->field_002C);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
   }
   if ((uint *)this->field_0030 != (uint *)0x0) {
     ccFntTy::operator(this_00,(uint *)this->field_0030);
     this->field_0030 = 0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX_00;
   }
   if (this->field_0034 != (ccFntTy *)0x0) {

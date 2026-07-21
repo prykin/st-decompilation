@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_004e15f0(void *this,undefined4 param_1)
   int iVar1;
   uint uVar2;
   uint uVar3;
-  
+
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
     uVar2 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
     iVar1 = *(int *)((int)this + 0x235);

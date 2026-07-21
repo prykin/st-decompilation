@@ -48,6 +48,7 @@ LAB_0052bc8f:
     *(undefined1 *)((int)this + 0xa5) = param_5;
   }
   if ((DAT_00802a44 != (int *)0x0) && (*(short *)((int)DAT_00802a44 + 0x172) == 1)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00802a44 + 0x20))();
   }
   return;

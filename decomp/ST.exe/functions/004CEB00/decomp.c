@@ -38,7 +38,7 @@ undefined4 __thiscall FUN_004ceb00(void *this,undefined4 param_1)
   undefined4 local_10;
   int local_c;
   int local_8;
-  
+
   local_10 = 0;
   if ((uint)PTR_00802a38->field_00E4 <
       (uint)(*(int *)((int)this + 0x3cc) + *(int *)((int)this + 0x3d0))) {
@@ -73,6 +73,7 @@ switchD_004ceb68_caseD_32:
       thunk_FUN_00621580(DAT_00811798,*(uint *)((int)this + 0x24),8);
       return local_10;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(int *)((int)this + 0x5ac) == 0x32) || (local_14 = 1, *(int *)((int)this + 0x5ac) == 0x5c)
        ) {
       local_14 = 2;
@@ -111,15 +112,18 @@ switchD_004ceb68_caseD_32:
             TLOBaseTy::RotateSpr(this,0);
             iVar4 = *(int *)((int)this + 0x5ac);
             if (iVar4 == 0x5c) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*(int *)this + 0x90))(3,0x39b);
               return local_10;
             }
             if (iVar4 == 0x32) {
               iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
               if ((char)iVar4 != '\x02') {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(*(int *)this + 0x90))(3,0x1f9);
                 return local_10;
               }
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*(int *)this + 0x90))(3,0x2c1);
               return local_10;
             }
@@ -127,9 +131,11 @@ switchD_004ceb68_caseD_32:
               if (iVar4 != 0x49) {
                 return local_10;
               }
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*(int *)this + 0x90))(3,800);
               return local_10;
             }
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(3,0x254);
             return local_10;
           }
@@ -235,6 +241,7 @@ switchD_004ceb68_caseD_32:
     }
     else {
       if (uVar6 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x66);
         goto cf_common_exit_004CF029;
       }
@@ -242,6 +249,7 @@ switchD_004ceb68_caseD_32:
       iVar4 = *(int *)this;
       uVar12 = 0x67;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar4 + 0x90))(6,uVar12);
 cf_common_exit_004CF029:
     *(undefined4 *)((int)this + 0x4d0) = 4;
@@ -260,21 +268,26 @@ cf_common_exit_004CF029:
       *(undefined4 *)((int)this + 0x4d0) = 5;
       *(undefined4 *)((int)this + 0x3d0) = 1;
       if (iVar4 == 0x5c) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(3,0x39c);
       }
       else if (iVar4 == 0x32) {
         iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         if ((char)iVar4 == '\x02') {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)this + 0x90))(3,0x2c2);
         }
         else {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)this + 0x90))(3,0x1fa);
         }
       }
       else if (iVar4 == 0x40) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(3,0x255);
       }
       else if (iVar4 == 0x49) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(3,0x321);
       }
       break;

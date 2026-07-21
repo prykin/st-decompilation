@@ -27,7 +27,7 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
   if ((int)param_2 < 0) {
     local_c = -param_1;
     local_8 = -(param_2 + (param_1 != 0));
@@ -97,6 +97,7 @@ LAB_0074d8cc:
   uVar6 = uVar6 + uVar9;
   uVar9 = bVar10 + uVar6;
   uVar6 = (uint)bVar11 + (uint)CARRY4((uint)bVar10,uVar6);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   lVar13 = CONCAT44(local_18 + (uint)CARRY4(uVar6,local_1c),uVar6 + local_1c);
   lVar14 = uVar1 + lVar13;
   local_28 = (uint)((ulonglong)lVar14 >> 0x20);
@@ -108,18 +109,22 @@ LAB_0074d8cc:
     uVar9 = ~uVar9 + (uint)(0xfffffffe < uVar6);
     uVar6 = (uint)(local_34 == 0 && uVar9 == 0);
     local_28 = ~local_28 + (uint)CARRY4(~(uint)lVar14,uVar6);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar1 = CONCAT44(local_28,~(uint)lVar14 + uVar6);
   }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0074d94d:
   uVar12 = CONCAT44(uVar9,local_34);
   iVar8 = 0;
   if (((int)param_6 < 1) && ((int)param_6 < 0)) {
     bVar2 = !bVar2;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (uVar1 < CONCAT44(uVar5,param_3)) {
     if (uVar1 == 0) {
       lVar13 = Library::MSVCRT::__aulldiv(local_34,uVar9,param_3,uVar5);
       if (bVar2) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         lVar13 = CONCAT44(-((int)((ulonglong)lVar13 >> 0x20) + (uint)((int)lVar13 != 0)),
                           -(int)lVar13);
       }
@@ -130,6 +135,7 @@ LAB_0074d94d:
       lVar13 = Library::MSVCRT::__aulldiv(local_34,(uint)uVar15,param_3,0);
       lVar13 = lVar13 + (lVar14 << 0x20);
       if (bVar2) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         lVar13 = CONCAT44(-((int)((ulonglong)lVar13 >> 0x20) + (uint)((int)lVar13 != 0)),
                           -(int)lVar13);
       }
@@ -154,6 +160,7 @@ LAB_0074d94d:
         param_8 = param_8 - 1;
       } while (param_8 != 0);
       if (bVar2) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         lVar13 = CONCAT44(-(iVar8 + (uint)(param_5 != 0)),-param_5);
       }
     }

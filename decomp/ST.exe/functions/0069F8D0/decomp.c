@@ -32,7 +32,7 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   short *local_10;
   int local_c;
   int local_8;
-  
+
   iVar7 = param_5;
   local_3c = 0;
   local_40 = 0;

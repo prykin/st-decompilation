@@ -12,11 +12,12 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
   char *pcVar8;
   bool bVar9;
   int local_8;
-  
+
   iVar6 = 0;
   local_8 = 0;
   if (param_2 == 0) {
     if (param_1 == (char *)0x9) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar2 = (**(code **)(*(int *)this + 0x18))();
       if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
         *param_3 = uVar2;
@@ -54,6 +55,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     bVar5 = (byte)param_1;
     if (param_2 == 0xffffffff) {
       if (param_1 == (char *)0x9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(*(int *)this + 0x18))();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           uVar7 = 0;
@@ -133,6 +135,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     }
     else if (param_2 == 1) {
       if (param_1 == (char *)0x9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(*(int *)this + 0x18))();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           uVar7 = 0;
@@ -212,6 +215,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     }
     else if (param_2 == 2) {
       if (param_1 == (char *)0x9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(*(int *)this + 0x18))();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           uVar7 = 0;
@@ -313,6 +317,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     }
     else if (param_2 == 3) {
       if (param_1 == (char *)0x9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(*(int *)this + 0x18))();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           param_2 = 0;
@@ -518,6 +523,7 @@ LAB_00669a2a:
     }
     else if (param_2 == 4) {
       if (param_1 == (char *)0x9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(*(int *)this + 0x18))();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           param_2 = 0;
@@ -721,6 +727,7 @@ LAB_00669f03:
     }
     else if (param_2 == 0xfffffffe) {
       if (param_1 == (char *)0x9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(*(int *)this + 0x18))();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           param_2 = 0;

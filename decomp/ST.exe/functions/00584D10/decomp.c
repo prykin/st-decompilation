@@ -22,7 +22,7 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
   undefined2 local_33;
   int local_c;
   int local_8;
-  
+
   iVar5 = param_1->field_0251;
   uVar2 = param_1->field_025C;
   puVar6 = local_64;

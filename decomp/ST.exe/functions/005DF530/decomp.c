@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -12,30 +14,26 @@ MTaskTy::OutGlassBmpProc
   code *pcVar1;
   int iVar2;
   int iVar3;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar4;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   int *local_8;
-  
-  pIVar4 = g_currentExceptionFrame;
+
   if (((param_8 != (int *)0x0) && (local_8 = param_8, *param_8 != 0)) && (param_8[1] != 0)) {
-    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-    iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
+    local_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_4c;
+    iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar2 == 0) {
       iVar2 = *local_8;
       Library::DKW::DDX::FUN_006b48e0
                 (param_1,param_4,param_5,iVar2,0,0,0,*(uint *)(iVar2 + 4),*(int *)(iVar2 + 8),
                  local_8[1],0,0x10000ff);
-      g_currentExceptionFrame = pIVar4;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    g_currentExceptionFrame = pIVar4;
+    g_currentExceptionFrame = local_4c.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x27,0,iVar2,&DAT_007a4ccc,
                                s_MTaskTy__OutGlassBmpProc_007cd9bc);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Start_task_obj_cpp_007cd994,0x27);
   }

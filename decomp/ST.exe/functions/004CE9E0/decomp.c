@@ -5,7 +5,7 @@ void __thiscall FUN_004ce9e0(void *this,int *param_1,int *param_2,int *param_3)
   short sVar1;
   short sVar2;
   short sVar3;
-  
+
   if (&stack0x00000000 == (undefined1 *)0xfffffffc) {
     sVar3 = (short)param_1;
     sVar1 = sVar3;

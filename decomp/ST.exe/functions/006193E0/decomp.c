@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_006193e0(AnonShape_006193E0_B2745ECE *param_1)
   short sVar4;
   short sVar5;
   short sVar6;
-  
+
   iVar1 = param_1->field_0061;
   iVar2 = param_1->field_0065;
   iVar3 = param_1->field_0069;

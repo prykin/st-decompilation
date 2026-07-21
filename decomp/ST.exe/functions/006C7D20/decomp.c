@@ -8,7 +8,7 @@ int FUN_006c7d20(AnonShape_006C7D20_41F6C243 *param_1,int param_2,int *param_3)
   undefined1 *puVar4;
   int iVar5;
   int iVar6;
-  
+
   uVar2 = Library::DKW::GPC::FUN_006d80c0((int)param_1);
   if ((uVar2 != 0) && (uVar2 != 0xffffffff)) {
     return 0;

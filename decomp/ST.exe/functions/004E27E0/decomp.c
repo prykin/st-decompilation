@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
   int iVar2;
   int *piVar3;
   TLOBaseTy *local_8;
-  
+
   local_8 = param_1;
   if ((uint)PTR_00802a38->field_00E4 % 0x4b == 0) {
     piVar3 = &param_1->field_04D0;
@@ -21,6 +21,7 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((*(int *)&param_1->field_0x520 != 0) &&
        (iVar2 = thunk_FUN_004ac910(&param_1->field_01D5,'\f'),
        iVar2 == *(int *)(param_1->field_01F5 + 0x1c4))) && (param_1->field_04D0 == 0)) &&

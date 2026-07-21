@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
@@ -9,21 +11,20 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   code *pcVar1;
   int errorCode;
   int iVar2;
-  undefined4 unaff_ESI;
   uint index;
-  void *unaff_EDI;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
   STTorpC *local_10;
   int local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(int *)(this->field_0241 + 0xc);
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   iVar2 = local_c;
   if (errorCode == 0) {
     if (local_c == 0) {
@@ -57,9 +58,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
       RaiseInternalException(errorCode,0,s_E____titans_nick_to_torp_cpp_007d25c0,0x472);
       return -1;
     }
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   *param_2 = 0xffffffff;
   return 0;

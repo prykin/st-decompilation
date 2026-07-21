@@ -3,7 +3,7 @@ void __fastcall FUN_0054b540(CursorClassTy *param_1)
 
 {
   uint uVar1;
-  
+
   *(undefined4 *)&param_1->field_0xcd = 0;
   param_1->field_00D3 = 0;
   param_1->field_00D4 = 0;

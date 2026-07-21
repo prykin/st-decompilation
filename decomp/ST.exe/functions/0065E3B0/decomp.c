@@ -6,43 +6,38 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
   undefined2 *puVar1;
   STGameObjC *this;
   int iVar2;
-  void *extraout_ECX;
-  void *extraout_ECX_00;
-  void *extraout_ECX_01;
-  void *pvVar3;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   AnonShape_0041AF40_F59F8577 *unaff_EDI;
-  uint uVar4;
-  bool bVar5;
+  uint uVar3;
+  bool bVar4;
   int local_8;
-  
-  uVar4 = 0;
+
+  uVar3 = 0;
   local_8 = 0;
   array = (DArrayTy *)thunk_FUN_0065da10(param_1,param_2);
   if (array != (DArrayTy *)0x0) {
     if (0 < (int)array->count) {
-      bVar5 = array->count != 0;
-      pvVar3 = extraout_ECX;
+      bVar4 = array->count != 0;
       do {
-        if (bVar5) {
-          pvVar3 = array->data;
-          puVar1 = (undefined2 *)(array->elementSize * uVar4 + (int)pvVar3);
+        if (bVar4) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar3) (runtime stride) */
+          puVar1 = (undefined2 *)(array->elementSize * uVar3 + (int)array->data);
         }
         else {
           puVar1 = (undefined2 *)0x0;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this = STAllPlayersC::GetObjPtr
-                         (g_sTAllPlayers_007FA174,
-                          CONCAT31((int3)((uint)pvVar3 >> 8),param_1->field_0024),
+                         (g_sTAllPlayers_007FA174,param_1->field_0024,
                           CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
-        pvVar3 = extraout_ECX_00;
         if (this != (STGameObjC *)0x0) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           iVar2 = (*this->vtable[1].GetMessage)(this,unaff_EDI);
           local_8 = local_8 + iVar2;
-          pvVar3 = extraout_ECX_01;
         }
-        uVar4 = uVar4 + 1;
-        bVar5 = uVar4 < array->count;
-      } while ((int)uVar4 < (int)array->count);
+        uVar3 = uVar3 + 1;
+        bVar4 = uVar3 < array->count;
+      } while ((int)uVar3 < (int)array->count);
     }
     DArrayDestroy(array);
     return local_8;

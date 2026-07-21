@@ -14,8 +14,10 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
   short sVar8;
   uint uVar9;
   int iVar10;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
   float10 fVar11;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST1;
   longlong lVar12;
   longlong lVar13;
@@ -24,7 +26,7 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
   uint local_14;
   int local_10;
   int local_c;
-  
+
   uVar9 = (*(int *)((int)this + 0x2c0) % 10) * *(int *)((int)this + 700);
   if (*(uint *)((int)this + 0x245) < 2) {
     local_18 = 10;
@@ -62,6 +64,7 @@ cf_common_join_0063EACD:
   if ((int)uVar9 < (int)(*(int *)((int)this + 700) + uVar9)) {
     do {
       iVar10 = *(int *)((int)this + 0x336);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((local_14 < *(uint *)(iVar10 + 0xc)) &&
          (iVar10 = *(int *)(iVar10 + 8) * local_14 + *(int *)(iVar10 + 0x1c), iVar10 != 0)) {
         *(int *)((int)this + 0x1c) = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
@@ -74,8 +77,10 @@ cf_common_join_0063EACD:
         }
         *(float *)(iVar10 + 0x2c) = (float)iVar4;
         lVar12 = Library::MSVCRT::__ftol();
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         fcos(extraout_ST0);
         lVar13 = Library::MSVCRT::__ftol();
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         fsin(extraout_ST1);
         iVar4 = (int)lVar13 + *(int *)(iVar10 + 0x14);
         *(int *)(iVar10 + 8) = iVar4;
@@ -125,6 +130,7 @@ cf_common_join_0063EACD:
                             [(int)sVar3 * (int)g_worldGrid.planeStride +
                              (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0]
                             != (STWorldObject *)0x0)) {
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
                                        (int)g_worldGrid.cells
                                             [(int)sVar3 * (int)g_worldGrid.planeStride +
@@ -140,6 +146,7 @@ cf_common_join_0063EACD:
                         [(int)sVar3 * (int)g_worldGrid.planeStride +
                          (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[1] !=
                         (STWorldObject *)0x0)))))) {
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
                                        (int)g_worldGrid.cells
                                             [(int)sVar3 * (int)g_worldGrid.planeStride +
@@ -194,6 +201,7 @@ cf_common_join_0063EACD:
                        [(int)sVar3 * (int)g_worldGrid.planeStride +
                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0] !=
                        (STWorldObject *)0x0)))))) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
                                    (int)g_worldGrid.cells
                                         [(int)sVar3 * (int)g_worldGrid.planeStride +

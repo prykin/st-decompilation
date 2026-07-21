@@ -19,7 +19,7 @@ byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
   byte *local_10;
   uint local_c;
   uint local_8;
-  
+
   local_10 = (byte *)0x0;
   local_14 = (uint *)0x0;
   local_8 = 0;

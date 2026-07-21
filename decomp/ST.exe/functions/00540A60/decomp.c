@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\support.cpp
    StartServTy::WrSarrDDX
-   
+
    [STPrototypeApplier] Propagated parameter 9.
    Evidence: 00540A60 parameter used as this of ccFntTy::EraseSufr @ 00540BC7 */
 
@@ -14,15 +16,13 @@ StartServTy::WrSarrDDX
 {
   code *pcVar1;
   int iVar2;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   BITMAPINFO *local_c;
   int local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if (param_4 < 1) {
       iVar2 = FUN_00711670(param_9,(AnonShape_00711670_5F8DCCF2 *)param_6,0,-1);
@@ -39,7 +39,7 @@ StartServTy::WrSarrDDX
     else {
       local_c = (BITMAPINFO *)
                 Library::DKW::WGR::FUN_006b55f0
-                          ((AnonShape_006B84D0_7C7D97C6 *)0x0,0,0,0,(byte *)param_1,0,param_2,
+                          ((AnonShape_006B5B10_E0D06CF1 *)0x0,0,0,0,(byte *)param_1,0,param_2,
                            param_3,local_8,param_5);
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }
@@ -54,9 +54,7 @@ StartServTy::WrSarrDDX
   iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0x95,0,iVar2,&DAT_007a4ccc,
                              s_StartServTy__WrSarrDDX_007c7ba0);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   ccFntTy::EraseSufr(param_9);
   return;

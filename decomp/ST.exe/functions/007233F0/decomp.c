@@ -5,7 +5,7 @@ int __fastcall FUN_007233f0(AnonShape_007233F0_CA87FFD3 *param_1)
   AnonNested_007233F0_0064_6FCF4A7B *pAVar1;
   int iVar2;
   int iVar3;
-  
+
   pAVar1 = param_1->field_0064;
   iVar2 = pAVar1->field_0000;
   iVar3 = -1;

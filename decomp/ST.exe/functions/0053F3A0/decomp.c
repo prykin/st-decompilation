@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -11,15 +13,13 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
   ProdPanelTy *pPVar3;
   int errorCode;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -29,9 +29,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
       RaiseInternalException(errorCode,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x1bf);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   sVar1 = local_8->field_0172;
   if (sVar1 == 1) {
@@ -39,6 +37,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(local_8->field_0000 + 0x18))(0);
   }
   else {

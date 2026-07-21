@@ -24,7 +24,7 @@ int FUN_00673d20(void)
   char *pcVar18;
   int local_14;
   uint local_10;
-  
+
   DAT_00811954 = DAT_007d2d18;
   if (DAT_007d2d18 != 0x1d) {
     _DAT_00857550 = 0;

@@ -4,7 +4,7 @@ int FUN_006bb8b0(AnonShape_006BB8B0_D6DE56CA *param_1)
 {
   AnonShape_006BB8B0_D6DE56CA *pAVar1;
   int iVar2;
-  
+
   pAVar1 = param_1;
   param_1->field_0474 = 0;
   if ((param_1->field_000C & 0x1100) == 0x100) {

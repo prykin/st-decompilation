@@ -2,6 +2,7 @@
 undefined2 __thiscall FUN_006e2d00(void *this,int param_1,int param_2)
 
 {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((-1 < param_1) && (param_1 < *(int *)((int)this + 0x28))) && (-1 < param_2)) &&
      (param_2 < *(int *)((int)this + 0x2c))) {
     return *(undefined2 *)

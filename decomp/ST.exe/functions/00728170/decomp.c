@@ -4,6 +4,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
 {
   undefined1 uVar1;
   uint uVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_ECX;
   int iVar3;
   uint uVar4;
@@ -12,12 +13,13 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
   int iVar7;
   undefined1 *puVar8;
   uint local_c;
-  
+
   if ((((int)DAT_008570dc < (int)param_2->field_0024) &&
       ((int)param_1->field_0024 < (int)DAT_0085705c)) &&
      ((int)param_1->field_0024 >> 0x10 < (int)param_2->field_0024 >> 0x10)) {
     local_c = param_1->field_001C;
     iVar3 = param_2->field_001C - local_c;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar3 = (int)(CONCAT44(iVar3 >> 0x10,iVar3 * 0x10000) /
                  (longlong)
                  (int)((param_2->field_0024 & 0xffff0000) - (param_1->field_0024 & 0xffff0000)));
@@ -29,6 +31,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
     if ((int)uVar6 < (int)DAT_008570dc) {
       uVar2 = FUN_006db5f0(iVar3,DAT_008570dc - uVar6);
       local_c = local_c + uVar2;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar2 = extraout_ECX;
       uVar6 = DAT_008570dc;
     }

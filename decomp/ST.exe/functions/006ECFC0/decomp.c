@@ -6,7 +6,7 @@ int __cdecl FUN_006ecfc0(AnonShape_006ECFC0_6CF214D7 *param_1,AnonShape_006ECFC0
   AnonNested_006ECFC0_0064_60428B19 *pAVar2;
   int iVar3;
   int iVar4;
-  
+
   pAVar1 = param_1->field_0064;
   pAVar2 = param_2->field_0064;
   if (((byte)pAVar1->field_0004 & 0x72) == 2) {

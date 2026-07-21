@@ -9,11 +9,12 @@ undefined4 FUN_00757ef0(AnonShape_00757EF0_9651DBEA *param_1)
   int iVar5;
   int iVar6;
   byte local_14 [16];
-  
+
   puVar2 = (undefined4 *)param_1->field_0010;
   iVar3 = puVar2[1];
   pbVar4 = (byte *)*puVar2;
   if (iVar3 == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (*(code *)puVar2[3])(param_1);
     if (iVar3 == 0) {
       return 0;
@@ -25,6 +26,7 @@ undefined4 FUN_00757ef0(AnonShape_00757EF0_9651DBEA *param_1)
   bVar1 = *pbVar4;
   pbVar4 = pbVar4 + 1;
   if (iVar3 == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (*(code *)puVar2[3])(param_1);
     if (iVar3 == 0) {
       return 0;
@@ -40,6 +42,7 @@ undefined4 FUN_00757ef0(AnonShape_00757EF0_9651DBEA *param_1)
     iVar6 = 0;
     do {
       if (iVar3 == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar3 = (*(code *)puVar2[3])(param_1);
         if (iVar3 == 0) {
           return 0;
@@ -64,6 +67,7 @@ undefined4 FUN_00757ef0(AnonShape_00757EF0_9651DBEA *param_1)
   *puVar2 = pbVar4;
   puVar2[1] = iVar3;
   if (0 < iVar6) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(param_1->field_0010 + 0x10))(param_1,iVar6);
   }
   return 1;

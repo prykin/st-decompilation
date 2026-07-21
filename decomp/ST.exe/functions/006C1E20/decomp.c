@@ -6,7 +6,7 @@ void FUN_006c1e20(void)
   int iVar2;
   int *piVar3;
   uint *puVar4;
-  
+
   if ((DAT_008568b4 != 0) && (g_hThread_008568C0 != (HANDLE)0x0)) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     if (DAT_008568c4 == 0) {
@@ -18,12 +18,15 @@ void FUN_006c1e20(void)
           piVar3[-3] = piVar3[-3] & 8;
           piVar1 = (int *)*piVar3;
           if (piVar1 != (int *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*piVar1 + 0x48))(piVar1);
             piVar1 = (int *)piVar3[1];
             if (piVar1 != (int *)0x0) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*piVar1 + 8))(piVar1);
               piVar3[1] = 0;
             }
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)*piVar3 + 8))((int *)*piVar3);
           }
           puVar4 = (uint *)(piVar3 + -3);

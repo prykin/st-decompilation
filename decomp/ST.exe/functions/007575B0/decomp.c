@@ -4,7 +4,7 @@ uint FUN_007575b0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort *p
 {
   int iVar1;
   uint uVar2;
-  
+
   switch(param_1->field_000C->field_0030) {
   case 1:
     return (int)(char)*param_2 - (int)(char)*param_3;
@@ -20,6 +20,7 @@ uint FUN_007575b0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort *p
   case 6:
     iVar1 = *(int *)param_2;
     break;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   default:
     uVar2 = (*(code *)param_1->field_000C->field_0004)(param_2,param_3);
     return uVar2;

@@ -9,16 +9,18 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
   undefined4 *puVar5;
   undefined4 *puVar6;
   uint local_8;
-  
+
   puVar3 = param_1;
   if (param_1 == (undefined4 *)0x0) {
     uVar4 = 1;
   }
   else {
     puVar6 = (undefined4 *)*param_1;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar4 = (**(code **)(*param_2 + 0x1c))(param_2,*puVar6,puVar6[1],puVar6[2],puVar6[3]);
     if (param_3 != 0) {
       puVar6 = (undefined4 *)*param_1;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (**(code **)(*param_2 + 0xc))
                         (param_2,*puVar6,puVar6[1],puVar6[2],puVar6[3],param_1[1],param_1[2]);
       if ((-1 < (int)uVar4) && (local_8 = 0, param_1[3] != 0)) {
@@ -27,6 +29,7 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
           puVar5 = (undefined4 *)(puVar3[4] + (int)param_1);
           puVar6 = (undefined4 *)puVar5[5];
           puVar1 = (undefined4 *)*puVar3;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar4 = (**(code **)(*param_2 + 0x14))
                             (param_2,*puVar1,puVar1[1],puVar1[2],puVar1[3],*puVar5,puVar5[1],
                              puVar5[2],puVar5[3],puVar5[4],*puVar6,puVar6[1],puVar6[2],puVar6[3],
@@ -39,6 +42,7 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
               puVar1 = *(undefined4 **)(puVar6[8] + 4 + param_3 * 8);
               puVar5 = *(undefined4 **)(puVar6[8] + param_3 * 8);
               puVar2 = (undefined4 *)*puVar3;
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               uVar4 = (**(code **)(*param_2 + 0x18))
                                 (param_2,*puVar2,puVar2[1],puVar2[2],puVar2[3],*puVar6,*puVar5,
                                  puVar5[1],puVar5[2],puVar5[3],*puVar1,puVar1[1],puVar1[2],puVar1[3]

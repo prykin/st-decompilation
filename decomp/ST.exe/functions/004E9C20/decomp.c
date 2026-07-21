@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_004e9c20(AnonShape_004E9C20_50FC91C6 *param_1)
 {
   int iVar1;
   AnonShape_004E9C20_50FC91C6 *local_8;
-  
+
   if (param_1->field_046C != 0) {
     local_8 = param_1;
     if (param_1->field_048C != 0) {

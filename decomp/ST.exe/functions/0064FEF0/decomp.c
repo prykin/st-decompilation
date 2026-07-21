@@ -4,9 +4,10 @@ undefined4 __cdecl FUN_0064fef0(short *param_1)
 {
   short sVar1;
   int iVar2;
-  
+
   iVar2 = 0;
   do {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + iVar2 + 0xd0) != '\b') {
       return 0;
     }
@@ -21,6 +22,7 @@ undefined4 __cdecl FUN_0064fef0(short *param_1)
     return 0;
   }
   if (5 < sVar1) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + 0xd5) != '\b') {
       return 0;
     }

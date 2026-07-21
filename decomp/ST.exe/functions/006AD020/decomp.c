@@ -10,7 +10,7 @@ int FUN_006ad020(int param_1,int param_2,Global_sub_006AD020_param_3Enum param_3
   int iVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar1 = param_4 - param_1;
   iVar2 = param_5 - param_2;
   iVar3 = iVar1;

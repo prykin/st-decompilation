@@ -16,7 +16,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
   AnonShape_00697AF0_A94F4D28 *local_10;
   int local_c;
   int local_8;
-  
+
   pDVar1 = param_1->field_0015;
   local_14 = 0;
   if (pDVar1 != (DArrayTy *)0x0) {
@@ -30,6 +30,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
       do {
         pvVar5 = (void *)0x0;
         if (uVar7 < uVar2) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar7) (runtime stride) */
           pvVar5 = (void *)(pDVar1->elementSize * uVar7 + (int)pDVar1->data);
         }
         if (*(char *)((int)pvVar5 + 1) == '\0') {

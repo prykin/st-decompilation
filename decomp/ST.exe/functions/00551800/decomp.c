@@ -7,7 +7,7 @@ void __fastcall FUN_00551800(AnonShape_00551800_EBA95FA4 *param_1)
   int iVar3;
   uint uVar4;
   undefined4 uVar5;
-  
+
   iVar1 = param_1->field_01C8;
   if ((&param_1->field_01BC)[(byte)param_1->field_01D0] == 0) {
     if (iVar1 != 0) {

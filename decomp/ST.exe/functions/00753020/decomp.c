@@ -6,7 +6,7 @@ void FUN_00753020(int param_1,int param_2)
   uint uVar2;
   char *pcVar3;
   char *pcVar4;
-  
+
   pcVar3 = (char *)(param_1 + param_2);
   uVar2 = 0xffffffff;
   pcVar4 = pcVar3;

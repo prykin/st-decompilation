@@ -1,9 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::_AddMDPairs */
+   STAllPlayersC::_AddMDPairs
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=0044238E MOVSX EAX,byte ptr [EBP + 0x8] | 004424C4 MOVSX
+   EAX,byte ptr [EBP + 0x8] | 0044275F MOVSX EAX,byte ptr [EBP + 0x8] */
 
-undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_1,uint param_2)
+undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_1,uint param_2)
 
 {
   code *pcVar1;
@@ -15,10 +20,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   undefined4 uVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
   int *piVar10;
   short *psVar11;
-  void *unaff_EDI;
   short *psVar12;
   STAllPlayersC_GetTOBJList_param_2Enum SVar13;
   STAllPlayersC_GetTOBJList_param_2Enum SVar14;
@@ -51,7 +54,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   undefined4 local_10;
   DArrayTy *local_c;
   DArrayTy *local_8;
-  
+
   local_4c = 4;
   local_6c[0] = CASE_38;
   local_6c[1] = 0x39;
@@ -63,7 +66,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
-  iVar4 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0);
   iVar6 = local_4c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_d4.previous;
@@ -71,16 +74,14 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
       iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2454,0,iVar4,
                                  &DAT_007a4ccc,s_STAllPlayersC___AddMDPairs_007a80bc);
       if (iVar6 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar7 = (*pcVar1)();
-        return uVar7;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2455);
     }
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = &g_playerRuntime[(char)param_1].field6_0xf;
+    piVar10 = &g_playerRuntime[param_1].field6_0xf;
     iVar4 = local_4c;
     do {
       if (*piVar10 == 0) {
@@ -117,10 +118,11 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
     if (0 < iVar6) {
       do {
         iVar6 = local_14 * 4;
-        local_c = (DArrayTy *)GetTOBJList(pSVar2,(char)param_1,local_6c[local_14],0,-1);
+        local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,local_6c[local_14],0,-1);
         local_48 = local_c->count;
         if (local_48 != 0) {
-          local_8 = *(DArrayTy **)(iVar6 + 0x7f4e2f + (char)param_1 * 0xa62);
+          /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+          local_8 = *(DArrayTy **)(iVar6 + 0x7f4e2f + param_1 * 0xa62);
           local_18 = 0;
           if (0 < (int)local_48) {
             do {
@@ -180,14 +182,14 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
       do {
         iVar6 = local_14;
         if (SVar13 == local_6c[local_14]) {
-          iVar4 = GetPlayerRaceId((char)param_1);
+          iVar4 = GetPlayerRaceId(param_1);
           if ((char)iVar4 == '\x03') {
             SVar14 = 0x60;
           }
           else {
             SVar14 = 0x3b;
           }
-          local_c = (DArrayTy *)GetTOBJList(pSVar2,(char)param_1,SVar14,0,-1);
+          local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,SVar14,0,-1);
           pSVar5 = local_44;
           local_48 = local_c->count;
           if (local_48 != 0) {
@@ -210,7 +212,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                          (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(int)local_40,
                          (int)local_3e,(int)local_3c,-1,-1,-1);
             local_18 = 0;
-            local_8 = *(DArrayTy **)(local_14 * 4 + 0x7f4e2f + (char)param_1 * 0xa62);
+            /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+            local_8 = *(DArrayTy **)(local_14 * 4 + 0x7f4e2f + param_1 * 0xa62);
             iVar6 = local_14;
             SVar13 = local_58;
             if (0 < (int)local_48) {

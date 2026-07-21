@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_006e62d0(void *this,int param_1,int *param_2)
   int iVar1;
   uint uVar2;
   int iVar3;
-  
+
   *(undefined4 *)(*(int *)((int)this + 0x10) + 4) = 0;
   while( true ) {
     iVar1 = *(int *)((int)this + 0x10);

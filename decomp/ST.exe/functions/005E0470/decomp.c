@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -12,28 +14,32 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   DArrayTy *pDVar3;
   AnonShape_005E10A0_819783CC *pAVar4;
   int iVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
   ccFntTy *this_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_04;
   cMf32 *pcVar6;
   uint *puVar7;
   uint uVar8;
   void **value;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   SpriteClassTy *this_02;
   undefined4 *puVar9;
   InternalExceptionFrame local_4c;
   MTaskTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar5 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,299,0,iVar2,&DAT_007a4ccc,
@@ -42,9 +48,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
       RaiseInternalException(iVar2,0,s_E____titans_Start_task_obj_cpp_007cd994,299);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DarkScreen(DAT_0080759c,10,2);
   this_00 = local_8;
@@ -119,6 +123,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
         goto LAB_005e0672;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar8) (runtime stride) */
         this_02 = (SpriteClassTy *)(pDVar3->elementSize * uVar8 + (int)pDVar3->data);
 LAB_005e0672:
         SpriteClassTy::CloseSprite(this_02);
@@ -141,6 +146,7 @@ LAB_005e0672:
         goto LAB_005e06d9;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar8) (runtime stride) */
         pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar8 + (int)pDVar3->data);
 LAB_005e06d9:
         TTaskItemClose(this_00,pAVar4);
@@ -161,6 +167,7 @@ LAB_005e06d9:
         goto LAB_005e072b;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar8) (runtime stride) */
         pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar8 + (int)pDVar3->data);
 LAB_005e072b:
         TTaskItemClose(this_00,pAVar4);
@@ -170,6 +177,7 @@ LAB_005e072b:
     }
     DArrayDestroy(this_00->field_064F);
     this_00->field_064F = (DArrayTy *)0x0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_01 = extraout_ECX;
   }
   value = (void **)&this_00->field_0653;
@@ -177,6 +185,7 @@ LAB_005e072b:
   do {
     if (*value != (void *)0x0) {
       FreeAndNull(value);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_00;
     }
     value = value + 3;
@@ -185,6 +194,7 @@ LAB_005e072b:
   if (this_00->field_0089 != (ccFntTy *)0x0) {
     ccFntTy::operator(this_01,(uint *)this_00->field_0089);
     this_00->field_0089 = (ccFntTy *)0x0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_01 = extraout_ECX_01;
   }
   if (this_00->field_008D != (ccFntTy *)0x0) {
@@ -200,6 +210,7 @@ LAB_005e072b:
       pcVar6 = this_00->field_0070;
     }
     cMf32::RecMemFree(pcVar6,&this_00->field_005D);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar6 = extraout_ECX_02;
   }
   if (DAT_008085e3 != 0) {
@@ -212,11 +223,13 @@ LAB_005e072b:
   }
   if ((DArrayTy *)this_00->field_0074 != (DArrayTy *)0x0) {
     DArrayDestroy((DArrayTy *)this_00->field_0074);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar6 = extraout_ECX_03;
   }
   this_00->field_0074 = 0;
   if ((DArrayTy *)this_00->field_0078 != (DArrayTy *)0x0) {
     DArrayDestroy((DArrayTy *)this_00->field_0078);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar6 = extraout_ECX_04;
   }
   this_00->field_0078 = 0;

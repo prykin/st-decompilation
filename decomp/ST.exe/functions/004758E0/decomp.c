@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::UnLoadObj
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004803D0 -> 004758E0 @ 0048053F */
 
@@ -11,29 +13,27 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
 {
   undefined1 uVar1;
   undefined1 uVar2;
-  ushort uVar3;
-  code *pcVar4;
-  short sVar5;
+  code *pcVar3;
+  short sVar4;
+  int iVar5;
   int iVar6;
-  undefined2 uVar11;
-  int iVar7;
-  uint uVar8;
-  undefined4 *puVar9;
-  uint uVar10;
+  uint uVar7;
+  undefined4 *puVar8;
+  uint uVar9;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined2 extraout_var_00;
-  int iVar12;
-  uint uVar13;
-  undefined2 extraout_var_01;
-  undefined4 *puVar14;
-  longlong lVar15;
+  int iVar10;
+  undefined2 uVar12;
+  uint uVar11;
+  undefined4 *puVar13;
+  longlong lVar14;
+  short sVar15;
   short sVar16;
   short sVar17;
   short sVar18;
   short sVar19;
   short sVar20;
-  short sVar21;
-  byte bVar22;
+  byte bVar21;
   undefined4 local_30 [2];
   undefined4 local_28;
   short local_24;
@@ -44,33 +44,31 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   int local_10;
   AnonShape_004758E0_51E65DA0 *local_c;
   undefined1 local_5;
-  
+
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar9 = &this->field_02CC;
-    for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+    puVar8 = &this->field_02CC;
+    for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
     this->field_02C4 = 0;
     if (this->field_07CA != 0) {
-      sVar5 = *(short *)&this->field_0x3ce;
-      uVar3 = *(ushort *)&this->field_0x3d0;
-      *(short *)&this->field_0x5ca = sVar5;
-      this->field_05CC = uVar3;
+      sVar4 = *(short *)&this->field_0x3ce;
+      sVar15 = *(short *)&this->field_0x3d0;
+      *(short *)&this->field_0x5ca = sVar4;
+      this->field_05CC = sVar15;
       *(short *)&this->field_0x5ce = *(short *)&this->field_0x3d2;
-      if (((sVar5 == -1) && (uVar3 == 0xffff)) && (*(short *)&this->field_0x3d2 == -1)) {
+      if (((sVar4 == -1) && (sVar15 == -1)) && (*(short *)&this->field_0x3d2 == -1)) {
         this->field_05D6 = 0;
         return 2;
       }
-      uVar11 = (undefined2)((uint)&this->field_05D0 >> 0x10);
-      iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                        ((AnonReceiver_0048DFD0 *)this,
-                         CONCAT22((short)((uint)this->field_07CA >> 0x10),sVar5),(uint)uVar3,
-                         CONCAT22(uVar11,*(undefined2 *)&this->field_0x3d2),
-                         CONCAT22(uVar11,this->field_005B),CONCAT22(uVar11,this->field_005D),
-                         (int *)CONCAT22(uVar11,this->field_005F),0,&this->field_05D0,
-                         (short *)&this->field_0x5d2,&this->field_05D4);
-      if (iVar6 != 0) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                        ((AnonReceiver_0048DFD0 *)this,sVar4,sVar15,*(short *)&this->field_0x3d2,
+                         this->field_005B,this->field_005D,
+                         (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F),
+                         0,&this->field_05D0,(short *)&this->field_0x5d2,&this->field_05D4);
+      if (iVar5 != 0) {
         this->field_05D6 = 5;
         sub_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
                      (int)this->field_05D4);
@@ -80,34 +78,28 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     return 0;
   }
-  iVar6 = this->field_05D6;
-  if (iVar6 == 5) {
-    iVar6 = sub_0045FF50(this,2);
-    if (iVar6 == -1) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3079,0,0,&DAT_007a4ccc,
+  iVar5 = this->field_05D6;
+  if (iVar5 == 5) {
+    iVar5 = sub_0045FF50(this,2);
+    if (iVar5 == -1) {
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3079,0,0,&DAT_007a4ccc,
                                  s_STBoatC__UnLoadObj__5_007ab0a8);
-      if (iVar6 != 0) {
-        pcVar4 = (code *)swi(3);
-        iVar6 = (*pcVar4)();
-        return iVar6;
+      if (iVar5 != 0) {
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       return -1;
     }
-    if (iVar6 == 0) {
+    if (iVar5 == 0) {
       this->field_05D6 = 0;
     }
-    else if (iVar6 == 3) {
-      uVar11 = (undefined2)((uint)&this->field_05D0 >> 0x10);
-      iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                        ((AnonReceiver_0048DFD0 *)this,
-                         CONCAT22(extraout_var_01,*(undefined2 *)&this->field_0x5ca),
-                         CONCAT22(extraout_var,this->field_05CC),
-                         CONCAT22(uVar11,*(undefined2 *)&this->field_0x5ce),
-                         CONCAT22(extraout_var_01,this->field_005B),
-                         CONCAT22(extraout_var,this->field_005D),
-                         (int *)CONCAT22(uVar11,this->field_005F),0,&this->field_05D0,
-                         (short *)&this->field_0x5d2,&this->field_05D4);
-      if (iVar6 == 0) {
+    else if (iVar5 == 3) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                        ((AnonReceiver_0048DFD0 *)this,*(short *)&this->field_0x5ca,this->field_05CC
+                         ,*(short *)&this->field_0x5ce,this->field_005B,this->field_005D,
+                         (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F),
+                         0,&this->field_05D0,(short *)&this->field_0x5d2,&this->field_05D4);
+      if (iVar5 == 0) {
         return 0;
       }
       sub_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
@@ -117,47 +109,52 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     return 2;
   }
-  if (iVar6 == 0) {
-    iVar6 = thunk_FUN_00492550(this,this->field_005B,this->field_005D,this->field_005F,
+  if (iVar5 == 0) {
+    iVar5 = thunk_FUN_00492550(this,this->field_005B,this->field_005D,this->field_005F,
                                &this->field_05D0,(undefined2 *)&this->field_0x5d2,&this->field_05D4)
     ;
-    if (iVar6 == 0) {
-      iVar6 = (*this->vtable->vfunc_D8)();
-      return -(uint)(iVar6 != 0);
+    if (iVar5 == 0) {
+      iVar5 = (*this->vtable->vfunc_D8)();
+      return -(uint)(iVar5 != 0);
     }
-    iVar6 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_05D4 * 200) + 100;
-    iVar12 = CONCAT22(extraout_var_00,*(short *)&this->field_0x5d2 * 0xc9) + 100;
-    iVar7 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_05D0 * 0xc9) + 100;
-    uVar11 = (undefined2)((uint)iVar12 >> 0x10);
-    sVar5 = (*this->vtable->vfunc_10)
-                      (CONCAT22(uVar11,this->field_0041),
-                       CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0043),
-                       CONCAT22(uVar11,this->field_0045),iVar7,iVar12,iVar6);
-    this->field_05DA = sVar5;
-    uVar8 = sub_004176C0(this,sVar5);
-    uVar8 = sub_00417910(this,(short)uVar8);
-    if (uVar8 != 0xffffffff) {
-      if (uVar8 == 0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    iVar5 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_05D4 * 200) + 100;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    iVar10 = CONCAT22(extraout_var,*(short *)&this->field_0x5d2 * 0xc9) + 100;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    iVar6 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_05D0 * 0xc9) + 100;
+    uVar12 = (undefined2)((uint)iVar10 >> 0x10);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    sVar4 = (*this->vtable->vfunc_10)
+                      (CONCAT22(uVar12,this->field_0041),
+                       CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
+                       CONCAT22(uVar12,this->field_0045),iVar6,iVar10,iVar5);
+    this->field_05DA = sVar4;
+    uVar7 = sub_004176C0(this,sVar4);
+    uVar7 = sub_00417910(this,(short)uVar7);
+    if (uVar7 != 0xffffffff) {
+      if (uVar7 == 0) {
         this->field_05D6 = 1;
         FUN_006e62d0(PTR_00802a38,this->field_07CA,(int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
         local_5 = local_c->field_0063;
-        puVar9 = (undefined4 *)&this->field_0x34;
-        puVar14 = (undefined4 *)&local_c->field_0x34;
-        for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *puVar14 = *puVar9;
-          puVar9 = puVar9 + 1;
-          puVar14 = puVar14 + 1;
+        puVar8 = (undefined4 *)&this->field_0x34;
+        puVar13 = (undefined4 *)&local_c->field_0x34;
+        for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *puVar13 = *puVar8;
+          puVar8 = puVar8 + 1;
+          puVar13 = puVar13 + 1;
         }
-        *(undefined2 *)puVar14 = *(undefined2 *)puVar9;
-        *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar9 + 2);
+        *(undefined2 *)puVar13 = *(undefined2 *)puVar8;
+        *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)((int)puVar8 + 2);
         local_c->field_0061 = uVar2;
         local_c->field_0062 = uVar1;
         local_c->field_0063 = local_5;
         thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this);
         thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
                            (AnonShape_00495FF0_59081BDD *)this);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)local_c + 0xb8))();
         DumpClassC::WritePtr
                   (this->field_05D0,*(short *)&this->field_0x5d2,this->field_05D4,0,
@@ -166,19 +163,17 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         this->field_07CA = 0;
         this->field_07C6 = 0;
       }
-      iVar6 = (*this->vtable->vfunc_D8)();
-      return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+      iVar5 = (*this->vtable->vfunc_D8)();
+      return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x309b,0,0,&DAT_007a4ccc,
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x309b,0,0,&DAT_007a4ccc,
                                s_STBoatC__UnLoadObj_RotateCheat_007ab080);
-    if (iVar6 != 0) {
-      pcVar4 = (code *)swi(3);
-      iVar6 = (*pcVar4)();
-      return iVar6;
+    if (iVar5 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return -1;
   }
-  if (iVar6 == 1) {
+  if (iVar5 == 1) {
     STJellyGunC::sub_00415B30
               ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
                this->field_05D0 * 0xc9 + 100,*(short *)&this->field_0x5d2 * 0xc9 + 100,
@@ -191,78 +186,79 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     if (this->field_0x2bf != '\0') {
       param_1 = (int)&this->field_0x2b3;
       do {
-        puVar9 = (undefined4 *)
-                 thunk_FUN_0041dc40(local_30,*(undefined4 *)param_1,*(undefined2 *)(param_1 + 4),
-                                    this->field_006C);
-        local_28 = *puVar9;
-        local_24 = *(short *)(puVar9 + 1);
+        puVar8 = (undefined4 *)
+                 thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,
+                                    *(undefined2 *)(param_1 + 4),this->field_006C);
+        local_28 = *puVar8;
+        local_24 = *(short *)(puVar8 + 1);
         if (DAT_0080732c == 1) {
-          bVar22 = 0;
-          sVar21 = 0;
-          iVar12 = -1;
-          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+          bVar21 = 0;
           sVar20 = 0;
-          this->field_001C = uVar8;
+          iVar10 = -1;
+          uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
           sVar19 = 0;
+          this->field_001C = uVar7;
           sVar18 = 0;
-          uVar10 = uVar8 * 0x41c64e6d + 0x3039;
           sVar17 = 0;
-          this->field_001C = uVar10;
-          local_1c = uVar10 * 0x41c64e6d + 0x3039;
+          uVar9 = uVar7 * 0x41c64e6d + 0x3039;
           sVar16 = 0;
+          this->field_001C = uVar9;
+          local_1c = uVar9 * 0x41c64e6d + 0x3039;
+          sVar15 = 0;
           this->field_001C = local_1c;
-          sVar5 = 0;
-          lVar15 = Library::MSVCRT::__ftol();
-          iVar6 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+          sVar4 = 0;
+          lVar14 = Library::MSVCRT::__ftol();
+          iVar5 = (int)(short)lVar14 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
-          iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
-          uVar8 = local_1c;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          iVar6 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
+          uVar7 = local_1c;
         }
         else {
-          uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
-          bVar22 = 0;
-          this->field_001C = uVar10;
-          uVar13 = uVar10 * 0x41c64e6d + 0x3039;
-          sVar21 = 0;
-          this->field_001C = uVar13;
-          uVar8 = uVar13 * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar8;
-          iVar12 = -1;
+          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
+          bVar21 = 0;
+          this->field_001C = uVar9;
+          uVar11 = uVar9 * 0x41c64e6d + 0x3039;
           sVar20 = 0;
+          this->field_001C = uVar11;
+          uVar7 = uVar11 * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar7;
+          iVar10 = -1;
           sVar19 = 0;
           sVar18 = 0;
           sVar17 = 0;
           sVar16 = 0;
-          sVar5 = 0;
-          iVar6 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
+          sVar15 = 0;
+          sVar4 = 0;
+          iVar5 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_28._2_2_ = (short)((uint)local_28 >> 0x10);
-          iVar7 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          iVar6 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
         }
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,2,7,
-                   (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
-                   iVar7 + -3,iVar6,sVar5,sVar16,sVar17,sVar18,sVar19,sVar20,iVar12,sVar21,bVar22);
+                   (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
+                   iVar6 + -3,iVar5,sVar4,sVar15,sVar16,sVar17,sVar18,sVar19,iVar10,sVar20,bVar21);
         local_10 = local_10 + 1;
         param_1 = param_1 + 6;
       } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
     }
     if (local_20 == -1) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30d2,0,0,&DAT_007a4ccc,
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30d2,0,0,&DAT_007a4ccc,
                                  s_STBoatC__UnLoadObj_LLMoveStep_007ab05c);
-      if (iVar6 != 0) {
-        pcVar4 = (code *)swi(3);
-        iVar6 = (*pcVar4)();
-        return iVar6;
+      if (iVar5 != 0) {
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       return -1;
     }
     if (local_20 == 0) {
       FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
-      iVar6 = (*this->vtable->vfunc_D8)();
-      return -(uint)(iVar6 != 0);
+      iVar5 = (*this->vtable->vfunc_D8)();
+      return -(uint)(iVar5 != 0);
     }
   }
-  iVar6 = (*this->vtable->vfunc_D8)();
-  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+  iVar5 = (*this->vtable->vfunc_D8)();
+  return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 }
 

@@ -4,7 +4,7 @@
    005A39A0 @ 005A3D53 | 005A3AB0 -> 005A39A0 @ 005A3D76 | 005A3AB0 -> 005A39A0 @ 005A3D96 |
    005A3AB0 -> 005A39A0 @ 005A3DB6 | 005A3AB0 -> 005A39A0 @ 005A3ED2 | 005A3AB0 -> 005A39A0 @
    005A3EF2 | 005A3AB0 -> 005A39A0 @ 005A3F15 | 005A3AB0 -> 005A39A0 @ 005A3F38
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005A39A0 parameter used as this of ccFntTy::SetSurf @ 005A3A50 | 005A39A0 parameter
    used as this of ccFntTy::WrStr @ 005A3A61 */
@@ -27,7 +27,7 @@ FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,i
   char *pcVar11;
   uint *puVar12;
   uint local_10 [3];
-  
+
   pbVar3 = thunk_FUN_0055d590(text,param_3,param_4);
   if (pbVar3 != (byte *)0x0) {
     iVar5 = -1;
@@ -68,7 +68,7 @@ FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,i
     puVar12 = (uint *)((int)puVar12 + 1);
   }
 LAB_005a3a15:
-  FUN_006b4170(*(AnonShape_006C7610_838EDECF **)((int)this + 0x1ac0),0,param_5,param_6,param_7,
+  FUN_006b4170(*(AnonShape_006B5B10_E0D06CF1 **)((int)this + 0x1ac0),0,param_5,param_6,param_7,
                param_8,0xff);
   ccFntTy::SetSurf(param_1,*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8);
   ccFntTy::WrStr(param_1,local_10,-1,-1,0);

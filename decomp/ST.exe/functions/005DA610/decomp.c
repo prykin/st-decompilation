@@ -3,7 +3,7 @@
    VTable: 0079C1E8 (store 005DA668)
    Evidence: final_vptr=0079C1E8; returns_this=true; calls_before=7; field_writes_after=31;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 005DA610 returns StartSystemTy::StartSystemTy this @ 005DA74D */
 
@@ -12,7 +12,7 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,unde
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,0x200);
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_02F8);
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_038D);

@@ -5,9 +5,11 @@ void __thiscall FUN_005f0150(void *this,AnonShape_005F0150_6EC63067 *param_1)
   int iVar1;
   undefined1 uVar2;
   undefined4 uVar3;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar3 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)param_1 = uVar3;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0xc))();
   param_1->field_0x4 = uVar2;
   param_1->field_0005 = 4;
@@ -18,16 +20,21 @@ void __thiscall FUN_005f0150(void *this,AnonShape_005F0150_6EC63067 *param_1)
   }
   iVar1 = *(int *)((int)this + 0x2b1);
   if (((iVar1 != 0) && (iVar1 != 1)) && (iVar1 != 2)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (**(code **)(*(int *)this + 0x134))();
     param_1->field_0x1c = uVar2;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar3 = (**(code **)(*(int *)this + 0x13c))();
     param_1->field_0021 = uVar3;
     return;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x134))();
   param_1->field_0x1c = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar3 = (**(code **)(*(int *)this + 0x138))();
   param_1->field_001D = uVar3;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar3 = (**(code **)(*(int *)this + 0x13c))();
   param_1->field_0021 = uVar3;
   return;

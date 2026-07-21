@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -12,17 +14,15 @@ FSGSTy::OutChSlProc(FSGSTy *this,int param_1,undefined4 param_2,undefined4 param
   undefined4 *puVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
   undefined4 *local_8;
-  
+
   if (param_8 != (undefined4 *)0x0) {
     local_8 = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     puVar2 = local_8;
     if (errorCode == 0) {
       Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
@@ -44,9 +44,7 @@ FSGSTy::OutChSlProc(FSGSTy *this,int param_1,undefined4 param_2,undefined4 param
     iVar3 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x66,0,errorCode,
                                &DAT_007a4ccc,s_FSGSTy__OutChSlProc_007cbf98);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x66);
   }

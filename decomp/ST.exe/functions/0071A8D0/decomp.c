@@ -8,7 +8,7 @@ void __cdecl FUN_0071a8d0(int *param_1)
   int iVar4;
   int iVar5;
   int local_c;
-  
+
   iVar4 = 0;
   puVar1 = (undefined4 *)*param_1;
   if (puVar1 != (undefined4 *)0x0) {

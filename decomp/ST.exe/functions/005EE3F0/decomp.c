@@ -26,7 +26,7 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
   float local_10;
   uint local_c;
   float local_8;
-  
+
   iVar4 = (int)param_1 + -1;
   if ((-1 < iVar4) && (iVar4 < 5)) {
     *param_2 = *(short *)((int)this + iVar4 * 6 + 0x2ea);
@@ -62,6 +62,7 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     lVar15 = Library::MSVCRT::__allmul(uVar3 - uVar5,iVar10,uVar3 - uVar5,iVar10);
     lVar16 = Library::MSVCRT::__allmul(uVar2 - uVar6,iVar12,uVar2 - uVar6,iVar12);
     lVar17 = Library::MSVCRT::__allmul(uVar1 - uVar7,iVar4,uVar1 - uVar7,iVar4);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (lVar16 + lVar15 + lVar17 <= CONCAT44((int)((ulonglong)lVar14 >> 0x20),param_2)) {
       *param_5 = 1;
       return 0;

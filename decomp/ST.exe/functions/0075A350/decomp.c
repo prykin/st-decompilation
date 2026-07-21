@@ -6,9 +6,10 @@ void FUN_0075a350(AnonShape_0075A350_15A0BA61 *param_1,undefined4 param_2,uint *
   uint *puVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar2 = param_1->field_0196;
   if (*(int *)(iVar2 + 0x30) == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)(param_1->field_019A + 0xc))
                       (param_1,*(undefined4 *)(iVar2 + 0x38 + *(int *)(iVar2 + 0x40) * 4));
     if (iVar3 == 0) {
@@ -23,6 +24,7 @@ void FUN_0075a350(AnonShape_0075A350_15A0BA61 *param_1,undefined4 param_2,uint *
     if (iVar3 != 2) {
       return;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(param_1->field_019E + 4))
               (param_1,*(undefined4 *)(iVar2 + 0x38 + *(int *)(iVar2 + 0x40) * 4),
                (uint *)(iVar2 + 0x34),*(undefined4 *)(iVar2 + 0x48),param_2,param_3,param_4);
@@ -42,6 +44,7 @@ void FUN_0075a350(AnonShape_0075A350_15A0BA61 *param_1,undefined4 param_2,uint *
   *(undefined4 *)(iVar2 + 0x44) = 1;
 LAB_0075a413:
   puVar1 = (uint *)(iVar2 + 0x34);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(param_1->field_019E + 4))
             (param_1,*(undefined4 *)(iVar2 + 0x38 + *(int *)(iVar2 + 0x40) * 4),puVar1,
              *(undefined4 *)(iVar2 + 0x48),param_2,param_3,param_4);

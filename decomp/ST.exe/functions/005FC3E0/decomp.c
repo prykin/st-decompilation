@@ -6,7 +6,7 @@ void __fastcall FUN_005fc3e0(STJellyGunC *param_1)
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  
+
   local_18 = 0;
   local_10 = param_1->field_0008;
   local_14 = 10;

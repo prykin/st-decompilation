@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -18,9 +20,9 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_004B9FA0_DF0
   int iVar8;
   uint uVar9;
   short sVar10;
-  undefined4 unaff_ESI;
   undefined4 *puVar11;
   byte *pbVar12;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   byte *pbVar13;
   InternalExceptionFrame local_80;
@@ -38,14 +40,14 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_004B9FA0_DF0
   uint local_10;
   byte *local_c;
   uint local_8;
-  
+
   if ((this->field_0257 == 8) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_20 = (STSprGameObjC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_20;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -55,9 +57,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_004B9FA0_DF0
       RaiseInternalException(iVar6,0,s_E____titans_Igor_To_shark_cpp_007cbb7c,0x15f);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar7 = (*pcVar2)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_20,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar9 = param_1->field_0010;
@@ -207,6 +207,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_004B9FA0_DF0
     }
     if (uVar9 == 3) {
       uVar7 = thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this_00);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                          *(short *)&this_00->field_0x5f,
                          CONCAT31((int3)((uint)uVar7 >> 8),this_00->field_0x8e),
@@ -217,6 +218,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_004B9FA0_DF0
       return 0;
     }
     if (uVar9 == 0) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       LifeShark((STSharkC *)this_00,unaff_EDI);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -282,9 +284,7 @@ LAB_0058dc72:
                                          &DAT_007a4ccc,s_STSharkC__GetMessage_Dir_Object_e_007cbb50)
               ;
               if (iVar6 != 0) {
-                pcVar2 = (code *)swi(3);
-                uVar7 = (*pcVar2)();
-                return uVar7;
+                STDebugBreak(); /* noreturn in standalone pseudocode */
               }
               thunk_FUN_0058efe0((STJellyGunC *)this_00);
             }
@@ -313,9 +313,7 @@ LAB_0058dc72:
             iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,200,0,0,
                                        &DAT_007a4ccc,s_STSharkC__GetMessage_Dir_Object_e_007cbb50);
             if (iVar6 != 0) {
-              pcVar2 = (code *)swi(3);
-              uVar7 = (*pcVar2)();
-              return uVar7;
+              STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             thunk_FUN_0058efe0((STJellyGunC *)this_00);
           }
@@ -324,9 +322,7 @@ LAB_0058dc72:
           iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x99,0,0,&DAT_007a4ccc
                                      ,s_STSharkC__GetMessage_Phase_Count_007cbba0);
           if (iVar6 != 0) {
-            pcVar2 = (code *)swi(3);
-            uVar7 = (*pcVar2)();
-            return uVar7;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           thunk_FUN_0058efe0((STJellyGunC *)this_00);
         }
@@ -343,6 +339,7 @@ LAB_0058dc72:
         puVar11 = puVar11 + 1;
         pbVar12 = pbVar12 + 4;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_8 = *(uint *)((int)local_1c + 0x5e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x66 + (int)local_1c));
@@ -405,6 +402,7 @@ LAB_0058e0f9:
       thunk_FUN_004ad5e0((int)&this_00->field_01D5);
       g_currentExceptionFrame = local_80.previous;
       return 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     case 0x113:
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_80.previous;

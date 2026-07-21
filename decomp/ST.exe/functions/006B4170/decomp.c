@@ -1,8 +1,8 @@
 
-/* [STPrototypeApplier] Propagated parameter 0.
+/* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 006C7610 -> 006B4170 @ 006C769F */
 
-void FUN_006b4170(AnonShape_006C7610_838EDECF *param_1,int param_2,int param_3,int param_4,
+void FUN_006b4170(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
                  int param_5,int param_6,undefined1 param_7)
 
 {
@@ -22,7 +22,7 @@ void FUN_006b4170(AnonShape_006C7610_838EDECF *param_1,int param_2,int param_3,i
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d8b0;
   puStack_10 = &LAB_0072d964;

@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004dba70(int param_1)
   int *piVar3;
   AnonShape_004DBA70_007C3C4C *local_c;
   int local_8;
-  
+
   piVar3 = (int *)(param_1 + 0x4d0);
   local_8 = 2;
   do {

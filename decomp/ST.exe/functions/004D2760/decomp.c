@@ -3,8 +3,10 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
 
 {
   dword dVar1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   DArrayTy *pDVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   AnonShape_004D2760_CB2BA53E *extraout_EDX;
   AnonShape_004D2760_CB2BA53E *pAVar3;
   int iVar4;
@@ -13,7 +15,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   int iVar7;
   AnonShape_004D2760_CB2BA53E *local_c;
   AnonShape_004D2760_CB2BA53E *local_8;
-  
+
   local_8 = (AnonShape_004D2760_CB2BA53E *)0x0;
   if (*(int *)&param_1[1].field_0x38 != 0) {
     thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)param_1);
@@ -25,6 +27,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       local_8 = (AnonShape_004D2760_CB2BA53E *)0x2;
     }
     iVar4 = param_1->field_0261;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pAVar3 = extraout_EDX;
     if (iVar4 < (int)(&local_8->field_0x0 + iVar4)) {
       do {
@@ -39,10 +42,13 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         pAVar3 = local_8;
       } while (iVar4 < (int)(&local_8->field_0x0 + param_1->field_0261));
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar4 = thunk_FUN_004b7520(CONCAT31((int3)((uint)pAVar3 >> 8),param_1->field_0x24),
                                param_1->field_0259);
     if (iVar4 != 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),param_1->field_0x24),iVar4);
     }
     thunk_FUN_0041d590((AnonShape_0041D590_1DB01C7A *)param_1);
@@ -58,7 +64,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       do {
         DArrayGetElement(PTR_007fa170,uVar5,&local_c);
         if (local_c == param_1) {
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_007fa170,uVar5);
+          FUN_006b0c70(PTR_007fa170,uVar5);
           break;
         }
         uVar5 = uVar5 + 1;
@@ -79,8 +85,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                         g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6,uVar5);
+            FUN_006b0c70(g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -101,8 +106,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                         g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2,uVar5);
+            FUN_006b0c70(g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -123,8 +127,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                         g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee,uVar5);
+            FUN_006b0c70(g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -145,8 +148,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                         g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2,uVar5);
+            FUN_006b0c70(g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -167,7 +169,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         do {
           DArrayGetElement(PTR_007fa16c,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_007fa16c,uVar5);
+            FUN_006b0c70(PTR_007fa16c,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -188,8 +190,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                         g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6,uVar5);
+            FUN_006b0c70(g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -210,8 +211,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       do {
         DArrayGetElement(pDVar2,uVar5,&local_8);
         if (local_8 == param_1) {
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                       g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea,uVar5);
+          FUN_006b0c70(g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea,uVar5);
           break;
         }
         uVar5 = uVar5 + 1;

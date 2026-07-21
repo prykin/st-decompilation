@@ -7,7 +7,7 @@ int __thiscall FUN_00696d00(void *this,AnonShape_00696D00_CB3CB395 *param_1,uint
   uint *puVar3;
   uint uVar4;
   bool bVar5;
-  
+
   if ((param_1 != (AnonShape_00696D00_CB3CB395 *)0x0) &&
      (pDVar1 = param_1->field_0019, pDVar1 != (DArrayTy *)0x0)) {
     uVar4 = 0;
@@ -15,6 +15,7 @@ int __thiscall FUN_00696d00(void *this,AnonShape_00696D00_CB3CB395 *param_1,uint
       bVar5 = pDVar1->count != 0;
       while( true ) {
         if (bVar5) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar4) (runtime stride) */
           puVar3 = (uint *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
         }
         else {

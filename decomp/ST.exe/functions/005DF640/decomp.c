@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::OutGlassTxtProc
-   
+
    [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
@@ -17,11 +19,9 @@ MTaskTy::OutGlassTxtProc
   int iVar3;
   int iVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   int *local_8;
-  
+
   if (param_8 != (AnonShape_00413AF0_B6B4EE9A *)0x0) {
     uVar1 = param_8->field_000C;
     uVar5 = 0;
@@ -37,7 +37,7 @@ LAB_005df673:
     }
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar3 == 0) {
       if (local_8[0xb] != 0) {
         iVar3 = local_8[local_8[4] + 1];
@@ -56,9 +56,7 @@ LAB_005df673:
     iVar4 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x3a,0,iVar3,&DAT_007a4ccc,
                                s_MTaskTy__OutGlassTxtProc_007cd9dc);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_task_obj_cpp_007cd994,0x3a);
   }

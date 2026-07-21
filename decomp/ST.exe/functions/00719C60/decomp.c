@@ -7,7 +7,7 @@ void __cdecl FUN_00719c60(DWORD_PTR dwParam2)
 {
   MCIDEVICEID mciId;
   DWORD_PTR DVar1;
-  
+
   DVar1 = dwParam2;
   mciId = *(MCIDEVICEID *)dwParam2;
   if (mciId != 0) {

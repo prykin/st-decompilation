@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -13,18 +15,16 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   uint uVar4;
   AnonPointee_FSGSTy_1AC0 *pAVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar7;
   InternalExceptionFrame local_54;
   FSGSTy *local_10;
   int local_c;
   int local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pFVar2 = local_10;
   if (iVar3 == 0) {
     value = &local_10->field_1AC0;
@@ -42,6 +42,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     iVar3 = 1;
     puVar7 = (undefined4 *)(pFVar2->field_005D + 0x28);
     uVar4 = FUN_006b4fe0(pFVar2->field_005D);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar5 = (AnonPointee_FSGSTy_1AC0 *)
              FUN_006b50c0(local_c,local_8,(uint)*(ushort *)(pFVar2->field_005D + 0xe),uVar4,puVar7,
                           iVar3);
@@ -70,8 +71,6 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8);
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

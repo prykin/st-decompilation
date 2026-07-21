@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,7 +15,7 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
   int *piVar4;
   uint uVar5;
   int local_8;
-  
+
   uVar5 = (uint)DAT_0080874d;
   if (0x1a4 < param_1) {
     if (param_1 < 0x1b9) {
@@ -58,9 +60,7 @@ LAB_0042cf42:
     if (iVar2 == 0) {
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1 != 0x1a4) {
     if (param_1 == 0x14) {

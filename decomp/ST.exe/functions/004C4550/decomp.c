@@ -50,7 +50,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
   int local_10;
   uint local_c;
   uint local_8;
-  
+
   piVar9 = param_1;
   sVar6 = 0;
   local_c = 0;
@@ -74,12 +74,15 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         local_b0[0] = 0x168;
         local_b0[2] = 1;
         if (&stack0x00000000 != &DAT_0000000c) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(local_c._2_2_,*(undefined2 *)((int)this + 0x41));
         }
         if (&stack0x00000000 != (undefined1 *)0x8) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT22(local_8._2_2_,*(undefined2 *)((int)this + 0x43));
         }
         if (&stack0x00000000 != (undefined1 *)0x10) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = CONCAT22(local_10._2_2_,*(undefined2 *)((int)this + 0x45));
         }
         local_9c = (short)local_c;
@@ -97,6 +100,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         *puVar5 = 0;
         puVar5 = puVar5 + 1;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + *(int *)((int)this + 0x235) * 2) * 0x16);
       if (local_18 == 0) {
         local_18 = 1;
@@ -112,12 +116,15 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       }
       else {
         if (&stack0x00000000 != &DAT_0000000c) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(local_c._2_2_,*(undefined2 *)((int)this + 0x41));
         }
         if (&stack0x00000000 != (undefined1 *)0x8) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT22(local_8._2_2_,*(undefined2 *)((int)this + 0x43));
         }
         if (&stack0x00000000 != (undefined1 *)0x10) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = CONCAT22(local_10._2_2_,*(undefined2 *)((int)this + 0x45));
         }
       }
@@ -141,7 +148,8 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
             iVar3 = ((int)piVar9 + *(int *)((int)this + 0x235) * 2) * 0x16;
             if (*(int *)(&DAT_007932d0 + iVar3) != 0) {
               puVar5 = (undefined4 *)
-                       thunk_FUN_0041dc40(local_b8,*(undefined4 *)(&DAT_007932d4 + iVar3 + iVar11),
+                       thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
+                                                           (&DAT_007932d4 + iVar3 + iVar11),
                                           *(undefined2 *)((int)(&DAT_007932d4 + iVar3 + iVar11) + 4)
                                           ,-*(short *)((int)this + 0x259));
               local_2c = (short)*puVar5;
@@ -154,8 +162,8 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
               local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
               local_24 = (STJellyManC *)
                          (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
-              puVar5 = (undefined4 *)
-                       thunk_FUN_0041dc40(local_c0,local_24,0,-*(short *)((int)this + 0x259));
+              puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-*(short *)((int)this + 0x259))
+              ;
               local_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
               local_64 = local_2c + *(short *)((int)this + iVar10 + 0x2a5);
@@ -163,6 +171,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
               local_60 = *(short *)((int)this + iVar10 + 0x2ad) + *(short *)(puVar5 + 1);
             }
             iVar2 = (int)param_1 + *(int *)((int)this + 0x235) * 2;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((*(int *)(&DAT_00793e28 + iVar2 * 4) == 0) ||
                (iVar3 = local_18, piVar9 = param_1, *(int *)((int)this + iVar10 + 0x2c5) != 0)) {
               iVar3 = (&DAT_00792ca0)[local_14 + iVar2 * 3];
@@ -173,6 +182,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
                                    *(undefined4 *)((int)this + 0x18),
                                    *(undefined2 *)((int)this + 0x32));
                 if (*(int *)((int)this + 0x5ac) == 0x47) {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   (**(code **)(*(int *)this + 0x90))(4,0x315);
                 }
               }
@@ -225,6 +235,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
                 ((AnonReceiver_004DB160 *)g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,
                  piVar1,piVar9,(int *)((int)this + iVar3 + 0x2ad),&local_1c);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_00584a30(*(undefined4 *)((int)this + 0x4e0),*(undefined4 *)((int)this + 0x4e4),
                          *(undefined4 *)((int)this + 0x4e8),*param_1 * 0xc9 + 100,
                          *piVar9 * 0xc9 + 100,*(undefined4 *)((int)this + 0x24),local_1c,
@@ -232,14 +243,17 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x9e);
         return 0;
       }
       if (uVar4 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x9f);
         return 0;
       }
       if (uVar4 == 3) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0xa0);
         return 0;
       }
@@ -260,14 +274,17 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x98);
         return 0;
       }
       if (uVar4 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x99);
         return 0;
       }
       if (uVar4 == 3) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x9a);
         return 0;
       }
@@ -305,14 +322,17 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x9b);
         return 0;
       }
       if (uVar4 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x9c);
         return 0;
       }
       if (uVar4 == 3) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x9d);
         return 0;
       }

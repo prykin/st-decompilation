@@ -17,7 +17,7 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
   short local_a;
   short local_8;
   short local_6;
-  
+
   uVar3 = 0;
   local_14 = -1;
   local_18 = 0;

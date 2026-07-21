@@ -8,7 +8,7 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
   undefined4 *puVar3;
   uint uVar4;
   uint uVar5;
-  
+
   lpCriticalSection = param_1->field_002C;
   EnterCriticalSection(lpCriticalSection);
   param_1->field_0034 = param_2;
@@ -16,9 +16,11 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
     param_1->field_0038 = 0;
   }
   else {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (**(code **)*param_2)(param_2,&DAT_007a1ae0,&param_1->field_0038);
     if (-1 < iVar2) {
       piVar1 = (int *)param_1->field_0038;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
     }
   }

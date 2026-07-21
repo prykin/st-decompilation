@@ -9,7 +9,7 @@ void __thiscall FUN_0067a240(void *this,undefined *param_1,uint *param_2)
   undefined4 *puVar2;
   int iVar3;
   uint uVar4;
-  
+
   iVar3 = *(int *)((int)this + 0x695);
   if (iVar3 != 0) {
     uVar1 = *(uint *)(iVar3 + 0xc);

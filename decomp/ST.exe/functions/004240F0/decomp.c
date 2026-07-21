@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
@@ -10,10 +12,8 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   int iVar2;
   int iVar3;
   uint uVar4;
-  undefined4 unaff_ESI;
   STGroupC *pSVar5;
   undefined4 *puVar6;
-  void *unaff_EDI;
   undefined4 *puVar7;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -21,11 +21,11 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   STGroupC *local_10;
   undefined4 *local_c;
   uint local_8;
-  
+
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pSVar5 = local_10;
   if (iVar2 == 0) {
     *param_1 = 0x40;
@@ -107,9 +107,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1b9,0,iVar2,&DAT_007a4ccc,
                              s_STGroupC__SaveGrpData_007a5168);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1ba);
   return local_18;

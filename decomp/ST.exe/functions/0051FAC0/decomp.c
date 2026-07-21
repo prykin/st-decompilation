@@ -10,7 +10,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
   char *pcVar6;
   char *pcVar7;
   undefined4 *puVar8;
-  
+
   if (*(byte *)((int)this + 0x11c) <= param_2) {
     if (param_1 != (char *)0x0) {
       uVar3 = 0xffffffff;

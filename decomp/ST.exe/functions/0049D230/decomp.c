@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -19,13 +21,9 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   STGameObjC *pSVar8;
   int iVar9;
   undefined4 uVar10;
-  undefined4 extraout_ECX;
   uint uVar11;
-  undefined4 extraout_EDX;
   uint index;
-  undefined4 unaff_ESI;
   STWorldObject *this_01;
-  void *unaff_EDI;
   undefined4 *puVar12;
   STBoatC_CmdToObj_param_1Enum SVar13;
   InternalExceptionFrame local_7c;
@@ -43,14 +41,15 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   uint local_10;
   DArrayTy *local_c;
   uint local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(uint *)(this->field_0029 + 0xc);
   local_c = (DArrayTy *)0x0;
   local_14 = (DArrayTy *)0x0;
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_2c = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   pSVar6 = local_2c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_7c.previous;
@@ -60,9 +59,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
       RaiseInternalException(iVar7,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x99b);
       return 0xffffffff;
     }
-    pcVar4 = (code *)swi(3);
-    uVar10 = (*pcVar4)();
-    return uVar10;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((param_1 == 0) || (param_1 == 1)) {
     uVar11 = 0;
@@ -89,9 +86,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
         if ((short)local_8 != -1) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar6->field_0024),local_8,
-                               CASE_1);
+                              (g_sTAllPlayers_007FA174,pSVar6->field_0024,local_8,CASE_1);
           if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -128,6 +123,7 @@ LAB_0049d3ca:
       } while (uVar11 < local_10);
     }
     array = local_c;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
               (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar11 >> 8),pSVar6->field_0024),
                &array_00->flags,&local_c->flags);
@@ -170,9 +166,7 @@ LAB_0049d3ca:
           DArrayGetElement((DArrayTy *)pSVar6->field_0029,index,&local_8);
           if ((short)local_8 != -1) {
             pSVar8 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar6->field_0024),local_8
-                                ,CASE_1);
+                               (g_sTAllPlayers_007FA174,pSVar6->field_0024,local_8,CASE_1);
             if (pSVar8 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

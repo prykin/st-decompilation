@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::CreateBut
-   
+
    [STPrototypeApplier] Propagated parameter 7.
    Evidence: 0050E7D0 -> 004F3130 @ 0050EC8C | 0050E7D0 -> 004F3130 @ 0050ECDA | 0050E7D0 ->
    004F3130 @ 0050EF83 | 0050E7D0 -> 004F3130 @ 0050EFC5 | 0050E7D0 -> 004F3130 @ 0050F00A |
@@ -21,8 +23,6 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   int iVar4;
   int iVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar7;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
@@ -60,13 +60,13 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   CPanelTy *local_10;
   undefined4 local_c;
   ushort *local_8;
-  
+
   local_8 = (ushort *)0x0;
   local_c = 0;
   local_1d0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1d0;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0);
   pCVar3 = local_10;
   if (iVar4 == 0) {
     piVar7 = local_18c;
@@ -162,7 +162,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_13,1);
     }
-    (**(code **)(*(int *)pCVar3->field_000C + 8))(2,&local_c,0,local_18c,0);
+    (*pCVar3->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)pCVar3->field_000C,2,&local_c,(int *)0x0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;
   }
@@ -170,9 +171,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   iVar5 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1b3,0,iVar4,&DAT_007a4ccc,
                              s_CPanelTy__CreateBut_007c1b20);
   if (iVar5 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1b3);
   return 0;
