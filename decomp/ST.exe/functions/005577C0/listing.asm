@@ -1,4 +1,4 @@
-FUN_005577c0:
+VisibleClassTy::VisibleClassTy:
 005577C0  56                        PUSH ESI
 005577C1  57                        PUSH EDI
 005577C2  8B F1                     MOV ESI,ECX

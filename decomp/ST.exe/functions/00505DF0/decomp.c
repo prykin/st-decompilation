@@ -10,9 +10,9 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
   CPanelTy *pCVar2;
   int iVar3;
   byte *pbVar4;
-  undefined4 uVar5;
-  byte bVar6;
-  int iVar7;
+  undefined4 extraout_EAX;
+  byte bVar5;
+  int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
@@ -25,47 +25,48 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_c;
   if (iVar3 == 0) {
-    pbVar4 = (byte *)FUN_0070b3a0(local_c->field_02B2,1);
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,0x33,0x7b,'\x01',pbVar4);
+    pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_c->field_02B2,1);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0x33,0x7b,'\x01',pbVar4);
     if (pCVar2->field_0C2F != 0) {
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x24,0x4c,0xa4,0x2b);
-      uVar5 = FUN_006b0140(0x38ae,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2840,(uint)(ushort)pCVar2->field_0C2F,uVar5);
+      LoadResourceString(0x38ae,HINSTANCE_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2840,(uint)(ushort)pCVar2->field_0C2F,extraout_EAX)
+      ;
       ccFntTy::WrTxt(pCVar2->field_01B8,&DAT_0080f33a,-2,-1,5,-1,-1);
     }
     if (pCVar2->field_0C29 != 0xff) {
       if (0x21 < (byte)pCVar2->field_0C29) {
         pCVar2->field_0C29 = 0x21;
       }
-      bVar6 = 0;
+      bVar5 = 0;
       local_8 = local_8 & 0xffffff00;
       if (pCVar2->field_0C29 != '\0') {
         do {
-          pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,1);
-          DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,(local_8 & 0xff) * 4 + 0x35,0x7d,
+          pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+          DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,(local_8 & 0xff) * 4 + 0x35,0x7d,
                  '\x01',pbVar4);
-          bVar6 = bVar6 + 1;
-          local_8 = CONCAT31(local_8._1_3_,bVar6);
-        } while (bVar6 < (byte)pCVar2->field_0C29);
+          bVar5 = bVar5 + 1;
+          local_8 = CONCAT31(local_8._1_3_,bVar5);
+        } while (bVar5 < (byte)pCVar2->field_0C29);
       }
-      if (bVar6 < 0x21) {
-        iVar7 = 0x21 - (local_8 & 0xff);
+      if (bVar5 < 0x21) {
+        iVar6 = 0x21 - (local_8 & 0xff);
         iVar3 = (local_8 & 0xff) * 4 + 0x35;
         do {
-          pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
-          DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,iVar3,0x7d,'\x01',pbVar4);
+          pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,iVar3,0x7d,'\x01',pbVar4);
           iVar3 = iVar3 + 4;
-          iVar7 = iVar7 + -1;
-        } while (iVar7 != 0);
+          iVar6 = iVar6 + -1;
+        } while (iVar6 != 0);
       }
     }
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x19a,0,iVar3,&DAT_007a4ccc,
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x19a,0,iVar3,&DAT_007a4ccc,
                              s_CPanelTy__PaintBioSonar_007c2824);
-  if (iVar7 != 0) {
+  if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

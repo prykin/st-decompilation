@@ -1,18 +1,25 @@
 
-uint * __thiscall FUN_0065fa60(void *this,int param_1,short *param_2)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065FA60.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=4;
+   ecx_pointer_setup=4; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=1 */
+
+uint * __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
+          (AnonReceiver_0065FA60 *this,int param_1,int param_2,short *param_3)
 
 {
-  void *pvVar1;
+  AnonReceiver_0065FA60 *pAVar1;
   int iVar2;
   undefined4 *puVar3;
   uint uVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   DArrayTy *groupContent;
-  short *in_stack_0000000c;
   InternalExceptionFrame local_5c;
   uint local_18;
-  void *local_14;
+  AnonReceiver_0065FA60 *local_14;
   DArrayTy *local_10;
   short local_a;
   short local_8;
@@ -23,39 +30,39 @@ uint * __thiscall FUN_0065fa60(void *this,int param_1,short *param_2)
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pvVar1 = local_14;
+  pAVar1 = local_14;
   if (iVar2 == 0) {
-    if (param_2 == (short *)0x0) {
-      if (*(void **)((int)local_14 + 0x284) != (void *)0x0) {
-        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(*(void **)((int)local_14 + 0x284),param_1);
+    if (param_2 == 0) {
+      if (*(void **)&local_14->field_0x284 != (void *)0x0) {
+        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(*(void **)&local_14->field_0x284,param_1);
       }
     }
-    else if (param_2 == (short *)0x1) {
-      if (*(void **)((int)local_14 + 0x284) != (void *)0x0) {
-        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(*(void **)((int)local_14 + 0x284),param_1);
+    else if (param_2 == 1) {
+      if (*(void **)&local_14->field_0x284 != (void *)0x0) {
+        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(*(void **)&local_14->field_0x284,param_1);
       }
       if ((local_10 == (DArrayTy *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
         local_10 = (DArrayTy *)
                    STAllPlayersC::GetTOBJList
-                             (g_sTAllPlayers_007FA174,*(char *)((int)pvVar1 + 0x24),param_1,0,-1);
+                             (g_sTAllPlayers_007FA174,pAVar1->field_0x24,param_1,0,-1);
       }
     }
-    else if ((param_2 == (short *)0x2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    else if ((param_2 == 2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       local_10 = (DArrayTy *)
                  STAllPlayersC::GetTOBJList
-                           (g_sTAllPlayers_007FA174,*(char *)((int)local_14 + 0x24),param_1,0,-1);
+                           (g_sTAllPlayers_007FA174,local_14->field_0x24,param_1,0,-1);
     }
   }
   groupContent = local_10;
   g_currentExceptionFrame = local_5c.previous;
   if (local_10 != (DArrayTy *)0x0) {
     if (local_10->count == 0) {
-      FUN_006ae110((byte *)local_10);
+      DArrayDestroy(local_10);
       local_10 = (DArrayTy *)0x0;
     }
     groupContent = local_10;
-    if ((((local_10 != (DArrayTy *)0x0) && (in_stack_0000000c != (short *)0x0)) &&
-        (0 < in_stack_0000000c[3])) && ((0 < in_stack_0000000c[4] && (0 < in_stack_0000000c[5])))) {
+    if ((((local_10 != (DArrayTy *)0x0) && (param_3 != (short *)0x0)) && (0 < param_3[3])) &&
+       ((0 < param_3[4] && (0 < param_3[5])))) {
       local_18 = local_10->count;
       while (uVar4 = local_18 - 1, -1 < (int)uVar4) {
         if (uVar4 < groupContent->count) {
@@ -67,11 +74,11 @@ uint * __thiscall FUN_0065fa60(void *this,int param_1,short *param_2)
         local_18 = uVar4;
         if ((STFishC *)*puVar3 != (STFishC *)0x0) {
           STFishC::sub_004162B0((STFishC *)*puVar3,&local_6,&local_8,&local_a);
-          if (((local_6 < *in_stack_0000000c) || (local_8 < in_stack_0000000c[1])) ||
-             ((uVar4 = local_18, local_a < in_stack_0000000c[2] ||
-              ((((int)*in_stack_0000000c + (int)in_stack_0000000c[3] <= (int)local_6 ||
-                ((int)in_stack_0000000c[1] + (int)in_stack_0000000c[4] <= (int)local_8)) ||
-               ((int)in_stack_0000000c[2] + (int)in_stack_0000000c[5] <= (int)local_a)))))) {
+          if (((local_6 < *param_3) || (local_8 < param_3[1])) ||
+             ((uVar4 = local_18, local_a < param_3[2] ||
+              ((((int)*param_3 + (int)param_3[3] <= (int)local_6 ||
+                ((int)param_3[1] + (int)param_3[4] <= (int)local_8)) ||
+               ((int)param_3[2] + (int)param_3[5] <= (int)local_a)))))) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)groupContent,uVar4);
             local_18 = uVar4;
           }

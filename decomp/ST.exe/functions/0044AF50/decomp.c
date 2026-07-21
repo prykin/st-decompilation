@@ -6,7 +6,7 @@
 void STAllPlayersC::PushTV(char param_1,int param_2)
 
 {
-  DArrayTy *groupContent;
+  DArrayTy *array;
   code *pcVar1;
   int iVar2;
   STPlayerTempSlot (*paSVar3) [5];
@@ -31,9 +31,9 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
     paSVar3 = g_playerRuntime[param_1].tempSlots + 1;
   }
   thunk_FUN_0043fc50(GVar4,0);
-  groupContent = (*paSVar3)[4].objectIds;
-  if (groupContent != (DArrayTy *)0x0) {
-    FUN_006ae110((byte *)groupContent);
+  array = (*paSVar3)[4].objectIds;
+  if (array != (DArrayTy *)0x0) {
+    DArrayDestroy(array);
     (*paSVar3)[4].objectIds = (DArrayTy *)0x0;
     (*paSVar3)[4].activityCount = 0;
   }

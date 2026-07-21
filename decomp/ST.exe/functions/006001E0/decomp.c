@@ -54,12 +54,13 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
 LAB_0060033c:
   iVar3 = *(int *)((int)this + 0x233) + iVar5;
   if ((99 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10)) &&
-     (uVar4 = thunk_FUN_00601500((void *)((int)this + 0x1d5),(int)*(short *)(iVar3 + 6),
-                                 (int)*(short *)(iVar3 + 8),(int)*(short *)(iVar3 + 10),
-                                 (int)*(short *)(iVar3 + 0x12),(int)*(short *)(iVar3 + 0x14),
-                                 (int)*(short *)(iVar3 + 0x16),*(int *)((int)this + 0x20a),
-                                 *(int *)((int)this + 0x22a),*(int *)((int)this + 0x220),
-                                 *(undefined2 *)((int)this + 0x224),0xa9,0,0), uVar4 != 0)) {
+     (uVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                        ((AnonReceiver_00601500 *)((int)this + 0x1d5),(int)*(short *)(iVar3 + 6),
+                         (int)*(short *)(iVar3 + 8),(int)*(short *)(iVar3 + 10),
+                         (int)*(short *)(iVar3 + 0x12),(int)*(short *)(iVar3 + 0x14),
+                         (int)*(short *)(iVar3 + 0x16),*(int *)((int)this + 0x20a),
+                         *(int *)((int)this + 0x22a),*(int *)((int)this + 0x220),
+                         *(undefined2 *)((int)this + 0x224),0xa9,0,0), uVar4 != 0)) {
     if (uVar4 == 1) {
       *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1f5);
       *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1f9);

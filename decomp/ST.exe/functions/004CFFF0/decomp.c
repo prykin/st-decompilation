@@ -12,7 +12,7 @@ FUN_004cfff0(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,int 
   uint uVar3;
   int iVar4;
   
-  uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar4 = (uVar3 & 0xff) - 1;
   if (param_1 == CASE_9) {

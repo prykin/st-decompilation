@@ -12,7 +12,7 @@ void FUN_006c2390(AnonShape_006C2390_A203A467 *param_1)
     if ((*(uint *)param_1 & 0x8000) != 0) {
       FUN_006d46a0(param_1->field_0042,0);
     }
-    FUN_006ab060(&param_1);
+    FreeAndNull(&param_1);
   }
   return;
 }

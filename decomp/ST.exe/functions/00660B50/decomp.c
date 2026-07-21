@@ -1,6 +1,6 @@
 
 undefined4 __fastcall
-FUN_00660b50(AnonShape_00660B50_B7639A62 *param_1,undefined4 param_2,short param_3,short param_4,
+FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param_3,short param_4,
             undefined4 param_5,int param_6)
 
 {
@@ -16,7 +16,7 @@ FUN_00660b50(AnonShape_00660B50_B7639A62 *param_1,undefined4 param_2,short param
   uVar2 = (undefined3)((uint)param_1 >> 8);
   if (param_6 == 0) {
     local_8 = (short)param_5;
-    local_c = (AnonShape_00660B50_B7639A62 *)CONCAT22(param_4,param_3);
+    local_c = (AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3);
     if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       pSVar1 = thunk_FUN_0042b760(CONCAT31(uVar2,param_1->field_0024),
                                   CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_007D));
@@ -26,12 +26,13 @@ FUN_00660b50(AnonShape_00660B50_B7639A62 *param_1,undefined4 param_2,short param
       }
     }
   }
-  else if ((((-1 < param_3) && (param_3 < SHORT_007fb240)) && (-1 < param_4)) &&
-          (param_4 < SHORT_007fb242)) {
-    if ((-1 < (short)param_5) && ((short)param_5 < SHORT_007fb244)) {
-      if (g_worldCells
-          [(int)SHORT_007fb246 * (int)(short)param_5 + (int)SHORT_007fb240 * (int)param_4 +
-           (int)param_3].objects[0] != (STWorldObject *)0x0) {
+  else if ((((-1 < param_3) && (param_3 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
+          (param_4 < g_worldGrid.sizeY)) {
+    if ((-1 < (short)param_5) && ((short)param_5 < g_worldGrid.sizeZ)) {
+      if (g_worldGrid.cells
+          [(int)g_worldGrid.planeStride * (int)(short)param_5 +
+           (int)g_worldGrid.sizeX * (int)param_4 + (int)param_3].objects[0] != (STWorldObject *)0x0)
+      {
         _local_14 = CONCAT22(param_4,param_3);
         if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
           local_10 = (short)param_5;

@@ -37,10 +37,10 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
     iVar1 = param_7 + param_5;
     iVar4 = 0;
     for (; param_5 < iVar1; param_5 = param_5 + 1) {
-      if ((-1 < param_5) && (param_5 < SHORT_007fb242)) {
+      if ((-1 < param_5) && (param_5 < g_worldGrid.sizeY)) {
         for (iVar3 = param_4; iVar3 < param_6 + param_4; iVar3 = iVar3 + 1) {
-          if ((-1 < iVar3) && (iVar3 < SHORT_007fb240)) {
-            iVar4 = iVar4 + (uint)*(byte *)(SHORT_007fb240 * param_5 + DAT_007fa168 + iVar3);
+          if ((-1 < iVar3) && (iVar3 < g_worldGrid.sizeX)) {
+            iVar4 = iVar4 + (uint)*(byte *)(g_worldGrid.sizeX * param_5 + DAT_007fa168 + iVar3);
           }
         }
       }
@@ -61,15 +61,16 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           ((((param_4 <= local_8 && ((int)local_8 < param_6 + param_4)) && (param_5 <= local_6)) &&
            ((int)local_6 < param_7 + param_5)))))) {
         local_1c = local_1c + 1;
-        if (((local_8 < 0) || (SHORT_007fb240 <= local_8)) ||
+        if (((local_8 < 0) || (g_worldGrid.sizeX <= local_8)) ||
            ((local_6 < 0 ||
-            (((SHORT_007fb242 <= local_6 || (local_a < 0)) || (SHORT_007fb244 <= local_a)))))) {
+            (((g_worldGrid.sizeY <= local_6 || (local_a < 0)) || (g_worldGrid.sizeZ <= local_a))))))
+        {
           this = (STWorldObject *)0x0;
         }
         else {
-          this = g_worldCells
-                 [(int)SHORT_007fb246 * (int)local_a + (int)SHORT_007fb240 * (int)local_6 +
-                  (int)local_8].objects[0];
+          this = g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)local_a +
+                  (int)g_worldGrid.sizeX * (int)local_6 + (int)local_8].objects[0];
         }
         switch(param_1) {
         case CASE_5E:

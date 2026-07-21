@@ -8,22 +8,22 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
 
 {
   code *pcVar1;
-  uint *groupContent;
+  DArrayTy *array;
   int iVar2;
   STGroupBoatC *this;
   ushort *puVar3;
-  int *piVar4;
+  STGameObjC *pSVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
-  uint *local_c;
+  DArrayTy *local_c;
   int local_8;
   
   uVar7 = 0;
-  local_c = (uint *)0x0;
+  local_c = (DArrayTy *)0x0;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -36,32 +36,31 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
       this = thunk_FUN_0042b760(param_1,0);
     }
     if (this != (STGroupBoatC *)0x0) {
-      local_c = STGroupC::GetGroupContent((STGroupC *)this,(int)unaff_EDI);
+      local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,(int)unaff_EDI);
     }
-    groupContent = local_c;
-    if (local_c[3] != 0) {
+    array = local_c;
+    if (local_c->count != 0) {
       uVar6 = 0;
-      if (local_c[3] == 0) {
+      if (local_c->count == 0) {
         puVar3 = (ushort *)0x0;
         goto LAB_00676470;
       }
       do {
-        puVar3 = (ushort *)(groupContent[2] * uVar6 + groupContent[7]);
+        puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
 LAB_00676470:
-        piVar4 = (int *)STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,param_1,(uint)*puVar3,CASE_1);
-        if (piVar4 != (int *)0x0) {
-          iVar2 = (**(code **)(*piVar4 + 0x2c))();
+        pSVar4 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,param_1,(uint)*puVar3,CASE_1);
+        if (pSVar4 != (STGameObjC *)0x0) {
+          iVar2 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar2 == 0x78) {
-            iVar2 = *(int *)((int)piVar4 + 0x259);
+            iVar2 = *(int *)&pSVar4[1].field_0x88;
           }
           else {
             iVar2 = 0;
           }
           if (param_2 == iVar2) {
-            iVar2 = (**(code **)(*piVar4 + 0x2c))();
+            iVar2 = (*pSVar4->vtable->vfunc_2C)();
             if (iVar2 == 0x78) {
-              iVar2 = *(int *)((int)piVar4 + 0x269);
+              iVar2 = *(int *)&pSVar4[1].field_0x98;
             }
             else {
               iVar2 = -1;
@@ -73,17 +72,17 @@ LAB_00676470:
         }
         uVar7 = uVar7 + 1;
         uVar6 = uVar7 & 0xffff;
-      } while (uVar6 < groupContent[3]);
+      } while (uVar6 < array->count);
     }
-    if (groupContent != (uint *)0x0) {
-      FUN_006ae110((byte *)groupContent);
+    if (array != (DArrayTy *)0x0) {
+      DArrayDestroy(array);
     }
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  if (local_c != (uint *)0x0) {
-    FUN_006ae110((byte *)local_c);
+  if (local_c != (DArrayTy *)0x0) {
+    DArrayDestroy(local_c);
   }
   iVar5 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x150,0,iVar2,&DAT_007a4ccc,
                              s__GetEmbrGrpTobjGrpExch_007d2dcc);

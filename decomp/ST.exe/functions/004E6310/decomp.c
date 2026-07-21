@@ -63,7 +63,7 @@ LAB_004e645f:
          ((pDVar7 = g_playerRuntime[param_1].objects, pDVar7 != (DArrayTy *)0x0 &&
           (uVar10 = 0, pDVar7->count != 0)))) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar7,uVar10,&local_8);
+          DArrayGetElement(pDVar7,uVar10,&local_8);
           if ((local_8 != (AnonShape_00494AE0_E545732F *)0x0) &&
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x36 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x5d)) ||
@@ -80,7 +80,7 @@ LAB_004e645f:
          ((pDVar7 = g_playerRuntime[param_1].objects, pDVar7 != (DArrayTy *)0x0 &&
           (uVar10 = 0, pDVar7->count != 0)))) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar7,uVar10,&local_8);
+          DArrayGetElement(pDVar7,uVar10,&local_8);
           if ((local_8 != (AnonShape_00494AE0_E545732F *)0x0) &&
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 5 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x21)) ||

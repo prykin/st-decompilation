@@ -30,9 +30,9 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   undefined4 uVar17;
   undefined4 uVar18;
   char *pcVar19;
-  char cVar20;
+  char playerId;
+  undefined4 uVar20;
   undefined4 uVar21;
-  undefined4 uVar22;
   
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
@@ -45,19 +45,19 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
           case CASE_39:
 switchD_004e08b2_caseD_39:
             pTVar8 = param_1->vtable;
-            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            iVar4 = GetPlayerRaceId(param_1->field_023D);
             (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2e9);
             break;
           case CASE_3B:
 switchD_004e08b2_caseD_3b:
             pTVar8 = param_1->vtable;
-            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            iVar4 = GetPlayerRaceId(param_1->field_023D);
             (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f6);
             break;
           case CASE_4F:
 switchD_004e08b2_caseD_4f:
             pTVar8 = param_1->vtable;
-            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            iVar4 = GetPlayerRaceId(param_1->field_023D);
             (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x34f);
             break;
           case CASE_5E:
@@ -87,7 +87,7 @@ LAB_004e0a1f:
             goto switchD_004e08b2_caseD_4f;
           case CASE_52:
             pTVar8 = param_1->vtable;
-            iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+            iVar4 = GetPlayerRaceId(param_1->field_023D);
             (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35c);
             break;
           case CASE_5E:
@@ -108,7 +108,7 @@ LAB_004e0a1f:
     }
     if (*(int *)&param_1->field_0x4e4 == 0) {
       if (param_1->field_05AC == CASE_4F) {
-        iVar4 = thunk_FUN_004406c0(param_1->field_0x24);
+        iVar4 = GetPlayerRaceId(param_1->field_0x24);
         iVar5 = 0xe;
         if ((char)iVar4 != '\x02') goto LAB_004e0a4f;
       }
@@ -138,12 +138,12 @@ LAB_004e0a4f:
           iVar6 = iVar2;
           do {
             sVar3 = (short)iVar6;
-            if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
+            if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
                ((sVar9 = (short)iVar5, sVar9 < 0 ||
-                ((((SHORT_007fb242 <= sVar9 || (sVar10 < 0)) || (SHORT_007fb244 <= sVar10)) ||
-                 (g_worldCells
-                  [(int)sVar9 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 + (int)sVar3
-                  ].objects[0] == (STWorldObject *)0x0)))))) {
+                ((((g_worldGrid.sizeY <= sVar9 || (sVar10 < 0)) || (g_worldGrid.sizeZ <= sVar10)) ||
+                 (g_worldGrid.cells
+                  [(int)sVar9 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar10
+                   + (int)sVar3].objects[0] == (STWorldObject *)0x0)))))) {
               *(int *)&param_1->field_0x4f0 = iVar6;
               *(undefined4 *)&param_1->field_0x4ec = 1;
               *(int *)&param_1->field_0x4f4 = iVar5;
@@ -162,13 +162,13 @@ LAB_004e0a4f:
               TLOBaseTy::RotateSpr(param_1,0);
               if (param_1->field_05AC == CASE_52) {
                 pTVar8 = param_1->vtable;
-                iVar4 = thunk_FUN_004406c0(param_1->field_023D);
+                iVar4 = GetPlayerRaceId(param_1->field_023D);
                 (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
               if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
               pTVar8 = param_1->vtable;
-              uVar22 = 0x3b1;
+              uVar21 = 0x3b1;
               goto LAB_004e0f14;
             }
             iVar6 = iVar6 + 1;
@@ -195,10 +195,10 @@ LAB_004e0a4f:
     if (*(int *)&param_1->field_0x510 < 0x1e) break;
     thunk_FUN_004d0a80(DAT_00800bcc,*(int *)&param_1->field_0x4f0,*(int *)&param_1->field_0x4f4,
                        *(int *)&param_1->field_0x4f8);
-    uVar22 = *(undefined4 *)&param_1->field_0x18;
+    uVar21 = *(undefined4 *)&param_1->field_0x18;
     uVar18 = *(undefined4 *)&param_1->field_0x4f8;
     uVar17 = *(undefined4 *)&param_1->field_0x4f4;
-    uVar21 = 0x5a;
+    uVar20 = 0x5a;
     uVar16 = *(undefined4 *)&param_1->field_0x4f0;
     pcVar19 = (char *)0x0;
     uVar15 = (undefined2)*(undefined4 *)&param_1->field_0x504;
@@ -207,25 +207,25 @@ LAB_004e0a4f:
     uVar12 = *(undefined4 *)&param_1->field_0x4e0;
     uVar11 = *(undefined4 *)&param_1->field_0x4dc;
     *(undefined4 *)&param_1->field_0x4ec = 0;
-    uVar7 = thunk_FUN_004406c0(param_1->field_0x24);
+    uVar7 = GetPlayerRaceId(param_1->field_0x24);
     thunk_FUN_005fd1b0(*(undefined4 *)&param_1->field_0x24,uVar7 & 0xff,uVar11,uVar12,uVar13,uVar14,
-                       uVar15,uVar16,uVar17,uVar18,pcVar19,uVar22,uVar21);
+                       uVar15,uVar16,uVar17,uVar18,pcVar19,uVar21,uVar20);
     if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
       thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
-      uVar7 = thunk_FUN_004406c0(param_1->field_0x24);
+      uVar7 = GetPlayerRaceId(param_1->field_0x24);
       uVar7 = uVar7 & 0xff;
       if (uVar7 == 1) {
         pTVar8 = param_1->vtable;
-        uVar22 = 0x6b;
+        uVar21 = 0x6b;
 LAB_004e0de2:
-        (*pTVar8->vfunc_90)(6,uVar22);
+        (*pTVar8->vfunc_90)(6,uVar21);
       }
       else if (uVar7 == 2) {
         (*param_1->vtable->vfunc_90)(6,0x6c);
       }
       else if (uVar7 == 3) {
         pTVar8 = param_1->vtable;
-        uVar22 = 0x6d;
+        uVar21 = 0x6d;
         goto LAB_004e0de2;
       }
     }
@@ -237,13 +237,13 @@ LAB_004e0de2:
 joined_r0x004e0f0b:
       if (TVar1 == CASE_5F) {
         pTVar8 = param_1->vtable;
-        uVar22 = 0x3b2;
+        uVar21 = 0x3b2;
 LAB_004e0f14:
-        (*pTVar8->vfunc_90)(3,uVar22);
+        (*pTVar8->vfunc_90)(3,uVar21);
       }
       break;
     }
-    cVar20 = param_1->field_023D;
+    playerId = param_1->field_023D;
     pTVar8 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
@@ -264,10 +264,10 @@ LAB_004e0f14:
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
-    cVar20 = param_1->field_023D;
+    playerId = param_1->field_023D;
     pTVar8 = param_1->vtable;
 LAB_004e0e15:
-    iVar4 = thunk_FUN_004406c0(cVar20);
+    iVar4 = GetPlayerRaceId(playerId);
     (*pTVar8->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:

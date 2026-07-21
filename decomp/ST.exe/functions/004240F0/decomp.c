@@ -31,12 +31,12 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     *param_1 = 0x40;
     if ((uint *)local_10->field_0029 != (uint *)0x0) {
       local_c = (undefined4 *)FUN_006b0020((uint *)local_10->field_0029,(int *)&local_8);
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
     if ((uint *)pSVar5->field_002D != (uint *)0x0) {
       local_c = (undefined4 *)FUN_006b0020((uint *)pSVar5->field_002D,(int *)&local_8);
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
     iVar2 = Library::DKW::LIB::FUN_006aac70(*param_1);
@@ -71,7 +71,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       }
       *(undefined4 *)(iVar2 + 0x1c) = 0x40;
       *(uint *)(iVar2 + 0x20) = local_8;
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       pSVar5 = local_10;
     }
     iVar3 = local_8 + 0x40;
@@ -96,7 +96,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       }
       *(int *)(iVar2 + 0x24) = local_14;
       *(uint *)(iVar2 + 0x28) = local_8;
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
     }
     *(undefined4 *)(iVar2 + 0x38) = 0xffffffff;
     *(undefined4 *)(iVar2 + 0x3c) = 0;

@@ -9,10 +9,10 @@ void __cdecl FUN_006756d0(short *param_1,short *param_2,short *param_3,short *pa
   int iVar5;
   int iVar6;
   
-  sVar1 = SHORT_007fb242;
-  sVar3 = SHORT_007fb240;
-  iVar4 = (int)SHORT_007fb242;
-  iVar6 = (int)SHORT_007fb240;
+  sVar1 = g_worldGrid.sizeY;
+  sVar3 = g_worldGrid.sizeX;
+  iVar4 = (int)g_worldGrid.sizeY;
+  iVar6 = (int)g_worldGrid.sizeX;
   if (*param_1 < 0) {
     *param_1 = 0;
   }

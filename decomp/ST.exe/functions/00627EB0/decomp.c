@@ -42,7 +42,7 @@ STParticleC::GetMessage(STParticleC *this,AnonShape_00627EB0_4C14C976 *param_1)
   int local_20;
   int local_1c;
   undefined4 local_18;
-  LPVOID local_14;
+  void *local_14;
   AnonShape_00629F90_C3CBACCB *local_10;
   float local_c;
   float local_8;
@@ -70,8 +70,8 @@ STParticleC::GetMessage(STParticleC *this,AnonShape_00627EB0_4C14C976 *param_1)
     return 0;
   }
   if (uVar9 == 0x10f) {
-    local_14 = (LPVOID)thunk_FUN_0062af40(local_10,&local_18);
-    FUN_006ab060(&local_14);
+    local_14 = (void *)thunk_FUN_0062af40(local_10,&local_18);
+    FreeAndNull(&local_14);
     g_currentExceptionFrame = local_7c.previous;
     return 0;
   }

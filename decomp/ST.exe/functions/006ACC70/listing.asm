@@ -1,4 +1,4 @@
-FUN_006acc70:
+DArrayGetElement:
 006ACC70  55                        PUSH EBP
 006ACC71  8B EC                     MOV EBP,ESP
 006ACC73  57                        PUSH EDI

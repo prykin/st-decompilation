@@ -13,8 +13,10 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
   int *piVar4;
   int iVar5;
   undefined4 *puVar6;
-  undefined4 uVar7;
-  DWORD DVar8;
+  char *text;
+  undefined4 extraout_EAX;
+  DWORD DVar7;
+  undefined4 uVar8;
   uint uVar9;
   uint uVar10;
   STPlaySystemC *pSVar11;
@@ -80,15 +82,15 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
               iVar5 = local_8;
             }
             local_8 = iVar5;
-            pcVar12 = (char *)FUN_006b0140(19000,HINSTANCE_00807618);
-            cLoadingTy::SetProcess(PTR_00802a58,0,pcVar12,iVar5);
+            LoadResourceString(19000,HINSTANCE_00807618);
+            cLoadingTy::SetProcess(PTR_00802a58,0,text,iVar5);
           }
           pSVar11 = local_c;
           DAT_00802a3c = 0;
           Library::Ourlib::MFAOBJ::mfAObjEnum
                     (g_cMf32_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
-          uVar7 = FUN_006b0140(0x4a39,HINSTANCE_00807618);
-          wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,uVar7);
+          LoadResourceString(0x4a39,HINSTANCE_00807618);
+          wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,extraout_EAX);
           if (PTR_00802a58 != (cLoadingTy *)0x0) {
             cLoadingTy::SetState(PTR_00802a58,CASE_2,0,(char *)&DAT_0080f33a);
           }
@@ -120,17 +122,17 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
           else if (DAT_00808aaf != 0) {
             pDVar14 = &DAT_00808af8;
             do {
-              DVar8 = FUN_006e51b0(0x807620);
-              *pDVar14 = DVar8;
+              DVar7 = FUN_006e51b0(0x807620);
+              *pDVar14 = DVar7;
               uVar10 = uVar10 + 1;
               pDVar14 = pDVar14 + 0x27;
             } while (uVar10 < DAT_00808aaf);
           }
         }
-        DVar8 = timeGetTime();
-        pSVar11->field_00BC = DVar8;
-        pSVar11->field_007F = DVar8;
-        pSVar11->field_0083 = DVar8;
+        DVar7 = timeGetTime();
+        pSVar11->field_00BC = DVar7;
+        pSVar11->field_007F = DVar7;
+        pSVar11->field_0083 = DVar7;
       }
       else if (*(int *)(param_1 + 0x10) == 0x44ff) {
         uVar10 = 0;
@@ -162,8 +164,8 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
                                &DAT_007a4ccc,s_STPlaySystemC__GetMessage_error___007c8554);
     if (iVar5 != 0) {
       pcVar3 = (code *)swi(3);
-      uVar7 = (*pcVar3)();
-      return uVar7;
+      uVar8 = (*pcVar3)();
+      return uVar8;
     }
   }
   return 0xffff;

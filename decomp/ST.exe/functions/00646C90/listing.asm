@@ -1,4 +1,4 @@
-FUN_00646c90:
+STVolcanoC::STVolcanoC:
 00646C90  56                        PUSH ESI
 00646C91  57                        PUSH EDI
 00646C92  8B F1                     MOV ESI,ECX

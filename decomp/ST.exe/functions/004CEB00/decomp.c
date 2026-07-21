@@ -90,12 +90,12 @@ switchD_004ceb68_caseD_32:
         local_8 = local_18;
         do {
           sVar2 = (short)local_8;
-          if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar5 = (short)local_c, sVar5 < 0)) ||
-             (((SHORT_007fb242 <= sVar5 || (sVar8 < 0)) ||
-              ((SHORT_007fb244 <= sVar8 ||
-               (g_worldCells
-                [(int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar2].
-                objects[0] == (STWorldObject *)0x0)))))) {
+          if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar5 = (short)local_c, sVar5 < 0))
+             || (((g_worldGrid.sizeY <= sVar5 || (sVar8 < 0)) ||
+                 ((g_worldGrid.sizeZ <= sVar8 ||
+                  (g_worldGrid.cells
+                   [(int)sVar8 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar5
+                    + (int)sVar2].objects[0] == (STWorldObject *)0x0)))))) {
             *(int *)((int)this + 0x4e0) = local_8;
             *(undefined4 *)((int)this + 0x4dc) = 1;
             *(int *)((int)this + 0x4e4) = local_c;
@@ -115,7 +115,7 @@ switchD_004ceb68_caseD_32:
               return local_10;
             }
             if (iVar4 == 0x32) {
-              iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+              iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
               if ((char)iVar4 != '\x02') {
                 (**(code **)(*(int *)this + 0x90))(3,0x1f9);
                 return local_10;
@@ -227,7 +227,7 @@ switchD_004ceb68_caseD_32:
     if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
     goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,*(float *)((int)this + 0x1f9),*(float *)((int)this + 0x1fd));
-    uVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     uVar6 = uVar6 & 0xff;
     if (uVar6 == 1) {
       iVar4 = *(int *)this;
@@ -263,7 +263,7 @@ cf_common_exit_004CF029:
         (**(code **)(*(int *)this + 0x90))(3,0x39c);
       }
       else if (iVar4 == 0x32) {
-        iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         if ((char)iVar4 == '\x02') {
           (**(code **)(*(int *)this + 0x90))(3,0x2c2);
         }

@@ -9,7 +9,7 @@ void __thiscall FUN_004c28b0(void *this,undefined4 *param_1)
   *(undefined2 *)(param_1 + 2) = 0;
   *(undefined1 *)((int)param_1 + 10) = 0;
   *(undefined1 *)param_1 = 1;
-  iVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  iVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   *(char *)((int)param_1 + 6) = (char)iVar1;
   switch(*(undefined4 *)((int)this + 0x245)) {
   case 0:

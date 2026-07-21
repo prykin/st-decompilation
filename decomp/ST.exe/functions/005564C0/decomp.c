@@ -80,7 +80,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
     local_10 = (byte *)PrepareToSave(this_00,&local_c);
     STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != (byte *)0x0) {
-      FUN_006ab060(&local_10);
+      FreeAndNull(&local_10);
     }
   }
   g_currentExceptionFrame = local_58.previous;

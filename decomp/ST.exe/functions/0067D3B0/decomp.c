@@ -21,7 +21,7 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
   undefined4 unaff_ESI;
   AnonShape_0067D3B0_A3AACF30 *pAVar11;
   uint *puVar12;
-  LPVOID *ppvVar13;
+  void **ppvVar13;
   void *unaff_EDI;
   uint uVar14;
   undefined4 *puVar15;
@@ -189,22 +189,22 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
         bVar17 = iVar9 != 0;
         do {
           if (bVar17) {
-            ppvVar13 = (LPVOID *)(*(int *)(iVar7 + 8) * uVar14 + *(int *)(iVar7 + 0x1c));
+            ppvVar13 = (void **)(*(int *)(iVar7 + 8) * uVar14 + *(int *)(iVar7 + 0x1c));
           }
           else {
-            ppvVar13 = (LPVOID *)0x0;
+            ppvVar13 = (void **)0x0;
           }
-          if (((*ppvVar13 != (LPVOID)0x0) && (*(char *)((int)*ppvVar13 + 0x18) == '\0')) &&
+          if (((*ppvVar13 != (void *)0x0) && (*(char *)((int)*ppvVar13 + 0x18) == '\0')) &&
              ((local_c[uVar14] != 0 && (*(char *)(local_c[uVar14] + 0x18) == '\x02')))) {
-            FUN_006ab060(ppvVar13);
-            *ppvVar13 = (LPVOID)local_c[uVar14];
+            FreeAndNull(ppvVar13);
+            *ppvVar13 = (void *)local_c[uVar14];
           }
           iVar7 = *piVar3;
           uVar14 = uVar14 + 1;
           bVar17 = uVar14 < *(uint *)(iVar7 + 0xc);
         } while ((int)uVar14 < (int)*(uint *)(iVar7 + 0xc));
       }
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       puVar4 = local_8;
     }
     g_currentExceptionFrame = local_5c.previous;
@@ -217,15 +217,15 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
       bVar17 = iVar9 != 0;
       do {
         if (bVar17) {
-          ppvVar13 = (LPVOID *)(*(int *)(iVar7 + 8) * uVar14 + *(int *)(iVar7 + 0x1c));
+          ppvVar13 = (void **)(*(int *)(iVar7 + 8) * uVar14 + *(int *)(iVar7 + 0x1c));
         }
         else {
-          ppvVar13 = (LPVOID *)0x0;
+          ppvVar13 = (void **)0x0;
         }
-        if ((((*ppvVar13 != (LPVOID)0x0) && (*(char *)((int)*ppvVar13 + 0x18) == '\0')) &&
+        if ((((*ppvVar13 != (void *)0x0) && (*(char *)((int)*ppvVar13 + 0x18) == '\0')) &&
             (local_c[uVar14] != 0)) && (*(char *)(local_c[uVar14] + 0x18) == '\x02')) {
-          FUN_006ab060(ppvVar13);
-          *ppvVar13 = (LPVOID)local_c[uVar14];
+          FreeAndNull(ppvVar13);
+          *ppvVar13 = (void *)local_c[uVar14];
         }
         iVar7 = param_1->field_00C2;
         uVar14 = uVar14 + 1;
@@ -233,13 +233,13 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
       } while ((int)uVar14 < (int)*(uint *)(iVar7 + 0xc));
     }
     piVar3 = local_18;
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   if (local_c != (undefined4 *)0x0) {
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   if (local_8 != (undefined4 *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xda,0,(int)piVar3,&DAT_007a4ccc
                              ,s_PlrDataPack_007d2fc8);

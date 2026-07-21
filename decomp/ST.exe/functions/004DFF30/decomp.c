@@ -2,28 +2,28 @@
 undefined4 __fastcall FUN_004dff30(int param_1)
 
 {
-  DArrayTy *pDVar1;
-  uint uVar2;
+  DArrayTy *array;
+  uint index;
   int local_8;
   
-  pDVar1 = g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea;
-  if (pDVar1 != (DArrayTy *)0x0) {
-    uVar2 = 0;
+  array = g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea;
+  if (array != (DArrayTy *)0x0) {
+    index = 0;
     local_8 = param_1;
-    if (0 < (int)pDVar1->count) {
+    if (0 < (int)array->count) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,uVar2,&local_8);
+        DArrayGetElement(array,index,&local_8);
         if (local_8 == param_1) {
           FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
-                       g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea,uVar2);
+                       g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea,index);
           break;
         }
-        uVar2 = uVar2 + 1;
-        pDVar1 = g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea;
-      } while ((int)uVar2 < (int)pDVar1->count);
+        index = index + 1;
+        array = g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea;
+      } while ((int)index < (int)array->count);
     }
     if ((g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea)->count == 0) {
-      FUN_006ae110((byte *)g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea);
+      DArrayDestroy(g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea);
       g_playerRuntime[*(int *)(param_1 + 0x24)].field2171_0x9ea = (DArrayTy *)0x0;
     }
   }

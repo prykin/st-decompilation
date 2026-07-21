@@ -98,16 +98,17 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   sVar5 = *(short *)((int)param_1 + 0x47);
   if ((((-1 < sVar5) && (sVar6 = *(short *)((int)param_1 + 0x49), -1 < sVar6)) &&
       (sVar7 = *(short *)((int)param_1 + 0x4b), -1 < sVar7)) &&
-     (((sVar5 < SHORT_007fb240 && (sVar6 < SHORT_007fb242)) && (sVar7 < 5)))) {
+     (((sVar5 < g_worldGrid.sizeX && (sVar6 < g_worldGrid.sizeY)) && (sVar7 < 5)))) {
     *(undefined2 *)((int)param_1 + 0x3a) = *(undefined2 *)((int)param_1 + 0x282);
     *(undefined2 *)((int)param_1 + 0x3c) = *(undefined2 *)((int)param_1 + 0x286);
     *(undefined2 *)((int)param_1 + 0x3e) = *(undefined2 *)((int)param_1 + 0x28a);
     if (*(char *)((int)param_1 + 0x313) != '\0') {
-      if (((-1 < sVar5) && (sVar5 < SHORT_007fb240)) &&
-         (((-1 < sVar6 && (((sVar6 < SHORT_007fb242 && (-1 < sVar7)) && (sVar7 < SHORT_007fb244))))
-          && (g_worldCells
-              [(int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)sVar6 + (int)sVar5].
-              objects[*(byte *)((int)param_1 + 0x8e)] != (STWorldObject *)0x0)))) {
+      if (((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) &&
+         (((-1 < sVar6 &&
+           (((sVar6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) &&
+          (g_worldGrid.cells
+           [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
+            (int)sVar5].objects[*(byte *)((int)param_1 + 0x8e)] != (STWorldObject *)0x0)))) {
         return 0;
       }
       iVar4 = DumpClassC::WritePtr(sVar5,sVar6,sVar7,(uint)*(byte *)((int)param_1 + 0x8e),param_1);

@@ -11,11 +11,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.app.util.parser.FunctionSignatureParser;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
@@ -23,6 +26,8 @@ import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.FunctionDefinitionDataType;
+import ghidra.program.model.data.ParameterDefinition;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.data.Undefined;
@@ -31,15 +36,23 @@ import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.ParameterImpl;
 import ghidra.program.model.listing.ReturnParameterImpl;
 import ghidra.program.model.listing.Variable;
+import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.SymbolTable;
 
 public class STHiddenThisApplier extends GhidraScript {
     private static final String TAG = "RECOVERED_HIDDEN_THIS";
     private static final String MARKER = "[STHiddenThisApplier generated]";
+    private static final String RECEIVER_DESCRIPTION = MARKER +
+        " Anonymous receiver shared only by proven same-ECX flows; no semantic " +
+        "class owner is claimed.";
+    private static final String VTABLE_DESCRIPTION = MARKER +
+        " Neutral anonymous vtable skeleton; slot signatures remain unresolved.";
     private static final CategoryPath CATEGORY =
         new CategoryPath("/SubmarineTitans/Recovered/HiddenThis");
 
@@ -64,17 +77,60 @@ public class STHiddenThisApplier extends GhidraScript {
         dataTypes = currentProgram.getDataTypeManager();
         voidPtr = new PointerDataType(VoidDataType.dataType, dataTypes);
 
-        int transaction = currentProgram.startTransaction("Apply recovered hidden this");
-        boolean commit = false;
-        try {
-            for (Map<String, String> row : tsv.rows) {
-                monitor.checkCancelled();
-                applyRow(row);
+        // Version 1 changed the convention before attempting the forbidden direct
+        // AutoParameterImpl mutation.  Ghidra kept that partial change, and its
+        // DYNAMIC_STORAGE_ALL_PARAMS compatibility heuristic could also consume the
+        // original first stack argument.  Never apply those proposals: use their saved
+        // exact baseline solely to restore the pre-run signature, then require a fresh
+        // version-2 analysis.
+        if (!tsv.header.contains("analysis_version")) {
+            Path marker = file.toPath().toAbsolutePath().normalize().resolveSibling(
+                "hidden_this_legacy_repair_complete.txt");
+            Files.deleteIfExists(marker);
+            repairLegacyPartialApply(tsv);
+            Path output = file.toPath().toAbsolutePath().normalize().resolveSibling(
+                "hidden_this_apply_report.tsv");
+            writeReport(output);
+            if (count("conflict") == 0 && count("preserved") == 0) {
+                Files.write(marker, List.of("program=" + currentProgram.getName(),
+                    "status=complete", "repaired=" + count("repaired"),
+                    "unchanged=" + count("unchanged")), StandardCharsets.UTF_8);
             }
-            commit = true;
+            println("Legacy hidden-this repair: repaired=" + count("repaired") +
+                ", unchanged=" + count("unchanged") + ", preserved=" +
+                count("preserved") + ", generated types cleaned=" + count("cleaned") +
+                ", conflicts=" + count("conflict") +
+                ". Rerun STHiddenThisAnalyzer before applying again.");
+            println("Repair report: " + output);
+            return;
         }
-        finally {
-            currentProgram.endTransaction(transaction, commit);
+        requireColumns(tsv, "analysis_version", "group_members");
+        for (Map<String, String> row : tsv.rows) {
+            if (!"2".equals(row.get("analysis_version")))
+                throw new IllegalArgumentException("Unsupported hidden-this analysis version " +
+                    row.get("analysis_version") + " at " + row.get("address"));
+        }
+
+        for (Map<String, String> row : tsv.rows) {
+            monitor.checkCancelled();
+            int reportIndex = report.size();
+            int transaction = currentProgram.startTransaction(
+                "Apply recovered hidden this " + row.get("address"));
+            boolean commit = false;
+            try {
+                applyRow(row);
+                ReportRow result = report.get(reportIndex);
+                commit = !"conflict".equals(result.status) &&
+                    !"partial".equals(result.status);
+            }
+            finally {
+                currentProgram.endTransaction(transaction, commit);
+            }
+            if (!commit && report.size() > reportIndex) {
+                ReportRow result = report.get(reportIndex);
+                report.set(reportIndex, new ReportRow(result.address, "conflict",
+                    "rolled back atomically: " + result.detail));
+            }
         }
 
         Path output = file.toPath().toAbsolutePath().normalize().resolveSibling(
@@ -85,6 +141,177 @@ public class STHiddenThisApplier extends GhidraScript {
             ", preserved=" + count("preserved") + ", conflicts=" + count("conflict") +
             ", disabled=" + count("disabled"));
         println("Apply report: " + output);
+    }
+
+    private void repairLegacyPartialApply(Tsv tsv) throws Exception {
+        for (Map<String, String> row : tsv.rows) {
+            monitor.checkCancelled();
+            boolean enabled = enabled(row.get("convention_apply")) ||
+                enabled(row.get("receiver_type_apply"));
+            Address address = address(row.get("address"));
+            if (!enabled) {
+                report.add(new ReportRow(addr(address), "disabled",
+                    "legacy proposal was not enabled"));
+                continue;
+            }
+            int transaction = currentProgram.startTransaction(
+                "Repair legacy hidden-this partial apply " + addr(address));
+            boolean commit = false;
+            try {
+                Function function = currentProgram.getFunctionManager().getFunctionAt(address);
+                if (function == null) {
+                    report.add(new ReportRow(addr(address), "conflict",
+                        "no function at address"));
+                    commit = true;
+                    continue;
+                }
+                String expectedName = unt(row.get("expected_name"));
+                String expectedSignature = unt(row.get("expected_signature"));
+                String expectedConvention = row.get("expected_calling_convention");
+                String currentSignature = function.getSignature().getPrototypeString(true);
+                if (function.getName(true).equals(expectedName) &&
+                        currentSignature.equals(expectedSignature) &&
+                        function.getCallingConventionName().equals(expectedConvention)) {
+                    report.add(new ReportRow(addr(address), "unchanged",
+                        "legacy proposal had not modified this function"));
+                    commit = true;
+                    continue;
+                }
+                boolean recognizablePartial = function.getName(true).equals(expectedName) &&
+                    "__thiscall".equals(function.getCallingConventionName()) &&
+                    !"__thiscall".equals(expectedConvention) &&
+                    !protectedSource(function.getSignatureSource());
+                if (!recognizablePartial) {
+                    report.add(new ReportRow(addr(address), "preserved",
+                        "state is not the exact legacy partial-apply shape: " +
+                        currentSignature));
+                    commit = true;
+                    continue;
+                }
+                restoreSignature(function, expectedSignature, expectedConvention,
+                    source(row.get("expected_signature_source")));
+                String restored = function.getSignature().getPrototypeString(true);
+                if (!restored.equals(expectedSignature))
+                    throw new IllegalStateException("restored signature differs: " + restored);
+                report.add(new ReportRow(addr(address), "repaired",
+                    "restored pre-v1 signature; fresh analysis required"));
+                commit = true;
+            }
+            catch (Exception exception) {
+                report.add(new ReportRow(addr(address), "conflict", message(exception)));
+            }
+            finally {
+                currentProgram.endTransaction(transaction, commit);
+            }
+        }
+        if (count("conflict") == 0 && count("preserved") == 0)
+            cleanupLegacyTypes(tsv);
+    }
+
+    private void cleanupLegacyTypes(Tsv tsv) throws Exception {
+        Set<String> typeNames = new LinkedHashSet<>();
+        for (Map<String, String> row : tsv.rows) {
+            if (enabled(row.get("convention_apply")) || enabled(row.get("receiver_type_apply")))
+                typeNames.add(unt(row.get("receiver_type_name")));
+        }
+        int transaction = currentProgram.startTransaction(
+            "Remove legacy hidden-this generated types");
+        boolean commit = false;
+        List<String> cleaned = new ArrayList<>();
+        try {
+            for (String typeName : typeNames) {
+                DataType receiver = dataTypes.getDataType(CATEGORY, typeName);
+                DataType vtable = dataTypes.getDataType(CATEGORY, typeName + "VTable");
+                if (receiver != null && !legacyGeneratedReceiver(receiver)) {
+                    report.add(new ReportRow("TYPE:" + typeName, "preserved",
+                        "legacy receiver has manual or unexpected content"));
+                    return;
+                }
+                if (vtable != null && !legacyGeneratedVtable(vtable)) {
+                    report.add(new ReportRow("TYPE:" + typeName + "VTable", "preserved",
+                        "legacy vtable has manual or unexpected content"));
+                    return;
+                }
+            }
+            for (String typeName : typeNames) {
+                DataType receiver = dataTypes.getDataType(CATEGORY, typeName);
+                DataType vtable = dataTypes.getDataType(CATEGORY, typeName + "VTable");
+                if (receiver != null && !dataTypes.remove(receiver))
+                    throw new IllegalStateException("failed to remove " + receiver.getPathName());
+                if (vtable != null && !dataTypes.remove(vtable))
+                    throw new IllegalStateException("failed to remove " + vtable.getPathName());
+                if (receiver != null || vtable != null)
+                    cleaned.add(typeName);
+            }
+            commit = true;
+        }
+        catch (Exception exception) {
+            report.add(new ReportRow("TYPE:legacy", "conflict", message(exception)));
+        }
+        finally {
+            currentProgram.endTransaction(transaction, commit);
+        }
+        if (commit) {
+            for (String typeName : cleaned)
+                report.add(new ReportRow("TYPE:" + typeName, "cleaned",
+                    "removed exact version-1 generated receiver/vtable"));
+        }
+    }
+
+    private boolean legacyGeneratedReceiver(DataType type) {
+        if (!(type instanceof Structure) ||
+                !RECEIVER_DESCRIPTION.equals(type.getDescription())) return false;
+        Structure structure = (Structure)type;
+        ghidra.program.model.data.DataTypeComponent[] defined =
+            structure.getDefinedComponents();
+        if (defined.length != 1) return false;
+        ghidra.program.model.data.DataTypeComponent first = defined[0];
+        return first.getOffset() == 0 && "vtable".equals(first.getFieldName()) &&
+            first.getDataType() instanceof Pointer;
+    }
+
+    private boolean legacyGeneratedVtable(DataType type) {
+        if (!(type instanceof Structure) ||
+                !VTABLE_DESCRIPTION.equals(type.getDescription())) return false;
+        for (ghidra.program.model.data.DataTypeComponent component :
+                ((Structure)type).getDefinedComponents()) {
+            if (!(component.getDataType() instanceof Pointer) ||
+                    component.getFieldName() == null ||
+                    !component.getFieldName().startsWith("slot_")) return false;
+        }
+        return true;
+    }
+
+    private void restoreSignature(Function function, String prototype, String convention,
+            SourceType source) throws Exception {
+        FunctionSignatureParser parser = new FunctionSignatureParser(dataTypes, null);
+        // FunctionSignatureParser parses a C prototype but does not accept Ghidra's
+        // calling-convention token in the return-type position emitted by
+        // getPrototypeString(true).  The convention is restored separately below.
+        String parseablePrototype = prototype.replaceFirst(
+            "\\s+" + java.util.regex.Pattern.quote(convention) + "\\s+", " ");
+        FunctionDefinitionDataType parsed = parser.parse(function.getSignature(),
+            parseablePrototype);
+        List<Variable> parameters = new ArrayList<>();
+        int ordinal = 1;
+        for (ParameterDefinition parameter : parsed.getArguments()) {
+            String name = parameter.getName();
+            if (name == null || name.isBlank()) name = "param_" + ordinal;
+            parameters.add(new ParameterImpl(name, parameter.getDataType(), currentProgram,
+                source));
+            ordinal++;
+        }
+        function.updateFunction(convention,
+            new ReturnParameterImpl(parsed.getReturnType(), currentProgram), parameters,
+            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, source);
+        function.setVarArgs(parsed.hasVarArgs());
+        function.setNoReturn(parsed.hasNoReturn());
+        function.setSignatureSource(source);
+    }
+
+    private SourceType source(String value) {
+        try { return SourceType.valueOf(value); }
+        catch (Exception ignored) { return SourceType.ANALYSIS; }
     }
 
     private void applyRow(Map<String, String> row) {
@@ -135,22 +362,49 @@ public class STHiddenThisApplier extends GhidraScript {
 
             List<String> detail = new ArrayList<>();
             boolean changed = false, preserved = false, conflict = false;
-            if (conventionApply && !"__thiscall".equals(function.getCallingConventionName())) {
-                normalizeThiscall(function);
-                detail.add("convention=applied(__thiscall)");
-                changed = true;
+            GhidraClass receiverClass = null;
+            if (typeApply) {
+                receiverClass = ensureReceiverClass(typeName);
+                if (receiverClass == null) {
+                    report.add(new ReportRow(addr(address), "conflict",
+                        "anonymous class namespace exists with an incompatible kind: " +
+                        typeName));
+                    return;
+                }
+                if (!function.getParentNamespace().equals(receiverClass)) {
+                    if (!function.getParentNamespace().isGlobal() && !scriptOwned) {
+                        report.add(new ReportRow(addr(address), "preserved",
+                            "existing non-global owner: " +
+                            function.getParentNamespace().getName(true)));
+                        return;
+                    }
+                    function.setParentNamespace(receiverClass);
+                    detail.add("owner=applied(" + typeName + ")");
+                    changed = true;
+                }
             }
-            else if (conventionApply) detail.add("convention=unchanged");
+
+            // In dynamic-storage mode Ghidra derives the immutable auto-this type from
+            // the function's class namespace.  Rebuilding the signature after assigning
+            // that neutral namespace is the supported API; AutoParameterImpl.setDataType
+            // always throws in Ghidra 12.1.x.
+            boolean wasThiscall = "__thiscall".equals(function.getCallingConventionName());
+            if (conventionApply || typeApply) {
+                normalizeThiscall(function);
+                if (!wasThiscall) {
+                    detail.add("convention=applied(__thiscall)");
+                    changed = true;
+                }
+                else if (conventionApply) detail.add("convention=unchanged");
+            }
 
             if (typeApply) {
                 Parameter receiverParameter = thisParameter(function);
-                DataType desired = new PointerDataType(receiver,
-                    currentProgram.getDefaultPointerSize(), dataTypes);
                 if (receiverParameter == null) {
                     detail.add("receiver_type=conflict(no auto this parameter)");
                     conflict = true;
                 }
-                else if (receiverParameter.getDataType().isEquivalent(desired)) {
+                else if (receiverPointerPath(receiverParameter).equals(receiver.getPathName())) {
                     detail.add("receiver_type=unchanged");
                 }
                 else if (protectedSource(function.getSignatureSource()) && !scriptOwned) {
@@ -158,10 +412,10 @@ public class STHiddenThisApplier extends GhidraScript {
                     preserved = true;
                 }
                 else {
-                    receiverParameter.setDataType(desired, SourceType.ANALYSIS);
-                    function.setSignatureSource(SourceType.ANALYSIS);
-                    detail.add("receiver_type=applied(" + receiver.getPathName() + " *)");
-                    changed = true;
+                    detail.add("receiver_type=conflict(namespace did not produce " +
+                        receiver.getPathName() + " *; actual=" +
+                        receiverParameter.getDataType().getPathName() + ")");
+                    conflict = true;
                 }
             }
 
@@ -180,44 +434,93 @@ public class STHiddenThisApplier extends GhidraScript {
     }
 
     private Structure ensureReceiverType(String typeName, int observedSize, int maxSlot) {
-        String vtableName = typeName + "VTable";
-        DataType existingVtable = dataTypes.getDataType(CATEGORY, vtableName);
-        Structure vtable;
-        if (existingVtable == null) {
-            vtable = new StructureDataType(CATEGORY, vtableName, 0, dataTypes);
-            vtable.setDescription(MARKER + " Neutral anonymous vtable skeleton; slot " +
-                "signatures remain unresolved.");
-        }
-        else if (existingVtable instanceof Structure && generated(existingVtable))
-            vtable = (Structure)existingVtable;
-        else return null;
-
         int pointerSize = currentProgram.getDefaultPointerSize();
-        int requiredVtable = maxSlot < 0 ? pointerSize : maxSlot + pointerSize;
-        while (vtable.getLength() < requiredVtable) {
-            int offset = vtable.getLength();
-            vtable.add(voidPtr, pointerSize, String.format("slot_%02X", offset),
-                "Unresolved virtual/function-pointer slot at +0x" +
-                Integer.toHexString(offset).toUpperCase(Locale.ROOT) + ".");
+        Structure vtable = null;
+        if (maxSlot >= 0) {
+            String vtableName = typeName + "VTable";
+            DataType existingVtable = dataTypes.getDataType(CATEGORY, vtableName);
+            if (existingVtable == null) {
+                vtable = new StructureDataType(CATEGORY, vtableName, 0, dataTypes);
+                vtable.setDescription(VTABLE_DESCRIPTION);
+            }
+            else if (existingVtable instanceof Structure && generated(existingVtable))
+                vtable = (Structure)existingVtable;
+            else return null;
+
+            int requiredVtable = maxSlot + pointerSize;
+            while (layoutLength(vtable) < requiredVtable) {
+                int offset = layoutLength(vtable);
+                vtable.add(voidPtr, pointerSize, String.format("slot_%02X", offset),
+                    "Unresolved virtual/function-pointer slot at +0x" +
+                    Integer.toHexString(offset).toUpperCase(Locale.ROOT) + ".");
+            }
+            vtable = (Structure)dataTypes.resolve(vtable,
+                DataTypeConflictHandler.KEEP_HANDLER);
         }
-        vtable = (Structure)dataTypes.resolve(vtable, DataTypeConflictHandler.KEEP_HANDLER);
 
         DataType existingReceiver = dataTypes.getDataType(CATEGORY, typeName);
         Structure receiver;
         if (existingReceiver == null) {
             receiver = new StructureDataType(CATEGORY, typeName, 0, dataTypes);
-            receiver.setDescription(MARKER + " Anonymous receiver shared only by proven " +
-                "same-ECX flows; no semantic class owner is claimed.");
-            receiver.add(new PointerDataType(vtable, dataTypes), pointerSize, "vtable",
-                "Neutral vtable skeleton recovered from indirect calls through incoming this.");
+            receiver.setDescription(RECEIVER_DESCRIPTION);
         }
         else if (existingReceiver instanceof Structure && generated(existingReceiver))
             receiver = (Structure)existingReceiver;
         else return null;
 
-        if (receiver.getLength() < observedSize)
-            receiver.growStructure(observedSize - receiver.getLength());
+        if (maxSlot < 0 && legacyUnprovenVtable(receiver)) {
+            // The first implementation incorrectly installed a vtable in every receiver,
+            // even when no indirect call through offset zero existed.  This exact
+            // script-owned legacy shape is safe to migrate back to an unknown layout.
+            receiver.deleteAll();
+        }
+        if (vtable != null) {
+            DataType pointer = new PointerDataType(vtable, dataTypes);
+            ghidra.program.model.data.DataTypeComponent component = receiver.isZeroLength() ?
+                null : receiver.getComponentAt(0);
+            if (receiver.isZeroLength()) {
+                receiver.add(pointer, pointerSize, "vtable",
+                    "Neutral vtable skeleton recovered from indirect calls through incoming this.");
+            }
+            else if (component == null || Undefined.isUndefined(component.getDataType())) {
+                receiver.replaceAtOffset(0, pointer, pointerSize, "vtable",
+                    "Neutral vtable skeleton recovered from indirect calls through incoming this.");
+            }
+            else if (!"vtable".equals(component.getFieldName()) ||
+                    !component.getDataType().isEquivalent(pointer)) return null;
+        }
+        int receiverLength = layoutLength(receiver);
+        if (receiverLength < observedSize)
+            receiver.growStructure(observedSize - receiverLength);
         return (Structure)dataTypes.resolve(receiver, DataTypeConflictHandler.KEEP_HANDLER);
+    }
+
+    private int layoutLength(Structure structure) {
+        return structure.isZeroLength() ? 0 : structure.getLength();
+    }
+
+    private boolean legacyUnprovenVtable(Structure receiver) {
+        String description = receiver.getDescription();
+        if (!RECEIVER_DESCRIPTION.equals(description)) return false;
+        if (receiver.isZeroLength()) return false;
+        ghidra.program.model.data.DataTypeComponent first = receiver.getComponentAt(0);
+        return first != null && "vtable".equals(first.getFieldName()) &&
+            first.getDataType() instanceof Pointer;
+    }
+
+    private GhidraClass ensureReceiverClass(String typeName) throws Exception {
+        SymbolTable table = currentProgram.getSymbolTable();
+        Namespace parent = currentProgram.getGlobalNamespace();
+        for (String part : new String[] { "SubmarineTitans", "Recovered", "HiddenThis" }) {
+            Namespace existingParent = table.getNamespace(part, parent);
+            if (existingParent == null)
+                existingParent = table.createNameSpace(parent, part, SourceType.ANALYSIS);
+            parent = existingParent;
+        }
+        Namespace existing = table.getNamespace(typeName, parent);
+        if (existing == null)
+            return table.createClass(parent, typeName, SourceType.ANALYSIS);
+        return existing instanceof GhidraClass ? (GhidraClass)existing : null;
     }
 
     private void normalizeThiscall(Function function) throws Exception {
@@ -225,12 +528,12 @@ public class STHiddenThisApplier extends GhidraScript {
         for (Parameter parameter : function.getParameters()) {
             if (parameter.isAutoParameter()) continue;
             parameters.add(new ParameterImpl(parameter.getName(),
-                parameter.getFormalDataType(), currentProgram));
+                parameter.getFormalDataType(), currentProgram, parameter.getSource()));
         }
         boolean varargs = function.hasVarArgs();
         function.updateFunction("__thiscall",
             new ReturnParameterImpl(function.getReturnType(), currentProgram), parameters,
-            FunctionUpdateType.DYNAMIC_STORAGE_ALL_PARAMS, true, SourceType.ANALYSIS);
+            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, SourceType.ANALYSIS);
         function.setVarArgs(varargs);
         function.setSignatureSource(SourceType.ANALYSIS);
     }
@@ -241,6 +544,13 @@ public class STHiddenThisApplier extends GhidraScript {
                     parameter.getAutoParameterType() == AutoParameterType.THIS) return parameter;
         }
         return null;
+    }
+
+    private String receiverPointerPath(Parameter parameter) {
+        DataType type = parameter.getDataType();
+        if (!(type instanceof Pointer)) return "";
+        DataType pointed = ((Pointer)type).getDataType();
+        return pointed == null ? "" : pointed.getPathName();
     }
 
     private boolean generated(DataType type) {
@@ -340,7 +650,12 @@ public class STHiddenThisApplier extends GhidraScript {
     }
     private String message(Exception exception) {
         String value = exception.getMessage();
-        return value == null || value.isBlank() ? exception.getClass().getSimpleName() : value;
+        if (value == null || value.isBlank()) value = exception.getClass().getSimpleName();
+        for (StackTraceElement frame : exception.getStackTrace()) {
+            if (getClass().getName().equals(frame.getClassName()))
+                return value + " @" + frame.getMethodName() + ":" + frame.getLineNumber();
+        }
+        return value;
     }
     private static String addr(Address value) { return value.toString().toUpperCase(Locale.ROOT); }
     private static String tsv(String value) {

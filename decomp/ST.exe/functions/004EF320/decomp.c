@@ -14,6 +14,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   byte *pbVar5;
   int iVar6;
   undefined4 unaff_ESI;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar7;
   void *unaff_EDI;
   InternalExceptionFrame local_60;
   int local_1c;
@@ -46,13 +47,13 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   }
   else {
     if ((char)local_8[2] == 0) {
-      iVar6 = this->field_018C;
+      pAVar7 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_018C;
     }
     else {
-      iVar6 = this->field_0188;
+      pAVar7 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
     uVar3 = thunk_FUN_00526ba0(*local_8,*(byte *)((int)local_8 + 9));
-    local_10 = (ushort *)FUN_0070b3a0(iVar6,uVar3);
+    local_10 = (ushort *)FUN_0070b3a0(pAVar7,uVar3);
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
@@ -72,8 +73,9 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e);
     return;
   }
-  FUN_006b4170(local_18->field_0068,0,local_1c,local_c,local_14[2],local_14[3],0);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)pBVar2->field_0068,iVar6 + 1,uVar3 + 1,'\x01',
+  FUN_006b4170((AnonShape_006C7610_838EDECF *)local_18->field_0068,0,local_1c,local_c,local_14[2],
+               local_14[3],0);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6 + 1,uVar3 + 1,'\x01',
          (byte *)local_10);
   if (param_1->field_0014 == 3) {
     if (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0) goto LAB_004ef4e9;
@@ -82,8 +84,8 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   else {
     iVar4 = 4;
   }
-  pbVar5 = (byte *)FUN_0070b3a0(pBVar2->field_0190,iVar4);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)pBVar2->field_0068,iVar6,uVar3,'\x06',pbVar5);
+  pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pBVar2->field_0190,iVar4);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6,uVar3,'\x06',pbVar5);
   if ((((local_8 != (Global_sub_00526BA0_param_1Enum *)0x0) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
     wsprintfA(&pBVar2->field_0x6c,&DAT_007c1890,local_8[1]);

@@ -13,7 +13,7 @@ void __fastcall FUN_006dbab0(AnonShape_006DBAB0_2B877B8C *param_1)
     FUN_006b9890((int *)&param_1->field_0x44a);
     FUN_006b9890((int *)&param_1->field_0x44e);
     FUN_006b9890((int *)&param_1->field_0x452);
-    FUN_006ab060((LPVOID *)&param_1->field_0x420);
+    FreeAndNull((void **)&param_1->field_0x420);
     *(undefined4 *)&param_1->field_0x428 = 0;
     *(undefined4 *)&param_1->field_0x42c = 0;
     *(undefined4 *)&param_1->field_0x430 = 0;
@@ -28,7 +28,7 @@ void __fastcall FUN_006dbab0(AnonShape_006DBAB0_2B877B8C *param_1)
     param_1->field_04CA = 0;
     param_1->field_04D6 = 0;
     param_1->field_04DA = 0;
-    FUN_006ab060((LPVOID *)&param_1->field_0x388);
+    FreeAndNull((void **)&param_1->field_0x388);
     if (*(int *)&param_1->field_0x31c != 0) {
       uVar1 = 0;
       if (0 < *(int *)&param_1->field_0x310) {
@@ -41,8 +41,8 @@ void __fastcall FUN_006dbab0(AnonShape_006DBAB0_2B877B8C *param_1)
           iVar2 = iVar2 + 0x114;
         } while ((int)uVar1 < *(int *)&param_1->field_0x310);
       }
-      FUN_006ab060((LPVOID *)&param_1->field_0x31c);
-      FUN_006ab060((LPVOID *)&param_1->field_0x330);
+      FreeAndNull((void **)&param_1->field_0x31c);
+      FreeAndNull((void **)&param_1->field_0x330);
     }
     *(undefined4 *)&param_1->field_0x2e0 = 0;
     *(int *)param_1 = 0;
@@ -52,15 +52,15 @@ void __fastcall FUN_006dbab0(AnonShape_006DBAB0_2B877B8C *param_1)
     *(undefined4 *)&param_1->field_0x32c = 0;
     *(undefined4 *)&param_1->field_0x2dc = 0;
     *(undefined4 *)&param_1->field_0x2a8 = 0;
-    FUN_006ab060((LPVOID *)&param_1->field_0x8);
-    FUN_006ab060((LPVOID *)&param_1->field_0x10);
-    FUN_006ab060((LPVOID *)&param_1->field_0x18);
-    FUN_006ab060((LPVOID *)&param_1->field_0x158);
-    FUN_006ab060((LPVOID *)&param_1->field_0x154);
-    FUN_006ab060((LPVOID *)&param_1->field_0x1c);
-    FUN_006ab060((LPVOID *)&param_1->field_0x350);
-    FUN_006ab060((LPVOID *)&param_1->field_0x354);
-    FUN_006ab060((LPVOID *)&param_1->field_0x2b0);
+    FreeAndNull((void **)&param_1->field_0x8);
+    FreeAndNull((void **)&param_1->field_0x10);
+    FreeAndNull((void **)&param_1->field_0x18);
+    FreeAndNull((void **)&param_1->field_0x158);
+    FreeAndNull((void **)&param_1->field_0x154);
+    FreeAndNull((void **)&param_1->field_0x1c);
+    FreeAndNull((void **)&param_1->field_0x350);
+    FreeAndNull((void **)&param_1->field_0x354);
+    FreeAndNull((void **)&param_1->field_0x2b0);
     FUN_006b9890((int *)&param_1->field_0x294);
     FUN_006e6620((int)param_1);
     *(undefined4 *)&param_1->field_0x14 = 0;

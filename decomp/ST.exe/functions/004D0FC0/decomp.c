@@ -6,11 +6,11 @@ undefined4 * __fastcall FUN_004d0fc0(STGroupBoatC *param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  thunk_FUN_004158e0(param_1);
+  STGameObjC::STGameObjC((STGameObjC *)param_1);
   pAVar1 = (AnonShape_004AB810_8E5693D5 *)((int)&param_1->field_01D2 + 3);
   thunk_FUN_004ab810(pAVar1);
-  param_1->vtable = (STGroupBoatCVTable *)&PTR_GetMessage_00798c70;
-  *(undefined ***)pAVar1 = &PTR_LAB_00798c6c;
+  param_1->vtable = (STGroupBoatCVTable *)&VTable_00798C70;
+  *(VTable_00798C6C **)pAVar1 = &VTable_00798C6C;
   *(undefined4 *)&param_1->field_0x2a8 = 0;
   *(undefined4 *)&param_1->field_0x2dc = 0;
   *(undefined4 *)((int)&param_1[1].field_003D + 1) = 0;

@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -41,13 +42,23 @@ import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
 
 public class STVTableAnalyzer extends GhidraScript {
-    private static final int MIN_SLOTS = 3;
+    // Unreferenced function-pointer runs need several consecutive entries to avoid treating
+    // arbitrary callback constants as vtables.  A table whose address is explicitly stored
+    // through an object pointer is already strongly identified and may legitimately contain
+    // only one virtual function (AiPlrClassTy is one such class).
+    private static final int MIN_RUN_SLOTS = 3;
+    private static final int MIN_STRONG_SLOTS = 1;
     private static final int MAX_SLOTS = 128;
     private static final Map<String, String> KNOWN_TABLE_OWNERS = Map.of(
+        "007900A0", "STGameObjC",
         "0079E188", "SystemClassTy"
     );
     private static final Pattern RECOVERED_CONSTRUCTOR_TABLE = Pattern.compile(
         "(?m)^VTable:\\s*([0-9A-Fa-f]{6,16})(?:\\s|$)");
+    private static final Pattern MEMORY_OPERAND = Pattern.compile(
+        "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
+    private static final Pattern FULL_REGISTER = Pattern.compile(
+        "^(?:EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)$");
     private static final String CONSTRUCTOR_TAG = "RECOVERED_CONSTRUCTOR";
 
     private Listing listing;
@@ -107,17 +118,22 @@ public class STVTableAnalyzer extends GhidraScript {
                 continue;
             long first = block.getStart().getOffset();
             long aligned = (first + pointerSize - 1) & ~(pointerSize - 1L);
-            long last = block.getEnd().getOffset() - (long)(MIN_SLOTS - 1) * pointerSize;
+            long last = block.getEnd().getOffset() -
+                (long)(MIN_STRONG_SLOTS - 1) * pointerSize;
+            long lastRunStart = block.getEnd().getOffset() -
+                (long)(MIN_RUN_SLOTS - 1) * pointerSize;
             for (long offset = aligned; offset <= last; offset += pointerSize) {
                 if ((offset & 0xfff) == 0) monitor.checkCancelled();
                 Address address = addressSpace.getAddress(offset);
                 StartEvidence evidence = codeReferences(address);
-                if (evidence.hasStrongReference() && hasCallableSlots(address, MIN_SLOTS, true)) {
+                if (evidence.hasStrongReference() &&
+                        hasCallableSlots(address, MIN_STRONG_SLOTS, true)) {
                     result.put(address, evidence);
                     continue;
                 }
 
-                if (!hasCallableSlots(address, MIN_SLOTS, false)) continue;
+                if (offset > lastRunStart ||
+                        !hasCallableSlots(address, MIN_RUN_SLOTS, false)) continue;
                 Address previous = offset - pointerSize < block.getStart().getOffset() ? null :
                     addressSpace.getAddress(offset - pointerSize);
                 boolean runBoundary = previous == null || callableAtPointer(previous, false) == null;
@@ -141,7 +157,7 @@ public class STVTableAnalyzer extends GhidraScript {
         for (Address start : strongStarts) {
             monitor.checkCancelled();
             Candidate candidate = buildCandidate(start, starts.get(start), strongStarts, true);
-            if (candidate.slots.size() < MIN_SLOTS) continue;
+            if (candidate.slots.size() < MIN_STRONG_SLOTS) continue;
             result.add(candidate);
             for (Slot slot : candidate.slots) claimed.add(slot.pointerAddress);
         }
@@ -150,7 +166,7 @@ public class STVTableAnalyzer extends GhidraScript {
             monitor.checkCancelled();
             if (entry.getValue().hasStrongReference() || claimed.contains(entry.getKey())) continue;
             Candidate candidate = buildCandidate(entry.getKey(), entry.getValue(), strongStarts, false);
-            if (candidate.slots.size() >= MIN_SLOTS) result.add(candidate);
+            if (candidate.slots.size() >= MIN_RUN_SLOTS) result.add(candidate);
         }
         return result;
     }
@@ -176,12 +192,14 @@ public class STVTableAnalyzer extends GhidraScript {
         Function entryFunction = callable.entryFunction;
         Function target = entryFunction != null && entryFunction.isThunk() ?
             entryFunction.getThunkedFunction(true) : entryFunction;
+        if (target == null) target = callable.redirectTarget;
         if (target == null) target = callable.containingFunction;
         String entryOwner = ownerOf(entryFunction);
         String targetOwner = ownerOf(target);
         String owner = !entryOwner.isEmpty() ? entryOwner : targetOwner;
         return new Slot(index, pointerAddress, callable.address, entryFunction,
-            callable.containingFunction, target, owner, symbolName(callable.address));
+            callable.containingFunction, target, owner, symbolName(callable.address),
+            callable.redirectTarget != null);
     }
 
     private void classify(Candidate candidate) {
@@ -233,6 +251,14 @@ public class STVTableAnalyzer extends GhidraScript {
                 candidate.evidence.hasStrongReference()) {
             candidate.owner = slotVotes.keySet().iterator().next();
             candidate.reason = "unique_slot_owner_and_vptr_store";
+            candidate.confidence = "high";
+            candidate.apply = true;
+        }
+        else if (candidate.slots.size() == 1 && slotVotes.size() == 1 &&
+                candidate.hasPrimaryVptrStore() &&
+                hasDirectNamedSlotAnchor(candidate, slotVotes.keySet().iterator().next())) {
+            candidate.owner = slotVotes.keySet().iterator().next();
+            candidate.reason = "single_slot_named_override_and_vptr_store";
             candidate.confidence = "high";
             candidate.apply = true;
         }
@@ -308,7 +334,7 @@ public class STVTableAnalyzer extends GhidraScript {
             for (int rightIndex = leftIndex + 1; rightIndex < candidates.size(); rightIndex++) {
                 Candidate right = candidates.get(rightIndex);
                 int compared = Math.min(left.slots.size(), right.slots.size());
-                if (compared < MIN_SLOTS) continue;
+                if (compared < MIN_RUN_SLOTS) continue;
                 int shared = 0;
                 List<String> differences = new ArrayList<>();
                 for (int slotIndex = 0; slotIndex < compared; slotIndex++) {
@@ -317,7 +343,7 @@ public class STVTableAnalyzer extends GhidraScript {
                     if (leftTarget.equals(rightTarget)) shared++;
                     else differences.add(String.format("0x%X", slotIndex * pointerSize));
                 }
-                int minimumShared = compared <= 4 ? 2 : MIN_SLOTS;
+                int minimumShared = compared <= 4 ? 2 : MIN_RUN_SLOTS;
                 if (shared < minimumShared || shared * 2 < compared) continue;
                 Relation relation = new Relation(left, right, compared, shared,
                     String.join(" | ", differences));
@@ -420,10 +446,33 @@ public class STVTableAnalyzer extends GhidraScript {
             groups.computeIfAbsent(candidate.proposedName, ignored -> new ArrayList<>()).add(candidate);
         for (List<Candidate> group : groups.values()) {
             if (group.size() < 2) continue;
-            long autoApplyCount = group.stream().filter(candidate -> candidate.apply).count();
+
+            // Multiple inheritance and embedded polymorphic subobjects legitimately give one
+            // class more than one vtable.  Keep the primary table's natural class name and make
+            // a proven secondary table readable by naming its exact this-relative offset.
+            List<Candidate> primary = group.stream()
+                .filter(candidate -> candidate.apply && candidate.hasPrimaryVptrStore()).toList();
+            Candidate primaryToKeep = primary.size() == 1 ? primary.get(0) : null;
             for (Candidate candidate : group) {
-                if (autoApplyCount == 1 && candidate.apply) continue;
-                candidate.proposedName += "_" + addr(candidate.address);
+                if (candidate == primaryToKeep) continue;
+                Long offset = candidate.singleKnownThisOffset();
+                if (offset != null && offset != 0)
+                    candidate.proposedName += "_at_" + String.format("%X", offset);
+            }
+
+            Map<String, List<Candidate>> remaining = new LinkedHashMap<>();
+            for (Candidate candidate : group)
+                remaining.computeIfAbsent(candidate.proposedName, ignored -> new ArrayList<>())
+                    .add(candidate);
+            for (List<Candidate> duplicates : remaining.values()) {
+                if (duplicates.size() < 2) continue;
+                long autoApplyCount = duplicates.stream()
+                    .filter(candidate -> candidate.apply).count();
+                for (Candidate candidate : duplicates) {
+                    if (candidate == primaryToKeep || autoApplyCount == 1 && candidate.apply)
+                        continue;
+                    candidate.proposedName += "_" + addr(candidate.address);
+                }
             }
         }
     }
@@ -450,6 +499,19 @@ public class STVTableAnalyzer extends GhidraScript {
             if (!typeOwner.isEmpty()) return typeOwner;
         }
         return "";
+    }
+
+    private boolean hasDirectNamedSlotAnchor(Candidate candidate, String owner) {
+        for (Slot slot : candidate.slots) {
+            Function target = slot.targetFunction;
+            if (!owner.equals(slot.owner) || target == null || isDefaultFunction(target)) continue;
+            if (target.getSymbol().getSource() == SourceType.USER_DEFINED ||
+                    target.getSignatureSource() == SourceType.USER_DEFINED ||
+                    hasTag(target, "RECOVERED_DEBUG_NAME") ||
+                    hasTag(target, "RECOVERED_CURATED_PROPOSAL") ||
+                    hasTag(target, "RECOVERED_VIRTUAL_METHOD")) return true;
+        }
+        return false;
     }
 
     private boolean isLibraryFunction(Function function) {
@@ -499,9 +561,24 @@ public class STVTableAnalyzer extends GhidraScript {
         Address target = readPointer(pointerAddress);
         if (target == null) return null;
         Function exact = currentProgram.getFunctionManager().getFunctionAt(target);
-        if (exact != null) return new CallableTarget(target, exact, exact);
-        if (!allowInterior || listing.getInstructionAt(target) == null) return null;
-        return new CallableTarget(target, null, listing.getFunctionContaining(target));
+        if (exact != null) return new CallableTarget(target, exact, exact, null);
+        Instruction instruction = listing.getInstructionAt(target);
+        if (!allowInterior || instruction == null) return null;
+        Function redirectTarget = directJumpTarget(instruction);
+        return new CallableTarget(target, null, listing.getFunctionContaining(target),
+            redirectTarget);
+    }
+
+    private Function directJumpTarget(Instruction instruction) {
+        // Ghidra may retain a synthetic fall-through for an unclaimed JMP instruction.  The
+        // mnemonic plus its single direct flow is the stable discriminator here; indirect JMPs
+        // have no concrete flow and are deliberately rejected.
+        if (!"JMP".equalsIgnoreCase(instruction.getMnemonicString())) return null;
+        Address[] flows = instruction.getFlows();
+        if (flows.length != 1) return null;
+        Function target = currentProgram.getFunctionManager().getFunctionAt(flows[0]);
+        if (target != null) return target;
+        return currentProgram.getFunctionManager().getFunctionContaining(flows[0]);
     }
 
     private String symbolName(Address address) {
@@ -528,9 +605,108 @@ public class STVTableAnalyzer extends GhidraScript {
             if (instruction == null || function == null) continue;
             boolean strong = isVptrStore(instruction, reference);
             result.references.add(new CodeReference(from, function, instruction.toString(), strong,
-                ownerOf(function)));
+                ownerOf(function), strong ? thisStoreOffset(function, instruction) : null));
         }
         return result;
+    }
+
+    private Long thisStoreOffset(Function function, Instruction target) {
+        Map<String, Long> aliases = new HashMap<>();
+        aliases.put("ECX", 0L);
+        ghidra.program.model.listing.InstructionIterator iterator =
+            listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString());
+            if (instruction.getAddress().equals(target.getAddress())) {
+                MemoryOperand destination = operands.length == 0 ? null :
+                    memoryOperand(operands[0]);
+                Long base = destination == null ? null : aliases.get(destination.register);
+                return base == null ? null : base + destination.displacement;
+            }
+            if (instruction.getFlowType().isJump()) {
+                aliases.clear();
+                continue;
+            }
+            if ("CALL".equals(mnemonic)) {
+                aliases.remove("EAX");
+                aliases.remove("ECX");
+                aliases.remove("EDX");
+                continue;
+            }
+            updateThisAliases(mnemonic, operands, aliases);
+        }
+        return null;
+    }
+
+    private void updateThisAliases(String mnemonic, String[] operands,
+            Map<String, Long> aliases) {
+        if (operands.length == 0) return;
+        String destination = fullRegister(operands[0]);
+        if (destination == null) return;
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            String source = fullRegister(operands[1]);
+            Long value = source == null ? null : aliases.get(source);
+            if (value == null) aliases.remove(destination);
+            else aliases.put(destination, value);
+            return;
+        }
+        if ("LEA".equals(mnemonic) && operands.length >= 2) {
+            MemoryOperand source = memoryOperand(operands[1]);
+            Long base = source == null ? null : aliases.get(source.register);
+            if (base == null) aliases.remove(destination);
+            else aliases.put(destination, base + source.displacement);
+            return;
+        }
+        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && operands.length >= 2 &&
+                aliases.containsKey(destination)) {
+            Long value = immediate(operands[1]);
+            if (value == null) aliases.remove(destination);
+            else aliases.put(destination, aliases.get(destination) +
+                ("SUB".equals(mnemonic) ? -value : value));
+            return;
+        }
+        if (!Set.of("CMP", "TEST", "PUSH").contains(mnemonic)) aliases.remove(destination);
+    }
+
+    private String[] splitOperands(String instruction) {
+        int space = instruction.indexOf(' ');
+        if (space < 0) return new String[0];
+        String operands = instruction.substring(space + 1).trim();
+        return operands.isBlank() ? new String[0] : operands.split("\\s*,\\s*", -1);
+    }
+
+    private MemoryOperand memoryOperand(String value) {
+        String normalized = value.toUpperCase(Locale.ROOT)
+            .replace("DWORD PTR ", "").replace("QWORD PTR ", "")
+            .replace("WORD PTR ", "").replace("BYTE PTR ", "")
+            .replace(" ", "");
+        Matcher matcher = MEMORY_OPERAND.matcher(normalized);
+        if (!matcher.matches()) return null;
+        long displacement = 0;
+        if (matcher.group(3) != null) {
+            Long parsed = immediate(matcher.group(3));
+            if (parsed == null) return null;
+            displacement = "-".equals(matcher.group(2)) ? -parsed : parsed;
+        }
+        return new MemoryOperand(matcher.group(1), displacement);
+    }
+
+    private String fullRegister(String value) {
+        String normalized = value.toUpperCase(Locale.ROOT).trim();
+        return FULL_REGISTER.matcher(normalized).matches() ? normalized : null;
+    }
+
+    private Long immediate(String value) {
+        String normalized = value.toUpperCase(Locale.ROOT).trim();
+        try {
+            if (normalized.startsWith("0X"))
+                return Long.parseUnsignedLong(normalized.substring(2), 16);
+            if (normalized.matches("[0-9]+")) return Long.parseLong(normalized);
+        }
+        catch (NumberFormatException ignored) { }
+        return null;
     }
 
     private boolean isVptrStore(Instruction instruction, Reference reference) {
@@ -552,11 +728,15 @@ public class STVTableAnalyzer extends GhidraScript {
 
     private void writeProposalsTsv(Path path, List<Candidate> candidates) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("apply\ttable_address\tproposed_name\towner\tslot_count\tnamed_slot_count\t" +
+            out.write("apply\tlayout_apply\tlayout_name\ttable_address\tproposed_name\towner\t" +
+                "slot_count\tnamed_slot_count\t" +
                 "confidence\treason\tstrong_vptr_refs\tall_code_refs\tslot_owners\t" +
-                "constructor_owners\tvptr_writer_owners\trelated_tables\n");
+                "constructor_owners\tvptr_writer_owners\tprimary_vptr_store\t" +
+                "this_vptr_offsets\trelated_tables\n");
             for (Candidate candidate : candidates) {
-                out.write((candidate.apply ? "1" : "0") + "\t" + addr(candidate.address) + "\t" +
+                out.write((candidate.apply ? "1" : "0") + "\t" +
+                    (candidate.layoutApply() ? "1" : "0") + "\t" +
+                    "VTable_" + addr(candidate.address) + "\t" + addr(candidate.address) + "\t" +
                     tsv(candidate.proposedName) + "\t" + tsv(candidate.owner) + "\t" +
                     candidate.slots.size() + "\t" + candidate.namedSlotCount() + "\t" +
                     candidate.confidence + "\t" + candidate.reason + "\t" +
@@ -565,6 +745,8 @@ public class STVTableAnalyzer extends GhidraScript {
                     tsv(String.join(" | ", candidate.slotOwners)) + "\t" +
                     tsv(String.join(" | ", candidate.constructorOwners)) + "\t" +
                     tsv(String.join(" | ", candidate.vptrWriterOwners)) + "\t" +
+                    (candidate.hasPrimaryVptrStore() ? "1" : "0") + "\t" +
+                    tsv(candidate.thisVptrOffsets()) + "\t" +
                     tsv(String.join(" | ", candidate.relatedTables)) + "\n");
             }
         }
@@ -574,7 +756,9 @@ public class STVTableAnalyzer extends GhidraScript {
         List<String> rows = new ArrayList<>();
         for (Candidate candidate : candidates) {
             rows.add("{\"apply\":" + candidate.apply + ",\"table_address\":" +
-                q(addr(candidate.address)) + ",\"proposed_name\":" + q(candidate.proposedName) +
+                q(addr(candidate.address)) + ",\"layout_apply\":" + candidate.layoutApply() +
+                ",\"layout_name\":" + q("VTable_" + addr(candidate.address)) +
+                ",\"proposed_name\":" + q(candidate.proposedName) +
                 ",\"owner\":" + q(candidate.owner) + ",\"slot_count\":" +
                 candidate.slots.size() + ",\"named_slot_count\":" + candidate.namedSlotCount() +
                 ",\"confidence\":" + q(candidate.confidence) + ",\"reason\":" +
@@ -583,7 +767,10 @@ public class STVTableAnalyzer extends GhidraScript {
                 q(String.join(" | ", candidate.slotOwners)) + ",\"constructor_owners\":" +
                 q(String.join(" | ", candidate.constructorOwners)) +
                 ",\"vptr_writer_owners\":" +
-                q(String.join(" | ", candidate.vptrWriterOwners)) + ",\"related_tables\":" +
+                q(String.join(" | ", candidate.vptrWriterOwners)) +
+                ",\"primary_vptr_store\":" + candidate.hasPrimaryVptrStore() +
+                ",\"this_vptr_offsets\":" + q(candidate.thisVptrOffsets()) +
+                ",\"related_tables\":" +
                 q(String.join(" | ", candidate.relatedTables)) + "}");
         }
         Files.write(path, rows, StandardCharsets.UTF_8);
@@ -683,6 +870,8 @@ public class STVTableAnalyzer extends GhidraScript {
             .filter(candidate -> candidate.constructorOwners.isEmpty() &&
                 !candidate.vptrWriterOwners.isEmpty()).count();
         long slots = candidates.stream().mapToLong(candidate -> candidate.slots.size()).sum();
+        long physicalLayouts = candidates.stream().filter(Candidate::layoutApply).count();
+        long primaryVptrTables = candidates.stream().filter(Candidate::hasPrimaryVptrStore).count();
         long interiorSlots = candidates.stream().flatMap(candidate -> candidate.slots.stream())
             .filter(Slot::isInterior).count();
         Set<Address> createTargets = new TreeSet<>();
@@ -696,17 +885,21 @@ public class STVTableAnalyzer extends GhidraScript {
             "interior_code_slots=" + interiorSlots,
             "auto_create_function_targets=" + createTargets.size(),
             "high_auto_apply=" + high,
+            "physical_layout_auto_apply=" + physicalLayouts,
+            "primary_vptr_store_tables=" + primaryVptrTables,
             "medium=" + medium,
             "low=" + low,
             "owner_conflicts=" + conflicts,
             "constructor_anchored_tables=" + constructorAnchors,
             "review_only_named_vptr_writer_tables=" + reviewOnlyWriters,
-            "minimum_slots=" + MIN_SLOTS,
+            "minimum_unreferenced_run_slots=" + MIN_RUN_SLOTS,
+            "minimum_strong_vptr_slots=" + MIN_STRONG_SLOTS,
             "note=Analyzer is read-only. Table apply is conservative; rename_apply is always 0.",
             "note_apply=create_apply=1 creates only missing function boundaries; it never renames them.",
             "note_rename=Set rename_apply=1 only after reviewing proposed_function.",
             "note_interior=interior_target=true usually denotes an adjustor thunk or a missing function boundary.",
             "note_relations=Related layouts help distinguish inherited base slots from the actual table owner.",
+            "note_subobjects=Exact this-relative stores distinguish the primary vptr from secondary polymorphic subobjects.",
             "note_constructors=An exact recovered constructor-to-table marker outranks inherited slot namespaces; other named vptr writers remain review-only."),
             StandardCharsets.UTF_8);
     }
@@ -743,13 +936,15 @@ public class STVTableAnalyzer extends GhidraScript {
         final String instruction;
         final boolean strong;
         final String owner;
+        final Long thisOffset;
         CodeReference(Address address, Function function, String instruction, boolean strong,
-                String owner) {
+                String owner, Long thisOffset) {
             this.address = address;
             this.function = function;
             this.instruction = instruction;
             this.strong = strong;
             this.owner = owner;
+            this.thisOffset = thisOffset;
         }
     }
     private static class Candidate {
@@ -774,14 +969,49 @@ public class STVTableAnalyzer extends GhidraScript {
             return evidence.hasStrongReference() && slot.isInterior() &&
                 slot.containingFunction == null;
         }
+        boolean layoutApply() { return evidence.hasStrongReference(); }
+        boolean hasPrimaryVptrStore() {
+            return evidence.references.stream().anyMatch(reference -> reference.strong &&
+                reference.thisOffset != null && reference.thisOffset == 0);
+        }
+        Long singleKnownThisOffset() {
+            Set<Long> offsets = new TreeSet<>();
+            for (CodeReference reference : evidence.references)
+                if (reference.strong && reference.thisOffset != null)
+                    offsets.add(reference.thisOffset);
+            return offsets.size() == 1 ? offsets.iterator().next() : null;
+        }
+        String thisVptrOffsets() {
+            Set<Long> knownOffsets = new TreeSet<>();
+            boolean unknown = false;
+            for (CodeReference reference : evidence.references) {
+                if (!reference.strong) continue;
+                if (reference.thisOffset == null) unknown = true;
+                else knownOffsets.add(reference.thisOffset);
+            }
+            List<String> offsets = new ArrayList<>();
+            for (Long offset : knownOffsets) offsets.add(String.format("0x%X", offset));
+            if (unknown) offsets.add("unknown");
+            return String.join(" | ", offsets);
+        }
+    }
+    private static class MemoryOperand {
+        final String register;
+        final long displacement;
+        MemoryOperand(String register, long displacement) {
+            this.register = register;
+            this.displacement = displacement;
+        }
     }
     private static class CallableTarget {
         final Address address;
-        final Function entryFunction, containingFunction;
-        CallableTarget(Address address, Function entryFunction, Function containingFunction) {
+        final Function entryFunction, containingFunction, redirectTarget;
+        CallableTarget(Address address, Function entryFunction, Function containingFunction,
+                Function redirectTarget) {
             this.address = address;
             this.entryFunction = entryFunction;
             this.containingFunction = containingFunction;
+            this.redirectTarget = redirectTarget;
         }
     }
     private static class Slot {
@@ -789,9 +1019,11 @@ public class STVTableAnalyzer extends GhidraScript {
         final Address pointerAddress, rawTargetAddress;
         final Function entryFunction, containingFunction, targetFunction;
         final String owner, rawSymbol;
+        final boolean redirectResolved;
         String proposedName;
         Slot(int index, Address pointerAddress, Address rawTargetAddress, Function entryFunction,
-                Function containingFunction, Function targetFunction, String owner, String rawSymbol) {
+                Function containingFunction, Function targetFunction, String owner, String rawSymbol,
+                boolean redirectResolved) {
             this.index = index;
             this.pointerAddress = pointerAddress;
             this.rawTargetAddress = rawTargetAddress;
@@ -800,6 +1032,7 @@ public class STVTableAnalyzer extends GhidraScript {
             this.targetFunction = targetFunction;
             this.owner = owner;
             this.rawSymbol = rawSymbol;
+            this.redirectResolved = redirectResolved;
         }
         boolean isInterior() { return entryFunction == null; }
         boolean isThunk() { return entryFunction != null && entryFunction.isThunk(); }
@@ -814,11 +1047,12 @@ public class STVTableAnalyzer extends GhidraScript {
             return containingFunction == null ? "" : containingFunction.getName(true);
         }
         Address resolvedAddress() {
-            return targetFunction == null || isInterior() ? rawTargetAddress :
+            return targetFunction == null || isInterior() && !redirectResolved ? rawTargetAddress :
                 targetFunction.getEntryPoint();
         }
         String targetName() {
-            return targetFunction == null || isInterior() ? rawSymbol : targetFunction.getName(true);
+            return targetFunction == null || isInterior() && !redirectResolved ? rawSymbol :
+                targetFunction.getName(true);
         }
     }
     private static class Relation {

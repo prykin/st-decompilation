@@ -76,9 +76,9 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
     }
     if ((((-1 < local_4a) && (-1 < sStack_48)) && (-1 < local_46)) &&
        (((short)((local_4a / 0xc9 + (local_4a >> 0xf)) -
-                (short)((longlong)(int)local_4a * 0x28c1979 >> 0x3f)) < SHORT_007fb240 &&
+                (short)((longlong)(int)local_4a * 0x28c1979 >> 0x3f)) < g_worldGrid.sizeX &&
         ((short)((sStack_48 / 0xc9 + (sStack_48 >> 0xf)) -
-                (short)((longlong)(int)sStack_48 * 0x28c1979 >> 0x3f)) < SHORT_007fb242)))) {
+                (short)((longlong)(int)sStack_48 * 0x28c1979 >> 0x3f)) < g_worldGrid.sizeY)))) {
       STPlaySystemC::CreateGameObject(PTR_00802a38,0x28,0,0,local_64,0);
       if (0xc9 < local_46) {
         local_40 = local_46 + -0xc9;

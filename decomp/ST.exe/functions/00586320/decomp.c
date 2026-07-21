@@ -51,16 +51,16 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
   param_1->field_0231 = 1;
   iVar9 = iVar13 + 5;
   local_40 = iVar13 + -5;
-  if (SHORT_007fb240 <= iVar9) {
-    iVar9 = SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX <= iVar9) {
+    iVar9 = g_worldGrid.sizeX + -1;
   }
   if (local_40 < 0) {
     local_40 = 0;
   }
   iVar10 = local_14 + 5;
   local_44 = local_14 + -5;
-  if (SHORT_007fb242 <= iVar10) {
-    iVar10 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY <= iVar10) {
+    iVar10 = g_worldGrid.sizeY + -1;
   }
   if (local_44 < 0) {
     local_44 = 0;
@@ -70,13 +70,13 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
     local_1c = 0;
     do {
       sVar12 = (short)iVar13;
-      if ((((((-1 < sVar12) && (sVar12 < SHORT_007fb240)) &&
+      if ((((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) &&
             ((-1 < (short)local_14 &&
-             (((short)local_14 < SHORT_007fb242 && (sVar11 = (short)local_1c, -1 < sVar11)))))) &&
-           (sVar11 < SHORT_007fb244)) &&
-          (((pSVar4 = g_worldCells
-                      [(int)(short)local_14 * (int)SHORT_007fb240 +
-                       (int)sVar11 * (int)SHORT_007fb246 + (int)sVar12].objects[0],
+             (((short)local_14 < g_worldGrid.sizeY && (sVar11 = (short)local_1c, -1 < sVar11))))))
+           && (sVar11 < g_worldGrid.sizeZ)) &&
+          (((pSVar4 = g_worldGrid.cells
+                      [(int)(short)local_14 * (int)g_worldGrid.sizeX +
+                       (int)sVar11 * (int)g_worldGrid.planeStride + (int)sVar12].objects[0],
             pSVar4 != (STWorldObject *)0x0 &&
             (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
              (iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0)))) &&
@@ -171,13 +171,14 @@ LAB_005866e6:
 LAB_00586713:
         if ((((((local_18 <= iVar9) && (local_c <= iVar10)) && (local_40 <= local_18)) &&
              (((local_44 <= local_c && (sVar12 = (short)local_18, -1 < sVar12)) &&
-              ((sVar12 < SHORT_007fb240 &&
-               ((sVar11 = (short)local_c, -1 < sVar11 && (sVar11 < SHORT_007fb242)))))))) &&
+              ((sVar12 < g_worldGrid.sizeX &&
+               ((sVar11 = (short)local_c, -1 < sVar11 && (sVar11 < g_worldGrid.sizeY)))))))) &&
             (((sVar8 = (short)local_1c, -1 < sVar8 &&
-              ((sVar8 < SHORT_007fb244 &&
-               (pSVar4 = g_worldCells
-                         [(int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar11 +
-                          (int)sVar12].objects[0], pSVar4 != (STWorldObject *)0x0)))) &&
+              ((sVar8 < g_worldGrid.sizeZ &&
+               (pSVar4 = g_worldGrid.cells
+                         [(int)sVar8 * (int)g_worldGrid.planeStride +
+                          (int)g_worldGrid.sizeX * (int)sVar11 + (int)sVar12].objects[0],
+               pSVar4 != (STWorldObject *)0x0)))) &&
              (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
               ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0 &&
                (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))))))) &&

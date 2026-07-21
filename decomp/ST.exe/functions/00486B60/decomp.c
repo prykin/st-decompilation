@@ -88,7 +88,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
     break;
   default:
     *(undefined2 *)(puVar1 + 0x1e) = *(undefined2 *)((int)this + 0x79a);
-    uVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     if ((uVar4 & 0xff) == 1) {
       iVar3 = *(int *)((int)this + 0x24);
       iVar6 = 6;

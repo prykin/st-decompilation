@@ -24,16 +24,16 @@ undefined4 __fastcall FUN_004dd880(int param_1)
   int *local_8;
   
   local_20 = (AnonShape_004DDCC0_33DEB43E *)param_1;
-  thunk_FUN_004406c0(*(char *)(param_1 + 0x24));
+  GetPlayerRaceId(*(char *)(param_1 + 0x24));
   piVar8 = local_104;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
     *piVar8 = -1;
     piVar8 = piVar8 + 1;
   }
   if (*(int *)(param_1 + 0x24) != *(int *)(param_1 + 0x23d)) {
-    uVar2 = thunk_FUN_004406c0((char)*(int *)(param_1 + 0x23d));
+    uVar2 = GetPlayerRaceId((char)*(int *)(param_1 + 0x23d));
     iVar6 = *(int *)(param_1 + 0x235);
-    uVar3 = thunk_FUN_004406c0(*(char *)(param_1 + 0x24));
+    uVar3 = GetPlayerRaceId(*(char *)(param_1 + 0x24));
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar6 * 3) * 3] == '\0')
     goto LAB_004dda3a;
   }

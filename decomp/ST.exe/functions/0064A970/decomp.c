@@ -73,10 +73,10 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_c0.previous;
     if (local_1c != (undefined4 *)0x0) {
-      FUN_006ab060(&local_1c);
+      FreeAndNull(&local_1c);
     }
     if (local_8 != (float *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     if (0 < iVar5) {
       iVar5 = -0x6b;
@@ -1120,7 +1120,7 @@ LAB_0064bd33:
       g_currentExceptionFrame = local_c0.previous;
       return local_8;
     }
-    FUN_006ab060(&local_1c);
+    FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_c0.previous;
     return local_8;
   case 0x38e:

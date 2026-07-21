@@ -55,7 +55,7 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
       local_1a = local_14->field_02D4;
       if (0 < (int)local_8) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar8,&local_c);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,&local_c);
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -77,7 +77,7 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
       uVar8 = 0;
       if (0 < (int)local_8) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar8,&local_c);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,&local_c);
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr

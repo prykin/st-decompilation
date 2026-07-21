@@ -38,7 +38,7 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027E)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
-    thunk_FUN_004f0c80((AnonShape_004F0C80_4C5E559C *)this_00);
+    thunk_FUN_004f0c80((AnonShape_004EF140_16642BA0 *)this_00);
     g_currentExceptionFrame = pIVar5;
     return;
   }

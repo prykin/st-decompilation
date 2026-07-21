@@ -403,7 +403,8 @@ LAB_007292a6:
 LAB_007294f8:
     if (2 < (int)DAT_0085710c) {
       if (param_5 == 0) {
-        FUN_00728a80(this,param_1,param_2,param_6);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
+                  (this,param_1,param_2,param_6);
       }
       else if (((local_9c < *(int *)((int)this + 0x30)) || (*(int *)((int)this + 0x38) <= local_44))
               || ((local_a0 < *(int *)((int)this + 0x34) || (*(int *)((int)this + 0x3c) <= local_50)

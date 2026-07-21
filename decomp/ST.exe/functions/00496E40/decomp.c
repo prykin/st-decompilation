@@ -20,7 +20,7 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
     FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_007fb270,uVar2);
     iVar3 = thunk_FUN_00496f00(iVar1);
     if (iVar3 == 0) {
-      FUN_006ab060((LPVOID *)(&DAT_007fb24c + iVar1));
+      FreeAndNull((void **)(&DAT_007fb24c + iVar1));
     }
   }
   return;

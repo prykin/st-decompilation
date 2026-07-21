@@ -27,7 +27,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   int local_8;
   
   local_10 = this;
-  uVar2 = thunk_FUN_004406c0(this->field_023D);
+  uVar2 = GetPlayerRaceId(this->field_023D);
   local_8 = (uVar2 & 0xff) - 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -65,8 +65,8 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   }
   if (this_00->field_05F3 == 0) {
     STT3DSprC::StopShow((STT3DSprC *)&this_00->field_01D5,0xd);
-    *(undefined4 *)(this_00->field_01F5 + 0x1e8) = 0;
-    *(undefined4 *)(this_00->field_01F5 + 0x1e4) = 0;
+    this_00->field_01F5->field_01E8 = 0;
+    this_00->field_01F5->field_01E4 = 0;
   }
   else {
     wsprintfA(local_154,s__s_1i_007ac908,this_00->field_05F3,this_00->field_05C0);
@@ -80,8 +80,8 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   this_01 = &this_00->field_01D5;
   if ((char *)this_00->field_05F7 == (char *)0x0) {
     STT3DSprC::StopShow((STT3DSprC *)this_01,0xc);
-    *(undefined4 *)(this_00->field_01F5 + 0x1c4) = 0;
-    *(undefined4 *)(this_00->field_01F5 + 0x1c0) = 0;
+    this_00->field_01F5->field_01C4 = 0;
+    this_00->field_01F5->field_01C0 = 0;
   }
   else {
     iVar3 = STT3DSprC::LoadSequence
@@ -141,7 +141,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
       }
     }
     if (this_00->field_05AC == CASE_52) {
-      iVar3 = thunk_FUN_004406c0(this_00->field_0x24);
+      iVar3 = GetPlayerRaceId(this_00->field_0x24);
       if ((char)iVar3 == '\x01') {
         text = s_traws_ani_007ad48c;
       }
@@ -161,7 +161,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   iVar3 = thunk_FUN_004acd30(this_01,'\x0e');
   iVar4 = thunk_FUN_004acd30(this_01,'\r');
   if ((iVar4 < iVar3) &&
-     (uVar2 = *(int *)(this_00->field_01F5 + 0x1e4) - *(int *)(this_00->field_01F5 + 0x1e8),
+     (uVar2 = this_00->field_01F5->field_01E4 - this_00->field_01F5->field_01E8,
      uVar7 = (int)uVar2 >> 0x1f, 1 < (int)((uVar2 ^ uVar7) - uVar7))) {
     iVar3 = thunk_FUN_004cba10();
     if (iVar3 == 2) {
@@ -273,7 +273,7 @@ LAB_004c9eda:
     uVar9 = PTR_00802a38->field_00E4;
   }
   else {
-    iVar4 = thunk_FUN_004406c0(this_00->field_023D);
+    iVar4 = GetPlayerRaceId(this_00->field_023D);
     iVar3 = *(int *)&this_00->field_0x2c;
     if ((char)iVar4 == '\x03') {
       if (iVar3 == 0) {

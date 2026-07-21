@@ -28,14 +28,14 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
   if (local_1c < 0) {
     local_1c = 0;
   }
-  if (SHORT_007fb242 < local_14) {
-    local_14 = (int)SHORT_007fb242;
+  if (g_worldGrid.sizeY < local_14) {
+    local_14 = (int)g_worldGrid.sizeY;
   }
-  if (SHORT_007fb240 < local_10) {
-    local_10 = (int)SHORT_007fb240;
+  if (g_worldGrid.sizeX < local_10) {
+    local_10 = (int)g_worldGrid.sizeX;
   }
   iVar4 = local_1c;
-  sVar3 = SHORT_007fb240;
+  sVar3 = g_worldGrid.sizeX;
   local_8 = iVar2;
   if (iVar2 < local_14) {
     do {
@@ -50,38 +50,40 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
             if (-1 < (short)iVar4) {
               sVar5 = (short)iVar6;
               if (((((short)iVar4 < sVar3) && (sVar1 = (short)iVar2, -1 < sVar1)) &&
-                  (sVar1 < SHORT_007fb242)) &&
-                 (((-1 < sVar5 && (sVar5 < SHORT_007fb244)) &&
+                  (sVar1 < g_worldGrid.sizeY)) &&
+                 (((-1 < sVar5 && (sVar5 < g_worldGrid.sizeZ)) &&
                   (iVar2 = local_8, iVar4 = local_18,
-                  g_worldCells
-                  [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)SHORT_007fb246 + (int)(short)local_18
-                  ].objects[1] != (STWorldObject *)0x0)))) {
+                  g_worldGrid.cells
+                  [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)g_worldGrid.planeStride +
+                   (int)(short)local_18].objects[1] != (STWorldObject *)0x0)))) {
                 local_c = local_c + 1;
                 thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),0,
-                                   (int)g_worldCells
-                                        [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)SHORT_007fb246
-                                         + (int)(short)local_18].objects[1],
+                                   (int)g_worldGrid.cells
+                                        [(int)sVar1 * (int)sVar3 +
+                                         (int)sVar5 * (int)g_worldGrid.planeStride +
+                                         (int)(short)local_18].objects[1],
                                    (short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x128);
                 iVar2 = local_8;
-                sVar3 = SHORT_007fb240;
+                sVar3 = g_worldGrid.sizeX;
               }
               if (((-1 < (short)iVar4) && ((short)iVar4 < sVar3)) &&
                  (((sVar1 = (short)iVar2, -1 < sVar1 &&
-                   (((sVar1 < SHORT_007fb242 && (-1 < sVar5)) && (sVar5 < SHORT_007fb244)))) &&
-                  (iVar2 = local_8, iVar4 = local_18,
-                  g_worldCells
-                  [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)SHORT_007fb246 + (int)(short)local_18
-                  ].objects[0] != (STWorldObject *)0x0)))) {
+                   (((sVar1 < g_worldGrid.sizeY && (-1 < sVar5)) && (sVar5 < g_worldGrid.sizeZ))))
+                  && (iVar2 = local_8, iVar4 = local_18,
+                     g_worldGrid.cells
+                     [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)g_worldGrid.planeStride +
+                      (int)(short)local_18].objects[0] != (STWorldObject *)0x0)))) {
                 local_c = local_c + 1;
                 thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),0,
-                                   (int)g_worldCells
-                                        [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)SHORT_007fb246
-                                         + (int)(short)local_18].objects[0],
+                                   (int)g_worldGrid.cells
+                                        [(int)sVar1 * (int)sVar3 +
+                                         (int)sVar5 * (int)g_worldGrid.planeStride +
+                                         (int)(short)local_18].objects[0],
                                    (short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x128);
                 iVar2 = local_8;
-                sVar3 = SHORT_007fb240;
+                sVar3 = g_worldGrid.sizeX;
               }
             }
             iVar6 = iVar6 + 1;

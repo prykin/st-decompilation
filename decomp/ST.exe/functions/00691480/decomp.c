@@ -38,8 +38,8 @@ void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
     piVar4 = &pAVar1->field_0085;
     iVar2 = 8;
     do {
-      if ((byte *)*piVar4 != (byte *)0x0) {
-        FUN_006ae110((byte *)*piVar4);
+      if ((DArrayTy *)*piVar4 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)*piVar4);
         *piVar4 = 0;
       }
       piVar4 = piVar4 + 3;

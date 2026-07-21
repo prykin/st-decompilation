@@ -37,7 +37,7 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
   iVar5 = 5;
   do {
     if (*ppDVar3 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)*ppDVar3);
+      DArrayDestroy(*ppDVar3);
       *ppDVar3 = (DArrayTy *)0x0;
     }
     ppDVar3 = ppDVar3 + 3;

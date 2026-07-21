@@ -29,8 +29,10 @@ undefined4 __thiscall FUN_00638ca0(void *this,AnonShape_0041AF40_F59F8577 *param
     }
     local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
-    STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,0x7a);
-    FUN_006ab060(&local_8);
+    STPlaySystemC::SaveObjData
+              (PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,
+               (AnonShape_0060EA30_DCEB68AD *)0x7a);
+    FreeAndNull(&local_8);
     return 0;
   }
   if (uVar5 == 3) {

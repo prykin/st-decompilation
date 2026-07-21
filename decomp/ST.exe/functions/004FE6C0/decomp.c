@@ -51,10 +51,10 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       return;
     }
     if (param_1 == 0) {
-      iVar3 = FUN_0070b3a0(local_10->field_02DA,2);
+      iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02DA,2);
       iVar6 = local_8;
       FUN_006b5440(local_8,0,199,6,iVar3,0,0xff);
-      iVar4 = FUN_0070b3a0(pCVar2->field_02DA,3);
+      iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02DA,3);
       iVar3 = (int)((local_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
       Library::DKW::WGR::FUN_006b5110
@@ -68,10 +68,10 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       uVar9 = pCVar2->field_0050;
     }
     else {
-      iVar3 = FUN_0070b3a0(local_10->field_02DA,0);
+      iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02DA,0);
       iVar6 = local_8;
       FUN_006b5440(local_8,0,2,6,iVar3,0,0xff);
-      iVar4 = FUN_0070b3a0(pCVar2->field_02DA,1);
+      iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02DA,1);
       iVar3 = (int)((local_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
       Library::DKW::WGR::FUN_006b5110

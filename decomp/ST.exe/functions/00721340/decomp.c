@@ -50,7 +50,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
     uVar4 = Library::DKW::TBL::FUN_00752d50
                       (param_1->field_0138,param_1->field_0144 + 1 + param_1->field_020C,local_8);
     if (-1 < (int)uVar4) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
       if (param_1->field_0210 + param_1->field_0148 == 0) {
         uVar4 = Library::DKW::TBL::FUN_006b6020
                           ((uint *)param_1->field_0138,param_1->field_0144 + param_1->field_020C,
@@ -77,7 +77,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
                           ((uint *)param_1->field_0138,param_1->field_0144 + param_1->field_020C,
                            local_8);
         if (-1 < (int)uVar4) {
-          FUN_006ab060(&local_8);
+          FreeAndNull(&local_8);
           return 0;
         }
       }

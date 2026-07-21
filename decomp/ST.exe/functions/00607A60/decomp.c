@@ -31,7 +31,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   int local_c;
   int local_8;
   
-  local_14 = thunk_FUN_004406c0(in_stack_00000020);
+  local_14 = GetPlayerRaceId(in_stack_00000020);
   local_14 = local_14 & 0xff;
   uVar4 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar4;

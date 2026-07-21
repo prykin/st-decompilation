@@ -1,8 +1,14 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00490CD0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=10;
+   ecx_pointer_setup=10; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
+   expected_stack=16; receiver_family_members=1; adopt_untyped_existing_thiscall */
 
 void __thiscall
-FUN_00490cd0(void *this,undefined4 param_1,undefined4 param_2,int param_3,int param_4)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::FUN_00490cd0
+          (AnonReceiver_00490CD0 *this,undefined4 param_1,undefined4 param_2,int param_3,int param_4
+          )
 
 {
   short sVar1;
@@ -17,18 +23,18 @@ FUN_00490cd0(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
   if (param_4 < 0) {
     param_4._2_2_ = 0;
   }
-  if ((short)_SHORT_007fb240 + -1 < (int)param_3._2_2_) {
-    param_3._2_2_ = (short)_SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX + -1 < (int)param_3._2_2_) {
+    param_3._2_2_ = g_worldGrid.sizeX + -1;
   }
-  if (SHORT_007fb242 + -1 < (int)sVar1) {
-    sVar1 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY + -1 < (int)sVar1) {
+    sVar1 = g_worldGrid.sizeY + -1;
   }
-  if ((short)_SHORT_007fb244 + -1 < (int)param_4._2_2_) {
-    param_4._2_2_ = (short)_SHORT_007fb244 + -1;
+  if (g_worldGrid.sizeZ + -1 < (int)param_4._2_2_) {
+    param_4._2_2_ = g_worldGrid.sizeZ + -1;
   }
-  *(short *)((int)this + 0x475) = param_3._2_2_;
-  *(short *)((int)this + 0x477) = sVar1;
-  *(short *)((int)this + 0x479) = param_4._2_2_;
+  *(short *)&this->field_0x475 = param_3._2_2_;
+  *(short *)&this->field_0x477 = sVar1;
+  *(short *)&this->field_0x479 = param_4._2_2_;
   return;
 }
 

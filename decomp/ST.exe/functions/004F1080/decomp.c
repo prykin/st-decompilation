@@ -92,7 +92,7 @@ BldObjPanelTy::GetMessage(BldObjPanelTy *this,AnonShape_004F1080_64A4850E *param
       break;
     case 0xc0a4:
       *(undefined4 *)&this_00->field_0x199 = param_1->field_0014;
-      thunk_FUN_004f0c80((AnonShape_004F0C80_4C5E559C *)this_00);
+      thunk_FUN_004f0c80((AnonShape_004EF140_16642BA0 *)this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -101,7 +101,7 @@ BldObjPanelTy::GetMessage(BldObjPanelTy *this,AnonShape_004F1080_64A4850E *param
     case 0xc0b1:
     case 0xc0b2:
     case 0xc0b3:
-      PaintBldBut((BldObjPanelTy *)this_00,(AnonShape_004F0E60_091DB1BE *)param_1);
+      PaintBldBut((BldObjPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)param_1);
     }
   }
   g_currentExceptionFrame = local_4c.previous;

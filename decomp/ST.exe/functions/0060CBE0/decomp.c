@@ -33,7 +33,7 @@ undefined2 * FUN_0060cbe0(undefined2 *param_1,int *param_2)
     *param_2 = iVar2;
     return param_1;
   }
-  FUN_006ab060(&param_1);
+  FreeAndNull(&param_1);
   return (undefined2 *)0x0;
 }
 

@@ -2,7 +2,7 @@
 void __fastcall FUN_004ab810(AnonShape_004AB810_8E5693D5 *param_1)
 
 {
-  *(undefined ***)param_1 = &PTR_thunk_FUN_004ad550_00790790;
+  *(VTable_00790790 **)param_1 = &VTable_00790790;
   *(undefined4 *)(param_1 + 1) = 0;
   *(undefined4 *)&param_1[1].field_0004 = 0xffffffff;
   *(undefined4 *)&param_1[1].field_0xc = 0;

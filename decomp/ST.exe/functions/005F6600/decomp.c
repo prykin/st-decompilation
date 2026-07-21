@@ -13,10 +13,10 @@ STColl3C * __thiscall STColl3C::STColl3C(STColl3C *this)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  STGameObjC::STGameObjC((STGameObjC *)this);
+  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->vtable_at_1d5);
   this->vtable = &STColl3CVTable;
-  this->field_01D5 = &PTR_LAB_0079c5a8;
+  this->vtable_at_1d5 = &STColl3CVTable_at_1D5;
   if (this == (STColl3C *)0x0) {
     puVar2 = (undefined4 *)0x0;
   }

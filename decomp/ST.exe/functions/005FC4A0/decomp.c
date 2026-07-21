@@ -54,11 +54,12 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
   sVar8 = *(short *)((int)param_1 + 0x242);
   sVar2 = *(short *)((int)param_1 + 0x244);
   sVar3 = *(short *)((int)param_1 + 0x246);
-  if ((((((sVar8 < 0) || (SHORT_007fb240 <= sVar8)) ||
-        ((sVar2 < 0 || ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))))) || (SHORT_007fb244 <= sVar3))
-      || (g_worldCells
-          [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar8].objects
-          [0] == (STWorldObject *)0x0)) &&
+  if ((((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+        ((sVar2 < 0 || ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))))) ||
+       (g_worldGrid.sizeZ <= sVar3)) ||
+      (g_worldGrid.cells
+       [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar8
+       ].objects[0] == (STWorldObject *)0x0)) &&
      (iVar6 = DumpClassC::WritePtr(sVar8,sVar2,sVar3,0,param_1), iVar6 == 0)) {
     *(char *)((int)param_1 + 0x252) = *(char *)((int)param_1 + 0x252) + '\x01';
     bVar4 = true;
@@ -70,24 +71,24 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
     if (sVar8 < 0) {
       return 0;
     }
-    if (SHORT_007fb240 <= sVar8) {
+    if (g_worldGrid.sizeX <= sVar8) {
       return 0;
     }
     if (sVar3 < 0) {
       return 0;
     }
-    if (SHORT_007fb242 <= sVar3) {
+    if (g_worldGrid.sizeY <= sVar3) {
       return 0;
     }
     if (sVar2 < 0) {
       return 0;
     }
-    if (SHORT_007fb244 <= sVar2) {
+    if (g_worldGrid.sizeZ <= sVar2) {
       return 0;
     }
-    this = g_worldCells
-           [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar8].
-           objects[0];
+    this = g_worldGrid.cells
+           [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+            (int)sVar8].objects[0];
     if (this == (STWorldObject *)0x0) {
       return 0;
     }

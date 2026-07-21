@@ -1,0 +1,6 @@
+function_address	target_name	status	detail
+00436F20	local_2c	applied	pointer:/SubmarineTitans/Recovered/DArrayTy -> /undefined4
+00436F20	local_30	applied	pointer:/SubmarineTitans/Recovered/DArrayTy -> /undefined4
+00436F20	local_34	applied	pointer:/SubmarineTitans/Recovered/DArrayTy -> /undefined4
+00436F20	local_6c	applied	pointer:/SubmarineTitans/Recovered/DArrayTy -> /undefined4
+00664960	local_10	disabled	apply is 0

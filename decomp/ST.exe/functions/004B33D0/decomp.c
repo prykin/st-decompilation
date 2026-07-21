@@ -1,9 +1,11 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_ai_fnd.cpp
    Diagnostic line evidence: 93 | 961 | 962 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 int FUN_004b33d0(uint param_1,int *param_2)
 
@@ -14,34 +16,31 @@ int FUN_004b33d0(uint param_1,int *param_2)
   char cVar4;
   STWorldObject *this;
   code *pcVar5;
-  DArrayTy *pDVar6;
-  AnonShape_006B0CD0_C8D121FA *pAVar7;
-  STFishC *pSVar8;
-  DArrayTy *pDVar9;
-  short sVar10;
-  int iVar11;
-  uint *puVar12;
-  AnonShape_006B0C70_7C4FE646 *pAVar13;
-  byte *pbVar14;
-  DArrayTy *pDVar15;
-  int iVar16;
-  int iVar17;
-  AnonShape_006ACC70_C8641025 *pAVar18;
-  Global_sub_004B1120_param_2Enum GVar19;
-  int *piVar20;
-  short sVar21;
+  AnonShape_00413AF0_B6B4EE9A *pAVar6;
+  STFishC *pSVar7;
+  DArrayTy *pDVar8;
+  short sVar9;
+  int iVar10;
+  uint *puVar11;
+  DArrayTy *pDVar12;
+  byte *pbVar13;
+  int iVar14;
+  int iVar15;
+  Global_sub_004B1120_param_2Enum GVar16;
+  int *piVar17;
+  short sVar18;
+  uint uVar19;
+  short sVar20;
+  int iVar21;
   uint uVar22;
-  short sVar23;
-  int iVar24;
-  uint uVar25;
-  AnonShape_006B0C70_7C4FE646 *pAVar26;
-  byte *pbVar27;
-  byte *pbVar28;
-  undefined4 *puVar29;
-  int iVar30;
-  undefined1 *puVar31;
-  bool bVar32;
-  byte bVar33;
+  DArrayTy *pDVar23;
+  byte *pbVar24;
+  byte *pbVar25;
+  undefined4 *puVar26;
+  int iVar27;
+  undefined1 *puVar28;
+  bool bVar29;
+  byte playerId;
   int local_35c;
   int local_358;
   int local_354;
@@ -91,7 +90,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_f4 [18];
   int local_ac;
   short local_a8 [2];
-  AnonShape_006B0CD0_C8D121FA *local_a4;
+  AnonShape_00413AF0_B6B4EE9A *local_a4;
   Global_sub_004B1120_param_2Enum local_a0;
   int local_9c;
   int local_98;
@@ -128,21 +127,21 @@ int FUN_004b33d0(uint param_1,int *param_2)
   local_2c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_2c0;
   ExceptionList = &local_14;
-  iVar11 = Library::MSVCRT::__setjmp3
+  iVar10 = Library::MSVCRT::__setjmp3
                      (local_2c0.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
   local_1c = &stack0xfffffc94;
-  if (iVar11 != 0) {
+  if (iVar10 != 0) {
     g_currentExceptionFrame = local_2c0.previous;
-    iVar30 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c1,0,iVar11,
+    iVar27 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c1,0,iVar10,
                                 &DAT_007a4ccc,s_TLOAiBldPlacesFind_error___007ac7a8);
-    if (iVar30 == 0) {
-      RaiseInternalException(iVar11,0,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c2);
+    if (iVar27 == 0) {
+      RaiseInternalException(iVar10,0,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c2);
       ExceptionList = local_14;
-      return iVar11;
+      return iVar10;
     }
     pcVar5 = (code *)swi(3);
-    iVar11 = (*pcVar5)();
-    return iVar11;
+    iVar10 = (*pcVar5)();
+    return iVar10;
   }
   local_1c = &stack0xfffffc94;
   if (param_2 == (int *)0x0) {
@@ -151,104 +150,103 @@ int FUN_004b33d0(uint param_1,int *param_2)
               (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x5d);
   }
   if (param_2[3] == 0) {
-    puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
-    param_2[3] = (int)puVar12;
+    puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
+    param_2[3] = (int)puVar11;
   }
   if (param_2[5] == 0) {
-    puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
-    param_2[5] = (int)puVar12;
+    puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
+    param_2[5] = (int)puVar11;
   }
-  puVar29 = local_24c;
-  for (iVar11 = 0x42; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *puVar29 = 0;
-    puVar29 = puVar29 + 1;
+  puVar26 = local_24c;
+  for (iVar10 = 0x42; iVar10 != 0; iVar10 = iVar10 + -1) {
+    *puVar26 = 0;
+    puVar26 = puVar26 + 1;
   }
-  piVar20 = local_4c;
-  for (iVar11 = 0xb; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *piVar20 = 0;
-    piVar20 = piVar20 + 1;
+  piVar17 = local_4c;
+  for (iVar10 = 0xb; iVar10 != 0; iVar10 = iVar10 + -1) {
+    *piVar17 = 0;
+    piVar17 = piVar17 + 1;
   }
-  iVar30 = 0;
+  iVar27 = 0;
   local_10c = 0;
   *(undefined4 *)(param_2[3] + 4) = 0;
-  iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
-  if (-1 < iVar11) {
+  iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+  if (-1 < iVar10) {
     do {
       local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] =
            local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] + 1;
       if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
-        iVar30 = iVar30 + 1;
+        iVar27 = iVar27 + 1;
       }
-      iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
-    } while (-1 < iVar11);
-    local_10c = iVar30;
+      iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+    } while (-1 < iVar10);
+    local_10c = iVar27;
   }
-  uVar25 = 0;
-  pAVar18 = (AnonShape_006ACC70_C8641025 *)param_2[5];
-  if (0 < (int)pAVar18->field_000C) {
+  uVar22 = 0;
+  pDVar12 = (DArrayTy *)param_2[5];
+  if (0 < (int)pDVar12->count) {
     do {
-      FUN_006acc70(pAVar18,uVar25,&local_a0);
-      iVar11 = thunk_FUN_004ae0b0(local_9c,local_98,local_94,local_a0,param_1,(undefined4 *)0x0,
+      DArrayGetElement(pDVar12,uVar22,&local_a0);
+      iVar10 = thunk_FUN_004ae0b0(local_9c,local_98,local_94,local_a0,param_1,(undefined4 *)0x0,
                                   (int *)0x0,(int *)0x0,0,(int *)0x0);
-      if (iVar11 == 0) {
+      if (iVar10 == 0) {
         local_304[0] = local_a0;
         local_2f4 = local_90;
         if (param_2[3] == 0) {
-          puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
-          param_2[3] = (int)puVar12;
+          puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
+          param_2[3] = (int)puVar11;
         }
         Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[3],local_304);
-        FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[5],uVar25);
+        FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[5],uVar22);
       }
       else {
-        bVar32 = true;
+        bVar29 = true;
         *(undefined4 *)(param_2[4] + 4) = 0;
-        iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
-        while (-1 < iVar11) {
+        iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
+        while (-1 < iVar10) {
           if (((local_70 == local_9c) && (local_6c == local_98)) && (local_68 == local_94)) {
-            bVar32 = false;
+            bVar29 = false;
           }
-          iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
+          iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
         }
-        if (bVar32) {
-          uVar25 = uVar25 + 1;
+        if (bVar29) {
+          uVar22 = uVar22 + 1;
         }
         else {
           if (param_2[3] == 0) {
-            puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
-            param_2[3] = (int)puVar12;
+            puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
+            param_2[3] = (int)puVar11;
           }
           Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[3],local_320);
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[5],uVar25);
+          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[5],uVar22);
         }
       }
-      pAVar18 = (AnonShape_006ACC70_C8641025 *)param_2[5];
-    } while ((int)uVar25 < (int)pAVar18->field_000C);
+      pDVar12 = (DArrayTy *)param_2[5];
+    } while ((int)uVar22 < (int)pDVar12->count);
   }
-  bVar33 = (byte)param_1;
+  playerId = (byte)param_1;
   if (((local_4c[0] != 0) || (local_4c[1] != 0)) && (PTR_007fa150 != (DArrayTy *)0x0)) {
-    pAVar13 = (AnonShape_006B0C70_7C4FE646 *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1d,10)
-    ;
+    pDVar12 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1d,10);
     PTR_007fa150->iteratorIndex = 0;
-    local_a4 = (AnonShape_006B0CD0_C8D121FA *)pAVar13;
-    iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
-    while (-1 < iVar11) {
+    local_a4 = (AnonShape_00413AF0_B6B4EE9A *)pDVar12;
+    iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
+    while (-1 < iVar10) {
       if (local_58 != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-        this = g_worldCells
-               [(int)local_8c[0] * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)local_a8[0] +
-                (int)local_7c[0]].objects[0];
+        this = g_worldGrid.cells
+               [(int)local_8c[0] * (int)g_worldGrid.sizeX +
+                (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0]].objects[0];
         local_110 = this;
         if (this == (STWorldObject *)0x0) {
-          pbVar28 = &local_2ec;
-          for (iVar11 = 7; iVar11 != 0; iVar11 = iVar11 + -1) {
-            pbVar28[0] = 0;
-            pbVar28[1] = 0;
-            pbVar28[2] = 0;
-            pbVar28[3] = 0;
-            pbVar28 = pbVar28 + 4;
+          pbVar25 = &local_2ec;
+          for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
+            pbVar25[0] = 0;
+            pbVar25[1] = 0;
+            pbVar25[2] = 0;
+            pbVar25[3] = 0;
+            pbVar25 = pbVar25 + 4;
           }
-          *pbVar28 = 0;
+          *pbVar25 = 0;
           local_2ec = 1;
           local_2e7 = (*local_58->vtable->vfunc_2C)();
           local_2e3 = (int)local_7c[0];
@@ -258,33 +256,33 @@ int FUN_004b33d0(uint param_1,int *param_2)
           local_2d3 = 0xffffffff;
           if (param_2[4] != 0) {
             *(undefined4 *)(param_2[4] + 4) = 0;
-            iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
-            while (-1 < iVar11) {
+            iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
+            while (-1 < iVar10) {
               if (((local_70 == local_2e3) && (local_6c == local_2df)) && (local_68 == local_2db)) {
                 local_2ec = local_2ec | 0x20;
                 break;
               }
-              iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
+              iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[4],&local_70);
             }
           }
         }
         else {
           if ((this[1].vtable != (STWorldObjectVTable *)param_1) ||
              (((this->value_20 != 1000 ||
-               (iVar11 = (*this->vtable->GetObjectTypeId)(this),
-               *(int *)(&DAT_00790888 + iVar11 * 4) != 0)) &&
+               (iVar10 = (*this->vtable->GetObjectTypeId)(this),
+               *(int *)(&DAT_00790888 + iVar10 * 4) != 0)) &&
               ((this->value_20 != 0x3e9 ||
                (*(int *)(&DAT_00790888 + *(int *)&local_110[0x10].field_0x19 * 4) != 0))))))
           goto LAB_004b3895;
-          pbVar28 = &local_2ec;
-          for (iVar11 = 7; iVar11 != 0; iVar11 = iVar11 + -1) {
-            pbVar28[0] = 0;
-            pbVar28[1] = 0;
-            pbVar28[2] = 0;
-            pbVar28[3] = 0;
-            pbVar28 = pbVar28 + 4;
+          pbVar25 = &local_2ec;
+          for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
+            pbVar25[0] = 0;
+            pbVar25[1] = 0;
+            pbVar25[2] = 0;
+            pbVar25[3] = 0;
+            pbVar25 = pbVar25 + 4;
           }
-          *pbVar28 = 0;
+          *pbVar25 = 0;
           local_2ec = 2;
           local_2eb = (*local_110->vtable->GetObjectTypeId)(local_110);
           if (local_2eb == 0x61) {
@@ -296,59 +294,59 @@ int FUN_004b33d0(uint param_1,int *param_2)
           local_2db = (int)local_a8[0];
           local_2d3 = 0xffffffff;
         }
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar13,(undefined4 *)&local_2ec);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar12,(undefined4 *)&local_2ec);
       }
 LAB_004b3895:
-      iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
+      iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
     }
     if (local_4c[0] != 0) {
       *(undefined4 *)(param_2[3] + 4) = 0;
-      iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
-      while (-1 < iVar11) {
+      iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+      while (-1 < iVar10) {
         switch(local_108[0]) {
         case CASE_39:
         case CASE_5E:
-          iVar11 = 0xdd;
-          pAVar13->field_0004 = 0;
-          pbVar28 = (byte *)0x0;
+          iVar10 = 0xdd;
+          pDVar12->iteratorIndex = 0;
+          pbVar25 = (byte *)0x0;
           break;
         default:
           goto switchD_004b38f0_caseD_3a;
         case CASE_4F:
         case CASE_61:
-          iVar11 = 0xde;
-          pAVar13->field_0004 = 0;
-          pbVar28 = (byte *)0x0;
+          iVar10 = 0xde;
+          pDVar12->iteratorIndex = 0;
+          pbVar25 = (byte *)0x0;
         }
         while( true ) {
-          pbVar27 = pbVar28;
-          uVar25 = pAVar13->field_0004;
-          if (uVar25 < (uint)pAVar13->field_000C) {
-            pbVar14 = (byte *)(pAVar13->field_0008 * uVar25 + pAVar13->field_001C);
-            pAVar13->field_0004 = uVar25 + 1;
+          pbVar24 = pbVar25;
+          uVar22 = pDVar12->iteratorIndex;
+          if (uVar22 < pDVar12->count) {
+            pbVar13 = (byte *)(pDVar12->elementSize * uVar22 + (int)pDVar12->data);
+            pDVar12->iteratorIndex = uVar22 + 1;
           }
           else {
-            pbVar14 = (byte *)0x0;
+            pbVar13 = (byte *)0x0;
           }
-          if (pbVar14 == (byte *)0x0) break;
-          bVar3 = *pbVar14;
-          pbVar28 = pbVar27;
-          if ((((((bVar3 & 1) != 0) && ((bVar3 & 4) == 0)) && (*(int *)(pbVar14 + 5) == iVar11)) &&
-              (pbVar28 = pbVar14, pbVar27 != (byte *)0x0)) &&
-             ((pAVar13 = (AnonShape_006B0C70_7C4FE646 *)local_a4, (bVar3 & 0x20) < (*pbVar27 & 0x20)
-              || ((pbVar28 = pbVar27, ((*pbVar27 ^ *pbVar14) & 0x20) == 0 &&
-                  (*(int *)(pbVar14 + 0x15) < *(int *)(pbVar27 + 0x15))))))) {
-            pbVar28 = pbVar14;
+          if (pbVar13 == (byte *)0x0) break;
+          bVar3 = *pbVar13;
+          pbVar25 = pbVar24;
+          if ((((((bVar3 & 1) != 0) && ((bVar3 & 4) == 0)) && (*(int *)(pbVar13 + 5) == iVar10)) &&
+              (pbVar25 = pbVar13, pbVar24 != (byte *)0x0)) &&
+             ((pDVar12 = (DArrayTy *)local_a4, (bVar3 & 0x20) < (*pbVar24 & 0x20) ||
+              ((pbVar25 = pbVar24, ((*pbVar24 ^ *pbVar13) & 0x20) == 0 &&
+               (*(int *)(pbVar13 + 0x15) < *(int *)(pbVar24 + 0x15))))))) {
+            pbVar25 = pbVar13;
           }
         }
-        if (pbVar27 != (byte *)0x0) {
-          *pbVar27 = *pbVar27 | 4;
+        if (pbVar24 != (byte *)0x0) {
+          *pbVar24 = *pbVar24 | 4;
           if (local_108[0] == CASE_61) {
-            *pbVar27 = *pbVar27 | 8;
+            *pbVar24 = *pbVar24 | 8;
           }
-          local_9c = *(int *)(pbVar27 + 9);
-          local_98 = *(int *)(pbVar27 + 0xd);
-          local_94 = *(int *)(pbVar27 + 0x11);
+          local_9c = *(int *)(pbVar24 + 9);
+          local_98 = *(int *)(pbVar24 + 0xd);
+          local_94 = *(int *)(pbVar24 + 0x11);
           local_a0 = local_108[0];
           local_90 = local_f8;
           Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
@@ -358,121 +356,121 @@ LAB_004b3895:
         }
         if (local_4c[0] == 0) break;
 switchD_004b38f0_caseD_3a:
-        iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+        iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
       }
     }
     ppDVar2 = &g_playerRuntime[param_1].field2171_0x9ea;
     if (*ppDVar2 != (DArrayTy *)0x0) {
       (*ppDVar2)->iteratorIndex = 0;
-      iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)*ppDVar2,&local_58);
-      while (iVar11 != 0) {
+      iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)*ppDVar2,&local_58);
+      while (iVar10 != 0) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_88 = -1;
-        pAVar13->field_0004 = 0;
-        pbVar28 = (byte *)0x0;
+        pDVar12->iteratorIndex = 0;
+        pbVar25 = (byte *)0x0;
         while( true ) {
-          uVar25 = pAVar13->field_0004;
-          if (uVar25 < (uint)pAVar13->field_000C) {
-            pbVar27 = (byte *)(pAVar13->field_0008 * uVar25 + pAVar13->field_001C);
-            pAVar13->field_0004 = uVar25 + 1;
+          uVar22 = pDVar12->iteratorIndex;
+          if (uVar22 < pDVar12->count) {
+            pbVar24 = (byte *)(pDVar12->elementSize * uVar22 + (int)pDVar12->data);
+            pDVar12->iteratorIndex = uVar22 + 1;
           }
           else {
-            pbVar27 = (byte *)0x0;
+            pbVar24 = (byte *)0x0;
           }
-          if (pbVar27 == (byte *)0x0) break;
-          if ((((*pbVar27 & 6) != 0) && ((*pbVar27 & 0x18) == 0)) &&
-             ((iVar11 = FUN_006aced8((int)local_7c[0],(int)local_8c[0],*(int *)(pbVar27 + 9),
-                                     *(int *)(pbVar27 + 0xd)), pbVar28 == (byte *)0x0 ||
-              (iVar11 < local_88)))) {
-            pbVar28 = pbVar27;
-            local_88 = iVar11;
+          if (pbVar24 == (byte *)0x0) break;
+          if ((((*pbVar24 & 6) != 0) && ((*pbVar24 & 0x18) == 0)) &&
+             ((iVar10 = FUN_006aced8((int)local_7c[0],(int)local_8c[0],*(int *)(pbVar24 + 9),
+                                     *(int *)(pbVar24 + 0xd)), pbVar25 == (byte *)0x0 ||
+              (iVar10 < local_88)))) {
+            pbVar25 = pbVar24;
+            local_88 = iVar10;
           }
         }
-        if (pbVar28 != (byte *)0x0) {
+        if (pbVar25 != (byte *)0x0) {
           if (local_88 < 0xf) {
-            *pbVar28 = *pbVar28 | 0x10;
+            *pbVar25 = *pbVar25 | 0x10;
           }
-          else if ((*(int *)(pbVar28 + 0x19) < 0) || (local_88 < *(int *)(pbVar28 + 0x19))) {
-            *(int *)(pbVar28 + 0x19) = local_88;
+          else if ((*(int *)(pbVar25 + 0x19) < 0) || (local_88 < *(int *)(pbVar25 + 0x19))) {
+            *(int *)(pbVar25 + 0x19) = local_88;
           }
         }
-        iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)*ppDVar2,&local_58);
+        iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)*ppDVar2,&local_58);
       }
     }
     if (local_4c[1] != 0) {
-      uVar25 = 0;
-      if (0 < (int)pAVar13->field_000C) {
+      uVar22 = 0;
+      if (0 < (int)pDVar12->count) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pAVar13,uVar25,(undefined4 *)&local_2ec);
+          DArrayGetElement(pDVar12,uVar22,&local_2ec);
           if (((local_2ec & 0x18) == 0) && (((local_2ec & 1) == 0 || ((local_2ec & 4) != 0)))) {
-            uVar25 = uVar25 + 1;
+            uVar22 = uVar22 + 1;
           }
           else {
-            FUN_006b0c70(pAVar13,uVar25);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pDVar12,uVar22);
           }
-        } while ((int)uVar25 < (int)pAVar13->field_000C);
+        } while ((int)uVar22 < (int)pDVar12->count);
       }
-      uVar25 = pAVar13->field_000C;
-      if (local_4c[1] < (int)uVar25) {
+      uVar22 = pDVar12->count;
+      if (local_4c[1] < (int)uVar22) {
         do {
           local_50 = 0;
-          pAVar26 = pAVar13;
-          uVar22 = 0;
-          if (uVar25 != 1 && -1 < (int)(uVar25 - 1)) {
+          pDVar23 = pDVar12;
+          uVar19 = 0;
+          if (uVar22 != 1 && -1 < (int)(uVar22 - 1)) {
             do {
-              pAVar13 = (AnonShape_006B0C70_7C4FE646 *)local_a4;
-              if (uVar22 < uVar25) {
-                pbVar28 = (byte *)(pAVar26->field_0008 * uVar22 + pAVar26->field_001C);
+              pDVar12 = (DArrayTy *)local_a4;
+              if (uVar19 < uVar22) {
+                pbVar25 = (byte *)(pDVar23->elementSize * uVar19 + (int)pDVar23->data);
               }
               else {
-                pbVar28 = (byte *)0x0;
+                pbVar25 = (byte *)0x0;
               }
-              uVar1 = uVar22 + 1;
-              if (uVar1 < uVar25) {
-                pbVar27 = (byte *)(pAVar26->field_0008 * uVar1 + pAVar26->field_001C);
+              uVar1 = uVar19 + 1;
+              if (uVar1 < uVar22) {
+                pbVar24 = (byte *)(pDVar23->elementSize * uVar1 + (int)pDVar23->data);
               }
               else {
-                pbVar27 = (byte *)0x0;
+                pbVar24 = (byte *)0x0;
               }
-              if (((*pbVar27 & 0x20) < (*pbVar28 & 0x20)) ||
-                 ((((*pbVar28 ^ *pbVar27) & 0x20) == 0 &&
-                  (*(int *)(pbVar27 + 0x15) < *(int *)(pbVar28 + 0x15))))) {
-                FUN_006b0cd0(local_a4,uVar22,uVar1);
+              if (((*pbVar24 & 0x20) < (*pbVar25 & 0x20)) ||
+                 ((((*pbVar25 ^ *pbVar24) & 0x20) == 0 &&
+                  (*(int *)(pbVar24 + 0x15) < *(int *)(pbVar25 + 0x15))))) {
+                FUN_006b0cd0(local_a4,uVar19,uVar1);
                 local_50 = 1;
               }
-              uVar25 = ((AnonShape_006B0CD0_C8D121FA *)pAVar13)->field_000C;
-              pAVar26 = pAVar13;
-              uVar22 = uVar1;
-            } while ((int)uVar1 < (int)(uVar25 - 1));
+              uVar22 = ((AnonShape_00413AF0_B6B4EE9A *)pDVar12)->field_000C;
+              pDVar23 = pDVar12;
+              uVar19 = uVar1;
+            } while ((int)uVar1 < (int)(uVar22 - 1));
           }
         } while (local_50 != 0);
       }
-      pAVar13->field_0004 = 0;
-      iVar11 = thunk_FUN_004406c0(bVar33);
-      local_134 = (-(uint)((char)iVar11 != '\x03') & 0xffffffdb) + 0x60;
+      pDVar12->iteratorIndex = 0;
+      iVar10 = GetPlayerRaceId(playerId);
+      local_134 = (-(uint)((char)iVar10 != '\x03') & 0xffffffdb) + 0x60;
       *(undefined4 *)(param_2[3] + 4) = 0;
-      iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
-      while (-1 < iVar11) {
+      iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+      while (-1 < iVar10) {
         if (local_108[0] == local_134) {
-          uVar25 = pAVar13->field_0004;
-          if (uVar25 < (uint)pAVar13->field_000C) {
-            pbVar28 = (byte *)(pAVar13->field_0008 * uVar25 + pAVar13->field_001C);
-            pAVar13->field_0004 = uVar25 + 1;
+          uVar22 = pDVar12->iteratorIndex;
+          if (uVar22 < pDVar12->count) {
+            pbVar25 = (byte *)(pDVar12->elementSize * uVar22 + (int)pDVar12->data);
+            pDVar12->iteratorIndex = uVar22 + 1;
           }
           else {
-            pbVar28 = (byte *)0x0;
+            pbVar25 = (byte *)0x0;
           }
-          if (pbVar28 == (byte *)0x0) break;
-          local_11c = *(int *)(pbVar28 + 9);
-          local_138 = *(int *)(pbVar28 + 0xd);
-          local_254[0] = *(int *)(pbVar28 + 0x11);
-          iVar11 = thunk_FUN_004b1120(param_1,local_134,&local_11c,&local_138,local_254,0,1);
-          if ((iVar11 != 0) &&
-             ((*(int *)(pbVar28 + 0x19) < 0 ||
-              (iVar11 = FUN_006aced8(local_11c,local_138,*(int *)(pbVar28 + 9),
-                                     *(int *)(pbVar28 + 0xd)), iVar11 < *(int *)(pbVar28 + 0x19)))))
+          if (pbVar25 == (byte *)0x0) break;
+          local_11c = *(int *)(pbVar25 + 9);
+          local_138 = *(int *)(pbVar25 + 0xd);
+          local_254[0] = *(int *)(pbVar25 + 0x11);
+          iVar10 = thunk_FUN_004b1120(param_1,local_134,&local_11c,&local_138,local_254,0,1);
+          if ((iVar10 != 0) &&
+             ((*(int *)(pbVar25 + 0x19) < 0 ||
+              (iVar10 = FUN_006aced8(local_11c,local_138,*(int *)(pbVar25 + 9),
+                                     *(int *)(pbVar25 + 0xd)), iVar10 < *(int *)(pbVar25 + 0x19)))))
           {
-            *pbVar28 = *pbVar28 | 0x10;
+            *pbVar25 = *pbVar25 | 0x10;
             local_a0 = local_108[0];
             local_90 = local_f8;
             local_9c = local_11c;
@@ -485,252 +483,254 @@ switchD_004b38f0_caseD_3a:
           }
           if (local_4c[1] == 0) break;
         }
-        iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+        iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
       }
     }
-    FUN_006ae110((byte *)pAVar13);
+    DArrayDestroy(pDVar12);
   }
-  iVar11 = 0;
+  iVar10 = 0;
 LAB_004b3d9a:
-  if (10 < iVar11) {
+  if (10 < iVar10) {
 cf_break_loop_004B60CD:
     if (local_20 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)local_20);
+      DArrayDestroy(local_20);
     }
-    puVar29 = local_24c;
-    iVar11 = 0x42;
+    puVar26 = local_24c;
+    iVar10 = 0x42;
     do {
-      if ((byte *)*puVar29 != (byte *)0x0) {
-        FUN_006ae110((byte *)*puVar29);
+      if ((DArrayTy *)*puVar26 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)*puVar26);
       }
-      puVar29 = puVar29 + 1;
-      iVar11 = iVar11 + -1;
-    } while (iVar11 != 0);
+      puVar26 = puVar26 + 1;
+      iVar10 = iVar10 + -1;
+    } while (iVar10 != 0);
     g_currentExceptionFrame = local_2c0.previous;
     ExceptionList = local_14;
     return 0;
   }
-  if (local_4c[iVar11] == 0) {
-    iVar11 = iVar11 + 1;
+  if (local_4c[iVar10] == 0) {
+    iVar10 = iVar10 + 1;
     goto LAB_004b3d9a;
   }
   local_8 = 0;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
-  puVar29 = (undefined4 *)&stack0xfffffc94;
-  for (uVar25 = ((int)SHORT_007fb244 * (int)SHORT_007fb246 & 0x7fffffffU) >> 1; uVar25 != 0;
-      uVar25 = uVar25 - 1) {
-    *puVar29 = 0xffffffff;
-    puVar29 = puVar29 + 1;
+  puVar26 = (undefined4 *)&stack0xfffffc94;
+  for (uVar22 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.planeStride & 0x7fffffffU) >> 1;
+      uVar22 != 0; uVar22 = uVar22 - 1) {
+    *puVar26 = 0xffffffff;
+    puVar26 = puVar26 + 1;
   }
-  for (uVar25 = (int)SHORT_007fb244 * (int)SHORT_007fb246 * 2 & 3; uVar25 != 0; uVar25 = uVar25 - 1)
-  {
-    *(undefined1 *)puVar29 = 0xff;
-    puVar29 = (undefined4 *)((int)puVar29 + 1);
+  for (uVar22 = (int)g_worldGrid.sizeZ * (int)g_worldGrid.planeStride * 2 & 3; uVar22 != 0;
+      uVar22 = uVar22 - 1) {
+    *(undefined1 *)puVar26 = 0xff;
+    puVar26 = (undefined4 *)((int)puVar26 + 1);
   }
   local_27c = &stack0xfffffc94;
-  iVar11 = local_144;
-  iVar30 = local_140;
-  iVar24 = local_13c;
+  iVar10 = local_144;
+  iVar27 = local_140;
+  iVar21 = local_13c;
   local_1c = &stack0xfffffc94;
   if (local_4c[2] != 0) {
     local_27c = &stack0xfffffc94;
     local_1c = &stack0xfffffc94;
-    pDVar15 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-    local_22c = pDVar15;
-    if ((PTR_007fa16c != (DArrayTy *)0x0) && (uVar25 = 0, 0 < (int)PTR_007fa16c->count)) {
+    pDVar12 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
+    local_22c = pDVar12;
+    if ((PTR_007fa16c != (DArrayTy *)0x0) && (uVar22 = 0, 0 < (int)PTR_007fa16c->count)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa16c,uVar25,&local_58);
+        DArrayGetElement(PTR_007fa16c,uVar22,&local_58);
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_144 = (int)local_7c[0];
         local_140 = (int)local_8c[0];
         local_13c = (int)local_a8[0];
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar15,&local_144);
-        uVar25 = uVar25 + 1;
-      } while ((int)uVar25 < (int)PTR_007fa16c->count);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar12,&local_144);
+        uVar22 = uVar22 + 1;
+      } while ((int)uVar22 < (int)PTR_007fa16c->count);
     }
-    iVar16 = param_2[5];
-    iVar11 = local_144;
-    iVar30 = local_140;
-    iVar24 = local_13c;
-    if ((iVar16 != 0) && (*(int *)(iVar16 + 0xc) != 0)) {
-      *(undefined4 *)(iVar16 + 4) = 0;
-      iVar16 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
-      iVar11 = local_144;
-      iVar30 = local_140;
-      iVar24 = local_13c;
+    iVar14 = param_2[5];
+    iVar10 = local_144;
+    iVar27 = local_140;
+    iVar21 = local_13c;
+    if ((iVar14 != 0) && (*(int *)(iVar14 + 0xc) != 0)) {
+      *(undefined4 *)(iVar14 + 4) = 0;
+      iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
+      iVar10 = local_144;
+      iVar27 = local_140;
+      iVar21 = local_13c;
       local_144 = local_9c;
       local_140 = local_98;
       local_13c = local_94;
-      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar16) {
+      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar14) {
         if (local_a0 == 0x3a) {
-          Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar15,&local_144);
-          iVar11 = local_144;
-          iVar30 = local_140;
-          iVar24 = local_13c;
+          Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar12,&local_144);
+          iVar10 = local_144;
+          iVar27 = local_140;
+          iVar21 = local_13c;
         }
-        local_13c = iVar24;
-        local_140 = iVar30;
-        local_144 = iVar11;
-        iVar16 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
-        iVar11 = local_144;
-        iVar30 = local_140;
-        iVar24 = local_13c;
+        local_13c = iVar21;
+        local_140 = iVar27;
+        local_144 = iVar10;
+        iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
+        iVar10 = local_144;
+        iVar27 = local_140;
+        iVar21 = local_13c;
         local_144 = local_9c;
         local_140 = local_98;
         local_13c = local_94;
       }
     }
   }
-  local_13c = iVar24;
-  local_140 = iVar30;
-  local_144 = iVar11;
-  iVar11 = local_144;
-  iVar30 = local_140;
-  iVar24 = local_13c;
+  local_13c = iVar21;
+  local_140 = iVar27;
+  local_144 = iVar10;
+  iVar10 = local_144;
+  iVar27 = local_140;
+  iVar21 = local_13c;
   if (local_4c[3] != 0) {
     local_184 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-    pDVar15 = g_playerRuntime[param_1].field2166_0x9d6;
-    if ((pDVar15 != (DArrayTy *)0x0) && (uVar25 = 0, 0 < (int)pDVar15->count)) {
+    pDVar12 = g_playerRuntime[param_1].field2166_0x9d6;
+    if ((pDVar12 != (DArrayTy *)0x0) && (uVar22 = 0, 0 < (int)pDVar12->count)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar15,uVar25,&local_58);
+        DArrayGetElement(pDVar12,uVar22,&local_58);
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_144 = (int)local_7c[0];
         local_140 = (int)local_8c[0];
         local_13c = (int)local_a8[0];
         Library::DKW::TBL::FUN_006ae1c0(&local_184->flags,&local_144);
-        uVar25 = uVar25 + 1;
-        pDVar15 = g_playerRuntime[param_1].field2166_0x9d6;
-      } while ((int)uVar25 < (int)pDVar15->count);
+        uVar22 = uVar22 + 1;
+        pDVar12 = g_playerRuntime[param_1].field2166_0x9d6;
+      } while ((int)uVar22 < (int)pDVar12->count);
     }
-    iVar16 = param_2[5];
-    iVar11 = local_144;
-    iVar30 = local_140;
-    iVar24 = local_13c;
-    if ((iVar16 != 0) && (*(int *)(iVar16 + 0xc) != 0)) {
-      *(undefined4 *)(iVar16 + 4) = 0;
-      iVar16 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
-      iVar11 = local_144;
-      iVar30 = local_140;
-      iVar24 = local_13c;
+    iVar14 = param_2[5];
+    iVar10 = local_144;
+    iVar27 = local_140;
+    iVar21 = local_13c;
+    if ((iVar14 != 0) && (*(int *)(iVar14 + 0xc) != 0)) {
+      *(undefined4 *)(iVar14 + 4) = 0;
+      iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
+      iVar10 = local_144;
+      iVar27 = local_140;
+      iVar21 = local_13c;
       local_144 = local_9c;
       local_140 = local_98;
       local_13c = local_94;
-      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar16) {
+      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar14) {
         if (local_a0 == 100) {
           Library::DKW::TBL::FUN_006ae1c0(&local_184->flags,&local_144);
-          iVar11 = local_144;
-          iVar30 = local_140;
-          iVar24 = local_13c;
+          iVar10 = local_144;
+          iVar27 = local_140;
+          iVar21 = local_13c;
         }
-        local_13c = iVar24;
-        local_140 = iVar30;
-        local_144 = iVar11;
-        iVar16 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
-        iVar11 = local_144;
-        iVar30 = local_140;
-        iVar24 = local_13c;
+        local_13c = iVar21;
+        local_140 = iVar27;
+        local_144 = iVar10;
+        iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
+        iVar10 = local_144;
+        iVar27 = local_140;
+        iVar21 = local_13c;
         local_144 = local_9c;
         local_140 = local_98;
         local_13c = local_94;
       }
     }
   }
-  local_13c = iVar24;
-  local_140 = iVar30;
-  local_144 = iVar11;
+  local_13c = iVar21;
+  local_140 = iVar27;
+  local_144 = iVar10;
   local_54 = local_4c[10] + local_4c[8] + local_4c[9] + local_4c[7] + local_4c[4] + 5 + local_4c[6];
   local_20 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,10);
   local_64 = 0;
   local_114 = 0;
 LAB_004b40f9:
   do {
-    sVar21 = (short)_SHORT_007fb240;
-    if ((short)_SHORT_007fb240 <= SHORT_007fb242) {
-      sVar21 = SHORT_007fb242;
+    sVar18 = g_worldGrid.sizeX;
+    if (g_worldGrid.sizeX <= g_worldGrid.sizeY) {
+      sVar18 = g_worldGrid.sizeY;
     }
-    if (sVar21 <= local_64) {
+    if (sVar18 <= local_64) {
 LAB_004b4689:
       *(undefined4 *)(param_2[5] + 4) = 0;
-      iVar16 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
-      puVar31 = local_27c;
-      pDVar15 = local_22c;
-      pDVar6 = local_184;
-      pAVar7 = local_a4;
-      GVar19 = local_a0;
-      iVar11 = local_9c;
-      iVar30 = local_98;
-      iVar24 = local_94;
-      pSVar8 = local_58;
-      pDVar9 = local_20;
-      while (local_27c = puVar31, local_22c = pDVar15, local_184 = pDVar6, local_a4 = pAVar7,
-            local_a0 = GVar19, local_9c = iVar11, local_98 = iVar30, local_94 = iVar24,
-            local_58 = pSVar8, local_20 = pDVar9, -1 < iVar16) {
-        if (*(int *)(&DAT_00791d68 + GVar19 * 4) == 1) {
-          uVar25 = 0;
+      iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
+      puVar28 = local_27c;
+      pDVar12 = local_22c;
+      pDVar23 = local_184;
+      pAVar6 = local_a4;
+      GVar16 = local_a0;
+      iVar10 = local_9c;
+      iVar27 = local_98;
+      iVar21 = local_94;
+      pSVar7 = local_58;
+      pDVar8 = local_20;
+      while (local_27c = puVar28, local_22c = pDVar12, local_184 = pDVar23, local_a4 = pAVar6,
+            local_a0 = GVar16, local_9c = iVar10, local_98 = iVar27, local_94 = iVar21,
+            local_58 = pSVar7, local_20 = pDVar8, -1 < iVar14) {
+        if (*(int *)(&DAT_00791d68 + GVar16 * 4) == 1) {
+          uVar22 = 0;
           do {
-            uVar22 = uVar25 & 0x80000001;
-            if ((int)uVar22 < 0) {
-              uVar22 = (uVar22 - 1 | 0xfffffffe) + 1;
+            uVar19 = uVar22 & 0x80000001;
+            if ((int)uVar19 < 0) {
+              uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
             }
-            iVar16 = (int)uVar25 / 2 + iVar30;
+            iVar14 = (int)uVar22 / 2 + iVar27;
             *(ushort *)
-             (puVar31 + (SHORT_007fb240 * iVar16 + uVar22 + iVar11 + SHORT_007fb246 * iVar24) * 2) =
-                 *(ushort *)(&DAT_00790888 + GVar19 * 4) | 0x200;
-            uVar25 = uVar25 + 1;
-            local_138 = iVar16;
-            local_11c = uVar22 + iVar11;
-          } while ((int)uVar25 < 4);
+             (puVar28 +
+             (g_worldGrid.sizeX * iVar14 + uVar19 + iVar10 + g_worldGrid.planeStride * iVar21) * 2)
+                 = *(ushort *)(&DAT_00790888 + GVar16 * 4) | 0x200;
+            uVar22 = uVar22 + 1;
+            local_138 = iVar14;
+            local_11c = uVar19 + iVar10;
+          } while ((int)uVar22 < 4);
         }
         else {
-          *(ushort *)(puVar31 + (SHORT_007fb246 * iVar24 + iVar11 + SHORT_007fb240 * iVar30) * 2) =
-               *(ushort *)(&DAT_00790888 + GVar19 * 4) | 0x200;
-          local_138 = iVar30;
-          local_11c = iVar11;
+          *(ushort *)
+           (puVar28 + (g_worldGrid.planeStride * iVar21 + iVar10 + g_worldGrid.sizeX * iVar27) * 2)
+               = *(ushort *)(&DAT_00790888 + GVar16 * 4) | 0x200;
+          local_138 = iVar27;
+          local_11c = iVar10;
         }
-        local_254[0] = iVar24;
-        iVar16 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
-        puVar31 = local_27c;
-        pDVar15 = local_22c;
-        pDVar6 = local_184;
-        pAVar7 = local_a4;
-        GVar19 = local_a0;
-        iVar11 = local_9c;
-        iVar30 = local_98;
-        iVar24 = local_94;
-        pSVar8 = local_58;
-        pDVar9 = local_20;
+        local_254[0] = iVar21;
+        iVar14 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[5],&local_a0);
+        puVar28 = local_27c;
+        pDVar12 = local_22c;
+        pDVar23 = local_184;
+        pAVar6 = local_a4;
+        GVar16 = local_a0;
+        iVar10 = local_9c;
+        iVar27 = local_98;
+        iVar21 = local_94;
+        pSVar7 = local_58;
+        pDVar8 = local_20;
       }
-      iVar30 = 0;
+      iVar27 = 0;
       PTR_007fa150->iteratorIndex = 0;
-      iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
-      puVar31 = local_27c;
-      while (-1 < iVar11) {
+      iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
+      puVar28 = local_27c;
+      while (-1 < iVar10) {
         if (local_58 != (STFishC *)0x0) {
           STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-          iVar11 = (int)local_8c[0] * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)local_a8[0] +
-                   (int)local_7c[0];
-          sVar21 = *(short *)(puVar31 + iVar11 * 2);
-          if ((sVar21 == 0) || (sVar21 == -1)) {
-            *(undefined2 *)(puVar31 + iVar11 * 2) = 0x80;
+          iVar10 = (int)local_8c[0] * (int)g_worldGrid.sizeX +
+                   (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0];
+          sVar18 = *(short *)(puVar28 + iVar10 * 2);
+          if ((sVar18 == 0) || (sVar18 == -1)) {
+            *(undefined2 *)(puVar28 + iVar10 * 2) = 0x80;
           }
         }
-        iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
+        iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_58);
       }
       if ((local_4c[4] != 0) || (local_4c[5] != 0)) {
         *(undefined4 *)(param_2[3] + 4) = 0;
-        iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
-        while (-1 < iVar11) {
+        iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+        while (-1 < iVar10) {
           if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 4) {
-            piVar20 = local_f4;
-            for (iVar11 = 0xc; iVar11 != 0; iVar11 = iVar11 + -1) {
-              *piVar20 = 0;
-              piVar20 = piVar20 + 1;
+            piVar17 = local_f4;
+            for (iVar10 = 0xc; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *piVar17 = 0;
+              piVar17 = piVar17 + 1;
             }
             local_f4[0] = 0;
             Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,local_f4);
           }
-          iVar11 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+          iVar10 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
         }
       }
       local_5c = 0;
@@ -738,12 +738,12 @@ LAB_004b4689:
       local_274 = 0;
       local_60 = 0;
       while( true ) {
-        local_64 = iVar30;
-        sVar21 = (short)_SHORT_007fb240;
-        if ((short)_SHORT_007fb240 <= SHORT_007fb242) {
-          sVar21 = SHORT_007fb242;
+        local_64 = iVar27;
+        sVar18 = g_worldGrid.sizeX;
+        if (g_worldGrid.sizeX <= g_worldGrid.sizeY) {
+          sVar18 = g_worldGrid.sizeY;
         }
-        if (sVar21 <= iVar30) break;
+        if (sVar18 <= iVar27) break;
 cf_continue_loop_004B48CC:
         for (local_74 = 0; local_74 < local_64 * 8; local_74 = local_74 + 1) {
           if (local_74 < local_64 * 2) {
@@ -766,218 +766,217 @@ LAB_004b4958:
             local_11c = local_64 + *param_2;
             local_138 = param_2[1] + local_64 * -3 + local_74;
           }
-          if ((((-1 < local_11c) && (local_11c < SHORT_007fb240)) && (-1 < local_138)) &&
-             (local_138 < SHORT_007fb242)) {
+          if ((((-1 < local_11c) && (local_11c < g_worldGrid.sizeX)) && (-1 < local_138)) &&
+             (local_138 < g_worldGrid.sizeY)) {
             local_254[0] = 0;
-            if (SHORT_007fb244 != 1 && -1 < SHORT_007fb244 + -1) {
+            if (g_worldGrid.sizeZ != 1 && -1 < g_worldGrid.sizeZ + -1) {
 LAB_004b49b4:
-              iVar24 = (int)SHORT_007fb246;
-              iVar16 = iVar24 * local_254[0];
-              iVar11 = SHORT_007fb240 * local_138;
-              iVar30 = iVar11 + iVar16 + local_11c;
-              if (*(short *)(local_27c + iVar30 * 2) != -1) {
-                if ((*(short *)(local_27c + iVar30 * 2) == 0) &&
-                   (*(short *)(local_27c + ((local_254[0] + 1) * iVar24 + iVar11 + local_11c) * 2)
+              iVar21 = (int)g_worldGrid.planeStride;
+              iVar14 = iVar21 * local_254[0];
+              iVar10 = g_worldGrid.sizeX * local_138;
+              iVar27 = iVar10 + iVar14 + local_11c;
+              if (*(short *)(local_27c + iVar27 * 2) != -1) {
+                if ((*(short *)(local_27c + iVar27 * 2) == 0) &&
+                   (*(short *)(local_27c + ((local_254[0] + 1) * iVar21 + iVar10 + local_11c) * 2)
                     == 0)) {
                   local_124 = 0;
                   if ((local_10c != 0) &&
-                     (local_118 = iVar30 + 1, *(short *)(local_27c + local_118 * 2) == 0)) {
-                    iVar30 = (local_138 + 1) * (int)SHORT_007fb240 + iVar16 + local_11c;
-                    local_118 = iVar30;
-                    if ((*(short *)(local_27c + iVar30 * 2) == 0) &&
-                       (local_118 = iVar30 + 1, *(short *)(local_27c + (iVar30 + 1) * 2) == 0)) {
+                     (local_118 = iVar27 + 1, *(short *)(local_27c + local_118 * 2) == 0)) {
+                    iVar27 = (local_138 + 1) * (int)g_worldGrid.sizeX + iVar14 + local_11c;
+                    local_118 = iVar27;
+                    if ((*(short *)(local_27c + iVar27 * 2) == 0) &&
+                       (local_118 = iVar27 + 1, *(short *)(local_27c + (iVar27 + 1) * 2) == 0)) {
                       local_124 = 1;
                     }
                   }
                   if (local_254[0] < 1) {
-                    bVar32 = true;
+                    bVar29 = true;
                   }
                   else {
-                    iVar24 = (local_254[0] + -1) * iVar24;
-                    iVar11 = iVar24 + iVar11 + local_11c;
-                    local_118 = iVar11;
-                    bVar32 = *(short *)(local_27c + iVar11 * 2) == 0x20;
-                    if (!bVar32) goto cf_continue_loop_004B5FB6;
+                    iVar21 = (local_254[0] + -1) * iVar21;
+                    iVar10 = iVar21 + iVar10 + local_11c;
+                    local_118 = iVar10;
+                    bVar29 = *(short *)(local_27c + iVar10 * 2) == 0x20;
+                    if (!bVar29) goto cf_continue_loop_004B5FB6;
                     if ((local_10c != 0) && (local_124 != 0)) {
                       local_124 = 0;
-                      local_118 = iVar11 + 1;
-                      if (*(short *)(local_27c + (iVar11 + 1) * 2) == 0x20) {
-                        iVar11 = (local_138 + 1) * (int)SHORT_007fb240 + iVar24 + local_11c;
-                        local_118 = iVar11;
-                        if ((*(short *)(local_27c + iVar11 * 2) == 0x20) &&
-                           (local_118 = iVar11 + 1, *(short *)(local_27c + (iVar11 + 1) * 2) == 0x20
+                      local_118 = iVar10 + 1;
+                      if (*(short *)(local_27c + (iVar10 + 1) * 2) == 0x20) {
+                        iVar10 = (local_138 + 1) * (int)g_worldGrid.sizeX + iVar21 + local_11c;
+                        local_118 = iVar10;
+                        if ((*(short *)(local_27c + iVar10 * 2) == 0x20) &&
+                           (local_118 = iVar10 + 1, *(short *)(local_27c + (iVar10 + 1) * 2) == 0x20
                            )) {
                           local_124 = 1;
                         }
                       }
                     }
                   }
-                  iVar11 = local_118;
-                  if (bVar32) {
+                  iVar10 = local_118;
+                  if (bVar29) {
                     local_80 = 1;
-                    iVar30 = 0;
+                    iVar27 = 0;
                     do {
-                      if (iVar30 != 4) {
-                        iVar24 = iVar30 / 3 + -1 + local_138;
-                        iVar17 = iVar30 % 3 + -1 + local_11c;
-                        if ((((-1 < iVar24) && (iVar24 < SHORT_007fb242)) && (-1 < iVar17)) &&
-                           (((iVar17 < SHORT_007fb240 &&
-                             (sVar21 = *(short *)(local_27c +
-                                                 (iVar24 * SHORT_007fb240 + iVar17 + iVar16) * 2),
-                             sVar21 != 0)) && ((sVar21 != 0x10 && (sVar21 != 0x20)))))) {
-                          bVar32 = false;
+                      if (iVar27 != 4) {
+                        iVar21 = iVar27 / 3 + -1 + local_138;
+                        iVar15 = iVar27 % 3 + -1 + local_11c;
+                        if ((((-1 < iVar21) && (iVar21 < g_worldGrid.sizeY)) && (-1 < iVar15)) &&
+                           (((iVar15 < g_worldGrid.sizeX &&
+                             (sVar18 = *(short *)(local_27c +
+                                                 (iVar21 * g_worldGrid.sizeX + iVar15 + iVar14) * 2)
+                             , sVar18 != 0)) && ((sVar18 != 0x10 && (sVar18 != 0x20)))))) {
+                          bVar29 = false;
                           goto LAB_004b4bd1;
                         }
                       }
-                      iVar30 = iVar30 + 1;
-                    } while (iVar30 < 9);
-                    bVar32 = true;
+                      iVar27 = iVar27 + 1;
+                    } while (iVar27 < 9);
+                    bVar29 = true;
 LAB_004b4bd1:
-                    if (bVar32) {
-                      iVar30 = thunk_FUN_004406c0(bVar33);
-                      pDVar6 = local_184;
-                      pDVar15 = local_22c;
+                    if (bVar29) {
+                      iVar27 = GetPlayerRaceId(playerId);
+                      pDVar23 = local_184;
+                      pDVar12 = local_22c;
                       local_270 = 0;
-                      if ((char)iVar30 == '\x03') {
+                      if ((char)iVar27 == '\x03') {
                         if (local_4c[3] != 0) {
                           if ((local_184 == (DArrayTy *)0x0) || (local_184->count == 0)) {
                             local_270 = 1;
                           }
                           else {
                             local_270 = 1;
-                            uVar25 = 0;
+                            uVar22 = 0;
                             if (0 < (int)local_184->count) {
                               do {
-                                FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar6,uVar25,&local_144
-                                            );
-                                uVar22 = local_144 - local_11c >> 0x1f;
-                                if (((int)((local_144 - local_11c ^ uVar22) - uVar22) < 0x10) ||
-                                   (uVar22 = local_140 - local_138 >> 0x1f,
-                                   (int)((local_140 - local_138 ^ uVar22) - uVar22) < 0x10)) {
+                                DArrayGetElement(pDVar23,uVar22,&local_144);
+                                uVar19 = local_144 - local_11c >> 0x1f;
+                                if (((int)((local_144 - local_11c ^ uVar19) - uVar19) < 0x10) ||
+                                   (uVar19 = local_140 - local_138 >> 0x1f,
+                                   (int)((local_140 - local_138 ^ uVar19) - uVar19) < 0x10)) {
                                   local_270 = 0;
                                   break;
                                 }
-                                uVar25 = uVar25 + 1;
-                              } while ((int)uVar25 < (int)pDVar6->count);
+                                uVar22 = uVar22 + 1;
+                              } while ((int)uVar22 < (int)pDVar23->count);
                             }
                           }
                         }
                       }
                       else if (local_4c[2] != 0) {
                         if ((local_22c != (DArrayTy *)0x0) && (local_22c->count != 0)) {
-                          iVar30 = -1;
-                          uVar25 = 0;
+                          iVar27 = -1;
+                          uVar22 = 0;
                           if (0 < (int)local_22c->count) {
                             do {
-                              FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar15,uVar25,&local_144)
-                              ;
-                              iVar11 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                              if ((iVar30 < 0) || (iVar11 < iVar30)) {
-                                iVar30 = iVar11;
+                              DArrayGetElement(pDVar12,uVar22,&local_144);
+                              iVar10 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                              if ((iVar27 < 0) || (iVar10 < iVar27)) {
+                                iVar27 = iVar10;
                               }
-                              uVar25 = uVar25 + 1;
-                            } while ((int)uVar25 < (int)pDVar15->count);
+                              uVar22 = uVar22 + 1;
+                            } while ((int)uVar22 < (int)pDVar12->count);
                           }
-                          if ((-1 < iVar30) && (iVar11 = local_118, iVar30 < 0xe))
+                          if ((-1 < iVar27) && (iVar10 = local_118, iVar27 < 0xe))
                           goto LAB_004b4c78;
                         }
                         local_270 = 1;
-                        iVar11 = local_118;
+                        iVar10 = local_118;
                       }
 LAB_004b4c78:
                       if (((local_270 == 0) ||
-                          (iVar30 = thunk_FUN_004406c0(bVar33), (char)iVar30 == '\x03')) &&
+                          (iVar27 = GetPlayerRaceId(playerId), (char)iVar27 == '\x03')) &&
                          (local_10c != 0)) {
                         if (local_124 != 0) {
-                          uVar25 = 0;
+                          uVar22 = 0;
                           do {
-                            if (((uVar25 != 4) && (uVar25 != 5)) && ((uVar25 != 8 && (uVar25 != 9)))
+                            if (((uVar22 != 4) && (uVar22 != 5)) && ((uVar22 != 8 && (uVar22 != 9)))
                                ) {
-                              iVar30 = ((int)(uVar25 + ((int)uVar25 >> 0x1f & 3U)) >> 2) + -1 +
+                              iVar27 = ((int)(uVar22 + ((int)uVar22 >> 0x1f & 3U)) >> 2) + -1 +
                                        local_138;
-                              uVar22 = uVar25 & 0x80000003;
-                              if ((int)uVar22 < 0) {
-                                uVar22 = (uVar22 - 1 | 0xfffffffc) + 1;
+                              uVar19 = uVar22 & 0x80000003;
+                              if ((int)uVar19 < 0) {
+                                uVar19 = (uVar19 - 1 | 0xfffffffc) + 1;
                               }
-                              iVar24 = (uVar22 - 1) + local_11c;
-                              if (((-1 < iVar30) && (iVar30 < SHORT_007fb242)) && (-1 < iVar24)) {
-                                if ((((iVar24 < SHORT_007fb240) &&
-                                     (sVar21 = *(short *)(local_27c +
-                                                         (iVar30 * SHORT_007fb240 +
-                                                         iVar24 + SHORT_007fb246 * local_254[0]) * 2
-                                                         ), sVar21 != 0)) && (sVar21 != 0x10)) &&
-                                   (sVar21 != 0x20)) {
+                              iVar21 = (uVar19 - 1) + local_11c;
+                              if (((-1 < iVar27) && (iVar27 < g_worldGrid.sizeY)) && (-1 < iVar21))
+                              {
+                                if ((((iVar21 < g_worldGrid.sizeX) &&
+                                     (sVar18 = *(short *)(local_27c +
+                                                         (iVar27 * g_worldGrid.sizeX +
+                                                         iVar21 + g_worldGrid.planeStride *
+                                                                  local_254[0]) * 2), sVar18 != 0))
+                                    && (sVar18 != 0x10)) && (sVar18 != 0x20)) {
                                   local_124 = 0;
                                   break;
                                 }
                               }
                             }
-                            uVar25 = uVar25 + 1;
-                          } while ((int)uVar25 < 0x10);
+                            uVar22 = uVar22 + 1;
+                          } while ((int)uVar22 < 0x10);
                           goto LAB_004b4e09;
                         }
 LAB_004b4f55:
-                        uVar25 = 0;
+                        uVar22 = 0;
                       }
                       else {
 LAB_004b4e09:
                         if ((local_124 == 0) || (local_4c[4] == 0)) goto LAB_004b4f55;
-                        iVar30 = 0;
+                        iVar27 = 0;
                         local_12c = 0;
                         do {
-                          iVar24 = iVar30 / 6;
-                          if (((iVar24 == 0) || (iVar24 == 5)) ||
-                             ((iVar30 % 6 == 0 || (iVar30 % 6 == 5)))) {
-                            iVar24 = iVar24 + -2 + local_138;
-                            iVar16 = iVar30 % 6 + -2 + local_11c;
-                            if (((-1 < iVar24) && (iVar24 < SHORT_007fb242)) && (-1 < iVar16)) {
-                              if (iVar16 < SHORT_007fb240) {
-                                iVar24 = iVar24 * SHORT_007fb240;
-                                iVar17 = SHORT_007fb246 * local_254[0] + iVar24 + iVar16;
+                          iVar21 = iVar27 / 6;
+                          if (((iVar21 == 0) || (iVar21 == 5)) ||
+                             ((iVar27 % 6 == 0 || (iVar27 % 6 == 5)))) {
+                            iVar21 = iVar21 + -2 + local_138;
+                            iVar14 = iVar27 % 6 + -2 + local_11c;
+                            if (((-1 < iVar21) && (iVar21 < g_worldGrid.sizeY)) && (-1 < iVar14)) {
+                              if (iVar14 < g_worldGrid.sizeX) {
+                                iVar21 = iVar21 * g_worldGrid.sizeX;
+                                iVar15 = g_worldGrid.planeStride * local_254[0] + iVar21 + iVar14;
                                 if (0 < local_254[0]) {
-                                  iVar11 = (local_254[0] + -1) * (int)SHORT_007fb246 + iVar24 +
-                                           iVar16;
-                                  local_118 = iVar11;
+                                  iVar10 = (local_254[0] + -1) * (int)g_worldGrid.planeStride +
+                                           iVar21 + iVar14;
+                                  local_118 = iVar10;
                                 }
-                                if ((*(short *)(local_27c + iVar17 * 2) == 0) &&
+                                if ((*(short *)(local_27c + iVar15 * 2) == 0) &&
                                    ((local_254[0] == 0 ||
-                                    (*(short *)(local_27c + iVar11 * 2) == 0x20)))) {
+                                    (*(short *)(local_27c + iVar10 * 2) == 0x20)))) {
 LAB_004b4f35:
                                   local_12c = local_12c + 1;
                                 }
-                                else if (*(short *)(local_27c + iVar17 * 2) == 0x205) {
-                                  local_58 = (STFishC *)g_worldCells[iVar17].objects[0];
+                                else if (*(short *)(local_27c + iVar15 * 2) == 0x205) {
+                                  local_58 = (STFishC *)g_worldGrid.cells[iVar15].objects[0];
                                   if (((local_58 != (STFishC *)0x0) &&
-                                      (iVar24 = (*local_58->vtable->vfunc_2C)
-                                                          ((STWorldObject *)local_58), 0x53 < iVar24
-                                      )) && ((iVar24 = (*local_58->vtable->vfunc_2C)(),
-                                             iVar24 < 0x5b && (*(int *)&local_58[2].field_0xfd == 0)
+                                      (iVar21 = (*local_58->vtable->vfunc_2C)
+                                                          ((STWorldObject *)local_58), 0x53 < iVar21
+                                      )) && ((iVar21 = (*local_58->vtable->vfunc_2C)(),
+                                             iVar21 < 0x5b && (*(int *)&local_58[2].field_0xfd == 0)
                                              ))) goto LAB_004b4f35;
                                 }
                               }
                             }
                           }
-                          iVar30 = iVar30 + 1;
-                        } while (iVar30 < 0x24);
-                        uVar25 = (uint)(6 < local_12c);
+                          iVar27 = iVar27 + 1;
+                        } while (iVar27 < 0x24);
+                        uVar22 = (uint)(6 < local_12c);
                       }
-                      local_268 = uVar25;
-                      if ((local_4c[4] == 0) || (uVar25 != 0)) {
+                      local_268 = uVar22;
+                      if ((local_4c[4] == 0) || (uVar22 != 0)) {
                         if ((local_124 == 0) || (local_10c == 0)) {
-                          iVar11 = 0;
+                          iVar10 = 0;
                         }
                         else {
-                          iVar11 = 1;
+                          iVar10 = 1;
                         }
                         *(undefined4 *)(param_2[3] + 4) = 0;
-                        local_ac = iVar11;
-                        iVar30 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
-                        pDVar15 = local_20;
-                        while (local_20 = pDVar15, -1 < iVar30) {
-                          iVar30 = *(int *)(&DAT_00790888 + local_108[0] * 4);
-                          if (iVar30 == 4) {
-                            if ((uVar25 == 0) ||
-                               (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar11))
+                        local_ac = iVar10;
+                        iVar27 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108);
+                        pDVar12 = local_20;
+                        while (local_20 = pDVar12, -1 < iVar27) {
+                          iVar27 = *(int *)(&DAT_00790888 + local_108[0] * 4);
+                          if (iVar27 == 4) {
+                            if ((uVar22 == 0) ||
+                               (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar10))
                             goto cf_common_join_004B5648;
                             local_a0 = local_108[0];
                             local_9c = local_11c;
@@ -988,20 +987,20 @@ LAB_004b4f35:
                             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[3],
                                          ((AnonShape_006B0C70_7C4FE646 *)param_2[3])->field_0004 - 1
                                         );
-                            pDVar15->iteratorIndex = 0;
+                            pDVar12->iteratorIndex = 0;
                             goto LAB_004b56e4;
                           }
                           if (local_4c[4] != 0) goto cf_common_join_004B5648;
-                          if (((iVar30 == 1) || (iVar30 == 6)) || ((iVar30 == 2 || (iVar30 == 3))))
+                          if (((iVar27 == 1) || (iVar27 == 6)) || ((iVar27 == 2 || (iVar27 == 3))))
                           {
-                            iVar30 = thunk_FUN_004406c0(bVar33);
-                            GVar19 = (-(uint)((char)iVar30 != '\x03') & 0xffffffd6) + 100;
+                            iVar27 = GetPlayerRaceId(playerId);
+                            GVar16 = (-(uint)((char)iVar27 != '\x03') & 0xffffffd6) + 100;
                             if (local_270 == 0) {
-                              if (local_108[0] == GVar19) goto cf_common_join_004B5648;
+                              if (local_108[0] == GVar16) goto cf_common_join_004B5648;
 LAB_004b5614:
                               if (((local_270 != 0) &&
-                                  (iVar30 = thunk_FUN_004406c0(bVar33), (char)iVar30 != '\x03')) ||
-                                 (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar11)) {
+                                  (iVar27 = GetPlayerRaceId(playerId), (char)iVar27 != '\x03')) ||
+                                 (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar10)) {
                                 local_a0 = local_108[0];
                                 local_90 = local_f8;
                                 local_9c = local_11c;
@@ -1034,31 +1033,32 @@ LAB_004b5614:
                                 }
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
                                   local_10c = local_10c + -1;
-                                  uVar25 = 0;
+                                  uVar22 = 0;
                                   do {
-                                    uVar22 = uVar25 & 0x80000001;
-                                    if ((int)uVar22 < 0) {
-                                      uVar22 = (uVar22 - 1 | 0xfffffffe) + 1;
+                                    uVar19 = uVar22 & 0x80000001;
+                                    if ((int)uVar19 < 0) {
+                                      uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
                                     }
                                     *(ushort *)
                                      (local_27c +
-                                     (uVar22 + SHORT_007fb246 * local_254[0] + local_11c +
-                                               ((int)uVar25 / 2 + local_138) * (int)SHORT_007fb240)
-                                     * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                    uVar25 = uVar25 + 1;
-                                  } while ((int)uVar25 < 4);
+                                     (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                               ((int)uVar22 / 2 + local_138) *
+                                               (int)g_worldGrid.sizeX) * 2) =
+                                         *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+                                    uVar22 = uVar22 + 1;
+                                  } while ((int)uVar22 < 4);
                                   break;
                                 }
 LAB_004b5f7b:
                                 *(ushort *)
                                  (local_27c +
-                                 (SHORT_007fb240 * local_138 +
-                                 local_11c + SHORT_007fb246 * local_254[0]) * 2) =
+                                 (g_worldGrid.sizeX * local_138 +
+                                 local_11c + g_worldGrid.planeStride * local_254[0]) * 2) =
                                      *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
                                 break;
                               }
                             }
-                            else if (local_108[0] == GVar19) goto LAB_004b5614;
+                            else if (local_108[0] == GVar16) goto LAB_004b5614;
                           }
                           else {
                             if ((local_4c[6] != 0) || (local_4c[1] != 0))
@@ -1071,36 +1071,34 @@ LAB_004b5f7b:
                               local_60 = 1;
                               goto cf_continue_loop_004B48CC;
                             }
-                            if (iVar30 == 7) {
-                              if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar11)
+                            if (iVar27 == 7) {
+                              if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar10)
                               goto cf_common_join_004B5648;
-                              pAVar18 = (AnonShape_006ACC70_C8641025 *)aiStack_314[local_108[0]];
-                              if ((pAVar18 == (AnonShape_006ACC70_C8641025 *)0x0) ||
-                                 (pAVar18->field_000C == 0)) {
+                              pDVar12 = (DArrayTy *)aiStack_314[local_108[0]];
+                              if ((pDVar12 == (DArrayTy *)0x0) || (pDVar12->count == 0)) {
 LAB_004b50f4:
-                                bVar32 = true;
+                                bVar29 = true;
                               }
                               else {
-                                bVar32 = false;
-                                iVar11 = -1;
-                                uVar25 = 0;
-                                if (0 < (int)pAVar18->field_000C) {
+                                bVar29 = false;
+                                iVar10 = -1;
+                                uVar22 = 0;
+                                if (0 < (int)pDVar12->count) {
                                   do {
-                                    FUN_006acc70(pAVar18,uVar25,&local_144);
-                                    iVar30 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar11 < 0) || (iVar30 < iVar11)) {
-                                      iVar11 = iVar30;
+                                    DArrayGetElement(pDVar12,uVar22,&local_144);
+                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
+                                      iVar10 = iVar27;
                                     }
-                                    uVar25 = uVar25 + 1;
-                                    pAVar18 = (AnonShape_006ACC70_C8641025 *)
-                                              aiStack_314[local_108[0]];
-                                  } while ((int)uVar25 < (int)pAVar18->field_000C);
+                                    uVar22 = uVar22 + 1;
+                                    pDVar12 = (DArrayTy *)aiStack_314[local_108[0]];
+                                  } while ((int)uVar22 < (int)pDVar12->count);
                                 }
-                                if ((iVar11 < 0) ||
+                                if ((iVar10 < 0) ||
                                    ((*(int *)(&DAT_00794fe4 + local_108[0] * 4) * 3) / 0x192 <
-                                    iVar11)) goto LAB_004b50f4;
+                                    iVar10)) goto LAB_004b50f4;
                               }
-                              if (!bVar32) goto LAB_004b5101;
+                              if (!bVar29) goto LAB_004b5101;
                               local_90 = local_f8;
                               local_9c = local_11c;
                               local_98 = local_138;
@@ -1110,33 +1108,33 @@ LAB_004b50f4:
                               FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[3],
                                            ((AnonShape_006B0C70_7C4FE646 *)param_2[3])->field_0004 -
                                            1);
-                              piVar20 = aiStack_314 + local_108[0];
-                              if (*piVar20 == 0) {
-                                piVar20 = aiStack_314 + local_108[0];
-                                puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-                                *piVar20 = (int)puVar12;
+                              piVar17 = aiStack_314 + local_108[0];
+                              if (*piVar17 == 0) {
+                                piVar17 = aiStack_314 + local_108[0];
+                                puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
+                                *piVar17 = (int)puVar11;
                               }
                               local_144 = local_11c;
                               local_140 = local_138;
                               local_13c = local_254[0];
-                              Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar20,&local_144);
+                              Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
                               local_4c[7] = local_4c[7] + -1;
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                               goto LAB_004b5f7b;
                               local_10c = local_10c + -1;
-                              uVar25 = 0;
+                              uVar22 = 0;
                               do {
-                                uVar22 = uVar25 & 0x80000001;
-                                if ((int)uVar22 < 0) {
-                                  uVar22 = (uVar22 - 1 | 0xfffffffe) + 1;
+                                uVar19 = uVar22 & 0x80000001;
+                                if ((int)uVar19 < 0) {
+                                  uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
                                 }
                                 *(ushort *)
                                  (local_27c +
-                                 (uVar22 + SHORT_007fb246 * local_254[0] + local_11c +
-                                           ((int)uVar25 / 2 + local_138) * (int)SHORT_007fb240) * 2)
-                                     = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                uVar25 = uVar25 + 1;
-                              } while ((int)uVar25 < 4);
+                                 (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                           ((int)uVar22 / 2 + local_138) * (int)g_worldGrid.sizeX) *
+                                 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+                                uVar22 = uVar22 + 1;
+                              } while ((int)uVar22 < 4);
                               break;
                             }
 LAB_004b5101:
@@ -1152,33 +1150,31 @@ LAB_004b5101:
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 8) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
                               goto cf_common_join_004B5648;
-                              pAVar18 = (AnonShape_006ACC70_C8641025 *)aiStack_314[local_108[0]];
-                              if ((pAVar18 == (AnonShape_006ACC70_C8641025 *)0x0) ||
-                                 (pAVar18->field_000C == 0)) {
+                              pDVar12 = (DArrayTy *)aiStack_314[local_108[0]];
+                              if ((pDVar12 == (DArrayTy *)0x0) || (pDVar12->count == 0)) {
 LAB_004b51da:
-                                bVar32 = true;
+                                bVar29 = true;
                               }
                               else {
-                                bVar32 = false;
-                                iVar11 = -1;
-                                uVar25 = 0;
-                                if (0 < (int)pAVar18->field_000C) {
+                                bVar29 = false;
+                                iVar10 = -1;
+                                uVar22 = 0;
+                                if (0 < (int)pDVar12->count) {
                                   do {
-                                    FUN_006acc70(pAVar18,uVar25,&local_144);
-                                    iVar30 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar11 < 0) || (iVar30 < iVar11)) {
-                                      iVar11 = iVar30;
+                                    DArrayGetElement(pDVar12,uVar22,&local_144);
+                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
+                                      iVar10 = iVar27;
                                     }
-                                    uVar25 = uVar25 + 1;
-                                    pAVar18 = (AnonShape_006ACC70_C8641025 *)
-                                              aiStack_314[local_108[0]];
-                                  } while ((int)uVar25 < (int)pAVar18->field_000C);
+                                    uVar22 = uVar22 + 1;
+                                    pDVar12 = (DArrayTy *)aiStack_314[local_108[0]];
+                                  } while ((int)uVar22 < (int)pDVar12->count);
                                 }
-                                if ((iVar11 < 0) ||
+                                if ((iVar10 < 0) ||
                                    ((*(int *)(&DAT_00794fe4 + local_108[0] * 4) * 3) / 0x192 <
-                                    iVar11)) goto LAB_004b51da;
+                                    iVar10)) goto LAB_004b51da;
                               }
-                              if (bVar32) {
+                              if (bVar29) {
                                 local_90 = local_f8;
                                 local_9c = local_11c;
                                 local_98 = local_138;
@@ -1188,33 +1184,33 @@ LAB_004b51da:
                                 FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[3],
                                              ((AnonShape_006B0C70_7C4FE646 *)param_2[3])->field_0004
                                              - 1);
-                                piVar20 = aiStack_314 + local_108[0];
-                                if (*piVar20 == 0) {
-                                  piVar20 = aiStack_314 + local_108[0];
-                                  puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-                                  *piVar20 = (int)puVar12;
+                                piVar17 = aiStack_314 + local_108[0];
+                                if (*piVar17 == 0) {
+                                  piVar17 = aiStack_314 + local_108[0];
+                                  puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
+                                  *piVar17 = (int)puVar11;
                                 }
                                 local_144 = local_11c;
                                 local_140 = local_138;
                                 local_13c = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar20,&local_144);
+                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
                                 local_4c[8] = local_4c[8] + -1;
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                                 goto LAB_004b5f7b;
                                 local_10c = local_10c + -1;
-                                uVar25 = 0;
+                                uVar22 = 0;
                                 do {
-                                  uVar22 = uVar25 & 0x80000001;
-                                  if ((int)uVar22 < 0) {
-                                    uVar22 = (uVar22 - 1 | 0xfffffffe) + 1;
+                                  uVar19 = uVar22 & 0x80000001;
+                                  if ((int)uVar19 < 0) {
+                                    uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
                                   }
                                   *(ushort *)
                                    (local_27c +
-                                   (uVar22 + SHORT_007fb246 * local_254[0] + local_11c +
-                                             ((int)uVar25 / 2 + local_138) * (int)SHORT_007fb240) *
-                                   2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                  uVar25 = uVar25 + 1;
-                                } while ((int)uVar25 < 4);
+                                   (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                             ((int)uVar22 / 2 + local_138) * (int)g_worldGrid.sizeX)
+                                   * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+                                  uVar22 = uVar22 + 1;
+                                } while ((int)uVar22 < 4);
                                 break;
                               }
                             }
@@ -1230,38 +1226,36 @@ LAB_004b51da:
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 9) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
                               goto cf_common_join_004B5648;
-                              pAVar18 = (AnonShape_006ACC70_C8641025 *)aiStack_314[local_108[0]];
-                              if ((pAVar18 == (AnonShape_006ACC70_C8641025 *)0x0) ||
-                                 (pAVar18->field_000C == 0)) {
+                              pDVar12 = (DArrayTy *)aiStack_314[local_108[0]];
+                              if ((pDVar12 == (DArrayTy *)0x0) || (pDVar12->count == 0)) {
 LAB_004b52b6:
-                                bVar32 = true;
+                                bVar29 = true;
                               }
                               else {
-                                bVar32 = false;
-                                iVar11 = -1;
-                                uVar25 = 0;
-                                if (0 < (int)pAVar18->field_000C) {
+                                bVar29 = false;
+                                iVar10 = -1;
+                                uVar22 = 0;
+                                if (0 < (int)pDVar12->count) {
                                   do {
-                                    FUN_006acc70(pAVar18,uVar25,&local_144);
-                                    iVar30 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar11 < 0) || (iVar30 < iVar11)) {
-                                      iVar11 = iVar30;
+                                    DArrayGetElement(pDVar12,uVar22,&local_144);
+                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
+                                      iVar10 = iVar27;
                                     }
-                                    uVar25 = uVar25 + 1;
-                                    pAVar18 = (AnonShape_006ACC70_C8641025 *)
-                                              aiStack_314[local_108[0]];
-                                  } while ((int)uVar25 < (int)pAVar18->field_000C);
+                                    uVar22 = uVar22 + 1;
+                                    pDVar12 = (DArrayTy *)aiStack_314[local_108[0]];
+                                  } while ((int)uVar22 < (int)pDVar12->count);
                                 }
                                 if ((local_108[0] == 0x69) || (local_108[0] == 0x6a)) {
-                                  iVar30 = 10;
+                                  iVar27 = 10;
                                 }
                                 else {
-                                  iVar30 = 0;
+                                  iVar27 = 0;
                                 }
-                                if ((iVar11 < 0) || ((int)((uint)(iVar30 * 3) / 2) < iVar11))
+                                if ((iVar10 < 0) || ((int)((uint)(iVar27 * 3) / 2) < iVar10))
                                 goto LAB_004b52b6;
                               }
-                              if (bVar32) {
+                              if (bVar29) {
                                 local_90 = local_f8;
                                 local_9c = local_11c;
                                 local_98 = local_138;
@@ -1271,33 +1265,33 @@ LAB_004b52b6:
                                 FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[3],
                                              ((AnonShape_006B0C70_7C4FE646 *)param_2[3])->field_0004
                                              - 1);
-                                piVar20 = aiStack_314 + local_108[0];
-                                if (*piVar20 == 0) {
-                                  piVar20 = aiStack_314 + local_108[0];
-                                  puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-                                  *piVar20 = (int)puVar12;
+                                piVar17 = aiStack_314 + local_108[0];
+                                if (*piVar17 == 0) {
+                                  piVar17 = aiStack_314 + local_108[0];
+                                  puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
+                                  *piVar17 = (int)puVar11;
                                 }
                                 local_144 = local_11c;
                                 local_140 = local_138;
                                 local_13c = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar20,&local_144);
+                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
                                 local_4c[9] = local_4c[9] + -1;
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                                 goto LAB_004b5f7b;
                                 local_10c = local_10c + -1;
-                                uVar25 = 0;
+                                uVar22 = 0;
                                 do {
-                                  uVar22 = uVar25 & 0x80000001;
-                                  if ((int)uVar22 < 0) {
-                                    uVar22 = (uVar22 - 1 | 0xfffffffe) + 1;
+                                  uVar19 = uVar22 & 0x80000001;
+                                  if ((int)uVar19 < 0) {
+                                    uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
                                   }
                                   *(ushort *)
                                    (local_27c +
-                                   (uVar22 + SHORT_007fb246 * local_254[0] + local_11c +
-                                             ((int)uVar25 / 2 + local_138) * (int)SHORT_007fb240) *
-                                   2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                  uVar25 = uVar25 + 1;
-                                } while ((int)uVar25 < 4);
+                                   (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                             ((int)uVar22 / 2 + local_138) * (int)g_worldGrid.sizeX)
+                                   * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+                                  uVar22 = uVar22 + 1;
+                                } while ((int)uVar22 < 4);
                                 break;
                               }
                             }
@@ -1312,30 +1306,29 @@ LAB_004b52b6:
                             }
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 10) {
                               local_128 = 0;
-                              iVar11 = -1;
+                              iVar10 = -1;
                               local_354 = 0;
-                              GVar19 = local_108[0];
+                              GVar16 = local_108[0];
                               do {
                                 if (((*(int *)(&DAT_00790950 + local_354) == 10) &&
-                                    (pAVar18 = *(AnonShape_006ACC70_C8641025 **)
-                                                ((int)local_24c + local_354),
-                                    pAVar18 != (AnonShape_006ACC70_C8641025 *)0x0)) &&
-                                   (uVar25 = 0, 0 < (int)pAVar18->field_000C)) {
+                                    (pDVar12 = *(DArrayTy **)((int)local_24c + local_354),
+                                    pDVar12 != (DArrayTy *)0x0)) &&
+                                   (uVar22 = 0, 0 < (int)pDVar12->count)) {
                                   do {
-                                    FUN_006acc70(pAVar18,uVar25,&local_144);
-                                    iVar30 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar11 < 0) || (iVar30 < iVar11)) {
-                                      iVar11 = iVar30;
+                                    DArrayGetElement(pDVar12,uVar22,&local_144);
+                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
+                                      iVar10 = iVar27;
                                     }
-                                    uVar25 = uVar25 + 1;
-                                    GVar19 = local_108[0];
-                                  } while ((int)uVar25 < (int)pAVar18->field_000C);
+                                    uVar22 = uVar22 + 1;
+                                    GVar16 = local_108[0];
+                                  } while ((int)uVar22 < (int)pDVar12->count);
                                 }
                                 local_354 = local_354 + 4;
                               } while (local_354 < 0x108);
-                              local_78 = thunk_FUN_004e81b0(param_1,GVar19 - 0x32,0);
-                              puVar31 = local_27c;
-                              if ((iVar11 < 0) || (uVar25 = local_128, local_78 < iVar11)) {
+                              local_78 = thunk_FUN_004e81b0(param_1,GVar16 - 0x32,0);
+                              puVar28 = local_27c;
+                              if ((iVar10 < 0) || (uVar22 = local_128, local_78 < iVar10)) {
                                 local_258 = 0;
                                 local_264 = 0;
                                 local_260 = 0;
@@ -1343,7 +1336,7 @@ LAB_004b52b6:
                                 local_12c = 0;
                                 local_120 = 1;
                                 if (local_78 < 1) {
-                                  uVar25 = (uint)(local_78 * 2 < 1);
+                                  uVar22 = (uint)(local_78 * 2 < 1);
                                 }
                                 else {
                                   local_35c = local_138;
@@ -1352,11 +1345,12 @@ LAB_004b52b6:
                                     local_358 = local_358 + 1;
                                     local_35c = local_35c + -1;
                                     if ((local_264 == 0) &&
-                                       ((local_11c - local_138) + local_358 < SHORT_007fb240 + -1))
-                                    {
+                                       ((local_11c - local_138) + local_358 < g_worldGrid.sizeX + -1
+                                       )) {
                                       if (*(short *)(local_27c +
-                                                    (SHORT_007fb240 * local_138 +
-                                                     local_11c + SHORT_007fb246 * local_254[0] +
+                                                    (g_worldGrid.sizeX * local_138 +
+                                                     local_11c +
+                                                     g_worldGrid.planeStride * local_254[0] +
                                                     local_120) * 2) == 0) {
                                         local_12c = local_12c + 1;
                                       }
@@ -1367,8 +1361,8 @@ LAB_004b52b6:
                                     if ((local_260 == 0) &&
                                        (0 < (local_11c - local_138) + local_358)) {
                                       if (*(short *)(local_27c +
-                                                    (((SHORT_007fb246 * local_254[0] +
-                                                      SHORT_007fb240 * local_138) - local_120) +
+                                                    (((g_worldGrid.planeStride * local_254[0] +
+                                                      g_worldGrid.sizeX * local_138) - local_120) +
                                                     local_11c) * 2) == 0) {
                                         local_12c = local_12c + 1;
                                       }
@@ -1376,11 +1370,11 @@ LAB_004b52b6:
                                         local_260 = 1;
                                       }
                                     }
-                                    if ((local_25c == 0) && (local_358 < SHORT_007fb242 + -1)) {
+                                    if ((local_25c == 0) && (local_358 < g_worldGrid.sizeY + -1)) {
                                       if (*(short *)(local_27c +
-                                                    (SHORT_007fb246 * local_254[0] +
-                                                    local_11c + SHORT_007fb240 * local_358) * 2) ==
-                                          0) {
+                                                    (g_worldGrid.planeStride * local_254[0] +
+                                                    local_11c + g_worldGrid.sizeX * local_358) * 2)
+                                          == 0) {
                                         local_12c = local_12c + 1;
                                       }
                                       else {
@@ -1389,9 +1383,9 @@ LAB_004b52b6:
                                     }
                                     if ((local_258 == 0) && (0 < local_358)) {
                                       if (*(short *)(local_27c +
-                                                    (SHORT_007fb246 * local_254[0] +
-                                                    local_11c + SHORT_007fb240 * local_35c) * 2) ==
-                                          0) {
+                                                    (g_worldGrid.planeStride * local_254[0] +
+                                                    local_11c + g_worldGrid.sizeX * local_35c) * 2)
+                                          == 0) {
                                         local_12c = local_12c + 1;
                                       }
                                       else {
@@ -1400,10 +1394,10 @@ LAB_004b52b6:
                                     }
                                     local_120 = local_120 + 1;
                                   } while (local_120 <= local_78);
-                                  uVar25 = (uint)(local_78 * 2 <= local_12c);
+                                  uVar22 = (uint)(local_78 * 2 <= local_12c);
                                 }
                               }
-                              if (uVar25 != 0) {
+                              if (uVar22 != 0) {
                                 local_a0 = local_108[0];
                                 local_90 = local_f8;
                                 local_9c = local_11c;
@@ -1413,38 +1407,39 @@ LAB_004b52b6:
                                 FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_2[3],
                                              ((AnonShape_006B0C70_7C4FE646 *)param_2[3])->field_0004
                                              - 1);
-                                piVar20 = aiStack_314 + local_108[0];
-                                if (*piVar20 == 0) {
-                                  piVar20 = aiStack_314 + local_108[0];
-                                  puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-                                  *piVar20 = (int)puVar12;
+                                piVar17 = aiStack_314 + local_108[0];
+                                if (*piVar17 == 0) {
+                                  piVar17 = aiStack_314 + local_108[0];
+                                  puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
+                                  *piVar17 = (int)puVar11;
                                 }
                                 local_144 = local_11c;
                                 local_140 = local_138;
                                 local_13c = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar20,&local_144);
+                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
                                 local_4c[10] = local_4c[10] + -1;
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
                                   local_10c = local_10c + -1;
-                                  uVar25 = 0;
+                                  uVar22 = 0;
                                   do {
-                                    uVar22 = uVar25 & 0x80000001;
-                                    if ((int)uVar22 < 0) {
-                                      uVar22 = (uVar22 - 1 | 0xfffffffe) + 1;
+                                    uVar19 = uVar22 & 0x80000001;
+                                    if ((int)uVar19 < 0) {
+                                      uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
                                     }
                                     *(ushort *)
                                      (local_27c +
-                                     (uVar22 + SHORT_007fb246 * local_254[0] + local_11c +
-                                               ((int)uVar25 / 2 + local_138) * (int)SHORT_007fb240)
-                                     * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                    uVar25 = uVar25 + 1;
-                                  } while ((int)uVar25 < 4);
+                                     (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                               ((int)uVar22 / 2 + local_138) *
+                                               (int)g_worldGrid.sizeX) * 2) =
+                                         *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+                                    uVar22 = uVar22 + 1;
+                                  } while ((int)uVar22 < 4);
                                 }
                                 else {
                                   *(ushort *)
-                                   (puVar31 +
-                                   (SHORT_007fb240 * local_138 +
-                                   local_11c + SHORT_007fb246 * local_254[0]) * 2) =
+                                   (puVar28 +
+                                   (g_worldGrid.sizeX * local_138 +
+                                   local_11c + g_worldGrid.planeStride * local_254[0]) * 2) =
                                        *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
                                 }
                                 break;
@@ -1452,11 +1447,11 @@ LAB_004b52b6:
                             }
                           }
 cf_common_join_004B5648:
-                          iVar30 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108)
+                          iVar27 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_2[3],local_108)
                           ;
-                          iVar11 = local_ac;
-                          uVar25 = local_268;
-                          pDVar15 = local_20;
+                          iVar10 = local_ac;
+                          uVar22 = local_268;
+                          pDVar12 = local_20;
                         }
                       }
                     }
@@ -1475,7 +1470,7 @@ LAB_004b5fd6:
                ((local_4c[9] == 0 && (local_4c[10] == 0)))) goto cf_break_loop_004B60CD;
           }
         }
-        iVar30 = local_64 + 1;
+        iVar27 = local_64 + 1;
       }
       goto cf_break_loop_004B60CD;
     }
@@ -1498,42 +1493,43 @@ LAB_004b5fd6:
           local_11c = *param_2 - local_64;
           local_138 = (local_64 * 7 + param_2[1]) - local_74;
         }
-        if ((((-1 < local_11c) && (local_11c < SHORT_007fb240)) && (-1 < local_138)) &&
-           ((local_138 < SHORT_007fb242 &&
-            (local_254[0] = 0, puVar31 = local_27c, 0 < SHORT_007fb244)))) {
+        if ((((-1 < local_11c) && (local_11c < g_worldGrid.sizeX)) && (-1 < local_138)) &&
+           ((local_138 < g_worldGrid.sizeY &&
+            (local_254[0] = 0, puVar28 = local_27c, 0 < g_worldGrid.sizeZ)))) {
           do {
-            iVar11 = SHORT_007fb240 * local_138 + local_11c + SHORT_007fb246 * local_254[0];
-            local_58 = (STFishC *)g_worldCells[iVar11].objects[0];
+            iVar10 = g_worldGrid.sizeX * local_138 +
+                     local_11c + g_worldGrid.planeStride * local_254[0];
+            local_58 = (STFishC *)g_worldGrid.cells[iVar10].objects[0];
             if (local_58 == (STFishC *)0x0) {
-              sVar21 = (short)local_11c;
-              if (((((sVar21 < 0) || (SHORT_007fb240 <= sVar21)) ||
-                   (sVar10 = (short)local_138, sVar10 < 0)) ||
-                  ((SHORT_007fb242 <= sVar10 || (sVar23 = (short)local_254[0], sVar23 < 0)))) ||
-                 (SHORT_007fb244 <= sVar23)) {
-                sVar21 = -1;
+              sVar18 = (short)local_11c;
+              if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
+                   (sVar9 = (short)local_138, sVar9 < 0)) ||
+                  ((g_worldGrid.sizeY <= sVar9 || (sVar20 = (short)local_254[0], sVar20 < 0)))) ||
+                 (g_worldGrid.sizeZ <= sVar20)) {
+                sVar18 = -1;
               }
               else {
-                sVar21 = *(short *)(DAT_007fb280 +
-                                   ((int)sVar10 * (int)SHORT_007fb278 +
-                                    (int)sVar23 * (int)SHORT_007fb27e + (int)sVar21) * 2);
+                sVar18 = g_pathingGrid.cells
+                         [(int)sVar9 * (int)g_pathingGrid.sizeX +
+                          (int)sVar20 * (int)g_pathingGrid.planeStride + (int)sVar18];
               }
-              if (sVar21 == 0) {
-                local_58 = (STFishC *)g_worldCells[iVar11].objects[1];
+              if (sVar18 == 0) {
+                local_58 = (STFishC *)g_worldGrid.cells[iVar10].objects[1];
                 if ((local_58 == (STFishC *)0x0) ||
-                   (((iVar30 = (*local_58->vtable->vfunc_2C)((STWorldObject *)local_58),
-                     iVar30 != 0xa6 && (iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xbd))
-                    && ((iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xa7 &&
-                        (iVar30 = (*local_58->vtable->vfunc_2C)(), iVar30 != 0xaf)))))) {
+                   (((iVar27 = (*local_58->vtable->vfunc_2C)((STWorldObject *)local_58),
+                     iVar27 != 0xa6 && (iVar27 = (*local_58->vtable->vfunc_2C)(), iVar27 != 0xbd))
+                    && ((iVar27 = (*local_58->vtable->vfunc_2C)(), iVar27 != 0xa7 &&
+                        (iVar27 = (*local_58->vtable->vfunc_2C)(), iVar27 != 0xaf)))))) {
 LAB_004b432d:
-                  *(undefined2 *)(puVar31 + iVar11 * 2) = 0;
+                  *(undefined2 *)(puVar28 + iVar10 * 2) = 0;
                 }
                 else {
-                  *(undefined2 *)(puVar31 + iVar11 * 2) = 0x40;
+                  *(undefined2 *)(puVar28 + iVar10 * 2) = 0x40;
                 }
               }
               else {
-                if (sVar21 != -1) goto LAB_004b4634;
-                *(undefined2 *)(puVar31 + iVar11 * 2) = 0x20;
+                if (sVar18 != -1) goto LAB_004b4634;
+                *(undefined2 *)(puVar28 + iVar10 * 2) = 0x20;
               }
             }
             else {
@@ -1544,104 +1540,104 @@ LAB_004b432d:
                 if (*(int *)&local_58->field_0x20 != 0x3e9) goto LAB_004b432d;
                 local_34c = *(int *)&local_58->field_0x259;
               }
-              uVar25 = *(uint *)&local_58->field_0x24;
-              if (uVar25 == param_1) {
-                *(ushort *)(puVar31 + iVar11 * 2) =
+              uVar22 = *(uint *)&local_58->field_0x24;
+              if (uVar22 == param_1) {
+                *(ushort *)(puVar28 + iVar10 * 2) =
                      *(ushort *)(&DAT_00790888 + local_34c * 4) | 0x200;
                 local_114 = local_64;
-                iVar11 = *(int *)(&DAT_00790888 + local_34c * 4);
-                if (((iVar11 == 7) || (iVar11 == 8)) || (iVar11 == 9)) {
+                iVar10 = *(int *)(&DAT_00790888 + local_34c * 4);
+                if (((iVar10 == 7) || (iVar10 == 8)) || (iVar10 == 9)) {
                   STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
                   if (((local_7c[0] == local_11c) && (local_8c[0] == local_138)) &&
                      (local_a8[0] == local_254[0])) {
-                    piVar20 = aiStack_314 + local_34c;
-                    if (*piVar20 == 0) {
-                      puVar12 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-                      *piVar20 = (int)puVar12;
+                    piVar17 = aiStack_314 + local_34c;
+                    if (*piVar17 == 0) {
+                      puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
+                      *piVar17 = (int)puVar11;
                     }
                     local_144 = (int)local_7c[0];
                     local_140 = (int)local_8c[0];
                     local_13c = (int)local_a8[0];
-                    Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar20,&local_144);
+                    Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
                   }
                 }
-                else if (iVar11 == 4) {
+                else if (iVar10 == 4) {
                   STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-                  iVar11 = (int)local_7c[0];
-                  if (((iVar11 == local_11c) && (iVar30 = (int)local_8c[0], iVar30 == local_138)) &&
-                     (iVar24 = (int)local_a8[0], iVar24 == local_254[0])) {
-                    piVar20 = local_f4;
-                    for (iVar16 = 0xc; iVar16 != 0; iVar16 = iVar16 + -1) {
-                      *piVar20 = 0;
-                      piVar20 = piVar20 + 1;
+                  iVar10 = (int)local_7c[0];
+                  if (((iVar10 == local_11c) && (iVar27 = (int)local_8c[0], iVar27 == local_138)) &&
+                     (iVar21 = (int)local_a8[0], iVar21 == local_254[0])) {
+                    piVar17 = local_f4;
+                    for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {
+                      *piVar17 = 0;
+                      piVar17 = piVar17 + 1;
                     }
                     local_f4[0] = 1;
-                    local_f4[1] = iVar11;
-                    local_f4[2] = iVar30;
-                    local_f4[3] = iVar24;
+                    local_f4[1] = iVar10;
+                    local_f4[2] = iVar27;
+                    local_f4[3] = iVar21;
                     Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,local_f4);
-                    puVar31 = local_27c;
+                    puVar28 = local_27c;
                   }
                 }
               }
               else {
-                if ((uVar25 < 8) &&
+                if ((uVar22 < 8) &&
                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[uVar25 * 0x51] < 8)))) {
+                    ((byte)(&DAT_008087e9)[uVar22 * 0x51] < 8)))) {
                   bVar3 = local_58->field_0x24;
                   if (*(char *)((int)&g_appClass_00806728[0x5d].field_0014 + 3) == '\0') {
-                    if (bVar3 == bVar33) {
-                      iVar30 = 0;
+                    if (bVar3 == playerId) {
+                      iVar27 = 0;
                     }
                     else {
-                      uVar25 = (uint)bVar3;
-                      uVar22 = param_1 & 0xff;
+                      uVar22 = (uint)bVar3;
+                      uVar19 = param_1 & 0xff;
                       cVar4 = *(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                       uVar22 + uVar25 * 8 + 3);
-                      puVar31 = local_27c;
+                                       uVar19 + uVar22 * 8 + 3);
+                      puVar28 = local_27c;
                       if ((cVar4 == '\0') &&
                          (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                   uVar25 + uVar22 * 8 + 3) == '\0')) {
-                        iVar30 = -2;
+                                   uVar22 + uVar19 * 8 + 3) == '\0')) {
+                        iVar27 = -2;
                       }
                       else if ((cVar4 == '\x01') &&
                               (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                        uVar25 + uVar22 * 8 + 3) == '\0')) {
-                        iVar30 = -1;
+                                        uVar22 + uVar19 * 8 + 3) == '\0')) {
+                        iVar27 = -1;
                       }
                       else if ((cVar4 == '\0') &&
                               (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                        uVar25 + uVar22 * 8 + 3) == '\x01')) {
-                        iVar30 = 1;
+                                        uVar22 + uVar19 * 8 + 3) == '\x01')) {
+                        iVar27 = 1;
                       }
                       else if ((cVar4 == '\x01') &&
                               (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                        uVar25 + uVar22 * 8 + 3) == '\x01')) {
-                        iVar30 = 2;
+                                        uVar22 + uVar19 * 8 + 3) == '\x01')) {
+                        iVar27 = 2;
                       }
                       else {
-                        iVar30 = 0;
+                        iVar27 = 0;
                       }
                     }
-                    bVar32 = iVar30 < 0;
+                    bVar29 = iVar27 < 0;
                   }
                   else {
-                    bVar32 = *(char *)((param_1 & 0xff) * 0x51 + 0x11ca + (int)g_appClass_00806728)
+                    bVar29 = *(char *)((param_1 & 0xff) * 0x51 + 0x11ca + (int)g_appClass_00806728)
                              != *(char *)((uint)bVar3 * 0x51 + 0x11ca + (int)g_appClass_00806728);
                   }
-                  if (bVar32) {
-                    *(ushort *)(puVar31 + iVar11 * 2) =
+                  if (bVar29) {
+                    *(ushort *)(puVar28 + iVar10 * 2) =
                          *(ushort *)(&DAT_00790888 + local_34c * 4) | 0x100;
                     goto LAB_004b463a;
                   }
                 }
 LAB_004b4634:
-                *(undefined2 *)(puVar31 + iVar11 * 2) = 0x10;
+                *(undefined2 *)(puVar28 + iVar10 * 2) = 0x10;
               }
             }
 LAB_004b463a:
             local_254[0] = local_254[0] + 1;
-          } while (local_254[0] < SHORT_007fb244);
+          } while (local_254[0] < g_worldGrid.sizeZ);
         }
         local_74 = local_74 + 1;
       } while (local_74 < local_64 * 8);
@@ -1649,46 +1645,46 @@ LAB_004b463a:
     if (local_54 < local_64 - local_114) goto LAB_004b4689;
     local_64 = local_64 + 1;
   } while( true );
-  while (*piVar20 != 0) {
+  while (*piVar17 != 0) {
 LAB_004b56e4:
-    uVar25 = pDVar15->iteratorIndex;
-    if (uVar25 < pDVar15->count) {
-      piVar20 = (int *)(pDVar15->elementSize * uVar25 + (int)pDVar15->data);
-      pDVar15->iteratorIndex = uVar25 + 1;
+    uVar22 = pDVar12->iteratorIndex;
+    if (uVar22 < pDVar12->count) {
+      piVar17 = (int *)(pDVar12->elementSize * uVar22 + (int)pDVar12->data);
+      pDVar12->iteratorIndex = uVar22 + 1;
     }
     else {
-      piVar20 = (int *)0x0;
+      piVar17 = (int *)0x0;
     }
-    if (piVar20 == (int *)0x0) goto LAB_004b5727;
+    if (piVar17 == (int *)0x0) goto LAB_004b5727;
   }
-  *piVar20 = 1;
-  piVar20[1] = local_11c;
-  piVar20[2] = local_138;
-  piVar20[3] = local_254[0];
+  *piVar17 = 1;
+  piVar17[1] = local_11c;
+  piVar17[2] = local_138;
+  piVar17[3] = local_254[0];
 LAB_004b5727:
-  iVar11 = local_4c[4] + -1;
-  local_4c[4] = iVar11;
+  iVar10 = local_4c[4] + -1;
+  local_4c[4] = iVar10;
   local_10c = local_10c + -1;
-  iVar30 = 0;
+  iVar27 = 0;
   do {
-    iVar24 = iVar30 / 6 + -2 + local_138;
-    iVar16 = iVar30 % 6 + -2 + local_11c;
-    if (((-1 < iVar24) && (iVar24 < SHORT_007fb242)) && (-1 < iVar16)) {
-      if ((iVar16 < SHORT_007fb240) &&
-         (iVar24 = iVar24 * SHORT_007fb240 + iVar16 + SHORT_007fb246 * local_254[0],
-         *(short *)(local_27c + iVar24 * 2) == 0)) {
-        *(ushort *)(local_27c + iVar24 * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+    iVar21 = iVar27 / 6 + -2 + local_138;
+    iVar14 = iVar27 % 6 + -2 + local_11c;
+    if (((-1 < iVar21) && (iVar21 < g_worldGrid.sizeY)) && (-1 < iVar14)) {
+      if ((iVar14 < g_worldGrid.sizeX) &&
+         (iVar21 = iVar21 * g_worldGrid.sizeX + iVar14 + g_worldGrid.planeStride * local_254[0],
+         *(short *)(local_27c + iVar21 * 2) == 0)) {
+        *(ushort *)(local_27c + iVar21 * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
       }
     }
-    iVar30 = iVar30 + 1;
-  } while (iVar30 < 0x24);
-  if (iVar11 == 0) {
+    iVar27 = iVar27 + 1;
+  } while (iVar27 < 0x24);
+  if (iVar10 == 0) {
     local_64 = 0;
     goto cf_continue_loop_004B48CC;
   }
 cf_continue_loop_004B5FB6:
   local_254[0] = local_254[0] + 1;
-  if (SHORT_007fb244 + -1 <= local_254[0]) goto LAB_004b5fd6;
+  if (g_worldGrid.sizeZ + -1 <= local_254[0]) goto LAB_004b5fd6;
   goto LAB_004b49b4;
 }
 

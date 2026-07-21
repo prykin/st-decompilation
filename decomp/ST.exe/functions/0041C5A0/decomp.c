@@ -10,9 +10,11 @@ void __fastcall FUN_0041c5a0(AnonShape_0041C5A0_167218F4 *param_1)
                        *(uint *)&param_1->field_0x24,param_1->field_0101,
                        *(int *)&param_1->field_0x18,0xffffffff);
     if (*(int *)&param_1->field_0x20 == 0x14) {
-      thunk_FUN_00559620(g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                         (char)param_1->field_005F,*(undefined **)&param_1->field_0x24,
-                         param_1->field_0105,*(undefined4 *)&param_1->field_0x18,0xffffffff);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559620
+                ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,(int)param_1->field_005B,
+                 (int)param_1->field_005D,(char)param_1->field_005F,
+                 *(undefined **)&param_1->field_0x24,param_1->field_0105,
+                 *(undefined4 *)&param_1->field_0x18,0xffffffff);
     }
     uVar1 = (**(code **)(*(int *)param_1 + 0x2c))();
     switch(uVar1) {
@@ -23,9 +25,10 @@ void __fastcall FUN_0041c5a0(AnonShape_0041C5A0_167218F4 *param_1)
       break;
     case 0xb:
     case 0x23:
-      thunk_FUN_00559d60(g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                         (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_010D
-                         ,*(undefined4 *)&param_1->field_0x18);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559d60
+                ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,(int)param_1->field_005B,
+                 (int)param_1->field_005D,(char)param_1->field_005F,*(uint *)&param_1->field_0x24,
+                 param_1->field_010D,*(undefined4 *)&param_1->field_0x18);
       return;
     }
   }

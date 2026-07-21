@@ -18,7 +18,7 @@ void __fastcall FUN_0060d220(int param_1)
             thunk_FUN_0062c2a0((int *)(iVar1 + 0x40));
           }
           if (*(int *)(*(int *)(param_1 + 0x244) + 8 + iVar4) != 0) {
-            FUN_006ab060((LPVOID *)(*(int *)(param_1 + 0x244) + 8 + iVar4));
+            FreeAndNull((void **)(*(int *)(param_1 + 0x244) + 8 + iVar4));
           }
           *(undefined4 *)(*(int *)(param_1 + 0x244) + iVar4) = 0;
         }
@@ -30,7 +30,7 @@ void __fastcall FUN_0060d220(int param_1)
   else if ((*(int *)(param_1 + 0x240) == 1) && (piVar2 = *(int **)(param_1 + 0x244), *piVar2 != 0))
   {
     if (piVar2[2] != 0) {
-      FUN_006ab060((LPVOID *)(piVar2 + 2));
+      FreeAndNull((void **)(piVar2 + 2));
     }
     **(undefined4 **)(param_1 + 0x244) = 0;
     return;

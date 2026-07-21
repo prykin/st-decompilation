@@ -1,4 +1,4 @@
-FUN_00630870:
+STManRuinC::STManRuinC:
 00630870  56                        PUSH ESI
 00630871  57                        PUSH EDI
 00630872  8B F1                     MOV ESI,ECX

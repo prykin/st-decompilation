@@ -1,4 +1,4 @@
-FUN_00617840:
+JumpManagC::JumpManagC:
 00617840  56                        PUSH ESI
 00617841  57                        PUSH EDI
 00617842  8B F1                     MOV ESI,ECX

@@ -19,8 +19,9 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
   int iVar8;
   cMf32 *pcVar9;
   ushort *puVar10;
+  char *text;
   cMf32 *pcVar11;
-  uint *groupContent;
+  DArrayTy *array;
   undefined4 uVar12;
   SystemClassTy *extraout_ECX;
   cMf32 *extraout_ECX_00;
@@ -175,8 +176,8 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             } while (uVar14 != 0);
           }
         }
-        pcVar17 = (char *)FUN_006b0140(0x42c2,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,pcVar17);
+        LoadResourceString(0x42c2,HINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,text);
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           g_currentExceptionFrame = local_8c.previous;
@@ -193,14 +194,14 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
         pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0)
         ;
         local_48 = 0x577d84;
-        groupContent = CreateOpponentList(pcVar11,piVar3[1],DAT_0080995c);
-        pcVar13 = (cMf32 *)groupContent[3];
+        array = (DArrayTy *)CreateOpponentList(pcVar11,piVar3[1],DAT_0080995c);
+        pcVar13 = (cMf32 *)array->count;
         pcVar9 = extraout_ECX_02;
         if (pcVar13 != (cMf32 *)0x0) {
           pcVar9 = (cMf32 *)((int)&pcVar13[-1].field_002E + 1);
           if (pcVar9 < pcVar13) {
-            pcVar17 = (char *)((int)((int)&pcVar13[-1].field_002E + 1) * groupContent[2] +
-                              groupContent[7]);
+            pcVar17 = (char *)((int)((int)&pcVar13[-1].field_002E + 1) * array->elementSize +
+                              (int)array->data);
           }
           else {
             pcVar17 = (char *)0x0;
@@ -253,13 +254,13 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             pcVar11 = (cMf32 *)0x577e83;
             StartStrateg(puVar10,piVar3[2]);
             *(undefined1 *)((int)&DAT_008087c4 + piVar3[2] * 0x51 + 3) = 1;
-            groupContent = (uint *)0x577e9d;
-            FUN_006ab060((LPVOID *)&stack0xffffffdc);
+            array = (DArrayTy *)0x577e9d;
+            FreeAndNull((void **)&stack0xffffffdc);
             pcVar9 = extraout_ECX_04;
           }
         }
-        if (groupContent != (uint *)0x0) {
-          FUN_006ae110((byte *)groupContent);
+        if (array != (DArrayTy *)0x0) {
+          DArrayDestroy(array);
           pcVar9 = extraout_ECX_05;
         }
         cMf32::delete(pcVar9,pcVar11);

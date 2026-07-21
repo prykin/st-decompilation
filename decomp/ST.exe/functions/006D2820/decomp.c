@@ -1,6 +1,10 @@
 
-void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param_5,uint param_6,
-                 uint param_7,int param_8,byte *param_9,int param_10,uint param_11,byte *param_12)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006B84D0 -> 006D2820 @ 006B85C2 */
+
+void FUN_006d2820(byte *param_1,AnonShape_006B84D0_7C7D97C6 *param_2,byte *param_3,int param_4,
+                 uint param_5,uint param_6,uint param_7,int param_8,byte *param_9,int param_10,
+                 uint param_11,byte *param_12)
 
 {
   byte bVar1;
@@ -34,7 +38,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
         ;
         return;
       }
-      FUN_006d25e0(param_1,param_2,param_12,param_6,param_7);
+      FUN_006d25e0(param_1,(int)param_2,param_12,param_6,param_7);
       return;
     }
     if (param_9 == (byte *)0x0) {
@@ -46,7 +50,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
           uVar3 = param_6;
           pbVar11 = param_1;
           if (uVar6 == 0) {
-            param_1 = param_1 + param_2;
+            param_1 = param_1 + (int)param_2;
           }
           else {
             while( true ) {
@@ -94,7 +98,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
               uVar6 = (uint)*param_12;
               param_12 = param_12 + 1;
             }
-            param_1 = pbVar11 + (param_2 - param_6);
+            param_1 = pbVar11 + ((int)param_2 - param_6);
           }
           param_9 = param_9 + -1;
         } while (param_9 != (byte *)0x0);
@@ -110,7 +114,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
         pbVar11 = param_1;
         param_3 = param_9;
         if (uVar3 == 0) {
-          param_1 = param_1 + param_2;
+          param_1 = param_1 + (int)param_2;
         }
         else {
           while( true ) {
@@ -179,7 +183,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
             uVar3 = (uint)*param_12;
             param_12 = param_12 + 1;
           }
-          param_1 = pbVar11 + (param_2 - param_6);
+          param_1 = pbVar11 + ((int)param_2 - param_6);
         }
         param_9 = param_9 + param_10;
         param_7 = param_7 - 1;
@@ -191,7 +195,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
     param_3 = param_9;
     if (param_8 == 0) {
       if (param_9 == (byte *)0x0) {
-        FUN_006d26d0(param_1,param_2,param_12,uVar3,param_4,param_6,param_7);
+        FUN_006d26d0(param_1,(int)param_2,param_12,uVar3,param_4,param_6,param_7);
         return;
       }
       if (-1 < (int)(param_7 - 1)) {
@@ -200,7 +204,7 @@ void FUN_006d2820(byte *param_1,int param_2,byte *param_3,int param_4,uint param
           uVar6 = (uint)*param_12;
           param_12 = param_12 + 1;
           if (uVar6 == 0) {
-            param_1 = param_1 + param_2;
+            param_1 = param_1 + (int)param_2;
           }
           else {
             param_7 = (0x80 >> (bVar7 & 7)) << 0x18;
@@ -362,7 +366,7 @@ LAB_006d2b87:
             if ((bVar2 & 0xc0) == 0x80) {
               param_12 = param_12 + iVar10;
             }
-            param_1 = param_1 + (param_2 - param_6);
+            param_1 = param_1 + ((int)param_2 - param_6);
             param_3 = param_9;
           }
           if (param_3 != (byte *)0x0) {
@@ -384,7 +388,7 @@ LAB_006d2b87:
           param_12 = param_12 + 1;
           iVar10 = param_4;
           if (param_7 == 0) {
-            param_1 = param_1 + param_2;
+            param_1 = param_1 + (int)param_2;
           }
           else {
             while( true ) {
@@ -526,7 +530,7 @@ LAB_006d2e2c:
             if ((bVar7 & 0xc0) == 0x80) {
               param_12 = param_12 + iVar10;
             }
-            param_1 = pbVar11 + (param_2 - param_6);
+            param_1 = pbVar11 + ((int)param_2 - param_6);
           }
           if (param_9 != (byte *)0x0) {
             param_9 = param_9 + param_10;
@@ -544,7 +548,7 @@ LAB_006d2e2c:
         uVar6 = (uint)*param_12;
         param_12 = param_12 + 1;
         if (uVar6 == 0) {
-          param_1 = param_1 + param_2;
+          param_1 = param_1 + (int)param_2;
         }
         else {
           param_7 = (0x80 >> (bVar7 & 7)) << 0x18;
@@ -708,7 +712,7 @@ LAB_006d306f:
           if ((bVar2 & 0xc0) == 0x80) {
             param_12 = param_12 + iVar10;
           }
-          param_1 = param_1 + (param_2 - param_6);
+          param_1 = param_1 + ((int)param_2 - param_6);
           param_3 = param_9;
         }
         if (param_3 != (byte *)0x0) {

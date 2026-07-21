@@ -1,0 +1,8 @@
+ST return semantics
+
+Functions: 5630
+Proposals: 56
+Automatic: 56
+leaf_void: 53
+boolean_return_domain: 3
+noreturn_terminal_call: 0

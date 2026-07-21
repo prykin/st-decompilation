@@ -11,7 +11,7 @@ STAllPlayersC::UnRegisterMine
   code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
-  AnonShape_0044A150_E4FE1661 *pAVar2;
+  STGameObjC *pSVar2;
   int iVar3;
   undefined4 uVar4;
   undefined4 extraout_EDX;
@@ -29,9 +29,9 @@ STAllPlayersC::UnRegisterMine
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (errorCode == 0) {
-    pAVar2 = (AnonShape_0044A150_E4FE1661 *)GetObjPtr(local_c,param_1,param_2,CASE_3);
+    pSVar2 = GetObjPtr(local_c,param_1,param_2,CASE_3);
     uVar4 = extraout_EDX;
-    if (pAVar2 != param_3) {
+    if (pSVar2 != (STGameObjC *)param_3) {
       RaiseInternalException
                 (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0x2f1d);

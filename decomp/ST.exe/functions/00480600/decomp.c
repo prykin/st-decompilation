@@ -3,7 +3,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
 
 {
   STT3DSprC *this;
-  char cVar1;
+  byte bVar1;
   bool bVar2;
   int iVar3;
   uint uVar4;
@@ -181,24 +181,19 @@ LAB_00480a79:
                 iVar5 = 0;
               }
               else {
-                uVar11 = (uint)DAT_0080874d;
-                uVar4 = (uint)bVar20;
-                cVar1 = *(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4);
-                if ((cVar1 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) == '\0'))
-                {
+                uVar4 = (uint)DAT_0080874d;
+                bVar1 = g_playerRelationMatrix[uVar4][bVar20];
+                if ((bVar1 == 0) && (g_playerRelationMatrix[bVar20][uVar4] == 0)) {
                   iVar5 = -2;
                 }
-                else if ((cVar1 == '\x01') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) == '\0')) {
+                else if ((bVar1 == 1) && (g_playerRelationMatrix[bVar20][uVar4] == 0)) {
                   iVar5 = -1;
                 }
-                else if ((cVar1 == '\0') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) == '\x01')) {
+                else if ((bVar1 == 0) && (g_playerRelationMatrix[bVar20][uVar4] == 1)) {
                   iVar5 = 1;
                 }
                 else {
-                  if ((cVar1 != '\x01') ||
-                     (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) != '\x01'))
+                  if ((bVar1 != 1) || (g_playerRelationMatrix[bVar20][uVar4] != 1))
                   goto LAB_00480a79;
                   iVar5 = 2;
                 }
@@ -234,24 +229,19 @@ LAB_00480b30:
                   iVar5 = 0;
                 }
                 else {
-                  uVar4 = (uint)bVar20;
-                  uVar11 = (uint)DAT_0080874d;
-                  cVar1 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11);
-                  if ((cVar1 == '\0') &&
-                     (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) == '\0')) {
+                  uVar4 = (uint)DAT_0080874d;
+                  bVar1 = g_playerRelationMatrix[bVar20][uVar4];
+                  if ((bVar1 == 0) && (g_playerRelationMatrix[uVar4][bVar20] == 0)) {
                     iVar5 = -2;
                   }
-                  else if ((cVar1 == '\x01') &&
-                          (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) == '\0')) {
+                  else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar4][bVar20] == 0)) {
                     iVar5 = -1;
                   }
-                  else if ((cVar1 == '\0') &&
-                          (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) == '\x01')) {
+                  else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar4][bVar20] == 1)) {
                     iVar5 = 1;
                   }
                   else {
-                    if ((cVar1 != '\x01') ||
-                       (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) != '\x01'))
+                    if ((bVar1 != 1) || (g_playerRelationMatrix[uVar4][bVar20] != 1))
                     goto LAB_00480b30;
                     iVar5 = 2;
                   }
@@ -306,23 +296,19 @@ LAB_00480d55:
           iVar3 = 0;
         }
         else {
-          uVar11 = (uint)DAT_0080874d;
-          uVar4 = (uint)bVar20;
-          cVar1 = *(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4);
-          if ((cVar1 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) == '\0')) {
+          uVar4 = (uint)DAT_0080874d;
+          bVar1 = g_playerRelationMatrix[uVar4][bVar20];
+          if ((bVar1 == 0) && (g_playerRelationMatrix[bVar20][uVar4] == 0)) {
             iVar3 = -2;
           }
-          else if ((cVar1 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) == '\0')
-                  ) {
+          else if ((bVar1 == 1) && (g_playerRelationMatrix[bVar20][uVar4] == 0)) {
             iVar3 = -1;
           }
-          else if ((cVar1 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) == '\x01')
-                  ) {
+          else if ((bVar1 == 0) && (g_playerRelationMatrix[bVar20][uVar4] == 1)) {
             iVar3 = 1;
           }
           else {
-            if ((cVar1 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11) != '\x01'))
-            goto LAB_00480d55;
+            if ((bVar1 != 1) || (g_playerRelationMatrix[bVar20][uVar4] != 1)) goto LAB_00480d55;
             iVar3 = 2;
           }
         }
@@ -339,23 +325,19 @@ LAB_00480e0f:
             iVar3 = 0;
           }
           else {
-            uVar4 = (uint)bVar20;
-            uVar11 = (uint)DAT_0080874d;
-            cVar1 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar11);
-            if ((cVar1 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) == '\0')) {
+            uVar4 = (uint)DAT_0080874d;
+            bVar1 = g_playerRelationMatrix[bVar20][uVar4];
+            if ((bVar1 == 0) && (g_playerRelationMatrix[uVar4][bVar20] == 0)) {
               iVar3 = -2;
             }
-            else if ((cVar1 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) == '\0')) {
+            else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar4][bVar20] == 0)) {
               iVar3 = -1;
             }
-            else if ((cVar1 == '\0') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) == '\x01')) {
+            else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar4][bVar20] == 1)) {
               iVar3 = 1;
             }
             else {
-              if ((cVar1 != '\x01') ||
-                 (*(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar4) != '\x01')) goto LAB_00480e0f;
+              if ((bVar1 != 1) || (g_playerRelationMatrix[uVar4][bVar20] != 1)) goto LAB_00480e0f;
               iVar3 = 2;
             }
           }

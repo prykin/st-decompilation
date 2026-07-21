@@ -1,6 +1,9 @@
 
-void FUN_006b4170(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                 undefined1 param_7)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006C7610 -> 006B4170 @ 006C769F */
+
+void FUN_006b4170(AnonShape_006C7610_838EDECF *param_1,int param_2,int param_3,int param_4,
+                 int param_5,int param_6,undefined1 param_7)
 
 {
   undefined1 *puVar1;
@@ -30,7 +33,7 @@ void FUN_006b4170(int param_1,int param_2,int param_3,int param_4,int param_5,in
     puVar1 = &stack0xffffffa0;
     if (param_2 == 0) {
       ExceptionList = &local_14;
-      param_2 = FUN_006b4fa0(param_1);
+      param_2 = FUN_006b4fa0((int)param_1);
       puVar1 = local_1c;
     }
     local_1c = puVar1;
@@ -40,9 +43,9 @@ void FUN_006b4170(int param_1,int param_2,int param_3,int param_4,int param_5,in
     local_2c.right = param_3 + param_5;
     local_3c.left = 0;
     local_3c.top = 0;
-    local_3c.right = *(int *)(param_1 + 4);
+    local_3c.right = param_1->field_0004;
     uVar6 = local_3c.right + 3U & 0xfffffffc;
-    local_3c.bottom = *(int *)(param_1 + 8);
+    local_3c.bottom = param_1->field_0008;
     if (local_3c.bottom < 0) {
       local_3c.bottom = -local_3c.bottom;
       uVar6 = -uVar6;

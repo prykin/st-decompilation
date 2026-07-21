@@ -1,13 +1,19 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00692920 parameter used as this of cMf32::RecGet @ 00692946 | 00692920 parameter used
-   as this of cMf32::RecMemFree @ 00692A69 */
+   as this of cMf32::RecMemFree @ 00692A69
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00692920 returns used as parameter 1 of FUN_006b4b20 @ 00691B46 | 00692920 returns used
+   as parameter 1 of FUN_006b4b20 @ 00691DAB | 00692920 returns used as parameter 1 of FUN_006b4b20
+   @ 00691FE9 */
 
-int FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,int param_5)
+AnonShape_006B4B20_3D4F4412 *
+FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,int param_5)
 
 {
   undefined4 *puVar1;
-  int iVar2;
+  AnonShape_006B4B20_3D4F4412 *pAVar2;
   undefined1 *puVar3;
   uint uVar4;
   undefined1 *puVar5;
@@ -19,11 +25,12 @@ int FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int para
   int local_8;
   
   puVar1 = param_3;
-  iVar2 = 0;
+  pAVar2 = (AnonShape_006B4B20_3D4F4412 *)0x0;
   if (param_2 != (undefined4 *)0x0) {
     local_10 = cMf32::RecGet(param_1,1,s_PAL_APP_007d59d4,(int *)0x0,1);
-    iVar2 = FUN_006b50c0((int)param_3,param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1);
-    local_8 = FUN_006b4fa0(iVar2);
+    pAVar2 = (AnonShape_006B4B20_3D4F4412 *)
+             FUN_006b50c0((int)param_3,param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1);
+    local_8 = FUN_006b4fa0((int)pAVar2);
     if (param_5 == 0) {
       if (0 < param_4) {
         param_3 = (undefined4 *)param_4;
@@ -32,8 +39,8 @@ int FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int para
           param_2 = (undefined4 *)(param_4 + -1);
           puVar6 = puVar8;
           puVar7 = (undefined4 *)
-                   (((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc)
-                    * (int)param_2 + local_8);
+                   (((uint)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+                    (int)param_2 + local_8);
           for (uVar4 = (uint)puVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
             *puVar7 = *puVar6;
             puVar6 = puVar6 + 1;
@@ -56,7 +63,7 @@ int FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int para
       do {
         param_2 = (undefined4 *)(param_4 + -1);
         puVar3 = (undefined1 *)
-                 (((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+                 (((uint)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                   (int)param_2 + local_8);
         if (0 < (int)puVar1) {
           puVar5 = puVar3;
@@ -76,6 +83,6 @@ int FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int para
     }
     cMf32::RecMemFree(param_1,(uint *)&local_10);
   }
-  return iVar2;
+  return pAVar2;
 }
 

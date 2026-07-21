@@ -1,9 +1,17 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=11; incoming_edx_uses=0; calls=1;
+   ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=4; adopt_untyped_existing_thiscall;
+   single_call_corroborated_by_receiver_family */
 
 void __thiscall
-FUN_00727da0(void *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int param_3)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
+          (AnonReceiver_00727C80 *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int param_3
+          )
 
 {
   AnonShape_00727DA0_C4265AA0 *pAVar1;
@@ -29,7 +37,7 @@ FUN_00727da0(void *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int pa
   int local_38;
   AnonShape_00728170_E57D1DF1 local_34;
   int local_c;
-  void *local_8;
+  AnonReceiver_00727C80 *local_8;
   
   iVar4 = param_1->field_0028 + param_2 * 0x1c;
   puVar7 = (undefined4 *)
@@ -48,16 +56,16 @@ FUN_00727da0(void *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int pa
   DAT_008570cc = puVar7[1];
   DAT_008570d0 = puVar7[2];
   _DAT_008570d4 = puVar7[3];
-  iVar4 = *(int *)((int)this + 0x124);
+  iVar4 = *(int *)&this->field_0x124;
   if (iVar4 == 2) {
-    _DAT_008570f8 = (uint)*(byte *)(param_1->field_0008 + 0x438 + (int)this);
+    _DAT_008570f8 = (uint)(byte)(&this[1].field_0x150)[param_1->field_0008];
   }
   else if (iVar4 == 6) {
     _DAT_008570f8 = param_2;
-    DAT_008570a0 = '\x01' << ((byte)(*(int *)((int)this + 0xa8) << 1) & 0x1f);
+    DAT_008570a0 = '\x01' << ((byte)(*(int *)&this->field_0xa8 << 1) & 0x1f);
     DAT_008570d8 = param_1->field_003C;
-    DAT_00857078 = (int)(*(int *)((int)this + 0x2e4) + (*(int *)((int)this + 0x2e4) >> 0x1f & 3U))
-                   >> 2;
+    DAT_00857078 = (int)(*(int *)&this->field_0x2e4 + (*(int *)&this->field_0x2e4 >> 0x1f & 3U)) >>
+                   2;
     if (DAT_00857078 < 0x20000) {
       DAT_00857078 = 0x20000;
     }
@@ -95,14 +103,14 @@ FUN_00727da0(void *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int pa
       local_60._0_4_ = 1;
       iVar4 = FUN_00727c80((int *)&local_60,param_2);
       if (iVar4 != 0) {
-        if (*(int *)((int)this + 0x124) == 6) {
-          iVar4 = *(int *)((int)this + 0x28) * DAT_00857098;
-          param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)((int)this + 0xc) + iVar4);
-          param_2 = *(int *)((int)this + 0x14) + iVar4 * 2;
-          if (DAT_00857098 < *(int *)((int)this + 0x3c)) {
+        if (*(int *)&this->field_0x124 == 6) {
+          iVar4 = *(int *)&this->field_0x28 * DAT_00857098;
+          param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar4);
+          param_2 = *(int *)&this->field_0x14 + iVar4 * 2;
+          if (DAT_00857098 < *(int *)&this->field_0x3c) {
             do {
               uVar5 = local_34.field_001C;
-              if (*(int *)((int)this + 0x34) <= DAT_00857098) {
+              if (*(int *)&this->field_0x34 <= DAT_00857098) {
                 uVar14 = local_34.field_0024 & 0xffff0000;
                 uVar11 = (local_60.field_0024 & 0xffff0000) - uVar14;
                 this = local_8;
@@ -178,21 +186,21 @@ FUN_00727da0(void *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int pa
               }
               DAT_00857098 = DAT_00857098 + 1;
               param_1 = (AnonShape_00727DA0_C4265AA0 *)
-                        (&param_1->field_0x0 + *(int *)((int)this + 0x28));
-              param_2 = param_2 + *(int *)((int)this + 0x28) * 2;
-            } while (DAT_00857098 < *(int *)((int)this + 0x3c));
+                        (&param_1->field_0x0 + *(int *)&this->field_0x28);
+              param_2 = param_2 + *(int *)&this->field_0x28 * 2;
+            } while (DAT_00857098 < *(int *)&this->field_0x3c);
             return;
           }
         }
-        else if (DAT_00857098 < *(int *)((int)this + 0x3c)) {
+        else if (DAT_00857098 < *(int *)&this->field_0x3c) {
           do {
-            if (*(int *)((int)this + 0x34) <= DAT_00857098) {
+            if (*(int *)&this->field_0x34 <= DAT_00857098) {
               FUN_00728170(&local_34,&local_60);
             }
             bVar3 = FUN_00727d50((int *)&local_34);
           } while (((CONCAT31(extraout_var,bVar3) != 0) &&
                    (bVar3 = FUN_00727d50((int *)&local_60), CONCAT31(extraout_var_00,bVar3) != 0))
-                  && (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < *(int *)((int)this + 0x3c)));
+                  && (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < *(int *)&this->field_0x3c));
         }
       }
     }

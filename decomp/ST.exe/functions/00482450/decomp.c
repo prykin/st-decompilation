@@ -12,8 +12,8 @@ STBoatC::GetExplosionInfo
   code *pcVar1;
   STBoatC *pSVar2;
   int iVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
+  uint uVar5;
   uint uVar6;
   uint uVar7;
   uint uVar8;
@@ -62,16 +62,15 @@ STBoatC::GetExplosionInfo
               (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
                0x3d4f);
   }
-  uVar4 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)(&pSVar2->field_0282)[iVar3],local_28,
-                       &local_34);
-  if (uVar4 == 0xfffffffc) {
+  iVar3 = DArrayGetElement((DArrayTy *)(&pSVar2->field_0282)[iVar3],local_28,&local_34);
+  if (iVar3 == -4) {
     RaiseInternalException
               (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
                0x3d50);
   }
-  puVar5 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,local_34,local_30,pSVar2->field_006C);
-  uVar9 = *puVar5;
-  local_30 = *(short *)(puVar5 + 1);
+  puVar4 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,local_34,local_30,pSVar2->field_006C);
+  uVar9 = *puVar4;
+  local_30 = *(short *)(puVar4 + 1);
   *param_2 = pSVar2->field_0041 + (short)uVar9;
   local_34._2_2_ = (short)((uint)uVar9 >> 0x10);
   *param_3 = pSVar2->field_0043 - local_34._2_2_;
@@ -82,14 +81,14 @@ STBoatC::GetExplosionInfo
   local_3c = (uint)(short)lVar11;
   local_38 = (int)local_3c >> 0x1f;
   lVar11 = Library::MSVCRT::__ftol();
-  uVar4 = (uint)(short)lVar11;
-  local_28 = (int)uVar4 >> 0x1f;
-  local_2c = uVar4;
+  uVar5 = (uint)(short)lVar11;
+  local_28 = (int)uVar5 >> 0x1f;
+  local_2c = uVar5;
   lVar11 = Library::MSVCRT::__ftol();
   uVar6 = (uint)(short)lVar11;
   local_20 = CONCAT44((int)uVar6 >> 0x1f,(undefined4)local_20);
   uVar7 = (uint)pSVar2->field_0043;
-  iVar10 = (((int)uVar7 >> 0x1f) - local_28) - (uint)(uVar7 < uVar4);
+  iVar10 = (((int)uVar7 >> 0x1f) - local_28) - (uint)(uVar7 < uVar5);
   uVar8 = (uint)pSVar2->field_0041;
   local_18 = uVar8 - local_3c;
   local_14[0] = (float)((((int)uVar8 >> 0x1f) - local_38) - (uint)(uVar8 < local_3c));
@@ -110,7 +109,7 @@ STBoatC::GetExplosionInfo
   local_c = (float)((ulonglong)lVar11 >> 0x20);
   lVar11 = Library::MSVCRT::__allmul(local_18,(int)local_14[0],local_18,(int)local_14[0]);
   local_3c = (uint)lVar11;
-  lVar12 = Library::MSVCRT::__allmul(uVar7 - uVar4,iVar10,uVar7 - uVar4,iVar10);
+  lVar12 = Library::MSVCRT::__allmul(uVar7 - uVar5,iVar10,uVar7 - uVar5,iVar10);
   if ((longlong)(lVar12 + CONCAT44((int)((ulonglong)lVar11 >> 0x20),local_3c) + local_20) <=
       CONCAT44(local_c,local_28)) {
     *param_5 = (uint)(local_30 + 0x46 < 0x15);

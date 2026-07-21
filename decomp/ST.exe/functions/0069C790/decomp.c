@@ -50,7 +50,7 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
         uVar2 = *(uint *)(iVar3 + 0xc);
       } while ((int)uVar4 < (int)uVar2);
     }
-    FUN_006ae110(*(byte **)(iVar5 + 0xc));
+    DArrayDestroy(*(DArrayTy **)(iVar5 + 0xc));
     thunk_FUN_0069c670((DArrayTy *)param_1,param_2,param_4);
     iVar3 = local_c;
   }

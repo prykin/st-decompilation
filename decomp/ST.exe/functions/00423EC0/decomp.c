@@ -80,13 +80,13 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
   }
   else if (param_1->field_0010 == 3) {
     thunk_FUN_00423e00(this_00);
-    FUN_006ae110((byte *)this_00->field_0029);
+    DArrayDestroy((DArrayTy *)this_00->field_0029);
     this_00->field_0029 = 0;
     STAllPlayersC::UnRegisterGroup
               (g_sTAllPlayers_007FA174,this_00->field_0024,
                CONCAT22(extraout_var_00,this_00->field_0025),(int)this_00);
-    if ((byte *)this_00->field_002D != (byte *)0x0) {
-      FUN_006ae110((byte *)this_00->field_002D);
+    if ((DArrayTy *)this_00->field_002D != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)this_00->field_002D);
       this_00->field_002D = 0;
       g_currentExceptionFrame = local_50.previous;
       return 0;

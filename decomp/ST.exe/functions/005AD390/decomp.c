@@ -105,7 +105,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
               }
               local_6c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
               if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
-                (**(code **)this_00->field_0000)(local_6c);
+                (*(code *)this_00->field_0000->field_0000)(local_6c);
               }
               else {
                 local_6c[2] = this_00->field_0008;
@@ -160,7 +160,7 @@ switchD_005adb01_caseD_c:
                 StartSystemTy::AddToChat(this_00->field_1A5B,(int)local_c);
               }
               if (local_c != (AnonShape_005AD390_9AB360A8 *)0x0) {
-                FUN_006ab060(&local_c);
+                FreeAndNull(&local_c);
               }
             }
             local_10 = local_10 + 1;

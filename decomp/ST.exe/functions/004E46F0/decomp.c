@@ -22,9 +22,9 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
     do {
       iVar1 = iVar6 % 0x1d + -0xf + param_1[0x16c];
       iVar3 = iVar6 / 0x1d + -0xf + param_1[0x16d];
-      if ((((-1 < iVar1) && (iVar1 < SHORT_007fb240)) && (-1 < iVar3)) && (iVar3 < SHORT_007fb242))
-      {
-        iVar3 = SHORT_007fb240 * iVar3 + DAT_007fa168;
+      if ((((-1 < iVar1) && (iVar1 < g_worldGrid.sizeX)) && (-1 < iVar3)) &&
+         (iVar3 < g_worldGrid.sizeY)) {
+        iVar3 = g_worldGrid.sizeX * iVar3 + DAT_007fa168;
         bVar2 = *(byte *)(iVar3 + iVar1);
         uVar5 = (uint)bVar2;
         if (uVar5 != 0) {

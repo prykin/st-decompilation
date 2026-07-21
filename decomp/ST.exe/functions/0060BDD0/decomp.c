@@ -35,7 +35,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_38[2] = *(undefined4 *)((int)this + 0x1d9);
     local_38[0] = DAT_007e67b0;
     local_38[1] = 0x42;
-    iVar1 = thunk_FUN_004406c0(*(char *)(param_1 + 9));
+    iVar1 = GetPlayerRaceId(*(char *)(param_1 + 9));
     if ((char)iVar1 == '\x03') {
       iVar1 = thunk_FUN_004e60d0(param_1[9],0x6a);
     }

@@ -159,7 +159,8 @@ LAB_00629242:
   FUN_006e8660(PTR_00807598,puVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
                local_10,local_c,0);
   if (DAT_00807326 != '\0') {
-    FUN_006e9520(PTR_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+              ((AnonReceiver_004248D0 *)PTR_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
   }
   FUN_006e98e0(PTR_00807598,*puVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
   FUN_006ea270(PTR_00807598,*puVar1,0,0);

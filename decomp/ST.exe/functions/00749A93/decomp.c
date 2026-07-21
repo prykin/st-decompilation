@@ -22,9 +22,9 @@ undefined4 * __thiscall FUN_00749a93(void *this,undefined4 *param_1,undefined4 p
   *(undefined4 *)((int)this + 0xb4) = 0;
   *(undefined4 *)((int)this + 0xbc) = 0;
   *(undefined4 *)((int)this + 0xc0) = 0;
-  *(undefined ***)this = &PTR_FUN_007a13d0;
-  *(undefined ***)((int)this + 0xc) = &PTR_FUN_007a1390;
-  *(undefined ***)((int)this + 0x10) = &PTR_FUN_007a1378;
+  *(VTable_007A13D0 **)this = &VTable_007A13D0;
+  *(VTable_007A1390 **)((int)this + 0xc) = &VTable_007A1390;
+  *(VTable_007A1378 **)((int)this + 0x10) = &VTable_007A1378;
   SetEvent(*(HANDLE *)((int)this + 0x5c));
   return this;
 }

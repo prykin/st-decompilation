@@ -17,7 +17,7 @@ undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,AnonShape_00617640
   undefined4 *puVar7;
   InternalExceptionFrame local_54;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   JumpManagC *local_8;
   
   local_54.previous = g_currentExceptionFrame;
@@ -57,15 +57,15 @@ undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,AnonShape_00617640
   else if (iVar3 == 3) {
     thunk_FUN_00618ad0((AnonShape_00618AD0_F1827B9B *)local_8);
     if (pJVar2->field_005E != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)pJVar2->field_005E);
+      DArrayDestroy(pJVar2->field_005E);
       pJVar2->field_005E = (DArrayTy *)0x0;
     }
-    if ((byte *)pJVar2->field_0062 != (byte *)0x0) {
-      FUN_006ae110((byte *)pJVar2->field_0062);
+    if ((DArrayTy *)pJVar2->field_0062 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pJVar2->field_0062);
       pJVar2->field_0062 = 0;
     }
-    if ((byte *)pJVar2->field_0066 != (byte *)0x0) {
-      FUN_006ae110((byte *)pJVar2->field_0066);
+    if ((DArrayTy *)pJVar2->field_0066 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pJVar2->field_0066);
       pJVar2->field_0066 = 0;
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -74,7 +74,7 @@ undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,AnonShape_00617640
   else if (iVar3 == 0x10f) {
     local_10 = thunk_FUN_00617fb0(local_8,(int *)&local_c);
     STPlaySystemC::SaveObjData(PTR_00802a38,pJVar2->field_0018,local_10,local_c);
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

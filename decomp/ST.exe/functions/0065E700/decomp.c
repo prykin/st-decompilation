@@ -4,7 +4,7 @@ FUN_0065e700(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2,int *param_
             int *param_5)
 
 {
-  uint *groupContent;
+  DArrayTy *array;
   int *piVar1;
   STFishC *this;
   int *extraout_ECX;
@@ -18,22 +18,22 @@ FUN_0065e700(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2,int *param_
   short local_8;
   short local_6;
   
-  groupContent = thunk_FUN_0065da10(param_1,param_2);
-  if ((groupContent == (uint *)0x0) || (groupContent[3] == 0)) {
+  array = (DArrayTy *)thunk_FUN_0065da10(param_1,param_2);
+  if ((array == (DArrayTy *)0x0) || (array->count == 0)) {
     return 0xffffffff;
   }
   uVar4 = 0;
   *param_5 = 0;
   *param_4 = 0;
   *param_3 = 0;
-  if (0 < (int)groupContent[3]) {
-    bVar5 = groupContent[3] != 0;
+  if (0 < (int)array->count) {
+    bVar5 = array->count != 0;
     piVar2 = param_3;
     iVar3 = extraout_EDX;
     do {
       if (bVar5) {
-        piVar2 = (int *)groupContent[7];
-        piVar1 = (int *)(groupContent[2] * uVar4 + (int)piVar2);
+        piVar2 = array->data;
+        piVar1 = (int *)(array->elementSize * uVar4 + (int)piVar2);
       }
       else {
         piVar1 = (int *)0x0;
@@ -54,10 +54,10 @@ FUN_0065e700(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2,int *param_
         *param_5 = (int)piVar2;
       }
       uVar4 = uVar4 + 1;
-      bVar5 = uVar4 < groupContent[3];
-    } while ((int)uVar4 < (int)groupContent[3]);
+      bVar5 = uVar4 < array->count;
+    } while ((int)uVar4 < (int)array->count);
   }
-  FUN_006ae110((byte *)groupContent);
+  DArrayDestroy(array);
   if (0 < (int)uVar4) {
     *param_3 = *param_3 / (int)uVar4;
     *param_4 = *param_4 / (int)uVar4;

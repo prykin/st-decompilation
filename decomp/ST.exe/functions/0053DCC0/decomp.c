@@ -43,12 +43,12 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
       local_8 = cMf32::RecGet(DAT_00806790,param_2,text,(int *)0x0,1);
       iVar4 = local_c;
       pUVar3 = local_14;
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,local_10,local_c,param_2,
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (param_1->field_0014 == 3) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_4,(int *)0x0,1);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,local_10,iVar4,'\x06',
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar3->field_0068,local_10,iVar4,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }

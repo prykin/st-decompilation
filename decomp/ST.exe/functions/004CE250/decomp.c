@@ -21,13 +21,14 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
         iVar4 = *(int *)((int)this + 0x5b4) + -1;
         sVar6 = (short)*(undefined4 *)((int)this + 0x5b0);
         if (((((-1 < iVar4) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
-             (sVar6 < SHORT_007fb240)) &&
-            ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < SHORT_007fb242)))) &&
+             (sVar6 < g_worldGrid.sizeX)) &&
+            ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < g_worldGrid.sizeY)))) &&
            ((-1 < sVar1 &&
-            ((sVar1 < SHORT_007fb244 &&
-             (pSVar2 = g_worldCells
-                       [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
-                        (int)sVar6].objects[0], pSVar2 != (STWorldObject *)0x0)))))) {
+            ((sVar1 < g_worldGrid.sizeZ &&
+             (pSVar2 = g_worldGrid.cells
+                       [(int)g_worldGrid.planeStride * (int)sVar1 +
+                        (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
+             pSVar2 != (STWorldObject *)0x0)))))) {
           iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
           if (0x53 < iVar4) {
             iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
@@ -38,14 +39,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           }
         }
         iVar4 = *(int *)((int)this + 0x5b4) + 1;
-        if ((((iVar4 < SHORT_007fb242) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
-            (sVar6 < SHORT_007fb240)) &&
-           (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < SHORT_007fb242)) &&
+        if ((((iVar4 < g_worldGrid.sizeY) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
+            (sVar6 < g_worldGrid.sizeX)) &&
+           (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < g_worldGrid.sizeY)) &&
             ((-1 < sVar1 &&
-             ((sVar1 < SHORT_007fb244 &&
-              (pSVar2 = g_worldCells
-                        [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar6].objects[0], pSVar2 != (STWorldObject *)0x0)))))))) {
+             ((sVar1 < g_worldGrid.sizeZ &&
+              (pSVar2 = g_worldGrid.cells
+                        [(int)g_worldGrid.planeStride * (int)sVar1 +
+                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
+              pSVar2 != (STWorldObject *)0x0)))))))) {
           iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
           if (0x53 < iVar4) {
             iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
@@ -60,12 +62,13 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
         if (-1 < iVar4) {
           sVar1 = *(short *)((int)this + 0x5b8);
           sVar3 = (short)iVar4;
-          if ((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar6)) &&
-             (((sVar6 < SHORT_007fb242 && (-1 < sVar1)) &&
-              ((sVar1 < SHORT_007fb244 &&
-               (pSVar2 = g_worldCells
-                         [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar6 +
-                          (int)sVar3].objects[0], pSVar2 != (STWorldObject *)0x0)))))) {
+          if ((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
+             (((sVar6 < g_worldGrid.sizeY && (-1 < sVar1)) &&
+              ((sVar1 < g_worldGrid.sizeZ &&
+               (pSVar2 = g_worldGrid.cells
+                         [(int)g_worldGrid.planeStride * (int)sVar1 +
+                          (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar3].objects[0],
+               pSVar2 != (STWorldObject *)0x0)))))) {
             iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
             if (0x53 < iVar4) {
               iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
@@ -77,15 +80,16 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           }
         }
         iVar4 = *(int *)((int)this + 0x5b0) + 1;
-        if (iVar4 < SHORT_007fb240) {
+        if (iVar4 < g_worldGrid.sizeX) {
           sVar1 = *(short *)((int)this + 0x5b8);
           sVar3 = (short)iVar4;
-          if (((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar6)) &&
-              ((sVar6 < SHORT_007fb242 && (-1 < sVar1)))) &&
-             ((sVar1 < SHORT_007fb244 &&
-              (pSVar2 = g_worldCells
-                        [(int)SHORT_007fb246 * (int)sVar1 + (int)sVar6 * (int)SHORT_007fb240 +
-                         (int)sVar3].objects[0], pSVar2 != (STWorldObject *)0x0)))) {
+          if (((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
+              ((sVar6 < g_worldGrid.sizeY && (-1 < sVar1)))) &&
+             ((sVar1 < g_worldGrid.sizeZ &&
+              (pSVar2 = g_worldGrid.cells
+                        [(int)g_worldGrid.planeStride * (int)sVar1 +
+                         (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0],
+              pSVar2 != (STWorldObject *)0x0)))) {
             iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
             if (0x53 < iVar4) {
               iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);

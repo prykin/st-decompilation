@@ -45,7 +45,7 @@ ushort * __cdecl LoadStrategData(int param_1,char *param_2,int *param_3)
   }
   thunk_FUN_0067d160((int *)&local_c);
   if ((local_8 != (ushort *)0x0) && (local_8 != local_c)) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   RaiseInternalException(iVar2,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x3a);
   return (ushort *)0x0;

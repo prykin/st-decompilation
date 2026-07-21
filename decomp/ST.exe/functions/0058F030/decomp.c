@@ -33,7 +33,9 @@ undefined4 __fastcall FUN_0058f030(AnonShape_0058F030_ED0F322F *param_1)
   if (iVar3 == 0) {
     thunk_FUN_00417ff0(param_1,8);
     thunk_FUN_00418010(param_1,6);
-    iVar3 = thunk_FUN_00418030(param_1,param_1->field_0231,param_1->field_0233,param_1->field_0235);
+    iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                      ((AnonReceiver_00417FF0 *)param_1,param_1->field_0231,param_1->field_0233,
+                       param_1->field_0235);
     if (iVar3 == 0) {
       return 1;
     }
@@ -41,11 +43,14 @@ undefined4 __fastcall FUN_0058f030(AnonShape_0058F030_ED0F322F *param_1)
   else {
     thunk_FUN_00417ff0(param_1,8);
     thunk_FUN_00418010(param_1,6);
-    iVar3 = thunk_FUN_00418030(param_1,local_10[0],local_c[0],local_8[0]);
+    iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                      ((AnonReceiver_00417FF0 *)param_1,local_10[0],local_c[0],local_8[0]);
     if (iVar3 == 0) {
       return 1;
     }
-    iVar3 = thunk_FUN_00418030(param_1,param_1->field_0231,param_1->field_0233,param_1->field_0235);
+    iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                      ((AnonReceiver_00417FF0 *)param_1,param_1->field_0231,param_1->field_0233,
+                       param_1->field_0235);
     if (iVar3 == 0) {
       return 1;
     }

@@ -53,7 +53,7 @@ uint * FUN_0062d550(int *param_1,int *param_2)
             puVar9 = (uint *)((int)puVar9 + 1);
             puVar10 = (uint *)((int)puVar10 + 1);
           }
-          FUN_006ab060(&local_8);
+          FreeAndNull(&local_8);
           puVar8 = (uint *)((int)(puVar8 + 1) + (int)param_2);
         }
       }

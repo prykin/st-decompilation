@@ -33,7 +33,7 @@ void FUN_0072b0b0(void)
   uint local_2c;
   uint local_28;
   uint local_24;
-  int local_20;
+  AnonShape_006B84D0_7C7D97C6 *local_20;
   undefined1 *local_1c;
   void *local_14;
   undefined1 *puStack_10;
@@ -47,7 +47,7 @@ void FUN_0072b0b0(void)
   local_1c = &stack0xffffff58;
   local_3c = 0;
   ExceptionList = &local_14;
-  iVar4 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,&local_20,0);
+  iVar4 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,(int *)&local_20,0);
   if (iVar4 == 0) {
     if ((*DAT_00857118 & 1) == 0) {
       iVar4 = -1;
@@ -57,9 +57,9 @@ void FUN_0072b0b0(void)
     }
     else {
       local_8 = 0;
-      FUN_006cea60((undefined8 *)(DAT_00857118[2] * local_20 + DAT_00857118[1] + local_24),local_20,
-                   (undefined8 *)DAT_00857118[0x30],DAT_00857118[3],DAT_00857118[3],DAT_00857118[4])
-      ;
+      FUN_006cea60((undefined8 *)(DAT_00857118[2] * (int)local_20 + DAT_00857118[1] + local_24),
+                   (int)local_20,(undefined8 *)DAT_00857118[0x30],DAT_00857118[3],DAT_00857118[3],
+                   DAT_00857118[4]);
       local_8 = 0xffffffff;
       local_5c = DAT_00857118[1];
       local_68 = DAT_00857118[3] + local_5c;
@@ -84,9 +84,9 @@ void FUN_0072b0b0(void)
       if (((0 < (int)DAT_00857118[0xc]) && (0 < (int)DAT_00857118[0xd])) &&
          (iVar5 = FUN_006cfeb0((int *)&local_38,(int *)(DAT_00857118 + 10),piVar1), iVar5 != 0)) {
         local_8 = 1;
-        pbVar7 = (byte *)(local_34 * local_20 + local_38 + local_24);
+        pbVar7 = (byte *)(local_34 * (int)local_20 + local_38 + local_24);
         local_60 = pbVar7;
-        FUN_006cea60((undefined8 *)DAT_00857118[0x30],local_30,(undefined8 *)pbVar7,local_20,
+        FUN_006cea60((undefined8 *)DAT_00857118[0x30],local_30,(undefined8 *)pbVar7,(int)local_20,
                      local_30,local_2c);
         local_88 = local_38 - DAT_00857118[10];
         FUN_006d2820(pbVar7,local_20,*(byte **)(DAT_00857118[0x33] + DAT_00857118[0x31] * 4),
@@ -124,13 +124,13 @@ void FUN_0072b0b0(void)
         if ((local_3c != 0) &&
            (local_3c = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x34),&local_28,local_44,0),
            iVar4 = local_84, local_3c == 0)) {
-          local_3c = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,&local_20,0);
+          local_3c = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,(int *)&local_20,0);
           iVar4 = local_84;
           if (local_3c == 0) {
             local_8 = 2;
             FUN_006cea60((undefined8 *)(local_44[0] * local_54.y + local_28 + local_54.x),
-                         local_44[0],(undefined8 *)(local_94 * local_20 + local_98 + local_24),
-                         local_20,local_30,local_2c);
+                         local_44[0],(undefined8 *)(local_94 * (int)local_20 + local_98 + local_24),
+                         (int)local_20,local_30,local_2c);
             iVar4 = local_84;
             local_8 = 0xffffffff;
             (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))
@@ -177,11 +177,11 @@ void FUN_0072b0b0(void)
       uVar6 = 0;
       if ((iVar5 != 0) &&
          (uVar6 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x34),&local_28,local_44,0), uVar6 == 0)) {
-        uVar6 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,&local_20,0);
+        uVar6 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,(int *)&local_20,0);
         if (uVar6 == 0) {
           local_8 = 3;
           FUN_006cea60((undefined8 *)(local_44[0] * local_54.y + local_28 + local_54.x),local_44[0],
-                       (undefined8 *)(local_94 * local_20 + local_98 + local_24),local_20,
+                       (undefined8 *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,
                        local_68 - local_5c,iVar4 - local_80);
           local_8 = 0xffffffff;
           (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))(*(int **)(*DAT_00857134 + 0x44),0);

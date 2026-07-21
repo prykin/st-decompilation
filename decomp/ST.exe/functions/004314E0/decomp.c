@@ -12,7 +12,7 @@ STAllPlayersC::FramePick
   code *pcVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  STGameObjC *pSVar4;
   uint uVar5;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
@@ -35,15 +35,15 @@ STAllPlayersC::FramePick
   int local_4c;
   DArrayTy *local_48;
   DArrayTy *local_44;
-  AnonShape_006ACC70_C8641025 *local_40;
-  AnonShape_006ACC70_C8641025 *local_3c;
-  AnonShape_006ACC70_C8641025 *local_38;
-  AnonShape_006ACC70_C8641025 *local_34;
-  AnonShape_006ACC70_C8641025 *local_30;
-  AnonShape_006ACC70_C8641025 *local_2c;
-  AnonShape_006ACC70_C8641025 *local_28;
+  DArrayTy *local_40;
+  DArrayTy *local_3c;
+  DArrayTy *local_38;
+  DArrayTy *local_34;
+  DArrayTy *local_30;
+  DArrayTy *local_2c;
+  DArrayTy *local_28;
   DArrayTy *local_24;
-  AnonShape_006ACC70_C8641025 *local_20;
+  DArrayTy *local_20;
   DArrayTy *local_1c;
   DArrayTy *local_18;
   DArrayTy *local_14;
@@ -53,16 +53,16 @@ STAllPlayersC::FramePick
   
   local_10 = (DArrayTy *)0x0;
   local_18 = (DArrayTy *)0x0;
-  local_3c = (AnonShape_006ACC70_C8641025 *)0x0;
+  local_3c = (DArrayTy *)0x0;
   local_14 = (DArrayTy *)0x0;
   local_1c = (DArrayTy *)0x0;
-  local_40 = (AnonShape_006ACC70_C8641025 *)0x0;
-  local_34 = (AnonShape_006ACC70_C8641025 *)0x0;
-  local_2c = (AnonShape_006ACC70_C8641025 *)0x0;
-  local_20 = (AnonShape_006ACC70_C8641025 *)0x0;
-  local_28 = (AnonShape_006ACC70_C8641025 *)0x0;
-  local_30 = (AnonShape_006ACC70_C8641025 *)0x0;
-  local_38 = (AnonShape_006ACC70_C8641025 *)0x0;
+  local_40 = (DArrayTy *)0x0;
+  local_34 = (DArrayTy *)0x0;
+  local_2c = (DArrayTy *)0x0;
+  local_20 = (DArrayTy *)0x0;
+  local_28 = (DArrayTy *)0x0;
+  local_30 = (DArrayTy *)0x0;
+  local_38 = (DArrayTy *)0x0;
   local_24 = (DArrayTy *)0x0;
   local_44 = (DArrayTy *)0x0;
   local_48 = (DArrayTy *)0x0;
@@ -73,40 +73,40 @@ STAllPlayersC::FramePick
     g_currentExceptionFrame = local_90.previous;
     if (iVar2 == -0x5001fff7) {
       if (local_10 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_10);
+        DArrayDestroy(local_10);
       }
       if (local_18 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_18);
+        DArrayDestroy(local_18);
       }
-      if (local_3c != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_3c);
+      if (local_3c != (DArrayTy *)0x0) {
+        DArrayDestroy(local_3c);
       }
       if (local_14 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_14);
+        DArrayDestroy(local_14);
       }
       if (local_1c != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_1c);
+        DArrayDestroy(local_1c);
       }
-      if (local_40 != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_40);
+      if (local_40 != (DArrayTy *)0x0) {
+        DArrayDestroy(local_40);
       }
-      if (local_34 != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_34);
+      if (local_34 != (DArrayTy *)0x0) {
+        DArrayDestroy(local_34);
       }
-      if (local_2c != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_2c);
+      if (local_2c != (DArrayTy *)0x0) {
+        DArrayDestroy(local_2c);
       }
-      if (local_20 != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_20);
+      if (local_20 != (DArrayTy *)0x0) {
+        DArrayDestroy(local_20);
       }
-      if (local_28 != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_28);
+      if (local_28 != (DArrayTy *)0x0) {
+        DArrayDestroy(local_28);
       }
-      if (local_30 != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_30);
+      if (local_30 != (DArrayTy *)0x0) {
+        DArrayDestroy(local_30);
       }
-      if (local_38 != (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_38);
+      if (local_38 != (DArrayTy *)0x0) {
+        DArrayDestroy(local_38);
       }
       SelfCheckObjControl(this);
       return;
@@ -146,8 +146,8 @@ LAB_004318b5:
             ResetActivityFromObjs(this,param_1,0x3c,local_44,0,0);
             DelObjsFromTmp(this,param_1,0,0,local_44);
             AddObjsToTmp(this,param_1,0,0,local_48);
-            FUN_006ae110((byte *)local_44);
-            FUN_006ae110((byte *)local_48);
+            DArrayDestroy(local_44);
+            DArrayDestroy(local_48);
           }
         }
         else {
@@ -159,7 +159,7 @@ LAB_004318b5:
                 CalibrateTmp(this,playerId,0,1,&local_10->flags,(int *)&local_24,(int *)0x0,
                              (int *)0x0);
                 ResetActivityFromObjs(this,param_1,0x3c,local_24,0,0);
-                FUN_006ae110((byte *)local_24);
+                DArrayDestroy(local_24);
               }
               else {
                 ResetActivityFromTmp(this,playerId,0,1,0);
@@ -241,17 +241,17 @@ cf_error_exit_004318A9:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xa8e);
   }
-  if (local_34->field_000C != 0) {
+  if (local_34->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xa92);
     }
-    FUN_006acc70(local_34,0,&local_8);
-    local_34->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_34,&local_8);
-    uVar4 = GetObjPtr(this,0,local_8,CASE_3);
-    if (uVar4 == 0) {
+    DArrayGetElement(local_34,0,&local_8);
+    local_34->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_34->flags,&local_8);
+    pSVar4 = GetObjPtr(this,0,local_8,CASE_3);
+    if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xa95);
@@ -262,20 +262,21 @@ cf_error_exit_004318A9:
       iVar2 = g_playerRuntime[iVar2].tempSlots[0][0].objectType;
       sVar7 = (short)local_8;
       if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
 cf_error_exit_00431A49:
-          AddObjToTmp2(this,playerId,0,0,*(int *)(uVar4 + 0x20),
-                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar4 + 0x24)),local_8);
+          AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
+                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024),local_8
+                      );
         }
         else {
           ActivateTV(this,playerId,0,iVar2);
         }
       }
       else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
 LAB_00431c38:
           PushTV(playerId,0);
@@ -285,8 +286,8 @@ LAB_00431c38:
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00431c38;
         }
@@ -310,14 +311,14 @@ LAB_00431c38:
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[0][0].objectType + local_4c);
       sVar7 = (short)local_8;
       if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) goto cf_error_exit_00431A49;
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
 LAB_00431a3f:
           iVar2 = PushTV(playerId,0);
@@ -326,8 +327,8 @@ LAB_00431a3f:
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 0) goto LAB_00431a3f;
         ActivateTV(this,playerId,0,iVar2);
       }
@@ -354,17 +355,17 @@ LAB_00431a3f:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xae4);
   }
-  if (local_28->field_000C != 0) {
+  if (local_28->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xae8);
     }
-    FUN_006acc70(local_28,0,&local_8);
-    local_28->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_28,&local_8);
-    uVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_2);
-    if (uVar4 == 0) {
+    DArrayGetElement(local_28,0,&local_8);
+    local_28->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
+    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_2);
+    if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xaeb);
@@ -378,7 +379,7 @@ LAB_00431a3f:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) goto LAB_00431ec7;
           ActivateTV(this,playerId,1,iVar2);
@@ -388,7 +389,7 @@ LAB_00431a3f:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00431e9e;
             goto LAB_00431e77;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           uVar6 = extraout_ECX;
           if (iVar2 < 1) goto LAB_00431ed1;
@@ -397,15 +398,15 @@ LAB_00431a3f:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00431e9e:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 0) {
 LAB_00431ec7:
           PushTV(playerId,1);
           uVar6 = extraout_ECX_00;
 LAB_00431ed1:
-          uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar4 + 0x24));
-          iVar2 = *(int *)(uVar4 + 0x20);
+          uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          iVar2 = pSVar4->field_0020;
 LAB_00431edd:
           AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
         }
@@ -429,7 +430,7 @@ LAB_00431e77:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) {
 LAB_00431da2:
@@ -437,8 +438,8 @@ LAB_00431da2:
             ResetActivityFromTmp(this,playerId,1,1,0);
             uVar6 = extraout_EDX_00;
 LAB_00431dba:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar4 + 0x24));
-            iVar2 = *(int *)(uVar4 + 0x20);
+            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            iVar2 = pSVar4->field_0020;
             goto LAB_00431edd;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -448,7 +449,7 @@ LAB_00431dba:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00431d70;
             goto LAB_00431d42;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           uVar6 = extraout_EDX;
           if (iVar2 < 1) goto LAB_00431dba;
@@ -457,8 +458,8 @@ LAB_00431dba:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00431d70:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00431da2;
         }
@@ -490,17 +491,17 @@ LAB_00431d42:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xb40);
   }
-  if (local_30->field_000C != 0) {
+  if (local_30->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xb44);
     }
-    FUN_006acc70(local_30,0,&local_8);
-    local_30->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_30,&local_8);
-    uVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_5);
-    if (uVar4 == 0) {
+    DArrayGetElement(local_30,0,&local_8);
+    local_30->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_30->flags,&local_8);
+    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_5);
+    if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xb47);
@@ -514,7 +515,7 @@ LAB_00431d42:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) goto LAB_004321f3;
           ActivateTV(this,playerId,1,iVar2);
@@ -524,7 +525,7 @@ LAB_00431d42:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_004321ca;
             goto LAB_004321a3;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) goto LAB_004321fd;
           ActivateTV(this,playerId,1,iVar2);
@@ -532,14 +533,14 @@ LAB_00431d42:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_004321ca:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 0) {
 LAB_004321f3:
           iVar2 = PushTV(playerId,1);
 LAB_004321fd:
-          uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar4 + 0x24));
-          iVar2 = *(int *)(uVar4 + 0x20);
+          uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          iVar2 = pSVar4->field_0020;
 LAB_00432209:
           AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
         }
@@ -563,7 +564,7 @@ LAB_004321a3:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) {
 LAB_004320ce:
@@ -571,8 +572,8 @@ LAB_004320ce:
             ResetActivityFromTmp(this,playerId,1,1,0);
             uVar6 = extraout_ECX_02;
 LAB_004320e6:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar4 + 0x24));
-            iVar2 = *(int *)(uVar4 + 0x20);
+            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            iVar2 = pSVar4->field_0020;
             goto LAB_00432209;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -582,7 +583,7 @@ LAB_004320e6:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_0043209c;
             goto LAB_0043206e;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           uVar6 = extraout_ECX_01;
           if (iVar2 < 1) goto LAB_004320e6;
@@ -591,8 +592,8 @@ LAB_004320e6:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_0043209c:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_004320ce;
         }
@@ -630,7 +631,7 @@ LAB_0043206e:
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xba0);
     }
-    FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_14,0,&local_8);
+    DArrayGetElement(local_14,0,&local_8);
     local_14->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_14->flags,&local_8);
     if (g_playerRuntime[playerId].field324_0x203 == 0) {
@@ -692,7 +693,7 @@ LAB_0043250f:
                 CalibrateTmp(this,playerId,1,1,&local_14->flags,(int *)&local_24,(int *)0x0,
                              (int *)0x0);
                 ResetActivityFromObjs(this,param_1,0x19a,local_24,0,0);
-                FUN_006ae110((byte *)local_24);
+                DArrayDestroy(local_24);
               }
               else {
                 ResetActivityFromTmp(this,playerId,1,1,0);
@@ -750,17 +751,17 @@ LAB_00432582:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xc01);
   }
-  if (local_20->field_000C != 0) {
+  if (local_20->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xc05);
     }
-    FUN_006acc70(local_20,0,&local_8);
-    local_20->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_20,&local_8);
-    uVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_4);
-    if (uVar4 == 0) {
+    DArrayGetElement(local_20,0,&local_8);
+    local_20->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,&local_8);
+    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_4);
+    if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xc08);
@@ -774,7 +775,7 @@ LAB_00432582:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) goto LAB_0043288b;
           ActivateTV(this,playerId,1,iVar2);
@@ -784,7 +785,7 @@ LAB_00432582:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432862;
             goto LAB_0043283b;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           uVar6 = extraout_ECX_03;
           if (iVar2 < 1) goto LAB_00432895;
@@ -793,15 +794,15 @@ LAB_00432582:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432862:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 0) {
 LAB_0043288b:
           PushTV(playerId,1);
           uVar6 = extraout_ECX_04;
 LAB_00432895:
-          uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar4 + 0x24));
-          iVar2 = *(int *)(uVar4 + 0x20);
+          uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          iVar2 = pSVar4->field_0020;
 LAB_004328a1:
           AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
         }
@@ -825,7 +826,7 @@ LAB_0043283b:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) {
 LAB_00432766:
@@ -833,8 +834,8 @@ LAB_00432766:
             ResetActivityFromTmp(this,playerId,1,1,0);
             uVar6 = extraout_EDX_02;
 LAB_0043277e:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar4 + 0x24));
-            iVar2 = *(int *)(uVar4 + 0x20);
+            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            iVar2 = pSVar4->field_0020;
             goto LAB_004328a1;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -844,7 +845,7 @@ LAB_0043277e:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432734;
             goto LAB_00432706;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           uVar6 = extraout_EDX_01;
           if (iVar2 < 1) goto LAB_0043277e;
@@ -853,8 +854,8 @@ LAB_0043277e:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432734:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00432766;
         }
@@ -886,17 +887,17 @@ LAB_00432706:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xc5d);
   }
-  if (local_38->field_000C != 0) {
+  if (local_38->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xc61);
     }
-    FUN_006acc70(local_38,0,&local_8);
-    local_38->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_38,&local_8);
-    uVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_6);
-    if (uVar4 == 0) {
+    DArrayGetElement(local_38,0,&local_8);
+    local_38->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_38->flags,&local_8);
+    pSVar4 = GetObjPtr(this,0xffffffff,local_8,CASE_6);
+    if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xc64);
@@ -910,7 +911,7 @@ LAB_00432706:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) goto LAB_00432bb7;
           ActivateTV(this,playerId,1,iVar2);
@@ -920,7 +921,7 @@ LAB_00432706:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432b8e;
             goto LAB_00432b67;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) goto LAB_00432bc1;
           ActivateTV(this,playerId,1,iVar2);
@@ -928,14 +929,14 @@ LAB_00432706:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432b8e:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 0) {
 LAB_00432bb7:
           iVar2 = PushTV(playerId,1);
 LAB_00432bc1:
-          uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar4 + 0x24));
-          iVar2 = *(int *)(uVar4 + 0x20);
+          uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          iVar2 = pSVar4->field_0020;
 LAB_00432bcd:
           AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
         }
@@ -959,7 +960,7 @@ LAB_00432b67:
       sVar7 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           if (iVar2 < 1) {
 LAB_00432a92:
@@ -967,8 +968,8 @@ LAB_00432a92:
             ResetActivityFromTmp(this,playerId,1,1,0);
             uVar6 = extraout_ECX_06;
 LAB_00432aaa:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar4 + 0x24));
-            iVar2 = *(int *)(uVar4 + 0x20);
+            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            iVar2 = pSVar4->field_0020;
             goto LAB_00432bcd;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -978,7 +979,7 @@ LAB_00432aaa:
             if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432a60;
             goto LAB_00432a32;
           }
-          iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),
+          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
                             (DArrayTy *)0x0,sVar7);
           uVar6 = extraout_ECX_05;
           if (iVar2 < 1) goto LAB_00432aaa;
@@ -987,8 +988,8 @@ LAB_00432aaa:
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432a60:
-        iVar2 = CheckTmps(playerId,1,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00432a92;
         }
@@ -1026,12 +1027,12 @@ LAB_00432a32:
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xcbd);
     }
-    FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_18,0,&local_8);
+    DArrayGetElement(local_18,0,&local_8);
     local_18->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_18->flags,&local_8);
-    FUN_006acc70(local_3c,0,&local_c);
-    local_3c->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_3c,&local_c);
+    DArrayGetElement(local_3c,0,&local_c);
+    local_3c->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_3c->flags,&local_c);
     if (g_playerRuntime[playerId].field324_0x203 == 0) {
       iVar2 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
       if (iVar2 == 0) {
@@ -1122,17 +1123,17 @@ cf_error_exit_00432EAE:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xd14);
   }
-  if (local_2c->field_000C != 0) {
+  if (local_2c->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xd18);
     }
-    FUN_006acc70(local_2c,0,&local_8);
-    local_2c->field_000C = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_2c,&local_8);
-    uVar4 = GetObjPtr(this,0,local_8,CASE_3);
-    if (uVar4 == 0) {
+    DArrayGetElement(local_2c,0,&local_8);
+    local_2c->count = 0;
+    Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_8);
+    pSVar4 = GetObjPtr(this,0,local_8,CASE_3);
+    if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0xd1b);
@@ -1143,20 +1144,21 @@ cf_error_exit_00432EAE:
       iVar2 = g_playerRuntime[iVar2].tempSlots[0][0].objectType;
       sVar7 = (short)local_8;
       if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
 cf_error_exit_00433050:
-          AddObjToTmp2(this,playerId,0,0,*(int *)(uVar4 + 0x20),
-                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar4 + 0x24)),local_8);
+          AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
+                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024),local_8
+                      );
         }
         else {
           ActivateTV(this,playerId,0,iVar2);
         }
       }
       else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
 LAB_0043322b:
           PushTV(playerId,0);
@@ -1166,8 +1168,8 @@ LAB_0043322b:
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_0043322b;
         }
@@ -1191,14 +1193,14 @@ LAB_0043322b:
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[0][0].objectType + local_4c);
       sVar7 = (short)local_8;
       if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) goto cf_error_exit_00433050;
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
 LAB_00433046:
           iVar2 = PushTV(playerId,0);
@@ -1207,8 +1209,8 @@ LAB_00433046:
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,*(int *)(uVar4 + 0x20),*(char *)(uVar4 + 0x24),(DArrayTy *)0x0,
-                          sVar7);
+        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
+                          ,sVar7);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00433046;
         }
@@ -1245,12 +1247,12 @@ LAB_00433046:
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0xd70);
   }
-  FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,0,&local_8);
+  DArrayGetElement(local_1c,0,&local_8);
   local_1c->count = 0;
   Library::DKW::TBL::FUN_006ae1c0(&local_1c->flags,&local_8);
-  FUN_006acc70(local_40,0,&local_c);
-  local_40->field_000C = 0;
-  Library::DKW::TBL::FUN_006ae1c0((uint *)local_40,&local_c);
+  DArrayGetElement(local_40,0,&local_c);
+  local_40->count = 0;
+  Library::DKW::TBL::FUN_006ae1c0(&local_40->flags,&local_c);
   if (g_playerRuntime[playerId].field324_0x203 != 0) {
     if (g_playerRuntime[playerId].field324_0x203 != 1) {
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xdcb,0,0,&DAT_007a4ccc,

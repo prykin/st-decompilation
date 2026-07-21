@@ -7,7 +7,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   ushort uVar3;
   STBoatC_field_0508State SVar4;
   STWorldObject *pSVar5;
@@ -91,12 +91,12 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     sVar20 = this->field_0373;
     sVar21 = this->field_0377;
     sVar22 = this->field_0375;
-    if ((((sVar20 < 0) || (SHORT_007fb240 <= sVar20)) || (sVar22 < 0)) ||
-       (((SHORT_007fb242 <= sVar22 || (sVar21 < 0)) ||
-        ((SHORT_007fb244 <= sVar21 ||
-         (*(short *)(DAT_007fb280 +
-                    ((int)SHORT_007fb278 * (int)sVar22 + (int)SHORT_007fb27e * (int)sVar21 +
-                    (int)sVar20) * 2) != 0)))))) {
+    if ((((sVar20 < 0) || (g_worldGrid.sizeX <= sVar20)) || (sVar22 < 0)) ||
+       (((g_worldGrid.sizeY <= sVar22 || (sVar21 < 0)) ||
+        ((g_worldGrid.sizeZ <= sVar21 ||
+         (g_pathingGrid.cells
+          [(int)g_pathingGrid.sizeX * (int)sVar22 + (int)g_pathingGrid.planeStride * (int)sVar21 +
+           (int)sVar20] != 0)))))) {
       return 0;
     }
     *(short *)&this->field_0x4dd = sVar20;
@@ -149,18 +149,19 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
       uVar3 = *(ushort *)&this->field_0x4df;
       local_18 = (uint)uVar3;
       sVar21 = *(short *)&this->field_0x4e1;
-      if ((((-1 < sVar20) && (sVar20 < SHORT_007fb240)) && (-1 < (short)uVar3)) &&
-         ((((short)uVar3 < SHORT_007fb242 && (-1 < sVar21)) &&
-          ((sVar21 < SHORT_007fb244 &&
-           (*(short *)(DAT_007fb280 +
-                      ((int)SHORT_007fb278 * (int)(short)uVar3 + (int)SHORT_007fb27e * (int)sVar21 +
-                      (int)sVar20) * 2) == 0)))))) break;
-      if (((sVar20 < 0) || (SHORT_007fb240 <= sVar20)) ||
+      if ((((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) && (-1 < (short)uVar3)) &&
+         ((((short)uVar3 < g_worldGrid.sizeY && (-1 < sVar21)) &&
+          ((sVar21 < g_worldGrid.sizeZ &&
+           (g_pathingGrid.cells
+            [(int)g_pathingGrid.sizeX * (int)(short)uVar3 +
+             (int)g_pathingGrid.planeStride * (int)sVar21 + (int)sVar20] == 0)))))) break;
+      if (((sVar20 < 0) || (g_worldGrid.sizeX <= sVar20)) ||
          (((short)uVar3 < 0 ||
-          ((((SHORT_007fb242 <= (short)uVar3 || (sVar21 < 0)) || (SHORT_007fb244 <= sVar21)) ||
-           (pSVar5 = g_worldCells
-                     [(int)(short)uVar3 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar21 +
-                      (int)sVar20].objects[0], pSVar5 == (STWorldObject *)0x0)))))) {
+          ((((g_worldGrid.sizeY <= (short)uVar3 || (sVar21 < 0)) || (g_worldGrid.sizeZ <= sVar21))
+           || (pSVar5 = g_worldGrid.cells
+                        [(int)(short)uVar3 * (int)g_worldGrid.sizeX +
+                         (int)g_worldGrid.planeStride * (int)sVar21 + (int)sVar20].objects[0],
+              pSVar5 == (STWorldObject *)0x0)))))) {
         iVar14 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x23c0,0,0,&DAT_007a4ccc
                                     ,s_STBoatC__Build_NULL_007aa704);
         if (iVar14 == 0) {
@@ -183,23 +184,18 @@ LAB_0046b5ac:
             iVar14 = 0;
           }
           else {
-            uVar11 = (uint)bVar27;
-            uVar13 = (uint)bVar1;
-            cVar2 = *(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar13);
-            if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar11) == '\0')) {
+            bVar2 = g_playerRelationMatrix[bVar27][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar27] == 0)) {
               iVar14 = -2;
             }
-            else if ((cVar2 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar11) == '\0')) {
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar27] == 0)) {
               iVar14 = -1;
             }
-            else if ((cVar2 == '\0') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar11) == '\x01')) {
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar27] == 1)) {
               iVar14 = 1;
             }
             else {
-              if ((cVar2 != '\x01') ||
-                 (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar11) != '\x01')) goto LAB_0046b5ac;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar27] != 1)) goto LAB_0046b5ac;
               iVar14 = 2;
             }
           }

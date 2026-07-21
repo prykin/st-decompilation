@@ -15,7 +15,7 @@ ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy_field_1A5FState param_1
 {
   undefined1 *puVar1;
   ChooseMapTy_field_1A5FState CVar2;
-  AnonPointee_StartSystemTy_0544 *pAVar3;
+  AnonShape_006C7610_838EDECF *pAVar3;
   MMsgTy *this_00;
   undefined4 uVar4;
   StartSystemTy *pSVar5;
@@ -333,7 +333,7 @@ LAB_005ab4e5:
                       (DAT_00806784,CASE_B,s_FILE_LIST_007cc084,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_02->field_1C7F = puVar10;
   puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar10);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar10);
   *(undefined4 *)&this_02->field_0x20b3 = 0x1010101;
   this_02->field_20B7 = 1;
   switch(this_02->field_1A5F) {
@@ -367,9 +367,9 @@ switchD_005ab66b_caseD_6:
       case 7:
         this_02->field_20B5 = 0;
       default:
-        pAVar3 = PTR_0081176c->field_0544;
+        pAVar3 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
         local_c = param_2 - 1;
-        FUN_006b4170((int)pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
+        FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
         if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
             (AnonShape_006B5570_4D68B99C *)0x0) {
           FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);

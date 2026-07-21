@@ -10,7 +10,7 @@ STAllPlayersC::GetScrObjList
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   int *piVar3;
   code *pcVar4;
   bool bVar5;
@@ -104,23 +104,18 @@ LAB_0044ca10:
                       iVar6 = 0;
                     }
                     else {
-                      uVar10 = (uint)bVar1;
-                      cVar2 = *(char *)((int)&DAT_00808a4f + uVar10 * 8 + uVar9);
-                      if ((cVar2 == '\0') &&
-                         (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar10) == '\0')) {
+                      bVar2 = g_playerRelationMatrix[bVar1][uVar9];
+                      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar9][bVar1] == 0)) {
                         iVar6 = -2;
                       }
-                      else if ((cVar2 == '\x01') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar10) == '\0')) {
+                      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar9][bVar1] == 0)) {
                         iVar6 = -1;
                       }
-                      else if ((cVar2 == '\0') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar10) == '\x01')) {
+                      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar9][bVar1] == 1)) {
                         iVar6 = 1;
                       }
                       else {
-                        if ((cVar2 != '\x01') ||
-                           (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar10) != '\x01'))
+                        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar9][bVar1] != 1))
                         goto LAB_0044ca10;
                         iVar6 = 2;
                       }
@@ -191,7 +186,7 @@ LAB_0044c94c:
           iVar12 = iVar12 + 0x14;
         } while (local_18 < local_8);
       }
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       if (!bVar5) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -221,7 +216,7 @@ LAB_0044c94c:
 LAB_0044cb54:
   puVar8 = local_14;
   if (local_20 != (DArrayTy *)0x0) {
-    FUN_006ae110((byte *)local_20);
+    DArrayDestroy(local_20);
   }
   return puVar8;
 }

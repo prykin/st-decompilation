@@ -70,22 +70,24 @@ LAB_005846f7:
     iVar5 = *(short *)(&DAT_007cb41c + iVar4) + param_6;
     iVar4 = *(short *)(&DAT_007cb41a + iVar4) + param_5;
     if (((((-1 < iVar6) && (-1 < iVar4)) && (-1 < iVar5)) &&
-        ((iVar6 < SHORT_007fb240 && (iVar4 < SHORT_007fb242)))) && (iVar5 < SHORT_007fb244)) {
+        ((iVar6 < g_worldGrid.sizeX && (iVar4 < g_worldGrid.sizeY)))) && (iVar5 < g_worldGrid.sizeZ)
+       ) {
       sVar7 = (short)iVar6;
       sVar8 = (short)iVar4;
       sVar9 = (short)iVar5;
       bVar2 = thunk_FUN_004961b0(sVar7,sVar8,sVar9);
       if ((CONCAT31(extraout_var,bVar2) != 0) &&
-         (((sVar7 < 0 || (SHORT_007fb240 <= sVar7)) ||
-          ((((sVar8 < 0 || (((SHORT_007fb242 <= sVar8 || (sVar9 < 0)) || (SHORT_007fb244 <= sVar9)))
-             ) || (g_worldCells
-                   [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7
-                   ].objects[0] == (STWorldObject *)0x0)) &&
-           ((((SHORT_007fb240 <= sVar7 || (sVar8 < 0)) ||
-             ((SHORT_007fb242 <= sVar8 || ((sVar9 < 0 || (SHORT_007fb244 <= sVar9)))))) ||
-            (g_worldCells
-             [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7].
-             objects[1] == (STWorldObject *)0x0)))))))) {
+         (((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) ||
+          ((((sVar8 < 0 ||
+             (((g_worldGrid.sizeY <= sVar8 || (sVar9 < 0)) || (g_worldGrid.sizeZ <= sVar9)))) ||
+            (g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
+              (int)sVar7].objects[0] == (STWorldObject *)0x0)) &&
+           ((((g_worldGrid.sizeX <= sVar7 || (sVar8 < 0)) ||
+             ((g_worldGrid.sizeY <= sVar8 || ((sVar9 < 0 || (g_worldGrid.sizeZ <= sVar9)))))) ||
+            (g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
+              (int)sVar7].objects[1] == (STWorldObject *)0x0)))))))) {
         *param_7 = iVar6;
         *param_8 = iVar4;
         *param_9 = iVar5;

@@ -38,17 +38,17 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
     local_c = PlrDataPack(pAVar5,local_8,local_10,param_1);
     local_c[3] = 1;
     if (local_8 != (undefined4 *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = pIVar6;
     return local_c;
   }
   g_currentExceptionFrame = pIVar6;
   if (local_8 != (undefined4 *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   if (local_c != (undefined4 *)0x0) {
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   iVar3 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x61,0,errorCode,&DAT_007a4ccc,
                              s_AiPlrClassTy__PrepareToSave_007d2e88);

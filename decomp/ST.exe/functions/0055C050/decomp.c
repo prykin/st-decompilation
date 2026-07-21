@@ -21,8 +21,8 @@ byte * __thiscall FUN_0055c050(void *this,int param_1)
   iVar1 = CFsgsConnection::GetUserIconIndex
                     (this,(char *)(param_1 + 0x10),*(ulong *)(param_1 + 0x25));
   pbVar2 = (byte *)Library::DKW::WGR::FUN_006b55f0
-                             ((undefined4 *)0x0,0,0,0,*(byte **)((int)this + 0x40),0,0,iVar1 * 0xe,
-                              iVar3,iVar4);
+                             ((AnonShape_006B84D0_7C7D97C6 *)0x0,0,0,0,*(byte **)((int)this + 0x40),
+                              0,0,iVar1 * 0xe,iVar3,iVar4);
   return pbVar2;
 }
 

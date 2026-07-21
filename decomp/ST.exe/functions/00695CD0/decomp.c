@@ -17,12 +17,12 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
   if (((iVar8 != 0) && (param_1 < *(uint *)(iVar8 + 0xc))) &&
      (piVar7 = (int *)(*(int *)(iVar8 + 8) * param_1 + *(int *)(iVar8 + 0x1c)), piVar7 != (int *)0x0
      )) {
-    if (*(byte **)((int)piVar7 + 0x15) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)((int)piVar7 + 0x15));
+    if (*(DArrayTy **)((int)piVar7 + 0x15) != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)((int)piVar7 + 0x15));
       *(undefined4 *)((int)piVar7 + 0x15) = 0;
     }
-    if (*(byte **)((int)piVar7 + 0x19) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)((int)piVar7 + 0x19));
+    if (*(DArrayTy **)((int)piVar7 + 0x19) != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)((int)piVar7 + 0x19));
       *(undefined4 *)((int)piVar7 + 0x19) = 0;
     }
     if (param_2 == 0) {

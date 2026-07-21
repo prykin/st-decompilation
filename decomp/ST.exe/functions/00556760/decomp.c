@@ -203,7 +203,8 @@ LAB_0055693a:
   local_26 = local_c;
   FUN_006e98e0(PTR_00807598,local_c,0,(int)(short)local_22,*(int *)((int)puVar4 + 0x21),1);
   if (iVar7 == 0) {
-    FUN_006ea050(PTR_00807598,local_26,(int)local_44,0xffffffff,0);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
+              ((AnonReceiver_006EA050 *)PTR_00807598,local_26,(int)local_44,0xffffffff,0);
   }
   FUN_006ea270(PTR_00807598,local_26,0,param_3);
   if (-1 < local_42) {

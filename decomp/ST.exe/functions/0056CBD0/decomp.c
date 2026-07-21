@@ -165,7 +165,7 @@ STAppC::MainWindowProc
     }
   }
   else if (param_2 == 0x2660) {
-    Library::DKW::DV::FUN_006c4110((int)PTR_008075a0);
+    Library::DKW::DV::FUN_006c4110(PTR_008075a0);
     if ((PTR_008075a0->field_0004 & 0x40000000) != 0) {
       FUN_006c3f00((int)PTR_008075a0);
     }

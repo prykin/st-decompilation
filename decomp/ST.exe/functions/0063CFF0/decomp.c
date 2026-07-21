@@ -47,7 +47,7 @@ undefined4 * __thiscall FUN_0063cff0(void *this,int *param_1)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
     *param_1 = local_8;
     return puVar1;
   }

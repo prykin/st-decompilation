@@ -1,5 +1,13 @@
 
-int __thiscall FUN_0065ed90(void *this,short *param_1,short *param_2,int param_3)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065ED90.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=7;
+   ecx_pointer_setup=7; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=1; adopt_untyped_existing_thiscall */
+
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
+          (AnonReceiver_0065ED90 *this,short *param_1,short *param_2,int param_3)
 
 {
   short *psVar1;
@@ -12,13 +20,14 @@ int __thiscall FUN_0065ed90(void *this,short *param_1,short *param_2,int param_3
   int local_1c;
   int local_18;
   int local_14;
-  void *local_10;
+  AnonReceiver_0065ED90 *local_10;
   int local_c;
   int local_8;
   
   psVar1 = param_2;
   local_10 = this;
-  iVar3 = thunk_FUN_0065e700(this,&local_c,&local_8,&local_c,&local_1c);
+  iVar3 = thunk_FUN_0065e700((AnonShape_0065DA10_8B0AA883 *)this,&local_c,&local_8,&local_c,
+                             &local_1c);
   if (iVar3 != 0) {
     return -4;
   }
@@ -34,14 +43,14 @@ int __thiscall FUN_0065ed90(void *this,short *param_1,short *param_2,int param_3
   param_2[3] = 3;
   param_2[4] = 3;
   param_2[5] = 5;
-  uVar4 = *(int *)((int)local_10 + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)local_10 + 0x1c) = uVar4;
+  uVar4 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
+  *(uint *)&local_10->field_0x1c = uVar4;
   param_2 = (short *)param_3;
   iVar6 = (uVar4 >> 0x10) % 6 + 0x14;
   if (param_3 != 0x200) {
     if (param_3 != 0x400) {
-      uVar4 = *(int *)((int)local_10 + 0x1c) * 0x41c64e6d + 0x3039;
-      *(uint *)((int)local_10 + 0x1c) = uVar4;
+      uVar4 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
+      *(uint *)&local_10->field_0x1c = uVar4;
       param_3 = (-(uint)((uVar4 & 0x10000) != 0) & 0x200) + 0x200;
     }
     param_2 = (short *)param_3;

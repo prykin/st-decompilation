@@ -1,6 +1,4 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 undefined4 __cdecl
 FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
             ,undefined4 param_8,int param_9)
@@ -47,9 +45,9 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   bVar4 = false;
   bVar5 = false;
   local_40 = -1;
-  sVar6 = SHORT_007fb242;
-  if (SHORT_007fb242 <= (short)_SHORT_007fb240) {
-    sVar6 = (short)_SHORT_007fb240;
+  sVar6 = g_worldGrid.sizeY;
+  if (g_worldGrid.sizeY <= g_worldGrid.sizeX) {
+    sVar6 = g_worldGrid.sizeX;
   }
   local_28 = 1;
   local_2c = 1;
@@ -57,41 +55,40 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
     local_28 = 2;
     local_2c = 2;
   }
-  psVar8 = (short *)Library::DKW::LIB::FUN_006aac70(SHORT_007fb246 * 5);
+  psVar8 = (short *)Library::DKW::LIB::FUN_006aac70(g_worldGrid.planeStride * 5);
   local_14 = 0;
   do {
-    iVar9 = SHORT_007fb246 * local_14;
+    iVar9 = g_worldGrid.planeStride * local_14;
     local_1c = 0;
-    if (0 < SHORT_007fb242) {
+    if (0 < g_worldGrid.sizeY) {
       do {
-        iVar10 = (int)SHORT_007fb240;
+        iVar10 = (int)g_worldGrid.sizeX;
         iVar22 = 0;
         iVar19 = iVar10 * local_1c;
         if (0 < iVar10) {
           do {
             local_10 = (STFishC *)
-                       g_worldCells[iVar10 * local_1c + iVar22 + SHORT_007fb246 * local_14].objects
-                       [0];
+                       g_worldGrid.cells
+                       [iVar10 * local_1c + iVar22 + g_worldGrid.planeStride * local_14].objects[0];
             if (local_10 == (STFishC *)0x0) {
               sVar21 = (short)iVar22;
-              if ((((sVar21 < 0) || ((short)_SHORT_007fb240 <= sVar21)) ||
+              if ((((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) ||
                   (sVar7 = (short)local_1c, sVar7 < 0)) ||
-                 (((SHORT_007fb242 <= sVar7 || (sVar16 = (short)local_14, sVar16 < 0)) ||
-                  (SHORT_007fb244 <= sVar16)))) {
+                 (((g_worldGrid.sizeY <= sVar7 || (sVar16 = (short)local_14, sVar16 < 0)) ||
+                  (g_worldGrid.sizeZ <= sVar16)))) {
 LAB_004af1d5:
                 *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 3;
               }
+              else if (g_pathingGrid.cells
+                       [(int)sVar16 * (int)g_pathingGrid.planeStride +
+                        (int)sVar7 * (int)g_pathingGrid.sizeX + (int)sVar21] == 0) {
+                *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 0;
+              }
               else {
-                sVar21 = *(short *)(DAT_007fb280 +
-                                   ((int)sVar16 * (int)SHORT_007fb27e +
-                                    (int)sVar7 * (int)SHORT_007fb278 + (int)sVar21) * 2);
-                if (sVar21 == 0) {
-                  *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 0;
-                }
-                else {
-                  if (sVar21 == -1) goto LAB_004af1d5;
-                  *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 1;
-                }
+                if (g_pathingGrid.cells
+                    [(int)sVar16 * (int)g_pathingGrid.planeStride +
+                     (int)sVar7 * (int)g_pathingGrid.sizeX + (int)sVar21] == -1) goto LAB_004af1d5;
+                *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 1;
               }
             }
             else {
@@ -146,11 +143,11 @@ LAB_004af2f0:
             }
 LAB_004af325:
             iVar22 = iVar22 + 1;
-            iVar10 = (int)(short)_SHORT_007fb240;
+            iVar10 = (int)g_worldGrid.sizeX;
           } while (iVar22 < iVar10);
         }
         local_1c = local_1c + 1;
-      } while (local_1c < SHORT_007fb242);
+      } while (local_1c < g_worldGrid.sizeY);
     }
     local_14 = local_14 + 1;
   } while (local_14 < 4);
@@ -162,8 +159,8 @@ LAB_004af325:
         STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
         *(undefined1 *)
          ((int)psVar8 +
-         (int)local_6 + (int)local_a * (int)SHORT_007fb246 + (int)local_8 * (int)SHORT_007fb240) = 2
-        ;
+         (int)local_6 +
+         (int)local_a * (int)g_worldGrid.planeStride + (int)local_8 * (int)g_worldGrid.sizeX) = 2;
       }
       iVar9 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
     }
@@ -171,26 +168,26 @@ LAB_004af325:
   local_14 = 0;
   do {
     local_1c = 0;
-    if (0 < SHORT_007fb242) {
+    if (0 < g_worldGrid.sizeY) {
       do {
         local_18 = 0;
-        if (0 < SHORT_007fb240) {
+        if (0 < g_worldGrid.sizeX) {
           do {
             iVar9 = local_14;
             if (local_14 < local_14 + 1) {
               do {
-                if (SHORT_007fb244 <= iVar9) goto cf_common_join_004AFC34;
+                if (g_worldGrid.sizeZ <= iVar9) goto cf_common_join_004AFC34;
                 if (local_1c < local_28 + local_1c) {
-                  iVar19 = SHORT_007fb240 * local_1c;
+                  iVar19 = g_worldGrid.sizeX * local_1c;
                   iVar10 = local_1c;
                   do {
-                    if (SHORT_007fb242 <= iVar10) goto cf_common_join_004AFC34;
+                    if (g_worldGrid.sizeY <= iVar10) goto cf_common_join_004AFC34;
                     for (iVar22 = local_18; iVar22 < local_2c + local_18; iVar22 = iVar22 + 1) {
-                      if ((SHORT_007fb240 <= iVar22) ||
-                         (*(char *)(iVar19 + iVar22 + SHORT_007fb246 * iVar9 + (int)psVar8) != '\0')
-                         ) goto cf_common_join_004AFC34;
+                      if ((g_worldGrid.sizeX <= iVar22) ||
+                         (*(char *)(iVar19 + iVar22 + g_worldGrid.planeStride * iVar9 + (int)psVar8)
+                          != '\0')) goto cf_common_join_004AFC34;
                     }
-                    iVar19 = iVar19 + SHORT_007fb240;
+                    iVar19 = iVar19 + g_worldGrid.sizeX;
                     iVar10 = iVar10 + 1;
                   } while (iVar10 < local_28 + local_1c);
                 }
@@ -199,13 +196,13 @@ LAB_004af325:
             }
             if (0 < local_14) {
               if (local_1c < local_1c + local_28) {
-                iVar10 = (int)SHORT_007fb240;
+                iVar10 = (int)g_worldGrid.sizeX;
                 local_30 = (char *)(local_18 +
-                                    iVar10 * local_1c + (local_14 + -1) * (int)SHORT_007fb246 +
-                                   (int)psVar8);
+                                    iVar10 * local_1c +
+                                    (local_14 + -1) * (int)g_worldGrid.planeStride + (int)psVar8);
                 iVar9 = local_1c;
                 do {
-                  if (iVar9 < SHORT_007fb242) {
+                  if (iVar9 < g_worldGrid.sizeY) {
                     pcVar13 = local_30;
                     for (iVar19 = local_18; iVar19 < local_2c + local_18; iVar19 = iVar19 + 1) {
                       if ((iVar19 < iVar10) && (*pcVar13 != '\x03')) goto cf_common_join_004AFC34;
@@ -219,12 +216,13 @@ LAB_004af325:
             }
             if (local_14 < 4) {
               if (local_1c < local_28 + local_1c) {
-                iVar10 = (int)SHORT_007fb240;
-                local_3c = (char *)(iVar10 * local_1c + (int)SHORT_007fb246 * (local_14 + 1) +
-                                    local_18 + (int)psVar8);
+                iVar10 = (int)g_worldGrid.sizeX;
+                local_3c = (char *)(iVar10 * local_1c +
+                                    (int)g_worldGrid.planeStride * (local_14 + 1) + local_18 +
+                                   (int)psVar8);
                 iVar9 = local_1c;
                 do {
-                  if (iVar9 < SHORT_007fb242) {
+                  if (iVar9 < g_worldGrid.sizeY) {
                     pcVar13 = local_3c;
                     for (iVar19 = local_18; iVar19 < local_18 + local_2c; iVar19 = iVar19 + 1) {
                       if ((iVar19 < iVar10) &&
@@ -246,7 +244,7 @@ LAB_004af325:
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
                     do {
-                      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar14,uVar20,&local_10);
+                      DArrayGetElement(pDVar14,uVar20,&local_10);
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar17 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
@@ -267,7 +265,7 @@ LAB_004af325:
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
                     do {
-                      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar14,uVar20,&local_10);
+                      DArrayGetElement(pDVar14,uVar20,&local_10);
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar17 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
@@ -288,7 +286,7 @@ LAB_004af325:
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
                     do {
-                      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar14,uVar20,&local_10);
+                      DArrayGetElement(pDVar14,uVar20,&local_10);
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar17 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
@@ -309,7 +307,7 @@ LAB_004af325:
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
                     do {
-                      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar14,uVar20,&local_10);
+                      DArrayGetElement(pDVar14,uVar20,&local_10);
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar17 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
@@ -327,7 +325,7 @@ LAB_004af325:
                 if (((param_2 == 0x3a) && (PTR_007fa16c != (DArrayTy *)0x0)) &&
                    (uVar20 = 0, 0 < (int)PTR_007fa16c->count)) {
                   do {
-                    FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa16c,uVar20,&local_10);
+                    DArrayGetElement(PTR_007fa16c,uVar20,&local_10);
                     STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                     uVar17 = local_6 - local_18 >> 0x1f;
                     if (((int)((local_6 - local_18 ^ uVar17) - uVar17) < 0xe) &&
@@ -339,29 +337,29 @@ LAB_004af325:
                 }
                 goto cf_common_join_004AFA95;
               }
-              iVar19 = (int)SHORT_007fb246;
+              iVar19 = (int)g_worldGrid.planeStride;
               iVar9 = local_1c + -1;
               iVar22 = local_1c + local_28;
               bVar4 = false;
               iVar10 = iVar9;
               if (iVar9 < iVar22 + 1) {
                 do {
-                  if ((-1 < iVar10) && (iVar10 < SHORT_007fb242)) {
+                  if ((-1 < iVar10) && (iVar10 < g_worldGrid.sizeY)) {
                     iVar1 = local_18 + -1;
                     iVar15 = local_18 + local_2c;
                     if (iVar1 < iVar15 + 1) {
-                      iVar11 = iVar19 * local_14 + iVar1 + SHORT_007fb240 * iVar10;
+                      iVar11 = iVar19 * local_14 + iVar1 + g_worldGrid.sizeX * iVar10;
                       iVar18 = iVar11 * 8;
                       local_3c = (char *)(iVar11 + (int)psVar8);
                       iVar11 = iVar1;
                       do {
-                        if (((((-1 < iVar11) && (iVar11 < SHORT_007fb240)) &&
+                        if (((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
                              ((iVar10 != iVar9 ||
                               ((iVar11 != iVar1 && ((iVar10 != iVar9 || (iVar11 != iVar15)))))))) &&
                             ((iVar10 != iVar22 ||
                              ((iVar11 != iVar15 && ((iVar10 != iVar22 || (iVar11 != iVar1)))))))) &&
                            (((*local_3c == '\x05' &&
-                             (local_10 = *(STFishC **)((int)g_worldCells->objects + iVar18),
+                             (local_10 = *(STFishC **)((int)(g_worldGrid.cells)->objects + iVar18),
                              local_10 != (STFishC *)0x0)) &&
                             (((iVar12 = (*local_10->vtable->vfunc_2C)(), iVar12 == 0x53 &&
                               (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
@@ -390,7 +388,7 @@ LAB_004af325:
             pDVar14 = g_playerRuntime[param_1].field2166_0x9d6;
             if ((pDVar14 != (DArrayTy *)0x0) && (uVar20 = 0, 0 < (int)pDVar14->count)) {
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar14,uVar20,&local_10);
+                DArrayGetElement(pDVar14,uVar20,&local_10);
                 STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                 uVar17 = local_6 - local_18 >> 0x1f;
                 if (((int)((local_6 - local_18 ^ uVar17) - uVar17) < 0x10) &&
@@ -406,14 +404,14 @@ cf_common_join_004AFA95:
             bVar23 = true;
             if (iVar9 < local_1c + 1 + local_28) {
               do {
-                if ((-1 < iVar9) && (iVar9 < SHORT_007fb242)) {
+                if ((-1 < iVar9) && (iVar9 < g_worldGrid.sizeY)) {
                   iVar10 = local_18 + -1;
                   iVar19 = local_18 + 1 + local_2c;
                   if (iVar10 < iVar19) {
-                    pcVar13 = (char *)(iVar9 * SHORT_007fb240 + iVar10 + SHORT_007fb246 * local_14 +
-                                      (int)psVar8);
+                    pcVar13 = (char *)(iVar9 * g_worldGrid.sizeX + iVar10 +
+                                       g_worldGrid.planeStride * local_14 + (int)psVar8);
                     do {
-                      if (((-1 < iVar10) && (iVar10 < SHORT_007fb240)) &&
+                      if (((-1 < iVar10) && (iVar10 < g_worldGrid.sizeX)) &&
                          ((*pcVar13 == '\x05' || (*pcVar13 == '\x02')))) {
                         bVar23 = false;
                         goto LAB_004afbad;
@@ -444,10 +442,10 @@ LAB_004afc0f:
             else if (iVar9 / ((int)sVar6 / 3) < local_40 / ((int)sVar6 / 3)) goto LAB_004afc0f;
 cf_common_join_004AFC34:
             local_18 = local_18 + 1;
-          } while (local_18 < SHORT_007fb240);
+          } while (local_18 < g_worldGrid.sizeX);
         }
         local_1c = local_1c + 1;
-      } while (local_1c < SHORT_007fb242);
+      } while (local_1c < g_worldGrid.sizeY);
     }
     local_14 = local_14 + 1;
     if (3 < local_14) {

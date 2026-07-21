@@ -896,6 +896,15 @@ public class STRecoveredTypesApplier extends GhidraScript {
         DataType dArrayPtr = new PointerDataType(systemType("DArrayTy"), dtm);
         applyThiscall("0044EE30", int32,
             parameter("message", messagePtr));
+
+        // The four AI player subsystems expose GetMessage as their one-slot primary vtable.
+        // Each implementation dereferences mess->id and emits the same embedded diagnostic.
+        // Older recovery passes sometimes left the pointer as int or an anonymous shape.
+        applyThiscall("00648030", int32, parameter("message", messagePtr));
+        applyThiscall("00667D90", int32, parameter("message", messagePtr));
+        applyThiscall("0067C7E0", int32, parameter("message", messagePtr));
+        applyThiscall("00690B90", int32, parameter("message", messagePtr));
+
         applyThiscall("006E4960", int32,
             parameter("parentSystem", systemPtr), parameter("childSystem", systemPtr),
             parameter("checkDuplicateId", int32));

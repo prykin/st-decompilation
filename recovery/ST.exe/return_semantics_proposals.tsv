@@ -1,0 +1,57 @@
+apply	function_address	expected_function	expected_signature	expected_return_type	expected_return_source	expected_noreturn	proposed_return_type	proposed_noreturn	semantic_id	confidence	evidence
+1	00418D00	FUN_00418d00	undefined FUN_00418d00()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041AEC0	FUN_0041aec0	undefined FUN_0041aec0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041C300	FUN_0041c300	undefined FUN_0041c300()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041C320	FUN_0041c320	undefined FUN_0041c320()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041C360	FUN_0041c360	undefined FUN_0041c360()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041D5E0	FUN_0041d5e0	undefined FUN_0041d5e0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041D600	FUN_0041d600	undefined FUN_0041d600()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041D760	FUN_0041d760	undefined FUN_0041d760()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041D780	FUN_0041d780	undefined FUN_0041d780()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041D800	FUN_0041d800	undefined FUN_0041d800()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041DC20	FUN_0041dc20	undefined FUN_0041dc20()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0041F390	FUN_0041f390	undefined __fastcall FUN_0041f390(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00423160	FUN_00423160	undefined __stdcall FUN_00423160(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00423180	FUN_00423180	undefined __stdcall FUN_00423180(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	004231C0	FUN_004231c0	undefined FUN_004231c0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00423360	FUN_00423360	undefined __fastcall FUN_00423360(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00423380	FUN_00423380	undefined __fastcall FUN_00423380(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00423EA0	FUN_00423ea0	undefined FUN_00423ea0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	004244F0	FUN_004244f0	undefined FUN_004244f0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00424510	FUN_00424510	undefined FUN_00424510()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00495EA0	FUN_00495ea0	undefined __stdcall FUN_00495ea0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	004AD510	FUN_004ad510	undefined __fastcall FUN_004ad510(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	004C3480	FUN_004c3480	undefined __stdcall FUN_004c3480(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	004FAE70	FUN_004fae70	undefined __fastcall FUN_004fae70(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0052B330	FUN_0052b330	undefined4 __fastcall FUN_0052b330(AnonShape_0052B330_71C9FFBF * param_1)	/undefined4	DEFAULT	false	/bool	false	boolean_return_domain	high	all explicit return values are constants in {0,1}: [0, 0, 0, 0, 1, 0]
+1	00573240	FUN_00573240	undefined __stdcall FUN_00573240(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	005803C0	FUN_005803c0	undefined __stdcall FUN_005803c0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	005DB010	FUN_005db010	undefined __stdcall FUN_005db010(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	005EFA70	FUN_005efa70	undefined FUN_005efa70()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	005F0450	FUN_005f0450	undefined FUN_005f0450()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	005F6AB0	FUN_005f6ab0	undefined __stdcall FUN_005f6ab0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0062DFB0	FUN_0062dfb0	undefined __stdcall FUN_0062dfb0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00639BF0	FUN_00639bf0	undefined __thiscall FUN_00639bf0(undefined4 * param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00639C40	FUN_00639c40	undefined __thiscall FUN_00639c40(undefined4 * param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00680530	FUN_00680530	undefined __stdcall FUN_00680530(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	006939D0	FUN_006939d0	undefined __stdcall FUN_006939d0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	006A24E0	FUN_006a24e0	undefined4 __cdecl FUN_006a24e0(ushort * param_1, int param_2, ushort * param_3, int param_4, int param_5)	/undefined4	DEFAULT	false	/bool	false	boolean_return_domain	high	all explicit return values are constants in {0,1}: [0, 1, 1, 0, 0]
+1	006ACC95	FUN_006acc95	undefined __fastcall FUN_006acc95(uint param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	006D50F0	FUN_006d50f0	undefined FUN_006d50f0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	006D5100	FUN_006d5100	undefined FUN_006d5100()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	006DC300	FUN_006dc300	undefined __fastcall FUN_006dc300(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	006DC310	FUN_006dc310	undefined __stdcall FUN_006dc310(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	007193F0	FUN_007193f0	undefined __stdcall FUN_007193f0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	007496A0	FUN_007496a0	undefined FUN_007496a0()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074A277	FUN_0074a277	undefined __fastcall FUN_0074a277(int param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074A959	FUN_0074a959	undefined FUN_0074a959()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074A95C	FUN_0074a95c	undefined FUN_0074a95c()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074AD47	FUN_0074ad47	undefined FUN_0074ad47()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074AD48	FUN_0074ad48	undefined FUN_0074ad48()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074B448	FUN_0074b448	undefined FUN_0074b448()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074B449	FUN_0074b449	undefined FUN_0074b449()	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0074BA1C	FUN_0074ba1c	undefined __thiscall FUN_0074ba1c(undefined4 * param_1)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0075405F	FUN_0075405f	undefined __stdcall FUN_0075405f(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	0075415C	FUN_0075415c	undefined __stdcall FUN_0075415c(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH
+1	00756800	FUN_00756800	undefined4 __stdcall FUN_00756800(AnonShape_00756800_BE569F2C * param_1)	/undefined4	DEFAULT	false	/bool	false	boolean_return_domain	high	all explicit return values are constants in {0,1}: [0, 1]
+1	007603A0	FUN_007603a0	undefined __stdcall FUN_007603a0(void)	/undefined	DEFAULT	false	/void	false	leaf_void	high	leaf function has RET and never writes EAX/AX/AL/AH

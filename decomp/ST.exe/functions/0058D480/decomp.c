@@ -20,12 +20,12 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int par
     iVar6 = 0;
   }
   iVar5 = param_1 + param_3;
-  if (SHORT_007fb240 <= iVar5) {
-    iVar5 = SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX <= iVar5) {
+    iVar5 = g_worldGrid.sizeX + -1;
   }
   iVar3 = param_3 + param_2;
-  if (SHORT_007fb242 <= iVar3) {
-    iVar3 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY <= iVar3) {
+    iVar3 = g_worldGrid.sizeY + -1;
   }
   iVar2 = DAT_00811720;
   while( true ) {

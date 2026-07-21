@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\Ai_lex.c
    Diagnostic line evidence: 231 | 253 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006736F0 -> 00672B60 @ 00673B35 */
 
-int FUN_00672b60(char *param_1,undefined4 *param_2)
+int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
 
 {
   char cVar1;
@@ -84,10 +87,10 @@ int FUN_00672b60(char *param_1,undefined4 *param_2)
   piVar2[0xb] = (int)pcVar3;
   pcVar3 = FUN_006c49b0(DAT_0085753c);
   piVar2[7] = (int)pcVar3;
-  PTR_0081194c = (AnonShape_GLOBAL_0081194C_4D1525E6 *)param_2;
+  PTR_0081194c = param_2;
   local_18 = 0;
   if (param_1 != (char *)0x0) {
-    local_18 = (*(code *)*param_2)(param_1);
+    local_18 = (**(code **)param_2)(param_1);
     if (local_18 == 0) {
       RaiseInternalException
                 (-10,g_overwriteContext_007ED77C,s_E____titans_ai_Ai_lex_c_007d2d2c,0xe7);

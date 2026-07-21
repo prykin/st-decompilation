@@ -48,11 +48,11 @@ switchD_0049655f_caseD_0:
     iVar12 = (int)(short)(((short)(param_3 / 200) + sVar1) -
                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)SHORT_007fb240)) && (-1 < (int)uVar10)) &&
-     ((((int)uVar10 <= (int)SHORT_007fb242 && (-1 < iVar12)) &&
-      ((iVar12 <= SHORT_007fb244 &&
-       (sVar1 = *(short *)(DAT_007fb280 +
-                          ((int)SHORT_007fb278 * uVar10 + uVar13 + SHORT_007fb27e * iVar12) * 2),
+  if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)g_worldGrid.sizeX)) && (-1 < (int)uVar10)) &&
+     ((((int)uVar10 <= (int)g_worldGrid.sizeY && (-1 < iVar12)) &&
+      ((iVar12 <= g_worldGrid.sizeZ &&
+       (sVar1 = g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * uVar10 + uVar13 + g_pathingGrid.planeStride * iVar12],
        sVar1 != 0)))))) {
     if (sVar1 == -1) {
       return 0x7f;

@@ -1,5 +1,13 @@
 
-void __thiscall FUN_006e6af0(void *this,AnonShape_006E6AF0_D2F012A7 *param_1)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006E6AF0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=5;
+   ecx_pointer_setup=5; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=2; adopt_untyped_existing_thiscall */
+
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0
+          (AnonReceiver_006E6AF0 *this,AnonShape_006E6AF0_D2F012A7 *param_1)
 
 {
   int iVar1;
@@ -18,7 +26,7 @@ void __thiscall FUN_006e6af0(void *this,AnonShape_006E6AF0_D2F012A7 *param_1)
   int local_30;
   int local_2c;
   int local_24;
-  void *local_20;
+  AnonReceiver_006E6AF0 *local_20;
   int local_14;
   uint local_10;
   int local_c;
@@ -28,7 +36,7 @@ void __thiscall FUN_006e6af0(void *this,AnonShape_006E6AF0_D2F012A7 *param_1)
   pbVar4 = *(byte **)(param_1->field_0018 + (uint)(byte)param_1->field_0x16 * 4);
   iVar1 = 0;
   local_20 = this;
-  switch(*(undefined4 *)((int)this + 0xa8)) {
+  switch(*(undefined4 *)&this->field_0xa8) {
   case 0:
     lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
@@ -64,7 +72,7 @@ switchD_006e6b1d_default:
     param_1 = (AnonShape_006E6AF0_D2F012A7 *)((DAT_00856d88 - DAT_00856d8c * local_34) + local_38);
     if (DAT_00856d84 < local_34) {
       iVar9 = local_34 - DAT_00856d84;
-      local_8 = *(int *)((int)local_20 + 0x3dc) - local_34;
+      local_8 = *(int *)&local_20->field_0x3dc - local_34;
     }
     else {
       iVar9 = DAT_00856d84 - local_34;
@@ -87,13 +95,13 @@ switchD_006e6b1d_default:
       }
       else {
         local_c = 0;
-        local_20 = (void *)local_24;
+        local_20 = (AnonReceiver_006E6AF0 *)local_24;
         if (local_38 < iVar9) {
           iVar9 = iVar9 - local_38;
-          local_20 = (void *)iVar1;
+          local_20 = (AnonReceiver_006E6AF0 *)iVar1;
           if (local_24 + iVar9 < iVar1) {
             param_1 = (AnonShape_006E6AF0_D2F012A7 *)((int)param_1 + iVar9);
-            local_20 = (void *)(local_24 + iVar9);
+            local_20 = (AnonReceiver_006E6AF0 *)(local_24 + iVar9);
             local_c = iVar9;
           }
         }
@@ -114,7 +122,7 @@ switchD_006e6b1d_default:
                 pbVar3 = pbVar3 + 1;
               }
             }
-            local_20 = (void *)((int)local_20 - uVar8);
+            local_20 = (AnonReceiver_006E6AF0 *)((int)local_20 - uVar8);
             if ((int)local_20 < 1) goto LAB_006e6f08;
             local_10 = (uint)*pbVar3;
             pbVar3 = pbVar3 + 1;
@@ -162,7 +170,7 @@ LAB_006e6d68:
         }
         else {
           local_c = local_c + uVar5;
-          local_20 = (void *)((int)local_20 + uVar5);
+          local_20 = (AnonReceiver_006E6AF0 *)((int)local_20 + uVar5);
           if ((int)uVar8 <= (int)uVar5) {
             do {
               uVar5 = uVar5 - uVar8;

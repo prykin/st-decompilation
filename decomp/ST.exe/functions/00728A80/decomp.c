@@ -1,7 +1,15 @@
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=11; incoming_edx_uses=0; calls=1;
+   ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=3; adopt_untyped_existing_thiscall;
+   single_call_corroborated_by_receiver_family */
 
-void __thiscall FUN_00728a80(void *this,int param_1,int param_2,int param_3)
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
+          (AnonReceiver_00728640 *this,int param_1,int param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -44,26 +52,26 @@ void __thiscall FUN_00728a80(void *this,int param_1,int param_2,int param_3)
   int local_8;
   
   iVar15 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
-  iVar14 = *(int *)((int)this + 0x28);
+  iVar14 = *(int *)&this->field_0x28;
   param_1 = param_1 + iVar15 * param_2;
-  local_8 = *(int *)((int)this + 0xc) + iVar15 * iVar14;
-  local_c = *(int *)((int)this + 0x14) + iVar15 * iVar14 * 2;
+  local_8 = *(int *)&this->field_0xc + iVar15 * iVar14;
+  local_c = *(int *)&this->field_0x14 + iVar15 * iVar14 * 2;
   local_38 = 1;
   local_1c = iVar14;
   local_14 = iVar15;
-  local_10 = this;
+  local_10 = (AnonShape_00728A80_F2811CDB *)this;
   iVar6 = FUN_007287e0(&local_38,DAT_00857114);
   if (iVar6 != 0) {
     local_54 = -1;
     iVar6 = FUN_007287e0(&local_54,DAT_00857114);
-    if ((iVar6 != 0) && (iVar15 < *(int *)((int)this + 0x3c))) {
+    if ((iVar6 != 0) && (iVar15 < *(int *)&this->field_0x3c)) {
       do {
-        if (*(int *)&((AnonShape_00728A80_F2811CDB *)this)->field_0x34 <= iVar15) {
+        if (*(int *)&this->field_0x34 <= iVar15) {
           iVar6 = local_48 >> 0x10;
           iVar7 = local_2c >> 0x10;
           iVar14 = local_1c;
           iVar15 = local_14;
-          this = local_10;
+          this = (AnonReceiver_00728640 *)local_10;
           if (iVar6 - iVar7 != 0 && iVar7 <= iVar6) {
             local_18 = local_24;
             DAT_00857108 = (int)(local_40 - local_24) / (iVar6 - iVar7);
@@ -209,7 +217,7 @@ LAB_00728cf9:
         iVar15 = iVar15 + 1;
         local_c = local_c + iVar14 * 2;
         local_14 = iVar15;
-      } while (iVar15 < *(int *)((int)this + 0x3c));
+      } while (iVar15 < *(int *)&this->field_0x3c);
     }
   }
   return;

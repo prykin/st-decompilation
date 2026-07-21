@@ -14,6 +14,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   MMsgTy *this_00;
   int iVar6;
   uint uVar7;
+  uint *extraout_EAX;
   undefined4 *puVar8;
   int iVar9;
   undefined4 unaff_ESI;
@@ -289,10 +290,10 @@ LAB_005b7655:
                 cVar16 = CASE_FFFFFFFE;
                 iVar9 = 0x1e;
                 iVar6 = 0x7d;
-                puVar12 = (uint *)FUN_006b0140(*local_8,HINSTANCE_00807618);
+                LoadResourceString(*local_8,HINSTANCE_00807618);
                 puVar8 = ccFntTy::CreateTypeSSpr
-                                   ((ccFntTy *)PTR_0081176c->field_0030,puVar12,iVar6,iVar9,cVar16,
-                                    uVar7,iVar17,iVar18,iVar19);
+                                   ((ccFntTy *)PTR_0081176c->field_0030,extraout_EAX,iVar6,iVar9,
+                                    cVar16,uVar7,iVar17,iVar18,iVar19);
                 (**(code **)(UVar3 + 8))(puVar8,uVar20,uVar21);
                 local_8[0x30] = 0;
               }

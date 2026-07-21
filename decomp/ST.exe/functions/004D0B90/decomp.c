@@ -99,7 +99,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,AnonShape_0041AF40_F59F8577
     DAT_00800bcc = (STSprGameObjC *)0x0;
     thunk_FUN_004ad310((STT3DSprC *)&pSVar3->field_01D5);
     if (*(int *)&pSVar3->field_0x24d != 0) {
-      FUN_006ab060((LPVOID *)&pSVar3->field_0x24d);
+      FreeAndNull((void **)&pSVar3->field_0x24d);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
@@ -137,8 +137,9 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,AnonShape_0041AF40_F59F8577
       }
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,pSVar3->field_0018,local_8,*(int *)&pSVar3->field_0x245 * 0xc + 0x1c);
-    FUN_006ab060(&local_8);
+              (PTR_00802a38,pSVar3->field_0018,local_8,
+               (AnonShape_0060EA30_DCEB68AD *)(*(int *)&pSVar3->field_0x245 * 0xc + 0x1c));
+    FreeAndNull(&local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

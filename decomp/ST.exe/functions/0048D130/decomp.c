@@ -25,13 +25,13 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
   uint uVar9;
   
   if ((param_5 != -1) &&
-     ((((param_2 < 0 || (SHORT_007fb240 <= param_2)) || (param_3 < 0)) ||
-      (((SHORT_007fb242 <= param_3 || (param_4 < 0)) ||
-       ((SHORT_007fb244 <= param_4 ||
-        ((in_EAX = g_worldCells
-                   [(int)SHORT_007fb246 * (int)param_4 + (int)SHORT_007fb240 * (int)param_3 +
-                    (int)param_2].objects[0], in_EAX == (STWorldObject *)0x0 ||
-         (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
+     ((((param_2 < 0 || (g_worldGrid.sizeX <= param_2)) || (param_3 < 0)) ||
+      (((g_worldGrid.sizeY <= param_3 || (param_4 < 0)) ||
+       ((g_worldGrid.sizeZ <= param_4 ||
+        ((in_EAX = g_worldGrid.cells
+                   [(int)g_worldGrid.planeStride * (int)param_4 +
+                    (int)g_worldGrid.sizeX * (int)param_3 + (int)param_2].objects[0],
+         in_EAX == (STWorldObject *)0x0 || (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
     iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc,
                                s_STBoatC__SetNewMD_007aba24);
     if (iVar8 != 0) {
@@ -50,13 +50,13 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
       uVar6 = (undefined1)sVar1;
       sVar2 = this->field_049F;
       sVar3 = this->field_049D;
-      if (((-1 < sVar1) && (sVar1 < SHORT_007fb240)) &&
-         ((-1 < sVar3 && (((sVar3 < SHORT_007fb242 && (-1 < sVar2)) && (sVar2 < SHORT_007fb244))))))
-      {
+      if (((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
+         ((-1 < sVar3 &&
+          (((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)))))) {
         uVar9 = (uint)sVar1;
-        pSVar4 = g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + uVar9].
-                 objects[0];
+        pSVar4 = g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                  uVar9].objects[0];
         if (pSVar4 != (STWorldObject *)0x0) {
           thunk_FUN_004e18e0(pSVar4,this->field_0018);
           bVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
@@ -80,12 +80,12 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
     uVar6 = (undefined1)sVar1;
     sVar2 = this->field_04A9;
     sVar3 = this->field_04A7;
-    if (((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
-        ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) && (sVar2 < SHORT_007fb244)) {
+    if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
+        ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))) && (sVar2 < g_worldGrid.sizeZ)) {
       uVar9 = (uint)sVar1;
-      pSVar4 = g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + uVar9].objects
-               [0];
+      pSVar4 = g_worldGrid.cells
+               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                uVar9].objects[0];
       if (pSVar4 != (STWorldObject *)0x0) {
         thunk_FUN_004e18e0(pSVar4,this->field_0018);
         bVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);

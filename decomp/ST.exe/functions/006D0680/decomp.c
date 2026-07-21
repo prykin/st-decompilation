@@ -1,7 +1,10 @@
 
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
 undefined4
-FUN_006d0680(AnonShape_006D0680_01056108 *param_1,int *param_2,uint *param_3,
-            AnonShape_006D0680_EDC74182 *param_4,int *param_5,uint *param_6)
+FUN_006d0680(AnonShape_006B5B10_E0D06CF1 *param_1,int *param_2,uint *param_3,
+            AnonShape_006B5B10_E0D06CF1 *param_4,int *param_5,uint *param_6)
 
 {
   uint uVar1;

@@ -17,7 +17,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
   int iVar8;
   BOOL BVar9;
   int extraout_EAX;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   byte *pbVar10;
   ushort *puVar11;
   char *pcVar12;
@@ -55,7 +55,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
   STAlgaC *local_2c;
   int local_28;
   undefined4 local_24;
-  uint local_20;
+  AnonShape_0060EA30_DCEB68AD *local_20;
   byte *local_1c;
   int local_18;
   DArrayTy *local_14;
@@ -104,20 +104,20 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,AnonShape_00575CB0_4AFBDFBD *pa
       puVar17 = puVar17 + 1;
       puVar22 = puVar22 + 1;
     }
-    local_20 = *(int *)(param_1->field_0014 + 0x14);
+    local_20 = *(AnonShape_0060EA30_DCEB68AD **)(param_1->field_0014 + 0x14);
     local_10 = (AnonShape_00575CB0_065D0A66 *)(param_1->field_0014 + 0x18);
-    BVar9 = IsBadReadPtr(local_10,local_20 * 0x92);
+    BVar9 = IsBadReadPtr(local_10,(int)local_20 * 0x92);
     if (BVar9 != 0) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,s_E____titans_Object_To_alga_cpp_007cab24,0x66);
       return extraout_EAX;
     }
-    groupContent = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x24,10);
-    local_14 = groupContent;
+    array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x24,10);
+    local_14 = array;
     local_18 = 0;
     if (0 < (int)local_20) {
       do {
-        groupContent->iteratorIndex = 0;
+        array->iteratorIndex = 0;
         do {
           do {
             uVar13 = local_14->iteratorIndex;
@@ -170,7 +170,7 @@ LAB_005761a1:
           iVar8 = 0;
 LAB_005761a6:
         } while (iVar8 != 0);
-        groupContent = local_14;
+        array = local_14;
         if (piVar19 == (int *)0x0) {
 LAB_005761b9:
           local_e8.previous = g_currentExceptionFrame;
@@ -222,7 +222,7 @@ LAB_005761b9:
             pcVar12 = FUN_006c49b0((char *)local_8);
             *(char **)(pSVar16->field_0038 + pSVar16->field_0030 * 8) = pcVar12;
             pcVar12 = FUN_006c49b0(puVar25);
-            groupContent = local_14;
+            array = local_14;
             *(char **)(pSVar16->field_0038 + 4 + pSVar16->field_0030 * 8) = pcVar12;
             Library::DKW::TBL::FUN_006ae1c0(&local_14->flags,&local_60);
             pSVar16->field_0030 = pSVar16->field_0030 + 1;
@@ -230,7 +230,7 @@ LAB_005761b9:
           }
           g_currentExceptionFrame = local_e8.previous;
           pSVar16 = local_2c;
-          groupContent = local_14;
+          array = local_14;
         }
         else {
 LAB_00576308:
@@ -281,7 +281,7 @@ LAB_00576308:
             FUN_006ea960(PTR_00807598,local_c,(float)piVar1[1],(float)piVar1[2],(float)piVar1[3]);
             FUN_006eaaa0(PTR_00807598,local_c,0);
             pSVar16->field_0044 = pSVar16->field_0044 + 1;
-            groupContent = local_14;
+            array = local_14;
           }
           else if ((iVar8 < piVar19[1]) && ((piVar19[4] == 0 || (iVar8 < piVar19[3])))) {
             if (local_30 <= (int)pSVar16->field_003C) {
@@ -321,7 +321,7 @@ LAB_00576308:
               puVar17[6] = (int)lVar27;
             }
             pSVar16->field_003C = pSVar16->field_003C + 1;
-            groupContent = local_14;
+            array = local_14;
           }
         }
         local_18 = local_18 + 1;
@@ -336,7 +336,7 @@ LAB_00576308:
       PTR_00807598->field_0290 = pSVar16->field_0040;
       *(undefined4 *)&pAVar6->field_0x28c = uVar15;
     }
-    FUN_006ae110((byte *)groupContent);
+    DArrayDestroy(array);
   }
   else if (iVar8 == 3) {
     if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
@@ -352,19 +352,19 @@ LAB_00576308:
       iVar8 = pSVar16->field_0030 + -1;
       pSVar16->field_0030 = iVar8;
       while (-1 < iVar8) {
-        FUN_006ab060((LPVOID *)(pSVar16->field_0038 + iVar8 * 8));
-        FUN_006ab060((LPVOID *)(pSVar16->field_0038 + 4 + pSVar16->field_0030 * 8));
+        FreeAndNull((void **)(pSVar16->field_0038 + iVar8 * 8));
+        FreeAndNull((void **)(pSVar16->field_0038 + 4 + pSVar16->field_0030 * 8));
         iVar8 = pSVar16->field_0030 + -1;
         pSVar16->field_0030 = iVar8;
       }
-      FUN_006ab060((LPVOID *)&pSVar16->field_0038);
+      FreeAndNull((void **)&pSVar16->field_0038);
       pSVar16->field_0034 = 0;
       pSVar16->field_0030 = 0;
       pAVar6 = PTR_00807598;
       PTR_00807598->field_0290 = 0;
       *(undefined4 *)&pAVar6->field_0x28c = 0;
-      FUN_006ab060((LPVOID *)&pSVar16->field_0040);
-      FUN_006ab060((LPVOID *)&pSVar16->field_0048);
+      FreeAndNull((void **)&pSVar16->field_0040);
+      FreeAndNull((void **)&pSVar16->field_0048);
       pSVar16->field_003C = 0;
       pSVar16->field_0044 = 0;
       g_currentExceptionFrame = local_a4.previous;
@@ -372,8 +372,8 @@ LAB_00576308:
     }
   }
   else if ((iVar8 == 0x10f) && (iVar8 = pSVar16->field_003C + pSVar16->field_0044, 0 < iVar8)) {
-    local_20 = iVar8 * 0x92 + 0x18;
-    local_1c = (byte *)Library::DKW::LIB::FUN_006aac10(local_20);
+    local_20 = (AnonShape_0060EA30_DCEB68AD *)(iVar8 * 0x92 + 0x18);
+    local_1c = (byte *)Library::DKW::LIB::FUN_006aac10((uint)local_20);
     puVar17 = (undefined4 *)&pSVar16->field_0x1c;
     pbVar10 = local_1c;
     for (iVar8 = 5; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -527,7 +527,7 @@ LAB_00576308:
       } while (local_18 < (int)pSVar16->field_003C);
     }
     STPlaySystemC::SaveObjData(PTR_00802a38,pSVar16->field_0018,local_1c,local_20);
-    FUN_006ab060(&local_1c);
+    FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_a4.previous;
     return 0;
   }

@@ -13,8 +13,8 @@ DumpClassC::WritePtr
   int iVar2;
   undefined4 uVar3;
   
-  if ((((param_1 < 0) || (SHORT_007fb240 <= param_1)) || (param_2 < 0)) ||
-     (((SHORT_007fb242 <= param_2 || (param_3 < 0)) || (SHORT_007fb244 <= param_3)))) {
+  if ((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
+     (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x7f,0,0,&DAT_007a4ccc,
                                s_DumpClassC__WritePtr_007abdf8);
     if (iVar2 != 0) {
@@ -24,12 +24,12 @@ DumpClassC::WritePtr
     }
     return 0;
   }
-  if (g_worldCells
-      [(int)SHORT_007fb240 * (int)param_2 + (int)SHORT_007fb246 * (int)param_3 + (int)param_1].
-      objects[param_4 & 0xff] == (STWorldObject *)0x0) {
-    g_worldCells
-    [(int)SHORT_007fb240 * (int)param_2 + (int)SHORT_007fb246 * (int)param_3 + (int)param_1].objects
-    [param_4 & 0xff] = (STWorldObject *)param_5;
+  if (g_worldGrid.cells
+      [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
+       (int)param_1].objects[param_4 & 0xff] == (STWorldObject *)0x0) {
+    g_worldGrid.cells
+    [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
+     (int)param_1].objects[param_4 & 0xff] = (STWorldObject *)param_5;
     param_5->field_005F = param_3;
     param_5->field_005D = param_2;
     param_5->field_005B = param_1;

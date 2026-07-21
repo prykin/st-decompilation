@@ -167,12 +167,12 @@ LAB_005ed68c:
     sVar10 = *(short *)((int)this + 0x244);
     sVar9 = sVar1 + sVar5;
     sVar6 = *(short *)((int)this + 0x242);
-    if (((-1 < sVar6) && (sVar6 < SHORT_007fb240)) &&
-       ((-1 < sVar10 && (((sVar10 < SHORT_007fb242 && (-1 < sVar9)) && (sVar9 < SHORT_007fb244))))))
-    {
-      pSVar2 = g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar10 + (int)sVar6].
-               objects[0];
+    if (((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) &&
+       ((-1 < sVar10 &&
+        (((sVar10 < g_worldGrid.sizeY && (-1 < sVar9)) && (sVar9 < g_worldGrid.sizeZ)))))) {
+      pSVar2 = g_worldGrid.cells
+               [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar10 +
+                (int)sVar6].objects[0];
 joined_r0x005ed4b7:
       if (pSVar2 != (STWorldObject *)0x0) goto LAB_005ed643;
     }
@@ -197,11 +197,11 @@ joined_r0x005ed4b7:
     sVar10 = *(short *)((int)this + 0x244);
     sVar9 = sVar1 + sVar5;
     sVar6 = *(short *)((int)this + 0x242);
-    if ((((-1 < sVar6) && (sVar6 < SHORT_007fb240)) && (-1 < sVar10)) &&
-       (((sVar10 < SHORT_007fb242 && (-1 < sVar9)) && (sVar9 < SHORT_007fb244)))) {
-      pSVar2 = g_worldCells
-               [(int)sVar9 * (int)SHORT_007fb246 + (int)sVar10 * (int)SHORT_007fb240 + (int)sVar6].
-               objects[0];
+    if ((((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) && (-1 < sVar10)) &&
+       (((sVar10 < g_worldGrid.sizeY && (-1 < sVar9)) && (sVar9 < g_worldGrid.sizeZ)))) {
+      pSVar2 = g_worldGrid.cells
+               [(int)sVar9 * (int)g_worldGrid.planeStride + (int)sVar10 * (int)g_worldGrid.sizeX +
+                (int)sVar6].objects[0];
       goto joined_r0x005ed4b7;
     }
   }

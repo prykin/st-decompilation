@@ -28,7 +28,7 @@ void __fastcall FUN_005718d0(int param_1)
                   (uint)*(ushort *)(local_c + 0x1138));
         Library::DKW::WGR::FUN_006c4230(&stack0xfffffe9c,local_8,(LPCVOID)0x0);
         *(short *)(iVar1 + 0x1138) = *(short *)(iVar1 + 0x1138) + 1;
-        FUN_006ab060(&local_8);
+        FreeAndNull(&local_8);
       }
       g_currentExceptionFrame = local_60.previous;
       return;

@@ -30,11 +30,11 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
   undefined2 local_8;
   undefined2 local_6;
   
-  uVar3 = (uint)SHORT_007fb240;
+  uVar3 = (uint)g_worldGrid.sizeX;
   uVar11 = 0;
   uVar10 = 0;
   uVar4 = uVar3 - 1;
-  uVar5 = (uint)SHORT_007fb242;
+  uVar5 = (uint)g_worldGrid.sizeY;
   uVar6 = uVar5 - 1;
   sub_004162B0(this,&local_a,&local_8,&local_6);
   local_18 = (int)this->field_004B - (PTR_00802a38->field_00E4 & 1);
@@ -238,19 +238,19 @@ cf_continue_loop_0057DBE9:
     sVar13 = (short)local_18;
     bVar1 = thunk_FUN_004961b0(sVar2,sVar12,sVar13);
     if (((CONCAT31(extraout_var,bVar1) != 0) &&
-        (((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) ||
+        (((sVar2 < 0 || (g_worldGrid.sizeX <= sVar2)) ||
          ((sVar12 < 0 ||
-          ((((SHORT_007fb242 <= sVar12 || (sVar13 < 0)) || (SHORT_007fb244 <= sVar13)) ||
-           (g_worldCells
-            [(int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
-            objects[0] == (STWorldObject *)0x0)))))))) &&
-       (((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) ||
+          ((((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13)) ||
+           (g_worldGrid.cells
+            [(int)sVar12 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13 +
+             (int)sVar2].objects[0] == (STWorldObject *)0x0)))))))) &&
+       (((sVar2 < 0 || (g_worldGrid.sizeX <= sVar2)) ||
         ((sVar12 < 0 ||
-         (((SHORT_007fb242 <= sVar12 || (sVar13 < 0)) ||
-          ((SHORT_007fb244 <= sVar13 ||
-           (g_worldCells
-            [(int)sVar12 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
-            objects[1] == (STWorldObject *)0x0)))))))))) {
+         (((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) ||
+          ((g_worldGrid.sizeZ <= sVar13 ||
+           (g_worldGrid.cells
+            [(int)sVar12 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13 +
+             (int)sVar2].objects[1] == (STWorldObject *)0x0)))))))))) {
       *param_1 = uVar11;
       *param_2 = uVar10;
       *param_3 = local_18;

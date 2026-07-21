@@ -2,18 +2,18 @@
 undefined4 __fastcall FUN_004ce860(AnonShape_004CE860_DECB0AA9 *param_1)
 
 {
-  DArrayTy *pDVar1;
-  uint uVar2;
+  DArrayTy *array;
+  uint index;
   AnonShape_004CE860_DECB0AA9 *local_8;
   
-  pDVar1 = g_playerRuntime[param_1->field_0024].field2168_0x9de;
-  if ((pDVar1 != (DArrayTy *)0x0) && (uVar2 = 0, local_8 = param_1, 0 < (int)pDVar1->count)) {
+  array = g_playerRuntime[param_1->field_0024].field2168_0x9de;
+  if ((array != (DArrayTy *)0x0) && (index = 0, local_8 = param_1, 0 < (int)array->count)) {
     while( true ) {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,uVar2,&local_8);
+      DArrayGetElement(array,index,&local_8);
       if (*(int *)(&local_8[1].field_0x134 + param_1->field_0369 * 4) != 0) break;
-      uVar2 = uVar2 + 1;
-      pDVar1 = g_playerRuntime[param_1->field_0024].field2168_0x9de;
-      if ((int)pDVar1->count <= (int)uVar2) {
+      index = index + 1;
+      array = g_playerRuntime[param_1->field_0024].field2168_0x9de;
+      if ((int)array->count <= (int)index) {
         return 0;
       }
     }

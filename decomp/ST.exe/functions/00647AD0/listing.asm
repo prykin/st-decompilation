@@ -1,4 +1,4 @@
-FUN_00647ad0:
+AiBossClassTy::AiBossClassTy:
 00647AD0  56                        PUSH ESI
 00647AD1  57                        PUSH EDI
 00647AD2  8B F1                     MOV ESI,ECX

@@ -42,10 +42,10 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     this->field_02EC = 0xffffffff;
   }
   if (this->field_02F0 != (AnonPointee_StartSystemTy_02F0 *)0x0) {
-    FUN_006ab060(&this->field_02F0);
+    FreeAndNull(&this->field_02F0);
   }
   if (this->field_02F4 != 0) {
-    FUN_006ab060((LPVOID *)&this->field_02F4);
+    FreeAndNull((void **)&this->field_02F4);
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_02F8);
   if ((AnonShape_006B5570_4D68B99C *)this->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -57,10 +57,10 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     this->field_0540 = 0xffffffff;
   }
   if (this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) {
-    FUN_006ab060(&this->field_0544);
+    FreeAndNull(&this->field_0544);
   }
   if (this->field_067E != (AnonPointee_StartSystemTy_067E *)0x0) {
-    FUN_006ab060(&this->field_067E);
+    FreeAndNull(&this->field_067E);
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_055C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_05ED);
@@ -69,7 +69,7 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     this->field_0558 = 0xffffffff;
   }
   if (this->field_0682 != (AnonPointee_StartSystemTy_0682 *)0x0) {
-    FUN_006ab060(&this->field_0682);
+    FreeAndNull(&this->field_0682);
   }
   if (-1 < (int)this->field_0554) {
     FUN_006b3bb0(DAT_008075a8,this->field_0554);

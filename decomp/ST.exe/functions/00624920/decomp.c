@@ -106,13 +106,13 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     iVar8 = (*(int *)((int)this + 0x302) * iVar11) / 10000 + (int)*(short *)((int)this + 0x38);
     iVar7 = thunk_FUN_00627670((int)this);
     if ((1 < iVar9) &&
-       (uVar5 = thunk_FUN_00601500((void *)((int)this + 0x231),iVar10,iVar6,iVar8,
-                                   (int)*(short *)((int)this + 0x54),
-                                   (int)*(short *)((int)this + 0x56),
-                                   (int)*(short *)((int)this + 0x58),*(int *)((int)this + 0x262),
-                                   iVar7,*(int *)((int)this + 0x18),0xffff,
-                                   *(int *)(&DAT_007d04d0 + (uint)*(byte *)((int)this + 0x2ad) * 4),
-                                   0,1), 0 < (int)uVar5)) {
+       (uVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                          ((AnonReceiver_00601500 *)((int)this + 0x231),iVar10,iVar6,iVar8,
+                           (int)*(short *)((int)this + 0x54),(int)*(short *)((int)this + 0x56),
+                           (int)*(short *)((int)this + 0x58),*(int *)((int)this + 0x262),iVar7,
+                           *(int *)((int)this + 0x18),0xffff,
+                           *(int *)(&DAT_007d04d0 + (uint)*(byte *)((int)this + 0x2ad) * 4),0,1),
+       0 < (int)uVar5)) {
       thunk_FUN_00627390((int)this);
       return 0;
     }
@@ -156,12 +156,12 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (CONCAT31(extraout_var,bVar4) != 0) {
         sVar2 = *(short *)((int)this + 0x47);
         sVar3 = *(short *)((int)this + 0x49);
-        if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar3 < 0)) ||
-            ((SHORT_007fb242 <= sVar3 || (sVar13 < 0)))) ||
-           ((SHORT_007fb244 <= sVar13 ||
-            (g_worldCells
-             [(int)SHORT_007fb240 * (int)sVar3 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
-             objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)))) {
+        if (((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar3 < 0)) ||
+            ((g_worldGrid.sizeY <= sVar3 || (sVar13 < 0)))) ||
+           ((g_worldGrid.sizeZ <= sVar13 ||
+            (g_worldGrid.cells
+             [(int)g_worldGrid.sizeX * (int)sVar3 + (int)g_worldGrid.planeStride * (int)sVar13 +
+              (int)sVar2].objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)))) {
           iVar6 = thunk_FUN_00495ff0(sVar2,sVar3,*(short *)((int)this + 0x4b),
                                      (uint)*(byte *)((int)this + 0x8e),this);
           if (iVar6 == 0) {
@@ -169,12 +169,12 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
           }
           sVar2 = *(short *)((int)this + 0x47);
           sVar3 = *(short *)((int)this + 0x49);
-          if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
+          if (((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
                ((sVar3 < 0 ||
-                (((SHORT_007fb242 <= sVar3 || (sVar13 < 0)) || (SHORT_007fb244 <= sVar13)))))) ||
-              (g_worldCells
-               [(int)sVar3 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar13 + (int)sVar2].
-               objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)) &&
+                (((g_worldGrid.sizeY <= sVar3 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13))))))
+              || (g_worldGrid.cells
+                  [(int)sVar3 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13
+                   + (int)sVar2].objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)) &&
              (iVar6 = DumpClassC::WritePtr
                                 (sVar2,sVar3,sVar13,(uint)*(byte *)((int)this + 0x8e),this),
              iVar6 == 0)) {
@@ -199,12 +199,12 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
                                  (undefined *)(int)*(short *)((int)this + 0x49),
                                  (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
                                  DAT_007d02c0,*(int *)((int)this + 0x18),0xffffffff);
-              thunk_FUN_00559d60(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
-                                 (int)*(short *)((int)this + 0x49),
-                                 (char)*(undefined2 *)((int)this + 0x4b),*(uint *)((int)this + 0x24)
-                                 ,*(undefined **)
-                                   (&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
-                                 *(undefined4 *)((int)this + 0x18));
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559d60
+                        ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,
+                         (int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
+                         (char)*(undefined2 *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
+                         *(undefined **)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
+                         *(undefined4 *)((int)this + 0x18));
               thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
                                  (int)*(short *)((int)this + 0x49),puVar12,
                                  *(int **)((int)this + 0x24),

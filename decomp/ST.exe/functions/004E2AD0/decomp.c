@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
   thunk_FUN_004e5eb0(*(int *)((int)this + 0x24),param_2);
   if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
   goto cf_common_exit_004E2B69;
-  uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   uVar1 = uVar1 & 0xff;
   if (uVar1 == 1) {
     iVar3 = *(int *)this;

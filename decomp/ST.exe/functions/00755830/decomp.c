@@ -1,5 +1,8 @@
 
-uint FUN_00755830(AnonShape_00755830_DE41EB2A *param_1,uint *param_2,int param_3)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3)
 
 {
   short *psVar1;

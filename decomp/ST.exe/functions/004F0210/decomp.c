@@ -52,8 +52,8 @@ BldLabPanelTy::GetMessage(BldLabPanelTy *this,AnonShape_004F0210_51A01EB3 *param
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (*(byte **)&this_00[1].field_0xd5 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00[1].field_0xd5);
+      if (*(DArrayTy **)&this_00[1].field_0xd5 != (DArrayTy *)0x0) {
+        DArrayDestroy(*(DArrayTy **)&this_00[1].field_0xd5);
       }
       *(undefined4 *)&this_00[1].field_0xd5 = 0;
       g_prodPanel_00801680 = (ProdPanelTy *)0x0;
@@ -89,7 +89,7 @@ BldLabPanelTy::GetMessage(BldLabPanelTy *this,AnonShape_004F0210_51A01EB3 *param
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      PaintUpdBut((BldLabPanelTy *)this_00,(AnonShape_004EFFE0_E46DC6EE *)param_1);
+      PaintUpdBut((BldLabPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)param_1);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

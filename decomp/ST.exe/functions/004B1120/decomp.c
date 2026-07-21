@@ -1,5 +1,4 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94;CASE_61=97 */
@@ -49,9 +48,9 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
                 if (iVar2 == 0xdc) {
 LAB_004b1226:
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
-                  if (((g_worldCells
-                        [(int)SHORT_007fb240 * (int)local_8 +
-                         (int)local_6 + (int)SHORT_007fb246 * (int)local_a].objects[0] ==
+                  if (((g_worldGrid.cells
+                        [(int)g_worldGrid.sizeX * (int)local_8 +
+                         (int)local_6 + (int)g_worldGrid.planeStride * (int)local_a].objects[0] ==
                         (STWorldObject *)0x0) && (local_a < 4)) &&
                      ((iVar2 = FUN_006aced8((int)local_6,(int)local_8,*param_3,*param_4),
                       local_14 < 0 || (iVar2 < local_14)))) {
@@ -89,9 +88,9 @@ LAB_004b1226:
       }
     }
     else {
-      sVar1 = (short)_SHORT_007fb240;
-      if ((short)_SHORT_007fb240 <= SHORT_007fb242) {
-        sVar1 = SHORT_007fb242;
+      sVar1 = g_worldGrid.sizeX;
+      if (g_worldGrid.sizeX <= g_worldGrid.sizeY) {
+        sVar1 = g_worldGrid.sizeY;
       }
       local_14 = 1;
       iVar2 = 0;
@@ -100,14 +99,14 @@ LAB_004b1226:
           local_10 = iVar2;
           iVar5 = 0;
           iVar2 = local_14;
-          if ((param_7 < local_14) && (SHORT_007fb244 != 1 && -1 < SHORT_007fb244 + -1)) {
+          if ((param_7 < local_14) && (g_worldGrid.sizeZ != 1 && -1 < g_worldGrid.sizeZ + -1)) {
             do {
               iVar6 = *param_3 - iVar2;
               if (iVar6 <= *param_3 + iVar2) {
                 do {
-                  if ((-1 < iVar6) && (iVar6 < SHORT_007fb240)) {
+                  if ((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) {
                     iVar7 = *param_4 - iVar2;
-                    if ((-1 < iVar7) && (iVar7 < SHORT_007fb242)) {
+                    if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
                       if (param_6 == 0) {
                         piVar4 = (int *)0x0;
                       }
@@ -125,7 +124,7 @@ LAB_004b14f8:
                     }
 LAB_004b13a9:
                     iVar7 = *param_4 + iVar2;
-                    if ((-1 < iVar7) && (iVar7 < SHORT_007fb242)) {
+                    if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
                       if (param_6 == 0) {
                         piVar4 = (int *)0x0;
                       }
@@ -145,9 +144,9 @@ LAB_004b13a9:
               iVar7 = (iVar6 - iVar2) + 1;
               if (iVar7 <= iVar6 + -1 + iVar2) {
                 do {
-                  if ((-1 < iVar7) && (iVar7 < SHORT_007fb242)) {
+                  if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
                     iVar6 = iVar6 - iVar2;
-                    if ((-1 < iVar6) && (iVar6 < SHORT_007fb240)) {
+                    if ((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) {
                       if (param_6 == 0) {
                         piVar4 = (int *)0x0;
                       }
@@ -160,7 +159,7 @@ LAB_004b13a9:
                       if (iVar3 != 0) goto LAB_004b1504;
                     }
                     iVar6 = *param_3 + iVar2;
-                    if ((-1 < iVar6) && (iVar6 < SHORT_007fb240)) {
+                    if ((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) {
                       if (param_6 == 0) {
                         piVar4 = (int *)0x0;
                       }
@@ -185,7 +184,7 @@ LAB_004b150e:
                 } while (iVar7 <= iVar6 + -1 + iVar2);
               }
               iVar5 = iVar5 + 1;
-            } while (iVar5 < SHORT_007fb244 + -1);
+            } while (iVar5 < g_worldGrid.sizeZ + -1);
           }
           local_14 = iVar2 + 1;
           iVar2 = local_10;

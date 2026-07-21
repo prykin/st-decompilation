@@ -1,5 +1,8 @@
 
-int FUN_006e4540(AnonShape_006E4540_86065AE3 *param_1,int param_2)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+int FUN_006e4540(AnonShape_006E3450_BC2FF034 *param_1,int param_2)
 
 {
   uint uVar1;
@@ -21,8 +24,8 @@ int FUN_006e4540(AnonShape_006E4540_86065AE3 *param_1,int param_2)
     if (*(int *)(*(int *)(iVar3 + 4) + 0x14) == param_2) {
       return iVar3;
     }
-  } while ((*(AnonShape_006E4540_86065AE3 **)(iVar3 + 8) == (AnonShape_006E4540_86065AE3 *)0x0) ||
-          (iVar2 = FUN_006e4540(*(AnonShape_006E4540_86065AE3 **)(iVar3 + 8),param_2), iVar2 == 0));
+  } while ((*(AnonShape_006E3450_BC2FF034 **)(iVar3 + 8) == (AnonShape_006E3450_BC2FF034 *)0x0) ||
+          (iVar2 = FUN_006e4540(*(AnonShape_006E3450_BC2FF034 **)(iVar3 + 8),param_2), iVar2 == 0));
   return iVar2;
 }
 

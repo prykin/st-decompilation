@@ -68,7 +68,8 @@ FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,i
     puVar12 = (uint *)((int)puVar12 + 1);
   }
 LAB_005a3a15:
-  FUN_006b4170(*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8,0xff);
+  FUN_006b4170(*(AnonShape_006C7610_838EDECF **)((int)this + 0x1ac0),0,param_5,param_6,param_7,
+               param_8,0xff);
   ccFntTy::SetSurf(param_1,*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8);
   ccFntTy::WrStr(param_1,local_10,-1,-1,0);
   return;

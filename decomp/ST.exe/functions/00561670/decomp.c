@@ -238,7 +238,7 @@ LAB_00561bff:
       local_20 = param_5;
     }
   }
-  FUN_006ab060(&local_24);
+  FreeAndNull(&local_24);
   if (local_2c == 0) {
     return puVar5;
   }

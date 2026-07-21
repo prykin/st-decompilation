@@ -20,12 +20,12 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
       iVar3 = -1 - param_4;
       iVar1 = FUN_006b4fa0(param_1);
       puVar2 = (undefined4 *)
-               FUN_00752cf0((AnonShape_00752CF0_B22A2A38 *)param_1,iVar1,iVar3,param_3,puVar4);
+               FUN_00752cf0((AnonShape_006B5B10_E0D06CF1 *)param_1,iVar1,iVar3,param_3,puVar4);
     }
     else {
       puVar4 = &local_8;
       iVar1 = FUN_006b4fa0(param_1);
-      puVar2 = FUN_007527a0((AnonShape_007527A0_89B74FC0 *)param_1,iVar1,param_4,param_3,puVar4);
+      puVar2 = FUN_007527a0((AnonShape_006B5B10_E0D06CF1 *)param_1,iVar1,param_4,param_3,puVar4);
     }
     if (param_2 != (uint *)0x0) {
       *param_2 = local_8;

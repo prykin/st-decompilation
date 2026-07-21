@@ -1,5 +1,4 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_mbomb.cpp
    STMBombC::GetMessage */
@@ -24,7 +23,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
   InternalExceptionFrame local_8c;
   undefined4 *local_48;
   STSprGameObjC *local_44;
-  LPVOID local_40;
+  void *local_40;
   undefined4 local_3c;
   undefined4 local_38;
   undefined4 local_34;
@@ -159,10 +158,11 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
       pbVar11 = pbVar11 + 1;
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,this_00->field_0018,(byte *)local_14,local_18 + 0x87 + local_10);
-    FUN_006ab060(&local_20);
-    FUN_006ab060(&local_1c);
-    FUN_006ab060(&local_14);
+              (PTR_00802a38,this_00->field_0018,(byte *)local_14,
+               (AnonShape_0060EA30_DCEB68AD *)(local_18 + 0x87 + local_10));
+    FreeAndNull(&local_20);
+    FreeAndNull(&local_1c);
+    FreeAndNull(&local_14);
     g_currentExceptionFrame = local_8c.previous;
     return 0;
   }
@@ -195,12 +195,12 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
       *(undefined4 *)&this_00->field_0x26b = 0;
       *(undefined4 *)&this_00->field_0x267 = 0;
       *(undefined4 *)&this_00->field_0x263 = 0;
-      if ((*(int *)&this_00->field_0x290 < (int)(short)((short)_SHORT_007fb240 * 0xc9 + 100)) &&
+      if ((*(int *)&this_00->field_0x290 < (int)(short)(g_worldGrid.sizeX * 0xc9 + 100)) &&
          (-1 < *(int *)&this_00->field_0x290)) {
-        if ((*(int *)&this_00->field_0x294 < (int)(short)(SHORT_007fb242 * 0xc9 + 100)) &&
+        if ((*(int *)&this_00->field_0x294 < (int)(short)(g_worldGrid.sizeY * 0xc9 + 100)) &&
            (((-1 < *(int *)&this_00->field_0x294 &&
-             (iVar2 = *(int *)&this_00->field_0x298, iVar2 < (short)(_SHORT_007fb244 * 200 + 100)))
-            && (-1 < iVar2)))) {
+             (iVar2 = *(int *)&this_00->field_0x298, iVar2 < (short)(g_worldGrid._4_4_ * 200 + 100))
+             ) && (-1 < iVar2)))) {
           thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x290,
                              *(undefined2 *)&this_00->field_0x294,(short)iVar2);
           iVar2 = *(int *)&this_00->field_0x290;
@@ -334,8 +334,8 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
     this_00->field_0x276 = *(undefined1 *)((int)local_48 + 0x79);
     this_00->field_0x277 = *(undefined1 *)((int)local_48 + 0x7a);
     *(undefined4 *)&this_00->field_0x278 = *(undefined4 *)((int)local_48 + 0x7b);
-    local_40 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-    if (local_40 == (LPVOID)0x0) {
+    local_40 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+    if (local_40 == (void *)0x0) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
@@ -353,8 +353,8 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,AnonShape_00588BC0_F7B
     local_28 = 0;
     STT3DSprC::RestoreSpr
               ((STT3DSprC *)&this_00->field_01D5,(int *)&local_40,
-               (AnonShape_004ADBA0_E7CEFF88 *)((int)puVar7 + 0x83));
-    FUN_006ab060(&local_40);
+               (AnonShape_004AD790_77673787 *)((int)puVar7 + 0x83));
+    FreeAndNull(&local_40);
     g_currentExceptionFrame = local_8c.previous;
     return 0;
   }

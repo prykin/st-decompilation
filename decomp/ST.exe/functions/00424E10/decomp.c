@@ -3,11 +3,18 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Td3dshad.cpp
    Diagnostic line evidence: 1376 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=36; incoming_edx_uses=0; calls=7;
+   ecx_pointer_setup=7; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[28];
+   expected_stack=28; receiver_family_members=21; adopt_untyped_existing_thiscall */
 
 int __thiscall
-FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,int param_5,
-            int param_6,int *param_7)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
+          (AnonReceiver_004248D0 *this,int param_1,float param_2,float param_3,float param_4,
+          int param_5,int param_6,int *param_7)
 
 {
   uint *puVar1;
@@ -106,7 +113,7 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
   local_2c = 0;
   ExceptionList = &local_14;
   puVar9 = &stack0xfffffea0;
-  if ((*(int *)((int)this + 0x358) != 0) &&
+  if ((*(int *)&this->field_0x358 != 0) &&
      (ExceptionList = &local_14, puVar9 = &stack0xfffffea0, param_1 != 0)) {
     local_84 = param_2;
     local_80 = param_3;
@@ -114,15 +121,15 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
     ExceptionList = &local_14;
     iVar10 = FUN_006e25d0(this,&local_78);
     if (iVar10 != 1) {
-      if ((((*(int *)((int)this + 0x30) <= *(int *)((int)this + 0x3d8) + (local_78 >> 0x10)) &&
-           ((local_78 >> 0x10) - *(int *)((int)this + 0x3d8) < *(int *)((int)this + 0x38))) &&
-          (*(int *)((int)this + 0x34) <= *(int *)((int)this + 0x3d4) + (local_74 >> 0x10))) &&
-         ((local_74 >> 0x10) - *(int *)((int)this + 0x3d0) < *(int *)((int)this + 0x3c))) {
-        local_84 = (float)param_5 * (float)*(double *)((int)this + 0x368) + local_84;
+      if ((((*(int *)&this->field_0x30 <= *(int *)&this->field_0x3d8 + (local_78 >> 0x10)) &&
+           ((local_78 >> 0x10) - *(int *)&this->field_0x3d8 < *(int *)&this->field_0x38)) &&
+          (*(int *)&this->field_0x34 <= *(int *)&this->field_0x3d4 + (local_74 >> 0x10))) &&
+         ((local_74 >> 0x10) - *(int *)&this->field_0x3d0 < *(int *)&this->field_0x3c)) {
+        local_84 = (float)param_5 * (float)*(double *)&this->field_0x368 + local_84;
         iVar11 = FUN_006e25d0(this,&local_78);
         iVar10 = 1;
         if (iVar11 != 1) {
-          local_80 = (float)param_6 * (float)*(double *)((int)this + 0x368) + local_80;
+          local_80 = (float)param_6 * (float)*(double *)&this->field_0x368 + local_80;
           iVar11 = FUN_006e25d0(this,&local_78);
           iVar10 = 1;
           if (iVar11 != 1) {
@@ -136,11 +143,11 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
               iVar11 = FUN_006e25d0(this,&local_78);
               iVar10 = 1;
               if (iVar11 != 1) {
-                local_84 = (float)param_5 * (float)*(double *)((int)this + 0x368) + local_84;
+                local_84 = (float)param_5 * (float)*(double *)&this->field_0x368 + local_84;
                 iVar11 = FUN_006e25d0(this,&local_78);
                 iVar10 = 1;
                 if (iVar11 != 1) {
-                  local_80 = (float)param_6 * (float)*(double *)((int)this + 0x368) + local_80;
+                  local_80 = (float)param_6 * (float)*(double *)&this->field_0x368 + local_80;
                   iVar11 = FUN_006e25d0(this,&local_78);
                   iVar10 = 1;
                   if (iVar11 != 1) {
@@ -157,14 +164,14 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
     puVar9 = local_1c;
     if (iVar10 != 0) {
       local_28 = (int)(param_5 + 7 + (param_5 + 7 >> 0x1f & 7U)) >> 3;
-      dVar2 = (double)(param_2 / (float)*(double *)((int)this + 0x368));
+      dVar2 = (double)(param_2 / (float)*(double *)&this->field_0x368);
       Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
       lVar27 = Library::MSVCRT::__ftol();
-      local_68 = param_2 - (float)(int)lVar27 * (float)*(double *)((int)this + 0x368);
-      iVar10 = (int)lVar27 - *(int *)((int)this + 0x374);
+      local_68 = param_2 - (float)(int)lVar27 * (float)*(double *)&this->field_0x368;
+      iVar10 = (int)lVar27 - *(int *)&this->field_0x374;
       local_c4 = 0;
-      if (*(int *)((int)this + 0x370) < iVar10 + param_5) {
-        param_5 = *(int *)((int)this + 0x370) - iVar10;
+      if (*(int *)&this->field_0x370 < iVar10 + param_5) {
+        param_5 = *(int *)&this->field_0x370 - iVar10;
         local_2c = 1;
       }
       if (iVar10 < 0) {
@@ -172,15 +179,15 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
         param_5 = param_5 + iVar10;
         local_2c = 1;
       }
-      dVar2 = (double)(param_3 / (float)*(double *)((int)this + 0x368));
+      dVar2 = (double)(param_3 / (float)*(double *)&this->field_0x368);
       local_48 = iVar10;
       Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
       lVar27 = Library::MSVCRT::__ftol();
-      local_c0 = param_3 - (float)(int)lVar27 * (float)*(double *)((int)this + 0x368);
-      local_54 = (int)lVar27 - *(int *)((int)this + 0x378);
+      local_c0 = param_3 - (float)(int)lVar27 * (float)*(double *)&this->field_0x368;
+      local_54 = (int)lVar27 - *(int *)&this->field_0x378;
       local_d4 = 0;
-      if (*(int *)((int)this + 0x370) < param_6 + local_54) {
-        param_6 = *(int *)((int)this + 0x370) - local_54;
+      if (*(int *)&this->field_0x370 < param_6 + local_54) {
+        param_6 = *(int *)&this->field_0x370 - local_54;
         local_2c = 1;
       }
       if (local_54 < 0) {
@@ -198,9 +205,9 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
         if ((((param_7[7] != 0) &&
              ((pbVar25 = (byte *)param_7[8], pbVar25 != (byte *)0x0 && (param_7[6] == param_1)))) &&
             (local_c4 == param_7[2])) && (local_d4 == param_7[3])) {
-          iVar11 = *(int *)((int)this + 0x374);
+          iVar11 = *(int *)&this->field_0x374;
           iVar18 = *param_7;
-          if ((iVar11 + iVar10 == iVar18) && (local_54 + *(int *)((int)this + 0x378) == param_7[1]))
+          if ((iVar11 + iVar10 == iVar18) && (local_54 + *(int *)&this->field_0x378 == param_7[1]))
           {
             if (((float)param_7[4] == local_68) && ((float)param_7[5] == local_c0)) {
               ExceptionList = local_14;
@@ -214,28 +221,28 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
           if (((param_7[7] == 1) && ((*pbVar25 & 4) == 0)) && (local_2c == 0)) {
             iVar4 = *(int *)(pbVar25 + 4);
             psVar5 = *(short **)(pbVar25 + 8);
-            iVar6 = *(int *)((int)this + 0x378);
+            iVar6 = *(int *)&this->field_0x378;
             iVar7 = param_7[1];
             psVar19 = psVar5 + 1;
-            cVar3 = *(char *)(*(int *)((int)this + 0x37c) * (*psVar19 - iVar6) +
-                              *(int *)((int)this + 0x38c) + (*psVar5 - iVar11));
+            cVar3 = *(char *)(*(int *)&this->field_0x37c * (*psVar19 - iVar6) +
+                              *(int *)&this->field_0x38c + (*psVar5 - iVar11));
             local_f0 = 0;
             if (0 < iVar4) {
               do {
                 psVar19[-1] = psVar19[-1] +
                               ((((short)iVar11 - (short)iVar18) + (short)iVar10) -
-                              *(short *)((int)this + 0x374));
+                              *(short *)&this->field_0x374);
                 *psVar19 = *psVar19 +
                            ((((short)iVar6 - (short)iVar7) + (short)local_54) -
-                           *(short *)((int)this + 0x378));
+                           *(short *)&this->field_0x378);
                 if ((*(byte *)(psVar19 + 2) & 2) != 0) {
                   psVar19[-1] = psVar19[-1] + -1;
                 }
                 if ((*(byte *)(psVar19 + 2) & 1) != 0) {
                   *psVar19 = *psVar19 + -1;
                 }
-                if (*(char *)((int)*psVar19 * *(int *)((int)this + 0x37c) + (int)psVar19[-1] +
-                             *(int *)((int)this + 0x38c)) != cVar3) break;
+                if (*(char *)((int)*psVar19 * *(int *)&this->field_0x37c + (int)psVar19[-1] +
+                             *(int *)&this->field_0x38c) != cVar3) break;
                 local_f0 = local_f0 + 1;
                 psVar19 = psVar19 + 4;
               } while (local_f0 < iVar4);
@@ -256,8 +263,8 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
               }
               FUN_006a5e90(psVar5);
               *(short **)(param_7[8] + 8) = local_a0;
-              *param_7 = local_48 + *(int *)((int)this + 0x374);
-              param_7[1] = local_54 + *(int *)((int)this + 0x378);
+              *param_7 = local_48 + *(int *)&this->field_0x374;
+              param_7[1] = local_54 + *(int *)&this->field_0x378;
               param_7[4] = (int)local_68;
               param_7[5] = (int)local_c0;
               ExceptionList = local_14;
@@ -279,8 +286,8 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
           puVar23 = (undefined4 *)((int)puVar23 + 1);
         }
         local_8 = 0xffffffff;
-        local_3c = (char *)((local_54 + local_d4) * *(int *)((int)this + 0x37c) +
-                            *(int *)((int)this + 0x38c) + local_c4 + local_48);
+        local_3c = (char *)((local_54 + local_d4) * *(int *)&this->field_0x37c +
+                            *(int *)&this->field_0x38c + local_c4 + local_48);
         local_dc = (uint *)(&stack0xfffffea0 + (iVar22 * local_d4 + local_c4) * 4);
         local_140 = param_6 + -1;
         iVar10 = local_c4 >> 3;
@@ -293,7 +300,7 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
           do {
             puVar13 = puVar13 + iVar22;
             local_12c = param_5 + -1;
-            pcVar12 = local_3c + *(int *)((int)this + 0x37c);
+            pcVar12 = local_3c + *(int *)&this->field_0x37c;
             local_d8 = (uint)pbVar25[-1];
             local_b4 = (uint)local_138[-1];
             local_94 = local_138;
@@ -378,7 +385,7 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
                 puVar13[iVar11] = puVar13[iVar11] | 4;
               }
             }
-            local_3c = local_3c + *(int *)((int)this + 0x37c);
+            local_3c = local_3c + *(int *)&this->field_0x37c;
             local_dc = local_dc + iVar22;
             local_138 = local_138 + local_28;
             pbVar25 = pbVar25 + local_28;
@@ -449,15 +456,15 @@ LAB_0042596f:
         if (iVar22 <= iVar10) {
           puVar9 = local_1c;
           if (local_d0 == 0) {
-            FUN_006ab060(&local_a8);
+            FreeAndNull(&local_a8);
             puVar9 = local_1c;
           }
           goto LAB_004267d5;
         }
 LAB_004259c4:
         local_dc = local_dc + iVar10;
-        bVar14 = *(byte *)((iVar18 + local_54) * *(int *)((int)this + 0x37c) +
-                           *(int *)((int)this + 0x38c) + iVar10 + local_48);
+        bVar14 = *(byte *)((iVar18 + local_54) * *(int *)&this->field_0x37c +
+                           *(int *)&this->field_0x38c + iVar10 + local_48);
         local_24 = bVar14 & 0xf;
         if (local_9c <= local_d0) {
           puVar13 = (uint *)Library::DKW::LIB::FUN_006acf50((int)local_a8,(local_9c * 3 + 0x1e) * 4)
@@ -482,7 +489,7 @@ LAB_0042678e:
         do {
           if (200 < local_90) {
             if ((short *)local_a8[local_d0 * 3 + -1] != local_a0) {
-              FUN_006ab060(&local_a0);
+              FreeAndNull(&local_a0);
             }
             if (0 < local_d0) {
               iVar22 = 0;
@@ -492,7 +499,7 @@ LAB_0042678e:
                 local_d0 = local_d0 + -1;
               } while (local_d0 != 0);
             }
-            FUN_006ab060(&local_a8);
+            FreeAndNull(&local_a8);
             local_d0 = 0;
             puVar9 = local_1c;
             break;
@@ -1000,11 +1007,11 @@ LAB_004267d5:
           iVar22 = iVar22 + 1;
         } while (iVar22 < param_7[7]);
       }
-      FUN_006ab060((LPVOID *)(param_7 + 8));
+      FreeAndNull((void **)(param_7 + 8));
       local_a8 = local_a4;
     }
-    *param_7 = *(int *)((int)this + 0x374) + local_48;
-    param_7[1] = *(int *)((int)this + 0x378) + local_54;
+    *param_7 = *(int *)&this->field_0x374 + local_48;
+    param_7[1] = *(int *)&this->field_0x378 + local_54;
     param_7[2] = local_c4;
     param_7[3] = local_d4;
     param_7[4] = (int)local_68;

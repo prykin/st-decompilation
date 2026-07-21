@@ -14,12 +14,12 @@ CPanelTy::PaintTxtBut
   CPanelTy *pCVar3;
   int iVar4;
   uint uVar5;
-  uint *puVar6;
+  uint *extraout_EAX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  int iVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
   InternalExceptionFrame local_5c;
   AnonNested_004F3A30_0018_BD4DC0BB *local_18;
   uint local_14;
@@ -34,7 +34,7 @@ CPanelTy::PaintTxtBut
   local_c = local_18->field_0000 - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
-    iVar7 = this->field_0134;
+    iVar6 = this->field_0134;
     goto LAB_004f3aaa;
   default:
     if (this->field_0130 != 0) {
@@ -55,9 +55,9 @@ CPanelTy::PaintTxtBut
     }
     break;
   case 7:
-    iVar7 = this->field_0138;
+    iVar6 = this->field_0138;
 LAB_004f3aaa:
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto cf_common_join_004F3AC3;
     }
@@ -75,18 +75,18 @@ cf_common_join_004F3AC3:
       pCVar3 = local_10;
       uVar5 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)(&local_10->field_0180)[uVar2],local_c,local_14,param_3,
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_10->field_0180)[uVar2],local_c,local_14,param_3,
              (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(pCVar3->field_01B8,(&pCVar3->field_0180)[uVar2],0,local_c,uVar5,
                        local_18->field_0008,local_18->field_000C);
-      iVar9 = -1;
       iVar8 = -1;
-      uVar5 = (*(code *)param_6)(param_2);
       iVar7 = -1;
+      uVar5 = (*(code *)param_6)(param_2);
+      iVar6 = -1;
       iVar4 = -2;
-      puVar6 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
-      ccFntTy::WrTxt(pCVar3->field_01B8,puVar6,iVar4,iVar7,uVar5,iVar8,iVar9);
+      LoadResourceString(param_5,HINSTANCE_00807618);
+      ccFntTy::WrTxt(pCVar3->field_01B8,extraout_EAX,iVar4,iVar6,uVar5,iVar7,iVar8);
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
@@ -96,9 +96,9 @@ cf_common_join_004F3AC3:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1f8,0,iVar4,&DAT_007a4ccc,
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1f8,0,iVar4,&DAT_007a4ccc,
                                s_CPanelTy__PaintTxtBut_007c1b68);
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;

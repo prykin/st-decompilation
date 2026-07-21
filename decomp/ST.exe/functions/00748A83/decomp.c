@@ -13,7 +13,7 @@ FUN_00748a83(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   *(undefined4 *)((int)this + 0x3c) = 0;
   *(undefined4 *)((int)this + 0x40) = 0;
   *(undefined4 *)((int)this + 0x44) = 0;
-  *(undefined ***)this = &PTR_FUN_007a1148;
+  *(VTable_007A1148 **)this = &VTable_007A1148;
   return;
 }
 

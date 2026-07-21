@@ -14,7 +14,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
   AiFltClassTy *pAVar3;
   undefined2 uVar4;
   int iVar5;
-  uint *groupContent;
+  DArrayTy *array;
   int iVar6;
   undefined4 extraout_ECX;
   undefined4 unaff_ESI;
@@ -62,8 +62,8 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
       RaiseInternalException
                 (-100,g_overwriteContext_007ED77C,s_E____titans_ai_ai_flt_cpp_007d2b80,0x9b);
     }
-    groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-    Library::DKW::TBL::FUN_006ae1c0(groupContent,(undefined4 *)(objPtr + 0x32));
+    array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)(objPtr + 0x32));
     iVar5 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar5 < 1) || (0x28 < iVar5)) {
       bVar2 = false;
@@ -82,8 +82,8 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     }
     STAllPlayersC::AddObjsToGroup
               (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)extraout_ECX >> 8),pAVar3->field_0x24),
-               pAVar3->field_007D,groupContent,(undefined2 *)0x0);
-    FUN_006ae110((byte *)groupContent);
+               pAVar3->field_007D,(uint *)array,(undefined2 *)0x0);
+    DArrayDestroy(array);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

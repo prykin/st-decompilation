@@ -1,13 +1,18 @@
 
-undefined4 * __fastcall FUN_004a88c0(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00790758 (store 004A88C8)
+   Evidence: final_vptr=00790758; returns_this=true; calls_before=1; field_writes_after=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
+
+undefined4 * __thiscall OpticClassC::OpticClassC(OpticClassC *this)
 
 {
   DWORD DVar1;
   
-  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)param_1);
-  *param_1 = &PTR_LAB_00790758;
+  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)this);
+  *(OpticClassCVTable **)this = &OpticClassCVTable;
   DVar1 = timeGetTime();
-  param_1[6] = DVar1;
-  return param_1;
+  *(DWORD *)(this + 0x18) = DVar1;
+  return (undefined4 *)this;
 }
 

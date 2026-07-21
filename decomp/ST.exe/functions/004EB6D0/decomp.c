@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
   if (param_4 == 0) {
     return 0;
   }
-  iVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+  iVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
   if ((char)iVar1 == '\x03') {
     if (param_2 == 0xdd) {
       if (param_1 == 2) {
@@ -103,7 +103,7 @@ cf_common_exit_004EB94E:
   thunk_FUN_004d78e0(*(char *)((int)this + 0x24));
   if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
     thunk_FUN_004d8b70((char)*(uint *)((int)this + 0x24));
-    uVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     uVar2 = uVar2 & 0xff;
     if (uVar2 == 1) {
       (**(code **)(*(int *)this + 0x90))(6,0x6e);

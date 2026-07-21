@@ -8,25 +8,25 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
 {
   uint uVar1;
   code *pcVar2;
-  int *piVar3;
+  STGameObjC *pSVar3;
   int iVar4;
-  uint uVar5;
+  uint index;
   undefined4 extraout_EDX;
-  uint uVar6;
+  uint uVar5;
   uint local_8;
   
-  uVar6 = 0;
+  uVar5 = 0;
   uVar1 = *(uint *)(this->field_0029 + 0xc);
   if (uVar1 != 0) {
-    uVar5 = 0;
+    index = 0;
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar5,&local_8);
+      DArrayGetElement((DArrayTy *)this->field_0029,index,&local_8);
       if ((short)local_8 != -1) {
-        piVar3 = (int *)STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),
-                                   local_8,CASE_1);
-        if (piVar3 == (int *)0x0) {
+        pSVar3 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,
+                            CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),local_8,
+                            CASE_1);
+        if (pSVar3 == (STGameObjC *)0x0) {
           iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x172d,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__StartReceiveOrderS_007ac50c);
           if (iVar4 != 0) {
@@ -38,11 +38,11 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
                      ,0x172e);
         }
-        thunk_FUN_00493d10(piVar3);
+        thunk_FUN_00493d10((int *)pSVar3);
       }
-      uVar6 = uVar6 + 1;
-      uVar5 = uVar6 & 0xffff;
-    } while (uVar5 < uVar1);
+      uVar5 = uVar5 + 1;
+      index = uVar5 & 0xffff;
+    } while (index < uVar1);
   }
   return;
 }

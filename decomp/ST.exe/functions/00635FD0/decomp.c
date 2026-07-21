@@ -8,7 +8,7 @@ void __fastcall FUN_00635fd0(int *param_1)
   uint uVar4;
   
   if ((*(int *)((int)param_1 + 0x11) == 3) && (*(int *)((int)param_1 + 0x39) != 0)) {
-    FUN_006ab060((LPVOID *)((int)param_1 + 0x39));
+    FreeAndNull((void **)((int)param_1 + 0x39));
   }
   if (*param_1 != 0) {
     iVar1 = *(int *)(*param_1 + 0xc);
@@ -24,7 +24,7 @@ void __fastcall FUN_00635fd0(int *param_1)
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iVar1);
     }
-    FUN_006ae110((byte *)*param_1);
+    DArrayDestroy((DArrayTy *)*param_1);
     *param_1 = 0;
   }
   return;

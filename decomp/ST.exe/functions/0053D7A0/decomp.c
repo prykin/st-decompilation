@@ -43,7 +43,7 @@ UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte para
       text = FUN_006f2c00(param_3,1,uVar4);
       local_8 = cMf32::RecGet(DAT_00806790,param_2,text,errorCode,iVar5);
       pUVar3 = local_14;
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,local_10,local_c,param_2,
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       Library::DKW::DDX::FUN_006b3640

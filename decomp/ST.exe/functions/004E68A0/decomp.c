@@ -23,7 +23,7 @@ void FUN_004e68a0(int param_1,undefined1 *param_2,uint param_3,undefined4 *param
     puVar12 = puVar12 + 1;
   }
   *(undefined2 *)puVar12 = 0;
-  uVar6 = thunk_FUN_004406c0((char)param_1);
+  uVar6 = GetPlayerRaceId((char)param_1);
   iVar9 = (uVar6 & 0xff) - 1;
   bVar4 = thunk_FUN_004e5c40(param_1,(uint)param_2);
   if (CONCAT31(extraout_var,bVar4) == 0) {
@@ -53,7 +53,7 @@ void FUN_004e68a0(int param_1,undefined1 *param_2,uint param_3,undefined4 *param
           iVar8 = thunk_FUN_004e60d0(param_1,*(int *)(puVar3 + iVar7));
           if (iVar8 < (int)(uint)bVar1) {
             *(uint *)(param_2 + -5) = (uint)CONCAT12(bVar1,*(undefined2 *)(puVar3 + iVar7));
-            iVar8 = thunk_FUN_004406c0((char)param_1);
+            iVar8 = GetPlayerRaceId((char)param_1);
             param_2[-1] = (char)iVar8;
             bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7));
             if ((CONCAT31(extraout_var_00,bVar4) == 0) ||

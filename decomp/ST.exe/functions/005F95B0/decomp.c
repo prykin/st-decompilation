@@ -31,7 +31,7 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   int local_20;
   undefined4 local_1c;
   uint local_18;
-  LPVOID local_14;
+  void *local_14;
   int local_10;
   int local_c;
   short local_8;
@@ -207,17 +207,17 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   }
   local_40 = 0;
   local_44 = 0;
-  local_14 = *(LPVOID *)(iVar7 + 0x58);
-  if (local_14 == (LPVOID)0x0) {
-    local_14 = (LPVOID)Library::DKW::LIB::FUN_006aac70(200);
+  local_14 = *(void **)(iVar7 + 0x58);
+  if (local_14 == (void *)0x0) {
+    local_14 = (void *)Library::DKW::LIB::FUN_006aac70(200);
   }
   iVar7 = local_10;
   iVar9 = thunk_FUN_0060e210(&local_64,&local_44,local_18,(int)local_14,local_10);
   if (iVar9 != 0) {
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     return local_1c;
   }
-  *(LPVOID *)(param_1->field_02E6 + 0x58) = local_14;
+  *(void **)(param_1->field_02E6 + 0x58) = local_14;
   *(int *)(param_1->field_02E6 + 0x5c) = iVar7;
   return 1;
 }

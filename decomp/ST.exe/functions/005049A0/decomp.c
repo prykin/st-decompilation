@@ -29,8 +29,8 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
   pCVar2 = local_c;
   if (iVar3 == 0) {
     PaintDamageXY(local_c,local_c->field_0194,0x5c,0x50,(uint)(byte)local_c->field_0C33,0x2714);
-    pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,1);
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,0x33,0x7b,'\x01',pbVar4);
+    pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,1);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0x33,0x7b,'\x01',pbVar4);
     bVar6 = 0;
     local_8 = local_8 & 0xffffff00;
     local_10 = ((uint)(byte)pCVar2->field_0C33 * 0x21) / 100;
@@ -38,8 +38,8 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
     if (local_10 != 0) {
       uVar8 = 0;
       do {
-        pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,1);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,uVar8 * 4 + 0x35,0x7d,'\x01',pbVar4
+        pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,uVar8 * 4 + 0x35,0x7d,'\x01',pbVar4
               );
         bVar6 = bVar6 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar6);
@@ -51,8 +51,8 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
       iVar7 = 0x21 - (local_8 & 0xff);
       iVar3 = (local_8 & 0xff) * 4 + 0x35;
       do {
-        pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
-        uVar5 = DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,iVar3,0x7d,'\x01',pbVar4);
+        pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+        uVar5 = DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,iVar3,0x7d,'\x01',pbVar4);
         iVar3 = iVar3 + 4;
         iVar7 = iVar7 + -1;
       } while (iVar7 != 0);

@@ -61,7 +61,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     fVar4 = (float)(*(int *)local_8 - *(int *)&local_8->field_0x30);
     fVar3 = fVar1 * local_28 + fVar4 * local_2c;
     if (fVar3 == _DAT_0079034c) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
       return (int *)0x0;
     }
     local_14 = (float)*(int *)local_8;

@@ -18,7 +18,7 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
   local_10 = 0;
   while( true ) {
     do {
-      iVar2 = thunk_FUN_004406c0((char)param_1);
+      iVar2 = GetPlayerRaceId((char)param_1);
       if ((char)iVar2 == '\x03') {
         iVar2 = local_10 + iVar5 * 2;
         uVar1 = (&DAT_007c1620)[iVar2];

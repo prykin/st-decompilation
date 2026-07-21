@@ -11,7 +11,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   STGroupBoatC *pSVar3;
   int iVar4;
   undefined4 *puVar5;
-  uint uVar6;
+  STGameObjC *pSVar6;
   int iVar7;
   undefined4 uVar8;
   undefined4 unaff_ESI;
@@ -37,7 +37,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
                  0x52e);
     }
     if (pSVar3->field_021E != 0) {
-      FUN_006ab060((LPVOID *)&pSVar3->field_021E);
+      FreeAndNull((void **)&pSVar3->field_021E);
     }
     uVar9 = *(uint *)(pSVar3->field_020E + 0xc);
     pSVar3->field_021A = uVar9;
@@ -57,12 +57,11 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar3->field_020E,uVar9,(undefined4 *)&local_14
-                    );
-        uVar6 = STAllPlayersC::GetObjPtr
-                          (g_sTAllPlayers_007FA174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14)),
-                           CONCAT22(uStack_10,uStack_12),(int)cStack_13);
-        if (uVar6 == 0) {
+        DArrayGetElement((DArrayTy *)pSVar3->field_020E,uVar9,&local_14);
+        pSVar6 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14))
+                            ,CONCAT22(uStack_10,uStack_12),(int)cStack_13);
+        if (pSVar6 == (STGameObjC *)0x0) {
           uStack_12 = 0xffff;
           Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
           *(undefined4 *)(pSVar3->field_021E + uVar9 * 8) = 0xffffffff;
@@ -71,7 +70,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
           }
         }
         else {
-          iVar4 = *(int *)(uVar6 + 0x219) + *(int *)(uVar6 + 0x215);
+          iVar4 = *(int *)&pSVar6[1].field_0x48 + *(int *)&pSVar6[1].field_0x44;
           pSVar3->field_0216 = pSVar3->field_0216 + iVar4;
           *(int *)(pSVar3->field_021E + 4 + uVar9 * 8) = iVar4;
           if ((int)uVar9 < (int)(uVar2 - 1)) {

@@ -255,7 +255,7 @@ LAB_005722ed:
           }
           FUN_006b78c0((char *)((int)this + 0x640),(char *)((int)this + 0x640));
         }
-        thunk_FUN_00573260(this);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::thunk_FUN_00573260(this);
       }
       RegCloseKey(local_8);
       return 1;

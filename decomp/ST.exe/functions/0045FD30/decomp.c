@@ -41,15 +41,16 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
     sVar1 = this->field_0047;
     sVar2 = this->field_004B;
     sVar3 = this->field_0049;
-    if (((sVar1 < 0) || (((SHORT_007fb240 <= sVar1 || (sVar3 < 0)) || (SHORT_007fb242 <= sVar3))))
-       || ((sVar2 < 0 || (SHORT_007fb244 <= sVar2)))) {
+    if (((sVar1 < 0) ||
+        (((g_worldGrid.sizeX <= sVar1 || (sVar3 < 0)) || (g_worldGrid.sizeY <= sVar3)))) ||
+       ((sVar2 < 0 || (g_worldGrid.sizeZ <= sVar2)))) {
       pSVar7 = (STBoatC *)0x0;
     }
     else {
       pSVar7 = (STBoatC *)
-               g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
-               objects[(byte)this->field_008E];
+               g_worldGrid.cells
+               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                (int)sVar1].objects[(byte)this->field_008E];
     }
     if (pSVar7 == this) {
       thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);

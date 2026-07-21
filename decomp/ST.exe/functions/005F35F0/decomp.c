@@ -1,7 +1,14 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005F35F0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=21; incoming_edx_uses=0; calls=4;
+   ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=4 */
 
-undefined4 __thiscall FUN_005f35f0(void *this)
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::FUN_005f35f0
+          (AnonReceiver_005F35F0 *this,int param_1)
 
 {
   uint *puVar1;
@@ -10,7 +17,6 @@ undefined4 __thiscall FUN_005f35f0(void *this)
   ushort *puVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int in_stack_00000004;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined **local_c;
@@ -20,11 +26,11 @@ undefined4 __thiscall FUN_005f35f0(void *this)
   local_c = &PTR_s_adcbo_007ce5a0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_8 = this;
+  local_8 = (AnonShape_005F35F0_EF2A6FDB *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = local_8;
   if (iVar3 == 0) {
-    if (in_stack_00000004 == 1) {
+    if (param_1 == 1) {
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,local_c[local_8->field_0087],0xffffffff,0,1,0,
                           (undefined4 *)0x0);
@@ -35,13 +41,15 @@ undefined4 __thiscall FUN_005f35f0(void *this)
       FUN_006ea270(PTR_00807598,*puVar1,0,pAVar2->field_00AB);
       pAVar2->field_0171 = puVar4;
       if (DAT_00807326 != '\0') {
-        FUN_006e9520(PTR_00807598,*puVar1,0,0x403170,(uint)pAVar2);
+        AnonReceiver_004248D0::FUN_006e9520
+                  ((AnonReceiver_004248D0 *)PTR_00807598,*puVar1,0,0x403170,(uint)pAVar2);
       }
     }
     else {
       puVar1 = &local_8->field_008F;
       if (-1 < (int)local_8->field_008F) {
-        FUN_006e9520(PTR_00807598,local_8->field_008F,0,0,(uint)local_8);
+        AnonReceiver_004248D0::FUN_006e9520
+                  ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_008F,0,0,(uint)local_8);
         FUN_006e8ba0(PTR_00807598,*puVar1);
       }
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad

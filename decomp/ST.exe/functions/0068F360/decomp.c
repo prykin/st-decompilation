@@ -18,10 +18,11 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   int iVar7;
   undefined2 *puVar8;
   uint uVar9;
-  int *objPtr;
+  STGameObjC *objPtr;
   AiFltClassTy *pAVar10;
   int iVar11;
-  uint uVar12;
+  DArrayTy *pDVar12;
+  uint uVar13;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_5c;
@@ -74,31 +75,31 @@ joined_r0x0068f3e2:
         }
         uVar9 = CONCAT22((short)((uint)puVar8 >> 0x10),*puVar8);
         if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          objPtr = (int *)0x0;
+          objPtr = (STGameObjC *)0x0;
         }
         else {
-          objPtr = (int *)STAllPlayersC::GetObjPtr
-                                    (g_sTAllPlayers_007FA174,
-                                     CONCAT31((int3)(uVar9 >> 8),pAVar6->field_0x24),uVar9,CASE_1);
+          objPtr = STAllPlayersC::GetObjPtr
+                             (g_sTAllPlayers_007FA174,
+                              CONCAT31((int3)(uVar9 >> 8),pAVar6->field_0x24),uVar9,CASE_1);
         }
         pAVar6 = local_8;
-      } while (objPtr == (int *)0x0);
-      iVar7 = (**(code **)(*objPtr + 0x2c))();
+      } while (objPtr == (STGameObjC *)0x0);
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
-      iVar7 = local_8->field_00A5;
-      if ((iVar7 == 0) || ((int)*(uint *)(iVar7 + 0xc) <= (int)local_c)) {
+      pDVar12 = local_8->field_00A5;
+      if ((pDVar12 == (DArrayTy *)0x0) || ((int)pDVar12->count <= (int)local_c)) {
         pAVar10 = (AiFltClassTy *)0x0;
       }
       else {
         pAVar10 = pARam00000004;
-        if (local_c < *(uint *)(iVar7 + 0xc)) {
-          pAVar10 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * local_c + *(int *)(iVar7 + 0x1c) + 4);
+        if (local_c < pDVar12->count) {
+          pAVar10 = *(AiFltClassTy **)((int)pDVar12->data + pDVar12->elementSize * local_c + 4);
         }
       }
       uVar1 = pAVar10->field_007D;
-      iVar7 = (**(code **)(*objPtr + 0x2c))();
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
       if (iVar7 == 0x78) {
-        *(uint *)((int)objPtr + 0x269) = (uint)uVar1;
+        *(uint *)&objPtr[1].field_0x98 = (uint)uVar1;
       }
       FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,uVar3);
       pAVar6 = local_8;
@@ -125,7 +126,7 @@ joined_r0x0068f3e2:
     else {
       iVar11 = 0;
     }
-    uVar12 = local_10;
+    uVar13 = local_10;
     if (iVar7 != iVar11) {
       if (sVar2 == 1) {
         iVar11 = 0xc;
@@ -139,25 +140,25 @@ joined_r0x0068f3e2:
       else {
         iVar11 = 0;
       }
-      uVar12 = local_18;
+      uVar13 = local_18;
       uVar9 = local_14;
       if (iVar7 == iVar11) goto LAB_0068f509;
     }
-  } while ((int)uVar12 < 0);
-  iVar7 = local_8->field_00A5;
-  uVar9 = uVar12;
+  } while ((int)uVar13 < 0);
+  pDVar12 = local_8->field_00A5;
+  uVar9 = uVar13;
   goto LAB_0068f516;
 LAB_0068f509:
   if (-1 < (int)uVar9) {
-    iVar7 = local_8->field_00A5;
+    pDVar12 = local_8->field_00A5;
 LAB_0068f516:
-    if ((iVar7 == 0) || ((int)*(uint *)(iVar7 + 0xc) <= (int)uVar9)) {
+    if ((pDVar12 == (DArrayTy *)0x0) || ((int)pDVar12->count <= (int)uVar9)) {
       pAVar10 = (AiFltClassTy *)0x0;
     }
     else {
       pAVar10 = pARam00000004;
-      if (uVar9 < *(uint *)(iVar7 + 0xc)) {
-        pAVar10 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * uVar9 + *(int *)(iVar7 + 0x1c) + 4);
+      if (uVar9 < pDVar12->count) {
+        pAVar10 = *(AiFltClassTy **)((int)pDVar12->data + pDVar12->elementSize * uVar9 + 4);
       }
     }
     AiFltClassTy::_AddObjFlt(pAVar10,(uint)objPtr,0);

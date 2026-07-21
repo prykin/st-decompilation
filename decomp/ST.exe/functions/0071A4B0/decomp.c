@@ -15,10 +15,10 @@ void __cdecl FUN_0071a4b0(int *param_1)
         cMf32::RecMemFree(*(cMf32 **)(*param_1 + 1),&local_8);
         iVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)(*param_1 + 5),local_208);
       }
-      FUN_006ae110(*(byte **)(*param_1 + 5));
+      DArrayDestroy(*(DArrayTy **)(*param_1 + 5));
       *(undefined4 *)(*param_1 + 5) = 0;
     }
-    FUN_006ab060((LPVOID *)param_1);
+    FreeAndNull((void **)param_1);
   }
   return;
 }

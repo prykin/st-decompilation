@@ -241,20 +241,22 @@ LAB_0058fb0d:
                   sVar12 = (short)iVar4;
                   bVar2 = thunk_FUN_004961b0(sVar5,sVar11,sVar12);
                   if (((CONCAT31(extraout_var_00,bVar2) != 0) &&
-                      (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
+                      (((sVar5 < 0 || (g_worldGrid.sizeX <= sVar5)) ||
                        ((sVar11 < 0 ||
-                        ((((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) || (SHORT_007fb244 <= sVar12))
-                         || (g_worldCells
-                             [(int)sVar12 * (int)SHORT_007fb246 + (int)sVar11 * (int)SHORT_007fb240
-                              + (int)sVar5].objects[0] == (STWorldObject *)0x0)))))))) &&
-                     (((sVar5 < 0 || (SHORT_007fb240 <= sVar5)) ||
+                        ((((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) ||
+                          (g_worldGrid.sizeZ <= sVar12)) ||
+                         (g_worldGrid.cells
+                          [(int)sVar12 * (int)g_worldGrid.planeStride +
+                           (int)sVar11 * (int)g_worldGrid.sizeX + (int)sVar5].objects[0] ==
+                          (STWorldObject *)0x0)))))))) &&
+                     (((sVar5 < 0 || (g_worldGrid.sizeX <= sVar5)) ||
                       ((sVar11 < 0 ||
-                       (((SHORT_007fb242 <= sVar11 || (sVar12 < 0)) ||
-                        ((SHORT_007fb244 <= sVar12 ||
-                         (g_worldCells
-                          [(int)sVar12 * (int)SHORT_007fb246 + (int)sVar11 * (int)SHORT_007fb240 +
-                           (int)sVar5].objects[1] == (STWorldObject *)0x0))))))))))
-                  goto LAB_0058fd1a;
+                       (((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) ||
+                        ((g_worldGrid.sizeZ <= sVar12 ||
+                         (g_worldGrid.cells
+                          [(int)sVar12 * (int)g_worldGrid.planeStride +
+                           (int)sVar11 * (int)g_worldGrid.sizeX + (int)sVar5].objects[1] ==
+                          (STWorldObject *)0x0)))))))))) goto LAB_0058fd1a;
                   bVar2 = (int)(uVar10 - (int)*(short *)((int)this + 0x47)) < 0;
                   if (uVar10 == (int)*(short *)((int)this + 0x47) || bVar2) break;
                   uVar10 = uVar10 - 1;

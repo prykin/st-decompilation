@@ -106,7 +106,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       *(undefined4 *)((int)this + uVar3 * 0x28 + 0x4e8) = PTR_00802a38->field_00E4;
       if (*(int *)((int)this + 0x524) + 0x19U < (uint)PTR_00802a38->field_00E4) {
         *(undefined4 *)((int)this + 0x524) = PTR_00802a38->field_00E4;
-        iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         if ((char)iVar4 == '\x02') {
           (**(code **)(*(int *)this + 0x90))(3,0x2c8);
           return *(int *)((int)this + uVar3 * 0x28 + 0x4e0);

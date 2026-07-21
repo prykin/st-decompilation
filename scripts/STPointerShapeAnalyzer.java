@@ -113,6 +113,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private final Map<String, TargetEvidence> targets = new LinkedHashMap<>();
     private final List<Failure> failures = new ArrayList<>();
     private final List<Structure> structures = new ArrayList<>();
+    private final Set<Address> unsettledFunctions = new HashSet<>();
     private DecompInterface decompiler;
     private DataTypeManager dataTypes;
     private int functionsSeen;
@@ -193,6 +194,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             return;
         }
         String c = result.getDecompiledFunction().getC();
+        if (c.contains("Type propagation algorithm not settling"))
+            unsettledFunctions.add(function.getEntryPoint());
         Map<String, Variable> locals = localVariables(function);
         Set<String> stableStorages = stableStorages(locals);
         Map<String, TargetEvidence> functionTargets = new LinkedHashMap<>();
@@ -890,9 +893,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "conflict", "semantic type " + choice.specification +
                     " is shorter than or conflicts with offsets");
             boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
-            boolean apply = replaceable && target.databaseBacked;
+            boolean apply = replaceable && automaticTarget(target);
             String suffix = apply ? "" : !replaceable ? "; concrete target type preserved" :
-                "; transient decompiler symbol requires review";
+                !target.databaseBacked ? "; transient decompiler symbol requires review" :
+                "; unsettled decompiler type propagation: persistent local requires role repair";
             return new TargetDecision(apply, false, structure.getPathName(),
                 apply ? "high" : "review", choice.reason + "=" +
                 target.typeEvidence + suffix);
@@ -904,7 +908,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
             boolean layoutCompatible = darray != null &&
                 compatibleFields(darray, target.fields);
-            boolean apply = layoutCompatible && replaceable && target.databaseBacked;
+            boolean apply = layoutCompatible && replaceable && automaticTarget(target);
             return new TargetDecision(apply, false,
                 !layoutCompatible ? "" : darray.getPathName(), apply ? "high" : "review",
                 "DArray elementSize*index+data addressing idiom" +
@@ -913,7 +917,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     "; other observed offsets conflict with DArrayTy" : "") +
                 (!replaceable ? "; concrete target type preserved" : "") +
                 (!target.databaseBacked ?
-                    "; transient decompiler symbol requires review" : ""));
+                    "; transient decompiler symbol requires review" :
+                    unsettledLocal(target) ?
+                    "; unsettled decompiler type propagation: persistent local requires role repair" : ""));
         }
 
         if (!validFields(target)) return new TargetDecision(false, false, "", "review",
@@ -932,14 +938,25 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         });
         String path = anonymousPath(target);
         boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
-        boolean apply = (multiField || strongNested) && replaceable && target.databaseBacked;
+        boolean apply = (multiField || strongNested) && replaceable && automaticTarget(target);
         String reason = multiField ? "multiple consistent fixed offsets in one persistent target" :
             strongNested ? "consistent nested offsets through a pointer field in one persistent target" :
             "single/weak fixed-offset profile retained for review";
         if (!replaceable) reason += "; concrete target type preserved";
         else if (!target.databaseBacked)
             reason += "; transient decompiler symbol requires review";
+        else if (unsettledLocal(target))
+            reason += "; unsettled decompiler type propagation: persistent local requires role repair";
         return new TargetDecision(apply, true, path, apply ? "layout" : "review", reason);
+    }
+
+    private boolean automaticTarget(TargetEvidence target) {
+        return target.databaseBacked && !unsettledLocal(target);
+    }
+
+    private boolean unsettledLocal(TargetEvidence target) {
+        return target.kind.equals("local") && target.functionAddress != null &&
+            unsettledFunctions.contains(target.functionAddress);
     }
 
     private SemanticChoice semanticChoice(TargetEvidence target) {
@@ -1396,8 +1413,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 .filter(row -> row.apply && row.proposedType.contains("/PointerShapes/" )).count(),
             "anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count(),
             "decompile_failures=" + failures.size(),
+            "unsettled_type_propagation_functions=" + unsettledFunctions.size(),
             "policy=known structure from typed calls first; field-only existing-type matches require review; " +
                 "one anonymous type per persistent multi-field target",
+            "role_safety=locals in functions with unsettled type propagation are never auto-typed; " +
+                "use STPointerRoleRepairAnalyzer/Applier for prior script-owned assignments",
             "manual_safety=USER_DEFINED/IMPORTED and concrete non-generic target types are never auto-replaced"
         );
         Files.write(path, lines, StandardCharsets.UTF_8);

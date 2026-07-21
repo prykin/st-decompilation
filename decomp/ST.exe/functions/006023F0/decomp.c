@@ -13,9 +13,9 @@ STDestC * __thiscall STDestC::STDestC(STDestC *this)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_0079cb10;
+  this->field_01D5 = &VTable_0079CB10;
   this->vtable = &STDestCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
   for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {

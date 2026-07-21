@@ -29,7 +29,8 @@ undefined4 FUN_0075a860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
   if (iVar8 < *(int *)(iVar2 + 0x1c)) {
     do {
       for (uVar7 = *(uint *)(iVar2 + 0x14); uVar7 <= uVar9; uVar7 = uVar7 + 1) {
-        FUN_00759f30(*(undefined4 **)(iVar2 + 0x20),param_1->field_0152 << 8);
+        FUN_00759f30(*(undefined4 **)(iVar2 + 0x20),
+                     (AnonShape_0075FEE0_E0ABA202 *)(param_1->field_0152 << 8));
         iVar6 = (**(code **)(param_1->field_01AA + 4))(param_1,iVar2 + 0x20);
         if (iVar6 == 0) {
           *(int *)(iVar2 + 0x18) = iVar8;

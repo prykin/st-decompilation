@@ -9,10 +9,11 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   code *pcVar1;
   CGenerate *this_00;
   int iVar2;
-  char *pcVar3;
+  char *extraout_EAX;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
   undefined4 unaff_ESI;
+  char *pcVar5;
   void *unaff_EDI;
   char *pcVar6;
   undefined4 *puVar7;
@@ -41,31 +42,34 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
     return 0;
   }
   local_10->field_570B = 0x32;
-  iVar2 = thunk_FUN_00693d00(&local_10->field_0x24e,local_10->field_0018,DAT_00853de0);
+  iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00::thunk_FUN_00693d00
+                    ((AnonReceiver_00693D00 *)&local_10->field_0x24e,local_10->field_0018,
+                     DAT_00853de0);
   if (iVar2 == 0) {
     local_8 = 0;
   }
-  pcVar3 = (char *)FUN_006b0140(0x232b,HINSTANCE_00807618);
-  uVar4 = 0xffffffff;
+  LoadResourceString(0x232b,HINSTANCE_00807618);
+  uVar3 = 0xffffffff;
+  pcVar5 = extraout_EAX;
   do {
-    pcVar6 = pcVar3;
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    pcVar6 = pcVar3 + 1;
-    cVar8 = *pcVar3;
-    pcVar3 = pcVar6;
+    pcVar6 = pcVar5;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    pcVar6 = pcVar5 + 1;
+    cVar8 = *pcVar5;
+    pcVar5 = pcVar6;
   } while (cVar8 != '\0');
-  uVar4 = ~uVar4;
-  pcVar3 = pcVar6 + -uVar4;
+  uVar3 = ~uVar3;
+  pcVar5 = pcVar6 + -uVar3;
   pcVar6 = &this_00->field_0x55fb;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar3;
-    pcVar3 = pcVar3 + 4;
+  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar5;
+    pcVar5 = pcVar5 + 4;
     pcVar6 = pcVar6 + 4;
   }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar6 = *pcVar3;
-    pcVar3 = pcVar3 + 1;
+  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+    *pcVar6 = *pcVar5;
+    pcVar5 = pcVar5 + 1;
     pcVar6 = pcVar6 + 1;
   }
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TITLE_MISSION_0079d838,&this_00->field_0x55fb,0x104,
@@ -94,11 +98,11 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   puVar9 = (uint *)0x0;
   cVar8 = '\0';
   puVar7 = (undefined4 *)0x0;
-  uVar4 = FUN_006b5050(local_c);
-  cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar7,cVar8,
+  uVar3 = FUN_006b5050(local_c);
+  cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar3,puVar7,cVar8,
                 puVar9);
   if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   g_currentExceptionFrame = local_54.previous;
   return local_8;

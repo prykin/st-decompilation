@@ -1,4 +1,4 @@
-FUN_005f3440:
+STBHEShellC::STBHEShellC:
 005F3440  56                        PUSH ESI
 005F3441  57                        PUSH EDI
 005F3442  8B F1                     MOV ESI,ECX

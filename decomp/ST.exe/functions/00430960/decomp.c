@@ -21,7 +21,7 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
     if (PTR_007fa130 != (DArrayTy *)0x0) {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,(int)param_1,&local_8);
+      DArrayGetElement(PTR_007fa130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         RaiseInternalException
                   (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,

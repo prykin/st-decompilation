@@ -168,7 +168,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   if (iVar9 != 0) {
     iVar14 = 4;
     do {
-      FUN_006ab060((LPVOID *)param_2);
+      FreeAndNull((void **)param_2);
       param_2 = param_2 + 1;
       iVar14 = iVar14 + -1;
     } while (iVar14 != 0);

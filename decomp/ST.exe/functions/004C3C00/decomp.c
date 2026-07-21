@@ -8,7 +8,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
 {
   byte bVar1;
   byte bVar2;
-  char cVar3;
+  byte bVar3;
   code *pcVar4;
   TLOBaseTy *this_00;
   short sVar5;
@@ -96,14 +96,14 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     local_18 = iVar7;
     if (iVar7 <= *(int *)&this_00->field_0x5b4 + 8) {
       do {
-        if ((-1 < iVar7) && (iVar7 < SHORT_007fb242)) {
+        if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
           iVar8 = *(int *)&this_00->field_0x5b0;
           iVar15 = iVar8 + -8;
           local_28 = iVar15;
           local_18 = iVar7;
           if (iVar15 <= iVar8 + 8) {
             do {
-              if (((-1 < iVar15) && (iVar15 < SHORT_007fb240)) &&
+              if (((-1 < iVar15) && (iVar15 < g_worldGrid.sizeX)) &&
                  (local_28 = iVar15,
                  iVar8 = FUN_006aced8(iVar15,iVar7,iVar8,*(int *)&this_00->field_0x5b4),
                  iVar8 <= local_58)) {
@@ -117,16 +117,18 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                     if ((-1 < local_3c) && (local_3c < 5)) {
                       sVar6 = (short)iVar15;
                       if (((sVar6 < 0) ||
-                          ((SHORT_007fb240 <= sVar6 || (sVar13 = (short)iVar7, sVar13 < 0)))) ||
-                         ((SHORT_007fb242 <= sVar13 ||
-                          ((sVar5 = (short)local_3c, sVar5 < 0 || (SHORT_007fb244 <= sVar5)))))) {
+                          ((g_worldGrid.sizeX <= sVar6 || (sVar13 = (short)iVar7, sVar13 < 0)))) ||
+                         ((g_worldGrid.sizeY <= sVar13 ||
+                          ((sVar5 = (short)local_3c, sVar5 < 0 || (g_worldGrid.sizeZ <= sVar5))))))
+                      {
                         local_8 = (STFishC *)0x0;
                       }
                       else {
                         local_8 = (STFishC *)
-                                  g_worldCells
-                                  [(int)sVar13 * (int)SHORT_007fb240 +
-                                   (int)sVar5 * (int)SHORT_007fb246 + (int)sVar6].objects[0];
+                                  g_worldGrid.cells
+                                  [(int)sVar13 * (int)g_worldGrid.sizeX +
+                                   (int)sVar5 * (int)g_worldGrid.planeStride + (int)sVar6].objects
+                                  [0];
                         iVar7 = local_18;
                       }
                       if (((((TLOBaseTy *)local_8 != (TLOBaseTy *)0x0) &&
@@ -195,29 +197,23 @@ LAB_004c4192:
                                           iVar8 = 0;
                                         }
                                         else {
-                                          uVar9 = (uint)bVar1;
-                                          uVar12 = (uint)bVar2;
-                                          cVar3 = *(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar12)
-                                          ;
-                                          if ((cVar3 == '\0') &&
-                                             (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar9) ==
-                                              '\0')) {
+                                          bVar3 = g_playerRelationMatrix[bVar1][bVar2];
+                                          if ((bVar3 == 0) &&
+                                             (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
                                             iVar8 = -2;
                                           }
-                                          else if ((cVar3 == '\x01') &&
-                                                  (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar9
-                                                            ) == '\0')) {
+                                          else if ((bVar3 == 1) &&
+                                                  (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
                                             iVar8 = -1;
                                           }
-                                          else if ((cVar3 == '\0') &&
-                                                  (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar9
-                                                            ) == '\x01')) {
+                                          else if ((bVar3 == 0) &&
+                                                  (g_playerRelationMatrix[bVar2][bVar1] == 1)) {
                                             iVar8 = 1;
                                           }
                                           else {
-                                            if ((cVar3 != '\x01') ||
-                                               (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar9)
-                                                != '\x01')) goto LAB_004c4192;
+                                            if ((bVar3 != 1) ||
+                                               (g_playerRelationMatrix[bVar2][bVar1] != 1))
+                                            goto LAB_004c4192;
                                             iVar8 = 2;
                                           }
                                         }

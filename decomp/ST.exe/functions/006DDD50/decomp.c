@@ -153,7 +153,8 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
       for (pAVar4 = (AnonShape_006E1EE0_698AE49A *)param_1->field_0140;
           pAVar4 != (AnonShape_006E1EE0_698AE49A *)0x0;
           pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
-        FUN_006e1ee0(param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
+                  ((AnonReceiver_004248D0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
         FUN_00726ce0(param_1,(int)pAVar4);
         iVar23 = 0;
         if (0 < local_a0[0]) {
@@ -172,12 +173,16 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
       for (pAVar5 = (AnonShape_007282B0_AFD740A9 *)param_1->field_0140;
           pAVar5 != (AnonShape_007282B0_AFD740A9 *)0x0;
           pAVar5 = *(AnonShape_007282B0_AFD740A9 **)pAVar5) {
-        FUN_006e1ee0(param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,(int)local_cc,local_a0);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
+                  ((AnonReceiver_004248D0 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
+                   (int)local_cc,local_a0);
         FUN_00726ce0(param_1,(int)pAVar5);
         iVar23 = 0;
         if (0 < local_a0[0]) {
           do {
-            FUN_007282b0(param_1,pAVar5,(uint)(byte)local_cc[iVar23],(int)local_3c);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
+                      ((AnonReceiver_00727C80 *)param_1,pAVar5,(uint)(byte)local_cc[iVar23],
+                       (int)local_3c);
             iVar23 = iVar23 + 1;
           } while (iVar23 < local_a0[0]);
         }
@@ -232,14 +237,16 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
                        local_a0);
         }
         else {
-          FUN_006e1ee0(param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
+                    ((AnonReceiver_004248D0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
         }
         FUN_00726ce0(param_1,(int)pAVar4);
         iVar23 = 0;
         if (0 < local_a0[0]) {
           do {
-            FUN_00727da0(param_1,(AnonShape_00727DA0_C4265AA0 *)pAVar4,(uint)(byte)local_cc[iVar23],
-                         (int)local_3c);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
+                      ((AnonReceiver_00727C80 *)param_1,(AnonShape_00727DA0_C4265AA0 *)pAVar4,
+                       (uint)(byte)local_cc[iVar23],(int)local_3c);
             iVar23 = iVar23 + 1;
           } while (iVar23 < local_a0[0]);
         }

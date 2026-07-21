@@ -24,7 +24,7 @@ void FUN_004e7390(int param_1,uint param_2,uint param_3,int param_4)
   char *local_8;
   
   if ((-1 < param_1) && (param_1 < 8)) {
-    uVar3 = thunk_FUN_004406c0((char)param_1);
+    uVar3 = GetPlayerRaceId((char)param_1);
     puVar11 = &DAT_00801020;
     for (iVar5 = 0xc3; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar11 = 0;

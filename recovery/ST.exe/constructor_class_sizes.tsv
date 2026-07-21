@@ -1,5 +1,5 @@
 apply	owner	size	size_hex	confidence	reason	evidence_functions	table_addresses	allocation_calls
-0	MMObjTy	6916	0x1B04	conflict	conflicting_allocation_sizes	005EAD30	0079C008	005EAD3B
-0	MMObjTy	8387	0x20C3	conflict	conflicting_allocation_sizes	005AA2C0	0079C008	005AA2CB
-0	MMObjTy	8388	0x20C4	conflict	conflicting_allocation_sizes	005B2790	0079C008	005B279B
+1	ChooseMapTy	8388	0x20C4	high	unique_returned_allocation_size	005B2790	0079C088	005B279B
+1	FSGSTy	8387	0x20C3	high	unique_returned_allocation_size	005AA2C0	0079C02C	005AA2CB
 1	PrividerTy	7326	0x1C9E	high	unique_returned_allocation_size	005BD2E0	0079C0C4	005BD2EB
+1	WaitTy	6916	0x1B04	high	unique_returned_allocation_size	005EAD30	0079C24C	005EAD3B

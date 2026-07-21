@@ -1,4 +1,4 @@
-FUN_005556d0:
+TraksClassTy::TraksClassTy:
 005556D0  56                        PUSH ESI
 005556D1  57                        PUSH EDI
 005556D2  8B F1                     MOV ESI,ECX

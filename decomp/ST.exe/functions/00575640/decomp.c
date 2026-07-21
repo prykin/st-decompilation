@@ -160,7 +160,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
       param_3 = (short *)((int)param_3 + iVar4);
       local_1c = local_1c + -1;
     } while (local_1c != 0);
-    FUN_006ab060(&param_1);
+    FreeAndNull(&param_1);
   }
   return;
 }

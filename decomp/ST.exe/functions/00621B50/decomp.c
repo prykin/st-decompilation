@@ -15,20 +15,21 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   STMineSetC *this_00;
   int iVar7;
   undefined4 uVar8;
-  uint uVar9;
-  Global_sub_00626B50_param_1Enum GVar10;
-  int iVar11;
+  STMineSetC_field_02AEState SVar9;
+  uint uVar10;
+  Global_sub_00626B50_param_1Enum GVar11;
+  int iVar12;
   undefined4 unaff_ESI;
-  undefined4 *puVar12;
-  STWorldObject *pSVar13;
+  undefined4 *puVar13;
+  STWorldObject *pSVar14;
   void *unaff_EDI;
-  undefined4 *puVar14;
+  undefined4 *puVar15;
   InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
   uint local_14;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   STMineSetC *local_8;
   
   local_8 = this;
@@ -42,9 +43,9 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   this_00 = local_8;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_nick_to_mine_set_cpp_007d06b0,0x174,0,iVar7,
+    iVar12 = ReportDebugMessage(s_E____titans_nick_to_mine_set_cpp_007d06b0,0x174,0,iVar7,
                                 &DAT_007a4ccc,s_STMineSetC__GetMessage_007d06d8);
-    if (iVar11 == 0) {
+    if (iVar12 == 0) {
       RaiseInternalException(iVar7,0,s_E____titans_nick_to_mine_set_cpp_007d06b0,0x176);
       return 0xffff;
     }
@@ -52,20 +53,20 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     uVar8 = (*pcVar5)();
     return uVar8;
   }
-  uVar9 = param_1->field_0010;
-  if (0x110 < uVar9) {
-    if (0x128 < uVar9) {
+  uVar10 = param_1->field_0010;
+  if (0x110 < uVar10) {
+    if (0x128 < uVar10) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    if (uVar9 == 0x128) {
+    if (uVar10 == 0x128) {
       thunk_FUN_004ad430((int)&local_8->field_01D5);
       thunk_FUN_00622670(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    if (uVar9 != 0x112) {
-      if (uVar9 != 0x113) {
+    if (uVar10 != 0x112) {
+      if (uVar10 != 0x113) {
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
@@ -73,7 +74,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      if (local_8->field_02AE != 1) {
+      if (local_8->field_02AE != CASE_1) {
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
@@ -85,7 +86,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    if (local_8->field_02AE != 1) {
+    if (local_8->field_02AE != CASE_1) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -93,29 +94,29 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar9 == 0x110) {
+  if (uVar10 == 0x110) {
     thunk_FUN_00627390((int)local_8);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (3 < uVar9) {
-    if (uVar9 == 0x108) {
-      GVar10 = thunk_FUN_004ab050();
-      thunk_FUN_00626b50(local_8,GVar10);
+  if (3 < uVar10) {
+    if (uVar10 == 0x108) {
+      GVar11 = thunk_FUN_004ab050();
+      thunk_FUN_00626b50(local_8,GVar11);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    if (uVar9 != 0x10f) {
+    if (uVar10 != 0x10f) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    local_10 = thunk_FUN_00622990(local_8,&local_c);
+    local_10 = thunk_FUN_00622990(local_8,(uint *)&local_c);
     STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar9 == 3) {
+  if (uVar10 == 3) {
     thunk_FUN_00622880((AnonShape_00622880_C4191DB5 *)local_8);
     if ((AnonShape_006366D0_80B1100F *)this_00->field_0363 == (AnonShape_006366D0_80B1100F *)0x0) {
       g_currentExceptionFrame = local_60.previous;
@@ -127,42 +128,43 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar9 == 0) {
+  if (uVar10 == 0) {
     if ((local_8->field_02AD == '\x03') &&
        (0x1194 < (uint)(PTR_00802a38->field_00E4 - local_8->field_035F))) {
       thunk_FUN_00627390((int)local_8);
     }
     iVar7 = thunk_FUN_006239a0(this_00);
     if (iVar7 == 0) {
-      if ((this_00->field_02AE == 2) && (this_00->field_0353 == '\0')) {
-        uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
-        this_00->field_0353 = (char)uVar9;
-        if ((char)uVar9 != '\0') {
+      if ((this_00->field_02AE == CASE_2) && (this_00->field_0353 == '\0')) {
+        uVar10 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
+        this_00->field_0353 = (char)uVar10;
+        if ((char)uVar10 != '\0') {
           LoadImagMineSet(this_00,0);
           thunk_FUN_004ad460(&this_00->field_01D5,1);
         }
       }
     }
     else {
-      if ((((this_00->field_0314 == '\0') && (iVar7 = this_00->field_02AE, iVar7 != 2)) &&
-          (iVar7 != 3)) && ((iVar7 != 4 && (iVar7 != 5)))) {
-        uVar8 = thunk_FUN_00627400(this_00,iVar7);
-        this_00->field_02AE = uVar8;
+      if ((((this_00->field_0314 == '\0') && (SVar9 = this_00->field_02AE, SVar9 != CASE_2)) &&
+          (SVar9 != CASE_3)) && ((SVar9 != CASE_4 && (SVar9 != (CASE_4|CASE_1))))) {
+        SVar9 = thunk_FUN_00627400(this_00,SVar9);
+        this_00->field_02AE = SVar9;
       }
-      iVar7 = this_00->field_02AE;
-      if (((iVar7 != 2) && (iVar7 != 3)) && ((iVar7 != 4 && (iVar7 != 5)))) {
+      SVar9 = this_00->field_02AE;
+      if (((SVar9 != CASE_2) && (SVar9 != CASE_3)) &&
+         ((SVar9 != CASE_4 && (SVar9 != (CASE_4|CASE_1))))) {
         if (this_00->field_0353 == '\0') {
-          uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
-          this_00->field_0353 = (char)uVar9;
-          if (((char)uVar9 != '\0') && ((int)this_00->field_02BA < 0)) {
+          uVar10 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
+          this_00->field_0353 = (char)uVar10;
+          if (((char)uVar10 != '\0') && ((int)this_00->field_02BA < 0)) {
             LoadImagMineSet(this_00,0);
             thunk_FUN_004ad460(&this_00->field_01D5,1);
           }
         }
         else if ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0) {
-          uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
-          this_00->field_0353 = (char)uVar9;
-          if (((char)uVar9 == '\0') && (this_00->field_02E9 != '\0')) {
+          uVar10 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
+          this_00->field_0353 = (char)uVar10;
+          if (((char)uVar10 == '\0') && (this_00->field_02E9 != '\0')) {
             thunk_FUN_004ad430((int)&this_00->field_01D5);
             this_00->field_02E9 = 0;
           }
@@ -177,17 +179,17 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
         if ((((cVar1 == '\0') || (cVar1 == '\x01')) || (cVar1 == '\x02')) &&
            (((((uint)PTR_00802a38->field_00E4 % 5 == 0 &&
               (0x19 < (uint)(PTR_00802a38->field_00E4 - this_00->field_0346))) &&
-             ((this_00->field_02AE == 0 || (this_00->field_02AE == 1)))) &&
+             ((this_00->field_02AE == CASE_0 || (this_00->field_02AE == CASE_1)))) &&
             (iVar7 = thunk_FUN_00625730(this_00), iVar7 != 0)))) {
-          this_00->field_02AE = 2;
+          this_00->field_02AE = CASE_2;
           this_00->field_030F =
                *(int *)(&DAT_007d02a4 + (uint)(byte)this_00->field_02AD * 4) +
                PTR_00802a38->field_00E4;
         }
       }
     }
-    if (((this_00->field_0355 == 0) && (this_00->field_02AE != 2)) &&
-       ((this_00->field_02AE != 4 &&
+    if (((this_00->field_0355 == 0) && (this_00->field_02AE != CASE_2)) &&
+       ((this_00->field_02AE != CASE_4 &&
         (((short)(this_00->field_0047 * 0xc9 + 100) == this_00->field_0041 &&
          ((short)(this_00->field_0049 * 0xc9 + 100) == this_00->field_0043)))))) {
       this_00->field_0355 = 1;
@@ -206,7 +208,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar9 != 2) {
+  if (uVar10 != 2) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -222,16 +224,16 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
       sVar3 = this_00->field_004B;
       sVar4 = this_00->field_0049;
       local_18 = (int)sVar4;
-      if ((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar4 < 0)) ||
-         (((SHORT_007fb242 <= sVar4 || (sVar3 < 0)) || (SHORT_007fb244 <= sVar3)))) {
-        pSVar13 = (STWorldObject *)0x0;
+      if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar4 < 0)) ||
+         (((g_worldGrid.sizeY <= sVar4 || (sVar3 < 0)) || (g_worldGrid.sizeZ <= sVar3)))) {
+        pSVar14 = (STWorldObject *)0x0;
       }
       else {
-        pSVar13 = g_worldCells
-                  [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 + (int)sVar2]
-                  .objects[local_14];
+        pSVar14 = g_worldGrid.cells
+                  [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
+                   (int)sVar2].objects[local_14];
       }
-      if ((pSVar13 == (STWorldObject *)0x0) &&
+      if ((pSVar14 == (STWorldObject *)0x0) &&
          (iVar7 = DumpClassC::WritePtr
                             (sVar2,sVar4,sVar3,local_14,(AnonShape_00495EC0_95A268C6 *)this_00),
          iVar7 == 0)) {
@@ -245,12 +247,12 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
         thunk_FUN_00622670(this_00);
       }
     }
-    puVar12 = (undefined4 *)&this_00->field_0x231;
+    puVar13 = (undefined4 *)&this_00->field_0x231;
     for (iVar7 = 0xb; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
+      *puVar13 = 0;
+      puVar13 = puVar13 + 1;
     }
-    *(undefined1 *)puVar12 = 0;
+    *(undefined1 *)puVar13 = 0;
     if (this_00->field_0353 != '\0') {
       uVar8 = thunk_FUN_004ad650((int)&this_00->field_01D5);
       this_00->field_02BA = uVar8;
@@ -266,15 +268,15 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar12 = (undefined4 *)param_1->field_0014;
-  puVar14 = (undefined4 *)&local_8->field_0x25e;
-  for (iVar11 = 0x13; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *puVar14 = *puVar12;
-    puVar12 = puVar12 + 1;
-    puVar14 = puVar14 + 1;
+  puVar13 = (undefined4 *)param_1->field_0014;
+  puVar15 = (undefined4 *)&local_8->field_0x25e;
+  for (iVar12 = 0x13; iVar12 != 0; iVar12 = iVar12 + -1) {
+    *puVar15 = *puVar13;
+    puVar13 = puVar13 + 1;
+    puVar15 = puVar15 + 1;
   }
-  *(undefined2 *)puVar14 = *(undefined2 *)puVar12;
-  *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar12 + 2);
+  *(undefined2 *)puVar15 = *(undefined2 *)puVar13;
+  *(undefined1 *)((int)puVar15 + 2) = *(undefined1 *)((int)puVar13 + 2);
   if (*(int *)(iVar7 + 0xc) == 0) {
     *(int *)&local_8->field_0x276 = (int)(short)(*(short *)&local_8->field_0x276 * 0xc9 + 100);
     *(int *)&local_8->field_0x27a = (int)(short)(*(short *)&local_8->field_0x27a * 0xc9 + 100);
@@ -306,11 +308,11 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
     if (iVar7 == 0) goto cf_common_exit_00621D24;
     *(undefined4 *)&this_00->field_0x2ee = 2;
   }
-  this_00->field_02AE = 1;
+  this_00->field_02AE = CASE_1;
   bVar6 = true;
 cf_common_exit_00621D24:
   if (bVar6) {
-    this_00->field_02AE = 1;
+    this_00->field_02AE = CASE_1;
     this_00->field_0353 = 1;
     LoadImagMineSet(this_00,0);
     iVar7 = STAllPlayersC::RegisterMine(g_sTAllPlayers_007FA174,0xffff,this_00);

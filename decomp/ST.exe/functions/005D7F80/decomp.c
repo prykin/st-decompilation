@@ -25,11 +25,11 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
     if ((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CD0 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CD0);
     }
-    pSVar2->field_1CD0 = 0;
+    pSVar2->field_1CD0 = (AnonPointee_SIDTy_1CD0 *)0x0;
     if ((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CCC != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar2->field_1CCC);
     }
-    pSVar2->field_1CCC = 0;
+    pSVar2->field_1CCC = (AnonPointee_SIDTy_1CCC *)0x0;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1A60);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B01);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B92);
@@ -38,17 +38,17 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
       FUN_006b3bb0(DAT_008075a8,pSVar2->field_1CB4);
     }
     pSVar2->field_1CB4 = 0xffffffff;
-    if (pSVar2->field_1CB8 != 0) {
-      FUN_006ab060((LPVOID *)&pSVar2->field_1CB8);
+    if (pSVar2->field_1CB8 != (AnonPointee_SIDTy_1CB8 *)0x0) {
+      FreeAndNull(&pSVar2->field_1CB8);
     }
-    if (pSVar2->field_1CC8 != 0) {
-      FUN_006ab060((LPVOID *)&pSVar2->field_1CC8);
+    if (pSVar2->field_1CC8 != (AnonPointee_SIDTy_1CC8 *)0x0) {
+      FreeAndNull(&pSVar2->field_1CC8);
     }
-    if (pSVar2->field_1CBC != 0) {
-      FUN_006ab060((LPVOID *)&pSVar2->field_1CBC);
+    if (pSVar2->field_1CBC != (AnonPointee_SIDTy_1CBC *)0x0) {
+      FreeAndNull(&pSVar2->field_1CBC);
     }
-    if (pSVar2->field_1CC0 != 0) {
-      FUN_006ab060((LPVOID *)&pSVar2->field_1CC0);
+    if (pSVar2->field_1CC0 != (AnonPointee_SIDTy_1CC0 *)0x0) {
+      FreeAndNull(&pSVar2->field_1CC0);
     }
     if (pSVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pSVar2->field_0x3d);

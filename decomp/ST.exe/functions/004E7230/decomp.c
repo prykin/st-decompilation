@@ -26,7 +26,7 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
     puVar8 = puVar8 + 1;
   }
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
-    uVar4 = thunk_FUN_004406c0((char)param_1);
+    uVar4 = GetPlayerRaceId((char)param_1);
     param_1 = 0;
     param_2 = 0;
     iVar5 = iVar5 + ((uVar4 & 0xff) - 1) * 3;

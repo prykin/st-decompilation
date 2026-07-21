@@ -21,8 +21,8 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   uint uVar6;
   undefined4 unaff_ESI;
   uint uVar7;
-  DArrayTy *pDVar8;
-  uint uVar9;
+  DArrayTy *array;
+  uint uVar8;
   void *unaff_EDI;
   InternalExceptionFrame local_68;
   DArrayTy *local_24;
@@ -39,7 +39,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   g_currentExceptionFrame = &local_68;
   local_14 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pDVar8 = local_18;
+  array = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar3 != -0x5001fff7) {
@@ -59,17 +59,17 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0x291d);
   }
-  local_c = pDVar8->count;
+  local_c = array->count;
   if (param_3 == 1) {
     uVar6 = 0;
     if (0 < (int)local_c) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar8,uVar6,&local_24);
+        DArrayGetElement(array,uVar6,&local_24);
         uVar7 = 0;
-        uVar9 = local_20->count;
-        if (0 < (int)uVar9) {
+        uVar8 = local_20->count;
+        if (0 < (int)uVar8) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,uVar7,&local_8);
+            DArrayGetElement(local_20,uVar7,&local_8);
             if ((short)local_8 == param_2) {
               FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_20,uVar7);
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,CASE_1);
@@ -78,20 +78,20 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
               break;
             }
             uVar7 = uVar7 + 1;
-          } while ((int)uVar7 < (int)uVar9);
+          } while ((int)uVar7 < (int)uVar8);
         }
-        if (uVar7 != uVar9) {
-          if (uVar9 == 1) {
-            FUN_006ae110((byte *)local_24);
-            FUN_006ae110((byte *)local_20);
-            FUN_006ae110((byte *)local_1c);
+        if (uVar7 != uVar8) {
+          if (uVar8 == 1) {
+            DArrayDestroy(local_24);
+            DArrayDestroy(local_20);
+            DArrayDestroy(local_1c);
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_18,uVar6);
             local_c = local_c - 1;
           }
           break;
         }
         uVar6 = uVar6 + 1;
-        pDVar8 = local_18;
+        array = local_18;
       } while ((int)uVar6 < (int)local_c);
     }
     if (local_c == 0) {
@@ -104,25 +104,25 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
     uVar6 = 0;
     if (0 < (int)local_c) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar8,uVar6,&local_24);
+        DArrayGetElement(array,uVar6,&local_24);
         uVar7 = 0;
-        uVar9 = local_24->count;
-        if (0 < (int)uVar9) {
+        uVar8 = local_24->count;
+        if (0 < (int)uVar8) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_24,uVar7,&local_8);
+            DArrayGetElement(local_24,uVar7,&local_8);
             if ((short)local_8 == param_2) {
               FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_24,uVar7);
               break;
             }
             uVar7 = uVar7 + 1;
-          } while ((int)uVar7 < (int)uVar9);
+          } while ((int)uVar7 < (int)uVar8);
         }
-        if ((uVar7 != uVar9) && (uVar9 == 1)) {
-          uVar9 = 0;
+        if ((uVar7 != uVar8) && (uVar8 == 1)) {
+          uVar8 = 0;
           dVar1 = local_20->count;
           if (0 < (int)dVar1) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,uVar9,&local_8);
+              DArrayGetElement(local_20,uVar8,&local_8);
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,CASE_1);
               if (pSVar4 == (STBoatC *)0x0) {
                 iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2955,0,0,
@@ -138,18 +138,18 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
                 local_10 = PTR_00802a38->field_00E4;
                 STBoatC::CmdToObj(pSVar4,CASE_21,&local_10);
               }
-              uVar9 = uVar9 + 1;
-            } while ((int)uVar9 < (int)dVar1);
+              uVar8 = uVar8 + 1;
+            } while ((int)uVar8 < (int)dVar1);
           }
-          FUN_006ae110((byte *)local_24);
-          FUN_006ae110((byte *)local_20);
-          FUN_006ae110((byte *)local_1c);
+          DArrayDestroy(local_24);
+          DArrayDestroy(local_20);
+          DArrayDestroy(local_1c);
           FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_18,uVar6);
           local_c = local_c - 1;
           uVar6 = uVar6 - 1;
         }
         uVar6 = uVar6 + 1;
-        pDVar8 = local_18;
+        array = local_18;
       } while ((int)uVar6 < (int)local_c);
     }
     if (local_c == 0) {

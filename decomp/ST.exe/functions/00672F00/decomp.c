@@ -105,10 +105,10 @@ bool FUN_00672f00(void)
     DAT_00857554 = piVar3[8];
   }
   if (DAT_00811958 == (int *)0x0) {
-    FUN_006ab060(&DAT_00857528);
-    FUN_006ab060(&DAT_00811948);
-    FUN_006ab060((LPVOID *)&DAT_0085755c);
-    FUN_006ab060(&DAT_0085753c);
+    FreeAndNull(&DAT_00857528);
+    FreeAndNull(&DAT_00811948);
+    FreeAndNull((void **)&DAT_0085755c);
+    FreeAndNull(&DAT_0085753c);
     for (puVar2 = DAT_00811908; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
       FUN_006a5e90((short *)puVar2[1]);
       FUN_006a5e90((short *)puVar2[2]);

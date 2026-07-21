@@ -37,7 +37,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
       g_currentExceptionFrame = pIVar4;
       return 0;
     case CASE_45:
-      thunk_FUN_004eaa20((AnonShape_004EAA20_6BF53BE2 *)local_8);
+      thunk_FUN_004eaa20((AnonShape_004D9C80_80F657D3 *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case CASE_4E:
@@ -57,7 +57,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
       g_currentExceptionFrame = pIVar4;
       return 0;
     case CASE_72:
-      thunk_FUN_004ecea0((AnonShape_004ECEA0_52E8E272 *)local_8);
+      thunk_FUN_004ecea0((AnonShape_004D9C80_80F657D3 *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     }

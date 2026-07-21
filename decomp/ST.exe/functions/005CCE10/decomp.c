@@ -6,19 +6,21 @@
 void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
 
 {
-  char cVar1;
-  code *pcVar2;
-  SettMapMTy *pSVar3;
-  int iVar4;
-  uint *puVar5;
+  SettMapMTy_field_1E26State SVar1;
+  char cVar2;
+  DArrayTy *pDVar3;
+  code *pcVar4;
+  SettMapMTy *pSVar5;
   int iVar6;
-  uint uVar7;
-  uint uVar8;
+  uint *puVar7;
+  int iVar8;
+  uint uVar9;
+  uint uVar10;
   undefined4 unaff_ESI;
-  char *pcVar9;
+  char *pcVar11;
   void *unaff_EDI;
-  undefined4 *puVar10;
-  bool bVar11;
+  undefined4 *puVar12;
+  bool bVar13;
   InternalExceptionFrame local_14c;
   InternalExceptionFrame local_108;
   InternalExceptionFrame local_c4;
@@ -37,162 +39,162 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_14 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar4 != 0) {
+  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x164,0,iVar4,&DAT_007a4ccc
+    iVar8 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x164,0,iVar6,&DAT_007a4ccc
                                ,s_SettMapMTy__SetListCtrls_007cd2f0);
-    if (iVar6 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Start_settmobj_cpp_007cd258,0x164);
+    if (iVar8 == 0) {
+      RaiseInternalException(iVar6,0,s_E____titans_Start_settmobj_cpp_007cd258,0x164);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  puVar10 = local_3c;
-  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  puVar12 = local_3c;
+  for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
   local_2c = 0x26;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pSVar3 = local_14;
-  if (iVar4 == 0) {
+  iVar6 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pSVar5 = local_14;
+  if (iVar6 == 0) {
     FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
     local_1c = local_28;
   }
-  if ((pSVar3->field_1E26 == '\x05') || (pSVar3->field_1E26 == '\x0f')) {
-    local_c = (cMf32 *)pSVar3->field_1F3F;
+  if ((pSVar5->field_1E26 == CASE_5) || (pSVar5->field_1E26 == CASE_F)) {
+    local_c = (cMf32 *)pSVar5->field_1F3F;
   }
   else {
-    local_c = (cMf32 *)pSVar3->field_1F43;
+    local_c = (cMf32 *)pSVar5->field_1F43;
   }
   g_currentExceptionFrame = local_c4.previous;
-  pSVar3->field_0029 = 2;
-  pSVar3->field_002D = 0x20;
+  pSVar5->field_0029 = 2;
+  pSVar5->field_002D = 0x20;
   local_10 = 0;
   local_8 = 0x7e3;
   do {
     local_18 = 0;
-    uVar8 = local_8;
+    uVar10 = local_8;
     do {
-      if ((&pSVar3->field_0000)[uVar8 + local_18] != 0) {
-        iVar4 = pSVar3->field_1F84;
-        if ((iVar4 == 0) || (uVar7 = pSVar3->field_1F88 + local_10, *(uint *)(iVar4 + 0xc) <= uVar7)
-           ) {
-          pcVar9 = (char *)0x0;
+      if ((&pSVar5->field_0000)[uVar10 + local_18] != (AnonPointee_SettMapMTy_0000 *)0x0) {
+        pDVar3 = pSVar5->field_1F84;
+        if ((pDVar3 == (DArrayTy *)0x0) ||
+           (uVar9 = pSVar5->field_1F88 + local_10, pDVar3->count <= uVar9)) {
+          pcVar11 = (char *)0x0;
         }
         else {
-          pcVar9 = (char *)(*(int *)(iVar4 + 8) * uVar7 + *(int *)(iVar4 + 0x1c));
+          pcVar11 = (char *)(pDVar3->elementSize * uVar9 + (int)pDVar3->data);
         }
-        cVar1 = pSVar3->field_1E26;
-        pSVar3->field_0025 = (&pSVar3->field_0000)[uVar8 + local_18];
-        pSVar3->field_0031 = 0;
-        if (((cVar1 != '\f') && (cVar1 != '\x10')) && (pcVar9 != (char *)0x0)) {
+        SVar1 = pSVar5->field_1E26;
+        pSVar5->field_0025 = (&pSVar5->field_0000)[uVar10 + local_18];
+        pSVar5->field_0031 = 0;
+        if (((SVar1 != CASE_C) && (SVar1 != CASE_10)) && (pcVar11 != (char *)0x0)) {
           switch(local_18) {
           case 0:
-            if (*(byte **)(pcVar9 + 0x50) != (byte *)0x0) {
-              FUN_006ae110(*(byte **)(pcVar9 + 0x50));
+            if (*(DArrayTy **)(pcVar11 + 0x50) != (DArrayTy *)0x0) {
+              DArrayDestroy(*(DArrayTy **)(pcVar11 + 0x50));
             }
-            pcVar9[0x50] = '\0';
-            pcVar9[0x51] = '\0';
-            pcVar9[0x52] = '\0';
-            pcVar9[0x53] = '\0';
-            switch(pSVar3->field_1E26) {
-            case 5:
-            case 0xf:
-              puVar5 = CreateStrategList((int)local_c,(uint)(byte)pcVar9[2],0xffffffff);
+            pcVar11[0x50] = '\0';
+            pcVar11[0x51] = '\0';
+            pcVar11[0x52] = '\0';
+            pcVar11[0x53] = '\0';
+            switch(pSVar5->field_1E26) {
+            case CASE_5:
+            case CASE_F:
+              puVar7 = CreateStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
               break;
             default:
-              puVar5 = CreateOpponentList(local_c,(uint)(byte)pcVar9[3],DAT_0080995c);
+              puVar7 = CreateOpponentList(local_c,(uint)(byte)pcVar11[3],DAT_0080995c);
               break;
-            case 0xc:
-            case 0x10:
-              puVar5 = CreateSaveStrategList((int)local_c,(uint)(byte)pcVar9[2],0xffffffff);
+            case CASE_C:
+            case CASE_10:
+              puVar7 = CreateSaveStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
             }
-            *(uint **)(pcVar9 + 0x50) = puVar5;
-            if (puVar5[3] <= (uint)(byte)pcVar9[5]) {
-              pcVar9[5] = (char)puVar5[3];
+            *(uint **)(pcVar11 + 0x50) = puVar7;
+            if (puVar7[3] <= (uint)(byte)pcVar11[5]) {
+              pcVar11[5] = (char)puVar7[3];
             }
-            if ((*(int *)(*(int *)(pcVar9 + 0x50) + 0xc) == 0) && (pcVar9[4] == '\x04')) {
-              pcVar9[4] = '\x01';
+            if ((*(int *)(*(int *)(pcVar11 + 0x50) + 0xc) == 0) && (pcVar11[4] == '\x04')) {
+              pcVar11[4] = '\x01';
             }
-            if (((*pcVar9 != '\0') && (pSVar3->field_1E26 != '\x05')) &&
-               ((pSVar3->field_1E26 != '\x0f' && (pcVar9[4] == '\x02')))) {
-              bVar11 = *(int *)(pcVar9 + 6) == DAT_0080877f;
+            if (((*pcVar11 != '\0') && (pSVar5->field_1E26 != CASE_5)) &&
+               ((pSVar5->field_1E26 != CASE_F && (pcVar11[4] == '\x02')))) {
+              bVar13 = *(int *)(pcVar11 + 6) == DAT_0080877f;
 LAB_005cd119:
-              if (bVar11) goto cf_common_join_005CD142;
+              if (bVar13) goto cf_common_join_005CD142;
             }
             break;
           case 1:
           case 2:
-            if (((cVar1 != '\x05') && (cVar1 != '\x0f')) && (*pcVar9 != '\0')) {
+            if (((SVar1 != CASE_5) && (SVar1 != CASE_F)) && (*pcVar11 != '\0')) {
               if (DAT_0080877e != '\0') {
-                if (pcVar9[4] == '\x02') {
+                if (pcVar11[4] == '\x02') {
 LAB_005cd10f:
-                  bVar11 = *(int *)(pcVar9 + 6) == DAT_0080877f;
+                  bVar13 = *(int *)(pcVar11 + 6) == DAT_0080877f;
                   goto LAB_005cd119;
                 }
                 goto cf_common_join_005CD142;
               }
-              if (pcVar9[4] == '\x02') {
-                iVar4 = *(int *)(pcVar9 + 6);
+              if (pcVar11[4] == '\x02') {
+                iVar6 = *(int *)(pcVar11 + 6);
                 goto joined_r0x005cd0bb;
               }
             }
             break;
           case 3:
-            if (((DAT_0080877e != '\0') || (cVar1 = pcVar9[4], cVar1 == '\x01')) ||
-               ((cVar1 == '\x02' && (*(int *)(pcVar9 + 6) == DAT_0080877f))))
+            if (((DAT_0080877e != '\0') || (cVar2 = pcVar11[4], cVar2 == '\x01')) ||
+               ((cVar2 == '\x02' && (*(int *)(pcVar11 + 6) == DAT_0080877f))))
             goto cf_common_join_005CD142;
-            if (cVar1 == '\x03') {
-              iVar4 = *(int *)(pcVar9 + 6);
+            if (cVar2 == '\x03') {
+              iVar6 = *(int *)(pcVar11 + 6);
               goto joined_r0x005cd0bb;
             }
             break;
           case 5:
-            if (((((DAT_0080874d != -1) && (cVar1 != '\x05')) &&
-                 ((cVar1 != '\x0f' && ((*pcVar9 != '\0' && (cVar1 = pcVar9[4], cVar1 != '\0'))))))
-                && (cVar1 != '\x01')) && (pcVar9[2] != -1)) {
+            if (((((DAT_0080874d != -1) && (SVar1 != CASE_5)) &&
+                 ((SVar1 != CASE_F && ((*pcVar11 != '\0' && (cVar2 = pcVar11[4], cVar2 != '\0'))))))
+                && (cVar2 != '\x01')) && (pcVar11[2] != -1)) {
               if (DAT_00808a8f == '\0') {
-                if ((cVar1 != '\x02') || (*(int *)(pcVar9 + 6) != DAT_0080877f))
+                if ((cVar2 != '\x02') || (*(int *)(pcVar11 + 6) != DAT_0080877f))
                 goto cf_common_join_005CD142;
               }
               else if (DAT_0080877e == '\0') {
-                if (cVar1 == '\x02') goto LAB_005cd10f;
+                if (cVar2 == '\x02') goto LAB_005cd10f;
               }
               else {
-                if (cVar1 == '\x02') {
-                  iVar4 = *(int *)(pcVar9 + 6);
+                if (cVar2 == '\x02') {
+                  iVar6 = *(int *)(pcVar11 + 6);
                   goto joined_r0x005cd0bb;
                 }
 cf_common_join_005CD142:
-                pSVar3->field_0031 = 1;
+                pSVar5->field_0031 = 1;
               }
             }
             break;
           case 7:
-            if (pcVar9[4] == '\x02') {
-              iVar4 = *(int *)(pcVar9 + 6);
+            if (pcVar11[4] == '\x02') {
+              iVar6 = *(int *)(pcVar11 + 6);
 joined_r0x005cd0bb:
-              if (iVar4 == DAT_0080877f) goto cf_common_join_005CD142;
+              if (iVar6 == DAT_0080877f) goto cf_common_join_005CD142;
             }
           }
         }
-        (**(code **)(*(int *)pSVar3->field_000C + 0x18))(&pSVar3->field_0x1d);
-        uVar8 = local_8;
+        (*pSVar5->field_000C->vtable->vfunc_18)(&pSVar5->field_0x1d);
+        uVar10 = local_8;
       }
       local_18 = local_18 + 1;
     } while (local_18 < 8);
-    local_8 = uVar8 + 8;
+    local_8 = uVar10 + 8;
     local_10 = local_10 + 1;
     if (0x832 < (int)local_8) {
-      local_8 = *(uint *)(pSVar3->field_1F84 + 0xc);
+      local_8 = pSVar5->field_1F84->count;
       local_2c = 0x28;
-      if ((pSVar3->field_1F84 == 0) || (local_8 < 0xb)) {
+      if ((pSVar5->field_1F84 == (DArrayTy *)0x0) || (local_8 < 0xb)) {
         local_28 = 1;
       }
       else {
@@ -200,8 +202,8 @@ joined_r0x005cd0bb:
       }
       local_108.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_108;
-      iVar4 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
-      if (iVar4 == 0) {
+      iVar6 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      if (iVar6 == 0) {
         FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
       local_2c = 0x22;
@@ -216,8 +218,8 @@ joined_r0x005cd0bb:
       }
       g_currentExceptionFrame = &local_14c;
       local_14c.previous = local_108.previous;
-      iVar4 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-      if (iVar4 == 0) {
+      iVar6 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      if (iVar6 == 0) {
         FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
       g_currentExceptionFrame = local_80.previous;

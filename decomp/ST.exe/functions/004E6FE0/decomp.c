@@ -17,7 +17,7 @@ int FUN_004e6fe0(int param_1)
   local_c = 0;
   local_8 = 0;
   if ((-1 < param_1) && (param_1 < 8)) {
-    uVar2 = thunk_FUN_004406c0((char)param_1);
+    uVar2 = GetPlayerRaceId((char)param_1);
     uVar4 = 0;
     do {
       if ((&PTR_DAT_007bfc04)[(uVar2 & 0xff) - 1] + uVar4 != (undefined *)0x0) {

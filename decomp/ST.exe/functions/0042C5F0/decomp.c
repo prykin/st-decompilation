@@ -9,11 +9,11 @@ STAllPlayersC::DelObjFromTmps
 
 {
   undefined4 *puVar1;
-  AnonShape_006ACC70_C8641025 *pAVar2;
-  uint uVar3;
+  DArrayTy *pDVar2;
+  dword dVar3;
   code *pcVar4;
   char cVar5;
-  int *piVar6;
+  STGameObjC *pSVar6;
   int iVar7;
   undefined4 uVar8;
   int iVar9;
@@ -32,8 +32,8 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
         if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x1a4) && (puVar1[1] == (int)cVar5)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_5);
-          (**(code **)(*piVar6 + 0xe8))(0);
+          pSVar6 = GetObjPtr(this,param_3,param_4,CASE_5);
+          (*pSVar6->vtable[1].vfunc_14)(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -57,20 +57,20 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(param_2 * 0x10 + iVar7);
         if ((*(int *)(param_2 * 0x10 + iVar7) == 0x3c) && (puVar1[1] == (int)cVar5)) {
-          pAVar2 = *(AnonShape_006ACC70_C8641025 **)((int)puVar1 + 10);
+          pDVar2 = *(DArrayTy **)((int)puVar1 + 10);
           uVar10 = 0;
-          uVar3 = pAVar2->field_000C;
-          if (0 < (int)uVar3) {
+          dVar3 = pDVar2->count;
+          if (0 < (int)dVar3) {
             do {
-              FUN_006acc70(pAVar2,uVar10,&local_8);
+              DArrayGetElement(pDVar2,uVar10,&local_8);
               if ((short)local_8 == (short)param_4) {
-                piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_1);
-                (**(code **)(*piVar6 + 0xe8))(0);
+                pSVar6 = GetObjPtr(this,param_3,param_4,CASE_1);
+                (*pSVar6->vtable[1].vfunc_14)(0);
                 local_8 = 0xffff;
-                Library::DKW::TBL::FUN_006ae140((uint *)pAVar2,uVar10,&local_8);
+                Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar10,&local_8);
                 *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
                 if (*(short *)((int)puVar1 + 0xe) == 0) {
-                  FUN_006ae110(*(byte **)((int)puVar1 + 10));
+                  DArrayDestroy(*(DArrayTy **)((int)puVar1 + 10));
                   *(undefined4 *)((int)puVar1 + 10) = 0;
                   *puVar1 = 0;
                 }
@@ -86,7 +86,7 @@ STAllPlayersC::DelObjFromTmps
                 break;
               }
               uVar10 = uVar10 + 1;
-            } while ((int)uVar10 < (int)uVar3);
+            } while ((int)uVar10 < (int)dVar3);
           }
         }
         param_2 = param_2 + 1;
@@ -102,8 +102,8 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
         if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x5a) && (puVar1[1] == (int)cVar5)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_4);
-          (**(code **)(*piVar6 + 0xe8))(0);
+          pSVar6 = GetObjPtr(this,param_3,param_4,CASE_4);
+          (*pSVar6->vtable[1].vfunc_14)(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -128,8 +128,8 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
         if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x172) && (puVar1[1] == (int)cVar5)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_2);
-          (**(code **)(*piVar6 + 0xe8))(0);
+          pSVar6 = GetObjPtr(this,param_3,param_4,CASE_2);
+          (*pSVar6->vtable[1].vfunc_14)(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -156,8 +156,8 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
         if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x1b8) && (puVar1[1] == (int)cVar5)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_6);
-          (**(code **)(*piVar6 + 0xe8))(0);
+          pSVar6 = GetObjPtr(this,param_3,param_4,CASE_6);
+          (*pSVar6->vtable[1].vfunc_14)(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -182,8 +182,8 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar9 * 0x10 + iVar7);
         if (((*(int *)(iVar9 * 0x10 + iVar7) == 0x1ae) && (puVar1[1] == (int)cVar5)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_3);
-          (**(code **)(*piVar6 + 0xe8))(0);
+          pSVar6 = GetObjPtr(this,param_3,param_4,CASE_3);
+          (*pSVar6->vtable[1].vfunc_14)(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -208,20 +208,20 @@ STAllPlayersC::DelObjFromTmps
     do {
       puVar1 = (undefined4 *)(param_2 * 0x10 + iVar7);
       if ((*(int *)(param_2 * 0x10 + iVar7) == 0x19a) && (puVar1[1] == (int)cVar5)) {
-        pAVar2 = *(AnonShape_006ACC70_C8641025 **)((int)puVar1 + 10);
+        pDVar2 = *(DArrayTy **)((int)puVar1 + 10);
         uVar10 = 0;
-        uVar3 = pAVar2->field_000C;
-        if (0 < (int)uVar3) {
+        dVar3 = pDVar2->count;
+        if (0 < (int)dVar3) {
           do {
-            FUN_006acc70(pAVar2,uVar10,&local_8);
+            DArrayGetElement(pDVar2,uVar10,&local_8);
             if ((short)local_8 == (short)param_4) {
-              piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_1);
-              (**(code **)(*piVar6 + 0xe8))(0);
+              pSVar6 = GetObjPtr(this,param_3,param_4,CASE_1);
+              (*pSVar6->vtable[1].vfunc_14)(0);
               local_8 = 0xffff;
-              Library::DKW::TBL::FUN_006ae140((uint *)pAVar2,uVar10,&local_8);
+              Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar10,&local_8);
               *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
               if (*(short *)((int)puVar1 + 0xe) == 0) {
-                FUN_006ae110(*(byte **)((int)puVar1 + 10));
+                DArrayDestroy(*(DArrayTy **)((int)puVar1 + 10));
                 *(undefined4 *)((int)puVar1 + 10) = 0;
                 *puVar1 = 0;
               }
@@ -237,7 +237,7 @@ STAllPlayersC::DelObjFromTmps
               break;
             }
             uVar10 = uVar10 + 1;
-          } while ((int)uVar10 < (int)uVar3);
+          } while ((int)uVar10 < (int)dVar3);
         }
       }
       param_2 = param_2 + 1;

@@ -15,7 +15,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
   byte local_24 [16];
   int local_14;
   int local_10;
-  uint *local_c;
+  DArrayTy *local_c;
   int local_8;
   
   local_8 = (int)param_3;
@@ -28,38 +28,38 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
     local_8 = 0;
   }
   iVar5 = local_8;
-  if (SHORT_007fb240 + -1 < _param_3) {
-    _param_3 = SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX + -1 < _param_3) {
+    _param_3 = g_worldGrid.sizeX + -1;
   }
   if (_param_6 < 0) {
     _param_6 = 0;
   }
-  if (SHORT_007fb242 + -1 < _param_4) {
-    _param_4 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY + -1 < _param_4) {
+    _param_4 = g_worldGrid.sizeY + -1;
   }
   if (iVar7 < 0) {
     iVar7 = 0;
   }
-  if (SHORT_007fb244 + -1 < iVar3) {
-    iVar3 = SHORT_007fb244 + -1;
+  if (g_worldGrid.sizeZ + -1 < iVar3) {
+    iVar3 = g_worldGrid.sizeZ + -1;
   }
-  local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-  iVar6 = SHORT_007fb240 * _param_6 + iVar5 + (iVar7 + -1) * (int)SHORT_007fb246;
+  local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  iVar6 = g_worldGrid.sizeX * _param_6 + iVar5 + (iVar7 + -1) * (int)g_worldGrid.planeStride;
   if (iVar7 <= iVar3) {
     _param_8 = (iVar3 - iVar7) + 1;
     do {
-      iVar6 = iVar6 + SHORT_007fb246;
+      iVar6 = iVar6 + g_worldGrid.planeStride;
       local_14 = iVar6;
       if (_param_6 <= _param_4) {
         iVar3 = (_param_4 - _param_6) + 1;
-        local_10 = iVar6 - SHORT_007fb240;
+        local_10 = iVar6 - g_worldGrid.sizeX;
         do {
-          local_10 = local_10 + SHORT_007fb240;
+          local_10 = local_10 + g_worldGrid.sizeX;
           if (iVar5 <= _param_3) {
             _param_7 = (_param_3 - local_8) + 1;
             iVar7 = local_10 * 8 + -8;
             do {
-              piVar2 = *(int **)((int)g_worldCells[1].objects + iVar7);
+              piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
               if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
                 (**(code **)(*piVar2 + 0x74))(local_24);
                 pbVar8 = local_24;
@@ -82,7 +82,8 @@ LAB_0043f6e3:
                 iVar5 = 0;
 LAB_0043f6e8:
                 if (iVar5 == 0) {
-                  Library::DKW::TBL::FUN_006ae1c0(local_c,(undefined4 *)((int)piVar2 + 0x32));
+                  Library::DKW::TBL::FUN_006ae1c0
+                            (&local_c->flags,(undefined4 *)((int)piVar2 + 0x32));
                 }
               }
               _param_7 = _param_7 + -1;
@@ -97,10 +98,10 @@ LAB_0043f6e8:
       _param_8 = _param_8 + -1;
     } while (_param_8 != 0);
   }
-  if (local_c[3] == 0) {
-    FUN_006ae110((byte *)local_c);
-    local_c = (uint *)0x0;
+  if (local_c->count == 0) {
+    DArrayDestroy(local_c);
+    local_c = (DArrayTy *)0x0;
   }
-  return local_c;
+  return &local_c->flags;
 }
 

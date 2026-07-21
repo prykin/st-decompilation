@@ -35,14 +35,15 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   sVar3 = *(short *)((int)param_1 + 0x4b);
   sVar7 = *(short *)((int)param_1 + 0x49);
   uVar10 = (undefined2)((uint)param_2 >> 0x10);
-  if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar7 < 0)) ||
-      ((SHORT_007fb242 <= sVar7 || (sVar3 < 0)))) || (SHORT_007fb244 <= sVar3)) {
+  if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar7 < 0)) ||
+      ((g_worldGrid.sizeY <= sVar7 || (sVar3 < 0)))) || (g_worldGrid.sizeZ <= sVar3)) {
     pSVar4 = (STWorldObject *)0x0;
   }
   else {
-    iVar12 = (int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar7 + (int)sVar1;
+    iVar12 = (int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar7 +
+             (int)sVar1;
     uVar10 = (undefined2)((uint)*(byte *)((int)param_1 + 0x8e) + iVar12 * 2 >> 0x10);
-    pSVar4 = g_worldCells[iVar12].objects[*(byte *)((int)param_1 + 0x8e)];
+    pSVar4 = g_worldGrid.cells[iVar12].objects[*(byte *)((int)param_1 + 0x8e)];
   }
   if (pSVar4 != (STWorldObject *)param_1) {
     return 1;
@@ -52,12 +53,13 @@ byte __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   local_14 = (AnonShape_00482DB0_070D50BF *)CONCAT22(uVar10,sVar3);
   if (param_1[0x1ff] == 3) {
     sVar7 = (short)param_1[0x200];
-    if ((((-1 < sVar7) && (sVar7 < SHORT_007fb240)) &&
-        ((-1 < sVar3 && ((sVar3 < SHORT_007fb242 && (-1 < sVar1)))))) && (sVar1 < SHORT_007fb244)) {
+    if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
+        ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar1)))))) &&
+       (sVar1 < g_worldGrid.sizeZ)) {
       local_8 = (AnonShape_00482DB0_070D50BF *)
-                g_worldCells
-                [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar7].
-                objects[1];
+                g_worldGrid.cells
+                [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                 (int)sVar7].objects[1];
 LAB_00482f52:
       if ((local_8 != (AnonShape_00482DB0_070D50BF *)0x0) &&
          (*(int *)&local_8->field_0x18 == param_1[0x1fd])) goto LAB_00482fa9;
@@ -65,12 +67,13 @@ LAB_00482f52:
   }
   else {
     sVar7 = (short)param_1[0x200];
-    if (((-1 < sVar7) && (sVar7 < SHORT_007fb240)) &&
-       ((-1 < sVar3 && (((sVar3 < SHORT_007fb242 && (-1 < sVar1)) && (sVar1 < SHORT_007fb244)))))) {
+    if (((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
+       ((-1 < sVar3 &&
+        (((sVar3 < g_worldGrid.sizeY && (-1 < sVar1)) && (sVar1 < g_worldGrid.sizeZ)))))) {
       local_8 = (AnonShape_00482DB0_070D50BF *)
-                g_worldCells
-                [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar7].
-                objects[0];
+                g_worldGrid.cells
+                [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                 (int)sVar7].objects[0];
       goto LAB_00482f52;
     }
   }

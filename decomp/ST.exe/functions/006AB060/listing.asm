@@ -1,4 +1,4 @@
-FUN_006ab060:
+FreeAndNull:
 006AB060  55                        PUSH EBP
 006AB061  8B EC                     MOV EBP,ESP
 006AB063  56                        PUSH ESI

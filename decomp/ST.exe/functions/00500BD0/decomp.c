@@ -18,7 +18,7 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   byte bVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  AnonShape_006B84D0_7C7D97C6 *pAVar11;
+  AnonShape_006B5B10_E0D06CF1 *pAVar11;
   InternalExceptionFrame local_60;
   byte *local_1c;
   undefined4 local_18;
@@ -114,14 +114,16 @@ LAB_00500d40:
         if (DAT_0080874e == '\x03') {
           if ((char)local_c == '\0') {
             uVar7 = (uint)(byte)pCVar4->field_02A8;
-            pbVar8 = (byte *)FUN_0070b3a0(pCVar4->field_02A2,local_8 & 0xff);
-            pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)pCVar4->field_018C;
+            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
+                                          local_8 & 0xff);
+            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_018C;
             iVar6 = (5 - uVar7) * 0xb;
           }
           else {
             uVar7 = (uint)*pbVar1;
-            pbVar8 = (byte *)FUN_0070b3a0(pCVar4->field_02A2,local_8 & 0xff);
-            pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)pCVar4->field_0194;
+            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
+                                          local_8 & 0xff);
+            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0194;
             iVar6 = uVar7 * 0xb + 0x87;
           }
           DibPut(pAVar11,iVar6,uVar7 * 0xb + 0xb,'\x06',pbVar8);
@@ -140,12 +142,13 @@ joined_r0x00500e7c:
         }
         else {
           if ((char)local_c == '\0') {
-            pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)pCVar4->field_0188;
+            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0188;
           }
           else {
-            pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)pCVar4->field_0198;
+            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0198;
           }
-          pbVar8 = (byte *)FUN_0070b3a0(pCVar4->field_02A2,local_8 & 0xff);
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
+                                        local_8 & 0xff);
           DibPut(pAVar11,7,(uint)*pbVar1 * 0x1d + 6,'\x01',pbVar8);
           bVar10 = (-((char)local_c != '\0') & 4U) + 2;
           local_18 = CONCAT31(local_18._1_3_,bVar10);

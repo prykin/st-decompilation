@@ -37,7 +37,7 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
   int local_14;
   int local_10;
   int local_c;
-  LPVOID local_8;
+  void *local_8;
   
   local_c = 0;
   local_4c = this;
@@ -72,7 +72,7 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
     local_2c = 5;
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
-    local_8 = (LPVOID)Library::DKW::LIB::FUN_006aac70(local_28 * 4);
+    local_8 = (void *)Library::DKW::LIB::FUN_006aac70(local_28 * 4);
     puVar6 = (undefined4 *)&stack0xffffff70;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar6 = 0;
@@ -159,7 +159,7 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00695eb0(this);
       thunk_FUN_0069ff90((int)this);
-      bVar3 = thunk_FUN_00695180((AnonShape_00695180_D714D58B *)local_6c,
+      bVar3 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
                                  (AnonShape_00695180_3C0E4B54 *)&stack0xffffff70,(int)&local_38,
                                  local_c);
       if (CONCAT31(extraout_var,bVar3) == 0) {
@@ -193,7 +193,7 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
       local_40 = CGenerate::SaveMap(this);
       thunk_FUN_0069ff90((int)this);
       if (DAT_00853dd4 != (undefined4 *)0x0) {
-        FUN_006ab060(&DAT_00853dd4);
+        FreeAndNull(&DAT_00853dd4);
       }
       local_d4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_d4;
@@ -216,13 +216,13 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
     else {
       local_40 = 0;
     }
-    if (local_8 != (LPVOID)0x0) {
-      FUN_006ab060(&local_8);
+    if (local_8 != (void *)0x0) {
+      FreeAndNull(&local_8);
     }
-    FUN_006ae110((byte *)local_54);
-    FUN_006ae110((byte *)local_78);
-    FUN_006ae110((byte *)local_50);
-    FUN_006ae110((byte *)local_74);
+    DArrayDestroy(local_54);
+    DArrayDestroy(local_78);
+    DArrayDestroy(local_50);
+    DArrayDestroy(local_74);
     timeGetTime();
     return local_40;
   }

@@ -27,14 +27,14 @@ byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
   if (*(uint **)((int)this + 0x38) != (uint *)0x0) {
     local_10 = (byte *)FUN_006b0020(*(uint **)((int)this + 0x38),(int *)&local_8);
     if (local_8 == 0) {
-      FUN_006ae110(*(byte **)((int)this + 0x38));
+      DArrayDestroy(*(DArrayTy **)((int)this + 0x38));
       *(undefined4 *)((int)this + 0x38) = 0;
     }
   }
   if (*(uint **)((int)this + 0x3c) != (uint *)0x0) {
     local_14 = (uint *)FUN_006b0020(*(uint **)((int)this + 0x3c),(int *)&local_c);
     if (local_c == 0) {
-      FUN_006ae110(*(byte **)((int)this + 0x3c));
+      DArrayDestroy(*(DArrayTy **)((int)this + 0x3c));
       *(undefined4 *)((int)this + 0x3c) = 0;
     }
   }
@@ -65,7 +65,7 @@ byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
       pbVar8 = pbVar8 + 1;
       pbVar10 = pbVar10 + 1;
     }
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
     puVar6 = (uint *)(pbVar3 + 0x2c + local_8);
   }
   if (local_c != 0) {
@@ -80,7 +80,7 @@ byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
       puVar9 = (uint *)((int)puVar9 + 1);
       puVar6 = (uint *)((int)puVar6 + 1);
     }
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     *param_1 = iVar1;
     return pbVar3;
   }

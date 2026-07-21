@@ -17,15 +17,15 @@ bool __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *par
     sVar5 = *(short *)((int)this + 0x6a9);
     sVar1 = *(short *)((int)this + 0x6ab);
     sVar3 = *(short *)((int)this + 0x6ad) + 1;
-    if ((((-1 < sVar5) && (sVar5 < SHORT_007fb240)) && (-1 < sVar1)) &&
-       (((sVar1 < SHORT_007fb242 && (-1 < sVar3)) &&
-        ((sVar3 < SHORT_007fb244 &&
-         ((g_worldCells
-           [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar5].
-           objects[0] != (STWorldObject *)0x0 &&
-          (g_worldCells
-           [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar5].
-           objects[0] != this)))))))) {
+    if ((((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) && (-1 < sVar1)) &&
+       (((sVar1 < g_worldGrid.sizeY && (-1 < sVar3)) &&
+        ((sVar3 < g_worldGrid.sizeZ &&
+         ((g_worldGrid.cells
+           [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar1 +
+            (int)sVar5].objects[0] != (STWorldObject *)0x0 &&
+          (g_worldGrid.cells
+           [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar1 +
+            (int)sVar5].objects[0] != this)))))))) {
       return false;
     }
     *param_1 = sVar5;
@@ -44,12 +44,12 @@ LAB_00495607:
       sVar6 = sVar5 + *(short *)((int)this + 0x6ab);
       sVar3 = (short)local_8;
       sVar2 = *(short *)((int)this + 0x6a9) + sVar3;
-      if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) || (sVar6 < 0)) ||
-          ((SHORT_007fb242 <= sVar6 || (sVar1 < 0)))) ||
-         ((SHORT_007fb244 <= sVar1 ||
-          (g_worldCells
-           [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar6 + (int)sVar2].
-           objects[0] == (STWorldObject *)0x0)))) {
+      if (((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar6 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar6 || (sVar1 < 0)))) ||
+         ((g_worldGrid.sizeZ <= sVar1 ||
+          (g_worldGrid.cells
+           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar6 +
+            (int)sVar2].objects[0] == (STWorldObject *)0x0)))) {
         iVar4 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),
                              *(short *)((int)this + 0x6a9) + local_8,
@@ -62,9 +62,9 @@ LAB_00495607:
           local_c = iVar4;
         }
       }
-      else if (g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar6 + (int)sVar2].
-               objects[0] == this) {
+      else if (g_worldGrid.cells
+               [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar6 +
+                (int)sVar2].objects[0] == this) {
         *param_1 = *(short *)((int)this + 0x6a9) + sVar3;
         sVar5 = *(short *)((int)this + 0x6ab) + sVar5;
         goto LAB_00495607;

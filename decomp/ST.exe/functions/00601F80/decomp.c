@@ -19,7 +19,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
   undefined4 *puVar7;
   InternalExceptionFrame local_54;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   AnonShape_00602BE0_B1CC517D *local_8;
   
   local_8 = (AnonShape_00602BE0_B1CC517D *)this;
@@ -36,7 +36,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
           local_10 = thunk_FUN_006025d0(local_8,&local_c);
           STPlaySystemC::SaveObjData
                     (PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_10,local_c);
-          FUN_006ab060(&local_10);
+          FreeAndNull(&local_10);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -86,7 +86,8 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
           iVar3 = thunk_FUN_00602660(local_8,puVar4);
           if (-1 < iVar3) {
             if (this_00->field_036E == 4) {
-              puVar4 = thunk_FUN_00602e90(this_00);
+              puVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::
+                       thunk_FUN_00602e90((AnonReceiver_00602E90 *)this_00);
               this_00->field_03AB = puVar4;
               if (puVar4 == (undefined4 *)0x0) {
                 thunk_FUN_00602440(this_00);

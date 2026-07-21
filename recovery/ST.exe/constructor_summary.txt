@@ -1,10 +1,10 @@
 program=ST.exe
-vptr_writer_functions=84
-constructor_candidates=39
-constructor_name_auto_apply=0
-constructor_convention_auto_apply=0
-constructor_parameter_auto_apply=0
-direct_hierarchy_relations=1
-high_class_sizes=1
+vptr_writer_functions=106
+constructor_candidates=58
+constructor_name_auto_apply=19
+constructor_convention_auto_apply=19
+constructor_parameter_auto_apply=19
+direct_hierarchy_relations=4
+high_class_sizes=4
 note=Constructor naming requires an ECX-derived vptr store, returned this, and initialization evidence. Apply flags are independent.
 note_sizes=Sizes come only from returned allocation results with a unique observed size per owner; STClassLayoutAnalyzer consumes this file.

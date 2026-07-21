@@ -38,11 +38,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   AiFltClassTy *pAVar14;
   undefined3 extraout_var_11;
   undefined3 extraout_var_12;
+  uint *puVar15;
   undefined3 extraout_var_13;
-  STGroupBoatC *pSVar15;
-  uint uVar16;
-  dword *pdVar17;
-  uint *puVar18;
+  STGroupBoatC *pSVar16;
+  uint uVar17;
+  dword *pdVar18;
   undefined2 *puVar19;
   AnonShape_00679600_B8E418A8 *pAVar20;
   undefined3 extraout_var_14;
@@ -220,9 +220,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                   sub_0065BD70(this_00,message,1);
                   local_198 = 1;
                 }
-                iVar7 = thunk_FUN_00672440(this_00,(int)&this_00->field_04FA,
-                                           (short *)(int)*(short *)&pAVar29->field_0x9);
-                uVar16 = uVar33;
+                iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                        thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
+                                           (int)&this_00->field_04FA,
+                                           (int)*(short *)&pAVar29->field_0x9,(short *)local_16c);
+                uVar17 = uVar33;
                 if (iVar7 < 0) {
                   iVar38 = this_00->field_0084;
                   pcVar9 = &this_00->field_0x4;
@@ -245,8 +247,10 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                           else {
                             psVar10 = (short *)0x0;
                           }
-                          iVar7 = thunk_FUN_00672440(this_00,(int)&this_00->field_04FA,
-                                                     (short *)(int)*psVar10);
+                          iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                  thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
+                                                     (int)&this_00->field_04FA,(int)*psVar10,
+                                                     (short *)local_16c);
                           if (iVar7 < 0) {
                             thunk_FUN_0064d0e0(this_00,iVar7,&this_00->field_0x4,uVar33,-1);
                             goto cf_switch_join_00659A73;
@@ -299,21 +303,21 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  *(int *)local_10);
                                             }
                                             else {
                                               pSVar21 = (STJellyGunC *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (pSVar21 == (STJellyGunC *)0x0) {
                                                 iVar38 = *(int *)local_10;
-                                                uVar16 = uVar33;
+                                                uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
                                                                    iVar38);
                                               }
                                               else {
@@ -343,21 +347,21 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  *(int *)local_10);
                                             }
                                             else {
                                               pAVar22 = (AnonShape_0065DA10_8B0AA883 *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (pAVar22 == (AnonShape_0065DA10_8B0AA883 *)0x0) {
                                                 iVar38 = *(int *)local_10;
-                                                uVar16 = uVar33;
+                                                uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
                                                                    iVar38);
                                               }
                                               else {
@@ -387,20 +391,20 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_8 = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  *(int *)local_10);
                                             }
                                             else {
-                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar15);
+                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
                                               if (local_17c == (void *)0x0) {
                                                 iVar38 = *(int *)local_10;
-                                                uVar16 = uVar33;
+                                                uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
                                                                    iVar38);
                                               }
                                               else {
@@ -408,7 +412,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                           _GetStaffGrpExch(*(undefined4 *)local_10);
                                                 if (local_c != (DArrayTy *)0x0) {
                                                   thunk_FUN_0065d940(local_17c,(uint *)local_c,0);
-                                                  FUN_006ae110((byte *)local_c);
+                                                  DArrayDestroy(local_c);
                                                 }
                                               }
                                             }
@@ -436,17 +440,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_c = pDVar12;
                                           uVar8 = extraout_ECX_01;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar8
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar8
                                                                                         >> 8),
                                                                                   (char)pDVar26->
                                                   flags),(uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  pDVar26->flags);
                                               uVar8 = extraout_ECX_02;
                                             }
                                             else {
-                                              thunk_FUN_00424530(pSVar15,(uint)local_158);
+                                              thunk_FUN_00424530(pSVar16,(uint)local_158);
                                               uVar8 = extraout_ECX_03;
                                             }
                                             pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
@@ -472,17 +476,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_c = pDVar12;
                                           uVar8 = extraout_ECX_04;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar8
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar8
                                                                                         >> 8),
                                                                                   (char)pDVar26->
                                                   flags),(uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  pDVar26->flags);
                                               uVar8 = extraout_ECX_05;
                                             }
                                             else {
-                                              thunk_FUN_00424620(pSVar15,(uint)local_158);
+                                              thunk_FUN_00424620(pSVar16,(uint)local_158);
                                               uVar8 = extraout_ECX_06;
                                             }
                                             pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
@@ -507,20 +511,20 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  *(int *)local_10);
                                             }
                                             else {
-                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar15);
+                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
                                               if (local_17c == (void *)0x0) {
                                                 iVar38 = *(int *)local_10;
-                                                uVar16 = uVar33;
+                                                uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
                                                                    iVar38);
                                               }
                                               else {
@@ -567,20 +571,20 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  *(int *)local_10);
                                             }
                                             else {
-                                              iVar38 = thunk_FUN_00423300((int)pSVar15);
+                                              iVar38 = thunk_FUN_00423300((int)pSVar16);
                                               if (iVar38 == 0) {
                                                 iVar38 = *(int *)local_10;
-                                                uVar16 = uVar33;
+                                                uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
                                                                    iVar38);
                                               }
                                               else {
@@ -610,21 +614,21 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               iVar38 = *(int *)local_10;
                                               pcVar9 = &DAT_008016a0;
                                               iVar37 = -0xaa;
 LAB_006577ae:
-                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar16,iVar38
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -633,11 +637,11 @@ LAB_006577ae:
                                                 iVar37 = -0xab;
                                                 goto LAB_006577ae;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -689,21 +693,21 @@ LAB_006577ae:
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               iVar38 = *(int *)local_10;
                                               pcVar9 = &DAT_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657a41:
-                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar16,iVar38
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -712,11 +716,11 @@ LAB_00657a41:
                                                 iVar37 = -0xab;
                                                 goto LAB_00657a41;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -760,21 +764,21 @@ LAB_00657a41:
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_10 >> 8),*(undefined1 *)local_10),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               iVar38 = *(int *)local_10;
                                               pcVar9 = &DAT_008016a0;
                                               iVar37 = -0xaa;
 LAB_006578fe:
-                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar16,iVar38
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -783,11 +787,11 @@ LAB_006578fe:
                                                 iVar37 = -0xab;
                                                 goto LAB_006578fe;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -835,21 +839,21 @@ LAB_006578fe:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00657bce:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               local_10 = (AiFltClassTy *)
-                                                         thunk_FUN_00423300((int)pSVar15);
+                                                         thunk_FUN_00423300((int)pSVar16);
                                               if ((local_10 == (AiFltClassTy *)0x0) ||
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
@@ -857,11 +861,11 @@ LAB_00657bce:
                                                 iVar38 = -0xab;
                                                 goto LAB_00657bce;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               uVar33 = (uint)local_158 & 0x3fffffff;
                                               local_68[1] = PTR_00802a38->field_00E4;
@@ -919,21 +923,21 @@ LAB_00657bce:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00657ccf:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if ((pAVar14 == (AiFltClassTy *)0x0) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
@@ -941,11 +945,11 @@ LAB_00657ccf:
                                                 iVar38 = -0xab;
                                                 goto LAB_00657ccf;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_68[0] = 5;
@@ -976,21 +980,21 @@ LAB_00657ccf:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00657dd9:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if ((pAVar14 == (AiFltClassTy *)0x0) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
@@ -998,11 +1002,11 @@ LAB_00657dd9:
                                                 iVar38 = -0xab;
                                                 goto LAB_00657dd9;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_60 = local_158._0_1_;
@@ -1033,21 +1037,21 @@ LAB_00657dd9:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00657f1c:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1056,11 +1060,11 @@ LAB_00657f1c:
                                                 iVar38 = -0xab;
                                                 goto LAB_00657f1c;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1104,21 +1108,21 @@ LAB_00657f1c:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_0065806e:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1127,11 +1131,11 @@ LAB_0065806e:
                                                 iVar38 = -0xab;
                                                 goto LAB_0065806e;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_60 = SUB41(local_158,0);
@@ -1173,21 +1177,21 @@ LAB_0065806e:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658177:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1196,11 +1200,11 @@ LAB_00658177:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658177;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_68[0] = 9;
@@ -1230,21 +1234,21 @@ LAB_00658177:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658b70:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1253,11 +1257,11 @@ LAB_00658b70:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658b70;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5e = SUB41(local_154,0);
@@ -1307,21 +1311,21 @@ LAB_00658b70:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658d01:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               local_10 = (AiFltClassTy *)
-                                                         thunk_FUN_00423300((int)pSVar15);
+                                                         thunk_FUN_00423300((int)pSVar16);
                                               if (((local_10 == (AiFltClassTy *)0x0) ||
                                                   (local_10->field_007B == 1)) ||
                                                  (local_10->field_007B == -0x8000)) {
@@ -1330,11 +1334,11 @@ LAB_00658d01:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658d01;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_58 = SUB41(local_158,0);
@@ -1393,21 +1397,21 @@ LAB_00658d01:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658e8e:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1416,11 +1420,11 @@ LAB_00658e8e:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658e8e;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_58 = SUB41(local_158,0);
@@ -1472,21 +1476,21 @@ LAB_00658e8e:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658fc8:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1495,11 +1499,11 @@ LAB_00658fc8:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658fc8;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -1542,21 +1546,21 @@ LAB_00658fc8:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_006582b3:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if ((pAVar14 == (AiFltClassTy *)0x0) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
@@ -1564,11 +1568,11 @@ LAB_006582b3:
                                                 iVar38 = -0xab;
                                                 goto LAB_006582b3;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_60 = local_158._0_1_;
@@ -1615,32 +1619,32 @@ LAB_006582b3:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658416:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (pAVar14 == (AiFltClassTy *)0x0) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 iVar38 = -0xab;
                                                 goto LAB_00658416;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1691,21 +1695,21 @@ LAB_00658416:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658543:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1714,11 +1718,11 @@ LAB_00658543:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658543;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1758,21 +1762,21 @@ LAB_00658543:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00658670:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1781,11 +1785,11 @@ LAB_00658670:
                                                 iVar38 = -0xab;
                                                 goto LAB_00658670;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1825,21 +1829,21 @@ LAB_00658670:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_006587e2:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1848,11 +1852,11 @@ LAB_006587e2:
                                                 iVar38 = -0xab;
                                                 goto LAB_006587e2;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5e = SUB41(local_154,0);
@@ -1902,21 +1906,21 @@ LAB_006587e2:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_006588eb:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -1925,11 +1929,11 @@ LAB_006588eb:
                                                 iVar38 = -0xab;
                                                 goto LAB_006588eb;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_68[0] = 0xf;
@@ -1959,21 +1963,21 @@ LAB_006588eb:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_006589fe:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if ((pAVar14 == (AiFltClassTy *)0x0) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
@@ -1981,11 +1985,11 @@ LAB_006589fe:
                                                 iVar38 = -0xab;
                                                 goto LAB_006589fe;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_60 = local_158._0_1_;
@@ -2020,21 +2024,21 @@ LAB_006589fe:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00659143:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -2043,11 +2047,11 @@ LAB_00659143:
                                                 iVar38 = -0xab;
                                                 goto LAB_00659143;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_58 = SUB41(local_154,0);
@@ -2100,21 +2104,21 @@ LAB_00659143:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_006594ec:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -2123,11 +2127,11 @@ LAB_006594ec:
                                                 iVar38 = -0xab;
                                                 goto LAB_006594ec;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2177,21 +2181,21 @@ LAB_006594ec:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00659640:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -2200,11 +2204,11 @@ LAB_00659640:
                                                 iVar38 = -0xab;
                                                 goto LAB_00659640;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2251,21 +2255,21 @@ LAB_00659640:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00659785:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -2274,11 +2278,11 @@ LAB_00659785:
                                                 iVar38 = -0xab;
                                                 goto LAB_00659785;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2323,21 +2327,21 @@ LAB_00659785:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_006598ca:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
@@ -2346,11 +2350,11 @@ LAB_006598ca:
                                                 iVar38 = -0xab;
                                                 goto LAB_006598ca;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2395,21 +2399,21 @@ LAB_006598ca:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_0065937a:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               local_10 = (AiFltClassTy *)
-                                                         thunk_FUN_00423300((int)pSVar15);
+                                                         thunk_FUN_00423300((int)pSVar16);
                                               uVar32 = local_140;
                                               if ((local_10 == (AiFltClassTy *)0x0) ||
                                                  (local_10->field_007B == -0x8000)) {
@@ -2419,13 +2423,13 @@ LAB_0065937a:
                                                 goto LAB_0065937a;
                                               }
                                               ppuVar35 = &local_20c;
-                                              for (iVar38 = 0x12; puVar18 = local_158, iVar38 != 0;
+                                              for (iVar38 = 0x12; puVar15 = local_158, iVar38 != 0;
                                                   iVar38 = iVar38 + -1) {
                                                 *ppuVar35 = (uint *)0x0;
                                                 ppuVar35 = ppuVar35 + 1;
                                               }
                                               *(undefined2 *)ppuVar35 = 0;
-                                              local_20c = puVar18;
+                                              local_20c = puVar15;
                                               local_208 = 0xffff;
                                               local_206 = 0x5622;
                                               local_204 = 0xfffffff0;
@@ -2461,11 +2465,11 @@ LAB_0065937a:
                                                 bVar1 = 0;
                                               }
                                               local_1e0 = -(uint)bVar1 & uVar32;
-                                              puVar18 = local_240;
+                                              puVar15 = local_240;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_236 = &local_20c;
                                               local_1ce = 1;
@@ -2497,21 +2501,21 @@ LAB_0065937a:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
+                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
                                                   local_8 >> 8),(char)local_8->flags),
                                                   (uint)local_15c);
-                                            uVar16 = uVar33;
-                                            if (pSVar15 == (STGroupBoatC *)0x0) {
+                                            uVar17 = uVar33;
+                                            if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar38 = -0xaa;
 LAB_00659a1c:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar16,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar15);
+                                                        thunk_FUN_00423300((int)pSVar16);
                                               if ((pAVar14 == (AiFltClassTy *)0x0) ||
                                                  (pAVar14->field_007B != 1)) {
                                                 dVar39 = local_8->flags;
@@ -2519,11 +2523,11 @@ LAB_00659a1c:
                                                 iVar38 = -0xab;
                                                 goto LAB_00659a1c;
                                               }
-                                              puVar18 = local_68;
+                                              puVar15 = local_68;
                                               for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
                                               {
-                                                *puVar18 = 0;
-                                                puVar18 = puVar18 + 1;
+                                                *puVar15 = 0;
+                                                puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
                                               local_58 = SUB41(local_154,0);
@@ -2569,9 +2573,9 @@ LAB_00659a1c:
                                 iVar7 = thunk_FUN_006527d0((int)local_16c);
                                 if (iVar7 == 0) {
                                   iVar7 = -1;
-                                  uVar16 = uVar33;
+                                  uVar17 = uVar33;
                                   pcVar9 = thunk_FUN_00674af0(0x76c);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
                                   DAT_0080c51e = (DArrayTy *)local_16c._8_4_;
@@ -2583,18 +2587,18 @@ LAB_00659a1c:
                               iVar7 = thunk_FUN_00650ad0((int)local_16c);
                               if (iVar7 == 0) {
                                 iVar7 = -1;
-                                uVar16 = uVar33;
+                                uVar17 = uVar33;
                                 pcVar9 = thunk_FUN_00674af0(0x5c8);
-                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                               }
                               else {
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar7 == 8) && ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9)
                                    ) {
                                   iVar7 = -1;
-                                  uVar16 = uVar33;
+                                  uVar17 = uVar33;
                                   pcVar9 = thunk_FUN_00674af0(0x5c8);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
                                   pDVar12 = (DArrayTy *)
@@ -2729,9 +2733,9 @@ LAB_00659a1c:
                                                            local_140);
                                       if (iVar38 != 0) {
                                         dVar39 = local_8->flags;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2858,9 +2862,9 @@ LAB_00659a1c:
                                       pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
                                       if (pAVar13 == (AiPlrClassTy *)0x0) {
                                         dVar39 = local_8->flags;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                       }
                                       else {
                                         AiPlrClassTy::SetTech
@@ -2937,9 +2941,9 @@ LAB_00659a1c:
                                       pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
                                       if (pAVar13 == (AiPlrClassTy *)0x0) {
                                         dVar39 = local_8->flags;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                       }
                                       else {
                                         thunk_FUN_0067b210(pAVar13,(int)local_15c,(int)local_158);
@@ -2969,9 +2973,9 @@ LAB_00659a1c:
                                       pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
                                       if (pAVar13 == (AiPlrClassTy *)0x0) {
                                         dVar39 = local_8->flags;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                       }
                                       else {
                                         thunk_FUN_0067b260((int)pAVar13);
@@ -3075,9 +3079,11 @@ LAB_00659a1c:
                                       }
                                       if (pAVar13 != (AiPlrClassTy *)0x0) {
                                         local_c = (DArrayTy *)
-                                                  thunk_FUN_00679120((byte *)local_15c,
-                                                                     (int)local_158,(int)local_154,
-                                                                     (int)local_150);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_00678E00::thunk_FUN_00679120
+                                                            ((AnonReceiver_00678E00 *)pAVar13,
+                                                             (byte *)local_15c,(int)local_158,
+                                                             (int)local_154,(int)local_150);
                                       }
                                       if ((int)local_c < 0) {
                                         thunk_FUN_0064d0e0(this_00,-4,local_15c,uVar33,
@@ -3114,9 +3120,9 @@ LAB_00659a1c:
                                       }
                                       if (pAVar20 == (AnonShape_00679600_B8E418A8 *)0x0) {
                                         dVar39 = local_8->flags;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                       }
                                       else {
                                         pAVar20->field_0644 = (char)local_15c;
@@ -3153,9 +3159,9 @@ LAB_00659a1c:
                                       }
                                       if (pAVar13 == (AiPlrClassTy *)0x0) {
                                         dVar39 = local_8->flags;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                       }
                                       else {
                                         thunk_FUN_0065bd20(pAVar13,(char)local_15c,(short)local_158,
@@ -3193,13 +3199,13 @@ LAB_00659a1c:
                                                                    ,(short)local_140,1);
                                       if (local_c == (DArrayTy *)0x0) {
                                         iVar38 = *(int *)local_10;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
                                       }
                                       else {
                                         thunk_FUN_00675dc0(*(uint *)local_10,(uint *)local_c);
-                                        FUN_006ae110((byte *)local_c);
+                                        DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
@@ -3232,13 +3238,13 @@ LAB_00659a1c:
                                                                    ,(short)local_140,1);
                                       if (local_c == (DArrayTy *)0x0) {
                                         iVar38 = *(int *)local_10;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
                                       }
                                       else {
                                         thunk_FUN_00675dc0(*(uint *)local_10,(uint *)local_c);
-                                        FUN_006ae110((byte *)local_c);
+                                        DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
@@ -3272,13 +3278,13 @@ LAB_00659a1c:
                                                                    ,1);
                                       if (local_c == (DArrayTy *)0x0) {
                                         iVar38 = *(int *)local_10;
-                                        uVar16 = uVar33;
+                                        uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
                                       }
                                       else {
                                         thunk_FUN_00675dc0(*(uint *)local_10,(uint *)local_c);
-                                        FUN_006ae110((byte *)local_c);
+                                        DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
@@ -3295,9 +3301,9 @@ LAB_00659a1c:
                             iVar7 = thunk_FUN_0064fd80((short *)local_16c);
                             if (iVar7 == 0) {
                               iVar7 = -1;
-                              uVar16 = uVar33;
+                              uVar17 = uVar33;
                               pcVar9 = thunk_FUN_00674af0(0x593);
-                              thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                              thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                             }
                             else {
                               DAT_008118fc = 0;
@@ -3312,18 +3318,18 @@ LAB_00659a1c:
                               iVar7 = thunk_FUN_0064ef10((int)local_16c);
                               if (iVar7 == 0) {
                                 iVar7 = -1;
-                                uVar16 = uVar33;
+                                uVar17 = uVar33;
                                 pcVar9 = thunk_FUN_00674af0(0x54d);
-                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                               }
                               else {
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar7 == 8) && ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9)
                                    ) {
                                   iVar7 = -1;
-                                  uVar16 = uVar33;
+                                  uVar17 = uVar33;
                                   pcVar9 = thunk_FUN_00674af0(0x54d);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
                                   iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
@@ -3351,9 +3357,9 @@ LAB_00659a1c:
                                 iVar7 = thunk_FUN_0064e960((int)local_16c);
                                 if (iVar7 == 0) {
                                   iVar7 = -1;
-                                  uVar16 = uVar33;
+                                  uVar17 = uVar33;
                                   pcVar9 = thunk_FUN_00674af0(0x51a);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
                                   (&this_00->field_052F)[local_16c._8_4_] = local_160;
@@ -3366,9 +3372,9 @@ LAB_00659a1c:
                                     iVar7 = thunk_FUN_0064e7c0((short *)local_16c);
                                     if (iVar7 == 0) {
                                       iVar7 = -1;
-                                      uVar16 = uVar33;
+                                      uVar17 = uVar33;
                                       pcVar9 = thunk_FUN_00674af0(0x516);
-                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
                                     else {
                                       if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
@@ -3427,9 +3433,9 @@ LAB_00659a1c:
                                     iVar7 = thunk_FUN_0064e700((int)local_16c);
                                     if (iVar7 == 0) {
                                       iVar7 = -1;
-                                      uVar16 = uVar33;
+                                      uVar17 = uVar33;
                                       pcVar9 = thunk_FUN_00674af0(0x42);
-                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
                                     else {
                                       pDVar12 = local_160;
@@ -3444,9 +3450,9 @@ LAB_00659a1c:
                                     iVar7 = thunk_FUN_0064e780((short *)local_16c);
                                     if (iVar7 == 0) {
                                       iVar7 = -1;
-                                      uVar16 = uVar33;
+                                      uVar17 = uVar33;
                                       pcVar9 = thunk_FUN_00674af0(0x515);
-                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
                                     else if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
                                       *(undefined1 *)local_178 = 0;
@@ -3462,9 +3468,9 @@ LAB_00659a1c:
                                   iVar7 = thunk_FUN_0064e830((short *)local_16c);
                                   if (iVar7 == 0) {
                                     iVar7 = -1;
-                                    uVar16 = uVar33;
+                                    uVar17 = uVar33;
                                     pcVar9 = thunk_FUN_00674af0(0x517);
-                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
                                     if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
@@ -3525,9 +3531,9 @@ LAB_00659a1c:
                                   iVar7 = thunk_FUN_0064e8c0((int)local_16c);
                                   if (iVar7 == 0) {
                                     iVar7 = -1;
-                                    uVar16 = uVar33;
+                                    uVar17 = uVar33;
                                     pcVar9 = thunk_FUN_00674af0(0x518);
-                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
                                     if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
@@ -3554,9 +3560,9 @@ LAB_00659a1c:
                                         }
                                         if (pAVar13 == (AiPlrClassTy *)0x0) {
                                           dVar39 = pDVar26->flags;
-                                          uVar16 = uVar33;
+                                          uVar17 = uVar33;
                                           pcVar9 = thunk_FUN_00674af0(0x518);
-                                          thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                          thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                         }
                                         else {
                                           *(uint **)(&pAVar13->field_0xfa + (int)local_15c * 4) =
@@ -3573,9 +3579,9 @@ LAB_00659a1c:
                                   iVar7 = thunk_FUN_0064e910((int)local_16c);
                                   if (iVar7 == 0) {
                                     iVar7 = -1;
-                                    uVar16 = uVar33;
+                                    uVar17 = uVar33;
                                     pcVar9 = thunk_FUN_00674af0(0x519);
-                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar7);
+                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
                                     (&DAT_0080e43b)[local_16c._8_4_] = local_160;
@@ -4251,10 +4257,10 @@ LAB_00653bb7:
                                   pDVar26 = &local_34;
                                   local_c = pDVar12;
                                   do {
-                                    uVar16 = pDVar26->flags;
-                                    (&DAT_00809950)[uVar16] =
+                                    uVar17 = pDVar26->flags;
+                                    (&DAT_00809950)[uVar17] =
                                          (local_15c != (DArrayTy *)0x1) + '\x01';
-                                    if (uVar16 == DAT_0080874d) {
+                                    if (uVar17 == DAT_0080874d) {
                                       DAT_0080c522 = (uint)(local_15c == (DArrayTy *)0x1);
                                     }
                                     pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
@@ -4436,7 +4442,7 @@ LAB_006540b9:
                                   pDVar12 = &local_34;
 LAB_00654362:
                                   if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00654366;
-                                  FUN_006c87c0((int)PTR_0080c4cb,(uint)local_15c);
+                                  FUN_006c87c0(PTR_0080c4cb,(uint)local_15c);
 LAB_00654386:
                                   if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
                                     OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
@@ -4525,7 +4531,8 @@ LAB_00654386:
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
                                       if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0)
                                       {
-                                        FUN_006c87c0((int)PTR_0080c4c7,(uint)local_15c);
+                                        FUN_006c87c0((AnonShape_GLOBAL_0080C4CB_D58160AA *)
+                                                     PTR_0080c4c7,(uint)local_15c);
                                       }
                                       break;
                                     }
@@ -4731,11 +4738,11 @@ LAB_00654386:
                                     if ((int)local_15c < 0) {
                                       pDVar12 = (DArrayTy *)(DAT_00808a90 >> 0x10 & 0xff);
                                     }
-                                    puVar18 = local_158;
+                                    puVar15 = local_158;
                                     if ((int)local_158 < 0) {
-                                      puVar18 = (uint *)(DAT_00808a90 >> 0x18);
+                                      puVar15 = (uint *)(DAT_00808a90 >> 0x18);
                                     }
-                                    thunk_FUN_004e51b0((int *)pDVar26->flags,&pDVar12->flags,puVar18
+                                    thunk_FUN_004e51b0((int *)pDVar26->flags,&pDVar12->flags,puVar15
                                                       );
                                     pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5186,29 +5193,29 @@ LAB_0065565b:
                             sVar23 = (short)local_15c;
                             sVar6 = (short)local_158;
                             if (local_154 == (byte *)0x0) {
-                              if ((((sVar25 < 0) || (SHORT_007fb240 <= sVar25)) ||
-                                  ((sVar23 < 0 || ((SHORT_007fb242 <= sVar23 || (sVar6 < 0)))))) ||
-                                 (SHORT_007fb244 <= sVar6)) {
+                              if ((((sVar25 < 0) || (g_worldGrid.sizeX <= sVar25)) ||
+                                  ((sVar23 < 0 || ((g_worldGrid.sizeY <= sVar23 || (sVar6 < 0))))))
+                                 || (g_worldGrid.sizeZ <= sVar6)) {
 LAB_00655871:
                                 pSVar31 = (STFishC *)0x0;
                               }
                               else {
                                 pSVar31 = (STFishC *)
-                                          g_worldCells
-                                          [(int)sVar6 * (int)SHORT_007fb246 +
-                                           (int)sVar23 * (int)SHORT_007fb240 + (int)sVar25].objects
-                                          [0];
+                                          g_worldGrid.cells
+                                          [(int)sVar6 * (int)g_worldGrid.planeStride +
+                                           (int)sVar23 * (int)g_worldGrid.sizeX + (int)sVar25].
+                                          objects[0];
                               }
                             }
                             else if (local_154 == (byte *)0x1) {
-                              if (((((sVar25 < 0) || (SHORT_007fb240 <= sVar25)) || (sVar23 < 0)) ||
-                                  ((SHORT_007fb242 <= sVar23 || (sVar6 < 0)))) ||
-                                 (SHORT_007fb244 <= sVar6)) goto LAB_00655871;
+                              if (((((sVar25 < 0) || (g_worldGrid.sizeX <= sVar25)) || (sVar23 < 0))
+                                  || ((g_worldGrid.sizeY <= sVar23 || (sVar6 < 0)))) ||
+                                 (g_worldGrid.sizeZ <= sVar6)) goto LAB_00655871;
                               pSVar31 = (STFishC *)
-                                        g_worldCells
-                                        [(int)sVar6 * (int)SHORT_007fb246 +
-                                         (int)sVar23 * (int)SHORT_007fb240 + (int)sVar25].objects[1]
-                              ;
+                                        g_worldGrid.cells
+                                        [(int)sVar6 * (int)g_worldGrid.planeStride +
+                                         (int)sVar23 * (int)g_worldGrid.sizeX + (int)sVar25].objects
+                                        [1];
                             }
                             else if (local_154 == (byte *)0x2) {
                               iVar7 = _EnumDest((byte *)0x0,-1,sVar25,sVar23,sVar6,1,1,1,
@@ -5236,7 +5243,7 @@ LAB_00655871:
                                   local_8 = pDVar12;
                                   do {
                                     local_c = local_144;
-                                    uVar16 = uVar33;
+                                    uVar17 = uVar33;
                                     if ((int)local_144 < 0) {
                                       local_c = (DArrayTy *)0xfffe;
 LAB_00655972:
@@ -5257,12 +5264,12 @@ LAB_006559d6:
                                     }
                                     else {
                                       if ((int)local_144 < 1) goto LAB_00655972;
-                                      pSVar15 = thunk_FUN_0042b760(CONCAT31((int3)((uint)local_144
+                                      pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)local_144
                                                                                   >> 8),
                                                                             *(undefined1 *)local_10)
                                                                    ,(uint)local_144);
-                                      if (pSVar15 != (STGroupBoatC *)0x0) {
-                                        iVar38 = thunk_FUN_00423300((int)pSVar15);
+                                      if (pSVar16 != (STGroupBoatC *)0x0) {
+                                        iVar38 = thunk_FUN_00423300((int)pSVar16);
                                         if (iVar38 != 0) {
                                           if (((int)local_15c < 0x32) || (0x73 < (int)local_15c)) {
                                             bVar36 = false;
@@ -5282,7 +5289,7 @@ LAB_006559d6:
                                       pcVar9 = &DAT_008016a0;
                                       iVar37 = -0xaa;
 LAB_006559e3:
-                                      thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar16,iVar38);
+                                      thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38);
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
@@ -5309,30 +5316,30 @@ LAB_006559e3:
                                     local_8 = (DArrayTy *)_GetStaffGrpExch(*(undefined4 *)local_10);
                                     if (local_8 != (DArrayTy *)0x0) {
                                       uVar32 = 0;
-                                      uVar16 = local_8->count;
+                                      uVar17 = local_8->count;
                                       pDVar12 = extraout_EDX_01;
-                                      if (0 < (int)uVar16) {
+                                      if (0 < (int)uVar17) {
                                         do {
-                                          if (uVar32 < uVar16) {
+                                          if (uVar32 < uVar17) {
                                             pDVar12 = local_8->data;
-                                            pdVar17 = (dword *)((int)&pDVar12->flags +
+                                            pdVar18 = (dword *)((int)&pDVar12->flags +
                                                                local_8->elementSize * uVar32);
                                           }
                                           else {
-                                            pdVar17 = (dword *)0x0;
+                                            pdVar18 = (dword *)0x0;
                                           }
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_sTAllPlayers_007FA174,
                                                      CONCAT31((int3)((uint)local_15c >> 8),
                                                               *(undefined1 *)local_10),
                                                      CONCAT22((short)((uint)pDVar12 >> 0x10),
-                                                              (short)*pdVar17),CASE_1,local_15c);
+                                                              (short)*pdVar18),CASE_1,local_15c);
                                           uVar32 = uVar32 + 1;
-                                          uVar16 = local_8->count;
+                                          uVar17 = local_8->count;
                                           pDVar12 = local_8;
-                                        } while ((int)uVar32 < (int)uVar16);
+                                        } while ((int)uVar32 < (int)uVar17);
                                       }
-                                      FUN_006ae110((byte *)local_8);
+                                      DArrayDestroy(local_8);
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5363,21 +5370,23 @@ LAB_006559e3:
                                             (cVar5 = (char)local_154, '\b' < (char)local_154)) {
                                       cVar5 = -1;
                                     }
-                                    puVar18 = thunk_FUN_006775e0(*(undefined4 *)local_10,
+                                    pDVar12 = (DArrayTy *)
+                                              thunk_FUN_006775e0(*(undefined4 *)local_10,
                                                                  (uint)local_158,(uint)local_15c,
                                                                  local_150,cVar5,(short)local_14c,
                                                                  (short)local_148,(short)local_144,
                                                                  (short)local_140,(short)local_13c,
                                                                  (short)local_138,1);
-                                    if (puVar18 != (uint *)0x0) {
+                                    if (pDVar12 != (DArrayTy *)0x0) {
                                       uVar33 = 0;
-                                      if (0 < (int)puVar18[3]) {
-                                        bVar36 = puVar18[3] != 0;
+                                      if (0 < (int)pDVar12->count) {
+                                        bVar36 = pDVar12->count != 0;
                                         uVar8 = extraout_EDX_02;
                                         do {
                                           if (bVar36) {
                                             puVar19 = (undefined2 *)
-                                                      (puVar18[2] * uVar33 + puVar18[7]);
+                                                      (pDVar12->elementSize * uVar33 +
+                                                      (int)pDVar12->data);
                                           }
                                           else {
                                             puVar19 = (undefined2 *)0x0;
@@ -5389,11 +5398,11 @@ LAB_006559e3:
                                                      CONCAT22((short)((uint)uVar8 >> 0x10),*puVar19)
                                                      ,CASE_1,local_134);
                                           uVar33 = uVar33 + 1;
-                                          bVar36 = uVar33 < puVar18[3];
+                                          bVar36 = uVar33 < pDVar12->count;
                                           uVar8 = extraout_EDX_03;
-                                        } while ((int)uVar33 < (int)puVar18[3]);
+                                        } while ((int)uVar33 < (int)pDVar12->count);
                                       }
-                                      FUN_006ae110((byte *)puVar18);
+                                      DArrayDestroy(pDVar12);
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5426,9 +5435,9 @@ LAB_006559e3:
                                                            local_148,(int)local_144);
                                     if (iVar38 != 0) {
                                       dVar39 = local_8->flags;
-                                      uVar16 = uVar33;
+                                      uVar17 = uVar33;
                                       pcVar9 = thunk_FUN_00674af0(iVar7);
-                                      thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,dVar39);
+                                      thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar39);
                                     }
                                     local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5475,17 +5484,17 @@ LAB_00655f44:
                             if (iVar38 != 0) {
 LAB_00655f4c:
                               iVar38 = -1;
-                              uVar16 = uVar33;
+                              uVar17 = uVar33;
                               pcVar9 = thunk_FUN_00674af0(iVar7);
-                              thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar16,iVar38);
+                              thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
                             }
                             goto cf_switch_join_00659A73;
                           }
 cf_common_join_00652A99:
                           iVar38 = -1;
-                          uVar16 = uVar33;
+                          uVar17 = uVar33;
                           pcVar9 = thunk_FUN_00674af0(iVar7);
-                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar16,iVar38);
+                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar38);
 cf_switch_join_00659A73:
                           pDVar12 = (DArrayTy *)((int)&local_170->flags + 1);
 cf_continue_loop_00659A80:
@@ -5501,7 +5510,7 @@ cf_continue_loop_00659A80:
                   pcVar9 = thunk_FUN_00674af0(iVar7);
                   iVar7 = -0x7d;
                 }
-                thunk_FUN_0064d0e0(this_00,iVar7,pcVar9,uVar16,iVar38);
+                thunk_FUN_0064d0e0(this_00,iVar7,pcVar9,uVar17,iVar38);
                 *(char *)pAVar29 = '\x01';
                 pAVar29->field_000B = 0;
               }
@@ -5534,7 +5543,7 @@ LAB_00659aae:
       }
       g_currentExceptionFrame = local_284.previous;
       if (local_180 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_180);
+        DArrayDestroy(local_180);
       }
       local_180 = (DArrayTy *)0x0;
       thunk_FUN_0064d0e0(local_188,iVar7,&DAT_008016a0,local_14,-1);

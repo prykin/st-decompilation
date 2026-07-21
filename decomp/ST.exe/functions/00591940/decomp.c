@@ -9,12 +9,13 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   code *pcVar1;
   CampaignTy *pCVar2;
   int iVar3;
-  uint *puVar4;
+  uint *extraout_EAX;
   LPSTR text;
-  BITMAPINFO *pBVar5;
+  BITMAPINFO *pBVar4;
   StartServTy *this_00;
   undefined4 unaff_ESI;
-  undefined4 *puVar6;
+  undefined4 *puVar5;
+  uint *puVar6;
   void *unaff_EDI;
   int iVar7;
   uint uVar8;
@@ -46,56 +47,55 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   pcVar11 = (ccFntTy *)PTR_0081176c->field_0030;
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
-  puVar4 = (uint *)FUN_006b0140((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
-                                HINSTANCE_00807618);
-  StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar11,iVar3);
+  LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,HINSTANCE_00807618);
+  StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,extraout_EAX,uVar8,uVar9,pcVar11,iVar3);
   if (PTR_0081176c->field_0028 == 0) {
     iVar3 = 0;
     bVar10 = 0;
     text = FUN_006f2c00(s_CMPG_BKG_007cbe10,1,(uint)DAT_0080874e);
-    pBVar5 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar3);
-    PutDDX(0xa5,0x37,'\x01',pBVar5);
+    pBVar4 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar3);
+    PutDDX(0xa5,0x37,'\x01',pBVar4);
   }
   else {
-    puVar6 = &pCVar2->field_1B13;
+    puVar5 = &pCVar2->field_1B13;
     iVar3 = 3;
     do {
       iVar7 = 0xf;
       do {
-        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
+        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar5 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar5);
         }
         pCVar2 = local_8;
-        puVar6 = puVar6 + 1;
+        puVar5 = puVar5 + 1;
         iVar7 = iVar7 + -1;
       } while (iVar7 != 0);
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 4;
-    puVar6 = &local_8->field_1BD7;
+    puVar5 = &local_8->field_1BD7;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar5 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar5);
       }
-      puVar6 = puVar6 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 0;
     if (pCVar2->field_009A != '\0') {
-      puVar4 = &pCVar2->field_00FF;
+      puVar6 = &pCVar2->field_00FF;
       do {
-        if (puVar4[-6] != 0xffffffff) {
+        if (puVar6[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    ((uint *)puVar4[0xb],puVar4[-6],puVar4[-5],*puVar4,puVar4[1]);
+                    ((uint *)puVar6[0xb],puVar6[-6],puVar6[-5],*puVar6,puVar6[1]);
         }
-        if ((pCVar2->field_0065 == '\x01') && (*(uint *)((int)puVar4 + 0x79) != 0xffffffff)) {
+        if ((pCVar2->field_0065 == '\x01') && (*(uint *)((int)puVar6 + 0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)((int)puVar4 + 0xbd),*(uint *)((int)puVar4 + 0x79),
-                     *(uint *)((int)puVar4 + 0x7d),*(uint *)((int)puVar4 + 0x91),
-                     *(uint *)((int)puVar4 + 0x95));
+                    (*(uint **)((int)puVar6 + 0xbd),*(uint *)((int)puVar6 + 0x79),
+                     *(uint *)((int)puVar6 + 0x7d),*(uint *)((int)puVar6 + 0x91),
+                     *(uint *)((int)puVar6 + 0x95));
         }
         iVar3 = iVar3 + 1;
-        puVar4 = (uint *)((int)puVar4 + 0x1fb);
+        puVar6 = (uint *)((int)puVar6 + 0x1fb);
       } while (iVar3 < (int)(uint)(byte)pCVar2->field_009A);
       g_currentExceptionFrame = local_4c.previous;
       return;

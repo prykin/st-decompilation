@@ -14,12 +14,12 @@ void FUN_0042a9f0(char param_1)
   ppDVar2 = &g_playerRuntime[iVar1].tempSlots[0][0].objectIds;
   do {
     if (*ppDVar2 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)*ppDVar2);
+      DArrayDestroy(*ppDVar2);
       *ppDVar2 = (DArrayTy *)0x0;
     }
     ((STPlayerTempSlot *)((int)ppDVar2 + -10))->objectType = 0;
     if (ppDVar2[0x14] != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)ppDVar2[0x14]);
+      DArrayDestroy(ppDVar2[0x14]);
       ppDVar2[0x14] = (DArrayTy *)0x0;
     }
     *(undefined4 *)((int)ppDVar2 + 0x46) = 0;
@@ -29,8 +29,8 @@ void FUN_0042a9f0(char param_1)
   puVar3 = &g_playerRuntime[iVar1].field328_0x211;
   iVar1 = 10;
   do {
-    if ((byte *)*puVar3 != (byte *)0x0) {
-      FUN_006ae110((byte *)*puVar3);
+    if ((DArrayTy *)*puVar3 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)*puVar3);
       *puVar3 = 0;
     }
     *(undefined4 *)((int)puVar3 + -10) = 0;

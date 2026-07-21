@@ -59,8 +59,8 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
       if (uVar1 == 3) {
         puVar7 = (undefined4 *)&this_00[1].field_0xd5;
         do {
-          if ((byte *)*puVar7 != (byte *)0x0) {
-            FUN_006ae110((byte *)*puVar7);
+          if ((DArrayTy *)*puVar7 != (DArrayTy *)0x0) {
+            DArrayDestroy((DArrayTy *)*puVar7);
             *puVar7 = 0;
           }
           puVar7 = puVar7 + 1;
@@ -112,7 +112,7 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
     switch(uVar1) {
     case 0xc0a4:
       *(undefined4 *)&this_00->field_0x199 = param_1->field_0014;
-      thunk_FUN_0053c620((AnonShape_0053C620_58AD6CA0 *)this_00);
+      thunk_FUN_0053c620((AnonShape_004EF140_16642BA0 *)this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -121,7 +121,7 @@ ResearchPanelTy::GetMessage(ResearchPanelTy *this,AnonShape_0053CA80_7575DBCB *p
     case 0xc0b1:
     case 0xc0b2:
     case 0xc0b3:
-      PaintUpdBut((ResearchPanelTy *)this_00,(AnonShape_0053C820_7DA0C7AE *)param_1);
+      PaintUpdBut((ResearchPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)param_1);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     case 0xc0b4:

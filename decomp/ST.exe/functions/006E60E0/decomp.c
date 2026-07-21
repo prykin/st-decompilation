@@ -10,7 +10,7 @@ STGroupBoatC * __thiscall STGroupBoatC::sub_006E60E0(STGroupBoatC *this)
 
 {
   sub_006E5FB0(this);
-  this->vtable = (STGroupBoatCVTable *)&PTR_FUN_0079e1b0;
+  this->vtable = (STGroupBoatCVTable *)&VTable_0079E1B0;
   this->field_0018 = 0;
   return this;
 }

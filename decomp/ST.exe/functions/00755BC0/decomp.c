@@ -17,7 +17,7 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
     uVar2 = *(undefined4 *)(param_1->field_000C + 0x1c);
     do {
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-      iVar4 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,param_2,
+      iVar4 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_2,
                            *(int *)(param_1->field_000C + 0x1c));
       *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
            0xffffffff;
@@ -38,7 +38,7 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
   }
   while( true ) {
     iVar4 = *(int *)(param_1->field_000C + 0x1c);
-    iVar6 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,
+    iVar6 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                          *(undefined4 *)(param_1->field_000C + 0x40 + iVar4 * 8),iVar4);
     FUN_00755d40((AnonShape_00755D40_9BC6D2DA *)param_1,iVar6,
                  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
@@ -49,7 +49,7 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
       if (puVar9[1] != -1) {
         *(int *)(iVar4 + 0x1c) = *(int *)(iVar4 + 0x1c) + 1;
         puVar7 = (undefined4 *)
-                 FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,puVar9[1],
+                 FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,puVar9[1],
                               *(int *)(param_1->field_000C + 0x1c));
         uVar8 = (uint)*(short *)(param_1->field_0008 + 0x16);
         for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {

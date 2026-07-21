@@ -42,7 +42,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   uint local_c;
   int local_8;
   
-  local_24 = thunk_FUN_004406c0(in_stack_00000020);
+  local_24 = GetPlayerRaceId(in_stack_00000020);
   local_24 = local_24 & 0xff;
   local_c = (uint)param_3 & 0xffff;
   uVar6 = (uint)param_3 >> 0x10;

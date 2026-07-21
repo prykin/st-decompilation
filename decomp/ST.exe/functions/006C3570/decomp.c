@@ -7,7 +7,7 @@ void FUN_006c3570(AnonShape_006C3570_37024033 *param_1)
   if (param_1 != (AnonShape_006C3570_37024033 *)0x0) {
     EnterCriticalSection((LPCRITICAL_SECTION)&param_1[9].field_0040);
     if ((param_1->field_0004 & 0x20000000) != 0) {
-      Library::DKW::DV::FUN_006c4110((int)param_1);
+      Library::DKW::DV::FUN_006c4110((AnonShape_006C3FC0_72DDFA27 *)param_1);
     }
     if ((param_1->field_0004 & 0x40000000) != 0) {
       FUN_006c3f00((int)param_1);

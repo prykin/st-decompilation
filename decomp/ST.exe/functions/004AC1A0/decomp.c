@@ -82,8 +82,9 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
       pSVar2->field_0030 = piVar5[6];
       puVar8 = &LAB_00405b64;
     }
-    FUN_006e9520((void *)pSVar2->field_003C,pSVar2->field_0018,pSVar2->field_0034,(uint)puVar8,
-                 (uint)pSVar2);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+              ((AnonReceiver_004248D0 *)pSVar2->field_003C,pSVar2->field_0018,pSVar2->field_0034,
+               (uint)puVar8,(uint)pSVar2);
   }
 cf_common_exit_004AC330:
   *(undefined4 *)(pSVar2->field_0020 + 0x1c + iVar3) = param_2;

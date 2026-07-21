@@ -8,15 +8,14 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
 {
   ushort uVar1;
   code *pcVar2;
-  AnonShape_006B0C70_7C4FE646 *groupContent;
+  DArrayTy *array;
   short *psVar3;
   uint *puVar4;
   uint uVar5;
-  AnonShape_006ACC70_C8641025 *pAVar6;
+  DArrayTy *pDVar6;
   int iVar7;
-  undefined4 *puVar8;
-  uint uVar9;
-  undefined4 *puVar10;
+  uint uVar8;
+  short *psVar9;
   short local_4c;
   short local_4a;
   short local_48;
@@ -54,97 +53,96 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
     this->field_0242 = 10;
   }
   local_10 = this;
-  groupContent = (AnonShape_006B0C70_7C4FE646 *)
-                 Library::DKW::TBL::FUN_006ae290
-                           ((uint *)0x0,*(uint *)(this->field_0226 + 0xc),0xe,1);
-  pAVar6 = (AnonShape_006ACC70_C8641025 *)this->field_0226;
-  uVar9 = 0;
-  if (0 < (int)pAVar6->field_000C) {
+  array = (DArrayTy *)
+          Library::DKW::TBL::FUN_006ae290((uint *)0x0,*(uint *)(this->field_0226 + 0xc),0xe,1);
+  pDVar6 = (DArrayTy *)this->field_0226;
+  uVar8 = 0;
+  if (0 < (int)pDVar6->count) {
     do {
-      FUN_006acc70(pAVar6,uVar9,(undefined4 *)&local_1c);
+      DArrayGetElement(pDVar6,uVar8,&local_1c);
       local_2c = local_1c;
       local_2a = local_1a;
       local_22 = 0;
       local_26 = 0;
       local_28 = local_18;
-      Library::DKW::TBL::FUN_006ae140((uint *)groupContent,uVar9,(undefined4 *)&local_2c);
-      pAVar6 = (AnonShape_006ACC70_C8641025 *)this->field_0226;
-      uVar9 = uVar9 + 1;
-    } while ((int)uVar9 < (int)pAVar6->field_000C);
+      Library::DKW::TBL::FUN_006ae140((uint *)array,uVar8,(undefined4 *)&local_2c);
+      pDVar6 = (DArrayTy *)this->field_0226;
+      uVar8 = uVar8 + 1;
+    } while ((int)uVar8 < (int)pDVar6->count);
   }
-  uVar9 = groupContent->field_000C;
-  if (1 < uVar9) {
+  uVar8 = array->count;
+  if (1 < uVar8) {
     local_8 = 0;
-    if (uVar9 != 1 && -1 < (int)(uVar9 - 1)) {
+    if (uVar8 != 1 && -1 < (int)(uVar8 - 1)) {
       local_c = 1;
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,local_8,(undefined4 *)&local_2c);
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,local_c,(undefined4 *)&local_3c);
+        DArrayGetElement(array,local_8,&local_2c);
+        DArrayGetElement(array,local_c,&local_3c);
         psVar3 = Library::DKW::WAY::FUN_006a9190
-                           ((int)DAT_007fb280,(int)SHORT_007fb278,(int)SHORT_007fb27a,
-                            (int)SHORT_007fb27c,(short *)(int)local_2c,(short *)(int)local_2a,
-                            (short *)(int)local_28,(short *)(int)local_3c,(short *)(int)local_3a,
-                            (short *)(int)local_38,0,&local_14,(undefined4 *)0x0,(short *)0x0,0);
+                           ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,
+                            (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(short *)(int)local_2c
+                            ,(short *)(int)local_2a,(short *)(int)local_28,(short *)(int)local_3c,
+                            (short *)(int)local_3a,(short *)(int)local_38,0,&local_14,
+                            (undefined4 *)0x0,(short *)0x0,0);
         if (psVar3 == (short *)0x0) {
-          uVar9 = (int)SHORT_007fb278 * (int)SHORT_007fb27a * (int)SHORT_007fb27c;
-          puVar8 = DAT_007fb280;
-          puVar10 = DAT_007fb238;
-          for (uVar5 = (uVar9 & 0x7fffffff) >> 1; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *puVar10 = *puVar8;
-            puVar8 = puVar8 + 1;
-            puVar10 = puVar10 + 1;
+          uVar8 = (int)g_pathingGrid.sizeX * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeZ;
+          psVar3 = g_pathingGrid.cells;
+          psVar9 = g_pathingScratchGrid.cells;
+          for (uVar5 = (uVar8 & 0x7fffffff) >> 1; uVar5 != 0; uVar5 = uVar5 - 1) {
+            *(undefined4 *)psVar9 = *(undefined4 *)psVar3;
+            psVar3 = psVar3 + 2;
+            psVar9 = psVar9 + 2;
           }
-          for (uVar9 = uVar9 * 2 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *(undefined1 *)puVar10 = *(undefined1 *)puVar8;
-            puVar8 = (undefined4 *)((int)puVar8 + 1);
-            puVar10 = (undefined4 *)((int)puVar10 + 1);
+          for (uVar8 = uVar8 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+            *(char *)psVar9 = (char)*psVar3;
+            psVar3 = (short *)((int)psVar3 + 1);
+            psVar9 = (short *)((int)psVar9 + 1);
           }
-          FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c
-                       ,(int)local_2c,(int)local_2a,(int)local_28,(int)local_3c,(int)local_3a,
-                       (int)local_38);
-          iVar7 = *(short *)((int)DAT_007fb238 +
-                            ((int)SHORT_007fb27e * (int)local_38 +
-                             (int)SHORT_007fb278 * (int)local_3a + (int)local_3c) * 2) + -1;
+          FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,
+                       (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(int)local_2c,(int)local_2a
+                       ,(int)local_28,(int)local_3c,(int)local_3a,(int)local_38);
+          iVar7 = g_pathingScratchGrid.cells
+                  [(int)g_pathingGrid.planeStride * (int)local_38 +
+                   (int)g_pathingGrid.sizeX * (int)local_3a + (int)local_3c] + -1;
           this = local_10;
         }
         else {
           iVar7 = (int)psVar3[3];
           FUN_006a5e90(psVar3);
         }
-        uVar9 = local_c;
+        uVar8 = local_c;
         iVar7 = iVar7 / 3;
         if (iVar7 < (int)this->field_0242) {
-          FUN_006b0c70(groupContent,local_c);
+          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)array,local_c);
           local_8 = local_8 - 1;
-          local_c = uVar9 - 1;
+          local_c = uVar8 - 1;
         }
         else {
           local_32 = iVar7;
           local_26 = iVar7;
-          Library::DKW::TBL::FUN_006ae140((uint *)groupContent,local_8,(undefined4 *)&local_2c);
-          Library::DKW::TBL::FUN_006ae140((uint *)groupContent,local_c,(undefined4 *)&local_3c);
+          Library::DKW::TBL::FUN_006ae140((uint *)array,local_8,(undefined4 *)&local_2c);
+          Library::DKW::TBL::FUN_006ae140((uint *)array,local_c,(undefined4 *)&local_3c);
         }
         local_8 = local_8 + 1;
         local_c = local_c + 1;
-      } while ((int)local_8 < groupContent->field_000C + -1);
+      } while ((int)local_8 < (int)(array->count - 1));
     }
     if (this->field_0232 != 0xffffffff) {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022A,this->field_0232,
-                   (undefined4 *)&local_4c);
-      pAVar6 = (AnonShape_006ACC70_C8641025 *)this->field_0226;
-      uVar9 = 0;
+      DArrayGetElement((DArrayTy *)this->field_022A,this->field_0232,&local_4c);
+      pDVar6 = (DArrayTy *)this->field_0226;
+      uVar8 = 0;
       local_c = 0xffffffff;
-      if (0 < (int)pAVar6->field_000C) {
+      if (0 < (int)pDVar6->count) {
         do {
-          FUN_006acc70(pAVar6,uVar9,(undefined4 *)&local_1c);
+          DArrayGetElement(pDVar6,uVar8,&local_1c);
           if (((local_1c == local_4c) && (local_1a == local_4a)) && (local_18 == local_48)) {
-            local_c = uVar9;
-            if (uVar9 != 0xffffffff) goto LAB_004a77bb;
+            local_c = uVar8;
+            if (uVar8 != 0xffffffff) goto LAB_004a77bb;
             break;
           }
-          pAVar6 = (AnonShape_006ACC70_C8641025 *)this->field_0226;
-          uVar9 = uVar9 + 1;
-        } while ((int)uVar9 < (int)pAVar6->field_000C);
+          pDVar6 = (DArrayTy *)this->field_0226;
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)pDVar6->count);
       }
       iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x15ed,0,0,&DAT_007a4ccc,
                                  s_STGroupBoatC__ReMakePatrolPoints_007ac450);
@@ -157,45 +155,42 @@ LAB_004a77bb:
       this->field_0232 = 0xffffffff;
       local_8 = local_c;
       if (this->field_0236 == 1) {
-        pAVar6 = (AnonShape_006ACC70_C8641025 *)this->field_0226;
-        if ((int)local_c < (int)pAVar6->field_000C) {
+        pDVar6 = (DArrayTy *)this->field_0226;
+        if ((int)local_c < (int)pDVar6->count) {
           do {
-            FUN_006acc70(pAVar6,local_8,(undefined4 *)&local_1c);
-            uVar9 = 0;
-            if (0 < (int)groupContent->field_000C) {
+            DArrayGetElement(pDVar6,local_8,&local_1c);
+            uVar8 = 0;
+            if (0 < (int)array->count) {
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,uVar9,
-                             (undefined4 *)&local_2c);
+                DArrayGetElement(array,uVar8,&local_2c);
                 if (((local_1c == local_2c) && (local_1a == local_2a)) && (local_18 == local_28)) {
-                  this->field_0232 = uVar9;
+                  this->field_0232 = uVar8;
                   break;
                 }
-                uVar9 = uVar9 + 1;
-              } while ((int)uVar9 < (int)groupContent->field_000C);
+                uVar8 = uVar8 + 1;
+              } while ((int)uVar8 < (int)array->count);
             }
             if (this->field_0232 != -1) break;
-            pAVar6 = (AnonShape_006ACC70_C8641025 *)this->field_0226;
+            pDVar6 = (DArrayTy *)this->field_0226;
             local_8 = local_8 + 1;
-          } while ((int)local_8 < (int)pAVar6->field_000C);
+          } while ((int)local_8 < (int)pDVar6->count);
         }
         if (this->field_0232 != -1) goto LAB_004a792e;
-        this->field_0232 = groupContent->field_000C + -1;
+        this->field_0232 = array->count - 1;
       }
       else {
         for (; -1 < (int)local_8; local_8 = local_8 - 1) {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0226,local_8,
-                       (undefined4 *)&local_1c);
-          uVar9 = 0;
-          if (0 < (int)groupContent->field_000C) {
+          DArrayGetElement((DArrayTy *)this->field_0226,local_8,&local_1c);
+          uVar8 = 0;
+          if (0 < (int)array->count) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,uVar9,(undefined4 *)&local_2c
-                          );
+              DArrayGetElement(array,uVar8,&local_2c);
               if (((local_1c == local_2c) && (local_1a == local_2a)) && (local_18 == local_28)) {
-                this->field_0232 = uVar9;
+                this->field_0232 = uVar8;
                 break;
               }
-              uVar9 = uVar9 + 1;
-            } while ((int)uVar9 < (int)groupContent->field_000C);
+              uVar8 = uVar8 + 1;
+            } while ((int)uVar8 < (int)array->count);
           }
           if (this->field_0232 != -1) break;
         }
@@ -215,21 +210,21 @@ LAB_004a77bb:
   }
   this->field_0232 = 0;
 LAB_004a792e:
-  if ((byte *)this->field_022A != (byte *)0x0) {
-    FUN_006ae110((byte *)this->field_022A);
+  if ((DArrayTy *)this->field_022A != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_022A);
     this->field_022A = 0;
   }
-  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,groupContent->field_000C,0xe,1);
+  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,array->count,0xe,1);
   this->field_022A = puVar4;
-  uVar9 = 0;
-  if (0 < (int)groupContent->field_000C) {
+  uVar8 = 0;
+  if (0 < (int)array->count) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)groupContent,uVar9,(undefined4 *)&local_2c);
-      Library::DKW::TBL::FUN_006ae140((uint *)this->field_022A,uVar9,(undefined4 *)&local_2c);
-      uVar9 = uVar9 + 1;
-    } while ((int)uVar9 < (int)groupContent->field_000C);
+      DArrayGetElement(array,uVar8,&local_2c);
+      Library::DKW::TBL::FUN_006ae140((uint *)this->field_022A,uVar8,(undefined4 *)&local_2c);
+      uVar8 = uVar8 + 1;
+    } while ((int)uVar8 < (int)array->count);
   }
-  FUN_006ae110((byte *)groupContent);
+  DArrayDestroy(array);
   return;
 }
 

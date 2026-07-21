@@ -3,13 +3,12 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
 
 {
   byte bVar1;
-  char cVar2;
-  uint uVar3;
-  undefined4 uVar4;
-  int iVar5;
-  uint uVar6;
-  bool bVar7;
-  int iVar8;
+  byte bVar2;
+  undefined4 uVar3;
+  int iVar4;
+  uint uVar5;
+  bool bVar6;
+  int iVar7;
   undefined1 local_c;
   undefined1 local_8;
   
@@ -23,47 +22,45 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
   if (param_1->field_0229 != 0) {
     return;
   }
-  iVar5 = *(int *)&param_1->field_0x20;
-  if (((iVar5 != 0x14) && (iVar5 != 1000)) && (iVar5 != 0x3e9)) {
+  iVar4 = *(int *)&param_1->field_0x20;
+  if (((iVar4 != 0x14) && (iVar4 != 1000)) && (iVar4 != 0x3e9)) {
     return;
   }
   bVar1 = param_1->field_0x24;
   if (DAT_00808a8f == '\0') {
     if (bVar1 == DAT_0080874d) {
 LAB_0041f738:
-      iVar8 = 0;
+      iVar7 = 0;
     }
     else {
-      uVar6 = (uint)DAT_0080874d;
-      uVar3 = (uint)bVar1;
-      cVar2 = *(char *)((int)&DAT_00808a4f + uVar3 * 8 + uVar6);
-      if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) == '\0')) {
-        iVar8 = -2;
+      uVar5 = (uint)DAT_0080874d;
+      bVar2 = g_playerRelationMatrix[bVar1][uVar5];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
+        iVar7 = -2;
       }
-      else if ((cVar2 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) == '\0')) {
-        iVar8 = -1;
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
+        iVar7 = -1;
       }
-      else if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) == '\x01')) {
-        iVar8 = 1;
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 1)) {
+        iVar7 = 1;
       }
       else {
-        if ((cVar2 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) != '\x01'))
-        goto LAB_0041f738;
-        iVar8 = 2;
+        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar5][bVar1] != 1)) goto LAB_0041f738;
+        iVar7 = 2;
       }
     }
-    bVar7 = iVar8 < 0;
+    bVar6 = iVar7 < 0;
   }
   else {
-    bVar7 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+    bVar6 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
   }
-  if (!bVar7) {
+  if (!bVar6) {
     local_c = 1;
     goto LAB_0041f793;
   }
-  if (iVar5 != 0x14) {
-    uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
-    switch(uVar4) {
+  if (iVar4 != 0x14) {
+    uVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
+    switch(uVar3) {
     case 0x3e:
     case 0x3f:
     case 0x42:
@@ -93,8 +90,8 @@ switchD_0041f763_caseD_7:
       goto LAB_0041f793;
     }
   }
-  uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
-  switch(uVar4) {
+  uVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
+  switch(uVar3) {
   case 7:
   case 8:
   case 0xc:
@@ -113,8 +110,8 @@ switchD_0041f763_caseD_9:
   local_c = 4;
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
-    uVar4 = (**(code **)(*(int *)param_1 + 0x6c))();
-    switch(uVar4) {
+    uVar3 = (**(code **)(*(int *)param_1 + 0x6c))();
+    switch(uVar3) {
     case 0:
       local_8 = 10;
       break;
@@ -144,9 +141,9 @@ LAB_0041f793:
     }
     Library::Ourlib::ST3DSMAP::FUN_006e6630
               ((void *)param_1->field_0211,param_1->field_01ED,local_c,local_8,0);
-    iVar8 = 0;
-    iVar5 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
-    FUN_006e6870((void *)param_1->field_0211,iVar5,iVar8);
+    iVar7 = 0;
+    iVar4 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+    FUN_006e6870((void *)param_1->field_0211,iVar4,iVar7);
     param_1->field_0229 = 1;
   }
   return;

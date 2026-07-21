@@ -15,22 +15,20 @@ STSprGameObjC::CheckRay
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   code *pcVar3;
-  uint uVar4;
-  uint uVar5;
-  byte bVar6;
-  int iVar7;
-  undefined4 uVar8;
-  short sVar9;
-  short sVar10;
+  byte bVar4;
+  int iVar5;
+  undefined4 uVar6;
+  short sVar7;
+  short sVar8;
   undefined4 unaff_ESI;
-  int iVar11;
-  STWorldObject *pSVar12;
-  short sVar13;
+  int iVar9;
+  STWorldObject *pSVar10;
+  short sVar11;
   void *unaff_EDI;
-  int iVar14;
-  bool bVar15;
+  int iVar12;
+  bool bVar13;
   InternalExceptionFrame local_ac;
   int local_68;
   int local_64;
@@ -65,21 +63,21 @@ STSprGameObjC::CheckRay
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   local_1c = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar7 != 0) {
+  iVar5 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_ac.previous;
-    if (iVar7 != -0x5001fff7) {
-      if (iVar7 == -0x5001fff6) {
+    if (iVar5 != -0x5001fff7) {
+      if (iVar5 == -0x5001fff6) {
         return 1;
       }
-      iVar11 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9b,0,iVar7,
-                                  &DAT_007a4ccc,s_STSprGameObjC__CheckRay_007a4f54);
-      if (iVar11 != 0) {
+      iVar9 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9b,0,iVar5,&DAT_007a4ccc
+                                 ,s_STSprGameObjC__CheckRay_007a4f54);
+      if (iVar9 != 0) {
         pcVar3 = (code *)swi(3);
-        uVar8 = (*pcVar3)();
-        return uVar8;
+        uVar6 = (*pcVar3)();
+        return uVar6;
       }
-      RaiseInternalException(iVar7,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9c);
+      RaiseInternalException(iVar5,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9c);
     }
     return 0;
   }
@@ -110,10 +108,10 @@ STSprGameObjC::CheckRay
   if (param_8 != (int *)0x0) {
     *param_8 = 0;
   }
-  iVar7 = FUN_006acf0d((int)param_1,(int)param_2,(int)param_3,(int)param_4,(int)param_5,(int)param_6
+  iVar5 = FUN_006acf0d((int)param_1,(int)param_2,(int)param_3,(int)param_4,(int)param_5,(int)param_6
                       );
-  bVar6 = thunk_FUN_00430750(param_7);
-  local_30 = iVar7 / (int)(uint)bVar6;
+  bVar4 = thunk_FUN_00430750(param_7);
+  local_30 = iVar5 / (int)(uint)bVar4;
   if (local_30 < 1) {
     local_30 = 1;
   }
@@ -126,145 +124,139 @@ STSprGameObjC::CheckRay
     local_14 = (int)param_2;
     local_10 = (int)param_3;
     do {
-      iVar11 = (local_60 * local_28) / local_30 + (int)param_1;
-      iVar7 = (local_50 * local_28) / local_30 + (int)param_2;
-      iVar14 = (local_48 * local_28) / local_30 + (int)param_3;
-      local_64 = iVar11;
-      local_5c = iVar7;
-      local_54 = iVar14;
-      local_8 = FUN_006acf0d(local_18,local_14,local_10,iVar11,iVar7,iVar14);
+      iVar9 = (local_60 * local_28) / local_30 + (int)param_1;
+      iVar5 = (local_50 * local_28) / local_30 + (int)param_2;
+      iVar12 = (local_48 * local_28) / local_30 + (int)param_3;
+      local_64 = iVar9;
+      local_5c = iVar5;
+      local_54 = iVar12;
+      local_8 = FUN_006acf0d(local_18,local_14,local_10,iVar9,iVar5,iVar12);
       local_8 = local_8 / 0x32;
       if (local_8 < 1) {
         local_8 = 1;
       }
       if (0 < local_8) {
-        local_4c = iVar14 - local_10;
-        local_68 = iVar7 - local_14;
-        local_58 = iVar11 - local_18;
+        local_4c = iVar12 - local_10;
+        local_68 = iVar5 - local_14;
+        local_58 = iVar9 - local_18;
         local_44 = local_8;
         local_2c = local_68;
         local_24 = local_4c;
         local_20 = local_58;
         do {
-          iVar7 = local_20 / local_8 + local_18;
-          sVar10 = (short)(iVar7 >> 0x1f);
-          if (iVar7 < 0) {
-            local_c = (short)(((short)(iVar7 / 0xc9) + sVar10) -
-                             (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
+          iVar5 = local_20 / local_8 + local_18;
+          sVar8 = (short)(iVar5 >> 0x1f);
+          if (iVar5 < 0) {
+            local_c = (short)(((short)(iVar5 / 0xc9) + sVar8) -
+                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
           }
           else {
-            local_c = (int)(short)(((short)(iVar7 / 0xc9) + sVar10) -
-                                  (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
+            local_c = (int)(short)(((short)(iVar5 / 0xc9) + sVar8) -
+                                  (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
           }
-          iVar7 = local_2c / local_8 + local_14;
-          sVar10 = (short)(iVar7 >> 0x1f);
-          if (iVar7 < 0) {
-            iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar10) -
-                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
-          }
-          else {
-            iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar10) -
-                                (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
-          }
-          iVar11 = local_24 / local_8 + local_10;
-          sVar10 = (short)(iVar11 >> 0x1f);
-          if (iVar11 < 0) {
-            iVar11 = (short)(((short)(iVar11 / 200) + sVar10) -
-                            (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)) + -1;
+          iVar5 = local_2c / local_8 + local_14;
+          sVar8 = (short)(iVar5 >> 0x1f);
+          if (iVar5 < 0) {
+            iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar8) -
+                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
           }
           else {
-            iVar11 = (int)(short)(((short)(iVar11 / 200) + sVar10) -
-                                 (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
+            iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar8) -
+                                (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
           }
-          sVar9 = (short)local_c;
-          sVar10 = (short)iVar7;
-          sVar13 = (short)iVar11;
-          if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
-              ((SHORT_007fb242 <= sVar10 || (sVar13 < 0)))) || (SHORT_007fb244 <= sVar13)) {
-            pSVar12 = (STWorldObject *)0x0;
+          iVar9 = local_24 / local_8 + local_10;
+          sVar8 = (short)(iVar9 >> 0x1f);
+          if (iVar9 < 0) {
+            iVar9 = (short)(((short)(iVar9 / 200) + sVar8) -
+                           (short)((longlong)iVar9 * 0x51eb851f >> 0x3f)) + -1;
           }
           else {
-            pSVar12 = g_worldCells
-                      [(int)SHORT_007fb246 * (int)sVar13 + (int)SHORT_007fb240 * (int)sVar10 +
-                       (int)sVar9].objects[0];
+            iVar9 = (int)(short)(((short)(iVar9 / 200) + sVar8) -
+                                (short)((longlong)iVar9 * 0x51eb851f >> 0x3f));
           }
-          if (((pSVar12 == (STWorldObject *)0x0) || ((STWorldObjectVTable *)0x7 < pSVar12[1].vtable)
+          sVar7 = (short)local_c;
+          sVar8 = (short)iVar5;
+          sVar11 = (short)iVar9;
+          if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
+              ((g_worldGrid.sizeY <= sVar8 || (sVar11 < 0)))) || (g_worldGrid.sizeZ <= sVar11)) {
+            pSVar10 = (STWorldObject *)0x0;
+          }
+          else {
+            pSVar10 = g_worldGrid.cells
+                      [(int)g_worldGrid.planeStride * (int)sVar11 +
+                       (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[0];
+          }
+          if (((pSVar10 == (STWorldObject *)0x0) || ((STWorldObjectVTable *)0x7 < pSVar10[1].vtable)
               ) || ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-                    (7 < (byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51])))) {
+                    (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51])))) {
 LAB_0041fe0d:
-            if (*(short *)(DAT_007fb280 +
-                          (SHORT_007fb278 * iVar7 + local_c + SHORT_007fb27e * iVar11) * 2) < 0) {
+            if (g_pathingGrid.cells
+                [g_pathingGrid.sizeX * iVar5 + local_c + g_pathingGrid.planeStride * iVar9] < 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb85);
             }
-            sVar9 = (short)local_c;
-            if ((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar10 < 0)) ||
-               (((SHORT_007fb242 <= sVar10 || (sVar13 < 0)) || (SHORT_007fb244 <= sVar13)))) {
-              pSVar12 = (STWorldObject *)0x0;
+            sVar7 = (short)local_c;
+            if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
+               (((g_worldGrid.sizeY <= sVar8 || (sVar11 < 0)) || (g_worldGrid.sizeZ <= sVar11)))) {
+              pSVar10 = (STWorldObject *)0x0;
             }
             else {
-              pSVar12 = g_worldCells
-                        [(int)SHORT_007fb246 * (int)sVar13 + (int)SHORT_007fb240 * (int)sVar10 +
-                         (int)sVar9].objects[1];
+              pSVar10 = g_worldGrid.cells
+                        [(int)g_worldGrid.planeStride * (int)sVar11 +
+                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[1];
             }
-            if (((pSVar12 != (STWorldObject *)0x0) &&
-                (pSVar12[1].vtable < (STWorldObjectVTable *)0x8)) &&
+            if (((pSVar10 != (STWorldObject *)0x0) &&
+                (pSVar10[1].vtable < (STWorldObjectVTable *)0x8)) &&
                (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                 ((byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51] < 8)) &&
-                (local_1c->field_0018 != *(int *)&pSVar12->field_0x18)))) {
-              if ((pSVar12[0xc].value_20 & 0x1000) != 0) {
+                 ((byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51] < 8)) &&
+                (local_1c->field_0018 != *(int *)&pSVar10->field_0x18)))) {
+              if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
                 if (param_8 != (int *)0x0) {
-                  *param_8 = (int)pSVar12;
+                  *param_8 = (int)pSVar10;
                 }
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
                            s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb8c);
               }
               if (param_9 == 0) {
-                if (((STWorldObjectVTable *)0x7 < pSVar12[1].vtable) ||
+                if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
                    ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-                    (7 < (byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51]))))
+                    (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
                 goto cf_continue_loop_0042004A;
-                bVar6 = *(byte *)&pSVar12[1].vtable;
+                bVar4 = *(byte *)&pSVar10[1].vtable;
                 bVar1 = local_1c->field_0024;
-                _local_38 = CONCAT31(uStack_37,bVar6);
+                _local_38 = CONCAT31(uStack_37,bVar4);
                 _local_3c = CONCAT31(uStack_3b,bVar1);
                 if (DAT_00808a8f == '\0') {
-                  if (bVar6 == bVar1) {
+                  if (bVar4 == bVar1) {
 LAB_0041fffd:
-                    iVar7 = 0;
+                    iVar5 = 0;
                   }
                   else {
-                    uVar4 = (uint)bVar6;
-                    uVar5 = (uint)bVar1;
-                    cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar5);
-                    if ((cVar2 == '\0') &&
-                       (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                      iVar7 = -2;
+                    bVar2 = g_playerRelationMatrix[bVar4][bVar1];
+                    if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
+                      iVar5 = -2;
                     }
-                    else if ((cVar2 == '\x01') &&
-                            (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                      iVar7 = -1;
+                    else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
+                      iVar5 = -1;
                     }
-                    else if ((cVar2 == '\0') &&
-                            (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\x01')) {
-                      iVar7 = 1;
+                    else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 1)) {
+                      iVar5 = 1;
                     }
                     else {
-                      if ((cVar2 != '\x01') ||
-                         (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) != '\x01'))
+                      if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar4] != 1))
                       goto LAB_0041fffd;
-                      iVar7 = 2;
+                      iVar5 = 2;
                     }
                   }
-                  bVar15 = iVar7 < 0;
+                  bVar13 = iVar5 < 0;
                 }
                 else {
-                  bVar15 = (&DAT_008087ea)[(uint)bVar1 * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar6 * 0x51];
+                  bVar13 = (&DAT_008087ea)[(uint)bVar1 * 0x51] !=
+                           (&DAT_008087ea)[(uint)bVar4 * 0x51];
                 }
-                if ((!bVar15) && (pSVar12->value_20 == 0x1ae)) {
+                if ((!bVar13) && (pSVar10->value_20 == 0x1ae)) {
                   RaiseInternalException
                             (-0x5001fff7,g_overwriteContext_007ED77C,
                              s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb91);
@@ -275,58 +267,52 @@ LAB_0041fffd:
                          s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb93);
             }
           }
-          else if (local_1c->field_0018 != *(int *)&pSVar12->field_0x18) {
+          else if (local_1c->field_0018 != *(int *)&pSVar10->field_0x18) {
             if (param_8 != (int *)0x0) {
-              *param_8 = (int)pSVar12;
+              *param_8 = (int)pSVar10;
             }
-            if ((pSVar12[0xc].value_20 & 0x1000) != 0) {
+            if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb7e);
             }
             if (param_9 == 0) {
-              if (((STWorldObjectVTable *)0x7 < pSVar12[1].vtable) ||
+              if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
                  ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
-                  (7 < (byte)(&DAT_008087e9)[(int)pSVar12[1].vtable * 0x51]))))
+                  (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
               goto cf_continue_loop_0042004A;
-              bVar6 = *(byte *)&pSVar12[1].vtable;
+              bVar4 = *(byte *)&pSVar10[1].vtable;
               bVar1 = local_1c->field_0024;
-              _local_40 = CONCAT31(uStack_3f,bVar6);
+              _local_40 = CONCAT31(uStack_3f,bVar4);
               _local_34 = CONCAT31(uStack_33,bVar1);
               if (DAT_00808a8f == '\0') {
-                if (bVar6 == bVar1) {
+                if (bVar4 == bVar1) {
 LAB_0041fdc6:
-                  iVar14 = 0;
+                  iVar12 = 0;
                 }
                 else {
-                  uVar4 = (uint)bVar6;
-                  uVar5 = (uint)bVar1;
-                  cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar5);
-                  if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')
-                     ) {
-                    iVar14 = -2;
+                  bVar2 = g_playerRelationMatrix[bVar4][bVar1];
+                  if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
+                    iVar12 = -2;
                   }
-                  else if ((cVar2 == '\x01') &&
-                          (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                    iVar14 = -1;
+                  else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
+                    iVar12 = -1;
                   }
-                  else if ((cVar2 == '\0') &&
-                          (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\x01')) {
-                    iVar14 = 1;
+                  else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 1)) {
+                    iVar12 = 1;
                   }
                   else {
-                    if ((cVar2 != '\x01') ||
-                       (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) != '\x01'))
+                    if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar4] != 1))
                     goto LAB_0041fdc6;
-                    iVar14 = 2;
+                    iVar12 = 2;
                   }
                 }
-                bVar15 = iVar14 < 0;
+                bVar13 = iVar12 < 0;
               }
               else {
-                bVar15 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar6 * 0x51];
+                bVar13 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar4 * 0x51];
               }
-              if (!bVar15) {
+              if (!bVar13) {
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
                            s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb81);
@@ -344,14 +330,14 @@ cf_continue_loop_0042004A:
           local_44 = local_44 + -1;
         } while (local_44 != 0);
         local_44 = 0;
-        iVar7 = local_5c;
-        iVar11 = local_64;
-        iVar14 = local_54;
+        iVar5 = local_5c;
+        iVar9 = local_64;
+        iVar12 = local_54;
       }
       local_28 = local_28 + 1;
-      local_18 = iVar11;
-      local_14 = iVar7;
-      local_10 = iVar14;
+      local_18 = iVar9;
+      local_14 = iVar5;
+      local_10 = iVar12;
     } while (local_28 <= local_30);
   }
   g_currentExceptionFrame = local_ac.previous;

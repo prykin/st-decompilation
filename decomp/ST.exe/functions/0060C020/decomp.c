@@ -55,7 +55,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     if ((*(int *)((int)local_18 + 0x23c) != 0) && (*(int *)((int)local_18 + 0x244) != 0)) {
       local_1c = (uint *)thunk_FUN_0060d390(local_18,&local_10);
       if (local_1c != (uint *)0x0) {
@@ -74,7 +74,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
           puVar5 = (uint *)((int)puVar5 + 1);
           puVar7 = (uint *)((int)puVar7 + 1);
         }
-        FUN_006ab060(&local_1c);
+        FreeAndNull(&local_1c);
       }
     }
   }

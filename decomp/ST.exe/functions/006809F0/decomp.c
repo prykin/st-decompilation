@@ -27,14 +27,14 @@ undefined4 __cdecl FUN_006809f0(uint *param_1)
     local_8 = (byte *)FUN_006c8910(param_1,(int *)&local_c);
     thunk_FUN_00680890(0x17,local_8,local_c,&local_18);
     if (local_8 != (byte *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = pIVar1;
     return 1;
   }
   g_currentExceptionFrame = pIVar1;
   if (local_8 != (byte *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   RaiseInternalException(local_14,0,s_E____titans_ai_ai_script_cpp_007d5604,0x124);
   return 0;

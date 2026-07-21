@@ -11,7 +11,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
 {
   uint uVar1;
   int iVar2;
-  uint *groupContent;
+  DArrayTy *array;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar3;
@@ -20,10 +20,10 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   void *local_14;
   uint local_10;
   undefined4 *local_c;
-  undefined4 *local_8;
+  AnonShape_GLOBAL_008489C4_F7BABFAC *local_8;
   
   local_10 = param_7;
-  local_8 = (undefined4 *)0x0;
+  local_8 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
   local_c = (undefined4 *)0x0;
   local_20[2] = 0xffffffff;
   local_20[1] = 0;
@@ -50,8 +50,8 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
     iVar2 = param_1;
   }
   local_8 = thunk_FUN_00668180(param_2,param_3,(short)param_4,param_5,(char)iVar2);
-  local_8[1] = param_1;
-  *(uint *)((int)local_8 + 0x77) = uVar1;
+  *(int *)&local_8->field_0x4 = param_1;
+  *(uint *)&local_8->field_0x77 = uVar1;
   local_c = FltDataPack(local_8,local_20);
   thunk_FUN_006686c0((int *)&local_8);
   STPlaySystemC::CreateGameObject(PTR_00802a38,900,local_20 + 1,&local_14,local_c,0);
@@ -64,10 +64,10 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   else {
     uVar1 = (uint)*(ushort *)((int)local_14 + 0x7d);
     local_20[2] = uVar1;
-    groupContent = _GetStaffGrpExch(param_1);
-    if (groupContent != (uint *)0x0) {
-      thunk_FUN_0065d940(local_14,groupContent,0);
-      FUN_006ae110((byte *)groupContent);
+    array = (DArrayTy *)_GetStaffGrpExch(param_1);
+    if (array != (DArrayTy *)0x0) {
+      thunk_FUN_0065d940(local_14,(uint *)array,0);
+      DArrayDestroy(array);
       g_currentExceptionFrame = local_64.previous;
       return uVar1;
     }

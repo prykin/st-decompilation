@@ -29,13 +29,13 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
           iVar2 = *(int *)(*piVar4 + 0xc);
           if (0 < iVar2) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)*piVar4,uVar5,&param_1);
+              DArrayGetElement((DArrayTy *)*piVar4,uVar5,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
                 Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
                 if ((short)piVar4[1] == 0) {
-                  FUN_006ae110((byte *)*piVar4);
+                  DArrayDestroy((DArrayTy *)*piVar4);
                   *piVar4 = 0;
                   *(undefined4 *)((int)piVar4 + -10) = 0;
                 }
@@ -72,13 +72,13 @@ LAB_0042cf42:
           iVar2 = *(int *)(*piVar4 + 0xc);
           if (0 < iVar2) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)*piVar4,uVar5,&param_1);
+              DArrayGetElement((DArrayTy *)*piVar4,uVar5,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
                 Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
                 if ((short)piVar4[1] == 0) {
-                  FUN_006ae110((byte *)*piVar4);
+                  DArrayDestroy((DArrayTy *)*piVar4);
                   *piVar4 = 0;
                   *(undefined4 *)((int)piVar4 + -10) = 0;
                 }

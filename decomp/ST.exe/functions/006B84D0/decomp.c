@@ -1,12 +1,15 @@
 
-void FUN_006b84d0(AnonShape_006B84D0_7C7D97C6 *param_1,int param_2,int param_3,int param_4,
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
                  byte *param_5)
 
 {
   short sVar1;
   short sVar2;
   int iVar3;
-  AnonShape_006B84D0_7C7D97C6 *pAVar4;
+  AnonShape_006B5B10_E0D06CF1 *pAVar4;
   int local_24 [3];
   int local_18;
   int local_14;
@@ -25,14 +28,14 @@ void FUN_006b84d0(AnonShape_006B84D0_7C7D97C6 *param_1,int param_2,int param_3,i
   local_24[1] = 0;
   local_24[0] = 0;
   local_18 = param_1->field_0008;
-  pAVar4 = (AnonShape_006B84D0_7C7D97C6 *)
+  pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)
            ((uint)param_1->field_000E * local_24[2] + 0x1f >> 3 & 0x1ffffffc);
   if (local_18 < 0) {
     local_18 = -local_18;
     param_1 = pAVar4;
   }
   else {
-    param_1 = (AnonShape_006B84D0_7C7D97C6 *)-(int)pAVar4;
+    param_1 = (AnonShape_006B5B10_E0D06CF1 *)-(int)pAVar4;
   }
   local_14 = param_3 + sVar1;
   local_10 = param_4 + sVar2;
@@ -42,9 +45,9 @@ void FUN_006b84d0(AnonShape_006B84D0_7C7D97C6 *param_1,int param_2,int param_3,i
     if ((int)param_1 < 0) {
       iVar3 = (local_18 - local_10) + -1;
     }
-    FUN_006d2820((byte *)((int)pAVar4 * iVar3 + local_14 + param_2),(int)param_1,param_5,
-                 local_14 - (param_3 + sVar1),local_10 - (param_4 + sVar2),local_c,local_8,0,
-                 (byte *)0x0,0,0,(byte *)0x0);
+    FUN_006d2820((byte *)((int)pAVar4 * iVar3 + local_14 + param_2),
+                 (AnonShape_006B84D0_7C7D97C6 *)param_1,param_5,local_14 - (param_3 + sVar1),
+                 local_10 - (param_4 + sVar2),local_c,local_8,0,(byte *)0x0,0,0,(byte *)0x0);
   }
   return;
 }

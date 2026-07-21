@@ -1,11 +1,14 @@
 
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
 undefined4
-FUN_007521b0(int *param_1,AnonShape_007521B0_4642B53E *param_2,uint param_3,int param_4,int param_5,
+FUN_007521b0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,int param_4,int param_5,
             uint param_6)
 
 {
   byte bVar1;
-  AnonShape_007521B0_4642B53E *pAVar2;
+  AnonShape_006B4B20_3D4F4412 *pAVar2;
   uint uVar3;
   bool bVar4;
   uint *puVar5;
@@ -16,14 +19,14 @@ FUN_007521b0(int *param_1,AnonShape_007521B0_4642B53E *param_2,uint param_3,int 
   uint uVar10;
   byte *pbVar11;
   uint uVar12;
-  AnonShape_007521B0_4642B53E *pAVar13;
+  AnonShape_006B4B20_3D4F4412 *pAVar13;
   byte *pbVar14;
   int iVar15;
   byte *pbVar16;
   short *local_40;
   int local_34;
   int local_30;
-  AnonShape_007521B0_4642B53E *local_28;
+  AnonShape_006B4B20_3D4F4412 *local_28;
   int local_24;
   int local_1c;
   byte *local_18;
@@ -35,7 +38,7 @@ FUN_007521b0(int *param_1,AnonShape_007521B0_4642B53E *param_2,uint param_3,int 
   if (param_3 == 0) {
     param_3 = FUN_006b4fa0((int)param_2);
   }
-  pAVar2 = (AnonShape_007521B0_4642B53E *)param_2->field_0004;
+  pAVar2 = (AnonShape_006B4B20_3D4F4412 *)param_2->field_0004;
   uVar3 = param_2->field_0008;
   uVar12 = (uint)param_2->field_000E * (int)pAVar2 + 0x1f >> 3 & 0x1ffffffc;
   puVar5 = (uint *)Library::DKW::LIB::FUN_006aac70
@@ -46,20 +49,20 @@ FUN_007521b0(int *param_1,AnonShape_007521B0_4642B53E *param_2,uint param_3,int 
   pbVar11 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
   pbVar6 = (byte *)((uVar3 - 1) * uVar12 + param_3);
-  param_2 = (AnonShape_007521B0_4642B53E *)0x0;
+  param_2 = (AnonShape_006B4B20_3D4F4412 *)0x0;
   local_30 = 0;
   local_14 = 0;
-  pAVar13 = (AnonShape_007521B0_4642B53E *)0x0;
+  pAVar13 = (AnonShape_006B4B20_3D4F4412 *)0x0;
   local_28 = pAVar2;
   if (0 < (int)uVar3) {
     do {
-      pAVar13 = (AnonShape_007521B0_4642B53E *)0x0;
+      pAVar13 = (AnonShape_006B4B20_3D4F4412 *)0x0;
       while( true ) {
         bVar1 = *pbVar6;
         while (bVar1 == (byte)param_6) {
           if ((int)pAVar2 <= (int)pAVar13) goto LAB_007522a2;
           pbVar6 = pbVar6 + 1;
-          pAVar13 = (AnonShape_007521B0_4642B53E *)&pAVar13->field_0x1;
+          pAVar13 = (AnonShape_006B4B20_3D4F4412 *)&pAVar13->field_0x1;
           bVar1 = *pbVar6;
         }
         if ((int)pAVar2 <= (int)pAVar13) break;
@@ -72,7 +75,7 @@ FUN_007521b0(int *param_1,AnonShape_007521B0_4642B53E *param_2,uint param_3,int 
         }
         bVar1 = *pbVar6;
         for (; (bVar1 != (byte)param_6 && ((int)pAVar13 < (int)pAVar2));
-            pAVar13 = (AnonShape_007521B0_4642B53E *)&pAVar13->field_0x1) {
+            pAVar13 = (AnonShape_006B4B20_3D4F4412 *)&pAVar13->field_0x1) {
           pbVar6 = pbVar6 + 1;
           bVar1 = *pbVar6;
         }

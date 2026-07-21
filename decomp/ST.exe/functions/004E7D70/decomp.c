@@ -8,7 +8,7 @@ undefined4 FUN_004e7d70(int param_1)
   int iVar4;
   
   if ((-1 < param_1) && (param_1 < 8)) {
-    uVar1 = thunk_FUN_004406c0((char)param_1);
+    uVar1 = GetPlayerRaceId((char)param_1);
     iVar2 = (uVar1 & 0xff) - 1;
     piVar3 = (int *)(&PTR_DAT_007c0dc8)[iVar2];
     if (*piVar3 != 0) {

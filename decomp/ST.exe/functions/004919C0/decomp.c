@@ -27,8 +27,7 @@ STBoatC::GetCellForLoading
   int iVar10;
   int iVar11;
   short *psVar12;
-  undefined4 *puVar13;
-  undefined4 *puVar14;
+  short *psVar13;
   int local_68;
   int local_64 [4];
   int local_54;
@@ -49,19 +48,19 @@ STBoatC::GetCellForLoading
   local_48[2] = 0;
   local_48[3] = 0;
   local_48[4] = 0;
-  uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
+  uVar6 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
   local_4c = iVar10 + 1;
-  puVar13 = DAT_007fb280;
-  puVar14 = DAT_007fb238;
+  psVar12 = g_pathingGrid.cells;
+  psVar13 = g_pathingScratchGrid.cells;
   for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *puVar14 = *puVar13;
-    puVar13 = puVar13 + 1;
-    puVar14 = puVar14 + 1;
+    *(undefined4 *)psVar13 = *(undefined4 *)psVar12;
+    psVar12 = psVar12 + 2;
+    psVar13 = psVar13 + 2;
   }
   for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *(undefined1 *)puVar14 = *(undefined1 *)puVar13;
-    puVar13 = (undefined4 *)((int)puVar13 + 1);
-    puVar14 = (undefined4 *)((int)puVar14 + 1);
+    *(char *)psVar13 = (char)*psVar12;
+    psVar12 = (short *)((int)psVar12 + 1);
+    psVar13 = (short *)((int)psVar13 + 1);
   }
   local_48[5] = 0xffffffff;
   local_48[6] = 0xffffffff;
@@ -72,12 +71,12 @@ STBoatC::GetCellForLoading
   local_54 = iVar10;
   local_50 = local_68;
   local_c = this;
-  FUN_006ab090((int)DAT_007fb238,(int)SHORT_007fb278,(int)SHORT_007fb27a,(int)SHORT_007fb27c,
-               (int)param_1,(int)param_2,(int)param_3,-1,-1,-1);
-  iVar10 = SHORT_007fb278 * iVar10;
+  FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
+               (int)g_pathingGrid.sizeZ,(int)param_1,(int)param_2,(int)param_3,-1,-1,-1);
+  iVar10 = g_pathingGrid.sizeX * iVar10;
   iVar9 = 0;
-  if (*(short *)((int)DAT_007fb238 +
-                ((int)(short)param_6 * (int)SHORT_007fb27e + iVar10 + (int)param_4) * 2) < 1) {
+  if (g_pathingScratchGrid.cells
+      [(int)(short)param_6 * (int)g_pathingGrid.planeStride + iVar10 + (int)param_4] < 1) {
     return 0xfffffffe;
   }
   switch((int)(short)param_6) {
@@ -125,24 +124,24 @@ LAB_00491b42:
     return uVar5;
   }
   do {
-    local_8 = *(int *)((int)local_20 + iVar9) * (int)SHORT_007fb27e;
-    if (0 < *(short *)((int)DAT_007fb238 + (local_8 + iVar10 + (int)param_4) * 2)) {
+    local_8 = *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride;
+    if (0 < g_pathingScratchGrid.cells[local_8 + iVar10 + (int)param_4]) {
       piVar3 = &local_68;
       _param_3 = 1000000000;
       iVar11 = 0;
       do {
         iVar4 = *piVar3;
-        if ((((-1 < iVar4) && (iVar4 <= SHORT_007fb278 + -1)) && (iVar8 = piVar3[1], -1 < iVar8)) &&
-           (iVar8 <= SHORT_007fb27a + -1)) {
-          iVar4 = iVar8 * SHORT_007fb278 + local_8 + iVar4;
-          iVar8 = (int)*(short *)((int)DAT_007fb238 + iVar4 * 2);
+        if ((((-1 < iVar4) && (iVar4 <= g_pathingGrid.sizeX + -1)) &&
+            (iVar8 = piVar3[1], -1 < iVar8)) && (iVar8 <= g_pathingGrid.sizeY + -1)) {
+          iVar4 = iVar8 * g_pathingGrid.sizeX + local_8 + iVar4;
+          iVar8 = (int)g_pathingScratchGrid.cells[iVar4];
           if (0 < iVar8) {
-            if ((STBoatC *)g_worldCells[iVar4].objects[0] == local_c) {
+            if ((STBoatC *)g_worldGrid.cells[iVar4].objects[0] == local_c) {
               *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
               *(undefined4 *)((int)local_48 + iVar9) = 2;
               break;
             }
-            if ((STBoatC *)g_worldCells[iVar4].objects[0] == (STBoatC *)0x0) {
+            if ((STBoatC *)g_worldGrid.cells[iVar4].objects[0] == (STBoatC *)0x0) {
               if (*(int *)((int)local_48 + iVar9) == 0) {
                 *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
                 *(undefined4 *)((int)local_48 + iVar9) = 1;
@@ -171,8 +170,8 @@ cf_continue_loop_00491C1C:
       iVar9 = (short)param_6 + 1;
       if (iVar9 < 5) {
         iVar11 = (short)param_6 + 2;
-        psVar12 = (short *)((int)DAT_007fb238 + (SHORT_007fb27e * iVar9 + iVar10 + (int)param_4) * 2
-                           );
+        psVar12 = g_pathingScratchGrid.cells +
+                  g_pathingGrid.planeStride * iVar9 + iVar10 + (int)param_4;
         do {
           iVar9 = iVar11;
           if (*psVar12 < 1) {
@@ -189,14 +188,14 @@ cf_continue_loop_00491C1C:
               } while (iVar4 < 5);
             }
           }
-          psVar12 = psVar12 + SHORT_007fb27e;
+          psVar12 = psVar12 + g_pathingGrid.planeStride;
           iVar11 = iVar11 + 1;
         } while (iVar11 < 6);
       }
       iVar9 = (short)param_6 + -1;
       if (-1 < iVar9) {
-        psVar12 = (short *)((int)DAT_007fb238 + (SHORT_007fb27e * iVar9 + iVar10 + (int)param_4) * 2
-                           );
+        psVar12 = g_pathingScratchGrid.cells +
+                  g_pathingGrid.planeStride * iVar9 + iVar10 + (int)param_4;
         do {
           if ((*psVar12 < 1) && (iVar10 = iVar9 + -1, 0 < iVar9)) {
             do {
@@ -214,7 +213,7 @@ cf_continue_loop_00491C1C:
             } while (-1 < iVar10);
           }
           iVar9 = iVar9 + -1;
-          psVar12 = psVar12 + -(int)SHORT_007fb27e;
+          psVar12 = psVar12 + -(int)g_pathingGrid.planeStride;
         } while (-1 < iVar9);
       }
       iVar10 = -1;
@@ -226,20 +225,22 @@ cf_continue_loop_00491C1C:
         if (iVar11 != -1) {
           if ((iVar10 == -1) || ((*(int *)((int)local_48 + iVar9) == 1 && (local_48[iVar10] == 0))))
           {
-            _param_3 = (int)*(short *)((int)DAT_007fb238 +
-                                      (*(int *)((int)local_64 + iVar11 * 8) * (int)SHORT_007fb278 +
-                                       *(int *)((int)local_20 + iVar9) * (int)SHORT_007fb27e +
-                                      (&local_68)[iVar11 * 2]) * 2);
+            _param_3 = (int)g_pathingScratchGrid.cells
+                            [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
+                             *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
+                             (&local_68)[iVar11 * 2]];
             iVar10 = _param_6;
           }
           else if (((*(int *)((int)local_48 + iVar9) != 0) || (local_48[iVar10] != 1)) &&
-                  (iVar11 = (int)*(short *)((int)DAT_007fb238 +
-                                           (*(int *)((int)local_64 + iVar11 * 8) *
-                                            (int)SHORT_007fb278 +
-                                            *(int *)((int)local_20 + iVar9) * (int)SHORT_007fb27e +
-                                           (&local_68)[iVar11 * 2]) * 2), iVar11 < _param_3)) {
+                  (g_pathingScratchGrid.cells
+                   [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
+                    *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
+                    (&local_68)[iVar11 * 2]] < _param_3)) {
             iVar10 = _param_6;
-            _param_3 = iVar11;
+            _param_3 = (int)g_pathingScratchGrid.cells
+                            [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
+                             *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
+                             (&local_68)[iVar11 * 2]];
           }
         }
         iVar9 = iVar9 + 4;

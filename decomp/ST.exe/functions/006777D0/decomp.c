@@ -28,11 +28,11 @@ FUN_006777d0(Global_sub_006777D0_param_1Enum param_1,int param_2,int param_3,und
   }
   iVar4 = param_5;
   if (param_5 < 1) {
-    iVar4 = (int)SHORT_007fb240;
+    iVar4 = (int)g_worldGrid.sizeX;
   }
   iVar2 = param_6;
   if (param_6 < 1) {
-    iVar2 = (int)SHORT_007fb242;
+    iVar2 = (int)g_worldGrid.sizeY;
   }
   switch(param_1) {
   case CASE_DD:

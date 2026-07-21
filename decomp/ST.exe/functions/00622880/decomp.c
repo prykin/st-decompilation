@@ -23,8 +23,8 @@ void __fastcall FUN_00622880(AnonShape_00622880_C4191DB5 *param_1)
       thunk_FUN_0041d2b0((AnonShape_0041D2B0_CE8C6BD3 *)param_1);
     }
   }
-  if ((byte *)param_1->field_034A != (byte *)0x0) {
-    FUN_006ae110((byte *)param_1->field_034A);
+  if ((DArrayTy *)param_1->field_034A != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)param_1->field_034A);
     param_1->field_034A = 0;
   }
   return;

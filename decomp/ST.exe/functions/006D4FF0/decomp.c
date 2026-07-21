@@ -9,11 +9,11 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   FUN_0074b91d((undefined4 *)((int)this + 0x240));
   *(int *)((int)this + 0x288) = param_4;
   FUN_006d5cd0((void *)((int)this + 0x294),this,0,param_3);
-  *(undefined ***)this = &PTR_FUN_0079db78;
-  *(undefined ***)((int)this + 0xc) = &PTR_FUN_0079db3c;
-  *(undefined ***)((int)this + 0x10) = &PTR_FUN_0079db28;
-  *(undefined ***)((int)this + 200) = &PTR_FUN_0079db04;
-  *(undefined ***)((int)this + 0xcc) = &PTR_FUN_0079daf0;
+  *(VTable_0079DB78 **)this = &VTable_0079DB78;
+  *(VTable_0079DB3C **)((int)this + 0xc) = &VTable_0079DB3C;
+  *(VTable_0079DB28 **)((int)this + 0x10) = &VTable_0079DB28;
+  *(VTable_0079DB04 **)((int)this + 200) = &VTable_0079DB04;
+  *(VTable_0079DAF0 **)((int)this + 0xcc) = &VTable_0079DAF0;
   FUN_0074bb83((undefined4 *)((int)this + 0x240));
   *(undefined4 *)((int)this + 0x28c) = 0;
   *(undefined4 *)((int)this + 0x290) = 0;

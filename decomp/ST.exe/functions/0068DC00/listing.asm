@@ -1,4 +1,4 @@
-FUN_0068dc00:
+AiTactClassTy::AiTactClassTy:
 0068DC00  56                        PUSH ESI
 0068DC01  57                        PUSH EDI
 0068DC02  8B F1                     MOV ESI,ECX

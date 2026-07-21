@@ -17,20 +17,21 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   code *pcVar2;
   int iVar3;
   short *psVar4;
-  char *pcVar5;
-  undefined1 *puVar6;
-  AnonShape_006DBCA0_EF06575F *pAVar7;
-  int *piVar8;
-  int iVar9;
-  short *psVar10;
-  uint uVar11;
+  char *text_00;
+  char *text_01;
+  undefined1 *puVar5;
+  AnonShape_006DBCA0_EF06575F *pAVar6;
+  int *piVar7;
+  int iVar8;
+  short *psVar9;
+  uint uVar10;
   undefined4 unaff_ESI;
-  undefined4 *puVar12;
+  undefined4 *puVar11;
   AnonShape_006DDD50_309FA381 *this;
   void *unaff_EDI;
-  uint uVar13;
-  undefined4 *puVar14;
-  longlong lVar15;
+  uint uVar12;
+  undefined4 *puVar13;
+  longlong lVar14;
   CHAR local_f4 [128];
   InternalExceptionFrame local_74;
   int local_30;
@@ -54,44 +55,44 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     local_1c = psVar4;
     if (PTR_00802a58 != (cLoadingTy *)0x0) {
       iVar3 = DAT_007f4e00;
-      pcVar5 = (char *)FUN_006b0140(0x2685,HINSTANCE_00807618);
-      wsprintfA(local_f4,pcVar5,iVar3);
+      LoadResourceString(0x2685,HINSTANCE_00807618);
+      wsprintfA(local_f4,text_00,iVar3);
       cLoadingTy::SetState(PTR_00802a58,CASE_2,0,local_f4);
       if (PTR_00802a58 != (cLoadingTy *)0x0) {
         iVar3 = DAT_007f4e00 / 2;
-        pcVar5 = (char *)FUN_006b0140(0x268c,HINSTANCE_00807618);
-        cLoadingTy::SetProcess(PTR_00802a58,0,pcVar5,iVar3);
+        LoadResourceString(0x268c,HINSTANCE_00807618);
+        cLoadingTy::SetProcess(PTR_00802a58,0,text_01,iVar3);
         cLoadingTy::SetState(PTR_00802a58,CASE_0,0,(char *)0x0);
       }
     }
-    psVar10 = psVar4 + 7;
+    psVar9 = psVar4 + 7;
     iVar3 = 0x100;
-    puVar6 = (undefined1 *)(DAT_0080679c + 0x29);
+    puVar5 = (undefined1 *)(DAT_0080679c + 0x29);
     do {
-      *(undefined1 *)((int)psVar10 + -1) = puVar6[1];
-      *(undefined1 *)psVar10 = *puVar6;
-      *(undefined1 *)((int)psVar10 + 1) = puVar6[-1];
-      psVar10 = psVar10 + 2;
+      *(undefined1 *)((int)psVar9 + -1) = puVar5[1];
+      *(undefined1 *)psVar9 = *puVar5;
+      *(undefined1 *)((int)psVar9 + 1) = puVar5[-1];
+      psVar9 = psVar9 + 2;
       iVar3 = iVar3 + -1;
-      puVar6 = puVar6 + 4;
+      puVar5 = puVar5 + 4;
     } while (iVar3 != 0);
     *(undefined1 *)((int)psVar4 + 0x409) = 0xff;
     *(undefined1 *)(psVar4 + 0x205) = 0xff;
     *(undefined1 *)((int)psVar4 + 0x40b) = 0xff;
-    pAVar7 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-    if (pAVar7 == (AnonShape_006DBCA0_EF06575F *)0x0) {
+    pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
+    if (pAVar6 == (AnonShape_006DBCA0_EF06575F *)0x0) {
       local_10 = (AnonShape_006DDD50_309FA381 *)0x0;
     }
     else {
-      local_10 = (AnonShape_006DDD50_309FA381 *)FUN_006dbca0(pAVar7);
+      local_10 = (AnonShape_006DDD50_309FA381 *)FUN_006dbca0(pAVar6);
     }
     this = local_10;
     if (local_10 == (AnonShape_006DDD50_309FA381 *)0x0) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,s_E____titans_tload_cpp_007a5fdc,0x48e);
     }
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
-    lVar15 = Library::MSVCRT::__ftol();
-    iVar3 = (int)lVar15;
+    lVar14 = Library::MSVCRT::__ftol();
+    iVar3 = (int)lVar14;
     local_30 = iVar3;
     FUN_006dc050((AnonShape_006DC050_D52EE3EA *)this,0,0,0,iVar3,iVar3,0,0xc0240000,0,0x40240000,0,
                  0xc0240000,0,0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
@@ -110,16 +111,16 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
           local_8 = local_c->count;
           local_c->iteratorIndex = 0;
           do {
-            uVar11 = local_c->iteratorIndex;
-            if (uVar11 < local_8) {
-              piVar8 = (int *)(local_c->elementSize * uVar11 + (int)local_c->data);
-              local_c->iteratorIndex = uVar11 + 1;
+            uVar10 = local_c->iteratorIndex;
+            if (uVar10 < local_8) {
+              piVar7 = (int *)(local_c->elementSize * uVar10 + (int)local_c->data);
+              local_c->iteratorIndex = uVar10 + 1;
             }
             else {
-              piVar8 = (int *)0x0;
+              piVar7 = (int *)0x0;
             }
-          } while ((piVar8 != (int *)0x0) && (puVar1[10] != *piVar8));
-          if (piVar8 == (int *)0x0) {
+          } while ((piVar7 != (int *)0x0) && (puVar1[10] != *piVar7));
+          if (piVar7 == (int *)0x0) {
             local_8 = (uint)*(short *)(puVar1 + 1);
             local_28 = (int)*(short *)((int)puVar1 + 6);
             *(undefined2 *)(puVar1 + 1) = 0;
@@ -131,25 +132,25 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             this->field_013C = this->field_013C + 1;
             FUN_006ddbe0((AnonShape_006DDBE0_9835BAB9 *)this);
             FUN_006ddd50(this);
-            uVar13 = iVar3 * iVar3;
+            uVar12 = iVar3 * iVar3;
             this->field_0140 = 0;
             this->field_013C = 0;
             *(undefined2 *)((int)puVar1 + 6) = (undefined2)local_28;
             *(undefined2 *)(puVar1 + 1) = (undefined2)local_8;
             local_24 = puVar1[10];
             *(undefined2 *)(puVar1 + 2) = (undefined2)local_2c;
-            local_20 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar13);
-            puVar12 = (undefined4 *)this->field_000C;
-            puVar14 = local_20;
-            for (uVar11 = uVar13 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-              *puVar14 = *puVar12;
-              puVar12 = puVar12 + 1;
-              puVar14 = puVar14 + 1;
+            local_20 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar12);
+            puVar11 = (undefined4 *)this->field_000C;
+            puVar13 = local_20;
+            for (uVar10 = uVar12 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+              *puVar13 = *puVar11;
+              puVar11 = puVar11 + 1;
+              puVar13 = puVar13 + 1;
             }
-            for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-              *(undefined1 *)puVar14 = *(undefined1 *)puVar12;
-              puVar12 = (undefined4 *)((int)puVar12 + 1);
-              puVar14 = (undefined4 *)((int)puVar14 + 1);
+            for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+              *(undefined1 *)puVar13 = *(undefined1 *)puVar11;
+              puVar11 = (undefined4 *)((int)puVar11 + 1);
+              puVar13 = (undefined4 *)((int)puVar13 + 1);
             }
             puVar1[0x10] = local_20;
             Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_24);
@@ -157,7 +158,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             iVar3 = local_30;
           }
           else {
-            puVar1[0x10] = piVar8[1];
+            puVar1[0x10] = piVar7[1];
           }
         }
         local_18 = local_18 + 1;
@@ -169,7 +170,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
       FUN_006dbcf0((int *)this);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this);
     }
-    FUN_006ae110((byte *)local_c);
+    DArrayDestroy(local_c);
     thunk_FUN_00428e50(psVar4);
     LandInit(psVar4);
     if (PTR_00802a58 != (cLoadingTy *)0x0) {
@@ -179,9 +180,9 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     return psVar4;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_tload_cpp_007a5fdc,0x502,0,iVar3,&DAT_007a4ccc,
+  iVar8 = ReportDebugMessage(s_E____titans_tload_cpp_007a5fdc,0x502,0,iVar3,&DAT_007a4ccc,
                              s_LoadLand_007a5ff8);
-  if (iVar9 == 0) {
+  if (iVar8 == 0) {
     RaiseInternalException(iVar3,0,s_E____titans_tload_cpp_007a5fdc,0x503);
     return (short *)0x0;
   }

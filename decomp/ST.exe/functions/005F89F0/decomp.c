@@ -21,14 +21,14 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
   if (iVar4 < 0) {
     iVar4 = 0;
   }
-  if (SHORT_007fb240 <= iVar4) {
-    iVar4 = SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX <= iVar4) {
+    iVar4 = g_worldGrid.sizeX + -1;
   }
   if (iVar5 < 0) {
     iVar5 = 0;
   }
-  if (SHORT_007fb242 <= iVar5) {
-    iVar5 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY <= iVar5) {
+    iVar5 = g_worldGrid.sizeY + -1;
   }
   param_1 = *(int *)((int)this + 0x285);
   while( true ) {
@@ -37,12 +37,12 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
     sVar8 = (short)param_1;
     bVar2 = thunk_FUN_004961b0(sVar6,sVar7,sVar8);
     if ((CONCAT31(extraout_var,bVar2) != 0) &&
-       (((((sVar6 < 0 || (SHORT_007fb240 <= sVar6)) || (sVar7 < 0)) ||
-         ((SHORT_007fb242 <= sVar7 || (sVar8 < 0)))) ||
-        ((SHORT_007fb244 <= sVar8 ||
-         (g_worldCells
-          [(int)sVar8 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar7 + (int)sVar6].objects
-          [0] == (STWorldObject *)0x0)))))) break;
+       (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar7 < 0)) ||
+         ((g_worldGrid.sizeY <= sVar7 || (sVar8 < 0)))) ||
+        ((g_worldGrid.sizeZ <= sVar8 ||
+         (g_worldGrid.cells
+          [(int)sVar8 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar7 +
+           (int)sVar6].objects[0] == (STWorldObject *)0x0)))))) break;
     param_1 = param_1 + 1;
     if ((4 < param_1) || (*(int *)((int)this + 0x285) + 2 < param_1)) break;
   }

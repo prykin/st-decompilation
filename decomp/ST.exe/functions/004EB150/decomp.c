@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
   if ((uVar4 >> 0x10) % 0x385 + 0x834 + g_playerRuntime[param_1].field2158_0x9c2 <=
       (uint)PTR_00802a38->field_00E4) {
     g_playerRuntime[param_1].field2158_0x9c2 = PTR_00802a38->field_00E4;
-    iVar5 = thunk_FUN_004406c0((char)param_1);
+    iVar5 = GetPlayerRaceId((char)param_1);
     if ((char)iVar5 != '\x03') {
       if (((uint)PTR_00802a38->field_00E4 < 30000) ||
          (0 < (int)g_playerRuntime[param_1].field2159_0x9c6)) {

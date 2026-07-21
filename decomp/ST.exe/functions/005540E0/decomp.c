@@ -50,7 +50,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
           ccFntTy::operator(this_01,(uint *)local_8[2]);
           local_8[2] = 0;
         }
-        FUN_006ab060(&local_8);
+        FreeAndNull(&local_8);
       }
       RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x41);
       return (uint *)0x0;

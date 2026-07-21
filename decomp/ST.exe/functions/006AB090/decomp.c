@@ -826,7 +826,7 @@ LAB_006acc47:
   if (sVar4 < 0) {
     *local_48 = sVar4;
   }
-  FUN_006ab060(&local_38);
+  FreeAndNull(&local_38);
   return local_4c;
 }
 

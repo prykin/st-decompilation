@@ -27,15 +27,15 @@ void __fastcall FUN_006e52d0(AnonShape_006E52D0_AF06BCD2 *param_1)
       iVar1 = *(int *)(iVar3 + 0xc);
     }
     param_1->field_000C = 0;
-    FUN_006ae110((byte *)param_1->field_0010);
+    DArrayDestroy((DArrayTy *)param_1->field_0010);
     param_1->field_0010 = 0;
   }
-  if ((byte *)param_1->field_0004 != (byte *)0x0) {
-    FUN_006ae110((byte *)param_1->field_0004);
+  if ((DArrayTy *)param_1->field_0004 != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)param_1->field_0004);
     param_1->field_0004 = 0;
   }
-  if ((byte *)param_1->field_0008 != (byte *)0x0) {
-    FUN_006ae110((byte *)param_1->field_0008);
+  if ((DArrayTy *)param_1->field_0008 != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)param_1->field_0008);
     param_1->field_0008 = 0;
   }
   return;

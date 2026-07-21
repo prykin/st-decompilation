@@ -9,7 +9,7 @@ void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
   code *pcVar1;
   AiTactClassTy *pAVar2;
   int errorCode;
-  undefined4 uVar3;
+  DArrayTy *pDVar3;
   int iVar4;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar5;
@@ -22,10 +22,10 @@ void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    if ((local_8->field_0130 != 0) && ((byte *)local_8->field_00BD != (byte *)0x0)) {
-      FUN_006ae110((byte *)local_8->field_00BD);
-      uVar3 = FUN_006b0060((uint *)0x0,(uint *)pAVar2->field_0130);
-      pAVar2->field_00BD = uVar3;
+    if ((local_8->field_0130 != 0) && (local_8->field_00BD != (DArrayTy *)0x0)) {
+      DArrayDestroy(local_8->field_00BD);
+      pDVar3 = (DArrayTy *)FUN_006b0060((uint *)0x0,(uint *)pAVar2->field_0130);
+      pAVar2->field_00BD = pDVar3;
     }
     g_currentExceptionFrame = pIVar5;
     return;

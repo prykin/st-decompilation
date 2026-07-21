@@ -11,7 +11,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  AnonShape_005E10A0_819783CC *pAVar4;
+  AnonShape_005E10A0_819783CC *value;
   InternalExceptionFrame local_48;
   
   local_48.previous = g_currentExceptionFrame;
@@ -24,11 +24,11 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
       }
       *(undefined4 *)param_1 = 0xffffffff;
       iVar2 = 3;
-      pAVar4 = param_1;
+      value = param_1;
       do {
-        pAVar4 = (AnonShape_005E10A0_819783CC *)&pAVar4->field_0x4;
-        if (*(int *)pAVar4 != 0) {
-          FUN_006ab060((LPVOID *)pAVar4);
+        value = (AnonShape_005E10A0_819783CC *)&value->field_0x4;
+        if (*(int *)value != 0) {
+          FreeAndNull((void **)value);
         }
         iVar2 = iVar2 + -1;
       } while (iVar2 != 0);
@@ -38,7 +38,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
         param_1->field_0031 = 0;
       }
       if (param_1->field_003A != 0) {
-        FUN_006ab060((LPVOID *)&param_1->field_003A);
+        FreeAndNull((void **)&param_1->field_003A);
       }
     }
     g_currentExceptionFrame = local_48.previous;

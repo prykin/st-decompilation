@@ -11,8 +11,8 @@ FUN_006d5cd0(void *this,undefined4 param_1,undefined4 param_2,undefined4 *param_
   *(undefined4 *)((int)this + 0x68) = 0;
   *(undefined4 *)((int)this + 0x70) = 0;
   *(undefined4 *)((int)this + 0x5c) = param_1;
-  *(undefined ***)this = &PTR_FUN_0079dd1c;
-  *(undefined ***)((int)this + 0xc) = &PTR_FUN_0079dcf8;
+  *(VTable_0079DD1C **)this = &VTable_0079DD1C;
+  *(VTable_0079DCF8 **)((int)this + 0xc) = &VTable_0079DCF8;
   return this;
 }
 

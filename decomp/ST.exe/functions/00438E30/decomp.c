@@ -63,8 +63,8 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   paSVar3 = local_8;
   if ((*local_8)[0].objectType != 0) {
     local_c = (undefined4 *)(param_1 * 0x10 + 0x7f5027 + iVar4);
-    if (*(byte **)((int)local_c + 10) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)((int)local_c + 10));
+    if (*(DArrayTy **)((int)local_c + 10) != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)((int)local_c + 10));
       *(undefined4 *)((int)local_c + 10) = 0;
       *local_c = 0;
     }

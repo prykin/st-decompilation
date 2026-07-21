@@ -8,7 +8,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   code *pcVar3;
   SettMapMTy *pSVar4;
   int errorCode;
@@ -19,10 +19,9 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
   int iVar9;
   DArrayTy *pDVar10;
   uint uVar11;
-  uint uVar12;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  bool bVar13;
+  bool bVar12;
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
@@ -45,14 +44,14 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
       }
       if (pvVar5 != (void *)0x0) {
         if (param_2 != 0) {
-          uVar12 = param_1 + 1;
+          uVar11 = param_1 + 1;
           *(byte *)((int)pvVar5 + 0x4a) = (byte)param_3;
           pDVar10 = local_c->field_1F84;
-          bVar13 = uVar12 < pDVar10->count;
-          if ((int)uVar12 < (int)pDVar10->count) {
+          bVar12 = uVar11 < pDVar10->count;
+          if ((int)uVar11 < (int)pDVar10->count) {
             do {
-              if (bVar13) {
-                pcVar6 = (char *)(pDVar10->elementSize * uVar12 + (int)pDVar10->data);
+              if (bVar12) {
+                pcVar6 = (char *)(pDVar10->elementSize * uVar11 + (int)pDVar10->data);
               }
               else {
                 pcVar6 = (char *)0x0;
@@ -60,9 +59,9 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
               if ((pcVar6 == (char *)0x0) || (*pcVar6 != '\0')) break;
               pcVar6[0x4a] = (byte)param_3;
               pDVar10 = local_c->field_1F84;
-              uVar12 = uVar12 + 1;
-              bVar13 = uVar12 < pDVar10->count;
-            } while ((int)uVar12 < (int)pDVar10->count);
+              uVar11 = uVar11 + 1;
+              bVar12 = uVar11 < pDVar10->count;
+            } while ((int)uVar11 < (int)pDVar10->count);
           }
           (*(code *)local_c->field_0000->field_002C)();
           pSVar4->field_2121 = pSVar4->field_2121 + 1;
@@ -81,23 +80,18 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
               }
               else {
                 uVar8 = param_3 & 0xff;
-                uVar12 = (uint)bVar1;
-                cVar2 = *(char *)((int)&DAT_00808a4f + uVar8 * 8 + uVar12);
+                bVar2 = g_playerRelationMatrix[uVar8][bVar1];
                 uVar11 = local_8;
-                if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\0'))
-                {
+                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar8] == 0)) {
                   uVar7 = 0xfffffffe;
                 }
-                else if ((cVar2 == '\x01') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\0')) {
+                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][uVar8] == 0)) {
                   uVar7 = 0xffffffff;
                 }
-                else if ((cVar2 == '\0') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\x01')) {
+                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar8] == 1)) {
                   uVar7 = 1;
                 }
-                else if ((cVar2 == '\x01') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar12 * 8 + uVar8) == '\x01')) {
+                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][uVar8] == 1)) {
                   uVar7 = 2;
                 }
                 else {

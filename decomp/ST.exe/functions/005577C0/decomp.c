@@ -1,61 +1,66 @@
 
-undefined4 * __fastcall FUN_005577c0(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079AEEC (store 005577C9)
+   Evidence: final_vptr=0079AEEC; returns_this=true; calls_before=1; field_writes_after=21;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
+
+undefined4 * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
 
 {
   undefined4 uVar1;
   int iVar2;
   undefined4 *puVar3;
   
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)param_1);
-  *param_1 = &PTR_LAB_0079aeec;
-  g_visibleClass_00802A88 = (VisibleClassTy *)param_1;
-  param_1[9] = 0;
-  param_1[8] = 0;
-  param_1[0xb] = 0;
-  param_1[10] = 0;
-  param_1[0xd] = 0;
-  param_1[0xc] = 0;
-  param_1[0x41] = 1;
-  param_1[0xe] = 0;
-  param_1[0x13] = 0;
-  param_1[0x14] = 0;
-  puVar3 = param_1 + 0x15;
+  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  this->vtable = &VisibleClassTyVTable;
+  g_visibleClass_00802A88 = this;
+  this->field_0024 = 0;
+  this->field_0020 = 0;
+  this->field_002C = 0;
+  this->field_0028 = 0;
+  this->field_0034 = 0;
+  this->field_0030 = 0;
+  this->field_0104 = 1;
+  this->field_0038 = 0;
+  this->field_004C = 0;
+  this->field_0050 = 0;
+  puVar3 = (undefined4 *)&this->field_0x54;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  puVar3 = param_1 + 0x1d;
+  puVar3 = (undefined4 *)&this->field_0x74;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  puVar3 = param_1 + 0x25;
+  puVar3 = (undefined4 *)&this->field_0x94;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  param_1[0xf] = 0;
-  param_1[0x10] = 0;
-  param_1[0x11] = 0;
-  param_1[0x12] = 0;
-  param_1[0x3d] = 0;
-  param_1[0x44] = 0;
-  param_1[0x45] = 0;
-  param_1[0x3e] = 1;
-  puVar3 = param_1 + 0x46;
+  this->field_003C = 0;
+  *(undefined4 *)&this->field_0x40 = 0;
+  *(undefined4 *)&this->field_0x44 = 0;
+  *(undefined4 *)&this->field_0x48 = 0;
+  this->field_00F4 = (DArrayTy *)0x0;
+  this->field_0110 = (DArrayTy *)0x0;
+  this->field_0114 = 0;
+  this->field_00F8 = 1;
+  puVar3 = &this->field_0118;
   for (iVar2 = 0x30; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  puVar3 = param_1 + 0x76;
+  puVar3 = &this->field_01D8;
   for (iVar2 = 0x30; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  param_1[0x3f] = 0;
-  param_1[0x40] = 0;
+  this->field_00FC = 0;
+  this->field_0100 = 0;
   uVar1 = thunk_FUN_004ab050();
-  param_1[0x43] = uVar1;
-  return param_1;
+  this->field_010C = uVar1;
+  return &this->vtable;
 }
 

@@ -15,7 +15,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char *pcVar7;
-  AnonShape_006B84D0_7C7D97C6 *pAVar8;
+  AnonShape_006B5B10_E0D06CF1 *pAVar8;
   int iVar9;
   int iVar10;
   InternalExceptionFrame local_70;
@@ -67,7 +67,8 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
             if (*pcVar7 != '\0') {
               iVar9 = local_28;
             }
-            pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,(int)(pcVar7 + iVar9));
+            pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+                                          (int)(pcVar7 + iVar9));
             cVar3 = '\x06';
             iVar9 = local_10;
             goto LAB_00500689;
@@ -76,10 +77,11 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           if (*pcVar7 == '\0') {
             iVar9 = local_2c;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,(int)(pcVar7 + iVar9));
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+                                        (int)(pcVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          pAVar8 = (AnonShape_006B84D0_7C7D97C6 *)(&pCVar2->field_0180)[local_8 & 0xff];
+          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)(&pCVar2->field_0180)[local_8 & 0xff];
         }
         else {
           if (*pcVar7 == '\0') {
@@ -88,12 +90,13 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           else {
             uVar6 = -(uint)(local_c[2] != '\x01') & 3;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,uVar6);
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+                                        uVar6);
           cVar3 = '\x01';
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          pAVar8 = (AnonShape_006B84D0_7C7D97C6 *)(&pCVar2->field_0180)[local_8 & 0xff];
+          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)(&pCVar2->field_0180)[local_8 & 0xff];
         }
         DibPut(pAVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;

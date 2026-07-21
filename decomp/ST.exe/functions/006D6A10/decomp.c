@@ -23,7 +23,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   int local_28;
   int local_24;
   RECT local_20;
-  void *local_10;
+  AnonReceiver_006CEC40 *local_10;
   int local_c;
   int local_8;
   
@@ -55,9 +55,11 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     iVar9 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this = local_10;
     if (iVar9 == 0) {
-      iVar9 = FUN_006d63e0(local_10,param_1);
+      iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
+                        (local_10,param_1);
       local_8 = iVar9;
-      Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)((int)this + 0x288) + 0x28),0,0);
+      Library::DKW::DDX::FUN_006bb370
+                (*(int *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x28),0,0);
       g_currentExceptionFrame = local_98.previous;
     }
     else {
@@ -143,7 +145,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         iVar9 = Library::MSVCRT::__setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
         this = local_10;
         if (iVar9 == 0) {
-          Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)((int)local_10 + 0x288) + 0x28),0,0);
+          Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)&local_10->field_0x288 + 0x28),0,0);
           g_currentExceptionFrame = local_dc.previous;
           iVar9 = local_8;
         }
@@ -216,15 +218,15 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     }
   }
   DVar6 = timeGetTime();
-  iVar3 = *(int *)((int)this + 0x288);
+  iVar3 = *(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288;
   if (3 < *(uint *)(iVar3 + 0xe8)) {
     uVar8 = DVar6 - *(int *)(iVar3 + 0xec);
     *(uint *)(iVar3 + 0xfc) = *(int *)(iVar3 + 0xfc) + uVar8;
-    if (uVar8 < *(uint *)(*(int *)((int)this + 0x288) + 0x100)) {
-      *(uint *)(*(int *)((int)this + 0x288) + 0x100) = uVar8;
+    if (uVar8 < *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x100)) {
+      *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x100) = uVar8;
     }
-    if (*(uint *)(*(int *)((int)this + 0x288) + 0x104) < uVar8) {
-      *(uint *)(*(int *)((int)this + 0x288) + 0x104) = uVar8;
+    if (*(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x104) < uVar8) {
+      *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x104) = uVar8;
     }
   }
   return iVar9;

@@ -1,4 +1,4 @@
-FUN_004db160:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::FUN_004db160:
 004DB160  55                        PUSH EBP
 004DB161  8B EC                     MOV EBP,ESP
 004DB163  83 EC 5C                  SUB ESP,0x5c
@@ -461,7 +461,7 @@ LAB_004db683:
 LAB_004db68a:
 004DB68A  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 004DB68D  89 7D 18                  MOV dword ptr [EBP + 0x18],EDI
-FUN_004db160::cf_common_join_004DB690:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::FUN_004db160::cf_common_join_004DB690:
 004DB690  8B 56 24                  MOV EDX,dword ptr [ESI + 0x24]
 004DB693  8B 75 1C                  MOV ESI,dword ptr [EBP + 0x1c]
 004DB696  85 C9                     TEST ECX,ECX

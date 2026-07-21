@@ -31,7 +31,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
     local_24 = *(int *)(&DAT_007dfbac + param_2 * 4);
   }
   else {
-    uVar4 = thunk_FUN_004406c0(param_1);
+    uVar4 = GetPlayerRaceId(param_1);
     local_24 = *(int *)(&DAT_007e3f20 + ((uVar4 & 0xff) + param_2 * 3) * 4);
   }
   local_34 = 0;
@@ -67,12 +67,13 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
           }
           param_2 = iVar5 + param_4;
         }
-        if (((((-1 < iVar6) && (iVar6 < SHORT_007fb240)) && (-1 < param_2)) &&
-            ((param_2 < SHORT_007fb242 &&
+        if (((((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
+            ((param_2 < g_worldGrid.sizeY &&
              (iVar5 = FUN_006aced8(param_3,param_4,iVar6,param_2), iVar5 <= DAT_007951b0 / 0xc9))))
-           && (local_2c = 0, 0 < SHORT_007fb244)) {
+           && (local_2c = 0, 0 < g_worldGrid.sizeZ)) {
           do {
-            this = g_worldCells[SHORT_007fb240 * param_2 + iVar6 + SHORT_007fb246 * local_2c].
+            this = g_worldGrid.cells
+                   [g_worldGrid.sizeX * param_2 + iVar6 + g_worldGrid.planeStride * local_2c].
                    objects[0];
             if ((((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                 && ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
@@ -128,7 +129,7 @@ LAB_004b2fd4:
               }
             }
             local_2c = local_2c + 1;
-          } while (local_2c < SHORT_007fb244);
+          } while (local_2c < g_worldGrid.sizeZ);
         }
         local_30 = local_30 + 1;
       } while (local_30 < local_10);

@@ -1,4 +1,4 @@
-FUN_006788b0:
+AiPlrClassTy::AiPlrClassTy:
 006788B0  56                        PUSH ESI
 006788B1  57                        PUSH EDI
 006788B2  8B F1                     MOV ESI,ECX

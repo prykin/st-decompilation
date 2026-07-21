@@ -11,16 +11,16 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
   sVar2 = param_1->field_0049;
   sVar3 = param_1->field_004B;
   param_1->field_024E = 0;
-  if ((((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar2 < 0)) ||
-       ((SHORT_007fb242 <= sVar2 || (sVar3 < 0)))) ||
-      ((SHORT_007fb244 <= sVar3 ||
-       (g_worldCells
-        [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1].objects
-        [0] == (STWorldObject *)0x0)))) &&
+  if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
+       ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
+      ((g_worldGrid.sizeZ <= sVar3 ||
+       (g_worldGrid.cells
+        [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
+         (int)sVar1].objects[0] == (STWorldObject *)0x0)))) &&
      (iVar4 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)param_1),
      iVar4 == 0)) {
     param_1->field_0252 = param_1->field_0252 + '\x01';
-    thunk_FUN_005f06e0((AnonShape_005F06E0_7D4D7384 *)param_1);
+    thunk_FUN_005f06e0((AnonShape_005F0620_60AA17CE *)param_1);
     sVar1 = param_1->field_0047;
     sVar2 = param_1->field_0049;
     param_1->field_0246 = param_1->field_004B;

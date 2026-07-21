@@ -31,11 +31,12 @@ bool __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *par
       sVar1 = *(short *)((int)this + 0x673) + 1;
       sVar5 = sVar6 + *(short *)((int)this + 0x671);
       sVar3 = sVar2 + *(short *)((int)this + 0x66f);
-      if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
-           ((sVar5 < 0 || ((SHORT_007fb242 <= sVar5 || (sVar1 < 0)))))) || (SHORT_007fb244 <= sVar1)
-          ) || (g_worldCells
-                [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar3].
-                objects[0] == (STWorldObject *)0x0)) {
+      if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
+           ((sVar5 < 0 || ((g_worldGrid.sizeY <= sVar5 || (sVar1 < 0)))))) ||
+          (g_worldGrid.sizeZ <= sVar1)) ||
+         (g_worldGrid.cells
+          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar5 +
+           (int)sVar3].objects[0] == (STWorldObject *)0x0)) {
         iVar4 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),iVar4,
                              *(short *)((int)this + 0x671) + iVar7,*(short *)((int)this + 0x673) + 1

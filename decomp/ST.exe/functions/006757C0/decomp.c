@@ -13,12 +13,12 @@ FUN_006757c0(short *param_1,short *param_2,short *param_3,short *param_4,short *
   int iVar7;
   int iVar8;
   
-  sVar2 = SHORT_007fb244;
-  sVar1 = SHORT_007fb242;
-  sVar4 = SHORT_007fb240;
-  iVar7 = (int)SHORT_007fb244;
-  iVar5 = (int)SHORT_007fb242;
-  iVar8 = (int)SHORT_007fb240;
+  sVar2 = g_worldGrid.sizeZ;
+  sVar1 = g_worldGrid.sizeY;
+  sVar4 = g_worldGrid.sizeX;
+  iVar7 = (int)g_worldGrid.sizeZ;
+  iVar5 = (int)g_worldGrid.sizeY;
+  iVar8 = (int)g_worldGrid.sizeX;
   if (*param_1 < 0) {
     *param_1 = 0;
   }

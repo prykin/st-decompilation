@@ -2,7 +2,11 @@
 /* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::CmdToPlsObj */
+   STAllPlayersC::CmdToPlsObj
+   
+   [STTypeFamilyApplier] RETURN_TO_LOCAL_FAMILY.
+   Evidence: direct call return copied through registers into this script-owned anonymous stack
+   local */
 
 void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand *command)
 
@@ -10,19 +14,18 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   ushort uVar1;
   ushort uVar2;
   short sVar3;
-  AiPlrClassTy *pAVar4;
-  STControlCommandPayload *pSVar5;
-  code *pcVar6;
-  uint uVar7;
-  void *this_00;
-  uint *puVar8;
+  STControlCommandPayload *pSVar4;
+  code *pcVar5;
+  uint uVar6;
+  STGameObjC *pSVar7;
+  DArrayTy *pDVar8;
+  STGroupBoatC *extraout_EAX;
   STGroupBoatC *pSVar9;
-  DArrayTy *pDVar10;
-  AnonShape_006ACC70_C8641025 *groupContent;
-  int *this_01;
-  undefined4 *puVar11;
-  STWorldObject *pSVar12;
-  undefined4 uVar13;
+  STGroupBoatC *extraout_EAX_00;
+  undefined4 *puVar10;
+  STWorldObject *pSVar11;
+  undefined4 uVar12;
+  uint uVar13;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
   undefined4 extraout_ECX_01;
@@ -40,14 +43,15 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
   uint extraout_EDX_03;
-  uint uVar16;
   undefined4 extraout_EDX_04;
+  short sVar16;
   short sVar17;
-  short sVar18;
   int unaff_EDI;
-  undefined4 *puVar19;
+  undefined4 *puVar18;
+  AiPlrClassTy *pAVar19;
   byte bVar20;
-  dword dVar21;
+  DArrayTy *pDVar21;
+  dword dVar22;
   undefined4 local_1fc;
   int local_1f6;
   undefined4 local_1b8 [17];
@@ -87,10 +91,8 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   STPosition16 orderPosition13;
   STPosition16 orderPosition12;
   STGroupBoatOrderData11 orderData11;
-  undefined1 local_8c [16];
-  undefined4 local_7c;
-  undefined4 local_78;
-  uint *local_74;
+  AnonShape_0041AF40_F59F8577 local_8c;
+  DArrayTy *local_74;
   DArrayTy *local_6c;
   STControlCommandPayload *local_68;
   STPackedValue32 local_64;
@@ -101,9 +103,9 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   int local_3c;
   uint local_38;
   DArrayTy *local_34;
-  DArrayTy *local_30;
+  AiPlrClassTy *local_30;
   DArrayTy *local_2c;
-  DArrayTy *local_28;
+  uint local_28;
   int local_24;
   STAllPlayersC *local_20;
   uint local_1c;
@@ -112,51 +114,50 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   undefined2 local_16;
   STPosition16 targetPosition;
   DArrayTy *local_c;
-  AnonShape_00436F20_BB207B3A *local_8;
+  STGameObjC *local_8;
   
   objPtr = CONCAT31((int3)((uint)in_EDX >> 8),command->playerId);
-  sVar18 = command->objectId;
-  uVar16 = CONCAT22((short)((uint)this >> 0x10),sVar18);
-  local_8 = (AnonShape_00436F20_BB207B3A *)0x0;
-  uVar7._0_2_ = command->objectId;
-  uVar7._2_2_ = command->targetKind;
-  uVar7 = uVar7 >> 0x10;
-  pAVar4 = g_playerRuntime[command->playerId].aiPlayer;
-  local_38 = uVar16;
-  local_30 = (DArrayTy *)pAVar4;
+  sVar17 = command->objectId;
+  uVar13 = CONCAT22((short)((uint)this >> 0x10),sVar17);
+  local_8 = (STGameObjC *)0x0;
+  uVar6._0_2_ = command->objectId;
+  uVar6._2_2_ = command->targetKind;
+  uVar6 = uVar6 >> 0x10;
+  pAVar19 = g_playerRuntime[command->playerId].aiPlayer;
+  local_38 = uVar13;
+  local_30 = pAVar19;
   local_20 = this;
-  if (uVar7 != 0) {
-    if (uVar7 != 1) {
-      if (uVar7 != 2) {
+  if (uVar6 != 0) {
+    if (uVar6 != 1) {
+      if (uVar6 != 2) {
         return;
       }
-      if (sVar18 == -1) {
+      if (sVar17 == -1) {
         return;
       }
-      this_00 = (void *)GetObjPtr(g_sTAllPlayers_007FA174,objPtr,uVar16,CASE_3);
-      if (this_00 == (void *)0x0) {
+      pSVar7 = GetObjPtr(g_sTAllPlayers_007FA174,objPtr,uVar13,CASE_3);
+      if (pSVar7 == (STGameObjC *)0x0) {
         return;
       }
       if (command->commandType != 0x15) {
         if (command->commandType != 0x2a) {
           return;
         }
-        thunk_FUN_006270e0(this_00,0x2a,(undefined1 *)command);
+        thunk_FUN_006270e0(pSVar7,0x2a,(undefined1 *)command);
         return;
       }
       local_24 = 4 - (uint)(command->payload->packed).variant;
-      thunk_FUN_006270e0(this_00,0x15,(undefined1 *)&local_24);
+      thunk_FUN_006270e0(pSVar7,0x15,(undefined1 *)&local_24);
       return;
     }
-    if (sVar18 == -1) {
+    if (sVar17 == -1) {
       return;
     }
-    local_8 = (AnonShape_00436F20_BB207B3A *)GetObjPtr(g_sTAllPlayers_007FA174,objPtr,uVar16,CASE_1)
-    ;
-    if (local_8 == (AnonShape_00436F20_BB207B3A *)0x0) {
+    local_8 = GetObjPtr(g_sTAllPlayers_007FA174,objPtr,uVar13,CASE_1);
+    if (local_8 == (STGameObjC *)0x0) {
       return;
     }
-    local_7c = 0x4401;
+    local_8c.field_0010 = 0x4401;
     switch(command->commandType) {
     case 8:
     case 9:
@@ -177,216 +178,221 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
       return;
     case 0x14:
       local_68 = command->payload;
-      sVar18 = *(short *)((int)&(local_68->packed).value_01.words.high + 1);
+      sVar17 = *(short *)((int)&(local_68->packed).value_01.words.high + 1);
       uVar1 = *(ushort *)local_68;
       local_34 = (DArrayTy *)(uint)uVar1;
       uVar2 = *(ushort *)((int)&(local_68->packed).value_05.words.high + 1);
       local_2c = (DArrayTy *)(uint)uVar2;
-      local_6c = (DArrayTy *)(int)sVar18;
-      local_30 = (DArrayTy *)(int)(short)uVar2;
+      local_6c = (DArrayTy *)(int)sVar17;
+      local_30 = (AiPlrClassTy *)(int)(short)uVar2;
       iVar15 = (int)(short)uVar1;
-      if ((*(short *)(DAT_007fb280 +
-                     ((int)SHORT_007fb27e * (int)local_30 + iVar15 +
-                     (int)SHORT_007fb278 * (int)local_6c) * 2) != 0) &&
-         ((((((((short)uVar1 < 0 || (SHORT_007fb240 <= (short)uVar1)) || (sVar18 < 0)) ||
-             ((SHORT_007fb242 <= sVar18 || ((short)uVar2 < 0)))) || (SHORT_007fb244 <= (short)uVar2)
-            ) || (g_worldCells
-                  [(int)SHORT_007fb240 * (int)local_6c +
-                   iVar15 + (int)SHORT_007fb246 * (int)local_30].objects[0] == (STWorldObject *)0x0)
-           ) && (local_28 = local_2c, (short)uVar2 < 5)))) {
+      if ((g_pathingGrid.cells
+           [(int)g_pathingGrid.planeStride * (int)local_30 + iVar15 +
+            (int)g_pathingGrid.sizeX * (int)local_6c] != 0) &&
+         ((((((((short)uVar1 < 0 || (g_worldGrid.sizeX <= (short)uVar1)) || (sVar17 < 0)) ||
+             ((g_worldGrid.sizeY <= sVar17 || ((short)uVar2 < 0)))) ||
+            (g_worldGrid.sizeZ <= (short)uVar2)) ||
+           (g_worldGrid.cells
+            [(int)g_worldGrid.sizeX * (int)local_6c +
+             iVar15 + (int)g_worldGrid.planeStride * (int)local_30].objects[0] ==
+            (STWorldObject *)0x0)) && (local_28 = (uint)local_2c, (short)uVar2 < 5)))) {
         while( true ) {
-          sVar17 = (short)local_28;
-          if (*(short *)(DAT_007fb280 +
-                        ((int)SHORT_007fb27e * (int)sVar17 + iVar15 +
-                        (int)SHORT_007fb278 * (int)local_6c) * 2) == 0) break;
-          if (((((-1 < (short)uVar1) && ((short)uVar1 < SHORT_007fb240)) &&
-               ((-1 < sVar18 &&
-                (((sVar18 < SHORT_007fb242 && (-1 < sVar17)) && (sVar17 < SHORT_007fb244)))))) &&
-              (g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar17 + iVar15 + (int)SHORT_007fb240 * (int)sVar18].
-               objects[0] != (STWorldObject *)0x0)) ||
-             (local_28 = (DArrayTy *)((int)&local_28->flags + 1), 4 < (short)local_28))
-          goto cf_common_exit_00437191;
+          sVar16 = (short)local_28;
+          if (g_pathingGrid.cells
+              [(int)g_pathingGrid.planeStride * (int)sVar16 + iVar15 +
+               (int)g_pathingGrid.sizeX * (int)local_6c] == 0) break;
+          if (((((-1 < (short)uVar1) && ((short)uVar1 < g_worldGrid.sizeX)) &&
+               ((-1 < sVar17 &&
+                (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ))))))
+              && (g_worldGrid.cells
+                  [(int)g_worldGrid.planeStride * (int)sVar16 +
+                   iVar15 + (int)g_worldGrid.sizeX * (int)sVar17].objects[0] != (STWorldObject *)0x0
+                 )) || (local_28 = local_28 + 1, 4 < (short)local_28)) goto cf_common_exit_00437191;
         }
-        *(int *)((int)&(local_68->packed).value_05 + 3) = (int)sVar17;
+        *(int *)((int)&(local_68->packed).value_05 + 3) = (int)sVar16;
       }
 cf_common_exit_00437191:
-      local_78 = command;
-      (*(code *)**(undefined4 **)local_8)(local_8c);
+      local_8c.field_0014 = &command->unknown_00;
+      (*local_8->vtable->GetMessage)(local_8,&local_8c);
       return;
     case 0x29:
       if ((command->payload->packed).variant == 0) {
-        if (pAVar4 == (AiPlrClassTy *)0x0) {
+        if (pAVar19 == (AiPlrClassTy *)0x0) {
           return;
         }
-        puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_38);
-        local_78 = (STControlCommand *)((uint)local_78._2_2_ << 0x10);
+        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,&local_38);
+        local_8c.field_0014 = (undefined4 *)((uint)local_8c.field_0014._2_2_ << 0x10);
       }
       else {
-        if (pAVar4 == (AiPlrClassTy *)0x0) {
+        if (pAVar19 == (AiPlrClassTy *)0x0) {
           return;
         }
-        puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_38);
-        local_78 = (STControlCommand *)CONCAT22(local_78._2_2_,1);
+        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,&local_38);
+        local_8c.field_0014 = (undefined4 *)CONCAT22(local_8c.field_0014._2_2_,1);
       }
-      local_7c = 0x5d98;
-      local_74 = puVar8;
-      (*(code *)**(undefined4 **)&pAVar4->field_0x0)(local_8c);
-      FUN_006ae110((byte *)puVar8);
+      local_8c.field_0010 = 0x5d98;
+      local_74 = pDVar8;
+      (*(code *)**(undefined4 **)pAVar19)(&local_8c);
+      DArrayDestroy(pDVar8);
       return;
     }
   }
-  if (sVar18 == -1) {
+  if (sVar17 == -1) {
     return;
   }
-  local_1c = uVar16;
+  local_1c = uVar13;
   if (command->commandType == 0x17) {
-    pSVar5 = command->payload;
-    switch((pSVar5->packed).variant) {
+    pSVar4 = command->payload;
+    switch((pSVar4->packed).variant) {
     case 0x11:
       if (command->secondaryPayloadSize == 0) {
-        pSVar9 = thunk_FUN_0042b760(objPtr,uVar16);
+        pSVar9 = thunk_FUN_0042b760(objPtr,uVar13);
         if (pSVar9 == (STGroupBoatC *)0x0) {
           return;
         }
         local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
-        uVar7 = extraout_ECX_04;
+        uVar6 = extraout_ECX_04;
       }
       else {
-        dVar21 = command->primaryPayloadSize;
+        dVar22 = command->primaryPayloadSize;
         local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        sVar18 = 0;
-        uVar7 = extraout_ECX_03;
+        sVar17 = 0;
+        uVar6 = extraout_ECX_03;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      ((uint *)local_c,(undefined4 *)((int)pSVar5 + sVar18 * 2 + dVar21));
-            sVar18 = sVar18 + 1;
-            uVar7 = command->secondaryPayloadSize >> 1;
-          } while (sVar18 < (short)uVar7);
+                      ((uint *)local_c,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar22));
+            sVar17 = sVar17 + 1;
+            uVar6 = command->secondaryPayloadSize >> 1;
+          } while (sVar17 < (short)uVar6);
         }
       }
-      thunk_FUN_0044cdb0(CONCAT31((int3)(uVar7 >> 8),command->playerId),local_c,
+      thunk_FUN_0044cdb0(CONCAT31((int3)(uVar6 >> 8),command->playerId),local_c,
                          (command->payload->packed).value_1d);
-      FUN_006ae110((byte *)local_c);
+      DArrayDestroy(local_c);
       return;
     case 0x15:
       if (command->secondaryPayloadSize == 0) {
-        pSVar9 = thunk_FUN_0042b760(objPtr,uVar16);
+        pSVar9 = thunk_FUN_0042b760(objPtr,uVar13);
         if (pSVar9 == (STGroupBoatC *)0x0) {
           return;
         }
-        puVar8 = STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
-        uVar13 = extraout_ECX_01;
+        pDVar8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
+        uVar12 = extraout_ECX_01;
       }
       else {
-        dVar21 = command->primaryPayloadSize;
-        puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        sVar18 = 0;
-        uVar13 = extraout_ECX;
+        dVar22 = command->primaryPayloadSize;
+        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        sVar17 = 0;
+        uVar12 = extraout_ECX;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      (puVar8,(undefined4 *)((int)pSVar5 + sVar18 * 2 + dVar21));
-            sVar18 = sVar18 + 1;
-            uVar13 = extraout_ECX_00;
-          } while (sVar18 < (short)(command->secondaryPayloadSize >> 1));
+                      ((uint *)pDVar8,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar22));
+            sVar17 = sVar17 + 1;
+            uVar12 = extraout_ECX_00;
+          } while (sVar17 < (short)(command->secondaryPayloadSize >> 1));
         }
       }
-      thunk_FUN_0044cc90(CONCAT31((int3)((uint)uVar13 >> 8),command->playerId),puVar8,1);
-      thunk_FUN_0044cd20(CONCAT31((int3)((uint)extraout_EDX >> 8),command->playerId),puVar8,0);
-      FUN_006ae110((byte *)puVar8);
+      thunk_FUN_0044cc90(CONCAT31((int3)((uint)uVar12 >> 8),command->playerId),&pDVar8->flags,1);
+      thunk_FUN_0044cd20(CONCAT31((int3)((uint)extraout_EDX >> 8),command->playerId),&pDVar8->flags,
+                         0);
+      DArrayDestroy(pDVar8);
       return;
     case 0x16:
       if (command->secondaryPayloadSize == 0) {
-        pSVar9 = thunk_FUN_0042b760(objPtr,uVar16);
+        pSVar9 = thunk_FUN_0042b760(objPtr,uVar13);
         if (pSVar9 == (STGroupBoatC *)0x0) {
           return;
         }
         local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
-        uVar13 = extraout_EDX_02;
+        uVar12 = extraout_EDX_02;
       }
       else {
-        dVar21 = command->primaryPayloadSize;
+        dVar22 = command->primaryPayloadSize;
         local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        sVar18 = 0;
-        uVar13 = extraout_EDX_00;
+        sVar17 = 0;
+        uVar12 = extraout_EDX_00;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      ((uint *)local_c,(undefined4 *)((int)pSVar5 + sVar18 * 2 + dVar21));
-            sVar18 = sVar18 + 1;
-            uVar13 = extraout_EDX_01;
-          } while (sVar18 < (short)(command->secondaryPayloadSize >> 1));
+                      ((uint *)local_c,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar22));
+            sVar17 = sVar17 + 1;
+            uVar12 = extraout_EDX_01;
+          } while (sVar17 < (short)(command->secondaryPayloadSize >> 1));
         }
       }
-      thunk_FUN_0044cc90(CONCAT31((int3)((uint)uVar13 >> 8),command->playerId),&local_c->flags,0);
-      FUN_006ae110((byte *)local_c);
+      thunk_FUN_0044cc90(CONCAT31((int3)((uint)uVar12 >> 8),command->playerId),&local_c->flags,0);
+      DArrayDestroy(local_c);
       return;
     case 0x17:
       if (command->secondaryPayloadSize == 0) {
-        pSVar9 = thunk_FUN_0042b760(objPtr,uVar16);
+        pSVar9 = thunk_FUN_0042b760(objPtr,uVar13);
         if (pSVar9 == (STGroupBoatC *)0x0) {
           return;
         }
-        puVar8 = STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
+        pDVar8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
       }
       else {
-        dVar21 = command->primaryPayloadSize;
-        puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        sVar18 = 0;
+        dVar22 = command->primaryPayloadSize;
+        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        sVar17 = 0;
         if (0 < (short)(command->secondaryPayloadSize >> 1)) {
           do {
             Library::DKW::TBL::FUN_006ae1c0
-                      (puVar8,(undefined4 *)((int)pSVar5 + sVar18 * 2 + dVar21));
-            sVar18 = sVar18 + 1;
-          } while (sVar18 < (short)(command->secondaryPayloadSize >> 1));
+                      ((uint *)pDVar8,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar22));
+            sVar17 = sVar17 + 1;
+          } while (sVar17 < (short)(command->secondaryPayloadSize >> 1));
         }
       }
       if ((command->payload->packed).value_1d != 0) {
-        thunk_FUN_0044cd20(CONCAT31((int3)((uint)command->payload >> 8),command->playerId),puVar8,0)
-        ;
-        FUN_006ae110((byte *)puVar8);
+        thunk_FUN_0044cd20(CONCAT31((int3)((uint)command->payload >> 8),command->playerId),
+                           &pDVar8->flags,0);
+        DArrayDestroy(pDVar8);
         return;
       }
-      thunk_FUN_0044cd20((uint)command->playerId,puVar8,1);
-      thunk_FUN_0044cc90(CONCAT31((int3)((uint)extraout_ECX_02 >> 8),command->playerId),puVar8,0);
-      FUN_006ae110((byte *)puVar8);
+      thunk_FUN_0044cd20((uint)command->playerId,&pDVar8->flags,1);
+      thunk_FUN_0044cc90(CONCAT31((int3)((uint)extraout_ECX_02 >> 8),command->playerId),
+                         &pDVar8->flags,0);
+      DArrayDestroy(pDVar8);
       return;
     }
   }
   pSVar9 = (STGroupBoatC *)0x0;
   if (command->secondaryPayloadSize != 0) {
-    pSVar5 = command->payload;
-    dVar21 = command->primaryPayloadSize;
-    puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    sVar18 = 0;
-    uVar7 = command->secondaryPayloadSize >> 1;
-    if (0 < (short)uVar7) {
+    pSVar4 = command->payload;
+    dVar22 = command->primaryPayloadSize;
+    pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    sVar17 = 0;
+    uVar6 = command->secondaryPayloadSize >> 1;
+    if (0 < (short)uVar6) {
       do {
-        Library::DKW::TBL::FUN_006ae1c0(puVar8,(undefined4 *)((int)pSVar5 + sVar18 * 2 + dVar21));
-        sVar18 = sVar18 + 1;
-        uVar7 = extraout_EDX_03;
-      } while (sVar18 < (short)(command->secondaryPayloadSize >> 1));
+        Library::DKW::TBL::FUN_006ae1c0
+                  ((uint *)pDVar8,(undefined4 *)((int)pSVar4 + sVar17 * 2 + dVar22));
+        sVar17 = sVar17 + 1;
+        uVar6 = extraout_EDX_03;
+      } while (sVar17 < (short)(command->secondaryPayloadSize >> 1));
     }
-    AddObjsToGroup(local_20,CONCAT31((int3)(uVar7 >> 8),command->playerId),0xfffe,puVar8,
+    AddObjsToGroup(local_20,CONCAT31((int3)(uVar6 >> 8),command->playerId),0xfffe,(uint *)pDVar8,
                    (undefined2 *)&local_1c);
-    pSVar9 = (STGroupBoatC *)FUN_006ae110((byte *)puVar8);
-    uVar16 = extraout_ECX_05;
+    DArrayDestroy(pDVar8);
+    pSVar9 = extraout_EAX;
+    uVar13 = extraout_ECX_05;
   }
-  pDVar10 = local_30;
-  if (((local_30 != (DArrayTy *)0x0) &&
-      (pSVar9 = thunk_FUN_0042b760(CONCAT31((int3)(uVar16 >> 8),command->playerId),local_1c),
+  pAVar19 = local_30;
+  if (((local_30 != (AiPlrClassTy *)0x0) &&
+      (pSVar9 = thunk_FUN_0042b760(CONCAT31((int3)(uVar13 >> 8),command->playerId),local_1c),
       pSVar9 != (STGroupBoatC *)0x0)) && (pSVar9->field_001C != 0)) {
     if ((command->commandType == 0x29) && ((command->payload->packed).variant == 1)) {
       return;
     }
-    puVar8 = STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
+    pDVar8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
     AddObjsToGroup(local_20,CONCAT31((int3)((uint)extraout_ECX_06 >> 8),command->playerId),0xfffe,
-                   puVar8,(undefined2 *)&local_1c);
-    pSVar9 = (STGroupBoatC *)FUN_006ae110((byte *)puVar8);
+                   (uint *)pDVar8,(undefined2 *)&local_1c);
+    DArrayDestroy(pDVar8);
+    pSVar9 = extraout_EAX_00;
   }
   pSVar9 = thunk_FUN_0042b760(CONCAT31((int3)((uint)pSVar9 >> 8),command->playerId),local_1c);
   if (pSVar9 == (STGroupBoatC *)0x0) {
@@ -399,15 +405,15 @@ cf_common_exit_00437191:
   case 0x14:
     iVar15 = STGroupBoatC::IsAgAtt(pSVar9,unaff_EDI);
     if (iVar15 != 0) {
-      pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
       targetPosition.x = *(short *)command->payload;
       targetPosition.y = *(short *)((int)&(command->payload->packed).value_01.words.high + 1);
       thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar10,(undefined4 *)&targetPosition);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&targetPosition);
       orderData6.mode = 1;
-      orderData6.positions = pDVar10;
+      orderData6.positions = pDVar8;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_6,&orderData6);
-      FUN_006ae110((byte *)pDVar10);
+      DArrayDestroy(pDVar8);
       return;
     }
     orderData.position.x = *(short *)command->payload;
@@ -420,106 +426,107 @@ cf_common_exit_00437191:
     (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_7,&local_24);
     return;
   case 0x16:
-    pSVar5 = command->payload;
-    switch((pSVar5->packed).variant) {
+    pSVar4 = command->payload;
+    switch((pSVar4->packed).variant) {
     case 0:
     case 5:
-      FUN_006e62d0(PTR_00802a38,(pSVar5->position32).x,(int *)&local_8);
-      if (local_8 == (AnonShape_00436F20_BB207B3A *)0x0) {
+      FUN_006e62d0(PTR_00802a38,(pSVar4->position32).x,(int *)&local_8);
+      if (local_8 == (STGameObjC *)0x0) {
         return;
       }
-      pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
-      local_18 = local_8->field_0x24;
-      local_16 = local_8->field_0032;
-      uVar7 = *(uint *)&local_8->field_0x20;
-      if (uVar7 < 0x1af) {
-        if (uVar7 == 0x1ae) {
+      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+      local_18 = *(undefined1 *)&local_8->field_0024;
+      local_16 = *(undefined2 *)&local_8->field_0x32;
+      uVar6 = local_8->field_0020;
+      if (uVar6 < 0x1af) {
+        if (uVar6 == 0x1ae) {
           local_17 = 3;
           goto LAB_00437842;
         }
-        if (uVar7 != 0x14) {
+        if (uVar6 != 0x14) {
           return;
         }
       }
       else {
-        if (uVar7 < 1000) {
+        if (uVar6 < 1000) {
           return;
         }
-        if (0x3e9 < uVar7) {
+        if (0x3e9 < uVar6) {
           return;
         }
       }
       local_17 = 1;
 LAB_00437842:
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar10,(undefined4 *)&local_18);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&local_18);
       local_14c = (uint)((command->payload->packed).variant != 0);
       local_150 = 0;
-      local_148 = pDVar10;
+      local_148 = pDVar8;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_2,&local_150);
-      FUN_006ae110((byte *)pDVar10);
+      DArrayDestroy(pDVar8);
       return;
     case 1:
-      FUN_006e62d0(PTR_00802a38,(pSVar5->position32).x,(int *)&local_8);
-      if (local_8 != (AnonShape_00436F20_BB207B3A *)0x0) {
-        orderDataF.value_00 = local_8->field_0x24;
-        orderDataF.value_01 = local_8->field_0032;
-        orderDataF.value_03 = *(dword *)&local_8->field_0x18;
+      FUN_006e62d0(PTR_00802a38,(pSVar4->position32).x,(int *)&local_8);
+      if (local_8 != (STGameObjC *)0x0) {
+        orderDataF.value_00 = *(byte *)&local_8->field_0024;
+        orderDataF.value_01 = *(short *)&local_8->field_0x32;
+        orderDataF.value_03 = local_8->field_0018;
         (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_F,&orderDataF);
         return;
       }
       break;
     case 2:
-      orderDataE.value_00 = (short)(pSVar5->packed).value_05.bytes.byte0;
-      orderDataE.value_02 = (short)(pSVar5->packed).value_05.bytes.byte1;
-      orderDataE.value_04 = (short)(pSVar5->packed).value_05.bytes.byte2;
+      orderDataE.value_00 = (short)(pSVar4->packed).value_05.bytes.byte0;
+      orderDataE.value_02 = (short)(pSVar4->packed).value_05.bytes.byte1;
+      orderDataE.value_04 = (short)(pSVar4->packed).value_05.bytes.byte2;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_E,&orderDataE);
       return;
     }
     break;
   case 0x17:
-    pSVar5 = command->payload;
-    switch((pSVar5->packed).variant) {
+    pSVar4 = command->payload;
+    switch((pSVar4->packed).variant) {
     case 1:
-      FUN_006e62d0(PTR_00802a38,(pSVar5->packed).value_1d,(int *)&local_8);
-      if (local_8 != (AnonShape_00436F20_BB207B3A *)0x0) {
-        pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar10,(undefined4 *)&local_8->field_0032);
+      FUN_006e62d0(PTR_00802a38,(pSVar4->packed).value_1d,(int *)&local_8);
+      if (local_8 != (STGameObjC *)0x0) {
+        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&local_8->field_0x32);
         local_138 = 0;
-        local_134 = pDVar10;
+        local_134 = pDVar8;
         (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_5,&local_138);
-        FUN_006ae110((byte *)pDVar10);
+        DArrayDestroy(pDVar8);
         return;
       }
       break;
     case 2:
-      pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
       targetPosition.x = (command->payload->position16).x;
       targetPosition.y = (command->payload->position16).y;
       thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar10,(undefined4 *)&targetPosition);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&targetPosition);
       thunk_FUN_0049a500(pSVar9,&targetPosition.x,&targetPosition.y,(undefined2 *)0x0);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar10,(undefined4 *)&targetPosition);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&targetPosition);
       orderData6.mode = 0;
-      orderData6.positions = pDVar10;
+      orderData6.positions = pDVar8;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_6,&orderData6);
-      FUN_006ae110((byte *)pDVar10);
+      DArrayDestroy(pDVar8);
       return;
     case 3:
-      sVar18 = (pSVar5->position16).z;
-      sVar17 = (pSVar5->position16).y;
-      sVar3 = (pSVar5->position16).x;
-      if (((-1 < sVar3) && (sVar3 < SHORT_007fb240)) &&
-         ((((-1 < sVar17 && ((sVar17 < SHORT_007fb242 && (-1 < sVar18)))) &&
-           (sVar18 < SHORT_007fb244)) &&
-          (pSVar12 = g_worldCells
-                     [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar17 * (int)SHORT_007fb240 +
-                      (int)sVar3].objects[0], pSVar12 != (STWorldObject *)0x0)))) {
-        pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar10,(undefined4 *)&pSVar12[1].field_0xe);
+      sVar17 = (pSVar4->position16).z;
+      sVar16 = (pSVar4->position16).y;
+      sVar3 = (pSVar4->position16).x;
+      if (((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) &&
+         ((((-1 < sVar16 && ((sVar16 < g_worldGrid.sizeY && (-1 < sVar17)))) &&
+           (sVar17 < g_worldGrid.sizeZ)) &&
+          (pSVar11 = g_worldGrid.cells
+                     [(int)sVar17 * (int)g_worldGrid.planeStride +
+                      (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0],
+          pSVar11 != (STWorldObject *)0x0)))) {
+        pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&pSVar11[1].field_0xe);
         orderData4.mode = 0;
-        orderData4.objectIds = pDVar10;
+        orderData4.objectIds = pDVar8;
         (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_4,&orderData4);
-        FUN_006ae110((byte *)pDVar10);
+        DArrayDestroy(pDVar8);
         return;
       }
       break;
@@ -529,24 +536,25 @@ LAB_00437842:
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_4,&orderData4);
       return;
     case 0x10:
-      orderPosition14.x = (pSVar5->position16).x;
-      orderPosition14.y = (pSVar5->position16).y;
-      orderPosition14.z = (pSVar5->position16).z;
+      orderPosition14.x = (pSVar4->position16).x;
+      orderPosition14.y = (pSVar4->position16).y;
+      orderPosition14.z = (pSVar4->position16).z;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_14,&orderPosition14);
       return;
     case 0x13:
-      sVar18 = (pSVar5->position16).x;
-      sVar17 = (pSVar5->position16).z;
-      sVar3 = (pSVar5->position16).y;
-      if ((((-1 < sVar18) && (sVar18 < SHORT_007fb240)) &&
-          ((-1 < sVar3 && (((sVar3 < SHORT_007fb242 && (-1 < sVar17)) && (sVar17 < SHORT_007fb244)))
-           ))) && (g_worldCells
-                   [(int)sVar17 * (int)SHORT_007fb246 + (int)sVar3 * (int)SHORT_007fb240 +
-                    (int)sVar18].objects[0] != (STWorldObject *)0x0)) {
+      sVar17 = (pSVar4->position16).x;
+      sVar16 = (pSVar4->position16).z;
+      sVar3 = (pSVar4->position16).y;
+      if ((((-1 < sVar17) && (sVar17 < g_worldGrid.sizeX)) &&
+          ((-1 < sVar3 &&
+           (((sVar3 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))))) &&
+         (g_worldGrid.cells
+          [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX +
+           (int)sVar17].objects[0] != (STWorldObject *)0x0)) {
         orderData11.mode = 0;
-        orderData11.position.x = (pSVar5->position16).x;
-        orderData11.position.y = (pSVar5->position16).y;
-        orderData11.position.z = (pSVar5->position16).z;
+        orderData11.position.x = (pSVar4->position16).x;
+        orderData11.position.y = (pSVar4->position16).y;
+        orderData11.position.z = (pSVar4->position16).z;
         (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_11,&orderData11);
         return;
       }
@@ -559,57 +567,57 @@ LAB_00437842:
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_11,&orderData11);
       return;
     case 0x18:
-      orderPosition13.x = (pSVar5->position16).x;
-      orderPosition13.y = (pSVar5->position16).y;
-      orderPosition13.z = (pSVar5->position16).z;
+      orderPosition13.x = (pSVar4->position16).x;
+      orderPosition13.y = (pSVar4->position16).y;
+      orderPosition13.z = (pSVar4->position16).z;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_13,&orderPosition13);
       return;
     }
     break;
   case 0x18:
-    pSVar5 = command->payload;
-    switch((pSVar5->packed).variant) {
+    pSVar4 = command->payload;
+    switch((pSVar4->packed).variant) {
     case 1:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 1;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 1;
       break;
     case 2:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 2;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 2;
       break;
     case 3:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 4;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 4;
       break;
     case 4:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 5;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 5;
       break;
     case 5:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 3;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 3;
       break;
     case 6:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 0xfffffffd;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 0xfffffffd;
       break;
     case 7:
-      dVar21 = (pSVar5->packed).value_0d.whole;
+      dVar22 = (pSVar4->packed).value_0d.whole;
       pSVar14 = pSVar9->vtable;
-      bVar20 = (pSVar5->packed).value_11;
-      uVar13 = 0xfffffffe;
+      bVar20 = (pSVar4->packed).value_11;
+      uVar12 = 0xfffffffe;
       break;
     case 8:
       (*pSVar9->vtable->vfunc_18)(pSVar9,0,0,0);
@@ -617,41 +625,41 @@ LAB_00437842:
       goto switchD_004384bc_default;
     case 9:
       pSVar14 = pSVar9->vtable;
-      uVar13 = (*pSVar14->vfunc_24)();
-      iVar15 = (*pSVar9->vtable->vfunc_20)(uVar13);
+      uVar12 = (*pSVar14->vfunc_24)();
+      iVar15 = (*pSVar9->vtable->vfunc_20)(uVar12);
       (*pSVar14->vfunc_18)(pSVar9,0xffffffff,iVar15 + 1);
       goto switchD_004384bc_default;
     case 10:
       pSVar14 = pSVar9->vtable;
-      uVar13 = (*pSVar14->vfunc_24)();
-      iVar15 = (*pSVar9->vtable->vfunc_20)(uVar13);
+      uVar12 = (*pSVar14->vfunc_24)();
+      iVar15 = (*pSVar9->vtable->vfunc_20)(uVar12);
       (*pSVar14->vfunc_18)(pSVar9,0xffffffff,iVar15 + -1);
       goto switchD_004384bc_default;
     case 0xb:
       pSVar14 = pSVar9->vtable;
       iVar15 = (*pSVar14->vfunc_24)();
-      uVar13 = (*pSVar9->vtable->vfunc_20)(iVar15 + 0x2d);
-      (*pSVar14->vfunc_18)(pSVar9,0xffffffff,uVar13);
+      uVar12 = (*pSVar9->vtable->vfunc_20)(iVar15 + 0x2d);
+      (*pSVar14->vfunc_18)(pSVar9,0xffffffff,uVar12);
       goto switchD_004384bc_default;
     case 0xc:
       pSVar14 = pSVar9->vtable;
       iVar15 = (*pSVar14->vfunc_24)();
-      uVar13 = (*pSVar9->vtable->vfunc_20)(iVar15 + -0x2d);
-      (*pSVar14->vfunc_18)(pSVar9,0xffffffff,uVar13);
+      uVar12 = (*pSVar9->vtable->vfunc_20)(iVar15 + -0x2d);
+      (*pSVar14->vfunc_18)(pSVar9,0xffffffff,uVar12);
     default:
       goto switchD_004384bc_default;
     }
-    (*pSVar14->vfunc_18)(pSVar9,uVar13,bVar20,dVar21);
+    (*pSVar14->vfunc_18)(pSVar9,uVar12,bVar20,dVar22);
 switchD_004384bc_default:
-    pSVar5 = command->payload;
-    switch((pSVar5->packed).variant) {
+    pSVar4 = command->payload;
+    switch((pSVar4->packed).variant) {
     case 1:
     case 2:
     case 3:
     case 4:
     case 5:
-      orderData.position.x = (pSVar5->position16).x;
-      orderData.position.y = (pSVar5->position16).y;
+      orderData.position.x = (pSVar4->position16).x;
+      orderData.position.y = (pSVar4->position16).y;
       thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
       return;
@@ -670,41 +678,42 @@ cf_common_exit_0043824D:
     }
     break;
   case 0x19:
-    pSVar5 = command->payload;
-    orderDataD.position.x = *(short *)pSVar5;
-    orderDataD.position.y = *(short *)((int)&(pSVar5->packed).value_01.words.high + 1);
-    orderDataD.position.z = *(short *)((int)&(pSVar5->packed).value_05.words.high + 1);
+    pSVar4 = command->payload;
+    orderDataD.position.x = *(short *)pSVar4;
+    orderDataD.position.y = *(short *)((int)&(pSVar4->packed).value_01.words.high + 1);
+    orderDataD.position.z = *(short *)((int)&(pSVar4->packed).value_05.words.high + 1);
     orderDataD.value_06 = -1;
     (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_D,&orderDataD);
     return;
   case 0x1a:
-    pSVar5 = command->payload;
-    if ((pSVar5->packed).variant == 1) {
+    pSVar4 = command->payload;
+    if ((pSVar4->packed).variant == 1) {
       orderData10.mode = 2;
       orderData10.sourcePosition.x = 0;
       orderData10.sourcePosition.y = 0;
       orderData10.sourcePosition.z = 0;
-      orderData10.targetPosition.x = (pSVar5->position16).x;
-      orderData10.targetPosition.y = (pSVar5->position16).y;
-      orderData10.targetPosition.z = (pSVar5->position16).z;
+      orderData10.targetPosition.x = (pSVar4->position16).x;
+      orderData10.targetPosition.y = (pSVar4->position16).y;
+      orderData10.targetPosition.z = (pSVar4->position16).z;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_10,&orderData10);
       return;
     }
-    if ((pSVar5->packed).variant == 2) {
-      orderData10.sourcePosition.x = (pSVar5->position16).x;
-      orderData10.sourcePosition.y = (pSVar5->position16).y;
-      orderData10.sourcePosition.z = (pSVar5->position16).z;
-      if ((((-1 < orderData10.sourcePosition.x) && (orderData10.sourcePosition.x < SHORT_007fb240))
-          && ((-1 < orderData10.sourcePosition.y &&
-              (((orderData10.sourcePosition.y < SHORT_007fb242 &&
-                (-1 < orderData10.sourcePosition.z)) &&
-               (orderData10.sourcePosition.z < SHORT_007fb244)))))) &&
-         ((pSVar12 = g_worldCells
-                     [(int)orderData10.sourcePosition.z * (int)SHORT_007fb246 +
-                      (int)orderData10.sourcePosition.y * (int)SHORT_007fb240 +
-                      (int)orderData10.sourcePosition.x].objects[0], pSVar12 != (STWorldObject *)0x0
-          && (pSVar12->value_20 == 1000)))) {
-        iVar15 = (*pSVar12->vtable->GetObjectTypeId)(pSVar12);
+    if ((pSVar4->packed).variant == 2) {
+      orderData10.sourcePosition.x = (pSVar4->position16).x;
+      orderData10.sourcePosition.y = (pSVar4->position16).y;
+      orderData10.sourcePosition.z = (pSVar4->position16).z;
+      if ((((-1 < orderData10.sourcePosition.x) &&
+           (orderData10.sourcePosition.x < g_worldGrid.sizeX)) &&
+          ((-1 < orderData10.sourcePosition.y &&
+           (((orderData10.sourcePosition.y < g_worldGrid.sizeY &&
+             (-1 < orderData10.sourcePosition.z)) &&
+            (orderData10.sourcePosition.z < g_worldGrid.sizeZ)))))) &&
+         ((pSVar11 = g_worldGrid.cells
+                     [(int)orderData10.sourcePosition.z * (int)g_worldGrid.planeStride +
+                      (int)orderData10.sourcePosition.y * (int)g_worldGrid.sizeX +
+                      (int)orderData10.sourcePosition.x].objects[0], pSVar11 != (STWorldObject *)0x0
+          && (pSVar11->value_20 == 1000)))) {
+        iVar15 = (*pSVar11->vtable->GetObjectTypeId)(pSVar11);
         if (iVar15 == 0x37) {
           orderData10.mode = 0;
           orderData10.targetPosition.x = 0;
@@ -712,11 +721,11 @@ cf_common_exit_0043824D:
           orderData10.targetPosition.z = 0;
         }
         else {
-          iVar15 = (*pSVar12->vtable->GetObjectTypeId)(pSVar12);
+          iVar15 = (*pSVar11->vtable->GetObjectTypeId)(pSVar11);
           if (iVar15 != 0x6c) {
             return;
           }
-          iVar15 = thunk_FUN_004e9960(pSVar12,(undefined4 *)&orderData10.targetPosition,
+          iVar15 = thunk_FUN_004e9960(pSVar11,(undefined4 *)&orderData10.targetPosition,
                                       (undefined4 *)&orderData10.targetPosition.y,
                                       (undefined4 *)&orderData10.targetPosition.z);
           if (iVar15 != 1) {
@@ -730,43 +739,43 @@ cf_common_exit_0043824D:
     }
     break;
   case 0x1f:
-    pSVar5 = command->payload;
-    orderPosition12.x = (pSVar5->position16).x;
-    sVar18 = (pSVar5->position16).y;
-    sVar17 = (pSVar5->packed).value_01.words.high;
+    pSVar4 = command->payload;
+    orderPosition12.x = (pSVar4->position16).x;
+    sVar17 = (pSVar4->position16).y;
+    sVar16 = (pSVar4->packed).value_01.words.high;
     if (orderPosition12.x < 0) {
       return;
     }
-    if (SHORT_007fb240 <= orderPosition12.x) {
+    if (g_worldGrid.sizeX <= orderPosition12.x) {
+      return;
+    }
+    if (sVar16 < 0) {
+      return;
+    }
+    if (g_worldGrid.sizeY <= sVar16) {
       return;
     }
     if (sVar17 < 0) {
       return;
     }
-    if (SHORT_007fb242 <= sVar17) {
+    if (g_worldGrid.sizeZ <= sVar17) {
       return;
     }
-    if (sVar18 < 0) {
-      return;
-    }
-    if (SHORT_007fb244 <= sVar18) {
-      return;
-    }
-    pSVar12 = g_worldCells
-              [(int)sVar17 * (int)SHORT_007fb240 + (int)sVar18 * (int)SHORT_007fb246 +
+    pSVar11 = g_worldGrid.cells
+              [(int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar17 * (int)g_worldGrid.planeStride +
                (int)orderPosition12.x].objects[0];
-    if (pSVar12 == (STWorldObject *)0x0) {
+    if (pSVar11 == (STWorldObject *)0x0) {
       return;
     }
-    if ((pSVar5->packed).variant == 3) {
-      orderPosition12.y = (pSVar5->packed).value_01.words.high;
-      orderPosition12.z = (pSVar5->position16).y;
+    if ((pSVar4->packed).variant == 3) {
+      orderPosition12.y = (pSVar4->packed).value_01.words.high;
+      orderPosition12.z = (pSVar4->position16).y;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_12,&orderPosition12);
       return;
     }
-    if ((pSVar5->packed).variant == 1) {
-      puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      Library::DKW::TBL::FUN_006ae1c0(puVar8,(undefined4 *)&pSVar12[1].field_0xe);
+    if ((pSVar4->packed).variant == 1) {
+      pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar8,(undefined4 *)&pSVar11[1].field_0xe);
       local_118[1] = 0;
       local_102 = 0xffff;
       local_104 = 0xffff;
@@ -774,8 +783,8 @@ cf_common_exit_0043824D:
       local_108 = 0xffff;
       local_10a = 0xffff;
       local_10c = 0xffff;
-      local_110 = (DArrayTy *)puVar8;
-      local_100 = (*pSVar12->vtable->GetObjectTypeId)(pSVar12);
+      local_110 = pDVar8;
+      local_100 = (*pSVar11->vtable->GetObjectTypeId)(pSVar11);
       local_fc = 1;
       local_f8 = (DArrayTy *)0x0;
       local_ea = 0xffff;
@@ -785,57 +794,56 @@ cf_common_exit_0043824D:
       local_f2 = 0xffff;
       local_f4 = 0xffff;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_8,local_118 + 1);
-      FUN_006ae110((byte *)puVar8);
+      DArrayDestroy(pDVar8);
       return;
     }
-    groupContent = (AnonShape_006ACC70_C8641025 *)
-                   STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
-    uVar7 = groupContent->field_000C;
+    pDVar8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar9,unaff_EDI);
+    dVar22 = pDVar8->count;
     local_6c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     local_34 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     local_2c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    local_30 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    local_30 = (AiPlrClassTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     local_3c = 0;
     local_68 = (STControlCommandPayload *)0x0;
     local_d4 = 0;
-    local_28 = (DArrayTy *)0x0;
-    if ((int)uVar7 < 1) {
+    local_28 = 0;
+    if ((int)dVar22 < 1) {
 cf_common_exit_00437E03:
-      pSVar5 = command->payload;
-      orderPositionA.x = (pSVar5->position16).x;
-      orderPositionA.y = (pSVar5->packed).value_01.words.high;
-      orderPositionA.z = (pSVar5->position16).y;
+      pSVar4 = command->payload;
+      orderPositionA.x = (pSVar4->position16).x;
+      orderPositionA.y = (pSVar4->packed).value_01.words.high;
+      orderPositionA.z = (pSVar4->position16).y;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_A,&orderPositionA);
-      pDVar10 = local_30;
+      pAVar19 = local_30;
     }
     else {
-      uVar16 = 0;
+      uVar6 = 0;
       do {
-        FUN_006acc70(groupContent,uVar16,local_118);
-        this_01 = (int *)GetObjPtr(g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)((uint)extraout_EDX_04 >> 8),pSVar9->field_0024),
-                                   local_118[0],CASE_1);
-        iVar15 = (**(code **)(*this_01 + 0x2c))();
-        if ((((iVar15 == 8) || (iVar15 = (**(code **)(*this_01 + 0x2c))(), iVar15 == 0x14)) ||
-            (iVar15 = (**(code **)(*this_01 + 0x2c))(), iVar15 == 0x1a)) &&
-           (iVar15 = thunk_FUN_0045ff10((int)this_01), iVar15 == 0xc)) {
-          puVar11 = (undefined4 *)thunk_FUN_0048dc90(this_01,local_1b8);
-          puVar19 = &local_1fc;
+        DArrayGetElement(pDVar8,uVar6,local_118);
+        pSVar7 = GetObjPtr(g_sTAllPlayers_007FA174,
+                           CONCAT31((int3)((uint)extraout_EDX_04 >> 8),pSVar9->field_0024),
+                           local_118[0],CASE_1);
+        iVar15 = (*pSVar7->vtable->vfunc_2C)();
+        if ((((iVar15 == 8) || (iVar15 = (*pSVar7->vtable->vfunc_2C)(), iVar15 == 0x14)) ||
+            (iVar15 = (*pSVar7->vtable->vfunc_2C)(), iVar15 == 0x1a)) &&
+           (iVar15 = thunk_FUN_0045ff10((int)pSVar7), iVar15 == 0xc)) {
+          puVar10 = (undefined4 *)thunk_FUN_0048dc90(pSVar7,local_1b8);
+          puVar18 = &local_1fc;
           for (iVar15 = 0x10; iVar15 != 0; iVar15 = iVar15 + -1) {
-            *puVar19 = *puVar11;
-            puVar11 = puVar11 + 1;
-            puVar19 = puVar19 + 1;
+            *puVar18 = *puVar10;
+            puVar10 = puVar10 + 1;
+            puVar18 = puVar18 + 1;
           }
-          *(undefined2 *)puVar19 = *(undefined2 *)puVar11;
+          *(undefined2 *)puVar18 = *(undefined2 *)puVar10;
           iVar15 = FUN_006e62d0(PTR_00802a38,local_1f6,(int *)&local_40);
           if ((iVar15 == 0) && (iVar15 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar15)) {
             if (local_e8 == 0xdc) {
               local_d4 = local_d4 + 1;
-              pDVar10 = local_6c;
+              pDVar21 = local_6c;
             }
             else if (local_e8 == 0xdd) {
               local_68 = (STControlCommandPayload *)((int)local_68 + 1);
-              pDVar10 = local_34;
+              pDVar21 = local_34;
             }
             else {
               if (local_e8 != 0xde) {
@@ -843,22 +851,22 @@ cf_common_exit_00437E03:
                                             &DAT_007a4ccc,
                                             s_STAllPlayersC__CmdToPlsObj__CMDT_007a73e0);
                 if (iVar15 != 0) {
-                  pcVar6 = (code *)swi(3);
-                  (*pcVar6)();
+                  pcVar5 = (code *)swi(3);
+                  (*pcVar5)();
                   return;
                 }
                 goto LAB_00437c45;
               }
               local_3c = local_3c + 1;
-              pDVar10 = local_2c;
+              pDVar21 = local_2c;
             }
-            Library::DKW::TBL::FUN_006ae1c0(&pDVar10->flags,(undefined4 *)((int)local_40 + 0x32));
+            Library::DKW::TBL::FUN_006ae1c0(&pDVar21->flags,(undefined4 *)((int)local_40 + 0x32));
           }
         }
 LAB_00437c45:
-        local_28 = (DArrayTy *)((int)local_28 + 1);
-        uVar16 = (uint)(short)local_28;
-      } while ((int)uVar16 < (int)uVar7);
+        local_28 = local_28 + 1;
+        uVar6 = (uint)(short)local_28;
+      } while ((int)uVar6 < (int)dVar22);
       if ((((int)local_68 < local_d4) && (local_3c < local_d4)) && (0 < local_d4)) {
         iVar15 = 0;
       }
@@ -881,36 +889,36 @@ LAB_00437cb5:
       }
       else if (iVar15 == 1) {
         local_110 = local_34;
-        iVar15 = thunk_FUN_004406c0(pSVar9->field_0024);
+        iVar15 = GetPlayerRaceId(pSVar9->field_0024);
         local_100 = (-(uint)((char)iVar15 != '\x03') & 0xffffffdb) + 0x5e;
       }
       else if (iVar15 == 2) {
         local_100 = 0x4f;
         local_110 = local_2c;
       }
-      pDVar10 = local_30;
+      pAVar19 = local_30;
       local_102 = 0xffff;
       local_104 = 0xffff;
-      pSVar5 = command->payload;
+      pSVar4 = command->payload;
       local_106 = 0xffff;
       local_108 = 0xffff;
       local_10a = 0xffff;
       local_10c = 0xffff;
       local_fc = 0;
-      sVar18 = (pSVar5->position16).y;
-      sVar17 = (pSVar5->packed).value_01.words.high;
-      sVar3 = (pSVar5->position16).x;
-      if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar17 < 0)) ||
-          ((SHORT_007fb242 <= sVar17 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
-        pSVar12 = (STWorldObject *)0x0;
+      sVar17 = (pSVar4->position16).y;
+      sVar16 = (pSVar4->packed).value_01.words.high;
+      sVar3 = (pSVar4->position16).x;
+      if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar16 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar16 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
+        pSVar11 = (STWorldObject *)0x0;
       }
       else {
-        pSVar12 = g_worldCells
-                  [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar17 * (int)SHORT_007fb240 +
-                   (int)sVar3].objects[0];
+        pSVar11 = g_worldGrid.cells
+                  [(int)sVar17 * (int)g_worldGrid.planeStride + (int)sVar16 * (int)g_worldGrid.sizeX
+                   + (int)sVar3].objects[0];
       }
-      Library::DKW::TBL::FUN_006ae1c0(&local_30->flags,(undefined4 *)&pSVar12[1].field_0xe);
-      local_f8 = pDVar10;
+      Library::DKW::TBL::FUN_006ae1c0((uint *)local_30,(undefined4 *)&pSVar11[1].field_0xe);
+      local_f8 = (DArrayTy *)pAVar19;
       local_ea = 0xffff;
       local_ec = 0xffff;
       local_ee = 0xffff;
@@ -919,17 +927,17 @@ LAB_00437cb5:
       local_f4 = 0xffff;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_8,local_118 + 1);
     }
-    FUN_006ae110((byte *)groupContent);
-    FUN_006ae110((byte *)local_6c);
-    FUN_006ae110((byte *)local_34);
-    FUN_006ae110((byte *)local_2c);
-    FUN_006ae110((byte *)pDVar10);
+    DArrayDestroy(pDVar8);
+    DArrayDestroy(local_6c);
+    DArrayDestroy(local_34);
+    DArrayDestroy(local_2c);
+    DArrayDestroy((DArrayTy *)pAVar19);
     return;
   case 0x21:
-    pSVar5 = command->payload;
-    bVar20 = (pSVar5->packed).variant;
+    pSVar4 = command->payload;
+    bVar20 = (pSVar4->packed).variant;
     if (bVar20 == 1) {
-      local_64 = (pSVar5->packed).value_01;
+      local_64 = (pSVar4->packed).value_01;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_15,&local_64);
       return;
     }
@@ -941,17 +949,17 @@ LAB_00437cb5:
       return;
     }
     if (bVar20 == 4) {
-      local_60 = (pSVar5->packed).value_01;
+      local_60 = (pSVar4->packed).value_01;
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_B,&local_60);
       return;
     }
     break;
   case 0x23:
-    pSVar5 = command->payload;
-    orderData9.position.x = *(short *)((int)&(pSVar5->packed).value_01.words.high + 1);
-    orderData9.position.y = *(short *)((int)&(pSVar5->packed).value_05.words.high + 1);
-    orderData9.position.z = *(short *)((int)&(pSVar5->packed).value_09.words.high + 1);
-    orderData9.value_06 = *(int *)pSVar5;
+    pSVar4 = command->payload;
+    orderData9.position.x = *(short *)((int)&(pSVar4->packed).value_01.words.high + 1);
+    orderData9.position.y = *(short *)((int)&(pSVar4->packed).value_05.words.high + 1);
+    orderData9.position.z = *(short *)((int)&(pSVar4->packed).value_09.words.high + 1);
+    orderData9.value_06 = *(int *)pSVar4;
     orderData9.playerId = (dword)command->playerId;
     orderData9.value_0e = 0;
     orderData9.value_1d = -1;
@@ -969,52 +977,52 @@ LAB_00437cb5:
     break;
   case 0x29:
     if ((command->payload->packed).variant != 0) {
-      if (pDVar10 == (DArrayTy *)0x0) {
+      if (pAVar19 == (AiPlrClassTy *)0x0) {
         return;
       }
-      local_7c = 0x5d98;
-      local_78 = (STControlCommand *)CONCAT22(local_78._2_2_,1);
-      local_74 = (uint *)pSVar9->field_0029;
-      (**(code **)pDVar10->flags)(local_8c);
+      local_8c.field_0010 = 0x5d98;
+      local_8c.field_0014 = (undefined4 *)CONCAT22(local_8c.field_0014._2_2_,1);
+      local_74 = (DArrayTy *)pSVar9->field_0029;
+      (*(code *)**(undefined4 **)pAVar19)(&local_8c);
       return;
     }
     goto cf_common_exit_0043824D;
   case 0x31:
-    pSVar5 = command->payload;
-    switch((pSVar5->packed).variant) {
+    pSVar4 = command->payload;
+    switch((pSVar4->packed).variant) {
     case 1:
     case 2:
-      local_14c = (uint)((pSVar5->packed).value_01.bytes.byte2 != 1);
-      sVar18 = 0;
+      local_14c = (uint)((pSVar4->packed).value_01.bytes.byte2 != 1);
+      sVar17 = 0;
       local_150 = 0;
       local_148 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
-      if ((pSVar5->position16).x != 0) {
+      if ((pSVar4->position16).x != 0) {
         iVar15 = 0;
         do {
           Library::DKW::TBL::FUN_006ae1c0
-                    (&local_148->flags,(undefined4 *)((int)pSVar5 + iVar15 * 4 + 4));
-          sVar18 = sVar18 + 1;
-          iVar15 = (int)sVar18;
-        } while (iVar15 < (int)(uint)(ushort)(pSVar5->position16).x);
+                    (&local_148->flags,(undefined4 *)((int)pSVar4 + iVar15 * 4 + 4));
+          sVar17 = sVar17 + 1;
+          iVar15 = (int)sVar17;
+        } while (iVar15 < (int)(uint)(ushort)(pSVar4->position16).x);
       }
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_2,&local_150);
-      FUN_006ae110((byte *)local_148);
+      DArrayDestroy(local_148);
       return;
     case 3:
-      sVar18 = 0;
+      sVar17 = 0;
       local_138 = 0;
       local_134 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-      if ((pSVar5->position16).x != 0) {
+      if ((pSVar4->position16).x != 0) {
         iVar15 = 0;
         do {
           Library::DKW::TBL::FUN_006ae1c0
-                    (&local_134->flags,(undefined4 *)((int)pSVar5 + iVar15 * 2 + 4));
-          sVar18 = sVar18 + 1;
-          iVar15 = (int)sVar18;
-        } while (iVar15 < (int)(uint)(ushort)(pSVar5->position16).x);
+                    (&local_134->flags,(undefined4 *)((int)pSVar4 + iVar15 * 2 + 4));
+          sVar17 = sVar17 + 1;
+          iVar15 = (int)sVar17;
+        } while (iVar15 < (int)(uint)(ushort)(pSVar4->position16).x);
       }
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_5,&local_138);
-      FUN_006ae110((byte *)local_134);
+      DArrayDestroy(local_134);
       return;
     case 4:
       break;
@@ -1022,8 +1030,8 @@ LAB_00437cb5:
       iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1427,0,0,&DAT_007a4ccc,
                                   s_STAllPlayersC__CmdToPlsObj_CMDTY_007a742c);
       if (iVar15 != 0) {
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }

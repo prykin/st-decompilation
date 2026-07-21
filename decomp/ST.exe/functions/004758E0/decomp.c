@@ -63,12 +63,13 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         return 2;
       }
       uVar11 = (undefined2)((uint)&this->field_05D0 >> 0x10);
-      iVar6 = thunk_FUN_0048dfd0(this,CONCAT22((short)((uint)this->field_07CA >> 0x10),sVar5),
-                                 (uint)uVar3,CONCAT22(uVar11,*(undefined2 *)&this->field_0x3d2),
-                                 CONCAT22(uVar11,this->field_005B),
-                                 (int *)CONCAT22(uVar11,this->field_005D),
-                                 CONCAT22(uVar11,this->field_005F),(short *)0x0,&this->field_05D0,
-                                 (short *)&this->field_0x5d2);
+      iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                        ((AnonReceiver_0048DFD0 *)this,
+                         CONCAT22((short)((uint)this->field_07CA >> 0x10),sVar5),(uint)uVar3,
+                         CONCAT22(uVar11,*(undefined2 *)&this->field_0x3d2),
+                         CONCAT22(uVar11,this->field_005B),CONCAT22(uVar11,this->field_005D),
+                         (int *)CONCAT22(uVar11,this->field_005F),0,&this->field_05D0,
+                         (short *)&this->field_0x5d2,&this->field_05D4);
       if (iVar6 != 0) {
         this->field_05D6 = 5;
         sub_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
@@ -97,13 +98,15 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     else if (iVar6 == 3) {
       uVar11 = (undefined2)((uint)&this->field_05D0 >> 0x10);
-      iVar6 = thunk_FUN_0048dfd0(this,CONCAT22(extraout_var_01,*(undefined2 *)&this->field_0x5ca),
-                                 CONCAT22(extraout_var,this->field_05CC),
-                                 CONCAT22(uVar11,*(undefined2 *)&this->field_0x5ce),
-                                 CONCAT22(extraout_var_01,this->field_005B),
-                                 (int *)CONCAT22(extraout_var,this->field_005D),
-                                 CONCAT22(uVar11,this->field_005F),(short *)0x0,&this->field_05D0,
-                                 (short *)&this->field_0x5d2);
+      iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                        ((AnonReceiver_0048DFD0 *)this,
+                         CONCAT22(extraout_var_01,*(undefined2 *)&this->field_0x5ca),
+                         CONCAT22(extraout_var,this->field_05CC),
+                         CONCAT22(uVar11,*(undefined2 *)&this->field_0x5ce),
+                         CONCAT22(extraout_var_01,this->field_005B),
+                         CONCAT22(extraout_var,this->field_005D),
+                         (int *)CONCAT22(uVar11,this->field_005F),0,&this->field_05D0,
+                         (short *)&this->field_0x5d2,&this->field_05D4);
       if (iVar6 == 0) {
         return 0;
       }

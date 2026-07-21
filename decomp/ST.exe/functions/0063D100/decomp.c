@@ -5,9 +5,9 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   undefined4 uVar1;
   int iVar2;
   undefined4 *puVar3;
-  AnonShape_004ADBA0_E7CEFF88 *pAVar4;
+  AnonShape_004AD790_77673787 *pAVar4;
   undefined4 *puVar5;
-  LPVOID local_20;
+  void *local_20;
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -29,13 +29,13 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   }
   *(undefined2 *)puVar5 = *(undefined2 *)puVar3;
   *(undefined4 *)((int)this + 0x347) = 0;
-  pAVar4 = (AnonShape_004ADBA0_E7CEFF88 *)((int)param_1 + 0x152);
+  pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x152);
   if (*(int *)((int)this + 0x336) != 0) {
     uVar1 = FUN_006b0060((uint *)0x0,(uint *)((int)param_1 + 0x156));
     *(undefined4 *)((int)this + 0x336) = uVar1;
-    pAVar4 = (AnonShape_004ADBA0_E7CEFF88 *)((int)param_1 + 0x156 + *(int *)pAVar4);
+    pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x156 + *(int *)pAVar4);
   }
-  local_20 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+  local_20 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
   iVar2 = 0;
   do {
     *(undefined4 *)(iVar2 + (int)local_20) = DAT_00806774;
@@ -50,7 +50,7 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   STT3DSprC::RestoreSpr((STT3DSprC *)((int)this + 0x1d5),(int *)&local_20,pAVar4);
   thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                      *(undefined2 *)((int)this + 0x26e));
-  FUN_006ab060(&local_20);
+  FreeAndNull(&local_20);
   if (-1 < *(int *)((int)this + 0x33a)) {
     *(undefined4 *)((int)this + 0x33a) = 0xffffffff;
     *(undefined4 *)((int)this + 0x353) = 0xffffffff;

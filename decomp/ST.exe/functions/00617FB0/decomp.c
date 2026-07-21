@@ -70,7 +70,7 @@ byte * __thiscall FUN_00617fb0(void *this,int *param_1)
       puVar8 = (uint *)((int)puVar8 + 1);
     }
     puVar6 = (uint *)((int)(pbVar2 + 0x56) + local_8);
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   if (*(uint **)((int)this + 0x62) != (uint *)0x0) {
     local_c = (uint *)FUN_006b0020(*(uint **)((int)this + 0x62),(int *)&local_8);
@@ -88,7 +88,7 @@ byte * __thiscall FUN_00617fb0(void *this,int *param_1)
       puVar10 = (uint *)((int)puVar10 + 1);
     }
     puVar6 = (uint *)((int)(puVar6 + 1) + local_8);
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   if (*(uint **)((int)this + 0x66) != (uint *)0x0) {
     local_c = (uint *)FUN_006b0020(*(uint **)((int)this + 0x66),(int *)&local_8);
@@ -103,7 +103,7 @@ byte * __thiscall FUN_00617fb0(void *this,int *param_1)
       puVar8 = (uint *)((int)puVar8 + 1);
       puVar6 = (uint *)((int)puVar6 + 1);
     }
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
     *param_1 = iVar5;
     return pbVar2;
   }

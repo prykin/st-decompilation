@@ -7,21 +7,21 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   undefined2 uVar2;
   undefined2 extraout_var;
   uint uVar3;
-  uint *groupContent;
+  DArrayTy *array;
   STGroupBoatC *this;
   int iVar4;
-  uint **ppuVar5;
-  uint *local_38 [5];
+  DArrayTy **ppDVar5;
+  DArrayTy *local_38 [5];
   uint local_24;
   undefined4 local_20;
   DArrayTy *local_1c;
   DArrayTy *local_c;
   undefined4 local_8;
   
-  ppuVar5 = local_38;
+  ppDVar5 = local_38;
   for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppuVar5 = (uint *)0x0;
-    ppuVar5 = ppuVar5 + 1;
+    *ppDVar5 = (DArrayTy *)0x0;
+    ppDVar5 = ppDVar5 + 1;
   }
   local_c = (DArrayTy *)0x0;
   local_8 = 0;
@@ -43,8 +43,10 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   else {
     uVar3 = 0;
   }
-  groupContent = thunk_FUN_0065fa60(param_1,uVar3,(short *)0x1);
-  if (groupContent != (uint *)0x0) {
+  array = (DArrayTy *)
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::thunk_FUN_0065fa60
+                    ((AnonReceiver_0065FA60 *)param_1,uVar3,1,param_4);
+  if (array != (DArrayTy *)0x0) {
     sVar1 = param_1->field_0039;
     if (sVar1 < 1) {
 LAB_0065fec9:
@@ -57,10 +59,12 @@ LAB_0065fec9:
       if (sVar1 != 3) goto LAB_0065fec9;
       iVar4 = 0x60;
     }
-    local_c = (DArrayTy *)thunk_FUN_0065fa60(param_1,iVar4,(short *)0x1);
+    local_c = (DArrayTy *)
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::thunk_FUN_0065fa60
+                        ((AnonReceiver_0065FA60 *)param_1,iVar4,1,(short *)0x0);
     if (local_c != (DArrayTy *)0x0) {
       sVar1 = param_1->field_0039;
-      local_38[0] = (uint *)0x0;
+      local_38[0] = (DArrayTy *)0x0;
       if (param_3 == 0xdd) {
         local_24 = (-(uint)(sVar1 != 3) & 0xffffffdb) + 0x5e;
       }
@@ -74,7 +78,7 @@ LAB_0065fec9:
         local_24 = 0;
       }
       local_20 = 0;
-      local_38[1] = groupContent;
+      local_38[1] = array;
       local_1c = local_c;
       if (((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
          (this = thunk_FUN_0042b760((uint)(byte)param_1->field_0x24,
@@ -87,11 +91,11 @@ LAB_0065fec9:
   }
   local_8 = 0xffffffff;
 LAB_0065ff72:
-  if (groupContent != (uint *)0x0) {
-    FUN_006ae110((byte *)groupContent);
+  if (array != (DArrayTy *)0x0) {
+    DArrayDestroy(array);
   }
   if (local_c != (DArrayTy *)0x0) {
-    FUN_006ae110((byte *)local_c);
+    DArrayDestroy(local_c);
   }
   return local_8;
 }

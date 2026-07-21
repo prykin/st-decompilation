@@ -10,7 +10,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   int errorCode;
   int iVar2;
   undefined4 unaff_ESI;
-  uint uVar3;
+  uint index;
   void *unaff_EDI;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -31,20 +31,20 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_nick_to_torp_cpp_007d25c0,
                  0x466);
     }
-    uVar3 = 0;
+    index = 0;
     local_8 = 0;
     *param_2 = 0xffffffff;
     if (0 < iVar2) {
-      while (FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10->field_0241,uVar3,&local_18),
-            local_18 != param_1) {
-        uVar3 = uVar3 + 1;
-        if (iVar2 <= (int)uVar3) {
+      while (DArrayGetElement((DArrayTy *)local_10->field_0241,index,&local_18), local_18 != param_1
+            ) {
+        index = index + 1;
+        if (iVar2 <= (int)index) {
           g_currentExceptionFrame = local_5c.previous;
           return local_8;
         }
       }
       local_8 = (local_14 != 1) + 1;
-      *param_2 = uVar3;
+      *param_2 = index;
     }
     g_currentExceptionFrame = local_5c.previous;
     return local_8;

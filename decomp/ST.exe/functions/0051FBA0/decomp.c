@@ -11,12 +11,13 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   int iVar2;
   ccFntTy *pcVar3;
   uint uVar4;
-  undefined4 *puVar5;
-  DWORD DVar6;
-  undefined4 uVar7;
-  int iVar8;
+  AnonPointee_HelpStringTy_012A *pAVar5;
+  undefined4 *puVar6;
+  DWORD DVar7;
+  undefined4 uVar8;
+  int iVar9;
   ccFntTy *this_01;
-  uint uVar9;
+  uint uVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
@@ -31,12 +32,12 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
     switch(*(undefined4 *)(param_1 + 0x10)) {
     case 0:
       if ((local_8->field_012E != 0) &&
-         (DVar6 = FUN_006e51b0(local_8->field_0010),
-         (uint)this_00->field_0126 <= DVar6 - this_00->field_0122)) {
-        puVar5 = (undefined4 *)&this_00->field_0018;
+         (DVar7 = FUN_006e51b0(local_8->field_0010),
+         (uint)this_00->field_0126 <= DVar7 - this_00->field_0122)) {
+        puVar6 = (undefined4 *)&this_00->field_0018;
         for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar5 = 0;
-          puVar5 = puVar5 + 1;
+          *puVar6 = 0;
+          puVar6 = puVar6 + 1;
         }
         OutStr(this_00);
         this_00->field_011C = 0;
@@ -48,26 +49,27 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
       this_00->field_011E = pcVar3;
       pcVar3->field_0058 = 0;
       pcVar3->field_005C = 0;
-      puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
+      puVar6 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar2 = 1;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
-      iVar2 = FUN_006b50c0((g_nWidth_00806730 -
-                           ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
-                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar5,iVar2);
-      this_00->field_012A = iVar2;
-      uVar4 = *(uint *)(iVar2 + 0x14);
+      pAVar5 = (AnonPointee_HelpStringTy_012A *)
+               FUN_006b50c0((g_nWidth_00806730 -
+                            ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
+                            (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar6,iVar2);
+      this_00->field_012A = pAVar5;
+      uVar4 = pAVar5->field_0014;
       if (uVar4 == 0) {
-        uVar4 = ((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(iVar2 + 8);
+        uVar4 = ((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+                pAVar5->field_0008;
       }
-      puVar5 = (undefined4 *)FUN_006b4fa0(iVar2);
-      for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
+      puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
+      for (uVar10 = uVar4 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+        *puVar6 = 0;
+        puVar6 = puVar6 + 1;
       }
       for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined1 *)puVar5 = 0;
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
+        *(undefined1 *)puVar6 = 0;
+        puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
       DAT_00801694 = this_00;
       break;
@@ -77,24 +79,24 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
         ccFntTy::operator(this_01,(uint *)local_8->field_011E);
         this_00->field_011E = (ccFntTy *)0x0;
       }
-      if (this_00->field_012A != 0) {
-        FUN_006ab060((LPVOID *)&this_00->field_012A);
+      if (this_00->field_012A != (AnonPointee_HelpStringTy_012A *)0x0) {
+        FreeAndNull(&this_00->field_012A);
       }
       break;
     case 5:
       OutStr(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
-    uVar7 = FUN_006e5fd0();
-    return uVar7;
+    uVar8 = FUN_006e5fd0();
+    return uVar8;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
+  iVar9 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
                              s_HelpStringTy__GetMessage_007c3e90);
-  if (iVar8 != 0) {
+  if (iVar9 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar7 = (*pcVar1)();
-    return uVar7;
+    uVar8 = (*pcVar1)();
+    return uVar8;
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d);
   return 0xffff;

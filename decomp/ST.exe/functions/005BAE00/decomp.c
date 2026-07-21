@@ -204,7 +204,7 @@ LAB_005bb2c6:
 LAB_005bb532:
         this_01->field_1A69 = this_01->field_0061;
         if (local_10 != (short *)0x0) {
-          FUN_006ab060(&local_10);
+          FreeAndNull(&local_10);
           g_currentExceptionFrame = local_a0.previous;
           return;
         }

@@ -7,7 +7,7 @@
 void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 param_2)
 
 {
-  AnonPointee_StartSystemTy_0544 *pAVar1;
+  AnonShape_006C7610_838EDECF *pAVar1;
   undefined4 uVar2;
   StartSystemTy *pSVar3;
   code *pcVar4;
@@ -73,9 +73,9 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
     puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
-    pAVar1 = PTR_0081176c->field_0544;
-    FUN_006b4170((int)pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
+    pAVar1 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+    FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
     if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
         (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
@@ -344,7 +344,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
        (-1 < (int)pHVar13->field_0003)) {
       Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pHVar13->field_0003);
     }
-    thunk_FUN_005e9a40((AnonShape_005E9A40_265F7E5B *)this_01);
+    thunk_FUN_005e9a40((AnonShape_005E9970_7C1AA6F1 *)this_01);
     this_00 = PTR_00802a30;
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
       uVar7 = PTR_00802a30->field_00C9;

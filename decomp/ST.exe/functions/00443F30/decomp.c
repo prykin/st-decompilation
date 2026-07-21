@@ -58,7 +58,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
         do {
           if ((uint *)*puVar3 != (uint *)0x0) {
             local_c = (undefined4 *)FUN_006b0020((uint *)*puVar3,(int *)&local_8);
-            FUN_006ab060(&local_c);
+            FreeAndNull(&local_c);
             iVar2 = iVar2 + local_8;
             local_28 = iVar2;
           }
@@ -71,13 +71,13 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       do {
         if (ppDVar9[-0x14] != (DArrayTy *)0x0) {
           local_c = (undefined4 *)FUN_006b0020(&ppDVar9[-0x14]->flags,(int *)&local_8);
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           iVar2 = iVar2 + local_8;
           local_28 = iVar2;
         }
         if (*ppDVar9 != (DArrayTy *)0x0) {
           local_c = (undefined4 *)FUN_006b0020(&(*ppDVar9)->flags,(int *)&local_8);
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           iVar2 = iVar2 + local_8;
           local_28 = iVar2;
         }
@@ -89,7 +89,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       do {
         if ((uint *)*puVar3 != (uint *)0x0) {
           local_c = (undefined4 *)FUN_006b0020((uint *)*puVar3,(int *)&local_8);
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           iVar2 = iVar2 + local_8;
           local_28 = iVar2;
         }
@@ -100,7 +100,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       puVar14 = (uint *)((int)local_14 + 0x631);
       do {
         local_c = (undefined4 *)FUN_006b0020(puVar14,(int *)&local_8);
-        FUN_006ab060(&local_c);
+        FreeAndNull(&local_c);
         iVar2 = iVar2 + local_8;
         puVar14 = puVar14 + 0x11;
         local_10 = (DArrayTy **)((int)local_10 + -1);
@@ -109,29 +109,28 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       local_20 = *(DArrayTy **)((int)local_14 + 0x839);
       local_10 = (DArrayTy **)0x0;
       if ((local_20 != (DArrayTy *)0x0) &&
-         (local_24 = (uint *)((AnonShape_006ACC70_C8641025 *)local_20)->field_000C,
-         local_24 != (uint *)0x0)) {
+         (local_24 = (uint *)local_20->count, local_24 != (uint *)0x0)) {
         uVar15 = 0;
         iVar2 = iVar2 + (int)local_24 * 0x18;
         local_28 = iVar2;
         if (0 < (int)local_24) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,uVar15,&local_40);
+            DArrayGetElement(local_20,uVar15,&local_40);
             if (local_40 != (uint *)0x0) {
               local_c = (undefined4 *)FUN_006b0020(local_40,(int *)&local_8);
-              FUN_006ab060(&local_c);
+              FreeAndNull(&local_c);
               iVar2 = iVar2 + local_8;
               local_28 = iVar2;
             }
             if (local_3c != (uint *)0x0) {
               local_c = (undefined4 *)FUN_006b0020(local_3c,(int *)&local_8);
-              FUN_006ab060(&local_c);
+              FreeAndNull(&local_c);
               iVar2 = iVar2 + local_8;
               local_28 = iVar2;
             }
             if (local_38 != (uint *)0x0) {
               local_c = (undefined4 *)FUN_006b0020(local_38,(int *)&local_8);
-              FUN_006ab060(&local_c);
+              FreeAndNull(&local_c);
               iVar2 = iVar2 + local_8;
               local_28 = iVar2;
             }
@@ -141,7 +140,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       }
       local_14 = (DArrayTy **)((int)local_14 + 0xa62);
     } while ((int)local_14 < 0x7fa2ed);
-    local_28 = iVar2 + SHORT_007fb246;
+    local_28 = iVar2 + g_worldGrid.planeStride;
     puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_28);
     pdVar4 = puVar3 + 2;
     *puVar3 = local_44->field_001C;
@@ -367,7 +366,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
               puVar3 = (undefined4 *)((int)puVar3 + 1);
               puVar12 = (undefined4 *)((int)puVar12 + 1);
             }
-            FUN_006ab060(&local_c);
+            FreeAndNull(&local_c);
             *(uint *)((int)local_20 + (int)local_18 * 8 + 0xc + (int)local_2c) = local_1c;
             *(uint *)((int)local_20 + (int)local_18 * 8 + 0x10 + (int)local_2c) = local_8;
             puVar10 = (undefined4 *)((int)puVar10 + local_8);
@@ -408,7 +407,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
             puVar3 = (undefined4 *)((int)puVar3 + 1);
             puVar12 = (undefined4 *)((int)puVar12 + 1);
           }
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           local_20 = (DArrayTy *)((int)local_2c + (int)local_24 + (int)local_14);
           *(uint *)((int)local_20 + 0x17a) = local_1c;
           *(uint *)((int)local_20 + 0x17e) = local_8;
@@ -434,7 +433,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
             puVar3 = (undefined4 *)((int)puVar3 + 1);
             puVar12 = (undefined4 *)((int)puVar12 + 1);
           }
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           *(uint *)((int)local_20 + 0x1de) = local_1c;
           *(uint *)((int)local_20 + 0x1e2) = local_8;
           puVar10 = (undefined4 *)((int)puVar10 + local_8);
@@ -471,7 +470,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
             puVar3 = (undefined4 *)((int)puVar3 + 1);
             puVar12 = (undefined4 *)((int)puVar12 + 1);
           }
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           *(uint *)((int)local_2c + (int)local_18 + (int)local_24 + 0x246) = local_1c;
           *(uint *)((int)local_2c + (int)local_18 + (int)local_24 + 0x24a) = local_8;
           puVar10 = (undefined4 *)((int)puVar10 + local_8);
@@ -504,7 +503,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
           puVar3 = (undefined4 *)((int)puVar3 + 1);
           puVar12 = (undefined4 *)((int)puVar12 + 1);
         }
-        FUN_006ab060(&local_c);
+        FreeAndNull(&local_c);
         local_10[-1] = (DArrayTy *)local_1c;
         *local_10 = (DArrayTy *)local_8;
         local_1c = local_1c + local_8;
@@ -538,7 +537,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
           ppDVar9 = (DArrayTy **)(puVar10 + 2);
           do {
             local_14 = ppDVar9;
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,(uint)local_18,&local_40);
+            DArrayGetElement(local_20,(uint)local_18,&local_40);
             if (local_40 == (uint *)0x0) {
               ppDVar9[-2] = (DArrayTy *)0xffffffff;
               ppDVar9[-1] = (DArrayTy *)0x0;
@@ -557,7 +556,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
                 puVar10 = (undefined4 *)((int)puVar10 + 1);
                 puVar12 = (undefined4 *)((int)puVar12 + 1);
               }
-              FUN_006ab060(&local_c);
+              FreeAndNull(&local_c);
               local_14[-2] = (DArrayTy *)local_1c;
               local_14[-1] = (DArrayTy *)local_8;
               puVar3 = (undefined4 *)((int)puVar3 + local_8);
@@ -582,7 +581,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
                 puVar10 = (undefined4 *)((int)puVar10 + 1);
                 puVar12 = (undefined4 *)((int)puVar12 + 1);
               }
-              FUN_006ab060(&local_c);
+              FreeAndNull(&local_c);
               *local_14 = (DArrayTy *)local_1c;
               local_14[1] = (DArrayTy *)local_8;
               puVar3 = (undefined4 *)((int)puVar3 + local_8);
@@ -607,7 +606,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
                 puVar10 = (undefined4 *)((int)puVar10 + 1);
                 puVar12 = (undefined4 *)((int)puVar12 + 1);
               }
-              FUN_006ab060(&local_c);
+              FreeAndNull(&local_c);
               local_14[2] = (DArrayTy *)local_1c;
               local_14[3] = (DArrayTy *)local_8;
               puVar3 = (undefined4 *)((int)puVar3 + local_8);
@@ -623,7 +622,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       local_10 = (DArrayTy **)((int)local_10 + 0xaab);
       puVar10 = puVar3;
     } while ((int)local_30 < 0x7fab26);
-    uVar15 = (uint)SHORT_007fb246;
+    uVar15 = (uint)g_worldGrid.planeStride;
     puVar10 = DAT_007fa168;
     for (uVar8 = uVar15 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar3 = *puVar10;

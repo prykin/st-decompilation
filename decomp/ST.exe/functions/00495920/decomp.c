@@ -1,9 +1,14 @@
 
-undefined4 * __fastcall FUN_00495920(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00790710 (store 00495928)
+   Evidence: final_vptr=00790710; returns_this=true; calls_before=1; field_writes_after=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
+
+undefined4 * __thiscall DumpClassC::DumpClassC(DumpClassC *this)
 
 {
-  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)param_1);
-  *param_1 = &PTR_LAB_00790710;
-  return param_1;
+  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)this);
+  this->vtable = &DumpClassCVTable;
+  return &this->vtable;
 }
 

@@ -55,12 +55,12 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
     this->field_068B = sVar13;
     this->field_068D = sVar14;
     this->field_068F = sVar15;
-    if (((((sVar13 < 0) || (SHORT_007fb240 <= sVar13)) || (sVar14 < 0)) ||
-        ((SHORT_007fb242 <= sVar14 || (sVar15 < 0)))) ||
-       ((SHORT_007fb244 <= sVar15 ||
-        (pSVar2 = g_worldCells
-                  [(int)sVar15 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                   (int)sVar13].objects[0], pSVar2 == (STWorldObject *)0x0)))) {
+    if (((((sVar13 < 0) || (g_worldGrid.sizeX <= sVar13)) || (sVar14 < 0)) ||
+        ((g_worldGrid.sizeY <= sVar14 || (sVar15 < 0)))) ||
+       ((g_worldGrid.sizeZ <= sVar15 ||
+        (pSVar2 = g_worldGrid.cells
+                  [(int)sVar15 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)g_worldGrid.sizeX
+                   + (int)sVar13].objects[0], pSVar2 == (STWorldObject *)0x0)))) {
 LAB_0047d831:
       sub_004952E0(this);
       return 0;
@@ -186,13 +186,14 @@ LAB_0047d831:
           sVar13 = this->field_068B;
           sVar14 = this->field_068F;
           sVar15 = this->field_068D;
-          if (((((-1 < sVar13) && (sVar13 < SHORT_007fb240)) && (-1 < sVar15)) &&
-              ((sVar15 < SHORT_007fb242 && (-1 < sVar14)))) &&
-             ((sVar14 < SHORT_007fb244 &&
-              ((pSVar2 = g_worldCells
-                         [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240 +
-                          (int)sVar13].objects[0], pSVar2 != (STWorldObject *)0x0 &&
-               (*(int *)&pSVar2->field_0x18 == this->field_0697)))))) {
+          if (((((-1 < sVar13) && (sVar13 < g_worldGrid.sizeX)) && (-1 < sVar15)) &&
+              ((sVar15 < g_worldGrid.sizeY && (-1 < sVar14)))) &&
+             ((sVar14 < g_worldGrid.sizeZ &&
+              ((pSVar2 = g_worldGrid.cells
+                         [(int)sVar14 * (int)g_worldGrid.planeStride +
+                          (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0],
+               pSVar2 != (STWorldObject *)0x0 && (*(int *)&pSVar2->field_0x18 == this->field_0697)))
+              ))) {
             iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
             if (iVar9 == 1) {
               this->field_06A5 = 0;
@@ -217,13 +218,13 @@ LAB_0047d241:
       sVar13 = this->field_068B;
       sVar14 = this->field_068F;
       sVar15 = this->field_068D;
-      if ((((-1 < sVar13) && (sVar13 < SHORT_007fb240)) &&
+      if ((((-1 < sVar13) && (sVar13 < g_worldGrid.sizeX)) &&
           ((-1 < sVar15 &&
-           (((sVar15 < SHORT_007fb242 && (-1 < sVar14)) && (sVar14 < SHORT_007fb244)))))) &&
-         ((pSVar2 = g_worldCells
-                    [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240 +
-                     (int)sVar13].objects[0], pSVar2 != (STWorldObject *)0x0 &&
-          (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
+           (((sVar15 < g_worldGrid.sizeY && (-1 < sVar14)) && (sVar14 < g_worldGrid.sizeZ)))))) &&
+         ((pSVar2 = g_worldGrid.cells
+                    [(int)sVar14 * (int)g_worldGrid.planeStride +
+                     (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0],
+          pSVar2 != (STWorldObject *)0x0 && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
           if (*(int *)&pSVar2[0x22].field_0x8 == 2) {
@@ -256,13 +257,13 @@ LAB_0047d241:
       sVar13 = this->field_068B;
       sVar14 = this->field_068F;
       sVar15 = this->field_068D;
-      if ((((-1 < sVar13) && (sVar13 < SHORT_007fb240)) &&
+      if ((((-1 < sVar13) && (sVar13 < g_worldGrid.sizeX)) &&
           ((-1 < sVar15 &&
-           (((sVar15 < SHORT_007fb242 && (-1 < sVar14)) && (sVar14 < SHORT_007fb244)))))) &&
-         ((pSVar2 = g_worldCells
-                    [(int)sVar14 * (int)SHORT_007fb246 + (int)sVar15 * (int)SHORT_007fb240 +
-                     (int)sVar13].objects[0], pSVar2 != (STWorldObject *)0x0 &&
-          (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
+           (((sVar15 < g_worldGrid.sizeY && (-1 < sVar14)) && (sVar14 < g_worldGrid.sizeZ)))))) &&
+         ((pSVar2 = g_worldGrid.cells
+                    [(int)sVar14 * (int)g_worldGrid.planeStride +
+                     (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0],
+          pSVar2 != (STWorldObject *)0x0 && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
           thunk_FUN_004b7e30(pSVar2,this->field_06F7,0,0);

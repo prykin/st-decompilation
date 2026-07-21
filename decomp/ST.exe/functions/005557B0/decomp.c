@@ -20,7 +20,7 @@ void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
         *(undefined4 *)((int)pvVar3 + 0x32) = 0xffffffff;
       }
     }
-    FUN_006ae110((byte *)param_1->field_0024);
+    DArrayDestroy(param_1->field_0024);
     param_1->field_0024 = (DArrayTy *)0x0;
   }
   return;

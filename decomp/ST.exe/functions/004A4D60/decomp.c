@@ -13,7 +13,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   int iVar3;
   short *psVar4;
   undefined4 unaff_ESI;
-  uint uVar5;
+  uint index;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
@@ -48,18 +48,17 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
       return;
     }
     uVar1 = local_c->field_029F[3];
-    uVar5 = 0;
+    index = 0;
     if (0 < (int)uVar1) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_029F,uVar5,(undefined4 *)local_8)
-        ;
+        DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
         if (local_8[0] == -1) break;
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)uVar1);
+        index = index + 1;
+      } while ((int)index < (int)uVar1);
     }
     psVar4 = &param_2;
 LAB_004a4e27:
-    Library::DKW::TBL::FUN_006ae140(this_00->field_029F,uVar5,(undefined4 *)psVar4);
+    Library::DKW::TBL::FUN_006ae140(this_00->field_029F,index,(undefined4 *)psVar4);
   }
   else {
     if (local_c->field_029F == (uint *)0x0) {
@@ -67,19 +66,18 @@ LAB_004a4e27:
       return;
     }
     uVar1 = local_c->field_029F[3];
-    uVar5 = 0;
+    index = 0;
     if (0 < (int)uVar1) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_029F,uVar5,(undefined4 *)local_8)
-        ;
+        DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
         if (local_8[0] == param_2) {
           local_8[0] = -1;
           local_8[1] = 0;
           psVar4 = local_8;
           goto LAB_004a4e27;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)uVar1);
+        index = index + 1;
+      } while ((int)index < (int)uVar1);
     }
   }
   DistributeDock(this_00,0,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);

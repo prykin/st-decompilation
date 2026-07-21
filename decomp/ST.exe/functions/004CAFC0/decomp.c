@@ -14,7 +14,7 @@ FUN_004cafc0(void *this,Global_sub_004CAFC0_param_1Enum param_1,uint param_2,uin
   int iVar3;
   int iVar4;
   
-  uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar2 = (uVar1 & 0xff) - 1;
   iVar3 = *(int *)((int)this + 0x5ac);
   if (iVar3 == 0x32) {
@@ -233,14 +233,14 @@ switchD_004cb5c6_caseD_5:
     goto switchD_004cb1d7_caseD_e;
   }
   if ((iVar3 == 0x4f) &&
-     (iVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d)), (char)iVar3 == '\x02')) {
+     (iVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d)), (char)iVar3 == '\x02')) {
     *param_4 = 0;
     *param_3 = 0;
     return;
   }
 switchD_004cb1d7_caseD_e:
   if ((*(int *)((int)this + 0x5ac) == 0x4f) &&
-     (iVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d)), (char)iVar3 == '\x02')) {
+     (iVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d)), (char)iVar3 == '\x02')) {
     if (*(int *)((int)this + 0x4d0) != 1) {
       uVar1 = *(uint *)((&PTR_DAT_007b5170)[iVar4] +
                        (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8);

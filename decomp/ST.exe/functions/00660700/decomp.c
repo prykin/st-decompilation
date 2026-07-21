@@ -39,24 +39,24 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
     if (sVar1 < 0) {
       return 0xffffffff;
     }
-    if (SHORT_007fb240 <= sVar1) {
+    if (g_worldGrid.sizeX <= sVar1) {
       return 0xffffffff;
     }
     if (sVar5 < 0) {
       return 0xffffffff;
     }
-    if (SHORT_007fb242 <= sVar5) {
+    if (g_worldGrid.sizeY <= sVar5) {
       return 0xffffffff;
     }
     if (local_c < 0) {
       return 0xffffffff;
     }
-    if (SHORT_007fb244 <= local_c) {
+    if (g_worldGrid.sizeZ <= local_c) {
       return 0xffffffff;
     }
-    this_00 = g_worldCells
-              [(int)SHORT_007fb246 * (int)local_c + (int)SHORT_007fb240 * (int)sVar5 + (int)sVar1].
-              objects[0];
+    this_00 = g_worldGrid.cells
+              [(int)g_worldGrid.planeStride * (int)local_c + (int)g_worldGrid.sizeX * (int)sVar5 +
+               (int)sVar1].objects[0];
     if (this_00 == (STWorldObject *)0x0) {
       return 0xffffffff;
     }

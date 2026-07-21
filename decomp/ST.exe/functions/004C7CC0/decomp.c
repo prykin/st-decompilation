@@ -72,7 +72,7 @@ LAB_004c7d8c:
           *(undefined4 *)((int)this + 0x36d) = 1;
         }
         else {
-          iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+          iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
           if (((char)iVar4 != '\x03') && (*(int *)((int)this + 0x3a8) != 0)) {
             thunk_FUN_004d87b0(*(char *)((int)this + 0x24),*(int *)((int)this + 0x3a8));
           }
@@ -204,11 +204,11 @@ LAB_004c7d8c:
         }
         if (*(int *)((int)this + 0x361) == 5) {
           thunk_FUN_004cc880(this,3);
-          uVar7 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+          uVar7 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
           if (*(int *)(&DAT_00796230 + ((uVar7 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4) != 0)
           {
             iVar4 = *(int *)this;
-            uVar7 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+            uVar7 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
             (**(code **)(iVar4 + 0x90))
                       (3,*(undefined4 *)
                           (&DAT_00796230 + ((uVar7 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4));

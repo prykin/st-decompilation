@@ -6,16 +6,17 @@
 uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *param_1,uint *param_2)
 
 {
-  DArrayTy *pDVar1;
+  DArrayTy *array;
+  dword dVar1;
   code *pcVar2;
   uint *puVar3;
   int iVar4;
   uint uVar5;
-  uint uVar6;
+  STGameObjC *pSVar6;
   undefined4 *puVar7;
   undefined4 extraout_ECX;
-  undefined4 unaff_EBX;
   uint uVar8;
+  undefined4 unaff_EBX;
   undefined4 *puVar9;
   uint *local_10;
   int local_c;
@@ -60,7 +61,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
             }
           }
         }
-        FUN_006ae110((byte *)local_8);
+        DArrayDestroy(local_8);
       }
       else if (iVar4 == 0x1ae) {
         local_c = 2;
@@ -71,21 +72,21 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   else if (g_playerRuntime[uVar5].field324_0x203 == 1) {
     if ((g_playerRuntime[uVar5].tempSlots[1][0].playerId == uVar5) &&
        (g_playerRuntime[uVar5].tempSlots[1][0].objectType == 0x19a)) {
-      pDVar1 = g_playerRuntime[uVar5].tempSlots[1][0].objectIds;
-      uVar8 = 0;
-      uVar5 = pDVar1->count;
-      if (0 < (int)uVar5) {
+      array = g_playerRuntime[uVar5].tempSlots[1][0].objectIds;
+      uVar5 = 0;
+      dVar1 = array->count;
+      if (0 < (int)dVar1) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar1,uVar8,&param_2);
+          DArrayGetElement(array,uVar5,&param_2);
           if (((short)param_2 != -1) &&
-             (uVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                (uint)param_2,CASE_1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {
+             (pSVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
+                                 (uint)param_2,CASE_1), ((uint)pSVar6[1].vtable & 4) == 0)) {
             local_c = 1;
             local_10 = param_2;
             break;
           }
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)uVar5);
+          uVar5 = uVar5 + 1;
+        } while ((int)uVar5 < (int)dVar1);
       }
     }
   }

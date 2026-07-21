@@ -28,7 +28,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   uint *puVar5;
   undefined4 *puVar6;
   ushort **ppuVar7;
-  LPVOID *ppvVar8;
+  void **ppvVar8;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   int local_8;
@@ -42,11 +42,11 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     puVar1 = &local_c->field_0x18;
     local_c->field_0028 = 0x4404;
     FUN_006e6000(local_c,0xf,0,(undefined4 *)puVar1);
-    ppvVar8 = (LPVOID *)&this_00->field_0x217;
+    ppvVar8 = (void **)&this_00->field_0x217;
     local_8 = 4;
     do {
-      if (*ppvVar8 != (LPVOID)0x0) {
-        FUN_006ab060(ppvVar8);
+      if (*ppvVar8 != (void *)0x0) {
+        FreeAndNull(ppvVar8);
       }
       ppvVar8 = ppvVar8 + 1;
       local_8 = local_8 + -1;
@@ -189,11 +189,11 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
       FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
     }
-    ppvVar8 = (LPVOID *)&this_00->field_0227;
+    ppvVar8 = (void **)&this_00->field_0227;
     iVar3 = 4;
     do {
-      if (*ppvVar8 != (LPVOID)0x0) {
-        FUN_006ab060(ppvVar8);
+      if (*ppvVar8 != (void *)0x0) {
+        FreeAndNull(ppvVar8);
       }
       ppvVar8 = ppvVar8 + 1;
       iVar3 = iVar3 + -1;
@@ -242,18 +242,18 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     this_00->field_0292 = 0;
     this_00->field_028E = 0;
     this_01 = extraout_ECX;
-    if ((byte *)this_00->field_024B != (byte *)0x0) {
-      FUN_006ae110((byte *)this_00->field_024B);
+    if (this_00->field_024B != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_024B);
       this_01 = extraout_ECX_00;
     }
-    this_00->field_024B = 0;
-    if ((byte *)this_00->field_0B4B != (byte *)0x0) {
-      FUN_006ae110((byte *)this_00->field_0B4B);
+    this_00->field_024B = (DArrayTy *)0x0;
+    if (this_00->field_0B4B != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0B4B);
       this_01 = extraout_ECX_01;
     }
-    this_00->field_0B4B = 0;
-    if ((byte *)this_00->field_0B95 != (byte *)0x0) {
-      FUN_006ae110((byte *)this_00->field_0B95);
+    this_00->field_0B4B = (DArrayTy *)0x0;
+    if ((DArrayTy *)this_00->field_0B95 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)this_00->field_0B95);
       this_01 = extraout_ECX_02;
     }
     this_00->field_0B95 = 0;
@@ -297,19 +297,19 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       this_00->field_01B8 = (ccFntTy *)0x0;
     }
     if (this_00->field_01AC != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_01AC);
+      FreeAndNull((void **)&this_00->field_01AC);
     }
-    if (this_00->field_01B0 != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_01B0);
+    if (this_00->field_01B0 != (AnonPointee_CPanelTy_01B0 *)0x0) {
+      FreeAndNull(&this_00->field_01B0);
     }
     if (this_00->field_01B4 != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_01B4);
+      FreeAndNull((void **)&this_00->field_01B4);
     }
-    ppvVar8 = (LPVOID *)&this_00->field_0180;
+    ppvVar8 = (void **)&this_00->field_0180;
     local_8 = 0xb;
     do {
-      if (*ppvVar8 != (LPVOID)0x0) {
-        FUN_006ab060(ppvVar8);
+      if (*ppvVar8 != (void *)0x0) {
+        FreeAndNull(ppvVar8);
       }
       ppvVar8 = ppvVar8 + 1;
       local_8 = local_8 + -1;

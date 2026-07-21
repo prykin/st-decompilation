@@ -28,9 +28,10 @@ uint __thiscall FUN_00639670(void *this,int param_1)
           ((*(int *)((int)this + 0x26b) * iVar4 * 10) / 0x1e - (iVar4 * iVar4 * 300) / 900) / 10;
   iVar4 = *(int *)((int)this + 0x286);
   *(int *)((int)this + 0x282) = iVar1;
-  uVar2 = thunk_FUN_00601500((void *)((int)this + 0x2ab),local_c,iVar3,iVar1,iVar4,iVar4,iVar4,
-                             *(int *)((int)this + 0x255),0x35c,*(int *)((int)this + 0x25b),
-                             *(undefined2 *)((int)this + 0x259),0x10c,0,0);
+  uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                    ((AnonReceiver_00601500 *)((int)this + 0x2ab),local_c,iVar3,iVar1,iVar4,iVar4,
+                     iVar4,*(int *)((int)this + 0x255),0x35c,*(int *)((int)this + 0x25b),
+                     *(undefined2 *)((int)this + 0x259),0x10c,0,0);
   if ((int)uVar2 < 1) {
     return 0;
   }

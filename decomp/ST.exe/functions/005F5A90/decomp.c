@@ -44,7 +44,7 @@ byte * __thiscall FUN_005f5a90(void *this,int *param_1)
       pbVar1 = pbVar1 + 1;
     }
     if (local_c != (byte *)0x0) {
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
     }
     *param_1 = local_8 + 0x128;
     return pbVar2;

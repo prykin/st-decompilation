@@ -7,8 +7,8 @@ void __fastcall FUN_005f2330(AnonShape_005F2330_0E1D2560 *param_1)
   uint uVar3;
   
   uVar3 = 0;
-  if ((byte *)param_1->field_0038 != (byte *)0x0) {
-    FUN_006ae110((byte *)param_1->field_0038);
+  if ((DArrayTy *)param_1->field_0038 != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)param_1->field_0038);
     param_1->field_0038 = 0;
   }
   if (param_1->field_003C != 0) {
@@ -29,7 +29,7 @@ void __fastcall FUN_005f2330(AnonShape_005F2330_0E1D2560 *param_1)
         uVar3 = uVar3 + 1;
       } while ((int)uVar3 < iVar1);
     }
-    FUN_006ae110((byte *)param_1->field_003C);
+    DArrayDestroy((DArrayTy *)param_1->field_003C);
     param_1->field_003C = 0;
   }
   return;

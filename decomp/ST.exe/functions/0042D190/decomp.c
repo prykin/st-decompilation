@@ -12,40 +12,39 @@ STAllPlayersC::ResetActivityFromObjs
   code *pcVar2;
   STGameObjC *pSVar3;
   int iVar4;
-  uint uVar5;
+  uint index;
   int unaff_EDI;
-  STAllPlayersC_GetObjPtr_param_3Enum SVar6;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar5;
   
   if (param_2 < 0x19b) {
     if (param_2 == 0x19a) {
 LAB_0042d1f8:
-      uVar5 = 0;
+      index = 0;
       dVar1 = param_3->count;
       if ((int)dVar1 < 1) {
         return;
       }
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,uVar5,&param_4);
+        DArrayGetElement(param_3,index,&param_4);
         if ((((short)param_4 != -1) &&
-            (pSVar3 = (STGameObjC *)GetObjPtr(this,param_1,param_4,CASE_1),
-            pSVar3 != (STGameObjC *)0x0)) &&
-           ((**(code **)(pSVar3->field_0000 + 0xe8))(0), param_5 != 0)) {
+            (pSVar3 = GetObjPtr(this,param_1,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
+           ((*pSVar3->vtable[1].vfunc_14)(0), param_5 != 0)) {
           STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)dVar1);
+        index = index + 1;
+      } while ((int)index < (int)dVar1);
       return;
     }
     if (param_2 < 0x5b) {
       if (param_2 == 0x5a) {
-        SVar6 = CASE_4;
+        SVar5 = CASE_4;
 LAB_0042d1c3:
-        pSVar3 = (STGameObjC *)GetObjPtr(this,param_1,param_4,SVar6);
+        pSVar3 = GetObjPtr(this,param_1,param_4,SVar5);
         if (pSVar3 == (STGameObjC *)0x0) {
           return;
         }
         iVar4 = 0;
-        (**(code **)(pSVar3->field_0000 + 0xe8))();
+        (*pSVar3->vtable[1].vfunc_14)();
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -54,7 +53,7 @@ LAB_0042d1c3:
       if (param_2 == 0x3c) goto LAB_0042d1f8;
     }
     else if (param_2 == 0x172) {
-      SVar6 = CASE_2;
+      SVar5 = CASE_2;
       goto LAB_0042d1c3;
     }
 LAB_0042d270:
@@ -68,12 +67,12 @@ LAB_0042d270:
   }
   else {
     if (param_2 == 0x1a4) {
-      pSVar3 = (STGameObjC *)GetObjPtr(this,param_1,param_4,CASE_5);
+      pSVar3 = GetObjPtr(this,param_1,param_4,CASE_5);
       if (pSVar3 == (STGameObjC *)0x0) {
         return;
       }
       iVar4 = 0;
-      (**(code **)(pSVar3->field_0000 + 0xe8))();
+      (*pSVar3->vtable[1].vfunc_14)();
       if (param_5 == 0) {
         return;
       }
@@ -81,18 +80,18 @@ LAB_0042d270:
       return;
     }
     if (param_2 == 0x1ae) {
-      SVar6 = CASE_3;
+      SVar5 = CASE_3;
     }
     else {
       if (param_2 != 0x1b8) goto LAB_0042d270;
-      SVar6 = CASE_6;
+      SVar5 = CASE_6;
     }
-    pSVar3 = (STGameObjC *)GetObjPtr(this,param_1,param_4,SVar6);
+    pSVar3 = GetObjPtr(this,param_1,param_4,SVar5);
     if (pSVar3 == (STGameObjC *)0x0) {
       return;
     }
     iVar4 = 0;
-    (**(code **)(pSVar3->field_0000 + 0xe8))();
+    (*pSVar3->vtable[1].vfunc_14)();
 LAB_0042d2c3:
     if (param_5 != 0) {
       STGameObjC::ResetSelfCheckFlag(pSVar3,iVar4);

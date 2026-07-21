@@ -30,32 +30,32 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   if (local_8 < 0) {
     local_8 = 0;
   }
-  iVar6 = SHORT_007fb240 + -1;
+  iVar6 = g_worldGrid.sizeX + -1;
   if (iVar6 < local_c) {
     local_c = iVar6;
   }
   if (_param_3 < 0) {
     _param_3 = 0;
   }
-  if (SHORT_007fb242 + -1 < _param_4) {
-    _param_4 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY + -1 < _param_4) {
+    _param_4 = g_worldGrid.sizeY + -1;
   }
   if (iVar3 < 0) {
     iVar3 = 0;
   }
-  if (SHORT_007fb244 + -1 < _param_5) {
-    _param_5 = SHORT_007fb244 + -1;
+  if (g_worldGrid.sizeZ + -1 < _param_5) {
+    _param_5 = g_worldGrid.sizeZ + -1;
   }
-  iVar6 = SHORT_007fb240 * _param_3 + local_8 + (iVar3 + -1) * (int)SHORT_007fb246;
+  iVar6 = g_worldGrid.sizeX * _param_3 + local_8 + (iVar3 + -1) * (int)g_worldGrid.planeStride;
   if (iVar3 <= _param_5) {
     _param_5 = _param_5 - iVar3;
-    iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),SHORT_007fb240);
+    iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),g_worldGrid.sizeX);
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
     iVar10 = local_8;
     param_6 = 0;
     do {
-      iVar6 = iVar6 + SHORT_007fb246;
+      iVar6 = iVar6 + g_worldGrid.planeStride;
       local_10 = iVar6 - (short)iVar3;
       if (_param_3 <= _param_4) {
         iVar7 = (_param_4 - _param_3) + 1;
@@ -65,8 +65,8 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
             iVar8 = (iVar8 - local_8) + 1;
             iVar3 = local_10 * 8 + -8;
             do {
-              piVar2 = *(int **)((int)g_worldCells[1].objects + iVar3);
-              pSVar5 = g_worldCells;
+              piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar3);
+              pSVar5 = g_worldGrid.cells;
               if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
                 (**(code **)(*piVar2 + 0x74))(local_20);
                 pbVar9 = local_20;
@@ -95,7 +95,7 @@ LAB_0043f4cd:
               iVar8 = iVar8 + -1;
               iVar3 = iVar3 + 8;
             } while (iVar8 != 0);
-            iVar3 = CONCAT22((short)((uint)pSVar5 >> 0x10),SHORT_007fb240);
+            iVar3 = CONCAT22((short)((uint)pSVar5 >> 0x10),g_worldGrid.sizeX);
             iVar8 = local_c;
             iVar10 = local_8;
           }

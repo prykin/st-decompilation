@@ -12,12 +12,12 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   STBoatC *this_00;
   int iVar4;
   undefined4 uVar5;
-  uint uVar6;
+  uint index;
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar7;
-  uint uVar8;
+  undefined4 *puVar6;
+  uint uVar7;
   InternalExceptionFrame local_58;
   STGroupBoatC *local_14;
   uint local_10;
@@ -32,18 +32,18 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   pSVar2 = local_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar7 = (undefined4 *)&local_14->field_0x89;
+      puVar6 = (undefined4 *)&local_14->field_0x89;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
+        *puVar6 = 0;
+        puVar6 = puVar6 + 1;
       }
-      uVar8 = 0;
+      uVar7 = 0;
       local_14->field_0065 = 0;
       local_8 = PTR_00802a38->field_00E4;
       if (local_10 != 0) {
-        uVar6 = 0;
+        index = 0;
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,&local_c);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_c);
           if ((short)local_c != -1) {
             this_00 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
@@ -57,9 +57,9 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
             }
             STBoatC::CmdToObj(this_00,CASE_3,&local_8);
           }
-          uVar8 = uVar8 + 1;
-          uVar6 = uVar8 & 0xffff;
-        } while (uVar6 < local_10);
+          uVar7 = uVar7 + 1;
+          index = uVar7 & 0xffff;
+        } while (index < local_10);
       }
     }
     g_currentExceptionFrame = local_58.previous;

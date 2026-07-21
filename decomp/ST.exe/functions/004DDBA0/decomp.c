@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_004ddba0(void *this,int param_1)
   uint uVar1;
   int iVar2;
   
-  uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+  uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
   uVar1 = uVar1 & 0xff;
   if (uVar1 == 1) {
     iVar2 = 0x17;

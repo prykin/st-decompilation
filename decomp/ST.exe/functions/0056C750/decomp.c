@@ -34,23 +34,23 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   pSVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_1189 != (LPVOID)0x0) {
-      FUN_006ab060(&local_8->field_1189);
+      FreeAndNull(&local_8->field_1189);
     }
     pSVar3->field_118D = 0;
     if (PTR_00806740 != (AnonShape_GLOBAL_00806740_0AFD1484 *)0x0) {
-      FUN_006ae110((byte *)PTR_00806740);
+      DArrayDestroy((DArrayTy *)PTR_00806740);
     }
     PTR_00806740 = (AnonShape_GLOBAL_00806740_0AFD1484 *)0x0;
     thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081163c);
     thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081176c);
     CloseGameDBs(pSVar3);
     DestroyBaseSystem();
-    if ((byte *)pSVar3->field_4EE2 != (byte *)0x0) {
-      FUN_006ae110((byte *)pSVar3->field_4EE2);
+    if ((DArrayTy *)pSVar3->field_4EE2 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pSVar3->field_4EE2);
     }
     pSVar3->field_4EE2 = 0;
-    if ((byte *)pSVar3->field_4EE6 != (byte *)0x0) {
-      FUN_006ae110((byte *)pSVar3->field_4EE6);
+    if ((DArrayTy *)pSVar3->field_4EE6 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pSVar3->field_4EE6);
     }
     pSVar3->field_4EE6 = 0;
     if (PTR_008075a0 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
@@ -104,8 +104,8 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       cMf32::delete(pcVar6,g_cMf32_0080675C);
     }
     g_cMf32_0080675C = (cMf32 *)0x0;
-    if ((byte *)pSVar3->field_4EDE != (byte *)0x0) {
-      FUN_006ae110((byte *)pSVar3->field_4EDE);
+    if ((DArrayTy *)pSVar3->field_4EDE != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pSVar3->field_4EDE);
     }
     pSVar3->field_4EDE = 0;
     if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -121,10 +121,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     pSVar3->field_4EDA = 0;
     if (pSVar3->field_7D12 != 0) {
-      FUN_006ab060((LPVOID *)&pSVar3->field_7D12);
+      FreeAndNull((void **)&pSVar3->field_7D12);
     }
     if (pSVar3->field_76F2 != 0) {
-      FUN_006ab060((LPVOID *)&pSVar3->field_76F2);
+      FreeAndNull((void **)&pSVar3->field_76F2);
     }
     thunk_FUN_005713b0((int)pSVar3);
     this_01 = &pSVar3->field_0038;
@@ -145,14 +145,14 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     UnregisterClassA(s_STWindowClass_007c9e3c,g_hInstance_00856D70);
     pSVar3 = local_8;
     if (local_8->field_115A != 0) {
-      FUN_006ab060((LPVOID *)&local_8->field_115A);
+      FreeAndNull((void **)&local_8->field_115A);
     }
     AppClassTy::DoneApp((AppClassTy *)pSVar3);
     if (DAT_008030d4 != 0) {
-      FUN_006ab060((LPVOID *)&DAT_008030d4);
+      FreeAndNull((void **)&DAT_008030d4);
     }
     if (DAT_00802ad0 != 0) {
-      FUN_006ab060((LPVOID *)&DAT_00802ad0);
+      FreeAndNull((void **)&DAT_00802ad0);
     }
     InterlockedDecrement(&DAT_0085e000);
     g_currentExceptionFrame = local_50.previous;

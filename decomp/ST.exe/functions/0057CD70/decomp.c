@@ -66,7 +66,8 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
       }
       thunk_FUN_00417ff0(this,cVar7 + '\a');
       thunk_FUN_00418010(this,cVar7 + '\x06');
-      thunk_FUN_00418030(this,this->field_0235,this->field_0237,this->field_0239);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                ((AnonReceiver_00417FF0 *)this,this->field_0235,this->field_0237,this->field_0239);
       this->field_023B = 1;
     }
   }

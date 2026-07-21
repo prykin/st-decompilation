@@ -18,14 +18,14 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
   uint *puVar3;
   int iVar4;
   undefined4 uVar5;
-  AnonShape_006ACC70_C8641025 *pAVar6;
+  DArrayTy *pDVar6;
   undefined4 unaff_ESI;
   uint uVar7;
-  uint uVar8;
-  byte *pbVar9;
+  uint index;
+  byte *pbVar8;
   void *unaff_EDI;
-  byte *pbVar10;
-  bool bVar11;
+  byte *pbVar9;
+  bool bVar10;
   InternalExceptionFrame local_84;
   undefined4 local_40 [2];
   undefined4 local_38;
@@ -73,139 +73,140 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
     local_1c[3] = 0;
     local_18 = (byte *)SaveGrpBData((STGroupBoatC *)this_00,(int *)&local_10);
     local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + local_c);
-    pbVar9 = local_1c;
-    pbVar10 = local_8;
+    pbVar8 = local_1c;
+    pbVar9 = local_8;
     for (uVar7 = local_c >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pbVar10 = *(undefined4 *)pbVar9;
+      *(undefined4 *)pbVar9 = *(undefined4 *)pbVar8;
+      pbVar8 = pbVar8 + 4;
       pbVar9 = pbVar9 + 4;
-      pbVar10 = pbVar10 + 4;
     }
     for (uVar7 = local_c & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pbVar10 = *pbVar9;
+      *pbVar9 = *pbVar8;
+      pbVar8 = pbVar8 + 1;
       pbVar9 = pbVar9 + 1;
-      pbVar10 = pbVar10 + 1;
     }
-    pbVar9 = local_18;
-    pbVar10 = local_8 + local_c;
+    pbVar8 = local_18;
+    pbVar9 = local_8 + local_c;
     for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pbVar10 = *(undefined4 *)pbVar9;
+      *(undefined4 *)pbVar9 = *(undefined4 *)pbVar8;
+      pbVar8 = pbVar8 + 4;
       pbVar9 = pbVar9 + 4;
-      pbVar10 = pbVar10 + 4;
     }
     for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pbVar10 = *pbVar9;
+      *pbVar9 = *pbVar8;
+      pbVar8 = pbVar8 + 1;
       pbVar9 = pbVar9 + 1;
-      pbVar10 = pbVar10 + 1;
     }
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_8,local_10 + local_c);
-    FUN_006ab060(&local_1c);
-    FUN_006ab060(&local_18);
-    FUN_006ab060(&local_8);
+              (PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_8,
+               (AnonShape_0060EA30_DCEB68AD *)(local_10 + local_c));
+    FreeAndNull(&local_1c);
+    FreeAndNull(&local_18);
+    FreeAndNull(&local_8);
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
   if (uVar7 == 3) {
-    pbVar9 = *(byte **)((int)&this_00[3].field_0035 + 3);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[3].field_0035 + 3);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[3].field_0035 + 3) = 0;
     }
-    if (*(byte **)&this_00[4].field_0xf != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00[4].field_0xf);
+    if (*(DArrayTy **)&this_00[4].field_0xf != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&this_00[4].field_0xf);
       *(undefined4 *)&this_00[4].field_0xf = 0;
     }
-    if (*(byte **)&this_00[4].field_0x1b != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00[4].field_0x1b);
+    if (*(DArrayTy **)&this_00[4].field_0x1b != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&this_00[4].field_0x1b);
       *(undefined4 *)&this_00[4].field_0x1b = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[4].field_0031 + 2);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[4].field_0031 + 2);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[4].field_0031 + 2) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[5].field_002D + 2);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[5].field_002D + 2);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[5].field_002D + 2) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[5].field_0035 + 2);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[5].field_0035 + 2);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[5].field_0035 + 2) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[7].field_001C + 3);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[7].field_001C + 3);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_001C + 3) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[7].field_0020 + 3);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[7].field_0020 + 3);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_0020 + 3) = 0;
     }
-    if (*(byte **)&this_00[7].field_0027 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00[7].field_0027);
+    if (*(DArrayTy **)&this_00[7].field_0027 != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&this_00[7].field_0027);
       *(undefined4 *)&this_00[7].field_0027 = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[7].field_0029 + 2);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[7].field_0029 + 2);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_0029 + 2) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[7].field_002D + 2);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[7].field_002D + 2);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_002D + 2) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[7].field_0031 + 2);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[7].field_0031 + 2);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_0031 + 2) = 0;
     }
     uVar7 = *(uint *)(this_00->field_0029 + 0xc);
-    if ((uVar7 != 0) && (uVar8 = 0, uVar7 != 0)) {
+    if ((uVar7 != 0) && (index = 0, uVar7 != 0)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar8,&local_14);
+        DArrayGetElement((DArrayTy *)this_00->field_0029,index,&local_14);
         if ((short)local_14 != -1) {
           thunk_FUN_0040cdb0(this_00,local_14 & 0xffff);
         }
-        uVar8 = uVar8 + 1;
-      } while ((uVar8 & 0xffff) < uVar7);
+        index = index + 1;
+      } while ((index & 0xffff) < uVar7);
     }
     if (*(int *)((int)&this_00[8].field_0035 + 1) != 0) {
-      FUN_006ab060((LPVOID *)((int)&this_00[8].field_0035 + 1));
+      FreeAndNull((void **)((int)&this_00[8].field_0035 + 1));
     }
-    pbVar9 = *(byte **)((int)&this_00[8].field_0025 + 1);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[8].field_0025 + 1);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[8].field_0025 + 1) = 0;
     }
-    pbVar9 = *(byte **)((int)&this_00[9].field_0000 + 1);
-    if (pbVar9 != (byte *)0x0) {
-      FUN_006ae110(pbVar9);
+    pDVar6 = *(DArrayTy **)((int)&this_00[9].field_0000 + 1);
+    if (pDVar6 != (DArrayTy *)0x0) {
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[9].field_0000 + 1) = 0;
     }
-    if (*(byte **)&this_00[9].field_0x5 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00[9].field_0x5);
+    if (*(DArrayTy **)&this_00[9].field_0x5 != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&this_00[9].field_0x5);
       *(undefined4 *)&this_00[9].field_0x5 = 0;
     }
-    if (*(byte **)&this_00[9].field_0x9 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00[9].field_0x9);
+    if (*(DArrayTy **)&this_00[9].field_0x9 != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&this_00[9].field_0x9);
       *(undefined4 *)&this_00[9].field_0x9 = 0;
     }
-    if ((byte *)this_00[9].field_0029 != (byte *)0x0) {
-      FUN_006ae110((byte *)this_00[9].field_0029);
+    if ((DArrayTy *)this_00[9].field_0029 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)this_00[9].field_0029);
       this_00[9].field_0029 = 0;
     }
-    if (*(byte **)&this_00[10].field_0x4 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00[10].field_0x4);
+    if (*(DArrayTy **)&this_00[10].field_0x4 != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&this_00[10].field_0x4);
       *(undefined4 *)&this_00[10].field_0x4 = 0;
     }
-    if ((byte *)this_00[0xb].field_0000 != (byte *)0x0) {
-      FUN_006ae110((byte *)this_00[0xb].field_0000);
+    if ((DArrayTy *)this_00[0xb].field_0000 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)this_00[0xb].field_0000);
       this_00[0xb].field_0000 = 0;
     }
     (**(code **)(this_00->field_0000 + 0x18))(this_00,0,0,0);
@@ -246,15 +247,15 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
     uVar7 = 0;
     *(undefined4 *)&this_00[1].field_0024 = 0;
     if (iVar2 == 1) {
-      pAVar6 = *(AnonShape_006ACC70_C8641025 **)((int)&this_00[7].field_002D + 2);
+      pDVar6 = *(DArrayTy **)((int)&this_00[7].field_002D + 2);
       *(undefined4 *)&this_00[2].field_0x7 = 0;
-      if (0 < (int)pAVar6->field_000C) {
+      if (0 < (int)pDVar6->count) {
         do {
-          FUN_006acc70(pAVar6,uVar7,&local_14);
+          DArrayGetElement(pDVar6,uVar7,&local_14);
           (**(code **)(this_00->field_0000 + 4))(local_14);
-          pAVar6 = *(AnonShape_006ACC70_C8641025 **)((int)&this_00[7].field_002D + 2);
+          pDVar6 = *(DArrayTy **)((int)&this_00[7].field_002D + 2);
           uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)pAVar6->field_000C);
+        } while ((int)uVar7 < (int)pDVar6->count);
       }
       if (*(int *)((int)&this_00[7].field_0039 + 2) == 6) {
         ReMakePatrolPoints((STGroupBoatC *)this_00,(int)unaff_EDI);
@@ -263,20 +264,20 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       if ((this_00->field_0027 == 0) && (this_00->field_0020 == 0)) {
         this_00[1].field_0020 = 1;
       }
-      FUN_006ae110(*(byte **)((int)&this_00[7].field_002D + 2));
+      DArrayDestroy(*(DArrayTy **)((int)&this_00[7].field_002D + 2));
       *(undefined4 *)((int)&this_00[7].field_002D + 2) = 0;
     }
     if ((*(int *)((int)&this_00[1].field_002D + 3) == 1) &&
        (iVar2 = this_00->field_002D, *(undefined4 *)((int)&this_00[1].field_002D + 3) = 0,
        iVar2 != 0)) {
       RechargeNewCmd((STGroupBoatC *)this_00,unaff_EDI);
-      FUN_006ae110((byte *)this_00->field_002D);
+      DArrayDestroy((DArrayTy *)this_00->field_002D);
       this_00->field_002D = 0;
     }
     if (*(int *)((int)&this_00[1].field_0031 + 3) == 1) {
-      pbVar9 = *(byte **)((int)&this_00[7].field_001C + 3);
+      pDVar6 = *(DArrayTy **)((int)&this_00[7].field_001C + 3);
       *(undefined4 *)((int)&this_00[1].field_0031 + 3) = 0;
-      FUN_006ae110(pbVar9);
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_001C + 3) = 0;
     }
     if (*(int *)((int)&this_00[1].field_0035 + 3) == 1) {
@@ -284,19 +285,19 @@ STGroupBoatC::GetMessage(STGroupBoatC *this,AnonShape_00497E00_1D819A47 *param_1
       *(undefined4 *)((int)&this_00[1].field_0035 + 3) = 0;
       ReMakePVecAndTgtList((STGroupBoatC *)this_00,puVar3);
       DistributeTargets((STGroupBoatC *)this_00,*(uint **)((int)&this_00[7].field_0020 + 3));
-      FUN_006ae110(*(byte **)((int)&this_00[7].field_0020 + 3));
+      DArrayDestroy(*(DArrayTy **)((int)&this_00[7].field_0020 + 3));
       *(undefined4 *)((int)&this_00[7].field_0020 + 3) = 0;
     }
     if (*(int *)((int)&this_00[1].field_0039 + 3) == 1) {
-      pbVar9 = *(byte **)&this_00[7].field_0027;
+      pDVar6 = *(DArrayTy **)&this_00[7].field_0027;
       *(undefined4 *)((int)&this_00[1].field_0039 + 3) = 0;
-      FUN_006ae110(pbVar9);
+      DArrayDestroy(pDVar6);
       *(undefined4 *)&this_00[7].field_0027 = 0;
     }
     if (*(int *)((int)&this_00[2].field_0000 + 3) == 1) {
-      pbVar9 = *(byte **)((int)&this_00[7].field_0029 + 2);
+      pDVar6 = *(DArrayTy **)((int)&this_00[7].field_0029 + 2);
       *(undefined4 *)((int)&this_00[2].field_0000 + 3) = 0;
-      FUN_006ae110(pbVar9);
+      DArrayDestroy(pDVar6);
       *(undefined4 *)((int)&this_00[7].field_0029 + 2) = 0;
     }
   }
@@ -429,22 +430,22 @@ switchD_004984e0_default:
       goto cf_common_exit_004984F2;
     }
     if (*(int *)((int)&this_00[2].field_0020 + 3) == 1) {
-      bVar11 = *(int *)((int)&this_00[7].field_0039 + 2) == 6;
-      if (!bVar11) {
+      bVar10 = *(int *)((int)&this_00[7].field_0039 + 2) == 6;
+      if (!bVar10) {
         *(undefined4 *)((int)&this_00[7].field_0039 + 2) = 6;
       }
-      puVar3 = (uint *)GrpPatrol((STGroupBoatC *)this_00,(uint)bVar11);
+      puVar3 = (uint *)GrpPatrol((STGroupBoatC *)this_00,(uint)bVar10);
       if (puVar3 == (uint *)0xffffffff) {
         return 0xffff;
       }
       goto cf_common_exit_004984F2;
     }
     if (*(int *)((int)&this_00[2].field_0029 + 2) == 1) {
-      bVar11 = *(int *)((int)&this_00[7].field_0039 + 2) == 8;
-      if (!bVar11) {
+      bVar10 = *(int *)((int)&this_00[7].field_0039 + 2) == 8;
+      if (!bVar10) {
         *(undefined4 *)((int)&this_00[7].field_0039 + 2) = 8;
       }
-      puVar3 = (uint *)GrpLoadRC((STGroupBoatC *)this_00,(uint)bVar11);
+      puVar3 = (uint *)GrpLoadRC((STGroupBoatC *)this_00,(uint)bVar10);
     }
     else {
       if (*(int *)((int)&this_00[2].field_002D + 2) == 1) {

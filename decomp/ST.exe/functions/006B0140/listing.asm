@@ -1,4 +1,4 @@
-FUN_006b0140:
+LoadResourceString:
 006B0140  55                        PUSH EBP
 006B0141  8B EC                     MOV EBP,ESP
 006B0143  A1 E0 68 85 00            MOV EAX,[0x008568e0]

@@ -22,7 +22,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   InternalExceptionFrame local_70;
   undefined1 local_2c;
   float local_2b;
-  int *local_24;
+  AnonReceiver_0064A970 *local_24;
   float local_20;
   int local_1c;
   float *local_18;
@@ -42,10 +42,10 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (local_8 != (float *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     if (local_18 != (float *)0x0) {
-      FUN_006ab060(&local_18);
+      FreeAndNull(&local_18);
     }
     thunk_FUN_0064a800(&local_c);
     if (0 < iVar3) {
@@ -56,8 +56,8 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
     }
     return (float *)0x0;
   }
-  Library::MSVCRT::_strncpy((char *)(local_24 + 1),&DAT_008016a0,0x7f);
-  local_24[0x21] = -1;
+  Library::MSVCRT::_strncpy(&local_24->field_0x4,&DAT_008016a0,0x7f);
+  *(undefined4 *)&local_24->field_0x84 = 0xffffffff;
   local_c = thunk_FUN_0064a630(10);
   local_20 = 0.0;
   psVar7 = (short *)(param_1 + 1);
@@ -76,7 +76,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         switch(*puVar2) {
         case 1:
         case 4:
-          fVar6 = (float)(**(code **)*local_24)(puVar2);
+          fVar6 = (float)(*local_24->vtable->slot_00)(puVar2);
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *local_18 = fVar6;
           if (param_2 != (int *)0x0) {
@@ -85,7 +85,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           break;
         case 2:
         case 5:
-          fVar8 = (float10)(**(code **)(*local_24 + 4))(puVar2);
+          fVar8 = (float10)(*local_24->vtable->slot_04)(puVar2);
           local_20 = (float)fVar8;
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *local_18 = local_20;
@@ -95,7 +95,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           break;
         case 3:
         case 6:
-          fVar6 = (float)(**(code **)(*local_24 + 8))(puVar2);
+          fVar6 = (float)(*local_24->vtable->slot_08)(puVar2);
           if (fVar6 == 0.0) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,
@@ -139,7 +139,8 @@ cf_continue_loop_006721A4:
         iVar4 = (int)psVar7[1];
         piVar9 = &local_1c;
         pcVar5 = (char *)thunk_FUN_0064a910((int)local_c,iVar3);
-        local_8 = (float *)thunk_FUN_0066acc0(pcVar5,iVar4,piVar9);
+        local_8 = (float *)SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                           thunk_FUN_0066acc0(local_24,pcVar5,iVar4,piVar9);
       }
     }
     else {
@@ -167,7 +168,7 @@ cf_continue_loop_006721A4:
       local_2b = *local_8;
     }
     else if (local_1c == 3) {
-      iVar3 = (**(code **)(*local_24 + 0xc))(local_8);
+      iVar3 = (*local_24->vtable->slot_0C)(local_8);
       if (iVar3 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x559);
@@ -180,7 +181,7 @@ cf_continue_loop_006721A4:
                 (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x55e);
     }
     thunk_FUN_0064a830(local_c,(undefined4 *)&local_2c);
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
     sVar1 = *psVar7;
     if (((sVar1 == 800) && (local_2b == 0.0)) && (local_14 == 0)) {
       local_10 = local_10 + 1;

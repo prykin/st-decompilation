@@ -114,11 +114,11 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       }
     }
     if (*(int *)&pMVar3[0x20].field_0x1b != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x20].field_0x1b);
+      FreeAndNull((void **)&pMVar3[0x20].field_0x1b);
     }
     *(undefined4 *)&pMVar3[0x20].field_0x1f = 0;
     if (*(int *)&pMVar3[0x20].field_0x2b != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x20].field_0x2b);
+      FreeAndNull((void **)&pMVar3[0x20].field_0x2b);
     }
     if ((pMVar3[0x24].field_0xca != '\0') &&
        (this_01 = *(MMsgTy **)(*(int *)&pMVar3[0x1d].field_0xa4 + 0x2e6), this_01 != (MMsgTy *)0x0))
@@ -131,8 +131,8 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)&pMVar3[0x20].field_0x37);
       *(undefined4 *)&pMVar3[0x20].field_0x37 = 0;
     }
-    if (*(byte **)&pMVar3[0x20].field_0x3b != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pMVar3[0x20].field_0x3b);
+    if (*(DArrayTy **)&pMVar3[0x20].field_0x3b != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&pMVar3[0x20].field_0x3b);
       *(undefined4 *)&pMVar3[0x20].field_0x3b = 0;
     }
     if (*(AnonShape_006B5570_4D68B99C **)&pMVar3[0x20].field_0x3f !=

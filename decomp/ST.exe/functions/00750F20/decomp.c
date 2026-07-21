@@ -17,8 +17,7 @@ void FUN_00750f20(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,undefi
   iVar2 = *piVar1;
   while (iVar2 != -1) {
     *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-    iVar2 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,*piVar1,
-                         *(int *)(param_1->field_000C + 0x1c));
+    iVar2 = FUN_00753b80(param_1,*piVar1,*(int *)(param_1->field_000C + 0x1c));
     piVar1 = (int *)(iVar2 + 4);
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
          0xffffffff;

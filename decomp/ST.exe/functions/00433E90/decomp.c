@@ -1,16 +1,24 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::PointPick */
+   STAllPlayersC::PointPick
+   
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00433E90 -> 0044AB90 @ 0043402D | 00433E90 -> 0044AB90 @ 00434084 | 00433E90 ->
+   0044AB90 @ 00434126 | 00433E90 -> 0044AB90 @ 00434221 | 00433E90 -> 0044AB90 @ 004342C8 |
+   00433E90 -> 0044AB90 @ 004349DA | 00433E90 -> 0044AB90 @ 00434A25 | 00433E90 -> 0044AB90 @
+   00434B10 | 00433E90 -> 0044AB90 @ 00434BE9 | 00433E90 -> 0044AB90 @ 00434C72 | 005449B0 ->
+   00433E90 @ 005473F1 */
 
 void __thiscall
-STAllPlayersC::PointPick(STAllPlayersC *this,uint *param_1,int param_2,int param_3,int param_4)
+STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
   int *piVar2;
   int iVar3;
   undefined4 uVar4;
+  int extraout_EAX;
   undefined2 extraout_var;
   uint uVar5;
   uint uVar6;
@@ -46,7 +54,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *param_1,int param_2,int param
   
   local_8 = (DArrayTy *)0x0;
   piVar2 = (int *)FUN_006eb350(PTR_00807598,param_2,param_3,0xe,1);
-  playerId = (char)param_1;
+  playerId = (char)objectIds;
   if (piVar2 == (int *)0x0) {
     RemoveActiveTV(playerId);
     return;
@@ -195,9 +203,9 @@ cf_common_exit_0043440E:
       iVar3 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
-          param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-          Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-          iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)param_1,0);
+          objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+          Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+          iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (-1 < iVar3) {
             ActivateTV(this,playerId,1,iVar3);
             goto cf_common_exit_00434CB8;
@@ -209,9 +217,9 @@ cf_common_exit_0043440E:
           goto LAB_00434c44;
         }
 LAB_004349ac:
-        param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)param_1,0);
+        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         uVar4 = extraout_ECX_00;
         if (iVar3 < 1) goto LAB_00434c92;
         ActivateTV(this,playerId,1,iVar3);
@@ -229,9 +237,9 @@ LAB_00434c12:
           return;
         }
 LAB_00434c44:
-        param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)param_1,0);
+        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,1,iVar3);
           goto cf_common_exit_00434CB8;
@@ -263,9 +271,9 @@ LAB_00434c92:
           if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_00434ab0;
           goto LAB_00434ae2;
         }
-        param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)param_1,0);
+        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,1,iVar3);
           goto cf_common_exit_00434CB8;
@@ -273,11 +281,11 @@ LAB_00434c92:
         if (-1 < iVar3) goto cf_common_exit_00434CB8;
         PushTV(playerId,1);
         if (g_playerRuntime[playerId].tempSlots[1][1].playerId != piVar2[9]) goto LAB_00434b39;
-        CalibrateTmp(this,playerId,1,1,param_1,(int *)&local_8,(int *)0x0,(int *)0x0);
+        CalibrateTmp(this,playerId,1,1,objectIds,(int *)&local_8,(int *)0x0,(int *)0x0);
         ResetActivityFromObjs
                   (this,CONCAT31((int3)((uint)extraout_EDX_03 >> 8),(char)piVar2[9]),0x19a,local_8,0
                    ,0);
-        FUN_006ae110((byte *)local_8);
+        DArrayDestroy(local_8);
         uVar4 = extraout_EDX_04;
         uVar7 = extraout_var_05;
       }
@@ -294,9 +302,9 @@ LAB_00434ab0:
           return;
         }
 LAB_00434ae2:
-        param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)param_1,0);
+        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,1,iVar3);
           goto cf_common_exit_00434CB8;
@@ -312,7 +320,7 @@ LAB_00434b39:
       g_playerRuntime[playerId].tempSlots[1][0].objectType = 0x19a;
     }
 cf_common_exit_00434CB8:
-    FUN_006ae110((byte *)param_1);
+    DArrayDestroy((DArrayTy *)objectIds);
     goto cf_common_exit_00434CBD;
   }
   if (uVar5 != 0x1a4) {
@@ -328,32 +336,33 @@ cf_common_exit_00434CB8:
               if (g_playerRuntime[playerId].tempSlots[0][0].playerId != (int)(char)piVar2[9]) {
                 return;
               }
-              iVar3 = PushTV(param_1,0,0,playerId,*(short *)((int)piVar2 + 0x32));
+              iVar3 = PushTV(objectIds,0,0,playerId,*(short *)((int)piVar2 + 0x32));
               if (iVar3 == 1) {
-                thunk_FUN_0042c300((uint)param_1,0,0,(uint)param_1,
+                thunk_FUN_0042c300((uint)objectIds,0,0,(uint)objectIds,
                                    (uint)*(ushort *)((int)piVar2 + 0x32));
                 SelfCheckObjControl(this);
                 return;
               }
-              AddObjToTmp(this,playerId,0,0,(uint)param_1,
+              AddObjToTmp(this,playerId,0,0,(uint)objectIds,
                           CONCAT22(extraout_var_00,*(undefined2 *)((int)piVar2 + 0x32)));
               SelfCheckObjControl(this);
               return;
             }
-            param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-            Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-            iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)param_1,0);
+            objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+            Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+            iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
               if (iVar3 < 0) {
                 PushTV(playerId,0);
                 if (g_playerRuntime[playerId].tempSlots[0][1].playerId != piVar2[9])
                 goto LAB_0043414f;
-                uVar4 = CalibrateTmp(this,playerId,0,1,param_1,(int *)&local_8,(int *)0x0,(int *)0x0
-                                    );
+                uVar4 = CalibrateTmp(this,playerId,0,1,objectIds,(int *)&local_8,(int *)0x0,
+                                     (int *)0x0);
                 ResetActivityFromObjs
                           (this,CONCAT31((int3)((uint)uVar4 >> 8),(char)piVar2[9]),0x3c,local_8,0,0)
                 ;
-                iVar3 = FUN_006ae110((byte *)local_8);
+                DArrayDestroy(local_8);
+                iVar3 = extraout_EAX;
                 uVar7 = extraout_var_09;
                 goto LAB_0043415b;
               }
@@ -376,9 +385,9 @@ cf_common_exit_00434CB8:
             if (param_4 == 1) {
               return;
             }
-            param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-            Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-            iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)param_1,0);
+            objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+            Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+            iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
               PushTV(playerId,0);
 LAB_0043414f:
@@ -391,9 +400,9 @@ LAB_0043414f:
           goto cf_common_exit_00434CB8;
         }
 LAB_0043429d:
-        param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-        iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)param_1,0);
+        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         uVar7 = extraout_var_10;
         if (iVar3 < 1) goto LAB_0043415b;
         ActivateTV(this,playerId,0,iVar3);
@@ -417,9 +426,9 @@ LAB_0043429d:
         iVar3 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
         if (iVar3 == 0) goto LAB_0043429d;
         if (iVar3 == 0x3c) {
-          param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-          Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-          iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)param_1,0);
+          objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+          Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+          iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (iVar3 < 0) goto LAB_0043404a;
           ActivateTV(this,playerId,0,iVar3);
           goto cf_common_exit_00434CB8;
@@ -434,9 +443,9 @@ LAB_0043429d:
           (*pcVar1)();
           return;
         }
-        param_1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        Library::DKW::TBL::FUN_006ae1c0(param_1,(undefined4 *)((int)piVar2 + 0x32));
-        iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)param_1,0);
+        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,0,iVar3);
           goto cf_common_exit_00434CB8;

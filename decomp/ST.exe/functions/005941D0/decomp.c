@@ -63,13 +63,13 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     }
     this_00->field_0108 = 0xffffffff;
     if (this_00->field_00FC != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_00FC);
+      FreeAndNull((void **)&this_00->field_00FC);
     }
     if (this_00->field_0100 != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_0100);
+      FreeAndNull((void **)&this_00->field_0100);
     }
-    if (this_00->field_0104 != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_0104);
+    if (this_00->field_0104 != (AnonPointee_ComboTy_0104 *)0x0) {
+      FreeAndNull(&this_00->field_0104);
     }
     if (this_00->field_0098 != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x88);

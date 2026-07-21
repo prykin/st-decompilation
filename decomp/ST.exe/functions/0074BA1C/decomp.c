@@ -1,4 +1,7 @@
 
+/* [STReturnSemanticsApplier] leaf_void.
+   Evidence: leaf function has RET and never writes EAX/AX/AL/AH */
+
 void __thiscall FUN_0074ba1c(void *this,undefined4 *param_1)
 
 {

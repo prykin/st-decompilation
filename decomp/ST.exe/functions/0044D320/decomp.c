@@ -9,7 +9,7 @@ undefined2 * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   short sVar1;
   Global_sub_0044D320_param_1Enum GVar2;
   undefined2 *puVar3;
-  int *piVar4;
+  STGameObjC *pSVar4;
   int iVar5;
   undefined4 uVar6;
   undefined4 extraout_ECX;
@@ -224,38 +224,39 @@ LAB_0044d710:
   param_1 = 0;
   if (0 < (int)local_10) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_14,param_1,&local_18);
+      DArrayGetElement(local_14,param_1,&local_18);
       if (((short)local_18 != -1) &&
-         (piVar4 = (int *)STAllPlayersC::GetObjPtr
-                                    (local_c,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                     local_18,CASE_1), piVar4 != (int *)0x0)) {
+         (pSVar4 = STAllPlayersC::GetObjPtr
+                             (local_c,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
+                              local_18,CASE_1), pSVar4 != (STGameObjC *)0x0)) {
         if (GVar2 < 0x1001) {
           if (GVar2 == 0x1000) {
 switchD_0044d78f_caseD_28:
-            iVar5 = (**(code **)(*piVar4 + 0x2c))();
+            iVar5 = (*pSVar4->vtable->vfunc_2C)();
             if ((iVar5 == 0x16) || (iVar5 == 0x25)) {
               local_8 = 1;
               if ((*(char *)(puVar3 + 3) == '\0') &&
-                 ((iVar5 = thunk_FUN_00486b40((int)piVar4), 0 < iVar5 &&
-                  (g_playerRuntime[(char)piVar4[9]].field317_0x15b != 0)))) {
+                 ((iVar5 = thunk_FUN_00486b40((int)pSVar4), 0 < iVar5 &&
+                  (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)))) {
                 puVar3[3] = 0x401;
               }
-              if ((*(char *)((int)puVar3 + 0xb) == '\v') && (*(int *)((int)piVar4 + 0x732) == 1)) {
+              if ((*(char *)((int)puVar3 + 0xb) == '\v') &&
+                 (*(int *)((int)&pSVar4[3].field_01BD + 2) == 1)) {
                 puVar3[5] = 0xc01;
               }
             }
           }
           else if (GVar2 < 0x41) {
             if (GVar2 == 0x40) {
-              iVar5 = (**(code **)(*piVar4 + 0x2c))();
+              iVar5 = (*pSVar4->vtable->vfunc_2C)();
               if (iVar5 == 4) {
                 local_8 = 1;
                 if (((*(char *)(puVar3 + 3) == '\0') &&
-                    (iVar5 = thunk_FUN_00486b40((int)piVar4), 0 < iVar5)) &&
-                   (g_playerRuntime[(char)piVar4[9]].field317_0x15b != 0)) {
+                    (iVar5 = thunk_FUN_00486b40((int)pSVar4), 0 < iVar5)) &&
+                   (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)) {
                   puVar3[3] = 0x401;
                 }
-                if ((*(char *)(puVar3 + 5) == '\0') && (0 < *(int *)((int)piVar4 + 0x7be))) {
+                if ((*(char *)(puVar3 + 5) == '\0') && (0 < *(int *)&pSVar4[4].field_0x7a)) {
                   puVar3[5] = 0x901;
                 }
               }
@@ -263,12 +264,12 @@ switchD_0044d78f_caseD_28:
             else {
               switch(GVar2) {
               case CASE_1:
-                iVar5 = (**(code **)(*piVar4 + 0x2c))();
+                iVar5 = (*pSVar4->vtable->vfunc_2C)();
                 if ((iVar5 == 6) || (iVar5 == 0x12)) {
                   local_8 = 1;
-                  iVar5 = thunk_FUN_00486b40((int)piVar4);
+                  iVar5 = thunk_FUN_00486b40((int)pSVar4);
                   if (0 < iVar5) {
-                    sVar1 = g_playerRuntime[(char)piVar4[9]].field317_0x15b;
+                    sVar1 = g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b;
 joined_r0x0044d9f5:
                     if (sVar1 != 0) {
                       puVar3[3] = 0x401;
@@ -280,27 +281,27 @@ joined_r0x0044d9f5:
               case CASE_2:
               case CASE_4:
               case CASE_8:
-                iVar5 = (**(code **)(*piVar4 + 0x2c))();
+                iVar5 = (*pSVar4->vtable->vfunc_2C)();
                 if (((iVar5 == 5) || (iVar5 == 0xb)) || (iVar5 == 0x11)) {
                   local_8 = 1;
                   if (((*(char *)(puVar3 + 3) == '\0') &&
-                      (iVar5 = thunk_FUN_00486b40((int)piVar4), 0 < iVar5)) &&
-                     (g_playerRuntime[(char)piVar4[9]].field317_0x15b != 0)) {
+                      (iVar5 = thunk_FUN_00486b40((int)pSVar4), 0 < iVar5)) &&
+                     (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)) {
                     puVar3[3] = 0x401;
                   }
 LAB_0044dc25:
-                  if ((*(char *)(puVar3 + 5) == '\0') && (0 < *(int *)((int)piVar4 + 0x7be))) {
+                  if ((*(char *)(puVar3 + 5) == '\0') && (0 < *(int *)&pSVar4[4].field_0x7a)) {
                     puVar3[5] = 0x801;
                   }
                 }
                 break;
               case CASE_10:
-                iVar5 = (**(code **)(*piVar4 + 0x2c))();
+                iVar5 = (*pSVar4->vtable->vfunc_2C)();
                 if (iVar5 == 0x17) {
                   local_8 = 1;
-                  iVar5 = thunk_FUN_00486b40((int)piVar4);
+                  iVar5 = thunk_FUN_00486b40((int)pSVar4);
                   if (0 < iVar5) {
-                    sVar1 = g_playerRuntime[(char)piVar4[9]].field317_0x15b;
+                    sVar1 = g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b;
                     goto joined_r0x0044d9f5;
                   }
                 }
@@ -312,18 +313,18 @@ LAB_0044dc25:
           }
           else if (GVar2 < 0x201) {
             if (GVar2 == 0x200) {
-              iVar5 = (**(code **)(*piVar4 + 0x2c))();
+              iVar5 = (*pSVar4->vtable->vfunc_2C)();
               if ((iVar5 == 8) || (iVar5 == 0x14)) {
                 local_8 = 1;
-                iVar5 = thunk_FUN_00486b40((int)piVar4);
+                iVar5 = thunk_FUN_00486b40((int)pSVar4);
                 if (0 < iVar5) {
-                  sVar1 = g_playerRuntime[(char)piVar4[9]].field317_0x15b;
+                  sVar1 = g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b;
                   goto joined_r0x0044d9f5;
                 }
               }
             }
             else if ((GVar2 == 0x80) || (GVar2 == 0x100)) {
-              iVar5 = (**(code **)(*piVar4 + 0x2c))();
+              iVar5 = (*pSVar4->vtable->vfunc_2C)();
               if (iVar5 == 9) {
                 return puVar3;
               }
@@ -333,45 +334,45 @@ LAB_0044dc25:
             }
           }
           else if (GVar2 == 0x400) {
-            iVar5 = (**(code **)(*piVar4 + 0x2c))();
+            iVar5 = (*pSVar4->vtable->vfunc_2C)();
             if ((iVar5 == 7) || (iVar5 == 0x13)) {
               local_8 = 1;
               if ((*(char *)(puVar3 + 3) == '\0') &&
-                 ((iVar5 = thunk_FUN_00486b40((int)piVar4), 0 < iVar5 &&
-                  (g_playerRuntime[(char)piVar4[9]].field317_0x15b != 0)))) {
+                 ((iVar5 = thunk_FUN_00486b40((int)pSVar4), 0 < iVar5 &&
+                  (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)))) {
                 puVar3[3] = 0x401;
               }
-              iVar5 = thunk_FUN_00492370((int)piVar4);
+              iVar5 = thunk_FUN_00492370((int)pSVar4);
               if (iVar5 != 0) {
                 puVar3[5] = 0x1401;
               }
             }
           }
           else if ((GVar2 == 0x800) &&
-                  ((iVar5 = (**(code **)(*piVar4 + 0x2c))(), iVar5 == 0xc || (iVar5 == 0x18)))) {
+                  ((iVar5 = (*pSVar4->vtable->vfunc_2C)(), iVar5 == 0xc || (iVar5 == 0x18)))) {
 LAB_0044d9c4:
             local_8 = 1;
-            iVar5 = thunk_FUN_00486b40((int)piVar4);
+            iVar5 = thunk_FUN_00486b40((int)pSVar4);
             if (0 < iVar5) {
-              sVar1 = g_playerRuntime[(char)piVar4[9]].field317_0x15b;
+              sVar1 = g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b;
               goto joined_r0x0044d9f5;
             }
           }
         }
         else if (GVar2 < 0x100001) {
           if (GVar2 == 0x100000) {
-            iVar5 = (**(code **)(*piVar4 + 0x2c))();
+            iVar5 = (*pSVar4->vtable->vfunc_2C)();
             if (iVar5 == 0x1d) {
               local_8 = 1;
-              iVar5 = thunk_FUN_004d6df0(piVar4);
+              iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
               if (((0 < iVar5) && (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
-                 (g_playerRuntime[(char)piVar4[9]].field320_0x15f != 0)) {
+                 (g_playerRuntime[*(char *)&pSVar4->field_0024].field320_0x15f != 0)) {
                 puVar3[3] = 0x4801;
               }
 LAB_0044dcbe:
               iVar5 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x5f);
               if (0 < iVar5) {
-                iVar5 = *(int *)((int)piVar4 + 0x71e);
+                iVar5 = *(int *)((int)&pSVar4[3].field_01A9 + 2);
 joined_r0x0044ddc7:
                 if (9 < iVar5) {
                   puVar3[5] = 0x1801;
@@ -388,7 +389,7 @@ joined_r0x0044ddc7:
             }
             else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto cf_continue_loop_0044DDCF;
 LAB_0044dce3:
-            uVar6 = (**(code **)(*piVar4 + 0x2c))();
+            uVar6 = (*pSVar4->vtable->vfunc_2C)();
             switch(uVar6) {
             case 0x19:
             case 0x1a:
@@ -397,9 +398,9 @@ LAB_0044dce3:
             case 0x23:
 switchD_0044dcfe_caseD_19:
               local_8 = 1;
-              iVar5 = thunk_FUN_004d6df0(piVar4);
+              iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
               if (((0 < iVar5) && (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
-                 (g_playerRuntime[(char)piVar4[9]].field320_0x15f != 0)) {
+                 (g_playerRuntime[*(char *)&pSVar4->field_0024].field320_0x15f != 0)) {
                 puVar3[3] = 0x4801;
                 return puVar3;
               }
@@ -409,43 +410,42 @@ switchD_0044dcfe_caseD_19:
         else if (GVar2 < 0x800001) {
           if (GVar2 == 0x800000) goto LAB_0044dce3;
           if (GVar2 == 0x200000) {
-            iVar5 = (**(code **)(*piVar4 + 0x2c))();
+            iVar5 = (*pSVar4->vtable->vfunc_2C)();
             if (iVar5 == 0x1b) {
               local_8 = 1;
-              iVar5 = thunk_FUN_004d6df0(piVar4);
+              iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
               if (((0 < iVar5) && (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
-                 (g_playerRuntime[(char)piVar4[9]].field320_0x15f != 0)) {
+                 (g_playerRuntime[*(char *)&pSVar4->field_0024].field320_0x15f != 0)) {
                 puVar3[3] = 0x4801;
               }
-              iVar5 = thunk_FUN_00492370((int)piVar4);
+              iVar5 = thunk_FUN_00492370((int)pSVar4);
               if (iVar5 != 0) {
                 puVar3[1] = 0x1401;
               }
               goto LAB_0044dcbe;
             }
           }
-          else if ((GVar2 == 0x400000) && (iVar5 = (**(code **)(*piVar4 + 0x2c))(), iVar5 == 0x21))
-          {
+          else if ((GVar2 == 0x400000) && (iVar5 = (*pSVar4->vtable->vfunc_2C)(), iVar5 == 0x21)) {
             local_8 = 1;
-            iVar5 = thunk_FUN_004d6df0(piVar4);
+            iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
             if ((0 < iVar5) &&
                ((iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5 &&
-                (g_playerRuntime[(char)piVar4[9]].field320_0x15f != 0)))) {
+                (g_playerRuntime[*(char *)&pSVar4->field_0024].field320_0x15f != 0)))) {
               puVar3[3] = 0x4801;
             }
             goto LAB_0044dc25;
           }
         }
         else if (GVar2 == 0x1000000) {
-          iVar5 = (**(code **)(*piVar4 + 0x2c))();
+          iVar5 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar5 == 0x24) {
             local_8 = 1;
-            iVar5 = thunk_FUN_004d6df0(piVar4);
+            iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
             if (((0 < iVar5) && (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
-               (g_playerRuntime[(char)piVar4[9]].field320_0x15f != 0)) {
+               (g_playerRuntime[*(char *)&pSVar4->field_0024].field320_0x15f != 0)) {
               puVar3[3] = 0x4801;
             }
-            iVar5 = *(int *)((int)piVar4 + 0x71e);
+            iVar5 = *(int *)((int)&pSVar4[3].field_01A9 + 2);
             goto joined_r0x0044ddc7;
           }
         }

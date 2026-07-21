@@ -10,12 +10,12 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   code *pcVar1;
   STGroupBoatC *pSVar2;
   int errorCode;
-  uint uVar3;
+  STGameObjC *pSVar3;
   int iVar4;
   undefined4 uVar5;
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
-  uint uVar6;
+  uint index;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
@@ -27,17 +27,17 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_c;
   if (errorCode == 0) {
-    uVar6 = 0;
+    index = 0;
     if (param_1->count != 0) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_1,uVar6,&local_8);
-        uVar3 = STAllPlayersC::GetObjPtr
-                          (g_sTAllPlayers_007FA174,
-                           CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8,
-                           CASE_1);
-        *(undefined4 *)(uVar3 + 0xfd) = 0;
-        uVar6 = uVar6 + 1;
-      } while (uVar6 < param_1->count);
+        DArrayGetElement(param_1,index,&local_8);
+        pSVar3 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,
+                            CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8,
+                            CASE_1);
+        *(undefined4 *)&pSVar3->field_0xfd = 0;
+        index = index + 1;
+      } while (index < param_1->count);
     }
     Way3DGrpDistribTgt(pSVar2,(AnonShape_00413AF0_B6B4EE9A *)param_1,param_2,param_3,param_4);
     g_currentExceptionFrame = local_50.previous;

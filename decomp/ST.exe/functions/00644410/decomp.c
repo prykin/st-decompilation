@@ -1,5 +1,14 @@
 
-void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *param_3,int *param_4)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00644410.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=28; incoming_edx_uses=0; calls=1;
+   ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
+   expected_stack=16; receiver_family_members=2; adopt_untyped_existing_thiscall;
+   single_call_corroborated_by_receiver_family */
+
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
+          (AnonReceiver_00644410 *this,undefined4 *param_1,int *param_2,int *param_3,int *param_4)
 
 {
   AnonShape_00644410_A4B3CF3D *pAVar1;
@@ -36,21 +45,21 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
   short local_6;
   
   iVar12 = 0;
-  local_3c = (int)*(short *)((int)this + 0x41);
-  local_40 = (int)*(short *)((int)this + 0x43);
-  local_44 = (int)*(short *)((int)this + 0x45);
+  local_3c = (int)*(short *)&this->field_0x41;
+  local_40 = (int)*(short *)&this->field_0x43;
+  local_44 = (int)*(short *)&this->field_0x45;
   local_14 = 0;
   local_18 = (undefined4 *)0x0;
-  if (*(byte *)((int)this + 0x27d) < 2) {
+  if ((byte)this->field_0x27d < 2) {
     *param_2 = local_3c;
     *param_3 = local_40;
     *param_4 = local_44;
     *param_1 = 0;
     return;
   }
-  local_10 = this;
-  local_2c = FUN_006aadd0((int)*(short *)((int)this + 0x268),(int)*(short *)((int)this + 0x26a),
-                          (int)*(short *)((int)this + 0x26c),local_3c,local_40,local_44);
+  local_10 = (AnonShape_00644410_A4B3CF3D *)this;
+  local_2c = FUN_006aadd0((int)*(short *)&this->field_0x268,(int)*(short *)&this->field_0x26a,
+                          (int)*(short *)&this->field_0x26c,local_3c,local_40,local_44);
   local_2c = local_2c / 0x32;
   if (local_2c < 1) {
     local_2c = 1;
@@ -101,15 +110,16 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
       local_20 = iVar12;
       if (local_34 <= (int)puVar8 + 1) {
         do {
-          if ((local_34 <= SHORT_007fb244 + -1) && (local_1c = iVar5 + -1, local_1c <= iVar5 + 1)) {
+          if ((local_34 <= g_worldGrid.sizeZ + -1) && (local_1c = iVar5 + -1, local_1c <= iVar5 + 1)
+             ) {
             do {
               if ((-1 < local_1c) &&
-                 ((local_1c <= SHORT_007fb242 + -1 && (iVar5 = local_24 + -1, iVar5 <= local_24 + 1)
-                  ))) {
+                 ((local_1c <= g_worldGrid.sizeY + -1 &&
+                  (iVar5 = local_24 + -1, iVar5 <= local_24 + 1)))) {
                 do {
                   pAVar1 = local_10;
                   iVar12 = local_34;
-                  if ((-1 < iVar5) && (iVar6 = (int)SHORT_007fb240, iVar5 <= iVar6 + -1)) {
+                  if ((-1 < iVar5) && (iVar6 = (int)g_worldGrid.sizeX, iVar5 <= iVar6 + -1)) {
                     if (local_34 < 0) {
                       if ((((undefined4 *)local_34 == local_30) && (local_1c == local_28)) &&
                          (iVar5 == local_24)) {
@@ -130,22 +140,23 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                       sVar9 = (short)iVar5;
                       sVar11 = (short)local_34;
                       sVar2 = (short)local_1c;
-                      if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar2 < 0)) ||
-                          ((SHORT_007fb242 <= sVar2 || (sVar11 < 0)))) || (SHORT_007fb244 <= sVar11)
-                         ) {
+                      if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar2 < 0)) ||
+                          ((g_worldGrid.sizeY <= sVar2 || (sVar11 < 0)))) ||
+                         (g_worldGrid.sizeZ <= sVar11)) {
                         this_00 = (STWorldObject *)0x0;
                       }
                       else {
-                        this_00 = g_worldCells
-                                  [(int)sVar11 * (int)SHORT_007fb246 + sVar2 * iVar6 + (int)sVar9].
-                                  objects[0];
+                        this_00 = g_worldGrid.cells
+                                  [(int)sVar11 * (int)g_worldGrid.planeStride + sVar2 * iVar6 +
+                                   (int)sVar9].objects[0];
                       }
                       if (((local_10->field_0287 != '\0') && (this_00 == (STWorldObject *)0x0)) &&
                          ((((sVar9 < 0 ||
-                            (((SHORT_007fb240 <= sVar9 || (sVar2 < 0)) || (SHORT_007fb242 <= sVar2))
-                            )) || ((sVar11 < 0 || (SHORT_007fb244 <= sVar11)))) ||
-                          ((this_00 = g_worldCells
-                                      [(int)sVar11 * (int)SHORT_007fb246 + sVar2 * iVar6 +
+                            (((g_worldGrid.sizeX <= sVar9 || (sVar2 < 0)) ||
+                             (g_worldGrid.sizeY <= sVar2)))) ||
+                           ((sVar11 < 0 || (g_worldGrid.sizeZ <= sVar11)))) ||
+                          ((this_00 = g_worldGrid.cells
+                                      [(int)sVar11 * (int)g_worldGrid.planeStride + sVar2 * iVar6 +
                                        (int)sVar9].objects[1], this_00 != (STWorldObject *)0x0 &&
                            (((iVar6 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar6 != 0xa6 &&
                              (iVar6 != 0xa7)) && ((iVar6 != 0xbd && (iVar6 != 0xaf)))))))))) {
@@ -154,9 +165,10 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                       iVar6 = local_20;
                       if (((((undefined4 *)iVar12 == local_30) && (local_1c == local_28)) &&
                           (iVar5 == local_24)) &&
-                         ((*(short *)(DAT_007fb280 +
-                                     (SHORT_007fb27e * iVar12 + iVar5 + SHORT_007fb278 * local_1c) *
-                                     2) < 0 && (this_00 == (STWorldObject *)0x0)))) {
+                         ((g_pathingGrid.cells
+                           [g_pathingGrid.planeStride * iVar12 +
+                            iVar5 + g_pathingGrid.sizeX * local_1c] < 0 &&
+                          (this_00 == (STWorldObject *)0x0)))) {
                         *param_1 = 1;
                         local_10->field_0270 = 0;
                         *param_2 = local_20;
@@ -223,13 +235,15 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                           iVar4 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                               (short)((longlong)local_38 * 0x28c1979 >> 0x3f));
                         }
-                        sVar2 = *(short *)(DAT_007fb280 +
-                                          (iVar7 * SHORT_007fb27e + iVar4 + iVar10 * SHORT_007fb278)
-                                          * 2);
-                        if (-1 < sVar2) {
-                          if (*(short *)(DAT_007fb280 +
-                                        (iVar12 * SHORT_007fb27e + iVar3 + iVar5 * SHORT_007fb278) *
-                                        2) == sVar2) {
+                        if (-1 < g_pathingGrid.cells
+                                 [iVar7 * g_pathingGrid.planeStride +
+                                  iVar4 + iVar10 * g_pathingGrid.sizeX]) {
+                          if (g_pathingGrid.cells
+                              [iVar12 * g_pathingGrid.planeStride +
+                               iVar3 + iVar5 * g_pathingGrid.sizeX] ==
+                              g_pathingGrid.cells
+                              [iVar7 * g_pathingGrid.planeStride +
+                               iVar4 + iVar10 * g_pathingGrid.sizeX]) {
                             return;
                           }
                           iVar5 = local_38 - local_20;
@@ -273,9 +287,9 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                             }
                             iVar7 = iVar6;
                             iVar10 = iVar12;
-                            if (*(short *)(DAT_007fb280 +
-                                          (local_2c * SHORT_007fb27e +
-                                          iVar3 + iVar5 * SHORT_007fb278) * 2) < 0) {
+                            if (g_pathingGrid.cells
+                                [local_2c * g_pathingGrid.planeStride +
+                                 iVar3 + iVar5 * g_pathingGrid.sizeX] < 0) {
                               param_1 = local_18;
                               iVar7 = local_38;
                               iVar10 = local_34;
@@ -323,9 +337,9 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                             iVar3 = (int)(short)(((short)(iVar6 / 0xc9) + sVar2) -
                                                 (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
                           }
-                          if (*(short *)(DAT_007fb280 +
-                                        ((int)param_1 * (int)SHORT_007fb27e +
-                                        iVar3 + iVar5 * SHORT_007fb278) * 2) < 0) {
+                          if (g_pathingGrid.cells
+                              [(int)param_1 * (int)g_pathingGrid.planeStride +
+                               iVar3 + iVar5 * g_pathingGrid.sizeX] < 0) {
                             iVar6 = local_38;
                             local_18 = local_30;
                             iVar12 = local_34;
@@ -351,7 +365,7 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                         if (((((iVar5 == 0x9c) || (iVar5 == 0x9d)) || (iVar5 == 0x9e)) ||
                             (iVar5 == 0x9b)) &&
                            (((local_10->field_0285 == '\0' &&
-                             (iVar5 = thunk_FUN_004406c0(*(char *)&this_00[1].vtable),
+                             (iVar5 = GetPlayerRaceId(*(char *)&this_00[1].vtable),
                              (char)iVar5 != '\x03')) &&
                             (iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x1b), iVar5 != 0))))
                         {
@@ -376,7 +390,7 @@ void __thiscall FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *pa
                   }
                   iVar5 = iVar5 + 1;
                   puVar8 = local_30;
-                  this = local_10;
+                  this = (AnonReceiver_00644410 *)local_10;
                   iVar12 = local_20;
                 } while (iVar5 <= local_24 + 1);
               }

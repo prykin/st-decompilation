@@ -23,7 +23,7 @@ void FUN_004e6b40(int param_1,int param_2,uint *param_3)
       iVar4 = thunk_FUN_004e60d0(param_1,(uint)(byte)(&DAT_007c0dd1)[iVar5 + iVar2]);
       if (iVar4 == 0) {
         *param_3 = (uint)(byte)(&DAT_007c0dd1)[iVar5 + iVar2];
-        iVar4 = thunk_FUN_004406c0((char)param_1);
+        iVar4 = GetPlayerRaceId((char)param_1);
         *(char *)(param_3 + 1) = (char)iVar4;
         bVar3 = thunk_FUN_004e5c40(param_1,*param_3);
         *(bool *)((int)param_3 + 5) = bVar3;

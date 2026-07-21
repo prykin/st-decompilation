@@ -17,6 +17,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar5;
+  DArrayTy **ppDVar6;
   InternalExceptionFrame local_4c;
   MReportTy *local_8;
   
@@ -38,14 +39,14 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
       thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)PTR_00802a30);
     }
-    puVar5 = &pMVar2->field_0347;
+    ppDVar6 = &pMVar2->field_0347;
     iVar3 = 3;
     do {
-      if ((byte *)*puVar5 != (byte *)0x0) {
-        FUN_006ae110((byte *)*puVar5);
-        *puVar5 = 0;
+      if (*ppDVar6 != (DArrayTy *)0x0) {
+        DArrayDestroy(*ppDVar6);
+        *ppDVar6 = (DArrayTy *)0x0;
       }
-      puVar5 = puVar5 + 1;
+      ppDVar6 = ppDVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pMVar2->field_0453 != (HoloTy *)0x0) {
@@ -60,15 +61,15 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     }
     cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_005D);
     cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_006F);
-    if (pMVar2->field_0077 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2->field_0077);
+    if (pMVar2->field_0077 != (AnonPointee_MReportTy_0077 *)0x0) {
+      FreeAndNull(&pMVar2->field_0077);
     }
     if (pMVar2->field_007B != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2->field_007B);
+      FreeAndNull((void **)&pMVar2->field_007B);
     }
     this_00 = (ccFntTy *)0x0;
-    if (pMVar2->field_0073 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2->field_0073);
+    if (pMVar2->field_0073 != (AnonPointee_MReportTy_0073 *)0x0) {
+      FreeAndNull(&pMVar2->field_0073);
       this_00 = extraout_ECX;
     }
     if (pMVar2->field_0083 != (ccFntTy *)0x0) {

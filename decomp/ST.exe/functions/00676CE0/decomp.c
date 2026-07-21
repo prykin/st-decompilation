@@ -1,5 +1,8 @@
 
-void __cdecl FUN_00676ce0(AnonShape_00676CE0_44EEE27F *param_1,undefined *param_2)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+void __cdecl FUN_00676ce0(AnonShape_00413AF0_B6B4EE9A *param_1,undefined *param_2)
 
 {
   uint uVar1;
@@ -33,7 +36,7 @@ void __cdecl FUN_00676ce0(AnonShape_00676CE0_44EEE27F *param_1,undefined *param_
         }
         iVar5 = (*(code *)param_2)(iVar4,iVar5);
         if (iVar5 < 0) {
-          FUN_006b0cd0((AnonShape_006B0CD0_C8D121FA *)param_1,uVar6,uVar1);
+          FUN_006b0cd0(param_1,uVar6,uVar1);
           bVar2 = true;
         }
         uVar3 = param_1->field_000C;

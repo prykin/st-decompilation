@@ -15,7 +15,7 @@ int __thiscall FUN_004c7860(void *this,int param_1,uint param_2,int param_3,int 
   switch(param_1 + -1) {
   case 0:
     iVar4 = thunk_FUN_004e6a80(*(int *)((int)this + 0x24),param_2);
-    if ((iVar4 != 0) && (*(int *)((int)this + 0x5b8) < SHORT_007fb244 + -1))
+    if ((iVar4 != 0) && (*(int *)((int)this + 0x5b8) < g_worldGrid.sizeZ + -1))
     goto switchD_004c787f_caseD_2;
     break;
   case 1:

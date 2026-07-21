@@ -27,28 +27,28 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
 {
   code *pcVar1;
   int iVar2;
-  uint *puVar3;
-  undefined4 *puVar4;
-  int iVar5;
+  uint *extraout_EAX;
+  undefined4 *puVar3;
+  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  ccFntTy_CreateTypeSSpr_param_4Enum cVar6;
-  uint uVar7;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar5;
+  uint uVar6;
+  undefined4 uVar7;
   undefined4 uVar8;
-  undefined4 uVar9;
   InternalExceptionFrame local_48;
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    puVar4 = (undefined4 *)&param_1->field_0x21;
+    puVar3 = (undefined4 *)&param_1->field_0x21;
     for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
+      *puVar3 = 0;
+      puVar3 = puVar3 + 1;
     }
-    *(undefined2 *)puVar4 = 0;
-    *(undefined1 *)((int)puVar4 + 2) = 0;
+    *(undefined2 *)puVar3 = 0;
+    *(undefined1 *)((int)puVar3 + 2) = 0;
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
@@ -90,24 +90,25 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
     param_1->field_00F5 = param_3 + param_5;
     param_1->field_00F9 = param_4 + param_6;
     if ((param_18 != 0) && (param_19 != (ccFntTy *)0x0)) {
-      uVar9 = 0xffffffff;
-      uVar8 = 7;
+      uVar8 = 0xffffffff;
+      uVar7 = 7;
       iVar2 = *(int *)&param_1->field_0xd9;
-      uVar7 = 0xffffffff;
-      cVar6 = CASE_FFFFFFFE;
-      puVar3 = (uint *)FUN_006b0140(param_18,HINSTANCE_00807618);
-      puVar4 = ccFntTy::CreateTypeSSpr
-                         (param_19,puVar3,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
-      (**(code **)(iVar2 + 8))(puVar4,uVar8,uVar9);
+      uVar6 = 0xffffffff;
+      cVar5 = CASE_FFFFFFFE;
+      LoadResourceString(param_18,HINSTANCE_00807618);
+      puVar3 = ccFntTy::CreateTypeSSpr
+                         (param_19,extraout_EAX,param_20,param_21,cVar5,uVar6,param_22,param_23,
+                          param_24);
+      (**(code **)(iVar2 + 8))(puVar3,uVar7,uVar8);
     }
     param_1->field_00E1 = 0;
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x2d,0,iVar2,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x2d,0,iVar2,&DAT_007a4ccc,
                              s_MMObjTy__InitSprBut_007cca60);
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

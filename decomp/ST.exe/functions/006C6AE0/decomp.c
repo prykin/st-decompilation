@@ -43,7 +43,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
           iVar2 = 0;
         }
         else {
-          FUN_006ab060((LPVOID *)&param_1->field_0012);
+          FreeAndNull((void **)&param_1->field_0012);
           if (-1 < iVar2) {
             iVar2 = -5;
           }

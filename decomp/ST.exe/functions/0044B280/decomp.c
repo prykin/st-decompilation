@@ -15,9 +15,9 @@ STAllPlayersC::CalibrateTmp
   int iVar4;
   dword dVar5;
   undefined4 unaff_ESI;
-  uint uVar6;
+  uint index;
   void *unaff_EDI;
-  uint uVar7;
+  uint index_00;
   InternalExceptionFrame local_5c;
   DArrayTy *local_18;
   uint local_14;
@@ -93,29 +93,29 @@ STAllPlayersC::CalibrateTmp
   }
   Library::DKW::TBL::FUN_006afe40((int *)&local_10,&local_18->flags);
   Library::DKW::TBL::FUN_006afe40((int *)&local_c,param_4);
-  uVar7 = 0;
+  index_00 = 0;
   if (0 < (int)dVar5) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10,uVar7,(undefined4 *)&local_8);
-      if ((local_8 != -1) && (uVar6 = 0, 0 < (int)local_14)) {
+      DArrayGetElement(local_10,index_00,&local_8);
+      if ((local_8 != -1) && (index = 0, 0 < (int)local_14)) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_c,uVar6,(undefined4 *)&local_6);
+          DArrayGetElement(local_c,index,&local_6);
           if (local_8 == local_6) {
             if (param_6 != (int *)0x0) {
               Library::DKW::TBL::FUN_006ae1c0((uint *)*param_6,(undefined4 *)&local_6);
             }
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_10,uVar7);
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_10,index_00);
             dVar5 = dVar5 - 1;
-            uVar7 = uVar7 - 1;
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_c,uVar6);
+            index_00 = index_00 - 1;
+            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_c,index);
             local_14 = local_14 - 1;
-            uVar6 = uVar6 - 1;
+            index = index - 1;
           }
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)local_14);
+          index = index + 1;
+        } while ((int)index < (int)local_14);
       }
-      uVar7 = uVar7 + 1;
-    } while ((int)uVar7 < (int)dVar5);
+      index_00 = index_00 + 1;
+    } while ((int)index_00 < (int)dVar5);
   }
   if (param_5 != (int *)0x0) {
     Library::DKW::TBL::FUN_006afe40(param_5,&local_10->flags);
@@ -123,8 +123,8 @@ STAllPlayersC::CalibrateTmp
   if (param_7 != (int *)0x0) {
     Library::DKW::TBL::FUN_006afe40(param_7,&local_c->flags);
   }
-  FUN_006ae110((byte *)local_10);
-  FUN_006ae110((byte *)local_c);
+  DArrayDestroy(local_10);
+  DArrayDestroy(local_c);
   g_currentExceptionFrame = local_5c.previous;
   return;
 }

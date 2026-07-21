@@ -1,0 +1,10 @@
+ST utility-function semantics
+
+Rules: 5
+Verified: 5
+
+006AB060 FreeAndNull: apply - body pattern verified
+006AE110 DArrayDestroy: apply - body pattern verified
+006B0140 LoadResourceString: apply - body pattern verified
+006ACC70 DArrayGetElement: apply - body pattern verified
+004406C0 GetPlayerRaceId: apply - body pattern verified

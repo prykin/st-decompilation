@@ -13,7 +13,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
   STMessageId SVar2;
   STMessage *pSVar3;
   undefined2 uVar7;
-  int *piVar4;
+  STGameObjC *pSVar4;
   STFishC *pSVar5;
   undefined4 uVar6;
   int iVar8;
@@ -222,27 +222,27 @@ LAB_0065c021:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0008:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_CURSORCLASSTY_0009:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SYSTEMCLASSTY_000A:
-    piVar4 = (int *)STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,0,
-                               CONCAT22(uVar7,*(undefined2 *)((int)&message->data + 2)),CASE_5);
+    pSVar4 = STAllPlayersC::GetObjPtr
+                       (g_sTAllPlayers_007FA174,0,
+                        CONCAT22(uVar7,*(undefined2 *)((int)&message->data + 2)),CASE_5);
     uVar7 = extraout_var;
-    if (piVar4 != (int *)0x0) {
-      uVar6 = (**(code **)(*piVar4 + 300))();
+    if (pSVar4 != (STGameObjC *)0x0) {
+      uVar6 = (*pSVar4->vtable[1].vfunc_58)();
       this->field_052F = uVar6;
-      uVar6 = (**(code **)(*piVar4 + 0xc))();
+      uVar6 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar6;
       this->field_0537 = (uint)(byte)(&DAT_008087ea)[this->field_052F * 0x51];
-      uVar6 = (**(code **)(*piVar4 + 0x130))();
+      uVar6 = (*pSVar4->vtable[1].vfunc_5C)();
       this->field_053B = uVar6;
       this->field_053F = 0;
-      thunk_FUN_004162f0(piVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
+      thunk_FUN_004162f0(pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
                          &local_6);
       this->field_0543 = (int)message._2_2_;
       this->field_0547 = (int)param_2._2_2_;
       this->field_054B = (int)local_6;
-      uVar6 = (**(code **)(*piVar4 + 0x138))();
+      uVar6 = (*pSVar4->vtable[1].vfunc_64)();
       this->field_054F = uVar6;
-      (**(code **)(*piVar4 + 0x74))(local_1c);
+      (*pSVar4->vtable->vfunc_74)(local_1c);
       Library::DKW::TBL::FUN_006b6020((uint *)this->field_05B3,0,local_1c);
       uVar7 = extraout_var_00;
     }
@@ -261,24 +261,24 @@ LAB_0065c021:
   case 0x5ddc:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0008|MESS_SHARED_0005:
   case 0x5dde:
-    piVar4 = (int *)STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,0,
-                               CONCAT22(uVar7,*(undefined2 *)((int)&message->data + 2)),CASE_2);
+    pSVar4 = STAllPlayersC::GetObjPtr
+                       (g_sTAllPlayers_007FA174,0,
+                        CONCAT22(uVar7,*(undefined2 *)((int)&message->data + 2)),CASE_2);
     uVar7 = extraout_var_01;
-    if (piVar4 != (int *)0x0) {
+    if (pSVar4 != (STGameObjC *)0x0) {
       this->field_052F = 0;
-      uVar6 = (**(code **)(*piVar4 + 0xc))();
+      uVar6 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar6;
       this->field_0537 = 0;
-      uVar6 = *(undefined4 *)((int)piVar4 + 0x342);
+      uVar6 = pSVar4[1].field_0171;
       this->field_053F = 0;
       this->field_053B = uVar6;
-      thunk_FUN_004162f0(piVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
+      thunk_FUN_004162f0(pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
                          &local_6);
       this->field_0547 = (int)param_2._2_2_;
       this->field_0543 = (int)message._2_2_;
       this->field_054B = (int)local_6;
-      (**(code **)(*piVar4 + 0x74))(local_1c);
+      (*pSVar4->vtable->vfunc_74)(local_1c);
       Library::DKW::TBL::FUN_006b6020((uint *)this->field_05B3,0,local_1c);
       uVar7 = extraout_var_02;
     }

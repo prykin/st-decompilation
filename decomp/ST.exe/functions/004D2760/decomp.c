@@ -56,7 +56,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     uVar5 = 0;
     if (0 < (int)dVar1) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa170,uVar5,&local_c);
+        DArrayGetElement(PTR_007fa170,uVar5,&local_c);
         if (local_c == param_1) {
           FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_007fa170,uVar5);
           break;
@@ -66,7 +66,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       dVar1 = PTR_007fa170->count;
     }
     if (dVar1 == 0) {
-      FUN_006ae110((byte *)PTR_007fa170);
+      DArrayDestroy(PTR_007fa170);
       PTR_007fa170 = (DArrayTy *)0x0;
     }
   }
@@ -77,7 +77,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar5,&local_8);
+          DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
                          g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6,uVar5);
@@ -88,7 +88,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         } while ((int)uVar5 < (int)pDVar2->count);
       }
       if ((g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6)->count == 0) {
-        FUN_006ae110((byte *)g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6);
+        DArrayDestroy(g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6);
         g_playerRuntime[*(int *)&param_1->field_0x24].field2166_0x9d6 = (DArrayTy *)0x0;
       }
     }
@@ -99,7 +99,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar5,&local_8);
+          DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
                          g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2,uVar5);
@@ -110,7 +110,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         } while ((int)uVar5 < (int)pDVar2->count);
       }
       if ((g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2)->count == 0) {
-        FUN_006ae110((byte *)g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2);
+        DArrayDestroy(g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2);
         g_playerRuntime[*(int *)&param_1->field_0x24].field2169_0x9e2 = (DArrayTy *)0x0;
       }
     }
@@ -121,7 +121,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar5,&local_8);
+          DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
                          g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee,uVar5);
@@ -132,7 +132,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         } while ((int)uVar5 < (int)pDVar2->count);
       }
       if ((g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee)->count == 0) {
-        FUN_006ae110((byte *)g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee);
+        DArrayDestroy(g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee);
         g_playerRuntime[*(int *)&param_1->field_0x24].field2172_0x9ee = (DArrayTy *)0x0;
       }
     }
@@ -143,7 +143,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar5,&local_8);
+          DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
                          g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2,uVar5);
@@ -154,7 +154,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         } while ((int)uVar5 < (int)pDVar2->count);
       }
       if ((g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2)->count == 0) {
-        FUN_006ae110((byte *)g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2);
+        DArrayDestroy(g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2);
         g_playerRuntime[*(int *)&param_1->field_0x24].field2173_0x9f2 = (DArrayTy *)0x0;
       }
     }
@@ -165,7 +165,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       uVar5 = 0;
       if (0 < (int)dVar1) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa16c,uVar5,&local_8);
+          DArrayGetElement(PTR_007fa16c,uVar5,&local_8);
           if (local_8 == param_1) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)PTR_007fa16c,uVar5);
             break;
@@ -175,7 +175,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         dVar1 = PTR_007fa16c->count;
       }
       if (dVar1 == 0) {
-        FUN_006ae110((byte *)PTR_007fa16c);
+        DArrayDestroy(PTR_007fa16c);
         PTR_007fa16c = (DArrayTy *)0x0;
       }
     }
@@ -186,7 +186,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar5,&local_8);
+          DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
                          g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6,uVar5);
@@ -197,7 +197,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
         } while ((int)uVar5 < (int)pDVar2->count);
       }
       if ((g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6)->count == 0) {
-        FUN_006ae110((byte *)g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6);
+        DArrayDestroy(g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6);
         g_playerRuntime[*(int *)&param_1->field_0x24].field2170_0x9e6 = (DArrayTy *)0x0;
       }
     }
@@ -208,7 +208,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar5,&local_8);
+        DArrayGetElement(pDVar2,uVar5,&local_8);
         if (local_8 == param_1) {
           FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)
                        g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea,uVar5);
@@ -219,7 +219,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       } while ((int)uVar5 < (int)pDVar2->count);
     }
     if ((g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea)->count == 0) {
-      FUN_006ae110((byte *)g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea);
+      DArrayDestroy(g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea);
       g_playerRuntime[*(int *)&param_1->field_0x24].field2171_0x9ea = (DArrayTy *)0x0;
     }
   }

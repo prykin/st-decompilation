@@ -15,9 +15,9 @@ undefined4 __fastcall FUN_004e4f30(AnonShape_004E4F30_490004C0 *param_1)
     *(undefined4 *)&param_1[2].field_0x58 = 0;
   }
   if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-    uVar2 = thunk_FUN_004406c0((char)param_1->field_023D);
+    uVar2 = GetPlayerRaceId((char)param_1->field_023D);
     iVar4 = param_1->field_0235;
-    uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+    uVar3 = GetPlayerRaceId(param_1->field_0x24);
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar4 * 3) * 3] == '\0')
     goto LAB_004e4ffe;
   }
@@ -31,7 +31,7 @@ LAB_004e4ffe:
     iVar4 = 0x4a;
   }
   else if ((*(int *)&param_1[2].field_0x124 == 0x3d) &&
-          (iVar4 = thunk_FUN_004406c0(param_1->field_0x24), (char)iVar4 == '\x01')) {
+          (iVar4 = GetPlayerRaceId(param_1->field_0x24), (char)iVar4 == '\x01')) {
     iVar4 = 0x12;
   }
   else {
@@ -42,9 +42,9 @@ LAB_004e4ffe:
     *(undefined4 *)&param_1[2].field_0x5c = 0;
   }
   if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-    uVar2 = thunk_FUN_004406c0((char)param_1->field_023D);
+    uVar2 = GetPlayerRaceId((char)param_1->field_023D);
     iVar1 = param_1->field_0235;
-    uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+    uVar3 = GetPlayerRaceId(param_1->field_0x24);
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar1 * 3) * 3] == '\0') {
       return 0;
     }

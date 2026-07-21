@@ -5,9 +5,12 @@
    [STSourceProvenanceApplier end]
    
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0068DC80 -> 00668180 @ 0068DE36 */
+   Evidence: 0068DC80 -> 00668180 @ 0068DE36
+   
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A */
 
-undefined4 * __cdecl
+AnonShape_GLOBAL_008489C4_F7BABFAC * __cdecl
 FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4,undefined1 param_5)
 
 {
@@ -46,11 +49,11 @@ FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4
       local_8->field_020F = puVar1;
     }
     g_currentExceptionFrame = pIVar2;
-    return (undefined4 *)local_8;
+    return (AnonShape_GLOBAL_008489C4_F7BABFAC *)local_8;
   }
   g_currentExceptionFrame = pIVar2;
   thunk_FUN_006686c0((int *)&local_8);
   RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x2a);
-  return (undefined4 *)0x0;
+  return (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
 }
 

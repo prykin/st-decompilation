@@ -13,14 +13,13 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   undefined4 uVar5;
   LPBITMAPINFO ptVar6;
   uint *puVar7;
-  int iVar8;
   MMObjTy *this_00;
-  int iVar9;
+  int iVar8;
   int unaff_ESI;
-  undefined4 *puVar10;
+  undefined4 *puVar9;
   void *unaff_EDI;
-  int *piVar11;
-  undefined4 *puVar12;
+  int *piVar10;
+  undefined4 *puVar11;
   undefined4 local_1654 [11];
   undefined4 local_1628;
   undefined4 local_1624;
@@ -113,43 +112,46 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   undefined4 local_d4;
   undefined4 local_a0;
   undefined4 local_9c;
-  InternalExceptionFrame *pIVar13;
+  undefined4 local_98;
+  undefined4 uStackY_74;
+  InternalExceptionFrame *pIVar12;
+  int iVar13;
   
   Library::MSVCRT::FUN_0072da40();
-  puVar10 = local_1654;
-  for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  puVar9 = local_1654;
+  for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *puVar9 = 0;
+    puVar9 = puVar9 + 1;
   }
-  piVar11 = local_dc8;
-  for (iVar9 = 0x21e; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *piVar11 = 0;
-    piVar11 = piVar11 + 1;
+  piVar10 = local_dc8;
+  for (iVar8 = 0x21e; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *piVar10 = 0;
+    piVar10 = piVar10 + 1;
   }
-  piVar11 = local_520;
-  for (iVar9 = 0x135; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *piVar11 = 0;
-    piVar11 = piVar11 + 1;
+  piVar10 = local_520;
+  for (iVar8 = 0x135; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *piVar10 = 0;
+    piVar10 = piVar10 + 1;
   }
-  pIVar13 = g_currentExceptionFrame;
+  pIVar12 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar9 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,unaff_EDI,unaff_ESI);
-  if (iVar9 == 0) {
+  iVar8 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,unaff_EDI,unaff_ESI);
+  if (iVar8 == 0) {
     this_00[0x1d].field_0xa9 = 0;
     if (*(int *)((int)&this_00[0x22].field_0066 + 2) != 0) {
-      FUN_006ab060((LPVOID *)((int)&this_00[0x22].field_0066 + 2));
+      FreeAndNull((void **)((int)&this_00[0x22].field_0066 + 2));
     }
     if (*(int *)&this_00[0x22].field_0x6c != 0) {
-      FUN_006ab060((LPVOID *)&this_00[0x22].field_0x6c);
+      FreeAndNull((void **)&this_00[0x22].field_0x6c);
     }
     if (*(int *)&this_00[0x22].field_0x74 != 0) {
-      FUN_006ab060((LPVOID *)&this_00[0x22].field_0x74);
+      FreeAndNull((void **)&this_00[0x22].field_0x74);
     }
-    iVar9 = 1;
-    puVar10 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
+    iVar8 = 1;
+    puVar9 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
     uVar4 = FUN_006b4fe0(*(int *)&this_00->field_0x5d);
     uVar5 = FUN_006b50c0(0x1bf,0x175,(uint)*(ushort *)(*(int *)&this_00->field_0x5d + 0xe),uVar4,
-                         puVar10,iVar9);
+                         puVar9,iVar8);
     *(undefined4 *)((int)&this_00[0x22].field_0066 + 2) = uVar5;
     ptVar6 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x13,0x5e,0x1bf,0x175,8);
     *(LPBITMAPINFO *)&this_00[0x22].field_0x6c = ptVar6;
@@ -201,14 +203,15 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_bf8 = 0x32;
     local_ca4 = 0x6334;
     uVar5 = *(undefined4 *)&this_00[0x1e].field_0xae;
+    iVar13 = 0;
     local_d90 = this_00->field_0008;
     local_cac = local_d90;
-    puVar10 = local_d0c;
-    puVar12 = local_b8c;
-    for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar12 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar12 = puVar12 + 1;
+    puVar9 = local_d0c;
+    puVar11 = local_b8c;
+    for (iVar8 = 0x5f; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
     local_b8c[2] = *(undefined4 *)&this_00[0x1e].field_0xaa;
     local_b78 = *(undefined4 *)&this_00[0x1e].field_0xb6;
@@ -227,7 +230,9 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_9b4 = 0x6335;
     local_b8c[3] = uVar5;
     local_9bc = local_d90;
-    (**(code **)(*(int *)this_00->field_000C + 8))();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,8,(undefined4 *)puVar1,(int *)0x0,local_dc8,
+               iVar13);
     uVar5 = *(undefined4 *)puVar1;
     *(undefined4 *)&this_00->field_0x2d = 5;
     FUN_006e6080(this_00,2,uVar5,(undefined4 *)&this_00->field_0x1d);
@@ -246,29 +251,29 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
                 (*(uint **)&this_00[0x20].field_0x32,*(uint *)&this_00[0x1f].field_0xd1,0xfffffffe,
                  *(uint *)&this_00[0x20].field_0x6,*(uint *)((int)&this_00[0x20].field_0008 + 2));
     }
-    iVar9 = *(int *)&this_00[0x22].field_0x78;
+    iVar8 = *(int *)&this_00[0x22].field_0x78;
     uVar5 = *(undefined4 *)puVar1;
     *(undefined4 *)&this_00->field_0x2d = 0x28;
     *(undefined2 *)&this_00->field_0x31 = 1;
-    *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(iVar9 + 8);
+    *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(iVar8 + 8);
     FUN_006e6080(this_00,2,uVar5,(undefined4 *)&this_00->field_0x1d);
-    iVar9 = *(int *)&this_00[0x22].field_0x78;
+    iVar8 = *(int *)&this_00[0x22].field_0x78;
     *(undefined4 *)&this_00->field_0x2d = 0x22;
     *(undefined2 *)&this_00->field_0x31 = 0;
-    iVar9 = *(int *)(iVar9 + 8);
-    if (iVar9 < 0x19) {
+    iVar8 = *(int *)(iVar8 + 8);
+    if (iVar8 < 0x19) {
       sVar3 = 0;
     }
     else {
-      sVar3 = (short)iVar9 + -0x19;
+      sVar3 = (short)iVar8 + -0x19;
     }
     uVar5 = *(undefined4 *)puVar1;
     *(short *)&this_00->field_0x33 = sVar3;
     FUN_006e6080(this_00,2,uVar5,(undefined4 *)&this_00->field_0x1d);
-    puVar10 = local_1654;
-    for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
+    puVar9 = local_1654;
+    for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
     local_1654[2] = *(undefined4 *)&this_00[0x1d].field_0xc0;
     local_1654[8] = *(undefined4 *)&this_00[0x22].field_0x7c;
@@ -286,9 +291,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_15c4 = 2;
     local_15c0 = 0xc0a2;
     local_15c8 = local_1608;
-    (**(code **)(*(int *)this_00->field_000C + 8))();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x76,
+               (int *)0x0,local_1654,0);
     SetAccelerator(1,this_00->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
-    local_9c = 0x59e0ab;
+    pIVar12 = (InternalExceptionFrame *)0x0;
+    uStackY_74 = 0x59e0ab;
     SetAccelerator(1,this_00->field_0008,2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
     SetAccelerator(1,this_00->field_0008,2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
     uVar5 = MMObjTy::CreateSprBut(this_00,1,1,0x17c,0x1be,0x55,0x14,0x6901,0x6984);
@@ -331,12 +339,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_2dc = 0x32;
     local_390 = local_a0;
     local_388 = 0x8164;
-    puVar10 = local_3f0;
-    puVar12 = local_270;
-    for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar12 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar12 = puVar12 + 1;
+    puVar9 = local_3f0;
+    puVar11 = local_270;
+    for (iVar8 = 0x5f; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
     local_270[3] = *(undefined4 *)&this_00[0x21].field_0x49;
     local_260 = *(undefined4 *)&this_00[0x21].field_0x4d;
@@ -351,8 +359,10 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_d8 = 199;
     local_d4 = 0xe;
     local_9c = 2;
-    pIVar13 = (InternalExceptionFrame *)0x7;
-    (**(code **)(*(int *)this_00->field_000C + 8))();
+    local_98 = 0x8166;
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,7,(undefined4 *)&this_00[0x1e].field_0x86,
+               (int *)0x0,local_520,0);
     if (*(uint *)&this_00[0x20].field_0x7f != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 (*(uint **)&this_00[0x20].field_0xc3,*(uint *)&this_00[0x20].field_0x7f,0xfffffffe,
@@ -369,10 +379,10 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
                  *(uint *)&this_00[0x21].field_0xd6,*(uint *)&this_00[0x21].field_0xda);
     }
     uVar5 = *(undefined4 *)&this_00[0x1e].field_0x4e;
-    puVar10 = local_1654;
-    for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
+    puVar9 = local_1654;
+    for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
     local_1654[2] = *(undefined4 *)&this_00[0x1d].field_0xbc;
     local_1628 = this_00->field_0008;
@@ -395,26 +405,31 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_1608 = local_1628;
     local_15c8 = local_1628;
     local_de4 = local_1628;
-    (**(code **)(*(int *)this_00->field_000C + 8))();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x2a,
+               (int *)0x0,local_1654,0);
     local_1654[8] = *(undefined4 *)&this_00[0x1e].field_0x52;
     local_1654[4] = 0x1b5;
     local_1654[5] = 0x5f;
     local_1654[7] = 0x20;
-    (**(code **)(*(int *)this_00->field_000C + 8))();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x2e,
+               (int *)0x0,local_1654,0);
     *(undefined4 *)&this_00->field_0x2d = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
-    g_currentExceptionFrame = pIVar13;
+    g_currentExceptionFrame = pIVar12;
     return;
   }
-  g_currentExceptionFrame = pIVar13;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758,0,iVar9,&DAT_007a4ccc);
-  if (iVar8 != 0) {
+  g_currentExceptionFrame = pIVar12;
+  iVar13 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758,0,iVar8,&DAT_007a4ccc)
+  ;
+  if (iVar13 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  RaiseInternalException(iVar9,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758);
+  RaiseInternalException(iVar8,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758);
   return;
 }
 

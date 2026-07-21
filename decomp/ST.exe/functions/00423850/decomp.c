@@ -9,7 +9,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   code *pcVar1;
   STGroupC *pSVar2;
   int errorCode;
-  int *this_00;
+  STGameObjC *this_00;
   uint *puVar3;
   uint uVar4;
   int iVar5;
@@ -23,7 +23,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   undefined4 local_2c;
   undefined2 local_28;
   undefined2 local_26;
-  int local_24;
+  undefined4 local_24;
   STGroupC *local_1c;
   uint local_18;
   uint local_14;
@@ -45,7 +45,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uVar6 = local_18;
   if (errorCode == 0) {
     while (uVar6 = uVar6 - 1, -1 < (int)uVar6) {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,(undefined4 *)&local_8);
+      DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_8);
       if (local_8 == -1) {
         uVar7 = uVar6;
         local_14 = uVar6;
@@ -57,10 +57,10 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
     }
     Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_0029,uVar7,&param_1);
-    this_00 = (int *)STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),param_1
-                                ,CASE_1);
+    this_00 = STAllPlayersC::GetObjPtr
+                        (g_sTAllPlayers_007FA174,
+                         CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),param_1,CASE_1
+                        );
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);
     pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
@@ -115,19 +115,19 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_c = local_c | 0x10;
     }
     if (local_c != 0) {
-      (**(code **)(*this_00 + 0x100))(local_c);
+      (*this_00->vtable[1].vfunc_2C)(local_c);
     }
     if (local_10 != 0) {
-      (**(code **)(*this_00 + 0x104))(local_10);
+      (*this_00->vtable[1].vfunc_30)(local_10);
     }
-    if (this_00[8] == 0x14) {
+    if (this_00->field_0020 == 0x14) {
       thunk_FUN_004956c0(this_00,pSVar2->field_0039);
     }
     if ((undefined4 *)pSVar2->field_001C != (undefined4 *)0x0) {
       local_2c = 0x5d96;
       local_28 = 0;
       local_26 = (short)param_1;
-      local_24 = this_00[6];
+      local_24 = this_00->field_0018;
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
     g_currentExceptionFrame = local_80.previous;

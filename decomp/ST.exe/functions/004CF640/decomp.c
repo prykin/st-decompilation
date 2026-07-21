@@ -8,8 +8,8 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   int *piVar4;
   int iVar5;
   int iVar6;
-  DArrayTy *pDVar7;
-  int *piVar8;
+  DArrayTy *array;
+  int *piVar7;
   int local_fc [40];
   int local_5c [2];
   char local_54;
@@ -47,7 +47,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   if ((*(int *)((int)this + 0x5ac) == 0x32) || (*(int *)((int)this + 0x5ac) == 0x5c)) {
-    uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     local_10 = (undefined *)((uVar3 & 0xff) - 1);
     piVar4 = local_fc;
     for (iVar6 = 0x28; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -55,23 +55,23 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
       piVar4 = piVar4 + 1;
     }
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de,
-        pDVar7 != (DArrayTy *)0x0)) && (uVar3 = 0, 0 < (int)pDVar7->count)) {
+        (array = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de,
+        array != (DArrayTy *)0x0)) && (uVar3 = 0, 0 < (int)array->count)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar7,uVar3,&local_28);
+        DArrayGetElement(array,uVar3,&local_28);
         piVar4 = local_fc;
-        piVar8 = (int *)(local_28 + 0x4e0);
+        piVar7 = (int *)(local_28 + 0x4e0);
         iVar6 = 0x28;
         do {
-          iVar5 = *piVar8;
-          piVar8 = piVar8 + 1;
+          iVar5 = *piVar7;
+          piVar7 = piVar7 + 1;
           *piVar4 = *piVar4 + iVar5;
           piVar4 = piVar4 + 1;
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         uVar3 = uVar3 + 1;
-        pDVar7 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de;
-      } while ((int)uVar3 < (int)pDVar7->count);
+        array = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de;
+      } while ((int)uVar3 < (int)array->count);
     }
     local_2c = (int)local_10 << 4;
     local_8 = 0;
@@ -111,13 +111,13 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             }
             iVar5 = thunk_FUN_004e6a80(*(int *)((int)this + 0x24),iVar6);
             if ((iVar5 == 0) ||
-               (local_54 = '\x01', SHORT_007fb244 + -1 <= *(int *)((int)this + 0x5b8))) {
+               (local_54 = '\x01', g_worldGrid.sizeZ + -1 <= *(int *)((int)this + 0x5b8))) {
               local_54 = '\0';
             }
             thunk_FUN_004c7260(this,CASE_1,iVar6,&local_20,&local_18,&local_1c,&local_24);
             local_4e = (undefined2)local_20;
             local_52 = (undefined2)local_18;
-            iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+            iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
             if ((char)iVar5 == '\x03') {
               local_50 = (undefined2)local_24;
             }
@@ -128,7 +128,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             if (*local_14 != 0) {
               local_4c = (undefined2)*local_14;
             }
-            iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+            iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
             local_53 = (undefined1)iVar5;
             if (local_54 == '\0') {
               thunk_FUN_004e6b40(*(int *)((int)this + 0x24),iVar6,local_4a);

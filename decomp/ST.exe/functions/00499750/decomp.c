@@ -17,11 +17,12 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar7;
+  uint index;
   InternalExceptionFrame local_58;
   uint local_14;
   STGroupBoatC *local_10;
-  undefined4 local_c;
+  undefined1 local_c [2];
+  short local_a;
   undefined4 local_8;
   
   local_58.previous = g_currentExceptionFrame;
@@ -35,25 +36,25 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
                  0x4d7);
     }
-    uVar7 = 0;
+    index = 0;
     local_14 = param_1[3];
     if (0 < (int)local_14) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_1,uVar7,&local_c);
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_020E,(int)local_c._2_2_,&local_8);
+        DArrayGetElement((DArrayTy *)param_1,index,local_c);
+        DArrayGetElement((DArrayTy *)pSVar2->field_020E,(int)local_a,&local_8);
         if (local_8._2_2_ != -1) {
           local_8._2_2_ = -1;
-          Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_020E,(int)local_c._2_2_,&local_8);
+          Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_020E,(int)local_a,&local_8);
           pSVar2->field_0212 = pSVar2->field_0212 + -1;
-          *(undefined4 *)(pSVar2->field_021E + local_c._2_2_ * 8) = 0xffffffff;
+          *(undefined4 *)(pSVar2->field_021E + local_a * 8) = 0xffffffff;
         }
-        uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < (int)local_14);
+        index = index + 1;
+      } while ((int)index < (int)local_14);
     }
     if (pSVar2->field_0212 == 0) {
-      FUN_006ae110((byte *)pSVar2->field_020E);
+      DArrayDestroy((DArrayTy *)pSVar2->field_020E);
       pSVar2->field_020E = 0;
-      FUN_006ab060((LPVOID *)&pSVar2->field_021E);
+      FreeAndNull((void **)&pSVar2->field_021E);
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
                  0x4e5);

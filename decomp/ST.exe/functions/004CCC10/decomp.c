@@ -18,8 +18,8 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   int *piVar6;
   undefined4 *puVar7;
   int *piVar8;
-  char cVar9;
-  undefined4 uVar10;
+  char playerId;
+  undefined4 uVar9;
   int local_294 [155];
   undefined4 local_28 [4];
   undefined4 local_18;
@@ -31,7 +31,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   piVar8 = param_1;
   local_8 = *(int *)((int)this + 0x24);
   thunk_FUN_00423180();
-  cVar9 = (char)param_1;
+  playerId = (char)param_1;
   if ((*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) &&
      (*(int *)(&DAT_007e1218 + (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4)
       != 0)) {
@@ -43,7 +43,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
     param_1 = local_294;
     iVar5 = 0;
     do {
-      uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if (*(char *)(*(int *)(&DAT_007bfc00 + (uVar1 & 0xff) * 4) + iVar5) == '\0') {
         iVar2 = thunk_FUN_004e60d0((int)piVar8,iVar5);
         iVar2 = thunk_FUN_004e7f20((int)piVar8,iVar5,iVar2 + 1);
@@ -59,20 +59,20 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
                                (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4))
     ;
     if (piVar8 == (int *)(uint)DAT_0080874d) {
-      uVar1 = thunk_FUN_004406c0(cVar9);
+      uVar1 = GetPlayerRaceId(playerId);
       uVar1 = uVar1 & 0xff;
       if (uVar1 == 1) {
         iVar5 = *(int *)this;
-        uVar10 = 0x74;
+        uVar9 = 0x74;
 LAB_004ccd43:
-        (**(code **)(iVar5 + 0x90))(6,uVar10);
+        (**(code **)(iVar5 + 0x90))(6,uVar9);
       }
       else if (uVar1 == 2) {
         (**(code **)(*(int *)this + 0x90))(6,0x75);
       }
       else if (uVar1 == 3) {
         iVar5 = *(int *)this;
-        uVar10 = 0x76;
+        uVar9 = 0x76;
         goto LAB_004ccd43;
       }
     }
@@ -87,15 +87,15 @@ LAB_004ccd43:
       local_14 = SUB42(piVar8,0);
       iVar5 = 0;
       do {
-        uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         if ((*(char *)(*(int *)(&DAT_007bfc00 + (uVar1 & 0xff) * 4) + iVar5) == '\0') &&
            (*param_1 == 0)) {
           iVar2 = thunk_FUN_004e60d0((int)piVar8,iVar5);
           iVar2 = thunk_FUN_004e7f20((int)piVar8,iVar5,iVar2 + 1);
           if (iVar2 != 0) {
             local_10 = (undefined2)iVar5;
-            uVar10 = thunk_FUN_004e60d0((int)piVar8,iVar5);
-            local_e = (short)uVar10 + 1;
+            uVar9 = thunk_FUN_004e60d0((int)piVar8,iVar5);
+            local_e = (short)uVar9 + 1;
             (**(code **)*DAT_008117bc)(local_28);
           }
         }
@@ -106,7 +106,7 @@ LAB_004ccd43:
   }
   *(int **)((int)this + 0x24) = piVar8;
   *(int **)((int)this + 0x5c0) = param_2;
-  uVar1 = thunk_FUN_004406c0(cVar9);
+  uVar1 = GetPlayerRaceId(playerId);
   *(uint *)((int)this + 0x239) = (uVar1 & 0xff) - 1;
   thunk_FUN_004b9920(this);
   iVar5 = 0;
@@ -122,16 +122,15 @@ LAB_004ccd43:
              thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0);
   }
   thunk_FUN_0041c3f0(this,puVar3);
-  uVar10 = extraout_EDX_00;
+  uVar9 = extraout_EDX_00;
   if (*(int *)((int)this + 0x5ac) == 0x34) {
     thunk_FUN_004dd880((int)this);
-    uVar10 = extraout_EDX_01;
+    uVar9 = extraout_EDX_01;
   }
   if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
 LAB_004ccedc:
     if (*(int *)((int)this + 0x5ac) == 0x50) {
-      thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar10 >> 8),*(undefined1 *)((int)this + 0x24)),0x28)
-      ;
+      thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar9 >> 8),*(undefined1 *)((int)this + 0x24)),0x28);
     }
     if ((*(int *)((int)this + 0x5ac) == 0x6f) || (*(int *)((int)this + 0x5ac) == 0x73)) {
       thunk_FUN_004ecc70(this);
@@ -149,10 +148,10 @@ LAB_004ccedc:
     }
   }
   else {
-    uVar1 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+    uVar1 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
     iVar2 = *(int *)((int)this + 0x235);
-    uVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
-    uVar10 = extraout_EDX_02;
+    uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    uVar9 = extraout_EDX_02;
     if ((&DAT_007e1984)[(uVar4 & 0xff) + (iVar2 * 3 + (uVar1 & 0xff)) * 3] != '\0')
     goto LAB_004ccedc;
     *(undefined4 *)((int)this + 0x261) = 0;
@@ -164,9 +163,9 @@ LAB_004ccedc:
   if (*(int *)((int)this + 0x408) != 0) {
     param_2 = (int *)0x0;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar1 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar1 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar2 = *(int *)((int)this + 0x235);
-      uVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar4 & 0xff) + ((uVar1 & 0xff) + iVar2 * 3) * 3] == '\0') {
         thunk_FUN_004c2d40(this);
         goto LAB_004cd038;
@@ -204,9 +203,9 @@ LAB_004cd038:
     thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-    uVar1 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+    uVar1 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
     iVar5 = *(int *)((int)this + 0x235);
-    uVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     if ((&DAT_007e1984)[(uVar4 & 0xff) + ((uVar1 & 0xff) + iVar5 * 3) * 3] == '\0')
     goto LAB_004cd1d7;
   }

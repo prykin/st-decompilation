@@ -10,9 +10,9 @@ undefined4 __fastcall FUN_004e4b60(AnonShape_004E4B60_EABE8E44 *param_1)
   case 0:
     if ((*(int *)&param_1[2].field_0x114 == 0x36) || (*(int *)&param_1[2].field_0x114 == 0x5d)) {
       if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-        uVar1 = thunk_FUN_004406c0((char)param_1->field_023D);
+        uVar1 = GetPlayerRaceId((char)param_1->field_023D);
         iVar3 = param_1->field_0235;
-        uVar2 = thunk_FUN_004406c0(param_1->field_0x24);
+        uVar2 = GetPlayerRaceId(param_1->field_0x24);
         if ((&DAT_007e1984)[(uVar2 & 0xff) + (iVar3 * 3 + (uVar1 & 0xff)) * 3] == '\0') {
           return 0;
         }

@@ -1,5 +1,5 @@
 
-void __fastcall FUN_005e9a40(AnonShape_005E9A40_265F7E5B *param_1)
+void __fastcall FUN_005e9a40(AnonShape_005E9970_7C1AA6F1 *param_1)
 
 {
   param_1->field_1A60 = 0;

@@ -11,14 +11,14 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   AiPlrClassTy *this_00;
   undefined2 uVar3;
   int iVar4;
-  AnonShape_00676C40_253791B9 *groupContent;
+  DArrayTy *array;
   short *psVar5;
   int *piVar6;
   int iVar7;
   IMAGE_DOS_HEADER *pIVar8;
   undefined4 *puVar9;
   uint uVar10;
-  AnonShape_00676C40_253791B9 *pAVar11;
+  DArrayTy *pDVar11;
   ushort *puVar12;
   uint uVar13;
   uint extraout_EDX;
@@ -36,10 +36,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   int local_18;
   int local_14;
   int local_10;
-  AnonShape_00676C40_253791B9 *local_c;
+  DArrayTy *local_c;
   uint local_8;
   
-  local_c = (AnonShape_00676C40_253791B9 *)0x0;
+  local_c = (DArrayTy *)0x0;
   if ((((this->field_0676 != '\0') && (*(int *)&this->field_0x640 != 0xff)) &&
       (this->field_0695 != (DArrayTy *)0x0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_80.previous = g_currentExceptionFrame;
@@ -53,11 +53,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
         if ((iVar4 == 0) || ((uint)(iVar4 * 3 + local_20->field_0685) <= (uint)local_20->field_06FE)
            ) {
           local_20->field_0685 = local_20->field_06FE;
-          groupContent = (AnonShape_00676C40_253791B9 *)
-                         Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
-          local_c = groupContent;
-          thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)groupContent);
-          uVar10 = groupContent->field_000C;
+          array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
+          local_c = array;
+          thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)array);
+          uVar10 = array->count;
           uVar13 = 0;
           iVar4 = 0;
           bVar14 = uVar10 != 0;
@@ -66,7 +65,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
           if (0 < (int)uVar10) {
             do {
               if (bVar14) {
-                psVar5 = (short *)(groupContent->field_0008 * uVar13 + groupContent->field_001C);
+                psVar5 = (short *)(array->elementSize * uVar13 + (int)array->data);
               }
               else {
                 psVar5 = (short *)0x0;
@@ -75,7 +74,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                 iVar4 = iVar4 + psVar5[1];
                 local_10 = local_10 + *(int *)(psVar5 + 2);
               }
-              uVar10 = groupContent->field_000C;
+              uVar10 = array->count;
               uVar13 = uVar13 + 1;
               bVar14 = uVar13 < uVar10;
               local_1c = iVar4;
@@ -107,7 +106,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                 }
                 local_8 = local_8 + 1;
                 bVar14 = local_8 < *(uint *)(iVar4 + 0xc);
-                groupContent = local_c;
+                array = local_c;
               } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
             }
             if (((this_00->field_0679 <= local_1c) || (local_14 < 1)) ||
@@ -143,19 +142,19 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                   }
                   local_8 = local_8 + 1;
                   bVar14 = local_8 < *(uint *)(iVar4 + 0xc);
-                  groupContent = local_c;
+                  array = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
               }
-              thunk_FUN_00676c40((AnonShape_00676C40_253791B9 *)this_00->field_06AD,&LAB_004026fd);
-              thunk_FUN_00676c40(groupContent,&LAB_004029b4);
-              thunk_FUN_0067bfd0(this_00,(AnonShape_0067BFD0_C4B8A7A1 *)groupContent,
+              thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD,&LAB_004026fd);
+              thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)array,&LAB_004029b4);
+              thunk_FUN_0067bfd0(this_00,(AnonNested_005F5B80_0169_794156D7 *)array,
                                  this_00->field_06AD);
               this_00->field_0689 = 1;
             }
           }
 LAB_0067c61b:
-          if (groupContent != (AnonShape_00676C40_253791B9 *)0x0) {
-            FUN_006ae110((byte *)groupContent);
+          if (array != (DArrayTy *)0x0) {
+            DArrayDestroy(array);
           }
           g_currentExceptionFrame = local_80.previous;
           return;
@@ -167,19 +166,18 @@ LAB_0067c61b:
            (uVar10 = local_20->field_0685 + iVar4, uVar10 <= (uint)local_20->field_06FE)) {
           local_20->field_0685 = local_20->field_06FE;
           thunk_FUN_0067be20((int)local_20,uVar10,(DArrayTy *)local_20->field_06AD);
-          iVar4 = thunk_FUN_0067bd50((AnonShape_0067BD50_1A5F3A84 *)this_00->field_06AD);
-          pAVar11 = (AnonShape_00676C40_253791B9 *)
-                    Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
-          local_c = pAVar11;
-          thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)pAVar11);
-          iVar4 = iVar4 + pAVar11->field_000C;
+          iVar4 = thunk_FUN_0067bd50((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD);
+          pDVar11 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
+          local_c = pDVar11;
+          thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)pDVar11);
+          iVar4 = iVar4 + pDVar11->count;
           if (iVar4 == 0) {
-            thunk_FUN_0067c110(this_00);
-            groupContent = local_c;
+            thunk_FUN_0067c110((AnonReceiver_006799B0 *)this_00);
+            array = local_c;
           }
           else {
-            groupContent = local_c;
-            if (0 < (int)pAVar11->field_000C) {
+            array = local_c;
+            if (0 < (int)pDVar11->count) {
               if (*(int *)(this_00->field_06AD + 0xc) < iVar4) {
                 iVar4 = thunk_FUN_0042a990(this_00->field_0x640);
                 local_18 = iVar4;
@@ -199,7 +197,7 @@ LAB_0067c61b:
                       pSVar1 = (STFishC *)*puVar9;
                       if (((pSVar1 != (STFishC *)0x0) &&
                           (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar4 = local_18, iVar7 != 0)) &&
-                         (puVar12 = thunk_FUN_0067bd00((AnonShape_0067BD00_6519094F *)
+                         (puVar12 = thunk_FUN_0067bd00((AnonShape_00413AF0_B6B4EE9A *)
                                                        this_00->field_06AD,uVar10), iVar4 = local_18
                          , puVar12 == (ushort *)0x0)) {
                         uVar3 = (undefined2)local_8;
@@ -224,17 +222,17 @@ LAB_0067c61b:
                     } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
                   }
                 }
-                thunk_FUN_00676c40((AnonShape_00676C40_253791B9 *)this_00->field_06AD,&LAB_004026fd)
+                thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD,&LAB_004026fd)
                 ;
               }
               if (*(int *)(this_00->field_06AD + 0xc) == 0) {
-                thunk_FUN_0067c110(this_00);
-                groupContent = local_c;
+                thunk_FUN_0067c110((AnonReceiver_006799B0 *)this_00);
+                array = local_c;
               }
               else {
-                thunk_FUN_0067bfd0(this_00,(AnonShape_0067BFD0_C4B8A7A1 *)local_c,
+                thunk_FUN_0067bfd0(this_00,(AnonNested_005F5B80_0169_794156D7 *)local_c,
                                    this_00->field_06AD);
-                groupContent = local_c;
+                array = local_c;
               }
             }
           }
@@ -251,9 +249,9 @@ LAB_0067c61b:
         (*pcVar2)();
         return;
       }
-      if (local_c != (AnonShape_00676C40_253791B9 *)0x0) {
-        FUN_006ae110((byte *)local_c);
-        local_c = (AnonShape_00676C40_253791B9 *)0x0;
+      if (local_c != (DArrayTy *)0x0) {
+        DArrayDestroy(local_c);
+        local_c = (DArrayTy *)0x0;
       }
       RaiseInternalException(iVar4,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x573);
     }

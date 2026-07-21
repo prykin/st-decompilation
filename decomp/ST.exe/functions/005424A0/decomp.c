@@ -248,7 +248,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
       uVar8 = 8;
-      text = (char *)FUN_006b0140(0x4275,HINSTANCE_00807618);
+      LoadResourceString(0x4275,HINSTANCE_00807618);
       thunk_FUN_0052d320(g_popUp_008016D8,text,uVar8);
     }
     g_currentExceptionFrame = local_1c8.previous;

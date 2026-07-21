@@ -15,10 +15,10 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
     }
     else {
       FUN_0074cdc5(this_00,0,(int)this,&local_8,(char *)u_Input_007ee27c);
-      *this_00 = (int)&PTR_FUN_0079ded8;
-      this_00[3] = (int)&PTR_FUN_0079de90;
-      this_00[4] = (int)&PTR_FUN_0079de7c;
-      this_00[0x26] = (int)&PTR_FUN_0079de58;
+      *this_00 = (int)&VTable_0079DED8;
+      this_00[3] = (int)&VTable_0079DE90;
+      this_00[4] = (int)&VTable_0079DE7C;
+      this_00[0x26] = (int)&VTable_0079DE58;
     }
     *(int **)((int)this + 0x8c) = this_00;
     if (local_8 < 0) {

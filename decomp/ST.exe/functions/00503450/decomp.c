@@ -169,7 +169,7 @@ LAB_005035b5:
 LAB_00503678:
         iVar10 = 0;
 LAB_0050367a:
-        uVar7 = FUN_0070b3a0(this_00->field_02DE,iVar10);
+        uVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02DE,iVar10);
         auStack_8d4[iVar9 * 0x5f] = uVar7;
         auStack_8d4[iVar9 * 0x5f + 1] = 0x3c;
         iVar9 = local_2c;

@@ -68,7 +68,7 @@ void FUN_005335e0(void)
         pcVar9 = pcVar9 + 1;
       }
       thunk_FUN_0054edf0((undefined4 *)0x32,local_c,1,local_10);
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
     }
   }
   else {

@@ -1,6 +1,9 @@
 
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
 uint __fastcall
-FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_C145E640 *param_2)
+FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_BD82F60D *param_2)
 
 {
   int iVar1;
@@ -9,7 +12,7 @@ FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_C145E640 *p
   bool bVar4;
   
   if ((param_1 == (AnonShape_006B5A50_BD82F60D *)0x0) ||
-     (param_2 == (AnonShape_006B5A50_C145E640 *)0x0)) {
+     (param_2 == (AnonShape_006B5A50_BD82F60D *)0x0)) {
     return 0xffffffcc;
   }
   if (param_1->field_0008 != param_2->field_0008) {

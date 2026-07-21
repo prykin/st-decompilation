@@ -6,11 +6,18 @@
 void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
 
 {
-  code *pcVar1;
-  FSGSTy *pFVar2;
-  int iVar3;
-  undefined4 *puVar4;
-  uint *puVar5;
+  AnonPointee_FSGSTy_1AC0 *pAVar1;
+  code *pcVar2;
+  FSGSTy *pFVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  uint *extraout_EAX;
+  uint *extraout_EAX_00;
+  uint *extraout_EAX_01;
+  uint *extraout_EAX_02;
+  uint *extraout_EAX_03;
+  uint *extraout_EAX_04;
+  uint *extraout_EAX_05;
   uint uVar6;
   uint uVar7;
   undefined4 unaff_ESI;
@@ -23,87 +30,87 @@ void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pFVar2 = local_8;
-  if (iVar3 == 0) {
-    iVar3 = local_8->field_1AC0;
-    uVar7 = *(uint *)(iVar3 + 0x14);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pFVar3 = local_8;
+  if (iVar4 == 0) {
+    pAVar1 = local_8->field_1AC0;
+    uVar7 = pAVar1->field_0014;
     if (uVar7 == 0) {
-      uVar7 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(iVar3 + 8);
+      uVar7 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+              pAVar1->field_0008;
     }
-    puVar4 = (undefined4 *)FUN_006b4fa0(iVar3);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
     for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
     for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar4 = 0xff;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
+      *(undefined1 *)puVar5 = 0xff;
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0x19,0x1b,0x186,0x14);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x1b,0x186,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x254f,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0x18,0x2e,0x188,0x1b,0xf,0xd);
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0x19,0x48,0xb4,0x14);
+    iVar4 = 0;
+    LoadResourceString(0x254f,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0x18,0x2e,0x188,0x1b,0xf,0xd);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x48,0xb4,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x2550,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0x18,0x5b,0xb6,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0xeb,0x48,0xb4,0x14);
+    iVar4 = 0;
+    LoadResourceString(0x2550,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX_00,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0x18,0x5b,0xb6,0x16,0xf,0xd);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xeb,0x48,0xb4,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x2554,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0xea,0x5b,0xb6,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0x19,0x70,0x6e,0x14);
+    iVar4 = 0;
+    LoadResourceString(0x2554,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX_01,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0xea,0x5b,0xb6,0x16,0xf,0xd);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x70,0x6e,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x2557,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0x18,0x83,0x70,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0xa5,0x70,0x6e,0x14);
+    iVar4 = 0;
+    LoadResourceString(0x2557,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX_02,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0x18,0x83,0x70,0x16,0xf,0xd);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xa5,0x70,0x6e,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x2558,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0xa4,0x83,0x70,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0x131,0x70,0x6e,0x14);
+    iVar4 = 0;
+    LoadResourceString(0x2558,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX_03,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0xa4,0x83,0x70,0x16,0xf,0xd);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x131,0x70,0x6e,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x2559,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0x130,0x83,0x70,0x16,0xf,0xd);
-    ccFntTy::SetSurf(pFVar2->field_1A73,pFVar2->field_1AC0,0,0x19,0x98,0x186,0x14);
+    iVar4 = 0;
+    LoadResourceString(0x2559,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX_04,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0x130,0x83,0x70,0x16,0xf,0xd);
+    ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x98,0x186,0x14);
     uVar9 = 2;
     iVar8 = -1;
-    iVar3 = 0;
-    puVar5 = (uint *)FUN_006b0140(0x255a,HINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar2->field_1A73,puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(pFVar2->field_1AC0,0,0x18,0xab,0x188,0x4d,0xf,0xd);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pFVar2->field_1ABC);
-    FUN_006b35d0(DAT_008075a8,pFVar2->field_1ABC);
+    iVar4 = 0;
+    LoadResourceString(0x255a,HINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,extraout_EAX_05,iVar4,iVar8,uVar9);
+    FUN_006b5ee0((int)pFVar3->field_1AC0,0,0x18,0xab,0x188,0x4d,0xf,0xd);
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pFVar3->field_1ABC);
+    FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,999,0,iVar3,&DAT_007a4ccc,
+  iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,999,0,iVar4,&DAT_007a4ccc,
                              s_FSGSTy__PaintLogNew_007cc200);
   if (iVar8 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,999);
+  RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,999);
   return;
 }
 

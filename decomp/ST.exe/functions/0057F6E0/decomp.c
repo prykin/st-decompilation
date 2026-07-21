@@ -62,8 +62,8 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
       iVar11 = *(int *)&this_00->field_0x245 + iVar6;
-      if (((((iVar11 < SHORT_007fb240) && (-1 < iVar11)) &&
-           (iVar11 = *(int *)&this_00->field_0x249 + local_10, iVar11 < SHORT_007fb242)) &&
+      if (((((iVar11 < g_worldGrid.sizeX) && (-1 < iVar11)) &&
+           (iVar11 = *(int *)&this_00->field_0x249 + local_10, iVar11 < g_worldGrid.sizeY)) &&
           ((-1 < iVar11 && (-1 < *(int *)&this_00->field_0x24d)))) &&
          (*(int *)&this_00->field_0x24d < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
@@ -106,8 +106,8 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       iVar6 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
       iVar11 = *(int *)&this_00->field_0x245 + iVar6;
-      if ((((iVar11 < SHORT_007fb240) && (-1 < iVar11)) &&
-          (iVar11 = *(int *)&this_00->field_0x249 + local_10, iVar11 < SHORT_007fb242)) &&
+      if ((((iVar11 < g_worldGrid.sizeX) && (-1 < iVar11)) &&
+          (iVar11 = *(int *)&this_00->field_0x249 + local_10, iVar11 < g_worldGrid.sizeY)) &&
          (((-1 < iVar11 && (-1 < *(int *)&this_00->field_0x24d)) &&
           (*(int *)&this_00->field_0x24d < 5)))) {
         if (this_00 == (STDcResourcC *)0x0) {
@@ -152,8 +152,8 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       local_c = (&DAT_007cb0bc)[iVar6];
       local_10 = (&DAT_007cb0e0)[iVar6];
       iVar11 = local_c + *(int *)&this_00->field_0x245;
-      if ((((iVar11 < SHORT_007fb240) && (-1 < iVar11)) &&
-          ((iVar11 = *(int *)&this_00->field_0x249 + local_10, iVar11 < SHORT_007fb242 &&
+      if ((((iVar11 < g_worldGrid.sizeX) && (-1 < iVar11)) &&
+          ((iVar11 = *(int *)&this_00->field_0x249 + local_10, iVar11 < g_worldGrid.sizeY &&
            ((-1 < iVar11 && (-1 < *(int *)&this_00->field_0x24d)))))) &&
          (*(int *)&this_00->field_0x24d < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
@@ -200,9 +200,9 @@ LAB_0057fc59:
   default:
     goto switchD_0057f734_caseD_df;
   case CASE_E0:
-    if (((((*(int *)&local_18->field_0x245 < (int)SHORT_007fb240) &&
+    if (((((*(int *)&local_18->field_0x245 < (int)g_worldGrid.sizeX) &&
           (-1 < *(int *)&local_18->field_0x245)) &&
-         (*(int *)&local_18->field_0x249 < (int)SHORT_007fb242)) &&
+         (*(int *)&local_18->field_0x249 < (int)g_worldGrid.sizeY)) &&
         ((-1 < *(int *)&local_18->field_0x249 &&
          (iVar6 = *(int *)&local_18->field_0x24d, -1 < iVar6)))) &&
        ((iVar6 < 5 &&
@@ -212,14 +212,14 @@ LAB_0057fc59:
       sVar1 = *(short *)&this_00->field_0x245;
       sVar2 = *(short *)&this_00->field_0x24d;
       sVar3 = *(short *)&this_00->field_0x249;
-      if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
-         (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2)))) {
+      if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
+         (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
         pSVar9 = (STWorldObject *)0x0;
       }
       else {
-        pSVar9 = g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
-                 objects[0];
+        pSVar9 = g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                  (int)sVar1].objects[0];
       }
       if (pSVar9 == (STWorldObject *)0x0) {
         thunk_FUN_005805c0((AnonShape_005805C0_8BDDDE2B *)this_00);

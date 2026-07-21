@@ -46,7 +46,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
       local_8 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar4,iVar8);
       iVar7 = local_c;
       pPVar3 = local_14;
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,local_10,local_c,'\x01',
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,'\x01',
              (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (param_1->field_0014->field_0004 == 3) {
@@ -54,7 +54,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
         piVar4 = (int *)0x0;
         pCVar6 = thunk_FUN_00571240(s_BUT_BLDFRAME_007c7ae4,0);
         local_8 = cMf32::RecGet(DAT_00806790,6,pCVar6,piVar4,iVar8);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)pPVar3->field_0068,local_10,iVar7,'\x06',
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar3->field_0068,local_10,iVar7,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }

@@ -196,7 +196,7 @@ cf_break_loop_00414E8A:
   local_1c[5] = 0x7f;
   local_1c[6] = 0x7f;
   local_1c[7] = 0xff;
-  FUN_006ab060((LPVOID *)&DAT_007f4d18);
+  FreeAndNull((void **)&DAT_007f4d18);
   return;
 }
 

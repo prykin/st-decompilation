@@ -4,10 +4,10 @@ void __thiscall FUN_00424530(void *this,uint param_1)
 {
   uint uVar1;
   uint uVar2;
-  int *piVar3;
-  uint uVar4;
+  STGameObjC *pSVar3;
+  uint index;
   undefined4 extraout_EDX;
-  uint uVar5;
+  uint uVar4;
   
   uVar2 = param_1;
   uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
@@ -26,21 +26,21 @@ void __thiscall FUN_00424530(void *this,uint param_1)
   if (((param_1 & 0x10) != 0) && ((*(uint *)((int)this + 0x35) & 0x10) == 0)) {
     *(uint *)((int)this + 0x35) = *(uint *)((int)this + 0x35) | 0x10;
   }
-  uVar5 = 0;
+  uVar4 = 0;
   if (uVar1 != 0) {
-    uVar4 = 0;
+    index = 0;
     do {
-      FUN_006acc70(*(AnonShape_006ACC70_C8641025 **)((int)this + 0x29),uVar4,&param_1);
+      DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,&param_1);
       if ((short)param_1 != -1) {
-        piVar3 = (int *)STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                            *(undefined1 *)((int)this + 0x24)),param_1,CASE_1);
-        (**(code **)(*piVar3 + 0x100))(uVar2);
+        pSVar3 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,
+                            CONCAT31((int3)((uint)extraout_EDX >> 8),
+                                     *(undefined1 *)((int)this + 0x24)),param_1,CASE_1);
+        (*pSVar3->vtable[1].vfunc_2C)(uVar2);
       }
-      uVar5 = uVar5 + 1;
-      uVar4 = uVar5 & 0xffff;
-    } while (uVar4 < uVar1);
+      uVar4 = uVar4 + 1;
+      index = uVar4 & 0xffff;
+    } while (index < uVar1);
   }
   return;
 }

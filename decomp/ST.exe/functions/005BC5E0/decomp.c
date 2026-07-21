@@ -63,7 +63,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
   uVar14 = *(uint *)(param_1 + 0x10);
   if (uVar14 < 0x6941) {
     if (uVar14 == 0x6940) {
-      thunk_FUN_005bba40((AnonShape_005BBA40_15493F88 *)this_00);
+      thunk_FUN_005bba40((AnonShape_005BB9F0_E38C41BB *)this_00);
       goto cf_common_exit_005BCF7F;
     }
     if (uVar14 < 0x6120) {
@@ -130,7 +130,7 @@ LAB_005bccb9:
       if (uVar14 == 0x6501) goto switchD_005bc9da_caseD_6949;
       if (uVar14 != 0x6121) {
         if (uVar14 == 0x631f) {
-          FUN_006b4170(this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff);
+          FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff);
           ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,this_00->field_1C8E,0,5,0x16,0x226,
                            0x16);
           ccFntTy::WrStr((ccFntTy *)PTR_0081176c->field_0030,
@@ -188,8 +188,8 @@ LAB_005bccb9:
   if (0x8160 < uVar14) {
     switch(uVar14) {
     case 0x8161:
-      FUN_006b4170((int)this_00->field_1C82,0,0,(uint)*(ushort *)(param_1 + 0x1a),
-                   this_00->field_1C82->field_0004,0x13,0);
+      FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_1C82,0,0,
+                   (uint)*(ushort *)(param_1 + 0x1a),this_00->field_1C82->field_0004,0x13,0);
       ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,(int)this_00->field_1C82,0,4,
                        (uint)*(ushort *)(param_1 + 0x1a),this_00->field_1C82->field_0004 + -4,0x13);
       if (this_00->field_1A5F == '\0') {

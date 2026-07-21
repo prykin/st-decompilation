@@ -1,4 +1,4 @@
-FUN_004406c0:
+GetPlayerRaceId:
 004406C0  55                        PUSH EBP
 004406C1  8B EC                     MOV EBP,ESP
 004406C3  0F BE 45 08               MOVSX EAX,byte ptr [EBP + 0x8]

@@ -31,13 +31,13 @@ void __fastcall FUN_005a0c80(int param_1)
   }
   *(undefined4 *)(param_1 + 0x1ae8) = 0;
   if (*(int *)(param_1 + 0x1edb) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x1edb));
+    FreeAndNull((void **)(param_1 + 0x1edb));
   }
   if (*(int *)(param_1 + 0x1e8e) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x1e8e));
+    FreeAndNull((void **)(param_1 + 0x1e8e));
   }
   if (*(int *)(param_1 + 0x1e92) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x1e92));
+    FreeAndNull((void **)(param_1 + 0x1e92));
   }
   return;
 }

@@ -46,7 +46,7 @@ FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *pa
   
   iVar5 = 0;
   local_5 = '\0';
-  local_18 = thunk_FUN_004406c0((char)param_8);
+  local_18 = GetPlayerRaceId((char)param_8);
   local_18 = local_18 & 0xff;
   if (param_4 == 0x21) {
     *(int *)((int)this + 0x2b7) = param_7;

@@ -1,4 +1,4 @@
-FUN_00619170:
+STJumpMineC::STJumpMineC:
 00619170  56                        PUSH ESI
 00619171  8B F1                     MOV ESI,ECX
 00619173  E8 68 CF 0C 00            CALL 0x006e60e0

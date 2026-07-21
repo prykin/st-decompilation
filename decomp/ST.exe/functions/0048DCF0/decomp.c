@@ -25,11 +25,12 @@ bool __fastcall FUN_0048dcf0(AnonShape_0048DCF0_C8633E73 *param_1)
         sVar1 = param_1->field_04E1 + 1;
         sVar2 = (short)iVar5 + param_1->field_04DF;
         sVar3 = param_1->field_04DD + (short)local_8;
-        if ((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
-            ((sVar2 < 0 || (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1)))
-             ))) || (g_worldCells
-                     [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 +
-                      (int)sVar3].objects[0] == (STWorldObject *)0x0)) {
+        if ((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
+            ((sVar2 < 0 ||
+             (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
+           (g_worldGrid.cells
+            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
+             (int)sVar3].objects[0] == (STWorldObject *)0x0)) {
           iVar4 = FUN_006aadd0((int)param_1->field_0047,(int)param_1->field_0049,
                                (int)param_1->field_004B,param_1->field_04DD + local_8,
                                param_1->field_04DF + iVar5,param_1->field_04E1 + 1);
@@ -46,12 +47,12 @@ bool __fastcall FUN_0048dcf0(AnonShape_0048DCF0_C8633E73 *param_1)
     } while (local_8 < 2);
     return local_c != 1000000;
   }
-  if ((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
-     (((sVar3 < SHORT_007fb242 && (-1 < sVar2)) &&
-      ((sVar2 < SHORT_007fb244 &&
-       (g_worldCells
-        [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].objects
-        [0] != (STWorldObject *)0x0)))))) {
+  if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
+     (((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) &&
+      ((sVar2 < g_worldGrid.sizeZ &&
+       (g_worldGrid.cells
+        [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+         (int)sVar1].objects[0] != (STWorldObject *)0x0)))))) {
     return false;
   }
   return true;

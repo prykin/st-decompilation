@@ -70,7 +70,8 @@ int __fastcall FUN_006101b0(int *param_1)
     }
     else {
       if (cVar2 == '\x02') {
-        iVar13 = thunk_FUN_0060ef40(param_1,7);
+        iVar13 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::thunk_FUN_0060ef40
+                           ((AnonReceiver_0060EF40 *)param_1,7);
         if (0 < iVar13) {
           *(undefined4 *)((int)param_1 + 0x256) = 1;
           thunk_FUN_0060ece0(param_1,1,(int)*(short *)((int)param_1 + 0x1e9),
@@ -225,11 +226,12 @@ cf_common_exit_006121E1:
       uVar6 = 0;
     }
     else {
-      uVar6 = thunk_FUN_00601500((void *)((int)param_1 + 0x2eb),local_10,local_14,local_18,
-                                 (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
-                                 (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
-                                 *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
-                                 *(undefined2 *)((int)param_1 + 0x1ff),0xb0,local_8,0);
+      uVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                        ((AnonReceiver_00601500 *)((int)param_1 + 0x2eb),local_10,local_14,local_18,
+                         (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
+                         (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
+                         *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
+                         *(undefined2 *)((int)param_1 + 0x1ff),0xb0,local_8,0);
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
           thunk_FUN_0060ec00((STJellyGunC *)param_1);
@@ -544,11 +546,12 @@ LAB_00610d9f:
     }
     else {
 LAB_00611185:
-      uVar6 = thunk_FUN_00601500((void *)((int)param_1 + 0x2eb),local_10,local_14,local_18,
-                                 (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
-                                 (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
-                                 *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
-                                 *(undefined2 *)((int)param_1 + 0x1ff),0xb0,0,0);
+      uVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                        ((AnonReceiver_00601500 *)((int)param_1 + 0x2eb),local_10,local_14,local_18,
+                         (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
+                         (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
+                         *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
+                         *(undefined2 *)((int)param_1 + 0x1ff),0xb0,0,0);
       local_c = uVar6;
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
@@ -720,11 +723,12 @@ LAB_006115da:
     }
     else {
 LAB_006117e5:
-      uVar6 = thunk_FUN_00601500((void *)((int)param_1 + 0x2eb),local_10,local_14,local_18,
-                                 (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
-                                 (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
-                                 *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
-                                 *(undefined2 *)((int)param_1 + 0x1ff),0xb0,local_8,0);
+      uVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                        ((AnonReceiver_00601500 *)((int)param_1 + 0x2eb),local_10,local_14,local_18,
+                         (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
+                         (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
+                         *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
+                         *(undefined2 *)((int)param_1 + 0x1ff),0xb0,local_8,0);
       local_c = uVar6;
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
@@ -1064,12 +1068,13 @@ cf_common_exit_00611C0F:
     }
     else {
 LAB_006122dd:
-      uVar6 = thunk_FUN_00601500((void *)((int)param_1 + 0x2eb),iVar13,(int)sVar10,(int)sVar7,
-                                 (int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
-                                 (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
-                                 *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
-                                 *(undefined2 *)((int)param_1 + 0x1ff),0xb0,
-                                 (uint)(*(int *)((int)param_1 + 0x1f7) == 2),0);
+      uVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                        ((AnonReceiver_00601500 *)((int)param_1 + 0x2eb),iVar13,(int)sVar10,
+                         (int)sVar7,(int)(short)param_1[0x98],(int)*(short *)((int)param_1 + 0x262),
+                         (int)(short)param_1[0x99],*(int *)((int)param_1 + 0x1d9),
+                         *(int *)((int)param_1 + 0x21b),*(int *)((int)param_1 + 0x1fb),
+                         *(undefined2 *)((int)param_1 + 0x1ff),0xb0,
+                         (uint)(*(int *)((int)param_1 + 0x1f7) == 2),0);
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
           thunk_FUN_0060ec00((STJellyGunC *)param_1);

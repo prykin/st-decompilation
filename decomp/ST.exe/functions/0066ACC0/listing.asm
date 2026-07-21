@@ -1,4 +1,4 @@
-FUN_0066acc0:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0:
 0066ACC0  55                        PUSH EBP
 0066ACC1  8B EC                     MOV EBP,ESP
 0066ACC3  81 EC 24 06 00 00         SUB ESP,0x624
@@ -2826,9 +2826,9 @@ LAB_0066cabd:
 0066CAC3  EB 06                     JMP 0x0066cacb
 LAB_0066cac5:
 0066CAC5  8B 8D E0 FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffee0]
-FUN_0066acc0::cf_common_join_0066CACB:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_join_0066CACB:
 0066CACB  03 F1                     ADD ESI,ECX
-FUN_0066acc0::cf_continue_loop_0066CACD:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_continue_loop_0066CACD:
 0066CACD  47                        INC EDI
 0066CACE  83 FF 20                  CMP EDI,0x20
 0066CAD1  0F 8C E7 FE FF FF         JL 0x0066c9be
@@ -3045,9 +3045,9 @@ LAB_0066cd3a:
 0066CD40  EB 06                     JMP 0x0066cd48
 LAB_0066cd42:
 0066CD42  8B 8D E4 FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffee4]
-FUN_0066acc0::cf_common_join_0066CD48:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_join_0066CD48:
 0066CD48  03 F1                     ADD ESI,ECX
-FUN_0066acc0::cf_continue_loop_0066CD4A:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_continue_loop_0066CD4A:
 0066CD4A  47                        INC EDI
 0066CD4B  83 FF 20                  CMP EDI,0x20
 0066CD4E  0F 8C E7 FE FF FF         JL 0x0066cc3b
@@ -3264,9 +3264,9 @@ LAB_0066cfba:
 0066CFC0  EB 06                     JMP 0x0066cfc8
 LAB_0066cfc2:
 0066CFC2  8B 8D DC FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffedc]
-FUN_0066acc0::cf_common_join_0066CFC8:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_join_0066CFC8:
 0066CFC8  03 F1                     ADD ESI,ECX
-FUN_0066acc0::cf_continue_loop_0066CFCA:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_continue_loop_0066CFCA:
 0066CFCA  47                        INC EDI
 0066CFCB  83 FF 20                  CMP EDI,0x20
 0066CFCE  0F 8C E4 FE FF FF         JL 0x0066ceb8
@@ -4557,7 +4557,7 @@ LAB_0066dc7e:
 0066DCE5  E8 08 37 D9 FF            CALL 0x004013f2
 LAB_0066dcea:
 0066DCEA  83 C4 28                  ADD ESP,0x28
-FUN_0066acc0::cf_common_exit_0066DCED:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_exit_0066DCED:
 0066DCED  6A 04                     PUSH 0x4
 0066DCEF  E8 1C CF 03 00            CALL 0x006aac10
 0066DCF4  8B 0D 80 19 81 00         MOV ECX,dword ptr [0x00811980]
@@ -4798,7 +4798,7 @@ LAB_0066dee2:
 0066DF58  83 C6 04                  ADD ESI,0x4
 0066DF5B  4F                        DEC EDI
 0066DF5C  75 84                     JNZ 0x0066dee2
-FUN_0066acc0::cf_common_exit_0066DF5E:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_exit_0066DF5E:
 0066DF5E  6A 04                     PUSH 0x4
 0066DF60  E8 AB CC 03 00            CALL 0x006aac10
 0066DF65  8B 15 80 19 81 00         MOV EDX,dword ptr [0x00811980]
@@ -8250,7 +8250,7 @@ LAB_00670388:
 LAB_006703e1:
 006703E1  8B 7D F8                  MOV EDI,dword ptr [EBP + -0x8]
 006703E4  85 FF                     TEST EDI,EDI
-FUN_0066acc0::cf_common_join_006703E6:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_join_006703E6:
 006703E6  7D 3D                     JGE 0x00670425
 006703E8  8B 75 B4                  MOV ESI,dword ptr [EBP + -0x4c]
 006703EB  B8 A0 16 80 00            MOV EAX,0x8016a0
@@ -8272,12 +8272,12 @@ LAB_00670407:
 LAB_0067041b:
 0067041B  68 56 FF FF FF            PUSH 0xffffff56
 00670420  E8 1B 5A 03 00            CALL 0x006a5e40
-FUN_0066acc0::cf_common_exit_00670425:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_exit_00670425:
 00670425  6A 04                     PUSH 0x4
 00670427  E8 E4 A7 03 00            CALL 0x006aac10
 0067042C  89 45 F0                  MOV dword ptr [EBP + -0x10],EAX
 0067042F  89 38                     MOV dword ptr [EAX],EDI
-FUN_0066acc0::cf_common_exit_00670431:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_exit_00670431:
 00670431  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 00670434  85 C0                     TEST EAX,EAX
 00670436  74 56                     JZ 0x0067048e
@@ -8291,7 +8291,7 @@ FUN_0066acc0::cf_common_exit_00670431:
 00670450  8B E5                     MOV ESP,EBP
 00670452  5D                        POP EBP
 00670453  C2 0C 00                  RET 0xc
-FUN_0066acc0::cf_common_exit_00670456:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::cf_common_exit_00670456:
 00670456  50                        PUSH EAX
 00670457  E8 7F 53 D9 FF            CALL 0x004057db
 0067045C  85 C0                     TEST EAX,EAX

@@ -1,5 +1,7 @@
 function_address	target	status	detail
+0040CE20	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0040D540_1BB7A4CF *32)
 00413170	parameter:4	disabled	apply flags are 0
+00433E90	parameter:1	applied	name=applied(objectIds)
 004354E0	parameter:1	disabled	apply flags are 0
 004354E0	parameter:2	disabled	apply flags are 0
 004354E0	parameter:3	disabled	apply flags are 0
@@ -11,16 +13,20 @@ function_address	target	status	detail
 00449A90	parameter:0	disabled	apply flags are 0
 0044E980	parameter:1	disabled	apply flags are 0
 0045EF00	parameter:2	disabled	apply flags are 0
+0046AA50	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
+0046EFD0	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 004803D0	parameter:1	disabled	apply flags are 0
-00490B30	parameter:1	disabled	apply flags are 0
 00491FB0	parameter:1	disabled	apply flags are 0
 00497370	parameter:3	disabled	apply flags are 0
+00497370	parameter:4	disabled	apply flags are 0
 00497920	parameter:3	disabled	apply flags are 0
+004AD740	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0 *32)
 004B0F20	parameter:2	disabled	apply flags are 0
 004B0F20	parameter:3	disabled	apply flags are 0
 004B0F20	parameter:5	disabled	apply flags are 0
 004B7140	parameter:0	disabled	apply flags are 0
 004B7750	parameter:0	disabled	apply flags are 0
+004B7D00	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 004C56B0	parameter:1	disabled	apply flags are 0
 004C7CC0	parameter:5	disabled	apply flags are 0
 004DEEB0	parameter:2	disabled	apply flags are 0
@@ -28,29 +34,30 @@ function_address	target	status	detail
 004E9960	parameter:1	disabled	apply flags are 0
 004E9960	parameter:2	disabled	apply flags are 0
 004E9960	parameter:3	disabled	apply flags are 0
-004EA460	parameter:2	disabled	apply flags are 0
 0051A100	parameter:1	disabled	apply flags are 0
 0051C980	parameter:1	disabled	apply flags are 0
 0052EB50	parameter:7	disabled	apply flags are 0
 00540620	parameter:4	disabled	apply flags are 0
 0054B630	parameter:1	disabled	apply flags are 0
+0054D430	parameter:3	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0060EA30_DCEB68AD *32)
 00555FE0	return:	disabled	apply flags are 0
 005582A0	return:	disabled	apply flags are 0
 00559110	parameter:4	disabled	apply flags are 0
 00559110	parameter:6	disabled	apply flags are 0
 0055BBC0	parameter:7	disabled	apply flags are 0
-00576DD0	return:	applied	type=applied(/GameSystemC *32)
+0056FA60	parameter:1	disabled	apply flags are 0
 0057A140	parameter:0	disabled	apply flags are 0
 0057D5F0	parameter:1	disabled	apply flags are 0
 00580910	parameter:0	disabled	apply flags are 0
 00582460	parameter:10	disabled	apply flags are 0
 005B6350	parameter:2	disabled	apply flags are 0
-005EFAE0	parameter:1	disabled	apply flags are 0
+005DD470	parameter:1	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_005DE050_5BD86458 *32)
 005F1D80	parameter:2	disabled	apply flags are 0
 005F23D0	parameter:1	disabled	apply flags are 0
 005F23D0	parameter:3	disabled	apply flags are 0
 005F23D0	parameter:5	disabled	apply flags are 0
 005F23D0	parameter:6	disabled	apply flags are 0
+005F3530	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0 *32)
 005F3940	parameter:2	disabled	apply flags are 0
 005FAF70	parameter:1	disabled	apply flags are 0
 005FAF70	parameter:3	disabled	apply flags are 0
@@ -61,10 +68,10 @@ function_address	target	status	detail
 006028A0	parameter:2	disabled	apply flags are 0
 00605B60	parameter:4	disabled	apply flags are 0
 00607200	parameter:4	disabled	apply flags are 0
-0060EA30	parameter:1	disabled	apply flags are 0
 00614C80	parameter:8	disabled	apply flags are 0
 00614C80	parameter:10	disabled	apply flags are 0
 006191A0	parameter:2	disabled	apply flags are 0
+00619540	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0 *32)
 0061C910	parameter:7	disabled	apply flags are 0
 0061D0C0	parameter:8	disabled	apply flags are 0
 0061FB70	parameter:4	disabled	apply flags are 0
@@ -82,38 +89,60 @@ function_address	target	status	detail
 00621430	parameter:2	disabled	apply flags are 0
 00621430	parameter:4	disabled	apply flags are 0
 006226C0	parameter:2	disabled	apply flags are 0
+00623040	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0 *32)
 006255B0	parameter:6	disabled	apply flags are 0
+0062B420	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0 *32)
 0062E170	parameter:4	disabled	apply flags are 0
+0062EF00	parameter:2	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0062FCA0_22A9EE35 *32)
 0062FEA0	parameter:2	disabled	apply flags are 0
+006301B0	parameter:1	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0062FCA0_22A9EE35 *32)
 00630BB0	parameter:5	disabled	apply flags are 0
 00630BB0	parameter:6	disabled	apply flags are 0
 00635BF0	parameter:1	disabled	apply flags are 0
 00635BF0	parameter:2	disabled	apply flags are 0
 00635DA0	parameter:1	disabled	apply flags are 0
 00635DA0	parameter:2	disabled	apply flags are 0
-00639C90	parameter:1	disabled	apply flags are 0
 00645420	return:	disabled	apply flags are 0
 00646E00	parameter:1	disabled	apply flags are 0
 00647EF0	return:	disabled	apply flags are 0
 0064E5C0	parameter:1	disabled	apply flags are 0
 0064E5C0	parameter:2	disabled	apply flags are 0
+0065D120	return:	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4 *32)
 0065D4B0	return:	disabled	apply flags are 0
-0065FA60	parameter:0	disabled	apply flags are 0
+0065FA60	parameter:1	disabled	apply flags are 0
+00668180	return:	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC *32)
+006684E0	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC *32)
+0066AB60	parameter:0	applied	name=applied(playerId)
+00672B60	parameter:1	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6 *32)
 006777D0	parameter:1	disabled	apply flags are 0
 006777D0	parameter:2	disabled	apply flags are 0
 006778C0	parameter:1	disabled	apply flags are 0
 006778C0	parameter:2	disabled	apply flags are 0
-0067D0A0	parameter:0	disabled	apply flags are 0
 006823E0	parameter:0	disabled	apply flags are 0
 0068E050	return:	disabled	apply flags are 0
 0068FC70	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
-00691480	parameter:0	disabled	apply flags are 0
+00692920	return:	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B4B20_3D4F4412 *32)
 00692C10	parameter:2	disabled	apply flags are 0
+006B0C70	parameter:0	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
+006B4170	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C7610_838EDECF *32)
+006B55F0	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B84D0_7C7D97C6 *32)
+006BBB00	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B94E0_A7E74DF0 *32)
 006BBE40	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 006BC3E0	parameter:1	disabled	apply flags are 0
+006BFE70	parameter:2	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 006C1CE0	parameter:1	disabled	apply flags are 0
+006C4000	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C3FC0_72DDFA27 *32)
+006C4110	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C3FC0_72DDFA27 *32)
+006C6450	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B94E0_A7E74DF0 *32)
+006C7F10	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5B10_E0D06CF1 *32)
+006C87C0	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C4CB_D58160AA *32)
 006CE6C0	parameter:2	disabled	apply flags are 0
-006D4A40	parameter:2	disabled	apply flags are 0
+006D1A10	parameter:4	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070B770_3BA0472D *32)
+006D1A50	parameter:4	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070B770_3BA0472D *32)
+006D1A90	parameter:4	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070B770_3BA0472D *32)
+006D2820	parameter:1	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B84D0_7C7D97C6 *32)
+006D6270	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_00748DE3_6873BEB9 *32)
+006D7330	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0074CEB2_D881A5E3 *32)
 006D7830	parameter:5	disabled	apply flags are 0
 006E1460	parameter:1	disabled	apply flags are 0
 006E1460	parameter:3	disabled	apply flags are 0
@@ -124,5 +153,10 @@ function_address	target	status	detail
 006E65C0	parameter:4	disabled	apply flags are 0
 006E6710	parameter:1	disabled	apply flags are 0
 006E6710	parameter:2	disabled	apply flags are 0
+0070B3A0	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD *32)
+0070CAF0	parameter:0	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070C9E0_7137F001 *32)
 007119C0	parameter:4	disabled	apply flags are 0
 0074E337	parameter:1	disabled	apply flags are 0
+00759F30	parameter:1	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0075FEE0_E0ABA202 *32)
+0075B800	parameter:1	applied	type=applied(/SubmarineTitans/Recovered/PointerShapes/AnonShape_0075C180_8EED234B *32)
+0075FB30	parameter:0	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first

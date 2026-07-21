@@ -25,7 +25,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
   InternalExceptionFrame local_58;
   STGameObjC *local_14;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   AnonShape_0062E740_213F21A8 *local_8;
   
   local_58.previous = g_currentExceptionFrame;
@@ -56,9 +56,9 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
       thunk_FUN_00630000(this_00,iVar7);
     }
     else if (uVar4 == 0x10f) {
-      local_10 = (byte *)thunk_FUN_0062f940(this_00,&local_c);
+      local_10 = (byte *)thunk_FUN_0062f940(this_00,(uint *)&local_c);
       STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
-      FUN_006ab060(&local_10);
+      FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -145,15 +145,15 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,AnonShape_0041AF40
       sVar1 = *(short *)&this_00[1].field_0x4;
       sVar2 = *(short *)&this_00[1].field_0xc;
       sVar3 = *(short *)&this_00[1].field_0x8;
-      if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) ||
-          ((sVar3 < 0 || ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (SHORT_007fb244 <= sVar2))
-      {
+      if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) ||
+          ((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))))) ||
+         (g_worldGrid.sizeZ <= sVar2)) {
         pSVar8 = (STWorldObject *)0x0;
       }
       else {
-        pSVar8 = g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
-                 objects[1];
+        pSVar8 = g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                  (int)sVar1].objects[1];
         pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)local_8;
       }
       if ((pSVar8 == (STWorldObject *)0x0) &&

@@ -19,9 +19,9 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   undefined2 extraout_var_01;
   undefined2 extraout_var_02;
   undefined4 *puVar8;
-  uint uVar9;
-  bool bVar10;
-  undefined4 uVar11;
+  uint index;
+  bool bVar9;
+  undefined4 uVar10;
   uint local_8;
   
   if ((param_1 == (STTorpC *)0x0) || (param_1 == (STTorpC *)0x1)) {
@@ -40,24 +40,25 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   }
   if (*(int *)((int)this + 0x82e) == 0) {
     uVar2 = *(uint *)((int)this + 0x836) & 0x80000001;
-    bVar10 = uVar2 == 0;
+    bVar9 = uVar2 == 0;
     if ((int)uVar2 < 0) {
-      bVar10 = (uVar2 - 1 | 0xfffffffe) == 0xffffffff;
+      bVar9 = (uVar2 - 1 | 0xfffffffe) == 0xffffffff;
     }
-    if ((((bVar10) && (DAT_007fa134 != 0)) && (uVar2 = PTR_007fa130->count, uVar2 != 0)) &&
-       (uVar9 = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
+    if ((((bVar9) && (DAT_007fa134 != 0)) && (uVar2 = PTR_007fa130->count, uVar2 != 0)) &&
+       (index = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,uVar9,&param_1);
+        DArrayGetElement(PTR_007fa130,index,&param_1);
         if (param_1 != (STTorpC *)0x0) {
           iVar6 = iVar6 + -1;
           iVar3 = STTorpC::IsDangerous(param_1,*(int *)((int)this + 0x18),&local_8);
           if (iVar3 != 2) {
             if (iVar3 == 0) {
-              iVar3 = thunk_FUN_004838e0(this,(int)param_1);
+              iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
+                      thunk_FUN_004838e0(this,(int)param_1);
               if (iVar3 == 1) {
                 STTorpC::SetDangerous(param_1,*(undefined4 *)((int)this + 0x18),&local_8);
 LAB_004604c9:
-                iVar3 = thunk_FUN_00483e30(this,(AnonShape_00483E30_F0F8D504 *)param_1);
+                iVar3 = thunk_FUN_00483e30(this,(AnonShape_00482DB0_070D50BF *)param_1);
                 if (iVar3 == 1) {
                   STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
                   *(STTorpC **)((int)this + 0x46b) = param_1;
@@ -70,12 +71,12 @@ LAB_004604c9:
                     iVar3 = *(int *)this;
                     *(undefined2 *)((int)this + 0x469) = 1;
                     uVar5 = extraout_var;
-                    uVar11 = 1;
+                    uVar10 = 1;
 LAB_00460581:
                     iVar6 = (**(code **)(iVar3 + 0x18))
                                       (CONCAT22(uVar5,*(undefined2 *)((int)this + 0x47)),
                                        CONCAT22((short)((uint)uVar4 >> 0x10),
-                                                *(undefined2 *)((int)this + 0x49)),uVar11);
+                                                *(undefined2 *)((int)this + 0x49)),uVar10);
                     if (iVar6 != 1) break;
                     iVar7 = (int)*(short *)((int)this + 0x49);
                     *(undefined4 *)((int)this + 0x82e) = 1;
@@ -114,7 +115,7 @@ LAB_00460581:
                       uVar4 = CONCAT22((short)((uint)iVar6 >> 0x10),
                                        -sVar1 + *(short *)((int)this + 0x4b));
                       uVar5 = extraout_var_00;
-                      uVar11 = uVar4;
+                      uVar10 = uVar4;
                       goto LAB_00460581;
                     }
                     iVar6 = (int)*(short *)((int)this + 0x469) + (int)*(short *)((int)this + 0x4b);
@@ -138,8 +139,8 @@ LAB_00460581:
           }
           if (iVar6 == 0) break;
         }
-        uVar9 = uVar9 + 1;
-      } while (uVar9 < uVar2);
+        index = index + 1;
+      } while (index < uVar2);
     }
     *(int *)((int)this + 0x836) = *(int *)((int)this + 0x836) + 1;
   }

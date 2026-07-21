@@ -1,5 +1,8 @@
 
-uint * FUN_0065f840(AnonShape_0065F840_66A14163 *param_1,uint param_2,int param_3)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+uint * FUN_0065f840(AnonNested_005F5B80_0169_794156D7 *param_1,uint param_2,int param_3)
 
 {
   int iVar1;
@@ -15,7 +18,7 @@ uint * FUN_0065f840(AnonShape_0065F840_66A14163 *param_1,uint param_2,int param_
   DArrayTy *local_8;
   
   local_8 = (DArrayTy *)0x0;
-  if ((((param_1 != (AnonShape_0065F840_66A14163 *)0x0) && (param_1->field_000C != 0)) &&
+  if ((((param_1 != (AnonNested_005F5B80_0169_794156D7 *)0x0) && (param_1->field_000C != 0)) &&
       ((int)param_2 < (int)param_1->field_000C)) && (0 < param_3)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
@@ -23,7 +26,7 @@ uint * FUN_0065f840(AnonShape_0065F840_66A14163 *param_1,uint param_2,int param_
     if (iVar1 != 0) {
       g_currentExceptionFrame = local_54.previous;
       if (local_8 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_8);
+        DArrayDestroy(local_8);
       }
       return (uint *)0x0;
     }

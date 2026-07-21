@@ -1,4 +1,4 @@
-FUN_0061d620:
+STLightC::STLightC:
 0061D620  56                        PUSH ESI
 0061D621  8B F1                     MOV ESI,ECX
 0061D623  E8 B8 8A 0C 00            CALL 0x006e60e0

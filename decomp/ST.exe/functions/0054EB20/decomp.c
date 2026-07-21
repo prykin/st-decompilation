@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_0054eb20(void *this,uint *param_1)
       piVar4 = (int *)((int)piVar4 + 1);
       piVar5 = (int *)((int)piVar5 + 1);
     }
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
     return 1;
   }
   return 0;

@@ -23,11 +23,11 @@ undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param
   undefined1 local_34;
   undefined4 local_33;
   undefined2 local_2f;
-  LPVOID local_8;
+  void *local_8;
   
   this = param_1;
   uVar4 = 0;
-  local_8 = (LPVOID)0x0;
+  local_8 = (void *)0x0;
   if (param_1 == (int *)0x0) {
     return 1;
   }
@@ -54,7 +54,7 @@ LAB_0057b6da:
   thunk_FUN_0057a2c0((AnonShape_0057A2C0_A829D396 *)this,param_3,(int *)&local_8,param_4,iVar3,
                      param_1,param_5);
 LAB_0057b6ff:
-  if (local_8 != (LPVOID)0x0) {
+  if (local_8 != (void *)0x0) {
     thunk_FUN_00416270(this,(undefined2 *)&param_2,&param_5,&param_4);
     if (*(int *)((int)this + 0x259) == 0x99) {
       param_1 = (int *)0xb4;
@@ -116,8 +116,8 @@ LAB_0057b6ff:
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)(uVar2 + 1));
     }
-    if (local_8 != (LPVOID)0x0) {
-      FUN_006ab060(&local_8);
+    if (local_8 != (void *)0x0) {
+      FreeAndNull(&local_8);
     }
   }
   return 1;

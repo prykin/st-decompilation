@@ -5,8 +5,8 @@ undefined4 * __fastcall FUN_00609950(STGroupBoatC *param_1)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0(param_1);
-  param_1->vtable = (STGroupBoatCVTable *)&PTR_thunk_FUN_00608e90_0079cc28;
+  STGameObjC::STGameObjC((STGameObjC *)param_1);
+  param_1->vtable = (STGroupBoatCVTable *)&VTable_0079CC28;
   if (param_1 == (STGroupBoatC *)0x0) {
     puVar2 = (undefined4 *)0x0;
   }

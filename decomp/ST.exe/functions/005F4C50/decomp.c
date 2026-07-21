@@ -46,8 +46,8 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
       puVar3 = puVar3 + 1;
     } while (param_4 != 0);
   }
-  if (*(byte **)((int)this + 0x169) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)((int)this + 0x169));
+  if (*(DArrayTy **)((int)this + 0x169) != (DArrayTy *)0x0) {
+    DArrayDestroy(*(DArrayTy **)((int)this + 0x169));
   }
   puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,iVar5 * param_5,0x23,10);
   *(uint **)((int)this + 0x169) = puVar2;

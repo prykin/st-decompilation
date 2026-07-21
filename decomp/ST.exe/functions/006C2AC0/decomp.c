@@ -6,7 +6,7 @@ void FUN_006c2ac0(int *param_1)
 
 {
   if (param_1 != (int *)0x0) {
-    FUN_006ab060(&param_1);
+    FreeAndNull(&param_1);
   }
   return;
 }

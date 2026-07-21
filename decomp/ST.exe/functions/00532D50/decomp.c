@@ -6,12 +6,13 @@
 void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
 
 {
-  uint uVar1;
-  char cVar2;
-  byte bVar3;
-  code *pcVar4;
-  InternalExceptionFrame *pIVar5;
-  int iVar6;
+  uint index;
+  char cVar1;
+  byte bVar2;
+  code *pcVar3;
+  InternalExceptionFrame *pIVar4;
+  int iVar5;
+  AnonPointee_OptPanelTy_01E9 *pAVar6;
   uint *puVar7;
   HANDLE hFindFile;
   cMf32 *this_00;
@@ -59,30 +60,30 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_10 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_02 = local_10;
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f,0,iVar6,
+    iVar12 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f,0,iVar5,
                                 &DAT_007a4ccc,s_OptPanelTy__PrepFiles_007c72bc);
     if (iVar12 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f);
+      RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f);
       return;
     }
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   if ((AnonShape_006B5570_4D68B99C *)local_10->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_01E9);
-    this_02->field_01E9 = 0;
+    this_02->field_01E9 = (AnonPointee_OptPanelTy_01E9 *)0x0;
   }
-  if ((byte *)this_02->field_01ED != (byte *)0x0) {
-    FUN_006ae110((byte *)this_02->field_01ED);
+  if ((DArrayTy *)this_02->field_01ED != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)this_02->field_01ED);
     this_02->field_01ED = 0;
   }
-  puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,0x32,10);
-  this_02->field_01E9 = puVar7;
+  pAVar6 = (AnonPointee_OptPanelTy_01E9 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,0x32,10);
+  this_02->field_01E9 = pAVar6;
   puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,8,10);
   this_02->field_01ED = puVar7;
   this_02->field_0028 = 0x20;
@@ -95,9 +96,9 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = &this_02->field_0x6c;
@@ -118,20 +119,20 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
-  iVar6 = -1;
+  iVar5 = -1;
   pcVar9 = &this_02->field_0x6c;
   do {
     pcVar16 = pcVar9;
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar16 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar16;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = pcVar16 + -1;
   for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -151,20 +152,20 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
-  iVar6 = -1;
+  iVar5 = -1;
   pcVar9 = &this_02->field_0x6c;
   do {
     pcVar16 = pcVar9;
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar16 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar16;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = pcVar16 + -1;
   for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -185,9 +186,9 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = local_3fc;
@@ -208,20 +209,20 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
-  iVar6 = -1;
+  iVar5 = -1;
   pcVar9 = &this_02->field_0x6c;
   do {
     pcVar16 = pcVar9;
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar16 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar16;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = pcVar16 + -1;
   for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -241,20 +242,20 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
-  iVar6 = -1;
+  iVar5 = -1;
   pcVar9 = &this_02->field_0x6c;
   do {
     pcVar16 = pcVar9;
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar16 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar16;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = pcVar16 + -1;
   for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -274,20 +275,20 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
     pcVar17 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar17;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   uVar13 = ~uVar13;
-  iVar6 = -1;
+  iVar5 = -1;
   pcVar9 = &this_02->field_0x6c;
   do {
     pcVar16 = pcVar9;
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar16 = pcVar9 + 1;
-    cVar2 = *pcVar9;
+    cVar1 = *pcVar9;
     pcVar9 = pcVar16;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   pcVar9 = pcVar17 + -uVar13;
   pcVar17 = pcVar16 + -1;
   for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -304,7 +305,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_18 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
     do {
-      pIVar5 = g_currentExceptionFrame;
+      pIVar4 = g_currentExceptionFrame;
       if (((byte)local_1f4.dwFileAttributes & 0x10) == 0) {
         pCVar20 = local_1f4.cFileName;
         local_1c = &local_8;
@@ -314,11 +315,11 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         ;
         local_b4.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_b4;
-        iVar6 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0,pCVar20,uVar21);
+        iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0,pCVar20,uVar21);
         this_02 = local_10;
         hFindFile = local_18;
-        pIVar5 = local_b4.previous;
-        if (iVar6 == 0) {
+        pIVar4 = local_b4.previous;
+        if (iVar5 == 0) {
           uVar13 = 0xffffffff;
           pcVar9 = local_3fc;
           do {
@@ -326,9 +327,9 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
             if (uVar13 == 0) break;
             uVar13 = uVar13 - 1;
             pcVar17 = pcVar9 + 1;
-            cVar2 = *pcVar9;
+            cVar1 = *pcVar9;
             pcVar9 = pcVar17;
-          } while (cVar2 != '\0');
+          } while (cVar1 != '\0');
           uVar13 = ~uVar13;
           pcVar9 = pcVar17 + -uVar13;
           pcVar17 = &local_10->field_0x6c;
@@ -349,20 +350,20 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
             if (uVar13 == 0) break;
             uVar13 = uVar13 - 1;
             pbVar18 = pbVar15 + 1;
-            bVar3 = *pbVar15;
+            bVar2 = *pbVar15;
             pbVar15 = pbVar18;
-          } while (bVar3 != 0);
+          } while (bVar2 != 0);
           uVar13 = ~uVar13;
-          iVar6 = -1;
+          iVar5 = -1;
           pcVar9 = &local_10->field_0x6c;
           do {
             pcVar17 = pcVar9;
-            if (iVar6 == 0) break;
-            iVar6 = iVar6 + -1;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
             pcVar17 = pcVar9 + 1;
-            cVar2 = *pcVar9;
+            cVar1 = *pcVar9;
             pcVar9 = pcVar17;
-          } while (cVar2 != '\0');
+          } while (cVar1 != '\0');
           pbVar15 = pbVar18 + -uVar13;
           pbVar18 = (byte *)(pcVar17 + -1);
           for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -404,9 +405,9 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
               do {
                 if (uVar13 == 0) break;
                 uVar13 = uVar13 - 1;
-                cVar2 = *pcVar9;
+                cVar1 = *pcVar9;
                 pcVar9 = pcVar9 + 1;
-              } while (cVar2 != '\0');
+              } while (cVar1 != '\0');
               pcVar9 = FUN_006b8240((char *)local_2f8,~uVar13 - 1);
               Library::DKW::TBL::FUN_006b5aa0((uint *)this_02->field_01E9,pcVar9);
               this_01 = extraout_ECX_00;
@@ -414,17 +415,17 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           }
           cMf32::delete(this_01,this_00);
           hFindFile = local_18;
-          pIVar5 = local_b4.previous;
+          pIVar4 = local_b4.previous;
         }
       }
-      g_currentExceptionFrame = pIVar5;
+      g_currentExceptionFrame = pIVar4;
       BVar10 = FindNextFileA(hFindFile,&local_1f4);
     } while (BVar10 != 0);
   }
   if (hFindFile != (HANDLE)0xffffffff) {
     FindClose(hFindFile);
   }
-  uVar13 = *(uint *)(this_02->field_01E9 + 8);
+  uVar13 = this_02->field_01E9->field_0008;
   local_8 = uVar13;
   if (uVar13 == 0) {
     if (this_02->field_01A4 != CASE_3) goto LAB_0053325d;
@@ -440,20 +441,18 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         uVar14 = 0;
         if (uVar13 != 1) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_02->field_01ED,uVar14,
-                         &local_2c.dwLowDateTime);
-            uVar1 = uVar14 + 1;
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_02->field_01ED,uVar1,
-                         &local_24.dwLowDateTime);
+            DArrayGetElement((DArrayTy *)this_02->field_01ED,uVar14,&local_2c);
+            index = uVar14 + 1;
+            DArrayGetElement((DArrayTy *)this_02->field_01ED,index,&local_24);
             LVar11 = CompareFileTime(&local_2c,&local_24);
             if (LVar11 < 0) {
-              FUN_006b0cd0((AnonShape_006B0CD0_C8D121FA *)this_02->field_01ED,uVar14,uVar1);
-              FUN_006b8200((AnonShape_006B8200_800652FF *)this_02->field_01E9,uVar14,uVar1);
+              FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_02->field_01ED,uVar14,index);
+              FUN_006b8200((AnonShape_006B8200_800652FF *)this_02->field_01E9,uVar14,index);
               local_c = 1;
             }
-            uVar14 = uVar1;
+            uVar14 = index;
             uVar13 = local_8;
-          } while (uVar1 < local_8 - 1);
+          } while (index < local_8 - 1);
         }
       } while (local_c != 0);
     }

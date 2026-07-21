@@ -95,7 +95,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
         puVar5 = (uint *)((int)puVar5 + 1);
         puVar11 = (uint *)((int)puVar11 + 1);
       }
-      FUN_006ab060(local_3c);
+      FreeAndNull(local_3c);
     }
     puVar7 = (undefined4 *)&stack0xffffff40;
     iVar3 = 0;
@@ -150,7 +150,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
               puVar11 = (uint *)((int)puVar11 + 1);
               puVar13 = (uint *)((int)puVar13 + 1);
             }
-            FUN_006ab060(local_3c);
+            FreeAndNull(local_3c);
             local_44 = (uint *)((int)puVar10 + *local_44);
           }
           local_30 = local_30 + 1;
@@ -165,7 +165,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     g_currentExceptionFrame = local_8c.previous;
     puVar2 = &stack0xffffff40;
     if (local_48 != (AnonShape_00604A90_035626E6 *)0x0) {
-      FUN_006ab060(&local_48);
+      FreeAndNull(&local_48);
       puVar2 = local_1c;
     }
     local_1c = puVar2;

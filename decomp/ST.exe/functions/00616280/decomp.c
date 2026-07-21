@@ -16,12 +16,12 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
   sVar3 = *(short *)((int)this + 0x2c7);
   local_10[1] = 0;
   local_10[0] = 0;
-  if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
-      (((SHORT_007fb242 <= sVar3 || (sVar2 < 0)) ||
-       ((SHORT_007fb244 <= sVar2 ||
-        ((this_00 = g_worldCells
-                    [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                     (int)sVar1].objects[0], this_00 == (STWorldObject *)0x0 ||
+  if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
+      (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) ||
+       ((g_worldGrid.sizeZ <= sVar2 ||
+        ((this_00 = g_worldGrid.cells
+                    [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
+                     + (int)sVar1].objects[0], this_00 == (STWorldObject *)0x0 ||
          (*(int *)&this_00->field_0x18 != *(int *)((int)this + 0x2d1))))))))) &&
      (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2d1),(int *)&local_14),
      this_00 = local_14, iVar4 == -4)) {

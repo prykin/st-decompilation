@@ -38,18 +38,18 @@ void __fastcall FUN_005a0af0(int param_1)
     FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1b04));
   }
   *(undefined4 *)(param_1 + 0x1b04) = 0;
-  if (*(byte **)(param_1 + 0x1ebe) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0x1ebe));
+  if (*(DArrayTy **)(param_1 + 0x1ebe) != (DArrayTy *)0x0) {
+    DArrayDestroy(*(DArrayTy **)(param_1 + 0x1ebe));
   }
   *(undefined4 *)(param_1 + 0x1ebe) = 0;
   if (*(int *)(param_1 + 0x1e8e) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x1e8e));
+    FreeAndNull((void **)(param_1 + 0x1e8e));
   }
   if (*(int *)(param_1 + 0x1e92) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x1e92));
+    FreeAndNull((void **)(param_1 + 0x1e92));
   }
   if (*(int *)(param_1 + 0x1e9a) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x1e9a));
+    FreeAndNull((void **)(param_1 + 0x1e9a));
   }
   return;
 }

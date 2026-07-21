@@ -12,9 +12,9 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int par
   int errorCode;
   int iVar3;
   undefined4 uVar4;
-  uint uVar5;
+  uint index;
   undefined4 unaff_ESI;
-  uint uVar6;
+  uint uVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_54;
   STGroupC *local_10;
@@ -43,15 +43,15 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int par
   if (local_c == 0) {
     return 0;
   }
-  uVar6 = 0;
+  uVar5 = 0;
   if (local_c != 0) {
-    uVar5 = 0;
+    index = 0;
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_1,uVar5,&local_8);
+      DArrayGetElement(param_1,index,&local_8);
       AddObj(this_00,local_8,param_2);
-      uVar6 = uVar6 + 1;
-      uVar5 = uVar6 & 0xffff;
-    } while (uVar5 < uVar2);
+      uVar5 = uVar5 + 1;
+      index = uVar5 & 0xffff;
+    } while (index < uVar2);
   }
   g_currentExceptionFrame = local_54.previous;
   return 0;

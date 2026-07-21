@@ -18,6 +18,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   Global_sub_005276E0_param_1Enum *pGVar9;
   void *unaff_EDI;
   undefined4 *puVar10;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar11;
   undefined4 local_298 [144];
   InternalExceptionFrame local_58;
   UpgPanelTy *local_14;
@@ -46,13 +47,13 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     do {
       uVar5 = thunk_FUN_005276e0(*pGVar9,(byte)((uint)*(undefined4 *)pGVar9 >> 0x10));
       if (pGVar9[8] == ~(CASE_80|CASE_7F)) {
-        iVar7 = pUVar3->field_03EF;
+        pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar3->field_03EF;
       }
       else {
-        iVar7 = pUVar3->field_03EB;
+        pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar3->field_03EB;
       }
-      pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,0x24,iVar4,'\x01',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(pAVar11,uVar5);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar3->field_0068,0x24,iVar4,'\x01',pbVar6);
       pGVar9 = pGVar9 + 0x30;
       iVar4 = iVar4 + 0x1b;
       local_8 = local_8 + -1;
@@ -66,13 +67,13 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
       do {
         uVar5 = thunk_FUN_005276e0(*pGVar9,(byte)((uint)*(undefined4 *)pGVar9 >> 0x10));
         if (pGVar9[8] == ~(CASE_80|CASE_7F)) {
-          iVar7 = pUVar3->field_03EF;
+          pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar3->field_03EF;
         }
         else {
-          iVar7 = pUVar3->field_03EB;
+          pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar3->field_03EB;
         }
-        pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,local_8,iVar4,'\x01',pbVar6);
+        pbVar6 = (byte *)FUN_0070b3a0(pAVar11,uVar5);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar3->field_0068,local_8,iVar4,'\x01',pbVar6);
         pGVar9 = pGVar9 + 0x30;
         iVar4 = iVar4 + 0x1b;
         local_10 = local_10 + -1;
@@ -87,13 +88,13 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     do {
       uVar5 = thunk_FUN_005276e0(*pGVar9,(byte)((uint)*(undefined4 *)pGVar9 >> 0x10));
       if (pGVar9[8] == ~(CASE_80|CASE_7F)) {
-        iVar7 = pUVar3->field_03EF;
+        pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar3->field_03EF;
       }
       else {
-        iVar7 = pUVar3->field_03EB;
+        pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar3->field_03EB;
       }
-      pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar3->field_0068,0xd3,iVar4,'\x01',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(pAVar11,uVar5);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar3->field_0068,0xd3,iVar4,'\x01',pbVar6);
       pGVar9 = pGVar9 + 0x30;
       iVar4 = iVar4 + 0x1b;
       local_c = local_c + -1;

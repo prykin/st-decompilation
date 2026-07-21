@@ -11,11 +11,12 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   int iVar3;
   uint uVar4;
   byte *pbVar5;
-  byte bVar6;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar6;
+  byte bVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar7;
-  int iVar8;
+  uint uVar8;
+  int iVar9;
   InternalExceptionFrame local_70;
   uint local_2c;
   CPanelTy *local_28;
@@ -35,9 +36,9 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   pCVar2 = local_28;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x184,0,iVar3,&DAT_007a4ccc
+    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x184,0,iVar3,&DAT_007a4ccc
                                ,s_CPanelTy__PaintArsenal_007c2808);
-    if (iVar8 == 0) {
+    if (iVar9 == 0) {
       RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x184);
       return;
     }
@@ -45,24 +46,24 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     (*pcVar1)();
     return;
   }
-  FUN_006b4170(local_28->field_0194,0,0x49,0x50,0x6f,0x37,0x3d);
-  FUN_006b4170(pCVar2->field_0194,0,0x4a,0x51,0x29,0x34,0x3f);
-  FUN_006b4170(pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
+  FUN_006b4170((AnonShape_006C7610_838EDECF *)local_28->field_0194,0,0x49,0x50,0x6f,0x37,0x3d);
+  FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar2->field_0194,0,0x4a,0x51,0x29,0x34,0x3f);
+  FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
   if (pCVar2->field_09D4 == '\x01') {
     local_20 = CONCAT31(local_20._1_3_,4);
-    bVar6 = 3;
+    bVar7 = 3;
   }
   else {
     local_20 = (uint)local_20._1_3_ << 8;
-    bVar6 = 4;
+    bVar7 = 4;
   }
-  local_10 = CONCAT31(local_10._1_3_,bVar6);
-  if (bVar6 != 0) {
+  local_10 = CONCAT31(local_10._1_3_,bVar7);
+  if (bVar7 != 0) {
     local_14 = 0;
     local_2c = local_20 & 0xff;
     local_1c = 0x54;
     local_18 = (AnonShape_00505960_269BEFC9 *)(&pCVar2->field_0C11 + local_2c * 6);
-    local_24 = (uint)bVar6;
+    local_24 = (uint)bVar7;
     do {
       if (*(char *)local_18 == '\0') {
         uVar4 = 0;
@@ -70,30 +71,30 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       else {
         uVar4 = ((uint)local_18->field_0002 * 10) / (uint)local_18->field_0004;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,5);
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
+      pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,5);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
       local_10 = local_10 & 0xffffff00;
       if (uVar4 != 0) {
-        uVar7 = 0;
+        uVar8 = 0;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,1);
-          DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,uVar7 * 4 + 0x76,local_1c + 2,
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+          DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,uVar8 * 4 + 0x76,local_1c + 2,
                  '\x01',pbVar5);
-          bVar6 = (byte)local_10 + 1;
-          local_10 = CONCAT31(local_10._1_3_,bVar6);
-          uVar7 = (uint)bVar6;
-        } while (uVar7 < uVar4);
+          bVar7 = (byte)local_10 + 1;
+          local_10 = CONCAT31(local_10._1_3_,bVar7);
+          uVar8 = (uint)bVar7;
+        } while (uVar8 < uVar4);
       }
       if ((byte)local_10 < 10) {
-        iVar8 = 10 - (local_10 & 0xff);
+        iVar9 = 10 - (local_10 & 0xff);
         iVar3 = (local_10 & 0xff) * 4 + 0x76;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
-          DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',pbVar5)
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',pbVar5)
           ;
           iVar3 = iVar3 + 4;
-          iVar8 = iVar8 + -1;
-        } while (iVar8 != 0);
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
       }
       wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,(uint)local_18->field_0002);
       uVar4 = local_1c;
@@ -114,15 +115,15 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         return;
       }
       if (*(char *)local_18 == '\0') {
-        iVar3 = pCVar2->field_0292;
+        pAVar6 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
       }
       else {
-        iVar3 = pCVar2->field_028E;
+        pAVar6 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_028E;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(iVar3,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb +
-                                          local_14 + local_2c);
+      pbVar5 = (byte *)FUN_0070b3a0(pAVar6,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb +
+                                           local_14 + local_2c);
       if (pbVar5 != (byte *)0x0) {
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
       }
       local_14 = local_14 + 1;
       local_18 = (AnonShape_00505960_269BEFC9 *)&local_18->field_0x6;

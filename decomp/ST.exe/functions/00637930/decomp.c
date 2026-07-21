@@ -26,7 +26,8 @@ FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint p
     if (param_2 == 0) {
       param_1 = 0xffffffff;
     }
-    FUN_006ea050(PTR_00807598,local_8,1,param_1,param_7);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
+              ((AnonReceiver_006EA050 *)PTR_00807598,local_8,1,param_1,param_7);
     FUN_006eaaa0(PTR_00807598,local_8,0);
   }
   return;

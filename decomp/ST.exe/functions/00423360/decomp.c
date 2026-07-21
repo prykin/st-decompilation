@@ -1,4 +1,7 @@
 
+/* [STReturnSemanticsApplier] leaf_void.
+   Evidence: leaf function has RET and never writes EAX/AX/AL/AH */
+
 void __fastcall FUN_00423360(int param_1)
 
 {

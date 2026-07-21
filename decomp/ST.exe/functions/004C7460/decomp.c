@@ -65,7 +65,7 @@ undefined4 __fastcall FUN_004c7460(AnonShape_004C7460_AC9F4C4C *param_1)
       iVar2 = *(int *)param_1->field_0607;
     }
     if (*(int *)(&DAT_00794d70 + iVar2 * 4) != -1) {
-      iVar1 = thunk_FUN_004406c0(param_1->field_0024);
+      iVar1 = GetPlayerRaceId(param_1->field_0024);
       iVar3 = local_8;
       if ((char)iVar1 == '\x03') {
         iVar3 = 0;

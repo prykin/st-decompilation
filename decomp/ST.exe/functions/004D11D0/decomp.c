@@ -82,9 +82,9 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
   *(undefined2 *)puVar14 = *(undefined2 *)pAVar11;
   *(undefined1 *)((int)puVar14 + 2) = pAVar11->field_0x2;
   local_3c->field_0368 = local_3c->field_0259 + -0x32;
-  uVar4 = thunk_FUN_004406c0(local_3c->field_0x24);
+  uVar4 = GetPlayerRaceId(local_3c->field_0x24);
   this_00->field_036C = (uVar4 & 0xff) - 1;
-  iVar3 = thunk_FUN_004406c0(this_00->field_0x24);
+  iVar3 = GetPlayerRaceId(this_00->field_0x24);
   uVar4 = (uint)((char)iVar3 == '\x03');
   this_00->field_0370 = uVar4;
   if (uVar4 == 0) {
@@ -127,14 +127,14 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
           sVar17 = (short)iVar3;
           thunk_FUN_004960d0(sVar16,sVar17,this_00->field_0265);
           sVar1 = this_00->field_0265;
-          if (((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) || (sVar17 < 0)) ||
-              ((SHORT_007fb242 <= sVar17 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) {
+          if (((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) || (sVar17 < 0)) ||
+              ((g_worldGrid.sizeY <= sVar17 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
             this_01 = (STWorldObject *)0x0;
           }
           else {
-            this_01 = g_worldCells
-                      [(int)sVar17 * (int)SHORT_007fb240 + (int)sVar1 * (int)SHORT_007fb246 +
-                       (int)sVar16].objects[1];
+            this_01 = g_worldGrid.cells
+                      [(int)sVar17 * (int)g_worldGrid.sizeX +
+                       (int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar16].objects[1];
           }
           if ((this_01 != (STWorldObject *)0x0) && (this_01->value_20 == 0xbe)) {
             thunk_FUN_00630110(this_01,(char)*(undefined4 *)&this_00->field_0x24);
@@ -274,7 +274,7 @@ cf_common_join_004D1763:
       local_10 = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_28,
-                 (AnonShape_004ADBA0_E7CEFF88 *)(&param_1->field_0x0 + param_1->field_012B));
+                 (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + param_1->field_012B));
       pAVar6 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
       if (pAVar6 == (AnonShape_004AB810_8E5693D5 *)0x0) {
         pSVar7 = (STT3DSprC *)0x0;
@@ -305,7 +305,7 @@ cf_common_join_004D1763:
       local_1c = 0;
       STT3DSprC::RestoreSpr
                 (this_00->field_035C,(int *)&local_28,
-                 (AnonShape_004ADBA0_E7CEFF88 *)(&param_1->field_0x0 + param_1->field_0133));
+                 (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + param_1->field_0133));
       uVar4 = this_00->field_02F4;
       iVar3 = thunk_FUN_004ad650((int)&this_00->field_01D5);
       uVar8 = thunk_FUN_004ad650((int)this_00->field_035C);
@@ -345,14 +345,14 @@ cf_common_join_004D1763:
           FUN_006ea340((void *)this_00->field_0211,uVar9,iVar3,uVar8);
           STT3DSprC::RestoreSpr
                     (*ppSVar15,(int *)&local_28,
-                     (AnonShape_004ADBA0_E7CEFF88 *)(&param_1->field_0x0 + (int)local_8->field_0000)
+                     (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + (int)local_8->field_0000)
                     );
           uVar4 = uVar4 - 1;
           local_8 = (TLOEmbryoTy *)&local_8->field_0x4;
           ppSVar15 = ppSVar15 + 1;
         } while (8 < (int)uVar4);
       }
-      FUN_006ab060(&local_28);
+      FreeAndNull(&local_28);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(&param_1->field_0x0 + param_1->field_0123))
       ;

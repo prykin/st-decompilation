@@ -15,7 +15,7 @@ undefined4 * __fastcall FUN_00510c80(STGroupBoatC *param_1)
   *(undefined4 *)((int)&param_1->field_0065 + 3) = 0;
   param_1->field_0172 = 2;
   param_1->field_0178 = 0;
-  param_1->vtable = (STGroupBoatCVTable *)&HelpPanelTyVTable;
+  param_1->vtable = (STGroupBoatCVTable *)&VTable_0079AC48;
   *(undefined4 *)((int)&param_1->field_003D + 3) = 500;
   *(undefined4 *)((int)&param_1->field_0045 + 3) = 400;
   *(undefined1 *)((int)&param_1->field_019D + 3) = 0;

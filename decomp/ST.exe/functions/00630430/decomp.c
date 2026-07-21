@@ -17,7 +17,6 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,AnonShape_00630430
   uint uVar8;
   undefined4 unaff_ESI;
   AnonNested_00630430_0014_3EDE47A6 *pAVar9;
-  int *piVar10;
   void *unaff_EDI;
   InternalExceptionFrame local_58;
   byte *local_14;
@@ -51,7 +50,7 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,AnonShape_00630430
     }
     local_14 = (byte *)thunk_FUN_00631220(local_c,(int *)&local_10);
     STPlaySystemC::SaveObjData(PTR_00802a38,PTR_DAT_0079d198,local_14,local_10,0xc);
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -66,37 +65,38 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,AnonShape_00630430
       while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
         iVar3 = *(int *)&this_00->field_003C;
         if (uVar1 < *(uint *)(iVar3 + 0xc)) {
-          piVar10 = (int *)(*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
+          puVar4 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
         }
         else {
-          piVar10 = (int *)0x0;
+          puVar4 = (undefined4 *)0x0;
         }
-        if (piVar10 != (int *)0x0) {
-          if ((piVar10[1] == 1) && (piVar10[2] == 0)) {
+        if (puVar4 != (undefined4 *)0x0) {
+          if ((puVar4[1] == 1) && (puVar4[2] == 0)) {
             iVar3 = thunk_FUN_00630ff0();
-            piVar10[2] = iVar3;
+            puVar4[2] = iVar3;
             if (iVar3 != 0) {
-              puVar5 = thunk_FUN_00630c50(this_00,*piVar10,piVar10[3],1,1);
+              puVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::
+                       thunk_FUN_00630c50((AnonReceiver_006308F0 *)this_00,*puVar4,puVar4[3],1,1,0);
               if (puVar5 == (ushort *)0x0) {
-                piVar10[2] = 0;
+                puVar4[2] = 0;
               }
               else {
-                piVar10[1] = 2;
+                puVar4[1] = 2;
               }
             }
           }
-          iVar3 = piVar10[1];
+          iVar3 = puVar4[1];
           if ((iVar3 == 2) || (iVar3 == 1)) {
-            if ((piVar10[2] != 0) || (iVar3 == 2)) {
-              FUN_006e9350(PTR_00807598,*(uint *)((int)piVar10 + 0x21),
-                           *(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(piVar10 + 8) * 4),
+            if ((puVar4[2] != 0) || (iVar3 == 2)) {
+              FUN_006e9350(PTR_00807598,*(uint *)((int)puVar4 + 0x21),
+                           *(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(puVar4 + 8) * 4),
                            (int)*(short *)(DAT_00806724 + 0x2c));
             }
             if ((uint)PTR_00802a38->field_00E4 % 6 == 0) {
-              *(char *)(piVar10 + 8) = (char)piVar10[8] + '\x01';
+              *(char *)(puVar4 + 8) = *(char *)(puVar4 + 8) + '\x01';
             }
-            if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(piVar10 + 8)) {
-              FUN_006e8ba0(PTR_00807598,*(uint *)((int)piVar10 + 0x21));
+            if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(puVar4 + 8)) {
+              FUN_006e8ba0(PTR_00807598,*(uint *)((int)puVar4 + 0x21));
               FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)&this_00->field_003C,uVar1);
             }
           }
@@ -141,7 +141,7 @@ LAB_006304e7:
   iVar3._0_2_ = this_00->field_0034;
   iVar3._2_2_ = this_00->field_0036;
   if (iVar3 == 0) {
-    uVar1 = (int)SHORT_007fb240 * (int)SHORT_007fb242 * 5;
+    uVar1 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
     puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar1);
     *(undefined4 **)&this_00->field_0034 = puVar4;
     if (puVar4 == (undefined4 *)0x0) {

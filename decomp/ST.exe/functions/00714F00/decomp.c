@@ -40,7 +40,8 @@ int __thiscall FUN_00714f00(void *this,char *source,size_t param_2)
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
   }
-  iVar2 = FUN_00714ce0(this,uVar3 + 1 + sVar4);
+  iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
+                    (this,uVar3 + 1 + sVar4);
   if (iVar2 == 0) {
     Library::MSVCRT::_strncat(*(char **)this,source,param_2);
     iVar2 = 0;

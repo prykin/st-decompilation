@@ -159,7 +159,7 @@ LAB_00552481:
       pCVar3 = FUN_006f2c00(pCVar3,iVar6,uVar5);
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806794,CASE_1,pCVar3,uVar7,bVar8,iVar9,iVar11,puVar12);
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,local_8,iVar2,'\x01',(byte *)puVar4)
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar2,'\x01',(byte *)puVar4)
       ;
       if (param_1->field_0014->field_0004 == 3) {
         puVar12 = (undefined4 *)0x0;
@@ -170,7 +170,7 @@ LAB_00552481:
         pCVar3 = thunk_FUN_00571240(s_BUT_RCTFTYPE_007c8798,0);
         puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                            (DAT_00806794,CASE_6,pCVar3,uVar7,bVar8,iVar6,iVar9,puVar12);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,local_8,iVar2,'\x06',
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar2,'\x06',
                (byte *)puVar4);
       }
       Library::DKW::DDX::FUN_006b3640

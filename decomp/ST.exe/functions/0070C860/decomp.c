@@ -19,7 +19,7 @@ int __cdecl FUN_0070c860(uint param_1,uint param_2,int param_3,int param_4)
   }
   if (0 < param_4) {
     uVar2 = FUN_006b4fa0(param_1);
-    FUN_007521b0(&local_8,(AnonShape_007521B0_4642B53E *)param_1,uVar2,param_3,param_4,param_2);
+    FUN_007521b0(&local_8,(AnonShape_006B4B20_3D4F4412 *)param_1,uVar2,param_3,param_4,param_2);
     g_currentExceptionFrame = pIVar3;
     return local_8;
   }

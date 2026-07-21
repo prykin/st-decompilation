@@ -12,11 +12,12 @@ void __fastcall FUN_00493bc0(int param_1)
     sVar1 = *(short *)(param_1 + 0x639);
     sVar2 = *(short *)(param_1 + 0x63d);
     sVar3 = *(short *)(param_1 + 0x63b);
-    if (((-1 < sVar1) && (((sVar1 < SHORT_007fb240 && (-1 < sVar3)) && (sVar3 < SHORT_007fb242))))
-       && ((-1 < sVar2 && (sVar2 < SHORT_007fb244)))) {
-      this = g_worldCells
-             [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
-             objects[0];
+    if (((-1 < sVar1) &&
+        (((sVar1 < g_worldGrid.sizeX && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeY)))) &&
+       ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)))) {
+      this = g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+              (int)sVar1].objects[0];
       if ((this != (STWorldObject *)0x0) && (*(int *)&this->field_0x18 == *(int *)(param_1 + 0x63f))
          ) {
         iVar4 = (*this->vtable[5].slots_00_28[2])();

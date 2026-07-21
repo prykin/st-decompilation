@@ -35,7 +35,7 @@ int __thiscall FUN_0062fca0(void *this,AnonShape_0062FCA0_22A9EE35 *param_1)
       return *(int *)((int)this + 0x1e1);
     }
     *(int *)((int)this + 0x1e1) = iVar4 + 1;
-    thunk_FUN_0062ef00(this,iVar3,(int)param_1);
+    thunk_FUN_0062ef00(this,iVar3,param_1);
     if (*(char *)((int)this + 0x1f9) != '\0') {
       iVar4 = *(int *)((int)this + iVar3 * 4 + 0x1e5);
       iVar4 = thunk_FUN_0062f080(this,iVar3,*(undefined4 *)(iVar4 + 0xc),*(undefined4 *)(iVar4 + 4))

@@ -80,7 +80,7 @@ undefined4 __thiscall STManBasisC::GetMessage(STManBasisC *this,int param_1)
   else if (uVar1 == 0x10f) {
     local_14 = thunk_FUN_005f1fa0(local_c,(int *)&local_10);
     STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc);
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
   }
   g_currentExceptionFrame = pIVar5;
   return 0;

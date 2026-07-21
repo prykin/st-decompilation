@@ -5,7 +5,7 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
   byte bVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  AnonShape_0075FEE0_E0ABA202 *pAVar4;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -15,7 +15,7 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
   int iVar11;
   byte *pbVar12;
   char *pcVar13;
-  uint uVar14;
+  AnonShape_0075FEE0_E0ABA202 *pAVar14;
   short *psVar15;
   int *piVar16;
   int iVar17;
@@ -26,14 +26,14 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
   
   iVar2 = param_1->field_01BA;
   iVar3 = param_1->field_0070;
-  uVar4 = param_1->field_0068;
+  pAVar4 = (AnonShape_0075FEE0_E0ABA202 *)param_1->field_0068;
   iVar5 = param_1->field_0132;
   if (0 < param_4) {
     local_28 = param_4;
     iVar11 = param_2 - (int)param_3;
     piVar16 = param_3;
     do {
-      FUN_00759f30((undefined4 *)*piVar16,uVar4);
+      FUN_00759f30((undefined4 *)*piVar16,pAVar4);
       param_4 = 0;
       if (0 < iVar3) {
         param_3 = (int *)(iVar2 + 0x44);
@@ -46,10 +46,10 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
             local_1c = iVar3;
           }
           else {
-            pcVar13 = pcVar13 + (uVar4 - 1);
-            pbVar12 = pbVar12 + (uVar4 - 1) * iVar3;
+            pcVar13 = pcVar13 + (int)&pAVar4[-1].field_0x1bf;
+            pbVar12 = pbVar12 + (int)&pAVar4[-1].field_0x1bf * iVar3;
             iVar17 = -1;
-            psVar15 = (short *)(*param_3 + 2 + uVar4 * 2);
+            psVar15 = (short *)(*param_3 + 2 + (int)pAVar4 * 2);
             local_1c = -iVar3;
           }
           iVar6 = *(int *)(*(int *)(iVar2 + 0x18) + param_4 * 4);
@@ -58,7 +58,8 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
           local_c = 0;
           local_c._0_2_ = 0;
           local_18 = 0;
-          for (uVar14 = uVar4; uVar14 != 0; uVar14 = uVar14 - 1) {
+          for (pAVar14 = pAVar4; pAVar14 != (AnonShape_0075FEE0_E0ABA202 *)0x0;
+              pAVar14 = (AnonShape_0075FEE0_E0ABA202 *)&pAVar14[-1].field_0x1bf) {
             uVar9 = (uint)*(byte *)((uint)*pbVar12 + iVar5 + (psVar15[iVar17] + 8 + iVar8 >> 4));
             bVar1 = *(byte *)(uVar9 + iVar6);
             *pcVar13 = *pcVar13 + bVar1;

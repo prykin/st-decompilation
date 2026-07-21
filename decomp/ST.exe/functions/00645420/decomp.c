@@ -35,7 +35,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
   if (iVar2 == 0) {
     *param_1 = 0x80;
     local_14 = (undefined4 *)FUN_006b0020((uint *)local_20->field_0241,(int *)&local_8);
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     *param_1 = *param_1 + local_8;
     local_18 = STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_0x1d5,&local_c);
     *param_1 = *param_1 + local_c;
@@ -75,7 +75,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     }
     puVar3[0x1a] = 0x80;
     puVar3[0x1b] = local_8;
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     local_24 = local_8 + 0x80;
     puVar5 = local_18;
     puVar7 = (undefined4 *)(local_24 + (int)puVar3);
@@ -91,7 +91,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     }
     puVar3[0x1c] = local_24;
     puVar3[0x1d] = local_c;
-    FUN_006ab060(&local_18);
+    FreeAndNull(&local_18);
     puVar5 = local_1c;
     puVar7 = (undefined4 *)(local_24 + local_c + (int)puVar3);
     for (uVar6 = local_10 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
@@ -106,7 +106,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     }
     puVar3[0x1e] = local_24 + local_c;
     puVar3[0x1f] = local_10;
-    FUN_006ab060(&local_1c);
+    FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_6c.previous;
     return puVar3;
   }

@@ -25,7 +25,7 @@ void __thiscall StartSystemTy::~StartSystemTy(StartSystemTy *this)
   }
   this->field_0550 = 0;
   if (this->field_069A != 0) {
-    FUN_006ab060((LPVOID *)&this->field_069A);
+    FreeAndNull((void **)&this->field_069A);
   }
   DelAllAccelerators();
   sub_005DB2A0(this);

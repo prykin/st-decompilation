@@ -538,7 +538,7 @@ LAB_0055eb08:
       } while ((int)param_1 < DAT_008033a8);
     }
   }
-  FUN_006ab060(&local_14);
+  FreeAndNull(&local_14);
   return;
 }
 

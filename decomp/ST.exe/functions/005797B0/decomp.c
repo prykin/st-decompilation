@@ -50,11 +50,11 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
     local_8 = 0;
   }
   local_18 = iVar6 + 1;
-  if ((int)SHORT_007fb240 <= iVar6 + 1) {
+  if ((int)g_worldGrid.sizeX <= iVar6 + 1) {
     local_18 = iVar6;
   }
   local_14 = iVar8 + 1;
-  if ((int)SHORT_007fb242 <= iVar8 + 1) {
+  if ((int)g_worldGrid.sizeY <= iVar8 + 1) {
     local_14 = iVar8;
   }
   switch(*(undefined2 *)((int)this + 0x6c)) {
@@ -211,14 +211,14 @@ LAB_00579bdd:
     iVar3 = 0;
   }
 switchD_0057988b_default:
-  if (SHORT_007fb240 <= iVar3) {
-    iVar3 = SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX <= iVar3) {
+    iVar3 = g_worldGrid.sizeX + -1;
   }
   if (iVar9 < 0) {
     iVar9 = 0;
   }
-  if (SHORT_007fb242 <= iVar9) {
-    iVar9 = SHORT_007fb242 + -1;
+  if (g_worldGrid.sizeY <= iVar9) {
+    iVar9 = g_worldGrid.sizeY + -1;
   }
   sVar4 = *(short *)((int)this + 0x45);
   if (sVar4 < 0) {
@@ -240,12 +240,12 @@ switchD_0057988b_default:
           if ((int)uVar1 < 0) {
             pvVar2 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
             if ((pvVar2 == (void *)0x0) &&
-               (((((sVar4 < 0 || (SHORT_007fb240 <= sVar4)) || ((short)local_8 < 0)) ||
-                 ((SHORT_007fb242 <= (short)local_8 || (local_10 < 0)))) ||
-                ((SHORT_007fb244 <= local_10 ||
-                 (g_worldCells
-                  [(int)SHORT_007fb240 * (int)(short)local_8 +
-                   (int)sVar4 + (int)SHORT_007fb246 * (int)local_10].objects[0] ==
+               (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||
+                 ((g_worldGrid.sizeY <= (short)local_8 || (local_10 < 0)))) ||
+                ((g_worldGrid.sizeZ <= local_10 ||
+                 (g_worldGrid.cells
+                  [(int)g_worldGrid.sizeX * (int)(short)local_8 +
+                   (int)sVar4 + (int)g_worldGrid.planeStride * (int)local_10].objects[0] ==
                   (STWorldObject *)0x0)))))) {
               if ((*(short *)((int)this + 0x47) != iVar3) ||
                  (*(short *)((int)this + 0x49) != local_8)) {

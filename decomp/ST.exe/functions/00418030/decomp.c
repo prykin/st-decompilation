@@ -1,5 +1,13 @@
 
-undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short param_3)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00417FF0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=37; incoming_edx_uses=0; calls=15;
+   ecx_pointer_setup=15; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=5; adopt_untyped_existing_thiscall */
+
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
+          (AnonReceiver_00417FF0 *this,short param_1,short param_2,short param_3)
 
 {
   bool bVar1;
@@ -45,10 +53,10 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
   short *local_c;
   bool local_5;
   
-  local_58 = this;
-  thunk_FUN_004167a0(this);
-  if (((param_1 == *(short *)((int)this + 0x47)) && (param_2 == *(short *)((int)this + 0x49))) &&
-     (param_3 == *(short *)((int)this + 0x4b))) {
+  local_58 = (STBoatC *)this;
+  thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);
+  if (((param_1 == *(short *)&this->field_0x47) && (param_2 == *(short *)&this->field_0x49)) &&
+     (param_3 == *(short *)&this->field_0x4b)) {
     return 1;
   }
   local_9c.previous = g_currentExceptionFrame;
@@ -67,16 +75,17 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
       uVar13 = (int)uVar5 >> 0x1f, (int)((uVar5 ^ uVar13) - uVar13) < 2)) &&
      (psVar15 = (short *)(int)param_3, uVar5 = (int)psVar15 - (int)local_58->field_005F,
      uVar13 = (int)uVar5 >> 0x1f, (int)((uVar5 ^ uVar13) - uVar13) < 2)) {
-    if (((param_1 < 0) || (SHORT_007fb240 <= param_1)) ||
+    if (((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) ||
        ((param_2 < 0 ||
-        (((SHORT_007fb242 <= param_2 || (param_3 < 0)) || (SHORT_007fb244 <= param_3)))))) {
+        (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))))) {
       pSVar6 = (STWorldObject *)0x0;
     }
     else {
-      pSVar6 = g_worldCells
+      pSVar6 = g_worldGrid.cells
                [(int)((int)local_2c +
-                     (int)SHORT_007fb240 * (int)psVar16 + (int)SHORT_007fb246 * (int)psVar15)].
-               objects[(byte)local_58->field_008E];
+                     (int)g_worldGrid.sizeX * (int)psVar16 +
+                     (int)g_worldGrid.planeStride * (int)psVar15)].objects
+               [(byte)local_58->field_008E];
     }
     if (pSVar6 == (STWorldObject *)0x0) {
       *(undefined4 *)&local_58->field_0x9b = 2;
@@ -100,11 +109,11 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
     iVar4 = (int)sVar3;
   }
   local_38 = (short *)-iVar4;
-  if (sVar3 + 2 < (int)SHORT_007fb278) {
+  if (sVar3 + 2 < (int)g_pathingGrid.sizeX) {
     local_28 = 2;
   }
   else {
-    local_28 = ((int)SHORT_007fb278 - (int)sVar3) + -1;
+    local_28 = ((int)g_pathingGrid.sizeX - (int)sVar3) + -1;
   }
   sVar3 = this_00->field_0049;
   local_34 = 2;
@@ -112,11 +121,11 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
     local_34 = (int)sVar3;
   }
   local_34 = -local_34;
-  if (sVar3 + 2 < (int)SHORT_007fb27a) {
+  if (sVar3 + 2 < (int)g_pathingGrid.sizeY) {
     local_3c = 2;
   }
   else {
-    local_3c = ((int)SHORT_007fb27a - (int)sVar3) + -1;
+    local_3c = ((int)g_pathingGrid.sizeY - (int)sVar3) + -1;
   }
   sVar3 = this_00->field_004B;
   iVar17 = 2;
@@ -125,11 +134,11 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
   }
   psVar16 = (short *)(sVar3 + 2);
   local_4c = (short *)-iVar17;
-  if ((int)psVar16 < (int)SHORT_007fb27c) {
+  if ((int)psVar16 < (int)g_pathingGrid.sizeZ) {
     local_24 = (short *)0x2;
   }
   else {
-    local_24 = (short *)(((int)SHORT_007fb27c - (int)sVar3) + -1);
+    local_24 = (short *)(((int)g_pathingGrid.sizeZ - (int)sVar3) + -1);
   }
   local_c = (short *)0x0;
   local_1c = local_4c;
@@ -149,30 +158,31 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
             local_50 = (short *)(CONCAT22((short)((uint)psVar15 >> 0x10),this_00->field_0049) +
                                 local_30);
             sVar14 = (short)local_50;
-            if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
-               (((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar12 < 0)))) ||
-                (SHORT_007fb244 <= sVar12)))) {
+            if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
+               (((sVar14 < 0 || ((g_worldGrid.sizeY <= sVar14 || (sVar12 < 0)))) ||
+                (g_worldGrid.sizeZ <= sVar12)))) {
               pSVar11 = (STBoatC *)0x0;
             }
             else {
               pSVar11 = (STBoatC *)
-                        g_worldCells
-                        [(int)sVar12 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                         (int)sVar3].objects[0];
+                        g_worldGrid.cells
+                        [(int)sVar12 * (int)g_worldGrid.planeStride +
+                         (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0];
             }
             psVar15 = local_50;
             if (pSVar11 == (STBoatC *)0x0) {
               if (this_00->field_008E != '\0') {
-                if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar14 < 0)) ||
-                    ((SHORT_007fb242 <= sVar14 || (sVar12 < 0)))) || (SHORT_007fb244 <= sVar12)) {
+                if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar14 < 0)) ||
+                    ((g_worldGrid.sizeY <= sVar14 || (sVar12 < 0)))) ||
+                   (g_worldGrid.sizeZ <= sVar12)) {
                   pSVar11 = (STBoatC *)0x0;
                 }
                 else {
                   pSVar11 = (STBoatC *)
-                            g_worldCells
-                            [(int)sVar12 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                             (int)sVar3].objects[1];
-                  psVar15 = (short *)(int)SHORT_007fb240;
+                            g_worldGrid.cells
+                            [(int)sVar12 * (int)g_worldGrid.planeStride +
+                             (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar3].objects[1];
+                  psVar15 = (short *)(int)g_worldGrid.sizeX;
                 }
               }
               if (pSVar11 != (STBoatC *)0x0) goto LAB_004183b8;
@@ -204,7 +214,7 @@ LAB_004183b8:
     } while ((int)local_1c <= (int)local_24);
   }
   if (local_c == (short *)0x0) {
-    FUN_006ab060(&local_14);
+    FreeAndNull(&local_14);
     local_44 = (short *)0x0;
   }
   psVar15 = local_14;
@@ -213,17 +223,17 @@ LAB_004183b8:
   local_44 = (short *)(int)param_3;
   pAVar7 = (AnonPointee_STBoatC_0097 *)
            Library::DKW::WAY::FUN_006ae7d0
-                     ((int)DAT_007fb280,(int)SHORT_007fb278,(short *)(int)SHORT_007fb27a,
-                      (short *)(int)SHORT_007fb27c,(short *)(int)this_00->field_0047,
-                      (short *)(int)this_00->field_0049,(short *)(int)this_00->field_004B,local_2c,
-                      local_50,(short *)(int)param_3,(int *)&this_00->field_0x9b,
-                      (undefined4 *)local_14,psVar9);
+                     ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,
+                      (short *)(int)g_pathingGrid.sizeY,(short *)(int)g_pathingGrid.sizeZ,
+                      (short *)(int)this_00->field_0047,(short *)(int)this_00->field_0049,
+                      (short *)(int)this_00->field_004B,local_2c,local_50,(short *)(int)param_3,
+                      (int *)&this_00->field_0x9b,(undefined4 *)local_14,psVar9);
   this_00->field_0097 = pAVar7;
   if (pAVar7 == (AnonPointee_STBoatC_0097 *)0x0) {
-    iVar4 = (int)SHORT_007fb27e;
-    iVar17 = (int)SHORT_007fb27c;
-    psVar15 = DAT_007fb280;
-    psVar16 = DAT_007fb238;
+    iVar4 = (int)g_pathingGrid.planeStride;
+    iVar17 = (int)g_pathingGrid.sizeZ;
+    psVar15 = g_pathingGrid.cells;
+    psVar16 = g_pathingScratchGrid.cells;
     for (uVar5 = (iVar4 * iVar17 & 0x7fffffffU) >> 1; uVar5 != 0; uVar5 = uVar5 - 1) {
       *(undefined4 *)psVar16 = *(undefined4 *)psVar15;
       psVar15 = psVar15 + 2;
@@ -238,10 +248,10 @@ LAB_004183b8:
        (local_1c = local_4c, psVar15 = local_4c, (int)local_4c <= (int)local_24)) {
       local_c = local_54 + ((int)local_4c * 7 + local_34) * 7;
       do {
-        local_10 = DAT_007fb238 +
-                   (int)((int)this_00->field_004B + (int)psVar15) * (int)SHORT_007fb27e +
-                   (this_00->field_0049 + local_34) * (int)SHORT_007fb278 + (int)this_00->field_0047
-        ;
+        local_10 = g_pathingScratchGrid.cells +
+                   (int)((int)this_00->field_004B + (int)psVar15) * (int)g_pathingGrid.planeStride +
+                   (this_00->field_0049 + local_34) * (int)g_pathingGrid.sizeX +
+                   (int)this_00->field_0047;
         if (local_34 <= local_3c) {
           iVar4 = (local_3c - local_34) + 1;
           psVar16 = local_c;
@@ -259,7 +269,7 @@ LAB_004183b8:
             }
             psVar16 = psVar16 + 7;
             iVar4 = iVar4 + -1;
-            local_10 = local_10 + SHORT_007fb278;
+            local_10 = local_10 + g_pathingGrid.sizeX;
           } while (iVar4 != 0);
           local_20 = (short *)0x0;
         }
@@ -271,13 +281,14 @@ LAB_004183b8:
     }
     pAVar7 = (AnonPointee_STBoatC_0097 *)
              Library::DKW::WAY::FUN_006afba0
-                       ((int)DAT_007fb238,(int)SHORT_007fb230,(short *)(int)SHORT_007fb232,
-                        (short *)(int)DAT_007fb234,(short *)(int)this_00->field_0047,
+                       ((int)g_pathingScratchGrid.cells,(int)g_pathingScratchGrid.sizeX,
+                        (short *)(int)g_pathingScratchGrid.sizeY,
+                        (short *)(int)g_pathingScratchGrid.sizeZ,(short *)(int)this_00->field_0047,
                         (short *)(int)this_00->field_0049,(short *)(int)this_00->field_004B,local_2c
                         ,local_50,local_44,(int *)&this_00->field_0x9b,0);
     this_00->field_0097 = pAVar7;
   }
-  FUN_006ab060(&local_14);
+  FreeAndNull(&local_14);
 LAB_0041862b:
   g_currentExceptionFrame = local_9c.previous;
   pAVar7 = this_00->field_0097;

@@ -10,18 +10,19 @@
 void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
 
 {
-  code *pcVar1;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar1;
+  code *pcVar2;
   CampaignTy *this_00;
-  int iVar2;
-  BITMAPINFO *pBVar3;
-  int iVar4;
-  CampaignTy_field_1BE8State CVar5;
+  int iVar3;
+  BITMAPINFO *pBVar4;
+  int iVar5;
+  CampaignTy_field_1BE8State CVar6;
   undefined4 unaff_ESI;
-  undefined4 *puVar6;
-  int *piVar7;
+  undefined4 *puVar7;
+  int *piVar8;
   void *unaff_EDI;
-  uint uVar8;
-  char cVar9;
+  uint uVar9;
+  char cVar10;
   InternalExceptionFrame local_68;
   int local_24 [7];
   CampaignTy *local_8;
@@ -29,34 +30,34 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3,0,iVar2,&DAT_007a4ccc
+    iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3,0,iVar3,&DAT_007a4ccc
                                ,s_CampaignTy__AnimationCampaign_007cbe7c);
-    if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    if (iVar5 != 0) {
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3);
     return;
   }
   if (PTR_0081176c->field_0028 == 0) goto LAB_00592b82;
   if (local_8->field_1BE7 != '\0') goto LAB_00592b7c;
   local_24[5] = local_8->field_1BE8;
-  puVar6 = &local_8->field_1BD7;
-  iVar2 = 4;
+  puVar7 = &local_8->field_1BD7;
+  iVar3 = 4;
   do {
-    if ((int *)*puVar6 != (int *)0x0) {
-      thunk_FUN_005926a0((int *)*puVar6);
+    if ((int *)*puVar7 != (int *)0x0) {
+      thunk_FUN_005926a0((int *)*puVar7);
     }
-    puVar6 = puVar6 + 1;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != 0);
-  CVar5 = this_00->field_1BE8;
-  switch(CVar5) {
+    puVar7 = puVar7 + 1;
+    iVar3 = iVar3 + -1;
+  } while (iVar3 != 0);
+  CVar6 = this_00->field_1BE8;
+  switch(CVar6) {
   case CASE_0:
   case CASE_3:
   case CASE_6:
@@ -96,63 +97,63 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
     local_24[3] = 0xd;
     local_24[4] = 0xb;
   }
-  switch(CVar5) {
+  switch(CVar6) {
   default:
-    iVar2 = 0;
+    iVar3 = 0;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_5:
-    iVar2 = 1;
+    iVar3 = 1;
     break;
   case CASE_6:
   case CASE_7:
   case CASE_8:
-    iVar2 = 2;
+    iVar3 = 2;
   }
-  if ((&this_00->field_1B13)[local_24[2] + iVar2 * 0xf] == 0) goto switchD_00592962_caseD_1;
-  switch(CVar5) {
+  if ((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] == 0) goto switchD_00592962_caseD_1;
+  switch(CVar6) {
   default:
-    iVar2 = 0;
+    iVar3 = 0;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_5:
-    iVar2 = 1;
+    iVar3 = 1;
     break;
   case CASE_6:
   case CASE_7:
   case CASE_8:
-    iVar2 = 2;
+    iVar3 = 2;
   }
-  switch(CVar5) {
+  switch(CVar6) {
   default:
-    iVar4 = 0;
+    iVar5 = 0;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_5:
-    iVar4 = 1;
+    iVar5 = 1;
     break;
   case CASE_6:
   case CASE_7:
   case CASE_8:
-    iVar4 = 2;
+    iVar5 = 2;
   }
-  if (*(int *)((&this_00->field_1B13)[local_24[2] + iVar2 * 0xf] + 0x14) -
-      *(int *)((&this_00->field_1B13)[local_24[2] + iVar4 * 0xf] + 0x18) != 1)
+  if (*(int *)((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] + 0x14) -
+      *(int *)((&this_00->field_1B13)[local_24[2] + iVar5 * 0xf] + 0x18) != 1)
   goto switchD_00592962_caseD_1;
-  switch(CVar5) {
+  switch(CVar6) {
   case CASE_0:
   case CASE_1:
-    CVar5 = (DAT_0080874e != 1) + CASE_1;
+    CVar6 = (DAT_0080874e != 1) + CASE_1;
     goto LAB_00592933;
   case CASE_2:
   case CASE_5:
   case CASE_8:
-    CVar5 = (uint)DAT_0080874e * 3 - CASE_3;
+    CVar6 = (uint)DAT_0080874e * 3 - CASE_3;
 LAB_00592933:
-    this_00->field_1BE8 = CVar5;
+    this_00->field_1BE8 = CVar6;
     break;
   case CASE_3:
   case CASE_4:
@@ -174,53 +175,53 @@ LAB_00592933:
   switch(this_00->field_1BE8) {
   case CASE_0:
     thunk_FUN_005b6730(this_00,0x15,'\0',1);
-    iVar2 = 1;
-    cVar9 = '\x02';
-    uVar8 = 0x18;
+    iVar3 = 1;
+    cVar10 = '\x02';
+    uVar9 = 0x18;
     break;
   default:
     goto switchD_00592962_caseD_1;
   case CASE_2:
-    iVar2 = -1;
-    cVar9 = '\x01';
-    uVar8 = 0x1b;
+    iVar3 = -1;
+    cVar10 = '\x01';
+    uVar9 = 0x1b;
     break;
   case CASE_3:
     thunk_FUN_005b6730(this_00,0x16,'\0',1);
-    iVar2 = 1;
-    cVar9 = '\x02';
-    uVar8 = 0x19;
+    iVar3 = 1;
+    cVar10 = '\x02';
+    uVar9 = 0x19;
     break;
   case CASE_5:
-    iVar2 = -1;
-    cVar9 = '\x01';
-    uVar8 = 0x1c;
+    iVar3 = -1;
+    cVar10 = '\x01';
+    uVar9 = 0x1c;
     break;
   case CASE_6:
     thunk_FUN_005b6730(this_00,0x17,'\0',1);
-    iVar2 = 1;
-    cVar9 = '\x02';
-    uVar8 = 0x1a;
+    iVar3 = 1;
+    cVar10 = '\x02';
+    uVar9 = 0x1a;
     break;
   case CASE_8:
-    iVar2 = -1;
-    cVar9 = '\x01';
-    uVar8 = 0x1d;
+    iVar3 = -1;
+    cVar10 = '\x01';
+    uVar9 = 0x1d;
   }
-  thunk_FUN_005b6730(this_00,uVar8,cVar9,iVar2);
+  thunk_FUN_005b6730(this_00,uVar9,cVar10,iVar3);
 switchD_00592962_caseD_1:
   if (local_24[5] != this_00->field_1BE8) {
-    puVar6 = &this_00->field_1B13;
+    puVar7 = &this_00->field_1B13;
     local_24[5] = 3;
     do {
-      iVar2 = 0xf;
+      iVar3 = 0xf;
       do {
-        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
+        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar7 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar7);
         }
-        puVar6 = puVar6 + 1;
-        iVar2 = iVar2 + -1;
-      } while (iVar2 != 0);
+        puVar7 = puVar7 + 1;
+        iVar3 = iVar3 + -1;
+      } while (iVar3 != 0);
       local_24[5] = local_24[5] + -1;
     } while (local_24[5] != 0);
     switch(this_00->field_1BE8) {
@@ -264,41 +265,41 @@ switchD_00592962_caseD_1:
       local_24[4] = 0xb;
     }
   }
-  piVar7 = local_24;
+  piVar8 = local_24;
   local_24[5] = 5;
   do {
     switch(this_00->field_1BE8) {
     default:
-      iVar2 = 0;
+      iVar3 = 0;
       break;
     case CASE_3:
     case CASE_4:
     case CASE_5:
-      iVar2 = 1;
+      iVar3 = 1;
       break;
     case CASE_6:
     case CASE_7:
     case CASE_8:
-      iVar2 = 2;
+      iVar3 = 2;
     }
-    if ((&this_00->field_1B13)[*piVar7 + iVar2 * 0xf] != 0) {
+    if ((&this_00->field_1B13)[*piVar8 + iVar3 * 0xf] != 0) {
       switch(this_00->field_1BE8) {
       default:
-        iVar2 = 0;
+        iVar3 = 0;
         break;
       case CASE_3:
       case CASE_4:
       case CASE_5:
-        iVar2 = 1;
+        iVar3 = 1;
         break;
       case CASE_6:
       case CASE_7:
       case CASE_8:
-        iVar2 = 2;
+        iVar3 = 2;
       }
-      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar7 + iVar2 * 0xf]);
+      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar8 + iVar3 * 0xf]);
     }
-    piVar7 = piVar7 + 1;
+    piVar8 = piVar8 + 1;
     local_24[5] = local_24[5] + -1;
   } while (local_24[5] != 0);
   if (this_00->field_1BE8 == CASE_1) {
@@ -313,53 +314,53 @@ LAB_00592b82:
   local_24[5] = 0x2e;
   local_24[6] = 0x24c;
   do {
-    iVar2 = *(int *)((int)&PTR_0081176c->vtable + local_24[6]);
-    if (iVar2 != 0) {
-      piVar7 = (int *)((int)&PTR_0081176c->field_025C + local_24[5]);
+    pAVar1 = *(AnonShape_GLOBAL_0081175C_57F682DD **)((int)&PTR_0081176c->vtable + local_24[6]);
+    if (pAVar1 != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) {
+      piVar8 = (int *)((int)&PTR_0081176c->field_025C + local_24[5]);
       if ((&PTR_0081176c->field_0x270)[local_24[5]] == '\0') {
-        uVar8 = piVar7[2];
+        uVar9 = piVar8[2];
       }
       else {
-        uVar8 = piVar7[3];
+        uVar9 = piVar8[3];
       }
-      if (uVar8 <= local_8->field_0061 - piVar7[4]) {
-        pBVar3 = (BITMAPINFO *)FUN_0070b3a0(iVar2,(int)*(short *)(iVar2 + 0x29));
-        FUN_006b5f80(DAT_008075a8,*piVar7,piVar7[1],(int)*(short *)(iVar2 + 0x2c),
-                     (int)*(short *)(iVar2 + 0x2e));
-        PutDDX(*piVar7,piVar7[1],'\x01',pBVar3);
-        if ((char)piVar7[5] != '\0') {
-          *(undefined1 *)(piVar7 + 5) = 0;
+      if (uVar9 <= local_8->field_0061 - piVar8[4]) {
+        pBVar4 = (BITMAPINFO *)FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
+        FUN_006b5f80(DAT_008075a8,*piVar8,piVar8[1],(int)*(short *)(pAVar1 + 1),
+                     (int)*(short *)&pAVar1[1].field_0x2);
+        PutDDX(*piVar8,piVar8[1],'\x01',pBVar4);
+        if ((char)piVar8[5] != '\0') {
+          *(undefined1 *)(piVar8 + 5) = 0;
         }
-        piVar7[4] = local_8->field_0061;
-        switch(*(undefined2 *)((int)piVar7 + 0x15)) {
+        piVar8[4] = local_8->field_0061;
+        switch(*(undefined2 *)((int)piVar8 + 0x15)) {
         case 0:
-          *(short *)(iVar2 + 0x29) = *(short *)(iVar2 + 0x29) + 1;
-          if (*(short *)(iVar2 + 0x23) <= *(short *)(iVar2 + 0x29)) {
-            *(undefined2 *)(iVar2 + 0x29) = 0;
-            *(undefined1 *)(piVar7 + 5) = 1;
+          pAVar1->field_0029 = pAVar1->field_0029 + 1;
+          if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
+            pAVar1->field_0029 = 0;
+            *(undefined1 *)(piVar8 + 5) = 1;
           }
           break;
         case 1:
-          *(short *)(iVar2 + 0x29) = *(short *)(iVar2 + 0x29) + -1;
-          if (*(short *)(iVar2 + 0x29) < 0) {
-            *(short *)(iVar2 + 0x29) = *(short *)(iVar2 + 0x23) + -1;
-            *(undefined1 *)(piVar7 + 5) = 1;
+          pAVar1->field_0029 = pAVar1->field_0029 + -1;
+          if ((short)pAVar1->field_0029 < 0) {
+            pAVar1->field_0029 = pAVar1->field_0023 + -1;
+            *(undefined1 *)(piVar8 + 5) = 1;
           }
           break;
         case 2:
-          *(short *)(iVar2 + 0x29) = *(short *)(iVar2 + 0x29) + 1;
-          if (*(short *)(iVar2 + 0x23) <= *(short *)(iVar2 + 0x29)) {
-            *(short *)(iVar2 + 0x29) = *(short *)(iVar2 + 0x23) + -1;
-            *(undefined1 *)(piVar7 + 5) = 1;
-            *(undefined2 *)((int)piVar7 + 0x15) = 3;
+          pAVar1->field_0029 = pAVar1->field_0029 + 1;
+          if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
+            pAVar1->field_0029 = pAVar1->field_0023 + -1;
+            *(undefined1 *)(piVar8 + 5) = 1;
+            *(undefined2 *)((int)piVar8 + 0x15) = 3;
           }
           break;
         case 3:
-          *(short *)(iVar2 + 0x29) = *(short *)(iVar2 + 0x29) + -1;
-          if (*(short *)(iVar2 + 0x29) < 0) {
-            *(undefined2 *)(iVar2 + 0x29) = 0;
-            *(undefined1 *)(piVar7 + 5) = 1;
-            *(undefined2 *)((int)piVar7 + 0x15) = 2;
+          pAVar1->field_0029 = pAVar1->field_0029 + -1;
+          if ((short)pAVar1->field_0029 < 0) {
+            pAVar1->field_0029 = 0;
+            *(undefined1 *)(piVar8 + 5) = 1;
+            *(undefined2 *)((int)piVar8 + 0x15) = 2;
           }
         }
       }

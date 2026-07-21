@@ -8,8 +8,7 @@ STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_
 
 {
   code *pcVar1;
-  int errorCode;
-  uint uVar2;
+  int iVar2;
   int iVar3;
   undefined4 uVar4;
   void *unaff_ESI;
@@ -19,8 +18,8 @@ STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_
   
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
-  if (errorCode == 0) {
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
+  if (iVar2 == 0) {
     if (param_2 == (void *)0x0) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -30,8 +29,8 @@ STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_
       param_1 = (ushort)PTR_007fa160->count;
     }
     else {
-      uVar2 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa160,(uint)param_1,&local_8);
-      if ((uVar2 != 0xfffffffc) && (local_8 != 0)) {
+      iVar2 = DArrayGetElement(PTR_007fa160,(uint)param_1,&local_8);
+      if ((iVar2 != -4) && (local_8 != 0)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x2f69);
@@ -43,14 +42,14 @@ STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_
     return 0;
   }
   g_currentExceptionFrame = pIVar5;
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f6f,0,errorCode,
-                             &DAT_007a4ccc,s_STAllPlayersC__RegisterContainer_007a87f0);
+  iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f6f,0,iVar2,&DAT_007a4ccc,
+                             s_STAllPlayersC__RegisterContainer_007a87f0);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     uVar4 = (*pcVar1)();
     return uVar4;
   }
-  RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f70);
+  RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f70);
   return 0xffffffff;
 }
 

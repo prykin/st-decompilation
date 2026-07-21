@@ -24,10 +24,10 @@ int __thiscall FUN_0069b190(void *this,int param_1,int param_2,int param_3)
   uVar10 = (param_3 + 1) * param_1 * param_2;
   *(int *)((int)this + 0x5833) = param_1;
   *(int *)((int)this + 0x5837) = param_2;
-  FUN_006ab060((LPVOID *)((int)this + 0x584f));
+  FreeAndNull((void **)((int)this + 0x584f));
   uVar5 = uVar10 * 2;
   puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5);
-  *(LPVOID *)((int)this + 0x584f) = puVar3;
+  *(void **)((int)this + 0x584f) = puVar3;
   for (uVar10 = (uVar10 & 0x7fffffff) >> 1; uVar10 != 0; uVar10 = uVar10 - 1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;

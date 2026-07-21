@@ -15,21 +15,22 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   undefined4 *puVar6;
   undefined4 *puVar7;
   undefined1 *puVar8;
-  undefined4 *puVar9;
+  DArrayTy *pDVar9;
+  undefined4 *puVar10;
   undefined4 unaff_ESI;
-  int iVar10;
-  uint uVar11;
+  int iVar11;
+  uint uVar12;
   void *unaff_EDI;
-  bool bVar12;
-  byte bVar13;
+  bool bVar13;
   byte bVar14;
-  short *psVar15;
+  byte bVar15;
+  short *psVar16;
   InternalExceptionFrame local_54;
   VisibleClassTy *local_10;
   int local_c;
   short *local_8;
   
-  iVar10 = 0;
+  iVar11 = 0;
   local_8 = (short *)0x0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -38,9 +39,9 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0xaa,0,iVar4,&DAT_007a4ccc,
+    iVar11 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0xaa,0,iVar4,&DAT_007a4ccc,
                                 s_VisibleClassTy__Init_007c9310);
-    if (iVar10 == 0) {
+    if (iVar11 == 0) {
       FUN_0070b600((int *)&local_8);
       RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0xac);
       return;
@@ -51,16 +52,16 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   }
   DAT_00802a50 = -(uint)(local_10->field_0114 != 0) & 0x403765;
   if (local_10->field_0114 != 0) {
-    puVar9 = &local_10->field_01D8;
+    puVar10 = &local_10->field_01D8;
     do {
-      psVar15 = (short *)0x1;
-      bVar14 = 0;
-      bVar13 = 0x1c;
-      pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar10);
-      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar13,bVar14,psVar15);
-      (&DAT_007c9290)[iVar10] = (int)*(short *)((int)local_8 + 9);
-      puVar7 = puVar9 + -0x30;
-      (&DAT_007c929c)[iVar10] = (int)*(short *)((int)local_8 + 0xb);
+      psVar16 = (short *)0x1;
+      bVar15 = 0;
+      bVar14 = 0x1c;
+      pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar11);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
+      (&DAT_007c9290)[iVar11] = (int)*(short *)((int)local_8 + 9);
+      puVar7 = puVar10 + -0x30;
+      (&DAT_007c929c)[iVar11] = (int)*(short *)((int)local_8 + 0xb);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);
       local_c = 0x10;
       do {
@@ -71,34 +72,34 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
         local_c = local_c + -1;
       } while (local_c != 0);
       FUN_0070b600((int *)&local_8);
-      psVar15 = (short *)0x1;
-      bVar14 = 0;
-      bVar13 = 0x1c;
-      pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar10);
-      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar13,bVar14,psVar15);
+      psVar16 = (short *)0x1;
+      bVar15 = 0;
+      bVar14 = 0x1c;
+      pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar11);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
       puVar7 = (undefined4 *)((int)local_8 + 0x11);
       iVar4 = 0x10;
       do {
         uVar1 = *puVar7;
         puVar7 = puVar7 + 1;
-        *puVar9 = uVar1;
-        puVar9 = puVar9 + 1;
+        *puVar10 = uVar1;
+        puVar10 = puVar10 + 1;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
       FUN_0070b600((int *)&local_8);
-      iVar10 = iVar10 + 1;
-    } while (iVar10 < 3);
+      iVar11 = iVar11 + 1;
+    } while (iVar11 < 3);
     Library::Ourlib::STDARK::FUN_007176f0
               (PTR_00807598,&this_00->field_003C,this_00->field_0028,this_00->field_002C,
                (int)&this_00->field_0118,this_00->field_004C,this_00->field_0030,this_00->field_0034
                ,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
-    iVar4 = this_00->field_0110;
-    uVar11 = 0;
-    if (0 < *(int *)(iVar4 + 0xc)) {
-      bVar12 = *(int *)(iVar4 + 0xc) != 0;
+    pDVar9 = this_00->field_0110;
+    uVar12 = 0;
+    if (0 < (int)pDVar9->count) {
+      bVar13 = pDVar9->count != 0;
       do {
-        if (bVar12) {
-          puVar8 = (undefined1 *)(*(int *)(iVar4 + 8) * uVar11 + *(int *)(iVar4 + 0x1c));
+        if (bVar13) {
+          puVar8 = (undefined1 *)(pDVar9->elementSize * uVar12 + (int)pDVar9->data);
         }
         else {
           puVar8 = (undefined1 *)0x0;
@@ -110,9 +111,10 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
                              (uint)(byte)puVar8[7],*(int **)(puVar8 + 8),0x4001);
           break;
         case 1:
-          thunk_FUN_005594a0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(undefined *)(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),2);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_005594a0
+                    ((AnonReceiver_00558C00 *)this_00,(int)*(short *)(puVar8 + 2),
+                     (int)*(short *)(puVar8 + 4),puVar8[6],(undefined *)(uint)(byte)puVar8[1],
+                     (uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),2);
           break;
         case 2:
           SetZoneDes(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
@@ -134,10 +136,10 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
           SetZoneMin2(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
                       (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x40);
         }
-        iVar4 = this_00->field_0110;
-        uVar11 = uVar11 + 1;
-        bVar12 = uVar11 < *(uint *)(iVar4 + 0xc);
-      } while ((int)uVar11 < (int)*(uint *)(iVar4 + 0xc));
+        pDVar9 = this_00->field_0110;
+        uVar12 = uVar12 + 1;
+        bVar13 = uVar12 < pDVar9->count;
+      } while ((int)uVar12 < (int)pDVar9->count);
     }
     pAVar3 = PTR_00807598;
     if (this_00->field_0114 != 0) {

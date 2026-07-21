@@ -1,5 +1,5 @@
 
-int __cdecl FUN_0067bc80(AnonShape_0067BC80_D4009586 *param_1,uint param_2)
+int __cdecl FUN_0067bc80(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
 
 {
   short sVar1;

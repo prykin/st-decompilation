@@ -1,12 +1,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::OutGlassTxtProc */
+   MTaskTy::OutGlassTxtProc
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 void __thiscall
 MTaskTy::OutGlassTxtProc
           (MTaskTy *this,int *param_1,int param_2,undefined4 param_3,int param_4,int param_5,
-          undefined4 param_6,undefined4 param_7,AnonShape_005DF640_DD656F0B *param_8)
+          undefined4 param_6,undefined4 param_7,AnonShape_00413AF0_B6B4EE9A *param_8)
 
 {
   uint uVar1;
@@ -19,7 +22,7 @@ MTaskTy::OutGlassTxtProc
   InternalExceptionFrame local_4c;
   int *local_8;
   
-  if (param_8 != (AnonShape_005DF640_DD656F0B *)0x0) {
+  if (param_8 != (AnonShape_00413AF0_B6B4EE9A *)0x0) {
     uVar1 = param_8->field_000C;
     uVar5 = 0;
     if (uVar1 != 0) {

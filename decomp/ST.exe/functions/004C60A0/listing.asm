@@ -1,4 +1,4 @@
-FUN_004c60a0:
+TLOBldMark::TLOBldMark:
 004C60A0  56                        PUSH ESI
 004C60A1  8B F1                     MOV ESI,ECX
 004C60A3  E8 08 FF 21 00            CALL 0x006e5fb0

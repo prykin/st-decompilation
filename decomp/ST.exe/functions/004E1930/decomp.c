@@ -50,7 +50,7 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
         iVar1 = *(int *)((int)this + 0x5ac);
         if ((iVar1 == 0x39) || (iVar1 == 0x5e)) {
-          uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+          uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
           uVar3 = uVar3 & 0xff;
           if (uVar3 == 1) {
             (**(code **)(*(int *)this + 0x90))(4,0x21e);
@@ -66,7 +66,7 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
           }
         }
         else if (iVar1 == 0x4f) {
-          uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+          uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
           if ((uVar3 & 0xff) == 1) {
             (**(code **)(*(int *)this + 0x90))(4,0x27c);
             return param_2;
@@ -82,22 +82,22 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       switch(*(undefined4 *)((int)this + 0x5ac)) {
       case 0x39:
         iVar1 = *(int *)this;
-        iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2ea);
         return param_2;
       case 0x3b:
         iVar1 = *(int *)this;
-        iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f7);
         return param_2;
       case 0x4f:
         iVar1 = *(int *)this;
-        iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x350);
         return param_2;
       case 0x52:
         iVar1 = *(int *)this;
-        iVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35d);
         return param_2;
       case 0x5e:

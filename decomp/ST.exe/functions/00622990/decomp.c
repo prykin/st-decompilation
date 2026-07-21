@@ -49,7 +49,7 @@ byte * __thiscall FUN_00622990(void *this,uint *param_1)
     pbVar7 = pbVar7 + 1;
     pbVar10 = pbVar10 + 1;
   }
-  FUN_006ab060(&local_14);
+  FreeAndNull(&local_14);
   puVar5 = (uint *)(pbVar4 + local_8);
   *puVar5 = local_c;
   puVar8 = local_18;
@@ -62,7 +62,7 @@ byte * __thiscall FUN_00622990(void *this,uint *param_1)
     puVar8 = (uint *)((int)puVar8 + 1);
     puVar5 = (uint *)((int)puVar5 + 1);
   }
-  FUN_006ab060(&local_18);
+  FreeAndNull(&local_18);
   *param_1 = uVar1;
   return local_10;
 }

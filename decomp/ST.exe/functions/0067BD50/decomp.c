@@ -1,5 +1,5 @@
 
-int __cdecl FUN_0067bd50(AnonShape_0067BD50_1A5F3A84 *param_1)
+int __cdecl FUN_0067bd50(AnonShape_00413AF0_B6B4EE9A *param_1)
 
 {
   uint uVar1;

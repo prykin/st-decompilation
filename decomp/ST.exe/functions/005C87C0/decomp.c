@@ -26,7 +26,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if ((DAT_008087b6 != 0) && (PTR_0081176c->field_02F4 != 0)) {
-      FUN_006e83f0((AnonShape_006E83F0_6F955BEB *)PTR_0081176c->field_02F0,0x14,0x14,0x8b,
+      FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0x14,0x14,0x8b,
                    (uint)DAT_008087c2);
       FUN_006b5440((int)PTR_0081176c->field_02F0,0,0x14,0x14,PTR_0081176c->field_02F4,0,0);
       pSVar2 = local_8;

@@ -11,8 +11,8 @@ void __thiscall STOctopusC::Bad(STOctopusC *this,int param_1)
   int iVar3;
   int iVar4;
   
-  iVar3 = (int)SHORT_007fb242;
-  iVar4 = (int)SHORT_007fb240;
+  iVar3 = (int)g_worldGrid.sizeY;
+  iVar4 = (int)g_worldGrid.sizeX;
   if (7 < *(int *)&this->field_0x2a9) {
     iVar2 = ReportDebugMessage(s_E____titans_Igor_to_oct_cpp_007cba18,0x21a,0,0,&DAT_007a4ccc,
                                s_STOctopusC__Bad_direction_007cba88);

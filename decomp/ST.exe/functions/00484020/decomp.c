@@ -56,16 +56,17 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
   sVar4 = *(short *)((int)this + 0x802);
   param_1 = CONCAT22((short)((uint)this >> 0x10),sVar4);
   sVar1 = *(short *)((int)this + 0x804);
-  if (((((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar4 < 0)) ||
-        ((SHORT_007fb242 <= sVar4 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) ||
-      (local_10 = g_worldCells
-                  [(int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 + (int)sVar3]
-                  .objects[0], local_10 == (STWorldObject *)0x0)) &&
-     ((((sVar3 < 0 || (SHORT_007fb240 <= sVar3)) ||
-       ((sVar4 < 0 || (((SHORT_007fb242 <= sVar4 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
-      || (local_10 = g_worldCells
-                     [(int)sVar1 * (int)SHORT_007fb246 + (int)sVar4 * (int)SHORT_007fb240 +
-                      (int)sVar3].objects[1], local_10 == (STWorldObject *)0x0)))) {
+  if (((((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
+        ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||
+      (local_10 = g_worldGrid.cells
+                  [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
+                   (int)sVar3].objects[0], local_10 == (STWorldObject *)0x0)) &&
+     ((((sVar3 < 0 || (g_worldGrid.sizeX <= sVar3)) ||
+       ((sVar4 < 0 ||
+        (((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
+      (local_10 = g_worldGrid.cells
+                  [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
+                   (int)sVar3].objects[1], local_10 == (STWorldObject *)0x0)))) {
     return 0;
   }
   thunk_FUN_00416270(local_10,(undefined2 *)&local_14,&local_18,&param_1);
@@ -75,26 +76,27 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
     do {
       sVar3 = local_34[1] + *(short *)((int)this + 0x4b);
       *param_4 = sVar3;
-      if ((-1 < sVar3) && ((int)sVar3 <= SHORT_007fb244 + -1)) {
+      if ((-1 < sVar3) && ((int)sVar3 <= g_worldGrid.sizeZ + -1)) {
         sVar3 = *(short *)((int)this + 0x49) + *local_34;
         *param_3 = sVar3;
-        if ((-1 < sVar3) && ((int)sVar3 <= SHORT_007fb242 + -1)) {
+        if ((-1 < sVar3) && ((int)sVar3 <= g_worldGrid.sizeY + -1)) {
           sVar4 = local_34[-1] + *(short *)((int)this + 0x47);
           *param_2 = sVar4;
           if (-1 < sVar4) {
-            local_28 = (int)SHORT_007fb240;
+            local_28 = (int)g_worldGrid.sizeX;
             local_2c = (int)sVar4;
             if (local_2c <= local_28 + -1) {
               sVar1 = *param_3;
               sVar2 = *param_4;
-              if ((-1 < *(short *)(DAT_007fb280 +
-                                  ((int)sVar2 * (int)SHORT_007fb27e +
-                                  local_2c + (int)sVar1 * (int)SHORT_007fb278) * 2)) &&
-                 ((((sVar4 < 0 || (SHORT_007fb240 <= sVar4)) ||
+              if ((-1 < g_pathingGrid.cells
+                        [(int)sVar2 * (int)g_pathingGrid.planeStride +
+                         local_2c + (int)sVar1 * (int)g_pathingGrid.sizeX]) &&
+                 ((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) ||
                    ((sVar1 < 0 ||
-                    (((SHORT_007fb242 <= sVar1 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2)))))) ||
-                  (g_worldCells[(int)sVar2 * (int)SHORT_007fb246 + sVar1 * local_28 + (int)sVar4].
-                   objects[0] == (STWorldObject *)0x0)))) {
+                    (((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2))))
+                   )) || (g_worldGrid.cells
+                          [(int)sVar2 * (int)g_worldGrid.planeStride + sVar1 * local_28 + (int)sVar4
+                          ].objects[0] == (STWorldObject *)0x0)))) {
                 iVar12 = CONCAT22(sVar3 >> 0xf,sVar4) * 0xc9 + 100;
                 local_c = (undefined *)
                           (CONCAT22((short)((uint)(local_28 + -1) >> 0x10),sVar1) * 0xc9 + 100);

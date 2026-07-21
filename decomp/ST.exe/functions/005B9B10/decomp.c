@@ -18,6 +18,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   uint uVar7;
   AnonPointee_PrividerTy_1C82 *pAVar8;
   undefined4 *puVar9;
+  uint *extraout_EAX;
   HoloTy *pHVar10;
   uint uVar11;
   undefined4 unaff_ESI;
@@ -148,8 +149,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     uVar6 = 2;
     iVar13 = -1;
     iVar4 = -2;
-    puVar5 = (uint *)FUN_006b0140(0x26b5,HINSTANCE_00807618);
-    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar5,iVar4,iVar13,uVar6);
+    LoadResourceString(0x26b5,HINSTANCE_00807618);
+    ccFntTy::WrStr(PTR_0081176c->field_0034,extraout_EAX,iVar4,iVar13,uVar6);
     uVar7 = this_02->field_1C8E;
     puVar9 = &this_02->field_1C8A;
     FUN_006b2330((uint)DAT_008075a8,puVar9,0x31,0x4023f6,*(uint *)(uVar7 + 4),*(uint *)(uVar7 + 8),

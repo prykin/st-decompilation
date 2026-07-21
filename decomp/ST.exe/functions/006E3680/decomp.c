@@ -1,5 +1,8 @@
 
-void FUN_006e3680(AnonShape_006E3680_4519C52B *param_1)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+void FUN_006e3680(AnonShape_006E3450_BC2FF034 *param_1)
 
 {
   uint uVar1;
@@ -14,9 +17,9 @@ void FUN_006e3680(AnonShape_006E3680_4519C52B *param_1)
     iVar2 = param_1->field_0008 * uVar1 + param_1->field_001C;
     param_1->field_0004 = uVar1 + 1;
     if (iVar2 == 0) break;
-    if (*(AnonShape_006E3680_4519C52B **)(iVar2 + 8) != (AnonShape_006E3680_4519C52B *)0x0) {
-      FUN_006e3680(*(AnonShape_006E3680_4519C52B **)(iVar2 + 8));
-      FUN_006ae110(*(byte **)(iVar2 + 8));
+    if (*(AnonShape_006E3450_BC2FF034 **)(iVar2 + 8) != (AnonShape_006E3450_BC2FF034 *)0x0) {
+      FUN_006e3680(*(AnonShape_006E3450_BC2FF034 **)(iVar2 + 8));
+      DArrayDestroy(*(DArrayTy **)(iVar2 + 8));
       *(undefined4 *)(iVar2 + 8) = 0;
     }
   }

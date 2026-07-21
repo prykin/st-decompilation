@@ -402,7 +402,7 @@ LAB_004f88e6:
 cf_switch_join_004F88ED:
   if (((this_00->field_01D8 != 0) && ((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0)) &&
      (iVar4 = *(int *)(this_00->field_01D8 + 4), iVar4 < this_00->field_01DC + -2)) {
-    FUN_006b4170(this_00->field_01B4,0,100,5,0x226,0x55,0);
+    FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_01B4,0,100,5,0x226,0x55,0);
     iVar10 = FUN_007140e0((void *)this_00->field_01D8,1,'\0');
     if (iVar10 != 0) {
       FUN_006b5440(this_00->field_01B4,0,100,5,iVar10,0,0xff);

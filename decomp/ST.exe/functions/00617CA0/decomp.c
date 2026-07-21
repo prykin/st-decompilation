@@ -32,8 +32,8 @@ FUN_00617ca0(void *this,int *param_1,int *param_2,undefined4 *param_3,int *param
       iVar2 = FUN_006aff5b(iVar2);
       iVar6 = (iVar3 * 0x28) / 10000 + *(int *)((int)this + 0x40);
       iVar7 = (iVar2 * 0x28) / 10000 + *(int *)((int)this + 0x44);
-      if ((((-1 < iVar6) && (iVar6 <= SHORT_007fb240 * 0xc9)) && (-1 < iVar7)) &&
-         ((iVar7 <= SHORT_007fb242 * 0xc9 &&
+      if ((((-1 < iVar6) && (iVar6 <= g_worldGrid.sizeX * 0xc9)) && (-1 < iVar7)) &&
+         ((iVar7 <= g_worldGrid.sizeY * 0xc9 &&
           (local_14 = thunk_FUN_00617c30(this,iVar6,iVar7), local_14 == 1)))) break;
       local_10 = local_10 + 1;
       uVar5 = uVar5 + 1;

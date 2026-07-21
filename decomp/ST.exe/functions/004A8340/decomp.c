@@ -14,9 +14,9 @@ STGroupBoatC::GetDepotForAttack
   int extraout_EAX;
   STFishC *pSVar3;
   int iVar4;
-  uint uVar5;
+  uint index;
   undefined4 unaff_ESI;
-  STGroupBoatC *pSVar6;
+  STGroupBoatC *pSVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_68;
   undefined1 local_24;
@@ -38,7 +38,7 @@ STGroupBoatC::GetDepotForAttack
   g_currentExceptionFrame = &local_68;
   local_14 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pSVar6 = local_14;
+  pSVar5 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
     if ((local_14->field_01E6 != CASE_2) || (iVar2 = local_14->field_020E, iVar2 == 0)) {
@@ -50,15 +50,14 @@ STGroupBoatC::GetDepotForAttack
     pSVar3 = (STFishC *)
              STAllPlayersC::GetObjPtr
                        (g_sTAllPlayers_007FA174,
-                        CONCAT31((int3)((uint)iVar2 >> 8),pSVar6->field_0024),param_1,CASE_1);
+                        CONCAT31((int3)((uint)iVar2 >> 8),pSVar5->field_0024),param_1,CASE_1);
     STFishC::sub_004162B0(pSVar3,&local_10,&local_e,&local_c);
-    uVar5 = 0;
-    local_1c = *(int *)(pSVar6->field_020E + 0xc);
+    index = 0;
+    local_1c = *(int *)(pSVar5->field_020E + 0xc);
     iVar2 = local_18;
     if (0 < local_1c) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar6->field_020E,uVar5,(undefined4 *)&local_24
-                    );
+        DArrayGetElement((DArrayTy *)pSVar5->field_020E,index,&local_24);
         if (sStack_22 != -1) {
           pSVar3 = (STFishC *)
                    STAllPlayersC::GetObjPtr
@@ -67,11 +66,11 @@ STGroupBoatC::GetDepotForAttack
                               CONCAT22(uStack_20,sStack_22),(int)cStack_23);
           iVar4 = (*pSVar3->vtable->vfunc_2C)();
           if ((iVar4 == 0x3b) ||
-             (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar6 = local_14, iVar4 == 0x60)) {
+             (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar5 = local_14, iVar4 == 0x60)) {
             STFishC::sub_004162B0(pSVar3,&local_8,&local_6,&local_a);
             iVar4 = FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,
                                  (int)local_a);
-            pSVar6 = local_14;
+            pSVar5 = local_14;
             if (iVar4 < iVar2) {
               *param_2 = local_24;
               *param_3 = sStack_22;
@@ -83,8 +82,8 @@ STGroupBoatC::GetDepotForAttack
             }
           }
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < local_1c);
+        index = index + 1;
+      } while ((int)index < local_1c);
     }
     g_currentExceptionFrame = local_68.previous;
     return;

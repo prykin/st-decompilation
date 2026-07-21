@@ -17,7 +17,7 @@ void __thiscall FUN_00626c90(void *this,char *param_1)
   param_1[1] = cVar1;
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)(param_1 + 3) = uVar2;
-  iVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+  iVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
   param_1[7] = (char)iVar3;
   *(undefined4 *)(param_1 + 8) = *(undefined4 *)((int)this + 0x18);
   Library::MSVCRT::_strncpy(param_1 + 0xc,(char *)((int)this + 0x28e),0xe);

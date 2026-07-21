@@ -73,11 +73,14 @@ int __thiscall STJellyGunC::sub_00583E30(STJellyGunC *this)
       if (iVar1 != 0) {
         thunk_FUN_00417ff0(this,6);
         thunk_FUN_00418010(this,5);
-        iVar1 = thunk_FUN_00418030(this,local_20[0],local_1c[0],local_18[0]);
+        iVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                          ((AnonReceiver_00417FF0 *)this,local_20[0],local_1c[0],local_18[0]);
         if (iVar1 == 0) {
           return 1;
         }
-        iVar1 = thunk_FUN_00418030(this,(short)local_10,(short)local_c,(short)local_8);
+        iVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                          ((AnonReceiver_00417FF0 *)this,(short)local_10,(short)local_c,
+                           (short)local_8);
         if (iVar1 == 0) {
           return 1;
         }
