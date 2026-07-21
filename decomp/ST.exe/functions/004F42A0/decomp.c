@@ -33,19 +33,19 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,AnonShape_004F42A0_1F969F31 *para
     goto LAB_004f4318;
   default:
     if (this->field_0130 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = local_c - (&this->field_0094)[uVar2];
       goto cf_common_join_004F4331;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = local_c - (&this->field_0094)[uVar2];
       goto cf_common_join_004F4331;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = local_c - (&this->field_0094)[uVar2];
       goto cf_common_join_004F4331;
     }
     break;
@@ -53,7 +53,7 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,AnonShape_004F42A0_1F969F31 *para
     iVar4 = this->field_0138;
 LAB_004f4318:
     if (iVar4 != 0) {
-      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = local_c - (&this->field_0094)[uVar2];
       goto cf_common_join_004F4331;
     }
     local_c = local_c - this->field_00C0;
@@ -84,18 +84,18 @@ cf_common_join_004F4331:
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
-                   ,*(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
+                   ,(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_58.previous;
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x256,0,iVar4,&DAT_007a4ccc,
-                               s_CPanelTy__PaintTab_007c1b9c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x256,0,iVar4,"%s",
+                               "CPanelTy::PaintTab");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x256);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x256);
   }
   return;
 }

@@ -50,12 +50,12 @@ void DelAllAccelerators(void)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0xfd,0,iVar3,&DAT_007a4ccc,
-                             s_DelAllAccelerators_007c7bd0);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0xfd,0,iVar3,"%s",
+                             "DelAllAccelerators");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_support_cpp_007c7b2c,0xfd);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\support.cpp",0xfd);
   return;
 }
 

@@ -30,12 +30,12 @@ AiEventClassTy::_CreateArt
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x117,0,iVar3,&DAT_007a4ccc,
-                               s_AiEventClassTy___CreateArt_007d2ae4);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x117,0,iVar3,"%s",
+                               "AiEventClassTy::_CreateArt");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x118);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x118);
     return iVar3;
   }
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {

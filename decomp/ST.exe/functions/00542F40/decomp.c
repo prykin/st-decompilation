@@ -4,25 +4,29 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tintersys.cpp
-   InterSystemC::GetMessage */
+   InterSystemC::GetMessage
 
-undefined4 __thiscall
-InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00402A63|00542F40; family_names=InterSystemC::GetMessage; ret4=9;
+   direct_offsets={10:2,14:0,18:3,1c:0} */
+
+int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
 
 {
-  code *pcVar1;
-  int iVar2;
-  uint uVar3;
-  LPSTR pCVar4;
-  undefined4 uVar5;
-  BITMAPINFO *pBVar6;
+  STMessageId SVar1;
+  code *pcVar2;
+  int iVar3;
+  uint uVar4;
+  LPSTR pCVar5;
+  undefined4 uVar6;
+  BITMAPINFO *pBVar7;
   char *text;
-  char cVar7;
-  byte bVar8;
-  int *piVar9;
-  int iVar10;
+  char cVar8;
+  byte bVar9;
+  int *piVar10;
   int iVar11;
-  undefined4 *puVar12;
+  int iVar12;
+  undefined4 *puVar13;
   InternalExceptionFrame local_50;
   tagBITMAPINFO *local_c;
   SystemClassTy *local_8;
@@ -30,53 +34,53 @@ InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = (SystemClassTy *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  if (iVar2 != 0) {
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f,0,iVar2,
-                                &DAT_007a4ccc,s_InterSystemC__GetMessage_007c7c70);
-    if (iVar11 != 0) {
+    iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0x11f,0,iVar3,
+                                "%s","InterSystemC::GetMessage");
+    if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0x11f);
     return 0xffff;
   }
-  SystemClassTy::GetMessage(local_8,(int)param_1);
-  uVar3 = param_1->field_0010;
-  if (uVar3 < 0xb904) {
-    if (uVar3 == 0xb903) {
+  SystemClassTy::GetMessage(local_8,message);
+  SVar1 = message->id;
+  if (SVar1 < MESS_INTERSYSTEMC_B904) {
+    if (SVar1 == MESS_INTERSYSTEMC_B903) {
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         thunk_FUN_0054b540(PTR_00802a30);
       }
-      if (DAT_00801690 == (int *)0x0) {
+      if (PTR_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801690 + 0x18))(1);
+      (**(code **)(*(int *)PTR_00801690 + 0x18))(1);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    if (uVar3 < 0xb901) {
-      if (uVar3 != 0xb900) {
-        if (uVar3 == 5) {
+    if (SVar1 < MESS_INTERSYSTEMC_B901) {
+      if (SVar1 != MESS_INTERSYSTEMC_B900) {
+        if (SVar1 == MESS_SHARED_0005) {
           if (PTR_00802a58 != (cLoadingTy *)0x0) {
             g_currentExceptionFrame = local_50.previous;
             return 0;
           }
-          iVar11 = 1;
-          uVar3 = _DAT_00807348 & 0xff;
-          piVar9 = (int *)0x0;
-          iVar2 = 1;
-          pCVar4 = thunk_FUN_00571240(s_PANEL_BKGND_007c7cc8,0);
-          pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar3);
-          local_c = (tagBITMAPINFO *)cMf32::RecGet(DAT_00806790,1,pCVar4,piVar9,iVar11);
+          iVar12 = 1;
+          uVar4 = _DAT_00807348 & 0xff;
+          piVar10 = (int *)0x0;
+          iVar3 = 1;
+          pCVar5 = thunk_FUN_00571240("PANEL_BKGND",0);
+          pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar4);
+          local_c = (tagBITMAPINFO *)cMf32::RecGet(DAT_00806790,1,pCVar5,piVar10,iVar12);
           PutDDX(0,0,'\x01',local_c);
           cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        if (uVar3 != 0xb8ff) {
+        if (SVar1 != MESS_INTERSYSTEMC_B8FF) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
@@ -93,7 +97,7 @@ InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1
       }
     }
     else {
-      if (uVar3 == 0xb901) {
+      if (SVar1 == MESS_INTERSYSTEMC_B901) {
         if (PTR_00802a30 != (CursorClassTy *)0x0) {
           thunk_FUN_0054b540(PTR_00802a30);
         }
@@ -105,7 +109,7 @@ InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      if (uVar3 != 0xb902) {
+      if (SVar1 != MESS_INTERSYSTEMC_B902) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
@@ -115,43 +119,43 @@ switchD_00543107_caseD_b904:
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    piVar9 = param_1->field_0018;
-    FUN_006b5f80(DAT_008075a8,*piVar9,piVar9[1],piVar9[2],piVar9[3]);
-    iVar2 = param_1->field_0010;
-    if (iVar2 == 0xb900) {
-      text = s_BUT_FILEOPT_007c7c48;
+    piVar10 = (message->arg1).ptr;
+    FUN_006b5f80(DAT_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
+    SVar1 = message->id;
+    if (SVar1 == MESS_INTERSYSTEMC_B900) {
+      text = "BUT_FILEOPT";
     }
-    else if (iVar2 == 0xb902) {
-      text = s_BUT_SETOPT_007c7c9c;
+    else if (SVar1 == MESS_INTERSYSTEMC_B902) {
+      text = "BUT_SETOPT";
     }
-    else if (iVar2 == 0xb904) {
-      text = s_BUT_HELPOPT_007c7cac;
+    else if (SVar1 == MESS_INTERSYSTEMC_B904) {
+      text = "BUT_HELPOPT";
     }
     else {
-      text = s_BUT_AIOPT_007c7cbc;
+      text = "BUT_AIOPT";
     }
-    puVar12 = (undefined4 *)0x0;
-    iVar10 = 0;
-    iVar11 = 1;
-    bVar8 = 0;
-    uVar3 = 0xffffffff;
-    uVar5 = thunk_FUN_00529f90((int)param_1);
-    iVar2 = 1;
-    pCVar4 = thunk_FUN_00571240(text,0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar5);
-    pBVar6 = (BITMAPINFO *)
+    puVar13 = (undefined4 *)0x0;
+    iVar11 = 0;
+    iVar12 = 1;
+    bVar9 = 0;
+    uVar4 = 0xffffffff;
+    uVar6 = thunk_FUN_00529f90((int)message);
+    iVar3 = 1;
+    pCVar5 = thunk_FUN_00571240(text,0);
+    pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar6);
+    pBVar7 = (BITMAPINFO *)
              Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,pCVar4,uVar3,bVar8,iVar11,iVar10,puVar12);
-    iVar2 = piVar9[1];
-    iVar11 = *piVar9;
-    cVar7 = '\x01';
+                       (DAT_00806794,CASE_1,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
+    iVar3 = piVar10[1];
+    iVar12 = *piVar10;
+    cVar8 = '\x01';
 LAB_00543291:
-    PutDDX(iVar11,iVar2,cVar7,pBVar6);
+    PutDDX(iVar12,iVar3,cVar8,pBVar7);
   }
   else {
-    switch(uVar3) {
-    case 0xb904:
-    case 0xb906:
+    switch(SVar1) {
+    case MESS_INTERSYSTEMC_B904:
+    case MESS_INTERSYSTEMC_B904|MESS_ID_CREATE:
       goto switchD_00543107_caseD_b904;
     case 0xb905:
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -163,7 +167,7 @@ LAB_00543291:
         return 0;
       }
       break;
-    case 0xb907:
+    case MESS_INTERSYSTEMC_B904|MESS_SHARED_0003:
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         thunk_FUN_0054b540(PTR_00802a30);
         PTR_00802a30->field_04DE = 1;
@@ -172,28 +176,28 @@ LAB_00543291:
         return 0;
       }
       break;
-    case 0xb908:
+    case MESS_INTERSYSTEMC_B908:
       if (PTR_00802a58 != (cLoadingTy *)0x0) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      piVar9 = param_1->field_0018;
-      FUN_006b5f80(DAT_008075a8,*piVar9,piVar9[1],piVar9[2],piVar9[3]);
-      puVar12 = (undefined4 *)0x0;
-      iVar10 = 0;
-      iVar11 = 1;
-      bVar8 = 0;
-      uVar3 = 0xffffffff;
-      uVar5 = thunk_FUN_00529f90((int)param_1);
-      iVar2 = 1;
-      pCVar4 = thunk_FUN_00571240(s_BUT_OHELP_007c7c90,0);
-      pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar5);
-      pBVar6 = (BITMAPINFO *)
+      piVar10 = (message->arg1).ptr;
+      FUN_006b5f80(DAT_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
+      puVar13 = (undefined4 *)0x0;
+      iVar11 = 0;
+      iVar12 = 1;
+      bVar9 = 0;
+      uVar4 = 0xffffffff;
+      uVar6 = thunk_FUN_00529f90((int)message);
+      iVar3 = 1;
+      pCVar5 = thunk_FUN_00571240("BUT_OHELP",0);
+      pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar6);
+      pBVar7 = (BITMAPINFO *)
                Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_6,pCVar4,uVar3,bVar8,iVar11,iVar10,puVar12);
-      iVar11 = *piVar9;
-      iVar2 = piVar9[1];
-      cVar7 = '\x06';
+                         (DAT_00806794,CASE_6,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
+      iVar12 = *piVar10;
+      iVar3 = piVar10[1];
+      cVar8 = '\x06';
       goto LAB_00543291;
     }
   }

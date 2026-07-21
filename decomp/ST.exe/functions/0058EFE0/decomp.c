@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0058efe0(STJellyGunC *param_1)
+void __fastcall FUN_0058efe0(void *param_1)
 
 {
   int iVar1;
@@ -12,9 +12,9 @@ void __fastcall FUN_0058efe0(STJellyGunC *param_1)
     puVar2 = puVar2 + 1;
   }
   local_24[3] = 0;
-  local_24[5] = param_1->field_0008;
+  local_24[5] = *(undefined4 *)((int)param_1 + 8);
   local_24[4] = 10;
-  STJellyGunC::sub_006E60A0(param_1,local_24);
+  sub_006E60A0(param_1,local_24);
   return;
 }
 

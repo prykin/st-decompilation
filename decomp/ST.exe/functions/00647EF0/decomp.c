@@ -27,7 +27,7 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pAVar2 = local_14;
   if (errorCode == 0) {
-    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
+    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->field_001C,&local_10);
     if (pAVar2 == (AiBossClassTy *)0x0) {
       puVar4 = (undefined4 *)0x0;
     }
@@ -49,12 +49,12 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   if (local_c != (undefined4 *)0x0) {
     FreeAndNull(&local_c);
   }
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0x4c,0,errorCode,&DAT_007a4ccc,
-                             s_AiBossClassTy__PrepareToSave_007d278c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0x4c,0,errorCode,"%s",
+                             "AiBossClassTy::PrepareToSave");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_boss_cpp_007d2750,0x4d);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_boss.cpp",0x4d);
   return (undefined4 *)0x0;
 }
 

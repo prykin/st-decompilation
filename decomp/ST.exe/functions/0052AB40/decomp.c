@@ -49,7 +49,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   iVar9 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar9 == 0) {
     if (PTR_00802a58 != (cLoadingTy *)0x0) {
-      cLoadingTy::SetProcess(PTR_00802a58,0,s_Preparing_mini_map____007c6f28,900);
+      cLoadingTy::SetProcess(PTR_00802a58,0,"Preparing mini-map...",900);
     }
     pAVar10 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar10 == (AnonShape_006DBCA0_EF06575F *)0x0) {
@@ -61,7 +61,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     local_10 = this;
     if (this == (AnonShape_006DDD50_309FA381 *)0x0) {
       RaiseInternalException
-                (-2,g_overwriteContext_007ED77C,s_E____titans_Andrey_minimap_cpp_007c6f00,0x16);
+                (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x16);
     }
     local_18 = (int)*param_1;
     dVar1 = (double)((float)(int)param_1[1] * local_8 * _DAT_007904f4);
@@ -122,7 +122,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       *local_c = (int)puVar11;
       if (puVar11 == (undefined4 *)0x0) {
         RaiseInternalException
-                  (-2,g_overwriteContext_007ED77C,s_E____titans_Andrey_minimap_cpp_007c6f00,0x2f);
+                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x2f);
       }
       iVar9 = 0;
       if (0 < (int)param_3) {
@@ -154,8 +154,8 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   else {
     g_currentExceptionFrame = local_68.previous;
     local_20 = iVar9;
-    iVar14 = ReportDebugMessage(s_E____titans_Andrey_minimap_cpp_007c6f00,0x3a,0,iVar9,&DAT_007a4ccc
-                                ,s_CreateMiniMap_007c6ef0);
+    iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\minimap.cpp",0x3a,0,iVar9,"%s"
+                                ,"CreateMiniMap");
     this = local_10;
     if (iVar14 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -173,7 +173,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       iVar14 = iVar14 + -1;
     } while (iVar14 != 0);
     RaiseInternalException
-              (iVar9,g_overwriteContext_007ED77C,s_E____titans_Andrey_minimap_cpp_007c6f00,0x42);
+              (iVar9,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x42);
   }
   if (PTR_00802a58 != (cLoadingTy *)0x0) {
     cLoadingTy::SetState(PTR_00802a58,CASE_2,0,(char *)0x0);

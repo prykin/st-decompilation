@@ -43,12 +43,12 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x819,0,errorCode,
-                               &DAT_007a4ccc,s_STPlaySystemC__SendMail_007c8608);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x819,0,errorCode,
+                               "%s","STPlaySystemC::SendMail");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x81a);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x81a);
   }
   return;
 }

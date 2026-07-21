@@ -34,7 +34,7 @@ cLoadingTy::SetState
 
   local_8 = this;
   sub_00555570(this);
-  if ((int)this->field_003C < -1) {
+  if (this->field_003C < -1) {
     return;
   }
   local_50.previous = g_currentExceptionFrame;
@@ -43,10 +43,10 @@ cLoadingTy::SetState
   pcVar10 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x14a,0,iVar3,&DAT_007a4ccc,
-                               s_cLoadingTy__SetState_007c8fd0);
+    iVar6 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x14a,0,iVar3,"%s",
+                               "cLoadingTy::SetState");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x14b);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0x14b);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -242,7 +242,7 @@ cLoadingTy::SetState
     }
     break;
   case CASE_2:
-    local_8->field_003C = 0xffffffff;
+    local_8->field_003C = -1;
     pcVar5 = LoadResourceString(0x267a,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -301,7 +301,7 @@ cLoadingTy::SetState
     }
     goto joined_r0x00555393;
   case CASE_3:
-    local_8->field_003C = 0xffffffff;
+    local_8->field_003C = -1;
     pcVar5 = LoadResourceString(0x267a,HINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {

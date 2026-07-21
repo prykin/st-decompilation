@@ -24,7 +24,7 @@ STSharkC * __thiscall STSharkC::STSharkC(STSharkC *this)
     puVar2 = puVar2 + 1;
   }
   this->field_023D = 0;
-  *(undefined4 *)&this->field_0x249 = 0xff;
+  this->field_0249 = 0xff;
   return this;
 }
 

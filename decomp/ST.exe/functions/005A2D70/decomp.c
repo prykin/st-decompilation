@@ -9,11 +9,10 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
 
 {
   undefined1 *puVar1;
-  undefined4 uVar2;
-  code *pcVar3;
+  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
-  int errorCode;
+  int iVar3;
   undefined4 uVar4;
   int iVar5;
   InternalExceptionFrame local_7c;
@@ -26,18 +25,18 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
     local_7c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_7c;
     local_8 = this;
-    errorCode = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
+    iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
     this_00 = PTR_00802a30;
-    if (errorCode == 0) {
+    if (iVar3 == 0) {
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        uVar4 = PTR_00802a30->field_00C9;
-        uVar2 = PTR_00802a30->field_00C5;
+        iVar3 = PTR_00802a30->field_00C9;
+        iVar5 = PTR_00802a30->field_00C5;
         PTR_00802a30->field_0493 = 1;
         this_00->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar4);
+        CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar3);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-        this_00->field_0xd2 = 0;
-        *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
+        this_00->field_00D2 = 0;
+        this_00->field_04DF = 0xffffffff;
       }
       FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
       this_01 = local_8;
@@ -72,12 +71,12 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
       return;
     }
     g_currentExceptionFrame = local_7c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa7d,0,errorCode,
-                               &DAT_007a4ccc,s_FSGSTy__JoinChannel_007cc520);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa7d,0,iVar3,"%s"
+                               ,"FSGSTy::JoinChannel");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa7d);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xa7d);
   }
   return;
 }

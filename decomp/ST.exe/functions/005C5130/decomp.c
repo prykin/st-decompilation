@@ -32,10 +32,10 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
   this_00 = local_c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243,0,iVar7,&DAT_007a4ccc
-                               ,s_SettMapTy__NoneSettMap_007cd1a8);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x243,0,iVar7,"%s"
+                               ,"SettMapTy::NoneSettMap");
     if (iVar8 == 0) {
-      RaiseInternalException(iVar7,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243);
+      RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\sett_obj.cpp",0x243);
       return 0;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -75,11 +75,11 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       local_8 = 0;
     }
     if ((this_00->field_0x21e4 != '\0') &&
-       ((int)PTR_0081176c->field_0300 < *(int *)&PTR_0081176c->field_0x304 + -1)) {
+       (PTR_0081176c->field_0300 < PTR_0081176c->field_0304 + -1)) {
       PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + 1;
-      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+      if (PTR_0081176c->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,
                    PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
@@ -162,8 +162,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       if (this_00->field_0x21e4 != '\0') {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_02EC);
-        if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
-          FUN_006b3af0(*(int **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc);
+        if (PTR_0081176c->field_02FC != 0xffffffff) {
+          FUN_006b3af0((int *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC);
         }
       }
       if (this_00->field_21F8 != (HoloTy *)0x0) {
@@ -203,11 +203,11 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    if ((local_c->field_0x21e4 != '\0') && (0 < (int)PTR_0081176c->field_0300)) {
+    if ((local_c->field_0x21e4 != '\0') && (0 < PTR_0081176c->field_0300)) {
       PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + -1;
-      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+      if (PTR_0081176c->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,
                    PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
@@ -283,7 +283,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       local_8 = 0;
     }
     if (local_8 != 0) {
-      bVar3 = this_00->field_0x1a5a;
+      bVar3 = this_00->field_1A5A;
       this_00->field_0065 = 2;
       if ((bVar3 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar3 * 0x1fb) != 0)) {
         AppClassTy::PostNextMessage

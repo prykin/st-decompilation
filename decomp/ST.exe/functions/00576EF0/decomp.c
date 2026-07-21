@@ -26,7 +26,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
-    DAT_00806750 = LoadLand(g_cMf32_00806754,s_3D_MAP_007ca1e4);
+    DAT_00806750 = LoadLand(g_cMf32_00806754,"3D_MAP");
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar5 == (AnonShape_006DBCA0_EF06575F *)0x0) {
       pAVar6 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
@@ -43,7 +43,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     FUN_006e8580(PTR_00807598,DAT_008075a8);
     DAT_00806724 = Library::Ourlib::MFIMG::mfImtLoad
-                             (PTR_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
+                             (PTR_00806770,"scmask",0,0,(undefined4 *)0x0,1);
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
@@ -57,12 +57,12 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x86,0,iVar4,&DAT_007a4ccc,
-                             s_GameSystemC__InitSystem_007cabf4);
+  iVar8 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x86,0,iVar4,"%s",
+                             "GameSystemC::InitSystem");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_tsystem_cpp_007cab5c,0x86);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\tsystem.cpp",0x86);
   return 0xfffffffc;
 }
 

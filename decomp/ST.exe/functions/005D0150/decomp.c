@@ -282,12 +282,12 @@ LAB_005d048e:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x563,0,iVar6,
-                                &DAT_007a4ccc,s_SettMapMTy__CheckPlList_007cd3f4);
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x563,0,iVar6,
+                                "%s","SettMapMTy::CheckPlList");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Start_settmobj_cpp_007cd258,0x563);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\settmobj.cpp",0x563);
   }
   return;
 cf_continue_loop_005D0486:

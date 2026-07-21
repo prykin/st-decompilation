@@ -223,9 +223,9 @@ LAB_0061eefe:
               if (((((DAT_0080874d != -1) && (this->field_00F8 != 0)) &&
                    ((thunk_FUN_00558c00(this,this->field_010C,iVar15,local_34,&local_38,&local_48),
                     -1 < local_20 &&
-                    ((((local_20 < 5 && (-1 < local_38)) && (local_38 < (int)this->field_0030)) &&
+                    ((((local_20 < 5 && (-1 < local_38)) && (local_38 < this->field_0030)) &&
                      ((iVar15 = local_48 + (&DAT_0079aed0)[local_20], -1 < iVar15 &&
-                      (iVar15 < (int)this->field_0034)))))))) && (this->field_004C != 0)) &&
+                      (iVar15 < this->field_0034)))))))) && (this->field_004C != 0)) &&
                  (*(char *)(iVar15 * this->field_0030 + this->field_004C + local_38) == '\0'))
               goto LAB_0061eefe;
             }

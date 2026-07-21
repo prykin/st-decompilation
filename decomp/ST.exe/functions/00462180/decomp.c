@@ -12,31 +12,33 @@ int __thiscall FUN_00462180(void *this,int param_1)
   undefined4 uVar8;
   short sVar9;
   uint uVar10;
-  STFishC *pSVar11;
-  undefined4 *puVar12;
-  STGroupBoatC *pSVar13;
-  int iVar14;
+  STGameObjC *this_00;
+  undefined4 *puVar11;
+  STGroupBoatC *pSVar12;
+  dword dVar13;
+  STFishC *pSVar14;
+  int iVar15;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar15;
+  undefined2 uVar16;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  undefined2 uVar16;
+  undefined2 uVar17;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_04;
-  STFishC *pSVar17;
-  uint uVar18;
-  STFishCVTable *pSVar19;
-  int iVar20;
-  ushort *puVar21;
-  STWorldObject *pSVar22;
-  bool bVar23;
+  STFishC *pSVar18;
+  uint uVar19;
+  STFishCVTable *pSVar20;
+  int iVar21;
+  ushort *puVar22;
+  STWorldObject *pSVar23;
+  bool bVar24;
   AnonShape_00645880_0D5933D4 local_9c;
   int local_74 [2];
   undefined1 local_6c [16];
@@ -61,31 +63,31 @@ int __thiscall FUN_00462180(void *this,int param_1)
   undefined2 local_8 [2];
 
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar12 = (undefined4 *)((int)this + 0x2cc);
-    for (iVar14 = 0x17; iVar14 != 0; iVar14 = iVar14 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
+    puVar11 = (undefined4 *)((int)this + 0x2cc);
+    for (iVar15 = 0x17; iVar15 != 0; iVar15 = iVar15 + -1) {
+      *puVar11 = 0;
+      puVar11 = puVar11 + 1;
     }
     *(undefined4 *)((int)this + 0x2c4) = 0;
     uVar10 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar10;
     *(short *)((int)this + 0xf8) = (short)((ulonglong)(uVar10 >> 0x10) % 0x1f) + 0x1e;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pSVar11 = (STFishC *)
-              STAllPlayersC::GetObjPtr
+    this_00 = STAllPlayersC::GetObjPtr
                         (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x33a),
                          (uint)*(ushort *)((int)this + 0x33f),
                          *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)this + 0x33b));
-    if (((pSVar11 != (STFishC *)0x0) && (pSVar11 != this)) &&
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if (((this_00 != (STGameObjC *)0x0) && (this_00 != this)) &&
        ((*(int *)((int)this + 0x6f7) != 9 ||
-        ((iVar14 = (*pSVar11->vtable->vfunc_2C)(), iVar14 == 0x3b ||
-         (iVar14 = (*pSVar11->vtable->vfunc_2C)(), iVar14 == 0x60)))))) {
-      *(undefined4 *)((int)this + 0x7f4) = pSVar11->field_0018;
-      *(undefined4 *)((int)this + 0x7f8) = *(undefined4 *)&pSVar11->field_0x2c;
+        ((iVar15 = (**(code **)&this_00->vtable->field_0x2c)(), iVar15 == 0x3b ||
+         (iVar15 = (**(code **)&this_00->vtable->field_0x2c)(), iVar15 == 0x60)))))) {
+      *(undefined4 *)((int)this + 0x7f4) = this_00->field_0018;
+      *(undefined4 *)((int)this + 0x7f8) = this_00->field_002C;
       *(undefined4 *)((int)this + 0x7fc) = *(undefined4 *)((int)this + 0x33b);
       STFishC::sub_004162B0
-                (pSVar11,(undefined2 *)((int)this + 0x800),(undefined2 *)((int)this + 0x802),
-                 (undefined2 *)((int)this + 0x804));
+                ((STFishC *)this_00,(undefined2 *)((int)this + 0x800),
+                 (undefined2 *)((int)this + 0x802),(undefined2 *)((int)this + 0x804));
       *(undefined2 *)((int)this + 0x7f2) = *(undefined2 *)((int)this + 0x341);
       *(undefined4 *)((int)this + 0x7de) = *(undefined4 *)((int)this + 0x336);
       *(undefined4 *)((int)this + 0x82e) = 0;
@@ -98,8 +100,9 @@ int __thiscall FUN_00462180(void *this,int param_1)
       *(undefined2 *)((int)this + 0x80a) = 0xffff;
       *(undefined2 *)((int)this + 0x808) = 0xffff;
       *(undefined2 *)((int)this + 0x806) = 0xffff;
-      iVar14 = (*pSVar11->vtable->vfunc_2C)();
-      if (iVar14 == 0x4d) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar15 = (**(code **)&this_00->vtable->field_0x2c)();
+      if (iVar15 == 0x4d) {
         *(undefined2 *)((int)this + 0x816) = 9;
       }
       else {
@@ -113,11 +116,11 @@ int __thiscall FUN_00462180(void *this,int param_1)
 LAB_00462320:
   if (*(int *)((int)this + 0x6f7) != 9) {
     if (*(int *)((int)this + 0x6f7) != 0x15) {
-      iVar14 = *(int *)((int)this + 0x836) + 1;
-      *(int *)((int)this + 0x836) = iVar14;
-      if ((iVar14 % 5 == 0) && (*(int *)((int)this + 0x82e) == 0)) {
-        iVar14 = thunk_FUN_00482db0(this,0);
-        switch(iVar14) {
+      iVar15 = *(int *)((int)this + 0x836) + 1;
+      *(int *)((int)this + 0x836) = iVar15;
+      if ((iVar15 % 5 == 0) && (*(int *)((int)this + 0x82e) == 0)) {
+        iVar15 = thunk_FUN_00482db0(this,0);
+        switch(iVar15) {
         case 0:
           sVar9 = *(short *)((int)this + 0x804);
           sVar6 = *(short *)((int)this + 0x802);
@@ -126,10 +129,10 @@ LAB_00462320:
             if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar6 < 0)) ||
                 ((g_worldGrid.sizeY <= sVar6 || (sVar9 < 0)))) || (g_worldGrid.sizeZ <= sVar9)) {
 LAB_004625fd:
-              pSVar22 = (STWorldObject *)0x0;
+              pSVar23 = (STWorldObject *)0x0;
             }
             else {
-              pSVar22 = g_worldGrid.cells
+              pSVar23 = g_worldGrid.cells
                         [(int)sVar9 * (int)g_worldGrid.planeStride +
                          (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[1];
             }
@@ -138,7 +141,7 @@ LAB_004625fd:
             if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
                 ((sVar6 < 0 || ((g_worldGrid.sizeY <= sVar6 || (sVar9 < 0)))))) ||
                (g_worldGrid.sizeZ <= sVar9)) goto LAB_004625fd;
-            pSVar22 = g_worldGrid.cells
+            pSVar23 = g_worldGrid.cells
                       [(int)sVar9 * (int)g_worldGrid.planeStride +
                        (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0];
           }
@@ -149,27 +152,27 @@ LAB_004625fd:
           local_9c._12_2_ = *(undefined2 *)((int)this + 0x45);
           local_10 = (STFishC *)0x0;
           if (*(char *)((int)this + 0x2b2) != '\0') {
-            puVar21 = (ushort *)((int)this + 0x2a8);
+            puVar22 = (ushort *)((int)this + 0x2a8);
             do {
-              puVar12 = (undefined4 *)
-                        thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)(puVar21 + -1),puVar21[1],
+              puVar11 = (undefined4 *)
+                        thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)(puVar22 + -1),puVar22[1],
                                            *(short *)((int)this + 0x6c));
-              local_9c.field_000E = *(short *)((int)this + 0x41) + (short)*puVar12;
+              local_9c.field_000E = *(short *)((int)this + 0x41) + (short)*puVar11;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_9c._16_2_ = *(short *)((int)this + 0x43) - (short)((uint)*puVar12 >> 0x10);
-              local_9c.field_0012 = *(short *)(puVar12 + 1) + *(short *)((int)this + 0x45);
-              local_30 = (uint)*puVar21 << 0x10;
-              puVar12 = (undefined4 *)thunk_FUN_0041dc40(&local_c,0,0,*(short *)((int)this + 0x6c));
-              uVar8 = *puVar12;
-              local_2c = *(undefined2 *)(puVar12 + 1);
+              local_9c._16_2_ = *(short *)((int)this + 0x43) - (short)((uint)*puVar11 >> 0x10);
+              local_9c.field_0012 = *(short *)(puVar11 + 1) + *(short *)((int)this + 0x45);
+              local_30 = (uint)*puVar22 << 0x10;
+              puVar11 = (undefined4 *)thunk_FUN_0041dc40(&local_c,0,0,*(short *)((int)this + 0x6c));
+              uVar8 = *puVar11;
+              local_2c = *(undefined2 *)(puVar11 + 1);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_9c._20_2_ = (short)uVar8 + *(short *)&pSVar22[1].field_0x1d;
+              local_9c._20_2_ = (short)uVar8 + *(short *)&pSVar23[1].field_0x1d;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_30._2_2_ = (short)((uint)uVar8 >> 0x10);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_9c.field_0016 = *(short *)&pSVar22[1].field_0x1f - local_30._2_2_;
+              local_9c.field_0016 = *(short *)&pSVar23[1].field_0x1f - local_30._2_2_;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_9c._24_2_ = *(undefined2 *)((int)&pSVar22[1].value_20 + 1);
+              local_9c._24_2_ = *(undefined2 *)((int)&pSVar23[1].value_20 + 1);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_9c._0_4_ = *(undefined4 *)((int)this + 0x24);
               local_9c.field_0022 = (-(uint)(*(int *)((int)this + 0x6f7) != 10) & 0xfffffffe) + 1;
@@ -189,12 +192,12 @@ LAB_004625fd:
               local_30 = uVar8;
               thunk_FUN_00645880(&local_9c);
               *(undefined4 *)((int)this + 0x83a) = 0;
-              iVar14 = *(int *)((int)this + 0x7a2) + -1;
-              *(int *)((int)this + 0x7a2) = iVar14;
+              iVar15 = *(int *)((int)this + 0x7a2) + -1;
+              *(int *)((int)this + 0x7a2) = iVar15;
               *(undefined4 *)((int)this + 0x7aa) = 0;
-              if ((*(int *)((int)this + 0x7de) == 0) && (iVar14 < 1)) break;
+              if ((*(int *)((int)this + 0x7de) == 0) && (iVar15 < 1)) break;
               local_10 = (STFishC *)((int)&local_10->vtable + 1);
-              puVar21 = puVar21 + 3;
+              puVar22 = puVar22 + 3;
             } while ((int)local_10 < (int)(uint)*(byte *)((int)this + 0x2b2));
           }
           if (*(int *)((int)this + 0x7de) == 1) {
@@ -215,8 +218,8 @@ LAB_004625fd:
             *(undefined2 *)((int)this + 0x808) = *(undefined2 *)((int)this + 0x802);
             *(undefined2 *)((int)this + 0x80a) = *(undefined2 *)((int)this + 0x804);
 LAB_004624c3:
-            iVar14 = STBoatC::sub_00460260(this,0);
-            if (iVar14 == -1) {
+            iVar15 = STBoatC::sub_00460260(this,0);
+            if (iVar15 == -1) {
               return -1;
             }
           }
@@ -237,13 +240,13 @@ LAB_004624c3:
             *(undefined4 *)((int)this + 0x832) = 1;
             *(undefined4 *)((int)this + 0x83a) = *(undefined4 *)((int)this + 0x818);
           }
-          iVar20 = *(int *)((int)this + 0x83a) + 1;
-          *(int *)((int)this + 0x83a) = iVar20;
-          if (*(int *)((int)this + 0x818) < iVar20) {
+          iVar21 = *(int *)((int)this + 0x83a) + 1;
+          *(int *)((int)this + 0x83a) = iVar21;
+          if (*(int *)((int)this + 0x818) < iVar21) {
             *(undefined4 *)((int)this + 0x83a) = 0;
-            iVar14 = thunk_FUN_00484020(this,(short)iVar14,(short *)&local_24,(short *)&local_1c,
+            iVar15 = thunk_FUN_00484020(this,(short)iVar15,(short *)&local_24,(short *)&local_1c,
                                         (short *)&local_20);
-            if (iVar14 != 0) {
+            if (iVar15 != 0) {
               *(undefined4 *)((int)this + 0x82e) = 3;
               STBoatC::sub_00481520
                         (this,(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
@@ -264,17 +267,17 @@ LAB_004624c3:
           thunk_FUN_00417740(this,*(short *)((int)this + 0x6c),(short)uVar10);
         }
       }
-      iVar14 = *(int *)((int)this + 0x82e);
-      if (iVar14 == 0) {
+      iVar15 = *(int *)((int)this + 0x82e);
+      if (iVar15 == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0xd8))();
         return 2;
       }
-      if (iVar14 == 1) {
-        iVar14 = thunk_FUN_00417830(this);
+      if (iVar15 == 1) {
+        iVar15 = thunk_FUN_00417830(this);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0xd8))();
-        if (iVar14 == 0) {
+        if (iVar15 == 0) {
 cf_common_exit_00462823:
           *(undefined4 *)((int)this + 0x836) = 0xffffffff;
           *(undefined4 *)((int)this + 0x82e) = 0;
@@ -282,13 +285,13 @@ cf_common_exit_00462823:
 switchD_004627fb_default:
         return 2;
       }
-      if (iVar14 != 2) {
-        if (iVar14 != 3) {
+      if (iVar15 != 2) {
+        if (iVar15 != 3) {
 cf_common_exit_0046401F:
           return -1;
         }
-        iVar14 = STBoatC::sub_00460260(this,2);
-        switch(iVar14) {
+        iVar15 = STBoatC::sub_00460260(this,2);
+        switch(iVar15) {
         case 0:
         case 1:
           goto cf_common_exit_00462823;
@@ -300,8 +303,8 @@ cf_common_exit_0046401F:
           goto switchD_004627fb_default;
         }
       }
-      iVar14 = STBoatC::sub_00460260(this,2);
-      switch(iVar14) {
+      iVar15 = STBoatC::sub_00460260(this,2);
+      switch(iVar15) {
       case 0:
       case 1:
         goto cf_common_exit_00462823;
@@ -313,8 +316,8 @@ cf_common_exit_0046401F:
         goto switchD_004627fb_default;
       }
     }
-    iVar14 = *(int *)((int)this + 0x82e);
-    if (iVar14 == 0) {
+    iVar15 = *(int *)((int)this + 0x82e);
+    if (iVar15 == 0) {
       *(undefined4 *)((int)this + 0x82e) = 1;
       if (*(int *)((int)this + 0x7f8) == 1) {
         *(undefined4 *)((int)this + 0xb7) = 3;
@@ -329,10 +332,10 @@ cf_common_exit_0046401F:
       *(undefined2 *)((int)this + 0xf8) = 0;
       goto cf_common_exit_00464889;
     }
-    if (iVar14 != 1) {
-      if (iVar14 == 2) {
-        iVar14 = STBoatC::sub_00460260(this,2);
-        switch(iVar14) {
+    if (iVar15 != 1) {
+      if (iVar15 == 2) {
+        iVar15 = STBoatC::sub_00460260(this,2);
+        switch(iVar15) {
         case 0:
           break;
         case 1:
@@ -343,17 +346,17 @@ cf_common_exit_0046401F:
             if (((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
                ((-1 < sVar6 &&
                 (((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)) && (sVar9 < g_worldGrid.sizeZ)))))) {
-              pSVar22 = g_worldGrid.cells
+              pSVar23 = g_worldGrid.cells
                         [(int)sVar9 * (int)g_worldGrid.planeStride +
                          (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[1];
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004644dc:
-              if (((pSVar22 != (STWorldObject *)0x0) &&
-                  (*(int *)&pSVar22->field_0x18 == *(int *)((int)this + 0x7f4))) &&
-                 ((iVar14 = (*pSVar22->vtable[5].slots_00_28[2])(), iVar14 != 0 &&
-                  ((pSVar22->value_20 != 0x1ae ||
-                   (iVar14 = (*pSVar22->vtable[5].slots_00_28[1])(*(undefined4 *)((int)this + 0x24))
-                   , iVar14 != 0)))))) {
+              if (((pSVar23 != (STWorldObject *)0x0) &&
+                  (*(int *)&pSVar23->field_0x18 == *(int *)((int)this + 0x7f4))) &&
+                 ((iVar15 = (*pSVar23->vtable[5].slots_00_28[2])(), iVar15 != 0 &&
+                  ((pSVar23->value_20 != 0x1ae ||
+                   (iVar15 = (*pSVar23->vtable[5].slots_00_28[1])(*(undefined4 *)((int)this + 0x24))
+                   , iVar15 != 0)))))) {
 cf_common_exit_00464526:
                 return 2;
               }
@@ -361,7 +364,7 @@ cf_common_exit_00464526:
           }
           else if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
                   (((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)) && (sVar9 < g_worldGrid.sizeZ)))) {
-            pSVar22 = g_worldGrid.cells
+            pSVar23 = g_worldGrid.cells
                       [(int)sVar9 * (int)g_worldGrid.planeStride +
                        (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0];
             goto LAB_004644dc;
@@ -390,10 +393,10 @@ cf_common_exit_00464526:
 LAB_00464147:
               if ((((local_14 != (STFishC *)0x0) &&
                    (local_14->field_0018 == *(int *)((int)this + 0x7f4))) &&
-                  (iVar14 = (*local_14->vtable->vfunc_F8)(), iVar14 != 0)) &&
+                  (iVar15 = (*local_14->vtable->vfunc_F8)(), iVar15 != 0)) &&
                  ((*(int *)&local_14->field_0x20 != 0x1ae ||
-                  (iVar14 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)),
-                  iVar14 != 0)))) {
+                  (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)),
+                  iVar15 != 0)))) {
                 sVar9 = *(short *)((int)this + 0xdf);
                 sVar6 = *(short *)((int)this + 0xdb);
                 sVar7 = *(short *)((int)this + 0xd7);
@@ -404,7 +407,7 @@ LAB_00464147:
                   if (((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
                      (((-1 < sVar6 && ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))) &&
                       (sVar9 < g_worldGrid.sizeZ)))) {
-                    pSVar11 = (STFishC *)
+                    pSVar14 = (STFishC *)
                               g_worldGrid.cells
                               [(int)sVar9 * (int)g_worldGrid.planeStride +
                                (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[1];
@@ -415,15 +418,15 @@ LAB_00464147:
                         ((-1 < sVar6 &&
                          (((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)) &&
                           (sVar9 < g_worldGrid.sizeZ)))))) {
-                  pSVar11 = (STFishC *)
+                  pSVar14 = (STFishC *)
                             g_worldGrid.cells
                             [(int)sVar9 * (int)g_worldGrid.planeStride +
                              (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0];
                   goto cf_common_exit_00464282;
                 }
-                pSVar11 = (STFishC *)0x0;
+                pSVar14 = (STFishC *)0x0;
 cf_common_exit_00464282:
-                if (local_14 != pSVar11) {
+                if (local_14 != pSVar14) {
                   STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
                   STBoatC::sub_00481520
                             (this,(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
@@ -460,7 +463,7 @@ cf_common_exit_00464282:
         }
         goto cf_common_exit_0046351A;
       }
-      if (iVar14 != 3) {
+      if (iVar15 != 3) {
         return -1;
       }
       sVar9 = *(short *)((int)this + 0x804);
@@ -490,13 +493,13 @@ LAB_0046461c:
                    (int)sVar7].objects[0];
       }
       if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != *(int *)((int)this + 0x7f4))) {
-        iVar14 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
-        pSVar11 = this;
-        if (((iVar14 == -4) || (iVar14 = (*local_c->vtable->vfunc_F8)(), iVar14 == 0)) ||
+        iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+        pSVar14 = this;
+        if (((iVar15 == -4) || (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 == 0)) ||
            ((*(int *)&local_c->field_0x20 == 0x1ae &&
-            (iVar14 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar14 == 0))
+            (iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar15 == 0))
            )) {
-          pSVar19 = *(STFishCVTable **)this;
+          pSVar20 = *(STFishCVTable **)this;
           local_58 = &local_4c;
           local_4c = 10000;
           local_44 = 0xff;
@@ -507,19 +510,19 @@ LAB_0046461c:
                     (local_c,(undefined2 *)&local_10,(undefined2 *)&local_28,(undefined2 *)&local_14
                     );
           uVar10 = (int)*(short *)((int)this + 0x800) - (int)(short)local_10;
-          uVar18 = (int)uVar10 >> 0x1f;
+          uVar19 = (int)uVar10 >> 0x1f;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((((int)((uVar10 ^ uVar18) - uVar18) < 2) &&
+          if ((((int)((uVar10 ^ uVar19) - uVar19) < 2) &&
               (uVar10 = (int)*(short *)((int)this + 0x802) - (int)(short)local_28,
-              uVar18 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar18) - uVar18) < 2)) &&
+              uVar19 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar19) - uVar19) < 2)) &&
              (uVar10 = (int)*(short *)((int)this + 0x804) - (int)(short)local_14,
-             uVar18 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar18) - uVar18) < 2)) {
+             uVar19 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar19) - uVar19) < 2)) {
             *(short *)((int)this + 0x804) = (short)local_14;
             *(short *)((int)this + 0x800) = (short)local_10;
             *(short *)((int)this + 0x802) = (short)local_28;
             goto LAB_0046470b;
           }
-          pSVar19 = *(STFishCVTable **)this;
+          pSVar20 = *(STFishCVTable **)this;
           local_58 = &local_4c;
           local_4c = 10000;
           local_44 = 0xff;
@@ -536,16 +539,15 @@ LAB_0046470b:
         uVar10 = STBoatC::sub_004176C0(this,sVar9);
         STBoatC::sub_00417910(this,(short)uVar10);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        STJellyGunC::sub_00415B30
-                  (this,*(short *)((int)this + 0x41),*(short *)((int)this + 0x43),
-                   *(short *)((int)this + 0x45),(short)local_10,(short)local_28,(short)local_14,
-                   *(byte *)((int)this + 0x61));
+        sub_00415B30(this,*(short *)((int)this + 0x41),*(short *)((int)this + 0x43),
+                     *(short *)((int)this + 0x45),(short)local_10,(short)local_28,(short)local_14,
+                     *(byte *)((int)this + 0x61));
         *(undefined4 *)((int)this + 0x7a) = 0;
-        iVar14 = STJellyGunC::sub_00415ED0(this,&local_30,local_74);
-        if (iVar14 == -1) {
+        iVar15 = STJellyGunC::sub_00415ED0(this,&local_30,local_74);
+        if (iVar15 == -1) {
           return -1;
         }
-        if (iVar14 == 0) {
+        if (iVar15 == 0) {
           local_58 = &local_4c;
           local_4c = 10000;
           local_44 = 0xff;
@@ -558,14 +560,14 @@ LAB_0046470b:
           local_3e = *(undefined2 *)((int)this + 0x18);
         }
         else {
-          if ((iVar14 != 1) ||
-             (iVar14 = (*local_c->vtable->vfunc_DC)
+          if ((iVar15 != 1) ||
+             (iVar15 = (*local_c->vtable->vfunc_DC)
                                  (*(undefined2 *)((int)this + 0x41),
                                   *(undefined2 *)((int)this + 0x43),
                                   *(undefined2 *)((int)this + 0x45),
                                   *(undefined2 *)((int)this + 0x34),
                                   *(undefined2 *)((int)this + 0x36),
-                                  *(undefined2 *)((int)this + 0x38)), iVar14 < 0))
+                                  *(undefined2 *)((int)this + 0x38)), iVar15 < 0))
           goto cf_common_exit_00464889;
           local_58 = &local_4c;
           local_4c = 10000;
@@ -579,18 +581,18 @@ LAB_0046470b:
           local_3e = *(undefined2 *)((int)this + 0x18);
         }
         local_4c = 600;
-        pSVar19 = local_c->vtable;
-        pSVar11 = local_c;
+        pSVar20 = local_c->vtable;
+        pSVar14 = local_c;
       }
       local_38 = 1;
-      (*pSVar19->GetMessage)(pSVar11,(int)local_6c);
+      (*pSVar20->GetMessage)(pSVar14,(int)local_6c);
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00464889:
-      iVar14 = (**(code **)(*(int *)this + 0xd8))();
-      return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
+      iVar15 = (**(code **)(*(int *)this + 0xd8))();
+      return (-(uint)(iVar15 != 0) & 0xfffffffd) + 2;
     }
-    iVar14 = STBoatC::sub_00460260(this,2);
-    switch(iVar14) {
+    iVar15 = STBoatC::sub_00460260(this,2);
+    switch(iVar15) {
     case 0:
       sVar9 = *(short *)((int)this + 0x804);
       sVar6 = *(short *)((int)this + 0x802);
@@ -624,23 +626,23 @@ LAB_00463d56:
                     + (int)sVar7].objects[0];
       }
       if ((local_14 == (STFishC *)0x0) || (local_14->field_0018 != *(int *)((int)this + 0x7f4))) {
-        iVar14 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_14);
-        if (((iVar14 != -4) && (iVar14 = (*local_14->vtable->vfunc_F8)(), iVar14 != 0)) &&
+        iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_14);
+        if (((iVar15 != -4) && (iVar15 = (*local_14->vtable->vfunc_F8)(), iVar15 != 0)) &&
            ((*(int *)&local_14->field_0x20 != 0x1ae ||
-            (iVar14 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar14 != 0)
+            (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar15 != 0)
             ))) {
           STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
           sVar6 = *psVar1;
           sVar9 = *psVar2;
-          iVar14 = (int)*(short *)&local_c->vtable;
+          iVar15 = (int)*(short *)&local_c->vtable;
           goto cf_common_exit_00463FD6;
         }
       }
       else {
-        iVar14 = (*local_14->vtable->vfunc_F8)();
-        if ((iVar14 != 0) &&
+        iVar15 = (*local_14->vtable->vfunc_F8)();
+        if ((iVar15 != 0) &&
            ((*(int *)&local_14->field_0x20 != 0x1ae ||
-            (iVar14 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar14 != 0)
+            (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar15 != 0)
             ))) {
           if (*(int *)((int)this + 0x7f8) != 0) {
             *(undefined4 *)((int)this + 0x82e) = 2;
@@ -659,21 +661,21 @@ LAB_00463d56:
             thunk_FUN_004960d0(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
             return 2;
           }
-          iVar14 = (int)*(short *)&local_c->vtable;
-          uVar10 = *(short *)((int)this + 0x47) - iVar14;
-          uVar18 = (int)uVar10 >> 0x1f;
-          if ((((int)((uVar10 ^ uVar18) - uVar18) < 2) &&
+          iVar15 = (int)*(short *)&local_c->vtable;
+          uVar10 = *(short *)((int)this + 0x47) - iVar15;
+          uVar19 = (int)uVar10 >> 0x1f;
+          if ((((int)((uVar10 ^ uVar19) - uVar19) < 2) &&
               (uVar10 = (int)*(short *)((int)this + 0x49) - (int)*psVar2,
-              uVar18 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar18) - uVar18) < 2)) &&
+              uVar19 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar19) - uVar19) < 2)) &&
              (uVar10 = (int)*(short *)((int)this + 0x4b) - (int)*psVar1,
-             uVar18 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar18) - uVar18) < 2)) {
+             uVar19 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar19) - uVar19) < 2)) {
             *(undefined4 *)((int)this + 0x82e) = 3;
             return 2;
           }
           sVar6 = *psVar1;
           sVar9 = *psVar2;
 cf_common_exit_00463FD6:
-          STBoatC::sub_00481520(this,iVar14,(int)sVar9,(int)sVar6);
+          STBoatC::sub_00481520(this,iVar15,(int)sVar9,(int)sVar6);
           STBoatC::sub_00460260(this,0);
           *(undefined2 *)((int)this + 0xf8) = 0;
 switchD_004638e6_caseD_2:
@@ -711,13 +713,13 @@ LAB_00463b9d:
                    (int)sVar7].objects[0];
       }
       if ((local_c != (STFishC *)0x0) && (local_c->field_0018 == *(int *)((int)this + 0x7f4))) {
-        iVar14 = (*local_c->vtable->vfunc_F8)();
-        if (iVar14 != 0) {
+        iVar15 = (*local_c->vtable->vfunc_F8)();
+        if (iVar15 != 0) {
           if (*(int *)&local_c->field_0x20 != 0x1ae) {
             return 2;
           }
-          iVar14 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
-          if (iVar14 != 0) {
+          iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
+          if (iVar15 != 0) {
             return 2;
           }
         }
@@ -725,12 +727,12 @@ LAB_00463b9d:
         return 0;
       }
       STBoatC::sub_004602B0(this);
-      iVar14 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
-      if ((iVar14 != -4) && (iVar14 = (*local_c->vtable->vfunc_F8)(), iVar14 != 0)) {
+      iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+      if ((iVar15 != -4) && (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 != 0)) {
         if (*(int *)&local_c->field_0x20 == 0x1ae) {
-          iVar14 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
+          iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
 joined_r0x00463a7a:
-          if (iVar14 == 0) break;
+          if (iVar15 == 0) break;
         }
 LAB_00463a83:
         STFishC::sub_004162B0
@@ -739,7 +741,7 @@ LAB_00463a83:
 LAB_00463a91:
         sVar6 = *(short *)((int)this + 0x804);
         sVar9 = *(short *)((int)this + 0x802);
-        iVar14 = (int)*(short *)((int)this + 0x800);
+        iVar15 = (int)*(short *)((int)this + 0x800);
         goto cf_common_exit_00463FD6;
       }
       break;
@@ -775,20 +777,20 @@ LAB_004639e6:
                    (int)sVar7].objects[0];
       }
       if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != *(int *)((int)this + 0x7f4))) {
-        iVar14 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
-        if ((iVar14 != -4) && (iVar14 = (*local_c->vtable->vfunc_F8)(), iVar14 != 0)) {
+        iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+        if ((iVar15 != -4) && (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 != 0)) {
           if (*(int *)&local_c->field_0x20 == 0x1ae) {
-            iVar14 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
+            iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
             goto joined_r0x00463a7a;
           }
           goto LAB_00463a83;
         }
       }
       else {
-        iVar14 = (*local_c->vtable->vfunc_F8)();
-        if ((iVar14 != 0) &&
+        iVar15 = (*local_c->vtable->vfunc_F8)();
+        if ((iVar15 != 0) &&
            ((*(int *)&local_c->field_0x20 != 0x1ae ||
-            (iVar14 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar14 != 0))
+            (iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar15 != 0))
            )) goto LAB_00463a91;
       }
       break;
@@ -797,8 +799,8 @@ LAB_004639e6:
     }
     goto cf_common_exit_0046351A;
   }
-  iVar14 = *(int *)((int)this + 0x82e);
-  if (iVar14 == 0) {
+  iVar15 = *(int *)((int)this + 0x82e);
+  if (iVar15 == 0) {
     *(undefined4 *)((int)this + 0x82e) = 1;
     *(undefined4 *)((int)this + 0xb7) = 3;
     STBoatC::sub_00481520
@@ -807,16 +809,16 @@ LAB_004639e6:
     STBoatC::sub_00460260(this,0);
     goto cf_common_exit_00464889;
   }
-  if (iVar14 != 1) {
-    if (iVar14 != 2) {
-      if (iVar14 != 3) {
+  if (iVar15 != 1) {
+    if (iVar15 != 2) {
+      if (iVar15 != 3) {
         return -1;
       }
-      iVar14 = STJellyGunC::sub_00415ED0(this,local_74,(int *)&local_10);
-      if (iVar14 == -1) {
+      iVar15 = STJellyGunC::sub_00415ED0(this,local_74,(int *)&local_10);
+      if (iVar15 == -1) {
         return -1;
       }
-      if (iVar14 == 0) {
+      if (iVar15 == 0) {
         local_58 = &local_4c;
         local_4c = 10000;
         local_44 = 0xff;
@@ -827,48 +829,48 @@ LAB_004639e6:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(3,0x101);
       }
-      else if (iVar14 == 1) {
+      else if (iVar15 == 1) {
         sVar9 = *(short *)((int)this + 0x800);
         sVar6 = *(short *)((int)this + 0x804);
         sVar7 = *(short *)((int)this + 0x802);
         if (((((-1 < sVar9) && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar7)) &&
             ((sVar7 < g_worldGrid.sizeY && (-1 < sVar6)))) && (sVar6 < g_worldGrid.sizeZ)) {
-          iVar14 = (int)sVar6 * (int)g_worldGrid.planeStride + (int)sVar7 * (int)g_worldGrid.sizeX +
+          iVar15 = (int)sVar6 * (int)g_worldGrid.planeStride + (int)sVar7 * (int)g_worldGrid.sizeX +
                    (int)sVar9;
-          pSVar22 = g_worldGrid.cells[iVar14].objects[0];
-          if (pSVar22 != (STWorldObject *)0x0) {
+          pSVar23 = g_worldGrid.cells[iVar15].objects[0];
+          if (pSVar23 != (STWorldObject *)0x0) {
             sVar9 = sVar9 >> 0xf;
-            uVar16 = (undefined2)((uint)iVar14 >> 0x10);
+            uVar17 = (undefined2)((uint)iVar15 >> 0x10);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar14 = (*pSVar22->vtable[4].slots_00_28[7])
-                               (CONCAT22(uVar16,*(undefined2 *)((int)this + 0x41)),
+            iVar15 = (*pSVar23->vtable[4].slots_00_28[7])
+                               (CONCAT22(uVar17,*(undefined2 *)((int)this + 0x41)),
                                 CONCAT22(sVar9,*(undefined2 *)((int)this + 0x43)),
-                                CONCAT22(uVar16,*(undefined2 *)((int)this + 0x45)),
+                                CONCAT22(uVar17,*(undefined2 *)((int)this + 0x45)),
                                 CONCAT22(sVar9,*(undefined2 *)((int)this + 0x34)),
-                                CONCAT22(uVar16,*(undefined2 *)((int)this + 0x36)),
+                                CONCAT22(uVar17,*(undefined2 *)((int)this + 0x36)),
                                 CONCAT22(sVar9,*(undefined2 *)((int)this + 0x38)));
-            if (-1 < iVar14) {
-              iVar14 = thunk_FUN_004d8870(*(char *)&pSVar22[1].vtable);
-              if (200 < iVar14) {
-                iVar14 = 200;
+            if (-1 < iVar15) {
+              iVar15 = thunk_FUN_004d8870(*(char *)&pSVar23[1].vtable);
+              if (200 < iVar15) {
+                iVar15 = 200;
               }
-              thunk_FUN_004d8800(*(char *)&pSVar22[1].vtable,iVar14);
-              thunk_FUN_004d87b0(*(char *)((int)this + 0x24),iVar14);
-              iVar14 = thunk_FUN_004d89b0(*(char *)&pSVar22[1].vtable);
-              if (100 < iVar14) {
-                iVar14 = 100;
+              thunk_FUN_004d8800(*(char *)&pSVar23[1].vtable,iVar15);
+              thunk_FUN_004d87b0(*(char *)((int)this + 0x24),iVar15);
+              iVar15 = thunk_FUN_004d89b0(*(char *)&pSVar23[1].vtable);
+              if (100 < iVar15) {
+                iVar15 = 100;
               }
-              thunk_FUN_004d8940(*(char *)&pSVar22[1].vtable,iVar14);
-              thunk_FUN_004d88f0(*(char *)((int)this + 0x24),iVar14);
-              iVar14 = thunk_FUN_004d8af0(*(char *)&pSVar22[1].vtable);
-              if (0x5dc < iVar14) {
-                iVar14 = 0x5dc;
+              thunk_FUN_004d8940(*(char *)&pSVar23[1].vtable,iVar15);
+              thunk_FUN_004d88f0(*(char *)((int)this + 0x24),iVar15);
+              iVar15 = thunk_FUN_004d8af0(*(char *)&pSVar23[1].vtable);
+              if (0x5dc < iVar15) {
+                iVar15 = 0x5dc;
               }
-              thunk_FUN_004d8a80(*(char *)&pSVar22[1].vtable,iVar14);
-              thunk_FUN_004d8a30(*(char *)((int)this + 0x24),iVar14);
-              thunk_FUN_004d78e0(*(char *)&pSVar22[1].vtable);
+              thunk_FUN_004d8a80(*(char *)&pSVar23[1].vtable,iVar15);
+              thunk_FUN_004d8a30(*(char *)((int)this + 0x24),iVar15);
+              thunk_FUN_004d78e0(*(char *)&pSVar23[1].vtable);
               thunk_FUN_004d78e0(*(char *)((int)this + 0x24));
-              if (((STWorldObjectVTable *)(uint)DAT_0080874d == pSVar22[1].vtable) ||
+              if (((STWorldObjectVTable *)(uint)DAT_0080874d == pSVar23[1].vtable) ||
                  ((STWorldObjectVTable *)(uint)DAT_0080874d ==
                   *(STWorldObjectVTable **)((int)this + 0x24))) {
                 thunk_FUN_004d8b70(DAT_0080874d);
@@ -881,17 +883,17 @@ LAB_004639e6:
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)**(undefined4 **)this)(local_6c);
               STT3DSprC::LoadSequence
-                        ((STT3DSprC *)((int)this + 0x1d5),8,DAT_00806774,s_expdstrwd_007aa144,0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),8,DAT_00806774,"expdstrwd",0x1d);
               if (DAT_00811798 != (void *)0x0) {
-                thunk_FUN_004162f0(pSVar22,(undefined2 *)((int)&local_14 + 2),
+                thunk_FUN_004162f0(pSVar23,(undefined2 *)((int)&local_14 + 2),
                                    (undefined2 *)((int)&local_28 + 2),local_8);
-                (*pSVar22->vtable->GetObjectTypeId)(pSVar22);
+                (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 thunk_FUN_00620a00(DAT_00811798,(int)local_14._2_2_,(int)local_28._2_2_,
-                                   (uint)pSVar22[1].vtable);
+                                   (uint)pSVar23[1].vtable);
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                iVar14 = (**(code **)(*(int *)this + 0xd8))();
-                return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
+                iVar15 = (**(code **)(*(int *)this + 0xd8))();
+                return (-(uint)(iVar15 != 0) & 0xfffffffd) + 2;
               }
             }
             goto LAB_00463844;
@@ -905,16 +907,16 @@ LAB_004639e6:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)this)(local_6c);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar14 = (**(code **)(*(int *)this + 0xd8))();
-        return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
+        iVar15 = (**(code **)(*(int *)this + 0xd8))();
+        return (-(uint)(iVar15 != 0) & 0xfffffffd) + 2;
       }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00463844:
-      iVar14 = (**(code **)(*(int *)this + 0xd8))();
-      return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
+      iVar15 = (**(code **)(*(int *)this + 0xd8))();
+      return (-(uint)(iVar15 != 0) & 0xfffffffd) + 2;
     }
-    iVar14 = STBoatC::sub_00460260(this,2);
-    switch(iVar14 + 1) {
+    iVar15 = STBoatC::sub_00460260(this,2);
+    switch(iVar15 + 1) {
     case 0:
       goto cf_common_exit_0046401F;
     case 1:
@@ -933,23 +935,23 @@ LAB_00463844:
     case 4:
       sVar9 = *(short *)((int)this + 0x800);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar10 = CONCAT22((short)((uint)(iVar14 + 1) >> 0x10),sVar9);
+      uVar10 = CONCAT22((short)((uint)(iVar15 + 1) >> 0x10),sVar9);
       sVar6 = *(short *)((int)this + 0x804);
       sVar7 = *(short *)((int)this + 0x802);
       psVar1 = (short *)((int)this + 0x804);
       if ((((-1 < sVar9) && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar7)) &&
          (((sVar7 < g_worldGrid.sizeY && (-1 < sVar6)) && (sVar6 < g_worldGrid.sizeZ)))) {
-        pSVar11 = (STFishC *)
+        pSVar14 = (STFishC *)
                   g_worldGrid.cells
                   [(int)sVar6 * (int)g_worldGrid.planeStride + (int)sVar7 * (int)g_worldGrid.sizeX +
                    (int)sVar9].objects[0];
         uVar10 = (int)sVar9;
-        local_14 = pSVar11;
-        if (((pSVar11 != (STFishC *)0x0) &&
-            (uVar18 = *(uint *)&pSVar11->field_0x24, uVar10 = uVar18, uVar18 < 8)) &&
+        local_14 = pSVar14;
+        if (((pSVar14 != (STFishC *)0x0) &&
+            (uVar19 = pSVar14->field_0024, uVar10 = uVar19, uVar19 < 8)) &&
            ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-            (uVar10 = uVar18 * 9, (byte)(&DAT_008087e9)[uVar18 * 0x51] < 8)))) {
-          bVar3 = pSVar11->field_0x24;
+            (uVar10 = uVar19 * 9, (byte)(&DAT_008087e9)[uVar19 * 0x51] < 8)))) {
+          bVar3 = *(byte *)&pSVar14->field_0024;
           bVar4 = *(byte *)((int)this + 0x24);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
@@ -958,58 +960,58 @@ LAB_00463844:
           if (DAT_00808a8f == '\0') {
             if (bVar3 == bVar4) {
 LAB_00462fde:
-              iVar14 = 0;
+              iVar15 = 0;
             }
             else {
               bVar5 = g_playerRelationMatrix[bVar3][bVar4];
               if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-                iVar14 = -2;
+                iVar15 = -2;
               }
               else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-                iVar14 = -1;
+                iVar15 = -1;
               }
               else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
-                iVar14 = 1;
+                iVar15 = 1;
               }
               else {
                 if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1)) goto LAB_00462fde;
-                iVar14 = 2;
+                iVar15 = 2;
               }
             }
-            bVar23 = iVar14 < 0;
+            bVar24 = iVar15 < 0;
           }
           else {
-            bVar23 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
+            bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
           }
           uVar10 = 0;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          if ((bVar23) &&
-             ((uVar10 = (*pSVar11->vtable->vfunc_2C)((STWorldObject *)pSVar11),
-              uVar16 = extraout_var_03, uVar15 = extraout_var_00, uVar10 == 0x3b ||
-              (uVar10 = (*pSVar11->vtable->vfunc_2C)((STWorldObject *)pSVar11),
-              uVar16 = extraout_var_04, uVar15 = extraout_var_01, uVar10 == 0x60)))) {
+          if ((bVar24) &&
+             ((uVar10 = (*pSVar14->vtable->slot_2C)(pSVar14), uVar17 = extraout_var_03,
+              uVar16 = extraout_var_00, uVar10 == 0x3b ||
+              (uVar10 = (*pSVar14->vtable->slot_2C)(pSVar14), uVar17 = extraout_var_04,
+              uVar16 = extraout_var_01, uVar10 == 0x60)))) {
             sVar9 = *(short *)((int)this + 0xd7);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_24 = CONCAT22((short)(uVar10 >> 0x10),sVar9);
             sVar6 = *(short *)((int)this + 0xdb);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_1c = CONCAT22(uVar15,sVar6);
+            local_1c = CONCAT22(uVar16,sVar6);
             sVar7 = *(short *)((int)this + 0xdf);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_20 = CONCAT22(uVar16,sVar7);
+            local_20 = CONCAT22(uVar17,sVar7);
             if ((sVar9 < 0) ||
                ((((g_worldGrid.sizeX <= sVar9 || (sVar6 < 0)) || (g_worldGrid.sizeY <= sVar6)) ||
                 ((sVar7 < 0 || (g_worldGrid.sizeZ <= sVar7)))))) {
-              pSVar17 = (STFishC *)0x0;
+              pSVar18 = (STFishC *)0x0;
             }
             else {
-              pSVar17 = (STFishC *)
+              pSVar18 = (STFishC *)
                         g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar7 +
                          (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar9].objects[0];
-              pSVar11 = local_14;
+              pSVar14 = local_14;
             }
-            if (pSVar11 != pSVar17) {
+            if (pSVar14 != pSVar18) {
               psVar2 = (short *)((int)this + 0x802);
               local_c = (STFishC *)((int)this + 0x800);
               STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
@@ -1028,22 +1030,21 @@ LAB_00462fde:
             }
             *(undefined4 *)((int)this + 0x82e) = 3;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            STJellyGunC::sub_00415B30
-                      (this,*(short *)((int)this + 0x41),*(short *)((int)this + 0x43),
-                       *(short *)((int)this + 0x45),(short)(local_24 * 0xc9 + 100),
-                       sVar6 * 0xc9 + 100,sVar7 * 200 + 100,*(byte *)((int)this + 0x61));
+            sub_00415B30(this,*(short *)((int)this + 0x41),*(short *)((int)this + 0x43),
+                         *(short *)((int)this + 0x45),(short)(local_24 * 0xc9 + 100),
+                         sVar6 * 0xc9 + 100,sVar7 * 200 + 100,*(byte *)((int)this + 0x61));
             *(undefined4 *)((int)this + 0x7a) = 0;
             return 2;
           }
         }
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      pSVar13 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
+      pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                    CONCAT22((short)(uVar10 >> 0x10),
                                             *(undefined2 *)((int)this + 0x30)));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STGroupBoatC::GetDepotForAttack
-                (pSVar13,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)
+                (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)
                                  ),(undefined1 *)((int)&param_1 + 3),&local_16,(short *)&local_24,
                  (short *)&local_1c,(short *)&local_20);
       if (local_16 != -1) {
@@ -1060,8 +1061,8 @@ LAB_00462fde:
       goto cf_common_exit_0046351A;
     }
   }
-  iVar14 = STBoatC::sub_00460260(this,2);
-  switch(iVar14) {
+  iVar15 = STBoatC::sub_00460260(this,2);
+  switch(iVar15) {
   case 0:
     sVar9 = *(short *)((int)this + 0x804);
     sVar6 = *(short *)((int)this + 0x802);
@@ -1071,17 +1072,17 @@ LAB_00462fde:
     sVar7 = *(short *)&local_c->vtable;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = (STFishC *)CONCAT22((short)((uint)local_c >> 0x10),sVar7);
-    pSVar11 = local_10;
+    pSVar14 = local_10;
     if ((((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
          ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))) && (sVar9 < g_worldGrid.sizeZ)) &&
        (((local_14 = (STFishC *)
                      g_worldGrid.cells
                      [(int)sVar9 * (int)g_worldGrid.planeStride +
                       (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0],
-         pSVar11 = local_14, local_14 != (STFishC *)0x0 && (*(uint *)&local_14->field_0x24 < 8)) &&
+         pSVar14 = local_14, local_14 != (STFishC *)0x0 && ((uint)local_14->field_0024 < 8)) &&
         ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-         ((byte)(&DAT_008087e9)[*(uint *)&local_14->field_0x24 * 0x51] < 8)))))) {
-      bVar3 = local_14->field_0x24;
+         ((byte)(&DAT_008087e9)[local_14->field_0024 * 0x51] < 8)))))) {
+      bVar3 = *(byte *)&local_14->field_0024;
       bVar4 = *(byte *)((int)this + 0x24);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_10._1_3_ = (undefined3)((uint)local_10 >> 8);
@@ -1092,33 +1093,34 @@ LAB_00462fde:
       if (DAT_00808a8f == '\0') {
         if (bVar3 == bVar4) {
 LAB_00462c49:
-          iVar14 = 0;
+          iVar15 = 0;
         }
         else {
           bVar5 = g_playerRelationMatrix[bVar3][bVar4];
           if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-            iVar14 = -2;
+            iVar15 = -2;
           }
           else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-            iVar14 = -1;
+            iVar15 = -1;
           }
           else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
-            iVar14 = 1;
+            iVar15 = 1;
           }
           else {
             if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1)) goto LAB_00462c49;
-            iVar14 = 2;
+            iVar15 = 2;
           }
         }
-        bVar23 = iVar14 < 0;
+        bVar24 = iVar15 < 0;
       }
       else {
-        bVar23 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
+        bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
       }
-      pSVar11 = (STFishC *)0x0;
-      if ((bVar23) &&
-         ((iVar14 = (*local_14->vtable->vfunc_2C)((STWorldObject *)local_14), iVar14 == 0x3b ||
-          (pSVar11 = (STFishC *)(*local_14->vtable->vfunc_2C)(), pSVar11 == (STFishC *)0x60)))) {
+      pSVar14 = (STFishC *)0x0;
+      if ((bVar24) &&
+         ((dVar13 = (*local_14->vtable->slot_2C)(local_14), dVar13 == 0x3b ||
+          (pSVar14 = (STFishC *)(*local_14->vtable->slot_2C)(local_14), pSVar14 == (STFishC *)0x60))
+         )) {
         *(undefined4 *)((int)this + 0x82e) = 2;
         *(undefined4 *)((int)this + 0xb7) = 0;
         STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
@@ -1137,12 +1139,12 @@ LAB_00462c49:
       }
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    pSVar13 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                 CONCAT22((short)((uint)pSVar11 >> 0x10),
+    pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
+                                 CONCAT22((short)((uint)pSVar14 >> 0x10),
                                           *(undefined2 *)((int)this + 0x30)));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STGroupBoatC::GetDepotForAttack
-              (pSVar13,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)),
+              (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)),
                (undefined1 *)((int)&param_1 + 3),&local_16,(short *)&local_24,(short *)&local_1c,
                (short *)&local_20);
     if (local_16 != -1) {
@@ -1162,13 +1164,13 @@ cf_common_exit_00462E32:
     if ((((-1 < sVar9) && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar7)) &&
        ((((sVar7 < g_worldGrid.sizeY && (-1 < sVar6)) &&
          ((sVar6 < g_worldGrid.sizeZ &&
-          ((pSVar22 = g_worldGrid.cells
+          ((pSVar23 = g_worldGrid.cells
                       [(int)sVar6 * (int)g_worldGrid.planeStride +
                        (int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar9].objects[0],
-           pSVar22 != (STWorldObject *)0x0 && (pSVar22[1].vtable < (STWorldObjectVTable *)0x8))))))
+           pSVar23 != (STWorldObject *)0x0 && (pSVar23[1].vtable < (STWorldObjectVTable *)0x8))))))
         && ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-            ((byte)(&DAT_008087e9)[(int)pSVar22[1].vtable * 0x51] < 8)))))) {
-      bVar3 = *(byte *)&pSVar22[1].vtable;
+            ((byte)(&DAT_008087e9)[(int)pSVar23[1].vtable * 0x51] < 8)))))) {
+      bVar3 = *(byte *)&pSVar23[1].vtable;
       bVar4 = *(byte *)((int)this + 0x24);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
@@ -1177,47 +1179,47 @@ cf_common_exit_00462E32:
       if (DAT_00808a8f == '\0') {
         if (bVar3 == bVar4) {
 LAB_00462a36:
-          iVar14 = 0;
+          iVar15 = 0;
         }
         else {
           bVar5 = g_playerRelationMatrix[bVar3][bVar4];
           if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-            iVar14 = -2;
+            iVar15 = -2;
           }
           else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-            iVar14 = -1;
+            iVar15 = -1;
           }
           else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
-            iVar14 = 1;
+            iVar15 = 1;
           }
           else {
             if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1)) goto LAB_00462a36;
-            iVar14 = 2;
+            iVar15 = 2;
           }
         }
-        bVar23 = iVar14 < 0;
+        bVar24 = iVar15 < 0;
       }
       else {
-        bVar23 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
+        bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
       }
-      if (bVar23) {
-        iVar14 = (*pSVar22->vtable->GetObjectTypeId)(pSVar22);
-        if (iVar14 == 0x3b) {
+      if (bVar24) {
+        iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+        if (iVar15 == 0x3b) {
           return 2;
         }
-        iVar14 = (*pSVar22->vtable->GetObjectTypeId)(pSVar22);
-        if (iVar14 == 0x60) {
+        iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+        if (iVar15 == 0x60) {
           return 2;
         }
       }
     }
     STBoatC::sub_004602B0(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    pSVar13 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
+    pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                  CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x30)));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STGroupBoatC::GetDepotForAttack
-              (pSVar13,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)),
+              (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)),
                (undefined1 *)((int)&param_1 + 3),&local_16,(short *)&local_24,(short *)&local_1c,
                (short *)&local_20);
     if (local_16 != -1) {
@@ -1248,13 +1250,13 @@ switchD_00462e6c_caseD_2:
   if (((((-1 < sVar9) && (sVar9 < g_worldGrid.sizeX)) &&
        ((-1 < sVar7 &&
         (((sVar7 < g_worldGrid.sizeY && (-1 < sVar6)) && (sVar6 < g_worldGrid.sizeZ)))))) &&
-      ((pSVar22 = g_worldGrid.cells
+      ((pSVar23 = g_worldGrid.cells
                   [(int)sVar6 * (int)g_worldGrid.planeStride + (int)sVar7 * (int)g_worldGrid.sizeX +
-                   (int)sVar9].objects[0], pSVar22 != (STWorldObject *)0x0 &&
-       (pSVar22[1].vtable < (STWorldObjectVTable *)0x8)))) &&
+                   (int)sVar9].objects[0], pSVar23 != (STWorldObject *)0x0 &&
+       (pSVar23[1].vtable < (STWorldObjectVTable *)0x8)))) &&
      ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-      ((byte)(&DAT_008087e9)[(int)pSVar22[1].vtable * 0x51] < 8)))) {
-    bVar3 = *(byte *)&pSVar22[1].vtable;
+      ((byte)(&DAT_008087e9)[(int)pSVar23[1].vtable * 0x51] < 8)))) {
+    bVar3 = *(byte *)&pSVar23[1].vtable;
     bVar4 = *(byte *)((int)this + 0x24);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
@@ -1263,47 +1265,47 @@ switchD_00462e6c_caseD_2:
     if (DAT_00808a8f == '\0') {
       if (bVar3 == bVar4) {
 LAB_00463442:
-        iVar14 = 0;
+        iVar15 = 0;
       }
       else {
         bVar5 = g_playerRelationMatrix[bVar3][bVar4];
         if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-          iVar14 = -2;
+          iVar15 = -2;
         }
         else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-          iVar14 = -1;
+          iVar15 = -1;
         }
         else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
-          iVar14 = 1;
+          iVar15 = 1;
         }
         else {
           if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1)) goto LAB_00463442;
-          iVar14 = 2;
+          iVar15 = 2;
         }
       }
-      bVar23 = iVar14 < 0;
+      bVar24 = iVar15 < 0;
     }
     else {
-      bVar23 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
+      bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
     }
-    if (bVar23) {
-      iVar14 = (*pSVar22->vtable->GetObjectTypeId)(pSVar22);
-      if (iVar14 == 0x3b) {
+    if (bVar24) {
+      iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+      if (iVar15 == 0x3b) {
         return 2;
       }
-      iVar14 = (*pSVar22->vtable->GetObjectTypeId)(pSVar22);
-      if (iVar14 == 0x60) {
+      iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+      if (iVar15 == 0x60) {
         return 2;
       }
     }
   }
   STBoatC::sub_004602B0(this);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  pSVar13 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
+  pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                CONCAT22(extraout_var_02,*(undefined2 *)((int)this + 0x30)));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   STGroupBoatC::GetDepotForAttack
-            (pSVar13,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)),
+            (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),*(undefined2 *)((int)this + 0x32)),
              (undefined1 *)((int)&param_1 + 3),&local_16,(short *)&local_24,(short *)&local_1c,
              (short *)&local_20);
   if (local_16 != -1) {
@@ -1319,8 +1321,8 @@ LAB_00463442:
 LAB_00463510:
   *(undefined4 *)((int)this + 0xb7) = 0;
 cf_common_exit_0046351A:
-  iVar14 = 0;
+  iVar15 = 0;
 cf_common_exit_0046351C:
-  return iVar14;
+  return iVar15;
 }
 

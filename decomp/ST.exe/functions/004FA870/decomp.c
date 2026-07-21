@@ -14,21 +14,21 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
     if (param_1 == (CASE_4|CASE_2)) {
       if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_prodPanel_008016E8->field_0000 + 0x1c))();
+        (*(code *)g_prodPanel_008016E8->field_0000->field_001C)();
         return;
       }
     }
     else if (param_1 == (CASE_4|CASE_2|CASE_1)) {
       if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_prodPanel_0080167C->field_0000 + 0x1c))();
+        (*(code *)g_prodPanel_0080167C->field_0000->field_001C)();
         return;
       }
     }
     else if (param_1 == 8) {
       if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_prodPanel_00801684->field_0000 + 0x1c))();
+        (*(code *)g_prodPanel_00801684->field_0000->field_001C)();
         return;
       }
     }
@@ -56,7 +56,7 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
     else if (param_1 == 0xc) {
       if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_prodPanel_00801680->field_0000 + 0x1c))();
+        (*(code *)g_prodPanel_00801680->field_0000->field_001C)();
         return;
       }
     }
@@ -81,9 +81,9 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
         return;
       }
     }
-    else if ((param_1 == 0x13) && (DAT_00801690 != (void *)0x0)) {
-      thunk_FUN_00515180(DAT_00801690,'\x06');
-      thunk_FUN_00515180(DAT_00801690,'\x05');
+    else if ((param_1 == 0x13) && (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
+      thunk_FUN_00515180(PTR_00801690,'\x06');
+      thunk_FUN_00515180(PTR_00801690,'\x05');
       return;
     }
   }

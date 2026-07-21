@@ -423,12 +423,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar12;
-  iVar13 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758,0,iVar8,&DAT_007a4ccc)
+  iVar13 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x758,0,iVar8,"%s")
   ;
   if (iVar13 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar8,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758);
+  RaiseInternalException(iVar8,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x758);
   return;
 }
 

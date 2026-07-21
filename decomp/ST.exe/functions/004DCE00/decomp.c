@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
     iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_jump_cpp_007bf64c,0x58);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x58);
     }
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -41,13 +41,13 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
     param_1[0x134] = 0;
   }
   if (param_1[0x134] == 1) {
-    wsprintfA(local_108,&DAT_007a4ccc,s_jmpmine_007bf640);
+    wsprintfA(local_108,"%s","jmpmine");
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = STT3DSprC::LoadSequence
                       (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,DAT_00806774,local_108,0x1d);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_jump_cpp_007bf64c,0x61);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x61);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad5e0(*(int *)((int)param_1 + 0x5ff));

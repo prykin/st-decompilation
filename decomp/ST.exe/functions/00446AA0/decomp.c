@@ -180,12 +180,12 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
     }
     g_currentExceptionFrame = local_90.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a25,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__OptimizeGuardBoat_007a8430);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2a25,0,0,"%s",
+                                 "STAllPlayersC::OptimizeGuardBoats");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a26);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2a26);
     }
   }
   return;

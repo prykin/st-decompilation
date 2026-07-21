@@ -63,12 +63,12 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   iVar6 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e,0,iVar4,&DAT_007a4ccc,
-                               s_BldBoatPanelTy__PaintBldBut_007c186c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\bldboat.cpp",0x9e,0,iVar4,"%s",
+                               "BldBoatPanelTy::PaintBldBut");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\bldboat.cpp",0x9e);
     return;
   }
   FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_18->field_0068,0,local_1c,local_c,local_14[2],
@@ -86,7 +86,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6,uVar3,'\x06',pbVar5);
   if ((((local_8 != (Global_sub_00526BA0_param_1Enum *)0x0) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
-    wsprintfA(&pBVar2->field_0x6c,&DAT_007c1890,local_8[1]);
+    wsprintfA(&pBVar2->field_0x6c,"%d",local_8[1]);
     ccFntTy::SetSurf(pBVar2->field_028A,pBVar2->field_0068,0,iVar6,uVar3,local_14[2],local_14[3]);
     ccFntTy::WrStr(pBVar2->field_028A,(uint *)&pBVar2->field_0x6c,-2,-1,0);
   }

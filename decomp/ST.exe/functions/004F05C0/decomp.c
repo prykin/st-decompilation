@@ -63,10 +63,10 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   this_00 = local_1c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_bldobj_cpp_007c1984,0x3d,0,iVar7,&DAT_007a4ccc,
-                               s_BldObjPanelTy__InitBldObjPanel_007c19a8);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\bldobj.cpp",0x3d,0,iVar7,"%s",
+                               "BldObjPanelTy::InitBldObjPanel");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar7,0,s_E____titans_Andrey_bldobj_cpp_007c1984,0x3d);
+      RaiseInternalException(iVar7,0,"E:\\__titans\\Andrey\\bldobj.cpp",0x3d);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -83,20 +83,20 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   iVar7 = 1;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   piVar12 = (int *)0x0;
-  pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJW_007c19e0,0);
+  pCVar4 = thunk_FUN_00571240("BKG_BLDOBJW",0);
   puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar12,iVar7);
   this_00->field_0184 = puVar5;
-  pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
-  wsprintfA(&this_00->field_0x6c,&DAT_007c181c,pCVar4);
+  pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
+  wsprintfA(&this_00->field_0x6c,"%s0",pCVar4);
   puVar5 = cMf32::RecGet(DAT_00806790,1,&this_00->field_0x6c,(int *)0x0,1);
   this_00->field_027A = puVar5;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar5;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,s_OBJSD_007c1908,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_018C = puVar5;
-  pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
+  pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2724,0x36,2,0xc1,0xc,0x79,99,0x5b,0xb7,99,0x1c,
              (DAT_0080874e == '\x03') + 0x13,0x31,pCVar4);

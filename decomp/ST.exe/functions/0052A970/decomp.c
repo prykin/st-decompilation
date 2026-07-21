@@ -42,20 +42,20 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
         {
           puVar2 = &DAT_007c6eec;
         }
-        wsprintfA((LPSTR)&DAT_008016a4,&DAT_007c6ee4,s_Shift_007c5558,puVar2);
+        wsprintfA((LPSTR)&DAT_008016a4,"%s%s","Shift",puVar2);
       }
       if ((param_1 & 0x8000000) != 0) {
         if ((uVar6 != 0) || (puVar2 = &DAT_008016a0, uVar4 != 0)) {
           puVar2 = &DAT_007c6eec;
         }
-        wsprintfA((LPSTR)&DAT_008016a4,s__s_s_s_007c6edc,&DAT_008016a4,&DAT_007c5454,puVar2);
+        wsprintfA((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5454,puVar2);
       }
       if (uVar4 != 0) {
         puVar2 = &DAT_007c6eec;
         if (uVar6 == 0) {
           puVar2 = &DAT_008016a0;
         }
-        wsprintfA((LPSTR)&DAT_008016a4,s__s_s_s_007c6edc,&DAT_008016a4,&DAT_007c5670,puVar2);
+        wsprintfA((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5670,puVar2);
       }
       if (uVar6 < 0x100) {
         puVar2 = &DAT_007c5210 + (param_1 & 0xffff) * 0x14;
@@ -63,7 +63,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
       else {
         puVar2 = &DAT_008016a0;
       }
-      wsprintfA((LPSTR)&DAT_008016a4,&DAT_007c6ee4,&DAT_008016a4,puVar2);
+      wsprintfA((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,puVar2);
       return &DAT_008016a4;
     }
     pcVar3 = LoadResourceString(0x2732,HINSTANCE_00807618);

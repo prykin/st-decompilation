@@ -34,8 +34,8 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     }
     DarkScreen(DAT_0080759c,10,2);
     thunk_FUN_00568bc0(&g_sound,1);
-    if (PTR_0081176c->field_002C != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
+    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
@@ -80,12 +80,12 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x9d,0,iVar3,&DAT_007a4ccc,
-                             s_CampaignTy__DoneCampaign_007cbdd0);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x9d,0,iVar3,"%s",
+                             "CampaignTy::DoneCampaign");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x9d);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\camp_obj.cpp",0x9d);
   return;
 }
 

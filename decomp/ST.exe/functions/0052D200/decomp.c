@@ -38,12 +38,12 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,uint param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x2d,0,iVar3,&DAT_007a4ccc,
-                             s_PopUpTy__OutStr_007c6fbc);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x2d,0,iVar3,"%s",
+                             "PopUpTy::OutStr");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0x2d);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\mpopup.cpp",0x2d);
   return;
 }
 

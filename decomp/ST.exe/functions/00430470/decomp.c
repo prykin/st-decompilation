@@ -26,7 +26,7 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
     if (param_2 == -1) {
       if (param_1 == 0) {
         RaiseInternalException
-                  (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x7e2);
       }
       index_00 = PTR_007fa130->count;
@@ -45,7 +45,7 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
       if ((index_00 < PTR_007fa130->count) &&
          (DArrayGetElement(PTR_007fa130,index_00,&local_8), local_8 != 0)) {
         RaiseInternalException
-                  (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x7f0);
       }
     }
@@ -56,10 +56,10 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
     return CONCAT22((short)((uint)DAT_007fa134 >> 0x10),(short)index_00);
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x7f6,0,errorCode,
-                             &DAT_007a4ccc,s_STAllPlayersC__RegisterTorpedo_007a6718);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x7f6,0,errorCode,
+                             "%s","STAllPlayersC::RegisterTorpedo");
   if (iVar2 == 0) {
-    RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7f7);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x7f7);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return CONCAT22(extraout_var,0xffff);
   }

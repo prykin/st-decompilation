@@ -42,10 +42,10 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x164,0,iVar6,&DAT_007a4ccc
-                               ,s_SettMapMTy__SetListCtrls_007cd2f0);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x164,0,iVar6,"%s"
+                               ,"SettMapMTy::SetListCtrls");
     if (iVar8 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_Start_settmobj_cpp_007cd258,0x164);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\settmobj.cpp",0x164);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

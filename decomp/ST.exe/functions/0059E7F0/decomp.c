@@ -97,12 +97,12 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x782,0,iVar6,&DAT_007a4ccc,
-                             s_FSGSTy__NewGameCtrls_007cc36c);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x782,0,iVar6,"%s",
+                             "FSGSTy::NewGameCtrls");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x782);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x782);
   return;
 }
 

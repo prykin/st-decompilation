@@ -42,7 +42,7 @@ int __cdecl FUN_006a2ed0(short *param_1)
     if (local_14 != (HoloTy *)0x0) goto LAB_006a2f2f;
   }
   RaiseInternalException
-            (-2,g_overwriteContext_007ED77C,s_E____titans_Maps_prepare_cpp_007dfacc,0xcf);
+            (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\prepare.cpp",0xcf);
 LAB_006a2f2f:
   dVar2 = (double)((float)(int)param_1[1] * _DAT_0079d84c);
   dVar3 = (double)((float)-(int)param_1[1] * _DAT_0079d84c);

@@ -64,7 +64,7 @@ LAB_0067f671:
     local_8 = 0;
     uVar6 = Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_00848a28,&local_8);
     if (uVar6 != uVar3) {
-      RaiseInternalException(-5,g_overwriteContext_007ED77C,s___ai_ai_script_v_inl_007d55d8,0x126);
+      RaiseInternalException(-5,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0x126);
     }
   }
   g_currentExceptionFrame = local_4c.previous;

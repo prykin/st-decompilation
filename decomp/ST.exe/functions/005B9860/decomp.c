@@ -33,10 +33,10 @@ MMMObjTy::OutLstProc
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
       OutBSlProc(param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 (undefined4 *)&PTR_0081176c->field_0x140);
+                 &PTR_0081176c->field_0140);
       Library::DKW::DDX::FUN_006c68f0
                 (param_1,param_4,param_5,param_6,0x15,(int)&PTR_0081176c->field_0x144);
-      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,*(undefined4 *)&PTR_0081176c->field_0x140);
+      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,PTR_0081176c->field_0140);
       uVar7 = 0;
       pcVar6 = PTR_0081176c->field_0034;
       uVar5 = 0xffffffff;
@@ -50,12 +50,12 @@ MMMObjTy::OutLstProc
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x3b,0,errorCode,
-                               &DAT_007a4ccc,s_MMMObjTy__OutLstProc_007ccd6c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x3b,0,errorCode,
+                               "%s","MMMObjTy::OutLstProc");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x3b);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x3b);
   }
   return;
 }

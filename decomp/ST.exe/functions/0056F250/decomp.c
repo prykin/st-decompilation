@@ -40,7 +40,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   local_10 = this;
   if (param_2 == 0) {
     if (*(int *)((int)this + 0x1178) != 0) {
-      wsprintfA((LPSTR)local_1a8,s__s_s_s__s_007ca1ec,(int)this + 0x60,PTR_s_SAVEGAME__0079b02c,
+      wsprintfA((LPSTR)local_1a8,"%s%s%s\\%s",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c,
                 &DAT_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
       *(undefined4 *)((int)this + 0x1178) = 0;
       goto LAB_0056f325;
@@ -49,7 +49,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
     param_3 = (char *)((int)this + 0x7a02);
   }
   else if (param_3 == (char *)0x0) {
-    wsprintfA((LPSTR)local_1a8,s__s_s_s__sDEBUG_u_007ca1f8,(int)this + 0x60,PTR_s_SAVEGAME__0079b02c
+    wsprintfA((LPSTR)local_1a8,"%s%s%s\\%sDEBUG%u",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c
               ,&DAT_00807ddd,PTR_DAT_0079b050,param_2);
     goto LAB_0056f325;
   }
@@ -99,7 +99,7 @@ LAB_0056f325:
       }
       pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
-        Library::Ourlib::MFSTMAP::mfTMapSave(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
+        Library::Ourlib::MFSTMAP::mfTMapSave(DAT_00806750,(int)local_14,"3D_MAP",'\x01');
         pvVar2 = local_10;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::Ourlib::MFANY::mfAnySave

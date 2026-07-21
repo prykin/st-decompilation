@@ -27,7 +27,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   this_00 = local_c;
   if (errorCode == 0) {
     local_8 = local_8 & 0xffffff00;
-    if (local_c->field_009A != '\0') {
+    if (local_c->field_009A != 0) {
       do {
         uVar4 = local_8 & 0xff;
         if (((&this_00->field_0066)[uVar4] == 0) ||
@@ -47,16 +47,16 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
         bVar3 = (char)local_8 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar3);
-      } while (bVar3 < (byte)this_00->field_009A);
+      } while (bVar3 < this_00->field_009A);
     }
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1c1,0,errorCode,
-                             &DAT_007a4ccc,s_MMsgTy__StatePanel_007ccce0);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x1c1,0,errorCode,
+                             "%s","MMsgTy::StatePanel");
   if (iVar5 == 0) {
-    RaiseInternalException(errorCode,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1c1);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x1c1);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

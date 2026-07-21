@@ -54,7 +54,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     if ((this_01->field_0066 == '\x01') &&
        (this_01->field_0067 = 0, (&this_01->field_0347)[(byte)this_01->field_006A]->count != 0)) {
       local_8 = (cMf32 *)0x0;
-      wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079c0d4,
+      wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&DAT_00807680,PTR_s_SAVEGAME__0079c0d4,
                 &DAT_00807ddd,PTR_s_PL_LOG_0079c0d8);
       local_98.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_98;
@@ -69,14 +69,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       if (local_8 != (cMf32 *)0x0) {
         local_10 = &DAT_0080c522;
         pDVar2 = (&local_c->field_0347)[(byte)local_c->field_006A];
-        if ((uint)local_c->field_006B < pDVar2->count) {
+        if (local_c->field_006B < pDVar2->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c->field_006B) (runtime stride) */
           puVar6 = (undefined4 *)(pDVar2->elementSize * local_c->field_006B + (int)pDVar2->data);
         }
         else {
           puVar6 = (undefined4 *)0x0;
         }
-        wsprintfA((LPSTR)&DAT_0080f33a,s__s_01d_02d_007cd074,PTR_DAT_0079c0dc,
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s%01d%02d",PTR_DAT_0079c0dc,
                   (byte)local_c->field_006A + 1,*puVar6);
         puVar7 = cMf32::RecGet(this_02,0xc,(char *)&DAT_0080f33a,(int *)&local_10,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -116,7 +116,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       else {
         sVar4 = (((int)(DAT_0080c83e + 2) <= iVar5) - 1 & 0xfffe) + 2;
       }
-      this_01->field_0033 = sVar4;
+      *(short *)&this_01->field_0x33 = sVar4;
       FUN_006e6080(this_01,2,this_01->field_009F,(undefined4 *)puVar1);
       iVar5 = iVar5 + 1;
     } while (iVar5 < 9);
@@ -132,14 +132,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       if (DAT_0080c83e != 0) {
         piVar10 = &DAT_0080c947;
         do {
-          if ((int)this_01->field_02A3 < *piVar10) {
+          if (this_01->field_02A3 < *piVar10) {
             this_01->field_02A3 = *piVar10;
           }
           iVar5 = iVar5 + 1;
           piVar10 = piVar10 + 1;
         } while (iVar5 < (int)(uint)DAT_0080c83e);
       }
-      if ((int)this_01->field_02A3 < DAT_0080c963) {
+      if (this_01->field_02A3 < DAT_0080c963) {
         this_01->field_02A3 = DAT_0080c963;
       }
       uVar8 = CreateBut(this_01,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
@@ -157,10 +157,10 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x30e,0,iVar5,&DAT_007a4ccc,
-                             s_MReportTy__SetCtrl_007cd05c);
+  iVar9 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x30e,0,iVar5,"%s",
+                             "MReportTy::SetCtrl");
   if (iVar9 == 0) {
-    RaiseInternalException(iVar5,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x30e);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x30e);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

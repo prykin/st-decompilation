@@ -13,7 +13,7 @@ STManBasisC * __thiscall STManBasisC::STManBasisC(STManBasisC *this)
   int iVar1;
   undefined4 *puVar2;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &STManBasisCVTable;
   puVar2 = &this->field_0020;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {

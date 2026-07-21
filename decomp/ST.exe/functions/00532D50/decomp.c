@@ -65,10 +65,10 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   this_02 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f,0,iVar5,
-                                &DAT_007a4ccc,s_OptPanelTy__PrepFiles_007c72bc);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x44f,0,iVar5,
+                                "%s","OptPanelTy::PrepFiles");
     if (iVar12 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x44f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

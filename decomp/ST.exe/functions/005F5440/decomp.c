@@ -66,9 +66,9 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
                 ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                      iVar5,iVar6,&local_10,&local_14), local_8 < 0 ||
                  ((4 < local_8 || (local_10 < 0)))))) ||
-               (((int)pVVar4->field_0030 <= local_10 ||
+               ((pVVar4->field_0030 <= local_10 ||
                 ((((iVar6 = (&DAT_0079aed0)[local_8] + local_14, iVar6 < 0 ||
-                   ((int)pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == 0)) ||
+                   (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == 0)) ||
                  (*(char *)(iVar6 * pVVar4->field_0030 + pVVar4->field_004C + local_10) != '\0')))))
                ) {
               if (pcVar7[0x1e] == '\0') {

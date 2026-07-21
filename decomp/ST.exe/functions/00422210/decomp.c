@@ -42,10 +42,10 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   pAVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar16 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xf0b,0,iVar3,&DAT_007a4ccc,
-                                s_STAllPlayersC__RestoreGObjData_007a507c);
+    iVar16 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xf0b,0,iVar3,"%s",
+                                "STAllPlayersC::RestoreGObjData");
     if (iVar16 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xf0c);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xf0c);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -71,12 +71,12 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x417,0,errorCode,&DAT_007a4ccc,
-                             s_STAppC__CloseGameDBs_007ca174);
+  iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x417,0,errorCode,"%s",
+                             "STAppC::CloseGameDBs");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_tapp_cpp_007ca0c8,0x417);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\tapp.cpp",0x417);
   return;
 }
 

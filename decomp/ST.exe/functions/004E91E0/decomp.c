@@ -43,7 +43,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
         iVar4 = 100;
       }
       else {
-        uVar6 = GetPlayerRaceId(param_1->field_0x24);
+        uVar6 = GetPlayerRaceId(*(char *)&param_1->field_0024);
         dVar7 = (*param_1->vtable->slot_2C)(param_1);
         iVar4 = *(int *)(&DAT_007e37b0 + ((uVar6 & 0xff) + dVar7 * 3) * 4);
       }
@@ -112,7 +112,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
 LAB_004e946f:
     if (((-1 < *(int *)((int)this + 0x4e4)) && (-1 < *(int *)((int)this + 0x4e8))) &&
        (-1 < *(int *)((int)this + 0x4ec))) {
-      *(undefined4 *)((int)this + 0x4d8) = param_1->field_0018;
+      *(uint *)((int)this + 0x4d8) = param_1->field_0018;
       dVar7 = (*param_1->vtable->slot_2C)(param_1);
       *(dword *)((int)this + 0x4dc) = dVar7;
       if (DAT_00800bcc == (void *)0x0) {

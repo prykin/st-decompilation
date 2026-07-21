@@ -28,12 +28,12 @@ undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x65,0,errorCode,&DAT_007a4ccc,
-                             s_GameSystemC__CreateSystemObjects_007cabcc);
+  iVar3 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x65,0,errorCode,"%s",
+                             "GameSystemC::CreateSystemObjects");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0x65);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0x65);
   return 0xfffffffc;
 }
 

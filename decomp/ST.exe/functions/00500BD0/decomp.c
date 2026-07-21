@@ -34,12 +34,12 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   pCVar4 = local_10;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x226,0,iVar6,&DAT_007a4ccc
-                               ,s_CPanelTy__PaintNewDeep_007c2508);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x226,0,iVar6,"%s"
+                               ,"CPanelTy::PaintNewDeep");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x226);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x226);
     return;
   }
   local_c = local_c & 0xffffff00;
@@ -145,7 +145,7 @@ joined_r0x00500e7c:
             if (-1 < (int)uVar7) {
               Library::DKW::DDX::FUN_006b3640
                         (DAT_008075a8,uVar7,0xffffffff,(&pCVar4->field_003C)[uVar3],
-                         *(uint *)(&pCVar4->field_0x94 + uVar3 * 4));
+                         (&pCVar4->field_0094)[uVar3]);
             }
           }
         }

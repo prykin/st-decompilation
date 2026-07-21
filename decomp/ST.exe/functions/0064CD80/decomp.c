@@ -127,12 +127,12 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   }
   g_currentExceptionFrame = local_4c.previous;
   FUN_00402e14((int)local_8);
-  iVar8 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x50,0,iVar3,&DAT_007a4ccc,
-                             s_AiEventClassTy__InitData_007d2a58);
+  iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x50,0,iVar3,"%s",
+                             "AiEventClassTy::InitData");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x51);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x51);
   return iVar3;
 }
 

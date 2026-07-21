@@ -8,10 +8,15 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.TerminatedStringDataType;
+import ghidra.program.model.listing.CommentType;
+import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.GhidraClass;
@@ -21,6 +26,7 @@ import ghidra.program.model.listing.ReturnParameterImpl;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolTable;
 
 public class STDebugSymbolApplier extends GhidraScript {
@@ -45,6 +51,7 @@ public class STDebugSymbolApplier extends GhidraScript {
         boolean commit = false;
         int applied = 0, skipped = 0, failed = 0, thiscalls = 0;
         int conventionsPreserved = 0;
+        int stringsApplied = 0, stringsUnchanged = 0, stringsFailed = 0;
         try {
             for (int index = 1; index < lines.size(); index++) {
                 monitor.checkCancelled();
@@ -113,6 +120,24 @@ public class STDebugSymbolApplier extends GhidraScript {
                     failed++;
                 }
             }
+            File stringFile = proposals.toPath().resolveSibling("debug_string_proposals.tsv")
+                .toFile();
+            if (stringFile.isFile()) {
+                for (Map<String, String> row : readRows(stringFile.toPath())) {
+                    monitor.checkCancelled();
+                    if (!enabled(row.get("apply"))) continue;
+                    try {
+                        String status = applyShortString(row);
+                        if ("applied".equals(status)) stringsApplied++;
+                        else stringsUnchanged++;
+                    }
+                    catch (Exception exception) {
+                        printerr("Short string " + row.get("address") + " failed: " +
+                            exception.getMessage());
+                        stringsFailed++;
+                    }
+                }
+            }
             commit = true;
         }
         finally {
@@ -120,7 +145,78 @@ public class STDebugSymbolApplier extends GhidraScript {
         }
         println("Debug symbols applied: " + applied + ", __thiscall: " + thiscalls +
             ", conventions preserved: " + conventionsPreserved +
-            ", skipped: " + skipped + ", failed: " + failed);
+            ", skipped: " + skipped + ", failed: " + failed +
+            ", short strings applied: " + stringsApplied + ", unchanged: " +
+            stringsUnchanged + ", failed: " + stringsFailed);
+    }
+
+    private String applyShortString(Map<String, String> row) throws Exception {
+        Address address = currentProgram.getAddressFactory().getAddress(row.get("address"));
+        if (address == null) throw new IllegalArgumentException("invalid address");
+        String value = unt(row.get("proposed_value"));
+        int length = value.length() + 1;
+        Data current = currentProgram.getListing().getDefinedDataAt(address);
+        if (current != null && current.hasStringValue() && value.equals(dataStringValue(current)))
+            return "unchanged";
+        if (current == null) throw new IllegalArgumentException("baseline data is missing");
+        if (!current.getDataType().getPathName().equals(unt(row.get("expected_type"))) ||
+                current.getLength() != Integer.parseInt(row.get("expected_length")) ||
+                !current.getDefaultValueRepresentation().equals(unt(row.get("expected_value"))))
+            throw new IllegalArgumentException("stale data baseline");
+        for (int index = 0; index < length; index++) {
+            int actual = currentProgram.getMemory().getByte(address.add(index)) & 0xff;
+            int expected = index == value.length() ? 0 : value.charAt(index) & 0xff;
+            if (actual != expected)
+                throw new IllegalArgumentException("bytes changed at +" + index);
+            if (currentProgram.getListing().getInstructionContaining(address.add(index)) != null)
+                throw new IllegalArgumentException("candidate overlaps an instruction");
+        }
+        currentProgram.getListing().clearCodeUnits(address, address.add(length - 1), false,
+            monitor);
+        Data created = currentProgram.getListing().createData(address,
+            TerminatedStringDataType.dataType, length);
+        created.setComment(CommentType.PLATE,
+            "[STDebugSymbolApplier] Recovered short ReportDebugMessage printf format.");
+        Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(address);
+        String proposedName = unt(row.get("proposed_name"));
+        if (symbol != null && !proposedName.isBlank() &&
+                (symbol.getSource() == SourceType.DEFAULT || symbol.getSource() == SourceType.ANALYSIS))
+            symbol.setName(proposedName, SourceType.ANALYSIS);
+        return "applied";
+    }
+
+    private String dataStringValue(Data data) {
+        Object value = data.getValue();
+        if (value instanceof String) return (String)value;
+        String representation = data.getDefaultValueRepresentation();
+        if (representation.length() >= 2 && representation.startsWith("\"") &&
+                representation.endsWith("\""))
+            return representation.substring(1, representation.length() - 1)
+                .replace("\\\\", "\\").replace("\\\"", "\"");
+        return representation;
+    }
+
+    private List<Map<String, String>> readRows(java.nio.file.Path path) throws Exception {
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        if (lines.isEmpty()) throw new IllegalArgumentException("Empty TSV: " + path);
+        String[] header = lines.get(0).split("\\t", -1);
+        List<Map<String, String>> rows = new ArrayList<>();
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] values = lines.get(line).split("\\t", -1);
+            if (values.length != header.length)
+                throw new IllegalArgumentException("Malformed TSV line " + (line + 1));
+            Map<String, String> row = new LinkedHashMap<>();
+            for (int column = 0; column < header.length; column++)
+                row.put(header[column], values[column]);
+            rows.add(row);
+        }
+        return rows;
+    }
+
+    private boolean enabled(String value) {
+        return "1".equals(value) || "true".equalsIgnoreCase(value) ||
+            "yes".equalsIgnoreCase(value);
     }
 
     private Parameter explicitEcxParameter(Function function) {

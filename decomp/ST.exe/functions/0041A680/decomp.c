@@ -25,8 +25,8 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
     if (uVar1 == 0x1ae) {
       FreeAndNull(&this->field_01AD);
       FreeAndNull(&this->field_01B1);
-      FreeAndNull((void **)&this->field_01C5);
-      FreeAndNull((void **)&this->field_01C9);
+      FreeAndNull(&this->field_01C5);
+      FreeAndNull(&this->field_01C9);
       return;
     }
     if (uVar1 < 0x173) {
@@ -145,8 +145,8 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
       this->field_0149 = 0;
       FreeAndNull((void **)&this->field_0185);
       FreeAndNull((void **)&this->field_0189);
-      FreeAndNull((void **)&this->field_018D);
-      FreeAndNull((void **)&this->field_0191);
+      FreeAndNull(&this->field_018D);
+      FreeAndNull(&this->field_0191);
       if ((DArrayTy *)this->field_01A1 != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)this->field_01A1);
         this->field_01A1 = 0;
@@ -155,18 +155,18 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
         DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }
-      FreeAndNull((void **)&this->field_01A5);
-      FreeAndNull((void **)&this->field_01A9);
-      FreeAndNull((void **)&this->field_01B5);
-      FreeAndNull((void **)&this->field_01B9);
+      FreeAndNull(&this->field_01A5);
+      FreeAndNull(&this->field_01A9);
+      FreeAndNull(&this->field_01B5);
+      FreeAndNull(&this->field_01B9);
       return;
     }
     if (uVar1 == 0x3e9) {
       return;
     }
   }
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x5f5,0,0,&DAT_007a4ccc,
-                             s_STGameObjC__ResetSelfCheckFlag_u_007a4e90);
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x5f5,0,0,"%s",
+                             "STGameObjC::ResetSelfCheckFlag unknown game type");
   if (iVar3 == 0) {
     return;
   }

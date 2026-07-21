@@ -23,25 +23,25 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x58,0,iVar3,&DAT_007a4ccc,
-                               s_STT3DSprC__UnLoadSequence_007ac65c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x58,0,iVar3,"%s",
+                               "STT3DSprC::UnLoadSequence");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0xffffffff;
   }
-  if (local_8->field_0018 == -1) {
+  if (local_8->field_0018 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x49);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x49);
   }
   if (((char)param_1 < '\0') || (pSVar2->field_0014 + -1 < (int)(char)param_1)) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x4a);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x4a);
   }
   if (pSVar2->field_0020 != 0) {
     iVar3 = (char)param_1 * 0x24;
     if (*(int *)(iVar3 + pSVar2->field_0020) != 0) {
-      FUN_006e98e0((void *)pSVar2->field_003C,pSVar2->field_0018,(int)(char)param_1,0,0,1);
+      FUN_006e98e0(pSVar2->field_003C,pSVar2->field_0018,(int)(char)param_1,0,0,1);
       value = (void **)(pSVar2->field_0020 + 4 + iVar3);
       pSVar2->field_001C = pSVar2->field_001C & ~(1 << (param_1 & 0x1f));
       if (*value != (void *)0x0) {

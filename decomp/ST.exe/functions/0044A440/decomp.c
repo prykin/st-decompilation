@@ -15,7 +15,7 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *p
   code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
-  STResourceC *pSVar2;
+  STGameObjC *pSVar2;
   int iVar3;
   undefined4 uVar4;
   InternalExceptionFrame local_50;
@@ -29,26 +29,26 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *p
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
-    pSVar2 = (STResourceC *)GetObjPtr(local_c,-1,param_1,CASE_4);
-    if (pSVar2 != param_2) {
+    pSVar2 = GetObjPtr(local_c,-1,param_1,CASE_4);
+    if (pSVar2 != (STGameObjC *)param_2) {
       RaiseInternalException
-                (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2f4e);
     }
-    DelObjFromTmps(this_00,DAT_0080874d,*(int *)&param_2->field_0x20,param_2->field_0x24,param_1);
-    DelObjFromSaveTmps(this_00,*(int *)&param_2->field_0x20,param_2->field_0x24,(short)param_1);
+    DelObjFromTmps(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
+    DelObjFromSaveTmps(this_00,param_2->field_0020,param_2->field_0024,(short)param_1);
     Library::DKW::TBL::FUN_006ae140(&PTR_007fa15c->flags,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f57,0,errorCode,
-                                 &DAT_007a4ccc,s_STAllPlayersC__UnRegisterDeposit_007a87c8);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2f57,0,errorCode,
+                                 "%s","STAllPlayersC::UnRegisterDeposit");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f58);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f58);
       return 0xffffffff;
     }
   }

@@ -138,12 +138,12 @@ LAB_0059d780:
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x69c,0,iVar9,&DAT_007a4ccc
-                               ,s_FSGSTy__InfoCtrls_007cc33c);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x69c,0,iVar9,"%s"
+                               ,"FSGSTy::InfoCtrls");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar9,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x69c);
+    RaiseInternalException(iVar9,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x69c);
   }
   return;
 }

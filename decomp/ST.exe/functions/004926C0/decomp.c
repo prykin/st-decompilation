@@ -58,7 +58,7 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
   local_dc[0x5b] = 0;
   local_dc[0x5c] = 2;
   local_dc[0x5d] = 0;
-  uVar2 = this->field_05EE;
+  uVar2 = *(ushort *)&this->field_0x5ee;
   local_dc[0x1e] = -2;
   local_dc[0x1f] = -1;
   local_dc[0x20] = -2;
@@ -135,7 +135,7 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
          (int)(short)uVar1].objects[1] == (STWorldObject *)0x0)))))))) {
     *(ushort *)&this->field_0x5f2 = uVar1;
     *(ushort *)&this->field_0x5f4 = uVar2;
-    this->field_05F6 = 4;
+    *(undefined2 *)&this->field_0x5f6 = 4;
     return 1;
   }
   iVar6 = 4;
@@ -160,7 +160,7 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
                (g_worldGrid.cells
                 [(int)sVar4 * (int)g_worldGrid.sizeX + sVar5 * local_8 + (int)sVar3].objects[1] ==
                 (STWorldObject *)0x0)))))))))) {
-          this->field_05F6 = sVar5;
+          *(short *)&this->field_0x5f6 = sVar5;
           *(short *)&this->field_0x5f4 = sVar4;
           *(short *)&this->field_0x5f2 = sVar3;
           return 1;

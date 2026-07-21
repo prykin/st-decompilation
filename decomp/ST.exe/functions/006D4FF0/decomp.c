@@ -5,7 +5,7 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
 {
   FUN_0074abc4(this,(undefined4 *)&DAT_0079dad0,param_1,param_2);
   FUN_006d5720((void *)((int)this + 0x150),0,(int)this,(int)this + 0x7c,param_3,
-               (char *)u_Input_007ee27c);
+               (char *)"Input");
   FUN_0074b91d((undefined4 *)((int)this + 0x240));
   *(int *)((int)this + 0x288) = param_4;
   FUN_006d5cd0((void *)((int)this + 0x294),this,0,param_3);
@@ -22,8 +22,8 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   *(undefined4 *)((int)this + 0x30c) = 1;
   if (DAT_007ee240 < 8) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    MessageBoxA(*(HWND *)(param_4 + 0x78),s_Need_compile__vidrend_cpp__with___007ee244,
-                s_Error_007ee274,0x1010);
+    MessageBoxA(*(HWND *)(param_4 + 0x78),"Need compile \"vidrend.cpp\" with /Zp8 option.",
+                "Error",0x1010);
     Library::MSVCRT::FUN_0072ef80(0xffffffff);
   }
   return this;

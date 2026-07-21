@@ -60,19 +60,18 @@ joined_r0x005f19be:
        (thunk_FUN_00558c00(pVVar2,pVVar2->field_010C,local_1c,local_18,&local_20,&local_24),
        pVVar4 = g_visibleClass_00802A88, -1 < iVar7)) &&
       (((iVar7 < 5 && (-1 < local_20)) &&
-       ((local_20 < (int)pVVar2->field_0030 &&
-        ((iVar7 = (&DAT_0079aed0)[iVar7] + local_24, -1 < iVar7 && (iVar7 < (int)pVVar2->field_0034)
-         ))))))) &&
-     ((pVVar2->field_004C != 0 &&
-      (((*(char *)(iVar7 * pVVar2->field_0030 + pVVar2->field_004C + local_20) == '\0' &&
-        (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
+       ((local_20 < pVVar2->field_0030 &&
+        ((iVar7 = (&DAT_0079aed0)[iVar7] + local_24, -1 < iVar7 && (iVar7 < pVVar2->field_0034))))))
+      )) && ((pVVar2->field_004C != 0 &&
+             (((*(char *)(iVar7 * pVVar2->field_0030 + pVVar2->field_004C + local_20) == '\0' &&
+               (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
     local_38 = local_1c + 1;
     thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18
                        ,&local_28,&local_2c);
     pVVar2 = g_visibleClass_00802A88;
-    if ((((-1 < local_28) && (local_28 < (int)pVVar4->field_0030)) &&
+    if ((((-1 < local_28) && (local_28 < pVVar4->field_0030)) &&
         (((iVar7 = (&DAT_0079aed0)[local_10] + local_2c, -1 < iVar7 &&
-          ((iVar7 < (int)pVVar4->field_0034 && (pVVar4->field_004C != 0)))) &&
+          ((iVar7 < pVVar4->field_0034 && (pVVar4->field_004C != 0)))) &&
          (*(char *)(iVar7 * pVVar4->field_0030 + pVVar4->field_004C + local_28) == '\0')))) &&
        ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))) {
       iVar7 = local_18 + 1;
@@ -80,18 +79,18 @@ joined_r0x005f19be:
                          &local_30,&local_34);
       pVVar3 = g_visibleClass_00802A88;
       if (((local_30 < 0) ||
-          (((((int)pVVar2->field_0030 <= local_30 ||
+          ((((pVVar2->field_0030 <= local_30 ||
              (iVar5 = (&DAT_0079aed0)[local_10] + local_34, psVar6 = local_8, iVar5 < 0)) ||
-            ((int)pVVar2->field_0034 <= iVar5)) ||
+            (pVVar2->field_0034 <= iVar5)) ||
            ((pVVar2->field_004C == 0 ||
             (*(char *)(iVar5 * pVVar2->field_0030 + pVVar2->field_004C + local_30) != '\0')))))) ||
          ((DAT_0080874d == -1 ||
           ((((g_visibleClass_00802A88->field_00F8 == 0 ||
              (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                  local_38,iVar7,&local_3c,&local_40), psVar6 = local_8, local_3c < 0
-             )) || (((int)pVVar3->field_0030 <= local_3c ||
+             )) || ((pVVar3->field_0030 <= local_3c ||
                     (((iVar7 = (&DAT_0079aed0)[local_10] + local_40, iVar7 < 0 ||
-                      ((int)pVVar3->field_0034 <= iVar7)) || (pVVar3->field_004C == 0)))))) ||
+                      (pVVar3->field_0034 <= iVar7)) || (pVVar3->field_004C == 0)))))) ||
            (pVVar4 = g_visibleClass_00802A88,
            *(char *)(iVar7 * pVVar3->field_0030 + pVVar3->field_004C + local_3c) != '\0'))))))
       goto LAB_005f1c4c;

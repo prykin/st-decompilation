@@ -51,10 +51,10 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1b4,0,iVar5,&DAT_007a4ccc
-                                ,s_MReportTy__PaintMReport_007ccf98);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x1b4,0,iVar5,"%s"
+                                ,"MReportTy::PaintMReport");
     if (iVar12 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1b4);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x1b4);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -208,11 +208,11 @@ LAB_005bf156:
           uVar10 = (uint)local_18 & 0xff;
           if ((&DAT_00808af4)[uVar10 * 0x9c] == (char)local_1c) {
             if (local_11 == '\0') {
-              wsprintfA((LPSTR)&DAT_0080f33a,s__s___s_007ccfc0,&DAT_0080f33a,
+              wsprintfA((LPSTR)&DAT_0080f33a,"%s, %s",&DAT_0080f33a,
                         &DAT_00808ab0 + uVar10 * 0x27);
             }
             else {
-              wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007a4ccc,&DAT_00808ab0 + uVar10 * 0x27);
+              wsprintfA((LPSTR)&DAT_0080f33a,"%s",&DAT_00808ab0 + uVar10 * 0x27);
               local_11 = '\0';
             }
             iVar5 = FUN_00711110(this_00->field_0083,(char *)&DAT_0080f33a);
@@ -384,14 +384,14 @@ LAB_005bf156:
       if (bVar3 != 1) {
         uVar22 = *(undefined4 *)(&DAT_0080c82b + (uint)bVar3 * 0x10);
       }
-      (*pcVar16)(&DAT_0080f33a,&DAT_007ccfb8,uVar22);
+      (*pcVar16)(&DAT_0080f33a,"%11d",uVar22);
       ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,0x8c,0x11f,0x62,0x14);
       ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
       uVar22 = DAT_0080c8bf;
       if (this_00->field_0069 != 1) {
         uVar22 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
       }
-      (*pcVar16)(&DAT_0080f33a,&DAT_007ccfb8,uVar22);
+      (*pcVar16)(&DAT_0080f33a,"%11d",uVar22);
       iVar5 = 0x12a;
     }
     else {
@@ -399,21 +399,21 @@ LAB_005bf156:
       if (bVar3 != 1) {
         uVar22 = *(undefined4 *)(&DAT_0080c827 + (uint)bVar3 * 0x10);
       }
-      (*pcVar16)(&DAT_0080f33a,&DAT_007ccfb4,uVar22);
+      (*pcVar16)(&DAT_0080f33a,"%7d",uVar22);
       ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,0x75,0x11f,0x3e,0x14);
       ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
       uVar22 = DAT_0080c8bb;
       if (this_00->field_0069 != 1) {
         uVar22 = *(undefined4 *)(&DAT_0080c82b + (uint)(byte)this_00->field_0069 * 0x10);
       }
-      (*pcVar16)(&DAT_0080f33a,&DAT_007ccfb8,uVar22);
+      (*pcVar16)(&DAT_0080f33a,"%11d",uVar22);
       ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,0xcc,0x11f,0x62,0x14);
       ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
       uVar22 = DAT_0080c8bf;
       if (this_00->field_0069 != 1) {
         uVar22 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
       }
-      (*pcVar16)(&DAT_0080f33a,&DAT_007ccfb8,uVar22);
+      (*pcVar16)(&DAT_0080f33a,"%11d",uVar22);
       iVar5 = 0x146;
     }
     ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,iVar5,0x11f,0x62,0x14);
@@ -571,14 +571,14 @@ LAB_005bef6c:
   local_8 = CONCAT31(local_8._1_3_,cVar14);
   if (cVar14 == '\0') {
     puVar13 = &DAT_007c2198;
-    pcVar7 = &DAT_007c2194;
+    pcVar7 = "%s;";
   }
   else {
     puVar13 = (undefined *)(DAT_0080c83a / 0xe10 & 0xff);
-    pcVar7 = &DAT_007c219c;
+    pcVar7 = "%2d:";
   }
   wsprintfA((LPSTR)&DAT_0080f33a,pcVar7,puVar13);
-  wsprintfA((LPSTR)&DAT_0080f33a,s__s_02d__02d_007c2184,&DAT_0080f33a,
+  wsprintfA((LPSTR)&DAT_0080f33a,"%s%02d:%02d",&DAT_0080f33a,
             (int)(((ulonglong)DAT_0080c83a % 0xe10) / 0x3c),
             (int)(((ulonglong)DAT_0080c83a % 0xe10) % 0x3c));
   ccFntTy::SetSurf(this_00->field_008B,(int)local_c,0,local_c->field_0004 + -0x69,

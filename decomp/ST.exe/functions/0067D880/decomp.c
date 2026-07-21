@@ -25,7 +25,7 @@ undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xee);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0xee);
     }
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 != (ushort *)0x0) {
@@ -36,14 +36,14 @@ undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
     return local_c;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xf5,0,errorCode,&DAT_007a4ccc,
-                             s_LoadPlrEdit_007d2fd8);
+  iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0xf5,0,errorCode,"%s",
+                             "LoadPlrEdit");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0067d160((int *)&local_8);
   thunk_FUN_0067d160((int *)&local_c);
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xf7);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0xf7);
   return (undefined4 *)0x0;
 }
 

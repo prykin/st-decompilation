@@ -67,12 +67,12 @@ AiEventClassTy::__CreateObjPl
   iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0xcb,0,iVar3,&DAT_007a4ccc,
-                               s_AiEventClassTy____CreateObjPl_007d2a9c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xcb,0,iVar3,"%s",
+                               "AiEventClassTy::__CreateObjPl");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0xcc);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0xcc);
     return iVar3;
   }
   if ((param_2 < 1) || (0x28 < param_2)) {
@@ -100,7 +100,7 @@ AiEventClassTy::__CreateObjPl
       local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_38->field_0088 = local_18;
       iVar3 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
-                                 ((uint)local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
+                                 (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
                                  (int)(short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }

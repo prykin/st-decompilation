@@ -65,10 +65,10 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   this_00 = local_1c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_bldboat_cpp_007c17b4,0x3f,0,iVar8,&DAT_007a4ccc,
-                               s_BldBoatPanelTy__InitBldBoatPanel_007c17dc);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\bldboat.cpp",0x3f,0,iVar8,"%s",
+                               "BldBoatPanelTy::InitBldBoatPanel");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar8,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x3f);
+      RaiseInternalException(iVar8,0,"E:\\__titans\\Andrey\\bldboat.cpp",0x3f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -84,18 +84,18 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   } while (iVar8 != 0);
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   pcVar4 = (ccFntTy *)
-           ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,s_HOLD_FONT_007c1844,0);
+           ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"HOLD_FONT",0);
   this_00->field_028A = pcVar4;
   pcVar4->field_0058 = 1;
   pcVar4->field_005C = 0;
   iVar8 = 1;
   piVar13 = (int *)0x0;
-  pCVar5 = thunk_FUN_00571240(s_BKG_BLDBOATW_007c1834,0);
+  pCVar5 = thunk_FUN_00571240("BKG_BLDBOATW",0);
   puVar6 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar5,piVar13,iVar8);
   this_00->field_0184 = puVar6;
   text = &this_00->field_0x6c;
-  pCVar5 = thunk_FUN_00571240(s_BKG_BLDBOATBUT_007c1820,0);
-  wsprintfA(text,&DAT_007c181c,pCVar5);
+  pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
+  wsprintfA(text,"%s0",pCVar5);
   puVar6 = cMf32::RecGet((cMf32 *)DAT_00806790,1,text,(int *)0x0,1);
   this_00->field_028E = puVar6;
   if (DAT_0080874d == 0xff) {
@@ -104,14 +104,14 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   else {
     iVar8 = DAT_0080874d + 1;
   }
-  wsprintfA(text,s_BOATS__d_007c1810,iVar8);
+  wsprintfA(text,"BOATS_%d",iVar8);
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_B,text,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar6;
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,s_BOATS_D_007c1804,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_018C = puVar6;
-  pCVar5 = thunk_FUN_00571240(s_BKG_BLDBOATBUT_007c1820,0);
+  pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2723,0x3f,2,0xc1,0xc,0x85,99,0x68,0xc4,99,0x20,0x13,0x33,
              pCVar5);

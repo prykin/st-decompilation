@@ -14,7 +14,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   int iVar3;
   HoloTy *pHVar4;
   uint *puVar5;
-  undefined1 *this_01;
+  undefined4 *this_01;
   int iVar6;
   uint uVar7;
   char cVar8;
@@ -29,12 +29,12 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x34c,0,iVar3,&DAT_007a4ccc
-                               ,s_WaitTy__DeleteCtrls_007cde3c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x34c,0,iVar3,"%s"
+                               ,"WaitTy::DeleteCtrls");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x34c);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\wait_obj.cpp",0x34c);
     return;
   }
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -48,9 +48,8 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   this_00 = local_c;
   SetAccelerator(0,local_c->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   FUN_006b5f80(DAT_008075a8,0x112,0x38,0x204,0x19d);
-  this_01 = &this_00->field_1A5B->field_0x140;
-  MMMObjTy::OutRGlProc
-            ((MMMObjTy *)this_01,DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,(undefined4 *)this_01);
+  this_01 = &this_00->field_1A5B->field_0140;
+  MMMObjTy::OutRGlProc((MMMObjTy *)this_01,DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,this_01);
   if (this_00->field_1AF8 != (HoloTy *)0x0) {
     HoloTy::Done(this_00->field_1AF8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1AF8);
@@ -63,14 +62,14 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   else {
     pHVar4->field_0002 = 1;
     pHVar4->field_0000 = 0;
-    pHVar4->field_0003 = 0xffffffff;
+    pHVar4->field_0003 = -1;
     pHVar4->field_0001 = CASE_2;
     pHVar4->field_0007 = 0;
     pHVar4->field_000B = 0;
     *(undefined4 *)&pHVar4->field_0xf = 0;
     *(undefined4 *)&pHVar4->field_0x1b = 1;
     pHVar4->field_0013 = 1;
-    pHVar4->field_0017 = 0xffffffff;
+    pHVar4->field_0017 = -1;
     pHVar4->field_0027 = 0;
     pHVar4->field_0023 = 0;
     pHVar4->field_002F = 1;
@@ -87,7 +86,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     if (uVar7 != 0) {
       pHVar4 = this_00->field_1AF8;
       pHVar4->field_0002 = 0;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       uVar7 = this_00->field_1AF8->field_0003;
       if (-1 < (int)uVar7) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar7);
@@ -129,14 +128,14 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -153,7 +152,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       if (uVar7 != 0) {
         pHVar4 = this_00->field_1B00;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar7 = this_00->field_1B00->field_0003;
         if (-1 < (int)uVar7) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar7);
@@ -200,14 +199,14 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -224,7 +223,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       if (uVar7 != 0) {
         pHVar4 = this_00->field_1AFC;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar7 = this_00->field_1AFC->field_0003;
         if (-1 < (int)uVar7) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar7);

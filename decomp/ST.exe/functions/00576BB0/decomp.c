@@ -27,23 +27,23 @@ void CreateBaseSystem(void)
       DAT_00811638 = BaseSystemC::BaseSystemC(this,g_appClass_00806728);
     }
     if (DAT_00811638 == (BaseSystemC *)0x0) {
-      RaiseInternalException(-1,g_overwriteContext_007ED77C,s_E____titans_tsystem_cpp_007cab5c,0x38)
+      RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38)
       ;
     }
-    DAT_00811638[8].vtable = (BaseSystemCVTable *)0x0;
+    DAT_00811638->field_0020 = 0;
     (*DAT_00811638->vtable->InitSystem)((SystemClassTy *)DAT_00811638);
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)DAT_00811638,0);
-    DAT_00811638[8].vtable = (BaseSystemCVTable *)0x1;
+    DAT_00811638->field_0020 = 1;
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x40,0,errorCode,&DAT_007a4ccc,
-                             s_CreateBaseSystem_007caba0);
+  iVar2 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x40,0,errorCode,"%s",
+                             "CreateBaseSystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0x41);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0x41);
   return;
 }
 

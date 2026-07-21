@@ -36,7 +36,7 @@ void __cdecl LandInit(short *param_1)
     }
     if (DAT_0080760c == (AnonShape_006DC050_D52EE3EA *)0x0) {
       RaiseInternalException
-                (-2,g_overwriteContext_007ED77C,s_E____titans_tinittxt_cpp_007ca6d0,0x160);
+                (-2,g_overwriteContext_007ED77C,"E:\\__titans\\tinittxt.cpp",0x160);
     }
     FUN_006dc050(DAT_0080760c,DAT_0080759c,0,0,(uint)*(byte *)(param_1 + 2) << 1,
                  (uint)*(byte *)(param_1 + 2) << 1,0,0xc0240000,0,0x40240000,0,0xc0240000,0,
@@ -83,12 +83,12 @@ void __cdecl LandInit(short *param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_tinittxt_cpp_007ca6d0,0x17b,0,iVar4,&DAT_007a4ccc,
-                             s_LandInit_007ca714);
+  iVar8 = ReportDebugMessage("E:\\__titans\\tinittxt.cpp",0x17b,0,iVar4,"%s",
+                             "LandInit");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_tinittxt_cpp_007ca6d0,0x17c);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\tinittxt.cpp",0x17c);
   return;
 }
 

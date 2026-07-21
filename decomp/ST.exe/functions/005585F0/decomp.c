@@ -107,12 +107,12 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
     value = value + 1;
     iVar9 = iVar9 + -1;
   } while (iVar9 != 0);
-  iVar9 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x132,0,errorCode,&DAT_007a4ccc
-                             ,s_Visible__PrepareAfterSave_error_007c9358);
+  iVar9 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x132,0,errorCode,"%s"
+                             ,"Visible::PrepareAfterSave error");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_grig_visible_cpp_007c92cc,0x133);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\grig\\visible.cpp",0x133);
   return;
 }
 

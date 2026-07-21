@@ -236,8 +236,8 @@ STBoatC::GetVisualInfo
     break;
   default:
     *param_4 = 0;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x12e,0,0,&DAT_007a4ccc,
-                               s_STBoatC__GetVisualInfo_BODY_LEVE_007a9d60);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x12e,0,0,"%s",
+                               "STBoatC::GetVisualInfo BODY_LEVEL");
     if (iVar3 == 0) {
       return;
     }

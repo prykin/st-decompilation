@@ -17,7 +17,7 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
                         (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x2a3),
                          CONCAT22((short)((uint)in_EAX >> 0x10),*(short *)((int)this + 0x2ab)),
                          CASE_1);
-    if ((this_00 != (STBoatC *)0x0) && (this_00->field_0018 == *(int *)((int)this + 0x2a7)))
+    if ((this_00 != (STBoatC *)0x0) && (this_00->field_0018 == *(uint *)((int)this + 0x2a7)))
     goto LAB_005ef720;
   }
   if (*(int *)((int)this + 0x2a7) != 0) {

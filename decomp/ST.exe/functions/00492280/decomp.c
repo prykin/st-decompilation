@@ -32,8 +32,8 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
     }
   }
   else {
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50f0,0,0,&DAT_007a4ccc,
-                               s_STBoatC__CancelLoading_incorrect_007abbc4);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x50f0,0,0,"%s",
+                               "STBoatC::CancelLoading incorrect call");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

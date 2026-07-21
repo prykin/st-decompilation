@@ -73,7 +73,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     }
     local_18c[1] = param_1;
     local_18c[0] = param_2;
-    wsprintfA((LPSTR)(pPVar2 + 1),&DAT_007c181c,param_8);
+    wsprintfA((LPSTR)(pPVar2 + 1),"%s0",param_8);
     local_c = cMf32::RecGet(DAT_00806790,param_7,(char *)(pPVar2 + 1),(int *)0x0,1);
     local_17c = *(undefined4 *)(local_c + 2);
     local_178 = *(undefined4 *)(local_c + 4);
@@ -125,12 +125,12 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     return local_8;
   }
   g_currentExceptionFrame = local_1d0.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0x97,0,iVar3,&DAT_007a4ccc,
-                             s_PanelTy__CreateBut_007c7414);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x97,0,iVar3,"%s",
+                             "PanelTy::CreateBut");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_panel_cpp_007c7390,0x97);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\panel.cpp",0x97);
   return 0;
 }
 

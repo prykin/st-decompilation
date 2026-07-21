@@ -40,20 +40,20 @@ void CreateAi(void)
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x10a,0,iVar3,&DAT_007a4ccc,
-                               s_CreateAi_007d28c4);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x10a,0,iVar3,"%s",
+                               "CreateAi");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (local_8 != (ushort *)0x0) {
       FreeAndNull(&local_8);
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x10c);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x10c);
     return;
   }
   if (PTR_00802a38 == (STPlaySystemC *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x9d);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x9d);
   }
   if (DAT_0080879c == 0) {
     switch(_DAT_008087a0 & 0xff) {

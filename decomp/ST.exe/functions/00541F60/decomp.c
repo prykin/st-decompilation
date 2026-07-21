@@ -29,7 +29,7 @@ void __cdecl FUN_00541f60(int param_1,undefined *param_2,BYTE param_3)
   }
   local_79 = param_3;
   uVar3 = 0xffffffff;
-  pcVar5 = s_Small_Fonts_007c1bb4;
+  pcVar5 = "Small Fonts";
   do {
     pcVar7 = pcVar5;
     if (uVar3 == 0) break;

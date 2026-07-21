@@ -15,7 +15,7 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   int iVar9;
   int iVar10;
   int iVar11;
-  int iVar12;
+  dword dVar12;
   char *pcVar13;
   DArrayTy *pDVar14;
   int iVar15;
@@ -92,11 +92,11 @@ LAB_004af1d5:
               }
             }
             else {
-              if ((*(uint *)&local_10->field_0x24 < 8) &&
+              if (((uint)local_10->field_0024 < 8) &&
                  ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[*(uint *)&local_10->field_0x24 * 0x51] < 8)))) {
-                bVar2 = local_10->field_0x24;
-                if (*(char *)((int)&g_appClass_00806728[0x5d].field_0014 + 3) == '\0') {
+                  ((byte)(&DAT_008087e9)[local_10->field_0024 * 0x51] < 8)))) {
+                bVar2 = *(byte *)&local_10->field_0024;
+                if (g_appClass_00806728->field_146F == '\0') {
                   if (bVar2 == (byte)param_1) {
 LAB_004af2f0:
                     iVar10 = 0;
@@ -104,36 +104,31 @@ LAB_004af2f0:
                   else {
                     uVar20 = (uint)bVar2;
                     uVar17 = param_1 & 0xff;
-                    cVar3 = *(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                     uVar17 + uVar20 * 8 + 3);
+                    cVar3 = (&g_appClass_00806728->field_0x142f)[uVar17 + uVar20 * 8];
                     if ((cVar3 == '\0') &&
-                       (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                 uVar20 + uVar17 * 8 + 3) == '\0')) {
+                       ((&g_appClass_00806728->field_0x142f)[uVar20 + uVar17 * 8] == '\0')) {
                       iVar10 = -2;
                     }
                     else if ((cVar3 == '\x01') &&
-                            (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                      uVar20 + uVar17 * 8 + 3) == '\0')) {
+                            ((&g_appClass_00806728->field_0x142f)[uVar20 + uVar17 * 8] == '\0')) {
                       iVar10 = -1;
                     }
                     else if ((cVar3 == '\0') &&
-                            (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                      uVar20 + uVar17 * 8 + 3) == '\x01')) {
+                            ((&g_appClass_00806728->field_0x142f)[uVar20 + uVar17 * 8] == '\x01')) {
                       iVar10 = 1;
                     }
                     else {
                       if ((cVar3 != '\x01') ||
-                         (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                   uVar20 + uVar17 * 8 + 3) != '\x01')) goto LAB_004af2f0;
+                         ((&g_appClass_00806728->field_0x142f)[uVar20 + uVar17 * 8] != '\x01'))
+                      goto LAB_004af2f0;
                       iVar10 = 2;
                     }
                   }
                   bVar23 = iVar10 < 0;
                 }
                 else {
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  bVar23 = *(char *)((param_1 & 0xff) * 0x51 + 0x11ca + (int)g_appClass_00806728) !=
-                           *(char *)((uint)bVar2 * 0x51 + 0x11ca + (int)g_appClass_00806728);
+                  bVar23 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                           (&g_appClass_00806728->field_0x11ca)[(uint)bVar2 * 0x51];
                 }
                 if (bVar23) {
                   *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 4;
@@ -363,17 +358,18 @@ LAB_004af325:
                            (((*local_3c == '\x05' &&
                              (local_10 = *(STFishC **)((int)(g_worldGrid.cells)->objects + iVar18),
                              local_10 != (STFishC *)0x0)) &&
-                            (((iVar12 = (*local_10->vtable->vfunc_2C)(), iVar12 == 0x53 &&
+                            (((dVar12 = (*local_10->vtable->slot_2C)(local_10), dVar12 == 0x53 &&
                               (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
-                             ((iVar12 = (*local_10->vtable->vfunc_2C)(), 0x53 < iVar12 &&
-                              ((iVar12 = (*local_10->vtable->vfunc_2C)(), iVar12 < 0x5b &&
-                               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                               (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18))))))))))
-                           ) {
-                          iVar9 = (*local_10->vtable->vfunc_2C)();
+                             ((dVar12 = (*local_10->vtable->slot_2C)(local_10), 0x53 < (int)dVar12
+                              && ((dVar12 = (*local_10->vtable->slot_2C)(local_10),
+                                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                                  (int)dVar12 < 0x5b &&
+                                  (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18)))))))
+                            )))) {
+                          dVar12 = (*local_10->vtable->slot_2C)(local_10);
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                          if ((iVar9 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18)))
-                          {
+                          if ((dVar12 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
+                             ) {
                             bVar4 = true;
                           }
                           goto cf_common_join_004AFA95;

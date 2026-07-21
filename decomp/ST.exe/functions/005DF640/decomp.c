@@ -53,12 +53,12 @@ LAB_005df673:
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x3a,0,iVar3,&DAT_007a4ccc,
-                               s_MTaskTy__OutGlassTxtProc_007cd9dc);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x3a,0,iVar3,"%s",
+                               "MTaskTy::OutGlassTxtProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_task_obj_cpp_007cd994,0x3a);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\task_obj.cpp",0x3a);
   }
   return;
 }

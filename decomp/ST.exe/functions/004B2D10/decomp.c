@@ -80,7 +80,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
                     ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) &&
                (iVar5 = (*this->vtable->GetObjectTypeId)(this), iVar5 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
-              if (*(char *)((int)&g_appClass_00806728[0x5d].field_0014 + 3) == '\0') {
+              if (g_appClass_00806728->field_146F == '\0') {
                 if (bVar1 == param_1) {
 LAB_004b2fd4:
                   iVar5 = 0;
@@ -88,36 +88,31 @@ LAB_004b2fd4:
                 else {
                   uVar4 = (uint)bVar1;
                   uVar3 = (uint)param_1;
-                  cVar2 = *(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                   uVar3 + uVar4 * 8 + 3);
+                  cVar2 = (&g_appClass_00806728->field_0x142f)[uVar3 + uVar4 * 8];
                   if ((cVar2 == '\0') &&
-                     (*(char *)((int)&g_appClass_00806728[0x5c].field_000C + uVar4 + uVar3 * 8 + 3)
-                      == '\0')) {
+                     ((&g_appClass_00806728->field_0x142f)[uVar4 + uVar3 * 8] == '\0')) {
                     iVar5 = -2;
                   }
                   else if ((cVar2 == '\x01') &&
-                          (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                    uVar4 + uVar3 * 8 + 3) == '\0')) {
+                          ((&g_appClass_00806728->field_0x142f)[uVar4 + uVar3 * 8] == '\0')) {
                     iVar5 = -1;
                   }
                   else if ((cVar2 == '\0') &&
-                          (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                    uVar4 + uVar3 * 8 + 3) == '\x01')) {
+                          ((&g_appClass_00806728->field_0x142f)[uVar4 + uVar3 * 8] == '\x01')) {
                     iVar5 = 1;
                   }
                   else {
                     if ((cVar2 != '\x01') ||
-                       (*(char *)((int)&g_appClass_00806728[0x5c].field_000C + uVar4 + uVar3 * 8 + 3
-                                 ) != '\x01')) goto LAB_004b2fd4;
+                       ((&g_appClass_00806728->field_0x142f)[uVar4 + uVar3 * 8] != '\x01'))
+                    goto LAB_004b2fd4;
                     iVar5 = 2;
                   }
                 }
                 bVar7 = iVar5 < 0;
               }
               else {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                bVar7 = *(char *)((uint)param_1 * 0x51 + 0x11ca + (int)g_appClass_00806728) !=
-                        *(char *)((uint)bVar1 * 0x51 + 0x11ca + (int)g_appClass_00806728);
+                bVar7 = (&g_appClass_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
+                        (&g_appClass_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
               }
               if ((bVar7) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
                 local_24 = *(int *)&this[0x22].field_0x8 - local_24;

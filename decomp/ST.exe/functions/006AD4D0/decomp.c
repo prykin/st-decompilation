@@ -43,7 +43,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
                         (local_34c,0x200,(byte *)format,(undefined4 *)&stack0x00000018), iVar2 < 0))
   {
     uVar5 = 0xffffffff;
-    pcVar8 = s_User_message_too_long_007ed7b4;
+    pcVar8 = "User message too long";
     do {
       pcVar9 = pcVar8;
       if (uVar5 == 0) break;
@@ -77,43 +77,43 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     }
   }
   if ((DAT_007ed79c != 0) && (g_int_00854EB4 != (int *)0x0)) {
-    Library::MSVCRT::FUN_00733f70(g_int_00854EB4,s__d_______________________________007ed8ac);
+    Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"\n%d ========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n");
     DAT_007ed79c = 0;
   }
   puVar7 = &local_74c;
   if (DAT_00854ebc != 0) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._0_1_ = s_Program__007ed8a0[0];
+    local_74c._0_1_ = "Program: "[0];
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._1_1_ = s_Program__007ed8a0[1];
+    local_74c._1_1_ = "Program: "[1];
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._2_1_ = s_Program__007ed8a0[2];
+    local_74c._2_1_ = "Program: "[2];
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._3_1_ = s_Program__007ed8a0[3];
-    local_748[0] = s_Program__007ed8a0[4];
-    local_748[1] = s_Program__007ed8a0[5];
-    local_748[2] = s_Program__007ed8a0[6];
-    local_748[3] = s_Program__007ed8a0[7];
+    local_74c._3_1_ = "Program: "[3];
+    local_748[0] = "Program: "[4];
+    local_748[1] = "Program: "[5];
+    local_748[2] = "Program: "[6];
+    local_748[3] = "Program: "[7];
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_744 = (char)s_Program__007ed8a0._8_2_;
+    local_744 = (char)"Program: "._8_2_;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uStack_743._0_1_ = SUB21(s_Program__007ed8a0._8_2_,1);
+    uStack_743._0_1_ = SUB21("Program: "._8_2_,1);
     pcVar8 = local_14c;
     DVar3 = GetModuleFileNameA((HMODULE)0x0,local_14c,0x104);
     if (DVar3 == 0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._0_1_ = s_unknown_007ed898[0];
+      uStack_743._0_1_ = "unknown"[0];
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._1_1_ = s_unknown_007ed898[1];
+      uStack_743._1_1_ = "unknown"[1];
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._2_1_ = s_unknown_007ed898[2];
+      uStack_743._2_1_ = "unknown"[2];
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._3_1_ = s_unknown_007ed898[3];
-      local_73f[0] = s_unknown_007ed898[4];
-      local_73f[1] = s_unknown_007ed898[5];
-      local_73f[2] = s_unknown_007ed898[6];
+      uStack_743._3_1_ = "unknown"[3];
+      local_73f[0] = "unknown"[4];
+      local_73f[1] = "unknown"[5];
+      local_73f[2] = "unknown"[6];
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auStack_73c[0]._0_1_ = s_unknown_007ed898[7];
+      auStack_73c[0]._0_1_ = "unknown"[7];
       puVar7 = auStack_73c;
     }
     else {
@@ -160,9 +160,9 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   pcVar8 = (char *)((int)puVar7 + 1);
   if (sourceFile != (char *)0x0) {
     pcVar9 = (char *)((int)puVar7 + 7);
-    *(undefined4 *)pcVar8 = s_File__007ed890._0_4_;
-    *(undefined2 *)((int)puVar7 + 5) = s_File__007ed890._4_2_;
-    *(char *)((int)puVar7 + 7) = s_File__007ed890[6];
+    *(undefined4 *)pcVar8 = "File: "._0_4_;
+    *(undefined2 *)((int)puVar7 + 5) = "File: "._4_2_;
+    *(char *)((int)puVar7 + 7) = "File: "[6];
     uVar5 = 0xffffffff;
     pcVar8 = sourceFile;
     do {
@@ -254,11 +254,11 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   if ((g_exceptionSourceFile != (char *)0x0) && (g_exceptionCode == errorCode)) {
     pcVar9 = pcVar8 + 10;
-    *(undefined4 *)pcVar8 = s_ExcRaise__007ed868._0_4_;
-    *(undefined4 *)(pcVar8 + 4) = s_ExcRaise__007ed868._4_4_;
-    *(undefined2 *)(pcVar8 + 8) = s_ExcRaise__007ed868._8_2_;
+    *(undefined4 *)pcVar8 = "ExcRaise: "._0_4_;
+    *(undefined4 *)(pcVar8 + 4) = "ExcRaise: "._4_4_;
+    *(undefined2 *)(pcVar8 + 8) = "ExcRaise: "._8_2_;
     uVar5 = 0xffffffff;
-    pcVar8[10] = s_ExcRaise__007ed868[10];
+    pcVar8[10] = "ExcRaise: "[10];
     pcVar8 = g_exceptionSourceFile;
     do {
       if (uVar5 == 0) break;
@@ -373,7 +373,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   if (g_int_00854EB4 == (int *)0x0) {
     if (DAT_00854ebc != 0) {
       *pcVar9 = '\n';
-      pcVar8 = s__Press_Retry_to_debug_the_applic_007ed818;
+      pcVar8 = "(Press Retry to debug the application)";
       pcVar9 = pcVar9 + 1;
       for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
         *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
@@ -383,23 +383,23 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       *(undefined2 *)pcVar9 = *(undefined2 *)pcVar8;
       pcVar9[2] = pcVar8[2];
       if (isFatal == 0) {
-        debugMessage[0] = s_Debug_Message_007ed7cc[0];
-        debugMessage[1] = s_Debug_Message_007ed7cc[1];
-        debugMessage[2] = s_Debug_Message_007ed7cc[2];
-        debugMessage[3] = s_Debug_Message_007ed7cc[3];
-        debugMessage[4] = s_Debug_Message_007ed7cc[4];
-        debugMessage[5] = s_Debug_Message_007ed7cc[5];
-        debugMessage[6] = s_Debug_Message_007ed7cc[6];
-        debugMessage[7] = s_Debug_Message_007ed7cc[7];
-        debugMessage[8] = s_Debug_Message_007ed7cc[8];
-        debugMessage[9] = s_Debug_Message_007ed7cc[9];
-        debugMessage[10] = s_Debug_Message_007ed7cc[10];
-        debugMessage[0xb] = s_Debug_Message_007ed7cc[0xb];
-        debugMessage[0xc] = s_Debug_Message_007ed7cc[0xc];
-        debugMessage[0xd] = s_Debug_Message_007ed7cc[0xd];
+        debugMessage[0] = "Debug Message"[0];
+        debugMessage[1] = "Debug Message"[1];
+        debugMessage[2] = "Debug Message"[2];
+        debugMessage[3] = "Debug Message"[3];
+        debugMessage[4] = "Debug Message"[4];
+        debugMessage[5] = "Debug Message"[5];
+        debugMessage[6] = "Debug Message"[6];
+        debugMessage[7] = "Debug Message"[7];
+        debugMessage[8] = "Debug Message"[8];
+        debugMessage[9] = "Debug Message"[9];
+        debugMessage[10] = "Debug Message"[10];
+        debugMessage[0xb] = "Debug Message"[0xb];
+        debugMessage[0xc] = "Debug Message"[0xc];
+        debugMessage[0xd] = "Debug Message"[0xd];
       }
       else {
-        pcVar8 = s_Debug_Error_Message_007ed804;
+        pcVar8 = "Debug Error Message";
         pcVar9 = debugMessage;
         for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
           *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
@@ -414,7 +414,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       else {
         Library::DKW::DDX::FUN_006ce8c0((int)DAT_00854eb8,(HDC)*puVar10);
         uVar5 = 0xffffffff;
-        pcVar8 = s__UNSAFE__007ed7f8;
+        pcVar8 = " (UNSAFE)";
         do {
           pcVar9 = pcVar8;
           if (uVar5 == 0) break;
@@ -483,7 +483,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     uVar5 = 0;
     if (0 < DAT_00858ddc) {
       do {
-        Library::MSVCRT::FUN_00733f70(g_int_00854EB4,s__08X_007ed840);
+        Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"%08X  ");
         uVar5 = uVar5 + 1;
         uVar6 = uVar5 & 0x80000007;
         bVar14 = uVar6 == 0;

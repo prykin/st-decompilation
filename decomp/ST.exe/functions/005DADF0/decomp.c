@@ -49,12 +49,12 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0xda,0,errorCode,
-                             &DAT_007a4ccc,s_StartSystemTy__InitChat_007cd75c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0xda,0,errorCode,
+                             "%s","StartSystemTy::InitChat");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_startsys_cpp_007cd718,0xdb);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\startsys.cpp",0xdb);
   return;
 }
 

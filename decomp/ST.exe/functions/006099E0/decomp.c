@@ -37,10 +37,10 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
         pSVar2->field_0234 = (DArrayTy *)0x0;
       } while (uVar7 != 0);
     }
-    iVar5 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x1e5,0,iVar3,&DAT_007a4ccc,
-                               s_STFieldC__CreateField_007cb2c0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_field.cpp",0x1e5,0,iVar3,"%s",
+                               "STFieldC::CreateField");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_nick_to_field_cpp_007cf850,0x1e7);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_field.cpp",0x1e7);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -4,16 +4,20 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_manag.Cpp
-   SndUnderAttMenegC::GetMessage */
+   SndUnderAttMenegC::GetMessage
 
-undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=0061F660; family_names=SndUnderAttMenegC::GetMessage; ret4=4;
+   direct_offsets={10:1,14:0,18:0,1c:1} */
+
+int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *message)
 
 {
-  code *pcVar1;
-  float fVar2;
-  int iVar3;
+  STMessageId SVar1;
+  code *pcVar2;
+  float fVar3;
   int iVar4;
-  undefined4 uVar5;
+  int iVar5;
   int *piVar6;
   InternalExceptionFrame local_50;
   float local_c;
@@ -22,52 +26,51 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = (AnonShape_0061FCC0_94F6689F *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  if (iVar3 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_nick_to_manag_Cpp_007d020c,0x6e,0,iVar3,&DAT_007a4ccc,
-                               s_SndUnderAttMenegC__GetMessage_007d0230);
-    if (iVar4 != 0) {
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_manag.Cpp",0x6e,0,iVar4,"%s",
+                               "SndUnderAttMenegC::GetMessage");
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_manag_Cpp_007d020c,0x70);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_manag.Cpp",0x70);
     return 0xffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)(param_1 + 0x10);
-  if (iVar3 == 0) {
-    iVar3 = 0xafffff5;
+  SVar1 = message->id;
+  if (SVar1 == MESS_ID_NONE) {
+    iVar4 = 0xafffff5;
     piVar6 = (int *)&local_8->field_0x31;
     do {
       if (*(char *)((int)piVar6 + -0x11) != '\0') {
-        FUN_006e6780(PTR_00807598,iVar3);
-        iVar4 = PTR_00802a38->field_00E4 - piVar6[2];
-        fVar2 = (float)iVar4;
-        local_c = fVar2 * (float)piVar6[1] * fVar2 * _DAT_00790784 +
-                  ((float)(piVar6[-1] - iVar4 * *piVar6) * _DAT_007904f8 + _DAT_007904f4) *
+        FUN_006e6780(PTR_00807598,iVar4);
+        iVar5 = PTR_00802a38->field_00E4 - piVar6[2];
+        fVar3 = (float)iVar5;
+        local_c = fVar3 * (float)piVar6[1] * fVar3 * _DAT_00790784 +
+                  ((float)(piVar6[-1] - iVar5 * *piVar6) * _DAT_007904f8 + _DAT_007904f4) *
                   _DAT_0079070c;
         if (local_c <= _DAT_007904f8) {
-          FUN_006e6780(PTR_00807598,iVar3);
+          FUN_006e6780(PTR_00807598,iVar4);
           *(undefined1 *)((int)piVar6 + -0x11) = 0;
         }
         else {
           FUN_006e6710(PTR_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
                        (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar6[-2],
-                       iVar3);
+                       iVar4);
         }
       }
-      iVar3 = iVar3 + 0xffffff;
+      iVar4 = iVar4 + 0xffffff;
       piVar6 = (int *)((int)piVar6 + 0x1d);
-    } while (iVar3 < 0xffffff0);
+    } while (iVar4 < 0xffffff0);
   }
-  else if (iVar3 == 2) {
+  else if (SVar1 == MESS_ID_CREATE) {
     if (DAT_007fb284 != 0) {
       *(int *)&local_8->field_0x1c = (int)g_worldGrid.sizeX / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
-  else if (iVar3 == 3) {
+  else if (SVar1 == MESS_SHARED_0003) {
     thunk_FUN_0061fcc0(local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;

@@ -35,10 +35,10 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   pHVar4 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x3d3,0,iVar5,
-                                &DAT_007a4ccc,s_HelpPanelTy__DrawTitle_007c3b6c);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x3d3,0,iVar5,
+                                "%s","HelpPanelTy::DrawTitle");
     if (iVar12 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x3d3);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\helppan.cpp",0x3d3);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

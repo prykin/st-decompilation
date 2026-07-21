@@ -26,17 +26,17 @@ LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
   iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c7,0,iVar3,&DAT_007a4ccc,
-                               s_GetStrategNameDB_007d3088);
+    iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x1c7,0,iVar3,"%s",
+                               "GetStrategNameDB");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c8);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1c8);
     return (LPSTR)0x0;
   }
   if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c3);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1c3);
   }
   pCVar4 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_2);
   uVar6 = 0xffffffff;

@@ -32,17 +32,17 @@ void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
     pcVar2 = local_8;
     FUN_006b4640((uint)DAT_0080759c,0,0,(BITMAPINFO *)local_8->field_0000,(uint *)0x0);
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
-    thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,pcVar2->field_0000,param_1,param_2);
+    thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,(int)pcVar2->field_0000,param_1,param_2);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x7b,0,iVar4,&DAT_007a4ccc,
-                             s_cLoadingTy__ShowScr_007c8f48);
+  iVar3 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x7b,0,iVar4,"%s",
+                             "cLoadingTy::ShowScr");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_grig_loading_cpp_007c8f0c,0x7c);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\loading.cpp",0x7c);
   return;
 }
 

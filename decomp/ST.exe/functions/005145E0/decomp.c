@@ -95,12 +95,12 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x327,0,errorCode,
-                             &DAT_007a4ccc,s_HelpPanelTy__FwdBut_007c3b08);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x327,0,errorCode,
+                             "%s","HelpPanelTy::FwdBut");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x327);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0x327);
   return;
 }
 

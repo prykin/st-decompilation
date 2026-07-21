@@ -68,8 +68,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           iVar4 = 0x158;
           puVar8 = (uint *)LoadResourceString(param_1,HINSTANCE_00807618);
           puVar7 = ccFntTy::CreateTypeSSpr
-                             ((ccFntTy *)PTR_0081176c->field_0030,puVar8,iVar4,iVar9,cVar16,uVar10,
-                              iVar14,iVar15,iVar18);
+                             (PTR_0081176c->field_0030,puVar8,iVar4,iVar9,cVar16,uVar10,iVar14,
+                              iVar15,iVar18);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(local_8 + 8))(puVar7,uVar21,uVar22);
           *(undefined4 *)&this_00[0x21].field_0x4d = 0;
@@ -77,13 +77,13 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         else {
           pcVar5 = LoadResourceString(param_4,HINSTANCE_00807618);
           pcVar6 = LoadResourceString(param_1,HINSTANCE_00807618);
-          wsprintfA((LPSTR)local_478,s__s___s__li__007ccca4,pcVar6,pcVar5,param_3);
+          wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
           iVar4 = *(int *)&this_00[0x21].field_0x45;
           uVar22 = 0xffffffff;
           uVar21 = 7;
           puVar7 = ccFntTy::CreateTypeSSpr
-                             ((ccFntTy *)PTR_0081176c->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE
-                              ,0xffffffff,1,-1,-1);
+                             (PTR_0081176c->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,0xffffffff
+                              ,1,-1,-1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar4 + 8))(puVar7,uVar21,uVar22);
           *(undefined4 *)&this_00[0x21].field_0x4d = 0;
@@ -117,8 +117,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             iVar9 = uVar10 * 0x1fb;
             puVar8 = (uint *)LoadResourceString(*local_10,HINSTANCE_00807618);
             puVar7 = ccFntTy::CreateTypeSSpr
-                               ((ccFntTy *)PTR_0081176c->field_0030,puVar8,iVar14,iVar15,cVar16,
-                                uVar17,iVar18,iVar19,iVar20);
+                               (PTR_0081176c->field_0030,puVar8,iVar14,iVar15,cVar16,uVar17,iVar18,
+                                iVar19,iVar20);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(iVar4 + 8))(puVar7,uVar21,uVar22);
             pUVar12 = (UINT *)((int)this_00 + iVar9 + 0xbc);
@@ -197,12 +197,12 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       return 1;
     }
     g_currentExceptionFrame = local_78.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181,0,iVar4,&DAT_007a4ccc
-                               ,s_MMsgTy__SetPanel_007cccb4);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x181,0,iVar4,"%s"
+                               ,"MMsgTy::SetPanel");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x181);
   }
   return 0;
 }

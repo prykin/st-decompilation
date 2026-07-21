@@ -46,16 +46,16 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   pSVar2 = local_30;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa3e,0,iVar3,&DAT_007a4ccc,
-                               s_STGroupBoatC__GrpGuard_007ac034);
+    iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xa3e,0,iVar3,"%s",
+                               "STGroupBoatC::GrpGuard");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa3f);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xa3f);
     return 0xffffffff;
   }
   if ((param_1 == 1) || (param_1 == 0)) {
-    puVar9 = (undefined4 *)&local_30->field_0x89;
+    puVar9 = &local_30->field_0089;
     for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar9 = 0;
       puVar9 = puVar9 + 1;
@@ -101,7 +101,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
           if (pSVar4 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa1a);
+                       "E:\\__titans\\wlad\\to_grpb.cpp",0xa1a);
           }
           iVar3 = thunk_FUN_00490d90((int)pSVar4);
           if (iVar3 == 0) {
@@ -145,13 +145,13 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
                  STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1)
         ;
         if (pSVar4 == (STBoatC *)0x0) {
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa34,0,0,&DAT_007a4ccc
-                                     ,s_STGroupBoatC__GrpGuard_NULL_007ac050);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xa34,0,0,"%s"
+                                     ,"STGroupBoatC::GrpGuard NULL");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           RaiseInternalException
-                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xa35);
         }
         iVar3 = thunk_FUN_0045ff10((int)pSVar4);

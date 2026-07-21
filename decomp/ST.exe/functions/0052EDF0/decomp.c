@@ -60,12 +60,12 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0xac,0,iVar4,&DAT_007a4ccc,
-                             s_OptPanelTy__PaintVolume_007c7198);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0xac,0,iVar4,"%s",
+                             "OptPanelTy::PaintVolume");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0xac);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\optpanel.cpp",0xac);
   return;
 }
 

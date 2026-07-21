@@ -68,10 +68,10 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1a0,0,iVar7,&DAT_007a4ccc
-                               ,s_CPanelTy__SetControlBoat_007c25e0);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x1a0,0,iVar7,"%s"
+                               ,"CPanelTy::SetControlBoat");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar7,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1a0);
+      RaiseInternalException(iVar7,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x1a0);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -198,7 +198,7 @@ LAB_00502622:
     sVar15 = 2;
     uVar14 = 0xb118;
     uVar13 = 0xb117;
-    pCVar5 = thunk_FUN_00571240(s_BUT_SHOWUPD_007c23a4,0);
+    pCVar5 = thunk_FUN_00571240("BUT_SHOWUPD",0);
     uVar13 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar5,uVar13,
                        uVar14,sVar15,uVar16,iVar7,pcVar4,iVar9,uVar20,uVar22);
     this_00->field_0970 = uVar13;
@@ -213,7 +213,7 @@ LAB_00502622:
     sVar15 = 2;
     uVar14 = 0xb11a;
     uVar13 = 0xb119;
-    pCVar5 = thunk_FUN_00571240(s_BUT_SHOWFRM_007c2394,0);
+    pCVar5 = thunk_FUN_00571240("BUT_SHOWFRM",0);
     uVar13 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar5,uVar13,
                        uVar14,sVar15,uVar16,iVar7,pcVar4,iVar9,uVar20,uVar22);
     this_00->field_0970 = uVar13;
@@ -242,7 +242,7 @@ LAB_00502622:
       sVar15 = 2;
       iVar9 = iVar7 + -0x10;
       iVar12 = iVar7;
-      pCVar5 = thunk_FUN_00571240(s_BUT_BEHREPAIR0_007c2350,0);
+      pCVar5 = thunk_FUN_00571240("BUT_BEHREPAIR0",0);
       uVar13 = CreateBut(this_00,3,0,local_10,(int)local_8,0x80,1,pCVar5,iVar9,iVar12,sVar15,uVar16,
                          iVar6,pcVar4,iVar18,uVar13,uVar14);
       bVar8 = bVar8 + 1;

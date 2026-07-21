@@ -41,19 +41,19 @@ CPanelTy::PaintTxtBut
     goto LAB_004f3d6a;
   default:
     if (this->field_0130 != 0) {
-      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3D83;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
-      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3D83;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
-      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3D83;
     }
     break;
@@ -61,7 +61,7 @@ CPanelTy::PaintTxtBut
     iVar7 = this->field_0138;
 LAB_004f3d6a:
     if (iVar7 != 0) {
-      local_c = iVar9 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_c = iVar9 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3D83;
     }
     iVar9 = iVar9 - this->field_00C0;
@@ -97,18 +97,18 @@ cf_common_join_004F3D83:
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
-                   ,*(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
+                   ,(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x212,0,(int)errorCode,
-                               &DAT_007a4ccc,s_CPanelTy__PaintTxtBut_007c1b68);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x212,0,(int)errorCode,
+                               "%s","CPanelTy::PaintTxtBut");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x212);
+    RaiseInternalException((int)errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x212);
   }
   return;
 }

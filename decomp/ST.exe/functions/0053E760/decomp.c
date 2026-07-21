@@ -23,10 +23,10 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
   pSVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x113,0,errorCode,
-                               &DAT_007a4ccc,s_SpecPanelTy__SwitchPanel_007c7964);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x113,0,errorCode,
+                               "%s","SpecPanelTy::SwitchPanel");
     if (iVar4 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x113);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x113);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -37,18 +37,18 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (*(int *)&local_8->field_0x178 != 0) {
+    if (local_8->field_0178 != 0) {
       local_8->field_0028 = 0x4202;
-      *(undefined2 *)&local_8->field_0x2c = 0;
+      local_8->field_002C = 0;
       local_8->field_002E = 2;
-      *(int *)&local_8->field_0x30 = *(int *)&local_8->field_0x178;
+      local_8->field_0030 = local_8->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)**(undefined4 **)PTR_00802a30)(&local_8->field_0x18);
+        (**(code **)PTR_00802a30->field_0000)(&local_8->field_0x18);
       }
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar3->field_0000 + 0x18))(0);
+    (*(code *)pSVar3->field_0000->field_0018)(0);
   }
   else {
     if (sVar1 == 2) {

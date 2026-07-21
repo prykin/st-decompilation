@@ -11,7 +11,7 @@ undefined4 * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   int iVar2;
   undefined4 *puVar3;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &VisibleClassTyVTable;
   g_visibleClass_00802A88 = this;
   this->field_0024 = 0;
@@ -40,9 +40,9 @@ undefined4 * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
     puVar3 = puVar3 + 1;
   }
   this->field_003C = 0;
-  *(undefined4 *)&this->field_0x40 = 0;
-  *(undefined4 *)&this->field_0x44 = 0;
-  *(undefined4 *)&this->field_0x48 = 0;
+  this->field_0040 = 0;
+  this->field_0044 = 0;
+  this->field_0048 = 0;
   this->field_00F4 = (DArrayTy *)0x0;
   this->field_0110 = (DArrayTy *)0x0;
   this->field_0114 = 0;

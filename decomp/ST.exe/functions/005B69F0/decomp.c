@@ -33,12 +33,12 @@ ChatGlassTy::OutChGlProc
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x153,0,iVar3,&DAT_007a4ccc
-                               ,s_ChatGlassTy__OutChGlProc_007ccb54);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x153,0,iVar3,"%s"
+                               ,"ChatGlassTy::OutChGlProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x153);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x153);
   }
   return;
 }

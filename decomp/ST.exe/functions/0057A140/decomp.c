@@ -25,16 +25,16 @@ FUN_0057a140(undefined4 param_1,Global_sub_0057A140_param_2Enum param_2,int para
   if ((param_3 == 0xe) || (param_3 == 0xc)) {
     switch(param_2) {
     case CASE_E6:
-      pcVar4 = s_shark1_007cae70;
+      pcVar4 = "shark1";
       break;
     case CASE_E7:
-      pcVar4 = s_fish1_007cae68;
+      pcVar4 = "fish1";
       break;
     case CASE_E8:
-      pcVar4 = s_fish_b_007cae60;
+      pcVar4 = "fish_b";
       break;
     case CASE_E9:
-      pcVar4 = s_fish_gr_007cae54;
+      pcVar4 = "fish_gr";
       break;
     case CASE_EA:
       pcVar4 = &DAT_007cae4c;
@@ -48,15 +48,15 @@ FUN_0057a140(undefined4 param_1,Global_sub_0057A140_param_2Enum param_2,int para
     case CASE_F3:
     case CASE_F4:
     case CASE_F5:
-      pcVar4 = s_crab2b_007cae3c;
+      pcVar4 = "crab2b";
       break;
     case CASE_F6:
     case CASE_F7:
-      pcVar4 = s_langus1_007cae24;
+      pcVar4 = "langus1";
       break;
     case CASE_F8:
     case CASE_F9:
-      pcVar4 = s_octopus1_007cae30;
+      pcVar4 = "octopus1";
       break;
     case CASE_FA:
     case CASE_FB:

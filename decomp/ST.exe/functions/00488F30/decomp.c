@@ -25,94 +25,94 @@ void __thiscall STBoatC::GetInfo16(STBoatC *this,AnonShape_00488F30_727896DE *pa
     *(undefined4 *)pAVar6 = 0xffffffff;
     pAVar6 = (AnonShape_00488F30_727896DE *)&pAVar6->field_0x4;
   }
-  uVar2 = GetPlayerRaceId(this->field_0x24);
+  uVar2 = GetPlayerRaceId(*(char *)&this->field_0024);
   uVar2 = uVar2 & 0xff;
   if (uVar2 == 1) {
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,5);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,5);
     param_1->field_0x8 = 1;
     *(uint *)param_1 = (int)(short)uVar3 << 0x10 | 5;
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,4);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,4);
     *(uint *)&param_1->field_0x30 = (int)(short)uVar3 << 0x10 | 4;
 LAB_00489086:
     param_1->field_0x38 = 1;
   }
   else {
     if (uVar2 == 2) {
-      uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x82);
+      uVar3 = thunk_FUN_004e60d0(this->field_0024,0x82);
       param_1->field_0x8 = 1;
       *(uint *)param_1 = (int)(short)uVar3 << 0x10 | 0x82;
-      uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x81);
+      uVar3 = thunk_FUN_004e60d0(this->field_0024,0x81);
       *(uint *)&param_1->field_0x30 = (int)(short)uVar3 << 0x10 | 0x81;
       goto LAB_00489086;
     }
     if (uVar2 != 3) {
-      iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x44ca,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__GetInfo16_invalid_civ_007ab94c);
+      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x44ca,0,0,"%s",
+                                 "STBoatC::GetInfo16 invalid civ");
       if (iVar4 == 0) {
         return;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x6d);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x6d);
     param_1->field_0x8 = 1;
     *(uint *)param_1 = (int)(short)uVar3 << 0x10 | 0x6d;
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x65);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x65);
     param_1->field_0x38 = 1;
     *(uint *)&param_1->field_0x30 = (int)(short)uVar3 << 0x10 | 0x65;
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x4e);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x4e);
     param_1->field_0x68 = 1;
     *(uint *)&param_1->field_0x60 = (int)(short)uVar3 << 0x10 | 0x4e;
   }
   iVar4 = 3;
   if (uVar2 == 0) goto cf_common_join_00489222;
   if (uVar2 < 3) {
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,10);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,10);
     if (0 < (short)uVar3) {
       iVar4 = 4;
       *(uint *)&param_1[1].field_0x20 = (int)(short)uVar3 << 0x10 | 10;
       param_1[1].field_0x28 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x1b);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x1b);
     if (0 < (short)uVar3) {
       iVar5 = iVar4 * 0x30;
       iVar4 = iVar4 + 1;
       *(uint *)(&param_1->field_0x0 + iVar5) = (int)(short)uVar3 << 0x10 | 0x1b;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar5) + 8) = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x24);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x24);
     if (0 < (short)uVar3) {
       iVar5 = iVar4 * 0x30;
       iVar4 = iVar4 + 1;
       *(uint *)(&param_1->field_0x0 + iVar5) = (int)(short)uVar3 << 0x10 | 0x24;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar5) + 8) = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x2d);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x2d);
     if ((short)uVar3 < 1) goto cf_common_join_00489222;
     uVar2 = (int)(short)uVar3 << 0x10 | 0x2d;
   }
   else {
     if (uVar2 != 3) goto cf_common_join_00489222;
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x66);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x66);
     if (0 < (short)uVar3) {
       iVar4 = 4;
       *(uint *)&param_1[1].field_0x20 = (int)(short)uVar3 << 0x10 | 0x66;
       param_1[1].field_0x28 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x67);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x67);
     if (0 < (short)uVar3) {
       iVar5 = iVar4 * 0x30;
       iVar4 = iVar4 + 1;
       *(uint *)(&param_1->field_0x0 + iVar5) = (int)(short)uVar3 << 0x10 | 0x67;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar5) + 8) = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x68);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x68);
     if (0 < (short)uVar3) {
       iVar5 = iVar4 * 0x30;
       iVar4 = iVar4 + 1;
       *(uint *)(&param_1->field_0x0 + iVar5) = (int)(short)uVar3 << 0x10 | 0x68;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar5) + 8) = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x6a);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x6a);
     if ((short)uVar3 < 1) goto cf_common_join_00489222;
     uVar2 = (int)(short)uVar3 << 0x10 | 0x6a;
   }
@@ -122,13 +122,13 @@ cf_common_join_00489222:
   iVar4 = 9;
   switch(this->field_06F7) {
   case CASE_1:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0xb);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0xb);
     if (0 < (short)uVar3) {
       iVar4 = 10;
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0xb;
       param_1[3].field_0x68 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x97);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x97);
     if (0 < (short)uVar3) {
       *(uint *)(&param_1->field_0x0 + iVar4 * 0x30) = (int)(short)uVar3 << 0x10 | 0x97;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
@@ -140,7 +140,7 @@ cf_common_join_00489222:
   case CASE_6:
   case CASE_B:
   case CASE_26:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,6);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,6);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 6;
       param_1[3].field_0x68 = 1;
@@ -148,20 +148,20 @@ cf_common_join_00489222:
     }
     break;
   case CASE_5:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x3c);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x3c);
     if (0 < (short)uVar3) {
       iVar4 = 10;
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x3c;
       param_1[3].field_0x68 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x9a);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x9a);
     if (0 < (short)uVar3) {
       iVar5 = iVar4 * 0x30;
       iVar4 = iVar4 + 1;
       *(uint *)(&param_1->field_0x0 + iVar5) = (int)(short)uVar3 << 0x10 | 0x9a;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar5) + 8) = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,6);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,6);
     if (0 < (short)uVar3) {
       *(uint *)(&param_1->field_0x0 + iVar4 * 0x30) = (int)(short)uVar3 << 0x10 | 6;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
@@ -169,7 +169,7 @@ cf_common_join_00489222:
     }
     break;
   case CASE_D:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x83);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x83);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x83;
       param_1[3].field_0x68 = 1;
@@ -177,7 +177,7 @@ cf_common_join_00489222:
     }
     break;
   case CASE_E:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x95);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x95);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x95;
       param_1[3].field_0x68 = 1;
@@ -187,7 +187,7 @@ cf_common_join_00489222:
   case CASE_12:
   case CASE_17:
   case CASE_27:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x3a);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x3a);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x3a;
       param_1[3].field_0x68 = 1;
@@ -195,13 +195,13 @@ cf_common_join_00489222:
     }
     break;
   case CASE_11:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x91);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x91);
     if (0 < (short)uVar3) {
       iVar4 = 10;
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x91;
       param_1[3].field_0x68 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x41);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x41);
     if (0 < (short)uVar3) {
       *(uint *)(&param_1->field_0x0 + iVar4 * 0x30) = (int)(short)uVar3 << 0x10 | 0x41;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
@@ -209,13 +209,13 @@ cf_common_join_00489222:
     }
     break;
   case CASE_16:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x3a);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x3a);
     if (0 < (short)uVar3) {
       iVar4 = 10;
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x3a;
       param_1[3].field_0x68 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x92);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x92);
     if (0 < (short)uVar3) {
       *(uint *)(&param_1->field_0x0 + iVar4 * 0x30) = (int)(short)uVar3 << 0x10 | 0x92;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
@@ -223,13 +223,13 @@ cf_common_join_00489222:
     }
     break;
   case CASE_1C:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x7d);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x7d);
     if (0 < (short)uVar3) {
       iVar4 = 10;
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x7d;
       param_1[3].field_0x68 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x7e);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x7e);
     if (0 < (short)uVar3) {
       *(uint *)(&param_1->field_0x0 + iVar4 * 0x30) = (int)(short)uVar3 << 0x10 | 0x7e;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
@@ -239,7 +239,7 @@ cf_common_join_00489222:
   case CASE_1E:
   case CASE_22:
   case CASE_28:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x7a);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x7a);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x7a;
       param_1[3].field_0x68 = 1;
@@ -247,20 +247,20 @@ cf_common_join_00489222:
     }
     break;
   case CASE_21:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x4b);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x4b);
     if (0 < (short)uVar3) {
       iVar4 = 10;
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x4b;
       param_1[3].field_0x68 = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x4c);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x4c);
     if (0 < (short)uVar3) {
       iVar5 = iVar4 * 0x30;
       iVar4 = iVar4 + 1;
       *(uint *)(&param_1->field_0x0 + iVar5) = (int)(short)uVar3 << 0x10 | 0x4c;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar5) + 8) = 1;
     }
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x76);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x76);
     if (0 < (short)uVar3) {
       *(uint *)(&param_1->field_0x0 + iVar4 * 0x30) = (int)(short)uVar3 << 0x10 | 0x76;
       *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
@@ -268,7 +268,7 @@ cf_common_join_00489222:
     }
     break;
   case CASE_23:
-    uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,0x69);
+    uVar3 = thunk_FUN_004e60d0(this->field_0024,0x69);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x69;
       param_1[3].field_0x68 = 1;

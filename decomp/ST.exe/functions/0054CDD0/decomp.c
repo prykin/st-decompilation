@@ -43,10 +43,10 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
     return iVar2;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x128,0,0,
-                             s_Not_found_system_type_for_game_t_007c8488,param_2);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x128,0,0,
+                             "Not found system type for game type %d",param_2);
   if (iVar3 == 0) {
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x129);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x129);
     return local_10;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

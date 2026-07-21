@@ -8,14 +8,12 @@
 void __thiscall FSGSTy::DoLogon(FSGSTy *this)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
-  StartSystemTy *pSVar3;
-  code *pcVar4;
+  StartSystemTy *pSVar1;
+  code *pcVar2;
   CursorClassTy *this_00;
-  FSGSTy *pFVar5;
-  int errorCode;
-  int iVar6;
+  FSGSTy *pFVar3;
+  int iVar4;
+  int iVar5;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   undefined4 local_14;
@@ -26,41 +24,41 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
+  iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = PTR_00802a30;
-  if (errorCode == 0) {
+  if (iVar4 == 0) {
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      uVar1 = PTR_00802a30->field_00C9;
-      uVar2 = PTR_00802a30->field_00C5;
+      iVar4 = PTR_00802a30->field_00C9;
+      iVar5 = PTR_00802a30->field_00C5;
       PTR_00802a30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar1);
+      CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar4);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-      this_00->field_0xd2 = 0;
-      *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
+      this_00->field_00D2 = 0;
+      this_00->field_04DF = 0xffffffff;
     }
-    pFVar5 = local_8;
+    pFVar3 = local_8;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)local_8->field_0000->field_0008)();
-    pFVar5->field_1A61 = 2;
-    pSVar3 = pFVar5->field_1A5B;
-    if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
+    pFVar3->field_1A61 = 2;
+    pSVar1 = pFVar3->field_1A5B;
+    if (pSVar1->field_02E6 != (MMsgTy *)0x0) {
       local_18 = 0;
       local_14 = 0;
       local_10 = 0;
       local_c = 0;
-      thunk_FUN_005b8f40(pSVar3->field_02E6,&local_18);
+      thunk_FUN_005b8f40(pSVar1->field_02E6,&local_18);
     }
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918,0,errorCode,
-                             &DAT_007a4ccc,s_FSGSTy__DoLogon_007cc3f4);
-  if (iVar6 != 0) {
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x918,0,iVar4,"%s",
+                             "FSGSTy::DoLogon");
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x918);
   return;
 }
 

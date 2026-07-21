@@ -29,8 +29,8 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
   if (*(int *)&param_1->field_0xe4 == 1) {
     *(undefined4 *)&param_1->field_0xe4 = 0;
   }
-  if (param_1->field_007E == 1) {
-    param_1->field_007E = 0;
+  if (*(int *)&param_1->field_0x7e == 1) {
+    *(undefined4 *)&param_1->field_0x7e = 0;
     *(undefined4 *)&param_1->field_0xe4 = 1;
   }
   if (*(int *)&param_1->field_0xf4 == 1) {
@@ -83,9 +83,8 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_10 = CONCAT31((int3)((uint)iVar4 >> 8),bVar2);
-    iVar4 = STJellyGunC::sub_00415B30
-                      (param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,(short)local_c,bVar2)
-    ;
+    iVar4 = sub_00415B30(param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,(short)local_c,
+                         bVar2);
     if (iVar4 != 0) {
       param_1->field_0xe3 = 0xff;
       return -1;
@@ -99,8 +98,8 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
     *(undefined4 *)&param_1->field_0xe4 = 0;
     return (int)(char)param_1->field_0xe3;
   }
-  if ((param_1->field_005A == '\0') && (param_1->field_004D == '\x01')) {
-    sVar6 = param_1->field_003A;
+  if ((param_1->field_0x5a == '\0') && (param_1->field_0x4d == '\x01')) {
+    sVar6 = *(short *)&param_1->field_0x3a;
     if (sVar6 < 0) {
       iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                      (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
@@ -109,8 +108,8 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
       iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                           (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
     }
-    if ((short)param_1->field_0054 == iVar4) {
-      sVar6 = param_1->field_003C;
+    if (*(short *)&param_1->field_0x54 == iVar4) {
+      sVar6 = *(short *)&param_1->field_0x3c;
       if (sVar6 < 0) {
         iVar4 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                        (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f)) + -1;
@@ -119,7 +118,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
         iVar4 = (int)(short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
                             (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
       }
-      if ((short)param_1->field_0056 == iVar4) {
+      if (*(short *)&param_1->field_0x56 == iVar4) {
         sVar6 = param_1->field_003E;
         if (sVar6 < 0) {
           iVar4 = (short)((sVar6 / 200 + (sVar6 >> 0xf)) -
@@ -129,10 +128,10 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
           iVar4 = (int)(short)((sVar6 / 200 + (sVar6 >> 0xf)) -
                               (short)((longlong)(int)sVar6 * 0x51eb851f >> 0x3f));
         }
-        if ((short)param_1->field_0058 == iVar4) goto LAB_004166c7;
+        if (*(short *)&param_1->field_0x58 == iVar4) goto LAB_004166c7;
       }
     }
-    param_1->field_005A = 1;
+    param_1->field_0x5a = 1;
   }
 LAB_004166c7:
   param_1->field_0xe3 = 1;

@@ -21,18 +21,18 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,char *param_1,undefined4 param_
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    thunk_FUN_005411a0(local_8,param_1,s____s__007c221c);
+    thunk_FUN_005411a0(local_8,param_1,"@ %s@ ");
     OutText(local_c,(int *)&local_8,param_2);
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x351,0,errorCode,
-                             &DAT_007a4ccc,s_CPanelTy__OutText_str__time__007c2224);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x351,0,errorCode,
+                             "%s","CPanelTy::OutText(str, time)");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x351);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x351);
   return;
 }
 

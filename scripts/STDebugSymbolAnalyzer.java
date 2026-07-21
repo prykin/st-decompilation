@@ -25,12 +25,14 @@ import java.util.regex.Matcher;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.listing.Data;
+import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
+import ghidra.program.model.symbol.Symbol;
 import ghidra.program.util.DefinedStringIterator;
 
 public class STDebugSymbolAnalyzer extends GhidraScript {
@@ -41,6 +43,10 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         "(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+)(?=$|[^A-Za-z0-9_~:])");
     private static final Pattern SOURCE = Pattern.compile(
         "(?i)^[A-Za-z]:\\\\.*\\.(?:c|cc|cpp|cxx|h|hh|hpp|hxx)$");
+    private static final Pattern PRINTF_FORMAT = Pattern.compile(
+        ".*%(?:[-+ #0]*(?:[0-9]+|\\*)?(?:\\.(?:[0-9]+|\\*))?" +
+        "(?:hh|h|ll|l|I32|I64|L|z|t|j)?[diuoxXfFeEgGaAcspn%]).*",
+        Pattern.DOTALL);
 
     private Listing listing;
 
@@ -123,10 +129,74 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         writeTsv(dir.resolve("proposals.tsv"), proposals);
         writeJsonl(dir.resolve("proposals.jsonl"), proposals);
         writeLines(dir.resolve("conflicts.jsonl"), conflicts);
+        List<ShortStringProposal> shortStrings = recoverShortDiagnosticStrings();
+        writeShortStrings(dir.resolve("debug_string_proposals.tsv"), shortStrings);
         writeConventionReview(dir.resolve("debug_calling_convention_review.tsv"), proposals);
-        writeSummary(dir.resolve("summary.txt"), proposals, conflicts.size());
+        writeSummary(dir.resolve("summary.txt"), proposals, conflicts.size(), shortStrings);
         println("Debug-symbol analysis complete: " + dir);
-        println("Proposals: " + proposals.size() + ", conflicts: " + conflicts.size());
+        println("Proposals: " + proposals.size() + ", conflicts: " + conflicts.size() +
+            ", short diagnostic strings: " + shortStrings.size());
+    }
+
+    private List<ShortStringProposal> recoverShortDiagnosticStrings() throws Exception {
+        List<ShortStringProposal> result = new ArrayList<>();
+        DataIterator dataItems = listing.getDefinedData(true);
+        while (dataItems.hasNext()) {
+            monitor.checkCancelled();
+            Data data = dataItems.next();
+            if (data.hasStringValue()) continue;
+            String value = asciiCString(data.getMinAddress(), 128);
+            if (value == null || value.length() < 2 || !PRINTF_FORMAT.matcher(value).matches())
+                continue;
+            int references = 0, diagnosticReferences = 0;
+            ReferenceIterator iterator = currentProgram.getReferenceManager()
+                .getReferencesTo(data.getMinAddress());
+            while (iterator.hasNext()) {
+                Reference reference = iterator.next();
+                Function containing = listing.getFunctionContaining(reference.getFromAddress());
+                if (containing == null) continue;
+                references++;
+                if (nearReportDebugMessage(reference.getFromAddress())) diagnosticReferences++;
+            }
+            if (diagnosticReferences < 2) continue;
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(data.getMinAddress());
+            String oldName = symbol == null ? "" : symbol.getName();
+            result.add(new ShortStringProposal(data, oldName, value, references,
+                diagnosticReferences));
+        }
+        result.sort(Comparator.comparing(row -> row.data.getMinAddress()));
+        return result;
+    }
+
+    private String asciiCString(Address address, int maximum) {
+        StringBuilder value = new StringBuilder();
+        try {
+            for (int index = 0; index < maximum; index++) {
+                int item = currentProgram.getMemory().getByte(address.add(index)) & 0xff;
+                if (item == 0) return value.toString();
+                if (item < 0x20 || item > 0x7e) return null;
+                value.append((char)item);
+            }
+        }
+        catch (Exception ignored) { }
+        return null;
+    }
+
+    private boolean nearReportDebugMessage(Address referenceAddress) {
+        Instruction instruction = listing.getInstructionContaining(referenceAddress);
+        for (int inspected = 0; instruction != null && inspected < 20; inspected++) {
+            if (instruction.getAddress().subtract(referenceAddress) > 0x60) break;
+            if ("CALL".equalsIgnoreCase(instruction.getMnemonicString())) {
+                for (Address flow : instruction.getFlows()) {
+                    Function called = currentProgram.getFunctionManager().getFunctionAt(flow);
+                    if (called == null) continue;
+                    Function target = called.isThunk() ? called.getThunkedFunction(true) : called;
+                    if (target != null && "ReportDebugMessage".equals(target.getName())) return true;
+                }
+            }
+            instruction = listing.getInstructionAfter(instruction.getAddress());
+        }
+        return false;
     }
 
     private String selectMethod(FunctionEvidence item) {
@@ -330,7 +400,27 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         }
     }
 
-    private void writeSummary(Path path, List<Proposal> proposals, int conflicts) throws IOException {
+    private void writeShortStrings(Path path, List<ShortStringProposal> proposals)
+            throws IOException {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("apply\taddress\texpected_name\texpected_type\texpected_length\t" +
+                "expected_value\tproposed_name\tproposed_value\treferences\t" +
+                "diagnostic_references\tconfidence\treason\n");
+            for (ShortStringProposal row : proposals) {
+                out.write("1\t" + addr(row.data.getMinAddress()) + "\t" + tsv(row.oldName) +
+                    "\t" + tsv(row.data.getDataType().getPathName()) + "\t" +
+                    row.data.getLength() + "\t" +
+                    tsv(row.data.getDefaultValueRepresentation()) + "\t" +
+                    tsv("s_fmt_" + addr(row.data.getMinAddress()).toLowerCase(Locale.ROOT)) +
+                    "\t" + tsv(row.value) + "\t" + row.references + "\t" +
+                    row.diagnosticReferences + "\thigh\tshort NUL-terminated printf format " +
+                    "used by ReportDebugMessage\n");
+            }
+        }
+    }
+
+    private void writeSummary(Path path, List<Proposal> proposals, int conflicts,
+            List<ShortStringProposal> shortStrings) throws IOException {
         long high = proposals.stream().filter(p -> p.confidence.equals("high")).count();
         long medium = proposals.stream().filter(p -> p.confidence.equals("medium")).count();
         long thiscalls = proposals.stream()
@@ -345,8 +435,11 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             "conflicts=" + conflicts,
             "thiscall_auto_apply=" + thiscalls,
             "existing_thiscall_without_live_ecx_evidence=" + conventionReview,
+            "short_diagnostic_string_proposals=" + shortStrings.size(),
             "note_conventions=Review debug_calling_convention_review.tsv; existing signatures " +
                 "are never reverted automatically.",
+            "note_strings=Short printf formats missed by minimum-length string discovery are " +
+                "written to debug_string_proposals.tsv.",
             "note=Only rows with apply=1 are consumed by STDebugSymbolApplier."));
     }
 
@@ -407,6 +500,17 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         final String convention, evidence;
         ThiscallEvidence(String convention, String evidence) {
             this.convention = convention; this.evidence = evidence;
+        }
+    }
+
+    private static class ShortStringProposal {
+        final Data data;
+        final String oldName, value;
+        final int references, diagnosticReferences;
+        ShortStringProposal(Data data, String oldName, String value, int references,
+                int diagnosticReferences) {
+            this.data = data; this.oldName = oldName; this.value = value;
+            this.references = references; this.diagnosticReferences = diagnosticReferences;
         }
     }
 }

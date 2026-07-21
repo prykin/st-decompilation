@@ -154,10 +154,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     g_currentExceptionFrame = local_94.previous;
     DestroyWindow(g_hWnd_00806748);
     g_hWnd_00806748 = (HWND)0x0;
-    UnregisterClassA(s_STWindowClass_007c9e3c,g_hInstance_00856D70);
+    UnregisterClassA("STWindowClass",g_hInstance_00856D70);
     pSVar3 = local_8;
-    if (local_8->field_115A != 0) {
-      FreeAndNull((void **)&local_8->field_115A);
+    if (local_8->field_115A != (AnonPointee_STAppC_115A *)0x0) {
+      FreeAndNull(&local_8->field_115A);
     }
     AppClassTy::DoneApp((AppClassTy *)pSVar3);
     if (DAT_008030d4 != 0) {
@@ -171,10 +171,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x31c,0,iVar4,&DAT_007a4ccc,
-                             s_STAppC__DoneApp_007ca0e4);
+  iVar5 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x31c,0,iVar4,"%s",
+                             "STAppC::DoneApp");
   if (iVar5 == 0) {
-    RaiseInternalException(iVar4,0,s_E____titans_tapp_cpp_007ca0c8,0x31d);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\tapp.cpp",0x31d);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

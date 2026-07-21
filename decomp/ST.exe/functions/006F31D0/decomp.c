@@ -4,10 +4,17 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006F31D0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=72; incoming_edx_uses=0; calls=7;
    ecx_pointer_setup=7; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
-   expected_stack=16; receiver_family_members=1; adopt_untyped_existing_thiscall */
+   expected_stack=16; receiver_family_members=1; adopt_untyped_existing_thiscall
+
+   [STMethodOwnerApplier] Structural method owner recovered as
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0.
+   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0];
+   agreed_this_calls=2; incoming_this_accesses=42; incoming_edx_uses=0;
+   incoming_stack_parameter_uses=149; direct_non_thunk_callers=2; incoming_ecx_receiver_callers=2;
+   attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
           (AnonReceiver_006F31D0 *this,uint param_1,int param_2,uint param_3,uint param_4)
 
 {
@@ -970,7 +977,7 @@ LAB_006f3635:
             uVar15 = 0xffffffff;
             iVar13 = -1;
 LAB_006f363d:
-            FUN_006f31d0(this,uVar7,iVar13,uVar15,param_4);
+            sub_006F31D0(this,uVar7,iVar13,uVar15,param_4);
             if (param_4 != 0) {
               puVar11 = *(uint **)(iVar12 + 100 + *(int *)&this->field_0x330);
               *puVar11 = *puVar11 & 0xffffff7f;
@@ -998,7 +1005,7 @@ LAB_006f363d:
                 uVar15 = 0xffffffff;
                 iVar13 = -1;
               }
-              FUN_006f31d0(this,uVar7,iVar13,uVar15,param_4);
+              sub_006F31D0(this,uVar7,iVar13,uVar15,param_4);
               if (param_4 != 0) {
                 puVar11 = *(uint **)(iVar12 + 100 + *(int *)&this->field_0x330);
                 *puVar11 = *puVar11 & 0xffffff7f;

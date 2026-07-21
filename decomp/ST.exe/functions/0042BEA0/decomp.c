@@ -36,15 +36,15 @@ STAllPlayersC::AddObjToTmp2
     }
     local_10 = 0xaffe0001;
     if (iVar2 == -0x5001ffff) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x251,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__AddObjToTmp2_coin_007a61e0);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x251,0,0,"%s",
+                                 "STAllPlayersC::AddObjToTmp2 coincide value");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x252,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__AddObjToTmp2_007a61bc);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x252,0,0,"%s",
+                                 "STAllPlayersC::AddObjToTmp2");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -69,13 +69,13 @@ LAB_0042bf8b:
     }
   }
   else {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x23b,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__AddObjToTmp2_inva_007a624c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x23b,0,0,"%s",
+                               "STAllPlayersC::AddObjToTmp2 invalid panel number");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23c);
   }
   pSVar5 = local_14 + param_3;
@@ -83,7 +83,7 @@ LAB_0042bf8b:
   if (((pSVar5->objectType == param_4) && (pSVar5->playerId == (int)objPtr)) &&
      (pSVar5->objectId == (short)param_6)) {
     RaiseInternalException
-              (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23f);
   }
   pSVar5->objectType = param_4;
@@ -113,17 +113,18 @@ LAB_0042bf8b:
       goto cf_common_exit_0042C072;
     }
   }
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x249,0,0,&DAT_007a4ccc,
-                             s_STAllPlayersC__AddObjToTmp2_inva_007a6214);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x249,0,0,"%s",
+                             "STAllPlayersC::AddObjToTmp2 invalid game type");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException
-            (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a)
+            (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a)
   ;
 cf_common_exit_0042C072:
   pSVar4 = GetObjPtr(local_c,objPtr,param_6,local_8);
-  (*pSVar4->vtable[1].vfunc_14)(1);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (**(code **)&pSVar4->vtable[1].field_0x18)(1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;
 }

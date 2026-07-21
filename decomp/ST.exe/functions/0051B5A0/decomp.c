@@ -84,7 +84,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
           if (PTR_00802a30 != (CursorClassTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)**(undefined4 **)PTR_00802a30)(&local_44->field_0x18);
+            (**(code **)PTR_00802a30->field_0000)(&local_44->field_0x18);
           }
         }
       }
@@ -116,7 +116,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 pcVar9 = LoadResourceString(0x565c,HINSTANCE_00807618);
                 uVar19 = 2;
                 pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
-                wsprintfA((LPSTR)&DAT_0080f33a,s___d_d___d_s___d__s__007c3cdc,2,local_c,
+                wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,pcVar9);
               }
               else {
@@ -124,7 +124,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 uVar19 = 2;
                 iVar4 = iVar16;
                 pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
-                wsprintfA((LPSTR)&DAT_0080f33a,s___d_d___d_s___d__d__s__007c3cf4,2,local_c,
+                wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%d %s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,iVar4,pcVar9);
               }
             }
@@ -132,7 +132,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               pcVar9 = LoadResourceString(0x565c,HINSTANCE_00807618);
               uVar19 = 2;
               pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
-              wsprintfA((LPSTR)&DAT_0080f33a,s___d_d__d__d___d_s___d__s__007c3d10,2,local_c,local_14
+              wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%s)",2,local_c,local_14
                         ,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,pcVar9);
             }
             else {
@@ -140,7 +140,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               uVar19 = 2;
               iVar4 = iVar16;
               pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
-              wsprintfA((LPSTR)&DAT_0080f33a,s___d_d__d__d___d_s___d__d__s__007c3d30,2,local_c,
+              wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%d %s)",2,local_c,
                         local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,iVar4,
                         pcVar9);
             }
@@ -196,7 +196,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar16,iVar17,uVar19);
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
         ;
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,iVar4);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",iVar4);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
         FUN_006b5440((int)this_00->field_0218,0,0xb4,local_8,iVar4,0,0x3a);
@@ -212,7 +212,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       pcVar9 = LoadResourceString(0x5658,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c3cd8,pcVar9);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%s:",pcVar9);
       ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,-3,-1,3);
       iVar4 = *(int *)(&DAT_007d1fdc + param_1 * 4);
       if (iVar4 == -1) {
@@ -268,7 +268,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar16 = -1;
       iVar4 = 1;
-      puVar8 = (uint *)LoadResourceString(0x273f - (*(int *)(s_blast_p_007d2090 + param_1 * 4) != 0)
+      puVar8 = (uint *)LoadResourceString(0x273f - (*(int *)("blast_p" + param_1 * 4) != 0)
                                           ,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar6);
       piVar13 = local_14;
@@ -553,12 +553,12 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       } while( true );
     }
     g_currentExceptionFrame = local_a4.previous;
-    iVar16 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x8c4,0,iVar4,
-                                &DAT_007a4ccc,s_HelpPanelTy__ArmProc_007c3cbc);
+    iVar16 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x8c4,0,iVar4,
+                                "%s","HelpPanelTy::ArmProc");
     if (iVar16 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x8c4);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0x8c4);
   }
   return;
 }

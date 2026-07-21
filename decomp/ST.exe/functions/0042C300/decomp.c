@@ -43,7 +43,7 @@ undefined4 FUN_0042c300(char param_1,uint param_2,int param_3,char param_4,uint 
   else {
     if (param_2 != 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x28f);
       goto LAB_0042c3a0;
     }
@@ -70,7 +70,8 @@ LAB_0042c3a0:
         if (_param_1 == (short)param_5) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar2 = STAllPlayersC::GetObjPtr(in_ECX,(char)_param_4,param_5,CASE_1);
-          (*pSVar2->vtable[1].vfunc_14)(0);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)&pSVar2->vtable[1].field_0x18)(0);
           _param_1 = 0xffff;
           Library::DKW::TBL::FUN_006ae140(&array->flags,index,(undefined4 *)&param_1);
           *(short *)((int)piVar3 + 0xe) = *(short *)((int)piVar3 + 0xe) + -1;

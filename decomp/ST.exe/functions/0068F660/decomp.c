@@ -39,11 +39,12 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,local_8->field_0x24,
+                             (g_sTAllPlayers_007FA174,*(char *)&local_8->field_0024,
                               CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),CASE_1);
         }
         if (objPtr != (STGameObjC *)0x0) {
-          iVar4 = (*objPtr->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
           if ((iVar4 < 1) || (0x28 < iVar4)) {
             bVar3 = false;
           }
@@ -51,7 +52,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
             bVar3 = true;
           }
           if ((bVar3) &&
-             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,*(short *)&objPtr[4].field_0xd8),
+             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,objPtr->field_081C),
              this_00 != (AiFltClassTy *)0x0)) {
             AiFltClassTy::_AddObjFlt(this_00,(uint)objPtr,0);
             FUN_006b0c70(param_1,uVar1);
@@ -63,12 +64,12 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x292,0,iVar4,&DAT_007a4ccc,
-                             s_AiTactClassTy__GiveObjByGrpNum_007d5804);
+  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x292,0,iVar4,"%s",
+                             "AiTactClassTy::GiveObjByGrpNum");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x293);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x293);
   return;
 }
 

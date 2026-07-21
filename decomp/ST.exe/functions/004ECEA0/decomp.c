@@ -27,7 +27,7 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
     iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_vqb_cpp_007c1670,0x3f);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x3f);
     }
   }
   switch(param_1->field_0245) {
@@ -68,10 +68,10 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
   }
   if (*(int *)&param_1->field_0x4d0 == 4) {
     iVar3 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,s_vacmine_007d1f38,0x1d);
+                      ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,"vacmine",0x1d);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_vqb_cpp_007c1670,0x58);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x58);
     }
     thunk_FUN_004ad5e0(param_1->field_05FF);
     uVar5 = 10;

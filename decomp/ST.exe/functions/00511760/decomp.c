@@ -157,17 +157,17 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     if (pHVar2->field_021C != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_021C);
     }
-    DAT_00801690 = 0;
+    PTR_00801690 = (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xcf,0,errorCode,
-                             &DAT_007a4ccc,s_HelpPanelTy__DoneHelpPanel_007c3918);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xcf,0,errorCode,
+                             "%s","HelpPanelTy::DoneHelpPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xcf);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0xcf);
   return;
 }
 

@@ -5,14 +5,18 @@
    Slots: 0x0
    Anchor: 005BC5E0 PrividerTy::GetMessage
    Evidence: unique_named_method_in_slot_family; unique_owner_for_target;
-   signature_anchor=PrividerTy::GetMessage */
+   signature_anchor=PrividerTy::GetMessage
 
-undefined4 __thiscall MMObjTy::GetMessage(MMObjTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00401280|005B6430; family_names=MMObjTy::GetMessage; ret4=1;
+   direct_offsets={10:0,14:0,18:0,1c:0} */
+
+int __thiscall MMObjTy::GetMessage(MMObjTy *this,STMessage *message)
 
 {
-  undefined4 uVar1;
+  int iVar1;
 
-  uVar1 = FUN_006e5fd0();
-  return uVar1;
+  iVar1 = FUN_006e5fd0(this,message);
+  return iVar1;
 }
 

@@ -22,13 +22,13 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   objPtr = (char)param_2;
   param_2 = (int *)GetObjPtr(this,objPtr,param_3,CASE_1);
   if ((STGameObjC *)param_2 == (STGameObjC *)0x0) {
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21d0,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC___ChangeMD_007a8000);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21d0,0,0,"%s",
+                               "STAllPlayersC::_ChangeMD");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x21d1);
   }
   if (param_1 == 1) {

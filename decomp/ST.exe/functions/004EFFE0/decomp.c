@@ -75,12 +75,12 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_bldlab_cpp_007c18b4,0x66,0,iVar6,&DAT_007a4ccc,
-                             s_BldLabPanelTy__PaintUpdBut_007c1944);
+  iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x66,0,iVar6,"%s",
+                             "BldLabPanelTy::PaintUpdBut");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Andrey_bldlab_cpp_007c18b4,0x66);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x66);
   return;
 }
 

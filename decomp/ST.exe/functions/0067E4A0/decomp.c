@@ -26,12 +26,12 @@ LPSTR __cdecl GetStrategName(undefined4 param_1,undefined4 param_2)
     return pCVar3;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1d9,0,iVar2,&DAT_007a4ccc,
-                             s_GetStrategName_007d309c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x1d9,0,iVar2,"%s",
+                             "GetStrategName");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1da);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1da);
   return (LPSTR)0x0;
 }
 

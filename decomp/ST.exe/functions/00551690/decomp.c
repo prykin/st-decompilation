@@ -46,12 +46,12 @@ void __thiscall TradePanelTy::ShiftControls(TradePanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x91,0,errorCode,
-                               &DAT_007a4ccc,s_TradePanelTy__ShiftControls_007c86dc);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x91,0,errorCode,
+                               "%s","TradePanelTy::ShiftControls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x91);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x91);
   }
   return;
 }

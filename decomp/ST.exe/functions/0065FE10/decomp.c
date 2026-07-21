@@ -84,7 +84,7 @@ LAB_0065fec9:
       local_1c = local_c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
-         (this = thunk_FUN_0042b760(param_1->field_0x24,
+         (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
                                     CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
          this != (STGroupBoatC *)0x0)) {
         (*this->vtable->vfunc_08)(this,CASE_8,local_38);

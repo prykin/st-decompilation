@@ -35,14 +35,14 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
                    [(int)g_worldGrid.planeStride * (int)param_4 +
                     (int)g_worldGrid.sizeX * (int)param_3 + (int)param_2].objects[0],
          in_EAX == (STWorldObject *)0x0 || (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
-    iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc,
-                               s_STBoatC__SetNewMD_007aba24);
+    iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4bcc,0,0,"%s",
+                               "STBoatC::SetNewMD");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
       return (bool)uVar6;
     }
     RaiseInternalException
-              (0,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcd);
+              (0,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x4bcd);
     /* ST_PSEUDO[unresolved_register_input,return_width_artifact]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate call-output artifact: verify return width, clobbers, or x87 state */
     in_EAX = extraout_EAX;
   }
@@ -96,12 +96,12 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
       uVar6 = (undefined1)iVar7;
     }
     this->field_04AB = param_5;
-    *(undefined4 *)&this->field_0x4c1 = 1;
+    this->field_04C1 = 1;
     if (param_5 != -1) {
       this->field_04A5 = param_2;
       this->field_04A7 = param_3;
       this->field_04A9 = param_4;
-      *(undefined4 *)&this->field_0x4b9 = param_6;
+      this->field_04B9 = param_6;
       uVar6 = SUB21(param_4,0);
     }
   }

@@ -8,10 +8,9 @@
 void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,short param_2)
 
 {
-  uint uVar1;
-  code *pcVar2;
+  code *pcVar1;
   STGroupBoatC *this_00;
-  int errorCode;
+  int iVar2;
   int iVar3;
   short *psVar4;
   uint index;
@@ -22,17 +21,17 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
-  if (errorCode != 0) {
+  if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    if (errorCode != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1294,0,errorCode,
-                                 &DAT_007a4ccc,s_STGroupBoatC__ChangeMDNotify_007ac310);
+    if (iVar2 != -0x5001fff7) {
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1294,0,iVar2,
+                                 "%s","STGroupBoatC::ChangeMDNotify");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1295);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x1295);
     }
     return;
   }
@@ -41,33 +40,35 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if (local_c->field_029F == (uint *)0x0) {
+    if (*(int *)&local_c->field_0x29f == 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    uVar1 = local_c->field_029F[3];
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    iVar2 = *(int *)(*(int *)&local_c->field_0x29f + 0xc);
     index = 0;
-    if (0 < (int)uVar1) {
+    if (0 < iVar2) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
+        DArrayGetElement(*(DArrayTy **)&this_00->field_0x29f,index,local_8);
         if (local_8[0] == -1) break;
         index = index + 1;
-      } while ((int)index < (int)uVar1);
+      } while ((int)index < iVar2);
     }
     psVar4 = &param_2;
 LAB_004a4e27:
-    Library::DKW::TBL::FUN_006ae140(this_00->field_029F,index,(undefined4 *)psVar4);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x29f,index,(undefined4 *)psVar4);
   }
   else {
-    if (local_c->field_029F == (uint *)0x0) {
+    if (*(int *)&local_c->field_0x29f == 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    uVar1 = local_c->field_029F[3];
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    iVar2 = *(int *)(*(int *)&local_c->field_0x29f + 0xc);
     index = 0;
-    if (0 < (int)uVar1) {
+    if (0 < iVar2) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
+        DArrayGetElement(*(DArrayTy **)&this_00->field_0x29f,index,local_8);
         if (local_8[0] == param_2) {
           local_8[0] = -1;
           local_8[1] = 0;
@@ -75,10 +76,10 @@ LAB_004a4e27:
           goto LAB_004a4e27;
         }
         index = index + 1;
-      } while ((int)index < (int)uVar1);
+      } while ((int)index < iVar2);
     }
   }
-  DistributeDock(this_00,0,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
+  DistributeDock(this_00,0,*(DArrayTy **)&this_00->field_0x29f,(DArrayTy *)this_00->field_0029);
   g_currentExceptionFrame = local_50.previous;
   return;
 }

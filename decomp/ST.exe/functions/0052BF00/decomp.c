@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\money.cpp
-   MoneyTy::GetMessage */
+   MoneyTy::GetMessage
 
-undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187CCA *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=0052BF00; family_names=MoneyTy::GetMessage; ret4=2;
+   direct_offsets={10:1,14:7,18:3,1c:2} */
+
+int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
 
 {
   undefined1 uVar1;
@@ -18,18 +22,18 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
   undefined4 *puVar7;
   LPSTR text;
   ushort *puVar8;
-  undefined4 uVar9;
-  int iVar10;
+  int iVar9;
   ccFntTy *this_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
   ccFntTy *this_02;
-  char cVar11;
-  uint uVar12;
-  byte bVar13;
+  char cVar10;
+  uint uVar11;
+  byte bVar12;
   char *text_00;
+  undefined4 uVar13;
   InternalExceptionFrame local_bc;
   AnonShape_0052B760_30F4E0D5 local_78;
   int local_58;
@@ -52,47 +56,47 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
   iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
-    switch(param_1->field_0010) {
-    case 0:
+    switch(message->id) {
+    case MESS_ID_NONE:
       iVar6 = FUN_006e4d40(&DAT_00807620,*(int *)&local_10->field_0xc);
       if (iVar6 == 1) {
-        uVar12 = *(uint *)&this_00->field_0x86;
+        uVar11 = *(uint *)&this_00->field_0x86;
         uVar2 = *(uint *)&this_00->field_0x8a;
-        if (uVar12 != uVar2) {
-          if (uVar12 < uVar2) {
-            if (uVar2 - uVar12 < 0x65) {
-              if (uVar2 - uVar12 < 0xb) {
-                iVar6 = uVar12 + 1;
+        if (uVar11 != uVar2) {
+          if (uVar11 < uVar2) {
+            if (uVar2 - uVar11 < 0x65) {
+              if (uVar2 - uVar11 < 0xb) {
+                iVar6 = uVar11 + 1;
               }
               else {
-                iVar6 = uVar12 + 10;
+                iVar6 = uVar11 + 10;
               }
             }
             else {
-              iVar6 = uVar12 + 100;
+              iVar6 = uVar11 + 100;
             }
           }
-          else if (uVar12 - uVar2 < 0x65) {
-            if (uVar12 - uVar2 < 0xb) {
-              iVar6 = uVar12 - 1;
+          else if (uVar11 - uVar2 < 0x65) {
+            if (uVar11 - uVar2 < 0xb) {
+              iVar6 = uVar11 - 1;
             }
             else {
-              iVar6 = uVar12 - 10;
+              iVar6 = uVar11 - 10;
             }
           }
           else {
-            iVar6 = uVar12 - 100;
+            iVar6 = uVar11 - 100;
           }
           *(int *)&this_00->field_0x86 = iVar6;
           if (DAT_0080874e == '\x03') {
-            uVar9 = *(undefined4 *)&this_00->field_0x86;
-            text_00 = &DAT_007c28fc;
+            uVar13 = *(undefined4 *)&this_00->field_0x86;
+            text_00 = "%6d";
           }
           else {
-            uVar9 = *(undefined4 *)&this_00->field_0x86;
-            text_00 = &DAT_007c6f44;
+            uVar13 = *(undefined4 *)&this_00->field_0x86;
+            text_00 = "%5d";
           }
-          wsprintfA((LPSTR)local_18,text_00,uVar9);
+          wsprintfA((LPSTR)local_18,text_00,uVar13);
           iVar6 = *(int *)&this_00->field_0x72;
           local_c = *(uint *)(iVar6 + 0x14);
           if (local_c == 0) {
@@ -101,11 +105,11 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
           }
           uVar1 = this_00->field_0x69;
           puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
-          for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+          for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
             *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
             puVar7 = puVar7 + 1;
           }
-          for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+          for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
             *(undefined1 *)puVar7 = uVar1;
             puVar7 = (undefined4 *)((int)puVar7 + 1);
           }
@@ -116,35 +120,35 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
           thunk_FUN_0052b8a0((int)this_00);
         }
-        uVar12 = *(uint *)&this_00->field_0x8e;
+        uVar11 = *(uint *)&this_00->field_0x8e;
         uVar2 = *(uint *)&this_00->field_0x92;
-        if (uVar12 != uVar2) {
-          if (uVar12 < uVar2) {
-            if (uVar2 - uVar12 < 0x65) {
-              if (uVar2 - uVar12 < 0xb) {
-                iVar6 = uVar12 + 1;
+        if (uVar11 != uVar2) {
+          if (uVar11 < uVar2) {
+            if (uVar2 - uVar11 < 0x65) {
+              if (uVar2 - uVar11 < 0xb) {
+                iVar6 = uVar11 + 1;
               }
               else {
-                iVar6 = uVar12 + 10;
+                iVar6 = uVar11 + 10;
               }
             }
             else {
-              iVar6 = uVar12 + 100;
+              iVar6 = uVar11 + 100;
             }
           }
-          else if (uVar12 - uVar2 < 0x65) {
-            if (uVar12 - uVar2 < 0xb) {
-              iVar6 = uVar12 - 1;
+          else if (uVar11 - uVar2 < 0x65) {
+            if (uVar11 - uVar2 < 0xb) {
+              iVar6 = uVar11 - 1;
             }
             else {
-              iVar6 = uVar12 - 10;
+              iVar6 = uVar11 - 10;
             }
           }
           else {
-            iVar6 = uVar12 - 100;
+            iVar6 = uVar11 - 100;
           }
           *(int *)&this_00->field_0x8e = iVar6;
-          wsprintfA((LPSTR)local_40,&DAT_007c28fc,iVar6);
+          wsprintfA((LPSTR)local_40,"%6d",iVar6);
           iVar6 = *(int *)&this_00->field_0x76;
           local_c = *(uint *)(iVar6 + 0x14);
           if (local_c == 0) {
@@ -153,11 +157,11 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
           }
           uVar1 = this_00->field_0x69;
           puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
-          for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+          for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
             *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
             puVar7 = puVar7 + 1;
           }
-          for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+          for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
             *(undefined1 *)puVar7 = uVar1;
             puVar7 = (undefined4 *)((int)puVar7 + 1);
           }
@@ -168,35 +172,35 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 4);
           thunk_FUN_0052b8f0((int)this_00);
         }
-        uVar12 = *(uint *)&this_00->field_0x96;
+        uVar11 = *(uint *)&this_00->field_0x96;
         uVar2 = *(uint *)&this_00->field_0x9a;
-        if (uVar12 != uVar2) {
-          if (uVar12 < uVar2) {
-            if (uVar2 - uVar12 < 0x65) {
-              if (uVar2 - uVar12 < 0xb) {
-                iVar6 = uVar12 + 1;
+        if (uVar11 != uVar2) {
+          if (uVar11 < uVar2) {
+            if (uVar2 - uVar11 < 0x65) {
+              if (uVar2 - uVar11 < 0xb) {
+                iVar6 = uVar11 + 1;
               }
               else {
-                iVar6 = uVar12 + 10;
+                iVar6 = uVar11 + 10;
               }
             }
             else {
-              iVar6 = uVar12 + 100;
+              iVar6 = uVar11 + 100;
             }
           }
-          else if (uVar12 - uVar2 < 0x65) {
-            if (uVar12 - uVar2 < 0xb) {
-              iVar6 = uVar12 - 1;
+          else if (uVar11 - uVar2 < 0x65) {
+            if (uVar11 - uVar2 < 0xb) {
+              iVar6 = uVar11 - 1;
             }
             else {
-              iVar6 = uVar12 - 10;
+              iVar6 = uVar11 - 10;
             }
           }
           else {
-            iVar6 = uVar12 - 100;
+            iVar6 = uVar11 - 100;
           }
           *(int *)&this_00->field_0x96 = iVar6;
-          wsprintfA((LPSTR)local_48,&DAT_007c28fc,iVar6);
+          wsprintfA((LPSTR)local_48,"%6d",iVar6);
           iVar6 = *(int *)&this_00->field_0x7a;
           local_c = *(uint *)(iVar6 + 0x14);
           if (local_c == 0) {
@@ -205,11 +209,11 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
           }
           uVar1 = this_00->field_0x69;
           puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
-          for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+          for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
             *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
             puVar7 = puVar7 + 1;
           }
-          for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+          for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
             *(undefined1 *)puVar7 = uVar1;
             puVar7 = (undefined4 *)((int)puVar7 + 1);
           }
@@ -228,7 +232,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
         }
       }
       break;
-    case 2:
+    case MESS_ID_CREATE:
       iVar6 = (DAT_0080874e != '\x03') + 0xb;
       *(int *)&local_10->field_0x2c = iVar6;
       *(int *)&local_10->field_0x24 = iVar6;
@@ -266,28 +270,28 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       *(int *)&local_10->field_0x38 = g_nWidth_00806730 + -99;
       *(int *)&local_10->field_0x3c = DAT_00806734 + -0x16;
       local_10->field_0x69 = ((DAT_0080874e == '\x03') - 1U & 0xc3) + 0x3d;
-      puVar7 = ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,s_MONEY_FONT_007c211c,0);
+      puVar7 = ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"MONEY_FONT",0);
       *(undefined4 **)&this_00->field_0x6a = puVar7;
       puVar7[0x16] = 1;
       puVar7[0x17] = 0;
-      puVar7 = ccFntTy::operator(this_01,0x19d,(cMf32 *)DAT_00806790,s_TIME_FONT_007c212c,0);
+      puVar7 = ccFntTy::operator(this_01,0x19d,(cMf32 *)DAT_00806790,"TIME_FONT",0);
       *(undefined4 **)&this_00->field_0x6e = puVar7;
       puVar7[0x16] = 1;
       puVar7[0x17] = 0;
       puVar7 = (undefined4 *)0x0;
-      iVar10 = 0;
+      iVar9 = 0;
       iVar6 = 1;
-      bVar13 = 0;
-      uVar12 = 0xffffffff;
-      text = thunk_FUN_00571240(s_IND_PNT_007c2078,0);
+      bVar12 = 0;
+      uVar11 = 0xffffffff;
+      text = thunk_FUN_00571240("IND_PNT",0);
       puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_B,text,uVar12,bVar13,iVar6,iVar10,puVar7);
+                         (DAT_00806794,CASE_B,text,uVar11,bVar12,iVar6,iVar9,puVar7);
       this_00->field_0082 = (int)puVar8;
       puVar7 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar6 = 1;
-      uVar12 = FUN_006b4fe0(DAT_0080679c);
+      uVar11 = FUN_006b4fe0(DAT_0080679c);
       iVar6 = FUN_006b50c0(*(int *)&this_00->field_0x40,*(int *)&this_00->field_0x44,
-                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar12,puVar7,iVar6);
+                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar11,puVar7,iVar6);
       *(int *)&this_00->field_0x72 = iVar6;
       local_c = *(uint *)(iVar6 + 0x14);
       if (local_c == 0) {
@@ -297,18 +301,18 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       uVar1 = this_00->field_0x69;
       puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
       iVar6 = 1;
-      for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
         puVar7 = puVar7 + 1;
       }
-      for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
         *(undefined1 *)puVar7 = uVar1;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       puVar7 = (undefined4 *)(DAT_0080679c + 0x28);
-      uVar12 = FUN_006b4fe0(DAT_0080679c);
+      uVar11 = FUN_006b4fe0(DAT_0080679c);
       iVar6 = FUN_006b50c0(*(int *)&this_00->field_0x48,*(int *)&this_00->field_0x4c,
-                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar12,puVar7,iVar6);
+                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar11,puVar7,iVar6);
       *(int *)&this_00->field_0x76 = iVar6;
       local_c = *(uint *)(iVar6 + 0x14);
       if (local_c == 0) {
@@ -318,18 +322,18 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       uVar1 = this_00->field_0x69;
       puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
       iVar6 = 1;
-      for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
         puVar7 = puVar7 + 1;
       }
-      for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
         *(undefined1 *)puVar7 = uVar1;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       puVar7 = (undefined4 *)(DAT_0080679c + 0x28);
-      uVar12 = FUN_006b4fe0(DAT_0080679c);
+      uVar11 = FUN_006b4fe0(DAT_0080679c);
       iVar6 = FUN_006b50c0(*(int *)&this_00->field_0x50,*(int *)&this_00->field_0x54,
-                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar12,puVar7,iVar6);
+                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar11,puVar7,iVar6);
       *(int *)&this_00->field_0x7a = iVar6;
       local_c = *(uint *)(iVar6 + 0x14);
       if (local_c == 0) {
@@ -339,18 +343,18 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       uVar1 = this_00->field_0x69;
       puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
       iVar6 = 1;
-      for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
         puVar7 = puVar7 + 1;
       }
-      for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
         *(undefined1 *)puVar7 = uVar1;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       puVar7 = (undefined4 *)(DAT_0080679c + 0x28);
-      uVar12 = FUN_006b4fe0(DAT_0080679c);
+      uVar11 = FUN_006b4fe0(DAT_0080679c);
       iVar6 = FUN_006b50c0(*(int *)&this_00->field_0x60,*(int *)&this_00->field_0x64,
-                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar12,puVar7,iVar6);
+                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar11,puVar7,iVar6);
       *(int *)&this_00->field_0x7e = iVar6;
       local_c = *(uint *)(iVar6 + 0x14);
       if (local_c == 0) {
@@ -359,11 +363,11 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       }
       uVar1 = this_00->field_0x69;
       puVar7 = (undefined4 *)FUN_006b4fa0(iVar6);
-      for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar7 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
         puVar7 = puVar7 + 1;
       }
-      for (uVar12 = local_c & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = local_c & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
         *(undefined1 *)puVar7 = uVar1;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
@@ -390,16 +394,16 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
         thunk_FUN_004d8b70(DAT_0080874d);
       }
       break;
-    case 3:
+    case MESS_SHARED_0003:
       DAT_008016d4 = (AnonShape_0052B990_04D99BFA *)0x0;
-      uVar9 = *(undefined4 *)&local_10->field_0x8;
+      uVar13 = *(undefined4 *)&local_10->field_0x8;
       puVar7 = local_38;
       for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
         *puVar7 = 0;
         puVar7 = puVar7 + 1;
       }
       local_28 = 0x14;
-      local_24 = uVar9;
+      local_24 = uVar13;
       FUN_006e6000(this_00,3,1,local_38);
       if (*(int *)&this_00->field_0x72 != 0) {
         FreeAndNull((void **)&this_00->field_0x72);
@@ -430,20 +434,20 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
         *(undefined4 *)&this_00->field_0x6e = 0;
       }
       break;
-    case 5:
+    case MESS_SHARED_0005:
       thunk_FUN_0052b8a0((int)local_10);
       thunk_FUN_0052b8f0((int)this_00);
       thunk_FUN_0052b940((int)this_00);
       thunk_FUN_0052b990(this_00);
       thunk_FUN_0052bbe0((int)this_00);
       break;
-    case 0x60:
-      uVar12 = (uint)param_1->field_0018;
-      local_c = (uint)param_1->field_001A;
+    case MESS_SHARED_0060:
+      uVar11 = (uint)(message->arg1).words.low;
+      local_c = (uint)(message->arg1).words.high;
       local_5 = '\0';
       if (DAT_0080874e != '\x03') {
-        if (((((int)uVar12 < *(int *)&local_10->field_0x18) ||
-             (*(int *)&local_10->field_0x40 + *(int *)&local_10->field_0x18 <= (int)uVar12)) ||
+        if (((((int)uVar11 < *(int *)&local_10->field_0x18) ||
+             (*(int *)&local_10->field_0x40 + *(int *)&local_10->field_0x18 <= (int)uVar11)) ||
             ((int)local_c < *(int *)&local_10->field_0x1c)) ||
            (*(int *)&local_10->field_0x44 + *(int *)&local_10->field_0x1c <= (int)local_c)) {
           bVar4 = false;
@@ -455,8 +459,8 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
           local_5 = '\x01';
         }
       }
-      if ((((int)uVar12 < *(int *)&local_10->field_0x20) ||
-          (*(int *)&local_10->field_0x48 + *(int *)&local_10->field_0x20 <= (int)uVar12)) ||
+      if ((((int)uVar11 < *(int *)&local_10->field_0x20) ||
+          (*(int *)&local_10->field_0x48 + *(int *)&local_10->field_0x20 <= (int)uVar11)) ||
          (((int)local_c < *(int *)&local_10->field_0x24 ||
           (*(int *)&local_10->field_0x4c + *(int *)&local_10->field_0x24 <= (int)local_c)))) {
         bVar4 = false;
@@ -467,8 +471,8 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       if (bVar4) {
         local_5 = '\x02';
       }
-      if ((((int)uVar12 < *(int *)&local_10->field_0x28) ||
-          (*(int *)&local_10->field_0x50 + *(int *)&local_10->field_0x28 <= (int)uVar12)) ||
+      if ((((int)uVar11 < *(int *)&local_10->field_0x28) ||
+          (*(int *)&local_10->field_0x50 + *(int *)&local_10->field_0x28 <= (int)uVar11)) ||
          (((int)local_c < *(int *)&local_10->field_0x2c ||
           (*(int *)&local_10->field_0x54 + *(int *)&local_10->field_0x2c <= (int)local_c)))) {
         bVar4 = false;
@@ -479,8 +483,8 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       if (bVar4) {
         local_5 = '\x03';
       }
-      if (((((int)uVar12 < local_10->field_0030) ||
-           (local_10->field_0058 + local_10->field_0030 <= (int)uVar12)) ||
+      if (((((int)uVar11 < local_10->field_0030) ||
+           (local_10->field_0058 + local_10->field_0030 <= (int)uVar11)) ||
           ((int)local_c < local_10->field_0034)) ||
          (local_10->field_005C + local_10->field_0034 <= (int)local_c)) {
         bVar4 = false;
@@ -495,46 +499,46 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       local_50 = *(int *)&local_10->field_0x60 + 0x23;
       local_54 = *(int *)&local_10->field_0x3c + -3;
       local_4c = *(int *)&local_10->field_0x64 + 6;
-      if ((((int)uVar12 < local_58) || (local_50 + local_58 <= (int)uVar12)) ||
+      if ((((int)uVar11 < local_58) || (local_50 + local_58 <= (int)uVar11)) ||
          (((int)local_c < local_54 || (local_4c + local_54 <= (int)local_c)))) {
         bVar4 = false;
       }
       else {
         bVar4 = true;
       }
-      cVar11 = '\x05';
+      cVar10 = '\x05';
       if (!bVar4) {
-        cVar11 = local_5;
+        cVar10 = local_5;
       }
-      if (local_10->field_0x68 != cVar11) {
+      if (local_10->field_0x68 != cVar10) {
         if (local_10->field_0x68 != '\0') {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_78._16_4_ = 0x4202;
           thunk_FUN_0052b760(local_10,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)**(undefined4 **)PTR_00802a30)(&local_78);
+          (**(code **)PTR_00802a30->field_0000)(&local_78);
         }
-        this_00->field_0x68 = cVar11;
-        if (cVar11 != '\0') {
+        this_00->field_0x68 = cVar10;
+        if (cVar10 != '\0') {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_78._16_4_ = 0x4201;
           thunk_FUN_0052b760(this_00,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)**(undefined4 **)PTR_00802a30)(&local_78);
+          (**(code **)PTR_00802a30->field_0000)(&local_78);
         }
       }
     }
     g_currentExceptionFrame = local_bc.previous;
-    uVar9 = FUN_006e5fd0();
-    return uVar9;
+    iVar6 = FUN_006e5fd0(this_00,message);
+    return iVar6;
   }
   g_currentExceptionFrame = local_bc.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_Andrey_money_cpp_007c6f48,0x12a,0,iVar6,&DAT_007a4ccc,
-                              s_MoneyTy__GetMessage_007c6f6c);
-  if (iVar10 != 0) {
+  iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\money.cpp",0x12a,0,iVar6,"%s",
+                             "MoneyTy::GetMessage");
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Andrey_money_cpp_007c6f48,0x12a);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\money.cpp",0x12a);
   return 0xffff;
 }
 

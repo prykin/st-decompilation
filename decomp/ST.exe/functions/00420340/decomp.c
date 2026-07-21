@@ -258,8 +258,8 @@ switchD_00420436_caseD_1:
     case 0x72:
       goto switchD_00420436_caseD_7;
     default:
-      iVar7 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xc45,0,0,&DAT_007a4ccc,
-                                 s_STSprGameObjC__LoadActFrame_2_un_007a4fb8);
+      iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xc45,0,0,"%s",
+                                 "STSprGameObjC::LoadActFrame 2 unknown object type");
       if (iVar7 == 0) {
         return;
       }
@@ -465,13 +465,13 @@ LAB_00420678:
     iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,DAT_00806774,local_24,0x1d);
     if (iVar7 != 0) {
       RaiseInternalException
-                (-0x5001fff8,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,
+                (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4a);
     }
     iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,DAT_00806774,local_24,0x1d);
     if (iVar7 != 0) {
       RaiseInternalException
-                (-0x5001fff8,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,
+                (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4b);
     }
     FUN_006ea5e0((void *)this->field_0211,this->field_01ED,0xf,0);
@@ -501,8 +501,8 @@ LAB_00420678:
   case 0xbd:
     goto switchD_00420436_caseD_1;
   default:
-    iVar7 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xbc0,0,0,&DAT_007a4ccc,
-                               s_STSprGameObjC__LoadActFrame_1_un_007a4f70);
+    iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xbc0,0,0,"%s",
+                               "STSprGameObjC::LoadActFrame 1 unknown object type");
     if (iVar7 == 0) {
       return;
     }

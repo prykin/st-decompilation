@@ -64,7 +64,7 @@ MReportTy::OutTGlProc
         pcVar5 = (char *)&DAT_0080c736;
       }
       pcVar6 = LoadResourceString(0x2445,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__0_s___2_s_007ccf14,pcVar6,pcVar5);
+      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s: &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar7 + 0x83),&DAT_0080f33a,10,-1,0);
       ccFntTy::SetSurf(*(ccFntTy **)(iVar7 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
                        0xf);
@@ -76,7 +76,7 @@ MReportTy::OutTGlProc
       }
       pcVar5 = LoadResourceString(resourceId,HINSTANCE_00807618);
       pcVar6 = LoadResourceString(0x2337,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__0_s__2_s_007ccf08,pcVar6,pcVar5);
+      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar7 + 0x83),&DAT_0080f33a,10,-1,0);
       Library::DKW::DDX::FUN_006c5000
                 (param_1,param_4,param_5,(int)local_8,0,0,0,local_8->field_0004,local_8->field_0008,
@@ -86,12 +86,12 @@ MReportTy::OutTGlProc
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x44,0,iVar2,&DAT_007a4ccc,
-                               s_MReportTy__OutTGlProc_007cceec);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x44,0,iVar2,"%s",
+                               "MReportTy::OutTGlProc");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x44);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x44);
   }
   return;
 }

@@ -35,6 +35,7 @@ import ghidra.program.model.data.UnionDataType;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.data.DWordDataType;
 import ghidra.program.model.data.IntegerDataType;
+import ghidra.program.model.data.WordDataType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
@@ -58,6 +59,8 @@ public class STRecoveredTypesApplier extends GhidraScript {
     private DataType voidPtr;
     private DataType int32;
     private DataType uint32;
+    private Structure messageArgWords;
+    private Union messageArg;
     private Structure stMessage;
     private Structure controlCommandPayload;
     private Union controlCommandPayloadUnion;
@@ -114,6 +117,7 @@ public class STRecoveredTypesApplier extends GhidraScript {
             createPlayerTempSlotType();
             createSystemTypes();
             resolveAll();
+            migrateMessageLayout();
             migrateControlCommandPayloadView();
             ensureControlCommandPayloadMembers();
             migrateControlCommandPayload();
@@ -220,18 +224,90 @@ public class STRecoveredTypesApplier extends GhidraScript {
         ensureEnumValue(ids, "MESS_HITKILL", 0x128);
         DataType messageId = ids;
 
+        DataType existingArgWords = dtm.getDataType(ROOT, "STMessageArgWords");
+        if (existingArgWords instanceof Structure) {
+            messageArgWords = (Structure)existingArgWords;
+        }
+        else {
+            messageArgWords = new StructureDataType(ROOT, "STMessageArgWords", 0, dtm);
+            messageArgWords.setDescription(
+                "Two neutral 16-bit views of a message argument slot.");
+            add(messageArgWords, WordDataType.dataType, "low", "Low 16 bits.");
+            add(messageArgWords, WordDataType.dataType, "high", "High 16 bits.");
+        }
+
+        DataType existingArg = dtm.getDataType(ROOT, "STMessageArg");
+        if (existingArg instanceof Union) {
+            messageArg = (Union)existingArg;
+        }
+        else {
+            messageArg = new UnionDataType(ROOT, "STMessageArg", dtm);
+            messageArg.setDescription(
+                "Four-byte message argument. Its interpretation is selected by STMessage.id.");
+            messageArg.add(uint32, 4, "u32", "Unsigned/raw dword view.");
+            messageArg.add(int32, 4, "i32", "Signed dword view.");
+            messageArg.add(voidPtr, 4, "ptr", "Pointer payload view.");
+            messageArg.add(messageArgWords, 4, "words", "Two 16-bit values.");
+        }
+
         DataType existingMessage = dtm.getDataType(ROOT, "STMessage");
         if (existingMessage instanceof Structure) {
             stMessage = (Structure)existingMessage;
             return;
         }
         stMessage = new StructureDataType(ROOT, "STMessage", 0, dtm);
+        stMessage.setDescription(
+            "Common message envelope. The three argument slots are discriminator-dependent.");
         add(stMessage, uint32, "unknown_00", "Unresolved message header field.");
         add(stMessage, uint32, "unknown_04", "Unresolved message header field.");
         add(stMessage, uint32, "unknown_08", "Unresolved message header field.");
         add(stMessage, uint32, "unknown_0c", "Unresolved message header field.");
         add(stMessage, messageId, "id", "Confirmed: dispatched as message identifier.");
-        add(stMessage, voidPtr, "data", "Payload type depends on id.");
+        add(stMessage, messageArg, "arg0", "First discriminator-dependent argument.");
+        add(stMessage, messageArg, "arg1", "Second discriminator-dependent argument.");
+        add(stMessage, messageArg, "arg2", "Third discriminator-dependent argument.");
+    }
+
+    private void migrateMessageLayout() {
+        if (messageLayoutCurrent()) return;
+        if (stMessage.getLength() != 0x18 || messageArg.getLength() != 4) {
+            println("Preserving manually changed STMessage layout: expected legacy length 0x18.");
+            return;
+        }
+        DataTypeComponent id = stMessage.getComponentAt(0x10);
+        DataTypeComponent data = stMessage.getComponentAt(0x14);
+        boolean legacy = id != null && id.getOffset() == 0x10 && "id".equals(id.getFieldName()) &&
+            id.getDataType().getPathName().equals(ROOT.getPath() + "/STMessageId") &&
+            data != null && data.getOffset() == 0x14 && "data".equals(data.getFieldName()) &&
+            data.getDataType() instanceof Pointer pointer &&
+            pointer.getDataType() != null &&
+            "/void".equals(pointer.getDataType().getPathName());
+        if (!legacy) {
+            println("Preserving manually changed STMessage: legacy data field was not recognized.");
+            return;
+        }
+        stMessage.replaceAtOffset(0x14, messageArg, 4, "arg0",
+            "First discriminator-dependent argument. " + SCRIPT_MARKER);
+        stMessage.insertAtOffset(0x18, messageArg, 4, "arg1",
+            "Second discriminator-dependent argument. " + SCRIPT_MARKER);
+        stMessage.insertAtOffset(0x1c, messageArg, 4, "arg2",
+            "Third discriminator-dependent argument. " + SCRIPT_MARKER);
+        stMessage.setDescription(
+            "Common message envelope. The three argument slots are discriminator-dependent. " +
+            SCRIPT_MARKER);
+        println("Migrated STMessage to the confirmed 0x20-byte argument-slot layout.");
+    }
+
+    private boolean messageLayoutCurrent() {
+        if (stMessage.getLength() != 0x20 || messageArg.getLength() != 4) return false;
+        String[] names = { "arg0", "arg1", "arg2" };
+        for (int index = 0; index < names.length; index++) {
+            DataTypeComponent component = stMessage.getComponentAt(0x14 + index * 4);
+            if (component == null || component.getOffset() != 0x14 + index * 4 ||
+                    !names[index].equals(component.getFieldName()) ||
+                    !component.getDataType().isEquivalent(messageArg)) return false;
+        }
+        return true;
     }
 
     private void createDArrayType() {
@@ -677,6 +753,9 @@ public class STRecoveredTypesApplier extends GhidraScript {
     }
 
     private void resolveAll() {
+        messageArgWords = (Structure)dtm.resolve(messageArgWords,
+            DataTypeConflictHandler.KEEP_HANDLER);
+        messageArg = (Union)dtm.resolve(messageArg, DataTypeConflictHandler.KEEP_HANDLER);
         stMessage = (Structure)dtm.resolve(stMessage, DataTypeConflictHandler.KEEP_HANDLER);
         packedValueBytes = (Structure)dtm.resolve(packedValueBytes,
             DataTypeConflictHandler.KEEP_HANDLER);

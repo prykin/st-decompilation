@@ -21,7 +21,7 @@ void FUN_0044cc90(uint param_1,uint *groupContent,undefined4 param_3)
       if ((((short)param_1 != -1) &&
           (pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)uVar2,param_1,CASE_1),
           pSVar3 != (STGameObjC *)0x0)) && (pSVar3->field_0020 == 0x14)) {
-        *(undefined4 *)&pSVar3[4].field_0xa2 = param_3;
+        pSVar3->field_07E6 = param_3;
       }
       uVar4 = uVar4 + 1;
       index = uVar4 & 0xffff;

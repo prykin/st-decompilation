@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
     iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_htech_cpp_007bf618,0x3e);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_htech.cpp",0x3e);
     }
   }
   switch(param_1->field_0245) {
@@ -66,12 +66,12 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
     param_1->field_026D = 0;
   }
   if (*(int *)&param_1->field_0x4d0 == 4) {
-    wsprintfA(local_108,&DAT_007a4ccc,s_lasbom_007bf610);
+    wsprintfA(local_108,"%s","lasbom");
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,local_108,0x1d);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_htech_cpp_007bf618,0x57);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_htech.cpp",0x57);
     }
     thunk_FUN_004ad5e0(param_1->field_05FF);
     uVar5 = 10;

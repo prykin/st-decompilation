@@ -69,8 +69,8 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   }
   else {
     if (param_2 != 1) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3042,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__ActivateTV_invali_007a88f4);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3042,0,0,"%s",
+                                 "STAllPlayersC::ActivateTV invalid panel number");
       if (iVar5 == 0) {
         return;
       }

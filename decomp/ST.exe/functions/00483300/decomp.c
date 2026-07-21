@@ -20,8 +20,6 @@ int __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   undefined2 extraout_var;
   uint uVar7;
   short sVar8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   short sVar9;
   short sVar10;
   undefined4 local_38 [2];
@@ -62,10 +60,11 @@ LAB_00483342:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         return (-(uint)(*(int *)((int)param_1 + 0x7e6) != 0) & 4) + 5;
       }
-      iVar3 = (*this->vtable[1].vfunc_24)();
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      if (((iVar3 == 0) || (iVar3 = (*this->vtable[1].MoveStep)(this,unaff_EDI), iVar3 == 0)) ||
-         (iVar3 = (*this->vtable[1].vfunc_20)(param_1[9]), iVar3 == 0)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar3 = (**(code **)&this->vtable[1].field_0x28)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if (((iVar3 == 0) || (iVar3 = (**(code **)&this->vtable[1].field_0x20)(), iVar3 == 0)) ||
+         (iVar3 = (**(code **)&this->vtable[1].field_0x24)(param_1[9]), iVar3 == 0)) {
         return 3;
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

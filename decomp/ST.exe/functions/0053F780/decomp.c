@@ -64,12 +64,12 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x1ff,0,iVar5,&DAT_007a4ccc
-                               ,s_ProdPanelTy__ShiftControls_007c7a7c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x1ff,0,iVar5,"%s"
+                               ,"ProdPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x1ff);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1ff);
   }
   return;
 }

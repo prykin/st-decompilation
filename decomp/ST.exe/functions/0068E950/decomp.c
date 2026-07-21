@@ -36,12 +36,12 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x16d,0,errorCode,&DAT_007a4ccc,
-                             s_AiTactClassTy__ClaimSave_007d5754);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x16d,0,errorCode,"%s",
+                             "AiTactClassTy::ClaimSave");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x16e);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x16e);
   return;
 }
 

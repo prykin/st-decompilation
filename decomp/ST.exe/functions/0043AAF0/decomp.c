@@ -22,7 +22,7 @@ STAllPlayersC::GetCamPoint
   code *pcVar2;
   int iVar3;
   undefined4 uVar4;
-  STFishC *pSVar5;
+  STGameObjC *pSVar5;
   ushort uVar6;
   int iVar7;
   int iVar8;
@@ -55,9 +55,10 @@ STAllPlayersC::GetCamPoint
           DArrayGetElement(param_3,local_c,&local_10);
           if ((short)local_10 != -1) {
             uVar6 = uVar6 + 1;
-            pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,local_10,CASE_1);
+            pSVar5 = GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,local_10,CASE_1);
             STFishC::sub_004162B0
-                      (pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
+                      ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
+                       (undefined2 *)((int)&param_4 + 2));
             iVar7 = iVar7 + _param_1;
             iVar8 = iVar8 + local_8;
           }
@@ -68,9 +69,10 @@ STAllPlayersC::GetCamPoint
           do {
             DArrayGetElement(param_3,local_c,&local_10);
             if ((short)local_10 != -1) {
-              pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,local_10,CASE_1);
+              pSVar5 = GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,local_10,CASE_1);
               STFishC::sub_004162B0
-                        (pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
+                        ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
+                         (undefined2 *)((int)&param_4 + 2));
               iVar3 = FUN_006acf90((int)param_1,(int)(short)local_8,
                                    (int)(short)((int)(short)iVar7 / (int)(uint)uVar6),
                                    (int)(short)((int)(short)iVar8 / (int)(uint)uVar6));
@@ -87,7 +89,7 @@ STAllPlayersC::GetCamPoint
                 }
                 local_14 = iVar3;
                 if (param_8 != (uint *)0x0) {
-                  *param_8 = *(uint *)&pSVar5->field_0x1ed;
+                  *param_8 = pSVar5->field_01ED;
                 }
               }
             }
@@ -104,8 +106,8 @@ STAllPlayersC::GetCamPoint
     else {
       if (_param_1 != 0x172) {
 LAB_0043acdb:
-        iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x19fb,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__GetCamPoint_inval_007a79f4);
+        iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x19fb,0,0,"%s"
+                                   ,"STAllPlayersC::GetCamPoint invalid game type");
         if (iVar7 == 0) {
           return 0xffffffff;
         }
@@ -124,8 +126,9 @@ LAB_0043acdb:
     if (_param_1 != 0x1b8) goto LAB_0043acdb;
     SVar10 = CASE_6;
   }
-  pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,param_4,SVar10);
-  STFishC::sub_004162B0(pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
+  pSVar5 = GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,param_4,SVar10);
+  STFishC::sub_004162B0
+            ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
   if (param_5 != (int *)0x0) {
     *param_5 = (int)param_1;
   }
@@ -136,7 +139,7 @@ LAB_0043acdb:
     *param_7 = (int)param_4._2_2_;
   }
   if (param_8 != (uint *)0x0) {
-    *param_8 = *(uint *)&pSVar5->field_0x1ed;
+    *param_8 = pSVar5->field_01ED;
   }
   return 0;
 }

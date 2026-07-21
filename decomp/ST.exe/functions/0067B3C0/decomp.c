@@ -53,12 +53,12 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,und
     return 0;
   }
   g_currentExceptionFrame = local_60.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x3a9,0,iVar3,&DAT_007a4ccc,
-                             s_AiPlrClassTy__SetTech_007d2ef4);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x3a9,0,iVar3,"%s",
+                             "AiPlrClassTy::SetTech");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x3aa);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_plr.cpp",0x3aa);
   return iVar3;
 }
 

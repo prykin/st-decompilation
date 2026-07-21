@@ -13,11 +13,11 @@ TraksClassTy * __thiscall TraksClassTy::TraksClassTy(TraksClassTy *this)
   int iVar1;
   undefined4 *puVar2;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &TraksClassTyVTable;
   g_traksClass_00802A7C = this;
   this->field_0024 = (DArrayTy *)0x0;
-  this->field_0828 = 0xffffffff;
+  this->field_0828 = -1;
   puVar2 = (undefined4 *)&this->field_0x28;
   for (iVar1 = 0x200; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

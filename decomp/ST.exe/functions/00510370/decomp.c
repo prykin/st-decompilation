@@ -53,12 +53,12 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x5e,0,iVar3,&DAT_007a4ccc
-                               ,s_FrmPanelTy__ShiftControls_007c2a8c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x5e,0,iVar3,"%s"
+                               ,"FrmPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x5e);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x5e);
   }
   return;
 }

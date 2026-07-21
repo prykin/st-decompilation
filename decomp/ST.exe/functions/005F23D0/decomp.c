@@ -44,8 +44,8 @@ cf_common_exit_005F26AF:
             ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,
                                  iVar4,&param_6,&param_3), pVVar2 = g_visibleClass_00802A88,
              -1 < param_6 &&
-             (((param_6 < (int)pVVar1->field_0030 && (iVar4 = param_3 + DAT_0079aed0, -1 < iVar4))
-              && (iVar4 < (int)pVVar1->field_0034)))))) &&
+             (((param_6 < pVVar1->field_0030 && (iVar4 = param_3 + DAT_0079aed0, -1 < iVar4)) &&
+              (iVar4 < pVVar1->field_0034)))))) &&
            ((pVVar1->field_004C != 0 &&
             (*(char *)(iVar4 * pVVar1->field_0030 + pVVar1->field_004C + param_6) == '\0')))) &&
           (DAT_0080874d != -1)) &&
@@ -53,9 +53,9 @@ cf_common_exit_005F26AF:
             (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                 iVar5 + 1,param_2,&param_5,&local_10),
             pVVar1 = g_visibleClass_00802A88, -1 < param_5)) &&
-           ((param_5 < (int)pVVar2->field_0030 &&
-            (((local_10 = local_10 + DAT_0079aed0, -1 < local_10 &&
-              (local_10 < (int)pVVar2->field_0034)) && (pVVar2->field_004C != 0)))))) &&
+           ((param_5 < pVVar2->field_0030 &&
+            (((local_10 = local_10 + DAT_0079aed0, -1 < local_10 && (local_10 < pVVar2->field_0034))
+             && (pVVar2->field_004C != 0)))))) &&
           (((*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + param_5) == '\0' &&
             (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
         iVar4 = param_2 + 1;
@@ -63,19 +63,18 @@ cf_common_exit_005F26AF:
                            &local_14,&local_18);
         iVar3 = param_1;
         pVVar2 = g_visibleClass_00802A88;
-        if (((((-1 < local_14) && (local_14 < (int)pVVar1->field_0030)) &&
+        if (((((-1 < local_14) && (local_14 < pVVar1->field_0030)) &&
              ((local_18 = local_18 + DAT_0079aed0, iVar5 = iVar3, -1 < local_18 &&
-              ((((local_18 < (int)pVVar1->field_0034 && (pVVar1->field_004C != 0)) &&
+              ((((local_18 < pVVar1->field_0034 && (pVVar1->field_004C != 0)) &&
                 (*(char *)(local_18 * pVVar1->field_0030 + pVVar1->field_004C + local_14) == '\0'))
                && ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))))))) &&
             ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                  param_1 + 1,iVar4,&param_1,&local_1c), -1 < param_1 &&
-             ((param_1 < (int)pVVar2->field_0030 &&
-              (local_1c = DAT_0079aed0 + local_1c, -1 < local_1c)))))) &&
-           ((local_1c < (int)pVVar2->field_0034 &&
-            ((pVVar2->field_004C != 0 &&
-             (*(char *)(local_1c * pVVar2->field_0030 + pVVar2->field_004C + param_1) == '\0'))))))
-        goto cf_common_exit_005F26AF;
+             ((param_1 < pVVar2->field_0030 && (local_1c = DAT_0079aed0 + local_1c, -1 < local_1c)))
+             ))) && ((local_1c < pVVar2->field_0034 &&
+                     ((pVVar2->field_004C != 0 &&
+                      (*(char *)(local_1c * pVVar2->field_0030 + pVVar2->field_004C + param_1) ==
+                       '\0')))))) goto cf_common_exit_005F26AF;
       }
     }
     else {

@@ -43,12 +43,12 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
     puVar4 = local_c;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_54.previous;
-      iVar6 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x248,0,errorCode,
-                                 &DAT_007a4ccc,s_STFieldC__LoadImagSpr_007cf898);
+      iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_field.cpp",0x248,0,errorCode,
+                                 "%s","STFieldC::LoadImagSpr");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_nick_to_field_cpp_007cf850,0x24a);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_field.cpp",0x24a);
       return 0xffff;
     }
     uVar2 = *local_c;

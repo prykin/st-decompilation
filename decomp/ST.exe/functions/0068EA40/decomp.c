@@ -31,12 +31,12 @@ void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x17b,0,errorCode,&DAT_007a4ccc,
-                             s_AiTactClassTy__ClaimRestore_007d5774);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x17b,0,errorCode,"%s",
+                             "AiTactClassTy::ClaimRestore");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x17c);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x17c);
   return;
 }
 

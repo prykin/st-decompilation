@@ -85,18 +85,18 @@ undefined4 __fastcall FUN_0061e110(AnonShape_0061E110_A0361859 *param_1)
                               iVar5,&local_8,&local_1c), pVVar3 = g_visibleClass_00802A88,
           -1 < local_10 && (local_10 < 5)) &&
          ((-1 < local_8 &&
-          ((local_8 < (int)pVVar2->field_0030 &&
+          ((local_8 < pVVar2->field_0030 &&
            (iVar5 = (&DAT_0079aed0)[local_10] + local_1c, -1 < iVar5)))))))) &&
-       (iVar5 < (int)pVVar2->field_0034)))) &&
+       (iVar5 < pVVar2->field_0034)))) &&
      (((((((pVVar2->field_004C != 0 &&
            (*(char *)(iVar5 * pVVar2->field_0030 + pVVar2->field_004C + local_8) == '\0')) &&
           (DAT_0080874d != -1)) &&
          ((g_visibleClass_00802A88->field_00F8 != 0 &&
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_14,
                               iVar7,&local_1c,&local_14), -1 < local_18)))) &&
-        ((local_18 < 5 && ((-1 < local_1c && (local_1c < (int)pVVar3->field_0030)))))) &&
+        ((local_18 < 5 && ((-1 < local_1c && (local_1c < pVVar3->field_0030)))))) &&
        (local_14 = (&DAT_0079aed0)[local_18] + local_14, -1 < local_14)) &&
-      (((local_14 < (int)pVVar3->field_0034 && (pVVar3->field_004C != 0)) &&
+      (((local_14 < pVVar3->field_0034 && (pVVar3->field_004C != 0)) &&
        (*(char *)(local_14 * pVVar3->field_0030 + pVVar3->field_004C + local_1c) == '\0')))))) {
     local_c = 0;
   }

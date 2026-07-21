@@ -43,12 +43,12 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   this_00 = local_14;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x642,0,iVar4,&DAT_007a4ccc,
-                               s_STGroupBoatC__GrpMove_007abf3c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x642,0,iVar4,"%s",
+                               "STGroupBoatC::GrpMove");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x643);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x643);
     return 0xffffffff;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
@@ -85,7 +85,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
           if (this_01 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       s_E____titans_wlad_to_grpb_cpp_007abe3c,0x629);
+                       "E:\\__titans\\wlad\\to_grpb.cpp",0x629);
           }
           STBoatC::CmdToObj(this_01,CASE_1,&local_20);
         }
@@ -109,7 +109,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
             if (pSVar5 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0x638);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0x638);
             }
             iVar4 = thunk_FUN_0045ff30((int)pSVar5);
             if (iVar4 != 0) goto cf_common_exit_0049A832;

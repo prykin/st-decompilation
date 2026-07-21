@@ -43,12 +43,12 @@ void CreateInterSystem(void)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0xca,0,errorCode,
-                             &DAT_007a4ccc,s_CreateInterSystem_007c7c58);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xca,0,errorCode,
+                             "%s","CreateInterSystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0xca);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xca);
   return;
 }
 

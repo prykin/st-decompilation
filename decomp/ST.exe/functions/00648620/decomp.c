@@ -57,12 +57,12 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
   if (local_8 != (void *)0x0) {
     FreeAndNull(&local_8);
   }
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x6b,0,iVar2,&DAT_007a4ccc,
-                             s_BossDataPack_007d2818);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss_d.cpp",0x6b,0,iVar2,"%s",
+                             "BossDataPack");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x6c);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x6c);
   return (undefined4 *)0x0;
 }
 

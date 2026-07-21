@@ -8,7 +8,7 @@
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 0052AB40 -> 00554F20 @ 0052ABA6 */
 
-void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,char *text,int param_3)
+void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,int param_1,char *text,int param_3)
 
 {
   code *pcVar1;
@@ -26,7 +26,7 @@ void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,char 
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    if (-1 < (int)local_8->field_003C) {
+    if (-1 < local_8->field_003C) {
       SetState(local_8,CASE_2,0,(char *)0x0);
     }
     this_00->field_003C = param_1;
@@ -42,12 +42,12 @@ void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,char 
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x109,0,errorCode,&DAT_007a4ccc
-                             ,s_cLoadingTy__SetProcess_007c8fb4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x109,0,errorCode,"%s"
+                             ,"cLoadingTy::SetProcess");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_grig_loading_cpp_007c8f0c,0x10a);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\grig\\loading.cpp",0x10a);
   return;
 }
 

@@ -48,20 +48,20 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x156,0,iVar6,&DAT_007a4ccc,
-                               s__CreateStgListByRoot_007d3008);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x156,0,iVar6,"%s",
+                               "_CreateStgListByRoot");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (local_c != (DArrayTy *)0x0) {
       DArrayDestroy(local_c);
     }
-    RaiseInternalException(iVar6,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x158);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x158);
     return (uint *)0x0;
   }
   if (param_1 == (cMf32 *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x13f);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x13f);
   }
   local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   uVar7 = 0xffffffff;

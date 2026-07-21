@@ -17,7 +17,7 @@ STSprGameObjC * __thiscall STSprGameObjC::STSprGameObjC(STSprGameObjC *this)
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_0079C578;
   this->vtable = &STSprGameObjCVTable;
-  puVar2 = (undefined4 *)&this->field_0x231;
+  puVar2 = &this->field_0231;
   for (iVar1 = 0x3d; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;

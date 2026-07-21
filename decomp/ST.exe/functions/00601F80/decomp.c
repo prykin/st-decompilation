@@ -3,37 +3,40 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_dest.cpp
-   STDestC::GetMessage */
+   STDestC::GetMessage
 
-undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8577 *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004050CE|00601F80; family_names=STDestC::GetMessage; ret4=11;
+   direct_offsets={10:1,14:1,18:1,1c:0} */
+
+int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
 
 {
-  uint uVar1;
+  STMessageId SVar1;
   code *pcVar2;
   AnonShape_00602BE0_B1CC517D *this_00;
   int iVar3;
   undefined4 *puVar4;
   int iVar5;
-  undefined4 uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 *puVar7;
+  undefined4 *puVar6;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   AnonShape_00602BE0_B1CC517D *local_8;
 
   local_8 = (AnonShape_00602BE0_B1CC517D *)this;
-  iVar3 = STSprGameObjC::GetMessage((STSprGameObjC *)this,param_1);
+  iVar3 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
   if (iVar3 != 0xffff) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     this_00 = local_8;
     if (iVar3 == 0) {
-      uVar1 = param_1->field_0010;
-      if (uVar1 < 0x110) {
-        if (uVar1 == 0x10f) {
+      SVar1 = message->id;
+      if (SVar1 < MESS_TORPHIT) {
+        if (SVar1 == MESS_SHARED_010F) {
           local_10 = thunk_FUN_006025d0(local_8,&local_c);
           STPlaySystemC::SaveObjData
                     (PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_10,local_c);
@@ -41,7 +44,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        if (uVar1 == 0) {
+        if (SVar1 == MESS_ID_NONE) {
           if ((local_8->field_036E != 0) && (local_8->field_036E != 4)) {
             thunk_FUN_00602be0(local_8);
           }
@@ -51,16 +54,16 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
             return 0;
           }
         }
-        else if (uVar1 == 2) {
-          puVar4 = param_1->field_0014;
+        else if (SVar1 == MESS_ID_CREATE) {
+          puVar4 = (message->arg0).ptr;
           if (puVar4[3] != 2) {
-            puVar7 = (undefined4 *)&local_8->field_0x231;
+            puVar6 = (undefined4 *)&local_8->field_0x231;
             for (iVar3 = 0x4f; iVar3 != 0; iVar3 = iVar3 + -1) {
-              *puVar7 = *puVar4;
+              *puVar6 = *puVar4;
               puVar4 = puVar4 + 1;
-              puVar7 = puVar7 + 1;
+              puVar6 = puVar6 + 1;
             }
-            *(undefined1 *)puVar7 = *(undefined1 *)puVar4;
+            *(undefined1 *)puVar6 = *(undefined1 *)puVar4;
             iVar3 = thunk_FUN_006024b0((int)local_8);
             if (iVar3 != 0) {
               if ((*(int *)&this_00->field_0x3a7 != 0) && (iVar3 = thunk_FUN_006029c0(), iVar3 == 0)
@@ -107,7 +110,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
             }
           }
         }
-        else if (((uVar1 == 3) &&
+        else if (((SVar1 == MESS_SHARED_0003) &&
                  (thunk_FUN_004ad310((STT3DSprC *)&local_8->field_0x1d5),
                  this_00->field_0x3a5 != '\0')) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)
                 ) {
@@ -120,12 +123,12 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
           return 0;
         }
       }
-      else if (uVar1 == 0x112) {
+      else if (SVar1 == MESS_STOCTOPUSC_0112) {
         if (-1 < (int)local_8->field_039B) {
           thunk_FUN_004ad5e0((int)&local_8->field_0x1d5);
         }
       }
-      else if (uVar1 == 0x113) {
+      else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
         if (-1 < (int)local_8->field_039B) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)&local_8->field_0x1d5)();
@@ -133,7 +136,7 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
           return 0;
         }
       }
-      else if (uVar1 == 0x128) {
+      else if (SVar1 == MESS_HITKILL) {
         thunk_FUN_004ad430((int)&local_8->field_0x1d5);
         thunk_FUN_00602440(this_00);
         g_currentExceptionFrame = local_54.previous;
@@ -143,12 +146,12 @@ undefined4 __thiscall STDestC::GetMessage(STDestC *this,AnonShape_0041AF40_F59F8
       return 0;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_nick_to_dest_cpp_007ced34,0x95,0,iVar3,&DAT_007a4ccc,
-                               s_STDestC__GetMessage_007ced58);
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
+                               "STDestC::GetMessage");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_dest_cpp_007ced34,0x97);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_dest.cpp",0x97);
   }
   return 0xffff;
 }

@@ -34,12 +34,12 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_bldlab_cpp_007c18b4,0x30,0,errorCode,
-                               &DAT_007a4ccc,s_BldLabPanelTy__Update_007c1928);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x30,0,errorCode,
+                               "%s","BldLabPanelTy::Update");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_bldlab_cpp_007c18b4,0x30);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x30);
   }
   return;
 }

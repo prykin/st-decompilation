@@ -130,26 +130,26 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_c4.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x39f,0,iVar4,&DAT_007a4ccc
-                               ,s_ChooseMapTy__CreateCtrls_007cc858);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x39f,0,iVar4,"%s"
+                               ,"ChooseMapTy::CreateCtrls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x39f);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\load_obj.cpp",0x39f);
     return;
   }
   uVar7 = 0;
   switch(local_c->field_1A5F) {
   case CASE_1:
   case CASE_2:
-    local_34 = (uint)(byte)PTR_0081176c->field_02EB;
+    local_34 = (uint)PTR_0081176c->field_02EB;
     uVar7 = 2;
     local_c->field_1A5F = (local_34 != 1) + CASE_1;
     goto LAB_005aebde;
   case CASE_4:
   case CASE_5:
     uVar7 = 2;
-    local_34 = (uint)(byte)PTR_0081176c->field_02EB;
+    local_34 = (uint)PTR_0081176c->field_02EB;
     local_c->field_1A5F = (local_34 != 1) + CASE_4;
     break;
   case CASE_9:
@@ -279,7 +279,7 @@ LAB_005aecc2:
                this_00->field_1BB2);
   }
 LAB_005aef44:
-  if ((this_00->field_20B4 == '\0') || (param_1 != '\0')) {
+  if ((this_00->field_0x20b4 == '\0') || (param_1 != '\0')) {
     if (PTR_0081176c->field_0389 != 0) {
       this_00->field_002D = 0x20;
       *(undefined4 *)&this_00->field_0x31 = 0;

@@ -63,8 +63,8 @@ uint __thiscall STBoatC::CheckPBoxCmd(STBoatC *this,STBoatC_CheckPBoxCmd_param_1
   case CASE_17:
     return (uint)(this->field_0320 == 1);
   }
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x13e4,0,0,&DAT_007a4ccc,
-                             s_STBoatC__CheckPBoxCmd_unknown_ty_007aa0a8);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x13e4,0,0,"%s",
+                             "STBoatC::CheckPBoxCmd unknown type");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

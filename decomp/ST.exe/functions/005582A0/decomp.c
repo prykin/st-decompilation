@@ -48,12 +48,12 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
     if (local_8 != (undefined4 *)0x0) {
       FreeAndNull(&local_8);
     }
-    iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x105,0,iVar3,&DAT_007a4ccc,
-                               s_VisibleClassTy__PrepareToSave_er_007c932c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
+                               "VisibleClassTy::PrepareToSave error");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_grig_visible_cpp_007c92cc,0x106);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x106);
     return (undefined4 *)0x0;
   }
   if (local_24->field_0114 != 0) {

@@ -67,12 +67,12 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,200,0,iVar4,&DAT_007a4ccc,
-                             s_TraksClassTy__TraksExec_error_007c9184);
+  iVar6 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",200,0,iVar4,"%s",
+                             "TraksClassTy::TraksExec error");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_grig_traks_cpp_007c9104,0xc9);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\traks.cpp",0xc9);
   return;
 }
 

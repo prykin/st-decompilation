@@ -41,9 +41,13 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
         pSVar4 = STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,*(char *)(param_1 + 0x24),
                             CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        if (((pSVar4 != (STGameObjC *)0x0) && (iVar5 = (*pSVar4->vtable[1].vfunc_24)(), iVar5 != 0))
-           && ((param_4 < '\0' || (iVar5 = (*pSVar4->vtable->vfunc_6C)(), param_4 == iVar5)))) {
-          iVar5 = (*pSVar4->vtable->vfunc_2C)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if (((pSVar4 != (STGameObjC *)0x0) &&
+            (iVar5 = (**(code **)&pSVar4->vtable[1].field_0x28)(), iVar5 != 0)) &&
+           ((param_4 < '\0' ||
+            (iVar5 = (**(code **)&pSVar4->vtable->field_0x6c)(), param_4 == iVar5)))) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
           pIVar6 = thunk_FUN_00674fb0(iVar5);
           if ((param_3 & (uint)pIVar6) != 0) {
             local_8 = local_8 + 1;

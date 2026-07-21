@@ -10,14 +10,14 @@
 TLOBldMark * __thiscall TLOBldMark::TLOBldMark(TLOBldMark *this)
 
 {
-  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)this);
-  *(TLOBldMarkVTable **)this = &TLOBldMarkVTable;
-  *(undefined4 *)(this + 0x2c) = 0;
-  *(undefined4 *)(this + 0x24) = 0;
-  *(undefined4 *)(this + 0x18) = 1;
-  *(undefined4 *)(this + 0x30) = 0xffffffff;
-  *(undefined4 *)(this + 0x34) = 0xffffffff;
-  *(undefined4 *)(this + 0x38) = 0xffffffff;
+  sub_006E5FB0(this);
+  this->vtable = &TLOBldMarkVTable;
+  this->field_002C = 0;
+  this->field_0024 = 0;
+  this->field_0018 = 1;
+  this->field_0030 = 0xffffffff;
+  this->field_0034 = 0xffffffff;
+  this->field_0038 = 0xffffffff;
   return this;
 }
 

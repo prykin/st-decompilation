@@ -29,7 +29,7 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
     if ((((PTR_00802a38 == (STPlaySystemC *)0x0) || (strategData == (ushort *)0x0)) || (7 < param_2)
         ) || (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x49);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x49);
     }
     pAVar2 = thunk_FUN_004357f0((char)param_2);
     if (pAVar2 != (AiPlrClassTy *)0x0) {
@@ -50,15 +50,15 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x5f,0,errorCode,&DAT_007a4ccc,
-                             s_StartStrateg_007d28a4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x5f,0,errorCode,"%s",
+                             "StartStrateg");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c != 0) {
     thunk_FUN_0067d160((int *)&local_8);
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x61);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_creat.cpp",0x61);
   return;
 }
 

@@ -22,12 +22,12 @@ MMMObjTy::PaintSlBut(MMMObjTy *this,AnonShape_005B6560_61F462DF *param_1,int par
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x121,0,iVar2,&DAT_007a4ccc
-                               ,s_MMMObjTy__PaintSlBut_007ccb00);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x121,0,iVar2,"%s"
+                               ,"MMMObjTy::PaintSlBut");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x121);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x121);
     return;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

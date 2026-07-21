@@ -65,7 +65,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
           pcVar11 = pcVar5 + -0x46;
           *pcVar5 = '\0';
           pcVar2 = LoadResourceString(0x4273,module);
-          wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,pcVar2,pcVar11);
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar2,pcVar11);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           }

@@ -22,9 +22,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_004D6360_0360_98F97B35	12	4	field_000C	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_004D6360_0360_98F97B35	16	4	field_0010	/int	1	dereference through parent pointer field; observed_types={/int=2}
 1	AnonNested_004D6360_0360_98F97B35	20	4	field_0014	/int	1	dereference through parent pointer field; observed_types={/int=2}
-1	AnonNested_004E91E0_0434_B58024EB	32	4	field_0020	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_004E91E0_0434_B58024EB	1240	4	field_04D8	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_004E91E0_0434_B58024EB	1464	4	field_05B8	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_004E9960_061B_217F6F13	1456	4	field_05B0	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
 1	AnonNested_004E9960_061B_217F6F13	1460	4	field_05B4	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
 1	AnonNested_004E9960_061B_217F6F13	1464	4	field_05B8	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
@@ -75,6 +72,15 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_005FADA0_02E6_8D03AC6C	20	4	field_0014	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_005FADA0_02E6_8D03AC6C	24	4	field_0018	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_005FADA0_02E6_8D03AC6C	28	4	field_001C	/int	1	dereference through parent pointer field; observed_types={/int=1}
+1	AnonNested_006001E0_0233_B26101C5	4	2	field_0004	/short	1	dereference through parent pointer field; observed_types={/short=2}
+1	AnonNested_006001E0_0233_B26101C5	6	2	field_0006	/short	1	dereference through parent pointer field; observed_types={/short=1}
+1	AnonNested_006001E0_0233_B26101C5	8	2	field_0008	/undefined2	1	dereference through parent pointer field; observed_types={/short=1, /undefined2=1}
+1	AnonNested_006001E0_0233_B26101C5	10	2	field_000A	/short	1	dereference through parent pointer field; observed_types={/short=3}
+1	AnonNested_006001E0_0233_B26101C5	18	2	field_0012	/short	1	dereference through parent pointer field; observed_types={/short=2}
+1	AnonNested_006001E0_0233_B26101C5	20	2	field_0014	/short	1	dereference through parent pointer field; observed_types={/short=2}
+1	AnonNested_006001E0_0233_B26101C5	22	2	field_0016	/short	1	dereference through parent pointer field; observed_types={/short=2}
+1	AnonNested_006001E0_0233_B26101C5	74	4	field_004A	/int	1	dereference through parent pointer field; observed_types={/int=1}
+1	AnonNested_006001E0_0233_B26101C5	78	4	field_004E	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006028A0_0211_79D9690B	68	4	field_0044	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006028A0_0211_79D9690B	72	4	field_0048	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006028A0_0211_79D9690B	84	4	field_0054	/int	1	dereference through parent pointer field; observed_types={/int=1}
@@ -90,6 +96,10 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_0060D810_0244_C78BBECE	32	4	field_0020	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
 1	AnonNested_0060D810_0244_C78BBECE	36	4	field_0024	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
 1	AnonNested_0060D810_0244_C78BBECE	40	4	field_0028	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
+1	AnonNested_006139A0_0298_4BCC28B8	0	1	field_0000	/undefined1	1	dereference through parent pointer field; observed_types={/undefined1=3}
+1	AnonNested_006139A0_0298_4BCC28B8	6	2	field_0006	/short	1	dereference through parent pointer field; observed_types={/short=8}
+1	AnonNested_006139A0_0298_4BCC28B8	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=3}
+1	AnonNested_006139A0_0298_4BCC28B8	24	4	field_0018	/SubmarineTitans/Recovered/Enums/Global_sub_006141B0_param_2Enum	1	dereference through parent pointer field; observed_types={/SubmarineTitans/Recovered/Enums/Global_sub_006141B0_param_2Enum=1}
 1	AnonNested_00617A20_005E_D2939D1E	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_00617A20_005E_D2939D1E	12	4	field_000C	/undefined4	1	dereference through parent pointer field; observed_types={/int=2, /uint=2}
 1	AnonNested_00617A20_005E_D2939D1E	24	4	field_0018	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
@@ -124,18 +134,10 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_00633770_001D_40333508	53	4	field_0035	/undefined4	1	dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
 1	AnonNested_0063CFF0_0336_DC162146	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_0063CFF0_0336_DC162146	12	4	field_000C	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	0	1	field_0000	/undefined1	1	dereference through parent pointer field; observed_types={/undefined1=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	8	4	field_0008	/undefined4	1	dereference through parent pointer field; observed_types={/int=4, /uint=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	12	4	field_000C	/undefined4	1	dereference through parent pointer field; observed_types={/int=3, /uint=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	16	4	field_0010	/float	1	dereference through parent pointer field; observed_types={/float=7}
-1	AnonNested_0063E9C0_0336_09F0C1DF	20	4	field_0014	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	24	4	field_0018	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	28	4	field_001C	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	32	4	field_0020	/undefined4	1	dereference through parent pointer field; observed_types={/int=1, /uint=1, /undefined4=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	36	4	field_0024	/undefined4	1	dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	44	4	field_002C	/float	1	dereference through parent pointer field; observed_types={/float=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	48	4	field_0030	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
-1	AnonNested_0063E9C0_0336_09F0C1DF	56	4	field_0038	/undefined4	1	dereference through parent pointer field; observed_types={/uint=1, /undefined4=1}
+1	AnonNested_0063E660_0336_9C5AD80D	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=1}
+1	AnonNested_0063E660_0336_9C5AD80D	12	4	field_000C	/undefined4	2	dereference through parent pointer field; observed_types={/int=1, /uint=1}
+1	AnonNested_0063E660_0336_9C5AD80D	28	4	field_001C	/int	1	dereference through parent pointer field; observed_types={/int=1}
+1	AnonNested_0063E660_0336_9C5AD80D	56	4	field_0038	/undefined4	1	dereference through parent pointer field; observed_types={/uint=2, /undefined4=1}
 1	AnonNested_0063FE70_0336_EDA006AC	4	4	field_0004	/undefined4	1	dereference through parent pointer field; observed_types={/int=1, /undefined4=1}
 1	AnonNested_0063FE70_0336_EDA006AC	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=4}
 1	AnonNested_0063FE70_0336_EDA006AC	12	4	field_000C	/undefined4	2	dereference through parent pointer field; observed_types={/int=4, /uint=1}
@@ -198,8 +200,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_006E1460_0358_17426F2F	888	4	field_0378	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
 1	AnonNested_006E1DD0_0280_387F2D84	0	2	field_0000	/short	1	dereference through parent pointer field; observed_types={/short=1}
 1	AnonNested_006E1DD0_0280_387F2D84	2	2	field_0002	/short	1	dereference through parent pointer field; observed_types={/short=1}
-1	AnonNested_006E42C0_0014_A7057FF5	4	4	field_0004	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}
-1	AnonNested_006E42C0_0014_A7057FF5	12	4	field_000C	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006E57B0_0010_2E36ABBC	4	4	field_0004	pointer:/undefined4	1	dereference through parent pointer field; observed_types={pointer:/undefined4=2}
 1	AnonNested_006E57B0_0010_2E36ABBC	12	4	field_000C	/uint	1	dereference through parent pointer field; observed_types={/uint=2}
 1	AnonNested_006E57B0_0010_2E36ABBC	28	4	field_001C	/int	1	dereference through parent pointer field; observed_types={/int=1}
@@ -307,17 +307,13 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0042A290_843ACA98	1109	4	field_0455	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00430620_0186FD6C	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00430A90_30AD5D09	8	4	field_0008	/uint	1	fixed-offset dereference; observed_types={/uint=1}
-1	AnonShape_00430A90_5109414D	16	4	field_0010	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_00430A90_FED4A4B9	8	4	field_0008	/uint	1	fixed-offset dereference; observed_types={/uint=6}
-1	AnonShape_00438E30_8253E3EA	10	4	field_000A	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/byte=2}
-1	AnonShape_00439100_A2C02922	32	4	field_0020	/int	1	fixed-offset dereference; observed_types={/int=10}
-1	AnonShape_00439100_EFFA7579	10	4	field_000A	pointer:/SubmarineTitans/Recovered/DArrayTy	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/DArrayTy=1}
+1	AnonShape_00438E30_8253E3EA	10	4	field_000A	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/SubmarineTitans/Recovered/DArrayTy=2}
 1	AnonShape_00440AA0_D2D43F84	39	2	field_0027	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_00440AA0_D2D43F84	41	4	field_0029	pointer:/SubmarineTitans/Recovered/DArrayTy	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/DArrayTy=1}
 1	AnonShape_00443F30_5DF553AC	2105	4	field_0839	pointer:/SubmarineTitans/Recovered/DArrayTy	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/DArrayTy=1}
 1	AnonShape_004455C0_E4BAA5BB	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=2}
 1	AnonShape_00446F80_A0CAAEC9	12	4	field_000C	pointer:/SubmarineTitans/Recovered/DArrayTy	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/DArrayTy=1}
-1	AnonShape_00449B60_16BADDCE	24	2	field_0018	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_0044C720_9C70C8C1	1	1	field_0001	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=2}
 1	AnonShape_0045FF10_37BC7E9C	1117	4	field_045D	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0045FF30_A86BE482	1113	4	field_0459	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
@@ -334,6 +330,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0047DA50_46820927	1	2	field_0001	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_0047DF00_463B9A86	1	2	field_0001	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=2}
 1	AnonShape_00480600_D0E345D5	1	2	field_0001	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
+1	AnonShape_00483300_532AD888	2	2	field_0002	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_004845E0_967D2F03	32	4	field_0020	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00486E20_EA4891D8	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_00488890_58D78602	36	1	field_0024	/char	1	fixed-offset dereference; observed_types={/char=1}
@@ -343,11 +340,9 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00492370_3EC6BC80	1994	4	field_07CA	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00493110_AE0208E1	493	4	field_01ED	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00493D10_C7226905	1783	4	field_06F7	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_00495980_F6C675E4	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00497E00_1016C93D	56	4	field_0038	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_00497E00_1016C93D	60	4	field_003C	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_0049A500_3F03246E	41	4	field_0029	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_004A8920_98A7F9F2	16	4	field_0010	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_004AD510_C348FA0E	16	1	field_0010	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
 1	AnonShape_004AD610_D99117A2	17	1	field_0011	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
 1	AnonShape_004AD650_130F68B4	24	4	field_0018	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
@@ -355,8 +350,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004B0D10_23CAA7D2	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004B1120_1111C23F	24	4	field_0018	pointer:/int	3	fixed-offset dereference; observed_types={pointer:/int=5}
 1	AnonShape_004B31C0_F3AB8C37	865	4	field_0361	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004B7A60_1232A2D3	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004B7A60_1232A2D3	1236	4	field_04D4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004B7F90_52B9DCE0	501	4	field_01F5	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_004B7F90_01F5_230F20CA	2	fixed-offset dereference; observed_types={}
 1	AnonShape_004B9CF0_E7768DFA	1204	4	field_04B4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004B9D20_D1F14E75	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
@@ -379,12 +372,19 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004C6070_F5B707F0	581	4	field_0245	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004C6210_D9E1F216	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004C6440_6279B706	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_004C6A00_F916118D	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004C6B50_B73FAB11	988	4	field_03DC	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004C6B50_B73FAB11	1004	4	field_03EC	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004C7230_5217D923	1543	4	field_0607	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004C7C20_DD208578	865	4	field_0361	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004C9430_B2A6F679	1543	4	field_0607	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_004C9430_0607_7C13AC95	3	fixed-offset dereference; observed_types={}
+1	AnonShape_004C96E0_AE72D977	565	4	field_0235	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_004C96E0_AE72D977	573	1	field_023D	/char	1	fixed-offset dereference; observed_types={/char=1}
+1	AnonShape_004C96E0_AE72D977	581	4	field_0245	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_004C96E0_AE72D977	1519	4	field_05EF	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_004C96E0_AE72D977	1523	4	field_05F3	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_004C96E0_AE72D977	1527	4	field_05F7	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_004CBA30_59486901	565	4	field_0235	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_004CBA30_59486901	573	1	field_023D	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_004CBF30_3E187AD6	1535	4	field_05FF	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/HoloTy=1, pointer:/STT3DSprC=2}
 1	AnonShape_004CBF70_37AA74A6	1535	4	field_05FF	/undefined4	1	fixed-offset dereference; observed_types={/int=1, pointer:/STT3DSprC=3}
 1	AnonShape_004CBFB0_80EF7FDF	1452	4	field_05AC	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
@@ -392,8 +392,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004CC330_B7982726	1539	4	field_0603	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/HoloTy=1, pointer:/STT3DSprC=2}
 1	AnonShape_004CC7F0_1C8F1109	1092	4	field_0444	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004CD390_BC3EDD5A	1116	4	field_045C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004CD6F0_0AE078A6	1236	4	field_04D4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004CD6F0_0AE078A6	1491	4	field_05D3	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004CD6F0_B6FC69DC	1316	4	field_0524	/undefined4	1	fixed-offset dereference; observed_types={/int=2, /undefined4=2}
 1	AnonShape_004CE640_336DA25F	561	4	field_0231	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_004CE700_14F94127	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
@@ -409,17 +407,12 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004D6930_F065C28A	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004D6D50_2315CC10	2	1	field_0002	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_004D7040_D83D570C	281	4	field_0119	/undefined4	1	fixed-offset dereference; observed_types={/int=1, /undefined4=1}
+1	AnonShape_004D7270_8F0A3C37	565	4	field_0235	/int	1	fixed-offset dereference; observed_types={/int=2}
+1	AnonShape_004D7270_8F0A3C37	573	1	field_023D	/char	1	fixed-offset dereference; observed_types={/char=2}
+1	AnonShape_004D7270_8F0A3C37	581	4	field_0245	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004D8D40_E38296AE	1264	4	field_04F0	/undefined4	1	fixed-offset dereference; observed_types={/int=2, /undefined4=1}
 1	AnonShape_004D95A0_E0EC0EDA	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004D9620_0A743BB7	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004D9620_0A743BB7	1236	4	field_04D4	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004D9BB0_48F292F0	609	4	field_0261	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004D9BB0_48F292F0	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004DA230_146070EB	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004DA2B0_CDACE95B	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004DA2B0_CDACE95B	1236	4	field_04D4	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004DBB10_49DFDDD6	1216	4	field_04C0	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004DBB10_49DFDDD6	1452	4	field_05AC	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004DBE00_6A369FCE	1567	4	field_061F	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=2}
 1	AnonShape_004DBF30_A21FD76C	1567	4	field_061F	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=2}
 1	AnonShape_004DCC80_51520547	1260	4	field_04EC	/undefined4	1	fixed-offset dereference; observed_types={/int=2, /undefined4=1}
@@ -428,31 +421,22 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004DD350_A9264D08	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
 1	AnonShape_004DD690_445B44C4	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004DD690_445B44C4	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004DD740_33371182	1232	4	field_04D0	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004DD740_33371182	1236	4	field_04D4	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004DE000_A2D9992B	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004DE000_A2D9992B	36	1	field_0024	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_004DE030_FF2F073D	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}
 1	AnonShape_004DE0D0_7D361D61	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
 1	AnonShape_004DE7B0_5F4E7C57	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004DE820_B766666A	501	4	field_01F5	/int	2	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004DEBA0_DC2DF541	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004DEBA0_DC2DF541	1236	4	field_04D4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004DEF50_827A6EEF	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}
 1	AnonShape_004DEFF0_D4187D59	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
 1	AnonShape_004DF100_3B3D6BBD	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}
 1	AnonShape_004DF1A0_EBE752D6	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
-1	AnonShape_004DF8C0_2C62FB74	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004DF8C0_2C62FB74	1236	4	field_04D4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004DF910_541A5D53	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004DF950_B7AEE0F8	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}
 1	AnonShape_004DF9F0_32175136	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
 1	AnonShape_004DFB90_1056A84E	1232	4	field_04D0	/int	1	fixed-offset dereference; observed_types={/int=4}
 1	AnonShape_004DFE90_BF94B3BE	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}
 1	AnonShape_004DFF30_F8774036	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
-1	AnonShape_004E1930_41603097	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_004E1930_41603097	1248	4	field_04E0	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_004E1930_41603097	1452	4	field_05AC	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004E1D70_7A782B67	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004E1E30_8F12AB21	1312	4	field_0520	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004E1E30_8F12AB21	1316	4	field_0524	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
@@ -473,9 +457,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004E6D00_80D2A513	5	1	field_0005	/bool	1	fixed-offset dereference; observed_types={/bool=1}
 1	AnonShape_004E76E0_6EC402CD	1	1	field_0001	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_004E7980_977A5E1C	1	1	field_0001	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
-1	AnonShape_004E91E0_88D596C4	1072	4	field_0430	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_004E91E0_88D596C4	1076	4	field_0434	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_004E91E0_0434_B58024EB	4	fixed-offset dereference; observed_types={}
-1	AnonShape_004E91E0_88D596C4	1563	4	field_061B	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004E95C0_C1BCC3A4	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004E96C0_DBD60D35	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004E9930_E29CCD11	1272	4	field_04F8	/int	1	fixed-offset dereference; observed_types={/int=1}
@@ -484,19 +465,13 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004E99E0_8E8A0023	1563	4	field_061B	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004E9B10_29E30AA9	24	4	field_0018	/undefined4	1	fixed-offset dereference; observed_types={/int=1, /undefined4=1}
 1	AnonShape_004E9BB0_CD9D470B	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_004E9C00_4C56ED05	1132	4	field_046C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004E9C00_4C56ED05	1136	4	field_0470	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004EAF60_69129DB1	1232	4	field_04D0	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004EB6D0_73BE0EF9	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004EBAB0_68F8AF0E	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_004EC050_2F5ECB40	1535	4	field_05FF	/undefined4	1	fixed-offset dereference; observed_types={/int=2, pointer:/STT3DSprC=1}
 1	AnonShape_004ECAC0_58E78526	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}
 1	AnonShape_004ECB60_6605ADBC	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=6}
-1	AnonShape_004ECDD0_65DE505A	609	4	field_0261	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004ECDD0_65DE505A	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_004ED430_B731E46F	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004ED4B0_7C418538	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_004ED4B0_7C418538	1236	4	field_04D4	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_004EF320_4ED0B5D2	9	1	field_0009	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_004F0E60_F07A2E87	9	1	field_0009	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_004F1530_06BD9341	4	4	field_0004	/uint	1	fixed-offset dereference; observed_types={/uint=1}
@@ -513,8 +488,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00516A40_F58EF8B3	4	4	field_0004	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00516A40_F58EF8B3	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00517A50_9A50D2E0	8	2	field_0008	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
-1	AnonShape_0051FBA0_12CEA964	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_00522D40_5162F989	1	1	field_0001	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
+1	AnonShape_0051DDD0_03A7BCA6	480	4	field_01E0	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_00526100_020D84E3	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00529F90_28CA9BE3	20	4	field_0014	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00529FE0_85E582CB	20	4	field_0014	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
@@ -541,10 +515,8 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0052AB40_8E5CB246	1109	4	field_0455	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0052BDA0_0EE1D99A	126	4	field_007E	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0052BDA0_007E_1B3446E2	5	fixed-offset dereference; observed_types={}
 1	AnonShape_0052D0A0_15F42C02	144	4	field_0090	pointer:/wingdi.h/BITMAPINFO	1	fixed-offset dereference; observed_types={pointer:/wingdi.h/BITMAPINFO=2}
-1	AnonShape_0052DD20_983F23C4	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00533D10_65D50C0F	1	1	field_0001	/byte	1	fixed-offset dereference; observed_types={/byte=1}
-1	AnonShape_005384A0_31236128	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_0053EB70_27D35ABC	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/int=1, /uint=1}
+1	AnonShape_00533D10_CE7E6741	480	4	field_01E0	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_00540760_1B30D233	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00540760_1B30D233	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00540C40_D825DD02	88	4	field_0058	/int	1	fixed-offset dereference; observed_types={/int=1}
@@ -556,25 +528,19 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00544990_19217BE9	1171	1	field_0493	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_00548B90_C039E281	1186	4	field_04A2	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00548BC0_697C8B62	1186	4	field_04A2	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_0054B6D0_0569ACF0	1206	4	field_04B6	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_0054B6D0_0569ACF0	1214	4	field_04BE	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_0054E4F0_E99E7FAC	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0054EAB0_2FB6FE19	101	4	field_0065	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0054EAB0_0065_6333AF5F	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0054EB20_9F64C55E	61	4	field_003D	/undefined4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_0054EB20_9F64C55E	101	4	field_0065	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0054EB20_0065_4A00EB9C	3	fixed-offset dereference; observed_types={}
 1	AnonShape_005501D0_83B30032	28	4	field_001C	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_00550830_31BFDEFC	1104	1	field_0450	/byte	1	fixed-offset dereference; observed_types={/byte=2}
-1	AnonShape_00550BB0_A7FDF64A	89	4	field_0059	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_00552E40_30F5902B	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=2}
+1	AnonShape_00550BB0_E751EA74	89	4	field_0059	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00555650_8E7D0F7D	76	4	field_004C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/int=2}
 1	AnonShape_00555FE0_3DEE0A7A	7	1	field_0007	/bool	1	fixed-offset dereference; observed_types={/bool=1}
 1	AnonShape_00556170_7A1B01CA	12	4	field_000C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_005564C0_3EF20A0C	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/uint=1, /undefined4=1}
 1	AnonShape_005564C0_811EAACC	10	4	field_000A	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00556DD0_A5A986D2	27	1	field_001B	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_00557C90_622F3E43	9	2	field_0009	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_00557C90_622F3E43	11	2	field_000B	/short	1	fixed-offset dereference; observed_types={/short=1}
-1	AnonShape_00558840_069B377A	16	4	field_0010	/undefined4	3	fixed-offset dereference; observed_types={/uint=1, /undefined4=1}
 1	AnonShape_00558840_43BF0074	10	4	field_000A	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_0055B9F0_5AD0309C	272	4	field_0110	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0055BA90_5955EFAA	272	4	field_0110	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
@@ -583,13 +549,13 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0055DEE0_ADBE9360	1	1	field_0001	/undefined1	1	fixed-offset dereference; observed_types={/byte=5, /char=1}
 1	AnonShape_00561670_673C7BE0	2	2	field_0002	/short	1	fixed-offset dereference; observed_types={/short=3}
 1	AnonShape_00566BD0_FD8EB056	493	4	field_01ED	/uint	1	fixed-offset dereference; observed_types={/uint=1}
-1	AnonShape_00566C20_50B607EA	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_00566C20_50B607EA	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00566FF0_D4E50B19	3983	4	field_0F8F	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00567060_20B54E08	3979	4	field_0F8B	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00567060_20B54E08	3983	4	field_0F8F	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_00567180_24C21D69	3979	4	field_0F8B	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=2}
 1	AnonShape_00567330_402052C1	3979	4	field_0F8B	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00568850_A20B8306	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_0056A130_3026AB89	3571	4	field_0DF3	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071A990_7656000F	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071A990_7656000F=1}
 1	AnonShape_0056A4D0_88DA6D2B	3591	4	field_0E07	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0056EBE0_DCE9874F	9020	4	field_233C	/undefined4	1	fixed-offset dereference; observed_types={/uint=3, /undefined4=2}
 1	AnonShape_005718D0_5EB10456	4408	2	field_1138	/ushort	1	fixed-offset dereference; observed_types={/ushort=1}
@@ -601,33 +567,38 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00575C80_99224805	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00575CB0_50A3FA3A	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00575CB0_50A3FA3A	40	4	field_0028	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_00575CB0_EC13795E	20	4	field_0014	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_00575CB0_EC13795E	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_005783F0_545AD987	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0057B670_1C4E1DA6	601	4	field_0259	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0057B990_72164111	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_0057BF20_DAE89F21	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0057BF60_049EA94A	32	4	field_0020	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}
-1	AnonShape_0057BF60_5A2CD5A4	62	4	field_003E	/uint	1	fixed-offset dereference; observed_types={/uint=1}
+1	AnonShape_0057CB30_71092CE7	599	4	field_0257	/int	1	fixed-offset dereference; observed_types={/int=3}
+1	AnonShape_0057CB30_71092CE7	603	4	field_025B	/int	1	fixed-offset dereference; observed_types={/int=3}
+1	AnonShape_00580380_5A13C762	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00580700_AE7D638A	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00580700_AE7D638A	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00580860_5AE9515A	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00580860_5AE9515A	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005808A0_34963C85	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005808A0_34963C85	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_005811C0_696D31CF	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00581B80_E3538055	469	4	field_01D5	/uint	1	fixed-offset dereference; observed_types={/uint=2}
+1	AnonShape_00581BF0_E44159AA	46	4	field_002E	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0000	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0000=1}
 1	AnonShape_00583270_A3B972B9	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_00583270_B61A0F81	103	4	field_0067	/uint	1	fixed-offset dereference; observed_types={/uint=1}
+1	AnonShape_00584AD0_6EDDB383	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005859A0_4B50EB93	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_005859A0_82119AF4	95	4	field_005F	/uint	1	fixed-offset dereference; observed_types={/uint=1}
+1	AnonShape_005862E0_AFF1B07D	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00588BC0_4E2CAC94	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00588BC0_6599B253	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00588BC0_6599B253	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
+1	AnonShape_005899E0_1FE8750F	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00589C10_D0E9D4E3	32	4	field_0020	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_0058C760_01FEE99A	78	4	field_004E	/SubmarineTitans/Recovered/Enums/STSprGameObjC_field_0259State	1	fixed-offset dereference; observed_types={/SubmarineTitans/Recovered/Enums/STSprGameObjC_field_0259State=1}
-1	AnonShape_0058C760_01FEE99A	116	4	field_0074	/uint	1	fixed-offset dereference; observed_types={/uint=1}
+1	AnonShape_0058BB50_29AADF52	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0058CFE0_6E80059E	24	4	field_0018	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0058D160_4B53BB8A	65	2	field_0041	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_0058D160_4B53BB8A	67	2	field_0043	/short	1	fixed-offset dereference; observed_types={/short=1}
-1	AnonShape_0058D7C0_D112E62D	78	4	field_004E	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_0058D7C0_D112E62D	94	4	field_005E	/uint	1	fixed-offset dereference; observed_types={/uint=1}
+1	AnonShape_0058EFE0_842CDB72	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005A2A60_B7FE2E93	37	4	field_0025	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005A4350_8EB755BD	37	1	field_0025	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_005A4350_8EB755BD	45	1	field_002D	/char	1	fixed-offset dereference; observed_types={/char=1}
@@ -641,22 +612,21 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_005B7EF0_C1CCA8D7	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005B87D0_D740444D	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005B8F40_637CCFBF	3	1	field_0003	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
-1	AnonShape_005B9330_F4F85C99	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/uint=2, /undefined4=1}
 1	AnonShape_005B9730_F73AC4AB	7298	4	field_1C82	pointer:/wingdi.h/BITMAPINFO	1	fixed-offset dereference; observed_types={pointer:/wingdi.h/BITMAPINFO=2}
 1	AnonShape_005B9860_CE385CBB	6751	1	field_1A5F	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_005BD4B0_53444B07	93	4	field_005D	/int	1	fixed-offset dereference; observed_types={/int=2}
-1	AnonShape_005BE5B0_39DC7D4D	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_005BE5B0_39DC7D4D	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_005C28C0_3F4A1EA1	4	4	field_0004	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_005C28C0_3F4A1EA1	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_005DA980_EAE0F13B	1674	4	field_068A	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_005DBF40_C70CB3ED	4	4	field_0004	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_005DBF40_C70CB3ED	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_005DD470_5015C87C	480	4	field_01E0	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_005DE050_07B1DC2A	480	4	field_01E0	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_005E4300_441EBD84	10	1	field_000A	/char	1	fixed-offset dereference; observed_types={/char=1}
-1	AnonShape_005E5FB0_30C455CD	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005E6640_6C0A179C	6892	4	field_1AEC	pointer:/wingdi.h/BITMAPINFO	1	fixed-offset dereference; observed_types={pointer:/wingdi.h/BITMAPINFO=2}
 1	AnonShape_005EAF10_E9FE21EE	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=2}
+1	AnonShape_005EC370_2858412B	12	4	field_000C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_005EC370_2858412B	582	4	field_0246	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_005EC6A0_91FF94F1	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_005EC850_D3866F46	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005ED1C0_48166455	611	4	field_0263	/undefined4	1	fixed-offset dereference; observed_types={}
@@ -671,12 +641,13 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_005F0280_83C341D9	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005F0280_83C341D9	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005F10D0_BAD04A4C	6	4	field_0006	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_005F10D0_D6EDD016	16	4	field_0010	/uint	1	fixed-offset dereference; observed_types={/uint=1}
+1	AnonShape_005F1380_AD368A85	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005F13C0_B0BAECCA	56	4	field_0038	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_005F13C0_B0BAECCA	60	4	field_003C	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_005F15F0_64E1389F	60	4	field_003C	/undefined4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_005F19A0_66AB314C	60	4	field_003C	/int	2	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_005F2110_A0A984A0	60	4	field_003C	pointer:/SubmarineTitans/Recovered/DArrayTy	6	fixed-offset dereference; observed_types={}
+1	AnonShape_005F3470_0B8B843C	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005F3B00_703DA66B	143	4	field_008F	/uint	1	fixed-offset dereference; observed_types={/uint=2}
 1	AnonShape_005F3BF0_30928CA0	155	4	field_009B	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_005F3BF0_30928CA0	205	4	field_00CD	/undefined4	2	fixed-offset dereference; observed_types={}
@@ -686,6 +657,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_005F4C50_B241F2C6	361	4	field_0169	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_005F4C50_0169_A2908DF5	6	fixed-offset dereference; observed_types={}
 1	AnonShape_005F5B80_33DD7FDB	361	4	field_0169	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_005F5B80_0169_794156D7	6	fixed-offset dereference; observed_types={}
 1	AnonShape_005F5D10_7419ED35	52	4	field_0034	/undefined4	1	fixed-offset dereference; observed_types={}
+1	AnonShape_005F66B0_83FB6438	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005F68B0_23767193	194	4	field_00C2	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_005F9CB0_7ABD270C	742	4	field_02E6	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_005F9CB0_02E6_32192ADE	17	fixed-offset dereference; observed_types={}
 1	AnonShape_005F9FF0_D4843467	742	4	field_02E6	/int	4	fixed-offset dereference; observed_types={/int=2}
@@ -694,19 +666,28 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_005FADA0_CF669872	742	4	field_02E6	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_005FADA0_02E6_8D03AC6C	4	fixed-offset dereference; observed_types={}
 1	AnonShape_005FB600_0B8C3724	672	4	field_02A0	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_005FB640_B21A0A22	493	4	field_01ED	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_005FCAD0_6622BF93	12	4	field_000C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_005FCAD0_6622BF93	582	4	field_0246	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_005FCEB0_459612F8	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_005FD1B0_83293629	24	4	field_0018	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_005FD6A0_EC193285	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_005FE5D0_FE3006E4	4	2	field_0004	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_005FEB60_D788AE60	571	4	field_023B	/undefined4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_005FF1F0_5CC77395	575	4	field_023F	/undefined4	2	fixed-offset dereference; observed_types={}
+1	AnonShape_006001E0_8A830027	489	4	field_01E9	/undefined4	1	fixed-offset dereference; observed_types={}
+1	AnonShape_006001E0_8A830027	563	4	field_0233	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006001E0_0233_B26101C5	10	fixed-offset dereference; observed_types={}
 1	AnonShape_00601D10_11B39116	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_00602440_6349A32E	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_00602440_6349A32E	878	4	field_036E	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006028A0_DD3959A4	529	4	field_0211	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006028A0_0211_79D9690B	5	fixed-offset dereference; observed_types={}
 1	AnonShape_006033D0_8A1D4BAE	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006033D0_8A1D4BAE	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_00604160_F1552931	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00604820_51E8C765	617	4	field_0269	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_00604970_1676FA8A	617	4	field_0269	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_00605780_564A429A	687	4	field_02AF	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/HoloTy=1, pointer:/STT3DSprC=2}
 1	AnonShape_00606050_52B3B558	28	4	field_001C	/undefined4	2	fixed-offset dereference; observed_types={}
+1	AnonShape_006099A0_C28E2104	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0060A800_DC6408DD	564	4	field_0234	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0060BCB0_991E8959	545	4	field_0221	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0060BDD0_05D86F56	9	1	field_0009	/char	1	fixed-offset dereference; observed_types={/char=1}
@@ -715,7 +696,8 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0060D810_F3564F1B	580	4	field_0244	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0060D810_0244_C78BBECE	13	fixed-offset dereference; observed_types={}
 1	AnonShape_0060E210_BF82AFCE	2	2	field_0002	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_0060E680_206C65A9	12	4	field_000C	/int	1	fixed-offset dereference; observed_types={/int=3}
-1	AnonShape_006132F0_4473F641	594	4	field_0252	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_0060EC00_3D989AA8	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_006139A0_53394AFA	664	4	field_0298	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006139A0_0298_4BCC28B8	5	fixed-offset dereference; observed_types={}
 1	AnonShape_00614400_B8B58418	24	4	field_0018	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00614950_E69A7C9E	733	4	field_02DD	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_00614950_E69A7C9E	741	4	field_02E5	/undefined4	1	fixed-offset dereference; observed_types={}
@@ -723,6 +705,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00615430_5EA4B08C	741	4	field_02E5	/undefined4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_00615FD0_99743BBC	767	4	field_02FF	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_006164E0_C12050CE	664	4	field_0298	/undefined4	2	fixed-offset dereference; observed_types={}
+1	AnonShape_00617880_C53B1B82	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006178C0_C1F0CF91	139	4	field_008B	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00617A20_4FE0E530	94	4	field_005E	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00617A20_005E_D2939D1E	6	fixed-offset dereference; observed_types={}
 1	AnonShape_00617C30_B90B5754	94	4	field_005E	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
@@ -734,18 +717,19 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00618900_C8E92F3A	98	4	field_0062	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00618A50_99CF0829	98	4	field_0062	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00618B40_DCA2A9E7	94	4	field_005E	pointer:/SubmarineTitans/Recovered/DArrayTy	5	fixed-offset dereference; observed_types={}
+1	AnonShape_006192E0_F209B35A	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00619320_830454A8	151	4	field_0097	/uint	1	fixed-offset dereference; observed_types={/uint=2}
 1	AnonShape_0061BDB0_914AAFED	167	4	field_00A7	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0061BDB0_914AAFED	275	4	field_0113	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0061C910_119588E9	52	4	field_0034	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0061CA90_DEFD339E	81	1	field_0051	/byte	1	fixed-offset dereference; observed_types={/byte=1}
+1	AnonShape_0061D6D0_6C3974F0	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0061D710_793B8080	87	4	field_0057	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0061D710_793B8080	155	4	field_009B	/undefined4	3	fixed-offset dereference; observed_types={}
 1	AnonShape_0061D710_793B8080	163	4	field_00A3	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0061D710_00A3_C72C5EA4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_0061D9C0_522D22ED	155	4	field_009B	/undefined4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_0061E7F0_01DCB062	46	1	field_002E	/byte	1	fixed-offset dereference; observed_types={/byte=2}
 1	AnonShape_0061F290_9AF555EA	163	4	field_00A3	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_0061F660_36DC6644	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_0061FA40_80D2C020	185	4	field_00B9	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0061FC00_8D6B2824	185	4	field_00B9	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00620030_4DF28374	197	4	field_00C5	/undefined4	1	fixed-offset dereference; observed_types={}
@@ -762,6 +746,8 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006214C0_5DA82DAD	257	4	field_0101	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00621640_E6E15AC5	266	4	field_010A	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00621780_F78B7EC0	266	4	field_010A	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
+1	AnonShape_00622670_59B74DB9	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_00622670_59B74DB9	686	4	field_02AE	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006226C0_D4D709C8	529	4	field_0211	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006226C0_0211_7A284649	5	fixed-offset dereference; observed_types={}
 1	AnonShape_00622990_96866BE5	12	4	field_000C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00622990_96866BE5	265	4	field_0109	/uint	1	fixed-offset dereference; observed_types={/uint=1}
@@ -795,8 +781,9 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0062B990_538E5716	24	4	field_0018	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0062B990_538E5716	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0062CCA0_0F1732DB	6	4	field_0006	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_0062CCA0_99DECAA7	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_0062F900_83644165	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00630430_D4D461FD	6	4	field_0006	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_006308B0_717D06CB	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006308F0_0C0B4661	56	4	field_0038	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006308F0_0038_6CBBD4FA	3	fixed-offset dereference; observed_types={}
 1	AnonShape_00631220_6E32608E	52	4	field_0034	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00631220_0034_EF4AC123	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00631220_6E32608E	56	4	field_0038	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00631220_0038_55904769	3	fixed-offset dereference; observed_types={}
@@ -817,12 +804,16 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00633770_0D42612A	117	4	field_0075	/undefined4	3	fixed-offset dereference; observed_types={}
 1	AnonShape_00635FD0_23FED72E	17	4	field_0011	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00635FD0_23FED72E	57	4	field_0039	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_00639630_91ABDE61	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00639670_30581873	646	4	field_0286	/undefined4	2	fixed-offset dereference; observed_types={}
 1	AnonShape_00639670_30581873	703	4	field_02BF	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_0063C170_89398C01	919	4	field_0397	/undefined4	1	fixed-offset dereference; observed_types={}
+1	AnonShape_0063C510_091F5E99	618	4	field_026A	/undefined4	1	fixed-offset dereference; observed_types={}
+1	AnonShape_0063C510_091F5E99	622	4	field_026E	/undefined4	1	fixed-offset dereference; observed_types={}
+1	AnonShape_0063CC10_3179EBBD	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0063CFF0_FFF0BAD4	822	4	field_0336	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0063CFF0_0336_DC162146	3	fixed-offset dereference; observed_types={}
-1	AnonShape_0063E9C0_DC8BFE66	704	4	field_02C0	/undefined4	2	fixed-offset dereference; observed_types={}
-1	AnonShape_0063E9C0_DC8BFE66	822	4	field_0336	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0063E9C0_0336_09F0C1DF	13	fixed-offset dereference; observed_types={}
+1	AnonShape_0063E660_4D42AB87	529	4	field_0211	pointer:/void	1	fixed-offset dereference; observed_types={pointer:/void=1}
+1	AnonShape_0063E660_4D42AB87	822	4	field_0336	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0063E660_0336_9C5AD80D	7	fixed-offset dereference; observed_types={/int=3, /undefined4=1, pointer:/SubmarineTitans/Recovered/DArrayTy=1}
 1	AnonShape_0063FE70_966F46C1	822	4	field_0336	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0063FE70_0336_EDA006AC	11	fixed-offset dereference; observed_types={}
 1	AnonShape_0063FE70_966F46C1	895	4	field_037F	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_00640170_0CC3A89E	895	4	field_037F	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00640170_037F_4BC1E19C	10	fixed-offset dereference; observed_types={}
@@ -830,10 +821,9 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006406D0_05A86BF1	8	4	field_0008	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}
 1	AnonShape_006406D0_A1028CB0	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_00643E20_7967F455	493	4	field_01ED	/int	1	fixed-offset dereference; observed_types={/int=2}
-1	AnonShape_00643E20_C04F60CA	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_00643E20_C04F60CA	493	4	field_01ED	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006457E0_D0D8C27F	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00645F10_DD339E8F	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
+1	AnonShape_00646D00_34D7A97E	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00647B60_9DCC946A	1	4	field_0001	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_00647B80_0B3474AE	1	4	field_0001	/float	1	fixed-offset dereference; observed_types={/float=1}
 1	AnonShape_00647BA0_86AA90F7	1250	4	field_04E2	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00647BA0_04E2_62109149	2	fixed-offset dereference; observed_types={}
@@ -856,7 +846,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0064CC90_892FE533	1459	4	field_05B3	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_0064CD30_9386233E	1459	4	field_05B3	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5570_4D68B99C=2}
 1	AnonShape_0064E300_087F62DC	125	2	field_007D	/ushort	1	fixed-offset dereference; observed_types={/ushort=1}
-1	AnonShape_0064E300_AEF9135A	119	4	field_0077	/uint	1	fixed-offset dereference; observed_types={/uint=1}
 1	AnonShape_0064E510_62575065	1262	4	field_04EE	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0064E8C0_55D619B7	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0064E910_BEEF74E3	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=2}
@@ -990,8 +979,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00652700_9F96C451	18	4	field_0012	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_00652700_9F96C451	215	1	field_00D7	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_00652700_9F96C451	217	1	field_00D9	/char	1	fixed-offset dereference; observed_types={/char=1}
-1	AnonShape_0065D120_30B58CB5	9	2	field_0009	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
-1	AnonShape_0065D120_30B58CB5	15	4	field_000F	pointer:/uint	1	fixed-offset dereference; observed_types={pointer:/uint=1}
 1	AnonShape_0065D600_57681C41	644	4	field_0284	pointer:/void	1	fixed-offset dereference; observed_types={pointer:/void=2}
 1	AnonShape_0065F5C0_07CCFC75	547	4	field_0223	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00660D10_4E35C399	12	2	field_000C	/short	1	fixed-offset dereference; observed_types={/short=1}
@@ -1000,16 +987,14 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00661790_D9FD542C	523	4	field_020B	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00664600_688AB3A2	535	4	field_0217	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_00664650_9EE2E6D5	535	4	field_0217	/undefined4	1	fixed-offset dereference; observed_types={}
-1	AnonShape_006646E0_797C098D	535	4	field_0217	/undefined4	2	fixed-offset dereference; observed_types={/int=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B0C70_7C4FE646=2}
-1	AnonShape_00664960_A592C081	581	4	field_0245	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_00664960_A592C081	1260	4	field_04EC	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_006646E0_797C098D	535	4	field_0217	/undefined4	2	fixed-offset dereference; observed_types={/int=1, pointer:/SubmarineTitans/Recovered/DArrayTy=2}
 1	AnonShape_00668670_926FA73E	24	1	field_0018	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_00678D20_B4368BF5	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00678D90_5F64F1ED	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00678E00_9BA304F3	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_00678EF0_ABF393F0	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
-1	AnonShape_00678FC0_4FB85B49	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B0CD0_C8D121FA	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B0CD0_C8D121FA=2}
-1	AnonShape_00679120_0E6153C1	24	4	field_0018	/WinDef.h/LPVOID	1	fixed-offset dereference; observed_types={/WinDef.h/LPVOID=1}
+1	AnonShape_00678FC0_4FB85B49	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00413AF0_B6B4EE9A	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00413AF0_B6B4EE9A=2}
+1	AnonShape_00679120_0E6153C1	24	4	field_0018	pointer:/void	1	fixed-offset dereference; observed_types={pointer:/void=1}
 1	AnonShape_00679C50_0416EB0D	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	5	fixed-offset dereference; observed_types={}
 1	AnonShape_00679D60_0B044CAA	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	5	fixed-offset dereference; observed_types={}
 1	AnonShape_00679E70_B79EE35E	1685	4	field_0695	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
@@ -1022,12 +1007,12 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0067B2E0_7593A12C	1697	4	field_06A1	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0067B350_003C24F0	5	2	field_0005	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_0067B350_B45F327E	5	2	field_0005	/short	1	fixed-offset dereference; observed_types={/short=1}
-1	AnonShape_0067B380_B0ED9EE7	1697	4	field_06A1	/undefined4	1	fixed-offset dereference; observed_types={pointer:/byte=2, pointer:/uint=1}
+1	AnonShape_0067B380_B0ED9EE7	1697	4	field_06A1	/undefined4	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/DArrayTy=2, pointer:/uint=1}
 1	AnonShape_0067BAF0_27DAF1F1	24	2	field_0018	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_0067BAF0_2ADBB15C	24	2	field_0018	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_0067BB20_006B47CA	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_0067BB20_69AE14FD	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_0067BE20_01BFD60B	1600	1	field_0640	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
+1	AnonShape_0067BE20_01BFD60B	1600	1	field_0640	/char	1	fixed-offset dereference; observed_types={/char=1}
 1	AnonShape_0067BEF0_C9130B29	1677	4	field_068D	/undefined4	1	fixed-offset dereference; observed_types={/int=2, /undefined4=1}
 1	AnonShape_0067BF30_4DA59839	164	4	field_00A4	/undefined4	1	fixed-offset dereference; observed_types={/int=1, /uint=1}
 1	AnonShape_0067E7E0_926C607C	41	4	field_0029	/uint	1	fixed-offset dereference; observed_types={/uint=1}
@@ -1051,7 +1036,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0068E800_BD5EB712	189	4	field_00BD	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0068E850_9F2CE8EC	189	4	field_00BD	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
 1	AnonShape_0068E8C0_46FCC1C3	189	4	field_00BD	pointer:/SubmarineTitans/Recovered/DArrayTy	4	fixed-offset dereference; observed_types={}
-1	AnonShape_0068E910_916952FD	189	4	field_00BD	/undefined4	1	fixed-offset dereference; observed_types={pointer:/byte=2, pointer:/uint=1}
+1	AnonShape_0068E910_916952FD	189	4	field_00BD	/undefined4	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/DArrayTy=2, pointer:/uint=1}
 1	AnonShape_0068F8F0_4A296DC7	165	4	field_00A5	pointer:/SubmarineTitans/Recovered/DArrayTy	5	fixed-offset dereference; observed_types={}
 1	AnonShape_0068FA00_58986AC8	165	4	field_00A5	pointer:/SubmarineTitans/Recovered/DArrayTy	5	fixed-offset dereference; observed_types={}
 1	AnonShape_0068FC70_839D2F9C	165	4	field_00A5	pointer:/SubmarineTitans/Recovered/DArrayTy	5	fixed-offset dereference; observed_types={}
@@ -1106,7 +1091,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006A64E0_519A7B6A	2	2	field_0002	/short	1	fixed-offset dereference; observed_types={/short=3}
 1	AnonShape_006A64E0_A3925630	2	2	field_0002	/short	1	fixed-offset dereference; observed_types={/short=6}
 1	AnonShape_006A7D50_B046AFF7	6	2	field_0006	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
-1	AnonShape_006AE110_1366E438	28	4	field_001C	pointer:/short	1	fixed-offset dereference; observed_types={pointer:/short=1}
 1	AnonShape_006AE3B0_E8BCA8D6	2	2	field_0002	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_006B06A0_BD2108AD	2	1	field_0002	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_006B0BA0_4CE4D615	60	4	field_003C	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}
@@ -1117,8 +1101,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006B2330_53DC05E6	432	4	field_01B0	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006B23E0_5A2050A1	436	4	field_01B4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006B4110_3C800FB2	476	4	field_01DC	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_006B4170_715D59FB	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
-1	AnonShape_006B4170_715D59FB	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006B5440_24358032	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006B5440_24358032	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006B7070_7BAC8719	1	1	field_0001	/byte	1	fixed-offset dereference; observed_types={/byte=1}
@@ -1131,12 +1113,10 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006BA780_F78E004B	12	4	field_000C	/uint	1	fixed-offset dereference; observed_types={/uint=4}
 1	AnonShape_006BB6C0_6F39CDC5	48	4	field_0030	pointer:/int	2	fixed-offset dereference; observed_types={pointer:/int=2}
 1	AnonShape_006BB780_43119500	48	4	field_0030	pointer:/int	2	fixed-offset dereference; observed_types={pointer:/int=2}
-1	AnonShape_006BBB00_72116AE7	1176	4	field_0498	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=2}
 1	AnonShape_006BFE70_3123BCE8	2	2	field_0002	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_006C2460_ADD01A02	4	4	field_0004	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006D4930_676532DD	1	fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006D4930_676532DD=1}
 1	AnonShape_006C3340_FB875678	4	4	field_0004	/int	2	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006C3720_C348B6D4	116	4	field_0074	/winnt.h/HANDLE	1	fixed-offset dereference; observed_types={/winnt.h/HANDLE=1}
-1	AnonShape_006C6450_6BFBC7A6	1188	4	field_04A4	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=2}
 1	AnonShape_006C6C80_604E9FE0	66	4	field_0042	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006C7980_0CF2A53F	30	4	field_001E	pointer:/short	1	fixed-offset dereference; observed_types={pointer:/short=1}
 1	AnonShape_006C7BB0_7D90AE39	26	4	field_001A	/int	1	fixed-offset dereference; observed_types={/int=1}
@@ -1145,8 +1125,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006C7E30_5B8C824D	54	4	field_0036	/undefined4	3	fixed-offset dereference; observed_types={/int=1, /uint=1, pointer:/undefined4=1, pointer:/void=1}
 1	AnonShape_006C7E80_DAB57774	54	4	field_0036	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006C7E90_88CA822C	54	4	field_0036	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_006C87C0_67AC8B31	8	4	field_0008	/uint	1	fixed-offset dereference; observed_types={/uint=1}
-1	AnonShape_006C87C0_67AC8B31	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006C8E60_3F75B164	13	1	field_000D	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_006CEE10_585981DD	68	4	field_0044	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006CEE10_585981DD	76	4	field_004C	/int	1	fixed-offset dereference; observed_types={/int=1}
@@ -1187,7 +1165,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006E1DD0_BD779661	640	4	field_0280	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E1DD0_0280_387F2D84	2	fixed-offset dereference; observed_types={}
 1	AnonShape_006E3DB0_0F66DDCF	8	4	field_0008	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006E3DB0_0F66DDCF	12	4	field_000C	/uint	1	fixed-offset dereference; observed_types={/uint=1}
-1	AnonShape_006E42C0_2A7AEAA1	20	4	field_0014	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E42C0_0014_A7057FF5	2	fixed-offset dereference; observed_types={}
+1	AnonShape_006E42C0_2A7AEAA1	20	4	field_0014	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_006E44E0_8D849043	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}
 1	AnonShape_006E4620_6462A208	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006E4B80_A7B295CE	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}
@@ -1212,6 +1190,9 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006E9D40_9F8B294C	784	4	field_0310	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E9D40_0310_477CEA1A	5	fixed-offset dereference; observed_types={}
 1	AnonShape_006E9DD0_F05AE3E5	784	4	field_0310	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E9DD0_0310_F81C983F	5	fixed-offset dereference; observed_types={}
 1	AnonShape_006E9E60_8FAC707A	784	4	field_0310	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E9E60_0310_51AA0C90	5	fixed-offset dereference; observed_types={}
+1	AnonShape_006EB350_D4715C71	148	4	field_0094	/int	1	fixed-offset dereference; observed_types={/int=1}
+1	AnonShape_006EB350_D4715C71	160	4	field_00A0	/int	1	fixed-offset dereference; observed_types={/int=2}
+1	AnonShape_006EB350_D4715C71	164	4	field_00A4	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006EB540_A3400F06	4	4	field_0004	/undefined4	2	fixed-offset dereference; observed_types={/int=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006BB980_E41494A1=1}
 1	AnonShape_006EF410_73A88844	1109	4	field_0455	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006F0E30_E46FC23B	22	2	field_0016	/short	1	fixed-offset dereference; observed_types={/short=2}
@@ -1219,7 +1200,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006F0EA0_D55EB521	22	2	field_0016	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_006F2D10_2C6A4914	22	2	field_0016	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_006F31D0_78B2E322	12	4	field_000C	/undefined4	1	fixed-offset dereference; observed_types={/int=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006F31D0_0BFF23DC=1}
-1	AnonShape_0070B3A0_FD075D3C	35	2	field_0023	/short	1	fixed-offset dereference; observed_types={/short=1}
 1	AnonShape_0070B3C0_68B37622	41	2	field_0029	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_0070B3D0_A2BA8A38	35	2	field_0023	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
 1	AnonShape_0070B3D0_A2BA8A38	41	2	field_0029	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}
@@ -1404,6 +1384,8 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00761770_EA1E009F	80	4	field_0050	pointer:/int	2	fixed-offset dereference; observed_types={pointer:/int=1}
 1	AnonShape_GLOBAL_00801678_1F442B8E	370	2	field_0172	/short	4	fixed-offset dereference; observed_types={/short=8}
 1	AnonShape_GLOBAL_0080168C_7BEDA46D	370	2	field_0172	/short	2	fixed-offset dereference; observed_types={/short=3}
+1	AnonShape_GLOBAL_00801690_2AA401C1	370	2	field_0172	/short	2	fixed-offset dereference; observed_types={/short=16}
+1	AnonShape_GLOBAL_00801690_2AA401C1	475	1	field_01DB	/byte	1	fixed-offset dereference; observed_types={/byte=2}
 1	AnonShape_GLOBAL_00801698_1C396DE8	370	2	field_0172	/short	3	fixed-offset dereference; observed_types={/short=7}
 1	AnonShape_GLOBAL_008016EC_EDC58BAB	370	2	field_0172	/short	4	fixed-offset dereference; observed_types={/short=8}
 1	AnonShape_GLOBAL_00802A44_C9AB1E2F	370	2	field_0172	/short	5	fixed-offset dereference; observed_types={/short=10}

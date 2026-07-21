@@ -104,12 +104,12 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     return iVar2;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1b9,0,iVar2,&DAT_007a4ccc,
-                             s_STGroupC__SaveGrpData_007a5168);
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x1b9,0,iVar2,"%s",
+                             "STGroupC::SaveGrpData");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1ba);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1ba);
   return local_18;
 }
 

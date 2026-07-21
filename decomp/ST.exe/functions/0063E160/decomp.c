@@ -48,12 +48,12 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     piVar5 = local_c;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_58.previous;
-      iVar7 = ReportDebugMessage(s_E____titans_nick_to_TmMin_cpp_007d209c,0x603,0,errorCode,
-                                 &DAT_007a4ccc,s_STTmMineC__LoadImagSpr_007d20fc);
+      iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_TmMin.cpp",0x603,0,errorCode,
+                                 "%s","STTmMineC::LoadImagSpr");
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x605);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x605);
       return 0xffff;
     }
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad

@@ -11,7 +11,7 @@ STLBombC * __thiscall STLBombC::STLBombC(STLBombC *this)
 
 {
   int iVar1;
-  STLBombC *pSVar2;
+  undefined4 *puVar2;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
@@ -29,12 +29,12 @@ STLBombC * __thiscall STLBombC::STLBombC(STLBombC *this)
   this->field_0255 = 0;
   this->field_0256 = 0;
   this->field_0257 = 0;
-  pSVar2 = this + 1;
+  puVar2 = (undefined4 *)&this->field_0x258;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pSVar2->vtable = (STLBombCVTable *)0x0;
-    pSVar2 = (STLBombC *)&pSVar2->field_0x4;
+    *puVar2 = 0;
+    puVar2 = puVar2 + 1;
   }
-  *(undefined2 *)&pSVar2->vtable = 0;
+  *(undefined2 *)puVar2 = 0;
   return this;
 }
 

@@ -34,17 +34,17 @@ undefined4 __fastcall FUN_004d0310(AnonShape_004D0310_B8EE97FF *param_1)
                      &DAT_007a9342 + param_1->field_0369 * 6,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
-              (iVar4,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x298);
+              (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x298);
   }
   iVar4 = param_1->field_0379;
   if (iVar4 == 0xff) {
     iVar4 = param_1->field_0024;
   }
-  wsprintfA(local_48,s__s_1i_007ac908,&DAT_007a9342 + param_1->field_0369 * 6,iVar4);
+  wsprintfA(local_48,"%s%1i",&DAT_007a9342 + param_1->field_0369 * 6,iVar4);
   iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xc,DAT_0080677c,local_48,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
-              (iVar4,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x29a);
+              (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x29a);
   }
   iVar4 = -1;
   pcVar8 = (char *)((int)&DAT_007a9440 + param_1->field_0369 * 6 + 2);

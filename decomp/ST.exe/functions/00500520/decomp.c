@@ -112,12 +112,12 @@ LAB_00500689:
       } while( true );
     }
     g_currentExceptionFrame = local_70.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1da,0,iVar4,&DAT_007a4ccc
-                               ,s_CPanelTy__PaintDeep_007c24d4);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1da,0,iVar4,"%s"
+                               ,"CPanelTy::PaintDeep");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1da);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x1da);
   }
   return;
 }

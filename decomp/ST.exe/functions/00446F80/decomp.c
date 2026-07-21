@@ -217,7 +217,7 @@ LAB_0044738a:
             DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
-            if (local_28 != (STFishC *)0x0) {
+            if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
               STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
               DArrayGetElement(local_40,local_8,&local_c);
               pDVar3 = (DArrayTy *)
@@ -329,7 +329,7 @@ LAB_0044738a:
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
-              if (local_28 != (STFishC *)0x0) {
+              if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 PutOnPlaceGuardBoats
                           (local_6c,_param_1,(int)local_e,(int)local_10,local_16,(int)local_e,
@@ -351,7 +351,7 @@ LAB_0044738a:
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
-              if (local_28 != (STFishC *)0x0) {
+              if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 uVar10 = 0;
                 local_14 = (DArrayTy *)0x0;
@@ -500,12 +500,12 @@ LAB_0044738a:
     }
     g_currentExceptionFrame = local_e4.previous;
     if (iVar5 != -0x5001fff7) {
-      iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2b90,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__DistributeGuardBo_007a8458);
+      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2b90,0,0,"%s",
+                                 "STAllPlayersC::DistributeGuardBoats");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2b91);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2b91);
     }
   }
   return;
@@ -551,7 +551,7 @@ LAB_004471bd:
   if (local_1c == (DArrayTy *)0x0) goto LAB_0044738a;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
-  if (local_28 != (STFishC *)0x0) {
+  if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
     STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
     local_8 = local_8 + 1;
     if ((int)local_8 < (int)pDVar3) {
@@ -560,7 +560,7 @@ LAB_004471bd:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((((local_4e != 1) &&
              (local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1),
-             local_28 != (STFishC *)0x0)) &&
+             (STGameObjC *)local_28 != (STGameObjC *)0x0)) &&
             (STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66),
             uVar7 = (int)local_38 - (int)local_e >> 0x1f,
             (int)(((int)local_38 - (int)local_e ^ uVar7) - uVar7) < 3)) &&

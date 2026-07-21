@@ -25,12 +25,12 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
   this_00 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x65,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__DoneSettMap_007cd29c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x65,0,errorCode,
+                               "%s","SettMapMTy::DoneSettMap");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x65);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x65);
     return;
   }
   if (local_8->field_2204 != (AnonPointee_SettMapMTy_2204 *)0x0) {
@@ -38,7 +38,7 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
   }
   FUN_006b3bb0(DAT_008075a8,this_00->field_2200);
   pDVar4 = this_00->field_2237;
-  this_00->field_2200 = 0xffffffff;
+  this_00->field_2200 = -1;
   if (pDVar4 != (DArrayTy *)0x0) {
     uVar5 = 0;
     if (pDVar4->count != 0) {

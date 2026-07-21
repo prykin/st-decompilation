@@ -20,19 +20,19 @@ void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     PrepMissObj(local_8);
-    if (DAT_00801690 != (void *)0x0) {
-      thunk_FUN_00515180(DAT_00801690,'\a');
+    if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+      thunk_FUN_00515180(PTR_00801690,'\a');
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x800,0,errorCode,
-                             &DAT_007a4ccc,s_OptPanelTy__UpdateObjectives_007c736c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x800,0,errorCode,
+                             "%s","OptPanelTy::UpdateObjectives");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x800);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x800);
   return;
 }
 

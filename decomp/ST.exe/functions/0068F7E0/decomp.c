@@ -24,7 +24,7 @@ void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
-    array = (DArrayTy *)_GetStaffGrpExch(*(undefined4 *)&local_c->field_0x24);
+    array = (DArrayTy *)_GetStaffGrpExch(local_c->field_0024);
     local_8 = array;
     GiveObjByClaim(this_00,(uint *)array);
     GiveObjByFltType(this_00,(uint *)array);
@@ -39,12 +39,12 @@ void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
     DArrayDestroy(local_8);
     local_8 = (DArrayTy *)0x0;
   }
-  iVar2 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x2a8,0,errorCode,&DAT_007a4ccc,
-                             s_AiTactClassTy__InitDistrObj_007d582c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x2a8,0,errorCode,"%s",
+                             "AiTactClassTy::InitDistrObj");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x2a9);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x2a9);
   return;
 }
 

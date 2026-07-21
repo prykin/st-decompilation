@@ -44,7 +44,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  this->field_0232 = 0xffffffff;
+  this->field_0232 = -1;
   this->field_0236 = 1;
   puVar2 = &this->field_024A;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -61,10 +61,10 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   *(undefined4 *)&this->field_0x295 = 0;
   this->field_0299 = 0;
   this->field_029B = 0;
-  this->field_029F = (uint *)0x0;
+  *(undefined4 *)&this->field_0x29f = 0;
   *(undefined4 *)&this->field_0x2a3 = 0;
   *(undefined4 *)&this->field_0x2a7 = 0;
-  *(undefined2 *)&this->field_0x2ab = 0;
+  this->field_02AB = 0;
   *(undefined4 *)&this->field_0x2b3 = 0;
   *(undefined4 *)&this->field_0x2b7 = 0;
   *(undefined2 *)&this->field_0x2bb = 0;
@@ -72,8 +72,8 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   this->field_02C1 = 0;
   *(undefined4 *)&this->field_0x2c3 = 0;
   *(undefined4 *)&this->field_0x2c7 = 0;
-  *(undefined2 *)&this->field_0x2cb = 0;
-  this->field_0x2cd = 0;
+  this->field_02CB = 0;
+  this->field_02CD = 0;
   this->field_02CE = 0;
   *(undefined4 *)&this->field_0x2d2 = 0;
   this->field_02D6 = 0;
@@ -85,12 +85,12 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   this->field_02EC = 0;
   *(undefined4 *)&this->field_0x2ee = 0;
   *(undefined4 *)&this->field_0x2f2 = 0;
-  *(undefined2 *)&this->field_0x2f6 = 0;
+  this->field_02F6 = 0;
   *(undefined4 *)&this->field_0x2f8 = 0;
   *(undefined4 *)&this->field_0x2fc = 0;
   *(undefined4 *)&this->field_0x300 = 0;
-  this->field_0304 = 0;
-  this->field_0308 = 0;
+  *(undefined4 *)&this->field_0x304 = 0;
+  *(undefined4 *)&this->field_0x308 = 0;
   this->field_030C = 0;
   this->field_030E = 0;
   this->field_01E6 = CASE_3;

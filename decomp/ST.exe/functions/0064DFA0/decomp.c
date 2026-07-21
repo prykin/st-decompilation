@@ -74,12 +74,12 @@ AiEventClassTy::_CreateMine
     return local_28;
   }
   g_currentExceptionFrame = local_6c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x169,0,iVar3,&DAT_007a4ccc,
-                             s_AiEventClassTy___CreateMine_007d2b28);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x169,0,iVar3,"%s",
+                             "AiEventClassTy::_CreateMine");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x16a);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x16a);
   return iVar3;
 }
 

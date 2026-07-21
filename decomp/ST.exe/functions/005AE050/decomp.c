@@ -47,15 +47,15 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   iVar7 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar15 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x2c0,0,iVar7,
-                                &DAT_007a4ccc,s_ChooseMapTy__ShowDescription_007cc830);
+    iVar15 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x2c0,0,iVar7,
+                                "%s","ChooseMapTy::ShowDescription");
     if (iVar15 == 0) {
-      RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x2c0);
+      RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\load_obj.cpp",0x2c0);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
+  puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
   pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
   FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
@@ -330,7 +330,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
         *(undefined2 *)puVar12 = 0;
         *puVar12 = DAT_007cc854;
         puVar9 = ccFntTy::FormIndentSarr
-                           (PTR_0081176c->field_0034,(uint *)PTR_0080c4cb,s________________007c21d8,
+                           (PTR_0081176c->field_0034,(uint *)PTR_0080c4cb," ,.;:!?/\\()[]{}",
                             (uint *)&DAT_007c21ec,PTR_0081176c->field_0544->field_0004 + -0x14,0,
                             0xffffffff,(char *)0x0,1);
         PTR_0081176c->field_0548 = puVar9;
@@ -357,11 +357,11 @@ LAB_005ae53a:
   pCVar16->field_002D = 0x28;
   *(undefined2 *)&pCVar16->field_0x31 = 1;
   puVar12 = &pCVar16->field_0x1d;
-  pCVar16->field_0033 = *(undefined2 *)(PTR_0081176c->field_0548 + 8);
+  *(undefined2 *)&pCVar16->field_0x33 = *(undefined2 *)(PTR_0081176c->field_0548 + 8);
   FUN_006e6080(pCVar16,2,PTR_0081176c->field_0389,(undefined4 *)puVar12);
   pCVar16->field_002D = 0x22;
   *(undefined2 *)&pCVar16->field_0x31 = 0;
-  pCVar16->field_0033 = 0;
+  *(undefined2 *)&pCVar16->field_0x33 = 0;
   FUN_006e6080(pCVar16,2,PTR_0081176c->field_0389,(undefined4 *)puVar12);
   pCVar16->field_002D = 0x20;
   *(uint *)&pCVar16->field_0x31 = (uint)(iVar7 != 0);
@@ -380,10 +380,10 @@ LAB_005ae53a:
     MMsgTy::StatePanel(pSVar5->field_02E6,(int)local_34);
   }
 LAB_005ae602:
-  if ((pCVar16->field_1A5F != CASE_3) && (-1 < (int)PTR_0081176c->field_02EC)) {
+  if ((pCVar16->field_1A5F != CASE_3) && (-1 < PTR_0081176c->field_02EC)) {
     FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_02EC);
   }
-  if (-1 < (int)PTR_0081176c->field_0540) {
+  if (-1 < PTR_0081176c->field_0540) {
     FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_0540);
   }
   g_currentExceptionFrame = local_78.previous;

@@ -62,8 +62,8 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
       FUN_006b3bb0(DAT_008075a8,this_00->field_0108);
     }
     this_00->field_0108 = 0xffffffff;
-    if (this_00->field_00FC != 0) {
-      FreeAndNull((void **)&this_00->field_00FC);
+    if (this_00->field_00FC != (AnonPointee_ComboTy_00FC *)0x0) {
+      FreeAndNull(&this_00->field_00FC);
     }
     if (this_00->field_0100 != 0) {
       FreeAndNull((void **)&this_00->field_0100);
@@ -78,12 +78,12 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,0x7f,0,iVar3,&DAT_007a4ccc,
-                             s_ComboTy__DoneCombo_007cbf40);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",0x7f,0,iVar3,"%s",
+                             "ComboTy::DoneCombo");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_combo_cpp_007cbeec,0x7f);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\combo.cpp",0x7f);
   return;
 }
 

@@ -69,7 +69,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       puVar7 = puVar7 + 1;
       puVar4 = puVar4 + 1;
     }
-    *(undefined4 *)&local_48->field_0x94 = this->field_0269;
+    *(int *)&local_48->field_0x94 = this->field_0269;
     local_48->field_0x98 = this->field_026D;
     local_48->field_0099 = this->field_026E;
     local_48->field_00DE = this->field_02B7;
@@ -123,7 +123,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
           local_30 = local_30 + 1;
           puVar4 = puVar4 + 1;
           puVar7 = puVar7 + 2;
-        } while (local_30 < (int)this->field_0269);
+        } while (local_30 < this->field_0269);
       }
       uVar9 = *param_1;
       *param_1 = uVar9 + iVar3;
@@ -131,7 +131,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
                  Library::DKW::LIB::FUN_006acf50((int)local_48,uVar9 + iVar3);
       local_44 = (uint *)((*param_1 - iVar3) + (int)local_48);
       local_30 = 0;
-      if (0 < (int)this->field_0269) {
+      if (0 < this->field_0269) {
         puVar5 = (uint *)(local_24 + 4);
         local_b4 = &this->field_0219;
         do {
@@ -158,7 +158,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
           local_30 = local_30 + 1;
           local_b4 = local_b4 + 1;
           puVar5 = puVar5 + 2;
-        } while (local_30 < (int)this->field_0269);
+        } while (local_30 < this->field_0269);
       }
     }
     g_currentExceptionFrame = local_8c.previous;
@@ -171,12 +171,12 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       puVar2 = local_1c;
     }
     local_1c = puVar2;
-    iVar6 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x2df,0,iVar3,&DAT_007a4ccc,
-                               s_STExplosionC__SaveObj__007cf694);
+    iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_Expl.cpp",0x2df,0,iVar3,"%s",
+                               "STExplosionC::SaveObj(");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x2e1);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_Expl.cpp",0x2e1);
   }
   ExceptionList = local_14;
   return (undefined4 *)local_48;

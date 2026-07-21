@@ -35,10 +35,10 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
   pPVar3 = local_14;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0x11f,0,iVar4,
-                                &DAT_007a4ccc,s_PlayPanelTy__PaintPlayPanel_007c7688);
+    iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\playpan.cpp",0x11f,0,iVar4,
+                                "%s","PlayPanelTy::PaintPlayPanel");
     if (iVar11 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_playpan_cpp_007c7574,0x11f);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\playpan.cpp",0x11f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

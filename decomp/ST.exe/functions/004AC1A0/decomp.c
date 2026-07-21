@@ -27,43 +27,43 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0xf1,0,iVar3,&DAT_007a4ccc,
-                               s_STT3DSprC__StartShow_007ac6dc);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0xf1,0,iVar3,"%s",
+                               "STT3DSprC::StartShow");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0xffffffff;
   }
-  if (local_8->field_0018 == -1) {
+  if (local_8->field_0018 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xce);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xce);
   }
   if (((char)param_1 < '\0') || (pSVar2->field_0014 + -1 < (int)(char)param_1)) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xcf);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xcf);
   }
   uVar7 = (uint)(char)param_1;
   iVar3 = uVar7 * 0x24;
   if (*(int *)(pSVar2->field_0020 + iVar3) == 0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd0);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xd0);
   }
   local_c = 1 << (param_1 & 0x1f);
   if ((pSVar2->field_001C & local_c) != 0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd1);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xd1);
   }
-  FUN_006e9cb0((void *)pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
+  FUN_006e9cb0(pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
   pSVar2->field_001C = pSVar2->field_001C | local_c;
   iVar4 = pSVar2->field_0020 + iVar3;
   if (*(int *)(iVar4 + 0x20) == 0) {
-    FUN_006ea270((void *)pSVar2->field_003C,pSVar2->field_0018,uVar7,*(uint *)(iVar4 + 0x18));
+    FUN_006ea270(pSVar2->field_003C,pSVar2->field_0018,uVar7,*(uint *)(iVar4 + 0x18));
   }
   else {
-    FUN_006e9d40((void *)pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
+    FUN_006e9d40(pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
   }
   if (pSVar2->field_0012 == '\0') {
-    FUN_006eaaa0((void *)pSVar2->field_003C,pSVar2->field_0018,0);
+    FUN_006eaaa0(pSVar2->field_003C,pSVar2->field_0018,0);
   }
   if (pSVar2->field_0011 == '\0') {
     if (pSVar2->field_0010 == '\0') {
@@ -83,8 +83,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
       puVar8 = &LAB_00405b64;
     }
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)pSVar2->field_003C,pSVar2->field_0018,pSVar2->field_0034,
-               (uint)puVar8,(uint)pSVar2);
+              (pSVar2->field_003C,pSVar2->field_0018,pSVar2->field_0034,(uint)puVar8,(uint)pSVar2);
   }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 cf_common_exit_004AC330:

@@ -967,8 +967,8 @@ LAB_005637bc:
     }
     else {
       g_currentExceptionFrame = local_1b8.previous;
-      iVar14 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0xdc2,0,iVar13,&DAT_007a4ccc,
-                                  s_AiAiCalcMinesFields_007c96e8);
+      iVar14 = ReportDebugMessage("E:\\__titans\\scoreai.cpp",0xdc2,0,iVar13,"%s",
+                                  "AiAiCalcMinesFields");
       if (iVar14 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -991,7 +991,7 @@ LAB_005637bc:
     } while (iVar14 < 0x40);
     if (iVar13 != 0) {
       RaiseInternalException
-                (iVar13,g_overwriteContext_007ED77C,s_E____titans_scoreai_cpp_007c96b0,0xdd4);
+                (iVar13,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xdd4);
     }
   }
   ExceptionList = local_14;

@@ -41,8 +41,8 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
       this->field_0265 = this->field_0265 + 1;
       iVar4 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(uint)this,0xb4,0x8c,0x11);
       if (iVar4 != 0) {
-        iVar4 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x203,0,0,&DAT_007a4ccc,
-                                   s_STDcResourcC__Init_Sprite_Error_007cb264);
+        iVar4 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
+                                   "STDcResourcC::Init Sprite Error");
         if (iVar4 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }

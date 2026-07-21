@@ -32,12 +32,12 @@ STPlaySystemC::SaveObjData(STPlaySystemC *this,char *text,byte *param_2,uint par
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x232,0,iVar2,&DAT_007a4ccc,
-                             s_STPlaySystemC__SaveObjData_007c8510);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x232,0,iVar2,"%s",
+                             "STPlaySystemC::SaveObjData");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x232);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x232);
   return iVar2;
 }
 

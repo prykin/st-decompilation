@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_004cbad0(AnonShape_004CBAD0_DCDD6BA9 *param_1)
   int iVar1;
   uint uVar2;
 
-  iVar1 = thunk_FUN_0041c710((int)param_1);
+  iVar1 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
   if (iVar1 == 0) {
     iVar1 = 0;
     uVar2 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);

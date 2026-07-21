@@ -38,37 +38,37 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x27df,0,iVar2,&DAT_007a4ccc
-                               ,s_STAllPlayersC__CreateBoat_007a8254);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27df,0,iVar2,"%s"
+                               ,"STAllPlayersC::CreateBoat");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x27e0);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x27e0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return CONCAT22(extraout_var,(undefined2)local_14);
   }
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar5 = extraout_var_00;
   if (7 < (uint)param_1[1]) {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x27b5,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__CreateBoat___inco_007a82ec);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27b5,0,0,"%s",
+                               "STAllPlayersC::CreateBoat - incorrect player number");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27b6);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar5 = extraout_var_01;
   }
   if ((7 < (uint)param_1[5]) && (param_1[5] != 0xffffffff)) {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x27c2,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__CreateBoat___inco_007a82ac);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c2,0,0,"%s",
+                               "STAllPlayersC::CreateBoat - incorrect player color");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27c3);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar5 = extraout_var_02;
@@ -78,13 +78,13 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
       (*(short *)((int)param_1 + 0x1e) < 0)) ||
      (((g_worldGrid.sizeY <= *(short *)((int)param_1 + 0x1e) || (*(short *)(param_1 + 8) < 0)) ||
       (g_worldGrid.sizeZ <= *(short *)(param_1 + 8))))) {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x27c8,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__CreateBoat___inco_007a8274);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c8,0,0,"%s",
+                               "STAllPlayersC::CreateBoat - incorrect position");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27c9);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar5 = extraout_var_03;
@@ -104,7 +104,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     *(short *)(param_1 + 9) = (short)uVar3;
     if (local_8 == (STGroupC *)0x0) {
       RaiseInternalException
-                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x27d8);
     }
   }
@@ -112,7 +112,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   iVar2 = local_c;
   if (local_c == 0) {
     RaiseInternalException
-              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27db);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar2 = extraout_EAX;

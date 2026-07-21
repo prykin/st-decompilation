@@ -72,7 +72,7 @@ OptPanelTy::CreateSlider
     local_31c = 1;
     local_42c[3] = 2;
     local_42c[2] = local_42c[0];
-    pCVar4 = thunk_FUN_00571240(s_BUT_MINUS_007c718c,0);
+    pCVar4 = thunk_FUN_00571240("BUT_MINUS",0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar8);
     local_c = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar9,iVar10);
     local_414 = *(undefined4 *)(local_c + 2);
@@ -115,12 +115,12 @@ OptPanelTy::CreateSlider
     return local_8;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0xa0,0,iVar3,&DAT_007a4ccc,
-                              s_OptPanelTy__CreateSlider_007c716c);
+  iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0xa0,0,iVar3,"%s",
+                              "OptPanelTy::CreateSlider");
   if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0xa0);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\optpanel.cpp",0xa0);
   return 0xffffffff;
 }
 

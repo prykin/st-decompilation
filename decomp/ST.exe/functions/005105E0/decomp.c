@@ -39,10 +39,10 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   pFVar2 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x8f,0,iVar3,&DAT_007a4ccc
-                               ,s_FrmPanelTy__PaintBut_007c2ac4);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x8f,0,iVar3,"%s"
+                               ,"FrmPanelTy::PaintBut");
     if (iVar4 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x8f);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x8f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

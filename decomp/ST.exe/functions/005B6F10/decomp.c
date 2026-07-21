@@ -29,12 +29,12 @@ void __thiscall MMsgTy::DoneMMsg(MMsgTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x31,0,errorCode,
-                             &DAT_007a4ccc,s_MMsgTy__DoneMMsg_007ccc1c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x31,0,errorCode,
+                             "%s","MMsgTy::DoneMMsg");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x31);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x31);
   return;
 }
 

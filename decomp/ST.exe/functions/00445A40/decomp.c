@@ -58,12 +58,12 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayDestroy(local_14);
     }
     if (iVar2 != -0x5001fff7) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x28a2,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__RegisterPGPair_007a836c);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x28a2,0,0,"%s",
+                                 "STAllPlayersC::RegisterPGPair");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x28a3);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x28a3);
     }
     return;
   }
@@ -71,7 +71,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       (uVar6 = param_2[3], local_10 = uVar6, uVar6 == 0)) || (local_c = param_3[3], local_c == 0)) {
     uVar6 = local_10;
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2837);
   }
   Library::DKW::TBL::FUN_006afe40((int *)&local_18,param_2);
@@ -84,7 +84,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_18,uVar7,&local_8);
       this_01 = local_34;
       pSVar3 = GetObjPtr(local_34,objPtr,local_8,CASE_1);
-      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if ((pSVar3 == (STGameObjC *)0x0) ||
+         (iVar2 = (**(code **)&pSVar3->vtable[1].field_0x28)(), iVar2 == 0)) {
         FUN_006b0c70(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
@@ -95,7 +97,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   }
   if (uVar6 == 0) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2842);
   }
   uVar6 = 0;
@@ -103,9 +105,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     do {
       DArrayGetElement(local_14,uVar6,&local_8);
       pSVar3 = GetObjPtr(this_01,objPtr,local_8,CASE_1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90((int)pSVar3), iVar2 == 0))
-         || ((iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0 ||
-             (*(short *)&pSVar3->field_0x30 == -1)))) {
+         || ((iVar2 = (**(code **)&pSVar3->vtable[1].field_0x28)(), iVar2 == 0 ||
+             (pSVar3->field_0030 == -1)))) {
         FUN_006b0c70(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;
@@ -115,7 +118,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   }
   if (local_c == 0) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x284d);
   }
   uVar6 = 0;
@@ -173,7 +176,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DistributeGuardBoats(this_01,objPtr);
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2872);
   }
   if (local_10 == 0) {

@@ -63,12 +63,12 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
     return uVar5;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x68,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintPerResSI_007c2778);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x68,0,iVar3,"%s",
+                             "CPanelTy::PaintPerResSI");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x68);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x68);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   return extraout_EAX;
 }

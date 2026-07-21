@@ -21,12 +21,12 @@ CursorClassTy::CursDrawInit(CursorClassTy *this,int param_1,int param_2,int para
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xd8,0,errorCode,
-                               &DAT_007a4ccc,s_CursorClassTy__CursDrawInit_007c7e68);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0xd8,0,errorCode,
+                               "%s","CursorClassTy::CursDrawInit");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xd9);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0xd9);
     return;
   }
   if (local_8->field_00A9 != 0) {

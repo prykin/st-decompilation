@@ -55,8 +55,8 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this,int param_1)
         bVar7 = uVar6 < pDVar2->count;
       } while ((int)uVar6 < (int)pDVar2->count);
       if (iVar4 == 0) {
-        iVar4 = ReportDebugMessage(s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x8a,0,0,
-                                   s_JumpManagC__CheckSystrm_CheckPro_007d00a0,0);
+        iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_jbomb_m.Cpp",0x8a,0,0,
+                                   "JumpManagC::CheckSystrm CheckProblem =  %d",0);
         if (iVar4 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }

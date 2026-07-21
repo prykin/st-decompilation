@@ -43,12 +43,12 @@ ComboTy::OutBmpProc(ComboTy *this,uint param_1,undefined4 param_2,undefined4 par
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,0x12,0,iVar3,&DAT_007a4ccc,
-                               s_ComboTy__OutBmpProc_007cbf10);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",0x12,0,iVar3,"%s",
+                               "ComboTy::OutBmpProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_combo_cpp_007cbeec,0x12);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\combo.cpp",0x12);
   }
   return;
 }

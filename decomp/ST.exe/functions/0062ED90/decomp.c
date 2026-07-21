@@ -26,10 +26,10 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xd9,0,iVar2,&DAT_007a4ccc,
-                               s_STRubbishC__RubbishCreatePart_007d17d8);
+    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_Rubb.cpp",0xd9,0,iVar2,"%s",
+                               "STRubbishC::RubbishCreatePart");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar2,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0xdb);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\nick\\to_Rubb.cpp",0xdb);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

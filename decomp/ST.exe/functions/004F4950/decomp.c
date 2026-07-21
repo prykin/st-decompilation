@@ -29,7 +29,7 @@ void __cdecl FUN_004f4950(int param_1,undefined *param_2,BYTE param_3)
   }
   local_91 = param_3;
   uVar3 = 0xffffffff;
-  pcVar5 = s_Verdana_007c1bc4;
+  pcVar5 = "Verdana";
   do {
     pcVar7 = pcVar5;
     if (uVar3 == 0) break;

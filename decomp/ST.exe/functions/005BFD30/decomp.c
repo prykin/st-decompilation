@@ -35,7 +35,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
         local_8 = local_8 - 1;
       } while (local_8 != 0);
     }
-    wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd004,param_1);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%8d",param_1);
     uVar4 = param_3 * 0x26 + 0x30;
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0x18,0xd)
@@ -46,12 +46,12 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x208,0,iVar3,&DAT_007a4ccc,
-                             s_MReportTy__PaintMainScore_007ccfe4);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x208,0,iVar3,"%s",
+                             "MReportTy::PaintMainScore");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x208);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x208);
   return;
 }
 

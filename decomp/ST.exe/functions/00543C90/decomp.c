@@ -64,7 +64,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
       pSVar1 = pCVar4->field_04EB;
       if ((pSVar1 != (SpriteClassTy *)0x0) &&
          (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
-        if (pSVar1->field_000C + -1 <= (int)pSVar1->field_0008) {
+        if (pSVar1->field_000C + -1 <= pSVar1->field_0008) {
           SpriteClassTy::CloseSprite(pSVar1);
           Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar4->field_04EB);
           pCVar4->field_04EB = (SpriteClassTy *)0x0;
@@ -74,9 +74,8 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= DVar3) {
           pSVar1->field_0044 = DVar3;
           pSVar1->field_0008 = pSVar1->field_0008 + 1;
-          FUN_006e2970(PTR_00807598,*(undefined4 *)(pCVar4 + 1),*(undefined4 *)&pCVar4[1].field_0x4,
-                       pCVar4[1].field_0008,&pCVar4->field_04EB->field_001C,
-                       &pCVar4->field_04EB->field_0020);
+          FUN_006e2970(PTR_00807598,pCVar4->field_04EF,pCVar4->field_04F3,pCVar4->field_04F7,
+                       &pCVar4->field_04EB->field_001C,&pCVar4->field_04EB->field_0020);
           pCVar4->field_04EB->field_001C =
                pCVar4->field_04EB->field_001C - *(int *)(pCVar4->field_04E7 + 9) / 2;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -92,12 +91,12 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xcc,0,iVar5,
-                               &DAT_007a4ccc,s_CursorClassTy__DrawSprite_007c7e48);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0xcc,0,iVar5,
+                               "%s","CursorClassTy::DrawSprite");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xcd);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0xcd);
   }
   return;
 }

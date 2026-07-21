@@ -24,18 +24,18 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x16fd,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__SaveTmp_007a745c);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x16fd,0,0,"%s",
+                                 "STAllPlayersC::SaveTmp");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x16fe);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x16fe);
     }
     return;
   }
   if ((param_1 < 0) || (9 < param_1)) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x16d8);
   }
   uVar5 = (uint)DAT_0080874d;
@@ -48,13 +48,13 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
     local_8 = g_playerRuntime[uVar5].tempSlots + 1;
   }
   else {
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x16dd,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__SaveTmp_invalid_p_007a74ac);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x16dd,0,0,"%s",
+                               "STAllPlayersC::SaveTmp invalid panel number");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x16de);
   }
   paSVar3 = local_8;
@@ -99,8 +99,8 @@ cf_common_exit_00438FE7:
   }
   else if (iVar6 == 0x172) goto cf_common_exit_00438FE7;
 LAB_00438fb0:
-  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x16f9,0,0,&DAT_007a4ccc,
-                             s_STAllPlayersC__SaveTmp_invalid_g_007a7478);
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x16f9,0,0,"%s",
+                             "STAllPlayersC::SaveTmp invalid game type");
   if (iVar4 == 0) {
     g_currentExceptionFrame = local_50.previous;
     return;

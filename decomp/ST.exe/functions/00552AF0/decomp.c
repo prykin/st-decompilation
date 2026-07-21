@@ -30,12 +30,12 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = pIVar2;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x36,0,errorCode,
-                               &DAT_007a4ccc,s_UpgPanelTy__ShiftControls_007c8830);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\upginfo.cpp",0x36,0,errorCode,
+                               "%s","UpgPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x36);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x36);
   }
   return;
 }

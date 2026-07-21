@@ -22,7 +22,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
   if (iVar2 == 0) {
     if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (param_1 == 0)) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x82);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x82);
     }
     if ((param_2 == (char *)0x0) || (*param_2 == '\0')) {
       param_2 = PTR_s_AIBOSS_0079d664;
@@ -38,13 +38,13 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x8d,0,iVar2,&DAT_007a4ccc,
-                             s_CreateArbiter_007d28b4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x8d,0,iVar2,"%s",
+                             "CreateArbiter");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_006484f0((int *)&local_8);
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x8f);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_creat.cpp",0x8f);
   return iVar2;
 }
 

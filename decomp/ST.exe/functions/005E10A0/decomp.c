@@ -45,12 +45,12 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x1ab,0,iVar2,&DAT_007a4ccc,
-                             s_MTaskTy__TTaskItemClose_007cdab8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x1ab,0,iVar2,"%s",
+                             "MTaskTy::TTaskItemClose");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_task_obj_cpp_007cd994,0x1ab);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\task_obj.cpp",0x1ab);
   return;
 }
 

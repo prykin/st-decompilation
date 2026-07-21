@@ -46,10 +46,10 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   this_00 = local_10;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar14 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x973,0,iVar9,
-                                &DAT_007a4ccc,s_HelpPanelTy__TipProc_007c3d8c);
+    iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x973,0,iVar9,
+                                "%s","HelpPanelTy::TipProc");
     if (iVar14 == 0) {
-      RaiseInternalException(iVar9,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x973);
+      RaiseInternalException(iVar9,0,"E:\\__titans\\Andrey\\helppan.cpp",0x973);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -76,7 +76,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
     *(undefined4 *)&local_10->field_0x30 = local_10->field_0178;
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)**(undefined4 **)PTR_00802a30)(&local_10->field_0x18);
+      (**(code **)PTR_00802a30->field_0000)(&local_10->field_0x18);
     }
   }
   bVar8 = (byte)param_1;
@@ -120,7 +120,7 @@ LAB_0051d689:
       pcVar12 = pcVar12 + 1;
     }
     ccFntTy::FormIndentText
-              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,s________________007c21d8,
+              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
     uVar10 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar10;
@@ -133,7 +133,7 @@ LAB_0051d689:
   piVar13 = (int *)0x0;
   uVar11 = (uint)(DAT_0080734d != '\0');
   iVar9 = 1;
-  pCVar5 = thunk_FUN_00571240(s_BUT_HLPTDAY_007c3da8,0);
+  pCVar5 = thunk_FUN_00571240("BUT_HLPTDAY",0);
   pCVar5 = FUN_006f2c00(pCVar5,iVar9,uVar11);
   local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar13,iVar14);
   uVar11 = uVar10 + 10;

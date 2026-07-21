@@ -25,7 +25,7 @@ void __fastcall FUN_005718d0(int param_1)
       iVar1 = local_c;
       if (local_8 != (LPBITMAPINFO)0x0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        wsprintfA(local_164,s__sscr_03d_bmp_007ca2e8,local_c + 0x60,
+        wsprintfA(local_164,"%sscr%03d.bmp",local_c + 0x60,
                   (uint)*(ushort *)(local_c + 0x1138));
         Library::DKW::WGR::FUN_006c4230(local_164,local_8,(LPCVOID)0x0);
         *(short *)(iVar1 + 0x1138) = *(short *)(iVar1 + 0x1138) + 1;

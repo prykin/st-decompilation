@@ -60,8 +60,8 @@ STAllPlayersC::DestroyObjectMsg
     array = PTR_007fa164;
     break;
   default:
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2eb1,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__DestroyObjectMsg_007a86e0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2eb1,0,0,"%s",
+                               "STAllPlayersC::DestroyObjectMsg");
     if (iVar3 == 0) {
       return 0;
     }

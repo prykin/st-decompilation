@@ -44,12 +44,12 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   this_00 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x2b3,0,iVar5,&DAT_007a4ccc,
-                                s_STDcResourcC__CreateRes_007cb28c);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x2b3,0,iVar5,"%s",
+                                "STDcResourcC::CreateRes");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Igor_To_gold_cpp_007cb19c,0x2b4);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Igor\\To_gold.cpp",0x2b4);
     return 0xffff;
   }
   switch(local_18->field_0255) {
@@ -59,11 +59,10 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
     do {
       iVar5 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
-      iVar10 = *(int *)&this_00->field_0x245 + iVar5;
+      iVar10 = this_00->field_0245 + iVar5;
       if (((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
-           (iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
-          ((-1 < iVar10 && (-1 < *(int *)&this_00->field_0x24d)))) &&
-         (*(int *)&this_00->field_0x24d < 5)) {
+           (iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
+          ((-1 < iVar10 && (-1 < this_00->field_024D)))) && (this_00->field_024D < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
           pSVar6 = (STT3DSprC *)0x0;
         }
@@ -86,11 +85,11 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         thunk_FUN_004acef0(pSVar6,DAT_008073cc);
         thunk_FUN_004acf50(pSVar6,'\r');
         STT3DSprC::StartShow(pSVar6,0xd,PTR_00802a38->field_00E4);
-        iVar10 = *(int *)&this_00->field_0x249 + local_10;
-        local_10 = *(int *)&this_00->field_0x245 + iVar5;
+        iVar10 = this_00->field_0249 + local_10;
+        local_10 = this_00->field_0245 + iVar5;
         thunk_FUN_004ad3c0(pSVar6,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                            (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
-                           (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
+                           (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 +
                            _DAT_007904fc);
         FUN_006ea3e0((void *)this_00->field_0211,pSVar6->field_0018,-1);
       }
@@ -104,11 +103,10 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
     do {
       iVar5 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
-      iVar10 = *(int *)&this_00->field_0x245 + iVar5;
+      iVar10 = this_00->field_0245 + iVar5;
       if ((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
-          (iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
-         (((-1 < iVar10 && (-1 < *(int *)&this_00->field_0x24d)) &&
-          (*(int *)&this_00->field_0x24d < 5)))) {
+          (iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
+         (((-1 < iVar10 && (-1 < this_00->field_024D)) && (this_00->field_024D < 5)))) {
         if (this_00 == (STDcResourcC *)0x0) {
           pSVar6 = (STT3DSprC *)0x0;
         }
@@ -131,11 +129,11 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         thunk_FUN_004acef0(pSVar6,DAT_008073cc);
         thunk_FUN_004acf50(pSVar6,'\r');
         STT3DSprC::StartShow(pSVar6,0xd,PTR_00802a38->field_00E4);
-        iVar10 = *(int *)&this_00->field_0x249 + local_10;
-        local_10 = *(int *)&this_00->field_0x245 + iVar5;
+        iVar10 = this_00->field_0249 + local_10;
+        local_10 = this_00->field_0245 + iVar5;
         thunk_FUN_004ad3c0(pSVar6,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                            (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
-                           (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
+                           (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 +
                            _DAT_007904fc);
         FUN_006ea3e0((void *)this_00->field_0211,pSVar6->field_0018,-1);
       }
@@ -151,11 +149,10 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       }
       local_c = (&DAT_007cb0bc)[iVar5];
       local_10 = (&DAT_007cb0e0)[iVar5];
-      iVar10 = local_c + *(int *)&this_00->field_0x245;
+      iVar10 = local_c + this_00->field_0245;
       if ((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
-          ((iVar10 = *(int *)&this_00->field_0x249 + local_10, iVar10 < g_worldGrid.sizeY &&
-           ((-1 < iVar10 && (-1 < *(int *)&this_00->field_0x24d)))))) &&
-         (*(int *)&this_00->field_0x24d < 5)) {
+          ((iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY &&
+           ((-1 < iVar10 && (-1 < this_00->field_024D)))))) && (this_00->field_024D < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
           pSVar6 = (STT3DSprC *)0x0;
         }
@@ -177,12 +174,12 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
               thunk_FUN_004acef0(pSVar6,DAT_008073cc);
               thunk_FUN_004acf50(pSVar6,'\r');
               STT3DSprC::StartShow(pSVar6,0xd,PTR_00802a38->field_00E4);
-              local_14 = *(int *)&this_00->field_0x245 + local_c;
+              local_14 = this_00->field_0245 + local_c;
               thunk_FUN_004ad3c0(pSVar6,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
-                                 (float)(*(int *)&this_00->field_0x249 + local_10) * _DAT_007904f8 +
+                                 (float)(this_00->field_0249 + local_10) * _DAT_007904f8 +
                                  _DAT_007904f4,
-                                 (float)*(int *)&this_00->field_0x24d * _DAT_00790504 +
-                                 _DAT_00790500 + _DAT_007904fc);
+                                 (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 +
+                                 _DAT_007904fc);
               FUN_006ea3e0((void *)this_00->field_0211,pSVar6->field_0018,-1);
               goto LAB_0057fc59;
             }
@@ -201,17 +198,15 @@ LAB_0057fc59:
   default:
     goto switchD_0057f734_caseD_df;
   case CASE_E0:
-    if (((((*(int *)&local_18->field_0x245 < (int)g_worldGrid.sizeX) &&
-          (-1 < *(int *)&local_18->field_0x245)) &&
-         (*(int *)&local_18->field_0x249 < (int)g_worldGrid.sizeY)) &&
-        ((-1 < *(int *)&local_18->field_0x249 &&
-         (iVar5 = *(int *)&local_18->field_0x24d, -1 < iVar5)))) &&
+    if ((((((int)local_18->field_0245 < (int)g_worldGrid.sizeX) && (-1 < (int)local_18->field_0245))
+         && (local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
+        ((-1 < local_18->field_0249 && (iVar5 = local_18->field_024D, -1 < iVar5)))) &&
        ((iVar5 < 5 &&
-        (iVar5 = thunk_FUN_004961b0(*(short *)&local_18->field_0x245,
-                                    *(short *)&local_18->field_0x249,(short)iVar5), iVar5 != 0)))) {
-      sVar1 = *(short *)&this_00->field_0x245;
-      sVar2 = *(short *)&this_00->field_0x24d;
-      sVar3 = *(short *)&this_00->field_0x249;
+        (iVar5 = thunk_FUN_004961b0(*(short *)&local_18->field_0245,(short)local_18->field_0249,
+                                    (short)iVar5), iVar5 != 0)))) {
+      sVar1 = *(short *)&this_00->field_0245;
+      sVar2 = (short)this_00->field_024D;
+      sVar3 = (short)this_00->field_0249;
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
         pSVar8 = (STWorldObject *)0x0;
@@ -236,7 +231,7 @@ LAB_0057fd72:
   if (local_8 != 0) {
     iVar5 = thunk_FUN_004ab050();
     local_c = 0;
-    if (0 < (int)this_00->field_0265) {
+    if (0 < this_00->field_0265) {
       iVar10 = iVar5 * 2 + 1;
       local_10 = iVar5 * 8 + -0x1c;
       iVar5 = iVar10 * 4;
@@ -245,12 +240,12 @@ LAB_0057fd72:
         if (8 < iVar10) {
           iVar9 = local_10;
         }
-        local_14 = *(int *)((int)&DAT_007cb0b8 + iVar9) + *(int *)&this_00->field_0x245;
+        local_14 = *(int *)((int)&DAT_007cb0b8 + iVar9) + this_00->field_0245;
         thunk_FUN_004ad3c0(*(void **)(this_00->field_026D + local_c * 4),
                            (float)local_14 * _DAT_007904f8 + _DAT_007904f4,
-                           (float)(*(int *)((int)&DAT_007cb0dc + iVar9) +
-                                  *(int *)&this_00->field_0x249) * _DAT_007904f8 + _DAT_007904f4,
-                           (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
+                           (float)(*(int *)((int)&DAT_007cb0dc + iVar9) + this_00->field_0249) *
+                           _DAT_007904f8 + _DAT_007904f4,
+                           (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 +
                            _DAT_007904fc);
         iVar11 = iVar5 + 4;
         iVar12 = iVar10 + 1;
@@ -264,7 +259,7 @@ LAB_0057fd72:
         local_c = local_c + 1;
         iVar5 = iVar11;
         iVar10 = iVar12;
-      } while (local_c < (int)this_00->field_0265);
+      } while (local_c < this_00->field_0265);
     }
   }
   g_currentExceptionFrame = local_5c.previous;

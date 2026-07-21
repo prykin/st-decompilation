@@ -10,6 +10,6 @@
 dword __thiscall STCrabC::FUN_0057a2a0(STCrabC *this)
 
 {
-  return *(dword *)&this->field_0x279;
+  return this->field_0279;
 }
 

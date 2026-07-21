@@ -28,12 +28,12 @@ CursorClassTy::SetImages
   pCVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xa8,0,iVar3,
-                               &DAT_007a4ccc,s_CursorClassTy__SetImages_007c7e28);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0xa8,0,iVar3,
+                               "%s","CursorClassTy::SetImages");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(-0x34,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xa9);
+    RaiseInternalException(-0x34,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0xa9);
     return;
   }
   local_8->field_00B9 = -(int)param_4;

@@ -1,322 +1,274 @@
 
-undefined4 __fastcall FUN_004b8c80(int *param_1)
+undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
 
 {
-  STT3DSprC *pSVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  uint uVar5;
+  undefined4 *puVar1;
+  AnonPointee_TLOBaseTy_01F5 *pAVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  TLOBaseTy_field_0245State TVar6;
+  uint uVar7;
+  TLOBaseTyVTable *pTVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  void *pvVar6;
-  undefined4 uVar7;
+  void *pvVar9;
+  undefined4 uVar10;
   undefined4 local_2c [2];
   undefined4 local_24;
   undefined4 local_20;
   undefined4 local_1c;
-  int local_18;
+  undefined4 local_18;
   AnonShape_0060D340_D77FEBE7 *local_c;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)((int)param_1 + 0x245);
+  TVar6 = param_1->field_0245;
   local_8 = 0;
-  if (iVar2 == 1) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)param_1 + 0x5df) == 5) {
-      if (param_1[0x133] + 2U <= (uint)PTR_00802a38->field_00E4) {
-        param_1[0x133] = PTR_00802a38->field_00E4;
-        iVar2 = param_1[0x132] + 1;
-        param_1[0x132] = iVar2;
-        if (*(short *)(DAT_00806724 + 0x23) + -1 <= iVar2) {
-          local_18 = param_1[2];
+  if (TVar6 == CASE_1) {
+    if (param_1->field_05DF == 5) {
+      if (param_1->field_04CC + 2 <= (uint)PTR_00802a38->field_00E4) {
+        param_1->field_04CC = PTR_00802a38->field_00E4;
+        iVar3 = param_1->field_04C8 + 1;
+        param_1->field_04C8 = iVar3;
+        if (*(short *)(DAT_00806724 + 0x23) + -1 <= iVar3) {
+          local_18 = param_1->field_0008;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_24 = *(undefined4 *)(param_1[3] + 0x14);
+          local_24 = *(undefined4 *)(param_1->field_000C + 0x14);
           local_20 = 0;
           local_1c = 10;
-          STJellyGunC::sub_006E60A0((STJellyGunC *)param_1,local_2c);
+          sub_006E60A0(param_1,local_2c);
           return 0;
         }
-        thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),*(uint *)(DAT_00806724 + 0x30 + iVar2 * 4)
-                           ,(int)*(short *)(DAT_00806724 + 0x2c));
+        thunk_FUN_004ace30(&param_1->field_01D5,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
+                           (int)*(short *)(DAT_00806724 + 0x2c));
         return 0;
       }
     }
     else {
-      pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-      iVar2 = thunk_FUN_004ac910(pSVar1,'\x04');
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((*(int *)(*(int *)((int)param_1 + 0x1f5) + 0xa4) <= iVar2) &&
-         (iVar2 = thunk_FUN_004ac910(pSVar1,'\x05'),
-         *(int *)(*(int *)((int)param_1 + 0x1f5) + 200) <= iVar2)) {
-        local_18 = param_1[2];
+      puVar1 = &param_1->field_01D5;
+      iVar3 = thunk_FUN_004ac910(puVar1,'\x04');
+      if ((*(int *)&param_1->field_01F5->field_0xa4 <= iVar3) &&
+         (iVar3 = thunk_FUN_004ac910(puVar1,'\x05'),
+         *(int *)&param_1->field_01F5->field_0xc8 <= iVar3)) {
+        local_18 = param_1->field_0008;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_24 = *(undefined4 *)(param_1[3] + 0x14);
+        local_24 = *(undefined4 *)(param_1->field_000C + 0x14);
         local_20 = 0;
         local_1c = 10;
-        STJellyGunC::sub_006E60A0((STJellyGunC *)param_1,local_2c);
+        sub_006E60A0(param_1,local_2c);
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*param_1 + 0xd8))();
-      iVar2 = thunk_FUN_004ac910(pSVar1,'\x04');
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (iVar2 == *(int *)(&DAT_007cdf52 +
-                           *(int *)(&DAT_0079125c + *(int *)((int)param_1 + 0x235) * 4) * 0x32)) {
-        STT3DSprC::StopShow(pSVar1,0xe);
-        STT3DSprC::StopShow(pSVar1,0xd);
-        STT3DSprC::StopShow(pSVar1,0xc);
-        STT3DSprC::StopShow(pSVar1,9);
-        STT3DSprC::StopShow(pSVar1,8);
-        STT3DSprC::StopShow(pSVar1,7);
-        STT3DSprC::StopShow(pSVar1,0x10);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)(&DAT_00791a10 + *(int *)((int)param_1 + 0x235) * 4) != 0) {
+      (*param_1->vtable->vfunc_D8)();
+      iVar3 = thunk_FUN_004ac910(puVar1,'\x04');
+      if (iVar3 == *(int *)(&DAT_007cdf52 + *(int *)(&DAT_0079125c + param_1->field_0235 * 4) * 0x32
+                           )) {
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,0xe);
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,0xd);
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,0xc);
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,9);
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,8);
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,7);
+        STT3DSprC::StopShow((STT3DSprC *)puVar1,0x10);
+        if (*(int *)(&DAT_00791a10 + param_1->field_0235 * 4) != 0) {
           thunk_FUN_004cbf70((int)param_1);
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar5 = (uint)(*(int *)((int)param_1 + 0x24d) == 4);
-        uVar3 = GetPlayerRaceId((char)param_1[9]);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        thunk_FUN_0062b830((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43)
-                           ,(int)*(short *)((int)param_1 + 0x45),param_1[0x16b],param_1,0xffffffff,
-                           0xffffffff,uVar3 & 0xff,uVar5);
+        uVar7 = (uint)(param_1->field_024D == 4);
+        uVar4 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+        thunk_FUN_0062b830((int)param_1->field_0041,(int)param_1->field_0043,
+                           (int)param_1->field_0045,param_1->field_05AC,(int *)param_1,0xffffffff,
+                           0xffffffff,uVar4 & 0xff,uVar7);
         return 0;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = *(int *)(&DAT_0079125c + *(int *)((int)param_1 + 0x235) * 4);
-      iVar4 = thunk_FUN_004ac910(pSVar1,'\x04');
-      if (iVar4 == *(int *)(&DAT_007cdf5a + iVar2 * 0x32)) {
-        iVar2 = STT3DSprC::LoadSequence
-                          (pSVar1,5,DAT_00806764,s_expl_bbt0_007cdf3a + iVar2 * 0x32,0x1d);
-        if (iVar2 != 0) {
+      iVar3 = *(int *)(&DAT_0079125c + param_1->field_0235 * 4);
+      iVar5 = thunk_FUN_004ac910(puVar1,'\x04');
+      if (iVar5 == *(int *)(&DAT_007cdf5a + iVar3 * 0x32)) {
+        iVar3 = STT3DSprC::LoadSequence
+                          ((STT3DSprC *)puVar1,5,DAT_00806764,"expl_bbt0" + iVar3 * 0x32,
+                           0x1d);
+        if (iVar3 != 0) {
           return 0xffff;
         }
-        STT3DSprC::StartShow(pSVar1,5,PTR_00802a38->field_00E4);
+        STT3DSprC::StartShow((STT3DSprC *)puVar1,5,PTR_00802a38->field_00E4);
       }
     }
     return 0;
   }
-  if (iVar2 == 5) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((*(int *)((int)param_1 + 0x299) != 0) &&
-        (iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e'),
-        *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x208) + *(int *)((int)param_1 + 0x2a1) <= iVar2))
-       && (*(int *)((int)param_1 + 0x29d) == 0)) {
+  if (TVar6 == (CASE_4|CASE_1)) {
+    if (((param_1->field_0299 != 0) &&
+        (iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e'),
+        (int)(param_1->field_01F5->field_0208 + param_1->field_02A1) <= iVar3)) &&
+       (param_1->field_029D == 0)) {
       thunk_FUN_004c4550(param_1,(int *)0x0);
     }
   }
-  else if (iVar2 == 6) {
-    if (param_1[0x12f] != 4) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
-      if ((char)iVar2 == '\x03') {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  else if (TVar6 == CASE_6) {
+    if (param_1->field_04BC != 4) {
+      iVar3 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+      if ((char)iVar3 == '\x03') {
+        uVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
         if ((uint)PTR_00802a38->field_00E4 <
-            (uint)(*(int *)(&DAT_007e3dc0 +
-                           ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
-                  param_1[0x12e])) goto cf_common_exit_004B9130;
+            (uint)(*(int *)(&DAT_007e3dc0 + ((uVar4 & 0xff) + param_1->field_0235 * 3) * 4) / 3 +
+                  param_1->field_04B8)) goto cf_common_exit_004B9130;
       }
       else {
-        iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x05');
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (iVar2 != *(int *)(*(int *)((int)param_1 + 0x1f5) + 200)) goto cf_common_exit_004B9130;
-        iVar2 = param_1[0x12f];
-        if (iVar2 == 1) {
-          param_1[0x12f] = 2;
+        iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x05');
+        if (iVar3 != *(int *)&param_1->field_01F5->field_0xc8) goto cf_common_exit_004B9130;
+        iVar3 = param_1->field_04BC;
+        if (iVar3 == 1) {
+          param_1->field_04BC = 2;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          TLOBaseTy::LoadImages((TLOBaseTy *)param_1,unaff_EDI);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(*param_1 + 0xd8))();
+          TLOBaseTy::LoadImages(param_1,unaff_EDI);
+          (*param_1->vtable->vfunc_D8)();
           return 0;
         }
-        if (iVar2 == 2) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar3 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((uint)(*(int *)(&DAT_007e3dc0 +
-                             ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
-                    param_1[0x12e]) <= (uint)PTR_00802a38->field_00E4) {
-            pvVar6 = (void *)0x3;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*param_1 + 0x90))(3,0x361);
-            param_1[0x12f] = 3;
-            TLOBaseTy::LoadImages((TLOBaseTy *)param_1,pvVar6);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*param_1 + 0x90))(3,0x361);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*param_1 + 0xd8))();
+        if (iVar3 == 2) {
+          uVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+          if ((uint)(*(int *)(&DAT_007e3dc0 + ((uVar4 & 0xff) + param_1->field_0235 * 3) * 4) / 3 +
+                    param_1->field_04B8) <= (uint)PTR_00802a38->field_00E4) {
+            pvVar9 = (void *)0x3;
+            (*param_1->vtable->vfunc_90)(3,0x361);
+            param_1->field_04BC = 3;
+            TLOBaseTy::LoadImages(param_1,pvVar9);
+            (*param_1->vtable->vfunc_90)(3,0x361);
+            (*param_1->vtable->vfunc_D8)();
             return 0;
           }
           goto cf_common_exit_004B9130;
         }
-        if (iVar2 != 3) goto cf_common_exit_004B9130;
+        if (iVar3 != 3) goto cf_common_exit_004B9130;
       }
-      param_1[0x12f] = 4;
+      param_1->field_04BC = 4;
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      TLOBaseTy::LoadImages((TLOBaseTy *)param_1,unaff_EDI);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*param_1 + 0x90))(3,0x362);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      TLOBaseTy::LoadImages(param_1,unaff_EDI);
+      (*param_1->vtable->vfunc_90)(3,0x362);
 cf_common_exit_004B9130:
-      (**(code **)(*param_1 + 0xd8))();
+      (*param_1->vtable->vfunc_D8)();
       return 0;
     }
-    pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-    iVar2 = thunk_FUN_004ac910(pSVar1,'\x04');
-    if (iVar2 == 0x15) {
-      STT3DSprC::StopShow(pSVar1,0xe);
-      STT3DSprC::StopShow(pSVar1,0xd);
-      STT3DSprC::StopShow(pSVar1,0xc);
-      STT3DSprC::StopShow(pSVar1,9);
-      STT3DSprC::StopShow(pSVar1,8);
-      STT3DSprC::StopShow(pSVar1,7);
-      STT3DSprC::StopShow(pSVar1,0x10);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(&DAT_00791a10 + *(int *)((int)param_1 + 0x235) * 4) != 0) {
+    puVar1 = &param_1->field_01D5;
+    iVar3 = thunk_FUN_004ac910(puVar1,'\x04');
+    if (iVar3 == 0x15) {
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,0xe);
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,0xd);
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,0xc);
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,9);
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,8);
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,7);
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,0x10);
+      if (*(int *)(&DAT_00791a10 + param_1->field_0235 * 4) != 0) {
         thunk_FUN_004cbf70((int)param_1);
       }
       thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)param_1);
-      STT3DSprC::StopShow(pSVar1,5);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar2 = (**(code **)(*param_1 + 8))();
-      if (iVar2 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*param_1 + 0xe8))(0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*param_1 + 0xd8))();
+      STT3DSprC::StopShow((STT3DSprC *)puVar1,5);
+      iVar3 = (*param_1->vtable->vfunc_08)();
+      if (iVar3 != 0) {
+        (*param_1->vtable->SetActivity)(param_1,0);
+        (*param_1->vtable->vfunc_D8)();
         return 0;
       }
       goto cf_common_exit_004B9130;
     }
-    iVar2 = thunk_FUN_004ac910(pSVar1,'\x04');
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar2 != *(int *)(*(int *)((int)param_1 + 0x1f5) + 0xa4)) goto cf_common_exit_004B9130;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(&DAT_007e1c50 +
-                (*(int *)((int)param_1 + 0x235) * 3 + *(int *)((int)param_1 + 0x239)) * 4) != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_004d88f0((char)param_1[9],
-                         (*(int *)((int)param_1 + 0x5d7) *
+    iVar3 = thunk_FUN_004ac910(puVar1,'\x04');
+    if (iVar3 != *(int *)&param_1->field_01F5->field_0xa4) goto cf_common_exit_004B9130;
+    if (*(int *)(&DAT_007e1c50 + (param_1->field_0235 * 3 + param_1->field_0239) * 4) != 0) {
+      thunk_FUN_004d88f0(*(char *)&param_1->field_0024,
+                         (param_1->field_05D7 *
                           *(int *)(&DAT_007e1c50 +
-                                  (*(int *)((int)param_1 + 0x235) * 3 +
-                                  *(int *)((int)param_1 + 0x239)) * 4) * 0x3c) / 10000);
+                                  (param_1->field_0235 * 3 + param_1->field_0239) * 4) * 0x3c) /
+                         10000);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(&DAT_007e24fc +
-                (*(int *)((int)param_1 + 0x235) * 3 + *(int *)((int)param_1 + 0x239)) * 4) != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_004d8a30((char)param_1[9],
-                         (*(int *)((int)param_1 + 0x5d7) *
+    if (*(int *)(&DAT_007e24fc + (param_1->field_0235 * 3 + param_1->field_0239) * 4) != 0) {
+      thunk_FUN_004d8a30(*(char *)&param_1->field_0024,
+                         (param_1->field_05D7 *
                           *(int *)(&DAT_007e24fc +
-                                  (*(int *)((int)param_1 + 0x235) * 3 +
-                                  *(int *)((int)param_1 + 0x239)) * 4) * 0x3c) / 10000);
+                                  (param_1->field_0235 * 3 + param_1->field_0239) * 4) * 0x3c) /
+                         10000);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(&DAT_008545ac +
-                (*(int *)((int)param_1 + 0x235) * 3 + *(int *)((int)param_1 + 0x239)) * 4) != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_004d87b0((char)param_1[9],
-                         (*(int *)((int)param_1 + 0x5d7) *
+    if (*(int *)(&DAT_008545ac + (param_1->field_0235 * 3 + param_1->field_0239) * 4) != 0) {
+      thunk_FUN_004d87b0(*(char *)&param_1->field_0024,
+                         (param_1->field_05D7 *
                           *(int *)(&DAT_008545ac +
-                                  (*(int *)((int)param_1 + 0x235) * 3 +
-                                  *(int *)((int)param_1 + 0x239)) * 4) * 0x3c) / 10000);
+                                  (param_1->field_0235 * 3 + param_1->field_0239) * 4) * 0x3c) /
+                         10000);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(&DAT_007e3160 +
-                (*(int *)((int)param_1 + 0x235) * 3 + *(int *)((int)param_1 + 0x239)) * 4) != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_004e4380(param_1[9],
-                         (*(int *)((int)param_1 + 0x5d7) *
+    if (*(int *)(&DAT_007e3160 + (param_1->field_0235 * 3 + param_1->field_0239) * 4) != 0) {
+      thunk_FUN_004e4380(param_1->field_0024,
+                         (param_1->field_05D7 *
                           *(int *)(&DAT_007e3160 +
-                                  (*(int *)((int)param_1 + 0x235) * 3 +
-                                  *(int *)((int)param_1 + 0x239)) * 4) * 0x3c) / 10000);
+                                  (param_1->field_0235 * 3 + param_1->field_0239) * 4) * 0x3c) /
+                         10000);
     }
-    thunk_FUN_004d78e0((char)param_1[9]);
+    thunk_FUN_004d78e0(*(char *)&param_1->field_0024);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
-      thunk_FUN_004d8b70((char)param_1[9]);
+    if (param_1->field_0024 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
+      thunk_FUN_004d8b70((char)param_1->field_0024);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (param_1[9] != (uint)*(byte *)(param_1[4] + 0x112d)) goto cf_common_exit_004B8F5A;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_0052af50(0,*(float *)((int)param_1 + 0x1f9),*(float *)((int)param_1 + 0x1fd));
-    uVar3 = GetPlayerRaceId((char)param_1[9]);
-    uVar3 = uVar3 & 0xff;
-    if (uVar3 == 1) {
-      iVar2 = *param_1;
-      uVar7 = 0x68;
+    if (param_1->field_0024 != (uint)*(byte *)(param_1->field_0010 + 0x112d))
+    goto cf_common_exit_004B8F5A;
+    thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
+    uVar4 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+    uVar4 = uVar4 & 0xff;
+    if (uVar4 == 1) {
+      pTVar8 = param_1->vtable;
+      uVar10 = 0x68;
     }
     else {
-      if (uVar3 == 2) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*param_1 + 0x90))(6,0x69);
+      if (uVar4 == 2) {
+        (*param_1->vtable->vfunc_90)(6,0x69);
         goto cf_common_exit_004B8F5A;
       }
-      if (uVar3 != 3) goto cf_common_exit_004B8F5A;
-      iVar2 = *param_1;
-      uVar7 = 0x6a;
+      if (uVar4 != 3) goto cf_common_exit_004B8F5A;
+      pTVar8 = param_1->vtable;
+      uVar10 = 0x6a;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(iVar2 + 0x90))(6,uVar7);
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    (*pTVar8->vfunc_90)(6,uVar10);
 cf_common_exit_004B8F5A:
-    *(undefined4 *)((int)param_1 + 0x241) = 0;
-    *(undefined4 *)((int)param_1 + 0x5d7) = 0;
-    *(undefined4 *)((int)param_1 + 0x5df) = 1;
-    TLOBaseTy::SetState((TLOBaseTy *)param_1,1,0);
-    local_18 = param_1[2];
+    param_1->field_0241 = 0;
+    param_1->field_05D7 = 0;
+    param_1->field_05DF = 1;
+    TLOBaseTy::SetState(param_1,1,0);
+    local_18 = param_1->field_0008;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_24 = *(undefined4 *)(param_1[3] + 0x14);
+    local_24 = *(undefined4 *)(param_1->field_000C + 0x14);
     local_20 = 0;
     local_1c = 10;
-    STJellyGunC::sub_006E60A0((STJellyGunC *)param_1,local_2c);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*param_1 + 0xd8))();
+    sub_006E60A0(param_1,local_2c);
+    (*param_1->vtable->vfunc_D8)();
     return 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)((int)param_1 + 0x255) == 0) || (*(int *)((int)param_1 + 0x245) != 0)) ||
-     (*(int *)((int)param_1 + 0x249) != 2)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)param_1 + 0x245) != 4) {
-      iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (((iVar2 == *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x20c)) &&
-          (local_8 = 1, param_1[0x16b] == 0x65)) &&
-         ((param_1[0x102] != 0 &&
-          ((param_1[0x103] != 0 &&
-           (iVar2 = FUN_006e62d0(PTR_00802a38,param_1[0x103],(int *)&local_c), iVar2 == 0)))))) {
+  if (((param_1->field_0255 == 0) || (param_1->field_0245 != CASE_0)) || (param_1->field_0249 != 2))
+  {
+    if (param_1->field_0245 != CASE_4) {
+      iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+      if (((iVar3 == param_1->field_01F5->field_020C) && (local_8 = 1, param_1->field_05AC == 0x65))
+         && ((param_1->field_0408 != 0 &&
+             ((param_1->field_040C != 0 &&
+              (iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_040C,(int *)&local_c), iVar3 == 0)))
+             ))) {
         thunk_FUN_0060d340(local_c);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*param_1 + 0x90))(3,0x3d9);
+        (*param_1->vtable->vfunc_90)(3,0x3d9);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(&DAT_00791a10 + *(int *)((int)param_1 + 0x235) * 4) != 0) {
+      if (*(int *)(&DAT_00791a10 + param_1->field_0235 * 4) != 0) {
         local_8 = thunk_FUN_004cc130((int)param_1);
       }
       goto cf_common_join_004B92EE;
     }
-    if (param_1[0xf7] != 0) goto cf_common_join_004B92EE;
+    if (param_1->field_03DC != 0) goto cf_common_join_004B92EE;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((uint)PTR_00802a38->field_00E4 <
-        (uint)(*(int *)(&DAT_00792040 + *(int *)((int)param_1 + 0x235) * 4) +
-              *(int *)((int)param_1 + 0x285))) goto cf_common_join_004B92EE;
-    *(undefined4 *)((int)param_1 + 0x285) = PTR_00802a38->field_00E4;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)((int)param_1 + 0x259) / 0xf;
-    if (*(int *)(&DAT_007be8c8 + iVar2 * 0x60) != 0) {
-      iVar2 = (((*(int *)(&DAT_007be8c8 + iVar2 * 0x60) < 1) - 1 & 2) - 1) + iVar2;
-      if (iVar2 < 0x18) {
-        if (iVar2 < 0) {
-          iVar2 = 0x17;
+        (uint)(*(int *)(&DAT_00792040 + param_1->field_0235 * 4) + param_1->field_0285))
+    goto cf_common_join_004B92EE;
+    param_1->field_0285 = PTR_00802a38->field_00E4;
+    iVar3 = (int)param_1->field_0259 / 0xf;
+    if (*(int *)(&DAT_007be8c8 + iVar3 * 0x60) != 0) {
+      iVar3 = (((*(int *)(&DAT_007be8c8 + iVar3 * 0x60) < 1) - 1 & 2) - 1) + iVar3;
+      if (iVar3 < 0x18) {
+        if (iVar3 < 0) {
+          iVar3 = 0x17;
         }
-        thunk_FUN_004b98e0(param_1,iVar2 * 0xf);
+        thunk_FUN_004b98e0(param_1,iVar3 * 0xf);
       }
       else {
         thunk_FUN_004b98e0(param_1,0);
@@ -326,53 +278,46 @@ cf_common_exit_004B8F5A:
   }
   local_8 = 1;
 cf_common_join_004B92EE:
-  pvVar6 = (void *)((int)param_1 + 0x1d5);
-  iVar2 = thunk_FUN_004acd30(pvVar6,'\x0e');
-  iVar4 = thunk_FUN_004acd30(pvVar6,'\r');
-  if (((iVar4 < iVar2) && (iVar2 = thunk_FUN_004acd30(pvVar6,'\r'), 1 < iVar2)) &&
-     (iVar2 = thunk_FUN_004cba10(), iVar2 == 2)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)((int)param_1 + 0x1f5);
-    iVar4 = *(int *)(iVar2 + 0x208);
-    if (iVar4 < *(int *)(iVar2 + 0x20c)) {
-      iVar4 = *(int *)(iVar2 + 0x210) - iVar4;
+  puVar1 = &param_1->field_01D5;
+  iVar3 = thunk_FUN_004acd30(puVar1,'\x0e');
+  iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+  if (((iVar5 < iVar3) && (iVar3 = thunk_FUN_004acd30(puVar1,'\r'), 1 < iVar3)) &&
+     (iVar3 = thunk_FUN_004cba10(), iVar3 == 2)) {
+    pAVar2 = param_1->field_01F5;
+    iVar3 = pAVar2->field_0208;
+    if (iVar3 < (int)pAVar2->field_020C) {
+      iVar3 = pAVar2->field_0210 - iVar3;
     }
     else {
-      iVar4 = iVar4 - *(int *)(iVar2 + 0x210);
+      iVar3 = iVar3 - pAVar2->field_0210;
     }
-    local_c = (AnonShape_0060D340_D77FEBE7 *)thunk_FUN_004acd30(pvVar6,'\x0e');
-    iVar2 = thunk_FUN_004acd30(pvVar6,'\r');
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((int)local_c + (-1 - iVar2) <= iVar4) && ((*(uint *)((int)param_1 + 0x1f1) & 0x2000) == 0))
-    {
+    local_c = (AnonShape_0060D340_D77FEBE7 *)thunk_FUN_004acd30(puVar1,'\x0e');
+    iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+    if (((int)local_c + (-1 - iVar5) <= iVar3) && ((param_1->field_01F1 & 0x2000) == 0)) {
       thunk_FUN_004ca7b0(param_1,0xd,0);
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((local_8 != 0) &&
-     (iVar2 = thunk_FUN_004b8c00((AnonShape_004B8C00_93076312 *)param_1),
-     iVar2 != *(int *)((int)param_1 + 0x245))) {
-    TLOBaseTy::SetState((TLOBaseTy *)param_1,iVar2,1);
+     (TVar6 = thunk_FUN_004b8c00((AnonShape_004B8C00_93076312 *)param_1),
+     TVar6 != param_1->field_0245)) {
+    TLOBaseTy::SetState(param_1,TVar6,1);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)((int)param_1 + 0x5df) != 0) &&
-     (param_1[0x133] + 2U <= (uint)PTR_00802a38->field_00E4)) {
-    param_1[0x133] = PTR_00802a38->field_00E4;
-    iVar2 = param_1[0x132] + -1;
-    param_1[0x132] = iVar2;
-    if (iVar2 == 0) {
-      iVar4 = 0;
-      *(undefined4 *)((int)param_1 + 0x5df) = 0;
-      uVar3 = 0;
+  if ((param_1->field_05DF != 0) && (param_1->field_04CC + 2 <= (uint)PTR_00802a38->field_00E4)) {
+    param_1->field_04CC = PTR_00802a38->field_00E4;
+    iVar3 = param_1->field_04C8 + -1;
+    param_1->field_04C8 = iVar3;
+    if (iVar3 == 0) {
+      iVar5 = 0;
+      param_1->field_05DF = 0;
+      uVar4 = 0;
     }
     else {
-      iVar4 = (int)*(short *)(DAT_00806724 + 0x2c);
-      uVar3 = *(uint *)(DAT_00806724 + 0x30 + iVar2 * 4);
+      iVar5 = (int)*(short *)(DAT_00806724 + 0x2c);
+      uVar4 = *(uint *)(DAT_00806724 + 0x30 + iVar3 * 4);
     }
-    thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),uVar3,iVar4);
+    thunk_FUN_004ace30(&param_1->field_01D5,uVar4,iVar5);
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*param_1 + 0xd8))();
+  (*param_1->vtable->vfunc_D8)();
   return 0;
 }
 

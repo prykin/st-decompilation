@@ -25,12 +25,12 @@ void __thiscall MTestTy::PaintMTest(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x57,0,errorCode,
-                             &DAT_007a4ccc,s_MTestTy__PaintMTest_007cdd14);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0x57,0,errorCode,
+                             "%s","MTestTy::PaintMTest");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_test_obj_cpp_007cdcbc,0x57);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\test_obj.cpp",0x57);
   return;
 }
 

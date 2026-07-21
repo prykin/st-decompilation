@@ -91,7 +91,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     pcVar4->field_0058 = 0;
     pcVar4->field_005C = 0;
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,s_BUT_CHPLAYER_007c3f08,0xffffffff,0,1,0,
+                       (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         (undefined4 *)0x0);
     this_00->field_01D1 = puVar5;
     puVar25 = (undefined4 *)0x0;
@@ -99,7 +99,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     iVar9 = 1;
     bVar19 = 0;
     uVar18 = 0xffffffff;
-    pCVar6 = thunk_FUN_00571240(s_GAMEB_ALLY_007c75f8,0);
+    pCVar6 = thunk_FUN_00571240("GAMEB_ALLY",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar6,uVar18,bVar19,iVar9,iVar22,puVar25);
     this_00->field_01D5 = puVar5;
@@ -108,7 +108,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     iVar9 = 1;
     bVar19 = 0;
     uVar18 = 0xffffffff;
-    pCVar6 = thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
+    pCVar6 = thunk_FUN_00571240("BUT_PRODWEAP",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar6,uVar18,bVar19,iVar9,iVar22,puVar25);
     this_00->field_01D9 = puVar5;
@@ -129,7 +129,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       *(undefined1 *)puVar25 = 0xff;
       puVar25 = (undefined4 *)((int)puVar25 + 1);
     }
-    pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYW_007c75e4,0);
+    pCVar6 = thunk_FUN_00571240("BKG_DIPLOMACYW",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar23,iVar9);
     ppuVar1 = &this_00->field_01CD;
     *ppuVar1 = puVar5;
@@ -138,7 +138,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     if (DAT_00808783 != '\x03') {
       iVar9 = 1;
       piVar23 = (int *)0x0;
-      pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYC_007c75d0,0);
+      pCVar6 = thunk_FUN_00571240("BKG_DIPLOMACYC",0);
       puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar23,iVar9);
       *ppuVar1 = puVar5;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x20,0xa4,'\x01',(byte *)puVar5);
@@ -146,7 +146,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     }
     iVar9 = 1;
     piVar23 = (int *)0x0;
-    pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYB_007c75bc,0);
+    pCVar6 = thunk_FUN_00571240("BKG_DIPLOMACYB",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar23,iVar9);
     *ppuVar1 = puVar5;
     ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,0x6c,2,0xf3,0xc);
@@ -164,7 +164,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     sVar16 = 0;
     uVar15 = 0xc000;
     uVar14 = 0xbfff;
-    pCVar6 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+    pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar14 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,(int)pCVar6,uVar14,uVar15,
                                  sVar16,uVar17,uVar20,pcVar21,uVar24,uVar26);
     this_00->field_017C = uVar14;
@@ -250,7 +250,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       iVar11 = iVar22 + 0x20;
       uVar14 = 0;
       iVar13 = 1;
-      pCVar6 = thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
+      pCVar6 = thunk_FUN_00571240("BUT_PRODWEAP",0);
       pCVar6 = FUN_006f2c00(pCVar6,iVar13,uVar14);
       uVar14 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar9,1,(int)pCVar6,iVar11,
                                    iVar8,sVar16,uVar17,uVar15,pcVar21,uVar20,uVar24);
@@ -326,12 +326,12 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b0.previous;
-  iVar22 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0x81,0,iVar9,&DAT_007a4ccc,
-                              s_PlayPanelTy__InitPlayPanel_007c759c);
+  iVar22 = ReportDebugMessage("E:\\__titans\\Andrey\\playpan.cpp",0x81,0,iVar9,"%s",
+                              "PlayPanelTy::InitPlayPanel");
   if (iVar22 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar9,0,s_E____titans_Andrey_playpan_cpp_007c7574,0x81);
+  RaiseInternalException(iVar9,0,"E:\\__titans\\Andrey\\playpan.cpp",0x81);
   return;
 }
 

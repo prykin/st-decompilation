@@ -45,12 +45,12 @@ void __thiscall BldBoatPanelTy::Update(BldBoatPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_bldboat_cpp_007c17b4,0x60,0,errorCode,
-                             &DAT_007a4ccc,s_BldBoatPanelTy__Update_007c1850);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\bldboat.cpp",0x60,0,errorCode,
+                             "%s","BldBoatPanelTy::Update");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x60);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\bldboat.cpp",0x60);
   return;
 }
 

@@ -59,7 +59,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   if ((cMf32 *)local_c->field_1F3F != (cMf32 *)0x0) {
     cMf32::delete(this_01,(cMf32 *)local_c->field_1F3F);
   }
-  wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
+  wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   puVar3 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   this_00->field_1F3F = puVar3;
@@ -86,7 +86,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   ;
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x45a);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x45a);
   }
   if (DAT_0080877e == '\0') {
     *(undefined4 *)&this_00->field_0x2121 = 0xffffffff;
@@ -165,16 +165,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
                          (int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x475);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x475);
   }
   local_8 = &this_00->field_1F53;
   puVar4 = cMf32::RecGet((cMf32 *)this_00->field_1F3F,0xc,PTR_s_INTERFACE_RND_0079c0fc,
                          (int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x477);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x477);
   }
-  wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
+  wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   this_00->field_1F47 = 1;
   if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != (int *)0x0)) {
@@ -183,7 +183,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00->field_1A80 = DAT_008087c4._2_1_;
     this_00->field_1A81 = (char)(DAT_008087c2 >> 1);
-    wsprintfA((LPSTR)&local_18,&DAT_007cc584,DAT_0080995c);
+    wsprintfA((LPSTR)&local_18,"%08x",DAT_0080995c);
     this_00->field_1A82 = local_18;
     this_00->field_1A86 = local_14;
     Library::MSVCRT::_strncpy(&this_00->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);

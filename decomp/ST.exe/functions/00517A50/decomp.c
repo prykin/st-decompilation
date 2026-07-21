@@ -92,7 +92,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           *(undefined4 *)&local_20->field_0x30 = local_20->field_0178;
           if (PTR_00802a30 != (CursorClassTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)**(undefined4 **)PTR_00802a30)(&local_20->field_0x18);
+            (**(code **)PTR_00802a30->field_0000)(&local_20->field_0x18);
           }
         }
       }
@@ -349,7 +349,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         pcVar15 = pcVar15 + 1;
       }
       ccFntTy::FormText(this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,
-                        s________________007c21d8,0xcf,1);
+                        " ,.;:!?/\\()[]{}",0xcf,1);
       uVar10 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
       CheckBkView(this_00,local_8,uVar10);
       uVar11 = uVar10 & 0xffff;
@@ -497,12 +497,12 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
       return;
     }
     g_currentExceptionFrame = pIVar20;
-    iVar17 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x5f8,0,iVar4,
-                                &DAT_007a4ccc,s_HelpPanelTy__RCProc_007c3c6c);
+    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x5f8,0,iVar4,
+                                "%s","HelpPanelTy::RCProc");
     if (iVar17 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x5f8);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0x5f8);
   }
   return;
 }

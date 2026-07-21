@@ -19,13 +19,14 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   int iVar7;
   IMAGE_DOS_HEADER *pIVar8;
   undefined4 *puVar9;
-  uint uVar10;
-  DArrayTy *pDVar11;
-  ushort *puVar12;
-  uint uVar13;
+  dword dVar10;
+  uint uVar11;
+  DArrayTy *pDVar12;
+  ushort *puVar13;
+  uint uVar14;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EDX;
-  bool bVar14;
+  bool bVar15;
   InternalExceptionFrame local_80;
   undefined4 local_3c;
   short local_38 [6];
@@ -41,7 +42,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   uint local_8;
 
   local_c = (DArrayTy *)0x0;
-  if ((((this->field_0676 != '\0') && (*(int *)&this->field_0x640 != 0xff)) &&
+  if ((((this->field_0676 != '\0') && (this->field_0640 != 0xff)) &&
       (this->field_0695 != (DArrayTy *)0x0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
@@ -51,23 +52,22 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
     if (iVar4 == 0) {
       iVar4 = local_20->field_0681;
       if (local_20->field_0689 == 0) {
-        if ((iVar4 == 0) || ((uint)(iVar4 * 3 + local_20->field_0685) <= (uint)local_20->field_06FE)
-           ) {
+        if ((iVar4 == 0) || ((uint)(iVar4 * 3 + local_20->field_0685) <= local_20->field_06FE)) {
           local_20->field_0685 = local_20->field_06FE;
           array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
           local_c = array;
           thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)array);
-          uVar10 = array->count;
-          uVar13 = 0;
+          uVar11 = array->count;
+          uVar14 = 0;
           iVar4 = 0;
-          bVar14 = uVar10 != 0;
+          bVar15 = uVar11 != 0;
           local_10 = 0;
           local_1c = 0;
-          if (0 < (int)uVar10) {
+          if (0 < (int)uVar11) {
             do {
-              if (bVar14) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar13) (runtime stride) */
-                psVar5 = (short *)(array->elementSize * uVar13 + (int)array->data);
+              if (bVar15) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar14) (runtime stride) */
+                psVar5 = (short *)(array->elementSize * uVar14 + (int)array->data);
               }
               else {
                 psVar5 = (short *)0x0;
@@ -76,21 +76,22 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                 iVar4 = iVar4 + psVar5[1];
                 local_10 = local_10 + *(int *)(psVar5 + 2);
               }
-              uVar10 = array->count;
-              uVar13 = uVar13 + 1;
-              bVar14 = uVar13 < uVar10;
+              uVar11 = array->count;
+              uVar14 = uVar14 + 1;
+              bVar15 = uVar14 < uVar11;
               local_1c = iVar4;
-            } while ((int)uVar13 < (int)uVar10);
+            } while ((int)uVar14 < (int)uVar11);
           }
-          if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar10)) && (0 < local_1c)) &&
+          if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar11)) && (0 < local_1c)) &&
              ((0 < local_10 &&
-              (iVar4 = thunk_FUN_0042a990(this_00->field_0x640), local_18 = iVar4, iVar4 != 0)))) {
-            bVar14 = *(int *)(iVar4 + 0xc) != 0;
+              (iVar4 = thunk_FUN_0042a990(*(char *)&this_00->field_0640), local_18 = iVar4,
+              iVar4 != 0)))) {
+            bVar15 = *(int *)(iVar4 + 0xc) != 0;
             local_14 = 0;
             local_8 = 0;
             if (0 < *(int *)(iVar4 + 0xc)) {
               do {
-                if (bVar14) {
+                if (bVar15) {
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   piVar6 = (int *)(*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                 }
@@ -111,7 +112,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                   }
                 }
                 local_8 = local_8 + 1;
-                bVar14 = local_8 < *(uint *)(iVar4 + 0xc);
+                bVar15 = local_8 < *(uint *)(iVar4 + 0xc);
                 array = local_c;
               } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
             }
@@ -119,10 +120,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                ((int)this_00->field_067B < (local_10 * 100) / local_14)) {
               local_8 = 0;
               *(undefined4 *)(this_00->field_06AD + 0xc) = 0;
-              bVar14 = *(int *)(iVar4 + 0xc) != 0;
+              bVar15 = *(int *)(iVar4 + 0xc) != 0;
               if (0 < *(int *)(iVar4 + 0xc)) {
                 do {
-                  if (bVar14) {
+                  if (bVar15) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     puVar9 = (undefined4 *)(*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                   }
@@ -139,19 +140,20 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     }
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_3c._0_2_ = (undefined2)local_8;
+                    dVar10 = (*pSVar1->vtable->slot_2C)(pSVar1);
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_3c._2_2_ = (*pSVar1->vtable->vfunc_2C)();
+                    local_3c._2_2_ = (short)dVar10;
                     thunk_FUN_0067bda0(local_38,pSVar1);
                     local_2c = (*pSVar1->vtable->vfunc_D4)();
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
-                    uVar10 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
-                    local_24 = (undefined2)uVar10;
+                    uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
+                    local_24 = (undefined2)uVar11;
                     Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_06AD,&local_3c);
                     iVar4 = local_18;
                   }
                   local_8 = local_8 + 1;
-                  bVar14 = local_8 < *(uint *)(iVar4 + 0xc);
+                  bVar15 = local_8 < *(uint *)(iVar4 + 0xc);
                   array = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
               }
@@ -172,34 +174,34 @@ LAB_0067c61b:
       }
       else {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar10 = extraout_EDX;
-        if ((iVar4 == 0) ||
-           (uVar10 = local_20->field_0685 + iVar4, uVar10 <= (uint)local_20->field_06FE)) {
+        uVar11 = extraout_EDX;
+        if ((iVar4 == 0) || (uVar11 = local_20->field_0685 + iVar4, uVar11 <= local_20->field_06FE))
+        {
           local_20->field_0685 = local_20->field_06FE;
-          thunk_FUN_0067be20((int)local_20,uVar10,(DArrayTy *)local_20->field_06AD);
+          thunk_FUN_0067be20((int)local_20,uVar11,(DArrayTy *)local_20->field_06AD);
           iVar4 = thunk_FUN_0067bd50((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD);
-          pDVar11 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
-          local_c = pDVar11;
-          thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)pDVar11);
-          iVar4 = iVar4 + pDVar11->count;
+          pDVar12 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
+          local_c = pDVar12;
+          thunk_FUN_0067a240(this_00,&LAB_00403544,(uint *)pDVar12);
+          iVar4 = iVar4 + pDVar12->count;
           if (iVar4 == 0) {
             thunk_FUN_0067c110((AnonReceiver_006799B0 *)this_00);
             array = local_c;
           }
           else {
             array = local_c;
-            if (0 < (int)pDVar11->count) {
+            if (0 < (int)pDVar12->count) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)(this_00->field_06AD + 0xc) < iVar4) {
-                iVar4 = thunk_FUN_0042a990(this_00->field_0x640);
+                iVar4 = thunk_FUN_0042a990(*(char *)&this_00->field_0640);
                 local_18 = iVar4;
                 if (iVar4 != 0) {
                   local_8 = 0;
                   if (0 < *(int *)(iVar4 + 0xc)) {
-                    bVar14 = *(int *)(iVar4 + 0xc) != 0;
+                    bVar15 = *(int *)(iVar4 + 0xc) != 0;
                     do {
-                      uVar10 = local_8;
-                      if (bVar14) {
+                      uVar11 = local_8;
+                      if (bVar15) {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         puVar9 = (undefined4 *)
                                  (*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
@@ -210,9 +212,9 @@ LAB_0067c61b:
                       pSVar1 = (STFishC *)*puVar9;
                       if (((pSVar1 != (STFishC *)0x0) &&
                           (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar4 = local_18, iVar7 != 0)) &&
-                         (puVar12 = thunk_FUN_0067bd00((AnonShape_00413AF0_B6B4EE9A *)
-                                                       this_00->field_06AD,uVar10), iVar4 = local_18
-                         , puVar12 == (ushort *)0x0)) {
+                         (puVar13 = thunk_FUN_0067bd00((AnonShape_00413AF0_B6B4EE9A *)
+                                                       this_00->field_06AD,uVar11), iVar4 = local_18
+                         , puVar13 == (ushort *)0x0)) {
                         uVar3 = (undefined2)local_8;
                         puVar9 = &local_3c;
                         for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -221,20 +223,21 @@ LAB_0067c61b:
                         }
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_3c._0_2_ = uVar3;
+                        dVar10 = (*pSVar1->vtable->slot_2C)(pSVar1);
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_3c._2_2_ = (*pSVar1->vtable->vfunc_2C)();
+                        local_3c._2_2_ = (short)dVar10;
                         thunk_FUN_0067bda0(local_38,pSVar1);
                         local_2c = (*pSVar1->vtable->vfunc_D4)();
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
-                        uVar10 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
-                        local_24 = (undefined2)uVar10;
+                        uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
+                        local_24 = (undefined2)uVar11;
                         Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_06AD,&local_3c);
                         iVar4 = local_18;
-                        uVar10 = local_8;
+                        uVar11 = local_8;
                       }
-                      local_8 = uVar10 + 1;
-                      bVar14 = local_8 < *(uint *)(iVar4 + 0xc);
+                      local_8 = uVar11 + 1;
+                      bVar15 = local_8 < *(uint *)(iVar4 + 0xc);
                     } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
                   }
                 }
@@ -258,8 +261,8 @@ LAB_0067c61b:
     }
     else {
       g_currentExceptionFrame = local_80.previous;
-      iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x570,0,iVar4,&DAT_007a4ccc,
-                                 s_AiPlrClassTy__Offensive_007d2f2c);
+      iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x570,0,iVar4,"%s",
+                                 "AiPlrClassTy::Offensive");
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -267,7 +270,7 @@ LAB_0067c61b:
         DArrayDestroy(local_c);
         local_c = (DArrayTy *)0x0;
       }
-      RaiseInternalException(iVar4,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x573);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0x573);
     }
   }
   return;

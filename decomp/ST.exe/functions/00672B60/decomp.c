@@ -54,7 +54,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     FUN_006a5e90((short *)piVar2[0xb]);
     FUN_006a5e90((short *)piVar2[7]);
     FUN_006a5e90((short *)piVar2);
-    RaiseInternalException(exceptionCode,0,s_E____titans_ai_Ai_lex_c_007d2d2c,0xfd);
+    RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\Ai_lex.c",0xfd);
     return exceptionCode;
   }
   if (DAT_0085755c == (short *)0x0) {
@@ -92,7 +92,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     local_18 = (**(code **)param_2)(param_1);
     if (local_18 == 0) {
       RaiseInternalException
-                (-10,g_overwriteContext_007ED77C,s_E____titans_ai_Ai_lex_c_007d2d2c,0xe7);
+                (-10,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\Ai_lex.c",0xe7);
     }
     else {
       uVar4 = 0xffffffff;

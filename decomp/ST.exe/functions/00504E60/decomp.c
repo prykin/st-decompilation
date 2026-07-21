@@ -27,12 +27,12 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   pCVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0,0,iVar3,&DAT_007a4ccc,
-                               s_CPanelTy__PaintIDSObj_007c27d0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0xa0,0,iVar3,"%s",
+                               "CPanelTy::PaintIDSObj");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0xa0);
     return;
   }
   if (DAT_0080874e == '\x03') {

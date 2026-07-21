@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   short local_6;
 
   iVar3 = param_1;
-  iVar2 = STGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
+  iVar2 = STGameObjC::GetMessage(this,(STMessage *)param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
   }

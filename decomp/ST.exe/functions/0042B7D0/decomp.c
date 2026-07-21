@@ -66,7 +66,7 @@ STAllPlayersC::AddObjsToGroup
         iVar3 = thunk_FUN_00423d80(local_c,groupContent);
         if (iVar3 == 1) {
           local_5 = 0;
-          (*local_c->vtable->vfunc_08)(0x65,&local_5);
+          (*local_c->vtable->slot_08)(local_c,0x65,&local_5);
         }
         if (uVar6 == param_2) {
           local_20 = 1;
@@ -99,7 +99,7 @@ STAllPlayersC::AddObjsToGroup
       Library::DKW::TBL::FUN_006ae140(&array->flags,uVar6 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,(DArrayTy *)groupContent,0);
       local_5 = 2;
-      (*local_10->vtable->vfunc_08)(0x65,&local_5);
+      (*local_10->vtable->slot_08)(local_10,0x65,&local_5);
       if (param_4 != (undefined2 *)0x0) {
         *param_4 = (short)uVar6;
       }
@@ -108,7 +108,7 @@ STAllPlayersC::AddObjsToGroup
       DArrayGetElement(local_14,(uint)param_2,&local_c);
       STGroupC::AddObjs(local_c,(DArrayTy *)groupContent,1);
       local_5 = 1;
-      (*local_c->vtable->vfunc_08)(0x65,&local_5);
+      (*local_c->vtable->slot_08)(local_c,0x65,&local_5);
     }
     dVar1 = array->count;
     uVar7 = 0;
@@ -129,12 +129,12 @@ STAllPlayersC::AddObjsToGroup
     return 0;
   }
   g_currentExceptionFrame = local_90.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d8,0,iVar3,&DAT_007a4ccc,
-                             s_STAllPlayersC__AddObjsToGroup_007a60d0);
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d8,0,iVar3,"%s",
+                             "STAllPlayersC::AddObjsToGroup");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d9);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1d9);
   return 0xffffffff;
 }
 

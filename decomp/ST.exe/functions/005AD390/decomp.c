@@ -53,12 +53,12 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   this_00 = local_20;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x24e,0,iVar7,&DAT_007a4ccc
-                               ,s_ChooseMapTy__NoneChooseMap_007cc7f0);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x24e,0,iVar7,"%s"
+                               ,"ChooseMapTy::NoneChooseMap");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x24e);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\load_obj.cpp",0x24e);
     return;
   }
   if (((local_20->field_0065 == '\x01') && (local_20->field_1C8F != (HANDLE)0x0)) &&
@@ -169,12 +169,12 @@ switchD_005adb01_caseD_c:
     }
   }
   else if (cVar1 == '\x03') {
-    if ((this_00->field_20B5 != '\0') &&
-       ((int)PTR_0081176c->field_0300 < *(int *)&PTR_0081176c->field_0x304 + -1)) {
+    if ((this_00->field_0x20b5 != '\0') &&
+       (PTR_0081176c->field_0300 < PTR_0081176c->field_0304 + -1)) {
       PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + 1;
-      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+      if (PTR_0081176c->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,
                    PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
@@ -183,7 +183,7 @@ switchD_005adb01_caseD_c:
        (iVar7 = HoloTy::NextFas(this_00->field_20B8), iVar7 != 0)) {
       local_8 = 0;
     }
-    if (((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) &&
+    if (((this_00->field_0x20b4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) &&
        (iVar7 = HoloTy::NextFas(this_00->field_20BC), iVar7 != 0)) {
       local_8 = 0;
     }
@@ -201,7 +201,7 @@ switchD_005adb01_caseD_c:
         Library::MSVCRT::FUN_0072e2b0(this_00->field_20B8);
         this_00->field_20B8 = (HoloTy *)0x0;
       }
-      if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
+      if ((this_00->field_0x20b4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
         HoloTy::Done(this_00->field_20BC);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_20BC);
         this_00->field_20BC = (HoloTy *)0x0;
@@ -212,10 +212,10 @@ switchD_005adb01_caseD_c:
         this_00->field_20C0 = (HoloTy *)0x0;
       }
       this_00->field_0065 = 1;
-      if (this_00->field_20B5 != '\0') {
+      if (this_00->field_0x20b5 != '\0') {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_02EC);
-        if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
-          FUN_006b3af0(*(int **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc);
+        if (PTR_0081176c->field_02FC != 0xffffffff) {
+          FUN_006b3af0((int *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC);
         }
       }
       CreateCtrls(this_00,'\x01');
@@ -278,11 +278,11 @@ switchD_005adb01_caseD_c:
     }
   }
   else if (cVar1 == '\x04') {
-    if ((this_00->field_20B5 != '\0') && (0 < (int)PTR_0081176c->field_0300)) {
+    if ((this_00->field_0x20b5 != '\0') && (0 < PTR_0081176c->field_0300)) {
       PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + -1;
-      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+      if (PTR_0081176c->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
+                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,
                    PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       local_8 = 0;
@@ -299,7 +299,7 @@ switchD_005adb01_caseD_c:
         local_8 = 0;
       }
     }
-    if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
+    if ((this_00->field_0x20b4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
       iVar7 = HoloTy::NextFas(this_00->field_20BC);
       if (iVar7 == 0) {
         uVar4 = this_00->field_20BC->field_0003;

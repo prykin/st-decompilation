@@ -23,10 +23,10 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,undefined
   this_00 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x4a6,0,errorCode,
-                               &DAT_007a4ccc,s_OptPanelTy__Notification_007c7314);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x4a6,0,errorCode,
+                               "%s","OptPanelTy::Notification");
     if (iVar3 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x4a6);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x4a6);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

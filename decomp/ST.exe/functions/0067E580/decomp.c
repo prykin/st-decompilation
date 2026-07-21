@@ -24,17 +24,17 @@ LPSTR __cdecl GetAssistantNameDB(cMf32 *param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1eb,0,iVar2,&DAT_007a4ccc,
-                               s_GetAssistantNameDB_007d30b0);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x1eb,0,iVar2,"%s",
+                               "GetAssistantNameDB");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1ec);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1ec);
     return (LPSTR)0x0;
   }
   if (param_1 == (cMf32 *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1e8);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1e8);
   }
   text = PTR_s_ASSISTANT_0079d724;
   iVar2 = 0;

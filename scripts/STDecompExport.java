@@ -21,10 +21,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -66,7 +68,7 @@ public class STDecompExport extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final java.util.regex.Pattern SIMPLE_MEMORY = java.util.regex.Pattern.compile(
-        "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
+        "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])([+-]?)(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
         "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
     private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
@@ -85,6 +87,24 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern DARRAY_ELEMENT_ADDRESS = Pattern.compile(
         "\\b([A-Za-z_][A-Za-z0-9_]*)->elementSize\\s*\\*\\s*([^+;]+?)\\s*\\+\\s*" +
         "(?:\\(int\\)\\s*)?\\1->data\\b");
+    private static final Pattern RESIDUAL_STRING_SYMBOL = Pattern.compile(
+        "\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b");
+    private static final Pattern RESIDUAL_CASTED_FIELD = Pattern.compile(
+        "\\*\\s*\\(\\s*(?:undefined(?:[1248])?|u?int|u?long|u?short|char|byte|" +
+        "float|double|void)[^()\\r\\n]{0,48}?\\*\\s*\\)\\s*&?[^;\\r\\n]*?" +
+        "(?:->|\\.)field_(?:0x)?[0-9A-Fa-f]+\\b");
+    private static final Pattern RESIDUAL_GENERIC_FIELD = Pattern.compile(
+        "(?:->|\\.)field_(?:0x)?[0-9A-Fa-f]+\\b");
+    private static final Pattern RESIDUAL_GLOBAL_AGGREGATE = Pattern.compile(
+        "\\b(?:PTR|DAT)_[0-9A-Fa-f]{8}(?:->|\\.)field_(?:0x)?[0-9A-Fa-f]+\\b");
+    private static final Pattern RESIDUAL_ANONYMOUS_SHAPE = Pattern.compile(
+        "\\bAnon(?:Shape|Nested|Receiver)_[A-Za-z0-9_$]+\\b");
+    private static final Pattern RESIDUAL_GENERIC_DATA = Pattern.compile(
+        "(?<![A-Za-z0-9_$])_?(?:DAT|PTR|UNK)_[0-9A-Fa-f]{8}\\b");
+    private static final Pattern RESIDUAL_UNDEFINED_TYPE = Pattern.compile(
+        "\\bundefined(?:[1248])?\\b");
+    private static final Pattern RESIDUAL_CONTROL_FLOW = Pattern.compile(
+        "\\b(?:goto|LAB_[0-9A-Fa-f]+)\\b");
     private static final String PSEUDOCODE_COMMENT_MARKER = "/* ST_PSEUDO[";
     private static final String PSEUDOCODE_RUNTIME_INCLUDE =
         "#include \"../../pseudocode_runtime.h\"";
@@ -103,6 +123,9 @@ public class STDecompExport extends GhidraScript {
     private int pseudocodeNormalizationCount;
     private final List<String> pseudocodeIdiomRows = new ArrayList<>();
     private final Set<String> pseudocodeIdiomFunctions = new HashSet<>();
+    private final List<String> qualityIssueRows = new ArrayList<>();
+    private final Set<String> qualityIssueFunctions = new HashSet<>();
+    private final Map<String, QualityAggregate> qualityAggregates = new TreeMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -438,10 +461,12 @@ public class STDecompExport extends GhidraScript {
                 else {
                     status = result == null ? "no_result" : nullToEmpty(result.getErrorMessage());
                 }
+                cCode = literalizeReferencedStrings(function, cCode);
                 NormalizedCode normalized = normalizePseudocode(cCode);
                 cCode = annotatePseudocode(normalized.code);
                 writeText(dir.resolve("decomp.c"), cCode);
                 catalogPseudocodeIdioms(function, cCode);
+                catalogQualityIssues(function, cCode);
                 writeFunctionListing(function, dir.resolve("listing.asm"));
             }
 
@@ -502,10 +527,12 @@ public class STDecompExport extends GhidraScript {
 
     private void normalizeAndCatalog(Function function, Path path) throws IOException {
         String original = Files.readString(path, StandardCharsets.UTF_8);
-        NormalizedCode normalized = normalizePseudocode(original);
+        String literalized = literalizeReferencedStrings(function, original);
+        NormalizedCode normalized = normalizePseudocode(literalized);
         String annotated = annotatePseudocode(normalized.code);
         if (!annotated.equals(original)) writeText(path, annotated);
         catalogPseudocodeIdioms(function, annotated);
+        catalogQualityIssues(function, annotated);
     }
 
     /**
@@ -551,6 +578,183 @@ public class STDecompExport extends GhidraScript {
         }
         String normalized = String.join(System.lineSeparator(), output);
         return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * Ghidra deliberately emits a symbol instead of a quoted string when the PE
+     * memory block is writable, even if the bytes are defined as a string and flow
+     * to a char pointer.  ST stores immutable diagnostics in such a block beside
+     * genuinely mutable globals, so changing the block permissions would corrupt
+     * analysis.  For the text corpus, inline every referenced, NUL-terminated string
+     * which has no write reference.  Address-stable metadata retains the symbol.
+     *
+     * Very short printf formats (notably "%s" at 007A4CCC) are accepted before the
+     * debug-string applier has retyped them.  Replacements are lexical: comments,
+     * existing string/character literals, and larger identifiers are untouched.
+     */
+    private String literalizeReferencedStrings(Function function, String code) {
+        if (code == null || code.isEmpty()) return code;
+        Map<String, String> literals = referencedStringLiterals(function);
+        if (literals.isEmpty()) return code;
+        StringBuilder output = new StringBuilder();
+        boolean string = false, character = false, lineComment = false;
+        boolean blockComment = false, escaped = false;
+        for (int index = 0; index < code.length();) {
+            char ch = code.charAt(index);
+            char next = index + 1 < code.length() ? code.charAt(index + 1) : '\0';
+            if (lineComment) {
+                output.append(ch); index++;
+                if (ch == '\n') lineComment = false;
+                continue;
+            }
+            if (blockComment) {
+                output.append(ch); index++;
+                if (ch == '*' && next == '/') {
+                    output.append('/'); index++; blockComment = false;
+                }
+                continue;
+            }
+            if (string || character) {
+                output.append(ch); index++;
+                if (escaped) escaped = false;
+                else if (ch == '\\') escaped = true;
+                else if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '/' && next == '/') {
+                output.append("//"); index += 2; lineComment = true; continue;
+            }
+            if (ch == '/' && next == '*') {
+                output.append("/*"); index += 2; blockComment = true; continue;
+            }
+            if (ch == '"') { output.append(ch); index++; string = true; continue; }
+            if (ch == '\'') { output.append(ch); index++; character = true; continue; }
+
+            int ampersand = ch == '&' ? index : -1;
+            int start = ampersand >= 0 ? index + 1 : index;
+            while (ampersand >= 0 && start < code.length() &&
+                    Character.isWhitespace(code.charAt(start))) start++;
+            if (start < code.length() && identifierStart(code.charAt(start))) {
+                int end = qualifiedIdentifierEnd(code, start);
+                String literal = literals.get(code.substring(start, end));
+                if (literal != null) {
+                    output.append(literal); index = end; continue;
+                }
+                if (ampersand < 0) {
+                    output.append(code, start, end); index = end; continue;
+                }
+            }
+            output.append(ch); index++;
+        }
+        return output.toString();
+    }
+
+    private Map<String, String> referencedStringLiterals(Function function) {
+        Map<String, String> result = new LinkedHashMap<>();
+        CodeUnitIterator units = listing.getCodeUnits(function.getBody(), true);
+        while (units.hasNext()) {
+            Address from = units.next().getMinAddress();
+            for (Reference reference : references.getReferencesFrom(from)) {
+                Address to = reference.getToAddress();
+                if (to == null || !to.isMemoryAddress()) continue;
+                Data data = listing.getDataContaining(to);
+                if (data == null || !to.equals(data.getMinAddress())) continue;
+                String value = data.hasStringValue() && data.getValue() instanceof String ?
+                    (String)data.getValue() : asciiCString(data.getMinAddress(), 128);
+                if (value == null || value.isEmpty()) continue;
+                if (!data.hasStringValue() && !value.contains("%")) continue;
+                if (hasWriteReference(data)) continue;
+                Symbol symbol = symbols.getPrimarySymbol(data.getMinAddress());
+                if (symbol == null) continue;
+                String literal = cString(value);
+                putLiteralName(result, symbol.getName(), literal);
+                putLiteralName(result, symbol.getName(true), literal);
+                putLiteralName(result, decompilerIdentifier(symbol.getName()), literal);
+                putLiteralName(result, decompilerIdentifier(symbol.getName(true)), literal);
+            }
+        }
+        result.values().removeIf(value -> value == null);
+        return result;
+    }
+
+    private void putLiteralName(Map<String, String> literals, String name, String literal) {
+        if (name == null || name.isBlank()) return;
+        String old = literals.get(name);
+        if (old == null && !literals.containsKey(name)) literals.put(name, literal);
+        else if (!literal.equals(old)) literals.put(name, null); // ambiguous unqualified name
+    }
+
+    private boolean hasWriteReference(Data data) {
+        int length = Math.max(1, data.getLength());
+        for (int offset = 0; offset < length; offset++) {
+            ReferenceIterator iterator = references.getReferencesTo(data.getMinAddress().add(offset));
+            while (iterator.hasNext())
+                if (iterator.next().getReferenceType().isWrite()) return true;
+        }
+        return false;
+    }
+
+    private boolean identifierStart(char value) {
+        return Character.isLetter(value) || value == '_' || value == '$';
+    }
+
+    private boolean identifierPart(char value) {
+        return Character.isLetterOrDigit(value) || value == '_' || value == '$';
+    }
+
+    private int qualifiedIdentifierEnd(String text, int start) {
+        int end = start + 1;
+        while (true) {
+            while (end < text.length() && identifierPart(text.charAt(end))) end++;
+            if (end + 2 >= text.length() || text.charAt(end) != ':' ||
+                    text.charAt(end + 1) != ':' || !identifierStart(text.charAt(end + 2)))
+                return end;
+            end += 3;
+        }
+    }
+
+    private String decompilerIdentifier(String value) {
+        StringBuilder result = new StringBuilder();
+        for (int index = 0; index < value.length(); index++) {
+            char ch = value.charAt(index);
+            result.append(Character.isLetterOrDigit(ch) || ch == '_' || ch == '$' ? ch : '_');
+        }
+        return result.toString();
+    }
+
+    private String asciiCString(Address address, int maximum) {
+        StringBuilder value = new StringBuilder();
+        try {
+            for (int index = 0; index < maximum; index++) {
+                int item = currentProgram.getMemory().getByte(address.add(index)) & 0xff;
+                if (item == 0) return value.toString();
+                if (item < 0x20 || item > 0x7e) return null;
+                value.append((char)item);
+            }
+        }
+        catch (Exception ignored) { }
+        return null;
+    }
+
+    private String cString(String value) {
+        StringBuilder result = new StringBuilder("\"");
+        for (int index = 0; index < value.length(); index++) {
+            char ch = value.charAt(index);
+            switch (ch) {
+                case '\\' -> result.append("\\\\");
+                case '"' -> result.append("\\\"");
+                case '\n' -> result.append("\\n");
+                case '\r' -> result.append("\\r");
+                case '\t' -> result.append("\\t");
+                default -> {
+                    if (ch < 0x20 || ch == 0x7f)
+                        result.append(String.format("\\x%02X", (int)ch));
+                    else result.append(ch);
+                }
+            }
+        }
+        return result.append('"').toString();
     }
 
     private String annotatePseudocode(String code) {
@@ -660,6 +864,141 @@ public class STDecompExport extends GhidraScript {
                 ))
             ));
         }
+    }
+
+    /**
+     * Produce a corpus-wide quality inventory independently of the narrower
+     * pseudocode-idiom catalogue.  These records deliberately include unresolved
+     * naming/type debt (field_*, DAT_*, AnonShape_*) which is valid C but still poor
+     * decompilation.  One JSONL row represents one issue kind in one function.
+     */
+    private void catalogQualityIssues(Function function, String code) {
+        Map<String, QualityEvidence> evidence = new LinkedHashMap<>();
+        String[] lines = code == null ? new String[0] : code.split("\\R", -1);
+        for (int index = 0; index < lines.length; index++) {
+            String line = lines[index];
+            String stripped = line.stripLeading();
+            if (line.contains(PSEUDOCODE_COMMENT_MARKER) || stripped.startsWith("/*") ||
+                    stripped.startsWith("*") || stripped.startsWith("*/") ||
+                    stripped.startsWith("//") || stripped.startsWith("#")) continue;
+            addQualityMatches(evidence, "unexpanded_string_symbol",
+                RESIDUAL_STRING_SYMBOL, line, index + 1);
+            addQualityMatches(evidence, "casted_generic_field",
+                RESIDUAL_CASTED_FIELD, line, index + 1);
+            addQualityMatches(evidence, "generic_global_aggregate",
+                RESIDUAL_GLOBAL_AGGREGATE, line, index + 1);
+            addQualityMatches(evidence, "generic_field_name",
+                RESIDUAL_GENERIC_FIELD, line, index + 1);
+            addQualityMatches(evidence, "anonymous_shape_type",
+                RESIDUAL_ANONYMOUS_SHAPE, line, index + 1);
+            addQualityMatches(evidence, "generic_data_symbol",
+                RESIDUAL_GENERIC_DATA, line, index + 1);
+            addQualityMatches(evidence, "undefined_type",
+                RESIDUAL_UNDEFINED_TYPE, line, index + 1);
+            addQualityMatches(evidence, "control_flow_label",
+                RESIDUAL_CONTROL_FLOW, line, index + 1);
+            addQualityMatches(evidence, "raw_indirect_call",
+                RAW_INDIRECT_CALL, line, index + 1);
+            addQualityMatches(evidence, "packed_or_unaligned_piece",
+                PACKED_PIECE, line, index + 1);
+            addQualityMatches(evidence, "raw_pointer_offset",
+                RAW_OFFSET_DEREFERENCE, line, index + 1);
+            if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
+                addQuality(evidence, "unresolved_register_input", 1, index + 1, line);
+            if (line.matches(".*\\bextraout_[A-Za-z0-9_]+.*"))
+                addQuality(evidence, "return_width_artifact", 1, index + 1, line);
+            if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
+                    (line.contains("->data") || line.contains(".data")))
+                addQuality(evidence, "dynamic_array_indexing", 1, index + 1, line);
+            if (line.toLowerCase(Locale.ROOT).contains("0xa62"))
+                addQuality(evidence, "flattened_global_record_array", 1, index + 1, line);
+        }
+        if (evidence.isEmpty()) return;
+        String functionAddress = addr(function.getEntryPoint());
+        qualityIssueFunctions.add(functionAddress);
+        for (Map.Entry<String, QualityEvidence> item : evidence.entrySet()) {
+            String kind = item.getKey();
+            QualityEvidence value = item.getValue();
+            qualityIssueRows.add(jsonObject(
+                field("function_address", functionAddress),
+                field("function_name", function.getName(true)),
+                field("source_file", "functions/" + functionAddress + "/decomp.c"),
+                field("kind", kind),
+                field("severity", qualitySeverity(kind)),
+                rawField("occurrences", Integer.toString(value.occurrences)),
+                rawField("lines", integerArray(value.lines)),
+                rawField("excerpts", jsonStringArray(value.excerpts)),
+                field("recommended_resolution", qualityResolution(kind))
+            ));
+            QualityAggregate aggregate = qualityAggregates.computeIfAbsent(kind,
+                ignored -> new QualityAggregate());
+            aggregate.functions++;
+            aggregate.occurrences += value.occurrences;
+        }
+    }
+
+    private void addQualityMatches(Map<String, QualityEvidence> evidence, String kind,
+            Pattern pattern, String line, int lineNumber) {
+        Matcher matcher = pattern.matcher(line);
+        int count = 0;
+        while (matcher.find()) count++;
+        if (count > 0) addQuality(evidence, kind, count, lineNumber, line);
+    }
+
+    private void addQuality(Map<String, QualityEvidence> evidence, String kind, int count,
+            int lineNumber, String excerpt) {
+        QualityEvidence value = evidence.computeIfAbsent(kind,
+            ignored -> new QualityEvidence());
+        value.occurrences += count;
+        if (value.lines.size() < 24) value.lines.add(lineNumber);
+        if (value.excerpts.size() < 6) value.excerpts.add(oneLine(excerpt));
+    }
+
+    private String qualitySeverity(String kind) {
+        return switch (kind) {
+            case "unexpanded_string_symbol", "casted_generic_field", "raw_indirect_call",
+                 "unresolved_register_input", "return_width_artifact" -> "high";
+            case "raw_pointer_offset", "packed_or_unaligned_piece",
+                 "generic_global_aggregate", "undefined_type",
+                 "flattened_global_record_array", "dynamic_array_indexing" -> "medium";
+            default -> "low";
+        };
+    }
+
+    private String qualityResolution(String kind) {
+        return switch (kind) {
+            case "unexpanded_string_symbol" ->
+                "define the immutable NUL-terminated data and let the exporter inline it; writable buffers stay symbolic";
+            case "casted_generic_field" ->
+                "repair receiver/pointer-family ownership, then make the field width and signedness match the machine access";
+            case "generic_global_aggregate" ->
+                "recover the singleton or aggregate structure behind the global pointer and name stable semantic fields";
+            case "generic_field_name" ->
+                "layout is partly recovered; infer semantic name from accessors, callees, comparisons, and neighboring fields";
+            case "anonymous_shape_type" ->
+                "merge compatible cross-function shapes into a named type family after offset/type agreement";
+            case "generic_data_symbol" ->
+                "classify as scalar, string, singleton pointer, array, table, or record before assigning a semantic name";
+            case "undefined_type" ->
+                "recover width, signedness, pointer target, enum, or function prototype from definitions and consumers";
+            case "control_flow_label" ->
+                "restructure only after CFG/post-dominator proof; optimized shared tails may legitimately require a label";
+            case "raw_indirect_call" ->
+                "apply a callback or vtable-slot FunctionDefinition with the correct receiver and calling convention";
+            case "packed_or_unaligned_piece" ->
+                "model a packed field when proven; otherwise emit an explicit unaligned load/store helper";
+            case "raw_pointer_offset" ->
+                "propagate a compatible structure through the pointer family and materialize the fixed-offset field";
+            case "unresolved_register_input" ->
+                "repair function boundary, ABI, or SEH/setjmp live-in register semantics";
+            case "return_width_artifact" ->
+                "repair the callee return width/register model and propagate it to callers";
+            case "dynamic_array_indexing" ->
+                "recover element type or render DArrayAt<T>; runtime elementSize is not a native C array stride";
+            case "flattened_global_record_array" ->
+                "apply STPlayerRuntimeRecord and its nested arrays after base/stride proof";
+            default -> "review machine-code evidence before changing the Ghidra database";
+        };
     }
 
     private List<String> lineIdiomKinds(String line) {
@@ -831,6 +1170,32 @@ public class STDecompExport extends GhidraScript {
                 writer.newLine();
             }
         });
+        qualityIssueRows.sort(Comparator.naturalOrder());
+        atomicWrite(programRoot.resolve("decomp_quality_issues.jsonl"), writer -> {
+            for (String row : qualityIssueRows) {
+                writer.write(row);
+                writer.newLine();
+            }
+        });
+        List<String> categories = new ArrayList<>();
+        for (Map.Entry<String, QualityAggregate> item : qualityAggregates.entrySet()) {
+            categories.add(jsonObject(
+                field("kind", item.getKey()),
+                field("severity", qualitySeverity(item.getKey())),
+                rawField("functions", Integer.toString(item.getValue().functions)),
+                rawField("occurrences", Integer.toString(item.getValue().occurrences)),
+                field("recommended_resolution", qualityResolution(item.getKey()))
+            ));
+        }
+        writeJson(programRoot.resolve("decomp_quality_summary.json"), jsonObject(
+            field("schema", "st-decomp-quality-summary"),
+            rawField("schema_version", "1"),
+            field("scope", "all exported functions/**/decomp.c bodies"),
+            rawField("body_function_count", Integer.toString(bodyFunctionCount)),
+            rawField("functions_with_issues", Integer.toString(qualityIssueFunctions.size())),
+            rawField("issue_record_count", Integer.toString(qualityIssueRows.size())),
+            rawField("categories", "[" + String.join(",", categories) + "]")
+        ));
         writeText(programRoot.resolve("pseudocode_runtime.h"),
             "#ifndef ST_PSEUDOCODE_RUNTIME_H\\n" +
             "#define ST_PSEUDOCODE_RUNTIME_H\\n\\n" +
@@ -1005,89 +1370,247 @@ public class STDecompExport extends GhidraScript {
 
     private void collectAccessedCompositeFields(Function function, Set<String> result)
             throws IOException {
-        Map<String, TypedAccess> registers = new HashMap<>();
-        Map<Long, TypedAccess> stackParameters = new HashMap<>();
+        List<FingerprintBlock> blocks = fingerprintBlocks(function);
+        if (blocks.isEmpty()) return;
+        FingerprintBlock entryBlock = blocks.stream()
+            .filter(block -> block.start.equals(function.getEntryPoint()))
+            .findFirst().orElse(blocks.get(0));
+        FingerprintState entry = fingerprintEntryState(function);
+        Map<FingerprintBlock, FingerprintState> inputs = new LinkedHashMap<>();
+        Map<FingerprintBlock, FingerprintState> outputs = new LinkedHashMap<>();
+
+        int limit = Math.max(16, blocks.size() * 8);
+        for (int pass = 0; pass < limit; pass++) {
+            checkCancelled();
+            boolean changed = false;
+            for (FingerprintBlock block : blocks) {
+                FingerprintState input;
+                if (block == entryBlock) input = entry.copy();
+                else {
+                    List<FingerprintState> predecessors = new ArrayList<>();
+                    for (FingerprintBlock predecessor : block.predecessors) {
+                        FingerprintState state = outputs.get(predecessor);
+                        if (state != null) predecessors.add(state);
+                    }
+                    if (predecessors.isEmpty()) continue;
+                    input = joinFingerprintStates(predecessors);
+                }
+                FingerprintState output = transferFingerprintBlock(block, input, null);
+                if (!input.equals(inputs.get(block)) || !output.equals(outputs.get(block))) {
+                    inputs.put(block, input);
+                    outputs.put(block, output);
+                    changed = true;
+                }
+            }
+            if (!changed) break;
+        }
+
+        // Record dependencies from the converged input of every reachable block.
+        // A structure's complete layout remains excluded: only fields reached by
+        // this function's register/stack data flow enter its fingerprint.
+        for (FingerprintBlock block : blocks) {
+            FingerprintState input = inputs.get(block);
+            if (input != null) transferFingerprintBlock(block, input, result);
+        }
+    }
+
+    private FingerprintState fingerprintEntryState(Function function) {
+        FingerprintState state = new FingerprintState();
         long frameBias = currentProgram.getDefaultPointerSize();
         for (Parameter parameter : function.getParameters()) {
             TypedAccess value = typedPointer(parameter.getDataType());
             if (value == null) continue;
             if (parameter.isAutoParameter() && "ECX".equalsIgnoreCase(
                     parameter.getRegister() == null ? "" : parameter.getRegister().getName())) {
-                registers.put("ECX", value);
+                state.registers.put("ECX", value);
             }
             else if (parameter.isStackVariable()) {
-                stackParameters.put((long)parameter.getStackOffset() + frameBias, value);
+                state.stack.put((long)parameter.getStackOffset() + frameBias, value);
             }
         }
-        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
-        while (instructions.hasNext()) {
+        return state;
+    }
+
+    private List<FingerprintBlock> fingerprintBlocks(Function function) throws IOException {
+        List<Instruction> instructions = new ArrayList<>();
+        InstructionIterator iterator = listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) instructions.add(iterator.next());
+        if (instructions.isEmpty()) return List.of();
+
+        Set<Address> starts = new HashSet<>();
+        starts.add(instructions.get(0).getAddress());
+        for (int index = 0; index < instructions.size(); index++) {
+            Instruction instruction = instructions.get(index);
+            boolean call = instruction.getFlowType().isCall();
+            if (!call) {
+                for (Address flow : instruction.getFlows())
+                    if (function.getBody().contains(flow)) starts.add(flow);
+                for (Reference reference : instruction.getReferencesFrom()) {
+                    Address target = reference.getToAddress();
+                    if (reference.getReferenceType().isFlow() && target != null &&
+                            function.getBody().contains(target)) starts.add(target);
+                }
+            }
+            if (index + 1 < instructions.size() &&
+                    (instruction.getFlowType().isJump() ||
+                     instruction.getFlowType().isTerminal() ||
+                     instruction.getFallThrough() == null ||
+                     !instruction.getFallThrough().equals(instructions.get(index + 1).getAddress())))
+                starts.add(instructions.get(index + 1).getAddress());
+        }
+
+        List<FingerprintBlock> blocks = new ArrayList<>();
+        FingerprintBlock current = null;
+        for (Instruction instruction : instructions) {
+            if (current == null || starts.contains(instruction.getAddress())) {
+                current = new FingerprintBlock(instruction.getAddress());
+                blocks.add(current);
+            }
+            current.instructions.add(instruction);
+        }
+        Map<Address, FingerprintBlock> byStart = new HashMap<>();
+        for (FingerprintBlock block : blocks) byStart.put(block.start, block);
+        for (FingerprintBlock block : blocks) {
+            Instruction last = block.instructions.get(block.instructions.size() - 1);
+            Set<Address> destinations = new LinkedHashSet<>();
+            if (!last.getFlowType().isCall()) {
+                for (Address flow : last.getFlows()) destinations.add(flow);
+                for (Reference reference : last.getReferencesFrom())
+                    if (reference.getReferenceType().isFlow())
+                        destinations.add(reference.getToAddress());
+            }
+            Address fallThrough = last.getFallThrough();
+            if (fallThrough != null) destinations.add(fallThrough);
+            for (Address destination : destinations) {
+                FingerprintBlock successor = byStart.get(destination);
+                if (successor == null) continue;
+                block.successors.add(successor);
+                successor.predecessors.add(block);
+            }
+        }
+        return blocks;
+    }
+
+    private FingerprintState joinFingerprintStates(List<FingerprintState> states) {
+        FingerprintState result = new FingerprintState();
+        Set<String> registerKeys = new HashSet<>();
+        Set<Long> stackKeys = new HashSet<>();
+        for (FingerprintState state : states) {
+            registerKeys.addAll(state.registers.keySet());
+            stackKeys.addAll(state.stack.keySet());
+        }
+        for (String key : registerKeys) {
+            TypedAccess value = consistentFingerprintValue(states, key, false);
+            if (value != null) result.registers.put(key, value);
+        }
+        for (Long key : stackKeys) {
+            TypedAccess value = consistentFingerprintValue(states, key, true);
+            if (value != null) result.stack.put(key, value);
+        }
+        return result;
+    }
+
+    private TypedAccess consistentFingerprintValue(List<FingerprintState> states,
+            Object key, boolean stack) {
+        TypedAccess result = null;
+        for (FingerprintState state : states) {
+            TypedAccess candidate = stack ? state.stack.get((Long)key) :
+                state.registers.get((String)key);
+            if (candidate == null) continue;
+            if (result == null) result = candidate;
+            else if (!result.equals(candidate)) return null;
+        }
+        return result;
+    }
+
+    private FingerprintState transferFingerprintBlock(FingerprintBlock block,
+            FingerprintState input, Set<String> result) throws IOException {
+        FingerprintState state = input.copy();
+        for (Instruction instruction : block.instructions) {
             checkCancelled();
-            Instruction instruction = instructions.next();
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = fingerprintOperands(instruction.toString().toUpperCase(Locale.ROOT));
-            for (String operand : operands) {
-                FingerprintMemory memory = fingerprintMemory(operand);
-                TypedAccess base = memory == null ? null : registers.get(memory.register);
-                if (base != null) addAccessedComponent(base, memory.displacement, result);
+            if (result != null) {
+                for (String operand : operands) {
+                    FingerprintMemory memory = fingerprintMemory(operand);
+                    TypedAccess base = memory == null ? null :
+                        state.registers.get(memory.register);
+                    if (base != null) addAccessedComponent(base, memory.displacement, result);
+                }
             }
             if ("CALL".equals(mnemonic)) {
                 Function called = fingerprintCalledFunction(instruction);
-                registers.remove("EAX"); registers.remove("ECX"); registers.remove("EDX");
+                state.registers.remove("EAX"); state.registers.remove("ECX");
+                state.registers.remove("EDX");
                 if (called != null) {
                     TypedAccess returned = typedPointer(called.getReturnType());
-                    if (returned != null) registers.put("EAX", returned);
+                    if (returned != null) state.registers.put("EAX", returned);
                 }
                 continue;
             }
-            updateFingerprintRegisters(instruction, mnemonic, operands, registers,
-                stackParameters);
+            updateFingerprintState(instruction, mnemonic, operands, state);
         }
+        return state;
     }
 
-    private void updateFingerprintRegisters(Instruction instruction, String mnemonic,
-            String[] operands, Map<String, TypedAccess> registers,
-            Map<Long, TypedAccess> stackParameters) {
+    private void updateFingerprintState(Instruction instruction, String mnemonic,
+            String[] operands, FingerprintState state) {
         if (operands.length == 0) return;
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            FingerprintMemory destinationMemory = fingerprintMemory(operands[0]);
+            if (destinationMemory != null && "EBP".equals(destinationMemory.register)) {
+                String sourceRegister = fingerprintRegister(operands[1]);
+                TypedAccess source = sourceRegister != null &&
+                    fingerprintFullRegister(operands[1]) ?
+                    state.registers.get(sourceRegister) : null;
+                if (source == null) state.stack.remove(destinationMemory.displacement);
+                else state.stack.put(destinationMemory.displacement, source);
+                return;
+            }
+        }
         String destination = fingerprintRegister(operands[0]);
         if (destination == null) return;
-        if (!fingerprintFullRegister(operands[0])) { registers.remove(destination); return; }
+        if (!fingerprintFullRegister(operands[0])) {
+            state.registers.remove(destination); return;
+        }
         if ("MOV".equals(mnemonic) && operands.length >= 2) {
             TypedAccess source = null;
             String sourceRegister = fingerprintRegister(operands[1]);
             if (sourceRegister != null && fingerprintFullRegister(operands[1]))
-                source = registers.get(sourceRegister);
+                source = state.registers.get(sourceRegister);
             FingerprintMemory memory = fingerprintMemory(operands[1]);
             if (source == null && memory != null && "EBP".equals(memory.register))
-                source = stackParameters.get(memory.displacement);
+                source = state.stack.get(memory.displacement);
             if (source == null && memory != null) {
-                TypedAccess base = registers.get(memory.register);
+                TypedAccess base = state.registers.get(memory.register);
                 if (base != null) source = loadedCompositeField(base, memory.displacement);
             }
             if (source == null) source = referencedTypedPointer(instruction, 1);
-            if (source == null) registers.remove(destination); else registers.put(destination, source);
+            if (source == null) state.registers.remove(destination);
+            else state.registers.put(destination, source);
             return;
         }
         if ("LEA".equals(mnemonic) && operands.length >= 2) {
             FingerprintMemory memory = fingerprintMemory(operands[1]);
-            TypedAccess base = memory == null ? null : registers.get(memory.register);
-            if (base == null) registers.remove(destination);
-            else registers.put(destination,
+            TypedAccess base = memory == null ? null : state.registers.get(memory.register);
+            if (base == null) state.registers.remove(destination);
+            else state.registers.put(destination,
                 new TypedAccess(base.structure, base.offset + memory.displacement));
             return;
         }
         if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && operands.length >= 2 &&
-                registers.containsKey(destination)) {
+                state.registers.containsKey(destination)) {
             Long value = fingerprintImmediate(operands[1]);
-            if (value == null) registers.remove(destination);
+            if (value == null) state.registers.remove(destination);
             else {
-                TypedAccess old = registers.get(destination);
-                registers.put(destination, new TypedAccess(old.structure, old.offset +
+                TypedAccess old = state.registers.get(destination);
+                state.registers.put(destination, new TypedAccess(old.structure, old.offset +
                     ("SUB".equals(mnemonic) ? -value : value)));
             }
             return;
         }
         if (!Set.of("CMP", "TEST", "PUSH", "JMP", "RET").contains(mnemonic))
-            registers.remove(destination);
+            state.registers.remove(destination);
     }
 
     private void addAccessedComponent(TypedAccess base, long displacement, Set<String> result) {
@@ -1176,9 +1699,13 @@ public class STDecompExport extends GhidraScript {
         java.util.regex.Matcher matcher = SIMPLE_MEMORY.matcher(value);
         if (!matcher.matches()) return null;
         long displacement = 0;
-        if (matcher.group(3) != null) {
-            Long parsed = fingerprintImmediate(matcher.group(3)); if (parsed == null) return null;
-            displacement = "-".equals(matcher.group(2)) ? -parsed : parsed;
+        if (matcher.group(4) != null) {
+            Long parsed = fingerprintImmediate(matcher.group(4)); if (parsed == null) return null;
+            boolean negative = "-".equals(matcher.group(2)) ^ "-".equals(matcher.group(3));
+            displacement = negative ? -parsed : parsed;
+            if (!negative && currentProgram.getDefaultPointerSize() == 4 &&
+                    displacement >= 0x80000000L && displacement <= 0xffffffffL)
+                displacement -= 0x100000000L;
         }
         return new FingerprintMemory(fingerprintCanonicalRegister(matcher.group(1)), displacement);
     }
@@ -1218,6 +1745,36 @@ public class STDecompExport extends GhidraScript {
         TypedAccess(ghidra.program.model.data.Structure structure, long offset) {
             this.structure = structure; this.offset = offset;
         }
+        @Override public boolean equals(Object other) {
+            if (!(other instanceof TypedAccess value)) return false;
+            return offset == value.offset &&
+                structure.getPathName().equals(value.structure.getPathName());
+        }
+        @Override public int hashCode() {
+            return 31 * structure.getPathName().hashCode() + Long.hashCode(offset);
+        }
+    }
+    private static class FingerprintState {
+        final Map<String, TypedAccess> registers = new HashMap<>();
+        final Map<Long, TypedAccess> stack = new HashMap<>();
+        FingerprintState copy() {
+            FingerprintState result = new FingerprintState();
+            result.registers.putAll(registers);
+            result.stack.putAll(stack);
+            return result;
+        }
+        @Override public boolean equals(Object other) {
+            if (!(other instanceof FingerprintState value)) return false;
+            return registers.equals(value.registers) && stack.equals(value.stack);
+        }
+        @Override public int hashCode() { return 31 * registers.hashCode() + stack.hashCode(); }
+    }
+    private static class FingerprintBlock {
+        final Address start;
+        final List<Instruction> instructions = new ArrayList<>();
+        final Set<FingerprintBlock> predecessors = new LinkedHashSet<>();
+        final Set<FingerprintBlock> successors = new LinkedHashSet<>();
+        FingerprintBlock(Address start) { this.start = start; }
     }
     private static class FingerprintMemory {
         final String register; final long displacement;
@@ -1230,6 +1787,15 @@ public class STDecompExport extends GhidraScript {
         final List<Integer> lines = new ArrayList<>();
         final List<String> excerpts = new ArrayList<>();
         final Set<String> addressHints = new TreeSet<>();
+    }
+    private static class QualityEvidence {
+        int occurrences;
+        final List<Integer> lines = new ArrayList<>();
+        final List<String> excerpts = new ArrayList<>();
+    }
+    private static class QualityAggregate {
+        int functions;
+        int occurrences;
     }
     private record NormalizedCode(String code, int replacements) { }
     private record StatementWindow(String text, int endIndex) { }
@@ -1439,6 +2005,10 @@ public class STDecompExport extends GhidraScript {
                 Integer.toString(pseudocodeIdiomFunctions.size())),
             rawField("pseudocode_idiom_record_count",
                 Integer.toString(pseudocodeIdiomRows.size())),
+            rawField("decomp_quality_function_count",
+                Integer.toString(qualityIssueFunctions.size())),
+            rawField("decomp_quality_record_count",
+                Integer.toString(qualityIssueRows.size())),
             field("primary_key", "program + function entry address")
         ));
     }

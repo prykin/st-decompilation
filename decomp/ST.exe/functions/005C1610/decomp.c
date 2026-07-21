@@ -48,10 +48,10 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
   pAVar4 = local_44;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369,0,iVar5,&DAT_007a4ccc,
-                               s_MReportTy__PaintTab_007cd084);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x369,0,iVar5,"%s",
+                               "MReportTy::PaintTab");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x369);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

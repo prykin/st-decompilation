@@ -36,8 +36,8 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   this_00 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3da,0,iVar3,&DAT_007a4ccc,
-                               s_STT3DSprC__SaveSpr_007ac724);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x3da,0,iVar3,"%s",
+                               "STT3DSprC::SaveSpr");
     if (iVar3 == 0) {
       return (undefined4 *)0x0;
     }
@@ -45,7 +45,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   }
   iVar3 = 0;
   *param_1 = (local_18->field_0014 + 1) * 0x24;
-  if (0 < (int)local_18->field_0014) {
+  if (0 < local_18->field_0014) {
     local_c = (char *)0x0;
     do {
       iVar4 = thunk_FUN_004acd30(this_00,(char)iVar3);
@@ -67,7 +67,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       }
       iVar3 = iVar3 + 1;
       local_c = (char *)((int)local_c + 0x24);
-    } while (iVar3 < (int)this_00->field_0014);
+    } while (iVar3 < this_00->field_0014);
   }
   local_14 = (AnonShape_004AD790_77673787 *)Library::DKW::LIB::FUN_006aac70(*param_1);
   uVar9 = *param_1;
@@ -94,7 +94,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   local_14->field_001F = this_00->field_0013;
   *(undefined4 *)(local_14 + 1) = this_00->field_0030;
   local_8 = 0;
-  if (0 < (int)this_00->field_0014) {
+  if (0 < this_00->field_0014) {
     iVar3 = 0;
     pcVar11 = pcVar10;
     local_c = pcVar10;
@@ -122,11 +122,11 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       pcVar11[0x23] = *(byte *)(iVar3 + 0xf + this_00->field_0020) & 1;
       iVar3 = iVar3 + 0x24;
       pcVar11 = pcVar10;
-    } while (local_8 < (int)this_00->field_0014);
+    } while (local_8 < this_00->field_0014);
   }
   local_8 = 0;
   local_c = pcVar10;
-  if (0 < (int)this_00->field_0014) {
+  if (0 < this_00->field_0014) {
     local_10 = 0;
     do {
       local_1c = *(char **)(this_00->field_0020 + 8 + local_10);
@@ -170,10 +170,10 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       local_c = local_c + uVar9;
       local_8 = local_8 + 1;
       local_10 = local_10 + 0x24;
-    } while (local_8 < (int)this_00->field_0014);
+    } while (local_8 < this_00->field_0014);
   }
   local_8 = 0;
-  if (0 < (int)this_00->field_0014) {
+  if (0 < this_00->field_0014) {
     local_10 = 0;
     do {
       pcVar10 = local_c;
@@ -192,7 +192,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       }
       local_c = local_c + uVar9 * 4;
       local_8 = local_8 + 1;
-    } while (local_8 < (int)this_00->field_0014);
+    } while (local_8 < this_00->field_0014);
   }
   g_currentExceptionFrame = local_60.previous;
   return (undefined4 *)local_14;

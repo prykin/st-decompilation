@@ -78,7 +78,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
       *(AnonShape_0060EA30_DCEB68AD **)((int)local_45 + iVar2 + 0xc) = local_c;
       uVar3 = *(uint *)((int)local_45 + iVar2);
       iVar2 = iVar2 + 4;
-      local_c = (AnonShape_0060EA30_DCEB68AD *)((int)local_c + uVar3);
+      local_c = (AnonShape_0060EA30_DCEB68AD *)(&local_c->field_0x0 + uVar3);
       local_1c = local_1c + 1;
       local_18 = local_18 + uVar3;
     } while (iVar2 < 0xc);

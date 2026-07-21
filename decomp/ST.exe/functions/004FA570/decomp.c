@@ -46,7 +46,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   else {
     sVar2 = -this->field_0241;
   }
-  this->field_002E = sVar2;
+  *(short *)&this->field_0x2e = sVar2;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
@@ -54,10 +54,10 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x452,0,iVar4,&DAT_007a4ccc,
-                               s_CPanelTy__ShiftControls_007c22a0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x452,0,iVar4,"%s",
+                               "CPanelTy::ShiftControls");
     if (iVar3 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x452);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x452);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

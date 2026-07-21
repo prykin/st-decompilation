@@ -53,9 +53,9 @@ void __fastcall FUN_005f4680(AnonReceiver_005F35F0 *param_1)
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,
                               iVar5,&local_c,&local_10), -1 < local_8)) &&
          ((local_8 < 5 && (-1 < local_c)))) &&
-        ((local_c < (int)pVVar2->field_0030 &&
+        ((local_c < pVVar2->field_0030 &&
          ((local_10 = (&DAT_0079aed0)[local_8] + local_10, -1 < local_10 &&
-          (local_10 < (int)pVVar2->field_0034)))))) &&
+          (local_10 < pVVar2->field_0034)))))) &&
        ((pVVar2->field_004C != 0 &&
         (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_c) == '\0')))) {
       if (param_1->field_0xc4 == '\0') {

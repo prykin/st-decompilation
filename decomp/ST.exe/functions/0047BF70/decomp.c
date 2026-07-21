@@ -29,8 +29,8 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
     iVar2 = Teleport(this,2);
     return iVar2;
   }
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3771,0,0,&DAT_007a4ccc,
-                             s_STBoatC__BackTeleport_incorrect_e_007ab52c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3771,0,0,"%s",
+                             "STBoatC::BackTeleport incorrect entry");
   if (iVar2 == 0) {
     return -1;
   }

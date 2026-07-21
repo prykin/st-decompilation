@@ -24,7 +24,7 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
       DArrayGetElement(PTR_007fa130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         RaiseInternalException
-                  (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x883);
       }
       local_8 = 0;
@@ -35,12 +35,12 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x888,0,errorCode,
-                             &DAT_007a4ccc,s_STAllPlayersC__UnRegisterTorpedo_007a6790);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x888,0,errorCode,
+                             "%s","STAllPlayersC::UnRegisterTorpedo");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x889);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x889);
   return 0xffffffff;
 }
 

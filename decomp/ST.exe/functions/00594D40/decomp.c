@@ -34,10 +34,10 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
     if (errorCode == 0) {
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 (undefined4 *)&PTR_0081176c->field_0x140);
+                 &PTR_0081176c->field_0140);
       MMMObjTy::OutRGlProc
                 (param_3,param_1,param_2,param_3,param_4,param_5,param_6,0x15,
-                 (undefined4 *)&PTR_0081176c->field_0x140);
+                 &PTR_0081176c->field_0140);
       uVar7 = 0;
       pcVar6 = PTR_0081176c->field_0034;
       uVar5 = 0xffffffff;
@@ -49,12 +49,12 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x73,0,errorCode,
-                               &DAT_007a4ccc,s_FSGSTy__OutTRGlProc_007cbfb0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x73,0,errorCode,
+                               "%s","FSGSTy::OutTRGlProc");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x73);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x73);
   }
   return;
 }

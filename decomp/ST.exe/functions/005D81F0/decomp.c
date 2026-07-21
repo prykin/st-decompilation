@@ -28,10 +28,10 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x98,0,iVar3,&DAT_007a4ccc,
-                               s_SIDTy__NoneSID_007cd650);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x98,0,iVar3,"%s",
+                               "SIDTy::NoneSID");
     if (iVar4 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x98);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\sid_obj.cpp",0x98);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -52,7 +52,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     } while (iVar3 != 0);
   }
   if (this_00->field_0065 == '\x03') {
-    if ((int)this_00->field_1A68 < *(int *)&this_00->field_0x1a6c + -1) {
+    if (this_00->field_1A68 < this_00->field_1A6C + -1) {
       this_00->field_1A68 = this_00->field_1A68 + 1;
       if (this_00->field_1A64 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
@@ -67,7 +67,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     }
   }
   else if (this_00->field_0065 == '\x04') {
-    if (0 < (int)this_00->field_1A68) {
+    if (0 < this_00->field_1A68) {
       this_00->field_1A68 = this_00->field_1A68 + -1;
       if (this_00->field_1A64 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
@@ -81,7 +81,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
       this_00->field_0045 = 0x200;
       this_00->field_0049 = 0;
       this_00->field_004D = 0x693f;
-      thunk_FUN_005b66e0((STJellyGunC *)this_00);
+      thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

@@ -3,19 +3,21 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
-   BldObjPanelTy::GetMessage */
+   BldObjPanelTy::GetMessage
 
-undefined4 __thiscall
-BldObjPanelTy::GetMessage(BldObjPanelTy *this,AnonShape_004F1080_64A4850E *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004F1080; family_names=BldObjPanelTy::GetMessage; ret4=8;
+   direct_offsets={10:2,14:2,18:0,1c:2} */
+
+int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
 
 {
-  uint uVar1;
+  STMessageId SVar1;
   code *pcVar2;
   ProdPanelTy *this_00;
   int iVar3;
   undefined4 *puVar4;
   int iVar5;
-  undefined4 uVar6;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
 
@@ -26,55 +28,55 @@ BldObjPanelTy::GetMessage(BldObjPanelTy *this,AnonShape_004F1080_64A4850E *param
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_bldobj_cpp_007c1984,0xca,0,iVar3,&DAT_007a4ccc,
-                               s_BldObjPanelTy__GetMessage_007c1a2c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\bldobj.cpp",0xca,0,iVar3,"%s",
+                               "BldObjPanelTy::GetMessage");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_bldobj_cpp_007c1984,0xca);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\bldobj.cpp",0xca);
     return 0xffff;
   }
-  if (param_1->field_0010 == 2) {
+  if (message->id == MESS_ID_CREATE) {
     ProdPanelTy::PreInitProdPanel(local_8);
   }
-  ProdPanelTy::GetMessage(this_00,(int)param_1);
-  uVar1 = param_1->field_0010;
-  if (uVar1 < 0xb207) {
-    if (uVar1 == 0xb206) {
-      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)param_1,thunk_FUN_0052a7b0);
+  ProdPanelTy::GetMessage(this_00,message);
+  SVar1 = message->id;
+  if (SVar1 < MESS_RESEARCHPANELTY_B207) {
+    if (SVar1 == MESS_BLDOBJPANELTY_B206) {
+      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_0052a7b0);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if (uVar1 == 2) {
+    if (SVar1 == MESS_ID_CREATE) {
       InitBldObjPanel((BldObjPanelTy *)this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if (uVar1 == 3) {
+    if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_004f0a60((AnonShape_004F0A60_A5DE070F *)this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if (uVar1 == 0xb205) {
+    if (SVar1 == MESS_BLDOBJPANELTY_B205) {
       this_00[1].field_0xd4 = this_00[1].field_0xd3;
-      this_00[1].field_0xd3 = *(char *)param_1->field_0014 + -1;
+      this_00[1].field_0xd3 = *(char *)(message->arg0).ptr + -1;
       thunk_FUN_005252c0(0xae);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(this_00->field_0000 + 0x1c))();
+      (*(code *)this_00->field_0000->field_001C)();
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
   }
   else {
-    switch(uVar1) {
-    case 0xc09f:
-    case 0xc0a0:
-    case 0xc0a1:
-    case 0xc0a2:
-    case 0xc0a3:
+    switch(SVar1) {
+    case MESS_SHARED_C09F:
+    case MESS_BEHPANELTY_C0A0:
+    case MESS_FSGSTY_C0A1:
+    case MESS_SHARED_C0A2:
+    case MESS_SHARED_C0A3:
       iVar3 = *(int *)(&this_00[1].field_0xd9 + (uint)(byte)this_00[1].field_0xd3 * 4);
       if ((iVar3 == 0) ||
-         (iVar5 = uVar1 + *(int *)&this_00->field_0x199, *(uint *)(iVar3 + 0xc) <= iVar5 - 0xc09fU))
+         (iVar5 = SVar1 + *(int *)&this_00->field_0x199, *(uint *)(iVar3 + 0xc) <= iVar5 - 0xc09fU))
       {
         puVar4 = (undefined4 *)0x0;
       }
@@ -89,18 +91,18 @@ BldObjPanelTy::GetMessage(BldObjPanelTy *this,AnonShape_004F1080_64A4850E *param
         return 0;
       }
       break;
-    case 0xc0a4:
-      *(undefined4 *)&this_00->field_0x199 = param_1->field_0014;
+    case MESS_BLDLABPANELTY_C0A4:
+      *(STMessageArg *)&this_00->field_0x199 = message->arg0;
       thunk_FUN_004f0c80((AnonShape_004EF140_16642BA0 *)this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
-    case 0xc0af:
+    case MESS_INTERCOMPANELTY_C0AF:
     case 0xc0b0:
-    case 0xc0b1:
+    case MESS_BEHPANELTY_C0B1:
     case 0xc0b2:
-    case 0xc0b3:
-      PaintBldBut((BldObjPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)param_1);
+    case MESS_BLDLABPANELTY_C0B3:
+      PaintBldBut((BldObjPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)message);
     }
   }
   g_currentExceptionFrame = local_4c.previous;

@@ -39,12 +39,12 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   this_00 = local_14;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar13 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x4aa,0,iVar5,
-                                &DAT_007a4ccc,s_HelpPanelTy__TTreeProc_007c3c28);
+    iVar13 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x4aa,0,iVar5,
+                                "%s","HelpPanelTy::TTreeProc");
     if (iVar13 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x4aa);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\helppan.cpp",0x4aa);
     return;
   }
   if (param_2 == '\0') {
@@ -68,7 +68,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
       *(undefined4 *)&local_14->field_0x30 = local_14->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)**(undefined4 **)PTR_00802a30)(&local_14->field_0x18);
+        (**(code **)PTR_00802a30->field_0000)(&local_14->field_0x18);
       }
     }
   }

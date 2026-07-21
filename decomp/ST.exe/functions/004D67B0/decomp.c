@@ -27,12 +27,12 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,0x52d,0,errorCode,
-                               &DAT_007a4ccc,s_TLOBaseTy__SetActivity_007ac8d0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_embryo.cpp",0x52d,0,errorCode,
+                               "%s","TLOBaseTy::SetActivity");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,0x52e);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Artem\\TLO_embryo.cpp",0x52e);
   }
   return;
 }

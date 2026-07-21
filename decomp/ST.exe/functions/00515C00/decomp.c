@@ -29,12 +29,12 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x425,0,iVar3,&DAT_007a4ccc
-                               ,s_HelpPanelTy__DrawDescription_007c3bcc);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x425,0,iVar3,"%s"
+                               ,"HelpPanelTy::DrawDescription");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x425);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x425);
     return;
   }
   if (param_2 != 10000) {
@@ -69,7 +69,7 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
       pcVar8 = pcVar8 + 1;
     }
     ccFntTy::FormIndentText
-              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,s________________007c21d8,
+              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
     uVar6 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     CheckBkView(this_00,*param_1,uVar6);

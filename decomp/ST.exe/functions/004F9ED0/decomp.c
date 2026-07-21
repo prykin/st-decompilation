@@ -83,9 +83,9 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_0080168c + 0x1c))(0);
           }
-          if (DAT_00801690 != (int *)0x0) {
+          if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*DAT_00801690 + 0x18))(0);
+            (**(code **)(*(int *)PTR_00801690 + 0x18))(0);
           }
           if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
             OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
@@ -183,9 +183,9 @@ switchD_004f9f52_caseD_3:
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*DAT_0080168c + 0x1c))(0);
           }
-          if (DAT_00801690 != (int *)0x0) {
+          if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*DAT_00801690 + 0x18))(0);
+            (**(code **)(*(int *)PTR_00801690 + 0x18))(0);
           }
           if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
             OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
@@ -198,12 +198,12 @@ switchD_004f9f52_caseD_3:
         }
       }
       g_currentExceptionFrame = local_54.previous;
-      iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f,0,iVar3,
-                                 &DAT_007a4ccc,s_CPanelTy__SwitchCPanel_007c2284);
+      iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x40f,0,iVar3,
+                                 "%s","CPanelTy::SwitchCPanel");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x40f);
     }
   }
   return;

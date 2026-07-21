@@ -63,14 +63,14 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
       *(undefined1 *)puVar6 = 0x20;
     }
     pcVar5 = LoadResourceString(local_8,HINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,s___s_s__1_s_007c274c,local_c,pcVar5,_Dest);
+    wsprintfA((LPSTR)&DAT_0080f33a,"&%s%s\n&1%s",local_c,pcVar5,_Dest);
     iVar3 = param_1 + 0x40;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,iVar3,0x57,0x75,0x16);
     ccFntTy::WrTxt(pCVar2->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
     pbVar4 = (byte *)ccFntTy::CreateSurf(pCVar2->field_01C4,pCVar2->field_0194,0,iVar3,0x6d,0x75,0xe
                                          ,0);
     if (pbVar4 != (byte *)0x0) {
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c2744,(uint)(ushort)pCVar2->field_0C34);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%06d",(uint)(ushort)pCVar2->field_0C34);
       if (pCVar2->field_0BF5 == CASE_38) {
         iVar7 = 1;
       }
@@ -85,10 +85,10 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x47,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintMineInf_007c2728);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x47,0,iVar3,"%s",
+                             "CPanelTy::PaintMineInf");
   if (iVar7 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x47);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x47);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

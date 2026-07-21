@@ -42,10 +42,10 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,AnonShape_005DE05
   this_00 = local_8;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x349,0,iVar6,&DAT_007a4ccc
-                               ,s_StartSystemTy__ChatMessage_007cd86c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x349,0,iVar6,"%s"
+                               ,"StartSystemTy::ChatMessage");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_Start_startsys_cpp_007cd718,0x349);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\startsys.cpp",0x349);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

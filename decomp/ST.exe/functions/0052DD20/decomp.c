@@ -4,9 +4,13 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
-   PopUpTy::GetMessage */
+   PopUpTy::GetMessage
 
-undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=0052DD20; family_names=PopUpTy::GetMessage; ret4=2;
+   direct_offsets={10:1,14:4,18:4,1c:0} */
+
+int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
 
 {
   code *pcVar1;
@@ -18,15 +22,14 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
   uint *puVar6;
   DWORD DVar7;
   char *resourceString;
-  undefined4 uVar8;
-  int iVar9;
-  uint uVar10;
+  int iVar8;
+  uint uVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_00;
-  int iVar11;
-  uint uVar12;
+  int iVar10;
+  uint uVar11;
   InternalExceptionFrame local_5c;
   PopUpTy *local_18;
   int local_14;
@@ -41,20 +44,19 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
   this_00 = local_18;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x100,0,iVar2,&DAT_007a4ccc,
-                               s_PopUpTy__GetMessage_007c7040);
-    if (iVar9 != 0) {
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x100,0,iVar2,"%s",
+                               "PopUpTy::GetMessage");
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0x100);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\mpopup.cpp",0x100);
     return 0xffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x10)) {
-  case 0:
-    uVar12 = (uint)DAT_00807347;
+  switch(message->id) {
+  case MESS_ID_NONE:
+    uVar11 = (uint)DAT_00807347;
     DVar7 = FUN_006e51b0(0x807620);
-    if (((uVar12 * -1000 + 3000) * (3 - uVar12) < DVar7 - this_00->field_009D) ||
+    if (((uVar11 * -1000 + 3000) * (3 - uVar11) < DVar7 - this_00->field_009D) ||
        ((int)(uint)DAT_00807346 < *(int *)(this_00->field_0098 + 8))) {
       DVar7 = FUN_006e51b0(0x807620);
       this_00->field_009D = DVar7;
@@ -89,27 +91,27 @@ LAB_0052e184:
             FUN_006b3af0(DAT_008075a8,*puVar6);
           }
           else {
-            iVar9 = this_00->field_0098;
-            if (local_14 < *(int *)(iVar9 + 8)) {
-              iVar11 = *(int *)(*(int *)(iVar9 + 0x14) + local_c + (int)puVar6);
+            iVar8 = this_00->field_0098;
+            if (local_14 < *(int *)(iVar8 + 8)) {
+              iVar10 = *(int *)(*(int *)(iVar8 + 0x14) + local_c + (int)puVar6);
             }
             else {
-              iVar11 = 0;
+              iVar10 = 0;
             }
-            if (iVar11 == 0) goto LAB_0052e184;
-            if (local_14 < *(int *)(iVar9 + 8)) {
-              resourceString = *(char **)(*(int *)(iVar9 + 0x14) + local_c + (int)puVar6);
+            if (iVar10 == 0) goto LAB_0052e184;
+            if (local_14 < *(int *)(iVar8 + 8)) {
+              resourceString = *(char **)(*(int *)(iVar8 + 0x14) + local_c + (int)puVar6);
             }
             else {
               resourceString = (char *)0x0;
             }
-            uVar10 = FUN_00711110(this_00->field_0094,resourceString);
-            uVar12 = this_00->field_0090->field_0004;
-            if ((int)uVar12 <= (int)uVar10) {
-              uVar10 = uVar12;
+            uVar9 = FUN_00711110(this_00->field_0094,resourceString);
+            uVar11 = this_00->field_0090->field_0004;
+            if ((int)uVar11 <= (int)uVar9) {
+              uVar9 = uVar11;
             }
-            puVar6[0xf] = uVar10;
-            FUN_006b2800((int)DAT_008075a8,*puVar6,uVar10,0x13);
+            puVar6[0xf] = uVar9;
+            FUN_006b2800((int)DAT_008075a8,*puVar6,uVar9,0x13);
             Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar6,0xffffffff,0xd,local_10);
             Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar6);
           }
@@ -121,7 +123,7 @@ LAB_0052e184:
       }
     }
     break;
-  case 2:
+  case MESS_ID_CREATE:
     pcVar3 = (ccFntTy *)thunk_FUN_0052cce0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     this_00->field_0094 = pcVar3;
     pcVar3->field_007E = 1;
@@ -129,24 +131,24 @@ LAB_0052e184:
     pcVar3->field_0x9e = DAT_007c6ff0;
     iVar2 = 1;
     puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
-    uVar12 = FUN_006b4fe0(DAT_0080679c);
+    uVar11 = FUN_006b4fe0(DAT_0080679c);
     pAVar4 = (AnonPointee_PopUpTy_0090 *)
              FUN_006b50c0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,
-                          (uint)*(ushort *)(DAT_0080679c + 0xe),uVar12,puVar5,iVar2);
+                          (uint)*(ushort *)(DAT_0080679c + 0xe),uVar11,puVar5,iVar2);
     this_00->field_0090 = pAVar4;
-    uVar12 = pAVar4->field_0014;
-    if (uVar12 == 0) {
-      uVar12 = ((uint)(ushort)pAVar4->field_000E * pAVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+    uVar11 = pAVar4->field_0014;
+    if (uVar11 == 0) {
+      uVar11 = ((uint)(ushort)pAVar4->field_000E * pAVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                pAVar4->field_0008;
     }
     puVar5 = (undefined4 *)FUN_006b4fa0((int)pAVar4);
-    for (uVar10 = uVar12 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+    for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar5 = 0x89898989;
       puVar5 = puVar5 + 1;
     }
-    uVar10 = 0x1e;
+    uVar9 = 0x1e;
     local_10 = 0xf;
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+    for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
       *(undefined1 *)puVar5 = 0x89;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
@@ -154,10 +156,10 @@ LAB_0052e184:
     do {
       FUN_006b2330((uint)DAT_008075a8,puVar6,8,0x405c22,puVar6[0xf],0x13,(uint)this_00);
       FUN_006b1bd0((int)DAT_008075a8,*puVar6);
-      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar6,0xffffffff,0xd,uVar10);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar6,0xffffffff,0xd,uVar9);
       FUN_006b3af0(DAT_008075a8,*puVar6);
       puVar6 = puVar6 + 1;
-      uVar10 = uVar10 + 0x13;
+      uVar9 = uVar9 + 0x13;
       local_10 = local_10 - 1;
     } while (local_10 != 0);
     puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -166,7 +168,7 @@ LAB_0052e184:
     this_00->field_009D = DVar7;
     g_popUp_008016D8 = this_00;
     break;
-  case 3:
+  case MESS_SHARED_0003:
     g_popUp_008016D8 = (PopUpTy *)0x0;
     puVar6 = &local_18->field_0018;
     iVar2 = 0xf;
@@ -193,10 +195,10 @@ LAB_0052e184:
       this_00->field_0098 = 0;
     }
     break;
-  case 5:
+  case MESS_SHARED_0005:
     local_10 = 0;
     iVar2 = -0x18 - (int)local_18;
-    uVar12 = 0x1e;
+    uVar11 = 0x1e;
     puVar6 = &local_18->field_0018;
     local_14 = 0xf;
     local_c = iVar2;
@@ -204,25 +206,25 @@ LAB_0052e184:
       if (*puVar6 != 0xffffffff) {
         if ((int)local_10 < *(int *)(this_00->field_0098 + 8)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar9 = *(int *)(*(int *)(this_00->field_0098 + 0x14) + iVar2 + (int)puVar6);
+          iVar8 = *(int *)(*(int *)(this_00->field_0098 + 0x14) + iVar2 + (int)puVar6);
         }
         else {
-          iVar9 = 0;
+          iVar8 = 0;
         }
-        if (iVar9 != 0) {
-          Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar6,0xffffffff,0xd,uVar12);
+        if (iVar8 != 0) {
+          Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar6,0xffffffff,0xd,uVar11);
           iVar2 = local_c;
         }
       }
       local_10 = local_10 + 1;
       puVar6 = puVar6 + 1;
-      uVar12 = uVar12 + 0x13;
+      uVar11 = uVar11 + 0x13;
       local_14 = local_14 + -1;
     } while (local_14 != 0);
     local_14 = 0;
   }
   g_currentExceptionFrame = local_5c.previous;
-  uVar8 = FUN_006e5fd0();
-  return uVar8;
+  iVar2 = FUN_006e5fd0(this_00,message);
+  return iVar2;
 }
 

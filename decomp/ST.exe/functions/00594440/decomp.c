@@ -3,20 +3,25 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
-   ComboTy::GetMessage */
+   ComboTy::GetMessage
 
-undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00594440; family_names=ComboTy::GetMessage; ret4=2;
+   direct_offsets={10:1,14:4,18:3,1c:0} */
+
+int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
 
 {
   undefined1 uVar1;
-  AnonPointee_ComboTy_0104 *pAVar2;
-  code *pcVar3;
+  STMessageId SVar2;
+  AnonPointee_ComboTy_0104 *pAVar3;
+  code *pcVar4;
   ComboTy *this_00;
-  int errorCode;
-  undefined4 *puVar4;
-  undefined4 uVar5;
-  int iVar6;
-  uint uVar7;
+  int iVar5;
+  undefined4 *puVar6;
+  int iVar7;
+  uint uVar8;
+  uint uVar9;
   InternalExceptionFrame local_50;
   ComboTy *local_c;
   uint local_8;
@@ -24,90 +29,84 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
-  if (errorCode != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,0xb7,0,errorCode,&DAT_007a4ccc
-                               ,s_ComboTy__GetMessage_007cbf58);
-    if (iVar6 != 0) {
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",0xb7,0,iVar5,"%s",
+                               "ComboTy::GetMessage");
+    if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_combo_cpp_007cbeec,0xb7);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\combo.cpp",0xb7);
     return 0xffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar7 = *(uint *)(param_1 + 0x10);
-  if (uVar7 < 0x10000) {
-    if (uVar7 == 0xffff) {
-      *(undefined4 *)(param_1 + 0x18) = local_c->field_00CC;
+  SVar2 = message->id;
+  if (SVar2 < 0x10000) {
+    if (SVar2 == MESS_COMBOTY_FFFF) {
+      message->arg1 = (STMessageArg)local_c->field_00CC;
       goto cf_common_exit_00594615;
     }
-    switch(uVar7) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    case 2:
-      InitCombo(local_c,*(undefined4 **)(param_1 + 0x14));
+    switch(SVar2) {
+    case MESS_ID_CREATE:
+      InitCombo(local_c,(message->arg0).ptr);
       break;
-    case 3:
+    case MESS_SHARED_0003:
       DoneCombo(local_c);
       break;
-    case 5:
+    case MESS_SHARED_0005:
       FUN_006b35d0(DAT_008075a8,local_c->field_0108);
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    case 0x62:
-      if ((((int)local_c->field_00EC <= (int)(uint)*(ushort *)(param_1 + 0x18)) &&
-          ((int)(uint)*(ushort *)(param_1 + 0x18) < (int)(local_c->field_00F4 + local_c->field_00EC)
-          )) && ((int)local_c->field_00F0 <= (int)(uint)*(ushort *)(param_1 + 0x1a))) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((int)(local_c->field_00F8 + local_c->field_00F0) <=
-            (int)(uint)*(ushort *)(param_1 + 0x1a)) {
-          thunk_FUN_005943f0((STJellyGunC *)local_c);
+    case MESS_TRACKBARCLASSTY_0062:
+      uVar9 = (uint)(message->arg1).words.low;
+      uVar8 = (uint)(message->arg1).words.high;
+      if (((local_c->field_00EC <= (int)uVar9) &&
+          ((int)uVar9 < local_c->field_00F4 + local_c->field_00EC)) &&
+         (local_c->field_00F0 <= (int)uVar8)) {
+        if (local_c->field_00F8 + local_c->field_00F0 <= (int)uVar8) {
+          thunk_FUN_005943f0((AnonShape_005943F0_068A3707 *)local_c);
         }
         break;
       }
-    case 100:
+    case MESS_SHARED_0064:
 switchD_005944a8_caseD_64:
-      thunk_FUN_005943f0((STJellyGunC *)local_c);
+      thunk_FUN_005943f0((AnonShape_005943F0_068A3707 *)local_c);
     }
 cf_common_exit_00594615:
     g_currentExceptionFrame = local_50.previous;
-    uVar5 = FUN_006e5fd0();
-    return uVar5;
+    iVar5 = FUN_006e5fd0(this_00,message);
+    return iVar5;
   }
-  switch(uVar7) {
+  switch(SVar2) {
   case 0x10001:
-    pAVar2 = local_c->field_0104;
-    local_8 = pAVar2->field_0014;
+    pAVar3 = local_c->field_0104;
+    local_8 = pAVar3->field_0014;
     if (local_8 == 0) {
-      local_8 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar2->field_0008;
+      local_8 = ((uint)(ushort)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+                pAVar3->field_0008;
     }
     uVar1 = local_c->field_00D8;
-    puVar4 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
-    for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar4 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-      puVar4 = puVar4 + 1;
+    puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar3);
+    for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *puVar6 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+      puVar6 = puVar6 + 1;
     }
-    for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar4 = uVar1;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *(undefined1 *)puVar6 = uVar1;
+      puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_00BC = *(undefined4 *)(param_1 + 0x14);
+    this_00->field_00BC = message->arg0;
     FUN_006e5fe0(this_00,(undefined4 *)&this_00->field_0xa8);
-    pAVar2 = this_00->field_0104;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    pAVar3 = this_00->field_0104;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_00FC,0,*(ushort *)(param_1 + 0x18) + 5,
-               *(ushort *)(param_1 + 0x1a) + 5,(byte *)pAVar2,0,0,0,pAVar2->field_0004,
-               pAVar2->field_0008);
+              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_00FC,0,(message->arg1).words.low + 5,
+               (message->arg1).words.high + 5,(byte *)pAVar3,0,0,0,pAVar3->field_0004,
+               pAVar3->field_0008);
     goto cf_common_exit_00594615;
   case 0x10002:
     if (local_c->field_0110 == 0) goto cf_common_exit_00594615;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x10000:
-    local_c->field_009C = *(undefined4 *)(param_1 + 0x14);
+    local_c->field_009C = message->arg0;
     break;
   case 0x10003:
     break;

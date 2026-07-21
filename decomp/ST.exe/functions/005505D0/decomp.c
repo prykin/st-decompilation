@@ -51,7 +51,7 @@ void __thiscall FUN_005505d0(void *this,int param_1,int *param_2)
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
               pcVar1 = LoadResourceString(0x426d,HINSTANCE_00807618);
-              wsprintfA(local_10c,s__s__s_007c411c,pcVar1,puVar5);
+              wsprintfA(local_10c,"%s %s",pcVar1,puVar5);
               if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                 thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);
               }

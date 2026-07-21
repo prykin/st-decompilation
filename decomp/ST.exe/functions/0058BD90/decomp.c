@@ -46,7 +46,7 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   }
   param_1->field_004B = sVar5;
   param_1->field_005F = sVar5;
-  iVar2 = thunk_FUN_0041c710((int)param_1);
+  iVar2 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
   puVar1 = &param_1->field_0x1d5;
   if (iVar2 == 0) {
     iVar2 = 0;
@@ -153,7 +153,7 @@ switchD_0058bec9_caseD_2:
   iVar2 = thunk_FUN_004acd30(&param_1->field_0x1d5,'\b');
   iVar4 = thunk_FUN_004ac910(&param_1->field_0x1d5,'\b');
   if (iVar2 + -1 <= iVar4) {
-    thunk_FUN_0058bb50((STJellyGunC *)param_1);
+    thunk_FUN_0058bb50(param_1);
   }
 switchD_0058bec9_caseD_0:
   sVar5 = param_1->field_0041;
@@ -222,7 +222,7 @@ LAB_0058c38c:
     param_1->field_0231 = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar1,0xe);
     thunk_FUN_004ad5e0((int)puVar1);
-    STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_00806774,s_explsna_007cbaac,0x1d);
+    STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_00806774,"explsna",0x1d);
     STT3DSprC::StartShow((STT3DSprC *)puVar1,8,PTR_00802a38->field_00E4);
     param_1->field_0045 = param_1->field_0045 + 0x12;
     param_1->field_0231 = 6;

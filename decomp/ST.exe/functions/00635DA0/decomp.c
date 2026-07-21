@@ -49,9 +49,9 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,
                               iVar5,&param_2,&param_3), uVar3 = param_1, -1 < param_1)))) &&
         ((param_1 < 5 &&
-         ((((-1 < param_2 && (param_2 < (int)pVVar2->field_0030)) &&
+         ((((-1 < param_2 && (param_2 < pVVar2->field_0030)) &&
            (uVar3 = (&DAT_0079aed0)[param_1] + param_3, -1 < (int)uVar3)) &&
-          (((int)uVar3 < (int)pVVar2->field_0034 && (pVVar2->field_004C != 0)))))))) &&
+          (((int)uVar3 < pVVar2->field_0034 && (pVVar2->field_004C != 0)))))))) &&
        (uVar3 = (uint)*(byte *)(uVar3 * pVVar2->field_0030 + pVVar2->field_004C + param_2),
        uVar3 == 0)) {
       return 0;

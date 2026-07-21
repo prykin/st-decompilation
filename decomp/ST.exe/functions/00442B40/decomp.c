@@ -11,7 +11,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   ushort uVar1;
   DArrayTy *pDVar2;
   code *pcVar3;
-  STFishC *this;
+  STGameObjC *this;
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
@@ -29,7 +29,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   int local_2c [4];
   short local_1c;
   uint local_18;
-  STFishC *local_14;
+  STGameObjC *local_14;
   int local_10;
   undefined4 local_c;
   short local_8;
@@ -41,19 +41,20 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_2c[3] = 0x5e;
   objPtr = (char)param_1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  this = (STFishC *)GetObjPtr(in_ECX,objPtr,param_2,CASE_1);
+  this = GetObjPtr(in_ECX,objPtr,param_2,CASE_1);
   local_14 = this;
-  uVar4 = (*this->vtable->vfunc_2C)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  uVar4 = (**(code **)&this->vtable->field_0x2c)();
   local_c = 0;
   local_18 = uVar4;
-  if (this == (STFishC *)0x0) {
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x246d,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC___SubMDObject_inva_007a80dc);
+  if (this == (STGameObjC *)0x0) {
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x246d,0,0,"%s",
+                               "STAllPlayersC::_SubMDObject invalid input data");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x246e);
   }
   if ((uVar4 != 0x3b) && (uVar4 != 0x60)) {
@@ -64,9 +65,10 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         pDVar2 = *(DArrayTy **)(local_10 + 0x7f4e2f + objPtr * 0xa62);
         uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
-          STFishC::sub_004162B0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
+          STFishC::sub_004162B0((STFishC *)this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8)
+          ;
           uVar4 = 0;
-          local_1c = *(short *)&this->field_0x32;
+          local_1c = this->field_0032;
           this = local_14;
           if (uVar1 != 0) {
             do {
@@ -90,9 +92,9 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     } while (local_10 < 0x10);
     return local_c;
   }
-  STFishC::sub_004162B0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
-  local_1c = *(short *)&this->field_0x32;
-  local_14 = (STFishC *)0x4;
+  STFishC::sub_004162B0((STFishC *)this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
+  local_1c = this->field_0032;
+  local_14 = (STGameObjC *)0x4;
   param_1 = &g_playerRuntime[objPtr].field6_0xf;
   do {
     pDVar2 = (DArrayTy *)*param_1;
@@ -115,8 +117,8 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
       }
     }
     param_1 = param_1 + 1;
-    local_14 = (STFishC *)((int)local_14 + -1);
-  } while (local_14 != (STFishC *)0x0);
+    local_14 = (STGameObjC *)((int)local_14 + -1);
+  } while (local_14 != (STGameObjC *)0x0);
   return local_c;
 }
 

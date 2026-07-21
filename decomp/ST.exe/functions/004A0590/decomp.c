@@ -12,7 +12,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
 
 {
   undefined1 *puVar1;
-  short *psVar2;
+  undefined1 *puVar2;
   code *pcVar3;
   STGroupBoatC *pSVar4;
   int iVar5;
@@ -55,32 +55,34 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   if (iVar5 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
       puVar1 = &local_18->field_0x300;
-      puVar10 = (undefined4 *)&local_18->field_0x89;
+      puVar10 = &local_18->field_0089;
       for (iVar5 = 0x15; iVar5 != 0; iVar5 = iVar5 + -1) {
         *puVar10 = 0;
         puVar10 = puVar10 + 1;
       }
       local_18->field_0065 = 0;
-      psVar2 = &local_18->field_0302;
-      local_18->field_02FA = local_18->field_01C1;
+      puVar2 = &local_18->field_0x302;
+      *(undefined2 *)&local_18->field_0x2fa = *(undefined2 *)&local_18->field_0x1c1;
       *(undefined2 *)&local_18->field_0x2fc = local_18->field_01C3;
       *(undefined2 *)&local_18->field_0x2f8 = *(undefined2 *)&local_18->field_0x1bf;
-      thunk_FUN_0049a500(local_18,&local_18->field_02FE,(undefined2 *)puVar1,psVar2);
+      thunk_FUN_0049a500(local_18,(undefined2 *)&local_18->field_0x2fe,(undefined2 *)puVar1,
+                         (undefined2 *)puVar2);
       local_10 = (DArrayTy *)
                  Way3DGrpGetDistrPoint
                            (pSVar4,(AnonShape_00413AF0_B6B4EE9A *)pSVar4->field_0029,
-                            (int)pSVar4->field_02FE,(int)*(short *)puVar1,(int)*psVar2,
-                            (int)*(short *)&pSVar4->field_0x2f8,(int)pSVar4->field_02FA,
-                            (int)*(short *)&pSVar4->field_0x2fc);
+                            (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
+                            (int)*(short *)puVar2,(int)*(short *)&pSVar4->field_0x2f8,
+                            (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc)
+      ;
       if (local_10 == (DArrayTy *)0x0) {
         return (uint *)0x0;
       }
       array = (DArrayTy *)
               Way3DGrpGetDistrPoint
                         (pSVar4,(AnonShape_00413AF0_B6B4EE9A *)pSVar4->field_0029,
-                         (int)*(short *)&pSVar4->field_0x2f8,(int)pSVar4->field_02FA,
-                         (int)*(short *)&pSVar4->field_0x2fc,(int)pSVar4->field_02FE,
-                         (int)*(short *)puVar1,(int)*psVar2);
+                         (int)*(short *)&pSVar4->field_0x2f8,(int)*(short *)&pSVar4->field_0x2fa,
+                         (int)*(short *)&pSVar4->field_0x2fc,(int)*(short *)&pSVar4->field_0x2fe,
+                         (int)*(short *)puVar1,(int)*(short *)puVar2);
       local_1c = array;
       if (array == (DArrayTy *)0x0) {
         DArrayDestroy(local_10);
@@ -100,7 +102,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd2a);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xd2a);
             }
             local_38 = local_24;
             local_36 = local_22;
@@ -129,7 +131,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd3d);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xd3d);
             }
             iVar5 = thunk_FUN_0045ff10((int)pSVar6);
             if (iVar5 == 8) break;
@@ -148,12 +150,12 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_80.previous;
     if (iVar5 != -0x5001fff7) {
-      iVar8 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd46,0,iVar5,&DAT_007a4ccc
-                                 ,s_STGroupBoatC__Scout_007ac178);
+      iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xd46,0,iVar5,"%s"
+                                 ,"STGroupBoatC::Scout");
       if (iVar8 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd47);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xd47);
       return (uint *)0xffffffff;
     }
   }

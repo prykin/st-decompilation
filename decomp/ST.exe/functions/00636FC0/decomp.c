@@ -1,5 +1,14 @@
 
-int __fastcall FUN_00636fc0(AnonShape_00636FC0_24F8974B *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260.
+   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260];
+   agreed_this_calls=1; incoming_this_accesses=3; incoming_edx_uses=0;
+   incoming_stack_parameter_uses=0; direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0;
+   attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
+          (AnonReceiver_00636260 *this)
 
 {
   int iVar1;
@@ -12,7 +21,7 @@ int __fastcall FUN_00636fc0(AnonShape_00636FC0_24F8974B *param_1)
   int local_c;
   int local_8;
 
-  iVar4 = param_1->field_000C;
+  iVar4 = *(int *)&this->field_0xc;
   sVar2 = (short)(iVar4 >> 0x1f);
   if (iVar4 < 0) {
     iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar2) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f))
@@ -22,7 +31,7 @@ int __fastcall FUN_00636fc0(AnonShape_00636FC0_24F8974B *param_1)
     iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar2) -
                         (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
   }
-  iVar5 = param_1->field_0010;
+  iVar5 = *(int *)&this->field_0x10;
   sVar2 = (short)(iVar5 >> 0x1f);
   if (iVar5 < 0) {
     iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
@@ -32,7 +41,7 @@ int __fastcall FUN_00636fc0(AnonShape_00636FC0_24F8974B *param_1)
     iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
                         (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
   }
-  iVar1 = param_1->field_0014;
+  iVar1 = *(int *)&this->field_0x14;
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     local_c = (short)(((short)(iVar1 / 200) + sVar2) - (short)((longlong)iVar1 * 0x51eb851f >> 0x3f)
@@ -69,14 +78,14 @@ int __fastcall FUN_00636fc0(AnonShape_00636FC0_24F8974B *param_1)
     if (local_10 < 0) {
       return local_8;
     }
-    if ((int)pVVar3->field_0030 <= local_10) {
+    if (pVVar3->field_0030 <= local_10) {
       return local_8;
     }
     local_14 = (&DAT_0079aed0)[local_c] + local_14;
     if (local_14 < 0) {
       return local_8;
     }
-    if ((int)pVVar3->field_0034 <= local_14) {
+    if (pVVar3->field_0034 <= local_14) {
       return local_8;
     }
     if (pVVar3->field_004C == 0) {

@@ -39,12 +39,12 @@ STManRub3C::AddNewDock
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x1c8,0,iVar3,&DAT_007a4ccc,
-                               s_STManRub3C__AddNewDock_007d1448);
+    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x1c8,0,iVar3,"%s",
+                               "STManRub3C::AddNewDock");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x1ca);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x1ca);
     return 0xffff;
   }
   if (*(int *)(&local_8->field_0x50 + param_1 * 4) == 0) {

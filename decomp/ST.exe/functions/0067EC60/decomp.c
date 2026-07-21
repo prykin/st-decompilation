@@ -2,7 +2,7 @@
 undefined * __cdecl FUN_0067ec60(undefined4 param_1)
 
 {
-  wsprintfA(&DAT_00848890,s___PARAM___03d_007d55c8,param_1);
+  wsprintfA(&DAT_00848890,"__PARAM__%03d",param_1);
   return &DAT_00848890;
 }
 

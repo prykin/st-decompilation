@@ -104,6 +104,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final Pattern CASE_LABEL = Pattern.compile("(?m)^\\s*case\\s+[^:]+:");
     private static final Pattern ASSIGNMENT = Pattern.compile(
         "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*([^;\\r\\n]{1,500});");
+    private static final Pattern DIRECT_THIS_SPILL = Pattern.compile(
+        "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*" +
+        "(?:\\(\\s*[A-Za-z_$][A-Za-z0-9_$:]*\\s*\\*\\s*\\)\\s*)?this\\s*;");
     private static final Pattern HEX_CONSTANT = Pattern.compile("0[xX]([0-9A-Fa-f]+)");
     private static final Pattern PLAYER_STRIDE_TERM = Pattern.compile(
         "(?i)(?:0x0*a62|2658)\\b");
@@ -123,6 +126,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int pointerFieldAliases;
     private int redirectedAliasAccesses;
     private int globalRecordTypeHints;
+    private int ownerThisSpillRepairs;
 
     @Override
     protected void run() throws Exception {
@@ -177,7 +181,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ", raw accesses=" + rawAccesses + ", nested=" + nestedPointerAccesses +
             ", pointer aliases=" + pointerFieldAliases + ", alias accesses=" +
             redirectedAliasAccesses + ", global-record hints=" +
-            globalRecordTypeHints + ", targets=" + analysis.targets.size() +
+            globalRecordTypeHints + ", owner-this spill repairs=" +
+            ownerThisSpillRepairs + ", targets=" + analysis.targets.size() +
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
             ", anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count() +
             ", failures=" + failures.size());
@@ -199,6 +204,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         Map<String, Variable> locals = localVariables(function);
         Set<String> stableStorages = stableStorages(locals);
         Map<String, TargetEvidence> functionTargets = new LinkedHashMap<>();
+        int ownerSpillHints = collectOwnerThisSpills(function, c, locals,
+            stableStorages, functionTargets);
         collectNestedAccesses(function, c, locals, stableStorages, functionTargets);
         Map<String, PointerAlias> aliases = collectPointerAliases(function, c, locals,
             stableStorages, functionTargets);
@@ -241,7 +248,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         int recordHints = collectGlobalRecordTypeEvidence(function, c, locals,
             stableStorages, functionTargets);
         globalRecordTypeHints += recordHints;
-        if (!hasRawAccess && recordHints == 0) return;
+        if (!hasRawAccess && recordHints == 0 && ownerSpillHints == 0) return;
         // A typed helper call can identify sibling locals that are not themselves
         // dereferenced in this particular function (for example, three DArray
         // pointers unpacked from one 12-byte element). Keep them ephemeral until
@@ -258,6 +265,54 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (target.typeEvidence.isEmpty() || targets.containsKey(target.key)) continue;
             targets.put(target.key, target);
         }
+    }
+
+    /**
+     * Repair a persistent local that an earlier pointer-shape pass typed as a base
+     * class solely because it was passed to a base implementation.  A direct
+     * assignment from this has no base adjustment, so inside a named method its
+     * most-derived owner is the safer persistent type.  The call expression can
+     * still apply the ordinary implicit base-pointer conversion.
+     *
+     * This is deliberately restricted to script-owned locals.  User/imported
+     * types, anonymous owners, adjusted multiple-inheritance pointers and
+     * transient decompiler SSA symbols remain untouched.
+     */
+    private int collectOwnerThisSpills(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        String ownerPath = ownerType(function);
+        if (ownerPath.isBlank() || ownerPath.contains("/PointerShapes/") ||
+                leaf(ownerPath).startsWith("Anon")) return 0;
+        DataType ownerType = dataTypes.getDataType(ownerPath);
+        if (!(ownerType instanceof Structure owner)) return 0;
+
+        int result = 0;
+        Set<String> seen = new HashSet<>();
+        Matcher matcher = DIRECT_THIS_SPILL.matcher(c);
+        while (matcher.find()) {
+            String name = matcher.group(1);
+            if (!seen.add(name)) continue;
+            Variable local = locals.get(name);
+            if (local == null || local instanceof Parameter) continue;
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, name);
+            if (target == null || !target.scriptOwned || !target.databaseBacked ||
+                    target.expectedSource.equals(SourceType.USER_DEFINED.toString()) ||
+                    target.expectedSource.equals(SourceType.IMPORTED.toString())) continue;
+            Structure current = structureFromPointer(target.expectedType);
+            if (current == null || current.getPathName().equals(ownerPath) ||
+                    owner.getLength() < current.getLength()) continue;
+
+            target.directThisOwner = ownerPath;
+            String specification = "pointer:" + ownerPath;
+            target.typeEvidence.merge(specification, 100, Integer::sum);
+            target.typeSites.add(addr(function.getEntryPoint()) + " direct this spill " +
+                name + " => " + specification);
+            result++;
+            ownerThisSpillRepairs++;
+        }
+        return result;
     }
 
     private void markDiscriminatedPayloads(Function function, String c,
@@ -878,6 +933,16 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "typed-call evidence is variant-specific and must not become one persistent type");
 
         String currentStructure = pointedStructure(target.expectedType);
+        if (!target.directThisOwner.isBlank() && target.scriptOwned &&
+                target.databaseBacked && !target.directThisOwner.equals(currentStructure)) {
+            Structure owner = structureFromPointer("pointer:" + target.directThisOwner);
+            Structure current = structureFromPointer(target.expectedType);
+            if (owner != null && current != null && owner.getLength() >= current.getLength())
+                return new TargetDecision(true, false, owner.getPathName(), "high",
+                    "script-owned direct this spill restored from base " +
+                    current.getPathName() + " to most-derived method owner " +
+                    owner.getPathName());
+        }
         if (!currentStructure.isBlank()) return new TargetDecision(false, false,
             currentStructure, "existing", "target already has a structure pointer type");
 
@@ -1405,6 +1470,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             "pointer_field_aliases=" + pointerFieldAliases,
             "redirected_alias_accesses=" + redirectedAliasAccesses,
             "global_record_type_hints=" + globalRecordTypeHints,
+            "owner_this_spill_repairs=" + ownerThisSpillRepairs,
             "targets=" + analysis.targets.size(),
             "target_apply=" + analysis.targets.stream().filter(row -> row.apply).count(),
             "existing_type_targets=" + analysis.targets.stream()
@@ -1418,7 +1484,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "one anonymous type per persistent multi-field target",
             "role_safety=locals in functions with unsettled type propagation are never auto-typed; " +
                 "use STPointerRoleRepairAnalyzer/Applier for prior script-owned assignments",
-            "manual_safety=USER_DEFINED/IMPORTED and concrete non-generic target types are never auto-replaced"
+            "manual_safety=USER_DEFINED/IMPORTED targets are never auto-replaced; concrete " +
+                "types change only for script-owned unadjusted direct-this spills"
         );
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
@@ -1461,6 +1528,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final Set<String> typeSites = new TreeSet<>();
         final Set<String> functions = new TreeSet<>();
         boolean discriminatedPayload;
+        String directThisOwner = "";
         int accessCount, dArrayIndexEvidence;
         TargetEvidence(String key, String kind, Address functionAddress, String functionName,
                 String name, String locator, String expectedType, String expectedSource,

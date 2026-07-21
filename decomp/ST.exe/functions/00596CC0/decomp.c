@@ -18,7 +18,7 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   int iVar2;
   FSGSTy *this_01;
   FSGSTy *pFVar3;
-  undefined1 *this_02;
+  undefined4 *this_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   FSGSTy *extraout_ECX;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -34,12 +34,12 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1c8,0,errorCode,
-                               &DAT_007a4ccc,s_FSGSTy__PaintFSGS_007cc0bc);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x1c8,0,errorCode,
+                               "%s","FSGSTy::PaintFSGS");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1c8);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x1c8);
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
@@ -70,7 +70,7 @@ LAB_00596d58:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x22,0x72,0x2e1,0x14c,
-               (undefined4 *)&this_00->field_1A5B->field_0x140);
+               &this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_4:
@@ -90,7 +90,7 @@ LAB_00596d7a:
   case CASE_6:
     if ((this_00->field_1F27 == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutChSlProc(this_01,(int)DAT_0080759c,0,0,0x13,0x5e,0x1bf,0x175,
-                  (undefined4 *)&this_00->field_1A5B->field_0x140);
+                  &this_00->field_1A5B->field_0140);
     }
     if (this_00->field_1F2B != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
@@ -100,7 +100,7 @@ LAB_00596d7a:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    this_02 = &this_00->field_1A5B->field_0x140;
+    this_02 = &this_00->field_1A5B->field_0140;
     OutTRGlProc((FSGSTy *)this_02,(int)DAT_0080759c,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
                 (StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
@@ -116,7 +116,7 @@ LAB_00596d8b:
     pFVar3 = this_01;
     if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutSGlProc(DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x199,0x5e,0x174,0x175,
-                 (int)&this_00->field_1A5B->field_0x140);
+                 (int)&this_00->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pFVar3 = extraout_ECX;
     }
@@ -130,7 +130,7 @@ LAB_00596d8b:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)pFVar3,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x13,0x5e,0x174,0x175,
-               (undefined4 *)&this_00->field_1A5B->field_0x140);
+               &this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_9:

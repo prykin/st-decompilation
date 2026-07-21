@@ -5,12 +5,12 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
   char cVar1;
   char *pcVar2;
 
-  pcVar2 = s_TV_NONE_007c4a98;
+  pcVar2 = "TV_NONE";
   if (param_1 == (undefined1 *)0x0) {
-    return s_TV_ONOFF_007c4a8c;
+    return "TV_ONOFF";
   }
   if (param_2 != 0) {
-    return s_TV_SWITCH_007c4a80;
+    return "TV_SWITCH";
   }
   switch(*param_1) {
   case 1:
@@ -19,316 +19,316 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
     if (param_1[1] != '\0') {
       switch(*(undefined4 *)(param_1 + 3)) {
       case 1:
-        return s_TV_SENTINEL_007c4a40;
+        return "TV_SENTINEL";
       case 2:
-        return s_TV_HUNTER_007c4a34;
+        return "TV_HUNTER";
       case 3:
-        return s_TV_CRUISER_007c4a24;
+        return "TV_CRUISER";
       case 4:
-        return s_TV_DCBOMBER_007c4a14;
+        return "TV_DCBOMBER";
       case 5:
-        return s_TV_MINELAYER_007c4a04;
+        return "TV_MINELAYER";
       case 6:
-        return s_TV_RAIDER1_007c49f4;
+        return "TV_RAIDER1";
       case 7:
-        return s_TV_REPPLATFORM_007c49e0;
+        return "TV_REPPLATFORM";
       case 8:
-        return s_TV_TRANSPORT1_007c49d0;
+        return "TV_TRANSPORT1";
       case 9:
-        return s_TV_CYBERWORM_007c49c0;
+        return "TV_CYBERWORM";
       case 10:
-        return s_TV_TERMINATOR_007c49a0;
+        return "TV_TERMINATOR";
       case 0xb:
-        return s_TV_LIBERATOR_007c48ec;
+        return "TV_LIBERATOR";
       case 0xc:
-        return s_TV_CONSTRPLATFORM1_007c4894;
+        return "TV_CONSTRPLATFORM1";
       case 0xd:
-        return s_TV_CYBERKILLER_007c4978;
+        return "TV_CYBERKILLER";
       case 0xe:
-        return s_TV_DESTROYER_007c4968;
+        return "TV_DESTROYER";
       case 0xf:
-        return s_TV_HCRUISER_007c4958;
+        return "TV_HCRUISER";
       case 0x10:
-        return s_TV_INVADER_007c4948;
+        return "TV_INVADER";
       case 0x11:
-        return s_TV_DEFENDER_007c4938;
+        return "TV_DEFENDER";
       case 0x12:
       case 0x27:
-        return s_TV_RAIDER2_007c4860;
+        return "TV_RAIDER2";
       case 0x13:
-        return s_TV_REPPOWPLATFORM_007c4920;
+        return "TV_REPPOWPLATFORM";
       case 0x14:
-        return s_TV_TRANSPORT2_007c4910;
+        return "TV_TRANSPORT2";
       case 0x15:
-        return s_TV_CYBERDOLPHIN_007c48fc;
+        return "TV_CYBERDOLPHIN";
       case 0x16:
-        return s_TV_PHANTOM_007c49b0;
+        return "TV_PHANTOM";
       case 0x17:
-        return s_TV_AVENGER_007c48dc;
+        return "TV_AVENGER";
       case 0x18:
-        return s_TV_CONSTRPLATFORM2_007c487c;
+        return "TV_CONSTRPLATFORM2";
       case 0x19:
-        return s_TV_CAPSULE_007c4520;
+        return "TV_CAPSULE";
       case 0x1a:
-        return s_TV_TRANSPORT3_007c4510;
+        return "TV_TRANSPORT3";
       case 0x1b:
-        return s_TV_SUPPLYSUB_007c44b8;
+        return "TV_SUPPLYSUB";
       case 0x1c:
-        return s_TV_PPROBE_007c44ac;
+        return "TV_PPROBE";
       case 0x1d:
-        return s_TV_REPLINISHER_007c4498;
+        return "TV_REPLINISHER";
       case 0x1e:
-        return s_TV_SHSSUB_007c4504;
+        return "TV_SHSSUB";
       case 0x1f:
-        return s_TV_DREDNOUGHT_007c44f4;
+        return "TV_DREDNOUGHT";
       case 0x20:
-        return s_TV_ESCORT_007c44e8;
+        return "TV_ESCORT";
       case 0x21:
-        return s_TV_ASSAULTER_007c44d8;
+        return "TV_ASSAULTER";
       case 0x22:
       case 0x28:
-        return s_TV_USUPPER_007c44c8;
+        return "TV_USUPPER";
       case 0x23:
-        return s_TV_GHOSTMAKER_007c4478;
+        return "TV_GHOSTMAKER";
       case 0x24:
-        return s_TV_EXPLORER_007c4488;
+        return "TV_EXPLORER";
       case 0x25:
-        return s_TV_STEALTHSCOUT_007c498c;
+        return "TV_STEALTHSCOUT";
       case 0x26:
-        return s_TV_FLAGWS_007c4870;
+        return "TV_FLAGWS";
       case 0x32:
         if (param_1[7] == '\x01') {
-          return s_TV_WSDOCKYARD_007c4820;
+          return "TV_WSDOCKYARD";
         }
-        return s_TV_BODOCKYARD_007c4810;
+        return "TV_BODOCKYARD";
       case 0x33:
         if (param_1[7] == '\x01') {
-          return s_TV_WSRDOCK_007c4800;
+          return "TV_WSRDOCK";
         }
-        return s_TV_BORDOCK_007c47f0;
+        return "TV_BORDOCK";
       case 0x34:
         if (param_1[7] == '\x01') {
-          return s_TV_WSMFACTORY_007c47e0;
+          return "TV_WSMFACTORY";
         }
-        return s_TV_BOMFACTORY_007c47d0;
+        return "TV_BOMFACTORY";
       case 0x35:
         if (param_1[7] == '\x01') {
-          return s_TV_WSREASLAB_007c47c0;
+          return "TV_WSREASLAB";
         }
-        return s_TV_BOREASLAB_007c47b0;
+        return "TV_BOREASLAB";
       case 0x36:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
         if (param_1[7] == '\x01') {
-          return s_TV_WSSONAR_007c4794;
+          return "TV_WSSONAR";
         }
-        return s_TV_BOSONAR_007c4784;
+        return "TV_BOSONAR";
       case 0x37:
         if (param_1[7] == '\x01') {
-          return s_TV_WSTELEPORT_007c4774;
+          return "TV_WSTELEPORT";
         }
-        return s_TV_BOTELEPORT_007c4764;
+        return "TV_BOTELEPORT";
       case 0x39:
         if (param_1[7] == '\x01') {
-          return s_TV_WSCMINE_007c4754;
+          return "TV_WSCMINE";
         }
-        return s_TV_BOCMINE_007c4744;
+        return "TV_BOCMINE";
       case 0x3a:
         if (param_1[7] == '\x01') {
-          return s_TV_WSGOLDPLANT_007c4710;
+          return "TV_WSGOLDPLANT";
         }
-        return s_TV_BOGOLDPLANT_007c46fc;
+        return "TV_BOGOLDPLANT";
       case 0x3b:
         if (param_1[7] == '\x01') {
-          return s_TV_WSDEPOT_007c46cc;
+          return "TV_WSDEPOT";
         }
-        return s_TV_BODEPOT_007c46bc;
+        return "TV_BODEPOT";
       case 0x3c:
         if (param_1[7] == '\x01') {
-          return s_TV_WSINFOCENTER_007c46a8;
+          return "TV_WSINFOCENTER";
         }
-        return s_TV_BOINFOCENTER_007c4694;
+        return "TV_BOINFOCENTER";
       case 0x3d:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
         if (param_1[7] == '\x01') {
-          return s_TV_WSDISPERSER_007c4680;
+          return "TV_WSDISPERSER";
         }
-        return s_TV_BODISPERSER_007c466c;
+        return "TV_BODISPERSER";
       case 0x3e:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
-        return s_TV_HFCANNON_007c465c;
+        return "TV_HFCANNON";
       case 0x3f:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
-        return s_TV_STOLP_007c4650;
+        return "TV_STOLP";
       case 0x40:
-        return s_TV_CCENTEREWS_007c4640;
+        return "TV_CCENTEREWS";
       case 0x41:
-        return s_TV_SHARKCTRL_007c4630;
+        return "TV_SHARKCTRL";
       case 0x42:
-        return s_TV_USGENERATOR_007c461c;
+        return "TV_USGENERATOR";
       case 0x43:
-        return s_TV_PSYCHOTRON_007c460c;
+        return "TV_PSYCHOTRON";
       case 0x44:
-        return s_TV_PLASMATRON_007c45fc;
+        return "TV_PLASMATRON";
       case 0x45:
-        return s_TV_TLS_007c45f4;
+        return "TV_TLS";
       case 0x46:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM2_007c45d8;
+          return "TV_SWIM2";
         }
-        return s_TV_LLASER_007c45cc;
+        return "TV_LLASER";
       case 0x47:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
-        return s_TV_CSCANNON_007c45bc;
+        return "TV_CSCANNON";
       case 0x48:
-        return s_TV_PSTATION_007c45ac;
+        return "TV_PSTATION";
       case 0x49:
-        return s_TV_CCENTERBO_007c459c;
+        return "TV_CCENTERBO";
       case 0x4a:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
-        return s_TV_HLASER_007c4590;
+        return "TV_HLASER";
       case 0x4b:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
-        return s_TV_ELP_007c4588;
+        return "TV_ELP";
       case 0x4c:
-        return s_TV_ISO_007c4580;
+        return "TV_ISO";
       case 0x4d:
-        return s_TV_PPROTECT_007c4570;
+        return "TV_PPROTECT";
       case 0x4e:
-        return s_TV_LBL_007c4568;
+        return "TV_LBL";
       case 0x4f:
         if (param_1[7] == '\x01') {
-          return s_TV_WSMMINE_007c4734;
+          return "TV_WSMMINE";
         }
       case 0x38:
-        return s_TV_BOMMINE_007c4724;
+        return "TV_BOMMINE";
       case 0x50:
         if (param_1[7] == '\x01') {
-          return s_TV_WSAIRPLANT_007c46ec;
+          return "TV_WSAIRPLANT";
         }
-        return s_TV_BOAIRPLANT_007c46dc;
+        return "TV_BOAIRPLANT";
       case 0x51:
         if (param_1[2] == '\x01') {
-          return s_TV_SWIM1_007c47a4;
+          return "TV_SWIM1";
         }
-        return s_TV_PLASMACANN_007c4558;
+        return "TV_PLASMACANN";
       case 0x52:
         if (param_1[7] == '\x01') {
-          return s_TV_WSRCTELEPORT_007c4544;
+          return "TV_WSRCTELEPORT";
         }
-        return s_TV_BORCTELEPORT_007c4530;
+        return "TV_BORCTELEPORT";
       case 0x53:
-        return s_TV_COMMANDHUB_007c4468;
+        return "TV_COMMANDHUB";
       case 0x54:
-        return s_TV_CMDHUB_MOB_007c4458;
+        return "TV_CMDHUB_MOB";
       case 0x55:
-        return s_TV_CMDHUB_MIL_007c4448;
+        return "TV_CMDHUB_MIL";
       case 0x56:
-        return s_TV_CMDHUB_EN_007c4438;
+        return "TV_CMDHUB_EN";
       case 0x57:
-        return s_TV_CMDHUB_PROT_007c4424;
+        return "TV_CMDHUB_PROT";
       case 0x58:
-        return s_TV_CMDHUB_DEF_007c4414;
+        return "TV_CMDHUB_DEF";
       case 0x59:
-        return s_TV_CMDHUB_PROSP_007c4400;
+        return "TV_CMDHUB_PROSP";
       case 0x5a:
-        return s_TV_CMDHUB_BIOP_007c43ec;
+        return "TV_CMDHUB_BIOP";
       case 0x5b:
-        return s_TV_ARSENAL_007c43dc;
+        return "TV_ARSENAL";
       case 0x5c:
-        return s_TV_PROTOPLASMAGEN_007c43c4;
+        return "TV_PROTOPLASMAGEN";
       case 0x5d:
-        return s_TV_BIOSONAR_007c43b4;
+        return "TV_BIOSONAR";
       case 0x5e:
-        return s_TV_SCORIUMMINE_007c43a0;
+        return "TV_SCORIUMMINE";
       case 0x5f:
-        return s_TV_ENERGYCONVERTER_007c4388;
+        return "TV_ENERGYCONVERTER";
       case 0x60:
-        return s_TV_CORIUMSILO_007c4378;
+        return "TV_CORIUMSILO";
       case 0x61:
-        return s_TV_ENERGYACCUMULATOR_007c435c;
+        return "TV_ENERGYACCUMULATOR";
       case 0x62:
-        return s_TV_REPLENISHPOD_007c4348;
+        return "TV_REPLENISHPOD";
       case 99:
-        return s_TV_RECYCLOTRON_007c4334;
+        return "TV_RECYCLOTRON";
       case 100:
-        return s_TV_SILICONEXTRACTOR_007c431c;
+        return "TV_SILICONEXTRACTOR";
       case 0x65:
-        return s_TV_GAMMAOSCILLATOR_007c4304;
+        return "TV_GAMMAOSCILLATOR";
       case 0x66:
-        return s_TV_GASCANNON_007c42f4;
+        return "TV_GASCANNON";
       case 0x67:
-        return s_TV_PARALYSER_007c42e4;
+        return "TV_PARALYSER";
       case 0x68:
-        return s_TV_IONREFLECTOR_007c42d0;
+        return "TV_IONREFLECTOR";
       case 0x69:
-        return s_TV_JUMPMINE_007c42c0;
+        return "TV_JUMPMINE";
       case 0x6a:
-        return s_TV_BIOACID_007c42b0;
+        return "TV_BIOACID";
       case 0x6b:
-        return s_TV_SPLASMACANNON_007c429c;
+        return "TV_SPLASMACANNON";
       case 0x6c:
-        return s_TV_GATE1_007c4290;
+        return "TV_GATE1";
       case 0x6d:
-        return s_TV_IONFIELDGEN_007c427c;
+        return "TV_IONFIELDGEN";
       case 0x6e:
-        return s_TV_MOLECULARREP_007c4268;
+        return "TV_MOLECULARREP";
       case 0x6f:
-        return s_TV_TELESHIELD_007c45e4;
+        return "TV_TELESHIELD";
       case 0x70:
-        return s_TV_GLSATLUNCHER_007c4254;
+        return "TV_GLSATLUNCHER";
       case 0x71:
-        return s_TV_PARCHER_007c4234;
+        return "TV_PARCHER";
       case 0x72:
-        return s_TV_VBLAUNCHER_007c4244;
+        return "TV_VBLAUNCHER";
       case 0x73:
-        return s_TV_QPARALISER_007c4224;
+        return "TV_QPARALISER";
       case 0xa6:
-        return s_TV_DMINE_007c41e8;
+        return "TV_DMINE";
       case 0xa7:
-        return s_TV_LSNARE_007c41dc;
+        return "TV_LSNARE";
       case 0xaf:
-        pcVar2 = s_TV_BEACON_007c41c4;
+        pcVar2 = "TV_BEACON";
         break;
       case 0xbd:
-        return s_TV_AMINE_007c41d0;
+        return "TV_AMINE";
       case 0xdd:
-        return s_TV_CORIUMSRC_007c4204;
+        return "TV_CORIUMSRC";
       case 0xde:
-        return s_TV_METALSRC_007c41f4;
+        return "TV_METALSRC";
       case 0xe0:
-        return s_TV_TERMOSRC_007c4214;
+        return "TV_TERMOSRC";
       case 0xfd:
         if (param_1[7] == '\x01') {
-          return s_TV_ARTEFACTWS_007c4830;
+          return "TV_ARTEFACTWS";
         }
         if (param_1[7] != '\x02') {
-          return s_TV_ARTEFACTSI_007c4850;
+          return "TV_ARTEFACTSI";
         }
-        return s_TV_ARTEFACTBO_007c4840;
+        return "TV_ARTEFACTBO";
       case 0xfe:
         cVar1 = param_1[7];
         if (cVar1 == '\x01') {
-          return s_TV_CONTAINER1_007c48ac;
+          return "TV_CONTAINER1";
         }
         if (cVar1 == '\x02') {
-          return s_TV_CONTAINER2_007c48bc;
+          return "TV_CONTAINER2";
         }
         if (cVar1 == '\x03') {
-          return s_TV_CONTAINER3_007c48cc;
+          return "TV_CONTAINER3";
         }
       }
     }
@@ -337,13 +337,13 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
     if (param_1[1] != '\0') {
       cVar1 = param_1[7];
       if (cVar1 == '\x01') {
-        return s_TV_GROUPWS_007c4a50;
+        return "TV_GROUPWS";
       }
       if (cVar1 == '\x02') {
-        return s_TV_GROUPBO_007c4a60;
+        return "TV_GROUPBO";
       }
       if (cVar1 == '\x03') {
-        return s_TV_GROUPSI_007c4a70;
+        return "TV_GROUPSI";
       }
     }
   }

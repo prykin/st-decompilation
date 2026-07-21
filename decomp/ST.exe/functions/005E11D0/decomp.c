@@ -45,12 +45,12 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x1b9,0,errorCode,
-                             &DAT_007a4ccc,s_MTaskTy__PrepareTSurf_007cdad4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x1b9,0,errorCode,
+                             "%s","MTaskTy::PrepareTSurf");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_task_obj_cpp_007cd994,0x1b9);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\task_obj.cpp",0x1b9);
   return;
 }
 

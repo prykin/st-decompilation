@@ -334,7 +334,7 @@ LAB_004125c1:
     }
     if (iVar2 != -4) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xc3a);
+                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xc3a);
       ExceptionList = local_14;
       return iVar2;
     }

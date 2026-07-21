@@ -36,12 +36,12 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
   if (errorCode != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x117c,0,errorCode,
-                                 &DAT_007a4ccc,s_STAllPlayersC__ReplaceObject_007a7380);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x117c,0,errorCode,
+                                 "%s","STAllPlayersC::ReplaceObject");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x117d);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x117d);
     }
     return;
   }

@@ -106,10 +106,10 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x1ba,0,iVar5,&DAT_007a4ccc,
-                             s_MainMenuTy__AnimationMainMenu_007cc9f8);
+  iVar8 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x1ba,0,iVar5,"%s",
+                             "MainMenuTy::AnimationMainMenu");
   if (iVar8 == 0) {
-    RaiseInternalException(iVar5,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0x1ba);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\main_obj.cpp",0x1ba);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

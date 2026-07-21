@@ -129,8 +129,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_4d8 = local_4f8;
     local_4b8 = local_4f8;
     local_498 = local_4f8;
-    local_2cc = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_2cc = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
+    local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
     local_390 = this_00->field_0008;
     iVar3 = this_00->field_005C;
     local_38c = 2;
@@ -152,8 +152,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
       local_270[3] = this_00->field_0044;
     }
     local_270[3] = local_270[3] + 0x109;
-    local_14c = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_148 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_14c = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
+    local_148 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
     local_e4 = this_00->field_003C + 0x1c3;
     local_208 = 0x8165;
     local_f4 = 3;
@@ -186,12 +186,12 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5,0,iVar3,&DAT_007a4ccc,
-                             s_HelpPanelTy__CreateList_007c39b8);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x1a5,0,iVar3,"%s",
+                             "HelpPanelTy::CreateList");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x1a5);
   return;
 }
 

@@ -25,12 +25,12 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x125,0,errorCode,&DAT_007a4ccc
-                               ,s__GetStaffGrpExch_007d2da0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x125,0,errorCode,"%s"
+                               ,"_GetStaffGrpExch");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x126);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x126);
     return (uint *)0x0;
   }
   if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {

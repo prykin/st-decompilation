@@ -18,12 +18,13 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
             int param_5,uint param_6,char param_7,uint param_8)
 
 {
-  code *pcVar1;
+  int *piVar1;
+  code *pcVar2;
   HoloTy *this_00;
-  int iVar2;
-  undefined4 *puVar3;
-  uint uVar4;
+  int iVar3;
+  undefined4 *puVar4;
   uint uVar5;
+  uint uVar6;
   InternalExceptionFrame local_58;
   HoloTy *local_14;
   uint local_10;
@@ -34,13 +35,13 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0x9a,0,iVar2,&DAT_007a4ccc,
-                               s_HoloTy__Init_007cc6d0);
-    if (iVar2 == 0) {
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0x9a,0,iVar3,"%s",
+                               "HoloTy::Init");
+    if (iVar3 == 0) {
       this_00->field_0000 = (char)local_10;
       return local_10 & 0xff;
     }
@@ -52,8 +53,8 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     local_14->field_0027 = param_3;
     local_14->field_0001 = param_1;
     local_14->field_002B = *(undefined4 *)(param_4 + 4);
-    iVar2 = *(int *)(param_4 + 8);
-    local_14->field_002F = iVar2;
+    iVar3 = *(int *)(param_4 + 8);
+    local_14->field_002F = iVar3;
     switch(param_1) {
     case CASE_1:
       local_c = local_14->field_002B;
@@ -61,48 +62,48 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
       break;
     case CASE_2:
       local_8 = g_nWidth_00806730 - param_2;
-      local_c = iVar2;
+      local_c = iVar3;
       break;
     case CASE_3:
-      local_8 = iVar2 + param_3;
+      local_8 = iVar3 + param_3;
       local_c = local_14->field_002B;
       break;
     case CASE_4:
       local_8 = local_14->field_002B + param_2;
-      local_c = iVar2;
+      local_c = iVar3;
     }
     local_14->field_0013 = param_6 & 0xff;
     local_14->field_001F = local_8;
-    puVar3 = CalcHologram(local_14,(uint *)&local_14->field_0xf,local_8,local_c,param_5,
+    puVar4 = CalcHologram(local_14,(uint *)&local_14->field_0xf,local_8,local_c,param_5,
                           param_6 & 0xff,param_8);
-    this_00->field_000B = puVar3;
-    if (puVar3 != (undefined4 *)0x0) {
-      puVar3 = &this_00->field_0003;
-      FUN_006b2330((uint)DAT_008075a8,puVar3,10,0x402842,0,0,(uint)this_00);
-      uVar4 = *puVar3;
-      if (-1 < (int)uVar4) {
+    this_00->field_000B = puVar4;
+    if (puVar4 != (undefined4 *)0x0) {
+      piVar1 = &this_00->field_0003;
+      FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,10,0x402842,0,0,(uint)this_00);
+      uVar5 = *piVar1;
+      if (-1 < (int)uVar5) {
         switch(this_00->field_0001) {
         case CASE_1:
         case CASE_3:
-          FUN_006b2800((int)DAT_008075a8,uVar4,this_00->field_002B,DAT_00806734);
-          uVar4 = this_00->field_0023;
-          uVar5 = 0;
+          FUN_006b2800((int)DAT_008075a8,uVar5,this_00->field_002B,DAT_00806734);
+          uVar5 = this_00->field_0023;
+          uVar6 = 0;
           break;
         case CASE_2:
         case CASE_4:
-          FUN_006b2800((int)DAT_008075a8,uVar4,g_nWidth_00806730,this_00->field_002F);
-          uVar5 = this_00->field_0027;
-          uVar4 = 0;
+          FUN_006b2800((int)DAT_008075a8,uVar5,g_nWidth_00806730,this_00->field_002F);
+          uVar6 = this_00->field_0027;
+          uVar5 = 0;
           break;
         default:
           goto switchD_005aadcd_default;
         }
-        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar3,0xffffffff,uVar4,uVar5);
+        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:
-        FUN_006b3af0(DAT_008075a8,*puVar3);
+        FUN_006b3af0(DAT_008075a8,*piVar1);
         this_00->field_0002 = param_7;
         if (param_7 == '\0') {
-          this_00->field_0017 = 0xffffffff;
+          this_00->field_0017 = -1;
           g_currentExceptionFrame = local_58.previous;
           this_00->field_0000 = 1;
           return 1;

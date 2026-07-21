@@ -47,8 +47,8 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     if (((iVar4 != 0x6120) && (iVar4 != 0x6121)) && (iVar4 != 0x6105)) {
       DarkScreen(DAT_0080759c,10,2);
     }
-    if (PTR_0081176c->field_002C != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
+    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     if (*(HoloTy **)&pMVar3[0x24].field_0xcc != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)&pMVar3[0x24].field_0xcc);
@@ -88,7 +88,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       if (PTR_0081176c->field_04B3 != 0xffffffff) {
         FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
-      if (-1 < (int)PTR_0081176c->field_0540) {
+      if (-1 < PTR_0081176c->field_0540) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
       }
     }
@@ -106,10 +106,10 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       if (PTR_0081176c->field_05F1 != 0xffffffff) {
         FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
       }
-      if (-1 < (int)PTR_0081176c->field_0558) {
+      if (-1 < PTR_0081176c->field_0558) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0558);
       }
-      if (-1 < (int)PTR_0081176c->field_0554) {
+      if (-1 < PTR_0081176c->field_0554) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0554);
       }
     }
@@ -147,12 +147,12 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x191,0,iVar4,&DAT_007a4ccc,
-                             s_ChooseMapTy__DoneChooseMap_007cc7ac);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x191,0,iVar4,"%s",
+                             "ChooseMapTy::DoneChooseMap");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x191);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\load_obj.cpp",0x191);
   return;
 }
 

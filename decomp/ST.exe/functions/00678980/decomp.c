@@ -48,7 +48,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     local_c->field_05D3 = 0x398;
     local_c->field_05EB = 1;
     AiEventClassTy::InitData
-              ((AiEventClassTy *)&local_c->vtable_at_1c,
+              ((AiEventClassTy *)&local_c->field_001C,
                (int *)(local_c->field_06D1 + 0x12a + (int)param_1));
     ppDVar11 = &pAVar2->field_0695;
     iVar3 = 5;
@@ -109,12 +109,12 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
   }
   g_currentExceptionFrame = local_50.previous;
   thunk_FUN_00678ba0((int)local_c);
-  iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x3c,0,iVar3,&DAT_007a4ccc,
-                             s_AiPlrClassTy__InitData_007d2e6c);
+  iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x3c,0,iVar3,"%s",
+                             "AiPlrClassTy::InitData");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x3d);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_plr.cpp",0x3d);
   return iVar3;
 }
 

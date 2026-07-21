@@ -33,13 +33,13 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0xeca,0,iVar5,
-                               s_AiFltClassTy__GetMessage_error_m_007d2c7c,message->id,
+    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar5,
+                               "AiFltClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                                local_10->field_0018);
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0xecb);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xecb);
     return 0xffff;
   }
   local_10->field_0280 = PTR_00802a38->field_00E4;
@@ -67,10 +67,10 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
         }
       }
       else if (SVar2 == MESS_ID_CREATE) {
-        puVar3 = message->data;
+        puVar3 = (message->arg0).ptr;
         if (puVar3 == (undefined4 *)0x0) {
           RaiseInternalException
-                    (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_flt_cpp_007d2b80,0xe70);
+                    (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0xe70);
         }
         InitData(this_00,puVar3);
         if (puVar3[3] == 0) {
@@ -81,7 +81,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
         }
         iVar5 = puVar3[3];
         if (iVar5 == 0) {
-          uVar6 = thunk_FUN_00435850(this_00->field_0x24,1,(int *)0x0);
+          uVar6 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,(int *)0x0);
           this_00->field_007D = (short)uVar6;
           thunk_FUN_0065d6a0((AnonShape_0065D6A0_A68E55B5 *)this_00);
           uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -95,8 +95,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           this_00->field_0203 = (uVar6 >> 0x10) % 0x1a + 0x19;
           thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_020B,&LAB_004013cf);
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar1 = *(undefined2 *)(this_00->field_0223 + 0xc);
+          uVar1 = *(undefined2 *)&this_00->field_0223->field_0xc;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar5 = CONCAT22((short)((uint)this_00->field_022F >> 0x10),uVar1);
           this_00->field_0127 = uVar1;
@@ -106,7 +105,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          this_01 = thunk_FUN_0042b760(this_00->field_0x24,
+          this_01 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,
                                        CONCAT22((short)((uint)iVar5 >> 0x10),this_00->field_007D));
         }
         if (this_01 != (STGroupBoatC *)0x0) {
@@ -129,13 +128,13 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   else {
     if (SVar2 != MESS_AIFLTCLASSTY_5D96) {
       if (SVar2 != MESS_AIFLTCLASSTY_5D99) goto LAB_00668010;
-      *(undefined2 *)&message->data = 1;
+      (message->arg0).words.low = 1;
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     thunk_FUN_00661ca0((AnonShape_00661CA0_93A030EF *)local_10,extraout_EDX,(int)message);
   }
 LAB_00668010:
-  FUN_006e5fd0();
+  FUN_006e5fd0(this_00,message);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

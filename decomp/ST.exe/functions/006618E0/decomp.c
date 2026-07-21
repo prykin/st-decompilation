@@ -34,8 +34,8 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   int local_c;
   DArrayTy *local_8;
 
-  if ((this->field_0203 == 0) ||
-     ((uint)(this->field_0207 + this->field_0203) <= (uint)this->field_0280)) {
+  if ((this->field_0203 == 0) || ((uint)(this->field_0207 + this->field_0203) <= this->field_0280))
+  {
     this->field_0207 = this->field_0280;
     local_1c = this;
     uVar4 = sub_0065D9C0(this);
@@ -72,20 +72,25 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,pAVar3->field_0x24,local_24,CASE_1);
+                                  (g_sTAllPlayers_007FA174,*(char *)&pAVar3->field_0024,local_24,
+                                   CASE_1);
               if ((this_00 != (STGameObjC *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
-                iVar5 = (*this_00->vtable->vfunc_2C)();
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
                 pIVar7 = thunk_FUN_00674fb0(iVar5);
                 if ((pAVar3->field_017F & (uint)pIVar7) != 0) {
                   if (pAVar3->field_0039 == 3) {
-                    iVar5 = (*this_00->vtable->vfunc_C4)();
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    iVar5 = (**(code **)&this_00->vtable->field_0xc4)();
                   }
                   else {
-                    iVar5 = (*this_00->vtable->vfunc_7C)();
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    iVar5 = (**(code **)&this_00->vtable->field_0x7c)();
                   }
                   if (iVar5 < pAVar3->field_0177) {
-                    iVar5 = (*this_00->vtable->vfunc_2C)();
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
                     if ((iVar5 < 0x32) || (0x73 < iVar5)) {
                       bVar2 = false;
                     }
@@ -97,7 +102,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
 LAB_00661a96:
                         bVar2 = false;
                       }
-                      else if (*(int *)((int)&this_00[1].field_018D + 3) == 5) {
+                      else if (this_00->field_0361 == 5) {
                         bVar2 = true;
                       }
                       else {
@@ -108,7 +113,7 @@ LAB_00661a96:
                       if (!bVar2) {
                         if ((local_18 != 0) || (pAVar3->field_0039 != 3)) {
                           if (pAVar3->field_0039 == 3) {
-                            thunk_FUN_004d7270((int *)this_00);
+                            thunk_FUN_004d7270((AnonShape_004D7270_8F0A3C37 *)this_00);
                           }
                           else {
                             thunk_FUN_004c7cc0(this_00,5,0,1,1,0xffffffff,0,0xff,(char *)0x0);
@@ -117,7 +122,8 @@ LAB_00661a96:
                         local_c = local_c + 1;
                       }
                     }
-                    iVar5 = (*this_00->vtable->vfunc_2C)();
+                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                    iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
                     if ((iVar5 < 1) || (0x28 < iVar5)) {
                       bVar2 = false;
                     }
@@ -161,12 +167,12 @@ LAB_00661a96:
         DArrayDestroy(local_10);
         local_10 = (DArrayTy *)0x0;
       }
-      iVar8 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x6e9,0,iVar5,&DAT_007a4ccc,
-                                 s_AiFltClassTy__GoToRepair_007d2c40);
+      iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x6e9,0,iVar5,"%s",
+                                 "AiFltClassTy::GoToRepair");
       if (iVar8 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x6ea);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0x6ea);
     }
   }
   return;

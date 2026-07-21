@@ -108,12 +108,12 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x2d,0,iVar2,&DAT_007a4ccc,
-                             s_MMObjTy__InitSprBut_007cca60);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
+                             "MMObjTy::InitSprBut");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x2d);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x2d);
   return;
 }
 

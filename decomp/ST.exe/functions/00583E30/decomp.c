@@ -51,15 +51,15 @@ int __thiscall STJellyGunC::sub_00583E30(STJellyGunC *this)
           }
         }
       }
-      this->field_0239 = 0xffffffff;
+      this->field_0239 = -1;
       this->field_0231 = 1;
-      if (this->field_0247 == 10) {
-        this->field_024B = 0;
+      if (*(int *)&this->field_0x247 == 10) {
+        *(undefined4 *)&this->field_0x24b = 0;
       }
       uVar2 = FUN_006db910((int)this->field_0047,(int)this->field_0049,local_10,local_c);
       uVar3 = FUN_006db990(uVar2,8);
-      uVar2 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&this->field_0x1c = uVar2;
+      uVar2 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar2;
       uVar2 = uVar2 >> 0x10;
       piVar9 = (int *)local_18;
       iVar5 = (int)this->field_0049;

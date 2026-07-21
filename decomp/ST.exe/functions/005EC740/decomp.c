@@ -19,16 +19,16 @@ FUN_005ec740(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
   *param_7 = 0;
   if ((param_3 == 0xe) || (param_3 == 0xc)) {
     if (param_1 == 1) {
-      pcVar4 = s_contw_007ce4cc;
+      pcVar4 = "contw";
     }
     else if (param_1 == 2) {
-      pcVar4 = s_contb_007ce4c4;
+      pcVar4 = "contb";
     }
     else {
       if (param_1 != 3) {
         return;
       }
-      pcVar4 = s_conts_007ce4bc;
+      pcVar4 = "conts";
     }
     uVar2 = 0xffffffff;
     do {

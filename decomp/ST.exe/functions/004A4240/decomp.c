@@ -11,7 +11,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   code *pcVar1;
   STGroupBoatC *this_00;
   int iVar2;
-  STFishC *this_01;
+  STGameObjC *this_01;
   int iVar3;
   int iVar4;
   uint *puVar5;
@@ -26,7 +26,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   STGroupBoatC *local_24;
   int *local_20;
   int local_1c;
-  STFishC *local_18;
+  STGameObjC *local_18;
   undefined1 local_14 [4];
   undefined4 local_10;
   short local_a;
@@ -46,25 +46,26 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x126a,0,iVar2,
-                                 &DAT_007a4ccc,s_STGroupBoatC__ChangeMDNotify_007ac310);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,iVar2,
+                                 "%s","STGroupBoatC::ChangeMDNotify");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x126b);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x126b);
     }
     return;
   }
-  this_01 = (STFishC *)
-            STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,local_24->field_0024,param_2,CASE_1);
+  this_01 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,local_24->field_0024,param_2,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
-    iVar2 = (*this_01->vtable->vfunc_2C)();
-    if ((iVar2 == 0x3b) || (iVar2 = (*this_01->vtable->vfunc_2C)(), iVar2 == 0x60)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar2 = (**(code **)&this_01->vtable->field_0x2c)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if ((iVar2 == 0x3b) || (iVar2 = (**(code **)&this_01->vtable->field_0x2c)(), iVar2 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == 0) {
           RaiseInternalException
-                    (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                    (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x11f2);
         }
         uVar7 = 0;
@@ -86,7 +87,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      STFishC::sub_004162B0(this_01,&local_a,&local_8,&local_6);
+      STFishC::sub_004162B0((STFishC *)this_01,&local_a,&local_8,&local_6);
       if (local_a < (short)this_00->field_026A) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -113,7 +114,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       if (this_00->field_0266 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x11fe);
       }
       uVar7 = 0;
@@ -133,7 +134,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       if (0 < local_1c) {
         piVar6 = local_34;
         do {
-          iVar3 = (*local_18->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar3 = (**(code **)&local_18->vtable->field_0x2c)();
           this_01 = local_18;
           if (iVar3 == *piVar6) break;
           iVar2 = iVar2 + 1;
@@ -141,30 +143,32 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         } while (iVar2 < local_1c);
       }
       if (iVar2 == local_1c) {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x120a,0,0,&DAT_007a4ccc,
-                                   s_STGroupBoatC__ChangeMDNotify_inv_007ac3a0);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
+                                   "STGroupBoatC::ChangeMDNotify invalid type");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
-                  (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x120b);
       }
       if (this_00->field_024A != 2) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar2 = (*this_01->vtable->vfunc_2C)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar2 = (**(code **)&this_01->vtable->field_0x2c)();
       if (iVar2 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar2 = (*this_01->vtable->vfunc_88)(local_14);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar2 = (**(code **)&this_01->vtable->field_0x88)(local_14);
       if (iVar2 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      STFishC::sub_004162B0(this_01,&local_a,&local_8,&local_6);
+      STFishC::sub_004162B0((STFishC *)this_01,&local_a,&local_8,&local_6);
       if (local_a < (short)this_00->field_0252) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -191,7 +195,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       if (this_00->field_024E == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1215);
       }
       uVar7 = 0;
@@ -212,13 +216,15 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     pDVar9 = (DArrayTy *)this_00->field_024E;
     goto LAB_004a4aab;
   }
-  iVar2 = (*this_01->vtable->vfunc_2C)();
-  if ((iVar2 == 0x3b) || (iVar3 = (*this_01->vtable->vfunc_2C)(), iVar2 = local_1c, iVar3 == 0x60))
-  {
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  iVar2 = (**(code **)&this_01->vtable->field_0x2c)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  if ((iVar2 == 0x3b) ||
+     (iVar3 = (**(code **)&this_01->vtable->field_0x2c)(), iVar2 = local_1c, iVar3 == 0x60)) {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1226);
       }
       uVar7 = 0;
@@ -243,7 +249,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    STFishC::sub_004162B0(this_01,&local_a,&local_8,&local_6);
+    STFishC::sub_004162B0((STFishC *)this_01,&local_a,&local_8,&local_6);
     if (local_a < (short)this_00->field_026A) {
       g_currentExceptionFrame = local_78.previous;
       return;
@@ -270,7 +276,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     if (this_00->field_0266 == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1234);
     }
     uVar8 = 0;
@@ -288,8 +294,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       } while ((int)uVar8 < (int)uVar7);
     }
     if (uVar8 == uVar7) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x123b,0,0,&DAT_007a4ccc,
-                                 s_STGroupBoatC__ChangeMDNotify_dep_007ac334);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x123b,0,0,"%s",
+                                 "STGroupBoatC::ChangeMDNotify depot is absent");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -302,26 +308,27 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     if (0 < local_1c) {
       local_20 = local_34;
       do {
-        iVar4 = (*local_18->vtable->vfunc_2C)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)&local_18->vtable->field_0x2c)();
         if (iVar4 == *local_20) break;
         iVar3 = iVar3 + 1;
         local_20 = local_20 + 1;
       } while (iVar3 < iVar2);
     }
     if (iVar3 == iVar2) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1246,0,0,&DAT_007a4ccc,
-                                 s_STGroupBoatC__ChangeMDNotify_inv_007ac3a0);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
+                                 "STGroupBoatC::ChangeMDNotify invalid type");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
-                (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1247);
     }
     if (this_00->field_024A == 0) {
       if (this_00->field_024E == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x124b);
       }
       uVar7 = 0;
@@ -345,7 +352,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    STFishC::sub_004162B0(local_18,&local_a,&local_8,&local_6);
+    STFishC::sub_004162B0((STFishC *)local_18,&local_a,&local_8,&local_6);
     if (local_a < (short)this_00->field_0252) {
       g_currentExceptionFrame = local_78.previous;
       return;
@@ -372,7 +379,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     if (this_00->field_024E == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1259);
     }
     uVar8 = 0;
@@ -390,15 +397,15 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       } while ((int)uVar8 < (int)uVar7);
     }
     if (uVar8 == uVar7) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1260,0,0,&DAT_007a4ccc,
-                                 s_STGroupBoatC__ChangeMDNotify_min_007ac36c);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
+                                 "STGroupBoatC::ChangeMDNotify mine is absent");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar2 = 0x1261;
 LAB_004a4a83:
       RaiseInternalException
-                (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  iVar2);
     }
   }

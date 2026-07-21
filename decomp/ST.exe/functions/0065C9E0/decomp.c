@@ -34,7 +34,7 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0065d0f0((int *)&local_8);
-  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x21);
+  RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_event_d.cpp",0x21);
   return (undefined4 *)0x0;
 }
 

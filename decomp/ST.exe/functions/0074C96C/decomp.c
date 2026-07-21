@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
       puVar2 = (undefined4 *)0x0;
     }
     else {
-      puVar2 = FUN_0074cdc5(pvVar1,0,(int)this,&local_8,(char *)u_Input_007ee27c);
+      puVar2 = FUN_0074cdc5(pvVar1,0,(int)this,&local_8,(char *)"Input");
     }
     *(undefined4 **)((int)this + 0x8c) = puVar2;
     if (puVar2 == (undefined4 *)0x0) goto LAB_0074c9fe;
@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
       puVar2 = (undefined4 *)0x0;
     }
     else {
-      puVar2 = FUN_0074cfc0(pvVar1,0,(int)this,&local_8,(char *)u_Output_007ee288);
+      puVar2 = FUN_0074cfc0(pvVar1,0,(int)this,&local_8,(char *)"Output");
     }
     *(undefined4 **)((int)this + 0x90) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {

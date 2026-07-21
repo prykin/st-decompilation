@@ -8,16 +8,16 @@
 void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2)
 
 {
-  undefined4 uVar1;
-  code *pcVar2;
+  int *piVar1;
+  int iVar2;
+  code *pcVar3;
   CursorClassTy *this_00;
-  MTaskTy *pMVar3;
-  int iVar4;
-  cMf32 *pcVar5;
-  ushort *puVar6;
-  uint *puVar7;
+  MTaskTy *pMVar4;
+  int iVar5;
+  cMf32 *pcVar6;
+  ushort *puVar7;
+  uint *puVar8;
   LPSTR text;
-  undefined4 uVar8;
   ccFntTy *pcVar9;
   DArrayTy *pDVar10;
   uint uVar11;
@@ -39,18 +39,18 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
-  pMVar3 = local_10;
-  if (iVar4 != 0) {
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+  pMVar4 = local_10;
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0xdd,0,iVar4,&DAT_007a4ccc,
-                               s_MTaskTy__InitMTask_007cda1c);
-    pMVar3 = local_10;
-    if (iVar4 == 0) {
-      thunk_FUN_005b66e0((STJellyGunC *)local_10);
-      pMVar3->field_0045 = 0x200;
-      pMVar3->field_0049 = 0;
-      pMVar3->field_004D = 0x6102;
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0xdd,0,iVar5,"%s",
+                               "MTaskTy::InitMTask");
+    pMVar4 = local_10;
+    if (iVar5 == 0) {
+      thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)local_10);
+      pMVar4->field_0045 = 0x200;
+      pMVar4->field_0049 = 0;
+      pMVar4->field_004D = 0x6102;
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -67,21 +67,21 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     DAT_0080877e = 1;
     DAT_0080877f = 0;
   }
-  if (pMVar3->field_006E == '\0') {
-    pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+  if (pMVar4->field_006E == '\0') {
+    pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
   }
   else {
-    wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080c52e);
-    pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,&DAT_0080c52e);
+    pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   }
-  pMVar3->field_0070 = pcVar5;
+  pMVar4->field_0070 = pcVar6;
   if (DAT_0080fb6e != 0) {
     if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
     }
     PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
                    Library::Ourlib::MFSARR::mfSarLoad
-                             (pMVar3->field_0070,PTR_s_DESCRIPTION_0079c21c,0);
+                             (pMVar4->field_0070,PTR_s_DESCRIPTION_0079c21c,0);
     if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
       PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
                      Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -91,19 +91,19 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     }
     PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
                    Library::Ourlib::MFSARR::mfSarLoad
-                             (pMVar3->field_0070,PTR_s_OBJECTIVES_0079c220,0);
+                             (pMVar4->field_0070,PTR_s_OBJECTIVES_0079c220,0);
     if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
       PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
                      Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     puVar14 = &DAT_0080c3c3;
-    for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+    for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar14 = 0;
       puVar14 = puVar14 + 1;
     }
     local_8 = &DAT_0080c3c3;
-    puVar6 = cMf32::RecGet(pMVar3->field_0070,0xc,PTR_s_TITLE_MISSION_0079c218,(int *)&local_8,0);
-    if ((puVar6 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
+    puVar7 = cMf32::RecGet(pMVar4->field_0070,0xc,PTR_s_TITLE_MISSION_0079c218,(int *)&local_8,0);
+    if ((puVar7 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
       Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
       uVar11 = 0xffffffff;
       pbVar13 = local_1a8;
@@ -130,29 +130,29 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
       }
     }
   }
-  if (pMVar3->field_006E == '\0') {
-    pcVar5 = pMVar3->field_0070;
+  if (pMVar4->field_006E == '\0') {
+    pcVar6 = pMVar4->field_0070;
     pcVar17 = PTR_s_TASKPLAY_0079c214;
   }
   else {
-    pcVar5 = pMVar3->field_0070;
+    pcVar6 = pMVar4->field_0070;
     pcVar17 = (char *)&DAT_0080e303;
   }
-  iVar4 = Library::Ourlib::MFDARR::mfDarLoad(pcVar5,pcVar17,0);
-  pMVar3->field_0074 = iVar4;
-  if (iVar4 == 0) {
-    puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x50,1);
+  iVar5 = Library::Ourlib::MFDARR::mfDarLoad(pcVar6,pcVar17,0);
+  pMVar4->field_0074 = iVar5;
+  if (iVar5 == 0) {
+    puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x50,1);
     puVar14 = local_a4;
-    for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
+    for (iVar5 = 0x14; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar14 = 0;
       puVar14 = puVar14 + 1;
     }
-    pMVar3->field_0074 = puVar7;
+    pMVar4->field_0074 = puVar8;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_a4[0]._0_1_ = 8;
-    Library::DKW::TBL::FUN_006ae1c0(puVar7,local_a4);
+    Library::DKW::TBL::FUN_006ae1c0(puVar8,local_a4);
   }
-  Library::DKW::TBL::FUN_006afe40(&pMVar3->field_0078,(uint *)pMVar3->field_0074);
+  Library::DKW::TBL::FUN_006afe40(&pMVar4->field_0078,(uint *)pMVar4->field_0074);
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
     if (PTR_00802a30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
@@ -161,144 +161,144 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
       FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
     }
   }
-  iVar4 = 1;
+  iVar5 = 1;
   bVar16 = 0;
-  text = FUN_006f2c00(s_TASK_BKG_007cda64,1,(uint)DAT_0080874e);
-  uVar8 = FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar4);
-  pMVar3->field_005D = uVar8;
-  pMVar3->field_0080 = 1;
-  puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,s_MT_CHECK_007cda58,0xffffffff,0,1,0,(undefined4 *)0x0);
-  pMVar3->field_0081 = puVar6;
+  text = FUN_006f2c00("TASK_BKG",1,(uint)DAT_0080874e);
+  pcVar6 = (cMf32 *)FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar5);
+  pMVar4->field_005D = pcVar6;
+  pMVar4->field_0080 = 1;
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806784,CASE_B,"MT_CHECK",0xffffffff,0,1,0,(undefined4 *)0x0);
+  pMVar4->field_0081 = puVar7;
   thunk_FUN_00568bc0(&g_sound,0);
-  FUN_006bc360((ushort *)pMVar3->field_005D,local_5a8,(int *)0x0);
+  FUN_006bc360((ushort *)pMVar4->field_005D,local_5a8,(int *)0x0);
   Library::Ourlib::PALETTE::FUN_00718780
-            ((int)local_5a8,0,0x100,0x1a,0x10,(undefined4 *)&pMVar3->field_0x91);
+            ((int)local_5a8,0,0x100,0x1a,0x10,(undefined4 *)&pMVar4->field_0x91);
   Library::Ourlib::PALETTE::FUN_00718780
-            ((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3->field_0x191);
-  pcVar9 = (ccFntTy *)thunk_FUN_005defe0(pMVar3->field_005D,(undefined *)0x0,DAT_00807dd9);
-  pMVar3->field_0089 = pcVar9;
+            ((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)&pMVar4->field_0x191);
+  pcVar9 = (ccFntTy *)thunk_FUN_005defe0((int)pMVar4->field_005D,(undefined *)0x0,DAT_00807dd9);
+  pMVar4->field_0089 = pcVar9;
   pcVar9->field_0058 = 1;
   pcVar9->field_005C = 0;
-  pcVar9 = (ccFntTy *)thunk_FUN_005df290(pMVar3->field_005D,(undefined *)0x0,DAT_00807dd9);
-  local_c = &pMVar3->field_0653;
-  pMVar3->field_008D = pcVar9;
-  puVar7 = &pMVar3->field_02A5;
+  pcVar9 = (ccFntTy *)thunk_FUN_005df290((int)pMVar4->field_005D,(undefined *)0x0,DAT_00807dd9);
+  local_c = &pMVar4->field_0653;
+  pMVar4->field_008D = pcVar9;
+  puVar8 = &pMVar4->field_02A5;
   local_8 = (undefined4 *)0x5;
   do {
-    FUN_006b2330((uint)DAT_008075a8,puVar7,0x31,0x402f63,0,0,(uint)local_c);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar7,0xffffffff,0,0);
-    FUN_006b3af0(DAT_008075a8,*puVar7);
+    FUN_006b2330((uint)DAT_008075a8,puVar8,0x31,0x402f63,0,0,(uint)local_c);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar8,0xffffffff,0,0);
+    FUN_006b3af0(DAT_008075a8,*puVar8);
     local_c = local_c + 3;
-    puVar7 = puVar7 + 1;
+    puVar8 = puVar8 + 1;
     local_8 = (undefined4 *)((int)local_8 + -1);
   } while (local_8 != (undefined4 *)0x0);
-  local_c = (undefined4 *)&pMVar3->field_0x68f;
-  puVar7 = &pMVar3->field_02BD;
+  local_c = (undefined4 *)&pMVar4->field_0x68f;
+  puVar8 = &pMVar4->field_02BD;
   local_8 = (undefined4 *)0x5;
   do {
-    FUN_006b2330((uint)DAT_008075a8,puVar7,0x31,0x402f63,0,0,(uint)local_c);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar7,0xffffffff,0,0);
-    FUN_006b3af0(DAT_008075a8,*puVar7);
+    FUN_006b2330((uint)DAT_008075a8,puVar8,0x31,0x402f63,0,0,(uint)local_c);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar8,0xffffffff,0,0);
+    FUN_006b3af0(DAT_008075a8,*puVar8);
     local_c = (undefined4 *)((int)local_c + 0xc);
-    puVar7 = puVar7 + 1;
+    puVar8 = puVar8 + 1;
     local_8 = (undefined4 *)((int)local_8 + -1);
   } while (local_8 != (undefined4 *)0x0);
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar3->field_02D1,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+            ((SpriteClassTy *)&pMVar4->field_02D1,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_02D1 + 4))(DAT_00806784,7,0,s_MT_SLDUP_007cda4c,0xffffffff);
-  pMVar3->field_02ED = 0;
-  pMVar3->field_02F1 = 0;
-  pMVar3->field_02D9 = 0;
-  if (pMVar3->field_02D5 != 0xffffffff) {
-    FUN_006b3af0((int *)pMVar3->field_0319,pMVar3->field_02D5);
+  (**(code **)(pMVar4->field_02D1 + 4))(DAT_00806784,7,0,"MT_SLDUP",0xffffffff);
+  pMVar4->field_02ED = 0;
+  pMVar4->field_02F1 = 0;
+  pMVar4->field_02D9 = 0;
+  if (pMVar4->field_02D5 != 0xffffffff) {
+    FUN_006b3af0((int *)pMVar4->field_0319,pMVar4->field_02D5);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar3->field_0362,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+            ((SpriteClassTy *)&pMVar4->field_0362,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_0362 + 4))(DAT_00806784,7,0,s_MT_SLDDN_007cda40,0xffffffff);
-  pMVar3->field_037E = 0;
-  pMVar3->field_0382 = 0;
-  pMVar3->field_036A = 0;
-  if (pMVar3->field_0366 != 0xffffffff) {
-    FUN_006b3af0((int *)pMVar3->field_03AA,pMVar3->field_0366);
+  (**(code **)(pMVar4->field_0362 + 4))(DAT_00806784,7,0,"MT_SLDDN",0xffffffff);
+  pMVar4->field_037E = 0;
+  pMVar4->field_0382 = 0;
+  pMVar4->field_036A = 0;
+  if (pMVar4->field_0366 != 0xffffffff) {
+    FUN_006b3af0((int *)pMVar4->field_03AA,pMVar4->field_0366);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar3->field_03F3,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+            ((SpriteClassTy *)&pMVar4->field_03F3,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_03F3 + 4))(DAT_00806784,7,0,s_MT_SLDT_007cda34,0xffffffff);
-  pMVar3->field_040F = 0;
-  pMVar3->field_0413 = 0;
-  pMVar3->field_03FB = 0;
-  if (pMVar3->field_03F7 != 0xffffffff) {
-    FUN_006b3af0((int *)pMVar3->field_043B,pMVar3->field_03F7);
+  (**(code **)(pMVar4->field_03F3 + 4))(DAT_00806784,7,0,"MT_SLDT",0xffffffff);
+  pMVar4->field_040F = 0;
+  pMVar4->field_0413 = 0;
+  pMVar4->field_03FB = 0;
+  if (pMVar4->field_03F7 != 0xffffffff) {
+    FUN_006b3af0((int *)pMVar4->field_043B,pMVar4->field_03F7);
   }
-  puVar14 = &pMVar3->field_0484;
-  FUN_006b2330((uint)DAT_008075a8,puVar14,0x32,0x402f63,0,0,(uint)&pMVar3->field_06BF);
-  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar14,0xffffffff,0,0);
-  FUN_006b3af0(DAT_008075a8,*puVar14);
+  piVar1 = &pMVar4->field_0484;
+  FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,0x32,0x402f63,0,0,(uint)&pMVar4->field_06BF);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,0,0);
+  FUN_006b3af0(DAT_008075a8,*piVar1);
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar3->field_048C,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+            ((SpriteClassTy *)&pMVar4->field_048C,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_048C + 4))(DAT_00806784,7,0,s_MT_SLDUP_007cda4c,0xffffffff);
-  pMVar3->field_04A8 = 0;
-  pMVar3->field_04AC = 0;
-  pMVar3->field_0494 = 0;
-  if (pMVar3->field_0490 != 0xffffffff) {
-    FUN_006b3af0((int *)pMVar3->field_04D4,pMVar3->field_0490);
-  }
-  SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar3->field_051D,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_051D + 4))(DAT_00806784,7,0,s_MT_SLDDN_007cda40,0xffffffff);
-  pMVar3->field_0539 = 0;
-  pMVar3->field_053D = 0;
-  pMVar3->field_0525 = 0;
-  if (pMVar3->field_0521 != 0xffffffff) {
-    FUN_006b3af0((int *)pMVar3->field_0565,pMVar3->field_0521);
+  (**(code **)(pMVar4->field_048C + 4))(DAT_00806784,7,0,"MT_SLDUP",0xffffffff);
+  pMVar4->field_04A8 = 0;
+  pMVar4->field_04AC = 0;
+  pMVar4->field_0494 = 0;
+  if (pMVar4->field_0490 != 0xffffffff) {
+    FUN_006b3af0((int *)pMVar4->field_04D4,pMVar4->field_0490);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar3->field_05AE,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+            ((SpriteClassTy *)&pMVar4->field_051D,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_05AE + 4))(DAT_00806784,7,0,s_MT_SLDT_007cda34,0xffffffff);
-  pMVar3->field_05CA = 0;
-  pMVar3->field_05CE = 0;
-  pMVar3->field_05B6 = 0;
-  if (pMVar3->field_05B2 != 0xffffffff) {
-    FUN_006b3af0((int *)pMVar3->field_05F6,pMVar3->field_05B2);
+  (**(code **)(pMVar4->field_051D + 4))(DAT_00806784,7,0,"MT_SLDDN",0xffffffff);
+  pMVar4->field_0539 = 0;
+  pMVar4->field_053D = 0;
+  pMVar4->field_0525 = 0;
+  if (pMVar4->field_0521 != 0xffffffff) {
+    FUN_006b3af0((int *)pMVar4->field_0565,pMVar4->field_0521);
   }
-  puVar14 = &pMVar3->field_063F;
-  FUN_006b2330((uint)DAT_008075a8,puVar14,0x32,0x402f63,0,0,(uint)&pMVar3->field_06CB);
-  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar14,0xffffffff,0,0);
-  FUN_006b3af0(DAT_008075a8,*puVar14);
+  SpriteClassTy::InitSprite
+            ((SpriteClassTy *)&pMVar4->field_05AE,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (**(code **)(pMVar4->field_05AE + 4))(DAT_00806784,7,0,"MT_SLDT",0xffffffff);
+  pMVar4->field_05CA = 0;
+  pMVar4->field_05CE = 0;
+  pMVar4->field_05B6 = 0;
+  if (pMVar4->field_05B2 != 0xffffffff) {
+    FUN_006b3af0((int *)pMVar4->field_05F6,pMVar4->field_05B2);
+  }
+  piVar1 = &pMVar4->field_063F;
+  FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,0x32,0x402f63,0,0,(uint)&pMVar4->field_06CB);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,0,0);
+  FUN_006b3af0(DAT_008075a8,*piVar1);
   pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x9e,10,0x405de4);
-  pMVar3->field_064B = pDVar10;
+  pMVar4->field_064B = pDVar10;
   pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
-  pMVar3->field_0647 = pDVar10;
+  pMVar4->field_0647 = pDVar10;
   pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
-  pMVar3->field_064F = pDVar10;
+  pMVar4->field_064F = pDVar10;
   if (PTR_0081176c->field_02E6 != (MMsgTy *)0x0) {
     MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
   }
   DarkScreen(DAT_0080759c,1,0);
   this_00 = PTR_00802a30;
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    uVar8 = PTR_00802a30->field_00C9;
-    uVar1 = PTR_00802a30->field_00C5;
+    iVar5 = PTR_00802a30->field_00C9;
+    iVar2 = PTR_00802a30->field_00C5;
     PTR_00802a30->field_0493 = 3;
     this_00->field_0494 = 0xffff;
-    CursorClassTy::SetGCType(this_00,CASE_0,uVar1,uVar8);
+    CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar5);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-    this_00->field_0xd2 = 0;
-    *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
+    this_00->field_00D2 = 0;
+    this_00->field_04DF = 0xffffffff;
   }
-  SetAccelerator(1,pMVar3->field_0008,2,100,2,1,0,0,0,0,0,0);
-  SetAccelerator(1,pMVar3->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
-  pMVar3->field_006D = 3;
-  PlayScript(pMVar3);
-  PaintMTask(pMVar3);
-  thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,pMVar3->field_005D,10,2);
+  SetAccelerator(1,pMVar4->field_0008,2,100,2,1,0,0,0,0,0,0);
+  SetAccelerator(1,pMVar4->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
+  pMVar4->field_006D = 3;
+  PlayScript(pMVar4);
+  PaintMTask(pMVar4);
+  thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,(int)pMVar4->field_005D,10,2);
   g_currentExceptionFrame = local_54.previous;
   return;
 }

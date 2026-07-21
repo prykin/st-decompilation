@@ -75,12 +75,12 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_research_cpp_007c76c8,0x88,0,iVar5,&DAT_007a4ccc,
-                             s_ResearchPanelTy__PaintUpdBut_007c7750);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\research.cpp",0x88,0,iVar5,"%s",
+                             "ResearchPanelTy::PaintUpdBut");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar5,0,s_E____titans_Andrey_research_cpp_007c76c8,0x88);
+  RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\research.cpp",0x88);
   return;
 }
 

@@ -30,7 +30,7 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
       g_currentExceptionFrame = &local_90;
       iVar2 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
       if (iVar2 == 0) {
-        pCVar3 = FUN_006f2c00(s_MM_FLC_007cc938,2,0);
+        pCVar3 = FUN_006f2c00("MM_FLC",2,0);
         iVar2 = cMf32::RecChk(g_cMf32_00806780,0,pCVar3);
         if (iVar2 != 0) {
           local_8->field_0028 = 0;
@@ -50,12 +50,12 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x283,0,iVar2,&DAT_007a4ccc,
-                             s_StartSystemTy__InitSystem_007cd82c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x283,0,iVar2,"%s",
+                             "StartSystemTy::InitSystem");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_startsys_cpp_007cd718,0x283);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\startsys.cpp",0x283);
   return 0xfffffffc;
 }
 

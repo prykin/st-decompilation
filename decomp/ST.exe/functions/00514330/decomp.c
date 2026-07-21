@@ -95,12 +95,12 @@ void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x317,0,errorCode,
-                             &DAT_007a4ccc,s_HelpPanelTy__BwdBut_007c3af0);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x317,0,errorCode,
+                             "%s","HelpPanelTy::BwdBut");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x317);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0x317);
   return;
 }
 

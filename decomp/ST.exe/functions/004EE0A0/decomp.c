@@ -36,10 +36,10 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   this_00 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0xb2,0,iVar2,&DAT_007a4ccc
-                               ,s_BehPanelTy__Update_007c1758);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xb2,0,iVar2,"%s"
+                               ,"BehPanelTy::Update");
     if (iVar3 == 0) {
-      RaiseInternalException(iVar2,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0xb2);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xb2);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -96,8 +96,8 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     FUN_006e6080(this_00,2,this_00->field_01C2,(undefined4 *)&this_00->field_0x18);
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (this_00->field_01BC != local_18._1_1_) {
-    *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_01BC;
+  if (this_00->field_0x1bc != local_18._1_1_) {
+    *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0x1bc;
     this_00->field_0028 = 0x20;
     FUN_006e6080(this_00,2,this_00->field_01C6,(undefined4 *)&this_00->field_0x18);
   }

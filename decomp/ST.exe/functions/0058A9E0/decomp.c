@@ -42,7 +42,7 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
   }
   param_1->field_004B = sVar6;
   param_1->field_005F = sVar6;
-  iVar2 = thunk_FUN_0041c710((int)param_1);
+  iVar2 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
   puVar1 = &param_1->field_0x1d5;
   if (iVar2 == 0) {
     iVar2 = 0;

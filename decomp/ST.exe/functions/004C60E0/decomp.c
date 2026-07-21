@@ -24,12 +24,12 @@ int __thiscall TLOBldMark::Create(TLOBldMark *this)
     return 0;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar4 = ReportDebugMessage(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x2a,0,iVar3,&DAT_007a4ccc,
-                             s_TLOBldMark__Create_error_007ad31c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_BldMark.cpp",0x2a,0,iVar3,"%s",
+                             "TLOBldMark::Create error");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x2b);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x2b);
   return iVar3;
 }
 

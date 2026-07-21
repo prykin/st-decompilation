@@ -70,13 +70,13 @@ STBoatC::PrepareForLoading
       this->field_05B2 = sVar1 + -1;
       break;
     default:
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fe6,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__PrepareForLoading_too_m_007abaa4);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4fe6,0,0,"%s",
+                                 "STBoatC::PrepareForLoading too much");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
-                (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                  0x4fe6);
     }
     if (this->field_05B2 != -1) {
@@ -102,8 +102,8 @@ STBoatC::PrepareForLoading
     this->field_05C4 = 1;
   }
   else {
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fcb,0,0,&DAT_007a4ccc,
-                               s_STBoatC__PrepareForLoading_name__007abad0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4fcb,0,0,"%s",
+                               "STBoatC::PrepareForLoading name!=swli.lname");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

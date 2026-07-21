@@ -31,10 +31,10 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   pSVar5 = local_14;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Start_settsobj_cpp_007cd544,0x3b,0,iVar6,&DAT_007a4ccc,
-                               s_SettMapSTy__SetListCtrls_007cd56c);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\settsobj.cpp",0x3b,0,iVar6,"%s",
+                               "SettMapSTy::SetListCtrls");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_Start_settsobj_cpp_007cd544,0x3b);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\settsobj.cpp",0x3b);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

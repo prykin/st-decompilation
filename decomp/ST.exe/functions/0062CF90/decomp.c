@@ -62,12 +62,12 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
     return local_10;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x86,0,iVar4,&DAT_007a4ccc,
-                             s_STManRub3C__AddNewRub3_007d142c);
+  iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x86,0,iVar4,"%s",
+                             "STManRub3C::AddNewRub3");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x88);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x88);
   return 0xffff;
 }
 

@@ -47,7 +47,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
         puVar4 = &DAT_007ca24c;
       }
     }
-    wsprintfA((LPSTR)&DAT_0080f33a,s_REPORT__s__c_007ccf6c,puVar4,
+    wsprintfA((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",puVar4,
               (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
     puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
     *puVar8 = puVar5;
@@ -87,12 +87,12 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_70.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c,0,iVar3,&DAT_007a4ccc,
-                             s_MReportTy__SetCtrl_007cd05c);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x32c,0,iVar3,"%s",
+                             "MReportTy::SetCtrl");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x32c);
   return;
 }
 

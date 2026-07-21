@@ -57,12 +57,12 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x62,0,errorCode,&DAT_007a4ccc
-                             ,s_SIDTy__DoneSID_007cd628);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x62,0,errorCode,"%s"
+                             ,"SIDTy::DoneSID");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x62);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\sid_obj.cpp",0x62);
   return;
 }
 

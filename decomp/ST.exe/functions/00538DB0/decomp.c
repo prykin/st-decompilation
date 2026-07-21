@@ -57,10 +57,10 @@ LAB_00538de2:
   pPVar2 = local_10;
   if (errorCode != (undefined4 *)0x0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0xdf,0,(int)errorCode,
-                               &DAT_007a4ccc,s_PanelTy__PaintIBut_007c7460);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0xdf,0,(int)errorCode,
+                               "%s","PanelTy::PaintIBut");
     if (iVar8 == 0) {
-      RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_panel_cpp_007c7390,0xdf);
+      RaiseInternalException((int)errorCode,0,"E:\\__titans\\Andrey\\panel.cpp",0xdf);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

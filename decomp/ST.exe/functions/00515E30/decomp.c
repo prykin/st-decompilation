@@ -49,12 +49,12 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   this_00 = local_20;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x460,0,iVar3,
-                                &DAT_007a4ccc,s_HelpPanelTy__AddLinks_007c3bf0);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x460,0,iVar3,
+                                "%s","HelpPanelTy::AddLinks");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x460);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x460);
     return;
   }
   if (DAT_007e68a0 != '\0') {

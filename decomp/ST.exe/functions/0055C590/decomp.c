@@ -12,9 +12,9 @@ void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
   }
   if (param_2 != (LPCVOID)0x0) {
     bVar1 = true;
-    wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,PTR_s_UPDATES__0079aef0);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_UPDATES__0079aef0);
     CreateDirectoryA((LPCSTR)&DAT_0080f33a,(LPSECURITY_ATTRIBUTES)0x0);
-    wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_UPDATES__0079aef0,
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079aef0,
               PTR_s_ST_INF_0079aef4);
     hFile = CreateFileA((LPCSTR)&DAT_0080f33a,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                         (HANDLE)0x0);

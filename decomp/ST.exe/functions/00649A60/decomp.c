@@ -22,18 +22,18 @@ undefined4 * __cdecl CreatePlrData(int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x178,0,errorCode,
-                               &DAT_007a4ccc,s_CreatePlrData_007d2930);
+    iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x178,0,errorCode,
+                               "%s","CreatePlrData");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x179);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_creat.cpp",0x179);
     return (undefined4 *)0x0;
   }
   if ((&DAT_008087e8)[param_1 * 0x51] != '\x01') {
     if ((&DAT_008087e8)[param_1 * 0x51] != '\x02') {
       RaiseInternalException
-                (-5,g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x175);
+                (-5,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x175);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }

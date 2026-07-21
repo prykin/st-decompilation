@@ -73,15 +73,17 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,this_00->field_0x24,
+                             (g_sTAllPlayers_007FA174,*(char *)&this_00->field_0024,
                               CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6),CASE_1);
         }
         if (objPtr != (STGameObjC *)0x0) {
-          iVar4 = (*objPtr->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
           if (iVar4 == 0x78) {
-            iVar4 = (*objPtr->vtable->vfunc_2C)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
             if (iVar4 == 0x78) {
-              iVar4 = *(int *)&objPtr[1].field_0x88;
+              iVar4 = objPtr->field_0259;
             }
             else {
               iVar4 = 0;
@@ -98,9 +100,10 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
               }
               if ((pvVar5 != (void *)0x0) && (-1 < *(int *)((int)pvVar5 + 0x30))) {
                 uVar1 = *(ushort *)((int)pvVar5 + 0xc);
-                iVar4 = (*objPtr->vtable->vfunc_2C)();
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
                 if (iVar4 == 0x78) {
-                  *(uint *)&objPtr[1].field_0x98 = (uint)uVar1;
+                  objPtr->field_0269 = (uint)uVar1;
                 }
                 FUN_006b0c70((DArrayTy *)param_1,local_c);
               }
@@ -148,10 +151,10 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x242,0,iVar4,&DAT_007a4ccc,
-                             s_AiTactClassTy__GiveObjByClaim_007d57b8);
+  iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x242,0,iVar4,"%s",
+                             "AiTactClassTy::GiveObjByClaim");
   if (iVar7 == 0) {
-    RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x243);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x243);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

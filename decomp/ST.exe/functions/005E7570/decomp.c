@@ -43,8 +43,8 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       DarkScreen(DAT_0080759c,10,2);
       thunk_FUN_005dac60();
     }
-    if (PTR_0081176c->field_002C != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
+    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     if (*(HoloTy **)&pMVar2[0x1e].field_0x5e != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)&pMVar2[0x1e].field_0x5e);
@@ -76,7 +76,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       if (PTR_0081176c->field_04B3 != 0xffffffff) {
         FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
-      if (-1 < (int)PTR_0081176c->field_0540) {
+      if (-1 < PTR_0081176c->field_0540) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
       }
     }
@@ -92,10 +92,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       if (PTR_0081176c->field_05F1 != 0xffffffff) {
         FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
       }
-      if (-1 < (int)PTR_0081176c->field_0558) {
+      if (-1 < PTR_0081176c->field_0558) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0558);
       }
-      if (-1 < (int)PTR_0081176c->field_0554) {
+      if (-1 < PTR_0081176c->field_0554) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0554);
       }
     }
@@ -123,12 +123,12 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xd5,0,iVar3,&DAT_007a4ccc,
-                             s_WaitTy__DoneWait_007cdd98);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0xd5,0,iVar3,"%s",
+                             "WaitTy::DoneWait");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0xd5);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\wait_obj.cpp",0xd5);
   return;
 }
 

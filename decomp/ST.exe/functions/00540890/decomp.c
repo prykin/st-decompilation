@@ -51,8 +51,8 @@ StartServTy::WrTextDDX
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0x75,0,iVar2,&DAT_007a4ccc,
-                             s_StartServTy__WrTextDDX_007c7b84);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0x75,0,iVar2,"%s",
+                             "StartServTy::WrTextDDX");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

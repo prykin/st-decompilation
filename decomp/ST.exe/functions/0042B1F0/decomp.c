@@ -42,12 +42,12 @@ STAllPlayersC::GetGObjFromBox
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x155,0,iVar4,
-                                 &DAT_007a4ccc,s_STAllPlayersC__GetGObjFromBox_007a6078);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x155,0,iVar4,
+                                 "%s","STAllPlayersC::GetGObjFromBox");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x156);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x156);
     }
     return;
   }
@@ -78,13 +78,13 @@ STAllPlayersC::GetGObjFromBox
       (g_worldGrid.sizeZ < local_18)) ||
      (((local_14 < local_8 || (local_10 < local_c)) || (local_1c < local_18)))) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x133);
   }
   if (param_8 == (int *)0x0) {
     if (((param_9 == (int *)0x0) && (param_10 == (int *)0x0)) && (param_11 == (int *)0x0)) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x135);
     }
   }

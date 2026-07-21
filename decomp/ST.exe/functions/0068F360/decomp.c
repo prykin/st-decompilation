@@ -39,12 +39,12 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   pAVar6 = local_8;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x276,0,iVar7,&DAT_007a4ccc,
-                                s_AiTactClassTy__GiveObjByFltType_007d57dc);
+    iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x276,0,iVar7,"%s",
+                                "AiTactClassTy::GiveObjByFltType");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x277);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\ai\\ai_tact.cpp",0x277);
     return;
   }
   if ((param_1 == (uint *)0x0) || (param_1[3] == 0)) {
@@ -77,12 +77,13 @@ joined_r0x0068f3e2:
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,pAVar6->field_0x24,
+                             (g_sTAllPlayers_007FA174,*(char *)&pAVar6->field_0024,
                               CONCAT22((short)((uint)puVar8 >> 0x10),*puVar8),CASE_1);
         }
         pAVar6 = local_8;
       } while (objPtr == (STGameObjC *)0x0);
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar7 = (**(code **)&objPtr->vtable->field_0x2c)();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       pDVar11 = local_8->field_00A5;
       if ((pDVar11 == (DArrayTy *)0x0) || ((int)pDVar11->count <= (int)local_c)) {
@@ -96,9 +97,10 @@ joined_r0x0068f3e2:
         }
       }
       uVar1 = pAVar9->field_007D;
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar7 = (**(code **)&objPtr->vtable->field_0x2c)();
       if (iVar7 == 0x78) {
-        *(uint *)&objPtr[1].field_0x98 = (uint)uVar1;
+        objPtr->field_0269 = (uint)uVar1;
       }
       FUN_006b0c70((DArrayTy *)param_1,uVar3);
       pAVar6 = local_8;

@@ -26,17 +26,20 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
       if ((short)local_8 != -1) {
         this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,local_8,CASE_1);
         if (this_00 == (STGameObjC *)0x0) {
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1742,0,0,
-                                     &DAT_007a4ccc,s_STGroupBoatC__GenSwitch_NULL_007ac540);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1742,0,0,
+                                     "%s","STGroupBoatC::GenSwitch NULL");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           RaiseInternalException
-                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x1743);
         }
-        iVar3 = (*this_00->vtable->vfunc_2C)();
-        if ((iVar3 == 0x16) || (iVar3 = (*this_00->vtable->vfunc_2C)(), iVar3 == 0x25)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar3 = (**(code **)&this_00->vtable->field_0x2c)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if ((iVar3 == 0x16) || (iVar3 = (**(code **)&this_00->vtable->field_0x2c)(), iVar3 == 0x25))
+        {
           thunk_FUN_00494160(this_00,param_1);
         }
       }

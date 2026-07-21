@@ -47,10 +47,10 @@ STBoatC::GetExplosionInfo
   pSVar2 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d5f,0,iVar3,&DAT_007a4ccc
-                                ,s_STBoatC__GetExplosionInfo_007ab8f8);
+    iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3d5f,0,iVar3,"%s"
+                                ,"STBoatC::GetExplosionInfo");
     if (iVar10 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d60);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_boat.cpp",0x3d60);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -60,13 +60,13 @@ STBoatC::GetExplosionInfo
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (((longlong)local_20 < 0) || ((int)((byte)local_24->field_0281 - 1) < local_20._4_4_)) {
     RaiseInternalException
-              (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+              (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d4f);
   }
   iVar3 = DArrayGetElement((DArrayTy *)(&pSVar2->field_0282)[iVar3],local_28,&local_34);
   if (iVar3 == -4) {
     RaiseInternalException
-              (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+              (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d50);
   }
   puVar4 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar2->field_006C);

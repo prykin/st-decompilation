@@ -33,7 +33,7 @@ undefined4 __fastcall FUN_004cbe10(TLOBaseTy *param_1)
   case CASE_72:
     thunk_FUN_004ed210(param_1);
   }
-  thunk_FUN_004ac9e0((void *)param_1->field_05FF,PTR_00802a38->field_00E4);
+  thunk_FUN_004ac9e0(param_1->field_05FF,PTR_00802a38->field_00E4);
   return 0;
 }
 

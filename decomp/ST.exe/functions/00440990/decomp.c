@@ -21,13 +21,13 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   param_2 = (int *)GetObjPtr(in_ECX,(char)param_2,param_3,CASE_1);
   if ((STGameObjC *)param_2 == (STGameObjC *)0x0) {
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21ed,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC___ChangeDock_007a8020);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21ed,0,0,"%s",
+                               "STAllPlayersC::_ChangeDock");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x21ee);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

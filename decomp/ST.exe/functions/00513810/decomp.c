@@ -34,7 +34,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
         *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
         if (PTR_00802a30 != (CursorClassTy *)0x0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)**(undefined4 **)PTR_00802a30)(&local_c->field_0x18);
+          (**(code **)PTR_00802a30->field_0000)(&local_c->field_0x18);
         }
       }
       HVar1 = this_00->field_01A2;
@@ -79,12 +79,12 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x2b3,0,iVar3,&DAT_007a4ccc
-                               ,s_HelpPanelTy__BackBut_007c3a80);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x2b3,0,iVar3,"%s"
+                               ,"HelpPanelTy::BackBut");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x2b3);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x2b3);
   }
   return;
 }

@@ -25,7 +25,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
-        uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
+        uVar5 = local_8->field_1A5B->field_06A6;
         puVar6 = (undefined4 *)param_1->field_0008;
         for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
           *puVar6 = 0;
@@ -42,7 +42,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         if (uVar5 != 0) {
           do {
             param_2 = param_2 + 1;
-            if (*param_2 < *(uint *)&local_8->field_1A5B->field_0x6a6) {
+            if (*param_2 < local_8->field_1A5B->field_06A6) {
               *(undefined1 *)(*param_2 + iVar2) = 1;
             }
             uVar4 = uVar4 + 1;
@@ -51,7 +51,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
+      uVar5 = local_8->field_1A5B->field_06A6;
       puVar6 = (undefined4 *)param_1->field_0008;
       for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar6 = 0x1010101;
@@ -61,17 +61,17 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         *(undefined1 *)puVar6 = 1;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      param_1->field_0004 = *(undefined4 *)&local_8->field_1A5B->field_0x6a6;
+      param_1->field_0004 = local_8->field_1A5B->field_06A6;
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x9af,0,iVar2,&DAT_007a4ccc
-                               ,s_SettMapMTy__PrepareAFT_007cd528);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x9af,0,iVar2,"%s"
+                               ,"SettMapMTy::PrepareAFT");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0x9af);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\settmobj.cpp",0x9af);
   }
   return;
 }

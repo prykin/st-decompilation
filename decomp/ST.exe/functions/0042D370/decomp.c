@@ -24,7 +24,8 @@ STAllPlayersC::SetActivityToObjs
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (*pSVar2->vtable[1].vfunc_14)(1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)&pSVar2->vtable[1].field_0x18)(1);
       return;
     }
     if (param_2 == 0x1ae) {
@@ -47,7 +48,8 @@ LAB_0042d3b2:
       DArrayGetElement(param_3,index,&param_1);
       if (((short)param_1 != -1) &&
          (pSVar2 = GetObjPtr(this,objPtr,param_1,CASE_1), pSVar2 != (STGameObjC *)0x0)) {
-        (*pSVar2->vtable[1].vfunc_14)(1);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (**(code **)&pSVar2->vtable[1].field_0x18)(1);
       }
       index = index + 1;
     } while ((int)index < (int)param_4);
@@ -61,7 +63,8 @@ cf_common_exit_0042D44C:
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (*pSVar2->vtable[1].vfunc_14)(1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)&pSVar2->vtable[1].field_0x18)(1);
       return;
     }
     if (param_2 == 0) {
@@ -74,8 +77,8 @@ cf_common_exit_0042D44C:
     goto cf_common_exit_0042D44C;
   }
 LAB_0042d41b:
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x43d,0,0,&DAT_007a4ccc,
-                             s_STAllPlayersC__SetActivityToObjs_007a63a4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x43d,0,0,"%s",
+                             "STAllPlayersC::SetActivityToObjs invalid type");
   if (iVar3 == 0) {
     return;
   }

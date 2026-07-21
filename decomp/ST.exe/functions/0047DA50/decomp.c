@@ -71,15 +71,15 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
     uVar5 = sub_004176C0(this,this->field_069B);
     uVar5 = sub_00417910(this,(short)uVar5);
     if (uVar5 == 0xffffffff) {
-      iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3925,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__BackAnnih_1_007ab6bc);
+      iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3925,0,0,"%s",
+                                 "STBoatC::BackAnnih 1");
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar7 = 0x3925;
 LAB_0047ddc3:
       RaiseInternalException
-                (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar7);
+                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar7);
       return 0xffff;
     }
     if (uVar5 == 0) {
@@ -88,10 +88,9 @@ LAB_0047ddc3:
   }
   else {
     if (this->field_06A5 == 5) {
-      STJellyGunC::sub_00415B30
-                ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
-                 this->field_0691 * 0xc9 + 100,this->field_0693 * 0xc9 + 100,
-                 this->field_0695 * 200 + 100,this->field_0061);
+      sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
+                   this->field_0691 * 0xc9 + 100,this->field_0693 * 0xc9 + 100,
+                   this->field_0695 * 200 + 100,this->field_0061);
       this->field_06A5 = 6;
     }
     if (this->field_06A5 == 6) {
@@ -104,9 +103,9 @@ LAB_0047ddc3:
       uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
-      if (((int)this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
-         (local_10 = 0, this->field_0x2bf != '\0')) {
-        local_8 = (undefined4 *)&this->field_0x2b3;
+      if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
+         (local_10 = 0, this->field_02BF != '\0')) {
+        local_8 = &this->field_02B3;
         do {
           puVar6 = (undefined4 *)
                    thunk_FUN_0041dc40(local_2c,(short)*local_8,*(undefined2 *)(local_8 + 1),
@@ -153,11 +152,11 @@ LAB_0047ddc3:
                      sVar13,sVar14,sVar15,sVar16,sVar17,sVar18,iVar8,sVar19,bVar20);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
-        } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
+        } while (local_10 < (int)(uint)(byte)this->field_02BF);
       }
       if (local_1c == -1) {
-        iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x394c,0,0,&DAT_007a4ccc,
-                                   s_STBoatC__BackAnnih_2_007ab6a0);
+        iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x394c,0,0,"%s",
+                                   "STBoatC::BackAnnih 2");
         if (iVar7 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }

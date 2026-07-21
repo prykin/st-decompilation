@@ -42,7 +42,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
       local_c = (AnonPointee_PlaySystemTy_0039 *)0x0;
     }
     uVar2 = local_8;
-    if ((uint)local_10->field_0053 < local_8) {
+    if (local_10->field_0053 < local_8) {
       iVar3 = Library::DKW::LIB::FUN_006acf50(local_10->field_004F,local_8);
       pPVar8->field_004F = iVar3;
       pPVar8->field_0053 = uVar2;
@@ -85,12 +85,12 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x4e6,0,iVar3,&DAT_007a4ccc,
-                             s_PlaySystemTy__SendClientMail_007c8598);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x4e6,0,iVar3,"%s",
+                             "PlaySystemTy::SendClientMail");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x4e8);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x4e8);
   return;
 }
 

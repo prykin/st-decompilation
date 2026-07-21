@@ -34,7 +34,7 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
     }
     else {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(local_8->field_0000 + 0x20))();
+      (*(code *)local_8->field_0000->field_0020)();
       iVar2 = 1;
     }
     SwitchPanel(this_00,iVar2);
@@ -42,12 +42,12 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x124,0,iVar2,&DAT_007a4ccc,
-                             s_SpecPanelTy__SetPanel_007c7984);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x124,0,iVar2,"%s",
+                             "SpecPanelTy::SetPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x124);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\specpan.cpp",0x124);
   return 1;
 }
 

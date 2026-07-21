@@ -53,25 +53,26 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     this->field_02C4 = 0;
     if (this->field_07CA != 0) {
-      sVar4 = *(short *)&this->field_0x3ce;
-      sVar15 = *(short *)&this->field_0x3d0;
+      sVar4 = this->field_03CE;
+      sVar15 = this->field_03D0;
       *(short *)&this->field_0x5ca = sVar4;
-      this->field_05CC = sVar15;
-      *(short *)&this->field_0x5ce = *(short *)&this->field_0x3d2;
-      if (((sVar4 == -1) && (sVar15 == -1)) && (*(short *)&this->field_0x3d2 == -1)) {
+      *(short *)&this->field_0x5cc = sVar15;
+      *(undefined2 *)&this->field_0x5ce = this->field_03D2;
+      if (((sVar4 == -1) && (sVar15 == -1)) && (this->field_03D2 == -1)) {
         this->field_05D6 = 0;
         return 2;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                        ((AnonReceiver_0048DFD0 *)this,sVar4,sVar15,*(short *)&this->field_0x3d2,
+                        ((AnonReceiver_0048DFD0 *)this,sVar4,sVar15,this->field_03D2,
                          this->field_005B,this->field_005D,
-                         (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F),
-                         0,&this->field_05D0,(short *)&this->field_0x5d2,&this->field_05D4);
+                         (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),this->field_005F)
+                         ,0,(short *)&this->field_0x5d0,(short *)&this->field_0x5d2,
+                         (short *)&this->field_0x5d4);
       if (iVar5 != 0) {
         this->field_05D6 = 5;
-        sub_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
-                     (int)this->field_05D4);
+        sub_00481520(this,(int)*(short *)&this->field_0x5d0,(int)*(short *)&this->field_0x5d2,
+                     (int)*(short *)&this->field_0x5d4);
         sub_0045FF50(this,0);
         return 2;
       }
@@ -82,8 +83,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   if (iVar5 == 5) {
     iVar5 = sub_0045FF50(this,2);
     if (iVar5 == -1) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3079,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__UnLoadObj__5_007ab0a8);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3079,0,0,"%s",
+                                 "STBoatC::UnLoadObj, 5");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -95,15 +96,17 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     else if (iVar5 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                        ((AnonReceiver_0048DFD0 *)this,*(short *)&this->field_0x5ca,this->field_05CC
-                         ,*(short *)&this->field_0x5ce,this->field_005B,this->field_005D,
-                         (int *)CONCAT22((short)((uint)&this->field_05D0 >> 0x10),this->field_005F),
-                         0,&this->field_05D0,(short *)&this->field_0x5d2,&this->field_05D4);
+                        ((AnonReceiver_0048DFD0 *)this,*(short *)&this->field_0x5ca,
+                         *(short *)&this->field_0x5cc,*(short *)&this->field_0x5ce,this->field_005B,
+                         this->field_005D,
+                         (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),this->field_005F)
+                         ,0,(short *)&this->field_0x5d0,(short *)&this->field_0x5d2,
+                         (short *)&this->field_0x5d4);
       if (iVar5 == 0) {
         return 0;
       }
-      sub_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
-                   (int)this->field_05D4);
+      sub_00481520(this,(int)*(short *)&this->field_0x5d0,(int)*(short *)&this->field_0x5d2,
+                   (int)*(short *)&this->field_0x5d4);
       sub_0045FF50(this,0);
       return 2;
     }
@@ -111,18 +114,18 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   }
   if (iVar5 == 0) {
     iVar5 = thunk_FUN_00492550(this,this->field_005B,this->field_005D,this->field_005F,
-                               &this->field_05D0,(undefined2 *)&this->field_0x5d2,&this->field_05D4)
-    ;
+                               (undefined2 *)&this->field_0x5d0,(undefined2 *)&this->field_0x5d2,
+                               (short *)&this->field_0x5d4);
     if (iVar5 == 0) {
       iVar5 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar5 != 0);
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar5 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_05D4 * 200) + 100;
+    iVar5 = CONCAT22((short)((uint)iVar5 >> 0x10),*(short *)&this->field_0x5d4 * 200) + 100;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar10 = CONCAT22(extraout_var,*(short *)&this->field_0x5d2 * 0xc9) + 100;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar6 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_05D0 * 0xc9) + 100;
+    iVar6 = CONCAT22((short)((uint)iVar5 >> 0x10),*(short *)&this->field_0x5d0 * 0xc9) + 100;
     uVar12 = (undefined2)((uint)iVar10 >> 0x10);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar4 = (*this->vtable->vfunc_10)
@@ -139,7 +142,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
         local_5 = local_c->field_0063;
-        puVar8 = (undefined4 *)&this->field_0x34;
+        puVar8 = (undefined4 *)&this->field_0034;
         puVar13 = (undefined4 *)&local_c->field_0x34;
         for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar13 = *puVar8;
@@ -157,8 +160,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)local_c + 0xb8))();
         DumpClassC::WritePtr
-                  (this->field_05D0,*(short *)&this->field_0x5d2,this->field_05D4,0,
-                   (AnonShape_00495EC0_95A268C6 *)this);
+                  (*(short *)&this->field_0x5d0,*(short *)&this->field_0x5d2,
+                   *(short *)&this->field_0x5d4,0,(AnonShape_00495EC0_95A268C6 *)this);
         thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
         this->field_07CA = 0;
         this->field_07C6 = 0;
@@ -166,25 +169,24 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
       iVar5 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x309b,0,0,&DAT_007a4ccc,
-                               s_STBoatC__UnLoadObj_RotateCheat_007ab080);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x309b,0,0,"%s",
+                               "STBoatC::UnLoadObj RotateCheat");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return -1;
   }
   if (iVar5 == 1) {
-    STJellyGunC::sub_00415B30
-              ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
-               this->field_05D0 * 0xc9 + 100,*(short *)&this->field_0x5d2 * 0xc9 + 100,
-               this->field_05D4 * 200 + 100,this->field_0061);
+    sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
+                 *(short *)&this->field_0x5d0 * 0xc9 + 100,*(short *)&this->field_0x5d2 * 0xc9 + 100
+                 ,*(short *)&this->field_0x5d4 * 200 + 100,this->field_0061);
     this->field_05D6 = 2;
   }
   if (this->field_05D6 == 2) {
     local_20 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
     local_10 = 0;
-    if (this->field_0x2bf != '\0') {
-      param_1 = (int)&this->field_0x2b3;
+    if (this->field_02BF != '\0') {
+      param_1 = (int)&this->field_02B3;
       do {
         puVar8 = (undefined4 *)
                  thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,
@@ -242,11 +244,11 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                    iVar6 + -3,iVar5,sVar4,sVar15,sVar16,sVar17,sVar18,sVar19,iVar10,sVar20,bVar21);
         local_10 = local_10 + 1;
         param_1 = param_1 + 6;
-      } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
+      } while (local_10 < (int)(uint)(byte)this->field_02BF);
     }
     if (local_20 == -1) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30d2,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__UnLoadObj_LLMoveStep_007ab05c);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x30d2,0,0,"%s",
+                                 "STBoatC::UnLoadObj LLMoveStep");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }

@@ -16,7 +16,7 @@ undefined4 FUN_006a5cd0(void)
   if (((local_24 == 0) && (local_30 == 0)) && (((DAT_007ec178 & 0x10) == 0 || (local_2c == 0)))) {
     return 0;
   }
-  iVar2 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+  iVar2 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
   if (iVar2 == 1) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

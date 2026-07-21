@@ -13,16 +13,16 @@ void __thiscall STResourceC::SetResource(STResourceC *this,int param_1,int param
 
   if (this->field_0255 == 0xdd) {
     if (param_1 < 1000000) goto cf_common_exit_0057E045;
-    iVar2 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x36,0,0,&DAT_007a4ccc,
-                               s_STResourceC__SetResource___value_007cb1c0);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x36,0,0,"%s",
+                               "STResourceC::SetResource - value too big");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
     if ((this->field_0255 != 0xde) || (param_1 < 1000000)) goto cf_common_exit_0057E045;
-    iVar2 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x3c,0,0,&DAT_007a4ccc,
-                               s_STResourceC__SetResource___value_007cb1c0);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x3c,0,0,"%s",
+                               "STResourceC::SetResource - value too big");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

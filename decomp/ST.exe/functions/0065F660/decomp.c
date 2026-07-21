@@ -30,10 +30,10 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x303,0,iVar6,&DAT_007a4ccc,
-                               s_AiFltClassTy__AppendPoint_007d2c20);
+    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x303,0,iVar6,"%s",
+                               "AiFltClassTy::AppendPoint");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x304);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_flt.cpp",0x304);
       return iVar6;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

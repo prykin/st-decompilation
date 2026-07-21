@@ -49,12 +49,12 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   if (local_2b != (DArrayTy *)0x0) {
     DArrayDestroy(local_2b);
   }
-  iVar2 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x2fb,0,iVar3,&DAT_007a4ccc,
-                             s_AiTactClassTy__BackFromRepair_007d5850);
+  iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x2fb,0,iVar3,"%s",
+                             "AiTactClassTy::BackFromRepair");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x2fc);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x2fc);
   return;
 }
 

@@ -23,7 +23,7 @@ int * __cdecl FUN_0064a630(int param_1)
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0064a800(&local_8);
-  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_erc_cpp_007d2a04,0x17);
+  RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_erc.cpp",0x17);
   return (int *)0x0;
 }
 

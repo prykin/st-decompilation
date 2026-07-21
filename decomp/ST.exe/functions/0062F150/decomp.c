@@ -18,9 +18,9 @@ void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
       thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                          param_1->field_01D5,param_1->field_01D9,&local_8,&local_10);
       if (((((-1 < iVar1) && (iVar1 < 5)) && (-1 < local_8)) &&
-          (((local_8 < (int)pVVar2->field_0030 &&
+          (((local_8 < pVVar2->field_0030 &&
             (local_10 = (&DAT_0079aed0)[iVar1] + local_10, -1 < local_10)) &&
-           (local_10 < (int)pVVar2->field_0034)))) &&
+           (local_10 < pVVar2->field_0034)))) &&
          ((pVVar2->field_004C != 0 &&
           (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_8) == '\0'))))
       goto LAB_0062f208;

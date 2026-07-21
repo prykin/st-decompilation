@@ -22,7 +22,7 @@ int FUN_006ad3a0(LPCSTR lpText,LPCSTR lpCaption,uint param_3)
     param_3 = param_3 | 0x10;
   }
   if (DAT_00854a84 != 0) {
-    iVar1 = MessageBoxA(hWnd,lpText,s_Debug_Message___SECOND_CALL_007ed7dc,
+    iVar1 = MessageBoxA(hWnd,lpText,"Debug Message - SECOND CALL",
                         param_3 & 0xffffdf1f | 0x11010);
     return iVar1;
   }

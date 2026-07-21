@@ -41,7 +41,7 @@ undefined4 FUN_005ec9f0(int param_1)
     uVar2 = thunk_FUN_004ad650((int)this);
     local_8->field_02D6 = uVar2;
     if (local_8->field_0235 == '\x01') {
-      STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,DAT_00806774,s_forcef0_007aa008,0x1d);
+      STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,DAT_00806774,"forcef0",0x1d);
       thunk_FUN_004ad670(this,'\x0e');
       thunk_FUN_004ad150(this,'\v');
       thunk_FUN_004ac700(this,'\v');
@@ -53,13 +53,13 @@ undefined4 FUN_005ec9f0(int param_1)
   else {
     STT3DSprC::LoadSequence
               ((STT3DSprC *)this,8,DAT_00806774,
-               s_expl_bt0_007cdf30 + (uint)local_8->field_02DF * 0x32,0x1d);
+               "expl_bt0" + (uint)local_8->field_02DF * 0x32,0x1d);
     STT3DSprC::LoadSequence
               ((STT3DSprC *)this,9,DAT_00806764,
-               s_expl_bbt0_007cdf3a + (uint)local_8->field_02DF * 0x32,0x1d);
+               "expl_bbt0" + (uint)local_8->field_02DF * 0x32,0x1d);
     STT3DSprC::LoadSequence
               ((STT3DSprC *)this,10,DAT_00806774,
-               s_expmask3_007cdf44 + (uint)local_8->field_02DF * 0x32,0x1d);
+               "expmask3" + (uint)local_8->field_02DF * 0x32,0x1d);
     thunk_FUN_004ac700(this,'\n');
     STT3DSprC::StartShow((STT3DSprC *)this,10,PTR_00802a38->field_00E4);
     thunk_FUN_004acf20(this,DAT_008032b8,0x10);

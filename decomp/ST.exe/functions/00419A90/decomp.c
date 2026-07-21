@@ -11,7 +11,8 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
 
   if (*(int *)&param_1->field_0xe8 == 1) {
     *(undefined4 *)&param_1->field_0xe8 = 0;
-    thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
+              ((AnonReceiver_00417FF0 *)param_1);
     return 1;
   }
   STFishC::sub_004162B0(param_1,&local_6,&local_8,&local_a);
@@ -31,7 +32,8 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
                  [(byte)param_1->field_0x8e];
       }
       if (pSVar2 == param_1) {
-        thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
+                  ((AnonReceiver_00417FF0 *)param_1);
         return 1;
       }
     }

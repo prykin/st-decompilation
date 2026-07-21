@@ -10,6 +10,6 @@
 dword __thiscall STSprGameObjC::FUN_005efa10(STSprGameObjC *this)
 
 {
-  return *(dword *)&this->field_0x23e;
+  return this->field_023E;
 }
 

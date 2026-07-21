@@ -33,10 +33,10 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x19c,0,iVar4,&DAT_007a4ccc
-                               ,s_MTaskTy__NoneMTask_007cdaa0);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x19c,0,iVar4,"%s"
+                               ,"MTaskTy::NoneMTask");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Start_task_obj_cpp_007cd994,0x19c);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\task_obj.cpp",0x19c);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

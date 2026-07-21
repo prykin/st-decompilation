@@ -30,12 +30,12 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int par
   this_00 = local_10;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0xf8,0,errorCode,&DAT_007a4ccc
-                               ,s_STGroupC__AddObjs_007a5134);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0xf8,0,errorCode,"%s"
+                               ,"STGroupC::AddObjs");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0xf9);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\tc_grp.cpp",0xf9);
     return 0xffffffff;
   }
   if (local_c == 0) {

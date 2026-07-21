@@ -1,8 +1,8 @@
 address	status	proposed_name	detail
-004158E0	disabled		all apply flags are 0
 00415B30	disabled		all apply flags are 0
 00415ED0	disabled	STJellyGunC::sub_00415ED0	all apply flags are 0
 004162B0	disabled	STFishC::sub_004162B0	all apply flags are 0
+004167A0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0	all apply flags are 0
 004176C0	disabled	STBoatC::sub_004176C0	all apply flags are 0
 00417830	disabled		all apply flags are 0
 00417910	disabled	STBoatC::sub_00417910	all apply flags are 0
@@ -34,6 +34,9 @@ address	status	proposed_name	detail
 004A7E30	disabled	STGroupBoatC::sub_004A7E30	all apply flags are 0
 00526BA0	disabled	BldLabPanelTy::sub_00526BA0	all apply flags are 0
 00555570	disabled	cLoadingTy::sub_00555570	all apply flags are 0
+0055B9F0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055B9F0	all apply flags are 0
+0055BB00	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BB00	all apply flags are 0
+0055BBC0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BBC0	all apply flags are 0
 0055DB70	disabled	StartSystemTy::sub_0055DB70	all apply flags are 0
 0057BF20	disabled	STFishC::sub_0057BF20	all apply flags are 0
 0057D420	disabled	STFishC::sub_0057D420	all apply flags are 0
@@ -53,26 +56,32 @@ address	status	proposed_name	detail
 0058F430	disabled	STSharkC::sub_0058F430	all apply flags are 0
 005DA910	disabled	StartSystemTy::sub_005DA910	all apply flags are 0
 005DAA60	disabled	StartSystemTy::sub_005DAA60	all apply flags are 0
-005DAB30	applied	StartSystemTy::sub_005DAB30	owner=applied(StartSystemTy::sub_005DAB30); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005DAB30	disabled	StartSystemTy::sub_005DAB30	all apply flags are 0
 005DAC60	disabled	StartSystemTy::sub_005DAC60	all apply flags are 0
 005DAF20	disabled	StartSystemTy::sub_005DAF20	all apply flags are 0
 005DB010	disabled	StartSystemTy::sub_005DB010	all apply flags are 0
 005DB2A0	disabled	StartSystemTy::sub_005DB2A0	all apply flags are 0
+00615BB0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::sub_00615BB0	all apply flags are 0
+00636FC0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0	all apply flags are 0
 0065BD70	disabled	AiEventClassTy::sub_0065BD70	all apply flags are 0
 0065D9C0	disabled	AiFltClassTy::sub_0065D9C0	all apply flags are 0
+0065E700	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::sub_0065E700	all apply flags are 0
 00661800	disabled	AiFltClassTy::sub_00661800	all apply flags are 0
 0067B2E0	disabled	AiPlrClassTy::sub_0067B2E0	all apply flags are 0
-006AB060	disabled	STGameObjC::sub_006AB060	all apply flags are 0
 006B6110	disabled	StartSystemTy::sub_006B6110	all apply flags are 0
 006B6500	disabled	StartSystemTy::sub_006B6500	all apply flags are 0
+006E25D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_006E25D0	all apply flags are 0
+006E51B0	disabled	STAppC::sub_006E51B0	all apply flags are 0
 006E52D0	disabled		all apply flags are 0
-006E5360	applied	StartSystemTy::sub_006E5360	owner=applied(StartSystemTy::sub_006E5360); this_type=unchanged
+006E5360	disabled	StartSystemTy::sub_006E5360	all apply flags are 0
 006E56B0	disabled	StartSystemTy::sub_006E56B0	all apply flags are 0
-006E5FB0	applied	STGroupBoatC::sub_006E5FB0	owner=applied(STGroupBoatC::sub_006E5FB0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+006E5FB0	disabled		all apply flags are 0
 006E5FD0	disabled		all apply flags are 0
 006E6080	disabled		all apply flags are 0
 006E60A0	disabled	STJellyGunC::sub_006E60A0	all apply flags are 0
-006E60E0	disabled	STGroupBoatC::sub_006E60E0	all apply flags are 0
+006E60E0	disabled		all apply flags are 0
+006F31D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0	all apply flags are 0
 0070B3A0	disabled	HelpPanelTy::sub_0070B3A0	all apply flags are 0
 00710790	disabled	StartSystemTy::sub_00710790	all apply flags are 0
+00727C80	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::sub_00727C80	all apply flags are 0
 00749D5F	disabled	CBaseRenderer::sub_00749D5F	all apply flags are 0

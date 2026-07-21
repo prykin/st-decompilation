@@ -23,7 +23,7 @@ VisibleClassTy::VisHoleCreate
   undefined *local_20;
   undefined *local_1c;
   int *local_18;
-  undefined4 local_14;
+  uint local_14;
   undefined4 local_10;
   VisibleClassTy *local_c;
   uint local_8;
@@ -58,12 +58,12 @@ VisibleClassTy::VisHoleCreate
       return local_8;
     }
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x3f0,0,iVar3,&DAT_007a4ccc,
-                               s_VisibleClassTy__VisHoleCreate_er_007c9464);
+    iVar4 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x3f0,0,iVar3,"%s",
+                               "VisibleClassTy::VisHoleCreate error");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_grig_visible_cpp_007c92cc,0x3f1);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x3f1);
   }
   return 0xffffffff;
 }

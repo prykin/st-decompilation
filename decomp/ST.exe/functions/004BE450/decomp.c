@@ -10,6 +10,6 @@
 dword __thiscall TLOBaseTy::FUN_004be450(TLOBaseTy *this)
 
 {
-  return *(dword *)&this->field_0x241;
+  return this->field_0241;
 }
 

@@ -39,7 +39,7 @@ uint FUN_006c6c80(int param_1)
       return 0xfffffffb;
     }
     if (((char)local_8 == '\v') &&
-       (iVar4 = Library::MSVCRT::_strncmp((char *)&local_108,s_NETSCAPE2_0_007edfbc,0xb), iVar4 == 0
+       (iVar4 = Library::MSVCRT::_strncmp((char *)&local_108,"NETSCAPE2.0",0xb), iVar4 == 0
        )) {
       bVar1 = true;
     }

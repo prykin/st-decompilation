@@ -31,9 +31,10 @@ LAB_0042d1f8:
       }
       do {
         DArrayGetElement(param_3,index,&param_4);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((((short)param_4 != -1) &&
             (pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
-           ((*pSVar3->vtable[1].vfunc_14)(0), param_5 != 0)) {
+           ((**(code **)&pSVar3->vtable[1].field_0x18)(0), param_5 != 0)) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
         }
@@ -50,7 +51,8 @@ LAB_0042d1c3:
           return;
         }
         iVar4 = 0;
-        (*pSVar3->vtable[1].vfunc_14)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (**(code **)&pSVar3->vtable[1].field_0x18)();
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -63,8 +65,8 @@ LAB_0042d1c3:
       goto LAB_0042d1c3;
     }
 LAB_0042d270:
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x406,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__ResetActivityFrom_007a6368);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x406,0,0,"%s",
+                               "STAllPlayersC::ResetActivityFromObjs invalid type");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -76,7 +78,8 @@ LAB_0042d270:
         return;
       }
       iVar4 = 0;
-      (*pSVar3->vtable[1].vfunc_14)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)&pSVar3->vtable[1].field_0x18)();
       if (param_5 == 0) {
         return;
       }
@@ -95,7 +98,8 @@ LAB_0042d270:
       return;
     }
     iVar4 = 0;
-    (*pSVar3->vtable[1].vfunc_14)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)&pSVar3->vtable[1].field_0x18)();
 LAB_0042d2c3:
     if (param_5 != 0) {
       STGameObjC::ResetSelfCheckFlag(pSVar3,iVar4);

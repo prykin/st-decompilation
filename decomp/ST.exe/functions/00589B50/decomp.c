@@ -12,8 +12,8 @@ void __thiscall STOctopusC::SetSprRange(STOctopusC *this,uint param_1)
   int iVar2;
 
   if (7 < param_1) {
-    iVar2 = ReportDebugMessage(s_E____titans_Igor_to_oct_cpp_007cba18,0x71,0,0,&DAT_007a4ccc,
-                               s_STOctopusC__SetSprRange___Bad_di_007cba3c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Igor\\to_oct.cpp",0x71,0,0,"%s",
+                               "STOctopusC::SetSprRange - Bad direction");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

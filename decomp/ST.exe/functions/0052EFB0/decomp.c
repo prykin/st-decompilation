@@ -75,7 +75,7 @@ OptPanelTy::PaintDblBut
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (*(code *)param_4)(param_1);
       iVar8 = 1;
-      pCVar5 = thunk_FUN_00571240(s_BUT_SWITCH_007c71d0,0);
+      pCVar5 = thunk_FUN_00571240("BUT_SWITCH",0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar8,uVar4);
       local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar9,iVar10);
       if (param_6 == 0) {
@@ -112,12 +112,12 @@ OptPanelTy::PaintDblBut
       return;
     }
     g_currentExceptionFrame = local_60.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0xca,0,iVar3,&DAT_007a4ccc
-                               ,s_OptPanelTy__PaintDblBut_007c71b4);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0xca,0,iVar3,"%s"
+                               ,"OptPanelTy::PaintDblBut");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0xca);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\optpanel.cpp",0xca);
   }
   return;
 }

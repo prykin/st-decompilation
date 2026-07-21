@@ -375,7 +375,7 @@ cf_common_join_004286D0:
     FUN_006a5e90(DAT_007f4d6c);
     iVar4 = local_30;
     RaiseInternalException
-              (local_30,g_overwriteContext_007ED77C,s_E____titans_wlad_Td3dshad_cpp_007a5208,0x78f);
+              (local_30,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Td3dshad.cpp",0x78f);
   }
   ExceptionList = local_14;
   return iVar4;

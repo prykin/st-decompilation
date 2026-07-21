@@ -30,8 +30,8 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     local_8->field_00CC = 0xf;
     local_8->field_00D0 = 0x7106;
     (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
-    if (pSVar2->field_0039 != 0) {
-      FUN_006b9890(&pSVar2->field_0039);
+    if (pSVar2->field_0039 != (AnonPointee_STPlaySystemC_0039 *)0x0) {
+      FUN_006b9890((int *)&pSVar2->field_0039);
     }
     if (pSVar2->field_004F != 0) {
       FreeAndNull((void **)&pSVar2->field_004F);
@@ -54,12 +54,12 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1b1,0,iVar3,&DAT_007a4ccc,
-                             s_STPlaySystemC__DoneSystem_007c84d8);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x1b1,0,iVar3,"%s",
+                             "STPlaySystemC::DoneSystem");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1b3);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x1b3);
   return;
 }
 

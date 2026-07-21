@@ -35,7 +35,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
       uVar11 = 0;
-      pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
+      pcVar10 = PTR_0081176c->field_0030;
       uVar9 = 0xffffffff;
       uVar8 = 0xfffffffe;
       puVar4 = (uint *)LoadResourceString(0x26ac,HINSTANCE_00807618);
@@ -50,7 +50,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
                  0xfffffffe,0xffffffff,PTR_0081176c->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
+      pcVar10 = PTR_0081176c->field_0030;
       uVar9 = 0xffffffff;
       uVar8 = 0xfffffffe;
       puVar4 = (uint *)LoadResourceString(0x26b0,HINSTANCE_00807618);
@@ -66,7 +66,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 0;
-    if (pMVar2->field_009A != '\0') {
+    if (pMVar2->field_009A != 0) {
       puVar4 = &pMVar2->field_00FF;
       do {
         if (puVar4[-6] != 0xffffffff) {
@@ -81,18 +81,18 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pMVar2->field_009A);
+      } while (iVar3 < (int)(uint)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x7e,0,iVar3,&DAT_007a4ccc,
-                             s_MainMenuTy__PaintMainMenu_007cc960);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x7e,0,iVar3,"%s",
+                             "MainMenuTy::PaintMainMenu");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0x7e);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\main_obj.cpp",0x7e);
   return;
 }
 

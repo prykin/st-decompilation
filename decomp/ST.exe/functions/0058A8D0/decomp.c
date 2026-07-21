@@ -15,18 +15,18 @@ void __thiscall STOctopusC::Bad(STOctopusC *this,int param_1)
 
   iVar3 = (int)g_worldGrid.sizeY;
   iVar4 = (int)g_worldGrid.sizeX;
-  if (7 < *(int *)&this->field_0x2a9) {
-    iVar2 = ReportDebugMessage(s_E____titans_Igor_to_oct_cpp_007cba18,0x21a,0,0,&DAT_007a4ccc,
-                               s_STOctopusC__Bad_direction_007cba88);
+  if (7 < this->field_02A9) {
+    iVar2 = ReportDebugMessage("E:\\__titans\\Igor\\to_oct.cpp",0x21a,0,0,"%s",
+                               "STOctopusC::Bad direction");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    *(undefined4 *)&this->field_0x2a9 = 0;
+    this->field_02A9 = 0;
   }
-  if ((((iVar4 + -1 < *(int *)&this->field_0x299) || (*(int *)&this->field_0x299 < 0)) ||
-      (iVar3 + -1 < *(int *)&this->field_0x29d)) || (*(int *)&this->field_0x29d < 0)) {
-    *(int *)&this->field_0x299 = iVar4 + -1 >> 1;
-    *(int *)&this->field_0x29d = iVar3 + -1 >> 1;
+  if ((((iVar4 + -1 < this->field_0299) || (this->field_0299 < 0)) ||
+      (iVar3 + -1 < this->field_029D)) || (this->field_029D < 0)) {
+    this->field_0299 = iVar4 + -1 >> 1;
+    this->field_029D = iVar3 + -1 >> 1;
   }
   return;
 }

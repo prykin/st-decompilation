@@ -41,12 +41,12 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0xde,0,iVar4,&DAT_007a4ccc
-                                ,s_InfocPanelTy__PaintInfoc_007c3fcc);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0xde,0,iVar4,"%s"
+                                ,"InfocPanelTy::PaintInfoc");
     if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0xde);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\infocen.cpp",0xde);
     return;
   }
   if (local_c->field_03D4 == 0xff) {
@@ -151,7 +151,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     }
   }
   else {
-    wsprintfA(&this_00->field_0x18d,&DAT_007c1ae4,
+    wsprintfA(&this_00->field_0x18d,"%4d",
               *(int *)(&this_00->field_0x1b4 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0x54,0x71,0x23,0xc);
@@ -184,7 +184,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     }
   }
   else {
-    wsprintfA(&this_00->field_0x18d,&DAT_007c28fc,
+    wsprintfA(&this_00->field_0x18d,"%6d",
               *(int *)(&this_00->field_0x1b8 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0x78,0x71,0x17,0xc);
@@ -217,7 +217,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     }
   }
   else {
-    wsprintfA(&this_00->field_0x18d,&DAT_007c28fc,
+    wsprintfA(&this_00->field_0x18d,"%6d",
               *(int *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_03D4 * 0x10));
   }
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0xa2,0x71,0x23,0xc);

@@ -31,7 +31,7 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
     MMObjTy::CloseButtons((MMObjTy *)local_10);
     bVar4 = 0;
     local_8 = local_8 & 0xffffff00;
-    if (this_00->field_009A != '\0') {
+    if (this_00->field_009A != 0) {
       do {
         uVar2 = local_8 & 0xff;
         *(undefined4 *)((int)&this_00->field_0127 + uVar2 * 0x1fb) = this_00->field_0061;
@@ -43,10 +43,10 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
         bVar4 = bVar4 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar4);
-      } while (bVar4 < (byte)this_00->field_009A);
+      } while (bVar4 < this_00->field_009A);
     }
     local_8 = local_8 & 0xffffff00;
-    if (this_00->field_009A != '\0') {
+    if (this_00->field_009A != 0) {
       do {
         uVar2 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
         if (uVar2 != 0xffffffff) {
@@ -55,19 +55,19 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
         bVar5 = bVar5 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar5);
-      } while (bVar5 < (byte)this_00->field_009A);
+      } while (bVar5 < this_00->field_009A);
     }
     HidePanel(this_00,1,1,1);
     g_currentExceptionFrame = local_54.previous;
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1d3,0,errorCode,
-                             &DAT_007a4ccc,s_MMsgTy__CloseSprBut_007cccf8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x1d3,0,errorCode,
+                             "%s","MMsgTy::CloseSprBut");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1d3);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x1d3);
   return;
 }
 

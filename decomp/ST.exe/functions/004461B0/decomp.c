@@ -42,18 +42,18 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_6c.previous;
     if (exceptionCode != -0x5001fff7) {
-      iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2906,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC___DeleteGuardBoat_007a8390);
+      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2906,0,0,"%s",
+                                 "STAllPlayersC::_DeleteGuardBoat");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(exceptionCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2907);
+      RaiseInternalException(exceptionCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2907);
     }
     return local_18;
   }
   if (local_10 == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x28ba);
   }
   local_8 = array->count;

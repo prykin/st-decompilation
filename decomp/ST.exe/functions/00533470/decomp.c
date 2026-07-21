@@ -29,12 +29,12 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x459,0,iVar4,
-                               &DAT_007a4ccc,s_OptPanelTy__CheckFiles_007c72dc);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x459,0,iVar4,
+                               "%s","OptPanelTy::CheckFiles");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x459);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x459);
     return 0;
   }
   uVar9 = 0;

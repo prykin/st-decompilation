@@ -62,12 +62,12 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4dc,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__DeletePlayer_007cd3d4);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4dc,0,errorCode,
+                               "%s","SettMapMTy::DeletePlayer");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4dc);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x4dc);
   }
   return;
 }

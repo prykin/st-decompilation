@@ -24,12 +24,12 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0xc1,0,iVar3,&DAT_007a4ccc,
-                               s_HoloTy__NextFas_007cc6f0);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0xc1,0,iVar3,"%s",
+                               "HoloTy::NextFas");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_hologram_cpp_007cc674,0xc1);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\hologram.cpp",0xc1);
     return local_8;
   }
   uVar1 = local_c->field_0003;

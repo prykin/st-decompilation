@@ -125,8 +125,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_00512be0
     local_7a4 = 2;
     local_7a0 = 0x8165;
     local_7a8 = local_88c;
-    local_6e4 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_6e4 = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
+    local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
     iVar3 = this_00->field_005C;
     local_700 = 1;
     local_6fc = 1;
@@ -146,8 +146,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_00512be0
     }
     local_688[3] = local_688[3] + 0x16;
     local_620 = 0x8164;
-    local_564 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_560 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_564 = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
+    local_560 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
     local_4fc = this_00->field_003C + 0x1c3;
     local_50c = 3;
     local_508 = 1;
@@ -181,12 +181,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_00512be0
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x220,0,local_8c4[0],
-                             &DAT_007a4ccc,s_HelpPanelTy___CreateVText_007c3a0c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x220,0,local_8c4[0],
+                             "%s","HelpPanelTy ::CreateVText");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(local_8c4[0],0,s_E____titans_Andrey_helppan_cpp_007c383c,0x220);
+  RaiseInternalException(local_8c4[0],0,"E:\\__titans\\Andrey\\helppan.cpp",0x220);
   return;
 }
 

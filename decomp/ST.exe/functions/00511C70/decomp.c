@@ -61,12 +61,12 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xf2,0,iVar4,&DAT_007a4ccc,
-                               s_HelpPanelTy__ShiftControls_007c3958);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xf2,0,iVar4,"%s",
+                               "HelpPanelTy::ShiftControls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xf2);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0xf2);
   }
   return;
 }

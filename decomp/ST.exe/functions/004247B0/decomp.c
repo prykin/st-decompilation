@@ -26,13 +26,13 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
       if ((short)param_1 != -1) {
         this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,param_1,CASE_1);
         if (this_00 == (STGameObjC *)0x0) {
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x256,0,0,&DAT_007a4ccc,
-                                     s_STGroupC__SetAVPar_007a51a4);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x256,0,0,"%s",
+                                     "STGroupC::SetAVPar");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           RaiseInternalException
-                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_tc_grp_cpp_007a50a4,
+                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\tc_grp.cpp",
                      599);
         }
         if (this_00->field_0020 == 0x14) {

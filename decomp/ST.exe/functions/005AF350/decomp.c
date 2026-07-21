@@ -28,12 +28,12 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x3ea,0,iVar3,&DAT_007a4ccc
-                               ,s_ChooseMapTy__DeleteCtrls_007cc878);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x3ea,0,iVar3,"%s"
+                               ,"ChooseMapTy::DeleteCtrls");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_load_obj_cpp_007cc728,0x3ea);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\load_obj.cpp",0x3ea);
     return;
   }
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -54,7 +54,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   FUN_006b5f80(DAT_008075a8,0x112,0x38,0x204,0x19d);
   MMMObjTy::OutBSlProc
             (DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x112,0x38,0x204,0x19d,
-             (undefined4 *)&this_00->field_1A5B->field_0x140);
+             &this_00->field_1A5B->field_0140);
   if (this_00->field_1A6C != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1A6C);
   }
@@ -71,14 +71,14 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   else {
     pHVar4->field_0002 = 1;
     pHVar4->field_0000 = 0;
-    pHVar4->field_0003 = 0xffffffff;
+    pHVar4->field_0003 = -1;
     pHVar4->field_0001 = CASE_2;
     pHVar4->field_0007 = 0;
     pHVar4->field_000B = 0;
     *(undefined4 *)&pHVar4->field_0xf = 0;
     *(undefined4 *)&pHVar4->field_0x1b = 1;
     pHVar4->field_0013 = 1;
-    pHVar4->field_0017 = 0xffffffff;
+    pHVar4->field_0017 = -1;
     pHVar4->field_0027 = 0;
     pHVar4->field_0023 = 0;
     pHVar4->field_002F = 1;
@@ -95,7 +95,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     if (uVar7 != 0) {
       pHVar4 = this_00->field_20B8;
       pHVar4->field_0002 = 0;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       uVar7 = this_00->field_20B8->field_0003;
       if (-1 < (int)uVar7) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar7);
@@ -121,7 +121,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     puVar5 = puVar5 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if (this_00->field_20B4 == '\0') {
+  if (this_00->field_0x20b4 == '\0') {
     this_00->field_002D = 0x20;
     *(undefined4 *)&this_00->field_0x31 = 0;
     FUN_006e6080(this_00,2,PTR_0081176c->field_0389,(undefined4 *)&this_00->field_0x1d);
@@ -151,14 +151,14 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -175,7 +175,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       if (uVar7 != 0) {
         pHVar4 = this_00->field_20BC;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar7 = this_00->field_20BC->field_0003;
         if (-1 < (int)uVar7) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar7);
@@ -228,14 +228,14 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -252,7 +252,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       if (uVar7 != 0) {
         pHVar4 = this_00->field_20C0;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar7 = this_00->field_20C0->field_0003;
         if (-1 < (int)uVar7) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar7);

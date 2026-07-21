@@ -60,10 +60,10 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
     return;
   }
-  if ((int)(char)bVar1 == *(int *)&this->field_0x24) {
+  if ((int)(char)bVar1 == this->field_0024) {
     return;
   }
-  bVar2 = this->field_0x24;
+  bVar2 = *(byte *)&this->field_0024;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_8 = CONCAT31(local_8._1_3_,bVar2);
   if (DAT_00808a8f != '\0') {
@@ -104,10 +104,10 @@ LAB_00690763:
       }
       else {
         pSVar7 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,local_c->field_0x24,local_10,CASE_1);
+                           (g_sTAllPlayers_007FA174,*(char *)&local_c->field_0024,local_10,CASE_1);
       }
       if ((pSVar7 != (STGameObjC *)0x0) &&
-         (iVar6 = thunk_FUN_0068e290(this_01,*(short *)&pSVar7->field_0x30), iVar6 != 0)) {
+         (iVar6 = thunk_FUN_0068e290(this_01,pSVar7->field_0030), iVar6 != 0)) {
         if (*(short *)(iVar6 + 0x7b) == 1) {
           sVar5 = (short)local_10;
         }
@@ -171,12 +171,12 @@ LAB_00690763:
       return;
     }
     g_currentExceptionFrame = local_98.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x433,0,iVar6,&DAT_007a4ccc,
-                                s_AiTactClassTy__HelpOrganize_007d5894);
+    iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x433,0,iVar6,"%s",
+                                "AiTactClassTy::HelpOrganize");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x434);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_tact.cpp",0x434);
   }
   return;
 }

@@ -67,9 +67,9 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,
                               iVar9,&local_1c,&local_20), iVar5 = extraout_EDX, iVar11 < 0)) ||
          (((iVar5 = extraout_EDX, 4 < iVar11 || (iVar5 = local_1c, local_1c < 0)) ||
-          (((int)pVVar3->field_0030 <= local_1c ||
+          ((pVVar3->field_0030 <= local_1c ||
            ((local_20 = (&DAT_0079aed0)[iVar11] + local_20, local_20 < 0 ||
-            ((int)pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == 0)) ||
+            (pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == 0)) ||
        (*(char *)(local_20 * pVVar3->field_0030 + pVVar3->field_004C + local_1c) != '\0')) {
       local_1c = iVar5;
       if (param_1->field_01E7 == '\x01') {
@@ -95,7 +95,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     pSVar4 = local_c;
     if ((((param_1->field_027D == '\0') && (param_1->field_0259 != 10)) &&
         (local_c != (STGameObjC *)0x0)) && (local_c->field_0018 == param_1->field_025E)) {
-      FUN_006ea3e0(param_1->field_0211,param_1->field_01ED,local_c[1].field_001C);
+      FUN_006ea3e0(param_1->field_0211,param_1->field_01ED,local_c->field_01ED);
     }
     bVar8 = param_1->field_027D + 1;
     param_1->field_027D = bVar8;

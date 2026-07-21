@@ -52,17 +52,17 @@ STAllPlayersC::UnRegisterObject
     if (iVar9 == -0x5001fff7) {
       return 0;
     }
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x7cd,0,iVar9,&DAT_007a4ccc,
-                               s_STAllPlayersC__UnRegisterObject_007a6674);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x7cd,0,iVar9,"%s",
+                               "STAllPlayersC::UnRegisterObject");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar9,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7ce);
+      RaiseInternalException(iVar9,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x7ce);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((short)param_3 == -1) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x6cd);
   }
   if (param_4[8] == 0x14) {
@@ -175,9 +175,9 @@ LAB_0042f547:
                     iVar5 = (**(code **)(*param_4 + 0x2c))();
                     if (((&DAT_00800fe0)[iVar5 + 0x41U >> 5] & 1 << ((byte)(iVar5 + 0x41U) & 0x1f))
                         == 0) {
-                      iVar9 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x73c,0,0,
-                                                 &DAT_007a4ccc,
-                                                 s_STAllPlayersC__UnRegisterObject_u_007a66dc);
+                      iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x73c,0,0,
+                                                 "%s",
+                                                 "STAllPlayersC::UnRegisterObject unknown boat type");
                       if (iVar9 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
@@ -319,9 +319,9 @@ LAB_0042f547:
                     iVar5 = (**(code **)(*param_4 + 0x2c))();
                     if (((&DAT_00800f60)[iVar5 - 0x32U >> 5] & 1 << ((byte)(iVar5 - 0x32U) & 0x1f))
                         == 0) {
-                      iVar9 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x797,0,0,
-                                                 &DAT_007a4ccc,
-                                                 s_STAllPlayersC__UnRegisterObject_u_007a669c);
+                      iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x797,0,0,
+                                                 "%s",
+                                                 "STAllPlayersC::UnRegisterObject unknown object type");
                       if (iVar9 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
@@ -428,20 +428,20 @@ LAB_0042f547:
   pSVar7 = GetObjPtr(local_18,param_1,param_3,CASE_1);
   if (pSVar7 != (STGameObjC *)param_4) {
     RaiseInternalException
-              (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x7a3);
   }
   if ((short)param_2 != -1) {
     local_10 = thunk_FUN_0042b760(param_1,param_2);
     if (local_10 == (STGroupBoatC *)0x0) {
       RaiseInternalException
-                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a5);
     }
     iVar9 = thunk_FUN_004237d0(local_10,(short)param_3);
     if (iVar9 == 0) {
       RaiseInternalException
-                (-0x5001fffd,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a6);
     }
   }

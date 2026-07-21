@@ -25,7 +25,7 @@ int __thiscall STSharkC::sub_0058F430(STSharkC *this)
 
   local_14 = 0x7fff;
   this->field_023D = 0;
-  *(undefined4 *)&this->field_0x249 = 0xff;
+  this->field_0249 = 0xff;
   iVar6 = this->field_0047 + -4;
   if (iVar6 < this->field_0047 + 4) {
     do {
@@ -60,7 +60,7 @@ int __thiscall STSharkC::sub_0058F430(STSharkC *this)
                 iVar2 = iVar4 + iVar3 + iVar2;
                 if (iVar2 < local_14) {
                   this->field_024D = *(undefined2 *)&this_00[1].field_0xe;
-                  *(STWorldObjectVTable **)&this->field_0x249 = this_00[1].vtable;
+                  this->field_0249 = this_00[1].vtable;
                   this->field_0231 = sVar5;
                   this->field_0233 = sVar8;
                   this->field_0235 = sVar1;

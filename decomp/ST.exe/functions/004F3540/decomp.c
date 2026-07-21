@@ -37,10 +37,10 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,AnonShape_004F3540_E0E47AE6 *para
   errorCode = (int *)Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (errorCode != (int *)0x0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1cd,0,(int)errorCode,
-                               &DAT_007a4ccc,s_CPanelTy__PaintBut_007c1b38);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x1cd,0,(int)errorCode,
+                               "%s","CPanelTy::PaintBut");
     if (iVar6 == 0) {
-      RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1cd);
+      RaiseInternalException((int)errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1cd);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -57,28 +57,28 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,AnonShape_004F3540_E0E47AE6 *para
   switch(uVar2) {
   case 1:
     if (local_8->field_0134 != 0) {
-      iVar5 = *(int *)(&local_8->field_0x94 + uVar2 * 4);
+      iVar5 = (&local_8->field_0094)[uVar2];
       break;
     }
     goto LAB_004f3636;
   default:
     if (local_8->field_0130 != 0) {
-      iVar5 = *(int *)(&local_8->field_0x94 + uVar2 * 4);
+      iVar5 = (&local_8->field_0094)[uVar2];
     }
     break;
   case 3:
     if (local_8->field_0134 != 0) {
-      iVar5 = *(int *)(&local_8->field_0x94 + uVar2 * 4);
+      iVar5 = (&local_8->field_0094)[uVar2];
     }
     break;
   case 5:
     if (local_8->field_0138 != 0) {
-      iVar5 = *(int *)(&local_8->field_0x94 + uVar2 * 4);
+      iVar5 = (&local_8->field_0094)[uVar2];
     }
     break;
   case 7:
     if (local_8->field_0138 != 0) {
-      iVar5 = *(int *)(&local_8->field_0x94 + uVar2 * 4);
+      iVar5 = (&local_8->field_0094)[uVar2];
       break;
     }
 LAB_004f3636:
@@ -91,7 +91,7 @@ LAB_004f3636:
   if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2],
-               *(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
+               (&pCVar3->field_0094)[uVar2]);
   }
   g_currentExceptionFrame = local_54.previous;
   return;

@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_004eaa20(AnonShape_004D9C80_80F657D3 *param_1)
     iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_tls_cpp_007c159c,0x56);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",0x56);
     }
   }
   switch(param_1->field_0245) {
@@ -57,11 +57,11 @@ undefined4 __fastcall FUN_004eaa20(AnonShape_004D9C80_80F657D3 *param_1)
     thunk_FUN_004ad430(param_1->field_05FF);
     return 0;
   }
-  wsprintfA(local_108,&DAT_007a4ccc,s_trmmine_007c1590);
+  wsprintfA(local_108,"%s","trmmine");
   iVar3 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,local_108,0x1d);
   if (iVar3 != 0) {
     RaiseInternalException
-              (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_tls_cpp_007c159c,99);
+              (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);
   }
   uVar5 = 10;
   iVar3 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);

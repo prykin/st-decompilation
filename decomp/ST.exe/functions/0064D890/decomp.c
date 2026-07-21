@@ -31,12 +31,12 @@ AiEventClassTy::_CreateRCCont
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0xee,0,iVar3,&DAT_007a4ccc,
-                               s_AiEventClassTy___CreateRCCont_007d2ac0);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xee,0,iVar3,"%s",
+                               "AiEventClassTy::_CreateRCCont");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0xef);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0xef);
     return iVar3;
   }
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {

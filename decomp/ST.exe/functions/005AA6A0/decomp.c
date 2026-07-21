@@ -76,12 +76,12 @@ switchD_005aa738_default:
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0x1e,0,iVar3,&DAT_007a4ccc,
-                               s_HoloTy__OutHoloProc_007cc69c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0x1e,0,iVar3,"%s",
+                               "HoloTy::OutHoloProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_hologram_cpp_007cc674,0x1e);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\hologram.cpp",0x1e);
   }
   return;
 }

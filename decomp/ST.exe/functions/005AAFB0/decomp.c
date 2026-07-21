@@ -21,10 +21,10 @@ void __thiscall HoloTy::Done(HoloTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pHVar2 = local_8;
   if (errorCode == 0) {
-    if (-1 < (int)local_8->field_0003) {
+    if (-1 < local_8->field_0003) {
       FUN_006b3bb0(DAT_008075a8,local_8->field_0003);
     }
-    pHVar2->field_0003 = 0xffffffff;
+    pHVar2->field_0003 = -1;
     if (pHVar2->field_000B != 0) {
       FreeAndNull((void **)&pHVar2->field_000B);
     }
@@ -35,12 +35,12 @@ void __thiscall HoloTy::Done(HoloTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0xaa,0,errorCode,
-                             &DAT_007a4ccc,s_HoloTy__Done_007cc6e0);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0xaa,0,errorCode,
+                             "%s","HoloTy::Done");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_hologram_cpp_007cc674,0xaa);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\hologram.cpp",0xaa);
   return;
 }
 

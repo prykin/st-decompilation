@@ -38,19 +38,19 @@ CPanelTy::PaintTxtBut
     goto LAB_004f3aaa;
   default:
     if (this->field_0130 != 0) {
-      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3AC3;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
-      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3AC3;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
-      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3AC3;
     }
     break;
@@ -58,7 +58,7 @@ CPanelTy::PaintTxtBut
     iVar7 = this->field_0138;
 LAB_004f3aaa:
     if (iVar7 != 0) {
-      local_14 = iVar4 - *(int *)(&this->field_0x94 + uVar2 * 4);
+      local_14 = iVar4 - (&this->field_0094)[uVar2];
       goto cf_common_join_004F3AC3;
     }
     iVar4 = iVar4 - this->field_00C0;
@@ -91,18 +91,18 @@ cf_common_join_004F3AC3:
       if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
-                   ,*(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
+                   ,(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1f8,0,iVar4,&DAT_007a4ccc,
-                               s_CPanelTy__PaintTxtBut_007c1b68);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x1f8,0,iVar4,"%s",
+                               "CPanelTy::PaintTxtBut");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1f8);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1f8);
   }
   return;
 }

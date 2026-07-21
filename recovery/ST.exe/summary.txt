@@ -5,5 +5,7 @@ medium=0
 conflicts=0
 thiscall_auto_apply=874
 existing_thiscall_without_live_ecx_evidence=88
+short_diagnostic_string_proposals=0
 note_conventions=Review debug_calling_convention_review.tsv; existing signatures are never reverted automatically.
+note_strings=Short printf formats missed by minimum-length string discovery are written to debug_string_proposals.tsv.
 note=Only rows with apply=1 are consumed by STDebugSymbolApplier.

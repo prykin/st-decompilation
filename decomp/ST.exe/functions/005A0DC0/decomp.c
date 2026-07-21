@@ -23,7 +23,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
   FSGSTy *local_8;
 
   if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (AnonPointee_FSGSTy_1AC0 *)0x0)) &&
-     (-1 < (int)this->field_1ABC)) {
+     (-1 < this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -49,7 +49,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
       if (param_1 < param_2) {
         iVar5 = (param_1 * 100) / param_2;
         pcVar7 = LoadResourceString(0x2571,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,s__s_d___007cc3ec,pcVar7,iVar5);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s%d%%",pcVar7,iVar5);
       }
       else {
         pcVar7 = LoadResourceString(0x2570,HINSTANCE_00807618);
@@ -82,12 +82,12 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x909,0,iVar5,&DAT_007a4ccc
-                               ,s_FSGSTy__ConnectProc_007cc3d4);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x909,0,iVar5,"%s"
+                               ,"FSGSTy::ConnectProc");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x909);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x909);
   }
   return;
 }

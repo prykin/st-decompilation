@@ -21,12 +21,12 @@ void __thiscall SIDTy::PaintSID(SIDTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x6b,0,errorCode,&DAT_007a4ccc
-                             ,s_SIDTy__PaintSID_007cd63c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x6b,0,errorCode,"%s"
+                             ,"SIDTy::PaintSID");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x6b);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\sid_obj.cpp",0x6b);
   return;
 }
 

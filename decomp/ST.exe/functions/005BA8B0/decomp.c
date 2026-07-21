@@ -29,12 +29,12 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0xec,0,errorCode,
-                               &DAT_007a4ccc,s_PrividerTy__PaintPrivider_007ccde0);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0xec,0,errorCode,
+                               "%s","PrividerTy::PaintPrivider");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0xec);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0xec);
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
@@ -45,7 +45,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
               (this_00,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x79,0x51,0x22e,0x145,(int)local_8);
   }
   uVar8 = 0;
-  pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+  pcVar7 = PTR_0081176c->field_0030;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->field_1A5F == '\x01') {
@@ -58,7 +58,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
   if ((pPVar2->field_1C9A == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutEdProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x79,0x197,0x22e,0x2e,
-                        (undefined4 *)&pPVar2->field_1A5B->field_0x140);
+                        &pPVar2->field_1A5B->field_0140);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

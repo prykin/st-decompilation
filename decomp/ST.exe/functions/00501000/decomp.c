@@ -50,12 +50,12 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x21,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintBEnergy_007c254c);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x21,0,iVar3,"%s",
+                             "CPanelTy::PaintBEnergy");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x21);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x21);
   return;
 }
 

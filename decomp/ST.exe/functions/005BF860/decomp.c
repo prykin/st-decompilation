@@ -30,12 +30,12 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1f9,0,iVar5,&DAT_007a4ccc,
-                               s_MReportTy__NoneMReport_007ccfc8);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x1f9,0,iVar5,"%s",
+                               "MReportTy::NoneMReport");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1f9);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x1f9);
     return;
   }
   cVar1 = local_c->field_0065;
@@ -47,7 +47,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar6 == 0) {
-            if (DAT_0080c963 <= *(int *)&this_00->field_0x2c3) {
+            if (DAT_0080c963 <= this_00->field_02C3) {
               uVar7 = this_00->field_02A3;
               iVar8 = 0;
               iVar5 = DAT_0080c963;
@@ -60,20 +60,20 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
             else {
               iVar5 = (int)uVar7 / 0x28;
             }
-            iVar5 = *(int *)&this_00->field_0x2c3 + iVar5;
-            *(int *)&this_00->field_0x2c3 = iVar5;
+            iVar5 = this_00->field_02C3 + iVar5;
+            this_00->field_02C3 = iVar5;
             if (DAT_0080c963 < iVar5) {
-              *(int *)&this_00->field_0x2c3 = DAT_0080c963;
+              this_00->field_02C3 = DAT_0080c963;
             }
-            PaintMainScore(this_00,*(int *)&this_00->field_0x2c3,uVar7,0);
+            PaintMainScore(this_00,this_00->field_02C3,uVar7,0);
             bVar4 = true;
           }
-          else if ((int)(&this_00->field_02A3)[iVar6] < (int)(&DAT_0080c943)[iVar6]) {
-            if ((int)this_00->field_02A3 < 0x29) {
+          else if ((&this_00->field_02A3)[iVar6] < (int)(&DAT_0080c943)[iVar6]) {
+            if (this_00->field_02A3 < 0x29) {
               iVar5 = 5;
             }
             else {
-              iVar5 = (int)this_00->field_02A3 / 0x28;
+              iVar5 = this_00->field_02A3 / 0x28;
             }
             iVar5 = (&this_00->field_02A3)[iVar6] + iVar5;
             (&this_00->field_02A3)[iVar6] = iVar5;
@@ -166,7 +166,7 @@ LAB_005bfb27:
     }
     if (local_8 != 0) {
       this_00->field_0065 = 2;
-      thunk_FUN_005b66e0((STJellyGunC *)this_00);
+      thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

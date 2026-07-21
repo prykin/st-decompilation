@@ -77,7 +77,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (text != (char *)0x0) {
-      wsprintfA(&pCVar3->field_0x1e1,&DAT_007c181c,text);
+      wsprintfA(&pCVar3->field_0x1e1,"%s0",text);
       local_8 = cMf32::RecGet(DAT_00806790,param_6,&pCVar3->field_0x1e1,(int *)0x0,1);
     }
     if (param_6 == 1) {
@@ -121,7 +121,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_18c[3] = local_18c[3] + DAT_00806734;
     }
     else {
-      local_18c[3] = *(int *)(&pCVar3->field_0x94 + uVar2 * 4);
+      local_18c[3] = (&pCVar3->field_0094)[uVar2];
     }
     local_18c[3] = local_18c[3] + param_5;
     if (local_8 != (ushort *)0x0) {
@@ -168,12 +168,12 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     return local_c;
   }
   g_currentExceptionFrame = local_1d0.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1b3,0,iVar4,&DAT_007a4ccc,
-                             s_CPanelTy__CreateBut_007c1b20);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x1b3,0,iVar4,"%s",
+                             "CPanelTy::CreateBut");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1b3);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1b3);
   return 0;
 }
 

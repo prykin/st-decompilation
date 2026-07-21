@@ -59,29 +59,28 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_
       iVar6 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x25a8,0,0,&DAT_007a4ccc,
-                               s_STBoatC__CreateGame__CREATEGAME__007aa82c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x25a8,0,0,"%s",
+                               "STBoatC::CreateGame, CREATEGAME_ROT");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar6 = 0x25a9;
 LAB_0046d1e2:
     RaiseInternalException
-              (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar6);
+              (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar6);
     return 0xffff;
   }
   if (this->field_0528 == 2) {
-    STJellyGunC::sub_00415B30
-              ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
-               this->field_0510 * 0xc9 + 100,this->field_0512 * 0xc9 + 100,
-               this->field_0514 * 200 + 100,this->field_0062);
+    sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
+                 this->field_0510 * 0xc9 + 100,this->field_0512 * 0xc9 + 100,
+                 this->field_0514 * 200 + 100,this->field_0062);
     this->field_0528 = 3;
   }
   if (this->field_0528 == 3) {
     iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_c);
     if (iVar6 == -1) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x25c7,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__CreateGame__CREATEGAME__007aa7fc);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x25c7,0,0,"%s",
+                                 "STBoatC::CreateGame, CREATEGAME_MOVE 2");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -97,9 +96,9 @@ LAB_0046d1e2:
       }
       iVar6 = thunk_FUN_0048fa80((int)this);
       if (iVar6 == 1) {
-        if (((((short)this->field_051C < 0) || ((short)this->field_051E < 0)) ||
+        if ((((this->field_051C < 0) || (this->field_051E < 0)) ||
             (sVar2 = this->field_051C, sVar3 = this->field_051E, sVar4 = this->field_0520,
-            (short)this->field_0520 < 0)) &&
+            this->field_0520 < 0)) &&
            (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::
                     thunk_FUN_0048dfd0((AnonReceiver_0048DFD0 *)this,this->field_0510,
                                        this->field_0512,this->field_0514,this->field_0510,
@@ -132,7 +131,7 @@ LAB_0046d1e2:
     if (uVar10 == 3) {
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       iVar6 = extraout_ECX;
-      if (((*(int *)&this->field_0xb3 == 0) &&
+      if (((this->field_00B3 == 0) &&
           (iVar6 = (int)this->field_005B, uVar10 = this->field_00BB - iVar6,
           uVar9 = (int)uVar10 >> 0x1f, (int)((uVar10 ^ uVar9) - uVar9) < 2)) &&
          (uVar10 = this->field_00BF - (int)this->field_005D, uVar9 = (int)uVar10 >> 0x1f,
@@ -154,7 +153,7 @@ LAB_0046d1e2:
         }
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this_00 = thunk_FUN_0042b760(this->field_0x24,
+      this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,
                                    CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0030));
       iVar6 = thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
       uVar10 = -(uint)(iVar6 != -4) & 2;

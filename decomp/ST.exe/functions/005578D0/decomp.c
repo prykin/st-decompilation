@@ -31,13 +31,13 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   pVVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x77,0,iVar4,&DAT_007a4ccc,
-                               s_VisibleClassTy__InitData_007c92f0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x77,0,iVar4,"%s",
+                               "VisibleClassTy::InitData");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     thunk_FUN_00558140((AnonShape_00558140_7CF35A3F *)local_c);
-    RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0x79);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0x79);
     return;
   }
   local_c->field_0020 = (int)g_worldGrid.sizeX;
@@ -57,7 +57,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     puVar6 = Library::DKW::LIB::FUN_006aac10(local_c->field_0024 * iVar4 * 2);
     pVVar3->field_0038 = puVar6;
     puVar6 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034);
-    pVVar3->field_004C = puVar6;
+    pVVar3->field_004C = (uint)puVar6;
     puVar6 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
     pVVar3->field_0050 = puVar6;
     puVar6 = &pVVar3->field_003C;

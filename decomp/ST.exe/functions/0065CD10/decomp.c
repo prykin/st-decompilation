@@ -138,12 +138,12 @@ undefined4 * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *pa
   if (local_8 != (AnonShape_0065CD10_CB9334E9 *)0x0) {
     FreeAndNull(&local_8);
   }
-  iVar6 = ReportDebugMessage(s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x89,0,iVar2,&DAT_007a4ccc,
-                             s_EventDataPack_007d2b70);
+  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_event_d.cpp",0x89,0,iVar2,"%s",
+                             "EventDataPack");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x8a);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_event_d.cpp",0x8a);
   return (undefined4 *)0x0;
 }
 

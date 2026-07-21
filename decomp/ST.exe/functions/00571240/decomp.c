@@ -23,7 +23,7 @@ LPSTR __cdecl FUN_00571240(char *text,int param_2)
     else {
       puVar1 = &DAT_007ca250;
     }
-    text_00 = s__s__s_007ca240;
+    text_00 = "%s_%s";
   }
   else {
     if (DAT_0080874e == 0) {
@@ -32,7 +32,7 @@ LPSTR __cdecl FUN_00571240(char *text,int param_2)
     else {
       puVar1 = (undefined1 *)(uint)DAT_0080874e;
     }
-    text_00 = &DAT_007ca254;
+    text_00 = "%s%d";
   }
   pCVar2 = &DAT_00803520 + (uint)DAT_008067a1 * 0x200;
   wsprintfA(pCVar2,text_00,text,puVar1);

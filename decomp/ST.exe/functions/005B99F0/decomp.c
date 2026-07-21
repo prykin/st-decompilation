@@ -32,12 +32,12 @@ MMMObjTy::OutEdProc(MMMObjTy *this,int param_1,undefined4 param_2,undefined4 par
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x47,0,errorCode,
-                               &DAT_007a4ccc,s_MMMObjTy__OutEdProc_007ccd88);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x47,0,errorCode,
+                               "%s","MMMObjTy::OutEdProc");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x47);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x47);
   }
   return;
 }

@@ -46,13 +46,12 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar4->field_1AEC,0,0,pWVar4->field_1AF4 * 0x13
                      ,pWVar4->field_1AEC->field_0004,(0x16 - pWVar4->field_1AF4) * 0x13,0);
       }
-      pAVar7 = (AnonShape_006B5570_4D68B99C *)
-               ccFntTy::_TxtToSarr((ccFntTy *)PTR_0081176c->field_0030,param_1);
+      pAVar7 = (AnonShape_006B5570_4D68B99C *)ccFntTy::_TxtToSarr(PTR_0081176c->field_0030,param_1);
       pAVar8 = local_10;
       if (pAVar7 != (AnonShape_006B5570_4D68B99C *)0x0) {
         pAVar8 = (AnonShape_006B5570_4D68B99C *)
-                 ccFntTy::FormSarr((ccFntTy *)PTR_0081176c->field_0030,(uint *)pAVar7,
-                                   s________________007c21d8,0x1e4,0,0xffffffff,1);
+                 ccFntTy::FormSarr(PTR_0081176c->field_0030,(uint *)pAVar7," ,.;:!?/\\()[]{}"
+                                   ,0x1e4,0,0xffffffff,1);
         local_10 = pAVar8;
         FUN_006b5570(pAVar7);
       }
@@ -115,7 +114,7 @@ LAB_005e7d14:
         do {
           FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar4->field_1AEC,0,0,uVar11,
                        pWVar4->field_1AEC->field_0004,0x13,0);
-          ccFntTy::SetSurf((ccFntTy *)PTR_0081176c->field_0030,(int)pWVar4->field_1AEC,0,2,uVar11,
+          ccFntTy::SetSurf(PTR_0081176c->field_0030,(int)pWVar4->field_1AEC,0,2,uVar11,
                            pWVar4->field_1AEC->field_0004 + -4,0x13);
           if (iVar12 < (int)pWVar4->field_1AF0->field_0008) {
             puVar10 = *(uint **)(pWVar4->field_1AF0->field_0014 + iVar12 * 4);
@@ -123,7 +122,7 @@ LAB_005e7d14:
           else {
             puVar10 = (uint *)0x0;
           }
-          ccFntTy::WrStr((ccFntTy *)PTR_0081176c->field_0030,puVar10,0,-1,1);
+          ccFntTy::WrStr(PTR_0081176c->field_0030,puVar10,0,-1,1);
           FUN_006b35d0(DAT_008075a8,*local_8);
           iVar12 = iVar12 + 1;
           local_8 = local_8 + 1;
@@ -134,12 +133,12 @@ LAB_005e7d14:
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x120,0,iVar5,
-                                &DAT_007a4ccc,s_WaitTy__AddStr_007cddc4);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x120,0,iVar5,
+                                "%s","WaitTy::AddStr");
     if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x120);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\wait_obj.cpp",0x120);
   }
   return;
 }

@@ -36,12 +36,12 @@ void __thiscall CampaignTy::LightPalette(CampaignTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x12d,0,iVar4,&DAT_007a4ccc,
-                             s_CampaignTy__LightPalette_007cbe3c);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x12d,0,iVar4,"%s",
+                             "CampaignTy::LightPalette");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x12d);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\camp_obj.cpp",0x12d);
   return;
 }
 

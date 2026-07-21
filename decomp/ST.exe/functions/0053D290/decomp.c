@@ -44,12 +44,12 @@ void __thiscall SAMPanelTy::ShiftControls(SAMPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_setamine_cpp_007c7798,0x46,0,iVar3,&DAT_007a4ccc
-                               ,s_SAMPanelTy__ShiftControls_007c781c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x46,0,iVar3,"%s"
+                               ,"SAMPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_setamine_cpp_007c7798,0x46);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\setamine.cpp",0x46);
   }
   return;
 }

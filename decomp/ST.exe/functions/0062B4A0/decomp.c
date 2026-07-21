@@ -70,9 +70,9 @@ uint __fastcall FUN_0062b4a0(int param_1)
     uVar6 = local_10;
     if ((((int)local_10 < 0) || (4 < (int)local_10)) ||
        ((local_14 < 0 ||
-        (((((int)pVVar4->field_0030 <= local_14 ||
+        ((((pVVar4->field_0030 <= local_14 ||
            (uVar6 = (&DAT_0079aed0)[local_10] + local_c, (int)uVar6 < 0)) ||
-          ((int)pVVar4->field_0034 <= (int)uVar6)) ||
+          (pVVar4->field_0034 <= (int)uVar6)) ||
          ((pVVar4->field_004C == 0 ||
           (uVar6 = (uint)*(byte *)(uVar6 * pVVar4->field_0030 + pVVar4->field_004C + local_14),
           uVar6 != 0)))))))) goto cf_common_exit_0062B616;

@@ -28,10 +28,10 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x13c,0,errorCode,
-                               &DAT_007a4ccc);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x13c,0,errorCode,
+                               "%s");
     if (iVar3 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_To_optic_cpp_007ac594,0x13d);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\To_optic.cpp",0x13d);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

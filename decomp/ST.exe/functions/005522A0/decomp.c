@@ -3,27 +3,32 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
-   TradePanelTy::GetMessage */
+   TradePanelTy::GetMessage
 
-undefined4 __thiscall
-TradePanelTy::GetMessage(TradePanelTy *this,AnonShape_0052A7B0_DD603BF4 *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=005522A0; family_names=TradePanelTy::GetMessage; ret4=10;
+   direct_offsets={10:3,14:4,18:1,1c:0} */
+
+int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
 
 {
+  STMessageId SVar1;
   SpecPanelTy *this_00;
-  int iVar1;
-  LPSTR pCVar2;
-  ushort *puVar3;
-  undefined4 uVar4;
-  int iVar5;
-  int iVar6;
-  uint uVar7;
+  int iVar2;
+  LPSTR pCVar3;
+  int iVar4;
+  ushort *puVar5;
+  AnonPointee_SpecPanelTy_0000 *pAVar6;
+  int iVar7;
+  uint uVar8;
   char *text;
-  byte bVar8;
-  int iVar9;
-  code *pcVar10;
-  int iVar11;
-  undefined4 *puVar12;
+  byte bVar9;
+  int iVar10;
+  code *pcVar11;
+  int iVar12;
   undefined4 uVar13;
+  undefined4 *puVar14;
+  undefined4 uVar15;
   InternalExceptionFrame local_68;
   undefined1 local_24;
   short sStack_23;
@@ -41,45 +46,45 @@ TradePanelTy::GetMessage(TradePanelTy *this,AnonShape_0052A7B0_DD603BF4 *param_1
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_c = (SpecPanelTy *)this;
-  iVar1 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_c;
-  if (iVar1 != 0) {
+  if (iVar2 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x175,0,iVar1,
-                               &DAT_007a4ccc,s_TradePanelTy__GetMessage_007c8778);
-    if (iVar5 == 0) {
-      RaiseInternalException(iVar1,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x175);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x175,0,iVar2,
+                               "%s","TradePanelTy::GetMessage");
+    if (iVar4 == 0) {
+      RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x175);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  SpecPanelTy::GetMessage(local_c,(int)param_1);
-  uVar7 = *(uint *)&param_1->field_0x10;
-  if (uVar7 < 0xb203) {
-    if (uVar7 == 0xb202) {
-      iVar1 = this_00->field_0000;
-      iVar5 = 0x2754;
+  SpecPanelTy::GetMessage(local_c,message);
+  SVar1 = message->id;
+  if (SVar1 < 0xb203) {
+    if (SVar1 == MESS_SHARED_B202) {
+      pAVar6 = this_00->field_0000;
+      iVar2 = 0x2754;
 LAB_00552481:
-      uVar13 = 1;
-      uVar4 = 0;
-      pCVar2 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+      uVar15 = 1;
+      uVar13 = 0;
+      pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(iVar1 + 0x10))(param_1,pCVar2,iVar5,uVar4,uVar13);
+      (*(code *)pAVar6->field_0010)(message,pCVar3,iVar2,uVar13,uVar15);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    if (uVar7 < 0xb200) {
-      if (uVar7 == 0xb1ff) {
+    if (SVar1 < MESS_BEHPANELTY_B200) {
+      if (SVar1 == MESS_SHARED_B1FF) {
         uStack_11 = 0;
         local_18 = (*(char *)&this_00[1].field_002E == '\0') + '\x01';
         uStack_10 = 0;
-        bVar8 = this_00[1].field_0x43;
-        sStack_17 = (bVar8 != 0) + 0xdd;
-        uStack_15 = (uint)*(ushort *)((int)&this_00[1].field_002E + (uint)bVar8 * 2 + 1);
+        bVar9 = this_00[1].field_0x43;
+        sStack_17 = (bVar9 != 0) + 0xdd;
+        uStack_15 = (uint)*(ushort *)((int)&this_00[1].field_002E + (uint)bVar9 * 2 + 1);
         if (*(char *)&this_00[1].field_002E == '\0') {
-          uStack_11 = (undefined1)*(undefined2 *)(&this_00[1].field_0x20 + (uint)bVar8 * 8);
+          uStack_11 = (undefined1)*(undefined2 *)(&this_00[1].field_0x20 + (uint)bVar9 * 8);
           uStack_10 = (undefined1)
-                      ((ushort)*(undefined2 *)(&this_00[1].field_0x20 + (uint)bVar8 * 8) >> 8);
+                      ((ushort)*(undefined2 *)(&this_00[1].field_0x20 + (uint)bVar9 * 8) >> 8);
         }
         thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_18,0,0xffffffff);
         if (*(char *)&this_00[1].field_002E != '\0') {
@@ -91,12 +96,12 @@ LAB_00552481:
         }
       }
       else {
-        if (uVar7 == 2) {
+        if (SVar1 == MESS_ID_CREATE) {
           InitTradePanel((TradePanelTy *)this_00);
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
-        if (uVar7 == 3) {
+        if (SVar1 == MESS_SHARED_0003) {
           DoneTradePanel((TradePanelTy *)this_00);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -104,99 +109,101 @@ LAB_00552481:
       }
     }
     else {
-      if (uVar7 == 0xb200) {
-        iVar1 = this_00->field_0000;
-        iVar5 = (-(uint)(*(char *)&this_00[1].field_002E != '\0') & 0xfffffffe) + 0x2753;
+      if (SVar1 == MESS_BEHPANELTY_B200) {
+        pAVar6 = this_00->field_0000;
+        iVar2 = (-(uint)(*(char *)&this_00[1].field_002E != '\0') & 0xfffffffe) + 0x2753;
         goto LAB_00552481;
       }
-      if (uVar7 == 0xb201) {
-        bVar8 = this_00[1].field_0x43;
-        sStack_23 = (bVar8 != 0) + 0xdd;
+      if (SVar1 == MESS_SHARED_B201) {
+        bVar9 = this_00[1].field_0x43;
+        sStack_23 = (bVar9 != 0) + 0xdd;
         local_24 = 3;
-        uStack_21 = (uint)*(ushort *)((int)&this_00[1].field_002E + (uint)bVar8 * 2 + 1);
-        uStack_1d = (undefined1)*(undefined2 *)(&this_00[1].field_0x24 + (uint)bVar8 * 8);
+        uStack_21 = (uint)*(ushort *)((int)&this_00[1].field_002E + (uint)bVar9 * 2 + 1);
+        uStack_1d = (undefined1)*(undefined2 *)(&this_00[1].field_0x24 + (uint)bVar9 * 8);
         uStack_1c = (undefined1)
-                    ((ushort)*(undefined2 *)(&this_00[1].field_0x24 + (uint)bVar8 * 8) >> 8);
+                    ((ushort)*(undefined2 *)(&this_00[1].field_0x24 + (uint)bVar9 * 8) >> 8);
         thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_24,0,0xffffffff);
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
     }
   }
-  else if (uVar7 < 0xb20d) {
-    if (uVar7 == 0xb20c) {
-      *(undefined2 *)((int)&this_00[1].field_002E + (uint)(byte)this_00[1].field_0x43 * 2 + 1) =
-           *(undefined2 *)&param_1->field_0014;
+  else if (SVar1 < 0xb20d) {
+    if (SVar1 == MESS_TRADEPANELTY_B20C) {
+      *(word *)((int)&this_00[1].field_002E + (uint)(byte)this_00[1].field_0x43 * 2 + 1) =
+           (message->arg0).words.low;
       PaintIndicators((TradePanelTy *)this_00);
       thunk_FUN_00551800((AnonShape_00551800_EBA95FA4 *)this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    if (uVar7 == 0xb20a) {
-      this_00[1].field_0x43 = *(char *)&param_1->field_0014->field_0000 + -1;
+    if (SVar1 == MESS_TRADEPANELTY_B20A) {
+      this_00[1].field_0x43 = *(char *)(message->arg0).ptr + -1;
       thunk_FUN_00551b10((AnonShape_00551B10_03263458 *)this_00);
       PaintPanel((TradePanelTy *)this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    if (uVar7 == 0xb20b) {
-      local_8 = param_1->field_0014[1].field_0000 - this_00->field_003C;
-      iVar1 = DAT_00806734;
+    if (SVar1 == MESS_TRADEPANELTY_B20B) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      local_8 = *(int *)((message->arg0).u32 + 0xc) - this_00->field_003C;
+      iVar2 = DAT_00806734;
       if (this_00->field_005C != 0) {
-        iVar1 = this_00->field_0044;
+        iVar2 = this_00->field_0044;
       }
-      puVar12 = (undefined4 *)0x0;
-      iVar11 = 0;
-      iVar9 = 1;
-      bVar8 = 0;
-      uVar7 = 0xffffffff;
-      iVar1 = param_1->field_0014[1].field_0004 - iVar1;
-      iVar5 = thunk_FUN_0052a7b0(param_1);
-      iVar6 = 2;
-      pCVar2 = thunk_FUN_00571240(s_BUT_RCTTYPE_007c87a8,0);
-      pCVar2 = FUN_006f2c00(pCVar2,iVar6,iVar5);
-      puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_1,pCVar2,uVar7,bVar8,iVar9,iVar11,puVar12);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar1,'\x01',(byte *)puVar3)
+      puVar14 = (undefined4 *)0x0;
+      iVar12 = 0;
+      iVar10 = 1;
+      bVar9 = 0;
+      uVar8 = 0xffffffff;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      iVar2 = *(int *)((message->arg0).u32 + 0x10) - iVar2;
+      iVar4 = thunk_FUN_0052a7b0((AnonShape_0052A7B0_DD603BF4 *)message);
+      iVar7 = 2;
+      pCVar3 = thunk_FUN_00571240("BUT_RCTTYPE",0);
+      pCVar3 = FUN_006f2c00(pCVar3,iVar7,iVar4);
+      puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806794,CASE_1,pCVar3,uVar8,bVar9,iVar10,iVar12,puVar14);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar2,'\x01',(byte *)puVar5)
       ;
-      if (param_1->field_0014->field_0004 == 3) {
-        puVar12 = (undefined4 *)0x0;
-        iVar6 = 0;
-        iVar5 = 1;
-        bVar8 = 0;
-        uVar7 = 0xffffffff;
-        pCVar2 = thunk_FUN_00571240(s_BUT_RCTFTYPE_007c8798,0);
-        puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                           (DAT_00806794,CASE_6,pCVar2,uVar7,bVar8,iVar5,iVar6,puVar12);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar1,'\x06',
-               (byte *)puVar3);
+      if (*(int *)((message->arg0).u32 + 4) == 3) {
+        puVar14 = (undefined4 *)0x0;
+        iVar7 = 0;
+        iVar4 = 1;
+        bVar9 = 0;
+        uVar8 = 0xffffffff;
+        pCVar3 = thunk_FUN_00571240("BUT_RCTFTYPE",0);
+        puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806794,CASE_6,pCVar3,uVar8,bVar9,iVar4,iVar7,puVar14);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar2,'\x06',
+               (byte *)puVar5);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
-                 this_00->field_0044);
+                (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
+                );
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
   }
   else {
-    if (uVar7 == 0xc005) {
-      iVar1 = this_00->field_0000;
-      text = s_BUT_TBUP_007c22d8;
+    if (SVar1 == MESS_SHARED_C005) {
+      pAVar6 = this_00->field_0000;
+      text = "BUT_TBUP";
     }
     else {
-      if (uVar7 != 0xc006) {
+      if (SVar1 != MESS_OPTPANELTY_C006) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
-      iVar1 = this_00->field_0000;
-      text = s_BUT_TBDN_007c22f4;
+      pAVar6 = this_00->field_0000;
+      text = "BUT_TBDN";
     }
-    uVar13 = 1;
-    uVar4 = 0;
-    pcVar10 = thunk_FUN_00529fe0;
-    pCVar2 = thunk_FUN_00571240(text,0);
+    uVar15 = 1;
+    uVar13 = 0;
+    pcVar11 = thunk_FUN_00529fe0;
+    pCVar3 = thunk_FUN_00571240(text,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(iVar1 + 8))(param_1,1,pCVar2,pcVar10,uVar4,uVar13);
+    (**(code **)&pAVar6->field_0x8)(message,1,pCVar3,pcVar11,uVar13,uVar15);
   }
   g_currentExceptionFrame = local_68.previous;
   return 0;

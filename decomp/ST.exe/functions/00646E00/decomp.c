@@ -81,34 +81,34 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
           ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,
                                iVar5,&local_c,&local_10), pVVar3 = g_visibleClass_00802A88,
            -1 < param_1 &&
-           ((((param_1 < 5 && (-1 < local_c)) && (local_c < (int)pVVar2->field_0030)) &&
+           ((((param_1 < 5 && (-1 < local_c)) && (local_c < pVVar2->field_0030)) &&
             ((iVar5 = (&DAT_0079aed0)[param_1] + local_10, -1 < iVar5 &&
-             (iVar5 < (int)pVVar2->field_0034)))))))) && (pVVar2->field_004C != 0)) &&
+             (iVar5 < pVVar2->field_0034)))))))) && (pVVar2->field_004C != 0)) &&
         ((*(char *)(iVar5 * pVVar2->field_0030 + pVVar2->field_004C + local_c) == '\0' &&
          (DAT_0080874d != -1)))) &&
        (((((g_visibleClass_00802A88->field_00F8 != 0 &&
            (((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_2
                                  ,iVar6,&local_10,&local_c), pVVar2 = g_visibleClass_00802A88,
-             -1 < local_10 && (local_10 < (int)pVVar3->field_0030)) &&
+             -1 < local_10 && (local_10 < pVVar3->field_0030)) &&
             (iVar5 = (&DAT_0079aed0)[param_1] + local_c, -1 < iVar5)))) &&
-          (((iVar5 < (int)pVVar3->field_0034 && (pVVar3->field_004C != 0)) &&
+          (((iVar5 < pVVar3->field_0034 && (pVVar3->field_004C != 0)) &&
            (*(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_10) == '\0')))) &&
          ((((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)) &&
            ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3,
                                 iVar6,&local_10,&local_c), iVar5 = local_8,
             pVVar3 = g_visibleClass_00802A88, -1 < local_10 &&
-            (((local_10 < (int)pVVar2->field_0030 &&
+            (((local_10 < pVVar2->field_0030 &&
               (local_c = (&DAT_0079aed0)[param_1] + local_c, -1 < local_c)) &&
-             (local_c < (int)pVVar2->field_0034)))))) &&
+             (local_c < pVVar2->field_0034)))))) &&
           ((pVVar2->field_004C != 0 &&
            (*(char *)(local_c * pVVar2->field_0030 + pVVar2->field_004C + local_10) == '\0')))))) &&
         ((DAT_0080874d != -1 &&
          (((g_visibleClass_00802A88->field_00F8 != 0 &&
            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_2,
                                local_8,&param_2,&local_10), -1 < param_2)) &&
-          ((param_2 < (int)pVVar3->field_0030 &&
+          ((param_2 < pVVar3->field_0030 &&
            ((((local_10 = (&DAT_0079aed0)[param_1] + local_10, -1 < local_10 &&
-              (local_10 < (int)pVVar3->field_0034)) && (pVVar3->field_004C != 0)) &&
+              (local_10 < pVVar3->field_0034)) && (pVVar3->field_004C != 0)) &&
             ((*(char *)(local_10 * pVVar3->field_0030 + pVVar3->field_004C + param_2) == '\0' &&
              (iVar5 = thunk_FUN_005f1d80(g_visibleClass_00802A88,param_3,iVar5,param_1), iVar5 != 1)
              ))))))))))))) {

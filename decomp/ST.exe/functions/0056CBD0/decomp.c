@@ -38,8 +38,8 @@ STAppC::MainWindowProc
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x3aa,0,iVar2,&DAT_007a4ccc,
-                               s_STAppC__MainWindowProc_007ca0f8);
+    iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x3aa,0,iVar2,"%s",
+                               "STAppC::MainWindowProc");
     if (iVar2 == 0) {
       return local_8;
     }
@@ -47,8 +47,8 @@ STAppC::MainWindowProc
   }
   iVar2 = AppClassTy::DecodeMessage(g_appClass_00806728,param_2,param_3,param_4);
   if ((iVar2 != 0) &&
-     (iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x330,0,-0x5001fff8,&DAT_007a4ccc,
-                                 s_STAppC__MainWindowProc_007ca0f8), iVar2 != 0)) {
+     (iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x330,0,-0x5001fff8,"%s",
+                                 "STAppC::MainWindowProc"), iVar2 != 0)) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 < 0x21) {
@@ -145,7 +145,7 @@ STAppC::MainWindowProc
         }
         local_bc = 0xa100;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)**(undefined4 **)PTR_00802a30)(local_cc);
+        (**(code **)PTR_00802a30->field_0000)(local_cc);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
@@ -176,9 +176,9 @@ STAppC::MainWindowProc
     FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0x1000000);
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
-    *(undefined4 *)((int)&g_appClass_00806728[0x169].vtable + 2) = 0;
-    thunk_FUN_00567180(g_appClass_00806728 + 1,hWnd);
-    FUN_006e3db0((int)((int)&g_appClass_00806728[0x4e].field_0028 + 2));
+    g_appClass_00806728->field_4EFA = 0;
+    thunk_FUN_00567180(&g_appClass_00806728->field_0x38,hWnd);
+    FUN_006e3db0((int)&g_appClass_00806728->field_0x113a);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }

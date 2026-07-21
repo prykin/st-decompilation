@@ -72,7 +72,7 @@ LAB_0062f450:
     iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_nick_to_Rubb_cpp_007d1798,0x17b);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Rubb.cpp",0x17b);
       return 0xffff;
     }
     iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,local_8[*param_2],0x1d);
@@ -88,12 +88,12 @@ LAB_0062f450:
   }
   else {
     g_currentExceptionFrame = local_5c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0x189,0,iVar2,&DAT_007a4ccc,
-                               s_STRubbishC__LoadImagSpr_007d17fc);
+    iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_Rubb.cpp",0x189,0,iVar2,"%s",
+                               "STRubbishC::LoadImagSpr");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0x18b);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\nick\\to_Rubb.cpp",0x18b);
   }
   return 0xffff;
 }

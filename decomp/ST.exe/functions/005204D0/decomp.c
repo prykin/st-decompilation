@@ -46,12 +46,12 @@ void __thiscall InfocPanelTy::DoneInfocPanel(InfocPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x4f,0,errorCode,
-                             &DAT_007a4ccc,s_InfocPanelTy__DoneInfocPanel_007c3f2c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x4f,0,errorCode,
+                             "%s","InfocPanelTy::DoneInfocPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x4f);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\infocen.cpp",0x4f);
   return;
 }
 

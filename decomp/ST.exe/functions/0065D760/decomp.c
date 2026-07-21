@@ -29,12 +29,12 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if (iVar5 != -100) {
-      iVar6 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0xa5,0,iVar5,&DAT_007a4ccc,
-                                 s_AiFltClassTy___AddObjFlt_007d2be0);
+      iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xa5,0,iVar5,"%s",
+                                 "AiFltClassTy::_AddObjFlt");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0xa6);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xa6);
     }
     return;
   }
@@ -59,7 +59,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     if (((bVar2) && (pAVar3->field_007B != 1)) ||
        (iVar5 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar5 == 0x78)) {
       RaiseInternalException
-                (-100,g_overwriteContext_007ED77C,s_E____titans_ai_ai_flt_cpp_007d2b80,0x9b);
+                (-100,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x9b);
     }
     array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
     Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)(objPtr + 0x32));
@@ -81,8 +81,8 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
       *(undefined2 *)(objPtr + 0x81c) = uVar4;
     }
     STAllPlayersC::AddObjsToGroup
-              (g_sTAllPlayers_007FA174,pAVar3->field_0x24,pAVar3->field_007D,(uint *)array,
-               (undefined2 *)0x0);
+              (g_sTAllPlayers_007FA174,*(char *)&pAVar3->field_0024,pAVar3->field_007D,(uint *)array
+               ,(undefined2 *)0x0);
     DArrayDestroy(array);
     g_currentExceptionFrame = local_4c.previous;
     return;

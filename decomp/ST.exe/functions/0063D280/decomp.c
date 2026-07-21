@@ -29,12 +29,12 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_nick_to_TmMin_cpp_007d209c,0x4a6,0,iVar3,&DAT_007a4ccc,
-                               s_STTmMineC__CreatePart_007d20c0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_TmMin.cpp",0x4a6,0,iVar3,"%s",
+                               "STTmMineC::CreatePart");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x4a8);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x4a8);
     return 0xffff;
   }
   if (local_c->field_0336 == (DArrayTy *)0x0) {

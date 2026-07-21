@@ -35,12 +35,12 @@ SetPalette(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int par
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_paltool_cpp_007c95d8,0x4b,0,errorCode,&DAT_007a4ccc,
-                             s_SetPalette_007c9604);
+  iVar2 = ReportDebugMessage("E:\\__titans\\paltool.cpp",0x4b,0,errorCode,"%s",
+                             "SetPalette");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_paltool_cpp_007c95d8,0x4d);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\paltool.cpp",0x4d);
   return;
 }
 

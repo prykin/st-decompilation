@@ -41,7 +41,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
   pSVar2 = local_1c;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar8 = (undefined4 *)&local_1c->field_0x89;
+      puVar8 = &local_1c->field_0089;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar8 = 0;
         puVar8 = puVar8 + 1;
@@ -52,7 +52,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
       *(undefined4 *)&local_1c->field_0x2b7 = local_1c->field_0186;
       *(undefined2 *)&local_1c->field_0x2bb = local_1c->field_018A;
       local_24 = *(undefined2 *)&local_1c->field_0x2b3;
-      local_22 = local_1c->field_02B5;
+      local_22 = *(undefined2 *)&local_1c->field_0x2b5;
       local_28 = PTR_00802a38->field_00E4;
       local_10 = local_28;
       if (0 < local_c) {
@@ -65,18 +65,18 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb1f);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb1f);
             }
             if (*(int *)&pSVar2->field_0x2b9 == -1) {
-              if (*(int *)&pSVar4->field_0x7b6 == 0) goto LAB_0049eb44;
+              if (pSVar4->field_07B6 == 0) goto LAB_0049eb44;
 LAB_0049eb2a:
-              if (*(int *)&pSVar4->field_0x7be < 1) goto LAB_0049eb44;
+              if (pSVar4->field_07BE < 1) goto LAB_0049eb44;
               local_20 = pSVar4->field_004B;
               puVar8 = &local_28;
               SVar10 = CASE_7;
             }
             else {
-              if (*(int *)&pSVar4->field_0x7b6 == *(int *)&pSVar2->field_0x2b9) goto LAB_0049eb2a;
+              if (pSVar4->field_07B6 == *(int *)&pSVar2->field_0x2b9) goto LAB_0049eb2a;
 LAB_0049eb44:
               puVar8 = &local_10;
               SVar10 = CASE_3;
@@ -87,7 +87,7 @@ LAB_0049eb44:
         } while ((int)uVar9 < local_c);
       }
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0xb3c);
     }
     if ((uint)PTR_00802a38->field_00E4 % 0x1e == 5) {
@@ -102,7 +102,7 @@ LAB_0049eb44:
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb43);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb43);
             }
             iVar3 = thunk_FUN_0045ff10((int)pSVar4);
             if ((iVar3 == 7) || (uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_7), uVar5 == 1)) {
@@ -122,10 +122,10 @@ LAB_0049eb44:
   else {
     g_currentExceptionFrame = local_6c.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb4c,0,iVar3,&DAT_007a4ccc
-                                 ,s_STGroupBoatC__SetMine_007ac0b4);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xb4c,0,iVar3,"%s"
+                                 ,"STGroupBoatC::SetMine");
       if (iVar6 == 0) {
-        RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb4d);
+        RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xb4d);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */

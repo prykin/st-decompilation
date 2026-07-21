@@ -92,8 +92,8 @@ undefined1 FUN_00430750(Global_sub_00430750_param_1Enum param_1)
   case CASE_B9:
     return 0x3c;
   }
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x867,0,0,&DAT_007a4ccc,
-                             s_GetSpeed__Warning___unknown_obje_007a6760);
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x867,0,0,"%s",
+                             "GetSpeed: Warning - unknown object type");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

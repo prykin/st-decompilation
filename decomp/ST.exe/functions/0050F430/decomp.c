@@ -60,10 +60,10 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa1a,0,iVar5,&DAT_007a4ccc
-                               ,s_CPanelTy__SetCmdObj_007c2940);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0xa1a,0,iVar5,"%s"
+                               ,"CPanelTy::SetCmdObj");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa1a);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0xa1a);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -82,7 +82,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       iVar9 = *(int *)((int)param_1 + 0x107) + 0x10b + (int)param_1;
       if (0 < pAVar2->field_0125) {
         do {
-          *(undefined4 *)(iVar9 + 4) = *(undefined4 *)&pAVar2->field_0x24;
+          *(undefined4 *)(iVar9 + 4) = pAVar2->field_0024;
           *(undefined4 *)(iVar9 + 0x77) = pAVar2->field_009D;
           *(undefined1 *)(iVar9 + 0x6a) = pAVar2->field_0088;
           STPlaySystemC::CreateGameObject(PTR_00802a38,900,&local_14,&local_c,iVar9,0);
@@ -94,11 +94,11 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
           iVar3 = iVar3 + 1;
         } while (iVar3 < pAVar2->field_0125);
       }
-      local_10 = thunk_FUN_00668180(s___REPAIR_FLEET___007d571c,pAVar2->field_0039,0x8000,0,
-                                    pAVar2->field_0x24);
+      local_10 = thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
+                                    *(undefined1 *)&pAVar2->field_0024);
       local_8 = FltDataPack(local_10,&local_14);
       thunk_FUN_006686c0((int *)&local_10);
-      local_8[1] = *(undefined4 *)&pAVar2->field_0x24;
+      local_8[1] = pAVar2->field_0024;
       *(undefined4 *)((int)local_8 + 0x77) = pAVar2->field_009D;
       *(undefined1 *)((int)local_8 + 0x6a) = pAVar2->field_0088;
       STPlaySystemC::CreateGameObject(PTR_00802a38,900,&local_14,&local_c,local_8,0);
@@ -116,12 +116,12 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   thunk_FUN_0068e010((int)local_18);
   thunk_FUN_006686c0((int *)&local_8);
   thunk_FUN_006686c0((int *)&local_10);
-  iVar9 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x61,0,iVar3,&DAT_007a4ccc,
-                             s_AiTactClassTy__InitData_007d5700);
+  iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,iVar3,"%s",
+                             "AiTactClassTy::InitData");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x62);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x62);
   return iVar3;
 }
 

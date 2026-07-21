@@ -46,7 +46,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
       this_00 = local_14;
       pAVar4 = local_c;
       if (local_8 != (uint *)0x0) {
-        wsprintfA((LPSTR)local_8,s__s_1d_s_007c6fe4,&DAT_007c6ff0,param_2 & 0xff,param_1);
+        wsprintfA((LPSTR)local_8,"%s%1d%s",&DAT_007c6ff0,param_2 & 0xff,param_1);
         pAVar4 = (AnonShape_006B5570_4D68B99C *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
         local_c = pAVar4;
         FreeAndNull(&local_8);
@@ -54,7 +54,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
       pAVar5 = local_10;
       if (pAVar4 != (AnonShape_006B5570_4D68B99C *)0x0) {
         pAVar5 = (AnonShape_006B5570_4D68B99C *)
-                 ccFntTy::FormSarr(this_00->field_0094,(uint *)pAVar4,s________________007c21d8,
+                 ccFntTy::FormSarr(this_00->field_0094,(uint *)pAVar4," ,.;:!?/\\()[]{}",
                                    (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
         local_10 = pAVar5;
         ccFntTy::SepColorStrInSarr(this_00->field_0094,(uint *)pAVar5,(uint *)pAVar5);
@@ -113,12 +113,12 @@ LAB_0052d48d:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x61,0,iVar3,&DAT_007a4ccc,
-                               s_PopUpTy__AddStr_007c6fd0);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x61,0,iVar3,"%s",
+                               "PopUpTy::AddStr");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0x61);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\mpopup.cpp",0x61);
   }
   return;
 }

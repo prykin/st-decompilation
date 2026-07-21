@@ -55,9 +55,10 @@ LAB_006762e0:
         pSVar4 = STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,(char)param_1,(uint)*puVar3,CASE_1);
         if (pSVar4 != (STGameObjC *)0x0) {
-          iVar2 = (*pSVar4->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar2 = (**(code **)&pSVar4->vtable->field_0x2c)();
           if (iVar2 == 0x78) {
-            iVar2 = *(int *)&pSVar4[1].field_0x88;
+            iVar2 = pSVar4->field_0259;
           }
           else {
             iVar2 = 0;
@@ -80,10 +81,10 @@ LAB_006762e0:
   if (local_c != (DArrayTy *)0x0) {
     DArrayDestroy(local_c);
   }
-  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x13a,0,iVar2,&DAT_007a4ccc,
-                             s__GetEmbrTobjGrpExch_007d2db4);
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x13a,0,iVar2,"%s",
+                             "_GetEmbrTobjGrpExch");
   if (iVar5 == 0) {
-    RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x13b);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x13b);
     return iVar2;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

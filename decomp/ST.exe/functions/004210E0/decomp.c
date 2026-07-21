@@ -47,12 +47,12 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   pSVar14 = local_14;
   if (iVar15 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar17 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe46,0,iVar15,&DAT_007a4ccc
-                                ,s_STAllPlayersC__SaveGObjData_007a5058);
+    iVar17 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xe46,0,iVar15,"%s"
+                                ,"STAllPlayersC::SaveGObjData");
     if (iVar17 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar15,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe47);
+    RaiseInternalException(iVar15,0,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xe47);
     return (undefined4 *)local_c;
   }
   *param_1 = 0x281;

@@ -114,8 +114,8 @@ joined_r0x0042de37:
       }
       return 0;
     }
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x4e5,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetActiveCenter_A_007a6498);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x4e5,0,0,"%s",
+                               "STAllPlayersC::GetActiveCenter ACT_LEFT invalid game type");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -140,8 +140,8 @@ LAB_0042da27:
       else {
         if (iVar4 != 0x1b8) {
 LAB_0042dbdf:
-          iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x537,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__GetActiveCenter_A_007a64e0);
+          iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x537,0,0,
+                                     "%s","STAllPlayersC::GetActiveCenter ACT_RIGHT invalid game type");
           if (iVar4 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -231,8 +231,8 @@ joined_r0x0042dc56:
     }
   }
   else {
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x53e,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetActiveCenter_007a6528);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x53e,0,0,"%s",
+                               "STAllPlayersC::GetActiveCenter");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

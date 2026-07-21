@@ -5,21 +5,21 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
   undefined4 *puVar1;
   int iVar2;
   int *piVar3;
-  AnonShape_00627EB0_4C14C976 *pAVar4;
+  STMessage *pSVar4;
   int *piVar5;
-  AnonShape_00627EB0_4C14C976 local_2c;
+  STMessage local_2c;
   void *local_c;
   int local_8;
 
   piVar5 = param_1;
-  pAVar4 = &local_2c;
+  pSVar4 = &local_2c;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pAVar4 = 0;
-    pAVar4 = (AnonShape_00627EB0_4C14C976 *)&pAVar4->field_0x4;
+    pSVar4->unknown_00 = 0;
+    pSVar4 = (STMessage *)&pSVar4->unknown_04;
   }
   iVar2 = 0;
   local_8 = 0;
-  local_2c.field_0010 = 2;
+  local_2c.id = MESS_ID_CREATE;
   param_1 = (int *)0x0;
   if (0 < *(int *)((int)this + 0x269)) {
     piVar3 = (int *)((int)this + 0x219);
@@ -32,10 +32,9 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
         *(int **)(*piVar3 + 0xd2) = param_1;
         iVar2 = *piVar5;
         local_8 = local_8 + 4 + iVar2;
-        local_2c.field_0014 = (AnonNested_00627EB0_0014_B8FBF6AA *)(piVar5 + 1);
+        local_2c.arg0.ptr = piVar5 + 1;
         STParticleC::GetMessage((STParticleC *)*piVar3,&local_2c);
-        piVar5 = (int *)((int)&((AnonNested_00627EB0_0014_B8FBF6AA *)(piVar5 + 1))->field_0000 +
-                        iVar2);
+        piVar5 = (int *)((int)(piVar5 + 1) + iVar2);
         iVar2 = local_8;
         this = local_c;
       }

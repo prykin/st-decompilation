@@ -46,7 +46,7 @@ void __cdecl FUN_006802a0(int exceptionCode,char *resourceString)
     }
   }
   RaiseInternalException
-            (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x74)
+            (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x74)
   ;
   return;
 }

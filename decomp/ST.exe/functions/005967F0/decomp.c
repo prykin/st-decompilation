@@ -42,8 +42,8 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       }
     }
     DarkScreen(DAT_0080759c,10,2);
-    if (PTR_0081176c->field_002C != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
+    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     thunk_FUN_005a0590((int)pMVar3);
     thunk_FUN_005a07f0((AnonShape_005A07F0_323FD806 *)pMVar3);
@@ -168,12 +168,12 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x197,0,iVar4,&DAT_007a4ccc,
-                             s_FSGSTy__DoneFSGS_007cc0a8);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x197,0,iVar4,"%s",
+                             "FSGSTy::DoneFSGS");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x197);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x197);
   return;
 }
 

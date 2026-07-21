@@ -141,12 +141,12 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_a4.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x9d,0,iVar3,&DAT_007a4ccc,
-                             s_SettMapMTy__CreateCtrls_007cd2b8);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x9d,0,iVar3,"%s",
+                             "SettMapMTy::CreateCtrls");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x9d);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\settmobj.cpp",0x9d);
   return;
 }
 

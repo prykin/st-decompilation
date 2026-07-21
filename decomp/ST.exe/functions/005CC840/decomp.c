@@ -38,7 +38,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_21FC);
       this_00->field_21FC = 0;
     }
-    if (-1 < (int)this_00->field_2200) {
+    if (-1 < this_00->field_2200) {
       FUN_006b3af0(DAT_008075a8,this_00->field_2200);
     }
     if (this_00->field_21E6 != '\0') {
@@ -62,14 +62,14 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       else {
         pHVar3->field_0002 = 1;
         pHVar3->field_0000 = 0;
-        pHVar3->field_0003 = 0xffffffff;
+        pHVar3->field_0003 = -1;
         pHVar3->field_0001 = CASE_2;
         pHVar3->field_0007 = 0;
         pHVar3->field_000B = 0;
         *(undefined4 *)&pHVar3->field_0xf = 0;
         *(undefined4 *)&pHVar3->field_0x1b = 1;
         pHVar3->field_0013 = 1;
-        pHVar3->field_0017 = 0xffffffff;
+        pHVar3->field_0017 = -1;
         pHVar3->field_0027 = 0;
         pHVar3->field_0023 = 0;
         pHVar3->field_002F = 1;
@@ -86,7 +86,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         if (uVar5 != 0) {
           pHVar3 = this_00->field_21F8;
           pHVar3->field_0002 = 0;
-          pHVar3->field_0017 = 0xffffffff;
+          pHVar3->field_0017 = -1;
           uVar5 = this_00->field_21F8->field_0003;
           if (-1 < (int)uVar5) {
             Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar5);
@@ -111,12 +111,12 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0xc0,0,iVar2,&DAT_007a4ccc,
-                             s_SettMapMTy__DeleteCtrls_007cd2d4);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0xc0,0,iVar2,"%s",
+                             "SettMapMTy::DeleteCtrls");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0xc0);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\settmobj.cpp",0xc0);
   return;
 }
 

@@ -82,7 +82,7 @@ void FUN_005c7800(void)
   }
   *(undefined2 *)pDVar12 = 0;
   DAT_00853de0 = this->field_1F53;
-  _DAT_00853ff4 = (uint)(byte)this->field_1F5C;
+  _DAT_00853ff4 = (uint)this->field_1F5C;
   cVar2 = this->field_1F57;
   if (cVar2 == '\0') {
     uVar6 = Library::MSVCRT::FUN_0072e6c0();
@@ -91,17 +91,17 @@ void FUN_005c7800(void)
   }
   else {
     if (cVar2 == '\x01') {
-      iVar10 = (-(uint)(3 < (byte)this->field_1F5C) & 4) + 0x21;
+      iVar10 = (-(uint)(3 < this->field_1F5C) & 4) + 0x21;
       uVar6 = Library::MSVCRT::FUN_0072e6c0();
       iVar5 = 0x2e;
     }
     else {
       if (cVar2 != '\x02') goto LAB_005c7a2c;
-      if ((byte)this->field_1F5C < 4) {
+      if (this->field_1F5C < 4) {
         iVar10 = 0x2b;
       }
       else {
-        iVar10 = (-(uint)(5 < (byte)this->field_1F5C) & 5) + 0x30;
+        iVar10 = (-(uint)(5 < this->field_1F5C) & 5) + 0x30;
       }
       uVar6 = Library::MSVCRT::FUN_0072e6c0();
       iVar5 = 0x41;
@@ -140,9 +140,9 @@ LAB_005c7a2c:
   }
   DAT_0085400d = this->field_1F5F;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  DAT_00853ffc = CONCAT31(DAT_00853ffc._1_3_,*(undefined1 *)&this->field_1F58);
+  DAT_00853ffc = CONCAT31(DAT_00853ffc._1_3_,(char)this->field_1F58);
 LAB_005c7ae0:
-  wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc);
+  wsprintfA(&DAT_00853de4,"%s%s%s");
   pDVar4 = this->field_1F7C;
   if ((DAT_00853ffc & 0xff) < pDVar4->count) {
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, (DAT_00853ffc & 0xff)) (runtime stride) */
@@ -174,7 +174,7 @@ LAB_005c7ae0:
     pcVar14 = pcVar14 + 1;
   }
   _DAT_0085400e = &LAB_00404c64;
-  wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
+  wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s");
   PTR_00853ff8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   DAT_00853ffc._1_3_ = SUB43(PTR_00853ff8,0);
@@ -295,9 +295,9 @@ LAB_005c7ae0:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_1A80 = DAT_008087c4._2_1_;
       this->field_1A81 = (char)(DAT_008087c2 >> 1);
-      puVar17 = &DAT_007cc584;
+      puVar17 = "%08x";
       uVar18 = DAT_0080995c;
-      wsprintfA(&stack0xffffffe8,&DAT_007cc584);
+      wsprintfA(&stack0xffffffe8,"%08x");
       this->field_1A82 = puVar17;
       this->field_1A86 = uVar18;
       Library::MSVCRT::_strncpy(&this->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);

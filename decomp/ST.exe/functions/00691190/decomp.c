@@ -145,10 +145,10 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   if (local_14 != (void *)0x0) {
     FreeAndNull(&local_14);
   }
-  iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_d_cpp_007d58fc,0x8c,0,iVar4,&DAT_007a4ccc,
-                              s_TactDataPack_007d5920);
+  iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact_d.cpp",0x8c,0,iVar4,"%s",
+                              "TactDataPack");
   if (iVar10 == 0) {
-    RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_d_cpp_007d58fc,0x8d);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x8d);
     return (undefined4 *)0x0;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

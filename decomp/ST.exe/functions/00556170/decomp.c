@@ -96,19 +96,19 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
                      (float)(int)psVar6[2] * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)psVar6[3] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
         FUN_006eaaa0(PTR_00807598,*(uint *)(psVar6 + 0x19),0);
-        *(undefined4 *)(psVar6 + 0x12) = pTVar2->field_0020;
+        *(uint *)(psVar6 + 0x12) = pTVar2->field_0020;
       }
     }
     g_currentExceptionFrame = local_54.previous;
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x11b,0,iVar3,&DAT_007a4ccc,
-                              s_TraksClassTy__PrepareAfterSave_e_007c91d0);
+  iVar10 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x11b,0,iVar3,"%s",
+                              "TraksClassTy::PrepareAfterSave error");
   if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_grig_traks_cpp_007c9104,0x11c);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x11c);
   return;
 }
 

@@ -30,16 +30,16 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
     if (pCVar2->field_0C2F != 0) {
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x24,0x4c,0xa4,0x2b);
       pcVar5 = LoadResourceString(0x38ae,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2840,(uint)(ushort)pCVar2->field_0C2F,pcVar5);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%d\n%s",(uint)(ushort)pCVar2->field_0C2F,pcVar5);
       ccFntTy::WrTxt(pCVar2->field_01B8,&DAT_0080f33a,-2,-1,5,-1,-1);
     }
     if (pCVar2->field_0C29 != 0xff) {
-      if (0x21 < (byte)pCVar2->field_0C29) {
+      if (0x21 < pCVar2->field_0C29) {
         pCVar2->field_0C29 = 0x21;
       }
       bVar6 = 0;
       local_8 = local_8 & 0xffffff00;
-      if (pCVar2->field_0C29 != '\0') {
+      if (pCVar2->field_0C29 != 0) {
         do {
           pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,(local_8 & 0xff) * 4 + 0x35,0x7d,
@@ -47,7 +47,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
           bVar6 = bVar6 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar6);
-        } while (bVar6 < (byte)pCVar2->field_0C29);
+        } while (bVar6 < pCVar2->field_0C29);
       }
       if (bVar6 < 0x21) {
         iVar7 = 0x21 - (local_8 & 0xff);
@@ -64,12 +64,12 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x19a,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintBioSonar_007c2824);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x19a,0,iVar3,"%s",
+                             "CPanelTy::PaintBioSonar");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x19a);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x19a);
   return;
 }
 

@@ -33,10 +33,10 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x36a,0,iVar3,&DAT_007a4ccc,
-                               s_AiTactClassTy__GetAiMess_007d5874);
+    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x36a,0,iVar3,"%s",
+                               "AiTactClassTy::GetAiMess");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x36b);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x36b);
       return iVar3;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

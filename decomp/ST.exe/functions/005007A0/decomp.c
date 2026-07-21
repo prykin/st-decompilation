@@ -102,11 +102,10 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             _local_14 = CONCAT31(uStack_13,bVar10);
             pAVar11 = local_c;
             if (bVar10 < 0xb) {
-              uVar7 = (uint)bVar10;
-              if (-1 < (int)(&pCVar4->field_0148)[uVar7]) {
+              if (-1 < (int)(&pCVar4->field_0148)[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,(&pCVar4->field_0148)[uVar7],0xffffffff,
-                           (&pCVar4->field_003C)[uVar7],*(uint *)(&pCVar4->field_0x94 + uVar7 * 4));
+                          (DAT_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
+                           (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
                 pAVar11 = local_c;
               }
             }
@@ -129,11 +128,10 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar10);
             if (bVar10 < 0xb) {
-              uVar7 = (uint)bVar10;
-              if (-1 < (int)(&pCVar4->field_0148)[uVar7]) {
+              if (-1 < (int)(&pCVar4->field_0148)[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,(&pCVar4->field_0148)[uVar7],0xffffffff,
-                           (&pCVar4->field_003C)[uVar7],*(uint *)(&pCVar4->field_0x94 + uVar7 * 4));
+                          (DAT_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
+                           (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
               }
             }
           }
@@ -148,12 +146,12 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
         return;
       }
       g_currentExceptionFrame = local_58.previous;
-      iVar8 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1fb,0,iVar5,
-                                 &DAT_007a4ccc,s_CPanelTy__SetNewDeep_007c24ec);
+      iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1fb,0,iVar5,
+                                 "%s","CPanelTy::SetNewDeep");
       if (iVar8 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1fb);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x1fb);
     }
   }
   return;

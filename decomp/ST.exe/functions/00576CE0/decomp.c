@@ -31,12 +31,12 @@ void DestroyBaseSystem(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x4f,0,errorCode,&DAT_007a4ccc,
-                             s_DestroyBaseSystem_007cabb4);
+  iVar2 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x4f,0,errorCode,"%s",
+                             "DestroyBaseSystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0x50);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0x50);
   return;
 }
 

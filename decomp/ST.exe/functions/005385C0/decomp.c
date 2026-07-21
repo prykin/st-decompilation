@@ -24,12 +24,12 @@ UPanelTy::OutProc(UPanelTy *this,int *param_1,undefined4 param_2,undefined4 para
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0x5c,0,errorCode,&DAT_007a4ccc,
-                             s_UPanelTy__OutProc_007c73fc);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x5c,0,errorCode,"%s",
+                             "UPanelTy::OutProc");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_panel_cpp_007c7390,0x5c);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\panel.cpp",0x5c);
   return;
 }
 

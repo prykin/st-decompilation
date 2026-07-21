@@ -86,10 +86,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
                               CONCAT22((short)((uint)pvVar8 >> 0x10),*puVar4),CASE_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           pvVar8 = extraout_ECX_01;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
           if ((pSVar5 != (STGameObjC *)0x0) &&
-             (iVar6 = (*pSVar5->vtable[1].vfunc_24)(), pvVar8 = extraout_ECX_02, iVar6 != 0)) {
-            pvVar7 = (void *)(*pSVar5->vtable->vfunc_6C)();
+             (iVar6 = (**(code **)&pSVar5->vtable[1].field_0x28)(), pvVar8 = extraout_ECX_02,
+             iVar6 != 0)) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            pvVar7 = (void *)(**(code **)&pSVar5->vtable->field_0x6c)();
             pvVar8 = (void *)(int)param_2;
             if (pvVar8 == pvVar7) {
               local_8 = local_8 + 1;

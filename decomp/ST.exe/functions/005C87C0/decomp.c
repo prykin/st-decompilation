@@ -79,7 +79,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
           bVar8 = uVar7 < pDVar4->count;
         } while ((int)uVar7 < (int)pDVar4->count);
       }
-      if (-1 < (int)PTR_0081176c->field_02EC) {
+      if (-1 < PTR_0081176c->field_02EC) {
         FUN_006b35d0(DAT_008075a8,PTR_0081176c->field_02EC);
       }
     }
@@ -87,10 +87,10 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac,0,errorCode,
-                             &DAT_007a4ccc,s_SettMapTy__PaintSC_007cd224);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x4ac,0,errorCode,
+                             "%s","SettMapTy::PaintSC");
   if (iVar5 == 0) {
-    RaiseInternalException(errorCode,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\sett_obj.cpp",0x4ac);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

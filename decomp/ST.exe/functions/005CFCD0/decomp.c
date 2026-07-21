@@ -60,12 +60,12 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4bf,0,iVar4,&DAT_007a4ccc
-                               ,s_SettMapMTy__UpdatePing_007cd39c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4bf,0,iVar4,"%s"
+                               ,"SettMapMTy::UpdatePing");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4bf);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\settmobj.cpp",0x4bf);
   }
   return;
 }

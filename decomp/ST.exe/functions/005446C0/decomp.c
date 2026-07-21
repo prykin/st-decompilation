@@ -54,12 +54,12 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x175,0,iVar2,&DAT_007a4ccc
-                             ,s_CursorClassTy__AddOpticAcc_007c7ecc);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x175,0,iVar2,"%s"
+                             ,"CursorClassTy::AddOpticAcc");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x176);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x176);
   return;
 }
 

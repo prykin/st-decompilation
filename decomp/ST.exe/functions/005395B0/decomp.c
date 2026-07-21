@@ -27,12 +27,12 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
   pPVar2 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x54,0,errorCode,
-                               &DAT_007a4ccc,s_PausePanelTy__SwitchPausePanel_007c7508);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x54,0,errorCode,
+                               "%s","PausePanelTy::SwitchPausePanel");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_pause_cpp_007c7490,0x54);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\pause.cpp",0x54);
     return;
   }
   switch(local_8->field_0172) {

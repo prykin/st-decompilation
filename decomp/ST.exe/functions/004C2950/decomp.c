@@ -35,7 +35,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     if (param_2 == 0x49) {
       return;
     }
-    wsprintfA(param_5,s__s_cover_1i_007ac8ec,*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
+    wsprintfA(param_5,"%s_cover%1i",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
     *param_4 = DAT_0080678c;
     *param_6 = 0x1d;
     goto LAB_004c2b44;
@@ -43,7 +43,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     if (*(int *)(&DAT_00791948 + param_2 * 4) != 0) {
       iVar1 = param_1 + -0x97 + param_2 * 3;
       if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc) != 0) {
-        wsprintfA(param_5,s__s_cover_007ac8fc,*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc));
+        wsprintfA(param_5,"%s_cover",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc));
         *param_4 = DAT_0080678c;
         *param_6 = 0x1d;
         *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);
@@ -87,7 +87,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4) == 0) {
       return;
     }
-    wsprintfA(param_5,s__s_1i_007ac908,*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
+    wsprintfA(param_5,"%s%1i",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
     *param_4 = DAT_0080678c;
     *param_6 = 0x1d;
     if ((param_2 == 0x40) || (param_2 == 0x49)) {

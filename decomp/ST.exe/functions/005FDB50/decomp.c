@@ -57,11 +57,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             RaiseInternalException
-                      (-1,g_overwriteContext_007ED77C,s_E____titans_nick_to_DcBom_cpp_007cebc8,0x13d
+                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d
                       );
             return 0xffff;
           }
-          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,s_adcbo_007ce924,0x1d);
+          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,"adcbo",0x1d);
           if (iVar5 != 0) {
             return 0xffff;
           }
@@ -110,9 +110,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
                 ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                      iVar5,iVar6,&local_24,&local_28), iVar8 = local_8,
                  this = local_c, -1 < iVar7 &&
-                 ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < (int)pVVar3->field_0030)) &&
+                 ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < pVVar3->field_0030)) &&
                   ((iVar5 = (&DAT_0079aed0)[iVar7] + local_28, -1 < iVar5 &&
-                   (iVar5 < (int)pVVar3->field_0034)))))))) && (pVVar3->field_004C != 0)) {
+                   (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != 0)) {
               cVar1 = *(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_24);
 joined_r0x005fe09b:
               iVar8 = local_8;
@@ -144,11 +144,11 @@ joined_r0x005fe09b:
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = STT3DSprC::LoadSequence(this_00,0xf,DAT_00806764,s_bulb_n3_007ce92c,0x1d);
+            iVar5 = STT3DSprC::LoadSequence(this_00,0xf,DAT_00806764,"bulb_n3",0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,s_expmask2_007ce93c,0x1d);
+            iVar5 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,"expmask2",0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
@@ -201,9 +201,9 @@ joined_r0x005fe09b:
                   ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                        iVar6,iVar7,&local_1c,&local_20), iVar8 = local_8,
                    this = local_c, -1 < iVar5 &&
-                   (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < (int)pVVar3->field_0030)))))) &&
+                   (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < pVVar3->field_0030)))))) &&
                  (((iVar5 = (&DAT_0079aed0)[iVar5] + local_20, -1 < iVar5 &&
-                   (iVar5 < (int)pVVar3->field_0034)) && (pVVar3->field_004C != 0)))) {
+                   (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != 0)))) {
                 cVar1 = *(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_1c);
                 goto joined_r0x005fe09b;
               }

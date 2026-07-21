@@ -7,6 +7,7 @@ undefined4 __thiscall FUN_00627400(void *this,undefined4 param_1)
   short sVar3;
   STFishC *this_00;
   int iVar4;
+  dword dVar5;
 
   sVar1 = *(short *)((int)this + 0x47);
   sVar2 = *(short *)((int)this + 0x49);
@@ -38,11 +39,11 @@ undefined4 __thiscall FUN_00627400(void *this,undefined4 param_1)
     }
     if ((int)(((ulonglong)(*(uint *)((int)this + 0x315) - PTR_00802a38->field_00E4) % 200) / 3) != 0
        ) {
-      iVar4 = (*this_00->vtable->vfunc_2C)();
-      if (iVar4 == 0xe6) {
+      dVar5 = (*this_00->vtable->slot_2C)(this_00);
+      if (dVar5 == 0xe6) {
         thunk_FUN_0058f1e0(this_00,0);
       }
-      else if ((0xe6 < iVar4) && (iVar4 < 0xec)) {
+      else if ((0xe6 < (int)dVar5) && ((int)dVar5 < 0xec)) {
         STFishC::sub_0057D5F0(this_00,0);
         return param_1;
       }

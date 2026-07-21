@@ -29,12 +29,12 @@ void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x22,0,iVar3,&DAT_007a4ccc,
-                             s_IntercomPanelTy__PreInitIntercom_007c4044);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\intercom.cpp",0x22,0,iVar3,"%s",
+                             "IntercomPanelTy::PreInitIntercomPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x22);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\intercom.cpp",0x22);
   return;
 }
 

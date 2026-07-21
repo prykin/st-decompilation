@@ -33,12 +33,12 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x24d,0,iVar3,&DAT_007a4ccc,
-                               s_STManRub3C__AddNewColl3_007d1464);
+    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x24d,0,iVar3,"%s",
+                               "STManRub3C::AddNewColl3");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x24f);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x24f);
     return 0xffff;
   }
   if (*(int *)(&local_c->field_0x70 + param_1 * 4) == 0) {

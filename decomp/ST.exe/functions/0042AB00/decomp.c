@@ -29,12 +29,12 @@ STAllPlayersC::GetGObjFromZone
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x6a,0,errorCode,&DAT_007a4ccc
-                             ,s_STAllPlayersC__GetGObjFromZone_007a6028);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x6a,0,errorCode,"%s"
+                             ,"STAllPlayersC::GetGObjFromZone");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x6b);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x6b);
   return;
 }
 

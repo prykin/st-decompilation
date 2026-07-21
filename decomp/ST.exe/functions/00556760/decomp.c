@@ -48,7 +48,7 @@ TraksClassTy::TraksCreate
   undefined2 local_3a;
   undefined2 local_38;
   undefined2 local_36;
-  undefined4 local_34;
+  uint local_34;
   undefined4 local_30;
   short local_2c;
   short local_2a;
@@ -116,9 +116,9 @@ LAB_00556926:
     thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                        (int)(short)local_10,(int)sVar5,&local_5c,&local_8);
     if ((iVar7 < 0) || (4 < iVar7)) goto LAB_00556926;
-    if (((local_5c < 0) || ((int)pVVar2->field_0030 <= local_5c)) ||
+    if (((local_5c < 0) || (pVVar2->field_0030 <= local_5c)) ||
        (((&DAT_0079aed0)[iVar7] + local_8 < 0 ||
-        ((int)pVVar2->field_0034 <= (&DAT_0079aed0)[iVar7] + local_8)))) {
+        (pVVar2->field_0034 <= (&DAT_0079aed0)[iVar7] + local_8)))) {
       bVar9 = false;
     }
     else {
@@ -141,12 +141,12 @@ LAB_0055693a:
   iVar7 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x1bc,0,iVar7,&DAT_007a4ccc,
-                               s_TraksClassTy__TraksCreate_error_007c9234);
+    iVar3 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x1bc,0,iVar7,"%s",
+                               "TraksClassTy::TraksCreate error ");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_grig_traks_cpp_007c9104,0x1bd);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\grig\\traks.cpp",0x1bd);
     return 0xffffffff;
   }
   psVar8 = &local_58;

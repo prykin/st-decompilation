@@ -33,9 +33,9 @@ void CreatePlaySystem(void)
     }
     if (PTR_00802a38 == (STPlaySystemC *)0x0) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x7d);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0x7d);
     }
-    *(undefined4 *)&PTR_00802a38->field_0xe0 = 0;
+    PTR_00802a38->field_00E0 = 0;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     (*PTR_00802a38->vtable->InitSystem)(PTR_00802a38,unaff_ESI);
     (*PTR_00802a38->vtable->vfunc_08)(0x1100,0,&g_sTAllPlayers_007FA174,0,0);
@@ -61,14 +61,14 @@ void CreatePlaySystem(void)
       local_c = &local_8;
       local_8 = 0x32;
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_LAST_NAME_0079ae2c,(int *)&local_c,0);
-      if ((uint)PTR_00802a38->field_0020 < local_8) {
+      if (PTR_00802a38->field_0020 < local_8) {
         PTR_00802a38->field_0020 = local_8;
       }
     }
     AppClassTy::AddChildSystem
               ((AppClassTy *)&DAT_00807620,(SystemClassTy *)PTR_0081163c,
                (SystemClassTy *)PTR_00802a38,0);
-    *(undefined4 *)&PTR_00802a38->field_0xe0 = 1;
+    PTR_00802a38->field_00E0 = 1;
     if (DAT_008067a0 != '\0') {
       DAT_00802a99 = 1;
     }
@@ -76,12 +76,12 @@ void CreatePlaySystem(void)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0xb0,0,errorCode,
-                             &DAT_007a4ccc,s_CreatePlaySystem_007c841c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xb0,0,errorCode,
+                             "%s","CreatePlaySystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xb1);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0xb1);
   return;
 }
 

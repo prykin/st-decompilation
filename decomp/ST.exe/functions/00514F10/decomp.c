@@ -25,12 +25,12 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x39b,0,iVar3,&DAT_007a4ccc
-                               ,s_HelpPanelTy__PrepMissObj_007c3b3c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x39b,0,iVar3,"%s"
+                               ,"HelpPanelTy::PrepMissObj");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x39b);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x39b);
     return;
   }
   if ((AnonShape_006B5570_4D68B99C *)local_8->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -47,12 +47,12 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
     do {
       pcVar5 = *(char **)(PTR_0080c4cb->field_0014 + iVar3 * 4);
 LAB_00514f85:
-      thunk_FUN_005411a0(this_00->field_01D3,pcVar5,&DAT_007c3b60);
+      thunk_FUN_005411a0(this_00->field_01D3,pcVar5,"@- %s@ ");
       iVar3 = iVar3 + 1;
     } while (iVar3 < PTR_0080c4cb->field_0008);
   }
   puVar4 = ccFntTy::FormIndentSarr
-                     (this_00->field_01E4,this_00->field_01D3,s________________007c21d8,
+                     (this_00->field_01E4,this_00->field_01D3," ,.;:!?/\\()[]{}",
                       (uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
   if ((AnonShape_006B5570_4D68B99C *)this_00->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_01D3);

@@ -28,7 +28,7 @@ void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
                  local_8->field_1D17);
     }
     iVar3 = 0;
-    if (pMVar2->field_009A != '\0') {
+    if (pMVar2->field_009A != 0) {
       puVar5 = &pMVar2->field_00E7;
       do {
         if (*puVar5 != 0xffffffff) {
@@ -37,18 +37,18 @@ void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar5 = (uint *)((int)puVar5 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pMVar2->field_009A);
+      } while (iVar3 < (int)(uint)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x4b,0,iVar3,&DAT_007a4ccc,
-                             s_MMsgTy__ShowSprites_007ccc48);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x4b,0,iVar3,"%s",
+                             "MMsgTy::ShowSprites");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x4b);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x4b);
   return;
 }
 

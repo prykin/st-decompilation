@@ -25,12 +25,12 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xb5,0,iVar3,&DAT_007a4ccc,
-                               s_CPanelTy__PaintInfoObj_007c2468);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0xb5,0,iVar3,"%s",
+                               "CPanelTy::PaintInfoObj");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xb5);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0xb5);
     return;
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43);

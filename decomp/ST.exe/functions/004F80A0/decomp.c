@@ -51,10 +51,10 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   this_00 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2c9,0,iVar3,&DAT_007a4ccc,
-                               s_CPanelTy__PaintTV_007c2154);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x2c9,0,iVar3,"%s",
+                               "CPanelTy::PaintTV");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2c9);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x2c9);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -85,7 +85,7 @@ joined_r0x004f81d1:
           if (-1 < (int)uVar13) {
             Library::DKW::DDX::FUN_006b3640
                       (DAT_008075a8,uVar13,0xffffffff,(&this_00->field_003C)[uVar5],
-                       *(uint *)(&this_00->field_0x94 + uVar5 * 4));
+                       (&this_00->field_0094)[uVar5]);
           }
         }
       }
@@ -135,7 +135,7 @@ joined_r0x004f81d1:
           if (-1 < (int)(&this_00->field_0148)[uVar13]) {
             Library::DKW::DDX::FUN_006b3640
                       (DAT_008075a8,(&this_00->field_0148)[uVar13],0xffffffff,
-                       (&this_00->field_003C)[uVar13],*(uint *)(&this_00->field_0x94 + uVar13 * 4));
+                       (&this_00->field_003C)[uVar13],(&this_00->field_0094)[uVar13]);
           }
         }
         if (this_00->field_02EA == '\x05') {
@@ -297,7 +297,7 @@ joined_r0x004f861b:
             if (-1 < (int)uVar13) {
               Library::DKW::DDX::FUN_006b3640
                         (DAT_008075a8,uVar13,0xffffffff,(&this_00->field_003C)[uVar5],
-                         *(uint *)(&this_00->field_0x94 + uVar5 * 4));
+                         (&this_00->field_0094)[uVar5]);
             }
           }
         }
@@ -412,7 +412,7 @@ cf_switch_join_004F88ED:
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);
     iVar9 = FUN_007140e0((void *)this_00->field_01D8,1,'\0');
     if (iVar9 != 0) {
-      FUN_006b5440(this_00->field_01B4,0,100,5,iVar9,0,0xff);
+      FUN_006b5440((int)this_00->field_01B4,0,100,5,iVar9,0,0xff);
     }
     FUN_006b35d0(DAT_008075a8,this_00->field_017C);
     if (this_00->field_01E0 != '\0') {

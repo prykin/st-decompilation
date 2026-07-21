@@ -48,9 +48,8 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       return uVar5;
     case CASE_5:
       local_8 = 1;
-      uVar3 = GetPlayerRaceId(local_c->field_023D);
-      *(undefined4 *)&pTVar2->field_0x241 =
-           *(undefined4 *)(&DAT_007e4178 + ((uVar3 & 0xff) + pTVar2->field_0235 * 3) * 4);
+      uVar3 = GetPlayerRaceId(*(char *)&local_c->field_023D);
+      pTVar2->field_0241 = *(int *)(&DAT_007e4178 + ((uVar3 & 0xff) + pTVar2->field_0235 * 3) * 4);
       thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)pTVar2);
       g_currentExceptionFrame = local_50.previous;
       return 1;
@@ -68,12 +67,12 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
     }
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x291,0,errorCode,
-                             &DAT_007a4ccc,s_TLOBaseTy__procResult_error_007ad3ec);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bproc.cpp",0x291,0,errorCode,
+                             "%s","TLOBaseTy::procResult error");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x292);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Artem\\TLO_bproc.cpp",0x292);
   return 0;
 }
 

@@ -3,27 +3,31 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::GetMessage */
+   MTaskTy::GetMessage
 
-undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=005E4570; family_names=MTaskTy::GetMessage; ret4=2;
+   direct_offsets={10:2,14:15,18:3,1c:5} */
+
+int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
 
 {
   char cVar1;
-  AnonShape_006B5B10_E0D06CF1 *pAVar2;
-  ccFntTy *pcVar3;
-  AnonPointee_MTaskTy_06BF *pAVar4;
-  AnonPointee_MTaskTy_06CB *pAVar5;
-  code *pcVar6;
+  STMessageId SVar2;
+  AnonShape_006B5B10_E0D06CF1 *pAVar3;
+  ccFntTy *pcVar4;
+  AnonPointee_MTaskTy_06BF *pAVar5;
+  AnonPointee_MTaskTy_06CB *pAVar6;
+  code *pcVar7;
   MTaskTy *this_00;
-  byte bVar7;
-  DWORD DVar8;
-  int iVar9;
-  DArrayTy *pDVar10;
-  undefined4 *puVar11;
-  byte *pbVar12;
-  uint *puVar13;
-  undefined4 *puVar14;
-  undefined4 uVar15;
+  byte bVar8;
+  DWORD DVar9;
+  int iVar10;
+  DArrayTy *pDVar11;
+  undefined4 *puVar12;
+  byte *pbVar13;
+  uint *puVar14;
+  undefined4 *puVar15;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   uint uVar16;
@@ -51,38 +55,36 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
   AnonShape_005E4570_F1672769 *local_8;
 
   local_18 = this;
-  DVar8 = FUN_006e51b0(this->field_0010);
-  this->field_0065 = DVar8;
+  DVar9 = FUN_006e51b0(this->field_0010);
+  this->field_0065 = DVar9;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar9 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
+  iVar10 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_18;
-  if (iVar9 != 0) {
+  if (iVar10 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar25 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x5b5,0,iVar9,
-                                &DAT_007a4ccc,s_MTaskTy__GetMessage_007cdca4);
+    iVar25 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x5b5,0,iVar10,
+                                "%s","MTaskTy::GetMessage");
     if (iVar25 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar9,0,s_E____titans_Start_task_obj_cpp_007cd994,0x5b5);
+    RaiseInternalException(iVar10,0,"E:\\__titans\\Start\\task_obj.cpp",0x5b5);
     return 0xffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar19 = *(uint *)(param_1 + 0x10);
+  SVar2 = message->id;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar21 = (undefined3)((uint)extraout_EDX >> 8);
-  if (uVar19 < 0x6214) {
-    if (uVar19 == 0x6213) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      PaintBut(local_18,(int *)&local_18->field_0x65f,0x24bc,4,1,*(short *)(param_1 + 0x14));
+  if (SVar2 < MESS_MREPORTTY_6214) {
+    if (SVar2 == MESS_MTASKTY_6213) {
+      PaintBut(local_18,(int *)&local_18->field_0x65f,0x24bc,4,1,(message->arg0).words.low);
       FUN_006b35d0(DAT_008075a8,this_00->field_02A9);
       goto cf_common_exit_005E525B;
     }
-    if (uVar19 < 0x6201) {
-      if (uVar19 == 0x6200) {
+    if (SVar2 < MESS_PLAYPANELTY_6201) {
+      if (SVar2 == MESS_SHARED_6200) {
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         if (DAT_0080fb6e == 0) {
-          thunk_FUN_005b66e0((STJellyGunC *)this_00);
+          thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
           this_00->field_0045 = 0x200;
           this_00->field_0049 = 0;
           this_00->field_004D = 0x6102;
@@ -94,25 +96,25 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
         }
         goto cf_common_exit_005E525B;
       }
-      switch(uVar19) {
-      case 0:
+      switch(SVar2) {
+      case MESS_ID_NONE:
         NoneMTask(local_18);
         break;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      case 2:
-        InitMTask(local_18,*(char *)(*(int *)(param_1 + 0x14) + 0x14),
-                  *(undefined1 *)(*(int *)(param_1 + 0x14) + 0x18));
+      case MESS_ID_CREATE:
+        InitMTask(local_18,*(char *)((message->arg0).u32 + 0x14),
+                  *(undefined1 *)((message->arg0).u32 + 0x18));
         break;
-      case 3:
+      case MESS_SHARED_0003:
         DoneMTask(local_18);
         break;
-      case 5:
+      case MESS_SHARED_0005:
         PaintMTask(local_18);
         break;
-      case 0x62:
+      case MESS_TRACKBARCLASSTY_0062:
         if (DAT_0080fb6e == 0) {
           if (local_18->field_006D == '\x01') {
-            thunk_FUN_005b66e0((STJellyGunC *)local_18);
+            thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)local_18);
             uVar19 = 0xffffffff;
             pcVar22 = &DAT_0080ed16;
             do {
@@ -146,15 +148,15 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
           FUN_006e6020(local_18,(undefined4 *)&local_18->field_0x3d);
         }
         break;
-      case 100:
-        iVar9 = 1;
+      case MESS_SHARED_0064:
+        iVar10 = 1;
         if (local_18->field_006D != '\x01') {
           local_18->field_006D = 5;
           PlayScript(local_18);
           iVar25 = 0x1f;
           do {
-            thunk_FUN_00568bc0(&g_sound,iVar9);
-            iVar9 = iVar9 + 1;
+            thunk_FUN_00568bc0(&g_sound,iVar10);
+            iVar10 = iVar10 + 1;
             iVar25 = iVar25 + -1;
           } while (iVar25 != 0);
           break;
@@ -165,12 +167,12 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
           FUN_006e6020(local_18,(undefined4 *)&local_18->field_0x3d);
           break;
         }
-        thunk_FUN_005b66e0((STJellyGunC *)local_18);
+        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)local_18);
         this_00->field_0045 = 0x200;
         this_00->field_0049 = 0;
         this_00->field_004D = (-(uint)(this_00->field_006F != '\x02') & 0x1f) + 0x6103;
-        bVar7 = this_00->field_006F;
-        if (bVar7 == 2) {
+        bVar8 = this_00->field_006F;
+        if (bVar8 == 2) {
           this_00->field_0051 = 1;
           break;
         }
@@ -178,8 +180,8 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
       }
     }
     else {
-      switch(uVar19) {
-      case 0x6201:
+      switch(SVar2) {
+      case MESS_PLAYPANELTY_6201:
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         if (DAT_0080fb6e != 0) {
           this_00->field_004D = 0x7102;
@@ -187,25 +189,25 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
           FUN_006e6020(this_00,(undefined4 *)&this_00->field_0x3d);
           break;
         }
-        thunk_FUN_005b66e0((STJellyGunC *)this_00);
+        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
         this_00->field_0045 = 0x200;
         this_00->field_0049 = 0;
         this_00->field_004D = (-(uint)(this_00->field_006F != '\x02') & 0x1f) + 0x6103;
-        bVar7 = this_00->field_006F;
-        if (bVar7 == 2) {
+        bVar8 = this_00->field_006F;
+        if (bVar8 == 2) {
           this_00->field_0051 = 1;
           break;
         }
 LAB_005e470e:
-        this_00->field_0051 = (uint)bVar7;
+        this_00->field_0051 = (uint)bVar8;
         break;
-      case 0x6202:
+      case MESS_PLAYPANELTY_6202:
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         if (DAT_0080fb6e == 0) {
           this_00->field_0049 = 1;
           if (this_00->field_006E == '\x01') {
             this_00->field_004D = 0x6108;
-            thunk_FUN_005b66e0((STJellyGunC *)this_00);
+            thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
           }
           else {
             uVar19 = 0xffffffff;
@@ -232,7 +234,7 @@ LAB_005e470e:
               pcVar23 = pcVar23 + 1;
             }
             this_00->field_004D = 0x60ff;
-            thunk_FUN_005b66e0((STJellyGunC *)this_00);
+            thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
           }
         }
         else {
@@ -241,68 +243,68 @@ LAB_005e470e:
           FUN_006e6020(this_00,(undefined4 *)&this_00->field_0x3d);
         }
         break;
-      case 0x6203:
+      case MESS_SETTMAPTY_6203:
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         this_00->field_007C = 0;
         this_00->field_0061 = this_00->field_0069;
         DarkScreen(DAT_0080759c,1,0);
-        pDVar10 = this_00->field_064F;
-        if (pDVar10 != (DArrayTy *)0x0) {
+        pDVar11 = this_00->field_064F;
+        if (pDVar11 != (DArrayTy *)0x0) {
           uVar19 = 0;
-          if (pDVar10->count != 0) {
-            if (pDVar10->count == 0) {
+          if (pDVar11->count != 0) {
+            if (pDVar11->count == 0) {
               pAVar17 = (AnonShape_005E10A0_819783CC *)0x0;
               goto LAB_005e48f3;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar19) (runtime stride) */
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar19) (runtime stride) */
               pAVar17 = (AnonShape_005E10A0_819783CC *)
-                        (pDVar10->elementSize * uVar19 + (int)pDVar10->data);
+                        (pDVar11->elementSize * uVar19 + (int)pDVar11->data);
 LAB_005e48f3:
               TTaskItemClose(this_00,pAVar17);
-              pDVar10 = this_00->field_064F;
+              pDVar11 = this_00->field_064F;
               uVar19 = uVar19 + 1;
-            } while (uVar19 < pDVar10->count);
+            } while (uVar19 < pDVar11->count);
           }
         }
-        pDVar10 = this_00->field_0647;
-        if (pDVar10 != (DArrayTy *)0x0) {
+        pDVar11 = this_00->field_0647;
+        if (pDVar11 != (DArrayTy *)0x0) {
           uVar19 = 0;
-          if (pDVar10->count != 0) {
-            if (pDVar10->count == 0) {
+          if (pDVar11->count != 0) {
+            if (pDVar11->count == 0) {
               pAVar17 = (AnonShape_005E10A0_819783CC *)0x0;
               goto LAB_005e492f;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar19) (runtime stride) */
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar19) (runtime stride) */
               pAVar17 = (AnonShape_005E10A0_819783CC *)
-                        (pDVar10->elementSize * uVar19 + (int)pDVar10->data);
+                        (pDVar11->elementSize * uVar19 + (int)pDVar11->data);
 LAB_005e492f:
               TTaskItemClose(this_00,pAVar17);
-              pDVar10 = this_00->field_0647;
+              pDVar11 = this_00->field_0647;
               uVar19 = uVar19 + 1;
-            } while (uVar19 < pDVar10->count);
+            } while (uVar19 < pDVar11->count);
           }
         }
-        pDVar10 = this_00->field_064B;
-        if (pDVar10 != (DArrayTy *)0x0) {
+        pDVar11 = this_00->field_064B;
+        if (pDVar11 != (DArrayTy *)0x0) {
           uVar19 = 0;
-          if (pDVar10->count != 0) {
-            if (pDVar10->count == 0) {
+          if (pDVar11->count != 0) {
+            if (pDVar11->count == 0) {
               this_01 = (SpriteClassTy *)0x0;
               goto LAB_005e496b;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar19) (runtime stride) */
-              this_01 = (SpriteClassTy *)(pDVar10->elementSize * uVar19 + (int)pDVar10->data);
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar19) (runtime stride) */
+              this_01 = (SpriteClassTy *)(pDVar11->elementSize * uVar19 + (int)pDVar11->data);
 LAB_005e496b:
               SpriteClassTy::CloseSprite(this_01);
               if (*(int *)((int)&this_01[1].field_0008 + 1) != 0) {
                 FreeAndNull((void **)((int)&this_01[1].field_0008 + 1));
               }
-              pDVar10 = this_00->field_064B;
+              pDVar11 = this_00->field_064B;
               uVar19 = uVar19 + 1;
-            } while (uVar19 < pDVar10->count);
+            } while (uVar19 < pDVar11->count);
           }
         }
         if (this_00->field_02CD != 0) {
@@ -319,57 +321,55 @@ LAB_005e496b:
         if (this_00->field_03F7 != 0xffffffff) {
           FUN_006b3af0((int *)this_00->field_043B,this_00->field_03F7);
         }
-        puVar13 = &this_00->field_02BD;
-        iVar9 = 4;
+        puVar14 = &this_00->field_02BD;
+        iVar10 = 4;
         do {
-          FUN_006b3af0(DAT_008075a8,*puVar13);
-          puVar13 = puVar13 + 1;
-          iVar9 = iVar9 + -1;
-        } while (iVar9 != 0);
+          FUN_006b3af0(DAT_008075a8,*puVar14);
+          puVar14 = puVar14 + 1;
+          iVar10 = iVar10 + -1;
+        } while (iVar10 != 0);
         if (this_00->field_02B9 != 0) {
           StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02B9);
           this_00->field_02B9 = 0;
         }
-        puVar13 = &this_00->field_0291;
-        iVar9 = 5;
+        puVar14 = &this_00->field_0291;
+        iVar10 = 5;
         do {
-          FUN_006b3af0(DAT_008075a8,puVar13[5]);
-          if (*puVar13 != 0) {
-            StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar13);
-            *puVar13 = 0;
+          FUN_006b3af0(DAT_008075a8,puVar14[5]);
+          if (*puVar14 != 0) {
+            StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar14);
+            *puVar14 = 0;
           }
-          puVar13 = puVar13 + 1;
-          iVar9 = iVar9 + -1;
-        } while (iVar9 != 0);
+          puVar14 = puVar14 + 1;
+          iVar10 = iVar10 + -1;
+        } while (iVar10 != 0);
         PaintMTask(this_00);
         this_00->field_006D = 3;
         Library::DKW::TBL::FUN_006afe40(&this_00->field_0074,(uint *)this_00->field_0078);
         PlayScript(this_00);
-        thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_00->field_005D,10,2);
+        thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,(int)this_00->field_005D,10,2);
         break;
       case 0x6204:
         if (local_18->field_006D != '\x01') {
           local_18->field_006D = 5;
           PlayScript(local_18);
-          iVar9 = 1;
+          iVar10 = 1;
           iVar25 = 0x1f;
           do {
-            thunk_FUN_00568bc0(&g_sound,iVar9);
-            iVar9 = iVar9 + 1;
+            thunk_FUN_00568bc0(&g_sound,iVar10);
+            iVar10 = iVar10 + 1;
             iVar25 = iVar25 + -1;
           } while (iVar25 != 0);
         }
         break;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      case 0x6205:
-        pcVar22 = *(char **)(param_1 + 0x14);
+      case MESS_SHARED_6200|MESS_SHARED_0005:
+        pcVar22 = (message->arg0).ptr;
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         DAT_00807340 = *pcVar22 + -1;
         DAT_00807341 = DAT_00807340 == '\x03';
         break;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      case 0x6212:
-        PaintBut(local_18,&local_18->field_0653,0x26ac,4,1,*(short *)(param_1 + 0x14));
+      case MESS_MTASKTY_6212:
+        PaintBut(local_18,&local_18->field_0653,0x26ac,4,1,(message->arg0).words.low);
         FUN_006b35d0(DAT_008075a8,this_00->field_02A5);
       }
     }
@@ -377,21 +377,20 @@ LAB_005e496b:
   }
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar20 = (undefined3)((uint)extraout_ECX >> 8);
-  if (uVar19 < 0x6335) {
-    if (uVar19 == 0x6334) {
+  if (SVar2 < MESS_WAITTY_6335) {
+    if (SVar2 == MESS_SHARED_6334) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       MMMObjTy::PaintSlBut
-                ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_0362,param_1,
-                 CONCAT31(uVar21,local_18->field_06CA == '\x01'));
+                ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_0362,
+                 (int)message,CONCAT31(uVar21,local_18->field_06CA == '\x01'));
     }
-    else if (uVar19 < 0x6218) {
-      if (uVar19 == 0x6217) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_c = *(int **)(param_1 + 0x14);
+    else if (SVar2 < 0x6218) {
+      if (SVar2 == MESS_MTASKTY_6217) {
+        local_c = (message->arg0).ptr;
         local_24 = (undefined4 *)0x1f52;
         local_1c = (AnonShape_005E4570_1DAE8C90 *)(&local_18->field_0x683 + *local_c * 0xc);
-        pAVar2 = *(AnonShape_006B5B10_E0D06CF1 **)local_1c;
-        local_8 = (AnonShape_005E4570_F1672769 *)pAVar2->field_0008;
+        pAVar3 = *(AnonShape_006B5B10_E0D06CF1 **)local_1c;
+        local_8 = (AnonShape_005E4570_F1672769 *)pAVar3->field_0008;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_20 = CONCAT31(local_20._1_3_,(-(local_1c->field_000A != '\x01') & 0xecU) + 0x2c);
         if (local_c[1] == 3) {
@@ -404,105 +403,99 @@ LAB_005e496b:
           local_14 = (uint *)(CONCAT31(local_14._1_3_,(local_1c->field_0x8 != '\x01') + -1) &
                              0xffffff02);
         }
-        local_10 = pAVar2[1].field_0004;
+        local_10 = pAVar3[1].field_0004;
         if (local_10 == 0) {
-          local_10 = ((uint)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+          local_10 = ((uint)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                      (int)local_8;
         }
-        puVar11 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
+        puVar12 = (undefined4 *)FUN_006b4fa0((int)pAVar3);
         for (uVar19 = local_10 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-          *puVar11 = 0xffffffff;
-          puVar11 = puVar11 + 1;
+          *puVar12 = 0xffffffff;
+          puVar12 = puVar12 + 1;
         }
         for (uVar19 = local_10 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-          *(undefined1 *)puVar11 = 0xff;
-          puVar11 = (undefined4 *)((int)puVar11 + 1);
+          *(undefined1 *)puVar12 = 0xff;
+          puVar12 = (undefined4 *)((int)puVar12 + 1);
         }
-        FUN_006c7610(pAVar2,0,0,0,0x16,(uint)local_8,2,0);
+        FUN_006c7610(pAVar3,0,0,0,0x16,(uint)local_8,2,0);
         if ((local_c[1] == 1) || ((local_c[1] == 3 && (local_c[2] != 0)))) {
-          pbVar12 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0081,
+          pbVar13 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0081,
                                          (uint)(local_1c->field_000B == '\x01'));
-          DibPut(pAVar2,2,(int)&local_8[-1].field_0x1d4 / 2,'\x06',pbVar12);
+          DibPut(pAVar3,2,(int)&local_8[-1].field_0x1d4 / 2,'\x06',pbVar13);
         }
-        FUN_006c7570(pAVar2,0,0,0,(undefined4 *)0x16,(int)local_8,2,(byte)local_20);
-        iVar9 = *local_c;
-        if (iVar9 == 1) {
-          puVar11 = (undefined4 *)0x1f47;
+        FUN_006c7570(pAVar3,0,0,0,(undefined4 *)0x16,(int)local_8,2,(byte)local_20);
+        iVar10 = *local_c;
+        if (iVar10 == 1) {
+          puVar12 = (undefined4 *)0x1f47;
         }
-        else if (iVar9 == 2) {
-          puVar11 = (undefined4 *)0x1f48;
+        else if (iVar10 == 2) {
+          puVar12 = (undefined4 *)0x1f48;
         }
         else {
-          puVar11 = local_24;
-          if (iVar9 == 3) {
-            puVar11 = (undefined4 *)0x1f49;
+          puVar12 = local_24;
+          if (iVar10 == 3) {
+            puVar12 = (undefined4 *)0x1f49;
           }
         }
-        ccFntTy::SetSurf(this_00->field_008D,(int)pAVar2,0,0x1b,0,pAVar2->field_0004 + -0x1b,
+        ccFntTy::SetSurf(this_00->field_008D,(int)pAVar3,0,0x1b,0,pAVar3->field_0004 + -0x1b,
                          (int)local_8);
         uVar19 = (uint)local_14 & 0xff;
         iVar25 = -1;
-        iVar9 = 0;
-        puVar13 = (uint *)LoadResourceString((UINT)puVar11,HINSTANCE_00807618);
-        ccFntTy::WrStr(this_00->field_008D,puVar13,iVar9,iVar25,uVar19);
+        iVar10 = 0;
+        puVar14 = (uint *)LoadResourceString((UINT)puVar12,HINSTANCE_00807618);
+        ccFntTy::WrStr(this_00->field_008D,puVar14,iVar10,iVar25,uVar19);
         FUN_006b35d0(DAT_008075a8,(&this_00->field_02B9)[*local_c]);
       }
-      else if (uVar19 == 0x6214) {
+      else if (SVar2 == MESS_MREPORTTY_6214) {
         if (local_18->field_006E == '\0') {
           UVar18 = 0x2343;
         }
         else {
           UVar18 = (-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        PaintBut(local_18,(int *)&local_18->field_0x66b,UVar18,4,1,*(short *)(param_1 + 0x14));
+        PaintBut(local_18,(int *)&local_18->field_0x66b,UVar18,4,1,(message->arg0).words.low);
         FUN_006b35d0(DAT_008075a8,this_00->field_02AD);
       }
-      else if (uVar19 == 0x6215) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        PaintBut(local_18,(int *)&local_18->field_0x677,0x2358,4,1,*(short *)(param_1 + 0x14));
+      else if (SVar2 == MESS_MREPORTTY_6215) {
+        PaintBut(local_18,(int *)&local_18->field_0x677,0x2358,4,1,(message->arg0).words.low);
         FUN_006b35d0(DAT_008075a8,this_00->field_02B1);
       }
-      else if (uVar19 == 0x6216) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        PaintBut(local_18,(int *)&local_18->field_0x683,0x235e,4,1,*(short *)(param_1 + 0x14));
+      else if (SVar2 == MESS_MTASKTY_6216) {
+        PaintBut(local_18,(int *)&local_18->field_0x683,0x235e,4,1,(message->arg0).words.low);
         FUN_006b35d0(DAT_008075a8,this_00->field_02B5);
       }
     }
-    else if (uVar19 == 0x6332) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (((-1 < (int)local_18->field_0484) && (param_1 != 0)) &&
-         (local_8 = *(AnonShape_005E4570_F1672769 **)(param_1 + 0x1c),
-         local_8 != (AnonShape_005E4570_F1672769 *)0x0)) {
-        pcVar3 = local_18->field_008D;
-        if (pcVar3->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar3);
+    else if (SVar2 == MESS_SHARED_6332) {
+      if (((-1 < local_18->field_0484) && (message != (STMessage *)0x0)) &&
+         (local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0)) {
+        pcVar4 = local_18->field_008D;
+        if (pcVar4->field_00A0 != 0) {
+          FUN_00710790((uint *)pcVar4);
         }
-        local_20 = *(int *)&pcVar3->field_0x8a;
-        pAVar4 = this_00->field_06BF;
-        if (pAVar4 != (AnonPointee_MTaskTy_06BF *)0x0) {
-          local_14 = (uint *)pAVar4->field_0014;
-          local_24 = (undefined4 *)pAVar4->field_0004;
-          local_10 = pAVar4->field_0008;
+        local_20 = *(int *)&pcVar4->field_0x8a;
+        pAVar5 = this_00->field_06BF;
+        if (pAVar5 != (AnonPointee_MTaskTy_06BF *)0x0) {
+          local_14 = (uint *)pAVar5->field_0014;
+          local_24 = (undefined4 *)pAVar5->field_0004;
+          local_10 = pAVar5->field_0008;
           if (local_14 == (uint *)0x0) {
-            local_14 = (uint *)(((uint)(ushort)pAVar4->field_000E * (int)local_24 + 0x1f >> 3 &
+            local_14 = (uint *)(((uint)(ushort)pAVar5->field_000E * (int)local_24 + 0x1f >> 3 &
                                 0x1ffffffc) * local_10);
           }
-          puVar14 = (undefined4 *)FUN_006b4fa0((int)pAVar4);
-          puVar11 = local_24;
+          puVar15 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
+          puVar12 = local_24;
           for (uVar19 = (uint)local_14 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-            *puVar14 = 0xffffffff;
-            puVar14 = puVar14 + 1;
+            *puVar15 = 0xffffffff;
+            puVar15 = puVar15 + 1;
           }
           for (uVar19 = (uint)local_14 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-            *(undefined1 *)puVar14 = 0xff;
-            puVar14 = (undefined4 *)((int)puVar14 + 1);
+            *(undefined1 *)puVar15 = 0xff;
+            puVar15 = (undefined4 *)((int)puVar15 + 1);
           }
-          FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar4,0,0,0,(uint)local_24,local_10,2,0);
-          FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar4,0,0,0,puVar11,local_10,2,
+          FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(uint)local_24,local_10,2,0);
+          FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,puVar12,local_10,2,
                        (-(this_00->field_06C9 != '\x01') & 0xecU) + 0x2c);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar16 = (uint)*(ushort *)(param_1 + 0x16);
+          uVar16 = (uint)(message->arg0).words.high;
           uVar19 = uVar16;
           if ((int)uVar16 < (int)(uVar16 + local_8->field_01E0)) {
             do {
@@ -514,125 +507,115 @@ LAB_005e496b:
                 local_14 = (uint *)0x0;
               }
               if (local_14 != (uint *)0x0) {
-                ccFntTy::SetSurf(this_00->field_008D,(int)pAVar4,0,0xf,
+                ccFntTy::SetSurf(this_00->field_008D,(int)pAVar5,0,0xf,
                                  (uVar19 - uVar16) * local_20 + 0xf,local_8->field_002C,local_20);
                 ccFntTy::WrStr(this_00->field_008D,local_14,0,-1,
                                (-(uint)(this_00->field_06C7 != '\x01') & 0xfffffffe) + 2);
               }
               uVar19 = uVar19 + 1;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              uVar16 = (uint)*(ushort *)(param_1 + 0x16);
+              uVar16 = (uint)(message->arg0).words.high;
             } while ((int)uVar19 < (int)(uVar16 + local_8->field_01E0));
           }
           FUN_006b35d0(DAT_008075a8,this_00->field_0484);
         }
       }
     }
-    else if (uVar19 == 0x6333) {
+    else if (SVar2 == MESS_WAITTY_6333) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       MMMObjTy::PaintSlBut
-                ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_02D1,param_1,
-                 CONCAT31(uVar20,local_18->field_06CA == '\x01'));
+                ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_02D1,
+                 (int)message,CONCAT31(uVar20,local_18->field_06CA == '\x01'));
     }
     goto cf_common_exit_005E525B;
   }
-  switch(uVar19) {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x6335:
-    local_18->field_0413 =
-         *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
+  switch(SVar2) {
+  case MESS_WAITTY_6335:
+    local_18->field_0413 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
     uVar19 = local_18->field_03F7;
     if (uVar19 == 0xffffffff) break;
     uVar16 = local_18->field_0413;
     uVar26 = local_18->field_040F;
     uVar24 = local_18->field_03FB;
-    puVar13 = (uint *)local_18->field_043B;
+    puVar14 = (uint *)local_18->field_043B;
     goto LAB_005e5255;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x6336:
-    if (((-1 < (int)local_18->field_0484) && (param_1 != 0)) &&
-       ((local_8 = *(AnonShape_005E4570_F1672769 **)(param_1 + 0x1c),
-        local_8 != (AnonShape_005E4570_F1672769 *)0x0 &&
-        (pAVar5 = local_18->field_06CB, pAVar5 != (AnonPointee_MTaskTy_06CB *)0x0)))) {
-      local_24 = (undefined4 *)pAVar5->field_0004;
-      pcVar3 = local_18->field_008D;
-      local_10 = pAVar5->field_0008;
-      if (pcVar3->field_00A0 != 0) {
-        FUN_00710790((uint *)pcVar3);
+  case MESS_SHARED_6334|MESS_ID_CREATE:
+    if (((-1 < local_18->field_0484) && (message != (STMessage *)0x0)) &&
+       ((local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0 &&
+        (pAVar6 = local_18->field_06CB, pAVar6 != (AnonPointee_MTaskTy_06CB *)0x0)))) {
+      local_24 = (undefined4 *)pAVar6->field_0004;
+      pcVar4 = local_18->field_008D;
+      local_10 = pAVar6->field_0008;
+      if (pcVar4->field_00A0 != 0) {
+        FUN_00710790((uint *)pcVar4);
       }
-      local_14 = (uint *)pAVar5->field_0014;
-      local_20 = *(int *)&pcVar3->field_0x8a;
+      local_14 = (uint *)pAVar6->field_0014;
+      local_20 = *(int *)&pcVar4->field_0x8a;
       if (local_14 == (uint *)0x0) {
-        local_14 = (uint *)(((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 &
-                            0x1ffffffc) * pAVar5->field_0008);
+        local_14 = (uint *)(((uint)(ushort)pAVar6->field_000E * pAVar6->field_0004 + 0x1f >> 3 &
+                            0x1ffffffc) * pAVar6->field_0008);
       }
-      puVar14 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
-      puVar11 = local_24;
+      puVar15 = (undefined4 *)FUN_006b4fa0((int)pAVar6);
+      puVar12 = local_24;
       for (uVar19 = (uint)local_14 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-        *puVar14 = 0xffffffff;
-        puVar14 = puVar14 + 1;
+        *puVar15 = 0xffffffff;
+        puVar15 = puVar15 + 1;
       }
       for (uVar19 = (uint)local_14 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-        *(undefined1 *)puVar14 = 0xff;
-        puVar14 = (undefined4 *)((int)puVar14 + 1);
+        *(undefined1 *)puVar15 = 0xff;
+        puVar15 = (undefined4 *)((int)puVar15 + 1);
       }
-      FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(uint)local_24,local_10,2,0);
-      FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,puVar11,local_10,2,
+      FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar6,0,0,0,(uint)local_24,local_10,2,0);
+      FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar6,0,0,0,puVar12,local_10,2,
                    (-(this_00->field_06D5 != '\x01') & 0xecU) + 0x2c);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar16 = (uint)*(ushort *)(param_1 + 0x16);
+      uVar16 = (uint)(message->arg0).words.high;
       uVar19 = uVar16;
       if ((int)uVar16 < (int)(uVar16 + local_8->field_01E0)) {
         do {
-          if ((int)uVar19 < *(int *)(this_00->field_0643 + 8)) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            local_14 = *(uint **)(*(int *)(this_00->field_0643 + 0x14) + uVar19 * 4);
+          if ((int)uVar19 < (int)this_00->field_0643->field_0008) {
+            local_14 = *(uint **)(this_00->field_0643->field_0014 + uVar19 * 4);
           }
           else {
             local_14 = (uint *)0x0;
           }
           if (local_14 != (uint *)0x0) {
-            ccFntTy::SetSurf(this_00->field_0089,(int)pAVar5,0,0xf,
+            ccFntTy::SetSurf(this_00->field_0089,(int)pAVar6,0,0xf,
                              (uVar19 - uVar16) * local_20 + 0xf,local_8->field_002C,local_20);
             ccFntTy::WrStr(this_00->field_0089,local_14,0,-1,
                            (-(uint)(this_00->field_06D3 != '\x01') & 0xfffffffe) + 2);
           }
           uVar19 = uVar19 + 1;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar16 = (uint)*(ushort *)(param_1 + 0x16);
+          uVar16 = (uint)(message->arg0).words.high;
         } while ((int)uVar19 < (int)(uVar16 + local_8->field_01E0));
       }
       FUN_006b35d0(DAT_008075a8,this_00->field_063F);
     }
     break;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  case 0x6337:
+  case MESS_SHARED_6334|MESS_SHARED_0003:
     MMMObjTy::PaintSlBut
-              ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_048C,param_1,
-               CONCAT31(uVar21,local_18->field_06D6 == '\x01'));
+              ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_048C,
+               (int)message,CONCAT31(uVar21,local_18->field_06D6 == '\x01'));
     break;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case 0x6338:
     MMMObjTy::PaintSlBut
-              ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_051D,param_1,
-               CONCAT31(uVar20,local_18->field_06D6 == '\x01'));
+              ((MMMObjTy *)local_18,(AnonShape_005B6560_61F462DF *)&local_18->field_051D,
+               (int)message,CONCAT31(uVar20,local_18->field_06D6 == '\x01'));
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x6339:
-    local_18->field_05CE =
-         *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
+  case MESS_MTASKTY_6339:
+    local_18->field_05CE = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
     uVar19 = local_18->field_05B2;
     if (uVar19 == 0xffffffff) break;
     uVar16 = local_18->field_05CE;
     uVar26 = local_18->field_05CA;
     uVar24 = local_18->field_05B6;
-    puVar13 = (uint *)local_18->field_05F6;
+    puVar14 = (uint *)local_18->field_05F6;
 LAB_005e5255:
-    Library::DKW::DDX::FUN_006b3730(puVar13,uVar19,uVar24,uVar26,uVar16);
+    Library::DKW::DDX::FUN_006b3730(puVar14,uVar19,uVar24,uVar26,uVar16);
   }
 cf_common_exit_005E525B:
   g_currentExceptionFrame = local_68.previous;
-  uVar15 = FUN_006e5fd0();
-  return uVar15;
+  iVar10 = FUN_006e5fd0(this_00,message);
+  return iVar10;
 }
 

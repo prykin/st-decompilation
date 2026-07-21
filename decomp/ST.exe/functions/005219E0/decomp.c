@@ -11,11 +11,11 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   code *pcVar1;
   IntercomPanelTy *pIVar2;
   int iVar3;
-  undefined4 *puVar4;
+  ccFntTy *pcVar4;
   LPSTR text;
   ushort *puVar5;
   uint uVar6;
-  undefined4 uVar7;
+  AnonPointee_IntercomPanelTy_019C *pAVar7;
   uint *puVar8;
   int iVar9;
   int *piVar10;
@@ -30,22 +30,24 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
-    puVar4 = ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x30,0x19d,
+    pcVar4 = (ccFntTy *)
+             ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x30,0x19d,
                                (int)*(ccFntTy **)&PTR_00802a28->field_0x30);
-    pIVar2->field_0180 = puVar4;
-    puVar4[0x16] = 0;
-    puVar4[0x17] = 0;
+    pIVar2->field_0180 = pcVar4;
+    pcVar4->field_0058 = 0;
+    pcVar4->field_005C = 0;
     iVar3 = 1;
     piVar10 = (int *)0x0;
-    text = thunk_FUN_00571240(s_BKG_EDITCHAT_007c40a0,0);
+    text = thunk_FUN_00571240("BKG_EDITCHAT",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,text,piVar10,iVar3);
     puVar11 = puVar5 + 0x14;
     iVar3 = 1;
     pIVar2->field_0184 = puVar5;
     uVar6 = FUN_006b4fe0((int)puVar5);
-    uVar7 = FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
-                         (uint)pIVar2->field_0184[7],uVar6,(undefined4 *)puVar11,iVar3);
-    pIVar2->field_019C = uVar7;
+    pAVar7 = (AnonPointee_IntercomPanelTy_019C *)
+             FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
+                          (uint)pIVar2->field_0184[7],uVar6,(undefined4 *)puVar11,iVar3);
+    pIVar2->field_019C = pAVar7;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184);
     puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     pIVar2->field_0198 = puVar8;
@@ -54,12 +56,12 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x34,0,iVar3,&DAT_007a4ccc,
-                             s_IntercomPanelTy__InitIntercomPan_007c4074);
+  iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\intercom.cpp",0x34,0,iVar3,"%s",
+                             "IntercomPanelTy::InitIntercomPanel");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x34);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\intercom.cpp",0x34);
   return;
 }
 

@@ -36,12 +36,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   byte bVar17;
   InternalExceptionFrame local_b0;
   AnonShape_0068FD00_A5257008 *local_6c;
-  undefined4 local_68;
+  uint local_68;
   undefined4 local_64;
   DArrayTy *local_60;
   int local_38 [5];
   undefined4 local_24;
-  AiPlrClassTyVTable_at_1C **local_20;
+  AnonPointee_AiPlrClassTy_001C **local_20;
   byte *local_18;
   uint local_14;
   AiPlrClassTy *local_10;
@@ -55,13 +55,13 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x655,0,iVar5,
-                               s_AiPlrClassTy__GetMessage_error_m_007d2f48,message->id,
+    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x655,0,iVar5,
+                               "AiPlrClassTy::GetMessage error mess->id == %lX Name=%d ",message->id,
                                local_10->field_0018);
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x656);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_plr.cpp",0x656);
     return 0xffff;
   }
   local_10->field_06FE = PTR_00802a38->field_00E4;
@@ -77,9 +77,9 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         bVar17 = 0xc;
         uVar10 = local_14;
         local_18 = pbVar6;
-        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)&this_00->field_0x5d7);
+        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
         STPlaySystemC::SaveObjData(PTR_00802a38,pCVar7,pbVar6,uVar10,bVar17);
-        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)&this_00->field_0x5d7);
+        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
         uVar10 = 0xffffffff;
         do {
           pcVar12 = pCVar7;
@@ -91,7 +91,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         } while (cVar1 != '\0');
         uVar10 = ~uVar10;
         pcVar12 = pcVar12 + -uVar10;
-        pcVar13 = &DAT_008087c8 + *(int *)&this_00->field_0x5d7 * 0x51;
+        pcVar13 = &DAT_008087c8 + this_00->field_05D7 * 0x51;
         for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
           *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
           pcVar12 = pcVar12 + 4;
@@ -107,7 +107,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         }
       }
       else if (SVar2 == MESS_ID_NONE) {
-        if ((&DAT_00809950)[*(int *)&local_10->field_0x5d7] == '\0') {
+        if ((&DAT_00809950)[local_10->field_05D7] == '\0') {
           if (DAT_008117bc != (undefined4 *)0x0) {
             piVar14 = local_38;
             for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -116,19 +116,19 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
             }
             local_38[4] = 0x5deb;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_0x5d7);
+            local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
             if (this_00 == (AiPlrClassTy *)0x0) {
-              local_20 = (AiPlrClassTyVTable_at_1C **)0x0;
+              local_20 = (AnonPointee_AiPlrClassTy_001C **)0x0;
             }
             else {
-              local_20 = &this_00->vtable_at_1c;
+              local_20 = &this_00->field_001C;
             }
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)*DAT_008117bc)(local_38);
           }
-          AiEventClassTy::GetMessage((AiEventClassTy *)&this_00->vtable_at_1c,message);
-          if (*(int *)&this_00->field_0x658 == 0) {
-            *(undefined4 *)&this_00->field_0x658 = 1;
+          AiEventClassTy::GetMessage((AiEventClassTy *)&this_00->field_001C,message);
+          if (this_00->field_0658 == 0) {
+            this_00->field_0658 = 1;
             thunk_FUN_0067a2d0((AnonShape_0067A2D0_742706D4 *)this_00);
           }
           else {
@@ -154,14 +154,14 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         }
       }
       else if (SVar2 == MESS_ID_CREATE) {
-        puVar3 = message->data;
+        puVar3 = (message->arg0).ptr;
         if (puVar3 == (undefined4 *)0x0) {
           RaiseInternalException
-                    (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x586);
+                    (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr.cpp",0x586);
         }
         InitData(this_00,puVar3);
         if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
-          thunk_FUN_004357b0(this_00->field_0x5d7,this_00);
+          thunk_FUN_004357b0(*(char *)&this_00->field_05D7,this_00);
         }
         if (puVar3[3] == 0) {
           thunk_FUN_00678fc0((int)this_00);
@@ -177,19 +177,19 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           }
           local_38[4] = 0x5dec;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_0x5d7);
+          local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
           if (this_00 == (AiPlrClassTy *)0x0) {
-            local_20 = (AiPlrClassTyVTable_at_1C **)0x0;
+            local_20 = (AnonPointee_AiPlrClassTy_001C **)0x0;
           }
           else {
-            local_20 = &this_00->vtable_at_1c;
+            local_20 = &this_00->field_001C;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)*DAT_008117bc)(local_38);
         }
         thunk_FUN_0064a580();
         if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
-          thunk_FUN_004357b0(this_00->field_0x5d7,(AiPlrClassTy *)0x0);
+          thunk_FUN_004357b0(*(char *)&this_00->field_05D7,(AiPlrClassTy *)0x0);
         }
         thunk_FUN_00678ba0((int)this_00);
       }
@@ -231,11 +231,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       else {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         objPtr = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,local_10->field_0x5d7,
-                            CONCAT22(extraout_var,*(undefined2 *)((int)&message->data + 2)),CASE_1);
+                           (g_sTAllPlayers_007FA174,*(char *)&local_10->field_05D7,
+                            CONCAT22(extraout_var,(message->arg0).words.high),CASE_1);
       }
       if (objPtr != (STGameObjC *)0x0) {
-        iVar5 = (*objPtr->vtable->vfunc_2C)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar5 = (**(code **)&objPtr->vtable->field_0x2c)();
         if ((iVar5 < 1) || (0x28 < iVar5)) {
           bVar16 = false;
         }
@@ -243,7 +244,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           bVar16 = true;
         }
         if ((bVar16) &&
-           (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,*(short *)&objPtr[4].field_0xd8),
+           (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,objPtr->field_081C),
            this_01 != (AiFltClassTy *)0x0)) {
           AiFltClassTy::_AddObjFlt(this_01,(uint)objPtr,0);
         }
@@ -253,12 +254,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   else {
     switch(SVar2) {
     case 0x5d98:
-      if (*(short *)&message->data == 0) {
-        thunk_FUN_00675dc0(*(uint *)&local_10->field_0x5d7,(uint *)message[1].unknown_00);
+      if ((message->arg0).words.low == 0) {
+        thunk_FUN_00675dc0(local_10->field_05D7,(message->arg1).ptr);
       }
       else {
         local_8 = (DArrayTy *)0x0;
-        Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)message[1].unknown_00);
+        Library::DKW::TBL::FUN_006afe40((int *)&local_8,(message->arg1).ptr);
         pDVar8 = local_8;
         if (local_8 != (DArrayTy *)0x0) {
           ppAVar15 = &local_6c;
@@ -309,19 +310,19 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
     case 0x5dea:
     case 0x5deb:
     case MESS_SHARED_5DEC:
-      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
+      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_001C,message);
       break;
     case MESS_SHARED_5DD5:
-      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
-      if (*(int *)&this_00->field_0x645 + 10U <= (uint)this_00->field_06FE) {
-        *(undefined4 *)&this_00->field_0x645 = this_00->field_06FE;
+      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_001C,message);
+      if (this_00->field_0645 + 10 <= this_00->field_06FE) {
+        this_00->field_0645 = this_00->field_06FE;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_006799b0(this_00,CONCAT22(extraout_var_00,(short)message[1].unknown_00));
+        thunk_FUN_006799b0(this_00,CONCAT22(extraout_var_00,(message->arg1).words.low));
         thunk_FUN_0067a1b0(this_00,(int)message);
       }
     }
   }
-  FUN_006e5fd0();
+  FUN_006e5fd0(this_00,message);
   g_currentExceptionFrame = local_b0.previous;
   return 0;
 }

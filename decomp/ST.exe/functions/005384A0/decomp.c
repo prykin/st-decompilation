@@ -3,50 +3,55 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
-   PanelTy::GetMessage */
+   PanelTy::GetMessage
 
-undefined4 __thiscall PanelTy::GetMessage(PanelTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004017F8|005384A0; family_names=PanelTy::GetMessage; ret4=2;
+   direct_offsets={10:2,14:0,18:0,1c:0} */
+
+int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
 
 {
-  code *pcVar1;
-  DWORD DVar2;
-  int iVar3;
-  undefined4 uVar4;
+  STMessageId SVar1;
+  code *pcVar2;
+  PanelTy *this_00;
+  DWORD DVar3;
+  int iVar4;
   int iVar5;
   InternalExceptionFrame local_4c;
   PanelTy *local_8;
 
   local_8 = this;
-  DVar2 = FUN_006e51b0(this->field_0010);
-  this->field_0038 = DVar2;
+  DVar3 = FUN_006e51b0(this->field_0010);
+  this->field_0038 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  if (iVar3 == 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = *(int *)(param_1 + 0x10);
-    if (iVar3 == 2) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  this_00 = local_8;
+  if (iVar4 == 0) {
+    SVar1 = message->id;
+    if (SVar1 == MESS_ID_CREATE) {
       InitPanel(local_8);
     }
-    else if (iVar3 == 3) {
+    else if (SVar1 == MESS_SHARED_0003) {
       DonePanel(local_8);
     }
-    else if (iVar3 == 5) {
+    else if (SVar1 == MESS_SHARED_0005) {
       Library::DKW::DDX::FUN_006b3640
                 (DAT_008075a8,local_8->field_0060,0xffffffff,local_8->field_003C,local_8->field_0044
                 );
     }
     g_currentExceptionFrame = local_4c.previous;
-    uVar4 = FUN_006e5fd0();
-    return uVar4;
+    iVar4 = FUN_006e5fd0(this_00,message);
+    return iVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0x52,0,iVar3,&DAT_007a4ccc,
-                             s_PanelTy__GetMessage_007c73e4);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x52,0,iVar4,"%s",
+                             "PanelTy::GetMessage");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_panel_cpp_007c7390,0x52);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\panel.cpp",0x52);
   return 0xffff;
 }
 

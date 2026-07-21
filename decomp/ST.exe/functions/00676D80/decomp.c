@@ -54,18 +54,18 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x295,0,iVar3,&DAT_007a4ccc,
-                               s__EnumPlObj_007d2df4);
+    iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
+                               "_EnumPlObj");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x296);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x296);
     return iVar3;
   }
   local_1c = (AnonNested_005F5B80_0169_794156D7 *)thunk_FUN_0042a990((char)param_1);
   if (local_1c == (AnonNested_005F5B80_0169_794156D7 *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x293);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x293);
   }
   else {
     local_14 = 0;

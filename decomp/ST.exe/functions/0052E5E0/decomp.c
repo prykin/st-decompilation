@@ -52,23 +52,23 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     pcVar3->field_005C = 0;
     iVar2 = 1;
     piVar15 = (int *)0x0;
-    pCVar4 = thunk_FUN_00571240(s_BKG_OPTIONS_007c713c,0);
+    pCVar4 = thunk_FUN_00571240("BKG_OPTIONS",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
     piVar15 = (int *)0x0;
     this_00->field_0184 = puVar5;
     this_00->field_0188 = 0;
-    pCVar4 = thunk_FUN_00571240(s_BKG_OPT_NUM_007c712c,0);
+    pCVar4 = thunk_FUN_00571240("BKG_OPT_NUM",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
     piVar15 = (int *)0x0;
     this_00->field_018C = puVar5;
-    pCVar4 = thunk_FUN_00571240(s_BKG_OPT_SAVE_007c711c,0);
+    pCVar4 = thunk_FUN_00571240("BKG_OPT_SAVE",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
     piVar15 = (int *)0x0;
     this_00->field_0190 = puVar5;
-    pCVar4 = thunk_FUN_00571240(s_BKG_OPT_MOBJ_007c710c,0);
+    pCVar4 = thunk_FUN_00571240("BKG_OPT_MOBJ",0);
     puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
     puVar18 = (undefined4 *)0x0;
     iVar16 = 0;
@@ -76,7 +76,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     bVar12 = 0;
     uVar11 = 0xffffffff;
     this_00->field_0194 = puVar5;
-    pCVar4 = thunk_FUN_00571240(s_IND_PNT_007c2078,0);
+    pCVar4 = thunk_FUN_00571240("IND_PNT",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar2,iVar16,puVar18);
     this_00->field_0198 = puVar5;
@@ -98,7 +98,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     sVar9 = 0;
     uVar8 = 0xc002;
     uVar6 = 0xc001;
-    pCVar4 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+    pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,(int)pCVar4,uVar6,uVar8,sVar9,
                                 uVar10,uVar13,pcVar14,uVar17,uVar19);
     uVar20 = 0;
@@ -110,7 +110,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar13 = 0xc004;
     uVar8 = 0xc003;
     this_00->field_01AD = uVar6;
-    pCVar4 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+    pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,(int)pCVar4,uVar8,uVar13,sVar9,
                                 uVar10,uVar17,pcVar14,uVar19,uVar20);
     this_00->field_01B1 = uVar6;
@@ -119,12 +119,12 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar16 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x5b,0,iVar2,&DAT_007a4ccc,
-                              s_OptPanelTy__InitOptPanel_007c70ec);
+  iVar16 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x5b,0,iVar2,"%s",
+                              "OptPanelTy::InitOptPanel");
   if (iVar16 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x5b);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x5b);
   return;
 }
 

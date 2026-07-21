@@ -649,10 +649,10 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
     return local_2c;
   }
   g_currentExceptionFrame = local_88.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x270e,0,iVar2,&DAT_007a4ccc,
-                             s_STAllPlayersC__SaveAllPlData_007a8230);
+  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x270e,0,iVar2,"%s",
+                             "STAllPlayersC::SaveAllPlData");
   if (iVar5 == 0) {
-    RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,9999);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",9999);
     *param_1 = local_28;
     return local_2c;
   }

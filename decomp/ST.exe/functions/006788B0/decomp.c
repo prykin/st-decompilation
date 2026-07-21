@@ -10,10 +10,10 @@ undefined4 * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
   int iVar1;
   undefined4 *puVar2;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
-  thunk_FUN_0064cc90(&this->vtable_at_1c);
-  this->vtable = &AiPlrClassTyVTable;
-  this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
+  sub_006E60E0(this);
+  thunk_FUN_0064cc90(&this->field_001C);
+  this->vtable = (AiPlrClassTyVTable_at_1C *)&AiPlrClassTyVTable;
+  this->field_001C = (AnonPointee_AiPlrClassTy_001C *)&AiPlrClassTyVTable_at_1C;
   if (this == (AiPlrClassTy *)0x0) {
     puVar2 = (undefined4 *)0x0;
   }
@@ -27,7 +27,7 @@ undefined4 * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
   *(undefined2 *)puVar2 = 0;
   *(undefined1 *)((int)puVar2 + 2) = 0;
   this->field_05D3 = 0x398;
-  *(undefined4 *)&this->field_0x640 = 0xff;
+  this->field_0640 = 0xff;
   return &this->vtable;
 }
 

@@ -48,12 +48,12 @@ void __thiscall MMObjTy::DoneMMObj(MMObjTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0xe5,0,iVar3,&DAT_007a4ccc,
-                             s_MMObjTy__DoneMMObj_007ccacc);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0xe5,0,iVar3,"%s",
+                             "MMObjTy::DoneMMObj");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0xe5);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\mmenuobj.cpp",0xe5);
   return;
 }
 

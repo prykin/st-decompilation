@@ -23,16 +23,16 @@ FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefine
   local_8 = 0;
   switch(param_2) {
   case CASE_0:
-    local_10 = s_sequencer_007f07dc;
+    local_10 = "sequencer";
     break;
   case CASE_1:
-    local_10 = s_waveaudio_007f07e8;
+    local_10 = "waveaudio";
     break;
   case CASE_2:
-    local_10 = s_avivideo_007f07d0;
+    local_10 = "avivideo";
     break;
   case CASE_3:
-    local_10 = s_cdaudio_007f07c8;
+    local_10 = "cdaudio";
     local_c = param_3;
   }
   if (param_2 < CASE_3) {

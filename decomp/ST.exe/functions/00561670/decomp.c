@@ -243,7 +243,7 @@ LAB_00561bff:
     return puVar5;
   }
   RaiseInternalException
-            (local_2c,g_overwriteContext_007ED77C,s_E____titans_scoreai_cpp_007c96b0,600);
+            (local_2c,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",600);
   return (undefined4 *)0x0;
 }
 

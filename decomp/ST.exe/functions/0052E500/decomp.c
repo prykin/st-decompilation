@@ -28,12 +28,12 @@ void __thiscall OptPanelTy::PreInitOptPanel(OptPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x37,0,errorCode,
-                             &DAT_007a4ccc,s_OptPanelTy__PreInitOptPanel_007c70c8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x37,0,errorCode,
+                             "%s","OptPanelTy::PreInitOptPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x37);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x37);
   return;
 }
 

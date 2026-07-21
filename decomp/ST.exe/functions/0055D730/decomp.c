@@ -46,13 +46,13 @@ int __cdecl LoadGamePlt(cMf32 *param_1,byte param_2)
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_pal_tbl_CPP_007c959c,0x51,0,iVar2,&DAT_007a4ccc,
-                             s_LoadGamePlt_007c95b8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\pal_tbl.CPP",0x51,0,iVar2,"%s",
+                             "LoadGamePlt");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0055d910();
-  RaiseInternalException(iVar2,0,s_E____titans_pal_tbl_CPP_007c959c,0x55);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\pal_tbl.CPP",0x55);
   return iVar2;
 }
 

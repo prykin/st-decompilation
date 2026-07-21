@@ -28,7 +28,7 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
   errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pAVar2 = local_14;
   if (errorCode == 0) {
-    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
+    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->field_001C,&local_10);
     if (pAVar2 == (AiPlrClassTy *)0x0) {
       pAVar5 = (AnonShape_0067D3B0_A3AACF30 *)0x0;
     }
@@ -50,12 +50,12 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
   if (local_c != (undefined4 *)0x0) {
     FreeAndNull(&local_c);
   }
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x61,0,errorCode,&DAT_007a4ccc,
-                             s_AiPlrClassTy__PrepareToSave_007d2e88);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x61,0,errorCode,"%s",
+                             "AiPlrClassTy::PrepareToSave");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x62);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_plr.cpp",0x62);
   return (undefined4 *)0x0;
 }
 

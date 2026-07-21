@@ -45,12 +45,12 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   }
   g_currentExceptionFrame = local_58.previous;
   if (exceptionCode != -0x5001fff7) {
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x29b3,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__DeletePGPairs_007a840c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x29b3,0,0,"%s",
+                               "STAllPlayersC::DeletePGPairs");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(exceptionCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x29b4);
+    RaiseInternalException(exceptionCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x29b4);
   }
   return;
 }

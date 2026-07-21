@@ -68,9 +68,9 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         bVar5 = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (uint)local_8._1_3_ << 8;
-        if (this_00->field_009A != '\0') {
+        if (this_00->field_009A != 0) {
           do {
-            if ((&this_00->field_0x1c9c)[local_8 & 0xff] != '\0') {
+            if (*(char *)((int)&this_00->field_1C9C + (local_8 & 0xff)) != '\0') {
               iVar3 = (local_8 & 0xff) * 0x1fb;
               uVar1 = *(uint *)((int)&this_00->field_0178 + iVar3);
               if (uVar1 != 0xffffffff) {
@@ -80,18 +80,18 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
             bVar5 = bVar5 + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_8 = CONCAT31(local_8._1_3_,bVar5);
-          } while (bVar5 < (byte)this_00->field_009A);
+          } while (bVar5 < this_00->field_009A);
         }
       }
       else {
         bVar5 = 0;
-        *(undefined4 *)&this_00->field_0x1c9c = 0x1010101;
+        this_00->field_1C9C = 0x1010101;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (uint)local_8._1_3_ << 8;
         this_00->field_1CA0 = 0x1010101;
         this_00->field_1CA4 = 0x1010101;
         this_00->field_1CA8 = 1;
-        if (this_00->field_009A != '\0') {
+        if (this_00->field_009A != 0) {
           do {
             uVar1 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
             if (uVar1 != 0xffffffff) {
@@ -100,7 +100,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
             bVar5 = bVar5 + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_8 = CONCAT31(local_8._1_3_,bVar5);
-          } while (bVar5 < (byte)this_00->field_009A);
+          } while (bVar5 < this_00->field_009A);
         }
       }
       this_00->field_0065 = 4;
@@ -109,12 +109,12 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       return;
     }
     g_currentExceptionFrame = local_70.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4,0,iVar3,&DAT_007a4ccc
-                               ,s_MMsgTy__HidePanel_007cccc8);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x1a4,0,iVar3,"%s"
+                               ,"MMsgTy::HidePanel");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x1a4);
   }
   return;
 }

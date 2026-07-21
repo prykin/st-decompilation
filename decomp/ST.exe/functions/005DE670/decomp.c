@@ -79,14 +79,14 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   local_14 = pvVar4;
   if (pvVar4 == (HANDLE)0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x413);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x413);
   }
   DVar5 = SetFilePointer(pvVar4,0,(PLONG)0x0,2);
   pAVar2 = local_1c;
   local_1c->field_06AE = DVar5;
   if (DVar5 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x415);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x415);
   }
   Library::MSVCRT::__makepath
             (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
@@ -94,19 +94,19 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   local_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41a);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41a);
   }
   DVar5 = SetFilePointer(hFile,0,(PLONG)0x0,2);
   pAVar2->field_06B2 = DVar5;
   if (DVar5 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41c);
   }
   local_c = (void *)Library::DKW::LIB::FUN_006aac70
                               (pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
   if (local_c == (LPVOID)0x0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41e);
   }
   lpBuffer = (LPVOID)(pAVar2->field_06AE + (int)local_c);
   local_24 = (byte *)((int)lpBuffer + pAVar2->field_06B2);
@@ -114,24 +114,24 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x421);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x421);
   }
   BVar6 = ReadFile(pvVar4,local_20,pAVar2->field_06AE,&local_8,(LPOVERLAPPED)0x0);
   if ((BVar6 == 0) || (pAVar2->field_06AE != local_8)) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x422);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x422);
   }
   CloseHandle(pvVar4);
   pvVar4 = local_10;
   local_8 = SetFilePointer(local_10,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x425);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x425);
   }
   BVar6 = ReadFile(pvVar4,lpBuffer,pAVar2->field_06B2,&local_8,(LPOVERLAPPED)0x0);
   if ((BVar6 == 0) || (pAVar2->field_06B2 != local_8)) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x426);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x426);
   }
   CloseHandle(pvVar4);
   uVar7 = 0xffffffff;

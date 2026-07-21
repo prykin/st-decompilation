@@ -47,12 +47,12 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x4f,0,iVar3,&DAT_007a4ccc,
-                             s_FrmPanelTy__DoneFrmPanel_007c2a6c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x4f,0,iVar3,"%s",
+                             "FrmPanelTy::DoneFrmPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x4f);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x4f);
   return;
 }
 

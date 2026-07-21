@@ -73,12 +73,12 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   pCVar5 = local_38;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar17 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x146,0,iVar6,&DAT_007a4ccc
-                                ,s_CPanelTy__PaintWeap_007c1ae8);
+    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x146,0,iVar6,"%s"
+                                ,"CPanelTy::PaintWeap");
     if (iVar17 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x146);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x146);
     return;
   }
   puVar15 = (undefined4 *)&local_38->field_0x31c;
@@ -97,7 +97,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
     DibPut(local_20,local_30,local_34,'\x06',(byte *)local_10);
     uVar2 = *(ushort *)(pAVar14 + 1);
     if (uVar2 != 0xffff) {
-      wsprintfA(&pCVar5->field_0x1e1,&DAT_007c1890,(uint)uVar2);
+      wsprintfA(&pCVar5->field_0x1e1,"%d",(uint)uVar2);
       ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar6 + 0x2f,
                        (local_10->field_0008 + -0xc) / 2 + local_1c + local_14,0x11,0xc);
       ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
@@ -212,7 +212,7 @@ LAB_004f27ff:
     }
   }
   else {
-    wsprintfA(&pCVar5->field_0x1e1,&DAT_007c1890,*(short *)&pAVar14->field_0x26);
+    wsprintfA(&pCVar5->field_0x1e1,"%d",*(short *)&pAVar14->field_0x26);
   }
   if (local_5 != '\0') {
     local_34 = 0;

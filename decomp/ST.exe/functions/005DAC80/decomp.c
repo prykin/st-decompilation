@@ -11,7 +11,7 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
   code *pcVar1;
   StartSystemTy *pSVar2;
   int iVar3;
-  uint *puVar4;
+  AnonPointee_StartSystemTy_0696 *pAVar4;
   hostent *phVar5;
   _union_1226 *p_Var6;
   char *text;
@@ -30,8 +30,8 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
     if ((AnonShape_006B5570_4D68B99C *)local_8->field_0696 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0696);
     }
-    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-    pSVar2->field_0696 = puVar4;
+    pAVar4 = (AnonPointee_StartSystemTy_0696 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+    pSVar2->field_0696 = pAVar4;
     iVar3 = WSAStartup(0x101,&local_1dc);
     if (iVar3 == 0) {
       iVar3 = gethostname(local_3dc,0x200);
@@ -55,12 +55,12 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0xce,0,iVar3,&DAT_007a4ccc,
-                             s_StartSystemTy__GetIP_007cd740);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0xce,0,iVar3,"%s",
+                             "StartSystemTy::GetIP");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_startsys_cpp_007cd718,0xce);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\startsys.cpp",0xce);
   return;
 }
 

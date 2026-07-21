@@ -25,14 +25,14 @@ STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int
   if (iVar3 == 0) {
     if (param_3 == 0) {
       RaiseInternalException
-                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x6a7);
     }
     pDVar2 = local_c;
     iVar3 = DArrayGetElement(local_c,param_2 & 0xffff,&local_8);
     if ((iVar3 == -4) || (local_8 != param_3)) {
       RaiseInternalException
-                (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x6a9);
     }
     local_8 = 0;
@@ -41,12 +41,12 @@ STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x6ad,0,iVar3,&DAT_007a4ccc,
-                             s_STAllPlayersC__UnRegisterGroup_007a664c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x6ad,0,iVar3,"%s",
+                             "STAllPlayersC::UnRegisterGroup");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x6ae);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x6ae);
   return 0xffffffff;
 }
 

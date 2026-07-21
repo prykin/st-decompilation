@@ -135,10 +135,10 @@ int FUN_004b33d0(uint param_1,int *param_2)
   local_1c = &stack0xfffffc94;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_2c0.previous;
-    iVar28 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c1,0,iVar10,
-                                &DAT_007a4ccc,s_TLOAiBldPlacesFind_error___007ac7a8);
+    iVar28 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c1,0,iVar10,
+                                "%s","TLOAiBldPlacesFind error !");
     if (iVar28 == 0) {
-      RaiseInternalException(iVar10,0,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c2);
+      RaiseInternalException(iVar10,0,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c2);
       ExceptionList = local_14;
       return iVar10;
     }
@@ -148,7 +148,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   if (param_2 == (int *)0x0) {
     local_1c = &stack0xfffffc94;
     RaiseInternalException
-              (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x5d);
+              (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x5d);
   }
   if (param_2[3] == 0) {
     puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
@@ -1541,7 +1541,7 @@ LAB_004b432d:
                 if (*(int *)&local_58->field_0x20 != 0x3e9) goto LAB_004b432d;
                 local_34c = *(dword *)&local_58->field_0x259;
               }
-              uVar23 = *(uint *)&local_58->field_0x24;
+              uVar23 = local_58->field_0024;
               if (uVar23 == param_1) {
                 *(ushort *)(puVar29 + iVar10 * 2) =
                      *(ushort *)(&DAT_00790888 + local_34c * 4) | 0x200;
@@ -1585,35 +1585,32 @@ LAB_004b432d:
                 if ((uVar23 < 8) &&
                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[uVar23 * 0x51] < 8)))) {
-                  bVar3 = local_58->field_0x24;
-                  if (*(char *)((int)&g_appClass_00806728[0x5d].field_0014 + 3) == '\0') {
+                  bVar3 = *(byte *)&local_58->field_0024;
+                  if (g_appClass_00806728->field_146F == '\0') {
                     if (bVar3 == playerId) {
                       iVar28 = 0;
                     }
                     else {
                       uVar23 = (uint)bVar3;
                       uVar20 = param_1 & 0xff;
-                      cVar4 = *(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                       uVar20 + uVar23 * 8 + 3);
+                      cVar4 = (&g_appClass_00806728->field_0x142f)[uVar20 + uVar23 * 8];
                       puVar29 = local_27c;
                       if ((cVar4 == '\0') &&
-                         (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                   uVar23 + uVar20 * 8 + 3) == '\0')) {
+                         ((&g_appClass_00806728->field_0x142f)[uVar23 + uVar20 * 8] == '\0')) {
                         iVar28 = -2;
                       }
                       else if ((cVar4 == '\x01') &&
-                              (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                        uVar23 + uVar20 * 8 + 3) == '\0')) {
+                              ((&g_appClass_00806728->field_0x142f)[uVar23 + uVar20 * 8] == '\0')) {
                         iVar28 = -1;
                       }
                       else if ((cVar4 == '\0') &&
-                              (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                        uVar23 + uVar20 * 8 + 3) == '\x01')) {
+                              ((&g_appClass_00806728->field_0x142f)[uVar23 + uVar20 * 8] == '\x01'))
+                      {
                         iVar28 = 1;
                       }
                       else if ((cVar4 == '\x01') &&
-                              (*(char *)((int)&g_appClass_00806728[0x5c].field_000C +
-                                        uVar23 + uVar20 * 8 + 3) == '\x01')) {
+                              ((&g_appClass_00806728->field_0x142f)[uVar23 + uVar20 * 8] == '\x01'))
+                      {
                         iVar28 = 2;
                       }
                       else {
@@ -1623,9 +1620,8 @@ LAB_004b432d:
                     bVar30 = iVar28 < 0;
                   }
                   else {
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    bVar30 = *(char *)((param_1 & 0xff) * 0x51 + 0x11ca + (int)g_appClass_00806728)
-                             != *(char *)((uint)bVar3 * 0x51 + 0x11ca + (int)g_appClass_00806728);
+                    bVar30 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                             (&g_appClass_00806728->field_0x11ca)[(uint)bVar3 * 0x51];
                   }
                   if (bVar30) {
                     *(ushort *)(puVar29 + iVar10 * 2) =

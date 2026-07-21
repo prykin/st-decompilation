@@ -133,12 +133,12 @@ LAB_005a2562:
       return;
     }
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12,0,iVar4,&DAT_007a4ccc
-                               ,s_FSGSTy__AddPlayer_007cc4b4);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa12,0,iVar4,"%s"
+                               ,"FSGSTy::AddPlayer");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xa12);
   }
   return;
 }

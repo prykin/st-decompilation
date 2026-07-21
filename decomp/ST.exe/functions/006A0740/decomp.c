@@ -31,8 +31,8 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   this_00 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0xcd,0,iVar2,&DAT_007a4ccc,
-                               s_CGenerate__SaveMap_007d868c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Maps\\generate.cpp",0xcd,0,iVar2,"%s",
+                               "CGenerate::SaveMap");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -79,7 +79,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   }
   *(undefined1 *)(this_00->field_000C + 4) = 0x20;
   iVar2 = Library::Ourlib::MFSTMAP::mfTMapSave
-                    ((undefined2 *)this_00->field_000C,(int)this_00->field_0018,s_3D_MAP_007ca1e4,
+                    ((undefined2 *)this_00->field_000C,(int)this_00->field_0018,"3D_MAP",
                      '\0');
   if (iVar2 != 0) {
     local_8 = 0;

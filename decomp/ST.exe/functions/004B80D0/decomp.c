@@ -41,12 +41,12 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   this_01 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Artem_TLO_base_cpp_007ac820,0xe1,0,iVar5,
-                               s_TLOBaseTy__SetState_error__state_007ac7f0,param_1);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar5,
+                               "TLOBaseTy::SetState error _state == %i",param_1);
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Artem_TLO_base_cpp_007ac820,0xe2);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Artem\\TLO_base.cpp",0xe2);
     return iVar5;
   }
   if ((param_2 == 0) || (iVar5 = thunk_FUN_004b7f90(local_c,param_1), iVar5 != 0)) {
@@ -123,7 +123,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
                 if (iVar7 != 0) {
                   RaiseInternalException
                             (-5,g_overwriteContext_007ED77C,
-                             s_E____titans_Artem_TLO_base_cpp_007ac820,0x6a);
+                             "E:\\__titans\\Artem\\TLO_base.cpp",0x6a);
                 }
                 iVar8 = iVar8 + 1;
               } while (iVar8 < iVar5 + *(int *)&this_01->field_0x5b0);
@@ -167,7 +167,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
                 if (iVar7 != 0) {
                   RaiseInternalException
                             (-5,g_overwriteContext_007ED77C,
-                             s_E____titans_Artem_TLO_base_cpp_007ac820,0x87);
+                             "E:\\__titans\\Artem\\TLO_base.cpp",0x87);
                 }
                 iVar8 = iVar8 + 1;
               } while (iVar8 < iVar5 + *(int *)&this_01->field_0x5b0);
@@ -293,7 +293,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         iVar5 = thunk_FUN_00496140(sVar4,*(short *)&this_01->field_0x5b4,sVar1);
         if (iVar5 != 0) {
           RaiseInternalException
-                    (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_base_cpp_007ac820,0x73);
+                    (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_base.cpp",0x73);
         }
         *(undefined4 *)&this_01->field_0x251 = 0;
       }

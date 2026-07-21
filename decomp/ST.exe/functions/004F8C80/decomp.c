@@ -34,12 +34,12 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   pCVar4 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc,0,errorCode,
-                               &DAT_007a4ccc,s_CPanelTy__PaintSMap_007c216c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x2fc,0,errorCode,
+                               "%s","CPanelTy::PaintSMap");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x2fc);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return extraout_EAX;
   }
@@ -84,15 +84,15 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       puVar1 = &pCVar4->field_0x1e1;
       if (cVar8 == '\0') {
         puVar7 = &DAT_007c2198;
-        pcVar11 = &DAT_007c2194;
+        pcVar11 = "%s;";
       }
       else {
         puVar7 = (undefined *)(uVar5 & 0xff);
-        pcVar11 = &DAT_007c219c;
+        pcVar11 = "%2d:";
       }
       wsprintfA(puVar1,pcVar11,puVar7);
       uVar2 = (ulonglong)uVar9 % 0xe10;
-      wsprintfA(puVar1,s__s_02d__02d_007c2184,puVar1,(int)(uVar2 / 0x3c),(int)(uVar2 % 0x3c));
+      wsprintfA(puVar1,"%s%02d:%02d",puVar1,(int)(uVar2 / 0x3c),(int)(uVar2 % 0x3c));
       uVar5 = ccFntTy::WrTxt(pCVar4->field_01BC,(uint *)puVar1,0,0,(uint)(DAT_0080874e == '\x03'),-1
                              ,-1);
     }
@@ -106,15 +106,15 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         _local_c = CONCAT31(uStack_b,cVar8);
         if (cVar8 == '\0') {
           puVar7 = &DAT_007c2198;
-          pcVar11 = &DAT_007c2194;
+          pcVar11 = "%s;";
         }
         else {
           puVar7 = (undefined *)(uVar5 & 0xff);
-          pcVar11 = &DAT_007c219c;
+          pcVar11 = "%2d:";
         }
         wsprintfA(&pCVar4->field_0x1e1,pcVar11,puVar7);
         uVar2 = (ulonglong)uVar9 % 0xe10;
-        wsprintfA(&pCVar4->field_0x1e1,s__s_02d__02d_007c2184,&pCVar4->field_0x1e1,
+        wsprintfA(&pCVar4->field_0x1e1,"%s%02d:%02d",&pCVar4->field_0x1e1,
                   (int)(uVar2 / 0x3c),(int)(uVar2 % 0x3c));
       }
       else {

@@ -16,7 +16,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   int iVar6;
   undefined4 uVar7;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   undefined4 *local_c;
   STPlaySystemC *local_8;
 
@@ -29,7 +29,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   pSVar3 = local_8;
   if (iVar4 == 0) {
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
-    pSVar3->field_0039 = 0;
+    pSVar3->field_0039 = (AnonPointee_STPlaySystemC_0039 *)0x0;
     pSVar3->field_0045 = 7;
     pAVar5 = (AnonPointee_STPlaySystemC_003D *)Library::DKW::LIB::FUN_006aac70(7);
     pSVar3->field_003D = pAVar5;
@@ -71,12 +71,12 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
     return 0;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x18c,0,iVar4,&DAT_007a4ccc,
-                             s_STPlaySystemC__InitSystem_007c84b8);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x18c,0,iVar4,"%s",
+                             "STPlaySystemC::InitSystem");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x18e);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x18e);
   return 0xfffffffc;
 }
 

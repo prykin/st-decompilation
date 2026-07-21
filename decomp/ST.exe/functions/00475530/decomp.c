@@ -65,9 +65,9 @@ LAB_00475545:
       uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
-      if (((int)this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
-         (local_10 = 0, this->field_0x2bf != '\0')) {
-        local_8 = (undefined4 *)&this->field_0x2b3;
+      if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
+         (local_10 = 0, this->field_02BF != '\0')) {
+        local_8 = &this->field_02B3;
         do {
           puVar6 = (undefined4 *)
                    thunk_FUN_0041dc40(local_2c,(short)*local_8,*(undefined2 *)(local_8 + 1),
@@ -114,11 +114,11 @@ LAB_00475545:
                      sVar11,sVar12,sVar13,sVar14,sVar15,sVar16,iVar17,sVar18,bVar19);
           local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
-        } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
+        } while (local_10 < (int)(uint)(byte)this->field_02BF);
       }
       if (local_1c == -1) {
-        iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x303e,0,0,&DAT_007a4ccc,
-                                   s_STBoatC__BackWaitLoad_swli_regim_007ab030);
+        iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x303e,0,0,"%s",
+                                   "STBoatC::BackWaitLoad swli.regime2=4");
         if (iVar4 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -135,8 +135,8 @@ LAB_00475545:
     iVar4 = WaitLoad(this,(STBoatC *)0x2);
     return iVar4;
   }
-  iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc,
-                             s_STBoatC__BackWaitLoad_swli_regim_007aaff0);
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3052,0,0,"%s",
+                             "STBoatC::BackWaitLoad swli.regime==WAITLOAD_LOADED ??");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

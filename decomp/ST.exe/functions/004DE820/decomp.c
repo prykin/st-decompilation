@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004de820(int *param_1)
   undefined2 extraout_var;
   STGroupBoatC *this;
   DArrayTy *array;
-  TLOBaseTy *this_00;
+  STGameObjC *this_00;
   uint local_8;
 
   iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\f');
@@ -28,17 +28,18 @@ undefined4 __fastcall FUN_004de820(int *param_1)
     array->iteratorIndex = 0;
     iVar2 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)array,&local_8);
     while (-1 < iVar2) {
-      this_00 = (TLOBaseTy *)
-                STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)param_1[9],local_8,CASE_1);
-      if (((this_00 != (TLOBaseTy *)0x0) && (iVar2 = (*this_00->vtable->vfunc_2C)(), iVar2 == 0x45))
-         && ((this_00->field_04D0 == CASE_0 &&
-             ((iVar2 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar2 != 0 &&
-              (iVar2 = thunk_FUN_004c7c20((int)this_00), iVar2 != 0)))))) {
+      this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)param_1[9],local_8,CASE_1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if (((this_00 != (STGameObjC *)0x0) &&
+          (iVar2 = (**(code **)&this_00->vtable->field_0x2c)(), iVar2 == 0x45)) &&
+         ((this_00->field_04D0 == 0 &&
+          ((iVar2 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar2 != 0 &&
+           (iVar2 = thunk_FUN_004c7c20((int)this_00), iVar2 != 0)))))) {
         iVar2 = thunk_FUN_004c7860(this_00,3,0,1,1,1);
         if ((iVar2 != 0) && (iVar2 = thunk_FUN_004c7c20((int)this_00), iVar2 != 0)) {
           thunk_FUN_004c7cc0(this_00,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
-          this_00->field_04D0 = CASE_2;
-          TLOBaseTy::RotateSpr(this_00,0);
+          this_00->field_04D0 = 2;
+          TLOBaseTy::RotateSpr((TLOBaseTy *)this_00,0);
         }
         bVar1 = true;
       }

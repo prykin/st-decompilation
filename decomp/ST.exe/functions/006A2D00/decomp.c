@@ -21,7 +21,7 @@ char * __cdecl FUN_006a2d00(int param_1,int param_2,uint param_3,int param_4,uin
     puVar3 = puVar3 + 1;
   }
   uVar1 = thunk_FUN_006a2bf0(param_1,param_2,param_3,param_4,param_5);
-  wsprintfA((LPSTR)&DAT_0085428c,s__s_03u_007dfaac,s_MAPMESH_007dfac0,uVar1 & 0x7fff);
+  wsprintfA((LPSTR)&DAT_0085428c,"%s%03u","MAPMESH",uVar1 & 0x7fff);
   return (char *)&DAT_0085428c;
 }
 

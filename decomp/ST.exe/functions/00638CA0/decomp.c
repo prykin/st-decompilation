@@ -18,7 +18,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,AnonShape_0041AF40_F59F8577 *param
   int local_c;
   byte *local_8;
 
-  iVar4 = STSprGameObjC::GetMessage(this,param_1);
+  iVar4 = STSprGameObjC::GetMessage(this,(STMessage *)param_1);
   if (iVar4 == 0xffff) {
     return 0xffff;
   }
@@ -149,9 +149,9 @@ undefined4 __thiscall FUN_00638ca0(void *this,AnonShape_0041AF40_F59F8577 *param
          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar4
                              ,&local_c,&local_10), -1 < (int)param_1)) &&
         ((((int)param_1 < 5 && (-1 < local_c)) &&
-         ((local_c < (int)pVVar3->field_0030 &&
+         ((local_c < pVVar3->field_0030 &&
           ((local_10 = local_10 + (&DAT_0079aed0)[(int)param_1], -1 < local_10 &&
-           (local_10 < (int)pVVar3->field_0034)))))))) && (pVVar3->field_004C != 0)) {
+           (local_10 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != 0)) {
       cVar1 = *(char *)(local_10 * pVVar3->field_0030 + pVVar3->field_004C + local_c);
 joined_r0x00639236:
       if (cVar1 == '\0') {
@@ -247,9 +247,9 @@ joined_r0x00639236:
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,
                               iVar4,&local_10,&local_c), -1 < (int)param_1)) &&
          (((int)param_1 < 5 && (-1 < local_10)))) &&
-        ((local_10 < (int)pVVar3->field_0030 &&
+        ((local_10 < pVVar3->field_0030 &&
          ((local_c = local_c + (&DAT_0079aed0)[(int)param_1], -1 < local_c &&
-          (local_c < (int)pVVar3->field_0034)))))) && (pVVar3->field_004C != 0)) {
+          (local_c < pVVar3->field_0034)))))) && (pVVar3->field_004C != 0)) {
       cVar1 = *(char *)(local_c * pVVar3->field_0030 + pVVar3->field_004C + local_10);
       goto joined_r0x00639236;
     }

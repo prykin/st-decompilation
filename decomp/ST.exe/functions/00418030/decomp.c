@@ -52,7 +52,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
   bool local_5;
 
   local_58 = (STBoatC *)this;
-  thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);
+  sub_004167A0(this);
   if (((param_1 == *(short *)&this->field_0x47) && (param_2 == *(short *)&this->field_0x49)) &&
      (param_3 == *(short *)&this->field_0x4b)) {
     return 1;
@@ -338,13 +338,12 @@ LAB_0041862b:
       local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0061);
     }
   }
-  iVar10 = STJellyGunC::sub_00415B30
-                     ((STJellyGunC *)this_00,this_00->field_0041,this_00->field_0043,
-                      this_00->field_0045,sVar3,sVar12,(short)local_c,(byte)local_14);
+  iVar10 = sub_00415B30(this_00,this_00->field_0041,this_00->field_0043,this_00->field_0045,sVar3,
+                        sVar12,(short)local_c,(byte)local_14);
   if (iVar10 != 0) {
     return 0xffffffff;
   }
-  if ((*(short *)&this_00->field_0x8c != 1) &&
+  if ((this_00->field_008C != 1) &&
      ((this_00->field_0041 != sVar3 || (this_00->field_0043 != sVar12)))) {
     sVar3 = (*this_00->vtable->vfunc_10)
                       (this_00->field_0041,this_00->field_0043,this_00->field_0045,iVar4,iVar17,

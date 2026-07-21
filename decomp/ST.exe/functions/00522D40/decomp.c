@@ -24,19 +24,19 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undef
   pIVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x13b,0,errorCode,
-                               &DAT_007a4ccc,s_IntercomPanelTy__SwitchIntercomP_007c4174);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\intercom.cpp",0x13b,0,errorCode,
+                               "%s","IntercomPanelTy::SwitchIntercomPanel");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x13b);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\intercom.cpp",0x13b);
     return;
   }
   sVar1 = local_8->field_0172;
   if (sVar1 != 1) {
     if (sVar1 == 2) {
       local_8->field_0172 = 3;
-      *(undefined1 *)(local_8 + 1) = param_1;
+      local_8->field_01A4 = param_1;
       GVar5 = CASE_AF;
       goto LAB_00522dd6;
     }

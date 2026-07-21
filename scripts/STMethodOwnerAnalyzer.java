@@ -95,6 +95,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         println("Named caller methods: " + callerMethods + ", candidates: " +
             proposals.size() + ", owner_apply: " +
             proposals.stream().filter(row -> row.ownerApply).count() +
+            ", owner_repair: " +
+            proposals.stream().filter(row -> row.repairApply).count() +
             ", convention_apply: " +
             proposals.stream().filter(row -> row.conventionApply).count());
     }
@@ -116,6 +118,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
                     Candidate candidate = candidates.computeIfAbsent(target.getEntryPoint(),
                         ignored -> new Candidate(target));
                     candidate.ownerCalls.merge(owner, 1, Integer::sum);
+                    candidate.attributedCallers.add(caller.getEntryPoint());
                     candidate.callSites.add(addr(instruction.getAddress()) + " " +
                         caller.getName(true));
                 }
@@ -147,15 +150,32 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             "__fastcall".equals(function.getCallingConventionName());
         boolean manualName = protectedSource(function.getSymbol().getSource());
         boolean manualSignature = protectedSource(function.getSignatureSource());
+        int directCallers = 0;
+        int receiverAliasCallers = 0;
+        for (Function caller : function.getCallingFunctions(monitor)) {
+            if (caller.isThunk()) continue;
+            directCallers++;
+            if (callsTargetWithIncomingEcx(caller, function)) receiverAliasCallers++;
+        }
+        int attributedCallers = candidate.attributedCallers.size();
+        boolean adequateCoverage = receiverAliasCallers <= Math.max(3, attributedCallers * 3);
+        boolean conflictingNamedOwners = candidate.ownerCalls.size() > 1;
+        boolean sharedReceiverHelper = directCallers >= 8 && receiverAliasCallers >= 4 &&
+            receiverAliasCallers * 2 >= directCallers;
+        boolean repairApply = scriptOwned && !existingOwner.isBlank() &&
+            (conflictingNamedOwners || sharedReceiverHelper &&
+                attributedCallers * 3 < receiverAliasCallers) &&
+            !manualName && !manualSignature;
         boolean strong = !owner.isBlank() && !ownerTypePath.isBlank() && synthetic &&
-            conventionCandidate && receiverAccesses > 0 &&
+            conventionCandidate && receiverAccesses > 0 && adequateCoverage &&
             (!"__fastcall".equals(function.getCallingConventionName()) || edxUses == 0) &&
             (agreedCalls >= 2 || (agreedCalls == 1 && candidate.callSites.size() == 1 &&
                 receiverAccesses >= 2));
-        boolean alreadyApplied = scriptOwned && !existingOwner.isBlank() &&
-            existingOwner.equals(owner);
+        boolean alreadyApplied = scriptOwned && !repairApply && !existingOwner.isBlank() &&
+            existingOwner.equals(owner) && adequateCoverage;
         String proposedName = owner.isBlank() ? "" : owner + "::sub_" + addr(function.getEntryPoint());
         if (alreadyApplied) proposedName = function.getName(true);
+        if (repairApply) proposedName = "sub_" + addr(function.getEntryPoint());
         boolean ownerApply = (strong || alreadyApplied) && !manualName &&
             !function.getName(true).equals(proposedName);
         boolean parameterApply = (strong || alreadyApplied) && !manualSignature &&
@@ -175,15 +195,46 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         reasons.add("incoming_this_accesses=" + receiverAccesses);
         reasons.add("incoming_edx_uses=" + edxUses);
         reasons.add("incoming_stack_parameter_uses=" + stackParameterUses);
+        reasons.add("direct_non_thunk_callers=" + directCallers);
+        reasons.add("incoming_ecx_receiver_callers=" + receiverAliasCallers);
+        reasons.add("attributed_named_callers=" + attributedCallers);
+        reasons.add("owner_evidence_coverage=" + (adequateCoverage ? "adequate" : "weak"));
         if (ownerTypePath.isBlank()) reasons.add("owner_data_type_missing");
         if (!conventionCandidate) reasons.add("calling_convention_not_receiver_compatible");
         if (manualName) reasons.add("manual_name_preserved");
         if (manualSignature) reasons.add("manual_signature_preserved");
         if (alreadyApplied) reasons.add("previously_applied");
+        if (repairApply) reasons.add("repair_script_owned_owner_shared_across_many_callers");
         return new Proposal(function, owner, proposedName, ownerTypePath, agreedCalls,
             receiverAccesses, edxUses, stackParameterUses, candidate.ownerCalls,
             candidate.callSites, ownerApply, conventionApply, thisTypeApply,
-            parameterApply, confidence, String.join("; ", reasons));
+            parameterApply, repairApply, directCallers, receiverAliasCallers,
+            attributedCallers,
+            repairApply ? "repair" : confidence, String.join("; ", reasons));
+    }
+
+    private boolean callsTargetWithIncomingEcx(Function caller, Function target) {
+        Map<String, ThisValue> registers = new HashMap<>();
+        registers.put("ECX", new ThisValue(0));
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(caller.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) {
+                Function called = calledFunction(instruction);
+                ThisValue receiver = registers.get("ECX");
+                if (called != null && called.getEntryPoint().equals(target.getEntryPoint()) &&
+                        receiver != null && receiver.offset == 0) return true;
+                registers.remove("EAX");
+                registers.remove("ECX");
+                registers.remove("EDX");
+                continue;
+            }
+            updateRegisters(mnemonic, operands, registers);
+        }
+        return false;
     }
 
     private boolean receiverOnlyFastcallSignature(Function function) {
@@ -459,13 +510,15 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
 
     private void writeTsv(Path path, List<Proposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("owner_apply\tconvention_apply\tthis_type_apply\tparameter_apply\taddress\t" +
+            out.write("repair_apply\towner_apply\tconvention_apply\tthis_type_apply\tparameter_apply\taddress\t" +
                 "expected_name\texpected_name_source\texpected_signature\t" +
                 "expected_signature_source\texpected_calling_convention\towner\t" +
                 "proposed_name\towner_type_path\tagreed_this_calls\treceiver_accesses\t" +
                 "incoming_edx_uses\tincoming_stack_parameter_uses\t" +
-                "owner_call_counts\tcall_sites\tconfidence\treason\n");
-            for (Proposal p : rows) out.write(bit(p.ownerApply) + "\t" +
+                "owner_call_counts\tcall_sites\tdirect_callers\treceiver_alias_callers\t" +
+                "attributed_callers\t" +
+                "confidence\treason\n");
+            for (Proposal p : rows) out.write(bit(p.repairApply) + "\t" + bit(p.ownerApply) + "\t" +
                 bit(p.conventionApply) + "\t" + bit(p.thisTypeApply) + "\t" +
                 bit(p.parameterApply) + "\t" +
                 addr(p.address) + "\t" + tsv(p.expectedName) + "\t" +
@@ -476,14 +529,17 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
                 p.receiverAccesses + "\t" + p.edxUses + "\t" +
                 p.stackParameterUses + "\t" +
                 tsv(p.ownerCounts.toString()) + "\t" +
-                tsv(String.join(" | ", p.callSites)) + "\t" + p.confidence + "\t" +
+                tsv(String.join(" | ", p.callSites)) + "\t" + p.directCallers + "\t" +
+                p.receiverAliasCallers + "\t" +
+                p.attributedCallers + "\t" + p.confidence + "\t" +
                 tsv(p.reason) + "\n");
         }
     }
 
     private void writeJson(Path path, List<Proposal> rows) throws Exception {
         List<String> lines = new ArrayList<>();
-        for (Proposal p : rows) lines.add("{\"owner_apply\":" + p.ownerApply +
+        for (Proposal p : rows) lines.add("{\"repair_apply\":" + p.repairApply +
+            ",\"owner_apply\":" + p.ownerApply +
             ",\"convention_apply\":" + p.conventionApply +
             ",\"this_type_apply\":" + p.thisTypeApply +
             ",\"parameter_apply\":" + p.parameterApply +
@@ -494,6 +550,9 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             ",\"receiver_accesses\":" + p.receiverAccesses +
             ",\"incoming_edx_uses\":" + p.edxUses +
             ",\"incoming_stack_parameter_uses\":" + p.stackParameterUses +
+            ",\"direct_callers\":" + p.directCallers +
+            ",\"receiver_alias_callers\":" + p.receiverAliasCallers +
+            ",\"attributed_callers\":" + p.attributedCallers +
             ",\"confidence\":" + q(p.confidence) + ",\"reason\":" + q(p.reason) + "}");
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
@@ -502,12 +561,16 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "named_caller_methods=" + callerMethods,
             "proposals=" + rows.size(),
+            "owner_auto_repair=" + rows.stream().filter(row -> row.repairApply).count(),
             "owner_auto_apply=" + rows.stream().filter(row -> row.ownerApply).count(),
             "convention_auto_apply=" + rows.stream().filter(row -> row.conventionApply).count(),
             "this_type_auto_apply=" + rows.stream().filter(row -> row.thisTypeApply).count(),
             "parameter_auto_apply=" + rows.stream().filter(row -> row.parameterApply).count(),
             "owner_conflicts=" + rows.stream().filter(row -> row.confidence.equals("conflict")).count(),
             "note=Only direct calls whose ECX still aliases the named caller's incoming this are evidence.",
+            "note_coverage=A script-owned owner is repaired only for conflicting named " +
+                "owners or when at least four incoming-ECX receiver callers dominate a " +
+                "fan-out of at least eight; service-object calls do not count.",
             "note_names=Recovered methods receive structural Class::sub_ADDRESS names only.",
             "note_manual=USER_DEFINED names and signatures are never auto-applied."),
             StandardCharsets.UTF_8);
@@ -547,6 +610,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         final Function function;
         final Map<String, Integer> ownerCalls = new TreeMap<>();
         final Set<String> callSites = new TreeSet<>();
+        final Set<Address> attributedCallers = new TreeSet<>();
         Candidate(Function function) { this.function = function; }
     }
     private static class Proposal {
@@ -555,14 +619,17 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             expectedSignatureSource, expectedConvention, owner, proposedName,
             ownerTypePath, confidence, reason;
         final int agreedCalls, receiverAccesses, edxUses, stackParameterUses;
+        final int directCallers, receiverAliasCallers, attributedCallers;
         final Map<String, Integer> ownerCounts;
         final Set<String> callSites;
-        final boolean ownerApply, conventionApply, thisTypeApply, parameterApply;
+        final boolean ownerApply, conventionApply, thisTypeApply, parameterApply, repairApply;
         Proposal(Function function, String owner, String proposedName, String ownerTypePath,
                 int agreedCalls, int receiverAccesses, int edxUses, int stackParameterUses,
                 Map<String, Integer> ownerCounts,
                 Set<String> callSites, boolean ownerApply, boolean conventionApply,
-                boolean thisTypeApply, boolean parameterApply, String confidence,
+                boolean thisTypeApply, boolean parameterApply, boolean repairApply,
+                int directCallers, int receiverAliasCallers, int attributedCallers,
+                String confidence,
                 String reason) {
             this.address = function.getEntryPoint();
             this.expectedName = function.getName(true);
@@ -579,6 +646,9 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             this.callSites = new TreeSet<>(callSites);
             this.ownerApply = ownerApply; this.conventionApply = conventionApply;
             this.thisTypeApply = thisTypeApply; this.parameterApply = parameterApply;
+            this.repairApply = repairApply; this.directCallers = directCallers;
+            this.receiverAliasCallers = receiverAliasCallers;
+            this.attributedCallers = attributedCallers;
             this.confidence = confidence;
             this.reason = reason;
         }

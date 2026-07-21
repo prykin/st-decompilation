@@ -23,10 +23,10 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
   pPVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x1bf,0,errorCode,
-                               &DAT_007a4ccc,s_ProdPanelTy__SwitchPanel_007c7a40);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x1bf,0,errorCode,
+                               "%s","ProdPanelTy::SwitchPanel");
     if (iVar4 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x1bf);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1bf);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -38,7 +38,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
       return;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(local_8->field_0000 + 0x18))(0);
+    (*(code *)local_8->field_0000->field_0018)(0);
   }
   else {
     if (sVar1 == 2) {

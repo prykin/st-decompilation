@@ -7,7 +7,7 @@
 void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  AnonPointee_STBoatC_05A6 **ppAVar1;
   uint uVar2;
   int iVar3;
   undefined4 uVar4;
@@ -29,17 +29,17 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   uVar7 = 0;
   local_8 = 0;
   if (DAT_008117bc != (undefined4 *)0x0) {
-    local_18 = *(undefined2 *)&param_1->field_0x24;
+    local_18 = *(undefined2 *)&param_1->field_0024;
     local_16 = param_1->field_0032;
-    puVar1 = &param_1->field_05A6;
+    ppAVar1 = &param_1->field_05A6;
     local_1c = 0x5dd3;
-    if ((*puVar1 == 0) &&
-       (iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_05A2,puVar1), iVar3 == -4)) {
+    if ((*ppAVar1 == (AnonPointee_STBoatC_05A6 *)0x0) &&
+       (iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_05A2,(int *)ppAVar1), iVar3 == -4)) {
       RaiseInternalException
-                (-4,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x501f);
+                (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x501f);
     }
-    local_14 = *(undefined2 *)(*puVar1 + 0x24);
-    local_12 = *(undefined2 *)(*puVar1 + 0x32);
+    local_14 = *(undefined2 *)&(*ppAVar1)->field_0x24;
+    local_12 = (*ppAVar1)->field_0032;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*DAT_008117bc)(local_2c);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -47,14 +47,14 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   }
   param_1->field_05C0 = 0;
   param_1->field_07C2 = 0;
-  param_1->field_05A6 = 0;
+  param_1->field_05A6 = (AnonPointee_STBoatC_05A6 *)0x0;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   uVar4 = DumpClassC::WritePtr
                     (param_1->field_005B,param_1->field_005D,param_1->field_005F,
                      CONCAT31((int3)((uint)param_2 >> 8),param_1->field_008E),
                      (AnonShape_00495EC0_95A268C6 *)param_1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  pSVar5 = thunk_FUN_0042b760(param_1->field_0x24,
+  pSVar5 = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
                               CONCAT22((short)((uint)uVar4 >> 0x10),param_1->field_0030));
   uVar6 = thunk_FUN_00424790((int)pSVar5);
   uVar2 = param_1->field_01D1;

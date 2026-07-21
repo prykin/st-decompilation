@@ -53,10 +53,10 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x490,0,iVar2,&DAT_007a4ccc,
-                             s_OptPanelTy__Question_007c72f8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x490,0,iVar2,"%s",
+                             "OptPanelTy::Question");
   if (iVar3 == 0) {
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x490);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x490);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

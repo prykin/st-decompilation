@@ -17,7 +17,7 @@ int __cdecl FUN_0064a6f0(int *param_1,int param_2)
   if (exceptionCode == 0) {
     if (param_1 == (int *)0x0) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_erc_cpp_007d2a04,0x25);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x25);
     }
     thunk_FUN_0064a7c0(param_1);
     if (param_2 < 1) {
@@ -30,7 +30,7 @@ int __cdecl FUN_0064a6f0(int *param_1,int param_2)
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_erc_cpp_007d2a04,0x2a);
+  RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_erc.cpp",0x2a);
   return exceptionCode;
 }
 

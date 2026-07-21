@@ -34,7 +34,7 @@ undefined4 __cdecl FUN_006809f0(uint *param_1)
   if (local_8 != (byte *)0x0) {
     FreeAndNull(&local_8);
   }
-  RaiseInternalException(local_14,0,s_E____titans_ai_ai_script_cpp_007d5604,0x124);
+  RaiseInternalException(local_14,0,"E:\\__titans\\ai\\ai_script.cpp",0x124);
   return 0;
 }
 

@@ -36,10 +36,10 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   pCVar2 = local_28;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x184,0,iVar3,&DAT_007a4ccc
-                               ,s_CPanelTy__PaintArsenal_007c2808);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x184,0,iVar3,"%s"
+                               ,"CPanelTy::PaintArsenal");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x184);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x184);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -66,7 +66,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     local_18 = (AnonShape_00505960_269BEFC9 *)(&pCVar2->field_0C11 + local_2c * 6);
     local_24 = (uint)bVar7;
     do {
-      if (*(char *)local_18 == '\0') {
+      if (*(byte *)local_18 == 0) {
         uVar4 = 0;
       }
       else {
@@ -98,7 +98,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
           iVar9 = iVar9 + -1;
         } while (iVar9 != 0);
       }
-      wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,(uint)local_18->field_0002);
+      wsprintfA(&pCVar2->field_0x1e1,"%3d",(uint)local_18->field_0002);
       uVar4 = local_1c;
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
       ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,5);

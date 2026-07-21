@@ -17,8 +17,8 @@ DumpClassC::WritePtr
 
   if ((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
      (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))) {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x7f,0,0,&DAT_007a4ccc,
-                               s_DumpClassC__WritePtr_007abdf8);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x7f,0,0,"%s",
+                               "DumpClassC::WritePtr");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -35,8 +35,8 @@ DumpClassC::WritePtr
     param_5->field_005B = param_1;
     return 0;
   }
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x84,0,0,&DAT_007a4ccc,
-                             s_DumpClassC__WritePtr_cell_is_bus_007abe14);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x84,0,0,"%s",
+                             "DumpClassC::WritePtr cell is busy");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

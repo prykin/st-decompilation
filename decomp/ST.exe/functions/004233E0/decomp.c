@@ -53,12 +53,12 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
     return local_c;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x52,0,errorCode,&DAT_007a4ccc,
-                             s_STGroupC__GetGroupContent_007a50c8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x52,0,errorCode,"%s",
+                             "STGroupC::GetGroupContent");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x53);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x53);
   return local_c;
 }
 

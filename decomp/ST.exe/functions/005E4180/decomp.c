@@ -58,12 +58,12 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x4a0,0,iVar4,&DAT_007a4ccc,
-                             s_MTaskTy__CreateBut_007cdc74);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x4a0,0,iVar4,"%s",
+                             "MTaskTy::CreateBut");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_task_obj_cpp_007cd994,0x4a0);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\task_obj.cpp",0x4a0);
   return 0;
 }
 

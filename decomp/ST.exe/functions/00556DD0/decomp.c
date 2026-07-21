@@ -340,10 +340,10 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
     return 0;
   }
   g_currentExceptionFrame = local_7c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x1f7,0,iVar3,&DAT_007a4ccc,
-                             s_TraksClassTy__TraksCreateCollect_007c925c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x1f7,0,iVar3,"%s",
+                             "TraksClassTy::TraksCreateCollection error ");
   if (iVar4 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_grig_traks_cpp_007c9104,0x1f8);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x1f8);
     return 0xffffffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

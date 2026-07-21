@@ -30,12 +30,12 @@ STAllPlayersC::GetGObjFromZone2
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x10e,0,iVar3,
-                                 &DAT_007a4ccc,s_STAllPlayersC__GetGObjFromZone2_007a6050);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x10e,0,iVar3,
+                                 "%s","STAllPlayersC::GetGObjFromZone2");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x10f);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x10f);
     }
     return;
   }
@@ -45,7 +45,7 @@ STAllPlayersC::GetGObjFromZone2
        (param_14 == (int *)0x0)))) &&
      (((param_15 == (int *)0x0 && (param_16 == (int *)0x0)) && (param_17 == (int *)0x0)))) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0xb7
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xb7
               );
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {

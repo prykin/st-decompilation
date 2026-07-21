@@ -17,7 +17,7 @@ void __fastcall FUN_00490f60(STBoatC *param_1)
         array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
         Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)&param_1->field_0032);
         STAllPlayersC::AddObjsToGroup
-                  (g_sTAllPlayers_007FA174,param_1->field_0x24,0xfffe,(uint *)array,
+                  (g_sTAllPlayers_007FA174,*(char *)&param_1->field_0024,0xfffe,(uint *)array,
                    (undefined2 *)0x0);
         DArrayDestroy(array);
         STBoatC::CmdToObj(param_1,CASE_14,&local_c);

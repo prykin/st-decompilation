@@ -126,7 +126,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
       if (iVar2 != 0) {
         FUN_006a5e90(psVar7);
         RaiseInternalException
-                  (-2,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0x173);
+                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x173);
         return -2;
       }
       sVar6 = psVar7[((int)pAVar1->field_004B * (int)g_pathingGrid.sizeY + (int)pAVar1->field_0049)

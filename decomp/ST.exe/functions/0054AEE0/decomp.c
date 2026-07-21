@@ -19,20 +19,21 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   UINT resourceId;
   char *pcVar7;
   uint *puVar8;
-  int iVar9;
-  uint uVar10;
+  dword dVar9;
+  int iVar10;
   uint uVar11;
+  uint uVar12;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EDI;
-  undefined4 *puVar12;
-  char *pcVar13;
-  uint *puVar14;
-  longlong lVar15;
-  undefined4 uVar16;
-  HINSTANCE module;
+  undefined4 *puVar13;
+  char *pcVar14;
+  uint *puVar15;
+  longlong lVar16;
   undefined4 uVar17;
+  HINSTANCE module;
+  undefined4 uVar18;
   undefined4 local_f8 [8];
   uint local_d8 [25];
   InternalExceptionFrame local_74;
@@ -54,10 +55,10 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   this_00 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fc,0,iVar5,
-                               &DAT_007a4ccc,s_CursorClassTy__GCGameState_007c7fc4);
-    if (iVar9 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fe);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x6fc,0,iVar5,
+                                "%s","CursorClassTy::GCGameState");
+    if (iVar10 == 0) {
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x6fe);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -68,31 +69,32 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::thunk_FUN_0054b700
               ((AnonReceiver_0054B700 *)this_00,-1);
-    if ((DAT_00801690 == (void *)0x0) || (*(short *)((int)DAT_00801690 + 0x172) == 2))
-    goto LAB_0054b372;
+    if ((PTR_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
+       (PTR_00801690->field_0172 == 2)) goto LAB_0054b372;
 LAB_0054b019:
-    uVar17 = this_00->field_0038;
-    uVar16 = this_00->field_0034;
-    CVar4 = (CursorClassTy_SetGCType_param_1Enum)*(byte *)((int)DAT_00801690 + 0x1db);
+    uVar18 = this_00->field_0038;
+    uVar17 = this_00->field_0034;
+    CVar4 = (CursorClassTy_SetGCType_param_1Enum)PTR_00801690->field_01DB;
     goto cf_common_exit_0054B368;
   }
-  puVar12 = local_f8;
+  puVar13 = local_f8;
   for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
+    *puVar13 = 0;
+    puVar13 = puVar13 + 1;
   }
   if ((g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
-    if ((DAT_00801690 == (void *)0x0) || (*(short *)((int)DAT_00801690 + 0x172) == 2)) {
-      uVar17 = this_00->field_0038;
-      uVar16 = this_00->field_0034;
+    if ((PTR_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
+       (PTR_00801690->field_0172 == 2)) {
+      uVar18 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
 LAB_0054b366:
       CVar4 = CASE_0;
     }
     else {
-      uVar17 = this_00->field_0038;
-      uVar16 = this_00->field_0034;
-      CVar4 = (CursorClassTy_SetGCType_param_1Enum)*(byte *)((int)DAT_00801690 + 0x1db);
+      uVar18 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
+      CVar4 = (CursorClassTy_SetGCType_param_1Enum)PTR_00801690->field_01DB;
     }
   }
   else {
@@ -104,13 +106,14 @@ LAB_0054b366:
     }
     if (bVar3) goto LAB_0054b335;
     if ((((g_playPanel_008016E4 != (PlayPanelTy *)0x0) && (g_playPanel_008016E4->field_0172 != 2))
-        || ((DAT_00801690 != (void *)0x0 && (*(short *)((int)DAT_00801690 + 0x172) != 2)))) ||
+        || ((PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0 &&
+            (PTR_00801690->field_0172 != 2)))) ||
        ((g_optPanel_008016DC != (OptPanelTy *)0x0 && (g_optPanel_008016DC->field_0172 != CASE_2))))
     {
-      if ((DAT_00801690 != (void *)0x0) && (*(short *)((int)DAT_00801690 + 0x172) != 2))
-      goto LAB_0054b019;
-      uVar17 = this_00->field_0038;
-      uVar16 = this_00->field_0034;
+      if ((PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) &&
+         (PTR_00801690->field_0172 != 2)) goto LAB_0054b019;
+      uVar18 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
       goto LAB_0054b366;
     }
     pSVar6 = (STFishC *)
@@ -120,8 +123,8 @@ LAB_0054b366:
     if (pSVar6 == (STFishC *)0x0) {
       FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
                    this_00->field_00C9 - this_00->field_04B6,(float *)0x0,(float *)0x0,&local_10);
-      lVar15 = Library::MSVCRT::__ftol();
-      local_c = (undefined4)lVar15;
+      lVar16 = Library::MSVCRT::__ftol();
+      local_c = (undefined4)lVar16;
     }
     else {
       STFishC::sub_004162B0(pSVar6,&local_14,&local_12,(undefined2 *)&local_c);
@@ -136,8 +139,8 @@ LAB_0054b366:
         thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);
       }
       if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
-      uVar17 = this_00->field_0038;
-      uVar16 = this_00->field_0034;
+      uVar18 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
       CVar4 = CASE_47;
     }
     else {
@@ -147,27 +150,27 @@ LAB_0054b366:
         module = HINSTANCE_00807618;
         resourceId = thunk_FUN_00523410(local_2c,(char)local_28,0);
         pcVar7 = LoadResourceString(resourceId,module);
-        uVar10 = 0xffffffff;
+        uVar11 = 0xffffffff;
         do {
-          pcVar13 = pcVar7;
-          if (uVar10 == 0) break;
-          uVar10 = uVar10 - 1;
-          pcVar13 = pcVar7 + 1;
+          pcVar14 = pcVar7;
+          if (uVar11 == 0) break;
+          uVar11 = uVar11 - 1;
+          pcVar14 = pcVar7 + 1;
           cVar1 = *pcVar7;
-          pcVar7 = pcVar13;
+          pcVar7 = pcVar14;
         } while (cVar1 != '\0');
-        uVar10 = ~uVar10;
-        puVar8 = (uint *)(pcVar13 + -uVar10);
-        puVar14 = local_d8;
-        for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *puVar14 = *puVar8;
+        uVar11 = ~uVar11;
+        puVar8 = (uint *)(pcVar14 + -uVar11);
+        puVar15 = local_d8;
+        for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+          *puVar15 = *puVar8;
           puVar8 = puVar8 + 1;
-          puVar14 = puVar14 + 1;
+          puVar15 = puVar15 + 1;
         }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(char *)puVar14 = (char)*puVar8;
+        for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+          *(char *)puVar15 = (char)*puVar8;
           puVar8 = (uint *)((int)puVar8 + 1);
-          puVar14 = (uint *)((int)puVar14 + 1);
+          puVar15 = (uint *)((int)puVar15 + 1);
         }
         puVar8 = Library::MSVCRT::FUN_0072e560(local_d8,'\n');
         while (puVar8 != (uint *)0x0) {
@@ -176,10 +179,10 @@ LAB_0054b366:
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (local_28._1_1_ == '\0') {
-          wsprintfA((LPSTR)local_d8,&DAT_007a4ccc,local_d8);
+          wsprintfA((LPSTR)local_d8,"%s",local_d8);
         }
         else {
-          wsprintfA((LPSTR)local_d8,s__s_____s__007c7fe4,local_d8,(int)&local_28 + 1);
+          wsprintfA((LPSTR)local_d8,"%s - \"%s\"",local_d8,(int)&local_28 + 1);
         }
         if (DAT_00801694 != (void *)0x0) {
           thunk_FUN_0051fac0(DAT_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
@@ -201,33 +204,33 @@ LAB_0054b2a9:
                              (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI)
           ;
         }
-        uVar17 = this_00->field_0038;
-        uVar16 = this_00->field_0034;
+        uVar18 = this_00->field_0038;
+        uVar17 = this_00->field_0034;
       }
       else {
         pSVar6 = this_00->field_049A;
-        iVar5 = (*pSVar6->vtable->vfunc_2C)();
-        if (iVar5 == 0x78) {
-          iVar5 = *(int *)&this_00->field_049A->field_0x259;
+        dVar9 = (*pSVar6->vtable->slot_2C)(pSVar6);
+        if (dVar9 == 0x78) {
+          dVar9 = *(dword *)&this_00->field_049A->field_0x259;
         }
-        if (DAT_00801690 != (void *)0x0) {
-          iVar9 = (*pSVar6->vtable->vfunc_0C)();
-          iVar5 = thunk_FUN_005121f0(DAT_00801690,iVar5,iVar9);
+        if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+          iVar5 = (*pSVar6->vtable->vfunc_0C)();
+          iVar5 = thunk_FUN_005121f0(PTR_00801690,dVar9,iVar5);
           if (iVar5 != 0) {
-            uVar17 = this_00->field_0038;
-            uVar16 = this_00->field_0034;
+            uVar18 = this_00->field_0038;
+            uVar17 = this_00->field_0034;
             CVar4 = CASE_48;
             goto cf_common_exit_0054B368;
           }
         }
-        uVar17 = this_00->field_0038;
-        uVar16 = this_00->field_0034;
+        uVar18 = this_00->field_0038;
+        uVar17 = this_00->field_0034;
         CVar4 = CASE_47;
       }
     }
   }
 cf_common_exit_0054B368:
-  local_8 = SetGCType(this_00,CVar4,uVar16,uVar17);
+  local_8 = SetGCType(this_00,CVar4,uVar17,uVar18);
 LAB_0054b372:
   if ((param_1 != 0) && (local_8 != 0)) {
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

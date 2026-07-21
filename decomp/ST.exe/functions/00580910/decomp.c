@@ -28,7 +28,7 @@ FUN_00580910(undefined4 param_1,Global_sub_00580910_param_2Enum param_2,int para
       *param_4 = 0;
       return;
     case CASE_DD:
-      pcVar4 = s_rc276_c0_007cb2b4;
+      pcVar4 = "rc276_c0";
       break;
     case CASE_DE:
     case CASE_E0:

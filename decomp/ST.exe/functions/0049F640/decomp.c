@@ -39,7 +39,7 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
   pSVar2 = local_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar9 = (undefined4 *)&local_14->field_0x89;
+      puVar9 = &local_14->field_0089;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar9 = 0;
         puVar9 = puVar9 + 1;
@@ -52,7 +52,7 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
       local_24 = PTR_00802a38->field_00E4;
       local_1c = *(undefined2 *)&local_14->field_0x2d2;
       local_18 = local_14->field_02D6;
-      local_1a = local_14->field_02D4;
+      local_1a = *(undefined2 *)&local_14->field_0x2d4;
       if (0 < (int)local_8) {
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,&local_c);
@@ -63,7 +63,7 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc11);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xc11);
             }
             STBoatC::CmdToObj(pSVar4,CASE_16,&local_24);
           }
@@ -83,7 +83,7 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc1c);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xc1c);
             }
             iVar3 = thunk_FUN_0045ff10((int)pSVar4);
             if (iVar3 == 0x16) break;
@@ -102,12 +102,12 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_68.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc25,0,iVar3,&DAT_007a4ccc
-                                 ,s_STGroupBoatC__Recharge_007ac108);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xc25,0,iVar3,"%s"
+                                 ,"STGroupBoatC::Recharge");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xc26);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xc26);
       return 0xffffffff;
     }
   }

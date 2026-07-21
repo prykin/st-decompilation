@@ -45,12 +45,12 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_research_cpp_007c76c8,0x52,0,errorCode,
-                             &DAT_007a4ccc,s_ResearchPanelTy__Update_007c7734);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\research.cpp",0x52,0,errorCode,
+                             "%s","ResearchPanelTy::Update");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_research_cpp_007c76c8,0x52);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\research.cpp",0x52);
   return;
 }
 

@@ -130,12 +130,12 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x5df,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__ChangePlayerTeam_007cd47c);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x5df,0,errorCode,
+                               "%s","SettMapMTy::ChangePlayerTeam");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x5df);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x5df);
   }
   return;
 }

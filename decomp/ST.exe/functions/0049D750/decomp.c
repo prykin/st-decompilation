@@ -36,83 +36,84 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
     if (iVar2 == -0x5001fff7) {
       if ((DArrayTy *)local_14->field_0160 != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)local_14->field_0160);
-        this_00->field_0160 = 0;
+        this_00->field_0160 = (uint *)0x0;
       }
-      if ((DArrayTy *)this_00->field_029F != (DArrayTy *)0x0) {
-        DArrayDestroy((DArrayTy *)this_00->field_029F);
-        this_00->field_029F = (uint *)0x0;
+      if (*(DArrayTy **)&this_00->field_0x29f != (DArrayTy *)0x0) {
+        DArrayDestroy(*(DArrayTy **)&this_00->field_0x29f);
+        *(undefined4 *)&this_00->field_0x29f = 0;
       }
       return 0;
     }
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9ea,0,iVar2,&DAT_007a4ccc,
-                               s_STGroupBoatC__GrpRepare_007ac018);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x9ea,0,iVar2,"%s",
+                               "STGroupBoatC::GrpRepare");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9eb);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x9eb);
       return local_10;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((param_1 == 1) || (param_1 == 0)) {
-    puVar9 = (undefined4 *)&local_14->field_0x89;
+    puVar9 = &local_14->field_0089;
     for (iVar2 = 0x15; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar9 = 0;
       puVar9 = puVar9 + 1;
     }
     local_14->field_0065 = 0;
-    if ((DArrayTy *)local_14->field_029F != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)local_14->field_029F);
+    if (*(DArrayTy **)&local_14->field_0x29f != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&local_14->field_0x29f);
     }
     this_00->field_029B = this_00->field_015C;
-    this_00->field_029F = (uint *)this_00->field_0160;
-    this_00->field_029F = (uint *)0x0;
+    *(uint **)&this_00->field_0x29f = this_00->field_0160;
+    *(undefined4 *)&this_00->field_0x29f = 0;
     if (this_00->field_029B == 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((this_00->field_0160 == 0) ||
-         (uVar8 = *(int *)(this_00->field_0160 + 0xc), local_c = uVar8, uVar8 == 0)) {
+      if ((this_00->field_0160 == (uint *)0x0) ||
+         (uVar8 = this_00->field_0160[3], local_c = uVar8, uVar8 == 0)) {
         uVar8 = local_c;
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9b7);
       }
       puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
       uVar10 = 0;
-      this_00->field_029F = puVar3;
+      *(uint **)&this_00->field_0x29f = puVar3;
       if (0 < (int)uVar8) {
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0160,uVar10,&local_8);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((((short)local_8 != -1) &&
               (pSVar4 = STAllPlayersC::GetObjPtr
                                   (g_sTAllPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
               pSVar4 != (STGameObjC *)0x0)) &&
-             (iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x33)) {
-            Library::DKW::TBL::FUN_006ae1c0(this_00->field_029F,&local_8);
+             (iVar2 = (**(code **)&pSVar4->vtable->field_0x2c)(), iVar2 == 0x33)) {
+            Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x29f,&local_8);
           }
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar8);
       }
       DArrayDestroy((DArrayTy *)this_00->field_0160);
-      this_00->field_0160 = 0;
-      if (this_00->field_029F[3] == 0) {
+      this_00->field_0160 = (uint *)0x0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if (*(int *)(*(int *)&this_00->field_0x29f + 0xc) == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9c8);
       }
     }
     if (this_00->field_029B == 1) {
       puVar3 = STAllPlayersC::GetTOBJList(g_sTAllPlayers_007FA174,this_00->field_0024,0x33,0,-1);
-      this_00->field_029F = puVar3;
+      *(uint **)&this_00->field_0x29f = puVar3;
       if (puVar3[3] == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9cd);
       }
     }
-    DistributeDock(this_00,1,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
+    DistributeDock(this_00,1,*(DArrayTy **)&this_00->field_0x29f,(DArrayTy *)this_00->field_0029);
   }
   uVar8 = 0;
   local_10 = 2;
   if ((uint)PTR_00802a38->field_00E4 % 0x19 == 0) {
-    if ((this_00->field_029F == (uint *)0x0) || (this_00->field_0027 == 0)) {
+    if ((*(int *)&this_00->field_0x29f == 0) || (this_00->field_0027 == 0)) {
       local_10 = 0;
     }
     else {

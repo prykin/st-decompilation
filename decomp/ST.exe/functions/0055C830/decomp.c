@@ -39,7 +39,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
       if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
-        Library::MSVCRT::FUN_0072ee80(param_5,(byte *)s__4s_d_d_d_d_007c94d0);
+        Library::MSVCRT::FUN_0072ee80(param_5,(byte *)"%4s%d%d%d%d");
         local_f = param_2;
         local_b = param_3;
         FSGSTy::AddPlayer(g_fSGS_0081174C,(undefined4 *)local_34);
@@ -53,7 +53,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
         } while (bVar1 != 0);
         if (((~uVar6 < 100) && (DAT_00807360 != '\0')) && (param_1 == CASE_2)) {
           pcVar4 = LoadResourceString(0x259a,HINSTANCE_00807618);
-          wsprintfA(local_688,s__s__s_007c411c,pbVar8,pcVar4);
+          wsprintfA(local_688,"%s %s",pbVar8,pcVar4);
 LAB_0055cf74:
           FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,local_688,5);
           return;
@@ -75,7 +75,7 @@ LAB_0055cf74:
         } while (bVar1 != 0);
         if ((~uVar6 < 100) && (DAT_00807360 != '\0')) {
           pcVar4 = LoadResourceString(0x259b,HINSTANCE_00807618);
-          wsprintfA(local_688,s__s__s_007c411c,pbVar8,pcVar4);
+          wsprintfA(local_688,"%s %s",pbVar8,pcVar4);
           goto LAB_0055cf74;
         }
       }
@@ -101,7 +101,7 @@ LAB_0055cf74:
       } while (bVar1 != 0);
       param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
-        wsprintfA((LPSTR)param_2,s__s__s_007c411c,pcVar3,param_4);
+        wsprintfA((LPSTR)param_2,"%s %s",pcVar3,param_4);
         if (*(char *)((int)this + 9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
           FreeAndNull(&param_2);
@@ -186,7 +186,7 @@ LAB_0055c9c5:
       param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
         pcVar4 = LoadResourceString(0x2576,HINSTANCE_00807618);
-        wsprintfA((LPSTR)param_2,s__s__s_007c411c,pcVar4,pbVar8);
+        wsprintfA((LPSTR)param_2,"%s %s",pcVar4,pbVar8);
         if (*(char *)((int)this + 9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
           FreeAndNull(&param_2);

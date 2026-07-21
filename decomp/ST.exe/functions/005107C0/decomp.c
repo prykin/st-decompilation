@@ -3,21 +3,26 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
-   FrmPanelTy::GetMessage */
+   FrmPanelTy::GetMessage
 
-undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00404246|005107C0; family_names=FrmPanelTy::GetMessage; ret4=8;
+   direct_offsets={10:1,14:0,18:0,1c:1} */
+
+int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
 
 {
-  uint uVar1;
+  STMessageId SVar1;
   code *pcVar2;
   SpecPanelTy *this_00;
   int iVar3;
   LPSTR pCVar4;
   int iVar5;
-  undefined4 uVar6;
+  AnonPointee_SpecPanelTy_0000 *pAVar6;
   char *pcVar7;
   undefined1 *puVar8;
   undefined4 uVar9;
+  undefined4 uVar10;
   InternalExceptionFrame local_60;
   undefined4 local_1c;
   undefined4 local_18;
@@ -33,28 +38,28 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,AnonShape_005105E0
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0,0,iVar3,&DAT_007a4ccc
-                               ,s_FrmPanelTy__GetMessage_007c2ae0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0xe0,0,iVar3,"%s"
+                               ,"FrmPanelTy::GetMessage");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0xe0);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  SpecPanelTy::GetMessage(local_8,(int)param_1);
-  uVar1 = param_1->field_0010;
-  if (uVar1 < 0xc0a6) {
-    if (uVar1 < 0xc09f) {
-      if (uVar1 < 0xb10c) {
-        if (uVar1 != 0xb10b) {
-          if (uVar1 < 0xb109) {
-            if (uVar1 != 0xb108) {
-              if (uVar1 == 2) {
+  SpecPanelTy::GetMessage(local_8,message);
+  SVar1 = message->id;
+  if (SVar1 < (MESS_BLDLABPANELTY_C0A4|MESS_ID_CREATE)) {
+    if (SVar1 < MESS_SHARED_C09F) {
+      if (SVar1 < 0xb10c) {
+        if (SVar1 != MESS_FRMPANELTY_B10B) {
+          if (SVar1 < MESS_FRMPANELTY_B109) {
+            if (SVar1 != MESS_FRMPANELTY_B108) {
+              if (SVar1 == MESS_ID_CREATE) {
                 InitFrmPanel((FrmPanelTy *)this_00);
                 g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
-              if (uVar1 != 3) {
+              if (SVar1 != MESS_SHARED_0003) {
                 g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
@@ -64,12 +69,12 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,AnonShape_005105E0
             }
           }
           else {
-            if (uVar1 == 0xb109) {
-              iVar3 = this_00->field_0000;
-              pcVar7 = s_BUT_FINC_007c29d0;
+            if (SVar1 == MESS_FRMPANELTY_B109) {
+              pAVar6 = this_00->field_0000;
+              pcVar7 = "BUT_FINC";
               goto LAB_00510902;
             }
-            if (uVar1 != 0xb10a) {
+            if (SVar1 != MESS_FRMPANELTY_B10A) {
               g_currentExceptionFrame = local_60.previous;
               return 0;
             }
@@ -79,20 +84,20 @@ cf_common_exit_005109A5:
           local_14 = 0;
           local_10 = 0;
           local_c = 0;
-          switch(uVar1) {
-          case 0xb108:
+          switch(SVar1) {
+          case MESS_FRMPANELTY_B108:
             local_1c = 9;
             break;
           default:
             local_1c = 8;
             break;
-          case 0xb10a:
+          case MESS_FRMPANELTY_B10A:
             local_1c = 10;
             break;
           case 0xb10c:
             local_1c = 0xb;
             break;
-          case 0xb10e:
+          case MESS_CPANELTY_B10E:
             local_1c = 0xc;
           }
           thunk_FUN_0054edf0((undefined4 *)0x18,&local_1c,0,0xffffffff);
@@ -100,21 +105,21 @@ cf_common_exit_005109A5:
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        iVar3 = this_00->field_0000;
-        pcVar7 = s_BUT_FDEC_007c29b8;
+        pAVar6 = this_00->field_0000;
+        pcVar7 = "BUT_FDEC";
       }
       else {
-        switch(uVar1) {
+        switch(SVar1) {
         case 0xb10c:
-        case 0xb10e:
+        case MESS_CPANELTY_B10E:
           goto cf_common_exit_005109A5;
-        case 0xb10d:
-          iVar3 = this_00->field_0000;
-          pcVar7 = s_BUT_FRLFT_007c29ac;
+        case MESS_CPANELTY_B10D:
+          pAVar6 = this_00->field_0000;
+          pcVar7 = "BUT_FRLFT";
           break;
         case 0xb10f:
-          iVar3 = this_00->field_0000;
-          pcVar7 = s_BUT_FRRT_007c29a0;
+          pAVar6 = this_00->field_0000;
+          pcVar7 = "BUT_FRRT";
           break;
         default:
           goto switchD_005108d5_default;
@@ -122,78 +127,78 @@ cf_common_exit_005109A5:
       }
 LAB_00510902:
       uVar9 = 1;
-      uVar6 = 0;
+      uVar10 = 0;
       puVar8 = &LAB_004030fd;
       pCVar4 = thunk_FUN_00571240(pcVar7,0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(iVar3 + 8))(param_1,6,pCVar4,puVar8,uVar6,uVar9);
+      (**(code **)&pAVar6->field_0x8)(message,6,pCVar4,puVar8,uVar10,uVar9);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    switch(uVar1) {
-    case 0xc09f:
-      uVar6 = 1;
+    switch(SVar1) {
+    case MESS_SHARED_C09F:
+      uVar10 = 1;
       break;
-    case 0xc0a0:
-      uVar6 = 3;
+    case MESS_BEHPANELTY_C0A0:
+      uVar10 = 3;
       break;
-    case 0xc0a1:
-      uVar6 = 6;
+    case MESS_FSGSTY_C0A1:
+      uVar10 = 6;
       break;
-    case 0xc0a2:
-      uVar6 = 7;
+    case MESS_SHARED_C0A2:
+      uVar10 = 7;
       break;
-    case 0xc0a3:
-      uVar6 = 2;
+    case MESS_SHARED_C0A3:
+      uVar10 = 2;
       break;
-    case 0xc0a4:
-      uVar6 = 4;
+    case MESS_BLDLABPANELTY_C0A4:
+      uVar10 = 4;
       break;
-    case 0xc0a5:
-      uVar6 = 5;
+    case MESS_FRMPANELTY_C0A5:
+      uVar10 = 5;
       break;
     default:
       goto switchD_00510930_default;
     }
-    thunk_FUN_0054b630(PTR_00802a30,0x4e,uVar6);
+    thunk_FUN_0054b630(PTR_00802a30,0x4e,uVar10);
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_00510930_default:
-    (**(code **)(this_00->field_0000 + 0x1c))(0);
+    (*(code *)this_00->field_0000->field_001C)(0);
     thunk_FUN_005252c0(0xae);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  switch(uVar1) {
-  case 0xc0a6:
+  switch(SVar1) {
+  case MESS_BLDLABPANELTY_C0A4|MESS_ID_CREATE:
     goto cf_common_exit_005109A5;
   default:
     goto switchD_005108d5_default;
-  case 0xc0af:
-    pcVar7 = s_BUT_FLINE_007c2a4c;
+  case MESS_INTERCOMPANELTY_C0AF:
+    pcVar7 = "BUT_FLINE";
     break;
   case 0xc0b0:
-    pcVar7 = s_BUT_FBENDUP_007c2a3c;
+    pcVar7 = "BUT_FBENDUP";
     break;
-  case 0xc0b1:
-    pcVar7 = s_BUT_FHOLD_007c2a30;
+  case MESS_BEHPANELTY_C0B1:
+    pcVar7 = "BUT_FHOLD";
     break;
   case 0xc0b2:
-    pcVar7 = s_BUT_FLOCK_007c2a24;
+    pcVar7 = "BUT_FLOCK";
     break;
-  case 0xc0b3:
-    pcVar7 = s_BUT_FWALL_007c2a18;
+  case MESS_BLDLABPANELTY_C0B3:
+    pcVar7 = "BUT_FWALL";
     break;
-  case 0xc0b4:
-    pcVar7 = s_BUT_FBENDDN_007c2a08;
+  case MESS_RESEARCHPANELTY_C0B4:
+    pcVar7 = "BUT_FBENDDN";
     break;
-  case 0xc0b5:
-    pcVar7 = s_BUT_FSQUARE_007c29f8;
+  case MESS_SHARED_C0B5:
+    pcVar7 = "BUT_FSQUARE";
     break;
-  case 0xc0b6:
-    pcVar7 = s_BUT_FBREAK_007c29e8;
+  case MESS_RESEARCHPANELTY_C0B4|MESS_ID_CREATE:
+    pcVar7 = "BUT_FBREAK";
   }
   pCVar4 = thunk_FUN_00571240(pcVar7,0);
-  PaintBut((FrmPanelTy *)this_00,param_1,pCVar4);
+  PaintBut((FrmPanelTy *)this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar4);
 switchD_005108d5_default:
   g_currentExceptionFrame = local_60.previous;
   return 0;

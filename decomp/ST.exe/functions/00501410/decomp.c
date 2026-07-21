@@ -48,12 +48,12 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x40,0,iVar4,&DAT_007a4ccc,
-                             s_CPanelTy__PaintBRLife_007c2588);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x40,0,iVar4,"%s",
+                             "CPanelTy::PaintBRLife");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x40);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x40);
   return;
 }
 

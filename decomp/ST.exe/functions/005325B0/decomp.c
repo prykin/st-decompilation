@@ -47,12 +47,12 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   pOVar12 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad,0,iVar5,
-                               &DAT_007a4ccc,s_OptPanelTy__PrepAsses_007c727c);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x3ad,0,iVar5,
+                               "%s","OptPanelTy::PrepAsses");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x3ad);
     return;
   }
   if (local_8->field_02FD != (DArrayTy *)0x0) {
@@ -77,7 +77,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case 0xd:
   case 0xe:
   case 0x13:
-    wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_SYSTEM__0079acf0,
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_SYSTEM__0079acf0,
               PTR_s_STRATEGS_0079acfc);
     break;
   case 2:
@@ -85,7 +85,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case 5:
   case 8:
   case 0xf:
-    wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080ef1e);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,&DAT_0080ef1e);
   }
   pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   pOVar12 = local_8;

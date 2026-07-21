@@ -74,13 +74,13 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
         }
         FUN_006b77e0(_Str1,_Str1);
         FUN_006b7780(_Str1,_Str1);
-        iVar6 = Library::MSVCRT::_strncmp(_Str1,s__WAITING_007c4124,8);
+        iVar6 = Library::MSVCRT::_strncmp(_Str1,"/WAITING",8);
         uVar10 = local_10;
         if ((iVar6 == 0) && (uVar10 = 0, PTR_00802a38 != (STPlaySystemC *)0x0)) {
           PTR_00802a38->field_00F0 = (uint)(PTR_00802a38->field_00F0 == 0);
           pcVar7 = LoadResourceString(0x2747 - (PTR_00802a38->field_00F0 != 0),HINSTANCE_00807618);
           pcVar8 = LoadResourceString(0x42c3,HINSTANCE_00807618);
-          wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,pcVar8,pcVar7);
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             if (DAT_0080874d == 0xff) {
               thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -90,13 +90,13 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             }
           }
         }
-        iVar6 = Library::MSVCRT::_strncmp(_Str1,s__FIXNETERRORS_007c410c,0xd);
+        iVar6 = Library::MSVCRT::_strncmp(_Str1,"/FIXNETERRORS",0xd);
         if (iVar6 == 0) {
           DAT_0080735e = DAT_0080735e == '\0';
           uVar10 = 0;
           pcVar7 = LoadResourceString(0x2747 - (byte)DAT_0080735e,HINSTANCE_00807618);
           pcVar8 = LoadResourceString(0x42c5,HINSTANCE_00807618);
-          wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,pcVar8,pcVar7);
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             if (DAT_0080874d == 0xff) {
               uVar11 = 8;
@@ -107,7 +107,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,uVar11);
           }
         }
-        iVar6 = Library::MSVCRT::_strncmp(_Str1,s__NETGUARANTEE_007c40fc,0xd);
+        iVar6 = Library::MSVCRT::_strncmp(_Str1,"/NETGUARANTEE",0xd);
         if (iVar6 == 0) {
           DAT_0080733c = (uint)(DAT_0080733c == 0);
           uVar10 = 0;
@@ -116,7 +116,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           }
           pcVar7 = LoadResourceString(0x2747 - (DAT_0080733c != 0),HINSTANCE_00807618);
           pcVar8 = LoadResourceString(0x42c4,HINSTANCE_00807618);
-          wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,pcVar8,pcVar7);
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             if (DAT_0080874d == 0xff) {
               uVar11 = 8;
@@ -135,12 +135,12 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = CONCAT31(local_c._1_3_,1);
           }
-          iVar6 = Library::MSVCRT::_strncmp(_Str1,s__EALL_007c40ec,5);
+          iVar6 = Library::MSVCRT::_strncmp(_Str1,"/EALL",5);
           if (iVar6 == 0) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = CONCAT31(local_c._1_3_,2);
           }
-          iVar6 = Library::MSVCRT::_strncmp(_Str1,s__AALL_007c40e4,5);
+          iVar6 = Library::MSVCRT::_strncmp(_Str1,"/AALL",5);
           pAVar4 = local_14;
           if (iVar6 == 0) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -1,0 +1,9 @@
+program=ST.exe
+final_handlers=106
+automatic=100
+already_typed=6
+conflicts_or_manual=0
+shared_zero_stubs=1
+note=GetMessage plus RET 4 proves one explicit argument; STMessage offsets +0x10/+0x14/+0x18/+0x1c establish the common envelope.
+note_return=Non-void generic 32-bit returns are normalized to int from trusted SystemClassTy, AI, boat, and TLO GetMessage anchors.
+note_manual=USER_DEFINED/IMPORTED non-generic parameter and return types are preserved.

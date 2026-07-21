@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
     iVar2 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x48)
+                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x48)
       ;
     }
   }
@@ -36,7 +36,7 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
     iVar2 = STT3DSprC::Init(this_00,DAT_008073cc,0x78,0x56,0,0xf0,0xbe,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x49)
+                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x49)
       ;
     }
     uVar3 = thunk_FUN_004ad650(*(int *)((int)this + 0x2c));
@@ -49,7 +49,7 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
                                (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112e) * 4),0x1d);
   if (iVar2 != 0) {
     RaiseInternalException
-              (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x4c);
+              (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x4c);
   }
   thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,
                      *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),

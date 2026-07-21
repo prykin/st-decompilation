@@ -98,10 +98,10 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     return local_8;
   }
   g_currentExceptionFrame = local_b0.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0xd1,0,iVar3,&DAT_007a4ccc,
-                             s_UPanelTy__CreateTab_007c7914);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0xd1,0,iVar3,"%s",
+                             "UPanelTy::CreateTab");
   if (iVar5 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xd1);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0xd1);
     return 0xffffffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

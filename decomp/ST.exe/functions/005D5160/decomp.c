@@ -54,10 +54,10 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_settsobj_cpp_007cd544,0x86,0,iVar4,&DAT_007a4ccc,
-                               s_SettMapSTy__PrepPlList_007cd58c);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\settsobj.cpp",0x86,0,iVar4,"%s",
+                               "SettMapSTy::PrepPlList");
     if (iVar8 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Start_settsobj_cpp_007cd544,0x86);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\settsobj.cpp",0x86);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

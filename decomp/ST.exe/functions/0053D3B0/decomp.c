@@ -42,12 +42,12 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_setamine_cpp_007c7798,0x57,0,iVar2,&DAT_007a4ccc,
-                             s_SAMPanelTy__Update_007c783c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x57,0,iVar2,"%s",
+                             "SAMPanelTy::Update");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_setamine_cpp_007c7798,0x57);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\setamine.cpp",0x57);
   return;
 }
 

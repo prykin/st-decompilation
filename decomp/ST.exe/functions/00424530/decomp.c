@@ -33,7 +33,8 @@ void __thiscall FUN_00424530(void *this,uint param_1)
       if ((short)param_1 != -1) {
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x24),param_1,CASE_1);
-        (*pSVar3->vtable[1].vfunc_2C)(uVar2);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)pSVar3->vtable[1].field_0030)(uVar2);
       }
       uVar4 = uVar4 + 1;
       index = uVar4 & 0xffff;
